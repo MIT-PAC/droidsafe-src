@@ -10,16 +10,21 @@ import java.util.Iterator;
 import android.os.Message;
 
 public class AsyncResult {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.343 -0400", hash_original_field = "25C84ECB718C6159E9324F086F630B67", hash_generated_field = "ACC4BEB2E6BD76B8FB51D8C386A55DC8")
+
     public Object userObj;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.343 -0400", hash_original_field = "42552B1F133F9F8EB406D4F306EA9FD1", hash_generated_field = "20DCDB367C6D3BBF38A6624ED17C8967")
+
     public Throwable exception;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.343 -0400", hash_original_field = "B4A88417B3D0170D754C647C30B7216A", hash_generated_field = "C4A6D58C2F47BA9A63392D945E9CECC1")
+
     public Object result;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.307 -0400", hash_original_method = "198D3897BE246B2AE096FCE067E81108", hash_generated_method = "4371B688A7AB4E1E0E947439C732BD36")
-    @DSModeled(DSC.SAFE)
-    public AsyncResult(Object uo, Object r, Throwable ex) {
-        dsTaint.addTaint(ex.dsTaint);
-        dsTaint.addTaint(r.dsTaint);
-        dsTaint.addTaint(uo.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.345 -0400", hash_original_method = "198D3897BE246B2AE096FCE067E81108", hash_generated_method = "8F6C040BA0BD8D45D2C9FD08E5B23663")
+    public  AsyncResult(Object uo, Object r, Throwable ex) {
+        userObj = uo;
+        result = r;
+        exception = ex;
         // ---------- Original Method ----------
         //userObj = uo;
         //result = r;

@@ -14,12 +14,9 @@ import libcore.io.Base64;
 
 class DataLoader extends StreamLoader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.116 -0400", hash_original_method = "973C5174F409BF73FE3F5C468E90899A", hash_generated_method = "67781764EBA9D59216ACFDB3EA4C652F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     DataLoader(String dataUrl, LoadListener loadListener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:57.982 -0400", hash_original_method = "973C5174F409BF73FE3F5C468E90899A", hash_generated_method = "1D3D1CC97145799CA699945E6E0DFAD4")
+      DataLoader(String dataUrl, LoadListener loadListener) {
         super(loadListener);
-        dsTaint.addTaint(dataUrl);
-        dsTaint.addTaint(loadListener.dsTaint);
         String url;
         url = dataUrl.substring("data:".length());
         byte[] data;
@@ -32,7 +29,7 @@ class DataLoader extends StreamLoader {
             data = url.substring(commaIndex + 1).getBytes();
             loadListener.parseContentTypeHeader(contentType);
             {
-                boolean varDB8BCB478219F9C23321F67F114D2478_1876648740 = ("base64".equals(loadListener.transferEncoding()));
+                boolean varDB8BCB478219F9C23321F67F114D2478_606376052 = ("base64".equals(loadListener.transferEncoding()));
                 {
                     data = Base64.decode(data);
                 } //End block
@@ -45,6 +42,8 @@ class DataLoader extends StreamLoader {
             mDataStream = new ByteArrayInputStream(data);
             mContentLength = data.length;
         } //End block
+        addTaint(dataUrl.getTaint());
+        addTaint(loadListener.getTaint());
         // ---------- Original Method ----------
         //String url = dataUrl.substring("data:".length());
         //byte[] data = null;
@@ -66,8 +65,7 @@ class DataLoader extends StreamLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.116 -0400", hash_original_method = "741CD292254249FEBDFDE203F8AC2D5E", hash_generated_method = "8B8E2434CF8D36400B4352850A16F36A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:57.983 -0400", hash_original_method = "741CD292254249FEBDFDE203F8AC2D5E", hash_generated_method = "3441E52319162EED242988C4DF79070C")
     @Override
     protected boolean setupStreamAndSendStatus() {
         {
@@ -77,7 +75,8 @@ class DataLoader extends StreamLoader {
             mLoadListener.error(EventHandler.ERROR,
                     mContext.getString(R.string.httpError));
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_501944011 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_501944011;
         // ---------- Original Method ----------
         //if (mDataStream != null) {
             //mLoadListener.status(1, 1, 200, "OK");
@@ -90,11 +89,10 @@ class DataLoader extends StreamLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.116 -0400", hash_original_method = "2B11D339C271386CE83AD39A9189005C", hash_generated_method = "D39F32E633EE2F51267FB366D24ED9F3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:57.983 -0400", hash_original_method = "2B11D339C271386CE83AD39A9189005C", hash_generated_method = "DD3C4AC742A0B9EC492618A2D675A09F")
     @Override
     protected void buildHeaders(android.net.http.Headers h) {
-        dsTaint.addTaint(h.dsTaint);
+        addTaint(h.getTaint());
         // ---------- Original Method ----------
     }
 

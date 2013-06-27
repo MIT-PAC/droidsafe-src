@@ -10,22 +10,22 @@ import java.util.Iterator;
 
 public class TooManyListenersException extends Exception {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.859 -0400", hash_original_method = "394F16F71C461EE8325C7C30649B2ED3", hash_generated_method = "55BADF54015CFE6EC75248941CAF5B26")
-    @DSModeled(DSC.SAFE)
-    public TooManyListenersException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.125 -0400", hash_original_method = "394F16F71C461EE8325C7C30649B2ED3", hash_generated_method = "55BADF54015CFE6EC75248941CAF5B26")
+    public  TooManyListenersException() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.859 -0400", hash_original_method = "9AD8C053A7A66FB4440B6219D5D227F2", hash_generated_method = "001025A0848F40193BACD3CAC1E96C83")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public TooManyListenersException(String detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.125 -0400", hash_original_method = "9AD8C053A7A66FB4440B6219D5D227F2", hash_generated_method = "76463DC7BB8F3BF752953D58366FC32A")
+    public  TooManyListenersException(String detailMessage) {
         super(detailMessage);
-        dsTaint.addTaint(detailMessage);
+        addTaint(detailMessage.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = 5074640544770687831L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.125 -0400", hash_original_field = "F85946716EEA793823D372EB44A8FEA3", hash_generated_field = "4F20EE3DF814D25900DC625CAE59DEB4")
+
+    private static long serialVersionUID = 5074640544770687831L;
 }
 

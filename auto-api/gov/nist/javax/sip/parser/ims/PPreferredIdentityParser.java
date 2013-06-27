@@ -16,27 +16,25 @@ import gov.nist.javax.sip.parser.AddressParametersParser;
 
 public class PPreferredIdentityParser extends AddressParametersParser implements TokenTypes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.771 -0400", hash_original_method = "8ED0FE4D0D4A9A77E1D41482CCFB6634", hash_generated_method = "34031EA862226FAB20CB7958DCAD4732")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PPreferredIdentityParser(String preferredIdentity) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.763 -0400", hash_original_method = "8ED0FE4D0D4A9A77E1D41482CCFB6634", hash_generated_method = "DBF0A9D95EDCEC6B14DFAC227F725239")
+    public  PPreferredIdentityParser(String preferredIdentity) {
         super(preferredIdentity);
-        dsTaint.addTaint(preferredIdentity);
+        addTaint(preferredIdentity.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.771 -0400", hash_original_method = "2C53019D290466621D2FD15449F6C503", hash_generated_method = "BDFFF6F36E19904B94F47C3B5A03D6F6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected PPreferredIdentityParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.763 -0400", hash_original_method = "2C53019D290466621D2FD15449F6C503", hash_generated_method = "339C412A68840273039D5CCE3419F4E9")
+    protected  PPreferredIdentityParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.771 -0400", hash_original_method = "CA1397CFDA33B56E4743CDCAB79EF328", hash_generated_method = "E8A4ACB1A4DABFB760350264CAD1D9B9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.764 -0400", hash_original_method = "CA1397CFDA33B56E4743CDCAB79EF328", hash_generated_method = "EDCDF74C114A543C60082C85FC192142")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1620066909 = null; //Variable for return #1
         dbg_enter("PreferredIdentityParser.parse");
         try 
         {
@@ -47,12 +45,14 @@ public class PPreferredIdentityParser extends AddressParametersParser implements
             PPreferredIdentity p;
             p = new PPreferredIdentity();
             super.parse( p );
+            varB4EAC82CA7396A68D541C85D26508E83_1620066909 = p;
         } //End block
         finally 
         {
             dbg_leave("PreferredIdentityParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1620066909.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1620066909;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("PreferredIdentityParser.parse");

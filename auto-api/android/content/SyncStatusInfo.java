@@ -13,37 +13,68 @@ import android.util.Log;
 import java.util.ArrayList;
 
 public class SyncStatusInfo implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.959 -0400", hash_original_field = "A6E80D6465C4F39AC517335BD9346D44", hash_generated_field = "A9902B6EC2628AF68CD4117B511E65F0")
+
     public int authorityId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.959 -0400", hash_original_field = "072EF0DEB7B5649E8D92095E16548F4B", hash_generated_field = "5D7384269F724CBADC7F9E403A55C48C")
+
     public long totalElapsedTime;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.959 -0400", hash_original_field = "5C3F9AEC1EEC6A8D58D0F35EBBB148ED", hash_generated_field = "45FA19DB50FC1AFC3AFA9748BF15F97C")
+
     public int numSyncs;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.959 -0400", hash_original_field = "7960319A52EA176C2E46FB1A188DF721", hash_generated_field = "297E9C7A23835F11C9957370D1ED8A75")
+
     public int numSourcePoll;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.959 -0400", hash_original_field = "65AD40135E6AC0A04BFDAE0720755F59", hash_generated_field = "F9A2FDC9C88FCD806F4525422EF10BF1")
+
     public int numSourceServer;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.969 -0400", hash_original_field = "EEEF2E9CE1829E04CD1CCD49E93B4A03", hash_generated_field = "B0F48BB93F3B5FE342F20AE3FB948F58")
+
     public int numSourceLocal;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.970 -0400", hash_original_field = "EFE172CBF9DA51B5C518E95BD4D6ADD3", hash_generated_field = "8CF18E48FF0658748266846505863C84")
+
     public int numSourceUser;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.970 -0400", hash_original_field = "3DE03DF8466AB4181915B3E119165C5D", hash_generated_field = "12AEAE23203E6890D332E062563C0CF9")
+
     public int numSourcePeriodic;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.970 -0400", hash_original_field = "9E00B89B90E2C6619D333C68F79C172B", hash_generated_field = "D1DD70D28F5DEB94EE2F4546FE50674D")
+
     public long lastSuccessTime;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.970 -0400", hash_original_field = "A0536E5A332D10C1056BC83AB6BDB9EE", hash_generated_field = "FA28C0FBC143DEA0A6029269A23776E9")
+
     public int lastSuccessSource;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.970 -0400", hash_original_field = "4198638D1E0CD82D03DB43CE9B1A3930", hash_generated_field = "6AFA009245A986652AE38EE5259B6ED5")
+
     public long lastFailureTime;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.970 -0400", hash_original_field = "DC729020C8D4C52C7845A7987D20F3ED", hash_generated_field = "073927D6239FA4A9D397F9C6F6FB3874")
+
     public int lastFailureSource;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.970 -0400", hash_original_field = "7596EC8D2962CDE8243E8FED37600135", hash_generated_field = "29147D591F50D9505557E1B4326C0CB8")
+
     public String lastFailureMesg;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.970 -0400", hash_original_field = "C4B1A7F06E1C04E56B1B464F72897662", hash_generated_field = "A4E8436F857C29CAAE565EB026B82BBE")
+
     public long initialFailureTime;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.971 -0400", hash_original_field = "7C6C2E5D48AB37A007CBF70D3EA25FA4", hash_generated_field = "C4E7D79FB8FE79DA47A44B5030EA64A2")
+
     public boolean pending;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.971 -0400", hash_original_field = "30DB597822C6E06C6737052260426F45", hash_generated_field = "906CA71C20CC6AD4C27A4C720CE75383")
+
     public boolean initialize;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.971 -0400", hash_original_field = "071AEBC5CEC33253679B86192112D6DB", hash_generated_field = "191FD4C3F411078AF38A8B10F0164DAD")
+
     public ArrayList<Long> periodicSyncTimes;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.119 -0400", hash_original_method = "A601236BC9972CD1DA6DEFC9BDCCDDF9", hash_generated_method = "DC6DC2174D8D158E4751E0A508F94D18")
-    @DSModeled(DSC.SAFE)
-     SyncStatusInfo(int authorityId) {
-        dsTaint.addTaint(authorityId);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.972 -0400", hash_original_method = "A601236BC9972CD1DA6DEFC9BDCCDDF9", hash_generated_method = "BB787ACFE6D55BF74960948674FE5AEC")
+      SyncStatusInfo(int authorityId) {
+        this.authorityId = authorityId;
         // ---------- Original Method ----------
         //this.authorityId = authorityId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.120 -0400", hash_original_method = "48BE1C9789126DF2BDCDE38D758F27DD", hash_generated_method = "256666C5EB1C4CC867AD41DB4322B0CC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     SyncStatusInfo(Parcel parcel) {
-        dsTaint.addTaint(parcel.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.072 -0400", hash_original_method = "48BE1C9789126DF2BDCDE38D758F27DD", hash_generated_method = "B6FABA5B570D3CB0A64CE29480940F91")
+      SyncStatusInfo(Parcel parcel) {
         int version;
         version = parcel.readInt();
         authorityId = parcel.readInt();
@@ -86,21 +117,21 @@ public class SyncStatusInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.121 -0400", hash_original_method = "7E33E8226B73A02621B31754517607B3", hash_generated_method = "AEAF0D6B312FB55EDBA45180F2096BC8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.078 -0400", hash_original_method = "7E33E8226B73A02621B31754517607B3", hash_generated_method = "86841AE2BCE7F2A30CD05F90532452FD")
     public int getLastFailureMesgAsInt(int def) {
-        dsTaint.addTaint(def);
         try 
         {
             {
-                int var561DC7C18702C0DB19E8BC0A90987BBD_1782868205 = (Integer.parseInt(lastFailureMesg));
+                int var561DC7C18702C0DB19E8BC0A90987BBD_1298467104 = (Integer.parseInt(lastFailureMesg));
             } //End block
         } //End block
         catch (NumberFormatException e)
         {
             Log.d(TAG, "error parsing lastFailureMesg of " + lastFailureMesg, e);
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(def);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_576062929 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_576062929;
         // ---------- Original Method ----------
         //try {
             //if (lastFailureMesg != null) {
@@ -113,20 +144,17 @@ public class SyncStatusInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.121 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.079 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "10194DEB815321DA32CE1FB59BB99B26")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1715824552 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1715824552;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.129 -0400", hash_original_method = "9461760C81A4DFF607A36CA2D6370E1C", hash_generated_method = "CAAC7F83BD66E57DA0C8616BABE6843E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.299 -0400", hash_original_method = "9461760C81A4DFF607A36CA2D6370E1C", hash_generated_method = "4A871D4D25557703F3795E88D88FC7BC")
     public void writeToParcel(Parcel parcel, int flags) {
-        dsTaint.addTaint(parcel.dsTaint);
-        dsTaint.addTaint(flags);
         parcel.writeInt(VERSION);
         parcel.writeInt(authorityId);
         parcel.writeLong(totalElapsedTime);
@@ -146,9 +174,9 @@ public class SyncStatusInfo implements Parcelable {
         {
             parcel.writeInt(periodicSyncTimes.size());
             {
-                Iterator<Long> var137A3BFEF4662131991E3E9E8AB91E39_505485525 = (periodicSyncTimes).iterator();
-                var137A3BFEF4662131991E3E9E8AB91E39_505485525.hasNext();
-                long periodicSyncTime = var137A3BFEF4662131991E3E9E8AB91E39_505485525.next();
+                Iterator<Long> var137A3BFEF4662131991E3E9E8AB91E39_1681917297 = (periodicSyncTimes).iterator();
+                var137A3BFEF4662131991E3E9E8AB91E39_1681917297.hasNext();
+                long periodicSyncTime = var137A3BFEF4662131991E3E9E8AB91E39_1681917297.next();
                 {
                     parcel.writeLong(periodicSyncTime);
                 } //End block
@@ -157,35 +185,34 @@ public class SyncStatusInfo implements Parcelable {
         {
             parcel.writeInt(-1);
         } //End block
+        addTaint(parcel.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.137 -0400", hash_original_method = "BB3C22BCE01837AA4BAC40A0B35F8BC2", hash_generated_method = "E9513F79FB2856FA5293004FE6460AF5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.300 -0400", hash_original_method = "BB3C22BCE01837AA4BAC40A0B35F8BC2", hash_generated_method = "008AFFFAE8F7DF09372AA39021AFA4EA")
     public void setPeriodicSyncTime(int index, long when) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(when);
         ensurePeriodicSyncTimeSize(index);
         periodicSyncTimes.set(index, when);
+        addTaint(index);
+        addTaint(when);
         // ---------- Original Method ----------
         //ensurePeriodicSyncTimeSize(index);
         //periodicSyncTimes.set(index, when);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.137 -0400", hash_original_method = "CB3B6F2BD6B69A04BBE5B4B8321ED55E", hash_generated_method = "F3184F18F181A763455911F77B5A5849")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.301 -0400", hash_original_method = "CB3B6F2BD6B69A04BBE5B4B8321ED55E", hash_generated_method = "C6B25E15FAB0235401633A0E3DFB6CA7")
     private void ensurePeriodicSyncTimeSize(int index) {
-        dsTaint.addTaint(index);
         {
             periodicSyncTimes = new ArrayList<Long>(0);
         } //End block
         int requiredSize;
         requiredSize = index + 1;
         {
-            boolean varDA8A1799F2E947514B7F61D918481AF0_1289940361 = (periodicSyncTimes.size() < requiredSize);
+            boolean varDA8A1799F2E947514B7F61D918481AF0_998473838 = (periodicSyncTimes.size() < requiredSize);
             {
                 {
                     int i;
@@ -196,6 +223,7 @@ public class SyncStatusInfo implements Parcelable {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
+        addTaint(index);
         // ---------- Original Method ----------
         //if (periodicSyncTimes == null) {
             //periodicSyncTimes = new ArrayList<Long>(0);
@@ -209,15 +237,15 @@ public class SyncStatusInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.138 -0400", hash_original_method = "E0266DD4F289B692F6E7B79E10E75B20", hash_generated_method = "A6EF9A02663458EFA25A1BC4093779CA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.302 -0400", hash_original_method = "E0266DD4F289B692F6E7B79E10E75B20", hash_generated_method = "17CEC3BE843D1020DB1A58225221FC78")
     public long getPeriodicSyncTime(int index) {
-        dsTaint.addTaint(index);
         {
-            boolean varB9564E21A396D957116506C1AEF43D3C_1658190970 = (periodicSyncTimes == null || periodicSyncTimes.size() < (index + 1));
+            boolean varB9564E21A396D957116506C1AEF43D3C_1146083371 = (periodicSyncTimes == null || periodicSyncTimes.size() < (index + 1));
         } //End collapsed parenthetic
-        long varE430967A1E3A0EE477B628D1A0973895_715315283 = (periodicSyncTimes.get(index));
-        return dsTaint.getTaintLong();
+        long varE430967A1E3A0EE477B628D1A0973895_1907152097 = (periodicSyncTimes.get(index));
+        addTaint(index);
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1644177825 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1644177825;
         // ---------- Original Method ----------
         //if (periodicSyncTimes == null || periodicSyncTimes.size() < (index + 1)) {
             //return 0;
@@ -226,43 +254,33 @@ public class SyncStatusInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.138 -0400", hash_original_method = "5D5F49D9C483CE201F8BB2B6D37F0FB1", hash_generated_method = "A45A1B5645DEB82B448C5EEB3DBA0DAE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.318 -0400", hash_original_method = "5D5F49D9C483CE201F8BB2B6D37F0FB1", hash_generated_method = "EA5040F06ECF2809A7E9957C6A1356F9")
     public void removePeriodicSyncTime(int index) {
-        dsTaint.addTaint(index);
         ensurePeriodicSyncTimeSize(index);
         periodicSyncTimes.remove(index);
+        addTaint(index);
         // ---------- Original Method ----------
         //ensurePeriodicSyncTimeSize(index);
         //periodicSyncTimes.remove(index);
     }
 
     
-    static final int VERSION = 2;
-    private static final String TAG = "Sync";
-    public static final Creator<SyncStatusInfo> CREATOR = new Creator<SyncStatusInfo>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.138 -0400", hash_original_method = "7000403894FD3D88AA5C75270F571170", hash_generated_method = "430403E50696C483E095A9CDDDDDFCD0")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.318 -0400", hash_original_field = "DCF658CEB87B1871C682CB06BA67C24E", hash_generated_field = "24861EAEA358CA4890161E816F07AAC7")
+
+    static int VERSION = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.318 -0400", hash_original_field = "4B899671566F88F7105998C18EA46A1D", hash_generated_field = "4F9EB59952A467E18CDDD8C957E0F99E")
+
+    private static String TAG = "Sync";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.318 -0400", hash_original_field = "4B380E2AA31D16D86BF89F8EE0A58282", hash_generated_field = "34F7BA97EC5F779445C9A58D21D7DF7D")
+
+    public static final Creator<SyncStatusInfo> CREATOR = new Creator<SyncStatusInfo>() {
         public SyncStatusInfo createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            SyncStatusInfo var355B45213B5FFB35BC4E05A34B513152_103001228 = (new SyncStatusInfo(in));
-            return (SyncStatusInfo)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new SyncStatusInfo(in);
+            return new SyncStatusInfo(in);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:43.139 -0400", hash_original_method = "59BC53FE0FEC79565943AAF0BCFA71FD", hash_generated_method = "0F5E01099533D646B63149EB3AE724B4")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public SyncStatusInfo[] newArray(int size) {
-            dsTaint.addTaint(size);
-            SyncStatusInfo[] varD4EE101A3772BE8DB8CE6742C1645B8A_385901888 = (new SyncStatusInfo[size]);
-            return (SyncStatusInfo[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new SyncStatusInfo[size];
+            return new SyncStatusInfo[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

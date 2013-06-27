@@ -10,13 +10,12 @@ import java.util.Iterator;
 
 final class ReadOnlyShortArrayBuffer extends ShortArrayBuffer {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.900 -0400", hash_original_method = "DA0F6B028B84C196FFD1459A256816D4", hash_generated_method = "FFB22E4788D46F336E8476148C6D7DEA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     ReadOnlyShortArrayBuffer(int capacity, short[] backingArray, int arrayOffset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.955 -0400", hash_original_method = "DA0F6B028B84C196FFD1459A256816D4", hash_generated_method = "134581DF985FFA24DA1D30A000FEF3BC")
+      ReadOnlyShortArrayBuffer(int capacity, short[] backingArray, int arrayOffset) {
         super(capacity, backingArray, arrayOffset);
-        dsTaint.addTaint(backingArray[0]);
-        dsTaint.addTaint(arrayOffset);
-        dsTaint.addTaint(capacity);
+        addTaint(capacity);
+        addTaint(backingArray[0]);
+        addTaint(arrayOffset);
         // ---------- Original Method ----------
     }
 
@@ -31,140 +30,131 @@ final class ReadOnlyShortArrayBuffer extends ShortArrayBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.901 -0400", hash_original_method = "293D70534F08F1337102FFA8FF94EA93", hash_generated_method = "DA8F97333954D2BD44E9B4E572BB8F30")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.956 -0400", hash_original_method = "293D70534F08F1337102FFA8FF94EA93", hash_generated_method = "92B652C69485FA34C52035D70D06760A")
     @Override
     public ShortBuffer asReadOnlyBuffer() {
-        ShortBuffer var92CA36B72AD8E4E9D1F46737F34CE751_1333450916 = (duplicate());
-        return (ShortBuffer)dsTaint.getTaint();
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_1387638245 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1387638245 = duplicate();
+        varB4EAC82CA7396A68D541C85D26508E83_1387638245.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1387638245;
         // ---------- Original Method ----------
         //return duplicate();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.901 -0400", hash_original_method = "1358DD6DB518D15E9F2A390375DC21ED", hash_generated_method = "DD0181DE27B71706B856EC64206F6C65")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.957 -0400", hash_original_method = "1358DD6DB518D15E9F2A390375DC21ED", hash_generated_method = "8D0E7500E2D35F547F51C4E71BEB149D")
     @Override
     public ShortBuffer compact() {
         if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        return (ShortBuffer)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.901 -0400", hash_original_method = "F49238B32F318D341B9FD2839B701A87", hash_generated_method = "D2F567DFF181097C2F9AB9292E83221C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.972 -0400", hash_original_method = "F49238B32F318D341B9FD2839B701A87", hash_generated_method = "8EE1CBC56D8103EEDBCE1D3B307CFD3E")
     @Override
     public ShortBuffer duplicate() {
-        ShortBuffer var8C82ED9E4FDE12C9486E1252174918B6_1347470864 = (copy(this, mark));
-        return (ShortBuffer)dsTaint.getTaint();
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_1825424604 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1825424604 = copy(this, mark);
+        varB4EAC82CA7396A68D541C85D26508E83_1825424604.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1825424604;
         // ---------- Original Method ----------
         //return copy(this, mark);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.901 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "1F37B5B4451C181C67CEF1957DF5BE74")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.972 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "A976AFF83AEAAD0365D275E44D0BDBDC")
     @Override
     public boolean isReadOnly() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1791516000 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1791516000;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.901 -0400", hash_original_method = "AFBE97926DC7C5B917D9DD29C0718A4F", hash_generated_method = "B788954C81C3EAB2CACAA97CD4562727")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.972 -0400", hash_original_method = "AFBE97926DC7C5B917D9DD29C0718A4F", hash_generated_method = "0F768FDD37C7179D02B4255F09992817")
     @Override
     protected short[] protectedArray() {
         if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        short[] retVal = new short[1];
-        retVal[0] = (short)dsTaint.getTaintInt();
-        return retVal;
+        short[] var48EE7E2DDF8A83602BC526873BD0F875_1442890437 = {getTaintShort()};
+        return var48EE7E2DDF8A83602BC526873BD0F875_1442890437;
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.901 -0400", hash_original_method = "0ABFB09F32C9F0D211E0D26315A037E6", hash_generated_method = "E33577BEEC5DADCAF68823E6F78877A4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.972 -0400", hash_original_method = "0ABFB09F32C9F0D211E0D26315A037E6", hash_generated_method = "ECB454D00496399A6C9F2B519E1B93BE")
     @Override
     protected int protectedArrayOffset() {
         if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1703739208 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1703739208;
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.901 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "ABBE1C4E781471842A6D95D790DBFBEE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.973 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "28652897112170CC795F4BD9C82B4335")
     @Override
     protected boolean protectedHasArray() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_333065940 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_333065940;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.901 -0400", hash_original_method = "5592BDB3AAC352212C254B47F1811E27", hash_generated_method = "065460D46301B068005B1199BF6A00EA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.973 -0400", hash_original_method = "5592BDB3AAC352212C254B47F1811E27", hash_generated_method = "F82A9C50CFDA54831EB0DF140921035E")
     @Override
     public ShortBuffer put(ShortBuffer buf) {
-        dsTaint.addTaint(buf.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        return (ShortBuffer)dsTaint.getTaint();
+        addTaint(buf.getTaint());
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.902 -0400", hash_original_method = "499D2BB8AE90111A3249031C62268D84", hash_generated_method = "0DC73F57EA8E29B8796F6336E497D260")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.973 -0400", hash_original_method = "499D2BB8AE90111A3249031C62268D84", hash_generated_method = "51B9CA180C6AF81C985217BAD95CFFFF")
     @Override
     public ShortBuffer put(short c) {
-        dsTaint.addTaint(c);
         if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        return (ShortBuffer)dsTaint.getTaint();
+        addTaint(c);
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.902 -0400", hash_original_method = "617A2BE3714A70A7C820CD4B75072087", hash_generated_method = "28A5BB055EEF4F3C225604649A0AA9B8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.974 -0400", hash_original_method = "617A2BE3714A70A7C820CD4B75072087", hash_generated_method = "1E52073E7F4D4E6FE16A8BA407381D4D")
     @Override
     public ShortBuffer put(int index, short c) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(c);
         if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        return (ShortBuffer)dsTaint.getTaint();
+        addTaint(index);
+        addTaint(c);
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.902 -0400", hash_original_method = "1E52CD3CC46ECF6ADC15EFA5E594FA46", hash_generated_method = "86637F3ECFD523B7C1E83F5FDA1F7F28")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.974 -0400", hash_original_method = "1E52CD3CC46ECF6ADC15EFA5E594FA46", hash_generated_method = "C809EB7A141BFD58278CB8300166F96E")
     @Override
     public final ShortBuffer put(short[] src, int srcOffset, int shortCount) {
-        dsTaint.addTaint(shortCount);
-        dsTaint.addTaint(srcOffset);
-        dsTaint.addTaint(src[0]);
         if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
-        return (ShortBuffer)dsTaint.getTaint();
+        addTaint(src[0]);
+        addTaint(srcOffset);
+        addTaint(shortCount);
         // ---------- Original Method ----------
         //throw new ReadOnlyBufferException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.902 -0400", hash_original_method = "1014849B0415FF72B64D3271FAB61336", hash_generated_method = "E41A408EAC0AACD7CC212D2968634C6C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.988 -0400", hash_original_method = "1014849B0415FF72B64D3271FAB61336", hash_generated_method = "A14F322D9B976D3A21E0A130A1363A9C")
     @Override
     public ShortBuffer slice() {
-        ShortBuffer var5FF260310AC30219BB7A404186354A5D_965427785 = (new ReadOnlyShortArrayBuffer(remaining(), backingArray, offset + position));
-        return (ShortBuffer)dsTaint.getTaint();
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_863502685 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_863502685 = new ReadOnlyShortArrayBuffer(remaining(), backingArray, offset + position);
+        varB4EAC82CA7396A68D541C85D26508E83_863502685.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_863502685;
         // ---------- Original Method ----------
         //return new ReadOnlyShortArrayBuffer(remaining(), backingArray, offset + position);
     }

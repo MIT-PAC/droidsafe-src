@@ -10,9 +10,10 @@ import java.util.Iterator;
 
 public abstract class BufferIterator {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.788 -0400", hash_original_method = "0D48E83ED50D873F1B5E6B77EEDA24F6", hash_generated_method = "0D48E83ED50D873F1B5E6B77EEDA24F6")
-        public BufferIterator ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.259 -0400", hash_original_method = "D18BB79D0D4A277413AB03F78A6D226A", hash_generated_method = "D18BB79D0D4A277413AB03F78A6D226A")
+    public BufferIterator ()
     {
+        //Synthesized constructor
     }
 
 

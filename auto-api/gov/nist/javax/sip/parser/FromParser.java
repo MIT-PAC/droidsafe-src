@@ -13,27 +13,25 @@ import java.text.ParseException;
 
 public class FromParser extends AddressParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.282 -0400", hash_original_method = "959F9668B577E560A18D35872EBA8497", hash_generated_method = "3517542B12E2EA2DFEB5E7637469CC47")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public FromParser(String from) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.763 -0400", hash_original_method = "959F9668B577E560A18D35872EBA8497", hash_generated_method = "885FA40AC3C138A7BD1A0F6967FB5387")
+    public  FromParser(String from) {
         super(from);
-        dsTaint.addTaint(from);
+        addTaint(from.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.282 -0400", hash_original_method = "CEE001D4136BA6038E80B22CA8F776D5", hash_generated_method = "676597B87D8DC1381A3669D418C3F563")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected FromParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.766 -0400", hash_original_method = "CEE001D4136BA6038E80B22CA8F776D5", hash_generated_method = "BC246DE981154C301C0558972F241666")
+    protected  FromParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.283 -0400", hash_original_method = "090BCBCCA2A0D46A805C56D0690187FF", hash_generated_method = "1A312C077EE8280A8A7E422D7834E3A3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.767 -0400", hash_original_method = "090BCBCCA2A0D46A805C56D0690187FF", hash_generated_method = "46F643FB21D18C0066D8FC9FB5FFB64A")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_491932217 = null; //Variable for return #1
         From from;
         from = new From();
         this.lexer.match(TokenTypes.FROM);
@@ -42,7 +40,9 @@ public class FromParser extends AddressParametersParser {
         this.lexer.SPorHT();
         super.parse(from);
         this.lexer.match('\n');
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_491932217 = from;
+        varB4EAC82CA7396A68D541C85D26508E83_491932217.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_491932217;
         // ---------- Original Method ----------
         //From from = new From();
         //this.lexer.match(TokenTypes.FROM);

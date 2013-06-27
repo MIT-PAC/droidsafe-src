@@ -15,20 +15,22 @@ import java.text.ParseException;
 
 public abstract class Parser extends ParserCore implements TokenTypes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.445 -0400", hash_original_method = "58307969D5CE2DE2463F9519A7B61467", hash_generated_method = "58307969D5CE2DE2463F9519A7B61467")
-        public Parser ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.918 -0400", hash_original_method = "42CBDDB53A445ABDFB908116E235FAA0", hash_generated_method = "42CBDDB53A445ABDFB908116E235FAA0")
+    public Parser ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.445 -0400", hash_original_method = "9ECF405713F3BDB595977394FAA46BC3", hash_generated_method = "BDEE402D0ABB4E3B9F8F8FB87B7995C7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.919 -0400", hash_original_method = "9ECF405713F3BDB595977394FAA46BC3", hash_generated_method = "1996AD83A33ECFB834DD83E6D80D6C94")
     protected ParseException createParseException(String exceptionString) {
-        dsTaint.addTaint(exceptionString);
-        ParseException var2E42C738C9C54AD9EF33E57BAC2A902D_415521575 = (new ParseException(
+        ParseException varB4EAC82CA7396A68D541C85D26508E83_1476421318 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1476421318 = new ParseException(
             lexer.getBuffer() + ":" + exceptionString,
-            lexer.getPtr()));
-        return (ParseException)dsTaint.getTaint();
+            lexer.getPtr());
+        addTaint(exceptionString.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1476421318.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1476421318;
         // ---------- Original Method ----------
         //return new ParseException(
             //lexer.getBuffer() + ":" + exceptionString,
@@ -36,39 +38,43 @@ public abstract class Parser extends ParserCore implements TokenTypes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.446 -0400", hash_original_method = "46F79D05E02F5C322F83A2BCE13C7B55", hash_generated_method = "7AB6A68A46929FBE84F653E70E12D65F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.929 -0400", hash_original_method = "46F79D05E02F5C322F83A2BCE13C7B55", hash_generated_method = "A88B9FD5D19460C749020EA0F821B531")
     protected Lexer getLexer() {
-        return (Lexer)dsTaint.getTaint();
+        Lexer varB4EAC82CA7396A68D541C85D26508E83_1503922713 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1503922713 = (Lexer) this.lexer;
+        varB4EAC82CA7396A68D541C85D26508E83_1503922713.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1503922713;
         // ---------- Original Method ----------
         //return (Lexer) this.lexer;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.446 -0400", hash_original_method = "2745F417C183E90B52AF06D41C98230A", hash_generated_method = "5A36DF6229D0276777FD3676AA4DA0A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.933 -0400", hash_original_method = "2745F417C183E90B52AF06D41C98230A", hash_generated_method = "0F1DF93334EB58AFA11C04322B49D305")
     protected String sipVersion() throws ParseException {
+        String varB4EAC82CA7396A68D541C85D26508E83_1219886132 = null; //Variable for return #1
         dbg_enter("sipVersion");
         try 
         {
             Token tok;
             tok = lexer.match(SIP);
             {
-                boolean var81E5AA51CF3EF1FB1D8623A3AE83C759_1424764290 = (!tok.getTokenValue().equalsIgnoreCase("SIP"));
+                boolean var81E5AA51CF3EF1FB1D8623A3AE83C759_1287813120 = (!tok.getTokenValue().equalsIgnoreCase("SIP"));
                 createParseException("Expecting SIP");
             } //End collapsed parenthetic
             lexer.match('/');
             tok = lexer.match(ID);
             {
-                boolean var1B84A423A0AD24015522BC141F627B59_1254187460 = (!tok.getTokenValue().equals("2.0"));
+                boolean var1B84A423A0AD24015522BC141F627B59_318744632 = (!tok.getTokenValue().equals("2.0"));
                 createParseException("Expecting SIP/2.0");
             } //End collapsed parenthetic
+            varB4EAC82CA7396A68D541C85D26508E83_1219886132 = "SIP/2.0";
         } //End block
         finally 
         {
             dbg_leave("sipVersion");
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1219886132.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1219886132;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("sipVersion");
@@ -88,9 +94,9 @@ public abstract class Parser extends ParserCore implements TokenTypes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.446 -0400", hash_original_method = "DFEA7962E8FE3DE66D00681F9A6D11E3", hash_generated_method = "E187D9D7A899B8F1AB17008AFA55E103")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.935 -0400", hash_original_method = "DFEA7962E8FE3DE66D00681F9A6D11E3", hash_generated_method = "97075203BF83C577B149C048976CE9F6")
     protected String method() throws ParseException {
+        String varB4EAC82CA7396A68D541C85D26508E83_1780104493 = null; //Variable for return #1
         try 
         {
             dbg_enter("method");
@@ -99,7 +105,7 @@ public abstract class Parser extends ParserCore implements TokenTypes {
             Token token;
             token = (Token) tokens[0];
             {
-                boolean varF3DFC17C4FCB76412ED072978359296F_1535735704 = (token.getTokenType() == INVITE
+                boolean varF3DFC17C4FCB76412ED072978359296F_1353148040 = (token.getTokenType() == INVITE
                 || token.getTokenType() == ACK
                 || token.getTokenType() == OPTIONS
                 || token.getTokenType() == BYE
@@ -112,7 +118,7 @@ public abstract class Parser extends ParserCore implements TokenTypes {
                 || token.getTokenType() == ID);
                 {
                     lexer.consume();
-                    String var6425927A19AC0EB604D96983ED3EEAE5_1957160756 = (token.getTokenValue());
+                    varB4EAC82CA7396A68D541C85D26508E83_1780104493 = token.getTokenValue();
                 } //End block
                 {
                     if (DroidSafeAndroidRuntime.control) throw createParseException("Invalid Method");
@@ -123,7 +129,8 @@ public abstract class Parser extends ParserCore implements TokenTypes {
         {
             dbg_leave("method");
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1780104493.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1780104493;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

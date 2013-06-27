@@ -10,26 +10,30 @@ import java.util.Iterator;
 import java.util.Arrays;
 
 public class CRC32 implements Checksum {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.618 -0400", hash_original_field = "55856D1757C7BB6CDB0B9B2914C9C1F8", hash_generated_field = "103DD39C404FCCE4417B434D3EE0291E")
+
     private long crc = 0L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.618 -0400", hash_original_field = "4A88F108824312CB53CAB17C8073359F", hash_generated_field = "2CA876BB74D9B634ED48B07BACA76027")
+
     long tbytes = 0L;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.679 -0400", hash_original_method = "3DAAB1A82287A731049DDEFF7BCD59B5", hash_generated_method = "3DAAB1A82287A731049DDEFF7BCD59B5")
-        public CRC32 ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.618 -0400", hash_original_method = "D55E28551E901525721E2A005775E885", hash_generated_method = "D55E28551E901525721E2A005775E885")
+    public CRC32 ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.679 -0400", hash_original_method = "854FE5E27AD17353F420BE5FB492E27A", hash_generated_method = "26EEEA2D01FB84350BB03A2965A9D248")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.619 -0400", hash_original_method = "854FE5E27AD17353F420BE5FB492E27A", hash_generated_method = "A8208C6B2B85D43F331968370D925836")
     public long getValue() {
-        return dsTaint.getTaintLong();
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_93303474 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_93303474;
         // ---------- Original Method ----------
         //return crc;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.679 -0400", hash_original_method = "3C94069B7580B83ACAD9A7049BA1E3DA", hash_generated_method = "1BE2E86E9BDD5C182F7FDC8F08658625")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.644 -0400", hash_original_method = "3C94069B7580B83ACAD9A7049BA1E3DA", hash_generated_method = "1BE2E86E9BDD5C182F7FDC8F08658625")
     public void reset() {
         tbytes = crc = 0;
         // ---------- Original Method ----------
@@ -37,33 +41,27 @@ public class CRC32 implements Checksum {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.679 -0400", hash_original_method = "CC03AC9F84902D02E7C98FF0D9B3A071", hash_generated_method = "5D9D507D2129D68B89836E683DC40352")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.644 -0400", hash_original_method = "CC03AC9F84902D02E7C98FF0D9B3A071", hash_generated_method = "BE07B44B65E0EE0F027537581BFB3A3F")
     public void update(int val) {
-        dsTaint.addTaint(val);
         crc = updateByteImpl((byte) val, crc);
         // ---------- Original Method ----------
         //crc = updateByteImpl((byte) val, crc);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.680 -0400", hash_original_method = "CE6B29801A6FECCB312673EE525F73B5", hash_generated_method = "677F3A4BECD4382C5249F9361F8143A1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.644 -0400", hash_original_method = "CE6B29801A6FECCB312673EE525F73B5", hash_generated_method = "13C689D50A12C9C127D21D737DB67415")
     public void update(byte[] buf) {
-        dsTaint.addTaint(buf[0]);
         update(buf, 0, buf.length);
+        addTaint(buf[0]);
         // ---------- Original Method ----------
         //update(buf, 0, buf.length);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.680 -0400", hash_original_method = "FA32CF22527C3BE95E419FDEDA807F82", hash_generated_method = "40E1E819CEF88A09D5B5EE70FD8CFF84")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.645 -0400", hash_original_method = "FA32CF22527C3BE95E419FDEDA807F82", hash_generated_method = "546EBE55CF74EE123A00022A57002A43")
     public void update(byte[] buf, int offset, int byteCount) {
-        dsTaint.addTaint(byteCount);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(buf[0]);
         Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
+        tbytes += byteCount;
         crc = updateImpl(buf, offset, byteCount, crc);
         // ---------- Original Method ----------
         //Arrays.checkOffsetAndCount(buf.length, offset, byteCount);
@@ -72,23 +70,17 @@ public class CRC32 implements Checksum {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.680 -0400", hash_original_method = "680551833B0F700FD9FEA4D72A9561BF", hash_generated_method = "7C91D80F9FF2A1B3CC1523059999CDDC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.646 -0400", hash_original_method = "680551833B0F700FD9FEA4D72A9561BF", hash_generated_method = "6D6CEAAAB2AF05245322A8DFF9B532D6")
     private long updateImpl(byte[] buf, int offset, int byteCount, long crc1) {
-        dsTaint.addTaint(crc1);
-        dsTaint.addTaint(byteCount);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(buf[0]);
-        return dsTaint.getTaintLong();
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1843004086 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1843004086;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.680 -0400", hash_original_method = "90348FBF3DF8B04612B506AE017DBA82", hash_generated_method = "84A0739C8B5A70B0340A99F09CD67908")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.646 -0400", hash_original_method = "90348FBF3DF8B04612B506AE017DBA82", hash_generated_method = "45B5CC6077C3B274752DBDC440D84B38")
     private long updateByteImpl(byte val, long crc1) {
-        dsTaint.addTaint(val);
-        dsTaint.addTaint(crc1);
-        return dsTaint.getTaintLong();
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_393248751 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_393248751;
     }
 
     

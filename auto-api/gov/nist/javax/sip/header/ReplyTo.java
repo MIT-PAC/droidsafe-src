@@ -13,60 +13,61 @@ import javax.sip.header.*;
 
 public final class ReplyTo extends AddressParametersHeader implements ReplyToHeader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.119 -0400", hash_original_method = "39A6C3CE738448740A75D288CF2B6517", hash_generated_method = "9351E959CBBABCA53952EE7B443BEEAE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ReplyTo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.313 -0400", hash_original_method = "39A6C3CE738448740A75D288CF2B6517", hash_generated_method = "9351E959CBBABCA53952EE7B443BEEAE")
+    public  ReplyTo() {
         super(NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.121 -0400", hash_original_method = "FAB557ADCBC2DA51C11496316EFDCBFF", hash_generated_method = "859C5F3671F51F62721500871DDBB2D2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ReplyTo(AddressImpl address) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.313 -0400", hash_original_method = "FAB557ADCBC2DA51C11496316EFDCBFF", hash_generated_method = "D9FA9DCA5D12A32B0DD17F9F9AE033D0")
+    public  ReplyTo(AddressImpl address) {
         super(NAME);
-        dsTaint.addTaint(address.dsTaint);
         this.address = address;
+        addTaint(address.getTaint());
         // ---------- Original Method ----------
         //this.address = address;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.121 -0400", hash_original_method = "DA29AB595B7A4A125EF99100FA337502", hash_generated_method = "F9721A2196EDFE04067B54BD707B5C22")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.314 -0400", hash_original_method = "DA29AB595B7A4A125EF99100FA337502", hash_generated_method = "2020EC718C5EC300B0751007C903C9ED")
     public String encode() {
-        String var803E280AC6E161553ACD6EAB6E4869F5_635289253 = (headerName + COLON + SP + encodeBody() + NEWLINE);
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1206039529 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1206039529 = headerName + COLON + SP + encodeBody() + NEWLINE;
+        varB4EAC82CA7396A68D541C85D26508E83_1206039529.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1206039529;
         // ---------- Original Method ----------
         //return headerName + COLON + SP + encodeBody() + NEWLINE;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.122 -0400", hash_original_method = "248CC4EEE70871BA210925CAD15B2704", hash_generated_method = "8327684E545DA8BADBBE479D5A6CF210")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.315 -0400", hash_original_method = "248CC4EEE70871BA210925CAD15B2704", hash_generated_method = "DBD668876F2DF5A2A559F73C4985FF67")
     public String encodeBody() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1224749037 = null; //Variable for return #1
         String retval;
         retval = "";
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_1180879272 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
+            boolean varA8A94084CEDB8AE131E76CDFE26F1997_744040128 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
             {
                 retval += LESS_THAN;
             } //End block
         } //End collapsed parenthetic
         retval += address.encode();
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_927846958 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
+            boolean varA8A94084CEDB8AE131E76CDFE26F1997_1684210197 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
             {
                 retval += GREATER_THAN;
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_2054068577 = (!parameters.isEmpty());
+            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_113990566 = (!parameters.isEmpty());
             {
                 retval += SEMICOLON + parameters.encode();
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1224749037 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_1224749037.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1224749037;
         // ---------- Original Method ----------
         //String retval = "";
         //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
@@ -83,26 +84,30 @@ public final class ReplyTo extends AddressParametersHeader implements ReplyToHea
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.123 -0400", hash_original_method = "44C2A950FA90F046EF96B0A5F25DEA38", hash_generated_method = "9F1806594DA322B943801A0D5B33F3B8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.332 -0400", hash_original_method = "44C2A950FA90F046EF96B0A5F25DEA38", hash_generated_method = "D8A13162E6E038D5CF021B7524E5E502")
     public HostPort getHostPort() {
-        HostPort varEEF9871E33E64F4E24422F40F5C745CE_1399992072 = (address.getHostPort());
-        return (HostPort)dsTaint.getTaint();
+        HostPort varB4EAC82CA7396A68D541C85D26508E83_746980539 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_746980539 = address.getHostPort();
+        varB4EAC82CA7396A68D541C85D26508E83_746980539.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_746980539;
         // ---------- Original Method ----------
         //return address.getHostPort();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.123 -0400", hash_original_method = "0AF5B36A8F5D506032669B65B9CFDD39", hash_generated_method = "77A0B41BD392255215414A4B903CE1AF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.346 -0400", hash_original_method = "0AF5B36A8F5D506032669B65B9CFDD39", hash_generated_method = "F3197F2FA80C144FB151F064C9655902")
     public String getDisplayName() {
-        String var31866FBF526B94C8B9049BB4E32C34D2_1668732356 = (address.getDisplayName());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1272898622 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1272898622 = address.getDisplayName();
+        varB4EAC82CA7396A68D541C85D26508E83_1272898622.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1272898622;
         // ---------- Original Method ----------
         //return address.getDisplayName();
     }
 
     
-    private static final long serialVersionUID = -9103698729465531373L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.346 -0400", hash_original_field = "90C22B20F9F107B1942A4AAE75CB93E1", hash_generated_field = "96E66966C0D7BA1F67EF89E8A7742AF8")
+
+    private static long serialVersionUID = -9103698729465531373L;
 }
 

@@ -23,30 +23,45 @@ import java.lang.reflect.Constructor;
 import java.util.HashMap;
 
 public abstract class LayoutInflater {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.799 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "70EF0A62E0C07C973FB61A1B1A6F999D")
+
     private boolean DEBUG = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.809 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
+
     protected Context mContext;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.809 -0400", hash_original_field = "92E068AC1DA6911449EC771C547D2553", hash_generated_field = "AED919A3A7191A7906DCEFFE6A0831DA")
+
     private boolean mFactorySet;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.809 -0400", hash_original_field = "06389DE86ED19AB1571A41645A1AFADC", hash_generated_field = "BF67D382843E913B81807CA170E68BEC")
+
     private Factory mFactory;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.809 -0400", hash_original_field = "E5CABF68FB335FA237AE4D7C7F579B2E", hash_generated_field = "DDA453B5760FDE700FAD36F64FD01268")
+
     private Factory2 mFactory2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.809 -0400", hash_original_field = "69B57BE67F61B50D5B598BC00B0D995C", hash_generated_field = "91C09704D064CA0F12ECD6E6EFEC80CF")
+
     private Factory2 mPrivateFactory;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.809 -0400", hash_original_field = "C781ED17A87FBE09F8079C6EC63D1F26", hash_generated_field = "A13F7A33CB1B9B8C8BC52C7A25894515")
+
     private Filter mFilter;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.809 -0400", hash_original_field = "A4A4795AC0E32E86ABF7474DEAC57538", hash_generated_field = "D62709ECD69C2FFB452C5E25B014B17D")
+
     Object[] mConstructorArgs = new Object[2];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.809 -0400", hash_original_field = "B716D3BF18675199220673D5170091C2", hash_generated_field = "208DFBA685342B06C1A3F18B71A9291E")
+
     private HashMap<String, Boolean> mFilterMap;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.068 -0400", hash_original_method = "E7207BFA97B4D4DD74A98816C77C472E", hash_generated_method = "921C22CB64992F8B67F5C8096C15EC5D")
-    @DSModeled(DSC.SAFE)
-    protected LayoutInflater(Context context) {
-        dsTaint.addTaint(context.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.810 -0400", hash_original_method = "E7207BFA97B4D4DD74A98816C77C472E", hash_generated_method = "E7012C3F049DB497107558CB08563437")
+    protected  LayoutInflater(Context context) {
+        mContext = context;
         // ---------- Original Method ----------
         //mContext = context;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.068 -0400", hash_original_method = "5CC0837D3FE56B24A71C58B4CCAA4F88", hash_generated_method = "7953F71118A4F91EF9360CB0683B059C")
-    @DSModeled(DSC.SAFE)
-    protected LayoutInflater(LayoutInflater original, Context newContext) {
-        dsTaint.addTaint(newContext.dsTaint);
-        dsTaint.addTaint(original.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.811 -0400", hash_original_method = "5CC0837D3FE56B24A71C58B4CCAA4F88", hash_generated_method = "73B9412CB86D13A699FB0B44C161827A")
+    protected  LayoutInflater(LayoutInflater original, Context newContext) {
+        mContext = newContext;
         mFactory = original.mFactory;
         mFactory2 = original.mFactory2;
         mPrivateFactory = original.mPrivateFactory;
@@ -73,37 +88,41 @@ public abstract class LayoutInflater {
     public abstract LayoutInflater cloneInContext(Context newContext);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.068 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "DFA42A6C39C27C217BA4B1F8A6817BD5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.813 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "5C21F1648CC340EC4F823A13598278EB")
     public Context getContext() {
-        return (Context)dsTaint.getTaint();
+        Context varB4EAC82CA7396A68D541C85D26508E83_1005939242 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1005939242 = mContext;
+        varB4EAC82CA7396A68D541C85D26508E83_1005939242.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1005939242;
         // ---------- Original Method ----------
         //return mContext;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.068 -0400", hash_original_method = "7FDD2E2114CEC4DBC75B459E7197DB00", hash_generated_method = "43110B80E187A217A198D972562771F7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.820 -0400", hash_original_method = "7FDD2E2114CEC4DBC75B459E7197DB00", hash_generated_method = "CBBF820863EC5DF85ECC414BCC066B24")
     public final Factory getFactory() {
-        return (Factory)dsTaint.getTaint();
+        Factory varB4EAC82CA7396A68D541C85D26508E83_1407563472 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1407563472 = mFactory;
+        varB4EAC82CA7396A68D541C85D26508E83_1407563472.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1407563472;
         // ---------- Original Method ----------
         //return mFactory;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.068 -0400", hash_original_method = "1401AE51BF0559687CED2D99A883164D", hash_generated_method = "CDD4868CB22B9CD575DEAE90F1ADB83E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.833 -0400", hash_original_method = "1401AE51BF0559687CED2D99A883164D", hash_generated_method = "959E0DE15053C49C71284B3132EE0F50")
     public final Factory2 getFactory2() {
-        return (Factory2)dsTaint.getTaint();
+        Factory2 varB4EAC82CA7396A68D541C85D26508E83_715406185 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_715406185 = mFactory2;
+        varB4EAC82CA7396A68D541C85D26508E83_715406185.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_715406185;
         // ---------- Original Method ----------
         //return mFactory2;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.069 -0400", hash_original_method = "711BCDCCD1A0460B88DDB4B05554E6F0", hash_generated_method = "85A181E68CD62E2F4386871F73194378")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.834 -0400", hash_original_method = "711BCDCCD1A0460B88DDB4B05554E6F0", hash_generated_method = "DCC21CFF8BB627F6C7696EA7E5CF5BDB")
     public void setFactory(Factory factory) {
-        dsTaint.addTaint(factory.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("A factory has already been set on this LayoutInflater");
         } //End block
@@ -111,6 +130,9 @@ public abstract class LayoutInflater {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Given factory can not be null");
         } //End block
         mFactorySet = true;
+        {
+            mFactory = factory;
+        } //End block
         {
             mFactory = new FactoryMerger(factory, null, mFactory, mFactory2);
         } //End block
@@ -130,10 +152,8 @@ public abstract class LayoutInflater {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.069 -0400", hash_original_method = "206E93CE21BFEFA64CD336FC01E3DC86", hash_generated_method = "A042DBF896D6F28264B5F74C087696AD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.834 -0400", hash_original_method = "206E93CE21BFEFA64CD336FC01E3DC86", hash_generated_method = "B1C2F5D12C287F0E352EE24FA323E436")
     public void setFactory2(Factory2 factory) {
-        dsTaint.addTaint(factory.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("A factory has already been set on this LayoutInflater");
         } //End block
@@ -163,28 +183,28 @@ public abstract class LayoutInflater {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.069 -0400", hash_original_method = "140FDA0509CDD22FFA77677DC0A919DF", hash_generated_method = "2EC1F5634B528B46EACA4FE7DB9E8516")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.835 -0400", hash_original_method = "140FDA0509CDD22FFA77677DC0A919DF", hash_generated_method = "7B48C17DCCFC347FF964BDAD9D35BB77")
     public void setPrivateFactory(Factory2 factory) {
-        dsTaint.addTaint(factory.dsTaint);
+        mPrivateFactory = factory;
         // ---------- Original Method ----------
         //mPrivateFactory = factory;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.069 -0400", hash_original_method = "A182F1708C145D57F0135D6BE7F61F0B", hash_generated_method = "D1E79F7121286E828DE269A5F3FE8A29")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.835 -0400", hash_original_method = "A182F1708C145D57F0135D6BE7F61F0B", hash_generated_method = "BCDF60BE05B4CB859134041E84CE0AB5")
     public Filter getFilter() {
-        return (Filter)dsTaint.getTaint();
+        Filter varB4EAC82CA7396A68D541C85D26508E83_1264711887 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1264711887 = mFilter;
+        varB4EAC82CA7396A68D541C85D26508E83_1264711887.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1264711887;
         // ---------- Original Method ----------
         //return mFilter;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.070 -0400", hash_original_method = "E7980136733C7B2EC13AC2733EC56104", hash_generated_method = "D09E3D01C2ECFC45DC67531BE704424C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.836 -0400", hash_original_method = "E7980136733C7B2EC13AC2733EC56104", hash_generated_method = "CC6E8B33A6496ED5B6BA3EE1509DBFD6")
     public void setFilter(Filter filter) {
-        dsTaint.addTaint(filter.dsTaint);
+        mFilter = filter;
         {
             mFilterMap = new HashMap<String, Boolean>();
         } //End block
@@ -196,48 +216,51 @@ public abstract class LayoutInflater {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.070 -0400", hash_original_method = "33D0E6277D03283945C33D82FE1E07F8", hash_generated_method = "1FA265EA9DBDA33A695F6F5EFB73EB05")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.836 -0400", hash_original_method = "33D0E6277D03283945C33D82FE1E07F8", hash_generated_method = "59C64951D2C19C0BA21E5C35D2D85F8F")
     public View inflate(int resource, ViewGroup root) {
-        dsTaint.addTaint(root.dsTaint);
-        dsTaint.addTaint(resource);
-        View var031DD9EF175B5FBA685075E8A859A337_41089674 = (inflate(resource, root, root != null));
-        return (View)dsTaint.getTaint();
+        View varB4EAC82CA7396A68D541C85D26508E83_632895339 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_632895339 = inflate(resource, root, root != null);
+        addTaint(resource);
+        addTaint(root.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_632895339.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_632895339;
         // ---------- Original Method ----------
         //return inflate(resource, root, root != null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.070 -0400", hash_original_method = "2C6130928BF5FC4257D730B98F9E332E", hash_generated_method = "ED58CB9CC5230A0780999D036731368C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.837 -0400", hash_original_method = "2C6130928BF5FC4257D730B98F9E332E", hash_generated_method = "FBE8B312A455FCFFD083F893C61908A3")
     public View inflate(XmlPullParser parser, ViewGroup root) {
-        dsTaint.addTaint(root.dsTaint);
-        dsTaint.addTaint(parser.dsTaint);
-        View var96E73414297E9D05887A7B86A6E5B7D6_871282129 = (inflate(parser, root, root != null));
-        return (View)dsTaint.getTaint();
+        View varB4EAC82CA7396A68D541C85D26508E83_1191899961 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1191899961 = inflate(parser, root, root != null);
+        addTaint(parser.getTaint());
+        addTaint(root.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1191899961.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1191899961;
         // ---------- Original Method ----------
         //return inflate(parser, root, root != null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.070 -0400", hash_original_method = "73105F6C94DACD9E83BB5CE96738BE14", hash_generated_method = "782AC9785F20C189818E1FFE63DC2317")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.858 -0400", hash_original_method = "73105F6C94DACD9E83BB5CE96738BE14", hash_generated_method = "051DDC85BF9878F261B32DD829496119")
     public View inflate(int resource, ViewGroup root, boolean attachToRoot) {
-        dsTaint.addTaint(attachToRoot);
-        dsTaint.addTaint(root.dsTaint);
-        dsTaint.addTaint(resource);
+        View varB4EAC82CA7396A68D541C85D26508E83_903217802 = null; //Variable for return #1
         System.out.println("INFLATING from resource: " + resource);
         XmlResourceParser parser;
         parser = getContext().getResources().getLayout(resource);
         try 
         {
-            View varD69941774B3894F6A25C989046D90FE4_350997886 = (inflate(parser, root, attachToRoot));
+            varB4EAC82CA7396A68D541C85D26508E83_903217802 = inflate(parser, root, attachToRoot);
         } //End block
         finally 
         {
             parser.close();
         } //End block
-        return (View)dsTaint.getTaint();
+        addTaint(resource);
+        addTaint(root.getTaint());
+        addTaint(attachToRoot);
+        varB4EAC82CA7396A68D541C85D26508E83_903217802.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_903217802;
         // ---------- Original Method ----------
         //if (DEBUG) System.out.println("INFLATING from resource: " + resource);
         //XmlResourceParser parser = getContext().getResources().getLayout(resource);
@@ -249,12 +272,9 @@ public abstract class LayoutInflater {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.071 -0400", hash_original_method = "9DFC9AE5F080C22C20FBC66EE3D8715B", hash_generated_method = "C58A7B6C569C435DAF58368300D6ACF2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.860 -0400", hash_original_method = "9DFC9AE5F080C22C20FBC66EE3D8715B", hash_generated_method = "C0C60548192059EB34BA76D577371840")
     public View inflate(XmlPullParser parser, ViewGroup root, boolean attachToRoot) {
-        dsTaint.addTaint(attachToRoot);
-        dsTaint.addTaint(root.dsTaint);
-        dsTaint.addTaint(parser.dsTaint);
+        View varB4EAC82CA7396A68D541C85D26508E83_1367723631 = null; //Variable for return #1
         {
             AttributeSet attrs;
             attrs = Xml.asAttributeSet(parser);
@@ -267,7 +287,7 @@ public abstract class LayoutInflater {
             {
                 int type;
                 {
-                    boolean varE58D9BEEA9A8E881BB4855D510C76E16_1474060161 = ((type = parser.next()) != XmlPullParser.START_TAG &&
+                    boolean varE58D9BEEA9A8E881BB4855D510C76E16_1608371234 = ((type = parser.next()) != XmlPullParser.START_TAG &&
                         type != XmlPullParser.END_DOCUMENT);
                 } //End collapsed parenthetic
                 {
@@ -283,7 +303,7 @@ public abstract class LayoutInflater {
                     System.out.println("**************************");
                 } //End block
                 {
-                    boolean varFDE52F8163E69EE326159C2642CAEC68_619156040 = (TAG_MERGE.equals(name));
+                    boolean varFDE52F8163E69EE326159C2642CAEC68_1888576397 = (TAG_MERGE.equals(name));
                     {
                         {
                             if (DroidSafeAndroidRuntime.control) throw new InflateException("<merge /> can be used only with a valid "
@@ -294,7 +314,7 @@ public abstract class LayoutInflater {
                     {
                         View temp;
                         {
-                            boolean varCE5DAB92F3FE827A985DB892C11A30CF_777195582 = (TAG_1995.equals(name));
+                            boolean varCE5DAB92F3FE827A985DB892C11A30CF_60874661 = (TAG_1995.equals(name));
                             {
                                 temp = new BlinkLayout(mContext, attrs);
                             } //End block
@@ -351,19 +371,21 @@ public abstract class LayoutInflater {
                 mConstructorArgs[0] = lastContext;
                 mConstructorArgs[1] = null;
             } //End block
+            varB4EAC82CA7396A68D541C85D26508E83_1367723631 = result;
         } //End block
-        return (View)dsTaint.getTaint();
+        addTaint(parser.getTaint());
+        addTaint(root.getTaint());
+        addTaint(attachToRoot);
+        varB4EAC82CA7396A68D541C85D26508E83_1367723631.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1367723631;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.072 -0400", hash_original_method = "9249249C6DEB7757C8882D406CD78B4B", hash_generated_method = "D630EED03AA533432E0354DF9D6A6A46")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.883 -0400", hash_original_method = "9249249C6DEB7757C8882D406CD78B4B", hash_generated_method = "3218918F3C996EA231319A31C8A84736")
     public final View createView(String name, String prefix, AttributeSet attrs) throws ClassNotFoundException, InflateException {
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(prefix);
-        dsTaint.addTaint(name);
+        View varB4EAC82CA7396A68D541C85D26508E83_1949406486 = null; //Variable for return #1
         Constructor<? extends View> constructor;
         constructor = sConstructorMap.get(name);
         Class<? extends View> clazz;
@@ -398,7 +420,7 @@ public abstract class LayoutInflater {
                         } //End block
                     } //End block
                     {
-                        boolean var5283AA69DC1B5B630A4798CB7C4AEC9B_18831877 = (allowedState.equals(Boolean.FALSE));
+                        boolean var5283AA69DC1B5B630A4798CB7C4AEC9B_737678826 = (allowedState.equals(Boolean.FALSE));
                         {
                             failNotAllowed(name, prefix, attrs);
                         } //End block
@@ -408,7 +430,7 @@ public abstract class LayoutInflater {
             Object[] args;
             args = mConstructorArgs;
             args[1] = attrs;
-            View var3AADAD795C0FFD215CCBF77CF2F3781E_1250422550 = (constructor.newInstance(args));
+            varB4EAC82CA7396A68D541C85D26508E83_1949406486 = constructor.newInstance(args);
         } //End block
         catch (NoSuchMethodException e)
         {
@@ -441,21 +463,24 @@ public abstract class LayoutInflater {
             ie.initCause(e);
             if (DroidSafeAndroidRuntime.control) throw ie;
         } //End block
-        return (View)dsTaint.getTaint();
+        addTaint(name.getTaint());
+        addTaint(prefix.getTaint());
+        addTaint(attrs.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1949406486.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1949406486;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.072 -0400", hash_original_method = "0971FA0124FB7B31B88F61FC842AABEB", hash_generated_method = "12DA78EA842D929B2553EF63B4EB6B18")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.883 -0400", hash_original_method = "0971FA0124FB7B31B88F61FC842AABEB", hash_generated_method = "828B17EED119371332A086461FFFFA26")
     private void failNotAllowed(String name, String prefix, AttributeSet attrs) {
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(prefix);
-        dsTaint.addTaint(name);
         if (DroidSafeAndroidRuntime.control) throw new InflateException(attrs.getPositionDescription()
                 + ": Class not allowed to be inflated "
                 + (prefix != null ? (prefix + name) : name));
+        addTaint(name.getTaint());
+        addTaint(prefix.getTaint());
+        addTaint(attrs.getTaint());
         // ---------- Original Method ----------
         //throw new InflateException(attrs.getPositionDescription()
                 //+ ": Class not allowed to be inflated "
@@ -463,41 +488,40 @@ public abstract class LayoutInflater {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.072 -0400", hash_original_method = "9A9783E7AF685525083052EAFC6937D8", hash_generated_method = "C3EE3832AF52D3EC68A45B4BC30A67B3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.884 -0400", hash_original_method = "9A9783E7AF685525083052EAFC6937D8", hash_generated_method = "5C01D43E6552F20544D77AAA207F2926")
     protected View onCreateView(String name, AttributeSet attrs) throws ClassNotFoundException {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(name);
-        View varFF76487078F55A1F4C278C8F9F8A045A_735218931 = (createView(name, "android.view.", attrs));
-        return (View)dsTaint.getTaint();
+        View varB4EAC82CA7396A68D541C85D26508E83_621582321 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_621582321 = createView(name, "android.view.", attrs);
+        addTaint(name.getTaint());
+        addTaint(attrs.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_621582321.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_621582321;
         // ---------- Original Method ----------
         //return createView(name, "android.view.", attrs);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.073 -0400", hash_original_method = "EEF2BD4B979EFD4F0FBDCDB52C08D7B2", hash_generated_method = "F8002FD32BE38B9D2EA37C89530C6807")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.885 -0400", hash_original_method = "EEF2BD4B979EFD4F0FBDCDB52C08D7B2", hash_generated_method = "E7D4D333BE6F861F5E6EDC008769BB95")
     protected View onCreateView(View parent, String name, AttributeSet attrs) throws ClassNotFoundException {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(parent.dsTaint);
-        View var97045F7CDF43D8E6590A9852A43DC73F_1419271290 = (onCreateView(name, attrs));
-        return (View)dsTaint.getTaint();
+        View varB4EAC82CA7396A68D541C85D26508E83_774734114 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_774734114 = onCreateView(name, attrs);
+        addTaint(parent.getTaint());
+        addTaint(name.getTaint());
+        addTaint(attrs.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_774734114.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_774734114;
         // ---------- Original Method ----------
         //return onCreateView(name, attrs);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.073 -0400", hash_original_method = "42E00CE52BE01D0BF7040FF60139A865", hash_generated_method = "D319995CAEEE7687E2B29EDCD2D56DDA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.902 -0400", hash_original_method = "42E00CE52BE01D0BF7040FF60139A865", hash_generated_method = "A9EF45002F7C4992F9A186170B0F6671")
      View createViewFromTag(View parent, String name, AttributeSet attrs) {
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(parent.dsTaint);
+        View varB4EAC82CA7396A68D541C85D26508E83_591292276 = null; //Variable for return #1
         {
-            boolean var8FFDB426A97735EAEA80E33D0B5E59B2_279841764 = (name.equals("view"));
+            boolean var8FFDB426A97735EAEA80E33D0B5E59B2_756333581 = (name.equals("view"));
             {
                 name = attrs.getAttributeValue(null, "class");
             } //End block
@@ -514,7 +538,7 @@ public abstract class LayoutInflater {
             } //End block
             {
                 {
-                    boolean var8670E3C6635B63F51E108DA3DA62F822_572206039 = (-1 == name.indexOf('.'));
+                    boolean var8670E3C6635B63F51E108DA3DA62F822_844013945 = (-1 == name.indexOf('.'));
                     {
                         view = onCreateView(parent, name, attrs);
                     } //End block
@@ -524,6 +548,7 @@ public abstract class LayoutInflater {
                 } //End collapsed parenthetic
             } //End block
             System.out.println("Created view is: " + view);
+            varB4EAC82CA7396A68D541C85D26508E83_591292276 = view;
         } //End block
         catch (InflateException e)
         {
@@ -545,39 +570,38 @@ public abstract class LayoutInflater {
             ie.initCause(e);
             if (DroidSafeAndroidRuntime.control) throw ie;
         } //End block
-        return (View)dsTaint.getTaint();
+        addTaint(parent.getTaint());
+        addTaint(name.getTaint());
+        addTaint(attrs.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_591292276.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_591292276;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.074 -0400", hash_original_method = "3A61628D6ED69C72EF61CAE501BAE992", hash_generated_method = "574456F6E8F4738E01F61B39CF3502AF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.907 -0400", hash_original_method = "3A61628D6ED69C72EF61CAE501BAE992", hash_generated_method = "07EBAE3EDE2EF5554765FF3C03EB75D8")
      void rInflate(XmlPullParser parser, View parent, final AttributeSet attrs,
             boolean finishInflate) throws XmlPullParserException, IOException {
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(parent.dsTaint);
-        dsTaint.addTaint(finishInflate);
-        dsTaint.addTaint(parser.dsTaint);
         int depth;
         depth = parser.getDepth();
         int type;
         {
-            boolean var823E94E9B6300A88398882F66A824AFC_646646473 = (((type = parser.next()) != XmlPullParser.END_TAG ||
+            boolean var823E94E9B6300A88398882F66A824AFC_118257702 = (((type = parser.next()) != XmlPullParser.END_TAG ||
                 parser.getDepth() > depth) && type != XmlPullParser.END_DOCUMENT);
             {
                 String name;
                 name = parser.getName();
                 {
-                    boolean var9E864073812E74645886E00F3C1FA42E_1103552522 = (TAG_REQUEST_FOCUS.equals(name));
+                    boolean var9E864073812E74645886E00F3C1FA42E_1023018973 = (TAG_REQUEST_FOCUS.equals(name));
                     {
                         parseRequestFocus(parser, parent);
                     } //End block
                     {
-                        boolean var3A72FDB7DEFA1B4376ED852227EE7220_1163441711 = (TAG_INCLUDE.equals(name));
+                        boolean var3A72FDB7DEFA1B4376ED852227EE7220_1351184350 = (TAG_INCLUDE.equals(name));
                         {
                             {
-                                boolean varF9E7792F5EE78FD8E2EF7727515E4EC9_703573781 = (parser.getDepth() == 0);
+                                boolean varF9E7792F5EE78FD8E2EF7727515E4EC9_789906393 = (parser.getDepth() == 0);
                                 {
                                     if (DroidSafeAndroidRuntime.control) throw new InflateException("<include /> cannot be the root element");
                                 } //End block
@@ -585,12 +609,12 @@ public abstract class LayoutInflater {
                             parseInclude(parser, parent, attrs);
                         } //End block
                         {
-                            boolean var6E0AFF7B2B3D2BD63E19797766EAC38B_1735480665 = (TAG_MERGE.equals(name));
+                            boolean var6E0AFF7B2B3D2BD63E19797766EAC38B_900423887 = (TAG_MERGE.equals(name));
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new InflateException("<merge /> must be the root element");
                             } //End block
                             {
-                                boolean varA10A7F5947ED2B40D379831A43F34249_1741005996 = (TAG_1995.equals(name));
+                                boolean varA10A7F5947ED2B40D379831A43F34249_1964506984 = (TAG_1995.equals(name));
                                 {
                                     View view;
                                     view = new BlinkLayout(mContext, attrs);
@@ -618,24 +642,27 @@ public abstract class LayoutInflater {
             } //End block
         } //End collapsed parenthetic
         parent.onFinishInflate();
+        addTaint(parser.getTaint());
+        addTaint(parent.getTaint());
+        addTaint(attrs.getTaint());
+        addTaint(finishInflate);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.074 -0400", hash_original_method = "D305B9D132FFD898328C34D4AEEA8981", hash_generated_method = "DF03897ECC53A004A3C6A32E1B5DED92")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.908 -0400", hash_original_method = "D305B9D132FFD898328C34D4AEEA8981", hash_generated_method = "3622CEFF53AAC1EE1B863B58BD56EFFD")
     private void parseRequestFocus(XmlPullParser parser, View parent) throws XmlPullParserException, IOException {
-        dsTaint.addTaint(parent.dsTaint);
-        dsTaint.addTaint(parser.dsTaint);
         int type;
         parent.requestFocus();
         int currentDepth;
         currentDepth = parser.getDepth();
         {
-            boolean var0A9D2815252DF1D1527DC7B6C5EBCE25_210486556 = (((type = parser.next()) != XmlPullParser.END_TAG ||
+            boolean var0A9D2815252DF1D1527DC7B6C5EBCE25_1495144747 = (((type = parser.next()) != XmlPullParser.END_TAG ||
                 parser.getDepth() > currentDepth) && type != XmlPullParser.END_DOCUMENT);
         } //End collapsed parenthetic
+        addTaint(parser.getTaint());
+        addTaint(parent.getTaint());
         // ---------- Original Method ----------
         //int type;
         //parent.requestFocus();
@@ -646,12 +673,8 @@ public abstract class LayoutInflater {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.075 -0400", hash_original_method = "3903965D4D2522F244AF5345C6CDB188", hash_generated_method = "63C20CB4D65AD518F92016FE3631B07D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.930 -0400", hash_original_method = "3903965D4D2522F244AF5345C6CDB188", hash_generated_method = "14794532C2D78CA2AE018A0BA63E928E")
     private void parseInclude(XmlPullParser parser, View parent, AttributeSet attrs) throws XmlPullParserException, IOException {
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(parent.dsTaint);
-        dsTaint.addTaint(parser.dsTaint);
         int type;
         {
             int layout;
@@ -676,7 +699,7 @@ public abstract class LayoutInflater {
                     AttributeSet childAttrs;
                     childAttrs = Xml.asAttributeSet(childParser);
                     {
-                        boolean var85BD6F6EF64876B51C9884A0DAC7FEDE_667714299 = ((type = childParser.next()) != XmlPullParser.START_TAG &&
+                        boolean var85BD6F6EF64876B51C9884A0DAC7FEDE_293502343 = ((type = childParser.next()) != XmlPullParser.START_TAG &&
                             type != XmlPullParser.END_DOCUMENT);
                     } //End collapsed parenthetic
                     {
@@ -686,7 +709,7 @@ public abstract class LayoutInflater {
                     String childName;
                     childName = childParser.getName();
                     {
-                        boolean var5E823F928FF3B68CA0565BBB723D4C0E_823505254 = (TAG_MERGE.equals(childName));
+                        boolean var5E823F928FF3B68CA0565BBB723D4C0E_799440316 = (TAG_MERGE.equals(childName));
                         {
                             rInflate(childParser, parent, childAttrs, false);
                         } //End block
@@ -748,25 +771,37 @@ public abstract class LayoutInflater {
         int currentDepth;
         currentDepth = parser.getDepth();
         {
-            boolean var0A9D2815252DF1D1527DC7B6C5EBCE25_1829485181 = (((type = parser.next()) != XmlPullParser.END_TAG ||
+            boolean var0A9D2815252DF1D1527DC7B6C5EBCE25_1090082178 = (((type = parser.next()) != XmlPullParser.END_TAG ||
                 parser.getDepth() > currentDepth) && type != XmlPullParser.END_DOCUMENT);
         } //End collapsed parenthetic
+        addTaint(parser.getTaint());
+        addTaint(parent.getTaint());
+        addTaint(attrs.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
     private static class FactoryMerger implements Factory2 {
-        private Factory mF1, mF2;
-        private Factory2 mF12, mF22;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.931 -0400", hash_original_field = "B388ED792FF72DF72B1BCDB08C954A34", hash_generated_field = "5597E72774649F58EAFC93193B0F56F5")
+
+        private Factory mF1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.931 -0400", hash_original_field = "D2F7236B8084EBD38FEB109B60093F59", hash_generated_field = "980C2131F1904820A671FBE786E0A976")
+
+        private Factory mF2;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.931 -0400", hash_original_field = "EFB292FB0A8C321793AF25ADBD699004", hash_generated_field = "F581D9BC63EDDF42FCA0DB75903DA713")
+
+        private Factory2 mF12;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.931 -0400", hash_original_field = "F95B8BEDDD7E63CA0369D2E0B75E60F0", hash_generated_field = "279141595E6D3718BC3E6B02DB3437E1")
+
+        private Factory2 mF22;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.075 -0400", hash_original_method = "E5AD3FF1F375743BB365B35578675E98", hash_generated_method = "67D4A49541C85606EAA40C531C4153D4")
-        @DSModeled(DSC.SAFE)
-         FactoryMerger(Factory f1, Factory2 f12, Factory f2, Factory2 f22) {
-            dsTaint.addTaint(f12.dsTaint);
-            dsTaint.addTaint(f22.dsTaint);
-            dsTaint.addTaint(f1.dsTaint);
-            dsTaint.addTaint(f2.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.936 -0400", hash_original_method = "E5AD3FF1F375743BB365B35578675E98", hash_generated_method = "2C2C626FEF544A6A4B4A2A329D6C4155")
+          FactoryMerger(Factory f1, Factory2 f12, Factory f2, Factory2 f22) {
+            mF1 = f1;
+            mF2 = f2;
+            mF12 = f12;
+            mF22 = f22;
             // ---------- Original Method ----------
             //mF1 = f1;
             //mF2 = f2;
@@ -775,17 +810,29 @@ public abstract class LayoutInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.076 -0400", hash_original_method = "912C6EE593A6921C8E87D5E0641D7CDD", hash_generated_method = "D3F44CF6D2B3E293483C151D94ED8275")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.937 -0400", hash_original_method = "912C6EE593A6921C8E87D5E0641D7CDD", hash_generated_method = "9C77A2CEE2DB4808C9F63D4EBA997666")
         public View onCreateView(String name, Context context, AttributeSet attrs) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(attrs.dsTaint);
-            dsTaint.addTaint(name);
-            dsTaint.addTaint(context.dsTaint);
+            View varB4EAC82CA7396A68D541C85D26508E83_1753468927 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_19936908 = null; //Variable for return #2
             View v;
             v = mF1.onCreateView(name, context, attrs);
-            View var5959722AC6DFFDED21A9E586BB57038F_1324079454 = (mF2.onCreateView(name, context, attrs));
-            return (View)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1753468927 = v;
+            varB4EAC82CA7396A68D541C85D26508E83_19936908 = mF2.onCreateView(name, context, attrs);
+            addTaint(name.getTaint());
+            addTaint(context.getTaint());
+            addTaint(attrs.getTaint());
+            View varA7E53CE21691AB073D9660D615818899_973476299; //Final return value
+            switch (DroidSafeAndroidRuntime.switchControl) {
+                case 1: //Assign result for return ordinal #1
+                    varA7E53CE21691AB073D9660D615818899_973476299 = varB4EAC82CA7396A68D541C85D26508E83_1753468927;
+                    break;
+                default:
+                    varA7E53CE21691AB073D9660D615818899_973476299 = varB4EAC82CA7396A68D541C85D26508E83_19936908;
+                    break;
+            }
+            varA7E53CE21691AB073D9660D615818899_973476299.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_973476299;
             // ---------- Original Method ----------
             //View v = mF1.onCreateView(name, context, attrs);
             //if (v != null) return v;
@@ -793,22 +840,32 @@ public abstract class LayoutInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.076 -0400", hash_original_method = "F1957EAE5145EA0F0129265F270794D6", hash_generated_method = "A43CE1BC68E0E5A04D7213AABDACEAF1")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.938 -0400", hash_original_method = "F1957EAE5145EA0F0129265F270794D6", hash_generated_method = "83E056D4021B89430564EDFC3C951BFF")
         public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(attrs.dsTaint);
-            dsTaint.addTaint(name);
-            dsTaint.addTaint(context.dsTaint);
-            dsTaint.addTaint(parent.dsTaint);
+            View varB4EAC82CA7396A68D541C85D26508E83_342632315 = null; //Variable for return #1
+            View varB4EAC82CA7396A68D541C85D26508E83_1885127094 = null; //Variable for return #2
             View v;
             v = mF12.onCreateView(parent, name, context, attrs);
             v = mF1.onCreateView(name, context, attrs);
-            {
-                Object varA83A43314A20D846C5B68D12F0F078EF_1282465821 = (mF22.onCreateView(parent, name, context, attrs));
-                Object varD22BC25580B45E8C0E4F1FA3D5D3D749_1598157180 = (mF2.onCreateView(name, context, attrs));
-            } //End flattened ternary
-            return (View)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_342632315 = v;
+            varB4EAC82CA7396A68D541C85D26508E83_1885127094 = mF22 != null ? mF22.onCreateView(parent, name, context, attrs)
+                    : mF2.onCreateView(name, context, attrs);
+            addTaint(parent.getTaint());
+            addTaint(name.getTaint());
+            addTaint(context.getTaint());
+            addTaint(attrs.getTaint());
+            View varA7E53CE21691AB073D9660D615818899_863090167; //Final return value
+            switch (DroidSafeAndroidRuntime.switchControl) {
+                case 1: //Assign result for return ordinal #1
+                    varA7E53CE21691AB073D9660D615818899_863090167 = varB4EAC82CA7396A68D541C85D26508E83_342632315;
+                    break;
+                default:
+                    varA7E53CE21691AB073D9660D615818899_863090167 = varB4EAC82CA7396A68D541C85D26508E83_1885127094;
+                    break;
+            }
+            varA7E53CE21691AB073D9660D615818899_863090167.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_863090167;
             // ---------- Original Method ----------
             //View v = mF12 != null ? mF12.onCreateView(parent, name, context, attrs)
                     //: mF1.onCreateView(name, context, attrs);
@@ -823,22 +880,23 @@ public abstract class LayoutInflater {
 
     
     private static class BlinkLayout extends FrameLayout {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.939 -0400", hash_original_field = "57ABA66DF5CCF392086380D760C5BF59", hash_generated_field = "9F94E2291878F4B79ED3B6B67A1ED0C7")
+
         private boolean mBlink;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.939 -0400", hash_original_field = "84A61AEDD18A7D6ECA3FB13967806C7E", hash_generated_field = "57E34B9F322B663DA6033C74FD1E64C4")
+
         private boolean mBlinkState;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.939 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
+
         private Handler mHandler;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.077 -0400", hash_original_method = "3DD68C66D41BE889B84232F33376A99A", hash_generated_method = "B9BFD7FE60D37C1ADB1E9250E4BEFB5E")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public BlinkLayout(Context context, AttributeSet attrs) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.960 -0400", hash_original_method = "3DD68C66D41BE889B84232F33376A99A", hash_generated_method = "9936D8F55695E3EE590C3CD739EC5BCD")
+        public  BlinkLayout(Context context, AttributeSet attrs) {
             super(context, attrs);
-            dsTaint.addTaint(attrs.dsTaint);
-            dsTaint.addTaint(context.dsTaint);
             mHandler = new Handler(new Handler.Callback() {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.077 -0400", hash_original_method = "3CDE63BB1E6E2FE4ACBB53B93DE4CB6C", hash_generated_method = "2BFB0C0715870DDA28D1DA8342B3EE7E")
-                //DSFIXME:  CODE0002: Requires DSC value to be set
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.960 -0400", hash_original_method = "3CDE63BB1E6E2FE4ACBB53B93DE4CB6C", hash_generated_method = "6EE181335C0DE025ADF8479316033054")
                 @Override
                 public boolean handleMessage(Message msg) {
-                    dsTaint.addTaint(msg.dsTaint);
                     {
                         {
                             mBlinkState = !mBlinkState;
@@ -846,7 +904,9 @@ public abstract class LayoutInflater {
                         } //End block
                         invalidate();
                     } //End block
-                    return dsTaint.getTaintBoolean();
+                    addTaint(msg.getTaint());
+                    boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_511999216 = getTaintBoolean();
+                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_511999216;
                     // ---------- Original Method ----------
                     //if (msg.what == MESSAGE_BLINK) {
                         //if (mBlink) {
@@ -859,6 +919,8 @@ public abstract class LayoutInflater {
                     //return false;
                 }
 });
+            addTaint(context.getTaint());
+            addTaint(attrs.getTaint());
             // ---------- Original Method ----------
             //mHandler = new Handler(new Handler.Callback() {
                 //@Override
@@ -877,8 +939,7 @@ public abstract class LayoutInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.077 -0400", hash_original_method = "553FA2CA85816FF11073226F48838667", hash_generated_method = "270C074C6E7784515BFD5F9497C40081")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.961 -0400", hash_original_method = "553FA2CA85816FF11073226F48838667", hash_generated_method = "270C074C6E7784515BFD5F9497C40081")
         private void makeBlink() {
             Message message;
             message = mHandler.obtainMessage(MESSAGE_BLINK);
@@ -889,8 +950,7 @@ public abstract class LayoutInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.078 -0400", hash_original_method = "F84801EA6DE017B4DF3D928CA8059755", hash_generated_method = "5442A9264ED4F4E31C0BA66C5931886A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.961 -0400", hash_original_method = "F84801EA6DE017B4DF3D928CA8059755", hash_generated_method = "5442A9264ED4F4E31C0BA66C5931886A")
         @Override
         protected void onAttachedToWindow() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -906,8 +966,7 @@ public abstract class LayoutInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.078 -0400", hash_original_method = "68779D94DBD6ED32D8C444331B18EB29", hash_generated_method = "A65982EADCE2056B98837C8AE9E7BCE2")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.982 -0400", hash_original_method = "68779D94DBD6ED32D8C444331B18EB29", hash_generated_method = "A65982EADCE2056B98837C8AE9E7BCE2")
         @Override
         protected void onDetachedFromWindow() {
             //DSFIXME:  CODE0009: Possible callback target function detected
@@ -923,14 +982,13 @@ public abstract class LayoutInflater {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.078 -0400", hash_original_method = "B2A7E99D93A7E570FADBB759CB038122", hash_generated_method = "52E893B41BD55D5FA83D18F91D6EE682")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.983 -0400", hash_original_method = "B2A7E99D93A7E570FADBB759CB038122", hash_generated_method = "DC76C125C06C4E0D5A7C567BB0DDA97F")
         @Override
         protected void dispatchDraw(Canvas canvas) {
-            dsTaint.addTaint(canvas.dsTaint);
             {
                 super.dispatchDraw(canvas);
             } //End block
+            addTaint(canvas.getTaint());
             // ---------- Original Method ----------
             //if (mBlinkState) {
                 //super.dispatchDraw(canvas);
@@ -938,8 +996,12 @@ public abstract class LayoutInflater {
         }
 
         
-        private static final int MESSAGE_BLINK = 0x42;
-        private static final int BLINK_DELAY = 500;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.983 -0400", hash_original_field = "FCC4B1B643B64678EC5C05DB4601EBF9", hash_generated_field = "3C3B6FB39FDD98D867573B1653264E16")
+
+        private static int MESSAGE_BLINK = 0x42;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.983 -0400", hash_original_field = "C0C33B4F311995BA1D316E6C41B33B82", hash_generated_field = "5B55704345734A18C4EED4DC073E4133")
+
+        private static int BLINK_DELAY = 500;
     }
 
 
@@ -960,13 +1022,24 @@ public abstract class LayoutInflater {
         public View onCreateView(View parent, String name, Context context, AttributeSet attrs);
     }
     
-    static final Class<?>[] mConstructorSignature = new Class[] {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.983 -0400", hash_original_field = "1125430DAA7CF8795E7D402DB0D83E08", hash_generated_field = "AE31D7A9526578879DCDBB25F412DAAF")
+
+    static Class<?>[] mConstructorSignature = new Class[] {
             Context.class, AttributeSet.class};
-    private static final HashMap<String, Constructor<? extends View>> sConstructorMap =
-            new HashMap<String, Constructor<? extends View>>();
-    private static final String TAG_MERGE = "merge";
-    private static final String TAG_INCLUDE = "include";
-    private static final String TAG_1995 = "blink";
-    private static final String TAG_REQUEST_FOCUS = "requestFocus";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.983 -0400", hash_original_field = "176CD41BE1EF5E4979EA824C2AEDF2B1", hash_generated_field = "0E1E49C67AF8C637878A594ABF3DBE98")
+
+    private static HashMap<String, Constructor<? extends View>> sConstructorMap = new HashMap<String, Constructor<? extends View>>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.983 -0400", hash_original_field = "EED9DF1080CAF39D9C37A9B5067943FA", hash_generated_field = "04F78A42F232CAE80BE5D5495BE1B610")
+
+    private static String TAG_MERGE = "merge";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.983 -0400", hash_original_field = "932E55CE33B67AAED6E42C38C17410C7", hash_generated_field = "676FFC88C6EAF79A110569DD3EF93058")
+
+    private static String TAG_INCLUDE = "include";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.983 -0400", hash_original_field = "EB60FFD74626EBCFC26C23DBDF32C98B", hash_generated_field = "569F9FA0FB9FC3EAFB1112426573588C")
+
+    private static String TAG_1995 = "blink";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.983 -0400", hash_original_field = "10D3EBD501FBA20B3D43BF08D4F12183", hash_generated_field = "7BEE23A54325621ECDE366DA44C5BDB1")
+
+    private static String TAG_REQUEST_FOCUS = "requestFocus";
 }
 

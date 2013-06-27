@@ -14,19 +14,18 @@ import android.text.Spannable;
 
 public class DialerKeyListener extends NumberKeyListener {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.252 -0400", hash_original_method = "84424E2B00FD8045A98B770C9CE373E8", hash_generated_method = "84424E2B00FD8045A98B770C9CE373E8")
-        public DialerKeyListener ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.584 -0400", hash_original_method = "DB0B81FF92CA7DAE82B6AED220522587", hash_generated_method = "DB0B81FF92CA7DAE82B6AED220522587")
+    public DialerKeyListener ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.262 -0400", hash_original_method = "EEC77EA89700D9A449D9FC8461D61396", hash_generated_method = "61C8E7B8858459A83CC3206E283F36CA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.585 -0400", hash_original_method = "EEC77EA89700D9A449D9FC8461D61396", hash_generated_method = "8A06BDA8C1CDB1981E7DA72F63C7A745")
     @Override
     protected char[] getAcceptedChars() {
-        char[] retVal = new char[1];
-        retVal[0] = dsTaint.getTaintString().charAt(0);
-        return retVal;
+        char[] var50607924ABD4C17119BAF3A1CE41C0EC_1420375007 = {getTaintChar()};
+        return var50607924ABD4C17119BAF3A1CE41C0EC_1420375007;
         // ---------- Original Method ----------
         //return CHARACTERS;
     }
@@ -40,20 +39,17 @@ public class DialerKeyListener extends NumberKeyListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.263 -0400", hash_original_method = "CF04961F3F1B69C39A5779241DF2A6D8", hash_generated_method = "BAFC1385C9983FB01CFFD5A8D6060F69")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.598 -0400", hash_original_method = "CF04961F3F1B69C39A5779241DF2A6D8", hash_generated_method = "C7122058C5EACD5F43EC4DEBBC816F85")
     public int getInputType() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1911522236 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1911522236;
         // ---------- Original Method ----------
         //return InputType.TYPE_CLASS_PHONE;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.263 -0400", hash_original_method = "660AADB0BB44A0CB147F8CE16CBE33CA", hash_generated_method = "609E92E785D9A71D04E0F86DCB6F2CD8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.599 -0400", hash_original_method = "660AADB0BB44A0CB147F8CE16CBE33CA", hash_generated_method = "523F0C7F5AACBA6FFC7CD3B8C25C681B")
     protected int lookup(KeyEvent event, Spannable content) {
-        dsTaint.addTaint(content.dsTaint);
-        dsTaint.addTaint(event.dsTaint);
         int meta;
         meta = event.getMetaState() | getMetaState(content);
         int number;
@@ -67,14 +63,14 @@ public class DialerKeyListener extends NumberKeyListener {
                 char[] accepted;
                 accepted = getAcceptedChars();
                 {
-                    boolean varC9C84520A17813D16A43F6ADD70CDDCD_1625667772 = (event.getKeyData(kd));
+                    boolean varC9C84520A17813D16A43F6ADD70CDDCD_2031073343 = (event.getKeyData(kd));
                     {
                         {
                             int i;
                             i = 1;
                             {
                                 {
-                                    boolean var8F7F4A1842E5DA897EFF4C810945772F_781161489 = (ok(accepted, kd.meta[i]));
+                                    boolean var8F7F4A1842E5DA897EFF4C810945772F_1379034455 = (ok(accepted, kd.meta[i]));
                                 } //End collapsed parenthetic
                             } //End block
                         } //End collapsed parenthetic
@@ -82,16 +78,23 @@ public class DialerKeyListener extends NumberKeyListener {
                 } //End collapsed parenthetic
             } //End block
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(event.getTaint());
+        addTaint(content.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_706088965 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_706088965;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.599 -0400", hash_original_field = "88EFBAD36DBE586BF632B31FDD27DD01", hash_generated_field = "4EF1E1883C2FEAA834D956A6C02634B3")
+
     public static final char[] CHARACTERS = new char[] {
             '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '#', '*',
             '+', '-', '(', ')', ',', '/', 'N', '.', ' ', ';'
         };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.599 -0400", hash_original_field = "06E23A628CBDEAB09E91C69789BB1974", hash_generated_field = "056A87FCF20D35A01976664357B66FF4")
+
     private static DialerKeyListener sInstance;
 }
 

@@ -19,17 +19,22 @@ import java.util.List;
 import java.util.Locale;
 
 public final class SpellCheckerSubtype implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.622 -0400", hash_original_field = "DB752714D7C5597F6D4538948E3D4382", hash_generated_field = "1C2C808B01EBFBF48626EDEF77BDA121")
+
     private int mSubtypeHashCode;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.622 -0400", hash_original_field = "AE10E74C5B8FF193877E0EC967173BB0", hash_generated_field = "57FC2D78B24F52DDE6BE3F9540A84844")
+
     private int mSubtypeNameResId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.623 -0400", hash_original_field = "62668E4A833F1CB4D52D80EE2676B489", hash_generated_field = "09B229A20252A09636BE45D10E545437")
+
     private String mSubtypeLocale;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.623 -0400", hash_original_field = "925770EC9378B8FB525692C9358CB66A", hash_generated_field = "8C6B632ACA59D6C798D88A0425FBB914")
+
     private String mSubtypeExtraValue;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.489 -0400", hash_original_method = "3A30DA6D8D85E7F9D6AFF40F9B2BC528", hash_generated_method = "6B36E49182B031C967B8CBC632FC8505")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SpellCheckerSubtype(int nameId, String locale, String extraValue) {
-        dsTaint.addTaint(locale);
-        dsTaint.addTaint(extraValue);
-        dsTaint.addTaint(nameId);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.623 -0400", hash_original_method = "3A30DA6D8D85E7F9D6AFF40F9B2BC528", hash_generated_method = "980FDD3E96F63120DD6D6A74E5B9D797")
+    public  SpellCheckerSubtype(int nameId, String locale, String extraValue) {
+        mSubtypeNameResId = nameId;
         mSubtypeLocale = locale != null ? locale : "";
         mSubtypeExtraValue = extraValue != null ? extraValue : "";
         mSubtypeHashCode = hashCodeInternal(mSubtypeLocale, mSubtypeExtraValue);
@@ -41,10 +46,8 @@ public final class SpellCheckerSubtype implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.489 -0400", hash_original_method = "3B75B8CFEB6B6700A7C113FAE634CC5F", hash_generated_method = "AA90D9190432F36806B4339A67EDC338")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     SpellCheckerSubtype(Parcel source) {
-        dsTaint.addTaint(source.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.624 -0400", hash_original_method = "3B75B8CFEB6B6700A7C113FAE634CC5F", hash_generated_method = "39C8675410726AB5491DA3D839BFB49B")
+      SpellCheckerSubtype(Parcel source) {
         String s;
         mSubtypeNameResId = source.readInt();
         s = source.readString();
@@ -63,57 +66,61 @@ public final class SpellCheckerSubtype implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.489 -0400", hash_original_method = "C7E80880FBF7E5F0758D048854BC1B6A", hash_generated_method = "37337A9AFC76FC1E81E9B30E314C814B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.627 -0400", hash_original_method = "C7E80880FBF7E5F0758D048854BC1B6A", hash_generated_method = "717827D25E2CA5E5887F537F24866538")
     public int getNameResId() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1905470810 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1905470810;
         // ---------- Original Method ----------
         //return mSubtypeNameResId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.489 -0400", hash_original_method = "945286B5D069547CEB4FBAF8F8B7964A", hash_generated_method = "1219AB9E48D6018F12BF32489CFB6E96")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.628 -0400", hash_original_method = "945286B5D069547CEB4FBAF8F8B7964A", hash_generated_method = "5746AE415D7A38D0FA0E10BE0CFA1A6E")
     public String getLocale() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_831360680 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_831360680 = mSubtypeLocale;
+        varB4EAC82CA7396A68D541C85D26508E83_831360680.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_831360680;
         // ---------- Original Method ----------
         //return mSubtypeLocale;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.489 -0400", hash_original_method = "253C17894C35FFAF30C08472F23E48B8", hash_generated_method = "CF80BB26064D7C68FD3101C0093934BF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.628 -0400", hash_original_method = "253C17894C35FFAF30C08472F23E48B8", hash_generated_method = "B12CD803A924A25E99ACC2A7D0F3543A")
     public String getExtraValue() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1310296452 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1310296452 = mSubtypeExtraValue;
+        varB4EAC82CA7396A68D541C85D26508E83_1310296452.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1310296452;
         // ---------- Original Method ----------
         //return mSubtypeExtraValue;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.489 -0400", hash_original_method = "BAAF551B86708907A8B178A5447B667E", hash_generated_method = "4CA7B61DD6C24A0D261C105B01E498F3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.639 -0400", hash_original_method = "BAAF551B86708907A8B178A5447B667E", hash_generated_method = "F89931DA23E13973C63E167F5363DE64")
     @Override
     public int hashCode() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_39523099 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_39523099;
         // ---------- Original Method ----------
         //return mSubtypeHashCode;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.490 -0400", hash_original_method = "214F55EDB23FD4CF8A5A66E21291C440", hash_generated_method = "12380B3CD540449319F8EEE5E50E709C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.639 -0400", hash_original_method = "214F55EDB23FD4CF8A5A66E21291C440", hash_generated_method = "2B2717CAD17C87C729DAAE8F0CA4E179")
     @Override
     public boolean equals(Object o) {
-        dsTaint.addTaint(o.dsTaint);
         {
             SpellCheckerSubtype subtype;
             subtype = (SpellCheckerSubtype) o;
-            boolean var538F1E8380A7611B70298788CBA49C83_270894614 = ((subtype.hashCode() == hashCode())
+            boolean var538F1E8380A7611B70298788CBA49C83_1153302575 = ((subtype.hashCode() == hashCode())
                 && (subtype.getNameResId() == getNameResId())
                 && (subtype.getLocale().equals(getLocale()))
                 && (subtype.getExtraValue().equals(getExtraValue())));
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(o.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1077735524 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1077735524;
         // ---------- Original Method ----------
         //if (o instanceof SpellCheckerSubtype) {
             //SpellCheckerSubtype subtype = (SpellCheckerSubtype) o;
@@ -141,28 +148,49 @@ public final class SpellCheckerSubtype implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.490 -0400", hash_original_method = "968D29448AF0C4C278C68BBABC30BCB9", hash_generated_method = "C7A9C4F23E04234E592806310A8403CB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.641 -0400", hash_original_method = "968D29448AF0C4C278C68BBABC30BCB9", hash_generated_method = "F421E5BB319FFE9F87D1AA2A5A74A2F4")
     public CharSequence getDisplayName(
             Context context, String packageName, ApplicationInfo appInfo) {
-        dsTaint.addTaint(packageName);
-        dsTaint.addTaint(appInfo.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1579693359 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1824391973 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1487002661 = null; //Variable for return #3
         Locale locale;
         locale = constructLocaleFromString(mSubtypeLocale);
         String localeStr;
         localeStr = locale.getDisplayName();
         localeStr = mSubtypeLocale;
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1579693359 = localeStr;
+        } //End block
         CharSequence subtypeName;
         subtypeName = context.getPackageManager().getText(
                 packageName, mSubtypeNameResId, appInfo);
         {
-            boolean var8CAF5C55CF3F150CA75A24E410BC500C_1186191678 = (!TextUtils.isEmpty(subtypeName));
+            boolean var8CAF5C55CF3F150CA75A24E410BC500C_487206084 = (!TextUtils.isEmpty(subtypeName));
             {
-                CharSequence varCAE59473585162B683314F148AA41B15_1938101915 = (String.format(subtypeName.toString(), localeStr));
+                varB4EAC82CA7396A68D541C85D26508E83_1824391973 = String.format(subtypeName.toString(), localeStr);
+            } //End block
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1487002661 = localeStr;
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        addTaint(context.getTaint());
+        addTaint(packageName.getTaint());
+        addTaint(appInfo.getTaint());
+        CharSequence varA7E53CE21691AB073D9660D615818899_511487349; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_511487349 = varB4EAC82CA7396A68D541C85D26508E83_1579693359;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_511487349 = varB4EAC82CA7396A68D541C85D26508E83_1824391973;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_511487349 = varB4EAC82CA7396A68D541C85D26508E83_1487002661;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_511487349.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_511487349;
         // ---------- Original Method ----------
         //final Locale locale = constructLocaleFromString(mSubtypeLocale);
         //final String localeStr = locale != null ? locale.getDisplayName() : mSubtypeLocale;
@@ -179,25 +207,24 @@ public final class SpellCheckerSubtype implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.490 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0DB50BC0CCE4711867E95DEC1B2117C7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.641 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "04B1A6EB99F22A47009C52EA6416D8E6")
     @Override
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1829561598 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1829561598;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.491 -0400", hash_original_method = "AC1CB8559B86122857E11C69298B0C2C", hash_generated_method = "09D6EBBB4EE431BCE298B8D72D12F8E0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.641 -0400", hash_original_method = "AC1CB8559B86122857E11C69298B0C2C", hash_generated_method = "00FB40818FD117654118A6E5FA9705C0")
     @Override
     public void writeToParcel(Parcel dest, int parcelableFlags) {
-        dsTaint.addTaint(parcelableFlags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeInt(mSubtypeNameResId);
         dest.writeString(mSubtypeLocale);
         dest.writeString(mSubtypeExtraValue);
+        addTaint(dest.getTaint());
+        addTaint(parcelableFlags);
         // ---------- Original Method ----------
         //dest.writeInt(mSubtypeNameResId);
         //dest.writeString(mSubtypeLocale);
@@ -231,31 +258,19 @@ public final class SpellCheckerSubtype implements Parcelable {
     }
 
     
-    public static final Parcelable.Creator<SpellCheckerSubtype> CREATOR = new Parcelable.Creator<SpellCheckerSubtype>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.491 -0400", hash_original_method = "0AEF6B6A73DAA67659A967ED2D4E69A6", hash_generated_method = "9DC95988670C73EA13D215ACECA3EAB7")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.648 -0400", hash_original_field = "5A5854B9FB29CE0EBE5D9E127472BB34", hash_generated_field = "964CF97E5D9081BC2EF059D5B5A4010C")
+
+    public static final Parcelable.Creator<SpellCheckerSubtype> CREATOR
+            = new Parcelable.Creator<SpellCheckerSubtype>() {
         @Override
         public SpellCheckerSubtype createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            SpellCheckerSubtype var5334CF28BA03EAA209A23276FCA58031_4619118 = (new SpellCheckerSubtype(source));
-            return (SpellCheckerSubtype)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new SpellCheckerSubtype(source);
+            return new SpellCheckerSubtype(source);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.491 -0400", hash_original_method = "D3DF61D23BE3223F4B9216C6941BE85D", hash_generated_method = "9504F6E423580C121605F7EDF66BDC43")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public SpellCheckerSubtype[] newArray(int size) {
-            dsTaint.addTaint(size);
-            SpellCheckerSubtype[] varC10633F5DAA703B1A079D4D3E0A3F529_1894260993 = (new SpellCheckerSubtype[size]);
-            return (SpellCheckerSubtype[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new SpellCheckerSubtype[size];
+            return new SpellCheckerSubtype[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

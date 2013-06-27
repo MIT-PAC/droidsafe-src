@@ -13,27 +13,25 @@ import javax.sip.*;
 
 public class MimeVersionParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.314 -0400", hash_original_method = "25EDC565C62A5EB92B68AF9D2AE96AEA", hash_generated_method = "876D5476CC179C5563F94111A60933C0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public MimeVersionParser(String mimeVersion) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.853 -0400", hash_original_method = "25EDC565C62A5EB92B68AF9D2AE96AEA", hash_generated_method = "61EF8513FB01478CF0DBB78AFE1EC056")
+    public  MimeVersionParser(String mimeVersion) {
         super(mimeVersion);
-        dsTaint.addTaint(mimeVersion);
+        addTaint(mimeVersion.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.314 -0400", hash_original_method = "931DCFE817B53A973ED5D85AA9B55841", hash_generated_method = "7DC990576C76157DE928ADE6049C9192")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected MimeVersionParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.853 -0400", hash_original_method = "931DCFE817B53A973ED5D85AA9B55841", hash_generated_method = "6511C9A06A99E68915FA6E59B17CA6E4")
+    protected  MimeVersionParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.314 -0400", hash_original_method = "5451311C0FC76A3AF05558D3E031ACC9", hash_generated_method = "B79404C1C65CEA212E50A66989DA16CC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.861 -0400", hash_original_method = "5451311C0FC76A3AF05558D3E031ACC9", hash_generated_method = "A1FF4922A7FFD17889515A0D68BF3CAA")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_974150262 = null; //Variable for return #1
         dbg_enter("MimeVersionParser.parse");
         MimeVersion mimeVersion;
         mimeVersion = new MimeVersion();
@@ -57,12 +55,14 @@ public class MimeVersionParser extends HeaderParser {
             } //End block
             this.lexer.SPorHT();
             this.lexer.match('\n');
+            varB4EAC82CA7396A68D541C85D26508E83_974150262 = mimeVersion;
         } //End block
         finally 
         {
             dbg_leave("MimeVersionParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_974150262.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_974150262;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

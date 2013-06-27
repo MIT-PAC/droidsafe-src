@@ -12,26 +12,34 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 
 public class ExtractedTextRequest implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.959 -0400", hash_original_field = "94A08DA1FECBB6E8B46990538C7B50B2", hash_generated_field = "5EAD126FF3F63D06599D4B7FB9755E47")
+
     public int token;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.959 -0400", hash_original_field = "4E5868D676CB634AA75B125A0F741ABF", hash_generated_field = "06C062A47B4E980AE7B4928732A7AB14")
+
     public int flags;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.959 -0400", hash_original_field = "BF09D1D22D5BC042E42514EE686B692D", hash_generated_field = "663C68D6D79E01D67D2C496FA7BBC6BD")
+
     public int hintMaxLines;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.959 -0400", hash_original_field = "9FD73CEC6DA632587D658E70DB8938DF", hash_generated_field = "A2C5BC9C7324A9C64D4069D01D34363E")
+
     public int hintMaxChars;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.305 -0400", hash_original_method = "B3613A839DF952821965B56B87CF15DD", hash_generated_method = "B3613A839DF952821965B56B87CF15DD")
-        public ExtractedTextRequest ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.959 -0400", hash_original_method = "8B43E5E3CB5CAEC30CB660AE9DA9D566", hash_generated_method = "8B43E5E3CB5CAEC30CB660AE9DA9D566")
+    public ExtractedTextRequest ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.305 -0400", hash_original_method = "86DA45F615C261383D752E615DE3B691", hash_generated_method = "05D4323406EE0A2A33CE672414F1B089")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.960 -0400", hash_original_method = "86DA45F615C261383D752E615DE3B691", hash_generated_method = "D31658928F683641C4D02F589A710D1E")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeInt(token);
         dest.writeInt(this.flags);
         dest.writeInt(hintMaxLines);
         dest.writeInt(hintMaxChars);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeInt(token);
         //dest.writeInt(this.flags);
@@ -40,48 +48,31 @@ public class ExtractedTextRequest implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.305 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.960 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A1EE0742CC085B4C4E64F2CDC19BBDB1")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_888064217 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_888064217;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    public static final Parcelable.Creator<ExtractedTextRequest> CREATOR = new Parcelable.Creator<ExtractedTextRequest>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.305 -0400", hash_original_method = "30E3470F48B04522780245F06863DCB7", hash_generated_method = "57F6F7D12BC0C6C9CE698D340A511C06")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.969 -0400", hash_original_field = "53A29FDF1558849BDD50F7BFE3E6AF78", hash_generated_field = "85087F40266A407B120D89FE91BD8F5F")
+
+    public static final Parcelable.Creator<ExtractedTextRequest> CREATOR
+            = new Parcelable.Creator<ExtractedTextRequest>() {
         public ExtractedTextRequest createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            ExtractedTextRequest res;
-            res = new ExtractedTextRequest();
+            ExtractedTextRequest res = new ExtractedTextRequest();
             res.token = source.readInt();
             res.flags = source.readInt();
             res.hintMaxLines = source.readInt();
             res.hintMaxChars = source.readInt();
-            return (ExtractedTextRequest)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //ExtractedTextRequest res = new ExtractedTextRequest();
-            //res.token = source.readInt();
-            //res.flags = source.readInt();
-            //res.hintMaxLines = source.readInt();
-            //res.hintMaxChars = source.readInt();
-            //return res;
+            return res;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.306 -0400", hash_original_method = "319315B697FC2583F1B96031A391A54D", hash_generated_method = "9F1E258ED13A78FF11EDFD6440ACBE9E")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public ExtractedTextRequest[] newArray(int size) {
-            dsTaint.addTaint(size);
-            ExtractedTextRequest[] var86E78B496F84ADC2A02E2F3E84295E42_2144861696 = (new ExtractedTextRequest[size]);
-            return (ExtractedTextRequest[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ExtractedTextRequest[size];
+            return new ExtractedTextRequest[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

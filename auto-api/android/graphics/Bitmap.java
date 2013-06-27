@@ -17,29 +17,48 @@ import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
 
 public final class Bitmap implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.216 -0400", hash_original_field = "F16492AD902BDE58E3AAF1B990115133", hash_generated_field = "44187EAF844F975F9CC351362B5828D9")
+
     public int mNativeBitmap;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.217 -0400", hash_original_field = "0A6D158B6C8BF0C1A56582199871274D", hash_generated_field = "D26E89192452D152F1B0620ACC981170")
+
     public byte[] mBuffer;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.217 -0400", hash_original_field = "2D0BC5276619D20C917420C774FF5089", hash_generated_field = "D5ECB585FDF82CD3261AE26CF7CC63CA")
+
     @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"}) private BitmapFinalizer mFinalizer;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.217 -0400", hash_original_field = "E62BED608586C761CD92607B7C2EF1FD", hash_generated_field = "9C32056DAC69AD0374E74408422BBEB9")
+
     private boolean mIsMutable;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.232 -0400", hash_original_field = "D3261EC38F92DF331844BA8BBC57CDB0", hash_generated_field = "436C2ED570DD3AA7577644DBEE1CE62A")
+
     private byte[] mNinePatchChunk;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.232 -0400", hash_original_field = "A95631D81A2F2A7712CA1BACF8C3ED06", hash_generated_field = "E5A03441D6069228A477C954385A251B")
+
     private int mWidth = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.232 -0400", hash_original_field = "B3AC750C72790F3A16FDCF47C86F48B7", hash_generated_field = "799F7A00E6DAB63292A42CD8E01B88BC")
+
     private int mHeight = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.232 -0400", hash_original_field = "1212A62D731F217836716E35FA12386C", hash_generated_field = "2C8375875524783DEB30CD6C7E943390")
+
     private boolean mRecycled;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.232 -0400", hash_original_field = "9F8FEF6E0A2744C399FE0A9EF16A8539", hash_generated_field = "DFE44862C379A23055CB9029F03233AE")
+
     int mDensity = sDefaultDensity = getDefaultDensity();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.065 -0400", hash_original_method = "99AF26591A06E5269F88FBD6B3710F13", hash_generated_method = "500D11C2104EA6B3C76493159C5AD507")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     Bitmap(int nativeBitmap, byte[] buffer, boolean isMutable, byte[] ninePatchChunk,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.235 -0400", hash_original_method = "99AF26591A06E5269F88FBD6B3710F13", hash_generated_method = "94F9D3E4AA3B3BDFD8611768A1633B28")
+      Bitmap(int nativeBitmap, byte[] buffer, boolean isMutable, byte[] ninePatchChunk,
             int density) {
-        dsTaint.addTaint(buffer[0]);
-        dsTaint.addTaint(density);
-        dsTaint.addTaint(isMutable);
-        dsTaint.addTaint(nativeBitmap);
-        dsTaint.addTaint(ninePatchChunk[0]);
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("internal error: native bitmap is 0");
         } //End block
+        mBuffer = buffer;
+        mNativeBitmap = nativeBitmap;
         mFinalizer = new BitmapFinalizer(nativeBitmap);
+        mIsMutable = isMutable;
+        mNinePatchChunk = ninePatchChunk;
+        {
+            mDensity = density;
+        } //End block
         // ---------- Original Method ----------
         //if (nativeBitmap == 0) {
             //throw new RuntimeException("internal error: native bitmap is 0");
@@ -69,35 +88,32 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.065 -0400", hash_original_method = "ED34D3D3464A21C5929C60D84F577074", hash_generated_method = "F9A8778C3CF83A7A00D23BEF3B0CD3EE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.252 -0400", hash_original_method = "ED34D3D3464A21C5929C60D84F577074", hash_generated_method = "3A384CD7FF347ED21F897BCA4839A2F5")
     public int getDensity() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_386593954 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_386593954;
         // ---------- Original Method ----------
         //return mDensity;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.066 -0400", hash_original_method = "9862D9E59C2B168AB35D015A9ED81A18", hash_generated_method = "CFEB14DBAED3EFE1CBFA8F04F67D5F1C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.263 -0400", hash_original_method = "9862D9E59C2B168AB35D015A9ED81A18", hash_generated_method = "58D723A4F769D2A3CBAF9A17D68E73B4")
     public void setDensity(int density) {
-        dsTaint.addTaint(density);
+        mDensity = density;
         // ---------- Original Method ----------
         //mDensity = density;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.066 -0400", hash_original_method = "30CA035C727F2D2385273CE8F87AAA35", hash_generated_method = "431627DB66CA686B9E1040F8F87C78D4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.264 -0400", hash_original_method = "30CA035C727F2D2385273CE8F87AAA35", hash_generated_method = "84E478FF6E7328C663D71E05433F8696")
     public void setNinePatchChunk(byte[] chunk) {
-        dsTaint.addTaint(chunk[0]);
+        mNinePatchChunk = chunk;
         // ---------- Original Method ----------
         //mNinePatchChunk = chunk;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.066 -0400", hash_original_method = "F143F03043BA4507E1E78FA3303F668C", hash_generated_method = "C80B2A72009FC42545A99B19062C110C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.265 -0400", hash_original_method = "F143F03043BA4507E1E78FA3303F668C", hash_generated_method = "C80B2A72009FC42545A99B19062C110C")
     public void recycle() {
         {
             mBuffer = null;
@@ -115,32 +131,31 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.067 -0400", hash_original_method = "B80D9A696720D276C6AF21D39513741E", hash_generated_method = "673C8278F24B13FFE67BD8D596EE64CE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.266 -0400", hash_original_method = "B80D9A696720D276C6AF21D39513741E", hash_generated_method = "7EED040F8007C93F30B1449EBAD00B2C")
     public final boolean isRecycled() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1635307374 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1635307374;
         // ---------- Original Method ----------
         //return mRecycled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.067 -0400", hash_original_method = "9DF0E31331C580F9A696941C282E8CDA", hash_generated_method = "45739089460558AD8AF8C1D3D65C2F55")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.277 -0400", hash_original_method = "9DF0E31331C580F9A696941C282E8CDA", hash_generated_method = "D4FFBB26D9817546BE7A57FC32FFA3BA")
     public int getGenerationId() {
-        int var212795BBF0B899D6098254B7268EC186_1166942019 = (nativeGenerationId(mNativeBitmap));
-        return dsTaint.getTaintInt();
+        int var212795BBF0B899D6098254B7268EC186_1744175213 = (nativeGenerationId(mNativeBitmap));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1244696501 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1244696501;
         // ---------- Original Method ----------
         //return nativeGenerationId(mNativeBitmap);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.067 -0400", hash_original_method = "C3E161F555FEE180C4B024634334055B", hash_generated_method = "A5EA482D4BB4E2944057FDB11CCBEF97")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.277 -0400", hash_original_method = "C3E161F555FEE180C4B024634334055B", hash_generated_method = "2AB12235F54ED1E12298F2F9CAA69EE9")
     private void checkRecycled(String errorMessage) {
-        dsTaint.addTaint(errorMessage);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(errorMessage);
         } //End block
+        addTaint(errorMessage.getTaint());
         // ---------- Original Method ----------
         //if (mRecycled) {
             //throw new IllegalStateException(errorMessage);
@@ -168,10 +183,8 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.068 -0400", hash_original_method = "6E96276EBE2927D59F0A224BEB5CF764", hash_generated_method = "C784F223A04A4F1EE64E40075B8EDA0B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.293 -0400", hash_original_method = "6E96276EBE2927D59F0A224BEB5CF764", hash_generated_method = "146407FCE4CDDA3664C16DB380F5E497")
     public void copyPixelsToBuffer(Buffer dst) {
-        dsTaint.addTaint(dst.dsTaint);
         int elements;
         elements = dst.remaining();
         int shift;
@@ -199,6 +212,7 @@ public final class Bitmap implements Parcelable {
         position = dst.position();
         position += pixelSize >> shift;
         dst.position(position);
+        addTaint(dst.getTaint());
         // ---------- Original Method ----------
         //int elements = dst.remaining();
         //int shift;
@@ -223,10 +237,8 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.068 -0400", hash_original_method = "DF4D046D4E3EE4FA52893B437F7EAF42", hash_generated_method = "A9C90A76FCE4C4BC6BD5D684249D52C5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.305 -0400", hash_original_method = "DF4D046D4E3EE4FA52893B437F7EAF42", hash_generated_method = "2F6C2D07294357690DEE281EC82F91FE")
     public void copyPixelsFromBuffer(Buffer src) {
-        dsTaint.addTaint(src.dsTaint);
         checkRecycled("copyPixelsFromBuffer called on recycled bitmap");
         int elements;
         elements = src.remaining();
@@ -251,6 +263,7 @@ public final class Bitmap implements Parcelable {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Buffer not large enough for pixels");
         } //End block
         nativeCopyPixelsFromBuffer(mNativeBitmap, src);
+        addTaint(src.getTaint());
         // ---------- Original Method ----------
         //checkRecycled("copyPixelsFromBuffer called on recycled bitmap");
         //int elements = src.remaining();
@@ -273,18 +286,20 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.069 -0400", hash_original_method = "5A36626FB0A5325F859AD016AE482420", hash_generated_method = "3140495151BC97FCB094ED86C0872405")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.306 -0400", hash_original_method = "5A36626FB0A5325F859AD016AE482420", hash_generated_method = "87F8186BC12EED87B83787D0C90796E3")
     public Bitmap copy(Config config, boolean isMutable) {
-        dsTaint.addTaint(isMutable);
-        dsTaint.addTaint(config.dsTaint);
+        Bitmap varB4EAC82CA7396A68D541C85D26508E83_1412833540 = null; //Variable for return #1
         checkRecycled("Can't copy a recycled bitmap");
         Bitmap b;
         b = nativeCopy(mNativeBitmap, config.nativeInt, isMutable);
         {
             b.mDensity = mDensity;
         } //End block
-        return (Bitmap)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1412833540 = b;
+        addTaint(config.getTaint());
+        addTaint(isMutable);
+        varB4EAC82CA7396A68D541C85D26508E83_1412833540.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1412833540;
         // ---------- Original Method ----------
         //checkRecycled("Can't copy a recycled bitmap");
         //Bitmap b = nativeCopy(mNativeBitmap, config.nativeInt, isMutable);
@@ -439,23 +454,17 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.070 -0400", hash_original_method = "FE9BA3F148B3AC85DF389A396D130B66", hash_generated_method = "CD57EFC61F4FAB861053AF0D24518465")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.331 -0400", hash_original_method = "FE9BA3F148B3AC85DF389A396D130B66", hash_generated_method = "0C1DF701C9074E141D4F3C4F20D4B840")
     public byte[] getNinePatchChunk() {
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1799517878 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1799517878;
         // ---------- Original Method ----------
         //return mNinePatchChunk;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.071 -0400", hash_original_method = "222D378B2B8943C109AD4B8264ED828B", hash_generated_method = "69C59BC5DEAA491DB6B3BBE62E20E715")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.332 -0400", hash_original_method = "222D378B2B8943C109AD4B8264ED828B", hash_generated_method = "35E9075B2BA686217454827AF554F4F6")
     public boolean compress(CompressFormat format, int quality, OutputStream stream) {
-        dsTaint.addTaint(stream.dsTaint);
-        dsTaint.addTaint(quality);
-        dsTaint.addTaint(format.dsTaint);
         checkRecycled("Can't compress a recycled bitmap");
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -463,9 +472,13 @@ public final class Bitmap implements Parcelable {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("quality must be 0..100");
         } //End block
-        boolean varF801D4584D511A06756607336723DBB1_958181756 = (nativeCompress(mNativeBitmap, format.nativeInt, quality,
+        boolean varF801D4584D511A06756607336723DBB1_286192282 = (nativeCompress(mNativeBitmap, format.nativeInt, quality,
                               stream, new byte[WORKING_COMPRESS_STORAGE]));
-        return dsTaint.getTaintBoolean();
+        addTaint(format.getTaint());
+        addTaint(quality);
+        addTaint(stream.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1753576354 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1753576354;
         // ---------- Original Method ----------
         //checkRecycled("Can't compress a recycled bitmap");
         //if (stream == null) {
@@ -479,100 +492,100 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.071 -0400", hash_original_method = "AC5E4B63287018AAA83AB6875AD71BA5", hash_generated_method = "BF4420FEDAAD2070EDC0D1F8F8F135F6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.333 -0400", hash_original_method = "AC5E4B63287018AAA83AB6875AD71BA5", hash_generated_method = "88D8B4EB1E8E78E52EB31A37E27A53A6")
     public final boolean isMutable() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_224137463 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_224137463;
         // ---------- Original Method ----------
         //return mIsMutable;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.072 -0400", hash_original_method = "9273E6434E2E49D8D6A7BEF0351E82F0", hash_generated_method = "FB6B6B69485064B309516681D234151B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.334 -0400", hash_original_method = "9273E6434E2E49D8D6A7BEF0351E82F0", hash_generated_method = "655A050AE575AEBEC761DEA910A268D6")
     public final int getWidth() {
         {
-            Object var14BFC634F145725DC48467A508F60C75_1433035666 = (mWidth = nativeWidth(mNativeBitmap));
+            Object var14BFC634F145725DC48467A508F60C75_1682064721 = (mWidth = nativeWidth(mNativeBitmap));
         } //End flattened ternary
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_260419888 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_260419888;
         // ---------- Original Method ----------
         //return mWidth == -1 ? mWidth = nativeWidth(mNativeBitmap) : mWidth;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.072 -0400", hash_original_method = "C9C832E0F45CC5A7AD0241E8F16710F4", hash_generated_method = "0279410E0EA9F500DADDCE0622C968D0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.347 -0400", hash_original_method = "C9C832E0F45CC5A7AD0241E8F16710F4", hash_generated_method = "FCCD5092FFEDD765288FD54F98096F35")
     public final int getHeight() {
         {
-            Object varA90DB7D8C83D02A678AC88E3CF32E02C_178462778 = (mHeight = nativeHeight(mNativeBitmap));
+            Object varA90DB7D8C83D02A678AC88E3CF32E02C_1610092179 = (mHeight = nativeHeight(mNativeBitmap));
         } //End flattened ternary
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_895466190 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_895466190;
         // ---------- Original Method ----------
         //return mHeight == -1 ? mHeight = nativeHeight(mNativeBitmap) : mHeight;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.073 -0400", hash_original_method = "7233800DBE61288AC88E6F84763631F6", hash_generated_method = "AC473096221BBAF28217D21C164DF1C2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.347 -0400", hash_original_method = "7233800DBE61288AC88E6F84763631F6", hash_generated_method = "49A098652F822318E98835D06719204B")
     public int getScaledWidth(Canvas canvas) {
-        dsTaint.addTaint(canvas.dsTaint);
-        int varD244B19BB376C166F704354639F6FD2A_1061019941 = (scaleFromDensity(getWidth(), mDensity, canvas.mDensity));
-        return dsTaint.getTaintInt();
+        int varD244B19BB376C166F704354639F6FD2A_1297702617 = (scaleFromDensity(getWidth(), mDensity, canvas.mDensity));
+        addTaint(canvas.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1215537693 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1215537693;
         // ---------- Original Method ----------
         //return scaleFromDensity(getWidth(), mDensity, canvas.mDensity);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.073 -0400", hash_original_method = "25E674A6C63D1170FDA7E606406CA68F", hash_generated_method = "17B1AA62180C89701861B3C6E8A6E7B0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.351 -0400", hash_original_method = "25E674A6C63D1170FDA7E606406CA68F", hash_generated_method = "C427D042D62DB92FB8954194F8CC5EB6")
     public int getScaledHeight(Canvas canvas) {
-        dsTaint.addTaint(canvas.dsTaint);
-        int var9C7679314AF2CB28ACC9E6D9F7DBE7C8_287472278 = (scaleFromDensity(getHeight(), mDensity, canvas.mDensity));
-        return dsTaint.getTaintInt();
+        int var9C7679314AF2CB28ACC9E6D9F7DBE7C8_132659379 = (scaleFromDensity(getHeight(), mDensity, canvas.mDensity));
+        addTaint(canvas.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2137561514 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2137561514;
         // ---------- Original Method ----------
         //return scaleFromDensity(getHeight(), mDensity, canvas.mDensity);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.073 -0400", hash_original_method = "1717C0FEBD5DCA9C8E6AC6E449CF9117", hash_generated_method = "E847BC0196469505714FE1319617E0FE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.363 -0400", hash_original_method = "1717C0FEBD5DCA9C8E6AC6E449CF9117", hash_generated_method = "08372FC8006F0DACB624F7297670C970")
     public int getScaledWidth(DisplayMetrics metrics) {
-        dsTaint.addTaint(metrics.dsTaint);
-        int var22DDB9F91A59073EC3D37288D06D89F5_863373112 = (scaleFromDensity(getWidth(), mDensity, metrics.densityDpi));
-        return dsTaint.getTaintInt();
+        int var22DDB9F91A59073EC3D37288D06D89F5_759227373 = (scaleFromDensity(getWidth(), mDensity, metrics.densityDpi));
+        addTaint(metrics.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_51552522 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_51552522;
         // ---------- Original Method ----------
         //return scaleFromDensity(getWidth(), mDensity, metrics.densityDpi);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.074 -0400", hash_original_method = "2419686B3EB221BCF5B58D4D017B048F", hash_generated_method = "1B5EF4C291ABFC3C1E493C57C4F78B25")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.364 -0400", hash_original_method = "2419686B3EB221BCF5B58D4D017B048F", hash_generated_method = "E502A4F3FD2DC516202335D9FFED1B35")
     public int getScaledHeight(DisplayMetrics metrics) {
-        dsTaint.addTaint(metrics.dsTaint);
-        int varBC7E5446A696D0B9C3151FDCC509001B_689535732 = (scaleFromDensity(getHeight(), mDensity, metrics.densityDpi));
-        return dsTaint.getTaintInt();
+        int varBC7E5446A696D0B9C3151FDCC509001B_442808745 = (scaleFromDensity(getHeight(), mDensity, metrics.densityDpi));
+        addTaint(metrics.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394563417 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394563417;
         // ---------- Original Method ----------
         //return scaleFromDensity(getHeight(), mDensity, metrics.densityDpi);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.075 -0400", hash_original_method = "8DEB28B38EE84627DD4FE42858F9882C", hash_generated_method = "96B004B5781E8A4F70A6FC4C8A1BCC54")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.365 -0400", hash_original_method = "8DEB28B38EE84627DD4FE42858F9882C", hash_generated_method = "CD3F21A98A9F2B7923C766D56022EBDE")
     public int getScaledWidth(int targetDensity) {
-        dsTaint.addTaint(targetDensity);
-        int var40BBFFD6794B3ABECF2108DE9A398793_112902177 = (scaleFromDensity(getWidth(), mDensity, targetDensity));
-        return dsTaint.getTaintInt();
+        int var40BBFFD6794B3ABECF2108DE9A398793_1752960963 = (scaleFromDensity(getWidth(), mDensity, targetDensity));
+        addTaint(targetDensity);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_668047468 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_668047468;
         // ---------- Original Method ----------
         //return scaleFromDensity(getWidth(), mDensity, targetDensity);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.076 -0400", hash_original_method = "936A1164B3B30000BDF78CB4ABE6FDD9", hash_generated_method = "00E875954023CFEE28F845BDD0DFC6E8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.369 -0400", hash_original_method = "936A1164B3B30000BDF78CB4ABE6FDD9", hash_generated_method = "4744F0B66A0239E793260EC7A0ABD030")
     public int getScaledHeight(int targetDensity) {
-        dsTaint.addTaint(targetDensity);
-        int varEBBA22F03E55C884FB7BC5702A806353_98800984 = (scaleFromDensity(getHeight(), mDensity, targetDensity));
-        return dsTaint.getTaintInt();
+        int varEBBA22F03E55C884FB7BC5702A806353_1618169140 = (scaleFromDensity(getHeight(), mDensity, targetDensity));
+        addTaint(targetDensity);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145405757 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145405757;
         // ---------- Original Method ----------
         //return scaleFromDensity(getHeight(), mDensity, targetDensity);
     }
@@ -586,68 +599,67 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.076 -0400", hash_original_method = "12640FDEC394A62871A05E7C4EB570D4", hash_generated_method = "10A2B55DC51AD871BBF461DE8A87678B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.381 -0400", hash_original_method = "12640FDEC394A62871A05E7C4EB570D4", hash_generated_method = "AEEE8A8149353100B22DCE664E561CBB")
     public final int getRowBytes() {
-        int var0267412FC813FD8E20B12B849B0C1F93_1032455841 = (nativeRowBytes(mNativeBitmap));
-        return dsTaint.getTaintInt();
+        int var0267412FC813FD8E20B12B849B0C1F93_1516551139 = (nativeRowBytes(mNativeBitmap));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_966751042 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_966751042;
         // ---------- Original Method ----------
         //return nativeRowBytes(mNativeBitmap);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.076 -0400", hash_original_method = "64813EB6D6A92E85FDB72E109CDAF838", hash_generated_method = "66CEEB53D714F08D08F6B6C7D05FAE12")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.383 -0400", hash_original_method = "64813EB6D6A92E85FDB72E109CDAF838", hash_generated_method = "7E847512EFE40732E946CFE199850890")
     public final int getByteCount() {
-        int var18558EEEC9B7BD46FC1B51B2AC00445A_40249713 = (getRowBytes() * getHeight());
-        return dsTaint.getTaintInt();
+        int var18558EEEC9B7BD46FC1B51B2AC00445A_68599911 = (getRowBytes() * getHeight());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1189760378 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1189760378;
         // ---------- Original Method ----------
         //return getRowBytes() * getHeight();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.076 -0400", hash_original_method = "2965E803C3174189F0506D62E1B543D4", hash_generated_method = "ADF2F3142C5177B8492B9150E791F7FC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.481 -0400", hash_original_method = "2965E803C3174189F0506D62E1B543D4", hash_generated_method = "419008780241F2B025AF8D86FC5B5F9E")
     public final Config getConfig() {
-        Config var256D15F1266556B864D532B889452985_1033690973 = (Config.nativeToConfig(nativeConfig(mNativeBitmap)));
-        return (Config)dsTaint.getTaint();
+        Config varB4EAC82CA7396A68D541C85D26508E83_1136915578 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1136915578 = Config.nativeToConfig(nativeConfig(mNativeBitmap));
+        varB4EAC82CA7396A68D541C85D26508E83_1136915578.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1136915578;
         // ---------- Original Method ----------
         //return Config.nativeToConfig(nativeConfig(mNativeBitmap));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.077 -0400", hash_original_method = "A9E6FFBE96B704702B1F2A7EDD472B86", hash_generated_method = "9271CE9352B89152448B09B1D5892E33")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.482 -0400", hash_original_method = "A9E6FFBE96B704702B1F2A7EDD472B86", hash_generated_method = "752528D883E320D47F764150FD62ACDD")
     public final boolean hasAlpha() {
-        boolean var800F787096C2FAD492BB45AE9E7A91D2_620666557 = (nativeHasAlpha(mNativeBitmap));
-        return dsTaint.getTaintBoolean();
+        boolean var800F787096C2FAD492BB45AE9E7A91D2_958485895 = (nativeHasAlpha(mNativeBitmap));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1810055308 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1810055308;
         // ---------- Original Method ----------
         //return nativeHasAlpha(mNativeBitmap);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.077 -0400", hash_original_method = "9BF8F5FAA617B68A4287E64028C24BC4", hash_generated_method = "A146C4633A4137BD4B7D696C7DEB48B0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.483 -0400", hash_original_method = "9BF8F5FAA617B68A4287E64028C24BC4", hash_generated_method = "060ADFF4E1C348B48F39DF28EE5C5091")
     public void setHasAlpha(boolean hasAlpha) {
-        dsTaint.addTaint(hasAlpha);
         nativeSetHasAlpha(mNativeBitmap, hasAlpha);
+        addTaint(hasAlpha);
         // ---------- Original Method ----------
         //nativeSetHasAlpha(mNativeBitmap, hasAlpha);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.077 -0400", hash_original_method = "6CFCC21E4A33E66B4CBA687A2872E721", hash_generated_method = "1ECC315382219D195191D266B7FE5DCC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.489 -0400", hash_original_method = "6CFCC21E4A33E66B4CBA687A2872E721", hash_generated_method = "62012FC4098F2FE07CC99DD8EBC30DF7")
     public void eraseColor(int c) {
-        dsTaint.addTaint(c);
         checkRecycled("Can't erase a recycled bitmap");
         {
-            boolean var2D2A74E00B0F4ADB63FC14E0244B334F_1915328232 = (!isMutable());
+            boolean var2D2A74E00B0F4ADB63FC14E0244B334F_138087843 = (!isMutable());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("cannot erase immutable bitmaps");
             } //End block
         } //End collapsed parenthetic
         nativeErase(mNativeBitmap, c);
+        addTaint(c);
         // ---------- Original Method ----------
         //checkRecycled("Can't erase a recycled bitmap");
         //if (!isMutable()) {
@@ -657,15 +669,15 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.077 -0400", hash_original_method = "C5A0202C662F7E6C05A2B74C54AEFFD9", hash_generated_method = "46708F4E12CF4A5095915D8B3545CBEA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.490 -0400", hash_original_method = "C5A0202C662F7E6C05A2B74C54AEFFD9", hash_generated_method = "AB252C31227A69E74DE04E987ABE3FC6")
     public int getPixel(int x, int y) {
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
         checkRecycled("Can't call getPixel() on a recycled bitmap");
         checkPixelAccess(x, y);
-        int var8FD6BA845BC7C15EFB43BAC7ED016EA5_269270174 = (nativeGetPixel(mNativeBitmap, x, y));
-        return dsTaint.getTaintInt();
+        int var8FD6BA845BC7C15EFB43BAC7ED016EA5_506807222 = (nativeGetPixel(mNativeBitmap, x, y));
+        addTaint(x);
+        addTaint(y);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1287456015 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1287456015;
         // ---------- Original Method ----------
         //checkRecycled("Can't call getPixel() on a recycled bitmap");
         //checkPixelAccess(x, y);
@@ -673,21 +685,20 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.078 -0400", hash_original_method = "2EE219697E28A03CE1E0A040D289D28E", hash_generated_method = "0636AE0DE145387EB4D8721F9AC01790")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.504 -0400", hash_original_method = "2EE219697E28A03CE1E0A040D289D28E", hash_generated_method = "DAA2C23B9860580B8248F11EFA967D40")
     public void getPixels(int[] pixels, int offset, int stride,
                           int x, int y, int width, int height) {
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(pixels[0]);
-        dsTaint.addTaint(stride);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
         checkRecycled("Can't call getPixels() on a recycled bitmap");
         checkPixelsAccess(x, y, width, height, offset, stride, pixels);
         nativeGetPixels(mNativeBitmap, pixels, offset, stride,
                         x, y, width, height);
+        addTaint(pixels[0]);
+        addTaint(offset);
+        addTaint(stride);
+        addTaint(x);
+        addTaint(y);
+        addTaint(width);
+        addTaint(height);
         // ---------- Original Method ----------
         //checkRecycled("Can't call getPixels() on a recycled bitmap");
         //if (width == 0 || height == 0) {
@@ -699,24 +710,23 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.078 -0400", hash_original_method = "F09D942FEC4FE9E75A7F8BD6FD9F7E4F", hash_generated_method = "220B3DF358309AD2847E0300AF4D19EF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.505 -0400", hash_original_method = "F09D942FEC4FE9E75A7F8BD6FD9F7E4F", hash_generated_method = "322A37123DF337DB50959B256D3C27C5")
     private void checkPixelAccess(int x, int y) {
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
         checkXYSign(x, y);
         {
-            boolean var30490CFCBE0CDDF5A434370B1DCE4F74_2143451738 = (x >= getWidth());
+            boolean var30490CFCBE0CDDF5A434370B1DCE4F74_1754979517 = (x >= getWidth());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("x must be < bitmap.width()");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var176BE51140078B0967F59852B69E3131_404580914 = (y >= getHeight());
+            boolean var176BE51140078B0967F59852B69E3131_113176331 = (y >= getHeight());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("y must be < bitmap.height()");
             } //End block
         } //End collapsed parenthetic
+        addTaint(x);
+        addTaint(y);
         // ---------- Original Method ----------
         //checkXYSign(x, y);
         //if (x >= getWidth()) {
@@ -728,17 +738,9 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.078 -0400", hash_original_method = "2B91B7FBA2B0FAF5EF0FAB9CE5B285D1", hash_generated_method = "EC29431057FEEF924BFEFA191DBE4D77")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.519 -0400", hash_original_method = "2B91B7FBA2B0FAF5EF0FAB9CE5B285D1", hash_generated_method = "EFE02BF31767FD5DCBD3512E5A4B6AAE")
     private void checkPixelsAccess(int x, int y, int width, int height,
                                    int offset, int stride, int pixels[]) {
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(pixels);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(stride);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
         checkXYSign(x, y);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("width must be >= 0");
@@ -747,21 +749,21 @@ public final class Bitmap implements Parcelable {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("height must be >= 0");
         } //End block
         {
-            boolean varD810B239D6120F6BE5AD1443109E34E9_857625178 = (x + width > getWidth());
+            boolean varD810B239D6120F6BE5AD1443109E34E9_710839296 = (x + width > getWidth());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "x + width must be <= bitmap.width()");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var81DF503DAA371D07CDBF07C44BC00011_1101214191 = (y + height > getHeight());
+            boolean var81DF503DAA371D07CDBF07C44BC00011_1382766051 = (y + height > getHeight());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                     "y + height must be <= bitmap.height()");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varE73A6561371F12118506FC78AF1B9D6D_15827519 = (Math.abs(stride) < width);
+            boolean varE73A6561371F12118506FC78AF1B9D6D_502784841 = (Math.abs(stride) < width);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("abs(stride) must be >= width");
             } //End block
@@ -773,26 +775,32 @@ public final class Bitmap implements Parcelable {
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException();
         } //End block
+        addTaint(x);
+        addTaint(y);
+        addTaint(width);
+        addTaint(height);
+        addTaint(offset);
+        addTaint(stride);
+        addTaint(pixels);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.079 -0400", hash_original_method = "85459627EEB2B6C6AD7EB511C3D7B6BB", hash_generated_method = "0E4BF6F061D00A7F00DF45308863DF4C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.540 -0400", hash_original_method = "85459627EEB2B6C6AD7EB511C3D7B6BB", hash_generated_method = "29A96EF4DA3890DF39516427D9077975")
     public void setPixel(int x, int y, int color) {
-        dsTaint.addTaint(color);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
         checkRecycled("Can't call setPixel() on a recycled bitmap");
         {
-            boolean var2D2A74E00B0F4ADB63FC14E0244B334F_1302889136 = (!isMutable());
+            boolean var2D2A74E00B0F4ADB63FC14E0244B334F_666834090 = (!isMutable());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
             } //End block
         } //End collapsed parenthetic
         checkPixelAccess(x, y);
         nativeSetPixel(mNativeBitmap, x, y, color);
+        addTaint(x);
+        addTaint(y);
+        addTaint(color);
         // ---------- Original Method ----------
         //checkRecycled("Can't call setPixel() on a recycled bitmap");
         //if (!isMutable()) {
@@ -803,20 +811,12 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.079 -0400", hash_original_method = "ABE133BC8F623C77CA2A0241C4DBE1C8", hash_generated_method = "06C2E1D812DCCF4A04ABE011B6BB5361")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.570 -0400", hash_original_method = "ABE133BC8F623C77CA2A0241C4DBE1C8", hash_generated_method = "5B80FA3EACC17411B3E8DC74FC889282")
     public void setPixels(int[] pixels, int offset, int stride,
                           int x, int y, int width, int height) {
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(pixels[0]);
-        dsTaint.addTaint(stride);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
         checkRecycled("Can't call setPixels() on a recycled bitmap");
         {
-            boolean var2D2A74E00B0F4ADB63FC14E0244B334F_1935435241 = (!isMutable());
+            boolean var2D2A74E00B0F4ADB63FC14E0244B334F_856528664 = (!isMutable());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
             } //End block
@@ -824,6 +824,13 @@ public final class Bitmap implements Parcelable {
         checkPixelsAccess(x, y, width, height, offset, stride, pixels);
         nativeSetPixels(mNativeBitmap, pixels, offset, stride,
                         x, y, width, height);
+        addTaint(pixels[0]);
+        addTaint(offset);
+        addTaint(stride);
+        addTaint(x);
+        addTaint(y);
+        addTaint(width);
+        addTaint(height);
         // ---------- Original Method ----------
         //checkRecycled("Can't call setPixels() on a recycled bitmap");
         //if (!isMutable()) {
@@ -838,27 +845,26 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.079 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.570 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3268CEE7B38E7FF8242E45C8B2D4D56C")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1646615195 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1646615195;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.080 -0400", hash_original_method = "D2FB921E1DDA261A52B060B1EF7694C1", hash_generated_method = "48A0FF0AD43CA69223231C9D7E29216D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.571 -0400", hash_original_method = "D2FB921E1DDA261A52B060B1EF7694C1", hash_generated_method = "BFEC6641D2F6A0B1FA4E64BD790D5EF1")
     public void writeToParcel(Parcel p, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(p.dsTaint);
         checkRecycled("Can't parcel a recycled bitmap");
         {
-            boolean var5DF242B1AD49EA84F890A63696D1516F_508178665 = (!nativeWriteToParcel(mNativeBitmap, mIsMutable, mDensity, p));
+            boolean var5DF242B1AD49EA84F890A63696D1516F_122979072 = (!nativeWriteToParcel(mNativeBitmap, mIsMutable, mDensity, p));
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("native writeToParcel failed");
             } //End block
         } //End collapsed parenthetic
+        addTaint(p.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //checkRecycled("Can't parcel a recycled bitmap");
         //if (!nativeWriteToParcel(mNativeBitmap, mIsMutable, mDensity, p)) {
@@ -867,21 +873,20 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.080 -0400", hash_original_method = "75D570937564149AAA647C007E5ED089", hash_generated_method = "D092F9E951C0E2F6203B2183038BDD0C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.573 -0400", hash_original_method = "75D570937564149AAA647C007E5ED089", hash_generated_method = "4CC3615FFCD09957F114442A407F6A66")
     public Bitmap extractAlpha() {
-        Bitmap varE5990E664B6EA7B07F751ED44580655F_999170969 = (extractAlpha(null, null));
-        return (Bitmap)dsTaint.getTaint();
+        Bitmap varB4EAC82CA7396A68D541C85D26508E83_3166761 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_3166761 = extractAlpha(null, null);
+        varB4EAC82CA7396A68D541C85D26508E83_3166761.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_3166761;
         // ---------- Original Method ----------
         //return extractAlpha(null, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.080 -0400", hash_original_method = "798FC3DD232FCC4B06F4415625A8D213", hash_generated_method = "97084617464085BF25CFD1F04FA4CE4A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.602 -0400", hash_original_method = "798FC3DD232FCC4B06F4415625A8D213", hash_generated_method = "EB3B383F76284313245727F023756051")
     public Bitmap extractAlpha(Paint paint, int[] offsetXY) {
-        dsTaint.addTaint(offsetXY[0]);
-        dsTaint.addTaint(paint.dsTaint);
+        Bitmap varB4EAC82CA7396A68D541C85D26508E83_424088667 = null; //Variable for return #1
         checkRecycled("Can't extractAlpha on a recycled bitmap");
         int nativePaint;
         nativePaint = paint.mNativePaint;
@@ -892,7 +897,11 @@ public final class Bitmap implements Parcelable {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Failed to extractAlpha on Bitmap");
         } //End block
         bm.mDensity = mDensity;
-        return (Bitmap)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_424088667 = bm;
+        addTaint(paint.getTaint());
+        addTaint(offsetXY[0]);
+        varB4EAC82CA7396A68D541C85D26508E83_424088667.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_424088667;
         // ---------- Original Method ----------
         //checkRecycled("Can't extractAlpha on a recycled bitmap");
         //int nativePaint = paint != null ? paint.mNativePaint : 0;
@@ -905,19 +914,18 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.081 -0400", hash_original_method = "3EA2D759216A517078419525658BBCD0", hash_generated_method = "67EF66A57B9291BC81CD1BA1FFB44B47")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.603 -0400", hash_original_method = "3EA2D759216A517078419525658BBCD0", hash_generated_method = "BDA0F4D167CDC7555D67998D4D1D6D91")
     public boolean sameAs(Bitmap other) {
-        dsTaint.addTaint(other.dsTaint);
-        boolean var573FBB3F9978D0C6C4756653011FAC34_1073891836 = (this == other || (other != null && nativeSameAs(mNativeBitmap, other.mNativeBitmap)));
-        return dsTaint.getTaintBoolean();
+        boolean var573FBB3F9978D0C6C4756653011FAC34_1079279290 = (this == other || (other != null && nativeSameAs(mNativeBitmap, other.mNativeBitmap)));
+        addTaint(other.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1371499247 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1371499247;
         // ---------- Original Method ----------
         //return this == other || (other != null && nativeSameAs(mNativeBitmap, other.mNativeBitmap));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.081 -0400", hash_original_method = "ABCB940311631CB7A5E91625A11E0A13", hash_generated_method = "EDCD1A3F0894A6577A12906075EDF3F2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.633 -0400", hash_original_method = "ABCB940311631CB7A5E91625A11E0A13", hash_generated_method = "EDCD1A3F0894A6577A12906075EDF3F2")
     public void prepareToDraw() {
         nativePrepareToDraw(mNativeBitmap);
         // ---------- Original Method ----------
@@ -1051,10 +1059,10 @@ public final class Bitmap implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.086 -0400", hash_original_method = "C9F7301125E447423E7DB3CDD9C42E7E", hash_generated_method = "877D44898B368F081F6B0A841502F64E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.708 -0400", hash_original_method = "C9F7301125E447423E7DB3CDD9C42E7E", hash_generated_method = "6936CFAE8347F767AB9C5B0D61C18161")
     final int ni() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1695900844 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1695900844;
         // ---------- Original Method ----------
         //return mNativeBitmap;
     }
@@ -1092,19 +1100,19 @@ public final class Bitmap implements Parcelable {
 
     
     private static class BitmapFinalizer {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.708 -0400", hash_original_field = "F16492AD902BDE58E3AAF1B990115133", hash_generated_field = "94EBE634EB926388C6FE9311F8ADAABA")
+
         private int mNativeBitmap;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.086 -0400", hash_original_method = "0DDF139B38AD50F56D0AF26AB944EC3E", hash_generated_method = "F41A1078E8D1AEF0FEC5D385B9582F62")
-        @DSModeled(DSC.SAFE)
-         BitmapFinalizer(int nativeBitmap) {
-            dsTaint.addTaint(nativeBitmap);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.709 -0400", hash_original_method = "0DDF139B38AD50F56D0AF26AB944EC3E", hash_generated_method = "2ABFC00A38D50D88F77B67505EB4A344")
+          BitmapFinalizer(int nativeBitmap) {
+            mNativeBitmap = nativeBitmap;
             // ---------- Original Method ----------
             //mNativeBitmap = nativeBitmap;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.087 -0400", hash_original_method = "750E0A25CDE7A09F3C919B08C5243F0D", hash_generated_method = "F7615B068DA183F6083E4BBEA97826DB")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.724 -0400", hash_original_method = "750E0A25CDE7A09F3C919B08C5243F0D", hash_generated_method = "F7615B068DA183F6083E4BBEA97826DB")
         @Override
         public void finalize() {
             try 
@@ -1131,41 +1139,33 @@ public final class Bitmap implements Parcelable {
 
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.738 -0400", hash_original_field = "C71478846957767201391E31D504F7CF", hash_generated_field = "C25FA99E764685711DDB1FEBC88ADFFB")
+
     public static final int DENSITY_NONE = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.738 -0400", hash_original_field = "5B7CE7C3B907236423F83FB7C4C74DB5", hash_generated_field = "1395EEF7EE47C17BCE3B8566023F33E1")
+
     private static volatile Matrix sScaleMatrix;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.738 -0400", hash_original_field = "9F8879FC7AE169BC092D1EE3BC2FBD08", hash_generated_field = "9A5692A5868FC9DC94E238F1418014E4")
+
     private static volatile int sDefaultDensity = -1;
-    private final static int WORKING_COMPRESS_STORAGE = 4096;
-    public static final Parcelable.Creator<Bitmap> CREATOR = new Parcelable.Creator<Bitmap>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.089 -0400", hash_original_method = "A576610C1F5A8AE8D31C4E9A14C2AA39", hash_generated_method = "73CFC1D42B0B89C11101958363CC9F75")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.738 -0400", hash_original_field = "295B0C9790BF4CF54082ACBBD1BFA817", hash_generated_field = "C9F7B201311A3190137BEECBC5C7FABB")
+
+    private static int WORKING_COMPRESS_STORAGE = 4096;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.738 -0400", hash_original_field = "BF846A98932B20D726C6F01DDC8F3632", hash_generated_field = "5962E9DA47CF5849E5C813893A51D279")
+
+    public static final Parcelable.Creator<Bitmap> CREATOR
+            = new Parcelable.Creator<Bitmap>() {
+        
         public Bitmap createFromParcel(Parcel p) {
-            dsTaint.addTaint(p.dsTaint);
-            Bitmap bm;
-            bm = nativeCreateFromParcel(p);
-            {
-                if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Failed to unparcel Bitmap");
-            } //End block
-            return (Bitmap)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //Bitmap bm = nativeCreateFromParcel(p);
-            //if (bm == null) {
-                //throw new RuntimeException("Failed to unparcel Bitmap");
-            //}
-            //return bm;
+            Bitmap bm = nativeCreateFromParcel(p);
+            if (bm == null) {
+                throw new RuntimeException("Failed to unparcel Bitmap");
+            }
+            return bm;
         }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.089 -0400", hash_original_method = "9D41A73AB5270B44257816A57AEF6E94", hash_generated_method = "180615193BCA3E25E7D7DFD8A0D291A8")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public Bitmap[] newArray(int size) {
-            dsTaint.addTaint(size);
-            Bitmap[] var020823AE6B4FABD43BC5CA310754CD23_1606684459 = (new Bitmap[size]);
-            return (Bitmap[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new Bitmap[size];
+            return new Bitmap[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

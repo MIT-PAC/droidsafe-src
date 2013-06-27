@@ -15,21 +15,34 @@ import java.util.Map;
 import java.util.Set;
 
 public final class BinaryHprofWriter {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "7E68DA75B9A11053C85FBA5DDEFD4449", hash_generated_field = "F6789153277D04B710C8FC8F6CD54F9E")
+
     private int nextStringId = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "C84BDAB09B513196433B1BAEBF02636F", hash_generated_field = "7A760F4F16EAFCB07FE0A0FC4C3F75E3")
+
     private int nextClassId = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "E8225D3D919F19BF647928E1C35BAC9C", hash_generated_field = "E479771D08904C609A002C4DAE48E586")
+
     private int nextStackFrameId = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "C6F94A0430429BC5B5CBDD661134864F", hash_generated_field = "130E1C8239A1EF37871DA358B76C8FC6")
+
     private Map<String, Integer> stringToId = new HashMap<String, Integer>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "5AF1F4E411FFF4CB8F713A02E8256963", hash_generated_field = "2CDC1154225A35F08445DD38968FE14B")
+
     private Map<String, Integer> classNameToId = new HashMap<String, Integer>();
-    private Map<StackTraceElement, Integer> stackFrameToId
-            = new HashMap<StackTraceElement, Integer>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "48E7FAE6A0D04CC3B01B707722B6D2C1", hash_generated_field = "D42AE6CBA5C52160FA35A05676E6290C")
+
+    private Map<StackTraceElement, Integer> stackFrameToId = new HashMap<StackTraceElement, Integer>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "8D777F385D3DFEC8815D20F7496026DC", hash_generated_field = "BD98D42EB76BD47A6FDE7B8FA850AB03")
+
     private HprofData data;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "58B7027288BADB051D787F0275726007")
+
     private DataOutputStream out;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.330 -0400", hash_original_method = "732DAB84FABC53991CAEE3EC9AA68C95", hash_generated_method = "00A96FB898D03FBCAD0EBDBC8FC1441A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private BinaryHprofWriter(HprofData data, OutputStream outputStream) {
-        dsTaint.addTaint(outputStream.dsTaint);
-        dsTaint.addTaint(data.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.148 -0400", hash_original_method = "732DAB84FABC53991CAEE3EC9AA68C95", hash_generated_method = "C306B4BCFF5195975397838E8E1DDCB6")
+    private  BinaryHprofWriter(HprofData data, OutputStream outputStream) {
+        this.data = data;
         this.out = new DataOutputStream(outputStream);
         // ---------- Original Method ----------
         //this.data = data;
@@ -42,17 +55,16 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.337 -0400", hash_original_method = "6C7AC0DF0B31CD08E559C12305128F3F", hash_generated_method = "A7935433237AC3322505ECB581805896")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.256 -0400", hash_original_method = "6C7AC0DF0B31CD08E559C12305128F3F", hash_generated_method = "8E97FFAD9087A74214EFB167B447620B")
     private void write() throws IOException {
         try 
         {
             writeHeader(data.getStartMillis());
             writeControlSettings(data.getFlags(), data.getDepth());
             {
-                Iterator<HprofData.ThreadEvent> var070E69574E1A624F954887941AC708CA_1537506538 = (data.getThreadHistory()).iterator();
-                var070E69574E1A624F954887941AC708CA_1537506538.hasNext();
-                HprofData.ThreadEvent event = var070E69574E1A624F954887941AC708CA_1537506538.next();
+                Iterator<HprofData.ThreadEvent> var070E69574E1A624F954887941AC708CA_52522392 = (data.getThreadHistory()).iterator();
+                var070E69574E1A624F954887941AC708CA_52522392.hasNext();
+                HprofData.ThreadEvent event = var070E69574E1A624F954887941AC708CA_52522392.next();
                 {
                     writeThreadEvent(event);
                 } //End block
@@ -62,9 +74,9 @@ public final class BinaryHprofWriter {
             int total;
             total = 0;
             {
-                Iterator<HprofData.Sample> varA18F9CCB2314E9522801AE336380C59F_352212580 = (samples).iterator();
-                varA18F9CCB2314E9522801AE336380C59F_352212580.hasNext();
-                HprofData.Sample sample = varA18F9CCB2314E9522801AE336380C59F_352212580.next();
+                Iterator<HprofData.Sample> varA18F9CCB2314E9522801AE336380C59F_1983390669 = (samples).iterator();
+                varA18F9CCB2314E9522801AE336380C59F_1983390669.hasNext();
+                HprofData.Sample sample = varA18F9CCB2314E9522801AE336380C59F_1983390669.next();
                 {
                     total += sample.count;
                     writeStackTrace(sample.stackTrace);
@@ -96,14 +108,13 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.337 -0400", hash_original_method = "C85B61C59E3F834AB2B5E220076F97DE", hash_generated_method = "1EDB5D776227D0D823DBFF6153DE7034")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.257 -0400", hash_original_method = "C85B61C59E3F834AB2B5E220076F97DE", hash_generated_method = "309CBD5602C849BC5E57B886A266C33C")
     private void writeHeader(long dumpTimeInMilliseconds) throws IOException {
-        dsTaint.addTaint(dumpTimeInMilliseconds);
         out.writeBytes(BinaryHprof.MAGIC + "1.0.2");
         out.writeByte(0);
         out.writeInt(BinaryHprof.ID_SIZE);
         out.writeLong(dumpTimeInMilliseconds);
+        addTaint(dumpTimeInMilliseconds);
         // ---------- Original Method ----------
         //out.writeBytes(BinaryHprof.MAGIC + "1.0.2");
         //out.writeByte(0);
@@ -112,11 +123,8 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.337 -0400", hash_original_method = "FDE35A19003ED22B657F91A2F0E06CCE", hash_generated_method = "3BCA85B9D79BBA7D2256F0220F7A4A12")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.257 -0400", hash_original_method = "FDE35A19003ED22B657F91A2F0E06CCE", hash_generated_method = "DF4BAF35069C74F3F635C5AF381B8F69")
     private void writeControlSettings(int flags, int depth) throws IOException {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(depth);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("depth too large for binary hprof: "
                                                + depth + " > " + Short.MAX_VALUE);
@@ -126,6 +134,8 @@ public final class BinaryHprofWriter {
                           BinaryHprof.Tag.CONTROL_SETTINGS.maximumSize);
         out.writeInt(flags);
         out.writeShort((short) depth);
+        addTaint(flags);
+        addTaint(depth);
         // ---------- Original Method ----------
         //if (depth > Short.MAX_VALUE) {
             //throw new IllegalArgumentException("depth too large for binary hprof: "
@@ -139,10 +149,8 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.337 -0400", hash_original_method = "1F5D47BDA1DF5C3350AF092C7A31D89B", hash_generated_method = "66EBC42F0DEBB70C9B1E432DF160FB12")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.270 -0400", hash_original_method = "1F5D47BDA1DF5C3350AF092C7A31D89B", hash_generated_method = "0F2DE3230EC283F197093DE4A687E2FD")
     private void writeThreadEvent(HprofData.ThreadEvent e) throws IOException {
-        dsTaint.addTaint(e.dsTaint);
         //Begin case START 
         writeStartThread(e);
         //End case START 
@@ -150,6 +158,7 @@ public final class BinaryHprofWriter {
         writeStopThread(e);
         //End case END 
         if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(e.type.toString());
+        addTaint(e.getTaint());
         // ---------- Original Method ----------
         //switch (e.type) {
             //case START:
@@ -163,10 +172,8 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.342 -0400", hash_original_method = "8E01CAF6795D5E83C54B68F6912FFEBF", hash_generated_method = "1D26E8175199AE52A1ABF807D53B83FA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.271 -0400", hash_original_method = "8E01CAF6795D5E83C54B68F6912FFEBF", hash_generated_method = "C96A5BC4B9C6E8C783868B281C72CC85")
     private void writeStartThread(HprofData.ThreadEvent e) throws IOException {
-        dsTaint.addTaint(e.dsTaint);
         int threadNameId;
         threadNameId = writeString(e.threadName);
         int groupNameId;
@@ -182,6 +189,7 @@ public final class BinaryHprofWriter {
         writeId(threadNameId);
         writeId(groupNameId);
         writeId(parentGroupNameId);
+        addTaint(e.getTaint());
         // ---------- Original Method ----------
         //int threadNameId = writeString(e.threadName);
         //int groupNameId = writeString(e.groupName);
@@ -198,14 +206,13 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.342 -0400", hash_original_method = "22EC0A4C26BDEF90544F91DCC7CD0649", hash_generated_method = "F94195CD6325728BC6E45B998A0075F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.271 -0400", hash_original_method = "22EC0A4C26BDEF90544F91DCC7CD0649", hash_generated_method = "42F889CD6216B33A9528B3493A8EF14C")
     private void writeStopThread(HprofData.ThreadEvent e) throws IOException {
-        dsTaint.addTaint(e.dsTaint);
         writeRecordHeader(BinaryHprof.Tag.END_THREAD,
                           0,
                           BinaryHprof.Tag.END_THREAD.maximumSize);
         out.writeInt(e.threadId);
+        addTaint(e.getTaint());
         // ---------- Original Method ----------
         //writeRecordHeader(BinaryHprof.Tag.END_THREAD,
                           //0,
@@ -214,14 +221,10 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.342 -0400", hash_original_method = "676873B3FD0126014DC640E27218ACDD", hash_generated_method = "BB25E59758A2D584DDAFECE387F26CA0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.272 -0400", hash_original_method = "676873B3FD0126014DC640E27218ACDD", hash_generated_method = "429DB836B976CD9E29C8E8C78981F5FE")
     private void writeRecordHeader(BinaryHprof.Tag hprofTag,
                                    int timeDeltaInMicroseconds,
                                    int recordLength) throws IOException {
-        dsTaint.addTaint(timeDeltaInMicroseconds);
-        dsTaint.addTaint(recordLength);
-        dsTaint.addTaint(hprofTag.dsTaint);
         String error;
         error = hprofTag.checkSize(recordLength);
         {
@@ -230,6 +233,9 @@ public final class BinaryHprofWriter {
         out.writeByte(hprofTag.tag);
         out.writeInt(timeDeltaInMicroseconds);
         out.writeInt(recordLength);
+        addTaint(hprofTag.getTaint());
+        addTaint(timeDeltaInMicroseconds);
+        addTaint(recordLength);
         // ---------- Original Method ----------
         //String error = hprofTag.checkSize(recordLength);
         //if (error != null) {
@@ -241,20 +247,17 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.343 -0400", hash_original_method = "444AE2A435FAF86B0F2CBA448766AD4E", hash_generated_method = "14B2AF1CB5921A6B028B9AEEFF38463D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.282 -0400", hash_original_method = "444AE2A435FAF86B0F2CBA448766AD4E", hash_generated_method = "C4A51450BBCA14F0C5623683FB3F2463")
     private void writeId(int id) throws IOException {
-        dsTaint.addTaint(id);
         out.writeInt(id);
+        addTaint(id);
         // ---------- Original Method ----------
         //out.writeInt(id);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.343 -0400", hash_original_method = "F126C5267DAD0F96A8C03752944B8779", hash_generated_method = "7549B6FA2696138CCA04806F657D1F41")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.282 -0400", hash_original_method = "F126C5267DAD0F96A8C03752944B8779", hash_generated_method = "59A87E24B7F99229671863CAFAE09707")
     private int writeString(String string) throws IOException {
-        dsTaint.addTaint(string);
         Integer identifier;
         identifier = stringToId.get(string);
         int id;
@@ -267,7 +270,9 @@ public final class BinaryHprofWriter {
                           BinaryHprof.ID_SIZE + bytes.length);
         out.writeInt(id);
         out.write(bytes, 0, bytes.length);
-        return dsTaint.getTaintInt();
+        addTaint(string.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749478074 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749478074;
         // ---------- Original Method ----------
         //if (string == null) {
             //return 0;
@@ -288,25 +293,24 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.347 -0400", hash_original_method = "759EEA3A3B19BFF3937058AF4EFC13EB", hash_generated_method = "04BC0F939C73F9A1AAC074C618D91EB6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.325 -0400", hash_original_method = "759EEA3A3B19BFF3937058AF4EFC13EB", hash_generated_method = "F172998EF61A57782840C58C0F92E944")
     private void writeCpuSamples(int totalSamples, Set<HprofData.Sample> samples) throws IOException {
-        dsTaint.addTaint(totalSamples);
-        dsTaint.addTaint(samples.dsTaint);
         int samplesCount;
         samplesCount = samples.size();
         writeRecordHeader(BinaryHprof.Tag.CPU_SAMPLES, 0, 4 + 4 + (samplesCount * (4 + 4)));
         out.writeInt(totalSamples);
         out.writeInt(samplesCount);
         {
-            Iterator<HprofData.Sample> varA18F9CCB2314E9522801AE336380C59F_1885318157 = (samples).iterator();
-            varA18F9CCB2314E9522801AE336380C59F_1885318157.hasNext();
-            HprofData.Sample sample = varA18F9CCB2314E9522801AE336380C59F_1885318157.next();
+            Iterator<HprofData.Sample> varA18F9CCB2314E9522801AE336380C59F_1049600965 = (samples).iterator();
+            varA18F9CCB2314E9522801AE336380C59F_1049600965.hasNext();
+            HprofData.Sample sample = varA18F9CCB2314E9522801AE336380C59F_1049600965.next();
             {
                 out.writeInt(sample.count);
                 out.writeInt(sample.stackTrace.stackTraceId);
             } //End block
         } //End collapsed parenthetic
+        addTaint(totalSamples);
+        addTaint(samples.getTaint());
         // ---------- Original Method ----------
         //int samplesCount = samples.size();
         //if (samplesCount == 0) {
@@ -322,10 +326,8 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.350 -0400", hash_original_method = "AA7BB7F509E670C633C84E0D44DE5DDB", hash_generated_method = "BF5CFC9ECE78EC1444EE18CC725C768F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.348 -0400", hash_original_method = "AA7BB7F509E670C633C84E0D44DE5DDB", hash_generated_method = "9BB8E029536B2D44F750E1EEEADB8554")
     private void writeStackTrace(HprofData.StackTrace stackTrace) throws IOException {
-        dsTaint.addTaint(stackTrace.dsTaint);
         int frames;
         frames = stackTrace.stackFrames.length;
         int[] stackFrameIds;
@@ -349,6 +351,7 @@ public final class BinaryHprofWriter {
                 writeId(stackFrameId);
             } //End block
         } //End collapsed parenthetic
+        addTaint(stackTrace.getTaint());
         // ---------- Original Method ----------
         //int frames = stackTrace.stackFrames.length;
         //int[] stackFrameIds = new int[frames];
@@ -367,10 +370,8 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.351 -0400", hash_original_method = "564218335BC7BDEEE42DF1829D6316AF", hash_generated_method = "EACFC02B58C19F2291374F3779F86213")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.348 -0400", hash_original_method = "564218335BC7BDEEE42DF1829D6316AF", hash_generated_method = "FD5F81E9570F82DF5B350D6668985756")
     private int writeLoadClass(String className) throws IOException {
-        dsTaint.addTaint(className);
         Integer identifier;
         identifier = classNameToId.get(className);
         int id;
@@ -385,7 +386,9 @@ public final class BinaryHprofWriter {
         writeId(0);
         out.writeInt(0);
         writeId(classNameId);
-        return dsTaint.getTaintInt();
+        addTaint(className.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_22244096 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_22244096;
         // ---------- Original Method ----------
         //Integer identifier = classNameToId.get(className);
         //if (identifier != null) {
@@ -405,10 +408,8 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.352 -0400", hash_original_method = "0C83F2A39C21D86EF68CFCB925D16EF6", hash_generated_method = "D482695634A2E66B5D59BDB223DBEE93")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.349 -0400", hash_original_method = "0C83F2A39C21D86EF68CFCB925D16EF6", hash_generated_method = "04279863176494CF27F6C7BCD8DF19CD")
     private int writeStackFrame(StackTraceElement stackFrame) throws IOException {
-        dsTaint.addTaint(stackFrame.dsTaint);
         Integer identifier;
         identifier = stackFrameToId.get(stackFrame);
         int id;
@@ -429,7 +430,9 @@ public final class BinaryHprofWriter {
         writeId(sourceId);
         out.writeInt(classId);
         out.writeInt(stackFrame.getLineNumber());
-        return dsTaint.getTaintInt();
+        addTaint(stackFrame.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_705481587 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_705481587;
         // ---------- Original Method ----------
         //Integer identifier = stackFrameToId.get(stackFrame);
         //if (identifier != null) {

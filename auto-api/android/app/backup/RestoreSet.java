@@ -11,23 +11,27 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class RestoreSet implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.141 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
+
     public String name;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.141 -0400", hash_original_field = "913F9C49DCB544E2087CEE284F4A00B7", hash_generated_field = "0631FBD4EFF378254463BB4235C76180")
+
     public String device;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.142 -0400", hash_original_field = "94A08DA1FECBB6E8B46990538C7B50B2", hash_generated_field = "D837BDC3597836EC3D401AFD06D9D644")
+
     public long token;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.895 -0400", hash_original_method = "8F1DCA72C97A5A82D254BEC6432DE3FB", hash_generated_method = "7FCB63EDEACCF2BAFC1B2567162DB769")
-    @DSModeled(DSC.SAFE)
-    public RestoreSet() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.158 -0400", hash_original_method = "8F1DCA72C97A5A82D254BEC6432DE3FB", hash_generated_method = "7FCB63EDEACCF2BAFC1B2567162DB769")
+    public  RestoreSet() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.895 -0400", hash_original_method = "F547208C80F4E032CD5D9862703EA509", hash_generated_method = "77AB0BAE93E94E0497B90B403E9BCA71")
-    @DSModeled(DSC.SAFE)
-    public RestoreSet(String _name, String _dev, long _token) {
-        dsTaint.addTaint(_dev);
-        dsTaint.addTaint(_name);
-        dsTaint.addTaint(_token);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.171 -0400", hash_original_method = "F547208C80F4E032CD5D9862703EA509", hash_generated_method = "A2BEDB96F1DE1981EA8EAA97E414F2A2")
+    public  RestoreSet(String _name, String _dev, long _token) {
+        name = _name;
+        device = _dev;
+        token = _token;
         // ---------- Original Method ----------
         //name = _name;
         //device = _dev;
@@ -35,10 +39,8 @@ public class RestoreSet implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.896 -0400", hash_original_method = "2219E3A595B9AC7F0E16EAF40A593277", hash_generated_method = "51D20EFA98930AF0C2A02DD261083FF9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private RestoreSet(Parcel in) {
-        dsTaint.addTaint(in.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.173 -0400", hash_original_method = "2219E3A595B9AC7F0E16EAF40A593277", hash_generated_method = "515D016B6FCBFDE2EE05BA656DC5FEA2")
+    private  RestoreSet(Parcel in) {
         name = in.readString();
         device = in.readString();
         token = in.readLong();
@@ -49,23 +51,22 @@ public class RestoreSet implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.896 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.174 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4A643E9545EAE48D727AD9F8786B8F74")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1024600092 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1024600092;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.897 -0400", hash_original_method = "6F3E6147075189D34A5652BA91455185", hash_generated_method = "6B6E0EEDDBD2BAE0DBCA716C1041F9D9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.183 -0400", hash_original_method = "6F3E6147075189D34A5652BA91455185", hash_generated_method = "F1258177722E9F0EC5E6487116BC2722")
     public void writeToParcel(Parcel out, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(out.dsTaint);
         out.writeString(name);
         out.writeString(device);
         out.writeLong(token);
+        addTaint(out.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //out.writeString(name);
         //out.writeString(device);
@@ -73,29 +74,17 @@ public class RestoreSet implements Parcelable {
     }
 
     
-    public static final Parcelable.Creator<RestoreSet> CREATOR = new Parcelable.Creator<RestoreSet>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.898 -0400", hash_original_method = "BAC0E1D02FA6C265C2D5D1FA79671B4B", hash_generated_method = "66371CA090D291097249E03DE63B8A55")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.183 -0400", hash_original_field = "CE8E8F9B87B41BD54B3EF7D5C775C91C", hash_generated_field = "FA29E88161E42230CFC58EC9483694A2")
+
+    public static final Parcelable.Creator<RestoreSet> CREATOR
+            = new Parcelable.Creator<RestoreSet>() {
         public RestoreSet createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            RestoreSet var9079338B6CF3C389A49FE1112F1EEA49_794395038 = (new RestoreSet(in));
-            return (RestoreSet)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new RestoreSet(in);
+            return new RestoreSet(in);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.898 -0400", hash_original_method = "03C8EF6AD074BC1F725D7C9C3018C39D", hash_generated_method = "4A1161A72EE0C95AFF36F0A979D713B3")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public RestoreSet[] newArray(int size) {
-            dsTaint.addTaint(size);
-            RestoreSet[] var9853A6D18DDD36B7F3CAD92DB6352031_91892855 = (new RestoreSet[size]);
-            return (RestoreSet[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new RestoreSet[size];
+            return new RestoreSet[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

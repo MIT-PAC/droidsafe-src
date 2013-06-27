@@ -12,11 +12,12 @@ import javax.sip.header.*;
 import java.util.*;
 
 public class Server extends SIPHeader implements ServerHeader {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.530 -0400", hash_original_field = "9688EFB908EECBA4C560247BC17C9D80", hash_generated_field = "23BE30BA77F76A348892FB57EBB6010B")
+
     protected List productTokens;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.404 -0400", hash_original_method = "28A485C01704A957BCAF31556583EFBE", hash_generated_method = "305518061AF0A2CB840B318B99F5BA97")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Server() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.533 -0400", hash_original_method = "28A485C01704A957BCAF31556583EFBE", hash_generated_method = "305518061AF0A2CB840B318B99F5BA97")
+    public  Server() {
         super(NAME);
         productTokens = new LinkedList();
         // ---------- Original Method ----------
@@ -24,25 +25,26 @@ public class Server extends SIPHeader implements ServerHeader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.405 -0400", hash_original_method = "3BD03A3FDC86F025553E39D4B6A63060", hash_generated_method = "D4A628EEF3263464E77683AA330D4577")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.538 -0400", hash_original_method = "3BD03A3FDC86F025553E39D4B6A63060", hash_generated_method = "972BD4A154DAED772FD05E4AC45AD802")
     private String encodeProduct() {
+        String varB4EAC82CA7396A68D541C85D26508E83_827167029 = null; //Variable for return #1
         StringBuffer tokens;
         tokens = new StringBuffer();
         ListIterator it;
         it = productTokens.listIterator();
         {
-            boolean var03729FD53960D8DCA3A41A13A0229637_825437619 = (it.hasNext());
+            boolean var03729FD53960D8DCA3A41A13A0229637_1236109583 = (it.hasNext());
             {
                 tokens.append((String) it.next());
                 {
-                    boolean var3DEC40B862508A9A2151C7EC9CE55CF3_2040483374 = (it.hasNext());
+                    boolean var3DEC40B862508A9A2151C7EC9CE55CF3_351996062 = (it.hasNext());
                     tokens.append('/');
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        String var7DBC0F2E4AEDC48970B4989A3308D8BE_722201054 = (tokens.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_827167029 = tokens.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_827167029.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_827167029;
         // ---------- Original Method ----------
         //StringBuffer tokens = new StringBuffer();
         //ListIterator it = productTokens.listIterator();
@@ -57,34 +59,46 @@ public class Server extends SIPHeader implements ServerHeader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.405 -0400", hash_original_method = "ABC17F5FB7BD95EF5278D9B937F06D5F", hash_generated_method = "6E10DB1ACE154C02AD2F26B35AED4225")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.541 -0400", hash_original_method = "ABC17F5FB7BD95EF5278D9B937F06D5F", hash_generated_method = "CEF2772B8F413B5DE4C8BE1EE4727C42")
     public void addProductToken(String pt) {
-        dsTaint.addTaint(pt);
         productTokens.add(pt);
+        addTaint(pt.getTaint());
         // ---------- Original Method ----------
         //productTokens.add(pt);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.405 -0400", hash_original_method = "C0BFA4AD92D4DEF654107ADD12EA3FEE", hash_generated_method = "2853E64EC4EA6E826B70B5B1BA4E6878")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.542 -0400", hash_original_method = "C0BFA4AD92D4DEF654107ADD12EA3FEE", hash_generated_method = "84E553DFB4EEB7D9D247CEBE394E20E3")
     public String encodeBody() {
-        String var984163E8FCEB355C5D2B1D89AEFA14BA_1229072640 = (encodeProduct());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1691275209 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1691275209 = encodeProduct();
+        varB4EAC82CA7396A68D541C85D26508E83_1691275209.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1691275209;
         // ---------- Original Method ----------
         //return encodeProduct();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.405 -0400", hash_original_method = "FCFEA9A6A04C032A17913D323F8D82A6", hash_generated_method = "D5E0569E8CBC925B74350BE0EA44006F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.542 -0400", hash_original_method = "FCFEA9A6A04C032A17913D323F8D82A6", hash_generated_method = "84D2FD6CAD0A68D2A40395D03315ED93")
     public ListIterator getProduct() {
+        ListIterator varB4EAC82CA7396A68D541C85D26508E83_796327544 = null; //Variable for return #1
+        ListIterator varB4EAC82CA7396A68D541C85D26508E83_173424526 = null; //Variable for return #2
         {
-            boolean var6FC43180604DFF08774360C95FED0CF9_543301348 = (productTokens == null || productTokens.isEmpty());
-            ListIterator var846D9087D1B8085D500F0D550A98BAC7_1574168688 = (productTokens.listIterator());
+            boolean var6FC43180604DFF08774360C95FED0CF9_1766551768 = (productTokens == null || productTokens.isEmpty());
+            varB4EAC82CA7396A68D541C85D26508E83_796327544 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_173424526 = productTokens.listIterator();
         } //End collapsed parenthetic
-        return (ListIterator)dsTaint.getTaint();
+        ListIterator varA7E53CE21691AB073D9660D615818899_282617361; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_282617361 = varB4EAC82CA7396A68D541C85D26508E83_796327544;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_282617361 = varB4EAC82CA7396A68D541C85D26508E83_173424526;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_282617361.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_282617361;
         // ---------- Original Method ----------
         //if (productTokens == null || productTokens.isEmpty())
             //return null;
@@ -93,14 +107,13 @@ public class Server extends SIPHeader implements ServerHeader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.405 -0400", hash_original_method = "3D9ECE8DAEA4B32C617B95DA481A8348", hash_generated_method = "AC58FC4AF910AA90AB217241A3C17762")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.548 -0400", hash_original_method = "3D9ECE8DAEA4B32C617B95DA481A8348", hash_generated_method = "3149F1655FD6DBB53E41037D379F9BA7")
     public void setProduct(List product) throws ParseException {
-        dsTaint.addTaint(product.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                 "JAIN-SIP Exception, UserAgent, "
                     + "setProduct(), the "
                     + " product parameter is null");
+        productTokens = product;
         // ---------- Original Method ----------
         //if (product == null)
             //throw new NullPointerException(
@@ -111,6 +124,8 @@ public class Server extends SIPHeader implements ServerHeader {
     }
 
     
-    private static final long serialVersionUID = -3587764149383342973L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.549 -0400", hash_original_field = "C650C2D202702263731A478D25505F7E", hash_generated_field = "BA3CF02A53D375867061175F59E40547")
+
+    private static long serialVersionUID = -3587764149383342973L;
 }
 

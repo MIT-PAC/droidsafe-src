@@ -10,22 +10,22 @@ import java.util.Iterator;
 
 public class CertificateEncodingException extends CertificateException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.217 -0400", hash_original_method = "7001A7B06C3C6F6A9AA79A4DDBDE06C1", hash_generated_method = "8DCDD19FE87A4AA07DE99F8116B6CE48")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CertificateEncodingException(String msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.817 -0400", hash_original_method = "7001A7B06C3C6F6A9AA79A4DDBDE06C1", hash_generated_method = "9AF12C7C6EFC4619DBB2BD1EE3112CE5")
+    public  CertificateEncodingException(String msg) {
         super(msg);
-        dsTaint.addTaint(msg);
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.218 -0400", hash_original_method = "4937F69C7A48975DF1EBD7F32A366CEE", hash_generated_method = "C2D35BC07014BC3018532FA9B69AF7DE")
-    @DSModeled(DSC.SAFE)
-    public CertificateEncodingException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.817 -0400", hash_original_method = "4937F69C7A48975DF1EBD7F32A366CEE", hash_generated_method = "C2D35BC07014BC3018532FA9B69AF7DE")
+    public  CertificateEncodingException() {
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = -8187642723048403470L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.817 -0400", hash_original_field = "DEEB62DF1D87842C4CFD50EADC007C04", hash_generated_field = "7BDA9FDE04C036DCE71C6E8CECDE246D")
+
+    private static long serialVersionUID = -8187642723048403470L;
 }
 

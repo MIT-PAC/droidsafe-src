@@ -9,12 +9,13 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public final class MutableLong {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.313 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "A28EA7D9A335E0B27F96E01971833756")
+
     public long value;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.689 -0400", hash_original_method = "B5E860DA0DFEBF0A4A36C551942DC427", hash_generated_method = "15BCF215B558892AFEB0137E4D3FB454")
-    @DSModeled(DSC.SAFE)
-    public MutableLong(long value) {
-        dsTaint.addTaint(value);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.313 -0400", hash_original_method = "B5E860DA0DFEBF0A4A36C551942DC427", hash_generated_method = "C0B03DBB53B45A98F99F8A94A2A0B113")
+    public  MutableLong(long value) {
+        this.value = value;
         // ---------- Original Method ----------
         //this.value = value;
     }

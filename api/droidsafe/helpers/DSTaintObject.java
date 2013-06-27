@@ -23,11 +23,6 @@ public class DSTaintObject {
         taintObject = taint;
     }
 
-	@DSModeled(DSC.BAN)
-	public void addTaint(CharSequence i) {
-		this.taintObject = i.toString();
-	}
-	
     @DSModeled(DSC.BAN)
     public byte getTaintByte() {
         return (byte)taintDouble;

@@ -12,32 +12,32 @@ import java.text.ParseException;
 
 public class ProxyAuthenticateParser extends ChallengeParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.480 -0400", hash_original_method = "581BDEBBD299AB0E5135A7CDD0C8C9B1", hash_generated_method = "9C99F0123E55451FCA57EEB4F13C3683")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ProxyAuthenticateParser(String proxyAuthenticate) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.032 -0400", hash_original_method = "581BDEBBD299AB0E5135A7CDD0C8C9B1", hash_generated_method = "CF83D4E1378EBF47C4D5202332A2C120")
+    public  ProxyAuthenticateParser(String proxyAuthenticate) {
         super(proxyAuthenticate);
-        dsTaint.addTaint(proxyAuthenticate);
+        addTaint(proxyAuthenticate.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.480 -0400", hash_original_method = "31FFFD362F12BC1F7E1E79481AA610B2", hash_generated_method = "A5F048BE65E0E408013D8EAC881EA412")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected ProxyAuthenticateParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.032 -0400", hash_original_method = "31FFFD362F12BC1F7E1E79481AA610B2", hash_generated_method = "4EB66B1C980DD68F479690AB3A750989")
+    protected  ProxyAuthenticateParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.481 -0400", hash_original_method = "EBFDF03354240070ED50C53BEBC6AA29", hash_generated_method = "0C7F61F3280DB42C45860A20FD035ED1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.043 -0400", hash_original_method = "EBFDF03354240070ED50C53BEBC6AA29", hash_generated_method = "13EB5CFBEB3F5A1DF9A7A0BB5C46A2EB")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_682151375 = null; //Variable for return #1
         headerName(TokenTypes.PROXY_AUTHENTICATE);
         ProxyAuthenticate proxyAuthenticate;
         proxyAuthenticate = new ProxyAuthenticate();
         super.parse(proxyAuthenticate);
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_682151375 = proxyAuthenticate;
+        varB4EAC82CA7396A68D541C85D26508E83_682151375.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_682151375;
         // ---------- Original Method ----------
         //headerName(TokenTypes.PROXY_AUTHENTICATE);
         //ProxyAuthenticate proxyAuthenticate = new ProxyAuthenticate();

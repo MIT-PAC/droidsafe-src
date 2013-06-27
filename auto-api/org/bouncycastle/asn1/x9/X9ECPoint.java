@@ -1,0 +1,64 @@
+package org.bouncycastle.asn1.x9;
+
+// Droidsafe Imports
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+// needed for enhanced for control translations
+import java.util.Iterator;
+import org.bouncycastle.asn1.ASN1Encodable;
+import org.bouncycastle.asn1.ASN1OctetString;
+import org.bouncycastle.asn1.DERObject;
+import org.bouncycastle.asn1.DEROctetString;
+import org.bouncycastle.math.ec.ECCurve;
+import org.bouncycastle.math.ec.ECPoint;
+
+public class X9ECPoint extends ASN1Encodable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.397 -0400", hash_original_field = "83878C91171338902E0FE0FB97A8C47A", hash_generated_field = "970C33153824C1D915DACA6A7A433B9D")
+
+    ECPoint p;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.404 -0400", hash_original_method = "D8A9B6BC21A3F338658632EA320E8353", hash_generated_method = "761FFCAF52EF07DD44194D08623A70BE")
+    public  X9ECPoint(
+        ECPoint p) {
+        this.p = p;
+        // ---------- Original Method ----------
+        //this.p = p;
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.405 -0400", hash_original_method = "62B905AD7CA2E17ED0AA9C97BE811516", hash_generated_method = "45B652F09751CF767E280B805C2FC864")
+    public  X9ECPoint(
+        ECCurve          c,
+        ASN1OctetString  s) {
+        this.p = c.decodePoint(s.getOctets());
+        // ---------- Original Method ----------
+        //this.p = c.decodePoint(s.getOctets());
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.406 -0400", hash_original_method = "D52AE13C55E681838944F7D6A70D7ED5", hash_generated_method = "C5F6BB99C4CAAF1CDB2AE4FE5C624F24")
+    public ECPoint getPoint() {
+        ECPoint varB4EAC82CA7396A68D541C85D26508E83_885624787 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_885624787 = p;
+        varB4EAC82CA7396A68D541C85D26508E83_885624787.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_885624787;
+        // ---------- Original Method ----------
+        //return p;
+    }
+
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.406 -0400", hash_original_method = "C505CC97F230C74832134C935460DD57", hash_generated_method = "F0A71C8B4950000A0EF88D64EAEA0D1E")
+    public DERObject toASN1Object() {
+        DERObject varB4EAC82CA7396A68D541C85D26508E83_1402848503 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1402848503 = new DEROctetString(p.getEncoded());
+        varB4EAC82CA7396A68D541C85D26508E83_1402848503.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1402848503;
+        // ---------- Original Method ----------
+        //return new DEROctetString(p.getEncoded());
+    }
+
+    
+}
+

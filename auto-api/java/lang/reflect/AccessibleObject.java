@@ -12,11 +12,12 @@ import java.util.Hashtable;
 import org.apache.harmony.kernel.vm.StringUtils;
 
 public class AccessibleObject implements AnnotatedElement {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.889 -0400", hash_original_field = "04B8D6DC602542C7D84E76F57842A90E", hash_generated_field = "D3CD6765000979577B5DA559E9F23C55")
+
     boolean flag = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.754 -0400", hash_original_method = "79E776845C9774BB9614D2D0955EABCF", hash_generated_method = "846450B6CD756FC6E1311C471B3C4B56")
-    @DSModeled(DSC.SAFE)
-    protected AccessibleObject() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.889 -0400", hash_original_method = "79E776845C9774BB9614D2D0955EABCF", hash_generated_method = "846450B6CD756FC6E1311C471B3C4B56")
+    protected  AccessibleObject() {
         // ---------- Original Method ----------
     }
 
@@ -30,82 +31,77 @@ public class AccessibleObject implements AnnotatedElement {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.754 -0400", hash_original_method = "66D52F3844786BE4BB43647AC248F3A6", hash_generated_method = "6C202834072D9E420DA36B2138DFCCFB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.890 -0400", hash_original_method = "66D52F3844786BE4BB43647AC248F3A6", hash_generated_method = "1BECEC9F74D38C192656672470DCFF45")
     public boolean isAccessible() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1549432327 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1549432327;
         // ---------- Original Method ----------
         //return flag;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.755 -0400", hash_original_method = "1000999C704703264C7A249C905DEAE6", hash_generated_method = "5D7A1CDA581113C1AC4B3DCE53C883F3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.890 -0400", hash_original_method = "1000999C704703264C7A249C905DEAE6", hash_generated_method = "D0859DDEC273DE0EC754854BC0CB46EB")
     public void setAccessible(boolean flag) {
-        dsTaint.addTaint(flag);
+        this.flag = flag;
         // ---------- Original Method ----------
         //this.flag = flag;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.755 -0400", hash_original_method = "8CC5FFC4D6878043D8F48CA01CEE9F83", hash_generated_method = "70785B9356A408CF58880586A3D935CA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.890 -0400", hash_original_method = "8CC5FFC4D6878043D8F48CA01CEE9F83", hash_generated_method = "DF28E27DCD1C4C44113F8C28AF5A7609")
     public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
-        dsTaint.addTaint(annotationType.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        return dsTaint.getTaintBoolean();
+        addTaint(annotationType.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_396801600 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_396801600;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.755 -0400", hash_original_method = "0B7DCEEC0F2643B54E5B168F87B9CE3A", hash_generated_method = "B1C55C5151F5843FC780CF3CBCA75D04")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.891 -0400", hash_original_method = "0B7DCEEC0F2643B54E5B168F87B9CE3A", hash_generated_method = "17B2182191539942B289AD17385B4E86")
     public Annotation[] getDeclaredAnnotations() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        return (Annotation[])dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.755 -0400", hash_original_method = "CDE5472758ACF6CE75A2FF7BF6EF0F38", hash_generated_method = "7F5E971E88173BE985E1865841417B63")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.911 -0400", hash_original_method = "CDE5472758ACF6CE75A2FF7BF6EF0F38", hash_generated_method = "70347C0D17EA667C3CAE5FCF352D48CC")
     public Annotation[] getAnnotations() {
-        Annotation[] var6F456C0B69D88C448B47E971C1CEA786_157340726 = (getDeclaredAnnotations());
-        return (Annotation[])dsTaint.getTaint();
+        Annotation[] varB4EAC82CA7396A68D541C85D26508E83_967399073 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_967399073 = getDeclaredAnnotations();
+        varB4EAC82CA7396A68D541C85D26508E83_967399073.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_967399073;
         // ---------- Original Method ----------
         //return getDeclaredAnnotations();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.755 -0400", hash_original_method = "E854D6B6A4F110252592FEF88B9AB0AA", hash_generated_method = "4E27AF2C975E0A27FFBEDE925FF04E16")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.912 -0400", hash_original_method = "E854D6B6A4F110252592FEF88B9AB0AA", hash_generated_method = "6484E1ACA79C11A5EBE95A65BCF0B2D2")
     public <T extends Annotation> T getAnnotation(Class<T> annotationType) {
-        dsTaint.addTaint(annotationType.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        return (T)dsTaint.getTaint();
+        addTaint(annotationType.getTaint());
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.756 -0400", hash_original_method = "AFCD123A6E616CB6E7A6F8CAEE33C533", hash_generated_method = "0329FEE344D50CC61B3CD462DE5BDA75")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.913 -0400", hash_original_method = "AFCD123A6E616CB6E7A6F8CAEE33C533", hash_generated_method = "BB754B43B917D1870788BFB186003292")
      String getSignature(Class<?> clazz) {
-        dsTaint.addTaint(clazz.dsTaint);
+        String varB4EAC82CA7396A68D541C85D26508E83_1167906300 = null; //Variable for return #1
         String result;
         result = "";
         String nextType;
         nextType = clazz.getName();
         {
-            boolean varB0CECCA2B4D7E05F335BC1240FF8707E_1142663228 = (trans.containsKey(nextType));
+            boolean varB0CECCA2B4D7E05F335BC1240FF8707E_505653124 = (trans.containsKey(nextType));
             {
                 result = trans.get(nextType);
             } //End block
             {
                 {
-                    boolean var89033C011C3D70F45494D634C893FFF8_678132789 = (clazz.isArray());
+                    boolean var89033C011C3D70F45494D634C893FFF8_513372193 = (clazz.isArray());
                     {
                         result = "[" + getSignature(clazz.getComponentType());
                     } //End block
@@ -115,7 +111,10 @@ public class AccessibleObject implements AnnotatedElement {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1167906300 = result;
+        addTaint(clazz.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1167906300.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1167906300;
         // ---------- Original Method ----------
         //String result = "";
         //String nextType = clazz.getName();
@@ -132,10 +131,9 @@ public class AccessibleObject implements AnnotatedElement {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.757 -0400", hash_original_method = "538B7B8EC3794D6F6E22215297E953DA", hash_generated_method = "52743CEE42906A31FFE45F1642FC7B4F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.937 -0400", hash_original_method = "538B7B8EC3794D6F6E22215297E953DA", hash_generated_method = "B089175D6A7AB3A51CFB40D618BAE97A")
      String toString(Class<?>[] types) {
-        dsTaint.addTaint(types[0].dsTaint);
+        String varB4EAC82CA7396A68D541C85D26508E83_1771407988 = null; //Variable for return #1
         StringBuilder result;
         result = new StringBuilder();
         {
@@ -149,8 +147,10 @@ public class AccessibleObject implements AnnotatedElement {
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        String varEA70154FDA28CC59402440C6317B57EF_1681813045 = (result.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1771407988 = result.toString();
+        addTaint(types[0].getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1771407988.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1771407988;
         // ---------- Original Method ----------
         //StringBuilder result = new StringBuilder();
         //if (types.length != 0) {
@@ -164,11 +164,9 @@ public class AccessibleObject implements AnnotatedElement {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.757 -0400", hash_original_method = "595C9CE9F234EEA7E3334962F2566B38", hash_generated_method = "811236CE1D792F8E482BEA3362167725")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.938 -0400", hash_original_method = "595C9CE9F234EEA7E3334962F2566B38", hash_generated_method = "8C7DE412FAC138E28DFD12945E23B5A6")
      String getSignatureAttribute() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        return dsTaint.getTaintString();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
@@ -188,15 +186,12 @@ public class AccessibleObject implements AnnotatedElement {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.761 -0400", hash_original_method = "96346F5FDCAEE775233825443F323528", hash_generated_method = "ACB216550814DD442987B6A38DA8A97C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.939 -0400", hash_original_method = "96346F5FDCAEE775233825443F323528", hash_generated_method = "5924CFF4D469D8DF83525432E116202C")
      void appendArrayType(StringBuilder sb, Class<?> obj) {
-        dsTaint.addTaint(sb.dsTaint);
-        dsTaint.addTaint(obj.dsTaint);
         int dimensions;
         dimensions = 0;
         {
-            boolean var9993E8A418BE8C4A6D5358EC116C939A_1771044296 = (obj.isArray());
+            boolean var9993E8A418BE8C4A6D5358EC116C939A_1558785084 = (obj.isArray());
             {
                 obj = obj.getComponentType();
             } //End block
@@ -209,6 +204,8 @@ public class AccessibleObject implements AnnotatedElement {
                 sb.append("[]");
             } //End block
         } //End collapsed parenthetic
+        addTaint(sb.getTaint());
+        addTaint(obj.getTaint());
         // ---------- Original Method ----------
         //int dimensions = 0;
         //while (obj.isArray()) {
@@ -222,11 +219,8 @@ public class AccessibleObject implements AnnotatedElement {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.761 -0400", hash_original_method = "4331049DB20FE3D320265414E1BB6DD1", hash_generated_method = "FA38685C9ADA72158C69C94C12E09445")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.943 -0400", hash_original_method = "4331049DB20FE3D320265414E1BB6DD1", hash_generated_method = "AB1C17C67BD487763DE3A946F52F2F53")
      void appendArrayGenericType(StringBuilder sb, Type[] types) {
-        dsTaint.addTaint(sb.dsTaint);
-        dsTaint.addTaint(types[0].dsTaint);
         {
             appendGenericType(sb, types[0]);
             {
@@ -238,6 +232,8 @@ public class AccessibleObject implements AnnotatedElement {
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        addTaint(sb.getTaint());
+        addTaint(types[0].getTaint());
         // ---------- Original Method ----------
         //if (types.length > 0) {
             //appendGenericType(sb, types[0]);
@@ -249,11 +245,8 @@ public class AccessibleObject implements AnnotatedElement {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.762 -0400", hash_original_method = "8E82FAA48BB361A9859A3C64A69CEBFA", hash_generated_method = "7D5AA44CD423934E5D37CB0657DF80F0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.951 -0400", hash_original_method = "8E82FAA48BB361A9859A3C64A69CEBFA", hash_generated_method = "C47DA7288F9954521E259BFDDCB7020D")
      void appendGenericType(StringBuilder sb, Type obj) {
-        dsTaint.addTaint(sb.dsTaint);
-        dsTaint.addTaint(obj.dsTaint);
         {
             sb.append(((TypeVariable)obj).getName());
         } //End block
@@ -270,14 +263,14 @@ public class AccessibleObject implements AnnotatedElement {
             Class c;
             c = ((Class<?>)obj);
             {
-                boolean var265EAD67919E0878EDE760B91A2663FE_747967847 = (c.isArray());
+                boolean var265EAD67919E0878EDE760B91A2663FE_1329707054 = (c.isArray());
                 {
                     String as[];
                     as = c.getName().split("\\[");
                     int len;
                     len = as.length-1;
                     {
-                        boolean var4E04E651982B5C19A261D19073E7D31F_1749702242 = (as[len].length() > 1);
+                        boolean var4E04E651982B5C19A261D19073E7D31F_1063001002 = (as[len].length() > 1);
                         {
                             sb.append(as[len].substring(1, as[len].length()-1));
                         } //End block
@@ -308,11 +301,15 @@ public class AccessibleObject implements AnnotatedElement {
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        addTaint(sb.getTaint());
+        addTaint(obj.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.951 -0400", hash_original_field = "4738019EF434F24099319565CD5185E5", hash_generated_field = "F7E345322C5DA8049D7465C5406D9B9D")
+
     static Hashtable<String, String> trans;
     static {
         trans = new Hashtable<String, String>(9);

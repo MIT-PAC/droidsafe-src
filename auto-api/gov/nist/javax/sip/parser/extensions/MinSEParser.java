@@ -15,27 +15,25 @@ import javax.sip.*;
 
 public class MinSEParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.730 -0400", hash_original_method = "4E326F54C0BC2C416F3292ADC3B64C39", hash_generated_method = "EBBAEE02EE07DF63F1AC5AB03D1CA6DC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public MinSEParser(String text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.562 -0400", hash_original_method = "4E326F54C0BC2C416F3292ADC3B64C39", hash_generated_method = "2A074247CD48DBE45FB5E6C0EEF6E56E")
+    public  MinSEParser(String text) {
         super(text);
-        dsTaint.addTaint(text);
+        addTaint(text.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.730 -0400", hash_original_method = "B8B8CA8DFA565E816EE248A435214726", hash_generated_method = "EF48AF04CEF962E8A713290632EEEF62")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected MinSEParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.566 -0400", hash_original_method = "B8B8CA8DFA565E816EE248A435214726", hash_generated_method = "C6A16FD6432DA865B85A7B65721542F7")
+    protected  MinSEParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.730 -0400", hash_original_method = "528678E8CA90A52E25DB45830845A36C", hash_generated_method = "FB8E41C80D6D978E90787D715E058783")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.567 -0400", hash_original_method = "528678E8CA90A52E25DB45830845A36C", hash_generated_method = "5FF2CAF63E2A5F6B10B337BCA1C5E10B")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_504381664 = null; //Variable for return #1
         MinSE minse;
         minse = new MinSE();
         dbg_enter("parse");
@@ -60,12 +58,14 @@ public class MinSEParser extends ParametersParser {
             } //End block
             this.lexer.SPorHT();
             super.parse(minse);
+            varB4EAC82CA7396A68D541C85D26508E83_504381664 = minse;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_504381664.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_504381664;
         // ---------- Original Method ----------
         //MinSE minse = new MinSE();
         //if (debug)

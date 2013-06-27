@@ -13,17 +13,15 @@ import org.apache.harmony.security.utils.ObjectIdentifier;
 
 public class AttributeTypeAndValueComparator implements Comparator, Serializable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.442 -0400", hash_original_method = "B4F915A753FB0135D3A3108057B85050", hash_generated_method = "B4F915A753FB0135D3A3108057B85050")
-        public AttributeTypeAndValueComparator ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.194 -0400", hash_original_method = "A875CA77DCF86273FF83ADF73F0AA798", hash_generated_method = "A875CA77DCF86273FF83ADF73F0AA798")
+    public AttributeTypeAndValueComparator ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.443 -0400", hash_original_method = "3F7D901C5D2A92F81B8BE7A716DA67AE", hash_generated_method = "355F772A2DE035D73736AB05D8611E9A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.195 -0400", hash_original_method = "3F7D901C5D2A92F81B8BE7A716DA67AE", hash_generated_method = "2F9669D3A2F51A63F35613EDDCCFA9A4")
     public int compare(Object obj1, Object obj2) {
-        dsTaint.addTaint(obj1.dsTaint);
-        dsTaint.addTaint(obj2.dsTaint);
         AttributeTypeAndValue atav1;
         atav1 = (AttributeTypeAndValue) obj1;
         AttributeTypeAndValue atav2;
@@ -33,10 +31,13 @@ public class AttributeTypeAndValueComparator implements Comparator, Serializable
         String kw2;
         kw2 = atav2.getType().getName();
         {
-            int varDF053E728FF3446E2A4ACCAE2F970CAB_577263312 = (kw1.compareTo(kw2));
+            int varDF053E728FF3446E2A4ACCAE2F970CAB_1880681650 = (kw1.compareTo(kw2));
         } //End block
-        int varFFBF5540CE921DEEB7A5A162F4171799_764871071 = (compateOids(atav1.getType(), atav2.getType()));
-        return dsTaint.getTaintInt();
+        int varFFBF5540CE921DEEB7A5A162F4171799_975517108 = (compateOids(atav1.getType(), atav2.getType()));
+        addTaint(obj1.getTaint());
+        addTaint(obj2.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_364214091 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_364214091;
         // ---------- Original Method ----------
         //if (obj1 == obj2) {
             //return 0;
@@ -83,6 +84,8 @@ public class AttributeTypeAndValueComparator implements Comparator, Serializable
     }
 
     
-    private static final long serialVersionUID = -1286471842007103132L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.204 -0400", hash_original_field = "552BD64E17BE452CB24FFE6F7520D2C3", hash_generated_field = "5A2E254478FA88079AB984D89920B3E9")
+
+    private static long serialVersionUID = -1286471842007103132L;
 }
 

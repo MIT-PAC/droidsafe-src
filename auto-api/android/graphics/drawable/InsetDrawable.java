@@ -17,38 +17,36 @@ import android.util.Log;
 import java.io.IOException;
 
 public class InsetDrawable extends Drawable implements Drawable.Callback {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.926 -0400", hash_original_field = "692D46240E2C79BE643C2665EC4B2520", hash_generated_field = "3AE2C9F0AA2C9F1010956C331820EBD8")
+
     private InsetState mInsetState;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.927 -0400", hash_original_field = "C16522492B0457D64CB22178541F3ACA", hash_generated_field = "A9D5B7D1068DC6DDDEE02560E993CCF6")
+
     private Rect mTmpRect = new Rect();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.927 -0400", hash_original_field = "9FB80C30383848C8D006680B5F3BDAF9", hash_generated_field = "5CA5A1EF3CAA45117BCACBC34EF05952")
+
     private boolean mMutated;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.378 -0400", hash_original_method = "F48DBEE10522FF6B015323744245900F", hash_generated_method = "DDE232BCCCC6C70EAA4019D4AF233073")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     InsetDrawable() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.948 -0400", hash_original_method = "F48DBEE10522FF6B015323744245900F", hash_generated_method = "DDE232BCCCC6C70EAA4019D4AF233073")
+      InsetDrawable() {
         this(null, null);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.378 -0400", hash_original_method = "2918696D36F33B173FD0AA17323912B6", hash_generated_method = "0465B3F6CB33B2BAC407C9D3638A931D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InsetDrawable(Drawable drawable, int inset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.949 -0400", hash_original_method = "2918696D36F33B173FD0AA17323912B6", hash_generated_method = "F516FC568E70638930A753F88AED5958")
+    public  InsetDrawable(Drawable drawable, int inset) {
         this(drawable, inset, inset, inset, inset);
-        dsTaint.addTaint(inset);
-        dsTaint.addTaint(drawable.dsTaint);
+        addTaint(drawable.getTaint());
+        addTaint(inset);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.379 -0400", hash_original_method = "410D0B69961CD6B4D438C72969BE5ACA", hash_generated_method = "30590D7ECC5C4DCEC24906D2AC9D8BD8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InsetDrawable(Drawable drawable, int insetLeft, int insetTop,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.951 -0400", hash_original_method = "410D0B69961CD6B4D438C72969BE5ACA", hash_generated_method = "B12F7AAED084552C5CFCA183DE3BD2DB")
+    public  InsetDrawable(Drawable drawable, int insetLeft, int insetTop,
                          int insetRight, int insetBottom) {
         this(null, null);
-        dsTaint.addTaint(insetLeft);
-        dsTaint.addTaint(drawable.dsTaint);
-        dsTaint.addTaint(insetBottom);
-        dsTaint.addTaint(insetRight);
-        dsTaint.addTaint(insetTop);
         mInsetState.mDrawable = drawable;
         mInsetState.mInsetLeft = insetLeft;
         mInsetState.mInsetTop = insetTop;
@@ -69,25 +67,18 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.379 -0400", hash_original_method = "125D08C0C0AD10DE80234690E438546C", hash_generated_method = "06D2806656DAF153B70EBA0026CF570E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private InsetDrawable(InsetState state, Resources res) {
-        dsTaint.addTaint(res.dsTaint);
-        dsTaint.addTaint(state.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.951 -0400", hash_original_method = "125D08C0C0AD10DE80234690E438546C", hash_generated_method = "D3D8132F753D7CBE37A3E6171E0E9075")
+    private  InsetDrawable(InsetState state, Resources res) {
         mInsetState = new InsetState(state, this, res);
         // ---------- Original Method ----------
         //mInsetState = new InsetState(state, this, res);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.380 -0400", hash_original_method = "308C72D2B889366D58587F5D48DD90DC", hash_generated_method = "BA3AE57599313183C052F055BD8FBE51")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.984 -0400", hash_original_method = "308C72D2B889366D58587F5D48DD90DC", hash_generated_method = "A9C0B99EADAC973F9F250BF02EE8D503")
     @Override
     public void inflate(Resources r, XmlPullParser parser,
                                   AttributeSet attrs) throws XmlPullParserException, IOException {
-        dsTaint.addTaint(r.dsTaint);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(parser.dsTaint);
         int type;
         TypedArray a;
         a = r.obtainAttributes(attrs,
@@ -116,7 +107,7 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
         } //End block
         {
             {
-                boolean var6B5B5852701B8FCC2CE942637EBFE70C_1703500285 = ((type=parser.next()) == XmlPullParser.TEXT);
+                boolean var6B5B5852701B8FCC2CE942637EBFE70C_1518900335 = ((type=parser.next()) == XmlPullParser.TEXT);
             } //End collapsed parenthetic
             {
                 if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
@@ -134,20 +125,22 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
         {
             dr.setCallback(this);
         } //End block
+        addTaint(r.getTaint());
+        addTaint(parser.getTaint());
+        addTaint(attrs.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.380 -0400", hash_original_method = "289E4B14FC4BAEE8FBED5C03A1D9B634", hash_generated_method = "41CFE1796930DCF2EA1C09782362A302")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.985 -0400", hash_original_method = "289E4B14FC4BAEE8FBED5C03A1D9B634", hash_generated_method = "8C74E1ED724AA0C6A0C97462CE6BFB75")
     public void invalidateDrawable(Drawable who) {
-        dsTaint.addTaint(who.dsTaint);
         Callback callback;
         callback = getCallback();
         {
             callback.invalidateDrawable(this);
         } //End block
+        addTaint(who.getTaint());
         // ---------- Original Method ----------
         //final Callback callback = getCallback();
         //if (callback != null) {
@@ -156,17 +149,16 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.381 -0400", hash_original_method = "A01CAF97CFFAA14450A9600E14E88C8D", hash_generated_method = "5E91FE06A500769A5C043EEFE8B10766")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.986 -0400", hash_original_method = "A01CAF97CFFAA14450A9600E14E88C8D", hash_generated_method = "D0BA170008FFB5E5F5CAA53137A69B81")
     public void scheduleDrawable(Drawable who, Runnable what, long when) {
-        dsTaint.addTaint(what.dsTaint);
-        dsTaint.addTaint(when);
-        dsTaint.addTaint(who.dsTaint);
         Callback callback;
         callback = getCallback();
         {
             callback.scheduleDrawable(this, what, when);
         } //End block
+        addTaint(who.getTaint());
+        addTaint(what.getTaint());
+        addTaint(when);
         // ---------- Original Method ----------
         //final Callback callback = getCallback();
         //if (callback != null) {
@@ -175,16 +167,15 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.381 -0400", hash_original_method = "CA144C86313E3C1A3DC044F014305D8E", hash_generated_method = "E7D6D2791C5354C92F65E1B2A3B561B5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.986 -0400", hash_original_method = "CA144C86313E3C1A3DC044F014305D8E", hash_generated_method = "F27A8BA34D960AEC80EA06B1020FC534")
     public void unscheduleDrawable(Drawable who, Runnable what) {
-        dsTaint.addTaint(what.dsTaint);
-        dsTaint.addTaint(who.dsTaint);
         Callback callback;
         callback = getCallback();
         {
             callback.unscheduleDrawable(this, what);
         } //End block
+        addTaint(who.getTaint());
+        addTaint(what.getTaint());
         // ---------- Original Method ----------
         //final Callback callback = getCallback();
         //if (callback != null) {
@@ -193,25 +184,24 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.381 -0400", hash_original_method = "5D957288FBCBF53EE4FDA5CCA4D587F6", hash_generated_method = "2204270B331B9D5D0636539490FE8D36")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.999 -0400", hash_original_method = "5D957288FBCBF53EE4FDA5CCA4D587F6", hash_generated_method = "DDC1BB677D2FDD30A29668EC6FA6B286")
     @Override
     public void draw(Canvas canvas) {
-        dsTaint.addTaint(canvas.dsTaint);
         mInsetState.mDrawable.draw(canvas);
+        addTaint(canvas.getTaint());
         // ---------- Original Method ----------
         //mInsetState.mDrawable.draw(canvas);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.382 -0400", hash_original_method = "5E6B5E9F59EDAB724B1161E1868DCBF2", hash_generated_method = "1766C7829A33C008E24BB6B5E55A5546")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.000 -0400", hash_original_method = "5E6B5E9F59EDAB724B1161E1868DCBF2", hash_generated_method = "9932965AA82AEB6FBA3DFDE7576804BE")
     @Override
     public int getChangingConfigurations() {
-        int var61EF387ADAB9AB2D890E9E42218FD44A_1975584506 = (super.getChangingConfigurations()
+        int var61EF387ADAB9AB2D890E9E42218FD44A_425853604 = (super.getChangingConfigurations()
                 | mInsetState.mChangingConfigurations
                 | mInsetState.mDrawable.getChangingConfigurations());
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_208390352 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_208390352;
         // ---------- Original Method ----------
         //return super.getChangingConfigurations()
                 //| mInsetState.mChangingConfigurations
@@ -219,18 +209,18 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.382 -0400", hash_original_method = "453C0F994CC6F9573C64E5784E899FE5", hash_generated_method = "62334236C292759611CA9E6445B89B71")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.019 -0400", hash_original_method = "453C0F994CC6F9573C64E5784E899FE5", hash_generated_method = "79A930213690D0117A07E91F71A9E86F")
     @Override
     public boolean getPadding(Rect padding) {
-        dsTaint.addTaint(padding.dsTaint);
         boolean pad;
         pad = mInsetState.mDrawable.getPadding(padding);
         padding.left += mInsetState.mInsetLeft;
         padding.right += mInsetState.mInsetRight;
         padding.top += mInsetState.mInsetTop;
         padding.bottom += mInsetState.mInsetBottom;
-        return dsTaint.getTaintBoolean();
+        addTaint(padding.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_609603327 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_609603327;
         // ---------- Original Method ----------
         //boolean pad = mInsetState.mDrawable.getPadding(padding);
         //padding.left += mInsetState.mInsetLeft;
@@ -246,75 +236,73 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.382 -0400", hash_original_method = "EFF30D1C1A84058D8C292EB91F9472BE", hash_generated_method = "641495D6F89E34B26A8C40FC430A6F97")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.030 -0400", hash_original_method = "EFF30D1C1A84058D8C292EB91F9472BE", hash_generated_method = "AF0DD23C626590D4B1477C4040190049")
     @Override
     public boolean setVisible(boolean visible, boolean restart) {
-        dsTaint.addTaint(restart);
-        dsTaint.addTaint(visible);
         mInsetState.mDrawable.setVisible(visible, restart);
-        boolean var9D015C67047440F1849257F892B1DD1F_1018810611 = (super.setVisible(visible, restart));
-        return dsTaint.getTaintBoolean();
+        boolean var9D015C67047440F1849257F892B1DD1F_625239769 = (super.setVisible(visible, restart));
+        addTaint(visible);
+        addTaint(restart);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_880179554 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_880179554;
         // ---------- Original Method ----------
         //mInsetState.mDrawable.setVisible(visible, restart);
         //return super.setVisible(visible, restart);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.383 -0400", hash_original_method = "B23A5809007626F95D6E0E75FACEBCF9", hash_generated_method = "60501B63D2C815758B7C6CDC9BE06044")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.031 -0400", hash_original_method = "B23A5809007626F95D6E0E75FACEBCF9", hash_generated_method = "2DB5D0F9927235609F5B5403BE4C0B30")
     @Override
     public void setAlpha(int alpha) {
-        dsTaint.addTaint(alpha);
         mInsetState.mDrawable.setAlpha(alpha);
+        addTaint(alpha);
         // ---------- Original Method ----------
         //mInsetState.mDrawable.setAlpha(alpha);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.383 -0400", hash_original_method = "06DFACBA6F5F88BE2848B90C2DE93101", hash_generated_method = "B89580DD552C01BB2F1DB1C74DCE435F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.032 -0400", hash_original_method = "06DFACBA6F5F88BE2848B90C2DE93101", hash_generated_method = "15B428D72E537C686D0BB3487E0C3605")
     @Override
     public void setColorFilter(ColorFilter cf) {
-        dsTaint.addTaint(cf.dsTaint);
         mInsetState.mDrawable.setColorFilter(cf);
+        addTaint(cf.getTaint());
         // ---------- Original Method ----------
         //mInsetState.mDrawable.setColorFilter(cf);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.383 -0400", hash_original_method = "84C32146675D5EBE47A9CF2427DBDE28", hash_generated_method = "F3FD9C5350321370B3FE98A3C9099F83")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.033 -0400", hash_original_method = "84C32146675D5EBE47A9CF2427DBDE28", hash_generated_method = "A73F7FD282013C0CF21DA317517D3710")
     @Override
     public int getOpacity() {
-        int varBEAEEE19271DBC4B9E294A9607E28C8B_1979278019 = (mInsetState.mDrawable.getOpacity());
-        return dsTaint.getTaintInt();
+        int varBEAEEE19271DBC4B9E294A9607E28C8B_602402964 = (mInsetState.mDrawable.getOpacity());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1545911194 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1545911194;
         // ---------- Original Method ----------
         //return mInsetState.mDrawable.getOpacity();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.383 -0400", hash_original_method = "043A29D2ADB29827582E75471CD5479B", hash_generated_method = "E816D4CF74D412D4FF2BF01D2D56CED0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.049 -0400", hash_original_method = "043A29D2ADB29827582E75471CD5479B", hash_generated_method = "F55D34B0E75ADAB8DB50106A2C51852E")
     @Override
     public boolean isStateful() {
-        boolean varBA951C8D6B94B7E63AFFEFE558352D27_805196706 = (mInsetState.mDrawable.isStateful());
-        return dsTaint.getTaintBoolean();
+        boolean varBA951C8D6B94B7E63AFFEFE558352D27_56534898 = (mInsetState.mDrawable.isStateful());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1631980182 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1631980182;
         // ---------- Original Method ----------
         //return mInsetState.mDrawable.isStateful();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.384 -0400", hash_original_method = "246AAD5F68D871EA63688A0B06577CD4", hash_generated_method = "30FE44FF6F2B6AF69BA2EE35FDDCD7A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.050 -0400", hash_original_method = "246AAD5F68D871EA63688A0B06577CD4", hash_generated_method = "4EF8304CE24D34A805A8AD2A9477AD38")
     @Override
     protected boolean onStateChange(int[] state) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(state[0]);
         boolean changed;
         changed = mInsetState.mDrawable.setState(state);
         onBoundsChange(getBounds());
-        return dsTaint.getTaintBoolean();
+        addTaint(state[0]);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_882032391 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_882032391;
         // ---------- Original Method ----------
         //boolean changed = mInsetState.mDrawable.setState(state);
         //onBoundsChange(getBounds());
@@ -322,12 +310,10 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.384 -0400", hash_original_method = "95EBA24DAC30ACDEC92CAFB7918B63D7", hash_generated_method = "4DC546053CA95448B704529B85BF9ADA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.062 -0400", hash_original_method = "95EBA24DAC30ACDEC92CAFB7918B63D7", hash_generated_method = "A2065B0F50E9DFA088244C6265EFE6D7")
     @Override
     protected void onBoundsChange(Rect bounds) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(bounds.dsTaint);
         Rect r;
         r = mTmpRect;
         r.set(bounds);
@@ -336,6 +322,7 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
         r.right -= mInsetState.mInsetRight;
         r.bottom -= mInsetState.mInsetBottom;
         mInsetState.mDrawable.setBounds(r.left, r.top, r.right, r.bottom);
+        addTaint(bounds.getTaint());
         // ---------- Original Method ----------
         //final Rect r = mTmpRect;
         //r.set(bounds);
@@ -347,39 +334,52 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.385 -0400", hash_original_method = "AB4853FCC2E61C4308CEBFB5AE69B700", hash_generated_method = "342328569339DD6F1B08015E840A438D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.063 -0400", hash_original_method = "AB4853FCC2E61C4308CEBFB5AE69B700", hash_generated_method = "800542960846EDCEF49AB9CB541E4DEB")
     @Override
     public int getIntrinsicWidth() {
-        int varD77C9A288011CB8161A5891EAD9C1592_1039329783 = (mInsetState.mDrawable.getIntrinsicWidth());
-        return dsTaint.getTaintInt();
+        int varD77C9A288011CB8161A5891EAD9C1592_1279350998 = (mInsetState.mDrawable.getIntrinsicWidth());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_87144842 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_87144842;
         // ---------- Original Method ----------
         //return mInsetState.mDrawable.getIntrinsicWidth();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.385 -0400", hash_original_method = "29FF5B29153AE16681DB19A374B63115", hash_generated_method = "F655E611B7C5B2DCD18E31B2062AAB3E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.063 -0400", hash_original_method = "29FF5B29153AE16681DB19A374B63115", hash_generated_method = "C8022C1D6EED3B88C12B97FC51FF464C")
     @Override
     public int getIntrinsicHeight() {
-        int var5F2B6F0755F35B09C0CED510B2920689_705533964 = (mInsetState.mDrawable.getIntrinsicHeight());
-        return dsTaint.getTaintInt();
+        int var5F2B6F0755F35B09C0CED510B2920689_1779452449 = (mInsetState.mDrawable.getIntrinsicHeight());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_734330856 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_734330856;
         // ---------- Original Method ----------
         //return mInsetState.mDrawable.getIntrinsicHeight();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.396 -0400", hash_original_method = "1E9E2DEF1AEF301447A2F1B1CB9B55FF", hash_generated_method = "06834E8E5AAA1FBF58E236E6D0C32A63")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.077 -0400", hash_original_method = "1E9E2DEF1AEF301447A2F1B1CB9B55FF", hash_generated_method = "857AE0714FB4C11BAD63C82C1EA7395C")
     @Override
     public ConstantState getConstantState() {
+        ConstantState varB4EAC82CA7396A68D541C85D26508E83_492516654 = null; //Variable for return #1
+        ConstantState varB4EAC82CA7396A68D541C85D26508E83_764617774 = null; //Variable for return #2
         {
-            boolean varDF5C3001CFA292CC1683AFE8A4C4D7A6_176983324 = (mInsetState.canConstantState());
+            boolean varDF5C3001CFA292CC1683AFE8A4C4D7A6_1280543477 = (mInsetState.canConstantState());
             {
                 mInsetState.mChangingConfigurations = getChangingConfigurations();
+                varB4EAC82CA7396A68D541C85D26508E83_492516654 = mInsetState;
             } //End block
         } //End collapsed parenthetic
-        return (ConstantState)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_764617774 = null;
+        ConstantState varA7E53CE21691AB073D9660D615818899_1193868505; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1193868505 = varB4EAC82CA7396A68D541C85D26508E83_492516654;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1193868505 = varB4EAC82CA7396A68D541C85D26508E83_764617774;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1193868505.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1193868505;
         // ---------- Original Method ----------
         //if (mInsetState.canConstantState()) {
             //mInsetState.mChangingConfigurations = getChangingConfigurations();
@@ -389,18 +389,20 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.396 -0400", hash_original_method = "22F293566220E6F3A8D3A4AE196709E5", hash_generated_method = "C0175AC6D2ACC659B19AC9A8A3F77C4C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.086 -0400", hash_original_method = "22F293566220E6F3A8D3A4AE196709E5", hash_generated_method = "2A02950E35797968581BB458E0979877")
     @Override
     public Drawable mutate() {
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1862257963 = null; //Variable for return #1
         {
-            boolean varC94B19053599294E7944C8C841976773_1911716494 = (!mMutated && super.mutate() == this);
+            boolean varC94B19053599294E7944C8C841976773_2070470597 = (!mMutated && super.mutate() == this);
             {
                 mInsetState.mDrawable.mutate();
                 mMutated = true;
             } //End block
         } //End collapsed parenthetic
-        return (Drawable)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1862257963 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1862257963.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1862257963;
         // ---------- Original Method ----------
         //if (!mMutated && super.mutate() == this) {
             //mInsetState.mDrawable.mutate();
@@ -411,21 +413,33 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
 
     
     final static class InsetState extends ConstantState {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.086 -0400", hash_original_field = "D548B27C6AC66A9D9B5D05ED35C2D844", hash_generated_field = "38BA53DD394F85639C99ED8E666FF8FB")
+
         Drawable mDrawable;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.086 -0400", hash_original_field = "276E0645C4E2084773D0EB8C5576428C", hash_generated_field = "9BFAF00848476277D36D9BA586984BA7")
+
         int mChangingConfigurations;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.087 -0400", hash_original_field = "0661D6C227585E45459B91C5D242ACDF", hash_generated_field = "E2BE4EAC7479E12B8AD15F8A1DC878B0")
+
         int mInsetLeft;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.087 -0400", hash_original_field = "7C1DAF4ABF7868C1680EB9D50A37BCF1", hash_generated_field = "BDC766ACBEF4E33A22B4884B070885A7")
+
         int mInsetTop;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.087 -0400", hash_original_field = "2A242A7F704CF1F009B3DCF034A62B32", hash_generated_field = "858AD29F4440BFB10D0903CBBA92AF5F")
+
         int mInsetRight;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.087 -0400", hash_original_field = "1BF559D66726A6CAAC1A1E589C5D2017", hash_generated_field = "637B8F5F49094B17B0B21610CF248426")
+
         int mInsetBottom;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.087 -0400", hash_original_field = "2E319D4D352B34E33CF19129B7212FC6", hash_generated_field = "04605894B57F7B3414AF620BF4AC040E")
+
         boolean mCheckedConstantState;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.087 -0400", hash_original_field = "7C8FD9809F31C20B8422D623B0EC0C4F", hash_generated_field = "09212A3A30B7E6D48DEECC4F4639CCBC")
+
         boolean mCanConstantState;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.398 -0400", hash_original_method = "758BE6D06942564382533B70A9D03639", hash_generated_method = "1131F72DD572C6362743C73D5D2178A6")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         InsetState(InsetState orig, InsetDrawable owner, Resources res) {
-            dsTaint.addTaint(res.dsTaint);
-            dsTaint.addTaint(owner.dsTaint);
-            dsTaint.addTaint(orig.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.102 -0400", hash_original_method = "758BE6D06942564382533B70A9D03639", hash_generated_method = "2C50C7EFE727D0458A162A0FD19AAFDA")
+          InsetState(InsetState orig, InsetDrawable owner, Resources res) {
             {
                 {
                     mDrawable = orig.mDrawable.getConstantState().newDrawable(res);
@@ -440,6 +454,7 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
                 mInsetBottom = orig.mInsetBottom;
                 mCheckedConstantState = mCanConstantState = true;
             } //End block
+            addTaint(owner.getTaint());
             // ---------- Original Method ----------
             //if (orig != null) {
                 //if (res != null) {
@@ -457,47 +472,49 @@ public class InsetDrawable extends Drawable implements Drawable.Callback {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.399 -0400", hash_original_method = "6B31FDACEACBBE413B6F897E56BE7FF9", hash_generated_method = "FA4016FBDE90DC7CDA1C787C4F59018F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.104 -0400", hash_original_method = "6B31FDACEACBBE413B6F897E56BE7FF9", hash_generated_method = "5A1E82D3EDCF70CC9D1D7E3C8709A88D")
         @Override
         public Drawable newDrawable() {
-            Drawable varDC06677BBFCCD7CBD3514F5B654FF5BB_1210811010 = (new InsetDrawable(this, null));
-            return (Drawable)dsTaint.getTaint();
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_479417829 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_479417829 = new InsetDrawable(this, null);
+            varB4EAC82CA7396A68D541C85D26508E83_479417829.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_479417829;
             // ---------- Original Method ----------
             //return new InsetDrawable(this, null);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.399 -0400", hash_original_method = "51EF496D1F925226C92A50925EFC08B6", hash_generated_method = "5542EDA83DE2EE333F7770D3661F04D8")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.104 -0400", hash_original_method = "51EF496D1F925226C92A50925EFC08B6", hash_generated_method = "18AD185DBAAF9995FA5904E636CE666D")
         @Override
         public Drawable newDrawable(Resources res) {
-            dsTaint.addTaint(res.dsTaint);
-            Drawable varFF82EEBE2CC997C8515BFCBC6B35808E_2059879801 = (new InsetDrawable(this, res));
-            return (Drawable)dsTaint.getTaint();
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_477007937 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_477007937 = new InsetDrawable(this, res);
+            addTaint(res.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_477007937.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_477007937;
             // ---------- Original Method ----------
             //return new InsetDrawable(this, res);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.399 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "36011B0CFA5B1C48E438EB66BB35159E")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.107 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "0323965264161D7A82E9C56CA93EA533")
         @Override
         public int getChangingConfigurations() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_367228666 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_367228666;
             // ---------- Original Method ----------
             //return mChangingConfigurations;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.399 -0400", hash_original_method = "8D2A3A495FE794F654E28C73CF35A2A1", hash_generated_method = "91841D4C432CEA46787D356B5812EFCD")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.111 -0400", hash_original_method = "8D2A3A495FE794F654E28C73CF35A2A1", hash_generated_method = "F74C1E1B7DDC0BCCB906A8BE4663DF6D")
          boolean canConstantState() {
             {
                 mCanConstantState = mDrawable.getConstantState() != null;
                 mCheckedConstantState = true;
             } //End block
-            return dsTaint.getTaintBoolean();
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1435100174 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1435100174;
             // ---------- Original Method ----------
             //if (!mCheckedConstantState) {
                 //mCanConstantState = mDrawable.getConstantState() != null;

@@ -13,27 +13,25 @@ import java.text.ParseException;
 
 public class UserAgentParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.699 -0400", hash_original_method = "72C240456E98B58E534CB3630B89C3C4", hash_generated_method = "836BE308481DE21719C97A4AA7EA8A02")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public UserAgentParser(String userAgent) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.424 -0400", hash_original_method = "72C240456E98B58E534CB3630B89C3C4", hash_generated_method = "8E84A0C3F9F84722131501E191D0670E")
+    public  UserAgentParser(String userAgent) {
         super(userAgent);
-        dsTaint.addTaint(userAgent);
+        addTaint(userAgent.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.699 -0400", hash_original_method = "1D2877F696A9DE47D6D871F3024594AA", hash_generated_method = "78151954DD7F49CC05DB29F4376D406D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected UserAgentParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.424 -0400", hash_original_method = "1D2877F696A9DE47D6D871F3024594AA", hash_generated_method = "3CAEFF70DD19529513F3F7832479172C")
+    protected  UserAgentParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.700 -0400", hash_original_method = "67E8EBD2906BCEC3B5F02757CFDC6836", hash_generated_method = "E363E0362AD91AB9AD6E626EB1948EDF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.426 -0400", hash_original_method = "67E8EBD2906BCEC3B5F02757CFDC6836", hash_generated_method = "F7F0B8F1A058FE62CAD48E7DCE2A9F1F")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_395939801 = null; //Variable for return #1
         dbg_enter("UserAgentParser.parse");
         UserAgent userAgent;
         userAgent = new UserAgent();
@@ -41,15 +39,15 @@ public class UserAgentParser extends HeaderParser {
         {
             headerName(TokenTypes.USER_AGENT);
             {
-                boolean varE8319E96ED7B82FE86A0F5A02AAB8C1A_1252818510 = (this.lexer.lookAhead(0) == '\n');
+                boolean varE8319E96ED7B82FE86A0F5A02AAB8C1A_261427269 = (this.lexer.lookAhead(0) == '\n');
                 if (DroidSafeAndroidRuntime.control) throw createParseException("empty header");
             } //End collapsed parenthetic
             {
-                boolean var8F462703D5AFB8059D6E8FF16FEB4CE3_1202302333 = (this.lexer.lookAhead(0) != '\n'
+                boolean var8F462703D5AFB8059D6E8FF16FEB4CE3_140782731 = (this.lexer.lookAhead(0) != '\n'
                     && this.lexer.lookAhead(0) != '\0');
                 {
                     {
-                        boolean varBE42586E6C05C1C337617197702A94AB_1946011889 = (this.lexer.lookAhead(0) == '(');
+                        boolean varBE42586E6C05C1C337617197702A94AB_468158410 = (this.lexer.lookAhead(0) == '(');
                         {
                             String comment;
                             comment = this.lexer.comment();
@@ -63,7 +61,7 @@ public class UserAgentParser extends HeaderParser {
                             StringBuffer productSb;
                             productSb = new StringBuffer(product);
                             {
-                                boolean varFDA4A89BAF4E98EA4E3B3B4AD09BAA25_1906682732 = (this.lexer.peekNextToken().getTokenType() == TokenTypes.SLASH);
+                                boolean varFDA4A89BAF4E98EA4E3B3B4AD09BAA25_1204585059 = (this.lexer.peekNextToken().getTokenType() == TokenTypes.SLASH);
                                 {
                                     this.lexer.match(TokenTypes.SLASH);
                                     this.getLexer().SPorHT();
@@ -85,7 +83,9 @@ public class UserAgentParser extends HeaderParser {
         {
             dbg_leave("UserAgentParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_395939801 = userAgent;
+        varB4EAC82CA7396A68D541C85D26508E83_395939801.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_395939801;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

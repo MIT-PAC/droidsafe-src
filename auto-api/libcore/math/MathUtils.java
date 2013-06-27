@@ -10,13 +10,14 @@ import java.util.Iterator;
 
 public final class MathUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.025 -0400", hash_original_method = "36B7D6354601651DD814431AA0DFA6C7", hash_generated_method = "DED0A2D08FDE4310446B2635C520DAE6")
-    @DSModeled(DSC.SAFE)
-    private MathUtils() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.278 -0400", hash_original_method = "36B7D6354601651DD814431AA0DFA6C7", hash_generated_method = "DED0A2D08FDE4310446B2635C520DAE6")
+    private  MathUtils() {
         // ---------- Original Method ----------
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.279 -0400", hash_original_field = "297C9139B5ED3C6334467823F8BC61B1", hash_generated_field = "C228109CC08651C06B27D6A0175C6683")
+
     public static final long[] LONG_POWERS_OF_TEN = new long[] {
         1L,
         10L,

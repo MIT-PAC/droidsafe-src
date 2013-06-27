@@ -31,30 +31,38 @@ import java.util.List;
 import java.util.Map;
 
 public final class InputMethodInfo implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.193 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "6778D731BF0BE2E5E9F46404EEE44664")
+
     ResolveInfo mService;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.194 -0400", hash_original_field = "6AC7F06B6413A1BE9C136DC7DF0D2B60", hash_generated_field = "5AB31FF91690EC0315884BA04F6C543E")
+
     String mId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.194 -0400", hash_original_field = "A7226C9DD6CAE5D50DDA70DBC0A93E5E", hash_generated_field = "1E356AACEE2D50E0C905EA0627229FF1")
+
     String mSettingsActivityName;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.194 -0400", hash_original_field = "792F9E8EA99BA75EE8CA84357D69011E", hash_generated_field = "8430CEC44BF27F97FC3604538A03E5EA")
+
     int mIsDefaultResId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.194 -0400", hash_original_field = "02285A865B63873E8E4A6486105ABE87", hash_generated_field = "884392D28CFD17B0275E083612373789")
+
     private ArrayList<InputMethodSubtype> mSubtypes = new ArrayList<InputMethodSubtype>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.194 -0400", hash_original_field = "977F5006FFFDD545C39D52373806572E", hash_generated_field = "EB108F753B89051896699C9D79AA6EB9")
+
     private boolean mIsAuxIme;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.338 -0400", hash_original_method = "89874ED803E39B5F353BEED5B6B29424", hash_generated_method = "9EE975954AF5A837D6FA1DB01A6DCB5A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InputMethodInfo(Context context, ResolveInfo service) throws XmlPullParserException, IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.194 -0400", hash_original_method = "89874ED803E39B5F353BEED5B6B29424", hash_generated_method = "3C8362D39A2AB89AC67E1587324BC4A9")
+    public  InputMethodInfo(Context context, ResolveInfo service) throws XmlPullParserException, IOException {
         this(context, service, null);
-        dsTaint.addTaint(service.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(service.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.339 -0400", hash_original_method = "889D0140370752FE888ACF7EA3C15BF9", hash_generated_method = "085B74F960800D449694F17ECA434AFB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InputMethodInfo(Context context, ResolveInfo service,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.215 -0400", hash_original_method = "889D0140370752FE888ACF7EA3C15BF9", hash_generated_method = "B806D2A8FB7309DE4377B994DE557005")
+    public  InputMethodInfo(Context context, ResolveInfo service,
             Map<String, List<InputMethodSubtype>> additionalSubtypesMap) throws XmlPullParserException, IOException {
-        dsTaint.addTaint(service.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(additionalSubtypesMap.dsTaint);
+        mService = service;
         ServiceInfo si;
         si = service.serviceInfo;
         mId = new ComponentName(si.packageName, si.name).flattenToShortString();
@@ -80,13 +88,13 @@ public final class InputMethodInfo implements Parcelable {
             attrs = Xml.asAttributeSet(parser);
             int type;
             {
-                boolean var995057C222283DCE9E465AE35974357A_987929692 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
+                boolean var995057C222283DCE9E465AE35974357A_1853383645 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
                     && type != XmlPullParser.START_TAG);
             } //End collapsed parenthetic
             String nodeName;
             nodeName = parser.getName();
             {
-                boolean var3BAF69D2A2DF70BFF2D5EC6E347C15F0_233382662 = (!"input-method".equals(nodeName));
+                boolean var3BAF69D2A2DF70BFF2D5EC6E347C15F0_1965855185 = (!"input-method".equals(nodeName));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                         "Meta-data does not start with input-method tag");
@@ -103,13 +111,13 @@ public final class InputMethodInfo implements Parcelable {
             int depth;
             depth = parser.getDepth();
             {
-                boolean var3BCD25E42C06A3F4443E39624F08B54A_943559012 = (((type = parser.next()) != XmlPullParser.END_TAG || parser.getDepth() > depth)
+                boolean var3BCD25E42C06A3F4443E39624F08B54A_10321623 = (((type = parser.next()) != XmlPullParser.END_TAG || parser.getDepth() > depth)
                     && type != XmlPullParser.END_DOCUMENT);
                 {
                     {
                         nodeName = parser.getName();
                         {
-                            boolean varD77CB44AB3FA1C503F181A8217D1EED1_1967208179 = (!"subtype".equals(nodeName));
+                            boolean varD77CB44AB3FA1C503F181A8217D1EED1_848726783 = (!"subtype".equals(nodeName));
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                                 "Meta-data in input-method does not start with subtype tag");
@@ -135,7 +143,7 @@ public final class InputMethodInfo implements Parcelable {
                             a.getBoolean(com.android.internal.R.styleable
                                     .InputMethod_Subtype_overridesImplicitlyEnabledSubtype, false));
                         {
-                            boolean var22671D0549DC9FE86ECAAC712821FB09_1107603164 = (!subtype.isAuxiliary());
+                            boolean var22671D0549DC9FE86ECAAC712821FB09_1222669371 = (!subtype.isAuxiliary());
                             {
                                 mIsAuxIme = false;
                             } //End block
@@ -155,13 +163,13 @@ public final class InputMethodInfo implements Parcelable {
             parser.close();
         } //End block
         {
-            boolean var5AA00C27AF563E9923FCEF7BF46CB452_213982585 = (mSubtypes.size() == 0);
+            boolean var5AA00C27AF563E9923FCEF7BF46CB452_1878612570 = (mSubtypes.size() == 0);
             {
                 mIsAuxIme = false;
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var01ADBFE6B0BB77A97C046964E7D5DA54_85395010 = (additionalSubtypesMap != null && additionalSubtypesMap.containsKey(mId));
+            boolean var01ADBFE6B0BB77A97C046964E7D5DA54_886163378 = (additionalSubtypesMap != null && additionalSubtypesMap.containsKey(mId));
             {
                 List<InputMethodSubtype> additionalSubtypes;
                 additionalSubtypes = additionalSubtypesMap.get(mId);
@@ -174,7 +182,7 @@ public final class InputMethodInfo implements Parcelable {
                         InputMethodSubtype subtype;
                         subtype = additionalSubtypes.get(i);
                         {
-                            boolean var437404FD15332E5CF30D79D6DB67B176_613113578 = (!mSubtypes.contains(subtype));
+                            boolean var437404FD15332E5CF30D79D6DB67B176_1129676243 = (!mSubtypes.contains(subtype));
                             {
                                 mSubtypes.add(subtype);
                             } //End block
@@ -185,15 +193,15 @@ public final class InputMethodInfo implements Parcelable {
         } //End collapsed parenthetic
         mSettingsActivityName = settingsActivityComponent;
         mIsDefaultResId = isDefaultResId;
+        addTaint(context.getTaint());
+        addTaint(additionalSubtypesMap.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.340 -0400", hash_original_method = "408133FF0ACC2482487194D0CAB563F8", hash_generated_method = "F41E20B94DB49A4DE5067CDA6E0A8FDC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     InputMethodInfo(Parcel source) {
-        dsTaint.addTaint(source.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.216 -0400", hash_original_method = "408133FF0ACC2482487194D0CAB563F8", hash_generated_method = "BB70880FF8A7B7B804EA683372E90436")
+      InputMethodInfo(Parcel source) {
         mId = source.readString();
         mSettingsActivityName = source.readString();
         mIsDefaultResId = source.readInt();
@@ -210,14 +218,9 @@ public final class InputMethodInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.340 -0400", hash_original_method = "530FB6E934B0A6A853BD43F0002757A2", hash_generated_method = "F6074E21884FF4C7CE6F2C50CF20EDEE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InputMethodInfo(String packageName, String className,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.225 -0400", hash_original_method = "530FB6E934B0A6A853BD43F0002757A2", hash_generated_method = "3E4851267C5B33B47CFAE48AD953506F")
+    public  InputMethodInfo(String packageName, String className,
             CharSequence label, String settingsActivity) {
-        dsTaint.addTaint(settingsActivity);
-        dsTaint.addTaint(packageName);
-        dsTaint.addTaint(label);
-        dsTaint.addTaint(className);
         ResolveInfo ri;
         ri = new ResolveInfo();
         ServiceInfo si;
@@ -235,8 +238,11 @@ public final class InputMethodInfo implements Parcelable {
         ri.serviceInfo = si;
         mService = ri;
         mId = new ComponentName(si.packageName, si.name).flattenToShortString();
+        mSettingsActivityName = settingsActivity;
         mIsDefaultResId = 0;
         mIsAuxIme = false;
+        addTaint(className.getTaint());
+        addTaint(label.getTaint());
         // ---------- Original Method ----------
         //ResolveInfo ri = new ResolveInfo();
         //ServiceInfo si = new ServiceInfo();
@@ -258,126 +264,139 @@ public final class InputMethodInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.340 -0400", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "0FDB014011C1101442E06D2B7F29E689")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.226 -0400", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "B1A11F3C66DBA8A33CBCCDB143EF59A8")
     public String getId() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1497399745 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1497399745 = mId;
+        varB4EAC82CA7396A68D541C85D26508E83_1497399745.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1497399745;
         // ---------- Original Method ----------
         //return mId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.341 -0400", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "63877C04759CD6A29BB5A9D09769BD95")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.230 -0400", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "55A205B321667462792C00B3FD32A24F")
     public String getPackageName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1403501321 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1403501321 = mService.serviceInfo.packageName;
+        varB4EAC82CA7396A68D541C85D26508E83_1403501321.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1403501321;
         // ---------- Original Method ----------
         //return mService.serviceInfo.packageName;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.341 -0400", hash_original_method = "E07B8397F26D2C3A4747E56AC8F0D204", hash_generated_method = "AFF3C5622D211F1659EB1D0A2141C7AB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.231 -0400", hash_original_method = "E07B8397F26D2C3A4747E56AC8F0D204", hash_generated_method = "6FEAF02F4A20E01B232749704AFC2276")
     public String getServiceName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1689218188 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1689218188 = mService.serviceInfo.name;
+        varB4EAC82CA7396A68D541C85D26508E83_1689218188.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1689218188;
         // ---------- Original Method ----------
         //return mService.serviceInfo.name;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.341 -0400", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "9C67A090AD36EBAC69BD5168FBDFB473")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.231 -0400", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "242E3AD161912CBBF0C320ADE4E4ED8E")
     public ServiceInfo getServiceInfo() {
-        return (ServiceInfo)dsTaint.getTaint();
+        ServiceInfo varB4EAC82CA7396A68D541C85D26508E83_554599898 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_554599898 = mService.serviceInfo;
+        varB4EAC82CA7396A68D541C85D26508E83_554599898.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_554599898;
         // ---------- Original Method ----------
         //return mService.serviceInfo;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.341 -0400", hash_original_method = "A035D08443F3F9853C50476F9CD3E50F", hash_generated_method = "35A40F8CFAFBFB160F12503BD50A21DE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.236 -0400", hash_original_method = "A035D08443F3F9853C50476F9CD3E50F", hash_generated_method = "293077F4EBD3B48548FE7AD64C9A451D")
     public ComponentName getComponent() {
-        ComponentName var36812892F2F610F061B81BA39B626ED6_887696435 = (new ComponentName(mService.serviceInfo.packageName,
-                mService.serviceInfo.name));
-        return (ComponentName)dsTaint.getTaint();
+        ComponentName varB4EAC82CA7396A68D541C85D26508E83_1965640020 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1965640020 = new ComponentName(mService.serviceInfo.packageName,
+                mService.serviceInfo.name);
+        varB4EAC82CA7396A68D541C85D26508E83_1965640020.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1965640020;
         // ---------- Original Method ----------
         //return new ComponentName(mService.serviceInfo.packageName,
                 //mService.serviceInfo.name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.341 -0400", hash_original_method = "DC118FA5C7EE28B6AE7273376F31713A", hash_generated_method = "A4D0EF3815869507AA1B2B2DDD4AD650")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.240 -0400", hash_original_method = "DC118FA5C7EE28B6AE7273376F31713A", hash_generated_method = "86E03D31F9CF7FCD25BE4D7FD3D58A1F")
     public CharSequence loadLabel(PackageManager pm) {
-        dsTaint.addTaint(pm.dsTaint);
-        CharSequence var37856CDD70F50ABB3C82E07A4EC679C0_1408124156 = (mService.loadLabel(pm));
-        return dsTaint.getTaintString();
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1668345671 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1668345671 = mService.loadLabel(pm);
+        addTaint(pm.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1668345671.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1668345671;
         // ---------- Original Method ----------
         //return mService.loadLabel(pm);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.341 -0400", hash_original_method = "0598EE9DB236F7268C8A7877021962D5", hash_generated_method = "89EA54B0E55FEAB81F9B989EFD49F15D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.254 -0400", hash_original_method = "0598EE9DB236F7268C8A7877021962D5", hash_generated_method = "81969C81135DF081EFD206A48659C9DF")
     public Drawable loadIcon(PackageManager pm) {
-        dsTaint.addTaint(pm.dsTaint);
-        Drawable var8EEC18B2BAAC36DADFAD2C3B55E7EE45_392930688 = (mService.loadIcon(pm));
-        return (Drawable)dsTaint.getTaint();
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_304692348 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_304692348 = mService.loadIcon(pm);
+        addTaint(pm.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_304692348.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_304692348;
         // ---------- Original Method ----------
         //return mService.loadIcon(pm);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.342 -0400", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "A8B888BFD8A46E2CDEC1514677D36FA3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.255 -0400", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "7E97A604C947A2F247ECD2F8D81B8ED2")
     public String getSettingsActivity() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1489699091 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1489699091 = mSettingsActivityName;
+        varB4EAC82CA7396A68D541C85D26508E83_1489699091.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1489699091;
         // ---------- Original Method ----------
         //return mSettingsActivityName;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.342 -0400", hash_original_method = "CC228A570F36729F1778728092FDBD7B", hash_generated_method = "9ABC8F15A60DE37714C5A2945068D685")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.255 -0400", hash_original_method = "CC228A570F36729F1778728092FDBD7B", hash_generated_method = "21401BAD002507D26E22240BE10CD503")
     public int getSubtypeCount() {
-        int var2A2E26F2E1FE9603006EE3A64DF7EF6B_1288435543 = (mSubtypes.size());
-        return dsTaint.getTaintInt();
+        int var2A2E26F2E1FE9603006EE3A64DF7EF6B_997094449 = (mSubtypes.size());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1606469913 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1606469913;
         // ---------- Original Method ----------
         //return mSubtypes.size();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.342 -0400", hash_original_method = "8DB3E81066DAFF6D6FC518E613D3324D", hash_generated_method = "3BC3F44043E0FFDADE67C38E57E476B9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.256 -0400", hash_original_method = "8DB3E81066DAFF6D6FC518E613D3324D", hash_generated_method = "D337B526D6B96791B8BF5346C43805CD")
     public InputMethodSubtype getSubtypeAt(int index) {
-        dsTaint.addTaint(index);
-        InputMethodSubtype var8D6B04E3BFE1316A079FE87971A302DA_1210260823 = (mSubtypes.get(index));
-        return (InputMethodSubtype)dsTaint.getTaint();
+        InputMethodSubtype varB4EAC82CA7396A68D541C85D26508E83_1183610299 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1183610299 = mSubtypes.get(index);
+        addTaint(index);
+        varB4EAC82CA7396A68D541C85D26508E83_1183610299.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1183610299;
         // ---------- Original Method ----------
         //return mSubtypes.get(index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.342 -0400", hash_original_method = "D40E950149CD5654CB7133AFB587F871", hash_generated_method = "29C6691DD4758165E0FEA01776C8A7E6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.257 -0400", hash_original_method = "D40E950149CD5654CB7133AFB587F871", hash_generated_method = "E999382785CF90C53641065C2C72186C")
     public int getIsDefaultResourceId() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_898435386 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_898435386;
         // ---------- Original Method ----------
         //return mIsDefaultResId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.342 -0400", hash_original_method = "117DA0E6EED582D5768D87F87FE31C9D", hash_generated_method = "D7DDB42905FCB7834A7B4956EEEDE6CB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.257 -0400", hash_original_method = "117DA0E6EED582D5768D87F87FE31C9D", hash_generated_method = "C6242AAEDA1344D529ECF34008F4F5D8")
     public void dump(Printer pw, String prefix) {
-        dsTaint.addTaint(prefix);
-        dsTaint.addTaint(pw.dsTaint);
         pw.println(prefix + "mId=" + mId
                 + " mSettingsActivityName=" + mSettingsActivityName);
         pw.println(prefix + "mIsDefaultResId=0x"
                 + Integer.toHexString(mIsDefaultResId));
         pw.println(prefix + "Service:");
         mService.dump(pw, prefix + "  ");
+        addTaint(pw.getTaint());
+        addTaint(prefix.getTaint());
         // ---------- Original Method ----------
         //pw.println(prefix + "mId=" + mId
                 //+ " mSettingsActivityName=" + mSettingsActivityName);
@@ -388,11 +407,15 @@ public final class InputMethodInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.342 -0400", hash_original_method = "B1E623174B0D17462D77E01C624BA9A3", hash_generated_method = "A4087BCAD1E232C07B830B1CD1522FC3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.258 -0400", hash_original_method = "B1E623174B0D17462D77E01C624BA9A3", hash_generated_method = "40BC2D3BFCFC0F6215333C42F0E1FBCE")
     @Override
     public String toString() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1743098549 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1743098549 = "InputMethodInfo{" + mId
+                + ", settings: "
+                + mSettingsActivityName + "}";
+        varB4EAC82CA7396A68D541C85D26508E83_1743098549.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1743098549;
         // ---------- Original Method ----------
         //return "InputMethodInfo{" + mId
                 //+ ", settings: "
@@ -400,18 +423,18 @@ public final class InputMethodInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.343 -0400", hash_original_method = "138C64F4407505D90DB7ED842C7A62A7", hash_generated_method = "CB4E399B7D9C7F55557E2942C1BEB678")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.258 -0400", hash_original_method = "138C64F4407505D90DB7ED842C7A62A7", hash_generated_method = "9D68252D3C556FD5D1D396A348D387FF")
     @Override
     public boolean equals(Object o) {
-        dsTaint.addTaint(o.dsTaint);
         {
-            boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_1929457327 = (o == this);
+            boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_2009699054 = (o == this);
         } //End collapsed parenthetic
         InputMethodInfo obj;
         obj = (InputMethodInfo) o;
-        boolean var503735D73D79A1B1147D713C845FB65C_1725200527 = (mId.equals(obj.mId));
-        return dsTaint.getTaintBoolean();
+        boolean var503735D73D79A1B1147D713C845FB65C_1955670101 = (mId.equals(obj.mId));
+        addTaint(o.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1980804142 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1980804142;
         // ---------- Original Method ----------
         //if (o == this) return true;
         //if (o == null) return false;
@@ -421,38 +444,37 @@ public final class InputMethodInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.343 -0400", hash_original_method = "703EF4DB2908CB7D83260BB6EC0F610D", hash_generated_method = "B0D94135CA429B18F6B29640901E508B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.273 -0400", hash_original_method = "703EF4DB2908CB7D83260BB6EC0F610D", hash_generated_method = "6DB0D6C79DAF04711BC4C70A47D36BD5")
     @Override
     public int hashCode() {
-        int varD0D1563019D677BB305608F4816D3FC7_1329630676 = (mId.hashCode());
-        return dsTaint.getTaintInt();
+        int varD0D1563019D677BB305608F4816D3FC7_22805343 = (mId.hashCode());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_858789269 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_858789269;
         // ---------- Original Method ----------
         //return mId.hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.343 -0400", hash_original_method = "14EC3F96E0FE12EE22A064553C434BBF", hash_generated_method = "3D4405DB4026DFAD8D1B3AFE132B21AC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.273 -0400", hash_original_method = "14EC3F96E0FE12EE22A064553C434BBF", hash_generated_method = "E47FD340F15F844536AD852274777CBA")
     public boolean isAuxiliaryIme() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1207890345 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1207890345;
         // ---------- Original Method ----------
         //return mIsAuxIme;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.343 -0400", hash_original_method = "A776E868EB44985D1E2E0042801983B1", hash_generated_method = "D92F0AFEDBC2EACCE75059721E130053")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.274 -0400", hash_original_method = "A776E868EB44985D1E2E0042801983B1", hash_generated_method = "85A9740AE516393F9AE9A2F5229965B2")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeString(mId);
         dest.writeString(mSettingsActivityName);
         dest.writeInt(mIsDefaultResId);
         dest.writeInt(mIsAuxIme ? 1 : 0);
         mService.writeToParcel(dest, flags);
         dest.writeTypedList(mSubtypes);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeString(mId);
         //dest.writeString(mSettingsActivityName);
@@ -463,42 +485,32 @@ public final class InputMethodInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.343 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0DB50BC0CCE4711867E95DEC1B2117C7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.274 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8053CE92BE54BE2B2B69B6A1AB69586A")
     @Override
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1983318782 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1983318782;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    static final String TAG = "InputMethodInfo";
-    public static final Parcelable.Creator<InputMethodInfo> CREATOR = new Parcelable.Creator<InputMethodInfo>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.344 -0400", hash_original_method = "34C1AEE140730DF166077C8E73F0BE76", hash_generated_method = "A6B89721B43B59CD5B44447F6A2FE46D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.274 -0400", hash_original_field = "9F72F07379E6C161D406B99662BBC7ED", hash_generated_field = "414B1CE6AC0576A11221BFB6BDE818C7")
+
+    static String TAG = "InputMethodInfo";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.274 -0400", hash_original_field = "DEB12F1F6F201D41FBA42CC969CA4837", hash_generated_field = "0C5D3B1B4FDD1347C21CE5B24224A6EF")
+
+    public static final Parcelable.Creator<InputMethodInfo> CREATOR
+            = new Parcelable.Creator<InputMethodInfo>() {
         @Override
         public InputMethodInfo createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            InputMethodInfo var6D889DEE8436EFE406C0B66417EF81F7_567638049 = (new InputMethodInfo(source));
-            return (InputMethodInfo)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new InputMethodInfo(source);
+            return new InputMethodInfo(source);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.344 -0400", hash_original_method = "49600A5A1FFDA7DAE900783B5989229D", hash_generated_method = "4C83008DE1FB5BC670D1BB230E09856A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public InputMethodInfo[] newArray(int size) {
-            dsTaint.addTaint(size);
-            InputMethodInfo[] varD436B8541CEDAFD6640E80F1D2A07FB7_1539520979 = (new InputMethodInfo[size]);
-            return (InputMethodInfo[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new InputMethodInfo[size];
+            return new InputMethodInfo[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

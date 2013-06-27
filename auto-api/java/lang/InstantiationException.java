@@ -10,31 +10,30 @@ import java.util.Iterator;
 
 public class InstantiationException extends Exception {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.753 -0400", hash_original_method = "4FE52ED96718E49A2C12E29EB6D41BB1", hash_generated_method = "41A9F8C5A9604CBE4AC2140585ED8858")
-    @DSModeled(DSC.SAFE)
-    public InstantiationException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.636 -0400", hash_original_method = "4FE52ED96718E49A2C12E29EB6D41BB1", hash_generated_method = "41A9F8C5A9604CBE4AC2140585ED8858")
+    public  InstantiationException() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.755 -0400", hash_original_method = "5F54417A31BE783961475C78B79DF3BE", hash_generated_method = "177721EA42FA4999245A8ABD4867394F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InstantiationException(String detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.636 -0400", hash_original_method = "5F54417A31BE783961475C78B79DF3BE", hash_generated_method = "BC53AD53B6A263E4868C2D5DB52E8A85")
+    public  InstantiationException(String detailMessage) {
         super(detailMessage);
-        dsTaint.addTaint(detailMessage);
+        addTaint(detailMessage.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.755 -0400", hash_original_method = "6F408C13CB22C61379FA2022EB73B671", hash_generated_method = "9617A9DC1AF3BFD8356A0E624638D177")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     InstantiationException(Class<?> clazz) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.637 -0400", hash_original_method = "6F408C13CB22C61379FA2022EB73B671", hash_generated_method = "977D14F1D6A052030A3E1B44F8E5929D")
+      InstantiationException(Class<?> clazz) {
         super(clazz.getName());
-        dsTaint.addTaint(clazz.dsTaint);
+        addTaint(clazz.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = -8441929162975509110L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.637 -0400", hash_original_field = "DAF32CAD109904827A958F0CCCFE02F2", hash_generated_field = "13976BB51B4D87B17FA001EEC85D40B9")
+
+    private static long serialVersionUID = -8441929162975509110L;
 }
 

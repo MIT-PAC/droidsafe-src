@@ -16,9 +16,8 @@ import java.nio.ByteBuffer;
 
 public class DdmHandleHello extends ChunkHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.948 -0400", hash_original_method = "7D5B1A101327E53BA05D666FE17BE587", hash_generated_method = "2E100489FD6DDE0FDD214C08AF626324")
-    @DSModeled(DSC.SAFE)
-    private DdmHandleHello() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.753 -0400", hash_original_method = "7D5B1A101327E53BA05D666FE17BE587", hash_generated_method = "2E100489FD6DDE0FDD214C08AF626324")
+    private  DdmHandleHello() {
         // ---------- Original Method ----------
     }
 
@@ -29,8 +28,7 @@ public class DdmHandleHello extends ChunkHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.949 -0400", hash_original_method = "9DD1D58A13546676FF124C2FF2506A7B", hash_generated_method = "63DD3D4F35DF35C6F01DF099283CBE6F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.754 -0400", hash_original_method = "9DD1D58A13546676FF124C2FF2506A7B", hash_generated_method = "63DD3D4F35DF35C6F01DF099283CBE6F")
     public void connected() {
         {
             byte[] data;
@@ -51,8 +49,7 @@ public class DdmHandleHello extends ChunkHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.949 -0400", hash_original_method = "AD032216A82F0FAAB91D671673032B40", hash_generated_method = "8D5A1BE7E46D89F62382E2475FB8C198")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.766 -0400", hash_original_method = "AD032216A82F0FAAB91D671673032B40", hash_generated_method = "8D5A1BE7E46D89F62382E2475FB8C198")
     public void disconnected() {
         // ---------- Original Method ----------
         //if (false)
@@ -60,23 +57,34 @@ public class DdmHandleHello extends ChunkHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.949 -0400", hash_original_method = "D81BC51C8CC9A87BC96AD49CBC27557B", hash_generated_method = "352F3087737F620006DDEC36F7EB2EB5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.780 -0400", hash_original_method = "D81BC51C8CC9A87BC96AD49CBC27557B", hash_generated_method = "B17E9013B8DCC0586AFD984B4BAFD19C")
     public Chunk handleChunk(Chunk request) {
-        dsTaint.addTaint(request.dsTaint);
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_874263633 = null; //Variable for return #1
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_2082579855 = null; //Variable for return #2
         int type;
         type = request.type;
         {
-            Chunk var273586091861607A8CBD181D160EE7BB_225582962 = (handleHELO(request));
+            varB4EAC82CA7396A68D541C85D26508E83_874263633 = handleHELO(request);
         } //End block
         {
-            Chunk var5EFFB46FE4DCB595224EB3C9BB8C6394_94789012 = (handleFEAT(request));
+            varB4EAC82CA7396A68D541C85D26508E83_2082579855 = handleFEAT(request);
         } //End block
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Unknown packet "
                 + ChunkHandler.name(type));
         } //End block
-        return (Chunk)dsTaint.getTaint();
+        addTaint(request.getTaint());
+        Chunk varA7E53CE21691AB073D9660D615818899_1422260128; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1422260128 = varB4EAC82CA7396A68D541C85D26508E83_874263633;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1422260128 = varB4EAC82CA7396A68D541C85D26508E83_2082579855;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1422260128.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1422260128;
         // ---------- Original Method ----------
         //if (false)
             //Log.v("ddm-heap", "Handling " + name(request.type) + " chunk");
@@ -92,11 +100,11 @@ public class DdmHandleHello extends ChunkHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.950 -0400", hash_original_method = "DA2CEBE94E81B4AF53080A8A1470F538", hash_generated_method = "A88496AE998032651752038B3A3AF3DC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.802 -0400", hash_original_method = "DA2CEBE94E81B4AF53080A8A1470F538", hash_generated_method = "E462CE577126C14AE897F72857EC1988")
     private Chunk handleHELO(Chunk request) {
-        dsTaint.addTaint(request.dsTaint);
-        Chunk var6584F7DD2BCAAC0F42D65D53067388EE_1810248853 = (createFailChunk(123, "This is a test"));
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1320131870 = null; //Variable for return #1
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1050867451 = null; //Variable for return #2
+        varB4EAC82CA7396A68D541C85D26508E83_1320131870 = createFailChunk(123, "This is a test");
         ByteBuffer in;
         in = wrapChunk(request);
         int serverProtoVers;
@@ -122,19 +130,30 @@ public class DdmHandleHello extends ChunkHandler {
         Chunk reply;
         reply = new Chunk(CHUNK_HELO, out);
         {
-            boolean var75D5FC25CCF0C92CFFFDE18629718BBF_947743241 = (Debug.waitingForDebugger());
+            boolean var75D5FC25CCF0C92CFFFDE18629718BBF_1869889626 = (Debug.waitingForDebugger());
             sendWAIT(0);
         } //End collapsed parenthetic
-        return (Chunk)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1050867451 = reply;
+        addTaint(request.getTaint());
+        Chunk varA7E53CE21691AB073D9660D615818899_498332845; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_498332845 = varB4EAC82CA7396A68D541C85D26508E83_1320131870;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_498332845 = varB4EAC82CA7396A68D541C85D26508E83_1050867451;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_498332845.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_498332845;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.953 -0400", hash_original_method = "4DE14E90C721327585D89816C2D399A5", hash_generated_method = "DD57B574BFF7533B2E0FE97A3A41F604")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.825 -0400", hash_original_method = "4DE14E90C721327585D89816C2D399A5", hash_generated_method = "D648930B34D8C68FD73722525C13014E")
     private Chunk handleFEAT(Chunk request) {
-        dsTaint.addTaint(request.dsTaint);
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_1562038907 = null; //Variable for return #1
         String[] features;
         features = Debug.getVmFeatureList();
         int size;
@@ -156,8 +175,10 @@ public class DdmHandleHello extends ChunkHandler {
                 putString(out, features[i]);
             } //End block
         } //End collapsed parenthetic
-        Chunk var82D6074A720CB2B61CF4F7681B0790C3_1879364525 = (new Chunk(CHUNK_FEAT, out));
-        return (Chunk)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1562038907 = new Chunk(CHUNK_FEAT, out);
+        addTaint(request.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1562038907.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1562038907;
         // ---------- Original Method ----------
         //final String[] features = Debug.getVmFeatureList();
         //if (false)
@@ -183,9 +204,17 @@ public class DdmHandleHello extends ChunkHandler {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.826 -0400", hash_original_field = "9E73CF887D3BEE7D1EC552ABB1CEC88D", hash_generated_field = "4B98D36A3B1780A91D979CD0DB32E544")
+
     public static final int CHUNK_HELO = type("HELO");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.826 -0400", hash_original_field = "793576DB5C7985B2CF90EA800F003D17", hash_generated_field = "F10D1B8DFFE546DA4FB9F20A975811FA")
+
     public static final int CHUNK_WAIT = type("WAIT");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.826 -0400", hash_original_field = "4438E9F027258B7227178624C6715CE0", hash_generated_field = "2322DA1CA72C278933263456F1066D5E")
+
     public static final int CHUNK_FEAT = type("FEAT");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.826 -0400", hash_original_field = "8619BE9DDB4E279E9B5DF6F337B7EAFD", hash_generated_field = "195EB1E12A6D4D5D000F29C48DB2AFBC")
+
     private static DdmHandleHello mInstance = new DdmHandleHello();
 }
 

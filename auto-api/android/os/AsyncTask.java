@@ -23,22 +23,30 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class AsyncTask<Params, Progress, Result> {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.450 -0400", hash_original_field = "BB30BA3EDC46FDDC92BDFE7FACA691F0", hash_generated_field = "DAAB2689B37CB24EEF0B8E3B973EEFF3")
+
     private WorkerRunnable<Params, Result> mWorker;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.450 -0400", hash_original_field = "76BB93AB423B813C0C115E37BB7B0147", hash_generated_field = "6DAED75BC4A1450C0B66E4CCB009EB53")
+
     private FutureTask<Result> mFuture;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.450 -0400", hash_original_field = "8FA972E3894E5889324591B9B189ABDC", hash_generated_field = "0C1891F28AC7C3B6ED5CCBBABEAFE2C8")
+
     private volatile Status mStatus = Status.PENDING;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.450 -0400", hash_original_field = "B024F65C6054CDE21F0BE3765446DCC0", hash_generated_field = "6388A9EBD5BF48DC74B4634613407B70")
+
     private AtomicBoolean mTaskInvoked = new AtomicBoolean();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.323 -0400", hash_original_method = "8B3C3F162E88495B3198046B04CCAD12", hash_generated_method = "24BB2E094C90168F4570692208762ED9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AsyncTask() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.473 -0400", hash_original_method = "8B3C3F162E88495B3198046B04CCAD12", hash_generated_method = "222EA040B6285D703139ADA98533FDD8")
+    public  AsyncTask() {
         mWorker = new WorkerRunnable<Params, Result>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.322 -0400", hash_original_method = "A54B00CDBBB35FABA36BF774EC6EA22F", hash_generated_method = "0AF59E0B21DF2CB28F04019184516D3C")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.470 -0400", hash_original_method = "A54B00CDBBB35FABA36BF774EC6EA22F", hash_generated_method = "59A8D9C4B7AADC44501EF6BB272BE868")
             public Result call() throws Exception {
+                Result varB4EAC82CA7396A68D541C85D26508E83_304838399 = null; //Variable for return #1
                 mTaskInvoked.set(true);
                 Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-                Result varF5AC4084B41C2C25D584EC89B4E14930_1794617962 = (postResult(doInBackground(mParams)));
-                return (Result)dsTaint.getTaint();
+                varB4EAC82CA7396A68D541C85D26508E83_304838399 = postResult(doInBackground(mParams));
+                varB4EAC82CA7396A68D541C85D26508E83_304838399.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_304838399;
                 // ---------- Original Method ----------
                 //mTaskInvoked.set(true);
                 //Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
@@ -46,8 +54,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
             }
 };
         mFuture = new FutureTask<Result>(mWorker) {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.323 -0400", hash_original_method = "EC5824A2B7431B45243C7897F66BDC0A", hash_generated_method = "79DCFFE9D26B9E4EDB5C3C5210F11BD5")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.473 -0400", hash_original_method = "EC5824A2B7431B45243C7897F66BDC0A", hash_generated_method = "79DCFFE9D26B9E4EDB5C3C5210F11BD5")
             @Override
             protected void done() {
                 try 
@@ -106,15 +113,14 @@ public abstract class AsyncTask<Params, Progress, Result> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.324 -0400", hash_original_method = "3B97ED7071D46F297921BB0773C1C347", hash_generated_method = "C7C8440961CB3EE691423765991BA982")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.492 -0400", hash_original_method = "3B97ED7071D46F297921BB0773C1C347", hash_generated_method = "14C75509D821807E889DAFE9850FE0C5")
     private void postResultIfNotInvoked(Result result) {
-        dsTaint.addTaint(result.dsTaint);
         boolean wasTaskInvoked;
         wasTaskInvoked = mTaskInvoked.get();
         {
             postResult(result);
         } //End block
+        addTaint(result.getTaint());
         // ---------- Original Method ----------
         //final boolean wasTaskInvoked = mTaskInvoked.get();
         //if (!wasTaskInvoked) {
@@ -123,15 +129,17 @@ public abstract class AsyncTask<Params, Progress, Result> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.324 -0400", hash_original_method = "1FE912CF37AD5F28EFBFA6E2EE976D7C", hash_generated_method = "3DD802CDE48A9600A92FF75874E8BCD4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.524 -0400", hash_original_method = "1FE912CF37AD5F28EFBFA6E2EE976D7C", hash_generated_method = "AB6ED1583C89C36221F9972948AE31D4")
     private Result postResult(Result result) {
-        dsTaint.addTaint(result.dsTaint);
+        Result varB4EAC82CA7396A68D541C85D26508E83_518341758 = null; //Variable for return #1
         Message message;
         message = sHandler.obtainMessage(MESSAGE_POST_RESULT,
                 new AsyncTaskResult<Result>(this, result));
         message.sendToTarget();
-        return (Result)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_518341758 = result;
+        addTaint(result.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_518341758.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_518341758;
         // ---------- Original Method ----------
         //Message message = sHandler.obtainMessage(MESSAGE_POST_RESULT,
                 //new AsyncTaskResult<Result>(this, result));
@@ -140,10 +148,12 @@ public abstract class AsyncTask<Params, Progress, Result> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.324 -0400", hash_original_method = "C7B50D6362AC0A992140F3FAC71C75FC", hash_generated_method = "B5B22C1A3EAB6F06C4B237ADBFE27AAA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.524 -0400", hash_original_method = "C7B50D6362AC0A992140F3FAC71C75FC", hash_generated_method = "F54BA8D09CBF5309BA5F7FA85E378205")
     public final Status getStatus() {
-        return (Status)dsTaint.getTaint();
+        Status varB4EAC82CA7396A68D541C85D26508E83_1585357316 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1585357316 = mStatus;
+        varB4EAC82CA7396A68D541C85D26508E83_1585357316.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1585357316;
         // ---------- Original Method ----------
         //return mStatus;
     }
@@ -152,115 +162,111 @@ public abstract class AsyncTask<Params, Progress, Result> {
     protected abstract Result doInBackground(Params... params);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.325 -0400", hash_original_method = "D1C6308395AB600921F20543E51EAD98", hash_generated_method = "C0199AA9BD1E0917DA5290FDB264C17A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.528 -0400", hash_original_method = "D1C6308395AB600921F20543E51EAD98", hash_generated_method = "C0199AA9BD1E0917DA5290FDB264C17A")
     protected void onPreExecute() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.325 -0400", hash_original_method = "815F7407CD3192690B947D6EE1FFAB09", hash_generated_method = "B2969982D5C7BCE69C92CE9D9497FC2E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.529 -0400", hash_original_method = "815F7407CD3192690B947D6EE1FFAB09", hash_generated_method = "C976233E37033A3D91D226FE1079E594")
     @SuppressWarnings({"UnusedDeclaration"})
     protected void onPostExecute(Result result) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(result.dsTaint);
+        addTaint(result.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.325 -0400", hash_original_method = "157B3FBC0632B3CAE882248D445D8AAC", hash_generated_method = "261FAB08ECEE8931F38090B06936E8D9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.530 -0400", hash_original_method = "157B3FBC0632B3CAE882248D445D8AAC", hash_generated_method = "840A874EFC9E5D7D09065733171CECD0")
     @SuppressWarnings({"UnusedDeclaration"})
     protected void onProgressUpdate(Progress... values) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(values[0].dsTaint);
+        addTaint(values[0].getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.325 -0400", hash_original_method = "D59B5ED17FD1F167CEB40DD1D5E0C9AC", hash_generated_method = "FA92A28F2766FF3265E34424AFE739FC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.530 -0400", hash_original_method = "D59B5ED17FD1F167CEB40DD1D5E0C9AC", hash_generated_method = "295E24CF2011E2415E50209BC2862E86")
     @SuppressWarnings({"UnusedParameters"})
     protected void onCancelled(Result result) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(result.dsTaint);
         onCancelled();
+        addTaint(result.getTaint());
         // ---------- Original Method ----------
         //onCancelled();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.326 -0400", hash_original_method = "50EA6C215817530416AC66D7F05F78C0", hash_generated_method = "71F6D962409DFEB2E35ECE3ED38075C4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.552 -0400", hash_original_method = "50EA6C215817530416AC66D7F05F78C0", hash_generated_method = "71F6D962409DFEB2E35ECE3ED38075C4")
     protected void onCancelled() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.326 -0400", hash_original_method = "DB46851A4B24FCF8A49F880359D5B78C", hash_generated_method = "D3D9CE546C3211F0FC6DE311C148DB63")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.553 -0400", hash_original_method = "DB46851A4B24FCF8A49F880359D5B78C", hash_generated_method = "19E961AED5295174906F101796D2E99B")
     public final boolean isCancelled() {
-        boolean varE689F9A33D91E57560F3F7F78307B4C2_653509112 = (mFuture.isCancelled());
-        return dsTaint.getTaintBoolean();
+        boolean varE689F9A33D91E57560F3F7F78307B4C2_1471806821 = (mFuture.isCancelled());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2137645990 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2137645990;
         // ---------- Original Method ----------
         //return mFuture.isCancelled();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.326 -0400", hash_original_method = "79A634F40CF588E281325883FCE2C51B", hash_generated_method = "EBE2FFCEE15566D610D746EF60227AE2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.576 -0400", hash_original_method = "79A634F40CF588E281325883FCE2C51B", hash_generated_method = "D5041B3D9C4B5AEC5AA524A2BAB6E9B2")
     public final boolean cancel(boolean mayInterruptIfRunning) {
-        dsTaint.addTaint(mayInterruptIfRunning);
-        boolean var9435D92544DADC2A7A666A5C650C1855_1573634165 = (mFuture.cancel(mayInterruptIfRunning));
-        return dsTaint.getTaintBoolean();
+        boolean var9435D92544DADC2A7A666A5C650C1855_515383749 = (mFuture.cancel(mayInterruptIfRunning));
+        addTaint(mayInterruptIfRunning);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1467012898 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1467012898;
         // ---------- Original Method ----------
         //return mFuture.cancel(mayInterruptIfRunning);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.326 -0400", hash_original_method = "6419D225056356234AD0A7B8CC3CE063", hash_generated_method = "93E88B53AD0D7C53BEEE357C2B18CA0B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.577 -0400", hash_original_method = "6419D225056356234AD0A7B8CC3CE063", hash_generated_method = "CF4C1384ED9943C189DA9409D7772B74")
     public final Result get() throws InterruptedException, ExecutionException {
-        Result varAA329A087007968F6FB086C75E7578F5_699237002 = (mFuture.get());
-        return (Result)dsTaint.getTaint();
+        Result varB4EAC82CA7396A68D541C85D26508E83_1745253498 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1745253498 = mFuture.get();
+        varB4EAC82CA7396A68D541C85D26508E83_1745253498.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1745253498;
         // ---------- Original Method ----------
         //return mFuture.get();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.327 -0400", hash_original_method = "7D7E6E809B7EB95E206E2FFE71D3D78F", hash_generated_method = "D20A5D66BAED118B01ACB79AC9698F7A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.578 -0400", hash_original_method = "7D7E6E809B7EB95E206E2FFE71D3D78F", hash_generated_method = "13762E129995A4D843460120AEF58DC5")
     public final Result get(long timeout, TimeUnit unit) throws InterruptedException,
             ExecutionException, TimeoutException {
-        dsTaint.addTaint(unit.dsTaint);
-        dsTaint.addTaint(timeout);
-        Result var5AE3FD5638089D591161F467CFDDF183_1769407302 = (mFuture.get(timeout, unit));
-        return (Result)dsTaint.getTaint();
+        Result varB4EAC82CA7396A68D541C85D26508E83_1819899231 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1819899231 = mFuture.get(timeout, unit);
+        addTaint(timeout);
+        addTaint(unit.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1819899231.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1819899231;
         // ---------- Original Method ----------
         //return mFuture.get(timeout, unit);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.327 -0400", hash_original_method = "C6B4FDC12FE10CD7E1E7DDF258371598", hash_generated_method = "4BA71057E97399032DA18E301305EA87")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.579 -0400", hash_original_method = "C6B4FDC12FE10CD7E1E7DDF258371598", hash_generated_method = "4D4EA46C703207E48762A0338407B61C")
     public final AsyncTask<Params, Progress, Result> execute(Params... params) {
-        dsTaint.addTaint(params[0].dsTaint);
-        AsyncTask<Params, Progress, Result> var66C4FEF4EA9C8B929D96264D337E3701_484746357 = (executeOnExecutor(sDefaultExecutor, params));
-        return (AsyncTask<Params, Progress, Result>)dsTaint.getTaint();
+        AsyncTask<Params, Progress, Result> varB4EAC82CA7396A68D541C85D26508E83_416830007 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_416830007 = executeOnExecutor(sDefaultExecutor, params);
+        addTaint(params[0].getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_416830007.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_416830007;
         // ---------- Original Method ----------
         //return executeOnExecutor(sDefaultExecutor, params);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.328 -0400", hash_original_method = "579EA4E2ACCB0940FE86E74F49727E28", hash_generated_method = "D8497B047B3363F95B20B341306E25DD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.581 -0400", hash_original_method = "579EA4E2ACCB0940FE86E74F49727E28", hash_generated_method = "F41F0664CE6A501B588B9CDC94E77BFE")
     public final AsyncTask<Params, Progress, Result> executeOnExecutor(Executor exec,
             Params... params) {
-        dsTaint.addTaint(exec.dsTaint);
-        dsTaint.addTaint(params[0].dsTaint);
+        AsyncTask<Params, Progress, Result> varB4EAC82CA7396A68D541C85D26508E83_1689973325 = null; //Variable for return #1
         {
             //Begin case RUNNING 
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Cannot execute task:"
@@ -276,7 +282,10 @@ public abstract class AsyncTask<Params, Progress, Result> {
         onPreExecute();
         mWorker.mParams = params;
         exec.execute(mFuture);
-        return (AsyncTask<Params, Progress, Result>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1689973325 = this;
+        addTaint(exec.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1689973325.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1689973325;
         // ---------- Original Method ----------
         //if (mStatus != Status.PENDING) {
             //switch (mStatus) {
@@ -302,17 +311,16 @@ public abstract class AsyncTask<Params, Progress, Result> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.331 -0400", hash_original_method = "0B5FDDD22527F2F69D5D9DE9D9A2B1C6", hash_generated_method = "11FAA5252FFEF660E86C051C112940D8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.601 -0400", hash_original_method = "0B5FDDD22527F2F69D5D9DE9D9A2B1C6", hash_generated_method = "DB8E394C4DFBD6EAE0B0610E3CE32757")
     protected final void publishProgress(Progress... values) {
-        dsTaint.addTaint(values[0].dsTaint);
         {
-            boolean var400FC4A64E54A86E4D11CC7D9451AF61_389162890 = (!isCancelled());
+            boolean var400FC4A64E54A86E4D11CC7D9451AF61_1212367456 = (!isCancelled());
             {
                 sHandler.obtainMessage(MESSAGE_POST_PROGRESS,
                     new AsyncTaskResult<Progress>(this, values)).sendToTarget();
             } //End block
         } //End collapsed parenthetic
+        addTaint(values[0].getTaint());
         // ---------- Original Method ----------
         //if (!isCancelled()) {
             //sHandler.obtainMessage(MESSAGE_POST_PROGRESS,
@@ -321,12 +329,10 @@ public abstract class AsyncTask<Params, Progress, Result> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.331 -0400", hash_original_method = "14AF9B49F1E9643B41861D03798B3831", hash_generated_method = "99A79FF9945E0A777B1A5C386CC233CA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.606 -0400", hash_original_method = "14AF9B49F1E9643B41861D03798B3831", hash_generated_method = "47DE8C3F3E7AF033EE865CB01DF113BC")
     private void finish(Result result) {
-        dsTaint.addTaint(result.dsTaint);
         {
-            boolean var08348B91A6AA0A281F1856BF13E9F87F_565784309 = (isCancelled());
+            boolean var08348B91A6AA0A281F1856BF13E9F87F_804204481 = (isCancelled());
             {
                 onCancelled(result);
             } //End block
@@ -335,6 +341,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
             } //End block
         } //End collapsed parenthetic
         mStatus = Status.FINISHED;
+        addTaint(result.getTaint());
         // ---------- Original Method ----------
         //if (isCancelled()) {
             //onCancelled(result);
@@ -346,22 +353,24 @@ public abstract class AsyncTask<Params, Progress, Result> {
 
     
     private static class SerialExecutor implements Executor {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.607 -0400", hash_original_field = "1145DE7B0EE5DC458C0C28AC0599DE84", hash_generated_field = "70DD1576CBB92EC9C206AE2C6ABB3DB6")
+
         ArrayDeque<Runnable> mTasks = new ArrayDeque<Runnable>();
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.607 -0400", hash_original_field = "A94EB756C33921574C3064C98AF96788", hash_generated_field = "C695A68C51ACBA3E4D3915B59F291FEB")
+
         Runnable mActive;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.332 -0400", hash_original_method = "37D850A301C73685D4402599C8935C9D", hash_generated_method = "37D850A301C73685D4402599C8935C9D")
-                public SerialExecutor ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.607 -0400", hash_original_method = "AEF1DBC157AC4B04251F94F6D52131CC", hash_generated_method = "AEF1DBC157AC4B04251F94F6D52131CC")
+        public SerialExecutor ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.332 -0400", hash_original_method = "7659AD0BA1D4D745C5BB94FD1DAE3D8A", hash_generated_method = "F8287396B40E355298F6959C17685E0D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.629 -0400", hash_original_method = "7659AD0BA1D4D745C5BB94FD1DAE3D8A", hash_generated_method = "0FA65F7E85C9D98D52FF52D875849CF4")
         public synchronized void execute(final Runnable r) {
-            dsTaint.addTaint(r.dsTaint);
             mTasks.offer(new Runnable() {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.332 -0400", hash_original_method = "97925E5CC02778827B83E8E0CDA5AF7A", hash_generated_method = "C4A406957E6605C6F61D04A437666DDF")
-                //DSFIXME:  CODE0002: Requires DSC value to be set
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.629 -0400", hash_original_method = "97925E5CC02778827B83E8E0CDA5AF7A", hash_generated_method = "C4A406957E6605C6F61D04A437666DDF")
                 public void run() {
                     try 
                     {
@@ -382,6 +391,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
             {
                 scheduleNext();
             } //End block
+            addTaint(r.getTaint());
             // ---------- Original Method ----------
             //mTasks.offer(new Runnable() {
                 //public void run() {
@@ -398,11 +408,10 @@ public abstract class AsyncTask<Params, Progress, Result> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.332 -0400", hash_original_method = "F246C1002CD359817FA3C3F9B99415C3", hash_generated_method = "4EDC2D11E322D7DC3C7A155C74B767E8")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.630 -0400", hash_original_method = "F246C1002CD359817FA3C3F9B99415C3", hash_generated_method = "57B20E65089CB2F5E878B3C55C0DD03A")
         protected synchronized void scheduleNext() {
             {
-                boolean var352B7D8C43A53F23D1CC57EC4344C33E_314862306 = ((mActive = mTasks.poll()) != null);
+                boolean var352B7D8C43A53F23D1CC57EC4344C33E_1767571079 = ((mActive = mTasks.poll()) != null);
                 {
                     THREAD_POOL_EXECUTOR.execute(mActive);
                 } //End block
@@ -427,18 +436,17 @@ public abstract class AsyncTask<Params, Progress, Result> {
     
     private static class InternalHandler extends Handler {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.332 -0400", hash_original_method = "28E38A638EFF55B23D0F1F1D80CC7961", hash_generated_method = "28E38A638EFF55B23D0F1F1D80CC7961")
-                public InternalHandler ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.631 -0400", hash_original_method = "702720A53E3CB2FDA0E1C09BCF5135A3", hash_generated_method = "702720A53E3CB2FDA0E1C09BCF5135A3")
+        public InternalHandler ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.333 -0400", hash_original_method = "921E33E8D8BBA9CD431C8BC69654B3A4", hash_generated_method = "207F06AD7C244C61043B3D9D9C0314A1")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.636 -0400", hash_original_method = "921E33E8D8BBA9CD431C8BC69654B3A4", hash_generated_method = "87404DE591810292BBEEF371399EE872")
         @SuppressWarnings({"unchecked", "RawUseOfParameterizedType"})
         @Override
         public void handleMessage(Message msg) {
-            dsTaint.addTaint(msg.dsTaint);
             AsyncTaskResult result;
             result = (AsyncTaskResult) msg.obj;
             //Begin case MESSAGE_POST_RESULT 
@@ -447,6 +455,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
             //Begin case MESSAGE_POST_PROGRESS 
             result.mTask.onProgressUpdate(result.mData);
             //End case MESSAGE_POST_PROGRESS 
+            addTaint(msg.getTaint());
             // ---------- Original Method ----------
             //AsyncTaskResult result = (AsyncTaskResult) msg.obj;
             //switch (msg.what) {
@@ -465,11 +474,14 @@ public abstract class AsyncTask<Params, Progress, Result> {
 
     
     private static abstract class WorkerRunnable<Params, Result> implements Callable<Result> {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.636 -0400", hash_original_field = "18200E5D7C3839693F00E5A4D3DAD0B6", hash_generated_field = "3458C32F6AB59FD27DC8D66D0781D783")
+
         Params[] mParams;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.333 -0400", hash_original_method = "0F2C2476CE1D7370C2DB3E9E192051D9", hash_generated_method = "0F2C2476CE1D7370C2DB3E9E192051D9")
-                public WorkerRunnable ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.636 -0400", hash_original_method = "6133B28C5B62218BD6304F54DA37E6FE", hash_generated_method = "6133B28C5B62218BD6304F54DA37E6FE")
+        public WorkerRunnable ()
         {
+            //Synthesized constructor
         }
 
 
@@ -478,14 +490,17 @@ public abstract class AsyncTask<Params, Progress, Result> {
 
     
     private static class AsyncTaskResult<Data> {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.636 -0400", hash_original_field = "0F416DC8E1EF1E61CE9DC1C4C6AAC524", hash_generated_field = "DF2220D9D1A3CC6FD22A416585822610")
+
         AsyncTask mTask;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.636 -0400", hash_original_field = "B7DE4FF1B7CCEFDA36733D8B6DFF2904", hash_generated_field = "F9DF2CD3BD472144E91B572BDD352920")
+
         Data[] mData;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.333 -0400", hash_original_method = "4090B8C552F02AD1AD16D083FA97D251", hash_generated_method = "AA1DA67695D8FFA689592610D4B508B8")
-        @DSModeled(DSC.SAFE)
-         AsyncTaskResult(AsyncTask task, Data... data) {
-            dsTaint.addTaint(task.dsTaint);
-            dsTaint.addTaint(data[0].dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.655 -0400", hash_original_method = "4090B8C552F02AD1AD16D083FA97D251", hash_generated_method = "52BF7A64B308C34B842B3C2EDE7F1048")
+          AsyncTaskResult(AsyncTask task, Data... data) {
+            mTask = task;
+            mData = data;
             // ---------- Original Method ----------
             //mTask = task;
             //mData = data;
@@ -496,33 +511,59 @@ public abstract class AsyncTask<Params, Progress, Result> {
 
 
     
-    private static final String LOG_TAG = "AsyncTask";
-    private static final int CORE_POOL_SIZE = 5;
-    private static final int MAXIMUM_POOL_SIZE = 128;
-    private static final int KEEP_ALIVE = 1;
-    private static final ThreadFactory sThreadFactory = new ThreadFactory() {        private AtomicInteger mCount = new AtomicInteger(1);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.655 -0400", hash_original_field = "633B1285E96B59FE7188F4D85CC49A51", hash_generated_field = "B260D7F0F689B74E4DB6C1A622CAE9AA")
+
+    private static String LOG_TAG = "AsyncTask";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.655 -0400", hash_original_field = "C3D7263FE4EB907C919B47ECE782B0BF", hash_generated_field = "80F9C6E250B0D708AC4131810EEF83F5")
+
+    private static int CORE_POOL_SIZE = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.655 -0400", hash_original_field = "C992D099DBB7578480B14D215BCF43F3", hash_generated_field = "80DC80C5358F6380BF7C0D3355D5C074")
+
+    private static int MAXIMUM_POOL_SIZE = 128;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.655 -0400", hash_original_field = "0262667811769BEE2F069CB2EAB3EE82", hash_generated_field = "D28BB5DF0E14911D83CC0D6623E5E585")
+
+    private static int KEEP_ALIVE = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.657 -0400", hash_original_field = "CE50E0B18A35D10A1792CE5C702A9A23", hash_generated_field = "8BBF9A62C0C7BD2ADF81837F90D883E4")
+
+    private static ThreadFactory sThreadFactory = new ThreadFactory() {        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.655 -0400", hash_original_field = "0400DCCD0AD37CE0396AA49E9A3A5070", hash_generated_field = "B4A746055001BF4E34A1898BD708AD22")
+
+        private AtomicInteger mCount = new AtomicInteger(1);
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.333 -0400", hash_original_method = "B4DE4405298900F09E8E832E952AEF02", hash_generated_method = "FCB77B40878F3E0BA51352BF94241FEA")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.656 -0400", hash_original_method = "B4DE4405298900F09E8E832E952AEF02", hash_generated_method = "44D35456A634E6CEBF5843AD02BB4971")
         public Thread newThread(Runnable r) {
-            dsTaint.addTaint(r.dsTaint);
-            Thread var979BEF2481889DD370CD3410171931E6_1538388104 = (new Thread(r, "AsyncTask #" + mCount.getAndIncrement()));
-            return (Thread)dsTaint.getTaint();
+            Thread varB4EAC82CA7396A68D541C85D26508E83_1328954302 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1328954302 = new Thread(r, "AsyncTask #" + mCount.getAndIncrement());
+            addTaint(r.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1328954302.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1328954302;
             // ---------- Original Method ----------
             //return new Thread(r, "AsyncTask #" + mCount.getAndIncrement());
         }
 
         
-}; //Transformed anonymous class
-    private static final BlockingQueue<Runnable> sPoolWorkQueue =
-            new LinkedBlockingQueue<Runnable>(10);
+};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.657 -0400", hash_original_field = "832D0AB7F691D38DFCF25F1C48444796", hash_generated_field = "F2214ED05E220DD2E190A36863517CE2")
+
+    private static BlockingQueue<Runnable> sPoolWorkQueue = new LinkedBlockingQueue<Runnable>(10);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.657 -0400", hash_original_field = "7656CA2646F7AF011CC114CB7F68F158", hash_generated_field = "36170CD50FC27C086EA38F1C050DEB00")
+
     public static final Executor THREAD_POOL_EXECUTOR
             = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE,
                     TimeUnit.SECONDS, sPoolWorkQueue, sThreadFactory);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.657 -0400", hash_original_field = "1D982443E9892659AFAD933B002EEEC9", hash_generated_field = "7E466585D02C6A4723DB3DC0EB68409E")
+
     public static final Executor SERIAL_EXECUTOR = new SerialExecutor();
-    private static final int MESSAGE_POST_RESULT = 0x1;
-    private static final int MESSAGE_POST_PROGRESS = 0x2;
-    private static final InternalHandler sHandler = new InternalHandler();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.657 -0400", hash_original_field = "8DEDF8C9E90E9561E2346963E5898747", hash_generated_field = "75317C735A0AB2FC012C419E13EBFE8D")
+
+    private static int MESSAGE_POST_RESULT = 0x1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.657 -0400", hash_original_field = "9C5866459C52559035C2AED46C43B074", hash_generated_field = "53603E4784F78FE23E41629FD093FC3F")
+
+    private static int MESSAGE_POST_PROGRESS = 0x2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.657 -0400", hash_original_field = "8235EF876A5F3E4DF366DDAE5A4B03BC", hash_generated_field = "7841C19751E6A3E2E7B7D513102547AD")
+
+    private static InternalHandler sHandler = new InternalHandler();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.657 -0400", hash_original_field = "D77D76EC84F8B9D382D2A734841EA4C7", hash_generated_field = "D10EB867669B9665863D7E252CF6C534")
+
     private static volatile Executor sDefaultExecutor = SERIAL_EXECUTOR;
 }
 

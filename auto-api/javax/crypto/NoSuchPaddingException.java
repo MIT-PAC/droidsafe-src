@@ -11,22 +11,22 @@ import java.security.GeneralSecurityException;
 
 public class NoSuchPaddingException extends GeneralSecurityException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.990 -0400", hash_original_method = "CC6456B5182239A839E31575FEF026A1", hash_generated_method = "92190AC96AFF03CF49AD01C54424BE0F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public NoSuchPaddingException(String msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.183 -0400", hash_original_method = "CC6456B5182239A839E31575FEF026A1", hash_generated_method = "4E7817D83D10A7B50450659AE3E32293")
+    public  NoSuchPaddingException(String msg) {
         super(msg);
-        dsTaint.addTaint(msg);
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.990 -0400", hash_original_method = "5F9DD48C6EA25CAA15AA1C916D0EC0F1", hash_generated_method = "B8D5082D9F33AC5995CD41DEC14F9A50")
-    @DSModeled(DSC.SAFE)
-    public NoSuchPaddingException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.183 -0400", hash_original_method = "5F9DD48C6EA25CAA15AA1C916D0EC0F1", hash_generated_method = "B8D5082D9F33AC5995CD41DEC14F9A50")
+    public  NoSuchPaddingException() {
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = -4572885201200175466L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.183 -0400", hash_original_field = "5BB6037063024EBDC50B4094EE8DC183", hash_generated_field = "B2A9831CB223E5C78D5B5A9F6516B439")
+
+    private static long serialVersionUID = -4572885201200175466L;
 }
 

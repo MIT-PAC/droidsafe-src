@@ -24,40 +24,49 @@ import java.nio.channels.spi.SelectorProvider;
 import libcore.io.IoUtils;
 
 final class ServerSocketChannelImpl extends ServerSocketChannel implements FileDescriptorChannel {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.195 -0400", hash_original_field = "61F2529360AEC54F5DC9804B842CF3FA", hash_generated_field = "6A9FD930739602076044D5E8A08C62AF")
+
     private ServerSocketAdapter socket;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.196 -0400", hash_original_field = "86CCEC3D9FF0E9C0514506E982CDC08B", hash_generated_field = "E5435F593B4B4C544AAC5D578CFF6639")
+
     private SocketImpl impl;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.196 -0400", hash_original_field = "1EA05BED8F3F3741889B40C4407A936D", hash_generated_field = "AD4F2B698EC37BEC9EEE873CE57E921D")
+
     private boolean isBound = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.196 -0400", hash_original_field = "09B41F28A47510F64B0C05A1E76FE064", hash_generated_field = "1632DBE80D46ED7B89E6515D49182309")
+
     private Object acceptLock = new Object();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.013 -0400", hash_original_method = "073E2905C9482C63193DCF1A83313D92", hash_generated_method = "1BD385E6F69142E305DFDD26DCE78196")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ServerSocketChannelImpl(SelectorProvider sp) throws IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.196 -0400", hash_original_method = "073E2905C9482C63193DCF1A83313D92", hash_generated_method = "E243E41B05F228B0BCC8A54E6822A71A")
+    public  ServerSocketChannelImpl(SelectorProvider sp) throws IOException {
         super(sp);
-        dsTaint.addTaint(sp.dsTaint);
         this.socket = new ServerSocketAdapter(this);
         this.impl = socket.getImpl$();
+        addTaint(sp.getTaint());
         // ---------- Original Method ----------
         //this.socket = new ServerSocketAdapter(this);
         //this.impl = socket.getImpl$();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.013 -0400", hash_original_method = "0B1D553D9DA92AA497AE372DB2D8B920", hash_generated_method = "AC966B1419A0E75BF76AF8FD30AA8CC0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.197 -0400", hash_original_method = "0B1D553D9DA92AA497AE372DB2D8B920", hash_generated_method = "BDB4E6BE80DD13495EFEB74CAEACCB31")
     @Override
     public ServerSocket socket() {
-        return (ServerSocket)dsTaint.getTaint();
+        ServerSocket varB4EAC82CA7396A68D541C85D26508E83_799865367 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_799865367 = socket;
+        varB4EAC82CA7396A68D541C85D26508E83_799865367.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_799865367;
         // ---------- Original Method ----------
         //return socket;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.014 -0400", hash_original_method = "B7A0B638220973E2E0E163125709103A", hash_generated_method = "9C772CA77E269B81ED7A69B1B46C7353")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.197 -0400", hash_original_method = "B7A0B638220973E2E0E163125709103A", hash_generated_method = "6B73B13A72EA60E38ACD175C2258DC07")
     @Override
     public SocketChannel accept() throws IOException {
+        SocketChannel varB4EAC82CA7396A68D541C85D26508E83_1841528890 = null; //Variable for return #1
         {
-            boolean var3A7D61B68AE823F6A30349D498C59A5C_409248115 = (!isOpen());
+            boolean var3A7D61B68AE823F6A30349D498C59A5C_1500982891 = (!isOpen());
             {
                 if (DroidSafeAndroidRuntime.control) throw new ClosedChannelException();
             } //End block
@@ -74,7 +83,7 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
             begin();
             {
                 {
-                    Object var33E828BB1AE54859E7CEF26AF86CF91F_1626680276 = (blockingLock());
+                    Object var33E828BB1AE54859E7CEF26AF86CF91F_1242777542 = (blockingLock());
                     {
                         {
                             try 
@@ -85,7 +94,7 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
                             { }
                         } //End block
                         {
-                            boolean var0B927209D6F467F43EA9730294067322_1119683411 = (isBlocking());
+                            boolean var0B927209D6F467F43EA9730294067322_81504587 = (isBlocking());
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
@@ -95,26 +104,24 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
         {
             end(result.socket().isConnected());
         } //End block
-        {
-            boolean var47372FBA0E0559890E4D0FE7727CA3CA_22969091 = (result.socket().isConnected());
-        } //End flattened ternary
-        return (SocketChannel)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1841528890 = result.socket().isConnected() ? result : null;
+        varB4EAC82CA7396A68D541C85D26508E83_1841528890.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1841528890;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.014 -0400", hash_original_method = "691B92594A92F5155DBD81F8E2ED268A", hash_generated_method = "96BBD6594797B067B0B657606F34610E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.198 -0400", hash_original_method = "691B92594A92F5155DBD81F8E2ED268A", hash_generated_method = "986159082FC75A0A82F4EA61EE00EAB9")
     @Override
     protected void implConfigureBlocking(boolean blocking) throws IOException {
-        dsTaint.addTaint(blocking);
         {
-            Object var964C97B960BB46676C47DA572AAFDDC9_568689868 = (blockingLock());
+            Object var964C97B960BB46676C47DA572AAFDDC9_1798139746 = (blockingLock());
             {
                 IoUtils.setBlocking(impl.getFD$(), blocking);
             } //End block
         } //End collapsed parenthetic
+        addTaint(blocking);
         // ---------- Original Method ----------
         //synchronized (blockingLock()) {
             //IoUtils.setBlocking(impl.getFD$(), blocking);
@@ -122,11 +129,10 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.014 -0400", hash_original_method = "1ADA3F28F78BF67A471F8136E0D07F3B", hash_generated_method = "F12AFEED4160B42FDDA3701D8D92E808")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.198 -0400", hash_original_method = "1ADA3F28F78BF67A471F8136E0D07F3B", hash_generated_method = "5E7407ED736AB5B273CD0C4F901BD232")
     synchronized protected void implCloseSelectableChannel() throws IOException {
         {
-            boolean varD46A2716AEC08881570CED6916EA1310_162926920 = (!socket.isClosed());
+            boolean varD46A2716AEC08881570CED6916EA1310_1102177179 = (!socket.isClosed());
             {
                 socket.close();
             } //End block
@@ -138,46 +144,47 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.014 -0400", hash_original_method = "6D4849F20A76F796E10F0B815FB14502", hash_generated_method = "30649CE9EBEF2BF786455AF006C02C06")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.198 -0400", hash_original_method = "6D4849F20A76F796E10F0B815FB14502", hash_generated_method = "27FC2B0D95A460FDC03A235CD6ECF4BA")
     public FileDescriptor getFD() {
-        FileDescriptor var5B3B45D85D19C81E95B50FED760E0C01_427996206 = (impl.getFD$());
-        return (FileDescriptor)dsTaint.getTaint();
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_705631540 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_705631540 = impl.getFD$();
+        varB4EAC82CA7396A68D541C85D26508E83_705631540.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_705631540;
         // ---------- Original Method ----------
         //return impl.getFD$();
     }
 
     
     private static class ServerSocketAdapter extends ServerSocket {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.203 -0400", hash_original_field = "32CC750E4B8FCA138B4D6BCBE118C5DB", hash_generated_field = "4409938A65C53F969FE8732C261D10D0")
+
         private ServerSocketChannelImpl channelImpl;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.015 -0400", hash_original_method = "01F94E3226EECA786EFC49C8330A8199", hash_generated_method = "1799F9BA37E4E9216DB1FB9108553F31")
-        @DSModeled(DSC.SAFE)
-         ServerSocketAdapter(ServerSocketChannelImpl aChannelImpl) throws IOException {
-            dsTaint.addTaint(aChannelImpl.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.203 -0400", hash_original_method = "01F94E3226EECA786EFC49C8330A8199", hash_generated_method = "5321552FFAD79EAB3F4957EEB1F59589")
+          ServerSocketAdapter(ServerSocketChannelImpl aChannelImpl) throws IOException {
+            this.channelImpl = aChannelImpl;
             // ---------- Original Method ----------
             //this.channelImpl = aChannelImpl;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.015 -0400", hash_original_method = "BBE5EDFC9B689589BC654E0B103C84FF", hash_generated_method = "E737283050E9B3351A14F2594EAC9D8A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.203 -0400", hash_original_method = "BBE5EDFC9B689589BC654E0B103C84FF", hash_generated_method = "1204E5E122F3192084306C075A847A41")
         @Override
         public void bind(SocketAddress localAddress, int backlog) throws IOException {
-            dsTaint.addTaint(backlog);
-            dsTaint.addTaint(localAddress.dsTaint);
             super.bind(localAddress, backlog);
             channelImpl.isBound = true;
+            addTaint(localAddress.getTaint());
+            addTaint(backlog);
             // ---------- Original Method ----------
             //super.bind(localAddress, backlog);
             //channelImpl.isBound = true;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.015 -0400", hash_original_method = "FFAB0B1226A929FA42E5D3CF52806643", hash_generated_method = "187FE40FB880FDDD95D3233C75D6868A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.220 -0400", hash_original_method = "FFAB0B1226A929FA42E5D3CF52806643", hash_generated_method = "374761C7EBE7B307E30B255B76EE28B3")
         @Override
         public Socket accept() throws IOException {
+            Socket varB4EAC82CA7396A68D541C85D26508E83_203077503 = null; //Variable for return #1
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalBlockingModeException();
             } //End block
@@ -186,8 +193,9 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalBlockingModeException();
             } //End block
-            Socket var3D47F8A2EAC4A02A38AB5324C23E77FA_2080593693 = (sc.socket());
-            return (Socket)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_203077503 = sc.socket();
+            varB4EAC82CA7396A68D541C85D26508E83_203077503.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_203077503;
             // ---------- Original Method ----------
             //if (!channelImpl.isBound) {
                 //throw new IllegalBlockingModeException();
@@ -200,10 +208,9 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.015 -0400", hash_original_method = "65367E3BCE6469B06918214294C7E857", hash_generated_method = "BD4263D028D627D9A4A9F427C118F711")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.221 -0400", hash_original_method = "65367E3BCE6469B06918214294C7E857", hash_generated_method = "2F84FA0AC68FF985D36E98B6E3BEB552")
         public Socket implAccept(SocketChannelImpl clientSocketChannel) throws IOException {
-            dsTaint.addTaint(clientSocketChannel.dsTaint);
+            Socket varB4EAC82CA7396A68D541C85D26508E83_424366883 = null; //Variable for return #1
             Socket clientSocket;
             clientSocket = clientSocketChannel.socket();
             boolean connectOK;
@@ -224,7 +231,10 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
                     clientSocket.close();
                 } //End block
             } //End block
-            return (Socket)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_424366883 = clientSocket;
+            addTaint(clientSocketChannel.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_424366883.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_424366883;
             // ---------- Original Method ----------
             //Socket clientSocket = clientSocketChannel.socket();
             //boolean connectOK = false;
@@ -245,46 +255,46 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.015 -0400", hash_original_method = "9062324EB68516522A00021BE06AA12D", hash_generated_method = "3C6B2C797BF5F038D4A2A23489489F84")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.222 -0400", hash_original_method = "9062324EB68516522A00021BE06AA12D", hash_generated_method = "60471388E323E097F39C1E20D3D0EBE2")
         @Override
         public ServerSocketChannel getChannel() {
-            return (ServerSocketChannel)dsTaint.getTaint();
+            ServerSocketChannel varB4EAC82CA7396A68D541C85D26508E83_1022968163 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1022968163 = channelImpl;
+            varB4EAC82CA7396A68D541C85D26508E83_1022968163.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1022968163;
             // ---------- Original Method ----------
             //return channelImpl;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.016 -0400", hash_original_method = "F11CC1C6B1751A820DF0839300E56C28", hash_generated_method = "F9604CA7FC2BFEB8A1CAA1ED15A821FF")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.222 -0400", hash_original_method = "F11CC1C6B1751A820DF0839300E56C28", hash_generated_method = "A22027547633263A1752696AFCB5EFA4")
         @Override
         public boolean isBound() {
-            return dsTaint.getTaintBoolean();
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_483975915 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_483975915;
             // ---------- Original Method ----------
             //return channelImpl.isBound;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.016 -0400", hash_original_method = "67582FB1AEE3F050543A066EF39FFBDB", hash_generated_method = "BC45BAA4B3A8BA3424A9A8EC6920BF52")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.222 -0400", hash_original_method = "67582FB1AEE3F050543A066EF39FFBDB", hash_generated_method = "116E840E6FB3EE8EBA6CC205D8451624")
         @Override
         public void bind(SocketAddress localAddress) throws IOException {
-            dsTaint.addTaint(localAddress.dsTaint);
             super.bind(localAddress);
             channelImpl.isBound = true;
+            addTaint(localAddress.getTaint());
             // ---------- Original Method ----------
             //super.bind(localAddress);
             //channelImpl.isBound = true;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.016 -0400", hash_original_method = "7BB2E5C011080F2650E0866A01912B69", hash_generated_method = "3C748D009F4F0E4048452F21DD2C3CC4")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.223 -0400", hash_original_method = "7BB2E5C011080F2650E0866A01912B69", hash_generated_method = "78171B2FEA902E50FC9194D23A73630B")
         @Override
         public void close() throws IOException {
             {
                 {
-                    boolean var732C27B9F7BFDC492915355DF0E33D1C_443064518 = (channelImpl.isOpen());
+                    boolean var732C27B9F7BFDC492915355DF0E33D1C_1147151757 = (channelImpl.isOpen());
                     {
                         channelImpl.close();
                     } //End block

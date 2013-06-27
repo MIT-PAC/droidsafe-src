@@ -17,50 +17,54 @@ import android.util.Log;
 import java.io.InputStream;
 
 public class ImageSpan extends DynamicDrawableSpan {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.834 -0400", hash_original_field = "D548B27C6AC66A9D9B5D05ED35C2D844", hash_generated_field = "F17AF26B1AE93DE0DD2EED2442B6F076")
+
     private Drawable mDrawable;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.834 -0400", hash_original_field = "E793B03816B1EA3A9EE570ADD1129553", hash_generated_field = "5230A0318FFD99BBF5DCA1BF9243AE7A")
+
     private Uri mContentUri;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.834 -0400", hash_original_field = "3B71E056EB528FE6CFFAD85F16931309", hash_generated_field = "C75E6DA122FF842A3C7D587E6E200AF8")
+
     private int mResourceId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.834 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
     private Context mContext;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.834 -0400", hash_original_field = "6917951DFB797D97827BAAA584F128DE", hash_generated_field = "5EB2E77F51594E2C1DE90F3545DAFA8A")
+
     private String mSource;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.872 -0400", hash_original_method = "185ED0AA6BEAFCFF142A4CFD45E574FC", hash_generated_method = "A7C0F0E19DFF29EEA8AECF78D394F281")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.835 -0400", hash_original_method = "185ED0AA6BEAFCFF142A4CFD45E574FC", hash_generated_method = "A07A0D560E14AC6BFF5EC27074D850EF")
     @Deprecated
-    public ImageSpan(Bitmap b) {
+    public  ImageSpan(Bitmap b) {
         this(null, b, ALIGN_BOTTOM);
-        dsTaint.addTaint(b.dsTaint);
+        addTaint(b.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.872 -0400", hash_original_method = "34B2A214F0FD529DA939313FB3C3E538", hash_generated_method = "8D8E3063E9E9EF9A204CE79E8239F705")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.835 -0400", hash_original_method = "34B2A214F0FD529DA939313FB3C3E538", hash_generated_method = "20517FF326BBFA3AE674B5D14253695E")
     @Deprecated
-    public ImageSpan(Bitmap b, int verticalAlignment) {
+    public  ImageSpan(Bitmap b, int verticalAlignment) {
         this(null, b, verticalAlignment);
-        dsTaint.addTaint(verticalAlignment);
-        dsTaint.addTaint(b.dsTaint);
+        addTaint(b.getTaint());
+        addTaint(verticalAlignment);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.872 -0400", hash_original_method = "7AEE11D7D0A74AC540256E446F7A2408", hash_generated_method = "D3A7414F88F9FAC7D23AADAF174A5CD4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ImageSpan(Context context, Bitmap b) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.835 -0400", hash_original_method = "7AEE11D7D0A74AC540256E446F7A2408", hash_generated_method = "1BF645892A16E60686906A67E9E1A4EB")
+    public  ImageSpan(Context context, Bitmap b) {
         this(context, b, ALIGN_BOTTOM);
-        dsTaint.addTaint(b.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(b.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.873 -0400", hash_original_method = "3963AA6755EF0F8E669BE02E5FE48B0A", hash_generated_method = "7E2B9796CAA53AA5A00375BE1E9F1854")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ImageSpan(Context context, Bitmap b, int verticalAlignment) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.860 -0400", hash_original_method = "3963AA6755EF0F8E669BE02E5FE48B0A", hash_generated_method = "2B9C27093C3A4D3D594B2B99B569BE59")
+    public  ImageSpan(Context context, Bitmap b, int verticalAlignment) {
         super(verticalAlignment);
-        dsTaint.addTaint(verticalAlignment);
-        dsTaint.addTaint(b.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+        mContext = context;
         mDrawable = context != null
                 ? new BitmapDrawable(context.getResources(), b)
                 : new BitmapDrawable(b);
@@ -69,6 +73,7 @@ public class ImageSpan extends DynamicDrawableSpan {
         int height;
         height = mDrawable.getIntrinsicHeight();
         mDrawable.setBounds(0, 0, width > 0 ? width : 0, height > 0 ? height : 0);
+        addTaint(verticalAlignment);
         // ---------- Original Method ----------
         //mContext = context;
         //mDrawable = context != null
@@ -80,67 +85,61 @@ public class ImageSpan extends DynamicDrawableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.873 -0400", hash_original_method = "0D126CCCA77E2FB90C8091AB4A5A8377", hash_generated_method = "57BCE3C6E6A5480EB70B9F207D566728")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ImageSpan(Drawable d) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.860 -0400", hash_original_method = "0D126CCCA77E2FB90C8091AB4A5A8377", hash_generated_method = "E79200323EF1A04321E241174B1E2BBF")
+    public  ImageSpan(Drawable d) {
         this(d, ALIGN_BOTTOM);
-        dsTaint.addTaint(d.dsTaint);
+        addTaint(d.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.873 -0400", hash_original_method = "A8A2FDBB2FE3A38ECC14673F42D0EA39", hash_generated_method = "64BE549F211F893D45920CE5171BBDAA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ImageSpan(Drawable d, int verticalAlignment) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.860 -0400", hash_original_method = "A8A2FDBB2FE3A38ECC14673F42D0EA39", hash_generated_method = "53E829C606B02BE7FAC2E0E8FF4EB5AA")
+    public  ImageSpan(Drawable d, int verticalAlignment) {
         super(verticalAlignment);
-        dsTaint.addTaint(verticalAlignment);
-        dsTaint.addTaint(d.dsTaint);
+        mDrawable = d;
+        addTaint(verticalAlignment);
         // ---------- Original Method ----------
         //mDrawable = d;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.873 -0400", hash_original_method = "54F6AA82EA4B003ADF5D8246E336A82D", hash_generated_method = "FFB52D8608302D07A8E60E3CE07E412D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ImageSpan(Drawable d, String source) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.861 -0400", hash_original_method = "54F6AA82EA4B003ADF5D8246E336A82D", hash_generated_method = "A5E9C9C85EDA6F0CA04F27CDFA7D76F7")
+    public  ImageSpan(Drawable d, String source) {
         this(d, source, ALIGN_BOTTOM);
-        dsTaint.addTaint(d.dsTaint);
-        dsTaint.addTaint(source);
+        addTaint(d.getTaint());
+        addTaint(source.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.873 -0400", hash_original_method = "F9636F3F26DA70FC2592614F77D85D71", hash_generated_method = "91C268FF373C1C8D74C2B50DBEAA2C71")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ImageSpan(Drawable d, String source, int verticalAlignment) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.861 -0400", hash_original_method = "F9636F3F26DA70FC2592614F77D85D71", hash_generated_method = "6EC0F85B4D6D429B071F61CCCC6D8935")
+    public  ImageSpan(Drawable d, String source, int verticalAlignment) {
         super(verticalAlignment);
-        dsTaint.addTaint(verticalAlignment);
-        dsTaint.addTaint(d.dsTaint);
-        dsTaint.addTaint(source);
+        mDrawable = d;
+        mSource = source;
+        addTaint(verticalAlignment);
         // ---------- Original Method ----------
         //mDrawable = d;
         //mSource = source;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.874 -0400", hash_original_method = "E44302541FD4ECECF2698F7D07EBCA57", hash_generated_method = "52EB37E9349B394036DA667F8B121B1E")
-    @DSModeled(DSC.SPEC)
-    public ImageSpan(Context context, Uri uri) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.861 -0400", hash_original_method = "E44302541FD4ECECF2698F7D07EBCA57", hash_generated_method = "ABA52C58197816D0921A080C14682E86")
+    public  ImageSpan(Context context, Uri uri) {
         this(context, uri, ALIGN_BOTTOM);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(uri.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(uri.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.874 -0400", hash_original_method = "97E5D1114EAA0CA1A8404960D716AC3A", hash_generated_method = "B0B6DF063EBAB9FF7B736245392A7621")
-    @DSModeled(DSC.SPEC)
-    public ImageSpan(Context context, Uri uri, int verticalAlignment) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.862 -0400", hash_original_method = "97E5D1114EAA0CA1A8404960D716AC3A", hash_generated_method = "3881FCD77036B538F2EE927379CFCE0F")
+    public  ImageSpan(Context context, Uri uri, int verticalAlignment) {
         super(verticalAlignment);
-        dsTaint.addTaint(verticalAlignment);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(uri.dsTaint);
+        mContext = context;
+        mContentUri = uri;
         mSource = uri.toString();
+        addTaint(verticalAlignment);
         // ---------- Original Method ----------
         //mContext = context;
         //mContentUri = uri;
@@ -148,33 +147,31 @@ public class ImageSpan extends DynamicDrawableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.874 -0400", hash_original_method = "9E8FB6BDEE77C38D81FCBDDCFBDDF78F", hash_generated_method = "75478E821447A5CD9AB4BBC68CA30166")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ImageSpan(Context context, int resourceId) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.862 -0400", hash_original_method = "9E8FB6BDEE77C38D81FCBDDCFBDDF78F", hash_generated_method = "E382C28F70CD49549C0C7F4DAC8EC6D2")
+    public  ImageSpan(Context context, int resourceId) {
         this(context, resourceId, ALIGN_BOTTOM);
-        dsTaint.addTaint(resourceId);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(resourceId);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.874 -0400", hash_original_method = "112063CFBD1BF410C553139A09CB99FD", hash_generated_method = "F85257A12EA8AFFF82EBAE629DED8936")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ImageSpan(Context context, int resourceId, int verticalAlignment) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.979 -0400", hash_original_method = "112063CFBD1BF410C553139A09CB99FD", hash_generated_method = "DEBB1886CB47BF4A236F7FFE7F1BE91E")
+    public  ImageSpan(Context context, int resourceId, int verticalAlignment) {
         super(verticalAlignment);
-        dsTaint.addTaint(verticalAlignment);
-        dsTaint.addTaint(resourceId);
-        dsTaint.addTaint(context.dsTaint);
+        mContext = context;
+        mResourceId = resourceId;
+        addTaint(verticalAlignment);
         // ---------- Original Method ----------
         //mContext = context;
         //mResourceId = resourceId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.875 -0400", hash_original_method = "16DECD9D0B2DB9DD9C51FE274851DFB5", hash_generated_method = "07197BB76568F8958EC49210AA49865B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.984 -0400", hash_original_method = "16DECD9D0B2DB9DD9C51FE274851DFB5", hash_generated_method = "0AEDEF17B79BCBE98C5C07FB5B337254")
     @Override
     public Drawable getDrawable() {
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_166540000 = null; //Variable for return #1
         Drawable drawable;
         drawable = null;
         {
@@ -207,16 +204,20 @@ public class ImageSpan extends DynamicDrawableSpan {
             catch (Exception e)
             { }
         } //End block
-        return (Drawable)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_166540000 = drawable;
+        varB4EAC82CA7396A68D541C85D26508E83_166540000.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_166540000;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.882 -0400", hash_original_method = "6D9DB226EA21C548410845AA7A7E2DD4", hash_generated_method = "8E73B93371D944CBA4BEDEC66F32A596")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.985 -0400", hash_original_method = "6D9DB226EA21C548410845AA7A7E2DD4", hash_generated_method = "4CB9D1282A07F620267115BDAD4DB238")
     public String getSource() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_500178340 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_500178340 = mSource;
+        varB4EAC82CA7396A68D541C85D26508E83_500178340.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_500178340;
         // ---------- Original Method ----------
         //return mSource;
     }

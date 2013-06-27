@@ -21,21 +21,20 @@ import android.os.Parcelable;
 import android.util.AndroidException;
 
 public final class PendingIntent implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.283 -0400", hash_original_field = "562619214306F5C11A815E975B7D2477", hash_generated_field = "E4E58773DF3C0920C12AA38B8FC403A5")
+
     private IIntentSender mTarget;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.515 -0400", hash_original_method = "3ACE5727953950B87626FD6380A23370", hash_generated_method = "4053841FAA1FEDA027458B73E7157C01")
-    @DSModeled(DSC.SAFE)
-     PendingIntent(IIntentSender target) {
-        dsTaint.addTaint(target.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.299 -0400", hash_original_method = "3ACE5727953950B87626FD6380A23370", hash_generated_method = "2DB84B772119314499B70FB507774FD6")
+      PendingIntent(IIntentSender target) {
+        mTarget = target;
         // ---------- Original Method ----------
         //mTarget = target;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.515 -0400", hash_original_method = "53C8CE2812EC9BCF2C9E54818A5B8D0D", hash_generated_method = "1D67B4CC867A57A5A476B670C96F47AF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     PendingIntent(IBinder target) {
-        dsTaint.addTaint(target.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.310 -0400", hash_original_method = "53C8CE2812EC9BCF2C9E54818A5B8D0D", hash_generated_method = "F144EEFBA4AF7E7804AAA97C0CEB107D")
+      PendingIntent(IBinder target) {
         mTarget = IIntentSender.Stub.asInterface(target);
         // ---------- Original Method ----------
         //mTarget = IIntentSender.Stub.asInterface(target);
@@ -119,18 +118,18 @@ public final class PendingIntent implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.517 -0400", hash_original_method = "D9A9ECA0CF76712CB3C35292E7994C6B", hash_generated_method = "CADF1D22F55C2D96E60678D5D619E192")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.350 -0400", hash_original_method = "D9A9ECA0CF76712CB3C35292E7994C6B", hash_generated_method = "67DAEC046940A44A75E3F1D18A7396C3")
     public IntentSender getIntentSender() {
-        IntentSender var3850B1EC4C2556F9EDD24509CEFC0995_831773114 = (new IntentSender(mTarget));
-        return (IntentSender)dsTaint.getTaint();
+        IntentSender varB4EAC82CA7396A68D541C85D26508E83_162727106 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_162727106 = new IntentSender(mTarget);
+        varB4EAC82CA7396A68D541C85D26508E83_162727106.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_162727106;
         // ---------- Original Method ----------
         //return new IntentSender(mTarget);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.518 -0400", hash_original_method = "7E47A257CCD629A0D7E43A8ADD34CCE8", hash_generated_method = "36E702858E5E8BAB7DF9CDFCC833C4CC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.369 -0400", hash_original_method = "7E47A257CCD629A0D7E43A8ADD34CCE8", hash_generated_method = "36E702858E5E8BAB7DF9CDFCC833C4CC")
     public void cancel() {
         try 
         {
@@ -146,8 +145,7 @@ public final class PendingIntent implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.518 -0400", hash_original_method = "27B2516FC620720BFD785BFD1E716C8B", hash_generated_method = "F7F550965E6EFD08806178788FE1473C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.389 -0400", hash_original_method = "27B2516FC620720BFD785BFD1E716C8B", hash_generated_method = "F7F550965E6EFD08806178788FE1473C")
     public void send() throws CanceledException {
         send(null, 0, null, null, null, null);
         // ---------- Original Method ----------
@@ -155,65 +153,54 @@ public final class PendingIntent implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.518 -0400", hash_original_method = "46F134C18EE926B408E7E9C21011E590", hash_generated_method = "755E827C03A98567DC1E20C3BCF8AFB4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.410 -0400", hash_original_method = "46F134C18EE926B408E7E9C21011E590", hash_generated_method = "74D362AD0FEB864A4C17D82BAB66E553")
     public void send(int code) throws CanceledException {
-        dsTaint.addTaint(code);
         send(null, code, null, null, null, null);
+        addTaint(code);
         // ---------- Original Method ----------
         //send(null, code, null, null, null, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.519 -0400", hash_original_method = "43E1DC288109C397E82F23215BE8AF8A", hash_generated_method = "6160796CADEC8DAC77173BFB78051DEF")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.411 -0400", hash_original_method = "43E1DC288109C397E82F23215BE8AF8A", hash_generated_method = "96BF866CF267060392A8C342BFDBE8ED")
     public void send(Context context, int code, Intent intent) throws CanceledException {
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(code);
-        dsTaint.addTaint(intent.dsTaint);
         send(context, code, intent, null, null, null);
+        addTaint(context.getTaint());
+        addTaint(code);
+        addTaint(intent.getTaint());
         // ---------- Original Method ----------
         //send(context, code, intent, null, null, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.521 -0400", hash_original_method = "10F50483791A59D1BF380CE4A4A7460C", hash_generated_method = "58078415B739D9EF19CF0947F738DCB4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.413 -0400", hash_original_method = "10F50483791A59D1BF380CE4A4A7460C", hash_generated_method = "DE7642A20897EED44AF280F4BADC0143")
     public void send(int code, OnFinished onFinished, Handler handler) throws CanceledException {
-        dsTaint.addTaint(code);
-        dsTaint.addTaint(onFinished.dsTaint);
-        dsTaint.addTaint(handler.dsTaint);
         send(null, code, null, onFinished, handler, null);
+        addTaint(code);
+        addTaint(onFinished.getTaint());
+        addTaint(handler.getTaint());
         // ---------- Original Method ----------
         //send(null, code, null, onFinished, handler, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.522 -0400", hash_original_method = "CFAA4D7DA67BDF756999EA8ECE28296B", hash_generated_method = "21633BD0659480CDD71666921DCB681A")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.421 -0400", hash_original_method = "CFAA4D7DA67BDF756999EA8ECE28296B", hash_generated_method = "C0AAA8512D2F01C3A133D8BC7B82C282")
     public void send(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler) throws CanceledException {
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(code);
-        dsTaint.addTaint(intent.dsTaint);
-        dsTaint.addTaint(onFinished.dsTaint);
-        dsTaint.addTaint(handler.dsTaint);
         send(context, code, intent, onFinished, handler, null);
+        addTaint(context.getTaint());
+        addTaint(code);
+        addTaint(intent.getTaint());
+        addTaint(onFinished.getTaint());
+        addTaint(handler.getTaint());
         // ---------- Original Method ----------
         //send(context, code, intent, onFinished, handler, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.522 -0400", hash_original_method = "A238DB61CDFFE1A49966C7738AE7C6E1", hash_generated_method = "3C2DE7FBA39B1D582A9238C4381AFA6A")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.441 -0400", hash_original_method = "A238DB61CDFFE1A49966C7738AE7C6E1", hash_generated_method = "059A077F3D4EA86D50693A167B735D85")
     public void send(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler, String requiredPermission) throws CanceledException {
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(code);
-        dsTaint.addTaint(requiredPermission);
-        dsTaint.addTaint(intent.dsTaint);
-        dsTaint.addTaint(onFinished.dsTaint);
-        dsTaint.addTaint(handler.dsTaint);
         try 
         {
             String resolvedType;
@@ -233,6 +220,12 @@ public final class PendingIntent implements Parcelable {
         {
             if (DroidSafeAndroidRuntime.control) throw new CanceledException(e);
         } //End block
+        addTaint(context.getTaint());
+        addTaint(code);
+        addTaint(intent.getTaint());
+        addTaint(onFinished.getTaint());
+        addTaint(handler.getTaint());
+        addTaint(requiredPermission.getTaint());
         // ---------- Original Method ----------
         //try {
             //String resolvedType = intent != null ?
@@ -252,17 +245,30 @@ public final class PendingIntent implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.523 -0400", hash_original_method = "1AE048A4984F76615C0EAE5393ABDA6D", hash_generated_method = "850EFD940B21BB1E967F762DEE2935BC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.458 -0400", hash_original_method = "1AE048A4984F76615C0EAE5393ABDA6D", hash_generated_method = "1FACC872B1678C529D94C72C39D972AE")
     public String getTargetPackage() {
+        String varB4EAC82CA7396A68D541C85D26508E83_525319197 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_863214728 = null; //Variable for return #2
         try 
         {
-            String var8CF6AA73CA43B222C8C44A06E8A761AA_1951954283 = (ActivityManagerNative.getDefault()
-                .getPackageForIntentSender(mTarget));
+            varB4EAC82CA7396A68D541C85D26508E83_525319197 = ActivityManagerNative.getDefault()
+                .getPackageForIntentSender(mTarget);
         } //End block
         catch (RemoteException e)
-        { }
-        return dsTaint.getTaintString();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_863214728 = null;
+        } //End block
+        String varA7E53CE21691AB073D9660D615818899_381183835; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_381183835 = varB4EAC82CA7396A68D541C85D26508E83_525319197;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_381183835 = varB4EAC82CA7396A68D541C85D26508E83_863214728;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_381183835.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_381183835;
         // ---------- Original Method ----------
         //try {
             //return ActivityManagerNative.getDefault()
@@ -273,17 +279,17 @@ public final class PendingIntent implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.523 -0400", hash_original_method = "6D06AB3EE4D5DE54AFE0CC755257630C", hash_generated_method = "7447EF9121F704D201D8615D125E6466")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.476 -0400", hash_original_method = "6D06AB3EE4D5DE54AFE0CC755257630C", hash_generated_method = "3F7188B8FD3812F4F2C8A0834C075238")
     public boolean isTargetedToPackage() {
         try 
         {
-            boolean var9F243160ADB67F012956364C597C6237_360321740 = (ActivityManagerNative.getDefault()
+            boolean var9F243160ADB67F012956364C597C6237_1887685495 = (ActivityManagerNative.getDefault()
                 .isIntentSenderTargetedToPackage(mTarget));
         } //End block
         catch (RemoteException e)
         { }
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1027942262 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1027942262;
         // ---------- Original Method ----------
         //try {
             //return ActivityManagerNative.getDefault()
@@ -294,16 +300,16 @@ public final class PendingIntent implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.525 -0400", hash_original_method = "29E3C1E256E903CF301460F6770B7518", hash_generated_method = "59961530AD54177BA8C07F33158105A3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.487 -0400", hash_original_method = "29E3C1E256E903CF301460F6770B7518", hash_generated_method = "B277283803CC0005DE5AAC990299B4DA")
     @Override
     public boolean equals(Object otherObj) {
-        dsTaint.addTaint(otherObj.dsTaint);
         {
-            boolean varE0256D3CD4A5623A7BFB562FA1FCFE51_1383360827 = (mTarget.asBinder().equals(((PendingIntent)otherObj)
+            boolean varE0256D3CD4A5623A7BFB562FA1FCFE51_825815463 = (mTarget.asBinder().equals(((PendingIntent)otherObj)
                     .mTarget.asBinder()));
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(otherObj.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_678531937 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_678531937;
         // ---------- Original Method ----------
         //if (otherObj instanceof PendingIntent) {
             //return mTarget.asBinder().equals(((PendingIntent)otherObj)
@@ -313,21 +319,21 @@ public final class PendingIntent implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.525 -0400", hash_original_method = "72E49DA56EC3D19D8D09B0982F6DDB55", hash_generated_method = "ACEB27EBE298645223E48D6A2D2247DD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.489 -0400", hash_original_method = "72E49DA56EC3D19D8D09B0982F6DDB55", hash_generated_method = "ED03011B7FCC2B8331D5543C5063C290")
     @Override
     public int hashCode() {
-        int varE5FBB4A5F6456F5D2CFFCAD33E59F123_977777402 = (mTarget.asBinder().hashCode());
-        return dsTaint.getTaintInt();
+        int varE5FBB4A5F6456F5D2CFFCAD33E59F123_1399363365 = (mTarget.asBinder().hashCode());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_918298925 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_918298925;
         // ---------- Original Method ----------
         //return mTarget.asBinder().hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.526 -0400", hash_original_method = "A24ED44DCFDBAE1CB5B942522723AC1A", hash_generated_method = "A44D054C34A2581D71043A5F385B4040")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.507 -0400", hash_original_method = "A24ED44DCFDBAE1CB5B942522723AC1A", hash_generated_method = "15BB73A308FBB0F7AD42E32CB9564748")
     @Override
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_251561305 = null; //Variable for return #1
         StringBuilder sb;
         sb = new StringBuilder(128);
         sb.append("PendingIntent{");
@@ -335,8 +341,9 @@ public final class PendingIntent implements Parcelable {
         sb.append(": ");
         sb.append(mTarget != null ? mTarget.asBinder() : null);
         sb.append('}');
-        String var806458D832AB974D230FEE4CBBDBD390_2023311569 = (sb.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_251561305 = sb.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_251561305.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_251561305;
         // ---------- Original Method ----------
         //StringBuilder sb = new StringBuilder(128);
         //sb.append("PendingIntent{");
@@ -348,21 +355,20 @@ public final class PendingIntent implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.526 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.520 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FBF199E6CC263B1EEF7296B14CAB4769")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_664854170 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_664854170;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.526 -0400", hash_original_method = "FF0A290BC61B9CD02F1DD23699EA8B8B", hash_generated_method = "82E673ADF87F6A34F82CD67D6313EA4D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.532 -0400", hash_original_method = "FF0A290BC61B9CD02F1DD23699EA8B8B", hash_generated_method = "CB2D00ECBC9E35AA709F7B9DC3B570B9")
     public void writeToParcel(Parcel out, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(out.dsTaint);
         out.writeStrongBinder(mTarget.asBinder());
+        addTaint(out.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //out.writeStrongBinder(mTarget.asBinder());
     }
@@ -381,10 +387,12 @@ public final class PendingIntent implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.527 -0400", hash_original_method = "5A73019C5B7699A011E114A766F68ECD", hash_generated_method = "51AE302E39803C6CD97E2EC428B2D4CE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.549 -0400", hash_original_method = "5A73019C5B7699A011E114A766F68ECD", hash_generated_method = "5672823B370215D80B3E4297BC522034")
     public IIntentSender getTarget() {
-        return (IIntentSender)dsTaint.getTaint();
+        IIntentSender varB4EAC82CA7396A68D541C85D26508E83_1442983658 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1442983658 = mTarget;
+        varB4EAC82CA7396A68D541C85D26508E83_1442983658.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1442983658;
         // ---------- Original Method ----------
         //return mTarget;
     }
@@ -392,27 +400,24 @@ public final class PendingIntent implements Parcelable {
     
     public static class CanceledException extends AndroidException {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.530 -0400", hash_original_method = "6C791280BC05C3F7B11A7004B8EB7BE8", hash_generated_method = "409DFD8DE802DB94A3DE2ED481AAA231")
-        @DSModeled(DSC.SAFE)
-        public CanceledException() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.550 -0400", hash_original_method = "6C791280BC05C3F7B11A7004B8EB7BE8", hash_generated_method = "409DFD8DE802DB94A3DE2ED481AAA231")
+        public  CanceledException() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.530 -0400", hash_original_method = "C3CBF66373C770C27B2BC8A07C4853B3", hash_generated_method = "B23346104977A7295C550EEF73D42959")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public CanceledException(String name) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.574 -0400", hash_original_method = "C3CBF66373C770C27B2BC8A07C4853B3", hash_generated_method = "FB687C3A6881AD9D7AC449BFED9CD2FF")
+        public  CanceledException(String name) {
             super(name);
-            dsTaint.addTaint(name);
+            addTaint(name.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.531 -0400", hash_original_method = "3AC8DEA112912D7509E7C6631865B3D3", hash_generated_method = "77CD9FD2935239E5B3CDE70C1737D193")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public CanceledException(Exception cause) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.580 -0400", hash_original_method = "3AC8DEA112912D7509E7C6631865B3D3", hash_generated_method = "548138D68ED71FAD6BC31F6988F7ECCB")
+        public  CanceledException(Exception cause) {
             super(cause);
-            dsTaint.addTaint(cause.dsTaint);
+            addTaint(cause.getTaint());
             // ---------- Original Method ----------
         }
 
@@ -422,20 +427,33 @@ public final class PendingIntent implements Parcelable {
 
     
     private static class FinishedDispatcher extends IIntentReceiver.Stub implements Runnable {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.582 -0400", hash_original_field = "9CB01E7CF93300AA9D8B869CEC16B638", hash_generated_field = "094D5D79D03F65D4515938385B22FFF9")
+
         private PendingIntent mPendingIntent;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.583 -0400", hash_original_field = "3908523F58561C99703A7559AB29724C", hash_generated_field = "3E0837F5746BF0F0EA46630CD994FC89")
+
         private OnFinished mWho;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.583 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
+
         private Handler mHandler;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.598 -0400", hash_original_field = "B1135DD88C82BCDD4DCD8391BCD99883", hash_generated_field = "5782C825DA3F61D408DF2DCA63E7F54A")
+
         private Intent mIntent;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.599 -0400", hash_original_field = "E5CED19E692744D577EC9F38B767773F", hash_generated_field = "77069BAE5867220B0011AB47341F29C2")
+
         private int mResultCode;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.599 -0400", hash_original_field = "3EAEFB392DB2F84FAED87A71E79A1093", hash_generated_field = "C1E52350501391E7118DB73479974476")
+
         private String mResultData;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.599 -0400", hash_original_field = "15A7BDFA2595DFC979A8B0D8A65ABE14", hash_generated_field = "109BE0C611CD1E4823349D5DAFA222D0")
+
         private Bundle mResultExtras;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.531 -0400", hash_original_method = "D38CFD5EE08A135F8705E392DA5A871B", hash_generated_method = "7E94229E8EE23AE96A06D63A304CA711")
-        @DSModeled(DSC.SAFE)
-         FinishedDispatcher(PendingIntent pi, OnFinished who, Handler handler) {
-            dsTaint.addTaint(pi.dsTaint);
-            dsTaint.addTaint(handler.dsTaint);
-            dsTaint.addTaint(who.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.610 -0400", hash_original_method = "D38CFD5EE08A135F8705E392DA5A871B", hash_generated_method = "5BD628A6CC6E57E5C519CCCA582902F2")
+          FinishedDispatcher(PendingIntent pi, OnFinished who, Handler handler) {
+            mPendingIntent = pi;
+            mWho = who;
+            mHandler = handler;
             // ---------- Original Method ----------
             //mPendingIntent = pi;
             //mWho = who;
@@ -443,22 +461,21 @@ public final class PendingIntent implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.532 -0400", hash_original_method = "B0E285A2D8AA1A0003201E2D8F6F7169", hash_generated_method = "65EE97C27361D2FBB9514482476A6398")
-        @DSModeled(DSC.SPEC)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.641 -0400", hash_original_method = "B0E285A2D8AA1A0003201E2D8F6F7169", hash_generated_method = "0538DA2A05217B942D752ECF6F421D27")
         public void performReceive(Intent intent, int resultCode,
                 String data, Bundle extras, boolean serialized, boolean sticky) {
-            dsTaint.addTaint(sticky);
-            dsTaint.addTaint(serialized);
-            dsTaint.addTaint(data);
-            dsTaint.addTaint(resultCode);
-            dsTaint.addTaint(intent.dsTaint);
-            dsTaint.addTaint(extras.dsTaint);
+            mIntent = intent;
+            mResultCode = resultCode;
+            mResultData = data;
+            mResultExtras = extras;
             {
                 run();
             } //End block
             {
                 mHandler.post(this);
             } //End block
+            addTaint(serialized);
+            addTaint(sticky);
             // ---------- Original Method ----------
             //mIntent = intent;
             //mResultCode = resultCode;
@@ -472,8 +489,7 @@ public final class PendingIntent implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.537 -0400", hash_original_method = "323DC1202D6F14888580320FDC435E03", hash_generated_method = "2355F846014903A2C762811B7CD0A491")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.655 -0400", hash_original_method = "323DC1202D6F14888580320FDC435E03", hash_generated_method = "2355F846014903A2C762811B7CD0A491")
         public void run() {
             mWho.onSendFinished(mPendingIntent, mIntent, mResultCode,
                     mResultData, mResultExtras);
@@ -493,38 +509,30 @@ public final class PendingIntent implements Parcelable {
                 int resultCode, String resultData, Bundle resultExtras);
     }
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.656 -0400", hash_original_field = "A93B3284193C91C9E82A6BA87DF875DD", hash_generated_field = "5E771266274AD1856355F7F2644C40F0")
+
     public static final int FLAG_ONE_SHOT = 1<<30;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.657 -0400", hash_original_field = "CA3A775851C97E85BEEC9EA34452E343", hash_generated_field = "6ECB010344DA3BF2E28DD81C26A1E226")
+
     public static final int FLAG_NO_CREATE = 1<<29;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.658 -0400", hash_original_field = "291EDC39E20E1D3D5F54560A6C3341EC", hash_generated_field = "50E1B18733D9B9E6FAC056955439D1C7")
+
     public static final int FLAG_CANCEL_CURRENT = 1<<28;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.659 -0400", hash_original_field = "F9CCB35F913F8CB0083E0CE8FC8382C4", hash_generated_field = "07161ED3853628F4CC6ED18374F570F7")
+
     public static final int FLAG_UPDATE_CURRENT = 1<<27;
-    public static final Parcelable.Creator<PendingIntent> CREATOR = new Parcelable.Creator<PendingIntent>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.538 -0400", hash_original_method = "002B3842CB6C032442901D240F958E6F", hash_generated_method = "4EC8476A3D1533CA408778996534D877")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.676 -0400", hash_original_field = "68AC0C0209638127AE110D7481B6BF8A", hash_generated_field = "A03CAD3B827B3F879722CD11378FA14A")
+
+    public static final Parcelable.Creator<PendingIntent> CREATOR
+            = new Parcelable.Creator<PendingIntent>() {
         public PendingIntent createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            IBinder target;
-            target = in.readStrongBinder();
-            {
-                Object var8CAD94B0D4869430C0BBE63AB378AD58_139685506 = (new PendingIntent(target));
-            } //End flattened ternary
-            return (PendingIntent)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //IBinder target = in.readStrongBinder();
-            //return target != null ? new PendingIntent(target) : null;
+            IBinder target = in.readStrongBinder();
+            return target != null ? new PendingIntent(target) : null;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.539 -0400", hash_original_method = "54375C4346ED3346E211F06AD01508EB", hash_generated_method = "B7291CED0CA4C4CBF54B13C010DE9B80")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public PendingIntent[] newArray(int size) {
-            dsTaint.addTaint(size);
-            PendingIntent[] var6AA3ADE8C096149BA871A13FAFF8D015_2124807561 = (new PendingIntent[size]);
-            return (PendingIntent[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new PendingIntent[size];
+            return new PendingIntent[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

@@ -13,82 +13,78 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 
 public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableSpan {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.803 -0400", hash_original_field = "5B484EED7F441408FBB3DA9CD489795B", hash_generated_field = "F3DE0713F398F5B7918E6C35C0AAE054")
+
     private float mProportion;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.904 -0400", hash_original_method = "A7FADA85249F1B8943B2C3745C9AD73C", hash_generated_method = "E0C6B3750CF20313EAAEC1A98701CDCC")
-    @DSModeled(DSC.SAFE)
-    public RelativeSizeSpan(float proportion) {
-        dsTaint.addTaint(proportion);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.804 -0400", hash_original_method = "A7FADA85249F1B8943B2C3745C9AD73C", hash_generated_method = "525A76130EC8817067C8B8013EE73EC7")
+    public  RelativeSizeSpan(float proportion) {
+        mProportion = proportion;
         // ---------- Original Method ----------
         //mProportion = proportion;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.904 -0400", hash_original_method = "3E1E83FB4F6546C2007DF6E3D1177212", hash_generated_method = "E5A6305C827F8B42980A69E0C9743FCC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public RelativeSizeSpan(Parcel src) {
-        dsTaint.addTaint(src.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.804 -0400", hash_original_method = "3E1E83FB4F6546C2007DF6E3D1177212", hash_generated_method = "E62FC47C3538C5889E4F568A97414710")
+    public  RelativeSizeSpan(Parcel src) {
         mProportion = src.readFloat();
         // ---------- Original Method ----------
         //mProportion = src.readFloat();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.904 -0400", hash_original_method = "D2254CF1E8362BBCA36C2E8295131004", hash_generated_method = "608F505DC6C738B7B0B7BE11F3F0C613")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.804 -0400", hash_original_method = "D2254CF1E8362BBCA36C2E8295131004", hash_generated_method = "3DE95141F88243E1706F819BDD7E0F2E")
     public int getSpanTypeId() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909488320 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909488320;
         // ---------- Original Method ----------
         //return TextUtils.RELATIVE_SIZE_SPAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.904 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.805 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3A3A99C786E5331C62DB8F9DB692FE8E")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1673539674 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1673539674;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.904 -0400", hash_original_method = "0FDF8A7C1083C0A4BBAF4047CBF27DA9", hash_generated_method = "97924548B786DADC377DD90BA4D73D55")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.805 -0400", hash_original_method = "0FDF8A7C1083C0A4BBAF4047CBF27DA9", hash_generated_method = "C2C298C420AE56AA07A619B100DBDBD3")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeFloat(mProportion);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeFloat(mProportion);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.905 -0400", hash_original_method = "E89C4B67E9A9CE5F6854A6F0C8388FE6", hash_generated_method = "2ACE2991598B582A566F415868849EFE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.806 -0400", hash_original_method = "E89C4B67E9A9CE5F6854A6F0C8388FE6", hash_generated_method = "761AB0E30294DC351E521E79D255E19A")
     public float getSizeChange() {
-        return dsTaint.getTaintFloat();
+        float var546ADE640B6EDFBC8A086EF31347E768_59896079 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_59896079;
         // ---------- Original Method ----------
         //return mProportion;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.908 -0400", hash_original_method = "D87A5BB37ACAA736C762D797F93AD23D", hash_generated_method = "4FFC2390B6EF1BEFE64D78587CAE9328")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.806 -0400", hash_original_method = "D87A5BB37ACAA736C762D797F93AD23D", hash_generated_method = "299E2FA7287C0FF7949B43ACCFBC895E")
     @Override
     public void updateDrawState(TextPaint ds) {
-        dsTaint.addTaint(ds.dsTaint);
         ds.setTextSize(ds.getTextSize() * mProportion);
+        addTaint(ds.getTaint());
         // ---------- Original Method ----------
         //ds.setTextSize(ds.getTextSize() * mProportion);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.908 -0400", hash_original_method = "B20FAC1EC83BD8EFC8CAF1EE401E0C1F", hash_generated_method = "F684F0305907A078B522DE63BC969492")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.807 -0400", hash_original_method = "B20FAC1EC83BD8EFC8CAF1EE401E0C1F", hash_generated_method = "D3E4F74AF44F717AE1B403FB6AC95049")
     @Override
     public void updateMeasureState(TextPaint ds) {
-        dsTaint.addTaint(ds.dsTaint);
         ds.setTextSize(ds.getTextSize() * mProportion);
+        addTaint(ds.getTaint());
         // ---------- Original Method ----------
         //ds.setTextSize(ds.getTextSize() * mProportion);
     }

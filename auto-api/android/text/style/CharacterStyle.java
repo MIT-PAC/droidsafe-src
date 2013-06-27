@@ -11,9 +11,10 @@ import android.text.TextPaint;
 
 public abstract class CharacterStyle {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.827 -0400", hash_original_method = "839A8E46E465181FCE6461B2975F7AFA", hash_generated_method = "839A8E46E465181FCE6461B2975F7AFA")
-        public CharacterStyle ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.525 -0400", hash_original_method = "41D29785B7D143A249368B9153DB6D45", hash_generated_method = "41D29785B7D143A249368B9153DB6D45")
+    public CharacterStyle ()
     {
+        //Synthesized constructor
     }
 
 
@@ -29,44 +30,47 @@ public abstract class CharacterStyle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.828 -0400", hash_original_method = "2ADDE7DAB4ECDACBF15B0CE8CBCF2C82", hash_generated_method = "BBF890D271B5763B96F346544B50460C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.527 -0400", hash_original_method = "2ADDE7DAB4ECDACBF15B0CE8CBCF2C82", hash_generated_method = "F9E4DDBB39C0E735EC894FBBBDAE4B75")
     public CharacterStyle getUnderlying() {
-        return (CharacterStyle)dsTaint.getTaint();
+        CharacterStyle varB4EAC82CA7396A68D541C85D26508E83_1231119795 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1231119795 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1231119795.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1231119795;
         // ---------- Original Method ----------
         //return this;
     }
 
     
     private static class Passthrough extends CharacterStyle {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.527 -0400", hash_original_field = "16896C9E7463BF6DF9DB6B58257F1327", hash_generated_field = "2988350718410D955D2EDCC422F9259B")
+
         private CharacterStyle mStyle;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.828 -0400", hash_original_method = "CAC991CB238644E494D2A55B9FB554CC", hash_generated_method = "8895CAC943D5C790A5EEC260C14D17EE")
-        @DSModeled(DSC.SAFE)
-        public Passthrough(CharacterStyle cs) {
-            dsTaint.addTaint(cs.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.527 -0400", hash_original_method = "CAC991CB238644E494D2A55B9FB554CC", hash_generated_method = "7C4191215C179AED62D69BA1F57E231B")
+        public  Passthrough(CharacterStyle cs) {
+            mStyle = cs;
             // ---------- Original Method ----------
             //mStyle = cs;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.828 -0400", hash_original_method = "813F80F60D9F0493A35140828DCD41CA", hash_generated_method = "0D947C76B3853EC9A9B3AEAABC5DE2B8")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.528 -0400", hash_original_method = "813F80F60D9F0493A35140828DCD41CA", hash_generated_method = "369E67E127669AEDB585086F2FB25E48")
         @Override
         public void updateDrawState(TextPaint tp) {
-            dsTaint.addTaint(tp.dsTaint);
             mStyle.updateDrawState(tp);
+            addTaint(tp.getTaint());
             // ---------- Original Method ----------
             //mStyle.updateDrawState(tp);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.829 -0400", hash_original_method = "1F67DF9DEB8C0E16558BBAAD1B5FDCCE", hash_generated_method = "4997C80DE04D8588CE3E8471241A0626")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.528 -0400", hash_original_method = "1F67DF9DEB8C0E16558BBAAD1B5FDCCE", hash_generated_method = "335272AFFA7B7469C683413CA8CAD4CE")
         @Override
         public CharacterStyle getUnderlying() {
-            CharacterStyle varA2CC679CE5B8D13CD0277BDEBCBD5DC3_435034832 = (mStyle.getUnderlying());
-            return (CharacterStyle)dsTaint.getTaint();
+            CharacterStyle varB4EAC82CA7396A68D541C85D26508E83_1135112688 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1135112688 = mStyle.getUnderlying();
+            varB4EAC82CA7396A68D541C85D26508E83_1135112688.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1135112688;
             // ---------- Original Method ----------
             //return mStyle.getUnderlying();
         }

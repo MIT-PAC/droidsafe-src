@@ -15,13 +15,12 @@ import java.util.Hashtable;
 
 public class Lexer extends LexerCore {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.305 -0400", hash_original_method = "1890ACF170ADFCBA047D359B33ABA230", hash_generated_method = "54B20C8FCE9F8D6D8174A46149F7966B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Lexer(String lexerName, String buffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.865 -0400", hash_original_method = "1890ACF170ADFCBA047D359B33ABA230", hash_generated_method = "BF9ACB056E796A7CA039D8FF38C8F0C1")
+    public  Lexer(String lexerName, String buffer) {
         super(lexerName, buffer);
-        dsTaint.addTaint(buffer);
-        dsTaint.addTaint(lexerName);
         this.selectLexer(lexerName);
+        addTaint(lexerName.getTaint());
+        addTaint(buffer.getTaint());
         // ---------- Original Method ----------
         //this.selectLexer(lexerName);
     }
@@ -57,17 +56,15 @@ public class Lexer extends LexerCore {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.309 -0400", hash_original_method = "524EFDA3A3BEC88BDD052CB8EB3761F7", hash_generated_method = "7E0ADF5256647F109ABD9FFFB587BEB1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.896 -0400", hash_original_method = "524EFDA3A3BEC88BDD052CB8EB3761F7", hash_generated_method = "B8974DA23BC0533D48B9AD50829F06C5")
     public void selectLexer(String lexerName) {
-        dsTaint.addTaint(lexerName);
         {
             currentLexer = (Hashtable) lexerTables.get(lexerName);
             this.currentLexerName = lexerName;
             {
                 addLexer(lexerName);
                 {
-                    boolean var778BB3CD4B09027DAB77BF096FE877AB_401065720 = (lexerName.equals("method_keywordLexer"));
+                    boolean var778BB3CD4B09027DAB77BF096FE877AB_951776208 = (lexerName.equals("method_keywordLexer"));
                     {
                         addKeyword(TokenNames.REGISTER, TokenTypes.REGISTER);
                         addKeyword(TokenNames.ACK, TokenTypes.ACK);
@@ -82,7 +79,7 @@ public class Lexer extends LexerCore {
                         addKeyword(TokenNames.PUBLISH, TokenTypes.PUBLISH);
                     } //End block
                     {
-                        boolean var188B02EEB774C351E0957CA5BCE2801D_2105321347 = (lexerName.equals("command_keywordLexer"));
+                        boolean var188B02EEB774C351E0957CA5BCE2801D_1767714253 = (lexerName.equals("command_keywordLexer"));
                         {
                             addKeyword(ErrorInfoHeader.NAME.toUpperCase(),
                             TokenTypes.ERROR_INFO);
@@ -251,17 +248,17 @@ public class Lexer extends LexerCore {
                             addKeyword(ReferencesHeader.NAME.toUpperCase(),TokenTypes.REFERENCES);
                         } //End block
                         {
-                            boolean var013D2D3B881FD6CB56AA283BD94FB417_633931684 = (lexerName.equals("status_lineLexer"));
+                            boolean var013D2D3B881FD6CB56AA283BD94FB417_1844039200 = (lexerName.equals("status_lineLexer"));
                             {
                                 addKeyword(TokenNames.SIP.toUpperCase(), TokenTypes.SIP);
                             } //End block
                             {
-                                boolean var512C940BACFD9544687548A6798A2F27_111681109 = (lexerName.equals("request_lineLexer"));
+                                boolean var512C940BACFD9544687548A6798A2F27_1203103463 = (lexerName.equals("request_lineLexer"));
                                 {
                                     addKeyword(TokenNames.SIP.toUpperCase(), TokenTypes.SIP);
                                 } //End block
                                 {
-                                    boolean var7177DFD8D796B948E336EF1FCDB16F90_1558166593 = (lexerName.equals("sip_urlLexer"));
+                                    boolean var7177DFD8D796B948E336EF1FCDB16F90_1341357652 = (lexerName.equals("sip_urlLexer"));
                                     {
                                         addKeyword(TokenNames.TEL.toUpperCase(), TokenTypes.TEL);
                                         addKeyword(TokenNames.SIP.toUpperCase(), TokenTypes.SIP);
@@ -274,6 +271,7 @@ public class Lexer extends LexerCore {
                 } //End collapsed parenthetic
             } //End block
         } //End block
+        addTaint(lexerName.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

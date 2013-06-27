@@ -14,22 +14,19 @@ import java.nio.charset.Charsets;
 
 public abstract class UriCodec {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.051 -0400", hash_original_method = "1A4A38FBFB443445E2F1A51EABB45794", hash_generated_method = "1A4A38FBFB443445E2F1A51EABB45794")
-        public UriCodec ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.400 -0400", hash_original_method = "4BF02B8F3FC732245257150462C2453A", hash_generated_method = "4BF02B8F3FC732245257150462C2453A")
+    public UriCodec ()
     {
+        //Synthesized constructor
     }
 
 
     protected abstract boolean isRetained(char c);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.052 -0400", hash_original_method = "F141B1647AA9A55C59B7CEA66DF70E00", hash_generated_method = "ADEA8E42BBCA20184CA781C794FF35F7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.401 -0400", hash_original_method = "F141B1647AA9A55C59B7CEA66DF70E00", hash_generated_method = "84FF98AAFB6F4DD84266A0F4BF0A49A8")
     public final String validate(String uri, int start, int end, String name) throws URISyntaxException {
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(uri);
-        dsTaint.addTaint(end);
+        String varB4EAC82CA7396A68D541C85D26508E83_1926637557 = null; //Variable for return #1
         {
             int i;
             i = start;
@@ -37,7 +34,7 @@ public abstract class UriCodec {
                 char ch;
                 ch = uri.charAt(i);
                 {
-                    boolean var88D3288C67D30B766BA63886BD67B359_578511541 = ((ch >= 'a' && ch <= 'z')
+                    boolean var88D3288C67D30B766BA63886BD67B359_239741388 = ((ch >= 'a' && ch <= 'z')
                     || (ch >= 'A' && ch <= 'Z')
                     || (ch >= '0' && ch <= '9')
                     || isRetained(ch));
@@ -61,8 +58,13 @@ public abstract class UriCodec {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        String varDFF587D9FF465F5FF109809F3551A536_568730373 = (uri.substring(start, end));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1926637557 = uri.substring(start, end);
+        addTaint(uri.getTaint());
+        addTaint(start);
+        addTaint(end);
+        addTaint(name.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1926637557.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1926637557;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -81,14 +83,9 @@ public abstract class UriCodec {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.053 -0400", hash_original_method = "7FC39F773DF770E48BBB73C216A59F70", hash_generated_method = "3B2699146BE6E217B518B927F2F124E7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.405 -0400", hash_original_method = "7FC39F773DF770E48BBB73C216A59F70", hash_generated_method = "1BD959CF3B7DF2F55A8F11B7A2A70435")
     private void appendEncoded(StringBuilder builder, String s, Charset charset,
             boolean isPartiallyEncoded) {
-        dsTaint.addTaint(isPartiallyEncoded);
-        dsTaint.addTaint(s);
-        dsTaint.addTaint(builder.dsTaint);
-        dsTaint.addTaint(charset.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
@@ -97,12 +94,12 @@ public abstract class UriCodec {
         {
             int i;
             i = 0;
-            boolean var9E95E9D345FEFD15BDBA0B863D5CE5D9_696426148 = (i < s.length());
+            boolean var9E95E9D345FEFD15BDBA0B863D5CE5D9_1116518758 = (i < s.length());
             {
                 char c;
                 c = s.charAt(i);
                 {
-                    boolean varDF0765B40C88A29FE9945F4345F4A8D4_2027122179 = ((c >= 'a' && c <= 'z')
+                    boolean varDF0765B40C88A29FE9945F4345F4A8D4_905381161 = ((c >= 'a' && c <= 'z')
                     || (c >= 'A' && c <= 'Z')
                     || (c >= '0' && c <= '9')
                     || isRetained(c)
@@ -132,21 +129,26 @@ public abstract class UriCodec {
         {
             appendHex(builder, s.substring(escapeStart, s.length()), charset);
         } //End block
+        addTaint(builder.getTaint());
+        addTaint(s.getTaint());
+        addTaint(charset.getTaint());
+        addTaint(isPartiallyEncoded);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.053 -0400", hash_original_method = "F07BB214CFA4248E3F52B7C20E4073AE", hash_generated_method = "28547D3006F948909635042DF2685CF8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.407 -0400", hash_original_method = "F07BB214CFA4248E3F52B7C20E4073AE", hash_generated_method = "2668675E2B8496911C8374FD63E6F1AC")
     public final String encode(String s, Charset charset) {
-        dsTaint.addTaint(s);
-        dsTaint.addTaint(charset.dsTaint);
+        String varB4EAC82CA7396A68D541C85D26508E83_439609050 = null; //Variable for return #1
         StringBuilder builder;
         builder = new StringBuilder(s.length() + 16);
         appendEncoded(builder, s, charset, false);
-        String var687AAF24B90629C9BFCFE9608FDCE6E7_370123572 = (builder.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_439609050 = builder.toString();
+        addTaint(s.getTaint());
+        addTaint(charset.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_439609050.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_439609050;
         // ---------- Original Method ----------
         //StringBuilder builder = new StringBuilder(s.length() + 16);
         //appendEncoded(builder, s, charset, false);
@@ -154,23 +156,21 @@ public abstract class UriCodec {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.053 -0400", hash_original_method = "718B3A047F245697E7F44FEAF3256360", hash_generated_method = "6D3DB54F9D5D4C094F946B61F6C5575F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.417 -0400", hash_original_method = "718B3A047F245697E7F44FEAF3256360", hash_generated_method = "BBD0D27739D38E7735CDA4AC7BBD343F")
     public final void appendEncoded(StringBuilder builder, String s) {
-        dsTaint.addTaint(s);
-        dsTaint.addTaint(builder.dsTaint);
         appendEncoded(builder, s, Charsets.UTF_8, false);
+        addTaint(builder.getTaint());
+        addTaint(s.getTaint());
         // ---------- Original Method ----------
         //appendEncoded(builder, s, Charsets.UTF_8, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.053 -0400", hash_original_method = "9FEB097DD7C595E776FA816DF15836E6", hash_generated_method = "4AAD7F69AB2B846F8B86AEA812FEB9D1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.417 -0400", hash_original_method = "9FEB097DD7C595E776FA816DF15836E6", hash_generated_method = "A793551A44829153571A79DDE4F5CBF9")
     public final void appendPartiallyEncoded(StringBuilder builder, String s) {
-        dsTaint.addTaint(s);
-        dsTaint.addTaint(builder.dsTaint);
         appendEncoded(builder, s, Charsets.UTF_8, true);
+        addTaint(builder.getTaint());
+        addTaint(s.getTaint());
         // ---------- Original Method ----------
         //appendEncoded(builder, s, Charsets.UTF_8, true);
     }

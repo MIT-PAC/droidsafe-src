@@ -24,27 +24,34 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 public final class PreferenceScreen extends PreferenceGroup implements AdapterView.OnItemClickListener, DialogInterface.OnDismissListener {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.965 -0400", hash_original_field = "E6D527FD4A6C76D5C6A6EF8043635381", hash_generated_field = "4B36ACD05D99FE341A50201EADA8B6CA")
+
     private ListAdapter mRootAdapter;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.965 -0400", hash_original_field = "58806F2D99FD4DF33CF42E0C232738D7", hash_generated_field = "D9FAD0C1386FC50E3C837906841C2A70")
+
     private Dialog mDialog;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.965 -0400", hash_original_field = "3F37B910066E368A8F9F00CF63E3318B", hash_generated_field = "7E41BBAA7AC45D61F96A7CC2A5AFF94F")
+
     private ListView mListView;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.760 -0400", hash_original_method = "B5AE397FE837A4F80688406C82668EB0", hash_generated_method = "5E04A745D6C10CE712E9EC66D420C87B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PreferenceScreen(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.965 -0400", hash_original_method = "B5AE397FE837A4F80688406C82668EB0", hash_generated_method = "435A9A54409805D396B31C866AAB5D7B")
+    public  PreferenceScreen(Context context, AttributeSet attrs) {
         super(context, attrs, com.android.internal.R.attr.preferenceScreenStyle);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.761 -0400", hash_original_method = "452CFBAB5DCB1913FE2E0341A07BD40C", hash_generated_method = "0ED7802B47814FE31799037CEEBEB7BF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.966 -0400", hash_original_method = "452CFBAB5DCB1913FE2E0341A07BD40C", hash_generated_method = "EB4ED74E4D34A9885586F709696812BE")
     public ListAdapter getRootAdapter() {
+        ListAdapter varB4EAC82CA7396A68D541C85D26508E83_492733698 = null; //Variable for return #1
         {
             mRootAdapter = onCreateRootAdapter();
         } //End block
-        return (ListAdapter)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_492733698 = mRootAdapter;
+        varB4EAC82CA7396A68D541C85D26508E83_492733698.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_492733698;
         // ---------- Original Method ----------
         //if (mRootAdapter == null) {
             //mRootAdapter = onCreateRootAdapter();
@@ -53,24 +60,24 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.762 -0400", hash_original_method = "BDEF03D241AC1847AD8585ACF20EF682", hash_generated_method = "BA548532AB94FCAEFA49A1E4D7AF6CA5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.967 -0400", hash_original_method = "BDEF03D241AC1847AD8585ACF20EF682", hash_generated_method = "4594F9B6AB6651AA099BF05C8BFCD853")
     protected ListAdapter onCreateRootAdapter() {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        ListAdapter varA22CD512215C706A53C5D6FFB9139D1C_1394093507 = (new PreferenceGroupAdapter(this));
-        return (ListAdapter)dsTaint.getTaint();
+        ListAdapter varB4EAC82CA7396A68D541C85D26508E83_1102053062 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1102053062 = new PreferenceGroupAdapter(this);
+        varB4EAC82CA7396A68D541C85D26508E83_1102053062.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1102053062;
         // ---------- Original Method ----------
         //return new PreferenceGroupAdapter(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.763 -0400", hash_original_method = "2DBB2B7A936806881684D64121944804", hash_generated_method = "27ADE6046CBDCE10CF53BFB7F240411C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.967 -0400", hash_original_method = "2DBB2B7A936806881684D64121944804", hash_generated_method = "FA7105B05D2D1B3393298643466D2774")
     public void bind(ListView listView) {
-        dsTaint.addTaint(listView.dsTaint);
         listView.setOnItemClickListener(this);
         listView.setAdapter(getRootAdapter());
         onAttachedToActivity();
+        addTaint(listView.getTaint());
         // ---------- Original Method ----------
         //listView.setOnItemClickListener(this);
         //listView.setAdapter(getRootAdapter());
@@ -78,13 +85,12 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.764 -0400", hash_original_method = "0BA40F9F4173A0900F716D516252D657", hash_generated_method = "E9EC5495E0A56A45FE434B7757353170")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.968 -0400", hash_original_method = "0BA40F9F4173A0900F716D516252D657", hash_generated_method = "0975A90B2E7ED018ACCA6F741DBDC446")
     @Override
     protected void onClick() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean var682FE98E997ABF8C9978C051E18E8FEC_1501284966 = (getIntent() != null || getFragment() != null || getPreferenceCount() == 0);
+            boolean var682FE98E997ABF8C9978C051E18E8FEC_135114082 = (getIntent() != null || getFragment() != null || getPreferenceCount() == 0);
         } //End collapsed parenthetic
         showDialog(null);
         // ---------- Original Method ----------
@@ -95,10 +101,8 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.764 -0400", hash_original_method = "D7F699A89F8BCF859CD843DF375163A1", hash_generated_method = "621073EDF1F733976D5649FB4C8F0208")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.980 -0400", hash_original_method = "D7F699A89F8BCF859CD843DF375163A1", hash_generated_method = "DBCE87D4BFE8DA44EAEEF0727AE16939")
     private void showDialog(Bundle state) {
-        dsTaint.addTaint(state.dsTaint);
         Context context;
         context = getContext();
         {
@@ -111,7 +115,7 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
         Dialog dialog;
         dialog = mDialog = new Dialog(context, context.getThemeResId());
         {
-            boolean var76F8CCDD9F3913E83E000BD89E277EF3_1576493104 = (TextUtils.isEmpty(title));
+            boolean var76F8CCDD9F3913E83E000BD89E277EF3_1457428329 = (TextUtils.isEmpty(title));
             {
                 dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
             } //End block
@@ -126,6 +130,7 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
         } //End block
         getPreferenceManager().addPreferencesScreen(dialog);
         dialog.show();
+        addTaint(state.getTaint());
         // ---------- Original Method ----------
         //Context context = getContext();
         //if (mListView != null) {
@@ -150,36 +155,32 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.764 -0400", hash_original_method = "1D545D21EF78185D798DBABDC99E4A1B", hash_generated_method = "80749067A1D0EF3FCC6F2C0B27B6091B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.984 -0400", hash_original_method = "1D545D21EF78185D798DBABDC99E4A1B", hash_generated_method = "809D5FF004CE13C71FFBBAD06CC7BE4C")
     public void onDismiss(DialogInterface dialog) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(dialog.dsTaint);
         mDialog = null;
         getPreferenceManager().removePreferencesScreen(dialog);
+        addTaint(dialog.getTaint());
         // ---------- Original Method ----------
         //mDialog = null;
         //getPreferenceManager().removePreferencesScreen(dialog);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.765 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "4F073E538789CB30D5A56AE8F87B31D1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.985 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "9D9A54B4F464E9E718775CE7A815FB24")
     public Dialog getDialog() {
-        return (Dialog)dsTaint.getTaint();
+        Dialog varB4EAC82CA7396A68D541C85D26508E83_1124589934 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1124589934 = mDialog;
+        varB4EAC82CA7396A68D541C85D26508E83_1124589934.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1124589934;
         // ---------- Original Method ----------
         //return mDialog;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.765 -0400", hash_original_method = "4B6165E1F2A74727BF4AF10C08319E83", hash_generated_method = "6039DA150B6A849B7E83E1F596F1B0A1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.987 -0400", hash_original_method = "4B6165E1F2A74727BF4AF10C08319E83", hash_generated_method = "C2847A468724999C04ED6ACD6AE724D0")
     public void onItemClick(AdapterView parent, View view, int position, long id) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(id);
-        dsTaint.addTaint(position);
-        dsTaint.addTaint(parent.dsTaint);
-        dsTaint.addTaint(view.dsTaint);
         {
             position -= ((ListView) parent).getHeaderViewsCount();
         } //End block
@@ -188,6 +189,10 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
         Preference preference;
         preference = (Preference) item;
         preference.performClick(this);
+        addTaint(parent.getTaint());
+        addTaint(view.getTaint());
+        addTaint(position);
+        addTaint(id);
         // ---------- Original Method ----------
         //if (parent instanceof ListView) {
             //position -= ((ListView) parent).getHeaderViewsCount();
@@ -199,33 +204,48 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.765 -0400", hash_original_method = "B68456EA6FB78586D0952577C0AE0058", hash_generated_method = "5BBC11AD8A71780A85054C8743749B25")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.000 -0400", hash_original_method = "B68456EA6FB78586D0952577C0AE0058", hash_generated_method = "903AD1FC799048218C9220981C7D60C5")
     @Override
     protected boolean isOnSameScreenAsChildren() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1908964198 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1908964198;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.766 -0400", hash_original_method = "2F4F23BF6B6CEAFD77846C461E2361F8", hash_generated_method = "A777C87E1DA5082DE69DCE260CA98FAB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.002 -0400", hash_original_method = "2F4F23BF6B6CEAFD77846C461E2361F8", hash_generated_method = "15FAB84240FD1FC47CC2344372537BA1")
     @Override
     protected Parcelable onSaveInstanceState() {
         //DSFIXME:  CODE0009: Possible callback target function detected
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_146478735 = null; //Variable for return #1
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_862068733 = null; //Variable for return #2
         Parcelable superState;
         superState = super.onSaveInstanceState();
         Dialog dialog;
         dialog = mDialog;
         {
-            boolean varF0450B1D8A6B8E6C74D4FB0CACD843E2_1322640500 = (dialog == null || !dialog.isShowing());
+            boolean varF0450B1D8A6B8E6C74D4FB0CACD843E2_1870476051 = (dialog == null || !dialog.isShowing());
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_146478735 = superState;
+            } //End block
         } //End collapsed parenthetic
         SavedState myState;
         myState = new SavedState(superState);
         myState.isDialogShowing = true;
         myState.dialogBundle = dialog.onSaveInstanceState();
-        return (Parcelable)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_862068733 = myState;
+        Parcelable varA7E53CE21691AB073D9660D615818899_40839992; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_40839992 = varB4EAC82CA7396A68D541C85D26508E83_146478735;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_40839992 = varB4EAC82CA7396A68D541C85D26508E83_862068733;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_40839992.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_40839992;
         // ---------- Original Method ----------
         //final Parcelable superState = super.onSaveInstanceState();
         //final Dialog dialog = mDialog;
@@ -239,14 +259,12 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.766 -0400", hash_original_method = "C506903F809F21792322FC067531E660", hash_generated_method = "BB2ACBB0733E50EA171F3278D105EFD2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.012 -0400", hash_original_method = "C506903F809F21792322FC067531E660", hash_generated_method = "84D5C886D8EEB61608D8C3741E202A9A")
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(state.dsTaint);
         {
-            boolean var9146082C23BCEB2285F1054C3B9F84EE_1056608602 = (state == null || !state.getClass().equals(SavedState.class));
+            boolean var9146082C23BCEB2285F1054C3B9F84EE_1215165550 = (state == null || !state.getClass().equals(SavedState.class));
             {
                 super.onRestoreInstanceState(state);
             } //End block
@@ -257,6 +275,7 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
         {
             showDialog(myState.dialogBundle);
         } //End block
+        addTaint(state.getTaint());
         // ---------- Original Method ----------
         //if (state == null || !state.getClass().equals(SavedState.class)) {
             //super.onRestoreInstanceState(state);
@@ -271,14 +290,16 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
 
     
     private static class SavedState extends BaseSavedState {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.013 -0400", hash_original_field = "C75608B67599FA6C902BFE4C625014D1", hash_generated_field = "C67FBD06D119E38CE3CCD57D66AB1C18")
+
         boolean isDialogShowing;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.013 -0400", hash_original_field = "3E858F45950CD4CFB6443ACE660B1208", hash_generated_field = "7FEB9968C654EBDB6E3D8BB294FB242A")
+
         Bundle dialogBundle;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.766 -0400", hash_original_method = "EF20CF8D7035837CBAB7B591A73E7119", hash_generated_method = "6FD044C2AE5C2782D1A9F59A4C492748")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public SavedState(Parcel source) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.014 -0400", hash_original_method = "EF20CF8D7035837CBAB7B591A73E7119", hash_generated_method = "235A6412ECD5B38AB4470FD695A9633B")
+        public  SavedState(Parcel source) {
             super(source);
-            dsTaint.addTaint(source.dsTaint);
             isDialogShowing = source.readInt() == 1;
             dialogBundle = source.readBundle();
             // ---------- Original Method ----------
@@ -287,24 +308,22 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.767 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "EA147AD491217C80E82124E2B453B035")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public SavedState(Parcelable superState) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.015 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "AB11810075E98F66089A29D0DD89C4B4")
+        public  SavedState(Parcelable superState) {
             super(superState);
-            dsTaint.addTaint(superState.dsTaint);
+            addTaint(superState.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.767 -0400", hash_original_method = "85259FDDC0FCC1496FED09E1FEFE0DC2", hash_generated_method = "F64038D07393F936D7022503C01D0686")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.016 -0400", hash_original_method = "85259FDDC0FCC1496FED09E1FEFE0DC2", hash_generated_method = "CDA661218377A8A5886E4CAE8BCD484D")
         @Override
         public void writeToParcel(Parcel dest, int flags) {
-            dsTaint.addTaint(flags);
-            dsTaint.addTaint(dest.dsTaint);
             super.writeToParcel(dest, flags);
             dest.writeInt(isDialogShowing ? 1 : 0);
             dest.writeBundle(dialogBundle);
+            addTaint(dest.getTaint());
+            addTaint(flags);
             // ---------- Original Method ----------
             //super.writeToParcel(dest, flags);
             //dest.writeInt(isDialogShowing ? 1 : 0);
@@ -312,30 +331,18 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
         }
 
         
-        public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.767 -0400", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "036BDCD859F260B1ECC5E64788F2959E")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.029 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
+
+        public static final Parcelable.Creator<SavedState> CREATOR =
+                new Parcelable.Creator<SavedState>() {
             public SavedState createFromParcel(Parcel in) {
-                dsTaint.addTaint(in.dsTaint);
-                SavedState var41ED8F3548F5060881BBE51AB9112A3F_864479242 = (new SavedState(in));
-                return (SavedState)dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new SavedState(in);
+                return new SavedState(in);
             }
 
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.767 -0400", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "4619F77B08E9877DF92E379FFD52D923")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
             public SavedState[] newArray(int size) {
-                dsTaint.addTaint(size);
-                SavedState[] varB5C72E5BBB181D4CA93D7BAA0B8B5E3D_826179296 = (new SavedState[size]);
-                return (SavedState[])dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new SavedState[size];
+                return new SavedState[size];
             }
-
-            
-}; //Transformed anonymous class
+        };
     }
 
 

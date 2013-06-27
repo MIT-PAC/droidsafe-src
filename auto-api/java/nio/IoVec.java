@@ -13,21 +13,34 @@ import libcore.io.Libcore;
 import libcore.io.ErrnoException;
 
 final class IoVec {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.654 -0400", hash_original_field = "1BCBC3F3B6DC171723792DD8598DF826", hash_generated_field = "8F7E59474A3A47E6FACE7437BBBF16C4")
+
     private ByteBuffer[] byteBuffers;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.654 -0400", hash_original_field = "7A86C157EE9713C34FBD7A1EE40F0C5A", hash_generated_field = "EA4C80BAC452228E60AC0DA2D3E0C953")
+
     private int offset;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.654 -0400", hash_original_field = "52E664008CA2784B46D47A0B7D2EBB74", hash_generated_field = "D602CF0E0740AAEDFC4DEF8987780EF2")
+
     private int bufferCount;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.654 -0400", hash_original_field = "4945AAAE447C6AA7892F322E59AA507A", hash_generated_field = "27EC5D44122911539EEF00080CA2291C")
+
     private Object[] ioBuffers;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.654 -0400", hash_original_field = "831BD6D82461A6164F50E583F8749188", hash_generated_field = "E194B71DC943C13E8607B77E79D5CB4E")
+
     private int[] offsets;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.654 -0400", hash_original_field = "F12DCB6E1A25DCBAE9609B573208F002", hash_generated_field = "8F6C8CDE5390F607AD0E24ACD9D6AB82")
+
     private int[] byteCounts;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.654 -0400", hash_original_field = "EF72C37BE9D1B9E6E5BBD6EF09448ABE", hash_generated_field = "AD22A97F29292C6D1CAA320C6112ECB5")
+
     private Direction direction;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.780 -0400", hash_original_method = "79FA89440D1C6736393E7E6CE16B2553", hash_generated_method = "CC194EE02F72994126CDE54ADD9F6F23")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     IoVec(ByteBuffer[] byteBuffers, int offset, int bufferCount, Direction direction) {
-        dsTaint.addTaint(byteBuffers[0].dsTaint);
-        dsTaint.addTaint(direction.dsTaint);
-        dsTaint.addTaint(bufferCount);
-        dsTaint.addTaint(offset);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.689 -0400", hash_original_method = "79FA89440D1C6736393E7E6CE16B2553", hash_generated_method = "202BD0CFA645C0A9325FB09F7D29AF1B")
+      IoVec(ByteBuffer[] byteBuffers, int offset, int bufferCount, Direction direction) {
+        this.byteBuffers = byteBuffers;
+        this.offset = offset;
+        this.bufferCount = bufferCount;
+        this.direction = direction;
         this.ioBuffers = new Object[bufferCount];
         this.offsets = new int[bufferCount];
         this.byteCounts = new int[bufferCount];
@@ -42,8 +55,7 @@ final class IoVec {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.781 -0400", hash_original_method = "0C69B202E78D62C368E6E03D03D6C92B", hash_generated_method = "A0BDB75B81F16C4EDF10AABACE7D8830")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.692 -0400", hash_original_method = "0C69B202E78D62C368E6E03D03D6C92B", hash_generated_method = "318B0791EF41AD1CE0A2237EA5991962")
      int init() {
         int totalRemaining;
         totalRemaining = 0;
@@ -59,7 +71,7 @@ final class IoVec {
                 int remaining;
                 remaining = b.remaining();
                 {
-                    boolean var485497B2C9BE8560C87D0DBBE26ABBEA_432820763 = (b.isDirect());
+                    boolean var485497B2C9BE8560C87D0DBBE26ABBEA_613049365 = (b.isDirect());
                     {
                         ioBuffers[i] = b;
                         offsets[i] = b.position();
@@ -73,7 +85,8 @@ final class IoVec {
                 totalRemaining += remaining;
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1040539183 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1040539183;
         // ---------- Original Method ----------
         //int totalRemaining = 0;
         //for (int i = 0; i < bufferCount; ++i) {
@@ -96,10 +109,8 @@ final class IoVec {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.781 -0400", hash_original_method = "A7EE0836183CE06C4386DE620F235FAB", hash_generated_method = "3E5F5161953E783DCF4ECED0C9F074CA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.693 -0400", hash_original_method = "A7EE0836183CE06C4386DE620F235FAB", hash_generated_method = "1729D93C37A45E99E18664DF082436F8")
      int doTransfer(FileDescriptor fd) throws IOException {
-        dsTaint.addTaint(fd.dsTaint);
         try 
         {
             {
@@ -110,14 +121,16 @@ final class IoVec {
                 } //End block
             } //End block
             {
-                int var74139DC41892DAA1E1523A68BE0BA9F9_2066506017 = (Libcore.os.writev(fd, ioBuffers, offsets, byteCounts));
+                int var74139DC41892DAA1E1523A68BE0BA9F9_1290492182 = (Libcore.os.writev(fd, ioBuffers, offsets, byteCounts));
             } //End block
         } //End block
         catch (ErrnoException errnoException)
         {
             if (DroidSafeAndroidRuntime.control) throw errnoException.rethrowAsIOException();
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(fd.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1297805557 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1297805557;
         // ---------- Original Method ----------
         //try {
             //if (direction == Direction.READV) {
@@ -135,10 +148,8 @@ final class IoVec {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.782 -0400", hash_original_method = "EBAF870E907233DA47B6BC3AD10EE875", hash_generated_method = "6F67A1A21494787D2024D31030290586")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.693 -0400", hash_original_method = "EBAF870E907233DA47B6BC3AD10EE875", hash_generated_method = "B5C916590419871557274C41537818AD")
      void didTransfer(int byteCount) {
-        dsTaint.addTaint(byteCount);
         {
             int i;
             i = 0;
@@ -155,6 +166,7 @@ final class IoVec {
                 } //End block
             } //End block
         } //End collapsed parenthetic
+        addTaint(byteCount);
         // ---------- Original Method ----------
         //for (int i = 0; byteCount > 0 && i < bufferCount; ++i) {
             //ByteBuffer b = byteBuffers[i + offset];

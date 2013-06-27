@@ -13,27 +13,25 @@ import javax.sip.*;
 
 public class ExpiresParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.281 -0400", hash_original_method = "A7328899640752C7683A3AAB5686C434", hash_generated_method = "098C5E8CD36CE022F5D5EF02BD7672D7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ExpiresParser(String text) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.747 -0400", hash_original_method = "A7328899640752C7683A3AAB5686C434", hash_generated_method = "91AD4A144E3219744EF95FFB87DA18A5")
+    public  ExpiresParser(String text) {
         super(text);
-        dsTaint.addTaint(text);
+        addTaint(text.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.281 -0400", hash_original_method = "8C0F40C2F214AF533DDC04CFAC4ADA24", hash_generated_method = "CAC8C5CE056D0A89B9A930D37514C8DC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected ExpiresParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.748 -0400", hash_original_method = "8C0F40C2F214AF533DDC04CFAC4ADA24", hash_generated_method = "01CE2D3D2FDBF84082EF3A8A9C12D81D")
+    protected  ExpiresParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.281 -0400", hash_original_method = "BF637AC6A5CBD4DC0512611361485C35", hash_generated_method = "959CFAE99965A1223E523B16EACE8697")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.757 -0400", hash_original_method = "BF637AC6A5CBD4DC0512611361485C35", hash_generated_method = "8B7A2D40A220D0ED0F13E4C1AE0FCE93")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_946653072 = null; //Variable for return #1
         Expires expires;
         expires = new Expires();
         dbg_enter("parse");
@@ -51,6 +49,7 @@ public class ExpiresParser extends HeaderParser {
                 int delta;
                 delta = Integer.parseInt(nextId);
                 expires.setExpires(delta);
+                varB4EAC82CA7396A68D541C85D26508E83_946653072 = expires;
             } //End block
             catch (NumberFormatException ex)
             {
@@ -65,7 +64,8 @@ public class ExpiresParser extends HeaderParser {
         {
             dbg_leave("parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_946653072.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_946653072;
         // ---------- Original Method ----------
         //Expires expires = new Expires();
         //if (debug)

@@ -10,9 +10,10 @@ import java.util.Iterator;
 
 public class PorterDuff {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.546 -0400", hash_original_method = "04B394C0B431FFB3996C1B4223CC7C93", hash_generated_method = "04B394C0B431FFB3996C1B4223CC7C93")
-        public PorterDuff ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.394 -0400", hash_original_method = "2DF832AFFC44E839897834B5EF3E55EC", hash_generated_method = "2DF832AFFC44E839897834B5EF3E55EC")
+    public PorterDuff ()
     {
+        //Synthesized constructor
     }
 
 

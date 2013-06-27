@@ -12,27 +12,25 @@ import java.text.ParseException;
 
 public class AuthorizationParser extends ChallengeParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.242 -0400", hash_original_method = "4106C62632F233034B416151FC55AB70", hash_generated_method = "5CC901C0D6F70254675520AE9B25A8F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AuthorizationParser(String authorization) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.487 -0400", hash_original_method = "4106C62632F233034B416151FC55AB70", hash_generated_method = "3092B0DAC3CDE6D170500DA230757B69")
+    public  AuthorizationParser(String authorization) {
         super(authorization);
-        dsTaint.addTaint(authorization);
+        addTaint(authorization.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.242 -0400", hash_original_method = "7F449A569D89A06236BD64E3F6673F37", hash_generated_method = "EC6F65F8EFBA7B3F111FA7C7C65B8074")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected AuthorizationParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.487 -0400", hash_original_method = "7F449A569D89A06236BD64E3F6673F37", hash_generated_method = "00443B949EC1F60812EEABFFF68A8C76")
+    protected  AuthorizationParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.242 -0400", hash_original_method = "EB9857D021AE5F251F44C2032AC6D5E3", hash_generated_method = "AE66A2BD2FE0458E9FEBF823C2828310")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.488 -0400", hash_original_method = "EB9857D021AE5F251F44C2032AC6D5E3", hash_generated_method = "7847D4E683EE3D9BC0669EE64656059C")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_790216010 = null; //Variable for return #1
         dbg_enter("parse");
         try 
         {
@@ -40,12 +38,14 @@ public class AuthorizationParser extends ChallengeParser {
             Authorization auth;
             auth = new Authorization();
             super.parse(auth);
+            varB4EAC82CA7396A68D541C85D26508E83_790216010 = auth;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_790216010.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_790216010;
         // ---------- Original Method ----------
         //dbg_enter("parse");
         //try {

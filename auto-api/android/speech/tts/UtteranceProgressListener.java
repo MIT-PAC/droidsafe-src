@@ -10,9 +10,10 @@ import java.util.Iterator;
 
 public abstract class UtteranceProgressListener {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.348 -0400", hash_original_method = "5AB296C4CDF269F5BA8477476B807230", hash_generated_method = "5AB296C4CDF269F5BA8477476B807230")
-        public UtteranceProgressListener ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:30.045 -0400", hash_original_method = "D96B1FA74926A4581FA2AC04698293D6", hash_generated_method = "D96B1FA74926A4581FA2AC04698293D6")
+    public UtteranceProgressListener ()
     {
+        //Synthesized constructor
     }
 
 

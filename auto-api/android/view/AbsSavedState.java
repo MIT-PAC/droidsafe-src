@@ -11,21 +11,20 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public abstract class AbsSavedState implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.728 -0400", hash_original_field = "E79BC38E7D1FDBAAEC758443D630638F", hash_generated_field = "EEFC201B63925E4659FF4A1C55B1892F")
+
     private Parcelable mSuperState;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.440 -0400", hash_original_method = "98DB61DECD5C8032FFDEFFDBC7A07300", hash_generated_method = "DDE4E11A79D0DBE3ACE7A957674D3B72")
-    @DSModeled(DSC.SAFE)
-    private AbsSavedState() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.729 -0400", hash_original_method = "98DB61DECD5C8032FFDEFFDBC7A07300", hash_generated_method = "DDE4E11A79D0DBE3ACE7A957674D3B72")
+    private  AbsSavedState() {
         mSuperState = null;
         // ---------- Original Method ----------
         //mSuperState = null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.440 -0400", hash_original_method = "D4C1FB84674D7B9566A2C16E0F6CE527", hash_generated_method = "5F0FA8413E7E018D1E9CC9ADB79B280A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected AbsSavedState(Parcelable superState) {
-        dsTaint.addTaint(superState.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.730 -0400", hash_original_method = "D4C1FB84674D7B9566A2C16E0F6CE527", hash_generated_method = "BADC7F5D8A2E07C5A8D8049522509A87")
+    protected  AbsSavedState(Parcelable superState) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("superState must not be null");
         } //End block
@@ -38,81 +37,67 @@ public abstract class AbsSavedState implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.441 -0400", hash_original_method = "36C68CF6BE081F45C28577588985103D", hash_generated_method = "4F52F7492613CB50198D552E2FC71D86")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected AbsSavedState(Parcel source) {
-        dsTaint.addTaint(source.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.730 -0400", hash_original_method = "36C68CF6BE081F45C28577588985103D", hash_generated_method = "08C93FEF2DCA027BCC51D3E65E94E7C7")
+    protected  AbsSavedState(Parcel source) {
         Parcelable superState;
         superState = source.readParcelable(null);
         mSuperState = superState != null ? superState : EMPTY_STATE;
+        addTaint(source.getTaint());
         // ---------- Original Method ----------
         //Parcelable superState = source.readParcelable(null);
         //mSuperState = superState != null ? superState : EMPTY_STATE;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.441 -0400", hash_original_method = "D1776F094204A2E68E2669C5D33A32E2", hash_generated_method = "9D6341ADE9960554403A9CA889EAEB2B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.736 -0400", hash_original_method = "D1776F094204A2E68E2669C5D33A32E2", hash_generated_method = "C64827184318EF81A17E8C8EC9FB8AF3")
     final public Parcelable getSuperState() {
-        return (Parcelable)dsTaint.getTaint();
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1100451698 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1100451698 = mSuperState;
+        varB4EAC82CA7396A68D541C85D26508E83_1100451698.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1100451698;
         // ---------- Original Method ----------
         //return mSuperState;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.441 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.738 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A26C34C8C78C26CF87D76299C7340901")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1082915445 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1082915445;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.441 -0400", hash_original_method = "49F04AE9062C121AE76FFD8C13AF6818", hash_generated_method = "684ACE81CF571ADA15EF8AE8E418B2D4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.742 -0400", hash_original_method = "49F04AE9062C121AE76FFD8C13AF6818", hash_generated_method = "C38593A2809611A9A3F197A8BF2F840F")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeParcelable(mSuperState, flags);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeParcelable(mSuperState, flags);
     }
 
     
-    public static final AbsSavedState EMPTY_STATE = new AbsSavedState() {        
-}; //Transformed anonymous class
-    public static final Parcelable.Creator<AbsSavedState> CREATOR = new Parcelable.Creator<AbsSavedState>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.441 -0400", hash_original_method = "332B0C76686B55CA74FEB51D34AF75F4", hash_generated_method = "019AB82DBFD2554FE9FC359FDCA341D0")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.750 -0400", hash_original_field = "FDCEAE119BFC77E27CAD4C13F477CCAC", hash_generated_field = "23C63B06C45486E5E57AC4257D5F33FA")
+
+    public static final AbsSavedState EMPTY_STATE = new AbsSavedState() {};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.750 -0400", hash_original_field = "D1A0D03493186A39A161E69FA2FF0334", hash_generated_field = "0833D3C2081B6D0D13E6946E8CE853EE")
+
+    public static final Parcelable.Creator<AbsSavedState> CREATOR 
+        = new Parcelable.Creator<AbsSavedState>() {
+        
         public AbsSavedState createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            Parcelable superState;
-            superState = in.readParcelable(null);
-            {
-                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("superState must be null");
-            } //End block
-            return (AbsSavedState)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //Parcelable superState = in.readParcelable(null);
-            //if (superState != null) {
-                //throw new IllegalStateException("superState must be null");
-            //}
-            //return EMPTY_STATE;
+            Parcelable superState = in.readParcelable(null);
+            if (superState != null) {
+                throw new IllegalStateException("superState must be null");
+            }
+            return EMPTY_STATE;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.441 -0400", hash_original_method = "B087F2336A16D46F6C09A897DF492270", hash_generated_method = "AD1E6506CE5ADDBAB3E24CE36ADB1902")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public AbsSavedState[] newArray(int size) {
-            dsTaint.addTaint(size);
-            AbsSavedState[] var7D79672E1136987592178D7985DC6FE4_1727298813 = (new AbsSavedState[size]);
-            return (AbsSavedState[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new AbsSavedState[size];
+            return new AbsSavedState[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

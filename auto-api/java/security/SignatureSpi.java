@@ -11,11 +11,14 @@ import java.nio.ByteBuffer;
 import java.security.spec.AlgorithmParameterSpec;
 
 public abstract class SignatureSpi {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.275 -0400", hash_original_field = "7F0E25AE98CB8CAAE133E519F90D8F55", hash_generated_field = "179FDAA6281D622A7488CD99E06D8FD3")
+
     protected SecureRandom appRandom;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.602 -0400", hash_original_method = "3A934505F5D647F2F4E0D28CFC510466", hash_generated_method = "3A934505F5D647F2F4E0D28CFC510466")
-        public SignatureSpi ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.275 -0400", hash_original_method = "579C0D6C0992E59A5D82007FD2101B72", hash_generated_method = "579C0D6C0992E59A5D82007FD2101B72")
+    public SignatureSpi ()
     {
+        //Synthesized constructor
     }
 
 
@@ -27,12 +30,11 @@ public abstract class SignatureSpi {
             throws InvalidKeyException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.602 -0400", hash_original_method = "B296906AC674D1ED6BCB89B75E33BE26", hash_generated_method = "D4A94C5CCA94535365F016FDBE2B407D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.276 -0400", hash_original_method = "B296906AC674D1ED6BCB89B75E33BE26", hash_generated_method = "D4BFE09E7FEF5095911C1C9BDF919E2C")
     protected void engineInitSign(PrivateKey privateKey, SecureRandom random) throws InvalidKeyException {
-        dsTaint.addTaint(privateKey.dsTaint);
-        dsTaint.addTaint(random.dsTaint);
+        appRandom = random;
         engineInitSign(privateKey);
+        addTaint(privateKey.getTaint());
         // ---------- Original Method ----------
         //appRandom = random;
         //engineInitSign(privateKey);
@@ -46,16 +48,14 @@ public abstract class SignatureSpi {
             throws SignatureException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.603 -0400", hash_original_method = "71C4E934CEE377EFD0E73DFCB679FE83", hash_generated_method = "F36FEA7A13957C4F907D5F0DD3C41674")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.278 -0400", hash_original_method = "71C4E934CEE377EFD0E73DFCB679FE83", hash_generated_method = "E6241DF52D4E1CAB12CB5F85D49A5B47")
     protected void engineUpdate(ByteBuffer input) {
-        dsTaint.addTaint(input.dsTaint);
         {
-            boolean varE54245A319FB90E6E4BB7E9A96B716C3_966611061 = (!input.hasRemaining());
+            boolean varE54245A319FB90E6E4BB7E9A96B716C3_1061309296 = (!input.hasRemaining());
         } //End collapsed parenthetic
         byte[] tmp;
         {
-            boolean var011961AA1A198646CB962085FB0562D5_1779892285 = (input.hasArray());
+            boolean var011961AA1A198646CB962085FB0562D5_82176207 = (input.hasArray());
             {
                 tmp = input.array();
                 int offset;
@@ -87,6 +87,7 @@ public abstract class SignatureSpi {
                 } //End block
             } //End block
         } //End collapsed parenthetic
+        addTaint(input.getTaint());
         // ---------- Original Method ----------
         //if (!input.hasRemaining()) {
             //return;
@@ -118,12 +119,8 @@ public abstract class SignatureSpi {
     protected abstract byte[] engineSign() throws SignatureException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.603 -0400", hash_original_method = "1C34A6699CF243CE14ADEEFCA006987F", hash_generated_method = "96D3A486EF937DADEF0D160A8D8C8D71")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.278 -0400", hash_original_method = "1C34A6699CF243CE14ADEEFCA006987F", hash_generated_method = "69394DE1B8F44695CAD7D8E1E69A50BA")
     protected int engineSign(byte[] outbuf, int offset, int len) throws SignatureException {
-        dsTaint.addTaint(outbuf[0]);
-        dsTaint.addTaint(len);
-        dsTaint.addTaint(offset);
         byte[] tmp;
         tmp = engineSign();
         {
@@ -136,7 +133,11 @@ public abstract class SignatureSpi {
             if (DroidSafeAndroidRuntime.control) throw new SignatureException("offset + len > outbuf.length");
         } //End block
         System.arraycopy(tmp, 0, outbuf, offset, tmp.length);
-        return dsTaint.getTaintInt();
+        addTaint(outbuf[0]);
+        addTaint(offset);
+        addTaint(len);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1920658927 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1920658927;
         // ---------- Original Method ----------
         //byte[] tmp = engineSign();
         //if (tmp == null) {
@@ -160,17 +161,17 @@ public abstract class SignatureSpi {
             throws SignatureException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.603 -0400", hash_original_method = "1A108B8DE7E13E12F61358DC32E2687B", hash_generated_method = "FB09C16DB8EE79DE05C1C87567E67FCF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.279 -0400", hash_original_method = "1A108B8DE7E13E12F61358DC32E2687B", hash_generated_method = "F500552BA96497A104B06CD6365B4B10")
     protected boolean engineVerify(byte[] sigBytes, int offset, int length) throws SignatureException {
-        dsTaint.addTaint(sigBytes[0]);
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(offset);
         byte[] tmp;
         tmp = new byte[length];
         System.arraycopy(sigBytes, offset, tmp, 0, length);
-        boolean var1E1A814EA269B82FF70BA29FE59F4B53_710029693 = (engineVerify(tmp));
-        return dsTaint.getTaintBoolean();
+        boolean var1E1A814EA269B82FF70BA29FE59F4B53_582747822 = (engineVerify(tmp));
+        addTaint(sigBytes[0]);
+        addTaint(offset);
+        addTaint(length);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2119628243 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2119628243;
         // ---------- Original Method ----------
         //byte[] tmp = new byte[length];
         //System.arraycopy(sigBytes, offset, tmp, 0, length);
@@ -183,21 +184,18 @@ protected abstract void engineSetParameter(String param, Object value)
             throws InvalidParameterException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.604 -0400", hash_original_method = "09773BC31BC521068D3A412C371D22F3", hash_generated_method = "5606D58FF6CD6F591400E9BE16BF55AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.291 -0400", hash_original_method = "09773BC31BC521068D3A412C371D22F3", hash_generated_method = "93DAA0D9AA1F787D91827786DAA2CB92")
     protected void engineSetParameter(AlgorithmParameterSpec params) throws InvalidAlgorithmParameterException {
-        dsTaint.addTaint(params.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
+        addTaint(params.getTaint());
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.604 -0400", hash_original_method = "8524B01EC33E60B2ED7B8CC70F0D409D", hash_generated_method = "976ADFF1CD0B6147A3071E30AA3B1C2D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.292 -0400", hash_original_method = "8524B01EC33E60B2ED7B8CC70F0D409D", hash_generated_method = "7D60887B06E007D941A2154E83C7DFA5")
     protected AlgorithmParameters engineGetParameters() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        return (AlgorithmParameters)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
@@ -208,15 +206,16 @@ protected abstract Object engineGetParameter(String param)
             throws InvalidParameterException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.604 -0400", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "2B4C71A2D69FE35CC9664FE516CC264E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.292 -0400", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "9F3BF245063593178F026657578550F7")
     @Override
     public Object clone() throws CloneNotSupportedException {
+        Object varB4EAC82CA7396A68D541C85D26508E83_1033221566 = null; //Variable for return #1
         {
-            Object varDEB570B566DA7549E2F197D0AFA5A2B6_689376288 = (super.clone());
+            varB4EAC82CA7396A68D541C85D26508E83_1033221566 = super.clone();
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException();
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1033221566.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1033221566;
         // ---------- Original Method ----------
         //if (this instanceof Cloneable) {
             //return super.clone();

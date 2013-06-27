@@ -13,19 +13,24 @@ import libcore.io.Streams;
 import libcore.util.EmptyArray;
 
 public class ClientKeyExchange extends Message {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.815 -0400", hash_original_field = "B9F55CF4379EB16BB06D0EC8FED510DF", hash_generated_field = "A8EC1747D3C20FCA9F3B799F3E21511E")
+
     byte[] exchange_keys;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.815 -0400", hash_original_field = "CD5CA5155EA3F5FD910C1F295155E9D3", hash_generated_field = "314E39EA2F69CB2F1D5074178AD0D4A9")
+
     boolean isTLS;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.815 -0400", hash_original_field = "CE2AC9A6281889FF0A8A2E4B03C2EAB6", hash_generated_field = "5EC821C040A3584EF0C79FD7C884CE8D")
+
     boolean isRSA;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.660 -0400", hash_original_method = "C9B8341788FD531DBE072AC5097543AB", hash_generated_method = "9AA186768A882C9B1E204372AD8B7871")
-    @DSModeled(DSC.SAFE)
-    public ClientKeyExchange(byte[] encrypted_pre_master_secret, boolean isTLS) {
-        dsTaint.addTaint(isTLS);
-        dsTaint.addTaint(encrypted_pre_master_secret[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.815 -0400", hash_original_method = "C9B8341788FD531DBE072AC5097543AB", hash_generated_method = "62B12B12FB49EC5CC7AE9CA08AC2D5CC")
+    public  ClientKeyExchange(byte[] encrypted_pre_master_secret, boolean isTLS) {
+        this.exchange_keys = encrypted_pre_master_secret;
         length = this.exchange_keys.length;
         {
             length += 2;
         } //End block
+        this.isTLS = isTLS;
         isRSA = true;
         // ---------- Original Method ----------
         //this.exchange_keys = encrypted_pre_master_secret;
@@ -38,10 +43,8 @@ public class ClientKeyExchange extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.660 -0400", hash_original_method = "82DB124C7EE193607645A424E30C3D24", hash_generated_method = "DFE459A7DF9593CB586FB8228D9340DC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ClientKeyExchange(BigInteger dh_Yc) {
-        dsTaint.addTaint(dh_Yc.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.817 -0400", hash_original_method = "82DB124C7EE193607645A424E30C3D24", hash_generated_method = "770388687D1543489F1C3E35EF12CB7B")
+    public  ClientKeyExchange(BigInteger dh_Yc) {
         byte[] bb;
         bb = dh_Yc.toByteArray();
         {
@@ -53,6 +56,7 @@ public class ClientKeyExchange extends Message {
         } //End block
         length = exchange_keys.length +2;
         isRSA = false;
+        addTaint(dh_Yc.getTaint());
         // ---------- Original Method ----------
         //byte[] bb = dh_Yc.toByteArray();
         //if (bb[0] == 0) {
@@ -66,9 +70,8 @@ public class ClientKeyExchange extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.660 -0400", hash_original_method = "F9E21C88B251C3A8D5F2F68FD08CDC9E", hash_generated_method = "4533FE8F4312A563E5A5CB5E21E04D95")
-    @DSModeled(DSC.SAFE)
-    public ClientKeyExchange() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.817 -0400", hash_original_method = "F9E21C88B251C3A8D5F2F68FD08CDC9E", hash_generated_method = "4533FE8F4312A563E5A5CB5E21E04D95")
+    public  ClientKeyExchange() {
         exchange_keys = EmptyArray.BYTE;
         length = 0;
         isRSA = false;
@@ -79,13 +82,10 @@ public class ClientKeyExchange extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.660 -0400", hash_original_method = "C1B0A0A6F00EB418D00ABC26C97C8AF6", hash_generated_method = "40D2BFEF09FF8CF26BE01E9EB1DE1347")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ClientKeyExchange(HandshakeIODataStream in, int length, boolean isTLS, boolean isRSA) throws IOException {
-        dsTaint.addTaint(isTLS);
-        dsTaint.addTaint(isRSA);
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(in.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.831 -0400", hash_original_method = "C1B0A0A6F00EB418D00ABC26C97C8AF6", hash_generated_method = "472424D0FEBA7757EE7704A3E92D688D")
+    public  ClientKeyExchange(HandshakeIODataStream in, int length, boolean isTLS, boolean isRSA) throws IOException {
+        this.isTLS = isTLS;
+        this.isRSA = isRSA;
         {
             this.length = 0;
             exchange_keys = EmptyArray.BYTE;
@@ -106,6 +106,8 @@ public class ClientKeyExchange extends Message {
                 fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect ClientKeyExchange");
             } //End block
         } //End block
+        addTaint(in.getTaint());
+        addTaint(length);
         // ---------- Original Method ----------
         //this.isTLS = isTLS;
         //this.isRSA = isRSA;
@@ -130,17 +132,16 @@ public class ClientKeyExchange extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.661 -0400", hash_original_method = "355F47F7AE472993E3A2C68F4F83F8CB", hash_generated_method = "417294B09332B4F09757AC97E5DB408E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.832 -0400", hash_original_method = "355F47F7AE472993E3A2C68F4F83F8CB", hash_generated_method = "77DABBAEB8B6409F28AB795ED8859639")
     @Override
     public void send(HandshakeIODataStream out) {
-        dsTaint.addTaint(out.dsTaint);
         {
             {
                 out.writeUint16(exchange_keys.length);
             } //End block
             out.write(exchange_keys);
         } //End block
+        addTaint(out.getTaint());
         // ---------- Original Method ----------
         //if (exchange_keys.length != 0) {
             //if (!isRSA || isTLS) {
@@ -151,20 +152,20 @@ public class ClientKeyExchange extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.661 -0400", hash_original_method = "689E42FE01D543BF62D87A0EDA5093F1", hash_generated_method = "BEF6E99FEBB5ECF680054511A21CFC74")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.832 -0400", hash_original_method = "689E42FE01D543BF62D87A0EDA5093F1", hash_generated_method = "ADDA35F00A18A856D1E54CFB900BCE28")
     @Override
     public int getType() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1683303973 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1683303973;
         // ---------- Original Method ----------
         //return Handshake.CLIENT_KEY_EXCHANGE;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.661 -0400", hash_original_method = "A6E948E5B249A2FAEF42B96B088122ED", hash_generated_method = "3EBDDBF2D0A1DEC70E9240EC307B375C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.834 -0400", hash_original_method = "A6E948E5B249A2FAEF42B96B088122ED", hash_generated_method = "E37A85F3BC110AD0ADA6D36AEEA17F19")
     public boolean isEmpty() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1141737363 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1141737363;
         // ---------- Original Method ----------
         //return (exchange_keys.length == 0);
     }

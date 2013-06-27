@@ -13,9 +13,10 @@ import libcore.net.UriCodec;
 
 public class URLDecoder {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.397 -0400", hash_original_method = "1E29D68C8A40B15616063FB658D5102A", hash_generated_method = "1E29D68C8A40B15616063FB658D5102A")
-        public URLDecoder ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.681 -0400", hash_original_method = "857A327B54EFC5B6C22CAE0D3F8923A2", hash_generated_method = "857A327B54EFC5B6C22CAE0D3F8923A2")
+    public URLDecoder ()
     {
+        //Synthesized constructor
     }
 
 

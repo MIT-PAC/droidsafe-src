@@ -13,27 +13,25 @@ import java.text.ParseException;
 
 public class EventParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.279 -0400", hash_original_method = "50E5FEDABD0DAB8D49656909229ED832", hash_generated_method = "8BF8AC1868E30A5BE47F2A9ED1881679")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public EventParser(String event) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.725 -0400", hash_original_method = "50E5FEDABD0DAB8D49656909229ED832", hash_generated_method = "8C401A9349282DEAE8DDE7C582DC6819")
+    public  EventParser(String event) {
         super(event);
-        dsTaint.addTaint(event);
+        addTaint(event.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.279 -0400", hash_original_method = "D3468855FFD30B89A817AFCB4CE0E283", hash_generated_method = "70AA7AC497CBB91C44C868774D71A57E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected EventParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.732 -0400", hash_original_method = "D3468855FFD30B89A817AFCB4CE0E283", hash_generated_method = "5F9356AEB1E32F1B037B6F9ECBCE6D31")
+    protected  EventParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.279 -0400", hash_original_method = "DF7492B0F439F0DD586A6D33E917DC2B", hash_generated_method = "FAA9AB2E73FABC2CAD9EA8C112D37DE8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.733 -0400", hash_original_method = "DF7492B0F439F0DD586A6D33E917DC2B", hash_generated_method = "16DD6239E8E0B8C78927C21730344EE0")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1953093520 = null; //Variable for return #1
         dbg_enter("EventParser.parse");
         try 
         {
@@ -50,6 +48,7 @@ public class EventParser extends ParametersParser {
             super.parse(event);
             this.lexer.SPorHT();
             this.lexer.match('\n');
+            varB4EAC82CA7396A68D541C85D26508E83_1953093520 = event;
         } //End block
         catch (ParseException ex)
         {
@@ -59,7 +58,8 @@ public class EventParser extends ParametersParser {
         {
             dbg_leave("EventParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1953093520.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1953093520;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("EventParser.parse");

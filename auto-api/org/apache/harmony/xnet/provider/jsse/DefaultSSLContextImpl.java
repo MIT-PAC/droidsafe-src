@@ -23,19 +23,26 @@ import javax.net.ssl.TrustManagerFactory;
 
 public final class DefaultSSLContextImpl extends OpenSSLContextImpl {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.732 -0400", hash_original_method = "09005AB24FD7DF4C7BE4D5BB1BAB63A4", hash_generated_method = "27FF8CAC18843404200B5A7748448204")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public DefaultSSLContextImpl() throws GeneralSecurityException, IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.929 -0400", hash_original_method = "09005AB24FD7DF4C7BE4D5BB1BAB63A4", hash_generated_method = "27FF8CAC18843404200B5A7748448204")
+    public  DefaultSSLContextImpl() throws GeneralSecurityException, IOException {
         super(null);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.733 -0400", hash_original_method = "E512CF487829C633B2731FE964DEE240", hash_generated_method = "17F3D56AC4B54C1E2054CABD04EDAF52")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.938 -0400", hash_original_method = "E512CF487829C633B2731FE964DEE240", hash_generated_method = "472465C2C2D2B0E955537B686F9397E1")
      KeyManager[] getKeyManagers() throws GeneralSecurityException, IOException {
+        KeyManager[] varB4EAC82CA7396A68D541C85D26508E83_1345753917 = null; //Variable for return #1
+        KeyManager[] varB4EAC82CA7396A68D541C85D26508E83_2030868462 = null; //Variable for return #2
+        KeyManager[] varB4EAC82CA7396A68D541C85D26508E83_567616071 = null; //Variable for return #3
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1345753917 = KEY_MANAGERS;
+        } //End block
         String keystore;
         keystore = System.getProperty("javax.net.ssl.keyStore");
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_2030868462 = null;
+        } //End block
         String keystorepwd;
         keystorepwd = System.getProperty("javax.net.ssl.keyStorePassword");
         char[] pwd;
@@ -65,17 +72,39 @@ public final class DefaultSSLContextImpl extends OpenSSLContextImpl {
         kmf = KeyManagerFactory.getInstance(kmfAlg);
         kmf.init(ks, pwd);
         KEY_MANAGERS = kmf.getKeyManagers();
-        return (KeyManager[])dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_567616071 = KEY_MANAGERS;
+        KeyManager[] varA7E53CE21691AB073D9660D615818899_1956961922; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1956961922 = varB4EAC82CA7396A68D541C85D26508E83_1345753917;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1956961922 = varB4EAC82CA7396A68D541C85D26508E83_2030868462;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1956961922 = varB4EAC82CA7396A68D541C85D26508E83_567616071;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1956961922.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1956961922;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.734 -0400", hash_original_method = "06C43D579C0D6CACEEC14574641391C0", hash_generated_method = "3502CB366BA207D0D3E666DBB09CE713")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.939 -0400", hash_original_method = "06C43D579C0D6CACEEC14574641391C0", hash_generated_method = "A41D9BA7CE06A14EC269EC90D2EFFB85")
      TrustManager[] getTrustManagers() throws GeneralSecurityException, IOException {
+        TrustManager[] varB4EAC82CA7396A68D541C85D26508E83_2030253883 = null; //Variable for return #1
+        TrustManager[] varB4EAC82CA7396A68D541C85D26508E83_1247309958 = null; //Variable for return #2
+        TrustManager[] varB4EAC82CA7396A68D541C85D26508E83_744267324 = null; //Variable for return #3
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_2030253883 = TRUST_MANAGERS;
+        } //End block
         String keystore;
         keystore = System.getProperty("javax.net.ssl.trustStore");
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1247309958 = null;
+        } //End block
         String keystorepwd;
         keystorepwd = System.getProperty("javax.net.ssl.trustStorePassword");
         char[] pwd;
@@ -105,27 +134,44 @@ public final class DefaultSSLContextImpl extends OpenSSLContextImpl {
         tmf = TrustManagerFactory.getInstance(tmfAlg);
         tmf.init(ks);
         TRUST_MANAGERS = tmf.getTrustManagers();
-        return (TrustManager[])dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_744267324 = TRUST_MANAGERS;
+        TrustManager[] varA7E53CE21691AB073D9660D615818899_692785044; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_692785044 = varB4EAC82CA7396A68D541C85D26508E83_2030253883;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_692785044 = varB4EAC82CA7396A68D541C85D26508E83_1247309958;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_692785044 = varB4EAC82CA7396A68D541C85D26508E83_744267324;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_692785044.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_692785044;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.734 -0400", hash_original_method = "C6A638FBF6A76AC1A136D02168ED58AC", hash_generated_method = "DA70F2F2552D1C15C11A07952116DB17")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.944 -0400", hash_original_method = "C6A638FBF6A76AC1A136D02168ED58AC", hash_generated_method = "6216B43478FB7C8C14B606D25980A7A2")
     @Override
     public void engineInit(KeyManager[] kms, TrustManager[] tms,
             SecureRandom sr) throws KeyManagementException {
-        dsTaint.addTaint(kms[0].dsTaint);
-        dsTaint.addTaint(tms[0].dsTaint);
-        dsTaint.addTaint(sr.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new KeyManagementException("Do not init() the default SSLContext ");
+        addTaint(kms[0].getTaint());
+        addTaint(tms[0].getTaint());
+        addTaint(sr.getTaint());
         // ---------- Original Method ----------
         //throw new KeyManagementException("Do not init() the default SSLContext ");
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.944 -0400", hash_original_field = "6406B1A35F8CB91653CE99D70BDA8752", hash_generated_field = "566D6B41A10785704C5DA62CA709142C")
+
     private static KeyManager[] KEY_MANAGERS;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.944 -0400", hash_original_field = "C393FECAAE49BABEA370F02A9C12D866", hash_generated_field = "1EC7739BDEC2CA831D3D4FE81BA648C0")
+
     private static TrustManager[] TRUST_MANAGERS;
 }
 

@@ -11,31 +11,37 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class NetworkState implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.592 -0400", hash_original_field = "BC303683CCB67AB9CAD099FFC4A3091E", hash_generated_field = "97BC2F6998D1E4D0DED95BC177B82BD4")
+
     public NetworkInfo networkInfo;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.592 -0400", hash_original_field = "DC6DF7A05A86671C3549B5A63A5A6670", hash_generated_field = "CBFC770A2970049F6731C897B915E6C6")
+
     public LinkProperties linkProperties;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.592 -0400", hash_original_field = "CA6977523CA7B34CC7E419D7BC74C6B9", hash_generated_field = "709DF8FAD9D2C0999D23D1CB1083A57F")
+
     public LinkCapabilities linkCapabilities;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.592 -0400", hash_original_field = "D604F8CA3706BFE3334B0404EA7E69AF", hash_generated_field = "F09B47F115240A14430924B2A0765832")
+
     public String subscriberId;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.131 -0400", hash_original_method = "D6391A7872D312C012506A6DA31DB5D3", hash_generated_method = "140689251D1622CB0B6921F0067C690A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public NetworkState(NetworkInfo networkInfo, LinkProperties linkProperties,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.593 -0400", hash_original_method = "D6391A7872D312C012506A6DA31DB5D3", hash_generated_method = "AE0700FDA41D8FD3ABD033B65289CDD9")
+    public  NetworkState(NetworkInfo networkInfo, LinkProperties linkProperties,
             LinkCapabilities linkCapabilities) {
         this(networkInfo, linkProperties, linkCapabilities, null);
-        dsTaint.addTaint(linkCapabilities.dsTaint);
-        dsTaint.addTaint(linkProperties.dsTaint);
-        dsTaint.addTaint(networkInfo.dsTaint);
+        addTaint(networkInfo.getTaint());
+        addTaint(linkProperties.getTaint());
+        addTaint(linkCapabilities.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.131 -0400", hash_original_method = "9B5E574B8F0C49F1D3E90E7F9E978574", hash_generated_method = "805840C3BAB51A00AEC78FF31A93883D")
-    @DSModeled(DSC.SAFE)
-    public NetworkState(NetworkInfo networkInfo, LinkProperties linkProperties,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.617 -0400", hash_original_method = "9B5E574B8F0C49F1D3E90E7F9E978574", hash_generated_method = "67457763AE93E14049403E64D5960DBD")
+    public  NetworkState(NetworkInfo networkInfo, LinkProperties linkProperties,
             LinkCapabilities linkCapabilities, String subscriberId) {
-        dsTaint.addTaint(linkCapabilities.dsTaint);
-        dsTaint.addTaint(subscriberId);
-        dsTaint.addTaint(linkProperties.dsTaint);
-        dsTaint.addTaint(networkInfo.dsTaint);
+        this.networkInfo = networkInfo;
+        this.linkProperties = linkProperties;
+        this.linkCapabilities = linkCapabilities;
+        this.subscriberId = subscriberId;
         // ---------- Original Method ----------
         //this.networkInfo = networkInfo;
         //this.linkProperties = linkProperties;
@@ -44,10 +50,8 @@ public class NetworkState implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.132 -0400", hash_original_method = "A56CA9045340CA1A085D30A3C9DD57C6", hash_generated_method = "65AE92E0F0D02C4A1A802A4101B1F1DB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public NetworkState(Parcel in) {
-        dsTaint.addTaint(in.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.618 -0400", hash_original_method = "A56CA9045340CA1A085D30A3C9DD57C6", hash_generated_method = "EB8EA19A14538AF6862AF07AB6EA3AA9")
+    public  NetworkState(Parcel in) {
         networkInfo = in.readParcelable(null);
         linkProperties = in.readParcelable(null);
         linkCapabilities = in.readParcelable(null);
@@ -60,24 +64,23 @@ public class NetworkState implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.132 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.618 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "55AC45D443151D4337ABC2B84DA4DF81")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_73615356 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_73615356;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.132 -0400", hash_original_method = "EF66345FC72BF78BF99044E19149D234", hash_generated_method = "C50AEDB5288E1D5339F556FEC254BB5C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.620 -0400", hash_original_method = "EF66345FC72BF78BF99044E19149D234", hash_generated_method = "AF073625C65FBB2B40B40897ECFEF834")
     public void writeToParcel(Parcel out, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(out.dsTaint);
         out.writeParcelable(networkInfo, flags);
         out.writeParcelable(linkProperties, flags);
         out.writeParcelable(linkCapabilities, flags);
         out.writeString(subscriberId);
+        addTaint(out.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //out.writeParcelable(networkInfo, flags);
         //out.writeParcelable(linkProperties, flags);
@@ -86,29 +89,16 @@ public class NetworkState implements Parcelable {
     }
 
     
-    public static final Creator<NetworkState> CREATOR = new Creator<NetworkState>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.133 -0400", hash_original_method = "15EBC0DC5CBC737927737366BF6F583B", hash_generated_method = "10D288812541070EF1286AE9EE503C64")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.620 -0400", hash_original_field = "639231E2CF24AC818C14B1454EE59F27", hash_generated_field = "8B25ACE201431313251FD6C8326EA110")
+
+    public static final Creator<NetworkState> CREATOR = new Creator<NetworkState>() {
         public NetworkState createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            NetworkState var3442A7EB079CD9CA79BE38A87F68F5CB_2141387257 = (new NetworkState(in));
-            return (NetworkState)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new NetworkState(in);
+            return new NetworkState(in);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.133 -0400", hash_original_method = "04BD08A70BEFD05228EA4DFDCF34FD97", hash_generated_method = "F2BF380C1FCD61B1D1BD55AD50A10806")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public NetworkState[] newArray(int size) {
-            dsTaint.addTaint(size);
-            NetworkState[] varFD45664D01708C50AB3515C7D3219B9A_253683446 = (new NetworkState[size]);
-            return (NetworkState[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new NetworkState[size];
+            return new NetworkState[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

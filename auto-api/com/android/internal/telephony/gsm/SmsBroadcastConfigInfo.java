@@ -9,21 +9,30 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public final class SmsBroadcastConfigInfo {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.637 -0400", hash_original_field = "6CB791FB42180E76757B8CE655EA63BC", hash_generated_field = "333B1EBCCD576A11F3929B04C911A0CC")
+
     private int fromServiceId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.638 -0400", hash_original_field = "78C07AB482FAE915C24343F7756E27DF", hash_generated_field = "21D520383BDB72483F46B478E9E8442E")
+
     private int toServiceId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.638 -0400", hash_original_field = "45B1CAD460DB900C18FFF089139DC888", hash_generated_field = "1C45CBAE9BFCDDAE4B54CFFD731AE53A")
+
     private int fromCodeScheme;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.638 -0400", hash_original_field = "E65C94DD69C903E23E4B04500887A5B3", hash_generated_field = "6C4271AD3AC2111E09C7BAF5CEECEDA7")
+
     private int toCodeScheme;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.638 -0400", hash_original_field = "EF7DE3F485174FF47F061AD27D83D0EE", hash_generated_field = "63F1085A29CC1E5353801D8BBF9C9BF5")
+
     private boolean selected;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.877 -0400", hash_original_method = "9D05E73016D00F2A428351060541CD33", hash_generated_method = "344131F5086BA3D89B0C1C4294261E14")
-    @DSModeled(DSC.SAFE)
-    public SmsBroadcastConfigInfo(int fromId, int toId, int fromScheme,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.638 -0400", hash_original_method = "9D05E73016D00F2A428351060541CD33", hash_generated_method = "24427794CEEB7051C06B777AC42D0B80")
+    public  SmsBroadcastConfigInfo(int fromId, int toId, int fromScheme,
             int toScheme, boolean selected) {
-        dsTaint.addTaint(toScheme);
-        dsTaint.addTaint(fromId);
-        dsTaint.addTaint(selected);
-        dsTaint.addTaint(fromScheme);
-        dsTaint.addTaint(toId);
+        fromServiceId = fromId;
+        toServiceId = toId;
+        fromCodeScheme = fromScheme;
+        toCodeScheme = toScheme;
+        this.selected = selected;
         // ---------- Original Method ----------
         //fromServiceId = fromId;
         //toServiceId = toId;
@@ -33,101 +42,101 @@ public final class SmsBroadcastConfigInfo {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.877 -0400", hash_original_method = "EC03A9EAB74ED9CD08C5E767148A9E3D", hash_generated_method = "6DE74DDB4E4F6A86D006CED620A8758A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.639 -0400", hash_original_method = "EC03A9EAB74ED9CD08C5E767148A9E3D", hash_generated_method = "496707E01480A77738DBF7D33FB881B0")
     public void setFromServiceId(int fromServiceId) {
-        dsTaint.addTaint(fromServiceId);
+        this.fromServiceId = fromServiceId;
         // ---------- Original Method ----------
         //this.fromServiceId = fromServiceId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.877 -0400", hash_original_method = "000CFE123E4AC86430B83F6EA13C644C", hash_generated_method = "FE041CA5A598C2AD74BCCA0598DD5E53")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.644 -0400", hash_original_method = "000CFE123E4AC86430B83F6EA13C644C", hash_generated_method = "E23D8C4A97E7866B34571E774634793C")
     public int getFromServiceId() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_859596099 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_859596099;
         // ---------- Original Method ----------
         //return fromServiceId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.877 -0400", hash_original_method = "C662FD0745B0F3A8663C07D8F01AF54F", hash_generated_method = "8B16F741F32FC08E4834B26B59654527")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.644 -0400", hash_original_method = "C662FD0745B0F3A8663C07D8F01AF54F", hash_generated_method = "9127DC336ABDEEC77E06814D5ECDD0CD")
     public void setToServiceId(int toServiceId) {
-        dsTaint.addTaint(toServiceId);
+        this.toServiceId = toServiceId;
         // ---------- Original Method ----------
         //this.toServiceId = toServiceId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.878 -0400", hash_original_method = "708E088605DA57A3DA16BEEB2BE47BA2", hash_generated_method = "276E8B6F4D2316310C7F9391C8927B30")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.645 -0400", hash_original_method = "708E088605DA57A3DA16BEEB2BE47BA2", hash_generated_method = "2294EA7D09F2FD1EAA9592BEF9BFAA6F")
     public int getToServiceId() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_935039349 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_935039349;
         // ---------- Original Method ----------
         //return toServiceId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.878 -0400", hash_original_method = "0A2734671D04AE4B45C1C1B3377422E5", hash_generated_method = "69309329DAD1B16B601A946F420A883D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.645 -0400", hash_original_method = "0A2734671D04AE4B45C1C1B3377422E5", hash_generated_method = "CC8CD577D428ADAA8EA094CC4841F1E7")
     public void setFromCodeScheme(int fromCodeScheme) {
-        dsTaint.addTaint(fromCodeScheme);
+        this.fromCodeScheme = fromCodeScheme;
         // ---------- Original Method ----------
         //this.fromCodeScheme = fromCodeScheme;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.878 -0400", hash_original_method = "7AEC5FB7E81910AF5A7A8C716EA8E7A5", hash_generated_method = "3F059ED5CB095FBC7BD560A5CCEEC3C0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.645 -0400", hash_original_method = "7AEC5FB7E81910AF5A7A8C716EA8E7A5", hash_generated_method = "980A0DFC482ED96F5C7BF44B9BFF75E4")
     public int getFromCodeScheme() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1619486363 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1619486363;
         // ---------- Original Method ----------
         //return fromCodeScheme;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.878 -0400", hash_original_method = "33ACE8C1E6B66F0AD44209B7329819FD", hash_generated_method = "F0CEB364DA47670859C615B2C21466D9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.649 -0400", hash_original_method = "33ACE8C1E6B66F0AD44209B7329819FD", hash_generated_method = "E3018D7A149FE0867ABD4D0307C6F9A0")
     public void setToCodeScheme(int toCodeScheme) {
-        dsTaint.addTaint(toCodeScheme);
+        this.toCodeScheme = toCodeScheme;
         // ---------- Original Method ----------
         //this.toCodeScheme = toCodeScheme;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.878 -0400", hash_original_method = "70F3C47437BA22E7BE36EFF6F1AA8F5B", hash_generated_method = "3F10CD0DA22523ABE86CF8640258BADE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.649 -0400", hash_original_method = "70F3C47437BA22E7BE36EFF6F1AA8F5B", hash_generated_method = "19D8CF0783EB35C0BBC0E5D31C7D3CF4")
     public int getToCodeScheme() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_375515477 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_375515477;
         // ---------- Original Method ----------
         //return toCodeScheme;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.879 -0400", hash_original_method = "F22B16E73947604A26216421AD1B5C38", hash_generated_method = "C5325F5A7A3D01BBA9CA6A9A974CC803")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.650 -0400", hash_original_method = "F22B16E73947604A26216421AD1B5C38", hash_generated_method = "6A3776683D035BBD3F20B198F2F711A3")
     public void setSelected(boolean selected) {
-        dsTaint.addTaint(selected);
+        this.selected = selected;
         // ---------- Original Method ----------
         //this.selected = selected;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.879 -0400", hash_original_method = "4072656BD90ABB561422ECCC238321A3", hash_generated_method = "3E58E7BD73E39A5825B9AB0347B0BAD8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.662 -0400", hash_original_method = "4072656BD90ABB561422ECCC238321A3", hash_generated_method = "C50CC115921F7D991CCC89F1A265C7BD")
     public boolean isSelected() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_693315793 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_693315793;
         // ---------- Original Method ----------
         //return selected;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.879 -0400", hash_original_method = "7023ED8B006DA79CC4837559B31EDFCC", hash_generated_method = "8D11C8C12E68C3F3E797385E07E848CF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.663 -0400", hash_original_method = "7023ED8B006DA79CC4837559B31EDFCC", hash_generated_method = "A590E53B61C2E37BE37F6C8AFE2CF46F")
     @Override
     public String toString() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1344306214 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1344306214 = "SmsBroadcastConfigInfo: Id [" +
+                fromServiceId + ',' + toServiceId + "] Code [" +
+                fromCodeScheme + ',' + toCodeScheme + "] " +
+            (selected ? "ENABLED" : "DISABLED");
+        varB4EAC82CA7396A68D541C85D26508E83_1344306214.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1344306214;
         // ---------- Original Method ----------
         //return "SmsBroadcastConfigInfo: Id [" +
                 //fromServiceId + ',' + toServiceId + "] Code [" +

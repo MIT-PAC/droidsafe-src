@@ -14,27 +14,25 @@ import java.text.ParseException;
 
 public class AcceptLanguageParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.209 -0400", hash_original_method = "4ECD6586A5A6ED08B6159E7C6D7079C1", hash_generated_method = "55E06D8E4782750E09EE1FFBAF916AD8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AcceptLanguageParser(String acceptLanguage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.101 -0400", hash_original_method = "4ECD6586A5A6ED08B6159E7C6D7079C1", hash_generated_method = "68B941454870B09E18FF5563FC674CF8")
+    public  AcceptLanguageParser(String acceptLanguage) {
         super(acceptLanguage);
-        dsTaint.addTaint(acceptLanguage);
+        addTaint(acceptLanguage.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.209 -0400", hash_original_method = "8738AF37C5C1AC35B7D6DAA26504D715", hash_generated_method = "A54127C7C264051A072088B7CD40D578")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected AcceptLanguageParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.101 -0400", hash_original_method = "8738AF37C5C1AC35B7D6DAA26504D715", hash_generated_method = "44799DF67856C143D12EE029A648B896")
+    protected  AcceptLanguageParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.210 -0400", hash_original_method = "FB0497E5D9550DB51E743204446EFE6C", hash_generated_method = "5891819F5C99C52CE0A679FF62F19662")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.116 -0400", hash_original_method = "FB0497E5D9550DB51E743204446EFE6C", hash_generated_method = "B7B2201100521D38BFB7C3A308B485CA")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1245377566 = null; //Variable for return #1
         AcceptLanguageList acceptLanguageList;
         acceptLanguageList = new AcceptLanguageList();
         dbg_enter("AcceptLanguageParser.parse");
@@ -42,13 +40,13 @@ public class AcceptLanguageParser extends HeaderParser {
         {
             headerName(TokenTypes.ACCEPT_LANGUAGE);
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_1674521456 = (lexer.lookAhead(0) != '\n');
+                boolean varA38820C66B6BCE71087D920E2767FF09_2020904793 = (lexer.lookAhead(0) != '\n');
                 {
                     AcceptLanguage acceptLanguage;
                     acceptLanguage = new AcceptLanguage();
                     acceptLanguage.setHeaderName(SIPHeaderNames.ACCEPT_LANGUAGE);
                     {
-                        boolean varF3558FE0373DEEFA605FB4C8BD89099A_1878419223 = (lexer.lookAhead(0) != ';');
+                        boolean varF3558FE0373DEEFA605FB4C8BD89099A_724694524 = (lexer.lookAhead(0) != ';');
                         {
                             lexer.match(TokenTypes.ID);
                             Token value;
@@ -57,7 +55,7 @@ public class AcceptLanguageParser extends HeaderParser {
                         } //End block
                     } //End collapsed parenthetic
                     {
-                        boolean varE30E2126F5FFE39A0C5A94E8EAEAED66_694257688 = (lexer.lookAhead(0) == ';');
+                        boolean varE30E2126F5FFE39A0C5A94E8EAEAED66_50894359 = (lexer.lookAhead(0) == ';');
                         {
                             this.lexer.match(';');
                             this.lexer.SPorHT();
@@ -87,7 +85,7 @@ public class AcceptLanguageParser extends HeaderParser {
                     } //End collapsed parenthetic
                     acceptLanguageList.add(acceptLanguage);
                     {
-                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_1387092179 = (lexer.lookAhead(0) == ',');
+                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_1191616398 = (lexer.lookAhead(0) == ',');
                         {
                             this.lexer.match(',');
                             this.lexer.SPorHT();
@@ -101,7 +99,9 @@ public class AcceptLanguageParser extends HeaderParser {
         {
             dbg_leave("AcceptLanguageParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1245377566 = acceptLanguageList;
+        varB4EAC82CA7396A68D541C85D26508E83_1245377566.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1245377566;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

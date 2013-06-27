@@ -15,14 +15,16 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public abstract class ASN1Choice extends ASN1Type {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.151 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "24AC453E9AFABA0FC5B4FCBCBDACD1C1")
+
     public ASN1Type[] type;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.152 -0400", hash_original_field = "7C26F6AE97679422063D8D33A8623C57", hash_generated_field = "1F2CA11DFA4827FAB5EEB375959000C9")
+
     private int[][] identifiers;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.932 -0400", hash_original_method = "C70F669111768591EE425211051DE956", hash_generated_method = "9442930A5124A6B8BD5A6588664E583B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ASN1Choice(ASN1Type[] type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.154 -0400", hash_original_method = "C70F669111768591EE425211051DE956", hash_generated_method = "7735218BCBC93834AAE4B7645759D8AD")
+    public  ASN1Choice(ASN1Type[] type) {
         super(TAG_CHOICE);
-        dsTaint.addTaint(type[0].dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("ASN.1 choice type MUST have at least one alternative: " + getClass().getName());
         } //End block
@@ -49,13 +51,13 @@ public abstract class ASN1Choice extends ASN1Type {
                     } //End collapsed parenthetic
                 } //End block
                 {
-                    boolean varA8AA83764D0DD0DE889731A129D16D4D_1446467749 = (t.checkTag(t.id));
+                    boolean varA8AA83764D0DD0DE889731A129D16D4D_1822034957 = (t.checkTag(t.id));
                     {
                         addIdentifier(map, t.id, index);
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var279EE3948D10B7047F50E4CB941EA1D7_1305645889 = (t.checkTag(t.constrId));
+                    boolean var279EE3948D10B7047F50E4CB941EA1D7_1155503074 = (t.checkTag(t.constrId));
                     {
                         addIdentifier(map, t.constrId, index);
                     } //End block
@@ -79,24 +81,24 @@ public abstract class ASN1Choice extends ASN1Type {
                 identifiers[1][i] = entry.getValue().intValue();
             } //End block
         } //End collapsed parenthetic
+        this.type = type;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.932 -0400", hash_original_method = "781B2DE1C4956E14672C3431AF37B058", hash_generated_method = "59DA9551C7519F52B7B376BE73DBB6EA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.155 -0400", hash_original_method = "781B2DE1C4956E14672C3431AF37B058", hash_generated_method = "2C96378B85EE9A7A0832A9E7107248F4")
     private void addIdentifier(TreeMap<BigInteger, BigInteger> map, int identifier, int index) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(map.dsTaint);
-        dsTaint.addTaint(identifier);
         {
-            boolean var4778BC0ECAC2BF6471BF7B45A50CC4D3_1026576089 = (map.put(BigInteger.valueOf(identifier), BigInteger.valueOf(index)) != null);
+            boolean var4778BC0ECAC2BF6471BF7B45A50CC4D3_17160859 = (map.put(BigInteger.valueOf(identifier), BigInteger.valueOf(index)) != null);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("ASN.1 choice type MUST have alternatives "
                     + "with distinct tags: " + getClass().getName());
             } //End block
         } //End collapsed parenthetic
+        addTaint(map.getTaint());
+        addTaint(identifier);
+        addTaint(index);
         // ---------- Original Method ----------
         //if (map.put(BigInteger.valueOf(identifier), BigInteger.valueOf(index)) != null) {
             //throw new IllegalArgumentException("ASN.1 choice type MUST have alternatives "
@@ -105,21 +107,21 @@ public abstract class ASN1Choice extends ASN1Type {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.932 -0400", hash_original_method = "0D992D1A6B83EB18D65339F632B428D0", hash_generated_method = "B1B1CF02097D8F528149BF1C7BC99998")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.156 -0400", hash_original_method = "0D992D1A6B83EB18D65339F632B428D0", hash_generated_method = "B046581742713F83C45410DE9351BB37")
     public final boolean checkTag(int identifier) {
-        dsTaint.addTaint(identifier);
-        boolean var5EADA63A699424FBB2903D9673FA2514_2001352160 = (Arrays.binarySearch(identifiers[0], identifier) >= 0);
-        return dsTaint.getTaintBoolean();
+        boolean var5EADA63A699424FBB2903D9673FA2514_913842742 = (Arrays.binarySearch(identifiers[0], identifier) >= 0);
+        addTaint(identifier);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_42570564 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_42570564;
         // ---------- Original Method ----------
         //return Arrays.binarySearch(identifiers[0], identifier) >= 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.933 -0400", hash_original_method = "CA43C2DB32698BB605AF1C7E4ECA1770", hash_generated_method = "4DF36EC7A1DB16D9FCE2F9B1A345F644")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.159 -0400", hash_original_method = "CA43C2DB32698BB605AF1C7E4ECA1770", hash_generated_method = "243A64C8C770596B9512671E1D391783")
     public Object decode(BerInputStream in) throws IOException {
-        dsTaint.addTaint(in.dsTaint);
+        Object varB4EAC82CA7396A68D541C85D26508E83_1001684375 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_440828814 = null; //Variable for return #2
         int index;
         index = Arrays.binarySearch(identifiers[0], in.tag);
         {
@@ -128,8 +130,22 @@ public abstract class ASN1Choice extends ASN1Type {
         index = identifiers[1][index];
         in.content = type[index].decode(in);
         in.choiceIndex = index;
-        Object var883E4A51D9FE1FCA5622395E00C94DE9_414259159 = (getDecodedObject(in));
-        return (Object)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1001684375 = null;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_440828814 = getDecodedObject(in);
+        addTaint(in.getTaint());
+        Object varA7E53CE21691AB073D9660D615818899_1455582448; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1455582448 = varB4EAC82CA7396A68D541C85D26508E83_1001684375;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1455582448 = varB4EAC82CA7396A68D541C85D26508E83_440828814;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1455582448.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1455582448;
         // ---------- Original Method ----------
         //int index = Arrays.binarySearch(identifiers[0], in.tag);
         //if (index < 0) {
@@ -145,21 +161,19 @@ public abstract class ASN1Choice extends ASN1Type {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.933 -0400", hash_original_method = "C4E40B33E0FA7E203CD41695E7BB47C7", hash_generated_method = "E3435BA3A634E76D6454DF010E930665")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.160 -0400", hash_original_method = "C4E40B33E0FA7E203CD41695E7BB47C7", hash_generated_method = "4A256913D26E38A82CFC8964258335BD")
     public void encodeASN(BerOutputStream out) {
-        dsTaint.addTaint(out.dsTaint);
         encodeContent(out);
+        addTaint(out.getTaint());
         // ---------- Original Method ----------
         //encodeContent(out);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.933 -0400", hash_original_method = "2AF14DF9816B381764BA8B204B1F7CEE", hash_generated_method = "9F6E32BC97F4055674E83BAAA44D1574")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.160 -0400", hash_original_method = "2AF14DF9816B381764BA8B204B1F7CEE", hash_generated_method = "68823089CA394368911C87A5311A68D1")
     public final void encodeContent(BerOutputStream out) {
-        dsTaint.addTaint(out.dsTaint);
         out.encodeChoice(this);
+        addTaint(out.getTaint());
         // ---------- Original Method ----------
         //out.encodeChoice(this);
     }
@@ -171,11 +185,10 @@ public abstract class ASN1Choice extends ASN1Type {
     public abstract Object getObjectToEncode(Object object);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.934 -0400", hash_original_method = "C699EF204D8C8BCCF80A813C218D94FB", hash_generated_method = "61B0A8BC35557C1A49706F8E171C21DA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.161 -0400", hash_original_method = "C699EF204D8C8BCCF80A813C218D94FB", hash_generated_method = "6259E34FABBB4F0352FB23495EA31458")
     public final void setEncodingContent(BerOutputStream out) {
-        dsTaint.addTaint(out.dsTaint);
         out.getChoiceLength(this);
+        addTaint(out.getTaint());
         // ---------- Original Method ----------
         //out.getChoiceLength(this);
     }

@@ -14,27 +14,25 @@ import javax.sip.*;
 
 public class WarningParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.717 -0400", hash_original_method = "38623B910ABA654EC8C258B1F2DD35A3", hash_generated_method = "76D294F09BA1D56A411070AB0333F4A6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public WarningParser(String warning) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.506 -0400", hash_original_method = "38623B910ABA654EC8C258B1F2DD35A3", hash_generated_method = "7571F0DA3DE7DAA09495023E92213CDE")
+    public  WarningParser(String warning) {
         super(warning);
-        dsTaint.addTaint(warning);
+        addTaint(warning.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.717 -0400", hash_original_method = "AB9AC91F8631F4AA3239C3547D18BC09", hash_generated_method = "A7E4A78735516B10273841AC6C28FC88")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected WarningParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.508 -0400", hash_original_method = "AB9AC91F8631F4AA3239C3547D18BC09", hash_generated_method = "558DDFFCB57EFAB6AF04A2FE9DBB1F70")
+    protected  WarningParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.718 -0400", hash_original_method = "5665BE3F4ECC43E3239D3F1D8B9B76A3", hash_generated_method = "DC366F8D8F2CB7F41098DBD270D98FCE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.517 -0400", hash_original_method = "5665BE3F4ECC43E3239D3F1D8B9B76A3", hash_generated_method = "C751CAAC65883C71FD460A23B3200F94")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_290237283 = null; //Variable for return #1
         WarningList warningList;
         warningList = new WarningList();
         dbg_enter("WarningParser.parse");
@@ -42,7 +40,7 @@ public class WarningParser extends HeaderParser {
         {
             headerName(TokenTypes.WARNING);
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_2029168882 = (lexer.lookAhead(0) != '\n');
+                boolean varA38820C66B6BCE71087D920E2767FF09_859400109 = (lexer.lookAhead(0) != '\n');
                 {
                     Warning warning;
                     warning = new Warning();
@@ -68,7 +66,7 @@ public class WarningParser extends HeaderParser {
                     this.lexer.match(TokenTypes.ID);
                     token = lexer.getNextToken();
                     {
-                        boolean var14C8D39E8F94EF2F19C70A9DFC6A715B_2077673178 = (lexer.lookAhead(0) == ':');
+                        boolean var14C8D39E8F94EF2F19C70A9DFC6A715B_1705245437 = (lexer.lookAhead(0) == ':');
                         {
                             this.lexer.match(':');
                             this.lexer.match(TokenTypes.ID);
@@ -88,7 +86,7 @@ public class WarningParser extends HeaderParser {
                     this.lexer.SPorHT();
                     warningList.add(warning);
                     {
-                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_153640125 = (lexer.lookAhead(0) == ',');
+                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_243789405 = (lexer.lookAhead(0) == ',');
                         {
                             this.lexer.match(',');
                             this.lexer.SPorHT();
@@ -114,7 +112,7 @@ public class WarningParser extends HeaderParser {
                             this.lexer.match(TokenTypes.ID);
                             tok = lexer.getNextToken();
                             {
-                                boolean varB1CE638DDED33E6167E387BE765A9361_992450739 = (lexer.lookAhead(0) == ':');
+                                boolean varB1CE638DDED33E6167E387BE765A9361_757016951 = (lexer.lookAhead(0) == ':');
                                 {
                                     this.lexer.match(':');
                                     this.lexer.match(TokenTypes.ID);
@@ -141,7 +139,9 @@ public class WarningParser extends HeaderParser {
         {
             dbg_leave("WarningParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_290237283 = warningList;
+        varB4EAC82CA7396A68D541C85D26508E83_290237283.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_290237283;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

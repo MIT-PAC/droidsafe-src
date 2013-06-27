@@ -28,9 +28,8 @@ import javax.net.ssl.X509TrustManager;
 
 class CertificateChainValidator {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.713 -0400", hash_original_method = "2F959D748394792DE55923600092C8E9", hash_generated_method = "249781E5FCB4B7182831503E258AE636")
-    @DSModeled(DSC.SAFE)
-    private CertificateChainValidator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.816 -0400", hash_original_method = "2F959D748394792DE55923600092C8E9", hash_generated_method = "249781E5FCB4B7182831503E258AE636")
+    private  CertificateChainValidator() {
         // ---------- Original Method ----------
     }
 
@@ -40,17 +39,14 @@ class CertificateChainValidator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.714 -0400", hash_original_method = "5B87AA85F76367E84F6A87186CEADEE5", hash_generated_method = "26ED0369C0294CFE6F0D01074B4E24F5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.838 -0400", hash_original_method = "5B87AA85F76367E84F6A87186CEADEE5", hash_generated_method = "4B01A721AB43D2437C87A7E8D09104BD")
     public SslError doHandshakeAndValidateServerCertificates(
             HttpsConnection connection, SSLSocket sslSocket, String domain) throws IOException {
-        dsTaint.addTaint(connection.dsTaint);
-        dsTaint.addTaint(domain);
-        dsTaint.addTaint(sslSocket.dsTaint);
+        SslError varB4EAC82CA7396A68D541C85D26508E83_487650217 = null; //Variable for return #1
         SSLSession sslSession;
         sslSession = sslSocket.getSession();
         {
-            boolean var93330143B7CECBEE557BABA2F99073AF_422492033 = (!sslSession.isValid());
+            boolean var93330143B7CECBEE557BABA2F99073AF_11637667 = (!sslSession.isValid());
             {
                 closeSocketThrowException(sslSocket, "failed to perform SSL handshake");
             } //End block
@@ -69,8 +65,12 @@ class CertificateChainValidator {
                 } //End block
             } //End block
         } //End block
-        SslError var15C93933903158A68B2AE388763BEA10_1010416061 = (verifyServerDomainAndCertificates((X509Certificate[]) peerCertificates, domain, "RSA"));
-        return (SslError)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_487650217 = verifyServerDomainAndCertificates((X509Certificate[]) peerCertificates, domain, "RSA");
+        addTaint(connection.getTaint());
+        addTaint(sslSocket.getTaint());
+        addTaint(domain.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_487650217.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_487650217;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -114,27 +114,23 @@ class CertificateChainValidator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.714 -0400", hash_original_method = "768C411890F29309D1F137AF28998331", hash_generated_method = "CB3F114E3B373A365E0BC59D7BA45FF2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.839 -0400", hash_original_method = "768C411890F29309D1F137AF28998331", hash_generated_method = "6DEC096A30D6F80CF1BE104116298E50")
     private void closeSocketThrowException(
             SSLSocket socket, String errorMessage, String defaultErrorMessage) throws IOException {
-        dsTaint.addTaint(errorMessage);
-        dsTaint.addTaint(socket.dsTaint);
-        dsTaint.addTaint(defaultErrorMessage);
         closeSocketThrowException(
             socket, errorMessage != null ? errorMessage : defaultErrorMessage);
+        addTaint(socket.getTaint());
+        addTaint(errorMessage.getTaint());
+        addTaint(defaultErrorMessage.getTaint());
         // ---------- Original Method ----------
         //closeSocketThrowException(
             //socket, errorMessage != null ? errorMessage : defaultErrorMessage);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.715 -0400", hash_original_method = "8DFE74A9ABEF1F34DE8E6B965DB51B9B", hash_generated_method = "B13516296C13D6EE31EF76EC4E897278")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.840 -0400", hash_original_method = "8DFE74A9ABEF1F34DE8E6B965DB51B9B", hash_generated_method = "05AE6781C64EA0D84CD08CC9849BF78C")
     private void closeSocketThrowException(SSLSocket socket,
             String errorMessage) throws IOException {
-        dsTaint.addTaint(errorMessage);
-        dsTaint.addTaint(socket.dsTaint);
         {
             HttpLog.v("validation error: " + errorMessage);
         } //End block
@@ -147,6 +143,8 @@ class CertificateChainValidator {
             socket.close();
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new SSLHandshakeException(errorMessage);
+        addTaint(socket.getTaint());
+        addTaint(errorMessage.getTaint());
         // ---------- Original Method ----------
         //if (HttpLog.LOGV) {
             //HttpLog.v("validation error: " + errorMessage);
@@ -162,7 +160,8 @@ class CertificateChainValidator {
     }
 
     
-    private static final CertificateChainValidator sInstance
-            = new CertificateChainValidator();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.841 -0400", hash_original_field = "75E9E3354073877B40EBA5B806297F19", hash_generated_field = "4B8BDD7DAB8BC39946C710FF23835B77")
+
+    private static CertificateChainValidator sInstance = new CertificateChainValidator();
 }
 

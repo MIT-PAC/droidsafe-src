@@ -10,9 +10,8 @@ import java.util.Iterator;
 
 public final class NativeCollation {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.282 -0400", hash_original_method = "16B47962CFF99F85D0E598C53BC7328E", hash_generated_method = "FF71B9CC7F83E39BD5165BFFBBD0AADB")
-    @DSModeled(DSC.SAFE)
-    private NativeCollation() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.084 -0400", hash_original_method = "16B47962CFF99F85D0E598C53BC7328E", hash_generated_method = "FF71B9CC7F83E39BD5165BFFBBD0AADB")
+    private  NativeCollation() {
         // ---------- Original Method ----------
     }
 
@@ -37,13 +36,12 @@ public final class NativeCollation {
 
     
         public static String getRules(int address) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static byte[] getSortKey(int address, String source) {
-        byte[] retVal = {DSUtils.UNKNOWN_BYTE};
-        return retVal;
+        return {DSUtils.UNKNOWN_BYTE};
     }
 
     

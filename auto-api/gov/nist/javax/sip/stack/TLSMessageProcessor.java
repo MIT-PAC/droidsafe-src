@@ -20,23 +20,34 @@ import java.util.Hashtable;
 import java.util.Iterator;
 
 public class TLSMessageProcessor extends MessageProcessor {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.967 -0400", hash_original_field = "ABC7702D7C8D3D2EE6A5C679253AE9AF", hash_generated_field = "D720E7EA87A425C9C359604A7CD3BB49")
+
     protected int nConnections;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.968 -0400", hash_original_field = "39044C41F340C67BFA15E91CC6E98E7D", hash_generated_field = "CE50F8CB2D618D5E2ED1602B4F1188A5")
+
     private boolean isRunning;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.968 -0400", hash_original_field = "812366AFB87FEE30EB54A9F80708E917", hash_generated_field = "F9EEBC64CC7E0970F5BCA104E833B093")
+
     private Hashtable<String, TLSMessageChannel> tlsMessageChannels;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.968 -0400", hash_original_field = "317D37B0EDC7BD7CBD25D97F53A16CE5", hash_generated_field = "FB56C66DB0DF522F5632D1532BCC403B")
+
     private ServerSocket sock;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.968 -0400", hash_original_field = "565BA180312610DDE2BA2E2026D497C4", hash_generated_field = "1DC0791E679E20EB98C16DB302A56E6D")
+
     protected int useCount = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.968 -0400", hash_original_field = "45CCA41745ACD205A06850F50929AFA3", hash_generated_field = "93B52B6ED94104F7CA5FDE37F83993D5")
+
     private ArrayList<TLSMessageChannel> incomingTlsMessageChannels;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.180 -0400", hash_original_method = "625854FFB2FE295DE1DAD8EB11451B94", hash_generated_method = "4B2305C03CC3D69A720B6110E37BB896")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected TLSMessageProcessor(InetAddress ipAddress, SIPTransactionStack sipStack, int port) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.969 -0400", hash_original_method = "625854FFB2FE295DE1DAD8EB11451B94", hash_generated_method = "116A39962D2DD2C055FE04F7D393DB95")
+    protected  TLSMessageProcessor(InetAddress ipAddress, SIPTransactionStack sipStack, int port) {
         super(ipAddress, port, "tls",sipStack);
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(sipStack.dsTaint);
-        dsTaint.addTaint(ipAddress.dsTaint);
         this.sipStack = sipStack;
         this.tlsMessageChannels = new Hashtable<String, TLSMessageChannel>();
         this.incomingTlsMessageChannels = new ArrayList<TLSMessageChannel>();
+        addTaint(ipAddress.getTaint());
+        addTaint(sipStack.getTaint());
+        addTaint(port);
         // ---------- Original Method ----------
         //this.sipStack = sipStack;
         //this.tlsMessageChannels = new Hashtable<String, TLSMessageChannel>();
@@ -44,8 +55,7 @@ public class TLSMessageProcessor extends MessageProcessor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.181 -0400", hash_original_method = "B69BE838486F71F317B5A550A92CFA4E", hash_generated_method = "84D601FD7583D04CC0CC80DD806A40FD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.969 -0400", hash_original_method = "B69BE838486F71F317B5A550A92CFA4E", hash_generated_method = "84D601FD7583D04CC0CC80DD806A40FD")
     public void start() throws IOException {
         Thread thread;
         thread = new Thread(this);
@@ -81,8 +91,7 @@ public class TLSMessageProcessor extends MessageProcessor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.181 -0400", hash_original_method = "010F4DD19A92034627C31D97E026477A", hash_generated_method = "DC97E51ECF380A1160CCC6E0BF5CE035")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.971 -0400", hash_original_method = "010F4DD19A92034627C31D97E026477A", hash_generated_method = "4C77FBAFB49817E42038A0E5E10F8F35")
     public void run() {
         {
             try 
@@ -100,7 +109,7 @@ public class TLSMessageProcessor extends MessageProcessor {
                 Socket newsock;
                 newsock = sock.accept();
                 {
-                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_374195171 = (sipStack.isLoggingEnabled());
+                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1174806266 = (sipStack.isLoggingEnabled());
                     sipStack.getStackLogger().logDebug("Accepting new connection!");
                 } //End collapsed parenthetic
                 incomingTlsMessageChannels.add(new TLSMessageChannel(newsock, sipStack, this));
@@ -133,17 +142,18 @@ public class TLSMessageProcessor extends MessageProcessor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.181 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "0AAC993F2B0EE288482DFA16632D8269")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.984 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "BB5AA65FF3E0A7F5FB405693A3F8DC70")
     public SIPTransactionStack getSIPStack() {
-        return (SIPTransactionStack)dsTaint.getTaint();
+        SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_42304770 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_42304770 = sipStack;
+        varB4EAC82CA7396A68D541C85D26508E83_42304770.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_42304770;
         // ---------- Original Method ----------
         //return sipStack;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.182 -0400", hash_original_method = "BE95A6D6EF1264E8946D0F06241C6C5A", hash_generated_method = "A4A4A0E1ED07CE2E5613E09CDA29CD16")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.985 -0400", hash_original_method = "BE95A6D6EF1264E8946D0F06241C6C5A", hash_generated_method = "A2025B60F5EE19D154BDFF838ED5DBC9")
     public synchronized void stop() {
         isRunning = false;
         try 
@@ -159,7 +169,7 @@ public class TLSMessageProcessor extends MessageProcessor {
         {
             Iterator it;
             it = en.iterator();
-            boolean var03729FD53960D8DCA3A41A13A0229637_1807388209 = (it.hasNext());
+            boolean var03729FD53960D8DCA3A41A13A0229637_842703652 = (it.hasNext());
             {
                 TLSMessageChannel next;
                 next = (TLSMessageChannel) it.next();
@@ -169,7 +179,7 @@ public class TLSMessageProcessor extends MessageProcessor {
         {
             Iterator incomingMCIterator;
             incomingMCIterator = incomingTlsMessageChannels.iterator();
-            boolean var02145023CCC7750962C816C772AD4FC3_1079182013 = (incomingMCIterator
+            boolean var02145023CCC7750962C816C772AD4FC3_2126548514 = (incomingMCIterator
                 .hasNext());
             {
                 TLSMessageChannel next;
@@ -201,23 +211,22 @@ public class TLSMessageProcessor extends MessageProcessor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.182 -0400", hash_original_method = "49128F6B4DFB9F6CFFFDE7784E6898EB", hash_generated_method = "AAD21FA33ECC3A61301C119325E41513")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.986 -0400", hash_original_method = "49128F6B4DFB9F6CFFFDE7784E6898EB", hash_generated_method = "5E24E4561E3B657A668CEF53DAD0010F")
     protected synchronized void remove(TLSMessageChannel tlsMessageChannel) {
-        dsTaint.addTaint(tlsMessageChannel.dsTaint);
         String key;
         key = tlsMessageChannel.getKey();
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1837045018 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1674113802 = (sipStack.isLoggingEnabled());
             {
                 sipStack.getStackLogger().logDebug(Thread.currentThread() + " removing " + key);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var82717004E4624C3F5BD538E61F2FBB2A_441345464 = (tlsMessageChannels.get(key) == tlsMessageChannel);
+            boolean var82717004E4624C3F5BD538E61F2FBB2A_1081947912 = (tlsMessageChannels.get(key) == tlsMessageChannel);
             this.tlsMessageChannels.remove(key);
         } //End collapsed parenthetic
         incomingTlsMessageChannels.remove(tlsMessageChannel);
+        addTaint(tlsMessageChannel.getTaint());
         // ---------- Original Method ----------
         //String key = tlsMessageChannel.getKey();
         //if (sipStack.isLoggingEnabled()) {
@@ -229,16 +238,16 @@ public class TLSMessageProcessor extends MessageProcessor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.182 -0400", hash_original_method = "E2A4A9C2C749BC9ACAA11AC1B54DE26B", hash_generated_method = "F24C231FD2440DDB3AAA2F5710B85155")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.986 -0400", hash_original_method = "E2A4A9C2C749BC9ACAA11AC1B54DE26B", hash_generated_method = "DDB9CA7B530655E4BA94FC180475FC2C")
     public synchronized MessageChannel createMessageChannel(HostPort targetHostPort) throws IOException {
-        dsTaint.addTaint(targetHostPort.dsTaint);
+        MessageChannel varB4EAC82CA7396A68D541C85D26508E83_771119268 = null; //Variable for return #1
+        MessageChannel varB4EAC82CA7396A68D541C85D26508E83_952092405 = null; //Variable for return #2
         String key;
         key = MessageChannel.getKey(targetHostPort, "TLS");
         {
-            boolean var92C3CA59539D6814B760C707BBC045D0_43620573 = (tlsMessageChannels.get(key) != null);
+            boolean var92C3CA59539D6814B760C707BBC045D0_1418708715 = (tlsMessageChannels.get(key) != null);
             {
-                MessageChannel var91D1206496AA5DCCF310586B711FC473_277294961 = ((TLSMessageChannel) this.tlsMessageChannels.get(key));
+                varB4EAC82CA7396A68D541C85D26508E83_771119268 = (TLSMessageChannel) this.tlsMessageChannels.get(key);
             } //End block
             {
                 TLSMessageChannel retval;
@@ -247,15 +256,27 @@ public class TLSMessageProcessor extends MessageProcessor {
                 this.tlsMessageChannels.put(key, retval);
                 retval.isCached = true;
                 {
-                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_853576035 = (sipStack.isLoggingEnabled());
+                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1452467775 = (sipStack.isLoggingEnabled());
                     {
                         sipStack.getStackLogger().logDebug("key " + key);
                         sipStack.getStackLogger().logDebug("Creating " + retval);
                     } //End block
                 } //End collapsed parenthetic
+                varB4EAC82CA7396A68D541C85D26508E83_952092405 = retval;
             } //End block
         } //End collapsed parenthetic
-        return (MessageChannel)dsTaint.getTaint();
+        addTaint(targetHostPort.getTaint());
+        MessageChannel varA7E53CE21691AB073D9660D615818899_2139110549; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_2139110549 = varB4EAC82CA7396A68D541C85D26508E83_771119268;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_2139110549 = varB4EAC82CA7396A68D541C85D26508E83_952092405;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_2139110549.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2139110549;
         // ---------- Original Method ----------
         //String key = MessageChannel.getKey(targetHostPort, "TLS");
         //if (tlsMessageChannels.get(key) != null) {
@@ -274,26 +295,25 @@ public class TLSMessageProcessor extends MessageProcessor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.183 -0400", hash_original_method = "EAE2407B3CE4BB7D6FC77F5E6B72F7C1", hash_generated_method = "98B1C56F223B50A01375FF75229BA79D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.995 -0400", hash_original_method = "EAE2407B3CE4BB7D6FC77F5E6B72F7C1", hash_generated_method = "A0B3CC248BF55B2B52DD48451047EA7C")
     protected synchronized void cacheMessageChannel(TLSMessageChannel messageChannel) {
-        dsTaint.addTaint(messageChannel.dsTaint);
         String key;
         key = messageChannel.getKey();
         TLSMessageChannel currentChannel;
         currentChannel = (TLSMessageChannel) tlsMessageChannels.get(key);
         {
             {
-                boolean varCD7A6467843458627CC99D2CD95A9CA6_1837008362 = (sipStack.isLoggingEnabled());
+                boolean varCD7A6467843458627CC99D2CD95A9CA6_27887944 = (sipStack.isLoggingEnabled());
                 sipStack.getStackLogger().logDebug("Closing " + key);
             } //End collapsed parenthetic
             currentChannel.close();
         } //End block
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1898130251 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1866623204 = (sipStack.isLoggingEnabled());
             sipStack.getStackLogger().logDebug("Caching " + key);
         } //End collapsed parenthetic
         this.tlsMessageChannels.put(key, messageChannel);
+        addTaint(messageChannel.getTaint());
         // ---------- Original Method ----------
         //String key = messageChannel.getKey();
         //TLSMessageChannel currentChannel = (TLSMessageChannel) tlsMessageChannels.get(key);
@@ -308,19 +328,18 @@ public class TLSMessageProcessor extends MessageProcessor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.183 -0400", hash_original_method = "E42B1ACE44C65E212B4362CBBBBFF2DD", hash_generated_method = "8816A84472889AAB3AE0CA8A2FA94268")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.996 -0400", hash_original_method = "E42B1ACE44C65E212B4362CBBBBFF2DD", hash_generated_method = "BE93613F1A8F523A99F417F8430F00D2")
     public synchronized MessageChannel createMessageChannel(InetAddress host, int port) throws IOException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(host.dsTaint);
+        MessageChannel varB4EAC82CA7396A68D541C85D26508E83_997937695 = null; //Variable for return #1
+        MessageChannel varB4EAC82CA7396A68D541C85D26508E83_932553626 = null; //Variable for return #2
         try 
         {
             String key;
             key = MessageChannel.getKey(host, port, "TLS");
             {
-                boolean varF4CA62E1BC21A8BF70A1D16FD5BE5584_1264717830 = (tlsMessageChannels.get(key) != null);
+                boolean varF4CA62E1BC21A8BF70A1D16FD5BE5584_1433000957 = (tlsMessageChannels.get(key) != null);
                 {
-                    MessageChannel var5757C42E4EF78A73AB2DBB7A604F1767_1877683184 = ((TLSMessageChannel) this.tlsMessageChannels.get(key));
+                    varB4EAC82CA7396A68D541C85D26508E83_997937695 = (TLSMessageChannel) this.tlsMessageChannels.get(key);
                 } //End block
                 {
                     TLSMessageChannel retval;
@@ -328,12 +347,13 @@ public class TLSMessageProcessor extends MessageProcessor {
                     this.tlsMessageChannels.put(key, retval);
                     retval.isCached = true;
                     {
-                        boolean varDA2675C4DA71C7DD141330FDB85BC848_133917055 = (sipStack.isLoggingEnabled());
+                        boolean varDA2675C4DA71C7DD141330FDB85BC848_209086082 = (sipStack.isLoggingEnabled());
                         {
                             sipStack.getStackLogger().logDebug("key " + key);
                             sipStack.getStackLogger().logDebug("Creating " + retval);
                         } //End block
                     } //End collapsed parenthetic
+                    varB4EAC82CA7396A68D541C85D26508E83_932553626 = retval;
                 } //End block
             } //End collapsed parenthetic
         } //End block
@@ -341,7 +361,19 @@ public class TLSMessageProcessor extends MessageProcessor {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException(ex.getMessage());
         } //End block
-        return (MessageChannel)dsTaint.getTaint();
+        addTaint(host.getTaint());
+        addTaint(port);
+        MessageChannel varA7E53CE21691AB073D9660D615818899_626494623; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_626494623 = varB4EAC82CA7396A68D541C85D26508E83_997937695;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_626494623 = varB4EAC82CA7396A68D541C85D26508E83_932553626;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_626494623.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_626494623;
         // ---------- Original Method ----------
         //try {
             //String key = MessageChannel.getKey(host, port, "TLS");
@@ -363,37 +395,37 @@ public class TLSMessageProcessor extends MessageProcessor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.183 -0400", hash_original_method = "248B80D43EBE2633D052A5A2C5B180CB", hash_generated_method = "A58B9C3C9C7400719F924DEA2BF5D863")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:37.996 -0400", hash_original_method = "248B80D43EBE2633D052A5A2C5B180CB", hash_generated_method = "320724F9E9BCA9785E92D863DD569945")
     public int getMaximumMessageSize() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_552816470 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_552816470;
         // ---------- Original Method ----------
         //return Integer.MAX_VALUE;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.183 -0400", hash_original_method = "C4E752535BCB329601986DF8A32049BD", hash_generated_method = "48F163C1FB4FB666CF02A1CF224E52EE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.000 -0400", hash_original_method = "C4E752535BCB329601986DF8A32049BD", hash_generated_method = "0F8FBB5B8EBD1BA97B2E32541F16E4F0")
     public boolean inUse() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_331700847 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_331700847;
         // ---------- Original Method ----------
         //return this.useCount != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.184 -0400", hash_original_method = "B951ECFC8A9F13621942685951F4919F", hash_generated_method = "0499DAB798C22AC3D40CFA559A5A3071")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.001 -0400", hash_original_method = "B951ECFC8A9F13621942685951F4919F", hash_generated_method = "6EC842188CB2810CF879ED3C008BDB3B")
     public int getDefaultTargetPort() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_281656408 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_281656408;
         // ---------- Original Method ----------
         //return 5061;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.184 -0400", hash_original_method = "57D47F2F9FCDF87C613C3BEA50BCDEDC", hash_generated_method = "67C0E42DCF50A0B25E27F2905154C352")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.001 -0400", hash_original_method = "57D47F2F9FCDF87C613C3BEA50BCDEDC", hash_generated_method = "F9879E671708FFC8495623752E8458CB")
     public boolean isSecure() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1483325317 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1483325317;
         // ---------- Original Method ----------
         //return true;
     }

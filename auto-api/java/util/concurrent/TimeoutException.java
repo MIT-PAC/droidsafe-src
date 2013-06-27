@@ -10,22 +10,22 @@ import java.util.Iterator;
 
 public class TimeoutException extends Exception {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.069 -0400", hash_original_method = "043D89A921444ACFFC25D3711EECF0CA", hash_generated_method = "2EED959198322EAFC7EA8AB16C41E080")
-    @DSModeled(DSC.SAFE)
-    public TimeoutException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.653 -0400", hash_original_method = "043D89A921444ACFFC25D3711EECF0CA", hash_generated_method = "2EED959198322EAFC7EA8AB16C41E080")
+    public  TimeoutException() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.069 -0400", hash_original_method = "D54DDC72729A014BD7698825D7BF2D5A", hash_generated_method = "FA31C803BF3CEAF65C482BA02934788F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public TimeoutException(String message) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.653 -0400", hash_original_method = "D54DDC72729A014BD7698825D7BF2D5A", hash_generated_method = "312397A5A5410DF83FD53C034CCAFBAD")
+    public  TimeoutException(String message) {
         super(message);
-        dsTaint.addTaint(message);
+        addTaint(message.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = 1900926677490660714L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.653 -0400", hash_original_field = "E7D250620E65CEAFADCA7500EC5003F7", hash_generated_field = "D3D7B630E430BF7E2267E7CC9646414F")
+
+    private static long serialVersionUID = 1900926677490660714L;
 }
 

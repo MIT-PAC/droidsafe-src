@@ -11,17 +11,17 @@ import java.util.TimerTask;
 
 public abstract class SIPStackTimerTask extends TimerTask {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:23.712 -0400", hash_original_method = "5609EA825239FE4BDFA4F6ED845AA454", hash_generated_method = "5609EA825239FE4BDFA4F6ED845AA454")
-        public SIPStackTimerTask ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.427 -0400", hash_original_method = "CF93C0792FF2A4713A916D013DB0C142", hash_generated_method = "CF93C0792FF2A4713A916D013DB0C142")
+    public SIPStackTimerTask ()
     {
+        //Synthesized constructor
     }
 
 
     protected abstract void runTask();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:23.712 -0400", hash_original_method = "83C0265BCA7923E7BED6DC913E28AE42", hash_generated_method = "B81B556CAB994BDEB0B84F4F8D69A273")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.427 -0400", hash_original_method = "83C0265BCA7923E7BED6DC913E28AE42", hash_generated_method = "B81B556CAB994BDEB0B84F4F8D69A273")
     public final void run() {
         try 
         {

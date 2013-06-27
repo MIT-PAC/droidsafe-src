@@ -9,16 +9,21 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public class SmsResponse {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.487 -0400", hash_original_field = "3DD57A6A28CB3BA5D3DDB93FBFBCD8F0", hash_generated_field = "E6F7BFC22487D00A28F9E36C2AA573F1")
+
     int messageRef;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.487 -0400", hash_original_field = "BD83253369470ACA828003EFEC253E8A", hash_generated_field = "447B56C16ADE1A3EBD20B53504F3A1D8")
+
     String ackPdu;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.487 -0400", hash_original_field = "0279985CDCA9AD2836B5DC949AF215C8", hash_generated_field = "882AAD94CF961762112192DCF3E37119")
+
     int errorCode;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.506 -0400", hash_original_method = "3700DD8B61A34F0B0DF8E5BCBD18E935", hash_generated_method = "0DC16D59F1876B0DB84F801F53441DB1")
-    @DSModeled(DSC.SAFE)
-    public SmsResponse(int messageRef, String ackPdu, int errorCode) {
-        dsTaint.addTaint(messageRef);
-        dsTaint.addTaint(errorCode);
-        dsTaint.addTaint(ackPdu);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.488 -0400", hash_original_method = "3700DD8B61A34F0B0DF8E5BCBD18E935", hash_generated_method = "C465187D5327EC890864B613CFFFDF9C")
+    public  SmsResponse(int messageRef, String ackPdu, int errorCode) {
+        this.messageRef = messageRef;
+        this.ackPdu = ackPdu;
+        this.errorCode = errorCode;
         // ---------- Original Method ----------
         //this.messageRef = messageRef;
         //this.ackPdu = ackPdu;
@@ -26,15 +31,17 @@ public class SmsResponse {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.507 -0400", hash_original_method = "713734C16C162CC185BDF9249475CA58", hash_generated_method = "0FA96412630E289AC4D2A12C96151729")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.489 -0400", hash_original_method = "713734C16C162CC185BDF9249475CA58", hash_generated_method = "635A2181182DD53C142138D50757227B")
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_527093723 = null; //Variable for return #1
         String ret;
         ret = "{ messageRef = " + messageRef
                         + ", errorCode = " + errorCode
                         + ", ackPdu = " + ackPdu
                         + "}";
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_527093723 = ret;
+        varB4EAC82CA7396A68D541C85D26508E83_527093723.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_527093723;
         // ---------- Original Method ----------
         //String ret = "{ messageRef = " + messageRef
                         //+ ", errorCode = " + errorCode

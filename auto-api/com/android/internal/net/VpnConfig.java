@@ -15,20 +15,41 @@ import android.os.Parcelable;
 import java.util.List;
 
 public class VpnConfig implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.248 -0400", hash_original_field = "EE11CBB19052E40B07AAC0CA060C23EE", hash_generated_field = "0D37FB1187DC93A5CBFAB3C14B0F27FB")
+
     public String user;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.248 -0400", hash_original_field = "48A07652E18803812B862D8593A2A547", hash_generated_field = "9342EB91AB7C5199220A234450DF96C8")
+
     public String interfaze;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.248 -0400", hash_original_field = "21D6F40CFB511982E4424E0E250A9557", hash_generated_field = "CAC90C98A578DDDD3D4C2D891257A143")
+
     public String session;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.248 -0400", hash_original_field = "A8FC9C24BC80EA6E5B0667BA3B3B107B", hash_generated_field = "F5529878A82328FB28CC05D08BF17241")
+
     public int mtu = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.248 -0400", hash_original_field = "963E3A2FE559E393BAD631F3DC686F69", hash_generated_field = "687ABFAA2D8194E3A4C3CAA6DA305AD5")
+
     public String addresses;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.248 -0400", hash_original_field = "1755347E5F6A762B84A3F6512A3E4E53", hash_generated_field = "20DD824A8F7D017DD1D37F39CED9A870")
+
     public String routes;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.248 -0400", hash_original_field = "77B27F8A9ED53435D1E9BD36235537AC", hash_generated_field = "C54FD7F60068D455D80ED4DC17F489C0")
+
     public List<String> dnsServers;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.248 -0400", hash_original_field = "7311288AE1D218C45A0BE9F318E7E20B", hash_generated_field = "460A23BC5A4BAC5B37719D50B369576E")
+
     public List<String> searchDomains;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.248 -0400", hash_original_field = "C98CAC1B8A8276FEB9B3F13342ECD6CF", hash_generated_field = "DEA3E94F682B79FB8D965191517A969E")
+
     public PendingIntent configureIntent;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.248 -0400", hash_original_field = "EDFA59C6B19494F54AAC669CFB6B758B", hash_generated_field = "DC78085E8C08FEBE821C9BA3907E0CCD")
+
     public long startTime = -1;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.185 -0400", hash_original_method = "452DB6015A203ED2BB55340043DD5357", hash_generated_method = "452DB6015A203ED2BB55340043DD5357")
-        public VpnConfig ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.248 -0400", hash_original_method = "0CC41B74437C55587D7B09044ACFFB33", hash_generated_method = "0CC41B74437C55587D7B09044ACFFB33")
+    public VpnConfig ()
     {
+        //Synthesized constructor
     }
 
 
@@ -50,22 +71,19 @@ public class VpnConfig implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.185 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0DB50BC0CCE4711867E95DEC1B2117C7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.255 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "10AC19A70EFAEC529C618DD966F91B7A")
     @Override
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_621363307 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_621363307;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.186 -0400", hash_original_method = "663713F2190B3FEEC06E42079AE10798", hash_generated_method = "F404184717F9D8474356DC3A147AC78B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.260 -0400", hash_original_method = "663713F2190B3FEEC06E42079AE10798", hash_generated_method = "37B3F14C00912D86F15EF02C80122BDC")
     @Override
     public void writeToParcel(Parcel out, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(out.dsTaint);
         out.writeString(user);
         out.writeString(interfaze);
         out.writeString(session);
@@ -76,6 +94,8 @@ public class VpnConfig implements Parcelable {
         out.writeStringList(searchDomains);
         out.writeParcelable(configureIntent, flags);
         out.writeLong(startTime);
+        addTaint(out.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //out.writeString(user);
         //out.writeString(interfaze);
@@ -90,16 +110,19 @@ public class VpnConfig implements Parcelable {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.260 -0400", hash_original_field = "64E413D1F95D8D7AAA768FE42D3371A2", hash_generated_field = "3DE559FCCAED1098982ED547FF9663BB")
+
     public static final String SERVICE_INTERFACE = "android.net.VpnService";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.260 -0400", hash_original_field = "A50D6DCA42A92AEC233DAA6770AA77D7", hash_generated_field = "A23A74C292C8FC0BB1625437C9BF1187")
+
     public static final String LEGACY_VPN = "[Legacy VPN]";
-    public static final Parcelable.Creator<VpnConfig> CREATOR = new Parcelable.Creator<VpnConfig>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.186 -0400", hash_original_method = "AA8C9FD320C0310F391F554F5F034C68", hash_generated_method = "AAAAF263F4378FDDB79DFF571F3B3AA7")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.260 -0400", hash_original_field = "B9E25A0AC362BE835CC8488AB95C56B0", hash_generated_field = "83D1742B520DA7FD872FDBB1828AD74A")
+
+    public static final Parcelable.Creator<VpnConfig> CREATOR =
+            new Parcelable.Creator<VpnConfig>() {
         @Override
         public VpnConfig createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            VpnConfig config;
-            config = new VpnConfig();
+            VpnConfig config = new VpnConfig();
             config.user = in.readString();
             config.interfaze = in.readString();
             config.session = in.readString();
@@ -110,35 +133,13 @@ public class VpnConfig implements Parcelable {
             config.searchDomains = in.createStringArrayList();
             config.configureIntent = in.readParcelable(null);
             config.startTime = in.readLong();
-            return (VpnConfig)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //VpnConfig config = new VpnConfig();
-            //config.user = in.readString();
-            //config.interfaze = in.readString();
-            //config.session = in.readString();
-            //config.mtu = in.readInt();
-            //config.addresses = in.readString();
-            //config.routes = in.readString();
-            //config.dnsServers = in.createStringArrayList();
-            //config.searchDomains = in.createStringArrayList();
-            //config.configureIntent = in.readParcelable(null);
-            //config.startTime = in.readLong();
-            //return config;
+            return config;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.186 -0400", hash_original_method = "6F41DF8A4C35C6701EDCFA57545C6084", hash_generated_method = "778BAE94E07F84B59F624C73F5C25E8A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public VpnConfig[] newArray(int size) {
-            dsTaint.addTaint(size);
-            VpnConfig[] var7815BBBC4A2FFDDD1F1F3556D805A93C_738088962 = (new VpnConfig[size]);
-            return (VpnConfig[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new VpnConfig[size];
+            return new VpnConfig[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

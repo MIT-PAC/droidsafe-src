@@ -10,13 +10,14 @@ import java.util.Iterator;
 
 public class UnresolvedAddressException extends IllegalArgumentException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.142 -0400", hash_original_method = "32C8E83B7937838AA18CE7067C0D8A6C", hash_generated_method = "4985870A139F7B57FE2E219C301D4EEE")
-    @DSModeled(DSC.SAFE)
-    public UnresolvedAddressException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.585 -0400", hash_original_method = "32C8E83B7937838AA18CE7067C0D8A6C", hash_generated_method = "4985870A139F7B57FE2E219C301D4EEE")
+    public  UnresolvedAddressException() {
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = 6136959093620794148L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.585 -0400", hash_original_field = "1B65309DD33B381E4F66241BCE965812", hash_generated_field = "DD28E14F35DB722835E6D0F1C7CCFE10")
+
+    private static long serialVersionUID = 6136959093620794148L;
 }
 

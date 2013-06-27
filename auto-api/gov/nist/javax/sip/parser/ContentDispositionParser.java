@@ -13,27 +13,25 @@ import java.text.ParseException;
 
 public class ContentDispositionParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.259 -0400", hash_original_method = "04008A13B0A5E88C87B63AAF08ED822A", hash_generated_method = "96B2664728EA4150012B744BF79D4677")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ContentDispositionParser(String contentDisposition) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.620 -0400", hash_original_method = "04008A13B0A5E88C87B63AAF08ED822A", hash_generated_method = "690DFA335DDBFB3F5251BBC4962C114D")
+    public  ContentDispositionParser(String contentDisposition) {
         super(contentDisposition);
-        dsTaint.addTaint(contentDisposition);
+        addTaint(contentDisposition.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.259 -0400", hash_original_method = "7D9894E3DD1592FE62F944EB2803724D", hash_generated_method = "F7B528B4179FD0F17D4B177462F42C46")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected ContentDispositionParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.624 -0400", hash_original_method = "7D9894E3DD1592FE62F944EB2803724D", hash_generated_method = "523EE1F84C89EE7708D60186E2EC3461")
+    protected  ContentDispositionParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.259 -0400", hash_original_method = "C25B69CBC1412EAEFB170FBF9B530EF5", hash_generated_method = "D310270A889282B6219300D204240091")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.634 -0400", hash_original_method = "C25B69CBC1412EAEFB170FBF9B530EF5", hash_generated_method = "198931A814AFE391770DAF3702E7E0A8")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_551168316 = null; //Variable for return #1
         dbg_enter("ContentDispositionParser.parse");
         try 
         {
@@ -50,6 +48,7 @@ public class ContentDispositionParser extends ParametersParser {
             super.parse(cd);
             this.lexer.SPorHT();
             this.lexer.match('\n');
+            varB4EAC82CA7396A68D541C85D26508E83_551168316 = cd;
         } //End block
         catch (ParseException ex)
         {
@@ -59,7 +58,8 @@ public class ContentDispositionParser extends ParametersParser {
         {
             dbg_leave("ContentDispositionParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_551168316.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_551168316;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

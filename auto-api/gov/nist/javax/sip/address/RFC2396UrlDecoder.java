@@ -11,9 +11,10 @@ import java.io.UnsupportedEncodingException;
 
 public class RFC2396UrlDecoder {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.421 -0400", hash_original_method = "93468419C32DA90A0160CEA52FA291B9", hash_generated_method = "93468419C32DA90A0160CEA52FA291B9")
-        public RFC2396UrlDecoder ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.631 -0400", hash_original_method = "9568D8B70D3A77B07F9F9DE5F70834DD", hash_generated_method = "9568D8B70D3A77B07F9F9DE5F70834DD")
+    public RFC2396UrlDecoder ()
     {
+        //Synthesized constructor
     }
 
 

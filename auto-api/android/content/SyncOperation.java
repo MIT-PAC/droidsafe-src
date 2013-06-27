@@ -12,31 +12,50 @@ import android.os.Bundle;
 import android.os.SystemClock;
 
 public class SyncOperation implements Comparable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.355 -0400", hash_original_field = "E268443E43D93DAB7EBEF303BBE9642F", hash_generated_field = "48DCC252B03FBCBEDBDE2E34968668DF")
+
     public Account account;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.355 -0400", hash_original_field = "C4B6C45B08DE8968EEA91097B03482FE", hash_generated_field = "C83A11803715B792413E3838747138A5")
+
     public int syncSource;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.355 -0400", hash_original_field = "873E9C0B50183B613336EEA1020F4369", hash_generated_field = "FB6B5528A361C1A6848B87F8DAC52043")
+
     public String authority;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.355 -0400", hash_original_field = "577E05B3572C976DAF60C9783F6204CF", hash_generated_field = "2A4062D07AF43598570DB28FDD410734")
+
     public boolean allowParallelSyncs;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.355 -0400", hash_original_field = "27353006CFD751D26221E04A7928034D", hash_generated_field = "360651D25CBD3D75EA270BBFA49C37D4")
+
     public Bundle extras;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.355 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "9594FABAACFBD659AE1FC0B0C9AAFC8C")
+
     public String key;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.355 -0400", hash_original_field = "6F9D6D4E401653CC26112A3D37E00CC7", hash_generated_field = "68164F2B36FE066E3756D3D9D1292331")
+
     public long earliestRunTime;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.356 -0400", hash_original_field = "7959CC84448D1E4ADCF2D189917AB5F5", hash_generated_field = "510B55928F79538B5EE0DF2AD1627823")
+
     public boolean expedited;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.356 -0400", hash_original_field = "3E906CFD221D909B8CD8FFA1F5E84248", hash_generated_field = "042CEA90778ADF37345A881ED9FBF28F")
+
     public SyncStorageEngine.PendingOperation pendingOperation;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.356 -0400", hash_original_field = "F22B97418C1435B3B24500AEB4A7110D", hash_generated_field = "350EB491BFFA87FD3A84E6B5B95316CD")
+
     public Long backoff;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.356 -0400", hash_original_field = "77D196B208370F23D20E064B8B1B5DA0", hash_generated_field = "34D6FB90E0771C5EFE225745790D4357")
+
     public long delayUntil;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.356 -0400", hash_original_field = "CC867130D90FEF804B3067067C71AD2C", hash_generated_field = "1A551681C0C70DD5BB10AF927DDA36A6")
+
     public long effectiveRunTime;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.908 -0400", hash_original_method = "B06968042D7BA4644F7F8CC6E7EA9B45", hash_generated_method = "13A3683E5D1EC567CF8D36CE21389058")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SyncOperation(Account account, int source, String authority, Bundle extras,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.371 -0400", hash_original_method = "B06968042D7BA4644F7F8CC6E7EA9B45", hash_generated_method = "FB6DD064956CD8D7787AEB3894DFEE68")
+    public  SyncOperation(Account account, int source, String authority, Bundle extras,
             long delayInMs, long backoff, long delayUntil, boolean allowParallelSyncs) {
-        dsTaint.addTaint(authority);
-        dsTaint.addTaint(source);
-        dsTaint.addTaint(delayInMs);
-        dsTaint.addTaint(account.dsTaint);
-        dsTaint.addTaint(backoff);
-        dsTaint.addTaint(allowParallelSyncs);
-        dsTaint.addTaint(delayUntil);
-        dsTaint.addTaint(extras.dsTaint);
+        this.account = account;
+        this.syncSource = source;
+        this.authority = authority;
+        this.allowParallelSyncs = allowParallelSyncs;
         this.extras = new Bundle(extras);
         removeFalseExtra(ContentResolver.SYNC_EXTRAS_UPLOAD);
         removeFalseExtra(ContentResolver.SYNC_EXTRAS_MANUAL);
@@ -46,6 +65,8 @@ public class SyncOperation implements Comparable {
         removeFalseExtra(ContentResolver.SYNC_EXTRAS_DISCARD_LOCAL_DELETIONS);
         removeFalseExtra(ContentResolver.SYNC_EXTRAS_EXPEDITED);
         removeFalseExtra(ContentResolver.SYNC_EXTRAS_OVERRIDE_TOO_MANY_DELETIONS);
+        this.delayUntil = delayUntil;
+        this.backoff = backoff;
         long now;
         now = SystemClock.elapsedRealtime();
         {
@@ -63,10 +84,8 @@ public class SyncOperation implements Comparable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.909 -0400", hash_original_method = "BE085BAA1CD2B4B4487382D0022F31D7", hash_generated_method = "1556B77C886899C97DC7188886745882")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     SyncOperation(SyncOperation other) {
-        dsTaint.addTaint(other.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.383 -0400", hash_original_method = "BE085BAA1CD2B4B4487382D0022F31D7", hash_generated_method = "44AF7038BB0152FE7BD44E3BDEC3C97C")
+      SyncOperation(SyncOperation other) {
         this.account = other.account;
         this.syncSource = other.syncSource;
         this.authority = other.authority;
@@ -93,16 +112,15 @@ public class SyncOperation implements Comparable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.909 -0400", hash_original_method = "432EE1A094EFB9968E7A50DA8ACAC133", hash_generated_method = "8381C2B08D26B814743536DB790648C4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.388 -0400", hash_original_method = "432EE1A094EFB9968E7A50DA8ACAC133", hash_generated_method = "6DBA8475898B214401D1DB0E238D756F")
     private void removeFalseExtra(String extraName) {
-        dsTaint.addTaint(extraName);
         {
-            boolean varA63D76AF566EBA015E3C2D765EABECE6_138944589 = (!extras.getBoolean(extraName, false));
+            boolean varA63D76AF566EBA015E3C2D765EABECE6_561680015 = (!extras.getBoolean(extraName, false));
             {
                 extras.remove(extraName);
             } //End block
         } //End collapsed parenthetic
+        addTaint(extraName.getTaint());
         // ---------- Original Method ----------
         //if (!extras.getBoolean(extraName, false)) {
             //extras.remove(extraName);
@@ -110,20 +128,20 @@ public class SyncOperation implements Comparable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.910 -0400", hash_original_method = "DD55706005FD16094E01DF90CF28D99E", hash_generated_method = "B0983FB205896F13449B41E409417FEB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.389 -0400", hash_original_method = "DD55706005FD16094E01DF90CF28D99E", hash_generated_method = "80C2278762BDAEEB877759E1528B9011")
     public String toString() {
-        String var4A71B7AB7E33B18CF3305A25F9B80A16_1152992398 = (dump(true));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_771440250 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_771440250 = dump(true);
+        varB4EAC82CA7396A68D541C85D26508E83_771440250.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_771440250;
         // ---------- Original Method ----------
         //return dump(true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.910 -0400", hash_original_method = "47737E917226B122B7AA0C5B23AFE223", hash_generated_method = "95E469422F562AD78E29745A82E2B7D7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.398 -0400", hash_original_method = "47737E917226B122B7AA0C5B23AFE223", hash_generated_method = "2A84F44B20879214B4189ADFE2DF296C")
     public String dump(boolean useOneLine) {
-        dsTaint.addTaint(useOneLine);
+        String varB4EAC82CA7396A68D541C85D26508E83_2106913963 = null; //Variable for return #1
         StringBuilder sb;
         sb = new StringBuilder();
         sb.append(account.name);
@@ -136,14 +154,16 @@ public class SyncOperation implements Comparable {
             sb.append(", EXPEDITED");
         } //End block
         {
-            boolean var40EB6F6CF4ABE63E4CA23EACF2DEA578_53667258 = (!useOneLine && !extras.keySet().isEmpty());
+            boolean var40EB6F6CF4ABE63E4CA23EACF2DEA578_22182585 = (!useOneLine && !extras.keySet().isEmpty());
             {
                 sb.append("\n    ");
                 extrasToStringBuilder(extras, sb);
             } //End block
         } //End collapsed parenthetic
-        String var806458D832AB974D230FEE4CBBDBD390_948682687 = (sb.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_2106913963 = sb.toString();
+        addTaint(useOneLine);
+        varB4EAC82CA7396A68D541C85D26508E83_2106913963.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2106913963;
         // ---------- Original Method ----------
         //StringBuilder sb = new StringBuilder();
         //sb.append(account.name);
@@ -163,37 +183,38 @@ public class SyncOperation implements Comparable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.911 -0400", hash_original_method = "0CBE4B28609593623A1CB97001F0DBD2", hash_generated_method = "BDF4E4F6369BD23FF24BB31B270F6AF8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.399 -0400", hash_original_method = "0CBE4B28609593623A1CB97001F0DBD2", hash_generated_method = "785B186632513D734D8CE012AD880818")
     public boolean isInitialization() {
-        boolean var15675A814E24816554E062EC589D1FA0_1526601066 = (extras.getBoolean(ContentResolver.SYNC_EXTRAS_INITIALIZE, false));
-        return dsTaint.getTaintBoolean();
+        boolean var15675A814E24816554E062EC589D1FA0_478851612 = (extras.getBoolean(ContentResolver.SYNC_EXTRAS_INITIALIZE, false));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2053880804 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2053880804;
         // ---------- Original Method ----------
         //return extras.getBoolean(ContentResolver.SYNC_EXTRAS_INITIALIZE, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.911 -0400", hash_original_method = "A202EE0B500962365FD241C616148E63", hash_generated_method = "93A1423ED11D90E9BF0D634A4EEF2F74")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.400 -0400", hash_original_method = "A202EE0B500962365FD241C616148E63", hash_generated_method = "A162A8BE7ABA6E1BF89657156FB3A548")
     public boolean ignoreBackoff() {
-        boolean var11F18930ED342CB5DB82C8732826050E_1502715411 = (extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF, false));
-        return dsTaint.getTaintBoolean();
+        boolean var11F18930ED342CB5DB82C8732826050E_1122959768 = (extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF, false));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1990912063 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1990912063;
         // ---------- Original Method ----------
         //return extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.912 -0400", hash_original_method = "557BF419234DEC0AF5F90553488D23D9", hash_generated_method = "CACA7DD723F9D0EFFC847052586DD7AD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.407 -0400", hash_original_method = "557BF419234DEC0AF5F90553488D23D9", hash_generated_method = "6050A53E649FE46FFB5915AD22DFEF9A")
     private String toKey() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1694733763 = null; //Variable for return #1
         StringBuilder sb;
         sb = new StringBuilder();
         sb.append("authority: ").append(authority);
         sb.append(" account {name=" + account.name + ", type=" + account.type + "}");
         sb.append(" extras: ");
         extrasToStringBuilder(extras, sb);
-        String var806458D832AB974D230FEE4CBBDBD390_577029595 = (sb.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1694733763 = sb.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1694733763.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1694733763;
         // ---------- Original Method ----------
         //StringBuilder sb = new StringBuilder();
         //sb.append("authority: ").append(authority);
@@ -213,8 +234,7 @@ public class SyncOperation implements Comparable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.912 -0400", hash_original_method = "0B30B519DCD273F2706D3A8819933F53", hash_generated_method = "3470C2C3EB73D929C84713285D0EFEAE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.418 -0400", hash_original_method = "0B30B519DCD273F2706D3A8819933F53", hash_generated_method = "3470C2C3EB73D929C84713285D0EFEAE")
     public void updateEffectiveRunTime() {
         effectiveRunTime = ignoreBackoff()
                 ? earliestRunTime
@@ -230,13 +250,13 @@ public class SyncOperation implements Comparable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.913 -0400", hash_original_method = "94E2F05BFAF6BA397C21B12E8FAD132F", hash_generated_method = "C77742D309E0FD3A898CC647F1D143ED")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.420 -0400", hash_original_method = "94E2F05BFAF6BA397C21B12E8FAD132F", hash_generated_method = "C9A09C7641D5E282153C7A1F679162E2")
     public int compareTo(Object o) {
-        dsTaint.addTaint(o.dsTaint);
         SyncOperation other;
         other = (SyncOperation)o;
-        return dsTaint.getTaintInt();
+        addTaint(o.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_18601857 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_18601857;
         // ---------- Original Method ----------
         //SyncOperation other = (SyncOperation)o;
         //if (expedited != other.expedited) {

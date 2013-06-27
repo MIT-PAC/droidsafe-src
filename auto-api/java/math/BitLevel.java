@@ -10,9 +10,8 @@ import java.util.Iterator;
 
 class BitLevel {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.549 -0400", hash_original_method = "128537E4DA15C667DA21928E26685CE7", hash_generated_method = "8EBB079821786F638DB2E6786CCDDD62")
-    @DSModeled(DSC.SAFE)
-    private BitLevel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.460 -0400", hash_original_method = "128537E4DA15C667DA21928E26685CE7", hash_generated_method = "8EBB079821786F638DB2E6786CCDDD62")
+    private  BitLevel() {
         // ---------- Original Method ----------
     }
 

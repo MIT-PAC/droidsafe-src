@@ -11,15 +11,20 @@ import java.math.BigInteger;
 import java.security.spec.AlgorithmParameterSpec;
 
 public class DHParameterSpec implements AlgorithmParameterSpec {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.266 -0400", hash_original_field = "83878C91171338902E0FE0FB97A8C47A", hash_generated_field = "0E1745DDBCB8E3192EFA76F952746D75")
+
     private BigInteger p;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.266 -0400", hash_original_field = "B2F5FF47436671B6E533D8DC3614845D", hash_generated_field = "5E2139CE4CF026F837A4AD7B2D5946CD")
+
     private BigInteger g;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.266 -0400", hash_original_field = "2DB95E8E1A9267B7A1188556B2013B33", hash_generated_field = "79426B8570FE3512AB32B66CEA5A4180")
+
     private int l;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.994 -0400", hash_original_method = "F8E48B54378C41D41344A45EFE5DEAF0", hash_generated_method = "90FC841CAFBE1F387FFF094DB66881AB")
-    @DSModeled(DSC.SAFE)
-    public DHParameterSpec(BigInteger p, BigInteger g) {
-        dsTaint.addTaint(g.dsTaint);
-        dsTaint.addTaint(p.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.268 -0400", hash_original_method = "F8E48B54378C41D41344A45EFE5DEAF0", hash_generated_method = "F3E49A122D6436FD446BB87E32C19389")
+    public  DHParameterSpec(BigInteger p, BigInteger g) {
+        this.p = p;
+        this.g = g;
         this.l = 0;
         // ---------- Original Method ----------
         //this.p = p;
@@ -28,12 +33,11 @@ public class DHParameterSpec implements AlgorithmParameterSpec {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.994 -0400", hash_original_method = "ACD960FD5413B931010CFE492BF9890E", hash_generated_method = "099BCAC5A16866B060DBBA482EB84603")
-    @DSModeled(DSC.SAFE)
-    public DHParameterSpec(BigInteger p, BigInteger g, int l) {
-        dsTaint.addTaint(g.dsTaint);
-        dsTaint.addTaint(p.dsTaint);
-        dsTaint.addTaint(l);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.269 -0400", hash_original_method = "ACD960FD5413B931010CFE492BF9890E", hash_generated_method = "C966810A766680754342EBC5CE901E83")
+    public  DHParameterSpec(BigInteger p, BigInteger g, int l) {
+        this.p = p;
+        this.g = g;
+        this.l = l;
         // ---------- Original Method ----------
         //this.p = p;
         //this.g = g;
@@ -41,28 +45,32 @@ public class DHParameterSpec implements AlgorithmParameterSpec {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.994 -0400", hash_original_method = "451C630A2F5A52BD2AE63729BE355876", hash_generated_method = "7AE5338A8F093B8953D2F1949A9508B1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.269 -0400", hash_original_method = "451C630A2F5A52BD2AE63729BE355876", hash_generated_method = "E68A2CB0F16CD19D4A2AD3AFF2A5006D")
     public BigInteger getP() {
-        return (BigInteger)dsTaint.getTaint();
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1435614342 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1435614342 = p;
+        varB4EAC82CA7396A68D541C85D26508E83_1435614342.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1435614342;
         // ---------- Original Method ----------
         //return p;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.995 -0400", hash_original_method = "8C38F55FA5DB902C3D9409517AA217E2", hash_generated_method = "5AFBB55D2591367C9F73B825B3B0CCD8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.271 -0400", hash_original_method = "8C38F55FA5DB902C3D9409517AA217E2", hash_generated_method = "9AE76E49BF13F72EE84079852BE8E31D")
     public BigInteger getG() {
-        return (BigInteger)dsTaint.getTaint();
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1536012700 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1536012700 = g;
+        varB4EAC82CA7396A68D541C85D26508E83_1536012700.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1536012700;
         // ---------- Original Method ----------
         //return g;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.995 -0400", hash_original_method = "657EAD8DC5C96D72590F45704DE7ABCD", hash_generated_method = "71D7AB746D9E0DF98FB9FACCCCBF5746")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.286 -0400", hash_original_method = "657EAD8DC5C96D72590F45704DE7ABCD", hash_generated_method = "0B48C92A3B6EEBA066AD884B902901DC")
     public int getL() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1569083288 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1569083288;
         // ---------- Original Method ----------
         //return l;
     }

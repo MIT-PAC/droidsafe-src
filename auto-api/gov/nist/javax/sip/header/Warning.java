@@ -12,32 +12,37 @@ import java.text.ParseException;
 import javax.sip.InvalidArgumentException;
 
 public class Warning extends SIPHeader implements WarningHeader {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.849 -0400", hash_original_field = "C13367945D5D4C91047B3B50234AA7AB", hash_generated_field = "F5A70E4F98FA3F77B9B0CD95DEE2E30D")
+
     protected int code;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.849 -0400", hash_original_field = "B33AED8F3134996703DC39F9A7C95783", hash_generated_field = "14267456FD4CBBE9D66A8DE4A6C42A36")
+
     protected String agent;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.849 -0400", hash_original_field = "1CB251EC0D568DE6A929B520C4AED8D1", hash_generated_field = "66B33F01239E8E09E0B8D1D466F29BFA")
+
     protected String text;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.489 -0400", hash_original_method = "EC205AAA0E57D7457805C01D650D3D4C", hash_generated_method = "4BBA6FE432398CF7B15E3E65F123726B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Warning() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.849 -0400", hash_original_method = "EC205AAA0E57D7457805C01D650D3D4C", hash_generated_method = "4BBA6FE432398CF7B15E3E65F123726B")
+    public  Warning() {
         super(WARNING);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.490 -0400", hash_original_method = "F1B6F008CE79EB2FBE5188D2B8BB2F2C", hash_generated_method = "0F88B407C2348E995AA85F5DB1DFEE1F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.850 -0400", hash_original_method = "F1B6F008CE79EB2FBE5188D2B8BB2F2C", hash_generated_method = "40FE36079E6AF852B75465B81CDA4966")
     public String encodeBody() {
-        {
-            Object var975BB82B53DA3D975562C0FC47D2767E_1785278632 = (Integer.toString(code)
+        String varB4EAC82CA7396A68D541C85D26508E83_528550408 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_528550408 = text != null
+            ? Integer.toString(code)
                 + SP
                 + agent
                 + SP
                 + DOUBLE_QUOTE
                 + text
-                + DOUBLE_QUOTE);
-            Object var33E8D97989B2B8AFAFCF3F983748BF19_1664571784 = (Integer.toString(code) + SP + agent);
-        } //End flattened ternary
-        return dsTaint.getTaintString();
+                + DOUBLE_QUOTE
+            : Integer.toString(code) + SP + agent;
+        varB4EAC82CA7396A68D541C85D26508E83_528550408.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_528550408;
         // ---------- Original Method ----------
         //return text != null
             //? Integer.toString(code)
@@ -51,37 +56,42 @@ public class Warning extends SIPHeader implements WarningHeader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.490 -0400", hash_original_method = "0DCDBA7E30E559B2571A09070ED05380", hash_generated_method = "9B4591DAA91BF5A5849A673356B6C493")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.855 -0400", hash_original_method = "0DCDBA7E30E559B2571A09070ED05380", hash_generated_method = "DF3A2D7229EEEC5091BDC0CF84BC88F4")
     public int getCode() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1870806205 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1870806205;
         // ---------- Original Method ----------
         //return code;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.490 -0400", hash_original_method = "7B2F86C2E403FA4426A7AF0306AE1B67", hash_generated_method = "857BA19DE232846A8AD82B30C8EFEA92")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.856 -0400", hash_original_method = "7B2F86C2E403FA4426A7AF0306AE1B67", hash_generated_method = "A9640F65349EB000EA3597CD8E07E39E")
     public String getAgent() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_195502410 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_195502410 = agent;
+        varB4EAC82CA7396A68D541C85D26508E83_195502410.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_195502410;
         // ---------- Original Method ----------
         //return agent;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.490 -0400", hash_original_method = "C0F9B3C9D6FFAEB2F99491C721442157", hash_generated_method = "C61541341E3547D68FAC27F67D25C68B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.857 -0400", hash_original_method = "C0F9B3C9D6FFAEB2F99491C721442157", hash_generated_method = "75BF4A8B90BE84D6E36F30808D163429")
     public String getText() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_771439774 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_771439774 = text;
+        varB4EAC82CA7396A68D541C85D26508E83_771439774.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_771439774;
         // ---------- Original Method ----------
         //return text;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.491 -0400", hash_original_method = "741202B8F1CEFA0CCA05AB4A3FC24738", hash_generated_method = "675A7E307DF3E7A7940310E57599561B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.857 -0400", hash_original_method = "741202B8F1CEFA0CCA05AB4A3FC24738", hash_generated_method = "31D212E5EF29FD1CCC704240FB7F030F")
     public void setCode(int code) throws InvalidArgumentException {
-        dsTaint.addTaint(code);
+        {
+            this.code = code;
+        } //End block
         if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException(
                 "Code parameter in the Warning header is invalid: code="
                     + code);
@@ -95,11 +105,12 @@ public class Warning extends SIPHeader implements WarningHeader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.491 -0400", hash_original_method = "25CC32B68A77A53B595C551260404BAA", hash_generated_method = "9E3CDBEADAD07B7BB60B4BFF8D55E92A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.866 -0400", hash_original_method = "25CC32B68A77A53B595C551260404BAA", hash_generated_method = "0AE30176A2C042C23F83F20B34F2A654")
     public void setAgent(String host) throws ParseException {
-        dsTaint.addTaint(host);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("the host parameter in the Warning header is null");
+        {
+            this.agent = host;
+        } //End block
         // ---------- Original Method ----------
         //if (host == null)
             //throw new NullPointerException("the host parameter in the Warning header is null");
@@ -109,15 +120,14 @@ public class Warning extends SIPHeader implements WarningHeader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.491 -0400", hash_original_method = "8DD43A4484C9753D191B662ECF9B8CD6", hash_generated_method = "5D4B2A71F1F3CFBCE66D4E665C13B37E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.873 -0400", hash_original_method = "8DD43A4484C9753D191B662ECF9B8CD6", hash_generated_method = "1B3D01A069E0FCE32BE4580F74CBF798")
     public void setText(String text) throws ParseException {
-        dsTaint.addTaint(text);
         {
             if (DroidSafeAndroidRuntime.control) throw new ParseException(
                 "The text parameter in the Warning header is null",
                 0);
         } //End block
+        this.text = text;
         // ---------- Original Method ----------
         //if (text == null) {
             //throw new ParseException(
@@ -128,6 +138,8 @@ public class Warning extends SIPHeader implements WarningHeader {
     }
 
     
-    private static final long serialVersionUID = -3433328864230783899L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.873 -0400", hash_original_field = "B9E067B1DFF38FD35FE190DEFEBC01C6", hash_generated_field = "D7554BB0C393983CF9AE7E92BB3EB026")
+
+    private static long serialVersionUID = -3433328864230783899L;
 }
 

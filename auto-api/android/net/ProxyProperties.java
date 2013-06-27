@@ -16,18 +16,25 @@ import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 
 public class ProxyProperties implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.119 -0400", hash_original_field = "AE3E518F8FFDE1F8C00699B4C58E95B5", hash_generated_field = "C8F07C3E0F6788C43A05E20D5536D66C")
+
     private String mHost;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.120 -0400", hash_original_field = "5EFA61C4FCA92CA992BE37C2BAF4D350", hash_generated_field = "A2873EA11C139FA2F790281AB4EEDB4E")
+
     private int mPort;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.120 -0400", hash_original_field = "F38606E98EB026EB9D970DA96CBDCC8D", hash_generated_field = "69C381CAD09CE31D3079B1694FAFB726")
+
     private String mExclusionList;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.120 -0400", hash_original_field = "0ED6AC613F3B643FBC2DEFC7C073D553", hash_generated_field = "44474F4F446275AD736304F48293F55B")
+
     private String[] mParsedExclusionList;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.392 -0400", hash_original_method = "54A7DBB96A42C21C9A34864E71BDFD9B", hash_generated_method = "7FF789FB28F11853D2D7BB1616E2601C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ProxyProperties(String host, int port, String exclList) {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(host);
-        dsTaint.addTaint(exclList);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.121 -0400", hash_original_method = "54A7DBB96A42C21C9A34864E71BDFD9B", hash_generated_method = "42DB5B71C710990590A7206B233BE09A")
+    public  ProxyProperties(String host, int port, String exclList) {
+        mHost = host;
+        mPort = port;
         setExclusionList(exclList);
+        addTaint(exclList.getTaint());
         // ---------- Original Method ----------
         //mHost = host;
         //mPort = port;
@@ -35,13 +42,12 @@ public class ProxyProperties implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.392 -0400", hash_original_method = "BC11E2D42BFC71E7CE241ADFD4F8685E", hash_generated_method = "B825E5982FB5BAA0E6A661A2B10DABC5")
-    @DSModeled(DSC.SAFE)
-    private ProxyProperties(String host, int port, String exclList, String[] parsedExclList) {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(parsedExclList[0]);
-        dsTaint.addTaint(host);
-        dsTaint.addTaint(exclList);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.137 -0400", hash_original_method = "BC11E2D42BFC71E7CE241ADFD4F8685E", hash_generated_method = "63CFA9158D0179E62AF9851432940F54")
+    private  ProxyProperties(String host, int port, String exclList, String[] parsedExclList) {
+        mHost = host;
+        mPort = port;
+        mExclusionList = exclList;
+        mParsedExclusionList = parsedExclList;
         // ---------- Original Method ----------
         //mHost = host;
         //mPort = port;
@@ -50,10 +56,8 @@ public class ProxyProperties implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.392 -0400", hash_original_method = "A69C6CB2998D1D9E29343274F58FCABE", hash_generated_method = "0A35426A17FC493000DC66EE0AE47321")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ProxyProperties(ProxyProperties source) {
-        dsTaint.addTaint(source.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.138 -0400", hash_original_method = "A69C6CB2998D1D9E29343274F58FCABE", hash_generated_method = "7BD9393B82DEE13A153E5D6E3C6728BB")
+    public  ProxyProperties(ProxyProperties source) {
         {
             mHost = source.getHost();
             mPort = source.getPort();
@@ -70,9 +74,9 @@ public class ProxyProperties implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.393 -0400", hash_original_method = "207ACF10C117D35BCDF8E06D043E3E5B", hash_generated_method = "4033AC308A82E1E456F452EBC6965ED8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.149 -0400", hash_original_method = "207ACF10C117D35BCDF8E06D043E3E5B", hash_generated_method = "9FCF6DB7C89D6FBA8702537E517BB55E")
     public InetSocketAddress getSocketAddress() {
+        InetSocketAddress varB4EAC82CA7396A68D541C85D26508E83_1648316058 = null; //Variable for return #1
         InetSocketAddress inetSocketAddress;
         inetSocketAddress = null;
         try 
@@ -81,7 +85,9 @@ public class ProxyProperties implements Parcelable {
         } //End block
         catch (IllegalArgumentException e)
         { }
-        return (InetSocketAddress)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1648316058 = inetSocketAddress;
+        varB4EAC82CA7396A68D541C85D26508E83_1648316058.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1648316058;
         // ---------- Original Method ----------
         //InetSocketAddress inetSocketAddress = null;
         //try {
@@ -91,37 +97,40 @@ public class ProxyProperties implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.393 -0400", hash_original_method = "B21C2297C1E60D4D2D92DDE75D931874", hash_generated_method = "68C433D1B5A102629AAF54FA94700A37")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.151 -0400", hash_original_method = "B21C2297C1E60D4D2D92DDE75D931874", hash_generated_method = "6ABF68B5EDA03C06FF1972F4601FC227")
     public String getHost() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_817081747 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_817081747 = mHost;
+        varB4EAC82CA7396A68D541C85D26508E83_817081747.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_817081747;
         // ---------- Original Method ----------
         //return mHost;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.393 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "989B279AB861DC9FDC85B5020F096FDA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.151 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "E96D2B2F205850974B728B6478766875")
     public int getPort() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2010838928 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2010838928;
         // ---------- Original Method ----------
         //return mPort;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.393 -0400", hash_original_method = "A9FE56F63855512203F6AE795614409C", hash_generated_method = "FC1E00D12F535348AB68FB2869DCE3AC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.158 -0400", hash_original_method = "A9FE56F63855512203F6AE795614409C", hash_generated_method = "35A8BD31B0B286FB011282F7C6D85460")
     public String getExclusionList() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1293041551 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1293041551 = mExclusionList;
+        varB4EAC82CA7396A68D541C85D26508E83_1293041551.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1293041551;
         // ---------- Original Method ----------
         //return mExclusionList;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.394 -0400", hash_original_method = "BEF68745D535D943EDDB2DD96C1B6EA8", hash_generated_method = "424EDB96CBD36F0388644956728CBEB4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.166 -0400", hash_original_method = "BEF68745D535D943EDDB2DD96C1B6EA8", hash_generated_method = "885189784F5AE50C37042C73EDABF44A")
     private void setExclusionList(String exclusionList) {
-        dsTaint.addTaint(exclusionList);
+        mExclusionList = exclusionList;
         {
             mParsedExclusionList = new String[0];
         } //End block
@@ -136,7 +145,7 @@ public class ProxyProperties implements Parcelable {
                     String s;
                     s = splitExclusionList[i].trim();
                     {
-                        boolean varDD02578407E87DFB02749E3DE9227235_115531528 = (s.startsWith("."));
+                        boolean varDD02578407E87DFB02749E3DE9227235_282240885 = (s.startsWith("."));
                         s = s.substring(1);
                     } //End collapsed parenthetic
                     mParsedExclusionList[i*2] = s;
@@ -161,12 +170,10 @@ public class ProxyProperties implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.394 -0400", hash_original_method = "72D2F326AF1444346066F9053B4FD5C0", hash_generated_method = "1E88A9C14BA044034CC62D2DB987D61B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.187 -0400", hash_original_method = "72D2F326AF1444346066F9053B4FD5C0", hash_generated_method = "FD353B53B3096B92AC51546BCB4C0D05")
     public boolean isExcluded(String url) {
-        dsTaint.addTaint(url);
         {
-            boolean var9C90EF043E3784234A49B219593EFBDA_42105010 = (TextUtils.isEmpty(url) || mParsedExclusionList == null ||
+            boolean var9C90EF043E3784234A49B219593EFBDA_1728530537 = (TextUtils.isEmpty(url) || mParsedExclusionList == null ||
                 mParsedExclusionList.length == 0);
         } //End collapsed parenthetic
         Uri u;
@@ -179,12 +186,14 @@ public class ProxyProperties implements Parcelable {
             i+=2;
             {
                 {
-                    boolean varC03F0A18FFBF5EA342D3BF4D0C85A5FA_806377113 = (urlDomain.equals(mParsedExclusionList[i]) ||
+                    boolean varC03F0A18FFBF5EA342D3BF4D0C85A5FA_1031442433 = (urlDomain.equals(mParsedExclusionList[i]) ||
                     urlDomain.endsWith(mParsedExclusionList[i+1]));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(url.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1181605748 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1181605748;
         // ---------- Original Method ----------
         //if (TextUtils.isEmpty(url) || mParsedExclusionList == null ||
                 //mParsedExclusionList.length == 0) return false;
@@ -201,9 +210,9 @@ public class ProxyProperties implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.396 -0400", hash_original_method = "FF3E8127D15D936B6F66AB217E4EB9BA", hash_generated_method = "2F803DC4766E7555C4BE9AF03518328F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.208 -0400", hash_original_method = "FF3E8127D15D936B6F66AB217E4EB9BA", hash_generated_method = "E53540642A1599AB4CD4A90EA72CD4F5")
     public java.net.Proxy makeProxy() {
+        java.net.Proxy varB4EAC82CA7396A68D541C85D26508E83_1281791283 = null; //Variable for return #1
         java.net.Proxy proxy;
         proxy = java.net.Proxy.NO_PROXY;
         {
@@ -216,7 +225,9 @@ public class ProxyProperties implements Parcelable {
             catch (IllegalArgumentException e)
             { }
         } //End block
-        return (java.net.Proxy)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1281791283 = proxy;
+        varB4EAC82CA7396A68D541C85D26508E83_1281791283.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1281791283;
         // ---------- Original Method ----------
         //java.net.Proxy proxy = java.net.Proxy.NO_PROXY;
         //if (mHost != null) {
@@ -230,10 +241,10 @@ public class ProxyProperties implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.396 -0400", hash_original_method = "FE9AE719D0C3E87A445C3CEFBF6B38D6", hash_generated_method = "3206BAE6492A88B9A8AA81B742A5130A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.210 -0400", hash_original_method = "FE9AE719D0C3E87A445C3CEFBF6B38D6", hash_generated_method = "1F89539C6A599439FB3FA74C35A78ABF")
     @Override
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1134491603 = null; //Variable for return #1
         StringBuilder sb;
         sb = new StringBuilder();
         {
@@ -248,8 +259,9 @@ public class ProxyProperties implements Parcelable {
         {
             sb.append("[ProxyProperties.mHost == null]");
         } //End block
-        String var806458D832AB974D230FEE4CBBDBD390_1778199833 = (sb.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1134491603 = sb.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1134491603.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1134491603;
         // ---------- Original Method ----------
         //StringBuilder sb = new StringBuilder();
         //if (mHost != null) {
@@ -267,20 +279,20 @@ public class ProxyProperties implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.398 -0400", hash_original_method = "16EB0AD501F97CC03F0A85B7200F0E73", hash_generated_method = "C679D1FE1DC2794AF72FE476378612FC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.232 -0400", hash_original_method = "16EB0AD501F97CC03F0A85B7200F0E73", hash_generated_method = "1BCA9F0C3D231468378B94BD0968BE13")
     @Override
     public boolean equals(Object o) {
-        dsTaint.addTaint(o.dsTaint);
         ProxyProperties p;
         p = (ProxyProperties)o;
         {
-            boolean varE9ED1F5D95B4E0C60AD4D6B9786BB006_1626918798 = (mExclusionList != null && !mExclusionList.equals(p.getExclusionList()));
+            boolean varE9ED1F5D95B4E0C60AD4D6B9786BB006_512811905 = (mExclusionList != null && !mExclusionList.equals(p.getExclusionList()));
         } //End collapsed parenthetic
         {
-            boolean var8E4D465625121C486267E0436ACD7002_84689749 = (mHost != null && p.getHost() != null && mHost.equals(p.getHost()) == false);
+            boolean var8E4D465625121C486267E0436ACD7002_635897072 = (mHost != null && p.getHost() != null && mHost.equals(p.getHost()) == false);
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(o.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_845807982 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_845807982;
         // ---------- Original Method ----------
         //if (!(o instanceof ProxyProperties)) return false;
         //ProxyProperties p = (ProxyProperties)o;
@@ -295,23 +307,23 @@ public class ProxyProperties implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.399 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.233 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3B6731F1A9D46B3E7C89044FC4197472")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1878465249 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1878465249;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.399 -0400", hash_original_method = "AD2D5515FEDCF9B25A708B71445DFAB4", hash_generated_method = "E92256EA42AC663708D155AF088CB3B3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.233 -0400", hash_original_method = "AD2D5515FEDCF9B25A708B71445DFAB4", hash_generated_method = "FB0EA9F5AF1F6660CECFB64CAC47DAE7")
     @Override
     public int hashCode() {
-        int varC5C4A10D790BD48E2EA1C18AE7D59490_1509243151 = (((null == mHost) ? 0 : mHost.hashCode())
+        int varC5C4A10D790BD48E2EA1C18AE7D59490_470949699 = (((null == mHost) ? 0 : mHost.hashCode())
         + ((null == mExclusionList) ? 0 : mExclusionList.hashCode())
         + mPort); //DSFIXME:  CODE0008: Nested ternary operator in expression
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895520478 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1895520478;
         // ---------- Original Method ----------
         //return ((null == mHost) ? 0 : mHost.hashCode())
         //+ ((null == mExclusionList) ? 0 : mExclusionList.hashCode())
@@ -319,11 +331,8 @@ public class ProxyProperties implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.400 -0400", hash_original_method = "038CE78D7B15BBF2D949EA22EA3CF00F", hash_generated_method = "E45915B6DA41DE78FDF6BA542EA56E82")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.247 -0400", hash_original_method = "038CE78D7B15BBF2D949EA22EA3CF00F", hash_generated_method = "220715D67574944D239132F24BCEA1D8")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         {
             dest.writeByte((byte)1);
             dest.writeString(mHost);
@@ -334,6 +343,8 @@ public class ProxyProperties implements Parcelable {
         } //End block
         dest.writeString(mExclusionList);
         dest.writeStringArray(mParsedExclusionList);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //if (mHost != null) {
             //dest.writeByte((byte)1);
@@ -347,55 +358,27 @@ public class ProxyProperties implements Parcelable {
     }
 
     
-    public static final Creator<ProxyProperties> CREATOR = new Creator<ProxyProperties>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.400 -0400", hash_original_method = "A76B576B418A59DA79A74A0B4EFE2DF1", hash_generated_method = "6F2052629DC21FE8FA7EBC86BD5CFEE2")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public ProxyProperties createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            String host;
-            host = null;
-            int port;
-            port = 0;
-            {
-                boolean varA34511E23A7BE70AFB33ABE4FC1AF4E2_163849160 = (in.readByte() == 1);
-                {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.247 -0400", hash_original_field = "8C1BCA5A763B1D293459FDC94947A9DA", hash_generated_field = "37B61C5F5B74C5B267912D84DAC98E0A")
+
+    public static final Creator<ProxyProperties> CREATOR =
+        new Creator<ProxyProperties>() {
+            public ProxyProperties createFromParcel(Parcel in) {
+                String host = null;
+                int port = 0;
+                if (in.readByte() == 1) {
                     host = in.readString();
                     port = in.readInt();
-                } //End block
-            } //End collapsed parenthetic
-            String exclList;
-            exclList = in.readString();
-            String[] parsedExclList;
-            parsedExclList = in.readStringArray();
-            ProxyProperties proxyProperties;
-            proxyProperties = new ProxyProperties(host, port, exclList, parsedExclList);
-            return (ProxyProperties)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //String host = null;
-            //int port = 0;
-            //if (in.readByte() == 1) {
-                    //host = in.readString();
-                    //port = in.readInt();
-                //}
-            //String exclList = in.readString();
-            //String[] parsedExclList = in.readStringArray();
-            //ProxyProperties proxyProperties =
-                        //new ProxyProperties(host, port, exclList, parsedExclList);
-            //return proxyProperties;
-        }
+                }
+                String exclList = in.readString();
+                String[] parsedExclList = in.readStringArray();
+                ProxyProperties proxyProperties =
+                        new ProxyProperties(host, port, exclList, parsedExclList);
+                return proxyProperties;
+            }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.401 -0400", hash_original_method = "059EE23B2C7F4EFFECDBB1A455F1E783", hash_generated_method = "9AB6DBBB5E6F6010966CD1368F2589FD")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public ProxyProperties[] newArray(int size) {
-            dsTaint.addTaint(size);
-            ProxyProperties[] varD83A2AB4A659B01A3B3C68FFE37C12FE_1112922027 = (new ProxyProperties[size]);
-            return (ProxyProperties[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ProxyProperties[size];
-        }
-
-        
-}; //Transformed anonymous class
+            public ProxyProperties[] newArray(int size) {
+                return new ProxyProperties[size];
+            }
+        };
 }
 

@@ -9,8 +9,6 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -22,29 +20,31 @@ import com.android.internal.telephony.IccCard;
 import com.android.internal.telephony.IccFileHandler;
 import com.android.internal.telephony.IccRecords;
 import java.io.ByteArrayOutputStream;
-import java.util.List;
 import java.util.Locale;
 
 class RilMessage {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.291 -0400", hash_original_field = "6AC7F06B6413A1BE9C136DC7DF0D2B60", hash_generated_field = "9F66E723E60E4F10157FDA7C23C67293")
+
     int mId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.291 -0400", hash_original_field = "B7DE4FF1B7CCEFDA36733D8B6DFF2904", hash_generated_field = "F7E50CC556DF4A3D9F10FA584C62181F")
+
     Object mData;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.291 -0400", hash_original_field = "495A3609A7B3EA4302F80964552183B3", hash_generated_field = "70A90D72FABA26F58FDAF243629DCAD1")
+
     ResultCode mResCode;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.706 -0400", hash_original_method = "3402C3F9EF39C06F449D290965539671", hash_generated_method = "0C7295DC6227E87FE64A14AA30387F7F")
-    @DSModeled(DSC.SAFE)
-     RilMessage(int msgId, String rawData) {
-        dsTaint.addTaint(rawData);
-        dsTaint.addTaint(msgId);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.292 -0400", hash_original_method = "3402C3F9EF39C06F449D290965539671", hash_generated_method = "BD9C65CEF2D7E685C85E0E957CB6EFA1")
+      RilMessage(int msgId, String rawData) {
+        mId = msgId;
+        mData = rawData;
         // ---------- Original Method ----------
         //mId = msgId;
         //mData = rawData;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.707 -0400", hash_original_method = "56F4F1F4536DAFEF01840B516ADA4963", hash_generated_method = "217B57E4787E5A6CBEEECACFB2187DA4")
-    @DSModeled(DSC.SAFE)
-     RilMessage(RilMessage other) {
-        dsTaint.addTaint(other.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.292 -0400", hash_original_method = "56F4F1F4536DAFEF01840B516ADA4963", hash_generated_method = "08086F10920F4C141BD1F6F3CA310AB9")
+      RilMessage(RilMessage other) {
         this.mId = other.mId;
         this.mData = other.mData;
         this.mResCode = other.mResCode;
@@ -58,26 +58,31 @@ class RilMessage {
 }
 
 public class CatService extends Handler implements AppInterface {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.292 -0400", hash_original_field = "23B72E777143CC3CCEAE49FBF3EE4284", hash_generated_field = "6EBA8BBFB850EB64C843C5863723C1B3")
+
     private CommandsInterface mCmdIf;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.293 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
     private Context mContext;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.293 -0400", hash_original_field = "441F209D9D26EF943C917521D0FF792D", hash_generated_field = "538FD5CEC06AC573B443D69E91473326")
+
     private CatCmdMessage mCurrntCmd = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.293 -0400", hash_original_field = "27FB0EEF2322D37BD6B5090D234E757E", hash_generated_field = "8ABF519EF89F0346AABDA35943975CF1")
+
     private CatCmdMessage mMenuCmd = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.293 -0400", hash_original_field = "199A000F22D09E68AC16BA7A675CE86D", hash_generated_field = "5581F8294B4A44B480C12D4CDCF45252")
+
     private RilMessageDecoder mMsgDecoder = null;
-    private boolean mStkAppInstalled = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.707 -0400", hash_original_method = "DAF9352B6B0C752A0F5F800B85F9E51D", hash_generated_method = "5A59CB01FD0EAAFA3C2EB46F5F8D2051")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private CatService(CommandsInterface ci, IccRecords ir, Context context,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.297 -0400", hash_original_method = "0B6E46ACD511396208B0FB6CDAFB964A", hash_generated_method = "B0FBEEF141C71BBA79BCF8876ADADE5B")
+    private  CatService(CommandsInterface ci, IccRecords ir, Context context,
             IccFileHandler fh, IccCard ic) {
-        dsTaint.addTaint(ic.dsTaint);
-        dsTaint.addTaint(ir.dsTaint);
-        dsTaint.addTaint(fh.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(ci.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                     "Service: Input parameters must not be null");
         } //End block
+        mCmdIf = ci;
+        mContext = context;
         mMsgDecoder = RilMessageDecoder.getInstance(this, fh);
         mCmdIf.setOnCatSessionEnd(this, MSG_ID_SESSION_END, null);
         mCmdIf.setOnCatProactiveCmd(this, MSG_ID_PROACTIVE_COMMAND, null);
@@ -88,15 +93,15 @@ public class CatService extends Handler implements AppInterface {
         mCmdIf.registerForRUIMReady(this, MSG_ID_SIM_READY, null);
         mCmdIf.registerForNVReady(this, MSG_ID_SIM_READY, null);
         mIccRecords.registerForRecordsLoaded(this, MSG_ID_ICC_RECORDS_LOADED, null);
-        mStkAppInstalled = isStkAppInstalled();
-        CatLog.d(this, "Running CAT service. STK app installed:" + mStkAppInstalled);
+        CatLog.d(this, "Is running");
+        addTaint(ir.getTaint());
+        addTaint(ic.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.708 -0400", hash_original_method = "D708104FB5CF5762DDEBFF2BAD6B6B04", hash_generated_method = "E3620C337A6B286ABC08B087041B971D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.297 -0400", hash_original_method = "D708104FB5CF5762DDEBFF2BAD6B6B04", hash_generated_method = "E3620C337A6B286ABC08B087041B971D")
     public void dispose() {
         mIccRecords.unregisterForRecordsLoaded(this);
         mCmdIf.unSetOnCatSessionEnd(this);
@@ -114,8 +119,7 @@ public class CatService extends Handler implements AppInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.708 -0400", hash_original_method = "0386F7586104C91B22CE4150238AFD39", hash_generated_method = "963AC07ED7DE6AEA46B3068BB242386B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.298 -0400", hash_original_method = "0386F7586104C91B22CE4150238AFD39", hash_generated_method = "963AC07ED7DE6AEA46B3068BB242386B")
     protected void finalize() {
         CatLog.d(this, "Service finalized");
         // ---------- Original Method ----------
@@ -123,17 +127,15 @@ public class CatService extends Handler implements AppInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.708 -0400", hash_original_method = "46E862853BCF1B4C10FC18858F4F6129", hash_generated_method = "FBC7D0A87A2B205D8B5AB83AC2FF0656")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.298 -0400", hash_original_method = "E9D273BBD1B8139BCAB5560E10ADE1AE", hash_generated_method = "AB694E2435B4CCE042CA7D6766BAC646")
     private void handleRilMsg(RilMessage rilMsg) {
-        dsTaint.addTaint(rilMsg.dsTaint);
         CommandParams cmdParams;
         cmdParams = null;
         //Begin case MSG_ID_EVENT_NOTIFY 
         {
             cmdParams = (CommandParams) rilMsg.mData;
             {
-                handleCommand(cmdParams, false);
+                handleProactiveCommand(cmdParams);
             } //End block
         } //End block
         //End case MSG_ID_EVENT_NOTIFY 
@@ -152,7 +154,7 @@ public class CatService extends Handler implements AppInterface {
         //Begin case MSG_ID_PROACTIVE_COMMAND 
         {
             {
-                handleCommand(cmdParams, true);
+                handleProactiveCommand(cmdParams);
             } //End block
             {
                 sendTerminalResponse(cmdParams.cmdDet, rilMsg.mResCode,
@@ -165,31 +167,29 @@ public class CatService extends Handler implements AppInterface {
         //End case MSG_ID_REFRESH 
         //Begin case MSG_ID_REFRESH 
         {
-            handleCommand(cmdParams, false);
+            handleProactiveCommand(cmdParams);
         } //End block
         //End case MSG_ID_REFRESH 
         //Begin case MSG_ID_SESSION_END 
         handleSessionEnd();
         //End case MSG_ID_SESSION_END 
+        addTaint(rilMsg.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.709 -0400", hash_original_method = "089279BA70414B0641ABFD6DC3426623", hash_generated_method = "60BA81A799416BA2A8DB61DE8339ED37")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private void handleCommand(CommandParams cmdParams, boolean isProactiveCmd) {
-        dsTaint.addTaint(isProactiveCmd);
-        dsTaint.addTaint(cmdParams.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.324 -0400", hash_original_method = "962D88968BE7A135485D50B41AC85213", hash_generated_method = "BA94B5FDC27352EECE83025A4A4373EA")
+    private void handleProactiveCommand(CommandParams cmdParams) {
         CatLog.d(this, cmdParams.getCommandType().name());
         CharSequence message;
         CatCmdMessage cmdMsg;
         cmdMsg = new CatCmdMessage(cmdParams);
         {
-            Object varA74AB301753C81C1EF1463B16F741D65_1301244593 = (cmdParams.getCommandType());
+            Object varA74AB301753C81C1EF1463B16F741D65_2138558323 = (cmdParams.getCommandType());
             //Begin case SET_UP_MENU 
             {
-                boolean varBDB939CADF418BD3B149DA2D195D52CC_637530804 = (removeMenu(cmdMsg.getMenu()));
+                boolean varBDB939CADF418BD3B149DA2D195D52CC_1406050622 = (removeMenu(cmdMsg.getMenu()));
                 {
                     mMenuCmd = null;
                 } //End block
@@ -203,7 +203,7 @@ public class CatService extends Handler implements AppInterface {
             //End case SET_UP_MENU 
             //Begin case DISPLAY_TEXT 
             {
-                boolean var85EC808BECD69A26D4BEA7B0ABCBD691_789489887 = (!cmdMsg.geTextMessage().responseNeeded);
+                boolean var85EC808BECD69A26D4BEA7B0ABCBD691_51803862 = (!cmdMsg.geTextMessage().responseNeeded);
                 {
                     sendTerminalResponse(cmdParams.cmdDet, ResultCode.OK, false, 0, null);
                 } //End block
@@ -237,7 +237,7 @@ public class CatService extends Handler implements AppInterface {
             //End case PROVIDE_LOCAL_INFORMATION 
             //Begin case LAUNCH_BROWSER 
             {
-                boolean var289612E192C87C1C213531B7648CE2E4_986968783 = ((((LaunchBrowserParams) cmdParams).confirmMsg.text != null)
+                boolean var289612E192C87C1C213531B7648CE2E4_1411438730 = ((((LaunchBrowserParams) cmdParams).confirmMsg.text != null)
                         && (((LaunchBrowserParams) cmdParams).confirmMsg.text.equals(STK_DEFAULT)));
                 {
                     message = mContext.getText(com.android.internal.R.string.launchBrowserDefault);
@@ -247,7 +247,7 @@ public class CatService extends Handler implements AppInterface {
             //End case LAUNCH_BROWSER 
             //Begin case SEND_DTMF SEND_SMS SEND_SS SEND_USSD 
             {
-                boolean varF0C118B2E2B35C6F3762B0AE0908E95F_1750647234 = ((((DisplayTextParams)cmdParams).textMsg.text != null)
+                boolean varF0C118B2E2B35C6F3762B0AE0908E95F_425049306 = ((((DisplayTextParams)cmdParams).textMsg.text != null)
                         && (((DisplayTextParams)cmdParams).textMsg.text.equals(STK_DEFAULT)));
                 {
                     message = mContext.getText(com.android.internal.R.string.sending);
@@ -257,7 +257,7 @@ public class CatService extends Handler implements AppInterface {
             //End case SEND_DTMF SEND_SMS SEND_SS SEND_USSD 
             //Begin case SET_UP_CALL 
             {
-                boolean var748082CB986285C53A80D0C3B5EED825_171625170 = ((((CallSetupParams) cmdParams).confirmMsg.text != null)
+                boolean var748082CB986285C53A80D0C3B5EED825_520985706 = ((((CallSetupParams) cmdParams).confirmMsg.text != null)
                         && (((CallSetupParams) cmdParams).confirmMsg.text.equals(STK_DEFAULT)));
                 {
                     message = mContext.getText(com.android.internal.R.string.SetupCallDefault);
@@ -265,39 +265,6 @@ public class CatService extends Handler implements AppInterface {
                 } //End block
             } //End collapsed parenthetic
             //End case SET_UP_CALL 
-            //Begin case OPEN_CHANNEL CLOSE_CHANNEL RECEIVE_DATA SEND_DATA 
-            BIPClientParams cmd;
-            cmd = (BIPClientParams) cmdParams;
-            //End case OPEN_CHANNEL CLOSE_CHANNEL RECEIVE_DATA SEND_DATA 
-            //Begin case OPEN_CHANNEL CLOSE_CHANNEL RECEIVE_DATA SEND_DATA 
-            {
-                CatLog.d(this, "cmd " + cmdParams.getCommandType() + " with null alpha id");
-                {
-                    sendTerminalResponse(cmdParams.cmdDet, ResultCode.OK, false, 0, null);
-                } //End block
-            } //End block
-            //End case OPEN_CHANNEL CLOSE_CHANNEL RECEIVE_DATA SEND_DATA 
-            //Begin case OPEN_CHANNEL CLOSE_CHANNEL RECEIVE_DATA SEND_DATA 
-            {
-                CatLog.d(this, "No STK application found.");
-                {
-                    sendTerminalResponse(cmdParams.cmdDet,
-                                             ResultCode.BEYOND_TERMINAL_CAPABILITY,
-                                             false, 0, null);
-                } //End block
-            } //End block
-            //End case OPEN_CHANNEL CLOSE_CHANNEL RECEIVE_DATA SEND_DATA 
-            //Begin case OPEN_CHANNEL CLOSE_CHANNEL RECEIVE_DATA SEND_DATA 
-            {
-                boolean var507CDA315F4391D95BBEB833E0090237_123050097 = (isProactiveCmd &&
-                    ((cmdParams.getCommandType() == CommandType.CLOSE_CHANNEL) ||
-                     (cmdParams.getCommandType() == CommandType.RECEIVE_DATA) ||
-                     (cmdParams.getCommandType() == CommandType.SEND_DATA)));
-                {
-                    sendTerminalResponse(cmdParams.cmdDet, ResultCode.OK, false, 0, null);
-                } //End block
-            } //End collapsed parenthetic
-            //End case OPEN_CHANNEL CLOSE_CHANNEL RECEIVE_DATA SEND_DATA 
             //Begin case default 
             CatLog.d(this, "Unsupported command");
             //End case default 
@@ -307,13 +274,13 @@ public class CatService extends Handler implements AppInterface {
         intent = new Intent(AppInterface.CAT_CMD_ACTION);
         intent.putExtra("STK CMD", cmdMsg);
         mContext.sendBroadcast(intent);
+        addTaint(cmdParams.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.710 -0400", hash_original_method = "F4FE7D680FC27736DB53FE02767C67C5", hash_generated_method = "3B5C1BD9898958A40C4F8FFD0CBC6745")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.325 -0400", hash_original_method = "F4FE7D680FC27736DB53FE02767C67C5", hash_generated_method = "3B5C1BD9898958A40C4F8FFD0CBC6745")
     private void handleSessionEnd() {
         CatLog.d(this, "SESSION END");
         mCurrntCmd = mMenuCmd;
@@ -328,16 +295,10 @@ public class CatService extends Handler implements AppInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.710 -0400", hash_original_method = "1946CA6BE8E37F5C447374ACD2229E75", hash_generated_method = "D4015A5863227E555C3A667C011BE1F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.330 -0400", hash_original_method = "1946CA6BE8E37F5C447374ACD2229E75", hash_generated_method = "51B20C22149F14D7B830C4C8DA22CD14")
     private void sendTerminalResponse(CommandDetails cmdDet,
             ResultCode resultCode, boolean includeAdditionalInfo,
             int additionalInfo, ResponseData resp) {
-        dsTaint.addTaint(includeAdditionalInfo);
-        dsTaint.addTaint(resultCode.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
-        dsTaint.addTaint(additionalInfo);
-        dsTaint.addTaint(resp.dsTaint);
         ByteArrayOutputStream buf;
         buf = new ByteArrayOutputStream();
         Input cmdInput;
@@ -384,25 +345,25 @@ public class CatService extends Handler implements AppInterface {
             CatLog.d(this, "TERMINAL RESPONSE: " + hexString);
         } //End block
         mCmdIf.sendTerminalResponse(hexString, null);
+        addTaint(cmdDet.getTaint());
+        addTaint(resultCode.getTaint());
+        addTaint(includeAdditionalInfo);
+        addTaint(additionalInfo);
+        addTaint(resp.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.711 -0400", hash_original_method = "638B326A6DB369CFE44B9E340F9EEB09", hash_generated_method = "17F8F6FF63FC7CA1F0CD8BEF17488D65")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.337 -0400", hash_original_method = "638B326A6DB369CFE44B9E340F9EEB09", hash_generated_method = "678CA968D77BC24887345F5A9E143818")
     private void encodeOptionalTags(CommandDetails cmdDet,
             ResultCode resultCode, Input cmdInput, ByteArrayOutputStream buf) {
-        dsTaint.addTaint(cmdInput.dsTaint);
-        dsTaint.addTaint(resultCode.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
-        dsTaint.addTaint(buf.dsTaint);
         CommandType cmdType;
         cmdType = AppInterface.CommandType.fromInt(cmdDet.typeOfCommand);
         {
             //Begin case GET_INKEY 
             {
-                boolean var082860D7E23D30F4E1F73375F5BB4E0C_1177446792 = ((resultCode.value() == ResultCode.NO_RESPONSE_FROM_USER.value()) &&
+                boolean var082860D7E23D30F4E1F73375F5BB4E0C_467035116 = ((resultCode.value() == ResultCode.NO_RESPONSE_FROM_USER.value()) &&
                         (cmdInput != null) && (cmdInput.duration != null));
                 {
                     getInKeyResponse(buf, cmdInput);
@@ -411,7 +372,7 @@ public class CatService extends Handler implements AppInterface {
             //End case GET_INKEY 
             //Begin case PROVIDE_LOCAL_INFORMATION 
             {
-                boolean varE61954B8FB8D644763D155CCE3759480_1478757454 = ((cmdDet.commandQualifier == CommandParamsFactory.LANGUAGE_SETTING) &&
+                boolean varE61954B8FB8D644763D155CCE3759480_1960343969 = ((cmdDet.commandQualifier == CommandParamsFactory.LANGUAGE_SETTING) &&
                         (resultCode.value() == ResultCode.OK.value()));
                 {
                     getPliResponse(buf);
@@ -425,22 +386,25 @@ public class CatService extends Handler implements AppInterface {
         {
             CatLog.d(this, "encodeOptionalTags() bad Cmd:" + cmdDet.typeOfCommand);
         } //End block
+        addTaint(cmdDet.getTaint());
+        addTaint(resultCode.getTaint());
+        addTaint(cmdInput.getTaint());
+        addTaint(buf.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.711 -0400", hash_original_method = "0852EED8EE8FA95FED775B0B05726071", hash_generated_method = "A102E915FBFA8A6C5B193FCC78D9A9F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.340 -0400", hash_original_method = "0852EED8EE8FA95FED775B0B05726071", hash_generated_method = "F6DB62DDB9A9817EE6FE74FF28DF9BBC")
     private void getInKeyResponse(ByteArrayOutputStream buf, Input cmdInput) {
-        dsTaint.addTaint(cmdInput.dsTaint);
-        dsTaint.addTaint(buf.dsTaint);
         int tag;
         tag = ComprehensionTlvTag.DURATION.value();
         buf.write(tag);
         buf.write(0x02);
         buf.write(cmdInput.duration.timeUnit.SECOND.value());
         buf.write(cmdInput.duration.timeInterval);
+        addTaint(buf.getTaint());
+        addTaint(cmdInput.getTaint());
         // ---------- Original Method ----------
         //int tag = ComprehensionTlvTag.DURATION.value();
         //buf.write(tag);
@@ -450,10 +414,8 @@ public class CatService extends Handler implements AppInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.711 -0400", hash_original_method = "9C18CC5EFDD0B345CA3B94FA3BA225B1", hash_generated_method = "7EAB0B8A4AAD268AE9A6D365F735D03D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.343 -0400", hash_original_method = "9C18CC5EFDD0B345CA3B94FA3BA225B1", hash_generated_method = "63FD275A5E010C06EFC525D9C1394D58")
     private void getPliResponse(ByteArrayOutputStream buf) {
-        dsTaint.addTaint(buf.dsTaint);
         String lang;
         lang = SystemProperties.get("persist.sys.language");
         {
@@ -463,6 +425,7 @@ public class CatService extends Handler implements AppInterface {
             ResponseData.writeLength(buf, lang.length());
             buf.write(lang.getBytes(), 0, lang.length());
         } //End block
+        addTaint(buf.getTaint());
         // ---------- Original Method ----------
         //String lang = SystemProperties.get("persist.sys.language");
         //if (lang != null) {
@@ -474,11 +437,8 @@ public class CatService extends Handler implements AppInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.712 -0400", hash_original_method = "8584D48A0DB0867CC39B0E747FD77F24", hash_generated_method = "89C5E34363F8608A1199B3F0FCC6F9E1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.347 -0400", hash_original_method = "8584D48A0DB0867CC39B0E747FD77F24", hash_generated_method = "670979B22D79AC8A742D8AC8855991B0")
     private void sendMenuSelection(int menuId, boolean helpRequired) {
-        dsTaint.addTaint(helpRequired);
-        dsTaint.addTaint(menuId);
         ByteArrayOutputStream buf;
         buf = new ByteArrayOutputStream();
         int tag;
@@ -507,20 +467,16 @@ public class CatService extends Handler implements AppInterface {
         String hexString;
         hexString = IccUtils.bytesToHexString(rawData);
         mCmdIf.sendEnvelope(hexString, null);
+        addTaint(menuId);
+        addTaint(helpRequired);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.722 -0400", hash_original_method = "BB297ADB158EDB6C7A0522557FDE81DF", hash_generated_method = "36706066EEFFE2F3B85374058F81FD7F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.481 -0400", hash_original_method = "BB297ADB158EDB6C7A0522557FDE81DF", hash_generated_method = "6F68DC63EEB262210139B6EF8ADE197D")
     private void eventDownload(int event, int sourceId, int destinationId,
             byte[] additionalInfo, boolean oneShot) {
-        dsTaint.addTaint(oneShot);
-        dsTaint.addTaint(event);
-        dsTaint.addTaint(destinationId);
-        dsTaint.addTaint(additionalInfo[0]);
-        dsTaint.addTaint(sourceId);
         ByteArrayOutputStream buf;
         buf = new ByteArrayOutputStream();
         int tag;
@@ -552,6 +508,11 @@ public class CatService extends Handler implements AppInterface {
         String hexString;
         hexString = IccUtils.bytesToHexString(rawData);
         mCmdIf.sendEnvelope(hexString, null);
+        addTaint(event);
+        addTaint(sourceId);
+        addTaint(destinationId);
+        addTaint(additionalInfo[0]);
+        addTaint(oneShot);
         // ---------- Original Method ----------
         //ByteArrayOutputStream buf = new ByteArrayOutputStream();
         //int tag = BerTlv.BER_EVENT_DOWNLOAD_TAG;
@@ -609,11 +570,9 @@ public class CatService extends Handler implements AppInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.724 -0400", hash_original_method = "08AB5E16EBCD81DA8811894A2C2969C7", hash_generated_method = "CC74F3E3E6A16482AFF0FD926DABEE4E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.482 -0400", hash_original_method = "08AB5E16EBCD81DA8811894A2C2969C7", hash_generated_method = "B62012315CD2EE6B2464DB05F8781AE3")
     @Override
     public void handleMessage(Message msg) {
-        dsTaint.addTaint(msg.dsTaint);
         //Begin case MSG_ID_SESSION_END MSG_ID_PROACTIVE_COMMAND MSG_ID_EVENT_NOTIFY MSG_ID_REFRESH 
         CatLog.d(this, "ril message arrived");
         //End case MSG_ID_SESSION_END MSG_ID_PROACTIVE_COMMAND MSG_ID_EVENT_NOTIFY MSG_ID_REFRESH 
@@ -656,19 +615,19 @@ public class CatService extends Handler implements AppInterface {
         //Begin case default 
         if (DroidSafeAndroidRuntime.control) throw new AssertionError("Unrecognized CAT command: " + msg.what);
         //End case default 
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.725 -0400", hash_original_method = "8251947338311BFA45C2A2344891C68B", hash_generated_method = "945CC05314CD084F89E88B90A9565D96")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.482 -0400", hash_original_method = "8251947338311BFA45C2A2344891C68B", hash_generated_method = "64BEB40461B63A5B10EA46C9597FEB21")
     public synchronized void onCmdResponse(CatResponseMessage resMsg) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(resMsg.dsTaint);
         Message msg;
         msg = this.obtainMessage(MSG_ID_RESPONSE, resMsg);
         msg.sendToTarget();
+        addTaint(resMsg.getTaint());
         // ---------- Original Method ----------
         //if (resMsg == null) {
             //return;
@@ -678,14 +637,14 @@ public class CatService extends Handler implements AppInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.725 -0400", hash_original_method = "B0A9A02E0F2D96AF829ED175E58D2181", hash_generated_method = "87EBFF132815819D872A1FFE37DD1E01")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.482 -0400", hash_original_method = "B0A9A02E0F2D96AF829ED175E58D2181", hash_generated_method = "20DA80A2FD8E2AF61BED2FEDF12BF94E")
     private boolean validateResponse(CatResponseMessage resMsg) {
-        dsTaint.addTaint(resMsg.dsTaint);
         {
-            boolean var36410395CD93C1DC7B6B62D97443551F_576956015 = ((resMsg.cmdDet.compareTo(mCurrntCmd.mCmdDet)));
+            boolean var36410395CD93C1DC7B6B62D97443551F_107940218 = ((resMsg.cmdDet.compareTo(mCurrntCmd.mCmdDet)));
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(resMsg.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2053019236 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2053019236;
         // ---------- Original Method ----------
         //if (mCurrntCmd != null) {
             //return (resMsg.cmdDet.compareTo(mCurrntCmd.mCmdDet));
@@ -694,21 +653,21 @@ public class CatService extends Handler implements AppInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.725 -0400", hash_original_method = "FED22D423ED234057B6FD28452B9EEF5", hash_generated_method = "557CB6FDE590F2F674615273B7670BD3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.483 -0400", hash_original_method = "FED22D423ED234057B6FD28452B9EEF5", hash_generated_method = "6E2A0AF62B5C581052E316AEC64766AA")
     private boolean removeMenu(Menu menu) {
-        dsTaint.addTaint(menu.dsTaint);
         try 
         {
             {
-                boolean var7A3FCD0C746293761DF6222920A6CC9F_519662228 = (menu.items.size() == 1 && menu.items.get(0) == null);
+                boolean var7A3FCD0C746293761DF6222920A6CC9F_1826947713 = (menu.items.size() == 1 && menu.items.get(0) == null);
             } //End collapsed parenthetic
         } //End block
         catch (NullPointerException e)
         {
             CatLog.d(this, "Unable to get Menu's items size");
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(menu.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1160923053 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1160923053;
         // ---------- Original Method ----------
         //try {
             //if (menu.items.size() == 1 && menu.items.get(0) == null) {
@@ -722,12 +681,10 @@ public class CatService extends Handler implements AppInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.726 -0400", hash_original_method = "492114C564A8529E1D49C71798FBC33A", hash_generated_method = "C3C0E1627EDEA22A066818E9F1F7E84F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.502 -0400", hash_original_method = "48D7C107F944AA3B8D2770DC9FDB0ED7", hash_generated_method = "6C815DA32BCE720E9F389520B4FA63A4")
     private void handleCmdResponse(CatResponseMessage resMsg) {
-        dsTaint.addTaint(resMsg.dsTaint);
         {
-            boolean varD22E38D970B07736EEDB0B746B6EF7EE_1292644233 = (!validateResponse(resMsg));
+            boolean varD22E38D970B07736EEDB0B746B6EF7EE_824388479 = (!validateResponse(resMsg));
         } //End collapsed parenthetic
         ResponseData resp;
         resp = null;
@@ -740,7 +697,7 @@ public class CatService extends Handler implements AppInterface {
         //End case HELP_INFO_REQUIRED 
         //Begin case OK PRFRMD_WITH_PARTIAL_COMPREHENSION PRFRMD_WITH_MISSING_INFO PRFRMD_WITH_ADDITIONAL_EFS_READ PRFRMD_ICON_NOT_DISPLAYED PRFRMD_MODIFIED_BY_NAA PRFRMD_LIMITED_SERVICE PRFRMD_WITH_MODIFICATION PRFRMD_NAA_NOT_ACTIVE PRFRMD_TONE_NOT_PLAYED 
         {
-            Object var5A134572D68F084201EB42583661BD51_782635974 = (AppInterface.CommandType.fromInt(cmdDet.typeOfCommand));
+            Object var5A134572D68F084201EB42583661BD51_1992678449 = (AppInterface.CommandType.fromInt(cmdDet.typeOfCommand));
             //Begin case SET_UP_MENU 
             helpRequired = resMsg.resCode == ResultCode.HELP_INFO_REQUIRED;
             //End case SET_UP_MENU 
@@ -774,57 +731,73 @@ public class CatService extends Handler implements AppInterface {
             //End case SET_UP_CALL 
         } //End collapsed parenthetic
         //End case OK PRFRMD_WITH_PARTIAL_COMPREHENSION PRFRMD_WITH_MISSING_INFO PRFRMD_WITH_ADDITIONAL_EFS_READ PRFRMD_ICON_NOT_DISPLAYED PRFRMD_MODIFIED_BY_NAA PRFRMD_LIMITED_SERVICE PRFRMD_WITH_MODIFICATION PRFRMD_NAA_NOT_ACTIVE PRFRMD_TONE_NOT_PLAYED 
-        //Begin case NO_RESPONSE_FROM_USER UICC_SESSION_TERM_BY_USER BACKWARD_MOVE_BY_USER USER_NOT_ACCEPT 
+        //Begin case NO_RESPONSE_FROM_USER UICC_SESSION_TERM_BY_USER BACKWARD_MOVE_BY_USER 
         resp = null;
-        //End case NO_RESPONSE_FROM_USER UICC_SESSION_TERM_BY_USER BACKWARD_MOVE_BY_USER USER_NOT_ACCEPT 
+        //End case NO_RESPONSE_FROM_USER UICC_SESSION_TERM_BY_USER BACKWARD_MOVE_BY_USER 
         sendTerminalResponse(cmdDet, resMsg.resCode, false, 0, resp);
         mCurrntCmd = null;
+        addTaint(resMsg.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.726 -0400", hash_original_method = "A33C855F74E90E671C569C899D01A092", hash_generated_method = "9B879B36553F7116E3DFDC338D4FBCE7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private boolean isStkAppInstalled() {
-        Intent intent;
-        intent = new Intent(AppInterface.CAT_CMD_ACTION);
-        PackageManager pm;
-        pm = mContext.getPackageManager();
-        List<ResolveInfo> broadcastReceivers;
-        broadcastReceivers = pm.queryBroadcastReceivers(intent, PackageManager.GET_META_DATA);
-        int numReceiver;
-        numReceiver = 0;
-        numReceiver = broadcastReceivers.size();
-        return dsTaint.getTaintBoolean();
-        // ---------- Original Method ----------
-        //Intent intent = new Intent(AppInterface.CAT_CMD_ACTION);
-        //PackageManager pm = mContext.getPackageManager();
-        //List<ResolveInfo> broadcastReceivers =
-                            //pm.queryBroadcastReceivers(intent, PackageManager.GET_META_DATA);
-        //int numReceiver = broadcastReceivers == null ? 0 : broadcastReceivers.size();
-        //return (numReceiver > 0);
-    }
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.502 -0400", hash_original_field = "C90E66D30105E64A69B0470347184F2E", hash_generated_field = "300A42BBD72D4F998C99A9B62F7A3C8A")
 
-    
     private static IccRecords mIccRecords;
-    private static final Object sInstanceLock = new Object();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.502 -0400", hash_original_field = "4B76103D546737D807190C72D978B677", hash_generated_field = "462BE78ED08F72FB2BE014F181DECF6A")
+
+    private static Object sInstanceLock = new Object();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.502 -0400", hash_original_field = "06E23A628CBDEAB09E91C69789BB1974", hash_generated_field = "E81D7F90EE651933B622FBF4BA337EDF")
+
     private static CatService sInstance;
-    static final int MSG_ID_SESSION_END              = 1;
-    static final int MSG_ID_PROACTIVE_COMMAND        = 2;
-    static final int MSG_ID_EVENT_NOTIFY             = 3;
-    static final int MSG_ID_CALL_SETUP               = 4;
-    static final int MSG_ID_REFRESH                  = 5;
-    static final int MSG_ID_RESPONSE                 = 6;
-    static final int MSG_ID_SIM_READY                = 7;
-    static final int MSG_ID_RIL_MSG_DECODED          = 10;
-    private static final int MSG_ID_ICC_RECORDS_LOADED       = 20;
-    private static final int DEV_ID_KEYPAD      = 0x01;
-    private static final int DEV_ID_DISPLAY     = 0x02;
-    private static final int DEV_ID_EARPIECE    = 0x03;
-    private static final int DEV_ID_UICC        = 0x81;
-    private static final int DEV_ID_TERMINAL    = 0x82;
-    private static final int DEV_ID_NETWORK     = 0x83;
-    static final String STK_DEFAULT = "Defualt Message";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.502 -0400", hash_original_field = "632F42CE616303BD224EFBB09EFA0D0F", hash_generated_field = "D493793BCCFFB3685D83519D1C56EDA6")
+
+    static int MSG_ID_SESSION_END = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.502 -0400", hash_original_field = "63C317BE2F8A9BDC47E64B4228CD6BB1", hash_generated_field = "B5360C7854B2881D3268CB600FCB1B20")
+
+    static int MSG_ID_PROACTIVE_COMMAND = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.502 -0400", hash_original_field = "E1F0605CD0B3C65B7E157FDCE4C1D4CD", hash_generated_field = "02244DBD7D28527ED66C7CF344C9D643")
+
+    static int MSG_ID_EVENT_NOTIFY = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.503 -0400", hash_original_field = "CF5AD531AA56E8490EABB5F585A334BB", hash_generated_field = "E87D0E5EF4A28BA46199B6ADF3635263")
+
+    static int MSG_ID_CALL_SETUP = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.503 -0400", hash_original_field = "022752B8BB4C9107B8AA4354A9E7BA54", hash_generated_field = "319E5554F6FB659F5A475F568C68CDDF")
+
+    static int MSG_ID_REFRESH = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.503 -0400", hash_original_field = "589746988AD566E9B5F240DA87D7280C", hash_generated_field = "963BA58A616CC7F4B7CDDE85B18F60E5")
+
+    static int MSG_ID_RESPONSE = 6;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.503 -0400", hash_original_field = "204656EABDF49E09856D83F756D5283D", hash_generated_field = "207D84941B072733BCDF3E2A7C998FF8")
+
+    static int MSG_ID_SIM_READY = 7;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.503 -0400", hash_original_field = "1B99032C2DAAA65BB78AC11047093A7E", hash_generated_field = "3D56DABD73AF7E7A66E1356ED47A4E5A")
+
+    static int MSG_ID_RIL_MSG_DECODED = 10;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.503 -0400", hash_original_field = "69616CB904166640B230A8A3E9BD29DF", hash_generated_field = "C4060D8C144F5B1F2D57156F2F834898")
+
+    private static int MSG_ID_ICC_RECORDS_LOADED = 20;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.503 -0400", hash_original_field = "E606BB6536C2CD2AA1B51B2CFA643356", hash_generated_field = "D7A0F481C9AE295C404A9BB46E7BF757")
+
+    private static int DEV_ID_KEYPAD = 0x01;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.503 -0400", hash_original_field = "9EB4C6827FE3DF8941B8D5CCF7322AC5", hash_generated_field = "9011443A5B6F25916DC5843A6291C28A")
+
+    private static int DEV_ID_DISPLAY = 0x02;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.503 -0400", hash_original_field = "572785F752EC0639F06FFE1B1DB6CA7B", hash_generated_field = "3A365C7F97490B91A1243F24B2B6D87F")
+
+    private static int DEV_ID_EARPIECE = 0x03;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.503 -0400", hash_original_field = "FF522F9795F08E1F1130B741C23CB557", hash_generated_field = "520315B8B74C568C1A0A908391D152B7")
+
+    private static int DEV_ID_UICC = 0x81;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.503 -0400", hash_original_field = "F486BFEB3DC7F8DB6A09590ECF2B6283", hash_generated_field = "F2110DEC0BAB7DD6AD33CB03C1481F60")
+
+    private static int DEV_ID_TERMINAL = 0x82;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.503 -0400", hash_original_field = "A2BFA57161B3AFF490465A9D4249A75C", hash_generated_field = "EC883D9ECE92BD54EAAE9AF032E41139")
+
+    private static int DEV_ID_NETWORK = 0x83;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.503 -0400", hash_original_field = "CCC9CF7056AE506ABEF0CA54C93931BF", hash_generated_field = "7CF3D2DBEFFF5A68A0F13B0E2DC6C627")
+
+    static String STK_DEFAULT = "Defualt Message";
 }
 

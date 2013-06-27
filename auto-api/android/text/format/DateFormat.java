@@ -22,9 +22,10 @@ import java.text.SimpleDateFormat;
 
 public class DateFormat {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.964 -0400", hash_original_method = "26AFD5AA32B7A03C60859C55F1F2C6F0", hash_generated_method = "26AFD5AA32B7A03C60859C55F1F2C6F0")
-        public DateFormat ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.327 -0400", hash_original_method = "4FB6BE40E4FA388ABA6A7CE788B3C64B", hash_generated_method = "4FB6BE40E4FA388ABA6A7CE788B3C64B")
+    public DateFormat ()
     {
+        //Synthesized constructor
     }
 
 
@@ -345,20 +346,50 @@ public class DateFormat {
     }
 
     
-    public static final char    QUOTE                  =    '\'';
-    public static final char    AM_PM                  =    'a';
-    public static final char    CAPITAL_AM_PM          =    'A';
-    public static final char    DATE                   =    'd';
-    public static final char    DAY                    =    'E';
-    public static final char    HOUR                   =    'h';
-    public static final char    HOUR_OF_DAY            =    'k';
-    public static final char    MINUTE                 =    'm';
-    public static final char    MONTH                  =    'M';
-    public static final char    SECONDS                =    's';
-    public static final char    TIME_ZONE              =    'z';
-    public static final char    YEAR                   =    'y';
-    private static final Object sLocaleLock = new Object();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.369 -0400", hash_original_field = "DBC13028CDA4AA8FE6B2F5583DCCC360", hash_generated_field = "250A84389E130C726113284F2D117A00")
+
+    public  static final char    QUOTE                  =    '\'';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.372 -0400", hash_original_field = "F3E70AA8C5E0344CEE66C4E856D83FBB", hash_generated_field = "16093291ABEFB472FBE1F3FEF4023988")
+
+    public  static final char    AM_PM                  =    'a';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.372 -0400", hash_original_field = "8FA5FF45D8FEDDEFA32C774836390C6E", hash_generated_field = "9B7136CFCD8022B9C61259E68F2D56A5")
+
+    public  static final char    CAPITAL_AM_PM          =    'A';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.379 -0400", hash_original_field = "C28932E185C26B878DA498325DB9EAFB", hash_generated_field = "5D54378F1E1E8673FEB1D6D040ACD156")
+
+    public  static final char    DATE                   =    'd';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.383 -0400", hash_original_field = "02CEA295A3ED4CD7DED9B0EC936F9D95", hash_generated_field = "5A53B128E46D6BA59FBFBB13B828F69D")
+
+    public  static final char    DAY                    =    'E';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.383 -0400", hash_original_field = "6345F00980E16F356CC9D0351A7F4FC6", hash_generated_field = "613A1CD7DCE462E205EBA8126B697902")
+
+    public  static final char    HOUR                   =    'h';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.383 -0400", hash_original_field = "4DF1265A6CF2426F63AB5D182484227A", hash_generated_field = "10470B1D7CBA625E2E9CEBCFD571802E")
+
+    public  static final char    HOUR_OF_DAY            =    'k';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.383 -0400", hash_original_field = "456126919A49C4248E3949C410A2046F", hash_generated_field = "B4992C56769E8673618C8FEA85DC5010")
+
+    public  static final char    MINUTE                 =    'm';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.383 -0400", hash_original_field = "D90857C2693A6F118D917B4D702654ED", hash_generated_field = "3765CF3C3E8B2767C0D82BAC9274FAE1")
+
+    public  static final char    MONTH                  =    'M';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.383 -0400", hash_original_field = "2D9367A98397CCB79919394D68E4E635", hash_generated_field = "6F43AB9201DB419BC629D6FFFEC9B8DA")
+
+    public  static final char    SECONDS                =    's';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.383 -0400", hash_original_field = "5329A427C44652F846BC5F26B62209B4", hash_generated_field = "93F1A65F4251064F2BA64FB11B049AD7")
+
+    public  static final char    TIME_ZONE              =    'z';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.383 -0400", hash_original_field = "CCC53AF6B065086F32549AAD5F6D47E3", hash_generated_field = "670716792657D0E9DD7069832C0E534E")
+
+    public  static final char    YEAR                   =    'y';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.384 -0400", hash_original_field = "CAEA37DA1A95A3A11078061B01A70F48", hash_generated_field = "42EE5D72889C27627564CA73C3EEF6D4")
+
+    private static Object sLocaleLock = new Object();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.384 -0400", hash_original_field = "81DE3EB1814493ACBA0877DB43FB18D4", hash_generated_field = "872809FA2AF3A2EA3BD5FBFC0313FA4E")
+
     private static Locale sIs24HourLocale;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.384 -0400", hash_original_field = "DC4C8E22D96C40FC0CF11680165A67FD", hash_generated_field = "C14F0D97025D8697B6AE4E5D56399951")
+
     private static boolean sIs24Hour;
 }
 

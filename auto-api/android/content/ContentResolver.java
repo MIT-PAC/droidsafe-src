@@ -42,13 +42,16 @@ import java.util.List;
 import java.util.Random;
 
 public abstract class ContentResolver {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:57.849 -0400", hash_original_field = "536255EED7E3D46DD70E09FDE814B7C1", hash_generated_field = "C9556CF5DE25C89A85FB17574BD65906")
+
     private Random mRandom = new Random();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:57.849 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
     private Context mContext;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.718 -0400", hash_original_method = "8EB5ACCD206353DB8493F8AB9F861C85", hash_generated_method = "07DFBCF24085800F2E1D83972E722F61")
-    @DSModeled(DSC.SAFE)
-    public ContentResolver(Context context) {
-        dsTaint.addTaint(context.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:57.855 -0400", hash_original_method = "8EB5ACCD206353DB8493F8AB9F861C85", hash_generated_method = "934BE422B780F73056F691B084F33D1F")
+    public  ContentResolver(Context context) {
+        mContext = context;
         // ---------- Original Method ----------
         //mContext = context;
     }
@@ -57,13 +60,14 @@ public abstract class ContentResolver {
     protected abstract IContentProvider acquireProvider(Context c, String name);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.719 -0400", hash_original_method = "4AF2A0465BC3B713C9C8E0417552AB76", hash_generated_method = "13E2492EDC9B3C3AC620EF2B31548867")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:57.857 -0400", hash_original_method = "4AF2A0465BC3B713C9C8E0417552AB76", hash_generated_method = "F4F0351CAF03C62D914CB6E28F17A4F0")
     protected IContentProvider acquireExistingProvider(Context c, String name) {
-        dsTaint.addTaint(c.dsTaint);
-        dsTaint.addTaint(name);
-        IContentProvider var7616A789170D2AA3DACC7173F7CCEEDA_926220590 = (acquireProvider(c, name));
-        return (IContentProvider)dsTaint.getTaint();
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_1598386315 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1598386315 = acquireProvider(c, name);
+        addTaint(c.getTaint());
+        addTaint(name.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1598386315.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1598386315;
         // ---------- Original Method ----------
         //return acquireProvider(c, name);
     }
@@ -72,64 +76,125 @@ public abstract class ContentResolver {
     public abstract boolean releaseProvider(IContentProvider icp);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.720 -0400", hash_original_method = "045596B6E0367AC7BED26FC054AD1E2B", hash_generated_method = "A4D812D5D17F3D5DD223223983F8D063")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:57.876 -0400", hash_original_method = "045596B6E0367AC7BED26FC054AD1E2B", hash_generated_method = "9994F11390572F85E89ADD015B418302")
     public final String getType(Uri url) {
-        dsTaint.addTaint(url.dsTaint);
+        String varB4EAC82CA7396A68D541C85D26508E83_1493133147 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1965626444 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1985604387 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1866296155 = null; //Variable for return #4
+        String varB4EAC82CA7396A68D541C85D26508E83_1726078207 = null; //Variable for return #5
+        String varB4EAC82CA7396A68D541C85D26508E83_827976625 = null; //Variable for return #6
+        String varB4EAC82CA7396A68D541C85D26508E83_1206725038 = null; //Variable for return #7
         IContentProvider provider;
         provider = acquireExistingProvider(url);
         {
             try 
             {
-                String var62F8BABA280AC539A38982353657E818_387694859 = (provider.getType(url));
+                varB4EAC82CA7396A68D541C85D26508E83_1493133147 = provider.getType(url);
             } //End block
             catch (RemoteException e)
-            { }
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1965626444 = null;
+            } //End block
             catch (java.lang.Exception e)
-            { }
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1985604387 = null;
+            } //End block
             finally 
             {
                 releaseProvider(provider);
             } //End block
         } //End block
         {
-            boolean var18721B692F8DF38C1D910B0966D1473B_2029000546 = (!SCHEME_CONTENT.equals(url.getScheme()));
+            boolean var18721B692F8DF38C1D910B0966D1473B_1919932306 = (!SCHEME_CONTENT.equals(url.getScheme()));
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1866296155 = null;
+            } //End block
         } //End collapsed parenthetic
         try 
         {
             String type;
             type = ActivityManagerNative.getDefault().getProviderMimeType(url);
+            varB4EAC82CA7396A68D541C85D26508E83_1726078207 = type;
         } //End block
         catch (RemoteException e)
-        { }
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_827976625 = null;
+        } //End block
         catch (java.lang.Exception e)
-        { }
-        return dsTaint.getTaintString();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1206725038 = null;
+        } //End block
+        addTaint(url.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_1029275762; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1029275762 = varB4EAC82CA7396A68D541C85D26508E83_1493133147;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1029275762 = varB4EAC82CA7396A68D541C85D26508E83_1965626444;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_1029275762 = varB4EAC82CA7396A68D541C85D26508E83_1985604387;
+                break;
+            case 4: //Assign result for return ordinal #4
+                varA7E53CE21691AB073D9660D615818899_1029275762 = varB4EAC82CA7396A68D541C85D26508E83_1866296155;
+                break;
+            case 5: //Assign result for return ordinal #5
+                varA7E53CE21691AB073D9660D615818899_1029275762 = varB4EAC82CA7396A68D541C85D26508E83_1726078207;
+                break;
+            case 6: //Assign result for return ordinal #6
+                varA7E53CE21691AB073D9660D615818899_1029275762 = varB4EAC82CA7396A68D541C85D26508E83_827976625;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1029275762 = varB4EAC82CA7396A68D541C85D26508E83_1206725038;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1029275762.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1029275762;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.720 -0400", hash_original_method = "BFD7301BBEDEF32538E97E3FEFB31C63", hash_generated_method = "B4760D9F2EFB72F54C07CD6A5E95044C")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:57.888 -0400", hash_original_method = "BFD7301BBEDEF32538E97E3FEFB31C63", hash_generated_method = "599DDA7D43A99542252B7EA7E5CCB029")
     public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
-        dsTaint.addTaint(mimeTypeFilter);
-        dsTaint.addTaint(url.dsTaint);
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1817934523 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1481249609 = null; //Variable for return #2
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1784544612 = null; //Variable for return #3
         IContentProvider provider;
         provider = acquireProvider(url);
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1817934523 = null;
+        } //End block
         try 
         {
-            String[] varC0880DAA9133D73EEA535AF1A3760FB5_1997049232 = (provider.getStreamTypes(url, mimeTypeFilter));
+            varB4EAC82CA7396A68D541C85D26508E83_1481249609 = provider.getStreamTypes(url, mimeTypeFilter);
         } //End block
         catch (RemoteException e)
-        { }
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1784544612 = null;
+        } //End block
         finally 
         {
             releaseProvider(provider);
         } //End block
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        addTaint(url.getTaint());
+        addTaint(mimeTypeFilter.getTaint());
+        String[] varA7E53CE21691AB073D9660D615818899_194659430; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_194659430 = varB4EAC82CA7396A68D541C85D26508E83_1817934523;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_194659430 = varB4EAC82CA7396A68D541C85D26508E83_1481249609;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_194659430 = varB4EAC82CA7396A68D541C85D26508E83_1784544612;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_194659430.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_194659430;
         // ---------- Original Method ----------
         //IContentProvider provider = acquireProvider(url);
         //if (provider == null) {
@@ -145,17 +210,18 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.723 -0400", hash_original_method = "505F43360905D398310F020FC85BFA22", hash_generated_method = "0E8BB6801017F937251B27BE20B01E8D")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:57.921 -0400", hash_original_method = "505F43360905D398310F020FC85BFA22", hash_generated_method = "E9E5B39B3E4571B9C660E75D585B40F8")
     public final Cursor query(Uri uri, String[] projection,
             String selection, String[] selectionArgs, String sortOrder) {
-        dsTaint.addTaint(selectionArgs[0]);
-        dsTaint.addTaint(sortOrder);
-        dsTaint.addTaint(projection[0]);
-        dsTaint.addTaint(uri.dsTaint);
-        dsTaint.addTaint(selection);
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_1316065181 = null; //Variable for return #1
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_952927342 = null; //Variable for return #2
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_1376029007 = null; //Variable for return #3
+        Cursor varB4EAC82CA7396A68D541C85D26508E83_1701282124 = null; //Variable for return #4
         IContentProvider provider;
         provider = acquireProvider(uri);
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1316065181 = null;
+        } //End block
         try 
         {
             long startTime;
@@ -164,36 +230,60 @@ public abstract class ContentResolver {
             qCursor = provider.query(uri, projection, selection, selectionArgs, sortOrder);
             {
                 releaseProvider(provider);
+                varB4EAC82CA7396A68D541C85D26508E83_952927342 = null;
             } //End block
             qCursor.getCount();
             long durationMillis;
             durationMillis = SystemClock.uptimeMillis() - startTime;
             maybeLogQueryToEventLog(durationMillis, uri, projection, selection, sortOrder);
-            Cursor var08C0A7D23B8C77039FD21F436E982F32_38204838 = (new CursorWrapperInner(qCursor, provider));
+            varB4EAC82CA7396A68D541C85D26508E83_1376029007 = new CursorWrapperInner(qCursor, provider);
         } //End block
         catch (RemoteException e)
         {
             releaseProvider(provider);
+            varB4EAC82CA7396A68D541C85D26508E83_1701282124 = null;
         } //End block
         catch (RuntimeException e)
         {
             releaseProvider(provider);
             if (DroidSafeAndroidRuntime.control) throw e;
         } //End block
-        return (Cursor)dsTaint.getTaint();
+        addTaint(uri.getTaint());
+        addTaint(projection[0].getTaint());
+        addTaint(selection.getTaint());
+        addTaint(selectionArgs[0].getTaint());
+        addTaint(sortOrder.getTaint());
+        Cursor varA7E53CE21691AB073D9660D615818899_86294554; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_86294554 = varB4EAC82CA7396A68D541C85D26508E83_1316065181;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_86294554 = varB4EAC82CA7396A68D541C85D26508E83_952927342;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_86294554 = varB4EAC82CA7396A68D541C85D26508E83_1376029007;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_86294554 = varB4EAC82CA7396A68D541C85D26508E83_1701282124;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_86294554.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_86294554;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.731 -0400", hash_original_method = "741F25E5E9079F60798D64718B03495A", hash_generated_method = "1318867B1E6D4894B88B240A120E107F")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:57.936 -0400", hash_original_method = "741F25E5E9079F60798D64718B03495A", hash_generated_method = "869E9ECB3533E041772191A2D3AC590C")
     public final InputStream openInputStream(Uri uri) throws FileNotFoundException {
-        dsTaint.addTaint(uri.dsTaint);
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_2019779925 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_534590483 = null; //Variable for return #2
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_556003221 = null; //Variable for return #3
         String scheme;
         scheme = uri.getScheme();
         {
-            boolean varDFD9C1D7BE28AB5E473B86FFFB70E350_308475991 = (SCHEME_ANDROID_RESOURCE.equals(scheme));
+            boolean varDFD9C1D7BE28AB5E473B86FFFB70E350_278518622 = (SCHEME_ANDROID_RESOURCE.equals(scheme));
             {
                 OpenResourceIdResult r;
                 r = getResourceId(uri);
@@ -201,6 +291,7 @@ public abstract class ContentResolver {
                 {
                     InputStream stream;
                     stream = r.r.openRawResource(r.id);
+                    varB4EAC82CA7396A68D541C85D26508E83_2019779925 = stream;
                 } //End block
                 catch (Resources.NotFoundException ex)
                 {
@@ -208,18 +299,16 @@ public abstract class ContentResolver {
                 } //End block
             } //End block
             {
-                boolean var7C16B7242FD360F5FCAE86285293D958_487057152 = (SCHEME_FILE.equals(scheme));
+                boolean var7C16B7242FD360F5FCAE86285293D958_370618360 = (SCHEME_FILE.equals(scheme));
                 {
-                    InputStream var56197DB113071FD77EC52DA51FA62E26_840353524 = (new FileInputStream(uri.getPath()));
+                    varB4EAC82CA7396A68D541C85D26508E83_534590483 = new FileInputStream(uri.getPath());
                 } //End block
                 {
                     AssetFileDescriptor fd;
                     fd = openAssetFileDescriptor(uri, "r");
                     try 
                     {
-                        {
-                            Object varE5A1CC48B7036EFCB483446D46C36AA2_118418703 = (fd.createInputStream());
-                        } //End flattened ternary
+                        varB4EAC82CA7396A68D541C85D26508E83_556003221 = fd != null ? fd.createInputStream() : null;
                     } //End block
                     catch (IOException e)
                     {
@@ -228,41 +317,55 @@ public abstract class ContentResolver {
                 } //End block
             } //End collapsed parenthetic
         } //End collapsed parenthetic
-        return (InputStream)dsTaint.getTaint();
+        addTaint(uri.getTaint());
+        InputStream varA7E53CE21691AB073D9660D615818899_479196750; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_479196750 = varB4EAC82CA7396A68D541C85D26508E83_2019779925;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_479196750 = varB4EAC82CA7396A68D541C85D26508E83_534590483;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_479196750 = varB4EAC82CA7396A68D541C85D26508E83_556003221;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_479196750.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_479196750;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.731 -0400", hash_original_method = "11A517824302FF0E2A744E48D03F81F2", hash_generated_method = "0F45A6FFADAB27CB13CFD4AB50BCDAC8")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:57.946 -0400", hash_original_method = "11A517824302FF0E2A744E48D03F81F2", hash_generated_method = "00B436BDF53065125D666B2E1B09C2AB")
     public final OutputStream openOutputStream(Uri uri) throws FileNotFoundException {
-        dsTaint.addTaint(uri.dsTaint);
-        OutputStream varDAFEAE4B62C0FA570C709E3071AAF2D5_1656279405 = (openOutputStream(uri, "w"));
-        return (OutputStream)dsTaint.getTaint();
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_2131149392 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2131149392 = openOutputStream(uri, "w");
+        addTaint(uri.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_2131149392.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2131149392;
         // ---------- Original Method ----------
         //return openOutputStream(uri, "w");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.732 -0400", hash_original_method = "99597D87D82436F243497E22352BC980", hash_generated_method = "6B80BFBDDB9E42EF529FD892AF948920")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:57.960 -0400", hash_original_method = "99597D87D82436F243497E22352BC980", hash_generated_method = "4EAF76F30249AB6728D291B8BC0C1B57")
     public final OutputStream openOutputStream(Uri uri, String mode) throws FileNotFoundException {
-        dsTaint.addTaint(uri.dsTaint);
-        dsTaint.addTaint(mode);
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_812621469 = null; //Variable for return #1
         AssetFileDescriptor fd;
         fd = openAssetFileDescriptor(uri, mode);
         try 
         {
-            {
-                Object var441F640F4CCE433C78EA3355A62061B7_1332330788 = (fd.createOutputStream());
-            } //End flattened ternary
+            varB4EAC82CA7396A68D541C85D26508E83_812621469 = fd != null ? fd.createOutputStream() : null;
         } //End block
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Unable to create stream");
         } //End block
-        return (OutputStream)dsTaint.getTaint();
+        addTaint(uri.getTaint());
+        addTaint(mode.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_812621469.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_812621469;
         // ---------- Original Method ----------
         //AssetFileDescriptor fd = openAssetFileDescriptor(uri, mode);
         //try {
@@ -273,18 +376,20 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.732 -0400", hash_original_method = "8C4F5C0648F37279A7BD3F73F68574C8", hash_generated_method = "B06336EEC3974653EAF73B1F9850CF17")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:57.979 -0400", hash_original_method = "8C4F5C0648F37279A7BD3F73F68574C8", hash_generated_method = "213F87882374D7A2A3836EE45F3E4AE4")
     public final ParcelFileDescriptor openFileDescriptor(Uri uri,
             String mode) throws FileNotFoundException {
-        dsTaint.addTaint(uri.dsTaint);
-        dsTaint.addTaint(mode);
+        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_187859815 = null; //Variable for return #1
+        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_733577898 = null; //Variable for return #2
         AssetFileDescriptor afd;
         afd = openAssetFileDescriptor(uri, mode);
         {
-            boolean var8DC5E2F0722D8D5D90D15EC8C0F83F70_580088765 = (afd.getDeclaredLength() < 0);
+            varB4EAC82CA7396A68D541C85D26508E83_187859815 = null;
+        } //End block
+        {
+            boolean var8DC5E2F0722D8D5D90D15EC8C0F83F70_1880685620 = (afd.getDeclaredLength() < 0);
             {
-                ParcelFileDescriptor var5C92900FF6EF260B9BC07111424F278C_1757839509 = (afd.getParcelFileDescriptor());
+                varB4EAC82CA7396A68D541C85D26508E83_733577898 = afd.getParcelFileDescriptor();
             } //End block
         } //End collapsed parenthetic
         try 
@@ -294,7 +399,19 @@ public abstract class ContentResolver {
         catch (IOException e)
         { }
         if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Not a whole file");
-        return (ParcelFileDescriptor)dsTaint.getTaint();
+        addTaint(uri.getTaint());
+        addTaint(mode.getTaint());
+        ParcelFileDescriptor varA7E53CE21691AB073D9660D615818899_853988244; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_853988244 = varB4EAC82CA7396A68D541C85D26508E83_187859815;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_853988244 = varB4EAC82CA7396A68D541C85D26508E83_733577898;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_853988244.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_853988244;
         // ---------- Original Method ----------
         //AssetFileDescriptor afd = openAssetFileDescriptor(uri, mode);
         //if (afd == null) {
@@ -311,19 +428,21 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.733 -0400", hash_original_method = "6D0B2664AB85671E5A18996AE47F9088", hash_generated_method = "4A03638B362D4E9D5DC119CC2814B19D")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:57.991 -0400", hash_original_method = "6D0B2664AB85671E5A18996AE47F9088", hash_generated_method = "473BE85573E3159390982D6312FB6C44")
     public final AssetFileDescriptor openAssetFileDescriptor(Uri uri,
             String mode) throws FileNotFoundException {
-        dsTaint.addTaint(uri.dsTaint);
-        dsTaint.addTaint(mode);
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1723925327 = null; //Variable for return #1
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_803590017 = null; //Variable for return #2
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1271901367 = null; //Variable for return #3
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1602976797 = null; //Variable for return #4
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_26660267 = null; //Variable for return #5
         String scheme;
         scheme = uri.getScheme();
         {
-            boolean varDFD9C1D7BE28AB5E473B86FFFB70E350_1403253892 = (SCHEME_ANDROID_RESOURCE.equals(scheme));
+            boolean varDFD9C1D7BE28AB5E473B86FFFB70E350_1558084804 = (SCHEME_ANDROID_RESOURCE.equals(scheme));
             {
                 {
-                    boolean varC16FAE09F0519703CBD513EC3052DFFD_426912772 = (!"r".equals(mode));
+                    boolean varC16FAE09F0519703CBD513EC3052DFFD_999328195 = (!"r".equals(mode));
                     {
                         if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("Can't write resources: " + uri);
                     } //End block
@@ -332,7 +451,7 @@ public abstract class ContentResolver {
                 r = getResourceId(uri);
                 try 
                 {
-                    AssetFileDescriptor varE744077AEB2B3CB026C97EFE683A8AC3_1923751348 = (r.r.openRawResourceFd(r.id));
+                    varB4EAC82CA7396A68D541C85D26508E83_1723925327 = r.r.openRawResourceFd(r.id);
                 } //End block
                 catch (Resources.NotFoundException ex)
                 {
@@ -340,18 +459,18 @@ public abstract class ContentResolver {
                 } //End block
             } //End block
             {
-                boolean var7C16B7242FD360F5FCAE86285293D958_2045770313 = (SCHEME_FILE.equals(scheme));
+                boolean var7C16B7242FD360F5FCAE86285293D958_171951036 = (SCHEME_FILE.equals(scheme));
                 {
                     ParcelFileDescriptor pfd;
                     pfd = ParcelFileDescriptor.open(
                     new File(uri.getPath()), modeToMode(uri, mode));
-                    AssetFileDescriptor var85F10A5855921906B4A67C2077C38731_874007251 = (new AssetFileDescriptor(pfd, 0, -1));
+                    varB4EAC82CA7396A68D541C85D26508E83_803590017 = new AssetFileDescriptor(pfd, 0, -1);
                 } //End block
                 {
                     {
-                        boolean var9E14F7893596A4058297083115E283FF_632078128 = ("r".equals(mode));
+                        boolean var9E14F7893596A4058297083115E283FF_756778116 = ("r".equals(mode));
                         {
-                            AssetFileDescriptor var6124B3414B13A0E5AF2C1A6736CB127C_1153412754 = (openTypedAssetFileDescriptor(uri, "*/*", null));
+                            varB4EAC82CA7396A68D541C85D26508E83_1271901367 = openTypedAssetFileDescriptor(uri, "*/*", null);
                         } //End block
                         {
                             IContentProvider provider;
@@ -363,12 +482,15 @@ public abstract class ContentResolver {
                             {
                                 AssetFileDescriptor fd;
                                 fd = provider.openAssetFile(uri, mode);
+                                {
+                                    varB4EAC82CA7396A68D541C85D26508E83_1602976797 = null;
+                                } //End block
                                 ParcelFileDescriptor pfd;
                                 pfd = new ParcelFileDescriptorInner(
                             fd.getParcelFileDescriptor(), provider);
                                 provider = null;
-                                AssetFileDescriptor varD8E188F987F4BA27290D58DB21C1C9F2_128764365 = (new AssetFileDescriptor(pfd, fd.getStartOffset(),
-                            fd.getDeclaredLength()));
+                                varB4EAC82CA7396A68D541C85D26508E83_26660267 = new AssetFileDescriptor(pfd, fd.getStartOffset(),
+                            fd.getDeclaredLength());
                             } //End block
                             catch (RemoteException e)
                             {
@@ -389,19 +511,38 @@ public abstract class ContentResolver {
                 } //End block
             } //End collapsed parenthetic
         } //End collapsed parenthetic
-        return (AssetFileDescriptor)dsTaint.getTaint();
+        addTaint(uri.getTaint());
+        addTaint(mode.getTaint());
+        AssetFileDescriptor varA7E53CE21691AB073D9660D615818899_1247289000; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1247289000 = varB4EAC82CA7396A68D541C85D26508E83_1723925327;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1247289000 = varB4EAC82CA7396A68D541C85D26508E83_803590017;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_1247289000 = varB4EAC82CA7396A68D541C85D26508E83_1271901367;
+                break;
+            case 4: //Assign result for return ordinal #4
+                varA7E53CE21691AB073D9660D615818899_1247289000 = varB4EAC82CA7396A68D541C85D26508E83_1602976797;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1247289000 = varB4EAC82CA7396A68D541C85D26508E83_26660267;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1247289000.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1247289000;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.734 -0400", hash_original_method = "6625A014E29DF928853C1F0BC5B9E856", hash_generated_method = "AC6FCA06BD3D10BADB7B7D04D3116A44")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.010 -0400", hash_original_method = "6625A014E29DF928853C1F0BC5B9E856", hash_generated_method = "1D0FC29E820B1CEBF674CCB26B51DE38")
     public final AssetFileDescriptor openTypedAssetFileDescriptor(Uri uri,
             String mimeType, Bundle opts) throws FileNotFoundException {
-        dsTaint.addTaint(opts.dsTaint);
-        dsTaint.addTaint(uri.dsTaint);
-        dsTaint.addTaint(mimeType);
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1872870518 = null; //Variable for return #1
+        AssetFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1836446352 = null; //Variable for return #2
         IContentProvider provider;
         provider = acquireProvider(uri);
         {
@@ -411,12 +552,15 @@ public abstract class ContentResolver {
         {
             AssetFileDescriptor fd;
             fd = provider.openTypedAssetFile(uri, mimeType, opts);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1872870518 = null;
+            } //End block
             ParcelFileDescriptor pfd;
             pfd = new ParcelFileDescriptorInner(
                     fd.getParcelFileDescriptor(), provider);
             provider = null;
-            AssetFileDescriptor varF1569A55F19C591826FC871D7444B2F8_1367728411 = (new AssetFileDescriptor(pfd, fd.getStartOffset(),
-                    fd.getDeclaredLength()));
+            varB4EAC82CA7396A68D541C85D26508E83_1836446352 = new AssetFileDescriptor(pfd, fd.getStartOffset(),
+                    fd.getDeclaredLength());
         } //End block
         catch (RemoteException e)
         {
@@ -432,21 +576,33 @@ public abstract class ContentResolver {
                 releaseProvider(provider);
             } //End block
         } //End block
-        return (AssetFileDescriptor)dsTaint.getTaint();
+        addTaint(uri.getTaint());
+        addTaint(mimeType.getTaint());
+        addTaint(opts.getTaint());
+        AssetFileDescriptor varA7E53CE21691AB073D9660D615818899_404164340; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_404164340 = varB4EAC82CA7396A68D541C85D26508E83_1872870518;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_404164340 = varB4EAC82CA7396A68D541C85D26508E83_1836446352;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_404164340.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_404164340;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.735 -0400", hash_original_method = "39DD117C1A4502740FE90592CCDD92D2", hash_generated_method = "1CE5BDE40CA8E8F50367FF6C110BABB9")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.013 -0400", hash_original_method = "39DD117C1A4502740FE90592CCDD92D2", hash_generated_method = "FB273EB04179304E4724FABC38968E79")
     public OpenResourceIdResult getResourceId(Uri uri) throws FileNotFoundException {
-        dsTaint.addTaint(uri.dsTaint);
+        OpenResourceIdResult varB4EAC82CA7396A68D541C85D26508E83_136284994 = null; //Variable for return #1
         String authority;
         authority = uri.getAuthority();
         Resources r;
         {
-            boolean var9779973367485DB1CCDF8689D3EBF254_1018935574 = (TextUtils.isEmpty(authority));
+            boolean var9779973367485DB1CCDF8689D3EBF254_1251836312 = (TextUtils.isEmpty(authority));
             {
                 if (DroidSafeAndroidRuntime.control) throw new FileNotFoundException("No authority: " + uri);
             } //End block
@@ -492,7 +648,10 @@ public abstract class ContentResolver {
         res = new OpenResourceIdResult();
         res.r = r;
         res.id = id;
-        return (OpenResourceIdResult)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_136284994 = res;
+        addTaint(uri.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_136284994.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_136284994;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -525,11 +684,10 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.746 -0400", hash_original_method = "21049B5CF31214AC69662F00A8291DA2", hash_generated_method = "8F3353B29D26B3119D18EF18790C4518")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.034 -0400", hash_original_method = "21049B5CF31214AC69662F00A8291DA2", hash_generated_method = "13215A73E8BD773BA0793E6282F9AB45")
     public final Uri insert(Uri url, ContentValues values) {
-        dsTaint.addTaint(values.dsTaint);
-        dsTaint.addTaint(url.dsTaint);
+        Uri varB4EAC82CA7396A68D541C85D26508E83_1344474456 = null; //Variable for return #1
+        Uri varB4EAC82CA7396A68D541C85D26508E83_1700061738 = null; //Variable for return #2
         IContentProvider provider;
         provider = acquireProvider(url);
         {
@@ -544,14 +702,29 @@ public abstract class ContentResolver {
             long durationMillis;
             durationMillis = SystemClock.uptimeMillis() - startTime;
             maybeLogUpdateToEventLog(durationMillis, url, "insert", null );
+            varB4EAC82CA7396A68D541C85D26508E83_1344474456 = createdRow;
         } //End block
         catch (RemoteException e)
-        { }
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1700061738 = null;
+        } //End block
         finally 
         {
             releaseProvider(provider);
         } //End block
-        return (Uri)dsTaint.getTaint();
+        addTaint(url.getTaint());
+        addTaint(values.getTaint());
+        Uri varA7E53CE21691AB073D9660D615818899_1539186986; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1539186986 = varB4EAC82CA7396A68D541C85D26508E83_1344474456;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1539186986 = varB4EAC82CA7396A68D541C85D26508E83_1700061738;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1539186986.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1539186986;
         // ---------- Original Method ----------
         //IContentProvider provider = acquireProvider(url);
         //if (provider == null) {
@@ -571,12 +744,10 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.747 -0400", hash_original_method = "35DA1841C97E840C3B5123B65D72A2FC", hash_generated_method = "4483C4FE2BBEA9D5F94B5E35804CBFDA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.042 -0400", hash_original_method = "35DA1841C97E840C3B5123B65D72A2FC", hash_generated_method = "6E0304A6349FF3579B77E983E1619D26")
     public ContentProviderResult[] applyBatch(String authority,
             ArrayList<ContentProviderOperation> operations) throws RemoteException, OperationApplicationException {
-        dsTaint.addTaint(authority);
-        dsTaint.addTaint(operations.dsTaint);
+        ContentProviderResult[] varB4EAC82CA7396A68D541C85D26508E83_1853318447 = null; //Variable for return #1
         ContentProviderClient provider;
         provider = acquireContentProviderClient(authority);
         {
@@ -584,13 +755,16 @@ public abstract class ContentResolver {
         } //End block
         try 
         {
-            ContentProviderResult[] var0BC624ED14CD6CF036AD523265149BCD_1843918853 = (provider.applyBatch(operations));
+            varB4EAC82CA7396A68D541C85D26508E83_1853318447 = provider.applyBatch(operations);
         } //End block
         finally 
         {
             provider.release();
         } //End block
-        return (ContentProviderResult[])dsTaint.getTaint();
+        addTaint(authority.getTaint());
+        addTaint(operations.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1853318447.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1853318447;
         // ---------- Original Method ----------
         //ContentProviderClient provider = acquireContentProviderClient(authority);
         //if (provider == null) {
@@ -604,11 +778,8 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.755 -0400", hash_original_method = "B00B6610FA17409048836C33B1F1B82B", hash_generated_method = "0E2E0A554BE3070CAA1399FFFDC8E10F")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.056 -0400", hash_original_method = "B00B6610FA17409048836C33B1F1B82B", hash_generated_method = "8ED66016EED222F5FB0D7DFB9429FB5A")
     public final int bulkInsert(Uri url, ContentValues[] values) {
-        dsTaint.addTaint(values[0].dsTaint);
-        dsTaint.addTaint(url.dsTaint);
         IContentProvider provider;
         provider = acquireProvider(url);
         {
@@ -630,7 +801,10 @@ public abstract class ContentResolver {
         {
             releaseProvider(provider);
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(url.getTaint());
+        addTaint(values[0].getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89845648 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89845648;
         // ---------- Original Method ----------
         //IContentProvider provider = acquireProvider(url);
         //if (provider == null) {
@@ -650,12 +824,8 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.756 -0400", hash_original_method = "5F64E7642550035A4284C543DD08EBF1", hash_generated_method = "8100F775AE186D21DF5F41C5ABD1C629")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.066 -0400", hash_original_method = "5F64E7642550035A4284C543DD08EBF1", hash_generated_method = "FB6319718FC1AA4469642A85FA071746")
     public final int delete(Uri url, String where, String[] selectionArgs) {
-        dsTaint.addTaint(selectionArgs[0]);
-        dsTaint.addTaint(where);
-        dsTaint.addTaint(url.dsTaint);
         IContentProvider provider;
         provider = acquireProvider(url);
         {
@@ -677,7 +847,11 @@ public abstract class ContentResolver {
         {
             releaseProvider(provider);
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(url.getTaint());
+        addTaint(where.getTaint());
+        addTaint(selectionArgs[0].getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2071472961 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2071472961;
         // ---------- Original Method ----------
         //IContentProvider provider = acquireProvider(url);
         //if (provider == null) {
@@ -697,14 +871,9 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.757 -0400", hash_original_method = "93173B163A2993B2278E9CE2CA5F5268", hash_generated_method = "2986277AC0CA87F96ADEA37D71424416")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.067 -0400", hash_original_method = "93173B163A2993B2278E9CE2CA5F5268", hash_generated_method = "EA3C6DFF1E82192983ACD65389047914")
     public final int update(Uri uri, ContentValues values, String where,
             String[] selectionArgs) {
-        dsTaint.addTaint(values.dsTaint);
-        dsTaint.addTaint(selectionArgs[0]);
-        dsTaint.addTaint(where);
-        dsTaint.addTaint(uri.dsTaint);
         IContentProvider provider;
         provider = acquireProvider(uri);
         {
@@ -726,7 +895,12 @@ public abstract class ContentResolver {
         {
             releaseProvider(provider);
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(uri.getTaint());
+        addTaint(values.getTaint());
+        addTaint(where.getTaint());
+        addTaint(selectionArgs[0].getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2144885249 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2144885249;
         // ---------- Original Method ----------
         //IContentProvider provider = acquireProvider(uri);
         //if (provider == null) {
@@ -746,13 +920,10 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.758 -0400", hash_original_method = "7B97BF1D704BA5CFE2C56D2F21EF49E5", hash_generated_method = "1E8A1BF90D1E24072F323FE6404F4F95")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.088 -0400", hash_original_method = "7B97BF1D704BA5CFE2C56D2F21EF49E5", hash_generated_method = "385C55447492278F5ED89098BA5FA55C")
     public final Bundle call(Uri uri, String method, String arg, Bundle extras) {
-        dsTaint.addTaint(arg);
-        dsTaint.addTaint(method);
-        dsTaint.addTaint(uri.dsTaint);
-        dsTaint.addTaint(extras.dsTaint);
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_1089801173 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_2096277855 = null; //Variable for return #2
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("uri == null");
         } //End block
@@ -766,15 +937,31 @@ public abstract class ContentResolver {
         } //End block
         try 
         {
-            Bundle var69621EC32EA3A62BD98468A030EBFA82_326148188 = (provider.call(method, arg, extras));
+            varB4EAC82CA7396A68D541C85D26508E83_1089801173 = provider.call(method, arg, extras);
         } //End block
         catch (RemoteException e)
-        { }
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_2096277855 = null;
+        } //End block
         finally 
         {
             releaseProvider(provider);
         } //End block
-        return (Bundle)dsTaint.getTaint();
+        addTaint(uri.getTaint());
+        addTaint(method.getTaint());
+        addTaint(arg.getTaint());
+        addTaint(extras.getTaint());
+        Bundle varA7E53CE21691AB073D9660D615818899_1661253789; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1661253789 = varB4EAC82CA7396A68D541C85D26508E83_1089801173;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1661253789 = varB4EAC82CA7396A68D541C85D26508E83_2096277855;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1661253789.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1661253789;
         // ---------- Original Method ----------
         //if (uri == null) {
             //throw new NullPointerException("uri == null");
@@ -796,19 +983,38 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.758 -0400", hash_original_method = "337E4492D27C715A525AA87619808C6B", hash_generated_method = "691CDF35EB7A7939F205B6F1D6503823")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.103 -0400", hash_original_method = "337E4492D27C715A525AA87619808C6B", hash_generated_method = "B06E89C879B399AA4DCF3385DDE4F2B9")
     public final IContentProvider acquireProvider(Uri uri) {
-        dsTaint.addTaint(uri.dsTaint);
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_1766758173 = null; //Variable for return #1
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_1629958946 = null; //Variable for return #2
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_219291629 = null; //Variable for return #3
         {
-            boolean var9032E7F5B68A598423C5832E98A924D2_1882500482 = (!SCHEME_CONTENT.equals(uri.getScheme()));
+            boolean var9032E7F5B68A598423C5832E98A924D2_1215220330 = (!SCHEME_CONTENT.equals(uri.getScheme()));
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1766758173 = null;
+            } //End block
         } //End collapsed parenthetic
         String auth;
         auth = uri.getAuthority();
         {
-            IContentProvider varB3C1A90AC7C01B67E9F7822F811EE9C1_1310125671 = (acquireProvider(mContext, uri.getAuthority()));
+            varB4EAC82CA7396A68D541C85D26508E83_1629958946 = acquireProvider(mContext, uri.getAuthority());
         } //End block
-        return (IContentProvider)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_219291629 = null;
+        addTaint(uri.getTaint());
+        IContentProvider varA7E53CE21691AB073D9660D615818899_1419701095; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1419701095 = varB4EAC82CA7396A68D541C85D26508E83_1766758173;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1419701095 = varB4EAC82CA7396A68D541C85D26508E83_1629958946;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1419701095 = varB4EAC82CA7396A68D541C85D26508E83_219291629;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1419701095.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1419701095;
         // ---------- Original Method ----------
         //if (!SCHEME_CONTENT.equals(uri.getScheme())) {
             //return null;
@@ -821,19 +1027,38 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.759 -0400", hash_original_method = "C657A24801BE240D39C6FCA466A49DFE", hash_generated_method = "ED7EE59D1854EA2842C6333D5D08EF4A")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.125 -0400", hash_original_method = "C657A24801BE240D39C6FCA466A49DFE", hash_generated_method = "BBC422D303A1ABE9F7F967BA6C2D6A75")
     public final IContentProvider acquireExistingProvider(Uri uri) {
-        dsTaint.addTaint(uri.dsTaint);
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_127512198 = null; //Variable for return #1
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_988922863 = null; //Variable for return #2
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_264762275 = null; //Variable for return #3
         {
-            boolean var9032E7F5B68A598423C5832E98A924D2_1703609493 = (!SCHEME_CONTENT.equals(uri.getScheme()));
+            boolean var9032E7F5B68A598423C5832E98A924D2_595122624 = (!SCHEME_CONTENT.equals(uri.getScheme()));
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_127512198 = null;
+            } //End block
         } //End collapsed parenthetic
         String auth;
         auth = uri.getAuthority();
         {
-            IContentProvider var02F0A2D248998F273183B8D812163467_759604907 = (acquireExistingProvider(mContext, uri.getAuthority()));
+            varB4EAC82CA7396A68D541C85D26508E83_988922863 = acquireExistingProvider(mContext, uri.getAuthority());
         } //End block
-        return (IContentProvider)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_264762275 = null;
+        addTaint(uri.getTaint());
+        IContentProvider varA7E53CE21691AB073D9660D615818899_1801206260; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1801206260 = varB4EAC82CA7396A68D541C85D26508E83_127512198;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1801206260 = varB4EAC82CA7396A68D541C85D26508E83_988922863;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1801206260 = varB4EAC82CA7396A68D541C85D26508E83_264762275;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1801206260.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1801206260;
         // ---------- Original Method ----------
         //if (!SCHEME_CONTENT.equals(uri.getScheme())) {
             //return null;
@@ -846,12 +1071,26 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.760 -0400", hash_original_method = "1419B9D62800705D7AC72C916BD8939A", hash_generated_method = "F5D38D9D5F2F25E760FDDD776D792F43")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.132 -0400", hash_original_method = "1419B9D62800705D7AC72C916BD8939A", hash_generated_method = "E1D8F1170DA3A86CCA6264FA0AEE46C1")
     public final IContentProvider acquireProvider(String name) {
-        dsTaint.addTaint(name);
-        IContentProvider var753FD03D5004485F264F78BD48371BB4_2116522806 = (acquireProvider(mContext, name));
-        return (IContentProvider)dsTaint.getTaint();
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_939470081 = null; //Variable for return #1
+        IContentProvider varB4EAC82CA7396A68D541C85D26508E83_1123913290 = null; //Variable for return #2
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_939470081 = null;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_1123913290 = acquireProvider(mContext, name);
+        addTaint(name.getTaint());
+        IContentProvider varA7E53CE21691AB073D9660D615818899_308945618; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_308945618 = varB4EAC82CA7396A68D541C85D26508E83_939470081;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_308945618 = varB4EAC82CA7396A68D541C85D26508E83_1123913290;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_308945618.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_308945618;
         // ---------- Original Method ----------
         //if (name == null) {
             //return null;
@@ -860,16 +1099,28 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.761 -0400", hash_original_method = "5741247DD17162DA82750F730CE6B9A7", hash_generated_method = "D1736BF121B553FAC6A4C53AF538B17D")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.146 -0400", hash_original_method = "5741247DD17162DA82750F730CE6B9A7", hash_generated_method = "DDB21DFFD24E979D45DDA8F944523DF1")
     public final ContentProviderClient acquireContentProviderClient(Uri uri) {
-        dsTaint.addTaint(uri.dsTaint);
+        ContentProviderClient varB4EAC82CA7396A68D541C85D26508E83_1578257322 = null; //Variable for return #1
+        ContentProviderClient varB4EAC82CA7396A68D541C85D26508E83_528352407 = null; //Variable for return #2
         IContentProvider provider;
         provider = acquireProvider(uri);
         {
-            ContentProviderClient var2E01CE481737C748534B001501953BEB_170217413 = (new ContentProviderClient(this, provider));
+            varB4EAC82CA7396A68D541C85D26508E83_1578257322 = new ContentProviderClient(this, provider);
         } //End block
-        return (ContentProviderClient)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_528352407 = null;
+        addTaint(uri.getTaint());
+        ContentProviderClient varA7E53CE21691AB073D9660D615818899_433602401; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_433602401 = varB4EAC82CA7396A68D541C85D26508E83_1578257322;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_433602401 = varB4EAC82CA7396A68D541C85D26508E83_528352407;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_433602401.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_433602401;
         // ---------- Original Method ----------
         //IContentProvider provider = acquireProvider(uri);
         //if (provider != null) {
@@ -879,16 +1130,28 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.771 -0400", hash_original_method = "01901AA9613048A3AC98A39C9DD35CAC", hash_generated_method = "33642A7BBE69ACD26269DFB4CA8873C7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.148 -0400", hash_original_method = "01901AA9613048A3AC98A39C9DD35CAC", hash_generated_method = "F7AEA40909A6D8E90359CD61C2EF3AFD")
     public final ContentProviderClient acquireContentProviderClient(String name) {
-        dsTaint.addTaint(name);
+        ContentProviderClient varB4EAC82CA7396A68D541C85D26508E83_1110301545 = null; //Variable for return #1
+        ContentProviderClient varB4EAC82CA7396A68D541C85D26508E83_229631334 = null; //Variable for return #2
         IContentProvider provider;
         provider = acquireProvider(name);
         {
-            ContentProviderClient var2E01CE481737C748534B001501953BEB_1619602104 = (new ContentProviderClient(this, provider));
+            varB4EAC82CA7396A68D541C85D26508E83_1110301545 = new ContentProviderClient(this, provider);
         } //End block
-        return (ContentProviderClient)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_229631334 = null;
+        addTaint(name.getTaint());
+        ContentProviderClient varA7E53CE21691AB073D9660D615818899_51844022; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_51844022 = varB4EAC82CA7396A68D541C85D26508E83_1110301545;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_51844022 = varB4EAC82CA7396A68D541C85D26508E83_229631334;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_51844022.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_51844022;
         // ---------- Original Method ----------
         //IContentProvider provider = acquireProvider(name);
         //if (provider != null) {
@@ -898,14 +1161,10 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.771 -0400", hash_original_method = "7AFED95A5C5E44717133ED415B77A63B", hash_generated_method = "7AD7DC377F2B7F5A3BF30268969300D3")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.149 -0400", hash_original_method = "7AFED95A5C5E44717133ED415B77A63B", hash_generated_method = "418793DF18B94EEC380FC05A36ED79F0")
     public final void registerContentObserver(Uri uri, boolean notifyForDescendents,
             ContentObserver observer) {
         //DSFIXME: CODE0010: Possible callback registration function detected
-        dsTaint.addTaint(uri.dsTaint);
-        dsTaint.addTaint(observer.dsTaint);
-        dsTaint.addTaint(notifyForDescendents);
         try 
         {
             getContentService().registerContentObserver(uri, notifyForDescendents,
@@ -913,6 +1172,9 @@ public abstract class ContentResolver {
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(uri.getTaint());
+        addTaint(notifyForDescendents);
+        addTaint(observer.getTaint());
         // ---------- Original Method ----------
         //try {
             //getContentService().registerContentObserver(uri, notifyForDescendents,
@@ -922,10 +1184,8 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.772 -0400", hash_original_method = "A19276E2B38D6FC8E7769343C0EFAA57", hash_generated_method = "3AEA9C6B37B8AC76664B2408DF133C2F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.150 -0400", hash_original_method = "A19276E2B38D6FC8E7769343C0EFAA57", hash_generated_method = "D057F1285B51A12D8A4A93F3A56CFA20")
     public final void unregisterContentObserver(ContentObserver observer) {
-        dsTaint.addTaint(observer.dsTaint);
         try 
         {
             IContentObserver contentObserver;
@@ -937,6 +1197,7 @@ public abstract class ContentResolver {
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(observer.getTaint());
         // ---------- Original Method ----------
         //try {
             //IContentObserver contentObserver = observer.releaseContentObserver();
@@ -949,23 +1210,18 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.772 -0400", hash_original_method = "E76834C8ABF23847CEBC5965503FC8D5", hash_generated_method = "91263CEF77BA1159961F6EE6BCAD3F32")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.162 -0400", hash_original_method = "E76834C8ABF23847CEBC5965503FC8D5", hash_generated_method = "721276707545B26042C057743EC44CDD")
     public void notifyChange(Uri uri, ContentObserver observer) {
-        dsTaint.addTaint(uri.dsTaint);
-        dsTaint.addTaint(observer.dsTaint);
         notifyChange(uri, observer, true );
+        addTaint(uri.getTaint());
+        addTaint(observer.getTaint());
         // ---------- Original Method ----------
         //notifyChange(uri, observer, true );
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.773 -0400", hash_original_method = "F301FE1DDD6CC7648C7F98CD4F863542", hash_generated_method = "C5B88304D3E2AC1CA0253044F426CAE8")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.163 -0400", hash_original_method = "F301FE1DDD6CC7648C7F98CD4F863542", hash_generated_method = "F06544AA2409D27DE31AE985ED9A27CF")
     public void notifyChange(Uri uri, ContentObserver observer, boolean syncToNetwork) {
-        dsTaint.addTaint(syncToNetwork);
-        dsTaint.addTaint(uri.dsTaint);
-        dsTaint.addTaint(observer.dsTaint);
         try 
         {
             getContentService().notifyChange(
@@ -974,6 +1230,9 @@ public abstract class ContentResolver {
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(uri.getTaint());
+        addTaint(observer.getTaint());
+        addTaint(syncToNetwork);
         // ---------- Original Method ----------
         //try {
             //getContentService().notifyChange(
@@ -984,19 +1243,16 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.773 -0400", hash_original_method = "2D6405030D787F1D91AFA94E2D425989", hash_generated_method = "119A0E195A04BFA769D21A002C15D02C")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.165 -0400", hash_original_method = "2D6405030D787F1D91AFA94E2D425989", hash_generated_method = "E347220ECCB272784D7DAAD16FCD33A1")
     @Deprecated
     public void startSync(Uri uri, Bundle extras) {
-        dsTaint.addTaint(uri.dsTaint);
-        dsTaint.addTaint(extras.dsTaint);
         Account account;
         account = null;
         {
             String accountName;
             accountName = extras.getString(SYNC_EXTRAS_ACCOUNT);
             {
-                boolean var21816277CB804514BFAB23F699F0B246_421748723 = (!TextUtils.isEmpty(accountName));
+                boolean var21816277CB804514BFAB23F699F0B246_695656831 = (!TextUtils.isEmpty(accountName));
                 {
                     account = new Account(accountName, "com.google");
                 } //End block
@@ -1004,6 +1260,8 @@ public abstract class ContentResolver {
             extras.remove(SYNC_EXTRAS_ACCOUNT);
         } //End block
         requestSync(account, uri != null ? uri.getAuthority() : null, extras);
+        addTaint(uri.getTaint());
+        addTaint(extras.getTaint());
         // ---------- Original Method ----------
         //Account account = null;
         //if (extras != null) {
@@ -1049,12 +1307,11 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.774 -0400", hash_original_method = "B4949CE6FC68B3756629FF654EA4F622", hash_generated_method = "0A55F048A873FFB4ACC69DE665C1A5E9")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.166 -0400", hash_original_method = "B4949CE6FC68B3756629FF654EA4F622", hash_generated_method = "3896274AB60E4DB371F225EC4FB73EDF")
     @Deprecated
     public void cancelSync(Uri uri) {
-        dsTaint.addTaint(uri.dsTaint);
         cancelSync(null , uri != null ? uri.getAuthority() : null);
+        addTaint(uri.getTaint());
         // ---------- Original Method ----------
         //cancelSync(null , uri != null ? uri.getAuthority() : null);
     }
@@ -1263,11 +1520,11 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.787 -0400", hash_original_method = "5964C3B3CD446EC6DF12ED3CA7F7D861", hash_generated_method = "5B9E29B2FE0D3FD765DF5EFF4F2FCB5F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.206 -0400", hash_original_method = "5964C3B3CD446EC6DF12ED3CA7F7D861", hash_generated_method = "7B50DBC029B20E65F667C238B7FF6E03")
     private int samplePercentForDuration(long durationMillis) {
-        dsTaint.addTaint(durationMillis);
-        return dsTaint.getTaintInt();
+        addTaint(durationMillis);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1451439637 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1451439637;
         // ---------- Original Method ----------
         //if (durationMillis >= SLOW_THRESHOLD_MILLIS) {
             //return 100;
@@ -1276,22 +1533,16 @@ public abstract class ContentResolver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.790 -0400", hash_original_method = "339BAFB8AA6EDB4FDC193A187E8B0067", hash_generated_method = "D793FA5299E15A231E13766FAE7CB575")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.220 -0400", hash_original_method = "339BAFB8AA6EDB4FDC193A187E8B0067", hash_generated_method = "10D6511E620D99C49691E7598879B6B6")
     private void maybeLogQueryToEventLog(long durationMillis,
                                          Uri uri, String[] projection,
                                          String selection, String sortOrder) {
-        dsTaint.addTaint(sortOrder);
-        dsTaint.addTaint(projection[0]);
-        dsTaint.addTaint(durationMillis);
-        dsTaint.addTaint(uri.dsTaint);
-        dsTaint.addTaint(selection);
         int samplePercent;
         samplePercent = samplePercentForDuration(durationMillis);
         {
             {
                 {
-                    boolean var2C548BF82E765EE870985D59E5547BFB_1787154475 = (mRandom.nextInt(100) >= samplePercent);
+                    boolean var2C548BF82E765EE870985D59E5547BFB_852159919 = (mRandom.nextInt(100) >= samplePercent);
                 } //End collapsed parenthetic
             } //End block
         } //End block
@@ -1318,25 +1569,25 @@ public abstract class ContentResolver {
             durationMillis,
             blockingPackage != null ? blockingPackage : "",
             samplePercent);
+        addTaint(durationMillis);
+        addTaint(uri.getTaint());
+        addTaint(projection[0].getTaint());
+        addTaint(selection.getTaint());
+        addTaint(sortOrder.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.792 -0400", hash_original_method = "8C4CA0C0E96B47F9D6365343066B43C9", hash_generated_method = "85452DFEB58F2684688C2655F02FF333")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.221 -0400", hash_original_method = "8C4CA0C0E96B47F9D6365343066B43C9", hash_generated_method = "EAC2826F89D197862FA5362B4AAA38CC")
     private void maybeLogUpdateToEventLog(
         long durationMillis, Uri uri, String operation, String selection) {
-        dsTaint.addTaint(operation);
-        dsTaint.addTaint(durationMillis);
-        dsTaint.addTaint(uri.dsTaint);
-        dsTaint.addTaint(selection);
         int samplePercent;
         samplePercent = samplePercentForDuration(durationMillis);
         {
             {
                 {
-                    boolean var2C548BF82E765EE870985D59E5547BFB_2092821487 = (mRandom.nextInt(100) >= samplePercent);
+                    boolean var2C548BF82E765EE870985D59E5547BFB_1082036049 = (mRandom.nextInt(100) >= samplePercent);
                 } //End collapsed parenthetic
             } //End block
         } //End block
@@ -1350,6 +1601,10 @@ public abstract class ContentResolver {
             durationMillis,
             blockingPackage != null ? blockingPackage : "",
             samplePercent);
+        addTaint(durationMillis);
+        addTaint(uri.getTaint());
+        addTaint(operation.getTaint());
+        addTaint(selection.getTaint());
         // ---------- Original Method ----------
         //int samplePercent = samplePercentForDuration(durationMillis);
         //if (samplePercent < 100) {
@@ -1384,12 +1639,17 @@ public abstract class ContentResolver {
 
     
     public class OpenResourceIdResult {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.222 -0400", hash_original_field = "4B43B0AEE35624CD95B910189B3DC231", hash_generated_field = "3D94ED8234243D4DE3F50EF6E646D0E3")
+
         public Resources r;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.223 -0400", hash_original_field = "B80BB7740288FDA1F201890375A60C8F", hash_generated_field = "FA0A3841DE31A9B4AD2F31B3665056D8")
+
         public int id;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.793 -0400", hash_original_method = "8B7EFD16209288502E24468DA042712B", hash_generated_method = "8B7EFD16209288502E24468DA042712B")
-                public OpenResourceIdResult ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.227 -0400", hash_original_method = "EC7BB03A160C6C88DBB9DFBF62B48748", hash_generated_method = "EC7BB03A160C6C88DBB9DFBF62B48748")
+        public OpenResourceIdResult ()
         {
+            //Synthesized constructor
         }
 
 
@@ -1398,25 +1658,29 @@ public abstract class ContentResolver {
 
     
     private final class CursorWrapperInner extends CrossProcessCursorWrapper {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.227 -0400", hash_original_field = "4AB176078152082D060487A305BE9F63", hash_generated_field = "B614D226FB5223D135A9D332098A34A4")
+
         private IContentProvider mContentProvider;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.227 -0400", hash_original_field = "FAB63045DAC8675C1DE9648413C0413D", hash_generated_field = "8ABB9EA4A0BD4BB4F6031F5BD3618F43")
+
         private CloseGuard mCloseGuard = CloseGuard.get();
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.227 -0400", hash_original_field = "73EB2A2C6C3CC1E8C72EB379571EB098", hash_generated_field = "FF245C536DEFD57B2DCDAA00E8BC192F")
+
         private boolean mProviderReleased;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.793 -0400", hash_original_method = "33833BC2FFA324FE6B3A882C16B09B24", hash_generated_method = "D18E26A4D4DA33BAAC6DC0EE674D5F0F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         CursorWrapperInner(Cursor cursor, IContentProvider icp) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.228 -0400", hash_original_method = "33833BC2FFA324FE6B3A882C16B09B24", hash_generated_method = "AA3044B9754D326CBF94A564AF2511B1")
+          CursorWrapperInner(Cursor cursor, IContentProvider icp) {
             super(cursor);
-            dsTaint.addTaint(cursor.dsTaint);
-            dsTaint.addTaint(icp.dsTaint);
+            mContentProvider = icp;
             mCloseGuard.open("close");
+            addTaint(cursor.getTaint());
             // ---------- Original Method ----------
             //mContentProvider = icp;
             //mCloseGuard.open("close");
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.806 -0400", hash_original_method = "CB76115716387DD39854EA1927F29C52", hash_generated_method = "8346DD9120A3FACE871850785D20B4F6")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.244 -0400", hash_original_method = "CB76115716387DD39854EA1927F29C52", hash_generated_method = "8346DD9120A3FACE871850785D20B4F6")
         @Override
         public void close() {
             super.close();
@@ -1435,8 +1699,7 @@ public abstract class ContentResolver {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.811 -0400", hash_original_method = "C6F30BD2AC97CE59E2F19D89687C7506", hash_generated_method = "1D84EB1DF0FAD05E5DD3B68F884B5D6F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.245 -0400", hash_original_method = "C6F30BD2AC97CE59E2F19D89687C7506", hash_generated_method = "1D84EB1DF0FAD05E5DD3B68F884B5D6F")
         @Override
         protected void finalize() throws Throwable {
             try 
@@ -1467,28 +1730,32 @@ public abstract class ContentResolver {
         }
 
         
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.245 -0400", hash_original_field = "13FB907F06B05F7137165C185CBCE3C3", hash_generated_field = "EACA88E7B01FC8694B38FD93BBF3A6CA")
+
         public static final String TAG="CursorWrapperInner";
     }
 
 
     
     private final class ParcelFileDescriptorInner extends ParcelFileDescriptor {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.246 -0400", hash_original_field = "4AB176078152082D060487A305BE9F63", hash_generated_field = "B614D226FB5223D135A9D332098A34A4")
+
         private IContentProvider mContentProvider;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.246 -0400", hash_original_field = "AC321E1C1B8C101F950B583BC403E782", hash_generated_field = "DCC2C4F00C9417AA6FB57200F6F6249D")
+
         private boolean mReleaseProviderFlag = false;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.812 -0400", hash_original_method = "84882D259A9B741E8CCE8DBD7345B8D5", hash_generated_method = "028C43AE820F23FA17A5B13FF502661C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         ParcelFileDescriptorInner(ParcelFileDescriptor pfd, IContentProvider icp) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.247 -0400", hash_original_method = "84882D259A9B741E8CCE8DBD7345B8D5", hash_generated_method = "BDBFD660609211A2E8E1F914A0C59685")
+          ParcelFileDescriptorInner(ParcelFileDescriptor pfd, IContentProvider icp) {
             super(pfd);
-            dsTaint.addTaint(pfd.dsTaint);
-            dsTaint.addTaint(icp.dsTaint);
+            mContentProvider = icp;
+            addTaint(pfd.getTaint());
             // ---------- Original Method ----------
             //mContentProvider = icp;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.812 -0400", hash_original_method = "88C4FC226DB7C9E08A0225C4D4C037C0", hash_generated_method = "C0DD3FCB29B5C8207E20F17E6CE63C70")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.261 -0400", hash_original_method = "88C4FC226DB7C9E08A0225C4D4C037C0", hash_generated_method = "C0DD3FCB29B5C8207E20F17E6CE63C70")
         @Override
         public void close() throws IOException {
             {
@@ -1505,8 +1772,7 @@ public abstract class ContentResolver {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.813 -0400", hash_original_method = "E5C83F24E1B33F16225B47651FBE1E16", hash_generated_method = "0A895962D46081094F888ADADCCE02CC")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.262 -0400", hash_original_method = "E5C83F24E1B33F16225B47651FBE1E16", hash_generated_method = "0A895962D46081094F888ADADCCE02CC")
         @Override
         protected void finalize() throws Throwable {
             {
@@ -1519,43 +1785,113 @@ public abstract class ContentResolver {
         }
 
         
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.262 -0400", hash_original_field = "CB7B93CDAC708AECA662EC86F82451BD", hash_generated_field = "853BAF17ACDDF73D9A8E686A803B9543")
+
         public static final String TAG="ParcelFileDescriptorInner";
     }
 
 
     
-    @Deprecated public static final String SYNC_EXTRAS_ACCOUNT = "account";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.262 -0400", hash_original_field = "C2EDFC92CCF8B16E3533DCFADC264E23", hash_generated_field = "87B095273B7680C6E8D776FD7BED0443")
+
+    @Deprecated
+    public static final String SYNC_EXTRAS_ACCOUNT = "account";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.262 -0400", hash_original_field = "9A7319143C3370C3B9F862CE740B5B75", hash_generated_field = "8B7D39A0706705FDAF94593ED0FACFEA")
+
     public static final String SYNC_EXTRAS_EXPEDITED = "expedited";
-    @Deprecated public static final String SYNC_EXTRAS_FORCE = "force";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.262 -0400", hash_original_field = "0C5ED6B0AA55903B1B309BC3AE9C1AC5", hash_generated_field = "52C4CBE6F8AFC4D6C338F6272437F588")
+
+    @Deprecated
+    public static final String SYNC_EXTRAS_FORCE = "force";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.263 -0400", hash_original_field = "7BF6732A8AD149D6BF72E2CEB933EAEC", hash_generated_field = "9CB83B5127CA25B88446759FC78BB810")
+
     public static final String SYNC_EXTRAS_IGNORE_SETTINGS = "ignore_settings";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.263 -0400", hash_original_field = "48D105EF39F24B3ED276155D8F366FAD", hash_generated_field = "2460C39D3F3C8C8E9A6CA2DB50888065")
+
     public static final String SYNC_EXTRAS_IGNORE_BACKOFF = "ignore_backoff";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.263 -0400", hash_original_field = "BD3F4206E2333EE4EC1C44D083DBDDD9", hash_generated_field = "FB3D46B8F0404EBA4D41256EFCE69610")
+
     public static final String SYNC_EXTRAS_DO_NOT_RETRY = "do_not_retry";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.263 -0400", hash_original_field = "81C2869721D54621C1E9EBBF388E766C", hash_generated_field = "2CB777FABA87110DA15F0AAAA5216B13")
+
     public static final String SYNC_EXTRAS_MANUAL = "force";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.263 -0400", hash_original_field = "2627674F99971004D823BB1DC0D4AD30", hash_generated_field = "C66AD9A9054789246D88C3CEF49E0FE1")
+
     public static final String SYNC_EXTRAS_UPLOAD = "upload";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.264 -0400", hash_original_field = "2DB15BFAA122A6E4C8E09D40E27DE3A2", hash_generated_field = "085DFE00F23ABC519407289B800B9330")
+
     public static final String SYNC_EXTRAS_OVERRIDE_TOO_MANY_DELETIONS = "deletions_override";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.276 -0400", hash_original_field = "C93C475906837EA8C1231337BD9580CD", hash_generated_field = "A3280C9121A39AB92BFE4613E22A9F10")
+
     public static final String SYNC_EXTRAS_DISCARD_LOCAL_DELETIONS = "discard_deletions";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.276 -0400", hash_original_field = "F7B81FFD29F1E27E81F42B4EAF4745EB", hash_generated_field = "9A51FA040B5EE450933873F1925571E2")
+
     public static final String SYNC_EXTRAS_INITIALIZE = "initialize";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.276 -0400", hash_original_field = "B9EC534A4D635B10BE9040DF27185A80", hash_generated_field = "2A050A80E7005A896641161E25801F35")
+
     public static final String SCHEME_CONTENT = "content";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.277 -0400", hash_original_field = "F438C67F57FF4A50EDA09593EBEF286A", hash_generated_field = "7BECC35C4D527BA52EC58C833FB0BB34")
+
     public static final String SCHEME_ANDROID_RESOURCE = "android.resource";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.277 -0400", hash_original_field = "02F0EE6F8DEEBB0D5DCDD1E064DAC005", hash_generated_field = "D24B6CC01AD3F5B91B2CFC56B92A6E03")
+
     public static final String SCHEME_FILE = "file";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.277 -0400", hash_original_field = "893D0280FDFF6A2950856B98E73C71C1", hash_generated_field = "A41DFC918AF8E5D466EE8DAB0BF274F3")
+
     public static final String CURSOR_ITEM_BASE_TYPE = "vnd.android.cursor.item";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.277 -0400", hash_original_field = "95AED60F9A6BBB9F889EF813B7143610", hash_generated_field = "2D7AE2632599144DAA81BD08B4C8870E")
+
     public static final String CURSOR_DIR_BASE_TYPE = "vnd.android.cursor.dir";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.277 -0400", hash_original_field = "78541B0F3CCE1FAC3BA266FCB7621070", hash_generated_field = "F78FAC8C90BCAD8994706D8A7F584B12")
+
     public static final int SYNC_ERROR_SYNC_ALREADY_IN_PROGRESS = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.278 -0400", hash_original_field = "B72A154B591BAC40AEEF38C8E42F3335", hash_generated_field = "70645C1513ABFE107B9AF0BCB3F68340")
+
     public static final int SYNC_ERROR_AUTHENTICATION = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.278 -0400", hash_original_field = "FDA99AB14533C63BBCCA0F64BB7CF769", hash_generated_field = "2B1BA46E87D9EA52416FF82A7E9FC949")
+
     public static final int SYNC_ERROR_IO = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.288 -0400", hash_original_field = "CCA53EB6D8F9D64BE4EE63C66A08F236", hash_generated_field = "7D02506C7CBA10BD97CA79FB59DD9D15")
+
     public static final int SYNC_ERROR_PARSE = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.288 -0400", hash_original_field = "296A74F9B6DA67DDD9E8F0428AD3FFE0", hash_generated_field = "A315DAC0C98347D6DCFC6C6B32DA70BD")
+
     public static final int SYNC_ERROR_CONFLICT = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.288 -0400", hash_original_field = "83F48894C7BA225F7124ABDE5C0665CF", hash_generated_field = "76FE33D22783EC3D4779B2B73BE75DE9")
+
     public static final int SYNC_ERROR_TOO_MANY_DELETIONS = 6;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.289 -0400", hash_original_field = "80FB09ABFBCC98D6C5E978E238B95658", hash_generated_field = "6E9809F790E5D29754E07F710C703033")
+
     public static final int SYNC_ERROR_TOO_MANY_RETRIES = 7;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.289 -0400", hash_original_field = "BA70D22939E01C21C5AF2B587BFF152B", hash_generated_field = "9EF2EEC53560FF1A3EC43F81D719B306")
+
     public static final int SYNC_ERROR_INTERNAL = 8;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.289 -0400", hash_original_field = "8F1E898EBD09004F8E52103FC8644049", hash_generated_field = "EC6D4E9079B435808FB02F42CC269B78")
+
     public static final int SYNC_OBSERVER_TYPE_SETTINGS = 1<<0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.289 -0400", hash_original_field = "45C5DD980F4A16E404292643A35A6433", hash_generated_field = "1F0C3937881F3FCFBF4E76673AB2169B")
+
     public static final int SYNC_OBSERVER_TYPE_PENDING = 1<<1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.289 -0400", hash_original_field = "2221A2B9CE572B6E501D97785FB05A8A", hash_generated_field = "0BBCE1310F4889E0CE3EBE1A843B06EC")
+
     public static final int SYNC_OBSERVER_TYPE_ACTIVE = 1<<2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.290 -0400", hash_original_field = "CBAD71B90CEF719A1DDEE4D9537EE9EF", hash_generated_field = "F118FAF287C6D65262857F494C71AFCE")
+
     public static final int SYNC_OBSERVER_TYPE_STATUS = 1<<3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.290 -0400", hash_original_field = "07D2AB9D80429D5E6907CE4783188520", hash_generated_field = "4285FF406FEA88E6536E37E5D6191611")
+
     public static final int SYNC_OBSERVER_TYPE_ALL = 0x7fffffff;
-    private static final int SLOW_THRESHOLD_MILLIS = 500;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.290 -0400", hash_original_field = "5D2D67A3ADE9055680B54E64B5B18AF7", hash_generated_field = "F89922D567F9CEDC32BFF77AE57E9474")
+
+    private static int SLOW_THRESHOLD_MILLIS = 500;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.290 -0400", hash_original_field = "9664C3A1DEBAEE31270D6C126FBE59B7", hash_generated_field = "061BD03196A426FD4F175A19E9881E10")
+
     public static final String CONTENT_SERVICE_NAME = "content";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.290 -0400", hash_original_field = "0000B7DC2B7CEFF37F9F07EB8F63EAB2", hash_generated_field = "EBBA89635D26FA830DBE060ABCA948AD")
+
     private static IContentService sContentService;
-    private static final String TAG = "ContentResolver";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.302 -0400", hash_original_field = "28B0C9DBF8E70FA0509AB8A6C9A3F293", hash_generated_field = "EE1471C3D86401CD3A887496E74F7DB2")
+
+    private static String TAG = "ContentResolver";
 }
 

@@ -17,9 +17,8 @@ import java.nio.charset.Charsets;
 
 public final class BlockGuard {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.208 -0400", hash_original_method = "0E6BC3DAACB3346655A889CA6E7D1AFA", hash_generated_method = "69110DD784D65387D879431CB3C0A133")
-    @DSModeled(DSC.SAFE)
-    private BlockGuard() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.855 -0400", hash_original_method = "0E6BC3DAACB3346655A889CA6E7D1AFA", hash_generated_method = "69110DD784D65387D879431CB3C0A133")
+    private  BlockGuard() {
         // ---------- Original Method ----------
     }
 
@@ -38,26 +37,30 @@ public final class BlockGuard {
 
     
     public static class BlockGuardPolicyException extends RuntimeException {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.855 -0400", hash_original_field = "6CE6D5E4B5FBA369F3354FE41C84F79F", hash_generated_field = "22097F0CB35E769FF60D37AAB85D45C7")
+
         private int mPolicyState;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.855 -0400", hash_original_field = "A48ABC5FD986ABF086D4D9B0811E6099", hash_generated_field = "F2E65299053200088B86F3CC2B587F55")
+
         private int mPolicyViolated;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.855 -0400", hash_original_field = "E40274F3EBBA90624D5314C8AC41E0C5", hash_generated_field = "5FF5AC6E2E7DC6F2224CC91B0CC8DE72")
+
         private String mMessage;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.209 -0400", hash_original_method = "FE59F9C45AD8795BBBCB0FEAFA85E7D3", hash_generated_method = "065306A93B4DC706D54F752F89675BC6")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public BlockGuardPolicyException(int policyState, int policyViolated) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.859 -0400", hash_original_method = "FE59F9C45AD8795BBBCB0FEAFA85E7D3", hash_generated_method = "A3AA704AF27FC9159869D7C5908C2BB6")
+        public  BlockGuardPolicyException(int policyState, int policyViolated) {
             this(policyState, policyViolated, null);
-            dsTaint.addTaint(policyState);
-            dsTaint.addTaint(policyViolated);
+            addTaint(policyState);
+            addTaint(policyViolated);
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.209 -0400", hash_original_method = "CA74B61F12E68CE7397040DE549DC38F", hash_generated_method = "6284D597E455902BB5C57E0629850BCE")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public BlockGuardPolicyException(int policyState, int policyViolated, String message) {
-            dsTaint.addTaint(message);
-            dsTaint.addTaint(policyState);
-            dsTaint.addTaint(policyViolated);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.861 -0400", hash_original_method = "CA74B61F12E68CE7397040DE549DC38F", hash_generated_method = "0AE0F1A66733E14D239803D5E1E8520F")
+        public  BlockGuardPolicyException(int policyState, int policyViolated, String message) {
+            mPolicyState = policyState;
+            mPolicyViolated = policyViolated;
+            mMessage = message;
             fillInStackTrace();
             // ---------- Original Method ----------
             //mPolicyState = policyState;
@@ -67,28 +70,31 @@ public final class BlockGuard {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.209 -0400", hash_original_method = "7E4A409F6FF395255A09FF646F59C182", hash_generated_method = "D20FACDABC353C5D59DC2E6751D3FBFE")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.861 -0400", hash_original_method = "7E4A409F6FF395255A09FF646F59C182", hash_generated_method = "FF91F675C2F56783DF15AFB4BDE8A747")
         public int getPolicy() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_266123600 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_266123600;
             // ---------- Original Method ----------
             //return mPolicyState;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.209 -0400", hash_original_method = "51330C8A3B9EAC192FDD6907E318F7AB", hash_generated_method = "A4CE501F3DC1AEF03D433A654F1B103D")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.861 -0400", hash_original_method = "51330C8A3B9EAC192FDD6907E318F7AB", hash_generated_method = "B6D9E2F9C9710712CAEB9863DB9CF197")
         public int getPolicyViolation() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_465261498 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_465261498;
             // ---------- Original Method ----------
             //return mPolicyViolated;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.209 -0400", hash_original_method = "AA2ABAF31AA2D7A8C7A88450DEB5E574", hash_generated_method = "74CB3981E1D9E4CD9A65BBB0553C6B68")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.862 -0400", hash_original_method = "AA2ABAF31AA2D7A8C7A88450DEB5E574", hash_generated_method = "80C5064BCA65F88504BFB881E4E93631")
         public String getMessage() {
-            return dsTaint.getTaintString();
+            String varB4EAC82CA7396A68D541C85D26508E83_2073439534 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_2073439534 = "policy=" + mPolicyState + " violation=" + mPolicyViolated +
+                    (mMessage == null ? "" : (" msg=" + mMessage));
+            varB4EAC82CA7396A68D541C85D26508E83_2073439534.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2073439534;
             // ---------- Original Method ----------
             //return "policy=" + mPolicyState + " violation=" + mPolicyViolated +
                     //(mMessage == null ? "" : (" msg=" + mMessage));
@@ -113,59 +119,52 @@ public final class BlockGuard {
         int getPolicyMask();
     }
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.862 -0400", hash_original_field = "7808E83091E8CCA64936674053812D87", hash_generated_field = "5D99117C513E4B485F5F93E6AAEB8777")
+
     public static final int DISALLOW_DISK_WRITE = 0x01;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.862 -0400", hash_original_field = "CD8E59A0C434378EA900BC07828E486A", hash_generated_field = "6C6117464ADDC1180A74752B4BB63E94")
+
     public static final int DISALLOW_DISK_READ = 0x02;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.862 -0400", hash_original_field = "F5454BD49006CACA9E37C8C04685C3BE", hash_generated_field = "1EA44A10BD476A5E34251684ADD3286E")
+
     public static final int DISALLOW_NETWORK = 0x04;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.862 -0400", hash_original_field = "F6F68F2E3C4ABA38EBDAC0054EE7A905", hash_generated_field = "EEFA2E788AD47F5ED1B77969A6D78581")
+
     public static final int PASS_RESTRICTIONS_VIA_RPC = 0x08;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.862 -0400", hash_original_field = "8FC0A17F12BDF8741B92E5F01FD7DCB6", hash_generated_field = "AD440199AC90AA853DAE6E553309E61E")
+
     public static final int PENALTY_LOG = 0x10;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.862 -0400", hash_original_field = "5237B015D0FD40554D978C3F16F56117", hash_generated_field = "1B09956BCE6604535346C86F86199656")
+
     public static final int PENALTY_DIALOG = 0x20;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.862 -0400", hash_original_field = "F3FAE1CCEDA4AC19AA37F2365135E9ED", hash_generated_field = "36B2F4DE7C0AEF684C2D4A0EA98A5FF6")
+
     public static final int PENALTY_DEATH = 0x40;
-    public static final Policy LAX_POLICY = new Policy() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.209 -0400", hash_original_method = "0E90B06880C2E9B3FF9130289C096B4D", hash_generated_method = "E73A577257996397E5B3EBF79B33930B")
-        @DSModeled(DSC.SAFE)
-        public void onWriteToDisk() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            // ---------- Original Method ----------
-        }
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.862 -0400", hash_original_field = "E0D7D8362D54E1FE8526FC9BC7628CBD", hash_generated_field = "4AA8094D0A870BF58F179845EAB966A1")
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.210 -0400", hash_original_method = "7E49F028D81EA77D7BF37C6768FECE64", hash_generated_method = "6396F58EBA1D7BA29BDE9D68F6B104AA")
-        @DSModeled(DSC.SAFE)
-        public void onReadFromDisk() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            // ---------- Original Method ----------
-        }
+    public static final Policy LAX_POLICY = new Policy() {
+            public void onWriteToDisk() {}
+            public void onReadFromDisk() {}
+            public void onNetwork() {}
+            public int getPolicyMask() {
+                return 0;
+            }
+        };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.875 -0400", hash_original_field = "FA0644FE78DE29FC3B6373BBD0514481", hash_generated_field = "9397642156F658F399D21AB4AFDA8EA4")
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.210 -0400", hash_original_method = "9014987F02727A033B15EAEBCF962455", hash_generated_method = "5BACCC817B5A4C0BAA8A14F39EFD6B18")
-        @DSModeled(DSC.SAFE)
-        public void onNetwork() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            // ---------- Original Method ----------
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.210 -0400", hash_original_method = "4FDDD77F117ADACFDE6CA4C31E0B0180", hash_generated_method = "DE7F47FBDD1BDE730D1A5268C6408F00")
-        @DSModeled(DSC.SAFE)
-        public int getPolicyMask() {
-            return dsTaint.getTaintInt();
-            // ---------- Original Method ----------
-            //return 0;
-        }
-
-        
-}; //Transformed anonymous class
     private static ThreadLocal<Policy> threadPolicy = new ThreadLocal<Policy>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.210 -0400", hash_original_method = "DA8783B28EC2A21BB8B273AEAF0100E1", hash_generated_method = "D352ECDFF4D0581035C80D3202D9A0CF")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.875 -0400", hash_original_method = "DA8783B28EC2A21BB8B273AEAF0100E1", hash_generated_method = "E16B667218C62D804838CE1D49EF3CC2")
         @Override
         protected Policy initialValue() {
-            return (Policy)dsTaint.getTaint();
+            Policy varB4EAC82CA7396A68D541C85D26508E83_579934099 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_579934099 = LAX_POLICY;
+            varB4EAC82CA7396A68D541C85D26508E83_579934099.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_579934099;
             // ---------- Original Method ----------
             //return LAX_POLICY;
         }
 
         
-}; //Transformed anonymous class
+};
 }
 

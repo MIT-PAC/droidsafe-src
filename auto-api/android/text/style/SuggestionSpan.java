@@ -21,52 +21,67 @@ import java.util.Arrays;
 import java.util.Locale;
 
 public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.571 -0400", hash_original_field = "9C3CD7D37D3E1E66BE9B3B005FC98B3A", hash_generated_field = "43F71E9173849705E01112D0229448B4")
+
     private int mFlags;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.571 -0400", hash_original_field = "CA02AEF8EAC753FA2D196EF97B87005C", hash_generated_field = "5DB4DA08FB0C173A250A5596D6A803F5")
+
     private String[] mSuggestions;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.571 -0400", hash_original_field = "F8C014B9DC9B6F650C6A5D6711E7B81B", hash_generated_field = "6976E71D408345D64F0294914E1AF7FF")
+
     private String mLocaleString;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.571 -0400", hash_original_field = "C4CAD77D098232600F5558362002C7AB", hash_generated_field = "989974DFDEA3AFDC371476BF9398A642")
+
     private String mNotificationTargetClassName;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.571 -0400", hash_original_field = "D1324C907E3C733CA9E17C8F90836F79", hash_generated_field = "A977E573260D0E2786C71BC0961278A2")
+
     private int mHashCode;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.571 -0400", hash_original_field = "E956BB9564CEFC570FEA9AB3C95F10E8", hash_generated_field = "D8E4A74236F36CDFABEB6618E7713838")
+
     private float mEasyCorrectUnderlineThickness;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.571 -0400", hash_original_field = "BDCD49C66A8BA2B78EE398B7616EB873", hash_generated_field = "905A94AA135811911825782A2E1D2D0E")
+
     private int mEasyCorrectUnderlineColor;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.571 -0400", hash_original_field = "A80A2BB072BE7B32F7EFEFB15B008AF3", hash_generated_field = "7C6B77EA496ACC5A6845012167698141")
+
     private float mMisspelledUnderlineThickness;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.571 -0400", hash_original_field = "791E2C995AC7D9DEC6A8E948883CF1B2", hash_generated_field = "BDDD9AB7CE31E6C68EA76F54C1C6C56E")
+
     private int mMisspelledUnderlineColor;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.571 -0400", hash_original_field = "93DB5E340D77634F6DF7B6530227999C", hash_generated_field = "C319F61C6ED6657EDFE1CE012D16B907")
+
     private float mAutoCorrectionUnderlineThickness;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.571 -0400", hash_original_field = "5D1932BD724A70EE08630ECDFD073593", hash_generated_field = "EA8BF259BCC9D5320AD9DAB8BD56682E")
+
     private int mAutoCorrectionUnderlineColor;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.979 -0400", hash_original_method = "1AA1B5C63F654C549AF10ADB766A64DF", hash_generated_method = "8DE647CE50E23D57D44B858A99F121B6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SuggestionSpan(Context context, String[] suggestions, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.572 -0400", hash_original_method = "1AA1B5C63F654C549AF10ADB766A64DF", hash_generated_method = "E4AA98F06146B222EF4E7EB69234BBA8")
+    public  SuggestionSpan(Context context, String[] suggestions, int flags) {
         this(context, null, suggestions, flags, null);
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(suggestions[0]);
+        addTaint(context.getTaint());
+        addTaint(suggestions[0].getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.979 -0400", hash_original_method = "88CDF93F546795CBA0066C8B71DB0B2A", hash_generated_method = "440BD2279C6D5B8D6368CFB7EBA47F67")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SuggestionSpan(Locale locale, String[] suggestions, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.572 -0400", hash_original_method = "88CDF93F546795CBA0066C8B71DB0B2A", hash_generated_method = "57A048FD1C6D98A0698F066D51785D7A")
+    public  SuggestionSpan(Locale locale, String[] suggestions, int flags) {
         this(null, locale, suggestions, flags, null);
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(locale.dsTaint);
-        dsTaint.addTaint(suggestions[0]);
+        addTaint(locale.getTaint());
+        addTaint(suggestions[0].getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.980 -0400", hash_original_method = "A25B331A60DB2E24929C6ECDB825D631", hash_generated_method = "717106B9BEFC916132B299CD48E24DC1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SuggestionSpan(Context context, Locale locale, String[] suggestions, int flags,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.580 -0400", hash_original_method = "A25B331A60DB2E24929C6ECDB825D631", hash_generated_method = "BB93CDA02BDE70A035E5401A8FB0099C")
+    public  SuggestionSpan(Context context, Locale locale, String[] suggestions, int flags,
             Class<?> notificationTargetClass) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(locale.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(suggestions[0]);
-        dsTaint.addTaint(notificationTargetClass.dsTaint);
         int N;
         N = Math.min(SUGGESTIONS_MAX_SIZE, suggestions.length);
         mSuggestions = Arrays.copyOf(suggestions, N);
+        mFlags = flags;
         {
             mLocaleString = context.getResources().getConfiguration().locale.toString();
         } //End block
@@ -100,10 +115,8 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.980 -0400", hash_original_method = "AC28AFCA6CE2EAE56AAAC33C5F3867AA", hash_generated_method = "DB7BF183FCAA838FD27F2A75FD45465A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SuggestionSpan(Parcel src) {
-        dsTaint.addTaint(src.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.591 -0400", hash_original_method = "AC28AFCA6CE2EAE56AAAC33C5F3867AA", hash_generated_method = "712A353AF7234E2FDCC2A17962307AE6")
+    public  SuggestionSpan(Parcel src) {
         mSuggestions = src.readStringArray();
         mFlags = src.readInt();
         mLocaleString = src.readString();
@@ -130,10 +143,8 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.981 -0400", hash_original_method = "BA5838B3AC67A7A883D23FDD23135D12", hash_generated_method = "FA9E89DF5B1A84C06A36C5C726FED51D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.602 -0400", hash_original_method = "BA5838B3AC67A7A883D23FDD23135D12", hash_generated_method = "98DEAF3D643759F9CEC66CC944A68663")
     private void initStyle(Context context) {
-        dsTaint.addTaint(context.dsTaint);
         {
             mMisspelledUnderlineThickness = 0;
             mEasyCorrectUnderlineThickness = 0;
@@ -165,74 +176,75 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
                 com.android.internal.R.styleable.SuggestionSpan_textUnderlineThickness, 0);
         mAutoCorrectionUnderlineColor = typedArray.getColor(
                 com.android.internal.R.styleable.SuggestionSpan_textUnderlineColor, Color.BLACK);
+        addTaint(context.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.981 -0400", hash_original_method = "04652F77FFC7CAE5D602B0C4E1FED158", hash_generated_method = "92B20387FADD491F87416E7D92DF462A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.627 -0400", hash_original_method = "04652F77FFC7CAE5D602B0C4E1FED158", hash_generated_method = "480A2A7508467A451279F6EC72AE68F5")
     public String[] getSuggestions() {
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_857597625 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_857597625 = mSuggestions;
+        varB4EAC82CA7396A68D541C85D26508E83_857597625.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_857597625;
         // ---------- Original Method ----------
         //return mSuggestions;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.982 -0400", hash_original_method = "A5C216C37271149997104A3E25E89F54", hash_generated_method = "F6A340AEAE2D278C4B7797FB28EB28EF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.628 -0400", hash_original_method = "A5C216C37271149997104A3E25E89F54", hash_generated_method = "1D7784CC0F2B186414BD972B83AD6C5A")
     public String getLocale() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_892424673 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_892424673 = mLocaleString;
+        varB4EAC82CA7396A68D541C85D26508E83_892424673.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_892424673;
         // ---------- Original Method ----------
         //return mLocaleString;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.982 -0400", hash_original_method = "248A1CDF1DF25C4245B012EBF128264F", hash_generated_method = "C4EA6F53ED2FEB8F65C3C0DB3D855485")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.635 -0400", hash_original_method = "248A1CDF1DF25C4245B012EBF128264F", hash_generated_method = "D4A47745FF4C08C4AC8E1EC8FF598541")
     public String getNotificationTargetClassName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1313903887 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1313903887 = mNotificationTargetClassName;
+        varB4EAC82CA7396A68D541C85D26508E83_1313903887.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1313903887;
         // ---------- Original Method ----------
         //return mNotificationTargetClassName;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.982 -0400", hash_original_method = "CE8F8E5E4A30C515D6BD9049A49703B9", hash_generated_method = "DCA5119FF28B26AD9D6F7E29978E11F1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.635 -0400", hash_original_method = "CE8F8E5E4A30C515D6BD9049A49703B9", hash_generated_method = "9B9023B3D3D9270327AB2A22FCAC0F47")
     public int getFlags() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2026864317 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2026864317;
         // ---------- Original Method ----------
         //return mFlags;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.982 -0400", hash_original_method = "CA4BF4BE3BC1B3094957FBC465D7A081", hash_generated_method = "C7327F2C34AB403927A5E6C67FB16FDC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.644 -0400", hash_original_method = "CA4BF4BE3BC1B3094957FBC465D7A081", hash_generated_method = "85F0B9F34D43E8A3B2C0982106D45E4D")
     public void setFlags(int flags) {
-        dsTaint.addTaint(flags);
+        mFlags = flags;
         // ---------- Original Method ----------
         //mFlags = flags;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.982 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0DB50BC0CCE4711867E95DEC1B2117C7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.645 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "004F683643709A8FB72CF5019EC0ECA2")
     @Override
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1626547353 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1626547353;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.983 -0400", hash_original_method = "B88B3E1963FF277C84F7B31C7327EB57", hash_generated_method = "28DA8971AE43C55646A2B1C1145A3B20")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.645 -0400", hash_original_method = "B88B3E1963FF277C84F7B31C7327EB57", hash_generated_method = "143E88ACDB6CC9F5ACAD9C2C55FF5575")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeStringArray(mSuggestions);
         dest.writeInt(mFlags);
         dest.writeString(mLocaleString);
@@ -244,6 +256,8 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
         dest.writeFloat(mMisspelledUnderlineThickness);
         dest.writeInt(mAutoCorrectionUnderlineColor);
         dest.writeFloat(mAutoCorrectionUnderlineThickness);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeStringArray(mSuggestions);
         //dest.writeInt(mFlags);
@@ -259,25 +273,25 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.983 -0400", hash_original_method = "DBAA6553895459183AA1E1C35310F256", hash_generated_method = "5E35FEB48D778A4241179A1A668F515E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.652 -0400", hash_original_method = "DBAA6553895459183AA1E1C35310F256", hash_generated_method = "43D76FEDB493752087A0C5928594F8FD")
     @Override
     public int getSpanTypeId() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_112859792 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_112859792;
         // ---------- Original Method ----------
         //return TextUtils.SUGGESTION_SPAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.983 -0400", hash_original_method = "DEEF8A91A4946D9B043EDA2DAC8F9CA5", hash_generated_method = "7C94CE56498F7267966F048119F5B86F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.665 -0400", hash_original_method = "DEEF8A91A4946D9B043EDA2DAC8F9CA5", hash_generated_method = "6C791C1544D907D92761C53FDA660BDD")
     @Override
     public boolean equals(Object o) {
-        dsTaint.addTaint(o.dsTaint);
         {
-            boolean var500A963F8ACD27ABA28675D4855B6937_2021888541 = (((SuggestionSpan)o).hashCode() == mHashCode);
+            boolean var500A963F8ACD27ABA28675D4855B6937_458104251 = (((SuggestionSpan)o).hashCode() == mHashCode);
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(o.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1143662268 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1143662268;
         // ---------- Original Method ----------
         //if (o instanceof SuggestionSpan) {
             //return ((SuggestionSpan)o).hashCode() == mHashCode;
@@ -286,11 +300,11 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.984 -0400", hash_original_method = "D7D5E8B622FC6A9CB6E203DCD79B8799", hash_generated_method = "299AB68DDC3147F06079A7D1A7DCDD71")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.665 -0400", hash_original_method = "D7D5E8B622FC6A9CB6E203DCD79B8799", hash_generated_method = "B1EE151CCCC347DB57737867D7D5C83D")
     @Override
     public int hashCode() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_671906355 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_671906355;
         // ---------- Original Method ----------
         //return mHashCode;
     }
@@ -303,11 +317,9 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.984 -0400", hash_original_method = "FC1F2F33C12EF11918B48BC18977D662", hash_generated_method = "DA663744EF19C70B3BC6F34C7A6D220A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.666 -0400", hash_original_method = "FC1F2F33C12EF11918B48BC18977D662", hash_generated_method = "21113F0AD3C1FEB5F7AE45F34BB0C5C6")
     @Override
     public void updateDrawState(TextPaint tp) {
-        dsTaint.addTaint(tp.dsTaint);
         boolean misspelled;
         misspelled = (mFlags & FLAG_MISSPELLED) != 0;
         boolean easy;
@@ -325,6 +337,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
         {
             tp.setUnderlineText(mAutoCorrectionUnderlineColor, mAutoCorrectionUnderlineThickness);
         } //End block
+        addTaint(tp.getTaint());
         // ---------- Original Method ----------
         //final boolean misspelled = (mFlags & FLAG_MISSPELLED) != 0;
         //final boolean easy = (mFlags & FLAG_EASY_CORRECT) != 0;
@@ -341,8 +354,7 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.985 -0400", hash_original_method = "6F69CCF79C26CDB5AAE1758554866B40", hash_generated_method = "7E84A0D701C4EC32D83FBDEB5B03A619")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.667 -0400", hash_original_method = "6F69CCF79C26CDB5AAE1758554866B40", hash_generated_method = "0AB1FAE13361AF037ADADAAA5E2A1E08")
     public int getUnderlineColor() {
         boolean misspelled;
         misspelled = (mFlags & FLAG_MISSPELLED) != 0;
@@ -350,7 +362,8 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
         easy = (mFlags & FLAG_EASY_CORRECT) != 0;
         boolean autoCorrection;
         autoCorrection = (mFlags & FLAG_AUTO_CORRECTION) != 0;
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1800683640 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1800683640;
         // ---------- Original Method ----------
         //final boolean misspelled = (mFlags & FLAG_MISSPELLED) != 0;
         //final boolean easy = (mFlags & FLAG_EASY_CORRECT) != 0;
@@ -368,39 +381,43 @@ public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.667 -0400", hash_original_field = "7555E0084C8700A4BB6F3718BE46674D", hash_generated_field = "1D7B974E27680F135303E920BF84BF8D")
+
     public static final int FLAG_EASY_CORRECT = 0x0001;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.667 -0400", hash_original_field = "A708EACC955FF35E5E6FB7F37EF6CC52", hash_generated_field = "DBA29D2759519352B179244965765408")
+
     public static final int FLAG_MISSPELLED = 0x0002;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.667 -0400", hash_original_field = "9715ECF168FACCF4AF16F8046A2CEB59", hash_generated_field = "711B1FB5ACCA563596236E3C086B8CA7")
+
     public static final int FLAG_AUTO_CORRECTION = 0x0004;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.667 -0400", hash_original_field = "C0D336A66C280BCE4B9B488359B6B588", hash_generated_field = "6BE9D6FF7EA9AFB0E6D33742E0643DAC")
+
     public static final String ACTION_SUGGESTION_PICKED = "android.text.style.SUGGESTION_PICKED";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.667 -0400", hash_original_field = "B695D07CF613C9C38E2442FC9305663B", hash_generated_field = "1F2C143752BB6DB9A8D30C9B306CEF3A")
+
     public static final String SUGGESTION_SPAN_PICKED_AFTER = "after";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.667 -0400", hash_original_field = "C1B859A532523D319E0D2C0C2CFD7B36", hash_generated_field = "9184FE4582FFB6A9866F321FBE911D2B")
+
     public static final String SUGGESTION_SPAN_PICKED_BEFORE = "before";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.667 -0400", hash_original_field = "22B1E822A3E96026E3585C9DCAA2CBEA", hash_generated_field = "3AD3422034F9C2094284D22AF1FFB1F3")
+
     public static final String SUGGESTION_SPAN_PICKED_HASHCODE = "hashcode";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.667 -0400", hash_original_field = "AF6244CA0A343D2679CCD6D79405434C", hash_generated_field = "AF65BC39A44E7D93F9365DF1A5F722E1")
+
     public static final int SUGGESTIONS_MAX_SIZE = 5;
-    public static final Parcelable.Creator<SuggestionSpan> CREATOR = new Parcelable.Creator<SuggestionSpan>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.986 -0400", hash_original_method = "83D0E443CEF3A23105CCAF941D2CD31C", hash_generated_method = "D423F56271D0423CF6C6C0C32ECDD074")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.667 -0400", hash_original_field = "D7626C6BE860F29C41E36E880CF9437E", hash_generated_field = "368BEC2D23997E875633673B3BD26F7D")
+
+    public static final Parcelable.Creator<SuggestionSpan> CREATOR =
+            new Parcelable.Creator<SuggestionSpan>() {
         @Override
         public SuggestionSpan createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            SuggestionSpan var8371CBEF07DB73706E1C6A13DAAD8F1A_45879831 = (new SuggestionSpan(source));
-            return (SuggestionSpan)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new SuggestionSpan(source);
+            return new SuggestionSpan(source);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.986 -0400", hash_original_method = "2859891039EEB1F9F4824C56AEBEC162", hash_generated_method = "7E786F03E4A37049F92A4616940A342E")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public SuggestionSpan[] newArray(int size) {
-            dsTaint.addTaint(size);
-            SuggestionSpan[] varE7AD1E623C6DFBBC1039CBEFC9C56C91_780391018 = (new SuggestionSpan[size]);
-            return (SuggestionSpan[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new SuggestionSpan[size];
+            return new SuggestionSpan[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

@@ -25,21 +25,32 @@ import libcore.io.Libcore;
 import static libcore.io.OsConstants.*;
 
 public final class NetworkInterface extends Object {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.624 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+
     private String name;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.624 -0400", hash_original_field = "FE04D40BAE669C85DC9915B41E74EBC1", hash_generated_field = "14CCD87ECEE8F75EB85BC22ABB3E01CA")
+
     private int interfaceIndex;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.624 -0400", hash_original_field = "9EB03689244D48241F82A2E168771927", hash_generated_field = "9DB8B5B1A2500F2D3289DAED15877781")
+
     private List<InterfaceAddress> interfaceAddresses;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.624 -0400", hash_original_field = "963E3A2FE559E393BAD631F3DC686F69", hash_generated_field = "4253A4C32D027B8452C3697AE17C333B")
+
     private List<InetAddress> addresses;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.624 -0400", hash_original_field = "EE22C142A7E6F8619D6A3AE29A16C5AD", hash_generated_field = "657209968F75C20CDFB234C03EEB03D5")
+
     private List<NetworkInterface> children = new LinkedList<NetworkInterface>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.625 -0400", hash_original_field = "EB17B6F54220F5E4DBB78B0010FAEFA6", hash_generated_field = "9E46A9600719B02A7A32211C8211AD2B")
+
     private NetworkInterface parent = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.001 -0400", hash_original_method = "F3FEF51C38B27C4E9E0E3609EB93BEE8", hash_generated_method = "D8445A1DB4D2976420C1EABAB0A381B1")
-    @DSModeled(DSC.SAFE)
-    private NetworkInterface(String name, int interfaceIndex,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.626 -0400", hash_original_method = "F3FEF51C38B27C4E9E0E3609EB93BEE8", hash_generated_method = "CF1D14E69302D3FB4CBE482F8E9FE53C")
+    private  NetworkInterface(String name, int interfaceIndex,
             List<InetAddress> addresses, List<InterfaceAddress> interfaceAddresses) {
-        dsTaint.addTaint(interfaceAddresses.dsTaint);
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(interfaceIndex);
-        dsTaint.addTaint(addresses.dsTaint);
+        this.name = name;
+        this.interfaceIndex = interfaceIndex;
+        this.addresses = addresses;
+        this.interfaceAddresses = interfaceAddresses;
         // ---------- Original Method ----------
         //this.name = name;
         //this.interfaceIndex = interfaceIndex;
@@ -54,38 +65,43 @@ public final class NetworkInterface extends Object {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.001 -0400", hash_original_method = "BFC291A64FD07504405088442BFF58AA", hash_generated_method = "12F460AAA576203E164215D6E7D54F69")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.627 -0400", hash_original_method = "BFC291A64FD07504405088442BFF58AA", hash_generated_method = "69152AA0D5F6BCFB7B8EE99221C257E1")
     public int getIndex() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1423169397 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1423169397;
         // ---------- Original Method ----------
         //return interfaceIndex;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.001 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "3573899E99121C9CFE87F9DDAEE36810")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.627 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "8F7B9A4245941B950B1FB375D547FBE3")
     public String getName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1521540097 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1521540097 = name;
+        varB4EAC82CA7396A68D541C85D26508E83_1521540097.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1521540097;
         // ---------- Original Method ----------
         //return name;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.001 -0400", hash_original_method = "8FEC8BEDC3DD9B76E3DD04718D2DB944", hash_generated_method = "8D5FECCAF898CBEFE7A89DD4FE2C4992")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.629 -0400", hash_original_method = "8FEC8BEDC3DD9B76E3DD04718D2DB944", hash_generated_method = "BA793338D80E4C74C1FAD06505A1C5CA")
     public Enumeration<InetAddress> getInetAddresses() {
-        Enumeration<InetAddress> var713CCAB3D086F36D72DCD71F891CCD82_331416111 = (Collections.enumeration(addresses));
-        return (Enumeration<InetAddress>)dsTaint.getTaint();
+        Enumeration<InetAddress> varB4EAC82CA7396A68D541C85D26508E83_1779067512 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1779067512 = Collections.enumeration(addresses);
+        varB4EAC82CA7396A68D541C85D26508E83_1779067512.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1779067512;
         // ---------- Original Method ----------
         //return Collections.enumeration(addresses);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.001 -0400", hash_original_method = "8EA44302895F236212D41E0DDEBDF9A7", hash_generated_method = "9DB595A27DDAF99E5F665377EBE08FEF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.636 -0400", hash_original_method = "8EA44302895F236212D41E0DDEBDF9A7", hash_generated_method = "149E9ABED2932A593A4EB1F41B6BE800")
     public String getDisplayName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_952395590 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_952395590 = name;
+        varB4EAC82CA7396A68D541C85D26508E83_952395590.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_952395590;
         // ---------- Original Method ----------
         //return name;
     }
@@ -252,20 +268,20 @@ public final class NetworkInterface extends Object {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.003 -0400", hash_original_method = "BC7B763A69F6C3BA5344751878C41BC9", hash_generated_method = "8B868DE65C349C63949605F76A5B6B54")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.669 -0400", hash_original_method = "BC7B763A69F6C3BA5344751878C41BC9", hash_generated_method = "FA00068AD947292B395AAA929D71BC05")
     @Override
     public boolean equals(Object obj) {
-        dsTaint.addTaint(obj.dsTaint);
         {
-            boolean var8D1D3E5F4C020ED4FA594AED365B4BD8_1821582020 = (obj == this);
+            boolean var8D1D3E5F4C020ED4FA594AED365B4BD8_808740710 = (obj == this);
         } //End collapsed parenthetic
         NetworkInterface rhs;
         rhs = (NetworkInterface) obj;
-        boolean varCFDD7FADFC3FFE902DE7F2C3CFC056FA_623739368 = (interfaceIndex == rhs.interfaceIndex &&
+        boolean varCFDD7FADFC3FFE902DE7F2C3CFC056FA_1559483234 = (interfaceIndex == rhs.interfaceIndex &&
                 name.equals(rhs.name) &&
                 addresses.equals(rhs.addresses));
-        return dsTaint.getTaintBoolean();
+        addTaint(obj.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1633415551 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1633415551;
         // ---------- Original Method ----------
         //if (obj == this) {
             //return true;
@@ -280,21 +296,21 @@ public final class NetworkInterface extends Object {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.003 -0400", hash_original_method = "EF5D8B81A9E09E0C38DFC15BA422ECA1", hash_generated_method = "916E778F42DFCB14F4D912DDB282D81A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.673 -0400", hash_original_method = "EF5D8B81A9E09E0C38DFC15BA422ECA1", hash_generated_method = "9C952D69494F24A7FD0751D1BC93724A")
     @Override
     public int hashCode() {
-        int var8EF65A1839C36EED6A25646011513717_1135215403 = (name.hashCode());
-        return dsTaint.getTaintInt();
+        int var8EF65A1839C36EED6A25646011513717_905496562 = (name.hashCode());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1982412440 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1982412440;
         // ---------- Original Method ----------
         //return name.hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.007 -0400", hash_original_method = "620D41077AD7BF09E0A41C54CA4C93E4", hash_generated_method = "0A152D40C1AA55B76FCBA8EF55E065CB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.712 -0400", hash_original_method = "620D41077AD7BF09E0A41C54CA4C93E4", hash_generated_method = "C72842AF731770CB09CD88957DA4684D")
     @Override
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_204457522 = null; //Variable for return #1
         StringBuilder sb;
         sb = new StringBuilder(25);
         sb.append("[");
@@ -303,17 +319,18 @@ public final class NetworkInterface extends Object {
         sb.append(interfaceIndex);
         sb.append("]");
         {
-            Iterator<InetAddress> var62595D499DF2C76ECC662655AB071B53_246559067 = (addresses).iterator();
-            var62595D499DF2C76ECC662655AB071B53_246559067.hasNext();
-            InetAddress address = var62595D499DF2C76ECC662655AB071B53_246559067.next();
+            Iterator<InetAddress> var62595D499DF2C76ECC662655AB071B53_1732281419 = (addresses).iterator();
+            var62595D499DF2C76ECC662655AB071B53_1732281419.hasNext();
+            InetAddress address = var62595D499DF2C76ECC662655AB071B53_1732281419.next();
             {
                 sb.append("[");
                 sb.append(address.toString());
                 sb.append("]");
             } //End block
         } //End collapsed parenthetic
-        String var806458D832AB974D230FEE4CBBDBD390_1469533721 = (sb.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_204457522 = sb.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_204457522.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_204457522;
         // ---------- Original Method ----------
         //StringBuilder sb = new StringBuilder(25);
         //sb.append("[");
@@ -330,90 +347,93 @@ public final class NetworkInterface extends Object {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.007 -0400", hash_original_method = "C190D1700F991379DD6B6FA0B56D9271", hash_generated_method = "9595BE68FE46C4795DA700BC5EAD073C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.713 -0400", hash_original_method = "C190D1700F991379DD6B6FA0B56D9271", hash_generated_method = "EADE03B7794C925C75484CF12F1AF592")
     public List<InterfaceAddress> getInterfaceAddresses() {
-        List<InterfaceAddress> var619CE1FD4C246D61F23F1688C4B0EC28_1830919833 = (Collections.unmodifiableList(interfaceAddresses));
-        return (List<InterfaceAddress>)dsTaint.getTaint();
+        List<InterfaceAddress> varB4EAC82CA7396A68D541C85D26508E83_2041231832 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2041231832 = Collections.unmodifiableList(interfaceAddresses);
+        varB4EAC82CA7396A68D541C85D26508E83_2041231832.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2041231832;
         // ---------- Original Method ----------
         //return Collections.unmodifiableList(interfaceAddresses);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.007 -0400", hash_original_method = "8E4C110AD3B43FE2BF8CD3BA4F006B61", hash_generated_method = "D43D3688D2182E3560E78C7908592C9B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.713 -0400", hash_original_method = "8E4C110AD3B43FE2BF8CD3BA4F006B61", hash_generated_method = "CF13724C6121249DC31F319D7677642A")
     public Enumeration<NetworkInterface> getSubInterfaces() {
-        Enumeration<NetworkInterface> var2270D0A74FDA93B45F77D94159862709_1262326576 = (Collections.enumeration(children));
-        return (Enumeration<NetworkInterface>)dsTaint.getTaint();
+        Enumeration<NetworkInterface> varB4EAC82CA7396A68D541C85D26508E83_1722065887 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1722065887 = Collections.enumeration(children);
+        varB4EAC82CA7396A68D541C85D26508E83_1722065887.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1722065887;
         // ---------- Original Method ----------
         //return Collections.enumeration(children);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.007 -0400", hash_original_method = "0171D836B0B5DAF8B2EBF67B786C53D8", hash_generated_method = "B46C9C87CCEA270144EBA3F8C80B6823")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.714 -0400", hash_original_method = "0171D836B0B5DAF8B2EBF67B786C53D8", hash_generated_method = "24433334672863A419936411494515DC")
     public NetworkInterface getParent() {
-        return (NetworkInterface)dsTaint.getTaint();
+        NetworkInterface varB4EAC82CA7396A68D541C85D26508E83_958932936 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_958932936 = parent;
+        varB4EAC82CA7396A68D541C85D26508E83_958932936.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_958932936;
         // ---------- Original Method ----------
         //return parent;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.007 -0400", hash_original_method = "75BA962F238E916BD53759FC06C4F3FC", hash_generated_method = "9B2B36B88DA905EB1D1E9362DA843510")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.714 -0400", hash_original_method = "75BA962F238E916BD53759FC06C4F3FC", hash_generated_method = "A34B18AA706C2051F5225B3B5F0143F8")
     public boolean isUp() throws SocketException {
-        boolean varF591EFC37B60A72A17E3CE63FBA99BEB_1791576850 = (hasFlag(IFF_UP));
-        return dsTaint.getTaintBoolean();
+        boolean varF591EFC37B60A72A17E3CE63FBA99BEB_1625787852 = (hasFlag(IFF_UP));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1478283198 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1478283198;
         // ---------- Original Method ----------
         //return hasFlag(IFF_UP);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.007 -0400", hash_original_method = "43938CC724FD99A90F694F02FE52F3C1", hash_generated_method = "BA33685EEA5A0342F94E06FDD3E17CA2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.725 -0400", hash_original_method = "43938CC724FD99A90F694F02FE52F3C1", hash_generated_method = "4BE7E6D543578FB01BB8752D80FDBDCC")
     public boolean isLoopback() throws SocketException {
-        boolean var6A7673CBC332282894945C821D155828_703512317 = (hasFlag(IFF_LOOPBACK));
-        return dsTaint.getTaintBoolean();
+        boolean var6A7673CBC332282894945C821D155828_665903146 = (hasFlag(IFF_LOOPBACK));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_292598493 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_292598493;
         // ---------- Original Method ----------
         //return hasFlag(IFF_LOOPBACK);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.008 -0400", hash_original_method = "23308A79A2D2396A98D81E8541E78934", hash_generated_method = "FFEF9EF2409ECA64269CE53307E7F882")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.725 -0400", hash_original_method = "23308A79A2D2396A98D81E8541E78934", hash_generated_method = "78F80F5BF2FF0D8B780344FD66FFF5F4")
     public boolean isPointToPoint() throws SocketException {
-        boolean var4148E911C703019273CB54FC3753B0FD_302204015 = (hasFlag(IFF_POINTOPOINT));
-        return dsTaint.getTaintBoolean();
+        boolean var4148E911C703019273CB54FC3753B0FD_533787722 = (hasFlag(IFF_POINTOPOINT));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1009620090 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1009620090;
         // ---------- Original Method ----------
         //return hasFlag(IFF_POINTOPOINT);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.008 -0400", hash_original_method = "F3F42A79D0AC4CD032482F2E9202D65B", hash_generated_method = "9B6E96337BB471FBC4E1F0D14BFEE93C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.726 -0400", hash_original_method = "F3F42A79D0AC4CD032482F2E9202D65B", hash_generated_method = "A72A41166AC71EFDB147B7309EC8BE8F")
     public boolean supportsMulticast() throws SocketException {
-        boolean var9E225DE38FE74005B320C73360ECB2FA_1065445944 = (hasFlag(IFF_MULTICAST));
-        return dsTaint.getTaintBoolean();
+        boolean var9E225DE38FE74005B320C73360ECB2FA_1688989685 = (hasFlag(IFF_MULTICAST));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_425403799 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_425403799;
         // ---------- Original Method ----------
         //return hasFlag(IFF_MULTICAST);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.008 -0400", hash_original_method = "D18447285D6021856765D65DFF4990EE", hash_generated_method = "21CF35C2AF6C8F314E7F3541F0B9E7D4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.727 -0400", hash_original_method = "D18447285D6021856765D65DFF4990EE", hash_generated_method = "000908E51CA286C1276D6FB4CC4B96C4")
     private boolean hasFlag(int mask) throws SocketException {
-        dsTaint.addTaint(mask);
         int flags;
         flags = readIntFile("/sys/class/net/" + name + "/flags");
-        return dsTaint.getTaintBoolean();
+        addTaint(mask);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1248299783 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1248299783;
         // ---------- Original Method ----------
         //int flags = readIntFile("/sys/class/net/" + name + "/flags");
         //return (flags & mask) != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.008 -0400", hash_original_method = "38A6C5A0C86B6ED6858EFB47D652704B", hash_generated_method = "E9BDC7F7C44AD06B1F12AF88C7491A9C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.740 -0400", hash_original_method = "38A6C5A0C86B6ED6858EFB47D652704B", hash_generated_method = "AB8C69444F7386D1012053C99174E6CE")
     public byte[] getHardwareAddress() throws SocketException {
         try 
         {
@@ -437,9 +457,8 @@ public final class NetworkInterface extends Object {
         {
             if (DroidSafeAndroidRuntime.control) throw rethrowAsSocketException(ex);
         } //End block
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_555647185 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_555647185;
         // ---------- Original Method ----------
         //try {
             //String s = IoUtils.readFileAsString("/sys/class/net/" + name + "/address");
@@ -459,20 +478,20 @@ public final class NetworkInterface extends Object {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.009 -0400", hash_original_method = "57A1E5A45121F464D5D64A55053B7665", hash_generated_method = "E6247AF29BF28B085BADB369BA17415B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.740 -0400", hash_original_method = "57A1E5A45121F464D5D64A55053B7665", hash_generated_method = "75B7A7FF97D82AF1F999F08E9DD29C65")
     public int getMTU() throws SocketException {
-        int varE7F9CEFF64D3342D8630F1AC7ACF09B3_986939858 = (readIntFile("/sys/class/net/" + name + "/mtu"));
-        return dsTaint.getTaintInt();
+        int varE7F9CEFF64D3342D8630F1AC7ACF09B3_2127160851 = (readIntFile("/sys/class/net/" + name + "/mtu"));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_312459619 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_312459619;
         // ---------- Original Method ----------
         //return readIntFile("/sys/class/net/" + name + "/mtu");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.009 -0400", hash_original_method = "8D88E2F84D40F104BBA78B3610BC12B1", hash_generated_method = "0EECD0BE35535EDA0393703FF54D9765")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.741 -0400", hash_original_method = "8D88E2F84D40F104BBA78B3610BC12B1", hash_generated_method = "0BBD5B6668E6D8E468891581C4C7479D")
     public boolean isVirtual() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1917596170 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1917596170;
         // ---------- Original Method ----------
         //return parent != null;
     }

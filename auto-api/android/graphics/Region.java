@@ -11,61 +11,58 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Region implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.642 -0400", hash_original_field = "39A8A1AE8A42CDC584C4F2F420719809", hash_generated_field = "BE18D4475688FDC46F0A31DE4104CC38")
+
     public int mNativeRegion;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.792 -0400", hash_original_method = "0D8BB79D644235D834A5B870E7DE5E55", hash_generated_method = "E39C818312FCB6AA783B7BFB03E94023")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Region() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.642 -0400", hash_original_method = "0D8BB79D644235D834A5B870E7DE5E55", hash_generated_method = "E39C818312FCB6AA783B7BFB03E94023")
+    public  Region() {
         this(nativeConstructor());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.792 -0400", hash_original_method = "ADA47703EEBAAF081A921E3B439FC136", hash_generated_method = "6726E5B83C2C3C2B97E8E6382102A4AD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Region(Region region) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.643 -0400", hash_original_method = "ADA47703EEBAAF081A921E3B439FC136", hash_generated_method = "A09777D2102260181E3E2BD364A2770A")
+    public  Region(Region region) {
         this(nativeConstructor());
-        dsTaint.addTaint(region.dsTaint);
         nativeSetRegion(mNativeRegion, region.mNativeRegion);
+        addTaint(region.getTaint());
         // ---------- Original Method ----------
         //nativeSetRegion(mNativeRegion, region.mNativeRegion);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.792 -0400", hash_original_method = "A1BEE89A791B5892C0419D31229063CC", hash_generated_method = "D86D4FFFC1D71CD063F8CC108AD2A6C3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Region(Rect r) {
-        dsTaint.addTaint(r.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.644 -0400", hash_original_method = "A1BEE89A791B5892C0419D31229063CC", hash_generated_method = "DD7F9984E03DE8897E830C80A8E503AC")
+    public  Region(Rect r) {
         mNativeRegion = nativeConstructor();
         nativeSetRect(mNativeRegion, r.left, r.top, r.right, r.bottom);
+        addTaint(r.getTaint());
         // ---------- Original Method ----------
         //mNativeRegion = nativeConstructor();
         //nativeSetRect(mNativeRegion, r.left, r.top, r.right, r.bottom);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.793 -0400", hash_original_method = "3B1EBFADD13882DEC7CB8A7DB9BB782B", hash_generated_method = "82920683F823A47A68D7EB9A42CB9B75")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Region(int left, int top, int right, int bottom) {
-        dsTaint.addTaint(bottom);
-        dsTaint.addTaint(left);
-        dsTaint.addTaint(right);
-        dsTaint.addTaint(top);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.644 -0400", hash_original_method = "3B1EBFADD13882DEC7CB8A7DB9BB782B", hash_generated_method = "864E2AA468A5C0CDD79590BC9201CFEA")
+    public  Region(int left, int top, int right, int bottom) {
         mNativeRegion = nativeConstructor();
         nativeSetRect(mNativeRegion, left, top, right, bottom);
+        addTaint(left);
+        addTaint(top);
+        addTaint(right);
+        addTaint(bottom);
         // ---------- Original Method ----------
         //mNativeRegion = nativeConstructor();
         //nativeSetRect(mNativeRegion, left, top, right, bottom);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.793 -0400", hash_original_method = "AE1199122B801919FCCD86EFAEB8981E", hash_generated_method = "9C97A6023D00438F79B3320670A6C98E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     Region(int ni) {
-        dsTaint.addTaint(ni);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.645 -0400", hash_original_method = "AE1199122B801919FCCD86EFAEB8981E", hash_generated_method = "D76989F906C7903EBFB8F0E5C3DD4905")
+      Region(int ni) {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException();
         } //End block
+        mNativeRegion = ni;
         // ---------- Original Method ----------
         //if (ni == 0) {
             //throw new RuntimeException();
@@ -74,18 +71,16 @@ public class Region implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.793 -0400", hash_original_method = "5B5253F8036AE411F7DD245C7F6E35C3", hash_generated_method = "14B93E2FD42BC2DB7983288D2AD210F6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private Region(int ni, int dummy) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.645 -0400", hash_original_method = "5B5253F8036AE411F7DD245C7F6E35C3", hash_generated_method = "016A964C73357547BF51727F07F054D8")
+    private  Region(int ni, int dummy) {
         this(ni);
-        dsTaint.addTaint(dummy);
-        dsTaint.addTaint(ni);
+        addTaint(ni);
+        addTaint(dummy);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.793 -0400", hash_original_method = "200ADD9307CCB536C203EAC015A5A024", hash_generated_method = "A1D8D2D68CAD63FF400E3E9B34FAD970")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.664 -0400", hash_original_method = "200ADD9307CCB536C203EAC015A5A024", hash_generated_method = "A1D8D2D68CAD63FF400E3E9B34FAD970")
     public void setEmpty() {
         nativeSetRect(mNativeRegion, 0, 0, 0, 0);
         // ---------- Original Method ----------
@@ -93,82 +88,84 @@ public class Region implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.793 -0400", hash_original_method = "4FCDB3DC16FC27229A4383057FFC976C", hash_generated_method = "07E9C0F6BA00E4B6E3FE0943C5D76E99")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.665 -0400", hash_original_method = "4FCDB3DC16FC27229A4383057FFC976C", hash_generated_method = "098F65945C5E9C122F071EC258DEC40B")
     public boolean set(Region region) {
-        dsTaint.addTaint(region.dsTaint);
-        boolean varFD6438F9B0E81607A15A2B33F843B9FB_1733122964 = (nativeSetRegion(mNativeRegion, region.mNativeRegion));
-        return dsTaint.getTaintBoolean();
+        boolean varFD6438F9B0E81607A15A2B33F843B9FB_448649132 = (nativeSetRegion(mNativeRegion, region.mNativeRegion));
+        addTaint(region.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1701167881 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1701167881;
         // ---------- Original Method ----------
         //return nativeSetRegion(mNativeRegion, region.mNativeRegion);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.794 -0400", hash_original_method = "C2513170875A2D5A2EB27E891206577A", hash_generated_method = "41B8290ADD6EB61928B1AE8076DA1706")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.665 -0400", hash_original_method = "C2513170875A2D5A2EB27E891206577A", hash_generated_method = "E58703CCF199CE63C0CAE10875FD2683")
     public boolean set(Rect r) {
-        dsTaint.addTaint(r.dsTaint);
-        boolean var25DF7F0C1A123F4C32CF83DCE205F87D_859037014 = (nativeSetRect(mNativeRegion, r.left, r.top, r.right, r.bottom));
-        return dsTaint.getTaintBoolean();
+        boolean var25DF7F0C1A123F4C32CF83DCE205F87D_2110024947 = (nativeSetRect(mNativeRegion, r.left, r.top, r.right, r.bottom));
+        addTaint(r.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1897029131 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1897029131;
         // ---------- Original Method ----------
         //return nativeSetRect(mNativeRegion, r.left, r.top, r.right, r.bottom);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.794 -0400", hash_original_method = "D06421CD512172DCB28D2F3E0620053E", hash_generated_method = "0B9EB74056F3C32F6DBC380E74513F1D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.666 -0400", hash_original_method = "D06421CD512172DCB28D2F3E0620053E", hash_generated_method = "2750917758F5FE08315F99E0C6454598")
     public boolean set(int left, int top, int right, int bottom) {
-        dsTaint.addTaint(bottom);
-        dsTaint.addTaint(left);
-        dsTaint.addTaint(right);
-        dsTaint.addTaint(top);
-        boolean varAA92C668356049C143CCD434BB32A02D_1542683757 = (nativeSetRect(mNativeRegion, left, top, right, bottom));
-        return dsTaint.getTaintBoolean();
+        boolean varAA92C668356049C143CCD434BB32A02D_1094298099 = (nativeSetRect(mNativeRegion, left, top, right, bottom));
+        addTaint(left);
+        addTaint(top);
+        addTaint(right);
+        addTaint(bottom);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_198286603 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_198286603;
         // ---------- Original Method ----------
         //return nativeSetRect(mNativeRegion, left, top, right, bottom);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.794 -0400", hash_original_method = "E058C8FF714DCD6DC5C3B199CE291ABB", hash_generated_method = "B4ED845EC68F8A72C51471D77942039B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.666 -0400", hash_original_method = "E058C8FF714DCD6DC5C3B199CE291ABB", hash_generated_method = "989D632EF1F6C6D4BE92031F194026EA")
     public boolean setPath(Path path, Region clip) {
-        dsTaint.addTaint(clip.dsTaint);
-        dsTaint.addTaint(path.dsTaint);
-        boolean var031F6EBD4CDCFA81D22115484A3E2F03_632974923 = (nativeSetPath(mNativeRegion, path.ni(), clip.mNativeRegion));
-        return dsTaint.getTaintBoolean();
+        boolean var031F6EBD4CDCFA81D22115484A3E2F03_1293694791 = (nativeSetPath(mNativeRegion, path.ni(), clip.mNativeRegion));
+        addTaint(path.getTaint());
+        addTaint(clip.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1898358589 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1898358589;
         // ---------- Original Method ----------
         //return nativeSetPath(mNativeRegion, path.ni(), clip.mNativeRegion);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.794 -0400", hash_original_method = "9B1CCC3AB82A9C7B7A46C788921405FB", hash_generated_method = "980C3CA394064A1D9FE11B9568A552C9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.667 -0400", hash_original_method = "9B1CCC3AB82A9C7B7A46C788921405FB", hash_generated_method = "419CB94DC0C54EFBC45915FDDAEBAEA0")
     public boolean isEmpty() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1065840069 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1065840069;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.795 -0400", hash_original_method = "2BE881D6CE1CF3506EFB49B5287B67D4", hash_generated_method = "A865AD5932BD3AA02828C3360E01FF77")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.671 -0400", hash_original_method = "2BE881D6CE1CF3506EFB49B5287B67D4", hash_generated_method = "444BD2751DFDCBD89D332127C5FB9671")
     public boolean isRect() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2011526165 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2011526165;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.795 -0400", hash_original_method = "96E541304104A48A190119203B0E80D4", hash_generated_method = "E6BB26D83FE1841A4437BD28CC098626")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.672 -0400", hash_original_method = "96E541304104A48A190119203B0E80D4", hash_generated_method = "BA50E3E03D2F6E3FEAB08D2150DE3EFB")
     public boolean isComplex() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_117111001 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_117111001;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.795 -0400", hash_original_method = "EBA477C7AF945181ADA3A9B8177742BE", hash_generated_method = "E580D31D45768A10B77591A43EED96B3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.672 -0400", hash_original_method = "EBA477C7AF945181ADA3A9B8177742BE", hash_generated_method = "BBFE6B474A3F4603E553A4BEC5E92490")
     public Rect getBounds() {
+        Rect varB4EAC82CA7396A68D541C85D26508E83_1707964355 = null; //Variable for return #1
         Rect r;
         r = new Rect();
         nativeGetBounds(mNativeRegion, r);
-        return (Rect)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1707964355 = r;
+        varB4EAC82CA7396A68D541C85D26508E83_1707964355.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1707964355;
         // ---------- Original Method ----------
         //Rect r = new Rect();
         //nativeGetBounds(mNativeRegion, r);
@@ -176,15 +173,15 @@ public class Region implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.795 -0400", hash_original_method = "A46555E1E49458678846473DF9E9883B", hash_generated_method = "51314DB78E1B62F081E35E00DF12E713")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.689 -0400", hash_original_method = "A46555E1E49458678846473DF9E9883B", hash_generated_method = "3095A2E194BBBB425A3345A27615AE63")
     public boolean getBounds(Rect r) {
-        dsTaint.addTaint(r.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
-        boolean var612724CC1222E7287B756B46F505C1EB_1265075649 = (nativeGetBounds(mNativeRegion, r));
-        return dsTaint.getTaintBoolean();
+        boolean var612724CC1222E7287B756B46F505C1EB_348859905 = (nativeGetBounds(mNativeRegion, r));
+        addTaint(r.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1511518713 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1511518713;
         // ---------- Original Method ----------
         //if (r == null) {
             //throw new NullPointerException();
@@ -193,13 +190,15 @@ public class Region implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.796 -0400", hash_original_method = "378316FE7952FD732F90591AB3699DE2", hash_generated_method = "9AC37811588A4600C9064CABED516E62")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.692 -0400", hash_original_method = "378316FE7952FD732F90591AB3699DE2", hash_generated_method = "8CEF8DEFFA01C451A7D30D6160A8927C")
     public Path getBoundaryPath() {
+        Path varB4EAC82CA7396A68D541C85D26508E83_957484554 = null; //Variable for return #1
         Path path;
         path = new Path();
         nativeGetBoundaryPath(mNativeRegion, path.ni());
-        return (Path)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_957484554 = path;
+        varB4EAC82CA7396A68D541C85D26508E83_957484554.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_957484554;
         // ---------- Original Method ----------
         //Path path = new Path();
         //nativeGetBoundaryPath(mNativeRegion, path.ni());
@@ -207,231 +206,211 @@ public class Region implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.796 -0400", hash_original_method = "4EAA9FC9D13D7E90DDD0EEB1CB6196B1", hash_generated_method = "7F777DB3E8ED03B1E468C5B819B53102")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.697 -0400", hash_original_method = "4EAA9FC9D13D7E90DDD0EEB1CB6196B1", hash_generated_method = "D6156336448BB5507AE8808D1C3CFB0D")
     public boolean getBoundaryPath(Path path) {
-        dsTaint.addTaint(path.dsTaint);
-        boolean var7A07334C6D667AC5F4DCF43B96AAF16A_1576226329 = (nativeGetBoundaryPath(mNativeRegion, path.ni()));
-        return dsTaint.getTaintBoolean();
+        boolean var7A07334C6D667AC5F4DCF43B96AAF16A_1864911377 = (nativeGetBoundaryPath(mNativeRegion, path.ni()));
+        addTaint(path.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_753701463 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_753701463;
         // ---------- Original Method ----------
         //return nativeGetBoundaryPath(mNativeRegion, path.ni());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.796 -0400", hash_original_method = "5B0A75408C2B4CF9238ADD529FC37D02", hash_generated_method = "703BC5C3336F4DC502F394FE56B93277")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.705 -0400", hash_original_method = "5B0A75408C2B4CF9238ADD529FC37D02", hash_generated_method = "7D2DCE865B9946A009CB2C39C9019E7A")
     public boolean contains(int x, int y) {
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_823988968 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_823988968;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.796 -0400", hash_original_method = "963E643D37666FF20B3A3B029F181389", hash_generated_method = "47EDBFD50B476CC8D6151A5D2A98B0C8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.706 -0400", hash_original_method = "963E643D37666FF20B3A3B029F181389", hash_generated_method = "1EFD665116006B5BC2AF37CA1F710DB2")
     public boolean quickContains(Rect r) {
-        dsTaint.addTaint(r.dsTaint);
-        boolean var017062C31AD44FF41B703185E7097A3E_1602786722 = (quickContains(r.left, r.top, r.right, r.bottom));
-        return dsTaint.getTaintBoolean();
+        boolean var017062C31AD44FF41B703185E7097A3E_1836065005 = (quickContains(r.left, r.top, r.right, r.bottom));
+        addTaint(r.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_377451714 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_377451714;
         // ---------- Original Method ----------
         //return quickContains(r.left, r.top, r.right, r.bottom);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.796 -0400", hash_original_method = "F4780612A05468EA5B4971365E65F2E9", hash_generated_method = "FD8B13E913984FE437D91770E69F8704")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.717 -0400", hash_original_method = "F4780612A05468EA5B4971365E65F2E9", hash_generated_method = "243059B34147A31DE648CB59EB19A2BD")
     public boolean quickContains(int left, int top, int right,
                                         int bottom) {
-        dsTaint.addTaint(bottom);
-        dsTaint.addTaint(left);
-        dsTaint.addTaint(right);
-        dsTaint.addTaint(top);
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1145914718 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1145914718;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.797 -0400", hash_original_method = "99713AAB8FDC91BA4FFF953154B93F70", hash_generated_method = "CDAD18F5AAD0B34964FC01CEABBD7237")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.718 -0400", hash_original_method = "99713AAB8FDC91BA4FFF953154B93F70", hash_generated_method = "E7E4DBFAABB90BBA61DD3E85DEC49D61")
     public boolean quickReject(Rect r) {
-        dsTaint.addTaint(r.dsTaint);
-        boolean varB72F58AD7D20DCFFA79D3669C170785C_72211162 = (quickReject(r.left, r.top, r.right, r.bottom));
-        return dsTaint.getTaintBoolean();
+        boolean varB72F58AD7D20DCFFA79D3669C170785C_1213391838 = (quickReject(r.left, r.top, r.right, r.bottom));
+        addTaint(r.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_665125850 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_665125850;
         // ---------- Original Method ----------
         //return quickReject(r.left, r.top, r.right, r.bottom);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.797 -0400", hash_original_method = "C7FE089D5B9638DFC662C69BB1CCA253", hash_generated_method = "507956BEA1FA21886838584595A3B466")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.719 -0400", hash_original_method = "C7FE089D5B9638DFC662C69BB1CCA253", hash_generated_method = "E047BB42D6BCD89F291FBBD726685BCD")
     public boolean quickReject(int left, int top, int right, int bottom) {
-        dsTaint.addTaint(bottom);
-        dsTaint.addTaint(left);
-        dsTaint.addTaint(right);
-        dsTaint.addTaint(top);
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_724588306 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_724588306;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.797 -0400", hash_original_method = "248FAC130B583135AFED72EC96EB473C", hash_generated_method = "F57C0791972DF66AE2485907AAAD2735")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.719 -0400", hash_original_method = "248FAC130B583135AFED72EC96EB473C", hash_generated_method = "BFA0F1B475467CC22138AC5F6FD71246")
     public boolean quickReject(Region rgn) {
-        dsTaint.addTaint(rgn.dsTaint);
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1710711965 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1710711965;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.797 -0400", hash_original_method = "1E0220698FB1311F0D8B9F18E7495908", hash_generated_method = "A4AE59F6BFF2BD6582212EA890CCDB02")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.720 -0400", hash_original_method = "1E0220698FB1311F0D8B9F18E7495908", hash_generated_method = "E24B5EF6D47ED52A756A2EA13DEC0030")
     public void translate(int dx, int dy) {
-        dsTaint.addTaint(dx);
-        dsTaint.addTaint(dy);
         translate(dx, dy, null);
+        addTaint(dx);
+        addTaint(dy);
         // ---------- Original Method ----------
         //translate(dx, dy, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.798 -0400", hash_original_method = "F2F101D23D8556E25BBA4D0A405F0CD3", hash_generated_method = "84643C0B3CE859AF3927E02C666F6CD0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.721 -0400", hash_original_method = "F2F101D23D8556E25BBA4D0A405F0CD3", hash_generated_method = "2A31251C6E83A876D8030DE3CA7F91C4")
     public void translate(int dx, int dy, Region dst) {
-        dsTaint.addTaint(dx);
-        dsTaint.addTaint(dy);
-        dsTaint.addTaint(dst.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.798 -0400", hash_original_method = "39111F1C858A6D228BD34A5A0563D24D", hash_generated_method = "F79812200A3C59A5449C57E62E618793")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.729 -0400", hash_original_method = "39111F1C858A6D228BD34A5A0563D24D", hash_generated_method = "A4ED0A074CB69C62A947FAC105ECCFB4")
     public void scale(float scale) {
-        dsTaint.addTaint(scale);
         scale(scale, null);
+        addTaint(scale);
         // ---------- Original Method ----------
         //scale(scale, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.798 -0400", hash_original_method = "704645B9B50E78F1B3F526FB095B5A0C", hash_generated_method = "5EAFF6E12EE2FF36C4D81639B732D686")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.729 -0400", hash_original_method = "704645B9B50E78F1B3F526FB095B5A0C", hash_generated_method = "93622E1801E30E8106831D2D97D909FA")
     public void scale(float scale, Region dst) {
-        dsTaint.addTaint(scale);
-        dsTaint.addTaint(dst.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.798 -0400", hash_original_method = "50F2C1285B4A35F7EE8C85CE7082EAF5", hash_generated_method = "CAC4F41B40F31B1DAB38A13B2D51BA6A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.747 -0400", hash_original_method = "50F2C1285B4A35F7EE8C85CE7082EAF5", hash_generated_method = "0587BBE208F610735D406DE1CCD3BAB1")
     public final boolean union(Rect r) {
-        dsTaint.addTaint(r.dsTaint);
-        boolean varF191283E3A07FEE13EB2FB081B34FC0D_402092038 = (op(r, Op.UNION));
-        return dsTaint.getTaintBoolean();
+        boolean varF191283E3A07FEE13EB2FB081B34FC0D_1459916970 = (op(r, Op.UNION));
+        addTaint(r.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_394149999 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_394149999;
         // ---------- Original Method ----------
         //return op(r, Op.UNION);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.798 -0400", hash_original_method = "0254EC2D8CB0B709656A3942F767CF9E", hash_generated_method = "DEDE785670027733E094B439AB964B82")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.747 -0400", hash_original_method = "0254EC2D8CB0B709656A3942F767CF9E", hash_generated_method = "8DA92389E345DE9246F4524AE0B71FB5")
     public boolean op(Rect r, Op op) {
-        dsTaint.addTaint(op.dsTaint);
-        dsTaint.addTaint(r.dsTaint);
-        boolean var90EAA618B3BAC1E5B315E4AB50A3912D_745257455 = (nativeOp(mNativeRegion, r.left, r.top, r.right, r.bottom,
+        boolean var90EAA618B3BAC1E5B315E4AB50A3912D_2077968839 = (nativeOp(mNativeRegion, r.left, r.top, r.right, r.bottom,
                         op.nativeInt));
-        return dsTaint.getTaintBoolean();
+        addTaint(r.getTaint());
+        addTaint(op.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1217069599 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1217069599;
         // ---------- Original Method ----------
         //return nativeOp(mNativeRegion, r.left, r.top, r.right, r.bottom,
                         //op.nativeInt);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.799 -0400", hash_original_method = "F7B19A9596841ACD8A98EA48656877B1", hash_generated_method = "82276D388D4145E6D8B3C7C37651B72F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.748 -0400", hash_original_method = "F7B19A9596841ACD8A98EA48656877B1", hash_generated_method = "3F40131756CAFF40F6BB15B06EB4E1AF")
     public boolean op(int left, int top, int right, int bottom, Op op) {
-        dsTaint.addTaint(op.dsTaint);
-        dsTaint.addTaint(bottom);
-        dsTaint.addTaint(left);
-        dsTaint.addTaint(right);
-        dsTaint.addTaint(top);
-        boolean varABC9D9B2705AE309B237F72644A5AB34_956545594 = (nativeOp(mNativeRegion, left, top, right, bottom,
+        boolean varABC9D9B2705AE309B237F72644A5AB34_510138648 = (nativeOp(mNativeRegion, left, top, right, bottom,
                         op.nativeInt));
-        return dsTaint.getTaintBoolean();
+        addTaint(left);
+        addTaint(top);
+        addTaint(right);
+        addTaint(bottom);
+        addTaint(op.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_555786341 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_555786341;
         // ---------- Original Method ----------
         //return nativeOp(mNativeRegion, left, top, right, bottom,
                         //op.nativeInt);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.799 -0400", hash_original_method = "7B6B61AB972DEFAAC29D5DA42EF8C210", hash_generated_method = "0B5A8D7990FC3A440ADF9AB8C2AE2877")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.749 -0400", hash_original_method = "7B6B61AB972DEFAAC29D5DA42EF8C210", hash_generated_method = "41CED1A55C7A50FB6860568A84499226")
     public boolean op(Region region, Op op) {
-        dsTaint.addTaint(region.dsTaint);
-        dsTaint.addTaint(op.dsTaint);
-        boolean var0AD004458B8F75085CC4F6F5BFEA2284_475218840 = (op(this, region, op));
-        return dsTaint.getTaintBoolean();
+        boolean var0AD004458B8F75085CC4F6F5BFEA2284_1797926302 = (op(this, region, op));
+        addTaint(region.getTaint());
+        addTaint(op.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1793459042 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1793459042;
         // ---------- Original Method ----------
         //return op(this, region, op);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.799 -0400", hash_original_method = "029ED340525EAD4C240C408219CCC448", hash_generated_method = "9DF314DDD708143D647C11C5BCED3648")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.749 -0400", hash_original_method = "029ED340525EAD4C240C408219CCC448", hash_generated_method = "9C48F7FA5AA51081CCCE3729CE6FBD82")
     public boolean op(Rect rect, Region region, Op op) {
-        dsTaint.addTaint(region.dsTaint);
-        dsTaint.addTaint(op.dsTaint);
-        dsTaint.addTaint(rect.dsTaint);
-        boolean varB0742BC4953C9AFE0E99DE4F785439D4_1322422665 = (nativeOp(mNativeRegion, rect, region.mNativeRegion,
+        boolean varB0742BC4953C9AFE0E99DE4F785439D4_488042058 = (nativeOp(mNativeRegion, rect, region.mNativeRegion,
                         op.nativeInt));
-        return dsTaint.getTaintBoolean();
+        addTaint(rect.getTaint());
+        addTaint(region.getTaint());
+        addTaint(op.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_622548778 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_622548778;
         // ---------- Original Method ----------
         //return nativeOp(mNativeRegion, rect, region.mNativeRegion,
                         //op.nativeInt);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.799 -0400", hash_original_method = "7FDA52C90EA81767BFA435745FBF29BC", hash_generated_method = "1FC2A222F6D214647C9ACBAC428AC1CC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.750 -0400", hash_original_method = "7FDA52C90EA81767BFA435745FBF29BC", hash_generated_method = "445F776BEE4D98EDD7CE9AF991ECBA49")
     public boolean op(Region region1, Region region2, Op op) {
-        dsTaint.addTaint(op.dsTaint);
-        dsTaint.addTaint(region2.dsTaint);
-        dsTaint.addTaint(region1.dsTaint);
-        boolean var0855EC438B898D69658174303EBCB740_1677606080 = (nativeOp(mNativeRegion, region1.mNativeRegion,
+        boolean var0855EC438B898D69658174303EBCB740_2019351454 = (nativeOp(mNativeRegion, region1.mNativeRegion,
                         region2.mNativeRegion, op.nativeInt));
-        return dsTaint.getTaintBoolean();
+        addTaint(region1.getTaint());
+        addTaint(region2.getTaint());
+        addTaint(op.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_885682066 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_885682066;
         // ---------- Original Method ----------
         //return nativeOp(mNativeRegion, region1.mNativeRegion,
                         //region2.mNativeRegion, op.nativeInt);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.800 -0400", hash_original_method = "9B6C5B9AE4B0C715D06D485A7F8D4046", hash_generated_method = "5734F54CE9B7BCFA35AEF0F2C7A7FFB5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.763 -0400", hash_original_method = "9B6C5B9AE4B0C715D06D485A7F8D4046", hash_generated_method = "97CBC6286E9064A25B4AF58C8890ED09")
     public String toString() {
-        String varDC2402CB4F37B486A874A8FCF1F196ED_471840173 = (nativeToString(mNativeRegion));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1102000735 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1102000735 = nativeToString(mNativeRegion);
+        varB4EAC82CA7396A68D541C85D26508E83_1102000735.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1102000735;
         // ---------- Original Method ----------
         //return nativeToString(mNativeRegion);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.800 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.765 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D1E17729CBE8047417A78E132BC40098")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1842901916 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1842901916;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.800 -0400", hash_original_method = "D2434A1CAFA87CC30850BFCF09357749", hash_generated_method = "E7E00322D077090FE906D065D64CDB2E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.766 -0400", hash_original_method = "D2434A1CAFA87CC30850BFCF09357749", hash_generated_method = "FF0EDC940045EEAA154F7D50EF5A9DE6")
     public void writeToParcel(Parcel p, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(p.dsTaint);
         {
-            boolean varD704EA22356746E9A56ADBBB4C97F8A4_1724353544 = (!nativeWriteToParcel(mNativeRegion, p));
+            boolean varD704EA22356746E9A56ADBBB4C97F8A4_397375633 = (!nativeWriteToParcel(mNativeRegion, p));
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException();
             } //End block
         } //End collapsed parenthetic
+        addTaint(p.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //if (!nativeWriteToParcel(mNativeRegion, p)) {
             //throw new RuntimeException();
@@ -439,15 +418,15 @@ public class Region implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.800 -0400", hash_original_method = "1060AF13EAB0782D5AA6FD12A9EA9F72", hash_generated_method = "368F2AE96A626E087A9D8252D48D716A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.767 -0400", hash_original_method = "1060AF13EAB0782D5AA6FD12A9EA9F72", hash_generated_method = "689B71F3EE0B86D2AA8122606A094DD4")
     @Override
     public boolean equals(Object obj) {
-        dsTaint.addTaint(obj.dsTaint);
         Region peer;
         peer = (Region) obj;
-        boolean var3AD8F6933DA7C0D2F9603EC218BF03E8_1984372742 = (nativeEquals(mNativeRegion, peer.mNativeRegion));
-        return dsTaint.getTaintBoolean();
+        boolean var3AD8F6933DA7C0D2F9603EC218BF03E8_1647147719 = (nativeEquals(mNativeRegion, peer.mNativeRegion));
+        addTaint(obj.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1057896743 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1057896743;
         // ---------- Original Method ----------
         //if (obj == null || !(obj instanceof Region)) {
             //return false;
@@ -457,8 +436,7 @@ public class Region implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.801 -0400", hash_original_method = "7B9D4EAB814BE6F839A0AFACF43162A1", hash_generated_method = "88533E051B74F60620695CD5B6D42F0C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.767 -0400", hash_original_method = "7B9D4EAB814BE6F839A0AFACF43162A1", hash_generated_method = "88533E051B74F60620695CD5B6D42F0C")
     protected void finalize() throws Throwable {
         try 
         {
@@ -477,10 +455,10 @@ public class Region implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.801 -0400", hash_original_method = "7C7B16974B0225DA07D6CF6E35F70776", hash_generated_method = "01BEA6054D532E74DEE8CE398CA99716")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.774 -0400", hash_original_method = "7C7B16974B0225DA07D6CF6E35F70776", hash_generated_method = "F898032DBA1E397C13D7AB949C693D04")
     final int ni() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1382050252 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1382050252;
         // ---------- Original Method ----------
         //return mNativeRegion;
     }
@@ -559,7 +537,7 @@ public class Region implements Parcelable {
 
     
         private static String nativeToString(int native_region) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -577,38 +555,21 @@ public class Region implements Parcelable {
     }
 
     
-    public static final Parcelable.Creator<Region> CREATOR = new Parcelable.Creator<Region>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.803 -0400", hash_original_method = "57FADA8DB6AE415E8D7938E17AD42A96", hash_generated_method = "E3BB924FE1EEE2F4A712F94808E0386B")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public Region createFromParcel(Parcel p) {
-            dsTaint.addTaint(p.dsTaint);
-            int ni;
-            ni = nativeCreateFromParcel(p);
-            {
-                if (DroidSafeAndroidRuntime.control) throw new RuntimeException();
-            } //End block
-            Region varF800144DF59CD796FC7AA3E373E91903_119677059 = (new Region(ni));
-            return (Region)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //int ni = nativeCreateFromParcel(p);
-            //if (ni == 0) {
-                    //throw new RuntimeException();
-                //}
-            //return new Region(ni);
-        }
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.893 -0400", hash_original_field = "50CCBBF498983066FB87505BC8EF122F", hash_generated_field = "200FB204FCAF60B88F8DADAA8213325E")
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.803 -0400", hash_original_method = "CEFFB067794D43B67239BC68D4FB216A", hash_generated_method = "CF0097436C8AF6EE33513ADFCC060C72")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public Region[] newArray(int size) {
-            dsTaint.addTaint(size);
-            Region[] var1D1F88C3837C7C1E168EC44CDABBF03E_1508097794 = (new Region[size]);
-            return (Region[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new Region[size];
-        }
-
-        
-}; //Transformed anonymous class
+    public static final Parcelable.Creator<Region> CREATOR
+        = new Parcelable.Creator<Region>() {
+            
+            public Region createFromParcel(Parcel p) {
+                int ni = nativeCreateFromParcel(p);
+                if (ni == 0) {
+                    throw new RuntimeException();
+                }
+                return new Region(ni);
+            }
+            public Region[] newArray(int size) {
+                return new Region[size];
+            }
+    };
 }
 

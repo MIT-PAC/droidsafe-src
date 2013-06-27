@@ -15,32 +15,29 @@ import java.net.URLStreamHandler;
 
 public class JarHandler extends URLStreamHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.635 -0400", hash_original_method = "BC857F8B51BB7F792B5B988DF421EEA9", hash_generated_method = "BC857F8B51BB7F792B5B988DF421EEA9")
-        public JarHandler ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.932 -0400", hash_original_method = "0A284EE1D1173C3D5D1EE186B211FF85", hash_generated_method = "0A284EE1D1173C3D5D1EE186B211FF85")
+    public JarHandler ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.636 -0400", hash_original_method = "BD0D54E815B3E8434D2BE4AD1DDC7411", hash_generated_method = "9BDA56454985380FA1C81265CAC3663C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.940 -0400", hash_original_method = "BD0D54E815B3E8434D2BE4AD1DDC7411", hash_generated_method = "915A211E8E9930AB99D8913949D27AFF")
     @Override
     protected URLConnection openConnection(URL u) throws IOException {
-        dsTaint.addTaint(u.dsTaint);
-        URLConnection var60F1DF9C567DB51F18758D95A4179F87_1873827914 = (new JarURLConnectionImpl(u));
-        return (URLConnection)dsTaint.getTaint();
+        URLConnection varB4EAC82CA7396A68D541C85D26508E83_159390630 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_159390630 = new JarURLConnectionImpl(u);
+        addTaint(u.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_159390630.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_159390630;
         // ---------- Original Method ----------
         //return new JarURLConnectionImpl(u);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.636 -0400", hash_original_method = "57C5D17E5E318F4D460452A0FAAB1E77", hash_generated_method = "CC749951036E93F0B7756B6A5EE30513")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.941 -0400", hash_original_method = "57C5D17E5E318F4D460452A0FAAB1E77", hash_generated_method = "B090455700E4F3AF6CD5EDE59FD82566")
     @Override
     protected void parseURL(URL url, String spec, int start, int limit) {
-        dsTaint.addTaint(limit);
-        dsTaint.addTaint(spec);
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(url.dsTaint);
         String file;
         file = url.getFile();
         {
@@ -53,18 +50,18 @@ public class JarHandler extends URLStreamHandler {
             spec = "";
         } //End block
         {
-            boolean var3948E0BE2774036E4123DB53B312CCF1_374614432 = (spec.indexOf("!/") == -1 && (file.indexOf("!/") == -1));
+            boolean var3948E0BE2774036E4123DB53B312CCF1_927102760 = (spec.indexOf("!/") == -1 && (file.indexOf("!/") == -1));
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Cannot find \"!/\"");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var663670DD1E5C39043C69A7F64A2C1292_1471495833 = (file.isEmpty());
+            boolean var663670DD1E5C39043C69A7F64A2C1292_1339908412 = (file.isEmpty());
             {
                 file = spec;
             } //End block
             {
-                boolean varE8C8F246188348661A8B133D5E9D1FF7_36611277 = (spec.charAt(0) == '/');
+                boolean varE8C8F246188348661A8B133D5E9D1FF7_1768087903 = (spec.charAt(0) == '/');
                 {
                     file = file.substring(0, file.indexOf('!') + 1) + spec;
                 } //End block
@@ -87,16 +84,19 @@ public class JarHandler extends URLStreamHandler {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException(e.toString());
         } //End block
         setURL(url, "jar", "", -1, null, null, file, null, null);
+        addTaint(url.getTaint());
+        addTaint(spec.getTaint());
+        addTaint(start);
+        addTaint(limit);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.637 -0400", hash_original_method = "F692A804EFA22D479A24DA08ED26F838", hash_generated_method = "3E0D5CE0CA3F4151D0DA33879C08FCF8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.942 -0400", hash_original_method = "F692A804EFA22D479A24DA08ED26F838", hash_generated_method = "3D8C1321E45C6C8F6F5C279E2081D541")
     @Override
     protected String toExternalForm(URL url) {
-        dsTaint.addTaint(url.dsTaint);
+        String varB4EAC82CA7396A68D541C85D26508E83_879340153 = null; //Variable for return #1
         StringBuilder sb;
         sb = new StringBuilder();
         sb.append("jar:");
@@ -106,8 +106,10 @@ public class JarHandler extends URLStreamHandler {
         {
             sb.append(ref);
         } //End block
-        String var806458D832AB974D230FEE4CBBDBD390_1942144126 = (sb.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_879340153 = sb.toString();
+        addTaint(url.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_879340153.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_879340153;
         // ---------- Original Method ----------
         //StringBuilder sb = new StringBuilder();
         //sb.append("jar:");

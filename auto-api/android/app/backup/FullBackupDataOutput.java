@@ -10,22 +10,24 @@ import java.util.Iterator;
 import android.os.ParcelFileDescriptor;
 
 public class FullBackupDataOutput {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:55.795 -0400", hash_original_field = "B7DE4FF1B7CCEFDA36733D8B6DFF2904", hash_generated_field = "95CD9513D49C95A59EDDF775AA30563D")
+
     private BackupDataOutput mData;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.767 -0400", hash_original_method = "F20038FDD5E96BD5179FFCE81ABE9BCA", hash_generated_method = "FF4ACC606DDB4B887D2B75861EE2B51C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public FullBackupDataOutput(ParcelFileDescriptor fd) {
-        dsTaint.addTaint(fd.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:55.797 -0400", hash_original_method = "F20038FDD5E96BD5179FFCE81ABE9BCA", hash_generated_method = "336EF307BBCD1C14672BB6762218FCFC")
+    public  FullBackupDataOutput(ParcelFileDescriptor fd) {
         mData = new BackupDataOutput(fd.getFileDescriptor());
         // ---------- Original Method ----------
         //mData = new BackupDataOutput(fd.getFileDescriptor());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.768 -0400", hash_original_method = "F187747EE8138E5AF15EC08135568EB6", hash_generated_method = "FE34D87013B8080B487378C5683E1F34")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:55.804 -0400", hash_original_method = "F187747EE8138E5AF15EC08135568EB6", hash_generated_method = "43B94B1E75C3FCFD7FA56B9CF321CBE6")
     public BackupDataOutput getData() {
-        return (BackupDataOutput)dsTaint.getTaint();
+        BackupDataOutput varB4EAC82CA7396A68D541C85D26508E83_1994333867 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1994333867 = mData;
+        varB4EAC82CA7396A68D541C85D26508E83_1994333867.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1994333867;
         // ---------- Original Method ----------
         //return mData;
     }

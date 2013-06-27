@@ -11,11 +11,10 @@ import java.util.Arrays;
 
 public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBuffer> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.640 -0400", hash_original_method = "0AF8846C39B4C946E7DEA048FA516A89", hash_generated_method = "CCC2DE75DBE50655FCEEC2FCBF6DDA7C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     DoubleBuffer(int capacity) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.250 -0400", hash_original_method = "0AF8846C39B4C946E7DEA048FA516A89", hash_generated_method = "E632E4EC7764C222EF3E3833B184A64D")
+      DoubleBuffer(int capacity) {
         super(3, capacity, null);
-        dsTaint.addTaint(capacity);
+        addTaint(capacity);
         // ---------- Original Method ----------
     }
 
@@ -42,23 +41,21 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.641 -0400", hash_original_method = "A99B5F03AD18580EAA75CC7BA40FC0CE", hash_generated_method = "9F2F2AE660AC2BC824B2E51F38D94F22")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.251 -0400", hash_original_method = "A99B5F03AD18580EAA75CC7BA40FC0CE", hash_generated_method = "76E56D3689F9FBC0B1903937A0ABA769")
     public final double[] array() {
-        double[] varEA57FBC16B997AC0E679F048893AC79C_460771448 = (protectedArray());
-        double[] retVal = new double[1];
-        retVal[0] = dsTaint.getTaintFloat();
-        return retVal;
+        double[] varEA57FBC16B997AC0E679F048893AC79C_964442238 = (protectedArray());
+        double[] var74D44D7D9EE6FE6C3433D694F869E521_456862840 = {getTaintDouble()};
+        return var74D44D7D9EE6FE6C3433D694F869E521_456862840;
         // ---------- Original Method ----------
         //return protectedArray();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.641 -0400", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "B82B0450FC8F8737216764C522F83BD3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.264 -0400", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "334CF711EA702312184FB3FC305B7BE3")
     public final int arrayOffset() {
-        int var457EDFAA982472962568D68CBF588B38_357714349 = (protectedArrayOffset());
-        return dsTaint.getTaintInt();
+        int var457EDFAA982472962568D68CBF588B38_1849185814 = (protectedArrayOffset());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1561120199 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1561120199;
         // ---------- Original Method ----------
         //return protectedArrayOffset();
     }
@@ -70,12 +67,10 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
     public abstract DoubleBuffer compact();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.642 -0400", hash_original_method = "A9C47546143A1E2A817B74D1052E5DC9", hash_generated_method = "30ACA8B3232E5F3D33ABB59B2041AC65")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.265 -0400", hash_original_method = "A9C47546143A1E2A817B74D1052E5DC9", hash_generated_method = "E875C4CA7D585F5205F1EF1CD944C91A")
     public int compareTo(DoubleBuffer otherBuffer) {
-        dsTaint.addTaint(otherBuffer.dsTaint);
         int compareRemaining;
-        boolean var4BCBF0874E5D33E29652A3CCB2245276_1006189272 = ((remaining() < otherBuffer.remaining()));
+        boolean var4BCBF0874E5D33E29652A3CCB2245276_1637821304 = ((remaining() < otherBuffer.remaining()));
         compareRemaining = remaining();
         compareRemaining = otherBuffer.remaining();
         int thisPos;
@@ -87,8 +82,10 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
             thisDouble = get(thisPos);
             otherDouble = otherBuffer.get(otherPos);
         } //End block
-        int var51CE6C8A0A6AF44D4BCA06BE06554AF8_411068430 = (remaining() - otherBuffer.remaining());
-        return dsTaint.getTaintInt();
+        int var51CE6C8A0A6AF44D4BCA06BE06554AF8_1264386796 = (remaining() - otherBuffer.remaining());
+        addTaint(otherBuffer.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1718913881 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1718913881;
         // ---------- Original Method ----------
         //int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
                 //: otherBuffer.remaining();
@@ -113,15 +110,13 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
     public abstract DoubleBuffer duplicate();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.642 -0400", hash_original_method = "80D65346F74BD859AA9774E55290B1E1", hash_generated_method = "CEDC41ADADFA3DDED8D1222DAE9F1EFC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.266 -0400", hash_original_method = "80D65346F74BD859AA9774E55290B1E1", hash_generated_method = "51287A0AFCE9367771B82E7E39014A9A")
     @Override
     public boolean equals(Object other) {
-        dsTaint.addTaint(other.dsTaint);
         DoubleBuffer otherBuffer;
         otherBuffer = (DoubleBuffer) other;
         {
-            boolean var0A43D7921CE313B818348D8F01F0C8D5_1014382665 = (remaining() != otherBuffer.remaining());
+            boolean var0A43D7921CE313B818348D8F01F0C8D5_1494392270 = (remaining() != otherBuffer.remaining());
         } //End collapsed parenthetic
         int myPosition;
         myPosition = position;
@@ -136,7 +131,9 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
             b = otherBuffer.get(otherPosition++);
             equalSoFar = a == b || (a != a && b != b);
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(other.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_313908502 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_313908502;
         // ---------- Original Method ----------
         //if (!(other instanceof DoubleBuffer)) {
             //return false;
@@ -160,26 +157,24 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
     public abstract double get();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.643 -0400", hash_original_method = "9BEB92FAE64B1253EE6CA9009E99F3B4", hash_generated_method = "D470E1DC28E62F5DFAC6089510DD2F1D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.266 -0400", hash_original_method = "9BEB92FAE64B1253EE6CA9009E99F3B4", hash_generated_method = "B3D0DB9C495D05AF546667D711339A91")
     public DoubleBuffer get(double[] dst) {
-        dsTaint.addTaint(dst[0]);
-        DoubleBuffer var54C52896C1D21D17FF99C7DFE6939F7B_1188192750 = (get(dst, 0, dst.length));
-        return (DoubleBuffer)dsTaint.getTaint();
+        DoubleBuffer varB4EAC82CA7396A68D541C85D26508E83_827632331 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_827632331 = get(dst, 0, dst.length);
+        addTaint(dst[0]);
+        varB4EAC82CA7396A68D541C85D26508E83_827632331.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_827632331;
         // ---------- Original Method ----------
         //return get(dst, 0, dst.length);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.643 -0400", hash_original_method = "38134BA6A99F502238B51F3879F810C3", hash_generated_method = "C3CD3E93909E1CD7E66A62FE811F03CD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.267 -0400", hash_original_method = "38134BA6A99F502238B51F3879F810C3", hash_generated_method = "668740C8253BE84E7E4CAB5A4A49A67A")
     public DoubleBuffer get(double[] dst, int dstOffset, int doubleCount) {
-        dsTaint.addTaint(doubleCount);
-        dsTaint.addTaint(dstOffset);
-        dsTaint.addTaint(dst[0]);
+        DoubleBuffer varB4EAC82CA7396A68D541C85D26508E83_1091219921 = null; //Variable for return #1
         Arrays.checkOffsetAndCount(dst.length, dstOffset, doubleCount);
         {
-            boolean var74C0A42AB3BAE67C7C3CC56E2CA2CC6D_1496259586 = (doubleCount > remaining());
+            boolean var74C0A42AB3BAE67C7C3CC56E2CA2CC6D_1131849027 = (doubleCount > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
             } //End block
@@ -191,7 +186,12 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
                 dst[i] = get();
             } //End block
         } //End collapsed parenthetic
-        return (DoubleBuffer)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1091219921 = this;
+        addTaint(dst[0]);
+        addTaint(dstOffset);
+        addTaint(doubleCount);
+        varB4EAC82CA7396A68D541C85D26508E83_1091219921.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1091219921;
         // ---------- Original Method ----------
         //Arrays.checkOffsetAndCount(dst.length, dstOffset, doubleCount);
         //if (doubleCount > remaining()) {
@@ -207,18 +207,17 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
     public abstract double get(int index);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.643 -0400", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "0AB9FB337D907E82D9C09623133D90E1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.272 -0400", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "82BC3436A4DEF06A06A6345CB4955B08")
     public final boolean hasArray() {
-        boolean varADF219B8DAB0ACF2FCC593A6A216A7F8_855714534 = (protectedHasArray());
-        return dsTaint.getTaintBoolean();
+        boolean varADF219B8DAB0ACF2FCC593A6A216A7F8_833892731 = (protectedHasArray());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_655567762 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_655567762;
         // ---------- Original Method ----------
         //return protectedHasArray();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.643 -0400", hash_original_method = "BF88872009B539EF877B1EA5B03706BA", hash_generated_method = "A3F6A380CF0B275C005E492989DEC56C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.285 -0400", hash_original_method = "BF88872009B539EF877B1EA5B03706BA", hash_generated_method = "0AF2CAB046C0315DC0A94A6AD9DD64FC")
     @Override
     public int hashCode() {
         int myPosition;
@@ -230,7 +229,8 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
             l = Double.doubleToLongBits(get(myPosition++));
             hash = hash + ((int) l) ^ ((int) (l >> 32));
         } //End block
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_347796528 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_347796528;
         // ---------- Original Method ----------
         //int myPosition = position;
         //int hash = 0;
@@ -261,26 +261,24 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
     public abstract DoubleBuffer put(double d);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.644 -0400", hash_original_method = "93B6D9B754146968969402F4C9473429", hash_generated_method = "5121C585441C1E89608047318CF3D189")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.287 -0400", hash_original_method = "93B6D9B754146968969402F4C9473429", hash_generated_method = "6680A819464B89B0AC211E3411E3057A")
     public final DoubleBuffer put(double[] src) {
-        dsTaint.addTaint(src[0]);
-        DoubleBuffer var974D367CEDA780433BF9CC5389A430C6_384151298 = (put(src, 0, src.length));
-        return (DoubleBuffer)dsTaint.getTaint();
+        DoubleBuffer varB4EAC82CA7396A68D541C85D26508E83_1436624296 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1436624296 = put(src, 0, src.length);
+        addTaint(src[0]);
+        varB4EAC82CA7396A68D541C85D26508E83_1436624296.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1436624296;
         // ---------- Original Method ----------
         //return put(src, 0, src.length);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.645 -0400", hash_original_method = "3E73039BF6DB142176253DE2263B83AD", hash_generated_method = "BDF5DF8665A603F9C952493C2BC41816")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.297 -0400", hash_original_method = "3E73039BF6DB142176253DE2263B83AD", hash_generated_method = "9BEF9593398165515B70C425EE49F15C")
     public DoubleBuffer put(double[] src, int srcOffset, int doubleCount) {
-        dsTaint.addTaint(doubleCount);
-        dsTaint.addTaint(srcOffset);
-        dsTaint.addTaint(src[0]);
+        DoubleBuffer varB4EAC82CA7396A68D541C85D26508E83_843275319 = null; //Variable for return #1
         Arrays.checkOffsetAndCount(src.length, srcOffset, doubleCount);
         {
-            boolean var74C0A42AB3BAE67C7C3CC56E2CA2CC6D_1969189373 = (doubleCount > remaining());
+            boolean var74C0A42AB3BAE67C7C3CC56E2CA2CC6D_896920673 = (doubleCount > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferOverflowException();
             } //End block
@@ -292,7 +290,12 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
                 put(src[i]);
             } //End block
         } //End collapsed parenthetic
-        return (DoubleBuffer)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_843275319 = this;
+        addTaint(src[0]);
+        addTaint(srcOffset);
+        addTaint(doubleCount);
+        varB4EAC82CA7396A68D541C85D26508E83_843275319.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_843275319;
         // ---------- Original Method ----------
         //Arrays.checkOffsetAndCount(src.length, srcOffset, doubleCount);
         //if (doubleCount > remaining()) {
@@ -305,18 +308,17 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.645 -0400", hash_original_method = "C52ECDE4782921BA374F433E41853287", hash_generated_method = "C4DD72D51B771D9258B1FAF8031AE33A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.298 -0400", hash_original_method = "C52ECDE4782921BA374F433E41853287", hash_generated_method = "C49CA83114C3D8205082231E7EFF477D")
     public DoubleBuffer put(DoubleBuffer src) {
-        dsTaint.addTaint(src.dsTaint);
+        DoubleBuffer varB4EAC82CA7396A68D541C85D26508E83_1757134151 = null; //Variable for return #1
         {
-            boolean var9C07FD71E9483B067CE073F58225A0C4_718105113 = (src == this);
+            boolean var9C07FD71E9483B067CE073F58225A0C4_1714294832 = (src == this);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var6E2E81EBCD4D9A6ACDDC12CE61513AA8_176875340 = (src.remaining() > remaining());
+            boolean var6E2E81EBCD4D9A6ACDDC12CE61513AA8_1262633151 = (src.remaining() > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferOverflowException();
             } //End block
@@ -325,7 +327,10 @@ public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBu
         doubles = new double[src.remaining()];
         src.get(doubles);
         put(doubles);
-        return (DoubleBuffer)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1757134151 = this;
+        addTaint(src.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1757134151.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1757134151;
         // ---------- Original Method ----------
         //if (src == this) {
             //throw new IllegalArgumentException();

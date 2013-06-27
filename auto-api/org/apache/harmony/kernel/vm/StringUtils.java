@@ -10,9 +10,8 @@ import java.util.Iterator;
 
 public final class StringUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.795 -0400", hash_original_method = "9E881C2879A613DB548C02DA2AC20129", hash_generated_method = "FB29FB27CF76117908D2A8FF7E9D0E73")
-    @DSModeled(DSC.SAFE)
-    private StringUtils() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.766 -0400", hash_original_method = "9E881C2879A613DB548C02DA2AC20129", hash_generated_method = "FB29FB27CF76117908D2A8FF7E9D0E73")
+    private  StringUtils() {
         // ---------- Original Method ----------
     }
 

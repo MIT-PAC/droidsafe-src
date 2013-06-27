@@ -11,24 +11,21 @@ import libcore.icu.RuleBasedCollatorICU;
 
 public class RuleBasedCollator extends Collator {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.508 -0400", hash_original_method = "31FBA21C05DBD02C02879BE90D845185", hash_generated_method = "511CAC2EDDCD35D13B76ED3FC082E940")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     RuleBasedCollator(RuleBasedCollatorICU wrapper) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.840 -0400", hash_original_method = "31FBA21C05DBD02C02879BE90D845185", hash_generated_method = "4BAD392396C7D2F8879451F9FF7C21AB")
+      RuleBasedCollator(RuleBasedCollatorICU wrapper) {
         super(wrapper);
-        dsTaint.addTaint(wrapper.dsTaint);
+        addTaint(wrapper.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.509 -0400", hash_original_method = "A2DABBE445FB3F5820A862D094AFC471", hash_generated_method = "A44BF354CF77238FF258A64EC553F004")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public RuleBasedCollator(String rules) throws ParseException {
-        dsTaint.addTaint(rules);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.840 -0400", hash_original_method = "A2DABBE445FB3F5820A862D094AFC471", hash_generated_method = "1D52851A5EFB15047079F03E0315BB97")
+    public  RuleBasedCollator(String rules) throws ParseException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
-            boolean var3D82C9751A8A34CF2413397F66CF0EAB_577870057 = (rules.isEmpty());
+            boolean var3D82C9751A8A34CF2413397F66CF0EAB_782196911 = (rules.isEmpty());
             {
                 if (DroidSafeAndroidRuntime.control) throw new ParseException("empty rules", 0);
             } //End block
@@ -44,6 +41,7 @@ public class RuleBasedCollator extends Collator {
             } //End block
             if (DroidSafeAndroidRuntime.control) throw new ParseException(e.getMessage(), -1);
         } //End block
+        addTaint(rules.getTaint());
         // ---------- Original Method ----------
         //if (rules == null) {
             //throw new NullPointerException();
@@ -62,15 +60,16 @@ public class RuleBasedCollator extends Collator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.509 -0400", hash_original_method = "C93FCBD8C41C04013259A24B3BA25AFC", hash_generated_method = "59F990CE6207BE6CB8A6B432671E470E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.841 -0400", hash_original_method = "C93FCBD8C41C04013259A24B3BA25AFC", hash_generated_method = "DCD0CD3DB5348EEEEAACCCF2589B84B4")
     public CollationElementIterator getCollationElementIterator(CharacterIterator source) {
-        dsTaint.addTaint(source.dsTaint);
+        CollationElementIterator varB4EAC82CA7396A68D541C85D26508E83_143965667 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
-        CollationElementIterator var86C17557BF5AC61776999CA7479588A7_982502984 = (new CollationElementIterator(icuColl.getCollationElementIterator(source)));
-        return (CollationElementIterator)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_143965667 = new CollationElementIterator(icuColl.getCollationElementIterator(source));
+        addTaint(source.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_143965667.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_143965667;
         // ---------- Original Method ----------
         //if (source == null) {
             //throw new NullPointerException();
@@ -79,15 +78,16 @@ public class RuleBasedCollator extends Collator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.510 -0400", hash_original_method = "0A03AD4A8EA2D5EFD885AFF079D1FBF8", hash_generated_method = "4AD2EEA94D6B6162825ED84DD56033C1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.841 -0400", hash_original_method = "0A03AD4A8EA2D5EFD885AFF079D1FBF8", hash_generated_method = "A4AAFFBBFEB5F3E3C0153F3620B58453")
     public CollationElementIterator getCollationElementIterator(String source) {
-        dsTaint.addTaint(source);
+        CollationElementIterator varB4EAC82CA7396A68D541C85D26508E83_1498677121 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
-        CollationElementIterator var86C17557BF5AC61776999CA7479588A7_75943374 = (new CollationElementIterator(icuColl.getCollationElementIterator(source)));
-        return (CollationElementIterator)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1498677121 = new CollationElementIterator(icuColl.getCollationElementIterator(source));
+        addTaint(source.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1498677121.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1498677121;
         // ---------- Original Method ----------
         //if (source == null) {
             //throw new NullPointerException();
@@ -96,40 +96,43 @@ public class RuleBasedCollator extends Collator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.510 -0400", hash_original_method = "FF8EDD58F3376852427F0295E98F1202", hash_generated_method = "C7B63D43ACE20233653AAFDD6494A1DC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.842 -0400", hash_original_method = "FF8EDD58F3376852427F0295E98F1202", hash_generated_method = "92C19908AFB666546F36FAB4C21C38F5")
     public String getRules() {
-        String var5324726C5F742A7B7850634C18B018B6_139695420 = (icuColl.getRules());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1196792703 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1196792703 = icuColl.getRules();
+        varB4EAC82CA7396A68D541C85D26508E83_1196792703.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1196792703;
         // ---------- Original Method ----------
         //return icuColl.getRules();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.510 -0400", hash_original_method = "FBA963D7A9FB0658F4932AD387478243", hash_generated_method = "82AFB8176F275A5F557A16F71900DECE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.842 -0400", hash_original_method = "FBA963D7A9FB0658F4932AD387478243", hash_generated_method = "45A66B1849FCAFC042BAB4074C78718C")
     @Override
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_1809872664 = null; //Variable for return #1
         RuleBasedCollator clone;
         clone = (RuleBasedCollator) super.clone();
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1809872664 = clone;
+        varB4EAC82CA7396A68D541C85D26508E83_1809872664.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1809872664;
         // ---------- Original Method ----------
         //RuleBasedCollator clone = (RuleBasedCollator) super.clone();
         //return clone;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.510 -0400", hash_original_method = "6590B43BC0A35CBDE76A6B18FA6459C5", hash_generated_method = "3D03A73BF27BB7B6C42D10049EC19C47")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.843 -0400", hash_original_method = "6590B43BC0A35CBDE76A6B18FA6459C5", hash_generated_method = "BC515328AD86CEEE70CBB1C1DFE24750")
     @Override
     public int compare(String source, String target) {
-        dsTaint.addTaint(source);
-        dsTaint.addTaint(target);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
-        int varA6E0FB9399BDCEE39D05264A8EB646FD_1780091627 = (icuColl.compare(source, target));
-        return dsTaint.getTaintInt();
+        int varA6E0FB9399BDCEE39D05264A8EB646FD_1408616873 = (icuColl.compare(source, target));
+        addTaint(source.getTaint());
+        addTaint(target.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1728299152 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1728299152;
         // ---------- Original Method ----------
         //if (source == null || target == null) {
             //throw new NullPointerException();
@@ -138,36 +141,37 @@ public class RuleBasedCollator extends Collator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.511 -0400", hash_original_method = "A9AF4E46AA414E7FF98E8748BB278551", hash_generated_method = "B38B59749CE1C28E6F1DC696B7AF35AB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.843 -0400", hash_original_method = "A9AF4E46AA414E7FF98E8748BB278551", hash_generated_method = "95D2F3584117D6F5629CF104C18965B5")
     @Override
     public CollationKey getCollationKey(String source) {
-        dsTaint.addTaint(source);
-        CollationKey var955B2CB8C39C195120A267F70CB2586E_990619595 = (icuColl.getCollationKey(source));
-        return (CollationKey)dsTaint.getTaint();
+        CollationKey varB4EAC82CA7396A68D541C85D26508E83_514044963 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_514044963 = icuColl.getCollationKey(source);
+        addTaint(source.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_514044963.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_514044963;
         // ---------- Original Method ----------
         //return icuColl.getCollationKey(source);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.511 -0400", hash_original_method = "B4EBBD96DB20771CAD5EB8825D399E3B", hash_generated_method = "899A95D98BE8AC52CDE014AD2B5D59AA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.853 -0400", hash_original_method = "B4EBBD96DB20771CAD5EB8825D399E3B", hash_generated_method = "7F26E4E37BD7B3BF756008502166B4D0")
     @Override
     public int hashCode() {
-        int varF7028415B2CE61B4AB1FA0FC4E297A19_2095022659 = (icuColl.getRules().hashCode());
-        return dsTaint.getTaintInt();
+        int varF7028415B2CE61B4AB1FA0FC4E297A19_1146557627 = (icuColl.getRules().hashCode());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_936333423 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_936333423;
         // ---------- Original Method ----------
         //return icuColl.getRules().hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.511 -0400", hash_original_method = "1D9A70F4229C9ABE49C60D2B9C1F5E2A", hash_generated_method = "CDC54E38C5C227C60F8F87CF9C3F9E59")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.854 -0400", hash_original_method = "1D9A70F4229C9ABE49C60D2B9C1F5E2A", hash_generated_method = "9EBB0D0B3A687CFDC2CB2647A8A21B35")
     @Override
     public boolean equals(Object obj) {
-        dsTaint.addTaint(obj.dsTaint);
-        boolean var6E858EC9D9579AEA03A77B18029B02A3_518520588 = (super.equals(obj));
-        return dsTaint.getTaintBoolean();
+        boolean var6E858EC9D9579AEA03A77B18029B02A3_1193388032 = (super.equals(obj));
+        addTaint(obj.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_26411497 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_26411497;
         // ---------- Original Method ----------
         //if (!(obj instanceof Collator)) {
             //return false;

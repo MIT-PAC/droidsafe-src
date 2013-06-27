@@ -11,16 +11,21 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public final class InputBindResult implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.687 -0400", hash_original_field = "EA9F6ACA279138C58F705C8D4CB4B8CE", hash_generated_field = "71A10845724278118CE924D88491742A")
+
     public IInputMethodSession method;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.688 -0400", hash_original_field = "B80BB7740288FDA1F201890375A60C8F", hash_generated_field = "8B7CEC29663CDE44174BD9618FC65EBC")
+
     public String id;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.688 -0400", hash_original_field = "FA1C731EAD93E333A9180E16F968C01E", hash_generated_field = "AA45D51908C57BB809E4FBCC2CD22135")
+
     public int sequence;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.299 -0400", hash_original_method = "42A6111FE2D2686864FA2FE8E1A98CEE", hash_generated_method = "F79F5668D4A7D27625838C971D672754")
-    @DSModeled(DSC.SAFE)
-    public InputBindResult(IInputMethodSession _method, String _id, int _sequence) {
-        dsTaint.addTaint(_id);
-        dsTaint.addTaint(_sequence);
-        dsTaint.addTaint(_method.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.688 -0400", hash_original_method = "42A6111FE2D2686864FA2FE8E1A98CEE", hash_generated_method = "0E19872E754A1ACA2FE96A430449E1DF")
+    public  InputBindResult(IInputMethodSession _method, String _id, int _sequence) {
+        method = _method;
+        id = _id;
+        sequence = _sequence;
         // ---------- Original Method ----------
         //method = _method;
         //id = _id;
@@ -28,10 +33,8 @@ public final class InputBindResult implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.299 -0400", hash_original_method = "26E767C4231C3DD46E94F9C79DE09374", hash_generated_method = "391A13214E0C8A4168BFC8234ACC9DEC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     InputBindResult(Parcel source) {
-        dsTaint.addTaint(source.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.689 -0400", hash_original_method = "26E767C4231C3DD46E94F9C79DE09374", hash_generated_method = "5B5FD2FBFE93BA5F669C51F8EABAEAB0")
+      InputBindResult(Parcel source) {
         method = IInputMethodSession.Stub.asInterface(source.readStrongBinder());
         id = source.readString();
         sequence = source.readInt();
@@ -42,25 +45,27 @@ public final class InputBindResult implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.300 -0400", hash_original_method = "7D3C8FC32444FE9148F633706CA9BDDA", hash_generated_method = "3638B19D546AED62F1F1E0DC23168B81")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.689 -0400", hash_original_method = "7D3C8FC32444FE9148F633706CA9BDDA", hash_generated_method = "FACFBD8B8AD4B5E250DFEEAD2DC288C6")
     @Override
     public String toString() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_304734680 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_304734680 = "InputBindResult{" + method + " " + id
+                + " #" + sequence + "}";
+        varB4EAC82CA7396A68D541C85D26508E83_304734680.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_304734680;
         // ---------- Original Method ----------
         //return "InputBindResult{" + method + " " + id
                 //+ " #" + sequence + "}";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.300 -0400", hash_original_method = "D059CB42BC9C8F046048FBE3BCB19D52", hash_generated_method = "9EF1CADC86D370680A3FB756804B84D1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.696 -0400", hash_original_method = "D059CB42BC9C8F046048FBE3BCB19D52", hash_generated_method = "06820C64692AE69B031442EB94319C6B")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeStrongInterface(method);
         dest.writeString(id);
         dest.writeInt(sequence);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeStrongInterface(method);
         //dest.writeString(id);
@@ -68,39 +73,28 @@ public final class InputBindResult implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.300 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.697 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "155713460DE1A206711A063579CCAC60")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_230347712 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_230347712;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    static final String TAG = "InputBindResult";
-    public static final Parcelable.Creator<InputBindResult> CREATOR = new Parcelable.Creator<InputBindResult>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.300 -0400", hash_original_method = "0DC17695F8002017E94E8D176AF259A9", hash_generated_method = "387FC75380A2FB3C242353DC2E347F3D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.697 -0400", hash_original_field = "9B42CE6945265EB3AAD05FA61558E605", hash_generated_field = "1FC778D3D2AB1EAAE377FAE11E1915D3")
+
+    static String TAG = "InputBindResult";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.697 -0400", hash_original_field = "5B120F1D91D62CFFE41182DB1B3AC094", hash_generated_field = "FB8CFB6623F2A703564B3A10377DAF9A")
+
+    public static final Parcelable.Creator<InputBindResult> CREATOR = new Parcelable.Creator<InputBindResult>() {
         public InputBindResult createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            InputBindResult var99F7A71B0E8873B74E194C8047B29004_1935216210 = (new InputBindResult(source));
-            return (InputBindResult)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new InputBindResult(source);
+            return new InputBindResult(source);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.301 -0400", hash_original_method = "95F5C3EE4EE7A3EB96C435695C7EF89F", hash_generated_method = "AEE5F0EF1128A2A59D07D7677A6C65DA")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public InputBindResult[] newArray(int size) {
-            dsTaint.addTaint(size);
-            InputBindResult[] var96A8F453FDB7386F31B20FB679329C97_1632663446 = (new InputBindResult[size]);
-            return (InputBindResult[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new InputBindResult[size];
+            return new InputBindResult[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

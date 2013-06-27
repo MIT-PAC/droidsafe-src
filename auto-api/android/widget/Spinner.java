@@ -22,61 +22,64 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class Spinner extends AbsSpinner implements OnClickListener {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.866 -0400", hash_original_field = "E863CEB96C01242A6262A422DC21BA91", hash_generated_field = "2B2C8DD5949DF96120E12CE686443E54")
+
     private SpinnerPopup mPopup;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.866 -0400", hash_original_field = "DB8AEAB3B92BDCB9C1750435FF08F347", hash_generated_field = "C1900A4CF75F2ED95144B24FDA148887")
+
     private DropDownAdapter mTempAdapter;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.866 -0400", hash_original_field = "56AD5481B6A7DF9BE8EA5BE42BC8A2A2", hash_generated_field = "9F13B49ED3B4F15DF1C39EF57B2A0772")
+
     int mDropDownWidth;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.866 -0400", hash_original_field = "1DE05384A4316AFED99BFDA3AA41DEF9", hash_generated_field = "ACF14A395FB2702990553CD0EFA1BDCC")
+
     private int mGravity;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.866 -0400", hash_original_field = "D8AB3D4F1D71BCDC94E13C76C2E7EAF9", hash_generated_field = "7967DE792AA6967947AC34B6AC2CC5E6")
+
     private boolean mDisableChildrenWhenDisabled;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.866 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "AFFA54D19F07A10EE8847CF76FC95323")
+
     private Rect mTempRect = new Rect();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.600 -0400", hash_original_method = "B5C06F1AC4F38C2FF014EC091685338D", hash_generated_method = "5DFB1D7C46C5F546DD8CCDC0A73D7EEA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Spinner(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.866 -0400", hash_original_method = "B5C06F1AC4F38C2FF014EC091685338D", hash_generated_method = "FE480488CFAF338D190465CF15135132")
+    public  Spinner(Context context) {
         this(context, null);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.600 -0400", hash_original_method = "6645D47A83FEF1D160E35889A652939D", hash_generated_method = "22F07A2F7A1904B80028F63929DA5B69")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Spinner(Context context, int mode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.867 -0400", hash_original_method = "6645D47A83FEF1D160E35889A652939D", hash_generated_method = "0D03D4C496A1494E34A485DD66255BCF")
+    public  Spinner(Context context, int mode) {
         this(context, null, com.android.internal.R.attr.spinnerStyle, mode);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(mode);
+        addTaint(context.getTaint());
+        addTaint(mode);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.601 -0400", hash_original_method = "B198D16CD1474762E3B97C016462CA6F", hash_generated_method = "6928B6CEFE2EDAB0D389719EFEC46078")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Spinner(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.867 -0400", hash_original_method = "B198D16CD1474762E3B97C016462CA6F", hash_generated_method = "98E558EE3E07124E17F8FA31D1D4AFB1")
+    public  Spinner(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.spinnerStyle);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.601 -0400", hash_original_method = "78C6FE6C5EEF3610339F87F7F649A015", hash_generated_method = "2EC0220BA79B942328E3470B1881116B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Spinner(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.867 -0400", hash_original_method = "78C6FE6C5EEF3610339F87F7F649A015", hash_generated_method = "DAC30882A8EB10DA8D36BFB5483AEA1B")
+    public  Spinner(Context context, AttributeSet attrs, int defStyle) {
         this(context, attrs, defStyle, MODE_THEME);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(defStyle);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
+        addTaint(defStyle);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.601 -0400", hash_original_method = "290E4CD98FA983594AD8D129D824FCAE", hash_generated_method = "64F4D3DBA06C61B15DC8F7AD8A6D1FBA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Spinner(Context context, AttributeSet attrs, int defStyle, int mode) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.872 -0400", hash_original_method = "290E4CD98FA983594AD8D129D824FCAE", hash_generated_method = "44434A41826F67C5E844C08BDC854A07")
+    public  Spinner(Context context, AttributeSet attrs, int defStyle, int mode) {
         super(context, attrs, defStyle);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(defStyle);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(mode);
         TypedArray a;
         a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.Spinner, defStyle, 0);
@@ -121,16 +124,18 @@ public class Spinner extends AbsSpinner implements OnClickListener {
             mPopup.setAdapter(mTempAdapter);
             mTempAdapter = null;
         } //End block
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
+        addTaint(defStyle);
+        addTaint(mode);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.602 -0400", hash_original_method = "E89DC933CAA3948ECC7191CDEBCA4F7F", hash_generated_method = "C43BF69E7B5F55E36D95526F9BA19F79")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.873 -0400", hash_original_method = "E89DC933CAA3948ECC7191CDEBCA4F7F", hash_generated_method = "4B8944D259DF8F9C9A5C7F4E5FD1F2FC")
     @Override
     public void setEnabled(boolean enabled) {
-        dsTaint.addTaint(enabled);
         super.setEnabled(enabled);
         {
             int count;
@@ -143,6 +148,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        addTaint(enabled);
         // ---------- Original Method ----------
         //super.setEnabled(enabled);
         //if (mDisableChildrenWhenDisabled) {
@@ -154,14 +160,13 @@ public class Spinner extends AbsSpinner implements OnClickListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.602 -0400", hash_original_method = "2D67806CEC3CAAEAC987F460E7189BA9", hash_generated_method = "14FAD25C8AD96C2871908FD577039DF2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.873 -0400", hash_original_method = "2D67806CEC3CAAEAC987F460E7189BA9", hash_generated_method = "581B3A8CC2ADFBD090B1DE0FBFA07032")
     public void setGravity(int gravity) {
-        dsTaint.addTaint(gravity);
         {
             {
                 gravity |= Gravity.LEFT;
             } //End block
+            mGravity = gravity;
             requestLayout();
         } //End block
         // ---------- Original Method ----------
@@ -175,11 +180,9 @@ public class Spinner extends AbsSpinner implements OnClickListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.602 -0400", hash_original_method = "60241601236C86A9296272064A15234D", hash_generated_method = "2163314AAB251367EA3BC9A218DBD7A6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.874 -0400", hash_original_method = "60241601236C86A9296272064A15234D", hash_generated_method = "B3BAD5DA17A85B926BCB91F9E8FEBA88")
     @Override
     public void setAdapter(SpinnerAdapter adapter) {
-        dsTaint.addTaint(adapter.dsTaint);
         super.setAdapter(adapter);
         {
             mPopup.setAdapter(new DropDownAdapter(adapter));
@@ -197,19 +200,18 @@ public class Spinner extends AbsSpinner implements OnClickListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.603 -0400", hash_original_method = "50D7CC7A93B993E2A6FF522D575BAEB5", hash_generated_method = "CBD44F727BC2E07D41F495DFB3462054")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.874 -0400", hash_original_method = "50D7CC7A93B993E2A6FF522D575BAEB5", hash_generated_method = "A1C0190CB2218604354FCCA4FBC96BDB")
     @Override
     public int getBaseline() {
         View child;
         child = null;
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1271897132 = (getChildCount() > 0);
+            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1707764482 = (getChildCount() > 0);
             {
                 child = getChildAt(0);
             } //End block
             {
-                boolean var64E96C628F62864AA686A96BEDED1403_519158168 = (mAdapter != null && mAdapter.getCount() > 0);
+                boolean var64E96C628F62864AA686A96BEDED1403_1506193068 = (mAdapter != null && mAdapter.getCount() > 0);
                 {
                     child = makeAndAddView(0);
                     mRecycler.put(0, child);
@@ -221,10 +223,11 @@ public class Spinner extends AbsSpinner implements OnClickListener {
             int childBaseline;
             childBaseline = child.getBaseline();
             {
-                Object var54BA034BC30EE04F32CE30794275A01A_1561708128 = (child.getTop() + childBaseline);
+                Object var54BA034BC30EE04F32CE30794275A01A_1702463415 = (child.getTop() + childBaseline);
             } //End flattened ternary
         } //End block
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1921221764 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1921221764;
         // ---------- Original Method ----------
         //View child = null;
         //if (getChildCount() > 0) {
@@ -243,14 +246,13 @@ public class Spinner extends AbsSpinner implements OnClickListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.603 -0400", hash_original_method = "B6F13EE08FDC85FB02DBBB6CA125C601", hash_generated_method = "502444686B3F974FA99D9BF453ED3A7F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.881 -0400", hash_original_method = "B6F13EE08FDC85FB02DBBB6CA125C601", hash_generated_method = "C21E678661C39D4297507FE08C416751")
     @Override
     protected void onDetachedFromWindow() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         super.onDetachedFromWindow();
         {
-            boolean varD929D8531D595F5EA0B4A8A252DF969D_1220907523 = (mPopup != null && mPopup.isShowing());
+            boolean varD929D8531D595F5EA0B4A8A252DF969D_2083280254 = (mPopup != null && mPopup.isShowing());
             {
                 mPopup.dismiss();
             } //End block
@@ -263,27 +265,23 @@ public class Spinner extends AbsSpinner implements OnClickListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.603 -0400", hash_original_method = "AE9F9278138E36A1F7A0C4102CD0DE5F", hash_generated_method = "1845199B2C20DAF84978A647D0C64BBE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.881 -0400", hash_original_method = "AE9F9278138E36A1F7A0C4102CD0DE5F", hash_generated_method = "7F5AC0D830F3AD8737EF0FF5E2239EB7")
     @Override
     public void setOnItemClickListener(OnItemClickListener l) {
-        dsTaint.addTaint(l.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("setOnItemClickListener cannot be used with a spinner.");
+        addTaint(l.getTaint());
         // ---------- Original Method ----------
         //throw new RuntimeException("setOnItemClickListener cannot be used with a spinner.");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.603 -0400", hash_original_method = "EC8AF316641014792672178145DBD315", hash_generated_method = "38040E8191C5C48536A48DD278924709")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.882 -0400", hash_original_method = "EC8AF316641014792672178145DBD315", hash_generated_method = "3A0B97B42150E6A33DC2F9FBE093679C")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(heightMeasureSpec);
-        dsTaint.addTaint(widthMeasureSpec);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         {
-            boolean var5BB94CDAE497737B2AF326771BF24CAC_492433915 = (mPopup != null && MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.AT_MOST);
+            boolean var5BB94CDAE497737B2AF326771BF24CAC_28838890 = (mPopup != null && MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.AT_MOST);
             {
                 int measuredWidth;
                 measuredWidth = getMeasuredWidth();
@@ -293,6 +291,8 @@ public class Spinner extends AbsSpinner implements OnClickListener {
                     getMeasuredHeight());
             } //End block
         } //End collapsed parenthetic
+        addTaint(widthMeasureSpec);
+        addTaint(heightMeasureSpec);
         // ---------- Original Method ----------
         //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         //if (mPopup != null && MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.AT_MOST) {
@@ -305,20 +305,19 @@ public class Spinner extends AbsSpinner implements OnClickListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.604 -0400", hash_original_method = "2F25E46AB3A307ED9F0C91E6C81BDCD4", hash_generated_method = "B4289DFEB84AA82DA645268BF74433BD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.882 -0400", hash_original_method = "2F25E46AB3A307ED9F0C91E6C81BDCD4", hash_generated_method = "65ACF9A64D756E5637EB155848E3E853")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(t);
-        dsTaint.addTaint(b);
-        dsTaint.addTaint(r);
-        dsTaint.addTaint(l);
-        dsTaint.addTaint(changed);
         super.onLayout(changed, l, t, r, b);
         mInLayout = true;
         layout(0, false);
         mInLayout = false;
+        addTaint(changed);
+        addTaint(l);
+        addTaint(t);
+        addTaint(r);
+        addTaint(b);
         // ---------- Original Method ----------
         //super.onLayout(changed, l, t, r, b);
         //mInLayout = true;
@@ -327,12 +326,9 @@ public class Spinner extends AbsSpinner implements OnClickListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.604 -0400", hash_original_method = "26F25590D97768D2F385154C131B8E76", hash_generated_method = "EB7BF0D3A264E8D868DF30EF69CD0FAC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.884 -0400", hash_original_method = "26F25590D97768D2F385154C131B8E76", hash_generated_method = "64EC9F21AA1C45CB3B2B6A087A009428")
     @Override
      void layout(int delta, boolean animate) {
-        dsTaint.addTaint(animate);
-        dsTaint.addTaint(delta);
         int childrenLeft;
         childrenLeft = mSpinnerPadding.left;
         int childrenWidth;
@@ -368,25 +364,40 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         mDataChanged = false;
         mNeedSync = false;
         setNextSelectedPositionInt(mSelectedPosition);
+        addTaint(delta);
+        addTaint(animate);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.604 -0400", hash_original_method = "16A0D15DF35F8329F5BE73262CE9B509", hash_generated_method = "20031CFDE4C8B94FB95D65AA58E1861D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.885 -0400", hash_original_method = "16A0D15DF35F8329F5BE73262CE9B509", hash_generated_method = "9A966E884001AD0C4495034E64EEA591")
     private View makeAndAddView(int position) {
-        dsTaint.addTaint(position);
+        View varB4EAC82CA7396A68D541C85D26508E83_827022572 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_632775294 = null; //Variable for return #2
         View child;
         {
             child = mRecycler.get(position);
             {
                 setUpChild(child);
+                varB4EAC82CA7396A68D541C85D26508E83_827022572 = child;
             } //End block
         } //End block
         child = mAdapter.getView(position, null, this);
         setUpChild(child);
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_632775294 = child;
+        addTaint(position);
+        View varA7E53CE21691AB073D9660D615818899_579504142; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_579504142 = varB4EAC82CA7396A68D541C85D26508E83_827022572;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_579504142 = varB4EAC82CA7396A68D541C85D26508E83_632775294;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_579504142.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_579504142;
         // ---------- Original Method ----------
         //View child;
         //if (!mDataChanged) {
@@ -402,10 +413,8 @@ public class Spinner extends AbsSpinner implements OnClickListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.605 -0400", hash_original_method = "EA422D8BE64CA8F3FB87FB3D4E23C7FB", hash_generated_method = "1E080BCD5D1CB60F9CABD015697DAACE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.951 -0400", hash_original_method = "EA422D8BE64CA8F3FB87FB3D4E23C7FB", hash_generated_method = "96CB89B84DD8225016F6EF9C9DEF7615")
     private void setUpChild(View child) {
-        dsTaint.addTaint(child.dsTaint);
         ViewGroup.LayoutParams lp;
         lp = child.getLayoutParams();
         {
@@ -436,13 +445,13 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         childLeft = 0;
         childRight = childLeft + width;
         child.layout(childLeft, childTop, childRight, childBottom);
+        addTaint(child.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.605 -0400", hash_original_method = "DE0583C7611D1F2BE10915793A501A4C", hash_generated_method = "B6F507C5211C1AA1856545C6C3B5B285")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.951 -0400", hash_original_method = "DE0583C7611D1F2BE10915793A501A4C", hash_generated_method = "E4306F937D60990552B5B0A0A6B1AF2A")
     @Override
     public boolean performClick() {
         boolean handled;
@@ -450,13 +459,14 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         {
             handled = true;
             {
-                boolean varE54135B8CA552C10B65F25C1BE9A982D_1326043200 = (!mPopup.isShowing());
+                boolean varE54135B8CA552C10B65F25C1BE9A982D_1520573633 = (!mPopup.isShowing());
                 {
                     mPopup.show();
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1632042341 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1632042341;
         // ---------- Original Method ----------
         //boolean handled = super.performClick();
         //if (!handled) {
@@ -469,55 +479,50 @@ public class Spinner extends AbsSpinner implements OnClickListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.605 -0400", hash_original_method = "21A8DBFD7E0EEAC4158875C988469F50", hash_generated_method = "D201D46B69483327B28A8DCDC9F80860")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.952 -0400", hash_original_method = "21A8DBFD7E0EEAC4158875C988469F50", hash_generated_method = "4747EBD4AE52098FE6F53157784D7F32")
     public void onClick(DialogInterface dialog, int which) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(which);
-        dsTaint.addTaint(dialog.dsTaint);
         setSelection(which);
         dialog.dismiss();
+        addTaint(dialog.getTaint());
+        addTaint(which);
         // ---------- Original Method ----------
         //setSelection(which);
         //dialog.dismiss();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.606 -0400", hash_original_method = "82831FCEC8FF5E5499EA6A36B12A66DA", hash_generated_method = "5C47C82049F2723ED30595E9C7390A42")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.952 -0400", hash_original_method = "82831FCEC8FF5E5499EA6A36B12A66DA", hash_generated_method = "5244C7309714851D8F9FA9A60609AE32")
     public void setPrompt(CharSequence prompt) {
-        dsTaint.addTaint(prompt);
         mPopup.setPromptText(prompt);
+        addTaint(prompt.getTaint());
         // ---------- Original Method ----------
         //mPopup.setPromptText(prompt);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.606 -0400", hash_original_method = "21AEC72317B46CB2881CC90C11A2AA6E", hash_generated_method = "5612ECE5BB42DA97A73B5E563418C617")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.952 -0400", hash_original_method = "21AEC72317B46CB2881CC90C11A2AA6E", hash_generated_method = "282CDD662BB137828E37FF9AB97BDF04")
     public void setPromptId(int promptId) {
-        dsTaint.addTaint(promptId);
         setPrompt(getContext().getText(promptId));
+        addTaint(promptId);
         // ---------- Original Method ----------
         //setPrompt(getContext().getText(promptId));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.606 -0400", hash_original_method = "07472705288FF1B8FBB0DCE1C944E4ED", hash_generated_method = "A907827813D4F05CAA152B8E8A41B2BE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.953 -0400", hash_original_method = "07472705288FF1B8FBB0DCE1C944E4ED", hash_generated_method = "E34A2A1B22659F443B569C3EE1505448")
     public CharSequence getPrompt() {
-        CharSequence varEAD4D3246139A44C91868D145211BCE9_1232593543 = (mPopup.getHintText());
-        return dsTaint.getTaintString();
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_453187778 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_453187778 = mPopup.getHintText();
+        varB4EAC82CA7396A68D541C85D26508E83_453187778.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_453187778;
         // ---------- Original Method ----------
         //return mPopup.getHintText();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.607 -0400", hash_original_method = "EB37E42D6ACA63E84337B27962C39033", hash_generated_method = "33774B9A1E3951C938C8A49D01473A31")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.955 -0400", hash_original_method = "EB37E42D6ACA63E84337B27962C39033", hash_generated_method = "5304D08CFA84F7681CA6694F75F8209D")
      int measureContentWidth(SpinnerAdapter adapter, Drawable background) {
-        dsTaint.addTaint(background.dsTaint);
-        dsTaint.addTaint(adapter.dsTaint);
         int width;
         width = 0;
         View itemView;
@@ -547,7 +552,7 @@ public class Spinner extends AbsSpinner implements OnClickListener {
                 } //End block
                 itemView = adapter.getView(i, itemView, this);
                 {
-                    boolean var4600A482EC7CE1FD745D42F74A7EF908_775018645 = (itemView.getLayoutParams() == null);
+                    boolean var4600A482EC7CE1FD745D42F74A7EF908_542625504 = (itemView.getLayoutParams() == null);
                     {
                         itemView.setLayoutParams(new ViewGroup.LayoutParams(
                         ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -562,20 +567,26 @@ public class Spinner extends AbsSpinner implements OnClickListener {
             background.getPadding(mTempRect);
             width += mTempRect.left + mTempRect.right;
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(adapter.getTaint());
+        addTaint(background.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1583681820 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1583681820;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
     private static class DropDownAdapter implements ListAdapter, SpinnerAdapter {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.955 -0400", hash_original_field = "59E9F255F2F17EC006AE601269EA8540", hash_generated_field = "3308AF23407F136C8CF926C7FBD8DC1B")
+
         private SpinnerAdapter mAdapter;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.955 -0400", hash_original_field = "B8EAD9E776B81483E5E8A661601F6AA8", hash_generated_field = "EBBA0833135A672B66F462D046DC0A24")
+
         private ListAdapter mListAdapter;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.607 -0400", hash_original_method = "FD9BEBCCABA72AC6ECD15A9F9D903ED1", hash_generated_method = "FFDD1ACE6AE9BE0569AC3490B60BAA11")
-        @DSModeled(DSC.SAFE)
-        public DropDownAdapter(SpinnerAdapter adapter) {
-            dsTaint.addTaint(adapter.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.955 -0400", hash_original_method = "FD9BEBCCABA72AC6ECD15A9F9D903ED1", hash_generated_method = "4F13D325278085D7E9669A4AB3B420B2")
+        public  DropDownAdapter(SpinnerAdapter adapter) {
+            this.mAdapter = adapter;
             {
                 this.mListAdapter = (ListAdapter) adapter;
             } //End block
@@ -587,91 +598,90 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.607 -0400", hash_original_method = "7176E9532C0349D7016ABE3301806E2C", hash_generated_method = "BA2DA3F53AA277A2D91A2C82938603D7")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.957 -0400", hash_original_method = "7176E9532C0349D7016ABE3301806E2C", hash_generated_method = "E6DBCDE338BC2077D333E6ED5DA69BB8")
         public int getCount() {
             {
-                Object var067BB5993A461EDA4265964116724952_1140132138 = (mAdapter.getCount());
+                Object var067BB5993A461EDA4265964116724952_672636936 = (mAdapter.getCount());
             } //End flattened ternary
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1562508116 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1562508116;
             // ---------- Original Method ----------
             //return mAdapter == null ? 0 : mAdapter.getCount();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.608 -0400", hash_original_method = "E5529375AE985E64AC9FCAEB196D1278", hash_generated_method = "D62932E108AE15B61DE4A30286800F4F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.959 -0400", hash_original_method = "E5529375AE985E64AC9FCAEB196D1278", hash_generated_method = "4119D9FA30E396E4ECB7BC1CECE7F24E")
         public Object getItem(int position) {
-            dsTaint.addTaint(position);
-            {
-                Object varD6C17F5D90F3D0E14A22AD816012CC23_913384152 = (mAdapter.getItem(position));
-            } //End flattened ternary
-            return (Object)dsTaint.getTaint();
+            Object varB4EAC82CA7396A68D541C85D26508E83_975795460 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_975795460 = mAdapter == null ? null : mAdapter.getItem(position);
+            addTaint(position);
+            varB4EAC82CA7396A68D541C85D26508E83_975795460.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_975795460;
             // ---------- Original Method ----------
             //return mAdapter == null ? null : mAdapter.getItem(position);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.608 -0400", hash_original_method = "516B3E26F5C00C4BD8BAF28DFF38500C", hash_generated_method = "1BF4D3DD39B204BE202A99923D5DD870")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.960 -0400", hash_original_method = "516B3E26F5C00C4BD8BAF28DFF38500C", hash_generated_method = "750C4B9335C5FEFA49927724C7149FD5")
         public long getItemId(int position) {
-            dsTaint.addTaint(position);
             {
-                Object varE791D48808E44BBA8A766C8461C5A401_890176328 = (mAdapter.getItemId(position));
+                Object varE791D48808E44BBA8A766C8461C5A401_2013830375 = (mAdapter.getItemId(position));
             } //End flattened ternary
-            return dsTaint.getTaintLong();
+            addTaint(position);
+            long var0F5264038205EDFB1AC05FBB0E8C5E94_904549676 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_904549676;
             // ---------- Original Method ----------
             //return mAdapter == null ? -1 : mAdapter.getItemId(position);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.608 -0400", hash_original_method = "A9F8983A232A0A246637701F010ACE34", hash_generated_method = "C2D57C546BA602E0555BB8725659EACB")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.974 -0400", hash_original_method = "A9F8983A232A0A246637701F010ACE34", hash_generated_method = "60C8446C5CED7B10A079F5EDE1C02115")
         public View getView(int position, View convertView, ViewGroup parent) {
-            dsTaint.addTaint(position);
-            dsTaint.addTaint(parent.dsTaint);
-            dsTaint.addTaint(convertView.dsTaint);
-            View var9569788A51D97012602F9405CA6C1E64_1400977727 = (getDropDownView(position, convertView, parent));
-            return (View)dsTaint.getTaint();
+            View varB4EAC82CA7396A68D541C85D26508E83_1782619688 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1782619688 = getDropDownView(position, convertView, parent);
+            addTaint(position);
+            addTaint(convertView.getTaint());
+            addTaint(parent.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1782619688.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1782619688;
             // ---------- Original Method ----------
             //return getDropDownView(position, convertView, parent);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.608 -0400", hash_original_method = "F097CA4C24B6E5261C3C9C12681A60CA", hash_generated_method = "BDB9CCCDE42A625883D7CAACCA1E1577")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.975 -0400", hash_original_method = "F097CA4C24B6E5261C3C9C12681A60CA", hash_generated_method = "ACFF47E0407E6E1965B129D3857E908D")
         public View getDropDownView(int position, View convertView, ViewGroup parent) {
-            dsTaint.addTaint(position);
-            dsTaint.addTaint(parent.dsTaint);
-            dsTaint.addTaint(convertView.dsTaint);
-            {
-                Object var87A92028A393B35FD309D903B514C2D4_340289199 = (mAdapter.getDropDownView(position, convertView, parent));
-            } //End flattened ternary
-            return (View)dsTaint.getTaint();
+            View varB4EAC82CA7396A68D541C85D26508E83_696473585 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_696473585 = mAdapter == null ? null :
+                    mAdapter.getDropDownView(position, convertView, parent);
+            addTaint(position);
+            addTaint(convertView.getTaint());
+            addTaint(parent.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_696473585.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_696473585;
             // ---------- Original Method ----------
             //return mAdapter == null ? null :
                     //mAdapter.getDropDownView(position, convertView, parent);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.609 -0400", hash_original_method = "EE546908428E55FCCB0B2F98C659D31B", hash_generated_method = "CF185C85B94359988ABC4FB9EBF8A07D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.975 -0400", hash_original_method = "EE546908428E55FCCB0B2F98C659D31B", hash_generated_method = "44C3FE469489219DF4B927146BFE9116")
         public boolean hasStableIds() {
-            boolean var92A5B2B773F784D23AACADEC549061AE_1737457364 = (mAdapter != null && mAdapter.hasStableIds());
-            return dsTaint.getTaintBoolean();
+            boolean var92A5B2B773F784D23AACADEC549061AE_509152811 = (mAdapter != null && mAdapter.hasStableIds());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_883380923 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_883380923;
             // ---------- Original Method ----------
             //return mAdapter != null && mAdapter.hasStableIds();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.609 -0400", hash_original_method = "809D44C02719E33F590103DE7F6576A1", hash_generated_method = "66B13A5EAF20D91B8AF17781BB09C95A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.983 -0400", hash_original_method = "809D44C02719E33F590103DE7F6576A1", hash_generated_method = "394F8D6D1C3E11D04B82C1A93DEB883B")
         public void registerDataSetObserver(DataSetObserver observer) {
             //DSFIXME: CODE0010: Possible callback registration function detected
-            dsTaint.addTaint(observer.dsTaint);
             {
                 mAdapter.registerDataSetObserver(observer);
             } //End block
+            addTaint(observer.getTaint());
             // ---------- Original Method ----------
             //if (mAdapter != null) {
                 //mAdapter.registerDataSetObserver(observer);
@@ -679,13 +689,12 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.609 -0400", hash_original_method = "3A9A7C936FBCE4451B499589F8C4C5C5", hash_generated_method = "4F3EC93856DE15D30B595D15C54F3C48")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.983 -0400", hash_original_method = "3A9A7C936FBCE4451B499589F8C4C5C5", hash_generated_method = "CA1E1CE41BA81DA1B5FFC90A490DA640")
         public void unregisterDataSetObserver(DataSetObserver observer) {
-            dsTaint.addTaint(observer.dsTaint);
             {
                 mAdapter.unregisterDataSetObserver(observer);
             } //End block
+            addTaint(observer.getTaint());
             // ---------- Original Method ----------
             //if (mAdapter != null) {
                 //mAdapter.unregisterDataSetObserver(observer);
@@ -693,15 +702,15 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.609 -0400", hash_original_method = "C6F9771E1B3DE27F3DC1DA3F2DDBE42B", hash_generated_method = "3940D5E7214FA235F2735B026E2E528B")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.984 -0400", hash_original_method = "C6F9771E1B3DE27F3DC1DA3F2DDBE42B", hash_generated_method = "E884435764909684E0209C24E1335B3E")
         public boolean areAllItemsEnabled() {
             ListAdapter adapter;
             adapter = mListAdapter;
             {
-                boolean var985642AB936091C75C15CA5EE89CD4ED_1252530651 = (adapter.areAllItemsEnabled());
+                boolean var985642AB936091C75C15CA5EE89CD4ED_260091835 = (adapter.areAllItemsEnabled());
             } //End block
-            return dsTaint.getTaintBoolean();
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1654965519 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1654965519;
             // ---------- Original Method ----------
             //final ListAdapter adapter = mListAdapter;
             //if (adapter != null) {
@@ -712,16 +721,16 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.609 -0400", hash_original_method = "5A692D7025642F2703B563EEC7270EF6", hash_generated_method = "EC6BFC8A8F47F1A9BA43A8210BD0BDB5")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.984 -0400", hash_original_method = "5A692D7025642F2703B563EEC7270EF6", hash_generated_method = "348D074810EB8C6AF6D9503CC6FBB922")
         public boolean isEnabled(int position) {
-            dsTaint.addTaint(position);
             ListAdapter adapter;
             adapter = mListAdapter;
             {
-                boolean var1B060CF70AEECE4FB915FA202647B0B7_1226306528 = (adapter.isEnabled(position));
+                boolean var1B060CF70AEECE4FB915FA202647B0B7_322417513 = (adapter.isEnabled(position));
             } //End block
-            return dsTaint.getTaintBoolean();
+            addTaint(position);
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1072641577 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1072641577;
             // ---------- Original Method ----------
             //final ListAdapter adapter = mListAdapter;
             //if (adapter != null) {
@@ -732,30 +741,30 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.610 -0400", hash_original_method = "EE97D094FF23924861F9B1BB9874462B", hash_generated_method = "882AC502ACA966B0A25E3C5395424311")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.985 -0400", hash_original_method = "EE97D094FF23924861F9B1BB9874462B", hash_generated_method = "FDF3DEE55964EDDF933F1FC8BA1D57C2")
         public int getItemViewType(int position) {
-            dsTaint.addTaint(position);
-            return dsTaint.getTaintInt();
+            addTaint(position);
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_843041583 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_843041583;
             // ---------- Original Method ----------
             //return 0;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.610 -0400", hash_original_method = "A6079B88B18082AA3C7D7E460D2C3B87", hash_generated_method = "53C49EF97DA6F0C93968D7347515DA5D")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.985 -0400", hash_original_method = "A6079B88B18082AA3C7D7E460D2C3B87", hash_generated_method = "EEDFEAB06452FD43FE16E9B5E1697A21")
         public int getViewTypeCount() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1113085762 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1113085762;
             // ---------- Original Method ----------
             //return 1;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.610 -0400", hash_original_method = "837A179B327E763126CB6909C28E4F2B", hash_generated_method = "993B8FC5B9EAA9C9F318698F8C860219")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.985 -0400", hash_original_method = "837A179B327E763126CB6909C28E4F2B", hash_generated_method = "42B34B5E5CFFE11CB88C7CF6341A974A")
         public boolean isEmpty() {
-            boolean var1E308F1B2924DF35832B0C6653D5399D_1057179329 = (getCount() == 0);
-            return dsTaint.getTaintBoolean();
+            boolean var1E308F1B2924DF35832B0C6653D5399D_590568801 = (getCount() == 0);
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1997183643 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1997183643;
             // ---------- Original Method ----------
             //return getCount() == 0;
         }
@@ -766,18 +775,24 @@ public class Spinner extends AbsSpinner implements OnClickListener {
 
     
     private class DialogPopup implements SpinnerPopup, DialogInterface.OnClickListener {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.996 -0400", hash_original_field = "E863CEB96C01242A6262A422DC21BA91", hash_generated_field = "8A66D18866E05C57D866195195114C43")
+
         private AlertDialog mPopup;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.996 -0400", hash_original_field = "B8EAD9E776B81483E5E8A661601F6AA8", hash_generated_field = "EBBA0833135A672B66F462D046DC0A24")
+
         private ListAdapter mListAdapter;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.996 -0400", hash_original_field = "902D3ABF16579BBC81B141476B035DD1", hash_generated_field = "D9DA4C057AA02B144FF3C40EB2E94890")
+
         private CharSequence mPrompt;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.610 -0400", hash_original_method = "A8E4FB4BF1BB411D9C3A10632B8E89C0", hash_generated_method = "A8E4FB4BF1BB411D9C3A10632B8E89C0")
-                public DialogPopup ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.996 -0400", hash_original_method = "CE7B674B2EA3FB97987A0C722722E738", hash_generated_method = "CE7B674B2EA3FB97987A0C722722E738")
+        public DialogPopup ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.610 -0400", hash_original_method = "FC11027C394F91EA6C471943F011BB6E", hash_generated_method = "DAF71925B3E5CA09CBFAAD2BB2738DDA")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.997 -0400", hash_original_method = "FC11027C394F91EA6C471943F011BB6E", hash_generated_method = "DAF71925B3E5CA09CBFAAD2BB2738DDA")
         public void dismiss() {
             mPopup.dismiss();
             mPopup = null;
@@ -787,47 +802,46 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.611 -0400", hash_original_method = "BD26E62421B18C78E84EB8F1A09EE4AA", hash_generated_method = "3AC85DE20606FAC7110C4EA82FCDBA74")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.997 -0400", hash_original_method = "BD26E62421B18C78E84EB8F1A09EE4AA", hash_generated_method = "C3D283E69EF7E76D3401BD49D4270076")
         public boolean isShowing() {
             {
-                Object var064AFD47A2F0375BD3A49E11623DCB44_1800614303 = (mPopup.isShowing());
+                Object var064AFD47A2F0375BD3A49E11623DCB44_2091886529 = (mPopup.isShowing());
             } //End flattened ternary
-            return dsTaint.getTaintBoolean();
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_811754594 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_811754594;
             // ---------- Original Method ----------
             //return mPopup != null ? mPopup.isShowing() : false;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.611 -0400", hash_original_method = "8403FBCA2C28723FD059691B00D88CE1", hash_generated_method = "3633E035E0CF7B593B85992851898DC8")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.998 -0400", hash_original_method = "8403FBCA2C28723FD059691B00D88CE1", hash_generated_method = "2A0FFE64737AEA0CAA4489A819F70A16")
         public void setAdapter(ListAdapter adapter) {
-            dsTaint.addTaint(adapter.dsTaint);
+            mListAdapter = adapter;
             // ---------- Original Method ----------
             //mListAdapter = adapter;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.612 -0400", hash_original_method = "9624F776B01A0F54225A1B393847DC0B", hash_generated_method = "233B129ECA410E9AC87C2D1FACA0649E")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.998 -0400", hash_original_method = "9624F776B01A0F54225A1B393847DC0B", hash_generated_method = "BB0F0F2687998277E739EA69AA391DAB")
         public void setPromptText(CharSequence hintText) {
-            dsTaint.addTaint(hintText);
+            mPrompt = hintText;
             // ---------- Original Method ----------
             //mPrompt = hintText;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.612 -0400", hash_original_method = "2D362FF1EB68D3106D16676724B21A20", hash_generated_method = "191FDC4068390A0395E4629C161A08E8")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.007 -0400", hash_original_method = "2D362FF1EB68D3106D16676724B21A20", hash_generated_method = "C2DE4A6898B9023568ADBA631755F4FE")
         public CharSequence getHintText() {
-            return dsTaint.getTaintString();
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_825884664 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_825884664 = mPrompt;
+            varB4EAC82CA7396A68D541C85D26508E83_825884664.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_825884664;
             // ---------- Original Method ----------
             //return mPrompt;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.613 -0400", hash_original_method = "FCDD379DF322C9BE95870CB90106F42A", hash_generated_method = "CDBDB05C7384CC6C823A427D804A09D2")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.010 -0400", hash_original_method = "FCDD379DF322C9BE95870CB90106F42A", hash_generated_method = "CDBDB05C7384CC6C823A427D804A09D2")
         public void show() {
             AlertDialog.Builder builder;
             builder = new AlertDialog.Builder(getContext());
@@ -846,14 +860,13 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.613 -0400", hash_original_method = "611F98047F020130E79D369CDAEB53F1", hash_generated_method = "93A2BEC26418BBA44FFEC1252397E78C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.010 -0400", hash_original_method = "611F98047F020130E79D369CDAEB53F1", hash_generated_method = "20A80883BB81CEF2BE9AA01C09089F02")
         public void onClick(DialogInterface dialog, int which) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(which);
-            dsTaint.addTaint(dialog.dsTaint);
             setSelection(which);
             dismiss();
+            addTaint(dialog.getTaint());
+            addTaint(which);
             // ---------- Original Method ----------
             //setSelection(which);
             //dismiss();
@@ -865,35 +878,37 @@ public class Spinner extends AbsSpinner implements OnClickListener {
 
     
     private class DropdownPopup extends ListPopupWindow implements SpinnerPopup {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.010 -0400", hash_original_field = "E1CABE1E2EB0E02B938A46A1B7A0EBFD", hash_generated_field = "1FDB4027FDC409C38C96D7C7129240A3")
+
         private CharSequence mHintText;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.010 -0400", hash_original_field = "59E9F255F2F17EC006AE601269EA8540", hash_generated_field = "90F29768206AB431EA361CD94838716F")
+
         private ListAdapter mAdapter;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.614 -0400", hash_original_method = "9F2E5A3A347BB64B0E4347185558EFBB", hash_generated_method = "D73FAFE1B50903565E66F4A456182FCD")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public DropdownPopup(Context context, AttributeSet attrs, int defStyleRes) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.024 -0400", hash_original_method = "9F2E5A3A347BB64B0E4347185558EFBB", hash_generated_method = "D768F09A975D52D832D0D5802FF46969")
+        public  DropdownPopup(Context context, AttributeSet attrs, int defStyleRes) {
             super(context, attrs, 0, defStyleRes);
-            dsTaint.addTaint(defStyleRes);
-            dsTaint.addTaint(attrs.dsTaint);
-            dsTaint.addTaint(context.dsTaint);
             setAnchorView(Spinner.this);
             setModal(true);
             setPromptPosition(POSITION_PROMPT_ABOVE);
             setOnItemClickListener(new OnItemClickListener() {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.614 -0400", hash_original_method = "BF22134BB65D55D48C7DDDF1370D6ED2", hash_generated_method = "597DF73726E49288889AAD7AF5289BA2")
-                //DSFIXME:  CODE0002: Requires DSC value to be set
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.011 -0400", hash_original_method = "BF22134BB65D55D48C7DDDF1370D6ED2", hash_generated_method = "2159CDD10341E819E3C4AB7B64FB1945")
                 public void onItemClick(AdapterView parent, View v, int position, long id) {
                     //DSFIXME:  CODE0009: Possible callback target function detected
-                    dsTaint.addTaint(id);
-                    dsTaint.addTaint(position);
-                    dsTaint.addTaint(v.dsTaint);
-                    dsTaint.addTaint(parent.dsTaint);
                     Spinner.this.setSelection(position);
                     dismiss();
+                    addTaint(parent.getTaint());
+                    addTaint(v.getTaint());
+                    addTaint(position);
+                    addTaint(id);
                     // ---------- Original Method ----------
                     //Spinner.this.setSelection(position);
                     //dismiss();
                 }
 });
+            addTaint(context.getTaint());
+            addTaint(attrs.getTaint());
+            addTaint(defStyleRes);
             // ---------- Original Method ----------
             //setAnchorView(Spinner.this);
             //setModal(true);
@@ -907,38 +922,37 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.614 -0400", hash_original_method = "3FC404C9DE24A7B182849EFCFBFDCEFF", hash_generated_method = "5A7F7F1F3E4B3488331868753C9667BE")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.026 -0400", hash_original_method = "3FC404C9DE24A7B182849EFCFBFDCEFF", hash_generated_method = "3B91B048A8013001F176DA62B9199C4B")
         @Override
         public void setAdapter(ListAdapter adapter) {
-            dsTaint.addTaint(adapter.dsTaint);
             super.setAdapter(adapter);
+            mAdapter = adapter;
             // ---------- Original Method ----------
             //super.setAdapter(adapter);
             //mAdapter = adapter;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.614 -0400", hash_original_method = "708F2EB27A8EC2C1F7F8C9DF82B35D6E", hash_generated_method = "03B4697B5C1342B1718D5F796F18A19C")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.026 -0400", hash_original_method = "708F2EB27A8EC2C1F7F8C9DF82B35D6E", hash_generated_method = "2BD776783216D116FC3E9BA43DF0AE97")
         public CharSequence getHintText() {
-            return dsTaint.getTaintString();
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_921907275 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_921907275 = mHintText;
+            varB4EAC82CA7396A68D541C85D26508E83_921907275.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_921907275;
             // ---------- Original Method ----------
             //return mHintText;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.614 -0400", hash_original_method = "5C072498C5CF07F19C35B82F77A3E1EC", hash_generated_method = "4D8A321F1CD114490A160DF3485D1E09")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.027 -0400", hash_original_method = "5C072498C5CF07F19C35B82F77A3E1EC", hash_generated_method = "16E5231AF70EBF4E19AB1B172E7CB522")
         public void setPromptText(CharSequence hintText) {
-            dsTaint.addTaint(hintText);
+            mHintText = hintText;
             // ---------- Original Method ----------
             //mHintText = hintText;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.615 -0400", hash_original_method = "831D1D82273C571177D94CDCC1E5A7C8", hash_generated_method = "5ED85223FCBB2217E1DCAC23CB5A6589")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.031 -0400", hash_original_method = "831D1D82273C571177D94CDCC1E5A7C8", hash_generated_method = "5ED85223FCBB2217E1DCAC23CB5A6589")
         @Override
         public void show() {
             int spinnerPaddingLeft;
@@ -1001,10 +1015,20 @@ public class Spinner extends AbsSpinner implements OnClickListener {
         public CharSequence getHintText();
     }
     
-    private static final String TAG = "Spinner";
-    private static final int MAX_ITEMS_MEASURED = 15;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.032 -0400", hash_original_field = "90FDE6788399EEB8CFA584A2AD13CBE5", hash_generated_field = "17276AD5EEFA44CEC4EF69D10E11AE20")
+
+    private static String TAG = "Spinner";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.032 -0400", hash_original_field = "78512CB4B8E7A1ED8A337810241ABF54", hash_generated_field = "84DFB7C236A85A577AAD4D069CA75BAF")
+
+    private static int MAX_ITEMS_MEASURED = 15;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.032 -0400", hash_original_field = "347C2CAB737F0CAF3BCAEC15CF42EBD2", hash_generated_field = "03A8B0FB324BD4C85C18EC4F45126C80")
+
     public static final int MODE_DIALOG = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.032 -0400", hash_original_field = "CB25F0D23E25C135EA3A64B2382813EF", hash_generated_field = "77CCFBFBDA82C84B44434E6E2C506BCB")
+
     public static final int MODE_DROPDOWN = 1;
-    private static final int MODE_THEME = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.032 -0400", hash_original_field = "6ED8E1287CB86C092F8B2D91FE966865", hash_generated_field = "8848A9146685720D8A0BCBF80CFEC974")
+
+    private static int MODE_THEME = -1;
 }
 

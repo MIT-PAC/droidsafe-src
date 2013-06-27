@@ -14,27 +14,25 @@ import javax.sip.*;
 
 public class RAckParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.493 -0400", hash_original_method = "35CA8C822A17FE233ECB2E3810B4D5A5", hash_generated_method = "3741135C8886618123E779697CADBB09")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public RAckParser(String rack) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.069 -0400", hash_original_method = "35CA8C822A17FE233ECB2E3810B4D5A5", hash_generated_method = "204EAA0FF73FCB80B592091AB94B2072")
+    public  RAckParser(String rack) {
         super(rack);
-        dsTaint.addTaint(rack);
+        addTaint(rack.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.493 -0400", hash_original_method = "8178ADDB9459B460DE70CCF5467A1FD6", hash_generated_method = "3F2EE4B215BEE7C12212F5C965483A70")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected RAckParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.069 -0400", hash_original_method = "8178ADDB9459B460DE70CCF5467A1FD6", hash_generated_method = "68F94D595AD7B884EA33EDFE3B3CF328")
+    protected  RAckParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.494 -0400", hash_original_method = "D7A41CF31988627D95B578BB3BBF9822", hash_generated_method = "C8EFB7C696C1CFB2849E60A7073A8334")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.126 -0400", hash_original_method = "D7A41CF31988627D95B578BB3BBF9822", hash_generated_method = "C8AE6FD1A19192CB8890FB4845A8A27C")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_628155733 = null; //Variable for return #1
         dbg_enter("RAckParser.parse");
         RAck rack;
         rack = new RAck();
@@ -62,12 +60,14 @@ public class RAckParser extends HeaderParser {
             } //End block
             this.lexer.SPorHT();
             this.lexer.match('\n');
+            varB4EAC82CA7396A68D541C85D26508E83_628155733 = rack;
         } //End block
         finally 
         {
             dbg_leave("RAckParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_628155733.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_628155733;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

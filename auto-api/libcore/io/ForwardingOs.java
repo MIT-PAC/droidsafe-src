@@ -16,1102 +16,1098 @@ import libcore.util.MutableInt;
 import libcore.util.MutableLong;
 
 public class ForwardingOs implements Os {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.428 -0400", hash_original_field = "DD302F94682DBD2A114D63B0433602E0", hash_generated_field = "AD741EF2B519FC3080D4269DB2BABC3A")
+
     protected Os os;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.873 -0400", hash_original_method = "EC37328A0FF4DE634029572AA03E9806", hash_generated_method = "90273C8C6906D8236E966E58DA621F53")
-    @DSModeled(DSC.SAFE)
-    public ForwardingOs(Os os) {
-        dsTaint.addTaint(os.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.447 -0400", hash_original_method = "EC37328A0FF4DE634029572AA03E9806", hash_generated_method = "C41B14D0DEFEB2ECE4508496A7A2B2B8")
+    public  ForwardingOs(Os os) {
+        this.os = os;
         // ---------- Original Method ----------
         //this.os = os;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.873 -0400", hash_original_method = "5CF5B545FE52A5A749C69E4804E7DB37", hash_generated_method = "16F14074596A4A0915A2C5AC5D487A86")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.448 -0400", hash_original_method = "5CF5B545FE52A5A749C69E4804E7DB37", hash_generated_method = "D6E662D3961DE9333C76D04FCD3F1316")
     public FileDescriptor accept(FileDescriptor fd, InetSocketAddress peerAddress) throws ErrnoException {
-        dsTaint.addTaint(peerAddress.dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
-        FileDescriptor var52381496BF4ACAA1C4A7105000C656C2_1159265915 = (os.accept(fd, peerAddress));
-        return (FileDescriptor)dsTaint.getTaint();
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1456888657 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1456888657 = os.accept(fd, peerAddress);
+        addTaint(fd.getTaint());
+        addTaint(peerAddress.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1456888657.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1456888657;
         // ---------- Original Method ----------
         //return os.accept(fd, peerAddress);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.873 -0400", hash_original_method = "FFD94E7AFE1E3B1F76A2D696707B6857", hash_generated_method = "DDBD91AD1F5B4A4CC49227FFA264D27F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.448 -0400", hash_original_method = "FFD94E7AFE1E3B1F76A2D696707B6857", hash_generated_method = "3AC322F8F844074EC18695A8FCCCFEE0")
     public boolean access(String path, int mode) throws ErrnoException {
-        dsTaint.addTaint(path);
-        dsTaint.addTaint(mode);
-        boolean var172DEC5DD37258CD490DDB56CA7E2DB8_47593308 = (os.access(path, mode));
-        return dsTaint.getTaintBoolean();
+        boolean var172DEC5DD37258CD490DDB56CA7E2DB8_928813181 = (os.access(path, mode));
+        addTaint(path.getTaint());
+        addTaint(mode);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_423351823 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_423351823;
         // ---------- Original Method ----------
         //return os.access(path, mode);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.874 -0400", hash_original_method = "743422D2EB39F172C4245C8DC993624F", hash_generated_method = "C9EE4C78816922C9C185721ED6CCADAD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.449 -0400", hash_original_method = "743422D2EB39F172C4245C8DC993624F", hash_generated_method = "2C4F56DB987DDA5521904DED150E2276")
     public void bind(FileDescriptor fd, InetAddress address, int port) throws ErrnoException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(address.dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
         os.bind(fd, address, port);
+        addTaint(fd.getTaint());
+        addTaint(address.getTaint());
+        addTaint(port);
         // ---------- Original Method ----------
         //os.bind(fd, address, port);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.874 -0400", hash_original_method = "A92F7B75A5B2B90071388C67FA677A74", hash_generated_method = "760B5AB48771724ADFA90F2D789015D5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.449 -0400", hash_original_method = "A92F7B75A5B2B90071388C67FA677A74", hash_generated_method = "25BEC27B5A16271F093E9447FC93F8BE")
     public void chmod(String path, int mode) throws ErrnoException {
-        dsTaint.addTaint(path);
-        dsTaint.addTaint(mode);
         os.chmod(path, mode);
+        addTaint(path.getTaint());
+        addTaint(mode);
         // ---------- Original Method ----------
         //os.chmod(path, mode);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.874 -0400", hash_original_method = "2AF652D8862D637B4A4051CAB7CD62FB", hash_generated_method = "4B552659D76179213B0A5249630C8C5C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.458 -0400", hash_original_method = "2AF652D8862D637B4A4051CAB7CD62FB", hash_generated_method = "0691BC1EEB0DF53658B22E295E231D1F")
     public void close(FileDescriptor fd) throws ErrnoException {
-        dsTaint.addTaint(fd.dsTaint);
         os.close(fd);
+        addTaint(fd.getTaint());
         // ---------- Original Method ----------
         //os.close(fd);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.874 -0400", hash_original_method = "FADD460EF8DBCF58AF836CFAB2496AF1", hash_generated_method = "BF71CE2406E8F9099EB262FD8CF9E52D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.478 -0400", hash_original_method = "FADD460EF8DBCF58AF836CFAB2496AF1", hash_generated_method = "15ABDFE7CCF265D5E298BF7816B64D67")
     public void connect(FileDescriptor fd, InetAddress address, int port) throws ErrnoException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(address.dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
         os.connect(fd, address, port);
+        addTaint(fd.getTaint());
+        addTaint(address.getTaint());
+        addTaint(port);
         // ---------- Original Method ----------
         //os.connect(fd, address, port);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.874 -0400", hash_original_method = "6162F8350974235CF8AA9EBE9F68335F", hash_generated_method = "DE2B2627530D7D84BB8A59F89579A5AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.478 -0400", hash_original_method = "6162F8350974235CF8AA9EBE9F68335F", hash_generated_method = "B47F719AFC6DABC2469D304E82B2712F")
     public FileDescriptor dup(FileDescriptor oldFd) throws ErrnoException {
-        dsTaint.addTaint(oldFd.dsTaint);
-        FileDescriptor varA51C8E1D925AFE4266599C1C020CB3B5_275670943 = (os.dup(oldFd));
-        return (FileDescriptor)dsTaint.getTaint();
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1505969772 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1505969772 = os.dup(oldFd);
+        addTaint(oldFd.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1505969772.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1505969772;
         // ---------- Original Method ----------
         //return os.dup(oldFd);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.874 -0400", hash_original_method = "E190E2A3CFD75C84461AB90FFE03369B", hash_generated_method = "272D51A3D71D09AB334326153F71F25A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.480 -0400", hash_original_method = "E190E2A3CFD75C84461AB90FFE03369B", hash_generated_method = "EB203D2483CCC05129BBAF43BA9F2275")
     public FileDescriptor dup2(FileDescriptor oldFd, int newFd) throws ErrnoException {
-        dsTaint.addTaint(oldFd.dsTaint);
-        dsTaint.addTaint(newFd);
-        FileDescriptor varDB21CB8D0A61C622EE2608CF023F0507_1558702857 = (os.dup2(oldFd, newFd));
-        return (FileDescriptor)dsTaint.getTaint();
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_46571245 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_46571245 = os.dup2(oldFd, newFd);
+        addTaint(oldFd.getTaint());
+        addTaint(newFd);
+        varB4EAC82CA7396A68D541C85D26508E83_46571245.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_46571245;
         // ---------- Original Method ----------
         //return os.dup2(oldFd, newFd);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.875 -0400", hash_original_method = "5CF51EBD75B5D23C7F632D7D494380D1", hash_generated_method = "D38D2ECA728FEBC7A4BC9DF44661EDA6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.480 -0400", hash_original_method = "5CF51EBD75B5D23C7F632D7D494380D1", hash_generated_method = "C6B3BDDD55324A74C5D83B118E1EDB5C")
     public String[] environ() {
-        String[] var46090EF2D0706D2557D6EF40064FED64_1548649629 = (os.environ());
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_915357254 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_915357254 = os.environ();
+        varB4EAC82CA7396A68D541C85D26508E83_915357254.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_915357254;
         // ---------- Original Method ----------
         //return os.environ();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.875 -0400", hash_original_method = "CA43F47313D11741B7EE5D06954736CB", hash_generated_method = "DEB874B0C45E6E3011554952E69F0311")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.483 -0400", hash_original_method = "CA43F47313D11741B7EE5D06954736CB", hash_generated_method = "612CE64EBC30CDA2C9EE99967A4011BB")
     public int fcntlVoid(FileDescriptor fd, int cmd) throws ErrnoException {
-        dsTaint.addTaint(cmd);
-        dsTaint.addTaint(fd.dsTaint);
-        int varBF1653E2CBDC0EBDA030B66FA450FCF0_106813793 = (os.fcntlVoid(fd, cmd));
-        return dsTaint.getTaintInt();
+        int varBF1653E2CBDC0EBDA030B66FA450FCF0_1751700579 = (os.fcntlVoid(fd, cmd));
+        addTaint(fd.getTaint());
+        addTaint(cmd);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1757086719 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1757086719;
         // ---------- Original Method ----------
         //return os.fcntlVoid(fd, cmd);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.875 -0400", hash_original_method = "6B248418A1B43AC8597DD680343F17BD", hash_generated_method = "73D87E60722014FE2346321EBFA53E59")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.484 -0400", hash_original_method = "6B248418A1B43AC8597DD680343F17BD", hash_generated_method = "F783C74ABA6D768B540AFBD0BCA7CBEE")
     public int fcntlLong(FileDescriptor fd, int cmd, long arg) throws ErrnoException {
-        dsTaint.addTaint(arg);
-        dsTaint.addTaint(cmd);
-        dsTaint.addTaint(fd.dsTaint);
-        int var97EF80FEE8D7DCAFEADBFC1210BDC18B_1535096103 = (os.fcntlLong(fd, cmd, arg));
-        return dsTaint.getTaintInt();
+        int var97EF80FEE8D7DCAFEADBFC1210BDC18B_1694291327 = (os.fcntlLong(fd, cmd, arg));
+        addTaint(fd.getTaint());
+        addTaint(cmd);
+        addTaint(arg);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_752408314 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_752408314;
         // ---------- Original Method ----------
         //return os.fcntlLong(fd, cmd, arg);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.875 -0400", hash_original_method = "28B6741D270DBCC0BDA43B4FBA76C484", hash_generated_method = "0677E81004A9350CEB5945E53064237D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.484 -0400", hash_original_method = "28B6741D270DBCC0BDA43B4FBA76C484", hash_generated_method = "6BCB3525C56C19D0576F14CACC493ADA")
     public int fcntlFlock(FileDescriptor fd, int cmd, StructFlock arg) throws ErrnoException {
-        dsTaint.addTaint(arg.dsTaint);
-        dsTaint.addTaint(cmd);
-        dsTaint.addTaint(fd.dsTaint);
-        int var2729B8DD99A4FEEBABCEFB3EF912E159_1037780220 = (os.fcntlFlock(fd, cmd, arg));
-        return dsTaint.getTaintInt();
+        int var2729B8DD99A4FEEBABCEFB3EF912E159_889792846 = (os.fcntlFlock(fd, cmd, arg));
+        addTaint(fd.getTaint());
+        addTaint(cmd);
+        addTaint(arg.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1018564560 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1018564560;
         // ---------- Original Method ----------
         //return os.fcntlFlock(fd, cmd, arg);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.875 -0400", hash_original_method = "D2B4800A8551761D0A11CAE1762DA39E", hash_generated_method = "9FF269551EF5CD462D8524DC462EEF91")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.484 -0400", hash_original_method = "D2B4800A8551761D0A11CAE1762DA39E", hash_generated_method = "573D02F895F974160BDFA32E6A78A43A")
     public void fdatasync(FileDescriptor fd) throws ErrnoException {
-        dsTaint.addTaint(fd.dsTaint);
         os.fdatasync(fd);
+        addTaint(fd.getTaint());
         // ---------- Original Method ----------
         //os.fdatasync(fd);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.875 -0400", hash_original_method = "0159E8BC0EB89F7B9A8B0DA54E55E46B", hash_generated_method = "FC2749DA0AEF8D8FD0981E99B99F0523")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.485 -0400", hash_original_method = "0159E8BC0EB89F7B9A8B0DA54E55E46B", hash_generated_method = "32187E8C9156178E1A165C80BA5827BA")
     public StructStat fstat(FileDescriptor fd) throws ErrnoException {
-        dsTaint.addTaint(fd.dsTaint);
-        StructStat var2AA6A0BEA15C515AD22BC84FD0B2383F_418896254 = (os.fstat(fd));
-        return (StructStat)dsTaint.getTaint();
+        StructStat varB4EAC82CA7396A68D541C85D26508E83_1229383589 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1229383589 = os.fstat(fd);
+        addTaint(fd.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1229383589.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1229383589;
         // ---------- Original Method ----------
         //return os.fstat(fd);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.876 -0400", hash_original_method = "1D4670A49E88E5904763EEFCF378AA9C", hash_generated_method = "8154D6F7ACAFD3314B0D8B58C1E3CC5C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.485 -0400", hash_original_method = "1D4670A49E88E5904763EEFCF378AA9C", hash_generated_method = "83936607D64B3E1459657F47D1292C3A")
     public StructStatFs fstatfs(FileDescriptor fd) throws ErrnoException {
-        dsTaint.addTaint(fd.dsTaint);
-        StructStatFs var13468AECCFC5088BBD72EB8074FE64CE_1590656693 = (os.fstatfs(fd));
-        return (StructStatFs)dsTaint.getTaint();
+        StructStatFs varB4EAC82CA7396A68D541C85D26508E83_767122155 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_767122155 = os.fstatfs(fd);
+        addTaint(fd.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_767122155.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_767122155;
         // ---------- Original Method ----------
         //return os.fstatfs(fd);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.876 -0400", hash_original_method = "5A3103E0191F55AC2413EF7A293382EA", hash_generated_method = "9F437C06973F31E2E95DC8C7B89D2DCC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.506 -0400", hash_original_method = "5A3103E0191F55AC2413EF7A293382EA", hash_generated_method = "862ACD95EBCD31133FC7E286CD6E9E80")
     public void fsync(FileDescriptor fd) throws ErrnoException {
-        dsTaint.addTaint(fd.dsTaint);
         os.fsync(fd);
+        addTaint(fd.getTaint());
         // ---------- Original Method ----------
         //os.fsync(fd);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.876 -0400", hash_original_method = "B89F13DA07AD88D9E35FDD0F8C706602", hash_generated_method = "8666CBB349187CF0F87405F3B0B21D9B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.507 -0400", hash_original_method = "B89F13DA07AD88D9E35FDD0F8C706602", hash_generated_method = "551BB12398467F3C8EB23F5C296B7D11")
     public void ftruncate(FileDescriptor fd, long length) throws ErrnoException {
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(fd.dsTaint);
         os.ftruncate(fd, length);
+        addTaint(fd.getTaint());
+        addTaint(length);
         // ---------- Original Method ----------
         //os.ftruncate(fd, length);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.876 -0400", hash_original_method = "4EDF3DB0839BDB5BB59D5BDCF6ED266B", hash_generated_method = "F8B534CEA84B923DBD0E123C87906031")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.507 -0400", hash_original_method = "4EDF3DB0839BDB5BB59D5BDCF6ED266B", hash_generated_method = "5238BF93B911C7C198BA3660FCF9A88B")
     public String gai_strerror(int error) {
-        dsTaint.addTaint(error);
-        String var76E8E04355F1DEB887B45447F9369F00_483019603 = (os.gai_strerror(error));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_847643771 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_847643771 = os.gai_strerror(error);
+        addTaint(error);
+        varB4EAC82CA7396A68D541C85D26508E83_847643771.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_847643771;
         // ---------- Original Method ----------
         //return os.gai_strerror(error);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.876 -0400", hash_original_method = "D134969B79309E2FFE6734562680F40F", hash_generated_method = "C51377497FD9324FE82B31DBA7C47BA3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.508 -0400", hash_original_method = "D134969B79309E2FFE6734562680F40F", hash_generated_method = "95E5DC0A5B23C4CF96BB9F6358090605")
     public InetAddress[] getaddrinfo(String node, StructAddrinfo hints) throws GaiException {
-        dsTaint.addTaint(node);
-        dsTaint.addTaint(hints.dsTaint);
-        InetAddress[] varE5FA3D8553AFFBEB8FA61ABDC5E35524_1142798584 = (os.getaddrinfo(node, hints));
-        return (InetAddress[])dsTaint.getTaint();
+        InetAddress[] varB4EAC82CA7396A68D541C85D26508E83_426996369 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_426996369 = os.getaddrinfo(node, hints);
+        addTaint(node.getTaint());
+        addTaint(hints.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_426996369.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_426996369;
         // ---------- Original Method ----------
         //return os.getaddrinfo(node, hints);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.876 -0400", hash_original_method = "DA32E4A67BBB878517DC4C1F6AD2DE47", hash_generated_method = "D9CECA3BD303E15A764313F8B7BC58EF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.509 -0400", hash_original_method = "DA32E4A67BBB878517DC4C1F6AD2DE47", hash_generated_method = "557FC3E6DF9D56E526A1A56F350111E3")
     public int getegid() {
-        int varD8065AE9128D4E02D412A3250EE4BEA6_1326472971 = (os.getegid());
-        return dsTaint.getTaintInt();
+        int varD8065AE9128D4E02D412A3250EE4BEA6_241402627 = (os.getegid());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1727248534 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1727248534;
         // ---------- Original Method ----------
         //return os.getegid();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.877 -0400", hash_original_method = "FAD72A6DE2CC7E2DB1B9B6FC41642D5B", hash_generated_method = "4E7451762EE0560DBAB83BA458384D56")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.509 -0400", hash_original_method = "FAD72A6DE2CC7E2DB1B9B6FC41642D5B", hash_generated_method = "FEDEC38C9D8698CA5B067EBD604A200C")
     public int geteuid() {
-        int var56D743784E549DA0B7EA1F9C189A6471_149537123 = (os.geteuid());
-        return dsTaint.getTaintInt();
+        int var56D743784E549DA0B7EA1F9C189A6471_1023723867 = (os.geteuid());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_861045106 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_861045106;
         // ---------- Original Method ----------
         //return os.geteuid();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.877 -0400", hash_original_method = "FADA5B6063E47C208AC2D0843F6EB847", hash_generated_method = "3F3A71E386CD3D58C1863D5E671B486A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.521 -0400", hash_original_method = "FADA5B6063E47C208AC2D0843F6EB847", hash_generated_method = "6F51D94F2A4961CD435BE0B381DCA241")
     public int getgid() {
-        int var6CADC2A35DC4D6A9A5A15CAB17B4B6E3_1258150257 = (os.getgid());
-        return dsTaint.getTaintInt();
+        int var6CADC2A35DC4D6A9A5A15CAB17B4B6E3_1101885197 = (os.getgid());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1266576822 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1266576822;
         // ---------- Original Method ----------
         //return os.getgid();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.877 -0400", hash_original_method = "E4B66B682B354EFDCC2A2307B9973162", hash_generated_method = "BB51BC3AEA108C988048AF0A7522A6E5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.521 -0400", hash_original_method = "E4B66B682B354EFDCC2A2307B9973162", hash_generated_method = "89291BC19338CFCB6B506B9B587DF62D")
     public String getenv(String name) {
-        dsTaint.addTaint(name);
-        String varEB458694A5BD2D943F509556171E08D0_1133130312 = (os.getenv(name));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1176239552 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1176239552 = os.getenv(name);
+        addTaint(name.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1176239552.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1176239552;
         // ---------- Original Method ----------
         //return os.getenv(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.877 -0400", hash_original_method = "95C6CCF446FE941364E9F3FC808640B5", hash_generated_method = "181BAC8461459D0E8733E840D069D808")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.522 -0400", hash_original_method = "95C6CCF446FE941364E9F3FC808640B5", hash_generated_method = "BF59CE5A330F24D12DA49B397036A892")
     public String getnameinfo(InetAddress address, int flags) throws GaiException {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(address.dsTaint);
-        String var87EFA076F3594B726428803EB70EC74A_1110943839 = (os.getnameinfo(address, flags));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_379998396 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_379998396 = os.getnameinfo(address, flags);
+        addTaint(address.getTaint());
+        addTaint(flags);
+        varB4EAC82CA7396A68D541C85D26508E83_379998396.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_379998396;
         // ---------- Original Method ----------
         //return os.getnameinfo(address, flags);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.877 -0400", hash_original_method = "A3B371C9A268817901795576D0A04CF6", hash_generated_method = "E1BB3BCBB60663AB0745D10D3CD9E57D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.523 -0400", hash_original_method = "A3B371C9A268817901795576D0A04CF6", hash_generated_method = "9B0886D3FA3B0198E94D5316E24309C7")
     public int getpid() {
-        int var38AA61BF3E54239C4504A81A8746FA43_1277520688 = (os.getpid());
-        return dsTaint.getTaintInt();
+        int var38AA61BF3E54239C4504A81A8746FA43_1497431964 = (os.getpid());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1227155964 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1227155964;
         // ---------- Original Method ----------
         //return os.getpid();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.877 -0400", hash_original_method = "878D1FDE3DC9E3A460294EB2A78F5342", hash_generated_method = "8D020997B739BA06D7027DDA55998376")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.539 -0400", hash_original_method = "878D1FDE3DC9E3A460294EB2A78F5342", hash_generated_method = "503353C2E61C7919A4D2A68A5896CBA6")
     public int getppid() {
-        int var1F662189AEACAB508948D811AFEC491B_1803669434 = (os.getppid());
-        return dsTaint.getTaintInt();
+        int var1F662189AEACAB508948D811AFEC491B_1347501400 = (os.getppid());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_776619896 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_776619896;
         // ---------- Original Method ----------
         //return os.getppid();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.878 -0400", hash_original_method = "A3C50DDCB01897A6F2E46FE623EA65A2", hash_generated_method = "018B7A41A30BEED95AB5F29C05356367")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.539 -0400", hash_original_method = "A3C50DDCB01897A6F2E46FE623EA65A2", hash_generated_method = "3E79612E98FE190255A669344F107F62")
     public StructPasswd getpwnam(String name) throws ErrnoException {
-        dsTaint.addTaint(name);
-        StructPasswd var13918668EADC14B057546917C0EFE08E_1640096857 = (os.getpwnam(name));
-        return (StructPasswd)dsTaint.getTaint();
+        StructPasswd varB4EAC82CA7396A68D541C85D26508E83_118757898 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_118757898 = os.getpwnam(name);
+        addTaint(name.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_118757898.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_118757898;
         // ---------- Original Method ----------
         //return os.getpwnam(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.878 -0400", hash_original_method = "F069BDB68A1BE69C49E58A44BE7A4944", hash_generated_method = "B6BD68A2B57A2CDF4DB07A9C88BED350")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.540 -0400", hash_original_method = "F069BDB68A1BE69C49E58A44BE7A4944", hash_generated_method = "CA860D7B931E38B5AD8F903DBD0690DA")
     public StructPasswd getpwuid(int uid) throws ErrnoException {
-        dsTaint.addTaint(uid);
-        StructPasswd var63B521407D5A200B7FFCDF1C2A734596_1298499607 = (os.getpwuid(uid));
-        return (StructPasswd)dsTaint.getTaint();
+        StructPasswd varB4EAC82CA7396A68D541C85D26508E83_1533465766 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1533465766 = os.getpwuid(uid);
+        addTaint(uid);
+        varB4EAC82CA7396A68D541C85D26508E83_1533465766.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1533465766;
         // ---------- Original Method ----------
         //return os.getpwuid(uid);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.878 -0400", hash_original_method = "C71AB83C8CB24831B3B392DF1EFA2A55", hash_generated_method = "45E4480D3BB3220F7AE0FED9E938BD93")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.555 -0400", hash_original_method = "C71AB83C8CB24831B3B392DF1EFA2A55", hash_generated_method = "14821F7FCC63229868162564627623FC")
     public SocketAddress getsockname(FileDescriptor fd) throws ErrnoException {
-        dsTaint.addTaint(fd.dsTaint);
-        SocketAddress var3BBDC4612CC5F571D4749D008873BB99_1996623453 = (os.getsockname(fd));
-        return (SocketAddress)dsTaint.getTaint();
+        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_917435028 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_917435028 = os.getsockname(fd);
+        addTaint(fd.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_917435028.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_917435028;
         // ---------- Original Method ----------
         //return os.getsockname(fd);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.878 -0400", hash_original_method = "E5D66E4A2B17F99E78F6B2E97C4D0018", hash_generated_method = "B462E12B90B35645B1A16CDA8FA718BE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.555 -0400", hash_original_method = "E5D66E4A2B17F99E78F6B2E97C4D0018", hash_generated_method = "E31DD39E461C162E81132203B94B230B")
     public int getsockoptByte(FileDescriptor fd, int level, int option) throws ErrnoException {
-        dsTaint.addTaint(level);
-        dsTaint.addTaint(fd.dsTaint);
-        dsTaint.addTaint(option);
-        int var46B88F2A6E8AFD10C1C2A4CB4FA13847_1918101489 = (os.getsockoptByte(fd, level, option));
-        return dsTaint.getTaintInt();
+        int var46B88F2A6E8AFD10C1C2A4CB4FA13847_1367522506 = (os.getsockoptByte(fd, level, option));
+        addTaint(fd.getTaint());
+        addTaint(level);
+        addTaint(option);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1011166164 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1011166164;
         // ---------- Original Method ----------
         //return os.getsockoptByte(fd, level, option);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.878 -0400", hash_original_method = "0CBF6F7E2BE2FF171C45C7BCFC831012", hash_generated_method = "333967812C8D206D8F31C41E16AD46CF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.556 -0400", hash_original_method = "0CBF6F7E2BE2FF171C45C7BCFC831012", hash_generated_method = "C30FCB783413CA256E26CD91B5C6E212")
     public InetAddress getsockoptInAddr(FileDescriptor fd, int level, int option) throws ErrnoException {
-        dsTaint.addTaint(level);
-        dsTaint.addTaint(fd.dsTaint);
-        dsTaint.addTaint(option);
-        InetAddress varB5A52377F61DE7EF503B5E4B4AA209D6_476601008 = (os.getsockoptInAddr(fd, level, option));
-        return (InetAddress)dsTaint.getTaint();
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1137224279 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1137224279 = os.getsockoptInAddr(fd, level, option);
+        addTaint(fd.getTaint());
+        addTaint(level);
+        addTaint(option);
+        varB4EAC82CA7396A68D541C85D26508E83_1137224279.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1137224279;
         // ---------- Original Method ----------
         //return os.getsockoptInAddr(fd, level, option);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.878 -0400", hash_original_method = "946A87B9C2E87F4C961C36C4569A31BA", hash_generated_method = "FB1686EFA835A036F86361DF947DE0D6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.556 -0400", hash_original_method = "946A87B9C2E87F4C961C36C4569A31BA", hash_generated_method = "2E32B54F013BA86CCF86003741ABB3D6")
     public int getsockoptInt(FileDescriptor fd, int level, int option) throws ErrnoException {
-        dsTaint.addTaint(level);
-        dsTaint.addTaint(fd.dsTaint);
-        dsTaint.addTaint(option);
-        int varE08D816983313FAA61DC4FC565C65ADD_714098479 = (os.getsockoptInt(fd, level, option));
-        return dsTaint.getTaintInt();
+        int varE08D816983313FAA61DC4FC565C65ADD_1473660893 = (os.getsockoptInt(fd, level, option));
+        addTaint(fd.getTaint());
+        addTaint(level);
+        addTaint(option);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_496583209 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_496583209;
         // ---------- Original Method ----------
         //return os.getsockoptInt(fd, level, option);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.879 -0400", hash_original_method = "EBD2988D937DD58B5AD9697AEE85A0FB", hash_generated_method = "2479BCB603C1672FF3798BBDBEFE4CC4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.557 -0400", hash_original_method = "EBD2988D937DD58B5AD9697AEE85A0FB", hash_generated_method = "CF9A11631D62052D3598BEBE2525CAA8")
     public StructLinger getsockoptLinger(FileDescriptor fd, int level, int option) throws ErrnoException {
-        dsTaint.addTaint(level);
-        dsTaint.addTaint(fd.dsTaint);
-        dsTaint.addTaint(option);
-        StructLinger var0B1C0C03DE7BF63F72120C0EBCF19382_1870815435 = (os.getsockoptLinger(fd, level, option));
-        return (StructLinger)dsTaint.getTaint();
+        StructLinger varB4EAC82CA7396A68D541C85D26508E83_1572671441 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1572671441 = os.getsockoptLinger(fd, level, option);
+        addTaint(fd.getTaint());
+        addTaint(level);
+        addTaint(option);
+        varB4EAC82CA7396A68D541C85D26508E83_1572671441.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1572671441;
         // ---------- Original Method ----------
         //return os.getsockoptLinger(fd, level, option);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.879 -0400", hash_original_method = "1C478D9E653EA1E4A0CA2442FA9E2156", hash_generated_method = "45BA0D496B81E64982BE2C546CA682A6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.558 -0400", hash_original_method = "1C478D9E653EA1E4A0CA2442FA9E2156", hash_generated_method = "1E02B83CC2F80A599EA1556292E98767")
     public StructTimeval getsockoptTimeval(FileDescriptor fd, int level, int option) throws ErrnoException {
-        dsTaint.addTaint(level);
-        dsTaint.addTaint(fd.dsTaint);
-        dsTaint.addTaint(option);
-        StructTimeval var8593D33B332C14C925B1899C65560994_1004793190 = (os.getsockoptTimeval(fd, level, option));
-        return (StructTimeval)dsTaint.getTaint();
+        StructTimeval varB4EAC82CA7396A68D541C85D26508E83_1559516632 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1559516632 = os.getsockoptTimeval(fd, level, option);
+        addTaint(fd.getTaint());
+        addTaint(level);
+        addTaint(option);
+        varB4EAC82CA7396A68D541C85D26508E83_1559516632.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1559516632;
         // ---------- Original Method ----------
         //return os.getsockoptTimeval(fd, level, option);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.879 -0400", hash_original_method = "2F11239B76600858937301E80656F86F", hash_generated_method = "DF2360252792D5D7F545A5702785A9EE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.558 -0400", hash_original_method = "2F11239B76600858937301E80656F86F", hash_generated_method = "C7235400EA848D5294819115A69BCBE9")
     public int getuid() {
-        int var6E1C401E18C533CAAAF3A5BDCCAC0B20_431671903 = (os.getuid());
-        return dsTaint.getTaintInt();
+        int var6E1C401E18C533CAAAF3A5BDCCAC0B20_761832167 = (os.getuid());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1333921161 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1333921161;
         // ---------- Original Method ----------
         //return os.getuid();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.879 -0400", hash_original_method = "FD1CFE447DC743FEF7DD120355028D01", hash_generated_method = "1BDC3A1E473EDEBEBFFC1BC846DC6D0F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.576 -0400", hash_original_method = "FD1CFE447DC743FEF7DD120355028D01", hash_generated_method = "C9130B83E5D089525AC0A8E99E366C88")
     public String if_indextoname(int index) {
-        dsTaint.addTaint(index);
-        String varF27A26B1AA05853C73F22F2DC36E1543_1917108805 = (os.if_indextoname(index));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_809370592 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_809370592 = os.if_indextoname(index);
+        addTaint(index);
+        varB4EAC82CA7396A68D541C85D26508E83_809370592.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_809370592;
         // ---------- Original Method ----------
         //return os.if_indextoname(index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.879 -0400", hash_original_method = "244F6B5FD78AC80358A10468727F943C", hash_generated_method = "7148281B619FCFF5A3E117F6B59E82CC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.577 -0400", hash_original_method = "244F6B5FD78AC80358A10468727F943C", hash_generated_method = "85B4A9A41D538869B73FDD46D8EF83D8")
     public InetAddress inet_pton(int family, String address) {
-        dsTaint.addTaint(address);
-        dsTaint.addTaint(family);
-        InetAddress varF0FF0FD195E5651F0B6AFA17E8212459_1915506561 = (os.inet_pton(family, address));
-        return (InetAddress)dsTaint.getTaint();
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1783136026 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1783136026 = os.inet_pton(family, address);
+        addTaint(family);
+        addTaint(address.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1783136026.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1783136026;
         // ---------- Original Method ----------
         //return os.inet_pton(family, address);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.880 -0400", hash_original_method = "81C548F366545C14DF26B9A5D253BEA5", hash_generated_method = "7F7C0D83079E4B52EC44BC9B868DCE83")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.577 -0400", hash_original_method = "81C548F366545C14DF26B9A5D253BEA5", hash_generated_method = "BC8D8EC351BEA175F20578A870863973")
     public InetAddress ioctlInetAddress(FileDescriptor fd, int cmd, String interfaceName) throws ErrnoException {
-        dsTaint.addTaint(cmd);
-        dsTaint.addTaint(interfaceName);
-        dsTaint.addTaint(fd.dsTaint);
-        InetAddress var929CD5CD4EB0ADA6FF30C96FA8E2EB32_708886391 = (os.ioctlInetAddress(fd, cmd, interfaceName));
-        return (InetAddress)dsTaint.getTaint();
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_134128682 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_134128682 = os.ioctlInetAddress(fd, cmd, interfaceName);
+        addTaint(fd.getTaint());
+        addTaint(cmd);
+        addTaint(interfaceName.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_134128682.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_134128682;
         // ---------- Original Method ----------
         //return os.ioctlInetAddress(fd, cmd, interfaceName);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.880 -0400", hash_original_method = "B9A716BFE88006BFE54885EB5B40EF6E", hash_generated_method = "98A56BCD5AE39FE5C07A8D39FA1E4819")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.578 -0400", hash_original_method = "B9A716BFE88006BFE54885EB5B40EF6E", hash_generated_method = "0898E61D987B7601D3B75B49FE626716")
     public int ioctlInt(FileDescriptor fd, int cmd, MutableInt arg) throws ErrnoException {
-        dsTaint.addTaint(arg.dsTaint);
-        dsTaint.addTaint(cmd);
-        dsTaint.addTaint(fd.dsTaint);
-        int varD9D1F852ABD2929B5B4A1DF95D32EC90_835473761 = (os.ioctlInt(fd, cmd, arg));
-        return dsTaint.getTaintInt();
+        int varD9D1F852ABD2929B5B4A1DF95D32EC90_247996323 = (os.ioctlInt(fd, cmd, arg));
+        addTaint(fd.getTaint());
+        addTaint(cmd);
+        addTaint(arg.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_9574866 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_9574866;
         // ---------- Original Method ----------
         //return os.ioctlInt(fd, cmd, arg);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.880 -0400", hash_original_method = "E622E0FA602C62724E493B1B03996EEA", hash_generated_method = "F67D536AC13E20F6D4115D4FB86419DD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.579 -0400", hash_original_method = "E622E0FA602C62724E493B1B03996EEA", hash_generated_method = "808CF8051B43E4E0D1F337EA5631F7E3")
     public boolean isatty(FileDescriptor fd) {
-        dsTaint.addTaint(fd.dsTaint);
-        boolean var1BDE8D20FF5CAACE3E2EB14F5484BA59_1891654943 = (os.isatty(fd));
-        return dsTaint.getTaintBoolean();
+        boolean var1BDE8D20FF5CAACE3E2EB14F5484BA59_1599514668 = (os.isatty(fd));
+        addTaint(fd.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1092608721 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1092608721;
         // ---------- Original Method ----------
         //return os.isatty(fd);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.880 -0400", hash_original_method = "39C5C221EF1E81F6FE3B9410463D5E57", hash_generated_method = "C7F0A8C14C815E7B134EC1D2F5795384")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.579 -0400", hash_original_method = "39C5C221EF1E81F6FE3B9410463D5E57", hash_generated_method = "2A652D0CC61257924637F3B4524AB2ED")
     public void kill(int pid, int signal) throws ErrnoException {
-        dsTaint.addTaint(signal);
-        dsTaint.addTaint(pid);
         os.kill(pid, signal);
+        addTaint(pid);
+        addTaint(signal);
         // ---------- Original Method ----------
         //os.kill(pid, signal);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.880 -0400", hash_original_method = "039EEA76B9DC6E04921BFC5BC270EDD9", hash_generated_method = "84B9044C3F78C61948A2D8687B17954C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.579 -0400", hash_original_method = "039EEA76B9DC6E04921BFC5BC270EDD9", hash_generated_method = "EF536F2D00F74E235D928577CD3328A5")
     public void listen(FileDescriptor fd, int backlog) throws ErrnoException {
-        dsTaint.addTaint(backlog);
-        dsTaint.addTaint(fd.dsTaint);
         os.listen(fd, backlog);
+        addTaint(fd.getTaint());
+        addTaint(backlog);
         // ---------- Original Method ----------
         //os.listen(fd, backlog);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.880 -0400", hash_original_method = "3005A45BFDFB73561B6BABAEF57B12E1", hash_generated_method = "11EB1B397B03B00545D3FFF22F192EC2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.579 -0400", hash_original_method = "3005A45BFDFB73561B6BABAEF57B12E1", hash_generated_method = "E4373D7F4C166A6D20DBC3B9E24F664D")
     public long lseek(FileDescriptor fd, long offset, int whence) throws ErrnoException {
-        dsTaint.addTaint(whence);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(fd.dsTaint);
-        long var00BC20AD4BC3DA29C7F7761FC82BB0E6_326435688 = (os.lseek(fd, offset, whence));
-        return dsTaint.getTaintLong();
+        long var00BC20AD4BC3DA29C7F7761FC82BB0E6_1643293642 = (os.lseek(fd, offset, whence));
+        addTaint(fd.getTaint());
+        addTaint(offset);
+        addTaint(whence);
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_320443829 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_320443829;
         // ---------- Original Method ----------
         //return os.lseek(fd, offset, whence);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.881 -0400", hash_original_method = "F288030A10BA391FE6D7AD19552493B8", hash_generated_method = "50FC3EA7C715CF8FCD955914CD2A4B02")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.580 -0400", hash_original_method = "F288030A10BA391FE6D7AD19552493B8", hash_generated_method = "B9A603700B605FB5C13A1CEEF1A54D00")
     public StructStat lstat(String path) throws ErrnoException {
-        dsTaint.addTaint(path);
-        StructStat varC8233BBC8F2DA53BE97B3DB4596B17EC_1631092671 = (os.lstat(path));
-        return (StructStat)dsTaint.getTaint();
+        StructStat varB4EAC82CA7396A68D541C85D26508E83_1775146136 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1775146136 = os.lstat(path);
+        addTaint(path.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1775146136.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1775146136;
         // ---------- Original Method ----------
         //return os.lstat(path);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.881 -0400", hash_original_method = "0D8D349CD4EFD867777AD4E59116610D", hash_generated_method = "01DE2E0EB2336C34793F2E2E9EC6A36D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.580 -0400", hash_original_method = "0D8D349CD4EFD867777AD4E59116610D", hash_generated_method = "0A1847CF7EEC8E9DC66F9219B36FE04B")
     public void mincore(long address, long byteCount, byte[] vector) throws ErrnoException {
-        dsTaint.addTaint(address);
-        dsTaint.addTaint(vector[0]);
-        dsTaint.addTaint(byteCount);
         os.mincore(address, byteCount, vector);
+        addTaint(address);
+        addTaint(byteCount);
+        addTaint(vector[0]);
         // ---------- Original Method ----------
         //os.mincore(address, byteCount, vector);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.881 -0400", hash_original_method = "689C229BD7F4B7F5308857A16DB04D8E", hash_generated_method = "34D942B90436D9EC064B9442DFA80BAA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.597 -0400", hash_original_method = "689C229BD7F4B7F5308857A16DB04D8E", hash_generated_method = "B3FDA2E6552179AB66F6BBBC382EBDAE")
     public void mkdir(String path, int mode) throws ErrnoException {
-        dsTaint.addTaint(path);
-        dsTaint.addTaint(mode);
         os.mkdir(path, mode);
+        addTaint(path.getTaint());
+        addTaint(mode);
         // ---------- Original Method ----------
         //os.mkdir(path, mode);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.881 -0400", hash_original_method = "419517122697B0628E53EB3E2B0A6370", hash_generated_method = "FD102CD18116FE36E656C125DD4839D7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.598 -0400", hash_original_method = "419517122697B0628E53EB3E2B0A6370", hash_generated_method = "13BD8890090968567A2F57958022BFE6")
     public void mlock(long address, long byteCount) throws ErrnoException {
-        dsTaint.addTaint(address);
-        dsTaint.addTaint(byteCount);
         os.mlock(address, byteCount);
+        addTaint(address);
+        addTaint(byteCount);
         // ---------- Original Method ----------
         //os.mlock(address, byteCount);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.881 -0400", hash_original_method = "4029BCDA0489C716FD1384F50323A029", hash_generated_method = "33F19B6ECAF90E8078BC81067E24841B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.599 -0400", hash_original_method = "4029BCDA0489C716FD1384F50323A029", hash_generated_method = "3E48C1C79F5A93B03EA06E343D9BE510")
     public long mmap(long address, long byteCount, int prot, int flags, FileDescriptor fd, long offset) throws ErrnoException {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(address);
-        dsTaint.addTaint(byteCount);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(fd.dsTaint);
-        dsTaint.addTaint(prot);
-        long var3045E876657A6DFFC0A2A0AFB33818CC_516813885 = (os.mmap(address, byteCount, prot, flags, fd, offset));
-        return dsTaint.getTaintLong();
+        long var3045E876657A6DFFC0A2A0AFB33818CC_945163697 = (os.mmap(address, byteCount, prot, flags, fd, offset));
+        addTaint(address);
+        addTaint(byteCount);
+        addTaint(prot);
+        addTaint(flags);
+        addTaint(fd.getTaint());
+        addTaint(offset);
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_2101233009 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_2101233009;
         // ---------- Original Method ----------
         //return os.mmap(address, byteCount, prot, flags, fd, offset);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.882 -0400", hash_original_method = "26058ECBCE0A88D4B8D4418B78F705C5", hash_generated_method = "FEE97BD53A1CA5866B639E1FE10E8216")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.599 -0400", hash_original_method = "26058ECBCE0A88D4B8D4418B78F705C5", hash_generated_method = "B3FF0C6B6F74DBE6935D16BA8C27125B")
     public void msync(long address, long byteCount, int flags) throws ErrnoException {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(address);
-        dsTaint.addTaint(byteCount);
         os.msync(address, byteCount, flags);
+        addTaint(address);
+        addTaint(byteCount);
+        addTaint(flags);
         // ---------- Original Method ----------
         //os.msync(address, byteCount, flags);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.882 -0400", hash_original_method = "12F3B374B5C7D041381B26987EDF7BE8", hash_generated_method = "2EDACC0AAB6E87D87DF9D420D2C5E618")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.600 -0400", hash_original_method = "12F3B374B5C7D041381B26987EDF7BE8", hash_generated_method = "F14D84EEE2DC5E8DEA4BB6D495547D30")
     public void munlock(long address, long byteCount) throws ErrnoException {
-        dsTaint.addTaint(address);
-        dsTaint.addTaint(byteCount);
         os.munlock(address, byteCount);
+        addTaint(address);
+        addTaint(byteCount);
         // ---------- Original Method ----------
         //os.munlock(address, byteCount);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.882 -0400", hash_original_method = "93EF25630433342C6922044F58653EDA", hash_generated_method = "6A8D24D37C525521D94413134803C901")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.600 -0400", hash_original_method = "93EF25630433342C6922044F58653EDA", hash_generated_method = "356606A69AA5950B9FE2BB3C0E2BB836")
     public void munmap(long address, long byteCount) throws ErrnoException {
-        dsTaint.addTaint(address);
-        dsTaint.addTaint(byteCount);
         os.munmap(address, byteCount);
+        addTaint(address);
+        addTaint(byteCount);
         // ---------- Original Method ----------
         //os.munmap(address, byteCount);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.882 -0400", hash_original_method = "3A1C8AE14DFE6F094F17065084A852DA", hash_generated_method = "D597919E66B40E48B96C9236B4DAA075")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.601 -0400", hash_original_method = "3A1C8AE14DFE6F094F17065084A852DA", hash_generated_method = "DB7D7EF500531417934DE326F721BBFB")
     public FileDescriptor open(String path, int flags, int mode) throws ErrnoException {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(path);
-        dsTaint.addTaint(mode);
-        FileDescriptor varDF813003EF81B33B403133D09C9D4CD0_1974105654 = (os.open(path, flags, mode));
-        return (FileDescriptor)dsTaint.getTaint();
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1224680240 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1224680240 = os.open(path, flags, mode);
+        addTaint(path.getTaint());
+        addTaint(flags);
+        addTaint(mode);
+        varB4EAC82CA7396A68D541C85D26508E83_1224680240.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1224680240;
         // ---------- Original Method ----------
         //return os.open(path, flags, mode);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.882 -0400", hash_original_method = "C44D806183F8681F84B21225E3DD2820", hash_generated_method = "39F078CE3F6EFEB9D9F2C56F82E852F0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.612 -0400", hash_original_method = "C44D806183F8681F84B21225E3DD2820", hash_generated_method = "88A70E1768971361862E52292C455E6E")
     public FileDescriptor[] pipe() throws ErrnoException {
-        FileDescriptor[] var7850A048F200CCBE7F6CB8D7B1099EE8_1636481230 = (os.pipe());
-        return (FileDescriptor[])dsTaint.getTaint();
+        FileDescriptor[] varB4EAC82CA7396A68D541C85D26508E83_1694211042 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1694211042 = os.pipe();
+        varB4EAC82CA7396A68D541C85D26508E83_1694211042.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1694211042;
         // ---------- Original Method ----------
         //return os.pipe();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.883 -0400", hash_original_method = "5599B9E106312A6343AFDB459C1296E6", hash_generated_method = "AE60DEDE5137D98115461806E694899A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.612 -0400", hash_original_method = "5599B9E106312A6343AFDB459C1296E6", hash_generated_method = "85A1409D4690983E405BAC0D1A8E7794")
     public int poll(StructPollfd[] fds, int timeoutMs) throws ErrnoException {
-        dsTaint.addTaint(timeoutMs);
-        dsTaint.addTaint(fds[0].dsTaint);
-        int var48722583F516647909DDA26F0FCD9942_392140424 = (os.poll(fds, timeoutMs));
-        return dsTaint.getTaintInt();
+        int var48722583F516647909DDA26F0FCD9942_472733535 = (os.poll(fds, timeoutMs));
+        addTaint(fds[0].getTaint());
+        addTaint(timeoutMs);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1403191907 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1403191907;
         // ---------- Original Method ----------
         //return os.poll(fds, timeoutMs);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.884 -0400", hash_original_method = "E02E4577E71F70F2C9CAE7AED1E2F8AC", hash_generated_method = "D643D0730C1007D7B91AE744AD654246")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.613 -0400", hash_original_method = "E02E4577E71F70F2C9CAE7AED1E2F8AC", hash_generated_method = "D1C4FDB790C86D16ED73F5D5088960C9")
     public int pread(FileDescriptor fd, ByteBuffer buffer, long offset) throws ErrnoException {
-        dsTaint.addTaint(buffer.dsTaint);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(fd.dsTaint);
-        int var8E37D63F084AD12D6EF74F78D0F34813_699250188 = (os.pread(fd, buffer, offset));
-        return dsTaint.getTaintInt();
+        int var8E37D63F084AD12D6EF74F78D0F34813_518273193 = (os.pread(fd, buffer, offset));
+        addTaint(fd.getTaint());
+        addTaint(buffer.getTaint());
+        addTaint(offset);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1168774970 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1168774970;
         // ---------- Original Method ----------
         //return os.pread(fd, buffer, offset);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.884 -0400", hash_original_method = "77B89AD0CF3C5D71E7DD42E992F283EF", hash_generated_method = "259D35EBC626FB0FD5D76CC49FD1FAE3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.613 -0400", hash_original_method = "77B89AD0CF3C5D71E7DD42E992F283EF", hash_generated_method = "B3D3BFB08AB1275193B9057369485CD8")
     public int pread(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, long offset) throws ErrnoException {
-        dsTaint.addTaint(byteOffset);
-        dsTaint.addTaint(bytes[0]);
-        dsTaint.addTaint(byteCount);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(fd.dsTaint);
-        int var9596F97D25F40A8949B0F9D6651550A1_625621660 = (os.pread(fd, bytes, byteOffset, byteCount, offset));
-        return dsTaint.getTaintInt();
+        int var9596F97D25F40A8949B0F9D6651550A1_747078462 = (os.pread(fd, bytes, byteOffset, byteCount, offset));
+        addTaint(fd.getTaint());
+        addTaint(bytes[0]);
+        addTaint(byteOffset);
+        addTaint(byteCount);
+        addTaint(offset);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_238102711 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_238102711;
         // ---------- Original Method ----------
         //return os.pread(fd, bytes, byteOffset, byteCount, offset);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.884 -0400", hash_original_method = "1CD5001FEE779ACE9E3DB9100CD609FC", hash_generated_method = "927A7017244D9646C0A72B70CC83F4D0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.614 -0400", hash_original_method = "1CD5001FEE779ACE9E3DB9100CD609FC", hash_generated_method = "AA3F1C53C8F0700330D564F174E5495E")
     public int pwrite(FileDescriptor fd, ByteBuffer buffer, long offset) throws ErrnoException {
-        dsTaint.addTaint(buffer.dsTaint);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(fd.dsTaint);
-        int varBEC757109BB880DDBADF6015F3B05B2C_882120819 = (os.pwrite(fd, buffer, offset));
-        return dsTaint.getTaintInt();
+        int varBEC757109BB880DDBADF6015F3B05B2C_1065401751 = (os.pwrite(fd, buffer, offset));
+        addTaint(fd.getTaint());
+        addTaint(buffer.getTaint());
+        addTaint(offset);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1000150488 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1000150488;
         // ---------- Original Method ----------
         //return os.pwrite(fd, buffer, offset);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.884 -0400", hash_original_method = "F0611566A9565E2DEF97709E6B9B6418", hash_generated_method = "E3AFB97F1ADA79A12D413C0F04EDDA86")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.614 -0400", hash_original_method = "F0611566A9565E2DEF97709E6B9B6418", hash_generated_method = "B803F5FB15C2F433EBC300403A64F856")
     public int pwrite(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, long offset) throws ErrnoException {
-        dsTaint.addTaint(byteOffset);
-        dsTaint.addTaint(bytes[0]);
-        dsTaint.addTaint(byteCount);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(fd.dsTaint);
-        int var41A08F5DA487149A1F7C1270B58B9089_882750591 = (os.pwrite(fd, bytes, byteOffset, byteCount, offset));
-        return dsTaint.getTaintInt();
+        int var41A08F5DA487149A1F7C1270B58B9089_1229595454 = (os.pwrite(fd, bytes, byteOffset, byteCount, offset));
+        addTaint(fd.getTaint());
+        addTaint(bytes[0]);
+        addTaint(byteOffset);
+        addTaint(byteCount);
+        addTaint(offset);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1289427482 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1289427482;
         // ---------- Original Method ----------
         //return os.pwrite(fd, bytes, byteOffset, byteCount, offset);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.884 -0400", hash_original_method = "F3C222630BE6E1046A8D40208CD4C60B", hash_generated_method = "9D015CA5401286E4461BCF2C2AFD34EB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.614 -0400", hash_original_method = "F3C222630BE6E1046A8D40208CD4C60B", hash_generated_method = "8763299A3CB7B21161F11381A6E2C435")
     public int read(FileDescriptor fd, ByteBuffer buffer) throws ErrnoException {
-        dsTaint.addTaint(buffer.dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
-        int var5B8E7DC5191E81FE70C36AA027AFFCC8_1593150542 = (os.read(fd, buffer));
-        return dsTaint.getTaintInt();
+        int var5B8E7DC5191E81FE70C36AA027AFFCC8_1735605670 = (os.read(fd, buffer));
+        addTaint(fd.getTaint());
+        addTaint(buffer.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_841401026 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_841401026;
         // ---------- Original Method ----------
         //return os.read(fd, buffer);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.885 -0400", hash_original_method = "21F8B1ED0ECF46FDBCE6EA979BADF2C3", hash_generated_method = "678A35BFC27812498E934CA62AE056CD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.615 -0400", hash_original_method = "21F8B1ED0ECF46FDBCE6EA979BADF2C3", hash_generated_method = "76D6C16FC9D99B6499F13825289766DC")
     public int read(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws ErrnoException {
-        dsTaint.addTaint(byteOffset);
-        dsTaint.addTaint(bytes[0]);
-        dsTaint.addTaint(byteCount);
-        dsTaint.addTaint(fd.dsTaint);
-        int varE59F1DA0F28FCDF7A959280195F03910_312814675 = (os.read(fd, bytes, byteOffset, byteCount));
-        return dsTaint.getTaintInt();
+        int varE59F1DA0F28FCDF7A959280195F03910_1913628984 = (os.read(fd, bytes, byteOffset, byteCount));
+        addTaint(fd.getTaint());
+        addTaint(bytes[0]);
+        addTaint(byteOffset);
+        addTaint(byteCount);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668810300 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668810300;
         // ---------- Original Method ----------
         //return os.read(fd, bytes, byteOffset, byteCount);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.885 -0400", hash_original_method = "E2800F54CC6608A5FBBD1BF36223D806", hash_generated_method = "57B77FE538EA485BD17EC0BB0A901B9D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.615 -0400", hash_original_method = "E2800F54CC6608A5FBBD1BF36223D806", hash_generated_method = "3B481C6B3DD030D535F80798971FF686")
     public int readv(FileDescriptor fd, Object[] buffers, int[] offsets, int[] byteCounts) throws ErrnoException {
-        dsTaint.addTaint(byteCounts[0]);
-        dsTaint.addTaint(offsets[0]);
-        dsTaint.addTaint(buffers[0].dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
-        int var2494A58C76DD4D861DBB94DFA16C08A6_1283045012 = (os.readv(fd, buffers, offsets, byteCounts));
-        return dsTaint.getTaintInt();
+        int var2494A58C76DD4D861DBB94DFA16C08A6_1195494376 = (os.readv(fd, buffers, offsets, byteCounts));
+        addTaint(fd.getTaint());
+        addTaint(buffers[0].getTaint());
+        addTaint(offsets[0]);
+        addTaint(byteCounts[0]);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_210165546 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_210165546;
         // ---------- Original Method ----------
         //return os.readv(fd, buffers, offsets, byteCounts);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.885 -0400", hash_original_method = "84F37C132BD33033E9DE4E38A8430067", hash_generated_method = "BD7D3221E4274B629AAECC262CFB3A0A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.631 -0400", hash_original_method = "84F37C132BD33033E9DE4E38A8430067", hash_generated_method = "E24DFB3E8DC4180D20F5DF624F9A7765")
     public int recvfrom(FileDescriptor fd, ByteBuffer buffer, int flags, InetSocketAddress srcAddress) throws ErrnoException {
-        dsTaint.addTaint(buffer.dsTaint);
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(srcAddress.dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
-        int varF25721B896E31A53482415C6A924C22D_1482189930 = (os.recvfrom(fd, buffer, flags, srcAddress));
-        return dsTaint.getTaintInt();
+        int varF25721B896E31A53482415C6A924C22D_1309389673 = (os.recvfrom(fd, buffer, flags, srcAddress));
+        addTaint(fd.getTaint());
+        addTaint(buffer.getTaint());
+        addTaint(flags);
+        addTaint(srcAddress.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1709691064 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1709691064;
         // ---------- Original Method ----------
         //return os.recvfrom(fd, buffer, flags, srcAddress);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.885 -0400", hash_original_method = "0394D475125B49320B23E75594B5C434", hash_generated_method = "1DCBF283C2870343F175BB72EBF60E25")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.632 -0400", hash_original_method = "0394D475125B49320B23E75594B5C434", hash_generated_method = "4407F9ED7D74CC9F6779E08C8676131A")
     public int recvfrom(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetSocketAddress srcAddress) throws ErrnoException {
-        dsTaint.addTaint(byteOffset);
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(bytes[0]);
-        dsTaint.addTaint(byteCount);
-        dsTaint.addTaint(srcAddress.dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
-        int var3A59E5EE9728502FA7AEFF9DA4D0C096_1285603686 = (os.recvfrom(fd, bytes, byteOffset, byteCount, flags, srcAddress));
-        return dsTaint.getTaintInt();
+        int var3A59E5EE9728502FA7AEFF9DA4D0C096_213914644 = (os.recvfrom(fd, bytes, byteOffset, byteCount, flags, srcAddress));
+        addTaint(fd.getTaint());
+        addTaint(bytes[0]);
+        addTaint(byteOffset);
+        addTaint(byteCount);
+        addTaint(flags);
+        addTaint(srcAddress.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1314595859 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1314595859;
         // ---------- Original Method ----------
         //return os.recvfrom(fd, bytes, byteOffset, byteCount, flags, srcAddress);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.885 -0400", hash_original_method = "B12B5B450AD1F25F30BAE5F7F0558752", hash_generated_method = "CCDB6E811E2577B4C3F9E53D29DF96EC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.632 -0400", hash_original_method = "B12B5B450AD1F25F30BAE5F7F0558752", hash_generated_method = "B967C63C94D7FFC1BF04F3CB4178010B")
     public void remove(String path) throws ErrnoException {
-        dsTaint.addTaint(path);
         os.remove(path);
+        addTaint(path.getTaint());
         // ---------- Original Method ----------
         //os.remove(path);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.885 -0400", hash_original_method = "91C997D77FC3A21A4E5692674F9BE11B", hash_generated_method = "65D6307FCF9D9F56B1DAC0A45B3F5F47")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.633 -0400", hash_original_method = "91C997D77FC3A21A4E5692674F9BE11B", hash_generated_method = "9178B74C9305F48F4B3F361B7C836E95")
     public void rename(String oldPath, String newPath) throws ErrnoException {
-        dsTaint.addTaint(newPath);
-        dsTaint.addTaint(oldPath);
         os.rename(oldPath, newPath);
+        addTaint(oldPath.getTaint());
+        addTaint(newPath.getTaint());
         // ---------- Original Method ----------
         //os.rename(oldPath, newPath);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.886 -0400", hash_original_method = "C572D6E07635A5094C687364A5671672", hash_generated_method = "59CA1D09E45F1F70ABAC2A49E7096948")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.633 -0400", hash_original_method = "C572D6E07635A5094C687364A5671672", hash_generated_method = "49685DD429533DE30E6D76E7CE4B6843")
     public long sendfile(FileDescriptor outFd, FileDescriptor inFd, MutableLong inOffset, long byteCount) throws ErrnoException {
-        dsTaint.addTaint(outFd.dsTaint);
-        dsTaint.addTaint(byteCount);
-        dsTaint.addTaint(inFd.dsTaint);
-        dsTaint.addTaint(inOffset.dsTaint);
-        long varA7A8691BB87D642123D80A6B9B64BEE0_1391869829 = (os.sendfile(outFd, inFd, inOffset, byteCount));
-        return dsTaint.getTaintLong();
+        long varA7A8691BB87D642123D80A6B9B64BEE0_1581544389 = (os.sendfile(outFd, inFd, inOffset, byteCount));
+        addTaint(outFd.getTaint());
+        addTaint(inFd.getTaint());
+        addTaint(inOffset.getTaint());
+        addTaint(byteCount);
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1368353262 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1368353262;
         // ---------- Original Method ----------
         //return os.sendfile(outFd, inFd, inOffset, byteCount);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.886 -0400", hash_original_method = "88066FF66E9BA638CFCEFABD2B423922", hash_generated_method = "3596AEE1478E6F099B51E63D3100CF09")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.633 -0400", hash_original_method = "88066FF66E9BA638CFCEFABD2B423922", hash_generated_method = "B0842858C19A52BD9B2897A0E3F31BFE")
     public int sendto(FileDescriptor fd, ByteBuffer buffer, int flags, InetAddress inetAddress, int port) throws ErrnoException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(buffer.dsTaint);
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(inetAddress.dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
-        int var0B8E7266620C88EB24F8453B4CECD027_992648508 = (os.sendto(fd, buffer, flags, inetAddress, port));
-        return dsTaint.getTaintInt();
+        int var0B8E7266620C88EB24F8453B4CECD027_1927873331 = (os.sendto(fd, buffer, flags, inetAddress, port));
+        addTaint(fd.getTaint());
+        addTaint(buffer.getTaint());
+        addTaint(flags);
+        addTaint(inetAddress.getTaint());
+        addTaint(port);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_922125487 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_922125487;
         // ---------- Original Method ----------
         //return os.sendto(fd, buffer, flags, inetAddress, port);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.886 -0400", hash_original_method = "BC2321A87F2222D5681A88900983F12D", hash_generated_method = "062E30E869B70A5223EC04E97298FAB6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.638 -0400", hash_original_method = "BC2321A87F2222D5681A88900983F12D", hash_generated_method = "403DDD87C93966643AEA544FD1F45ABB")
     public int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws ErrnoException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(byteOffset);
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(bytes[0]);
-        dsTaint.addTaint(inetAddress.dsTaint);
-        dsTaint.addTaint(byteCount);
-        dsTaint.addTaint(fd.dsTaint);
-        int var8221F6255948EB137094ED72A9C8456A_910906683 = (os.sendto(fd, bytes, byteOffset, byteCount, flags, inetAddress, port));
-        return dsTaint.getTaintInt();
+        int var8221F6255948EB137094ED72A9C8456A_304175282 = (os.sendto(fd, bytes, byteOffset, byteCount, flags, inetAddress, port));
+        addTaint(fd.getTaint());
+        addTaint(bytes[0]);
+        addTaint(byteOffset);
+        addTaint(byteCount);
+        addTaint(flags);
+        addTaint(inetAddress.getTaint());
+        addTaint(port);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822022507 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822022507;
         // ---------- Original Method ----------
         //return os.sendto(fd, bytes, byteOffset, byteCount, flags, inetAddress, port);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.886 -0400", hash_original_method = "D0978EE2EC25CFB475F603941EE6E321", hash_generated_method = "724CB9EB9E689B9D6CC1D7EEC3A2DAD2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.638 -0400", hash_original_method = "D0978EE2EC25CFB475F603941EE6E321", hash_generated_method = "93A356037B7F8F8A962EFD27155AD531")
     public void setegid(int egid) throws ErrnoException {
-        dsTaint.addTaint(egid);
         os.setegid(egid);
+        addTaint(egid);
         // ---------- Original Method ----------
         //os.setegid(egid);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.886 -0400", hash_original_method = "0B3E20A1D3AFC99676F4A67D4967A4C5", hash_generated_method = "D9755F5EC6AA0EBA69851EC6E1BD200E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.638 -0400", hash_original_method = "0B3E20A1D3AFC99676F4A67D4967A4C5", hash_generated_method = "699125BC0719E8B2E50628845CF93B03")
     public void seteuid(int euid) throws ErrnoException {
-        dsTaint.addTaint(euid);
         os.seteuid(euid);
+        addTaint(euid);
         // ---------- Original Method ----------
         //os.seteuid(euid);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.886 -0400", hash_original_method = "5A836F22DA1ADF6236109717B09FFB11", hash_generated_method = "278E3752851896E17AECC26170863BAF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.638 -0400", hash_original_method = "5A836F22DA1ADF6236109717B09FFB11", hash_generated_method = "A512CE4B0BD677A24C1BF3C917EFDD1E")
     public void setgid(int gid) throws ErrnoException {
-        dsTaint.addTaint(gid);
         os.setgid(gid);
+        addTaint(gid);
         // ---------- Original Method ----------
         //os.setgid(gid);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.887 -0400", hash_original_method = "02713B5D8B1D9FC1829D645D7EE01360", hash_generated_method = "53C281F255854974F731752D8C162FA8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.639 -0400", hash_original_method = "02713B5D8B1D9FC1829D645D7EE01360", hash_generated_method = "5ECCD84913650232A3A4D5918E275F5D")
     public void setsockoptByte(FileDescriptor fd, int level, int option, int value) throws ErrnoException {
-        dsTaint.addTaint(level);
-        dsTaint.addTaint(value);
-        dsTaint.addTaint(fd.dsTaint);
-        dsTaint.addTaint(option);
         os.setsockoptByte(fd, level, option, value);
+        addTaint(fd.getTaint());
+        addTaint(level);
+        addTaint(option);
+        addTaint(value);
         // ---------- Original Method ----------
         //os.setsockoptByte(fd, level, option, value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.887 -0400", hash_original_method = "859AD73B12F1FCBFB785F9C03E57780C", hash_generated_method = "698834EFD893F8ABE862EF313E7D056E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.639 -0400", hash_original_method = "859AD73B12F1FCBFB785F9C03E57780C", hash_generated_method = "B75504C71233A1B25169781E78FBEA32")
     public void setsockoptIfreq(FileDescriptor fd, int level, int option, String value) throws ErrnoException {
-        dsTaint.addTaint(level);
-        dsTaint.addTaint(value);
-        dsTaint.addTaint(fd.dsTaint);
-        dsTaint.addTaint(option);
         os.setsockoptIfreq(fd, level, option, value);
+        addTaint(fd.getTaint());
+        addTaint(level);
+        addTaint(option);
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //os.setsockoptIfreq(fd, level, option, value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.887 -0400", hash_original_method = "5882A7C612198E8B1D9CBF2EDBCD6FE7", hash_generated_method = "F3D5EAC8474DE83309D40293D666CCC8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.639 -0400", hash_original_method = "5882A7C612198E8B1D9CBF2EDBCD6FE7", hash_generated_method = "95BD4E07E874A3C53418A957A1DAFACC")
     public void setsockoptInt(FileDescriptor fd, int level, int option, int value) throws ErrnoException {
-        dsTaint.addTaint(level);
-        dsTaint.addTaint(value);
-        dsTaint.addTaint(fd.dsTaint);
-        dsTaint.addTaint(option);
         os.setsockoptInt(fd, level, option, value);
+        addTaint(fd.getTaint());
+        addTaint(level);
+        addTaint(option);
+        addTaint(value);
         // ---------- Original Method ----------
         //os.setsockoptInt(fd, level, option, value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.887 -0400", hash_original_method = "3A8741E8D07270D7E757C05217AEFD39", hash_generated_method = "3E655A9F84D49D646F2806670B58F325")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.639 -0400", hash_original_method = "3A8741E8D07270D7E757C05217AEFD39", hash_generated_method = "966031E85B0BB54980D857F07D367B73")
     public void setsockoptIpMreqn(FileDescriptor fd, int level, int option, int value) throws ErrnoException {
-        dsTaint.addTaint(level);
-        dsTaint.addTaint(value);
-        dsTaint.addTaint(fd.dsTaint);
-        dsTaint.addTaint(option);
         os.setsockoptIpMreqn(fd, level, option, value);
+        addTaint(fd.getTaint());
+        addTaint(level);
+        addTaint(option);
+        addTaint(value);
         // ---------- Original Method ----------
         //os.setsockoptIpMreqn(fd, level, option, value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.887 -0400", hash_original_method = "4E1D080A99B5B2F06B7A0201A27B3E99", hash_generated_method = "4E2AE48998E503B37D77FABECBF40631")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.658 -0400", hash_original_method = "4E1D080A99B5B2F06B7A0201A27B3E99", hash_generated_method = "677217554288830723E73088DCBC1BCB")
     public void setsockoptGroupReq(FileDescriptor fd, int level, int option, StructGroupReq value) throws ErrnoException {
-        dsTaint.addTaint(level);
-        dsTaint.addTaint(value.dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
-        dsTaint.addTaint(option);
         os.setsockoptGroupReq(fd, level, option, value);
+        addTaint(fd.getTaint());
+        addTaint(level);
+        addTaint(option);
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //os.setsockoptGroupReq(fd, level, option, value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.887 -0400", hash_original_method = "A1EC25C1EA10D3E94DA65D129945BE62", hash_generated_method = "A1533E24A12E50E87AB7B59F64391E01")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.658 -0400", hash_original_method = "A1EC25C1EA10D3E94DA65D129945BE62", hash_generated_method = "221A8CF27FEFEF11FD706E6FDC2DC322")
     public void setsockoptLinger(FileDescriptor fd, int level, int option, StructLinger value) throws ErrnoException {
-        dsTaint.addTaint(level);
-        dsTaint.addTaint(value.dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
-        dsTaint.addTaint(option);
         os.setsockoptLinger(fd, level, option, value);
+        addTaint(fd.getTaint());
+        addTaint(level);
+        addTaint(option);
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //os.setsockoptLinger(fd, level, option, value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.887 -0400", hash_original_method = "B0DC8E18521874709C24B9B37D89D87C", hash_generated_method = "53E4CE94B23C4E9067D9B64C49E0EDDA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.658 -0400", hash_original_method = "B0DC8E18521874709C24B9B37D89D87C", hash_generated_method = "8928AD834D902FFB7812753AD3CD467D")
     public void setsockoptTimeval(FileDescriptor fd, int level, int option, StructTimeval value) throws ErrnoException {
-        dsTaint.addTaint(level);
-        dsTaint.addTaint(value.dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
-        dsTaint.addTaint(option);
         os.setsockoptTimeval(fd, level, option, value);
+        addTaint(fd.getTaint());
+        addTaint(level);
+        addTaint(option);
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //os.setsockoptTimeval(fd, level, option, value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.888 -0400", hash_original_method = "554251AE1D031EE7BA07BC4F696C724A", hash_generated_method = "6F6909BA02FABD584522ADA283CDCDC5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.658 -0400", hash_original_method = "554251AE1D031EE7BA07BC4F696C724A", hash_generated_method = "95DD70C53FE71F4300D8A3B4C4BAF7BE")
     public void setuid(int uid) throws ErrnoException {
-        dsTaint.addTaint(uid);
         os.setuid(uid);
+        addTaint(uid);
         // ---------- Original Method ----------
         //os.setuid(uid);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.888 -0400", hash_original_method = "5FEB3BBC8A3C8F5F8A22DE81B35CAE4D", hash_generated_method = "160A51480BA4845A4E83D56387B2A7D3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.659 -0400", hash_original_method = "5FEB3BBC8A3C8F5F8A22DE81B35CAE4D", hash_generated_method = "87B92C4EDDB60F330ECC42FB69F744BB")
     public void shutdown(FileDescriptor fd, int how) throws ErrnoException {
-        dsTaint.addTaint(how);
-        dsTaint.addTaint(fd.dsTaint);
         os.shutdown(fd, how);
+        addTaint(fd.getTaint());
+        addTaint(how);
         // ---------- Original Method ----------
         //os.shutdown(fd, how);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.888 -0400", hash_original_method = "558F533484D6B9C99DDFE653A920693C", hash_generated_method = "859C420E0A2D552D45D6A8B2921322B5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.659 -0400", hash_original_method = "558F533484D6B9C99DDFE653A920693C", hash_generated_method = "1AE91F6BA3A49A35D555502E89013DAC")
     public FileDescriptor socket(int domain, int type, int protocol) throws ErrnoException {
-        dsTaint.addTaint(protocol);
-        dsTaint.addTaint(domain);
-        dsTaint.addTaint(type);
-        FileDescriptor varD7C0BFB58A2C6A982A23A172A0C590FC_1236461652 = (os.socket(domain, type, protocol));
-        return (FileDescriptor)dsTaint.getTaint();
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_2114865310 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2114865310 = os.socket(domain, type, protocol);
+        addTaint(domain);
+        addTaint(type);
+        addTaint(protocol);
+        varB4EAC82CA7396A68D541C85D26508E83_2114865310.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2114865310;
         // ---------- Original Method ----------
         //return os.socket(domain, type, protocol);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.888 -0400", hash_original_method = "E3FE6B0CE9C868055585C77F475D7F5A", hash_generated_method = "BE20EC5065CC0D481A2227AC5D6E70BA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.660 -0400", hash_original_method = "E3FE6B0CE9C868055585C77F475D7F5A", hash_generated_method = "9CC3193627C924CE42FC42E85F6442A0")
     public StructStat stat(String path) throws ErrnoException {
-        dsTaint.addTaint(path);
-        StructStat var2C024C392F42BC302E5D75904EA342EC_2066081002 = (os.stat(path));
-        return (StructStat)dsTaint.getTaint();
+        StructStat varB4EAC82CA7396A68D541C85D26508E83_393365350 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_393365350 = os.stat(path);
+        addTaint(path.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_393365350.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_393365350;
         // ---------- Original Method ----------
         //return os.stat(path);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.888 -0400", hash_original_method = "EA8F2D89CBB0B8AF52F0D62C5DA4B5A0", hash_generated_method = "19899F46AC70B72BEBA3546CF4DAD1D3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.660 -0400", hash_original_method = "EA8F2D89CBB0B8AF52F0D62C5DA4B5A0", hash_generated_method = "31B0F1D6AFAFF78D81EBE5BB700A2DF1")
     public StructStatFs statfs(String path) throws ErrnoException {
-        dsTaint.addTaint(path);
-        StructStatFs var2FFAF2094D0D006AB785E47F6BF4A916_1496419994 = (os.statfs(path));
-        return (StructStatFs)dsTaint.getTaint();
+        StructStatFs varB4EAC82CA7396A68D541C85D26508E83_1744524857 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1744524857 = os.statfs(path);
+        addTaint(path.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1744524857.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1744524857;
         // ---------- Original Method ----------
         //return os.statfs(path);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.888 -0400", hash_original_method = "FBEAE456B3A3C776553B1F7E912CD6FB", hash_generated_method = "9BA09AA52285A5E63951711A47B0DD91")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.664 -0400", hash_original_method = "FBEAE456B3A3C776553B1F7E912CD6FB", hash_generated_method = "B59577859D05772EDC6DB40E9715B715")
     public String strerror(int errno) {
-        dsTaint.addTaint(errno);
-        String var69A0F0547EC2E1CC57A38635805483D1_786442037 = (os.strerror(errno));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_278875050 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_278875050 = os.strerror(errno);
+        addTaint(errno);
+        varB4EAC82CA7396A68D541C85D26508E83_278875050.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_278875050;
         // ---------- Original Method ----------
         //return os.strerror(errno);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.888 -0400", hash_original_method = "FB4E2B29DA5C665C03E887C9C86A36A3", hash_generated_method = "4CC37BC5AB7D207DAFEBFE37F165C9FD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.664 -0400", hash_original_method = "FB4E2B29DA5C665C03E887C9C86A36A3", hash_generated_method = "A481904BFAEB009329F86B88C81878BA")
     public void symlink(String oldPath, String newPath) throws ErrnoException {
-        dsTaint.addTaint(newPath);
-        dsTaint.addTaint(oldPath);
         os.symlink(oldPath, newPath);
+        addTaint(oldPath.getTaint());
+        addTaint(newPath.getTaint());
         // ---------- Original Method ----------
         //os.symlink(oldPath, newPath);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.889 -0400", hash_original_method = "9239DE14FB7F01A1D647B884E3411551", hash_generated_method = "76B3F0801A8C66D408B6E762B3BAA839")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.664 -0400", hash_original_method = "9239DE14FB7F01A1D647B884E3411551", hash_generated_method = "29520B6BCFAF7E3A50F4CA0639921B4F")
     public long sysconf(int name) {
-        dsTaint.addTaint(name);
-        long var6016DF4BB18042E7D98C68C5D480E24E_1241062999 = (os.sysconf(name));
-        return dsTaint.getTaintLong();
+        long var6016DF4BB18042E7D98C68C5D480E24E_104842955 = (os.sysconf(name));
+        addTaint(name);
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_533649380 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_533649380;
         // ---------- Original Method ----------
         //return os.sysconf(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.889 -0400", hash_original_method = "E92B0E3CCB7269FEE37854B5F086E530", hash_generated_method = "611FD50E1A24B21E0712F1161338E816")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.665 -0400", hash_original_method = "E92B0E3CCB7269FEE37854B5F086E530", hash_generated_method = "285B51843C7058CB14D4A360CEA4604E")
     public StructUtsname uname() {
-        StructUtsname varDCD4AA64BF2BD25CA957A8E348D148BF_240046868 = (os.uname());
-        return (StructUtsname)dsTaint.getTaint();
+        StructUtsname varB4EAC82CA7396A68D541C85D26508E83_1826217049 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1826217049 = os.uname();
+        varB4EAC82CA7396A68D541C85D26508E83_1826217049.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1826217049;
         // ---------- Original Method ----------
         //return os.uname();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.889 -0400", hash_original_method = "EC4C2322F336992223E3CB1B21022BF9", hash_generated_method = "B948BA6A1BBEFDC74A62F759ED7829B6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.665 -0400", hash_original_method = "EC4C2322F336992223E3CB1B21022BF9", hash_generated_method = "D89AA4751A618894330C205389CC957C")
     public int waitpid(int pid, MutableInt status, int options) throws ErrnoException {
-        dsTaint.addTaint(status.dsTaint);
-        dsTaint.addTaint(pid);
-        dsTaint.addTaint(options);
-        int varE8B0A97070670E6FF43AAF48DCCF725E_1998461508 = (os.waitpid(pid, status, options));
-        return dsTaint.getTaintInt();
+        int varE8B0A97070670E6FF43AAF48DCCF725E_635706120 = (os.waitpid(pid, status, options));
+        addTaint(pid);
+        addTaint(status.getTaint());
+        addTaint(options);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_967889303 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_967889303;
         // ---------- Original Method ----------
         //return os.waitpid(pid, status, options);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.889 -0400", hash_original_method = "844A22BF74026B79E5C643696D2A0D2B", hash_generated_method = "ECA55FEA71AC2FE2D411F6DC24AAB0F9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.665 -0400", hash_original_method = "844A22BF74026B79E5C643696D2A0D2B", hash_generated_method = "6205459977DFE21188686567A47C9311")
     public int write(FileDescriptor fd, ByteBuffer buffer) throws ErrnoException {
-        dsTaint.addTaint(buffer.dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
-        int var0626357AF90ACF3FB1D934D119466787_286623696 = (os.write(fd, buffer));
-        return dsTaint.getTaintInt();
+        int var0626357AF90ACF3FB1D934D119466787_2100067294 = (os.write(fd, buffer));
+        addTaint(fd.getTaint());
+        addTaint(buffer.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1626794303 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1626794303;
         // ---------- Original Method ----------
         //return os.write(fd, buffer);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.889 -0400", hash_original_method = "437BEB04F87A5AE656D8F235B16E36DF", hash_generated_method = "EF7CE9F4B984E90F9BB9594FDE6FE642")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.675 -0400", hash_original_method = "437BEB04F87A5AE656D8F235B16E36DF", hash_generated_method = "42BD7062487157FE91F7186A487D2871")
     public int write(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws ErrnoException {
-        dsTaint.addTaint(byteOffset);
-        dsTaint.addTaint(bytes[0]);
-        dsTaint.addTaint(byteCount);
-        dsTaint.addTaint(fd.dsTaint);
-        int varE733C997547CF269F3AB7BAEB4D044AF_1271108011 = (os.write(fd, bytes, byteOffset, byteCount));
-        return dsTaint.getTaintInt();
+        int varE733C997547CF269F3AB7BAEB4D044AF_1820455899 = (os.write(fd, bytes, byteOffset, byteCount));
+        addTaint(fd.getTaint());
+        addTaint(bytes[0]);
+        addTaint(byteOffset);
+        addTaint(byteCount);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1832837484 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1832837484;
         // ---------- Original Method ----------
         //return os.write(fd, bytes, byteOffset, byteCount);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.889 -0400", hash_original_method = "8BC1FDC02B601F3DB4DB2A70967C7CDC", hash_generated_method = "F9F7F45B359E40C7D91895CFB33A9A47")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.675 -0400", hash_original_method = "8BC1FDC02B601F3DB4DB2A70967C7CDC", hash_generated_method = "14A9CCF1715170CBB345B810C3FB92BC")
     public int writev(FileDescriptor fd, Object[] buffers, int[] offsets, int[] byteCounts) throws ErrnoException {
-        dsTaint.addTaint(byteCounts[0]);
-        dsTaint.addTaint(offsets[0]);
-        dsTaint.addTaint(buffers[0].dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
-        int var32F5E7D906A9F96A2B6412DC92928AD7_1522899874 = (os.writev(fd, buffers, offsets, byteCounts));
-        return dsTaint.getTaintInt();
+        int var32F5E7D906A9F96A2B6412DC92928AD7_1598289956 = (os.writev(fd, buffers, offsets, byteCounts));
+        addTaint(fd.getTaint());
+        addTaint(buffers[0].getTaint());
+        addTaint(offsets[0]);
+        addTaint(byteCounts[0]);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_98511839 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_98511839;
         // ---------- Original Method ----------
         //return os.writev(fd, buffers, offsets, byteCounts);
     }

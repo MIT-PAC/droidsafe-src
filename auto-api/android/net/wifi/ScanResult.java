@@ -11,20 +11,29 @@ import android.os.Parcelable;
 import android.os.Parcel;
 
 public class ScanResult implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.186 -0400", hash_original_field = "0D09D7B23E604623465E83B0DC113F4D", hash_generated_field = "F7FE1695EF676C936EDB74F734CEDF60")
+
     public String SSID;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.186 -0400", hash_original_field = "4EB26185F9AD8B5D6AFBADC09D7D5096", hash_generated_field = "2B401C010EEC74A39C75E8EEE69DE741")
+
     public String BSSID;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.186 -0400", hash_original_field = "F7B11037F2050959293AAFB493B7653C", hash_generated_field = "ED500412E13DF4E867C4A3F4F20A041D")
+
     public String capabilities;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.186 -0400", hash_original_field = "C9E9A848920877E76685B2E4E76DE38D", hash_generated_field = "D6582AE921E596E1A991761518312A0E")
+
     public int level;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.186 -0400", hash_original_field = "FAD6C43B628858E0B472D0C164557FCF", hash_generated_field = "D8E433C66DAD37D40F223C5E121FF070")
+
     public int frequency;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.505 -0400", hash_original_method = "B81746E5555BB1C130130EC15E62207F", hash_generated_method = "4759EC99377E8CBEB251A636D247B692")
-    @DSModeled(DSC.SAFE)
-    public ScanResult(String SSID, String BSSID, String caps, int level, int frequency) {
-        dsTaint.addTaint(level);
-        dsTaint.addTaint(caps);
-        dsTaint.addTaint(SSID);
-        dsTaint.addTaint(frequency);
-        dsTaint.addTaint(BSSID);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.188 -0400", hash_original_method = "B81746E5555BB1C130130EC15E62207F", hash_generated_method = "719C1669155F4840ADC34BB00169FF8E")
+    public  ScanResult(String SSID, String BSSID, String caps, int level, int frequency) {
+        this.SSID = SSID;
+        this.BSSID = BSSID;
+        this.capabilities = caps;
+        this.level = level;
+        this.frequency = frequency;
         // ---------- Original Method ----------
         //this.SSID = SSID;
         //this.BSSID = BSSID;
@@ -34,10 +43,10 @@ public class ScanResult implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.505 -0400", hash_original_method = "3BF3B5ECD6A260296AD88686E08D9EA2", hash_generated_method = "BA99BF7D23FE4621DAC3D2F32F2A2517")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.200 -0400", hash_original_method = "3BF3B5ECD6A260296AD88686E08D9EA2", hash_generated_method = "215D206E1A3E2FD2BCEED1EDA3F3C857")
     @Override
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1273751985 = null; //Variable for return #1
         StringBuffer sb;
         sb = new StringBuffer();
         String none;
@@ -52,8 +61,9 @@ public class ScanResult implements Parcelable {
             append(level).
             append(", frequency: ").
             append(frequency);
-        String var806458D832AB974D230FEE4CBBDBD390_189105610 = (sb.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1273751985 = sb.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1273751985.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1273751985;
         // ---------- Original Method ----------
         //StringBuffer sb = new StringBuffer();
         //String none = "<none>";
@@ -71,25 +81,24 @@ public class ScanResult implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.506 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.201 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A0AD6B76D9C19687B271D882732F5D4D")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1426489519 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1426489519;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.506 -0400", hash_original_method = "8ED27770F672F68987FCE9C19DB9995F", hash_generated_method = "B14F6C36D7192C313C66974623DE6AEE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.211 -0400", hash_original_method = "8ED27770F672F68987FCE9C19DB9995F", hash_generated_method = "C48ECCE5DA0EAA54A80C854CFBAA5AAC")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeString(SSID);
         dest.writeString(BSSID);
         dest.writeString(capabilities);
         dest.writeInt(level);
         dest.writeInt(frequency);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeString(SSID);
         //dest.writeString(BSSID);
@@ -99,41 +108,23 @@ public class ScanResult implements Parcelable {
     }
 
     
-    public static final Creator<ScanResult> CREATOR = new Creator<ScanResult>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.506 -0400", hash_original_method = "BC0BC21C35AE7AEEA6D20EE623F1DB0A", hash_generated_method = "011E3B554801B3F8365A59A5F92DAF4E")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public ScanResult createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            ScanResult varF0E1C3F438EAB86B05F6AB0DE8943FF8_1230736182 = (new ScanResult(
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.212 -0400", hash_original_field = "680517245A246D643DCA76FD0591B0C1", hash_generated_field = "0B6E8115881E2F7154B7AD5C086C74FA")
+
+    public static final Creator<ScanResult> CREATOR =
+        new Creator<ScanResult>() {
+            public ScanResult createFromParcel(Parcel in) {
+                return new ScanResult(
                     in.readString(),
                     in.readString(),
                     in.readString(),
                     in.readInt(),
                     in.readInt()
-                ));
-            return (ScanResult)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ScanResult(
-                    //in.readString(),
-                    //in.readString(),
-                    //in.readString(),
-                    //in.readInt(),
-                    //in.readInt()
-                //);
-        }
+                );
+            }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.506 -0400", hash_original_method = "26455827E25EAA2F9112FF9001164636", hash_generated_method = "D3250FEEFEE7BD8A403F39A9E5AC3AF7")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public ScanResult[] newArray(int size) {
-            dsTaint.addTaint(size);
-            ScanResult[] var4047A0601BC5981E62DCADB3F6CBAF01_958621811 = (new ScanResult[size]);
-            return (ScanResult[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ScanResult[size];
-        }
-
-        
-}; //Transformed anonymous class
+            public ScanResult[] newArray(int size) {
+                return new ScanResult[size];
+            }
+        };
 }
 

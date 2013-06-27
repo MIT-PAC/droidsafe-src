@@ -12,27 +12,25 @@ import java.text.ParseException;
 
 public class OrganizationParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.319 -0400", hash_original_method = "549F69CADB3AF439FF99C26DCF97EF61", hash_generated_method = "40640B540FB56A8F1AF55A28DD4CF8AC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public OrganizationParser(String organization) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.866 -0400", hash_original_method = "549F69CADB3AF439FF99C26DCF97EF61", hash_generated_method = "6170B9428B77266BA6E655AF7ACBDA03")
+    public  OrganizationParser(String organization) {
         super(organization);
-        dsTaint.addTaint(organization);
+        addTaint(organization.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.319 -0400", hash_original_method = "5407EA6CAC142FB29C8ECABB6BAE3B2C", hash_generated_method = "29C8838AC3B44BD164BDCA632AA847D7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected OrganizationParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.871 -0400", hash_original_method = "5407EA6CAC142FB29C8ECABB6BAE3B2C", hash_generated_method = "30C64867BC39878E46F7846B11CA9D04")
+    protected  OrganizationParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.319 -0400", hash_original_method = "FCDFEF7484AB928FBE1CF6D95D3DCFBA", hash_generated_method = "E737DE6FAC76F8CF243DA654F8F13886")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.872 -0400", hash_original_method = "FCDFEF7484AB928FBE1CF6D95D3DCFBA", hash_generated_method = "03CE923369224661B15E43CAE1C840BA")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_371345391 = null; //Variable for return #1
         dbg_enter("OrganizationParser.parse");
         Organization organization;
         organization = new Organization();
@@ -44,12 +42,14 @@ public class OrganizationParser extends HeaderParser {
             String value;
             value = this.lexer.getRest();
             organization.setOrganization(value.trim());
+            varB4EAC82CA7396A68D541C85D26508E83_371345391 = organization;
         } //End block
         finally 
         {
             dbg_leave("OrganizationParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_371345391.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_371345391;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("OrganizationParser.parse");

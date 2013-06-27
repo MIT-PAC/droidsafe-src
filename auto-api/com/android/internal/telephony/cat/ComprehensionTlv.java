@@ -11,21 +11,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 class ComprehensionTlv {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.476 -0400", hash_original_field = "07496860B5C53FDD66588727158D5F73", hash_generated_field = "BFBA40DE531B5000F1981B7BBF1ED026")
+
     private int mTag;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.476 -0400", hash_original_field = "0F17E746BE153E70A72E97F8AE4B0967", hash_generated_field = "615830BA9729410C3098ECFE977B653E")
+
     private boolean mCr;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.476 -0400", hash_original_field = "429F431E8CD8AC287AA27460675EAEFE", hash_generated_field = "E9E17726F18BEC3E5C2C142D209555FD")
+
     private int mLength;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.476 -0400", hash_original_field = "23B7A8A7152E7007B08DAF983B584CA9", hash_generated_field = "8FECB3720B086D527CFAD02FEE0B0CCC")
+
     private int mValueIndex;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.476 -0400", hash_original_field = "68EFE75FA9F684BF74FD95FB591C4772", hash_generated_field = "5744D2EFAB71BD258B36C43D2ECBE57E")
+
     private byte[] mRawValue;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.881 -0400", hash_original_method = "F083BF2976A39A70E87A329F21B5205D", hash_generated_method = "A93C94D171D6B175A29F918B3897D2FB")
-    @DSModeled(DSC.SAFE)
-    protected ComprehensionTlv(int tag, boolean cr, int length, byte[] data,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.486 -0400", hash_original_method = "F083BF2976A39A70E87A329F21B5205D", hash_generated_method = "020782AEA4213AFDFBB86D391AADBE72")
+    protected  ComprehensionTlv(int tag, boolean cr, int length, byte[] data,
             int valueIndex) {
-        dsTaint.addTaint(cr);
-        dsTaint.addTaint(tag);
-        dsTaint.addTaint(valueIndex);
-        dsTaint.addTaint(data[0]);
-        dsTaint.addTaint(length);
+        mTag = tag;
+        mCr = cr;
+        mLength = length;
+        mValueIndex = valueIndex;
+        mRawValue = data;
         // ---------- Original Method ----------
         //mTag = tag;
         //mCr = cr;
@@ -35,48 +44,46 @@ class ComprehensionTlv {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.882 -0400", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "48EB4F475AC96BE46AF0C5DC5A3DD5D5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.486 -0400", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "DAA44806C4F1BABA420240594ED2A544")
     public int getTag() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1737761488 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1737761488;
         // ---------- Original Method ----------
         //return mTag;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.882 -0400", hash_original_method = "BBBB347994ECBB1AA0023AC2A90F5AE7", hash_generated_method = "6030F7139640AC680DCA92A41622BDEC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.489 -0400", hash_original_method = "BBBB347994ECBB1AA0023AC2A90F5AE7", hash_generated_method = "E04D1F384B179CF6E96C1D4514C85D6D")
     public boolean isComprehensionRequired() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_186037073 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_186037073;
         // ---------- Original Method ----------
         //return mCr;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.882 -0400", hash_original_method = "6E6502D65176BC2328E9B790ED2B205C", hash_generated_method = "69A5447F2179C1E4D83456F316EA279F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.489 -0400", hash_original_method = "6E6502D65176BC2328E9B790ED2B205C", hash_generated_method = "6B0027CDFA3ABAEB423401DE5F86A881")
     public int getLength() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749146659 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749146659;
         // ---------- Original Method ----------
         //return mLength;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.882 -0400", hash_original_method = "6B24631B893BC9498B1E30027D9EDCB1", hash_generated_method = "D499973267F3AE3AF3D089F41295566D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.489 -0400", hash_original_method = "6B24631B893BC9498B1E30027D9EDCB1", hash_generated_method = "6D4CA07B194C19D0E2DD0E6AF319CCE7")
     public int getValueIndex() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1484479399 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1484479399;
         // ---------- Original Method ----------
         //return mValueIndex;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.882 -0400", hash_original_method = "2E1D90837620CE8C27D1ADC653AC7836", hash_generated_method = "1D0DC9B7A0E89948A87B9AD5FFCAB6AB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.489 -0400", hash_original_method = "2E1D90837620CE8C27D1ADC653AC7836", hash_generated_method = "CF2CC0A655EEFB06949E536DA716CDEB")
     public byte[] getRawValue() {
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_626036361 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_626036361;
         // ---------- Original Method ----------
         //return mRawValue;
     }
@@ -162,6 +169,8 @@ class ComprehensionTlv {
     }
 
     
-    private static final String LOG_TAG = "ComprehensionTlv";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.490 -0400", hash_original_field = "528B030C1EBA87EE28DC417B1C2A985B", hash_generated_field = "C7C7AEF626CD1287982A9A4D12823F8E")
+
+    private static String LOG_TAG = "ComprehensionTlv";
 }
 

@@ -14,9 +14,10 @@ import java.util.Map;
 
 public final class BinaryHprof {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.307 -0400", hash_original_method = "80509E592C23CBA2243E8CDCC0E26B12", hash_generated_method = "80509E592C23CBA2243E8CDCC0E26B12")
-        public BinaryHprof ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.086 -0400", hash_original_method = "5337F4C002A0025B40CFBFFF348D94A9", hash_generated_method = "5337F4C002A0025B40CFBFFF348D94A9")
+    public BinaryHprof ()
     {
+        //Synthesized constructor
     }
 
 
@@ -106,7 +107,11 @@ public final class BinaryHprof {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.087 -0400", hash_original_field = "78ED38D23F66FD3D9881991183056ED4", hash_generated_field = "8349BBEB77016752FBF2456D191A1A2F")
+
     public static final int ID_SIZE = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.087 -0400", hash_original_field = "9ED898E2A40E3B1FEA9CC9074DE69EFE", hash_generated_field = "D7189B99CFC6CE5EBE348FB248539A4B")
+
     static String MAGIC = "JAVA PROFILE ";
 }
 

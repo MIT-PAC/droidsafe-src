@@ -12,30 +12,31 @@ import org.w3c.dom.Node;
 
 public class DocumentFragmentImpl extends InnerNodeImpl implements DocumentFragment {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.194 -0400", hash_original_method = "B1D1A671578496EB48835D218203CA93", hash_generated_method = "7B7553F392DB1969CE84931134268CB0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     DocumentFragmentImpl(DocumentImpl document) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.772 -0400", hash_original_method = "B1D1A671578496EB48835D218203CA93", hash_generated_method = "421CBD2E20B1FA2FAC0712CBFADDBED8")
+      DocumentFragmentImpl(DocumentImpl document) {
         super(document);
-        dsTaint.addTaint(document.dsTaint);
+        addTaint(document.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.194 -0400", hash_original_method = "D48C9C65653FE8B5C8C6E3ECCF0B8A68", hash_generated_method = "B5F16E8921066E9D4B1782E55E4DDA6C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.773 -0400", hash_original_method = "D48C9C65653FE8B5C8C6E3ECCF0B8A68", hash_generated_method = "042DD391571B450AFE21B63F6A29340F")
     @Override
     public String getNodeName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_819069336 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_819069336 = "#document-fragment";
+        varB4EAC82CA7396A68D541C85D26508E83_819069336.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_819069336;
         // ---------- Original Method ----------
         //return "#document-fragment";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.194 -0400", hash_original_method = "0F2F6CD4C06D66DF39BC0FDC5EEF69E4", hash_generated_method = "ADB63C7C43F373787A49BA03F851A5C5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.773 -0400", hash_original_method = "0F2F6CD4C06D66DF39BC0FDC5EEF69E4", hash_generated_method = "744EC2EF71E5104E39712A411843CA39")
     @Override
     public short getNodeType() {
-        return dsTaint.getTaintShort();
+        short var4F09DAA9D95BCB166A302407A0E0BABE_334160906 = getTaintShort();
+        return var4F09DAA9D95BCB166A302407A0E0BABE_334160906;
         // ---------- Original Method ----------
         //return Node.DOCUMENT_FRAGMENT_NODE;
     }

@@ -10,34 +10,35 @@ import java.util.Iterator;
 import android.database.Cursor;
 
 class CursorFilter extends Filter {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.754 -0400", hash_original_field = "C2AFC6EFB8302E140D5B8FB82E161BFF", hash_generated_field = "D7B21BB19581EA5872B7B46EEFBFEFD2")
+
     CursorFilterClient mClient;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.407 -0400", hash_original_method = "D61DC331CF58D286B36C03C7DC72D315", hash_generated_method = "CA813A5CE4989141707D0822DD0983BA")
-    @DSModeled(DSC.SAFE)
-     CursorFilter(CursorFilterClient client) {
-        dsTaint.addTaint(client.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.754 -0400", hash_original_method = "D61DC331CF58D286B36C03C7DC72D315", hash_generated_method = "6E3D5C0883E914F2A2E7C1B092F68B97")
+      CursorFilter(CursorFilterClient client) {
+        mClient = client;
         // ---------- Original Method ----------
         //mClient = client;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.407 -0400", hash_original_method = "13FD068C641361B638C17FBE36928984", hash_generated_method = "EFD5F170B6DCDF01AD2B8C60D7318758")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.765 -0400", hash_original_method = "13FD068C641361B638C17FBE36928984", hash_generated_method = "E29502461C30DC5E38BCFC58033E4697")
     @Override
     public CharSequence convertResultToString(Object resultValue) {
-        dsTaint.addTaint(resultValue.dsTaint);
-        CharSequence varB2571F6262C40033975F850E8CB832A8_532663736 = (mClient.convertToString((Cursor) resultValue));
-        return dsTaint.getTaintString();
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1088512494 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1088512494 = mClient.convertToString((Cursor) resultValue);
+        addTaint(resultValue.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1088512494.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1088512494;
         // ---------- Original Method ----------
         //return mClient.convertToString((Cursor) resultValue);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.407 -0400", hash_original_method = "A46F4651EB2D092BF8983D238E1886EF", hash_generated_method = "1B73D5FCE34443F8C34DFDCCB57DC6BD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.766 -0400", hash_original_method = "A46F4651EB2D092BF8983D238E1886EF", hash_generated_method = "FA987C843A295D96CEF52101E23D2822")
     @Override
     protected FilterResults performFiltering(CharSequence constraint) {
-        dsTaint.addTaint(constraint);
+        FilterResults varB4EAC82CA7396A68D541C85D26508E83_1052169241 = null; //Variable for return #1
         Cursor cursor;
         cursor = mClient.runQueryOnBackgroundThread(constraint);
         FilterResults results;
@@ -50,7 +51,10 @@ class CursorFilter extends Filter {
             results.count = 0;
             results.values = null;
         } //End block
-        return (FilterResults)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1052169241 = results;
+        addTaint(constraint.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1052169241.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1052169241;
         // ---------- Original Method ----------
         //Cursor cursor = mClient.runQueryOnBackgroundThread(constraint);
         //FilterResults results = new FilterResults();
@@ -65,17 +69,16 @@ class CursorFilter extends Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.408 -0400", hash_original_method = "9BA8484E000B7F5A5243E4175A8A6AA1", hash_generated_method = "1654AFE9137440CE8DCF9789108E6A7C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.766 -0400", hash_original_method = "9BA8484E000B7F5A5243E4175A8A6AA1", hash_generated_method = "E84B3616505445C57236F943F1B9FC43")
     @Override
     protected void publishResults(CharSequence constraint, FilterResults results) {
-        dsTaint.addTaint(results.dsTaint);
-        dsTaint.addTaint(constraint);
         Cursor oldCursor;
         oldCursor = mClient.getCursor();
         {
             mClient.changeCursor((Cursor) results.values);
         } //End block
+        addTaint(constraint.getTaint());
+        addTaint(results.getTaint());
         // ---------- Original Method ----------
         //Cursor oldCursor = mClient.getCursor();
         //if (results.values != null && results.values != oldCursor) {

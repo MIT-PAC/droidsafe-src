@@ -33,39 +33,83 @@ import libcore.io.Streams;
 import libcore.util.EmptyArray;
 
 public class HttpEngine {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.820 -0400", hash_original_field = "F4AF8B5789576C000CE9105B25609BD6", hash_generated_field = "10F140AB3529378738DBDEC5DAB46D42")
+
     protected HttpURLConnectionImpl policy;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.820 -0400", hash_original_field = "EA9F6ACA279138C58F705C8D4CB4B8CE", hash_generated_field = "7A7B3881B98B4FAF9D2BB4D0900875E7")
+
     protected String method;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.820 -0400", hash_original_field = "B3D99257499D27549F028C5AD75C86B0", hash_generated_field = "F290F176FDAB7CFB2CA524D383F761B2")
+
     private ResponseSource responseSource;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.820 -0400", hash_original_field = "4717D53EBFDFEA8477F780EC66151DCB", hash_generated_field = "75AB93228F6DCAE1755313947EC33E63")
+
     protected HttpConnection connection;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.820 -0400", hash_original_field = "69CDF51B14212ECA16FCCC826AB99D52", hash_generated_field = "933C36367DBB638C304659EC3CE47516")
+
     private InputStream socketIn;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "199B6833958A1195ADC95B67243D2F6F", hash_generated_field = "67AC7536EB45CC65D4356C94551DF297")
+
     private OutputStream socketOut;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "E4EF4FCDDB2EB2FC355EEED04D1696B4", hash_generated_field = "39983E65AC7A55E9EA11E4F742E77B1E")
+
     private OutputStream requestOut;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "53CE5C37EA7680F830110251466C44CD", hash_generated_field = "C2D66FBA681404DC7AF350EE623C0860")
+
     private AbstractHttpOutputStream requestBodyOut;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "D46EABEC025443DFEFD6A04BAC15947A", hash_generated_field = "3B099B70D4FFF6286391C7CE8061D62D")
+
     private InputStream responseBodyIn;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "54287229D483AC3CA3E8EB5C4A736F16", hash_generated_field = "98E3EA6F4499FE6EFA4630C0803ADF94")
+
     private ResponseCache responseCache = ResponseCache.getDefault();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "6453E8CAAF9350A66BD46394D5A6CE08", hash_generated_field = "AD49865A8688A75CE7F76CFDCE3EF6E0")
+
     private CacheResponse cacheResponse;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "58E157FA6A49A1EC60FEBC3530BD26A5", hash_generated_field = "B13716E9F9AD1E06D30597F387AAA548")
+
     private CacheRequest cacheRequest;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "D93E4E0D5913F802E2DBC0259518E915", hash_generated_field = "56E6E961645E2EBB7A5C3DD20FD9692C")
+
     private long sentRequestMillis = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "4816879B2302A4B54773D1E40854FDA6", hash_generated_field = "4EBB07D2648B3D849030D220C4A105C6")
+
     private boolean transparentGzip;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "0C4F4D11DD2B8C6B56EE801110ADB9B0", hash_generated_field = "28AC40F22099010DD7EC3C28A2701903")
+
     boolean sendChunked;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "07D1830D3A4E5B468E0D442D6C3FC9AA", hash_generated_field = "518FD222D66780F6300863A063540421")
+
     private int httpMinorVersion = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "9305B73D359BD06734FEE0B3638079E1", hash_generated_field = "DDFAECCF21F90F28142F5C866534A5C3")
+
     private URI uri;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "D2013170F9870890E8C8E9E0851CA83E", hash_generated_field = "080B467195B9452EC670BEC2B6B507A0")
+
     private RequestHeaders requestHeaders;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "E70F9E6634E2D14F02C4A4A366D3F40D", hash_generated_field = "88AD2D36D7618A24DA38DA33CE55CF56")
+
     private ResponseHeaders responseHeaders;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "5C96D0EB75A935F303BE7B89E1F4F8C8", hash_generated_field = "FFEE168D4CB4772A0F008367723F4DCB")
+
     private ResponseHeaders cachedResponseHeaders;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "70639960D7DCB2C7D1392C0333153519", hash_generated_field = "9AC6636989AABA65466C0761ABE1A1EE")
+
     private InputStream cachedResponseBody;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "5979C14BCFBBC58C6232B38F5526796E", hash_generated_field = "583B8E5019F7D6ABD319DE61C9CB145F")
+
     private boolean automaticallyReleaseConnectionToPool;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.821 -0400", hash_original_field = "C290CDC8785F6260FD3F82BED8FFC733", hash_generated_field = "0385A75ADFAFB5B890C6C920CD19DE25")
+
     private boolean connectionReleased;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.168 -0400", hash_original_method = "40A41D57A5E6AC75A04C66EEBA0108AA", hash_generated_method = "AF92FC028B32318505B813CB33759CC1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public HttpEngine(HttpURLConnectionImpl policy, String method, RawHeaders requestHeaders,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.835 -0400", hash_original_method = "40A41D57A5E6AC75A04C66EEBA0108AA", hash_generated_method = "14B9D2C934FFE29773C88AE0A9E6FEDE")
+    public  HttpEngine(HttpURLConnectionImpl policy, String method, RawHeaders requestHeaders,
             HttpConnection connection, RetryableOutputStream requestBodyOut) throws IOException {
-        dsTaint.addTaint(connection.dsTaint);
-        dsTaint.addTaint(requestHeaders.dsTaint);
-        dsTaint.addTaint(method);
-        dsTaint.addTaint(policy.dsTaint);
-        dsTaint.addTaint(requestBodyOut.dsTaint);
+        this.policy = policy;
+        this.method = method;
+        this.connection = connection;
+        this.requestBodyOut = requestBodyOut;
         try 
         {
             uri = policy.getURL().toURILenient();
@@ -89,8 +133,7 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.169 -0400", hash_original_method = "B90EC93300E2D6FABAAF6B3D0678EFB4", hash_generated_method = "6F211207B6D8EC4F169FD10867352839")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.837 -0400", hash_original_method = "B90EC93300E2D6FABAAF6B3D0678EFB4", hash_generated_method = "22DD08B6CC143BF30A4E96F4F5768FF9")
     public final void sendRequest() throws IOException {
         prepareRawRequestHeaders();
         initResponseSource();
@@ -98,7 +141,7 @@ public class HttpEngine {
             ((HttpResponseCache) responseCache).trackResponse(responseSource);
         } //End block
         {
-            boolean varFBE2A77EEB4D706301E2FE921CE84321_1281248496 = (requestHeaders.isOnlyIfCached() && responseSource.requiresConnection());
+            boolean varFBE2A77EEB4D706301E2FE921CE84321_236843663 = (requestHeaders.isOnlyIfCached() && responseSource.requiresConnection());
             {
                 {
                     IoUtils.closeQuietly(cachedResponseBody);
@@ -111,7 +154,7 @@ public class HttpEngine {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varBB6B3912BFA49F0FFE4473A1165959CB_147599947 = (responseSource.requiresConnection());
+            boolean varBB6B3912BFA49F0FFE4473A1165959CB_1007974182 = (responseSource.requiresConnection());
             {
                 sendSocketRequest();
             } //End block
@@ -125,12 +168,11 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.169 -0400", hash_original_method = "F2FA78DDC7B88A7A9FD4B961BDAA52C1", hash_generated_method = "20B1895B39356E4ADE7D5267467E7EFD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.845 -0400", hash_original_method = "F2FA78DDC7B88A7A9FD4B961BDAA52C1", hash_generated_method = "5EA37753F793DCE39B9C7789701ACE9A")
     private void initResponseSource() throws IOException {
         responseSource = ResponseSource.NETWORK;
         {
-            boolean varCF9C7755EC0347CCE315779743B81752_1040111413 = (!policy.getUseCaches() || responseCache == null);
+            boolean varCF9C7755EC0347CCE315779743B81752_2078080508 = (!policy.getUseCaches() || responseCache == null);
         } //End collapsed parenthetic
         CacheResponse candidate;
         candidate = responseCache.get(uri, method,
@@ -139,7 +181,7 @@ public class HttpEngine {
         responseHeadersMap = candidate.getHeaders();
         cachedResponseBody = candidate.getBody();
         {
-            boolean varF3C166F25D6AF03A45E6B9396B5E5848_404660367 = (!acceptCacheResponseType(candidate)
+            boolean varF3C166F25D6AF03A45E6B9396B5E5848_945143933 = (!acceptCacheResponseType(candidate)
                 || responseHeadersMap == null
                 || cachedResponseBody == null);
             {
@@ -170,8 +212,7 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.169 -0400", hash_original_method = "22FB1B3BCF67C2C3EB9ADF307D5A559C", hash_generated_method = "6D96E51830E7120E4F14D7580DC1FFD7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.851 -0400", hash_original_method = "22FB1B3BCF67C2C3EB9ADF307D5A559C", hash_generated_method = "8A549D2A0547595FF46380927984AA08")
     private void sendSocketRequest() throws IOException {
         {
             connect();
@@ -183,7 +224,7 @@ public class HttpEngine {
         requestOut = socketOut;
         socketIn = connection.getInputStream();
         {
-            boolean var1E309B5C7C83E5613B25B397F1F4B685_1168660321 = (hasRequestBody());
+            boolean var1E309B5C7C83E5613B25B397F1F4B685_68359271 = (hasRequestBody());
             {
                 initRequestBodyOut();
             } //End block
@@ -204,8 +245,7 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.170 -0400", hash_original_method = "2D119148BD5E3059D34FC5038B3E143C", hash_generated_method = "174956E94091229760C1A1BF47C286CB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.860 -0400", hash_original_method = "2D119148BD5E3059D34FC5038B3E143C", hash_generated_method = "174956E94091229760C1A1BF47C286CB")
     protected void connect() throws IOException {
         {
             connection = openSocketConnection();
@@ -217,9 +257,9 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.170 -0400", hash_original_method = "191E23F5B6629C7E64418EFD4A3F2A23", hash_generated_method = "F58B7CB47BDFC3F4E3F91165797A6D2F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.862 -0400", hash_original_method = "191E23F5B6629C7E64418EFD4A3F2A23", hash_generated_method = "F7632279C8D503EFBD82579843200E0B")
     protected final HttpConnection openSocketConnection() throws IOException {
+        HttpConnection varB4EAC82CA7396A68D541C85D26508E83_1911601273 = null; //Variable for return #1
         HttpConnection result;
         result = HttpConnection.connect(
                 uri, policy.getProxy(), requiresTunnel(), policy.getConnectTimeout());
@@ -229,7 +269,9 @@ public class HttpEngine {
             policy.setProxy(proxy);
         } //End block
         result.setSoTimeout(policy.getReadTimeout());
-        return (HttpConnection)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1911601273 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_1911601273.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1911601273;
         // ---------- Original Method ----------
         //HttpConnection result = HttpConnection.connect(
                 //uri, policy.getProxy(), requiresTunnel(), policy.getConnectTimeout());
@@ -242,13 +284,12 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.170 -0400", hash_original_method = "54D96F75BB859B6FCC0E9DF779F84B99", hash_generated_method = "0C41091E23206E44A7E33358A7F4EC9C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.863 -0400", hash_original_method = "54D96F75BB859B6FCC0E9DF779F84B99", hash_generated_method = "8F0E94F1E34A48EF7021A81FAC7A392D")
     protected void initRequestBodyOut() throws IOException {
         int chunkLength;
         chunkLength = policy.getChunkLength();
         {
-            boolean var282D0275BACDE3AD4651EABBE1047DEF_1645281493 = (chunkLength > 0 || requestHeaders.isChunked());
+            boolean var282D0275BACDE3AD4651EABBE1047DEF_1028813523 = (chunkLength > 0 || requestHeaders.isChunked());
             {
                 sendChunked = true;
                 {
@@ -273,7 +314,7 @@ public class HttpEngine {
             requestBodyOut = new ChunkedOutputStream(requestOut, chunkLength);
         } //End block
         {
-            boolean var0BC04E4137F90E46C21B3D3E7622D123_1602327004 = (requestHeaders.getContentLength() != -1);
+            boolean var0BC04E4137F90E46C21B3D3E7622D123_1800210225 = (requestHeaders.getContentLength() != -1);
             {
                 writeRequestHeaders(requestHeaders.getContentLength());
                 requestBodyOut = new RetryableOutputStream(requestHeaders.getContentLength());
@@ -287,18 +328,17 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.170 -0400", hash_original_method = "5E913F4CB8B308A1D4F5DA7B9ED80F77", hash_generated_method = "1431520ADFC36B7EBDECB6E67730E4AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.864 -0400", hash_original_method = "5E913F4CB8B308A1D4F5DA7B9ED80F77", hash_generated_method = "9E324034C21E859240EBF404BBD0C8E2")
     private void setResponse(ResponseHeaders headers, InputStream body) throws IOException {
-        dsTaint.addTaint(headers.dsTaint);
-        dsTaint.addTaint(body.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
         } //End block
+        this.responseHeaders = headers;
         this.httpMinorVersion = responseHeaders.getHeaders().getHttpMinorVersion();
         {
             initContentStream(body);
         } //End block
+        addTaint(body.getTaint());
         // ---------- Original Method ----------
         //if (this.responseBodyIn != null) {
             //throw new IllegalStateException();
@@ -311,22 +351,24 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.171 -0400", hash_original_method = "A2A25877F13CAB8F3B2570F0DD573D04", hash_generated_method = "61D3DFCD3BBEE3A2127E5D25BFBBF2B2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.876 -0400", hash_original_method = "A2A25877F13CAB8F3B2570F0DD573D04", hash_generated_method = "3E6D078D0F86BCF4C30473B7BFB45732")
     private boolean hasRequestBody() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_745785366 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_745785366;
         // ---------- Original Method ----------
         //return method == POST || method == PUT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.171 -0400", hash_original_method = "C7FD66AD45D049BA30B9133E737F62A7", hash_generated_method = "289A3515F2094FC32EF6BA42DC102CB8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.877 -0400", hash_original_method = "C7FD66AD45D049BA30B9133E737F62A7", hash_generated_method = "577CA85BB1E0A50781F6C5BED573838D")
     public final OutputStream getRequestBody() {
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_695489555 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
         } //End block
-        return (OutputStream)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_695489555 = requestBodyOut;
+        varB4EAC82CA7396A68D541C85D26508E83_695489555.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_695489555;
         // ---------- Original Method ----------
         //if (responseSource == null) {
             //throw new IllegalStateException();
@@ -335,31 +377,35 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.171 -0400", hash_original_method = "9AE95190B8E2C9C0E3A7C6677534EAD2", hash_generated_method = "9F28326FB361A13439D868D8447950F6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.880 -0400", hash_original_method = "9AE95190B8E2C9C0E3A7C6677534EAD2", hash_generated_method = "3E5997D7FAFB229A33EBD17B2F678D9F")
     public final boolean hasResponse() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_418162431 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_418162431;
         // ---------- Original Method ----------
         //return responseHeaders != null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.171 -0400", hash_original_method = "22C8454720634D9B77E5CFB8983F80A0", hash_generated_method = "688313DA03C20E2282CF3595B6667313")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.890 -0400", hash_original_method = "22C8454720634D9B77E5CFB8983F80A0", hash_generated_method = "F562658DF499FE7C88FDA1E1C307E872")
     public final RequestHeaders getRequestHeaders() {
-        return (RequestHeaders)dsTaint.getTaint();
+        RequestHeaders varB4EAC82CA7396A68D541C85D26508E83_1512507067 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1512507067 = requestHeaders;
+        varB4EAC82CA7396A68D541C85D26508E83_1512507067.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1512507067;
         // ---------- Original Method ----------
         //return requestHeaders;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.171 -0400", hash_original_method = "4093002B56979B81D9123217E2215EFB", hash_generated_method = "A36D03703078452A936EED6EE25715A7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.897 -0400", hash_original_method = "4093002B56979B81D9123217E2215EFB", hash_generated_method = "80EFC0310E570D7B8C34FC54DC8BF081")
     public final ResponseHeaders getResponseHeaders() {
+        ResponseHeaders varB4EAC82CA7396A68D541C85D26508E83_2061861066 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
         } //End block
-        return (ResponseHeaders)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2061861066 = responseHeaders;
+        varB4EAC82CA7396A68D541C85D26508E83_2061861066.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2061861066;
         // ---------- Original Method ----------
         //if (responseHeaders == null) {
             //throw new IllegalStateException();
@@ -368,14 +414,14 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.171 -0400", hash_original_method = "6C8D632B120ECD201D125D0086576F82", hash_generated_method = "3A45A824CEBF530918DCBD6E680BFB58")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.898 -0400", hash_original_method = "6C8D632B120ECD201D125D0086576F82", hash_generated_method = "BEA02421B8E8C71AD3F2C112A9224D4A")
     public final int getResponseCode() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
         } //End block
-        int var2629811C8400B32F9159279AF605E2F7_1655441168 = (responseHeaders.getHeaders().getResponseCode());
-        return dsTaint.getTaintInt();
+        int var2629811C8400B32F9159279AF605E2F7_2014576423 = (responseHeaders.getHeaders().getResponseCode());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2137325999 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2137325999;
         // ---------- Original Method ----------
         //if (responseHeaders == null) {
             //throw new IllegalStateException();
@@ -384,13 +430,15 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.172 -0400", hash_original_method = "FBE346C8B51CB8E76028C21E64D6BD0A", hash_generated_method = "7E9C22B5B712BAA9F2E8F33ABF9DAB2F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.898 -0400", hash_original_method = "FBE346C8B51CB8E76028C21E64D6BD0A", hash_generated_method = "459096E70C2B592AF956FF24AEC4D5AB")
     public final InputStream getResponseBody() {
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1261907550 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
         } //End block
-        return (InputStream)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1261907550 = responseBodyIn;
+        varB4EAC82CA7396A68D541C85D26508E83_1261907550.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1261907550;
         // ---------- Original Method ----------
         //if (responseHeaders == null) {
             //throw new IllegalStateException();
@@ -399,13 +447,15 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.172 -0400", hash_original_method = "2250F4C87B4A22443F60D9654505E9D2", hash_generated_method = "FACA0B391FE119290948F653AC3A4CA3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.899 -0400", hash_original_method = "2250F4C87B4A22443F60D9654505E9D2", hash_generated_method = "7A6B214ED9F28AC74378F073E2E888A4")
     public final CacheResponse getCacheResponse() {
+        CacheResponse varB4EAC82CA7396A68D541C85D26508E83_649229289 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
         } //End block
-        return (CacheResponse)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_649229289 = cacheResponse;
+        varB4EAC82CA7396A68D541C85D26508E83_649229289.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_649229289;
         // ---------- Original Method ----------
         //if (responseHeaders == null) {
             //throw new IllegalStateException();
@@ -414,33 +464,34 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.172 -0400", hash_original_method = "9105CAFA0117096F163A50885E7429CB", hash_generated_method = "F7ACFEF58AEFD73E5822258258418CB0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.899 -0400", hash_original_method = "9105CAFA0117096F163A50885E7429CB", hash_generated_method = "B595F8C80CFC0CF10B8C580579008C68")
     public final HttpConnection getConnection() {
-        return (HttpConnection)dsTaint.getTaint();
+        HttpConnection varB4EAC82CA7396A68D541C85D26508E83_1086530890 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1086530890 = connection;
+        varB4EAC82CA7396A68D541C85D26508E83_1086530890.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1086530890;
         // ---------- Original Method ----------
         //return connection;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.172 -0400", hash_original_method = "A7591895A9BC485B929D9D45A1C9BC76", hash_generated_method = "1ADA4C6213B37DF2E4F576E2CD999923")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.922 -0400", hash_original_method = "A7591895A9BC485B929D9D45A1C9BC76", hash_generated_method = "7F9646703E3970D396376E6F53158CE8")
     protected boolean acceptCacheResponseType(CacheResponse cacheResponse) {
-        dsTaint.addTaint(cacheResponse.dsTaint);
-        return dsTaint.getTaintBoolean();
+        addTaint(cacheResponse.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_682222443 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_682222443;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.172 -0400", hash_original_method = "E0679987436CD4859195D8429BAB78FF", hash_generated_method = "02E244DDBBCD14DC91A16B42A63BE324")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.923 -0400", hash_original_method = "E0679987436CD4859195D8429BAB78FF", hash_generated_method = "143D4EC49F663226EC98C28A059F7560")
     private void maybeCache() throws IOException {
         {
-            boolean varCF9C7755EC0347CCE315779743B81752_2042423135 = (!policy.getUseCaches() || responseCache == null);
+            boolean varCF9C7755EC0347CCE315779743B81752_218592734 = (!policy.getUseCaches() || responseCache == null);
         } //End collapsed parenthetic
         {
-            boolean varCF80C2CFACFAD16BF0AB9ECDD125AC65_1302205346 = (!responseHeaders.isCacheable(requestHeaders));
+            boolean varCF80C2CFACFAD16BF0AB9ECDD125AC65_1481591663 = (!responseHeaders.isCacheable(requestHeaders));
         } //End collapsed parenthetic
         cacheRequest = responseCache.put(uri, getHttpConnectionToCache());
         // ---------- Original Method ----------
@@ -454,17 +505,18 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.172 -0400", hash_original_method = "CA4844B1B3E4576C0EA18E04D34BB6CE", hash_generated_method = "C631157B5A75C917EF7325DA172514F6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.924 -0400", hash_original_method = "CA4844B1B3E4576C0EA18E04D34BB6CE", hash_generated_method = "36F0F0AD88F9B171D82BD2A11F8BEC84")
     protected HttpURLConnection getHttpConnectionToCache() {
-        return (HttpURLConnection)dsTaint.getTaint();
+        HttpURLConnection varB4EAC82CA7396A68D541C85D26508E83_1946392707 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1946392707 = policy;
+        varB4EAC82CA7396A68D541C85D26508E83_1946392707.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1946392707;
         // ---------- Original Method ----------
         //return policy;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.173 -0400", hash_original_method = "5482932EB1112689442580A552BBCA6A", hash_generated_method = "8191FA30785F3E7B288A408F3AEC1135")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.924 -0400", hash_original_method = "5482932EB1112689442580A552BBCA6A", hash_generated_method = "8191FA30785F3E7B288A408F3AEC1135")
     public final void automaticallyReleaseConnectionToPool() {
         automaticallyReleaseConnectionToPool = true;
         {
@@ -480,10 +532,8 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.173 -0400", hash_original_method = "648343BC3C2ABC6FA7BF932A2F48012C", hash_generated_method = "2A97017CB9FE6C60429DEC2183682F4D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.930 -0400", hash_original_method = "648343BC3C2ABC6FA7BF932A2F48012C", hash_generated_method = "D7AD0A8CBF040F17E03928FFBFBCC192")
     public final void release(boolean reusable) {
-        dsTaint.addTaint(reusable);
         {
             IoUtils.closeQuietly(responseBodyIn);
         } //End block
@@ -493,7 +543,7 @@ public class HttpEngine {
                 reusable = false;
             } //End block
             {
-                boolean varD474EBB65768A4B4B9F0FA0189BD2051_572641652 = (hasConnectionCloseHeader());
+                boolean varD474EBB65768A4B4B9F0FA0189BD2051_473907262 = (hasConnectionCloseHeader());
                 {
                     reusable = false;
                 } //End block
@@ -520,20 +570,22 @@ public class HttpEngine {
                 connection = null;
             } //End block
         } //End block
+        addTaint(reusable);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.173 -0400", hash_original_method = "EC59FCFED738418E26EF637931185263", hash_generated_method = "2FBB5850694862BE5E1CE0DA801A43E9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.931 -0400", hash_original_method = "EC59FCFED738418E26EF637931185263", hash_generated_method = "DC5C3DFEB0BF1D0786CB5A8F2DC2F804")
     private void initContentStream(InputStream transferStream) throws IOException {
-        dsTaint.addTaint(transferStream.dsTaint);
         {
-            boolean var10B7C508D1ED1B70DBB8B231FF168A18_960415130 = (transparentGzip && responseHeaders.isContentEncodingGzip());
+            boolean var10B7C508D1ED1B70DBB8B231FF168A18_363069245 = (transparentGzip && responseHeaders.isContentEncodingGzip());
             {
                 responseHeaders.stripContentEncoding();
                 responseBodyIn = new GZIPInputStream(transferStream);
+            } //End block
+            {
+                responseBodyIn = transferStream;
             } //End block
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -546,30 +598,49 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.174 -0400", hash_original_method = "1AB921196A345CEE857EE600A5FD99DD", hash_generated_method = "3FF4C15EB49B67B427FB9AB531641791")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.944 -0400", hash_original_method = "1AB921196A345CEE857EE600A5FD99DD", hash_generated_method = "865E5D1F3D7716497981E05245E3A0B3")
     private InputStream getTransferStream() throws IOException {
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_2120579850 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1176343183 = null; //Variable for return #2
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_795489767 = null; //Variable for return #3
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1764323415 = null; //Variable for return #4
         {
-            boolean var222131CC331E330F9818A633D062A21E_755040900 = (!hasResponseBody());
+            boolean var222131CC331E330F9818A633D062A21E_514360075 = (!hasResponseBody());
             {
-                InputStream var78CAF3468D4EB95B5C8E1E392FA30308_1921412064 = (new FixedLengthInputStream(socketIn, cacheRequest, this, 0));
+                varB4EAC82CA7396A68D541C85D26508E83_2120579850 = new FixedLengthInputStream(socketIn, cacheRequest, this, 0);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varCD2BBE67147BEB5C75571A22581AC678_1905508527 = (responseHeaders.isChunked());
+            boolean varCD2BBE67147BEB5C75571A22581AC678_1844032103 = (responseHeaders.isChunked());
             {
-                InputStream var3316EF1B3F03A8C8164F6C78F33DF1EB_661581425 = (new ChunkedInputStream(socketIn, cacheRequest, this));
+                varB4EAC82CA7396A68D541C85D26508E83_1176343183 = new ChunkedInputStream(socketIn, cacheRequest, this);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var27B191FB2EEF5BA2EB481257DC1DE119_1979362668 = (responseHeaders.getContentLength() != -1);
+            boolean var27B191FB2EEF5BA2EB481257DC1DE119_1918965828 = (responseHeaders.getContentLength() != -1);
             {
-                InputStream varAC2575CA79A9ED24D4619A25ACB261CD_1248745022 = (new FixedLengthInputStream(socketIn, cacheRequest, this,
-                    responseHeaders.getContentLength()));
+                varB4EAC82CA7396A68D541C85D26508E83_795489767 = new FixedLengthInputStream(socketIn, cacheRequest, this,
+                    responseHeaders.getContentLength());
             } //End block
         } //End collapsed parenthetic
-        InputStream var315F76FC8EC5F301C929D8A373DD9202_140835734 = (new UnknownLengthHttpInputStream(socketIn, cacheRequest, this));
-        return (InputStream)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1764323415 = new UnknownLengthHttpInputStream(socketIn, cacheRequest, this);
+        InputStream varA7E53CE21691AB073D9660D615818899_2032962864; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_2032962864 = varB4EAC82CA7396A68D541C85D26508E83_2120579850;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_2032962864 = varB4EAC82CA7396A68D541C85D26508E83_1176343183;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_2032962864 = varB4EAC82CA7396A68D541C85D26508E83_795489767;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_2032962864 = varB4EAC82CA7396A68D541C85D26508E83_1764323415;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_2032962864.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2032962864;
         // ---------- Original Method ----------
         //if (!hasResponseBody()) {
             //return new FixedLengthInputStream(socketIn, cacheRequest, this, 0);
@@ -585,8 +656,7 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.174 -0400", hash_original_method = "E5EB74DB686CEF76B63FEE327FA34FC3", hash_generated_method = "1120043CCE25AD5A5D4925DD8E6BE3D6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.945 -0400", hash_original_method = "E5EB74DB686CEF76B63FEE327FA34FC3", hash_generated_method = "147AB7E5DD729A112027EAA0BD73124A")
     private void readResponseHeaders() throws IOException {
         RawHeaders headers;
         {
@@ -595,7 +665,7 @@ public class HttpEngine {
             readHeaders(headers);
         } //End block
         {
-            boolean var61D8834F94DDCE7B9BEA9340DAA8CA93_1943125086 = (headers.getResponseCode() == HTTP_CONTINUE);
+            boolean var61D8834F94DDCE7B9BEA9340DAA8CA93_915611500 = (headers.getResponseCode() == HTTP_CONTINUE);
         } //End collapsed parenthetic
         setResponse(new ResponseHeaders(uri, headers), null);
         // ---------- Original Method ----------
@@ -609,15 +679,15 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.174 -0400", hash_original_method = "C50EFF03D3756AF141D5513AF20FE391", hash_generated_method = "E3726A02E6209F08FD4D998FB34F3F78")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.961 -0400", hash_original_method = "C50EFF03D3756AF141D5513AF20FE391", hash_generated_method = "5AED801EB92C51A7933C5B23D6167D58")
     public final boolean hasResponseBody() {
         int responseCode;
         responseCode = responseHeaders.getHeaders().getResponseCode();
         {
-            boolean var59F09BC6BA7895465F5EFC6A4E22007A_2102658496 = (responseHeaders.getContentLength() != -1 || responseHeaders.isChunked());
+            boolean var59F09BC6BA7895465F5EFC6A4E22007A_219263442 = (responseHeaders.getContentLength() != -1 || responseHeaders.isChunked());
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_95199945 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_95199945;
         // ---------- Original Method ----------
         //int responseCode = responseHeaders.getHeaders().getResponseCode();
         //if (method != HEAD
@@ -634,8 +704,7 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.174 -0400", hash_original_method = "017F163869C61C64FB5708C2B3013CCB", hash_generated_method = "F672A3A361C8D11DFA099C224F5A5D25")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.962 -0400", hash_original_method = "017F163869C61C64FB5708C2B3013CCB", hash_generated_method = "F672A3A361C8D11DFA099C224F5A5D25")
     final void readTrailers() throws IOException {
         readHeaders(responseHeaders.getHeaders());
         // ---------- Original Method ----------
@@ -643,13 +712,11 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.175 -0400", hash_original_method = "814E7EB33C3A4672039AF7BE1F530F36", hash_generated_method = "AE5CAA6CB4B873C8EC2FBB6A89EBB7FB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.962 -0400", hash_original_method = "814E7EB33C3A4672039AF7BE1F530F36", hash_generated_method = "591ADDD81E4581B6B5C64B50BDF23682")
     private void readHeaders(RawHeaders headers) throws IOException {
-        dsTaint.addTaint(headers.dsTaint);
         String line;
         {
-            boolean var5764D7F705BA70AC3824F177622814D6_1294519950 = (!(line = Streams.readAsciiLine(socketIn)).isEmpty());
+            boolean var5764D7F705BA70AC3824F177622814D6_765469138 = (!(line = Streams.readAsciiLine(socketIn)).isEmpty());
             {
                 headers.addLine(line);
             } //End block
@@ -659,6 +726,7 @@ public class HttpEngine {
         {
             cookieHandler.put(uri, headers.toMultimap());
         } //End block
+        addTaint(headers.getTaint());
         // ---------- Original Method ----------
         //String line;
         //while (!(line = Streams.readAsciiLine(socketIn)).isEmpty()) {
@@ -671,10 +739,8 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.175 -0400", hash_original_method = "6D117EBD96F306FC6CE6929186DDBA19", hash_generated_method = "213CA50976652C059DE5CAE7E3BC84D5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.963 -0400", hash_original_method = "6D117EBD96F306FC6CE6929186DDBA19", hash_generated_method = "9390B64F5737740E676C9DC91DAC37A6")
     private void writeRequestHeaders(int contentLength) throws IOException {
-        dsTaint.addTaint(contentLength);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
         } //End block
@@ -701,9 +767,9 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.175 -0400", hash_original_method = "E663539B4C2FF814BF16D6A04E975935", hash_generated_method = "7128DC83FE11765DA341119F03C072EE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.963 -0400", hash_original_method = "E663539B4C2FF814BF16D6A04E975935", hash_generated_method = "0C1A3A8D3754BC38DAFB59219AD9CF42")
     protected RawHeaders getNetworkRequestHeaders() throws IOException {
+        RawHeaders varB4EAC82CA7396A68D541C85D26508E83_30561812 = null; //Variable for return #1
         requestHeaders.getHeaders().setStatusLine(getRequestLine());
         int fixedContentLength;
         fixedContentLength = policy.getFixedContentLength();
@@ -718,8 +784,9 @@ public class HttpEngine {
             contentLength = ((RetryableOutputStream) requestBodyOut).contentLength();
             requestHeaders.setContentLength(contentLength);
         } //End block
-        RawHeaders varED8B32E34282D869EB6A06F9628571EA_1735776684 = (requestHeaders.getHeaders());
-        return (RawHeaders)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_30561812 = requestHeaders.getHeaders();
+        varB4EAC82CA7396A68D541C85D26508E83_30561812.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_30561812;
         // ---------- Original Method ----------
         //requestHeaders.getHeaders().setStatusLine(getRequestLine());
         //int fixedContentLength = policy.getFixedContentLength();
@@ -735,37 +802,36 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.176 -0400", hash_original_method = "9965AB400B31D225B507F0BE101C0DB2", hash_generated_method = "EA6BEF544D1C504B967B005DBC1D756C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.969 -0400", hash_original_method = "9965AB400B31D225B507F0BE101C0DB2", hash_generated_method = "4A4909639449A62913FFF2CAB5FE6B06")
     private void prepareRawRequestHeaders() throws IOException {
         requestHeaders.getHeaders().setStatusLine(getRequestLine());
         {
-            boolean var75B557150EA37168C28CB4A9730262F2_391148433 = (requestHeaders.getUserAgent() == null);
+            boolean var75B557150EA37168C28CB4A9730262F2_550385390 = (requestHeaders.getUserAgent() == null);
             {
                 requestHeaders.setUserAgent(getDefaultUserAgent());
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var9A46A7B18C684B3219ECA2964BB9FEE9_1259242489 = (requestHeaders.getHost() == null);
+            boolean var9A46A7B18C684B3219ECA2964BB9FEE9_1625324772 = (requestHeaders.getHost() == null);
             {
                 requestHeaders.setHost(getOriginAddress(policy.getURL()));
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varFF80AC1E5EB2B33915C57816332F2C2C_699542342 = (httpMinorVersion > 0 && requestHeaders.getConnection() == null);
+            boolean varFF80AC1E5EB2B33915C57816332F2C2C_712985243 = (httpMinorVersion > 0 && requestHeaders.getConnection() == null);
             {
                 requestHeaders.setConnection("Keep-Alive");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var936092B0BC6CD864A641D62AF63A0F52_1749816854 = (requestHeaders.getAcceptEncoding() == null);
+            boolean var936092B0BC6CD864A641D62AF63A0F52_2010100820 = (requestHeaders.getAcceptEncoding() == null);
             {
                 transparentGzip = true;
                 requestHeaders.setAcceptEncoding("gzip");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var8F2B459197C3E9895D68A20592341CBB_1468503586 = (hasRequestBody() && requestHeaders.getContentType() == null);
+            boolean var8F2B459197C3E9895D68A20592341CBB_2112855604 = (hasRequestBody() && requestHeaders.getContentType() == null);
             {
                 requestHeaders.setContentType("application/x-www-form-urlencoded");
             } //End block
@@ -786,29 +852,31 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.176 -0400", hash_original_method = "6DB81453AD78E43D72799E90FBF820CD", hash_generated_method = "F6F57C87D270FEADCC7DFDBFFD711837")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.988 -0400", hash_original_method = "6DB81453AD78E43D72799E90FBF820CD", hash_generated_method = "5BEF82A51A65A5EE1210DD297C3034F6")
     private String getRequestLine() {
+        String varB4EAC82CA7396A68D541C85D26508E83_358755013 = null; //Variable for return #1
         String protocol;
         protocol = "HTTP/1.0";
         protocol = "HTTP/1.1";
-        String var37EAD76C11912D1F7A2790DA1ECEA209_1345777702 = (method + " " + requestString() + " " + protocol);
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_358755013 = method + " " + requestString() + " " + protocol;
+        varB4EAC82CA7396A68D541C85D26508E83_358755013.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_358755013;
         // ---------- Original Method ----------
         //String protocol = (httpMinorVersion == 0) ? "HTTP/1.0" : "HTTP/1.1";
         //return method + " " + requestString() + " " + protocol;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.176 -0400", hash_original_method = "579F0C1DEDB2C71B061424762EDA3D6F", hash_generated_method = "4E47CF46A9618CDDF273A58719DD4D95")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.989 -0400", hash_original_method = "579F0C1DEDB2C71B061424762EDA3D6F", hash_generated_method = "5DB62F0847A4A6BCFB525855A3E132B1")
     private String requestString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1826559305 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1644891244 = null; //Variable for return #2
         URL url;
         url = policy.getURL();
         {
-            boolean var77817063686EB8BBF3B76684926C979F_386346190 = (includeAuthorityInRequestLine());
+            boolean var77817063686EB8BBF3B76684926C979F_1739411793 = (includeAuthorityInRequestLine());
             {
-                String var796FFBDBB0D389BF6F6A355E1846EFEC_384458148 = (url.toString());
+                varB4EAC82CA7396A68D541C85D26508E83_1826559305 = url.toString();
             } //End block
             {
                 String fileOnly;
@@ -817,14 +885,25 @@ public class HttpEngine {
                     fileOnly = "/";
                 } //End block
                 {
-                    boolean var496B9AC6AE68C834F2257095ECFB439C_1172883421 = (!fileOnly.startsWith("/"));
+                    boolean var496B9AC6AE68C834F2257095ECFB439C_905922963 = (!fileOnly.startsWith("/"));
                     {
                         fileOnly = "/" + fileOnly;
                     } //End block
                 } //End collapsed parenthetic
+                varB4EAC82CA7396A68D541C85D26508E83_1644891244 = fileOnly;
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        String varA7E53CE21691AB073D9660D615818899_614688105; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_614688105 = varB4EAC82CA7396A68D541C85D26508E83_1826559305;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_614688105 = varB4EAC82CA7396A68D541C85D26508E83_1644891244;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_614688105.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_614688105;
         // ---------- Original Method ----------
         //URL url = policy.getURL();
         //if (includeAuthorityInRequestLine()) {
@@ -841,58 +920,59 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.176 -0400", hash_original_method = "A86C65F03AA643F0D379154D6D12D2B7", hash_generated_method = "EF79E252703190BB734D94EDEBFE9322")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.989 -0400", hash_original_method = "A86C65F03AA643F0D379154D6D12D2B7", hash_generated_method = "ECABCD0865C97AE6D94E219705F4D4CF")
     protected boolean includeAuthorityInRequestLine() {
-        boolean var19169BA9F9D3DE0B973D11E6A9633BBA_2124587285 = (policy.usingProxy());
-        return dsTaint.getTaintBoolean();
+        boolean var19169BA9F9D3DE0B973D11E6A9633BBA_75139762 = (policy.usingProxy());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_79860316 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_79860316;
         // ---------- Original Method ----------
         //return policy.usingProxy();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.208 -0400", hash_original_method = "B0560F32D5938C3FB1E508A1DA2A4958", hash_generated_method = "992C808903B0CBF7F290D4C6FE16DEC4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.990 -0400", hash_original_method = "B0560F32D5938C3FB1E508A1DA2A4958", hash_generated_method = "2D87381E2535A0F41612F8A17832509D")
     protected final String getDefaultUserAgent() {
+        String varB4EAC82CA7396A68D541C85D26508E83_79127830 = null; //Variable for return #1
         String agent;
         agent = System.getProperty("http.agent");
-        {
-            Object varC7AFBCB24737DF8974814C0C649E26A5_1726690435 = (("Java" + System.getProperty("java.version")));
-        } //End flattened ternary
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_79127830 = agent != null ? agent : ("Java" + System.getProperty("java.version"));
+        varB4EAC82CA7396A68D541C85D26508E83_79127830.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_79127830;
         // ---------- Original Method ----------
         //String agent = System.getProperty("http.agent");
         //return agent != null ? agent : ("Java" + System.getProperty("java.version"));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.208 -0400", hash_original_method = "0A452E6BAC82BB82543FC0DC64DC1250", hash_generated_method = "B78AAFDA0F8F0B3F209D160AC76BFAAC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.994 -0400", hash_original_method = "0A452E6BAC82BB82543FC0DC64DC1250", hash_generated_method = "0DAE69775D2F36046D97CFF41A1FB302")
     private boolean hasConnectionCloseHeader() {
-        boolean var69DD3B4AFE294E58876FCBB469D2F6A7_14289471 = ((responseHeaders != null && responseHeaders.hasConnectionClose())
+        boolean var69DD3B4AFE294E58876FCBB469D2F6A7_1573471315 = ((responseHeaders != null && responseHeaders.hasConnectionClose())
                 || requestHeaders.hasConnectionClose());
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1666485508 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1666485508;
         // ---------- Original Method ----------
         //return (responseHeaders != null && responseHeaders.hasConnectionClose())
                 //|| requestHeaders.hasConnectionClose();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.208 -0400", hash_original_method = "71D2D2A43E6B9B2FCF0835DDEF471DCE", hash_generated_method = "5AE78750C9D2DB6076EB682095AA5590")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.995 -0400", hash_original_method = "71D2D2A43E6B9B2FCF0835DDEF471DCE", hash_generated_method = "95D686D517B742CD6588B9ED3FB48C3E")
     protected final String getOriginAddress(URL url) {
-        dsTaint.addTaint(url.dsTaint);
+        String varB4EAC82CA7396A68D541C85D26508E83_684711213 = null; //Variable for return #1
         int port;
         port = url.getPort();
         String result;
         result = url.getHost();
         {
-            boolean varB9D32AA0ECABB77CA151A9D1AAA54613_611195598 = (port > 0 && port != policy.getDefaultPort());
+            boolean varB9D32AA0ECABB77CA151A9D1AAA54613_2102383177 = (port > 0 && port != policy.getDefaultPort());
             {
                 result = result + ":" + port;
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_684711213 = result;
+        addTaint(url.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_684711213.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_684711213;
         // ---------- Original Method ----------
         //int port = url.getPort();
         //String result = url.getHost();
@@ -903,26 +983,25 @@ public class HttpEngine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.208 -0400", hash_original_method = "E79001B5362EC94E0060C3FC14A22DCF", hash_generated_method = "99FD5A3B7DC4C5F7655FDDA7E661BD8D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.995 -0400", hash_original_method = "E79001B5362EC94E0060C3FC14A22DCF", hash_generated_method = "D9BF6522037883BBD499BE22C12ABD3C")
     protected boolean requiresTunnel() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1499778171 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1499778171;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.209 -0400", hash_original_method = "1EEDE20F378BB56816783AF0AAE8D8C5", hash_generated_method = "95D61B2B8F262AA6689ACDC75EAE857B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.000 -0400", hash_original_method = "1EEDE20F378BB56816783AF0AAE8D8C5", hash_generated_method = "C2D6F6412F5FC1215F78169C69E5F528")
     public final void readResponse() throws IOException {
         {
-            boolean varDF0268D132F74D014F3F570E15869B14_132023604 = (hasResponse());
+            boolean varDF0268D132F74D014F3F570E15869B14_1172749255 = (hasResponse());
         } //End collapsed parenthetic
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("readResponse() without sendRequest()");
         } //End block
         {
-            boolean var0D46027BF2368CE745271684E7C45B4D_289498807 = (!responseSource.requiresConnection());
+            boolean var0D46027BF2368CE745271684E7C45B4D_2011481348 = (!responseSource.requiresConnection());
         } //End collapsed parenthetic
         {
             int contentLength;
@@ -942,7 +1021,7 @@ public class HttpEngine {
         responseHeaders.setLocalTimestamps(sentRequestMillis, System.currentTimeMillis());
         {
             {
-                boolean varDFDD7081C0807C56635421D271187FE6_406206553 = (cachedResponseHeaders.validate(responseHeaders));
+                boolean varDFDD7081C0807C56635421D271187FE6_1968793261 = (cachedResponseHeaders.validate(responseHeaders));
                 {
                     {
                         ((HttpResponseCache) responseCache).trackConditionalCacheHit();
@@ -956,7 +1035,7 @@ public class HttpEngine {
             } //End collapsed parenthetic
         } //End block
         {
-            boolean varB52E59AE5848B0CFF2208EFF6ABF11C4_1438850996 = (hasResponseBody());
+            boolean varB52E59AE5848B0CFF2208EFF6ABF11C4_281714412 = (hasResponseBody());
             {
                 maybeCache();
             } //End block
@@ -967,15 +1046,19 @@ public class HttpEngine {
     }
 
     
-    private static final CacheResponse BAD_GATEWAY_RESPONSE = new CacheResponse() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.209 -0400", hash_original_method = "298484AFDF3A781562203CC307227E59", hash_generated_method = "1383CDB25EE564076E3C108200E01D9C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.085 -0400", hash_original_field = "60701D148EA544EC619E42C145DBE5D2", hash_generated_field = "EDA408EC1F8D2264AC53B22E04BC7BA8")
+
+    private static CacheResponse BAD_GATEWAY_RESPONSE = new CacheResponse() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.001 -0400", hash_original_method = "298484AFDF3A781562203CC307227E59", hash_generated_method = "29401F979B6A0FCC7A10DDEBEF683502")
         @Override
         public Map<String, List<String>> getHeaders() throws IOException {
+            Map<String, List<String>> varB4EAC82CA7396A68D541C85D26508E83_986800846 = null; //Variable for return #1
             Map<String, List<String>> result;
             result = new HashMap<String, List<String>>();
             result.put(null, Collections.singletonList("HTTP/1.1 502 Bad Gateway"));
-            return (Map<String, List<String>>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_986800846 = result;
+            varB4EAC82CA7396A68D541C85D26508E83_986800846.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_986800846;
             // ---------- Original Method ----------
             //Map<String, List<String>> result = new HashMap<String, List<String>>();
             //result.put(null, Collections.singletonList("HTTP/1.1 502 Bad Gateway"));
@@ -983,29 +1066,54 @@ public class HttpEngine {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.209 -0400", hash_original_method = "2EDDCBB89487588B780135D7543EF20D", hash_generated_method = "C000B35F5383D79B9546E59954C951B7")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.085 -0400", hash_original_method = "2EDDCBB89487588B780135D7543EF20D", hash_generated_method = "332D67750FB8F87D61F3487DA2C8A7D5")
         @Override
         public InputStream getBody() throws IOException {
-            InputStream varFBA2895C06FE3394F4387F911173F0A6_261907029 = (new ByteArrayInputStream(EmptyArray.BYTE));
-            return (InputStream)dsTaint.getTaint();
+            InputStream varB4EAC82CA7396A68D541C85D26508E83_2046345720 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_2046345720 = new ByteArrayInputStream(EmptyArray.BYTE);
+            varB4EAC82CA7396A68D541C85D26508E83_2046345720.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2046345720;
             // ---------- Original Method ----------
             //return new ByteArrayInputStream(EmptyArray.BYTE);
         }
 
         
-}; //Transformed anonymous class
-    private static final int MAX_REQUEST_BUFFER_LENGTH = 32768;
+};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.086 -0400", hash_original_field = "C4FBD0DC576130A8CE5C84CD8120C301", hash_generated_field = "27B044FF45C2FFFFFD09B48CAB2F766C")
+
+    private static int MAX_REQUEST_BUFFER_LENGTH = 32768;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.086 -0400", hash_original_field = "0F6E221759F88F702CA321737E37EE2B", hash_generated_field = "526B3DFF23C5F0AAA59C478051D61F5E")
+
     public static final int DEFAULT_CHUNK_LENGTH = 1024;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.086 -0400", hash_original_field = "A9C3E01E9DC38700D201ECEB5C3B7EB0", hash_generated_field = "24A290CCF11DC3C02C7E5FA56409A521")
+
     public static final String OPTIONS = "OPTIONS";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.086 -0400", hash_original_field = "2DEC4577BDE1A481702BFAD8DD379E31", hash_generated_field = "C8F8EB1723A4F1459E76ECA7A1B4FFEB")
+
     public static final String GET = "GET";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.086 -0400", hash_original_field = "0EB023115E6339B995AD6B7D689A9F93", hash_generated_field = "9D4D54DDE764894645FC52FC91277E50")
+
     public static final String HEAD = "HEAD";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.086 -0400", hash_original_field = "2E41B8A44613DFC2DC7D9ABDD9A54F71", hash_generated_field = "E1CC0B0C363C6ED3911B7D42106C6309")
+
     public static final String POST = "POST";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.086 -0400", hash_original_field = "36CA0BF57B18F565791F4CC64085CB13", hash_generated_field = "0C7FB5010BE834F9DA1BFD4988D58338")
+
     public static final String PUT = "PUT";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.086 -0400", hash_original_field = "193E03171E9BC50666674B4CA37F5468", hash_generated_field = "1B51986BA354384092C9D21D57469B62")
+
     public static final String DELETE = "DELETE";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.086 -0400", hash_original_field = "572ABF572D6328607FDF99B6029F366B", hash_generated_field = "0B4C0DE7A5C62D773DAD965884CD9ABC")
+
     public static final String TRACE = "TRACE";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.086 -0400", hash_original_field = "E35ADA7E7F709AFF425FE40F47A697E8", hash_generated_field = "6A7F1D2ACB0C8D38F6BE4D6916E1666A")
+
     public static final String CONNECT = "CONNECT";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.086 -0400", hash_original_field = "FE1B4FE715B9F02FFE1E6B9B4788F1B7", hash_generated_field = "8107271903E3CAA2DAF157178E86D883")
+
     public static final int HTTP_CONTINUE = 100;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.086 -0400", hash_original_field = "CCE4730ADCD6D37765227D59B7F1A593", hash_generated_field = "B2E878E710839ED7576796ECBCA1C49C")
+
     public static final int MAX_REDIRECTS = 5;
 }
 

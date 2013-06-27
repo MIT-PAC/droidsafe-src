@@ -14,20 +14,26 @@ import libcore.io.Streams;
 import libcore.util.EmptyArray;
 
 public class ClientHello extends Message {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.729 -0400", hash_original_field = "AD8EBE9263231F4547FD53D5849AC965", hash_generated_field = "87AFE8194BC492AFC7167BB3A54122B9")
+
     byte[] client_version;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.729 -0400", hash_original_field = "207D91A53A99C0890FBC2F7C6872CC3D", hash_generated_field = "99091ADCC73FE81C2F7FCEF8EA8CC707")
+
     byte[] random = new byte[32];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.729 -0400", hash_original_field = "7FC8EF54A8154C28341BF9A47443A5CE", hash_generated_field = "464E487327E8A3D68CAEEB2871FE01AA")
+
     byte[] session_id;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.729 -0400", hash_original_field = "A2AE8B2C9178F243D1D66776A3B6AE29", hash_generated_field = "A0A44A96F6DB28A1A612B3ED93B5B66F")
+
     CipherSuite[] cipher_suites;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.729 -0400", hash_original_field = "0A29CD02A8D38C8C61DF9A86DDBE1BAB", hash_generated_field = "47F40258F3E60116F552FCA9A35A3742")
+
     byte[] compression_methods;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.654 -0400", hash_original_method = "B360A744DA2558AEF3A4AD32A9DD66E9", hash_generated_method = "9B7003BFE79788DCFD05FD5E8D64E1DC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ClientHello(SecureRandom sr, byte[] version, byte[] ses_id,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.734 -0400", hash_original_method = "B360A744DA2558AEF3A4AD32A9DD66E9", hash_generated_method = "3A8FF51DFBE1EEBD54C423A8CBCD80E4")
+    public  ClientHello(SecureRandom sr, byte[] version, byte[] ses_id,
             CipherSuite[] cipher_suite) {
-        dsTaint.addTaint(sr.dsTaint);
-        dsTaint.addTaint(ses_id[0]);
-        dsTaint.addTaint(cipher_suite[0].dsTaint);
-        dsTaint.addTaint(version[0]);
+        client_version = version;
         long gmt_unix_time;
         gmt_unix_time = System.currentTimeMillis()/1000;
         sr.nextBytes(random);
@@ -35,9 +41,12 @@ public class ClientHello extends Message {
         random[1] = (byte) (gmt_unix_time & 0xFF0000 >>> 16);
         random[2] = (byte) (gmt_unix_time & 0xFF00 >>> 8);
         random[3] = (byte) (gmt_unix_time & 0xFF);
+        session_id = ses_id;
+        this.cipher_suites = cipher_suite;
         compression_methods = new byte[] { 0 };
         length = 38 + session_id.length + (this.cipher_suites.length << 1)
                 + compression_methods.length;
+        addTaint(sr.getTaint());
         // ---------- Original Method ----------
         //client_version = version;
         //long gmt_unix_time = System.currentTimeMillis()/1000;
@@ -54,11 +63,8 @@ public class ClientHello extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.655 -0400", hash_original_method = "9848891785B38B606D088EC36D49C2E1", hash_generated_method = "E3E993D5AE92491C63A5B8B6BBABD481")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ClientHello(HandshakeIODataStream in, int length) throws IOException {
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(in.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.740 -0400", hash_original_method = "9848891785B38B606D088EC36D49C2E1", hash_generated_method = "BD0501A422344B2827127FFAA2AA315E")
+    public  ClientHello(HandshakeIODataStream in, int length) throws IOException {
         client_version = new byte[2];
         client_version[0] = (byte) in.readUint8();
         client_version[1] = (byte) in.readUint8();
@@ -98,17 +104,16 @@ public class ClientHello extends Message {
             in.skip(length - this.length);
             this.length = length;
         } //End block
+        addTaint(length);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.655 -0400", hash_original_method = "092EDC6A6C17B41B7BF7C969F19C771C", hash_generated_method = "15CC6B66C562D9D5DB0A2F2241DC92E3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ClientHello(HandshakeIODataStream in) throws IOException {
-        dsTaint.addTaint(in.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.750 -0400", hash_original_method = "092EDC6A6C17B41B7BF7C969F19C771C", hash_generated_method = "C3FA486205B81736A8F6F84FF6C41943")
+    public  ClientHello(HandshakeIODataStream in) throws IOException {
         {
-            boolean var022F181FCD3ECCEDD53D5E77DDFAF49D_51238840 = (in.readUint8() != 1);
+            boolean var022F181FCD3ECCEDD53D5E77DDFAF49D_60631460 = (in.readUint8() != 1);
             {
                 fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect V2ClientHello");
             } //End block
@@ -119,7 +124,7 @@ public class ClientHello extends Message {
         int cipher_spec_length;
         cipher_spec_length = in.readUint16();
         {
-            boolean varDCD0C84AEEE1853740202846CF98E636_1993296261 = (in.readUint16() != 0);
+            boolean varDCD0C84AEEE1853740202846CF98E636_1288120130 = (in.readUint16() != 0);
             {
                 fatalAlert(AlertProtocol.DECODE_ERROR,
                     "DECODE ERROR: incorrect V2ClientHello, cannot be used for resuming");
@@ -157,7 +162,7 @@ public class ClientHello extends Message {
             System.arraycopy(in.read(challenge_length), challenge_length - 32, random, 0, 32);
         } //End block
         {
-            boolean varE684FF4D92AACF44A45D4FF9CA23ABC5_680981043 = (in.available() > 0);
+            boolean varE684FF4D92AACF44A45D4FF9CA23ABC5_829570290 = (in.available() > 0);
             {
                 fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect V2ClientHello, extra data");
             } //End block
@@ -169,11 +174,9 @@ public class ClientHello extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.656 -0400", hash_original_method = "89F344582D255D48D3BC56CB8686027C", hash_generated_method = "B5D6353E8E64BFB79D75951539374FD3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.756 -0400", hash_original_method = "89F344582D255D48D3BC56CB8686027C", hash_generated_method = "DA25357738DAF0C468DE87882EBFDE70")
     @Override
     public void send(HandshakeIODataStream out) {
-        dsTaint.addTaint(out.dsTaint);
         out.write(client_version);
         out.write(random);
         out.writeUint8(session_id.length);
@@ -196,6 +199,7 @@ public class ClientHello extends Message {
                 out.write(compression_methods[i]);
             } //End block
         } //End collapsed parenthetic
+        addTaint(out.getTaint());
         // ---------- Original Method ----------
         //out.write(client_version);
         //out.write(random);
@@ -213,22 +217,20 @@ public class ClientHello extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.656 -0400", hash_original_method = "EDD7E5211887C4E217154E276BC2B61E", hash_generated_method = "008ED2AC815A0D40BB7DADF7F9678F58")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.756 -0400", hash_original_method = "EDD7E5211887C4E217154E276BC2B61E", hash_generated_method = "20E53B8CE0C9F52F98B47D4A3D2E7977")
     public byte[] getRandom() {
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1606044642 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1606044642;
         // ---------- Original Method ----------
         //return random;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.656 -0400", hash_original_method = "CF19DA1ECE12A56ABD61504AAFBBFE23", hash_generated_method = "42A6DE80EE939E82E3E9061873BDB91E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.761 -0400", hash_original_method = "CF19DA1ECE12A56ABD61504AAFBBFE23", hash_generated_method = "9D8447594AD945AD2827DFA55CAF47D3")
     @Override
     public int getType() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_785466491 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_785466491;
         // ---------- Original Method ----------
         //return Handshake.CLIENT_HELLO;
     }

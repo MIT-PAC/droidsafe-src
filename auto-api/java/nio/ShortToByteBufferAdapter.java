@@ -10,13 +10,14 @@ import java.util.Iterator;
 import libcore.io.SizeOf;
 
 final class ShortToByteBufferAdapter extends ShortBuffer {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.201 -0400", hash_original_field = "73D79CD15754C8F39826976EB3E77012", hash_generated_field = "34B9235D8E87AE2A76AC711395EEC0EB")
+
     private ByteBuffer byteBuffer;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.040 -0400", hash_original_method = "A7ACA037BB98388A15E54FB4598E481B", hash_generated_method = "DAAD0AD4B3542A4E945959698DDA4577")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private ShortToByteBufferAdapter(ByteBuffer byteBuffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.216 -0400", hash_original_method = "A7ACA037BB98388A15E54FB4598E481B", hash_generated_method = "99030E6A8F05267CDC21391C0846AEB3")
+    private  ShortToByteBufferAdapter(ByteBuffer byteBuffer) {
         super(byteBuffer.capacity() / SizeOf.SHORT);
-        dsTaint.addTaint(byteBuffer.dsTaint);
+        this.byteBuffer = byteBuffer;
         this.byteBuffer.clear();
         this.effectiveDirectAddress = byteBuffer.effectiveDirectAddress;
         // ---------- Original Method ----------
@@ -33,17 +34,19 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.041 -0400", hash_original_method = "D0F8AEC70CAA4378FE6A82AD4DA3E011", hash_generated_method = "5CBE3BB46E08032CA21D0E1E72BBCF99")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.218 -0400", hash_original_method = "D0F8AEC70CAA4378FE6A82AD4DA3E011", hash_generated_method = "9A20981D2F94E5991D7534038806AAF2")
     @Override
     public ShortBuffer asReadOnlyBuffer() {
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_1226531339 = null; //Variable for return #1
         ShortToByteBufferAdapter buf;
         buf = new ShortToByteBufferAdapter(byteBuffer.asReadOnlyBuffer());
         buf.limit = limit;
         buf.position = position;
         buf.mark = mark;
         buf.byteBuffer.order = byteBuffer.order;
-        return (ShortBuffer)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1226531339 = buf;
+        varB4EAC82CA7396A68D541C85D26508E83_1226531339.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1226531339;
         // ---------- Original Method ----------
         //ShortToByteBufferAdapter buf = new ShortToByteBufferAdapter(byteBuffer.asReadOnlyBuffer());
         //buf.limit = limit;
@@ -54,12 +57,12 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.041 -0400", hash_original_method = "05DE7B6CED27ACAA0A9F6BF73EB6C673", hash_generated_method = "6EC7DA13F16516D71A599A0330E60C6D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.219 -0400", hash_original_method = "05DE7B6CED27ACAA0A9F6BF73EB6C673", hash_generated_method = "1257A0D3206251B589430C2AACBA840D")
     @Override
     public ShortBuffer compact() {
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_268945889 = null; //Variable for return #1
         {
-            boolean varD77B6130B34264A0EF448C4235FCDE48_590281050 = (byteBuffer.isReadOnly());
+            boolean varD77B6130B34264A0EF448C4235FCDE48_1587448681 = (byteBuffer.isReadOnly());
             {
                 if (DroidSafeAndroidRuntime.control) throw new ReadOnlyBufferException();
             } //End block
@@ -71,7 +74,9 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
         position = limit - position;
         limit = capacity;
         mark = UNSET_MARK;
-        return (ShortBuffer)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_268945889 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_268945889.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_268945889;
         // ---------- Original Method ----------
         //if (byteBuffer.isReadOnly()) {
             //throw new ReadOnlyBufferException();
@@ -87,10 +92,10 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.041 -0400", hash_original_method = "D125FE991C052B0355B5B7F2D7D9870F", hash_generated_method = "81700D5BDF3D5F42E7275C5686A0D928")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.229 -0400", hash_original_method = "D125FE991C052B0355B5B7F2D7D9870F", hash_generated_method = "B3F377EC3F308E3F80B0E6F0F95A1A44")
     @Override
     public ShortBuffer duplicate() {
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_160129297 = null; //Variable for return #1
         ByteBuffer bb;
         bb = byteBuffer.duplicate().order(byteBuffer.order());
         ShortToByteBufferAdapter buf;
@@ -98,7 +103,9 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
         buf.limit = limit;
         buf.position = position;
         buf.mark = mark;
-        return (ShortBuffer)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_160129297 = buf;
+        varB4EAC82CA7396A68D541C85D26508E83_160129297.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_160129297;
         // ---------- Original Method ----------
         //ByteBuffer bb = byteBuffer.duplicate().order(byteBuffer.order());
         //ShortToByteBufferAdapter buf = new ShortToByteBufferAdapter(bb);
@@ -109,15 +116,15 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.041 -0400", hash_original_method = "7C4E3224E8CBDBDF522D2B052ECE14D8", hash_generated_method = "E35216A9DEFF67CD8C7FEDC7D686FA10")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.229 -0400", hash_original_method = "7C4E3224E8CBDBDF522D2B052ECE14D8", hash_generated_method = "A33804E1188323B827AC3EA9CF5978CB")
     @Override
     public short get() {
         {
             if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
         } //End block
-        short varF4A707B1B20CA460D36B00B15C262335_955092744 = (byteBuffer.getShort(position++ * SizeOf.SHORT));
-        return dsTaint.getTaintShort();
+        short varF4A707B1B20CA460D36B00B15C262335_437803587 = (byteBuffer.getShort(position++ * SizeOf.SHORT));
+        short var4F09DAA9D95BCB166A302407A0E0BABE_27540116 = getTaintShort();
+        return var4F09DAA9D95BCB166A302407A0E0BABE_27540116;
         // ---------- Original Method ----------
         //if (position == limit) {
             //throw new BufferUnderflowException();
@@ -126,27 +133,24 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.042 -0400", hash_original_method = "99D353FC1689A601B3A3A0ABA15D7065", hash_generated_method = "FEA8C88C36320B4B2015ECFDD2B4CD7D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.230 -0400", hash_original_method = "99D353FC1689A601B3A3A0ABA15D7065", hash_generated_method = "FC749F583B4433ACD7184FD91801F1BC")
     @Override
     public short get(int index) {
-        dsTaint.addTaint(index);
         checkIndex(index);
-        short varBE4C2F8B8B0709014E8FE2B3CF301305_343150916 = (byteBuffer.getShort(index * SizeOf.SHORT));
-        return dsTaint.getTaintShort();
+        short varBE4C2F8B8B0709014E8FE2B3CF301305_585841416 = (byteBuffer.getShort(index * SizeOf.SHORT));
+        addTaint(index);
+        short var4F09DAA9D95BCB166A302407A0E0BABE_1381157784 = getTaintShort();
+        return var4F09DAA9D95BCB166A302407A0E0BABE_1381157784;
         // ---------- Original Method ----------
         //checkIndex(index);
         //return byteBuffer.getShort(index * SizeOf.SHORT);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.042 -0400", hash_original_method = "01D384F7005F01D67D604B15B569F233", hash_generated_method = "F0C2ECA4AE5BCE95FCD42392D81C9EE6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.230 -0400", hash_original_method = "01D384F7005F01D67D604B15B569F233", hash_generated_method = "6B0655F039E83874A30B684BE0BFB8DE")
     @Override
     public ShortBuffer get(short[] dst, int dstOffset, int shortCount) {
-        dsTaint.addTaint(shortCount);
-        dsTaint.addTaint(dstOffset);
-        dsTaint.addTaint(dst[0]);
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_1691389893 = null; //Variable for return #1
         byteBuffer.limit(limit * SizeOf.SHORT);
         byteBuffer.position(position * SizeOf.SHORT);
         {
@@ -156,7 +160,12 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
             ((HeapByteBuffer) byteBuffer).get(dst, dstOffset, shortCount);
         } //End block
         this.position += shortCount;
-        return (ShortBuffer)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1691389893 = this;
+        addTaint(dst[0]);
+        addTaint(dstOffset);
+        addTaint(shortCount);
+        varB4EAC82CA7396A68D541C85D26508E83_1691389893.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1691389893;
         // ---------- Original Method ----------
         //byteBuffer.limit(limit * SizeOf.SHORT);
         //byteBuffer.position(position * SizeOf.SHORT);
@@ -170,83 +179,84 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.042 -0400", hash_original_method = "78E98F36E3D964482B56C152BAA7846E", hash_generated_method = "1539B86D1E7F39997FDAC122BFB80213")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.231 -0400", hash_original_method = "78E98F36E3D964482B56C152BAA7846E", hash_generated_method = "6199B4516950AEE443AB76FE7C98D469")
     @Override
     public boolean isDirect() {
-        boolean var6A38F61B252C327C2F003ABEEAE77D3E_1370397782 = (byteBuffer.isDirect());
-        return dsTaint.getTaintBoolean();
+        boolean var6A38F61B252C327C2F003ABEEAE77D3E_274686874 = (byteBuffer.isDirect());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1161955824 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1161955824;
         // ---------- Original Method ----------
         //return byteBuffer.isDirect();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.042 -0400", hash_original_method = "A5873C4C7FD9475A7CC3E2D0E938541A", hash_generated_method = "12DC33AFBC60AE01219014552BF82487")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.231 -0400", hash_original_method = "A5873C4C7FD9475A7CC3E2D0E938541A", hash_generated_method = "7C5FBF15636CD9FE2A9B1C6EB0FE3A08")
     @Override
     public boolean isReadOnly() {
-        boolean varB84E0A3CE12C63F21B1E15D856C3A969_1453485407 = (byteBuffer.isReadOnly());
-        return dsTaint.getTaintBoolean();
+        boolean varB84E0A3CE12C63F21B1E15D856C3A969_158026845 = (byteBuffer.isReadOnly());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_783340193 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_783340193;
         // ---------- Original Method ----------
         //return byteBuffer.isReadOnly();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.042 -0400", hash_original_method = "DBC83B570884A1A98A3F46EF314D6E4A", hash_generated_method = "7428EFF2CE60CFE100D0AF017E00E6A7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.242 -0400", hash_original_method = "DBC83B570884A1A98A3F46EF314D6E4A", hash_generated_method = "A67F28126B31E7B20F69989A6E74AEC0")
     @Override
     public ByteOrder order() {
-        ByteOrder var19C5E1CA5343F3A40725401EF91DEFCC_849612407 = (byteBuffer.order());
-        return (ByteOrder)dsTaint.getTaint();
+        ByteOrder varB4EAC82CA7396A68D541C85D26508E83_2133970422 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2133970422 = byteBuffer.order();
+        varB4EAC82CA7396A68D541C85D26508E83_2133970422.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2133970422;
         // ---------- Original Method ----------
         //return byteBuffer.order();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.042 -0400", hash_original_method = "797461B8F23A38201C61F803B025213F", hash_generated_method = "178947C7690374B303551501228CE847")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.243 -0400", hash_original_method = "797461B8F23A38201C61F803B025213F", hash_generated_method = "3B3F355AAA04352F3DE521E1F1C4DEB2")
     @Override
     protected short[] protectedArray() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        short[] retVal = new short[1];
-        retVal[0] = (short)dsTaint.getTaintInt();
-        return retVal;
+        short[] var48EE7E2DDF8A83602BC526873BD0F875_1754545728 = {getTaintShort()};
+        return var48EE7E2DDF8A83602BC526873BD0F875_1754545728;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.043 -0400", hash_original_method = "11D0A2FFE917F2CC89FA6C9EBE3FCE7F", hash_generated_method = "C73FA96390820A77974587B22AF4696E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.244 -0400", hash_original_method = "11D0A2FFE917F2CC89FA6C9EBE3FCE7F", hash_generated_method = "291821785B28E93F386E39F9B0578E5B")
     @Override
     protected int protectedArrayOffset() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1817212088 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1817212088;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.043 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "ABBE1C4E781471842A6D95D790DBFBEE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.248 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "0E582D64AA531C2FF9C9F3F319DA160B")
     @Override
     protected boolean protectedHasArray() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1916690394 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1916690394;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.043 -0400", hash_original_method = "BED9261A5E47204D4C26D68EDDB52578", hash_generated_method = "580DE0B4DBC54127966B6B9E27A477B2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.248 -0400", hash_original_method = "BED9261A5E47204D4C26D68EDDB52578", hash_generated_method = "512BDBEA235DB2ACCF2454A9AC012C62")
     @Override
     public ShortBuffer put(short c) {
-        dsTaint.addTaint(c);
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_488192123 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new BufferOverflowException();
         } //End block
         byteBuffer.putShort(position++ * SizeOf.SHORT, c);
-        return (ShortBuffer)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_488192123 = this;
+        addTaint(c);
+        varB4EAC82CA7396A68D541C85D26508E83_488192123.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_488192123;
         // ---------- Original Method ----------
         //if (position == limit) {
             //throw new BufferOverflowException();
@@ -256,15 +266,17 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.043 -0400", hash_original_method = "81BB381464177DAD01780ED6CBAA4133", hash_generated_method = "513797760AA8C49931DFC9EEBF248375")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.268 -0400", hash_original_method = "81BB381464177DAD01780ED6CBAA4133", hash_generated_method = "BEFBA17EEC8C63020E5CD72D807B971C")
     @Override
     public ShortBuffer put(int index, short c) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(c);
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_546438348 = null; //Variable for return #1
         checkIndex(index);
         byteBuffer.putShort(index * SizeOf.SHORT, c);
-        return (ShortBuffer)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_546438348 = this;
+        addTaint(index);
+        addTaint(c);
+        varB4EAC82CA7396A68D541C85D26508E83_546438348.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_546438348;
         // ---------- Original Method ----------
         //checkIndex(index);
         //byteBuffer.putShort(index * SizeOf.SHORT, c);
@@ -272,13 +284,10 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.043 -0400", hash_original_method = "513A20FF10AFB87C25A95801BCBD1A6B", hash_generated_method = "33DA00212BEAE3420D30F62B5214250E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.269 -0400", hash_original_method = "513A20FF10AFB87C25A95801BCBD1A6B", hash_generated_method = "B24DB7CA70F8F426F8C792F37B377F6C")
     @Override
     public ShortBuffer put(short[] src, int srcOffset, int shortCount) {
-        dsTaint.addTaint(shortCount);
-        dsTaint.addTaint(srcOffset);
-        dsTaint.addTaint(src[0]);
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_86542827 = null; //Variable for return #1
         byteBuffer.limit(limit * SizeOf.SHORT);
         byteBuffer.position(position * SizeOf.SHORT);
         {
@@ -288,7 +297,12 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
             ((ReadWriteHeapByteBuffer) byteBuffer).put(src, srcOffset, shortCount);
         } //End block
         this.position += shortCount;
-        return (ShortBuffer)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_86542827 = this;
+        addTaint(src[0]);
+        addTaint(srcOffset);
+        addTaint(shortCount);
+        varB4EAC82CA7396A68D541C85D26508E83_86542827.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_86542827;
         // ---------- Original Method ----------
         //byteBuffer.limit(limit * SizeOf.SHORT);
         //byteBuffer.position(position * SizeOf.SHORT);
@@ -302,10 +316,10 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.043 -0400", hash_original_method = "1D11F07A1825F4A6C771FB33ADDF613C", hash_generated_method = "7275AD40C6865EBA08790DDA68BB95E7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.272 -0400", hash_original_method = "1D11F07A1825F4A6C771FB33ADDF613C", hash_generated_method = "E58676F66C1ADE62EF620DB594BE9F46")
     @Override
     public ShortBuffer slice() {
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_706442356 = null; //Variable for return #1
         byteBuffer.limit(limit * SizeOf.SHORT);
         byteBuffer.position(position * SizeOf.SHORT);
         ByteBuffer bb;
@@ -313,7 +327,9 @@ final class ShortToByteBufferAdapter extends ShortBuffer {
         ShortBuffer result;
         result = new ShortToByteBufferAdapter(bb);
         byteBuffer.clear();
-        return (ShortBuffer)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_706442356 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_706442356.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_706442356;
         // ---------- Original Method ----------
         //byteBuffer.limit(limit * SizeOf.SHORT);
         //byteBuffer.position(position * SizeOf.SHORT);

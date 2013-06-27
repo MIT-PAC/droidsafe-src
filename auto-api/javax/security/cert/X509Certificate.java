@@ -23,9 +23,8 @@ import java.util.Date;
 
 public abstract class X509Certificate extends Certificate {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.224 -0400", hash_original_method = "0337B060243DB2E8E059CE304C023100", hash_generated_method = "9BA920E90C5C7EE22A37FD86BC262ED2")
-    @DSModeled(DSC.SAFE)
-    public X509Certificate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.856 -0400", hash_original_method = "0337B060243DB2E8E059CE304C023100", hash_generated_method = "9BA920E90C5C7EE22A37FD86BC262ED2")
+    public  X509Certificate() {
         // ---------- Original Method ----------
     }
 
@@ -179,6 +178,8 @@ public abstract class X509Certificate extends Certificate {
     public abstract byte[] getSigAlgParams();
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.872 -0400", hash_original_field = "6CA268371EEB5D93EEFEB68F96157666", hash_generated_field = "2112A4F4A023E8F770192D2021400B78")
+
     private static Constructor constructor;
     static {
         try {

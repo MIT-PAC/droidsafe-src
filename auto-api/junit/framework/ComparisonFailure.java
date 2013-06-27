@@ -9,33 +9,37 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public class ComparisonFailure extends AssertionFailedError {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.035 -0400", hash_original_field = "BB4B57D7E956460E6D759FC7C2E6FDB6", hash_generated_field = "194DC4631B521844DC7E733F29E17760")
+
     private String fExpected;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.035 -0400", hash_original_field = "872399F4BC16A5EACED0C95CD3A4F589", hash_generated_field = "D387207F706FEEB200179E2FB1A3B44E")
+
     private String fActual;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.418 -0400", hash_original_method = "7454800965A05A4B5CEDE9BB116D75F0", hash_generated_method = "399560AEBAAB0FF8AEF07FF93DD8F2F9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ComparisonFailure(String message, String expected, String actual) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.036 -0400", hash_original_method = "7454800965A05A4B5CEDE9BB116D75F0", hash_generated_method = "84CB3F500EB81999B66F1C65182D9738")
+    public  ComparisonFailure(String message, String expected, String actual) {
         super (message);
-        dsTaint.addTaint(message);
-        dsTaint.addTaint(expected);
-        dsTaint.addTaint(actual);
+        fExpected= expected;
+        fActual= actual;
+        addTaint(message.getTaint());
         // ---------- Original Method ----------
         //fExpected= expected;
         //fActual= actual;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.421 -0400", hash_original_method = "1EFB8D5295B5347F7A8CE202919A7B5C", hash_generated_method = "20DA599651F60037AE4F7E1C5CDFAC74")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.063 -0400", hash_original_method = "1EFB8D5295B5347F7A8CE202919A7B5C", hash_generated_method = "B53555E42D36DD7C5B2BE1680480694E")
     public String getMessage() {
-        String var7F4C0EB3F57248C82CA033570A386280_225485542 = (Assert.format(super.getMessage(), fExpected, fActual));
+        String varB4EAC82CA7396A68D541C85D26508E83_1387775303 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_836607868 = null; //Variable for return #2
+        varB4EAC82CA7396A68D541C85D26508E83_1387775303 = Assert.format(super.getMessage(), fExpected, fActual);
         int end;
         end = Math.min(fExpected.length(), fActual.length());
         int i;
         i = 0;
         {
             {
-                boolean var15C9AED799E557CDAC29AD26D0BBB20D_1687058069 = (fExpected.charAt(i) != fActual.charAt(i));
+                boolean var15C9AED799E557CDAC29AD26D0BBB20D_554662683 = (fExpected.charAt(i) != fActual.charAt(i));
             } //End collapsed parenthetic
         } //End block
         int j;
@@ -44,7 +48,7 @@ public class ComparisonFailure extends AssertionFailedError {
         k = fActual.length()-1;
         {
             {
-                boolean varCD81FA2AAF574344A714AF6F6D239009_270827423 = (fExpected.charAt(j) != fActual.charAt(k));
+                boolean varCD81FA2AAF574344A714AF6F6D239009_1867567620 = (fExpected.charAt(j) != fActual.charAt(k));
             } //End collapsed parenthetic
         } //End block
         String actual, expected;
@@ -60,16 +64,26 @@ public class ComparisonFailure extends AssertionFailedError {
                 actual= "..."+actual;
             } //End block
             {
-                boolean var657EA45215951A44D98D539B11C537A2_2018119496 = (j < fExpected.length()-1);
+                boolean var657EA45215951A44D98D539B11C537A2_1406242816 = (j < fExpected.length()-1);
                 expected= expected+"...";
             } //End collapsed parenthetic
             {
-                boolean varE8DEE487D1D3D00863549A17BD3F7CC4_1386682535 = (k < fActual.length()-1);
+                boolean varE8DEE487D1D3D00863549A17BD3F7CC4_1340447729 = (k < fActual.length()-1);
                 actual= actual+"...";
             } //End collapsed parenthetic
         } //End block
-        String varCD6DFFA4D348B9EA82B084A0FE1B0336_201413757 = (Assert.format(super.getMessage(), expected, actual));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_836607868 = Assert.format(super.getMessage(), expected, actual);
+        String varA7E53CE21691AB073D9660D615818899_1300749133; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1300749133 = varB4EAC82CA7396A68D541C85D26508E83_1387775303;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1300749133 = varB4EAC82CA7396A68D541C85D26508E83_836607868;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1300749133.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1300749133;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

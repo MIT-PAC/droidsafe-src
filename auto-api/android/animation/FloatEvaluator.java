@@ -10,22 +10,24 @@ import java.util.Iterator;
 
 public class FloatEvaluator implements TypeEvaluator<Number> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:31.724 -0400", hash_original_method = "A36F6B2BF24826F971FBB2A0A85FBD8D", hash_generated_method = "A36F6B2BF24826F971FBB2A0A85FBD8D")
-        public FloatEvaluator ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:46.154 -0400", hash_original_method = "C987E70D238EF2ACA67A1E1BCA95D64E", hash_generated_method = "C987E70D238EF2ACA67A1E1BCA95D64E")
+    public FloatEvaluator ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:31.734 -0400", hash_original_method = "F409EF3C8ADBC3E8580AA402C114DFFB", hash_generated_method = "7D55890B7A27605F07F689A182600521")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:46.197 -0400", hash_original_method = "F409EF3C8ADBC3E8580AA402C114DFFB", hash_generated_method = "6D8165E39EB99F8555B4F5674E5E02EB")
     public Float evaluate(float fraction, Number startValue, Number endValue) {
-        dsTaint.addTaint(endValue.dsTaint);
-        dsTaint.addTaint(startValue.dsTaint);
-        dsTaint.addTaint(fraction);
+        Float varB4EAC82CA7396A68D541C85D26508E83_388501825 = null; //Variable for return #1
         float startFloat;
         startFloat = startValue.floatValue();
-        Float var2F3461AF2EE7B6ED048F1ABEE8B5B2D3_401506004 = (startFloat + fraction * (endValue.floatValue() - startFloat));
-        return (Float)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_388501825 = startFloat + fraction * (endValue.floatValue() - startFloat);
+        addTaint(fraction);
+        addTaint(startValue.getTaint());
+        addTaint(endValue.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_388501825.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_388501825;
         // ---------- Original Method ----------
         //float startFloat = startValue.floatValue();
         //return startFloat + fraction * (endValue.floatValue() - startFloat);

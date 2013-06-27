@@ -14,9 +14,8 @@ import libcore.net.MimeUtils;
 
 public class MimeTypeMap {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.561 -0400", hash_original_method = "D2809047C19DC484190C3B6A1503A531", hash_generated_method = "3813AC6B5CB9CE0F32CF63BF21EAB5DA")
-    @DSModeled(DSC.SAFE)
-    private MimeTypeMap() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.083 -0400", hash_original_method = "D2809047C19DC484190C3B6A1503A531", hash_generated_method = "3813AC6B5CB9CE0F32CF63BF21EAB5DA")
+    private  MimeTypeMap() {
         // ---------- Original Method ----------
     }
 
@@ -46,23 +45,24 @@ public class MimeTypeMap {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.562 -0400", hash_original_method = "D279ABCEA3115671095B1C76CF272D07", hash_generated_method = "08317D799E1354A164A92904D54CF716")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.085 -0400", hash_original_method = "D279ABCEA3115671095B1C76CF272D07", hash_generated_method = "0ACFE0497AB8398E4F403D8629AE0CAD")
     public boolean hasMimeType(String mimeType) {
-        dsTaint.addTaint(mimeType);
-        boolean var4B1BAFD38DD6F2F154669CF3E55C5C1F_1265522502 = (MimeUtils.hasMimeType(mimeType));
-        return dsTaint.getTaintBoolean();
+        boolean var4B1BAFD38DD6F2F154669CF3E55C5C1F_30445983 = (MimeUtils.hasMimeType(mimeType));
+        addTaint(mimeType.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_22128573 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_22128573;
         // ---------- Original Method ----------
         //return MimeUtils.hasMimeType(mimeType);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.562 -0400", hash_original_method = "9405A52065BBD485ABF37D1CA921E56B", hash_generated_method = "DE13874E6A8B380939BE6D85C448C790")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.086 -0400", hash_original_method = "9405A52065BBD485ABF37D1CA921E56B", hash_generated_method = "C44F50E944607A40C069DFFA96C62716")
     public String getMimeTypeFromExtension(String extension) {
-        dsTaint.addTaint(extension);
-        String var33583EF8048969DD704660B7E15ECC5B_565963031 = (MimeUtils.guessMimeTypeFromExtension(extension));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2118846421 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2118846421 = MimeUtils.guessMimeTypeFromExtension(extension);
+        addTaint(extension.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_2118846421.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2118846421;
         // ---------- Original Method ----------
         //return MimeUtils.guessMimeTypeFromExtension(extension);
     }
@@ -73,37 +73,35 @@ public class MimeTypeMap {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.563 -0400", hash_original_method = "0FDF6D870E8A1081CB846B08F1E5769A", hash_generated_method = "5FFA9EB66059244FE8A973A77EE03A8C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.086 -0400", hash_original_method = "0FDF6D870E8A1081CB846B08F1E5769A", hash_generated_method = "F08CD05F686FC8AFBAB8F19D21CE6F7E")
     public boolean hasExtension(String extension) {
-        dsTaint.addTaint(extension);
-        boolean varD8871BD6B8337A54A3C048C36CA3F7A7_1025427171 = (MimeUtils.hasExtension(extension));
-        return dsTaint.getTaintBoolean();
+        boolean varD8871BD6B8337A54A3C048C36CA3F7A7_73710743 = (MimeUtils.hasExtension(extension));
+        addTaint(extension.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1920816073 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1920816073;
         // ---------- Original Method ----------
         //return MimeUtils.hasExtension(extension);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.563 -0400", hash_original_method = "CB74F3FB06BF8C09198BE8DA9DF60967", hash_generated_method = "477ED5ABFB22667D1587293D6F9AAF52")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.090 -0400", hash_original_method = "CB74F3FB06BF8C09198BE8DA9DF60967", hash_generated_method = "F8203BC8117851DAF220859D60099A4E")
     public String getExtensionFromMimeType(String mimeType) {
-        dsTaint.addTaint(mimeType);
-        String var09D0525CBA98ADB3258E9962BEBFE7AF_376296712 = (MimeUtils.guessExtensionFromMimeType(mimeType));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_132427160 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_132427160 = MimeUtils.guessExtensionFromMimeType(mimeType);
+        addTaint(mimeType.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_132427160.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_132427160;
         // ---------- Original Method ----------
         //return MimeUtils.guessExtensionFromMimeType(mimeType);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.563 -0400", hash_original_method = "8195A5AC7EDE6C7AAA15CD33C312F38D", hash_generated_method = "4382BCD3670223D181D53527AB6C6A62")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.102 -0400", hash_original_method = "8195A5AC7EDE6C7AAA15CD33C312F38D", hash_generated_method = "F82CF31BF3E421A158CD3B665E2A7392")
      String remapGenericMimeType(String mimeType, String url,
             String contentDisposition) {
-        dsTaint.addTaint(contentDisposition);
-        dsTaint.addTaint(url);
-        dsTaint.addTaint(mimeType);
+        String varB4EAC82CA7396A68D541C85D26508E83_1029793826 = null; //Variable for return #1
         {
-            boolean varD017DA53BFA52B744B6E737D7E89CE66_752765589 = ("text/plain".equals(mimeType) ||
+            boolean varD017DA53BFA52B744B6E737D7E89CE66_1010149536 = ("text/plain".equals(mimeType) ||
                 "application/octet-stream".equals(mimeType));
             {
                 String filename;
@@ -123,13 +121,13 @@ public class MimeTypeMap {
                 } //End block
             } //End block
             {
-                boolean var68AC8C414A3D42236AE1AB319DBB151F_257678680 = ("text/vnd.wap.wml".equals(mimeType));
+                boolean var68AC8C414A3D42236AE1AB319DBB151F_23628516 = ("text/vnd.wap.wml".equals(mimeType));
                 {
                     mimeType = "text/plain";
                 } //End block
                 {
                     {
-                        boolean var61557B498F43C779DEB2860D41B1C26C_1173234313 = ("application/vnd.wap.xhtml+xml".equals(mimeType));
+                        boolean var61557B498F43C779DEB2860D41B1C26C_996621493 = ("application/vnd.wap.xhtml+xml".equals(mimeType));
                         {
                             mimeType = "application/xhtml+xml";
                         } //End block
@@ -137,7 +135,12 @@ public class MimeTypeMap {
                 } //End block
             } //End collapsed parenthetic
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1029793826 = mimeType;
+        addTaint(mimeType.getTaint());
+        addTaint(url.getTaint());
+        addTaint(contentDisposition.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1029793826.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1029793826;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -148,6 +151,8 @@ public class MimeTypeMap {
     }
 
     
-    private static final MimeTypeMap sMimeTypeMap = new MimeTypeMap();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.104 -0400", hash_original_field = "16E55BAE015A69FFABBB45A7410C4B7E", hash_generated_field = "1C1FA4DEE284B2DD06AF1473F0C1F4B5")
+
+    private static MimeTypeMap sMimeTypeMap = new MimeTypeMap();
 }
 

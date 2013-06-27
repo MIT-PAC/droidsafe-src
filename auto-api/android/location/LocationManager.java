@@ -21,29 +21,33 @@ import java.util.HashMap;
 import java.util.List;
 
 public class LocationManager {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.911 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "172E00EA90AE9807366F5CA34B42799B")
+
     private ILocationManager mService;
-    private HashMap<GpsStatus.Listener, GpsStatusListenerTransport> mGpsStatusListeners =
-            new HashMap<GpsStatus.Listener, GpsStatusListenerTransport>();
-    private HashMap<GpsStatus.NmeaListener, GpsStatusListenerTransport> mNmeaListeners =
-            new HashMap<GpsStatus.NmeaListener, GpsStatusListenerTransport>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.911 -0400", hash_original_field = "E2A11423CD47DDE43A56192D7AD5E343", hash_generated_field = "742B121B28E1A48FAD5F8ACEACDE3984")
+
+    private HashMap<GpsStatus.Listener, GpsStatusListenerTransport> mGpsStatusListeners = new HashMap<GpsStatus.Listener, GpsStatusListenerTransport>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.911 -0400", hash_original_field = "6E4D80FCEA0E3887597BCFB0AAD138B3", hash_generated_field = "CDD45DA3F786FB6AA5CAF5B1A5D243F0")
+
+    private HashMap<GpsStatus.NmeaListener, GpsStatusListenerTransport> mNmeaListeners = new HashMap<GpsStatus.NmeaListener, GpsStatusListenerTransport>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.911 -0400", hash_original_field = "32B45E8E9C286292F46EB969FF97E787", hash_generated_field = "062AA9FDB4B95D55755F53EFFC68E2B9")
+
     private GpsStatus mGpsStatus = new GpsStatus();
-    private HashMap<LocationListener,ListenerTransport> mListeners =
-        new HashMap<LocationListener,ListenerTransport>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.911 -0400", hash_original_field = "64782091A962E40B4E33605344BA5307", hash_generated_field = "806CFA905E48C4B7D75890759825B149")
+
+    private HashMap<LocationListener,ListenerTransport> mListeners = new HashMap<LocationListener,ListenerTransport>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.938 -0400", hash_original_method = "1755E60A5AAD43AA8D18158DFDE91956", hash_generated_method = "72056CD935AF20BE97B1392EB2231B96")
-    @DSModeled(DSC.SAFE)
-    public LocationManager(ILocationManager service) {
-        dsTaint.addTaint(service.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.912 -0400", hash_original_method = "1755E60A5AAD43AA8D18158DFDE91956", hash_generated_method = "2E87374DE599AAD38A38C4273DFE7501")
+    public  LocationManager(ILocationManager service) {
+        mService = service;
         // ---------- Original Method ----------
         //mService = service;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.939 -0400", hash_original_method = "F4540EAD4F3CF2106C64C62C1DCA569C", hash_generated_method = "629961B302DC72C1F9C82A7858924F7E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.938 -0400", hash_original_method = "F4540EAD4F3CF2106C64C62C1DCA569C", hash_generated_method = "4DF4A4572EC401A15EFAF708DFE8DDAA")
     private LocationProvider createProvider(String name, Bundle info) {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(info.dsTaint);
+        LocationProvider varB4EAC82CA7396A68D541C85D26508E83_1665696139 = null; //Variable for return #1
         DummyLocationProvider provider;
         provider = new DummyLocationProvider(name, mService);
         provider.setRequiresNetwork(info.getBoolean("network"));
@@ -55,7 +59,11 @@ public class LocationManager {
         provider.setSupportsBearing(info.getBoolean("bearing"));
         provider.setPowerRequirement(info.getInt("power"));
         provider.setAccuracy(info.getInt("accuracy"));
-        return (LocationProvider)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1665696139 = provider;
+        addTaint(name.getTaint());
+        addTaint(info.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1665696139.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1665696139;
         // ---------- Original Method ----------
         //DummyLocationProvider provider =
             //new DummyLocationProvider(name, mService);
@@ -72,19 +80,31 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.946 -0400", hash_original_method = "4EC410201344BFF6367B3FC4DEB2ECDD", hash_generated_method = "03D625D18F92249ED490989EA49EE802")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.940 -0400", hash_original_method = "4EC410201344BFF6367B3FC4DEB2ECDD", hash_generated_method = "24CF91D59AE132D08371850C621525D6")
     public List<String> getAllProviders() {
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_1317363923 = null; //Variable for return #1
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_1522377659 = null; //Variable for return #2
         {
             Log.d(TAG, "getAllProviders");
         } //End block
         try 
         {
-            List<String> var33881D182946EB1514BEA2C19028450B_422487933 = (mService.getAllProviders());
+            varB4EAC82CA7396A68D541C85D26508E83_1317363923 = mService.getAllProviders();
         } //End block
         catch (RemoteException ex)
         { }
-        return (List<String>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1522377659 = null;
+        List<String> varA7E53CE21691AB073D9660D615818899_1598819576; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1598819576 = varB4EAC82CA7396A68D541C85D26508E83_1317363923;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1598819576 = varB4EAC82CA7396A68D541C85D26508E83_1522377659;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1598819576.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1598819576;
         // ---------- Original Method ----------
         //if (false) {
             //Log.d(TAG, "getAllProviders");
@@ -98,17 +118,29 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.950 -0400", hash_original_method = "229C505A2DE7B350090013A910A6BB48", hash_generated_method = "08CA28F0CC6F63F18479134026444C05")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.941 -0400", hash_original_method = "229C505A2DE7B350090013A910A6BB48", hash_generated_method = "A212C847183960254B587303CF14DD54")
     public List<String> getProviders(boolean enabledOnly) {
-        dsTaint.addTaint(enabledOnly);
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_817624039 = null; //Variable for return #1
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_652518745 = null; //Variable for return #2
         try 
         {
-            List<String> var27ECBAEE95BE941A87B7148937077462_330155067 = (mService.getProviders(null, enabledOnly));
+            varB4EAC82CA7396A68D541C85D26508E83_817624039 = mService.getProviders(null, enabledOnly);
         } //End block
         catch (RemoteException ex)
         { }
-        return (List<String>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_652518745 = null;
+        addTaint(enabledOnly);
+        List<String> varA7E53CE21691AB073D9660D615818899_2069597662; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_2069597662 = varB4EAC82CA7396A68D541C85D26508E83_817624039;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_2069597662 = varB4EAC82CA7396A68D541C85D26508E83_652518745;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_2069597662.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2069597662;
         // ---------- Original Method ----------
         //try {
             //return mService.getProviders(null, enabledOnly);
@@ -119,10 +151,11 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.951 -0400", hash_original_method = "14AFABFCECA2A03E46C22CB46D5D2D56", hash_generated_method = "7915FFF1EB10763C7B1DBFE812C7A9A6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.960 -0400", hash_original_method = "14AFABFCECA2A03E46C22CB46D5D2D56", hash_generated_method = "7A4CB44977AE13C7D3393581EB98804A")
     public LocationProvider getProvider(String name) {
-        dsTaint.addTaint(name);
+        LocationProvider varB4EAC82CA7396A68D541C85D26508E83_1603838846 = null; //Variable for return #1
+        LocationProvider varB4EAC82CA7396A68D541C85D26508E83_1514706818 = null; //Variable for return #2
+        LocationProvider varB4EAC82CA7396A68D541C85D26508E83_274354493 = null; //Variable for return #3
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("name==null");
         } //End block
@@ -130,11 +163,29 @@ public class LocationManager {
         {
             Bundle info;
             info = mService.getProviderInfo(name);
-            LocationProvider varA7E50435837969DA620ABCBC4F9479A7_230590284 = (createProvider(name, info));
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1603838846 = null;
+            } //End block
+            varB4EAC82CA7396A68D541C85D26508E83_1514706818 = createProvider(name, info);
         } //End block
         catch (RemoteException ex)
         { }
-        return (LocationProvider)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_274354493 = null;
+        addTaint(name.getTaint());
+        LocationProvider varA7E53CE21691AB073D9660D615818899_460932237; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_460932237 = varB4EAC82CA7396A68D541C85D26508E83_1603838846;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_460932237 = varB4EAC82CA7396A68D541C85D26508E83_1514706818;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_460932237 = varB4EAC82CA7396A68D541C85D26508E83_274354493;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_460932237.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_460932237;
         // ---------- Original Method ----------
         //if (name == null) {
             //throw new IllegalArgumentException("name==null");
@@ -152,21 +203,33 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.951 -0400", hash_original_method = "03CC9524D6FEF78A1BD79E07965ADEF5", hash_generated_method = "B6B5545B08DAAF7FFE6CC0E0617C79BE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.962 -0400", hash_original_method = "03CC9524D6FEF78A1BD79E07965ADEF5", hash_generated_method = "18191EBA2ED19F7A03E55655AE6866AD")
     public List<String> getProviders(Criteria criteria, boolean enabledOnly) {
-        dsTaint.addTaint(criteria.dsTaint);
-        dsTaint.addTaint(enabledOnly);
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_1191014891 = null; //Variable for return #1
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_659081222 = null; //Variable for return #2
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("criteria==null");
         } //End block
         try 
         {
-            List<String> var024CFBB60A0D2681FBBDC45AF768AA33_395419847 = (mService.getProviders(criteria, enabledOnly));
+            varB4EAC82CA7396A68D541C85D26508E83_1191014891 = mService.getProviders(criteria, enabledOnly);
         } //End block
         catch (RemoteException ex)
         { }
-        return (List<String>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_659081222 = null;
+        addTaint(criteria.getTaint());
+        addTaint(enabledOnly);
+        List<String> varA7E53CE21691AB073D9660D615818899_67776084; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_67776084 = varB4EAC82CA7396A68D541C85D26508E83_1191014891;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_67776084 = varB4EAC82CA7396A68D541C85D26508E83_659081222;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_67776084.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_67776084;
         // ---------- Original Method ----------
         //if (criteria == null) {
             //throw new IllegalArgumentException("criteria==null");
@@ -180,21 +243,33 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.952 -0400", hash_original_method = "E63BBD2716EE0B4343F6D6F30C802349", hash_generated_method = "40C08B07419DE9B57DE71C3675F37956")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.983 -0400", hash_original_method = "E63BBD2716EE0B4343F6D6F30C802349", hash_generated_method = "8EAD13846B56EDF8603AABE0484FA0AF")
     public String getBestProvider(Criteria criteria, boolean enabledOnly) {
-        dsTaint.addTaint(criteria.dsTaint);
-        dsTaint.addTaint(enabledOnly);
+        String varB4EAC82CA7396A68D541C85D26508E83_145882772 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1379856790 = null; //Variable for return #2
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("criteria==null");
         } //End block
         try 
         {
-            String var2DFB526BCE470423660BF3B36D7D3012_1162443477 = (mService.getBestProvider(criteria, enabledOnly));
+            varB4EAC82CA7396A68D541C85D26508E83_145882772 = mService.getBestProvider(criteria, enabledOnly);
         } //End block
         catch (RemoteException ex)
         { }
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1379856790 = null;
+        addTaint(criteria.getTaint());
+        addTaint(enabledOnly);
+        String varA7E53CE21691AB073D9660D615818899_1376414181; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1376414181 = varB4EAC82CA7396A68D541C85D26508E83_145882772;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1376414181 = varB4EAC82CA7396A68D541C85D26508E83_1379856790;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1376414181.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1376414181;
         // ---------- Original Method ----------
         //if (criteria == null) {
             //throw new IllegalArgumentException("criteria==null");
@@ -208,14 +283,9 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.953 -0400", hash_original_method = "79B0FCFC5B63DF5D944678DA62AFE363", hash_generated_method = "DE51D82D3F9CADA70068CAF37179A688")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.993 -0400", hash_original_method = "79B0FCFC5B63DF5D944678DA62AFE363", hash_generated_method = "63ED3FB20C4AB203DDD5100353C700CF")
     public void requestLocationUpdates(String provider,
         long minTime, float minDistance, LocationListener listener) {
-        dsTaint.addTaint(minTime);
-        dsTaint.addTaint(minDistance);
-        dsTaint.addTaint(listener.dsTaint);
-        dsTaint.addTaint(provider);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("provider==null");
         } //End block
@@ -223,6 +293,10 @@ public class LocationManager {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("listener==null");
         } //End block
         _requestLocationUpdates(provider, null, minTime, minDistance, false, listener, null);
+        addTaint(provider.getTaint());
+        addTaint(minTime);
+        addTaint(minDistance);
+        addTaint(listener.getTaint());
         // ---------- Original Method ----------
         //if (provider == null) {
             //throw new IllegalArgumentException("provider==null");
@@ -234,16 +308,10 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.956 -0400", hash_original_method = "FA80C6D3E17A94A62F4AA64272188CF2", hash_generated_method = "17EE69C89AFE36581F6AD28199C8681E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.995 -0400", hash_original_method = "FA80C6D3E17A94A62F4AA64272188CF2", hash_generated_method = "DCF3276B2265C2B778294438751EE42D")
     public void requestLocationUpdates(String provider,
         long minTime, float minDistance, LocationListener listener,
         Looper looper) {
-        dsTaint.addTaint(minTime);
-        dsTaint.addTaint(looper.dsTaint);
-        dsTaint.addTaint(minDistance);
-        dsTaint.addTaint(listener.dsTaint);
-        dsTaint.addTaint(provider);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("provider==null");
         } //End block
@@ -251,6 +319,11 @@ public class LocationManager {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("listener==null");
         } //End block
         _requestLocationUpdates(provider, null, minTime, minDistance, false, listener, looper);
+        addTaint(provider.getTaint());
+        addTaint(minTime);
+        addTaint(minDistance);
+        addTaint(listener.getTaint());
+        addTaint(looper.getTaint());
         // ---------- Original Method ----------
         //if (provider == null) {
             //throw new IllegalArgumentException("provider==null");
@@ -262,15 +335,9 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.958 -0400", hash_original_method = "2A4D2871A80639591D176F262A5FC273", hash_generated_method = "20D92B4827569E6BBE3E1719297F1076")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:16.996 -0400", hash_original_method = "2A4D2871A80639591D176F262A5FC273", hash_generated_method = "C329A04AC70B5C97E76A304D4D1CD8E3")
     public void requestLocationUpdates(long minTime, float minDistance,
             Criteria criteria, LocationListener listener, Looper looper) {
-        dsTaint.addTaint(minTime);
-        dsTaint.addTaint(looper.dsTaint);
-        dsTaint.addTaint(criteria.dsTaint);
-        dsTaint.addTaint(minDistance);
-        dsTaint.addTaint(listener.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("criteria==null");
         } //End block
@@ -278,6 +345,11 @@ public class LocationManager {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("listener==null");
         } //End block
         _requestLocationUpdates(null, criteria, minTime, minDistance, false, listener, looper);
+        addTaint(minTime);
+        addTaint(minDistance);
+        addTaint(criteria.getTaint());
+        addTaint(listener.getTaint());
+        addTaint(looper.getTaint());
         // ---------- Original Method ----------
         //if (criteria == null) {
             //throw new IllegalArgumentException("criteria==null");
@@ -289,17 +361,9 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.959 -0400", hash_original_method = "7527D3AF7E08617A40988967AFB4FC4D", hash_generated_method = "B4E5EAE8D86CB8D2DA0C3676FCDD66C1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.018 -0400", hash_original_method = "7527D3AF7E08617A40988967AFB4FC4D", hash_generated_method = "70492FF96A5A9F8680094EBCC9CAC3FB")
     private void _requestLocationUpdates(String provider, Criteria criteria, long minTime,
             float minDistance, boolean singleShot, LocationListener listener, Looper looper) {
-        dsTaint.addTaint(singleShot);
-        dsTaint.addTaint(minTime);
-        dsTaint.addTaint(looper.dsTaint);
-        dsTaint.addTaint(minDistance);
-        dsTaint.addTaint(criteria.dsTaint);
-        dsTaint.addTaint(listener.dsTaint);
-        dsTaint.addTaint(provider);
         {
             minTime = 0L;
         } //End block
@@ -320,6 +384,13 @@ public class LocationManager {
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(provider.getTaint());
+        addTaint(criteria.getTaint());
+        addTaint(minTime);
+        addTaint(minDistance);
+        addTaint(singleShot);
+        addTaint(listener.getTaint());
+        addTaint(looper.getTaint());
         // ---------- Original Method ----------
         //if (minTime < 0L) {
             //minTime = 0L;
@@ -342,14 +413,9 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.959 -0400", hash_original_method = "C7C08F02B5B72D29F482122DD6AFB995", hash_generated_method = "B6AD21D82C15EB91BDFD5AC3A928141A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.029 -0400", hash_original_method = "C7C08F02B5B72D29F482122DD6AFB995", hash_generated_method = "14F9C1F47E9083E3815711169B16E072")
     public void requestLocationUpdates(String provider,
             long minTime, float minDistance, PendingIntent intent) {
-        dsTaint.addTaint(minTime);
-        dsTaint.addTaint(minDistance);
-        dsTaint.addTaint(provider);
-        dsTaint.addTaint(intent.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("provider==null");
         } //End block
@@ -357,6 +423,10 @@ public class LocationManager {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("intent==null");
         } //End block
         _requestLocationUpdates(provider, null, minTime, minDistance, false, intent);
+        addTaint(provider.getTaint());
+        addTaint(minTime);
+        addTaint(minDistance);
+        addTaint(intent.getTaint());
         // ---------- Original Method ----------
         //if (provider == null) {
             //throw new IllegalArgumentException("provider==null");
@@ -368,13 +438,8 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.959 -0400", hash_original_method = "2F287C6E75A45C2A01B3C0BCBDE67B57", hash_generated_method = "995251A56DD3DCCB6A7ADF375999E6B3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.033 -0400", hash_original_method = "2F287C6E75A45C2A01B3C0BCBDE67B57", hash_generated_method = "4F946C6D20051B69FBD2BF2606C79A0C")
     public void requestLocationUpdates(long minTime, float minDistance, Criteria criteria, PendingIntent intent) {
-        dsTaint.addTaint(minTime);
-        dsTaint.addTaint(criteria.dsTaint);
-        dsTaint.addTaint(minDistance);
-        dsTaint.addTaint(intent.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("criteria==null");
         } //End block
@@ -382,6 +447,10 @@ public class LocationManager {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("intent==null");
         } //End block
         _requestLocationUpdates(null, criteria, minTime, minDistance, false, intent);
+        addTaint(minTime);
+        addTaint(minDistance);
+        addTaint(criteria.getTaint());
+        addTaint(intent.getTaint());
         // ---------- Original Method ----------
         //if (criteria == null) {
             //throw new IllegalArgumentException("criteria==null");
@@ -393,16 +462,9 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.960 -0400", hash_original_method = "21FA37E7FC7084DE02389BC0809F92F8", hash_generated_method = "4A7A20C71A1D2DD8D4EEA54DFDCB5AF3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.039 -0400", hash_original_method = "21FA37E7FC7084DE02389BC0809F92F8", hash_generated_method = "B3E831E4E45EDE98A7E9A16997512DE4")
     private void _requestLocationUpdates(String provider, Criteria criteria,
             long minTime, float minDistance, boolean singleShot, PendingIntent intent) {
-        dsTaint.addTaint(singleShot);
-        dsTaint.addTaint(minTime);
-        dsTaint.addTaint(minDistance);
-        dsTaint.addTaint(criteria.dsTaint);
-        dsTaint.addTaint(provider);
-        dsTaint.addTaint(intent.dsTaint);
         {
             minTime = 0L;
         } //End block
@@ -415,6 +477,12 @@ public class LocationManager {
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(provider.getTaint());
+        addTaint(criteria.getTaint());
+        addTaint(minTime);
+        addTaint(minDistance);
+        addTaint(singleShot);
+        addTaint(intent.getTaint());
         // ---------- Original Method ----------
         //if (minTime < 0L) {
             //minTime = 0L;
@@ -430,12 +498,8 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.960 -0400", hash_original_method = "E82A66C4B675428C8689D564FEFE46C0", hash_generated_method = "C320D695892075C3B360431DA1DBB89D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.041 -0400", hash_original_method = "E82A66C4B675428C8689D564FEFE46C0", hash_generated_method = "F19DE49BF6331EA244F39CFB8D0FBD29")
     public void requestSingleUpdate(String provider, LocationListener listener, Looper looper) {
-        dsTaint.addTaint(looper.dsTaint);
-        dsTaint.addTaint(listener.dsTaint);
-        dsTaint.addTaint(provider);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("provider==null");
         } //End block
@@ -443,6 +507,9 @@ public class LocationManager {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("listener==null");
         } //End block
         _requestLocationUpdates(provider, null, 0L, 0.0f, true, listener, looper);
+        addTaint(provider.getTaint());
+        addTaint(listener.getTaint());
+        addTaint(looper.getTaint());
         // ---------- Original Method ----------
         //if (provider == null) {
             //throw new IllegalArgumentException("provider==null");
@@ -454,12 +521,8 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.960 -0400", hash_original_method = "A942F553EBD5189FF7258B50664EDDE9", hash_generated_method = "6EA9C1AB8AD4D5EC78D5B889C55C6864")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.053 -0400", hash_original_method = "A942F553EBD5189FF7258B50664EDDE9", hash_generated_method = "99CBC770D3DC9B15D7C94D09BAAA1EEC")
     public void requestSingleUpdate(Criteria criteria, LocationListener listener, Looper looper) {
-        dsTaint.addTaint(looper.dsTaint);
-        dsTaint.addTaint(criteria.dsTaint);
-        dsTaint.addTaint(listener.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("criteria==null");
         } //End block
@@ -467,6 +530,9 @@ public class LocationManager {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("listener==null");
         } //End block
         _requestLocationUpdates(null, criteria, 0L, 0.0f, true, listener, looper);
+        addTaint(criteria.getTaint());
+        addTaint(listener.getTaint());
+        addTaint(looper.getTaint());
         // ---------- Original Method ----------
         //if (criteria == null) {
             //throw new IllegalArgumentException("criteria==null");
@@ -478,11 +544,8 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.960 -0400", hash_original_method = "71C843DE562F708F58659EAA42FBA5B9", hash_generated_method = "094C4A13C4DA701AC71127ECC6A2D33B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.064 -0400", hash_original_method = "71C843DE562F708F58659EAA42FBA5B9", hash_generated_method = "B4C95378AB61C8A1E8786EBB5FB47C8D")
     public void requestSingleUpdate(String provider, PendingIntent intent) {
-        dsTaint.addTaint(provider);
-        dsTaint.addTaint(intent.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("provider==null");
         } //End block
@@ -490,6 +553,8 @@ public class LocationManager {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("intent==null");
         } //End block
         _requestLocationUpdates(provider, null, 0L, 0.0f, true, intent);
+        addTaint(provider.getTaint());
+        addTaint(intent.getTaint());
         // ---------- Original Method ----------
         //if (provider == null) {
             //throw new IllegalArgumentException("provider==null");
@@ -501,11 +566,8 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.961 -0400", hash_original_method = "6685F769C73037425B092AE6FD387007", hash_generated_method = "5F2958C8EBC02A96D7BE9BF98B02C599")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.065 -0400", hash_original_method = "6685F769C73037425B092AE6FD387007", hash_generated_method = "D97DC1617FD0F80B27BD32E1DA957BBF")
     public void requestSingleUpdate(Criteria criteria, PendingIntent intent) {
-        dsTaint.addTaint(criteria.dsTaint);
-        dsTaint.addTaint(intent.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("criteria==null");
         } //End block
@@ -513,6 +575,8 @@ public class LocationManager {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("intent==null");
         } //End block
         _requestLocationUpdates(null, criteria, 0L, 0.0f, true, intent);
+        addTaint(criteria.getTaint());
+        addTaint(intent.getTaint());
         // ---------- Original Method ----------
         //if (criteria == null) {
             //throw new IllegalArgumentException("criteria==null");
@@ -524,10 +588,8 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.961 -0400", hash_original_method = "C6393138E31F9EAAF3B1058E5B49E67E", hash_generated_method = "ECD9B328B6276B0BEE503CFF6324D233")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.078 -0400", hash_original_method = "C6393138E31F9EAAF3B1058E5B49E67E", hash_generated_method = "799D8BE80A658224ED9C694383F99894")
     public void removeUpdates(LocationListener listener) {
-        dsTaint.addTaint(listener.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("listener==null");
         } //End block
@@ -544,6 +606,7 @@ public class LocationManager {
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(listener.getTaint());
         // ---------- Original Method ----------
         //if (listener == null) {
             //throw new IllegalArgumentException("listener==null");
@@ -562,10 +625,8 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.961 -0400", hash_original_method = "53855AAE83CDCFDE219D3895B886D007", hash_generated_method = "127160EAFD3E78EB52C70019F1B42E1E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.079 -0400", hash_original_method = "53855AAE83CDCFDE219D3895B886D007", hash_generated_method = "1B689277393CD63B2DC8D38566A36E8C")
     public void removeUpdates(PendingIntent intent) {
-        dsTaint.addTaint(intent.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("intent==null");
         } //End block
@@ -578,6 +639,7 @@ public class LocationManager {
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(intent.getTaint());
         // ---------- Original Method ----------
         //if (intent == null) {
             //throw new IllegalArgumentException("intent==null");
@@ -593,15 +655,9 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.962 -0400", hash_original_method = "8F5138780FDD6FE26D92FDF1DF02DE4E", hash_generated_method = "F8C4459024C1ECA1065F480963F84D6D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.092 -0400", hash_original_method = "8F5138780FDD6FE26D92FDF1DF02DE4E", hash_generated_method = "D3FFD24B57C9142639115167B95E924F")
     public void addProximityAlert(double latitude, double longitude,
         float radius, long expiration, PendingIntent intent) {
-        dsTaint.addTaint(expiration);
-        dsTaint.addTaint(radius);
-        dsTaint.addTaint(longitude);
-        dsTaint.addTaint(latitude);
-        dsTaint.addTaint(intent.dsTaint);
         {
             Log.d(TAG, "addProximityAlert: latitude = " + latitude +
                 ", longitude = " + longitude + ", radius = " + radius +
@@ -615,6 +671,11 @@ public class LocationManager {
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(latitude);
+        addTaint(longitude);
+        addTaint(radius);
+        addTaint(expiration);
+        addTaint(intent.getTaint());
         // ---------- Original Method ----------
         //if (false) {
             //Log.d(TAG, "addProximityAlert: latitude = " + latitude +
@@ -631,10 +692,8 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.962 -0400", hash_original_method = "4A48D6353D1407BC4C3112124D5D3B7A", hash_generated_method = "D247B2AEAFEF153880AAC22A8D23B3E8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.093 -0400", hash_original_method = "4A48D6353D1407BC4C3112124D5D3B7A", hash_generated_method = "7EFF49511586B94EE4017C6AD29ABA02")
     public void removeProximityAlert(PendingIntent intent) {
-        dsTaint.addTaint(intent.dsTaint);
         {
             Log.d(TAG, "removeProximityAlert: intent = " + intent);
         } //End block
@@ -644,6 +703,7 @@ public class LocationManager {
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(intent.getTaint());
         // ---------- Original Method ----------
         //if (false) {
             //Log.d(TAG, "removeProximityAlert: intent = " + intent);
@@ -656,20 +716,20 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.963 -0400", hash_original_method = "A73A17F882D5C0CB78BFCF12E6BF5D56", hash_generated_method = "73D17BB45E39CDC5643F77EAFFAD2350")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.106 -0400", hash_original_method = "A73A17F882D5C0CB78BFCF12E6BF5D56", hash_generated_method = "9671DC01848E1DEF78E6E7B8EF0FE4B8")
     public boolean isProviderEnabled(String provider) {
-        dsTaint.addTaint(provider);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("provider==null");
         } //End block
         try 
         {
-            boolean var2CACBF2D859EB1EA82940C38019F9178_1047356865 = (mService.isProviderEnabled(provider));
+            boolean var2CACBF2D859EB1EA82940C38019F9178_703746003 = (mService.isProviderEnabled(provider));
         } //End block
         catch (RemoteException ex)
         { }
-        return dsTaint.getTaintBoolean();
+        addTaint(provider.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_903752351 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_903752351;
         // ---------- Original Method ----------
         //if (provider == null) {
             //throw new IllegalArgumentException("provider==null");
@@ -683,20 +743,33 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.963 -0400", hash_original_method = "C11453A15D8C96574C829BE27A4B0DFD", hash_generated_method = "F45ECF04C3FD97DEB7D7481718105166")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.108 -0400", hash_original_method = "C11453A15D8C96574C829BE27A4B0DFD", hash_generated_method = "EDE4423B0BF43C76A1B036A666B97C3D")
     public Location getLastKnownLocation(String provider) {
-        dsTaint.addTaint(provider);
+        Location varB4EAC82CA7396A68D541C85D26508E83_1152148511 = null; //Variable for return #1
+        Location varB4EAC82CA7396A68D541C85D26508E83_2067815187 = null; //Variable for return #2
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("provider==null");
         } //End block
         try 
         {
-            Location var44A3A3D7DF18245B739141D75E1C6FB4_781916757 = (mService.getLastKnownLocation(provider));
+            varB4EAC82CA7396A68D541C85D26508E83_1152148511 = mService.getLastKnownLocation(provider);
         } //End block
         catch (RemoteException ex)
-        { }
-        return (Location)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_2067815187 = null;
+        } //End block
+        addTaint(provider.getTaint());
+        Location varA7E53CE21691AB073D9660D615818899_1427160996; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1427160996 = varB4EAC82CA7396A68D541C85D26508E83_1152148511;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1427160996 = varB4EAC82CA7396A68D541C85D26508E83_2067815187;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1427160996.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1427160996;
         // ---------- Original Method ----------
         //if (provider == null) {
             //throw new IllegalArgumentException("provider==null");
@@ -710,21 +783,10 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.963 -0400", hash_original_method = "03E8D8A5CD41A64BA401E8781419DF72", hash_generated_method = "282F0AEE06884135096F43BA7A30A373")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.122 -0400", hash_original_method = "03E8D8A5CD41A64BA401E8781419DF72", hash_generated_method = "8B8370CE6672C16304653BFEF715F652")
     public void addTestProvider(String name, boolean requiresNetwork, boolean requiresSatellite,
         boolean requiresCell, boolean hasMonetaryCost, boolean supportsAltitude,
         boolean supportsSpeed, boolean supportsBearing, int powerRequirement, int accuracy) {
-        dsTaint.addTaint(supportsSpeed);
-        dsTaint.addTaint(requiresSatellite);
-        dsTaint.addTaint(supportsBearing);
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(hasMonetaryCost);
-        dsTaint.addTaint(powerRequirement);
-        dsTaint.addTaint(supportsAltitude);
-        dsTaint.addTaint(requiresCell);
-        dsTaint.addTaint(accuracy);
-        dsTaint.addTaint(requiresNetwork);
         try 
         {
             mService.addTestProvider(name, requiresNetwork, requiresSatellite, requiresCell,
@@ -733,6 +795,16 @@ public class LocationManager {
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(name.getTaint());
+        addTaint(requiresNetwork);
+        addTaint(requiresSatellite);
+        addTaint(requiresCell);
+        addTaint(hasMonetaryCost);
+        addTaint(supportsAltitude);
+        addTaint(supportsSpeed);
+        addTaint(supportsBearing);
+        addTaint(powerRequirement);
+        addTaint(accuracy);
         // ---------- Original Method ----------
         //try {
             //mService.addTestProvider(name, requiresNetwork, requiresSatellite, requiresCell,
@@ -744,16 +816,15 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.964 -0400", hash_original_method = "498EE4F1DD4EF06996FBFECAF808CC3B", hash_generated_method = "3DCE954E78954A8283C7F5CBA5957858")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.123 -0400", hash_original_method = "498EE4F1DD4EF06996FBFECAF808CC3B", hash_generated_method = "DB7B730DD21D394472A7081A28DF4EEF")
     public void removeTestProvider(String provider) {
-        dsTaint.addTaint(provider);
         try 
         {
             mService.removeTestProvider(provider);
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(provider.getTaint());
         // ---------- Original Method ----------
         //try {
             //mService.removeTestProvider(provider);
@@ -763,17 +834,16 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.964 -0400", hash_original_method = "68207A112A1E7BBE4826B19769FC12DA", hash_generated_method = "C090D9EE5B34BEA6C201C13282D5D323")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.139 -0400", hash_original_method = "68207A112A1E7BBE4826B19769FC12DA", hash_generated_method = "B5AAAB03A7FF9C820152C53498C9B832")
     public void setTestProviderLocation(String provider, Location loc) {
-        dsTaint.addTaint(loc.dsTaint);
-        dsTaint.addTaint(provider);
         try 
         {
             mService.setTestProviderLocation(provider, loc);
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(provider.getTaint());
+        addTaint(loc.getTaint());
         // ---------- Original Method ----------
         //try {
             //mService.setTestProviderLocation(provider, loc);
@@ -783,16 +853,15 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.964 -0400", hash_original_method = "7CA7069D9943855589356239516DA9AF", hash_generated_method = "C2E8771B4D0EE6278D98C284F333754C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.140 -0400", hash_original_method = "7CA7069D9943855589356239516DA9AF", hash_generated_method = "58BDF925E48A33639E0A08B7CD3F334F")
     public void clearTestProviderLocation(String provider) {
-        dsTaint.addTaint(provider);
         try 
         {
             mService.clearTestProviderLocation(provider);
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(provider.getTaint());
         // ---------- Original Method ----------
         //try {
             //mService.clearTestProviderLocation(provider);
@@ -802,17 +871,16 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.964 -0400", hash_original_method = "48C675867948B21786DBAE4C1AE4920C", hash_generated_method = "482CD6C7E1DF9C71EEBD1207A8C9DB71")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.140 -0400", hash_original_method = "48C675867948B21786DBAE4C1AE4920C", hash_generated_method = "C8D94E85CD6628BD1E4CB12AAC55182A")
     public void setTestProviderEnabled(String provider, boolean enabled) {
-        dsTaint.addTaint(enabled);
-        dsTaint.addTaint(provider);
         try 
         {
             mService.setTestProviderEnabled(provider, enabled);
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(provider.getTaint());
+        addTaint(enabled);
         // ---------- Original Method ----------
         //try {
             //mService.setTestProviderEnabled(provider, enabled);
@@ -822,16 +890,15 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.965 -0400", hash_original_method = "A7FE0DFAA40049E1860E732454FD3827", hash_generated_method = "7A1849BE0B0CBDBC9C36958D91DAD9B9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.141 -0400", hash_original_method = "A7FE0DFAA40049E1860E732454FD3827", hash_generated_method = "89EAC726392531DB876F24AF9274B070")
     public void clearTestProviderEnabled(String provider) {
-        dsTaint.addTaint(provider);
         try 
         {
             mService.clearTestProviderEnabled(provider);
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(provider.getTaint());
         // ---------- Original Method ----------
         //try {
             //mService.clearTestProviderEnabled(provider);
@@ -841,19 +908,18 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.965 -0400", hash_original_method = "03886DE73D19ECB6C62373F8D9D58CA9", hash_generated_method = "C294E2771DEB529D8AAAD8BEE9C5BCAE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.153 -0400", hash_original_method = "03886DE73D19ECB6C62373F8D9D58CA9", hash_generated_method = "9ABC9FF5C7EBE314AACA9E9FD913BB5A")
     public void setTestProviderStatus(String provider, int status, Bundle extras, long updateTime) {
-        dsTaint.addTaint(updateTime);
-        dsTaint.addTaint(status);
-        dsTaint.addTaint(provider);
-        dsTaint.addTaint(extras.dsTaint);
         try 
         {
             mService.setTestProviderStatus(provider, status, extras, updateTime);
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(provider.getTaint());
+        addTaint(status);
+        addTaint(extras.getTaint());
+        addTaint(updateTime);
         // ---------- Original Method ----------
         //try {
             //mService.setTestProviderStatus(provider, status, extras, updateTime);
@@ -863,16 +929,15 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.965 -0400", hash_original_method = "013DF8509B89AA0EABD8A254078FCC60", hash_generated_method = "B90FF411EDC871A2031B55EBACBCFE3B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.179 -0400", hash_original_method = "013DF8509B89AA0EABD8A254078FCC60", hash_generated_method = "4CEB055CE9744AF337A9ACB53070D196")
     public void clearTestProviderStatus(String provider) {
-        dsTaint.addTaint(provider);
         try 
         {
             mService.clearTestProviderStatus(provider);
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(provider.getTaint());
         // ---------- Original Method ----------
         //try {
             //mService.clearTestProviderStatus(provider);
@@ -882,13 +947,11 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.966 -0400", hash_original_method = "735E28281E7A2112C9B0A11E7D511734", hash_generated_method = "14D950DE17051332BDE3FF5C64806BC4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.185 -0400", hash_original_method = "735E28281E7A2112C9B0A11E7D511734", hash_generated_method = "216B1DC227722D210A4225A6EDB33FCC")
     public boolean addGpsStatusListener(GpsStatus.Listener listener) {
-        dsTaint.addTaint(listener.dsTaint);
         boolean result;
         {
-            boolean var5F2513550597BAA97D4D74F98C95E02D_2050827898 = (mGpsStatusListeners.get(listener) != null);
+            boolean var5F2513550597BAA97D4D74F98C95E02D_1709377006 = (mGpsStatusListeners.get(listener) != null);
         } //End collapsed parenthetic
         try 
         {
@@ -903,7 +966,9 @@ public class LocationManager {
         {
             result = false;
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(listener.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_457803421 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_457803421;
         // ---------- Original Method ----------
         //boolean result;
         //if (mGpsStatusListeners.get(listener) != null) {
@@ -923,10 +988,8 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.966 -0400", hash_original_method = "BE93B3D03F00A664B96E561F38428949", hash_generated_method = "CBC04F6D69EA87C3F75249759EE9810E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.186 -0400", hash_original_method = "BE93B3D03F00A664B96E561F38428949", hash_generated_method = "DBDB76AE60DF98EA593E6B6CA3100029")
     public void removeGpsStatusListener(GpsStatus.Listener listener) {
-        dsTaint.addTaint(listener.dsTaint);
         try 
         {
             GpsStatusListenerTransport transport;
@@ -937,6 +1000,7 @@ public class LocationManager {
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(listener.getTaint());
         // ---------- Original Method ----------
         //try {
             //GpsStatusListenerTransport transport = mGpsStatusListeners.remove(listener);
@@ -949,13 +1013,11 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.967 -0400", hash_original_method = "69F227E2B854C20A513354DE72686880", hash_generated_method = "EED658A663D44467D80AAD94A7432D18")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.189 -0400", hash_original_method = "69F227E2B854C20A513354DE72686880", hash_generated_method = "107CD3A14E417E52A2B704C81837B3F2")
     public boolean addNmeaListener(GpsStatus.NmeaListener listener) {
-        dsTaint.addTaint(listener.dsTaint);
         boolean result;
         {
-            boolean var94A6474BA2F49BF4171CA676610F86BC_498880201 = (mNmeaListeners.get(listener) != null);
+            boolean var94A6474BA2F49BF4171CA676610F86BC_1864931314 = (mNmeaListeners.get(listener) != null);
         } //End collapsed parenthetic
         try 
         {
@@ -970,7 +1032,9 @@ public class LocationManager {
         {
             result = false;
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(listener.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1185852986 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1185852986;
         // ---------- Original Method ----------
         //boolean result;
         //if (mNmeaListeners.get(listener) != null) {
@@ -990,10 +1054,8 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.967 -0400", hash_original_method = "B4F97B229D6634102324704B9EDD8365", hash_generated_method = "335758B2FA99D36BF3C7003454C92CE5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.190 -0400", hash_original_method = "B4F97B229D6634102324704B9EDD8365", hash_generated_method = "ED19BF2AE30603C9F0F68B3F901CC267")
     public void removeNmeaListener(GpsStatus.NmeaListener listener) {
-        dsTaint.addTaint(listener.dsTaint);
         try 
         {
             GpsStatusListenerTransport transport;
@@ -1004,6 +1066,7 @@ public class LocationManager {
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(listener.getTaint());
         // ---------- Original Method ----------
         //try {
             //GpsStatusListenerTransport transport = mNmeaListeners.remove(listener);
@@ -1016,15 +1079,17 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.967 -0400", hash_original_method = "58632EF952FC4DB3D625E7340D0B4D49", hash_generated_method = "63EAB61FCD439C1E8EBC7E8078E11503")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.207 -0400", hash_original_method = "58632EF952FC4DB3D625E7340D0B4D49", hash_generated_method = "A1A84DC682609F47E010969E07A83779")
     public GpsStatus getGpsStatus(GpsStatus status) {
-        dsTaint.addTaint(status.dsTaint);
+        GpsStatus varB4EAC82CA7396A68D541C85D26508E83_1697835839 = null; //Variable for return #1
         {
             status = new GpsStatus();
         } //End block
         status.setStatus(mGpsStatus);
-        return (GpsStatus)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1697835839 = status;
+        addTaint(status.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1697835839.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1697835839;
         // ---------- Original Method ----------
         //if (status == null) {
             //status = new GpsStatus();
@@ -1034,19 +1099,19 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.967 -0400", hash_original_method = "A7B31AF326321489C7AFBE2F446F3E30", hash_generated_method = "11D923CE2D70E3920A6CC723300A80A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.218 -0400", hash_original_method = "A7B31AF326321489C7AFBE2F446F3E30", hash_generated_method = "80B4FF077E7A6718E055E5BF2C284F24")
     public boolean sendExtraCommand(String provider, String command, Bundle extras) {
-        dsTaint.addTaint(command);
-        dsTaint.addTaint(provider);
-        dsTaint.addTaint(extras.dsTaint);
         try 
         {
-            boolean var54C526BCA32BFB67E2D9FD83D51E8E2C_1391630157 = (mService.sendExtraCommand(provider, command, extras));
+            boolean var54C526BCA32BFB67E2D9FD83D51E8E2C_472478054 = (mService.sendExtraCommand(provider, command, extras));
         } //End block
         catch (RemoteException e)
         { }
-        return dsTaint.getTaintBoolean();
+        addTaint(provider.getTaint());
+        addTaint(command.getTaint());
+        addTaint(extras.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_50125756 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_50125756;
         // ---------- Original Method ----------
         //try {
             //return mService.sendExtraCommand(provider, command, extras);
@@ -1057,18 +1122,18 @@ public class LocationManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.968 -0400", hash_original_method = "486A02DD90A0BB213EFD64094D84B261", hash_generated_method = "CF70C9192CA4EB2DB64AA539B59DAFE7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.220 -0400", hash_original_method = "486A02DD90A0BB213EFD64094D84B261", hash_generated_method = "9EBBD1CC9D013BAB8D5550CE5B0DD26D")
     public boolean sendNiResponse(int notifId, int userResponse) {
-        dsTaint.addTaint(userResponse);
-        dsTaint.addTaint(notifId);
         try 
         {
-            boolean var5F2B4C98AB0C6ADE0371DA0514391756_50647048 = (mService.sendNiResponse(notifId, userResponse));
+            boolean var5F2B4C98AB0C6ADE0371DA0514391756_1891264006 = (mService.sendNiResponse(notifId, userResponse));
         } //End block
         catch (RemoteException e)
         { }
-        return dsTaint.getTaintBoolean();
+        addTaint(notifId);
+        addTaint(userResponse);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1133687509 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1133687509;
         // ---------- Original Method ----------
         //try {
             //return mService.sendNiResponse(notifId, userResponse);
@@ -1080,22 +1145,23 @@ public class LocationManager {
 
     
     private class ListenerTransport extends ILocationListener.Stub {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.234 -0400", hash_original_field = "9B3DD33B99719CE65C53FA6749E2AD69", hash_generated_field = "88C676C20BB164A41FD7C10E7FA78223")
+
         private LocationListener mListener;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.234 -0400", hash_original_field = "56BAC178F3086AD35CDD4674A0CF1FF6", hash_generated_field = "4100173B517AAB1135352B9F9C7AE096")
+
         private Handler mListenerHandler;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.978 -0400", hash_original_method = "5AF1CAA1D5EED50BE6CA5764BFEB7286", hash_generated_method = "2B3948E3BBD594A645927936B3BDDBB3")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         ListenerTransport(LocationListener listener, Looper looper) {
-            dsTaint.addTaint(looper.dsTaint);
-            dsTaint.addTaint(listener.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.270 -0400", hash_original_method = "5AF1CAA1D5EED50BE6CA5764BFEB7286", hash_generated_method = "C638247EFC98D5E6AA4BFC6575DF263A")
+          ListenerTransport(LocationListener listener, Looper looper) {
+            mListener = listener;
             {
                 mListenerHandler = new Handler() {                    
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.968 -0400", hash_original_method = "2788B827BF69A5605D676A806900279A", hash_generated_method = "1E1CCA9DB52DB950112D49425332AC24")
-                    //DSFIXME:  CODE0002: Requires DSC value to be set
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.251 -0400", hash_original_method = "2788B827BF69A5605D676A806900279A", hash_generated_method = "F91A923F1693A66EB7CBCB63C96E490F")
                     @Override
                     public void handleMessage(Message msg) {
-                        dsTaint.addTaint(msg.dsTaint);
                         _handleMessage(msg);
+                        addTaint(msg.getTaint());
                         // ---------- Original Method ----------
                         //_handleMessage(msg);
                     }
@@ -1103,12 +1169,11 @@ public class LocationManager {
             } //End block
             {
                 mListenerHandler = new Handler(looper) {                    
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.978 -0400", hash_original_method = "2788B827BF69A5605D676A806900279A", hash_generated_method = "1E1CCA9DB52DB950112D49425332AC24")
-                    //DSFIXME:  CODE0002: Requires DSC value to be set
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.257 -0400", hash_original_method = "2788B827BF69A5605D676A806900279A", hash_generated_method = "F91A923F1693A66EB7CBCB63C96E490F")
                     @Override
                     public void handleMessage(Message msg) {
-                        dsTaint.addTaint(msg.dsTaint);
                         _handleMessage(msg);
+                        addTaint(msg.getTaint());
                         // ---------- Original Method ----------
                         //_handleMessage(msg);
                     }
@@ -1134,16 +1199,15 @@ public class LocationManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.980 -0400", hash_original_method = "A17E439126795FFA0E8C33868ED647C4", hash_generated_method = "86749498CDB4ECDE84C67510662AC471")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.272 -0400", hash_original_method = "A17E439126795FFA0E8C33868ED647C4", hash_generated_method = "B0D07C72179D9CF1C5498321D365BC82")
         public void onLocationChanged(Location location) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(location.dsTaint);
             Message msg;
             msg = Message.obtain();
             msg.what = TYPE_LOCATION_CHANGED;
             msg.obj = location;
             mListenerHandler.sendMessage(msg);
+            addTaint(location.getTaint());
             // ---------- Original Method ----------
             //Message msg = Message.obtain();
             //msg.what = TYPE_LOCATION_CHANGED;
@@ -1152,13 +1216,9 @@ public class LocationManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.983 -0400", hash_original_method = "BF8F7C90ADE4983F5319C798EB4A7E9F", hash_generated_method = "D9D015F3BB971B3FCC14551550CB3555")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.283 -0400", hash_original_method = "BF8F7C90ADE4983F5319C798EB4A7E9F", hash_generated_method = "B175D5255A36DB54BBED666AADDBC9B7")
         public void onStatusChanged(String provider, int status, Bundle extras) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(status);
-            dsTaint.addTaint(provider);
-            dsTaint.addTaint(extras.dsTaint);
             Message msg;
             msg = Message.obtain();
             msg.what = TYPE_STATUS_CHANGED;
@@ -1171,6 +1231,9 @@ public class LocationManager {
             } //End block
             msg.obj = b;
             mListenerHandler.sendMessage(msg);
+            addTaint(provider.getTaint());
+            addTaint(status);
+            addTaint(extras.getTaint());
             // ---------- Original Method ----------
             //Message msg = Message.obtain();
             //msg.what = TYPE_STATUS_CHANGED;
@@ -1185,16 +1248,15 @@ public class LocationManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.985 -0400", hash_original_method = "812D643BCDC2A4502FF3E1F391BA3BAF", hash_generated_method = "BF163D1E0ABCF15B43816A477BC936A7")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.298 -0400", hash_original_method = "812D643BCDC2A4502FF3E1F391BA3BAF", hash_generated_method = "465BA8570919CBCD82D81D141AFE06B7")
         public void onProviderEnabled(String provider) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(provider);
             Message msg;
             msg = Message.obtain();
             msg.what = TYPE_PROVIDER_ENABLED;
             msg.obj = provider;
             mListenerHandler.sendMessage(msg);
+            addTaint(provider.getTaint());
             // ---------- Original Method ----------
             //Message msg = Message.obtain();
             //msg.what = TYPE_PROVIDER_ENABLED;
@@ -1203,16 +1265,15 @@ public class LocationManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.988 -0400", hash_original_method = "E15FA24A6514F29CC56145BCCEFEF320", hash_generated_method = "4B91D76BF2FC7E985510B39123E6C5DA")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.299 -0400", hash_original_method = "E15FA24A6514F29CC56145BCCEFEF320", hash_generated_method = "910B1D3CDED746C7DF1CED4B4BA8A4B9")
         public void onProviderDisabled(String provider) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(provider);
             Message msg;
             msg = Message.obtain();
             msg.what = TYPE_PROVIDER_DISABLED;
             msg.obj = provider;
             mListenerHandler.sendMessage(msg);
+            addTaint(provider.getTaint());
             // ---------- Original Method ----------
             //Message msg = Message.obtain();
             //msg.what = TYPE_PROVIDER_DISABLED;
@@ -1221,10 +1282,8 @@ public class LocationManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.991 -0400", hash_original_method = "B4AFFA03A7F956D43DB0E44DEB20B60F", hash_generated_method = "6F6224E0745CBC4424B046A383940356")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.303 -0400", hash_original_method = "B4AFFA03A7F956D43DB0E44DEB20B60F", hash_generated_method = "A814B85635D7C3203388FD7696078E60")
         private void _handleMessage(Message msg) {
-            dsTaint.addTaint(msg.dsTaint);
             //Begin case TYPE_LOCATION_CHANGED 
             Location location;
             location = new Location((Location) msg.obj);
@@ -1263,29 +1322,44 @@ public class LocationManager {
             } //End block
             catch (RemoteException e)
             { }
+            addTaint(msg.getTaint());
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        private static final int TYPE_LOCATION_CHANGED = 1;
-        private static final int TYPE_STATUS_CHANGED = 2;
-        private static final int TYPE_PROVIDER_ENABLED = 3;
-        private static final int TYPE_PROVIDER_DISABLED = 4;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.303 -0400", hash_original_field = "8C0B89388C7AF37135B00419CA7E9C92", hash_generated_field = "4F6331E1C38728042E99BC19ED065FE7")
+
+        private static int TYPE_LOCATION_CHANGED = 1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.303 -0400", hash_original_field = "45E66B86E7431FAC1292C89E91493801", hash_generated_field = "0E0EB8CF48239791BC17B65E42FD0D5E")
+
+        private static int TYPE_STATUS_CHANGED = 2;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.304 -0400", hash_original_field = "4D8B289A7864C6EE1ACDD3C1B058CE4F", hash_generated_field = "1DEB2ED8E0755ECCDC1E6866C8E41AA3")
+
+        private static int TYPE_PROVIDER_ENABLED = 3;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.304 -0400", hash_original_field = "DD4E410FD111EAFC75B3615EB43DD4E3", hash_generated_field = "AAA8F4CC1C231AA942B04F54800111F8")
+
+        private static int TYPE_PROVIDER_DISABLED = 4;
     }
 
 
     
     private class GpsStatusListenerTransport extends IGpsStatusListener.Stub {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.318 -0400", hash_original_field = "9B3DD33B99719CE65C53FA6749E2AD69", hash_generated_field = "3564D5BECCC467DBB563E9174E6839FA")
+
         private GpsStatus.Listener mListener;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.319 -0400", hash_original_field = "6A914A5E364626F0BE69C7CA16741AC2", hash_generated_field = "C56AA1FA4293F00EF5AC3280F7CE1BCE")
+
         private GpsStatus.NmeaListener mNmeaListener;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.319 -0400", hash_original_field = "C91213C9D8B8761834B23071597A3455", hash_generated_field = "BDE0A966016D1F7F3E0759437CA71854")
+
         private ArrayList<Nmea> mNmeaBuffer;
-        private final Handler mGpsHandler = new Handler() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.992 -0400", hash_original_method = "3A4C26C18C998E8AD28D793D2B4D73AC", hash_generated_method = "E9009AA990BD527781EBEEF61E03D680")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.329 -0400", hash_original_field = "1388D92E53A0B03AA5E995A7DC696BD0", hash_generated_field = "D57F52CDB2752B6E668AAF24FC42DA6C")
+
+        private Handler mGpsHandler = new Handler() {            
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.329 -0400", hash_original_method = "3A4C26C18C998E8AD28D793D2B4D73AC", hash_generated_method = "8BE126D3F571269090F5870A507B9C52")
             @Override
             public void handleMessage(Message msg) {
-                dsTaint.addTaint(msg.dsTaint);
                 {
                     {
                         int length;
@@ -1307,6 +1381,7 @@ public class LocationManager {
                         mListener.onGpsStatusChanged(msg.what);
                     } //End block
                 } //End block
+                addTaint(msg.getTaint());
                 // ---------- Original Method ----------
                 //if (msg.what == NMEA_RECEIVED) {
                     //synchronized (mNmeaBuffer) {
@@ -1325,12 +1400,11 @@ public class LocationManager {
             }
 
             
-}; //Transformed anonymous class
+};
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.993 -0400", hash_original_method = "F4C48E1C52D52EE2A00BB4471F3F104F", hash_generated_method = "244638B14D360C40F83BE1B54908C77E")
-        @DSModeled(DSC.SAFE)
-         GpsStatusListenerTransport(GpsStatus.Listener listener) {
-            dsTaint.addTaint(listener.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.330 -0400", hash_original_method = "F4C48E1C52D52EE2A00BB4471F3F104F", hash_generated_method = "5BD8573A0E58EE341269EDADEAA6CD32")
+          GpsStatusListenerTransport(GpsStatus.Listener listener) {
+            mListener = listener;
             mNmeaListener = null;
             // ---------- Original Method ----------
             //mListener = listener;
@@ -1338,10 +1412,9 @@ public class LocationManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.993 -0400", hash_original_method = "2F84EC7497CDA44BC0A09FBB4C2AE91B", hash_generated_method = "5B08CF9C90DB6BC0D39B997717871F90")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         GpsStatusListenerTransport(GpsStatus.NmeaListener listener) {
-            dsTaint.addTaint(listener.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.332 -0400", hash_original_method = "2F84EC7497CDA44BC0A09FBB4C2AE91B", hash_generated_method = "A64C791C45CA47B3BFECF96C00EDA552")
+          GpsStatusListenerTransport(GpsStatus.NmeaListener listener) {
+            mNmeaListener = listener;
             mListener = null;
             mNmeaBuffer = new ArrayList<Nmea>();
             // ---------- Original Method ----------
@@ -1351,8 +1424,7 @@ public class LocationManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.994 -0400", hash_original_method = "03DD372B4F74F556A5CFC2950F002742", hash_generated_method = "F953C1733E6F0044D9DD1C141F224C4E")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.348 -0400", hash_original_method = "03DD372B4F74F556A5CFC2950F002742", hash_generated_method = "F953C1733E6F0044D9DD1C141F224C4E")
         public void onGpsStarted() {
             //DSFIXME:  CODE0009: Possible callback target function detected
             {
@@ -1370,8 +1442,7 @@ public class LocationManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.994 -0400", hash_original_method = "30C4A680AA9F7AF81E647400DEBA508E", hash_generated_method = "18F747EE3747CC12C7795B67D48B597C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.358 -0400", hash_original_method = "30C4A680AA9F7AF81E647400DEBA508E", hash_generated_method = "18F747EE3747CC12C7795B67D48B597C")
         public void onGpsStopped() {
             //DSFIXME:  CODE0009: Possible callback target function detected
             {
@@ -1389,11 +1460,9 @@ public class LocationManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.994 -0400", hash_original_method = "E5DFF9ED39044E57371BE0E746E84457", hash_generated_method = "A47CEEF0F120044D9336E15BD99E52FE")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.366 -0400", hash_original_method = "E5DFF9ED39044E57371BE0E746E84457", hash_generated_method = "0B5196F07DC7AFFA277FE47C44159183")
         public void onFirstFix(int ttff) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(ttff);
             {
                 mGpsStatus.setTimeToFirstFix(ttff);
                 Message msg;
@@ -1401,6 +1470,7 @@ public class LocationManager {
                 msg.what = GpsStatus.GPS_EVENT_FIRST_FIX;
                 mGpsHandler.sendMessage(msg);
             } //End block
+            addTaint(ttff);
             // ---------- Original Method ----------
             //if (mListener != null) {
                 //mGpsStatus.setTimeToFirstFix(ttff);
@@ -1411,20 +1481,11 @@ public class LocationManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.995 -0400", hash_original_method = "6F6B969ADA567E96DFAB5A585780E70F", hash_generated_method = "3CB2CB5876D5725B3CED206B22C1CF00")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.375 -0400", hash_original_method = "6F6B969ADA567E96DFAB5A585780E70F", hash_generated_method = "7E352262F7580F2577EDAF02D9A2E9D1")
         public void onSvStatusChanged(int svCount, int[] prns, float[] snrs,
                 float[] elevations, float[] azimuths, int ephemerisMask,
                 int almanacMask, int usedInFixMask) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(svCount);
-            dsTaint.addTaint(almanacMask);
-            dsTaint.addTaint(azimuths[0]);
-            dsTaint.addTaint(ephemerisMask);
-            dsTaint.addTaint(elevations[0]);
-            dsTaint.addTaint(snrs[0]);
-            dsTaint.addTaint(prns[0]);
-            dsTaint.addTaint(usedInFixMask);
             {
                 mGpsStatus.setStatus(svCount, prns, snrs, elevations, azimuths,
                         ephemerisMask, almanacMask, usedInFixMask);
@@ -1434,6 +1495,14 @@ public class LocationManager {
                 mGpsHandler.removeMessages(GpsStatus.GPS_EVENT_SATELLITE_STATUS);
                 mGpsHandler.sendMessage(msg);
             } //End block
+            addTaint(svCount);
+            addTaint(prns[0]);
+            addTaint(snrs[0]);
+            addTaint(elevations[0]);
+            addTaint(azimuths[0]);
+            addTaint(ephemerisMask);
+            addTaint(almanacMask);
+            addTaint(usedInFixMask);
             // ---------- Original Method ----------
             //if (mListener != null) {
                 //mGpsStatus.setStatus(svCount, prns, snrs, elevations, azimuths,
@@ -1446,12 +1515,9 @@ public class LocationManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.995 -0400", hash_original_method = "D97F778C22B6B561834B5A8A67FE2F57", hash_generated_method = "CD2C0196E9B47A3FDC7FE4C2540CEBB5")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.399 -0400", hash_original_method = "D97F778C22B6B561834B5A8A67FE2F57", hash_generated_method = "A094034040D8CA76767F65A5E20F946E")
         public void onNmeaReceived(long timestamp, String nmea) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(timestamp);
-            dsTaint.addTaint(nmea);
             {
                 {
                     mNmeaBuffer.add(new Nmea(timestamp, nmea));
@@ -1462,6 +1528,8 @@ public class LocationManager {
                 mGpsHandler.removeMessages(NMEA_RECEIVED);
                 mGpsHandler.sendMessage(msg);
             } //End block
+            addTaint(timestamp);
+            addTaint(nmea.getTaint());
             // ---------- Original Method ----------
             //if (mNmeaListener != null) {
                 //synchronized (mNmeaBuffer) {
@@ -1476,14 +1544,17 @@ public class LocationManager {
 
         
         private class Nmea {
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.399 -0400", hash_original_field = "D0D8C7FFAD5AE68F861E40D637EC0463", hash_generated_field = "1D358F2CB412AAF1346451355CB8F3E3")
+
             long mTimestamp;
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.399 -0400", hash_original_field = "5C868597A7B87315895D9C109908E910", hash_generated_field = "24AFD15E5AD8DD2E9530B1A85650CD93")
+
             String mNmea;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:49.996 -0400", hash_original_method = "7FAFEC38F5688F1D1ACFE15C845DEFCA", hash_generated_method = "5EA045F75D3097F71835C6110AE48E5C")
-            @DSModeled(DSC.SAFE)
-             Nmea(long timestamp, String nmea) {
-                dsTaint.addTaint(timestamp);
-                dsTaint.addTaint(nmea);
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.416 -0400", hash_original_method = "7FAFEC38F5688F1D1ACFE15C845DEFCA", hash_generated_method = "2C01B97CF53E8C2E9DE64A323D518081")
+              Nmea(long timestamp, String nmea) {
+                mTimestamp = timestamp;
+                mNmea = nmea;
                 // ---------- Original Method ----------
                 //mTimestamp = timestamp;
                 //mNmea = nmea;
@@ -1494,25 +1565,51 @@ public class LocationManager {
 
 
         
-        private static final int NMEA_RECEIVED = 1000;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.416 -0400", hash_original_field = "D84CD7AC433F52E58A4CCA5B3DB61EAD", hash_generated_field = "42BA11FDC6A92AFB50048B81B8856AC7")
+
+        private static int NMEA_RECEIVED = 1000;
     }
 
 
     
-    private static final String TAG = "LocationManager";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.416 -0400", hash_original_field = "3DCB34AD9AF783DB01BF473D53795CF0", hash_generated_field = "E093EE195B042F0ED33D0AB1FE9B2AFD")
+
+    private static String TAG = "LocationManager";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.416 -0400", hash_original_field = "6EB3A04D83D3EB53836000A2B31706D3", hash_generated_field = "6A1159950B5F0D81FE05A0592F2DB1B2")
+
     public static final String NETWORK_PROVIDER = "network";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.417 -0400", hash_original_field = "5511BBE363BBFBEF2A13CD3903A63DBA", hash_generated_field = "4C2280586138D33EB30E26156BDCB654")
+
     public static final String GPS_PROVIDER = "gps";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.417 -0400", hash_original_field = "1A76AC2B2F74ECACC05EB5A2C9A17D65", hash_generated_field = "F221EEFFFB6FF66793F94043F74CBC0B")
+
     public static final String PASSIVE_PROVIDER = "passive";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.417 -0400", hash_original_field = "1219C70453A4B51E7467604E9D21E2F1", hash_generated_field = "F9B4EC13158580C5DB06971A10A5663C")
+
     public static final String KEY_PROXIMITY_ENTERING = "entering";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.417 -0400", hash_original_field = "8BBFDB3591EF0B7BAF1E2C35BEE723C2", hash_generated_field = "F215A34B782985F96320EA9F9AC24ECE")
+
     public static final String KEY_STATUS_CHANGED = "status";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.417 -0400", hash_original_field = "EFC775B399B41180A7DFD2652A75BD6F", hash_generated_field = "E53B94E70159BE067785CDCFE51933F1")
+
     public static final String KEY_PROVIDER_ENABLED = "providerEnabled";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.417 -0400", hash_original_field = "BBB9637E7AD41C030E894E86C191AECF", hash_generated_field = "B9A8BCBF7A8975A62A8159DDE6821E45")
+
     public static final String KEY_LOCATION_CHANGED = "location";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.417 -0400", hash_original_field = "400BD7DF293767AC387D02375DE71183", hash_generated_field = "4011D28AFA5049A3F8B84DAE600CE7B1")
+
     public static final String GPS_ENABLED_CHANGE_ACTION =
         "android.location.GPS_ENABLED_CHANGE";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.417 -0400", hash_original_field = "116A7AA128E8BD79F2FF79BDFA6FC928", hash_generated_field = "F1DA53484EFF7310FA2C5CCD96A5903D")
+
     public static final String PROVIDERS_CHANGED_ACTION =
         "android.location.PROVIDERS_CHANGED";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.417 -0400", hash_original_field = "DDA3CF7A2BE453FBAF12CC5166836588", hash_generated_field = "0ED670DE81E8FA835AC8A157321FBD93")
+
     public static final String GPS_FIX_CHANGE_ACTION =
         "android.location.GPS_FIX_CHANGE";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.417 -0400", hash_original_field = "494BD1FE78539565E73D758923F5ABF3", hash_generated_field = "AAD29DA0DDBC5FD40952BC68A7746945")
+
     public static final String EXTRA_GPS_ENABLED = "enabled";
 }
 

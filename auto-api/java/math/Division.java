@@ -10,9 +10,10 @@ import java.util.Iterator;
 
 class Division {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.579 -0400", hash_original_method = "CF8A41DCC60501B253072F9E807E3E0D", hash_generated_method = "CF8A41DCC60501B253072F9E807E3E0D")
-        public Division ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.472 -0400", hash_original_method = "1CA90C9F74D165C3A16F193EF3A664DD", hash_generated_method = "1CA90C9F74D165C3A16F193EF3A664DD")
+    public Division ()
     {
+        //Synthesized constructor
     }
 
 

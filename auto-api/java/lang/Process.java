@@ -12,9 +12,10 @@ import java.io.OutputStream;
 
 public abstract class Process {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.918 -0400", hash_original_method = "86A1594DC3DA916C52311729E4DF63F1", hash_generated_method = "86A1594DC3DA916C52311729E4DF63F1")
-        public Process ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.951 -0400", hash_original_method = "F1A8A517686D0631650544C6E6120854", hash_generated_method = "F1A8A517686D0631650544C6E6120854")
+    public Process ()
     {
+        //Synthesized constructor
     }
 
 

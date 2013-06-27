@@ -13,22 +13,20 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BerOutputStream;
 
 public final class ReasonFlags {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.202 -0400", hash_original_field = "4E5868D676CB634AA75B125A0F741ABF", hash_generated_field = "EDA6943CEE7FB962748614E813BD6977")
+
     private boolean[] flags;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.914 -0400", hash_original_method = "0723455182874DC076BEC16F53F1DAFE", hash_generated_method = "4D9429C07F66C8934DB306C02A21D54F")
-    @DSModeled(DSC.SAFE)
-    public ReasonFlags(boolean[] flags) {
-        dsTaint.addTaint(flags[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.203 -0400", hash_original_method = "0723455182874DC076BEC16F53F1DAFE", hash_generated_method = "ACE7EB18781E115780B1426F26EFDD8E")
+    public  ReasonFlags(boolean[] flags) {
+        this.flags = flags;
         // ---------- Original Method ----------
         //this.flags = flags;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.914 -0400", hash_original_method = "4426D7C44C68FE2DDBEE0B08652B6069", hash_generated_method = "57FFA51A8B6B6E245AF38F420C76F2D1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.226 -0400", hash_original_method = "4426D7C44C68FE2DDBEE0B08652B6069", hash_generated_method = "DF61174E3DA518C2DF0E243469DAC3DA")
     public void dumpValue(StringBuilder sb, String prefix) {
-        dsTaint.addTaint(prefix);
-        dsTaint.addTaint(sb.dsTaint);
         sb.append(prefix);
         sb.append("ReasonFlags [\n");
         {
@@ -42,6 +40,8 @@ public final class ReasonFlags {
         } //End collapsed parenthetic
         sb.append(prefix);
         sb.append("]\n");
+        addTaint(sb.getTaint());
+        addTaint(prefix.getTaint());
         // ---------- Original Method ----------
         //sb.append(prefix);
         //sb.append("ReasonFlags [\n");
@@ -55,41 +55,21 @@ public final class ReasonFlags {
     }
 
     
-    static final String[] REASONS = {
-        "unused",
-        "keyCompromise",
-        "cACompromise",
-        "affiliationChanged",
-        "superseded",
-        "cessationOfOperation",
-        "certificateHold",
-        "privilegeWithdrawn",
-        "aACompromise"
-    };
-    public static final ASN1BitString ASN1 = new ASN1BitString.ASN1NamedBitList(REASONS.length) {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.915 -0400", hash_original_method = "31573B2F4CCD62BF50FDA97899BAB266", hash_generated_method = "ABA59991DB5CD06E2D02DDD9EEE57E24")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.226 -0400", hash_original_field = "CDF089F9218B4B6ED828B2FB67D9A884", hash_generated_field = "A15D30EA6043F64B2732D7941FC767CA")
+
+    static String[] REASONS = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.226 -0400", hash_original_field = "57F71CEED326110CDAC13EC2F1222EE2", hash_generated_field = "9A6C9509CE1B547AF3B36185903C2664")
+
+    public static final ASN1BitString ASN1 =
+                            new ASN1BitString.ASN1NamedBitList(REASONS.length) {
         public Object getDecodedObject(BerInputStream in) throws IOException {
-            dsTaint.addTaint(in.dsTaint);
-            Object var6531413CB1648254E5CDFF596EFE3BD0_258776935 = (new ReasonFlags((boolean[]) super.getDecodedObject(in)));
-            return (Object)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ReasonFlags((boolean[]) super.getDecodedObject(in));
+            return new ReasonFlags((boolean[]) super.getDecodedObject(in));
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.915 -0400", hash_original_method = "7CAEE2990EB6DF6257751BA848966F42", hash_generated_method = "A5E591E9715FC8C855A76915BE325300")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public void setEncodingContent(BerOutputStream out) {
-            dsTaint.addTaint(out.dsTaint);
             out.content = ((ReasonFlags) out.content).flags;
             super.setEncodingContent(out);
-            // ---------- Original Method ----------
-            //out.content = ((ReasonFlags) out.content).flags;
-            //super.setEncodingContent(out);
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

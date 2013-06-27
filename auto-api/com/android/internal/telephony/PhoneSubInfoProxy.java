@@ -14,14 +14,15 @@ import android.os.Binder;
 import android.os.ServiceManager;
 
 public class PhoneSubInfoProxy extends IPhoneSubInfo.Stub {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.677 -0400", hash_original_field = "95F855838AA6818DC0F0DA7E3A8E1DD6", hash_generated_field = "977885D72E5C857855A5A55FBD61054C")
+
     private PhoneSubInfo mPhoneSubInfo;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.737 -0400", hash_original_method = "9BD3264052A5435C1685FA905C11EB3C", hash_generated_method = "0AE9406DBBAB78E0D1C9E038B628551C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PhoneSubInfoProxy(PhoneSubInfo phoneSubInfo) {
-        dsTaint.addTaint(phoneSubInfo.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.678 -0400", hash_original_method = "9BD3264052A5435C1685FA905C11EB3C", hash_generated_method = "0163DF8068F487B010FE25052F75A98C")
+    public  PhoneSubInfoProxy(PhoneSubInfo phoneSubInfo) {
+        mPhoneSubInfo = phoneSubInfo;
         {
-            boolean var2203655666EE46F7BEFC8D224D628972_1303431699 = (ServiceManager.getService("iphonesubinfo") == null);
+            boolean var2203655666EE46F7BEFC8D224D628972_2127026749 = (ServiceManager.getService("iphonesubinfo") == null);
             {
                 ServiceManager.addService("iphonesubinfo", this);
             } //End block
@@ -34,154 +35,163 @@ public class PhoneSubInfoProxy extends IPhoneSubInfo.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.737 -0400", hash_original_method = "2283D2DC026CDBFF3477BE41D42C9914", hash_generated_method = "B6468282351285EE8A1DD06ECCDFD991")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.678 -0400", hash_original_method = "2283D2DC026CDBFF3477BE41D42C9914", hash_generated_method = "D262168F541585EBD460EBA7053A0B05")
     public void setmPhoneSubInfo(PhoneSubInfo phoneSubInfo) {
-        dsTaint.addTaint(phoneSubInfo.dsTaint);
+        this.mPhoneSubInfo = phoneSubInfo;
         // ---------- Original Method ----------
         //this.mPhoneSubInfo = phoneSubInfo;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.737 -0400", hash_original_method = "D25D1513A7A9E94213D872FEEFA3459F", hash_generated_method = "6221CFF2F7DC1DF58C81A4533B289E36")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.679 -0400", hash_original_method = "D25D1513A7A9E94213D872FEEFA3459F", hash_generated_method = "ECFB6E78562A746F19C308CA73E391D7")
     public String getDeviceId() {
-        String varD5FDA813F932237DC42F009465D9207C_803474799 = (mPhoneSubInfo.getDeviceId());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_995188804 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_995188804 = mPhoneSubInfo.getDeviceId();
+        varB4EAC82CA7396A68D541C85D26508E83_995188804.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_995188804;
         // ---------- Original Method ----------
         //return mPhoneSubInfo.getDeviceId();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.737 -0400", hash_original_method = "218139047ECFCF8CA6D1F8CDAA4C694C", hash_generated_method = "B66437D400AFF40A879308A7AEE7578D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.679 -0400", hash_original_method = "218139047ECFCF8CA6D1F8CDAA4C694C", hash_generated_method = "4A66527E9895CD51400868926297A866")
     public String getDeviceSvn() {
-        String var4E23D51C01FC28CB0DFBAC5E982D1D6A_1398330199 = (mPhoneSubInfo.getDeviceSvn());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1885643905 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1885643905 = mPhoneSubInfo.getDeviceSvn();
+        varB4EAC82CA7396A68D541C85D26508E83_1885643905.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1885643905;
         // ---------- Original Method ----------
         //return mPhoneSubInfo.getDeviceSvn();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.737 -0400", hash_original_method = "64517BFCC96C0835EBBF77921AFD12C4", hash_generated_method = "FD5E5221B6E675C8D825C6D87398D906")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.688 -0400", hash_original_method = "64517BFCC96C0835EBBF77921AFD12C4", hash_generated_method = "59E27EF001DEF20CF1CE98CFE43F3622")
     public String getSubscriberId() {
-        String varFD0D821FD9E5B1A85376A6F16261C4A4_26789176 = (mPhoneSubInfo.getSubscriberId());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_98572459 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_98572459 = mPhoneSubInfo.getSubscriberId();
+        varB4EAC82CA7396A68D541C85D26508E83_98572459.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_98572459;
         // ---------- Original Method ----------
         //return mPhoneSubInfo.getSubscriberId();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.738 -0400", hash_original_method = "E6772554197C74231E47C8BCCAE0DED3", hash_generated_method = "45F40D4F66992C67F7A1D2E0ECC9C4B2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.689 -0400", hash_original_method = "E6772554197C74231E47C8BCCAE0DED3", hash_generated_method = "22FF1641A2F16C5FD0AFE497734EAAAF")
     public String getIccSerialNumber() {
-        String var7BA0189A6F7FFDEF4418E3CEA5DE7261_1939149887 = (mPhoneSubInfo.getIccSerialNumber());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2115037288 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2115037288 = mPhoneSubInfo.getIccSerialNumber();
+        varB4EAC82CA7396A68D541C85D26508E83_2115037288.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2115037288;
         // ---------- Original Method ----------
         //return mPhoneSubInfo.getIccSerialNumber();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.738 -0400", hash_original_method = "1E3DF53750004468A3FEA812C75DB18E", hash_generated_method = "7AAA198F887C23868816D3EB841BE711")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.691 -0400", hash_original_method = "1E3DF53750004468A3FEA812C75DB18E", hash_generated_method = "B1A40C777874F57FD45FC22A8C334F58")
     public String getLine1Number() {
-        String var1C972B26906F13D52978577EE59F9F2A_476548948 = (mPhoneSubInfo.getLine1Number());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1754495557 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1754495557 = mPhoneSubInfo.getLine1Number();
+        varB4EAC82CA7396A68D541C85D26508E83_1754495557.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1754495557;
         // ---------- Original Method ----------
         //return mPhoneSubInfo.getLine1Number();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.738 -0400", hash_original_method = "64EA0D6EA297012E928C67F727560D62", hash_generated_method = "5142234785C1FC5CE5FAEFE9DFDED4AD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.696 -0400", hash_original_method = "64EA0D6EA297012E928C67F727560D62", hash_generated_method = "5098A29AB670DEBF2F088E27CDBA2FAC")
     public String getLine1AlphaTag() {
-        String varD75055D8A101705A290956440DA07CF2_914072109 = (mPhoneSubInfo.getLine1AlphaTag());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1162067409 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1162067409 = mPhoneSubInfo.getLine1AlphaTag();
+        varB4EAC82CA7396A68D541C85D26508E83_1162067409.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1162067409;
         // ---------- Original Method ----------
         //return mPhoneSubInfo.getLine1AlphaTag();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.738 -0400", hash_original_method = "ECD66F483FDED6B625291F5D42CCD29E", hash_generated_method = "FD9B7EFC58B7A8D2815A2115AFEC69E9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.701 -0400", hash_original_method = "ECD66F483FDED6B625291F5D42CCD29E", hash_generated_method = "9693B37B76D3A92528BFE01E08784F33")
     public String getMsisdn() {
-        String var81EB3EC761B7E693FE7EF0BEC00896F7_535837480 = (mPhoneSubInfo.getMsisdn());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1782400513 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1782400513 = mPhoneSubInfo.getMsisdn();
+        varB4EAC82CA7396A68D541C85D26508E83_1782400513.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1782400513;
         // ---------- Original Method ----------
         //return mPhoneSubInfo.getMsisdn();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.738 -0400", hash_original_method = "161F824EA43402C1D442E10B044BD515", hash_generated_method = "87A1D71D1E9AB6CDD545F345ADCB0271")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.702 -0400", hash_original_method = "161F824EA43402C1D442E10B044BD515", hash_generated_method = "699E23FB56D28525CFE372619C00F572")
     public String getVoiceMailNumber() {
-        String var69B1D5D19453AA9939817AEF86CCBA3C_1061420829 = (mPhoneSubInfo.getVoiceMailNumber());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_493074348 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_493074348 = mPhoneSubInfo.getVoiceMailNumber();
+        varB4EAC82CA7396A68D541C85D26508E83_493074348.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_493074348;
         // ---------- Original Method ----------
         //return mPhoneSubInfo.getVoiceMailNumber();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.739 -0400", hash_original_method = "D36FC67BCBBF5218B0475E1086B8F100", hash_generated_method = "A845F18787450609ED9C4A5CF7DD0780")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.702 -0400", hash_original_method = "D36FC67BCBBF5218B0475E1086B8F100", hash_generated_method = "F0571CC4E20CC402A5E37D8549DF2E84")
     public String getCompleteVoiceMailNumber() {
-        String varB8AF62242E3E7B44B28F9F4D08302935_44989808 = (mPhoneSubInfo.getCompleteVoiceMailNumber());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1280945616 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1280945616 = mPhoneSubInfo.getCompleteVoiceMailNumber();
+        varB4EAC82CA7396A68D541C85D26508E83_1280945616.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1280945616;
         // ---------- Original Method ----------
         //return mPhoneSubInfo.getCompleteVoiceMailNumber();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.739 -0400", hash_original_method = "B4E40022523B90FE3B591C5B01B0F447", hash_generated_method = "B3B521A5C8E0D62211F265FB0268DE2D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.715 -0400", hash_original_method = "B4E40022523B90FE3B591C5B01B0F447", hash_generated_method = "E192039BBF0C4ECD18B0EFE1FE237D4A")
     public String getVoiceMailAlphaTag() {
-        String var5DC49869BE7750A576EF3CF1A3960E6C_1735130483 = (mPhoneSubInfo.getVoiceMailAlphaTag());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_943349209 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_943349209 = mPhoneSubInfo.getVoiceMailAlphaTag();
+        varB4EAC82CA7396A68D541C85D26508E83_943349209.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_943349209;
         // ---------- Original Method ----------
         //return mPhoneSubInfo.getVoiceMailAlphaTag();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.739 -0400", hash_original_method = "1B9C156CDE1FE8BC8AD5790ACDC1839F", hash_generated_method = "58F132F02C4A2DC0A6A89E5721E7587D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.715 -0400", hash_original_method = "1B9C156CDE1FE8BC8AD5790ACDC1839F", hash_generated_method = "518BC9E04ADA4B50C6E845E1EE2B4808")
     public String getIsimImpi() {
-        String var6ABA5AA8636A7E9B6E44C1DCA9DEA7C6_1186688259 = (mPhoneSubInfo.getIsimImpi());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2096088656 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2096088656 = mPhoneSubInfo.getIsimImpi();
+        varB4EAC82CA7396A68D541C85D26508E83_2096088656.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2096088656;
         // ---------- Original Method ----------
         //return mPhoneSubInfo.getIsimImpi();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.739 -0400", hash_original_method = "5E6F99581C2642DC2161D87CA1564892", hash_generated_method = "4677BD36833022B6F1072CE9ED3EFAD3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.716 -0400", hash_original_method = "5E6F99581C2642DC2161D87CA1564892", hash_generated_method = "23A287E769E5BDA0948EE8CEA8A60588")
     public String getIsimDomain() {
-        String var4C7BFB653A7E6D8C94BD1092C61B79ED_1986315287 = (mPhoneSubInfo.getIsimDomain());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1211014678 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1211014678 = mPhoneSubInfo.getIsimDomain();
+        varB4EAC82CA7396A68D541C85D26508E83_1211014678.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1211014678;
         // ---------- Original Method ----------
         //return mPhoneSubInfo.getIsimDomain();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.739 -0400", hash_original_method = "AA8729D4828AF8D72F3D75B4D7287C76", hash_generated_method = "72E61B194CEB6FE21448C9E9BBB4AC2B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.716 -0400", hash_original_method = "AA8729D4828AF8D72F3D75B4D7287C76", hash_generated_method = "32A79AF34FE61708B7E32424A4246681")
     public String[] getIsimImpu() {
-        String[] var02C179EE7D63535EF4F9720E5D365235_340577712 = (mPhoneSubInfo.getIsimImpu());
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_643167464 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_643167464 = mPhoneSubInfo.getIsimImpu();
+        varB4EAC82CA7396A68D541C85D26508E83_643167464.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_643167464;
         // ---------- Original Method ----------
         //return mPhoneSubInfo.getIsimImpu();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.739 -0400", hash_original_method = "BD901838E03164DC084863FAEEA45A76", hash_generated_method = "40DECA0B68041856B4353E96E0C40A15")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.717 -0400", hash_original_method = "BD901838E03164DC084863FAEEA45A76", hash_generated_method = "CE03338FAD2DA7598178FADFB4777B53")
     protected void dump(FileDescriptor fd, PrintWriter pw, String[] args) {
-        dsTaint.addTaint(args[0]);
-        dsTaint.addTaint(pw.dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
         mPhoneSubInfo.dump(fd, pw, args);
+        addTaint(fd.getTaint());
+        addTaint(pw.getTaint());
+        addTaint(args[0].getTaint());
         // ---------- Original Method ----------
         //mPhoneSubInfo.dump(fd, pw, args);
     }

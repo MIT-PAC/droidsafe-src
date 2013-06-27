@@ -10,9 +10,10 @@ import java.util.Iterator;
 
 public class Preconditions {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.737 -0400", hash_original_method = "FC28236EE5365D2E501D01B1D048F101", hash_generated_method = "FC28236EE5365D2E501D01B1D048F101")
-        public Preconditions ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.457 -0400", hash_original_method = "1249D16E1F2DBD1F6589B9E494B4B7C0", hash_generated_method = "1249D16E1F2DBD1F6589B9E494B4B7C0")
+    public Preconditions ()
     {
+        //Synthesized constructor
     }
 
 

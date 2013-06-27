@@ -11,9 +11,8 @@ import android.util.AndroidException;
 
 class CatException extends AndroidException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.643 -0400", hash_original_method = "217904746D066E13388F09D2C1BC88BC", hash_generated_method = "27066497143FE83F5412EC3660689C02")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CatException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.851 -0400", hash_original_method = "217904746D066E13388F09D2C1BC88BC", hash_generated_method = "27066497143FE83F5412EC3660689C02")
+    public  CatException() {
         super();
         // ---------- Original Method ----------
     }

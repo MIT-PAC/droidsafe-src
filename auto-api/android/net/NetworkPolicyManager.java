@@ -21,15 +21,16 @@ import java.io.PrintWriter;
 import java.util.HashSet;
 
 public class NetworkPolicyManager {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.596 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "99D41184207358A72CF865D27CF56B99")
+
     private INetworkPolicyManager mService;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.119 -0400", hash_original_method = "BE20EED3085F3645396D71EF01AFD2C0", hash_generated_method = "392A7EBD5A98EAF9A28CAD76A9339612")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public NetworkPolicyManager(INetworkPolicyManager service) {
-        dsTaint.addTaint(service.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.597 -0400", hash_original_method = "BE20EED3085F3645396D71EF01AFD2C0", hash_generated_method = "8147234F295E452C1A833AA9B188EAB4")
+    public  NetworkPolicyManager(INetworkPolicyManager service) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("missing INetworkPolicyManager");
         } //End block
+        mService = service;
         // ---------- Original Method ----------
         //if (service == null) {
             //throw new IllegalArgumentException("missing INetworkPolicyManager");
@@ -43,16 +44,15 @@ public class NetworkPolicyManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.120 -0400", hash_original_method = "6C9718C45778137F76C2603939413095", hash_generated_method = "F49434DFDB360D869976AA5FE0B27F1C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.612 -0400", hash_original_method = "6C9718C45778137F76C2603939413095", hash_generated_method = "CAB9DC37DE9BEA0CC66D1DE07A242AB9")
     public void setNetworkPolicies(NetworkPolicy[] policies) {
-        dsTaint.addTaint(policies[0].dsTaint);
         try 
         {
             mService.setNetworkPolicies(policies);
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(policies[0].getTaint());
         // ---------- Original Method ----------
         //try {
             //mService.setNetworkPolicies(policies);
@@ -61,16 +61,29 @@ public class NetworkPolicyManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.121 -0400", hash_original_method = "025521C078EE07825554E8E10F94F333", hash_generated_method = "C97AE0A78CA9565698FB19BE808CAD58")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.629 -0400", hash_original_method = "025521C078EE07825554E8E10F94F333", hash_generated_method = "AF5AE04936C569C21FA81AB16DB7534B")
     public NetworkPolicy[] getNetworkPolicies() {
+        NetworkPolicy[] varB4EAC82CA7396A68D541C85D26508E83_1468424470 = null; //Variable for return #1
+        NetworkPolicy[] varB4EAC82CA7396A68D541C85D26508E83_1240293079 = null; //Variable for return #2
         try 
         {
-            NetworkPolicy[] var2B96B04762E19EC191DCCEB0C1B28F5B_535952419 = (mService.getNetworkPolicies());
+            varB4EAC82CA7396A68D541C85D26508E83_1468424470 = mService.getNetworkPolicies();
         } //End block
         catch (RemoteException e)
-        { }
-        return (NetworkPolicy[])dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1240293079 = null;
+        } //End block
+        NetworkPolicy[] varA7E53CE21691AB073D9660D615818899_808328136; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_808328136 = varB4EAC82CA7396A68D541C85D26508E83_1468424470;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_808328136 = varB4EAC82CA7396A68D541C85D26508E83_1240293079;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_808328136.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_808328136;
         // ---------- Original Method ----------
         //try {
             //return mService.getNetworkPolicies();
@@ -80,17 +93,16 @@ public class NetworkPolicyManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.121 -0400", hash_original_method = "A06EA8E312C1B7FA5C4AC7FF7B993ED4", hash_generated_method = "789A44771EFE029BB48334A385B3E1B0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.637 -0400", hash_original_method = "A06EA8E312C1B7FA5C4AC7FF7B993ED4", hash_generated_method = "6A5841D3BC023CEBF662D4648F87A3AA")
     public void setUidPolicy(int uid, int policy) {
-        dsTaint.addTaint(uid);
-        dsTaint.addTaint(policy);
         try 
         {
             mService.setUidPolicy(uid, policy);
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(uid);
+        addTaint(policy);
         // ---------- Original Method ----------
         //try {
             //mService.setUidPolicy(uid, policy);
@@ -99,17 +111,17 @@ public class NetworkPolicyManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.122 -0400", hash_original_method = "7AF3F24A0466D6FB5C5D518CC41F56AD", hash_generated_method = "C724EAA1B0D029D406695898EB98D7AD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.638 -0400", hash_original_method = "7AF3F24A0466D6FB5C5D518CC41F56AD", hash_generated_method = "62874D1D22B9C25A3389D84B8772EFF4")
     public int getUidPolicy(int uid) {
-        dsTaint.addTaint(uid);
         try 
         {
-            int var2EFE4EBC09097CC24DA539A1E8DCD3CE_2086222448 = (mService.getUidPolicy(uid));
+            int var2EFE4EBC09097CC24DA539A1E8DCD3CE_1070863845 = (mService.getUidPolicy(uid));
         } //End block
         catch (RemoteException e)
         { }
-        return dsTaint.getTaintInt();
+        addTaint(uid);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_629348148 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_629348148;
         // ---------- Original Method ----------
         //try {
             //return mService.getUidPolicy(uid);
@@ -119,17 +131,16 @@ public class NetworkPolicyManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.122 -0400", hash_original_method = "14080C9EBE421CBAA0CC7A85DC8AF1A5", hash_generated_method = "CCEAC2FD2773086C1B746706DCD11095")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.638 -0400", hash_original_method = "14080C9EBE421CBAA0CC7A85DC8AF1A5", hash_generated_method = "F8F2B172F98C25CEE95E5E1A7E12475E")
     public void registerListener(INetworkPolicyListener listener) {
         //DSFIXME: CODE0010: Possible callback registration function detected
-        dsTaint.addTaint(listener.dsTaint);
         try 
         {
             mService.registerListener(listener);
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(listener.getTaint());
         // ---------- Original Method ----------
         //try {
             //mService.registerListener(listener);
@@ -138,16 +149,15 @@ public class NetworkPolicyManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.122 -0400", hash_original_method = "35702F276EA8A80B200FDB5306DFD41E", hash_generated_method = "CCE2F3860E9F0F2AF1390EF0C9AB2C4B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.639 -0400", hash_original_method = "35702F276EA8A80B200FDB5306DFD41E", hash_generated_method = "51C036CBD170D6512891CB5207B01BDC")
     public void unregisterListener(INetworkPolicyListener listener) {
-        dsTaint.addTaint(listener.dsTaint);
         try 
         {
             mService.unregisterListener(listener);
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(listener.getTaint());
         // ---------- Original Method ----------
         //try {
             //mService.unregisterListener(listener);
@@ -253,11 +263,23 @@ public class NetworkPolicyManager {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.650 -0400", hash_original_field = "5F01DF1EC1C676246E73BF9B11F16961", hash_generated_field = "A3BDE024BE500201404672CCC1FA302A")
+
     public static final int POLICY_NONE = 0x0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.650 -0400", hash_original_field = "508212C4E68E17ADFD3CAD6DF2535DF4", hash_generated_field = "1AA83347B7872B2E30E521C1406805D2")
+
     public static final int POLICY_REJECT_METERED_BACKGROUND = 0x1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.650 -0400", hash_original_field = "E10817514635957436609E1FAB8975E1", hash_generated_field = "1275F8E08B26E334FD55FCC008B3124E")
+
     public static final int RULE_ALLOW_ALL = 0x0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.650 -0400", hash_original_field = "E2A0D322ABD6E5AA243E226C00F05628", hash_generated_field = "4356C8F4B6AFE9AC655D4B421139074C")
+
     public static final int RULE_REJECT_METERED = 0x1;
-    private static final boolean ALLOW_PLATFORM_APP_POLICY = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.650 -0400", hash_original_field = "75F62DC6D048838CBD4FC2C088798D84", hash_generated_field = "C4E372DB09F3420CC22D665728DF4AA6")
+
+    private static boolean ALLOW_PLATFORM_APP_POLICY = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.662 -0400", hash_original_field = "FB2642AC3EF8E7EAC32618880485B684", hash_generated_field = "7320E001215B3C746B3AE684FAAEC5AC")
+
     public static final String EXTRA_NETWORK_TEMPLATE = "android.net.NETWORK_TEMPLATE";
 }
 

@@ -17,14 +17,19 @@ import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.Call.State;
 
 public final class CdmaCall extends Call {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.227 -0400", hash_original_field = "EC0FEA7E6F8E16E3471486B698ED3A9D", hash_generated_field = "2814A276BAC6C190BAEC9128FA3036E9")
+
     ArrayList<Connection> connections = new ArrayList<Connection>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.227 -0400", hash_original_field = "1A5BE9871FF7E0AB5805D64E8617FA11", hash_generated_field = "B9A7F7508B0B5FA0BFE8695446A61CF7")
+
     State state = State.IDLE;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.227 -0400", hash_original_field = "72122CE96BFEC66E2396D2E25225D70A", hash_generated_field = "3927F28CE0F1F17A9255E7EFC415C1BF")
+
     CdmaCallTracker owner;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.166 -0400", hash_original_method = "D729656758C665C5D95A9ED02FF27E98", hash_generated_method = "92BB0CA0052A58228A9B86F4D88DB124")
-    @DSModeled(DSC.SAFE)
-     CdmaCall(CdmaCallTracker owner) {
-        dsTaint.addTaint(owner.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.228 -0400", hash_original_method = "D729656758C665C5D95A9ED02FF27E98", hash_generated_method = "9420100303E5D0809E6EDE6F78536020")
+      CdmaCall(CdmaCallTracker owner) {
+        this.owner = owner;
         // ---------- Original Method ----------
         //this.owner = owner;
     }
@@ -43,52 +48,56 @@ public final class CdmaCall extends Call {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.167 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.229 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.167 -0400", hash_original_method = "DA46D72C53A8C0722B0E4038E55B8A9F", hash_generated_method = "4F22A491BCE8B1633D346B0D6460A3C6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.229 -0400", hash_original_method = "DA46D72C53A8C0722B0E4038E55B8A9F", hash_generated_method = "B8AA54DACCAA17582B98F98FEC48C174")
     public List<Connection> getConnections() {
-        return (List<Connection>)dsTaint.getTaint();
+        List<Connection> varB4EAC82CA7396A68D541C85D26508E83_746353473 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_746353473 = connections;
+        varB4EAC82CA7396A68D541C85D26508E83_746353473.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_746353473;
         // ---------- Original Method ----------
         //return connections;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.167 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "F5E227F5D2B96691C815C4C56ED31889")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.229 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "57EF8D824FC0DB100C43DAD74AEBB5BA")
     public State getState() {
-        return (State)dsTaint.getTaint();
+        State varB4EAC82CA7396A68D541C85D26508E83_1246271471 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1246271471 = state;
+        varB4EAC82CA7396A68D541C85D26508E83_1246271471.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1246271471;
         // ---------- Original Method ----------
         //return state;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.167 -0400", hash_original_method = "3D84383237FBED33FD2CE3B737BA6B20", hash_generated_method = "6DAE36C7FCE1ADB4E0F4B65FA789928E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.230 -0400", hash_original_method = "3D84383237FBED33FD2CE3B737BA6B20", hash_generated_method = "B1507C0F270C7444BE5ABF4B00D9C506")
     public Phone getPhone() {
-        return (Phone)dsTaint.getTaint();
+        Phone varB4EAC82CA7396A68D541C85D26508E83_210236643 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_210236643 = owner.phone;
+        varB4EAC82CA7396A68D541C85D26508E83_210236643.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_210236643;
         // ---------- Original Method ----------
         //return owner.phone;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.167 -0400", hash_original_method = "E944BDEAA6C46A001782606E74F9EFB0", hash_generated_method = "34D63542768E3D7203CD68B51757023F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.230 -0400", hash_original_method = "E944BDEAA6C46A001782606E74F9EFB0", hash_generated_method = "7DC0FD357F562DAA838DB91D923AE5F5")
     public boolean isMultiparty() {
-        boolean var52647A12D2BB0BA84480F9E34372A169_127866904 = (connections.size() > 1);
-        return dsTaint.getTaintBoolean();
+        boolean var52647A12D2BB0BA84480F9E34372A169_417994896 = (connections.size() > 1);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_278740927 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_278740927;
         // ---------- Original Method ----------
         //return connections.size() > 1;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.168 -0400", hash_original_method = "BD4623110C086A165B3AF83FA1BCBA34", hash_generated_method = "5E905B16961B21B9CFA064E867BE77FF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.230 -0400", hash_original_method = "BD4623110C086A165B3AF83FA1BCBA34", hash_generated_method = "5E905B16961B21B9CFA064E867BE77FF")
     public void hangup() throws CallStateException {
         owner.hangup(this);
         // ---------- Original Method ----------
@@ -96,45 +105,41 @@ public final class CdmaCall extends Call {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.168 -0400", hash_original_method = "A7B99D81B12619E0B5BB79286D622078", hash_generated_method = "849675E365ED3B5799D05A521A602B2C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.241 -0400", hash_original_method = "A7B99D81B12619E0B5BB79286D622078", hash_generated_method = "EB8E12664D8C9A35421AF75F3A00DDF9")
     public String toString() {
-        String var5EF4649C78F5CB0BBE023751D2BCF5D7_1306647545 = (state.toString());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_226094517 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_226094517 = state.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_226094517.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_226094517;
         // ---------- Original Method ----------
         //return state.toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.168 -0400", hash_original_method = "ADEE6A90086841672D212D83F619D5B4", hash_generated_method = "7EE29B2E705E4F50E03C5F8F2A33B038")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.242 -0400", hash_original_method = "ADEE6A90086841672D212D83F619D5B4", hash_generated_method = "CA3BFFAFC1C36E78B0478C3FF716B23A")
      void attach(Connection conn, DriverCall dc) {
-        dsTaint.addTaint(dc.dsTaint);
-        dsTaint.addTaint(conn.dsTaint);
         connections.add(conn);
         state = stateFromDCState (dc.state);
+        addTaint(conn.getTaint());
         // ---------- Original Method ----------
         //connections.add(conn);
         //state = stateFromDCState (dc.state);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.168 -0400", hash_original_method = "1D150B86FE35D9DF33C56E5123257F96", hash_generated_method = "418C96BFE0285CF290AAAE147C82C9A7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.258 -0400", hash_original_method = "1D150B86FE35D9DF33C56E5123257F96", hash_generated_method = "060448F3048ABDD756C3C83A86C7C637")
      void attachFake(Connection conn, State state) {
-        dsTaint.addTaint(conn.dsTaint);
-        dsTaint.addTaint(state.dsTaint);
         connections.add(conn);
+        this.state = state;
+        addTaint(conn.getTaint());
         // ---------- Original Method ----------
         //connections.add(conn);
         //this.state = state;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.169 -0400", hash_original_method = "A46A7B47E3DFA1A951D01F8316BDCB63", hash_generated_method = "31B06068F632915282E97643DBB04BF7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.259 -0400", hash_original_method = "A46A7B47E3DFA1A951D01F8316BDCB63", hash_generated_method = "D2A2C4330A7B2D19CE7ECD4FCF40EBAB")
      void connectionDisconnected(CdmaConnection conn) {
-        dsTaint.addTaint(conn.dsTaint);
         {
             boolean hasOnlyDisconnectedConnections;
             hasOnlyDisconnectedConnections = true;
@@ -144,7 +149,7 @@ public final class CdmaCall extends Call {
                 s = connections.size();
                 {
                     {
-                        boolean var04AFE2A5134EA8ACC0F9B0C19F48FDDB_1774262062 = (connections.get(i).getState()
+                        boolean var04AFE2A5134EA8ACC0F9B0C19F48FDDB_993587523 = (connections.get(i).getState()
                     != State.DISCONNECTED);
                         {
                             hasOnlyDisconnectedConnections = false;
@@ -156,6 +161,7 @@ public final class CdmaCall extends Call {
                 state = State.DISCONNECTED;
             } //End block
         } //End block
+        addTaint(conn.getTaint());
         // ---------- Original Method ----------
         //if (state != State.DISCONNECTED) {
             //boolean hasOnlyDisconnectedConnections = true;
@@ -174,17 +180,16 @@ public final class CdmaCall extends Call {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.169 -0400", hash_original_method = "1EA8F68D5A466EEC41832970B917D4DC", hash_generated_method = "854FBD3FE9C3263D9EAF4894D4F9802F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.263 -0400", hash_original_method = "1EA8F68D5A466EEC41832970B917D4DC", hash_generated_method = "B88B002DA9796A21B70196D5E3B4DEA7")
      void detach(CdmaConnection conn) {
-        dsTaint.addTaint(conn.dsTaint);
         connections.remove(conn);
         {
-            boolean var92053B84273B30E40984664E5B7D0B68_1223853617 = (connections.size() == 0);
+            boolean var92053B84273B30E40984664E5B7D0B68_2117211319 = (connections.size() == 0);
             {
                 state = State.IDLE;
             } //End block
         } //End collapsed parenthetic
+        addTaint(conn.getTaint());
         // ---------- Original Method ----------
         //connections.remove(conn);
         //if (connections.size() == 0) {
@@ -193,11 +198,8 @@ public final class CdmaCall extends Call {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.169 -0400", hash_original_method = "653CAD94409C4BC1F3DC33028F34238B", hash_generated_method = "06939A5CD965601ABEC4F63988ECB4AB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.264 -0400", hash_original_method = "653CAD94409C4BC1F3DC33028F34238B", hash_generated_method = "0A4664BC5392F0AA5F5D069B85672E4C")
      boolean update(CdmaConnection conn, DriverCall dc) {
-        dsTaint.addTaint(dc.dsTaint);
-        dsTaint.addTaint(conn.dsTaint);
         State newState;
         boolean changed;
         changed = false;
@@ -206,7 +208,10 @@ public final class CdmaCall extends Call {
             state = newState;
             changed = true;
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(conn.getTaint());
+        addTaint(dc.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1625246124 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1625246124;
         // ---------- Original Method ----------
         //State newState;
         //boolean changed = false;
@@ -219,18 +224,17 @@ public final class CdmaCall extends Call {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.169 -0400", hash_original_method = "1C46465CDA75E6DA5CCE62BB3DA600A6", hash_generated_method = "19967B7115E6A3D9E99A2D094E77ABAF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.264 -0400", hash_original_method = "1C46465CDA75E6DA5CCE62BB3DA600A6", hash_generated_method = "991B4F3A42ABF98AE0F69A47726156A3")
      boolean isFull() {
-        boolean varC5489A296DC91591FD5D45FE337F3741_1950398772 = (connections.size() == CdmaCallTracker.MAX_CONNECTIONS_PER_CALL);
-        return dsTaint.getTaintBoolean();
+        boolean varC5489A296DC91591FD5D45FE337F3741_184211071 = (connections.size() == CdmaCallTracker.MAX_CONNECTIONS_PER_CALL);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2100135676 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2100135676;
         // ---------- Original Method ----------
         //return connections.size() == CdmaCallTracker.MAX_CONNECTIONS_PER_CALL;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.169 -0400", hash_original_method = "A6EB616B9F71A14D95ECE60CFCB290DD", hash_generated_method = "3EA2F4CFB54B0F07D9AAD6AD7069BFD2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.264 -0400", hash_original_method = "A6EB616B9F71A14D95ECE60CFCB290DD", hash_generated_method = "3EA2F4CFB54B0F07D9AAD6AD7069BFD2")
      void onHangupLocal() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
@@ -253,8 +257,7 @@ public final class CdmaCall extends Call {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.170 -0400", hash_original_method = "C72D64DE5C06A555CE5E29E3236A56AC", hash_generated_method = "C452BB895925980C67E53349A6A97A2F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.265 -0400", hash_original_method = "C72D64DE5C06A555CE5E29E3236A56AC", hash_generated_method = "1EE6D33C4969E0F18ECDECEBD910941A")
      void clearDisconnected() {
         {
             int i;
@@ -263,7 +266,7 @@ public final class CdmaCall extends Call {
                 CdmaConnection cn;
                 cn = (CdmaConnection)connections.get(i);
                 {
-                    boolean var21929D219ECCE9FD7C6256E3BD60435E_1002699859 = (cn.getState() == State.DISCONNECTED);
+                    boolean var21929D219ECCE9FD7C6256E3BD60435E_30977811 = (cn.getState() == State.DISCONNECTED);
                     {
                         connections.remove(i);
                     } //End block
@@ -271,7 +274,7 @@ public final class CdmaCall extends Call {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var92053B84273B30E40984664E5B7D0B68_1728111223 = (connections.size() == 0);
+            boolean var92053B84273B30E40984664E5B7D0B68_1924096968 = (connections.size() == 0);
             {
                 state = State.IDLE;
             } //End block

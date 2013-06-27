@@ -1,0 +1,103 @@
+package org.bouncycastle.util.encoders;
+
+// Droidsafe Imports
+import droidsafe.helpers.*;
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+
+// needed for enhanced for control translations
+import java.util.Iterator;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
+public class Hex {
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.840 -0400", hash_original_method = "2062DFA17AA591396821D3397343CC6D", hash_generated_method = "2062DFA17AA591396821D3397343CC6D")
+    public Hex ()
+    {
+        //Synthesized constructor
+    }
+
+
+        public static byte[] encode(
+        byte[]    data) {
+        return encode(data, 0, data.length);
+    }
+
+    
+        public static byte[] encode(
+        byte[]    data,
+        int       off,
+        int       length) {
+        ByteArrayOutputStream    bOut = new ByteArrayOutputStream();
+        try
+        {
+            encoder.encode(data, off, length, bOut);
+        }
+        catch (IOException e)
+        {
+            throw new RuntimeException("exception encoding Hex string: " + e);
+        }
+        return bOut.toByteArray();
+    }
+
+    
+        public static int encode(
+        byte[]         data,
+        OutputStream   out) throws IOException {
+        return encoder.encode(data, 0, data.length, out);
+    }
+
+    
+        public static int encode(
+        byte[]         data,
+        int            off,
+        int            length,
+        OutputStream   out) throws IOException {
+        return encoder.encode(data, off, length, out);
+    }
+
+    
+        public static byte[] decode(
+        byte[]    data) {
+        ByteArrayOutputStream    bOut = new ByteArrayOutputStream();
+        try
+        {
+            encoder.decode(data, 0, data.length, bOut);
+        }
+        catch (IOException e)
+        {
+            throw new RuntimeException("exception decoding Hex string: " + e);
+        }
+        return bOut.toByteArray();
+    }
+
+    
+        public static byte[] decode(
+        String    data) {
+        ByteArrayOutputStream    bOut = new ByteArrayOutputStream();
+        try
+        {
+            encoder.decode(data, bOut);
+        }
+        catch (IOException e)
+        {
+            throw new RuntimeException("exception decoding Hex string: " + e);
+        }
+        return bOut.toByteArray();
+    }
+
+    
+        public static int decode(
+        String          data,
+        OutputStream    out) throws IOException {
+        return encoder.decode(data, out);
+    }
+
+    
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.850 -0400", hash_original_field = "47B1E2CC247F9E9D15422E2198CF336B", hash_generated_field = "CD06561BBE541F9661BD17B2BEF707A4")
+
+    private static Encoder encoder = new HexEncoder();
+}
+

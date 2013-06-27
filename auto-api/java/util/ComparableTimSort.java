@@ -9,17 +9,28 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 class ComparableTimSort {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.388 -0400", hash_original_field = "0CC175B9C0F1B6A831C399E269772661", hash_generated_field = "57C26AE792187D8B778587C6F2CC693D")
+
     private Object[] a;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.389 -0400", hash_original_field = "1723F00AEB55EB29D345BB8FC560DDDD", hash_generated_field = "4AEA7058F4222AE4711A0802F956E706")
+
     private int minGallop = MIN_GALLOP;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.389 -0400", hash_original_field = "FA816EDB83E95BF0C8DA580BDFD491EF", hash_generated_field = "F29293D0549CBA3455BA89626253287F")
+
     private Object[] tmp;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.389 -0400", hash_original_field = "D756571CC98275F49C20580A59B44F17", hash_generated_field = "D6178E85D65285FC9BE783DCA3A89A35")
+
     private int stackSize = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.389 -0400", hash_original_field = "BCD0032E9C5292693B10DFF6E98018C6", hash_generated_field = "A46172EB2BFB60FE7750E3A2D782A167")
+
     private int[] runBase;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.389 -0400", hash_original_field = "00BAF48D4AB09F7E1E16965DEC3C2EED", hash_generated_field = "C560C98366AB8D77B05FAE57238ADA8D")
+
     private int[] runLen;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.742 -0400", hash_original_method = "542A19C49303D6524BE63DEB812200B5", hash_generated_method = "0C3DF39449278D2BDF37EE3E83340BA6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private ComparableTimSort(Object[] a) {
-        dsTaint.addTaint(a[0].dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.397 -0400", hash_original_method = "542A19C49303D6524BE63DEB812200B5", hash_generated_method = "5BBD9FCBC32870AC846AB34589A15C8A")
+    private  ComparableTimSort(Object[] a) {
+        this.a = a;
         int len;
         len = a.length;
         @SuppressWarnings({"unchecked", "UnnecessaryLocalVariable"}) Object[] newArray;
@@ -152,11 +163,8 @@ class ComparableTimSort {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.743 -0400", hash_original_method = "4FF06135DA529EA5945D38DB9DEC9B0E", hash_generated_method = "FBA09F1461BEDADD66E86EE6973C8257")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.399 -0400", hash_original_method = "4FF06135DA529EA5945D38DB9DEC9B0E", hash_generated_method = "FEFC76C70CAF77D41BBF6E81160EBCA3")
     private void pushRun(int runBase, int runLen) {
-        dsTaint.addTaint(runBase);
-        dsTaint.addTaint(runLen);
         this.runBase[stackSize] = runBase;
         this.runLen[stackSize] = runLen;
         // ---------- Original Method ----------
@@ -166,8 +174,7 @@ class ComparableTimSort {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.744 -0400", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "FF5A728369FAAAA218A73E83F69512EC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.400 -0400", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "FF5A728369FAAAA218A73E83F69512EC")
     private void mergeCollapse() {
         {
             int n;
@@ -195,8 +202,7 @@ class ComparableTimSort {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.744 -0400", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "BD499F03B86E4CD678033407C5F9DBAA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.401 -0400", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "BD499F03B86E4CD678033407C5F9DBAA")
     private void mergeForceCollapse() {
         {
             int n;
@@ -213,11 +219,9 @@ class ComparableTimSort {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.745 -0400", hash_original_method = "D1D435DBB100F2E004D61A3172BCBED6", hash_generated_method = "E4A8A0EFFC0654028B404C6665F4EB54")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.413 -0400", hash_original_method = "D1D435DBB100F2E004D61A3172BCBED6", hash_generated_method = "7D8E63EB69F38C592B37812C98E8336C")
     @SuppressWarnings("unchecked")
     private void mergeAt(int i) {
-        dsTaint.addTaint(i);
         int base1;
         base1 = runBase[i];
         int len1;
@@ -334,14 +338,9 @@ class ComparableTimSort {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.746 -0400", hash_original_method = "45427D901AB4A7DC08467113333FDBE7", hash_generated_method = "0B312D099EF51155FEF25587966AD23C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.439 -0400", hash_original_method = "45427D901AB4A7DC08467113333FDBE7", hash_generated_method = "B7F92B516149DEC05EDC858B27054B55")
     @SuppressWarnings("unchecked")
     private void mergeLo(int base1, int len1, int base2, int len2) {
-        dsTaint.addTaint(len2);
-        dsTaint.addTaint(len1);
-        dsTaint.addTaint(base1);
-        dsTaint.addTaint(base2);
         Object[] a;
         a = this.a;
         Object[] tmp;
@@ -370,7 +369,7 @@ class ComparableTimSort {
             count2 = 0;
             {
                 {
-                    boolean var5CF5BA598A18E1F3EB7F396B833F6C31_2116029294 = (((Comparable) a[cursor2]).compareTo(tmp[cursor1]) < 0);
+                    boolean var5CF5BA598A18E1F3EB7F396B833F6C31_846739128 = (((Comparable) a[cursor2]).compareTo(tmp[cursor1]) < 0);
                     {
                         a[dest++] = a[cursor2++];
                         count1 = 0;
@@ -414,19 +413,17 @@ class ComparableTimSort {
         {
             System.arraycopy(tmp, cursor1, a, dest, len1);
         } //End block
+        addTaint(base1);
+        addTaint(len1);
+        addTaint(base2);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.747 -0400", hash_original_method = "6C6CE95C2E304E4FD1D38A30136C639B", hash_generated_method = "9F880CEA42BD4FA1A7BE1DD09FD0F399")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.465 -0400", hash_original_method = "6C6CE95C2E304E4FD1D38A30136C639B", hash_generated_method = "4683530BCAB99FA8F68A3341AA52012A")
     @SuppressWarnings("unchecked")
     private void mergeHi(int base1, int len1, int base2, int len2) {
-        dsTaint.addTaint(len2);
-        dsTaint.addTaint(len1);
-        dsTaint.addTaint(base1);
-        dsTaint.addTaint(base2);
         Object[] a;
         a = this.a;
         Object[] tmp;
@@ -457,7 +454,7 @@ class ComparableTimSort {
             count2 = 0;
             {
                 {
-                    boolean var046B503408434B65FA127E27B1D3015A_990898513 = (((Comparable) tmp[cursor2]).compareTo(a[cursor1]) < 0);
+                    boolean var046B503408434B65FA127E27B1D3015A_854658477 = (((Comparable) tmp[cursor2]).compareTo(a[cursor1]) < 0);
                     {
                         a[dest--] = a[cursor1--];
                         count2 = 0;
@@ -503,15 +500,18 @@ class ComparableTimSort {
         {
             System.arraycopy(tmp, 0, a, dest - (len2 - 1), len2);
         } //End block
+        addTaint(base1);
+        addTaint(len1);
+        addTaint(base2);
+        addTaint(len2);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:31.748 -0400", hash_original_method = "D7ECC5727F84FF288304F35202B3A04B", hash_generated_method = "2C9444918C93499EF86C66BEDC832482")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.466 -0400", hash_original_method = "D7ECC5727F84FF288304F35202B3A04B", hash_generated_method = "30D540B371DE226B9C8193CDDB79FC17")
     private Object[] ensureCapacity(int minCapacity) {
-        dsTaint.addTaint(minCapacity);
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_705327211 = null; //Variable for return #1
         {
             int newSize;
             newSize = minCapacity;
@@ -526,7 +526,10 @@ class ComparableTimSort {
             newArray = new Object[newSize];
             tmp = newArray;
         } //End block
-        return (Object[])dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_705327211 = tmp;
+        addTaint(minCapacity);
+        varB4EAC82CA7396A68D541C85D26508E83_705327211.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_705327211;
         // ---------- Original Method ----------
         //if (tmp.length < minCapacity) {
             //int newSize = minCapacity;
@@ -548,9 +551,17 @@ class ComparableTimSort {
     }
 
     
-    private static final int MIN_MERGE = 32;
-    private static final int  MIN_GALLOP = 7;
-    private static final int INITIAL_TMP_STORAGE_LENGTH = 256;
-    private static final boolean DEBUG = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.466 -0400", hash_original_field = "4A490259FC4AAE2038058967988E5B8B", hash_generated_field = "3931B083EBCAB8BFF212B05D7382794B")
+
+    private static int MIN_MERGE = 32;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.466 -0400", hash_original_field = "A6ABC415A6B00555997959B418653BE3", hash_generated_field = "4A5421B440C2BA29D0228B2FD860C79B")
+
+    private static int MIN_GALLOP = 7;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.466 -0400", hash_original_field = "BA59E61BD2B58B5E9EC1C9B9EE84017A", hash_generated_field = "7A5CF663CEF691DAACC94837A499F835")
+
+    private static int INITIAL_TMP_STORAGE_LENGTH = 256;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.467 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+
+    private static boolean DEBUG = false;
 }
 

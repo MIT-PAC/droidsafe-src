@@ -13,39 +13,90 @@ import android.os.Parcel;
 import java.util.BitSet;
 
 public class WifiConfiguration implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.684 -0400", hash_original_field = "19C847337F720E130F334CF33214EB73", hash_generated_field = "63CFF92B16B0D9FC501D58CB0D039ADA")
+
     public EnterpriseField eap = new EnterpriseField("eap");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.684 -0400", hash_original_field = "C8010D9E4D9ADFFC3A67FCAEEE4B2F7F", hash_generated_field = "C8014B353F4BBCC425B9E3D43030F74B")
+
     public EnterpriseField phase2 = new EnterpriseField("phase2");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.684 -0400", hash_original_field = "F3C5B19468ABD47D3A5AB9C37FACCAD8", hash_generated_field = "3165AC610B2795CD4688187B42B9DE86")
+
     public EnterpriseField identity = new EnterpriseField("identity");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.684 -0400", hash_original_field = "FA8B96A60D9F35E68590BC86596A83B8", hash_generated_field = "5BF5368078755DBD6F2A6A5815F96BD3")
+
     public EnterpriseField anonymous_identity = new EnterpriseField("anonymous_identity");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "F25C1F1784F1C7D143A8F5257880F5FA", hash_generated_field = "6EB992D8D7E75F1248CC80E5A8576A4A")
+
     public EnterpriseField password = new EnterpriseField("password");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "30FFABAAD0535A8F04E9CF1BB74C9722", hash_generated_field = "A3F9CE9CE44333453A41E81608DF8DCA")
+
     public EnterpriseField client_cert = new EnterpriseField("client_cert");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "B7B8EE851736A1B5E67AA806A08EB4A2", hash_generated_field = "D93CB3E43A1B8A764DECCA316EE5FB35")
+
     public EnterpriseField private_key = new EnterpriseField("private_key");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "37DC42AB29A535168F29D3C613DCA8A7", hash_generated_field = "2BFD15B8B97111332E40870339C68662")
+
     public EnterpriseField ca_cert = new EnterpriseField("ca_cert");
-    public EnterpriseField[] enterpriseFields = {
-            eap, phase2, identity, anonymous_identity, password, client_cert,
-            private_key, ca_cert };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "8B615E7488C8A582FB96C419A2A89A17", hash_generated_field = "416663B8E83057D4C1D035B063A5F809")
+
+    public EnterpriseField[] enterpriseFields = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "42C64341469D29885852FCC8A451F115", hash_generated_field = "2478403B68B36CEA1D31569B90E2A4F9")
+
     public int networkId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "9ACB44549B41563697BB490144EC6258", hash_generated_field = "E9243AA6ACDC688110619DDCF59ACF0B")
+
     public int status;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "BDE15B21096A097FC7112E7FCC3B2895", hash_generated_field = "C37D62585904D7C8691BB50E3D7D57B9")
+
     public int disableReason;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "0D09D7B23E604623465E83B0DC113F4D", hash_generated_field = "F7FE1695EF676C936EDB74F734CEDF60")
+
     public String SSID;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "4EB26185F9AD8B5D6AFBADC09D7D5096", hash_generated_field = "2B401C010EEC74A39C75E8EEE69DE741")
+
     public String BSSID;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "4C43F64E4374CE164633CE9748050DEB", hash_generated_field = "FFEEC90F43833727C8445B4C32C23309")
+
     public String preSharedKey;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "E25447F5590A6E9158237FBCE2C208D9", hash_generated_field = "401685BB959BB2BEE4E974632483E8EF")
+
     public String[] wepKeys;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "893A2B6D379EA1E819ED69113396CEA1", hash_generated_field = "B740993C2A06ED1B3E60DBC5B416DD39")
+
     public int wepTxKeyIndex;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "B988295C268025B49DFB3DF26171DDC3", hash_generated_field = "748E38F248BB72B76836AB36AB4B68BF")
+
     public int priority;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.685 -0400", hash_original_field = "69F45D42D6DE8064993EA84DD551C6B6", hash_generated_field = "2A955E0592743CCD9ADEF1F8EEFF70E7")
+
     public boolean hiddenSSID;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.686 -0400", hash_original_field = "6FEF103E0BC715186BF14B042ACE4B1B", hash_generated_field = "5020200E94DE8EF17AE8B5090464742A")
+
     public BitSet allowedKeyManagement;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.686 -0400", hash_original_field = "7884CF9BEB2F6B72D0AAB9B8FDDC4C89", hash_generated_field = "9BBBCBD5CE855C45639B537B3B0E333A")
+
     public BitSet allowedProtocols;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.686 -0400", hash_original_field = "E8918D762F91A828A60B435E5A8D401F", hash_generated_field = "5A00EF9DFBA579FDF62B43781AE42AB1")
+
     public BitSet allowedAuthAlgorithms;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.686 -0400", hash_original_field = "5D81A7104AE51B68F512BF74084D524D", hash_generated_field = "33993136E5554C8B2A13EE05526BE021")
+
     public BitSet allowedPairwiseCiphers;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.686 -0400", hash_original_field = "2F9B151DF0DD7E7C43BB0784C052829E", hash_generated_field = "78C0458676A36458435700BD9317329B")
+
     public BitSet allowedGroupCiphers;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.686 -0400", hash_original_field = "838CC520104C69FBA98A39DB9EFE43F1", hash_generated_field = "C1EFC69F0F66BC7E2AE1ACA8AFD736AF")
+
     public IpAssignment ipAssignment;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.686 -0400", hash_original_field = "A5084A3D50776BBFDB0FC2D1F3EB8365", hash_generated_field = "3732C125EE5045D5223FCD22DE8771B8")
+
     public ProxySettings proxySettings;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.686 -0400", hash_original_field = "DC6DF7A05A86671C3549B5A63A5A6670", hash_generated_field = "CBFC770A2970049F6731C897B915E6C6")
+
     public LinkProperties linkProperties;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.580 -0400", hash_original_method = "D3E8F62AB6837E859D554E7D52419BA9", hash_generated_method = "2830C72733C94CA893A03BD369A6D4E2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public WifiConfiguration() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.733 -0400", hash_original_method = "D3E8F62AB6837E859D554E7D52419BA9", hash_generated_method = "426A0837E12537631FD23FB6AE9580CF")
+    public  WifiConfiguration() {
         networkId = INVALID_NETWORK_ID;
         SSID = null;
         BSSID = null;
@@ -64,9 +115,9 @@ public class WifiConfiguration implements Parcelable {
             wepKeys[i] = null;
         } //End collapsed parenthetic
         {
-            Iterator<EnterpriseField> var678F2F58729F4ED0BC9B36F9AFA65128_776279516 = (enterpriseFields).iterator();
-            var678F2F58729F4ED0BC9B36F9AFA65128_776279516.hasNext();
-            EnterpriseField field = var678F2F58729F4ED0BC9B36F9AFA65128_776279516.next();
+            Iterator<EnterpriseField> var678F2F58729F4ED0BC9B36F9AFA65128_1327298494 = (enterpriseFields).iterator();
+            var678F2F58729F4ED0BC9B36F9AFA65128_1327298494.hasNext();
+            EnterpriseField field = var678F2F58729F4ED0BC9B36F9AFA65128_1327298494.next();
             {
                 field.setValue(null);
             } //End block
@@ -98,10 +149,8 @@ public class WifiConfiguration implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.580 -0400", hash_original_method = "C987CC483E64718E2FB8D8B4A4E18BC6", hash_generated_method = "096EEF9579FB29B66AC81E10DCBAC4B3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public WifiConfiguration(WifiConfiguration source) {
-        dsTaint.addTaint(source.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.770 -0400", hash_original_method = "C987CC483E64718E2FB8D8B4A4E18BC6", hash_generated_method = "DAAED59673D019D84C1070A2E2FDE8C2")
+    public  WifiConfiguration(WifiConfiguration source) {
         {
             networkId = source.networkId;
             status = source.status;
@@ -139,10 +188,10 @@ public class WifiConfiguration implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.602 -0400", hash_original_method = "97D3C3FCC664C1BBD8134CCAC12AD4F6", hash_generated_method = "7C7C7D1DC23CB3D58F895BFF11F441A5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.055 -0400", hash_original_method = "97D3C3FCC664C1BBD8134CCAC12AD4F6", hash_generated_method = "6E1D789F0A254617A7E5CE9FEABB422A")
     @Override
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1810586521 = null; //Variable for return #1
         StringBuilder sbuf;
         sbuf = new StringBuilder();
         {
@@ -158,10 +207,10 @@ public class WifiConfiguration implements Parcelable {
         {
             int k;
             k = 0;
-            boolean var6344AE5E4D51EF86F9E69D2509FF3F53_1928428807 = (k < this.allowedKeyManagement.size());
+            boolean var6344AE5E4D51EF86F9E69D2509FF3F53_1659578160 = (k < this.allowedKeyManagement.size());
             {
                 {
-                    boolean var6538540D77E95514BEA29E885917E7A6_60831428 = (this.allowedKeyManagement.get(k));
+                    boolean var6538540D77E95514BEA29E885917E7A6_765105586 = (this.allowedKeyManagement.get(k));
                     {
                         sbuf.append(" ");
                         {
@@ -178,10 +227,10 @@ public class WifiConfiguration implements Parcelable {
         {
             int p;
             p = 0;
-            boolean varF89C4384F1946F0835919298E15824BA_1207825236 = (p < this.allowedProtocols.size());
+            boolean varF89C4384F1946F0835919298E15824BA_1878691700 = (p < this.allowedProtocols.size());
             {
                 {
-                    boolean var18524E6DA066A52B7DFEEC0FE2031CD8_812008326 = (this.allowedProtocols.get(p));
+                    boolean var18524E6DA066A52B7DFEEC0FE2031CD8_1049413973 = (this.allowedProtocols.get(p));
                     {
                         sbuf.append(" ");
                         {
@@ -199,10 +248,10 @@ public class WifiConfiguration implements Parcelable {
         {
             int a;
             a = 0;
-            boolean varB378BB2E4222125FCFFE884AA66C7852_1331124405 = (a < this.allowedAuthAlgorithms.size());
+            boolean varB378BB2E4222125FCFFE884AA66C7852_882801611 = (a < this.allowedAuthAlgorithms.size());
             {
                 {
-                    boolean var32D89327DB56FDB8753508CC35A87BA5_1037194837 = (this.allowedAuthAlgorithms.get(a));
+                    boolean var32D89327DB56FDB8753508CC35A87BA5_1967823351 = (this.allowedAuthAlgorithms.get(a));
                     {
                         sbuf.append(" ");
                         {
@@ -220,10 +269,10 @@ public class WifiConfiguration implements Parcelable {
         {
             int pc;
             pc = 0;
-            boolean var86C60C5F9C326935F7741053A7747DDE_745248055 = (pc < this.allowedPairwiseCiphers.size());
+            boolean var86C60C5F9C326935F7741053A7747DDE_903834036 = (pc < this.allowedPairwiseCiphers.size());
             {
                 {
-                    boolean var19A5405B85D009D1415BE39086A3A78B_1620932206 = (this.allowedPairwiseCiphers.get(pc));
+                    boolean var19A5405B85D009D1415BE39086A3A78B_395584534 = (this.allowedPairwiseCiphers.get(pc));
                     {
                         sbuf.append(" ");
                         {
@@ -241,10 +290,10 @@ public class WifiConfiguration implements Parcelable {
         {
             int gc;
             gc = 0;
-            boolean varC0901A757B0FC9D1DD6D07D335CD9157_1966768478 = (gc < this.allowedGroupCiphers.size());
+            boolean varC0901A757B0FC9D1DD6D07D335CD9157_761660746 = (gc < this.allowedGroupCiphers.size());
             {
                 {
-                    boolean var61B47E87EA5FFE08A10FD5A483104120_2011571020 = (this.allowedGroupCiphers.get(gc));
+                    boolean var61B47E87EA5FFE08A10FD5A483104120_331218203 = (this.allowedGroupCiphers.get(gc));
                     {
                         sbuf.append(" ");
                         {
@@ -262,7 +311,9 @@ public class WifiConfiguration implements Parcelable {
             sbuf.append('*');
         } //End block
         {
-            EnterpriseField field = enterpriseFields[0];
+            Iterator<EnterpriseField> var678F2F58729F4ED0BC9B36F9AFA65128_1079152091 = (enterpriseFields).iterator();
+            var678F2F58729F4ED0BC9B36F9AFA65128_1079152091.hasNext();
+            EnterpriseField field = var678F2F58729F4ED0BC9B36F9AFA65128_1079152091.next();
             {
                 sbuf.append('\n').append(" " + field.varName() + ": ");
                 String value;
@@ -277,8 +328,9 @@ public class WifiConfiguration implements Parcelable {
         sbuf.append("\n");
         sbuf.append(linkProperties.toString());
         sbuf.append("\n");
-        String var0826C75FB1499484A6621049C9E9DB4E_1443901227 = (sbuf.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1810586521 = sbuf.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1810586521.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1810586521;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -301,22 +353,22 @@ public class WifiConfiguration implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.603 -0400", hash_original_method = "9AFA2ED3E118B7190C0E7E9D5FFF2220", hash_generated_method = "C71120861E8D9743CC4AA0B49DCD4C1D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.068 -0400", hash_original_method = "9AFA2ED3E118B7190C0E7E9D5FFF2220", hash_generated_method = "14C60C50F68DC9DA53F6F44EC2581059")
     public int getAuthType() {
         {
-            boolean varE93DC8655EF0DD69E686AF06F14E0918_1113674262 = (allowedKeyManagement.get(KeyMgmt.WPA_PSK));
+            boolean varE93DC8655EF0DD69E686AF06F14E0918_630462138 = (allowedKeyManagement.get(KeyMgmt.WPA_PSK));
             {
-                boolean var42CF8460E8D6F6A47D2CA7872F5362AA_417006040 = (allowedKeyManagement.get(KeyMgmt.WPA2_PSK));
+                boolean var42CF8460E8D6F6A47D2CA7872F5362AA_825980096 = (allowedKeyManagement.get(KeyMgmt.WPA2_PSK));
                 {
-                    boolean var4487495D93A95B2C963D38511EB68D01_828308592 = (allowedKeyManagement.get(KeyMgmt.WPA_EAP));
+                    boolean var4487495D93A95B2C963D38511EB68D01_1544318403 = (allowedKeyManagement.get(KeyMgmt.WPA_EAP));
                     {
-                        boolean var4D4EA5960C97B479E7F35032E5647B64_1358498953 = (allowedKeyManagement.get(KeyMgmt.IEEE8021X));
+                        boolean var4D4EA5960C97B479E7F35032E5647B64_738461289 = (allowedKeyManagement.get(KeyMgmt.IEEE8021X));
                     } //End collapsed parenthetic
                 } //End collapsed parenthetic
             } //End collapsed parenthetic
         } //End collapsed parenthetic
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1480338660 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1480338660;
         // ---------- Original Method ----------
         //if (allowedKeyManagement.get(KeyMgmt.WPA_PSK)) {
             //return KeyMgmt.WPA_PSK;
@@ -331,20 +383,17 @@ public class WifiConfiguration implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.603 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.082 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "AAFF53F165B4DC2743EC96C7FD498055")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_485576892 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_485576892;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.611 -0400", hash_original_method = "AEDB33EEF5EAFBB380DF78B8CF162994", hash_generated_method = "A967017C5F2B6B43F6A05B18EF5FB33B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.183 -0400", hash_original_method = "AEDB33EEF5EAFBB380DF78B8CF162994", hash_generated_method = "5A0771AFFF3692236196B07AD89CB56B")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeInt(networkId);
         dest.writeInt(status);
         dest.writeInt(disableReason);
@@ -352,7 +401,9 @@ public class WifiConfiguration implements Parcelable {
         dest.writeString(BSSID);
         dest.writeString(preSharedKey);
         {
-            String wepKey = wepKeys[0];
+            Iterator<String> var3D8384A37C6AC6DDA362458FBFEE2209_389188818 = (wepKeys).iterator();
+            var3D8384A37C6AC6DDA362458FBFEE2209_389188818.hasNext();
+            String wepKey = var3D8384A37C6AC6DDA362458FBFEE2209_389188818.next();
             dest.writeString(wepKey);
         } //End collapsed parenthetic
         dest.writeInt(wepTxKeyIndex);
@@ -364,7 +415,9 @@ public class WifiConfiguration implements Parcelable {
         writeBitSet(dest, allowedPairwiseCiphers);
         writeBitSet(dest, allowedGroupCiphers);
         {
-            EnterpriseField field = enterpriseFields[0];
+            Iterator<EnterpriseField> var678F2F58729F4ED0BC9B36F9AFA65128_1811342234 = (enterpriseFields).iterator();
+            var678F2F58729F4ED0BC9B36F9AFA65128_1811342234.hasNext();
+            EnterpriseField field = var678F2F58729F4ED0BC9B36F9AFA65128_1811342234.next();
             {
                 dest.writeString(field.value());
             } //End block
@@ -372,19 +425,24 @@ public class WifiConfiguration implements Parcelable {
         dest.writeString(ipAssignment.name());
         dest.writeString(proxySettings.name());
         dest.writeParcelable(linkProperties, flags);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
     public class EnterpriseField {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.183 -0400", hash_original_field = "51746FC9CFAAF892E94C2D56D7508B37", hash_generated_field = "CE71BBB6A16F0409D8B629E0561562FE")
+
         private String varName;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.183 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "424F4435B9052E77589D30873B9A7D2B")
+
         private String value;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.612 -0400", hash_original_method = "8BFEE65AD67A1E932B47390435D592EC", hash_generated_method = "B5A7CEEEF11D107EB37157CD698EFCB3")
-        @DSModeled(DSC.SAFE)
-        private EnterpriseField(String varName) {
-            dsTaint.addTaint(varName);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.191 -0400", hash_original_method = "8BFEE65AD67A1E932B47390435D592EC", hash_generated_method = "0D3459E13A7E98E4294DC1B096D96E42")
+        private  EnterpriseField(String varName) {
+            this.varName = varName;
             this.value = null;
             // ---------- Original Method ----------
             //this.varName = varName;
@@ -392,28 +450,31 @@ public class WifiConfiguration implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.612 -0400", hash_original_method = "54A096BDAB783365763903A518BE6C1A", hash_generated_method = "4F4F7F37856EA1BF8C0BF221B2AF5ABB")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.192 -0400", hash_original_method = "54A096BDAB783365763903A518BE6C1A", hash_generated_method = "811C079A212601355D5034023F0D4C0B")
         public void setValue(String value) {
-            dsTaint.addTaint(value);
+            this.value = value;
             // ---------- Original Method ----------
             //this.value = value;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.612 -0400", hash_original_method = "1FBB233886BBDFBC3AF13BD83F42443E", hash_generated_method = "FED610ECAFBC0340505676C88989DD38")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.192 -0400", hash_original_method = "1FBB233886BBDFBC3AF13BD83F42443E", hash_generated_method = "E90F4C4B37F56DE5D081777DA44AEB0E")
         public String varName() {
-            return dsTaint.getTaintString();
+            String varB4EAC82CA7396A68D541C85D26508E83_382009492 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_382009492 = varName;
+            varB4EAC82CA7396A68D541C85D26508E83_382009492.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_382009492;
             // ---------- Original Method ----------
             //return varName;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.613 -0400", hash_original_method = "75F20E3AB28F2448BFFE64E6D18AFDB6", hash_generated_method = "496892A34BB691AAF7D193076ACF2F9B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.193 -0400", hash_original_method = "75F20E3AB28F2448BFFE64E6D18AFDB6", hash_generated_method = "E1D34B6D5EB1ED456EEC61CAC8E54B39")
         public String value() {
-            return dsTaint.getTaintString();
+            String varB4EAC82CA7396A68D541C85D26508E83_1114024708 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1114024708 = value;
+            varB4EAC82CA7396A68D541C85D26508E83_1114024708.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1114024708;
             // ---------- Original Method ----------
             //return value;
         }
@@ -425,19 +486,32 @@ public class WifiConfiguration implements Parcelable {
     
     public static class KeyMgmt {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.613 -0400", hash_original_method = "3C24C7AE0F0A09BE18E455DF08BF91AE", hash_generated_method = "84233618D069A8DDF728C3B1AD79C9CD")
-        @DSModeled(DSC.SAFE)
-        private KeyMgmt() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.194 -0400", hash_original_method = "3C24C7AE0F0A09BE18E455DF08BF91AE", hash_generated_method = "84233618D069A8DDF728C3B1AD79C9CD")
+        private  KeyMgmt() {
             // ---------- Original Method ----------
         }
 
         
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.194 -0400", hash_original_field = "4F2536D0D627A82B4C8A0BFFFEFBF7DA", hash_generated_field = "39BEE14A82B6AA5C26F3A7D333C62B69")
+
         public static final int NONE = 0;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.194 -0400", hash_original_field = "8952D45B0535DDA01FFA580EFB68B26A", hash_generated_field = "5A8DD20C572E90A3C50E05624FC27543")
+
         public static final int WPA_PSK = 1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.194 -0400", hash_original_field = "769B8210DD96CF81BF2AA7E35D3D448A", hash_generated_field = "570A01351150B63A3FBA2AB4C5BD4A91")
+
         public static final int WPA_EAP = 2;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.194 -0400", hash_original_field = "A8468CF5A141630F5211076F831E402E", hash_generated_field = "284ED8D8AECCD247EE88553D6A7FE5B9")
+
         public static final int IEEE8021X = 3;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.194 -0400", hash_original_field = "D3F29ECE465B44409F9B2505BCD27977", hash_generated_field = "7EC518044DBCFFDA413DC8AD2E910FE1")
+
         public static final int WPA2_PSK = 4;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.194 -0400", hash_original_field = "839F8BB18D7FDCB1A05BD3F4B06D9EEC", hash_generated_field = "FB67A25C3E29CB04CC946DD6AF64AC5D")
+
         public static final String varName = "key_mgmt";
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.194 -0400", hash_original_field = "C0C0E65BED07A1955FDEB56277817D99", hash_generated_field = "969ABCB73500B46A06CBD99C05DDB550")
+
         public static final String[] strings = { "NONE", "WPA_PSK", "WPA_EAP", "IEEE8021X",
                 "WPA2_PSK" };
     }
@@ -446,16 +520,23 @@ public class WifiConfiguration implements Parcelable {
     
     public static class Protocol {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.613 -0400", hash_original_method = "FEC0085CF7FD0AE9B8536A4264422A72", hash_generated_method = "BDFBDD91E12BC6AB0AC098F24E528B8C")
-        @DSModeled(DSC.SAFE)
-        private Protocol() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.218 -0400", hash_original_method = "FEC0085CF7FD0AE9B8536A4264422A72", hash_generated_method = "BDFBDD91E12BC6AB0AC098F24E528B8C")
+        private  Protocol() {
             // ---------- Original Method ----------
         }
 
         
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.218 -0400", hash_original_field = "BF24DB40484AAF755F0DDAB26F69C320", hash_generated_field = "C4FCC760800C3B8A80D20A1F91464A1D")
+
         public static final int WPA = 0;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.218 -0400", hash_original_field = "4EF44F02766859B24401F7049CC2E075", hash_generated_field = "CB765A19544CF62B1EF9E0924312EF87")
+
         public static final int RSN = 1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.219 -0400", hash_original_field = "977F89C7BFD09789A9D47167D3E85C66", hash_generated_field = "712594087B08829168C0C91650D695A8")
+
         public static final String varName = "proto";
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.219 -0400", hash_original_field = "E116FB5B99CF9EF075A04A2CF8803EBD", hash_generated_field = "DB80E946188BE2FD72D1ACBC2C2FADF4")
+
         public static final String[] strings = { "WPA", "RSN" };
     }
 
@@ -463,17 +544,26 @@ public class WifiConfiguration implements Parcelable {
     
     public static class AuthAlgorithm {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.613 -0400", hash_original_method = "02B498F2C9B084569031A4C2852FE733", hash_generated_method = "0DC3E2E4C06E7A517A353243CDD6C6F7")
-        @DSModeled(DSC.SAFE)
-        private AuthAlgorithm() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.219 -0400", hash_original_method = "02B498F2C9B084569031A4C2852FE733", hash_generated_method = "0DC3E2E4C06E7A517A353243CDD6C6F7")
+        private  AuthAlgorithm() {
             // ---------- Original Method ----------
         }
 
         
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.221 -0400", hash_original_field = "43717087C14CDCDCFDB18BD5D73ABF14", hash_generated_field = "74FD01C2F32F716051AE3C3EE63F3028")
+
         public static final int OPEN = 0;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.221 -0400", hash_original_field = "AFED42F86FAB6133191C5B118A0DFC73", hash_generated_field = "4AEB79C0B519CA86E9DD427627C46DE1")
+
         public static final int SHARED = 1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.221 -0400", hash_original_field = "F66442A64ED932EE1DD751D6421077A5", hash_generated_field = "2856437D705217468DD05705D3046BCB")
+
         public static final int LEAP = 2;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.221 -0400", hash_original_field = "8CFDF7D5CAF925AE8C5140C75377B8B7", hash_generated_field = "DAAF184B6741B2F8DC099AC0722E9276")
+
         public static final String varName = "auth_alg";
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.221 -0400", hash_original_field = "B1BDC49C4770A26E79F817DDA1094DB1", hash_generated_field = "C2B57707331863ED3E749A8C13017BF0")
+
         public static final String[] strings = { "OPEN", "SHARED", "LEAP" };
     }
 
@@ -481,17 +571,26 @@ public class WifiConfiguration implements Parcelable {
     
     public static class PairwiseCipher {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.613 -0400", hash_original_method = "D49801CF041AD620DA06D49E02E3EE50", hash_generated_method = "80B019872D8101A5104B248737E04786")
-        @DSModeled(DSC.SAFE)
-        private PairwiseCipher() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.222 -0400", hash_original_method = "D49801CF041AD620DA06D49E02E3EE50", hash_generated_method = "80B019872D8101A5104B248737E04786")
+        private  PairwiseCipher() {
             // ---------- Original Method ----------
         }
 
         
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.222 -0400", hash_original_field = "4F2536D0D627A82B4C8A0BFFFEFBF7DA", hash_generated_field = "39BEE14A82B6AA5C26F3A7D333C62B69")
+
         public static final int NONE = 0;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.222 -0400", hash_original_field = "D910CF5C728EA26A8CE91EEBE7D04EFB", hash_generated_field = "CA31D0B1E60715BF3EFAD2478266404B")
+
         public static final int TKIP = 1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.222 -0400", hash_original_field = "DF01CA2BF700B036C9C3C76213BCAF4C", hash_generated_field = "2B194FF3D4A4AEEE33B5E446B2B9B7C8")
+
         public static final int CCMP = 2;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.222 -0400", hash_original_field = "8FDB0DE7C9A49D5983BB8EC9D50DF694", hash_generated_field = "EA61BD8522E2039FE52481DAAEE07F74")
+
         public static final String varName = "pairwise";
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.222 -0400", hash_original_field = "79809102924AD86AF3D84B0257A08F42", hash_generated_field = "A91EB39D642BD98C7B47552D558E16D2")
+
         public static final String[] strings = { "NONE", "TKIP", "CCMP" };
     }
 
@@ -499,18 +598,29 @@ public class WifiConfiguration implements Parcelable {
     
     public static class GroupCipher {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.614 -0400", hash_original_method = "A10BFAF56809802940D7EFFA4240EAB0", hash_generated_method = "65BD6B7E2641A28A143BE5DB0E9B6215")
-        @DSModeled(DSC.SAFE)
-        private GroupCipher() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.223 -0400", hash_original_method = "A10BFAF56809802940D7EFFA4240EAB0", hash_generated_method = "65BD6B7E2641A28A143BE5DB0E9B6215")
+        private  GroupCipher() {
             // ---------- Original Method ----------
         }
 
         
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.231 -0400", hash_original_field = "6E4C415B83574A64D27809AE91928DF5", hash_generated_field = "9862762FAE4FFC1E46BE57F66CD7FCC9")
+
         public static final int WEP40 = 0;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.231 -0400", hash_original_field = "4CBE97F81EF75C2AC1F2080181F20797", hash_generated_field = "74B64F4A27EC6CEAFE46CAD8B2454AF8")
+
         public static final int WEP104 = 1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.232 -0400", hash_original_field = "D61A09A2330E41B0E50AB754612325E6", hash_generated_field = "5D1C36BE57D611F687158D1A19C131AF")
+
         public static final int TKIP = 2;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.232 -0400", hash_original_field = "4635DEC9CBFD53EA490023964CC1E2FC", hash_generated_field = "0E9C98C23820E0B24641603D6B1FF2B1")
+
         public static final int CCMP = 3;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.232 -0400", hash_original_field = "8B543F279450D329B2E46990C625D552", hash_generated_field = "7B39334B920E5EA14F51FD7555B37897")
+
         public static final String varName = "group";
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.232 -0400", hash_original_field = "0C10C2EFDF236F058CDA908F5DFE4043", hash_generated_field = "76C93678C789D0070307271216BEB38A")
+
         public static final String[] strings = { "WEP40", "WEP104", "TKIP", "CCMP" };
     }
 
@@ -518,16 +628,23 @@ public class WifiConfiguration implements Parcelable {
     
     public static class Status {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.614 -0400", hash_original_method = "FE406DC4CFD00C0AE0BFBAA724FB9F50", hash_generated_method = "7E294D2CADE3312347600003F64067B6")
-        @DSModeled(DSC.SAFE)
-        private Status() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.232 -0400", hash_original_method = "FE406DC4CFD00C0AE0BFBAA724FB9F50", hash_generated_method = "7E294D2CADE3312347600003F64067B6")
+        private  Status() {
             // ---------- Original Method ----------
         }
 
         
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.233 -0400", hash_original_field = "C8BE5C7839F1E6E916EDE2AA991E270D", hash_generated_field = "9F21697F3CC99987017D14F9FA37CF9B")
+
         public static final int CURRENT = 0;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.233 -0400", hash_original_field = "DFECBA4FD1C9828EA2E22F2E74B8E75D", hash_generated_field = "41F007FEB047BE15B2BB85BBC8567636")
+
         public static final int DISABLED = 1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.233 -0400", hash_original_field = "DFC3EC1112539EE1CD52399A8C1D49EB", hash_generated_field = "0CBCED92CEDA0BE994FF8B2EF0F63EA7")
+
         public static final int ENABLED = 2;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.233 -0400", hash_original_field = "F8F6310E9A6F20491DB28D6A61BC4F65", hash_generated_field = "2E406B892260D5B86778765F2C6E9A2C")
+
         public static final String[] strings = { "current", "disabled", "enabled" };
     }
 
@@ -547,72 +664,78 @@ public class WifiConfiguration implements Parcelable {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.233 -0400", hash_original_field = "0868A890D501D57BDEEDB46AC847BCDE", hash_generated_field = "E8CDBB9FFFFA56D2FC6AC1E012086750")
+
     public static final String ssidVarName = "ssid";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.233 -0400", hash_original_field = "698E241BAF22C814131094BC4D0D727B", hash_generated_field = "615F5954486556CB6899ABD6591FA7EC")
+
     public static final String bssidVarName = "bssid";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.233 -0400", hash_original_field = "0CD13764F576344B5B08A5FE65D6832C", hash_generated_field = "1B32B7500DA776F594AF591AD38ADF09")
+
     public static final String pskVarName = "psk";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.233 -0400", hash_original_field = "42D550C4F68F6A702C5C55B6FC2F7C6D", hash_generated_field = "3C109CD4376827B0B51775920D7B5E49")
+
     public static final String[] wepKeyVarNames = { "wep_key0", "wep_key1", "wep_key2", "wep_key3" };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.234 -0400", hash_original_field = "11C3988529344A97B47196877C7FF458", hash_generated_field = "497D813681D10F1C98649D37176DB0A6")
+
     public static final String wepTxKeyIdxVarName = "wep_tx_keyidx";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.234 -0400", hash_original_field = "E1C34D83AA8BE8803B67D7261E086F07", hash_generated_field = "F48977730924B86CFDE19A6DA78032DE")
+
     public static final String priorityVarName = "priority";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.234 -0400", hash_original_field = "9A739208944AB16D065EB91E972DB69A", hash_generated_field = "83B29577FAED6521D3BD2C10843003AA")
+
     public static final String hiddenSSIDVarName = "scan_ssid";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.234 -0400", hash_original_field = "7F6BA1F0D2CFADFF4D3B81B9A4174A73", hash_generated_field = "E98E26B683887569FD48A42ACA39238A")
+
     public static final int INVALID_NETWORK_ID = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.234 -0400", hash_original_field = "EF6FB852E9F85D8BA99809A64C9B77E9", hash_generated_field = "878758D4FB34E68AD92F0EDD7633E64F")
+
     public static final int DISABLED_UNKNOWN_REASON                         = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.234 -0400", hash_original_field = "EF90AFB99847D87174EB20844817E983", hash_generated_field = "A8D81D6825F23932A154B3789D1BD3A0")
+
     public static final int DISABLED_DNS_FAILURE                            = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.234 -0400", hash_original_field = "ED9AB33C9F6E7AAC5332F2FDDA0E6B8C", hash_generated_field = "9A10C8990B427407B6AD5F3BDDD4298A")
+
     public static final int DISABLED_DHCP_FAILURE                           = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.234 -0400", hash_original_field = "552A6ABDD4D3835C377D30BC130B837E", hash_generated_field = "3F557AE832B42CA826B4874D6700B5A8")
+
     public static final int DISABLED_AUTH_FAILURE                           = 3;
-    public static final Creator<WifiConfiguration> CREATOR = new Creator<WifiConfiguration>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.615 -0400", hash_original_method = "20D1CB558DAB6A81BAFA1424EC8D2FB7", hash_generated_method = "6985A44BE85B80BD6673FA3503ED4239")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public WifiConfiguration createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            WifiConfiguration config;
-            config = new WifiConfiguration();
-            config.networkId = in.readInt();
-            config.status = in.readInt();
-            config.disableReason = in.readInt();
-            config.SSID = in.readString();
-            config.BSSID = in.readString();
-            config.preSharedKey = in.readString();
-            {
-                int i;
-                i = 0;
-                config.wepKeys[i] = in.readString();
-            } //End collapsed parenthetic
-            config.wepTxKeyIndex = in.readInt();
-            config.priority = in.readInt();
-            config.hiddenSSID = in.readInt() != 0;
-            config.allowedKeyManagement   = readBitSet(in);
-            config.allowedProtocols       = readBitSet(in);
-            config.allowedAuthAlgorithms  = readBitSet(in);
-            config.allowedPairwiseCiphers = readBitSet(in);
-            config.allowedGroupCiphers    = readBitSet(in);
-            {
-                Iterator<EnterpriseField> var1A6EB7A4488D54D14117D9B44CEAF780_281335446 = (config.enterpriseFields).iterator();
-                var1A6EB7A4488D54D14117D9B44CEAF780_281335446.hasNext();
-                EnterpriseField field = var1A6EB7A4488D54D14117D9B44CEAF780_281335446.next();
-                {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.234 -0400", hash_original_field = "29DE5D785DDF3E0B678AB79BFAA5F61D", hash_generated_field = "FB95A826D45756F45E5A04857A49C5C5")
+
+    public static final Creator<WifiConfiguration> CREATOR =
+        new Creator<WifiConfiguration>() {
+            public WifiConfiguration createFromParcel(Parcel in) {
+                WifiConfiguration config = new WifiConfiguration();
+                config.networkId = in.readInt();
+                config.status = in.readInt();
+                config.disableReason = in.readInt();
+                config.SSID = in.readString();
+                config.BSSID = in.readString();
+                config.preSharedKey = in.readString();
+                for (int i = 0; i < config.wepKeys.length; i++)
+                    config.wepKeys[i] = in.readString();
+                config.wepTxKeyIndex = in.readInt();
+                config.priority = in.readInt();
+                config.hiddenSSID = in.readInt() != 0;
+                config.allowedKeyManagement   = readBitSet(in);
+                config.allowedProtocols       = readBitSet(in);
+                config.allowedAuthAlgorithms  = readBitSet(in);
+                config.allowedPairwiseCiphers = readBitSet(in);
+                config.allowedGroupCiphers    = readBitSet(in);
+
+                for (EnterpriseField field : config.enterpriseFields) {
                     field.setValue(in.readString());
-                } //End block
-            } //End collapsed parenthetic
-            config.ipAssignment = IpAssignment.valueOf(in.readString());
-            config.proxySettings = ProxySettings.valueOf(in.readString());
-            config.linkProperties = in.readParcelable(null);
-            return (WifiConfiguration)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
-        }
+                }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.616 -0400", hash_original_method = "9695315CC5B8495CD0481DA1F47B5482", hash_generated_method = "F5DE4B25E0FDF109660C47B9929E94DB")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public WifiConfiguration[] newArray(int size) {
-            dsTaint.addTaint(size);
-            WifiConfiguration[] varED4E7F729AC6444BB2CA00624A2C96DD_1011816475 = (new WifiConfiguration[size]);
-            return (WifiConfiguration[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new WifiConfiguration[size];
-        }
+                config.ipAssignment = IpAssignment.valueOf(in.readString());
+                config.proxySettings = ProxySettings.valueOf(in.readString());
+                config.linkProperties = in.readParcelable(null);
+                return config;
+            }
 
-        
-}; //Transformed anonymous class
+            public WifiConfiguration[] newArray(int size) {
+                return new WifiConfiguration[size];
+            }
+        };
 }
 

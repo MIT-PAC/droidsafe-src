@@ -22,28 +22,56 @@ import com.android.internal.util.ArrayUtils;
 import java.lang.reflect.Array;
 
 class TextLine {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.826 -0400", hash_original_field = "78E27F80AC0100441F897783EFA42851", hash_generated_field = "B5BC396C7010734D6B4B6ED34A2846AE")
+
     private TextPaint mPaint;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.826 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "E579ED9F2DADADEB46C981CAFDEE5BA5")
+
     private CharSequence mText;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "59B50EB80ABF1071654EE6DE5094E070", hash_generated_field = "D233E3389CE5D79EE6040D6A855ED4FF")
+
     private int mStart;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "B74CDC798B150A72FBFBFAE7161611A0", hash_generated_field = "8D921BC08EBCA74A32B1247B1F91B368")
+
     private int mLen;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "90B0D92F580EFEB979A78726B5A06046", hash_generated_field = "9463565EC19B0C28E47B4A05A883AACE")
+
     private int mDir;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "C5BE317E362FA3A0C2C3E5FEF24D93D8", hash_generated_field = "0120B57883F4A0FE4FFD7BC1C988B792")
+
     private Directions mDirections;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "E7A53C004C81753F95BE5F68EF660B93", hash_generated_field = "D9EB8682A57605E85FDF7A8921E6278B")
+
     private boolean mHasTabs;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "EED8301AA8AD4216C74243E84473677E", hash_generated_field = "D70B7E9717C627B10CB1103D367577AF")
+
     private TabStops mTabs;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "7C3722E3CD3CCC07C587A93513F1BB79", hash_generated_field = "20B8558AB5FD0F0B5A30B95221D68246")
+
     private char[] mChars;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "4F9D254B1CD5044B69FC994E7FDA4BC0", hash_generated_field = "24C6EE5653AF991EF0187B60742148D2")
+
     private boolean mCharsValid;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "2A174ADD3219E7DC0B72155FF67EC4B5", hash_generated_field = "69C78554F8ABB9B2C492FD314F3ED2EE")
+
     private Spanned mSpanned;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "5ECEFF774471811D388DC8B2E7A3678F", hash_generated_field = "4B5596A3EF77CDA86765E17E911585F5")
+
     private TextPaint mWorkPaint = new TextPaint();
-    private SpanSet<MetricAffectingSpan> mMetricAffectingSpanSpanSet =
-            new SpanSet<MetricAffectingSpan>(MetricAffectingSpan.class);
-    private SpanSet<CharacterStyle> mCharacterStyleSpanSet =
-            new SpanSet<CharacterStyle>(CharacterStyle.class);
-    private SpanSet<ReplacementSpan> mReplacementSpanSpanSet =
-            new SpanSet<ReplacementSpan>(ReplacementSpan.class);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "BA01C06D7D2C16D8DA15CBC211855B17", hash_generated_field = "BBB2B37BC9E6289A31F99A0503F2307C")
+
+    private SpanSet<MetricAffectingSpan> mMetricAffectingSpanSpanSet = new SpanSet<MetricAffectingSpan>(MetricAffectingSpan.class);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "AA4FF336748C12C296D546DCB9F5F762", hash_generated_field = "B824A8ABA253383A1245B9FA673A18BA")
+
+    private SpanSet<CharacterStyle> mCharacterStyleSpanSet = new SpanSet<CharacterStyle>(CharacterStyle.class);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "3DD162648ABDCE69032EE3F02E2B56F1", hash_generated_field = "38B746E7D301B51A499147E84BB205A8")
+
+    private SpanSet<ReplacementSpan> mReplacementSpanSpanSet = new SpanSet<ReplacementSpan>(ReplacementSpan.class);
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.685 -0400", hash_original_method = "39A3636FA4EF93C30E3E661E38CC395E", hash_generated_method = "39A3636FA4EF93C30E3E661E38CC395E")
-        public TextLine ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_method = "2FAB193CBF90842ECB23B93C34526440", hash_generated_method = "2FAB193CBF90842ECB23B93C34526440")
+    public TextLine ()
     {
+        //Synthesized constructor
     }
 
 
@@ -85,22 +113,19 @@ class TextLine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.686 -0400", hash_original_method = "38DB7B0D381033DA01F9181167C14361", hash_generated_method = "EE6FF4B896CA3FC7D29579E6DD1C7047")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.851 -0400", hash_original_method = "38DB7B0D381033DA01F9181167C14361", hash_generated_method = "DB2D646F76B4B932F56A864EA2DABCB6")
      void set(TextPaint paint, CharSequence text, int start, int limit, int dir,
             Directions directions, boolean hasTabs, TabStops tabStops) {
-        dsTaint.addTaint(directions.dsTaint);
-        dsTaint.addTaint(limit);
-        dsTaint.addTaint(tabStops.dsTaint);
-        dsTaint.addTaint(text);
-        dsTaint.addTaint(dir);
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(paint.dsTaint);
-        dsTaint.addTaint(hasTabs);
+        mPaint = paint;
+        mText = text;
+        mStart = start;
         mLen = limit - start;
+        mDir = dir;
+        mDirections = directions;
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Directions cannot be null");
         } //End block
+        mHasTabs = hasTabs;
         mSpanned = null;
         boolean hasReplacement;
         hasReplacement = false;
@@ -125,7 +150,7 @@ class TextLine {
                     {
                         inext = mReplacementSpanSpanSet.getNextTransition(i, limit);
                         {
-                            boolean var9A0647084190D1C8B24B12E654D855A5_496285876 = (mReplacementSpanSpanSet.hasSpansIntersecting(i, inext));
+                            boolean var9A0647084190D1C8B24B12E654D855A5_1114237185 = (mReplacementSpanSpanSet.hasSpansIntersecting(i, inext));
                             {
                                 chars[i - start] = '\ufffc';
                                 {
@@ -142,19 +167,14 @@ class TextLine {
                 } //End collapsed parenthetic
             } //End block
         } //End block
+        mTabs = tabStops;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.687 -0400", hash_original_method = "20A60861C26C58A53A0282FABD9ED153", hash_generated_method = "F7AAA7932EBB111D84CFE48354FC7F26")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.857 -0400", hash_original_method = "20A60861C26C58A53A0282FABD9ED153", hash_generated_method = "8D6991A0B624BB5961E93B3F5BB89976")
      void draw(Canvas c, float x, int top, int y, int bottom) {
-        dsTaint.addTaint(c.dsTaint);
-        dsTaint.addTaint(bottom);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(top);
-        dsTaint.addTaint(x);
         {
             {
                 drawRun(c, 0, mLen, false, x, top, y, bottom, false);
@@ -234,28 +254,29 @@ class TextLine {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
+        addTaint(c.getTaint());
+        addTaint(x);
+        addTaint(top);
+        addTaint(y);
+        addTaint(bottom);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.688 -0400", hash_original_method = "7F5367E991A6BC7E9EDD55CA9BF0FBE6", hash_generated_method = "B7B06045AF92E6C5D959BFE1EFEDAAB7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.858 -0400", hash_original_method = "7F5367E991A6BC7E9EDD55CA9BF0FBE6", hash_generated_method = "318230623E02956C1F64C3C7C5521BAE")
      float metrics(FontMetricsInt fmi) {
-        dsTaint.addTaint(fmi.dsTaint);
-        float var819434D16349BB2DC69F34C4834A5D61_999288858 = (measure(mLen, false, fmi));
-        return dsTaint.getTaintFloat();
+        float var819434D16349BB2DC69F34C4834A5D61_885099511 = (measure(mLen, false, fmi));
+        addTaint(fmi.getTaint());
+        float var546ADE640B6EDFBC8A086EF31347E768_296492187 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_296492187;
         // ---------- Original Method ----------
         //return measure(mLen, false, fmi);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.688 -0400", hash_original_method = "5986320AFF9EF780E7B17B08599A90A9", hash_generated_method = "A4FA82484DFD9DB8E74423D70E60FE5D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.880 -0400", hash_original_method = "5986320AFF9EF780E7B17B08599A90A9", hash_generated_method = "23F76FD1524FB6772B9A25124847101E")
      float measure(int offset, boolean trailing, FontMetricsInt fmi) {
-        dsTaint.addTaint(trailing);
-        dsTaint.addTaint(fmi.dsTaint);
-        dsTaint.addTaint(offset);
         int target;
         target = offset - 1;
         target = offset;
@@ -263,10 +284,10 @@ class TextLine {
         h = 0;
         {
             {
-                float var6DBB5A12B291F41A1B8183C9E3967A7F_998762296 = (measureRun(0, offset, mLen, false, fmi));
+                float var6DBB5A12B291F41A1B8183C9E3967A7F_857447957 = (measureRun(0, offset, mLen, false, fmi));
             } //End block
             {
-                float varAF7F0B660DD98ED2707F73909AA41E03_155544335 = (measureRun(0, offset, mLen, true, fmi));
+                float varAF7F0B660DD98ED2707F73909AA41E03_679136 = (measureRun(0, offset, mLen, true, fmi));
             } //End block
         } //End block
         char[] chars;
@@ -313,13 +334,13 @@ class TextLine {
                             boolean advance;
                             advance = (mDir == Layout.DIR_RIGHT_TO_LEFT) == runIsRtl;
                             {
-                                float varEAD76BB4ECB5BC510C30780AC9415C1A_1743844016 = (h += measureRun(segstart, offset, j, runIsRtl, fmi));
+                                float varEAD76BB4ECB5BC510C30780AC9415C1A_1789046202 = (h += measureRun(segstart, offset, j, runIsRtl, fmi));
                             } //End block
                             float w;
                             w = measureRun(segstart, j, j, runIsRtl, fmi);
                             h += advance ? w : -w;
                             {
-                                float var156DB9BDC3E26545D8938CCB69603D57_474472664 = (h += measureRun(segstart, offset, j, runIsRtl, null));
+                                float var156DB9BDC3E26545D8938CCB69603D57_1589376191 = (h += measureRun(segstart, offset, j, runIsRtl, null));
                             } //End block
                             {
                                 h = mDir * nextTab(h * mDir);
@@ -337,35 +358,39 @@ class TextLine {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintFloat();
+        addTaint(offset);
+        addTaint(trailing);
+        addTaint(fmi.getTaint());
+        float var546ADE640B6EDFBC8A086EF31347E768_1539172622 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1539172622;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.689 -0400", hash_original_method = "1E01EF0F20C48DC869D8591ACBCB40DD", hash_generated_method = "1905391ABA31405FF6479CE56EAEC5DF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.891 -0400", hash_original_method = "1E01EF0F20C48DC869D8591ACBCB40DD", hash_generated_method = "B7522D035CBAF296C4CBDA7718F3F1E9")
     private float drawRun(Canvas c, int start,
             int limit, boolean runIsRtl, float x, int top, int y, int bottom,
             boolean needWidth) {
-        dsTaint.addTaint(limit);
-        dsTaint.addTaint(needWidth);
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(c.dsTaint);
-        dsTaint.addTaint(bottom);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(top);
-        dsTaint.addTaint(x);
-        dsTaint.addTaint(runIsRtl);
         {
             float w;
             w = -measureRun(start, limit, limit, runIsRtl, null);
             handleRun(start, limit, limit, runIsRtl, c, x + w, top,
                     y, bottom, null, false);
         } //End block
-        float var2B269E7D5B38EDA34EF7FCBB54724505_662682338 = (handleRun(start, limit, limit, runIsRtl, c, x, top,
+        float var2B269E7D5B38EDA34EF7FCBB54724505_1497418525 = (handleRun(start, limit, limit, runIsRtl, c, x, top,
                 y, bottom, null, needWidth));
-        return dsTaint.getTaintFloat();
+        addTaint(c.getTaint());
+        addTaint(start);
+        addTaint(limit);
+        addTaint(runIsRtl);
+        addTaint(x);
+        addTaint(top);
+        addTaint(y);
+        addTaint(bottom);
+        addTaint(needWidth);
+        float var546ADE640B6EDFBC8A086EF31347E768_1446635834 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1446635834;
         // ---------- Original Method ----------
         //if ((mDir == Layout.DIR_LEFT_TO_RIGHT) == runIsRtl) {
             //float w = -measureRun(start, limit, limit, runIsRtl, null);
@@ -378,27 +403,24 @@ class TextLine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.689 -0400", hash_original_method = "92FB3641FED625E21CE916EA375B8557", hash_generated_method = "5ECD9C68DFE4A8AA45E5EC5820FDA16A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.892 -0400", hash_original_method = "92FB3641FED625E21CE916EA375B8557", hash_generated_method = "66BC33B03B345D42450A9497E9557F42")
     private float measureRun(int start, int offset, int limit, boolean runIsRtl,
             FontMetricsInt fmi) {
-        dsTaint.addTaint(limit);
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(fmi.dsTaint);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(runIsRtl);
-        float var97D1A4BD409768E6336775867B4BED96_1231126464 = (handleRun(start, offset, limit, runIsRtl, null, 0, 0, 0, 0, fmi, true));
-        return dsTaint.getTaintFloat();
+        float var97D1A4BD409768E6336775867B4BED96_265657674 = (handleRun(start, offset, limit, runIsRtl, null, 0, 0, 0, 0, fmi, true));
+        addTaint(start);
+        addTaint(offset);
+        addTaint(limit);
+        addTaint(runIsRtl);
+        addTaint(fmi.getTaint());
+        float var546ADE640B6EDFBC8A086EF31347E768_1659497794 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1659497794;
         // ---------- Original Method ----------
         //return handleRun(start, offset, limit, runIsRtl, null, 0, 0, 0, 0, fmi, true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.691 -0400", hash_original_method = "4BDB20A2184F91CDB9542314BD3E47CD", hash_generated_method = "19EA5B70C4DFFBE166CBEF493B69A073")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.895 -0400", hash_original_method = "4BDB20A2184F91CDB9542314BD3E47CD", hash_generated_method = "AEDF8A896A5B2E957FDCBD0EEC58B101")
      int getOffsetToLeftRightOf(int cursor, boolean toLeft) {
-        dsTaint.addTaint(cursor);
-        dsTaint.addTaint(toLeft);
         int lineStart;
         lineStart = 0;
         int lineEnd;
@@ -519,27 +541,23 @@ class TextLine {
                 newCaret = advance ? lineEnd : lineStart;
             } //End block
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(cursor);
+        addTaint(toLeft);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_268324639 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_268324639;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.692 -0400", hash_original_method = "31252F4808C2C77A1E467D2963FB3AD5", hash_generated_method = "D6F62A56885E8EFF1FA180486DDB3B8C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.927 -0400", hash_original_method = "31252F4808C2C77A1E467D2963FB3AD5", hash_generated_method = "782DA44EFC2F3DFEF5970177427FC88A")
     private int getOffsetBeforeAfter(int runIndex, int runStart, int runLimit,
             boolean runIsRtl, int offset, boolean after) {
-        dsTaint.addTaint(after);
-        dsTaint.addTaint(runStart);
-        dsTaint.addTaint(runLimit);
-        dsTaint.addTaint(runIndex);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(runIsRtl);
         {
             {
-                int var23A42F19460B2B1B4F7650C079142539_1703584668 = (TextUtils.getOffsetAfter(mText, offset + mStart) - mStart);
+                int var23A42F19460B2B1B4F7650C079142539_2048441635 = (TextUtils.getOffsetAfter(mText, offset + mStart) - mStart);
             } //End block
-            int var878CE411BC90821D83BAFC7D86E8759C_1020479375 = (TextUtils.getOffsetBefore(mText, offset + mStart) - mStart);
+            int var878CE411BC90821D83BAFC7D86E8759C_657738186 = (TextUtils.getOffsetBefore(mText, offset + mStart) - mStart);
         } //End block
         TextPaint wp;
         wp = mWorkPaint;
@@ -591,14 +609,21 @@ class TextLine {
         cursorOpt = Paint.CURSOR_AFTER;
         cursorOpt = Paint.CURSOR_BEFORE;
         {
-            int var8A46B054A3BF4BE20F28D574CADE0515_1926822767 = (wp.getTextRunCursor(mChars, spanStart, spanLimit - spanStart,
+            int var8A46B054A3BF4BE20F28D574CADE0515_1472696854 = (wp.getTextRunCursor(mChars, spanStart, spanLimit - spanStart,
                     flags, offset, cursorOpt));
         } //End block
         {
-            int var2C1A4A7C8DBA63FC4B3CC76C9F155C03_435454101 = (wp.getTextRunCursor(mText, mStart + spanStart,
+            int var2C1A4A7C8DBA63FC4B3CC76C9F155C03_1829165088 = (wp.getTextRunCursor(mText, mStart + spanStart,
                     mStart + spanLimit, flags, mStart + offset, cursorOpt) - mStart);
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(runIndex);
+        addTaint(runStart);
+        addTaint(runLimit);
+        addTaint(runIsRtl);
+        addTaint(offset);
+        addTaint(after);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_719605784 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_719605784;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -626,25 +651,11 @@ class TextLine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.694 -0400", hash_original_method = "F8AC228F4E44CF9CD673B1404700AC77", hash_generated_method = "9B98ECED3219AFCB600B88C4BC9AA2F9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.939 -0400", hash_original_method = "F8AC228F4E44CF9CD673B1404700AC77", hash_generated_method = "A696DACE09236C07E0A4249419980EA0")
     private float handleText(TextPaint wp, int start, int end,
             int contextStart, int contextEnd, boolean runIsRtl,
             Canvas c, float x, int top, int y, int bottom,
             FontMetricsInt fmi, boolean needWidth) {
-        dsTaint.addTaint(needWidth);
-        dsTaint.addTaint(c.dsTaint);
-        dsTaint.addTaint(contextStart);
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(bottom);
-        dsTaint.addTaint(wp.dsTaint);
-        dsTaint.addTaint(fmi.dsTaint);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(end);
-        dsTaint.addTaint(top);
-        dsTaint.addTaint(x);
-        dsTaint.addTaint(runIsRtl);
-        dsTaint.addTaint(contextEnd);
         {
             expandMetricsFromPaint(fmi, wp);
         } //End block
@@ -705,30 +716,31 @@ class TextLine {
             drawTextRun(c, wp, start, end, contextStart, contextEnd, runIsRtl,
                     x, y + wp.baselineShift);
         } //End block
-        return dsTaint.getTaintFloat();
+        addTaint(wp.getTaint());
+        addTaint(start);
+        addTaint(end);
+        addTaint(contextStart);
+        addTaint(contextEnd);
+        addTaint(runIsRtl);
+        addTaint(c.getTaint());
+        addTaint(x);
+        addTaint(top);
+        addTaint(y);
+        addTaint(bottom);
+        addTaint(fmi.getTaint());
+        addTaint(needWidth);
+        float var546ADE640B6EDFBC8A086EF31347E768_250617274 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_250617274;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.695 -0400", hash_original_method = "5BB6CBCB4177EDC48B270A42A6989FB0", hash_generated_method = "C20C6B600F700D010065303A94FABE08")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.944 -0400", hash_original_method = "5BB6CBCB4177EDC48B270A42A6989FB0", hash_generated_method = "6181072A4BF158D9D8718AFB35160D0B")
     private float handleReplacement(ReplacementSpan replacement, TextPaint wp,
             int start, int limit, boolean runIsRtl, Canvas c,
             float x, int top, int y, int bottom, FontMetricsInt fmi,
             boolean needWidth) {
-        dsTaint.addTaint(limit);
-        dsTaint.addTaint(replacement.dsTaint);
-        dsTaint.addTaint(needWidth);
-        dsTaint.addTaint(c.dsTaint);
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(bottom);
-        dsTaint.addTaint(wp.dsTaint);
-        dsTaint.addTaint(fmi.dsTaint);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(top);
-        dsTaint.addTaint(x);
-        dsTaint.addTaint(runIsRtl);
         float ret;
         ret = 0;
         int textStart;
@@ -768,28 +780,29 @@ class TextLine {
             replacement.draw(c, mText, textStart, textLimit,
                     x, top, y, bottom, wp);
         } //End block
-        return dsTaint.getTaintFloat();
+        addTaint(replacement.getTaint());
+        addTaint(wp.getTaint());
+        addTaint(start);
+        addTaint(limit);
+        addTaint(runIsRtl);
+        addTaint(c.getTaint());
+        addTaint(x);
+        addTaint(top);
+        addTaint(y);
+        addTaint(bottom);
+        addTaint(fmi.getTaint());
+        addTaint(needWidth);
+        float var546ADE640B6EDFBC8A086EF31347E768_1910059535 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1910059535;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.696 -0400", hash_original_method = "5FABB9B94E4E730AC35956B01320E35B", hash_generated_method = "37896DF4A45BE87F1B0E4E5F4009CDD0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.982 -0400", hash_original_method = "5FABB9B94E4E730AC35956B01320E35B", hash_generated_method = "C9E52623B1257A033DBA5864539FEEAD")
     private float handleRun(int start, int measureLimit,
             int limit, boolean runIsRtl, Canvas c, float x, int top, int y,
             int bottom, FontMetricsInt fmi, boolean needWidth) {
-        dsTaint.addTaint(limit);
-        dsTaint.addTaint(measureLimit);
-        dsTaint.addTaint(needWidth);
-        dsTaint.addTaint(c.dsTaint);
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(bottom);
-        dsTaint.addTaint(fmi.dsTaint);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(top);
-        dsTaint.addTaint(x);
-        dsTaint.addTaint(runIsRtl);
         {
             TextPaint wp;
             wp = mWorkPaint;
@@ -804,7 +817,7 @@ class TextLine {
             wp.set(mPaint);
             int mlimit;
             mlimit = measureLimit;
-            float var34AF167EDF1314E69A7451FFECC8AC0B_1514040082 = (handleText(wp, start, mlimit, start, limit, runIsRtl, c, x, top,
+            float var34AF167EDF1314E69A7451FFECC8AC0B_644804492 = (handleText(wp, start, mlimit, start, limit, runIsRtl, c, x, top,
                     y, bottom, fmi, needWidth || mlimit < measureLimit));
         } //End block
         mMetricAffectingSpanSpanSet.init(mSpanned, mStart + start, mStart + limit);
@@ -872,25 +885,27 @@ class TextLine {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintFloat();
+        addTaint(start);
+        addTaint(measureLimit);
+        addTaint(limit);
+        addTaint(runIsRtl);
+        addTaint(c.getTaint());
+        addTaint(x);
+        addTaint(top);
+        addTaint(y);
+        addTaint(bottom);
+        addTaint(fmi.getTaint());
+        addTaint(needWidth);
+        float var546ADE640B6EDFBC8A086EF31347E768_1023370728 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1023370728;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.696 -0400", hash_original_method = "C8ABF2DC6B89611B840AEC4DBAADD344", hash_generated_method = "1F47C897C4D4A6C31EA5AA56BFD96213")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.983 -0400", hash_original_method = "C8ABF2DC6B89611B840AEC4DBAADD344", hash_generated_method = "86478A549C8A74AA9738F73284BD27C8")
     private void drawTextRun(Canvas c, TextPaint wp, int start, int end,
             int contextStart, int contextEnd, boolean runIsRtl, float x, int y) {
-        dsTaint.addTaint(contextStart);
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(c.dsTaint);
-        dsTaint.addTaint(wp.dsTaint);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(end);
-        dsTaint.addTaint(x);
-        dsTaint.addTaint(runIsRtl);
-        dsTaint.addTaint(contextEnd);
         int flags;
         flags = Canvas.DIRECTION_RTL;
         flags = Canvas.DIRECTION_LTR;
@@ -908,6 +923,15 @@ class TextLine {
             c.drawTextRun(mText, delta + start, delta + end,
                     delta + contextStart, delta + contextEnd, x, y, flags, wp);
         } //End block
+        addTaint(c.getTaint());
+        addTaint(wp.getTaint());
+        addTaint(start);
+        addTaint(end);
+        addTaint(contextStart);
+        addTaint(contextEnd);
+        addTaint(runIsRtl);
+        addTaint(x);
+        addTaint(y);
         // ---------- Original Method ----------
         //int flags = runIsRtl ? Canvas.DIRECTION_RTL : Canvas.DIRECTION_LTR;
         //if (mCharsValid) {
@@ -923,18 +947,16 @@ class TextLine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.702 -0400", hash_original_method = "AC74D3C7A92A1C0DA8A76C86F50D3219", hash_generated_method = "77EE181701E1F06FA4C6AC8E3BBD41F4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.110 -0400", hash_original_method = "AC74D3C7A92A1C0DA8A76C86F50D3219", hash_generated_method = "E6A518C19368D3100ABCA510FC2F928E")
      float ascent(int pos) {
-        dsTaint.addTaint(pos);
         {
-            float var3BDF3A2D03302BACAD807FFE6B0D6A91_1378011253 = (mPaint.ascent());
+            float var3BDF3A2D03302BACAD807FFE6B0D6A91_128846775 = (mPaint.ascent());
         } //End block
         pos += mStart;
         MetricAffectingSpan[] spans;
         spans = mSpanned.getSpans(pos, pos + 1, MetricAffectingSpan.class);
         {
-            float var3BDF3A2D03302BACAD807FFE6B0D6A91_241803501 = (mPaint.ascent());
+            float var3BDF3A2D03302BACAD807FFE6B0D6A91_771737821 = (mPaint.ascent());
         } //End block
         TextPaint wp;
         wp = mWorkPaint;
@@ -945,8 +967,10 @@ class TextLine {
                 span.updateMeasureState(wp);
             } //End block
         } //End collapsed parenthetic
-        float var5DC50654BD2E08B78A3F0BF6159A6A3E_1204485502 = (wp.ascent());
-        return dsTaint.getTaintFloat();
+        float var5DC50654BD2E08B78A3F0BF6159A6A3E_479482317 = (wp.ascent());
+        addTaint(pos);
+        float var546ADE640B6EDFBC8A086EF31347E768_472387973 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_472387973;
         // ---------- Original Method ----------
         //if (mSpanned == null) {
             //return mPaint.ascent();
@@ -965,15 +989,15 @@ class TextLine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.702 -0400", hash_original_method = "73134044CD530D6AE99976E01BA5E625", hash_generated_method = "6C2833A915EB8F277B1613FDDDE027F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.124 -0400", hash_original_method = "73134044CD530D6AE99976E01BA5E625", hash_generated_method = "B6AC324490BDB4893D4A20E57919EF62")
      float nextTab(float h) {
-        dsTaint.addTaint(h);
         {
-            float varBC64F150694F74B7C25309A0AEC4E154_684718852 = (mTabs.nextTab(h));
+            float varBC64F150694F74B7C25309A0AEC4E154_242467704 = (mTabs.nextTab(h));
         } //End block
-        float varC96F42CCA3E3E5F25C19ACBABD69AED1_232185226 = (TabStops.nextDefaultStop(h, TAB_INCREMENT));
-        return dsTaint.getTaintFloat();
+        float varC96F42CCA3E3E5F25C19ACBABD69AED1_734937020 = (TabStops.nextDefaultStop(h, TAB_INCREMENT));
+        addTaint(h);
+        float var546ADE640B6EDFBC8A086EF31347E768_866614788 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_866614788;
         // ---------- Original Method ----------
         //if (mTabs != null) {
             //return mTabs.nextTab(h);
@@ -983,17 +1007,28 @@ class TextLine {
 
     
     private static class SpanSet<E> {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.124 -0400", hash_original_field = "D6B5FCDB35353F6A4017F11EBD647D09", hash_generated_field = "4D016F914E51DC9C3732F557E45EB452")
+
         int numberOfSpans;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.124 -0400", hash_original_field = "A46EFC2A2782C9238263F63F5CEA5D42", hash_generated_field = "32FCADE2328772A5D81411E0AA303B75")
+
         E[] spans;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.124 -0400", hash_original_field = "C24BD1BD2949B9599EEDD7F0387EE723", hash_generated_field = "1D3712C585C8808C22172D42F4D7BB90")
+
         int[] spanStarts;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.124 -0400", hash_original_field = "0502422B326B747A365D76C9CCE8E955", hash_generated_field = "8ED878CF75FF4569DFB3C4F0CC5B72F1")
+
         int[] spanEnds;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.124 -0400", hash_original_field = "6612E29FBDE8178CC4AD5176D3C8A9E6", hash_generated_field = "2E2862EF6D4B111BA84644CB0E9CD297")
+
         int[] spanFlags;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.124 -0400", hash_original_field = "A69F0373B093A535ADB7C9273781CD43", hash_generated_field = "7DE61887E85E1CD432AAA8825CCFB81E")
+
         Class<? extends E> classType;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.703 -0400", hash_original_method = "08793871E7FAA5C02A5C5115CBB016E1", hash_generated_method = "24A1274092E4AC2262B30B7620253A84")
-        @DSModeled(DSC.SAFE)
-         SpanSet(Class<? extends E> type) {
-            dsTaint.addTaint(type.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.125 -0400", hash_original_method = "08793871E7FAA5C02A5C5115CBB016E1", hash_generated_method = "7A2C4BAA57A8D03BA9484E8C2D4BDD35")
+          SpanSet(Class<? extends E> type) {
+            classType = type;
             numberOfSpans = 0;
             // ---------- Original Method ----------
             //classType = type;
@@ -1001,13 +1036,9 @@ class TextLine {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.704 -0400", hash_original_method = "DCBC67B7023E3760B724E28392339389", hash_generated_method = "667F34C74D31AF9449978AC5A2C39CE8")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.131 -0400", hash_original_method = "DCBC67B7023E3760B724E28392339389", hash_generated_method = "DCD7EEA6BDB7B36B921C6B961A48FBB9")
         @SuppressWarnings("unchecked")
         public void init(Spanned spanned, int start, int limit) {
-            dsTaint.addTaint(limit);
-            dsTaint.addTaint(start);
-            dsTaint.addTaint(spanned.dsTaint);
             E[] allSpans;
             allSpans = spanned.getSpans(start, limit, classType);
             int length;
@@ -1037,21 +1068,24 @@ class TextLine {
                     spanFlags[numberOfSpans] = spanFlag;
                 } //End block
             } //End collapsed parenthetic
+            addTaint(spanned.getTaint());
+            addTaint(start);
+            addTaint(limit);
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.704 -0400", hash_original_method = "14C2C64E52F272A1D061AF5FA0B61C4E", hash_generated_method = "7C0349A7928E0919AA92BBCEAE960352")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.132 -0400", hash_original_method = "14C2C64E52F272A1D061AF5FA0B61C4E", hash_generated_method = "60C1840AAE78668FA8995E437C4738C9")
         public boolean hasSpansIntersecting(int start, int end) {
-            dsTaint.addTaint(start);
-            dsTaint.addTaint(end);
             {
                 int i;
                 i = 0;
             } //End collapsed parenthetic
-            return dsTaint.getTaintBoolean();
+            addTaint(start);
+            addTaint(end);
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1381254359 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1381254359;
             // ---------- Original Method ----------
             //for (int i = 0; i < numberOfSpans; i++) {
                 //if (spanStarts[i] >= end || spanEnds[i] <= start) continue;
@@ -1061,11 +1095,8 @@ class TextLine {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.704 -0400", hash_original_method = "70A36A49F9CEFC761501124E36FC2A8C", hash_generated_method = "E9AAA4CEEA550A72F64F33872DE19DC3")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.147 -0400", hash_original_method = "70A36A49F9CEFC761501124E36FC2A8C", hash_generated_method = "219329826C0829FA897402D3F6238B1A")
          int getNextTransition(int start, int limit) {
-            dsTaint.addTaint(limit);
-            dsTaint.addTaint(start);
             {
                 int i;
                 i = 0;
@@ -1078,7 +1109,10 @@ class TextLine {
                     limit = spanEnd;
                 } //End block
             } //End collapsed parenthetic
-            return dsTaint.getTaintInt();
+            addTaint(start);
+            addTaint(limit);
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1956533597 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1956533597;
             // ---------- Original Method ----------
             //for (int i = 0; i < numberOfSpans; i++) {
                 //final int spanStart = spanStarts[i];
@@ -1090,8 +1124,7 @@ class TextLine {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.705 -0400", hash_original_method = "5E840A260140B15B0CFAF6F2BC649D6A", hash_generated_method = "82ECDD7493004F7E502A43C80ABA9546")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.148 -0400", hash_original_method = "5E840A260140B15B0CFAF6F2BC649D6A", hash_generated_method = "82ECDD7493004F7E502A43C80ABA9546")
         public void recycle() {
             {
                 int i;
@@ -1111,8 +1144,14 @@ class TextLine {
 
 
     
-    private static final boolean DEBUG = false;
-    private static final TextLine[] sCached = new TextLine[3];
-    private static final int TAB_INCREMENT = 20;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.148 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+
+    private static boolean DEBUG = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.148 -0400", hash_original_field = "E871AFED5937EF2A18CE095CADBDB246", hash_generated_field = "75121A76AE83D1347D4F6B7622872157")
+
+    private static TextLine[] sCached = new TextLine[3];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.148 -0400", hash_original_field = "5857BDFF3BF33113730586AF5B28164F", hash_generated_field = "BD4519227226DE6CF8B5B95534D34642")
+
+    private static int TAB_INCREMENT = 20;
 }
 

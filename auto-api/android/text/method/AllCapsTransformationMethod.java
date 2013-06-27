@@ -14,31 +14,43 @@ import android.view.View;
 import java.util.Locale;
 
 public class AllCapsTransformationMethod implements TransformationMethod2 {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.781 -0400", hash_original_field = "6F84A7F10C955D3C78F44E5278F6195B", hash_generated_field = "7A48C52BD142368ED44BC086FD9013A2")
+
     private boolean mEnabled;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.781 -0400", hash_original_field = "CF3890B8F9E27793E741F9D9569D3C34", hash_generated_field = "1A21143DB168F6FB0629A178DF0F089E")
+
     private Locale mLocale;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.137 -0400", hash_original_method = "3B95B7992FFC661A96A84916391DF4EA", hash_generated_method = "8AA15B204151EAD4BF0FC3F39F5D019C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AllCapsTransformationMethod(Context context) {
-        dsTaint.addTaint(context.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.782 -0400", hash_original_method = "3B95B7992FFC661A96A84916391DF4EA", hash_generated_method = "3EE0716C8BD5BB93DA9729F2D1CDECCC")
+    public  AllCapsTransformationMethod(Context context) {
         mLocale = context.getResources().getConfiguration().locale;
         // ---------- Original Method ----------
         //mLocale = context.getResources().getConfiguration().locale;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.137 -0400", hash_original_method = "78672DB29526C1EED454DBBBA0FA4686", hash_generated_method = "DD8A898E3FC347DC8C9BC5705A50C688")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.791 -0400", hash_original_method = "78672DB29526C1EED454DBBBA0FA4686", hash_generated_method = "8163F42FF30DAD8FE2B3CFD385850956")
     @Override
     public CharSequence getTransformation(CharSequence source, View view) {
-        dsTaint.addTaint(source);
-        dsTaint.addTaint(view.dsTaint);
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_402752644 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_634794668 = null; //Variable for return #2
         {
-            {
-                Object varD5698F773F2973FDF607339ADFAFC26E_655603752 = (source.toString().toUpperCase(mLocale));
-            } //End flattened ternary
+            varB4EAC82CA7396A68D541C85D26508E83_402752644 = source != null ? source.toString().toUpperCase(mLocale) : null;
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_634794668 = source;
+        addTaint(source.getTaint());
+        addTaint(view.getTaint());
+        CharSequence varA7E53CE21691AB073D9660D615818899_908788560; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_908788560 = varB4EAC82CA7396A68D541C85D26508E83_402752644;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_908788560 = varB4EAC82CA7396A68D541C85D26508E83_634794668;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_908788560.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_908788560;
         // ---------- Original Method ----------
         //if (mEnabled) {
             //return source != null ? source.toString().toUpperCase(mLocale) : null;
@@ -48,31 +60,31 @@ public class AllCapsTransformationMethod implements TransformationMethod2 {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.137 -0400", hash_original_method = "13D8211EBDC6D4196EF2DDB70ED5CACD", hash_generated_method = "5907AE7D302F7F32670C8209E0899341")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.792 -0400", hash_original_method = "13D8211EBDC6D4196EF2DDB70ED5CACD", hash_generated_method = "9D159F53239E26DFAC6C4F4E8981C85A")
     @Override
     public void onFocusChanged(View view, CharSequence sourceText, boolean focused, int direction,
             Rect previouslyFocusedRect) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(direction);
-        dsTaint.addTaint(sourceText);
-        dsTaint.addTaint(previouslyFocusedRect.dsTaint);
-        dsTaint.addTaint(focused);
-        dsTaint.addTaint(view.dsTaint);
+        addTaint(view.getTaint());
+        addTaint(sourceText.getTaint());
+        addTaint(focused);
+        addTaint(direction);
+        addTaint(previouslyFocusedRect.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.138 -0400", hash_original_method = "507549025152D254EA227D255598B5AF", hash_generated_method = "98284F2FA41F6604620F01511FDB8330")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.792 -0400", hash_original_method = "507549025152D254EA227D255598B5AF", hash_generated_method = "6202744402AD62DFF59CB62A9EF703E9")
     @Override
     public void setLengthChangesAllowed(boolean allowLengthChanges) {
-        dsTaint.addTaint(allowLengthChanges);
+        mEnabled = allowLengthChanges;
         // ---------- Original Method ----------
         //mEnabled = allowLengthChanges;
     }
 
     
-    private static final String TAG = "AllCapsTransformationMethod";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.792 -0400", hash_original_field = "44949DAF78AF0DE5B9E1A5EBD105B256", hash_generated_field = "2B7C81C08CF9D2F61154F79061CF4EBD")
+
+    private static String TAG = "AllCapsTransformationMethod";
 }
 

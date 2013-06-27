@@ -13,9 +13,10 @@ import java.util.Map;
 
 public abstract class CookieHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.750 -0400", hash_original_method = "9F2A01C407D8557B7414CC3C30E7E7C2", hash_generated_method = "9F2A01C407D8557B7414CC3C30E7E7C2")
-        public CookieHandler ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.910 -0400", hash_original_method = "88D15E3335299CEFE37CA24D0A89E063", hash_generated_method = "88D15E3335299CEFE37CA24D0A89E063")
+    public CookieHandler ()
     {
+        //Synthesized constructor
     }
 
 
@@ -37,6 +38,8 @@ public abstract class CookieHandler {
             throws IOException;
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.912 -0400", hash_original_field = "E1D260A0A6B209A220BDA69A447458C5", hash_generated_field = "8C9BF4ECEE0FD776A81C187004A66852")
+
     private static CookieHandler systemWideCookieHandler;
 }
 

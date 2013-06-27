@@ -13,30 +13,30 @@ import javax.sip.header.Header;
 
 public class ExtensionHeaderList extends SIPHeaderList<ExtensionHeaderImpl> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.941 -0400", hash_original_method = "9F1BA104827E0F2F29324BDDE3EB0EE9", hash_generated_method = "2924676E098739E5ECA29CEFC093B7A4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ExtensionHeaderList(String hName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.989 -0400", hash_original_method = "9F1BA104827E0F2F29324BDDE3EB0EE9", hash_generated_method = "3D5B61862F27E9137B1BDBC12BD22287")
+    public  ExtensionHeaderList(String hName) {
         super( ExtensionHeaderImpl.class, hName);
-        dsTaint.addTaint(hName);
+        addTaint(hName.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.941 -0400", hash_original_method = "52FAE424BADAAEF22385083D45DE9281", hash_generated_method = "B4759EE8D9DB6DE8172FBD3EF60E4182")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ExtensionHeaderList() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.989 -0400", hash_original_method = "52FAE424BADAAEF22385083D45DE9281", hash_generated_method = "B4759EE8D9DB6DE8172FBD3EF60E4182")
+    public  ExtensionHeaderList() {
         super(ExtensionHeaderImpl.class,null);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.941 -0400", hash_original_method = "C859D426E02BE595D55C2FAA9CB97225", hash_generated_method = "372FE7404DB9FF3F573993ACD870EEB2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.995 -0400", hash_original_method = "C859D426E02BE595D55C2FAA9CB97225", hash_generated_method = "CBF1F267398B84D660F79AFD946FD38B")
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_1344579358 = null; //Variable for return #1
         ExtensionHeaderList retval;
         retval = new ExtensionHeaderList(headerName);
         retval.clonehlist(this.hlist);
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1344579358 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_1344579358.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1344579358;
         // ---------- Original Method ----------
         //ExtensionHeaderList retval = new ExtensionHeaderList(headerName);
         //retval.clonehlist(this.hlist);
@@ -44,23 +44,24 @@ public class ExtensionHeaderList extends SIPHeaderList<ExtensionHeaderImpl> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.941 -0400", hash_original_method = "05F9E55197B7F8BF967FE19D758EB1FB", hash_generated_method = "66664FEF77B35061DEE6EB45C5754447")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.995 -0400", hash_original_method = "05F9E55197B7F8BF967FE19D758EB1FB", hash_generated_method = "2EAC6B55782E779BECBD5FF749199A80")
     public String encode() {
+        String varB4EAC82CA7396A68D541C85D26508E83_201196123 = null; //Variable for return #1
         StringBuffer retval;
         retval = new StringBuffer();
         ListIterator<ExtensionHeaderImpl> it;
         it = this.listIterator();
         {
-            boolean var03729FD53960D8DCA3A41A13A0229637_907254607 = (it.hasNext());
+            boolean var03729FD53960D8DCA3A41A13A0229637_1868479974 = (it.hasNext());
             {
                 ExtensionHeaderImpl eh;
                 eh = (ExtensionHeaderImpl) it.next();
                 retval.append(eh.encode());
             } //End block
         } //End collapsed parenthetic
-        String var0F1F65BA89BF920BA1A29FC87F91B969_1240630706 = (retval.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_201196123 = retval.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_201196123.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_201196123;
         // ---------- Original Method ----------
         //StringBuffer retval = new StringBuffer();
         //ListIterator<ExtensionHeaderImpl> it = this.listIterator();
@@ -72,6 +73,8 @@ public class ExtensionHeaderList extends SIPHeaderList<ExtensionHeaderImpl> {
     }
 
     
-    private static final long serialVersionUID = 4681326807149890197L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.995 -0400", hash_original_field = "49645EF719FC8343E1DC5FC8240E0CF5", hash_generated_field = "10C35333E6515F24176B0AFD4602C1F5")
+
+    private static long serialVersionUID = 4681326807149890197L;
 }
 

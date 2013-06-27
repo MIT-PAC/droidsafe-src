@@ -12,12 +12,15 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
 public class AccelerateInterpolator implements Interpolator {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:54.940 -0400", hash_original_field = "9AF4F81F21F540E9EDADA9926D5D915A", hash_generated_field = "C4B60CAF58795A5FD80295DCE69373D7")
+
     private float mFactor;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:54.940 -0400", hash_original_field = "FBC270DE6A296B0EB716CD6DD0CC28E2", hash_generated_field = "E32BD9A569BB931AE42B2AB10166121F")
+
     private double mDoubleFactor;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.970 -0400", hash_original_method = "6B066D2B0A6275C71F94C50A6808FEFE", hash_generated_method = "F4C76F6A7360596A87957076806A582C")
-    @DSModeled(DSC.SAFE)
-    public AccelerateInterpolator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:54.940 -0400", hash_original_method = "6B066D2B0A6275C71F94C50A6808FEFE", hash_generated_method = "F4C76F6A7360596A87957076806A582C")
+    public  AccelerateInterpolator() {
         mFactor = 1.0f;
         mDoubleFactor = 2.0;
         // ---------- Original Method ----------
@@ -26,10 +29,9 @@ public class AccelerateInterpolator implements Interpolator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.970 -0400", hash_original_method = "94059E5CBD2536EA402F0EA752CA0B91", hash_generated_method = "887CF2664C4B52594BDC6E991AC7BE1A")
-    @DSModeled(DSC.SAFE)
-    public AccelerateInterpolator(float factor) {
-        dsTaint.addTaint(factor);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:54.948 -0400", hash_original_method = "94059E5CBD2536EA402F0EA752CA0B91", hash_generated_method = "126B53B6E870C70FE373A6F1F10D530B")
+    public  AccelerateInterpolator(float factor) {
+        mFactor = factor;
         mDoubleFactor = 2 * mFactor;
         // ---------- Original Method ----------
         //mFactor = factor;
@@ -37,16 +39,15 @@ public class AccelerateInterpolator implements Interpolator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.970 -0400", hash_original_method = "E776590D91ABBE218804FDD3622828FA", hash_generated_method = "361A7277517E9C334A4BFF357BB3FB1A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AccelerateInterpolator(Context context, AttributeSet attrs) {
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:54.949 -0400", hash_original_method = "E776590D91ABBE218804FDD3622828FA", hash_generated_method = "46584DD5BC7E44FD52236A573F3BFB20")
+    public  AccelerateInterpolator(Context context, AttributeSet attrs) {
         TypedArray a;
         a = context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.AccelerateInterpolator);
         mFactor = a.getFloat(com.android.internal.R.styleable.AccelerateInterpolator_factor, 1.0f);
         mDoubleFactor = 2 * mFactor;
         a.recycle();
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
         // ---------- Original Method ----------
         //TypedArray a =
             //context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.AccelerateInterpolator);
@@ -56,14 +57,14 @@ public class AccelerateInterpolator implements Interpolator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:01.970 -0400", hash_original_method = "8D8C7C748A85E1C7007F595C7B08B241", hash_generated_method = "28833A2229FA1D278EC537D584CC7A55")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:54.950 -0400", hash_original_method = "8D8C7C748A85E1C7007F595C7B08B241", hash_generated_method = "9805BABABB7B39B891B9283E735B10CE")
     public float getInterpolation(float input) {
-        dsTaint.addTaint(input);
         {
-            float var73859B2992F46FC4B2E8AC506AD29932_1053873702 = ((float)Math.pow(input, mDoubleFactor));
+            float var73859B2992F46FC4B2E8AC506AD29932_576640529 = ((float)Math.pow(input, mDoubleFactor));
         } //End block
-        return dsTaint.getTaintFloat();
+        addTaint(input);
+        float var546ADE640B6EDFBC8A086EF31347E768_631192000 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_631192000;
         // ---------- Original Method ----------
         //if (mFactor == 1.0f) {
             //return input * input;

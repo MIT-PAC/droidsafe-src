@@ -9,38 +9,40 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public class TimeoutEvent extends TransactionTerminatedEvent {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.977 -0400", hash_original_field = "A6EFB54FFD2811DD57158A62FDEF145A", hash_generated_field = "FE277A87B690B80ED89C5FD5CAD03096")
+
     private Timeout mTimeout;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.257 -0400", hash_original_method = "B54F2DD7A2EA500C648BF1D67EA727CB", hash_generated_method = "3610833FB43E4C8FDE9BF6C2AA3BA6E1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public TimeoutEvent(Object source, ServerTransaction serverTransaction,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.977 -0400", hash_original_method = "B54F2DD7A2EA500C648BF1D67EA727CB", hash_generated_method = "82F9C3444CA0666BEBB0A5B15954E30F")
+    public  TimeoutEvent(Object source, ServerTransaction serverTransaction,
             Timeout timeout) {
         super(source, serverTransaction);
-        dsTaint.addTaint(source.dsTaint);
-        dsTaint.addTaint(serverTransaction.dsTaint);
-        dsTaint.addTaint(timeout.dsTaint);
+        mTimeout = timeout;
+        addTaint(source.getTaint());
+        addTaint(serverTransaction.getTaint());
         // ---------- Original Method ----------
         //mTimeout = timeout;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.258 -0400", hash_original_method = "E3A1CE6AED4C8EB398A7A856D4DC19D6", hash_generated_method = "6EE3C9E4BB890122DA19601BE7C8A277")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public TimeoutEvent(Object source, ClientTransaction clientTransaction,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.978 -0400", hash_original_method = "E3A1CE6AED4C8EB398A7A856D4DC19D6", hash_generated_method = "CC1A003E1C5D902AC4213A08853B3E48")
+    public  TimeoutEvent(Object source, ClientTransaction clientTransaction,
             Timeout timeout) {
         super(source, clientTransaction);
-        dsTaint.addTaint(source.dsTaint);
-        dsTaint.addTaint(clientTransaction.dsTaint);
-        dsTaint.addTaint(timeout.dsTaint);
+        mTimeout = timeout;
+        addTaint(source.getTaint());
+        addTaint(clientTransaction.getTaint());
         // ---------- Original Method ----------
         //mTimeout = timeout;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.258 -0400", hash_original_method = "83172AE614FED36EC49043A629BB9E54", hash_generated_method = "7B2429DC0B14AC937734478472942C2A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.978 -0400", hash_original_method = "83172AE614FED36EC49043A629BB9E54", hash_generated_method = "ACC1C9E04C0C6532A0F557B2C8EB9374")
     public Timeout getTimeout() {
-        return (Timeout)dsTaint.getTaint();
+        Timeout varB4EAC82CA7396A68D541C85D26508E83_1197583248 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1197583248 = mTimeout;
+        varB4EAC82CA7396A68D541C85D26508E83_1197583248.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1197583248;
         // ---------- Original Method ----------
         //return mTimeout;
     }

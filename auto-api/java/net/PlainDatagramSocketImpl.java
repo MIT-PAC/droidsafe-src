@@ -26,24 +26,31 @@ import libcore.util.EmptyArray;
 import static libcore.io.OsConstants.*;
 
 public class PlainDatagramSocketImpl extends DatagramSocketImpl {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.594 -0400", hash_original_field = "77B540FD61B8B8FFBCEAA60964FD06BB", hash_generated_field = "9D4B2046F6FC3648B8B879B96386B204")
+
     private volatile boolean isNativeConnected;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.594 -0400", hash_original_field = "73ABE739BEC4C3DB38D39FA43D36469F", hash_generated_field = "2D38C9B39338C5B15F94E3339CE63B3F")
+
     private CloseGuard guard = CloseGuard.get();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.594 -0400", hash_original_field = "E9F9BA85EE8B2DA07B1AAFC67B3673C0", hash_generated_field = "73847774F9DA64C0A8E371069748C949")
+
     private InetAddress connectedAddress;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.594 -0400", hash_original_field = "3DEA3D662C1D5F80091CB58099743C4F", hash_generated_field = "CEF230CAFEA932CF90A6DBC1FA0FEB98")
+
     private int connectedPort = -1;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.018 -0400", hash_original_method = "FF5B4FF1395B9B48A74781458F7C1E74", hash_generated_method = "BFD9F95EE9C4BE6F2C2ED0D724EAA201")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PlainDatagramSocketImpl(FileDescriptor fd, int localPort) {
-        dsTaint.addTaint(localPort);
-        dsTaint.addTaint(fd.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.594 -0400", hash_original_method = "FF5B4FF1395B9B48A74781458F7C1E74", hash_generated_method = "5614D72BC5F9D325A319EAF4162B8E02")
+    public  PlainDatagramSocketImpl(FileDescriptor fd, int localPort) {
         this.fd = fd;
         this.localPort = localPort;
         {
-            boolean varF60ABC869823C7B081E571E9390323D2_1332126912 = (fd.valid());
+            boolean varF60ABC869823C7B081E571E9390323D2_487770056 = (fd.valid());
             {
                 guard.open("close");
             } //End block
         } //End collapsed parenthetic
+        addTaint(fd.getTaint());
+        addTaint(localPort);
         // ---------- Original Method ----------
         //this.fd = fd;
         //this.localPort = localPort;
@@ -53,21 +60,17 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.018 -0400", hash_original_method = "D4BBB37482735C0570902FEE6B871111", hash_generated_method = "0B50554EC69C2AC737278909772A9528")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PlainDatagramSocketImpl() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.603 -0400", hash_original_method = "D4BBB37482735C0570902FEE6B871111", hash_generated_method = "0B50554EC69C2AC737278909772A9528")
+    public  PlainDatagramSocketImpl() {
         fd = new FileDescriptor();
         // ---------- Original Method ----------
         //fd = new FileDescriptor();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.019 -0400", hash_original_method = "B1D68F8F8FBA849D5DC5627B8806817B", hash_generated_method = "AE84CD535AC104571B770926FB4C1F8D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.605 -0400", hash_original_method = "B1D68F8F8FBA849D5DC5627B8806817B", hash_generated_method = "5E9500AA7199D64F6665560ABAA5EE26")
     @Override
     public void bind(int port, InetAddress address) throws SocketException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(address.dsTaint);
         IoBridge.bind(fd, address, port);
         {
             localPort = port;
@@ -81,6 +84,8 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
         } //End block
         catch (IOException ignored)
         { }
+        addTaint(port);
+        addTaint(address.getTaint());
         // ---------- Original Method ----------
         //IoBridge.bind(fd, address, port);
         //if (port != 0) {
@@ -95,8 +100,7 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.019 -0400", hash_original_method = "D39FE6DF46AF0712D00AFEA38D6C38F1", hash_generated_method = "B7B2FE18BCE016DD2B512FFEF9222461")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.616 -0400", hash_original_method = "D39FE6DF46AF0712D00AFEA38D6C38F1", hash_generated_method = "B7B2FE18BCE016DD2B512FFEF9222461")
     @Override
     public synchronized void close() {
         guard.close();
@@ -115,8 +119,7 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.019 -0400", hash_original_method = "070E6EC700413C2D4EE062356971B3CD", hash_generated_method = "14092F58ECD8BEDBFC2345B9D3F199FD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.616 -0400", hash_original_method = "070E6EC700413C2D4EE062356971B3CD", hash_generated_method = "14092F58ECD8BEDBFC2345B9D3F199FD")
     @Override
     public void create() throws SocketException {
         this.fd = IoBridge.socket(false);
@@ -125,8 +128,7 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.019 -0400", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "9FC9D50BDD14E42CF33F4D9E8C015023")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.617 -0400", hash_original_method = "7D87091EC31B409C33B787AE3F2DC647", hash_generated_method = "9FC9D50BDD14E42CF33F4D9E8C015023")
     @Override
     protected void finalize() throws Throwable {
         try 
@@ -152,35 +154,36 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.019 -0400", hash_original_method = "2F19BF683B55893709E7099E07E46044", hash_generated_method = "5A5EF84557BC71F8B8F4C2E8E7DC1C9D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.620 -0400", hash_original_method = "2F19BF683B55893709E7099E07E46044", hash_generated_method = "1EBAC139FA267281666E3DD67B103DE3")
     @Override
     public Object getOption(int option) throws SocketException {
-        dsTaint.addTaint(option);
-        Object varFEAA6C60FB0EA54EAAF32393AD9D756B_247743969 = (IoBridge.getSocketOption(fd, option));
-        return (Object)dsTaint.getTaint();
+        Object varB4EAC82CA7396A68D541C85D26508E83_2095019785 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2095019785 = IoBridge.getSocketOption(fd, option);
+        addTaint(option);
+        varB4EAC82CA7396A68D541C85D26508E83_2095019785.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2095019785;
         // ---------- Original Method ----------
         //return IoBridge.getSocketOption(fd, option);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.020 -0400", hash_original_method = "BF2D1BB0C5E1E015F3FE4931092FD89F", hash_generated_method = "A24BCA1037EB9BEC4DA3B352460CE533")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.623 -0400", hash_original_method = "BF2D1BB0C5E1E015F3FE4931092FD89F", hash_generated_method = "0CCF1A3F1BE2099D5741FC4C4739CCEB")
     @Override
     public int getTimeToLive() throws IOException {
-        int varD34738B2125E8EE210EA143BCDE37814_1485353865 = ((Integer) getOption(IoBridge.JAVA_IP_MULTICAST_TTL));
-        return dsTaint.getTaintInt();
+        int varD34738B2125E8EE210EA143BCDE37814_558023926 = ((Integer) getOption(IoBridge.JAVA_IP_MULTICAST_TTL));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1736916466 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1736916466;
         // ---------- Original Method ----------
         //return (Integer) getOption(IoBridge.JAVA_IP_MULTICAST_TTL);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.020 -0400", hash_original_method = "C71063A9367F37A3CEDAA8D1B842628A", hash_generated_method = "4A6CFE0ACC51C83BA3770C8A8F11F4A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.632 -0400", hash_original_method = "C71063A9367F37A3CEDAA8D1B842628A", hash_generated_method = "A1B468B72C0E8ADD63DD225B30F663B3")
     @Override
     public byte getTTL() throws IOException {
-        byte var3D376918AC930F39253C94D294027A83_943837143 = ((byte) getTimeToLive());
-        return dsTaint.getTaintByte();
+        byte var3D376918AC930F39253C94D294027A83_468873374 = ((byte) getTimeToLive());
+        byte var40EA57D3EE3C07BF1C102B466E1C3091_161940069 = getTaintByte();
+        return var40EA57D3EE3C07BF1C102B466E1C3091_161940069;
         // ---------- Original Method ----------
         //return (byte) getTimeToLive();
     }
@@ -192,28 +195,26 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.020 -0400", hash_original_method = "5A414D7F1F4B7D29FD74389039C76E5E", hash_generated_method = "E7A7AE4892CF4210771946724E4125D4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.632 -0400", hash_original_method = "5A414D7F1F4B7D29FD74389039C76E5E", hash_generated_method = "0827F2572B234121879D1FB9A249DC04")
     @Override
     public void join(InetAddress addr) throws IOException {
-        dsTaint.addTaint(addr.dsTaint);
         setOption(IoBridge.JAVA_MCAST_JOIN_GROUP, makeGroupReq(addr, null));
+        addTaint(addr.getTaint());
         // ---------- Original Method ----------
         //setOption(IoBridge.JAVA_MCAST_JOIN_GROUP, makeGroupReq(addr, null));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.020 -0400", hash_original_method = "273B4AEA263ECC0370749C1CFAD10357", hash_generated_method = "130699A1B092F61F3B0033DE91454E84")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.633 -0400", hash_original_method = "273B4AEA263ECC0370749C1CFAD10357", hash_generated_method = "6025E1512EDF3586798C0D394D3BA14F")
     @Override
     public void joinGroup(SocketAddress addr, NetworkInterface netInterface) throws IOException {
-        dsTaint.addTaint(netInterface.dsTaint);
-        dsTaint.addTaint(addr.dsTaint);
         {
             InetAddress groupAddr;
             groupAddr = ((InetSocketAddress) addr).getAddress();
             setOption(IoBridge.JAVA_MCAST_JOIN_GROUP, makeGroupReq(groupAddr, netInterface));
         } //End block
+        addTaint(addr.getTaint());
+        addTaint(netInterface.getTaint());
         // ---------- Original Method ----------
         //if (addr instanceof InetSocketAddress) {
             //InetAddress groupAddr = ((InetSocketAddress) addr).getAddress();
@@ -222,28 +223,26 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.020 -0400", hash_original_method = "68D7D449E4F76C69A913900EB50ADB23", hash_generated_method = "A4B773261497C31EB898301B2D7F1F2E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.633 -0400", hash_original_method = "68D7D449E4F76C69A913900EB50ADB23", hash_generated_method = "D1FA54468FDF0F12B1C12A77D54089B2")
     @Override
     public void leave(InetAddress addr) throws IOException {
-        dsTaint.addTaint(addr.dsTaint);
         setOption(IoBridge.JAVA_MCAST_LEAVE_GROUP, makeGroupReq(addr, null));
+        addTaint(addr.getTaint());
         // ---------- Original Method ----------
         //setOption(IoBridge.JAVA_MCAST_LEAVE_GROUP, makeGroupReq(addr, null));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.021 -0400", hash_original_method = "4969BCB60F2AF80E11B01CE49FB27B9C", hash_generated_method = "C7F59DB5678B59A4A819118B3C4FF81B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.634 -0400", hash_original_method = "4969BCB60F2AF80E11B01CE49FB27B9C", hash_generated_method = "B2EA0F4F58653A25790766C81D883D8F")
     @Override
     public void leaveGroup(SocketAddress addr, NetworkInterface netInterface) throws IOException {
-        dsTaint.addTaint(netInterface.dsTaint);
-        dsTaint.addTaint(addr.dsTaint);
         {
             InetAddress groupAddr;
             groupAddr = ((InetSocketAddress) addr).getAddress();
             setOption(IoBridge.JAVA_MCAST_LEAVE_GROUP, makeGroupReq(groupAddr, netInterface));
         } //End block
+        addTaint(addr.getTaint());
+        addTaint(netInterface.getTaint());
         // ---------- Original Method ----------
         //if (addr instanceof InetSocketAddress) {
             //InetAddress groupAddr = ((InetSocketAddress) addr).getAddress();
@@ -252,17 +251,17 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.021 -0400", hash_original_method = "0B66924116C94ED3C0FF1D3069EB61F1", hash_generated_method = "EFFADB5083984BEBA7B14C613A5017FE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.635 -0400", hash_original_method = "0B66924116C94ED3C0FF1D3069EB61F1", hash_generated_method = "0FE40EECB47A17DCACE616C30FF122D4")
     @Override
     protected int peek(InetAddress sender) throws IOException {
-        dsTaint.addTaint(sender.dsTaint);
         DatagramPacket packet;
         packet = new DatagramPacket(EmptyArray.BYTE, 0);
         int result;
         result = peekData(packet);
         sender.ipaddress = packet.getAddress().getAddress();
-        return dsTaint.getTaintInt();
+        addTaint(sender.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1446983445 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1446983445;
         // ---------- Original Method ----------
         //DatagramPacket packet = new DatagramPacket(EmptyArray.BYTE, 0);
         //int result = peekData(packet);
@@ -271,15 +270,14 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.021 -0400", hash_original_method = "7D10FF5DEA56961E254003DBDCD7E211", hash_generated_method = "6F188D19E29EC0722F1B9CB6296F12BD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.649 -0400", hash_original_method = "7D10FF5DEA56961E254003DBDCD7E211", hash_generated_method = "FBFC39047BFF6968079EF849333C8C8D")
     private void doRecv(DatagramPacket pack, int flags) throws IOException {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(pack.dsTaint);
         IoBridge.recvfrom(false, fd, pack.getData(), pack.getOffset(), pack.getLength(), flags, pack, isNativeConnected);
         {
             updatePacketRecvAddress(pack);
         } //End block
+        addTaint(pack.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //IoBridge.recvfrom(false, fd, pack.getData(), pack.getOffset(), pack.getLength(), flags, pack, isNativeConnected);
         //if (isNativeConnected) {
@@ -288,36 +286,33 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.021 -0400", hash_original_method = "224A3066C9859A283A41E4BE468B7199", hash_generated_method = "3D988C860BE9D0E36F862E66F82B0D35")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.650 -0400", hash_original_method = "224A3066C9859A283A41E4BE468B7199", hash_generated_method = "0329A57BDE0ABC0256C3B772DA2E934B")
     @Override
     public void receive(DatagramPacket pack) throws IOException {
-        dsTaint.addTaint(pack.dsTaint);
         doRecv(pack, 0);
+        addTaint(pack.getTaint());
         // ---------- Original Method ----------
         //doRecv(pack, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.021 -0400", hash_original_method = "CCC12A69269736949CE83C1543FC63FC", hash_generated_method = "7942321C2C419184B00854D80DC324AB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.650 -0400", hash_original_method = "CCC12A69269736949CE83C1543FC63FC", hash_generated_method = "44730D4DA05B2CA18BE25E348A0BCEFF")
     @Override
     public int peekData(DatagramPacket pack) throws IOException {
-        dsTaint.addTaint(pack.dsTaint);
         doRecv(pack, MSG_PEEK);
-        int varE290529FA3FF9D9955112219499A49B1_1874183164 = (pack.getPort());
-        return dsTaint.getTaintInt();
+        int varE290529FA3FF9D9955112219499A49B1_1592708362 = (pack.getPort());
+        addTaint(pack.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1039942049 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1039942049;
         // ---------- Original Method ----------
         //doRecv(pack, MSG_PEEK);
         //return pack.getPort();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.022 -0400", hash_original_method = "7ACBDBE2565DC623BE65BEE0D3657AD7", hash_generated_method = "78E887687711BDBC2EA0587CCB98F17E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.651 -0400", hash_original_method = "7ACBDBE2565DC623BE65BEE0D3657AD7", hash_generated_method = "E633F1FA62D568847F2F6CE39CDA7B45")
     @Override
     public void send(DatagramPacket packet) throws IOException {
-        dsTaint.addTaint(packet.dsTaint);
         int port;
         port = 0;
         port = packet.getPort();
@@ -325,6 +320,7 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
         address = null;
         address = packet.getAddress();
         IoBridge.sendto(fd, packet.getData(), packet.getOffset(), packet.getLength(), 0, address, port);
+        addTaint(packet.getTaint());
         // ---------- Original Method ----------
         //int port = isNativeConnected ? 0 : packet.getPort();
         //InetAddress address = isNativeConnected ? null : packet.getAddress();
@@ -332,45 +328,39 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.022 -0400", hash_original_method = "F61FA251C1FD1E3875B2C69F1E04AD45", hash_generated_method = "0D6ED39E9F521732A12B2A1AEE1B35EE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.654 -0400", hash_original_method = "F61FA251C1FD1E3875B2C69F1E04AD45", hash_generated_method = "8545D34DFA4312AAA88AD5F02694A1EF")
     public void setOption(int option, Object value) throws SocketException {
-        dsTaint.addTaint(value.dsTaint);
-        dsTaint.addTaint(option);
         IoBridge.setSocketOption(fd, option, value);
+        addTaint(option);
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //IoBridge.setSocketOption(fd, option, value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.022 -0400", hash_original_method = "DDE567B7B25A07BB14A31131F0762C29", hash_generated_method = "0A4B092C63FEAE6689C554950A8DC16E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.665 -0400", hash_original_method = "DDE567B7B25A07BB14A31131F0762C29", hash_generated_method = "7935A9B21A61988A48CE74641498E6B3")
     @Override
     public void setTimeToLive(int ttl) throws IOException {
-        dsTaint.addTaint(ttl);
         setOption(IoBridge.JAVA_IP_MULTICAST_TTL, Integer.valueOf(ttl));
+        addTaint(ttl);
         // ---------- Original Method ----------
         //setOption(IoBridge.JAVA_IP_MULTICAST_TTL, Integer.valueOf(ttl));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.022 -0400", hash_original_method = "AF63162F005FE2D131203598170CD418", hash_generated_method = "C251C17C33DB5BBE37B9621AC2D32C40")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.666 -0400", hash_original_method = "AF63162F005FE2D131203598170CD418", hash_generated_method = "7304BCD2A9B0DACF0FABF3A3ED953C52")
     @Override
     public void setTTL(byte ttl) throws IOException {
-        dsTaint.addTaint(ttl);
         setTimeToLive((int) ttl & 0xff);
+        addTaint(ttl);
         // ---------- Original Method ----------
         //setTimeToLive((int) ttl & 0xff);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.022 -0400", hash_original_method = "C42A5992F0CED0134F017245292E33CB", hash_generated_method = "0BD8B65B9B6D374794CC2102A6F49B9A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.667 -0400", hash_original_method = "C42A5992F0CED0134F017245292E33CB", hash_generated_method = "774FFEE907A0F5A5829085F39CB7CF83")
     @Override
     public void connect(InetAddress inetAddr, int port) throws SocketException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(inetAddr.dsTaint);
         IoBridge.connect(fd, inetAddr, port);
         try 
         {
@@ -380,6 +370,7 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
         {
             if (DroidSafeAndroidRuntime.control) throw new SocketException("Host is unresolved: " + inetAddr.getHostName());
         } //End block
+        connectedPort = port;
         isNativeConnected = true;
         // ---------- Original Method ----------
         //IoBridge.connect(fd, inetAddr, port);
@@ -393,8 +384,7 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.023 -0400", hash_original_method = "6540AF72C9B04626D85951E517011FFF", hash_generated_method = "522F06E76F717507EB96BA081608CD41")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.675 -0400", hash_original_method = "6540AF72C9B04626D85951E517011FFF", hash_generated_method = "522F06E76F717507EB96BA081608CD41")
     @Override
     public void disconnect() {
         try 
@@ -420,12 +410,11 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.023 -0400", hash_original_method = "9F84EE545D7A893B2BE12E7FDE7E048D", hash_generated_method = "855D853C4AE3A77311EDB91E1422DAEE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.675 -0400", hash_original_method = "9F84EE545D7A893B2BE12E7FDE7E048D", hash_generated_method = "1034C6B1C3C30326707191D2343D7C98")
     private void updatePacketRecvAddress(DatagramPacket packet) {
-        dsTaint.addTaint(packet.dsTaint);
         packet.setAddress(connectedAddress);
         packet.setPort(connectedPort);
+        addTaint(packet.getTaint());
         // ---------- Original Method ----------
         //packet.setAddress(connectedAddress);
         //packet.setPort(connectedPort);

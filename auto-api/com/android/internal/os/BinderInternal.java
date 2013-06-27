@@ -21,9 +21,10 @@ import java.lang.reflect.Modifier;
 
 public class BinderInternal {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.197 -0400", hash_original_method = "3A09952A57DC82982F9A784901083676", hash_generated_method = "3A09952A57DC82982F9A784901083676")
-        public BinderInternal ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.344 -0400", hash_original_method = "574B8095C5FEB674167544EA24FDCEF4", hash_generated_method = "574B8095C5FEB674167544EA24FDCEF4")
+    public BinderInternal ()
     {
+        //Synthesized constructor
     }
 
 
@@ -62,14 +63,14 @@ public class BinderInternal {
     
     static final class GcWatcher {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.198 -0400", hash_original_method = "96560BBD16021BC74A0381A53C5F8BB4", hash_generated_method = "96560BBD16021BC74A0381A53C5F8BB4")
-                public GcWatcher ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.357 -0400", hash_original_method = "23BF1C701EF3B7F131F4805BD4892CC0", hash_generated_method = "23BF1C701EF3B7F131F4805BD4892CC0")
+        public GcWatcher ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.198 -0400", hash_original_method = "D42E2C52A602997A5DDE899C13954EBC", hash_generated_method = "B4840BBAE77128E6C2E9444A36D72BDC")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.366 -0400", hash_original_method = "D42E2C52A602997A5DDE899C13954EBC", hash_generated_method = "B4840BBAE77128E6C2E9444A36D72BDC")
         @Override
         protected void finalize() throws Throwable {
             handleGc();
@@ -86,8 +87,11 @@ public class BinderInternal {
 
 
     
-    static WeakReference<GcWatcher> mGcWatcher
-            = new WeakReference<GcWatcher>(new GcWatcher());
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.366 -0400", hash_original_field = "48E7343D1D845514D6E442A88C67AA87", hash_generated_field = "4909DFFCC1B301559EF73389910CBE90")
+
+    static WeakReference<GcWatcher> mGcWatcher = new WeakReference<GcWatcher>(new GcWatcher());
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.366 -0400", hash_original_field = "83E72B9F639340BDD052AB753A2F3F1B", hash_generated_field = "D78279B3A9A95C1743A81AEED357F5B0")
+
     static long mLastGcTime;
 }
 

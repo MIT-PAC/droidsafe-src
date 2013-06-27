@@ -13,27 +13,25 @@ import java.text.ParseException;
 
 public class PriorityParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.478 -0400", hash_original_method = "3761C7DAE2C27B7066194088DE84B020", hash_generated_method = "A773F87ED6BBD66F238DA15E1B5D2A0D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PriorityParser(String priority) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.012 -0400", hash_original_method = "3761C7DAE2C27B7066194088DE84B020", hash_generated_method = "9BE707ABFEAC5474F38DAD743E30A97D")
+    public  PriorityParser(String priority) {
         super(priority);
-        dsTaint.addTaint(priority);
+        addTaint(priority.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.478 -0400", hash_original_method = "2FA6157C959FDD566822D2465D62D365", hash_generated_method = "21222094F52DC3F8D42EED0A6C8872DA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected PriorityParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.013 -0400", hash_original_method = "2FA6157C959FDD566822D2465D62D365", hash_generated_method = "12837E715683B7A7200A42CDA1F47E2E")
+    protected  PriorityParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.478 -0400", hash_original_method = "9ECC1E43903CC22F0322E70EF9078767", hash_generated_method = "1D9498C78F28A53DA5024C470FCA32A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.013 -0400", hash_original_method = "9ECC1E43903CC22F0322E70EF9078767", hash_generated_method = "703E595FF60742F7CC96A9A93D2848BB")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1315796003 = null; //Variable for return #1
         dbg_enter("PriorityParser.parse");
         Priority priority;
         priority = new Priority();
@@ -45,12 +43,14 @@ public class PriorityParser extends HeaderParser {
             priority.setPriority(this.lexer.ttokenSafe());
             this.lexer.SPorHT();
             this.lexer.match('\n');
+            varB4EAC82CA7396A68D541C85D26508E83_1315796003 = priority;
         } //End block
         finally 
         {
             dbg_leave("PriorityParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1315796003.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1315796003;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("PriorityParser.parse");

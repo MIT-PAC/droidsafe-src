@@ -15,27 +15,25 @@ import gov.nist.core.*;
 
 public class CSeqParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.244 -0400", hash_original_method = "315D7450D70C30EDB72AC7255664118E", hash_generated_method = "04D9C9C683CCD8B75A8D9F0EF7708C03")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CSeqParser(String cseq) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.513 -0400", hash_original_method = "315D7450D70C30EDB72AC7255664118E", hash_generated_method = "A8FDE793BDDBAFC103CC08AC2EE3CE0D")
+    public  CSeqParser(String cseq) {
         super(cseq);
-        dsTaint.addTaint(cseq);
+        addTaint(cseq.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.244 -0400", hash_original_method = "8A2748B0467C573864DACC8328A787A7", hash_generated_method = "236E7C1CD3684CF91ED32655FEB7ED34")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected CSeqParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.524 -0400", hash_original_method = "8A2748B0467C573864DACC8328A787A7", hash_generated_method = "206A239BD298BB64B23E3F5F5597EE51")
+    protected  CSeqParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.244 -0400", hash_original_method = "25983B4EEF6E8D8834C12C4F0FEB872C", hash_generated_method = "84929AB5EBB5BB40EAF3944611E44D90")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.526 -0400", hash_original_method = "25983B4EEF6E8D8834C12C4F0FEB872C", hash_generated_method = "6F8ED3BD7B11675B8C8C7A32DCB625BD")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1567736314 = null; //Variable for return #1
         try 
         {
             CSeq c;
@@ -53,6 +51,7 @@ public class CSeqParser extends HeaderParser {
             c.setMethod(m);
             this.lexer.SPorHT();
             this.lexer.match('\n');
+            varB4EAC82CA7396A68D541C85D26508E83_1567736314 = c;
         } //End block
         catch (NumberFormatException ex)
         {
@@ -64,7 +63,8 @@ public class CSeqParser extends HeaderParser {
             Debug.printStackTrace(ex);
             if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1567736314.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1567736314;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

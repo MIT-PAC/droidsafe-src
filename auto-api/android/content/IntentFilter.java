@@ -24,18 +24,33 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class IntentFilter implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.220 -0400", hash_original_field = "22FC7A378B4F7C5F90F70A47BE1E4FCD", hash_generated_field = "032B46B6D9E42E1E80E269F8E583852A")
+
     private int mPriority;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.226 -0400", hash_original_field = "C268D719F2F67098628D1A8EEBB72B48", hash_generated_field = "B7B787904E751334D4C6C5E9190CBECB")
+
     private ArrayList<String> mActions;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.226 -0400", hash_original_field = "E5C591146E984CF70A027B756462CD3D", hash_generated_field = "DF1B13D35CEEB5232DEB8422E072E169")
+
     private ArrayList<String> mCategories = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.226 -0400", hash_original_field = "ACE6ED917BE479CC0451087F07844425", hash_generated_field = "D6C69DEDF341F4A4196AEA26E81D24A7")
+
     private ArrayList<String> mDataSchemes = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.229 -0400", hash_original_field = "B7BD82E78C46D9D79C64D1CD52A40D35", hash_generated_field = "C318D366A8228836F69A6B4BDDBFB506")
+
     private ArrayList<AuthorityEntry> mDataAuthorities = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.230 -0400", hash_original_field = "B61E65339F4663631A2F55699D0303D1", hash_generated_field = "2207044C23DD28F016FBFC7451C9D66A")
+
     private ArrayList<PatternMatcher> mDataPaths = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.230 -0400", hash_original_field = "606D718D7940DF43E42D0547DAABEADA", hash_generated_field = "06256A3E596C9EB087048F541BEAB278")
+
     private ArrayList<String> mDataTypes = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.230 -0400", hash_original_field = "9D8D79625D9E596046C5C52803A8BF48", hash_generated_field = "A768E3466CCFB1BF3BC36D8E0C71D999")
+
     private boolean mHasPartialTypes = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.943 -0400", hash_original_method = "E570235BD10D63A46D952627D4823B55", hash_generated_method = "7B0E4140638D2A4CB4A4CCA023BAD3B0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public IntentFilter() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.237 -0400", hash_original_method = "E570235BD10D63A46D952627D4823B55", hash_generated_method = "7B0E4140638D2A4CB4A4CCA023BAD3B0")
+    public  IntentFilter() {
         mPriority = 0;
         mActions = new ArrayList<String>();
         // ---------- Original Method ----------
@@ -44,13 +59,12 @@ public class IntentFilter implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.944 -0400", hash_original_method = "6BE32B941606799E1C4582399143D6DE", hash_generated_method = "299FE3B78C9B57CCACB959EB91E184B6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public IntentFilter(String action) {
-        dsTaint.addTaint(action);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.238 -0400", hash_original_method = "6BE32B941606799E1C4582399143D6DE", hash_generated_method = "B976B6B42BC2F5D5D03C7855FFD6D5F1")
+    public  IntentFilter(String action) {
         mPriority = 0;
         mActions = new ArrayList<String>();
         addAction(action);
+        addTaint(action.getTaint());
         // ---------- Original Method ----------
         //mPriority = 0;
         //mActions = new ArrayList<String>();
@@ -58,15 +72,14 @@ public class IntentFilter implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.944 -0400", hash_original_method = "6F03ACB8C3DEEE507BC72687512BE15B", hash_generated_method = "93EA738FBE3E86E6187E6FC7070ABA43")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public IntentFilter(String action, String dataType) throws MalformedMimeTypeException {
-        dsTaint.addTaint(dataType);
-        dsTaint.addTaint(action);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.316 -0400", hash_original_method = "6F03ACB8C3DEEE507BC72687512BE15B", hash_generated_method = "C3DC77DE4FFE9C6A486D4413368FFCFC")
+    public  IntentFilter(String action, String dataType) throws MalformedMimeTypeException {
         mPriority = 0;
         mActions = new ArrayList<String>();
         addAction(action);
         addDataType(dataType);
+        addTaint(action.getTaint());
+        addTaint(dataType.getTaint());
         // ---------- Original Method ----------
         //mPriority = 0;
         //mActions = new ArrayList<String>();
@@ -75,10 +88,8 @@ public class IntentFilter implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.945 -0400", hash_original_method = "1836401D6B82BE6CCBD088E7B5026D41", hash_generated_method = "756F6D1E64AACB56D1B1946FC5355270")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public IntentFilter(IntentFilter o) {
-        dsTaint.addTaint(o.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.319 -0400", hash_original_method = "1836401D6B82BE6CCBD088E7B5026D41", hash_generated_method = "712920B6E34B5EF9B0CD0503E5C6E0DF")
+    public  IntentFilter(IntentFilter o) {
         mPriority = o.mPriority;
         mActions = new ArrayList<String>(o.mActions);
         {
@@ -119,28 +130,26 @@ public class IntentFilter implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.946 -0400", hash_original_method = "0A18E8175DAFA9E0ECB5A7A15F664AD8", hash_generated_method = "C4884C16FE5E1BE45EFEEE688889D054")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private IntentFilter(Parcel source) {
-        dsTaint.addTaint(source.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.322 -0400", hash_original_method = "0A18E8175DAFA9E0ECB5A7A15F664AD8", hash_generated_method = "FD8D395129E88C046E40AD93BF63C8B1")
+    private  IntentFilter(Parcel source) {
         mActions = new ArrayList<String>();
         source.readStringList(mActions);
         {
-            boolean varFD16828A378FD83700BE97539951F787_1559586231 = (source.readInt() != 0);
+            boolean varFD16828A378FD83700BE97539951F787_14540122 = (source.readInt() != 0);
             {
                 mCategories = new ArrayList<String>();
                 source.readStringList(mCategories);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varFD16828A378FD83700BE97539951F787_1458577716 = (source.readInt() != 0);
+            boolean varFD16828A378FD83700BE97539951F787_1742213185 = (source.readInt() != 0);
             {
                 mDataSchemes = new ArrayList<String>();
                 source.readStringList(mDataSchemes);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varFD16828A378FD83700BE97539951F787_502547216 = (source.readInt() != 0);
+            boolean varFD16828A378FD83700BE97539951F787_150170155 = (source.readInt() != 0);
             {
                 mDataTypes = new ArrayList<String>();
                 source.readStringList(mDataTypes);
@@ -241,34 +250,32 @@ public class IntentFilter implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.948 -0400", hash_original_method = "1AF904ED06333BC0001A5A8D0FC8E3CC", hash_generated_method = "04FF48D9EAEE1C1E689CB8AAF2832ECA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.356 -0400", hash_original_method = "1AF904ED06333BC0001A5A8D0FC8E3CC", hash_generated_method = "839A047CDB79A7FD6A97DD19F37CB628")
     public final void setPriority(int priority) {
-        dsTaint.addTaint(priority);
+        mPriority = priority;
         // ---------- Original Method ----------
         //mPriority = priority;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.948 -0400", hash_original_method = "4CF75B39A2F3F4074ED78E7B55CDB45C", hash_generated_method = "981E801D013A2A9613196AF09C6B4FC7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.357 -0400", hash_original_method = "4CF75B39A2F3F4074ED78E7B55CDB45C", hash_generated_method = "C99B93CCFE45F8B0F6F58D47DCF332A4")
     public final int getPriority() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_323164492 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_323164492;
         // ---------- Original Method ----------
         //return mPriority;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.948 -0400", hash_original_method = "FFF5B803FCB58F324812D605B6C9CE62", hash_generated_method = "2B36DF6187533BA239DF052210910DC1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.360 -0400", hash_original_method = "FFF5B803FCB58F324812D605B6C9CE62", hash_generated_method = "E18D6B4D36DA4040234AF3281044CE29")
     public final void addAction(String action) {
-        dsTaint.addTaint(action);
         {
-            boolean varDA3436D9D4672C232973BD25181DC765_982793645 = (!mActions.contains(action));
+            boolean varDA3436D9D4672C232973BD25181DC765_1036181322 = (!mActions.contains(action));
             {
                 mActions.add(action.intern());
             } //End block
         } //End collapsed parenthetic
+        addTaint(action.getTaint());
         // ---------- Original Method ----------
         //if (!mActions.contains(action)) {
             //mActions.add(action.intern());
@@ -276,65 +283,63 @@ public class IntentFilter implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.949 -0400", hash_original_method = "77921182B442B1D522A9772E07DC4CA3", hash_generated_method = "434ADCC4849CB8FC736E444A4BEC1AB0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.361 -0400", hash_original_method = "77921182B442B1D522A9772E07DC4CA3", hash_generated_method = "D1603FB6D479FE77918E7D2A577036BD")
     public final int countActions() {
-        int var19FD9BE92ED9235C35782B147251E19B_320403547 = (mActions.size());
-        return dsTaint.getTaintInt();
+        int var19FD9BE92ED9235C35782B147251E19B_376432302 = (mActions.size());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1316874964 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1316874964;
         // ---------- Original Method ----------
         //return mActions.size();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.949 -0400", hash_original_method = "50CEFE8EA652B37B9EBFC8EA367BBC71", hash_generated_method = "27BE90BA86D5D7F20CF84361F12F4BCA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.385 -0400", hash_original_method = "50CEFE8EA652B37B9EBFC8EA367BBC71", hash_generated_method = "35DBBD638C782DA71A18AD223D6A6552")
     public final String getAction(int index) {
-        dsTaint.addTaint(index);
-        String varBF04BD3B361347BD6F62D607387F7563_1095352979 = (mActions.get(index));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_278100377 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_278100377 = mActions.get(index);
+        addTaint(index);
+        varB4EAC82CA7396A68D541C85D26508E83_278100377.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_278100377;
         // ---------- Original Method ----------
         //return mActions.get(index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.949 -0400", hash_original_method = "9D48CC1056269867443B9FC005D01764", hash_generated_method = "8030FAB5939DBB1FB8ADCD5580A130A9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.385 -0400", hash_original_method = "9D48CC1056269867443B9FC005D01764", hash_generated_method = "F436B10DC18DE09CC02B7E600835A3E3")
     public final boolean hasAction(String action) {
-        dsTaint.addTaint(action);
-        boolean varDF0CCFFC7BDE2E2A2BCDBD16345F594C_2023288556 = (action != null && mActions.contains(action));
-        return dsTaint.getTaintBoolean();
+        boolean varDF0CCFFC7BDE2E2A2BCDBD16345F594C_1211661091 = (action != null && mActions.contains(action));
+        addTaint(action.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1967882078 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1967882078;
         // ---------- Original Method ----------
         //return action != null && mActions.contains(action);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.950 -0400", hash_original_method = "984560EB63068E6413989919BB90D187", hash_generated_method = "7B638F4BBEEAC2FB87CDA43FF134C6C6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.396 -0400", hash_original_method = "984560EB63068E6413989919BB90D187", hash_generated_method = "ACCE9A0D5F8D1AA9B0A41941F11975AA")
     public final boolean matchAction(String action) {
-        dsTaint.addTaint(action);
-        boolean var9B5661F26B968C4AAD3608BADBD8A775_186173197 = (hasAction(action));
-        return dsTaint.getTaintBoolean();
+        boolean var9B5661F26B968C4AAD3608BADBD8A775_1505638047 = (hasAction(action));
+        addTaint(action.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1184455921 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1184455921;
         // ---------- Original Method ----------
         //return hasAction(action);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.950 -0400", hash_original_method = "91B40E19A4EE68D85BFA3F1F256EBA72", hash_generated_method = "D8D88F2AE4AE5A0E7927AC6CC1E0E095")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.397 -0400", hash_original_method = "91B40E19A4EE68D85BFA3F1F256EBA72", hash_generated_method = "928CD179CBDB5D4080C6EAB06B5AA978")
     public final Iterator<String> actionsIterator() {
-        {
-            Object var179B99187F77CA74E04A9854925FF180_1967027385 = (mActions.iterator());
-        } //End flattened ternary
-        return (Iterator<String>)dsTaint.getTaint();
+        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_65987684 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_65987684 = mActions != null ? mActions.iterator() : null;
+        varB4EAC82CA7396A68D541C85D26508E83_65987684.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_65987684;
         // ---------- Original Method ----------
         //return mActions != null ? mActions.iterator() : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.951 -0400", hash_original_method = "B72DE1FACB480BB8E2AD802A23898A2F", hash_generated_method = "2CC0E42DBE3E1D6AB5F356DC580146B8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.398 -0400", hash_original_method = "B72DE1FACB480BB8E2AD802A23898A2F", hash_generated_method = "65DAF0C2EF96AF9C9E48511B4C75687A")
     public final void addDataType(String type) throws MalformedMimeTypeException {
-        dsTaint.addTaint(type);
         int slashpos;
         slashpos = type.indexOf('/');
         int typelen;
@@ -342,12 +347,12 @@ public class IntentFilter implements Parcelable {
         {
             mDataTypes = new ArrayList<String>();
             {
-                boolean var38C7C9D7B7DBF9B40D4D0FBD0F6AD99E_1516117850 = (typelen == slashpos+2 && type.charAt(slashpos+1) == '*');
+                boolean var38C7C9D7B7DBF9B40D4D0FBD0F6AD99E_423718071 = (typelen == slashpos+2 && type.charAt(slashpos+1) == '*');
                 {
                     String str;
                     str = type.substring(0, slashpos);
                     {
-                        boolean varD49CE2200355496BB92B3C202D8BDEE3_688924968 = (!mDataTypes.contains(str));
+                        boolean varD49CE2200355496BB92B3C202D8BDEE3_788649221 = (!mDataTypes.contains(str));
                         {
                             mDataTypes.add(str.intern());
                         } //End block
@@ -356,7 +361,7 @@ public class IntentFilter implements Parcelable {
                 } //End block
                 {
                     {
-                        boolean var14F656F6D90E73ACD7CC37F6B5F05D46_887368295 = (!mDataTypes.contains(type));
+                        boolean var14F656F6D90E73ACD7CC37F6B5F05D46_2063695607 = (!mDataTypes.contains(type));
                         {
                             mDataTypes.add(type.intern());
                         } //End block
@@ -365,6 +370,7 @@ public class IntentFilter implements Parcelable {
             } //End collapsed parenthetic
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new MalformedMimeTypeException(type);
+        addTaint(type.getTaint());
         // ---------- Original Method ----------
         //final int slashpos = type.indexOf('/');
         //final int typelen = type.length();
@@ -387,63 +393,62 @@ public class IntentFilter implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.951 -0400", hash_original_method = "9AF334B8B7AF494EC1E65710EFD1F300", hash_generated_method = "0DF2C2D204761E3E8BE5F072D2A279D4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.427 -0400", hash_original_method = "9AF334B8B7AF494EC1E65710EFD1F300", hash_generated_method = "172482D98E65D7C84A7E351A1C17B980")
     public final boolean hasDataType(String type) {
-        dsTaint.addTaint(type);
-        boolean var0425380B65E8B08CE43D132BFE5C72CF_1918875872 = (mDataTypes != null && findMimeType(type));
-        return dsTaint.getTaintBoolean();
+        boolean var0425380B65E8B08CE43D132BFE5C72CF_593939651 = (mDataTypes != null && findMimeType(type));
+        addTaint(type.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1231313569 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1231313569;
         // ---------- Original Method ----------
         //return mDataTypes != null && findMimeType(type);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.952 -0400", hash_original_method = "9C43102AEBDE030DD3A73C704DCFC758", hash_generated_method = "57CE8115B1A988F5731805329245BCFE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.428 -0400", hash_original_method = "9C43102AEBDE030DD3A73C704DCFC758", hash_generated_method = "F01E05863AC418C4379B80ED53BB48F2")
     public final int countDataTypes() {
         {
-            Object var5CD61D88055F6C456A17888CA437F389_16913134 = (mDataTypes.size());
+            Object var5CD61D88055F6C456A17888CA437F389_888426084 = (mDataTypes.size());
         } //End flattened ternary
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1018674676 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1018674676;
         // ---------- Original Method ----------
         //return mDataTypes != null ? mDataTypes.size() : 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.952 -0400", hash_original_method = "1020E9310C4CEB3D9A899FFC3406F498", hash_generated_method = "6D1357E978C09C02EA7DC149B22958E0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.430 -0400", hash_original_method = "1020E9310C4CEB3D9A899FFC3406F498", hash_generated_method = "11EBA5D0031838E89BD5EEBE80CCFFA7")
     public final String getDataType(int index) {
-        dsTaint.addTaint(index);
-        String varAC1AEF9A8D7F226A48DD5415C682A795_1397547645 = (mDataTypes.get(index));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1606275079 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1606275079 = mDataTypes.get(index);
+        addTaint(index);
+        varB4EAC82CA7396A68D541C85D26508E83_1606275079.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1606275079;
         // ---------- Original Method ----------
         //return mDataTypes.get(index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.954 -0400", hash_original_method = "E14DF72F5869874CC38AD67447F5264E", hash_generated_method = "D58689CCD7588078AA1061D35DAEBC54")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.431 -0400", hash_original_method = "E14DF72F5869874CC38AD67447F5264E", hash_generated_method = "E48FE74265BC58AB4407FC6C4BAE1B75")
     public final Iterator<String> typesIterator() {
-        {
-            Object var657593258184CA4A92B436289641DF6D_657281006 = (mDataTypes.iterator());
-        } //End flattened ternary
-        return (Iterator<String>)dsTaint.getTaint();
+        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_1414229304 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1414229304 = mDataTypes != null ? mDataTypes.iterator() : null;
+        varB4EAC82CA7396A68D541C85D26508E83_1414229304.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1414229304;
         // ---------- Original Method ----------
         //return mDataTypes != null ? mDataTypes.iterator() : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.954 -0400", hash_original_method = "5610D5819C8C8974F702B3F76798B195", hash_generated_method = "64734508451D5DFE93654B7364A2B624")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.445 -0400", hash_original_method = "5610D5819C8C8974F702B3F76798B195", hash_generated_method = "0B3A4AC27CCC563043B3A10A04F075D5")
     public final void addDataScheme(String scheme) {
-        dsTaint.addTaint(scheme);
         mDataSchemes = new ArrayList<String>();
         {
-            boolean varB4AC16761D5AE1DBD4D7BE4F78F9BCD5_22853781 = (!mDataSchemes.contains(scheme));
+            boolean varB4AC16761D5AE1DBD4D7BE4F78F9BCD5_305628264 = (!mDataSchemes.contains(scheme));
             {
                 mDataSchemes.add(scheme.intern());
             } //End block
         } //End collapsed parenthetic
+        addTaint(scheme.getTaint());
         // ---------- Original Method ----------
         //if (mDataSchemes == null) mDataSchemes = new ArrayList<String>();
         //if (!mDataSchemes.contains(scheme)) {
@@ -452,61 +457,60 @@ public class IntentFilter implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.955 -0400", hash_original_method = "23DC2F7DC5C53386402D5B95D046A59E", hash_generated_method = "62CB0EBAC49418E63EEB0618A51DF37A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.461 -0400", hash_original_method = "23DC2F7DC5C53386402D5B95D046A59E", hash_generated_method = "8421386B9D470BDA7319173F291723D1")
     public final int countDataSchemes() {
         {
-            Object var5DA05131A061F74B7E86F57B0DA2F51D_1785535417 = (mDataSchemes.size());
+            Object var5DA05131A061F74B7E86F57B0DA2F51D_1902794992 = (mDataSchemes.size());
         } //End flattened ternary
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1102705088 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1102705088;
         // ---------- Original Method ----------
         //return mDataSchemes != null ? mDataSchemes.size() : 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.955 -0400", hash_original_method = "F55C42908F22C2BF6411521C019E1E71", hash_generated_method = "9407D236FF542368276775C4D0F5BFF3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.462 -0400", hash_original_method = "F55C42908F22C2BF6411521C019E1E71", hash_generated_method = "281B0A2129252D1BF4A957FA354DA695")
     public final String getDataScheme(int index) {
-        dsTaint.addTaint(index);
-        String varFC74C0B2C481CD01B0196F0DF955F0A6_1288153522 = (mDataSchemes.get(index));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_491743436 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_491743436 = mDataSchemes.get(index);
+        addTaint(index);
+        varB4EAC82CA7396A68D541C85D26508E83_491743436.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_491743436;
         // ---------- Original Method ----------
         //return mDataSchemes.get(index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.956 -0400", hash_original_method = "6D8F15A80747973FB96EA7F310404F85", hash_generated_method = "7F8B97CFC385D3EAC9BF3B1CA5AD1B13")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.463 -0400", hash_original_method = "6D8F15A80747973FB96EA7F310404F85", hash_generated_method = "29AC0568C0AEB76B571E51CB4BFF808E")
     public final boolean hasDataScheme(String scheme) {
-        dsTaint.addTaint(scheme);
-        boolean var512C6A99EF7116D0DF5B8D796BB2F028_2013738043 = (mDataSchemes != null && mDataSchemes.contains(scheme));
-        return dsTaint.getTaintBoolean();
+        boolean var512C6A99EF7116D0DF5B8D796BB2F028_1034980536 = (mDataSchemes != null && mDataSchemes.contains(scheme));
+        addTaint(scheme.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_656675557 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_656675557;
         // ---------- Original Method ----------
         //return mDataSchemes != null && mDataSchemes.contains(scheme);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.956 -0400", hash_original_method = "B57BF7E15AE8E364684A85B4AA7D0368", hash_generated_method = "97F9B5251272BAD01A9CFC238F32AD37")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.479 -0400", hash_original_method = "B57BF7E15AE8E364684A85B4AA7D0368", hash_generated_method = "AE6CDF673B5D0FBC97A1718E612A9D4C")
     public final Iterator<String> schemesIterator() {
-        {
-            Object var63A4EF5D8779B3AD25A54B35474D2B8F_1642838091 = (mDataSchemes.iterator());
-        } //End flattened ternary
-        return (Iterator<String>)dsTaint.getTaint();
+        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_1932372873 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1932372873 = mDataSchemes != null ? mDataSchemes.iterator() : null;
+        varB4EAC82CA7396A68D541C85D26508E83_1932372873.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1932372873;
         // ---------- Original Method ----------
         //return mDataSchemes != null ? mDataSchemes.iterator() : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.957 -0400", hash_original_method = "617831DFB49DD0B093CE5F322F324A18", hash_generated_method = "C186BBC90228502CD5B3748B7767ACBF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.481 -0400", hash_original_method = "617831DFB49DD0B093CE5F322F324A18", hash_generated_method = "89AF2CB20AEBF24655E2F775BF782B64")
     public final void addDataAuthority(String host, String port) {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(host);
         mDataAuthorities =
                 new ArrayList<AuthorityEntry>();
         port = port.intern();
         mDataAuthorities.add(new AuthorityEntry(host.intern(), port));
+        addTaint(host.getTaint());
+        addTaint(port.getTaint());
         // ---------- Original Method ----------
         //if (mDataAuthorities == null) mDataAuthorities =
                 //new ArrayList<AuthorityEntry>();
@@ -515,92 +519,90 @@ public class IntentFilter implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.957 -0400", hash_original_method = "B59B7F6BD479782A00EECCEFFFB6C78B", hash_generated_method = "C07F7FEBB52154062BFAE2C0B713DF1E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.482 -0400", hash_original_method = "B59B7F6BD479782A00EECCEFFFB6C78B", hash_generated_method = "2B3613AC058A3A7CE00C1282D18845D9")
     public final int countDataAuthorities() {
         {
-            Object var7F3DBF7B704BD2D53B067BCF2DC53B65_2065495054 = (mDataAuthorities.size());
+            Object var7F3DBF7B704BD2D53B067BCF2DC53B65_141458243 = (mDataAuthorities.size());
         } //End flattened ternary
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_45307976 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_45307976;
         // ---------- Original Method ----------
         //return mDataAuthorities != null ? mDataAuthorities.size() : 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.957 -0400", hash_original_method = "5C821D7ECF8B0A79E64F1031BF4C37BB", hash_generated_method = "1C4EC403ADBBF59BDCD8A2C3C3DB1C57")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.502 -0400", hash_original_method = "5C821D7ECF8B0A79E64F1031BF4C37BB", hash_generated_method = "D2074F0EC2FDBCF4D443183ED285C7C9")
     public final AuthorityEntry getDataAuthority(int index) {
-        dsTaint.addTaint(index);
-        AuthorityEntry varD4E9505107E18856D8C83045272D8967_1190971395 = (mDataAuthorities.get(index));
-        return (AuthorityEntry)dsTaint.getTaint();
+        AuthorityEntry varB4EAC82CA7396A68D541C85D26508E83_1791064506 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1791064506 = mDataAuthorities.get(index);
+        addTaint(index);
+        varB4EAC82CA7396A68D541C85D26508E83_1791064506.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1791064506;
         // ---------- Original Method ----------
         //return mDataAuthorities.get(index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.958 -0400", hash_original_method = "04C5A3803469FEAEE8E315143FC0F6BE", hash_generated_method = "B8AD6E0F8BEC8384297B799F369F4E03")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.502 -0400", hash_original_method = "04C5A3803469FEAEE8E315143FC0F6BE", hash_generated_method = "B9F26152A97F1219549169CFDC5884E0")
     public final boolean hasDataAuthority(Uri data) {
-        dsTaint.addTaint(data.dsTaint);
-        boolean var1270E27AB98815A5880DC4887D568CF5_1997449105 = (matchDataAuthority(data) >= 0);
-        return dsTaint.getTaintBoolean();
+        boolean var1270E27AB98815A5880DC4887D568CF5_924689191 = (matchDataAuthority(data) >= 0);
+        addTaint(data.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_296583113 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_296583113;
         // ---------- Original Method ----------
         //return matchDataAuthority(data) >= 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.959 -0400", hash_original_method = "104889BB491104C94E7C1142A3F4BAAD", hash_generated_method = "10ABF30B74CC71424516088B2704E262")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.504 -0400", hash_original_method = "104889BB491104C94E7C1142A3F4BAAD", hash_generated_method = "1B2D100D47E45D76845E10F6E62125B1")
     public final Iterator<AuthorityEntry> authoritiesIterator() {
-        {
-            Object var6FBCD587AB239B94751032DF5B6180BC_1724651582 = (mDataAuthorities.iterator());
-        } //End flattened ternary
-        return (Iterator<AuthorityEntry>)dsTaint.getTaint();
+        Iterator<AuthorityEntry> varB4EAC82CA7396A68D541C85D26508E83_971308927 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_971308927 = mDataAuthorities != null ? mDataAuthorities.iterator() : null;
+        varB4EAC82CA7396A68D541C85D26508E83_971308927.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_971308927;
         // ---------- Original Method ----------
         //return mDataAuthorities != null ? mDataAuthorities.iterator() : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.960 -0400", hash_original_method = "F30E00ACF0BA9FCEBC6CDD2BDA55B075", hash_generated_method = "0CD71699C3D0B566D81716EABA49AFAA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.518 -0400", hash_original_method = "F30E00ACF0BA9FCEBC6CDD2BDA55B075", hash_generated_method = "2EF2319E1406271F8319FC082BEF491D")
     public final void addDataPath(String path, int type) {
-        dsTaint.addTaint(path);
-        dsTaint.addTaint(type);
         mDataPaths = new ArrayList<PatternMatcher>();
         mDataPaths.add(new PatternMatcher(path.intern(), type));
+        addTaint(path.getTaint());
+        addTaint(type);
         // ---------- Original Method ----------
         //if (mDataPaths == null) mDataPaths = new ArrayList<PatternMatcher>();
         //mDataPaths.add(new PatternMatcher(path.intern(), type));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.961 -0400", hash_original_method = "60FAB9592DF6A1D398A3997EC9565FA6", hash_generated_method = "32D63942DF681F9454E3B3447809B262")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.535 -0400", hash_original_method = "60FAB9592DF6A1D398A3997EC9565FA6", hash_generated_method = "036E20FF52F04CC84F2D80AFDCD04491")
     public final int countDataPaths() {
         {
-            Object var8D28E0B37D5A9D79155F890739E07533_27952007 = (mDataPaths.size());
+            Object var8D28E0B37D5A9D79155F890739E07533_294660285 = (mDataPaths.size());
         } //End flattened ternary
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_53572413 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_53572413;
         // ---------- Original Method ----------
         //return mDataPaths != null ? mDataPaths.size() : 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.961 -0400", hash_original_method = "C7BC21A1B57BD5F3F08A1F8B8EBDB051", hash_generated_method = "13D5A263043CDE98F52CF65BFFDE097E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.536 -0400", hash_original_method = "C7BC21A1B57BD5F3F08A1F8B8EBDB051", hash_generated_method = "FB16C1233F3D10CDB86A798EDDBCBD37")
     public final PatternMatcher getDataPath(int index) {
-        dsTaint.addTaint(index);
-        PatternMatcher varC6916575DA0706623B896E116A3722A0_1597525068 = (mDataPaths.get(index));
-        return (PatternMatcher)dsTaint.getTaint();
+        PatternMatcher varB4EAC82CA7396A68D541C85D26508E83_1103552307 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1103552307 = mDataPaths.get(index);
+        addTaint(index);
+        varB4EAC82CA7396A68D541C85D26508E83_1103552307.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1103552307;
         // ---------- Original Method ----------
         //return mDataPaths.get(index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.961 -0400", hash_original_method = "8A8BB0EA1E4D89E1A8E627888FCA29D4", hash_generated_method = "C7580F6C76F1E71D4C5A8BCD0C37F670")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.537 -0400", hash_original_method = "8A8BB0EA1E4D89E1A8E627888FCA29D4", hash_generated_method = "A971A62C552664DAC5475BAF7EE1F6C5")
     public final boolean hasDataPath(String data) {
-        dsTaint.addTaint(data);
         int numDataPaths;
         numDataPaths = mDataPaths.size();
         {
@@ -610,11 +612,13 @@ public class IntentFilter implements Parcelable {
                 PatternMatcher pe;
                 pe = mDataPaths.get(i);
                 {
-                    boolean varFE731D0FCEDE70D75173DC4C2EBABD75_521464336 = (pe.match(data));
+                    boolean varFE731D0FCEDE70D75173DC4C2EBABD75_941590538 = (pe.match(data));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(data.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_924891412 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_924891412;
         // ---------- Original Method ----------
         //if (mDataPaths == null) {
             //return false;
@@ -630,22 +634,19 @@ public class IntentFilter implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.962 -0400", hash_original_method = "DFBFAEBB83F5AF41A1E2404555B650EF", hash_generated_method = "7ECBC58FBCDC7B00E8DD41844AC2EFD3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.538 -0400", hash_original_method = "DFBFAEBB83F5AF41A1E2404555B650EF", hash_generated_method = "41643FAC84EF3DB0E00830ED5D43D92C")
     public final Iterator<PatternMatcher> pathsIterator() {
-        {
-            Object var4ACC285F2B6FD8905ED7B90A679FDB5E_1025800286 = (mDataPaths.iterator());
-        } //End flattened ternary
-        return (Iterator<PatternMatcher>)dsTaint.getTaint();
+        Iterator<PatternMatcher> varB4EAC82CA7396A68D541C85D26508E83_1441333229 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1441333229 = mDataPaths != null ? mDataPaths.iterator() : null;
+        varB4EAC82CA7396A68D541C85D26508E83_1441333229.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1441333229;
         // ---------- Original Method ----------
         //return mDataPaths != null ? mDataPaths.iterator() : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.962 -0400", hash_original_method = "BBE034684833DCE31C3A8387BD50FAB0", hash_generated_method = "232F4F3BCCACC983C16277625CCCD011")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.539 -0400", hash_original_method = "BBE034684833DCE31C3A8387BD50FAB0", hash_generated_method = "DC39ED56C7F828A7D9311E758796E1D4")
     public final int matchDataAuthority(Uri data) {
-        dsTaint.addTaint(data.dsTaint);
         int numDataAuthorities;
         numDataAuthorities = mDataAuthorities.size();
         {
@@ -658,7 +659,9 @@ public class IntentFilter implements Parcelable {
                 match = ae.match(data);
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintInt();
+        addTaint(data.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1603615965 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1603615965;
         // ---------- Original Method ----------
         //if (mDataAuthorities == null) {
             //return NO_MATCH_DATA;
@@ -675,12 +678,8 @@ public class IntentFilter implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.963 -0400", hash_original_method = "6458C2A82CD5BFA5489DF067AE915D84", hash_generated_method = "F7ED3C119D96A412E905F7118763A7E1")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.544 -0400", hash_original_method = "6458C2A82CD5BFA5489DF067AE915D84", hash_generated_method = "802B6AA752B99DA8027F85BEADBE65F2")
     public final int matchData(String type, String scheme, Uri data) {
-        dsTaint.addTaint(scheme);
-        dsTaint.addTaint(data.dsTaint);
-        dsTaint.addTaint(type);
         ArrayList<String> types;
         types = mDataTypes;
         ArrayList<String> schemes;
@@ -693,7 +692,7 @@ public class IntentFilter implements Parcelable {
         match = MATCH_CATEGORY_EMPTY;
         {
             {
-                boolean var5E7A05A835B5CF4FFB8629732729276E_507092165 = (schemes.contains(scheme != null ? scheme : "")); //DSFIXME:  CODE0008: Nested ternary operator in expression
+                boolean var5E7A05A835B5CF4FFB8629732729276E_1352075645 = (schemes.contains(scheme != null ? scheme : "")); //DSFIXME:  CODE0008: Nested ternary operator in expression
                 {
                     match = MATCH_CATEGORY_SCHEME;
                 } //End block
@@ -706,7 +705,7 @@ public class IntentFilter implements Parcelable {
                         match = authMatch;
                     } //End block
                     {
-                        boolean varEAAE2E15E6A7D5BAE2309C583FB4447C_988692245 = (hasDataPath(data.getPath()));
+                        boolean varEAAE2E15E6A7D5BAE2309C583FB4447C_2026757548 = (hasDataPath(data.getPath()));
                         {
                             match = MATCH_CATEGORY_PATH;
                         } //End block
@@ -716,36 +715,39 @@ public class IntentFilter implements Parcelable {
         } //End block
         {
             {
-                boolean var406CA28FF8859711A6231B15267E09A4_1254304734 = (scheme != null && !"".equals(scheme)
+                boolean var406CA28FF8859711A6231B15267E09A4_328191630 = (scheme != null && !"".equals(scheme)
                     && !"content".equals(scheme)
                     && !"file".equals(scheme));
             } //End collapsed parenthetic
         } //End block
         {
             {
-                boolean var98FC73A23AE0FAF08A0BE1B405D035C8_1339578490 = (findMimeType(type));
+                boolean var98FC73A23AE0FAF08A0BE1B405D035C8_714319392 = (findMimeType(type));
                 {
                     match = MATCH_CATEGORY_TYPE;
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(type.getTaint());
+        addTaint(scheme.getTaint());
+        addTaint(data.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_531187715 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_531187715;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.964 -0400", hash_original_method = "740A58E186A747CF3BBDAB4A3568B004", hash_generated_method = "49B3E1DDFEE6E04B86FB235E3F31DDB7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.545 -0400", hash_original_method = "740A58E186A747CF3BBDAB4A3568B004", hash_generated_method = "955CFDF3988CA2BFC188C4063D9866CF")
     public final void addCategory(String category) {
-        dsTaint.addTaint(category);
         mCategories = new ArrayList<String>();
         {
-            boolean var86C5C5511E5C2EED812BD9D1EEE4ACD6_902903757 = (!mCategories.contains(category));
+            boolean var86C5C5511E5C2EED812BD9D1EEE4ACD6_2098664279 = (!mCategories.contains(category));
             {
                 mCategories.add(category.intern());
             } //End block
         } //End collapsed parenthetic
+        addTaint(category.getTaint());
         // ---------- Original Method ----------
         //if (mCategories == null) mCategories = new ArrayList<String>();
         //if (!mCategories.contains(category)) {
@@ -754,75 +756,98 @@ public class IntentFilter implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.964 -0400", hash_original_method = "D5AF5503C90FCC35F15F05FB572F3FAB", hash_generated_method = "4764F6D9C31CFBF5D3F192B78A001159")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.555 -0400", hash_original_method = "D5AF5503C90FCC35F15F05FB572F3FAB", hash_generated_method = "6D0AD335C4D48910242622A3E5E81C7C")
     public final int countCategories() {
         {
-            Object var7750EA1BB615B3E22F7111A8C74A2076_1982635437 = (mCategories.size());
+            Object var7750EA1BB615B3E22F7111A8C74A2076_1228890316 = (mCategories.size());
         } //End flattened ternary
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2046347177 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2046347177;
         // ---------- Original Method ----------
         //return mCategories != null ? mCategories.size() : 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.965 -0400", hash_original_method = "9221063C5ACD71C55B9DBC6F8D5B18B1", hash_generated_method = "FA95D326F2F8F19A7B343E6B419BCAA7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.573 -0400", hash_original_method = "9221063C5ACD71C55B9DBC6F8D5B18B1", hash_generated_method = "F31F9DE586CA6E5D8A32DCE111A2BA67")
     public final String getCategory(int index) {
-        dsTaint.addTaint(index);
-        String varD15789259910CC2281EC569E0090A8F6_342085704 = (mCategories.get(index));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1934310547 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1934310547 = mCategories.get(index);
+        addTaint(index);
+        varB4EAC82CA7396A68D541C85D26508E83_1934310547.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1934310547;
         // ---------- Original Method ----------
         //return mCategories.get(index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.965 -0400", hash_original_method = "3612221F73372432993CCD6954A20D1D", hash_generated_method = "DFAF6E684D4D84551E5E16361720107F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.574 -0400", hash_original_method = "3612221F73372432993CCD6954A20D1D", hash_generated_method = "70BB29986858CA0D10D0900DD240E010")
     public final boolean hasCategory(String category) {
-        dsTaint.addTaint(category);
-        boolean varC2460535E11742A1B298C090C684A3C7_1792769287 = (mCategories != null && mCategories.contains(category));
-        return dsTaint.getTaintBoolean();
+        boolean varC2460535E11742A1B298C090C684A3C7_369193674 = (mCategories != null && mCategories.contains(category));
+        addTaint(category.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_335391311 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_335391311;
         // ---------- Original Method ----------
         //return mCategories != null && mCategories.contains(category);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.965 -0400", hash_original_method = "A1CBC473D8947BEFDC4AD1E1869906E2", hash_generated_method = "B661A731BB849550815478DAB1AB1360")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.596 -0400", hash_original_method = "A1CBC473D8947BEFDC4AD1E1869906E2", hash_generated_method = "EE233536AB17A3E5D63AFAA577C4D55A")
     public final Iterator<String> categoriesIterator() {
-        {
-            Object var70038AA5B05CDCC7BB0C1C80AEA6D5F6_945426615 = (mCategories.iterator());
-        } //End flattened ternary
-        return (Iterator<String>)dsTaint.getTaint();
+        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_2056837868 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2056837868 = mCategories != null ? mCategories.iterator() : null;
+        varB4EAC82CA7396A68D541C85D26508E83_2056837868.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2056837868;
         // ---------- Original Method ----------
         //return mCategories != null ? mCategories.iterator() : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.966 -0400", hash_original_method = "64ACE3DFA3E244FA74278C4A66D2BC47", hash_generated_method = "3C53C08B8989E85A307F1BB78CF30CE0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.601 -0400", hash_original_method = "64ACE3DFA3E244FA74278C4A66D2BC47", hash_generated_method = "93002A4669EEB3C59EBA1F3B9ECC95FD")
     public final String matchCategories(Set<String> categories) {
-        dsTaint.addTaint(categories.dsTaint);
+        String varB4EAC82CA7396A68D541C85D26508E83_809836408 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_97729985 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_454803306 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1909152790 = null; //Variable for return #4
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_809836408 = null;
+        } //End block
         Iterator<String> it;
         it = categories.iterator();
         {
-            {
-                boolean varB2FF4435B274CC4BE01D264DEA08F957_1571095995 = (it.hasNext());
-                Object var4E619BF14CFDF2F1FA575F312C1BD2EB_1103639875 = (it.next());
-            } //End flattened ternary
+            varB4EAC82CA7396A68D541C85D26508E83_97729985 = it.hasNext() ? it.next() : null;
         } //End block
         {
-            boolean var03729FD53960D8DCA3A41A13A0229637_1892156059 = (it.hasNext());
+            boolean var03729FD53960D8DCA3A41A13A0229637_1036423656 = (it.hasNext());
             {
                 String category;
                 category = it.next();
                 {
-                    boolean var75948F6460E0068B561F42314379BAEB_572683133 = (!mCategories.contains(category));
+                    boolean var75948F6460E0068B561F42314379BAEB_1008462453 = (!mCategories.contains(category));
+                    {
+                        varB4EAC82CA7396A68D541C85D26508E83_454803306 = category;
+                    } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1909152790 = null;
+        addTaint(categories.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_914695548; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_914695548 = varB4EAC82CA7396A68D541C85D26508E83_809836408;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_914695548 = varB4EAC82CA7396A68D541C85D26508E83_97729985;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_914695548 = varB4EAC82CA7396A68D541C85D26508E83_454803306;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_914695548 = varB4EAC82CA7396A68D541C85D26508E83_1909152790;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_914695548.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_914695548;
         // ---------- Original Method ----------
         //if (categories == null) {
             //return null;
@@ -841,20 +866,20 @@ public class IntentFilter implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.967 -0400", hash_original_method = "4ACC3B62E54BFBE055D3653A9CF49AD3", hash_generated_method = "3751A91666A6870A0BFC836611B55887")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.602 -0400", hash_original_method = "4ACC3B62E54BFBE055D3653A9CF49AD3", hash_generated_method = "D10C82592895AA2DC9F504C20C082BC5")
     public final int match(ContentResolver resolver, Intent intent,
             boolean resolve, String logTag) {
-        dsTaint.addTaint(resolve);
-        dsTaint.addTaint(logTag);
-        dsTaint.addTaint(resolver.dsTaint);
-        dsTaint.addTaint(intent.dsTaint);
         String type;
         type = intent.resolveType(resolver);
         type = intent.getType();
-        int varF65E2DDA6A4336395790B440F79EF0DA_136804885 = (match(intent.getAction(), type, intent.getScheme(),
+        int varF65E2DDA6A4336395790B440F79EF0DA_1641973972 = (match(intent.getAction(), type, intent.getScheme(),
                      intent.getData(), intent.getCategories(), logTag));
-        return dsTaint.getTaintInt();
+        addTaint(resolver.getTaint());
+        addTaint(intent.getTaint());
+        addTaint(resolve);
+        addTaint(logTag.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_14590594 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_14590594;
         // ---------- Original Method ----------
         //String type = resolve ? intent.resolveType(resolver) : intent.getType();
         //return match(intent.getAction(), type, intent.getScheme(),
@@ -862,18 +887,11 @@ public class IntentFilter implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.967 -0400", hash_original_method = "80E2BB7D6EA3B343C7B82810FBA9B369", hash_generated_method = "6682AF1B770150DE360707F16E07474F")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.611 -0400", hash_original_method = "80E2BB7D6EA3B343C7B82810FBA9B369", hash_generated_method = "E48513B70C49BFD45ABB19CE1FF7468E")
     public final int match(String action, String type, String scheme,
             Uri data, Set<String> categories, String logTag) {
-        dsTaint.addTaint(scheme);
-        dsTaint.addTaint(data.dsTaint);
-        dsTaint.addTaint(action);
-        dsTaint.addTaint(logTag);
-        dsTaint.addTaint(categories.dsTaint);
-        dsTaint.addTaint(type);
         {
-            boolean varAB4B3F206E562062AB2373108EDF62A0_1489277280 = (action != null && !matchAction(action));
+            boolean varAB4B3F206E562062AB2373108EDF62A0_2084647749 = (action != null && !matchAction(action));
         } //End collapsed parenthetic
         int dataMatch;
         dataMatch = matchData(type, scheme, data);
@@ -884,16 +902,21 @@ public class IntentFilter implements Parcelable {
                 dataMatch -= mCategories.size() - categories.size();
             } //End block
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(action.getTaint());
+        addTaint(type.getTaint());
+        addTaint(scheme.getTaint());
+        addTaint(data.getTaint());
+        addTaint(categories.getTaint());
+        addTaint(logTag.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1401238365 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1401238365;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.969 -0400", hash_original_method = "B6C33F6C9AFBFD4465A32F9300C74AFB", hash_generated_method = "F1B8A686DF42531D2AB3B57932F69170")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.614 -0400", hash_original_method = "B6C33F6C9AFBFD4465A32F9300C74AFB", hash_generated_method = "9BB38E0BA052A0BEAE0410115CF89455")
     public void writeToXml(XmlSerializer serializer) throws IOException {
-        dsTaint.addTaint(serializer.dsTaint);
         int N;
         N = countActions();
         {
@@ -924,7 +947,7 @@ public class IntentFilter implements Parcelable {
                 String type;
                 type = mDataTypes.get(i);
                 {
-                    boolean varF5C6D5EBEA0A2A1C0C5B585B8E141902_905341186 = (type.indexOf('/') < 0);
+                    boolean varF5C6D5EBEA0A2A1C0C5B585B8E141902_1608798499 = (type.indexOf('/') < 0);
                     type = type + "/*";
                 } //End collapsed parenthetic
                 serializer.attribute(null, NAME_STR, type);
@@ -951,7 +974,7 @@ public class IntentFilter implements Parcelable {
                 ae = mDataAuthorities.get(i);
                 serializer.attribute(null, HOST_STR, ae.getHost());
                 {
-                    boolean varD52B50DE393A2B2F765AF58DB2789B84_769201981 = (ae.getPort() >= 0);
+                    boolean varD52B50DE393A2B2F765AF58DB2789B84_2014892175 = (ae.getPort() >= 0);
                     {
                         serializer.attribute(null, PORT_STR, Integer.toString(ae.getPort()));
                     } //End block
@@ -968,7 +991,7 @@ public class IntentFilter implements Parcelable {
                 PatternMatcher pe;
                 pe = mDataPaths.get(i);
                 {
-                    Object var3F55985824039D507E9B86622028DD13_1719299263 = (pe.getType());
+                    Object var3F55985824039D507E9B86622028DD13_1632501132 = (pe.getType());
                     //Begin case PatternMatcher.PATTERN_LITERAL 
                     serializer.attribute(null, LITERAL_STR, pe.getPath());
                     //End case PatternMatcher.PATTERN_LITERAL 
@@ -982,28 +1005,27 @@ public class IntentFilter implements Parcelable {
                 serializer.endTag(null, PATH_STR);
             } //End block
         } //End collapsed parenthetic
+        addTaint(serializer.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.972 -0400", hash_original_method = "276CC8B213E249CE42650F70E7C4B53B", hash_generated_method = "AD62C6DD472C25DA148A9855BC320977")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.632 -0400", hash_original_method = "276CC8B213E249CE42650F70E7C4B53B", hash_generated_method = "9F2D77839DF45F9B618AEADF2DAB1220")
     public void readFromXml(XmlPullParser parser) throws XmlPullParserException,
             IOException {
-        dsTaint.addTaint(parser.dsTaint);
         int outerDepth;
         outerDepth = parser.getDepth();
         int type;
         {
-            boolean var003C1B2273232C3B7B27A28F0A982195_638124156 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
+            boolean var003C1B2273232C3B7B27A28F0A982195_961218484 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
                && (type != XmlPullParser.END_TAG
                        || parser.getDepth() > outerDepth));
             {
                 String tagName;
                 tagName = parser.getName();
                 {
-                    boolean varFCDCA384B5AE04B7C812E6C97E646171_952286573 = (tagName.equals(ACTION_STR));
+                    boolean varFCDCA384B5AE04B7C812E6C97E646171_1725430565 = (tagName.equals(ACTION_STR));
                     {
                         String name;
                         name = parser.getAttributeValue(null, NAME_STR);
@@ -1012,7 +1034,7 @@ public class IntentFilter implements Parcelable {
                         } //End block
                     } //End block
                     {
-                        boolean varA79B623DA4F2C04CCACF87A377409319_1866974710 = (tagName.equals(CAT_STR));
+                        boolean varA79B623DA4F2C04CCACF87A377409319_2011322767 = (tagName.equals(CAT_STR));
                         {
                             String name;
                             name = parser.getAttributeValue(null, NAME_STR);
@@ -1021,7 +1043,7 @@ public class IntentFilter implements Parcelable {
                             } //End block
                         } //End block
                         {
-                            boolean var977A45C559BECBE43F4912D2273DF0C8_704060218 = (tagName.equals(TYPE_STR));
+                            boolean var977A45C559BECBE43F4912D2273DF0C8_1769391402 = (tagName.equals(TYPE_STR));
                             {
                                 String name;
                                 name = parser.getAttributeValue(null, NAME_STR);
@@ -1035,7 +1057,7 @@ public class IntentFilter implements Parcelable {
                                 } //End block
                             } //End block
                             {
-                                boolean var6DC38F2E64C783805E18B68A201E5478_1970254596 = (tagName.equals(SCHEME_STR));
+                                boolean var6DC38F2E64C783805E18B68A201E5478_1660827973 = (tagName.equals(SCHEME_STR));
                                 {
                                     String name;
                                     name = parser.getAttributeValue(null, NAME_STR);
@@ -1044,7 +1066,7 @@ public class IntentFilter implements Parcelable {
                                     } //End block
                                 } //End block
                                 {
-                                    boolean var8853BBB6CFA09C0887644DF8808FF11A_1505667277 = (tagName.equals(AUTH_STR));
+                                    boolean var8853BBB6CFA09C0887644DF8808FF11A_1519317383 = (tagName.equals(AUTH_STR));
                                     {
                                         String host;
                                         host = parser.getAttributeValue(null, HOST_STR);
@@ -1055,7 +1077,7 @@ public class IntentFilter implements Parcelable {
                                         } //End block
                                     } //End block
                                     {
-                                        boolean var22FFAE6F647F1E2186452AB348DF879B_653695724 = (tagName.equals(PATH_STR));
+                                        boolean var22FFAE6F647F1E2186452AB348DF879B_1442389702 = (tagName.equals(PATH_STR));
                                         {
                                             String path;
                                             path = parser.getAttributeValue(null, LITERAL_STR);
@@ -1063,12 +1085,12 @@ public class IntentFilter implements Parcelable {
                                                 addDataPath(path, PatternMatcher.PATTERN_LITERAL);
                                             } //End block
                                             {
-                                                boolean varFD9E988BC7BA6C67FA0846D5B6BA2EAE_832888453 = ((path=parser.getAttributeValue(null, PREFIX_STR)) != null);
+                                                boolean varFD9E988BC7BA6C67FA0846D5B6BA2EAE_1582928319 = ((path=parser.getAttributeValue(null, PREFIX_STR)) != null);
                                                 {
                                                     addDataPath(path, PatternMatcher.PATTERN_PREFIX);
                                                 } //End block
                                                 {
-                                                    boolean var65A46A0D515CAD733F17FA4060913973_137668922 = ((path=parser.getAttributeValue(null, SGLOB_STR)) != null);
+                                                    boolean var65A46A0D515CAD733F17FA4060913973_1760055776 = ((path=parser.getAttributeValue(null, SGLOB_STR)) != null);
                                                     {
                                                         addDataPath(path, PatternMatcher.PATTERN_SIMPLE_GLOB);
                                                     } //End block
@@ -1084,25 +1106,23 @@ public class IntentFilter implements Parcelable {
                 XmlUtils.skipCurrentTag(parser);
             } //End block
         } //End collapsed parenthetic
+        addTaint(parser.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.978 -0400", hash_original_method = "75FFB292CCD000E47FA0C7D0BE596A36", hash_generated_method = "481CDB6A3CE2652AAD7D42CF4FD0C66F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.647 -0400", hash_original_method = "75FFB292CCD000E47FA0C7D0BE596A36", hash_generated_method = "C662E421B4DD64DAFA81B40DD893C5F4")
     public void dump(Printer du, String prefix) {
-        dsTaint.addTaint(du.dsTaint);
-        dsTaint.addTaint(prefix);
         StringBuilder sb;
         sb = new StringBuilder(256);
         {
-            boolean var71B9BA72BB6B517DA479CF3A88B95269_339025516 = (mActions.size() > 0);
+            boolean var71B9BA72BB6B517DA479CF3A88B95269_712928313 = (mActions.size() > 0);
             {
                 Iterator<String> it;
                 it = mActions.iterator();
                 {
-                    boolean var3DEC40B862508A9A2151C7EC9CE55CF3_213778098 = (it.hasNext());
+                    boolean var3DEC40B862508A9A2151C7EC9CE55CF3_1222557065 = (it.hasNext());
                     {
                         sb.setLength(0);
                         sb.append(prefix);
@@ -1118,7 +1138,7 @@ public class IntentFilter implements Parcelable {
             Iterator<String> it;
             it = mCategories.iterator();
             {
-                boolean varB2FF4435B274CC4BE01D264DEA08F957_936963108 = (it.hasNext());
+                boolean varB2FF4435B274CC4BE01D264DEA08F957_1788646558 = (it.hasNext());
                 {
                     sb.setLength(0);
                     sb.append(prefix);
@@ -1133,7 +1153,7 @@ public class IntentFilter implements Parcelable {
             Iterator<String> it;
             it = mDataSchemes.iterator();
             {
-                boolean varB2FF4435B274CC4BE01D264DEA08F957_1845146246 = (it.hasNext());
+                boolean varB2FF4435B274CC4BE01D264DEA08F957_619102707 = (it.hasNext());
                 {
                     sb.setLength(0);
                     sb.append(prefix);
@@ -1148,7 +1168,7 @@ public class IntentFilter implements Parcelable {
             Iterator<AuthorityEntry> it;
             it = mDataAuthorities.iterator();
             {
-                boolean varB2FF4435B274CC4BE01D264DEA08F957_441216702 = (it.hasNext());
+                boolean varB2FF4435B274CC4BE01D264DEA08F957_557225750 = (it.hasNext());
                 {
                     AuthorityEntry ae;
                     ae = it.next();
@@ -1167,7 +1187,7 @@ public class IntentFilter implements Parcelable {
             Iterator<PatternMatcher> it;
             it = mDataPaths.iterator();
             {
-                boolean varB2FF4435B274CC4BE01D264DEA08F957_1612595588 = (it.hasNext());
+                boolean varB2FF4435B274CC4BE01D264DEA08F957_1091665958 = (it.hasNext());
                 {
                     PatternMatcher pe;
                     pe = it.next();
@@ -1184,7 +1204,7 @@ public class IntentFilter implements Parcelable {
             Iterator<String> it;
             it = mDataTypes.iterator();
             {
-                boolean varB2FF4435B274CC4BE01D264DEA08F957_1818961311 = (it.hasNext());
+                boolean varB2FF4435B274CC4BE01D264DEA08F957_721525260 = (it.hasNext());
                 {
                     sb.setLength(0);
                     sb.append(prefix);
@@ -1204,25 +1224,24 @@ public class IntentFilter implements Parcelable {
             sb.append(mHasPartialTypes);
             du.println(sb.toString());
         } //End block
+        addTaint(du.getTaint());
+        addTaint(prefix.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.981 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "12D5C7B5ED1FD67439FB448ECFB1C4F4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.648 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "CFE75A66F1EA2B45DCF45DCB2B6DEE0C")
     public final int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962075010 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962075010;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.982 -0400", hash_original_method = "2C734948869786E017228B90D172BE24", hash_generated_method = "B5F7EDA0B9397451B04E9F388FB950F7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.662 -0400", hash_original_method = "2C734948869786E017228B90D172BE24", hash_generated_method = "56CF02CCD5CCE78E36A95E1B4C4EE628")
     public final void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeStringList(mActions);
         {
             dest.writeInt(1);
@@ -1277,48 +1296,48 @@ public class IntentFilter implements Parcelable {
         } //End block
         dest.writeInt(mPriority);
         dest.writeInt(mHasPartialTypes ? 1 : 0);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.983 -0400", hash_original_method = "FBEEEBAC37A62143C058604C825166BE", hash_generated_method = "2CAEBE68671E29DDFBFEF3715D83E996")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.662 -0400", hash_original_method = "FBEEEBAC37A62143C058604C825166BE", hash_generated_method = "0457666413DC248D1D544589EB1DD666")
     public boolean debugCheck() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_21745850 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_21745850;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.984 -0400", hash_original_method = "742383A5720F36FAAE26E247984D38D1", hash_generated_method = "0548B2DDD9C55E68D399034966BC60D7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.680 -0400", hash_original_method = "742383A5720F36FAAE26E247984D38D1", hash_generated_method = "76401C5BE37A1202EC8C036E121630D4")
     private final boolean findMimeType(String type) {
-        dsTaint.addTaint(type);
         ArrayList<String> t;
         t = mDataTypes;
         {
-            boolean var94BA75702969E64AAFAD0932F9F19FE6_2064149344 = (t.contains(type));
+            boolean var94BA75702969E64AAFAD0932F9F19FE6_1167994268 = (t.contains(type));
         } //End collapsed parenthetic
         int typeLength;
         typeLength = type.length();
         {
-            boolean varC0B1C251D972DB5100663171FE0ED803_1629086256 = (typeLength == 3 && type.equals("*/*"));
+            boolean varC0B1C251D972DB5100663171FE0ED803_886238788 = (typeLength == 3 && type.equals("*/*"));
             {
-                boolean var207FD69B8C4084DC550BC184B4637898_1526075340 = (!t.isEmpty());
+                boolean var207FD69B8C4084DC550BC184B4637898_518507204 = (!t.isEmpty());
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varDD39D56D1526DF18BC77C0B3DD038B55_294036078 = (mHasPartialTypes && t.contains("*"));
+            boolean varDD39D56D1526DF18BC77C0B3DD038B55_75178561 = (mHasPartialTypes && t.contains("*"));
         } //End collapsed parenthetic
         int slashpos;
         slashpos = type.indexOf('/');
         {
             {
-                boolean var6B9A6E4432B816B7E7FEA6713DF1EE03_1732329190 = (mHasPartialTypes && t.contains(type.substring(0, slashpos)));
+                boolean var6B9A6E4432B816B7E7FEA6713DF1EE03_1242700882 = (mHasPartialTypes && t.contains(type.substring(0, slashpos)));
             } //End collapsed parenthetic
             {
-                boolean varAF563929C59A468F116FAF629096DE41_892997465 = (typeLength == slashpos+2 && type.charAt(slashpos+1) == '*');
+                boolean varAF563929C59A468F116FAF629096DE41_1845943526 = (typeLength == slashpos+2 && type.charAt(slashpos+1) == '*');
                 {
                     int numTypes;
                     numTypes = t.size();
@@ -1329,14 +1348,16 @@ public class IntentFilter implements Parcelable {
                             String v;
                             v = t.get(i);
                             {
-                                boolean var11CCA35FDF5142E21DA9AFB5AAC19B77_926224380 = (type.regionMatches(0, v, 0, slashpos+1));
+                                boolean var11CCA35FDF5142E21DA9AFB5AAC19B77_583512244 = (type.regionMatches(0, v, 0, slashpos+1));
                             } //End collapsed parenthetic
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(type.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_21003978 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_21003978;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -1344,18 +1365,16 @@ public class IntentFilter implements Parcelable {
     
     public static class MalformedMimeTypeException extends AndroidException {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.986 -0400", hash_original_method = "8500983E91FE33F50F26D266A654E6C8", hash_generated_method = "76D07A54CDCC210EFF1FE4C037CB3505")
-        @DSModeled(DSC.SAFE)
-        public MalformedMimeTypeException() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.682 -0400", hash_original_method = "8500983E91FE33F50F26D266A654E6C8", hash_generated_method = "76D07A54CDCC210EFF1FE4C037CB3505")
+        public  MalformedMimeTypeException() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.987 -0400", hash_original_method = "E06B6BA43D42AE50E4C9A14EEBF56FAC", hash_generated_method = "A9FE0F1354341EEA652D72A49709C79B")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public MalformedMimeTypeException(String name) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.694 -0400", hash_original_method = "E06B6BA43D42AE50E4C9A14EEBF56FAC", hash_generated_method = "E089FA8DF2043AF9848D19DB7BA10CF1")
+        public  MalformedMimeTypeException(String name) {
             super(name);
-            dsTaint.addTaint(name);
+            addTaint(name.getTaint());
             // ---------- Original Method ----------
         }
 
@@ -1365,16 +1384,22 @@ public class IntentFilter implements Parcelable {
 
     
     public final static class AuthorityEntry {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.695 -0400", hash_original_field = "F8F65BB641A3EAB4D5CD871CD38B3B93", hash_generated_field = "0C08F8EAA89B66A92AA182AAF7101D01")
+
         private String mOrigHost;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.695 -0400", hash_original_field = "AE3E518F8FFDE1F8C00699B4C58E95B5", hash_generated_field = "C8F07C3E0F6788C43A05E20D5536D66C")
+
         private String mHost;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.695 -0400", hash_original_field = "F245AD4CEDF4FE31289C2C304D1D5975", hash_generated_field = "4775283DB55281CD651400D583AD7181")
+
         private boolean mWild;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.695 -0400", hash_original_field = "5EFA61C4FCA92CA992BE37C2BAF4D350", hash_generated_field = "A2873EA11C139FA2F790281AB4EEDB4E")
+
         private int mPort;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.990 -0400", hash_original_method = "FAC1F38311ACA5CF1D84B9DFACCAD236", hash_generated_method = "CCB16D97D7BF2FD6DD50F0CE3E920CE2")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public AuthorityEntry(String host, String port) {
-            dsTaint.addTaint(port);
-            dsTaint.addTaint(host);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.709 -0400", hash_original_method = "FAC1F38311ACA5CF1D84B9DFACCAD236", hash_generated_method = "7BCC3206A85976AB9748D889DCD74284")
+        public  AuthorityEntry(String host, String port) {
+            mOrigHost = host;
             mWild = host.length() > 0 && host.charAt(0) == '*';
             mHost = mWild ? host.substring(1).intern() : host;
             mPort = port != null ? Integer.parseInt(port) : -1;
@@ -1386,10 +1411,8 @@ public class IntentFilter implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.992 -0400", hash_original_method = "9AA41EA6C96E16AD56B52F388CEAC244", hash_generated_method = "DEC05F38D4E1009620119B2B350CCD1E")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         AuthorityEntry(Parcel src) {
-            dsTaint.addTaint(src.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.710 -0400", hash_original_method = "9AA41EA6C96E16AD56B52F388CEAC244", hash_generated_method = "C25EE71C4F905DDEC436619875DD7883")
+          AuthorityEntry(Parcel src) {
             mOrigHost = src.readString();
             mHost = src.readString();
             mWild = src.readInt() != 0;
@@ -1402,14 +1425,13 @@ public class IntentFilter implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.992 -0400", hash_original_method = "3FD27104A5CDDCA498D8F62DC306DFFB", hash_generated_method = "E67A7537E49FFC8FDFA1DEC98EB1EBB5")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.711 -0400", hash_original_method = "3FD27104A5CDDCA498D8F62DC306DFFB", hash_generated_method = "4718A898E94235CE6895C6ECD81A811D")
          void writeToParcel(Parcel dest) {
-            dsTaint.addTaint(dest.dsTaint);
             dest.writeString(mOrigHost);
             dest.writeString(mHost);
             dest.writeInt(mWild ? 1 : 0);
             dest.writeInt(mPort);
+            addTaint(dest.getTaint());
             // ---------- Original Method ----------
             //dest.writeString(mOrigHost);
             //dest.writeString(mHost);
@@ -1418,45 +1440,47 @@ public class IntentFilter implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.992 -0400", hash_original_method = "56B964ED44110D4A8630C57ED8411A1C", hash_generated_method = "9C09F1AAFF6135DC438C6856F2E3E8D1")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.732 -0400", hash_original_method = "56B964ED44110D4A8630C57ED8411A1C", hash_generated_method = "88E8D79BAE660D93F49D49F0C649E6FA")
         public String getHost() {
-            return dsTaint.getTaintString();
+            String varB4EAC82CA7396A68D541C85D26508E83_1168933041 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1168933041 = mOrigHost;
+            varB4EAC82CA7396A68D541C85D26508E83_1168933041.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1168933041;
             // ---------- Original Method ----------
             //return mOrigHost;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.993 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "989B279AB861DC9FDC85B5020F096FDA")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.733 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "7CF942164D42B2B6A4F05E3C94B3A790")
         public int getPort() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1669437293 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1669437293;
             // ---------- Original Method ----------
             //return mPort;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.993 -0400", hash_original_method = "FC31CC7FA89B702CE4ED1283F0D70C24", hash_generated_method = "1FD8C5439015799AFDE1908718E01CDD")
-        @DSModeled(DSC.SPEC)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.735 -0400", hash_original_method = "FC31CC7FA89B702CE4ED1283F0D70C24", hash_generated_method = "5A8BF61232FAA50966F7B29EC9B1EECF")
         public int match(Uri data) {
-            dsTaint.addTaint(data.dsTaint);
             String host;
             host = data.getHost();
             {
                 {
-                    boolean var1B71F291A87433E0716DC39D697C7F3A_708637974 = (host.length() < mHost.length());
+                    boolean var1B71F291A87433E0716DC39D697C7F3A_1281377121 = (host.length() < mHost.length());
                 } //End collapsed parenthetic
                 host = host.substring(host.length()-mHost.length());
             } //End block
             {
-                boolean var7D1AEF3A34E8E1E90AF70D1486121E66_1057467337 = (host.compareToIgnoreCase(mHost) != 0);
+                boolean var7D1AEF3A34E8E1E90AF70D1486121E66_2083234714 = (host.compareToIgnoreCase(mHost) != 0);
             } //End collapsed parenthetic
             {
                 {
-                    boolean var9F3060E6F5D255CBEEDF2919EC07ED98_1392271745 = (mPort != data.getPort());
+                    boolean var9F3060E6F5D255CBEEDF2919EC07ED98_705392825 = (mPort != data.getPort());
                 } //End collapsed parenthetic
             } //End block
-            return dsTaint.getTaintInt();
+            addTaint(data.getTaint());
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1912332069 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1912332069;
             // ---------- Original Method ----------
             //String host = data.getHost();
             //if (host == null) {
@@ -1487,56 +1511,98 @@ public class IntentFilter implements Parcelable {
 
 
     
-    private static final String SGLOB_STR = "sglob";
-    private static final String PREFIX_STR = "prefix";
-    private static final String LITERAL_STR = "literal";
-    private static final String PATH_STR = "path";
-    private static final String PORT_STR = "port";
-    private static final String HOST_STR = "host";
-    private static final String AUTH_STR = "auth";
-    private static final String SCHEME_STR = "scheme";
-    private static final String TYPE_STR = "type";
-    private static final String CAT_STR = "cat";
-    private static final String NAME_STR = "name";
-    private static final String ACTION_STR = "action";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.736 -0400", hash_original_field = "1B14B190F8083606EAE9866EE2D8420A", hash_generated_field = "8464BA21ADD025E188812B640FC8701E")
+
+    private static String SGLOB_STR = "sglob";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.747 -0400", hash_original_field = "86F097BF95F1AA716CCC9A63D2EB81AA", hash_generated_field = "22818F41D451785BFAD3423FDA64F0D7")
+
+    private static String PREFIX_STR = "prefix";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.748 -0400", hash_original_field = "6A393441CAE2E6BA8661A2A790B9BD3A", hash_generated_field = "36ECD2ABAEB7436779026A069C34A900")
+
+    private static String LITERAL_STR = "literal";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.748 -0400", hash_original_field = "04A3CE28FA3157C3CCB77E0071D396CD", hash_generated_field = "957C994B6D64576A62527E807C0068FF")
+
+    private static String PATH_STR = "path";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.748 -0400", hash_original_field = "150FDD6F68BE978A88F86AD2873EDAFE", hash_generated_field = "372D98E37E517E1D9E73CBE93DE3ECF4")
+
+    private static String PORT_STR = "port";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.748 -0400", hash_original_field = "019957BFE878AB3E79F639CC8FDC25D4", hash_generated_field = "195EC3381993D2E7D2A6143325F56B99")
+
+    private static String HOST_STR = "host";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.748 -0400", hash_original_field = "E62D8B7C04FCF1CD40D69F39C4B955D6", hash_generated_field = "E9AC770A23A161A8B12578A3ED4F8583")
+
+    private static String AUTH_STR = "auth";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.748 -0400", hash_original_field = "30DF383648C6FAFE73F202B429E1FE37", hash_generated_field = "AF4731D2A4BF3953B448CA50C0AB83F3")
+
+    private static String SCHEME_STR = "scheme";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.749 -0400", hash_original_field = "1C05FFE55AF62B33F675B76A1B6CCF6A", hash_generated_field = "3EB93F959E4A41682C27897CAB63C09C")
+
+    private static String TYPE_STR = "type";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.749 -0400", hash_original_field = "27410BA0FAE1A9A30C0179C2C752741E", hash_generated_field = "4D85A2504D5815A4BFAF4CEAB897ECE0")
+
+    private static String CAT_STR = "cat";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.749 -0400", hash_original_field = "A661B8112FDD112F1875BC35CEA675F4", hash_generated_field = "C7E233A7B715702637A03296023F8A41")
+
+    private static String NAME_STR = "name";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.749 -0400", hash_original_field = "F5C31232933C5E2ABE7280026D10B245", hash_generated_field = "BCF90FC2DC03BE1A93ED64CDB8C9E801")
+
+    private static String ACTION_STR = "action";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.749 -0400", hash_original_field = "74637B437C78D88E3C7DCFACCF6E4980", hash_generated_field = "6027B3B34EF275EF0258CDA7F6C44B06")
+
     public static final int SYSTEM_HIGH_PRIORITY = 1000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.749 -0400", hash_original_field = "353077210979C8C79343072728BF2D9A", hash_generated_field = "0B01181E7D37C91380237FEC68D6D2D3")
+
     public static final int SYSTEM_LOW_PRIORITY = -1000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.749 -0400", hash_original_field = "058341A722955315E0E33E69124FEE19", hash_generated_field = "29606CB5EA802A3FC60CBE3892A8C231")
+
     public static final int MATCH_CATEGORY_MASK = 0xfff0000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.749 -0400", hash_original_field = "CB979228755FD40F19E419AEA8107256", hash_generated_field = "B34195AB6941F69DE5EAC54045013E42")
+
     public static final int MATCH_ADJUSTMENT_MASK = 0x000ffff;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.749 -0400", hash_original_field = "A3255D675E31155A3001B8797C7B966D", hash_generated_field = "C9832C97F6DA3DADA2A2565BDBACE888")
+
     public static final int MATCH_ADJUSTMENT_NORMAL = 0x8000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.750 -0400", hash_original_field = "178B46F293C192C312ED4366D085CEC0", hash_generated_field = "A1B64111ED1BB3921E4D97B9744154C1")
+
     public static final int MATCH_CATEGORY_EMPTY = 0x0100000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.760 -0400", hash_original_field = "4BB39E3813E80D9621D0D1CC0FB99F84", hash_generated_field = "C12E4AC6561BC99691B6248231FD861A")
+
     public static final int MATCH_CATEGORY_SCHEME = 0x0200000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.760 -0400", hash_original_field = "1692855581B57010A0ECDB3F5977972B", hash_generated_field = "FE262DE457FD58C71A1505F0420E15FE")
+
     public static final int MATCH_CATEGORY_HOST = 0x0300000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.760 -0400", hash_original_field = "1200D586A3667F023B4654A7B78253FE", hash_generated_field = "D10A1DB2D1A22224D638E95D16CE16B9")
+
     public static final int MATCH_CATEGORY_PORT = 0x0400000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.760 -0400", hash_original_field = "C766E935F381FC06B2257F916BA02A21", hash_generated_field = "733A5B911AC6A408B5E5529505EC7DCE")
+
     public static final int MATCH_CATEGORY_PATH = 0x0500000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.761 -0400", hash_original_field = "19CA0A00F075EC4C3571BC37A8E25A1F", hash_generated_field = "EF521D11C4B126106700F8F59796E3EC")
+
     public static final int MATCH_CATEGORY_TYPE = 0x0600000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.761 -0400", hash_original_field = "FFC757B5E0F96115551506FAB5C3EE28", hash_generated_field = "77C0C8B7C43E88DB2627254044127D30")
+
     public static final int NO_MATCH_TYPE = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.761 -0400", hash_original_field = "9E2C7CCA0536236D90B2117FD257B56D", hash_generated_field = "994792ED93AAD5E31FA521805925B110")
+
     public static final int NO_MATCH_DATA = -2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.761 -0400", hash_original_field = "977EE4FA01887F87DB89D32E63D447C0", hash_generated_field = "E5BEBE595B019031029BE6CBC65E803A")
+
     public static final int NO_MATCH_ACTION = -3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.761 -0400", hash_original_field = "97915C591435AF39A8AEC43737A59FC9", hash_generated_field = "5B8788CD30AACDBD788AC513C1CD39AE")
+
     public static final int NO_MATCH_CATEGORY = -4;
-    public static final Parcelable.Creator<IntentFilter> CREATOR = new Parcelable.Creator<IntentFilter>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.994 -0400", hash_original_method = "6AFABEC7B0F2CE7FB89EA092702B6037", hash_generated_method = "907013DFA601C90E58237321BC87AE9B")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.761 -0400", hash_original_field = "DCD9426D45070A28AEA2BF645CBE4999", hash_generated_field = "665198F8F263BBC69C46C9D3C09D5B07")
+
+    public static final Parcelable.Creator<IntentFilter> CREATOR
+            = new Parcelable.Creator<IntentFilter>() {
         public IntentFilter createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            IntentFilter varA0991017EAC73C8D705C4C4F745D0C4B_936870600 = (new IntentFilter(source));
-            return (IntentFilter)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new IntentFilter(source);
+            return new IntentFilter(source);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:41.994 -0400", hash_original_method = "DE4837E283E52263DB6E87C79DDB9140", hash_generated_method = "AB7E988EEF669557A222E2B30AEE084D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public IntentFilter[] newArray(int size) {
-            dsTaint.addTaint(size);
-            IntentFilter[] var1759AEAAA34066A83B750F2304B1CFBD_1810554373 = (new IntentFilter[size]);
-            return (IntentFilter[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new IntentFilter[size];
+            return new IntentFilter[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

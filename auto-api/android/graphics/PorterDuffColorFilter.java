@@ -10,13 +10,12 @@ import java.util.Iterator;
 
 public class PorterDuffColorFilter extends ColorFilter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.548 -0400", hash_original_method = "7596573BC98218F8353DB810A415EA55", hash_generated_method = "D56195A98A45B4A9C25754513EBABC4B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PorterDuffColorFilter(int srcColor, PorterDuff.Mode mode) {
-        dsTaint.addTaint(srcColor);
-        dsTaint.addTaint(mode.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.408 -0400", hash_original_method = "7596573BC98218F8353DB810A415EA55", hash_generated_method = "F82B2FA53DF8E60A35BD0910128BE877")
+    public  PorterDuffColorFilter(int srcColor, PorterDuff.Mode mode) {
         native_instance = native_CreatePorterDuffFilter(srcColor, mode.nativeInt);
         nativeColorFilter = nCreatePorterDuffFilter(native_instance, srcColor, mode.nativeInt);
+        addTaint(srcColor);
+        addTaint(mode.getTaint());
         // ---------- Original Method ----------
         //native_instance = native_CreatePorterDuffFilter(srcColor, mode.nativeInt);
         //nativeColorFilter = nCreatePorterDuffFilter(native_instance, srcColor, mode.nativeInt);

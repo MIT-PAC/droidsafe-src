@@ -11,27 +11,40 @@ import android.os.Parcelable;
 import android.os.Parcel;
 
 public class AuthenticatorDescription implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.137 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "7BA709B14E744AD5C81755E81EB9D05D")
+
     public String type;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.138 -0400", hash_original_field = "462C96446499C39107F2C03833CC7769", hash_generated_field = "46DEAC82CA7C9A88AA196BE0871997FC")
+
     public int labelId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.140 -0400", hash_original_field = "D4DDD8F15E145D654808CFEB3504E8E3", hash_generated_field = "9432811F07E2B832B9FB4017EFF8CCB5")
+
     public int iconId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.158 -0400", hash_original_field = "08D9A420D546C56B22C0605125965438", hash_generated_field = "36AE93911796C13B7EF9B68F77960E18")
+
     public int smallIconId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.159 -0400", hash_original_field = "EA639B62B2C562F387ECD9A9E05BBE27", hash_generated_field = "E5632098A2A7787935B71623831E7C75")
+
     public int accountPreferencesId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.166 -0400", hash_original_field = "387F1FA6FC99B8AE187C010A06120611", hash_generated_field = "AEA3D3739F492530AF8FD6582FAACBD9")
+
     public String packageName;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.167 -0400", hash_original_field = "18C2ADF61E095BE169BDDA448B4745A9", hash_generated_field = "A2B611DD6D4F5E46933CA32414A47564")
+
     public boolean customTokens;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.539 -0400", hash_original_method = "10CE98088B9AD2510D39AB010FD4DE80", hash_generated_method = "65F37C0E6BB0A808EC6F49FA9DD33790")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AuthenticatorDescription(String type, String packageName, int labelId, int iconId,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.273 -0400", hash_original_method = "10CE98088B9AD2510D39AB010FD4DE80", hash_generated_method = "234E674672DAFBFEBFBB3D8024D6805F")
+    public  AuthenticatorDescription(String type, String packageName, int labelId, int iconId,
             int smallIconId, int prefId, boolean customTokens) {
-        dsTaint.addTaint(prefId);
-        dsTaint.addTaint(packageName);
-        dsTaint.addTaint(smallIconId);
-        dsTaint.addTaint(iconId);
-        dsTaint.addTaint(type);
-        dsTaint.addTaint(labelId);
-        dsTaint.addTaint(customTokens);
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("type cannot be null");
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("packageName cannot be null");
+        this.type = type;
+        this.packageName = packageName;
+        this.labelId = labelId;
+        this.iconId = iconId;
+        this.smallIconId = smallIconId;
+        this.accountPreferencesId = prefId;
+        this.customTokens = customTokens;
         // ---------- Original Method ----------
         //if (type == null) throw new IllegalArgumentException("type cannot be null");
         //if (packageName == null) throw new IllegalArgumentException("packageName cannot be null");
@@ -45,25 +58,23 @@ public class AuthenticatorDescription implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.540 -0400", hash_original_method = "11382004E2A497F30E307E2BE452746D", hash_generated_method = "3A36FEF6C5AA7F67CE69C6A5F90BC420")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AuthenticatorDescription(String type, String packageName, int labelId, int iconId,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.294 -0400", hash_original_method = "11382004E2A497F30E307E2BE452746D", hash_generated_method = "B4357C7410CA8ED8F35B684664B8D3FF")
+    public  AuthenticatorDescription(String type, String packageName, int labelId, int iconId,
             int smallIconId, int prefId) {
         this(type, packageName, labelId, iconId, smallIconId, prefId, false);
-        dsTaint.addTaint(prefId);
-        dsTaint.addTaint(packageName);
-        dsTaint.addTaint(smallIconId);
-        dsTaint.addTaint(iconId);
-        dsTaint.addTaint(type);
-        dsTaint.addTaint(labelId);
+        addTaint(type.getTaint());
+        addTaint(packageName.getTaint());
+        addTaint(labelId);
+        addTaint(iconId);
+        addTaint(smallIconId);
+        addTaint(prefId);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.541 -0400", hash_original_method = "4037EB3A36670641FC6DEBBB390D3E87", hash_generated_method = "A10D8A15144AF5E4AD400BC88FD06AF8")
-    @DSModeled(DSC.SAFE)
-    private AuthenticatorDescription(String type) {
-        dsTaint.addTaint(type);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.384 -0400", hash_original_method = "4037EB3A36670641FC6DEBBB390D3E87", hash_generated_method = "5086636F6C4E6395A933FB3675CB53B6")
+    private  AuthenticatorDescription(String type) {
+        this.type = type;
         this.packageName = null;
         this.labelId = 0;
         this.iconId = 0;
@@ -81,10 +92,8 @@ public class AuthenticatorDescription implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.543 -0400", hash_original_method = "C10BAC93BE842F654B6DBE8A81B18B55", hash_generated_method = "40FD9D5A1EFF9CA1CF72BC106D948B13")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private AuthenticatorDescription(Parcel source) {
-        dsTaint.addTaint(source.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.511 -0400", hash_original_method = "C10BAC93BE842F654B6DBE8A81B18B55", hash_generated_method = "7D5F83D489164E5D801A0271260284B5")
+    private  AuthenticatorDescription(Parcel source) {
         this.type = source.readString();
         this.packageName = source.readString();
         this.labelId = source.readInt();
@@ -109,36 +118,36 @@ public class AuthenticatorDescription implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.544 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.542 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7150C40C8AA8C7009BB359487B7A2506")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1458750394 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1458750394;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.545 -0400", hash_original_method = "6BF731200C51E86131E751F42FA1CCF7", hash_generated_method = "DC6391B01FBEA4A423268031C692D891")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.557 -0400", hash_original_method = "6BF731200C51E86131E751F42FA1CCF7", hash_generated_method = "7A0CEA3F4477559903485E44C36FE758")
     public int hashCode() {
-        int var5445C9C24EEBE23FF02D6BECCF921AED_515724071 = (type.hashCode());
-        return dsTaint.getTaintInt();
+        int var5445C9C24EEBE23FF02D6BECCF921AED_222058089 = (type.hashCode());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_93488623 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_93488623;
         // ---------- Original Method ----------
         //return type.hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.547 -0400", hash_original_method = "56302D274B0C35098461E26F41A371FE", hash_generated_method = "BE869934F8C73D34396766032845639F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.616 -0400", hash_original_method = "56302D274B0C35098461E26F41A371FE", hash_generated_method = "1DA50324DE0439DF9663F4A7280F8DEA")
     public boolean equals(Object o) {
-        dsTaint.addTaint(o.dsTaint);
         {
-            boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_193166954 = (o == this);
+            boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_365569252 = (o == this);
         } //End collapsed parenthetic
         AuthenticatorDescription other;
         other = (AuthenticatorDescription) o;
-        boolean varE9C3F01EF71A53EF70D5F9E4EF6F3FE9_642579247 = (type.equals(other.type));
-        return dsTaint.getTaintBoolean();
+        boolean varE9C3F01EF71A53EF70D5F9E4EF6F3FE9_1792054141 = (type.equals(other.type));
+        addTaint(o.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_187115794 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_187115794;
         // ---------- Original Method ----------
         //if (o == this) return true;
         //if (!(o instanceof AuthenticatorDescription)) return false;
@@ -147,20 +156,19 @@ public class AuthenticatorDescription implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.548 -0400", hash_original_method = "E530FC0646EA4443AB0B477A8261002A", hash_generated_method = "38AF65C1C19C9F9D58A2FCFB1B28F21D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.681 -0400", hash_original_method = "E530FC0646EA4443AB0B477A8261002A", hash_generated_method = "CA85F086947B214A67ADBC64E345EE0E")
     public String toString() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1918606401 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1918606401 = "AuthenticatorDescription {type=" + type + "}";
+        varB4EAC82CA7396A68D541C85D26508E83_1918606401.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1918606401;
         // ---------- Original Method ----------
         //return "AuthenticatorDescription {type=" + type + "}";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.558 -0400", hash_original_method = "72F90E851087733BFC5D935FAA58D7A0", hash_generated_method = "1BCF1620D80FE032B0473BA925D04601")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.743 -0400", hash_original_method = "72F90E851087733BFC5D935FAA58D7A0", hash_generated_method = "4051D34850B60282DB772F1FB1293821")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeString(type);
         dest.writeString(packageName);
         dest.writeInt(labelId);
@@ -168,6 +176,8 @@ public class AuthenticatorDescription implements Parcelable {
         dest.writeInt(smallIconId);
         dest.writeInt(accountPreferencesId);
         dest.writeByte((byte) (customTokens ? 1 : 0));
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeString(type);
         //dest.writeString(packageName);
@@ -179,29 +189,19 @@ public class AuthenticatorDescription implements Parcelable {
     }
 
     
-    public static final Creator<AuthenticatorDescription> CREATOR = new Creator<AuthenticatorDescription>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.560 -0400", hash_original_method = "C8C9153CF7DF6BC9F2BC5B781B8F131A", hash_generated_method = "F42E98845434C1D2696B6E81419A9EBC")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:44.752 -0400", hash_original_field = "12B3D1AC0AFD24255EEB56CB064F61F9", hash_generated_field = "EF0A236923C6371C92756878CC1C0C5A")
+
+    public static final Creator<AuthenticatorDescription> CREATOR =
+            new Creator<AuthenticatorDescription>() {
+        
         public AuthenticatorDescription createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            AuthenticatorDescription varFFEBA8B693D3B5BB1F2D8A01A87D2A50_1965921369 = (new AuthenticatorDescription(source));
-            return (AuthenticatorDescription)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new AuthenticatorDescription(source);
+            return new AuthenticatorDescription(source);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.561 -0400", hash_original_method = "24C5D5BB4B7F00B9B4CD3B0710269609", hash_generated_method = "70AD5896EA50C2FCFFCC2A2642FF6DD1")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public AuthenticatorDescription[] newArray(int size) {
-            dsTaint.addTaint(size);
-            AuthenticatorDescription[] var5D81B838FCA8B68CA004A18F6C9B335D_908944904 = (new AuthenticatorDescription[size]);
-            return (AuthenticatorDescription[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new AuthenticatorDescription[size];
+            return new AuthenticatorDescription[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

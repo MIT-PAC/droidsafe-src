@@ -9,42 +9,42 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public final class Short extends Number implements Comparable<Short> {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.218 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "6B20F172DB6AEA88BC2254D4F28BB29D")
+
     private short value;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.067 -0400", hash_original_method = "929EA7C7B9F688B1FB918E42E094A176", hash_generated_method = "B5C5491CD5BF4E35A3CB8B4A8E777D9C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Short(String string) throws NumberFormatException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.219 -0400", hash_original_method = "929EA7C7B9F688B1FB918E42E094A176", hash_generated_method = "34D1BC1A6D7D79A3CCC438567DA6D000")
+    public  Short(String string) throws NumberFormatException {
         this(parseShort(string));
-        dsTaint.addTaint(string);
+        addTaint(string.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.068 -0400", hash_original_method = "943F3BD92535719838B11732349A25CE", hash_generated_method = "92DC8FB77B4C9284B3AA05D994AD8E6C")
-    @DSModeled(DSC.SAFE)
-    public Short(short value) {
-        dsTaint.addTaint(value);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.219 -0400", hash_original_method = "943F3BD92535719838B11732349A25CE", hash_generated_method = "6461AAF473DA1D4263F37F10CDE089FA")
+    public  Short(short value) {
+        this.value = value;
         // ---------- Original Method ----------
         //this.value = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.068 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "4F78E57EE61A27A10E7A632140A3DDA6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.219 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "88CFC0851C8B7B08D0D2C40B5FBA738D")
     @Override
     public byte byteValue() {
-        return dsTaint.getTaintByte();
+        byte var40EA57D3EE3C07BF1C102B466E1C3091_1988862556 = getTaintByte();
+        return var40EA57D3EE3C07BF1C102B466E1C3091_1988862556;
         // ---------- Original Method ----------
         //return (byte) value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.068 -0400", hash_original_method = "9451F44BD5942680EA0D419B40FE27E5", hash_generated_method = "B6C51AF4940231967691E6BAEF4EE79C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.220 -0400", hash_original_method = "9451F44BD5942680EA0D419B40FE27E5", hash_generated_method = "957C5153D86DBA2E3B3EC4AF0E7B3A01")
     public int compareTo(Short object) {
-        dsTaint.addTaint(object.dsTaint);
-        int varEB17148B4676BC6C35C2467C947D57DF_1424786251 = (compare(value, object.value));
-        return dsTaint.getTaintInt();
+        int varEB17148B4676BC6C35C2467C947D57DF_1009505414 = (compare(value, object.value));
+        addTaint(object.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1571858941 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1571858941;
         // ---------- Original Method ----------
         //return compare(value, object.value);
     }
@@ -65,62 +65,62 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.069 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "02C8EAF77A98DB2CD3BC8AC0566EBE67")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.221 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "48C7F1E7BA775188FBE8DBBC64F17B94")
     @Override
     public double doubleValue() {
-        return dsTaint.getTaintDouble();
+        double varE8CD7DA078A86726031AD64F35F5A6C0_623745819 = getTaintDouble();
+        return varE8CD7DA078A86726031AD64F35F5A6C0_623745819;
         // ---------- Original Method ----------
         //return value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.069 -0400", hash_original_method = "0E7C562AADA4AAAABF3DA1440DB603BB", hash_generated_method = "BE0B049C1BD51185FD0A981389AD1292")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.222 -0400", hash_original_method = "0E7C562AADA4AAAABF3DA1440DB603BB", hash_generated_method = "D7C5317F6906A1A25D0366A014D62E8E")
     @Override
     public boolean equals(Object object) {
-        dsTaint.addTaint(object.dsTaint);
-        return dsTaint.getTaintBoolean();
+        addTaint(object.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1097800212 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1097800212;
         // ---------- Original Method ----------
         //return (object instanceof Short) && (((Short) object).value == value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.069 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "89D86731B5289C6353CA0DC29E484746")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.222 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "C761B8D16A7315315B8ED117D7097404")
     @Override
     public float floatValue() {
-        return dsTaint.getTaintFloat();
+        float var546ADE640B6EDFBC8A086EF31347E768_526781725 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_526781725;
         // ---------- Original Method ----------
         //return value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.069 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "2CC0EC8302E0602B9137F5B8629A7214")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.222 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "88F2B424406E81677ED84C0A588E32F0")
     @Override
     public int hashCode() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_759447394 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_759447394;
         // ---------- Original Method ----------
         //return value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.077 -0400", hash_original_method = "4668226786F0223B69B1E8157F3C469B", hash_generated_method = "036E05D318FB7A9B9F28D4BD928D74B4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.222 -0400", hash_original_method = "4668226786F0223B69B1E8157F3C469B", hash_generated_method = "805AD6133D66E7332E76510DE954170F")
     @Override
     public int intValue() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_212161296 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_212161296;
         // ---------- Original Method ----------
         //return value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.080 -0400", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "80C9E384C663D2D407424A79AF4BFC59")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.222 -0400", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "1AB60AA8992C7FC30F9CFB923B7AF663")
     @Override
     public long longValue() {
-        return dsTaint.getTaintLong();
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_66498044 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_66498044;
         // ---------- Original Method ----------
         //return value;
     }
@@ -141,22 +141,23 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.083 -0400", hash_original_method = "C4526A740A626A32E8FE5B0C1E7B83A6", hash_generated_method = "3D66E8454B043C5D45C9817A80595123")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.223 -0400", hash_original_method = "C4526A740A626A32E8FE5B0C1E7B83A6", hash_generated_method = "FA1538922EE877BD4DDDCEA8C4345B4A")
     @Override
     public short shortValue() {
-        return dsTaint.getTaintShort();
+        short var4F09DAA9D95BCB166A302407A0E0BABE_1836715965 = getTaintShort();
+        return var4F09DAA9D95BCB166A302407A0E0BABE_1836715965;
         // ---------- Original Method ----------
         //return value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.085 -0400", hash_original_method = "6B315C20A4D45816791A47779D79F014", hash_generated_method = "FF79282E56303D87EB62C04D64BBB981")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.223 -0400", hash_original_method = "6B315C20A4D45816791A47779D79F014", hash_generated_method = "00399A2202F96E3E11C029F5E2672F3D")
     @Override
     public String toString() {
-        String varD42FC0CD51582E4DF744832DA0BFE096_946510021 = (Integer.toString(value));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2013783369 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2013783369 = Integer.toString(value);
+        varB4EAC82CA7396A68D541C85D26508E83_2013783369.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2013783369;
         // ---------- Original Method ----------
         //return Integer.toString(value);
     }
@@ -187,13 +188,26 @@ public final class Short extends Number implements Comparable<Short> {
     }
 
     
-    private static final long serialVersionUID = 7515723908773894738L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.224 -0400", hash_original_field = "8A229B991FDF19CA883A8D4E9D99142D", hash_generated_field = "E174156F8590F0A7563AED93135D059A")
+
+    private static long serialVersionUID = 7515723908773894738L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.224 -0400", hash_original_field = "58D43F2979920AACD9FAF82D06E9CC69", hash_generated_field = "2E8990EE4BCAF51ABAF9910FEA47E327")
+
     public static final short MAX_VALUE = (short) 0x7FFF;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.231 -0400", hash_original_field = "8A0326ECCCC6AC72E19DB78C56A68A7A", hash_generated_field = "8248891CDA13195DEFED2D9240C645FE")
+
     public static final short MIN_VALUE = (short) 0x8000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.232 -0400", hash_original_field = "19BE510B820D2DF825572D14CACB552E", hash_generated_field = "35BBD8D16D40CCFD2558C6BE179C9BD7")
+
     public static final int SIZE = 16;
-    @SuppressWarnings("unchecked") public static final Class<Short> TYPE
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.232 -0400", hash_original_field = "41D855CE4D75EE663D99662562F0FBD8", hash_generated_field = "E28BA0FAE7ADC3DBF11B80B560194555")
+
+    @SuppressWarnings("unchecked")
+    public static final Class<Short> TYPE
             = (Class<Short>) short[].class.getComponentType();
-    private static final Short[] SMALL_VALUES = new Short[256];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.232 -0400", hash_original_field = "BC52D030307AD74705EC01D39B1A6174", hash_generated_field = "4B9882E299E1EC5B33A0E5D75B02F152")
+
+    private static Short[] SMALL_VALUES = new Short[256];
     static {
         for (int i = -128; i < 128; i++) {
             SMALL_VALUES[i + 128] = new Short((short) i);

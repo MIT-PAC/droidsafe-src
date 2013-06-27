@@ -19,9 +19,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public final class Streams {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.014 -0400", hash_original_method = "C77AFB36715A9D022AA555F8E2CA0E65", hash_generated_method = "1AA6BD22E66D64175A500F429CBE1AC9")
-    @DSModeled(DSC.SAFE)
-    private Streams() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.075 -0400", hash_original_method = "C77AFB36715A9D022AA555F8E2CA0E65", hash_generated_method = "1AA6BD22E66D64175A500F429CBE1AC9")
+    private  Streams() {
         // ---------- Original Method ----------
     }
 
@@ -162,6 +161,8 @@ public final class Streams {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.098 -0400", hash_original_field = "7E66C7F1643D8F7E2422DC85895A15FA", hash_generated_field = "A1B1A5BE6021D69F6851622BFC79A5B3")
+
     private static AtomicReference<byte[]> skipBuffer = new AtomicReference<byte[]>();
 }
 

@@ -10,19 +10,36 @@ import java.util.Iterator;
 import gov.nist.javax.sip.LogRecord;
 
 class MessageLog implements LogRecord {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.378 -0400", hash_original_field = "78E731027D8FD50ED642340B7C9A63B3", hash_generated_field = "B2821CE5540C52B19670BB2C4012F012")
+
     private String message;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "36CD38F49B9AFA08222C0DC9EBFE35EB", hash_generated_field = "2D2DC69F3BF28B00B15BD37DFC141996")
+
     private String source;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "6990A54322D9232390A784C5C9247DD6", hash_generated_field = "8BC6EA56B5330B53673CB5DD16E8AC4E")
+
     private String destination;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "87A3CB5C3554B2D9D8A1A773AD0936BE", hash_generated_field = "8839F6F627CF1085C871938312AAE918")
+
     private long timeStamp;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "19473E77C4CC50B29F8FF43127858000", hash_generated_field = "BF031D181B175207CB4FAF9A21666838")
+
     private boolean isSender;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "71F67F8E91222F095406DD3AD8FD65B2", hash_generated_field = "2D552DD3A1F19C65B36565EE0106C9DB")
+
     private String firstLine;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "97BEAA21D4819A1131833B897504CE31", hash_generated_field = "6E3A8FD900779FBB9A4728967FE109EF")
+
     private String tid;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "0CD10A72F684313DCE7B6EF5F7F41411", hash_generated_field = "14745A902962E272FDA1DE862859D03C")
+
     private String callId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "61668CF17C5ADD0EF8C0484BCFFC50C7", hash_generated_field = "D3FCB03CE5B4F679C534C994BCE675D9")
+
     private long timeStampHeaderValue;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.962 -0400", hash_original_method = "4DF5C3B1D01E7222DCCDFE20C1B5824A", hash_generated_method = "A72FABA0271763B45C2FD40ECE7907FC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public MessageLog(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.387 -0400", hash_original_method = "4DF5C3B1D01E7222DCCDFE20C1B5824A", hash_generated_method = "933CA128B056115314031573E5C39E84")
+    public  MessageLog(
         String message,
         String source,
         String destination,
@@ -32,19 +49,13 @@ class MessageLog implements LogRecord {
         String tid,
         String callId,
         long timeStampHeaderValue) {
-        dsTaint.addTaint(message);
-        dsTaint.addTaint(isSender);
-        dsTaint.addTaint(timeStamp);
-        dsTaint.addTaint(source);
-        dsTaint.addTaint(timeStampHeaderValue);
-        dsTaint.addTaint(firstLine);
-        dsTaint.addTaint(tid);
-        dsTaint.addTaint(callId);
-        dsTaint.addTaint(destination);
         {
-            boolean var87EE51FB0574C275E93ACB88F58D7718_1532840930 = (message == null || message.equals(""));
+            boolean var87EE51FB0574C275E93ACB88F58D7718_283037442 = (message == null || message.equals(""));
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("null msg");
         } //End collapsed parenthetic
+        this.message = message;
+        this.source = source;
+        this.destination = destination;
         try 
         {
             long ts;
@@ -57,6 +68,11 @@ class MessageLog implements LogRecord {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                 "Bad number format " + timeStamp);
         } //End block
+        this.isSender = isSender;
+        this.firstLine = firstLine;
+        this.tid = tid;
+        this.callId = callId;
+        this.timeStampHeaderValue = timeStampHeaderValue;
         // ---------- Original Method ----------
         //if (message == null || message.equals(""))
             //throw new IllegalArgumentException("null msg");
@@ -80,9 +96,8 @@ class MessageLog implements LogRecord {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.962 -0400", hash_original_method = "C29CF89B26E4E43BB7B19BB7E4FDCA0D", hash_generated_method = "5F82F5C67498C794B06B339058EE54CB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public MessageLog(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.389 -0400", hash_original_method = "C29CF89B26E4E43BB7B19BB7E4FDCA0D", hash_generated_method = "E9A9CECB531978B9440350C023CD1DBF")
+    public  MessageLog(
         String message,
         String source,
         String destination,
@@ -92,20 +107,20 @@ class MessageLog implements LogRecord {
         String tid,
         String callId,
         long timestampVal) {
-        dsTaint.addTaint(message);
-        dsTaint.addTaint(isSender);
-        dsTaint.addTaint(timeStamp);
-        dsTaint.addTaint(source);
-        dsTaint.addTaint(timestampVal);
-        dsTaint.addTaint(firstLine);
-        dsTaint.addTaint(tid);
-        dsTaint.addTaint(callId);
-        dsTaint.addTaint(destination);
         {
-            boolean var87EE51FB0574C275E93ACB88F58D7718_1977952654 = (message == null || message.equals(""));
+            boolean var87EE51FB0574C275E93ACB88F58D7718_1715838614 = (message == null || message.equals(""));
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("null msg");
         } //End collapsed parenthetic
+        this.message = message;
+        this.source = source;
+        this.destination = destination;
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("negative ts");
+        this.timeStamp = timeStamp;
+        this.isSender = isSender;
+        this.firstLine = firstLine;
+        this.tid = tid;
+        this.callId = callId;
+        this.timeStampHeaderValue = timestampVal;
         // ---------- Original Method ----------
         //if (message == null || message.equals(""))
             //throw new IllegalArgumentException("null msg");
@@ -123,17 +138,17 @@ class MessageLog implements LogRecord {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.963 -0400", hash_original_method = "818407DE55CFD10CF1C5E889367D1C2C", hash_generated_method = "707AE728FFD0BC5B09E05F495AAF2148")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.389 -0400", hash_original_method = "818407DE55CFD10CF1C5E889367D1C2C", hash_generated_method = "E2051610E6EF69FB58EE4A3111506BDC")
     public boolean equals(Object other) {
-        dsTaint.addTaint(other.dsTaint);
         {
             MessageLog otherLog;
             otherLog = (MessageLog) other;
-            boolean var5BA4675877B9A55A06DCDAB0A337D10C_1852089264 = (otherLog.message.equals(message)
+            boolean var5BA4675877B9A55A06DCDAB0A337D10C_926967279 = (otherLog.message.equals(message)
                 && otherLog.timeStamp == timeStamp);
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(other.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1468691346 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1468691346;
         // ---------- Original Method ----------
         //if (!(other instanceof MessageLog)) {
             //return false;
@@ -145,9 +160,9 @@ class MessageLog implements LogRecord {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.963 -0400", hash_original_method = "41C5D33A303365643BC91460F622FA81", hash_generated_method = "228F2958E3A2B75C241764793EBD657E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.399 -0400", hash_original_method = "41C5D33A303365643BC91460F622FA81", hash_generated_method = "764A1E2D3642E83475CB68E1264E8B2F")
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_319566960 = null; //Variable for return #1
         String log;
         log =
                 "<message\nfrom=\""
@@ -171,7 +186,9 @@ class MessageLog implements LogRecord {
         log += message;
         log += "]]>\n";
         log += "</message>\n";
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_319566960 = log;
+        varB4EAC82CA7396A68D541C85D26508E83_319566960.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_319566960;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

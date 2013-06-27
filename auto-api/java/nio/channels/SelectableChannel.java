@@ -13,9 +13,8 @@ import java.nio.channels.spi.SelectorProvider;
 
 public abstract class SelectableChannel extends AbstractInterruptibleChannel implements Channel {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.132 -0400", hash_original_method = "134796BB126CC075543A5858F980D0FB", hash_generated_method = "6A27F38CD958D23D87075149EA9DFC8C")
-    @DSModeled(DSC.SAFE)
-    protected SelectableChannel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.540 -0400", hash_original_method = "134796BB126CC075543A5858F980D0FB", hash_generated_method = "6A27F38CD958D23D87075149EA9DFC8C")
+    protected  SelectableChannel() {
         // ---------- Original Method ----------
     }
 
@@ -39,13 +38,14 @@ public abstract class SelectableChannel extends AbstractInterruptibleChannel imp
     public abstract SelectorProvider provider();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.133 -0400", hash_original_method = "9EF0D8B0DC0E3104C0F2D3C59F2DDC24", hash_generated_method = "52E1935B06F713471AF58F4C87325EBA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.547 -0400", hash_original_method = "9EF0D8B0DC0E3104C0F2D3C59F2DDC24", hash_generated_method = "7D0B1C4330A1E5EA554EBB59AC70E23E")
     public final SelectionKey register(Selector selector, int operations) throws ClosedChannelException {
-        dsTaint.addTaint(selector.dsTaint);
-        dsTaint.addTaint(operations);
-        SelectionKey var6C5619144F354B2D7FF635172C3705A9_989277692 = (register(selector, operations, null));
-        return (SelectionKey)dsTaint.getTaint();
+        SelectionKey varB4EAC82CA7396A68D541C85D26508E83_295875376 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_295875376 = register(selector, operations, null);
+        addTaint(selector.getTaint());
+        addTaint(operations);
+        varB4EAC82CA7396A68D541C85D26508E83_295875376.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_295875376;
         // ---------- Original Method ----------
         //return register(selector, operations, null);
     }

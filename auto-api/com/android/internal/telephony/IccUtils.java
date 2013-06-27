@@ -19,9 +19,10 @@ import java.nio.charset.Charset;
 
 public class IccUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.474 -0400", hash_original_method = "6A697AC62B9EC910A34132B67D69959D", hash_generated_method = "6A697AC62B9EC910A34132B67D69959D")
-        public IccUtils ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.438 -0400", hash_original_method = "7497E316CBF08BC6A4E1097E009E4B82", hash_generated_method = "7497E316CBF08BC6A4E1097E009E4B82")
+    public IccUtils ()
     {
+        //Synthesized constructor
     }
 
 
@@ -347,6 +348,8 @@ public class IccUtils {
     }
 
     
-    static final String LOG_TAG="IccUtils";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.444 -0400", hash_original_field = "657F5D0ADB30FEB439FAC6CC6AEF7E0C", hash_generated_field = "816E7881F1D30E19B189B71935B36195")
+
+    static String LOG_TAG = "IccUtils";
 }
 

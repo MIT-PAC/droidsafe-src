@@ -11,31 +11,31 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Point implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.359 -0400", hash_original_field = "9DD4E461268C8034F5C8564E155C67A6", hash_generated_field = "DC9CDA960147F3D22D20E612AF25CB17")
+
     public int x;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.359 -0400", hash_original_field = "415290769594460E2E485922904F345D", hash_generated_field = "2B3105BD07A59FEFE1F1918C5EDA2B54")
+
     public int y;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.530 -0400", hash_original_method = "D4552E1315F6D591F9A42261DB9D057B", hash_generated_method = "891355F007EC1345CA8AB753D7DD5962")
-    @DSModeled(DSC.SAFE)
-    public Point() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.360 -0400", hash_original_method = "D4552E1315F6D591F9A42261DB9D057B", hash_generated_method = "891355F007EC1345CA8AB753D7DD5962")
+    public  Point() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.531 -0400", hash_original_method = "F0C519E838FC36A3F9D598F50DEA0E68", hash_generated_method = "07BED00B3695B16D5DB6AF459A3AAF7C")
-    @DSModeled(DSC.SAFE)
-    public Point(int x, int y) {
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.390 -0400", hash_original_method = "F0C519E838FC36A3F9D598F50DEA0E68", hash_generated_method = "C05134FBB236D1298B22E27D3F645264")
+    public  Point(int x, int y) {
+        this.x = x;
+        this.y = y;
         // ---------- Original Method ----------
         //this.x = x;
         //this.y = y;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.532 -0400", hash_original_method = "73184A56659634A9C3B845676739FB93", hash_generated_method = "8E78C8887729599AE693CF66118E2BBF")
-    @DSModeled(DSC.SAFE)
-    public Point(Point src) {
-        dsTaint.addTaint(src.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.391 -0400", hash_original_method = "73184A56659634A9C3B845676739FB93", hash_generated_method = "35E5BF8119462F0CCEC844CE97F7955B")
+    public  Point(Point src) {
         this.x = src.x;
         this.y = src.y;
         // ---------- Original Method ----------
@@ -44,19 +44,17 @@ public class Point implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.533 -0400", hash_original_method = "A893C7A3BDAFD0F68044E15122EF7C46", hash_generated_method = "3496F0E811D420D14FA8F3BB92B7E143")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.392 -0400", hash_original_method = "A893C7A3BDAFD0F68044E15122EF7C46", hash_generated_method = "64C0F70A319F472D57B0208C83061342")
     public void set(int x, int y) {
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
+        this.x = x;
+        this.y = y;
         // ---------- Original Method ----------
         //this.x = x;
         //this.y = y;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.534 -0400", hash_original_method = "47D8F51D6A8BFCBDB23B0F8D5AF788FE", hash_generated_method = "2BF53EC3544A2E6062446424007D905E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.393 -0400", hash_original_method = "47D8F51D6A8BFCBDB23B0F8D5AF788FE", hash_generated_method = "2BF53EC3544A2E6062446424007D905E")
     public final void negate() {
         x = -x;
         y = -y;
@@ -66,38 +64,37 @@ public class Point implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.534 -0400", hash_original_method = "2341B98028DF5979D10DDC3712740A20", hash_generated_method = "EC58C6746CDD398991E6863DB298B10B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.394 -0400", hash_original_method = "2341B98028DF5979D10DDC3712740A20", hash_generated_method = "9985F655CDA621D55D06DF0B151AF4BE")
     public final void offset(int dx, int dy) {
-        dsTaint.addTaint(dx);
-        dsTaint.addTaint(dy);
+        x += dx;
+        y += dy;
         // ---------- Original Method ----------
         //x += dx;
         //y += dy;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.534 -0400", hash_original_method = "B64FF880BF78A0B3D79FA58471141474", hash_generated_method = "2C87616D42AD62468B1922892E5870EA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.406 -0400", hash_original_method = "B64FF880BF78A0B3D79FA58471141474", hash_generated_method = "6D0F3FE5B37E179E4FA2406226B3BB65")
     public final boolean equals(int x, int y) {
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
-        return dsTaint.getTaintBoolean();
+        addTaint(x);
+        addTaint(y);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_772143140 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_772143140;
         // ---------- Original Method ----------
         //return this.x == x && this.y == y;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.534 -0400", hash_original_method = "DE06142D9B61B02A43CEA21E14E7D027", hash_generated_method = "64977C47D6AB84E142E907B473209BDD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.412 -0400", hash_original_method = "DE06142D9B61B02A43CEA21E14E7D027", hash_generated_method = "54BA5ECAE7F2BD58119C6D212FCFE369")
     @Override
     public boolean equals(Object o) {
-        dsTaint.addTaint(o.dsTaint);
         {
             Point p;
             p = (Point) o;
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(o.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_828585745 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_828585745;
         // ---------- Original Method ----------
         //if (o instanceof Point) {
             //Point p = (Point) o;
@@ -107,54 +104,53 @@ public class Point implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.535 -0400", hash_original_method = "2AEEE1632B8FF7FECD208FC610B72FB6", hash_generated_method = "05878EB6AC1CA0F6B6D6CCCB525A23B4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.413 -0400", hash_original_method = "2AEEE1632B8FF7FECD208FC610B72FB6", hash_generated_method = "8CA3CF1036BBF892050D3830AE9D60BF")
     @Override
     public int hashCode() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1655972192 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1655972192;
         // ---------- Original Method ----------
         //return x * 32713 + y;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.535 -0400", hash_original_method = "9F61E49C995FA3CEC66850F11B9A08CD", hash_generated_method = "6D3B5E22EE45E4885EB693933FB1047B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.414 -0400", hash_original_method = "9F61E49C995FA3CEC66850F11B9A08CD", hash_generated_method = "C7994FEE79852D37CCF96F08160529F9")
     @Override
     public String toString() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2075327882 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2075327882 = "Point(" + x + ", " + y+ ")";
+        varB4EAC82CA7396A68D541C85D26508E83_2075327882.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2075327882;
         // ---------- Original Method ----------
         //return "Point(" + x + ", " + y+ ")";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.535 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0DB50BC0CCE4711867E95DEC1B2117C7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.428 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7F70A00D13F29FCB9D6AE44588A00CFE")
     @Override
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1279100591 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1279100591;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.535 -0400", hash_original_method = "54E86A99E3577FA18F65ED6CED3821E9", hash_generated_method = "4DBBED5613A1650D57DCD5BEE18DC4BD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.429 -0400", hash_original_method = "54E86A99E3577FA18F65ED6CED3821E9", hash_generated_method = "50E44C5A133E451E53B0B4E3479576F0")
     @Override
     public void writeToParcel(Parcel out, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(out.dsTaint);
         out.writeInt(x);
         out.writeInt(y);
+        addTaint(out.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //out.writeInt(x);
         //out.writeInt(y);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.536 -0400", hash_original_method = "AD1ECB5F4974F92B096BCFEAE556C331", hash_generated_method = "D0163387D550220303D65667F42BAB0A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.430 -0400", hash_original_method = "AD1ECB5F4974F92B096BCFEAE556C331", hash_generated_method = "7D18C675822037ED05AF6717B3061A57")
     public void readFromParcel(Parcel in) {
-        dsTaint.addTaint(in.dsTaint);
         x = in.readInt();
         y = in.readInt();
         // ---------- Original Method ----------
@@ -163,33 +159,20 @@ public class Point implements Parcelable {
     }
 
     
-    public static final Parcelable.Creator<Point> CREATOR = new Parcelable.Creator<Point>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.536 -0400", hash_original_method = "B3310D4E2482FAA9B08EEBCB55A9E59A", hash_generated_method = "524F05D3522D9808D9D5EAAA95D2B946")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.430 -0400", hash_original_field = "46894148330232332ACF126C0EBCE04B", hash_generated_field = "FE9330E14C8CDC7168D77A0E0F98818B")
+
+    public static final Parcelable.Creator<Point> CREATOR = new Parcelable.Creator<Point>() {
+        
         public Point createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            Point r;
-            r = new Point();
+            Point r = new Point();
             r.readFromParcel(in);
-            return (Point)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //Point r = new Point();
-            //r.readFromParcel(in);
-            //return r;
+            return r;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.536 -0400", hash_original_method = "18DD28AAA16190424D7A39669B473895", hash_generated_method = "7CCDF402414F898C2CE7A7F5BCAB945A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public Point[] newArray(int size) {
-            dsTaint.addTaint(size);
-            Point[] var7BD0D438125D0B50510677B497604EE1_83402509 = (new Point[size]);
-            return (Point[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new Point[size];
+            return new Point[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

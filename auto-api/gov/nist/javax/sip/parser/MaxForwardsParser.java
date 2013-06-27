@@ -13,27 +13,25 @@ import java.text.ParseException;
 
 public class MaxForwardsParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.312 -0400", hash_original_method = "005E89A999CEFE80041E010521110160", hash_generated_method = "C8DCB801C32E8C93DAC471E2ECE9C407")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public MaxForwardsParser(String contentLength) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.827 -0400", hash_original_method = "005E89A999CEFE80041E010521110160", hash_generated_method = "48AAFDDDE42774E4C5643D05760B0D86")
+    public  MaxForwardsParser(String contentLength) {
         super(contentLength);
-        dsTaint.addTaint(contentLength);
+        addTaint(contentLength.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.312 -0400", hash_original_method = "387C44575196A6CA2DFD9A3719D601C5", hash_generated_method = "51D0B8D264EB1AC483E4D2D2CD8C2A26")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected MaxForwardsParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.827 -0400", hash_original_method = "387C44575196A6CA2DFD9A3719D601C5", hash_generated_method = "5B26658256F06654B3E660E86989DD56")
+    protected  MaxForwardsParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.312 -0400", hash_original_method = "1EF61729E616CF3DAFF49967F4EF386E", hash_generated_method = "02B093BF33B905CEBD8AA89E5E1EFDAD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.828 -0400", hash_original_method = "1EF61729E616CF3DAFF49967F4EF386E", hash_generated_method = "17B3BB89AF53E3E05FB4669D19DBD7AD")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_2790275 = null; //Variable for return #1
         dbg_enter("MaxForwardsParser.enter");
         try 
         {
@@ -45,6 +43,7 @@ public class MaxForwardsParser extends HeaderParser {
             contentLength.setMaxForwards(Integer.parseInt(number));
             this.lexer.SPorHT();
             this.lexer.match('\n');
+            varB4EAC82CA7396A68D541C85D26508E83_2790275 = contentLength;
         } //End block
         catch (InvalidArgumentException ex)
         {
@@ -58,7 +57,8 @@ public class MaxForwardsParser extends HeaderParser {
         {
             dbg_leave("MaxForwardsParser.leave");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2790275.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2790275;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("MaxForwardsParser.enter");

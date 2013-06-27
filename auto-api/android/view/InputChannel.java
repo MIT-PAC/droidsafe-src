@@ -12,11 +12,12 @@ import android.os.Parcelable;
 import android.util.Slog;
 
 public final class InputChannel implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.214 -0400", hash_original_field = "34F930F150EAEEFF27D6C0C8E4629911", hash_generated_field = "F6CBBCA427D08C52E84BEBFADDF6C4B3")
+
     @SuppressWarnings("unused") private int mPtr;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.860 -0400", hash_original_method = "0BA27F691F89E713693B84FE27F01014", hash_generated_method = "ED243824FEFC4B413411561FA4FF02D0")
-    @DSModeled(DSC.SAFE)
-    public InputChannel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.215 -0400", hash_original_method = "0BA27F691F89E713693B84FE27F01014", hash_generated_method = "ED243824FEFC4B413411561FA4FF02D0")
+    public  InputChannel() {
         // ---------- Original Method ----------
     }
 
@@ -26,43 +27,33 @@ public final class InputChannel implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.860 -0400", hash_original_method = "94154519B1A6EA4BB0BB640C85BD9A02", hash_generated_method = "CFD52324E464B8722904AF4E20A8363D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.215 -0400", hash_original_method = "94154519B1A6EA4BB0BB640C85BD9A02", hash_generated_method = "6C7C0E61BCDFCC694DC91C268DE99361")
     private void nativeDispose(boolean finalized) {
-        dsTaint.addTaint(finalized);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.860 -0400", hash_original_method = "799DA83596ED16E96D78A1B89899E0CA", hash_generated_method = "47A4D5460903EFEDF78C827025236AC0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.218 -0400", hash_original_method = "799DA83596ED16E96D78A1B89899E0CA", hash_generated_method = "43DD19AFEED002ACDDA5EE5C126D0199")
     private void nativeTransferTo(InputChannel other) {
-        dsTaint.addTaint(other.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.861 -0400", hash_original_method = "CB18D1AF1302EC392F144D01425C9ED8", hash_generated_method = "EAC06E7436CC466B8F985BE0EDEB6BF6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.218 -0400", hash_original_method = "CB18D1AF1302EC392F144D01425C9ED8", hash_generated_method = "2C38BCBB39AFEAF9135E868F8C4B1983")
     private void nativeReadFromParcel(Parcel parcel) {
-        dsTaint.addTaint(parcel.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.861 -0400", hash_original_method = "0C3EF2E831F019E30F5E266ABBEB1FCD", hash_generated_method = "8BFF9687323E423D18BE2BBB2A7D8599")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.219 -0400", hash_original_method = "0C3EF2E831F019E30F5E266ABBEB1FCD", hash_generated_method = "29CBDFA8F1245A477428080B155FEC70")
     private void nativeWriteToParcel(Parcel parcel) {
-        dsTaint.addTaint(parcel.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.861 -0400", hash_original_method = "CA39384861C04125EB204839D7970E78", hash_generated_method = "DDF4F0657A5DB192CC526E9FFF6BE46B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.219 -0400", hash_original_method = "CA39384861C04125EB204839D7970E78", hash_generated_method = "55C683646032EAF5E4A7B598D440C2F0")
     private String nativeGetName() {
-        return dsTaint.getTaintString();
+        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.861 -0400", hash_original_method = "AAF6A8EEDB66DCFEB1E035B63F14BAD7", hash_generated_method = "7B07B9CB0BB6168167263DFA5C36C7E7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.222 -0400", hash_original_method = "AAF6A8EEDB66DCFEB1E035B63F14BAD7", hash_generated_method = "7B07B9CB0BB6168167263DFA5C36C7E7")
     @Override
     protected void finalize() throws Throwable {
         try 
@@ -93,20 +84,21 @@ public final class InputChannel implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.861 -0400", hash_original_method = "DD120B8650E4DAC77C83EEDB526B0BAD", hash_generated_method = "A9CCD3BE6E8A36FF7E9CDE8CCE15F52D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.232 -0400", hash_original_method = "DD120B8650E4DAC77C83EEDB526B0BAD", hash_generated_method = "51EF3E69A034B21A612EC39E94B341EF")
     public String getName() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1283494999 = null; //Variable for return #1
         String name;
         name = nativeGetName();
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1283494999 = name != null ? name : "uninitialized";
+        varB4EAC82CA7396A68D541C85D26508E83_1283494999.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1283494999;
         // ---------- Original Method ----------
         //String name = nativeGetName();
         //return name != null ? name : "uninitialized";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.862 -0400", hash_original_method = "55D32946D61D585CF9CB8D4DE0F8875C", hash_generated_method = "DBF3738A56ED3C108DB00E89DD16E55E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.235 -0400", hash_original_method = "55D32946D61D585CF9CB8D4DE0F8875C", hash_generated_method = "DBF3738A56ED3C108DB00E89DD16E55E")
     public void dispose() {
         nativeDispose(false);
         // ---------- Original Method ----------
@@ -114,14 +106,13 @@ public final class InputChannel implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.862 -0400", hash_original_method = "56717C4466E220164D65DBB18C5ECF92", hash_generated_method = "9835316AF35893C8149C3BE902541978")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.240 -0400", hash_original_method = "56717C4466E220164D65DBB18C5ECF92", hash_generated_method = "C77F8D1F475C5040EDFAD903E4567839")
     public void transferTo(InputChannel outParameter) {
-        dsTaint.addTaint(outParameter.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("outParameter must not be null");
         } //End block
         nativeTransferTo(outParameter);
+        addTaint(outParameter.getTaint());
         // ---------- Original Method ----------
         //if (outParameter == null) {
             //throw new IllegalArgumentException("outParameter must not be null");
@@ -130,23 +121,22 @@ public final class InputChannel implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.862 -0400", hash_original_method = "5C5A30224996A2D414D9176559E683A9", hash_generated_method = "FC3B912957A2E65031C97112DB7F5A46")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.256 -0400", hash_original_method = "5C5A30224996A2D414D9176559E683A9", hash_generated_method = "DF29EFDF0548DFAE93C5BB31287B5D35")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197962005 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197962005;
         // ---------- Original Method ----------
         //return Parcelable.CONTENTS_FILE_DESCRIPTOR;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.862 -0400", hash_original_method = "60688696539354D4CAC238797E17CD4A", hash_generated_method = "9FAA0170BBF69813B4C09BB705E7E0C0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.257 -0400", hash_original_method = "60688696539354D4CAC238797E17CD4A", hash_generated_method = "645A4AD28E999BAFC918314165B0E3BB")
     public void readFromParcel(Parcel in) {
-        dsTaint.addTaint(in.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("in must not be null");
         } //End block
         nativeReadFromParcel(in);
+        addTaint(in.getTaint());
         // ---------- Original Method ----------
         //if (in == null) {
             //throw new IllegalArgumentException("in must not be null");
@@ -155,11 +145,8 @@ public final class InputChannel implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.863 -0400", hash_original_method = "A30FA9E3CB51C121BDB664DAA1EA96F9", hash_generated_method = "949B7E7C502E21B0B12EEF1806E6EAC5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.257 -0400", hash_original_method = "A30FA9E3CB51C121BDB664DAA1EA96F9", hash_generated_method = "25E90635DD4818C705F830AFFA69BE70")
     public void writeToParcel(Parcel out, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(out.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("out must not be null");
         } //End block
@@ -167,6 +154,8 @@ public final class InputChannel implements Parcelable {
         {
             dispose();
         } //End block
+        addTaint(out.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //if (out == null) {
             //throw new IllegalArgumentException("out must not be null");
@@ -178,46 +167,37 @@ public final class InputChannel implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.863 -0400", hash_original_method = "EF513D06BF396F11B9CE8E1C6BA16499", hash_generated_method = "F496CD1FD2510A6CB286D3120A82F1C3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.258 -0400", hash_original_method = "EF513D06BF396F11B9CE8E1C6BA16499", hash_generated_method = "19C83F961DAB66660384F44A7C28D844")
     @Override
     public String toString() {
-        String var5032DEC29B552A5D605BC7E38765B26B_44963877 = (getName());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2132256631 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2132256631 = getName();
+        varB4EAC82CA7396A68D541C85D26508E83_2132256631.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2132256631;
         // ---------- Original Method ----------
         //return getName();
     }
 
     
-    private static final String TAG = "InputChannel";
-    private static final boolean DEBUG = false;
-    public static final Parcelable.Creator<InputChannel> CREATOR = new Parcelable.Creator<InputChannel>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.863 -0400", hash_original_method = "3BB57A0678E2E259E4D4569B18871435", hash_generated_method = "17F62C43FD3F7FE8A1BF387037A37C33")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.258 -0400", hash_original_field = "B698A68630D878F4CEBCB79306407DDB", hash_generated_field = "673F1BA3E5D70820702655189C0A327D")
+
+    private static String TAG = "InputChannel";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.283 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+
+    private static boolean DEBUG = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.283 -0400", hash_original_field = "7C7ADF72FF6C232CC276E7538511A5AA", hash_generated_field = "1E8E5BA243BA0BDF86F284A9E05D652B")
+
+    public static final Parcelable.Creator<InputChannel> CREATOR
+            = new Parcelable.Creator<InputChannel>() {
         public InputChannel createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            InputChannel result;
-            result = new InputChannel();
+            InputChannel result = new InputChannel();
             result.readFromParcel(source);
-            return (InputChannel)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //InputChannel result = new InputChannel();
-            //result.readFromParcel(source);
-            //return result;
+            return result;
         }
-
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.863 -0400", hash_original_method = "C2AA7A2AF034D29E3F507E8F25F9D2CD", hash_generated_method = "937ABECCBDBE7C5ED04BBE95DE1773AC")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public InputChannel[] newArray(int size) {
-            dsTaint.addTaint(size);
-            InputChannel[] varD3D9ED592B2F4EA60D3DF1039656F9A2_850659461 = (new InputChannel[size]);
-            return (InputChannel[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new InputChannel[size];
+            return new InputChannel[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

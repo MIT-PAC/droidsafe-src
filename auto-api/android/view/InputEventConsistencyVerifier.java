@@ -11,44 +11,83 @@ import android.os.Build;
 import android.util.Log;
 
 public final class InputEventConsistencyVerifier {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.239 -0400", hash_original_field = "02B8E2B08EEFD631BD36F22665C339F2", hash_generated_field = "842464D18B9CC1D906D30912951F1B29")
+
     private Object mCaller;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.239 -0400", hash_original_field = "9C3CD7D37D3E1E66BE9B3B005FC98B3A", hash_generated_field = "43F71E9173849705E01112D0229448B4")
+
     private int mFlags;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.239 -0400", hash_original_field = "503F6607C959C61B036C1484733875DB", hash_generated_field = "59F9615F1046A159253328ABFF9EBAC4")
+
     private String mLogTag;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "EE9CC63E94F20AF8999429F0CFA81933", hash_generated_field = "CAF007840D1F7323B1001E7DD39DA851")
+
     private InputEvent mLastEvent;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "A0ABA9CA907A59C8D456966BBA1B3887", hash_generated_field = "7BD27485A06A6A1AC8080AE3638DE4F4")
+
     private String mLastEventType;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "9B5513F064DD0C164336A4318307FD8E", hash_generated_field = "6141C906002BAC7131BFF645A86E7469")
+
     private int mLastNestingLevel;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "19DEACD4170AE518A6DE25F40D57CC5E", hash_generated_field = "860F0DD6CB41AA51A689A023866EB3EC")
+
     private InputEvent[] mRecentEvents;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "1CBB3F568975EF8EC30EEC1AB97967F2", hash_generated_field = "EA05C25F3223B278A2037BD67E368C3A")
+
     private boolean[] mRecentEventsUnhandled;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "96ABAE2065AC7130FA9A0F86D456D0B5", hash_generated_field = "30754FF941B62BB39BC4DA77B462515F")
+
     private int mMostRecentEventIndex;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "37155EC34151C4A4C889EC884F50AEEA", hash_generated_field = "41D4493BA1E5584628EA45425F6D040D")
+
     private InputEvent mCurrentEvent;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "AB1A563C338454CDCDE6E69607B9426B", hash_generated_field = "6DB375435025884B6151B31AFFFABC76")
+
     private String mCurrentEventType;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "EABE08FDF07FFC82E191D864B705E825", hash_generated_field = "54CDF24A71BB09237A10056FCD052ACC")
+
     private KeyState mKeyStateList;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "CC8BB3617BE25520DEF765C8BDA61DEB", hash_generated_field = "EE4A6262291D828DA2F877FD0D0E2FF0")
+
     private boolean mTrackballDown;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "401E99879E2D5AB198383085D49D3A06", hash_generated_field = "A06A640C9360F807D330C6AC7DC6EC56")
+
     private boolean mTrackballUnhandled;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "29D0EFD7BBEBE9EF2D55C8D205D29A42", hash_generated_field = "2E6E4A3402809A29F95231522CC6E70D")
+
     private int mTouchEventStreamPointers;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "76A973B325B8C28F2B88CFCCE43EA268", hash_generated_field = "55B14E4F3F5DFF6FBC6711B83FE98065")
+
     private int mTouchEventStreamDeviceId = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "36B6F011CE0CBE093880BFCE3E88F860", hash_generated_field = "301EA641826E495DAC0F1004C4FD7D72")
+
     private int mTouchEventStreamSource;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "D28D9276F0CCF57EAA41F1CA21516D3A", hash_generated_field = "4ADB7785313125C3F9545C94531D1258")
+
     private boolean mTouchEventStreamIsTainted;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "97E3F7FCB6911501B81AF9CEA6EB9D1F", hash_generated_field = "AAA9E205D77F337A8F1503284ADA9497")
+
     private boolean mTouchEventStreamUnhandled;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "ABC622DD1CF6B937B2EE57C4308724EF", hash_generated_field = "A1EEE3B7C7E4EEB7928D87C1E14B5A64")
+
     private boolean mHoverEntered;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.240 -0400", hash_original_field = "0FF2EDE5A69E1ED5164E5AE0CA0A580F", hash_generated_field = "0E37C0AC706495641748D32B4C94C2EF")
+
     private StringBuilder mViolationMessage;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.916 -0400", hash_original_method = "D65E8A245B5C473707AFD205D57D3AF8", hash_generated_method = "A5B1D2DFA661EA3A2B6688AE8E01B091")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InputEventConsistencyVerifier(Object caller, int flags) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.249 -0400", hash_original_method = "D65E8A245B5C473707AFD205D57D3AF8", hash_generated_method = "591FC6399E9E7DE182F3E81EA2CB9081")
+    public  InputEventConsistencyVerifier(Object caller, int flags) {
         this(caller, flags, InputEventConsistencyVerifier.class.getSimpleName());
-        dsTaint.addTaint(caller.dsTaint);
-        dsTaint.addTaint(flags);
+        addTaint(caller.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.916 -0400", hash_original_method = "31CA6A116339576A3C7E1C4293F4F7B1", hash_generated_method = "A0214F5B2C0D9EB10AE4F93D054F16EF")
-    @DSModeled(DSC.SAFE)
-    public InputEventConsistencyVerifier(Object caller, int flags, String logTag) {
-        dsTaint.addTaint(caller.dsTaint);
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(logTag);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.250 -0400", hash_original_method = "31CA6A116339576A3C7E1C4293F4F7B1", hash_generated_method = "25151441769D8C7D937887594A926350")
+    public  InputEventConsistencyVerifier(Object caller, int flags, String logTag) {
+        this.mCaller = caller;
+        this.mFlags = flags;
         this.mLogTag = (logTag != null) ? logTag : "InputEventConsistencyVerifier";
         // ---------- Original Method ----------
         //this.mCaller = caller;
@@ -62,8 +101,7 @@ public final class InputEventConsistencyVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.916 -0400", hash_original_method = "13418E29B3FCE72BDE84CBF193C1BADD", hash_generated_method = "D7CDA61C79F157179A553E8CADD14BCE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.251 -0400", hash_original_method = "13418E29B3FCE72BDE84CBF193C1BADD", hash_generated_method = "D7CDA61C79F157179A553E8CADD14BCE")
     public void reset() {
         mLastEvent = null;
         mLastNestingLevel = 0;
@@ -96,12 +134,9 @@ public final class InputEventConsistencyVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.917 -0400", hash_original_method = "9981F0DD702462FD09DA371539E225DF", hash_generated_method = "B43F408134FF34BCBE90E803D49C72A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.252 -0400", hash_original_method = "9981F0DD702462FD09DA371539E225DF", hash_generated_method = "6B15630324C59C8B4D88EBF93DF6FDE4")
     public void onInputEvent(InputEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(nestingLevel);
-        dsTaint.addTaint(event.dsTaint);
         {
             KeyEvent keyEvent;
             keyEvent = (KeyEvent)event;
@@ -111,12 +146,12 @@ public final class InputEventConsistencyVerifier {
             MotionEvent motionEvent;
             motionEvent = (MotionEvent)event;
             {
-                boolean var1D97065BD820BD0456B45C7E9DBBA082_934563949 = (motionEvent.isTouchEvent());
+                boolean var1D97065BD820BD0456B45C7E9DBBA082_1678246807 = (motionEvent.isTouchEvent());
                 {
                     onTouchEvent(motionEvent, nestingLevel);
                 } //End block
                 {
-                    boolean var1548696A1C108F52D98124BF03CF8313_295093095 = ((motionEvent.getSource() & InputDevice.SOURCE_CLASS_TRACKBALL) != 0);
+                    boolean var1548696A1C108F52D98124BF03CF8313_51678156 = ((motionEvent.getSource() & InputDevice.SOURCE_CLASS_TRACKBALL) != 0);
                     {
                         onTrackballEvent(motionEvent, nestingLevel);
                     } //End block
@@ -126,6 +161,8 @@ public final class InputEventConsistencyVerifier {
                 } //End collapsed parenthetic
             } //End collapsed parenthetic
         } //End block
+        addTaint(event.getTaint());
+        addTaint(nestingLevel);
         // ---------- Original Method ----------
         //if (event instanceof KeyEvent) {
             //final KeyEvent keyEvent = (KeyEvent)event;
@@ -143,14 +180,11 @@ public final class InputEventConsistencyVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.918 -0400", hash_original_method = "37A5317EE58F7483AB8019E5DEA39C1C", hash_generated_method = "6DDEC731A11D4A37634A74B754AB8AE4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.270 -0400", hash_original_method = "37A5317EE58F7483AB8019E5DEA39C1C", hash_generated_method = "270C22E448ED5B130090EB9046B6C73B")
     public void onKeyEvent(KeyEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(nestingLevel);
-        dsTaint.addTaint(event.dsTaint);
         {
-            boolean var1C9540E6394A7A11097E4E4C24A69E5A_1601965182 = (!startEvent(event, nestingLevel, EVENT_TYPE_KEY));
+            boolean var1C9540E6394A7A11097E4E4C24A69E5A_1593859214 = (!startEvent(event, nestingLevel, EVENT_TYPE_KEY));
         } //End collapsed parenthetic
         try 
         {
@@ -172,7 +206,7 @@ public final class InputEventConsistencyVerifier {
                         state.unhandled = false;
                     } //End block
                     {
-                        boolean varBB7C3BAA0F2DE303A64E00E840FF7A59_386258291 = ((mFlags & FLAG_RAW_DEVICE_INPUT) == 0
+                        boolean varBB7C3BAA0F2DE303A64E00E840FF7A59_884849508 = ((mFlags & FLAG_RAW_DEVICE_INPUT) == 0
                                 && event.getRepeatCount() == 0);
                         {
                             problem("ACTION_DOWN but key is already down and this event "
@@ -206,19 +240,18 @@ public final class InputEventConsistencyVerifier {
         {
             finishEvent();
         } //End block
+        addTaint(event.getTaint());
+        addTaint(nestingLevel);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.919 -0400", hash_original_method = "742053359AC2416542EBDE8E8736FB44", hash_generated_method = "1FBFA141258AA45200CBFCDD5F0E47AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.272 -0400", hash_original_method = "742053359AC2416542EBDE8E8736FB44", hash_generated_method = "221747980E5561E862672F30308CFFAF")
     public void onTrackballEvent(MotionEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(nestingLevel);
-        dsTaint.addTaint(event.dsTaint);
         {
-            boolean var5BA64422812B4CD0774617583F7E1D53_1478293655 = (!startEvent(event, nestingLevel, EVENT_TYPE_TRACKBALL));
+            boolean var5BA64422812B4CD0774617583F7E1D53_1144847885 = (!startEvent(event, nestingLevel, EVENT_TYPE_TRACKBALL));
         } //End collapsed parenthetic
         try 
         {
@@ -266,12 +299,12 @@ public final class InputEventConsistencyVerifier {
                                 + " for trackball event.");
                 //End case default 
                 {
-                    boolean varF8125AB1D243142529D579C7BF1C5525_17804765 = (mTrackballDown && event.getPressure() <= 0);
+                    boolean varF8125AB1D243142529D579C7BF1C5525_2007567266 = (mTrackballDown && event.getPressure() <= 0);
                     {
                         problem("Trackball is down but pressure is not greater than 0.");
                     } //End block
                     {
-                        boolean var48456D7B62EC643623B97245B65EE0A7_264703654 = (!mTrackballDown && event.getPressure() != 0);
+                        boolean var48456D7B62EC643623B97245B65EE0A7_1364456049 = (!mTrackballDown && event.getPressure() != 0);
                         {
                             problem("Trackball is up but pressure is not equal to 0.");
                         } //End block
@@ -286,19 +319,18 @@ public final class InputEventConsistencyVerifier {
         {
             finishEvent();
         } //End block
+        addTaint(event.getTaint());
+        addTaint(nestingLevel);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.921 -0400", hash_original_method = "F64D7AF6BB2368971DDEEF01EB83BDA6", hash_generated_method = "FCC50A5F2889233F1965AFD3A4C8B110")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.276 -0400", hash_original_method = "F64D7AF6BB2368971DDEEF01EB83BDA6", hash_generated_method = "E4BE84DF1C7D1ECE03E3F69778DEFB05")
     public void onTouchEvent(MotionEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(nestingLevel);
-        dsTaint.addTaint(event.dsTaint);
         {
-            boolean var5C200FBFC1B0213F6CDA14409F83D214_976177908 = (!startEvent(event, nestingLevel, EVENT_TYPE_TOUCH));
+            boolean var5C200FBFC1B0213F6CDA14409F83D214_839659603 = (!startEvent(event, nestingLevel, EVENT_TYPE_TOUCH));
         } //End collapsed parenthetic
         int action;
         action = event.getAction();
@@ -460,19 +492,17 @@ public final class InputEventConsistencyVerifier {
         {
             finishEvent();
         } //End block
+        addTaint(nestingLevel);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.922 -0400", hash_original_method = "23EA37DFEC977078F682E35F151F1942", hash_generated_method = "84FC8A465DE60E2E8DE529484AA88A48")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.289 -0400", hash_original_method = "23EA37DFEC977078F682E35F151F1942", hash_generated_method = "0C79C5C7EFD5DE79CBDD79AC0091CB50")
     public void onGenericMotionEvent(MotionEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(nestingLevel);
-        dsTaint.addTaint(event.dsTaint);
         {
-            boolean var6C693FE76F7AB1F8804D07C4E7E4F955_1675192995 = (!startEvent(event, nestingLevel, EVENT_TYPE_GENERIC_MOTION));
+            boolean var6C693FE76F7AB1F8804D07C4E7E4F955_1375829831 = (!startEvent(event, nestingLevel, EVENT_TYPE_GENERIC_MOTION));
         } //End collapsed parenthetic
         try 
         {
@@ -525,17 +555,16 @@ public final class InputEventConsistencyVerifier {
         {
             finishEvent();
         } //End block
+        addTaint(event.getTaint());
+        addTaint(nestingLevel);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.922 -0400", hash_original_method = "95A33BD7B12ABE8439BBD32736BE35D7", hash_generated_method = "F075A780DF8F9C2A44D985933CAAC9F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.291 -0400", hash_original_method = "95A33BD7B12ABE8439BBD32736BE35D7", hash_generated_method = "4A772EAFD5E9BCCDCDBB2E64DA813F49")
     public void onUnhandledEvent(InputEvent event, int nestingLevel) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(nestingLevel);
-        dsTaint.addTaint(event.dsTaint);
         {
             mRecentEventsUnhandled[mMostRecentEventIndex] = true;
         } //End block
@@ -558,12 +587,12 @@ public final class InputEventConsistencyVerifier {
             MotionEvent motionEvent;
             motionEvent = (MotionEvent)event;
             {
-                boolean var1D97065BD820BD0456B45C7E9DBBA082_346291604 = (motionEvent.isTouchEvent());
+                boolean var1D97065BD820BD0456B45C7E9DBBA082_939788119 = (motionEvent.isTouchEvent());
                 {
                     mTouchEventStreamUnhandled = true;
                 } //End block
                 {
-                    boolean var1548696A1C108F52D98124BF03CF8313_303553665 = ((motionEvent.getSource() & InputDevice.SOURCE_CLASS_TRACKBALL) != 0);
+                    boolean var1548696A1C108F52D98124BF03CF8313_1437967312 = ((motionEvent.getSource() & InputDevice.SOURCE_CLASS_TRACKBALL) != 0);
                     {
                         {
                             mTrackballUnhandled = true;
@@ -572,21 +601,22 @@ public final class InputEventConsistencyVerifier {
                 } //End collapsed parenthetic
             } //End collapsed parenthetic
         } //End block
+        addTaint(event.getTaint());
+        addTaint(nestingLevel);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.922 -0400", hash_original_method = "0D02225F7CFB86AB0627FF86E895BCB3", hash_generated_method = "010DF0382C9141526390EC3C0A9B643E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.308 -0400", hash_original_method = "0D02225F7CFB86AB0627FF86E895BCB3", hash_generated_method = "E0CE0EC0BF1FFD9E2AF81039BE46804E")
     private void ensureMetaStateIsNormalized(int metaState) {
-        dsTaint.addTaint(metaState);
         int normalizedMetaState;
         normalizedMetaState = KeyEvent.normalizeMetaState(metaState);
         {
             problem(String.format("Metastate not normalized.  Was 0x%08x but expected 0x%08x.",
                     metaState, normalizedMetaState));
         } //End block
+        addTaint(metaState);
         // ---------- Original Method ----------
         //final int normalizedMetaState = KeyEvent.normalizeMetaState(metaState);
         //if (normalizedMetaState != metaState) {
@@ -596,16 +626,15 @@ public final class InputEventConsistencyVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.923 -0400", hash_original_method = "960C41882671A36CAB1E6050FF4DEA3B", hash_generated_method = "E0D0B2BA3B3A58717B7E7E0A461E60BA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.308 -0400", hash_original_method = "960C41882671A36CAB1E6050FF4DEA3B", hash_generated_method = "B94DA7A6A6E3346BC9CC70B4145A7347")
     private void ensurePointerCountIsOneForThisAction(MotionEvent event) {
-        dsTaint.addTaint(event.dsTaint);
         int pointerCount;
         pointerCount = event.getPointerCount();
         {
             problem("Pointer count is " + pointerCount + " but it should always be 1 for "
                     + MotionEvent.actionToString(event.getAction()));
         } //End block
+        addTaint(event.getTaint());
         // ---------- Original Method ----------
         //final int pointerCount = event.getPointerCount();
         //if (pointerCount != 1) {
@@ -615,16 +644,15 @@ public final class InputEventConsistencyVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.923 -0400", hash_original_method = "418A844BE60240583EF50FE17898B3BB", hash_generated_method = "D36AA3C2E475EE3E0504FB4BE55F8871")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.309 -0400", hash_original_method = "418A844BE60240583EF50FE17898B3BB", hash_generated_method = "35B453FCF85CB5051E1019CB59546869")
     private void ensureHistorySizeIsZeroForThisAction(MotionEvent event) {
-        dsTaint.addTaint(event.dsTaint);
         int historySize;
         historySize = event.getHistorySize();
         {
             problem("History size is " + historySize + " but it should always be 0 for "
                     + MotionEvent.actionToString(event.getAction()));
         } //End block
+        addTaint(event.getTaint());
         // ---------- Original Method ----------
         //final int historySize = event.getHistorySize();
         //if (historySize != 0) {
@@ -634,18 +662,22 @@ public final class InputEventConsistencyVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.923 -0400", hash_original_method = "4D608F0C62317EB539D3EDD1A5B0BBF8", hash_generated_method = "92C16905BFED32AE90BB15146E5C0EAD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.310 -0400", hash_original_method = "4D608F0C62317EB539D3EDD1A5B0BBF8", hash_generated_method = "8530B14982F3EB12C75D369E5A2A9669")
     private boolean startEvent(InputEvent event, int nestingLevel, String eventType) {
-        dsTaint.addTaint(nestingLevel);
-        dsTaint.addTaint(event.dsTaint);
-        dsTaint.addTaint(eventType);
+        {
+            mLastEvent = event;
+            mLastEventType = eventType;
+            mLastNestingLevel = nestingLevel;
+        } //End block
         {
             mLastEvent = null;
             mLastEventType = null;
             mLastNestingLevel = 0;
         } //End block
-        return dsTaint.getTaintBoolean();
+        mCurrentEvent = event;
+        mCurrentEventType = eventType;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_258252921 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_258252921;
         // ---------- Original Method ----------
         //if (event == mLastEvent && nestingLevel < mLastNestingLevel
                 //&& eventType == mLastEventType) {
@@ -666,14 +698,13 @@ public final class InputEventConsistencyVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.924 -0400", hash_original_method = "ED6D322EBF7819A0A849ACCBA13E8A32", hash_generated_method = "0508F019E47243A4022B22E240AC3D42")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.320 -0400", hash_original_method = "ED6D322EBF7819A0A849ACCBA13E8A32", hash_generated_method = "66C1E5FAEF0CACB4D5B9D7A4645109EF")
     private void finishEvent() {
         {
-            boolean var900C4014E5F18032AC7EF14D50B77173_209534243 = (mViolationMessage != null && mViolationMessage.length() != 0);
+            boolean var900C4014E5F18032AC7EF14D50B77173_1838149950 = (mViolationMessage != null && mViolationMessage.length() != 0);
             {
                 {
-                    boolean varF73E249DD60ACAF7AD897F2896801AA9_1227500004 = (!mCurrentEvent.isTainted());
+                    boolean varF73E249DD60ACAF7AD897F2896801AA9_1548917465 = (!mCurrentEvent.isTainted());
                     {
                         mViolationMessage.append("\n  in ").append(mCaller);
                         mViolationMessage.append("\n  ");
@@ -733,15 +764,13 @@ public final class InputEventConsistencyVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.924 -0400", hash_original_method = "C6124E8B7D001D6ECE47F875379D529E", hash_generated_method = "2A2A94841288E9B98A25C2AB17EBBE53")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.329 -0400", hash_original_method = "C6124E8B7D001D6ECE47F875379D529E", hash_generated_method = "0204C8B0065CE4D5C0982FA6B16F7E05")
     private void problem(String message) {
-        dsTaint.addTaint(message);
         {
             mViolationMessage = new StringBuilder();
         } //End block
         {
-            boolean varADDF521E749D23BF1A55223D8CD76170_414047376 = (mViolationMessage.length() == 0);
+            boolean varADDF521E749D23BF1A55223D8CD76170_1040442774 = (mViolationMessage.length() == 0);
             {
                 mViolationMessage.append(mCurrentEventType).append(": ");
             } //End block
@@ -750,6 +779,7 @@ public final class InputEventConsistencyVerifier {
             } //End block
         } //End collapsed parenthetic
         mViolationMessage.append(message);
+        addTaint(message.getTaint());
         // ---------- Original Method ----------
         //if (mViolationMessage == null) {
             //mViolationMessage = new StringBuilder();
@@ -763,13 +793,10 @@ public final class InputEventConsistencyVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.924 -0400", hash_original_method = "98F44F7E9C89F442263CA208119E2058", hash_generated_method = "BF125DDFC2F4AACC3A7DA4DD7A6A8635")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.330 -0400", hash_original_method = "98F44F7E9C89F442263CA208119E2058", hash_generated_method = "10988604CACEB484A37E87E9BFACCE1B")
     private KeyState findKeyState(int deviceId, int source, int keyCode, boolean remove) {
-        dsTaint.addTaint(keyCode);
-        dsTaint.addTaint(remove);
-        dsTaint.addTaint(source);
-        dsTaint.addTaint(deviceId);
+        KeyState varB4EAC82CA7396A68D541C85D26508E83_419242884 = null; //Variable for return #1
+        KeyState varB4EAC82CA7396A68D541C85D26508E83_512960453 = null; //Variable for return #2
         KeyState last;
         last = null;
         KeyState state;
@@ -785,11 +812,27 @@ public final class InputEventConsistencyVerifier {
                     } //End block
                     state.next = null;
                 } //End block
+                varB4EAC82CA7396A68D541C85D26508E83_419242884 = state;
             } //End block
             last = state;
             state = state.next;
         } //End block
-        return (KeyState)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_512960453 = null;
+        addTaint(deviceId);
+        addTaint(source);
+        addTaint(keyCode);
+        addTaint(remove);
+        KeyState varA7E53CE21691AB073D9660D615818899_1555438259; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1555438259 = varB4EAC82CA7396A68D541C85D26508E83_419242884;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1555438259 = varB4EAC82CA7396A68D541C85D26508E83_512960453;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1555438259.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1555438259;
         // ---------- Original Method ----------
         //KeyState last = null;
         //KeyState state = mKeyStateList;
@@ -813,16 +856,15 @@ public final class InputEventConsistencyVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.925 -0400", hash_original_method = "49CD2D0DE125B77D543B3E0017318A6E", hash_generated_method = "90FD06C36AAD8409BB8B39BE042B976C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.345 -0400", hash_original_method = "49CD2D0DE125B77D543B3E0017318A6E", hash_generated_method = "B0E416B4B2EB08133AF21178DE4D94E4")
     private void addKeyState(int deviceId, int source, int keyCode) {
-        dsTaint.addTaint(keyCode);
-        dsTaint.addTaint(source);
-        dsTaint.addTaint(deviceId);
         KeyState state;
         state = KeyState.obtain(deviceId, source, keyCode);
         state.next = mKeyStateList;
         mKeyStateList = state;
+        addTaint(deviceId);
+        addTaint(source);
+        addTaint(keyCode);
         // ---------- Original Method ----------
         //KeyState state = KeyState.obtain(deviceId, source, keyCode);
         //state.next = mKeyStateList;
@@ -831,15 +873,24 @@ public final class InputEventConsistencyVerifier {
 
     
     private static final class KeyState {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.345 -0400", hash_original_field = "D0CAB90D8D20D57E2F2B9BE52F7DD25D", hash_generated_field = "A4637F51FF091C45870D06CF8B571722")
+
         public KeyState next;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.345 -0400", hash_original_field = "671B750DAD5F30D6EAF736B4CB910D35", hash_generated_field = "B25950F42C189E4AB05FFB7366B0AA73")
+
         public int deviceId;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.345 -0400", hash_original_field = "36CD38F49B9AFA08222C0DC9EBFE35EB", hash_generated_field = "865C846F4D1F08194526221E7C99DDEB")
+
         public int source;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.345 -0400", hash_original_field = "B96BEB1FB95F7FA45257BB48942AEF8A", hash_generated_field = "000F6935635EB02934CE0DE5E09F2D3E")
+
         public int keyCode;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.345 -0400", hash_original_field = "F500732166205CC78FB0A5FC01440B5E", hash_generated_field = "7DE29E460259F9098EBFCEFDF94DB0DA")
+
         public boolean unhandled;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.925 -0400", hash_original_method = "9B72C46296302693275D5291E4057DE0", hash_generated_method = "46EE7D525ED839CFC8CA395DBE68DDF7")
-        @DSModeled(DSC.SAFE)
-        private KeyState() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.346 -0400", hash_original_method = "9B72C46296302693275D5291E4057DE0", hash_generated_method = "46EE7D525ED839CFC8CA395DBE68DDF7")
+        private  KeyState() {
             // ---------- Original Method ----------
         }
 
@@ -862,8 +913,7 @@ public final class InputEventConsistencyVerifier {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.925 -0400", hash_original_method = "F16B27E6183802CE84F6921B26D81A30", hash_generated_method = "B629E2138B7F43397A9CD306024B7EA5")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.347 -0400", hash_original_method = "F16B27E6183802CE84F6921B26D81A30", hash_generated_method = "B629E2138B7F43397A9CD306024B7EA5")
         public void recycle() {
             {
                 next = mRecycledList;
@@ -877,18 +927,36 @@ public final class InputEventConsistencyVerifier {
         }
 
         
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.347 -0400", hash_original_field = "2F26FA40588BE826278064C5E55CF30D", hash_generated_field = "79BE45FB0228F25C0A9DC9B58E9E4BD0")
+
         private static Object mRecycledListLock = new Object();
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.347 -0400", hash_original_field = "FB0BE9294B410C125F1CF9B917162013", hash_generated_field = "379CC4BA4A594A20A4231B542C74B1F1")
+
         private static KeyState mRecycledList;
     }
 
 
     
-    private static final boolean IS_ENG_BUILD = "eng".equals(Build.TYPE);
-    private static final String EVENT_TYPE_KEY = "KeyEvent";
-    private static final String EVENT_TYPE_TRACKBALL = "TrackballEvent";
-    private static final String EVENT_TYPE_TOUCH = "TouchEvent";
-    private static final String EVENT_TYPE_GENERIC_MOTION = "GenericMotionEvent";
-    private static final int RECENT_EVENTS_TO_LOG = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.347 -0400", hash_original_field = "9D23AE2E1DF0783311B7EE88635EC302", hash_generated_field = "B7A55850ECF055033089690CFA190DA8")
+
+    private static boolean IS_ENG_BUILD = "eng".equals(Build.TYPE);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.347 -0400", hash_original_field = "B23BAD53F57FAA7D6D0DDB56431F1C6D", hash_generated_field = "53548A5D439E2265BC79B7422266ABF2")
+
+    private static String EVENT_TYPE_KEY = "KeyEvent";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.347 -0400", hash_original_field = "5693E6626829FCA7F478BA981291812A", hash_generated_field = "41B52FAD3A1D463DCA89CC8DBFC25B6B")
+
+    private static String EVENT_TYPE_TRACKBALL = "TrackballEvent";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.347 -0400", hash_original_field = "BD7073E4DEE05ECA262F691840D5A9A5", hash_generated_field = "7ECD85670C6C5433FACC5AE0C2A30627")
+
+    private static String EVENT_TYPE_TOUCH = "TouchEvent";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.347 -0400", hash_original_field = "30F466EA9F17B988DF30952FE936D158", hash_generated_field = "FC4529E0E88EA798396AE4FE922255FB")
+
+    private static String EVENT_TYPE_GENERIC_MOTION = "GenericMotionEvent";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.347 -0400", hash_original_field = "4CA2B0E213BF2ED28B6656FE58CDEB9B", hash_generated_field = "EE668DE3F5CA3329543E1A9CC0D7F6ED")
+
+    private static int RECENT_EVENTS_TO_LOG = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:48.347 -0400", hash_original_field = "C40CAA681DE8375D99C611EE6180DE21", hash_generated_field = "1C85819CF19DB466C1BC01FCC89D7D5E")
+
     public static final int FLAG_RAW_DEVICE_INPUT = 1 << 0;
 }
 

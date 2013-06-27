@@ -11,24 +11,25 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Duration implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.559 -0400", hash_original_field = "83EDDDD23EF2D6AE09F491892B0578B3", hash_generated_field = "35448C58A22DDC559F47B71F64B98655")
+
     public int timeInterval;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.559 -0400", hash_original_field = "27925A6F36FEC889D656734B42198E41", hash_generated_field = "E104F5569DCF2B31AE0BB025718138E9")
+
     public TimeUnit timeUnit;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.890 -0400", hash_original_method = "49A364E6511EE6731DA0B9EFBCF0B191", hash_generated_method = "0CD9751810AF7E5481052C44AB6D9B2E")
-    @DSModeled(DSC.SAFE)
-    public Duration(int timeInterval, TimeUnit timeUnit) {
-        dsTaint.addTaint(timeInterval);
-        dsTaint.addTaint(timeUnit.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.560 -0400", hash_original_method = "49A364E6511EE6731DA0B9EFBCF0B191", hash_generated_method = "8F8EFD460557BC387A4BF66295DC5E94")
+    public  Duration(int timeInterval, TimeUnit timeUnit) {
+        this.timeInterval = timeInterval;
+        this.timeUnit = timeUnit;
         // ---------- Original Method ----------
         //this.timeInterval = timeInterval;
         //this.timeUnit = timeUnit;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.890 -0400", hash_original_method = "69931BD60CFF69C2725A634D6D46CC0C", hash_generated_method = "6594ED53B2D47F4E9F6E131CC64A90C0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private Duration(Parcel in) {
-        dsTaint.addTaint(in.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.561 -0400", hash_original_method = "69931BD60CFF69C2725A634D6D46CC0C", hash_generated_method = "11E9DFB1B0D109A8D4B961250E06B76D")
+    private  Duration(Parcel in) {
         timeInterval = in.readInt();
         timeUnit = TimeUnit.values()[in.readInt()];
         // ---------- Original Method ----------
@@ -37,23 +38,22 @@ public class Duration implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.890 -0400", hash_original_method = "7A3E2E3AAE56FB706A1FF7E711848E72", hash_generated_method = "C215457F8A5BCF39E76570B4904E2DE5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.587 -0400", hash_original_method = "7A3E2E3AAE56FB706A1FF7E711848E72", hash_generated_method = "433D838BDDD8FD085D085F15C38080AD")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeInt(timeInterval);
         dest.writeInt(timeUnit.ordinal());
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeInt(timeInterval);
         //dest.writeInt(timeUnit.ordinal());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.890 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.588 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2268D432197EF9198D0F640852D82B38")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1121893468 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1121893468;
         // ---------- Original Method ----------
         //return 0;
     }
@@ -73,29 +73,16 @@ public class Duration implements Parcelable {
     }
 
     
-    public static final Parcelable.Creator<Duration> CREATOR = new Parcelable.Creator<Duration>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.891 -0400", hash_original_method = "68D9516041C92E7EB281A6DDCC1708DE", hash_generated_method = "55E7A37FC55693299BB942189AE3A0EB")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.588 -0400", hash_original_field = "A45E48454A5718B4D58B745F8A75DBD7", hash_generated_field = "3313211CC65C61401C6638CF5336E71F")
+
+    public static final Parcelable.Creator<Duration> CREATOR = new Parcelable.Creator<Duration>() {
         public Duration createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            Duration var4CA2023526B2EBE9BAE6BF18ADB250CE_1633787437 = (new Duration(in));
-            return (Duration)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new Duration(in);
+            return new Duration(in);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.891 -0400", hash_original_method = "FA2B9C14FB9C286DB1C90150CBF11069", hash_generated_method = "2FDEA6FA032A67F963C623374E4DAE62")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public Duration[] newArray(int size) {
-            dsTaint.addTaint(size);
-            Duration[] varE53A5EC0C7DF647975C772EEA28FD723_1682907850 = (new Duration[size]);
-            return (Duration[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new Duration[size];
+            return new Duration[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

@@ -10,9 +10,8 @@ import java.util.Iterator;
 
 public final class SneakyThrow {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.693 -0400", hash_original_method = "F6943C77D63FE9259DE7FD0A0682E999", hash_generated_method = "19FDB13A46BEE2B1007D50142F524148")
-    @DSModeled(DSC.SAFE)
-    private SneakyThrow() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.338 -0400", hash_original_method = "F6943C77D63FE9259DE7FD0A0682E999", hash_generated_method = "19FDB13A46BEE2B1007D50142F524148")
+    private  SneakyThrow() {
         // ---------- Original Method ----------
     }
 

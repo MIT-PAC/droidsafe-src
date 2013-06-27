@@ -30,17 +30,25 @@ import android.util.Xml;
 import java.io.IOException;
 
 public final class WallpaperInfo implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.716 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "6778D731BF0BE2E5E9F46404EEE44664")
+
     ResolveInfo mService;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.716 -0400", hash_original_field = "A7226C9DD6CAE5D50DDA70DBC0A93E5E", hash_generated_field = "1E356AACEE2D50E0C905EA0627229FF1")
+
     String mSettingsActivityName;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.717 -0400", hash_original_field = "4554908A8E26081711E37F2891765BE1", hash_generated_field = "C308135F64EE76FAD8A4F39458F20392")
+
     int mThumbnailResource;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.718 -0400", hash_original_field = "8EBCDAD2B63FBADDF3471AEE8D1290BF", hash_generated_field = "0691CCFFB273CFC14946667627C5AD49")
+
     int mAuthorResource;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.719 -0400", hash_original_field = "50344039A2139E68EBB953B2C832814A", hash_generated_field = "4746EA78955ECA6177E056F9EE2DC4A6")
+
     int mDescriptionResource;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.102 -0400", hash_original_method = "74057F7C8E144B72C39BB7F86C2AB292", hash_generated_method = "052E6707B66DE0E25F0B3CCADB1E1364")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public WallpaperInfo(Context context, ResolveInfo service) throws XmlPullParserException, IOException {
-        dsTaint.addTaint(service.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.758 -0400", hash_original_method = "74057F7C8E144B72C39BB7F86C2AB292", hash_generated_method = "9AC593D1B4E0E9568BA07DA68CFAF448")
+    public  WallpaperInfo(Context context, ResolveInfo service) throws XmlPullParserException, IOException {
+        mService = service;
         ServiceInfo si;
         si = service.serviceInfo;
         PackageManager pm;
@@ -68,13 +76,13 @@ public final class WallpaperInfo implements Parcelable {
             attrs = Xml.asAttributeSet(parser);
             int type;
             {
-                boolean var995057C222283DCE9E465AE35974357A_869749861 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
+                boolean var995057C222283DCE9E465AE35974357A_1653196539 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
                     && type != XmlPullParser.START_TAG);
             } //End collapsed parenthetic
             String nodeName;
             nodeName = parser.getName();
             {
-                boolean var1A485311BBD4557C4268D292EA798D60_1819793296 = (!"wallpaper".equals(nodeName));
+                boolean var1A485311BBD4557C4268D292EA798D60_254528142 = (!"wallpaper".equals(nodeName));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException(
                         "Meta-data does not start with wallpaper tag");
@@ -109,15 +117,14 @@ public final class WallpaperInfo implements Parcelable {
         mThumbnailResource = thumbnailRes;
         mAuthorResource = authorRes;
         mDescriptionResource = descriptionRes;
+        addTaint(context.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.103 -0400", hash_original_method = "C0E8BFC94627855CBFADB81460DD6D49", hash_generated_method = "5C650029F1ECC23927B8934D65BC844A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     WallpaperInfo(Parcel source) {
-        dsTaint.addTaint(source.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.759 -0400", hash_original_method = "C0E8BFC94627855CBFADB81460DD6D49", hash_generated_method = "440597EE814EC8A35B340ADB80FE34F7")
+      WallpaperInfo(Parcel source) {
         mSettingsActivityName = source.readString();
         mThumbnailResource = source.readInt();
         mAuthorResource = source.readInt();
@@ -132,75 +139,96 @@ public final class WallpaperInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.103 -0400", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "63877C04759CD6A29BB5A9D09769BD95")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.790 -0400", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "62B5972BF07405A68BCCA86310E427BB")
     public String getPackageName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1828309631 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1828309631 = mService.serviceInfo.packageName;
+        varB4EAC82CA7396A68D541C85D26508E83_1828309631.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1828309631;
         // ---------- Original Method ----------
         //return mService.serviceInfo.packageName;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.104 -0400", hash_original_method = "E07B8397F26D2C3A4747E56AC8F0D204", hash_generated_method = "AFF3C5622D211F1659EB1D0A2141C7AB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.798 -0400", hash_original_method = "E07B8397F26D2C3A4747E56AC8F0D204", hash_generated_method = "10E589877C2293D3BB889759BFCBD3AF")
     public String getServiceName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1440002653 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1440002653 = mService.serviceInfo.name;
+        varB4EAC82CA7396A68D541C85D26508E83_1440002653.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1440002653;
         // ---------- Original Method ----------
         //return mService.serviceInfo.name;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.104 -0400", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "9C67A090AD36EBAC69BD5168FBDFB473")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.805 -0400", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "485C735BD6B976F186DA0EB1BE3D6F9C")
     public ServiceInfo getServiceInfo() {
-        return (ServiceInfo)dsTaint.getTaint();
+        ServiceInfo varB4EAC82CA7396A68D541C85D26508E83_1261779792 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1261779792 = mService.serviceInfo;
+        varB4EAC82CA7396A68D541C85D26508E83_1261779792.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1261779792;
         // ---------- Original Method ----------
         //return mService.serviceInfo;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.105 -0400", hash_original_method = "A035D08443F3F9853C50476F9CD3E50F", hash_generated_method = "2188AED21819A21139E13D755B9FE41C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.840 -0400", hash_original_method = "A035D08443F3F9853C50476F9CD3E50F", hash_generated_method = "81DA3F96054B9DA6482E12BF21922B6A")
     public ComponentName getComponent() {
-        ComponentName var36812892F2F610F061B81BA39B626ED6_445559203 = (new ComponentName(mService.serviceInfo.packageName,
-                mService.serviceInfo.name));
-        return (ComponentName)dsTaint.getTaint();
+        ComponentName varB4EAC82CA7396A68D541C85D26508E83_568710861 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_568710861 = new ComponentName(mService.serviceInfo.packageName,
+                mService.serviceInfo.name);
+        varB4EAC82CA7396A68D541C85D26508E83_568710861.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_568710861;
         // ---------- Original Method ----------
         //return new ComponentName(mService.serviceInfo.packageName,
                 //mService.serviceInfo.name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.105 -0400", hash_original_method = "DC118FA5C7EE28B6AE7273376F31713A", hash_generated_method = "4A5BBDC9FFD04641DD118D775FB9AE77")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.842 -0400", hash_original_method = "DC118FA5C7EE28B6AE7273376F31713A", hash_generated_method = "0AF8A9E802CC81A2A116F02056307742")
     public CharSequence loadLabel(PackageManager pm) {
-        dsTaint.addTaint(pm.dsTaint);
-        CharSequence var37856CDD70F50ABB3C82E07A4EC679C0_775817210 = (mService.loadLabel(pm));
-        return dsTaint.getTaintString();
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1998818458 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1998818458 = mService.loadLabel(pm);
+        addTaint(pm.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1998818458.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1998818458;
         // ---------- Original Method ----------
         //return mService.loadLabel(pm);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.105 -0400", hash_original_method = "0598EE9DB236F7268C8A7877021962D5", hash_generated_method = "978F8F7661CF8A4E546866F034E0852A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.860 -0400", hash_original_method = "0598EE9DB236F7268C8A7877021962D5", hash_generated_method = "9BA0B996501E8B7EF04181F76803AB08")
     public Drawable loadIcon(PackageManager pm) {
-        dsTaint.addTaint(pm.dsTaint);
-        Drawable var8EEC18B2BAAC36DADFAD2C3B55E7EE45_1078261085 = (mService.loadIcon(pm));
-        return (Drawable)dsTaint.getTaint();
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_764835948 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_764835948 = mService.loadIcon(pm);
+        addTaint(pm.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_764835948.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_764835948;
         // ---------- Original Method ----------
         //return mService.loadIcon(pm);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.106 -0400", hash_original_method = "C26983A19295502D4CFCF4D89E5CA369", hash_generated_method = "3D28E2EA1FC3B5F434DC2FF05289A7AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.862 -0400", hash_original_method = "C26983A19295502D4CFCF4D89E5CA369", hash_generated_method = "DB5229C1A13B331DB03E8E8643D8E301")
     public Drawable loadThumbnail(PackageManager pm) {
-        dsTaint.addTaint(pm.dsTaint);
-        Drawable varEFEB04D40443F6B5BBB2B59D7CE31154_1130984538 = (pm.getDrawable(mService.serviceInfo.packageName,
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_985108898 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1012197815 = null; //Variable for return #2
+        varB4EAC82CA7396A68D541C85D26508E83_985108898 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1012197815 = pm.getDrawable(mService.serviceInfo.packageName,
                               mThumbnailResource,
-                              mService.serviceInfo.applicationInfo));
-        return (Drawable)dsTaint.getTaint();
+                              mService.serviceInfo.applicationInfo);
+        addTaint(pm.getTaint());
+        Drawable varA7E53CE21691AB073D9660D615818899_348112736; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_348112736 = varB4EAC82CA7396A68D541C85D26508E83_985108898;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_348112736 = varB4EAC82CA7396A68D541C85D26508E83_1012197815;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_348112736.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_348112736;
         // ---------- Original Method ----------
         //if (mThumbnailResource < 0) return null;
         //return pm.getDrawable(mService.serviceInfo.packageName,
@@ -209,10 +237,9 @@ public final class WallpaperInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.106 -0400", hash_original_method = "9EB36950261646858CECEB28CEC974AC", hash_generated_method = "315D7B31F83EEEB33474AD4900AEB18F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.022 -0400", hash_original_method = "9EB36950261646858CECEB28CEC974AC", hash_generated_method = "B7AED9512915E2C9878ECA63587E6470")
     public CharSequence loadAuthor(PackageManager pm) throws NotFoundException {
-        dsTaint.addTaint(pm.dsTaint);
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2095458665 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new NotFoundException();
         String packageName;
         packageName = mService.resolvePackageName;
@@ -222,8 +249,10 @@ public final class WallpaperInfo implements Parcelable {
             packageName = mService.serviceInfo.packageName;
             applicationInfo = mService.serviceInfo.applicationInfo;
         } //End block
-        CharSequence var0DF353B6631EC85D484C0DB4210A67EF_1061037797 = (pm.getText(packageName, mAuthorResource, applicationInfo));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_2095458665 = pm.getText(packageName, mAuthorResource, applicationInfo);
+        addTaint(pm.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_2095458665.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2095458665;
         // ---------- Original Method ----------
         //if (mAuthorResource <= 0) throw new NotFoundException();
         //String packageName = mService.resolvePackageName;
@@ -236,10 +265,10 @@ public final class WallpaperInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.107 -0400", hash_original_method = "ECA3C93288FC3A8841FE238CFCF9AD1A", hash_generated_method = "92E1196102DF357B61B4537EA1652E39")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.043 -0400", hash_original_method = "ECA3C93288FC3A8841FE238CFCF9AD1A", hash_generated_method = "755546E59092403F2D3E3750024A3F2A")
     public CharSequence loadDescription(PackageManager pm) throws NotFoundException {
-        dsTaint.addTaint(pm.dsTaint);
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_914103617 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1143016477 = null; //Variable for return #2
         String packageName;
         packageName = mService.resolvePackageName;
         ApplicationInfo applicationInfo;
@@ -249,13 +278,24 @@ public final class WallpaperInfo implements Parcelable {
             applicationInfo = mService.serviceInfo.applicationInfo;
         } //End block
         {
-            CharSequence varE99A149A4D09E68099E99A96D5317342_783797780 = (pm.getText(packageName, mService.serviceInfo.descriptionRes,
-                    applicationInfo));
+            varB4EAC82CA7396A68D541C85D26508E83_914103617 = pm.getText(packageName, mService.serviceInfo.descriptionRes,
+                    applicationInfo);
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new NotFoundException();
-        CharSequence var24F6E6C6AB00139038D7D316F2849C4E_256125328 = (pm.getText(packageName, mDescriptionResource,
-                mService.serviceInfo.applicationInfo));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1143016477 = pm.getText(packageName, mDescriptionResource,
+                mService.serviceInfo.applicationInfo);
+        addTaint(pm.getTaint());
+        CharSequence varA7E53CE21691AB073D9660D615818899_180367234; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_180367234 = varB4EAC82CA7396A68D541C85D26508E83_914103617;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_180367234 = varB4EAC82CA7396A68D541C85D26508E83_1143016477;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_180367234.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_180367234;
         // ---------- Original Method ----------
         //String packageName = mService.resolvePackageName;
         //ApplicationInfo applicationInfo = null;
@@ -273,23 +313,24 @@ public final class WallpaperInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.107 -0400", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "A8B888BFD8A46E2CDEC1514677D36FA3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.048 -0400", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "0399D336ED6B66799B77AC3A723A2B6A")
     public String getSettingsActivity() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_272138762 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_272138762 = mSettingsActivityName;
+        varB4EAC82CA7396A68D541C85D26508E83_272138762.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_272138762;
         // ---------- Original Method ----------
         //return mSettingsActivityName;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.108 -0400", hash_original_method = "01A70486818EE80E3925B6A989FED93F", hash_generated_method = "390E64507D855F262C91CBF828425501")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.060 -0400", hash_original_method = "01A70486818EE80E3925B6A989FED93F", hash_generated_method = "D837342F7135DA886DBDD9FAEB55B9D5")
     public void dump(Printer pw, String prefix) {
-        dsTaint.addTaint(prefix);
-        dsTaint.addTaint(pw.dsTaint);
         pw.println(prefix + "Service:");
         mService.dump(pw, prefix + "  ");
         pw.println(prefix + "mSettingsActivityName=" + mSettingsActivityName);
+        addTaint(pw.getTaint());
+        addTaint(prefix.getTaint());
         // ---------- Original Method ----------
         //pw.println(prefix + "Service:");
         //mService.dump(pw, prefix + "  ");
@@ -297,11 +338,15 @@ public final class WallpaperInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.108 -0400", hash_original_method = "01F16DDF22698F82DBFF601E0002CE8F", hash_generated_method = "8B75CE55A74835F005C71B0C33748B9F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.074 -0400", hash_original_method = "01F16DDF22698F82DBFF601E0002CE8F", hash_generated_method = "D16A3DFD8D59A591431CC09681650592")
     @Override
     public String toString() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_381021445 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_381021445 = "WallpaperInfo{" + mService.serviceInfo.name
+                + ", settings: "
+                + mSettingsActivityName + "}";
+        varB4EAC82CA7396A68D541C85D26508E83_381021445.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_381021445;
         // ---------- Original Method ----------
         //return "WallpaperInfo{" + mService.serviceInfo.name
                 //+ ", settings: "
@@ -309,16 +354,15 @@ public final class WallpaperInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.109 -0400", hash_original_method = "E04AD845315D2630A943DB9D13064432", hash_generated_method = "5A7F184CD4125650C206449F677EBAFB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.075 -0400", hash_original_method = "E04AD845315D2630A943DB9D13064432", hash_generated_method = "50C7F6597A243A7DCA21B5365504DB54")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeString(mSettingsActivityName);
         dest.writeInt(mThumbnailResource);
         dest.writeInt(mAuthorResource);
         dest.writeInt(mDescriptionResource);
         mService.writeToParcel(dest, flags);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeString(mSettingsActivityName);
         //dest.writeInt(mThumbnailResource);
@@ -328,39 +372,28 @@ public final class WallpaperInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.109 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.088 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "413B24F7F84BB84895C5F4571A8E6709")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1782606707 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1782606707;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    static final String TAG = "WallpaperInfo";
-    public static final Parcelable.Creator<WallpaperInfo> CREATOR = new Parcelable.Creator<WallpaperInfo>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.110 -0400", hash_original_method = "E0CA03F91A5FF6E3DEA1E1ECC308F7EB", hash_generated_method = "2914452E72B17372150C2556F6E31654")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.096 -0400", hash_original_field = "FC9E2C4F1BD44A0CA44485FE9D62FF40", hash_generated_field = "79676732A428E1564E8F4C70B71E56E6")
+
+    static String TAG = "WallpaperInfo";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.097 -0400", hash_original_field = "84A4B5F5E39D6F71F6BCEDFA677A58DF", hash_generated_field = "3E4220CC5B52A5C0AED6D687E5CC83E9")
+
+    public static final Parcelable.Creator<WallpaperInfo> CREATOR = new Parcelable.Creator<WallpaperInfo>() {
         public WallpaperInfo createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            WallpaperInfo varFFC939F759EEFFD32F43D312601C358A_183921137 = (new WallpaperInfo(source));
-            return (WallpaperInfo)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new WallpaperInfo(source);
+            return new WallpaperInfo(source);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.110 -0400", hash_original_method = "B2B9815F42BAA1995A48EC036922067C", hash_generated_method = "E1715210A369D590984D3DD80C8593B6")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public WallpaperInfo[] newArray(int size) {
-            dsTaint.addTaint(size);
-            WallpaperInfo[] var91B9D467803FD7A1E925417152AB69CC_429701462 = (new WallpaperInfo[size]);
-            return (WallpaperInfo[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new WallpaperInfo[size];
+            return new WallpaperInfo[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

@@ -18,26 +18,30 @@ import java.util.Iterator;
 import java.util.Set;
 
 public final class WebStorage {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.442 -0400", hash_original_field = "66B6E6551149C8D18EAA0C8F6BFA4807", hash_generated_field = "37FCB2431FF7E2170127344873AA09C0")
+
     private Map <String, Origin> mOrigins;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.442 -0400", hash_original_field = "CE2D1D9987FFB86CFCC27E9C4CC37A4C", hash_generated_field = "A7637B18C168C40831B0C5AF31A66C87")
+
     private Handler mHandler = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.442 -0400", hash_original_field = "33F4AA66F852E93F47C7B5B93ECFBE81", hash_generated_field = "CAEF8005729A037CF5EC6BF8A6C37C05")
+
     private Handler mUIHandler = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.121 -0400", hash_original_method = "AF677EBC615A3CC551E6ED567BF454B4", hash_generated_method = "AF677EBC615A3CC551E6ED567BF454B4")
-        public WebStorage ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.442 -0400", hash_original_method = "45EE8E569EE103CF8A5587A04223DD11", hash_generated_method = "45EE8E569EE103CF8A5587A04223DD11")
+    public WebStorage ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.122 -0400", hash_original_method = "82D962B4566984C9EF0A3C7F9B8F70D3", hash_generated_method = "2892D5F8F885C4D6D078C83E086E9C70")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.453 -0400", hash_original_method = "82D962B4566984C9EF0A3C7F9B8F70D3", hash_generated_method = "B8A74A07AD7C08D3381C40699CF48EC3")
     public void createUIHandler() {
         {
             mUIHandler = new Handler() {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.122 -0400", hash_original_method = "E046AB9893C69470BF91F70EA6B66946", hash_generated_method = "A75FC48F4C2537FAC24D529952C56DBF")
-                //DSFIXME:  CODE0002: Requires DSC value to be set
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.453 -0400", hash_original_method = "E046AB9893C69470BF91F70EA6B66946", hash_generated_method = "8D2F06EE771B26A8B4083B4F5F6E0E01")
                 @Override
                 public void handleMessage(Message msg) {
-                    dsTaint.addTaint(msg.dsTaint);
                     //Begin case RETURN_ORIGINS 
                     {
                         Map values;
@@ -67,6 +71,7 @@ public final class WebStorage {
                         callback.onReceiveValue((Long)values.get(QUOTA));
                     } //End block
                     //End case RETURN_QUOTA_ORIGIN 
+                    addTaint(msg.getTaint());
                     // ---------- Original Method ----------
                     // Original Method Too Long, Refer to Original Implementation
                 }
@@ -77,16 +82,13 @@ public final class WebStorage {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.124 -0400", hash_original_method = "70B57611BD5998CDDC131389C1B8C529", hash_generated_method = "775895CEFA13FE9779C3D33037AAC084")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.471 -0400", hash_original_method = "70B57611BD5998CDDC131389C1B8C529", hash_generated_method = "8280C015F91160851779FB5E26BF241E")
     public synchronized void createHandler() {
         {
             mHandler = new Handler() {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.124 -0400", hash_original_method = "9AB12BF7A5C5C253376F63645993E150", hash_generated_method = "14BF5AA2D54B70E9DCEE4E4D5AC8D39D")
-                //DSFIXME:  CODE0002: Requires DSC value to be set
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.471 -0400", hash_original_method = "9AB12BF7A5C5C253376F63645993E150", hash_generated_method = "B3042F5591E72372E96F9D5138CCBFED")
                 @Override
                 public void handleMessage(Message msg) {
-                    dsTaint.addTaint(msg.dsTaint);
                     //Begin case SET_QUOTA_ORIGIN 
                     {
                         Origin website;
@@ -166,6 +168,7 @@ public final class WebStorage {
                     //Begin case UPDATE 
                     syncValues();
                     //End case UPDATE 
+                    addTaint(msg.getTaint());
                     // ---------- Original Method ----------
                     // Original Method Too Long, Refer to Original Implementation
                 }
@@ -176,13 +179,11 @@ public final class WebStorage {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.124 -0400", hash_original_method = "5F1CCC127056749A41D889CB5F293C72", hash_generated_method = "ED4DC4E55D15C1865FD54F6313AC29CF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.472 -0400", hash_original_method = "5F1CCC127056749A41D889CB5F293C72", hash_generated_method = "A849895C5B2A72E0D4B4B500860CEE72")
     public void getOrigins(ValueCallback<Map> callback) {
-        dsTaint.addTaint(callback.dsTaint);
         {
             {
-                boolean var1D1539BC3F985EF6F27916DFF0F70DCB_449007928 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
+                boolean var1D1539BC3F985EF6F27916DFF0F70DCB_151109388 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
                 {
                     syncValues();
                     callback.onReceiveValue(mOrigins);
@@ -192,6 +193,7 @@ public final class WebStorage {
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        addTaint(callback.getTaint());
         // ---------- Original Method ----------
         //if (callback != null) {
             //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
@@ -204,17 +206,29 @@ public final class WebStorage {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.124 -0400", hash_original_method = "20875F7A30B9C28B41BC562F884EFBD9", hash_generated_method = "643C54BB4630FC5AF659D9E6DEB6FD6F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.473 -0400", hash_original_method = "20875F7A30B9C28B41BC562F884EFBD9", hash_generated_method = "B66584E72F4CE0F160AA6E6CA66396AF")
      Collection<Origin> getOriginsSync() {
+        Collection<Origin> varB4EAC82CA7396A68D541C85D26508E83_591040457 = null; //Variable for return #1
+        Collection<Origin> varB4EAC82CA7396A68D541C85D26508E83_492700979 = null; //Variable for return #2
         {
-            boolean var1F2F1B674DC9185D7C933584E9557068_370870897 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
+            boolean var1F2F1B674DC9185D7C933584E9557068_1818375663 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
             {
                 update();
-                Collection<Origin> var71C6E1E63A866322A504639A75DBBCBA_2096141864 = (mOrigins.values());
+                varB4EAC82CA7396A68D541C85D26508E83_591040457 = mOrigins.values();
             } //End block
         } //End collapsed parenthetic
-        return (Collection<Origin>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_492700979 = null;
+        Collection<Origin> varA7E53CE21691AB073D9660D615818899_68029979; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_68029979 = varB4EAC82CA7396A68D541C85D26508E83_591040457;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_68029979 = varB4EAC82CA7396A68D541C85D26508E83_492700979;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_68029979.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_68029979;
         // ---------- Original Method ----------
         //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
             //update();
@@ -224,16 +238,13 @@ public final class WebStorage {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.125 -0400", hash_original_method = "A830572EF5CC952FAB535A1A02FCF9EB", hash_generated_method = "70BB2E27BAB631509BC875341C240A0B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.496 -0400", hash_original_method = "A830572EF5CC952FAB535A1A02FCF9EB", hash_generated_method = "41E0C19CE9348E71C00B8E72D4740A5D")
     public void getUsageForOrigin(String origin, ValueCallback<Long> callback) {
-        dsTaint.addTaint(callback.dsTaint);
-        dsTaint.addTaint(origin);
         {
             callback.onReceiveValue(null);
         } //End block
         {
-            boolean var1F2F1B674DC9185D7C933584E9557068_744912035 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
+            boolean var1F2F1B674DC9185D7C933584E9557068_352358928 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
             {
                 syncValues();
                 Origin website;
@@ -248,6 +259,8 @@ public final class WebStorage {
                 postMessage(Message.obtain(null, GET_USAGE_ORIGIN, values));
             } //End block
         } //End collapsed parenthetic
+        addTaint(origin.getTaint());
+        addTaint(callback.getTaint());
         // ---------- Original Method ----------
         //if (callback == null) {
             //return;
@@ -269,16 +282,13 @@ public final class WebStorage {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.125 -0400", hash_original_method = "BC9A85F4ABA5D3D4138B578A1B617A4F", hash_generated_method = "FC7AA367CDE03D5C9F95A8376A7F952C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.497 -0400", hash_original_method = "BC9A85F4ABA5D3D4138B578A1B617A4F", hash_generated_method = "E86B7FF7E7E977036D9F51D00487D3FF")
     public void getQuotaForOrigin(String origin, ValueCallback<Long> callback) {
-        dsTaint.addTaint(callback.dsTaint);
-        dsTaint.addTaint(origin);
         {
             callback.onReceiveValue(null);
         } //End block
         {
-            boolean var1F2F1B674DC9185D7C933584E9557068_1595550241 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
+            boolean var1F2F1B674DC9185D7C933584E9557068_1540076596 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
             {
                 syncValues();
                 Origin website;
@@ -293,6 +303,8 @@ public final class WebStorage {
                 postMessage(Message.obtain(null, GET_QUOTA_ORIGIN, values));
             } //End block
         } //End collapsed parenthetic
+        addTaint(origin.getTaint());
+        addTaint(callback.getTaint());
         // ---------- Original Method ----------
         //if (callback == null) {
             //return;
@@ -314,14 +326,11 @@ public final class WebStorage {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.125 -0400", hash_original_method = "567046E45B1707841AB709B2994EB872", hash_generated_method = "AECF9ED76B9FD12263DCE1C0A7CA189B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.498 -0400", hash_original_method = "567046E45B1707841AB709B2994EB872", hash_generated_method = "C896DE53687056FEF556818AECCEE76F")
     public void setQuotaForOrigin(String origin, long quota) {
-        dsTaint.addTaint(quota);
-        dsTaint.addTaint(origin);
         {
             {
-                boolean var1D1539BC3F985EF6F27916DFF0F70DCB_150776210 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
+                boolean var1D1539BC3F985EF6F27916DFF0F70DCB_1471725974 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
                 {
                     nativeSetQuotaForOrigin(origin, quota);
                 } //End block
@@ -331,6 +340,8 @@ public final class WebStorage {
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        addTaint(origin.getTaint());
+        addTaint(quota);
         // ---------- Original Method ----------
         //if (origin != null) {
             //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
@@ -343,13 +354,11 @@ public final class WebStorage {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.126 -0400", hash_original_method = "8BD785193E41D931D316F61464C869E4", hash_generated_method = "B7C2356945BDAC0AB1979EF30A547A4F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.498 -0400", hash_original_method = "8BD785193E41D931D316F61464C869E4", hash_generated_method = "A6E3F022F2576EFEB52EF0B6D44216D9")
     public void deleteOrigin(String origin) {
-        dsTaint.addTaint(origin);
         {
             {
-                boolean var1D1539BC3F985EF6F27916DFF0F70DCB_2059434506 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
+                boolean var1D1539BC3F985EF6F27916DFF0F70DCB_2024657434 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
                 {
                     nativeDeleteOrigin(origin);
                 } //End block
@@ -359,6 +368,7 @@ public final class WebStorage {
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        addTaint(origin.getTaint());
         // ---------- Original Method ----------
         //if (origin != null) {
             //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
@@ -371,11 +381,10 @@ public final class WebStorage {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.126 -0400", hash_original_method = "4CABCD5AB64090C1AAA8A337FB9C39CF", hash_generated_method = "635BA26865F8F423ED94D4D22FB61B03")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.499 -0400", hash_original_method = "4CABCD5AB64090C1AAA8A337FB9C39CF", hash_generated_method = "95348F22FF3078B929E5973ACEB984AC")
     public void deleteAllData() {
         {
-            boolean var1F2F1B674DC9185D7C933584E9557068_2063639216 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
+            boolean var1F2F1B674DC9185D7C933584E9557068_1331083646 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
             {
                 nativeDeleteAllData();
             } //End block
@@ -392,23 +401,21 @@ public final class WebStorage {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.126 -0400", hash_original_method = "D4FAC5548D3982CA0D61EFA3641C44C0", hash_generated_method = "AD8152FE12EFCDB9CE4ED56FA2359A7A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.499 -0400", hash_original_method = "D4FAC5548D3982CA0D61EFA3641C44C0", hash_generated_method = "5A95D28E6A76210DFF46CB7B193BEEA7")
     public void setAppCacheMaximumSize(long size) {
-        dsTaint.addTaint(size);
         nativeSetAppCacheMaximumSize(size);
+        addTaint(size);
         // ---------- Original Method ----------
         //nativeSetAppCacheMaximumSize(size);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.126 -0400", hash_original_method = "62EA151909BF01F1F742C4723FE70A6A", hash_generated_method = "A43E1E5834FC7C995D45369AFF9441E0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.499 -0400", hash_original_method = "62EA151909BF01F1F742C4723FE70A6A", hash_generated_method = "AABEAF0AF3883F5E3B6B2DA616C9BC28")
     private synchronized void postMessage(Message msg) {
-        dsTaint.addTaint(msg.dsTaint);
         {
             mHandler.sendMessage(msg);
         } //End block
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         //if (mHandler != null) {
             //mHandler.sendMessage(msg);
@@ -416,13 +423,12 @@ public final class WebStorage {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.126 -0400", hash_original_method = "B15FFE1BDDB388A76F495C309FEFF3DA", hash_generated_method = "D3A1BC112B6E8C3022B55DEFC2DD77BD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.502 -0400", hash_original_method = "B15FFE1BDDB388A76F495C309FEFF3DA", hash_generated_method = "C8ED0203F18A2FA93DA4BACC33043B55")
     private void postUIMessage(Message msg) {
-        dsTaint.addTaint(msg.dsTaint);
         {
             mUIHandler.sendMessage(msg);
         } //End block
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         //if (mUIHandler != null) {
             //mUIHandler.sendMessage(msg);
@@ -438,11 +444,10 @@ public final class WebStorage {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.127 -0400", hash_original_method = "84940B587CE35477B1887A71543D40B1", hash_generated_method = "CC75F08F15DE1198C3F2717B4299F3C5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.532 -0400", hash_original_method = "84940B587CE35477B1887A71543D40B1", hash_generated_method = "0D2D19B245B189BD214337B3486DE64C")
     public void update() {
         {
-            boolean var1F2F1B674DC9185D7C933584E9557068_1335810743 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
+            boolean var1F2F1B674DC9185D7C933584E9557068_640690037 = (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()));
             {
                 syncValues();
             } //End block
@@ -459,16 +464,15 @@ public final class WebStorage {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.131 -0400", hash_original_method = "5D4FD384A27446A0E17BE685B23E3829", hash_generated_method = "FE95C253A21E7D621E1D7DB095602F3B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.555 -0400", hash_original_method = "5D4FD384A27446A0E17BE685B23E3829", hash_generated_method = "D62C3AEA21ED4A94965B6D2A0B549E63")
     private void syncValues() {
         Set<String> tmp;
         tmp = nativeGetOrigins();
         mOrigins = new HashMap<String, Origin>();
         {
-            Iterator<String> var789D548900BFEFF21EF0DCF6799AE26E_831630968 = (tmp).iterator();
-            var789D548900BFEFF21EF0DCF6799AE26E_831630968.hasNext();
-            String origin = var789D548900BFEFF21EF0DCF6799AE26E_831630968.next();
+            Iterator<String> var789D548900BFEFF21EF0DCF6799AE26E_298479785 = (tmp).iterator();
+            var789D548900BFEFF21EF0DCF6799AE26E_298479785.hasNext();
+            String origin = var789D548900BFEFF21EF0DCF6799AE26E_298479785.next();
             {
                 Origin website;
                 website = new Origin(origin,
@@ -521,16 +525,21 @@ public final class WebStorage {
 
     
     public static class Origin {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.556 -0400", hash_original_field = "64750E5841B87A1C417444D299CD4440", hash_generated_field = "C0D04DE859485FC064E3233B8B61E000")
+
         private String mOrigin = null;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.556 -0400", hash_original_field = "ACDC9A01B63BF9F3D55326330A8C5FC3", hash_generated_field = "D4673897C52FB70646F861DEAEBDF4CA")
+
         private long mQuota = 0;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.556 -0400", hash_original_field = "412517F55B5F125B34E008950E31C814", hash_generated_field = "3B69C5C26EF23770033686E958090CE2")
+
         private long mUsage = 0;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.132 -0400", hash_original_method = "4FE78C59959DAB66D5A54195A66AB06B", hash_generated_method = "30EBE39D896BB259F0828533693F5466")
-        @DSModeled(DSC.SAFE)
-        private Origin(String origin, long quota, long usage) {
-            dsTaint.addTaint(quota);
-            dsTaint.addTaint(origin);
-            dsTaint.addTaint(usage);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.557 -0400", hash_original_method = "4FE78C59959DAB66D5A54195A66AB06B", hash_generated_method = "76322ED2B92E6B7663D8A0519AE3B0DF")
+        private  Origin(String origin, long quota, long usage) {
+            mOrigin = origin;
+            mQuota = quota;
+            mUsage = usage;
             // ---------- Original Method ----------
             //mOrigin = origin;
             //mQuota = quota;
@@ -538,48 +547,48 @@ public final class WebStorage {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.133 -0400", hash_original_method = "C2CBF7E5975A0E1FB4219FCE2892FC4D", hash_generated_method = "55FD9FAF2E3FA8A112BC61D17024CE34")
-        @DSModeled(DSC.SAFE)
-        private Origin(String origin, long quota) {
-            dsTaint.addTaint(quota);
-            dsTaint.addTaint(origin);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.557 -0400", hash_original_method = "C2CBF7E5975A0E1FB4219FCE2892FC4D", hash_generated_method = "FC09A97162600BEE334A20CD3A6FDFA1")
+        private  Origin(String origin, long quota) {
+            mOrigin = origin;
+            mQuota = quota;
             // ---------- Original Method ----------
             //mOrigin = origin;
             //mQuota = quota;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.133 -0400", hash_original_method = "EABE3A839C363BB6725AAE2908A0D269", hash_generated_method = "957100BF90759AA79509A454A78EE674")
-        @DSModeled(DSC.SAFE)
-        private Origin(String origin) {
-            dsTaint.addTaint(origin);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.557 -0400", hash_original_method = "EABE3A839C363BB6725AAE2908A0D269", hash_generated_method = "231D896CFDCFAA5D10466EAE91ED23CC")
+        private  Origin(String origin) {
+            mOrigin = origin;
             // ---------- Original Method ----------
             //mOrigin = origin;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.133 -0400", hash_original_method = "1C35B3C80693DCFAD3BBB071D3FEEF91", hash_generated_method = "9B237BC95F902A42A21CC3CE8E4DB448")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.561 -0400", hash_original_method = "1C35B3C80693DCFAD3BBB071D3FEEF91", hash_generated_method = "39F4F2CFA7787C558051A5A835587EC9")
         public String getOrigin() {
-            return dsTaint.getTaintString();
+            String varB4EAC82CA7396A68D541C85D26508E83_2090550828 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_2090550828 = mOrigin;
+            varB4EAC82CA7396A68D541C85D26508E83_2090550828.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2090550828;
             // ---------- Original Method ----------
             //return mOrigin;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.133 -0400", hash_original_method = "85A4ADA77B01EE5A270890AB8ED69D00", hash_generated_method = "39EAD895C3066DD9853953FBFFA918B3")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.606 -0400", hash_original_method = "85A4ADA77B01EE5A270890AB8ED69D00", hash_generated_method = "BE253C6BA2B45BE366E175FC54F1E9AC")
         public long getQuota() {
-            return dsTaint.getTaintLong();
+            long var0F5264038205EDFB1AC05FBB0E8C5E94_1858828677 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_1858828677;
             // ---------- Original Method ----------
             //return mQuota;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.134 -0400", hash_original_method = "9EBBDD3C0652D213E94F799A53008143", hash_generated_method = "C315242607C32945D98BA93C3B1A989B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.762 -0400", hash_original_method = "9EBBDD3C0652D213E94F799A53008143", hash_generated_method = "A8F258474856F3BC23DB825265364AC9")
         public long getUsage() {
-            return dsTaint.getTaintLong();
+            long var0F5264038205EDFB1AC05FBB0E8C5E94_1328221593 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_1328221593;
             // ---------- Original Method ----------
             //return mUsage;
         }
@@ -593,22 +602,56 @@ public final class WebStorage {
         public void updateQuota(long newQuota);
     }
     
-    private static final String TAG = "webstorage";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.762 -0400", hash_original_field = "902004607D3D35BA00657C15EFA6863D", hash_generated_field = "22E1E74AC3D97D60DB7AA03685045818")
+
+    private static String TAG = "webstorage";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.762 -0400", hash_original_field = "BD285CA53C3AEB1EA97CC49EDB26AF94", hash_generated_field = "0CCDD741FE8F4FB31C977DCC41752D3D")
+
     private static WebStorage sWebStorage;
-    static final int UPDATE = 0;
-    static final int SET_QUOTA_ORIGIN = 1;
-    static final int DELETE_ORIGIN = 2;
-    static final int DELETE_ALL = 3;
-    static final int GET_ORIGINS = 4;
-    static final int GET_USAGE_ORIGIN = 5;
-    static final int GET_QUOTA_ORIGIN = 6;
-    static final int RETURN_ORIGINS = 0;
-    static final int RETURN_USAGE_ORIGIN = 1;
-    static final int RETURN_QUOTA_ORIGIN = 2;
-    private static final String ORIGINS = "origins";
-    private static final String ORIGIN = "origin";
-    private static final String CALLBACK = "callback";
-    private static final String USAGE = "usage";
-    private static final String QUOTA = "quota";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.762 -0400", hash_original_field = "BE98DCB09006644549A3383ECF0F58A5", hash_generated_field = "29D6F6F075BA6A42F1B72E485286B67D")
+
+    static int UPDATE = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.762 -0400", hash_original_field = "B79B2D519A8F1FF73F1A94A436BD870A", hash_generated_field = "6C2C7F35CAD4EC6899ED67FFAF32A344")
+
+    static int SET_QUOTA_ORIGIN = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.763 -0400", hash_original_field = "9B72996C429AC66AEE732C78041BD80A", hash_generated_field = "133329CF0ED7F851D81750AEAD631220")
+
+    static int DELETE_ORIGIN = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.763 -0400", hash_original_field = "07FA09A7985AF455A83A10B767F6D87F", hash_generated_field = "49526463EC831A18862FE1A30F67A765")
+
+    static int DELETE_ALL = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.763 -0400", hash_original_field = "B7BCA5977762AF11F2C340174D2C946B", hash_generated_field = "9D80379F81279B6D35FF4476B65CEB80")
+
+    static int GET_ORIGINS = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.763 -0400", hash_original_field = "037B03ECBAA557B298F95212324431B6", hash_generated_field = "81785955ADA890E34D80B9F798E1E2AE")
+
+    static int GET_USAGE_ORIGIN = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.763 -0400", hash_original_field = "2CD8BDA81653204703E656883F9B9AB3", hash_generated_field = "32040981D8EB6D43E5A00BCA3EAA7410")
+
+    static int GET_QUOTA_ORIGIN = 6;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.763 -0400", hash_original_field = "7C8537374A482211B56AA6AB46729FB5", hash_generated_field = "9F16B070B67AF569D45922C684F737AD")
+
+    static int RETURN_ORIGINS = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.763 -0400", hash_original_field = "B723744F78D7F3DDDFCA0EFFD404ADEC", hash_generated_field = "BD76681D73BB960734A2F8E9D31DE721")
+
+    static int RETURN_USAGE_ORIGIN = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.763 -0400", hash_original_field = "4127CB68F596EEEEB8E0EF08848E0B70", hash_generated_field = "92299D695932FA68F6FEEB3E43719A23")
+
+    static int RETURN_QUOTA_ORIGIN = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.763 -0400", hash_original_field = "65478524DA05A858576A231D6F74BE9F", hash_generated_field = "39B1371A7C105E08D03EF6A82E1C888B")
+
+    private static String ORIGINS = "origins";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.763 -0400", hash_original_field = "63CE338685E17E1E1CF5D74A539A8A90", hash_generated_field = "0A6ED265D5D88B00F83A73502B56BD55")
+
+    private static String ORIGIN = "origin";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.763 -0400", hash_original_field = "DA9191A8F336B18486DDF571C706A387", hash_generated_field = "FC961204076FD50E79C3F05778D9F44E")
+
+    private static String CALLBACK = "callback";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.763 -0400", hash_original_field = "093E25DE57FD9F3EDFB24C5EED22C248", hash_generated_field = "849B5DCCAF98D63AFA2BB7370054CCC2")
+
+    private static String USAGE = "usage";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.763 -0400", hash_original_field = "48126D54606CBBF16C2A595EA1A86762", hash_generated_field = "E863D134D14B25DECC83F7192CCAEC10")
+
+    private static String QUOTA = "quota";
 }
 

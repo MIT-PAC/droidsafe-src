@@ -13,27 +13,25 @@ import java.text.ParseException;
 
 public class AuthenticationInfoParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.240 -0400", hash_original_method = "F28ABF8CFF04CC1C57BCD4E014C95C2B", hash_generated_method = "08D0677B7E4EB7DEC6B9C3628357E7D1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AuthenticationInfoParser(String authenticationInfo) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.491 -0400", hash_original_method = "F28ABF8CFF04CC1C57BCD4E014C95C2B", hash_generated_method = "4D29FE7F36335FA05C3B36A828DB26AC")
+    public  AuthenticationInfoParser(String authenticationInfo) {
         super(authenticationInfo);
-        dsTaint.addTaint(authenticationInfo);
+        addTaint(authenticationInfo.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.240 -0400", hash_original_method = "49A5BC0E10B199942A909086CCB53299", hash_generated_method = "D9BF86E801A4C23185442256E89FF254")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected AuthenticationInfoParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.492 -0400", hash_original_method = "49A5BC0E10B199942A909086CCB53299", hash_generated_method = "F575724D8379F4722AEB97946F517A74")
+    protected  AuthenticationInfoParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.240 -0400", hash_original_method = "2DCD0228D3AB6B3B6D80756266EB3403", hash_generated_method = "054505AD1919BC2770197C3646953C26")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.499 -0400", hash_original_method = "2DCD0228D3AB6B3B6D80756266EB3403", hash_generated_method = "EC73D3C06C5BC38C82AE4B86AF5AE43F")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_420068708 = null; //Variable for return #1
         dbg_enter("AuthenticationInfoParser.parse");
         try 
         {
@@ -48,7 +46,7 @@ public class AuthenticationInfoParser extends ParametersParser {
             authenticationInfo.setParameter(nv);
             this.lexer.SPorHT();
             {
-                boolean var3D7F80AAA4BB4C7E5B5AFC820C1FE6A4_1823441509 = (lexer.lookAhead(0) == ',');
+                boolean var3D7F80AAA4BB4C7E5B5AFC820C1FE6A4_288114890 = (lexer.lookAhead(0) == ',');
                 {
                     this.lexer.match(',');
                     this.lexer.SPorHT();
@@ -58,12 +56,14 @@ public class AuthenticationInfoParser extends ParametersParser {
                 } //End block
             } //End collapsed parenthetic
             this.lexer.SPorHT();
+            varB4EAC82CA7396A68D541C85D26508E83_420068708 = authenticationInfo;
         } //End block
         finally 
         {
             dbg_leave("AuthenticationInfoParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_420068708.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_420068708;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

@@ -10,22 +10,22 @@ import java.util.Iterator;
 
 public class NoSuchElementException extends RuntimeException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.930 -0400", hash_original_method = "7511719788F886A7A8274E764953E7B7", hash_generated_method = "DB2EC439058F2459B76E1B52F342488A")
-    @DSModeled(DSC.SAFE)
-    public NoSuchElementException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.557 -0400", hash_original_method = "7511719788F886A7A8274E764953E7B7", hash_generated_method = "DB2EC439058F2459B76E1B52F342488A")
+    public  NoSuchElementException() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.931 -0400", hash_original_method = "7D966D3BE675039003302E31B0D249C5", hash_generated_method = "D50F6D638EAC533692027052F0EEFD5E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public NoSuchElementException(String detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.557 -0400", hash_original_method = "7D966D3BE675039003302E31B0D249C5", hash_generated_method = "4F0A68924BDC2EC633358C9FFEFBE43D")
+    public  NoSuchElementException(String detailMessage) {
         super(detailMessage);
-        dsTaint.addTaint(detailMessage);
+        addTaint(detailMessage.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = 6769829250639411880L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.557 -0400", hash_original_field = "7D9412548456AED15D0C8DA571405261", hash_generated_field = "E05816C980B71E3162325CCB4A87AD60")
+
+    private static long serialVersionUID = 6769829250639411880L;
 }
 

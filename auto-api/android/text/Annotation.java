@@ -10,24 +10,25 @@ import java.util.Iterator;
 import android.os.Parcel;
 
 public class Annotation implements ParcelableSpan {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:36.744 -0400", hash_original_field = "7E690C9CC141370A5EC6E7A98DC6FF62", hash_generated_field = "C36B21320914DA8259201FF07A2C068D")
+
     private String mKey;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:36.744 -0400", hash_original_field = "CBAFE11E7BAE23358D70D54D132C3064", hash_generated_field = "FA33B8039DB7AC1B219DF637773A1B0E")
+
     private String mValue;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.958 -0400", hash_original_method = "5C517E50CA4FB031ECF94CDBC8F3DBD0", hash_generated_method = "B3967F35E68601620DCC70FC7A04545C")
-    @DSModeled(DSC.SAFE)
-    public Annotation(String key, String value) {
-        dsTaint.addTaint(value);
-        dsTaint.addTaint(key);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:36.744 -0400", hash_original_method = "5C517E50CA4FB031ECF94CDBC8F3DBD0", hash_generated_method = "D01E642451DA9153C6330C1E5A2AA584")
+    public  Annotation(String key, String value) {
+        mKey = key;
+        mValue = value;
         // ---------- Original Method ----------
         //mKey = key;
         //mValue = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.959 -0400", hash_original_method = "C131D9D20BBD02754AB0621772B33421", hash_generated_method = "7C617DC718892DE887DDE18ADB4AC045")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Annotation(Parcel src) {
-        dsTaint.addTaint(src.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:36.750 -0400", hash_original_method = "C131D9D20BBD02754AB0621772B33421", hash_generated_method = "26B358E42EFE096E6E83C377C90A9476")
+    public  Annotation(Parcel src) {
         mKey = src.readString();
         mValue = src.readString();
         // ---------- Original Method ----------
@@ -36,50 +37,53 @@ public class Annotation implements ParcelableSpan {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.960 -0400", hash_original_method = "4B5D387D9B07EBC2B6CC4E1F3474D3AE", hash_generated_method = "ADE107A69302DAE79C35B1168B2F878B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:36.750 -0400", hash_original_method = "4B5D387D9B07EBC2B6CC4E1F3474D3AE", hash_generated_method = "4F7CD9B6CC804F1A08DF1A8A007BC8A2")
     public int getSpanTypeId() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1987231003 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1987231003;
         // ---------- Original Method ----------
         //return TextUtils.ANNOTATION;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.960 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:36.751 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "67D67B7DD3EB8036622829CA4FA67115")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1527254772 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1527254772;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.960 -0400", hash_original_method = "5E98CA8EC4399E1C3E6F7EE2C72DE36F", hash_generated_method = "91E8B111D8A38B7F5D3C14949CC67901")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:36.752 -0400", hash_original_method = "5E98CA8EC4399E1C3E6F7EE2C72DE36F", hash_generated_method = "050C587251250F58D52303A17D41175F")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeString(mKey);
         dest.writeString(mValue);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeString(mKey);
         //dest.writeString(mValue);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.960 -0400", hash_original_method = "E0CEA0C6ABDC55C32B991C1D155B5E3E", hash_generated_method = "8C4749A4D45BDEA86424E2138EE82723")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:36.761 -0400", hash_original_method = "E0CEA0C6ABDC55C32B991C1D155B5E3E", hash_generated_method = "C664666B7829E7AD5C1A5196A3174758")
     public String getKey() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1182318462 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1182318462 = mKey;
+        varB4EAC82CA7396A68D541C85D26508E83_1182318462.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1182318462;
         // ---------- Original Method ----------
         //return mKey;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.961 -0400", hash_original_method = "20F1B7D715A473C2ABE076C27B2A3109", hash_generated_method = "682C7B13FB2DDC74B6EDDACE11A3B1AF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:36.762 -0400", hash_original_method = "20F1B7D715A473C2ABE076C27B2A3109", hash_generated_method = "A80B54F27F469FE0F83E39EC4C7355C1")
     public String getValue() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2044920437 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2044920437 = mValue;
+        varB4EAC82CA7396A68D541C85D26508E83_2044920437.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2044920437;
         // ---------- Original Method ----------
         //return mValue;
     }

@@ -10,15 +10,16 @@ import java.util.Iterator;
 
 public class InvalidObjectException extends ObjectStreamException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.835 -0400", hash_original_method = "4AF46063AE9909D1F5A16DD867276801", hash_generated_method = "859BCD91F61908E051B9713DADAA3948")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InvalidObjectException(String detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.031 -0400", hash_original_method = "4AF46063AE9909D1F5A16DD867276801", hash_generated_method = "0DC243A4BDCD3B7EE60638A77AB9FDFB")
+    public  InvalidObjectException(String detailMessage) {
         super(detailMessage);
-        dsTaint.addTaint(detailMessage);
+        addTaint(detailMessage.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = 3233174318281839583L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.031 -0400", hash_original_field = "06C77B5AFC6C0750E2329BE623C0BE16", hash_generated_field = "3396B691106521EEF7FF85EAA58BBF2D")
+
+    private static long serialVersionUID = 3233174318281839583L;
 }
 

@@ -10,45 +10,46 @@ import java.util.Iterator;
 import java.io.*;
 
 public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cloneable, Serializable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.481 -0400", hash_original_field = "6A7F245843454CF4F28AD7C5E2572AA2", hash_generated_field = "777D1E33E50D4CDEA795A5FBEBE9B75E")
+
     private transient E[] elements;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.481 -0400", hash_original_field = "96E89A298E0A9F469B9AE458D6AFAE9F", hash_generated_field = "C80FE6D9E9CF1E423738D59094B3A099")
+
     private transient int head;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.481 -0400", hash_original_field = "7AEA2552DFE7EB84B9443B6FC9BA6E01", hash_generated_field = "993ACFB1D5CE316FEA289C1E850AAC75")
+
     private transient int tail;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.905 -0400", hash_original_method = "8C7B174379DD3B2C843811B1130834BD", hash_generated_method = "151203C88A4AC41E68C2D3AED6B6A179")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ArrayDeque() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.481 -0400", hash_original_method = "8C7B174379DD3B2C843811B1130834BD", hash_generated_method = "151203C88A4AC41E68C2D3AED6B6A179")
+    public  ArrayDeque() {
         elements = (E[]) new Object[16];
         // ---------- Original Method ----------
         //elements = (E[]) new Object[16];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.905 -0400", hash_original_method = "690593276EDD66C533F49BEE09E9C663", hash_generated_method = "802B3E1607ED936A7675C9BBCB26CB04")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ArrayDeque(int numElements) {
-        dsTaint.addTaint(numElements);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.482 -0400", hash_original_method = "690593276EDD66C533F49BEE09E9C663", hash_generated_method = "961A3DCC13843F4EF778BFE212FF8CDC")
+    public  ArrayDeque(int numElements) {
         allocateElements(numElements);
+        addTaint(numElements);
         // ---------- Original Method ----------
         //allocateElements(numElements);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.905 -0400", hash_original_method = "5E7B6C878951D7CA458070D073F03065", hash_generated_method = "5C842A5607373CA5B8E71AAC40B1A9C2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ArrayDeque(Collection<? extends E> c) {
-        dsTaint.addTaint(c.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.482 -0400", hash_original_method = "5E7B6C878951D7CA458070D073F03065", hash_generated_method = "E857B3907858ED486A3251136AC22BF3")
+    public  ArrayDeque(Collection<? extends E> c) {
         allocateElements(c.size());
         addAll(c);
+        addTaint(c.getTaint());
         // ---------- Original Method ----------
         //allocateElements(c.size());
         //addAll(c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.906 -0400", hash_original_method = "86AF4C096D752C20A8CB0D886E79B7FB", hash_generated_method = "0EA557CEBBA95B4A6E26E6348C8FA929")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.483 -0400", hash_original_method = "86AF4C096D752C20A8CB0D886E79B7FB", hash_generated_method = "73170BA05D699447015820472AA83DC3")
     private void allocateElements(int numElements) {
-        dsTaint.addTaint(numElements);
         int initialCapacity;
         initialCapacity = MIN_INITIAL_CAPACITY;
         {
@@ -61,6 +62,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
             initialCapacity >>>= 1;
         } //End block
         elements = (E[]) new Object[initialCapacity];
+        addTaint(numElements);
         // ---------- Original Method ----------
         //int initialCapacity = MIN_INITIAL_CAPACITY;
         //if (numElements >= initialCapacity) {
@@ -78,8 +80,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.906 -0400", hash_original_method = "35225802D7F18BE5673FDDFDE4B70B2E", hash_generated_method = "456FB0945A4044D9A5C32B631DAA4D26")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.484 -0400", hash_original_method = "35225802D7F18BE5673FDDFDE4B70B2E", hash_generated_method = "456FB0945A4044D9A5C32B631DAA4D26")
     private void doubleCapacity() {
         int p;
         p = head;
@@ -114,10 +115,9 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.906 -0400", hash_original_method = "5E8669E32F5C4FDF3D4D82BA2C3949A2", hash_generated_method = "9D08CDE9406618A29C401BFE3E4B0DCD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.484 -0400", hash_original_method = "5E8669E32F5C4FDF3D4D82BA2C3949A2", hash_generated_method = "50A12809748523E980575688663D63E2")
     private <T> T[] copyElements(T[] a) {
-        dsTaint.addTaint(a[0].dsTaint);
+        T[] varB4EAC82CA7396A68D541C85D26508E83_1243406020 = null; //Variable for return #1
         {
             System.arraycopy(elements, head, a, 0, size());
         } //End block
@@ -127,7 +127,10 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
             System.arraycopy(elements, head, a, 0, headPortionLen);
             System.arraycopy(elements, 0, a, headPortionLen, tail);
         } //End block
-        return (T[])dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1243406020 = a;
+        addTaint(a[0].getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1243406020.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1243406020;
         // ---------- Original Method ----------
         //if (head < tail) {
             //System.arraycopy(elements, head, a, 0, size());
@@ -140,10 +143,8 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.906 -0400", hash_original_method = "CBAC64602FF2D7F893923E0ABA8C507E", hash_generated_method = "2F1BDC6782ADAB65D839AB12CD11421F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.485 -0400", hash_original_method = "CBAC64602FF2D7F893923E0ABA8C507E", hash_generated_method = "43D388445E29AF9CA2D6DC6F0D76AE09")
     public void addFirst(E e) {
-        dsTaint.addTaint(e.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         elements[head = (head - 1) & (elements.length - 1)] = e;
         doubleCapacity();
@@ -156,14 +157,12 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.907 -0400", hash_original_method = "1B31DB8E2D035FB7799256F8004C4036", hash_generated_method = "F17D1FFF404DFCE1E2039C9AC4582D12")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.485 -0400", hash_original_method = "1B31DB8E2D035FB7799256F8004C4036", hash_generated_method = "212EADD213C8443C28B13578B880863A")
     public void addLast(E e) {
-        dsTaint.addTaint(e.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         elements[tail] = e;
         {
-            boolean var7F88578DCEE369DCF633CD33646CC15C_941230310 = ((tail = (tail + 1) & (elements.length - 1)) == head);
+            boolean var7F88578DCEE369DCF633CD33646CC15C_1690533925 = ((tail = (tail + 1) & (elements.length - 1)) == head);
             doubleCapacity();
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -175,37 +174,39 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.907 -0400", hash_original_method = "8D3228F5DEFAE0131B22F51707654BE0", hash_generated_method = "84BF475F9A2A164286EA35200459B50A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.485 -0400", hash_original_method = "8D3228F5DEFAE0131B22F51707654BE0", hash_generated_method = "F85313CB02AE47E020325A25273AC5BF")
     public boolean offerFirst(E e) {
-        dsTaint.addTaint(e.dsTaint);
         addFirst(e);
-        return dsTaint.getTaintBoolean();
+        addTaint(e.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_539579458 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_539579458;
         // ---------- Original Method ----------
         //addFirst(e);
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.907 -0400", hash_original_method = "15C090CE1A98280B8C8C7B6514A10013", hash_generated_method = "C59FA0C155672924C530570154A38CF3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.498 -0400", hash_original_method = "15C090CE1A98280B8C8C7B6514A10013", hash_generated_method = "A17DEC4B9D9006184E9CB097C151545E")
     public boolean offerLast(E e) {
-        dsTaint.addTaint(e.dsTaint);
         addLast(e);
-        return dsTaint.getTaintBoolean();
+        addTaint(e.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_347744491 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_347744491;
         // ---------- Original Method ----------
         //addLast(e);
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.907 -0400", hash_original_method = "8D1F2D8C9F4BF8EC3B65B975014CE8A7", hash_generated_method = "10832A48586B99054DA2D526BDB911DD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.501 -0400", hash_original_method = "8D1F2D8C9F4BF8EC3B65B975014CE8A7", hash_generated_method = "620FCC2CA08BDDA9B1E760E651ACD26A")
     public E removeFirst() {
+        E varB4EAC82CA7396A68D541C85D26508E83_1096288838 = null; //Variable for return #1
         E x;
         x = pollFirst();
         if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-        return (E)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1096288838 = x;
+        varB4EAC82CA7396A68D541C85D26508E83_1096288838.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1096288838;
         // ---------- Original Method ----------
         //E x = pollFirst();
         //if (x == null)
@@ -214,13 +215,15 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.907 -0400", hash_original_method = "90A521D0942C6C4821F3F861C2808726", hash_generated_method = "F149DA6F41DB7528885880DA7193ACB4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.502 -0400", hash_original_method = "90A521D0942C6C4821F3F861C2808726", hash_generated_method = "3287D4F60B7335C8234F453DB8B2F82C")
     public E removeLast() {
+        E varB4EAC82CA7396A68D541C85D26508E83_1788740738 = null; //Variable for return #1
         E x;
         x = pollLast();
         if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-        return (E)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1788740738 = x;
+        varB4EAC82CA7396A68D541C85D26508E83_1788740738.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1788740738;
         // ---------- Original Method ----------
         //E x = pollLast();
         //if (x == null)
@@ -229,16 +232,29 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.908 -0400", hash_original_method = "70BCEEA789C7C02318BA6052E8B29D53", hash_generated_method = "4EA37E9694BE2403DFB2A06028FBC385")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.502 -0400", hash_original_method = "70BCEEA789C7C02318BA6052E8B29D53", hash_generated_method = "4CBBAD7311DCE23F0C354D2D92286679")
     public E pollFirst() {
+        E varB4EAC82CA7396A68D541C85D26508E83_362470925 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_1698298447 = null; //Variable for return #2
         int h;
         h = head;
         E result;
         result = elements[h];
+        varB4EAC82CA7396A68D541C85D26508E83_362470925 = null;
         elements[h] = null;
         head = (h + 1) & (elements.length - 1);
-        return (E)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1698298447 = result;
+        E varA7E53CE21691AB073D9660D615818899_575320533; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_575320533 = varB4EAC82CA7396A68D541C85D26508E83_362470925;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_575320533 = varB4EAC82CA7396A68D541C85D26508E83_1698298447;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_575320533.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_575320533;
         // ---------- Original Method ----------
         //int h = head;
         //E result = elements[h];
@@ -250,16 +266,29 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.908 -0400", hash_original_method = "CC3133A0441CFBBC149D7C0D4094D190", hash_generated_method = "8D2CA8A70F28B7DB671BEBED0A29F307")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.505 -0400", hash_original_method = "CC3133A0441CFBBC149D7C0D4094D190", hash_generated_method = "59C67C7FF5856280C41B27F197A6F3BB")
     public E pollLast() {
+        E varB4EAC82CA7396A68D541C85D26508E83_879537716 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_778311432 = null; //Variable for return #2
         int t;
         t = (tail - 1) & (elements.length - 1);
         E result;
         result = elements[t];
+        varB4EAC82CA7396A68D541C85D26508E83_879537716 = null;
         elements[t] = null;
         tail = t;
-        return (E)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_778311432 = result;
+        E varA7E53CE21691AB073D9660D615818899_1591928130; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1591928130 = varB4EAC82CA7396A68D541C85D26508E83_879537716;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1591928130 = varB4EAC82CA7396A68D541C85D26508E83_778311432;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1591928130.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1591928130;
         // ---------- Original Method ----------
         //int t = (tail - 1) & (elements.length - 1);
         //E result = elements[t];
@@ -271,13 +300,15 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.908 -0400", hash_original_method = "969C370DEEB1254D835EA60A850D9474", hash_generated_method = "408E7FFF87B6556D0AC410CB39326866")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.505 -0400", hash_original_method = "969C370DEEB1254D835EA60A850D9474", hash_generated_method = "733719D135382D8A107364C59C085BC2")
     public E getFirst() {
+        E varB4EAC82CA7396A68D541C85D26508E83_1024359691 = null; //Variable for return #1
         E x;
         x = elements[head];
         if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-        return (E)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1024359691 = x;
+        varB4EAC82CA7396A68D541C85D26508E83_1024359691.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1024359691;
         // ---------- Original Method ----------
         //E x = elements[head];
         //if (x == null)
@@ -286,13 +317,15 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.908 -0400", hash_original_method = "609D7D9752B1EA7B409577881D715ECB", hash_generated_method = "AAD664E1427A050EF45F98600FF43037")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.517 -0400", hash_original_method = "609D7D9752B1EA7B409577881D715ECB", hash_generated_method = "A27418DF03922F4338140E4DDE5DF6E5")
     public E getLast() {
+        E varB4EAC82CA7396A68D541C85D26508E83_1396486997 = null; //Variable for return #1
         E x;
         x = elements[(tail - 1) & (elements.length - 1)];
         if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
-        return (E)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1396486997 = x;
+        varB4EAC82CA7396A68D541C85D26508E83_1396486997.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1396486997;
         // ---------- Original Method ----------
         //E x = elements[(tail - 1) & (elements.length - 1)];
         //if (x == null)
@@ -301,38 +334,40 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.908 -0400", hash_original_method = "1112FC6950CD2F89C0F90F3FD6940182", hash_generated_method = "58B5678F17F5B3E83C33D59FF60327DC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.517 -0400", hash_original_method = "1112FC6950CD2F89C0F90F3FD6940182", hash_generated_method = "0C7E8F31AF50AFDACC2BB912D4181353")
     public E peekFirst() {
-        return (E)dsTaint.getTaint();
+        E varB4EAC82CA7396A68D541C85D26508E83_1660167295 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1660167295 = elements[head];
+        varB4EAC82CA7396A68D541C85D26508E83_1660167295.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1660167295;
         // ---------- Original Method ----------
         //return elements[head];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.909 -0400", hash_original_method = "2FB93C1E4553786B68715ADDCB3204FE", hash_generated_method = "1B0E4B2CA61654D8CE53BD5E782260F7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.518 -0400", hash_original_method = "2FB93C1E4553786B68715ADDCB3204FE", hash_generated_method = "1E1B0462C2FBEB18B0723C4D7354BAA4")
     public E peekLast() {
-        return (E)dsTaint.getTaint();
+        E varB4EAC82CA7396A68D541C85D26508E83_1433930426 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1433930426 = elements[(tail - 1) & (elements.length - 1)];
+        varB4EAC82CA7396A68D541C85D26508E83_1433930426.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1433930426;
         // ---------- Original Method ----------
         //return elements[(tail - 1) & (elements.length - 1)];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.909 -0400", hash_original_method = "2655E37A6129D552BDB18D712FBDBB78", hash_generated_method = "4A13EDB04E4D7423BB011F7F536DD5DC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.518 -0400", hash_original_method = "2655E37A6129D552BDB18D712FBDBB78", hash_generated_method = "257F93A5998258C7A9FE8511CCFEC1D8")
     public boolean removeFirstOccurrence(Object o) {
-        dsTaint.addTaint(o.dsTaint);
         int mask;
         mask = elements.length - 1;
         int i;
         i = head;
         E x;
         {
-            boolean var1329AA2C156BE9C813DA2AD363D45946_1007031554 = ((x = elements[i]) != null);
+            boolean var1329AA2C156BE9C813DA2AD363D45946_383309059 = ((x = elements[i]) != null);
             {
                 {
-                    boolean var8C3257AD3EAB1DB4919EC2B6E1BD3609_1954150224 = (o.equals(x));
+                    boolean var8C3257AD3EAB1DB4919EC2B6E1BD3609_2082656514 = (o.equals(x));
                     {
                         delete(i);
                     } //End block
@@ -340,7 +375,9 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
                 i = (i + 1) & mask;
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(o.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_528944957 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_528944957;
         // ---------- Original Method ----------
         //if (o == null)
             //return false;
@@ -358,20 +395,18 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.909 -0400", hash_original_method = "67D061371E16CEF717EF2A58AA73F6CB", hash_generated_method = "311D1672060C51606684A2BF9FD4145F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.519 -0400", hash_original_method = "67D061371E16CEF717EF2A58AA73F6CB", hash_generated_method = "DBF8ACB0DE2ADB511D6AEA4D556545BD")
     public boolean removeLastOccurrence(Object o) {
-        dsTaint.addTaint(o.dsTaint);
         int mask;
         mask = elements.length - 1;
         int i;
         i = (tail - 1) & mask;
         E x;
         {
-            boolean var1329AA2C156BE9C813DA2AD363D45946_556760814 = ((x = elements[i]) != null);
+            boolean var1329AA2C156BE9C813DA2AD363D45946_373641120 = ((x = elements[i]) != null);
             {
                 {
-                    boolean var8C3257AD3EAB1DB4919EC2B6E1BD3609_1072848688 = (o.equals(x));
+                    boolean var8C3257AD3EAB1DB4919EC2B6E1BD3609_1511533066 = (o.equals(x));
                     {
                         delete(i);
                     } //End block
@@ -379,7 +414,9 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
                 i = (i - 1) & mask;
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(o.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1095436894 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1095436894;
         // ---------- Original Method ----------
         //if (o == null)
             //return false;
@@ -397,91 +434,94 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.909 -0400", hash_original_method = "056B268263D9E7E4C2239F12D1024514", hash_generated_method = "B44EDCC5B58449239A191FB159C94BB5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.533 -0400", hash_original_method = "056B268263D9E7E4C2239F12D1024514", hash_generated_method = "E69C6E2FF4CF375FD1450792C4C43E1A")
     public boolean add(E e) {
-        dsTaint.addTaint(e.dsTaint);
         addLast(e);
-        return dsTaint.getTaintBoolean();
+        addTaint(e.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1235801017 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1235801017;
         // ---------- Original Method ----------
         //addLast(e);
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.910 -0400", hash_original_method = "90158A89D183AFC9420F99CD4C19A119", hash_generated_method = "7DA5BB93CE7DDD63B090EBFC130AC42B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.533 -0400", hash_original_method = "90158A89D183AFC9420F99CD4C19A119", hash_generated_method = "B469EF94730B19D10C41BE1944CDBA65")
     public boolean offer(E e) {
-        dsTaint.addTaint(e.dsTaint);
-        boolean var1C8D098E0D25C154182D97F2DFA9E90F_942733303 = (offerLast(e));
-        return dsTaint.getTaintBoolean();
+        boolean var1C8D098E0D25C154182D97F2DFA9E90F_443289914 = (offerLast(e));
+        addTaint(e.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_739922347 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_739922347;
         // ---------- Original Method ----------
         //return offerLast(e);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.910 -0400", hash_original_method = "5200E72EC4A7AF0A97DAC56CA915551B", hash_generated_method = "FE1E79A05F4627663516B63476EBCE77")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.533 -0400", hash_original_method = "5200E72EC4A7AF0A97DAC56CA915551B", hash_generated_method = "B0F0A9DCFC171D4BA671D039106A631B")
     public E remove() {
-        E var9618F1EE3794F973149A1F955F9C4810_1607488124 = (removeFirst());
-        return (E)dsTaint.getTaint();
+        E varB4EAC82CA7396A68D541C85D26508E83_500339793 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_500339793 = removeFirst();
+        varB4EAC82CA7396A68D541C85D26508E83_500339793.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_500339793;
         // ---------- Original Method ----------
         //return removeFirst();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.910 -0400", hash_original_method = "D6F4991F5239518842015971CA437CF0", hash_generated_method = "D2D51395792408008DF5B9F6AA17D3F2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.534 -0400", hash_original_method = "D6F4991F5239518842015971CA437CF0", hash_generated_method = "4A38B9DC3965FB4BD81B84D23B3502EE")
     public E poll() {
-        E varD3ED620EAF86151359736BDC9ACD315E_683561937 = (pollFirst());
-        return (E)dsTaint.getTaint();
+        E varB4EAC82CA7396A68D541C85D26508E83_874190273 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_874190273 = pollFirst();
+        varB4EAC82CA7396A68D541C85D26508E83_874190273.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_874190273;
         // ---------- Original Method ----------
         //return pollFirst();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.910 -0400", hash_original_method = "C3B5A6F3A12E32CB352921DD8911C7F3", hash_generated_method = "ACBE8E8D8B6522B7B8DF0333A02B7E95")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.534 -0400", hash_original_method = "C3B5A6F3A12E32CB352921DD8911C7F3", hash_generated_method = "70A49B514F1DDE3B928D496A56E71790")
     public E element() {
-        E var58DD305D38CE085F5069F0E1FAACA46E_547027814 = (getFirst());
-        return (E)dsTaint.getTaint();
+        E varB4EAC82CA7396A68D541C85D26508E83_1243407786 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1243407786 = getFirst();
+        varB4EAC82CA7396A68D541C85D26508E83_1243407786.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1243407786;
         // ---------- Original Method ----------
         //return getFirst();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.910 -0400", hash_original_method = "A003E27ECA2FE3193555598EEC98E09D", hash_generated_method = "A97C676338AB278F7003AF28213A9545")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.534 -0400", hash_original_method = "A003E27ECA2FE3193555598EEC98E09D", hash_generated_method = "22BFACAF33C2925484321CCBD725F956")
     public E peek() {
-        E varC18B05CCC3587F9766AC9846B6CD4DAB_1505964621 = (peekFirst());
-        return (E)dsTaint.getTaint();
+        E varB4EAC82CA7396A68D541C85D26508E83_911481830 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_911481830 = peekFirst();
+        varB4EAC82CA7396A68D541C85D26508E83_911481830.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_911481830;
         // ---------- Original Method ----------
         //return peekFirst();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.910 -0400", hash_original_method = "848DD27BB905F5A807C52ED75E19F6C3", hash_generated_method = "00F1B7F4842DCBC81A08CDD44FD5A714")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.535 -0400", hash_original_method = "848DD27BB905F5A807C52ED75E19F6C3", hash_generated_method = "72C186ED1744A0D2DEFAA4DDE67D7864")
     public void push(E e) {
-        dsTaint.addTaint(e.dsTaint);
         addFirst(e);
+        addTaint(e.getTaint());
         // ---------- Original Method ----------
         //addFirst(e);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.911 -0400", hash_original_method = "158DA4E81D3B40D802055686181E6101", hash_generated_method = "0E20F3BFE67019EE0BDA92B966185EC5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.536 -0400", hash_original_method = "158DA4E81D3B40D802055686181E6101", hash_generated_method = "51D57FED2E8EBE91D508DDF5844AEDF7")
     public E pop() {
-        E var9618F1EE3794F973149A1F955F9C4810_1291368688 = (removeFirst());
-        return (E)dsTaint.getTaint();
+        E varB4EAC82CA7396A68D541C85D26508E83_1010295015 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1010295015 = removeFirst();
+        varB4EAC82CA7396A68D541C85D26508E83_1010295015.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1010295015;
         // ---------- Original Method ----------
         //return removeFirst();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.911 -0400", hash_original_method = "BBF79E0ADE5790277B99F1D7AA727B20", hash_generated_method = "1D9C6F57BCDE2C7294D7BB32ACA5DF67")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.536 -0400", hash_original_method = "BBF79E0ADE5790277B99F1D7AA727B20", hash_generated_method = "1D9C6F57BCDE2C7294D7BB32ACA5DF67")
     private void checkInvariants() {
         // ---------- Original Method ----------
         //assert elements[tail] == null;
@@ -492,10 +532,8 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.911 -0400", hash_original_method = "6B28B7CDDDC5837E98E272935A4DA74A", hash_generated_method = "BB1F1A63FC47F5725E79F5C8B0F81D98")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.546 -0400", hash_original_method = "6B28B7CDDDC5837E98E272935A4DA74A", hash_generated_method = "F9B7A4C07C7F6AB17212E05E04C5ABB8")
     private boolean delete(int i) {
-        dsTaint.addTaint(i);
         checkInvariants();
         E[] elements;
         elements = this.elements;
@@ -534,69 +572,73 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
                 tail = (t - 1) & mask;
             } //End block
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(i);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_995056545 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_995056545;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.912 -0400", hash_original_method = "D58AA3C48B1B36CF35B203F4633D4120", hash_generated_method = "E49C956B914B31412344590788729711")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.551 -0400", hash_original_method = "D58AA3C48B1B36CF35B203F4633D4120", hash_generated_method = "C4E46844B39C679DCF2993D3BDF24B9B")
     public int size() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1595536466 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1595536466;
         // ---------- Original Method ----------
         //return (tail - head) & (elements.length - 1);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.912 -0400", hash_original_method = "029A9450FF46747D2F1AB4761630FBFA", hash_generated_method = "E771924490E430C992B9E09604998555")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.551 -0400", hash_original_method = "029A9450FF46747D2F1AB4761630FBFA", hash_generated_method = "899A6CB66190EC76997108348EB52480")
     public boolean isEmpty() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1817949277 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1817949277;
         // ---------- Original Method ----------
         //return head == tail;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.912 -0400", hash_original_method = "ECCE71EADB88CB0EFABEE24B7316B6D0", hash_generated_method = "F6D67D4EB53E76369F1557E47C9B383C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.552 -0400", hash_original_method = "ECCE71EADB88CB0EFABEE24B7316B6D0", hash_generated_method = "C45F0FE6E7DE9743837C3C3E673DA3DF")
     public Iterator<E> iterator() {
-        Iterator<E> var32E86CD73FE182026371A5B5B728FB14_1401551458 = (new DeqIterator());
-        return (Iterator<E>)dsTaint.getTaint();
+        Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_2031427629 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2031427629 = new DeqIterator();
+        varB4EAC82CA7396A68D541C85D26508E83_2031427629.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2031427629;
         // ---------- Original Method ----------
         //return new DeqIterator();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.912 -0400", hash_original_method = "09A6B8B983928A3C88383EF59752C844", hash_generated_method = "44EEDF9A8EF5C819F575EC8A378FDEDF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.552 -0400", hash_original_method = "09A6B8B983928A3C88383EF59752C844", hash_generated_method = "026B1BC18FB9EDC845380F2D044459DD")
     public Iterator<E> descendingIterator() {
-        Iterator<E> var2C808ED2EBDD783D41D2A502283D827B_1496398347 = (new DescendingIterator());
-        return (Iterator<E>)dsTaint.getTaint();
+        Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1754903 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1754903 = new DescendingIterator();
+        varB4EAC82CA7396A68D541C85D26508E83_1754903.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1754903;
         // ---------- Original Method ----------
         //return new DescendingIterator();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.913 -0400", hash_original_method = "76B0F415E6F814FE548D14BC6D5843EE", hash_generated_method = "0E08093FA95615C766E216CE602416DA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.553 -0400", hash_original_method = "76B0F415E6F814FE548D14BC6D5843EE", hash_generated_method = "239199E77A8A533B91916E109693C41B")
     public boolean contains(Object o) {
-        dsTaint.addTaint(o.dsTaint);
         int mask;
         mask = elements.length - 1;
         int i;
         i = head;
         E x;
         {
-            boolean var1329AA2C156BE9C813DA2AD363D45946_738120454 = ((x = elements[i]) != null);
+            boolean var1329AA2C156BE9C813DA2AD363D45946_690194274 = ((x = elements[i]) != null);
             {
                 {
-                    boolean var8C3257AD3EAB1DB4919EC2B6E1BD3609_1578009130 = (o.equals(x));
+                    boolean var8C3257AD3EAB1DB4919EC2B6E1BD3609_1623458238 = (o.equals(x));
                 } //End collapsed parenthetic
                 i = (i + 1) & mask;
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(o.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1381659286 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1381659286;
         // ---------- Original Method ----------
         //if (o == null)
             //return false;
@@ -612,19 +654,18 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.913 -0400", hash_original_method = "953726349F424E37042C19BD0C0A52B8", hash_generated_method = "FFA9F366D2BD1DB0403FCD392A20CAD1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.558 -0400", hash_original_method = "953726349F424E37042C19BD0C0A52B8", hash_generated_method = "437095FB8E246B070A1E4B9B57DF41FF")
     public boolean remove(Object o) {
-        dsTaint.addTaint(o.dsTaint);
-        boolean varB3B6A07AEF87793955942F9770654762_831350758 = (removeFirstOccurrence(o));
-        return dsTaint.getTaintBoolean();
+        boolean varB3B6A07AEF87793955942F9770654762_1656540934 = (removeFirstOccurrence(o));
+        addTaint(o.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_134985063 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_134985063;
         // ---------- Original Method ----------
         //return removeFirstOccurrence(o);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.913 -0400", hash_original_method = "AB065CB5BA1D923138DE6DFF9B806E2B", hash_generated_method = "46BF4EA79B8F3F655FE56357D4AF4ABB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.567 -0400", hash_original_method = "AB065CB5BA1D923138DE6DFF9B806E2B", hash_generated_method = "46BF4EA79B8F3F655FE56357D4AF4ABB")
     public void clear() {
         int h;
         h = head;
@@ -656,27 +697,30 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.913 -0400", hash_original_method = "33D76C50C1E8C0374668B986897D9D9E", hash_generated_method = "2325304DCBADB9449AC78D42C097AA21")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.568 -0400", hash_original_method = "33D76C50C1E8C0374668B986897D9D9E", hash_generated_method = "3E943247484A556AD6C8C24E6338DDCB")
     public Object[] toArray() {
-        Object[] varA6F150C326F7123F8EB50A189C86BABA_18595132 = (copyElements(new Object[size()]));
-        return (Object[])dsTaint.getTaint();
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_650322647 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_650322647 = copyElements(new Object[size()]);
+        varB4EAC82CA7396A68D541C85D26508E83_650322647.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_650322647;
         // ---------- Original Method ----------
         //return copyElements(new Object[size()]);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.914 -0400", hash_original_method = "38034B8DDDAB71FC35937F12D964AD07", hash_generated_method = "16C7E8B4F82EFB2B9A8E6D540480A688")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.568 -0400", hash_original_method = "38034B8DDDAB71FC35937F12D964AD07", hash_generated_method = "A7E72CA19C5D015A1D4DC2D62E24284C")
     public <T> T[] toArray(T[] a) {
-        dsTaint.addTaint(a[0].dsTaint);
+        T[] varB4EAC82CA7396A68D541C85D26508E83_2040341925 = null; //Variable for return #1
         int size;
         size = size();
         a = (T[])java.lang.reflect.Array.newInstance(
                     a.getClass().getComponentType(), size);
         copyElements(a);
         a[size] = null;
-        return (T[])dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2040341925 = a;
+        addTaint(a[0].getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_2040341925.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2040341925;
         // ---------- Original Method ----------
         //int size = size();
         //if (a.length < size)
@@ -689,20 +733,22 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.914 -0400", hash_original_method = "A2826FA19E4353225E0757D076E8282A", hash_generated_method = "8D4B04D8D8CDC46E6EF89EF14AA3C6A3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.573 -0400", hash_original_method = "A2826FA19E4353225E0757D076E8282A", hash_generated_method = "05E8DA4F27C6B039530A55CFBC113ABA")
     public ArrayDeque<E> clone() {
+        ArrayDeque<E> varB4EAC82CA7396A68D541C85D26508E83_1659163080 = null; //Variable for return #1
         try 
         {
             ArrayDeque<E> result;
             result = (ArrayDeque<E>) super.clone();
             result.elements = Arrays.copyOf(elements, elements.length);
+            varB4EAC82CA7396A68D541C85D26508E83_1659163080 = result;
         } //End block
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         } //End block
-        return (ArrayDeque<E>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1659163080.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1659163080;
         // ---------- Original Method ----------
         //try {
             //ArrayDeque<E> result = (ArrayDeque<E>) super.clone();
@@ -714,10 +760,8 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.914 -0400", hash_original_method = "5A84D35A2C5A040CC18139106D665D0E", hash_generated_method = "E7EA9BDA11923DC78D73B3EAF5FD96BD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.573 -0400", hash_original_method = "5A84D35A2C5A040CC18139106D665D0E", hash_generated_method = "6381745500BDB723703A170DB99EE97C")
     private void writeObject(ObjectOutputStream s) throws IOException {
-        dsTaint.addTaint(s.dsTaint);
         s.defaultWriteObject();
         s.writeInt(size());
         int mask;
@@ -728,6 +772,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
             i = (i + 1) & mask;
             s.writeObject(elements[i]);
         } //End collapsed parenthetic
+        addTaint(s.getTaint());
         // ---------- Original Method ----------
         //s.defaultWriteObject();
         //s.writeInt(size());
@@ -737,10 +782,8 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.915 -0400", hash_original_method = "ABF871D717FCC2D87CA02E500CE54CBF", hash_generated_method = "91B3D1DDF0E6932EF4C4C5BE0AF09FC8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.574 -0400", hash_original_method = "ABF871D717FCC2D87CA02E500CE54CBF", hash_generated_method = "805B405F0AC99AB671AFE4082C7A104A")
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
-        dsTaint.addTaint(s.dsTaint);
         s.defaultReadObject();
         int size;
         size = s.readInt();
@@ -764,35 +807,44 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
 
     
     private class DeqIterator implements Iterator<E> {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.574 -0400", hash_original_field = "A6C3E4B2DB56705F1E0449DB0F2C2FBA", hash_generated_field = "44DF51687F75FF9B360C641B654097EA")
+
         private int cursor = head;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.574 -0400", hash_original_field = "A59CA35B929091FBAF4213A76A4791DD", hash_generated_field = "CD264196D1FE9C34BAABF3EB22B1DEF4")
+
         private int fence = tail;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.574 -0400", hash_original_field = "05BB3FB56C1D06F12491BD981603A511", hash_generated_field = "C24010450EAB67B935A24ED5E0D44753")
+
         private int lastRet = -1;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.915 -0400", hash_original_method = "0516B832B778E31940D68CA241694899", hash_generated_method = "0516B832B778E31940D68CA241694899")
-                public DeqIterator ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.574 -0400", hash_original_method = "8F728FEBD0A799A5BB08E38FDCDEB966", hash_generated_method = "8F728FEBD0A799A5BB08E38FDCDEB966")
+        public DeqIterator ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.915 -0400", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "F81C8AFCBF34ADF078406494668486FE")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.574 -0400", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "737526EC22E9F8CF2E44D30A38E5E262")
         public boolean hasNext() {
-            return dsTaint.getTaintBoolean();
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_142725657 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_142725657;
             // ---------- Original Method ----------
             //return cursor != fence;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.915 -0400", hash_original_method = "9CABF9BA27B0EE6B683FFA8F5EC2BB0E", hash_generated_method = "1142B36F77C2A3044754A6716A3675B2")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.575 -0400", hash_original_method = "9CABF9BA27B0EE6B683FFA8F5EC2BB0E", hash_generated_method = "33B276FDAD334B174FFCB1D969025912")
         public E next() {
+            E varB4EAC82CA7396A68D541C85D26508E83_1493463622 = null; //Variable for return #1
             if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             E result;
             result = elements[cursor];
             if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
             lastRet = cursor;
             cursor = (cursor + 1) & (elements.length - 1);
-            return (E)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1493463622 = result;
+            varB4EAC82CA7396A68D541C85D26508E83_1493463622.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1493463622;
             // ---------- Original Method ----------
             //if (cursor == fence)
                 //throw new NoSuchElementException();
@@ -805,12 +857,11 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.915 -0400", hash_original_method = "A6EE424EC418974FAC2A0A9E736B0189", hash_generated_method = "29AFF10A9B656D1F9F28C78AB69B4E6D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.586 -0400", hash_original_method = "A6EE424EC418974FAC2A0A9E736B0189", hash_generated_method = "D867C05BD1057475A5AA6796CA6E617A")
         public void remove() {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
             {
-                boolean varC9E761FAC14702C2B623BE027E2F7281_1697351941 = (delete(lastRet));
+                boolean varC9E761FAC14702C2B623BE027E2F7281_917836848 = (delete(lastRet));
                 {
                     cursor = (cursor - 1) & (elements.length - 1);
                     fence = tail;
@@ -833,35 +884,44 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
 
     
     private class DescendingIterator implements Iterator<E> {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.586 -0400", hash_original_field = "D7BB8B9FE9FDF2C1C79C88B1A34D38AF", hash_generated_field = "9C757AFC9A7098F996E37879537F5728")
+
         private int cursor = tail;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.586 -0400", hash_original_field = "EFD18F3C9098DD073CE26810B5D769B0", hash_generated_field = "EB9AC1D6784E298C35CBEF17C766890F")
+
         private int fence = head;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.586 -0400", hash_original_field = "05BB3FB56C1D06F12491BD981603A511", hash_generated_field = "C24010450EAB67B935A24ED5E0D44753")
+
         private int lastRet = -1;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.916 -0400", hash_original_method = "D95347399862EFD8904DAFA3C99422E6", hash_generated_method = "D95347399862EFD8904DAFA3C99422E6")
-                public DescendingIterator ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.586 -0400", hash_original_method = "EFD23C54297A65B9A603FACFE0E34AA6", hash_generated_method = "EFD23C54297A65B9A603FACFE0E34AA6")
+        public DescendingIterator ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.916 -0400", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "F81C8AFCBF34ADF078406494668486FE")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.587 -0400", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "6AEE14BEB356C092144C279049781087")
         public boolean hasNext() {
-            return dsTaint.getTaintBoolean();
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_206084281 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_206084281;
             // ---------- Original Method ----------
             //return cursor != fence;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.917 -0400", hash_original_method = "5248F2967157124DAD3A5B8F2BA1B9D6", hash_generated_method = "D91CCEB97E289B4C948ECF6838C06854")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.588 -0400", hash_original_method = "5248F2967157124DAD3A5B8F2BA1B9D6", hash_generated_method = "2211771D6D0A0C0AED162559C91DB04A")
         public E next() {
+            E varB4EAC82CA7396A68D541C85D26508E83_434925802 = null; //Variable for return #1
             if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             cursor = (cursor - 1) & (elements.length - 1);
             E result;
             result = elements[cursor];
             if (DroidSafeAndroidRuntime.control) throw new ConcurrentModificationException();
             lastRet = cursor;
-            return (E)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_434925802 = result;
+            varB4EAC82CA7396A68D541C85D26508E83_434925802.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_434925802;
             // ---------- Original Method ----------
             //if (cursor == fence)
                 //throw new NoSuchElementException();
@@ -874,12 +934,11 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.918 -0400", hash_original_method = "C558887990F4F262B85810625D57822A", hash_generated_method = "B850D3DA90D17B465B09E3967626358C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.592 -0400", hash_original_method = "C558887990F4F262B85810625D57822A", hash_generated_method = "C75F4A280DC62E725822112908CDDBAF")
         public void remove() {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
             {
-                boolean var3942AF7F654E16207FF88B33EBA55990_1630564895 = (!delete(lastRet));
+                boolean var3942AF7F654E16207FF88B33EBA55990_741207364 = (!delete(lastRet));
                 {
                     cursor = (cursor + 1) & (elements.length - 1);
                     fence = head;
@@ -901,7 +960,11 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
 
 
     
-    private static final int MIN_INITIAL_CAPACITY = 8;
-    private static final long serialVersionUID = 2340985798034038923L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.592 -0400", hash_original_field = "FA7CACCF7CB1913464940178A51F4202", hash_generated_field = "6E7CD6762AD4CB4CE9AB508DAEB6C66F")
+
+    private static int MIN_INITIAL_CAPACITY = 8;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.592 -0400", hash_original_field = "CE1576C94D2F8F975B0823F778718192", hash_generated_field = "5D2DFEA6D297ABF43DA859264DB0C963")
+
+    private static long serialVersionUID = 2340985798034038923L;
 }
 

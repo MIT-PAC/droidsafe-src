@@ -13,28 +13,24 @@ import java.text.ParseException;
 
 public abstract class ChallengeParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.253 -0400", hash_original_method = "0297ABBADD5BD655B8C4CB1A6717CB49", hash_generated_method = "AB8049FF5225C32AC6582858EBB60B41")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected ChallengeParser(String challenge) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.568 -0400", hash_original_method = "0297ABBADD5BD655B8C4CB1A6717CB49", hash_generated_method = "719892B1E8D278F5962FC3FCB6618200")
+    protected  ChallengeParser(String challenge) {
         super(challenge);
-        dsTaint.addTaint(challenge);
+        addTaint(challenge.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.253 -0400", hash_original_method = "FE6E9A1011CEBAC8DED6715FCD76DE94", hash_generated_method = "492E1D12B6EEDED5003CC3B42615DAEC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected ChallengeParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.577 -0400", hash_original_method = "FE6E9A1011CEBAC8DED6715FCD76DE94", hash_generated_method = "36BC49D420A570C5A7102D5D60C3B1AC")
+    protected  ChallengeParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.253 -0400", hash_original_method = "9DA7C681662806B106F4C258133C7994", hash_generated_method = "49FB09A325A7112A1D86565CE0E3C0EA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.582 -0400", hash_original_method = "9DA7C681662806B106F4C258133C7994", hash_generated_method = "1EC17ABFCB2201F107B9C45EC2754CBD")
     protected void parseParameter(AuthenticationHeader header) throws ParseException {
-        dsTaint.addTaint(header.dsTaint);
         dbg_enter("parseParameter");
         try 
         {
@@ -46,6 +42,7 @@ public abstract class ChallengeParser extends HeaderParser {
         {
             dbg_leave("parseParameter");
         } //End block
+        addTaint(header.getTaint());
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("parseParameter");
@@ -59,10 +56,8 @@ public abstract class ChallengeParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.254 -0400", hash_original_method = "B311542306ECD32A0F10ABE0BAAE80D2", hash_generated_method = "55A72B8F2489276338E525DD802C7A66")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.594 -0400", hash_original_method = "B311542306ECD32A0F10ABE0BAAE80D2", hash_generated_method = "0B99A2A0527989F0982F696573767EA6")
     public void parse(AuthenticationHeader header) throws ParseException {
-        dsTaint.addTaint(header.dsTaint);
         this.lexer.SPorHT();
         lexer.match(TokenTypes.ID);
         Token type;
@@ -72,7 +67,7 @@ public abstract class ChallengeParser extends HeaderParser {
         try 
         {
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_1125084908 = (lexer.lookAhead(0) != '\n');
+                boolean varA38820C66B6BCE71087D920E2767FF09_2126778890 = (lexer.lookAhead(0) != '\n');
                 {
                     this.parseParameter(header);
                     this.lexer.SPorHT();
@@ -87,6 +82,7 @@ public abstract class ChallengeParser extends HeaderParser {
         {
             if (DroidSafeAndroidRuntime.control) throw ex;
         } //End block
+        addTaint(header.getTaint());
         // ---------- Original Method ----------
         //this.lexer.SPorHT();
         //lexer.match(TokenTypes.ID);

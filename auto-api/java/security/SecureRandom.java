@@ -16,13 +16,18 @@ import org.apache.harmony.security.fortress.Services;
 import org.apache.harmony.security.provider.crypto.SHA1PRNG_SecureRandomImpl;
 
 public class SecureRandom extends Random {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.183 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
+
     private Provider provider;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.183 -0400", hash_original_field = "2A9DF802799D43E18CBDCC1C0118F3D5", hash_generated_field = "3A956A531DB9FE4A5E154E058CE99C7C")
+
     private SecureRandomSpi secureRandomSpi;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.183 -0400", hash_original_field = "ED469618898D75B149E5C7C4B6A1C415", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
+
     private String algorithm;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.516 -0400", hash_original_method = "33F8886B5EAC6FEC4DE9DFB0ACBA3485", hash_generated_method = "FA1B742AD8977CBA524703B3467B70F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SecureRandom() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.192 -0400", hash_original_method = "33F8886B5EAC6FEC4DE9DFB0ACBA3485", hash_generated_method = "FA1B742AD8977CBA524703B3467B70F8")
+    public  SecureRandom() {
         super(0);
         Services.refresh();
         Provider.Service service;
@@ -63,37 +68,34 @@ public class SecureRandom extends Random {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.517 -0400", hash_original_method = "9BC52FCDF813ED3C3D5BC6E2620A6B25", hash_generated_method = "926B8D2BA5F45CB76424E05C331C638D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SecureRandom(byte[] seed) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.197 -0400", hash_original_method = "9BC52FCDF813ED3C3D5BC6E2620A6B25", hash_generated_method = "34351629464DFCA81E505765D6774B50")
+    public  SecureRandom(byte[] seed) {
         this();
-        dsTaint.addTaint(seed[0]);
         setSeed(seed);
+        addTaint(seed[0]);
         // ---------- Original Method ----------
         //setSeed(seed);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.517 -0400", hash_original_method = "BD02DB0E23AA7BAA028ADD51586ACEB6", hash_generated_method = "6B0937D482614AD556DAB8A61FDA4257")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected SecureRandom(SecureRandomSpi secureRandomSpi,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.197 -0400", hash_original_method = "BD02DB0E23AA7BAA028ADD51586ACEB6", hash_generated_method = "348089E8EA7EEF2DFBDECE19D1D244A9")
+    protected  SecureRandom(SecureRandomSpi secureRandomSpi,
                            Provider provider) {
         this(secureRandomSpi, provider, "unknown");
-        dsTaint.addTaint(secureRandomSpi.dsTaint);
-        dsTaint.addTaint(provider.dsTaint);
+        addTaint(secureRandomSpi.getTaint());
+        addTaint(provider.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.517 -0400", hash_original_method = "8ED38FDA0C5F7DDB2E6327092A1339E9", hash_generated_method = "F81A1048C508AC66E146DA9FB3EFEEC1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private SecureRandom(SecureRandomSpi secureRandomSpi,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.198 -0400", hash_original_method = "8ED38FDA0C5F7DDB2E6327092A1339E9", hash_generated_method = "C16B4A5D340303DC7C3B28F2F7D9E05B")
+    private  SecureRandom(SecureRandomSpi secureRandomSpi,
                          Provider provider,
                          String algorithm) {
         super(0);
-        dsTaint.addTaint(secureRandomSpi.dsTaint);
-        dsTaint.addTaint(provider.dsTaint);
-        dsTaint.addTaint(algorithm);
+        this.provider = provider;
+        this.algorithm = algorithm;
+        this.secureRandomSpi = secureRandomSpi;
         // ---------- Original Method ----------
         //this.provider = provider;
         //this.algorithm = algorithm;
@@ -135,43 +137,45 @@ public class SecureRandom extends Random {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.518 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "828895F1878B3605546159F61AC099C2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.204 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "26449C1D0A6D55B0D2BB368906ABAC33")
     public final Provider getProvider() {
-        return (Provider)dsTaint.getTaint();
+        Provider varB4EAC82CA7396A68D541C85D26508E83_1713384499 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1713384499 = provider;
+        varB4EAC82CA7396A68D541C85D26508E83_1713384499.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1713384499;
         // ---------- Original Method ----------
         //return provider;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.518 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "AB6B64DEEAE2006CFA3127C5F18A75FB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.204 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "D8D0DBF983B5F33972253D1F8E97A589")
     public String getAlgorithm() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_943889980 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_943889980 = algorithm;
+        varB4EAC82CA7396A68D541C85D26508E83_943889980.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_943889980;
         // ---------- Original Method ----------
         //return algorithm;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.519 -0400", hash_original_method = "8CEEFEAA85939144164B3CD7D68FA666", hash_generated_method = "B8BC6676E6FA6F554C231B1CA32BE0B5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.204 -0400", hash_original_method = "8CEEFEAA85939144164B3CD7D68FA666", hash_generated_method = "3C767607DE2FF46B8110D1DED4AFE59A")
     public synchronized void setSeed(byte[] seed) {
-        dsTaint.addTaint(seed[0]);
         secureRandomSpi.engineSetSeed(seed);
+        addTaint(seed[0]);
         // ---------- Original Method ----------
         //secureRandomSpi.engineSetSeed(seed);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.519 -0400", hash_original_method = "9FF68F20EA17830E094095398C2F5999", hash_generated_method = "601DEBDA00310D44FC83CC4B60005DB6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.215 -0400", hash_original_method = "9FF68F20EA17830E094095398C2F5999", hash_generated_method = "5C582EDB03C343BC682B72BB798463B3")
     @Override
     public void setSeed(long seed) {
-        dsTaint.addTaint(seed);
         byte[] byteSeed;
         byteSeed = new byte[SizeOf.LONG];
         Memory.pokeLong(byteSeed, 0, seed, ByteOrder.BIG_ENDIAN);
         setSeed(byteSeed);
+        addTaint(seed);
         // ---------- Original Method ----------
         //if (seed == 0) {    
             //return;
@@ -182,22 +186,19 @@ public class SecureRandom extends Random {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.520 -0400", hash_original_method = "AD0BFB52D4FF32A1ADE4FBCCEAA68479", hash_generated_method = "B5D29A883165EF0128F5EF365C9FB1D0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.215 -0400", hash_original_method = "AD0BFB52D4FF32A1ADE4FBCCEAA68479", hash_generated_method = "5ECEBFC043503CBF96EE0741EE222048")
     @Override
     public synchronized void nextBytes(byte[] bytes) {
-        dsTaint.addTaint(bytes[0]);
         secureRandomSpi.engineNextBytes(bytes);
+        addTaint(bytes[0]);
         // ---------- Original Method ----------
         //secureRandomSpi.engineNextBytes(bytes);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.521 -0400", hash_original_method = "5D37488B96B0B99188E69118313D10F5", hash_generated_method = "1992CC90381CA5708EF9D9A88F64900D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.216 -0400", hash_original_method = "5D37488B96B0B99188E69118313D10F5", hash_generated_method = "E71F80A289A15A9A6FAD7F1C298D168C")
     @Override
     protected final int next(int numBits) {
-        dsTaint.addTaint(numBits);
         {
             numBits = 0;
         } //End block
@@ -221,7 +222,9 @@ public class SecureRandom extends Random {
             } //End block
         } //End collapsed parenthetic
         ret = ret >>> (bytes*8 - numBits);
-        return dsTaint.getTaintInt();
+        addTaint(numBits);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328305108 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_328305108;
         // ---------- Original Method ----------
         //if (numBits < 0) {
             //numBits = 0;
@@ -251,22 +254,28 @@ public class SecureRandom extends Random {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.523 -0400", hash_original_method = "D819275281A9132149A7C81B1EB64271", hash_generated_method = "075C215D12732BDE33E3413C0B677B10")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.217 -0400", hash_original_method = "D819275281A9132149A7C81B1EB64271", hash_generated_method = "99170A67BE71E62F6AB3AB3175690060")
     public byte[] generateSeed(int numBytes) {
-        dsTaint.addTaint(numBytes);
-        byte[] var15A980A0739C67DA04D9CD07E0145888_466463083 = (secureRandomSpi.engineGenerateSeed(numBytes));
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var15A980A0739C67DA04D9CD07E0145888_120458933 = (secureRandomSpi.engineGenerateSeed(numBytes));
+        addTaint(numBytes);
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1425679178 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1425679178;
         // ---------- Original Method ----------
         //return secureRandomSpi.engineGenerateSeed(numBytes);
     }
 
     
-    private static final long serialVersionUID = 4940670005562187L;
-    private static final String SERVICE = "SecureRandom";
-    private static final Engine ENGINE = new Engine(SERVICE);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.217 -0400", hash_original_field = "42918EFED80962D4305753FAC344C87E", hash_generated_field = "F2B52BD93751D0A8B4E72284F6ECEBB6")
+
+    private static long serialVersionUID = 4940670005562187L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.217 -0400", hash_original_field = "98FB2C540761B08589242CC9820FD0DF", hash_generated_field = "A9FBCEB1B91393AEF05A1C02E3B5CDC4")
+
+    private static String SERVICE = "SecureRandom";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.217 -0400", hash_original_field = "48254CA5EA2459783D1EB8D6358A6F88", hash_generated_field = "82D6520D3C45D5046B0A4FDCEDAFF880")
+
+    private static Engine ENGINE = new Engine(SERVICE);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.217 -0400", hash_original_field = "DF40A3D03CEB7B6E4DF4BD84688CE3F8", hash_generated_field = "31989AA54DF24BBD5CAEA96810169BB6")
+
     private static volatile SecureRandom internalSecureRandom;
 }
 

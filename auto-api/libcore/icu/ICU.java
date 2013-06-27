@@ -12,9 +12,10 @@ import java.util.Locale;
 
 public final class ICU {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.465 -0400", hash_original_method = "EE3697EE3763D0C54495C987AD1957C9", hash_generated_method = "EE3697EE3763D0C54495C987AD1957C9")
-        public ICU ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.039 -0400", hash_original_method = "41D0A20E3850008EA50DF809FC4EB919", hash_generated_method = "41D0A20E3850008EA50DF809FC4EB919")
+    public ICU ()
     {
+        //Synthesized constructor
     }
 
 
@@ -100,74 +101,67 @@ public final class ICU {
 
     
         public static String getIcuVersion() {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static String getUnicodeVersion() {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static String toLowerCase(String s, String localeName) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static String toUpperCase(String s, String localeName) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         private static String[] getAvailableBreakIteratorLocalesNative() {
-        String[] retVal = {DSUtils.UNKNOWN_STRING};
-        return retVal;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         private static String[] getAvailableCalendarLocalesNative() {
-        String[] retVal = {DSUtils.UNKNOWN_STRING};
-        return retVal;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         private static String[] getAvailableCollatorLocalesNative() {
-        String[] retVal = {DSUtils.UNKNOWN_STRING};
-        return retVal;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         private static String[] getAvailableDateFormatLocalesNative() {
-        String[] retVal = {DSUtils.UNKNOWN_STRING};
-        return retVal;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         private static String[] getAvailableLocalesNative() {
-        String[] retVal = {DSUtils.UNKNOWN_STRING};
-        return retVal;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         private static String[] getAvailableNumberFormatLocalesNative() {
-        String[] retVal = {DSUtils.UNKNOWN_STRING};
-        return retVal;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static String[] getAvailableCurrencyCodes() {
-        String[] retVal = {DSUtils.UNKNOWN_STRING};
-        return retVal;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static String getCurrencyCode(String countryCode) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static String getCurrencyDisplayName(String locale, String currencyCode) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -177,54 +171,52 @@ public final class ICU {
 
     
         public static String getCurrencySymbol(String locale, String currencyCode) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static String getDisplayCountryNative(String countryCode, String locale) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static String getDisplayLanguageNative(String languageCode, String locale) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static String getDisplayVariantNative(String variantCode, String locale) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static String getISO3CountryNative(String locale) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static String getISO3LanguageNative(String locale) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static String addLikelySubtags(String locale) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static String getScript(String locale) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         private static String[] getISOLanguagesNative() {
-        String[] retVal = {DSUtils.UNKNOWN_STRING};
-        return retVal;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         private static String[] getISOCountriesNative() {
-        String[] retVal = {DSUtils.UNKNOWN_STRING};
-        return retVal;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -233,8 +225,14 @@ public final class ICU {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.084 -0400", hash_original_field = "88013DEF7F73488714320DFBA5CBDA04", hash_generated_field = "BE35828B892076AC7390E82ED7757E24")
+
     private static String[] isoLanguages;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.084 -0400", hash_original_field = "5608ECD95723058790445D0401D02553", hash_generated_field = "DD8EDDECCA2B05E89485367EA0F1D58F")
+
     private static String[] isoCountries;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.084 -0400", hash_original_field = "5FB2CB19CCC322B383B07F128D410B7F", hash_generated_field = "5054072110B01E76431E0948BDF07C94")
+
     private static Locale[] availableLocalesCache;
 }
 

@@ -10,24 +10,27 @@ import java.util.Iterator;
 
 public class PrivilegedActionException extends Exception {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.404 -0400", hash_original_method = "EDD6A4125897553733853A01EFA0A0B7", hash_generated_method = "EFAF9BA4062EA00F3BAA39D8BCB75E51")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PrivilegedActionException(Exception ex) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.108 -0400", hash_original_method = "EDD6A4125897553733853A01EFA0A0B7", hash_generated_method = "AF1093C48D4324A2D9FF70091893DC5F")
+    public  PrivilegedActionException(Exception ex) {
         super(ex);
-        dsTaint.addTaint(ex.dsTaint);
+        addTaint(ex.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.405 -0400", hash_original_method = "96C5131DB95D0ADB8B79CD396371D505", hash_generated_method = "76EA32B4063341F9C4A2C36DCD3E5D1A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.108 -0400", hash_original_method = "96C5131DB95D0ADB8B79CD396371D505", hash_generated_method = "EAEC6936788B6A61E54815FF03912220")
     public Exception getException() {
-        return (Exception)dsTaint.getTaint();
+        Exception varB4EAC82CA7396A68D541C85D26508E83_1488331972 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1488331972 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1488331972.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1488331972;
         // ---------- Original Method ----------
         //return null;
     }
 
     
-    private static final long serialVersionUID = 4724086851538908602l;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.108 -0400", hash_original_field = "C6EE766F2D182B1AF374A82150C8909C", hash_generated_field = "01A2824FA17B9A770D176999387269DD")
+
+    private static long serialVersionUID = 4724086851538908602l;
 }
 

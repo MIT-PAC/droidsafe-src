@@ -10,9 +10,8 @@ import java.util.Iterator;
 
 public class Assert {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.403 -0400", hash_original_method = "E40547AB86F11E4F3EB5ED4FFC825309", hash_generated_method = "E776EC518D153ABA6A4956D5CD28EDBD")
-    @DSModeled(DSC.SAFE)
-    protected Assert() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.976 -0400", hash_original_method = "E40547AB86F11E4F3EB5ED4FFC825309", hash_generated_method = "E776EC518D153ABA6A4956D5CD28EDBD")
+    protected  Assert() {
         // ---------- Original Method ----------
     }
 

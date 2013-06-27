@@ -11,26 +11,26 @@ import java.io.Serializable;
 
 public abstract class Format implements Serializable, Cloneable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.294 -0400", hash_original_method = "6FBA04B2B44BD6140150C63C748AD62A", hash_generated_method = "8A4387ADC0046A91B4EE8D219103BC9A")
-    @DSModeled(DSC.SAFE)
-    protected Format() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.385 -0400", hash_original_method = "6FBA04B2B44BD6140150C63C748AD62A", hash_generated_method = "8A4387ADC0046A91B4EE8D219103BC9A")
+    protected  Format() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.295 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "B88B942FB9EA0C37CF8AAE435764F125")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.392 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "55D19398BB8390CEEA6C3BD547529B58")
     @Override
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_1143741919 = null; //Variable for return #1
         try 
         {
-            Object varDEB570B566DA7549E2F197D0AFA5A2B6_320819512 = (super.clone());
+            varB4EAC82CA7396A68D541C85D26508E83_1143741919 = super.clone();
         } //End block
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
         } //End block
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1143741919.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1143741919;
         // ---------- Original Method ----------
         //try {
             //return super.clone();
@@ -40,13 +40,14 @@ public abstract class Format implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.295 -0400", hash_original_method = "37693C41F5C0477FFE14A538377AD1D2", hash_generated_method = "5AA571E5B9E0A4742EF2F33334268818")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.393 -0400", hash_original_method = "37693C41F5C0477FFE14A538377AD1D2", hash_generated_method = "A0F192993679A13EB64D9B82BE18CE5D")
     public final String format(Object object) {
-        dsTaint.addTaint(object.dsTaint);
-        String var73D3057EEACB95BF562002B0FD4B0030_654864055 = (format(object, new StringBuffer(), new FieldPosition(0))
-                .toString());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1846772977 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1846772977 = format(object, new StringBuffer(), new FieldPosition(0))
+                .toString();
+        addTaint(object.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1846772977.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1846772977;
         // ---------- Original Method ----------
         //return format(object, new StringBuffer(), new FieldPosition(0))
                 //.toString();
@@ -57,32 +58,35 @@ public abstract class Format implements Serializable, Cloneable {
             FieldPosition field);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.295 -0400", hash_original_method = "29C223BA8E4C1B7CC40F40C2878521D9", hash_generated_method = "59F7102D1F1388E9D76062D44BE8516D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.394 -0400", hash_original_method = "29C223BA8E4C1B7CC40F40C2878521D9", hash_generated_method = "FA2F4C575526C4413319DA032DB40456")
     public AttributedCharacterIterator formatToCharacterIterator(Object object) {
-        dsTaint.addTaint(object.dsTaint);
-        AttributedCharacterIterator var6AB48EA89770C8A393BC5F173886D54B_457082589 = (new AttributedString(format(object)).getIterator());
-        return (AttributedCharacterIterator)dsTaint.getTaint();
+        AttributedCharacterIterator varB4EAC82CA7396A68D541C85D26508E83_84393716 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_84393716 = new AttributedString(format(object)).getIterator();
+        addTaint(object.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_84393716.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_84393716;
         // ---------- Original Method ----------
         //return new AttributedString(format(object)).getIterator();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.296 -0400", hash_original_method = "6F2C2FABFB0232DE8BE4D0269373F5D5", hash_generated_method = "F35EA5B86A02D73BC7F203A79FD35DDE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.394 -0400", hash_original_method = "6F2C2FABFB0232DE8BE4D0269373F5D5", hash_generated_method = "B8163B61D96842462F7FA78777932BD7")
     public Object parseObject(String string) throws ParseException {
-        dsTaint.addTaint(string);
+        Object varB4EAC82CA7396A68D541C85D26508E83_2061425435 = null; //Variable for return #1
         ParsePosition position;
         position = new ParsePosition(0);
         Object result;
         result = parseObject(string, position);
         {
-            boolean varA01BF4F3DE22A214F5C7EB004E28484E_484390745 = (position.getIndex() == 0);
+            boolean varA01BF4F3DE22A214F5C7EB004E28484E_1941878804 = (position.getIndex() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new ParseException("Parse failure", position.getErrorIndex());
             } //End block
         } //End collapsed parenthetic
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2061425435 = result;
+        addTaint(string.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_2061425435.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2061425435;
         // ---------- Original Method ----------
         //ParsePosition position = new ParsePosition(0);
         //Object result = parseObject(string, position);
@@ -150,20 +154,23 @@ public abstract class Format implements Serializable, Cloneable {
     
     public static class Field extends AttributedCharacterIterator.Attribute {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.296 -0400", hash_original_method = "5600516370D16E6925F34153CC1B60B8", hash_generated_method = "C99CCBB0448DF6198290968345EBA180")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        protected Field(String fieldName) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.396 -0400", hash_original_method = "5600516370D16E6925F34153CC1B60B8", hash_generated_method = "465767ECB3AF93CD4C2D7AEDA23F18B3")
+        protected  Field(String fieldName) {
             super(fieldName);
-            dsTaint.addTaint(fieldName);
+            addTaint(fieldName.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        private static final long serialVersionUID = 276966692217360283L;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.396 -0400", hash_original_field = "CD3DAE455C77872D19C5AEA7227DBEF8", hash_generated_field = "AC7F51A753FB0C82CF00788FB43D034E")
+
+        private static long serialVersionUID = 276966692217360283L;
     }
 
 
     
-    private static final long serialVersionUID = -299282585814624189L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.396 -0400", hash_original_field = "C56B73F9CC0B5F51F3C2FEF02E637B2F", hash_generated_field = "78D25AD4D32DC218A18319D4F9BF939F")
+
+    private static long serialVersionUID = -299282585814624189L;
 }
 

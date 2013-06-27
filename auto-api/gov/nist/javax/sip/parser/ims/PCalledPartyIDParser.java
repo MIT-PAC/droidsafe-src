@@ -16,27 +16,25 @@ import gov.nist.javax.sip.parser.AddressParametersParser;
 
 public class PCalledPartyIDParser extends AddressParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.757 -0400", hash_original_method = "5A210D10F0DA09D81C9A40BA3A0E0BA0", hash_generated_method = "D4B67959E5BCD890FB667B9F8F71453A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PCalledPartyIDParser(String calledPartyID) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.701 -0400", hash_original_method = "5A210D10F0DA09D81C9A40BA3A0E0BA0", hash_generated_method = "BBD7965D346BF1D7806D7ABC42DEB4ED")
+    public  PCalledPartyIDParser(String calledPartyID) {
         super(calledPartyID);
-        dsTaint.addTaint(calledPartyID);
+        addTaint(calledPartyID.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.758 -0400", hash_original_method = "A63723B4A16B3DEC36752AB85CAA4736", hash_generated_method = "1181E3C16EA1F97A01CEB6542F42D0BC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected PCalledPartyIDParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.702 -0400", hash_original_method = "A63723B4A16B3DEC36752AB85CAA4736", hash_generated_method = "1A433AD9ED26F8AC88F7689284675C35")
+    protected  PCalledPartyIDParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.758 -0400", hash_original_method = "C43CF84ED746DD134AB177C7FEFB3286", hash_generated_method = "8744C8147ED80A3C63DBED4EE9EE5E8F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.735 -0400", hash_original_method = "C43CF84ED746DD134AB177C7FEFB3286", hash_generated_method = "823C724D4CA46BB296AFBC53493FF7D4")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1017750941 = null; //Variable for return #1
         dbg_enter("PCalledPartyIDParser.parse");
         try 
         {
@@ -47,12 +45,14 @@ public class PCalledPartyIDParser extends AddressParametersParser {
             PCalledPartyID calledPartyID;
             calledPartyID = new PCalledPartyID();
             super.parse(calledPartyID);
+            varB4EAC82CA7396A68D541C85D26508E83_1017750941 = calledPartyID;
         } //End block
         finally 
         {
             dbg_leave("PCalledPartyIDParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1017750941.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1017750941;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("PCalledPartyIDParser.parse");

@@ -13,21 +13,24 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 public class WifiP2pInfo implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.108 -0400", hash_original_field = "1740B1E1D57405A515A6DBBC32594257", hash_generated_field = "AC4DD7321028D187B95846163AF3D483")
+
     public boolean groupFormed;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.108 -0400", hash_original_field = "E7FF43348C972BE9FE21440703EC050C", hash_generated_field = "390E841B6F43D1667192DD5E95B6133C")
+
     public boolean isGroupOwner;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.108 -0400", hash_original_field = "83640593734C51A71A44985C60A44CD6", hash_generated_field = "C10FF4BA92C149BB7C2E75B0A14FBF4A")
+
     public InetAddress groupOwnerAddress;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.789 -0400", hash_original_method = "F3F0ABA121ED75F0A34990BB87685D5A", hash_generated_method = "8D8A828B3FE364068776E0C23F2C39D1")
-    @DSModeled(DSC.SAFE)
-    public WifiP2pInfo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.109 -0400", hash_original_method = "F3F0ABA121ED75F0A34990BB87685D5A", hash_generated_method = "8D8A828B3FE364068776E0C23F2C39D1")
+    public  WifiP2pInfo() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.789 -0400", hash_original_method = "B6AB4762A9FFB2E56B17CB04649CE702", hash_generated_method = "7B1379BD80E4FFDCCC2581C5A10A9CE0")
-    @DSModeled(DSC.SAFE)
-    public WifiP2pInfo(WifiP2pInfo source) {
-        dsTaint.addTaint(source.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.111 -0400", hash_original_method = "B6AB4762A9FFB2E56B17CB04649CE702", hash_generated_method = "85B56F24CBC347DE173B07A0177C107B")
+    public  WifiP2pInfo(WifiP2pInfo source) {
         {
             groupFormed = source.groupFormed;
             isGroupOwner = source.isGroupOwner;
@@ -42,16 +45,17 @@ public class WifiP2pInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.789 -0400", hash_original_method = "D5529C8AE8D596D7C37EDA99E72A8446", hash_generated_method = "B21C4CEB6951A32B984613E5BE0B1D52")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.135 -0400", hash_original_method = "D5529C8AE8D596D7C37EDA99E72A8446", hash_generated_method = "04E1830528CCEA49E31CE47AFF72A332")
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_70648676 = null; //Variable for return #1
         StringBuffer sbuf;
         sbuf = new StringBuffer();
         sbuf.append("groupFormed: ").append(groupFormed)
             .append("isGroupOwner: ").append(isGroupOwner)
             .append("groupOwnerAddress: ").append(groupOwnerAddress);
-        String var0826C75FB1499484A6621049C9E9DB4E_808048880 = (sbuf.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_70648676 = sbuf.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_70648676.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_70648676;
         // ---------- Original Method ----------
         //StringBuffer sbuf = new StringBuffer();
         //sbuf.append("groupFormed: ").append(groupFormed)
@@ -61,20 +65,17 @@ public class WifiP2pInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.789 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.137 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E346205A2027C77266FB40B77DFAEAA5")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_972605494 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_972605494;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.790 -0400", hash_original_method = "FB185B7C2F06925C4BFCD27CA8D3CCFA", hash_generated_method = "9F9B58E1CD17BF8B819302D2746726A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.150 -0400", hash_original_method = "FB185B7C2F06925C4BFCD27CA8D3CCFA", hash_generated_method = "587353B0640D0F84D25353C42D4EF586")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeByte(groupFormed ? (byte)1 : (byte)0);
         dest.writeByte(isGroupOwner ? (byte)1 : (byte)0);
         {
@@ -84,6 +85,8 @@ public class WifiP2pInfo implements Parcelable {
         {
             dest.writeByte((byte)0);
         } //End block
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeByte(groupFormed ? (byte)1 : (byte)0);
         //dest.writeByte(isGroupOwner ? (byte)1 : (byte)0);
@@ -96,51 +99,25 @@ public class WifiP2pInfo implements Parcelable {
     }
 
     
-    public static final Creator<WifiP2pInfo> CREATOR = new Creator<WifiP2pInfo>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.790 -0400", hash_original_method = "495509163C5863569FB618FB24832814", hash_generated_method = "121414D4DE53776DA66724B7EDA59CDC")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public WifiP2pInfo createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            WifiP2pInfo info;
-            info = new WifiP2pInfo();
-            info.groupFormed = (in.readByte() == 1);
-            info.isGroupOwner = (in.readByte() == 1);
-            {
-                boolean varA34511E23A7BE70AFB33ABE4FC1AF4E2_1826525539 = (in.readByte() == 1);
-                {
-                    try 
-                    {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.150 -0400", hash_original_field = "AB83BB5FED9FC57A40F7F74C050C8CCC", hash_generated_field = "F2557F2DCFADCE7DD4ED006ED74D08D1")
+
+    public static final Creator<WifiP2pInfo> CREATOR =
+        new Creator<WifiP2pInfo>() {
+            public WifiP2pInfo createFromParcel(Parcel in) {
+                WifiP2pInfo info = new WifiP2pInfo();
+                info.groupFormed = (in.readByte() == 1);
+                info.isGroupOwner = (in.readByte() == 1);
+                if (in.readByte() == 1) {
+                    try {
                         info.groupOwnerAddress = InetAddress.getByAddress(in.createByteArray());
-                    } //End block
-                    catch (UnknownHostException e)
-                    { }
-                } //End block
-            } //End collapsed parenthetic
-            return (WifiP2pInfo)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //WifiP2pInfo info = new WifiP2pInfo();
-            //info.groupFormed = (in.readByte() == 1);
-            //info.isGroupOwner = (in.readByte() == 1);
-            //if (in.readByte() == 1) {
-                    //try {
-                        //info.groupOwnerAddress = InetAddress.getByAddress(in.createByteArray());
-                    //} catch (UnknownHostException e) {}
-                //}
-            //return info;
-        }
+                    } catch (UnknownHostException e) {}
+                }
+                return info;
+            }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.791 -0400", hash_original_method = "C513089B1326226F967748E0B8CB823D", hash_generated_method = "830F89ECD87A3E458BF5EA460668F1D1")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public WifiP2pInfo[] newArray(int size) {
-            dsTaint.addTaint(size);
-            WifiP2pInfo[] varE6FABE7F8AC98D6CAC675864207940D5_380939743 = (new WifiP2pInfo[size]);
-            return (WifiP2pInfo[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new WifiP2pInfo[size];
-        }
-
-        
-}; //Transformed anonymous class
+            public WifiP2pInfo[] newArray(int size) {
+                return new WifiP2pInfo[size];
+            }
+        };
 }
 

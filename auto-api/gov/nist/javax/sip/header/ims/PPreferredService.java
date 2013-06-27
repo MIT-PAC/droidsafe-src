@@ -12,30 +12,32 @@ import javax.sip.header.ExtensionHeader;
 import gov.nist.javax.sip.header.SIPHeader;
 
 public class PPreferredService extends SIPHeader implements PPreferredServiceHeader, SIPHeaderNamesIms, ExtensionHeader {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.325 -0400", hash_original_field = "34C97D9F858DE85BE5E1A29DBACD860B", hash_generated_field = "8B30B176BF34BEC26AF3F3FDA86A1827")
+
     private String subServiceIds;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.328 -0400", hash_original_field = "1836D1911B2C516403BCBD2A0A20CDCC", hash_generated_field = "7976ED8892ABC041E4713F4D251EC3B6")
+
     private String subAppIds;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.598 -0400", hash_original_method = "2FB8EC7339BBF3197572778DF84B2394", hash_generated_method = "EA48F4F198FEE1BF1DCE3F9C76738C64")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected PPreferredService(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.328 -0400", hash_original_method = "2FB8EC7339BBF3197572778DF84B2394", hash_generated_method = "FCCB9A4D9BB589A3DB266620467C2216")
+    protected  PPreferredService(String name) {
         super(NAME);
-        dsTaint.addTaint(name);
+        addTaint(name.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.598 -0400", hash_original_method = "80DD74DB52B5BA3BF0297E04ECC509FE", hash_generated_method = "8906F3091D6728D0A2DF3027DBEFD55A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PPreferredService() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.328 -0400", hash_original_method = "80DD74DB52B5BA3BF0297E04ECC509FE", hash_generated_method = "8906F3091D6728D0A2DF3027DBEFD55A")
+    public  PPreferredService() {
         super(P_PREFERRED_SERVICE);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.598 -0400", hash_original_method = "13CD5B55BBBCA0548D99A959291FFE7D", hash_generated_method = "13A24A3F95F39052DBA8011D2F6C624D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.336 -0400", hash_original_method = "13CD5B55BBBCA0548D99A959291FFE7D", hash_generated_method = "22AD973C5560D3CD453FD4658E6B71BD")
     @Override
     protected String encodeBody() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1581459523 = null; //Variable for return #1
         StringBuffer retval;
         retval = new StringBuffer();
         retval.append(ParameterNamesIms.SERVICE_ID);
@@ -47,8 +49,9 @@ public class PPreferredService extends SIPHeader implements PPreferredServiceHea
             retval.append(ParameterNamesIms.APPLICATION_ID_LABEL).append(".");
             retval.append(this.getApplicationIdentifiers());
         } //End block
-        String var0F1F65BA89BF920BA1A29FC87F91B969_2070656213 = (retval.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1581459523 = retval.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1581459523.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1581459523;
         // ---------- Original Method ----------
         //StringBuffer retval = new StringBuffer();
         //retval.append(ParameterNamesIms.SERVICE_ID);
@@ -66,26 +69,37 @@ public class PPreferredService extends SIPHeader implements PPreferredServiceHea
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.598 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "3173C219DBD7EAE475390DAFD6FD461B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.345 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
     public void setValue(String value) throws ParseException {
-        dsTaint.addTaint(value);
         if (DroidSafeAndroidRuntime.control) throw new ParseException(value,0);
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //throw new ParseException(value,0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.598 -0400", hash_original_method = "C9711D50FDDAB1BC6FA9D8BEA3306598", hash_generated_method = "CEF61C29E7B9D75625647D1F36AA1ADB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.347 -0400", hash_original_method = "C9711D50FDDAB1BC6FA9D8BEA3306598", hash_generated_method = "6C394343B1B7E1DA9DF22B581CF25CB5")
     public String getApplicationIdentifiers() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1749579324 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2017099597 = null; //Variable for return #2
         {
-            boolean varC8D3650830D08C4D23073ADEABCF9ED5_1821478865 = (this.subAppIds.charAt(0)=='.');
+            boolean varC8D3650830D08C4D23073ADEABCF9ED5_800963726 = (this.subAppIds.charAt(0)=='.');
             {
-                String varAC9F7930D5F5D488E39E51862562FE6B_85236969 = (this.subAppIds.substring(1));
+                varB4EAC82CA7396A68D541C85D26508E83_1749579324 = this.subAppIds.substring(1);
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_2017099597 = this.subAppIds;
+        String varA7E53CE21691AB073D9660D615818899_518074663; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_518074663 = varB4EAC82CA7396A68D541C85D26508E83_1749579324;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_518074663 = varB4EAC82CA7396A68D541C85D26508E83_2017099597;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_518074663.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_518074663;
         // ---------- Original Method ----------
         //if(this.subAppIds.charAt(0)=='.')
         //{
@@ -95,16 +109,28 @@ public class PPreferredService extends SIPHeader implements PPreferredServiceHea
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.599 -0400", hash_original_method = "A7D1F6103283AF549702A3BD8A97DA85", hash_generated_method = "777FC12A7009FC5CCB31070D400EE859")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.350 -0400", hash_original_method = "A7D1F6103283AF549702A3BD8A97DA85", hash_generated_method = "4A0CE0B3D644972C8B6AB162E06E2196")
     public String getSubserviceIdentifiers() {
+        String varB4EAC82CA7396A68D541C85D26508E83_922262504 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_895471837 = null; //Variable for return #2
         {
-            boolean varAD698E105D8BEA98C5698AFC53CE6A02_761884173 = (this.subServiceIds.charAt(0)=='.');
+            boolean varAD698E105D8BEA98C5698AFC53CE6A02_2013174222 = (this.subServiceIds.charAt(0)=='.');
             {
-                String var1997EA3D8ECA4E6B84D28F90DF1B1EFB_406214077 = (this.subServiceIds.substring(1));
+                varB4EAC82CA7396A68D541C85D26508E83_922262504 = this.subServiceIds.substring(1);
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_895471837 = this.subServiceIds;
+        String varA7E53CE21691AB073D9660D615818899_519066171; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_519066171 = varB4EAC82CA7396A68D541C85D26508E83_922262504;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_519066171 = varB4EAC82CA7396A68D541C85D26508E83_895471837;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_519066171.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_519066171;
         // ---------- Original Method ----------
         //if(this.subServiceIds.charAt(0)=='.')
         //{
@@ -114,42 +140,41 @@ public class PPreferredService extends SIPHeader implements PPreferredServiceHea
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.599 -0400", hash_original_method = "0A65ED1D7958A8DC93D54B9D5172FB86", hash_generated_method = "930FEAFB3416D7A1B7F11C65A6533AD0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.350 -0400", hash_original_method = "0A65ED1D7958A8DC93D54B9D5172FB86", hash_generated_method = "813392CF39A94B938B1B3C7E12E815AD")
     public void setApplicationIdentifiers(String appids) {
-        dsTaint.addTaint(appids);
+        this.subAppIds = appids;
         // ---------- Original Method ----------
         //this.subAppIds = appids;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.599 -0400", hash_original_method = "86174BD2B9F1F7BE8C26F06288A88EF6", hash_generated_method = "88C9F5E79A6A21ACC02176B71A7579D9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.360 -0400", hash_original_method = "86174BD2B9F1F7BE8C26F06288A88EF6", hash_generated_method = "B3E4B360308281668CC193B4B051E180")
     public void setSubserviceIdentifiers(String subservices) {
-        dsTaint.addTaint(subservices);
         this.subServiceIds = ".".concat(subservices);
         // ---------- Original Method ----------
         //this.subServiceIds = ".".concat(subservices);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.599 -0400", hash_original_method = "C4B8C9C88189BDF3DAB8E362AE1162B5", hash_generated_method = "5CD937761C169A50A2707654023C80FA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.364 -0400", hash_original_method = "C4B8C9C88189BDF3DAB8E362AE1162B5", hash_generated_method = "C71FE939E242B53D8F078E357D755189")
     public boolean equals(Object other) {
-        dsTaint.addTaint(other.dsTaint);
-        boolean var9B85CAC857C9D64CB6CF9C0273C2B2D2_1587595593 = ((other instanceof PPreferredServiceHeader) && super.equals(other));
-        return dsTaint.getTaintBoolean();
+        boolean var9B85CAC857C9D64CB6CF9C0273C2B2D2_384633245 = ((other instanceof PPreferredServiceHeader) && super.equals(other));
+        addTaint(other.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2040611332 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2040611332;
         // ---------- Original Method ----------
         //return (other instanceof PPreferredServiceHeader) && super.equals(other);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.599 -0400", hash_original_method = "924DF1F04CF6C30DB3A78FE0D39487E9", hash_generated_method = "9CA600D982697C2E42375A042C149972")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.373 -0400", hash_original_method = "924DF1F04CF6C30DB3A78FE0D39487E9", hash_generated_method = "3612A32673BB33E601B580743441B6A8")
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_1384913096 = null; //Variable for return #1
         PPreferredService retval;
         retval = (PPreferredService) super.clone();
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1384913096 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_1384913096.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1384913096;
         // ---------- Original Method ----------
         //PPreferredService retval = (PPreferredService) super.clone();
         //return retval;

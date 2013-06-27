@@ -14,31 +14,30 @@ import javax.net.ssl.SSLSocketFactory;
 
 public class OpenSSLContextImpl extends SSLContextImpl {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.835 -0400", hash_original_method = "AC85303C5261AE8C561C9D0D813887D0", hash_generated_method = "BA56A83C11C4D548CDA5AAC3BEDBB357")
-    @DSModeled(DSC.SAFE)
-    public OpenSSLContextImpl() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.139 -0400", hash_original_method = "AC85303C5261AE8C561C9D0D813887D0", hash_generated_method = "BA56A83C11C4D548CDA5AAC3BEDBB357")
+    public  OpenSSLContextImpl() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.836 -0400", hash_original_method = "F07877C7A70CCB9546F67CAFD785B8D1", hash_generated_method = "C7F37E859776D535F0EA377B789A51E9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected OpenSSLContextImpl(DefaultSSLContextImpl dummy) throws GeneralSecurityException, IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.139 -0400", hash_original_method = "F07877C7A70CCB9546F67CAFD785B8D1", hash_generated_method = "4AB7A8A94F9DDD43C12E832C92955DE0")
+    protected  OpenSSLContextImpl(DefaultSSLContextImpl dummy) throws GeneralSecurityException, IOException {
         super(dummy);
-        dsTaint.addTaint(dummy.dsTaint);
+        addTaint(dummy.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.836 -0400", hash_original_method = "A469C9A4B5A6A159DDADCF53650EE287", hash_generated_method = "F1EEE3D18FAC11173484378D57683D4A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.140 -0400", hash_original_method = "A469C9A4B5A6A159DDADCF53650EE287", hash_generated_method = "9E4282DE0F457EB568EBCBAC84BD5EE3")
     @Override
     public SSLSocketFactory engineGetSocketFactory() {
+        SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_719075111 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("SSLContext is not initialized.");
         } //End block
-        SSLSocketFactory var298F40FE87A30BBF94055B1484925626_1252065548 = (new OpenSSLSocketFactoryImpl(sslParameters));
-        return (SSLSocketFactory)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_719075111 = new OpenSSLSocketFactoryImpl(sslParameters);
+        varB4EAC82CA7396A68D541C85D26508E83_719075111.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_719075111;
         // ---------- Original Method ----------
         //if (sslParameters == null) {
             //throw new IllegalStateException("SSLContext is not initialized.");
@@ -47,15 +46,16 @@ public class OpenSSLContextImpl extends SSLContextImpl {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.836 -0400", hash_original_method = "7F20F3D24E73FCFDF0CE368826678110", hash_generated_method = "0729A9BC59BB46978393EB72579B4E77")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.140 -0400", hash_original_method = "7F20F3D24E73FCFDF0CE368826678110", hash_generated_method = "C50387DD7384F3393C72DDDE067BAE28")
     @Override
     public SSLServerSocketFactory engineGetServerSocketFactory() {
+        SSLServerSocketFactory varB4EAC82CA7396A68D541C85D26508E83_404251332 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("SSLContext is not initialized.");
         } //End block
-        SSLServerSocketFactory var350C96D883973EB5607558D0BD9D460B_1401137708 = (new OpenSSLServerSocketFactoryImpl(sslParameters));
-        return (SSLServerSocketFactory)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_404251332 = new OpenSSLServerSocketFactoryImpl(sslParameters);
+        varB4EAC82CA7396A68D541C85D26508E83_404251332.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_404251332;
         // ---------- Original Method ----------
         //if (sslParameters == null) {
             //throw new IllegalStateException("SSLContext is not initialized.");

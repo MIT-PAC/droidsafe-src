@@ -10,11 +10,10 @@ import java.util.Iterator;
 
 public class NoSuchPropertyException extends RuntimeException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.296 -0400", hash_original_method = "9FBF5439C2FECDDB526E862ED7B30ADC", hash_generated_method = "F018055734CD0033D5669C5C7B82D24E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public NoSuchPropertyException(String s) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.108 -0400", hash_original_method = "9FBF5439C2FECDDB526E862ED7B30ADC", hash_generated_method = "643DDAD1E106B7CDBBC128A1AFE2753C")
+    public  NoSuchPropertyException(String s) {
         super(s);
-        dsTaint.addTaint(s);
+        addTaint(s.getTaint());
         // ---------- Original Method ----------
     }
 

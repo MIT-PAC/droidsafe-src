@@ -10,9 +10,10 @@ import java.util.Iterator;
 
 public abstract class TimezoneGetter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.796 -0400", hash_original_method = "E212A140D2CED8143ABDE630A1CC7A09", hash_generated_method = "E212A140D2CED8143ABDE630A1CC7A09")
-        public TimezoneGetter ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.775 -0400", hash_original_method = "66ED1F8E1E851198705C6DFD8EC10BBB", hash_generated_method = "66ED1F8E1E851198705C6DFD8EC10BBB")
+    public TimezoneGetter ()
     {
+        //Synthesized constructor
     }
 
 
@@ -32,6 +33,8 @@ public abstract class TimezoneGetter {
     public abstract String getId();
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.776 -0400", hash_original_field = "7123A699D77DB6479A1D8ECE2C4F1C16", hash_generated_field = "D3AAD2C19E68DBB13BF532AFF4D3C58C")
+
     private static TimezoneGetter instance;
 }
 

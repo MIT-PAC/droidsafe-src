@@ -10,9 +10,10 @@ import java.util.Iterator;
 
 public abstract class EGLConfig {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.007 -0400", hash_original_method = "BA2838FF0DDD808D3698EC4E0DD5BDD6", hash_generated_method = "BA2838FF0DDD808D3698EC4E0DD5BDD6")
-        public EGLConfig ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.351 -0400", hash_original_method = "090232DECDA51530FCF0DE75679FEDB3", hash_generated_method = "090232DECDA51530FCF0DE75679FEDB3")
+    public EGLConfig ()
     {
+        //Synthesized constructor
     }
 
 

@@ -15,9 +15,10 @@ import java.text.ParseException;
 
 public class SipPhoneFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.456 -0400", hash_original_method = "324E8C1C6C45897C0A029A317B4DE5CF", hash_generated_method = "324E8C1C6C45897C0A029A317B4DE5CF")
-        public SipPhoneFactory ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.481 -0400", hash_original_method = "15E2472645F6BD56CA55CE00B2D7EBA0", hash_generated_method = "15E2472645F6BD56CA55CE00B2D7EBA0")
+    public SipPhoneFactory ()
     {
+        //Synthesized constructor
     }
 
 

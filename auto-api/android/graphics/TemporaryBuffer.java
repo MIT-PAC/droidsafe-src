@@ -11,9 +11,10 @@ import com.android.internal.util.ArrayUtils;
 
 public class TemporaryBuffer {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.828 -0400", hash_original_method = "CFBF2A6774DCC5EC6A75DBF43848BEAE", hash_generated_method = "CFBF2A6774DCC5EC6A75DBF43848BEAE")
-        public TemporaryBuffer ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.141 -0400", hash_original_method = "4FF062759AAFC6722B3224BBA791BE93", hash_generated_method = "4FF062759AAFC6722B3224BBA791BE93")
+    public TemporaryBuffer ()
     {
+        //Synthesized constructor
     }
 
 
@@ -38,6 +39,8 @@ public class TemporaryBuffer {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.142 -0400", hash_original_field = "C736DCF0716493E46DC696537C472B83", hash_generated_field = "D5B55575C53803B48B8DF0B1F8C65A25")
+
     private static char[] sTemp = null;
 }
 

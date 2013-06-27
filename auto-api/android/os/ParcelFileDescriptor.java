@@ -17,15 +17,20 @@ import java.net.DatagramSocket;
 import java.net.Socket;
 
 public class ParcelFileDescriptor implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.651 -0400", hash_original_field = "D118306A98C1E7C12AA828417A60A6F6", hash_generated_field = "58A1B3A123725E48931BD35C0EB2D4CB")
+
     private FileDescriptor mFileDescriptor;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.651 -0400", hash_original_field = "C15A1B081B66F38188E926501ED5F8A7", hash_generated_field = "BD690B26D5468868AFAF08CAFB003D2A")
+
     private boolean mClosed;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.651 -0400", hash_original_field = "7CE9BC3451B021C57B703C29E2527A74", hash_generated_field = "9AA0DA752DD4578B6A205C30B394DEF2")
+
     private ParcelFileDescriptor mParcelDescriptor;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.025 -0400", hash_original_method = "DB42A2A8BBE574C2950DCEEDDCE79B62", hash_generated_method = "2A8FF1AC42EA7613EEF655971F1D8146")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ParcelFileDescriptor(ParcelFileDescriptor descriptor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.651 -0400", hash_original_method = "DB42A2A8BBE574C2950DCEEDDCE79B62", hash_generated_method = "0D84580F8C4180A00E40F7A16F093250")
+    public  ParcelFileDescriptor(ParcelFileDescriptor descriptor) {
         super();
-        dsTaint.addTaint(descriptor.dsTaint);
+        mParcelDescriptor = descriptor;
         mFileDescriptor = mParcelDescriptor.mFileDescriptor;
         // ---------- Original Method ----------
         //mParcelDescriptor = descriptor;
@@ -33,14 +38,13 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.025 -0400", hash_original_method = "5987A31E1ECCB1911B1BA6CC4EEF72A2", hash_generated_method = "D2CB826C27CC233552B05C79902DF5CD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     ParcelFileDescriptor(FileDescriptor descriptor) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.652 -0400", hash_original_method = "5987A31E1ECCB1911B1BA6CC4EEF72A2", hash_generated_method = "BCE3644BB6151AF5EE3D1F08790C958A")
+      ParcelFileDescriptor(FileDescriptor descriptor) {
         super();
-        dsTaint.addTaint(descriptor.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("descriptor must not be null");
         } //End block
+        mFileDescriptor = descriptor;
         mParcelDescriptor = null;
         // ---------- Original Method ----------
         //if (descriptor == null) {
@@ -75,11 +79,12 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.026 -0400", hash_original_method = "474327607EE56B056BCE4043FE865D8B", hash_generated_method = "169C1AA05998D24A643BB84D725DD9EE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.653 -0400", hash_original_method = "474327607EE56B056BCE4043FE865D8B", hash_generated_method = "99ECE8C70346B13451C3E048ED123D9B")
     public ParcelFileDescriptor dup() throws IOException {
-        ParcelFileDescriptor var9FA6A09B8472BACDF2AE552CC4D7ECC7_1595350159 = (dup(getFileDescriptor()));
-        return (ParcelFileDescriptor)dsTaint.getTaint();
+        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1442530217 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1442530217 = dup(getFileDescriptor());
+        varB4EAC82CA7396A68D541C85D26508E83_1442530217.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1442530217;
         // ---------- Original Method ----------
         //return dup(getFileDescriptor());
     }
@@ -146,38 +151,39 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.027 -0400", hash_original_method = "949276D2764A2C9DACACDE44898698C8", hash_generated_method = "AE06AE99F38E123E80429212D733352D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.681 -0400", hash_original_method = "949276D2764A2C9DACACDE44898698C8", hash_generated_method = "C00D12070AB9C390B61C78A24EAE0820")
     public FileDescriptor getFileDescriptor() {
-        return (FileDescriptor)dsTaint.getTaint();
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_510980382 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_510980382 = mFileDescriptor;
+        varB4EAC82CA7396A68D541C85D26508E83_510980382.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_510980382;
         // ---------- Original Method ----------
         //return mFileDescriptor;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.027 -0400", hash_original_method = "77F816B0B1C349FF3A8882E701737452", hash_generated_method = "D035A8883253BF6BA19C6B8A3F1C2D15")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.681 -0400", hash_original_method = "77F816B0B1C349FF3A8882E701737452", hash_generated_method = "8BC920F16DCDB00E933EB52876209108")
     public long getStatSize() {
-        return dsTaint.getTaintLong();
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_810275555 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_810275555;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.028 -0400", hash_original_method = "0F9A3950A7A9E5BB31D919F8BB19673E", hash_generated_method = "4E8CC30A4452959B16AF4FF4CB4A07E8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.682 -0400", hash_original_method = "0F9A3950A7A9E5BB31D919F8BB19673E", hash_generated_method = "4ABB55F67451B990F158E3589D33B9B4")
     public long seekTo(long pos) {
-        dsTaint.addTaint(pos);
-        return dsTaint.getTaintLong();
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1694398350 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1694398350;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.028 -0400", hash_original_method = "C747587E89EFBC650597F209F149B598", hash_generated_method = "44C243C1ADE8287BFC4DF7DD6E4B0817")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.683 -0400", hash_original_method = "C747587E89EFBC650597F209F149B598", hash_generated_method = "850204CEDC2D3B886DB548712031CBD8")
     public int getFd() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Already closed");
         } //End block
-        int var751A6E18182434738AFEB29212FB434D_609830905 = (getFdNative());
-        return dsTaint.getTaintInt();
+        int var751A6E18182434738AFEB29212FB434D_713019014 = (getFdNative());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_829970562 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_829970562;
         // ---------- Original Method ----------
         //if (mClosed) {
             //throw new IllegalStateException("Already closed");
@@ -186,15 +192,14 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.028 -0400", hash_original_method = "48F8D374A617845984C88F484B28408C", hash_generated_method = "A38C53FD02F026A61AFEF34DB7667B95")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.683 -0400", hash_original_method = "48F8D374A617845984C88F484B28408C", hash_generated_method = "4AE55F9DD5DB2567888C20C6FEFE60B6")
     private int getFdNative() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43757504 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43757504;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.028 -0400", hash_original_method = "AECA8304F263BE3AD120D5996456D31E", hash_generated_method = "767DB377561FC22E36CECF388E0B9237")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.701 -0400", hash_original_method = "AECA8304F263BE3AD120D5996456D31E", hash_generated_method = "F06A36424F6D58DC1973E9E9BAE4137B")
     public int detachFd() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Already closed");
@@ -208,7 +213,8 @@ public class ParcelFileDescriptor implements Parcelable {
         fd = getFd();
         mClosed = true;
         Parcel.clearFileDescriptor(mFileDescriptor);
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1217157762 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1217157762;
         // ---------- Original Method ----------
         //if (mClosed) {
             //throw new IllegalStateException("Already closed");
@@ -225,8 +231,7 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.029 -0400", hash_original_method = "39939000D7522F3E727F0E3243089AE5", hash_generated_method = "C93AE2836E4766793DDE4FD6C28D9C61")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.702 -0400", hash_original_method = "39939000D7522F3E727F0E3243089AE5", hash_generated_method = "C93AE2836E4766793DDE4FD6C28D9C61")
     public void close() throws IOException {
         {
             mClosed = true;
@@ -250,18 +255,19 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.029 -0400", hash_original_method = "BA9513A0FEF5B159A730B41F75EA216A", hash_generated_method = "B3E23BB433BCE47F39BABA7398832984")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.703 -0400", hash_original_method = "BA9513A0FEF5B159A730B41F75EA216A", hash_generated_method = "F0F17015736295BF1A1B48804AE6FC6E")
     @Override
     public String toString() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_561837482 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_561837482 = "{ParcelFileDescriptor: " + mFileDescriptor + "}";
+        varB4EAC82CA7396A68D541C85D26508E83_561837482.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_561837482;
         // ---------- Original Method ----------
         //return "{ParcelFileDescriptor: " + mFileDescriptor + "}";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.029 -0400", hash_original_method = "47AC631E45892E7E44A62B81BC7ACB91", hash_generated_method = "5BFFCB83F2EFF1414AF3C5F71AB87D6E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.707 -0400", hash_original_method = "47AC631E45892E7E44A62B81BC7ACB91", hash_generated_method = "5BFFCB83F2EFF1414AF3C5F71AB87D6E")
     @Override
     protected void finalize() throws Throwable {
         try 
@@ -285,20 +291,17 @@ public class ParcelFileDescriptor implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.029 -0400", hash_original_method = "5C5A30224996A2D414D9176559E683A9", hash_generated_method = "FC3B912957A2E65031C97112DB7F5A46")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.710 -0400", hash_original_method = "5C5A30224996A2D414D9176559E683A9", hash_generated_method = "B9136EB4CCB1FD530B3C218616C0B0CF")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_13097103 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_13097103;
         // ---------- Original Method ----------
         //return Parcelable.CONTENTS_FILE_DESCRIPTOR;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.029 -0400", hash_original_method = "D9382402A3E15CFE2B7948813716CC7C", hash_generated_method = "C8D99264AF7EB76D55F22C4649ECAC88")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.710 -0400", hash_original_method = "D9382402A3E15CFE2B7948813716CC7C", hash_generated_method = "A4060D8882E09B4E89CBADE79B077B5E")
     public void writeToParcel(Parcel out, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(out.dsTaint);
         out.writeFileDescriptor(mFileDescriptor);
         {
             try 
@@ -308,6 +311,8 @@ public class ParcelFileDescriptor implements Parcelable {
             catch (IOException e)
             { }
         } //End block
+        addTaint(out.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //out.writeFileDescriptor(mFileDescriptor);
         //if ((flags&PARCELABLE_WRITE_RETURN_VALUE) != 0 && !mClosed) {
@@ -320,20 +325,20 @@ public class ParcelFileDescriptor implements Parcelable {
 
     
     public static class AutoCloseInputStream extends FileInputStream {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.710 -0400", hash_original_field = "E2307FD862BA74C9C9C26ACA0B7E5364", hash_generated_field = "AE959CCFA06A07F93FA2A8BEED883021")
+
         private ParcelFileDescriptor mFd;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.030 -0400", hash_original_method = "E3D4E7E6DEAE42263A4A251652766597", hash_generated_method = "A2172A42790C66F9BDD2C86D9F354E4B")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public AutoCloseInputStream(ParcelFileDescriptor fd) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.711 -0400", hash_original_method = "E3D4E7E6DEAE42263A4A251652766597", hash_generated_method = "4971668D7654AFFF55B2DDD509DBD7E3")
+        public  AutoCloseInputStream(ParcelFileDescriptor fd) {
             super(fd.getFileDescriptor());
-            dsTaint.addTaint(fd.dsTaint);
+            mFd = fd;
             // ---------- Original Method ----------
             //mFd = fd;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.030 -0400", hash_original_method = "3297019645A62F287411C53B25C33F9A", hash_generated_method = "64EED0A8F37058D0517D6328F7FEB62F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.711 -0400", hash_original_method = "3297019645A62F287411C53B25C33F9A", hash_generated_method = "64EED0A8F37058D0517D6328F7FEB62F")
         @Override
         public void close() throws IOException {
             try 
@@ -358,20 +363,20 @@ public class ParcelFileDescriptor implements Parcelable {
 
     
     public static class AutoCloseOutputStream extends FileOutputStream {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.711 -0400", hash_original_field = "E2307FD862BA74C9C9C26ACA0B7E5364", hash_generated_field = "AE959CCFA06A07F93FA2A8BEED883021")
+
         private ParcelFileDescriptor mFd;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.030 -0400", hash_original_method = "AC6B0F3765CD3D3DD6495992ADDCA299", hash_generated_method = "925715F188DBD09F2FAC94622B66D588")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public AutoCloseOutputStream(ParcelFileDescriptor fd) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.739 -0400", hash_original_method = "AC6B0F3765CD3D3DD6495992ADDCA299", hash_generated_method = "3519A8D63370D6208317BADE5496D9F6")
+        public  AutoCloseOutputStream(ParcelFileDescriptor fd) {
             super(fd.getFileDescriptor());
-            dsTaint.addTaint(fd.dsTaint);
+            mFd = fd;
             // ---------- Original Method ----------
             //mFd = fd;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.030 -0400", hash_original_method = "3297019645A62F287411C53B25C33F9A", hash_generated_method = "64EED0A8F37058D0517D6328F7FEB62F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.739 -0400", hash_original_method = "3297019645A62F287411C53B25C33F9A", hash_generated_method = "64EED0A8F37058D0517D6328F7FEB62F")
         @Override
         public void close() throws IOException {
             try 
@@ -395,37 +400,40 @@ public class ParcelFileDescriptor implements Parcelable {
 
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.740 -0400", hash_original_field = "BA2BAC1F18752DA00A4F6572A504B359", hash_generated_field = "3A425E25D2158592F4B71395B73ABA48")
+
     public static final int MODE_WORLD_READABLE = 0x00000001;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.740 -0400", hash_original_field = "17D2B2ED3DC4B3B97CA172345DAD8657", hash_generated_field = "F70FF863E9B85A3B3C75BCAF712387C6")
+
     public static final int MODE_WORLD_WRITEABLE = 0x00000002;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.740 -0400", hash_original_field = "315D150280C704F0621DA42B7EABEA77", hash_generated_field = "6B866752AF78022533961EAFEC48BF90")
+
     public static final int MODE_READ_ONLY = 0x10000000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.740 -0400", hash_original_field = "264C60EDCCFAB2B0358041AC33FEEE6B", hash_generated_field = "EE8DCC6B27D46EC2ED14ABA75E7783AA")
+
     public static final int MODE_WRITE_ONLY = 0x20000000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.740 -0400", hash_original_field = "48FA6B9BAC27C5E37C2AC15B73BEB0F5", hash_generated_field = "6494B31AC04BF207173A1DA805A4DC2B")
+
     public static final int MODE_READ_WRITE = 0x30000000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.740 -0400", hash_original_field = "64F9E90F65FFACE62B2054906BA03800", hash_generated_field = "C6F7880235FE436C915681552C8587CE")
+
     public static final int MODE_CREATE = 0x08000000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.740 -0400", hash_original_field = "7507DA721AE1A637B2BABAD93D9F8266", hash_generated_field = "2EC651F48C0C7F452AF49E37006FEB27")
+
     public static final int MODE_TRUNCATE = 0x04000000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.740 -0400", hash_original_field = "8E4ACDF6D243F49EEB6EAAF3B5A6BCCA", hash_generated_field = "299AF71922C12BCCD82076F57034ABBF")
+
     public static final int MODE_APPEND = 0x02000000;
-    public static final Parcelable.Creator<ParcelFileDescriptor> CREATOR = new Parcelable.Creator<ParcelFileDescriptor>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.031 -0400", hash_original_method = "621772CCC7C69481AB7D1DD9C7D31515", hash_generated_method = "A8D2395C1BC1CA0F3641410FD785A10A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.740 -0400", hash_original_field = "195ED69EAF088F7FA956DC093526DC53", hash_generated_field = "DA358939EDE4BFAAAF0FF49DA63A85F3")
+
+    public static final Parcelable.Creator<ParcelFileDescriptor> CREATOR
+            = new Parcelable.Creator<ParcelFileDescriptor>() {
         public ParcelFileDescriptor createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            ParcelFileDescriptor var48FE8C6DCF0D96FABA91CE4B6AA12D43_692207594 = (in.readFileDescriptor());
-            return (ParcelFileDescriptor)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return in.readFileDescriptor();
+            return in.readFileDescriptor();
         }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.031 -0400", hash_original_method = "0E118C44FAE1C288D206B8A2736A6FCD", hash_generated_method = "F9A4C1774311B681B0326FF07A133974")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public ParcelFileDescriptor[] newArray(int size) {
-            dsTaint.addTaint(size);
-            ParcelFileDescriptor[] varA0F689DD1D61C586B36169819E73014D_195262329 = (new ParcelFileDescriptor[size]);
-            return (ParcelFileDescriptor[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ParcelFileDescriptor[size];
+            return new ParcelFileDescriptor[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

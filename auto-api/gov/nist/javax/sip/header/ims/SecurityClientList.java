@@ -12,27 +12,29 @@ import gov.nist.javax.sip.header.ims.SecurityClient;
 
 public class SecurityClientList extends SIPHeaderList<SecurityClient> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.659 -0400", hash_original_method = "917A181365931F7A6837DEBD96805F45", hash_generated_method = "E0A52096EC1B851DD08D91D4333A641E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SecurityClientList() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.476 -0400", hash_original_method = "917A181365931F7A6837DEBD96805F45", hash_generated_method = "E0A52096EC1B851DD08D91D4333A641E")
+    public  SecurityClientList() {
         super(SecurityClient.class, SecurityClientHeader.NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.660 -0400", hash_original_method = "8CB3EC0B5802F634A5AAC136D83D14DA", hash_generated_method = "B677EC25ADDD8ADEA14B86035EB72846")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.488 -0400", hash_original_method = "8CB3EC0B5802F634A5AAC136D83D14DA", hash_generated_method = "9314AA130873FDE9F29A0210593852F8")
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_1297946715 = null; //Variable for return #1
         SecurityClientList retval;
         retval = new SecurityClientList();
-        Object varF7AD6DD8E2D0A0D86D7DC6EABC62B125_1584794659 = (retval.clonehlist(this.hlist));
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1297946715 = retval.clonehlist(this.hlist);
+        varB4EAC82CA7396A68D541C85D26508E83_1297946715.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1297946715;
         // ---------- Original Method ----------
         //SecurityClientList retval = new SecurityClientList();
         //return retval.clonehlist(this.hlist);
     }
 
     
-    private static final long serialVersionUID = 3094231003329176217L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.488 -0400", hash_original_field = "E1C3B5A2AF0EAAE3887FDDB04B41D33B", hash_generated_field = "407595499C57FEA11C303BE7F1010C6E")
+
+    private static long serialVersionUID = 3094231003329176217L;
 }
 

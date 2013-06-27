@@ -16,20 +16,39 @@ import java.io.Serializable;
 import java.lang.IllegalArgumentException;
 
 public class SIPDate implements Cloneable, Serializable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.047 -0400", hash_original_field = "717AAECF4D718C53F4246C571B5CAE89", hash_generated_field = "2BD9D52B8925416FAD31A17813ACA6C8")
+
     protected String sipWkDay;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.047 -0400", hash_original_field = "E23A549557EC421F126860CDF6AF3E27", hash_generated_field = "A80823C4CD33F3F3AF953060F7AED1B1")
+
     protected String sipMonth;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.047 -0400", hash_original_field = "DCDCC83A4B23617019C9F14EA7F5BC77", hash_generated_field = "596F87319AF1E1308C1EB0CCEED33A9B")
+
     protected int wkday;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.047 -0400", hash_original_field = "628B7DB04235F228D40ADC671413A8C8", hash_generated_field = "B2F58CEAE0DE7FF9484606598C0B67F1")
+
     protected int day;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.047 -0400", hash_original_field = "7436F942D5EA836CB84F1BB2527D8286", hash_generated_field = "2F8C5F97A36CC740C18AB87771CBAEAF")
+
     protected int month;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.047 -0400", hash_original_field = "84CDC76CABF41BD7C961F6AB12F117D8", hash_generated_field = "3748125DBF788D9E5C4BD7C78EC4D962")
+
     protected int year;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.048 -0400", hash_original_field = "896C55CC5E46FAB38CE9F51EBF7BFCD3", hash_generated_field = "BF1D48E6FF386AD255CBE290B36EF4AB")
+
     protected int hour;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.048 -0400", hash_original_field = "0A7D55BE9D12A369A6A8DA0FB517FBA4", hash_generated_field = "59841BABE93C0194E018D6000A755537")
+
     protected int minute;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.048 -0400", hash_original_field = "A9F0E61A137D86AA9DB53465E0801612", hash_generated_field = "B5AC3CA74A56A5C24E7CCD8912B6592B")
+
     protected int second;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.048 -0400", hash_original_field = "F7ED2965F033A6E702D82C1AEC8D0C79", hash_generated_field = "A3E3EEB6FF939AF7B2782A68BB29796C")
+
     private java.util.Calendar javaCal;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.259 -0400", hash_original_method = "C73CBA236E994654D9EB18CB745C41F4", hash_generated_method = "B8FAD3ED34CC8D51B2A635E7C63EE33A")
-    @DSModeled(DSC.SAFE)
-    public SIPDate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.049 -0400", hash_original_method = "C73CBA236E994654D9EB18CB745C41F4", hash_generated_method = "B8FAD3ED34CC8D51B2A635E7C63EE33A")
+    public  SIPDate() {
         wkday = -1;
         day = -1;
         month = -1;
@@ -50,10 +69,8 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.259 -0400", hash_original_method = "7A2DC6C5A2282C24FE6927FC780CB71C", hash_generated_method = "4B127270BCC2DC387B9C378477FA8118")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SIPDate(long timeMillis) {
-        dsTaint.addTaint(timeMillis);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.079 -0400", hash_original_method = "7A2DC6C5A2282C24FE6927FC780CB71C", hash_generated_method = "9C033264CE45A6790F2A3C6251F4F2DE")
+    public  SIPDate(long timeMillis) {
         javaCal =
             new GregorianCalendar(
                 TimeZone.getTimeZone("GMT:0"),
@@ -133,21 +150,22 @@ public class SIPDate implements Cloneable, Serializable {
         hour = javaCal.get(Calendar.HOUR_OF_DAY);
         minute = javaCal.get(Calendar.MINUTE);
         second = javaCal.get(Calendar.SECOND);
+        addTaint(timeMillis);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.260 -0400", hash_original_method = "17EF9A3AE37B7BA0C102396D80392A03", hash_generated_method = "6802CF8863535B7FD736FD5D658AB8AF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.086 -0400", hash_original_method = "17EF9A3AE37B7BA0C102396D80392A03", hash_generated_method = "A955B5411DB961AB69F093F2653C89E3")
     public boolean equals(Object that) {
-        dsTaint.addTaint(that.dsTaint);
         {
-            boolean varB3B539D8C3F946312D0860FAE4C27571_137165616 = (that.getClass() != this.getClass());
+            boolean varB3B539D8C3F946312D0860FAE4C27571_1750311599 = (that.getClass() != this.getClass());
         } //End collapsed parenthetic
         SIPDate other;
         other = (SIPDate)that;
-        return dsTaint.getTaintBoolean();
+        addTaint(that.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_877031156 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_877031156;
         // ---------- Original Method ----------
         //if (that.getClass() != this.getClass())return false;
         //SIPDate other = (SIPDate)that;
@@ -161,9 +179,9 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.260 -0400", hash_original_method = "124CFAD93358C90C664BE8C1CAE8945E", hash_generated_method = "AF7B9AF961C89CDFB56F80F248C1D27E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.088 -0400", hash_original_method = "124CFAD93358C90C664BE8C1CAE8945E", hash_generated_method = "E99030153CE0781E00D36F558F453F16")
     public String encode() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1111111155 = null; //Variable for return #1
         String dayString;
         {
             dayString = "0" + day;
@@ -198,17 +216,21 @@ public class SIPDate implements Cloneable, Serializable {
             + secondString
             + Separators.SP
             + GMT;
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1111111155 = encoding;
+        varB4EAC82CA7396A68D541C85D26508E83_1111111155.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1111111155;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.260 -0400", hash_original_method = "AA358655086B2D4E31F8BC09FB299576", hash_generated_method = "42198F7B5D006AAE015141E03A209684")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.090 -0400", hash_original_method = "AA358655086B2D4E31F8BC09FB299576", hash_generated_method = "600B149B2D966D5E193D9C7E4A4058FF")
     public java.util.Calendar getJavaCal() {
+        java.util.Calendar varB4EAC82CA7396A68D541C85D26508E83_495180018 = null; //Variable for return #1
         setJavaCal();
-        return (java.util.Calendar)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_495180018 = javaCal;
+        varB4EAC82CA7396A68D541C85D26508E83_495180018.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_495180018;
         // ---------- Original Method ----------
         //if (javaCal == null)
             //setJavaCal();
@@ -216,53 +238,56 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.261 -0400", hash_original_method = "457D7CE469867FC10EBD436F0D51643B", hash_generated_method = "8AFCF10BD7FE8C5AA09529833B11E0B0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.090 -0400", hash_original_method = "457D7CE469867FC10EBD436F0D51643B", hash_generated_method = "8434F1B8BAD92E9FC49F2D2DFA5F1756")
     public String getWkday() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1042495246 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1042495246 = sipWkDay;
+        varB4EAC82CA7396A68D541C85D26508E83_1042495246.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1042495246;
         // ---------- Original Method ----------
         //return sipWkDay;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.261 -0400", hash_original_method = "A22F3A31D7F5863E790748C0D0AB40F6", hash_generated_method = "A34F0CAC5B1DCD769D33934E7C439AF6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.096 -0400", hash_original_method = "A22F3A31D7F5863E790748C0D0AB40F6", hash_generated_method = "C382D4994B9552DA4B302C929E57C5A3")
     public String getMonth() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1596324201 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1596324201 = sipMonth;
+        varB4EAC82CA7396A68D541C85D26508E83_1596324201.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1596324201;
         // ---------- Original Method ----------
         //return sipMonth;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.261 -0400", hash_original_method = "4346EB52B1E97382E292AD2394C76CAA", hash_generated_method = "0006550B4B600AA5C48BDBB8B8900CC3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.096 -0400", hash_original_method = "4346EB52B1E97382E292AD2394C76CAA", hash_generated_method = "FB8BE88267213C79688C09AB52D8ECFE")
     public int getHour() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_351122111 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_351122111;
         // ---------- Original Method ----------
         //return hour;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.261 -0400", hash_original_method = "ADC91C6D58A75EA1079C93B22A777A18", hash_generated_method = "016025B864E8C02F1C8CA3DA3A296A3C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.096 -0400", hash_original_method = "ADC91C6D58A75EA1079C93B22A777A18", hash_generated_method = "3366026203652F451275F917C512DD43")
     public int getMinute() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_732692516 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_732692516;
         // ---------- Original Method ----------
         //return minute;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.261 -0400", hash_original_method = "033202145FC9480CAEE9B3FD508F85AB", hash_generated_method = "22AA441F570416CED0AE1952EB24F57B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.096 -0400", hash_original_method = "033202145FC9480CAEE9B3FD508F85AB", hash_generated_method = "A39135C5FFD2D3E14CA55B207658B416")
     public int getSecond() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_83060954 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_83060954;
         // ---------- Original Method ----------
         //return second;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.262 -0400", hash_original_method = "ED081120415B25517E6A51D04161FC1C", hash_generated_method = "1E8F073A63E95637A32C9CF8F3796EE2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.101 -0400", hash_original_method = "ED081120415B25517E6A51D04161FC1C", hash_generated_method = "1E8F073A63E95637A32C9CF8F3796EE2")
     private void setJavaCal() {
         javaCal =
             new GregorianCalendar(
@@ -297,42 +322,41 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.262 -0400", hash_original_method = "AC7B5ED74AB02B130D63CC72231A28FF", hash_generated_method = "6EA8AB267CB53EC7ED39755296DE3922")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.102 -0400", hash_original_method = "AC7B5ED74AB02B130D63CC72231A28FF", hash_generated_method = "1C00FA435180445BF232F8C20ACEA098")
     public void setWkday(String w) throws IllegalArgumentException {
-        dsTaint.addTaint(w);
+        sipWkDay = w;
         {
-            boolean var6ED753E913882A5CB5A17F96BB31B0A6_2094489370 = (sipWkDay.compareToIgnoreCase(MON) == 0);
+            boolean var6ED753E913882A5CB5A17F96BB31B0A6_1257027293 = (sipWkDay.compareToIgnoreCase(MON) == 0);
             {
                 wkday = Calendar.MONDAY;
             } //End block
             {
-                boolean var2012D7772A037EB772027D6F49C169A8_1374442388 = (sipWkDay.compareToIgnoreCase(TUE) == 0);
+                boolean var2012D7772A037EB772027D6F49C169A8_1512906335 = (sipWkDay.compareToIgnoreCase(TUE) == 0);
                 {
                     wkday = Calendar.TUESDAY;
                 } //End block
                 {
-                    boolean varA1BD807959D6D772573BFE881920839F_2088550620 = (sipWkDay.compareToIgnoreCase(WED) == 0);
+                    boolean varA1BD807959D6D772573BFE881920839F_1135419531 = (sipWkDay.compareToIgnoreCase(WED) == 0);
                     {
                         wkday = Calendar.WEDNESDAY;
                     } //End block
                     {
-                        boolean varFA7F42BAF969C2FF61FE858764F5D6F1_628405986 = (sipWkDay.compareToIgnoreCase(THU) == 0);
+                        boolean varFA7F42BAF969C2FF61FE858764F5D6F1_1467363878 = (sipWkDay.compareToIgnoreCase(THU) == 0);
                         {
                             wkday = Calendar.THURSDAY;
                         } //End block
                         {
-                            boolean var1804DACB94F11EF7EB945F767CC6656D_649541395 = (sipWkDay.compareToIgnoreCase(FRI) == 0);
+                            boolean var1804DACB94F11EF7EB945F767CC6656D_334412811 = (sipWkDay.compareToIgnoreCase(FRI) == 0);
                             {
                                 wkday = Calendar.FRIDAY;
                             } //End block
                             {
-                                boolean var48FF9B329BA99ECAFC60F37A7EADBDEF_1500531431 = (sipWkDay.compareToIgnoreCase(SAT) == 0);
+                                boolean var48FF9B329BA99ECAFC60F37A7EADBDEF_2068016291 = (sipWkDay.compareToIgnoreCase(SAT) == 0);
                                 {
                                     wkday = Calendar.SATURDAY;
                                 } //End block
                                 {
-                                    boolean varD2EFED95FFD4AAE7B003D22ECBE873DB_243023722 = (sipWkDay.compareToIgnoreCase(SUN) == 0);
+                                    boolean varD2EFED95FFD4AAE7B003D22ECBE873DB_1740279883 = (sipWkDay.compareToIgnoreCase(SUN) == 0);
                                     {
                                         wkday = Calendar.SUNDAY;
                                     } //End block
@@ -368,12 +392,11 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.262 -0400", hash_original_method = "79BC1DF7B5884941473DA919072706C3", hash_generated_method = "BD0AEE23A1B29AD96043C8329D5F22CD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.120 -0400", hash_original_method = "79BC1DF7B5884941473DA919072706C3", hash_generated_method = "3623FEC32BD10FD77788FB471AD655EF")
     public void setDay(int d) throws IllegalArgumentException {
-        dsTaint.addTaint(d);
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                 "Illegal Day of the month " + Integer.toString(d));
+        day = d;
         // ---------- Original Method ----------
         //if (d < 1 || d > 31)
             //throw new IllegalArgumentException(
@@ -382,67 +405,66 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.263 -0400", hash_original_method = "F81F66CB2E9CA66D72BD9964B3A16CCB", hash_generated_method = "CD10F0D5CD32A307AD851676C9F0E0FE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.121 -0400", hash_original_method = "F81F66CB2E9CA66D72BD9964B3A16CCB", hash_generated_method = "03F68ADB37022D114C422565A9DFF78C")
     public void setMonth(String m) throws IllegalArgumentException {
-        dsTaint.addTaint(m);
+        sipMonth = m;
         {
-            boolean varC022F0018F901E6DAB885B39121F4580_261219704 = (sipMonth.compareToIgnoreCase(JAN) == 0);
+            boolean varC022F0018F901E6DAB885B39121F4580_92013068 = (sipMonth.compareToIgnoreCase(JAN) == 0);
             {
                 month = Calendar.JANUARY;
             } //End block
             {
-                boolean var31A64FD55A1B5D1B7CF6897AB51072F5_16409139 = (sipMonth.compareToIgnoreCase(FEB) == 0);
+                boolean var31A64FD55A1B5D1B7CF6897AB51072F5_830789403 = (sipMonth.compareToIgnoreCase(FEB) == 0);
                 {
                     month = Calendar.FEBRUARY;
                 } //End block
                 {
-                    boolean var0DB25484EE9B6AD8C1134362CF737A2E_1923788991 = (sipMonth.compareToIgnoreCase(MAR) == 0);
+                    boolean var0DB25484EE9B6AD8C1134362CF737A2E_73588306 = (sipMonth.compareToIgnoreCase(MAR) == 0);
                     {
                         month = Calendar.MARCH;
                     } //End block
                     {
-                        boolean var5F174F8072EC669E20A1A01DEA6B1985_350701580 = (sipMonth.compareToIgnoreCase(APR) == 0);
+                        boolean var5F174F8072EC669E20A1A01DEA6B1985_1861230295 = (sipMonth.compareToIgnoreCase(APR) == 0);
                         {
                             month = Calendar.APRIL;
                         } //End block
                         {
-                            boolean varD7A0FA753B2140C85E88DFA1F1F7B14D_1368722574 = (sipMonth.compareToIgnoreCase(MAY) == 0);
+                            boolean varD7A0FA753B2140C85E88DFA1F1F7B14D_1843663371 = (sipMonth.compareToIgnoreCase(MAY) == 0);
                             {
                                 month = Calendar.MAY;
                             } //End block
                             {
-                                boolean varDACD1A4A13B2891E0D88136EC09F384E_864169065 = (sipMonth.compareToIgnoreCase(JUN) == 0);
+                                boolean varDACD1A4A13B2891E0D88136EC09F384E_1791962680 = (sipMonth.compareToIgnoreCase(JUN) == 0);
                                 {
                                     month = Calendar.JUNE;
                                 } //End block
                                 {
-                                    boolean var146A169FDCAE1BA81F6CACF1D13ADA93_1003712494 = (sipMonth.compareToIgnoreCase(JUL) == 0);
+                                    boolean var146A169FDCAE1BA81F6CACF1D13ADA93_1942054376 = (sipMonth.compareToIgnoreCase(JUL) == 0);
                                     {
                                         month = Calendar.JULY;
                                     } //End block
                                     {
-                                        boolean varA68A971E0705CA224E5442C417C85C4C_1274827481 = (sipMonth.compareToIgnoreCase(AUG) == 0);
+                                        boolean varA68A971E0705CA224E5442C417C85C4C_169933557 = (sipMonth.compareToIgnoreCase(AUG) == 0);
                                         {
                                             month = Calendar.AUGUST;
                                         } //End block
                                         {
-                                            boolean var944745D5A476951E51B0776778865417_570184577 = (sipMonth.compareToIgnoreCase(SEP) == 0);
+                                            boolean var944745D5A476951E51B0776778865417_1264630395 = (sipMonth.compareToIgnoreCase(SEP) == 0);
                                             {
                                                 month = Calendar.SEPTEMBER;
                                             } //End block
                                             {
-                                                boolean var803B4F0EAD50203BF988F4C12598B552_1043755638 = (sipMonth.compareToIgnoreCase(OCT) == 0);
+                                                boolean var803B4F0EAD50203BF988F4C12598B552_809927699 = (sipMonth.compareToIgnoreCase(OCT) == 0);
                                                 {
                                                     month = Calendar.OCTOBER;
                                                 } //End block
                                                 {
-                                                    boolean var218B7B8D121FACB72CC9D957B671F2AE_1209110459 = (sipMonth.compareToIgnoreCase(NOV) == 0);
+                                                    boolean var218B7B8D121FACB72CC9D957B671F2AE_1859284375 = (sipMonth.compareToIgnoreCase(NOV) == 0);
                                                     {
                                                         month = Calendar.NOVEMBER;
                                                     } //End block
                                                     {
-                                                        boolean var80F451C929B849E912728C9A9EABCA68_199677286 = (sipMonth.compareToIgnoreCase(DEC) == 0);
+                                                        boolean var80F451C929B849E912728C9A9EABCA68_1721963895 = (sipMonth.compareToIgnoreCase(DEC) == 0);
                                                         {
                                                             month = Calendar.DECEMBER;
                                                         } //End block
@@ -466,12 +488,11 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.263 -0400", hash_original_method = "65E0B59727307B53E2290DE9B41E88A5", hash_generated_method = "640D4832918E9F38DE2F68F91FA814B9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.122 -0400", hash_original_method = "65E0B59727307B53E2290DE9B41E88A5", hash_generated_method = "DFC30F2AAC0950795C80DEAC2DDF0833")
     public void setYear(int y) throws IllegalArgumentException {
-        dsTaint.addTaint(y);
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Illegal year : " + y);
         javaCal = null;
+        year = y;
         // ---------- Original Method ----------
         //if (y < 0)
             //throw new IllegalArgumentException("Illegal year : " + y);
@@ -480,21 +501,20 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.263 -0400", hash_original_method = "685E9F12E07BC44AEFABA3E87A7BA88C", hash_generated_method = "952E31F05ECFE525517F2D0B8ED52C5B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.136 -0400", hash_original_method = "685E9F12E07BC44AEFABA3E87A7BA88C", hash_generated_method = "6816249EEEC709AC9969E60CD8A78EAE")
     public int getYear() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1234495800 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1234495800;
         // ---------- Original Method ----------
         //return year;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.264 -0400", hash_original_method = "8F41240A07063AF12A20DAC696350061", hash_generated_method = "3789A3FBA47D4F66723E8000FBEFD02C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.138 -0400", hash_original_method = "8F41240A07063AF12A20DAC696350061", hash_generated_method = "C2AFD2063F5E491E745E7DD4F418282A")
     public void setHour(int h) throws IllegalArgumentException {
-        dsTaint.addTaint(h);
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Illegal hour : " + h);
         javaCal = null;
+        hour = h;
         // ---------- Original Method ----------
         //if (h < 0 || h > 24)
             //throw new IllegalArgumentException("Illegal hour : " + h);
@@ -503,13 +523,12 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.264 -0400", hash_original_method = "0A40A5D1C091DEF2AA14C093CC6460BC", hash_generated_method = "3FC8AB1594845931745F3BA7AABDCBCB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.138 -0400", hash_original_method = "0A40A5D1C091DEF2AA14C093CC6460BC", hash_generated_method = "F878573F640FAFEB1CEC6716F65795CB")
     public void setMinute(int m) throws IllegalArgumentException {
-        dsTaint.addTaint(m);
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                 "Illegal minute : " + (Integer.toString(m)));
         javaCal = null;
+        minute = m;
         // ---------- Original Method ----------
         //if (m < 0 || m >= 60)
             //throw new IllegalArgumentException(
@@ -519,13 +538,12 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.264 -0400", hash_original_method = "2AD3B3771A5FA25E5792A620A7EA9BAA", hash_generated_method = "88FADF727827D09833319732A996846C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.139 -0400", hash_original_method = "2AD3B3771A5FA25E5792A620A7EA9BAA", hash_generated_method = "C16B7C9298FEC83F3870BE0DABE60A08")
     public void setSecond(int s) throws IllegalArgumentException {
-        dsTaint.addTaint(s);
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                 "Illegal second : " + Integer.toString(s));
         javaCal = null;
+        second = s;
         // ---------- Original Method ----------
         //if (s < 0 || s >= 60)
             //throw new IllegalArgumentException(
@@ -535,22 +553,22 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.264 -0400", hash_original_method = "2F4F469E30C2F586A40940F33F0E1586", hash_generated_method = "0AB859FC9A237C8CFFAA29CA98C019F7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.147 -0400", hash_original_method = "2F4F469E30C2F586A40940F33F0E1586", hash_generated_method = "B41B47871E33DE86E7CD6FAA158C65F8")
     public int getDeltaSeconds() {
         long ctime;
         ctime = this.getJavaCal().getTime().getTime();
-        int var564E041B7CDDC5ADD7BEB915CCCDE394_289213279 = ((int) (ctime - System.currentTimeMillis()) / 1000);
-        return dsTaint.getTaintInt();
+        int var564E041B7CDDC5ADD7BEB915CCCDE394_1733542079 = ((int) (ctime - System.currentTimeMillis()) / 1000);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1104674194 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1104674194;
         // ---------- Original Method ----------
         //long ctime = this.getJavaCal().getTime().getTime();
         //return (int) (ctime - System.currentTimeMillis()) / 1000;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.265 -0400", hash_original_method = "4BA050DE2121A2990466253CFC8AD778", hash_generated_method = "5A6C717F115A0EBB90E26A1ADB7B7B08")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.149 -0400", hash_original_method = "4BA050DE2121A2990466253CFC8AD778", hash_generated_method = "C185FFF8DC1574D20DEA143295CF0BE0")
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_1709810874 = null; //Variable for return #1
         SIPDate retval;
         try 
         {
@@ -561,7 +579,9 @@ public class SIPDate implements Cloneable, Serializable {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Internal error");
         } //End block
         retval.javaCal = (java.util.Calendar) javaCal.clone();
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1709810874 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_1709810874.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1709810874;
         // ---------- Original Method ----------
         //SIPDate retval;
         //try {
@@ -575,26 +595,68 @@ public class SIPDate implements Cloneable, Serializable {
     }
 
     
-    private static final long serialVersionUID = 8544101899928346909L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.149 -0400", hash_original_field = "3711CF8C305348C83A69C259D4169CD2", hash_generated_field = "4726070A00C91D9BA7243EC018553565")
+
+    private static long serialVersionUID = 8544101899928346909L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.149 -0400", hash_original_field = "37C601F2036A369A76BDEF09EBA13B29", hash_generated_field = "90A017F290A00288C0F071E9A1EBD88C")
+
     public static final String GMT = "GMT";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.149 -0400", hash_original_field = "F822252C460E43C68512DB19F2238272", hash_generated_field = "D993B191F18C7C2A2ACF77D43C481204")
+
     public static final String MON = "Mon";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.149 -0400", hash_original_field = "E13C5035426328FC96F60CE16D367A0B", hash_generated_field = "A396BE9DE9586E197D6C0B3E443E0D95")
+
     public static final String TUE = "Tue";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "6A9E479F2EE6BFA965B32747936DB368", hash_generated_field = "3D06F8133C09119B26C6E278798CF1A9")
+
     public static final String WED = "Wed";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "8E00C2EA9118ED41470E465C34E26A8D", hash_generated_field = "09A162F56D2A9384083E7AAF03183FD6")
+
     public static final String THU = "Thu";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "36999DD3216BCBE23BAF2D3CAAE0DEA6", hash_generated_field = "130AB4377BFA7580AE1512EA43195FBC")
+
     public static final String FRI = "Fri";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "6788CE2821B811132FCA00FCCB7843A4", hash_generated_field = "F219533A1B8112292C40A0B685C35CFD")
+
     public static final String SAT = "Sat";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "B9D6E5F089E0857DB21C9E08AC8B26ED", hash_generated_field = "6C1848B20607A097704760E1650C2678")
+
     public static final String SUN = "Sun";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "DBF7DFB7502E55498300890F933767D9", hash_generated_field = "F2D1780B5CE22050F6158996B8E61999")
+
     public static final String JAN = "Jan";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "2637ECF938440EAF8F10DD7278DB2BB9", hash_generated_field = "6FADB9C3303C0BDE49C3B4B5539EFD6E")
+
     public static final String FEB = "Feb";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "52518F50DABA9229AF40AE891A8B4D1C", hash_generated_field = "6303D6FBD3F71C8EE38712E28705023E")
+
     public static final String MAR = "Mar";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "5DDBC7FEC87EB31DEB50BB5F94FAFBD7", hash_generated_field = "23DBF8FEC46857D1C97D6E3A64C4C782")
+
     public static final String APR = "Apr";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "D89AC508A90A47AF7CBB472BE8533349", hash_generated_field = "47FD9EBB6C303C4777A0424A8CB9008B")
+
     public static final String MAY = "May";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "992F14AD77E8C98E19366CD5CDA3E041", hash_generated_field = "24E1CBE6524227A554B498F7E7BFA54C")
+
     public static final String JUN = "Jun";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "34DA4E467F087737AA361D2038E50450", hash_generated_field = "E960EB8D455449B7DD7F8DF660D9E443")
+
     public static final String JUL = "Jul";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "8FCD505B4B8FDF8BEEB4E2E40FD7BDE2", hash_generated_field = "CE558222EA08CDFDCA2D75DF00FE2DF9")
+
     public static final String AUG = "Aug";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "6221BDBC2CC6ACE69A93E417555690F7", hash_generated_field = "54D87D6819D3255A8690058A26F311B4")
+
     public static final String SEP = "Sep";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "557FFA803FDA695A6ED3D7584ABAE5B4", hash_generated_field = "3EB1F3DE2F9DBA4FAD368F5BCB02D165")
+
     public static final String OCT = "Oct";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "3B4841F2F7185A7963DE3F3042F923E5", hash_generated_field = "1B59DBC9E66C4388573EE99FDE2F7799")
+
     public static final String NOV = "Nov";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.158 -0400", hash_original_field = "3810CF0AA1237E029D6EC618BF9E9F4D", hash_generated_field = "033F25F46987BBA69C5EC9DD661A40F0")
+
     public static final String DEC = "Dec";
 }
 

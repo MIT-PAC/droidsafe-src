@@ -15,36 +15,39 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
 public final class GeneralSubtrees {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.912 -0400", hash_original_field = "E53F856F6B113AD6085151AAADA65843", hash_generated_field = "C2874F586CC3974C74476D82AF1EF2DD")
+
     private List<GeneralSubtree> generalSubtrees;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.912 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
+
     private byte[] encoding;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.798 -0400", hash_original_method = "2635B7CAB7F4197126741D8B5E9A6725", hash_generated_method = "B29C86203CC1BAA49411AB30B2B83EAB")
-    @DSModeled(DSC.SAFE)
-    public GeneralSubtrees(List<GeneralSubtree> generalSubtrees) {
-        dsTaint.addTaint(generalSubtrees.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.913 -0400", hash_original_method = "2635B7CAB7F4197126741D8B5E9A6725", hash_generated_method = "C3A2A15D403107D1B4897DD6AE5129D3")
+    public  GeneralSubtrees(List<GeneralSubtree> generalSubtrees) {
+        this.generalSubtrees = generalSubtrees;
         // ---------- Original Method ----------
         //this.generalSubtrees = generalSubtrees;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.798 -0400", hash_original_method = "B39087273D015207EFED9684375F7A9C", hash_generated_method = "8E1FF0903DBE86F2ABF12EDC2D763447")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.917 -0400", hash_original_method = "B39087273D015207EFED9684375F7A9C", hash_generated_method = "D49FFBCC5B1FB49166D8DF28B0EEF4A3")
     public List<GeneralSubtree> getSubtrees() {
-        return (List<GeneralSubtree>)dsTaint.getTaint();
+        List<GeneralSubtree> varB4EAC82CA7396A68D541C85D26508E83_2057823874 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2057823874 = generalSubtrees;
+        varB4EAC82CA7396A68D541C85D26508E83_2057823874.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2057823874;
         // ---------- Original Method ----------
         //return generalSubtrees;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.798 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "94FDBB09C313C97C9EDC6BBF307FBE8A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.918 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "DB2F09C8A2EABFC3EF895E1E63F6F9A0")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
         } //End block
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1469061102 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1469061102;
         // ---------- Original Method ----------
         //if (encoding == null) {
             //encoding = ASN1.encode(this);
@@ -53,38 +56,19 @@ public final class GeneralSubtrees {
     }
 
     
-    public static final ASN1Type ASN1 = new ASN1SequenceOf(GeneralSubtree.ASN1) {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.798 -0400", hash_original_method = "2D9DF534E99C5FC68E76E143BAF9A37A", hash_generated_method = "1AC1B267F9EE369DF6469DEDE1772A06")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        @Override
-        public Object getDecodedObject(BerInputStream in) {
-            dsTaint.addTaint(in.dsTaint);
-            Object var934C96467631C6BEB2709DDE0E371C5D_1438832728 = (new GeneralSubtrees((List<GeneralSubtree>) in.content));
-            return (Object)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new GeneralSubtrees((List<GeneralSubtree>) in.content);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.918 -0400", hash_original_field = "0799060D53393B92181BE0F337148C10", hash_generated_field = "E8931CE4F0A844140DFFB6382D546C0B")
+
+    public static final ASN1Type ASN1 = new ASN1SequenceOf(GeneralSubtree.ASN1) {
+        @Override public Object getDecodedObject(BerInputStream in) {
+            return new GeneralSubtrees((List<GeneralSubtree>) in.content);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.798 -0400", hash_original_method = "2D1C7EBFAAEEE93820419C378A46DB40", hash_generated_method = "D6F83F858AA1582481606122F91F759F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        @Override
-        public Collection getValues(Object object) {
-            dsTaint.addTaint(object.dsTaint);
-            GeneralSubtrees gss;
-            gss = (GeneralSubtrees) object;
-            {
-                Object varE90405DCA4136A80E794662F1CC6CC99_1093543407 = (new ArrayList<GeneralSubtree>());
-            } //End flattened ternary
-            return (Collection)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //GeneralSubtrees gss = (GeneralSubtrees) object;
-            //return (gss.generalSubtrees == null)
-                    //? new ArrayList<GeneralSubtree>()
-                    //: gss.generalSubtrees;
+        @Override public Collection getValues(Object object) {
+            GeneralSubtrees gss = (GeneralSubtrees) object;
+            return (gss.generalSubtrees == null)
+                    ? new ArrayList<GeneralSubtree>()
+                    : gss.generalSubtrees;
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

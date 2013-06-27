@@ -10,9 +10,10 @@ import java.util.Iterator;
 
 public abstract class DisplayList {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.474 -0400", hash_original_method = "6346386A3E734B7874ECF0F0A490D6EF", hash_generated_method = "6346386A3E734B7874ECF0F0A490D6EF")
-        public DisplayList ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.798 -0400", hash_original_method = "D56C6AFD01D3460D9F9028A561421FB3", hash_generated_method = "D56C6AFD01D3460D9F9028A561421FB3")
+    public DisplayList ()
     {
+        //Synthesized constructor
     }
 
 

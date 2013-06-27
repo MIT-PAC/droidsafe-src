@@ -14,33 +14,33 @@ import gov.nist.javax.sip.parser.*;
 
 public class ReferredByParser extends AddressParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.736 -0400", hash_original_method = "B42987DBDBA12D8A1BC8285C2A945786", hash_generated_method = "CE411DC20F603ABBB77227C60F332758")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ReferredByParser(String referBy) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.598 -0400", hash_original_method = "B42987DBDBA12D8A1BC8285C2A945786", hash_generated_method = "C9FBBE0DB0ED57749A664431F28AF13A")
+    public  ReferredByParser(String referBy) {
         super(referBy);
-        dsTaint.addTaint(referBy);
+        addTaint(referBy.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.736 -0400", hash_original_method = "CCD7CFF6FCA48FCEC6FB3D9B7402721E", hash_generated_method = "CA9CFBA73D70A722105BAA06A32E55B7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected ReferredByParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.607 -0400", hash_original_method = "CCD7CFF6FCA48FCEC6FB3D9B7402721E", hash_generated_method = "B489F8353291A605BC8CE38D58B2E5FF")
+    protected  ReferredByParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.737 -0400", hash_original_method = "17616601F399F4EC4152D86BF5F11B96", hash_generated_method = "34D491FD52CD83BDA65CFFECD2A9B409")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.611 -0400", hash_original_method = "17616601F399F4EC4152D86BF5F11B96", hash_generated_method = "3F7BAAB7963D32E58B53C0190AD8E10A")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1353196810 = null; //Variable for return #1
         headerName(TokenTypes.REFERREDBY_TO);
         ReferredBy referBy;
         referBy = new ReferredBy();
         super.parse(referBy);
         this.lexer.match('\n');
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1353196810 = referBy;
+        varB4EAC82CA7396A68D541C85D26508E83_1353196810.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1353196810;
         // ---------- Original Method ----------
         //headerName(TokenTypes.REFERREDBY_TO);
         //ReferredBy referBy = new ReferredBy();

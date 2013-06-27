@@ -20,10 +20,20 @@ import android.view.ViewGroup;
 import android.widget.RemoteViews.RemoteView;
 
 public class LinearLayout extends ViewGroup {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.748 -0400", hash_original_field = "C4AC870B117F9377D557E108C2F5864C", hash_generated_field = "49EF932FC6F54346B0D68DBE32BC1514")
+
     @ViewDebug.ExportedProperty(category = "layout") private boolean mBaselineAligned = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_field = "C4FA8C15F1496E5D4914A441B3EF4877", hash_generated_field = "9479D6BEF70B8D911DE1D3E00E354445")
+
     @ViewDebug.ExportedProperty(category = "layout") private int mBaselineAlignedChildIndex = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_field = "74E8B6E6B0FDC4F4D8852726B0CC3BAD", hash_generated_field = "44D10AD5ECEE597BECDD4FB40534DC17")
+
     @ViewDebug.ExportedProperty(category = "measurement") private int mBaselineChildTop = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_field = "7EA67827B94D10D1A4B368659EA63B71", hash_generated_field = "3C6DDBEC00F7F6467812B81CEA371C07")
+
     @ViewDebug.ExportedProperty(category = "measurement") private int mOrientation;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_field = "964B8A9513C01B9AF2664D1A54E32EEA", hash_generated_field = "EE266283EE900FDD2432D031F7395357")
+
     @ViewDebug.ExportedProperty(category = "measurement", flagMapping = {
             @ViewDebug.FlagToString(mask = -1,
                 equals = -1, name = "NONE"),
@@ -56,43 +66,57 @@ public class LinearLayout extends ViewGroup {
             @ViewDebug.FlagToString(mask = Gravity.RELATIVE_LAYOUT_DIRECTION,
                 equals = Gravity.RELATIVE_LAYOUT_DIRECTION, name = "RELATIVE")
         }) private int mGravity = Gravity.START | Gravity.TOP;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_field = "43703A9421153843DA88A5EE2D1672A0", hash_generated_field = "DE3BC85B85ECB21DC64AEE79C7BD6AB4")
+
     @ViewDebug.ExportedProperty(category = "measurement") private int mTotalLength;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_field = "0B41BD4353E911E2EC90D6CA263443B7", hash_generated_field = "EF9873241C2DA21073158F3890B03884")
+
     @ViewDebug.ExportedProperty(category = "layout") private float mWeightSum;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_field = "0C8E174FC05FB87AC9CC0DB60A352BB7", hash_generated_field = "295836EFFBA80C7933F8A212CF2A587C")
+
     @ViewDebug.ExportedProperty(category = "layout") private boolean mUseLargestChild;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_field = "091770C374CE70054C190C0FB419201A", hash_generated_field = "EAE955816B4A7ECE00EA7D8113667D8A")
+
     private int[] mMaxAscent;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_field = "54405F87D6BC3932D04A1754A96D3A3D", hash_generated_field = "59DC29D31F14D9C75D4CE10DB2E42CAF")
+
     private int[] mMaxDescent;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_field = "F2EB92D46BFACFA75ABCA33DC6179915", hash_generated_field = "D73292FD603C307DCBB538076F31C80F")
+
     private Drawable mDivider;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_field = "2CFB9EB3B0B1B519D9DE96130629CD90", hash_generated_field = "57640F4296EC1DBBA1FC773929C31009")
+
     private int mDividerWidth;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_field = "FDC96C666CAD9FBF2EF59762861622A0", hash_generated_field = "D39F10261E466E88A7BE2C17E757ADFE")
+
     private int mDividerHeight;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_field = "570DF19833C5FFBC7225A5E90145E2AD", hash_generated_field = "1313B8BA9906A262CF63E7F9653AB503")
+
     private int mShowDividers;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_field = "009CC63A514E465A3A03D8B8E546A1D2", hash_generated_field = "8407F81B00C5F4756EECF88D42950A05")
+
     private int mDividerPadding;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.377 -0400", hash_original_method = "FE94B0C3331DC48DD922B45C9927A2E5", hash_generated_method = "2EFF139339BDEBABDB7D83B20A8DB981")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public LinearLayout(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.749 -0400", hash_original_method = "FE94B0C3331DC48DD922B45C9927A2E5", hash_generated_method = "5599C5BD2C841CC6FACAC31E386AB809")
+    public  LinearLayout(Context context) {
         super(context);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.377 -0400", hash_original_method = "90765D7AD39C5FFE28F827609E4D9AAF", hash_generated_method = "A6B950262E6B10D528D87179FB790B95")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public LinearLayout(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.760 -0400", hash_original_method = "90765D7AD39C5FFE28F827609E4D9AAF", hash_generated_method = "3EBE68191C4C2BC4D01EADD3696A2D6C")
+    public  LinearLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.377 -0400", hash_original_method = "CABCB619C04E154CCE92AB7E91451BB7", hash_generated_method = "6A6D06B78E136064AD6380C322014B96")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public LinearLayout(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.762 -0400", hash_original_method = "CABCB619C04E154CCE92AB7E91451BB7", hash_generated_method = "4C7CF60AB31FE2DFC37EB4536FE5D926")
+    public  LinearLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(defStyle);
-        dsTaint.addTaint(context.dsTaint);
         TypedArray a;
         a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.LinearLayout, defStyle, 0);
@@ -118,18 +142,20 @@ public class LinearLayout extends ViewGroup {
         mShowDividers = a.getInt(R.styleable.LinearLayout_showDividers, SHOW_DIVIDER_NONE);
         mDividerPadding = a.getDimensionPixelSize(R.styleable.LinearLayout_dividerPadding, 0);
         a.recycle();
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
+        addTaint(defStyle);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.377 -0400", hash_original_method = "DE827128F1412AED640E145E58E9E69C", hash_generated_method = "9101FEEC5639E6091C656067724999B1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.762 -0400", hash_original_method = "DE827128F1412AED640E145E58E9E69C", hash_generated_method = "FAA302745E69D3FEC3B40DEBEDFE410F")
     public void setShowDividers(int showDividers) {
-        dsTaint.addTaint(showDividers);
         {
             requestLayout();
         } //End block
+        mShowDividers = showDividers;
         // ---------- Original Method ----------
         //if (showDividers != mShowDividers) {
             //requestLayout();
@@ -138,29 +164,28 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.378 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "B6A28B76ECD4015FD614215B915AB786")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.762 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "160423AABD71B113745D9FFB0F19DDF6")
     @Override
     public boolean shouldDelayChildPressedState() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_509304754 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_509304754;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.378 -0400", hash_original_method = "81C750B99B14EF38CA21D36808CD7086", hash_generated_method = "30BA2022D37B9648FBB02C44FDDCFE9C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.763 -0400", hash_original_method = "81C750B99B14EF38CA21D36808CD7086", hash_generated_method = "54F1716B48D1E3B562B50D4BF6347223")
     public int getShowDividers() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1181370667 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1181370667;
         // ---------- Original Method ----------
         //return mShowDividers;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.378 -0400", hash_original_method = "7357A0D71E9A27E2C8DA29FA77A144AF", hash_generated_method = "CD36ECAFB42D5407100ED3A52A91A489")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.770 -0400", hash_original_method = "7357A0D71E9A27E2C8DA29FA77A144AF", hash_generated_method = "C7D7FB39733171DDB03A67C46B5795DC")
     public void setDividerDrawable(Drawable divider) {
-        dsTaint.addTaint(divider.dsTaint);
+        mDivider = divider;
         {
             mDividerWidth = divider.getIntrinsicWidth();
             mDividerHeight = divider.getIntrinsicHeight();
@@ -188,45 +213,43 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.378 -0400", hash_original_method = "E2E4F4C3D603F5F2D62C3F5CBAFDCC06", hash_generated_method = "67E0B12F6A2416C059DFF989AF822F0A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.779 -0400", hash_original_method = "E2E4F4C3D603F5F2D62C3F5CBAFDCC06", hash_generated_method = "21B19108F063ADDE197FAB8209A2015F")
     public void setDividerPadding(int padding) {
-        dsTaint.addTaint(padding);
+        mDividerPadding = padding;
         // ---------- Original Method ----------
         //mDividerPadding = padding;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.378 -0400", hash_original_method = "2F70F7AA30D3819DCD53286185A1CA49", hash_generated_method = "A0D33267B130D42500C310E1AF1E00A6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.780 -0400", hash_original_method = "2F70F7AA30D3819DCD53286185A1CA49", hash_generated_method = "6BAEFB1DCAC99DBFA1771C6F1BC6A6F5")
     public int getDividerPadding() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1257966991 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1257966991;
         // ---------- Original Method ----------
         //return mDividerPadding;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.379 -0400", hash_original_method = "4DCD95C01B6B6891D72266EBA61909DF", hash_generated_method = "B5380EFAA04F19E308F4393972EC13E4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.780 -0400", hash_original_method = "4DCD95C01B6B6891D72266EBA61909DF", hash_generated_method = "9BD88343287A8A7ACF722200EF6E40F0")
     public int getDividerWidth() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_434070648 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_434070648;
         // ---------- Original Method ----------
         //return mDividerWidth;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.379 -0400", hash_original_method = "4D234859DAD3D7D2BD3ABC15BDBCF93C", hash_generated_method = "A804F3BEB8422C8011E3AABB119AF502")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.780 -0400", hash_original_method = "4D234859DAD3D7D2BD3ABC15BDBCF93C", hash_generated_method = "EA0F424986F5F82EE98B75D81D726482")
     @Override
     protected void onDraw(Canvas canvas) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(canvas.dsTaint);
         {
             drawDividersVertical(canvas);
         } //End block
         {
             drawDividersHorizontal(canvas);
         } //End block
+        addTaint(canvas.getTaint());
         // ---------- Original Method ----------
         //if (mDivider == null) {
             //return;
@@ -239,10 +262,8 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.379 -0400", hash_original_method = "6F9B50C05500D3423B595FD6EF29F0C0", hash_generated_method = "611FF608245FBFF1EAD35FDDC98237EA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.781 -0400", hash_original_method = "6F9B50C05500D3423B595FD6EF29F0C0", hash_generated_method = "D24A1DD6B856241F8EB4F30B2C10C0C6")
      void drawDividersVertical(Canvas canvas) {
-        dsTaint.addTaint(canvas.dsTaint);
         int count;
         count = getVirtualChildCount();
         {
@@ -252,10 +273,10 @@ public class LinearLayout extends ViewGroup {
                 View child;
                 child = getVirtualChildAt(i);
                 {
-                    boolean varAD445368CB7F7DFBCAA93AD5AAA408ED_907108943 = (child != null && child.getVisibility() != GONE);
+                    boolean varAD445368CB7F7DFBCAA93AD5AAA408ED_2081787676 = (child != null && child.getVisibility() != GONE);
                     {
                         {
-                            boolean var5753280A391A92BDB591E4FED1D40DAB_587114088 = (hasDividerBeforeChildAt(i));
+                            boolean var5753280A391A92BDB591E4FED1D40DAB_999829986 = (hasDividerBeforeChildAt(i));
                             {
                                 LayoutParams lp;
                                 lp = (LayoutParams) child.getLayoutParams();
@@ -269,7 +290,7 @@ public class LinearLayout extends ViewGroup {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var48BF1E2FEB752C0437BBA766958C3F15_487929892 = (hasDividerBeforeChildAt(count));
+            boolean var48BF1E2FEB752C0437BBA766958C3F15_578656124 = (hasDividerBeforeChildAt(count));
             {
                 View child;
                 child = getVirtualChildAt(count - 1);
@@ -286,15 +307,14 @@ public class LinearLayout extends ViewGroup {
                 drawHorizontalDivider(canvas, bottom);
             } //End block
         } //End collapsed parenthetic
+        addTaint(canvas.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.380 -0400", hash_original_method = "86833A485E8343AB391A7321B35B1538", hash_generated_method = "E0CAB00AE4C4D95C5788F149B61D48F9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.782 -0400", hash_original_method = "86833A485E8343AB391A7321B35B1538", hash_generated_method = "D1B4C8B25B39E8325B4A44BE52589A8D")
      void drawDividersHorizontal(Canvas canvas) {
-        dsTaint.addTaint(canvas.dsTaint);
         int count;
         count = getVirtualChildCount();
         {
@@ -304,10 +324,10 @@ public class LinearLayout extends ViewGroup {
                 View child;
                 child = getVirtualChildAt(i);
                 {
-                    boolean varAD445368CB7F7DFBCAA93AD5AAA408ED_1033354665 = (child != null && child.getVisibility() != GONE);
+                    boolean varAD445368CB7F7DFBCAA93AD5AAA408ED_604880125 = (child != null && child.getVisibility() != GONE);
                     {
                         {
-                            boolean var5753280A391A92BDB591E4FED1D40DAB_1863841101 = (hasDividerBeforeChildAt(i));
+                            boolean var5753280A391A92BDB591E4FED1D40DAB_952293640 = (hasDividerBeforeChildAt(i));
                             {
                                 LayoutParams lp;
                                 lp = (LayoutParams) child.getLayoutParams();
@@ -321,7 +341,7 @@ public class LinearLayout extends ViewGroup {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var48BF1E2FEB752C0437BBA766958C3F15_1507110554 = (hasDividerBeforeChildAt(count));
+            boolean var48BF1E2FEB752C0437BBA766958C3F15_1535541684 = (hasDividerBeforeChildAt(count));
             {
                 View child;
                 child = getVirtualChildAt(count - 1);
@@ -338,19 +358,19 @@ public class LinearLayout extends ViewGroup {
                 drawVerticalDivider(canvas, right);
             } //End block
         } //End collapsed parenthetic
+        addTaint(canvas.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.380 -0400", hash_original_method = "B34FB2DB2BC7F90A8C4BCDC4C5D2422E", hash_generated_method = "01056BB5DDC7B79716CE489E8D51F62D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.786 -0400", hash_original_method = "B34FB2DB2BC7F90A8C4BCDC4C5D2422E", hash_generated_method = "5FB3124BBD0B3867543A8BAE6BBB72C3")
      void drawHorizontalDivider(Canvas canvas, int top) {
-        dsTaint.addTaint(canvas.dsTaint);
-        dsTaint.addTaint(top);
         mDivider.setBounds(getPaddingLeft() + mDividerPadding, top,
                 getWidth() - getPaddingRight() - mDividerPadding, top + mDividerHeight);
         mDivider.draw(canvas);
+        addTaint(canvas.getTaint());
+        addTaint(top);
         // ---------- Original Method ----------
         //mDivider.setBounds(getPaddingLeft() + mDividerPadding, top,
                 //getWidth() - getPaddingRight() - mDividerPadding, top + mDividerHeight);
@@ -358,14 +378,13 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.380 -0400", hash_original_method = "230D2DD24F19D940DC30A0FCA2C380AD", hash_generated_method = "3E049991505D4C54E6DE0D8325C33C7C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.786 -0400", hash_original_method = "230D2DD24F19D940DC30A0FCA2C380AD", hash_generated_method = "DFB1F7777C357FC332037B845BC0A0E5")
      void drawVerticalDivider(Canvas canvas, int left) {
-        dsTaint.addTaint(canvas.dsTaint);
-        dsTaint.addTaint(left);
         mDivider.setBounds(left, getPaddingTop() + mDividerPadding,
                 left + mDividerWidth, getHeight() - getPaddingBottom() - mDividerPadding);
         mDivider.draw(canvas);
+        addTaint(canvas.getTaint());
+        addTaint(left);
         // ---------- Original Method ----------
         //mDivider.setBounds(left, getPaddingTop() + mDividerPadding,
                 //left + mDividerWidth, getHeight() - getPaddingBottom() - mDividerPadding);
@@ -373,53 +392,50 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.380 -0400", hash_original_method = "F54465AC5542CF519D3902E7BAEA3188", hash_generated_method = "65A8D12E7195DA7D943F7D965BFA46E8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.786 -0400", hash_original_method = "F54465AC5542CF519D3902E7BAEA3188", hash_generated_method = "DEB133D6F4BB6861F067BD9DF36E0CA1")
     public boolean isBaselineAligned() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1018480093 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1018480093;
         // ---------- Original Method ----------
         //return mBaselineAligned;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.380 -0400", hash_original_method = "8643C35E200A9ECC6F4D083B3C632ADD", hash_generated_method = "6B0DDF1E739AD964155F0A7178881DF8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.787 -0400", hash_original_method = "8643C35E200A9ECC6F4D083B3C632ADD", hash_generated_method = "F5B36677A19813656057576482BE895F")
     @android.view.RemotableViewMethod
     public void setBaselineAligned(boolean baselineAligned) {
-        dsTaint.addTaint(baselineAligned);
+        mBaselineAligned = baselineAligned;
         // ---------- Original Method ----------
         //mBaselineAligned = baselineAligned;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.381 -0400", hash_original_method = "49EB4E4C3BC63D2BEAA8F5D24053BB96", hash_generated_method = "41B92F6A697C030F2E51A9DDFB39E6D3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.787 -0400", hash_original_method = "49EB4E4C3BC63D2BEAA8F5D24053BB96", hash_generated_method = "F70D87FF3442B5E2F2C95D821587B465")
     public boolean isMeasureWithLargestChildEnabled() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_208174694 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_208174694;
         // ---------- Original Method ----------
         //return mUseLargestChild;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.381 -0400", hash_original_method = "55BFE46AC305D5ECEC6F564C443E4CAB", hash_generated_method = "AED24C3BF5522E72F8D67F869BFCDAAD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.787 -0400", hash_original_method = "55BFE46AC305D5ECEC6F564C443E4CAB", hash_generated_method = "F0D8B5D04B16B58DE2D6932713E4CAD4")
     @android.view.RemotableViewMethod
     public void setMeasureWithLargestChildEnabled(boolean enabled) {
-        dsTaint.addTaint(enabled);
+        mUseLargestChild = enabled;
         // ---------- Original Method ----------
         //mUseLargestChild = enabled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.381 -0400", hash_original_method = "8677A7AE77B37457B2CE24BC40A0B2AA", hash_generated_method = "9F317EC3E2128ECB5DAF85D96E67FF3B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.796 -0400", hash_original_method = "8677A7AE77B37457B2CE24BC40A0B2AA", hash_generated_method = "44D26EF17F116FC913E325AC773A46F7")
     @Override
     public int getBaseline() {
         {
-            int varEC5F70FA49520212A319ACA653FC0209_486213612 = (super.getBaseline());
+            int varEC5F70FA49520212A319ACA653FC0209_1044030489 = (super.getBaseline());
         } //End block
         {
-            boolean var0CC14488A448130ACFEBA1F25FFBD58A_733548523 = (getChildCount() <= mBaselineAlignedChildIndex);
+            boolean var0CC14488A448130ACFEBA1F25FFBD58A_20695947 = (getChildCount() <= mBaselineAlignedChildIndex);
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException("mBaselineAlignedChildIndex of LinearLayout "
                     + "set to an index that is out of bounds.");
@@ -450,33 +466,33 @@ public class LinearLayout extends ViewGroup {
         } //End block
         LinearLayout.LayoutParams lp;
         lp = (LinearLayout.LayoutParams) child.getLayoutParams();
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_240227163 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_240227163;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.381 -0400", hash_original_method = "90F550BFDC49A6587A7A8440E339A132", hash_generated_method = "A75D66C672DA4F245AFE964516CD4041")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.796 -0400", hash_original_method = "90F550BFDC49A6587A7A8440E339A132", hash_generated_method = "54F7C0D5C3C8F480B08BF74718C03EB2")
     public int getBaselineAlignedChildIndex() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1920252690 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1920252690;
         // ---------- Original Method ----------
         //return mBaselineAlignedChildIndex;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.382 -0400", hash_original_method = "4CFC93DB175F8874B4EFFA335793DCB8", hash_generated_method = "11F9DDDC2D5BEEEE504E339683C6470F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.805 -0400", hash_original_method = "4CFC93DB175F8874B4EFFA335793DCB8", hash_generated_method = "DDFDA20E43B08E69E643A97D39EA833E")
     @android.view.RemotableViewMethod
     public void setBaselineAlignedChildIndex(int i) {
-        dsTaint.addTaint(i);
         {
-            boolean varE9CD64879C792E1B66A251BAB70D8B08_204119721 = ((i < 0) || (i >= getChildCount()));
+            boolean varE9CD64879C792E1B66A251BAB70D8B08_1580575030 = ((i < 0) || (i >= getChildCount()));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("base aligned child index out "
                     + "of range (0, " + getChildCount() + ")");
             } //End block
         } //End collapsed parenthetic
+        mBaselineAlignedChildIndex = i;
         // ---------- Original Method ----------
         //if ((i < 0) || (i >= getChildCount())) {
             //throw new IllegalArgumentException("base aligned child index out "
@@ -486,60 +502,58 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.382 -0400", hash_original_method = "87FE8C209A68A97BDFF0666E4CF673D3", hash_generated_method = "7D21A766C7AF9E9B0F77E6D41AA5E649")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.806 -0400", hash_original_method = "87FE8C209A68A97BDFF0666E4CF673D3", hash_generated_method = "067BE4DB8DB73274F2BA1108FEB24A02")
      View getVirtualChildAt(int index) {
-        dsTaint.addTaint(index);
-        View var9C71C4887E5A21CEDD637E7AB6C81610_457830019 = (getChildAt(index));
-        return (View)dsTaint.getTaint();
+        View varB4EAC82CA7396A68D541C85D26508E83_1023314991 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1023314991 = getChildAt(index);
+        addTaint(index);
+        varB4EAC82CA7396A68D541C85D26508E83_1023314991.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1023314991;
         // ---------- Original Method ----------
         //return getChildAt(index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.382 -0400", hash_original_method = "04A766EF9FA40CCD4344368D3178C5E7", hash_generated_method = "2B596BE020CF574D9D552201477A3C89")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.807 -0400", hash_original_method = "04A766EF9FA40CCD4344368D3178C5E7", hash_generated_method = "4A41E6EC76844A073BD5AB8622F61521")
      int getVirtualChildCount() {
-        int varF41158137001188D2F9D08127BFB39DA_1403211836 = (getChildCount());
-        return dsTaint.getTaintInt();
+        int varF41158137001188D2F9D08127BFB39DA_2118142412 = (getChildCount());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2113583376 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2113583376;
         // ---------- Original Method ----------
         //return getChildCount();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.382 -0400", hash_original_method = "131E7E20664E8B649BC33F0915A0DE0D", hash_generated_method = "377AB734462597F2878C9783875315BB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.807 -0400", hash_original_method = "131E7E20664E8B649BC33F0915A0DE0D", hash_generated_method = "59BD569C080263F9C6DB4421AF4F340D")
     public float getWeightSum() {
-        return dsTaint.getTaintFloat();
+        float var546ADE640B6EDFBC8A086EF31347E768_117627350 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_117627350;
         // ---------- Original Method ----------
         //return mWeightSum;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.382 -0400", hash_original_method = "47922B5280E89B2CF9B73D66705F0A8D", hash_generated_method = "A8ABF48CDEFC7A1CD472CB2CB032B557")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.807 -0400", hash_original_method = "47922B5280E89B2CF9B73D66705F0A8D", hash_generated_method = "0C909C9A2C5340B2F81C58E12B1C7283")
     @android.view.RemotableViewMethod
     public void setWeightSum(float weightSum) {
-        dsTaint.addTaint(weightSum);
         mWeightSum = Math.max(0.0f, weightSum);
         // ---------- Original Method ----------
         //mWeightSum = Math.max(0.0f, weightSum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.383 -0400", hash_original_method = "3F3B158F407FDE6BDDE91ED473E376D3", hash_generated_method = "7F5F2FD2428C77A4F9B7E8850838B6B0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.812 -0400", hash_original_method = "3F3B158F407FDE6BDDE91ED473E376D3", hash_generated_method = "E572AC246BCA803DBDD629DE2DB04BF7")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(heightMeasureSpec);
-        dsTaint.addTaint(widthMeasureSpec);
         {
             measureVertical(widthMeasureSpec, heightMeasureSpec);
         } //End block
         {
             measureHorizontal(widthMeasureSpec, heightMeasureSpec);
         } //End block
+        addTaint(widthMeasureSpec);
+        addTaint(heightMeasureSpec);
         // ---------- Original Method ----------
         //if (mOrientation == VERTICAL) {
             //measureVertical(widthMeasureSpec, heightMeasureSpec);
@@ -549,12 +563,10 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.383 -0400", hash_original_method = "E4A04FCA37D7E9FFFC1F15D63F30923E", hash_generated_method = "A2BA7A87D163CAD797352AC311D8F9D5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.813 -0400", hash_original_method = "E4A04FCA37D7E9FFFC1F15D63F30923E", hash_generated_method = "745DDD7C6D6AE73F1F2B4CA5E7CD327F")
     protected boolean hasDividerBeforeChildAt(int childIndex) {
-        dsTaint.addTaint(childIndex);
         {
-            boolean var042391D18CFAA58040C07325508C3E5D_827163957 = (childIndex == getChildCount());
+            boolean var042391D18CFAA58040C07325508C3E5D_449457923 = (childIndex == getChildCount());
             {
                 boolean hasVisibleViewBefore;
                 hasVisibleViewBefore = false;
@@ -563,7 +575,7 @@ public class LinearLayout extends ViewGroup {
                     i = childIndex - 1;
                     {
                         {
-                            boolean var849B37533740585CFE18F837DD2EDAAB_129403973 = (getChildAt(i).getVisibility() != GONE);
+                            boolean var849B37533740585CFE18F837DD2EDAAB_1598915233 = (getChildAt(i).getVisibility() != GONE);
                             {
                                 hasVisibleViewBefore = true;
                             } //End block
@@ -572,7 +584,9 @@ public class LinearLayout extends ViewGroup {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(childIndex);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_171001370 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_171001370;
         // ---------- Original Method ----------
         //if (childIndex == 0) {
             //return (mShowDividers & SHOW_DIVIDER_BEGINNING) != 0;
@@ -592,11 +606,8 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.385 -0400", hash_original_method = "A88B972B81C9E0D927EB1FAC25F8F6D1", hash_generated_method = "2096BB97317ECA4C3C6CF733AA20EF9F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.899 -0400", hash_original_method = "A88B972B81C9E0D927EB1FAC25F8F6D1", hash_generated_method = "71A110A28DD72B306AADCCB4F51D17DD")
      void measureVertical(int widthMeasureSpec, int heightMeasureSpec) {
-        dsTaint.addTaint(heightMeasureSpec);
-        dsTaint.addTaint(widthMeasureSpec);
         mTotalLength = 0;
         int maxWidth;
         maxWidth = 0;
@@ -634,13 +645,13 @@ public class LinearLayout extends ViewGroup {
                     mTotalLength += measureNullChild(i);
                 } //End block
                 {
-                    boolean varAE94D5328E94C6606865B35993EDD564_855763660 = (child.getVisibility() == View.GONE);
+                    boolean varAE94D5328E94C6606865B35993EDD564_1750613074 = (child.getVisibility() == View.GONE);
                     {
                         i += getChildrenSkipCount(child, i);
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var53CA14277C14EA37C3E2B0E1BF193AF9_715778479 = (hasDividerBeforeChildAt(i));
+                    boolean var53CA14277C14EA37C3E2B0E1BF193AF9_1767027462 = (hasDividerBeforeChildAt(i));
                     {
                         mTotalLength += mDividerHeight;
                     } //End block
@@ -710,7 +721,7 @@ public class LinearLayout extends ViewGroup {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varCC0767313899D8044991C6ED676480A0_1999935726 = (mTotalLength > 0 && hasDividerBeforeChildAt(count));
+            boolean varCC0767313899D8044991C6ED676480A0_1373601404 = (mTotalLength > 0 && hasDividerBeforeChildAt(count));
             {
                 mTotalLength += mDividerHeight;
             } //End block
@@ -727,7 +738,7 @@ public class LinearLayout extends ViewGroup {
                         mTotalLength += measureNullChild(i);
                     } //End block
                     {
-                        boolean var24A8049355A2DBEE0F9FC0F85F3CAA64_732642892 = (child.getVisibility() == GONE);
+                        boolean var24A8049355A2DBEE0F9FC0F85F3CAA64_8868163 = (child.getVisibility() == GONE);
                         {
                             i += getChildrenSkipCount(child, i);
                         } //End block
@@ -763,7 +774,7 @@ public class LinearLayout extends ViewGroup {
                     View child;
                     child = getVirtualChildAt(i);
                     {
-                        boolean varCE5DD5D436329456ACE82D8F3349CC31_1570893709 = (child.getVisibility() == View.GONE);
+                        boolean varCE5DD5D436329456ACE82D8F3349CC31_285819296 = (child.getVisibility() == View.GONE);
                     } //End collapsed parenthetic
                     LinearLayout.LayoutParams lp;
                     lp = (LinearLayout.LayoutParams) child.getLayoutParams();
@@ -825,7 +836,7 @@ public class LinearLayout extends ViewGroup {
                         View child;
                         child = getVirtualChildAt(i);
                         {
-                            boolean varE7BB3503787C529D329422F9519818AF_1440104892 = (child == null || child.getVisibility() == View.GONE);
+                            boolean varE7BB3503787C529D329422F9519818AF_2136530662 = (child == null || child.getVisibility() == View.GONE);
                         } //End collapsed parenthetic
                         LinearLayout.LayoutParams lp;
                         lp = (LinearLayout.LayoutParams) child.getLayoutParams();
@@ -852,16 +863,15 @@ public class LinearLayout extends ViewGroup {
         {
             forceUniformWidth(count, heightMeasureSpec);
         } //End block
+        addTaint(widthMeasureSpec);
+        addTaint(heightMeasureSpec);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.386 -0400", hash_original_method = "AFA9034D947EBEF26850BC0782F132F9", hash_generated_method = "483FE7A46AD88E0ADDB8EC9A1A189A4B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.908 -0400", hash_original_method = "AFA9034D947EBEF26850BC0782F132F9", hash_generated_method = "5DB81851CC5AFB596693152744ED5153")
     private void forceUniformWidth(int count, int heightMeasureSpec) {
-        dsTaint.addTaint(count);
-        dsTaint.addTaint(heightMeasureSpec);
         int uniformMeasureSpec;
         uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredWidth(),
                 MeasureSpec.EXACTLY);
@@ -872,7 +882,7 @@ public class LinearLayout extends ViewGroup {
                 View child;
                 child = getVirtualChildAt(i);
                 {
-                    boolean var6B4F6D9B07C374A63E00C1591AF2C9D6_1662180962 = (child.getVisibility() != GONE);
+                    boolean var6B4F6D9B07C374A63E00C1591AF2C9D6_1325306282 = (child.getVisibility() != GONE);
                     {
                         LinearLayout.LayoutParams lp;
                         lp = ((LinearLayout.LayoutParams)child.getLayoutParams());
@@ -887,6 +897,8 @@ public class LinearLayout extends ViewGroup {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
+        addTaint(count);
+        addTaint(heightMeasureSpec);
         // ---------- Original Method ----------
         //int uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredWidth(),
                 //MeasureSpec.EXACTLY);
@@ -905,11 +917,8 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.389 -0400", hash_original_method = "22C04BEEA310D9DB4A6BB8F3656099B0", hash_generated_method = "DE170694D9A4192401F430BB052C5EBA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.947 -0400", hash_original_method = "22C04BEEA310D9DB4A6BB8F3656099B0", hash_generated_method = "0DD7A480E14469234F605E9D13BDB49E")
      void measureHorizontal(int widthMeasureSpec, int heightMeasureSpec) {
-        dsTaint.addTaint(heightMeasureSpec);
-        dsTaint.addTaint(widthMeasureSpec);
         mTotalLength = 0;
         int maxHeight;
         maxHeight = 0;
@@ -959,13 +968,13 @@ public class LinearLayout extends ViewGroup {
                     mTotalLength += measureNullChild(i);
                 } //End block
                 {
-                    boolean varE5A6421440835A22FD9C00B75E3D1565_1179037843 = (child.getVisibility() == GONE);
+                    boolean varE5A6421440835A22FD9C00B75E3D1565_1805077903 = (child.getVisibility() == GONE);
                     {
                         i += getChildrenSkipCount(child, i);
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var53CA14277C14EA37C3E2B0E1BF193AF9_305958382 = (hasDividerBeforeChildAt(i));
+                    boolean var53CA14277C14EA37C3E2B0E1BF193AF9_800502328 = (hasDividerBeforeChildAt(i));
                     {
                         mTotalLength += mDividerWidth;
                     } //End block
@@ -1058,7 +1067,7 @@ public class LinearLayout extends ViewGroup {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varCC0767313899D8044991C6ED676480A0_1008288921 = (mTotalLength > 0 && hasDividerBeforeChildAt(count));
+            boolean varCC0767313899D8044991C6ED676480A0_1090128835 = (mTotalLength > 0 && hasDividerBeforeChildAt(count));
             {
                 mTotalLength += mDividerWidth;
             } //End block
@@ -1086,7 +1095,7 @@ public class LinearLayout extends ViewGroup {
                         mTotalLength += measureNullChild(i);
                     } //End block
                     {
-                        boolean var24A8049355A2DBEE0F9FC0F85F3CAA64_1488700611 = (child.getVisibility() == GONE);
+                        boolean var24A8049355A2DBEE0F9FC0F85F3CAA64_334621591 = (child.getVisibility() == GONE);
                         {
                             i += getChildrenSkipCount(child, i);
                         } //End block
@@ -1131,7 +1140,7 @@ public class LinearLayout extends ViewGroup {
                     View child;
                     child = getVirtualChildAt(i);
                     {
-                        boolean varF9B20D9EE469ED1FED42E2666426C840_1184790950 = (child == null || child.getVisibility() == View.GONE);
+                        boolean varF9B20D9EE469ED1FED42E2666426C840_1568596635 = (child == null || child.getVisibility() == View.GONE);
                     } //End collapsed parenthetic
                     LinearLayout.LayoutParams lp;
                     lp = (LinearLayout.LayoutParams) child.getLayoutParams();
@@ -1226,7 +1235,7 @@ public class LinearLayout extends ViewGroup {
                         View child;
                         child = getVirtualChildAt(i);
                         {
-                            boolean varE7BB3503787C529D329422F9519818AF_19106 = (child == null || child.getVisibility() == View.GONE);
+                            boolean varE7BB3503787C529D329422F9519818AF_1704947507 = (child == null || child.getVisibility() == View.GONE);
                         } //End collapsed parenthetic
                         LinearLayout.LayoutParams lp;
                         lp = (LinearLayout.LayoutParams) child.getLayoutParams();
@@ -1253,16 +1262,15 @@ public class LinearLayout extends ViewGroup {
         {
             forceUniformHeight(count, widthMeasureSpec);
         } //End block
+        addTaint(widthMeasureSpec);
+        addTaint(heightMeasureSpec);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.390 -0400", hash_original_method = "FDF33FE6741A819E3461023969653A29", hash_generated_method = "4D336CCF0AD9A0747A20538142EBEE23")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.958 -0400", hash_original_method = "FDF33FE6741A819E3461023969653A29", hash_generated_method = "2B79A405D0DDAA95CFEB80FFCD1696EC")
     private void forceUniformHeight(int count, int widthMeasureSpec) {
-        dsTaint.addTaint(count);
-        dsTaint.addTaint(widthMeasureSpec);
         int uniformMeasureSpec;
         uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredHeight(),
                 MeasureSpec.EXACTLY);
@@ -1273,7 +1281,7 @@ public class LinearLayout extends ViewGroup {
                 View child;
                 child = getVirtualChildAt(i);
                 {
-                    boolean var6B4F6D9B07C374A63E00C1591AF2C9D6_1318264369 = (child.getVisibility() != GONE);
+                    boolean var6B4F6D9B07C374A63E00C1591AF2C9D6_148232846 = (child.getVisibility() != GONE);
                     {
                         LinearLayout.LayoutParams lp;
                         lp = (LinearLayout.LayoutParams) child.getLayoutParams();
@@ -1288,6 +1296,8 @@ public class LinearLayout extends ViewGroup {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
+        addTaint(count);
+        addTaint(widthMeasureSpec);
         // ---------- Original Method ----------
         //int uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredHeight(),
                 //MeasureSpec.EXACTLY);
@@ -1306,82 +1316,80 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.390 -0400", hash_original_method = "64CDF538399E47C38C21DACEFC8C1E08", hash_generated_method = "7A7FE27E65AA233E090583C638E7D2EB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.958 -0400", hash_original_method = "64CDF538399E47C38C21DACEFC8C1E08", hash_generated_method = "582783B2151815F0D0FC416F5B4D372D")
      int getChildrenSkipCount(View child, int index) {
-        dsTaint.addTaint(child.dsTaint);
-        dsTaint.addTaint(index);
-        return dsTaint.getTaintInt();
+        addTaint(child.getTaint());
+        addTaint(index);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1449336444 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1449336444;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.390 -0400", hash_original_method = "0C791DFCDA5E7DFE7963EF393BDBDA11", hash_generated_method = "C5492B4D78DAA87064B8183468866AB8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.964 -0400", hash_original_method = "0C791DFCDA5E7DFE7963EF393BDBDA11", hash_generated_method = "6176881A5C949879900686741D0B0083")
      int measureNullChild(int childIndex) {
-        dsTaint.addTaint(childIndex);
-        return dsTaint.getTaintInt();
+        addTaint(childIndex);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1158695149 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1158695149;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.390 -0400", hash_original_method = "784157887C32A4B8D345E93BB13DEECA", hash_generated_method = "D974491B68D382943984003B7571BCC4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.965 -0400", hash_original_method = "784157887C32A4B8D345E93BB13DEECA", hash_generated_method = "3CD9D429BD4B3D6B5F431E83EFD174DB")
      void measureChildBeforeLayout(View child, int childIndex,
             int widthMeasureSpec, int totalWidth, int heightMeasureSpec,
             int totalHeight) {
-        dsTaint.addTaint(totalWidth);
-        dsTaint.addTaint(child.dsTaint);
-        dsTaint.addTaint(heightMeasureSpec);
-        dsTaint.addTaint(widthMeasureSpec);
-        dsTaint.addTaint(childIndex);
-        dsTaint.addTaint(totalHeight);
         measureChildWithMargins(child, widthMeasureSpec, totalWidth,
                 heightMeasureSpec, totalHeight);
+        addTaint(child.getTaint());
+        addTaint(childIndex);
+        addTaint(widthMeasureSpec);
+        addTaint(totalWidth);
+        addTaint(heightMeasureSpec);
+        addTaint(totalHeight);
         // ---------- Original Method ----------
         //measureChildWithMargins(child, widthMeasureSpec, totalWidth,
                 //heightMeasureSpec, totalHeight);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.390 -0400", hash_original_method = "BA69BAE2E1D7A163D53D02D47016A6D7", hash_generated_method = "30CB69F3298FA225702C8F1D6F834B7C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.965 -0400", hash_original_method = "BA69BAE2E1D7A163D53D02D47016A6D7", hash_generated_method = "C64D3275C7C7D39B0C997AAAC6666CBC")
      int getLocationOffset(View child) {
-        dsTaint.addTaint(child.dsTaint);
-        return dsTaint.getTaintInt();
+        addTaint(child.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_945094359 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_945094359;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.390 -0400", hash_original_method = "6D7A4F846C7E828D32B84605EE3B545F", hash_generated_method = "84E2E7CA2D1595FE1822FC921BCC9FF2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.965 -0400", hash_original_method = "6D7A4F846C7E828D32B84605EE3B545F", hash_generated_method = "105D01839BC3A7EBC971AC4A7205AE3A")
      int getNextLocationOffset(View child) {
-        dsTaint.addTaint(child.dsTaint);
-        return dsTaint.getTaintInt();
+        addTaint(child.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_899187202 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_899187202;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.391 -0400", hash_original_method = "38617BD257A07AF46AAF702E88FA7138", hash_generated_method = "C0004066AF78020A6B41780E5086FF92")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.965 -0400", hash_original_method = "38617BD257A07AF46AAF702E88FA7138", hash_generated_method = "B0A2BFC2F6C6A680B82583D6DC4BAE75")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(t);
-        dsTaint.addTaint(b);
-        dsTaint.addTaint(r);
-        dsTaint.addTaint(l);
-        dsTaint.addTaint(changed);
         {
             layoutVertical();
         } //End block
         {
             layoutHorizontal();
         } //End block
+        addTaint(changed);
+        addTaint(l);
+        addTaint(t);
+        addTaint(r);
+        addTaint(b);
         // ---------- Original Method ----------
         //if (mOrientation == VERTICAL) {
             //layoutVertical();
@@ -1391,8 +1399,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.391 -0400", hash_original_method = "30B5FEA9EA0D751AC72456573A204452", hash_generated_method = "E9C1FD7535EF4CCFCAD44585BA5239F7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.982 -0400", hash_original_method = "30B5FEA9EA0D751AC72456573A204452", hash_generated_method = "B4F3A91D03110C9EFBB1E93092D91AA4")
      void layoutVertical() {
         int paddingLeft;
         paddingLeft = mPaddingLeft;
@@ -1429,7 +1436,7 @@ public class LinearLayout extends ViewGroup {
                     childTop += measureNullChild(i);
                 } //End block
                 {
-                    boolean var6B4F6D9B07C374A63E00C1591AF2C9D6_2022104369 = (child.getVisibility() != GONE);
+                    boolean var6B4F6D9B07C374A63E00C1591AF2C9D6_2091274122 = (child.getVisibility() != GONE);
                     {
                         int childWidth;
                         childWidth = child.getMeasuredWidth();
@@ -1457,7 +1464,7 @@ public class LinearLayout extends ViewGroup {
                         childLeft = paddingLeft + lp.leftMargin;
                         //End case Gravity.LEFT default 
                         {
-                            boolean var5753280A391A92BDB591E4FED1D40DAB_1711608568 = (hasDividerBeforeChildAt(i));
+                            boolean var5753280A391A92BDB591E4FED1D40DAB_352560379 = (hasDividerBeforeChildAt(i));
                             {
                                 childTop += mDividerHeight;
                             } //End block
@@ -1476,8 +1483,7 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.393 -0400", hash_original_method = "7E4C2E885F4FB677FEB4B548A065DB2A", hash_generated_method = "BB216B7FE6F5F26B7BB7B05E3FC1E85E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.995 -0400", hash_original_method = "7E4C2E885F4FB677FEB4B548A065DB2A", hash_generated_method = "0A2E042BF4FD6345A7187D376917EFA7")
      void layoutHorizontal() {
         boolean isLayoutRtl;
         isLayoutRtl = isLayoutRtl();
@@ -1506,7 +1512,7 @@ public class LinearLayout extends ViewGroup {
         int layoutDirection;
         layoutDirection = getResolvedLayoutDirection();
         {
-            Object var9AC6381C3482ABA654889035FB8C338F_341521034 = (Gravity.getAbsoluteGravity(majorGravity, layoutDirection));
+            Object var9AC6381C3482ABA654889035FB8C338F_961059510 = (Gravity.getAbsoluteGravity(majorGravity, layoutDirection));
             //Begin case Gravity.RIGHT 
             childLeft = mPaddingLeft + mRight - mLeft - mTotalLength;
             //End case Gravity.RIGHT 
@@ -1537,7 +1543,7 @@ public class LinearLayout extends ViewGroup {
                     childLeft += measureNullChild(childIndex);
                 } //End block
                 {
-                    boolean var6B4F6D9B07C374A63E00C1591AF2C9D6_570794819 = (child.getVisibility() != GONE);
+                    boolean var6B4F6D9B07C374A63E00C1591AF2C9D6_104145454 = (child.getVisibility() != GONE);
                     {
                         int childWidth;
                         childWidth = child.getMeasuredWidth();
@@ -1581,7 +1587,7 @@ public class LinearLayout extends ViewGroup {
                         childTop = paddingTop;
                         //End case default 
                         {
-                            boolean varD92D197B47B02ED47C53CE932422B14B_1395613978 = (hasDividerBeforeChildAt(childIndex));
+                            boolean varD92D197B47B02ED47C53CE932422B14B_2070538865 = (hasDividerBeforeChildAt(childIndex));
                             {
                                 childLeft += mDividerWidth;
                             } //End block
@@ -1601,25 +1607,23 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.394 -0400", hash_original_method = "74793CDC2820B7770CC6C7B645CE6A0C", hash_generated_method = "1DBD13C003493D0A73CDAFF5BAFBD1B6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.997 -0400", hash_original_method = "74793CDC2820B7770CC6C7B645CE6A0C", hash_generated_method = "ABEA48B3A59EDBABAE9B04B6126B44B6")
     private void setChildFrame(View child, int left, int top, int width, int height) {
-        dsTaint.addTaint(child.dsTaint);
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(left);
-        dsTaint.addTaint(top);
         child.layout(left, top, left + width, top + height);
+        addTaint(child.getTaint());
+        addTaint(left);
+        addTaint(top);
+        addTaint(width);
+        addTaint(height);
         // ---------- Original Method ----------
         //child.layout(left, top, left + width, top + height);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.394 -0400", hash_original_method = "708E6C59CCF6822D1254CF8F346C250A", hash_generated_method = "CDD0048DAEB23413C9D9598C3F5F05F3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.006 -0400", hash_original_method = "708E6C59CCF6822D1254CF8F346C250A", hash_generated_method = "ED9B202367C7DECE598DADBE6010297D")
     public void setOrientation(int orientation) {
-        dsTaint.addTaint(orientation);
         {
+            mOrientation = orientation;
             requestLayout();
         } //End block
         // ---------- Original Method ----------
@@ -1630,20 +1634,18 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.395 -0400", hash_original_method = "6BA82D6B625174A8AC80664141F0D361", hash_generated_method = "C49909E54C7E79D696E3626D4AF41FEC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.007 -0400", hash_original_method = "6BA82D6B625174A8AC80664141F0D361", hash_generated_method = "410F315211D7C47D3ABE092B90D55BC7")
     public int getOrientation() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1272833052 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1272833052;
         // ---------- Original Method ----------
         //return mOrientation;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.395 -0400", hash_original_method = "DC8D5E1211DE0926B9DDA2FADCED75EE", hash_generated_method = "3B2A8C4E1757D09B7B72842F491C0AD6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.007 -0400", hash_original_method = "DC8D5E1211DE0926B9DDA2FADCED75EE", hash_generated_method = "70FD7A97C03EACC1814D5C80AB15EB8F")
     @android.view.RemotableViewMethod
     public void setGravity(int gravity) {
-        dsTaint.addTaint(gravity);
         {
             {
                 gravity |= Gravity.START;
@@ -1651,6 +1653,7 @@ public class LinearLayout extends ViewGroup {
             {
                 gravity |= Gravity.TOP;
             } //End block
+            mGravity = gravity;
             requestLayout();
         } //End block
         // ---------- Original Method ----------
@@ -1667,17 +1670,16 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.395 -0400", hash_original_method = "076C59065FCBD07F7CAA4FFA6D12CC3A", hash_generated_method = "DA1DAD49A4678F1572A82A3E14A6B5E2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.008 -0400", hash_original_method = "076C59065FCBD07F7CAA4FFA6D12CC3A", hash_generated_method = "65ABA9E48DE49124BBE38972DFC6C8E3")
     @android.view.RemotableViewMethod
     public void setHorizontalGravity(int horizontalGravity) {
-        dsTaint.addTaint(horizontalGravity);
         int gravity;
         gravity = horizontalGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK;
         {
             mGravity = (mGravity & ~Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) | gravity;
             requestLayout();
         } //End block
+        addTaint(horizontalGravity);
         // ---------- Original Method ----------
         //final int gravity = horizontalGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK;
         //if ((mGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) != gravity) {
@@ -1687,17 +1689,16 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.396 -0400", hash_original_method = "EE245B70888F9F1582A126D948173E64", hash_generated_method = "D4A6D8CE12687BBAE3E5D7CDDBBD64F4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.008 -0400", hash_original_method = "EE245B70888F9F1582A126D948173E64", hash_generated_method = "601E6D5BF8B6BDDC866632D7C5C11147")
     @android.view.RemotableViewMethod
     public void setVerticalGravity(int verticalGravity) {
-        dsTaint.addTaint(verticalGravity);
         int gravity;
         gravity = verticalGravity & Gravity.VERTICAL_GRAVITY_MASK;
         {
             mGravity = (mGravity & ~Gravity.VERTICAL_GRAVITY_MASK) | gravity;
             requestLayout();
         } //End block
+        addTaint(verticalGravity);
         // ---------- Original Method ----------
         //final int gravity = verticalGravity & Gravity.VERTICAL_GRAVITY_MASK;
         //if ((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != gravity) {
@@ -1707,29 +1708,46 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.396 -0400", hash_original_method = "5E749CCE267F5C755BAC22F4F9345284", hash_generated_method = "821E58CE2B6D65AC7BE88015B86BF35F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.009 -0400", hash_original_method = "5E749CCE267F5C755BAC22F4F9345284", hash_generated_method = "AFF28ECE42D058F8141A9E7D6E0B4946")
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        dsTaint.addTaint(attrs.dsTaint);
-        LayoutParams var0D7DFC2F1FBC376957678EDDBBF7B432_404359845 = (new LinearLayout.LayoutParams(getContext(), attrs));
-        return (LayoutParams)dsTaint.getTaint();
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_662977813 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_662977813 = new LinearLayout.LayoutParams(getContext(), attrs);
+        addTaint(attrs.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_662977813.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_662977813;
         // ---------- Original Method ----------
         //return new LinearLayout.LayoutParams(getContext(), attrs);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.396 -0400", hash_original_method = "3D6E4608F39560A7785B268309288C51", hash_generated_method = "88BB23550F6181974F9D03298A0E2748")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.020 -0400", hash_original_method = "3D6E4608F39560A7785B268309288C51", hash_generated_method = "412930F030806878DB4881E9FAD35675")
     @Override
     protected LayoutParams generateDefaultLayoutParams() {
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_564132180 = null; //Variable for return #1
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1071907558 = null; //Variable for return #2
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1007310812 = null; //Variable for return #3
         {
-            LayoutParams var5571C6056588847CD6332DF8044710D2_1345075946 = (new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+            varB4EAC82CA7396A68D541C85D26508E83_564132180 = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         } //End block
         {
-            LayoutParams var62B2CB5FE6501A3932D136712F8BE96B_1488810119 = (new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+            varB4EAC82CA7396A68D541C85D26508E83_1071907558 = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
         } //End block
-        return (LayoutParams)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1007310812 = null;
+        LayoutParams varA7E53CE21691AB073D9660D615818899_848219719; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_848219719 = varB4EAC82CA7396A68D541C85D26508E83_564132180;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_848219719 = varB4EAC82CA7396A68D541C85D26508E83_1071907558;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_848219719 = varB4EAC82CA7396A68D541C85D26508E83_1007310812;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_848219719.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_848219719;
         // ---------- Original Method ----------
         //if (mOrientation == HORIZONTAL) {
             //return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -1740,31 +1758,36 @@ public class LinearLayout extends ViewGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.396 -0400", hash_original_method = "E5FE95308BC48D9899CFDE5A4F7DEDB6", hash_generated_method = "5F212599D919FB64111611DD29E4EFF7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.020 -0400", hash_original_method = "E5FE95308BC48D9899CFDE5A4F7DEDB6", hash_generated_method = "6004DB9C539636CEA404BCE6297ED229")
     @Override
     protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
-        dsTaint.addTaint(p.dsTaint);
-        LayoutParams varAE4B968C4C0301DC2CC83C8A9F56D84B_441134259 = (new LayoutParams(p));
-        return (LayoutParams)dsTaint.getTaint();
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_215086213 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_215086213 = new LayoutParams(p);
+        addTaint(p.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_215086213.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_215086213;
         // ---------- Original Method ----------
         //return new LayoutParams(p);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.396 -0400", hash_original_method = "1F2E8350C10FBDB8051DCF8E5479411B", hash_generated_method = "BF35C137BF473CCD5C4393BADF3F49A0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.020 -0400", hash_original_method = "1F2E8350C10FBDB8051DCF8E5479411B", hash_generated_method = "802362AFC9C7FBC4B16DF53BA342490E")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
-        dsTaint.addTaint(p.dsTaint);
-        return dsTaint.getTaintBoolean();
+        addTaint(p.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_980898199 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_980898199;
         // ---------- Original Method ----------
         //return p instanceof LinearLayout.LayoutParams;
     }
 
     
     public static class LayoutParams extends ViewGroup.MarginLayoutParams {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.021 -0400", hash_original_field = "7EDABF994B76A00CBC60C95AF337DB8F", hash_generated_field = "B59DE7C019472A73872C811A2811FA3D")
+
         @ViewDebug.ExportedProperty(category = "layout") public float weight;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.021 -0400", hash_original_field = "CF0F2AF9EE62920A17A205053A2F0423", hash_generated_field = "938DDF19CF8B381A3F6119E45B2090E8")
+
         @ViewDebug.ExportedProperty(category = "layout", mapping = {
             @ViewDebug.IntToString(from =  -1,                       to = "NONE"),
             @ViewDebug.IntToString(from = Gravity.NO_GRAVITY,        to = "NONE"),
@@ -1782,17 +1805,16 @@ public class LinearLayout extends ViewGroup {
             @ViewDebug.IntToString(from = Gravity.FILL,              to = "FILL")
         }) public int gravity = -1;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.397 -0400", hash_original_method = "C424BD779148A2828DEB0ABC94DCC73C", hash_generated_method = "5A58352BC413286D4777C0947DF72AEF")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public LayoutParams(Context c, AttributeSet attrs) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.021 -0400", hash_original_method = "C424BD779148A2828DEB0ABC94DCC73C", hash_generated_method = "2998468387E71DEAE0076D266BD65F5A")
+        public  LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
-            dsTaint.addTaint(c.dsTaint);
-            dsTaint.addTaint(attrs.dsTaint);
             TypedArray a;
             a = c.obtainStyledAttributes(attrs, com.android.internal.R.styleable.LinearLayout_Layout);
             weight = a.getFloat(com.android.internal.R.styleable.LinearLayout_Layout_layout_weight, 0);
             gravity = a.getInt(com.android.internal.R.styleable.LinearLayout_Layout_layout_gravity, -1);
             a.recycle();
+            addTaint(c.getTaint());
+            addTaint(attrs.getTaint());
             // ---------- Original Method ----------
             //TypedArray a =
                     //c.obtainStyledAttributes(attrs, com.android.internal.R.styleable.LinearLayout_Layout);
@@ -1802,56 +1824,53 @@ public class LinearLayout extends ViewGroup {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.397 -0400", hash_original_method = "5675045EFCD4661F32116909A9822399", hash_generated_method = "FBE80F174A1AB4316527078FAD9F20CB")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public LayoutParams(int width, int height) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.036 -0400", hash_original_method = "5675045EFCD4661F32116909A9822399", hash_generated_method = "13653ECE503E7E958B6B0343131C8A7C")
+        public  LayoutParams(int width, int height) {
             super(width, height);
-            dsTaint.addTaint(height);
-            dsTaint.addTaint(width);
             weight = 0;
+            addTaint(width);
+            addTaint(height);
             // ---------- Original Method ----------
             //weight = 0;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.397 -0400", hash_original_method = "4CDC4D1E7FEEFBC37A8F4BABF983F00D", hash_generated_method = "54DECEDCC3F5573D46EE3DD182B2E6D9")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public LayoutParams(int width, int height, float weight) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.037 -0400", hash_original_method = "4CDC4D1E7FEEFBC37A8F4BABF983F00D", hash_generated_method = "570550A708822B75490AA0A4DA8AB602")
+        public  LayoutParams(int width, int height, float weight) {
             super(width, height);
-            dsTaint.addTaint(weight);
-            dsTaint.addTaint(height);
-            dsTaint.addTaint(width);
+            this.weight = weight;
+            addTaint(width);
+            addTaint(height);
             // ---------- Original Method ----------
             //this.weight = weight;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.397 -0400", hash_original_method = "DE4ED36682A1028E303BDCC28A48E06F", hash_generated_method = "DC10E054913205A00413A13382A3D9EF")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public LayoutParams(ViewGroup.LayoutParams p) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.037 -0400", hash_original_method = "DE4ED36682A1028E303BDCC28A48E06F", hash_generated_method = "66B55E9EFECAB48B3D28D153941B8308")
+        public  LayoutParams(ViewGroup.LayoutParams p) {
             super(p);
-            dsTaint.addTaint(p.dsTaint);
+            addTaint(p.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.397 -0400", hash_original_method = "CC87BD4B8C067788FA2BA37DBA116F62", hash_generated_method = "A78E6D8B5140BBD99570D54F80CEC641")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public LayoutParams(MarginLayoutParams source) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.037 -0400", hash_original_method = "CC87BD4B8C067788FA2BA37DBA116F62", hash_generated_method = "BDFD9CE52FB4D6304CCFF1CA731BA0A9")
+        public  LayoutParams(MarginLayoutParams source) {
             super(source);
-            dsTaint.addTaint(source.dsTaint);
+            addTaint(source.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.397 -0400", hash_original_method = "09BB09F623D63D4B2B1AF033D2D5C9B4", hash_generated_method = "F3F348BF225C3767F7A12870DC13E229")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.038 -0400", hash_original_method = "09BB09F623D63D4B2B1AF033D2D5C9B4", hash_generated_method = "D01CB0AA77FE8EF7D4CF35B134F4ABE3")
         @Override
         public String debug(String output) {
-            dsTaint.addTaint(output);
-            String var4958517EC051F1887CA919D59A6C1F3C_279412951 = (output + "LinearLayout.LayoutParams={width=" + sizeToString(width) +
-                    ", height=" + sizeToString(height) + " weight=" + weight +  "}");
-            return dsTaint.getTaintString();
+            String varB4EAC82CA7396A68D541C85D26508E83_83501903 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_83501903 = output + "LinearLayout.LayoutParams={width=" + sizeToString(width) +
+                    ", height=" + sizeToString(height) + " weight=" + weight +  "}";
+            addTaint(output.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_83501903.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_83501903;
             // ---------- Original Method ----------
             //return output + "LinearLayout.LayoutParams={width=" + sizeToString(width) +
                     //", height=" + sizeToString(height) + " weight=" + weight +  "}";
@@ -1862,16 +1881,38 @@ public class LinearLayout extends ViewGroup {
 
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.038 -0400", hash_original_field = "10CC209974739317E961EBD041018581", hash_generated_field = "AC2205EFFDAF899686D059A4EFB7832E")
+
     public static final int HORIZONTAL = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.038 -0400", hash_original_field = "B9A581C9879D3D62C7911745C0873959", hash_generated_field = "91DAF494B5C30478B3C457C5B0180E08")
+
     public static final int VERTICAL = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.038 -0400", hash_original_field = "8E79999F9F33DFB3FEA79372A82665CC", hash_generated_field = "0C5B8E328FB66A18A43839866930E8D4")
+
     public static final int SHOW_DIVIDER_NONE = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.038 -0400", hash_original_field = "A32E55A167CB9B1767289058C30ADA8B", hash_generated_field = "1DD6C5FF6610D03904D40069FE620989")
+
     public static final int SHOW_DIVIDER_BEGINNING = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.038 -0400", hash_original_field = "B89CD3C872738F0B2E6C2ED3A7D520A1", hash_generated_field = "BA257B3BA3E7775EC6015D8CAB979002")
+
     public static final int SHOW_DIVIDER_MIDDLE = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.038 -0400", hash_original_field = "6DCA5BAE6370E56F53BB44B9146BA598", hash_generated_field = "DD4A6080B5F419CDA74F877B1348BFA3")
+
     public static final int SHOW_DIVIDER_END = 4;
-    private static final int VERTICAL_GRAVITY_COUNT = 4;
-    private static final int INDEX_CENTER_VERTICAL = 0;
-    private static final int INDEX_TOP = 1;
-    private static final int INDEX_BOTTOM = 2;
-    private static final int INDEX_FILL = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.038 -0400", hash_original_field = "D50D1954CC86BCF359A31F9E0FA36B86", hash_generated_field = "49986CB3B444FCC0899418B085655220")
+
+    private static int VERTICAL_GRAVITY_COUNT = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.038 -0400", hash_original_field = "D29FEE3A1F7E065383FB6F36F4BE0ED7", hash_generated_field = "39505BC5109602EBE10020876D4FF942")
+
+    private static int INDEX_CENTER_VERTICAL = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.038 -0400", hash_original_field = "ED03692D3867A1965A1652C9AEAD08BC", hash_generated_field = "579CBE242928668AC0578F3FC8250A6B")
+
+    private static int INDEX_TOP = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.038 -0400", hash_original_field = "BD7D4E77C2437CF6BE5DE22C27EBF700", hash_generated_field = "EE3E7F64E4D1B43D5CAE2831557009AE")
+
+    private static int INDEX_BOTTOM = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.038 -0400", hash_original_field = "CB9D90A00CF11F5A0D279367FF293389", hash_generated_field = "CCED2E4D0843362E819365358982EB08")
+
+    private static int INDEX_FILL = 3;
 }
 

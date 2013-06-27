@@ -14,76 +14,98 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
 public class ScrollBarDrawable extends Drawable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.696 -0400", hash_original_field = "547048FD5F31D56228887526190F55C7", hash_generated_field = "E04A3D9DD9EF3A7F912E815C6BFCA25E")
+
     private Drawable mVerticalTrack;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.696 -0400", hash_original_field = "1D4D30ED27A9B00A259A256890EC0242", hash_generated_field = "14177887DA33DECB5E35DF1A209CFD6B")
+
     private Drawable mHorizontalTrack;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.696 -0400", hash_original_field = "9EEF20285C26D58E98CBF4DECBA5ED36", hash_generated_field = "D4785478D95BE31369EF8D658342B38B")
+
     private Drawable mVerticalThumb;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.696 -0400", hash_original_field = "5E48039B59AA35A0B8CAF4DF71B3A98A", hash_generated_field = "A6C9AC87745812562596B1EB0E194CD2")
+
     private Drawable mHorizontalThumb;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.696 -0400", hash_original_field = "5D4A81308B9054CB82785212636789DE", hash_generated_field = "EB6C39DC231EAF3B33208BD8796BA2F1")
+
     private int mRange;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.696 -0400", hash_original_field = "E8439EB32866F13AD7ABD06DB4A15343", hash_generated_field = "F358652CEEA6BACE7E593752AA27CBE6")
+
     private int mOffset;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.696 -0400", hash_original_field = "ED217E69B01A255AFFB3AEBD35455C1D", hash_generated_field = "D7D4E6D21EA2FE73F01CE81D6CC81FA1")
+
     private int mExtent;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.696 -0400", hash_original_field = "151A20A8D7084F60EB7F7A4B44844050", hash_generated_field = "69CBC6FC9EE367E3A738852DD60DDD6D")
+
     private boolean mVertical;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.696 -0400", hash_original_field = "E441004F88853A62D62B487B13AF6154", hash_generated_field = "F1F17F4E3280622D0A9B77B123769A5C")
+
     private boolean mChanged;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.696 -0400", hash_original_field = "CDD7B56C3280846F16CD5BBA46EEAC5D", hash_generated_field = "4F6E0C8B4F81EFED7C3C83FC67B47487")
+
     private boolean mRangeChanged;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.696 -0400", hash_original_field = "E3FB88F1170F920ECFA15D83AA99D025", hash_generated_field = "90840C3329620D54595BFC88FE5EAEC1")
+
     private Rect mTempBounds = new Rect();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.696 -0400", hash_original_field = "2B9368BA3124C9DDA5EF7E10AC8580EB", hash_generated_field = "73D3FAACDDA42D621076D0307124BA72")
+
     private boolean mAlwaysDrawHorizontalTrack;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.696 -0400", hash_original_field = "E1BAE08AA8010857DCC5896DD966EC0A", hash_generated_field = "BDCE388B565752F7D96B5F7F9F3DDA9A")
+
     private boolean mAlwaysDrawVerticalTrack;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.257 -0400", hash_original_method = "F6C29E547BD302257DEE1C67DCEB3680", hash_generated_method = "5558BCE67B8081D2BE7E25243209DB1F")
-    @DSModeled(DSC.SAFE)
-    public ScrollBarDrawable() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.698 -0400", hash_original_method = "F6C29E547BD302257DEE1C67DCEB3680", hash_generated_method = "5558BCE67B8081D2BE7E25243209DB1F")
+    public  ScrollBarDrawable() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.257 -0400", hash_original_method = "338EA256BE1472C967D04B115E1F5FA4", hash_generated_method = "4724FABBD9ADD035C527090EF9405DF5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.698 -0400", hash_original_method = "338EA256BE1472C967D04B115E1F5FA4", hash_generated_method = "8FE1A7911C19092C119347D7A13DD9D1")
     public void setAlwaysDrawHorizontalTrack(boolean alwaysDrawTrack) {
-        dsTaint.addTaint(alwaysDrawTrack);
+        mAlwaysDrawHorizontalTrack = alwaysDrawTrack;
         // ---------- Original Method ----------
         //mAlwaysDrawHorizontalTrack = alwaysDrawTrack;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.258 -0400", hash_original_method = "901AC7B8EB84A9D2458B7938E8E4C73B", hash_generated_method = "E7E81A04CEE6A1C4564A47C3F4552782")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.699 -0400", hash_original_method = "901AC7B8EB84A9D2458B7938E8E4C73B", hash_generated_method = "C66686FBF2DCE14707F1068103458953")
     public void setAlwaysDrawVerticalTrack(boolean alwaysDrawTrack) {
-        dsTaint.addTaint(alwaysDrawTrack);
+        mAlwaysDrawVerticalTrack = alwaysDrawTrack;
         // ---------- Original Method ----------
         //mAlwaysDrawVerticalTrack = alwaysDrawTrack;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.258 -0400", hash_original_method = "0A81522E62255950E42918FC464ECE8D", hash_generated_method = "8A1A5072A1A1C065243F4428EE2E96AA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.702 -0400", hash_original_method = "0A81522E62255950E42918FC464ECE8D", hash_generated_method = "A0E10AE531F1E5CF9E19D57A3D616821")
     public boolean getAlwaysDrawVerticalTrack() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_466531746 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_466531746;
         // ---------- Original Method ----------
         //return mAlwaysDrawVerticalTrack;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.258 -0400", hash_original_method = "58B8563B0AE3601908934E7BD6ECE0D9", hash_generated_method = "7798A3B802C61576AEF68FA5A9A15946")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.702 -0400", hash_original_method = "58B8563B0AE3601908934E7BD6ECE0D9", hash_generated_method = "F701E5D83C261DBAF663FB09A97A4B15")
     public boolean getAlwaysDrawHorizontalTrack() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_785375539 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_785375539;
         // ---------- Original Method ----------
         //return mAlwaysDrawHorizontalTrack;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.258 -0400", hash_original_method = "0CC6554F6E9383DBFFA4FCF818E81542", hash_generated_method = "58E555983B4BD5D6179525EDCC527628")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.717 -0400", hash_original_method = "0CC6554F6E9383DBFFA4FCF818E81542", hash_generated_method = "E33F78764B92F7E5FB9253C18544F676")
     public void setParameters(int range, int offset, int extent, boolean vertical) {
-        dsTaint.addTaint(vertical);
-        dsTaint.addTaint(range);
-        dsTaint.addTaint(extent);
-        dsTaint.addTaint(offset);
         {
             mChanged = true;
         } //End block
         {
             mRangeChanged = true;
         } //End block
+        mRange = range;
+        mOffset = offset;
+        mExtent = extent;
+        mVertical = vertical;
         // ---------- Original Method ----------
         //if (mVertical != vertical) {
             //mChanged = true;
@@ -98,11 +120,9 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.259 -0400", hash_original_method = "1E3ED238DD8B93FF3896611B5226DF40", hash_generated_method = "8A6FD03C9F6C0308CD4820550717BA8E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.718 -0400", hash_original_method = "1E3ED238DD8B93FF3896611B5226DF40", hash_generated_method = "92A1B8C7A8B56628D3D1E9A7FCF220D8")
     @Override
     public void draw(Canvas canvas) {
-        dsTaint.addTaint(canvas.dsTaint);
         boolean vertical;
         vertical = mVertical;
         int extent;
@@ -120,7 +140,7 @@ public class ScrollBarDrawable extends Drawable {
         Rect r;
         r = getBounds();
         {
-            boolean varD76EA641DE25B667522D35D8A7259174_1678979842 = (canvas.quickReject(r.left, r.top, r.right, r.bottom, Canvas.EdgeType.AA));
+            boolean varD76EA641DE25B667522D35D8A7259174_1285466187 = (canvas.quickReject(r.left, r.top, r.right, r.bottom, Canvas.EdgeType.AA));
         } //End collapsed parenthetic
         {
             drawTrack(canvas, r, vertical);
@@ -146,31 +166,27 @@ public class ScrollBarDrawable extends Drawable {
             } //End block
             drawThumb(canvas, r, offset, length, vertical);
         } //End block
+        addTaint(canvas.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.260 -0400", hash_original_method = "44DF7C7CE3C6FB97927067DC59DBEDA2", hash_generated_method = "8399837364562D02DF26AC3B0467A1F7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.719 -0400", hash_original_method = "44DF7C7CE3C6FB97927067DC59DBEDA2", hash_generated_method = "28762268825B8EB65D2AAA6D0ADF6E1D")
     @Override
     protected void onBoundsChange(Rect bounds) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(bounds.dsTaint);
         super.onBoundsChange(bounds);
         mChanged = true;
+        addTaint(bounds.getTaint());
         // ---------- Original Method ----------
         //super.onBoundsChange(bounds);
         //mChanged = true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.261 -0400", hash_original_method = "FBC32EDDC9C94F2A507C4B078AFDC706", hash_generated_method = "669600ECB5A05057328290968A88737F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.719 -0400", hash_original_method = "FBC32EDDC9C94F2A507C4B078AFDC706", hash_generated_method = "D8142E2D5A950CCDC92ECEDB5AA80D7F")
     protected void drawTrack(Canvas canvas, Rect bounds, boolean vertical) {
-        dsTaint.addTaint(bounds.dsTaint);
-        dsTaint.addTaint(vertical);
-        dsTaint.addTaint(canvas.dsTaint);
         Drawable track;
         {
             track = mVerticalTrack;
@@ -184,6 +200,9 @@ public class ScrollBarDrawable extends Drawable {
             } //End block
             track.draw(canvas);
         } //End block
+        addTaint(canvas.getTaint());
+        addTaint(bounds.getTaint());
+        addTaint(vertical);
         // ---------- Original Method ----------
         //Drawable track;
         //if (vertical) {
@@ -200,14 +219,8 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.262 -0400", hash_original_method = "272AE2AAF08C3293C4192CBFA02ABB41", hash_generated_method = "02C573996179B33599807428A4ECB8EE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.731 -0400", hash_original_method = "272AE2AAF08C3293C4192CBFA02ABB41", hash_generated_method = "5318121BDDDFD6AF966F6DEDF0301E75")
     protected void drawThumb(Canvas canvas, Rect bounds, int offset, int length, boolean vertical) {
-        dsTaint.addTaint(bounds.dsTaint);
-        dsTaint.addTaint(vertical);
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(canvas.dsTaint);
-        dsTaint.addTaint(offset);
         Rect thumbRect;
         thumbRect = mTempBounds;
         boolean changed;
@@ -234,6 +247,11 @@ public class ScrollBarDrawable extends Drawable {
             thumb.setBounds(thumbRect);
             thumb.draw(canvas);
         } //End block
+        addTaint(canvas.getTaint());
+        addTaint(bounds.getTaint());
+        addTaint(offset);
+        addTaint(length);
+        addTaint(vertical);
         // ---------- Original Method ----------
         //final Rect thumbRect = mTempBounds;
         //final boolean changed = mRangeChanged || mChanged;
@@ -258,10 +276,11 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.262 -0400", hash_original_method = "CF1FA0D3674C65E82EB702858CBA2EA8", hash_generated_method = "F9DDA9C78D0CF7617AE31BB14875E420")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.732 -0400", hash_original_method = "CF1FA0D3674C65E82EB702858CBA2EA8", hash_generated_method = "2B667190D5006483E403D42799B93BD6")
     public void setVerticalThumbDrawable(Drawable thumb) {
-        dsTaint.addTaint(thumb.dsTaint);
+        {
+            mVerticalThumb = thumb;
+        } //End block
         // ---------- Original Method ----------
         //if (thumb != null) {
             //mVerticalThumb = thumb;
@@ -269,19 +288,19 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.262 -0400", hash_original_method = "95A534FB494475ED343603B1A863AD99", hash_generated_method = "FEE033EA3644932BFBBCC41F91EF3D5D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.733 -0400", hash_original_method = "95A534FB494475ED343603B1A863AD99", hash_generated_method = "76278313A4578813333311F1F2E2440F")
     public void setVerticalTrackDrawable(Drawable track) {
-        dsTaint.addTaint(track.dsTaint);
+        mVerticalTrack = track;
         // ---------- Original Method ----------
         //mVerticalTrack = track;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.262 -0400", hash_original_method = "D314A45F62304CCC7D305EC252A7898A", hash_generated_method = "DD6DB339D1EB6EB019CA71000DFB4277")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.733 -0400", hash_original_method = "D314A45F62304CCC7D305EC252A7898A", hash_generated_method = "A3A96DB685AE8A936F884E081AF0EE0C")
     public void setHorizontalThumbDrawable(Drawable thumb) {
-        dsTaint.addTaint(thumb.dsTaint);
+        {
+            mHorizontalThumb = thumb;
+        } //End block
         // ---------- Original Method ----------
         //if (thumb != null) {
             //mHorizontalThumb = thumb;
@@ -289,28 +308,27 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.262 -0400", hash_original_method = "AA2EFF46594CC873B99869053CAE3587", hash_generated_method = "6EF8F8C3571BC81E0834852EFDEA90C9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.733 -0400", hash_original_method = "AA2EFF46594CC873B99869053CAE3587", hash_generated_method = "DDECC2F11A8C08406C0CA76FF56AFC51")
     public void setHorizontalTrackDrawable(Drawable track) {
-        dsTaint.addTaint(track.dsTaint);
+        mHorizontalTrack = track;
         // ---------- Original Method ----------
         //mHorizontalTrack = track;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.263 -0400", hash_original_method = "7E286D23B763C72717353421EFF3C480", hash_generated_method = "252BEDC26F9441FC1E6B28E4943F4C79")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.737 -0400", hash_original_method = "7E286D23B763C72717353421EFF3C480", hash_generated_method = "545E799FEAB046365B2155927D31E103")
     public int getSize(boolean vertical) {
-        dsTaint.addTaint(vertical);
         {
-            int var57087549A55D8A830EECC66A97BBD029_2144665904 = ((mVerticalTrack != null ?
+            int var57087549A55D8A830EECC66A97BBD029_1093043505 = ((mVerticalTrack != null ?
                     mVerticalTrack : mVerticalThumb).getIntrinsicWidth()); //DSFIXME:  CODE0008: Nested ternary operator in expression
         } //End block
         {
-            int var96DC261A22A8F5D18162BD604E7B7C4D_690299331 = ((mHorizontalTrack != null ?
+            int var96DC261A22A8F5D18162BD604E7B7C4D_946095243 = ((mHorizontalTrack != null ?
                     mHorizontalTrack : mHorizontalThumb).getIntrinsicHeight()); //DSFIXME:  CODE0008: Nested ternary operator in expression
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(vertical);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1434870038 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1434870038;
         // ---------- Original Method ----------
         //if (vertical) {
             //return (mVerticalTrack != null ?
@@ -322,11 +340,9 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.263 -0400", hash_original_method = "B18AEA250E30640B8B376B842AF0FDF6", hash_generated_method = "EBD0EA3B399F81377E11BA51EBF2BCE7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.737 -0400", hash_original_method = "B18AEA250E30640B8B376B842AF0FDF6", hash_generated_method = "5D92375401EF324A280FFF98E2C2FE5D")
     @Override
     public void setAlpha(int alpha) {
-        dsTaint.addTaint(alpha);
         {
             mVerticalTrack.setAlpha(alpha);
         } //End block
@@ -335,6 +351,7 @@ public class ScrollBarDrawable extends Drawable {
             mHorizontalTrack.setAlpha(alpha);
         } //End block
         mHorizontalThumb.setAlpha(alpha);
+        addTaint(alpha);
         // ---------- Original Method ----------
         //if (mVerticalTrack != null) {
             //mVerticalTrack.setAlpha(alpha);
@@ -347,11 +364,9 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.263 -0400", hash_original_method = "CBF97912C9C8F01704D565D3AA800300", hash_generated_method = "DA6EEFDFBF6FCBDF4541AD79EDA157A1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.743 -0400", hash_original_method = "CBF97912C9C8F01704D565D3AA800300", hash_generated_method = "EE8246BF4225DD67CA46C15529B6354A")
     @Override
     public void setColorFilter(ColorFilter cf) {
-        dsTaint.addTaint(cf.dsTaint);
         {
             mVerticalTrack.setColorFilter(cf);
         } //End block
@@ -360,6 +375,7 @@ public class ScrollBarDrawable extends Drawable {
             mHorizontalTrack.setColorFilter(cf);
         } //End block
         mHorizontalThumb.setColorFilter(cf);
+        addTaint(cf.getTaint());
         // ---------- Original Method ----------
         //if (mVerticalTrack != null) {
             //mVerticalTrack.setColorFilter(cf);
@@ -372,21 +388,24 @@ public class ScrollBarDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.263 -0400", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "ABA86D69E3485D7E8F9A1E6F7D7F161F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.743 -0400", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "096E45252E63DB4E9BC8EDB52E298708")
     @Override
     public int getOpacity() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1084472326 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1084472326;
         // ---------- Original Method ----------
         //return PixelFormat.TRANSLUCENT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.263 -0400", hash_original_method = "C5352C5923C905107C68A18CC8B889AA", hash_generated_method = "CC5B6B70FF872F7261BF7DD87131422C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.750 -0400", hash_original_method = "C5352C5923C905107C68A18CC8B889AA", hash_generated_method = "FC35F8CE51F0A44F711F6558328022C7")
     @Override
     public String toString() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_455945526 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_455945526 = "ScrollBarDrawable: range=" + mRange + " offset=" + mOffset +
+               " extent=" + mExtent + (mVertical ? " V" : " H");
+        varB4EAC82CA7396A68D541C85D26508E83_455945526.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_455945526;
         // ---------- Original Method ----------
         //return "ScrollBarDrawable: range=" + mRange + " offset=" + mOffset +
                //" extent=" + mExtent + (mVertical ? " V" : " H");

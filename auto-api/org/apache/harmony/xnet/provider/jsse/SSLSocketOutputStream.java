@@ -12,36 +12,35 @@ import java.io.OutputStream;
 import libcore.io.Streams;
 
 public class SSLSocketOutputStream extends OutputStream {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.960 -0400", hash_original_field = "72122CE96BFEC66E2396D2E25225D70A", hash_generated_field = "FC855125850BB72054AAC77176B58208")
+
     private SSLSocketImpl owner;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.270 -0400", hash_original_method = "A41E4766E55868182E82056D4801E8D9", hash_generated_method = "6BA8F5E91F625DCF7B6882A259DCCB82")
-    @DSModeled(DSC.SAFE)
-    protected SSLSocketOutputStream(SSLSocketImpl owner) {
-        dsTaint.addTaint(owner.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.960 -0400", hash_original_method = "A41E4766E55868182E82056D4801E8D9", hash_generated_method = "CB52A3C219C1E690A6A134F779FCC9DD")
+    protected  SSLSocketOutputStream(SSLSocketImpl owner) {
+        this.owner = owner;
         // ---------- Original Method ----------
         //this.owner = owner;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.270 -0400", hash_original_method = "C558B2B88CBF261C0FBBE5741F96019C", hash_generated_method = "1B5C363EA3CCD918C562424A138EAEC2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.961 -0400", hash_original_method = "C558B2B88CBF261C0FBBE5741F96019C", hash_generated_method = "A2120F3993594C72A1AB5EA705EDBD82")
     @Override
     public void write(int b) throws IOException {
-        dsTaint.addTaint(b);
         Streams.writeSingleByte(this, b);
+        addTaint(b);
         // ---------- Original Method ----------
         //Streams.writeSingleByte(this, b);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.270 -0400", hash_original_method = "A06DCDC39D6B1A9C644C2D57A083C16C", hash_generated_method = "29E75A3E5F7FAE493C2406B488699B42")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.962 -0400", hash_original_method = "A06DCDC39D6B1A9C644C2D57A083C16C", hash_generated_method = "8C6DF73F41FDF92903A83666AAD4819A")
     @Override
     public void write(byte[] b, int off, int len) throws IOException {
-        dsTaint.addTaint(b[0]);
-        dsTaint.addTaint(off);
-        dsTaint.addTaint(len);
         owner.writeAppData(b, off, len);
+        addTaint(b[0]);
+        addTaint(off);
+        addTaint(len);
         // ---------- Original Method ----------
         //owner.writeAppData(b, off, len);
     }

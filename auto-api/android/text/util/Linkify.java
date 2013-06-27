@@ -26,9 +26,10 @@ import java.util.regex.Pattern;
 
 public class Linkify {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.080 -0400", hash_original_method = "917A42E443842412DB20101D262C3884", hash_generated_method = "917A42E443842412DB20101D262C3884")
-        public Linkify ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.240 -0400", hash_original_method = "D1670E1FC2F10CF19A8A5BA1D0122F80", hash_generated_method = "D1670E1FC2F10CF19A8A5BA1D0122F80")
+    public Linkify ()
     {
+        //Synthesized constructor
     }
 
 
@@ -281,93 +282,80 @@ public class Linkify {
         String transformUrl(final Matcher match, String url);
     }
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.266 -0400", hash_original_field = "1269F4184CB04E11967898C54EC8D15D", hash_generated_field = "368D3C042CD4B22DC7E2E97B265A1597")
+
     public static final int WEB_URLS = 0x01;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.266 -0400", hash_original_field = "55ED058864363DA659896E2855AC9997", hash_generated_field = "49537DE6E32CE1FDEFBAA9B907C31C5A")
+
     public static final int EMAIL_ADDRESSES = 0x02;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.266 -0400", hash_original_field = "609FACB14D96841983AE682F05EB292C", hash_generated_field = "C10F585D529DD802A945821CA5FD4C88")
+
     public static final int PHONE_NUMBERS = 0x04;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.266 -0400", hash_original_field = "EA2E3F18A0EE154E2393173C7C6BE84D", hash_generated_field = "3CFB66FCB81210697B2CE809A5B9CEB6")
+
     public static final int MAP_ADDRESSES = 0x08;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.266 -0400", hash_original_field = "D80ED2E39FDE952217DA49A1D1247527", hash_generated_field = "5CA0F41FA914E0B91F6B4FF2405321CD")
+
     public static final int ALL = WEB_URLS | EMAIL_ADDRESSES | PHONE_NUMBERS | MAP_ADDRESSES;
-    private static final int PHONE_NUMBER_MINIMUM_DIGITS = 5;
-    public static final MatchFilter sUrlMatchFilter = new MatchFilter() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.083 -0400", hash_original_method = "AAF769FD7BAFAAFBC12DBCD0A5379028", hash_generated_method = "CA5441EBF20DBED4DECFF5D8DCCF9AC3")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public final boolean acceptMatch(CharSequence s, int start, int end) {
-            dsTaint.addTaint(s);
-            dsTaint.addTaint(start);
-            dsTaint.addTaint(end);
-            {
-                boolean var02D9D7AE30909F4CCD68B5E2961CF0AA_2109617817 = (s.charAt(start - 1) == '@');
-            } //End collapsed parenthetic
-            return dsTaint.getTaintBoolean();
-            // ---------- Original Method ----------
-            //if (start == 0) {
-                //return true;
-            //}
-            //if (s.charAt(start - 1) == '@') {
-                //return false;
-            //}
-            //return true;
-        }
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.267 -0400", hash_original_field = "22A60E12D165FE70D0880E8FC2196406", hash_generated_field = "799FB8006F78027D271FCAA04F445853")
 
-        
-}; //Transformed anonymous class
-    public static final MatchFilter sPhoneNumberMatchFilter = new MatchFilter() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.083 -0400", hash_original_method = "CE7315FEE6FC136CE864E7D696A4648D", hash_generated_method = "F2178DF53E13185A426B3D1B297014F9")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public final boolean acceptMatch(CharSequence s, int start, int end) {
-            dsTaint.addTaint(s);
-            dsTaint.addTaint(start);
-            dsTaint.addTaint(end);
-            int digitCount;
-            digitCount = 0;
-            {
-                int i;
-                i = start;
-                {
-                    {
-                        boolean var35421BA2D7BDB98F8DBF8E226AB5886A_415817275 = (Character.isDigit(s.charAt(i)));
-                    } //End collapsed parenthetic
-                } //End block
-            } //End collapsed parenthetic
-            return dsTaint.getTaintBoolean();
-            // ---------- Original Method ----------
-            //int digitCount = 0;
-            //for (int i = start; i < end; i++) {
-                //if (Character.isDigit(s.charAt(i))) {
-                    //digitCount++;
-                    //if (digitCount >= PHONE_NUMBER_MINIMUM_DIGITS) {
-                        //return true;
-                    //}
-                //}
-            //}
-            //return false;
-        }
+    private static int PHONE_NUMBER_MINIMUM_DIGITS = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.267 -0400", hash_original_field = "6B88F88D64011199D23480B3B784D6FC", hash_generated_field = "008D1D2B5A7B2E7FD037B74448FC9CE8")
 
-        
-}; //Transformed anonymous class
-    public static final TransformFilter sPhoneNumberTransformFilter = new TransformFilter() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.084 -0400", hash_original_method = "98DF336D3D5B2E2B9C3D87FAC939396C", hash_generated_method = "6B85AB01C68E6CDD49BA02A5B1D8B9BE")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    public static final MatchFilter sUrlMatchFilter = new MatchFilter() {
+        public final boolean acceptMatch(CharSequence s, int start, int end) {
+            if (start == 0) {
+                return true;
+            }
+
+            if (s.charAt(start - 1) == '@') {
+                return false;
+            }
+
+            return true;
+        }
+    };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.267 -0400", hash_original_field = "F9493765D21ABAB52702E4974A1B1708", hash_generated_field = "B2CCB2AB7A7BFE05D0DBC4E5E2C9C4F7")
+
+    public static final MatchFilter sPhoneNumberMatchFilter = new MatchFilter() {
+        public final boolean acceptMatch(CharSequence s, int start, int end) {
+            int digitCount = 0;
+
+            for (int i = start; i < end; i++) {
+                if (Character.isDigit(s.charAt(i))) {
+                    digitCount++;
+                    if (digitCount >= PHONE_NUMBER_MINIMUM_DIGITS) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+    };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.267 -0400", hash_original_field = "56A5F9993C0C7AC35957D43FBEFB0D1F", hash_generated_field = "EC888D0C5984A0BF717AAA49789F16EB")
+
+    public static final TransformFilter sPhoneNumberTransformFilter = new TransformFilter() {
         public final String transformUrl(final Matcher match, String url) {
-            dsTaint.addTaint(match.dsTaint);
-            dsTaint.addTaint(url);
-            String varA5CC6F5C5662042961C83546B44AAB03_676026968 = (Patterns.digitsAndPlusOnly(match));
-            return dsTaint.getTaintString();
-            // ---------- Original Method ----------
-            //return Patterns.digitsAndPlusOnly(match);
+            return Patterns.digitsAndPlusOnly(match);
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 
 class LinkSpec {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.267 -0400", hash_original_field = "572D4E421E5E6B9BC11D815E8A027112", hash_generated_field = "1B433832A8D8C8722BF3FE2FD98C7841")
+
     String url;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.268 -0400", hash_original_field = "EA2B2676C28C0DB26D39331A336C6B92", hash_generated_field = "A420862623A673AB42FCEC90A616158F")
+
     int start;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.273 -0400", hash_original_field = "7F021A1415B86F2D013B2618FB31AE53", hash_generated_field = "302E5A3147803830441A79AED31F4022")
+
     int end;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.084 -0400", hash_original_method = "D23FC19026F33FCEAD3964BF62CA1353", hash_generated_method = "D23FC19026F33FCEAD3964BF62CA1353")
-        public LinkSpec ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.273 -0400", hash_original_method = "556B7BFA52BBBC98785B42B203495262", hash_generated_method = "556B7BFA52BBBC98785B42B203495262")
+    public LinkSpec ()
     {
+        //Synthesized constructor
     }
 
 

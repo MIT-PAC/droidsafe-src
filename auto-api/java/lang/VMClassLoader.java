@@ -14,9 +14,10 @@ import java.util.List;
 
 class VMClassLoader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.669 -0400", hash_original_method = "7C334082B26825451B04478AF491B5D2", hash_generated_method = "7C334082B26825451B04478AF491B5D2")
-        public VMClassLoader ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.735 -0400", hash_original_method = "4AEDA864BABA59DB003EAC2DE676238C", hash_generated_method = "4AEDA864BABA59DB003EAC2DE676238C")
+    public VMClassLoader ()
     {
+        //Synthesized constructor
     }
 
 
@@ -84,7 +85,7 @@ class VMClassLoader {
 
     
         private static String getBootClassPathResource(String name, int index) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

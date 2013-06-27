@@ -38,26 +38,48 @@ import java.util.TimerTask;
 import javax.sip.address.Hop;
 
 public class UDPMessageChannel extends MessageChannel implements ParseExceptionListener, Runnable, RawMessageChannel {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.749 -0400", hash_original_field = "37460D4BF2BA47A13FF9D922C4B14B2E", hash_generated_field = "3233C5012C49C796F9D6BBC8E02EAB41")
+
     protected SIPTransactionStack sipStack;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.749 -0400", hash_original_field = "8C35693B192604DA4AB63AD19D48096F", hash_generated_field = "0A43681EE1A6E215BE82E39AC59DFE7C")
+
     protected StringMsgParser myParser;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.749 -0400", hash_original_field = "D7FA5E7DC9BACC5016B81E35D44D1C5F", hash_generated_field = "DB2440387A41D5016778DA700632E003")
+
     private InetAddress peerAddress;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.749 -0400", hash_original_field = "AA48C74491DE12FAB31F14F04DE0F567", hash_generated_field = "DEE18A414D72F7D580E73EF519B5B75F")
+
     private String myAddress;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.749 -0400", hash_original_field = "E2843BEFA12DEA2BD46F0D29DAA8CB35", hash_generated_field = "917EBAB90EE3EF0904EF1CC7129F7C3B")
+
     private int peerPacketSourcePort;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.749 -0400", hash_original_field = "1906DDE6FBF1A1A564E69A91EBCF4043", hash_generated_field = "31AFBD6F92700654B3E6CD25C4BAE79B")
+
     private InetAddress peerPacketSourceAddress;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.749 -0400", hash_original_field = "BBD5741C4F9994864582D25DD194C4DE", hash_generated_field = "FE74A5BA5CFBB5B6DC2B68FEFA76ECFC")
+
     private int peerPort;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.749 -0400", hash_original_field = "EDB6E8FD971C3E6879E1A00995BCB702", hash_generated_field = "EB665B7537D07145A6FCAD2DB460EADC")
+
     private String peerProtocol;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.749 -0400", hash_original_field = "AB99FC537949F4680FB25A11A38B0042", hash_generated_field = "AD61806C610E09EDA888D5EC477B22F2")
+
     protected int myPort;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.749 -0400", hash_original_field = "C1C12C1266B0C0AC2B9F460C87F4F641", hash_generated_field = "5DCE0469450ABB74FDB5A37D9DFDF23A")
+
     private DatagramPacket incomingPacket;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.749 -0400", hash_original_field = "52E9EDC753D35EB688ED2EC5FA2A70C4", hash_generated_field = "FDC149166FA9FE14388FB5695DD3C00D")
+
     private long receptionTime;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.749 -0400", hash_original_field = "19007373CE3841015C166CC983644A31", hash_generated_field = "DE4903FFD06AF3966ED05EEB79D4D38C")
+
     private Hashtable<String,PingBackTimerTask> pingBackRecord = new Hashtable<String,PingBackTimerTask>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.273 -0400", hash_original_method = "03A64681434F0E8B0C9121AC8F1C5237", hash_generated_method = "7AAA8B977F7087451C65E1E0FBBA115F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected UDPMessageChannel(SIPTransactionStack stack,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.750 -0400", hash_original_method = "03A64681434F0E8B0C9121AC8F1C5237", hash_generated_method = "F4678F6815B5D9C8069EEBE0118DBC8E")
+    protected  UDPMessageChannel(SIPTransactionStack stack,
             UDPMessageProcessor messageProcessor) {
-        dsTaint.addTaint(messageProcessor.dsTaint);
-        dsTaint.addTaint(stack.dsTaint);
         super.messageProcessor = messageProcessor;
+        this.sipStack = stack;
         Thread mythread;
         mythread = new Thread(this);
         this.myAddress = messageProcessor.getIpAddress().getHostAddress();
@@ -77,14 +99,12 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.274 -0400", hash_original_method = "1756885BA9DE2BFD3C0F236D276D29E7", hash_generated_method = "99964ACD84941E268CBC3ED48CFEE7AA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected UDPMessageChannel(SIPTransactionStack stack,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.751 -0400", hash_original_method = "1756885BA9DE2BFD3C0F236D276D29E7", hash_generated_method = "A8F9DAD2506D82E9CA43A085ABAB4A4A")
+    protected  UDPMessageChannel(SIPTransactionStack stack,
             UDPMessageProcessor messageProcessor, DatagramPacket packet) {
-        dsTaint.addTaint(packet.dsTaint);
-        dsTaint.addTaint(messageProcessor.dsTaint);
-        dsTaint.addTaint(stack.dsTaint);
+        this.incomingPacket = packet;
         super.messageProcessor = messageProcessor;
+        this.sipStack = stack;
         this.myAddress = messageProcessor.getIpAddress().getHostAddress();
         this.myPort = messageProcessor.getPort();
         Thread mythread;
@@ -105,20 +125,18 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.274 -0400", hash_original_method = "776DD93072EC88FB0665477FC0515605", hash_generated_method = "C979FC03431980C9B17E8F22D56DCF45")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected UDPMessageChannel(InetAddress targetAddr, int port,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.766 -0400", hash_original_method = "776DD93072EC88FB0665477FC0515605", hash_generated_method = "40D73FD82288C55FBC1E8A6156A12E8F")
+    protected  UDPMessageChannel(InetAddress targetAddr, int port,
             SIPTransactionStack sipStack, UDPMessageProcessor messageProcessor) {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(targetAddr.dsTaint);
-        dsTaint.addTaint(sipStack.dsTaint);
-        dsTaint.addTaint(messageProcessor.dsTaint);
+        peerAddress = targetAddr;
+        peerPort = port;
         peerProtocol = "UDP";
         super.messageProcessor = messageProcessor;
         this.myAddress = messageProcessor.getIpAddress().getHostAddress();
         this.myPort = messageProcessor.getPort();
+        this.sipStack = sipStack;
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1089559440 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_2135551661 = (sipStack.isLoggingEnabled());
             {
                 this.sipStack.getStackLogger().logDebug("Creating message channel "
                     + targetAddr.getHostAddress() + "/" + port);
@@ -139,8 +157,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.275 -0400", hash_original_method = "E6EA1046257028C8ED28AF4C13B7A731", hash_generated_method = "E8318F5E46BE3D9E2535D9DB958E5AAA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.771 -0400", hash_original_method = "E6EA1046257028C8ED28AF4C13B7A731", hash_generated_method = "E3E0A64C5F6FD56372E91329889E0083")
     public void run() {
         ThreadAuditor.ThreadHandle threadHandle;
         threadHandle = null;
@@ -153,7 +170,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
             {
                 {
                     {
-                        boolean varAD73BCE40D73F49090BF24139EA25CB8_1340325327 = (((UDPMessageProcessor) messageProcessor).messageQueue
+                        boolean varAD73BCE40D73F49090BF24139EA25CB8_1424845070 = (((UDPMessageProcessor) messageProcessor).messageQueue
                             .isEmpty());
                         {
                             try 
@@ -194,10 +211,8 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.276 -0400", hash_original_method = "2D23A147968127857F47AE9C2F0B0301", hash_generated_method = "8D714180DA8F747E6D52ECB01019BF54")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.786 -0400", hash_original_method = "2D23A147968127857F47AE9C2F0B0301", hash_generated_method = "C9CBF6452C2577866F09FD0060E085CA")
     private void processIncomingDataPacket(DatagramPacket packet) throws Exception {
-        dsTaint.addTaint(packet.dsTaint);
         this.peerAddress = packet.getAddress();
         int packetLength;
         packetLength = packet.getLength();
@@ -207,7 +222,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         msgBytes = new byte[packetLength];
         System.arraycopy(bytes, 0, msgBytes, 0, packetLength);
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_100097802 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_387906475 = (sipStack.isLoggingEnabled());
             {
                 this.sipStack.getStackLogger()
                     .logDebug("UDPMessageChannel: processIncomingDataPacket : peerAddress = "
@@ -227,7 +242,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         {
             myParser = null;
             {
-                boolean varCD7A6467843458627CC99D2CD95A9CA6_1838546523 = (sipStack.isLoggingEnabled());
+                boolean varCD7A6467843458627CC99D2CD95A9CA6_1774209651 = (sipStack.isLoggingEnabled());
                 {
                     this.sipStack.getStackLogger().logDebug("Rejecting message !  "
                         + new String(msgBytes));
@@ -239,13 +254,13 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
             String msgString;
             msgString = new String(msgBytes, 0, packetLength);
             {
-                boolean var641C9D2BCF73834F157CB50DF975B192_108207279 = (!msgString.startsWith("SIP/") && !msgString.startsWith("ACK "));
+                boolean var641C9D2BCF73834F157CB50DF975B192_719300657 = (!msgString.startsWith("SIP/") && !msgString.startsWith("ACK "));
                 {
                     String badReqRes;
                     badReqRes = createBadReqRes(msgString, ex);
                     {
                         {
-                            boolean var2AB968A8303910EE00F810B6DE3410F9_1599965243 = (sipStack.isLoggingEnabled());
+                            boolean var2AB968A8303910EE00F810B6DE3410F9_1393358857 = (sipStack.isLoggingEnabled());
                             {
                                 sipStack.getStackLogger().logDebug(
                                 "Sending automatic 400 Bad Request:");
@@ -264,7 +279,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     } //End block
                     {
                         {
-                            boolean var2AB968A8303910EE00F810B6DE3410F9_1934682568 = (sipStack.isLoggingEnabled());
+                            boolean var2AB968A8303910EE00F810B6DE3410F9_1954534445 = (sipStack.isLoggingEnabled());
                             {
                                 sipStack
                                 .getStackLogger()
@@ -278,13 +293,13 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         } //End block
         {
             {
-                boolean varCD7A6467843458627CC99D2CD95A9CA6_366356957 = (sipStack.isLoggingEnabled());
+                boolean varCD7A6467843458627CC99D2CD95A9CA6_1639350003 = (sipStack.isLoggingEnabled());
                 {
                     this.sipStack.getStackLogger().logDebug("Rejecting message !  + Null message parsed.");
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var9004E0463DC06B1DD21A25050AF4C311_2016423584 = (pingBackRecord.get(packet.getAddress().getHostAddress() + ":" + packet.getPort()) == null);
+                boolean var9004E0463DC06B1DD21A25050AF4C311_1396473230 = (pingBackRecord.get(packet.getAddress().getHostAddress() + ":" + packet.getPort()) == null);
                 {
                     byte[] retval;
                     retval = "\r\n\r\n".getBytes();
@@ -299,7 +314,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         ViaList viaList;
         viaList = sipMessage.getViaHeaders();
         {
-            boolean var59CC7428458ADFC3199C90345ABEB8AF_786105577 = (sipMessage.getFrom() == null || sipMessage.getTo() == null
+            boolean var59CC7428458ADFC3199C90345ABEB8AF_386856115 = (sipMessage.getFrom() == null || sipMessage.getTo() == null
                 || sipMessage.getCallId() == null
                 || sipMessage.getCSeq() == null
                 || sipMessage.getViaHeaders() == null);
@@ -307,7 +322,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                 String badmsg;
                 badmsg = new String(msgBytes);
                 {
-                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_641580455 = (sipStack.isLoggingEnabled());
+                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1672712022 = (sipStack.isLoggingEnabled());
                     {
                         this.sipStack.getStackLogger().logError("bad message " + badmsg);
                         this.sipStack.getStackLogger().logError(">>> Dropped Bad Msg "
@@ -335,7 +350,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                 boolean hasRPort;
                 hasRPort = v.hasParameter(Via.RPORT);
                 {
-                    boolean var2EC34FA9788EADA768699B2545557487_238704726 = (hasRPort
+                    boolean var2EC34FA9788EADA768699B2545557487_1519738026 = (hasRPort
                         || !hop.getHost().equals(
                                 this.peerAddress.getHostAddress()));
                     {
@@ -366,15 +381,13 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.278 -0400", hash_original_method = "DCEA2882E2241B5A52F15EAA80B8F270", hash_generated_method = "56B50ADDE1C4A2FA874D42BE8E78386F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.799 -0400", hash_original_method = "DCEA2882E2241B5A52F15EAA80B8F270", hash_generated_method = "C2AAB49F6BD6D18D8E48B59BB53467B4")
     public void processMessage(SIPMessage sipMessage) {
-        dsTaint.addTaint(sipMessage.dsTaint);
         {
             SIPRequest sipRequest;
             sipRequest = (SIPRequest) sipMessage;
             {
-                boolean varB20158C23C001B703CFD19B38FE62BAB_1021148921 = (sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES));
+                boolean varB20158C23C001B703CFD19B38FE62BAB_1048226503 = (sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES));
                 {
                     this.sipStack.serverLogger.logMessage(sipMessage, this
                         .getPeerHostPort().toString(), this.getHost() + ":"
@@ -386,7 +399,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     .newSIPServerRequest(sipRequest, this);
             {
                 {
-                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1461845297 = (sipStack.isLoggingEnabled());
+                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1908124346 = (sipStack.isLoggingEnabled());
                     {
                         this.sipStack.getStackLogger()
                             .logWarning("Null request interface returned -- dropping request");
@@ -394,7 +407,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                 } //End collapsed parenthetic
             } //End block
             {
-                boolean varCD7A6467843458627CC99D2CD95A9CA6_824096293 = (sipStack.isLoggingEnabled());
+                boolean varCD7A6467843458627CC99D2CD95A9CA6_1091090689 = (sipStack.isLoggingEnabled());
                 this.sipStack.getStackLogger().logDebug("About to process "
                         + sipRequest.getFirstLine() + "/" + sipServerRequest);
             } //End collapsed parenthetic
@@ -408,7 +421,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     SIPServerTransaction sipServerTx;
                     sipServerTx = (SIPServerTransaction) sipServerRequest;
                     {
-                        boolean varDFD8B605D678E12460F98516E8CB0D44_34407646 = (!sipServerTx.passToListener());
+                        boolean varDFD8B605D678E12460F98516E8CB0D44_1129671715 = (!sipServerTx.passToListener());
                         {
                             ((SIPTransaction) sipServerRequest).releaseSem();
                         } //End block
@@ -416,7 +429,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                 } //End block
             } //End block
             {
-                boolean varCD7A6467843458627CC99D2CD95A9CA6_417152520 = (sipStack.isLoggingEnabled());
+                boolean varCD7A6467843458627CC99D2CD95A9CA6_1551406410 = (sipStack.isLoggingEnabled());
                 this.sipStack.getStackLogger().logDebug("Done processing "
                         + sipRequest.getFirstLine() + "/" + sipServerRequest);
             } //End collapsed parenthetic
@@ -431,7 +444,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
             catch (ParseException ex)
             {
                 {
-                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_846355419 = (sipStack.isLoggingEnabled());
+                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_140820699 = (sipStack.isLoggingEnabled());
                     sipStack.getStackLogger()
                             .logError("Dropping Badly formatted response message >>> "
                                     + sipResponse);
@@ -444,12 +457,12 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                 try 
                 {
                     {
-                        boolean varE75FAA60313661E30299B4B6DCAFA965_757538490 = (sipServerResponse instanceof SIPClientTransaction
+                        boolean varE75FAA60313661E30299B4B6DCAFA965_530291612 = (sipServerResponse instanceof SIPClientTransaction
                             && !((SIPClientTransaction) sipServerResponse)
                                     .checkFromTag(sipResponse));
                         {
                             {
-                                boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_471012097 = (sipStack.isLoggingEnabled());
+                                boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_695609610 = (sipStack.isLoggingEnabled());
                                 sipStack.getStackLogger()
                                     .logError("Dropping response message with invalid tag >>> "
                                             + sipResponse);
@@ -461,7 +474,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                 finally 
                 {
                     {
-                        boolean varE830882F52F0DDC064CFB33E0C94EB7E_2015008731 = (sipServerResponse instanceof SIPTransaction
+                        boolean varE830882F52F0DDC064CFB33E0C94EB7E_1475362665 = (sipServerResponse instanceof SIPTransaction
                             && !((SIPTransaction) sipServerResponse)
                                     .passToListener());
                         ((SIPTransaction) sipServerResponse).releaseSem();
@@ -470,33 +483,28 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
             } //End block
             {
                 {
-                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1822540121 = (sipStack.isLoggingEnabled());
+                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_183819571 = (sipStack.isLoggingEnabled());
                     {
                         this.sipStack.getStackLogger().logDebug("null sipServerResponse!");
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End block
+        addTaint(sipMessage.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.278 -0400", hash_original_method = "148F3D833D327E61A5116C1FE99BCAC0", hash_generated_method = "083A2DE0389E1A3BB7AA82ED4CB59EF9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.800 -0400", hash_original_method = "148F3D833D327E61A5116C1FE99BCAC0", hash_generated_method = "9A7752F4CA6263FC47EEBBAE38AAC8F1")
     public void handleException(ParseException ex, SIPMessage sipMessage,
             Class hdrClass, String header, String message) throws ParseException {
-        dsTaint.addTaint(message);
-        dsTaint.addTaint(ex.dsTaint);
-        dsTaint.addTaint(sipMessage.dsTaint);
-        dsTaint.addTaint(hdrClass.dsTaint);
-        dsTaint.addTaint(header);
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1791203191 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_634904715 = (sipStack.isLoggingEnabled());
             this.sipStack.getStackLogger().logException(ex);
         } //End collapsed parenthetic
         {
-            boolean varA507267BF4B92BB4BF284B01D1D5F764_354988970 = ((hdrClass != null)
+            boolean varA507267BF4B92BB4BF284B01D1D5F764_401649896 = ((hdrClass != null)
                 && (hdrClass.equals(From.class) || hdrClass.equals(To.class)
                         || hdrClass.equals(CSeq.class)
                         || hdrClass.equals(Via.class)
@@ -505,7 +513,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                         .equals(StatusLine.class)));
             {
                 {
-                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_684341828 = (sipStack.isLoggingEnabled());
+                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_46428626 = (sipStack.isLoggingEnabled());
                     {
                         sipStack.getStackLogger().logError("BAD MESSAGE!");
                         sipStack.getStackLogger().logError(message);
@@ -517,6 +525,11 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                 sipMessage.addUnparsed(header);
             } //End block
         } //End collapsed parenthetic
+        addTaint(ex.getTaint());
+        addTaint(sipMessage.getTaint());
+        addTaint(hdrClass.getTaint());
+        addTaint(header.getTaint());
+        addTaint(message.getTaint());
         // ---------- Original Method ----------
         //if (sipStack.isLoggingEnabled())
             //this.sipStack.getStackLogger().logException(ex);
@@ -538,15 +551,13 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.301 -0400", hash_original_method = "5949601888B92CAB7F6BB9E6373E9083", hash_generated_method = "0F4F27C37A67DEC752AD61966B152771")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.013 -0400", hash_original_method = "5949601888B92CAB7F6BB9E6373E9083", hash_generated_method = "3360C4881AB7D2BF98873187C27035A9")
     public void sendMessage(SIPMessage sipMessage) throws IOException {
-        dsTaint.addTaint(sipMessage.dsTaint);
         {
-            boolean var3BF3C2EA8CA9182E664AB6FE30991BAF_775799690 = (sipStack.isLoggingEnabled() && this.sipStack.isLogStackTraceOnMessageSend());
+            boolean var3BF3C2EA8CA9182E664AB6FE30991BAF_823375883 = (sipStack.isLoggingEnabled() && this.sipStack.isLogStackTraceOnMessageSend());
             {
                 {
-                    boolean var8DA488598994EBF1C41434FD73AFB7C6_1720611854 = (sipMessage instanceof SIPRequest &&
+                    boolean var8DA488598994EBF1C41434FD73AFB7C6_1292246962 = (sipMessage instanceof SIPRequest &&
                     ((SIPRequest)sipMessage).getRequestLine() != null);
                     {
                         this.sipStack.getStackLogger().logStackTrace(StackLogger.TRACE_INFO);
@@ -566,7 +577,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                     .getMessageProcessors()[0];
                 {
                     {
-                        boolean var37D638BEA91B51F1E4F5579247CF5778_2140230634 = (messageProcessor.getIpAddress().equals(this.peerAddress)
+                        boolean var37D638BEA91B51F1E4F5579247CF5778_1347363880 = (messageProcessor.getIpAddress().equals(this.peerAddress)
                         && messageProcessor.getPort() == this.peerPort
                         && messageProcessor.getTransport().equals(
                                 this.peerProtocol));
@@ -579,7 +590,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                                 ((RawMessageChannel) messageChannel)
                                 .processMessage(sipMessage);
                                 {
-                                    boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_347074677 = (sipStack.isLoggingEnabled());
+                                    boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_1143713298 = (sipStack.isLoggingEnabled());
                                     sipStack.getStackLogger().logDebug("Self routing message");
                                 } //End collapsed parenthetic
                             } //End block
@@ -605,36 +616,32 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         finally 
         {
             {
-                boolean var161C41EFE3B277A3D1A2C98433E0C178_1128027517 = (sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES) && !sipMessage.isNullRequest());
+                boolean var161C41EFE3B277A3D1A2C98433E0C178_1339868385 = (sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES) && !sipMessage.isNullRequest());
                 logMessage(sipMessage, peerAddress, peerPort, time);
                 {
-                    boolean varA725024344C592B5004E395739F1C5C4_773784530 = (sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_DEBUG));
+                    boolean varA725024344C592B5004E395739F1C5C4_1237302898 = (sipStack.getStackLogger().isLoggingEnabled(ServerLogger.TRACE_DEBUG));
                     sipStack.getStackLogger().logDebug("Sent EMPTY Message");
                 } //End collapsed parenthetic
             } //End collapsed parenthetic
         } //End block
+        addTaint(sipMessage.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.302 -0400", hash_original_method = "E29573D85212414C15B5600ED44221C0", hash_generated_method = "801A1DDDA0908ECBB35618C9C4EC5A3B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.015 -0400", hash_original_method = "E29573D85212414C15B5600ED44221C0", hash_generated_method = "38AC167F62C75FB5842B9BC695288BE2")
     protected void sendMessage(byte[] msg, InetAddress peerAddress,
             int peerPort, boolean reConnect) throws IOException {
-        dsTaint.addTaint(reConnect);
-        dsTaint.addTaint(peerAddress.dsTaint);
-        dsTaint.addTaint(msg[0]);
-        dsTaint.addTaint(peerPort);
         {
-            boolean var3BF3C2EA8CA9182E664AB6FE30991BAF_805130221 = (sipStack.isLoggingEnabled() && this.sipStack.isLogStackTraceOnMessageSend());
+            boolean var3BF3C2EA8CA9182E664AB6FE30991BAF_1921556200 = (sipStack.isLoggingEnabled() && this.sipStack.isLogStackTraceOnMessageSend());
             {
                 this.sipStack.getStackLogger().logStackTrace(StackLogger.TRACE_INFO);
             } //End block
         } //End collapsed parenthetic
         {
             {
-                boolean varCD7A6467843458627CC99D2CD95A9CA6_1656277556 = (sipStack.isLoggingEnabled());
+                boolean varCD7A6467843458627CC99D2CD95A9CA6_1570804848 = (sipStack.isLoggingEnabled());
                 {
                     this.sipStack.getStackLogger().logDebug(getClass().getName()
                         + ":sendMessage: Dropping reply!");
@@ -644,7 +651,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         } //End block
         {
             {
-                boolean varCD7A6467843458627CC99D2CD95A9CA6_1675072988 = (sipStack.isLoggingEnabled());
+                boolean varCD7A6467843458627CC99D2CD95A9CA6_708382322 = (sipStack.isLoggingEnabled());
                 {
                     this.sipStack.getStackLogger().logDebug("sendMessage " + peerAddress.getHostAddress() + "/"
                         + peerPort + "\n" + "messageSize =  "  + msg.length + " message = " + new String(msg));
@@ -678,23 +685,21 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         {
             InternalErrorHandler.handleException(ex);
         } //End block
+        addTaint(msg[0]);
+        addTaint(peerAddress.getTaint());
+        addTaint(peerPort);
+        addTaint(reConnect);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.302 -0400", hash_original_method = "38908DF8BAD797C5C3B9904DFAB1ABDF", hash_generated_method = "7C3B09DC43A8383FF5CCE5CAEB42B03D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.024 -0400", hash_original_method = "38908DF8BAD797C5C3B9904DFAB1ABDF", hash_generated_method = "786786D9F40D8CC4B5D6E3E1B696C050")
     protected void sendMessage(byte[] msg, InetAddress peerAddress,
             int peerPort, String peerProtocol, boolean retry) throws IOException {
-        dsTaint.addTaint(peerProtocol);
-        dsTaint.addTaint(peerAddress.dsTaint);
-        dsTaint.addTaint(retry);
-        dsTaint.addTaint(msg[0]);
-        dsTaint.addTaint(peerPort);
         {
             {
-                boolean varCD7A6467843458627CC99D2CD95A9CA6_550840928 = (sipStack.isLoggingEnabled());
+                boolean varCD7A6467843458627CC99D2CD95A9CA6_652946304 = (sipStack.isLoggingEnabled());
                 {
                     this.sipStack.getStackLogger().logDebug(getClass().getName()
                         + ":sendMessage: Dropping reply!");
@@ -704,7 +709,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         } //End block
         {
             {
-                boolean varCD7A6467843458627CC99D2CD95A9CA6_1767449108 = (sipStack.isLoggingEnabled());
+                boolean varCD7A6467843458627CC99D2CD95A9CA6_2043980660 = (sipStack.isLoggingEnabled());
                 {
                     this.sipStack.getStackLogger().logDebug( ":sendMessage " + peerAddress.getHostAddress() + "/"
                         + peerPort + "\n" + " messageSize = " + msg.length);
@@ -712,7 +717,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
             } //End collapsed parenthetic
         } //End block
         {
-            boolean varD90E5EEAD7F10D5D3C85319211A35E0C_209359638 = (peerProtocol.compareToIgnoreCase("UDP") == 0);
+            boolean varD90E5EEAD7F10D5D3C85319211A35E0C_125769962 = (peerProtocol.compareToIgnoreCase("UDP") == 0);
             {
                 DatagramPacket reply;
                 reply = new DatagramPacket(msg, msg.length,
@@ -727,7 +732,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                         sock = sipStack.getNetworkLayer().createDatagramSocket();
                     } //End block
                     {
-                        boolean varDA2675C4DA71C7DD141330FDB85BC848_352762317 = (sipStack.isLoggingEnabled());
+                        boolean varDA2675C4DA71C7DD141330FDB85BC848_1984188862 = (sipStack.isLoggingEnabled());
                         {
                             this.sipStack.getStackLogger().logDebug("sendMessage "
                             + peerAddress.getHostAddress() + "/" + peerPort
@@ -757,85 +762,97 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                 myOutputStream.flush();
             } //End block
         } //End collapsed parenthetic
+        addTaint(msg[0]);
+        addTaint(peerAddress.getTaint());
+        addTaint(peerPort);
+        addTaint(peerProtocol.getTaint());
+        addTaint(retry);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.303 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "0AAC993F2B0EE288482DFA16632D8269")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.025 -0400", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "8B50A5C11586599D0FC037510DD8F396")
     public SIPTransactionStack getSIPStack() {
-        return (SIPTransactionStack)dsTaint.getTaint();
+        SIPTransactionStack varB4EAC82CA7396A68D541C85D26508E83_1809630748 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1809630748 = sipStack;
+        varB4EAC82CA7396A68D541C85D26508E83_1809630748.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1809630748;
         // ---------- Original Method ----------
         //return sipStack;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.303 -0400", hash_original_method = "B7A5D479C43293000A9EAFE6F93DF6D0", hash_generated_method = "447B990ABE7D82F1DD8055F64757B036")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.025 -0400", hash_original_method = "B7A5D479C43293000A9EAFE6F93DF6D0", hash_generated_method = "06E5883D22FF8A6F139290DF4BC30C97")
     public String getTransport() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1692927609 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1692927609 = SIPConstants.UDP;
+        varB4EAC82CA7396A68D541C85D26508E83_1692927609.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1692927609;
         // ---------- Original Method ----------
         //return SIPConstants.UDP;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.303 -0400", hash_original_method = "EA072AA1AE1B409D48E6BC6990EBDEC5", hash_generated_method = "F2BF4711C9ACCA4FC16EA028E84094B3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.027 -0400", hash_original_method = "EA072AA1AE1B409D48E6BC6990EBDEC5", hash_generated_method = "5E0DF951943ED29B46A88A6B03E13FFB")
     public String getHost() {
-        String var5BCD5252B9BD017465FD628ED7276DDA_82867235 = (messageProcessor.getIpAddress().getHostAddress());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1115208760 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1115208760 = messageProcessor.getIpAddress().getHostAddress();
+        varB4EAC82CA7396A68D541C85D26508E83_1115208760.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1115208760;
         // ---------- Original Method ----------
         //return messageProcessor.getIpAddress().getHostAddress();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.303 -0400", hash_original_method = "891FD85C4A46ECEDCCE8E5933BDC3ADD", hash_generated_method = "9DBE8F13F0D9EA28EFF2DE546B4A1737")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.032 -0400", hash_original_method = "891FD85C4A46ECEDCCE8E5933BDC3ADD", hash_generated_method = "0F6ADF3C57FCDC1B262E56441D7D0C2F")
     public int getPort() {
-        int var08018CA200139FEC794EAAFB8EB517CE_862228639 = (((UDPMessageProcessor) messageProcessor).getPort());
-        return dsTaint.getTaintInt();
+        int var08018CA200139FEC794EAAFB8EB517CE_1539594012 = (((UDPMessageProcessor) messageProcessor).getPort());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_415520137 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_415520137;
         // ---------- Original Method ----------
         //return ((UDPMessageProcessor) messageProcessor).getPort();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.303 -0400", hash_original_method = "86CAA293F63DFC3CC87A4ACD6BC27DDA", hash_generated_method = "FB5A251203C7EF6881DBA9EADE38679C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.036 -0400", hash_original_method = "86CAA293F63DFC3CC87A4ACD6BC27DDA", hash_generated_method = "708A8512FD1983C79C570B10528327C7")
     public String getPeerName() {
-        String varDE6457F2C82F05D08D0D085B8F4661BD_470127943 = (peerAddress.getHostName());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_486466505 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_486466505 = peerAddress.getHostName();
+        varB4EAC82CA7396A68D541C85D26508E83_486466505.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_486466505;
         // ---------- Original Method ----------
         //return peerAddress.getHostName();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.303 -0400", hash_original_method = "A07C7EAAB254DF7A2A64ECDA7F650470", hash_generated_method = "70431C9241E1D9FD5E29EA73B8B601A6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.036 -0400", hash_original_method = "A07C7EAAB254DF7A2A64ECDA7F650470", hash_generated_method = "1EB923D7A711EBAF885C7B3CBD70EE7A")
     public String getPeerAddress() {
-        String var47E3F0432452243B392A376991773E94_449180899 = (peerAddress.getHostAddress());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1034740219 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1034740219 = peerAddress.getHostAddress();
+        varB4EAC82CA7396A68D541C85D26508E83_1034740219.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1034740219;
         // ---------- Original Method ----------
         //return peerAddress.getHostAddress();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.304 -0400", hash_original_method = "1F29EC3BC94C3E0863F530FCD37A61F3", hash_generated_method = "B75EA17B15223DF670C4300DF5D740DC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.036 -0400", hash_original_method = "1F29EC3BC94C3E0863F530FCD37A61F3", hash_generated_method = "7CBE7C3EB0968BB03FAAB29725426DEA")
     protected InetAddress getPeerInetAddress() {
-        return (InetAddress)dsTaint.getTaint();
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_156860987 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_156860987 = peerAddress;
+        varB4EAC82CA7396A68D541C85D26508E83_156860987.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_156860987;
         // ---------- Original Method ----------
         //return peerAddress;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.304 -0400", hash_original_method = "3F01B3F60F79E6CB5C3DF3B66FDD88DE", hash_generated_method = "F3B2A430E277BDEF47EE2C6540EA63FA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.046 -0400", hash_original_method = "3F01B3F60F79E6CB5C3DF3B66FDD88DE", hash_generated_method = "FD88FE90579C03B9703D448F7E2687B3")
     public boolean equals(Object other) {
-        dsTaint.addTaint(other.dsTaint);
         boolean retval;
         {
-            boolean varE5000AFAE6691EEE0058A00BC83324BD_637326585 = (!this.getClass().equals(other.getClass()));
+            boolean varE5000AFAE6691EEE0058A00BC83324BD_1710108719 = (!this.getClass().equals(other.getClass()));
             {
                 retval = false;
             } //End block
@@ -845,7 +862,9 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
                 retval = this.getKey().equals(that.getKey());
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(other.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_988567921 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_988567921;
         // ---------- Original Method ----------
         //if (other == null)
             //return false;
@@ -860,104 +879,113 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.304 -0400", hash_original_method = "8A0A97143B2090B701AABAA2A97E73FB", hash_generated_method = "F41DBC9AEAEB4A138AAB5E63A3F596C1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.047 -0400", hash_original_method = "8A0A97143B2090B701AABAA2A97E73FB", hash_generated_method = "BAED4D381A41EAEC5E15CFA163C64685")
     public String getKey() {
-        String var8A66DE08122FD6EC4FCDDEF7A05AC867_2071140845 = (getKey(peerAddress, peerPort, "UDP"));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1434002789 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1434002789 = getKey(peerAddress, peerPort, "UDP");
+        varB4EAC82CA7396A68D541C85D26508E83_1434002789.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1434002789;
         // ---------- Original Method ----------
         //return getKey(peerAddress, peerPort, "UDP");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.304 -0400", hash_original_method = "66F44212C04D4B032E5D57BC9126F4FF", hash_generated_method = "F297C331E54364C1F51C42BBD20DE144")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.047 -0400", hash_original_method = "66F44212C04D4B032E5D57BC9126F4FF", hash_generated_method = "30C7DEFB22D5F64B73324F825449D86A")
     public int getPeerPacketSourcePort() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_729541678 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_729541678;
         // ---------- Original Method ----------
         //return peerPacketSourcePort;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.304 -0400", hash_original_method = "DC065FB3DE06142DBC04F100FD01BCF3", hash_generated_method = "EA514EEE7FFF2B4B31DF65E138A3BC3F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.048 -0400", hash_original_method = "DC065FB3DE06142DBC04F100FD01BCF3", hash_generated_method = "C9476316E59536EFCEC0C8DA29613EB6")
     public InetAddress getPeerPacketSourceAddress() {
-        return (InetAddress)dsTaint.getTaint();
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_2030972582 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2030972582 = peerPacketSourceAddress;
+        varB4EAC82CA7396A68D541C85D26508E83_2030972582.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2030972582;
         // ---------- Original Method ----------
         //return peerPacketSourceAddress;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.304 -0400", hash_original_method = "B7C8CBECE48532207EA3107C3752BABB", hash_generated_method = "F60101C6B2B04C84924E3397632C9510")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.048 -0400", hash_original_method = "B7C8CBECE48532207EA3107C3752BABB", hash_generated_method = "ED650B385DEDB13DE5D915B3712DF402")
     public String getViaHost() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1939635596 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1939635596 = this.myAddress;
+        varB4EAC82CA7396A68D541C85D26508E83_1939635596.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1939635596;
         // ---------- Original Method ----------
         //return this.myAddress;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.304 -0400", hash_original_method = "F69C682C43E3A7CF8FCB14E212CB7049", hash_generated_method = "D64E273F55D666A1CE85DBE5F985853A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.048 -0400", hash_original_method = "F69C682C43E3A7CF8FCB14E212CB7049", hash_generated_method = "08781B7B55DE4B91BA476604A111740F")
     public int getViaPort() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_850218834 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_850218834;
         // ---------- Original Method ----------
         //return this.myPort;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.305 -0400", hash_original_method = "457243F9D7A1AB9FD34866D85709C85D", hash_generated_method = "E95DFCAB43CE008AFCB8CFF32023A226")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.095 -0400", hash_original_method = "457243F9D7A1AB9FD34866D85709C85D", hash_generated_method = "1F2B85CC137CA8B735DB7E150330F918")
     public boolean isReliable() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_820364277 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_820364277;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.305 -0400", hash_original_method = "51201694E0EE76265BF39848EF10BE9C", hash_generated_method = "7FD317C466D6873CE376C80F23CBD437")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.096 -0400", hash_original_method = "51201694E0EE76265BF39848EF10BE9C", hash_generated_method = "D4D6297A6086F266F799B747BA44026E")
     public boolean isSecure() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2090205747 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2090205747;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.305 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "AEBA702D6111FFED2D7D8A1EFD0D8FC1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.096 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "284F2F783030AF8A95F1928DFC376845")
     public int getPeerPort() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_264067394 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_264067394;
         // ---------- Original Method ----------
         //return peerPort;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.305 -0400", hash_original_method = "DB79607DA3ACB5FA2D24428DF2713F98", hash_generated_method = "B04499CEAABB7F00BDAEC74FE715B53A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.096 -0400", hash_original_method = "DB79607DA3ACB5FA2D24428DF2713F98", hash_generated_method = "06446CC08CAF9DAD2B78130C29D2A135")
     public String getPeerProtocol() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1884272392 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1884272392 = this.peerProtocol;
+        varB4EAC82CA7396A68D541C85D26508E83_1884272392.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1884272392;
         // ---------- Original Method ----------
         //return this.peerProtocol;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.305 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1CF5A5DB4E3FE1187B00A561217E4793")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.097 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1CF5A5DB4E3FE1187B00A561217E4793")
     public void close() {
         // ---------- Original Method ----------
     }
 
     
     class PingBackTimerTask extends TimerTask {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.097 -0400", hash_original_field = "9D0DE3EE8DA929F164DA3D6942A26C0E", hash_generated_field = "902291576A6EA4536D6C9669E1B1BFD7")
+
         String ipAddress;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.097 -0400", hash_original_field = "901555FB06E346CB065CEB9808DCFC25", hash_generated_field = "5A948EF636511EF149269A68FE278AED")
+
         int port;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.305 -0400", hash_original_method = "041AEFB77EA8D7413831FA09D8E7E5F2", hash_generated_method = "E489A984B32F1A4B54676692A902980F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public PingBackTimerTask(String ipAddress, int port) {
-            dsTaint.addTaint(port);
-            dsTaint.addTaint(ipAddress);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.097 -0400", hash_original_method = "041AEFB77EA8D7413831FA09D8E7E5F2", hash_generated_method = "AF34990A25633808182801353E3CAE7C")
+        public  PingBackTimerTask(String ipAddress, int port) {
+            this.ipAddress = ipAddress;
+            this.port = port;
             pingBackRecord.put(ipAddress + ":" + port, this);
             // ---------- Original Method ----------
             //this.ipAddress = ipAddress;
@@ -966,8 +994,7 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.306 -0400", hash_original_method = "6BA8F9798D5715ABDAD288256921D45A", hash_generated_method = "A12DB3F698D6F6B742E8AA41F07B747A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.101 -0400", hash_original_method = "6BA8F9798D5715ABDAD288256921D45A", hash_generated_method = "A12DB3F698D6F6B742E8AA41F07B747A")
         @Override
         public void run() {
             pingBackRecord.remove(ipAddress + ":" + port);
@@ -976,12 +1003,12 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.306 -0400", hash_original_method = "E214E7BC5755C758A91BCF58AAE3832E", hash_generated_method = "E0CBD0BBF689FE0AFCAC393A4AF6F919")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.101 -0400", hash_original_method = "E214E7BC5755C758A91BCF58AAE3832E", hash_generated_method = "79C45015941A26FB50265C6F40B68205")
         @Override
         public int hashCode() {
-            int varFAFA3497566668EE5F9BFBDEC9425D0B_1089408647 = ((ipAddress + ":" + port).hashCode());
-            return dsTaint.getTaintInt();
+            int varFAFA3497566668EE5F9BFBDEC9425D0B_1418097334 = ((ipAddress + ":" + port).hashCode());
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461942474 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461942474;
             // ---------- Original Method ----------
             //return (ipAddress + ":" + port).hashCode();
         }

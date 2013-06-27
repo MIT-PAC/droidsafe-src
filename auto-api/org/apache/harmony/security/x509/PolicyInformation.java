@@ -15,36 +15,39 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 
 public final class PolicyInformation {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.162 -0400", hash_original_field = "92D0D21381807C8F8C4846CC406188DF", hash_generated_field = "9775983C00DA46C6C34065F5DC2DC5C0")
+
     private String policyIdentifier;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.162 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
+
     private byte[] encoding;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.903 -0400", hash_original_method = "97521BA30F23785F6A554ACA63DC6021", hash_generated_method = "4CC46DBB130D728B86C74C368A866978")
-    @DSModeled(DSC.SAFE)
-    public PolicyInformation(String policyIdentifier) {
-        dsTaint.addTaint(policyIdentifier);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.175 -0400", hash_original_method = "97521BA30F23785F6A554ACA63DC6021", hash_generated_method = "9C337939CB6B38E442B16C9693BA1B39")
+    public  PolicyInformation(String policyIdentifier) {
+        this.policyIdentifier = policyIdentifier;
         // ---------- Original Method ----------
         //this.policyIdentifier = policyIdentifier;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.903 -0400", hash_original_method = "012FFA67DCC82ECD3E1505D0CB12E6E1", hash_generated_method = "F235639D7654906EDA88D192B2F93AFE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.176 -0400", hash_original_method = "012FFA67DCC82ECD3E1505D0CB12E6E1", hash_generated_method = "EEF5313BDF1B5BC7A8243A6519F32891")
     public String getPolicyIdentifier() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_847742886 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_847742886 = policyIdentifier;
+        varB4EAC82CA7396A68D541C85D26508E83_847742886.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_847742886;
         // ---------- Original Method ----------
         //return policyIdentifier;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.903 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "94FDBB09C313C97C9EDC6BBF307FBE8A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.176 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "D324D27878C10745D4B8EDAF3913CBBC")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
         } //End block
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1678797485 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1678797485;
         // ---------- Original Method ----------
         //if (encoding == null) {
             //encoding = ASN1.encode(this);
@@ -53,52 +56,32 @@ public final class PolicyInformation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.903 -0400", hash_original_method = "76E469F93D4AF204B8C17A8AD4618A81", hash_generated_method = "D8B050FE73125B494B418725586E85B9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.182 -0400", hash_original_method = "76E469F93D4AF204B8C17A8AD4618A81", hash_generated_method = "6BC387305FF8D06C2387001AE9AB45D7")
     public void dumpValue(StringBuilder sb) {
-        dsTaint.addTaint(sb.dsTaint);
         sb.append("Policy Identifier [").append(policyIdentifier).append(']');
+        addTaint(sb.getTaint());
         // ---------- Original Method ----------
         //sb.append("Policy Identifier [").append(policyIdentifier).append(']');
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.182 -0400", hash_original_field = "5F2D8C5221F74D1DF86123C2DA677D6B", hash_generated_field = "BFFF063EC30CEABB951E1244D2EB5617")
+
     public static final ASN1Sequence ASN1 = new ASN1Sequence(
-            new ASN1Type[] { ASN1Oid.getInstance(), ASN1Any.getInstance() }) {        {
+            new ASN1Type[] { ASN1Oid.getInstance(), ASN1Any.getInstance() }) {
+        {
             setOptional(1);
         }
-        
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.904 -0400", hash_original_method = "8501EA7BFA173E6518BAFB2356927122", hash_generated_method = "0A934FC1C1E805118BA4208B9593A79D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        @Override
-        protected Object getDecodedObject(BerInputStream in) {
-            dsTaint.addTaint(in.dsTaint);
-            Object[] values;
-            values = (Object[]) in.content;
-            Object var4DE84834F726062BC63AA5EF5B413311_756545729 = (new PolicyInformation(ObjectIdentifier.toString((int[]) values[0])));
-            return (Object)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //Object[] values = (Object[]) in.content;
-            //return new PolicyInformation(ObjectIdentifier.toString((int[]) values[0]));
+
+        @Override protected Object getDecodedObject(BerInputStream in) {
+            Object[] values = (Object[]) in.content;
+            return new PolicyInformation(ObjectIdentifier.toString((int[]) values[0]));
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.904 -0400", hash_original_method = "0627C35F4A048D619EB92B23493B5466", hash_generated_method = "3C3936887849218866E6573BE9B0E245")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        @Override
-        protected void getValues(Object object, Object[] values) {
-            dsTaint.addTaint(values[0].dsTaint);
-            dsTaint.addTaint(object.dsTaint);
-            PolicyInformation pi;
-            pi = (PolicyInformation) object;
+        @Override protected void getValues(Object object, Object[] values) {
+            PolicyInformation pi = (PolicyInformation) object;
             values[0] = ObjectIdentifier.toIntArray(pi.policyIdentifier);
-            // ---------- Original Method ----------
-            //PolicyInformation pi = (PolicyInformation) object;
-            //values[0] = ObjectIdentifier.toIntArray(pi.policyIdentifier);
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

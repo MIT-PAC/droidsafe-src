@@ -10,38 +10,34 @@ import java.util.Iterator;
 
 public class AccountsException extends Exception {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.497 -0400", hash_original_method = "99F952DCE8BA4518D0E18051C88ACAE6", hash_generated_method = "0AB72CE026EED9BAA38D74A54C2A0C16")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AccountsException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:43.680 -0400", hash_original_method = "99F952DCE8BA4518D0E18051C88ACAE6", hash_generated_method = "0AB72CE026EED9BAA38D74A54C2A0C16")
+    public  AccountsException() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.498 -0400", hash_original_method = "BE6623EBDA21E425CA18A18688AD132F", hash_generated_method = "16E95D6D4F7924D59C27316EAF1246F7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AccountsException(String message) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:43.745 -0400", hash_original_method = "BE6623EBDA21E425CA18A18688AD132F", hash_generated_method = "AF40F58066E5BF8AB044BD65C8147500")
+    public  AccountsException(String message) {
         super(message);
-        dsTaint.addTaint(message);
+        addTaint(message.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.499 -0400", hash_original_method = "0930C541FB340F31959DB9765F7013EF", hash_generated_method = "53A1441425925A05C734E3FD59740DB8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AccountsException(String message, Throwable cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:43.792 -0400", hash_original_method = "0930C541FB340F31959DB9765F7013EF", hash_generated_method = "EEB6C383F67CB2AA8CAEE0439DB02CF8")
+    public  AccountsException(String message, Throwable cause) {
         super(message, cause);
-        dsTaint.addTaint(message);
-        dsTaint.addTaint(cause.dsTaint);
+        addTaint(message.getTaint());
+        addTaint(cause.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.499 -0400", hash_original_method = "E58C6CF199CBA33C60361DD431731963", hash_generated_method = "9EF681FB9172AACEA783028C55F13ADC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AccountsException(Throwable cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:43.799 -0400", hash_original_method = "E58C6CF199CBA33C60361DD431731963", hash_generated_method = "5279A5DC5218AFF2452572A73CA515DA")
+    public  AccountsException(Throwable cause) {
         super(cause);
-        dsTaint.addTaint(cause.dsTaint);
+        addTaint(cause.getTaint());
         // ---------- Original Method ----------
     }
 

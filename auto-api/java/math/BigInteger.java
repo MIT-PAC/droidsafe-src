@@ -14,28 +14,47 @@ import java.io.Serializable;
 import java.util.Random;
 
 public class BigInteger extends Number implements Comparable<BigInteger>, Serializable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "33A2DB2A239C5BAAA46376495EE5F6ED", hash_generated_field = "1B931597CE47BECC94315E7FDFB3AE18")
+
     private transient BigInt bigInt;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "F0121707B716C3D41C45CEC890F8FEBD", hash_generated_field = "B1CF9FA5CC5896A14634587A7438CDD0")
+
     private transient boolean nativeIsValid = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "562B560548EAC394A69BD390BABAEBE5", hash_generated_field = "36EDDB91E81C2B3A992259BBDA560C8D")
+
     private transient boolean javaIsValid = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "A2AACBD15B619A9B9E5581A6C33BD2B1", hash_generated_field = "EF92B8843E3664BCE02DEF9DAE8B81D8")
+
     transient int[] digits;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "56F736C2BD891F3A00F34C71E5AD8378", hash_generated_field = "49E386B29ED8E51F4B9308F78ED67301")
+
     transient int numberLength;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "04B29480233F4DEF5C875875B6BDC3B1", hash_generated_field = "92BF56588B083F4EFC932B66DB92601C")
+
     transient int sign;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "553C03BFED44A9505466470F56E3ADC5", hash_generated_field = "6063015DEF6F532F83AE577B35CA2F93")
+
     private transient int firstNonzeroDigit = -2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "327B0A3531EA3D97749FE579CC4632A4", hash_generated_field = "9E963B134F5112D99A51A8B2403DC06B")
+
     private int signum;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "28C3D8F4B7E312AF5E0D6B59A50EFD1C", hash_generated_field = "62EEE6A49B1745E7CDFD636319A9ED04")
+
     private byte[] magnitude;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "B81E47D2AA677809E4BE3C9232B2407F", hash_generated_field = "3D9A07F218385AD7A5B345B923EAF46E")
+
     private transient int hashCode = 0;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.513 -0400", hash_original_method = "E2046ACAAE3FADB78A197B33030B87EF", hash_generated_method = "600B5573BC242B2FB9E36E4533FB9946")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     BigInteger(BigInt bigInt) {
-        dsTaint.addTaint(bigInt.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.446 -0400", hash_original_method = "E2046ACAAE3FADB78A197B33030B87EF", hash_generated_method = "3692A01A842ED88D7B0B7D06B95E593C")
+      BigInteger(BigInt bigInt) {
         {
-            boolean varCBCE59BC652D0587CC25D4F0C19CC324_2074417131 = (bigInt == null || bigInt.getNativeBIGNUM() == 0);
+            boolean varCBCE59BC652D0587CC25D4F0C19CC324_1919855105 = (bigInt == null || bigInt.getNativeBIGNUM() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError();
             } //End block
         } //End collapsed parenthetic
         setBigInt(bigInt);
+        addTaint(bigInt.getTaint());
         // ---------- Original Method ----------
         //if (bigInt == null || bigInt.getNativeBIGNUM() == 0) {
             //throw new AssertionError();
@@ -44,15 +63,14 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.513 -0400", hash_original_method = "6A0326FFA4F8DFD22C6BE505D4303A06", hash_generated_method = "7EC8902EF23259C7372AE366BB3430ED")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     BigInteger(int sign, long value) {
-        dsTaint.addTaint(sign);
-        dsTaint.addTaint(value);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.446 -0400", hash_original_method = "6A0326FFA4F8DFD22C6BE505D4303A06", hash_generated_method = "55FCDBFB4835752CB686FAA9AE63931C")
+      BigInteger(int sign, long value) {
         BigInt bigInt;
         bigInt = new BigInt();
         bigInt.putULongInt(value, (sign < 0));
         setBigInt(bigInt);
+        addTaint(sign);
+        addTaint(value);
         // ---------- Original Method ----------
         //BigInt bigInt = new BigInt();
         //bigInt.putULongInt(value, (sign < 0));
@@ -60,23 +78,19 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.514 -0400", hash_original_method = "8FE766A630C587CF3D36C6776BEC57AB", hash_generated_method = "5829194A1D0584B3DE2F1299D1DDC195")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     BigInteger(int sign, int numberLength, int[] digits) {
-        dsTaint.addTaint(sign);
-        dsTaint.addTaint(numberLength);
-        dsTaint.addTaint(digits[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.453 -0400", hash_original_method = "8FE766A630C587CF3D36C6776BEC57AB", hash_generated_method = "9D5A992E0E61ADC1EA67DF0D6E21AF4A")
+      BigInteger(int sign, int numberLength, int[] digits) {
         setJavaRepresentation(sign, numberLength, digits);
+        addTaint(sign);
+        addTaint(numberLength);
+        addTaint(digits[0]);
         // ---------- Original Method ----------
         //setJavaRepresentation(sign, numberLength, digits);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.514 -0400", hash_original_method = "0CDCBE4F35D9E336AD3EE0D0E2D0776D", hash_generated_method = "2B48B1FBB883ABCD7F4FFCF85A9584F2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public BigInteger(int numBits, Random random) {
-        dsTaint.addTaint(numBits);
-        dsTaint.addTaint(random.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.454 -0400", hash_original_method = "0CDCBE4F35D9E336AD3EE0D0E2D0776D", hash_generated_method = "448A70D33081051C8A47ABC82B816F43")
+    public  BigInteger(int numBits, Random random) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("numBits < 0: " + numBits);
         } //End block
@@ -121,16 +135,15 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.514 -0400", hash_original_method = "E06C60E93C7C91BB266029ED9C3D532A", hash_generated_method = "5D931F75C56FA65C741688EB22920893")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public BigInteger(int bitLength, int certainty, Random unused) {
-        dsTaint.addTaint(certainty);
-        dsTaint.addTaint(unused.dsTaint);
-        dsTaint.addTaint(bitLength);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.455 -0400", hash_original_method = "E06C60E93C7C91BB266029ED9C3D532A", hash_generated_method = "96E12250D1C79C6C0E675539E8BA8DB3")
+    public  BigInteger(int bitLength, int certainty, Random unused) {
         {
             if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("bitLength < 2: " + bitLength);
         } //End block
         setBigInt(BigInt.generatePrimeDefault(bitLength));
+        addTaint(bitLength);
+        addTaint(certainty);
+        addTaint(unused.getTaint());
         // ---------- Original Method ----------
         //if (bitLength < 2) {
             //throw new ArithmeticException("bitLength < 2: " + bitLength);
@@ -139,14 +152,13 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.514 -0400", hash_original_method = "858DE6DF463E0F4BFB47F99F590AB0EF", hash_generated_method = "2CCA4B509AADCF5F1D2DDF37DD558ABA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public BigInteger(String value) {
-        dsTaint.addTaint(value);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.468 -0400", hash_original_method = "858DE6DF463E0F4BFB47F99F590AB0EF", hash_generated_method = "5B3C474263B131654FAC29BF779FBB37")
+    public  BigInteger(String value) {
         BigInt bigInt;
         bigInt = new BigInt();
         bigInt.putDecString(value);
         setBigInt(bigInt);
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //BigInt bigInt = new BigInt();
         //bigInt.putDecString(value);
@@ -154,11 +166,8 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.515 -0400", hash_original_method = "A13EC41ACC3DF589C11C4779074EEB6B", hash_generated_method = "BE516AAFA1FD4E7346E51AF991A28CF9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public BigInteger(String value, int radix) {
-        dsTaint.addTaint(radix);
-        dsTaint.addTaint(value);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.469 -0400", hash_original_method = "A13EC41ACC3DF589C11C4779074EEB6B", hash_generated_method = "683CB73626994EBAC54E64FD0CEC28D7")
+    public  BigInteger(String value, int radix) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("value == null");
         } //End block
@@ -179,13 +188,15 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
                 if (DroidSafeAndroidRuntime.control) throw new NumberFormatException("Invalid radix: " + radix);
             } //End block
             {
-                boolean var61FDD46CB4F2D30108ACB79894E33C39_745926018 = (value.isEmpty());
+                boolean var61FDD46CB4F2D30108ACB79894E33C39_1753315573 = (value.isEmpty());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NumberFormatException("value.isEmpty()");
                 } //End block
             } //End collapsed parenthetic
             BigInteger.parseFromString(this, value, radix);
         } //End block
+        addTaint(value.getTaint());
+        addTaint(radix);
         // ---------- Original Method ----------
         //if (value == null) {
             //throw new NullPointerException("value == null");
@@ -210,11 +221,8 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.519 -0400", hash_original_method = "4725614D4A9FDEE6DBC2F6DB247469CF", hash_generated_method = "20A4653B97DB06585C05B8585C0740C9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public BigInteger(int signum, byte[] magnitude) {
-        dsTaint.addTaint(signum);
-        dsTaint.addTaint(magnitude[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.490 -0400", hash_original_method = "4725614D4A9FDEE6DBC2F6DB247469CF", hash_generated_method = "FCFC253D52A9232745E1F72C242A3ECC")
+    public  BigInteger(int signum, byte[] magnitude) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("magnitude == null");
         } //End block
@@ -235,6 +243,8 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
         bigInt = new BigInt();
         bigInt.putBigEndian(magnitude, signum < 0);
         setBigInt(bigInt);
+        addTaint(signum);
+        addTaint(magnitude[0]);
         // ---------- Original Method ----------
         //if (magnitude == null) {
             //throw new NullPointerException("magnitude == null");
@@ -255,10 +265,8 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.519 -0400", hash_original_method = "ABB1E16F13BE7B2CA5EC1AADB52B2350", hash_generated_method = "B96B1D48C970CEC4B61D48D1F13E0A52")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public BigInteger(byte[] value) {
-        dsTaint.addTaint(value[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.491 -0400", hash_original_method = "ABB1E16F13BE7B2CA5EC1AADB52B2350", hash_generated_method = "5E0192300D683E47FF7F4C1D3699B570")
+    public  BigInteger(byte[] value) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NumberFormatException("value.length == 0");
         } //End block
@@ -266,6 +274,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
         bigInt = new BigInt();
         bigInt.putBigEndianTwosComplement(value);
         setBigInt(bigInt);
+        addTaint(value[0]);
         // ---------- Original Method ----------
         //if (value.length == 0) {
             //throw new NumberFormatException("value.length == 0");
@@ -276,16 +285,38 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.520 -0400", hash_original_method = "7B92331634E6E3BE19D048B912B09B7F", hash_generated_method = "4DA92084505A66DA1B9573728767EA0D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.503 -0400", hash_original_method = "7B92331634E6E3BE19D048B912B09B7F", hash_generated_method = "FCE35A1BFABF1BC4B9D5F234C9FC4AA4")
      BigInt getBigInt() {
+        BigInt varB4EAC82CA7396A68D541C85D26508E83_820956860 = null; //Variable for return #1
+        BigInt varB4EAC82CA7396A68D541C85D26508E83_981494476 = null; //Variable for return #2
+        BigInt varB4EAC82CA7396A68D541C85D26508E83_656131506 = null; //Variable for return #3
         {
+            varB4EAC82CA7396A68D541C85D26508E83_820956860 = bigInt;
+        } //End block
+        {
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_981494476 = bigInt;
+            } //End block
             BigInt bigInt;
             bigInt = new BigInt();
             bigInt.putLittleEndianInts(digits, (sign < 0));
             setBigInt(bigInt);
+            varB4EAC82CA7396A68D541C85D26508E83_656131506 = bigInt;
         } //End block
-        return (BigInt)dsTaint.getTaint();
+        BigInt varA7E53CE21691AB073D9660D615818899_1312338759; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1312338759 = varB4EAC82CA7396A68D541C85D26508E83_820956860;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1312338759 = varB4EAC82CA7396A68D541C85D26508E83_981494476;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1312338759 = varB4EAC82CA7396A68D541C85D26508E83_656131506;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1312338759.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1312338759;
         // ---------- Original Method ----------
         //if (nativeIsValid) {
             //return bigInt;
@@ -302,10 +333,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.520 -0400", hash_original_method = "CC364AFCED646D5BD618C239A0F61C61", hash_generated_method = "89A6CF3533F93FC28CFE1C12C7A687F2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.508 -0400", hash_original_method = "CC364AFCED646D5BD618C239A0F61C61", hash_generated_method = "FB8F32B7985E2B240502D873FAE13D52")
     private void setBigInt(BigInt bigInt) {
-        dsTaint.addTaint(bigInt.dsTaint);
+        this.bigInt = bigInt;
         this.nativeIsValid = true;
         // ---------- Original Method ----------
         //this.bigInt = bigInt;
@@ -313,18 +343,17 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.521 -0400", hash_original_method = "DA7CFD2DB9135F0E2C89139BCCCBB12F", hash_generated_method = "5CCAB52CD6B8D39014FF6883A2D4EA7F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.509 -0400", hash_original_method = "DA7CFD2DB9135F0E2C89139BCCCBB12F", hash_generated_method = "0F64427ABCDD686DC8AEFEEE13813050")
     private void setJavaRepresentation(int sign, int numberLength, int[] digits) {
-        dsTaint.addTaint(sign);
-        dsTaint.addTaint(numberLength);
-        dsTaint.addTaint(digits[0]);
         {
             ;
         } //End block
         {
             sign = 0;
         } //End block
+        this.sign = sign;
+        this.digits = digits;
+        this.numberLength = numberLength;
         this.javaIsValid = true;
         // ---------- Original Method ----------
         //while (numberLength > 0 && digits[--numberLength] == 0) {
@@ -340,8 +369,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.521 -0400", hash_original_method = "E11A76F306D885B62849938EE7ACFF1F", hash_generated_method = "7FD6176B1059E967EE7FA7FB5E533B6E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.513 -0400", hash_original_method = "E11A76F306D885B62849938EE7ACFF1F", hash_generated_method = "7FD6176B1059E967EE7FA7FB5E533B6E")
      void prepareJavaRepresentation() {
         {
             int sign;
@@ -380,31 +408,43 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.522 -0400", hash_original_method = "F45D943577A758DE4A75A5CD2DF6D206", hash_generated_method = "B5A8C5B686BF368F4891460BB21DF2A9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.516 -0400", hash_original_method = "F45D943577A758DE4A75A5CD2DF6D206", hash_generated_method = "4806A5E9A5E2342CC20C2669FBDEB778")
     public byte[] toByteArray() {
-        byte[] var3BE346B2FB665BD8F6B33361C4C01498_1301647493 = (twosComplement());
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var3BE346B2FB665BD8F6B33361C4C01498_1367681711 = (twosComplement());
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1960527322 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1960527322;
         // ---------- Original Method ----------
         //return twosComplement();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.522 -0400", hash_original_method = "4D099B3B9B18238917CAE07611FC89C9", hash_generated_method = "2C345D62CD000B590D1EAE349ACED081")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.526 -0400", hash_original_method = "4D099B3B9B18238917CAE07611FC89C9", hash_generated_method = "5FFE376E13247436A477766EBEAE29B7")
     public BigInteger abs() {
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_880806920 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_71994394 = null; //Variable for return #2
         BigInt bigInt;
         bigInt = getBigInt();
         {
-            boolean var62DB935F980131F1A8A6EA88CF668813_744010324 = (bigInt.sign() >= 0);
+            boolean var62DB935F980131F1A8A6EA88CF668813_1827362047 = (bigInt.sign() >= 0);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_880806920 = this;
+            } //End block
         } //End collapsed parenthetic
         BigInt a;
         a = bigInt.copy();
         a.setSign(1);
-        BigInteger var9006420D0C39420B25699B58EEADD938_1469872483 = (new BigInteger(a));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_71994394 = new BigInteger(a);
+        BigInteger varA7E53CE21691AB073D9660D615818899_1827416278; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1827416278 = varB4EAC82CA7396A68D541C85D26508E83_880806920;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1827416278 = varB4EAC82CA7396A68D541C85D26508E83_71994394;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1827416278.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1827416278;
         // ---------- Original Method ----------
         //BigInt bigInt = getBigInt();
         //if (bigInt.sign() >= 0) {
@@ -416,18 +456,32 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.522 -0400", hash_original_method = "DFABA71B5B9AE3E4CD65AD4AD666E31C", hash_generated_method = "7BE445C11737E3CEAA6B6ECD539A6ED0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.530 -0400", hash_original_method = "DFABA71B5B9AE3E4CD65AD4AD666E31C", hash_generated_method = "E0BE2466421EB4041C427832FF47C6F7")
     public BigInteger negate() {
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_11219811 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1382487392 = null; //Variable for return #2
         BigInt bigInt;
         bigInt = getBigInt();
         int sign;
         sign = bigInt.sign();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_11219811 = this;
+        } //End block
         BigInt a;
         a = bigInt.copy();
         a.setSign(-sign);
-        BigInteger var9006420D0C39420B25699B58EEADD938_1341175333 = (new BigInteger(a));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1382487392 = new BigInteger(a);
+        BigInteger varA7E53CE21691AB073D9660D615818899_2035995292; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_2035995292 = varB4EAC82CA7396A68D541C85D26508E83_11219811;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_2035995292 = varB4EAC82CA7396A68D541C85D26508E83_1382487392;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_2035995292.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2035995292;
         // ---------- Original Method ----------
         //BigInt bigInt = getBigInt();
         //int sign = bigInt.sign();
@@ -440,22 +494,43 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.522 -0400", hash_original_method = "5B8AB174D1647BD6610121BBBEE51EE5", hash_generated_method = "E043390214333AE8278BBAD7AC426B35")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.541 -0400", hash_original_method = "5B8AB174D1647BD6610121BBBEE51EE5", hash_generated_method = "3ADD259A899F45231102D03C8CB8739A")
     public BigInteger add(BigInteger value) {
-        dsTaint.addTaint(value.dsTaint);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_120997478 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1680749486 = null; //Variable for return #2
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_493262943 = null; //Variable for return #3
         BigInt lhs;
         lhs = getBigInt();
         BigInt rhs;
         rhs = value.getBigInt();
         {
-            boolean var715C4C2597076EBBD7DE116903FFEC43_1680471791 = (rhs.sign() == 0);
+            boolean var715C4C2597076EBBD7DE116903FFEC43_1969101121 = (rhs.sign() == 0);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_120997478 = this;
+            } //End block
         } //End collapsed parenthetic
         {
-            boolean var5A6924AA8D9332981417DC839AF99791_1983423226 = (lhs.sign() == 0);
+            boolean var5A6924AA8D9332981417DC839AF99791_819239817 = (lhs.sign() == 0);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1680749486 = value;
+            } //End block
         } //End collapsed parenthetic
-        BigInteger varDCC71E701104CC481CA3182C7DBD9602_1114249118 = (new BigInteger(BigInt.addition(lhs, rhs)));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_493262943 = new BigInteger(BigInt.addition(lhs, rhs));
+        addTaint(value.getTaint());
+        BigInteger varA7E53CE21691AB073D9660D615818899_668293431; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_668293431 = varB4EAC82CA7396A68D541C85D26508E83_120997478;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_668293431 = varB4EAC82CA7396A68D541C85D26508E83_1680749486;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_668293431 = varB4EAC82CA7396A68D541C85D26508E83_493262943;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_668293431.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_668293431;
         // ---------- Original Method ----------
         //BigInt lhs = getBigInt();
         //BigInt rhs = value.getBigInt();
@@ -469,19 +544,33 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.523 -0400", hash_original_method = "753BA04897A44EE33BA2055C50810858", hash_generated_method = "8F71452669F4DD21E9E470BE1CFD2C05")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.542 -0400", hash_original_method = "753BA04897A44EE33BA2055C50810858", hash_generated_method = "52044E6B03960D7BC55369F873CB28DB")
     public BigInteger subtract(BigInteger value) {
-        dsTaint.addTaint(value.dsTaint);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_2056151822 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_493741569 = null; //Variable for return #2
         BigInt lhs;
         lhs = getBigInt();
         BigInt rhs;
         rhs = value.getBigInt();
         {
-            boolean var715C4C2597076EBBD7DE116903FFEC43_146497994 = (rhs.sign() == 0);
+            boolean var715C4C2597076EBBD7DE116903FFEC43_1245169165 = (rhs.sign() == 0);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_2056151822 = this;
+            } //End block
         } //End collapsed parenthetic
-        BigInteger var10F614DD972AC31BE36C0101EDFAB3A3_528825558 = (new BigInteger(BigInt.subtraction(lhs, rhs)));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_493741569 = new BigInteger(BigInt.subtraction(lhs, rhs));
+        addTaint(value.getTaint());
+        BigInteger varA7E53CE21691AB073D9660D615818899_1523426101; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1523426101 = varB4EAC82CA7396A68D541C85D26508E83_2056151822;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1523426101 = varB4EAC82CA7396A68D541C85D26508E83_493741569;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1523426101.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1523426101;
         // ---------- Original Method ----------
         //BigInt lhs = getBigInt();
         //BigInt rhs = value.getBigInt();
@@ -492,11 +581,11 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.523 -0400", hash_original_method = "0A534AADB97A9D37B49476B54B03D66A", hash_generated_method = "C00E0622228CC0A7CDB406F59BAC754A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.542 -0400", hash_original_method = "0A534AADB97A9D37B49476B54B03D66A", hash_generated_method = "F600068442D549EF0C9B84C6278961F1")
     public int signum() {
-        int var78785A1AB216D9DE61B723A960BFD6AE_1293230744 = (getBigInt().sign());
-        return dsTaint.getTaintInt();
+        int var78785A1AB216D9DE61B723A960BFD6AE_499381314 = (getBigInt().sign());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_992315479 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_992315479;
         // ---------- Original Method ----------
         //if (javaIsValid) {
             //return sign;
@@ -505,30 +594,56 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.523 -0400", hash_original_method = "1B97FA7BE1DE29423609E814DD90E66F", hash_generated_method = "0D16E5FB38696553AB65840AAF5AA8F2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.552 -0400", hash_original_method = "1B97FA7BE1DE29423609E814DD90E66F", hash_generated_method = "7211456D722CA665D0FEA87166AE7FB1")
     public BigInteger shiftRight(int n) {
-        dsTaint.addTaint(n);
-        BigInteger varB28ECBFFA274B3996757E093FD8ABD08_503406697 = (shiftLeft(-n));
-        return (BigInteger)dsTaint.getTaint();
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1350005320 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1350005320 = shiftLeft(-n);
+        addTaint(n);
+        varB4EAC82CA7396A68D541C85D26508E83_1350005320.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1350005320;
         // ---------- Original Method ----------
         //return shiftLeft(-n);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.523 -0400", hash_original_method = "3E0E92A5CC7CF6FE74FD251028917DBB", hash_generated_method = "FB5FB71906372D15DB20D72C57AFF94F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.620 -0400", hash_original_method = "3E0E92A5CC7CF6FE74FD251028917DBB", hash_generated_method = "475F3EE9EFDC30FCA2377B29E539BFD3")
     public BigInteger shiftLeft(int n) {
-        dsTaint.addTaint(n);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1302505582 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1169620201 = null; //Variable for return #2
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1945848303 = null; //Variable for return #3
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1852789011 = null; //Variable for return #4
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1302505582 = this;
+        } //End block
         int sign;
         sign = signum();
         {
-            BigInteger varE9C265FDB814C3E86113009545E8D592_1520029951 = (new BigInteger(BigInt.shift(getBigInt(), n)));
+            varB4EAC82CA7396A68D541C85D26508E83_1169620201 = this;
         } //End block
         {
-            BigInteger var113E407321DA7CC6E7E4DBE771FD8153_405427125 = (BitLevel.shiftRight(this, -n));
+            varB4EAC82CA7396A68D541C85D26508E83_1945848303 = new BigInteger(BigInt.shift(getBigInt(), n));
         } //End block
-        return (BigInteger)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1852789011 = BitLevel.shiftRight(this, -n);
+        } //End block
+        addTaint(n);
+        BigInteger varA7E53CE21691AB073D9660D615818899_1724521611; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1724521611 = varB4EAC82CA7396A68D541C85D26508E83_1302505582;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1724521611 = varB4EAC82CA7396A68D541C85D26508E83_1169620201;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_1724521611 = varB4EAC82CA7396A68D541C85D26508E83_1945848303;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1724521611 = varB4EAC82CA7396A68D541C85D26508E83_1852789011;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1724521611.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1724521611;
         // ---------- Original Method ----------
         //if (n == 0) {
             //return this;
@@ -545,27 +660,25 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.524 -0400", hash_original_method = "3F948826829C47AB028976261F4B8D55", hash_generated_method = "B58BC102A4F8BC6E4A543E27378AC41B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.621 -0400", hash_original_method = "3F948826829C47AB028976261F4B8D55", hash_generated_method = "3D3EF11C587A9D2328696588686B064F")
      BigInteger shiftLeftOneBit() {
-        {
-            boolean var4E2B6D3CAD5F7C0C7183C71097140796_399079707 = ((signum() == 0));
-            Object varD66DA8A117F808534F664B27C9487DCC_988326850 = (BitLevel.shiftLeftOneBit(this));
-        } //End flattened ternary
-        return (BigInteger)dsTaint.getTaint();
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1255945769 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1255945769 = (signum() == 0) ? this : BitLevel.shiftLeftOneBit(this);
+        varB4EAC82CA7396A68D541C85D26508E83_1255945769.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1255945769;
         // ---------- Original Method ----------
         //return (signum() == 0) ? this : BitLevel.shiftLeftOneBit(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.524 -0400", hash_original_method = "5DD770E4600136986E52E3D1EE5F1B27", hash_generated_method = "5726B9595431EC70936ECED239658524")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.622 -0400", hash_original_method = "5DD770E4600136986E52E3D1EE5F1B27", hash_generated_method = "039BC42AE5644BF00EC9C331705280B4")
     public int bitLength() {
         {
-            int varEF6F0F502ED0A4A2C2EE418CF96465E4_2084378498 = (BitLevel.bitLength(this));
+            int varEF6F0F502ED0A4A2C2EE418CF96465E4_1196928387 = (BitLevel.bitLength(this));
         } //End block
-        int var788BC3441C63E42B6C6F5C344E860F68_191058068 = (getBigInt().bitLength());
-        return dsTaint.getTaintInt();
+        int var788BC3441C63E42B6C6F5C344E860F68_1462848084 = (getBigInt().bitLength());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1316645247 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1316645247;
         // ---------- Original Method ----------
         //if (!nativeIsValid && javaIsValid) {
             //return BitLevel.bitLength(this);
@@ -574,17 +687,15 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.524 -0400", hash_original_method = "22DB08B3CA9DDA99CEE301218284C513", hash_generated_method = "AEA6C61DFEFDE1F0E88D05E0A9022023")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.623 -0400", hash_original_method = "22DB08B3CA9DDA99CEE301218284C513", hash_generated_method = "EFF516B0C806E505126938ED7DAD9447")
     public boolean testBit(int n) {
-        dsTaint.addTaint(n);
         {
             if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("n < 0: " + n);
         } //End block
         int sign;
         sign = signum();
         {
-            boolean varF17D7AFCFA584F08AA65771D9B761AB7_1606776686 = (getBigInt().isBitSet(n));
+            boolean varF17D7AFCFA584F08AA65771D9B761AB7_498943562 = (getBigInt().isBitSet(n));
         } //End block
         {
             prepareJavaRepresentation();
@@ -604,24 +715,40 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
                 } //End block
             } //End block
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(n);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1337302297 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1337302297;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.525 -0400", hash_original_method = "0A60006224C30F0C8DC4E0C8D16895AE", hash_generated_method = "CE97B3F0A4D5D3FB4BC505925A8AACA4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.628 -0400", hash_original_method = "0A60006224C30F0C8DC4E0C8D16895AE", hash_generated_method = "70D84C82B1262C8EFB344CD380C66D2F")
     public BigInteger setBit(int n) {
-        dsTaint.addTaint(n);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1247049096 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1166000264 = null; //Variable for return #2
         prepareJavaRepresentation();
         {
-            boolean var5D4D017D7F453054D257FB916BD85DB7_1413596337 = (!testBit(n));
+            boolean var5D4D017D7F453054D257FB916BD85DB7_859768739 = (!testBit(n));
             {
-                BigInteger varEC218C3AB6671ACEE0EADB3C088FDD5A_194835360 = (BitLevel.flipBit(this, n));
+                varB4EAC82CA7396A68D541C85D26508E83_1247049096 = BitLevel.flipBit(this, n);
+            } //End block
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1166000264 = this;
             } //End block
         } //End collapsed parenthetic
-        return (BigInteger)dsTaint.getTaint();
+        addTaint(n);
+        BigInteger varA7E53CE21691AB073D9660D615818899_13706522; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_13706522 = varB4EAC82CA7396A68D541C85D26508E83_1247049096;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_13706522 = varB4EAC82CA7396A68D541C85D26508E83_1166000264;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_13706522.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_13706522;
         // ---------- Original Method ----------
         //prepareJavaRepresentation();
         //if (!testBit(n)) {
@@ -632,18 +759,32 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.525 -0400", hash_original_method = "8D8C5374E542B708B8A1B41B31DCBF03", hash_generated_method = "08FC1B187AFEABA2873FE72DF55643BC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.633 -0400", hash_original_method = "8D8C5374E542B708B8A1B41B31DCBF03", hash_generated_method = "489FC68B3E2DE151A9D0AABEA1C872B6")
     public BigInteger clearBit(int n) {
-        dsTaint.addTaint(n);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_756184178 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1254048550 = null; //Variable for return #2
         prepareJavaRepresentation();
         {
-            boolean varA357D3076F2B8D19676817F90ACD1333_2118344046 = (testBit(n));
+            boolean varA357D3076F2B8D19676817F90ACD1333_1373078155 = (testBit(n));
             {
-                BigInteger varEC218C3AB6671ACEE0EADB3C088FDD5A_1938035808 = (BitLevel.flipBit(this, n));
+                varB4EAC82CA7396A68D541C85D26508E83_756184178 = BitLevel.flipBit(this, n);
+            } //End block
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1254048550 = this;
             } //End block
         } //End collapsed parenthetic
-        return (BigInteger)dsTaint.getTaint();
+        addTaint(n);
+        BigInteger varA7E53CE21691AB073D9660D615818899_1877463324; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1877463324 = varB4EAC82CA7396A68D541C85D26508E83_756184178;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1877463324 = varB4EAC82CA7396A68D541C85D26508E83_1254048550;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1877463324.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1877463324;
         // ---------- Original Method ----------
         //prepareJavaRepresentation();
         //if (testBit(n)) {
@@ -654,16 +795,17 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.525 -0400", hash_original_method = "F1D37134A8936EE90081AD78D8487F59", hash_generated_method = "80F539A9288A3B6E6BA9CA2D9EEFCBA8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.634 -0400", hash_original_method = "F1D37134A8936EE90081AD78D8487F59", hash_generated_method = "3B88EFB7471D9E1799C119E8A942B117")
     public BigInteger flipBit(int n) {
-        dsTaint.addTaint(n);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_2062771094 = null; //Variable for return #1
         prepareJavaRepresentation();
         {
             if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("n < 0: " + n);
         } //End block
-        BigInteger varCE6581866328788450C806C8A51058FC_569386577 = (BitLevel.flipBit(this, n));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2062771094 = BitLevel.flipBit(this, n);
+        addTaint(n);
+        varB4EAC82CA7396A68D541C85D26508E83_2062771094.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2062771094;
         // ---------- Original Method ----------
         //prepareJavaRepresentation();
         //if (n < 0) {
@@ -673,14 +815,14 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.525 -0400", hash_original_method = "8383F139074E92B6BF621C4AC408CB05", hash_generated_method = "8E52065A162EF0633F390E99CE062ED8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.634 -0400", hash_original_method = "8383F139074E92B6BF621C4AC408CB05", hash_generated_method = "6E4FDE4DCEC927C70346B3EE220CE984")
     public int getLowestSetBit() {
         prepareJavaRepresentation();
         int i;
         i = getFirstNonzeroDigit();
-        int var08486A238466E45EF685C7096473496F_807652582 = (((i << 5) + Integer.numberOfTrailingZeros(digits[i])));
-        return dsTaint.getTaintInt();
+        int var08486A238466E45EF685C7096473496F_613882592 = (((i << 5) + Integer.numberOfTrailingZeros(digits[i])));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2135567846 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2135567846;
         // ---------- Original Method ----------
         //prepareJavaRepresentation();
         //if (sign == 0) {
@@ -691,38 +833,40 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.526 -0400", hash_original_method = "2461573222D281ABCA9F3F34AA40AFB9", hash_generated_method = "66B3CADDF9C323427F88713AA044D2C1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.635 -0400", hash_original_method = "2461573222D281ABCA9F3F34AA40AFB9", hash_generated_method = "ACC2028C29F0EA9546AC69E7DC07A50F")
     public int bitCount() {
         prepareJavaRepresentation();
-        int var03F1A887008EE5D56B89D17C00839C9F_841255925 = (BitLevel.bitCount(this));
-        return dsTaint.getTaintInt();
+        int var03F1A887008EE5D56B89D17C00839C9F_813776080 = (BitLevel.bitCount(this));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1013067733 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1013067733;
         // ---------- Original Method ----------
         //prepareJavaRepresentation();
         //return BitLevel.bitCount(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.526 -0400", hash_original_method = "CD87C1AB82AE5BD1BDB1D71C1F7F211A", hash_generated_method = "57C9250E161BB689D67DD1A11FAB5C81")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.644 -0400", hash_original_method = "CD87C1AB82AE5BD1BDB1D71C1F7F211A", hash_generated_method = "63146B76BC9834F752A9A9AD3FEB11B2")
     public BigInteger not() {
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1582326725 = null; //Variable for return #1
         this.prepareJavaRepresentation();
-        BigInteger varA8B60C35216CEB7FAAC25DFE6F80F72D_516461485 = (Logical.not(this));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1582326725 = Logical.not(this);
+        varB4EAC82CA7396A68D541C85D26508E83_1582326725.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1582326725;
         // ---------- Original Method ----------
         //this.prepareJavaRepresentation();
         //return Logical.not(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.526 -0400", hash_original_method = "B57E8848F50ED2CEFC86EA20A70D185D", hash_generated_method = "2B2D13A592CBF5487CEA7BF951D753FA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.644 -0400", hash_original_method = "B57E8848F50ED2CEFC86EA20A70D185D", hash_generated_method = "C34B471A9A507563133C30030A167601")
     public BigInteger and(BigInteger value) {
-        dsTaint.addTaint(value.dsTaint);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_192490926 = null; //Variable for return #1
         this.prepareJavaRepresentation();
         value.prepareJavaRepresentation();
-        BigInteger var55C1929A242B0AA9AF63DE198D1F006B_686307926 = (Logical.and(this, value));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_192490926 = Logical.and(this, value);
+        addTaint(value.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_192490926.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_192490926;
         // ---------- Original Method ----------
         //this.prepareJavaRepresentation();
         //value.prepareJavaRepresentation();
@@ -730,14 +874,15 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.526 -0400", hash_original_method = "AED35BC9F3B39A40B35087479AE4F222", hash_generated_method = "B32B41B1055483649F40F8A724EE450D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.645 -0400", hash_original_method = "AED35BC9F3B39A40B35087479AE4F222", hash_generated_method = "77086F1BF036F52D0CDDB26DB9EEC806")
     public BigInteger or(BigInteger value) {
-        dsTaint.addTaint(value.dsTaint);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1503949610 = null; //Variable for return #1
         this.prepareJavaRepresentation();
         value.prepareJavaRepresentation();
-        BigInteger varC769EC071603465F0E670A12E562B150_1091472511 = (Logical.or(this, value));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1503949610 = Logical.or(this, value);
+        addTaint(value.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1503949610.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1503949610;
         // ---------- Original Method ----------
         //this.prepareJavaRepresentation();
         //value.prepareJavaRepresentation();
@@ -745,14 +890,15 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.527 -0400", hash_original_method = "0162D315FD06686CC7830A3D5D5A796E", hash_generated_method = "E016D50048CD8F02CCC2E3CECF10FE5A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.646 -0400", hash_original_method = "0162D315FD06686CC7830A3D5D5A796E", hash_generated_method = "5D07BDEF641054874715A10ABC9B292B")
     public BigInteger xor(BigInteger value) {
-        dsTaint.addTaint(value.dsTaint);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1706466504 = null; //Variable for return #1
         this.prepareJavaRepresentation();
         value.prepareJavaRepresentation();
-        BigInteger var68A226F12BAAE5A7FE86FA7CF04E89C8_412836403 = (Logical.xor(this, value));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1706466504 = Logical.xor(this, value);
+        addTaint(value.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1706466504.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1706466504;
         // ---------- Original Method ----------
         //this.prepareJavaRepresentation();
         //value.prepareJavaRepresentation();
@@ -760,14 +906,15 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.527 -0400", hash_original_method = "A8A90B9F7EBADE4F51C070D1C780A515", hash_generated_method = "69E50118AC49D7D092AB28CA1CBF822C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.647 -0400", hash_original_method = "A8A90B9F7EBADE4F51C070D1C780A515", hash_generated_method = "1A893B47342EF5B4749392EEC90276A5")
     public BigInteger andNot(BigInteger value) {
-        dsTaint.addTaint(value.dsTaint);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1306533540 = null; //Variable for return #1
         this.prepareJavaRepresentation();
         value.prepareJavaRepresentation();
-        BigInteger varE4424E0B325CAF4481C7B0379B687959_1436913578 = (Logical.andNot(this, value));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1306533540 = Logical.andNot(this, value);
+        addTaint(value.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1306533540.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1306533540;
         // ---------- Original Method ----------
         //this.prepareJavaRepresentation();
         //value.prepareJavaRepresentation();
@@ -775,18 +922,18 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.527 -0400", hash_original_method = "F298334B66A6EA4DC89E250C44198AEA", hash_generated_method = "1B7C7CE4F8BBC75C812EEC6A1382B3B2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.647 -0400", hash_original_method = "F298334B66A6EA4DC89E250C44198AEA", hash_generated_method = "5FEBCBEF7D57B04B812CAD80F6CD8C9C")
     @Override
     public int intValue() {
         {
-            boolean var736C79FFC0E47BDF554712724F023607_1472416963 = (nativeIsValid && bigInt.twosCompFitsIntoBytes(4));
+            boolean var736C79FFC0E47BDF554712724F023607_2010986313 = (nativeIsValid && bigInt.twosCompFitsIntoBytes(4));
             {
-                int var3C648FDB51952E7A4326C06E11E5D714_1985932701 = ((int) bigInt.longInt());
+                int var3C648FDB51952E7A4326C06E11E5D714_461254623 = ((int) bigInt.longInt());
             } //End block
         } //End collapsed parenthetic
         this.prepareJavaRepresentation();
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1712656020 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1712656020;
         // ---------- Original Method ----------
         //if (nativeIsValid && bigInt.twosCompFitsIntoBytes(4)) {
             //return (int) bigInt.longInt();
@@ -796,21 +943,21 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.527 -0400", hash_original_method = "22A0F6A18293749D1CD57F54133930DD", hash_generated_method = "01DF148832FC8F16061608128088893A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.657 -0400", hash_original_method = "22A0F6A18293749D1CD57F54133930DD", hash_generated_method = "7A1AA404F78ABA8F75B75DF944D537D7")
     @Override
     public long longValue() {
         {
-            boolean varC4F1CBA5BA1CCD278A875F7CBF5B1567_1304459045 = (nativeIsValid && bigInt.twosCompFitsIntoBytes(8));
+            boolean varC4F1CBA5BA1CCD278A875F7CBF5B1567_1683071803 = (nativeIsValid && bigInt.twosCompFitsIntoBytes(8));
             {
-                long var4AAAA41C9D1DFB9DDFD6709151B2DF14_133975024 = (bigInt.longInt());
+                long var4AAAA41C9D1DFB9DDFD6709151B2DF14_101039311 = (bigInt.longInt());
             } //End block
         } //End collapsed parenthetic
         prepareJavaRepresentation();
         long value;
         value = ((long) digits[1]) << 32 | digits[0] & 0xFFFFFFFFL;
         value = digits[0] & 0xFFFFFFFFL;
-        return dsTaint.getTaintLong();
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_903769452 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_903769452;
         // ---------- Original Method ----------
         //if (nativeIsValid && bigInt.twosCompFitsIntoBytes(8)) {
             //return bigInt.longInt();
@@ -823,67 +970,64 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.528 -0400", hash_original_method = "85C514A29B5895D821780B89C4F747B0", hash_generated_method = "9321A4EC7F7F6E0DBB3EF771368CC520")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.657 -0400", hash_original_method = "85C514A29B5895D821780B89C4F747B0", hash_generated_method = "45D106B47970740E89354895CEA47C66")
     @Override
     public float floatValue() {
-        float var988FDD4E54336618413CB2C701826BC6_569111363 = ((float) doubleValue());
-        return dsTaint.getTaintFloat();
+        float var988FDD4E54336618413CB2C701826BC6_1088616665 = ((float) doubleValue());
+        float var546ADE640B6EDFBC8A086EF31347E768_215516550 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_215516550;
         // ---------- Original Method ----------
         //return (float) doubleValue();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.528 -0400", hash_original_method = "3D8E394E07D4F37AF2C6D72F08026A5D", hash_generated_method = "61E54F452D1AE10A3B6572F8A6BA2E2B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.658 -0400", hash_original_method = "3D8E394E07D4F37AF2C6D72F08026A5D", hash_generated_method = "DAA6597CAE092E95F9EE5AFA0750C1EF")
     @Override
     public double doubleValue() {
-        double var986CEBD15E6E1AF84E0E0543465AB73A_440564879 = (Conversion.bigInteger2Double(this));
-        return dsTaint.getTaintDouble();
+        double var986CEBD15E6E1AF84E0E0543465AB73A_2050523350 = (Conversion.bigInteger2Double(this));
+        double varE8CD7DA078A86726031AD64F35F5A6C0_1671625111 = getTaintDouble();
+        return varE8CD7DA078A86726031AD64F35F5A6C0_1671625111;
         // ---------- Original Method ----------
         //return Conversion.bigInteger2Double(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.529 -0400", hash_original_method = "2F090DBB15C308A00016A444F7C5A620", hash_generated_method = "AE8E6FE14C80970A99D61399D5111851")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.658 -0400", hash_original_method = "2F090DBB15C308A00016A444F7C5A620", hash_generated_method = "D28B59B518F02D9F21D96BF628C30655")
     public int compareTo(BigInteger value) {
-        dsTaint.addTaint(value.dsTaint);
-        int varE8DF5E315CCF42EB1CBFEE65CA4A8DF2_1211605575 = (BigInt.cmp(getBigInt(), value.getBigInt()));
-        return dsTaint.getTaintInt();
+        int varE8DF5E315CCF42EB1CBFEE65CA4A8DF2_1290576276 = (BigInt.cmp(getBigInt(), value.getBigInt()));
+        addTaint(value.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1904539697 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1904539697;
         // ---------- Original Method ----------
         //return BigInt.cmp(getBigInt(), value.getBigInt());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.530 -0400", hash_original_method = "909F517DD4A19D55540D3A4577FBCF84", hash_generated_method = "88A8EE7E702664FFE5DB2EEA56635C72")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.658 -0400", hash_original_method = "909F517DD4A19D55540D3A4577FBCF84", hash_generated_method = "BFE0155463F444F946C8C02EA00E71D3")
     public BigInteger min(BigInteger value) {
-        dsTaint.addTaint(value.dsTaint);
-        {
-            boolean varFDDD5D1F4BF5B1486C04A8886C9B0458_2112300088 = (this.compareTo(value) == -1);
-        } //End flattened ternary
-        return (BigInteger)dsTaint.getTaint();
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_486936240 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_486936240 = this.compareTo(value) == -1 ? this : value;
+        addTaint(value.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_486936240.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_486936240;
         // ---------- Original Method ----------
         //return this.compareTo(value) == -1 ? this : value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.530 -0400", hash_original_method = "6C03178B5A42138223A2B4814CF874FD", hash_generated_method = "520A7E54875DC8F3A12451024C71814D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.659 -0400", hash_original_method = "6C03178B5A42138223A2B4814CF874FD", hash_generated_method = "560B484ABDBFB1BF84121A186F4A0DBE")
     public BigInteger max(BigInteger value) {
-        dsTaint.addTaint(value.dsTaint);
-        {
-            boolean varFC42C5DBC84731BF0F65729BEB047D84_1394643678 = (this.compareTo(value) == 1);
-        } //End flattened ternary
-        return (BigInteger)dsTaint.getTaint();
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1891300826 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1891300826 = this.compareTo(value) == 1 ? this : value;
+        addTaint(value.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1891300826.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1891300826;
         // ---------- Original Method ----------
         //return this.compareTo(value) == 1 ? this : value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.530 -0400", hash_original_method = "8BD8EE457DCE4BEA017BA4C9967BFC77", hash_generated_method = "26C568D640475C740013E8FAD0E44BD1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.659 -0400", hash_original_method = "8BD8EE457DCE4BEA017BA4C9967BFC77", hash_generated_method = "1F8E59499DC7A950E0AB93D822787A39")
     @Override
     public int hashCode() {
         prepareJavaRepresentation();
@@ -895,7 +1039,8 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
             } //End block
         } //End collapsed parenthetic
         hashCode = hashCode * sign;
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_642761452 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_642761452;
         // ---------- Original Method ----------
         //if (hashCode != 0) {
             //return hashCode;
@@ -909,15 +1054,15 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.530 -0400", hash_original_method = "D6CA37529D0AAA6915B88189BBB9DE43", hash_generated_method = "77EEC3A6278D194EFC6D634A12E41F42")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.664 -0400", hash_original_method = "D6CA37529D0AAA6915B88189BBB9DE43", hash_generated_method = "774A8A862AC9359FF21C36074DD2B39E")
     @Override
     public boolean equals(Object x) {
-        dsTaint.addTaint(x.dsTaint);
         {
-            boolean var8C5538CAE31374871D89268FAA638122_1209868039 = (this.compareTo((BigInteger) x) == 0);
+            boolean var8C5538CAE31374871D89268FAA638122_2061137870 = (this.compareTo((BigInteger) x) == 0);
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(x.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1952727315 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1952727315;
         // ---------- Original Method ----------
         //if (this == x) {
             //return true;
@@ -929,29 +1074,41 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.531 -0400", hash_original_method = "466A78542936FDDF00F235F55782CDB1", hash_generated_method = "C87ECEA9135234E201FE94BECEAD923E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.665 -0400", hash_original_method = "466A78542936FDDF00F235F55782CDB1", hash_generated_method = "642F50FDD11D3C4C4B9247AE73390D7A")
     @Override
     public String toString() {
-        String varA5417AB8A15D2BEFD2DE5757F2F22895_1239528785 = (getBigInt().decString());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1253317686 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1253317686 = getBigInt().decString();
+        varB4EAC82CA7396A68D541C85D26508E83_1253317686.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1253317686;
         // ---------- Original Method ----------
         //return getBigInt().decString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.531 -0400", hash_original_method = "DC1B34095F4DDEED7FED4CD9DAE6BCA6", hash_generated_method = "AA7C47ECF4F23C7F972B869C653D3ACE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.666 -0400", hash_original_method = "DC1B34095F4DDEED7FED4CD9DAE6BCA6", hash_generated_method = "8342F489C50554AAB1326973C29B9A26")
     public String toString(int radix) {
-        dsTaint.addTaint(radix);
+        String varB4EAC82CA7396A68D541C85D26508E83_2083975910 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1821704488 = null; //Variable for return #2
         {
-            String var37035A50BBCD5D891E0B031EFC5DBB88_2015570329 = (getBigInt().decString());
+            varB4EAC82CA7396A68D541C85D26508E83_2083975910 = getBigInt().decString();
         } //End block
         {
             prepareJavaRepresentation();
-            String var4966DD704C3960933641906F719B9CAC_2005915307 = (Conversion.bigInteger2String(this, radix));
+            varB4EAC82CA7396A68D541C85D26508E83_1821704488 = Conversion.bigInteger2String(this, radix);
         } //End block
-        return dsTaint.getTaintString();
+        addTaint(radix);
+        String varA7E53CE21691AB073D9660D615818899_1771801730; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1771801730 = varB4EAC82CA7396A68D541C85D26508E83_2083975910;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1771801730 = varB4EAC82CA7396A68D541C85D26508E83_1821704488;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1771801730.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1771801730;
         // ---------- Original Method ----------
         //if (radix == 10) {
             //return getBigInt().decString();
@@ -962,37 +1119,40 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.531 -0400", hash_original_method = "DF6919CA8C1CE81A76193FCEFAE3FDAA", hash_generated_method = "95CDE9344D95FDFA050E2112E3523307")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.666 -0400", hash_original_method = "DF6919CA8C1CE81A76193FCEFAE3FDAA", hash_generated_method = "DEB18DC5DE6715D7837E5BD419CD2188")
     public BigInteger gcd(BigInteger value) {
-        dsTaint.addTaint(value.dsTaint);
-        BigInteger var4181B88E3C3B6D898756B442E353F175_199926580 = (new BigInteger(BigInt.gcd(getBigInt(), value.getBigInt())));
-        return (BigInteger)dsTaint.getTaint();
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1307647874 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1307647874 = new BigInteger(BigInt.gcd(getBigInt(), value.getBigInt()));
+        addTaint(value.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1307647874.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1307647874;
         // ---------- Original Method ----------
         //return new BigInteger(BigInt.gcd(getBigInt(), value.getBigInt()));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.531 -0400", hash_original_method = "7A377385A7A35B42B025ADA39BD9F319", hash_generated_method = "FF6D52DE07AABAEAE18203EF8877D800")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.672 -0400", hash_original_method = "7A377385A7A35B42B025ADA39BD9F319", hash_generated_method = "8DA2CCB535EB9E8B56FC8F114B43D278")
     public BigInteger multiply(BigInteger value) {
-        dsTaint.addTaint(value.dsTaint);
-        BigInteger varAA5B92C12D4804497E1AA6BE84F71BF9_186345138 = (new BigInteger(BigInt.product(getBigInt(), value.getBigInt())));
-        return (BigInteger)dsTaint.getTaint();
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1982340447 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1982340447 = new BigInteger(BigInt.product(getBigInt(), value.getBigInt()));
+        addTaint(value.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1982340447.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1982340447;
         // ---------- Original Method ----------
         //return new BigInteger(BigInt.product(getBigInt(), value.getBigInt()));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.531 -0400", hash_original_method = "670CEDEE32713500748765AA85174DA4", hash_generated_method = "C09FA9A2F8E2DD42F82540EF73A34784")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.672 -0400", hash_original_method = "670CEDEE32713500748765AA85174DA4", hash_generated_method = "DB811B301B5BC9A964F3D1F5A6E8E7EB")
     public BigInteger pow(int exp) {
-        dsTaint.addTaint(exp);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_201799483 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("exp < 0: " + exp);
         } //End block
-        BigInteger var4EA8A0B8217C3491C1C94EAC2CB0C276_556470517 = (new BigInteger(BigInt.exp(getBigInt(), exp)));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_201799483 = new BigInteger(BigInt.exp(getBigInt(), exp));
+        addTaint(exp);
+        varB4EAC82CA7396A68D541C85D26508E83_201799483.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_201799483;
         // ---------- Original Method ----------
         //if (exp < 0) {
             //throw new ArithmeticException("exp < 0: " + exp);
@@ -1001,10 +1161,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.532 -0400", hash_original_method = "0021B26ACCFD58807A129BEBBFC75B78", hash_generated_method = "3C1E01A00EAB3B1C7D6999ECEE090427")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.673 -0400", hash_original_method = "0021B26ACCFD58807A129BEBBFC75B78", hash_generated_method = "B6026742AF6AA40C05F29DF5E00D16AA")
     public BigInteger[] divideAndRemainder(BigInteger divisor) {
-        dsTaint.addTaint(divisor.dsTaint);
+        BigInteger[] varB4EAC82CA7396A68D541C85D26508E83_2042482125 = null; //Variable for return #1
         BigInt divisorBigInt;
         divisorBigInt = divisor.getBigInt();
         BigInt quotient;
@@ -1012,8 +1171,10 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
         BigInt remainder;
         remainder = new BigInt();
         BigInt.division(getBigInt(), divisorBigInt, quotient, remainder);
-        BigInteger[] var4ACBAB91DD384E0A9CB5EB8101BA6183_1904252698 = (new BigInteger[] {new BigInteger(quotient), new BigInteger(remainder) });
-        return (BigInteger[])dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2042482125 = new BigInteger[] {new BigInteger(quotient), new BigInteger(remainder) };
+        addTaint(divisor.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_2042482125.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2042482125;
         // ---------- Original Method ----------
         //BigInt divisorBigInt = divisor.getBigInt();
         //BigInt quotient = new BigInt();
@@ -1023,15 +1184,16 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.532 -0400", hash_original_method = "E605E3D77E9B13D877DA6B6F47D67F1F", hash_generated_method = "C163CEE10FE12BB17B18E4E01F79E33A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.673 -0400", hash_original_method = "E605E3D77E9B13D877DA6B6F47D67F1F", hash_generated_method = "3638BCA154EA92B4D298017FAE26622B")
     public BigInteger divide(BigInteger divisor) {
-        dsTaint.addTaint(divisor.dsTaint);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_110034776 = null; //Variable for return #1
         BigInt quotient;
         quotient = new BigInt();
         BigInt.division(getBigInt(), divisor.getBigInt(), quotient, null);
-        BigInteger varE08CA360BAB635B0A1B74D5CBD22DF11_1364433111 = (new BigInteger(quotient));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_110034776 = new BigInteger(quotient);
+        addTaint(divisor.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_110034776.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_110034776;
         // ---------- Original Method ----------
         //BigInt quotient = new BigInt();
         //BigInt.division(getBigInt(), divisor.getBigInt(), quotient, null);
@@ -1039,15 +1201,16 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.532 -0400", hash_original_method = "FFD2A7C70BA79F9B512531A9A18B49EF", hash_generated_method = "907B73AC33DDAF21252D0450AD38A3FD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.685 -0400", hash_original_method = "FFD2A7C70BA79F9B512531A9A18B49EF", hash_generated_method = "8C0862418D677E41D7655BCB3C96C14A")
     public BigInteger remainder(BigInteger divisor) {
-        dsTaint.addTaint(divisor.dsTaint);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_2050018883 = null; //Variable for return #1
         BigInt remainder;
         remainder = new BigInt();
         BigInt.division(getBigInt(), divisor.getBigInt(), null, remainder);
-        BigInteger varB7C7451F58AB83D2057E687C662BEB73_839424969 = (new BigInteger(remainder));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2050018883 = new BigInteger(remainder);
+        addTaint(divisor.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_2050018883.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2050018883;
         // ---------- Original Method ----------
         //BigInt remainder = new BigInt();
         //BigInt.division(getBigInt(), divisor.getBigInt(), null, remainder);
@@ -1055,18 +1218,19 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.532 -0400", hash_original_method = "D09D0373DFB5DF67EDACA66D474BB75C", hash_generated_method = "16962B4B2738049238096FF25F2DC5A5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.686 -0400", hash_original_method = "D09D0373DFB5DF67EDACA66D474BB75C", hash_generated_method = "75BE1649B463F1B895178B33B6D4657B")
     public BigInteger modInverse(BigInteger m) {
-        dsTaint.addTaint(m.dsTaint);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1924720091 = null; //Variable for return #1
         {
-            boolean var15873CD3F31198FD54273FC8BF634C9A_412038451 = (m.signum() <= 0);
+            boolean var15873CD3F31198FD54273FC8BF634C9A_998794009 = (m.signum() <= 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("modulus not positive");
             } //End block
         } //End collapsed parenthetic
-        BigInteger varE4AF724360133D3A42CA57C6FF82C2B0_1272274379 = (new BigInteger(BigInt.modInverse(getBigInt(), m.getBigInt())));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1924720091 = new BigInteger(BigInt.modInverse(getBigInt(), m.getBigInt()));
+        addTaint(m.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1924720091.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1924720091;
         // ---------- Original Method ----------
         //if (m.signum() <= 0) {
             //throw new ArithmeticException("modulus not positive");
@@ -1075,23 +1239,24 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.532 -0400", hash_original_method = "4B2E2C43A8E0C70699BFC0E4EF01E685", hash_generated_method = "E73BDFF2C7953B4F85A1E216BF093548")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.686 -0400", hash_original_method = "4B2E2C43A8E0C70699BFC0E4EF01E685", hash_generated_method = "19760D318E076FD96002D13CC22C17F0")
     public BigInteger modPow(BigInteger exponent, BigInteger m) {
-        dsTaint.addTaint(exponent.dsTaint);
-        dsTaint.addTaint(m.dsTaint);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1445034719 = null; //Variable for return #1
         {
-            boolean var15873CD3F31198FD54273FC8BF634C9A_2064188665 = (m.signum() <= 0);
+            boolean var15873CD3F31198FD54273FC8BF634C9A_161074520 = (m.signum() <= 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("m.signum() <= 0");
             } //End block
         } //End collapsed parenthetic
         BigInteger base;
-        boolean varE2809D8580A02DD733D2DE31DC8AE895_2032779828 = (exponent.signum() < 0);
+        boolean varE2809D8580A02DD733D2DE31DC8AE895_1246565548 = (exponent.signum() < 0);
         base = modInverse(m);
         base = this;
-        BigInteger var9A68EF10BB8CCA9B382D53296BA966FA_149450839 = (new BigInteger(BigInt.modExp(base.getBigInt(), exponent.getBigInt(), m.getBigInt())));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1445034719 = new BigInteger(BigInt.modExp(base.getBigInt(), exponent.getBigInt(), m.getBigInt()));
+        addTaint(exponent.getTaint());
+        addTaint(m.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1445034719.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1445034719;
         // ---------- Original Method ----------
         //if (m.signum() <= 0) {
             //throw new ArithmeticException("m.signum() <= 0");
@@ -1101,18 +1266,19 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.533 -0400", hash_original_method = "ADC51A8E4A4079F65268593A33DD74A7", hash_generated_method = "CAF21E9B665C27BB290A698556E15550")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.687 -0400", hash_original_method = "ADC51A8E4A4079F65268593A33DD74A7", hash_generated_method = "D00B03941917DB276C3529ADB10EA91E")
     public BigInteger mod(BigInteger m) {
-        dsTaint.addTaint(m.dsTaint);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_223555240 = null; //Variable for return #1
         {
-            boolean var15873CD3F31198FD54273FC8BF634C9A_1384179900 = (m.signum() <= 0);
+            boolean var15873CD3F31198FD54273FC8BF634C9A_257290299 = (m.signum() <= 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("m.signum() <= 0");
             } //End block
         } //End collapsed parenthetic
-        BigInteger var0A50EB1E896ECB9A48CE343DE22A9C95_1098421129 = (new BigInteger(BigInt.modulus(getBigInt(), m.getBigInt())));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_223555240 = new BigInteger(BigInt.modulus(getBigInt(), m.getBigInt()));
+        addTaint(m.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_223555240.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_223555240;
         // ---------- Original Method ----------
         //if (m.signum() <= 0) {
             //throw new ArithmeticException("m.signum() <= 0");
@@ -1121,12 +1287,12 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.533 -0400", hash_original_method = "718D211034BAE1DECACA1D72CB4CBB13", hash_generated_method = "DF720E8E703B387DBBBF0C6D5A541133")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.691 -0400", hash_original_method = "718D211034BAE1DECACA1D72CB4CBB13", hash_generated_method = "205037BDB66BB31DE2A2F806CCC3762E")
     public boolean isProbablePrime(int certainty) {
-        dsTaint.addTaint(certainty);
-        boolean var527C2D985EF61BA5C7404EDA1C84F2DB_1833564395 = (getBigInt().isPrime(certainty));
-        return dsTaint.getTaintBoolean();
+        boolean var527C2D985EF61BA5C7404EDA1C84F2DB_651055758 = (getBigInt().isPrime(certainty));
+        addTaint(certainty);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1016939668 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1016939668;
         // ---------- Original Method ----------
         //if (certainty <= 0) {
             //return true;
@@ -1135,14 +1301,15 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.533 -0400", hash_original_method = "BB43921F4E806BD72B6F518E8CD8937B", hash_generated_method = "74CDF578DBCDDDE37BE7ED17583F29E3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.707 -0400", hash_original_method = "BB43921F4E806BD72B6F518E8CD8937B", hash_generated_method = "A5915FBF7129E546DA0194E1E44B936E")
     public BigInteger nextProbablePrime() {
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1547436392 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("sign < 0");
         } //End block
-        BigInteger var7E5BC374EDC01B67E58EDF07D6428EEA_1109082299 = (Primality.nextProbablePrime(this));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1547436392 = Primality.nextProbablePrime(this);
+        varB4EAC82CA7396A68D541C85D26508E83_1547436392.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1547436392;
         // ---------- Original Method ----------
         //if (sign < 0) {
             //throw new ArithmeticException("sign < 0");
@@ -1156,12 +1323,11 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.534 -0400", hash_original_method = "F2F8EDC382104DB344E8DD617201B0F3", hash_generated_method = "5BA54AD3A04B5B5844BC9CC98E831799")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.710 -0400", hash_original_method = "F2F8EDC382104DB344E8DD617201B0F3", hash_generated_method = "B20B4F214B82E4B400E9349ED7694A43")
     private byte[] twosComplement() {
         prepareJavaRepresentation();
         {
-            byte[] var871F8A6A5DD979D0CBC073DD77C1CF91_178768186 = (new byte[] { 0 });
+            byte[] var871F8A6A5DD979D0CBC073DD77C1CF91_871387654 = (new byte[] { 0 });
         } //End block
         BigInteger temp;
         temp = this;
@@ -1236,9 +1402,8 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
                 } //End collapsed parenthetic
             } //End block
         } //End block
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1102504181 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1102504181;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -1301,8 +1466,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.535 -0400", hash_original_method = "4BA60B28A036933466CC713B9C7854B3", hash_generated_method = "12901AA40B5CBF5AA345C0989CD83CE9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.715 -0400", hash_original_method = "4BA60B28A036933466CC713B9C7854B3", hash_generated_method = "C0FAF23AD8B8DD21F134C46C40099717")
      int getFirstNonzeroDigit() {
         {
             int i;
@@ -1319,7 +1483,8 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
             } //End block
             firstNonzeroDigit = i;
         } //End block
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_260773046 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_260773046;
         // ---------- Original Method ----------
         //if (firstNonzeroDigit == -2) {
             //int i;
@@ -1336,15 +1501,16 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.535 -0400", hash_original_method = "FABC86F56C336DE2152BE8F133BAAD74", hash_generated_method = "C0D64C177B3B0181C5302BF4662F8EF6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.722 -0400", hash_original_method = "FABC86F56C336DE2152BE8F133BAAD74", hash_generated_method = "232A9A799ACB0017F538B738071F3D5C")
      BigInteger copy() {
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1571979186 = null; //Variable for return #1
         prepareJavaRepresentation();
         int[] copyDigits;
         copyDigits = new int[numberLength];
         System.arraycopy(digits, 0, copyDigits, 0, numberLength);
-        BigInteger varBFBE8A28F722FB3AF7E84C6FDE284DF1_496321260 = (new BigInteger(sign, numberLength, copyDigits));
-        return (BigInteger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1571979186 = new BigInteger(sign, numberLength, copyDigits);
+        varB4EAC82CA7396A68D541C85D26508E83_1571979186.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1571979186;
         // ---------- Original Method ----------
         //prepareJavaRepresentation();
         //int[] copyDigits = new int[numberLength];
@@ -1353,15 +1519,14 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.535 -0400", hash_original_method = "883E43F5C4566D0C2A7853533F533817", hash_generated_method = "493F523D928C7ACEC20B7B31D2A60EC9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_method = "883E43F5C4566D0C2A7853533F533817", hash_generated_method = "26081922C42C9651482BD8CDA83FCE2C")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-        dsTaint.addTaint(in.dsTaint);
         in.defaultReadObject();
         BigInt bigInt;
         bigInt = new BigInt();
         bigInt.putBigEndian(magnitude, signum < 0);
         setBigInt(bigInt);
+        addTaint(in.getTaint());
         // ---------- Original Method ----------
         //in.defaultReadObject();
         //BigInt bigInt = new BigInt();
@@ -1370,15 +1535,14 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.535 -0400", hash_original_method = "4837A11F07A86A58815A56F1112D57DF", hash_generated_method = "73D50AB28EEC2F6BDACA2F53BB28F136")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_method = "4837A11F07A86A58815A56F1112D57DF", hash_generated_method = "E6B2FEC6F5BDFA37D2A8196B99A86AEC")
     private void writeObject(ObjectOutputStream out) throws IOException {
-        dsTaint.addTaint(out.dsTaint);
         BigInt bigInt;
         bigInt = getBigInt();
         signum = bigInt.sign();
         magnitude = bigInt.bigEndianMagnitude();
         out.defaultWriteObject();
+        addTaint(out.getTaint());
         // ---------- Original Method ----------
         //BigInt bigInt = getBigInt();
         //signum = bigInt.sign();
@@ -1387,14 +1551,23 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    private static final long serialVersionUID = -8287574255936472291L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_field = "63016A922509DF10F65084D6222C77C8", hash_generated_field = "2BEA6AB5FBF34BD6FB442D8BA65065DF")
+
+    private static long serialVersionUID = -8287574255936472291L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_field = "78897A137AA91788C51A9D5D88BD6B22", hash_generated_field = "26A57E8798A6CA862A91D3C87254CE3F")
+
     public static final BigInteger ZERO = new BigInteger(0, 0);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_field = "E938017D6125C253391B6FF2A79B2347", hash_generated_field = "61E4C0227042D85901BA98B2F2CD52C4")
+
     public static final BigInteger ONE = new BigInteger(1, 1);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_field = "4252D38540440B1F1E5C9806E972B4B1", hash_generated_field = "7A2B2FAA86270609C420795EB3DF7501")
+
     public static final BigInteger TEN = new BigInteger(1, 10);
-    static final BigInteger MINUS_ONE = new BigInteger(-1, 1);
-    static final BigInteger[] SMALL_VALUES = { ZERO, ONE, new BigInteger(1, 2),
-            new BigInteger(1, 3), new BigInteger(1, 4), new BigInteger(1, 5),
-            new BigInteger(1, 6), new BigInteger(1, 7), new BigInteger(1, 8),
-            new BigInteger(1, 9), TEN };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_field = "C8DE16A040E4D20B9E7749B6EA765BF0", hash_generated_field = "263B59B8310B73C674B762005157A3FB")
+
+    static BigInteger MINUS_ONE = new BigInteger(-1, 1);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_field = "43E384A873FB243B7D032AB564F5C6C0", hash_generated_field = "F46E265CAF65100D4BE9D793DD0AD694")
+
+    static BigInteger[] SMALL_VALUES = ;
 }
 

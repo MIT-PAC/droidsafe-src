@@ -61,14 +61,25 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 public final class GsmDataConnectionTracker extends DataConnectionTracker {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.186 -0400", hash_original_field = "41EBE7F32B96C1E2E9C209710486A443", hash_generated_field = "BAD328EA3346076F0231E9749A628503")
+
     protected String LOG_TAG = "GSM";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.186 -0400", hash_original_field = "CB443E461AA44F68B1DC476C038F72CE", hash_generated_field = "AFBF9D057D14B66BDF7B1FCB26AAA726")
+
     private boolean mReregisterOnReconnectFailure = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.186 -0400", hash_original_field = "CF849E3C15214EFD093D4303B542BF44", hash_generated_field = "2ABF989C5B8F051BCBEE638ED1EA2586")
+
     private ContentResolver mResolver;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.186 -0400", hash_original_field = "FA9556560FEE15D3226A9A0A646DC9DC", hash_generated_field = "9743D11ECCACBF447559588D9C3455D1")
+
     private boolean canSetPreferApn = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.186 -0400", hash_original_field = "93901191D4EDD5699E27D54768404908", hash_generated_field = "7AE0CA44A8148D1733CD8642E6D8D32F")
+
     private ApnChangeObserver mApnObserver;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.192 -0400", hash_original_field = "DCC8D3A9D9C8D2BC581A6F46B0C096D3", hash_generated_field = "998B7CD27651AD53185749995A0B43AA")
+
     private Runnable mPollNetStat = new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.507 -0400", hash_original_method = "12521CBB0E1762BFCDF7B49EB5CC9977", hash_generated_method = "EEDFDA3636D0462EB4B15FD97B22B6E4")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.192 -0400", hash_original_method = "12521CBB0E1762BFCDF7B49EB5CC9977", hash_generated_method = "EEDFDA3636D0462EB4B15FD97B22B6E4")
         @Override
         public void run() {
             updateDataActivity();
@@ -100,13 +111,11 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         }
 
         
-}; //Transformed anonymous class
+};
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.508 -0400", hash_original_method = "11FDC14BF2164142AF8732E525079D07", hash_generated_method = "5EE8C8E00C0EFAE04664971CD4F6DD43")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public GsmDataConnectionTracker(PhoneBase p) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.193 -0400", hash_original_method = "11FDC14BF2164142AF8732E525079D07", hash_generated_method = "3B3236F8510984A3D9AB9F41B771F759")
+    public  GsmDataConnectionTracker(PhoneBase p) {
         super(p);
-        dsTaint.addTaint(p.dsTaint);
         p.mCM.registerForAvailable (this, EVENT_RADIO_AVAILABLE, null);
         p.mCM.registerForOffOrNotAvailable(this, EVENT_RADIO_OFF_OR_NOT_AVAILABLE, null);
         p.mIccRecords.registerForRecordsLoaded(this, EVENT_RECORDS_LOADED, null);
@@ -135,19 +144,20 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         mApnContexts = new ConcurrentHashMap<String, ApnContext>();
         initApnContextsAndDataConnection();
         broadcastMessenger();
+        addTaint(p.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.508 -0400", hash_original_method = "3545EE6BB84B537BCF88623776AFA30D", hash_generated_method = "D618C4D187C242DA79CC6035275C1918")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.194 -0400", hash_original_method = "3545EE6BB84B537BCF88623776AFA30D", hash_generated_method = "C68895532FE1EF0E31783454E936EEA4")
     public int getRecoveryAction() {
         int action;
         action = Settings.System.getInt(mPhone.getContext().getContentResolver(),
                 "radio.data.stall.recovery.action", RecoveryAction.GET_DATA_CALL_LIST);
         log("getRecoveryAction: " + action);
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207438448 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207438448;
         // ---------- Original Method ----------
         //int action = Settings.System.getInt(mPhone.getContext().getContentResolver(),
                 //"radio.data.stall.recovery.action", RecoveryAction.GET_DATA_CALL_LIST);
@@ -156,13 +166,12 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.508 -0400", hash_original_method = "D18EC99E3BCC3D9A76595B0D702BEA57", hash_generated_method = "F8185EA312BC351F5756FA05C7D6B6B9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.201 -0400", hash_original_method = "D18EC99E3BCC3D9A76595B0D702BEA57", hash_generated_method = "6BEFE1BF09EA4008074177F733C4D192")
     public void putRecoveryAction(int action) {
-        dsTaint.addTaint(action);
         Settings.System.putInt(mPhone.getContext().getContentResolver(),
                 "radio.data.stall.recovery.action", action);
         log("putRecoveryAction: " + action);
+        addTaint(action);
         // ---------- Original Method ----------
         //Settings.System.putInt(mPhone.getContext().getContentResolver(),
                 //"radio.data.stall.recovery.action", action);
@@ -170,12 +179,10 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.523 -0400", hash_original_method = "DABEDBF19FEC4514BE5AAA6475C962EB", hash_generated_method = "E7EA47E57D307EDBE1DAA4AF55DDBE67")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.254 -0400", hash_original_method = "DABEDBF19FEC4514BE5AAA6475C962EB", hash_generated_method = "C20B3C6B36DCDD5EE6B991FFE6D81FA1")
     @Override
     protected void onActionIntentReconnectAlarm(Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(intent.dsTaint);
         log("GPRS reconnect alarm. Previous state was " + mState);
         String reason;
         reason = intent.getStringExtra(INTENT_RECONNECT_ALARM_EXTRA_REASON);
@@ -185,13 +192,13 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         dcac = mDataConnectionAsyncChannels.get(connectionId);
         {
             {
-                Iterator<ApnContext> varEF92E30A3FB0B00CC855D485C129D6BC_516557589 = (dcac.getApnListSync()).iterator();
-                varEF92E30A3FB0B00CC855D485C129D6BC_516557589.hasNext();
-                ApnContext apnContext = varEF92E30A3FB0B00CC855D485C129D6BC_516557589.next();
+                Iterator<ApnContext> varEF92E30A3FB0B00CC855D485C129D6BC_1458742546 = (dcac.getApnListSync()).iterator();
+                varEF92E30A3FB0B00CC855D485C129D6BC_1458742546.hasNext();
+                ApnContext apnContext = varEF92E30A3FB0B00CC855D485C129D6BC_1458742546.next();
                 {
                     apnContext.setReason(reason);
                     {
-                        boolean var8C3F5A245E8CD46D727CA60CA79AEBA0_641392984 = (apnContext.getState() == State.FAILED);
+                        boolean var8C3F5A245E8CD46D727CA60CA79AEBA0_2081443449 = (apnContext.getState() == State.FAILED);
                         {
                             apnContext.setState(State.IDLE);
                         } //End block
@@ -201,6 +208,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             } //End collapsed parenthetic
             dcac.setReconnectIntentSync(null);
         } //End block
+        addTaint(intent.getTaint());
         // ---------- Original Method ----------
         //if (DBG) log("GPRS reconnect alarm. Previous state was " + mState);
         //String reason = intent.getStringExtra(INTENT_RECONNECT_ALARM_EXTRA_REASON);
@@ -219,8 +227,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.524 -0400", hash_original_method = "4494E5E1AF62FA72ED21CBDD59685023", hash_generated_method = "2CEC678BFD48E0CD7A4526D23263E43F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.255 -0400", hash_original_method = "4494E5E1AF62FA72ED21CBDD59685023", hash_generated_method = "2CEC678BFD48E0CD7A4526D23263E43F")
     @Override
     public void dispose() {
         cleanUpAllConnections(false, null);
@@ -245,15 +252,15 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.524 -0400", hash_original_method = "7B2466E598494011616B7E0248698FD2", hash_generated_method = "30C4C8A8918802A1A9E99D08A6EC5671")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.255 -0400", hash_original_method = "7B2466E598494011616B7E0248698FD2", hash_generated_method = "4094864CC513F9BC2E74C82E701B604E")
     @Override
     public boolean isApnTypeActive(String type) {
-        dsTaint.addTaint(type);
         ApnContext apnContext;
         apnContext = mApnContexts.get(type);
-        boolean varFD30B4DFFE3E84898874278558C9F3D1_659726322 = ((apnContext.getDataConnection() != null));
-        return dsTaint.getTaintBoolean();
+        boolean varFD30B4DFFE3E84898874278558C9F3D1_1950186411 = ((apnContext.getDataConnection() != null));
+        addTaint(type.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_686504039 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_686504039;
         // ---------- Original Method ----------
         //ApnContext apnContext = mApnContexts.get(type);
         //if (apnContext == null) return false;
@@ -261,11 +268,9 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.524 -0400", hash_original_method = "63B54477A01480F02B741F41FE0D8DBF", hash_generated_method = "43F41286B9D9ADBC136BDFD31AE0D0BA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.256 -0400", hash_original_method = "63B54477A01480F02B741F41FE0D8DBF", hash_generated_method = "A7393F72A006399BA9E802D8A264369A")
     @Override
     protected boolean isDataPossible(String apnType) {
-        dsTaint.addTaint(apnType);
         ApnContext apnContext;
         apnContext = mApnContexts.get(apnType);
         boolean apnContextIsEnabled;
@@ -285,7 +290,9 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                     apnType, possible, dataAllowed, apnTypePossible,
                     apnContextIsEnabled, apnContextState));
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(apnType.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_950531982 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_950531982;
         // ---------- Original Method ----------
         //ApnContext apnContext = mApnContexts.get(apnType);
         //if (apnContext == null) {
@@ -307,8 +314,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.524 -0400", hash_original_method = "6FB50CEA8307C4B6093E637FBC3F2923", hash_generated_method = "586E4F0B9964C893B65A8A5D4241A99C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.298 -0400", hash_original_method = "6FB50CEA8307C4B6093E637FBC3F2923", hash_generated_method = "586E4F0B9964C893B65A8A5D4241A99C")
     @Override
     protected void finalize() {
         log("finalize");
@@ -317,35 +323,41 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.524 -0400", hash_original_method = "477FAE9A0F7056536F0C43A4344C1E00", hash_generated_method = "2601B2CD85742A490DD38F2EDDD6E837")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.298 -0400", hash_original_method = "477FAE9A0F7056536F0C43A4344C1E00", hash_generated_method = "56B62F29E3A5953751AAFE4EA90E07C8")
     @Override
     protected String getActionIntentReconnectAlarm() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2011963440 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2011963440 = INTENT_RECONNECT_ALARM;
+        varB4EAC82CA7396A68D541C85D26508E83_2011963440.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2011963440;
         // ---------- Original Method ----------
         //return INTENT_RECONNECT_ALARM;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.525 -0400", hash_original_method = "BBE23E9137760572C0B9E85F7DE2F87D", hash_generated_method = "D995B620F1284E6CCA92E01C960F1FC5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.299 -0400", hash_original_method = "BBE23E9137760572C0B9E85F7DE2F87D", hash_generated_method = "94886B1A05173D530D71AAB73D5AF7E1")
     @Override
     protected String getActionIntentDataStallAlarm() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1260561082 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1260561082 = INTENT_DATA_STALL_ALARM;
+        varB4EAC82CA7396A68D541C85D26508E83_1260561082.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1260561082;
         // ---------- Original Method ----------
         //return INTENT_DATA_STALL_ALARM;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.525 -0400", hash_original_method = "0E3E3502B5D9BF75D72D228425E0F7B7", hash_generated_method = "8D76E0D79120A9691EBACA754123C5F2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.299 -0400", hash_original_method = "0E3E3502B5D9BF75D72D228425E0F7B7", hash_generated_method = "0C0888AF029B9287762FD3207DD212A7")
     private ApnContext addApnContext(String type) {
-        dsTaint.addTaint(type);
+        ApnContext varB4EAC82CA7396A68D541C85D26508E83_1335061724 = null; //Variable for return #1
         ApnContext apnContext;
         apnContext = new ApnContext(type, LOG_TAG);
         apnContext.setDependencyMet(false);
         mApnContexts.put(type, apnContext);
-        return (ApnContext)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1335061724 = apnContext;
+        addTaint(type.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1335061724.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1335061724;
         // ---------- Original Method ----------
         //ApnContext apnContext = new ApnContext(type, LOG_TAG);
         //apnContext.setDependencyMet(false);
@@ -354,8 +366,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.532 -0400", hash_original_method = "8959993CE2EB92BA5CEF3E2E51BAABDD", hash_generated_method = "FEDC5A314AE9CD5E41FFDA3B22D9355F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.364 -0400", hash_original_method = "8959993CE2EB92BA5CEF3E2E51BAABDD", hash_generated_method = "FEDC5A314AE9CD5E41FFDA3B22D9355F")
     protected void initApnContextsAndDataConnection() {
         boolean defaultEnabled;
         defaultEnabled = SystemProperties.getBoolean(DEFALUT_DATA_ON_BOOT_PROP, true);
@@ -416,11 +427,11 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.533 -0400", hash_original_method = "C5F45AE4298273442B50BBFD614E8417", hash_generated_method = "3EA099F69E6457A82BDBA1C80C33C05D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.366 -0400", hash_original_method = "C5F45AE4298273442B50BBFD614E8417", hash_generated_method = "B08B2D824B081F2286DC40E728862F7E")
     @Override
     protected LinkProperties getLinkProperties(String apnType) {
-        dsTaint.addTaint(apnType);
+        LinkProperties varB4EAC82CA7396A68D541C85D26508E83_781638999 = null; //Variable for return #1
+        LinkProperties varB4EAC82CA7396A68D541C85D26508E83_898415181 = null; //Variable for return #2
         ApnContext apnContext;
         apnContext = mApnContexts.get(apnType);
         {
@@ -428,12 +439,23 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             dcac = apnContext.getDataConnectionAc();
             {
                 log("return link properites for " + apnType);
-                LinkProperties varD2C3B5E0EEB3E50593471FB5FD58F663_977975050 = (dcac.getLinkPropertiesSync());
+                varB4EAC82CA7396A68D541C85D26508E83_781638999 = dcac.getLinkPropertiesSync();
             } //End block
         } //End block
         log("return new LinkProperties");
-        LinkProperties varF77719563C1A04A9BF912A34C5CC7620_1555558714 = (new LinkProperties());
-        return (LinkProperties)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_898415181 = new LinkProperties();
+        addTaint(apnType.getTaint());
+        LinkProperties varA7E53CE21691AB073D9660D615818899_1924777579; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1924777579 = varB4EAC82CA7396A68D541C85D26508E83_781638999;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1924777579 = varB4EAC82CA7396A68D541C85D26508E83_898415181;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1924777579.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1924777579;
         // ---------- Original Method ----------
         //ApnContext apnContext = mApnContexts.get(apnType);
         //if (apnContext != null) {
@@ -448,11 +470,11 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.533 -0400", hash_original_method = "94651B427B7F42F00ED4B45503EF287D", hash_generated_method = "5AB30A7FCC5B17EBBCB5007C67033B52")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.366 -0400", hash_original_method = "94651B427B7F42F00ED4B45503EF287D", hash_generated_method = "B7C2A9779ED188B264E5A30A4EEBFB5D")
     @Override
     protected LinkCapabilities getLinkCapabilities(String apnType) {
-        dsTaint.addTaint(apnType);
+        LinkCapabilities varB4EAC82CA7396A68D541C85D26508E83_1066716378 = null; //Variable for return #1
+        LinkCapabilities varB4EAC82CA7396A68D541C85D26508E83_379567886 = null; //Variable for return #2
         ApnContext apnContext;
         apnContext = mApnContexts.get(apnType);
         {
@@ -460,12 +482,23 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             dataConnectionAc = apnContext.getDataConnectionAc();
             {
                 log("get active pdp is not null, return link Capabilities for " + apnType);
-                LinkCapabilities var8C6E24374294553E22B3139C465E1861_122546294 = (dataConnectionAc.getLinkCapabilitiesSync());
+                varB4EAC82CA7396A68D541C85D26508E83_1066716378 = dataConnectionAc.getLinkCapabilitiesSync();
             } //End block
         } //End block
         log("return new LinkCapabilities");
-        LinkCapabilities var2003A1B72F79B833FC1E954AF2ABB585_700758363 = (new LinkCapabilities());
-        return (LinkCapabilities)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_379567886 = new LinkCapabilities();
+        addTaint(apnType.getTaint());
+        LinkCapabilities varA7E53CE21691AB073D9660D615818899_665443774; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_665443774 = varB4EAC82CA7396A68D541C85D26508E83_1066716378;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_665443774 = varB4EAC82CA7396A68D541C85D26508E83_379567886;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_665443774.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_665443774;
         // ---------- Original Method ----------
         //ApnContext apnContext = mApnContexts.get(apnType);
         //if (apnContext!=null) {
@@ -480,30 +513,29 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.549 -0400", hash_original_method = "BFF203ED461E9185DBA7A58AF111F0F3", hash_generated_method = "EA202F546F31D3E16EEFB5935BA51311")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.416 -0400", hash_original_method = "BFF203ED461E9185DBA7A58AF111F0F3", hash_generated_method = "BEDCEF1B376FAA6945FEC358C80F9039")
     @Override
     public String[] getActiveApnTypes() {
+        String[] varB4EAC82CA7396A68D541C85D26508E83_298451333 = null; //Variable for return #1
         log("get all active apn types");
         ArrayList<String> result;
         result = new ArrayList<String>();
         {
-            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_1619102518 = (mApnContexts.values()).iterator();
-            var9CD107E7BA0F92F9952456E34FCCDBF9_1619102518.hasNext();
-            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_1619102518.next();
+            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_232903107 = (mApnContexts.values()).iterator();
+            var9CD107E7BA0F92F9952456E34FCCDBF9_232903107.hasNext();
+            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_232903107.next();
             {
                 {
-                    boolean varF0467FF71AC99F0BE559C0B01AC11D76_1599802557 = (apnContext.isReady());
+                    boolean varF0467FF71AC99F0BE559C0B01AC11D76_533194314 = (apnContext.isReady());
                     {
                         result.add(apnContext.getApnType());
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        String[] varED1D165AB64C9ACDD1507C830BD491DE_1699436117 = ((String[])result.toArray(new String[0]));
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        varB4EAC82CA7396A68D541C85D26508E83_298451333 = (String[])result.toArray(new String[0]);
+        varB4EAC82CA7396A68D541C85D26508E83_298451333.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_298451333;
         // ---------- Original Method ----------
         //if (DBG) log("get all active apn types");
         //ArrayList<String> result = new ArrayList<String>();
@@ -516,19 +548,34 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.550 -0400", hash_original_method = "8D1CDDA6C04920E256FCAAE007846C5E", hash_generated_method = "9EEBD26B79D80C0489791B02CD7CDEE3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.425 -0400", hash_original_method = "8D1CDDA6C04920E256FCAAE007846C5E", hash_generated_method = "4428CE56B450EB89A5ABF6B555AC18D9")
     @Override
     public String getActiveApnString(String apnType) {
-        dsTaint.addTaint(apnType);
+        String varB4EAC82CA7396A68D541C85D26508E83_1696589752 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1899679657 = null; //Variable for return #2
         log( "get active apn string for type:" + apnType);
         ApnContext apnContext;
         apnContext = mApnContexts.get(apnType);
         {
             ApnSetting apnSetting;
             apnSetting = apnContext.getApnSetting();
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1696589752 = apnSetting.apn;
+            } //End block
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1899679657 = null;
+        addTaint(apnType.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_1171088860; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1171088860 = varB4EAC82CA7396A68D541C85D26508E83_1696589752;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1171088860 = varB4EAC82CA7396A68D541C85D26508E83_1899679657;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1171088860.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1171088860;
         // ---------- Original Method ----------
         //if (DBG) log( "get active apn string for type:" + apnType);
         //ApnContext apnContext = mApnContexts.get(apnType);
@@ -542,15 +589,15 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.551 -0400", hash_original_method = "5E11C1BF7F74A775167DAE6DA061B097", hash_generated_method = "E127F24D781E381239C164F0777B6749")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.435 -0400", hash_original_method = "5E11C1BF7F74A775167DAE6DA061B097", hash_generated_method = "4F5126EA89887BEBB3965F0B878961D2")
     @Override
     public boolean isApnTypeEnabled(String apnType) {
-        dsTaint.addTaint(apnType);
         ApnContext apnContext;
         apnContext = mApnContexts.get(apnType);
-        boolean varDFED02B8DB0BBFAE1CF1947E145E6BAC_1195143964 = (apnContext.isEnabled());
-        return dsTaint.getTaintBoolean();
+        boolean varDFED02B8DB0BBFAE1CF1947E145E6BAC_1893111310 = (apnContext.isEnabled());
+        addTaint(apnType.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1129865804 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1129865804;
         // ---------- Original Method ----------
         //ApnContext apnContext = mApnContexts.get(apnType);
         //if (apnContext == null) {
@@ -560,28 +607,39 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.552 -0400", hash_original_method = "06373F80BD4BEEF603E49D19A1DC6DA1", hash_generated_method = "B3549D9AC32714B482875C3939C69C10")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.435 -0400", hash_original_method = "06373F80BD4BEEF603E49D19A1DC6DA1", hash_generated_method = "D7196D73A56AF8FF635A6AA9C0C49BAB")
     @Override
     protected void setState(State s) {
-        dsTaint.addTaint(s.dsTaint);
         log("setState should not be used in GSM" + s);
+        addTaint(s.getTaint());
         // ---------- Original Method ----------
         //if (DBG) log("setState should not be used in GSM" + s);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.554 -0400", hash_original_method = "F24CC52DF36174C789130EC41124E06F", hash_generated_method = "835FB611A11C61A06302B21CB3B9755D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.436 -0400", hash_original_method = "F24CC52DF36174C789130EC41124E06F", hash_generated_method = "D47F43748511B67D645EFFF67F152066")
     @Override
     public State getState(String apnType) {
-        dsTaint.addTaint(apnType);
+        State varB4EAC82CA7396A68D541C85D26508E83_1360085949 = null; //Variable for return #1
+        State varB4EAC82CA7396A68D541C85D26508E83_2123387706 = null; //Variable for return #2
         ApnContext apnContext;
         apnContext = mApnContexts.get(apnType);
         {
-            State varCC6C8A28F935122C65EE8C4D104696CB_808540972 = (apnContext.getState());
+            varB4EAC82CA7396A68D541C85D26508E83_1360085949 = apnContext.getState();
         } //End block
-        return (State)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2123387706 = State.FAILED;
+        addTaint(apnType.getTaint());
+        State varA7E53CE21691AB073D9660D615818899_607576010; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_607576010 = varB4EAC82CA7396A68D541C85D26508E83_1360085949;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_607576010 = varB4EAC82CA7396A68D541C85D26508E83_2123387706;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_607576010.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_607576010;
         // ---------- Original Method ----------
         //ApnContext apnContext = mApnContexts.get(apnType);
         //if (apnContext != null) {
@@ -591,9 +649,13 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.563 -0400", hash_original_method = "3A07E102C7877AE139AF74E35A92CB31", hash_generated_method = "5FC024CFCA17CE5CF5EE032F70903DAC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.496 -0400", hash_original_method = "3A07E102C7877AE139AF74E35A92CB31", hash_generated_method = "835EAB126B95D3955EA8A31E98AE6458")
     public State getOverallState() {
+        State varB4EAC82CA7396A68D541C85D26508E83_1346502908 = null; //Variable for return #1
+        State varB4EAC82CA7396A68D541C85D26508E83_1629736069 = null; //Variable for return #2
+        State varB4EAC82CA7396A68D541C85D26508E83_1420595563 = null; //Variable for return #3
+        State varB4EAC82CA7396A68D541C85D26508E83_1443999916 = null; //Variable for return #4
+        State varB4EAC82CA7396A68D541C85D26508E83_1328942170 = null; //Variable for return #5
         boolean isConnecting;
         isConnecting = false;
         boolean isFailed;
@@ -601,18 +663,21 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         boolean isAnyEnabled;
         isAnyEnabled = false;
         {
-            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_1433484608 = (mApnContexts.values()).iterator();
-            var9CD107E7BA0F92F9952456E34FCCDBF9_1433484608.hasNext();
-            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_1433484608.next();
+            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_2008351388 = (mApnContexts.values()).iterator();
+            var9CD107E7BA0F92F9952456E34FCCDBF9_2008351388.hasNext();
+            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_2008351388.next();
             {
                 {
-                    boolean var74352AE28F2089CB53B9CCFDDD397A5B_1279866053 = (apnContext.isEnabled());
+                    boolean var74352AE28F2089CB53B9CCFDDD397A5B_462233659 = (apnContext.isEnabled());
                     {
                         isAnyEnabled = true;
                         {
-                            Object var9700B9CEEDE7EF1C802BA1A530973D22_1625622466 = (apnContext.getState());
+                            Object var9700B9CEEDE7EF1C802BA1A530973D22_829736526 = (apnContext.getState());
                             //Begin case CONNECTED DISCONNECTING 
                             log("overall state is CONNECTED");
+                            //End case CONNECTED DISCONNECTING 
+                            //Begin case CONNECTED DISCONNECTING 
+                            varB4EAC82CA7396A68D541C85D26508E83_1346502908 = State.CONNECTED;
                             //End case CONNECTED DISCONNECTING 
                             //Begin case CONNECTING INITING 
                             isConnecting = true;
@@ -630,38 +695,59 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         } //End collapsed parenthetic
         {
             log( "overall state is IDLE");
+            varB4EAC82CA7396A68D541C85D26508E83_1629736069 = State.IDLE;
         } //End block
         {
             log( "overall state is CONNECTING");
+            varB4EAC82CA7396A68D541C85D26508E83_1420595563 = State.CONNECTING;
         } //End block
         {
             log( "overall state is IDLE");
+            varB4EAC82CA7396A68D541C85D26508E83_1443999916 = State.IDLE;
         } //End block
         {
             log( "overall state is FAILED");
+            varB4EAC82CA7396A68D541C85D26508E83_1328942170 = State.FAILED;
         } //End block
-        return (State)dsTaint.getTaint();
+        State varA7E53CE21691AB073D9660D615818899_1677619418; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1677619418 = varB4EAC82CA7396A68D541C85D26508E83_1346502908;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1677619418 = varB4EAC82CA7396A68D541C85D26508E83_1629736069;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_1677619418 = varB4EAC82CA7396A68D541C85D26508E83_1420595563;
+                break;
+            case 4: //Assign result for return ordinal #4
+                varA7E53CE21691AB073D9660D615818899_1677619418 = varB4EAC82CA7396A68D541C85D26508E83_1443999916;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1677619418 = varB4EAC82CA7396A68D541C85D26508E83_1328942170;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1677619418.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1677619418;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.563 -0400", hash_original_method = "DED9CF35B00E99A5C3539FDABA142E11", hash_generated_method = "401FFD1ED8C5DCC89825BBEBE198BFD2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.497 -0400", hash_original_method = "DED9CF35B00E99A5C3539FDABA142E11", hash_generated_method = "899C69027FD3CB056AC33DB1E27E9FE1")
     @Override
     public synchronized int enableApnType(String apnType) {
-        dsTaint.addTaint(apnType);
         ApnContext apnContext;
         apnContext = mApnContexts.get(apnType);
         {
-            boolean var40721DBF76B6A7B6E8BADFF44F346C7D_1392021192 = (apnContext == null || !isApnTypeAvailable(apnType));
+            boolean var40721DBF76B6A7B6E8BADFF44F346C7D_1251284535 = (apnContext == null || !isApnTypeAvailable(apnType));
             {
                 log("enableApnType: " + apnType + " is type not available");
             } //End block
         } //End collapsed parenthetic
         log("enableApnType: " + apnType + " mState(" + apnContext.getState() + ")");
         {
-            boolean varDB1637033A9F9F6454E8C3CF2D34A73D_113494519 = (apnContext.getState() == State.CONNECTED);
+            boolean varDB1637033A9F9F6454E8C3CF2D34A73D_679332174 = (apnContext.getState() == State.CONNECTED);
             {
                 log("enableApnType: return APN_ALREADY_ACTIVE");
             } //End block
@@ -671,7 +757,9 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             log("enableApnType: new apn request for type " + apnType +
                     " return APN_REQUEST_STARTED");
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(apnType.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_891716137 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_891716137;
         // ---------- Original Method ----------
         //ApnContext apnContext = mApnContexts.get(apnType);
         //if (apnContext == null || !isApnTypeAvailable(apnType)) {
@@ -692,14 +780,10 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.563 -0400", hash_original_method = "6BE0F7A51104BACC1DFB5733CC5E30CC", hash_generated_method = "47DA42F6A8DC83F8D2215311FE28A816")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.502 -0400", hash_original_method = "6BE0F7A51104BACC1DFB5733CC5E30CC", hash_generated_method = "0905E2B41821FAA5D5147B7B81254F93")
     private void notifyApnIdUpToCurrent(String reason, ApnContext apnContext, String type) {
-        dsTaint.addTaint(apnContext.dsTaint);
-        dsTaint.addTaint(reason);
-        dsTaint.addTaint(type);
         {
-            Object varCC6C8A28F935122C65EE8C4D104696CB_2043891577 = (apnContext.getState());
+            Object varCC6C8A28F935122C65EE8C4D104696CB_991001094 = (apnContext.getState());
             //Begin case CONNECTING SCANNING 
             mPhone.notifyDataConnection(reason, type, Phone.DataState.CONNECTING);
             //End case CONNECTING SCANNING 
@@ -710,6 +794,9 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             mPhone.notifyDataConnection(reason, type, Phone.DataState.CONNECTED);
             //End case CONNECTED DISCONNECTING 
         } //End collapsed parenthetic
+        addTaint(reason.getTaint());
+        addTaint(apnContext.getTaint());
+        addTaint(type.getTaint());
         // ---------- Original Method ----------
         //switch (apnContext.getState()) {
             //case IDLE:
@@ -728,18 +815,16 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.564 -0400", hash_original_method = "68A04474A9A6C009171326D545E43C31", hash_generated_method = "1979147DCEA83F2750A524000965552B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.507 -0400", hash_original_method = "68A04474A9A6C009171326D545E43C31", hash_generated_method = "B00B0E6911C3DAD987CD4B5B6BDB8649")
     @Override
     public synchronized int disableApnType(String type) {
-        dsTaint.addTaint(type);
         log("disableApnType:" + type);
         ApnContext apnContext;
         apnContext = mApnContexts.get(type);
         {
             setEnabled(apnTypeToId(type), false);
             {
-                boolean var7103B42DD56954FC04F4B2365C64FC7D_1932088847 = (apnContext.getState() != State.IDLE && apnContext.getState() != State.FAILED);
+                boolean var7103B42DD56954FC04F4B2365C64FC7D_636110318 = (apnContext.getState() != State.IDLE && apnContext.getState() != State.FAILED);
                 {
                     log("diableApnType: return APN_REQUEST_STARTED");
                 } //End block
@@ -753,7 +838,9 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 log("disableApnType: no apn context was found, return APN_REQUEST_FAILED");
             } //End block
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(type.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_211741497 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_211741497;
         // ---------- Original Method ----------
         //if (DBG) log("disableApnType:" + type);
         //ApnContext apnContext = mApnContexts.get(type);
@@ -775,27 +862,27 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.572 -0400", hash_original_method = "A26AD8C394281D1D0A1213181383C4F5", hash_generated_method = "B05DF89C02491E37B443A6E20D6217C5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.536 -0400", hash_original_method = "A26AD8C394281D1D0A1213181383C4F5", hash_generated_method = "1F7EB802E6F8C216FB88DD6BD438FD4F")
     @Override
     protected boolean isApnTypeAvailable(String type) {
-        dsTaint.addTaint(type);
         {
-            boolean var3E24ADAA978C2A1617DE6CE4C1277596_1190279171 = (type.equals(Phone.APN_TYPE_DUN) && fetchDunApn() != null);
+            boolean var3E24ADAA978C2A1617DE6CE4C1277596_1524694969 = (type.equals(Phone.APN_TYPE_DUN) && fetchDunApn() != null);
         } //End collapsed parenthetic
         {
             {
-                Iterator<ApnSetting> var02F4BAA28E3266E2CCAC36540E0DBAE4_1575114964 = (mAllApns).iterator();
-                var02F4BAA28E3266E2CCAC36540E0DBAE4_1575114964.hasNext();
-                ApnSetting apn = var02F4BAA28E3266E2CCAC36540E0DBAE4_1575114964.next();
+                Iterator<ApnSetting> var02F4BAA28E3266E2CCAC36540E0DBAE4_323872519 = (mAllApns).iterator();
+                var02F4BAA28E3266E2CCAC36540E0DBAE4_323872519.hasNext();
+                ApnSetting apn = var02F4BAA28E3266E2CCAC36540E0DBAE4_323872519.next();
                 {
                     {
-                        boolean varCE4968051D63BE091B6671C08AC1461B_1142007235 = (apn.canHandleType(type));
+                        boolean varCE4968051D63BE091B6671C08AC1461B_350616995 = (apn.canHandleType(type));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(type.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_477418684 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_477418684;
         // ---------- Original Method ----------
         //if (type.equals(Phone.APN_TYPE_DUN) && fetchDunApn() != null) {
             //return true;
@@ -811,23 +898,23 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.581 -0400", hash_original_method = "C851438642EDA5AB3134873854010685", hash_generated_method = "97DF1E93A5EB73B2158FD159D0257C59")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.597 -0400", hash_original_method = "C851438642EDA5AB3134873854010685", hash_generated_method = "A8B9544E5E1215650049FBCF676A25B6")
     @Override
     public boolean getAnyDataEnabled() {
         {
             {
-                Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_358528441 = (mApnContexts.values()).iterator();
-                var9CD107E7BA0F92F9952456E34FCCDBF9_358528441.hasNext();
-                ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_358528441.next();
+                Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_1779473092 = (mApnContexts.values()).iterator();
+                var9CD107E7BA0F92F9952456E34FCCDBF9_1779473092.hasNext();
+                ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_1779473092.next();
                 {
                     {
-                        boolean varD0085CFE2AE3A9FD75A21E639E837206_1046389504 = (isDataAllowed(apnContext));
+                        boolean varD0085CFE2AE3A9FD75A21E639E837206_996346422 = (isDataAllowed(apnContext));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1069910356 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1069910356;
         // ---------- Original Method ----------
         //synchronized (mDataEnabledLock) {
             //if (!(mInternalDataEnabled && mUserDataEnabled && sPolicyDataEnabled)) return false;
@@ -841,19 +928,18 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.582 -0400", hash_original_method = "7A177E6FBAF2829724A437FA44770C6E", hash_generated_method = "513D45A6B8B4C6443AC927D18FC30587")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.597 -0400", hash_original_method = "7A177E6FBAF2829724A437FA44770C6E", hash_generated_method = "200CE73E45C00D2E3C2A937E81B63BB9")
     private boolean isDataAllowed(ApnContext apnContext) {
-        dsTaint.addTaint(apnContext.dsTaint);
-        boolean var3F4B19E1911E206B03500C4E7AFD578E_921074717 = (apnContext.isReady() && isDataAllowed());
-        return dsTaint.getTaintBoolean();
+        boolean var3F4B19E1911E206B03500C4E7AFD578E_440004581 = (apnContext.isReady() && isDataAllowed());
+        addTaint(apnContext.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_696543402 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_696543402;
         // ---------- Original Method ----------
         //return apnContext.isReady() && isDataAllowed();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.582 -0400", hash_original_method = "DBAD0221F2A53A2AC3E8556324A28A19", hash_generated_method = "70865B629C043E2B67ECAB7D5418421A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.602 -0400", hash_original_method = "DBAD0221F2A53A2AC3E8556324A28A19", hash_generated_method = "70865B629C043E2B67ECAB7D5418421A")
     protected void onDataConnectionDetached() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         log ("onDataConnectionDetached: stop polling and notify detached");
@@ -868,16 +954,15 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.582 -0400", hash_original_method = "5C53501E16056276F20AC7E7EDF79BD4", hash_generated_method = "C21258A43D4B0C8CFA495FEE901EAB18")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.604 -0400", hash_original_method = "F401CBF6A4FFFF291696606C3EE2FE85", hash_generated_method = "F90DE512A2B8F813067821A5F49B00FC")
     private void onDataConnectionAttached() {
         log("onDataConnectionAttached");
         {
-            boolean varD6A7948C24B6C2236B4862C980AEEE69_506609929 = (getOverallState() == State.CONNECTED);
+            boolean varD6A7948C24B6C2236B4862C980AEEE69_1074441604 = (getOverallState() == State.CONNECTED);
             {
                 log("onDataConnectionAttached: start polling notify attached");
                 startNetStatPoll();
-                startDataStallAlarm(DATA_STALL_NOT_SUSPECTED);
+                startDataStallAlarm();
                 notifyDataConnection(Phone.REASON_DATA_ATTACHED);
             } //End block
             {
@@ -890,7 +975,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         //if (getOverallState() == State.CONNECTED) {
             //if (DBG) log("onDataConnectionAttached: start polling notify attached");
             //startNetStatPoll();
-            //startDataStallAlarm(DATA_STALL_NOT_SUSPECTED);
+            //startDataStallAlarm();
             //notifyDataConnection(Phone.REASON_DATA_ATTACHED);
         //} else {
             //notifyOffApnsOfAvailability(Phone.REASON_DATA_ATTACHED);
@@ -899,8 +984,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.583 -0400", hash_original_method = "000E90D5C33553E8124AA0C75E4D9E4F", hash_generated_method = "2455469E7040198E4D21EDAEB7CC8091")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.611 -0400", hash_original_method = "000E90D5C33553E8124AA0C75E4D9E4F", hash_generated_method = "917A399E984679F59B2C35AC6C8854D5")
     @Override
     protected boolean isDataAllowed() {
         boolean internalDataEnabled;
@@ -927,11 +1011,11 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 reason += " - gprs= " + gprsState;
             } //End block
             {
-                boolean varF2489385CBDDB7E3A0ACE2F09C15B0F9_2111484926 = (!mPhone.mIccRecords.getRecordsLoaded());
+                boolean varF2489385CBDDB7E3A0ACE2F09C15B0F9_1268261724 = (!mPhone.mIccRecords.getRecordsLoaded());
                 reason += " - SIM not loaded";
             } //End collapsed parenthetic
             {
-                boolean var28FCD7715CD53D3D0F5A3AC4104C9F7E_1916920582 = (mPhone.getState() != Phone.State.IDLE &&
+                boolean var28FCD7715CD53D3D0F5A3AC4104C9F7E_1643763475 = (mPhone.getState() != Phone.State.IDLE &&
                     !mPhone.getServiceStateTracker().isConcurrentVoiceAndDataAllowed());
                 {
                     reason += " - PhoneState= " + mPhone.getState();
@@ -940,7 +1024,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             } //End collapsed parenthetic
             reason += " - mInternalDataEnabled= false";
             {
-                boolean varA43BAC19CA96DD278C9F67CBBD3CA8CE_170634503 = (mPhone.getServiceState().getRoaming() && !getDataOnRoamingEnabled());
+                boolean varA43BAC19CA96DD278C9F67CBBD3CA8CE_352602801 = (mPhone.getServiceState().getRoaming() && !getDataOnRoamingEnabled());
                 {
                     reason += " - Roaming and data roaming not enabled";
                 } //End block
@@ -949,21 +1033,22 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             reason += " - desiredPowerState= false";
             log("isDataAllowed: not allowed due to" + reason);
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2030361891 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2030361891;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.592 -0400", hash_original_method = "625A02DD3D04B0C927BA692603CBFCC6", hash_generated_method = "FCE4432E9072392F2CD13B727CBF83CA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.664 -0400", hash_original_method = "625A02DD3D04B0C927BA692603CBFCC6", hash_generated_method = "5933BD457279D6589559D4E36714E3FA")
     private void setupDataOnReadyApns(String reason) {
-        dsTaint.addTaint(reason);
         {
-            DataConnectionAc dcac = mDataConnectionAsyncChannels.values()[0];
+            Iterator<DataConnectionAc> varEB8626173DB084FB4853115B28BD3F62_728130330 = (mDataConnectionAsyncChannels.values()).iterator();
+            varEB8626173DB084FB4853115B28BD3F62_728130330.hasNext();
+            DataConnectionAc dcac = varEB8626173DB084FB4853115B28BD3F62_728130330.next();
             {
                 {
-                    boolean var9F52EC3EC3AC7E94BDD16A1A7AB208DF_1163473057 = (dcac.getReconnectIntentSync() != null);
+                    boolean var9F52EC3EC3AC7E94BDD16A1A7AB208DF_1930489417 = (dcac.getReconnectIntentSync() != null);
                     {
                         cancelReconnectAlarm(dcac);
                     } //End block
@@ -974,12 +1059,12 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                     boolean hasDefault;
                     hasDefault = false;
                     {
-                        Iterator<ApnContext> varB87ED0964EC6294E1148D70C8996DEB3_698319197 = (apns).iterator();
-                        varB87ED0964EC6294E1148D70C8996DEB3_698319197.hasNext();
-                        ApnContext apnContext = varB87ED0964EC6294E1148D70C8996DEB3_698319197.next();
+                        Iterator<ApnContext> varB87ED0964EC6294E1148D70C8996DEB3_45731826 = (apns).iterator();
+                        varB87ED0964EC6294E1148D70C8996DEB3_45731826.hasNext();
+                        ApnContext apnContext = varB87ED0964EC6294E1148D70C8996DEB3_45731826.next();
                         {
                             {
-                                boolean var9434236FBB7E6A998E8474EDA4EA2A94_1883096108 = (apnContext.getApnType().equals(Phone.APN_TYPE_DEFAULT));
+                                boolean var9434236FBB7E6A998E8474EDA4EA2A94_1100459868 = (apnContext.getApnType().equals(Phone.APN_TYPE_DEFAULT));
                                 {
                                     hasDefault = true;
                                 } //End block
@@ -991,21 +1076,21 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_1801082277 = (mApnContexts.values()).iterator();
-            var9CD107E7BA0F92F9952456E34FCCDBF9_1801082277.hasNext();
-            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_1801082277.next();
+            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_1853859845 = (mApnContexts.values()).iterator();
+            var9CD107E7BA0F92F9952456E34FCCDBF9_1853859845.hasNext();
+            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_1853859845.next();
             {
                 {
-                    boolean var28727C373B0301059C7D64663A365FCB_1367070334 = (apnContext.getState() == State.FAILED);
+                    boolean var28727C373B0301059C7D64663A365FCB_1627202091 = (apnContext.getState() == State.FAILED);
                     {
                         apnContext.setState(State.IDLE);
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean varF0467FF71AC99F0BE559C0B01AC11D76_1098172466 = (apnContext.isReady());
+                    boolean varF0467FF71AC99F0BE559C0B01AC11D76_1311083062 = (apnContext.isReady());
                     {
                         {
-                            boolean var8AB36F3FADA76FDD70758859DCE39C3A_1838145987 = (apnContext.getState() == State.IDLE);
+                            boolean var8AB36F3FADA76FDD70758859DCE39C3A_447003416 = (apnContext.getState() == State.IDLE);
                             {
                                 apnContext.setReason(reason);
                                 trySetupData(apnContext);
@@ -1015,16 +1100,14 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
+        addTaint(reason.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.593 -0400", hash_original_method = "293D247CD6F3CD381680AFA4CF477431", hash_generated_method = "7BC713BDC2C420B6E83B1FE2B4363CC4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.678 -0400", hash_original_method = "293D247CD6F3CD381680AFA4CF477431", hash_generated_method = "4AA8A1A240263FF932643F3A3C7F5EA8")
     private boolean trySetupData(String reason, String type) {
-        dsTaint.addTaint(reason);
-        dsTaint.addTaint(type);
         {
             log("trySetupData: " + type + " due to " + (reason == null ? "(unspecified)" : reason)
                     + " isPsRestricted=" + mIsPsRestricted);
@@ -1040,8 +1123,11 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             mApnContexts.put(type, apnContext);
         } //End block
         apnContext.setReason(reason);
-        boolean varD10E5DDD0548397420B754E479BF3D26_2053247018 = (trySetupData(apnContext));
-        return dsTaint.getTaintBoolean();
+        boolean varD10E5DDD0548397420B754E479BF3D26_189502177 = (trySetupData(apnContext));
+        addTaint(reason.getTaint());
+        addTaint(type.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1663931456 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1663931456;
         // ---------- Original Method ----------
         //if (DBG) {
             //log("trySetupData: " + type + " due to " + (reason == null ? "(unspecified)" : reason)
@@ -1061,17 +1147,15 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.593 -0400", hash_original_method = "01B865917AB0716CB4ECB273F41078C0", hash_generated_method = "65E9954FD130ACFD3366914A64D7FCB9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.680 -0400", hash_original_method = "01B865917AB0716CB4ECB273F41078C0", hash_generated_method = "233C7F4D1ABB3AA66B09C1BF17055C5D")
     private boolean trySetupData(ApnContext apnContext) {
-        dsTaint.addTaint(apnContext.dsTaint);
         {
             log("trySetupData for type:" + apnContext.getApnType() +
                     " due to " + apnContext.getReason());
             log("trySetupData with mIsPsRestricted=" + mIsPsRestricted);
         } //End block
         {
-            boolean varA62B422C35237A9A4A0C0A75D57190F8_429570585 = (mPhone.getSimulatedRadioControl() != null);
+            boolean varA62B422C35237A9A4A0C0A75D57190F8_131023058 = (mPhone.getSimulatedRadioControl() != null);
             {
                 apnContext.setState(State.CONNECTED);
                 mPhone.notifyDataConnection(apnContext.getReason(), apnContext.getApnType());
@@ -1081,16 +1165,16 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         boolean desiredPowerState;
         desiredPowerState = mPhone.getServiceStateTracker().getDesiredPowerState();
         {
-            boolean var5A171EFB50513FF177155112D610371D_301250214 = ((apnContext.getState() == State.IDLE || apnContext.getState() == State.SCANNING) &&
+            boolean var5A171EFB50513FF177155112D610371D_1140245655 = ((apnContext.getState() == State.IDLE || apnContext.getState() == State.SCANNING) &&
                 isDataAllowed(apnContext) && getAnyDataEnabled() && !isEmergency());
             {
                 {
-                    boolean varC9E447884E4C233ED7168B30C06B00A1_92988431 = (apnContext.getState() == State.IDLE);
+                    boolean varC9E447884E4C233ED7168B30C06B00A1_1842714462 = (apnContext.getState() == State.IDLE);
                     {
                         ArrayList<ApnSetting> waitingApns;
                         waitingApns = buildWaitingApns(apnContext.getApnType());
                         {
-                            boolean varBC6ECF00D7C0418D64AB187B0B88E0B6_856472247 = (waitingApns.isEmpty());
+                            boolean varBC6ECF00D7C0418D64AB187B0B88E0B6_205382961 = (waitingApns.isEmpty());
                             {
                                 log("trySetupData: No APN found");
                                 notifyNoData(GsmDataConnection.FailCause.MISSING_UNKNOWN_APN, apnContext);
@@ -1114,7 +1198,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             } //End block
             {
                 {
-                    boolean var6997658875C9EE68C32AF30989EDEC44_1317468856 = (!apnContext.getApnType().equals(Phone.APN_TYPE_DEFAULT)
+                    boolean var6997658875C9EE68C32AF30989EDEC44_1143874192 = (!apnContext.getApnType().equals(Phone.APN_TYPE_DEFAULT)
                 && (apnContext.getState() == State.IDLE
                     || apnContext.getState() == State.SCANNING));
                     mPhone.notifyDataConnectionFailed(apnContext.getReason(), apnContext.getApnType());
@@ -1122,22 +1206,24 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 notifyOffApnsOfAvailability(apnContext.getReason());
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(apnContext.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_570160279 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_570160279;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.600 -0400", hash_original_method = "9CD870BA8C542E1D80FC2F2D725750C0", hash_generated_method = "D0E1DEC7C43728B901D4133FAF1CBFA7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:24.818 -0400", hash_original_method = "9CD870BA8C542E1D80FC2F2D725750C0", hash_generated_method = "484B24771A98658FF5448F76B60B9064")
     @Override
     protected void notifyOffApnsOfAvailability(String reason) {
-        dsTaint.addTaint(reason);
         {
-            ApnContext apnContext = mApnContexts.values()[0];
+            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_1502395138 = (mApnContexts.values()).iterator();
+            var9CD107E7BA0F92F9952456E34FCCDBF9_1502395138.hasNext();
+            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_1502395138.next();
             {
                 {
-                    boolean varD681883FCEAD4BAE1DEE9A0AA56202F0_1218425003 = (!apnContext.isReady());
+                    boolean varD681883FCEAD4BAE1DEE9A0AA56202F0_759082174 = (!apnContext.isReady());
                     {
                         log("notifyOffApnOfAvailability type:" + apnContext.getApnType());
                         mPhone.notifyDataConnection(reason != null ? reason : apnContext.getReason(),
@@ -1153,6 +1239,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
+        addTaint(reason.getTaint());
         // ---------- Original Method ----------
         //for (ApnContext apnContext : mApnContexts.values()) {
             //if (!apnContext.isReady()) {
@@ -1170,16 +1257,13 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.606 -0400", hash_original_method = "66E1568E09B68AEC1E9A7CA6629E1BE4", hash_generated_method = "BFEC88A49CA02F37DEFE1F5326C2785E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:24.866 -0400", hash_original_method = "66E1568E09B68AEC1E9A7CA6629E1BE4", hash_generated_method = "C5739C244945A09BE6BE6C703F417E0D")
     protected void cleanUpAllConnections(boolean tearDown, String reason) {
-        dsTaint.addTaint(reason);
-        dsTaint.addTaint(tearDown);
         log("cleanUpAllConnections: tearDown=" + tearDown + " reason=" + reason);
         {
-            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_16038664 = (mApnContexts.values()).iterator();
-            var9CD107E7BA0F92F9952456E34FCCDBF9_16038664.hasNext();
-            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_16038664.next();
+            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_1746900108 = (mApnContexts.values()).iterator();
+            var9CD107E7BA0F92F9952456E34FCCDBF9_1746900108.hasNext();
+            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_1746900108.next();
             {
                 apnContext.setReason(reason);
                 cleanUpConnection(tearDown, apnContext);
@@ -1188,6 +1272,8 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         stopNetStatPoll();
         stopDataStallAlarm();
         mRequestedApnType = Phone.APN_TYPE_DEFAULT;
+        addTaint(tearDown);
+        addTaint(reason.getTaint());
         // ---------- Original Method ----------
         //if (DBG) log("cleanUpAllConnections: tearDown=" + tearDown + " reason=" + reason);
         //for (ApnContext apnContext : mApnContexts.values()) {
@@ -1200,23 +1286,19 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.606 -0400", hash_original_method = "CD47D8147DAAE254C6F8BD59780442CD", hash_generated_method = "22921BBF56C8E798CF58FAA8E680BBED")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:24.866 -0400", hash_original_method = "CD47D8147DAAE254C6F8BD59780442CD", hash_generated_method = "B32904545BB63084247E15D1C5DBBAD1")
     @Override
     protected void onCleanUpAllConnections(String cause) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(cause);
         cleanUpAllConnections(true, cause);
+        addTaint(cause.getTaint());
         // ---------- Original Method ----------
         //cleanUpAllConnections(true, cause);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.607 -0400", hash_original_method = "93E0ED2B7F6740BCFA09628007B4F734", hash_generated_method = "2947788703FC62C6F182EF217858A9F4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:24.867 -0400", hash_original_method = "2562A19804F84494AABD51DA4769B2BA", hash_generated_method = "1FD4A02A92D2F733A1D9084ACD60F25A")
     private void cleanUpConnection(boolean tearDown, ApnContext apnContext) {
-        dsTaint.addTaint(apnContext.dsTaint);
-        dsTaint.addTaint(tearDown);
         {
             log("cleanUpConnection: apn context is null");
         } //End block
@@ -1227,11 +1309,11 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         dcac = apnContext.getDataConnectionAc();
         {
             {
-                boolean varBD1E2AD5899AFE289CE08DB683D4CF33_1428352952 = (apnContext.isDisconnected());
+                boolean varBD1E2AD5899AFE289CE08DB683D4CF33_1504334952 = (apnContext.isDisconnected());
                 {
                     apnContext.setState(State.IDLE);
                     {
-                        boolean varC29F4942D61E6248F4ED50CF015D5956_1464030799 = (!apnContext.isReady());
+                        boolean varC29F4942D61E6248F4ED50CF015D5956_1432769354 = (!apnContext.isReady());
                         {
                             apnContext.setDataConnection(null);
                             apnContext.setDataConnectionAc(null);
@@ -1241,36 +1323,12 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 {
                     {
                         {
-                            boolean varA35A04BCD0D81151EFACE0D975BA0673_1714623081 = (apnContext.getState() != State.DISCONNECTING);
+                            boolean varA35A04BCD0D81151EFACE0D975BA0673_479065423 = (apnContext.getState() != State.DISCONNECTING);
                             {
-                                boolean disconnectAll;
-                                disconnectAll = false;
-                                {
-                                    boolean var2BCA60C050889DFD6D8D41CC2794C0F6_364057435 = (Phone.APN_TYPE_DUN.equals(apnContext.getApnType()));
-                                    {
-                                        ApnSetting dunSetting;
-                                        dunSetting = fetchDunApn();
-                                        {
-                                            boolean var52F84A9B2C5C1668323FC758369CD7F9_1026397244 = (dunSetting != null &&
-                                    dunSetting.equals(apnContext.getApnSetting()));
-                                            {
-                                                log("tearing down dedicated DUN connection");
-                                                disconnectAll = true;
-                                            } //End block
-                                        } //End collapsed parenthetic
-                                    } //End block
-                                } //End collapsed parenthetic
-                                {
-                                    log("cleanUpConnection: tearing down" + (disconnectAll ? " all" :""));
-                                } //End block
+                                log("cleanUpConnection: tearing down");
                                 Message msg;
                                 msg = obtainMessage(EVENT_DISCONNECT_DONE, apnContext);
-                                {
-                                    apnContext.getDataConnection().tearDownAll(apnContext.getReason(), msg);
-                                } //End block
-                                {
-                                    apnContext.getDataConnection().tearDown(apnContext.getReason(), msg);
-                                } //End block
+                                apnContext.getDataConnection().tearDown(apnContext.getReason(), msg);
                                 apnContext.setState(State.DISCONNECTING);
                             } //End block
                         } //End collapsed parenthetic
@@ -1294,21 +1352,21 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             Collection<ApnContext> apnList;
             apnList = dcac.getApnListSync();
             {
-                boolean var1752AEEE95D46EA2CE0A4ED286F446DA_149051699 = (apnList.isEmpty());
+                boolean var1752AEEE95D46EA2CE0A4ED286F446DA_221280195 = (apnList.isEmpty());
                 {
                     cancelReconnectAlarm(dcac);
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        addTaint(tearDown);
+        addTaint(apnContext.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.607 -0400", hash_original_method = "1F926905027AA18BF39C8A7A893395A9", hash_generated_method = "96B43D9E3E59C3870B73B7DFCD609921")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:24.873 -0400", hash_original_method = "1F926905027AA18BF39C8A7A893395A9", hash_generated_method = "F264649A3E315339EBF44C1BAB62ADC8")
     private void cancelReconnectAlarm(DataConnectionAc dcac) {
-        dsTaint.addTaint(dcac.dsTaint);
         PendingIntent intent;
         intent = dcac.getReconnectIntentSync();
         {
@@ -1317,6 +1375,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             am.cancel(intent);
             dcac.setReconnectIntentSync(null);
         } //End block
+        addTaint(dcac.getTaint());
         // ---------- Original Method ----------
         //if (dcac == null) return;
         //PendingIntent intent = dcac.getReconnectIntentSync();
@@ -1329,13 +1388,12 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.607 -0400", hash_original_method = "08930E35848EBECD6CC869C9C6D6B1F8", hash_generated_method = "D5CAF6AC1A5163D94B012612FEF52527")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:24.874 -0400", hash_original_method = "08930E35848EBECD6CC869C9C6D6B1F8", hash_generated_method = "D22EE5C8DC9ADE813063BDF4750194F8")
     private String[] parseTypes(String types) {
-        dsTaint.addTaint(types);
+        String[] varB4EAC82CA7396A68D541C85D26508E83_211916948 = null; //Variable for return #1
         String[] result;
         {
-            boolean var42B66898C7E13316B0BD3608BC7660AE_1490391195 = (types == null || types.equals(""));
+            boolean var42B66898C7E13316B0BD3608BC7660AE_1252887159 = (types == null || types.equals(""));
             {
                 result = new String[1];
                 result[0] = Phone.APN_TYPE_ALL;
@@ -1344,9 +1402,10 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 result = types.split(",");
             } //End block
         } //End collapsed parenthetic
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        varB4EAC82CA7396A68D541C85D26508E83_211916948 = result;
+        addTaint(types.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_211916948.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_211916948;
         // ---------- Original Method ----------
         //String[] result;
         //if (types == null || types.equals("")) {
@@ -1359,14 +1418,13 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.608 -0400", hash_original_method = "25E446029D7F780B1E04F89AE12B062D", hash_generated_method = "9B68082A88D88BC5D359DDAE35C29642")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:24.875 -0400", hash_original_method = "25E446029D7F780B1E04F89AE12B062D", hash_generated_method = "4A5562BECAFD171A0A218DD352791FD7")
     private ArrayList<ApnSetting> createApnList(Cursor cursor) {
-        dsTaint.addTaint(cursor.dsTaint);
+        ArrayList<ApnSetting> varB4EAC82CA7396A68D541C85D26508E83_124229957 = null; //Variable for return #1
         ArrayList<ApnSetting> result;
         result = new ArrayList<ApnSetting>();
         {
-            boolean var445CF6247CB476E157B6738CE3BD5910_496732536 = (cursor.moveToFirst());
+            boolean var445CF6247CB476E157B6738CE3BD5910_1576791815 = (cursor.moveToFirst());
             {
                 {
                     String[] types;
@@ -1402,32 +1460,35 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                     result.add(apn);
                 } //End block
                 {
-                    boolean var916090E1B2D032E1EC67FFC8B3451FBE_730928994 = (cursor.moveToNext());
+                    boolean var916090E1B2D032E1EC67FFC8B3451FBE_831993046 = (cursor.moveToNext());
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         log("createApnList: X result=" + result);
-        return (ArrayList<ApnSetting>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_124229957 = result;
+        addTaint(cursor.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_124229957.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_124229957;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.614 -0400", hash_original_method = "2E87B4CBA5BF77A80284005F43D6FB91", hash_generated_method = "55E34914D53560A0F9F55E254CF1D1EA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:24.902 -0400", hash_original_method = "2E87B4CBA5BF77A80284005F43D6FB91", hash_generated_method = "2FC1D47466373C8716A5DB9C2B0E4EE5")
     private boolean dataConnectionNotInUse(DataConnectionAc dcac) {
-        dsTaint.addTaint(dcac.dsTaint);
         {
-            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_718871372 = (mApnContexts.values()).iterator();
-            var9CD107E7BA0F92F9952456E34FCCDBF9_718871372.hasNext();
-            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_718871372.next();
+            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_683510584 = (mApnContexts.values()).iterator();
+            var9CD107E7BA0F92F9952456E34FCCDBF9_683510584.hasNext();
+            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_683510584.next();
             {
                 {
-                    boolean var9070B85FEFA5513E0174013C4F0F50BF_1395180341 = (apnContext.getDataConnectionAc() == dcac);
+                    boolean var9070B85FEFA5513E0174013C4F0F50BF_255474449 = (apnContext.getDataConnectionAc() == dcac);
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(dcac.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_948000744 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_948000744;
         // ---------- Original Method ----------
         //for (ApnContext apnContext : mApnContexts.values()) {
             //if (apnContext.getDataConnectionAc() == dcac) return false;
@@ -1436,24 +1497,37 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.619 -0400", hash_original_method = "871B8246FCDE157C8EBBD019FC69C7EE", hash_generated_method = "26B169962D36B7F0F232A802AEB82A5A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:24.944 -0400", hash_original_method = "871B8246FCDE157C8EBBD019FC69C7EE", hash_generated_method = "CA374C12B80622BD975C8CF23FCCB818")
     private GsmDataConnection findFreeDataConnection() {
+        GsmDataConnection varB4EAC82CA7396A68D541C85D26508E83_418995289 = null; //Variable for return #1
+        GsmDataConnection varB4EAC82CA7396A68D541C85D26508E83_1685614280 = null; //Variable for return #2
         {
-            Iterator<DataConnectionAc> varEB8626173DB084FB4853115B28BD3F62_2054735049 = (mDataConnectionAsyncChannels.values()).iterator();
-            varEB8626173DB084FB4853115B28BD3F62_2054735049.hasNext();
-            DataConnectionAc dcac = varEB8626173DB084FB4853115B28BD3F62_2054735049.next();
+            Iterator<DataConnectionAc> varEB8626173DB084FB4853115B28BD3F62_1917959355 = (mDataConnectionAsyncChannels.values()).iterator();
+            varEB8626173DB084FB4853115B28BD3F62_1917959355.hasNext();
+            DataConnectionAc dcac = varEB8626173DB084FB4853115B28BD3F62_1917959355.next();
             {
                 {
-                    boolean var2573ECF0D7C55708069274523D3C7C3C_1113974393 = (dcac.isInactiveSync() && dataConnectionNotInUse(dcac));
+                    boolean var2573ECF0D7C55708069274523D3C7C3C_1375943417 = (dcac.isInactiveSync() && dataConnectionNotInUse(dcac));
                     {
                         log("findFreeDataConnection: found free GsmDataConnection");
+                        varB4EAC82CA7396A68D541C85D26508E83_418995289 = (GsmDataConnection) dcac.dataConnection;
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         log("findFreeDataConnection: NO free GsmDataConnection");
-        return (GsmDataConnection)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1685614280 = null;
+        GsmDataConnection varA7E53CE21691AB073D9660D615818899_287857430; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_287857430 = varB4EAC82CA7396A68D541C85D26508E83_418995289;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_287857430 = varB4EAC82CA7396A68D541C85D26508E83_1685614280;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_287857430.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_287857430;
         // ---------- Original Method ----------
         //for (DataConnectionAc dcac : mDataConnectionAsyncChannels.values()) {
             //if (dcac.isInactiveSync() && dataConnectionNotInUse(dcac)) {
@@ -1466,16 +1540,20 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.626 -0400", hash_original_method = "9845808D61EC26568899ACA30184D52E", hash_generated_method = "96D3CFB37511B71346D1D56C9A0A0351")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.016 -0400", hash_original_method = "9845808D61EC26568899ACA30184D52E", hash_generated_method = "5832B69C7F493BF3074560213ED91F46")
     protected GsmDataConnection findReadyDataConnection(ApnSetting apn) {
-        dsTaint.addTaint(apn.dsTaint);
+        GsmDataConnection varB4EAC82CA7396A68D541C85D26508E83_678202795 = null; //Variable for return #1
+        GsmDataConnection varB4EAC82CA7396A68D541C85D26508E83_1324048211 = null; //Variable for return #2
+        GsmDataConnection varB4EAC82CA7396A68D541C85D26508E83_1652214298 = null; //Variable for return #3
         log("findReadyDataConnection: apn string <" +
                 (apn!=null?(apn.toString()):"null") +">");
         {
-            Iterator<DataConnectionAc> varEB8626173DB084FB4853115B28BD3F62_8831009 = (mDataConnectionAsyncChannels.values()).iterator();
-            varEB8626173DB084FB4853115B28BD3F62_8831009.hasNext();
-            DataConnectionAc dcac = varEB8626173DB084FB4853115B28BD3F62_8831009.next();
+            varB4EAC82CA7396A68D541C85D26508E83_678202795 = null;
+        } //End block
+        {
+            Iterator<DataConnectionAc> varEB8626173DB084FB4853115B28BD3F62_828118121 = (mDataConnectionAsyncChannels.values()).iterator();
+            varEB8626173DB084FB4853115B28BD3F62_828118121.hasNext();
+            DataConnectionAc dcac = varEB8626173DB084FB4853115B28BD3F62_828118121.next();
             {
                 ApnSetting apnSetting;
                 apnSetting = dcac.getApnSettingSync();
@@ -1484,11 +1562,29 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                          (apnSetting != null ? (apnSetting.toString()) : "null") + ">");
                 } //End block
                 {
-                    boolean var546C0C38294DE3324D3082DFC127AE3A_1247970024 = ((apnSetting != null) && TextUtils.equals(apnSetting.toString(), apn.toString()));
+                    boolean var546C0C38294DE3324D3082DFC127AE3A_1400141926 = ((apnSetting != null) && TextUtils.equals(apnSetting.toString(), apn.toString()));
+                    {
+                        varB4EAC82CA7396A68D541C85D26508E83_1324048211 = (GsmDataConnection) dcac.dataConnection;
+                    } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return (GsmDataConnection)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1652214298 = null;
+        addTaint(apn.getTaint());
+        GsmDataConnection varA7E53CE21691AB073D9660D615818899_764607651; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_764607651 = varB4EAC82CA7396A68D541C85D26508E83_678202795;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_764607651 = varB4EAC82CA7396A68D541C85D26508E83_1324048211;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_764607651 = varB4EAC82CA7396A68D541C85D26508E83_1652214298;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_764607651.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_764607651;
         // ---------- Original Method ----------
         //if (DBG)
             //log("findReadyDataConnection: apn string <" +
@@ -1510,10 +1606,8 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.629 -0400", hash_original_method = "BBFF3626F623A28B2260A4B879BEB776", hash_generated_method = "CF9D7C6216411FE75602F60B66E74A2C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.019 -0400", hash_original_method = "BBFF3626F623A28B2260A4B879BEB776", hash_generated_method = "A4872426EDF27E358FE965E44FC0B76F")
     private boolean setupData(ApnContext apnContext) {
-        dsTaint.addTaint(apnContext.dsTaint);
         log("setupData: apnContext=" + apnContext);
         ApnSetting apn;
         GsmDataConnection dc;
@@ -1556,7 +1650,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         apnContext.setState(State.INITING);
         mPhone.notifyDataConnection(apnContext.getReason(), apnContext.getApnType());
         {
-            boolean varC4178D8C99BD7F6792B45CFB3EEFE060_1376719791 = (apnContext.getDataConnectionAc().getReconnectIntentSync() != null);
+            boolean varC4178D8C99BD7F6792B45CFB3EEFE060_279503258 = (apnContext.getDataConnectionAc().getReconnectIntentSync() != null);
             {
                 log("setupData: data reconnection pending");
                 apnContext.setState(State.FAILED);
@@ -1569,14 +1663,15 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         msg.obj = apnContext;
         dc.bringUp(msg, apn);
         log("setupData: initing!");
-        return dsTaint.getTaintBoolean();
+        addTaint(apnContext.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_821433707 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_821433707;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.630 -0400", hash_original_method = "651F557B6A8D0D165E9CDD4391DC0D13", hash_generated_method = "B17DB31BD0DFCE8674F02B068963A0E4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.020 -0400", hash_original_method = "651F557B6A8D0D165E9CDD4391DC0D13", hash_generated_method = "B17DB31BD0DFCE8674F02B068963A0E4")
     private void onApnChanged() {
         State overallState;
         overallState = getOverallState();
@@ -1606,21 +1701,36 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.634 -0400", hash_original_method = "65E72951AE41561D32861B862A9CCB8A", hash_generated_method = "83A2C909AD423C7AB0031C4807C1A3D3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.084 -0400", hash_original_method = "65E72951AE41561D32861B862A9CCB8A", hash_generated_method = "4D0D10BA09EE57D9A5B4DAA4456BEA44")
     private DataConnectionAc findDataConnectionAcByCid(int cid) {
-        dsTaint.addTaint(cid);
+        DataConnectionAc varB4EAC82CA7396A68D541C85D26508E83_1361478263 = null; //Variable for return #1
+        DataConnectionAc varB4EAC82CA7396A68D541C85D26508E83_751227556 = null; //Variable for return #2
         {
-            Iterator<DataConnectionAc> varEB8626173DB084FB4853115B28BD3F62_339857328 = (mDataConnectionAsyncChannels.values()).iterator();
-            varEB8626173DB084FB4853115B28BD3F62_339857328.hasNext();
-            DataConnectionAc dcac = varEB8626173DB084FB4853115B28BD3F62_339857328.next();
+            Iterator<DataConnectionAc> varEB8626173DB084FB4853115B28BD3F62_289815369 = (mDataConnectionAsyncChannels.values()).iterator();
+            varEB8626173DB084FB4853115B28BD3F62_289815369.hasNext();
+            DataConnectionAc dcac = varEB8626173DB084FB4853115B28BD3F62_289815369.next();
             {
                 {
-                    boolean var44AE56803E65C65A63242637F17A76CE_576930482 = (dcac.getCidSync() == cid);
+                    boolean var44AE56803E65C65A63242637F17A76CE_1088450965 = (dcac.getCidSync() == cid);
+                    {
+                        varB4EAC82CA7396A68D541C85D26508E83_1361478263 = dcac;
+                    } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return (DataConnectionAc)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_751227556 = null;
+        addTaint(cid);
+        DataConnectionAc varA7E53CE21691AB073D9660D615818899_1723471652; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1723471652 = varB4EAC82CA7396A68D541C85D26508E83_1361478263;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1723471652 = varB4EAC82CA7396A68D541C85D26508E83_751227556;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1723471652.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1723471652;
         // ---------- Original Method ----------
         //for (DataConnectionAc dcac : mDataConnectionAsyncChannels.values()) {
             //if (dcac.getCidSync() == cid) {
@@ -1631,29 +1741,30 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.647 -0400", hash_original_method = "3E391A4D32CF36E6E02EF7EB45223170", hash_generated_method = "85CAB4CD2347FC159EF11DF1F3D5EBE7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.189 -0400", hash_original_method = "3E391A4D32CF36E6E02EF7EB45223170", hash_generated_method = "84A36AA3687A39C86E80B49EF1491544")
     private List<ApnContext> findApnContextToClean(Collection<DataConnectionAc> dcacs) {
-        dsTaint.addTaint(dcacs.dsTaint);
+        List<ApnContext> varB4EAC82CA7396A68D541C85D26508E83_1102750819 = null; //Variable for return #1
+        List<ApnContext> varB4EAC82CA7396A68D541C85D26508E83_1851708682 = null; //Variable for return #2
+        varB4EAC82CA7396A68D541C85D26508E83_1102750819 = null;
         ArrayList<ApnContext> list;
         list = new ArrayList<ApnContext>();
         {
-            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_1927997905 = (mApnContexts.values()).iterator();
-            var9CD107E7BA0F92F9952456E34FCCDBF9_1927997905.hasNext();
-            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_1927997905.next();
+            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_1145788664 = (mApnContexts.values()).iterator();
+            var9CD107E7BA0F92F9952456E34FCCDBF9_1145788664.hasNext();
+            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_1145788664.next();
             {
                 {
-                    boolean varE485268814C4AFB5EDDFB3001575EFDB_33356109 = (apnContext.getState() == State.CONNECTED);
+                    boolean varE485268814C4AFB5EDDFB3001575EFDB_1664812935 = (apnContext.getState() == State.CONNECTED);
                     {
                         boolean found;
                         found = false;
                         {
-                            Iterator<DataConnectionAc> varD36661AE30AFDBEDE4E14981910E8874_1409845066 = (dcacs).iterator();
-                            varD36661AE30AFDBEDE4E14981910E8874_1409845066.hasNext();
-                            DataConnectionAc dcac = varD36661AE30AFDBEDE4E14981910E8874_1409845066.next();
+                            Iterator<DataConnectionAc> varD36661AE30AFDBEDE4E14981910E8874_838774305 = (dcacs).iterator();
+                            varD36661AE30AFDBEDE4E14981910E8874_838774305.hasNext();
+                            DataConnectionAc dcac = varD36661AE30AFDBEDE4E14981910E8874_838774305.next();
                             {
                                 {
-                                    boolean var0D1B2614B8B112ED60682FB66D70B775_1879385970 = (dcac == apnContext.getDataConnectionAc());
+                                    boolean var0D1B2614B8B112ED60682FB66D70B775_437628818 = (dcac == apnContext.getDataConnectionAc());
                                     {
                                         found = true;
                                     } //End block
@@ -1664,7 +1775,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                             log("onDataStateChanged(ar): Connected apn not found in the list (" +
                                  apnContext.toString() + ")");
                             {
-                                boolean var365CFE2CF50045A315EC59FCB108BE3D_1686133934 = (apnContext.getDataConnectionAc() != null);
+                                boolean var365CFE2CF50045A315EC59FCB108BE3D_1860183235 = (apnContext.getDataConnectionAc() != null);
                                 {
                                     list.addAll(apnContext.getDataConnectionAc().getApnListSync());
                                 } //End block
@@ -1677,16 +1788,26 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return (List<ApnContext>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1851708682 = list;
+        addTaint(dcacs.getTaint());
+        List<ApnContext> varA7E53CE21691AB073D9660D615818899_961173730; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_961173730 = varB4EAC82CA7396A68D541C85D26508E83_1102750819;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_961173730 = varB4EAC82CA7396A68D541C85D26508E83_1851708682;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_961173730.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_961173730;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.678 -0400", hash_original_method = "2CAD8F6019A6EE1B4B77B4750A278A68", hash_generated_method = "0FD816FE10922774C3A4D78D4724C161")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.461 -0400", hash_original_method = "2CAD8F6019A6EE1B4B77B4750A278A68", hash_generated_method = "BA96B7CF6DD44A2917D742D097D2B656")
     private void onDataStateChanged(AsyncResult ar) {
-        dsTaint.addTaint(ar.dsTaint);
         ArrayList<DataCallState> dataCallStates;
         log("onDataStateChanged(ar): E");
         dataCallStates = (ArrayList<DataCallState>)(ar.result);
@@ -1697,9 +1818,9 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         HashMap<DataCallState, DataConnectionAc> dataCallStateToDcac;
         dataCallStateToDcac = new HashMap<DataCallState, DataConnectionAc>();
         {
-            Iterator<DataCallState> var890D5D9F35AC8194E211B756D8B449D5_1866003532 = (dataCallStates).iterator();
-            var890D5D9F35AC8194E211B756D8B449D5_1866003532.hasNext();
-            DataCallState dataCallState = var890D5D9F35AC8194E211B756D8B449D5_1866003532.next();
+            Iterator<DataCallState> var890D5D9F35AC8194E211B756D8B449D5_1243710142 = (dataCallStates).iterator();
+            var890D5D9F35AC8194E211B756D8B449D5_1243710142.hasNext();
+            DataCallState dataCallState = var890D5D9F35AC8194E211B756D8B449D5_1243710142.next();
             {
                 DataConnectionAc dcac;
                 dcac = findDataConnectionAcByCid(dataCallState.cid);
@@ -1709,9 +1830,9 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         List<ApnContext> apnsToCleanup;
         apnsToCleanup = findApnContextToClean(dataCallStateToDcac.values());
         {
-            Iterator<DataCallState> varBAD99AA6F7F24D65A5EC2CF095E57993_116116799 = (dataCallStates).iterator();
-            varBAD99AA6F7F24D65A5EC2CF095E57993_116116799.hasNext();
-            DataCallState newState = varBAD99AA6F7F24D65A5EC2CF095E57993_116116799.next();
+            Iterator<DataCallState> varBAD99AA6F7F24D65A5EC2CF095E57993_215585264 = (dataCallStates).iterator();
+            varBAD99AA6F7F24D65A5EC2CF095E57993_215585264.hasNext();
+            DataCallState newState = varBAD99AA6F7F24D65A5EC2CF095E57993_215585264.next();
             {
                 DataConnectionAc dcac;
                 dcac = dataCallStateToDcac.get(newState);
@@ -1723,10 +1844,12 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 ArrayList<ApnContext> connectedApns;
                 connectedApns = new ArrayList<ApnContext>();
                 {
-                    ApnContext apnContext = apns[0];
+                    Iterator<ApnContext> varB87ED0964EC6294E1148D70C8996DEB3_805740186 = (apns).iterator();
+                    varB87ED0964EC6294E1148D70C8996DEB3_805740186.hasNext();
+                    ApnContext apnContext = varB87ED0964EC6294E1148D70C8996DEB3_805740186.next();
                     {
                         {
-                            boolean var7D51A9C3981F8C57F447F4E083C1733A_782766590 = (apnContext.getState() == State.CONNECTED ||
+                            boolean var7D51A9C3981F8C57F447F4E083C1733A_189675053 = (apnContext.getState() == State.CONNECTED ||
                        apnContext.getState() == State.CONNECTING ||
                        apnContext.getState() == State.INITING);
                             {
@@ -1736,7 +1859,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var5000E345BB413FFA3E31E234111713FF_1500606123 = (connectedApns.size() == 0);
+                    boolean var5000E345BB413FFA3E31E234111713FF_1925129319 = (connectedApns.size() == 0);
                     {
                         log("onDataStateChanged(ar): no connected apns");
                     } //End block
@@ -1753,16 +1876,16 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                             UpdateLinkPropertyResult result;
                             result = dcac.updateLinkPropertiesDataCallStateSync(newState);
                             {
-                                boolean var1B3E4D2CD1EAEB2455EA2C214D755032_2126442432 = (result.oldLp.equals(result.newLp));
+                                boolean var1B3E4D2CD1EAEB2455EA2C214D755032_1763638892 = (result.oldLp.equals(result.newLp));
                                 {
                                     log("onDataStateChanged(ar): no change");
                                 } //End block
                                 {
                                     {
-                                        boolean var74AB4D1C511598866AA9D48139B76D67_558554421 = (result.oldLp.isIdenticalInterfaceName(result.newLp));
+                                        boolean var74AB4D1C511598866AA9D48139B76D67_2119796864 = (result.oldLp.isIdenticalInterfaceName(result.newLp));
                                         {
                                             {
-                                                boolean var7DF81F5C5F07963E97224562298FE75A_2050169740 = (! result.oldLp.isIdenticalDnses(result.newLp) ||
+                                                boolean var7DF81F5C5F07963E97224562298FE75A_1526711881 = (! result.oldLp.isIdenticalDnses(result.newLp) ||
                                     ! result.oldLp.isIdenticalRoutes(result.newLp) ||
                                     ! result.oldLp.isIdenticalHttpProxy(result.newLp) ||
                                     ! result.oldLp.isIdenticalAddresses(result.newLp));
@@ -1772,15 +1895,17 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                                                     boolean needToClean;
                                                     needToClean = false;
                                                     {
-                                                        Iterator<LinkAddress> var23B27F8B5241376F0116E88BAF37B0B8_389562299 = (car.added).iterator();
-                                                        var23B27F8B5241376F0116E88BAF37B0B8_389562299.hasNext();
-                                                        LinkAddress added = var23B27F8B5241376F0116E88BAF37B0B8_389562299.next();
+                                                        Iterator<LinkAddress> var23B27F8B5241376F0116E88BAF37B0B8_470041327 = (car.added).iterator();
+                                                        var23B27F8B5241376F0116E88BAF37B0B8_470041327.hasNext();
+                                                        LinkAddress added = var23B27F8B5241376F0116E88BAF37B0B8_470041327.next();
                                                         {
                                                             {
-                                                                LinkAddress removed = car.removed[0];
+                                                                Iterator<LinkAddress> var7F421F3A918E0DA72CB36906036E82ED_1894584399 = (car.removed).iterator();
+                                                                var7F421F3A918E0DA72CB36906036E82ED_1894584399.hasNext();
+                                                                LinkAddress removed = var7F421F3A918E0DA72CB36906036E82ED_1894584399.next();
                                                                 {
                                                                     {
-                                                                        boolean varB57B56F1E352D523157536C76D64F31A_994179649 = (NetworkUtils.addressTypeMatches(removed.getAddress(),
+                                                                        boolean varB57B56F1E352D523157536C76D64F31A_1857478926 = (NetworkUtils.addressTypeMatches(removed.getAddress(),
                                                 added.getAddress()));
                                                                         {
                                                                             needToClean = true;
@@ -1800,7 +1925,9 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                                                     {
                                                         log("onDataStateChanged(ar): simple change");
                                                         {
-                                                            ApnContext apnContext = connectedApns[0];
+                                                            Iterator<ApnContext> varFEC3827E0AA5748C7AEE84D60E555D44_714128707 = (connectedApns).iterator();
+                                                            varFEC3827E0AA5748C7AEE84D60E555D44_714128707.hasNext();
+                                                            ApnContext apnContext = varFEC3827E0AA5748C7AEE84D60E555D44_714128707.next();
                                                             {
                                                                 mPhone.notifyDataConnection(
                                                  Phone.REASON_LINK_PROPERTIES_CHANGED,
@@ -1832,7 +1959,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varAC8520286CDD2B23D82BD3D80BB8D83D_1037640146 = (apnsToCleanup.size() != 0);
+            boolean varAC8520286CDD2B23D82BD3D80BB8D83D_1546063264 = (apnsToCleanup.size() != 0);
             {
                 int cid;
                 cid = getCellLocationId();
@@ -1841,23 +1968,22 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<ApnContext> varAED058FB30F7183EC8FD798F4A2CC59E_209628206 = (apnsToCleanup).iterator();
-            varAED058FB30F7183EC8FD798F4A2CC59E_209628206.hasNext();
-            ApnContext apnContext = varAED058FB30F7183EC8FD798F4A2CC59E_209628206.next();
+            Iterator<ApnContext> varAED058FB30F7183EC8FD798F4A2CC59E_140041930 = (apnsToCleanup).iterator();
+            varAED058FB30F7183EC8FD798F4A2CC59E_140041930.hasNext();
+            ApnContext apnContext = varAED058FB30F7183EC8FD798F4A2CC59E_140041930.next();
             {
                 cleanUpConnection(true, apnContext);
             } //End block
         } //End collapsed parenthetic
         log("onDataStateChanged(ar): X");
+        addTaint(ar.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.679 -0400", hash_original_method = "13971E1D1E8CA80CAFB744C7A0A3E07F", hash_generated_method = "5EE1787F5E8EE5223DEBEF2AB49E9188")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.471 -0400", hash_original_method = "66B167D0E0A206B2D44C874F7CFFABF5", hash_generated_method = "E754477CAFCADBA28851A1BEE702C056")
     private void notifyDefaultData(ApnContext apnContext) {
-        dsTaint.addTaint(apnContext.dsTaint);
         {
             log("notifyDefaultData: type=" + apnContext.getApnType()
                 + ", reason:" + apnContext.getReason());
@@ -1865,8 +1991,9 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         apnContext.setState(State.CONNECTED);
         mPhone.notifyDataConnection(apnContext.getReason(), apnContext.getApnType());
         startNetStatPoll();
-        startDataStallAlarm(DATA_STALL_NOT_SUSPECTED);
+        startDataStallAlarm();
         apnContext.getDataConnection().resetRetryCount();
+        addTaint(apnContext.getTaint());
         // ---------- Original Method ----------
         //if (DBG) {
             //log("notifyDefaultData: type=" + apnContext.getApnType()
@@ -1875,18 +2002,17 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         //apnContext.setState(State.CONNECTED);
         //mPhone.notifyDataConnection(apnContext.getReason(), apnContext.getApnType());
         //startNetStatPoll();
-        //startDataStallAlarm(DATA_STALL_NOT_SUSPECTED);
+        //startDataStallAlarm();
         //apnContext.getDataConnection().resetRetryCount();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.679 -0400", hash_original_method = "06C0A537C422D51FEBC3A4D7FED033FC", hash_generated_method = "DB5A9DD6D57BC4AB5482EBBDB36DC2AA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.471 -0400", hash_original_method = "06C0A537C422D51FEBC3A4D7FED033FC", hash_generated_method = "F73C2E1491460D3AF533DA0A4AD08E62")
     protected void gotoIdleAndNotifyDataConnection(String reason) {
-        dsTaint.addTaint(reason);
         log("gotoIdleAndNotifyDataConnection: reason=" + reason);
         notifyDataConnection(reason);
         mActiveApn = null;
+        addTaint(reason.getTaint());
         // ---------- Original Method ----------
         //if (DBG) log("gotoIdleAndNotifyDataConnection: reason=" + reason);
         //notifyDataConnection(reason);
@@ -1894,8 +2020,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.680 -0400", hash_original_method = "E0A0A9601ED58F14AFBBF23896E64411", hash_generated_method = "B15AEEE94D49A3A4F6A6C846243A9553")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.491 -0400", hash_original_method = "E0A0A9601ED58F14AFBBF23896E64411", hash_generated_method = "B15AEEE94D49A3A4F6A6C846243A9553")
     private void resetPollStats() {
         mTxPkts = -1;
         mRxPkts = -1;
@@ -1907,11 +2032,10 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.680 -0400", hash_original_method = "85BF013ED3EA874C77BCE8B69E224FC2", hash_generated_method = "DD29F17489549970931A35C1CDFF47A8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.492 -0400", hash_original_method = "85BF013ED3EA874C77BCE8B69E224FC2", hash_generated_method = "46CEECB3526C8E34C3F57BC73FAA59A1")
     private void doRecovery() {
         {
-            boolean varD6A7948C24B6C2236B4862C980AEEE69_1212692672 = (getOverallState() == State.CONNECTED);
+            boolean varD6A7948C24B6C2236B4862C980AEEE69_1033539501 = (getOverallState() == State.CONNECTED);
             {
                 int recoveryAction;
                 recoveryAction = getRecoveryAction();
@@ -2000,12 +2124,11 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.681 -0400", hash_original_method = "6E590AA3974E9F6C1EEF78A59E60FE7C", hash_generated_method = "EC98F229C7B7719E755C8CBBBDC49677")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.494 -0400", hash_original_method = "6E590AA3974E9F6C1EEF78A59E60FE7C", hash_generated_method = "11894D3D896CD0AE14B87E03C2F9017D")
     @Override
     protected void startNetStatPoll() {
         {
-            boolean var4E0798726B6E95AA9A651DC17C8A16FD_884559908 = (getOverallState() == State.CONNECTED && mNetStatPollEnabled == false);
+            boolean var4E0798726B6E95AA9A651DC17C8A16FD_2110497781 = (getOverallState() == State.CONNECTED && mNetStatPollEnabled == false);
             {
                 log("startNetStatPoll");
                 resetPollStats();
@@ -2023,8 +2146,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.681 -0400", hash_original_method = "A8EA63C8FD8E985352F3B26222CD114C", hash_generated_method = "95EAC4FD2FEFFA5C54BF4D45F2043A3F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.501 -0400", hash_original_method = "A8EA63C8FD8E985352F3B26222CD114C", hash_generated_method = "95EAC4FD2FEFFA5C54BF4D45F2043A3F")
     @Override
     protected void stopNetStatPoll() {
         mNetStatPollEnabled = false;
@@ -2037,8 +2159,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.681 -0400", hash_original_method = "7B64E8A50E5FAE405E2B8EDB2C4EA1BE", hash_generated_method = "BD1853EBBC82788F1B29C0451ECD6E7A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.517 -0400", hash_original_method = "7B64E8A50E5FAE405E2B8EDB2C4EA1BE", hash_generated_method = "BD1853EBBC82788F1B29C0451ECD6E7A")
     @Override
     protected void restartRadio() {
         log("restartRadio: ************TURN OFF RADIO**************");
@@ -2056,8 +2177,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.682 -0400", hash_original_method = "A7D682C6BB5AE30439F13EEA2F18409A", hash_generated_method = "DD427A5F0D8A68F7F4E5EB31288AB1F6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.518 -0400", hash_original_method = "757A180615AA792B2C29A1B55C4F521C", hash_generated_method = "074A1DDB9E799375A4564004D8098BFA")
     private void updateDataStallInfo() {
         long sent, received;
         TxRxSum preTxRxSum;
@@ -2071,7 +2191,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         received = mDataStallTxRxSum.rxPkts - preTxRxSum.rxPkts;
         {
             {
-                boolean var7C0CC8ECFFCEF537CCFB463FE517A260_1277478814 = (SystemProperties.getBoolean("radio.test.data.stall", false));
+                boolean var7C0CC8ECFFCEF537CCFB463FE517A260_842750899 = (SystemProperties.getBoolean("radio.test.data.stall", false));
                 {
                     log("updateDataStallInfo: radio.test.data.stall true received = 0;");
                     received = 0;
@@ -2085,7 +2205,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         } //End block
         {
             {
-                boolean varC70CC77B08458828B44DBD70EF60D18F_1481122904 = (mPhone.getState() == Phone.State.IDLE);
+                boolean varC70CC77B08458828B44DBD70EF60D18F_651606680 = (mPhone.getState() == Phone.State.IDLE);
                 {
                     mSentSinceLastRecv += sent;
                 } //End block
@@ -2111,12 +2231,10 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.683 -0400", hash_original_method = "8537D637F246437B66DEDCE9BA149189", hash_generated_method = "F86A64FACE8B0D5B809A3B611A0B90E0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.519 -0400", hash_original_method = "81664D2568F01996EC1331372DE6C46E", hash_generated_method = "7BB9BB05E41656C795102850BEDEC8DA")
     @Override
     protected void onDataStallAlarm(int tag) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(tag);
         {
             {
                 log("onDataStallAlarm: ignore, tag=" + tag + " expecting " + mDataStallAlarmTag);
@@ -2127,13 +2245,10 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         hangWatchdogTrigger = Settings.Secure.getInt(mResolver,
                 Settings.Secure.PDP_WATCHDOG_TRIGGER_PACKET_COUNT,
                 NUMBER_SENT_PACKETS_OF_HANG);
-        boolean suspectedStall;
-        suspectedStall = DATA_STALL_NOT_SUSPECTED;
         {
             {
                 log("onDataStallAlarm: tag=" + tag + " do recovery action=" + getRecoveryAction());
             } //End block
-            suspectedStall = DATA_STALL_SUSPECTED;
             sendMessage(obtainMessage(EVENT_DO_RECOVERY));
         } //End block
         {
@@ -2142,14 +2257,14 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                     " pkts since last received, < watchdogTrigger=" + hangWatchdogTrigger);
             } //End block
         } //End block
-        startDataStallAlarm(suspectedStall);
+        startDataStallAlarm();
+        addTaint(tag);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.683 -0400", hash_original_method = "94396473B615B857A09FF1389DF39C19", hash_generated_method = "1CCF070327F8D3EA84700E3C17DB300B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.586 -0400", hash_original_method = "94396473B615B857A09FF1389DF39C19", hash_generated_method = "1CCF070327F8D3EA84700E3C17DB300B")
     private void updateDataActivity() {
         long sent, received;
         Activity newActivity;
@@ -2190,29 +2305,29 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.684 -0400", hash_original_method = "2F0F0316C5E4D930E75010F1BAA9D392", hash_generated_method = "349003FDC817FC67B6E5D9E83937BA41")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.586 -0400", hash_original_method = "2F0F0316C5E4D930E75010F1BAA9D392", hash_generated_method = "0C94454F531E800F57D8FB1CC5C79A7C")
     private boolean shouldPostNotification(GsmDataConnection.FailCause  cause) {
-        dsTaint.addTaint(cause.dsTaint);
-        return dsTaint.getTaintBoolean();
+        addTaint(cause.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1607985203 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1607985203;
         // ---------- Original Method ----------
         //return (cause != GsmDataConnection.FailCause.UNKNOWN);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.685 -0400", hash_original_method = "62A24BB1F647222AA978F8E837B2D330", hash_generated_method = "1BDC894D3A2D618212561D9A8DB8A497")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.587 -0400", hash_original_method = "62A24BB1F647222AA978F8E837B2D330", hash_generated_method = "7170D37172E3E2A1B2B4363CC7B549D0")
     private boolean retryAfterDisconnected(String reason) {
-        dsTaint.addTaint(reason);
         boolean retry;
         retry = true;
         {
-            boolean var3CB82CF3031EDB1F7F9E067EE7B1B74E_1208746734 = (Phone.REASON_RADIO_TURNED_OFF.equals(reason));
+            boolean var3CB82CF3031EDB1F7F9E067EE7B1B74E_15934688 = (Phone.REASON_RADIO_TURNED_OFF.equals(reason));
             {
                 retry = false;
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(reason.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2142687560 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2142687560;
         // ---------- Original Method ----------
         //boolean retry = true;
         //if ( Phone.REASON_RADIO_TURNED_OFF.equals(reason) ) {
@@ -2222,25 +2337,21 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.686 -0400", hash_original_method = "B5DAD52C5259D76162A701D0CC3F0E5D", hash_generated_method = "493AC0FF376F04C550D427C540AC70B6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.597 -0400", hash_original_method = "B5DAD52C5259D76162A701D0CC3F0E5D", hash_generated_method = "9A19CCBA348B2B23434BBAA55FDED778")
     private void reconnectAfterFail(FailCause lastFailCauseCode,
                                     ApnContext apnContext, int retryOverride) {
-        dsTaint.addTaint(apnContext.dsTaint);
-        dsTaint.addTaint(retryOverride);
-        dsTaint.addTaint(lastFailCauseCode.dsTaint);
         {
             loge("reconnectAfterFail: apnContext == null, impossible");
         } //End block
         {
-            boolean var30FA7C33083B1EC6F834026AE8058702_696141517 = ((apnContext.getState() == State.FAILED) &&
+            boolean var30FA7C33083B1EC6F834026AE8058702_1789821212 = ((apnContext.getState() == State.FAILED) &&
             (apnContext.getDataConnection() != null));
             {
                 {
-                    boolean varE5EB462BBE8443D160BD1FB45CF7935B_2122565776 = (!apnContext.getDataConnection().isRetryNeeded());
+                    boolean varE5EB462BBE8443D160BD1FB45CF7935B_921582676 = (!apnContext.getDataConnection().isRetryNeeded());
                     {
                         {
-                            boolean var922F49E2215CF7A16F73F26F0F3737B6_1039669919 = (!apnContext.getApnType().equals(Phone.APN_TYPE_DEFAULT));
+                            boolean var922F49E2215CF7A16F73F26F0F3737B6_1395722824 = (!apnContext.getApnType().equals(Phone.APN_TYPE_DEFAULT));
                             {
                                 mPhone.notifyDataConnection(Phone.REASON_APN_FAILED, apnContext.getApnType());
                             } //End block
@@ -2264,7 +2375,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 } //End block
                 startAlarmForReconnect(nextReconnectDelay, apnContext);
                 {
-                    boolean var2A1839E9F3FAB784CE5EE5D4D0AE0D4B_1325649659 = (!shouldPostNotification(lastFailCauseCode));
+                    boolean var2A1839E9F3FAB784CE5EE5D4D0AE0D4B_811988844 = (!shouldPostNotification(lastFailCauseCode));
                     {
                         {
                             log("reconnectAfterFail: NOT Posting GPRS Unavailable notification "
@@ -2277,16 +2388,16 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
+        addTaint(lastFailCauseCode.getTaint());
+        addTaint(apnContext.getTaint());
+        addTaint(retryOverride);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.686 -0400", hash_original_method = "68704E7FD0A79E29C0B17E36042D228F", hash_generated_method = "0219BAF65891F385EE66005DBA400A3B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.598 -0400", hash_original_method = "68704E7FD0A79E29C0B17E36042D228F", hash_generated_method = "FCD6AEEB904243BADD81FFDA3C7AC91A")
     private void startAlarmForReconnect(int delay, ApnContext apnContext) {
-        dsTaint.addTaint(apnContext.dsTaint);
-        dsTaint.addTaint(delay);
         {
             log("Schedule alarm for reconnect: activate failed. Scheduling next attempt for "
                 + (delay / 1000) + "s");
@@ -2310,31 +2421,19 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         dcac.setReconnectIntentSync(alarmIntent);
         am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
                 SystemClock.elapsedRealtime() + delay, alarmIntent);
+        addTaint(delay);
+        addTaint(apnContext.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.687 -0400", hash_original_method = "B93C86D6B627A29FECBAD17E305E1155", hash_generated_method = "27A23D7D5D92AB817AE4B146238AE5D5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private void startDataStallAlarm(boolean suspectedStall) {
-        dsTaint.addTaint(suspectedStall);
-        int nextAction;
-        nextAction = getRecoveryAction();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.610 -0400", hash_original_method = "752A3E1271AADAA161C9D22B1F08D3F3", hash_generated_method = "33761A70156AD50B166531289CBCB7E2")
+    private void startDataStallAlarm() {
         int delayInMs;
-        {
-            boolean varD018D692F7838A2441A89F15D54C03D1_2014592452 = (mIsScreenOn || suspectedStall || RecoveryAction.isAggressiveRecovery(nextAction));
-            {
-                delayInMs = Settings.Secure.getInt(mResolver,
-                                       Settings.Secure.DATA_STALL_ALARM_AGGRESSIVE_DELAY_IN_MS,
-                                       DATA_STALL_ALARM_AGGRESSIVE_DELAY_IN_MS_DEFAULT);
-            } //End block
-            {
-                delayInMs = Settings.Secure.getInt(mResolver,
-                                       Settings.Secure.DATA_STALL_ALARM_NON_AGGRESSIVE_DELAY_IN_MS,
-                                       DATA_STALL_ALARM_NON_AGGRESSIVE_DELAY_IN_MS_DEFAULT);
-            } //End block
-        } //End collapsed parenthetic
+        delayInMs = Settings.Secure.getInt(mResolver,
+                            Settings.Secure.DATA_STALL_ALARM_DELAY_IN_MS,
+                            DATA_STALL_ALARM_DELAY_IN_MS_DEFAULT);
         mDataStallAlarmTag += 1;
         {
             log("startDataStallAlarm: tag=" + mDataStallAlarmTag +
@@ -2354,8 +2453,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.687 -0400", hash_original_method = "9CFC369C9AE6A2831F865DCDD5760991", hash_generated_method = "3895AC549DC097BA38353904DAE5AB35")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.611 -0400", hash_original_method = "9BAB3B8D9CDA09D3CE76C98C24705EFE", hash_generated_method = "0EF7F8AC5CED26584D6762E5790D8AD3")
     private void stopDataStallAlarm() {
         AlarmManager am;
         am = (AlarmManager) mPhone.getContext().getSystemService(Context.ALARM_SERVICE);
@@ -2371,7 +2469,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         // ---------- Original Method ----------
         //AlarmManager am =
             //(AlarmManager) mPhone.getContext().getSystemService(Context.ALARM_SERVICE);
-        //if (VDBG) {
+        //if (DBG) {
             //log("stopDataStallAlarm: current tag=" + mDataStallAlarmTag +
                     //" mDataStallAlarmIntent=" + mDataStallAlarmIntent);
         //}
@@ -2383,46 +2481,20 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.689 -0400", hash_original_method = "E11588DBC7CAEA40F234C97E128BA9F7", hash_generated_method = "0EB29CD27ECABC20F8961E04A77CCADB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    @Override
-    protected void restartDataStallAlarm() {
-        int nextAction;
-        nextAction = getRecoveryAction();
-        {
-            boolean var3CFFE8B1C66F5EC88FB8D3538439D606_2027907582 = (RecoveryAction.isAggressiveRecovery(nextAction));
-            {
-                log("data stall recovery action is pending. not resetting the alarm.");
-            } //End block
-        } //End collapsed parenthetic
-        stopDataStallAlarm();
-        startDataStallAlarm(DATA_STALL_NOT_SUSPECTED);
-        // ---------- Original Method ----------
-        //int nextAction = getRecoveryAction();
-        //if (RecoveryAction.isAggressiveRecovery(nextAction)) {
-            //if (DBG) log("data stall recovery action is pending. not resetting the alarm.");
-            //return;
-        //}
-        //stopDataStallAlarm();
-        //startDataStallAlarm(DATA_STALL_NOT_SUSPECTED);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.689 -0400", hash_original_method = "B7B20E847D290047FDFE77B8D734C484", hash_generated_method = "8C7348C79162672D81F2D98253743F45")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.612 -0400", hash_original_method = "B7B20E847D290047FDFE77B8D734C484", hash_generated_method = "4181797B75D8E4FD28A6546DDAD4E79C")
     private void notifyNoData(GsmDataConnection.FailCause lastFailCauseCode,
                               ApnContext apnContext) {
-        dsTaint.addTaint(apnContext.dsTaint);
-        dsTaint.addTaint(lastFailCauseCode.dsTaint);
         log( "notifyNoData: type=" + apnContext.getApnType());
         apnContext.setState(State.FAILED);
         {
-            boolean var4EEBF6159081CCB6B98E337119003EE1_1466446275 = (lastFailCauseCode.isPermanentFail()
+            boolean var4EEBF6159081CCB6B98E337119003EE1_143196260 = (lastFailCauseCode.isPermanentFail()
             && (!apnContext.getApnType().equals(Phone.APN_TYPE_DEFAULT)));
             {
                 mPhone.notifyDataConnectionFailed(apnContext.getReason(), apnContext.getApnType());
             } //End block
         } //End collapsed parenthetic
+        addTaint(lastFailCauseCode.getTaint());
+        addTaint(apnContext.getTaint());
         // ---------- Original Method ----------
         //if (DBG) log( "notifyNoData: type=" + apnContext.getApnType());
         //apnContext.setState(State.FAILED);
@@ -2433,13 +2505,12 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.689 -0400", hash_original_method = "E0D6F2F660096B71ECF89DBFFFD7E4A9", hash_generated_method = "6B39F892FFDD14E7C76C6DC5FB315278")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.612 -0400", hash_original_method = "E0D6F2F660096B71ECF89DBFFFD7E4A9", hash_generated_method = "8555DD5684AE97C9492DA4F931DA888A")
     private void onRecordsLoaded() {
         log("onRecordsLoaded: createAllApnList");
         createAllApnList();
         {
-            boolean varBF6B2CF5258A9CC53BF3EF6E8D75A257_655800471 = (mPhone.mCM.getRadioState().isOn());
+            boolean varBF6B2CF5258A9CC53BF3EF6E8D75A257_216884998 = (mPhone.mCM.getRadioState().isOn());
             {
                 log("onRecordsLoaded: notifying data availability");
                 notifyOffApnsOfAvailability(Phone.REASON_SIM_LOADED);
@@ -2457,15 +2528,12 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.690 -0400", hash_original_method = "4B71314721E8EC7414109EE47221FD04", hash_generated_method = "80F3BEA767CC8A59D4080A42F8703CC5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.613 -0400", hash_original_method = "4B71314721E8EC7414109EE47221FD04", hash_generated_method = "BC82FA810912469F498AD94C7E9E22F0")
     @Override
     protected void onSetDependencyMet(String apnType, boolean met) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(met);
-        dsTaint.addTaint(apnType);
         {
-            boolean var26625207EA129FA6C81C0427CE84CA93_554628110 = (Phone.APN_TYPE_HIPRI.equals(apnType));
+            boolean var26625207EA129FA6C81C0427CE84CA93_306853299 = (Phone.APN_TYPE_HIPRI.equals(apnType));
         } //End collapsed parenthetic
         ApnContext apnContext;
         apnContext = mApnContexts.get(apnType);
@@ -2475,12 +2543,14 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         } //End block
         applyNewState(apnContext, apnContext.isEnabled(), met);
         {
-            boolean var9DC01820B4CF39C526DE14A3F8F65164_1024899028 = (Phone.APN_TYPE_DEFAULT.equals(apnType));
+            boolean var9DC01820B4CF39C526DE14A3F8F65164_987808227 = (Phone.APN_TYPE_DEFAULT.equals(apnType));
             {
                 apnContext = mApnContexts.get(Phone.APN_TYPE_HIPRI);
                 applyNewState(apnContext, apnContext.isEnabled(), met);
             } //End block
         } //End collapsed parenthetic
+        addTaint(apnType.getTaint());
+        addTaint(met);
         // ---------- Original Method ----------
         //if (Phone.APN_TYPE_HIPRI.equals(apnType)) return;
         //ApnContext apnContext = mApnContexts.get(apnType);
@@ -2497,12 +2567,8 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.690 -0400", hash_original_method = "99E85476A8EB35B364BDD45037DA3C4C", hash_generated_method = "329D92E69F258CC68B59A340F01F8E4E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.629 -0400", hash_original_method = "99E85476A8EB35B364BDD45037DA3C4C", hash_generated_method = "379E5E315A4671EF38B765FABFC5F201")
     private void applyNewState(ApnContext apnContext, boolean enabled, boolean met) {
-        dsTaint.addTaint(met);
-        dsTaint.addTaint(enabled);
-        dsTaint.addTaint(apnContext.dsTaint);
         boolean cleanup;
         cleanup = false;
         boolean trySetup;
@@ -2513,7 +2579,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                     apnContext.getDependencyMet() +"))");
         } //End block
         {
-            boolean var71D7772E371594A9E183FDA441CA7053_253872879 = (apnContext.isReady());
+            boolean var71D7772E371594A9E183FDA441CA7053_1794125910 = (apnContext.isReady());
             {
                 {
                     apnContext.setReason(Phone.REASON_DATA_DISABLED);
@@ -2526,7 +2592,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             {
                 {
                     {
-                        boolean varD838083F139117E3D29CE4817418915A_1941285666 = (apnContext.isEnabled());
+                        boolean varD838083F139117E3D29CE4817418915A_1284729762 = (apnContext.isEnabled());
                         {
                             apnContext.setReason(Phone.REASON_DATA_DEPENDENCY_MET);
                         } //End block
@@ -2535,7 +2601,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                         } //End block
                     } //End collapsed parenthetic
                     {
-                        boolean var8C3F5A245E8CD46D727CA60CA79AEBA0_1033889657 = (apnContext.getState() == State.FAILED);
+                        boolean var8C3F5A245E8CD46D727CA60CA79AEBA0_217389072 = (apnContext.getState() == State.FAILED);
                         {
                             apnContext.setState(State.IDLE);
                         } //End block
@@ -2548,29 +2614,33 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         apnContext.setDependencyMet(met);
         cleanUpConnection(true, apnContext);
         trySetupData(apnContext);
+        addTaint(apnContext.getTaint());
+        addTaint(enabled);
+        addTaint(met);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.702 -0400", hash_original_method = "CD0E8AA9DA59D5F15CB3DBA9C10480A3", hash_generated_method = "2F35744FB066F75208BE00F4A00EE00F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.718 -0400", hash_original_method = "CD0E8AA9DA59D5F15CB3DBA9C10480A3", hash_generated_method = "BAF5A6A3A94C5C135C66615DF9D75EE7")
     private DataConnection checkForConnectionForApnContext(ApnContext apnContext) {
-        dsTaint.addTaint(apnContext.dsTaint);
+        DataConnection varB4EAC82CA7396A68D541C85D26508E83_1444229545 = null; //Variable for return #1
+        DataConnection varB4EAC82CA7396A68D541C85D26508E83_2145608682 = null; //Variable for return #2
+        DataConnection varB4EAC82CA7396A68D541C85D26508E83_1506427502 = null; //Variable for return #3
         String apnType;
         apnType = apnContext.getApnType();
         ApnSetting dunSetting;
         dunSetting = null;
         {
-            boolean var733FD876202A992F48D44A26A7FD0196_33206879 = (Phone.APN_TYPE_DUN.equals(apnType));
+            boolean var733FD876202A992F48D44A26A7FD0196_587573657 = (Phone.APN_TYPE_DUN.equals(apnType));
             {
                 dunSetting = fetchDunApn();
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<ApnContext> var6DC0F8F93D4890C09FB88A4F42664788_1352722370 = (mApnContexts.values()).iterator();
-            var6DC0F8F93D4890C09FB88A4F42664788_1352722370.hasNext();
-            ApnContext c = var6DC0F8F93D4890C09FB88A4F42664788_1352722370.next();
+            Iterator<ApnContext> var6DC0F8F93D4890C09FB88A4F42664788_175868923 = (mApnContexts.values()).iterator();
+            var6DC0F8F93D4890C09FB88A4F42664788_175868923.hasNext();
+            ApnContext c = var6DC0F8F93D4890C09FB88A4F42664788_175868923.next();
             {
                 DataConnection conn;
                 conn = c.getDataConnection();
@@ -2579,41 +2649,55 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                     apnSetting = c.getApnSetting();
                     {
                         {
-                            boolean var8C1D5273F63F2A795463E07E2AA32767_288836182 = (dunSetting.equals(apnSetting));
+                            boolean var8C1D5273F63F2A795463E07E2AA32767_1516027793 = (dunSetting.equals(apnSetting));
                             {
                                 {
                                     log("checkForConnectionForApnContext: apnContext=" + apnContext +
                                     " found conn=" + conn);
                                 } //End block
+                                varB4EAC82CA7396A68D541C85D26508E83_1444229545 = conn;
                             } //End block
                         } //End collapsed parenthetic
                     } //End block
                     {
-                        boolean var9D1B5F46420F9179EBDCA60D125A22B4_683423863 = (apnSetting != null && apnSetting.canHandleType(apnType));
+                        boolean var9D1B5F46420F9179EBDCA60D125A22B4_1474297557 = (apnSetting != null && apnSetting.canHandleType(apnType));
                         {
                             {
                                 log("checkForConnectionForApnContext: apnContext=" + apnContext +
                                 " found conn=" + conn);
                             } //End block
+                            varB4EAC82CA7396A68D541C85D26508E83_2145608682 = conn;
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
             } //End block
         } //End collapsed parenthetic
         log("checkForConnectionForApnContext: apnContext=" + apnContext + " NO conn");
-        return (DataConnection)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1506427502 = null;
+        addTaint(apnContext.getTaint());
+        DataConnection varA7E53CE21691AB073D9660D615818899_1596449262; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1596449262 = varB4EAC82CA7396A68D541C85D26508E83_1444229545;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1596449262 = varB4EAC82CA7396A68D541C85D26508E83_2145608682;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1596449262 = varB4EAC82CA7396A68D541C85D26508E83_1506427502;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1596449262.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1596449262;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.703 -0400", hash_original_method = "C4FAA9463FB18AA2956D630E0A7A0FC4", hash_generated_method = "3DC73DF09D1812671B9720A30DDA6CE1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.719 -0400", hash_original_method = "C4FAA9463FB18AA2956D630E0A7A0FC4", hash_generated_method = "A81CFD5081E5A8A97540E1ADD281B035")
     @Override
     protected void onEnableApn(int apnId, int enabled) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(enabled);
-        dsTaint.addTaint(apnId);
         ApnContext apnContext;
         apnContext = mApnContexts.get(apnIdToType(apnId));
         {
@@ -2621,6 +2705,8 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         } //End block
         log("onEnableApn: apnContext=" + apnContext + " call applyNewState");
         applyNewState(apnContext, enabled == ENABLED, apnContext.getDependencyMet());
+        addTaint(apnId);
+        addTaint(enabled);
         // ---------- Original Method ----------
         //ApnContext apnContext = mApnContexts.get(apnIdToType(apnId));
         //if (apnContext == null) {
@@ -2632,15 +2718,15 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.704 -0400", hash_original_method = "885166865223FFC382706A95C40269FC", hash_generated_method = "0FDF369DAC73BA99EBA4585125264BBC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.719 -0400", hash_original_method = "885166865223FFC382706A95C40269FC", hash_generated_method = "06E5295346DE720C9BA913CA28450FA2")
     @Override
     protected boolean onTrySetupData(String reason) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(reason);
         log("onTrySetupData: reason=" + reason);
         setupDataOnReadyApns(reason);
-        return dsTaint.getTaintBoolean();
+        addTaint(reason.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1419603456 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1419603456;
         // ---------- Original Method ----------
         //if (DBG) log("onTrySetupData: reason=" + reason);
         //setupDataOnReadyApns(reason);
@@ -2648,28 +2734,27 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.704 -0400", hash_original_method = "0F081CC5E381F07585D5A8591D9B8176", hash_generated_method = "F726AF3758078E2FD5E41D9DFFB109C3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.719 -0400", hash_original_method = "0F081CC5E381F07585D5A8591D9B8176", hash_generated_method = "95ED45AC335B7F245F58828CD9979549")
     protected boolean onTrySetupData(ApnContext apnContext) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(apnContext.dsTaint);
         log("onTrySetupData: apnContext=" + apnContext);
-        boolean varD10E5DDD0548397420B754E479BF3D26_650305312 = (trySetupData(apnContext));
-        return dsTaint.getTaintBoolean();
+        boolean varD10E5DDD0548397420B754E479BF3D26_1191375021 = (trySetupData(apnContext));
+        addTaint(apnContext.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1375332872 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1375332872;
         // ---------- Original Method ----------
         //if (DBG) log("onTrySetupData: apnContext=" + apnContext);
         //return trySetupData(apnContext);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.705 -0400", hash_original_method = "94279F194E7EEE60FDEB34DD3123F420", hash_generated_method = "66C2F4B2BF3CFD8E872445E054AAA2DD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.719 -0400", hash_original_method = "94279F194E7EEE60FDEB34DD3123F420", hash_generated_method = "4366EEC9C855102789816352C6ACFB9F")
     @Override
     protected void onRoamingOff() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         log("onRoamingOff");
         {
-            boolean var6A4EDF3FAFEE8B58E0E885094E7C645E_1370248065 = (getDataOnRoamingEnabled() == false);
+            boolean var6A4EDF3FAFEE8B58E0E885094E7C645E_1655209258 = (getDataOnRoamingEnabled() == false);
             {
                 notifyOffApnsOfAvailability(Phone.REASON_ROAMING_OFF);
                 setupDataOnReadyApns(Phone.REASON_ROAMING_OFF);
@@ -2689,13 +2774,12 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.706 -0400", hash_original_method = "F695F1E8C2AB53D2ED55D91C043A1972", hash_generated_method = "C5FFDD0B393A858B5E76E5938F1DB0D5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.720 -0400", hash_original_method = "F695F1E8C2AB53D2ED55D91C043A1972", hash_generated_method = "B4512900013A509A04E91F73846741DF")
     @Override
     protected void onRoamingOn() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean var178FD459AA12B1549B96EFDE7D504A27_680157532 = (getDataOnRoamingEnabled());
+            boolean var178FD459AA12B1549B96EFDE7D504A27_1047408541 = (getDataOnRoamingEnabled());
             {
                 log("onRoamingOn: setup data on roaming");
                 setupDataOnReadyApns(Phone.REASON_ROAMING_ON);
@@ -2720,27 +2804,26 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.707 -0400", hash_original_method = "2023A2D13D03549C0A5EFF7393A0A72A", hash_generated_method = "BAF45E65BF8A16A7F548D6A284B460F5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.723 -0400", hash_original_method = "2023A2D13D03549C0A5EFF7393A0A72A", hash_generated_method = "25B0DABCA16DA39081E46AA12EC11E0F")
     @Override
     protected void onRadioAvailable() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         log("onRadioAvailable");
         {
-            boolean varA62B422C35237A9A4A0C0A75D57190F8_451099365 = (mPhone.getSimulatedRadioControl() != null);
+            boolean varA62B422C35237A9A4A0C0A75D57190F8_1089828046 = (mPhone.getSimulatedRadioControl() != null);
             {
                 notifyDataConnection(null);
                 log("onRadioAvailable: We're on the simulator; assuming data is connected");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varBF0727A83B7DC3B32BB422410729B3B0_959816737 = (mPhone.mIccRecords.getRecordsLoaded());
+            boolean varBF0727A83B7DC3B32BB422410729B3B0_1794220826 = (mPhone.mIccRecords.getRecordsLoaded());
             {
                 notifyOffApnsOfAvailability(null);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var7B94654969E16A4794216154E8FB917C_564075839 = (getOverallState() != State.IDLE);
+            boolean var7B94654969E16A4794216154E8FB917C_1571649210 = (getOverallState() != State.IDLE);
             {
                 cleanUpConnection(true, null);
             } //End block
@@ -2760,22 +2843,21 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.714 -0400", hash_original_method = "3A8D622B44F84A55C5B45212A617D18F", hash_generated_method = "841C7BF911EBE75E5F73F38D594EBADA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.792 -0400", hash_original_method = "3A8D622B44F84A55C5B45212A617D18F", hash_generated_method = "08B68FC0E2F638632B535BDF75764BA7")
     @Override
     protected void onRadioOffOrNotAvailable() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            Iterator<DataConnection> var8D54139306CE59DA2A79305B93065ACC_995792246 = (mDataConnections.values()).iterator();
-            var8D54139306CE59DA2A79305B93065ACC_995792246.hasNext();
-            DataConnection dc = var8D54139306CE59DA2A79305B93065ACC_995792246.next();
+            Iterator<DataConnection> var8D54139306CE59DA2A79305B93065ACC_1720565772 = (mDataConnections.values()).iterator();
+            var8D54139306CE59DA2A79305B93065ACC_1720565772.hasNext();
+            DataConnection dc = var8D54139306CE59DA2A79305B93065ACC_1720565772.next();
             {
                 dc.resetRetryCount();
             } //End block
         } //End collapsed parenthetic
         mReregisterOnReconnectFailure = false;
         {
-            boolean varA62B422C35237A9A4A0C0A75D57190F8_579507895 = (mPhone.getSimulatedRadioControl() != null);
+            boolean varA62B422C35237A9A4A0C0A75D57190F8_1213958614 = (mPhone.getSimulatedRadioControl() != null);
             {
                 log("We're on the simulator; assuming radio off is meaningless");
             } //End block
@@ -2800,16 +2882,10 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.716 -0400", hash_original_method = "D16E9D0E751B364A620376A0BED0AC69", hash_generated_method = "F571A9BCB56DD76ECCFEAE699F3DB403")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.804 -0400", hash_original_method = "31196134743B1AB9B97F59AB7F4DD6B0", hash_generated_method = "50E1E967B822DD31E4429778DE8AEB22")
     @Override
     protected void onDataSetupComplete(AsyncResult ar) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(ar.dsTaint);
-        DataConnection.FailCause cause;
-        cause = DataConnection.FailCause.UNKNOWN;
-        boolean handleError;
-        handleError = false;
         ApnContext apnContext;
         apnContext = null;
         {
@@ -2819,94 +2895,73 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("onDataSetupComplete: No apnContext");
         } //End block
         {
-            boolean varB5E9B7D9BBFA45BCF027FCB550EA1FBB_916703706 = (isDataSetupCompleteOk(ar));
+            boolean varB5E9B7D9BBFA45BCF027FCB550EA1FBB_1812691328 = (isDataSetupCompleteOk(ar));
             {
                 DataConnectionAc dcac;
                 dcac = apnContext.getDataConnectionAc();
                 {
-                    ContentResolver cr;
-                    cr = mPhone.getContext().getContentResolver();
-                    String radioTestProperty;
-                    radioTestProperty = "radio.test.onDSC.null.dcac";
+                    if (DroidSafeAndroidRuntime.control) throw new RuntimeException("onDataSetupCompete: No dcac");
+                } //End block
+                DataConnection dc;
+                dc = apnContext.getDataConnection();
+                {
+                    String apnStr;
+                    apnStr = "<unknown>";
                     {
-                        boolean var6C3937B55D6D7EDEF84E3ED188776B0A_133580796 = (Settings.System.getInt(cr, radioTestProperty, 0) == 1);
+                        boolean var42EF12F4CB67FC41B1F91CE3324F0C03_1918211735 = (apnContext.getWaitingApns() != null
+                        && !apnContext.getWaitingApns().isEmpty());
                         {
-                            log("onDataSetupComplete: " + radioTestProperty +
-                            " is true, set dcac to null and reset property to false");
-                            dcac = null;
-                            Settings.System.putInt(cr, radioTestProperty, 0);
-                            log("onDataSetupComplete: " + radioTestProperty + "=" +
-                            Settings.System.getInt(mPhone.getContext().getContentResolver(),
-                                    radioTestProperty, -1));
+                            apnStr = apnContext.getWaitingApns().get(0).apn;
                         } //End block
                     } //End collapsed parenthetic
+                    log("onDataSetupComplete: success apn=" + apnStr);
                 } //End block
+                ApnSetting apn;
+                apn = apnContext.getApnSetting();
                 {
-                    log("onDataSetupComplete: no connection to DC, handle as error");
-                    cause = DataConnection.FailCause.CONNECTION_TO_DATACONNECTIONAC_BROKEN;
-                    handleError = true;
-                } //End block
-                {
-                    DataConnection dc;
-                    dc = apnContext.getDataConnection();
+                    boolean var00FF597132A341DE3BF2E746162A900F_1387123149 = (apn.proxy != null && apn.proxy.length() != 0);
                     {
-                        String apnStr;
-                        apnStr = "<unknown>";
+                        try 
                         {
-                            boolean varC629FF2D56F30F97D28AAEA2BB960F70_897418913 = (apnContext.getWaitingApns() != null
-                            && !apnContext.getWaitingApns().isEmpty());
+                            String port;
+                            port = apn.port;
                             {
-                                apnStr = apnContext.getWaitingApns().get(0).apn;
-                            } //End block
-                        } //End collapsed parenthetic
-                        log("onDataSetupComplete: success apn=" + apnStr);
+                                boolean var043EAD4723AA14ECD7762C02F18E1A34_521550743 = (TextUtils.isEmpty(port));
+                                port = "8080";
+                            } //End collapsed parenthetic
+                            ProxyProperties proxy;
+                            proxy = new ProxyProperties(apn.proxy,
+                            Integer.parseInt(port), null);
+                            dcac.setLinkPropertiesHttpProxySync(proxy);
+                        } //End block
+                        catch (NumberFormatException e)
+                        {
+                            loge("onDataSetupComplete: NumberFormatException making ProxyProperties (" +
+                            apn.port + "): " + e);
+                        } //End block
                     } //End block
-                    ApnSetting apn;
-                    apn = apnContext.getApnSetting();
+                } //End collapsed parenthetic
+                {
+                    boolean varEC69DD651013C51F6ACA2A20413C3B78_1857492261 = (TextUtils.equals(apnContext.getApnType(),Phone.APN_TYPE_DEFAULT));
                     {
-                        boolean varD0AB2DD6D799FBD1D915F41811B7BABA_1684451628 = (apn.proxy != null && apn.proxy.length() != 0);
+                        SystemProperties.set("gsm.defaultpdpcontext.active", "true");
                         {
-                            try 
+                            log("onDataSetupComplete: PREFERED APN is null");
+                            mPreferredApn = apnContext.getApnSetting();
                             {
-                                String port;
-                                port = apn.port;
-                                {
-                                    boolean var1EEA344F651B3003AA69616F7B2E12D8_272641636 = (TextUtils.isEmpty(port));
-                                    port = "8080";
-                                } //End collapsed parenthetic
-                                ProxyProperties proxy;
-                                proxy = new ProxyProperties(apn.proxy,
-                                Integer.parseInt(port), null);
-                                dcac.setLinkPropertiesHttpProxySync(proxy);
-                            } //End block
-                            catch (NumberFormatException e)
-                            {
-                                loge("onDataSetupComplete: NumberFormatException making ProxyProperties (" +
-                                apn.port + "): " + e);
+                                setPreferredApn(mPreferredApn.id);
                             } //End block
                         } //End block
-                    } //End collapsed parenthetic
+                    } //End block
                     {
-                        boolean var246254CF6FAEFDB9014D4C528A756DE8_1607766974 = (TextUtils.equals(apnContext.getApnType(),Phone.APN_TYPE_DEFAULT));
-                        {
-                            SystemProperties.set("gsm.defaultpdpcontext.active", "true");
-                            {
-                                log("onDataSetupComplete: PREFERED APN is null");
-                                mPreferredApn = apnContext.getApnSetting();
-                                {
-                                    setPreferredApn(mPreferredApn.id);
-                                } //End block
-                            } //End block
-                        } //End block
-                        {
-                            SystemProperties.set("gsm.defaultpdpcontext.active", "false");
-                        } //End block
-                    } //End collapsed parenthetic
-                    notifyDefaultData(apnContext);
-                } //End block
+                        SystemProperties.set("gsm.defaultpdpcontext.active", "false");
+                    } //End block
+                } //End collapsed parenthetic
+                notifyDefaultData(apnContext);
             } //End block
             {
                 String apnString;
+                DataConnection.FailCause cause;
                 cause = (DataConnection.FailCause) (ar.result);
                 {
                     try 
@@ -2920,7 +2975,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                     log(String.format("onDataSetupComplete: error apn=%s cause=%s", apnString, cause));
                 } //End block
                 {
-                    boolean var70C8C044708A6E33F44340F8299B6975_1593019805 = (cause.isEventLoggable());
+                    boolean var70C8C044708A6E33F44340F8299B6975_1355218353 = (cause.isEventLoggable());
                     {
                         int cid;
                         cid = getCellLocationId();
@@ -2929,7 +2984,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var66182ADBA155CABC56AA3975E9DBF19F_246296001 = (cause.isPermanentFail());
+                    boolean var66182ADBA155CABC56AA3975E9DBF19F_1603603667 = (cause.isPermanentFail());
                     apnContext.decWaitingApnsPermFailCount();
                 } //End collapsed parenthetic
                 apnContext.removeNextWaitingApn();
@@ -2939,60 +2994,58 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                         apnContext.getWaitingApns().size(),
                         apnContext.getWaitingApnsPermFailCount()));
                 } //End block
-                handleError = true;
+                {
+                    boolean varAE862190C9752AEFC117247928D51FE4_2030194314 = (apnContext.getWaitingApns().isEmpty());
+                    {
+                        {
+                            boolean varEEED2F76BD3397C488FB9DFF0EAF6871_548771193 = (apnContext.getWaitingApnsPermFailCount() == 0);
+                            {
+                                {
+                                    log("onDataSetupComplete: All APN's had permanent failures, stop retrying");
+                                } //End block
+                                apnContext.setState(State.FAILED);
+                                mPhone.notifyDataConnection(Phone.REASON_APN_FAILED, apnContext.getApnType());
+                                apnContext.setDataConnection(null);
+                                apnContext.setDataConnectionAc(null);
+                                {
+                                    log("onDataSetupComplete: permanent error apn=%s" + apnString );
+                                } //End block
+                            } //End block
+                            {
+                                log("onDataSetupComplete: Not all permanent failures, retry");
+                                int retryOverride;
+                                retryOverride = -1;
+                                {
+                                    retryOverride =
+                            ((DataConnection.CallSetupException)ar.exception).getRetryOverride();
+                                } //End block
+                                {
+                                    log("No retry is suggested.");
+                                } //End block
+                                {
+                                    startDelayedRetry(cause, apnContext, retryOverride);
+                                } //End block
+                            } //End block
+                        } //End collapsed parenthetic
+                    } //End block
+                    {
+                        log("onDataSetupComplete: Try next APN");
+                        apnContext.setState(State.SCANNING);
+                        startAlarmForReconnect(APN_DELAY_MILLIS, apnContext);
+                    } //End block
+                } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        {
-            {
-                boolean var25064B015FAE3D1F07E0BF83B505BDD4_1814697538 = (apnContext.getWaitingApns().isEmpty());
-                {
-                    {
-                        boolean var3C7E233370953E5404DE069D13931ABA_1642929612 = (apnContext.getWaitingApnsPermFailCount() == 0);
-                        {
-                            {
-                                log("onDataSetupComplete: All APN's had permanent failures, stop retrying");
-                            } //End block
-                            apnContext.setState(State.FAILED);
-                            mPhone.notifyDataConnection(Phone.REASON_APN_FAILED, apnContext.getApnType());
-                            apnContext.setDataConnection(null);
-                            apnContext.setDataConnectionAc(null);
-                        } //End block
-                        {
-                            log("onDataSetupComplete: Not all permanent failures, retry");
-                            int retryOverride;
-                            retryOverride = -1;
-                            {
-                                retryOverride =
-                            ((DataConnection.CallSetupException)ar.exception).getRetryOverride();
-                            } //End block
-                            {
-                                log("No retry is suggested.");
-                            } //End block
-                            {
-                                startDelayedRetry(cause, apnContext, retryOverride);
-                            } //End block
-                        } //End block
-                    } //End collapsed parenthetic
-                } //End block
-                {
-                    log("onDataSetupComplete: Try next APN");
-                    apnContext.setState(State.SCANNING);
-                    startAlarmForReconnect(APN_DELAY_MILLIS, apnContext);
-                } //End block
-            } //End collapsed parenthetic
-        } //End block
+        addTaint(ar.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.718 -0400", hash_original_method = "D4180B029AFCA66C11673889FF654292", hash_generated_method = "A54EBEBCD6828E5F0984B58C8957EAF8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.806 -0400", hash_original_method = "D4180B029AFCA66C11673889FF654292", hash_generated_method = "33CE7108090CF8A666249F711BDE2E26")
     @Override
     protected void onDisconnectDone(int connId, AsyncResult ar) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(connId);
-        dsTaint.addTaint(ar.dsTaint);
         ApnContext apnContext;
         apnContext = null;
         log("onDisconnectDone: EVENT_DISCONNECT_DONE connId=" + connId);
@@ -3005,10 +3058,10 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         apnContext.setState(State.IDLE);
         mPhone.notifyDataConnection(apnContext.getReason(), apnContext.getApnType());
         {
-            boolean var786CBED095C8588B57078CC7EF2AF454_162702781 = (isDisconnected());
+            boolean var786CBED095C8588B57078CC7EF2AF454_308243829 = (isDisconnected());
             {
                 {
-                    boolean var846205B09CBBB48260D2ACA57A03090A_157907830 = (mPhone.getServiceStateTracker().processPendingRadioPowerOffAfterDataOff());
+                    boolean var846205B09CBBB48260D2ACA57A03090A_2049219347 = (mPhone.getServiceStateTracker().processPendingRadioPowerOffAfterDataOff());
                     {
                         apnContext.setApnSetting(null);
                         apnContext.setDataConnection(null);
@@ -3018,7 +3071,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var8F8F15CFAD1D995C4B76EF8FCB948AA5_939527787 = (apnContext.isReady() && retryAfterDisconnected(apnContext.getReason()));
+            boolean var8F8F15CFAD1D995C4B76EF8FCB948AA5_859784475 = (apnContext.isReady() && retryAfterDisconnected(apnContext.getReason()));
             {
                 SystemProperties.set("gsm.defaultpdpcontext.active", "false");
                 startAlarmForReconnect(APN_DELAY_MILLIS, apnContext);
@@ -3029,17 +3082,18 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 apnContext.setDataConnectionAc(null);
             } //End block
         } //End collapsed parenthetic
+        addTaint(connId);
+        addTaint(ar.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.721 -0400", hash_original_method = "F62EA026E4AEAA1F320C05AA5A1ED4A9", hash_generated_method = "D438F93EC76D0C9800FEEE674160A65C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.809 -0400", hash_original_method = "F62EA026E4AEAA1F320C05AA5A1ED4A9", hash_generated_method = "AC2F62E0C68D21D4622137F4E06CDC3F")
     protected void onPollPdp() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean varD6A7948C24B6C2236B4862C980AEEE69_295733433 = (getOverallState() == State.CONNECTED);
+            boolean varD6A7948C24B6C2236B4862C980AEEE69_66492730 = (getOverallState() == State.CONNECTED);
             {
                 mPhone.mCM.getDataCallList(this.obtainMessage(EVENT_DATA_STATE_CHANGED));
                 sendMessageDelayed(obtainMessage(EVENT_POLL_PDP), POLL_PDP_MILLIS);
@@ -3053,14 +3107,13 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.722 -0400", hash_original_method = "7D6F87E7A2D5372F8DAAC4AE4D373312", hash_generated_method = "F2AF4BDE36538D3E787B46BBE1F89639")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.809 -0400", hash_original_method = "7D6F87E7A2D5372F8DAAC4AE4D373312", hash_generated_method = "1AB323E1FBD579F045C9F82A0AB6DCB0")
     @Override
     protected void onVoiceCallStarted() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         log("onVoiceCallStarted");
         {
-            boolean var457C185A27A25C3794C4F48127E1858B_2048192345 = (isConnected() && ! mPhone.getServiceStateTracker().isConcurrentVoiceAndDataAllowed());
+            boolean var457C185A27A25C3794C4F48127E1858B_1442599534 = (isConnected() && ! mPhone.getServiceStateTracker().isConcurrentVoiceAndDataAllowed());
             {
                 log("onVoiceCallStarted stop polling");
                 stopNetStatPoll();
@@ -3079,20 +3132,19 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.722 -0400", hash_original_method = "E17A71140CA37F7A1735220B212ECBE3", hash_generated_method = "B2574096682D8D1E5FC57F30B980BC30")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.810 -0400", hash_original_method = "F668A2FA6E26D3D907651D9C8494921A", hash_generated_method = "E6A27462F97FF5BB5274BA68F059269A")
     @Override
     protected void onVoiceCallEnded() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         log("onVoiceCallEnded");
         {
-            boolean var5153987C55DB41759ADC1D7527E9459D_2047746590 = (isConnected());
+            boolean var5153987C55DB41759ADC1D7527E9459D_960390365 = (isConnected());
             {
                 {
-                    boolean var52415700B3EB5881C35C2B7439253DD7_640072707 = (!mPhone.getServiceStateTracker().isConcurrentVoiceAndDataAllowed());
+                    boolean var52415700B3EB5881C35C2B7439253DD7_1505229278 = (!mPhone.getServiceStateTracker().isConcurrentVoiceAndDataAllowed());
                     {
                         startNetStatPoll();
-                        startDataStallAlarm(DATA_STALL_NOT_SUSPECTED);
+                        startDataStallAlarm();
                         notifyDataConnection(Phone.REASON_VOICE_CALL_ENDED);
                     } //End block
                     {
@@ -3109,7 +3161,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         //if (isConnected()) {
             //if (!mPhone.getServiceStateTracker().isConcurrentVoiceAndDataAllowed()) {
                 //startNetStatPoll();
-                //startDataStallAlarm(DATA_STALL_NOT_SUSPECTED);
+                //startDataStallAlarm();
                 //notifyDataConnection(Phone.REASON_VOICE_CALL_ENDED);
             //} else {
                 //resetPollStats();
@@ -3120,14 +3172,10 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.723 -0400", hash_original_method = "2BB2576C993A3562ED602CBB829AED3C", hash_generated_method = "1C770EFD91612EFA867ECA89246FB01C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.827 -0400", hash_original_method = "2BB2576C993A3562ED602CBB829AED3C", hash_generated_method = "0774FF41DB2BE8F15A006E56ED416AB8")
     @Override
     protected void onCleanUpConnection(boolean tearDown, int apnId, String reason) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(reason);
-        dsTaint.addTaint(apnId);
-        dsTaint.addTaint(tearDown);
         log("onCleanUpConnection");
         ApnContext apnContext;
         apnContext = mApnContexts.get(apnIdToType(apnId));
@@ -3135,6 +3183,9 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             apnContext.setReason(reason);
             cleanUpConnection(tearDown, apnContext);
         } //End block
+        addTaint(tearDown);
+        addTaint(apnId);
+        addTaint(reason.getTaint());
         // ---------- Original Method ----------
         //if (DBG) log("onCleanUpConnection");
         //ApnContext apnContext = mApnContexts.get(apnIdToType(apnId));
@@ -3145,20 +3196,20 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.729 -0400", hash_original_method = "F3A5D3BC82C41DBBBC23CC041FBF5A0E", hash_generated_method = "12DBE25A8455A27636FC1C13E8CACBD3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.873 -0400", hash_original_method = "F3A5D3BC82C41DBBBC23CC041FBF5A0E", hash_generated_method = "AAECD0A89576E5736719CD4C952E90AF")
     protected boolean isConnected() {
         {
-            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_1971969888 = (mApnContexts.values()).iterator();
-            var9CD107E7BA0F92F9952456E34FCCDBF9_1971969888.hasNext();
-            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_1971969888.next();
+            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_1913418468 = (mApnContexts.values()).iterator();
+            var9CD107E7BA0F92F9952456E34FCCDBF9_1913418468.hasNext();
+            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_1913418468.next();
             {
                 {
-                    boolean varE485268814C4AFB5EDDFB3001575EFDB_884806744 = (apnContext.getState() == State.CONNECTED);
+                    boolean varE485268814C4AFB5EDDFB3001575EFDB_539840748 = (apnContext.getState() == State.CONNECTED);
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1763735861 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1763735861;
         // ---------- Original Method ----------
         //for (ApnContext apnContext : mApnContexts.values()) {
             //if (apnContext.getState() == State.CONNECTED) {
@@ -3169,21 +3220,21 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.734 -0400", hash_original_method = "82B1D5E02818D0100BE3FB5300291D89", hash_generated_method = "99566CE9A95AE2074ABFFED171E6E1DD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.945 -0400", hash_original_method = "82B1D5E02818D0100BE3FB5300291D89", hash_generated_method = "6CEF7998F2C3ED51A6FC2EEF9A84B355")
     @Override
     public boolean isDisconnected() {
         {
-            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_1971364575 = (mApnContexts.values()).iterator();
-            var9CD107E7BA0F92F9952456E34FCCDBF9_1971364575.hasNext();
-            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_1971364575.next();
+            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_658412482 = (mApnContexts.values()).iterator();
+            var9CD107E7BA0F92F9952456E34FCCDBF9_658412482.hasNext();
+            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_658412482.next();
             {
                 {
-                    boolean varBE5D0A772BCE39989337B7BA0425FA24_1603392327 = (!apnContext.isDisconnected());
+                    boolean varBE5D0A772BCE39989337B7BA0425FA24_460847824 = (!apnContext.isDisconnected());
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1242460963 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1242460963;
         // ---------- Original Method ----------
         //for (ApnContext apnContext : mApnContexts.values()) {
             //if (!apnContext.isDisconnected()) {
@@ -3194,19 +3245,17 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.743 -0400", hash_original_method = "85B9B626BCFF754F4C98AF3615661037", hash_generated_method = "E466344F6685D126419D1ACB0939A7E5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.023 -0400", hash_original_method = "85B9B626BCFF754F4C98AF3615661037", hash_generated_method = "06B95C5EE7134AE60A71B7183A26DBD3")
     @Override
     protected void notifyDataConnection(String reason) {
-        dsTaint.addTaint(reason);
         log("notifyDataConnection: reason=" + reason);
         {
-            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_246644816 = (mApnContexts.values()).iterator();
-            var9CD107E7BA0F92F9952456E34FCCDBF9_246644816.hasNext();
-            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_246644816.next();
+            Iterator<ApnContext> var9CD107E7BA0F92F9952456E34FCCDBF9_1413376786 = (mApnContexts.values()).iterator();
+            var9CD107E7BA0F92F9952456E34FCCDBF9_1413376786.hasNext();
+            ApnContext apnContext = var9CD107E7BA0F92F9952456E34FCCDBF9_1413376786.next();
             {
                 {
-                    boolean varF0467FF71AC99F0BE559C0B01AC11D76_495083698 = (apnContext.isReady());
+                    boolean varF0467FF71AC99F0BE559C0B01AC11D76_400266998 = (apnContext.isReady());
                     {
                         log("notifyDataConnection: type:"+apnContext.getApnType());
                         mPhone.notifyDataConnection(reason != null ? reason : apnContext.getReason(),
@@ -3216,6 +3265,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             } //End block
         } //End collapsed parenthetic
         notifyOffApnsOfAvailability(reason);
+        addTaint(reason.getTaint());
         // ---------- Original Method ----------
         //if (DBG) log("notifyDataConnection: reason=" + reason);
         //for (ApnContext apnContext : mApnContexts.values()) {
@@ -3229,8 +3279,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.743 -0400", hash_original_method = "FAE53DB9273E730E3BB3527C1EA0C82D", hash_generated_method = "7A4C5387FE9BE4D7D9881E84DAAFBCFA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.047 -0400", hash_original_method = "FAE53DB9273E730E3BB3527C1EA0C82D", hash_generated_method = "263C39D35493B8817E5A51B54A6CB276")
     private void createAllApnList() {
         mAllApns = new ArrayList<ApnSetting>();
         String operator;
@@ -3245,7 +3294,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                     Telephony.Carriers.CONTENT_URI, null, selection, null, null);
             {
                 {
-                    boolean var6498CD0999E209A4A0BE7E263562F997_519405965 = (cursor.getCount() > 0);
+                    boolean var6498CD0999E209A4A0BE7E263562F997_1597430239 = (cursor.getCount() > 0);
                     {
                         mAllApns = createApnList(cursor);
                     } //End block
@@ -3254,7 +3303,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             } //End block
         } //End block
         {
-            boolean var20904D2BF548C0A6496A2E4B42EE1318_1676302197 = (mAllApns.isEmpty());
+            boolean var20904D2BF548C0A6496A2E4B42EE1318_436981865 = (mAllApns.isEmpty());
             {
                 log("createAllApnList: No APN found for carrier: " + operator);
                 mPreferredApn = null;
@@ -3262,7 +3311,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             {
                 mPreferredApn = getPreferredApn();
                 {
-                    boolean var13AFC7FCEAEC4340EFADEAB1DEAC5B7B_676427498 = (mPreferredApn != null && !mPreferredApn.numeric.equals(operator));
+                    boolean var13AFC7FCEAEC4340EFADEAB1DEAC5B7B_166352016 = (mPreferredApn != null && !mPreferredApn.numeric.equals(operator));
                     {
                         mPreferredApn = null;
                         setPreferredApn(-1);
@@ -3277,16 +3326,16 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.744 -0400", hash_original_method = "D852CA0D301C451CEC71F89E8253F809", hash_generated_method = "2349A77B566B36786928AD5B07E25789")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.049 -0400", hash_original_method = "5EA4CC699810E4F50A6EFC012301B7BB", hash_generated_method = "42C5E6DFFA2F7F31BAD3935A51A582B9")
     private GsmDataConnection createDataConnection() {
+        GsmDataConnection varB4EAC82CA7396A68D541C85D26508E83_1212672973 = null; //Variable for return #1
         log("createDataConnection E");
         RetryManager rm;
         rm = new RetryManager();
         int id;
         id = mUniqueIdGenerator.getAndIncrement();
         GsmDataConnection conn;
-        conn = GsmDataConnection.makeDataConnection(mPhone, id, rm, this);
+        conn = GsmDataConnection.makeDataConnection(mPhone, id, rm);
         mDataConnections.put(id, conn);
         DataConnectionAc dcac;
         dcac = new DataConnectionAc(conn, LOG_TAG);
@@ -3304,23 +3353,22 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         filter.addAction(INTENT_RECONNECT_ALARM + '.' + id);
         mPhone.getContext().registerReceiver(mIntentReceiver, filter, null, mPhone);
         log("createDataConnection() X id=" + id);
-        return (GsmDataConnection)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1212672973 = conn;
+        varB4EAC82CA7396A68D541C85D26508E83_1212672973.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1212672973;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.744 -0400", hash_original_method = "E3018B8151F871DAB6348A26AB9C8E22", hash_generated_method = "80624ADEF7F18907928661E3B8E08295")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.049 -0400", hash_original_method = "E3018B8151F871DAB6348A26AB9C8E22", hash_generated_method = "D6FA2A5EAAF32CEF6FBA314635907E53")
     private void configureRetry(DataConnection dc, boolean forDefault) {
-        dsTaint.addTaint(dc.dsTaint);
-        dsTaint.addTaint(forDefault);
         {
-            boolean var37AECCB3C8FAA31888C49CC20AC6C0E3_269415779 = (!dc.configureRetry(getReryConfig(forDefault)));
+            boolean var37AECCB3C8FAA31888C49CC20AC6C0E3_1715914784 = (!dc.configureRetry(getReryConfig(forDefault)));
             {
                 {
                     {
-                        boolean varFFEFB308EB1258042E3805C355CEE781_601557384 = (!dc.configureRetry(DEFAULT_DATA_RETRY_CONFIG));
+                        boolean varFFEFB308EB1258042E3805C355CEE781_1353937252 = (!dc.configureRetry(DEFAULT_DATA_RETRY_CONFIG));
                         {
                             loge("configureRetry: Could not configure using " +
                             "DEFAULT_DATA_RETRY_CONFIG=" + DEFAULT_DATA_RETRY_CONFIG);
@@ -3330,7 +3378,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 } //End block
                 {
                     {
-                        boolean var4382F1220AB91F0872206EBC52B619CA_157290718 = (!dc.configureRetry(SECONDARY_DATA_RETRY_CONFIG));
+                        boolean var4382F1220AB91F0872206EBC52B619CA_1344819305 = (!dc.configureRetry(SECONDARY_DATA_RETRY_CONFIG));
                         {
                             loge("configureRetry: Could note configure using " +
                             "SECONDARY_DATA_RETRY_CONFIG=" + SECONDARY_DATA_RETRY_CONFIG);
@@ -3340,13 +3388,14 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 } //End block
             } //End block
         } //End collapsed parenthetic
+        addTaint(dc.getTaint());
+        addTaint(forDefault);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.744 -0400", hash_original_method = "3AA2B8847F1D4D39DED653A1D9ABBA74", hash_generated_method = "455308BA51294DCD6485094FF2A285F1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.054 -0400", hash_original_method = "3AA2B8847F1D4D39DED653A1D9ABBA74", hash_generated_method = "455308BA51294DCD6485094FF2A285F1")
     private void destroyDataConnections() {
         {
             log("destroyDataConnections: clear mDataConnectionList");
@@ -3365,20 +3414,22 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.755 -0400", hash_original_method = "848BE9CB29607B1E2AFE44721BE481D7", hash_generated_method = "8F4B64BECE44260CD02395A6A89B34F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.134 -0400", hash_original_method = "848BE9CB29607B1E2AFE44721BE481D7", hash_generated_method = "49660740EE7B7382023C549BBCCC129C")
     private ArrayList<ApnSetting> buildWaitingApns(String requestedApnType) {
-        dsTaint.addTaint(requestedApnType);
+        ArrayList<ApnSetting> varB4EAC82CA7396A68D541C85D26508E83_886553904 = null; //Variable for return #1
+        ArrayList<ApnSetting> varB4EAC82CA7396A68D541C85D26508E83_199284394 = null; //Variable for return #2
+        ArrayList<ApnSetting> varB4EAC82CA7396A68D541C85D26508E83_1233509315 = null; //Variable for return #3
         ArrayList<ApnSetting> apnList;
         apnList = new ArrayList<ApnSetting>();
         {
-            boolean varA533E6DA53DC5795B731548F019117DF_544653527 = (requestedApnType.equals(Phone.APN_TYPE_DUN));
+            boolean varA533E6DA53DC5795B731548F019117DF_729362850 = (requestedApnType.equals(Phone.APN_TYPE_DUN));
             {
                 ApnSetting dun;
                 dun = fetchDunApn();
                 {
                     apnList.add(dun);
                     log("buildWaitingApns: X added APN_TYPE_DUN apnList=" + apnList);
+                    varB4EAC82CA7396A68D541C85D26508E83_886553904 = apnList;
                 } //End block
             } //End block
         } //End collapsed parenthetic
@@ -3387,7 +3438,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         int radioTech;
         radioTech = mPhone.getServiceState().getRadioTechnology();
         {
-            boolean varF99E18D293403D65F0831E88076378E8_113564418 = (requestedApnType.equals(Phone.APN_TYPE_DEFAULT));
+            boolean varF99E18D293403D65F0831E88076378E8_678974864 = (requestedApnType.equals(Phone.APN_TYPE_DEFAULT));
             {
                 {
                     {
@@ -3395,11 +3446,12 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                         + mPreferredApn.numeric + ":" + mPreferredApn);
                     } //End block
                     {
-                        boolean var856A96AD897866EDDA41D8E0648BCB11_55144348 = (mPreferredApn.numeric.equals(operator));
+                        boolean var856A96AD897866EDDA41D8E0648BCB11_138857804 = (mPreferredApn.numeric.equals(operator));
                         {
                             {
                                 apnList.add(mPreferredApn);
                                 log("buildWaitingApns: X added preferred apnList=" + apnList);
+                                varB4EAC82CA7396A68D541C85D26508E83_199284394 = apnList;
                             } //End block
                             {
                                 log("buildWaitingApns: no preferred APN");
@@ -3418,12 +3470,12 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         } //End collapsed parenthetic
         {
             {
-                Iterator<ApnSetting> var02F4BAA28E3266E2CCAC36540E0DBAE4_1947319115 = (mAllApns).iterator();
-                var02F4BAA28E3266E2CCAC36540E0DBAE4_1947319115.hasNext();
-                ApnSetting apn = var02F4BAA28E3266E2CCAC36540E0DBAE4_1947319115.next();
+                Iterator<ApnSetting> var02F4BAA28E3266E2CCAC36540E0DBAE4_25950742 = (mAllApns).iterator();
+                var02F4BAA28E3266E2CCAC36540E0DBAE4_25950742.hasNext();
+                ApnSetting apn = var02F4BAA28E3266E2CCAC36540E0DBAE4_25950742.next();
                 {
                     {
-                        boolean varA06A3C6237577CA78B4AB7FBA1B54C4C_564737634 = (apn.canHandleType(requestedApnType));
+                        boolean varA06A3C6237577CA78B4AB7FBA1B54C4C_951684875 = (apn.canHandleType(requestedApnType));
                         {
                             {
                                 log("apn info : " +apn.toString());
@@ -3438,16 +3490,30 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             loge("mAllApns is empty!");
         } //End block
         log("buildWaitingApns: X apnList=" + apnList);
-        return (ArrayList<ApnSetting>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1233509315 = apnList;
+        addTaint(requestedApnType.getTaint());
+        ArrayList<ApnSetting> varA7E53CE21691AB073D9660D615818899_1064118743; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1064118743 = varB4EAC82CA7396A68D541C85D26508E83_886553904;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1064118743 = varB4EAC82CA7396A68D541C85D26508E83_199284394;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1064118743 = varB4EAC82CA7396A68D541C85D26508E83_1233509315;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1064118743.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1064118743;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.756 -0400", hash_original_method = "E41D316825399ADA7868FFC16CE8AB28", hash_generated_method = "8496C713757FA4C85713CA7A7BD58B3B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.139 -0400", hash_original_method = "E41D316825399ADA7868FFC16CE8AB28", hash_generated_method = "C8AA299B64925912FEC9279EB75E8D98")
     private String apnListToString(ArrayList<ApnSetting> apns) {
-        dsTaint.addTaint(apns.dsTaint);
+        String varB4EAC82CA7396A68D541C85D26508E83_1169721189 = null; //Variable for return #1
         StringBuilder result;
         result = new StringBuilder();
         {
@@ -3460,8 +3526,10 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                   .append(']');
             } //End block
         } //End collapsed parenthetic
-        String varEA70154FDA28CC59402440C6317B57EF_901627107 = (result.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1169721189 = result.toString();
+        addTaint(apns.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1169721189.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1169721189;
         // ---------- Original Method ----------
         //StringBuilder result = new StringBuilder();
         //for (int i = 0, size = apns.size(); i < size; i++) {
@@ -3473,68 +3541,60 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.756 -0400", hash_original_method = "3866195B872E529451BB06B2525880D5", hash_generated_method = "D1191D37D7DBEE31C2BFEAC404A282BC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.140 -0400", hash_original_method = "3866195B872E529451BB06B2525880D5", hash_generated_method = "87B4C3E20A474E2672BC7EA5B9929236")
     private void startDelayedRetry(GsmDataConnection.FailCause cause,
                                    ApnContext apnContext, int retryOverride) {
-        dsTaint.addTaint(apnContext.dsTaint);
-        dsTaint.addTaint(cause.dsTaint);
-        dsTaint.addTaint(retryOverride);
         notifyNoData(cause, apnContext);
         reconnectAfterFail(cause, apnContext, retryOverride);
+        addTaint(cause.getTaint());
+        addTaint(apnContext.getTaint());
+        addTaint(retryOverride);
         // ---------- Original Method ----------
         //notifyNoData(cause, apnContext);
         //reconnectAfterFail(cause, apnContext, retryOverride);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.756 -0400", hash_original_method = "22E3490C8EB6FB91490F2A1E004AD822", hash_generated_method = "E988128F9631D3DE7B4C0FE9C86CCD68")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.144 -0400", hash_original_method = "A60F121DAB80740EFF8A86C7BC5BA500", hash_generated_method = "0B436F4AF91A08A39583A1859B6B73EF")
     private void setPreferredApn(int pos) {
-        dsTaint.addTaint(pos);
-        {
-            log("setPreferredApn: X !canSEtPreferApn");
-        } //End block
-        log("setPreferredApn: delete");
         ContentResolver resolver;
         resolver = mPhone.getContext().getContentResolver();
-        resolver.delete(PREFERAPN_NO_UPDATE_URI, null, null);
+        resolver.delete(PREFERAPN_URI, null, null);
         {
-            log("setPreferredApn: insert");
             ContentValues values;
             values = new ContentValues();
             values.put(APN_ID, pos);
-            resolver.insert(PREFERAPN_NO_UPDATE_URI, values);
+            resolver.insert(PREFERAPN_URI, values);
         } //End block
+        addTaint(pos);
         // ---------- Original Method ----------
         //if (!canSetPreferApn) {
-            //log("setPreferredApn: X !canSEtPreferApn");
             //return;
         //}
-        //log("setPreferredApn: delete");
         //ContentResolver resolver = mPhone.getContext().getContentResolver();
-        //resolver.delete(PREFERAPN_NO_UPDATE_URI, null, null);
+        //resolver.delete(PREFERAPN_URI, null, null);
         //if (pos >= 0) {
-            //log("setPreferredApn: insert");
             //ContentValues values = new ContentValues();
             //values.put(APN_ID, pos);
-            //resolver.insert(PREFERAPN_NO_UPDATE_URI, values);
+            //resolver.insert(PREFERAPN_URI, values);
         //}
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.767 -0400", hash_original_method = "187338B4BAD9BF24F2E67FCF482C7DBA", hash_generated_method = "04EAEDD767F5923BE908C5D58D54E98E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.341 -0400", hash_original_method = "C73C211081CDB852B85A3162F1169F83", hash_generated_method = "812A422227A0BDC1D71B4904B7DA3DE5")
     private ApnSetting getPreferredApn() {
+        ApnSetting varB4EAC82CA7396A68D541C85D26508E83_1795679623 = null; //Variable for return #1
+        ApnSetting varB4EAC82CA7396A68D541C85D26508E83_1437669892 = null; //Variable for return #2
+        ApnSetting varB4EAC82CA7396A68D541C85D26508E83_1581786347 = null; //Variable for return #3
         {
-            boolean var20904D2BF548C0A6496A2E4B42EE1318_130072267 = (mAllApns.isEmpty());
+            boolean var20904D2BF548C0A6496A2E4B42EE1318_1538570695 = (mAllApns.isEmpty());
             {
-                log("getPreferredApn: X not found mAllApns.isEmpty");
+                varB4EAC82CA7396A68D541C85D26508E83_1795679623 = null;
             } //End block
         } //End collapsed parenthetic
         Cursor cursor;
         cursor = mPhone.getContext().getContentResolver().query(
-                PREFERAPN_NO_UPDATE_URI, new String[] { "_id", "name", "apn" },
+                PREFERAPN_URI, new String[] { "_id", "name", "apn" },
                 null, null, Telephony.Carriers.DEFAULT_SORT_ORDER);
         {
             canSetPreferApn = true;
@@ -3543,21 +3603,21 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
             canSetPreferApn = false;
         } //End block
         {
-            boolean varCD3E4FB8DC5266FE4AD30A8E880E316C_898864680 = (canSetPreferApn && cursor.getCount() > 0);
+            boolean varCD3E4FB8DC5266FE4AD30A8E880E316C_397956589 = (canSetPreferApn && cursor.getCount() > 0);
             {
                 int pos;
                 cursor.moveToFirst();
                 pos = cursor.getInt(cursor.getColumnIndexOrThrow(Telephony.Carriers._ID));
                 {
-                    Iterator<ApnSetting> varA7D7DBA24E2BB41A4D22D64A1DC6CF6C_24466131 = (mAllApns).iterator();
-                    varA7D7DBA24E2BB41A4D22D64A1DC6CF6C_24466131.hasNext();
-                    ApnSetting p = varA7D7DBA24E2BB41A4D22D64A1DC6CF6C_24466131.next();
+                    Iterator<ApnSetting> varA7D7DBA24E2BB41A4D22D64A1DC6CF6C_1277627383 = (mAllApns).iterator();
+                    varA7D7DBA24E2BB41A4D22D64A1DC6CF6C_1277627383.hasNext();
+                    ApnSetting p = varA7D7DBA24E2BB41A4D22D64A1DC6CF6C_1277627383.next();
                     {
                         {
-                            boolean var4306E6E526674BBE5742814C2949F546_1112577948 = (p.id == pos && p.canHandleType(mRequestedApnType));
+                            boolean var4306E6E526674BBE5742814C2949F546_837281211 = (p.id == pos && p.canHandleType(mRequestedApnType));
                             {
-                                log("getPreferredApn: X found apnSetting" + p);
                                 cursor.close();
+                                varB4EAC82CA7396A68D541C85D26508E83_1437669892 = p;
                             } //End block
                         } //End collapsed parenthetic
                     } //End block
@@ -3567,18 +3627,29 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         {
             cursor.close();
         } //End block
-        log("getPreferredApn: X not found");
-        return (ApnSetting)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1581786347 = null;
+        ApnSetting varA7E53CE21691AB073D9660D615818899_148658981; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_148658981 = varB4EAC82CA7396A68D541C85D26508E83_1795679623;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_148658981 = varB4EAC82CA7396A68D541C85D26508E83_1437669892;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_148658981 = varB4EAC82CA7396A68D541C85D26508E83_1581786347;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_148658981.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_148658981;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.768 -0400", hash_original_method = "3F5045BA8DE7525B5E4F320532794D71", hash_generated_method = "57A2F35A915E0833EA532AA650E04366")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.355 -0400", hash_original_method = "AE6FD47652B0A19C805CE62DFEA0E86E", hash_generated_method = "D1B928B37F1F5AC2DD8CF03A0D2FF913")
     @Override
     public void handleMessage(Message msg) {
-        dsTaint.addTaint(msg.dsTaint);
         log("handleMessage msg=" + msg);
         {
             loge("handleMessage: Ignore GSM msgs since GSM phone is inactive");
@@ -3624,10 +3695,10 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         //End case EVENT_PS_RESTRICT_DISABLED 
         //Begin case EVENT_PS_RESTRICT_DISABLED 
         {
-            boolean var5153987C55DB41759ADC1D7527E9459D_813497438 = (isConnected());
+            boolean var5153987C55DB41759ADC1D7527E9459D_1149911438 = (isConnected());
             {
                 startNetStatPoll();
-                startDataStallAlarm(DATA_STALL_NOT_SUSPECTED);
+                startDataStallAlarm();
             } //End block
             {
                 {
@@ -3669,25 +3740,26 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         //Begin case default 
         super.handleMessage(msg);
         //End case default 
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.769 -0400", hash_original_method = "46AFDD0964E9004EF08AD58B2795A021", hash_generated_method = "6B379071D898F6624E89AE38EC257425")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.357 -0400", hash_original_method = "46AFDD0964E9004EF08AD58B2795A021", hash_generated_method = "6B5F019864FB1614200E0FA9F6963252")
     protected int getApnProfileID(String apnType) {
-        dsTaint.addTaint(apnType);
         {
-            boolean varBD5A51DA361F3966223B48A5CF932C78_1107190964 = (TextUtils.equals(apnType, Phone.APN_TYPE_IMS));
+            boolean varBD5A51DA361F3966223B48A5CF932C78_2045645829 = (TextUtils.equals(apnType, Phone.APN_TYPE_IMS));
             {
-                boolean varD564B10DB28FA322978443E532F7503A_633243780 = (TextUtils.equals(apnType, Phone.APN_TYPE_FOTA));
+                boolean varD564B10DB28FA322978443E532F7503A_1122165822 = (TextUtils.equals(apnType, Phone.APN_TYPE_FOTA));
                 {
-                    boolean var3A4BC1B957119377C5312013BE2E7BF3_815515059 = (TextUtils.equals(apnType, Phone.APN_TYPE_CBS));
+                    boolean var3A4BC1B957119377C5312013BE2E7BF3_672417456 = (TextUtils.equals(apnType, Phone.APN_TYPE_CBS));
                 } //End collapsed parenthetic
             } //End collapsed parenthetic
         } //End collapsed parenthetic
-        return dsTaint.getTaintInt();
+        addTaint(apnType.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1222727234 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1222727234;
         // ---------- Original Method ----------
         //if (TextUtils.equals(apnType, Phone.APN_TYPE_IMS)) {
             //return RILConstants.DATA_PROFILE_IMS;
@@ -3701,8 +3773,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.769 -0400", hash_original_method = "EC98DB8AAEBCEBF774D7D372A9BC5BED", hash_generated_method = "F36EA30CE1C09027E5B55EB2C9B4D2DA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.371 -0400", hash_original_method = "EC98DB8AAEBCEBF774D7D372A9BC5BED", hash_generated_method = "0A5FD273B0AE81B411401EB39AA8AFDF")
     private int getCellLocationId() {
         int cid;
         cid = -1;
@@ -3716,7 +3787,8 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
                 cid = ((CdmaCellLocation)loc).getBaseStationId();
             } //End block
         } //End block
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1900391675 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1900391675;
         // ---------- Original Method ----------
         //int cid = -1;
         //CellLocation loc = mPhone.getCellLocation();
@@ -3731,22 +3803,20 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.770 -0400", hash_original_method = "74A1E45944BDF6EB75FE1BB75B450C28", hash_generated_method = "7A1D43CEB645B2A395E217B2E0A098FD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.372 -0400", hash_original_method = "74A1E45944BDF6EB75FE1BB75B450C28", hash_generated_method = "B6B302AEF97CB34BD5F51313217CD2BA")
     @Override
     protected void log(String s) {
-        dsTaint.addTaint(s);
         Log.d(LOG_TAG, "[GsmDCT] "+ s);
+        addTaint(s.getTaint());
         // ---------- Original Method ----------
         //Log.d(LOG_TAG, "[GsmDCT] "+ s);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.770 -0400", hash_original_method = "F4E978940BCE74A01AFD260967E7D0F1", hash_generated_method = "B06DC2EC9AA66DB19DAB07882BF0AB18")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.372 -0400", hash_original_method = "F4E978940BCE74A01AFD260967E7D0F1", hash_generated_method = "4161D7256990615E95C2D94DA5F096C5")
     @Override
     protected void loge(String s) {
-        dsTaint.addTaint(s);
+        addTaint(s.getTaint());
         // ---------- Original Method ----------
         //Log.e(LOG_TAG, "[GsmDCT] " + s);
     }
@@ -3754,21 +3824,19 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     
     private class ApnChangeObserver extends ContentObserver {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.770 -0400", hash_original_method = "6B7B68FCD4064976D9DFC8282278DEB2", hash_generated_method = "B25D6445CFCAAC6EBB935C2E1EA4D894")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public ApnChangeObserver() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.373 -0400", hash_original_method = "6B7B68FCD4064976D9DFC8282278DEB2", hash_generated_method = "B25D6445CFCAAC6EBB935C2E1EA4D894")
+        public  ApnChangeObserver() {
             super(mDataConnectionTracker);
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.770 -0400", hash_original_method = "C002DCEBDDA1BCF98FA65E6C3DFBEDC7", hash_generated_method = "126844261C80FA055C098D35932CF548")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.373 -0400", hash_original_method = "C002DCEBDDA1BCF98FA65E6C3DFBEDC7", hash_generated_method = "551FF4B549181F8354763D27FD001C97")
         @Override
         public void onChange(boolean selfChange) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(selfChange);
             sendMessage(obtainMessage(EVENT_APN_CHANGED));
+            addTaint(selfChange);
             // ---------- Original Method ----------
             //sendMessage(obtainMessage(EVENT_APN_CHANGED));
         }
@@ -3778,42 +3846,51 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
 
 
     
-    private static class RecoveryAction {
+    class RecoveryAction {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:14.770 -0400", hash_original_method = "905DD0277E54FF8F0334E1C17CC98F0E", hash_generated_method = "905DD0277E54FF8F0334E1C17CC98F0E")
-                public RecoveryAction ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.373 -0400", hash_original_method = "32173E3A0316410E8650FB75524992A2", hash_generated_method = "32173E3A0316410E8650FB75524992A2")
+        public RecoveryAction ()
         {
+            //Synthesized constructor
         }
 
 
-                private static boolean isAggressiveRecovery(int value) {
-            return ((value == RecoveryAction.CLEANUP) ||
-                    (value == RecoveryAction.REREGISTER) ||
-                    (value == RecoveryAction.RADIO_RESTART) ||
-                    (value == RecoveryAction.RADIO_RESTART_WITH_PROP));
-        }
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.373 -0400", hash_original_field = "AC1EA81D2E3E1333FCD96E718694DE5D", hash_generated_field = "9444F7385ED075FD957CBF2705B431F2")
 
-        
         public static final int GET_DATA_CALL_LIST      = 0;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.373 -0400", hash_original_field = "77820D853702E26D80B8C5CEA6391818", hash_generated_field = "C5F9F5C8FD7BE9C11274D2A4D79064AC")
+
         public static final int CLEANUP                 = 1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.373 -0400", hash_original_field = "690E9D42D7A38621C7BC9124DC929AB4", hash_generated_field = "78C8CA1646CB6F57C71EDA35CC71F4A7")
+
         public static final int REREGISTER              = 2;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.373 -0400", hash_original_field = "C1DF1F0D781602F33B43E37AA0307536", hash_generated_field = "B5EDD1906682D24DD1AADF7FCCE7CBB3")
+
         public static final int RADIO_RESTART           = 3;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.374 -0400", hash_original_field = "8D896D16951798ED3179A1A1D27840B1", hash_generated_field = "F6B83BCA43B3D6989BC81E37B804B55C")
+
         public static final int RADIO_RESTART_WITH_PROP = 4;
     }
 
 
     
-    private static final boolean RADIO_TESTS = false;
-    private static final int POLL_PDP_MILLIS = 5 * 1000;
-    private static final String INTENT_RECONNECT_ALARM =
-        "com.android.internal.telephony.gprs-reconnect";
-    private static final String INTENT_RECONNECT_ALARM_EXTRA_TYPE = "type";
-    private static final String INTENT_DATA_STALL_ALARM =
-        "com.android.internal.telephony.gprs-data-stall";
-    static final Uri PREFERAPN_NO_UPDATE_URI =
-                        Uri.parse("content://telephony/carriers/preferapn_no_update");
-    static final String APN_ID = "apn_id";
-    private static final boolean DATA_STALL_SUSPECTED = true;
-    private static final boolean DATA_STALL_NOT_SUSPECTED = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.374 -0400", hash_original_field = "D4A6B3BD4E6EDE29866B8BB1C029F206", hash_generated_field = "A4633A5F307BBC96632EA766FF18A55C")
+
+    private static int POLL_PDP_MILLIS = 5 * 1000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.374 -0400", hash_original_field = "59E7B103A5A98DA445972D780805A6D8", hash_generated_field = "2AED5B8AE6AE957AB053EB6BDD3A0773")
+
+    private static String INTENT_RECONNECT_ALARM = "com.android.internal.telephony.gprs-reconnect";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.374 -0400", hash_original_field = "7ABDEEA49CD4421170D8FEE10D4A15DF", hash_generated_field = "7403908083145632021814C37D7FAF00")
+
+    private static String INTENT_RECONNECT_ALARM_EXTRA_TYPE = "type";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.374 -0400", hash_original_field = "F2578B81B366A9F860AC7401704D9A14", hash_generated_field = "3D25F7AE3FB6E2CEA8B1713D175A5EC9")
+
+    private static String INTENT_DATA_STALL_ALARM = "com.android.internal.telephony.gprs-data-stall";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.374 -0400", hash_original_field = "C3EC4B88B73C081C68A3ED1B75DA3E0C", hash_generated_field = "EE892B602B1CCB0C687DADFC08D1A5BD")
+
+    static Uri PREFERAPN_URI = Uri.parse("content://telephony/carriers/preferapn");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.374 -0400", hash_original_field = "4F133E66E8DCA457A37645FE662A9FD3", hash_generated_field = "3632C2F81C624F426C153348127F26B6")
+
+    static String APN_ID = "apn_id";
 }
 

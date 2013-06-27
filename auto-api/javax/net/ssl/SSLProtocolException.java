@@ -10,15 +10,16 @@ import java.util.Iterator;
 
 public class SSLProtocolException extends SSLException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.095 -0400", hash_original_method = "980B3B5BE05602C62F726F0E6039DCA2", hash_generated_method = "742A886B66C094BFBF978881F39AED01")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SSLProtocolException(String reason) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.674 -0400", hash_original_method = "980B3B5BE05602C62F726F0E6039DCA2", hash_generated_method = "22DED081DADFA478B92918CE793AB0A3")
+    public  SSLProtocolException(String reason) {
         super(reason);
-        dsTaint.addTaint(reason);
+        addTaint(reason.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = 5445067063799134928L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.674 -0400", hash_original_field = "A0455F84B19BE9FF25703066AE4C4CCC", hash_generated_field = "184E0205B8E03B035773562ECD974937")
+
+    private static long serialVersionUID = 5445067063799134928L;
 }
 

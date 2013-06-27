@@ -13,92 +13,96 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 public class XmlPullParserFactory {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.469 -0400", hash_original_field = "14BEBD4FE8FDA41093F759C7F277FE01", hash_generated_field = "54143D5A47805B96D87F2B494B2365A9")
+
     protected ArrayList parserClasses;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.469 -0400", hash_original_field = "BA35A57009C6C35F5CC29B7CA958266B", hash_generated_field = "4B69BDE61BD215652CA9D56912ECEE01")
+
     protected String classNamesLocation;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.469 -0400", hash_original_field = "A734FC4B2E273BBD063C98E5B345794A", hash_generated_field = "A56B50284BF3A9A7CDBB5BF303434496")
+
     protected ArrayList serializerClasses;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.469 -0400", hash_original_field = "542B7A8D073CF2CF5BF366A27BC8964F", hash_generated_field = "2433B5B679656583A2F6E8E5BB139F19")
+
     protected HashMap features = new HashMap();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.456 -0400", hash_original_method = "59320E09A9AFF113592C1ECE87FC559F", hash_generated_method = "68325C6D2BA66CB5DC2172316E778C58")
-    @DSModeled(DSC.SAFE)
-    protected XmlPullParserFactory() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.470 -0400", hash_original_method = "59320E09A9AFF113592C1ECE87FC559F", hash_generated_method = "68325C6D2BA66CB5DC2172316E778C58")
+    protected  XmlPullParserFactory() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.457 -0400", hash_original_method = "37707163E7D75DA023F216E9B819E8F1", hash_generated_method = "5B6561BA65DD3252A95BDDBFAA00F4D9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.477 -0400", hash_original_method = "37707163E7D75DA023F216E9B819E8F1", hash_generated_method = "F5F0BA7C52918C10EF7BDB64256C0957")
     public void setFeature(String name, boolean state) throws XmlPullParserException {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(state);
         features.put(name, state);
+        addTaint(name.getTaint());
+        addTaint(state);
         // ---------- Original Method ----------
         //features.put(name, state);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.457 -0400", hash_original_method = "C9956302BBB91FCF3572BD64EE7FBD09", hash_generated_method = "57AF5DFFB43C9245739C642A03E390A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.478 -0400", hash_original_method = "C9956302BBB91FCF3572BD64EE7FBD09", hash_generated_method = "740F7535A01A1BA0BCF56457AED2F288")
     public boolean getFeature(String name) {
-        dsTaint.addTaint(name);
         Boolean value;
         value = (Boolean) features.get(name);
         {
-            Object var6066D23D9A6461E4B2F098A3809389EA_2124443244 = (value.booleanValue());
+            Object var6066D23D9A6461E4B2F098A3809389EA_1956530290 = (value.booleanValue());
         } //End flattened ternary
-        return dsTaint.getTaintBoolean();
+        addTaint(name.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1962669731 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1962669731;
         // ---------- Original Method ----------
         //Boolean value = (Boolean) features.get(name);
         //return value != null ? value.booleanValue() : false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.457 -0400", hash_original_method = "7D3BF21C0D11A10F81ABD73B19B61390", hash_generated_method = "5E4CD9426C3A34FF5316C8D3F2CF6D91")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.479 -0400", hash_original_method = "7D3BF21C0D11A10F81ABD73B19B61390", hash_generated_method = "AB033C5CAFBCC9E250C304AF3C9BC0B3")
     public void setNamespaceAware(boolean awareness) {
-        dsTaint.addTaint(awareness);
         features.put (XmlPullParser.FEATURE_PROCESS_NAMESPACES, awareness);
+        addTaint(awareness);
         // ---------- Original Method ----------
         //features.put (XmlPullParser.FEATURE_PROCESS_NAMESPACES, awareness);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.457 -0400", hash_original_method = "DD0A1E37D5A6E0D61FD3265D348DFEF0", hash_generated_method = "58EE9A3657888FF5DD38CE965E6DCB01")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.479 -0400", hash_original_method = "DD0A1E37D5A6E0D61FD3265D348DFEF0", hash_generated_method = "2F9C9E21D88B478D8139409222D9E4D5")
     public boolean isNamespaceAware() {
-        boolean var3FD27A2EFBE4A7A65AD63CB804EAB050_1475273541 = (getFeature (XmlPullParser.FEATURE_PROCESS_NAMESPACES));
-        return dsTaint.getTaintBoolean();
+        boolean var3FD27A2EFBE4A7A65AD63CB804EAB050_726186785 = (getFeature (XmlPullParser.FEATURE_PROCESS_NAMESPACES));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_556446048 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_556446048;
         // ---------- Original Method ----------
         //return getFeature (XmlPullParser.FEATURE_PROCESS_NAMESPACES);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.457 -0400", hash_original_method = "756F754F40CB32AB0AD4E4D0A9342AA0", hash_generated_method = "2EE4BB06A53E30BE708D6A2DE4F1838C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.480 -0400", hash_original_method = "756F754F40CB32AB0AD4E4D0A9342AA0", hash_generated_method = "C724B64BE6DF8D7686E69A3A2D756654")
     public void setValidating(boolean validating) {
-        dsTaint.addTaint(validating);
         features.put (XmlPullParser.FEATURE_VALIDATION, validating);
+        addTaint(validating);
         // ---------- Original Method ----------
         //features.put (XmlPullParser.FEATURE_VALIDATION, validating);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.458 -0400", hash_original_method = "B31DF449D9A1DA367D662873CDA0DA23", hash_generated_method = "2446FD14932D36EB5EA96AD6B374245E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.480 -0400", hash_original_method = "B31DF449D9A1DA367D662873CDA0DA23", hash_generated_method = "4500678885F17022337BADAD1DB93059")
     public boolean isValidating() {
-        boolean var6F68DA4464BCEA344DEE15C9F6BDC670_801197006 = (getFeature (XmlPullParser.FEATURE_VALIDATION));
-        return dsTaint.getTaintBoolean();
+        boolean var6F68DA4464BCEA344DEE15C9F6BDC670_1221892868 = (getFeature (XmlPullParser.FEATURE_VALIDATION));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1765667007 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1765667007;
         // ---------- Original Method ----------
         //return getFeature (XmlPullParser.FEATURE_VALIDATION);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.458 -0400", hash_original_method = "0194E8A94417A2CEABB2D1EB1F726482", hash_generated_method = "AF7CF483A0BAD2CC9350DD55E96DACF6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.484 -0400", hash_original_method = "0194E8A94417A2CEABB2D1EB1F726482", hash_generated_method = "B79B6CD5A6CF79BB4C7D4D5F28B7EC72")
     public XmlPullParser newPullParser() throws XmlPullParserException {
+        XmlPullParser varB4EAC82CA7396A68D541C85D26508E83_1283387674 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException
                 ("Factory initialization was incomplete - has not tried "+classNamesLocation);
         {
-            boolean var3D82E95C11EF86747BE6ED44EE020845_52296674 = (parserClasses.size() == 0);
+            boolean var3D82E95C11EF86747BE6ED44EE020845_711407035 = (parserClasses.size() == 0);
             if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException
                 ("No valid parser classes found in "+classNamesLocation);
         } //End collapsed parenthetic
@@ -107,7 +111,7 @@ public class XmlPullParserFactory {
         {
             int i;
             i = 0;
-            boolean varBFF54ABC51CDB5C0223EF1311B3F6729_237271921 = (i < parserClasses.size());
+            boolean varBFF54ABC51CDB5C0223EF1311B3F6729_1575684924 = (i < parserClasses.size());
             {
                 Class ppClass;
                 ppClass = (Class) parserClasses.get(i);
@@ -118,20 +122,21 @@ public class XmlPullParserFactory {
                     {
                         Iterator iter;
                         iter = features.keySet().iterator();
-                        boolean var0719F6DF13666099B3F99B9DD393E1F6_134958091 = (iter.hasNext());
+                        boolean var0719F6DF13666099B3F99B9DD393E1F6_875571801 = (iter.hasNext());
                         {
                             String key;
                             key = (String) iter.next();
                             Boolean value;
                             value = (Boolean) features.get(key);
                             {
-                                boolean var163E0911A6F57376CB2B8D6AEFFB149C_438172587 = (value != null && value.booleanValue());
+                                boolean var163E0911A6F57376CB2B8D6AEFFB149C_220543749 = (value != null && value.booleanValue());
                                 {
                                     pp.setFeature(key, true);
                                 } //End block
                             } //End collapsed parenthetic
                         } //End block
                     } //End collapsed parenthetic
+                    varB4EAC82CA7396A68D541C85D26508E83_1283387674 = pp;
                 } //End block
                 catch (Exception ex)
                 {
@@ -140,21 +145,22 @@ public class XmlPullParserFactory {
             } //End block
         } //End collapsed parenthetic
         if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException ("could not create parser: "+issues);
-        return (XmlPullParser)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1283387674.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1283387674;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:43.458 -0400", hash_original_method = "72277D8D6A4CD4D2004A6DECEFEB4DA7", hash_generated_method = "746521FBF2E18F522BA3BB809F2F67B2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.485 -0400", hash_original_method = "72277D8D6A4CD4D2004A6DECEFEB4DA7", hash_generated_method = "B2DFF34A06403B8F701E6641C3DC09DA")
     public XmlSerializer newSerializer() throws XmlPullParserException {
+        XmlSerializer varB4EAC82CA7396A68D541C85D26508E83_1655391238 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException
                 ("Factory initialization incomplete - has not tried "+classNamesLocation);
         } //End block
         {
-            boolean var93BB30BF15516BDCA5F9575DF78ED5C3_33809665 = (serializerClasses.size() == 0);
+            boolean var93BB30BF15516BDCA5F9575DF78ED5C3_846701768 = (serializerClasses.size() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException
                 ("No valid serializer classes found in "+classNamesLocation);
@@ -165,7 +171,7 @@ public class XmlPullParserFactory {
         {
             int i;
             i = 0;
-            boolean var9F8AF5C1EC8A5AA3B50C5AF781952836_1186277215 = (i < serializerClasses.size ());
+            boolean var9F8AF5C1EC8A5AA3B50C5AF781952836_1113508358 = (i < serializerClasses.size ());
             {
                 Class ppClass;
                 ppClass = (Class) serializerClasses.get(i);
@@ -173,6 +179,7 @@ public class XmlPullParserFactory {
                 {
                     XmlSerializer ser;
                     ser = (XmlSerializer) ppClass.newInstance();
+                    varB4EAC82CA7396A68D541C85D26508E83_1655391238 = ser;
                 } //End block
                 catch (Exception ex)
                 {
@@ -181,7 +188,8 @@ public class XmlPullParserFactory {
             } //End block
         } //End collapsed parenthetic
         if (DroidSafeAndroidRuntime.control) throw new XmlPullParserException ("could not create serializer: "+issues);
-        return (XmlSerializer)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1655391238.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1655391238;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -241,15 +249,20 @@ public class XmlPullParserFactory {
     }
 
     
-    final static Class referenceContextClass;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.485 -0400", hash_original_field = "85E092DE17CB1169218C8B191C4D88D4", hash_generated_field = "883198D89D71761DBB74BFD5A655879D")
+
+    static Class referenceContextClass;
     static {
         XmlPullParserFactory f = new XmlPullParserFactory();
         referenceContextClass = f.getClass();
     }
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.486 -0400", hash_original_field = "33FC263AFDBB4EEDBBE1504047AE9A37", hash_generated_field = "C6E7862EC1172DC262780F881FC06DEC")
+
     public static final String PROPERTY_NAME =
         "org.xmlpull.v1.XmlPullParserFactory";
-    private static final String RESOURCE_NAME =
-        "/META-INF/services/" + PROPERTY_NAME;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.486 -0400", hash_original_field = "2A2F7FF4F241CDA2C6261B43F6383287", hash_generated_field = "CF1DB141E063ED36059511DDA8808CEB")
+
+    private static String RESOURCE_NAME = "/META-INF/services/" + PROPERTY_NAME;
 }
 

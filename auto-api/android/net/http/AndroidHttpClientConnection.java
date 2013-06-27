@@ -48,19 +48,36 @@ import java.net.Socket;
 import java.net.SocketException;
 
 public class AndroidHttpClientConnection implements HttpInetConnection, HttpConnection {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.808 -0400", hash_original_field = "DC681AA2DD2A0BE47CBDD78540D5A8BD", hash_generated_field = "B0D6D00F71FC030A17C26A2601F3BE87")
+
     private SessionInputBuffer inbuffer = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.808 -0400", hash_original_field = "2CF5A5642A030530FB530CE6AD73F644", hash_generated_field = "10B58CBE3BBA8B7201F396357A83D45E")
+
     private SessionOutputBuffer outbuffer = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.809 -0400", hash_original_field = "9E79D1C5118BFD93F2EA3354BE3B7BB3", hash_generated_field = "51B3B1D6F029892B5D1B485F1E8449D4")
+
     private int maxHeaderCount;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.809 -0400", hash_original_field = "4C632171BE04EE204137B2D22962BCCE", hash_generated_field = "C2CDDB4530FA37C525863212B278B681")
+
     private int maxLineLength;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.809 -0400", hash_original_field = "34C401953BC184959C583775D7C02C06", hash_generated_field = "AB3FDC91331A5753EE17C338AC9D0381")
+
     private EntitySerializer entityserializer;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.809 -0400", hash_original_field = "715711ECB9730DA286C315F4B203F1D7", hash_generated_field = "F323E9D16DC81146FC2969062D7F8C7E")
+
     private HttpMessageWriter requestWriter = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.809 -0400", hash_original_field = "E6899A7B60D3CD0F0F3E11DDE4844FF7", hash_generated_field = "EE4B08A08CEE9A462065794CA86E6F61")
+
     private HttpConnectionMetricsImpl metrics = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.809 -0400", hash_original_field = "7CEF8A734855777C2A9D0CAF42666E69", hash_generated_field = "F8642D5396CC441E503E603D20259781")
+
     private volatile boolean open;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.809 -0400", hash_original_field = "E728D69D332AE7988C6FE7869D66573E", hash_generated_field = "9FD10C539AD3B0FAAA147E92379F8AC8")
+
     private Socket socket = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.699 -0400", hash_original_method = "34D8A32964859B1FAAC1AC49D9EAB8C7", hash_generated_method = "5D5370FE957D216B92C117496F770B7E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AndroidHttpClientConnection() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.810 -0400", hash_original_method = "34D8A32964859B1FAAC1AC49D9EAB8C7", hash_generated_method = "5D5370FE957D216B92C117496F770B7E")
+    public  AndroidHttpClientConnection() {
         this.entityserializer =  new EntitySerializer(
                 new StrictContentLengthStrategy());
         // ---------- Original Method ----------
@@ -69,13 +86,10 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.699 -0400", hash_original_method = "B7940401E9D410C3E0007DD81BDA911F", hash_generated_method = "EC70DBF9A54B363C0FEEDDC7188ED40B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.832 -0400", hash_original_method = "B7940401E9D410C3E0007DD81BDA911F", hash_generated_method = "E16F4DE99C01463D03E030E06B7C1F3B")
     public void bind(
             final Socket socket,
             final HttpParams params) throws IOException {
-        dsTaint.addTaint(socket.dsTaint);
-        dsTaint.addTaint(params.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Socket may not be null");
         } //End block
@@ -90,6 +104,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
         {
             socket.setSoLinger(linger > 0, linger);
         } //End block
+        this.socket = socket;
         int buffersize;
         buffersize = HttpConnectionParams.getSocketBufferSize(params);
         this.inbuffer = new SocketInputBuffer(socket, buffersize, params);
@@ -108,15 +123,15 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.699 -0400", hash_original_method = "EF7CB084264EC0FC42FD48CA086E7FEB", hash_generated_method = "45F35ADF738BDC9CE132E9954D404FD8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.834 -0400", hash_original_method = "EF7CB084264EC0FC42FD48CA086E7FEB", hash_generated_method = "06B261283BE8555C1747F65E48ED3052")
     @Override
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1658717486 = null; //Variable for return #1
         StringBuilder buffer;
         buffer = new StringBuilder();
         buffer.append(getClass().getSimpleName()).append("[");
         {
-            boolean varF14FAC85BD81325B95F4F52AC5545E52_1918738221 = (isOpen());
+            boolean varF14FAC85BD81325B95F4F52AC5545E52_726642966 = (isOpen());
             {
                 buffer.append(getRemotePort());
             } //End block
@@ -125,8 +140,9 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
             } //End block
         } //End collapsed parenthetic
         buffer.append("]");
-        String varAD28D02EB1C6982A5710D014292E1955_939616620 = (buffer.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1658717486 = buffer.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1658717486.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1658717486;
         // ---------- Original Method ----------
         //StringBuilder buffer = new StringBuilder();
         //buffer.append(getClass().getSimpleName()).append("[");
@@ -140,8 +156,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.700 -0400", hash_original_method = "BD86A908767A86776B5DCBFC714C696F", hash_generated_method = "FE158C35B4090D4A7DD5DCF2E51C96D7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.834 -0400", hash_original_method = "BD86A908767A86776B5DCBFC714C696F", hash_generated_method = "FE158C35B4090D4A7DD5DCF2E51C96D7")
     private void assertNotOpen() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Connection is already open");
@@ -153,8 +168,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.700 -0400", hash_original_method = "ACED44A56037ABE0B09ED18FFAC2A6E6", hash_generated_method = "6C19649848B3A1DD2E6212993C13534D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.850 -0400", hash_original_method = "ACED44A56037ABE0B09ED18FFAC2A6E6", hash_generated_method = "6C19649848B3A1DD2E6212993C13534D")
     private void assertOpen() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Connection is not open");
@@ -166,23 +180,37 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.700 -0400", hash_original_method = "8E8BDB37899E8F9E80D937FD54AF461B", hash_generated_method = "612F40FB06758EBC493724D290FE9FBB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.850 -0400", hash_original_method = "8E8BDB37899E8F9E80D937FD54AF461B", hash_generated_method = "57C1CD2F3C7CB2C31B2140F05DD4D7A1")
     public boolean isOpen() {
-        boolean var0E903911466EEC573F7184688086164A_362370646 = ((this.open && this.socket != null && this.socket.isConnected()));
-        return dsTaint.getTaintBoolean();
+        boolean var0E903911466EEC573F7184688086164A_722444211 = ((this.open && this.socket != null && this.socket.isConnected()));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1463345236 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1463345236;
         // ---------- Original Method ----------
         //return (this.open && this.socket != null && this.socket.isConnected());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.701 -0400", hash_original_method = "37A4CCD5FC4FE8478033812CF6081247", hash_generated_method = "421BBD5FC9F9638E7BD6B0D57AE8959E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.851 -0400", hash_original_method = "37A4CCD5FC4FE8478033812CF6081247", hash_generated_method = "5B127974250E25C51C865CFAEEF85D89")
     public InetAddress getLocalAddress() {
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1896579698 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1024931023 = null; //Variable for return #2
         {
-            InetAddress var3864414C1DFDBA5DCF1DF354B4ED7E85_272882170 = (this.socket.getLocalAddress());
+            varB4EAC82CA7396A68D541C85D26508E83_1896579698 = this.socket.getLocalAddress();
         } //End block
-        return (InetAddress)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1024931023 = null;
+        } //End block
+        InetAddress varA7E53CE21691AB073D9660D615818899_302568549; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_302568549 = varB4EAC82CA7396A68D541C85D26508E83_1896579698;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_302568549 = varB4EAC82CA7396A68D541C85D26508E83_1024931023;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_302568549.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_302568549;
         // ---------- Original Method ----------
         //if (this.socket != null) {
             //return this.socket.getLocalAddress();
@@ -192,13 +220,13 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.701 -0400", hash_original_method = "CB3D09E80AD036DA49A9727AFFCF9E16", hash_generated_method = "15CB1E93B7766BF1A2A02AA98A4A7077")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.852 -0400", hash_original_method = "CB3D09E80AD036DA49A9727AFFCF9E16", hash_generated_method = "66AF2DFED420649AECD81A6A249A7A5F")
     public int getLocalPort() {
         {
-            int varCCD0594420CD0D8D452225AADE7A07D2_672489690 = (this.socket.getLocalPort());
+            int varCCD0594420CD0D8D452225AADE7A07D2_842394754 = (this.socket.getLocalPort());
         } //End block
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1658336472 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1658336472;
         // ---------- Original Method ----------
         //if (this.socket != null) {
             //return this.socket.getLocalPort();
@@ -208,13 +236,27 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.701 -0400", hash_original_method = "738E936ADE4702B2396BC3DC05386FBD", hash_generated_method = "C62CAFD99619CE7D21ED41698B4AAA5C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.866 -0400", hash_original_method = "738E936ADE4702B2396BC3DC05386FBD", hash_generated_method = "5055F57C0585C8DB4E52A3A6BB180861")
     public InetAddress getRemoteAddress() {
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1200997186 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1424184281 = null; //Variable for return #2
         {
-            InetAddress var7A732D8521684F3F1578E7600D1E4C1E_1484132018 = (this.socket.getInetAddress());
+            varB4EAC82CA7396A68D541C85D26508E83_1200997186 = this.socket.getInetAddress();
         } //End block
-        return (InetAddress)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1424184281 = null;
+        } //End block
+        InetAddress varA7E53CE21691AB073D9660D615818899_1835960205; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1835960205 = varB4EAC82CA7396A68D541C85D26508E83_1200997186;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1835960205 = varB4EAC82CA7396A68D541C85D26508E83_1424184281;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1835960205.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1835960205;
         // ---------- Original Method ----------
         //if (this.socket != null) {
             //return this.socket.getInetAddress();
@@ -224,13 +266,13 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.701 -0400", hash_original_method = "D939EFD523917F0149002711980337D5", hash_generated_method = "03EEF3D1C9244EC92DAE3613683182AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.867 -0400", hash_original_method = "D939EFD523917F0149002711980337D5", hash_generated_method = "FF6A25533D3E69B1E691599E1F8400F5")
     public int getRemotePort() {
         {
-            int var3EE29869B1F636B5DAA1F70FA7C6400E_890476211 = (this.socket.getPort());
+            int var3EE29869B1F636B5DAA1F70FA7C6400E_502003668 = (this.socket.getPort());
         } //End block
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2129073131 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2129073131;
         // ---------- Original Method ----------
         //if (this.socket != null) {
             //return this.socket.getPort();
@@ -240,10 +282,8 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.702 -0400", hash_original_method = "1060FB10CE7965802AECEE442A1DB6DF", hash_generated_method = "BCCCEAAF07F79B62C8192A12C5E950FF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.867 -0400", hash_original_method = "1060FB10CE7965802AECEE442A1DB6DF", hash_generated_method = "676D254DEDC8A8C19857A94AF50E3C3B")
     public void setSocketTimeout(int timeout) {
-        dsTaint.addTaint(timeout);
         assertOpen();
         {
             try 
@@ -253,6 +293,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
             catch (SocketException ignore)
             { }
         } //End block
+        addTaint(timeout);
         // ---------- Original Method ----------
         //assertOpen();
         //if (this.socket != null) {
@@ -264,18 +305,18 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.702 -0400", hash_original_method = "65027FF3AE16248E56640778A6A4578D", hash_generated_method = "348F7CF3E6CD4A729D722CAB642D9571")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.868 -0400", hash_original_method = "65027FF3AE16248E56640778A6A4578D", hash_generated_method = "14D7206C9830D9261742A6E7FD92469A")
     public int getSocketTimeout() {
         {
             try 
             {
-                int var1CFD970C58DCF71C94F6332F13F0CD73_1785311303 = (this.socket.getSoTimeout());
+                int var1CFD970C58DCF71C94F6332F13F0CD73_307491756 = (this.socket.getSoTimeout());
             } //End block
             catch (SocketException ignore)
             { }
         } //End block
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_981107222 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_981107222;
         // ---------- Original Method ----------
         //if (this.socket != null) {
             //try {
@@ -289,8 +330,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.702 -0400", hash_original_method = "CEF80ABEDD17E9F414E04B4979CC6A82", hash_generated_method = "CF620A7315D3C1C1AD4D9BAC734BF982")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.887 -0400", hash_original_method = "CEF80ABEDD17E9F414E04B4979CC6A82", hash_generated_method = "CF620A7315D3C1C1AD4D9BAC734BF982")
     public void shutdown() throws IOException {
         this.open = false;
         Socket tmpsocket;
@@ -307,8 +347,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.703 -0400", hash_original_method = "E2A0230BE95C4B74092464470E281A24", hash_generated_method = "C67C9038C6A0874A962E604367169DAC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.888 -0400", hash_original_method = "E2A0230BE95C4B74092464470E281A24", hash_generated_method = "C67C9038C6A0874A962E604367169DAC")
     public void close() throws IOException {
         this.open = false;
         doFlush();
@@ -351,16 +390,15 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.703 -0400", hash_original_method = "9CF9D3D7B73D0AA22EE5EB3E861EF60E", hash_generated_method = "160BFB1EBBD7D39AEA2F3DA40342DEFE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.890 -0400", hash_original_method = "9CF9D3D7B73D0AA22EE5EB3E861EF60E", hash_generated_method = "CC0A22F18D01871DE3703B67106DA60F")
     public void sendRequestHeader(final HttpRequest request) throws HttpException, IOException {
-        dsTaint.addTaint(request.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
         } //End block
         assertOpen();
         this.requestWriter.write(request);
         this.metrics.incrementRequestCount();
+        addTaint(request.getTaint());
         // ---------- Original Method ----------
         //if (request == null) {
             //throw new IllegalArgumentException("HTTP request may not be null");
@@ -371,21 +409,20 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.703 -0400", hash_original_method = "73C1557906EF5C67B1A62D382FCB88AB", hash_generated_method = "0C06CC58EFF732D67A5E0D34070EF1D4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.901 -0400", hash_original_method = "73C1557906EF5C67B1A62D382FCB88AB", hash_generated_method = "4BA1E056AC18589F8925C807871F654E")
     public void sendRequestEntity(final HttpEntityEnclosingRequest request) throws HttpException, IOException {
-        dsTaint.addTaint(request.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
         } //End block
         assertOpen();
         {
-            boolean varD49B899B4DAE647F6EFF10130B7BC7C1_1031893156 = (request.getEntity() == null);
+            boolean varD49B899B4DAE647F6EFF10130B7BC7C1_427183170 = (request.getEntity() == null);
         } //End collapsed parenthetic
         this.entityserializer.serialize(
                 this.outbuffer,
                 request,
                 request.getEntity());
+        addTaint(request.getTaint());
         // ---------- Original Method ----------
         //if (request == null) {
             //throw new IllegalArgumentException("HTTP request may not be null");
@@ -401,8 +438,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.704 -0400", hash_original_method = "DE0B8B580EE6D4219521C9A2503EB8AB", hash_generated_method = "4D1A2508A821B55E0B18D024D4D93DA1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.902 -0400", hash_original_method = "DE0B8B580EE6D4219521C9A2503EB8AB", hash_generated_method = "4D1A2508A821B55E0B18D024D4D93DA1")
     protected void doFlush() throws IOException {
         this.outbuffer.flush();
         // ---------- Original Method ----------
@@ -410,8 +446,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.704 -0400", hash_original_method = "166CB1CAE087E4752127F8680D07EE90", hash_generated_method = "C32057FFD327A27B41D17512113B46BE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.903 -0400", hash_original_method = "166CB1CAE087E4752127F8680D07EE90", hash_generated_method = "C32057FFD327A27B41D17512113B46BE")
     public void flush() throws IOException {
         assertOpen();
         doFlush();
@@ -421,15 +456,14 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.704 -0400", hash_original_method = "5382496E6517DB13491696C30DF0839D", hash_generated_method = "3AEF95F4F1D5938F391C68FC75730BA8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.930 -0400", hash_original_method = "5382496E6517DB13491696C30DF0839D", hash_generated_method = "959E7FC1990CE6A3E8D995A9A4CBBC20")
     public StatusLine parseResponseHeader(Headers headers) throws IOException, ParseException {
-        dsTaint.addTaint(headers.dsTaint);
+        StatusLine varB4EAC82CA7396A68D541C85D26508E83_1661939715 = null; //Variable for return #1
         assertOpen();
         CharArrayBuffer current;
         current = new CharArrayBuffer(64);
         {
-            boolean var21CDE1F401E7BB0361226862DF86163A_322223197 = (inbuffer.readLine(current) == -1);
+            boolean var21CDE1F401E7BB0361226862DF86163A_1939587879 = (inbuffer.readLine(current) == -1);
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoHttpResponseException("The target server failed to respond");
             } //End block
@@ -454,7 +488,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
             int l;
             l = inbuffer.readLine(current);
             {
-                boolean varF37487E45CF922EB7BEA02A88464E0BA_1643962195 = (l == -1 || current.length() < 1);
+                boolean varF37487E45CF922EB7BEA02A88464E0BA_1118351820 = (l == -1 || current.length() < 1);
             } //End collapsed parenthetic
             char first;
             first = current.charAt(0);
@@ -468,7 +502,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
                     ch = current.charAt(start);
                 } //End block
                 {
-                    boolean var3DB5EDFC20803D4A5CABA530FEF460F1_989662273 = (maxLineLength > 0 &&
+                    boolean var3DB5EDFC20803D4A5CABA530FEF460F1_187921397 = (maxLineLength > 0 &&
                         previous.length() + 1 + current.length() - start >
                             maxLineLength);
                     {
@@ -495,16 +529,18 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
         {
             this.metrics.incrementResponseCount();
         } //End block
-        return (StatusLine)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1661939715 = statusline;
+        addTaint(headers.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1661939715.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1661939715;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.705 -0400", hash_original_method = "1E84D06F522FAB67F7B7209EA462145E", hash_generated_method = "EEA50E743765EF66F339FA97C8B85B52")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.957 -0400", hash_original_method = "1E84D06F522FAB67F7B7209EA462145E", hash_generated_method = "284546E27E90395FF9349E76A7F214CA")
     public HttpEntity receiveResponseEntity(final Headers headers) {
-        dsTaint.addTaint(headers.dsTaint);
+        HttpEntity varB4EAC82CA7396A68D541C85D26508E83_1707699617 = null; //Variable for return #1
         assertOpen();
         BasicHttpEntity entity;
         entity = new BasicHttpEntity();
@@ -535,23 +571,26 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
         {
             entity.setContentEncoding(contentEncodingHeader);
         } //End block
-        return (HttpEntity)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1707699617 = entity;
+        addTaint(headers.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1707699617.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1707699617;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.706 -0400", hash_original_method = "DFC24C3199FB5D6CC47411FD6E7FCAFF", hash_generated_method = "2F3B4338122337BA1DB3FB3975D836B5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.971 -0400", hash_original_method = "DFC24C3199FB5D6CC47411FD6E7FCAFF", hash_generated_method = "7C16858692406F53057A01D29512AE05")
     private long determineLength(final Headers headers) {
-        dsTaint.addTaint(headers.dsTaint);
         long transferEncoding;
         transferEncoding = headers.getTransferEncoding();
         {
             long contentlen;
             contentlen = headers.getContentLength();
         } //End block
-        return dsTaint.getTaintLong();
+        addTaint(headers.getTaint());
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_849542279 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_849542279;
         // ---------- Original Method ----------
         //long transferEncoding = headers.getTransferEncoding();
         //if (transferEncoding < Headers.NO_TRANSFER_ENCODING) {
@@ -567,8 +606,7 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.706 -0400", hash_original_method = "3BE812D13F4292433A7C6B8D5ADAC2E8", hash_generated_method = "6BF6E450C71C3A72A98BE2D1CC4B5B2C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.989 -0400", hash_original_method = "3BE812D13F4292433A7C6B8D5ADAC2E8", hash_generated_method = "665FC7C92084414958939358CA350735")
     public boolean isStale() {
         assertOpen();
         try 
@@ -577,7 +615,8 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
         } //End block
         catch (IOException ex)
         { }
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_676954383 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_676954383;
         // ---------- Original Method ----------
         //assertOpen();
         //try {
@@ -589,10 +628,12 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.707 -0400", hash_original_method = "B4ACF96912B4372C3DFCBFF37024F952", hash_generated_method = "79FC3CFD38C889943EF337B8AA327096")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.989 -0400", hash_original_method = "B4ACF96912B4372C3DFCBFF37024F952", hash_generated_method = "7A3783E04ED44E87D343D2947C9F412E")
     public HttpConnectionMetrics getMetrics() {
-        return (HttpConnectionMetrics)dsTaint.getTaint();
+        HttpConnectionMetrics varB4EAC82CA7396A68D541C85D26508E83_657060892 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_657060892 = this.metrics;
+        varB4EAC82CA7396A68D541C85D26508E83_657060892.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_657060892;
         // ---------- Original Method ----------
         //return this.metrics;
     }

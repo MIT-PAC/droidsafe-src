@@ -9,11 +9,14 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public final class StringPool {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.171 -0400", hash_original_field = "AABD10263E22750AD811AC54BA397F4A", hash_generated_field = "9E238A2B2FB43A4C99839A417CC4C2E3")
+
     private String[] pool = new String[512];
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.760 -0400", hash_original_method = "749941B62E4E8DBDE326146B3D9E4EF8", hash_generated_method = "749941B62E4E8DBDE326146B3D9E4EF8")
-        public StringPool ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.171 -0400", hash_original_method = "47E61A2F931E9ECD5F1435DEB562B68F", hash_generated_method = "47E61A2F931E9ECD5F1435DEB562B68F")
+    public StringPool ()
     {
+        //Synthesized constructor
     }
 
 
@@ -30,12 +33,10 @@ public final class StringPool {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.760 -0400", hash_original_method = "84455256120C340B9F8A0E1FDB3B796B", hash_generated_method = "8FC069FAFA27F23D0E0F6300B8C55EC6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.192 -0400", hash_original_method = "84455256120C340B9F8A0E1FDB3B796B", hash_generated_method = "D7FFE95177F9E12A35600DC08FB34728")
     public String get(char[] array, int start, int length) {
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(array[0]);
+        String varB4EAC82CA7396A68D541C85D26508E83_1235643770 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1106798414 = null; //Variable for return #2
         int hashCode;
         hashCode = 0;
         {
@@ -52,12 +53,29 @@ public final class StringPool {
         String pooled;
         pooled = pool[index];
         {
-            boolean var0E29A3BBD67CCC228CA6E68E863F0F24_2100474955 = (pooled != null && contentEquals(pooled, array, start, length));
+            boolean var0E29A3BBD67CCC228CA6E68E863F0F24_947133529 = (pooled != null && contentEquals(pooled, array, start, length));
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1235643770 = pooled;
+            } //End block
         } //End collapsed parenthetic
         String result;
         result = new String(array, start, length);
         pool[index] = result;
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1106798414 = result;
+        addTaint(array[0]);
+        addTaint(start);
+        addTaint(length);
+        String varA7E53CE21691AB073D9660D615818899_1062847037; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1062847037 = varB4EAC82CA7396A68D541C85D26508E83_1235643770;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1062847037 = varB4EAC82CA7396A68D541C85D26508E83_1106798414;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1062847037.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1062847037;
         // ---------- Original Method ----------
         //int hashCode = 0;
         //for (int i = start; i < start + length; i++) {

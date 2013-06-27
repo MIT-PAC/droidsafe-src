@@ -24,9 +24,8 @@ import org.apache.harmony.security.fortress.Services;
 
 public final class Security {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.572 -0400", hash_original_method = "8A23448EE3E63F2FDD1EDADC770A872E", hash_generated_method = "F38A362CCE128359797141D3F83E6272")
-    @DSModeled(DSC.SAFE)
-    private Security() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.561 -0400", hash_original_method = "8A23448EE3E63F2FDD1EDADC770A872E", hash_generated_method = "F38A362CCE128359797141D3F83E6272")
+    private  Security() {
         // ---------- Original Method ----------
     }
 
@@ -222,14 +221,14 @@ public final class Security {
     
     private static class SecurityDoor implements SecurityAccess {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.574 -0400", hash_original_method = "D558591B35D6F110570699A2CDF3FFEA", hash_generated_method = "D558591B35D6F110570699A2CDF3FFEA")
-                public SecurityDoor ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.581 -0400", hash_original_method = "65CA8440349C4BCE4680F5FB73F99876", hash_generated_method = "65CA8440349C4BCE4680F5FB73F99876")
+        public SecurityDoor ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.574 -0400", hash_original_method = "CC38396CF5E2C0D8624B241063796894", hash_generated_method = "CB29F99BA7A9E1FCCA38171345383D55")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.584 -0400", hash_original_method = "CC38396CF5E2C0D8624B241063796894", hash_generated_method = "CB29F99BA7A9E1FCCA38171345383D55")
         public void renumProviders() {
             Security.renumProviders();
             // ---------- Original Method ----------
@@ -237,24 +236,26 @@ public final class Security {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.575 -0400", hash_original_method = "F916F94BFF4DBDA09034B4A04EAFBC9D", hash_generated_method = "EB3BFB6707A4E9D9E7203C28FE732CF8")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.588 -0400", hash_original_method = "F916F94BFF4DBDA09034B4A04EAFBC9D", hash_generated_method = "C0B9FA2317D09D48F5AF91D51A3E9941")
         public List<String> getAliases(Provider.Service s) {
-            dsTaint.addTaint(s.dsTaint);
-            List<String> var64BD6CD0E1E7BDE1E8C1790E5917E0BB_998204001 = (s.getAliases());
-            return (List<String>)dsTaint.getTaint();
+            List<String> varB4EAC82CA7396A68D541C85D26508E83_320950032 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_320950032 = s.getAliases();
+            addTaint(s.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_320950032.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_320950032;
             // ---------- Original Method ----------
             //return s.getAliases();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.575 -0400", hash_original_method = "413349B417A4FA3254048F8CD1980744", hash_generated_method = "5EF678F4421063B8E595E4E765F16000")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.588 -0400", hash_original_method = "413349B417A4FA3254048F8CD1980744", hash_generated_method = "791FCA4A25A2689D73900A562CDA87C2")
         public Provider.Service getService(Provider p, String type) {
-            dsTaint.addTaint(p.dsTaint);
-            dsTaint.addTaint(type);
-            Provider.Service varBD0332EDDD32DEC33437A69993FB6616_1432273955 = (p.getService(type));
-            return (Provider.Service)dsTaint.getTaint();
+            Provider.Service varB4EAC82CA7396A68D541C85D26508E83_1449961238 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1449961238 = p.getService(type);
+            addTaint(p.getTaint());
+            addTaint(type.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1449961238.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1449961238;
             // ---------- Original Method ----------
             //return p.getService(type);
         }
@@ -264,7 +265,9 @@ public final class Security {
 
 
     
-    private static final Properties secprops = new Properties();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.588 -0400", hash_original_field = "1F34466A8CFB3BC13EDE42CA83574114", hash_generated_field = "557431B20DC1A8473C041CDEFA40101D")
+
+    private static Properties secprops = new Properties();
     static {
         boolean loaded = false;
         try {

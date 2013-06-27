@@ -12,11 +12,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 class ApplicationLoaders {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:43.614 -0400", hash_original_field = "384EB772DF8EAF619DFA5F79B74771D8", hash_generated_field = "86A3F778247ED24A2FDE98F7E9125B07")
+
     private Map<String, ClassLoader> mLoaders = new HashMap<String, ClassLoader>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.595 -0400", hash_original_method = "D110D82EE084D23C0DEE561B95C3EC75", hash_generated_method = "D110D82EE084D23C0DEE561B95C3EC75")
-        public ApplicationLoaders ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:43.618 -0400", hash_original_method = "B28ECCCB6DE1A645261BEF05FE1982E7", hash_generated_method = "B28ECCCB6DE1A645261BEF05FE1982E7")
+    public ApplicationLoaders ()
     {
+        //Synthesized constructor
     }
 
 
@@ -25,12 +28,11 @@ class ApplicationLoaders {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.596 -0400", hash_original_method = "EA4DC0433A5C7A22C1BA1C659599A634", hash_generated_method = "AAAA01941C37B00A5C48B27CB568A255")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:43.640 -0400", hash_original_method = "EA4DC0433A5C7A22C1BA1C659599A634", hash_generated_method = "06C13B7A7027173992A6D7DD19CFE54C")
     public ClassLoader getClassLoader(String zip, String libPath, ClassLoader parent) {
-        dsTaint.addTaint(zip);
-        dsTaint.addTaint(libPath);
-        dsTaint.addTaint(parent.dsTaint);
+        ClassLoader varB4EAC82CA7396A68D541C85D26508E83_995656073 = null; //Variable for return #1
+        ClassLoader varB4EAC82CA7396A68D541C85D26508E83_1971639448 = null; //Variable for return #2
+        ClassLoader varB4EAC82CA7396A68D541C85D26508E83_1706596019 = null; //Variable for return #3
         ClassLoader baseParent;
         baseParent = ClassLoader.getSystemClassLoader().getParent();
         {
@@ -40,13 +42,33 @@ class ApplicationLoaders {
             {
                 ClassLoader loader;
                 loader = mLoaders.get(zip);
+                {
+                    varB4EAC82CA7396A68D541C85D26508E83_995656073 = loader;
+                } //End block
                 PathClassLoader pathClassloader;
                 pathClassloader = new PathClassLoader(zip, libPath, parent);
                 mLoaders.put(zip, pathClassloader);
+                varB4EAC82CA7396A68D541C85D26508E83_1971639448 = pathClassloader;
             } //End block
-            ClassLoader varA43AB54FEB2B8C29024C782FEA07BF8A_1143886459 = (new PathClassLoader(zip, parent));
+            varB4EAC82CA7396A68D541C85D26508E83_1706596019 = new PathClassLoader(zip, parent);
         } //End block
-        return (ClassLoader)dsTaint.getTaint();
+        addTaint(zip.getTaint());
+        addTaint(libPath.getTaint());
+        addTaint(parent.getTaint());
+        ClassLoader varA7E53CE21691AB073D9660D615818899_329927502; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_329927502 = varB4EAC82CA7396A68D541C85D26508E83_995656073;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_329927502 = varB4EAC82CA7396A68D541C85D26508E83_1971639448;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_329927502 = varB4EAC82CA7396A68D541C85D26508E83_1706596019;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_329927502.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_329927502;
         // ---------- Original Method ----------
         //ClassLoader baseParent = ClassLoader.getSystemClassLoader().getParent();
         //synchronized (mLoaders) {
@@ -68,7 +90,8 @@ class ApplicationLoaders {
     }
 
     
-    private static final ApplicationLoaders gApplicationLoaders
-        = new ApplicationLoaders();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:43.641 -0400", hash_original_field = "601B3B02B74793AF6319AF165B317296", hash_generated_field = "636B7873A56F2B01364617FE97DE0DBB")
+
+    private static ApplicationLoaders gApplicationLoaders = new ApplicationLoaders();
 }
 

@@ -14,9 +14,10 @@ import java.util.Map;
 
 public abstract class CacheResponse {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.746 -0400", hash_original_method = "CD7E96B46C26DC53A17638658F546DAD", hash_generated_method = "CD7E96B46C26DC53A17638658F546DAD")
-        public CacheResponse ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.873 -0400", hash_original_method = "621EFF4ACAE6839C6F6B759A29E80397", hash_generated_method = "621EFF4ACAE6839C6F6B759A29E80397")
+    public CacheResponse ()
     {
+        //Synthesized constructor
     }
 
 

@@ -11,9 +11,10 @@ import android.net.Uri;
 
 public class ContentUris {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.826 -0400", hash_original_method = "85E2DEE83BA2A12C22DFBC0624BE2411", hash_generated_method = "85E2DEE83BA2A12C22DFBC0624BE2411")
-        public ContentUris ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:57.105 -0400", hash_original_method = "8AAA02C02EB3A227B34A166B78568DD1", hash_generated_method = "8AAA02C02EB3A227B34A166B78568DD1")
+    public ContentUris ()
     {
+        //Synthesized constructor
     }
 
 

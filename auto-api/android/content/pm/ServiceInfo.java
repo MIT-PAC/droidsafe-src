@@ -12,21 +12,22 @@ import android.os.Parcelable;
 import android.util.Printer;
 
 public class ServiceInfo extends ComponentInfo implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.144 -0400", hash_original_field = "4B65CA0F8B76E7181A12BF1FABC48532", hash_generated_field = "3670CE1CBA400C10EB64B3D7DD616511")
+
     public String permission;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.144 -0400", hash_original_field = "4E5868D676CB634AA75B125A0F741ABF", hash_generated_field = "06C062A47B4E980AE7B4928732A7AB14")
+
     public int flags;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.963 -0400", hash_original_method = "F8437ACFEC0EA098621A29EA36F6AD07", hash_generated_method = "EDCE9066F17AD3973393DCDC0BE762D3")
-    @DSModeled(DSC.SAFE)
-    public ServiceInfo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.152 -0400", hash_original_method = "F8437ACFEC0EA098621A29EA36F6AD07", hash_generated_method = "EDCE9066F17AD3973393DCDC0BE762D3")
+    public  ServiceInfo() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.963 -0400", hash_original_method = "FE9252C5AEDF7EDCC5A8663E23AE8AA0", hash_generated_method = "13A36E92E533E40609F860D5E0F6E63C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ServiceInfo(ServiceInfo orig) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.153 -0400", hash_original_method = "FE9252C5AEDF7EDCC5A8663E23AE8AA0", hash_generated_method = "80827E1A6781EB150E1C0BFC2BF49268")
+    public  ServiceInfo(ServiceInfo orig) {
         super(orig);
-        dsTaint.addTaint(orig.dsTaint);
         permission = orig.permission;
         flags = orig.flags;
         // ---------- Original Method ----------
@@ -35,11 +36,9 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.963 -0400", hash_original_method = "03E698CAC1E21FAA46C8FF1C3071D430", hash_generated_method = "71E0DB250691AD7C7AD414FCE0A4EA14")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private ServiceInfo(Parcel source) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.166 -0400", hash_original_method = "03E698CAC1E21FAA46C8FF1C3071D430", hash_generated_method = "035F8275016FB7064BA568ACF174F7FE")
+    private  ServiceInfo(Parcel source) {
         super(source);
-        dsTaint.addTaint(source.dsTaint);
         permission = source.readString();
         flags = source.readInt();
         // ---------- Original Method ----------
@@ -48,14 +47,13 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.964 -0400", hash_original_method = "DA4A80B9AC3442B8DFBCD8315889AD94", hash_generated_method = "0A7AC559E0709CABFA6509ACA1D51AAF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.167 -0400", hash_original_method = "DA4A80B9AC3442B8DFBCD8315889AD94", hash_generated_method = "073CA30EFB52483F0D041DCEDE3CE0A0")
     public void dump(Printer pw, String prefix) {
-        dsTaint.addTaint(prefix);
-        dsTaint.addTaint(pw.dsTaint);
         super.dumpFront(pw, prefix);
         pw.println(prefix + "permission=" + permission);
         pw.println(prefix + "flags=0x" + Integer.toHexString(flags));
+        addTaint(pw.getTaint());
+        addTaint(prefix.getTaint());
         // ---------- Original Method ----------
         //super.dumpFront(pw, prefix);
         //pw.println(prefix + "permission=" + permission);
@@ -63,13 +61,14 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.964 -0400", hash_original_method = "59146AE4B3130A7BADEE9DF4447D4A3B", hash_generated_method = "8F8AC2560966FC37E517B34E73E36E3F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.168 -0400", hash_original_method = "59146AE4B3130A7BADEE9DF4447D4A3B", hash_generated_method = "413D4511462D06C438FAE28638A72497")
     public String toString() {
-        String var9DC1DFC9378ADB3ABB2A214490D7C96A_1319833587 = ("ServiceInfo{"
+        String varB4EAC82CA7396A68D541C85D26508E83_304553764 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_304553764 = "ServiceInfo{"
             + Integer.toHexString(System.identityHashCode(this))
-            + " " + name + "}");
-        return dsTaint.getTaintString();
+            + " " + name + "}";
+        varB4EAC82CA7396A68D541C85D26508E83_304553764.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_304553764;
         // ---------- Original Method ----------
         //return "ServiceInfo{"
             //+ Integer.toHexString(System.identityHashCode(this))
@@ -77,23 +76,22 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.964 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.169 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "F2FD8F90E1D9A5B96F162434A54DD5A3")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1082277977 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1082277977;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.964 -0400", hash_original_method = "0D65CECC76E553C003E9EF65F2ADA018", hash_generated_method = "428438BF9E5CDA466DE3364DA35275B5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.183 -0400", hash_original_method = "0D65CECC76E553C003E9EF65F2ADA018", hash_generated_method = "E1047CAE5411B78A9C5E1417C489A103")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
-        dsTaint.addTaint(parcelableFlags);
-        dsTaint.addTaint(dest.dsTaint);
         super.writeToParcel(dest, parcelableFlags);
         dest.writeString(permission);
         dest.writeInt(flags);
+        addTaint(dest.getTaint());
+        addTaint(parcelableFlags);
         // ---------- Original Method ----------
         //super.writeToParcel(dest, parcelableFlags);
         //dest.writeString(permission);
@@ -101,30 +99,19 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.183 -0400", hash_original_field = "86CDFFC4E2C34BE0BF1CE72B45C76EE2", hash_generated_field = "BCFC88EA4A2C840BDC8017A6371C1D0B")
+
     public static final int FLAG_STOP_WITH_TASK = 0x0001;
-    public static final Creator<ServiceInfo> CREATOR = new Creator<ServiceInfo>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.965 -0400", hash_original_method = "8978DD753FD4CAD4F30EAB16B876BC2A", hash_generated_method = "F840F58E0A4BE1860DA430B5D8B1A783")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.183 -0400", hash_original_field = "0617EC2A993DE099179336515C76721A", hash_generated_field = "3C5616FB8F531F1B5A69F671577BAF41")
+
+    public static final Creator<ServiceInfo> CREATOR =
+        new Creator<ServiceInfo>() {
         public ServiceInfo createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            ServiceInfo varC5AFB410BB859DE83F1BC1E85587AF3C_1910241098 = (new ServiceInfo(source));
-            return (ServiceInfo)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ServiceInfo(source);
+            return new ServiceInfo(source);
         }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.965 -0400", hash_original_method = "A983BB1A64296EC543A70CA925936DDB", hash_generated_method = "68BA80B9CC8DB17E010BC91823AC0958")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public ServiceInfo[] newArray(int size) {
-            dsTaint.addTaint(size);
-            ServiceInfo[] var4615BC9904FF862CF4331AC15040243E_1314621157 = (new ServiceInfo[size]);
-            return (ServiceInfo[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new ServiceInfo[size];
+            return new ServiceInfo[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

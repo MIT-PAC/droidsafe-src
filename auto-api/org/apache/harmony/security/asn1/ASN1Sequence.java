@@ -11,22 +11,35 @@ import java.io.IOException;
 
 public class ASN1Sequence extends ASN1TypeCollection {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.996 -0400", hash_original_method = "610127CDCC1D4C9ACAEBD8E4C31C3ADC", hash_generated_method = "4A70BE5110974C466F0C9AF22C33F354")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ASN1Sequence(ASN1Type[] type) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.317 -0400", hash_original_method = "610127CDCC1D4C9ACAEBD8E4C31C3ADC", hash_generated_method = "C9229CAEBA7F81F1D78AC10A5D9D4E4F")
+    public  ASN1Sequence(ASN1Type[] type) {
         super(TAG_SEQUENCE, type);
-        dsTaint.addTaint(type[0].dsTaint);
+        addTaint(type[0].getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.996 -0400", hash_original_method = "C5F60D3147ABDE99A60159C3AF8B464E", hash_generated_method = "54BEF3BC60C2856D4BA8CEFD3FE36FA8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.318 -0400", hash_original_method = "C5F60D3147ABDE99A60159C3AF8B464E", hash_generated_method = "243BE00FB99F487CCDF77A1B8ABC8DC3")
     public Object decode(BerInputStream in) throws IOException {
-        dsTaint.addTaint(in.dsTaint);
+        Object varB4EAC82CA7396A68D541C85D26508E83_1878122598 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_231316211 = null; //Variable for return #2
         in.readSequence(this);
-        Object var883E4A51D9FE1FCA5622395E00C94DE9_1854608040 = (getDecodedObject(in));
-        return (Object)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1878122598 = null;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_231316211 = getDecodedObject(in);
+        addTaint(in.getTaint());
+        Object varA7E53CE21691AB073D9660D615818899_1716875490; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1716875490 = varB4EAC82CA7396A68D541C85D26508E83_1878122598;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1716875490 = varB4EAC82CA7396A68D541C85D26508E83_231316211;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1716875490.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1716875490;
         // ---------- Original Method ----------
         //in.readSequence(this);
         //if (in.isVerify) {
@@ -36,21 +49,19 @@ public class ASN1Sequence extends ASN1TypeCollection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.997 -0400", hash_original_method = "939BEAD5C5B494829F962DC4CEF2A705", hash_generated_method = "129F8A284AAB24B7B0A0A17726CABD0B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.325 -0400", hash_original_method = "939BEAD5C5B494829F962DC4CEF2A705", hash_generated_method = "D7C9B115337776E24839FA651CD23C56")
     public final void encodeContent(BerOutputStream out) {
-        dsTaint.addTaint(out.dsTaint);
         out.encodeSequence(this);
+        addTaint(out.getTaint());
         // ---------- Original Method ----------
         //out.encodeSequence(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.997 -0400", hash_original_method = "1B7230BCE7873794BACD95464198B69E", hash_generated_method = "F9344AF5D22B9C91CABFCBD59088F95F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.325 -0400", hash_original_method = "1B7230BCE7873794BACD95464198B69E", hash_generated_method = "C668CFE3562DA23D5162A2B3952EF9D0")
     public final void setEncodingContent(BerOutputStream out) {
-        dsTaint.addTaint(out.dsTaint);
         out.getSequenceLength(this);
+        addTaint(out.getTaint());
         // ---------- Original Method ----------
         //out.getSequenceLength(this);
     }

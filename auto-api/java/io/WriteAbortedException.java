@@ -9,31 +9,34 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public class WriteAbortedException extends ObjectStreamException {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.884 -0400", hash_original_field = "951DA6B7179A4F697CC89D36ACF74E52", hash_generated_field = "C3243AD40E57E22F6ED814DD71D64096")
+
     public Exception detail;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.354 -0400", hash_original_method = "DA6C07DB36CBC207B190B4B4ECB6B2B2", hash_generated_method = "DB3D3D10CF347550A318891DB2C7A98B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public WriteAbortedException(String detailMessage, Exception rootCause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.885 -0400", hash_original_method = "DA6C07DB36CBC207B190B4B4ECB6B2B2", hash_generated_method = "9A68D2B382CDBEE907C2EEEBBB424150")
+    public  WriteAbortedException(String detailMessage, Exception rootCause) {
         super(detailMessage);
-        dsTaint.addTaint(rootCause.dsTaint);
-        dsTaint.addTaint(detailMessage);
+        detail = rootCause;
         initCause(rootCause);
+        addTaint(detailMessage.getTaint());
         // ---------- Original Method ----------
         //detail = rootCause;
         //initCause(rootCause);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.355 -0400", hash_original_method = "F8C8FA3813C752D5C72108208FEF04C6", hash_generated_method = "4A5324B8CDBEBB0EF9AEE458867C8DE7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.886 -0400", hash_original_method = "F8C8FA3813C752D5C72108208FEF04C6", hash_generated_method = "389CCD93091863E192A922AA8678E940")
     @Override
     public String getMessage() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1517540470 = null; //Variable for return #1
         String msg;
         msg = super.getMessage();
         {
             msg = msg + "; " + detail.toString();
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1517540470 = msg;
+        varB4EAC82CA7396A68D541C85D26508E83_1517540470.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1517540470;
         // ---------- Original Method ----------
         //String msg = super.getMessage();
         //if (detail != null) {
@@ -43,16 +46,20 @@ public class WriteAbortedException extends ObjectStreamException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.355 -0400", hash_original_method = "CA6C7AF43E4792C258E5E6922F45606C", hash_generated_method = "BE17797C3599E5E649F991EACA6EF83C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.886 -0400", hash_original_method = "CA6C7AF43E4792C258E5E6922F45606C", hash_generated_method = "C5FA5621D999AD4BBED5C00C427D5E6A")
     @Override
     public Throwable getCause() {
-        return (Throwable)dsTaint.getTaint();
+        Throwable varB4EAC82CA7396A68D541C85D26508E83_902134906 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_902134906 = detail;
+        varB4EAC82CA7396A68D541C85D26508E83_902134906.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_902134906;
         // ---------- Original Method ----------
         //return detail;
     }
 
     
-    private static final long serialVersionUID = -3326426625597282442L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.886 -0400", hash_original_field = "D14F55C6FD23B1D97DB4AE900326A4F8", hash_generated_field = "12C03860A3640C00CB094064DDEE44D5")
+
+    private static long serialVersionUID = -3326426625597282442L;
 }
 

@@ -28,18 +28,23 @@ import java.util.Map;
 import java.util.Set;
 
 public final class Parcel {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.684 -0400", hash_original_field = "48FF959108CFB83B8A6F31854D7CE0B4", hash_generated_field = "6861EF2C6719FB6BE9580A330103CA5F")
+
     @SuppressWarnings({"UnusedDeclaration"}) private int mObject;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.684 -0400", hash_original_field = "1E29C110658060053105607F6A69FCDF", hash_generated_field = "E2BD6B8F2FA33686C59551B5BF00B3B5")
+
     @SuppressWarnings({"UnusedDeclaration"}) private int mOwnObject;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.684 -0400", hash_original_field = "B1C29C43A1B3C1AF208A28E9F6889C94", hash_generated_field = "F06536DFCEF1B0A690687BA1BFE76D23")
+
     private RuntimeException mStack;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.975 -0400", hash_original_method = "96328320E65E9E5C73AE1A423ABA09C7", hash_generated_method = "57A60F4A70685317C40FE87B7CAC04E5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private Parcel(int obj) {
-        dsTaint.addTaint(obj);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.698 -0400", hash_original_method = "96328320E65E9E5C73AE1A423ABA09C7", hash_generated_method = "FA39E9EC605AB9B220994F25AD2303F6")
+    private  Parcel(int obj) {
         {
             mStack = new RuntimeException();
         } //End block
         init(obj);
+        addTaint(obj);
         // ---------- Original Method ----------
         //if (DEBUG_RECYCLE) {
             //mStack = new RuntimeException();
@@ -67,8 +72,7 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.975 -0400", hash_original_method = "0B6C271774CE05661982DF3B6AC078FF", hash_generated_method = "FFB9A2A5872308A85CBFAE99E476A46C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.704 -0400", hash_original_method = "0B6C271774CE05661982DF3B6AC078FF", hash_generated_method = "FFB9A2A5872308A85CBFAE99E476A46C")
     public final void recycle() {
         mStack = null;
         freeBuffer();
@@ -101,139 +105,114 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.975 -0400", hash_original_method = "DD534262B78755109918F5DCE98072D4", hash_generated_method = "C489A5D49C9521CDC1795FF0CDB9C97A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.705 -0400", hash_original_method = "DD534262B78755109918F5DCE98072D4", hash_generated_method = "C9337F12F3B175FEBACAD76C0D5EC7B9")
     public final int dataSize() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1282292907 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1282292907;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.975 -0400", hash_original_method = "0316AB8FD0A1B068176256EC0E481A72", hash_generated_method = "9F2FBAD37A0F2055B3E7EADC9882ACA2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.705 -0400", hash_original_method = "0316AB8FD0A1B068176256EC0E481A72", hash_generated_method = "933833CB54155EE471C02B3BA514424C")
     public final int dataAvail() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1733681703 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1733681703;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.976 -0400", hash_original_method = "D1BE237E96D29A914DD3E05EDFD3F272", hash_generated_method = "B0084F1274E1E201AD5CF0A55E1990B7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.715 -0400", hash_original_method = "D1BE237E96D29A914DD3E05EDFD3F272", hash_generated_method = "5D06F0C95874441E9E156F361E216660")
     public final int dataPosition() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1579155427 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1579155427;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.976 -0400", hash_original_method = "51F0EF05154419C189F36E1902F5F7AB", hash_generated_method = "24A73639D9D22CED73CF3DF59DD1AFA8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.718 -0400", hash_original_method = "51F0EF05154419C189F36E1902F5F7AB", hash_generated_method = "4AD7C484B557100EF63CB5337A0FF1BA")
     public final int dataCapacity() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1727834664 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1727834664;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.976 -0400", hash_original_method = "D8CB87D9AB1E01DFD8357CBF456AE1C5", hash_generated_method = "A40908A631403E482291B84EF95E7807")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.722 -0400", hash_original_method = "D8CB87D9AB1E01DFD8357CBF456AE1C5", hash_generated_method = "DBDC326A5AD13E4C052782BF36EE04CC")
     public final void setDataSize(int size) {
-        dsTaint.addTaint(size);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.976 -0400", hash_original_method = "900D9C4DE4FE3C2709BAAFC39AA9B06F", hash_generated_method = "779E878A8ED3DF460008E1ED6AC8B1C5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.723 -0400", hash_original_method = "900D9C4DE4FE3C2709BAAFC39AA9B06F", hash_generated_method = "F3CD9D97BEE6A7C9B1EDA27A460B2114")
     public final void setDataPosition(int pos) {
-        dsTaint.addTaint(pos);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.977 -0400", hash_original_method = "E063261D5EA5083378CEC188A4B78FE0", hash_generated_method = "BDB6FBC603CA1E7ADB6F7475CBAA952E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.724 -0400", hash_original_method = "E063261D5EA5083378CEC188A4B78FE0", hash_generated_method = "F1A8A9E75C383307D41FF1C854241F7F")
     public final void setDataCapacity(int size) {
-        dsTaint.addTaint(size);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.977 -0400", hash_original_method = "97650A42F80764D7062D6C7A9EDB6E4B", hash_generated_method = "C847343659A6473C04E0D236AC7F9A1D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.724 -0400", hash_original_method = "97650A42F80764D7062D6C7A9EDB6E4B", hash_generated_method = "1243A7F8BD2D37D0FABA0F4ACA8B727B")
     public final boolean pushAllowFds(boolean allowFds) {
-        dsTaint.addTaint(allowFds);
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1174174048 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1174174048;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.977 -0400", hash_original_method = "D9541DA181394F49233EDC85EBA11372", hash_generated_method = "14B39C35E930877E20CEF5E74C960C04")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.724 -0400", hash_original_method = "D9541DA181394F49233EDC85EBA11372", hash_generated_method = "F726D88738028EDDB487D5C6B46AE462")
     public final void restoreAllowFds(boolean lastValue) {
-        dsTaint.addTaint(lastValue);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.977 -0400", hash_original_method = "203FAAB8CBC9466E61C8672BA6829403", hash_generated_method = "175CE96461D92F0DF3D9C5D10E04E097")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.736 -0400", hash_original_method = "203FAAB8CBC9466E61C8672BA6829403", hash_generated_method = "40F262A6A8BBD0A7C213E4376209813D")
     public final byte[] marshall() {
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1398851830 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1398851830;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.977 -0400", hash_original_method = "54EF2A5E543EFE1E280A4B6A4F3098CB", hash_generated_method = "C83E98FF3AC792D81D080E092105A230")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.736 -0400", hash_original_method = "54EF2A5E543EFE1E280A4B6A4F3098CB", hash_generated_method = "9BFFC2D408472CD2885F9AA93E140122")
     public final void unmarshall(byte[] data, int offest, int length) {
-        dsTaint.addTaint(offest);
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(data[0]);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.978 -0400", hash_original_method = "E8A5DF9275FDA0D9B0B70C7334CB1E59", hash_generated_method = "73E7700E55C8A79E942C328B213005F4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.736 -0400", hash_original_method = "E8A5DF9275FDA0D9B0B70C7334CB1E59", hash_generated_method = "06D0342998182488FBF1BB999A6534DB")
     public final void appendFrom(Parcel parcel, int offset, int length) {
-        dsTaint.addTaint(parcel.dsTaint);
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(offset);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.978 -0400", hash_original_method = "A1C2B053FCB3ADAB79F2D704E198BAB1", hash_generated_method = "8E3E6A262BCB3731F8E46D986DC4BFFE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.737 -0400", hash_original_method = "A1C2B053FCB3ADAB79F2D704E198BAB1", hash_generated_method = "C25E9944CDB1B8379705CA70586BB58C")
     public final boolean hasFileDescriptors() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_22018088 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_22018088;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.978 -0400", hash_original_method = "EBD07D08BBA21F0C5B4E86C34DC5CAC1", hash_generated_method = "D2F7C1BFFBCC5788AD6A16B8FADAD99F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.737 -0400", hash_original_method = "EBD07D08BBA21F0C5B4E86C34DC5CAC1", hash_generated_method = "482712869E70BA49180853C184A16263")
     public final void writeInterfaceToken(String interfaceName) {
-        dsTaint.addTaint(interfaceName);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.978 -0400", hash_original_method = "5F95BF99C2626C7B3640C2D1B3B7BEE7", hash_generated_method = "AB308B325DDDC5B09E062CDD65C2D20F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.737 -0400", hash_original_method = "5F95BF99C2626C7B3640C2D1B3B7BEE7", hash_generated_method = "288CBAB1B96B3BD6C3E43589A43CAA3F")
     public final void enforceInterface(String interfaceName) {
-        dsTaint.addTaint(interfaceName);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.978 -0400", hash_original_method = "6AA57281F567FED2151D4FF51C5ADD5D", hash_generated_method = "41A2F5C461CC41C491CF0F36AAD769CF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.738 -0400", hash_original_method = "6AA57281F567FED2151D4FF51C5ADD5D", hash_generated_method = "220C60356D70D7A283C931B346603A4A")
     public final void writeByteArray(byte[] b) {
-        dsTaint.addTaint(b[0]);
         writeByteArray(b, 0, (b != null) ? b.length : 0);
+        addTaint(b[0]);
         // ---------- Original Method ----------
         //writeByteArray(b, 0, (b != null) ? b.length : 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.979 -0400", hash_original_method = "292A0D9A6E9AD589E2915A38A2AF794D", hash_generated_method = "E6B3C96148104491F6380583AE56AE4F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.745 -0400", hash_original_method = "292A0D9A6E9AD589E2915A38A2AF794D", hash_generated_method = "5914254446C5E9C25C64599B3132C419")
     public final void writeByteArray(byte[] b, int offset, int len) {
-        dsTaint.addTaint(b[0]);
-        dsTaint.addTaint(len);
-        dsTaint.addTaint(offset);
         {
             writeInt(-1);
         } //End block
         Arrays.checkOffsetAndCount(b.length, offset, len);
         writeNative(b, offset, len);
+        addTaint(b[0]);
+        addTaint(offset);
+        addTaint(len);
         // ---------- Original Method ----------
         //if (b == null) {
             //writeInt(-1);
@@ -244,108 +223,84 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.979 -0400", hash_original_method = "13EF9FAE46E0DC273567B76840FE8431", hash_generated_method = "35BEA743119F28EA2555E594EB40C502")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.749 -0400", hash_original_method = "13EF9FAE46E0DC273567B76840FE8431", hash_generated_method = "B7B1791B1819FAA4AC4DF261A54493B1")
     private void writeNative(byte[] b, int offset, int len) {
-        dsTaint.addTaint(b[0]);
-        dsTaint.addTaint(len);
-        dsTaint.addTaint(offset);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.979 -0400", hash_original_method = "EB7F50F11C67DFE7362846314C368039", hash_generated_method = "35EEC0A27503ED95643DF326AFBF4DF2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.749 -0400", hash_original_method = "EB7F50F11C67DFE7362846314C368039", hash_generated_method = "BEE33504B34EACD5CA9D841430805B0B")
     public final void writeInt(int val) {
-        dsTaint.addTaint(val);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.979 -0400", hash_original_method = "6EE9E92592584E19EA2786245476EB1F", hash_generated_method = "8FF91417EC9F7DFBD44FF01E8EF4053D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.750 -0400", hash_original_method = "6EE9E92592584E19EA2786245476EB1F", hash_generated_method = "0A06D5D9A178D52A875714A0E42A1A51")
     public final void writeLong(long val) {
-        dsTaint.addTaint(val);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.979 -0400", hash_original_method = "8E6A3106AB0C4A6CA5D134BC13C79A46", hash_generated_method = "6D9AEC4EFE17E5CE98EF636FFE677BFB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.761 -0400", hash_original_method = "8E6A3106AB0C4A6CA5D134BC13C79A46", hash_generated_method = "1DF7BBEB8EFD1C1A257BF6B7DBAA6EE3")
     public final void writeFloat(float val) {
-        dsTaint.addTaint(val);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.980 -0400", hash_original_method = "580EB112F6684AC838EF0FAE39FE6143", hash_generated_method = "99841A3F9806EDB380A39D4BB2B1E1A0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.762 -0400", hash_original_method = "580EB112F6684AC838EF0FAE39FE6143", hash_generated_method = "C77D5B12217694B3853A3DF91BCF81A4")
     public final void writeDouble(double val) {
-        dsTaint.addTaint(val);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.980 -0400", hash_original_method = "148FED92CD1AE4975AE2973407FF84B1", hash_generated_method = "64CC817B70450E8047A7127A95E18C23")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.762 -0400", hash_original_method = "148FED92CD1AE4975AE2973407FF84B1", hash_generated_method = "8FFD4EB8B720B24188B168257146AA4B")
     public final void writeString(String val) {
-        dsTaint.addTaint(val);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.980 -0400", hash_original_method = "CEAF068B566AB67AE8F044276645F78A", hash_generated_method = "1CBF73DCAF53DBAC77615348DBECB889")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.762 -0400", hash_original_method = "CEAF068B566AB67AE8F044276645F78A", hash_generated_method = "A2F25B64167993F48DA629A01FC4357A")
     public final void writeCharSequence(CharSequence val) {
-        dsTaint.addTaint(val);
         TextUtils.writeToParcel(val, this, 0);
+        addTaint(val.getTaint());
         // ---------- Original Method ----------
         //TextUtils.writeToParcel(val, this, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.980 -0400", hash_original_method = "7DA1E5E6DC1856828FF2B443CF2EA2D0", hash_generated_method = "1C3342A7610B31B878AA2285E93E8B59")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.763 -0400", hash_original_method = "7DA1E5E6DC1856828FF2B443CF2EA2D0", hash_generated_method = "0D95721DBACCC6601CFE11D2E34CD1FF")
     public final void writeStrongBinder(IBinder val) {
-        dsTaint.addTaint(val.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.980 -0400", hash_original_method = "D29D74B8509F3EDC680AC67A58B2AE11", hash_generated_method = "8EFFE908336CBE43422C9FEFD492D2CD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.763 -0400", hash_original_method = "D29D74B8509F3EDC680AC67A58B2AE11", hash_generated_method = "F7B8635B17AFAED7F650ABEB6D1734CF")
     public final void writeStrongInterface(IInterface val) {
-        dsTaint.addTaint(val.dsTaint);
         writeStrongBinder(val == null ? null : val.asBinder());
+        addTaint(val.getTaint());
         // ---------- Original Method ----------
         //writeStrongBinder(val == null ? null : val.asBinder());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.981 -0400", hash_original_method = "F228581B9954F98E592DA68C1EE89409", hash_generated_method = "67571D25636EE10FF06E4B540B84CD40")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.764 -0400", hash_original_method = "F228581B9954F98E592DA68C1EE89409", hash_generated_method = "159C24B95EAD1045C52B3F0E4DD0B66A")
     public final void writeFileDescriptor(FileDescriptor val) {
-        dsTaint.addTaint(val.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.981 -0400", hash_original_method = "B137ADD0EA125F15A647DF5EEF6060FE", hash_generated_method = "F11A11933007DA8090856CFAC5CE2D26")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.773 -0400", hash_original_method = "B137ADD0EA125F15A647DF5EEF6060FE", hash_generated_method = "BB0303E6383EB2C6D21B8BBE98686C7B")
     public final void writeByte(byte val) {
-        dsTaint.addTaint(val);
         writeInt(val);
+        addTaint(val);
         // ---------- Original Method ----------
         //writeInt(val);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.981 -0400", hash_original_method = "028C08B0E96835B592DD57E92E1A9654", hash_generated_method = "2EE1AFBFA8C365A25C7A6D6BC006A72B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.773 -0400", hash_original_method = "028C08B0E96835B592DD57E92E1A9654", hash_generated_method = "7CC3F53AC45D033B1436BAAAF054C373")
     public final void writeMap(Map val) {
-        dsTaint.addTaint(val.dsTaint);
         writeMapInternal((Map<String,Object>) val);
+        addTaint(val.getTaint());
         // ---------- Original Method ----------
         //writeMapInternal((Map<String,Object>) val);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.985 -0400", hash_original_method = "254CF4BDBF55D33C4656934F15F7844A", hash_generated_method = "63711C62C889462411F9681BE1966693")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.834 -0400", hash_original_method = "254CF4BDBF55D33C4656934F15F7844A", hash_generated_method = "5387182A465CD10F26BA3F1866B3E85C")
      void writeMapInternal(Map<String,Object> val) {
-        dsTaint.addTaint(val.dsTaint);
         {
             writeInt(-1);
         } //End block
@@ -353,14 +308,15 @@ public final class Parcel {
         entries = val.entrySet();
         writeInt(entries.size());
         {
-            Iterator<Map.Entry<String,Object>> var0067E06DB1A13B6A25DDEC4BA2402C0D_1939167971 = (entries).iterator();
-            var0067E06DB1A13B6A25DDEC4BA2402C0D_1939167971.hasNext();
-            Map.Entry<String,Object> e = var0067E06DB1A13B6A25DDEC4BA2402C0D_1939167971.next();
+            Iterator<Map.Entry<String,Object>> var0067E06DB1A13B6A25DDEC4BA2402C0D_1893176810 = (entries).iterator();
+            var0067E06DB1A13B6A25DDEC4BA2402C0D_1893176810.hasNext();
+            Map.Entry<String,Object> e = var0067E06DB1A13B6A25DDEC4BA2402C0D_1893176810.next();
             {
                 writeValue(e.getKey());
                 writeValue(e.getValue());
             } //End block
         } //End collapsed parenthetic
+        addTaint(val.getTaint());
         // ---------- Original Method ----------
         //if (val == null) {
             //writeInt(-1);
@@ -375,14 +331,13 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.985 -0400", hash_original_method = "1B271C6B96886293B3F46C86D8594D62", hash_generated_method = "874ECC22D4CF768CC2CB93E1F2674945")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.835 -0400", hash_original_method = "1B271C6B96886293B3F46C86D8594D62", hash_generated_method = "2FFA68CA9C86DB44455DF2AE49798B9A")
     public final void writeBundle(Bundle val) {
-        dsTaint.addTaint(val.dsTaint);
         {
             writeInt(-1);
         } //End block
         val.writeToParcel(this, 0);
+        addTaint(val.getTaint());
         // ---------- Original Method ----------
         //if (val == null) {
             //writeInt(-1);
@@ -392,10 +347,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.985 -0400", hash_original_method = "E7219AA1C86EB1036E36A514DFF44066", hash_generated_method = "045A557B25063272D591E9F54957B544")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.836 -0400", hash_original_method = "E7219AA1C86EB1036E36A514DFF44066", hash_generated_method = "4391EEE937EAB96A79A3C4FE107602AD")
     public final void writeList(List val) {
-        dsTaint.addTaint(val.dsTaint);
         {
             writeInt(-1);
         } //End block
@@ -407,6 +360,7 @@ public final class Parcel {
         {
             writeValue(val.get(i));
         } //End block
+        addTaint(val.getTaint());
         // ---------- Original Method ----------
         //if (val == null) {
             //writeInt(-1);
@@ -422,10 +376,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.986 -0400", hash_original_method = "903390B15749D4F099959DBD9D939641", hash_generated_method = "0EE7CBF76065353AB4D5E63E28184858")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.837 -0400", hash_original_method = "903390B15749D4F099959DBD9D939641", hash_generated_method = "836FD6A31E6464B844246F3411080443")
     public final void writeArray(Object[] val) {
-        dsTaint.addTaint(val[0].dsTaint);
         {
             writeInt(-1);
         } //End block
@@ -437,6 +389,7 @@ public final class Parcel {
         {
             writeValue(val[i]);
         } //End block
+        addTaint(val[0].getTaint());
         // ---------- Original Method ----------
         //if (val == null) {
             //writeInt(-1);
@@ -452,10 +405,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.986 -0400", hash_original_method = "932B15FDC26AECB59BA0DEB9D7727076", hash_generated_method = "645FED01A167CCE1B6469CC733B52419")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.972 -0400", hash_original_method = "932B15FDC26AECB59BA0DEB9D7727076", hash_generated_method = "20A91B094225EE591689F723BF8F4A40")
     public final void writeSparseArray(SparseArray<Object> val) {
-        dsTaint.addTaint(val.dsTaint);
         {
             writeInt(-1);
         } //End block
@@ -468,6 +419,7 @@ public final class Parcel {
             writeInt(val.keyAt(i));
             writeValue(val.valueAt(i));
         } //End block
+        addTaint(val.getTaint());
         // ---------- Original Method ----------
         //if (val == null) {
             //writeInt(-1);
@@ -484,10 +436,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.986 -0400", hash_original_method = "501AACE22AB4AEC41E440B95E2BF337F", hash_generated_method = "58275489326B9A9529219A65048C7004")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.975 -0400", hash_original_method = "501AACE22AB4AEC41E440B95E2BF337F", hash_generated_method = "A7E40E8DDF386209E9FD7ED7BDC4BEB9")
     public final void writeSparseBooleanArray(SparseBooleanArray val) {
-        dsTaint.addTaint(val.dsTaint);
         {
             writeInt(-1);
         } //End block
@@ -500,6 +450,7 @@ public final class Parcel {
             writeInt(val.keyAt(i));
             writeByte((byte)(val.valueAt(i) ? 1 : 0));
         } //End block
+        addTaint(val.getTaint());
         // ---------- Original Method ----------
         //if (val == null) {
             //writeInt(-1);
@@ -516,10 +467,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.987 -0400", hash_original_method = "D75DEF1EB05EA54B4B0A6C775E789115", hash_generated_method = "3745ABD95F78230BD0075B96FDA9AED7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.980 -0400", hash_original_method = "D75DEF1EB05EA54B4B0A6C775E789115", hash_generated_method = "2738A5BE43BA026431C3D0649E8A4C11")
     public final void writeBooleanArray(boolean[] val) {
-        dsTaint.addTaint(val[0]);
         {
             int N;
             N = val.length;
@@ -535,6 +484,7 @@ public final class Parcel {
         {
             writeInt(-1);
         } //End block
+        addTaint(val[0]);
         // ---------- Original Method ----------
         //if (val != null) {
             //int N = val.length;
@@ -548,13 +498,12 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.987 -0400", hash_original_method = "636C08B3912226F5C58D74422D1E9CB4", hash_generated_method = "A5A23A6C12CC4D557D85C65BB391BA82")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.981 -0400", hash_original_method = "636C08B3912226F5C58D74422D1E9CB4", hash_generated_method = "005F494FA9065C7DA05BA6675C3885E1")
     public final boolean[] createBooleanArray() {
         int N;
         N = readInt();
         {
-            boolean var677D811DE399D0DE094E279FE647ADA9_342890401 = (N >= 0 && N <= (dataAvail() >> 2));
+            boolean var677D811DE399D0DE094E279FE647ADA9_292731164 = (N >= 0 && N <= (dataAvail() >> 2));
             {
                 boolean[] val;
                 val = new boolean[N];
@@ -567,9 +516,8 @@ public final class Parcel {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        boolean[] retVal = new boolean[1];
-        retVal[0] = dsTaint.getTaintBoolean();
-        return retVal;
+        boolean[] var503EB2F420079C4024483971CE5EDEA8_578596311 = {getTaintBoolean()};
+        return var503EB2F420079C4024483971CE5EDEA8_578596311;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N >= 0 && N <= (dataAvail() >> 2)) {
@@ -584,10 +532,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.987 -0400", hash_original_method = "15202BE45A888A7FAE449643C1F651D3", hash_generated_method = "44482F0E6254BF40516891745D819EEE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.981 -0400", hash_original_method = "15202BE45A888A7FAE449643C1F651D3", hash_generated_method = "EA88CAE7C821654C7C742676EA1A246C")
     public final void readBooleanArray(boolean[] val) {
-        dsTaint.addTaint(val[0]);
         int N;
         N = readInt();
         {
@@ -602,6 +548,7 @@ public final class Parcel {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("bad array lengths");
         } //End block
+        addTaint(val[0]);
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N == val.length) {
@@ -614,10 +561,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.988 -0400", hash_original_method = "FC1109029B4BAAFE0FA31EEEF8F95A5F", hash_generated_method = "C4BAF72D01AA0BFA8ADFDD3E653EBAF9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.988 -0400", hash_original_method = "FC1109029B4BAAFE0FA31EEEF8F95A5F", hash_generated_method = "890EC8D8DE29B47E2AE2D89CA0FD8DAE")
     public final void writeCharArray(char[] val) {
-        dsTaint.addTaint(val[0]);
         {
             int N;
             N = val.length;
@@ -633,6 +578,7 @@ public final class Parcel {
         {
             writeInt(-1);
         } //End block
+        addTaint(val[0]);
         // ---------- Original Method ----------
         //if (val != null) {
             //int N = val.length;
@@ -646,13 +592,12 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.988 -0400", hash_original_method = "0F2CB9A0B4BA672805C5DC7ABC31D142", hash_generated_method = "E4B15EA13613F724AEE094FBEBB651E3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.989 -0400", hash_original_method = "0F2CB9A0B4BA672805C5DC7ABC31D142", hash_generated_method = "363E52B000328F0964B739F32DF00445")
     public final char[] createCharArray() {
         int N;
         N = readInt();
         {
-            boolean var677D811DE399D0DE094E279FE647ADA9_527812833 = (N >= 0 && N <= (dataAvail() >> 2));
+            boolean var677D811DE399D0DE094E279FE647ADA9_476516843 = (N >= 0 && N <= (dataAvail() >> 2));
             {
                 char[] val;
                 val = new char[N];
@@ -665,9 +610,8 @@ public final class Parcel {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        char[] retVal = new char[1];
-        retVal[0] = dsTaint.getTaintString().charAt(0);
-        return retVal;
+        char[] var50607924ABD4C17119BAF3A1CE41C0EC_430467405 = {getTaintChar()};
+        return var50607924ABD4C17119BAF3A1CE41C0EC_430467405;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N >= 0 && N <= (dataAvail() >> 2)) {
@@ -682,10 +626,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.988 -0400", hash_original_method = "3577ABA10B4218BCCE6B69B6327658D6", hash_generated_method = "0D64ED784731A456139ED865931619D9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.992 -0400", hash_original_method = "3577ABA10B4218BCCE6B69B6327658D6", hash_generated_method = "99A00570DF74669970D764A5293931F1")
     public final void readCharArray(char[] val) {
-        dsTaint.addTaint(val[0]);
         int N;
         N = readInt();
         {
@@ -700,6 +642,7 @@ public final class Parcel {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("bad array lengths");
         } //End block
+        addTaint(val[0]);
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N == val.length) {
@@ -712,10 +655,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.988 -0400", hash_original_method = "426B3599371B897BFC6196C71A9C351C", hash_generated_method = "E1A959CBBEFFD0E38D21217DFCD0253E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.017 -0400", hash_original_method = "426B3599371B897BFC6196C71A9C351C", hash_generated_method = "57100F550E149C8ACDEF82903C0CB80C")
     public final void writeIntArray(int[] val) {
-        dsTaint.addTaint(val[0]);
         {
             int N;
             N = val.length;
@@ -731,6 +672,7 @@ public final class Parcel {
         {
             writeInt(-1);
         } //End block
+        addTaint(val[0]);
         // ---------- Original Method ----------
         //if (val != null) {
             //int N = val.length;
@@ -744,13 +686,12 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.989 -0400", hash_original_method = "2BFE53BE4AFBC39913D7CD537675C77F", hash_generated_method = "AC02EC2822D65F462A371B275E592F87")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.018 -0400", hash_original_method = "2BFE53BE4AFBC39913D7CD537675C77F", hash_generated_method = "2E855D20AC56EFB0EE2C6586BB5E3F3E")
     public final int[] createIntArray() {
         int N;
         N = readInt();
         {
-            boolean var677D811DE399D0DE094E279FE647ADA9_1844937468 = (N >= 0 && N <= (dataAvail() >> 2));
+            boolean var677D811DE399D0DE094E279FE647ADA9_1882509032 = (N >= 0 && N <= (dataAvail() >> 2));
             {
                 int[] val;
                 val = new int[N];
@@ -763,9 +704,8 @@ public final class Parcel {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        int[] retVal = new int[1];
-        retVal[0] = dsTaint.getTaintInt();
-        return retVal;
+        int[] varB4CCCA26F9DB9189C32F33E82D425CFB_785670216 = {getTaintInt()};
+        return varB4CCCA26F9DB9189C32F33E82D425CFB_785670216;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N >= 0 && N <= (dataAvail() >> 2)) {
@@ -780,10 +720,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.989 -0400", hash_original_method = "D30E6FBEFEE072DBADEACBC994232724", hash_generated_method = "1A8F1E85D5000B77BE252C60244E9D55")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.019 -0400", hash_original_method = "D30E6FBEFEE072DBADEACBC994232724", hash_generated_method = "89E0C4B906EB5ECAFF6EED1455614EC6")
     public final void readIntArray(int[] val) {
-        dsTaint.addTaint(val[0]);
         int N;
         N = readInt();
         {
@@ -798,6 +736,7 @@ public final class Parcel {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("bad array lengths");
         } //End block
+        addTaint(val[0]);
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N == val.length) {
@@ -810,10 +749,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.989 -0400", hash_original_method = "6AE17F1911C710D67F0B38E1A6953312", hash_generated_method = "051D8BAA7B4A607C714CCC3B63E45B0A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.042 -0400", hash_original_method = "6AE17F1911C710D67F0B38E1A6953312", hash_generated_method = "03D2424BADC3172903B11D86F856B505")
     public final void writeLongArray(long[] val) {
-        dsTaint.addTaint(val[0]);
         {
             int N;
             N = val.length;
@@ -829,6 +766,7 @@ public final class Parcel {
         {
             writeInt(-1);
         } //End block
+        addTaint(val[0]);
         // ---------- Original Method ----------
         //if (val != null) {
             //int N = val.length;
@@ -842,13 +780,12 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.990 -0400", hash_original_method = "539AEF1878CDD8393DEC7B15A779334D", hash_generated_method = "68E00BCA64D6D7C6F1F1E30983874994")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.043 -0400", hash_original_method = "539AEF1878CDD8393DEC7B15A779334D", hash_generated_method = "E29C7E720C2D27C479A6431D98113EDA")
     public final long[] createLongArray() {
         int N;
         N = readInt();
         {
-            boolean varAFA9B411100B0C263F15734A2739C902_1758394661 = (N >= 0 && N <= (dataAvail() >> 3));
+            boolean varAFA9B411100B0C263F15734A2739C902_796613521 = (N >= 0 && N <= (dataAvail() >> 3));
             {
                 long[] val;
                 val = new long[N];
@@ -861,9 +798,8 @@ public final class Parcel {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        long[] retVal = new long[1];
-        retVal[0] = dsTaint.getTaintInt();
-        return retVal;
+        long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_157319834 = {getTaintLong()};
+        return var3908C7C3AF5171CEE1F112DAE77A5C4D_157319834;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N >= 0 && N <= (dataAvail() >> 3)) {
@@ -878,10 +814,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.990 -0400", hash_original_method = "EB1FE051AE6270C29877E320D05D2B1C", hash_generated_method = "81436D511F714A89F777EC04C40FABAA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.044 -0400", hash_original_method = "EB1FE051AE6270C29877E320D05D2B1C", hash_generated_method = "EE3B65247CC68E6D1F0FB4A937A0B2B1")
     public final void readLongArray(long[] val) {
-        dsTaint.addTaint(val[0]);
         int N;
         N = readInt();
         {
@@ -896,6 +830,7 @@ public final class Parcel {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("bad array lengths");
         } //End block
+        addTaint(val[0]);
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N == val.length) {
@@ -908,10 +843,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.991 -0400", hash_original_method = "914127CC1FF235613675A4097238AE87", hash_generated_method = "F6264F082DDF9035305322943F0E7316")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.051 -0400", hash_original_method = "914127CC1FF235613675A4097238AE87", hash_generated_method = "C1DA8DD9DFF077545BA221C6DD5B1C46")
     public final void writeFloatArray(float[] val) {
-        dsTaint.addTaint(val[0]);
         {
             int N;
             N = val.length;
@@ -927,6 +860,7 @@ public final class Parcel {
         {
             writeInt(-1);
         } //End block
+        addTaint(val[0]);
         // ---------- Original Method ----------
         //if (val != null) {
             //int N = val.length;
@@ -940,13 +874,12 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.991 -0400", hash_original_method = "AD11D1594D734C1EBF478FFED3A5EA0B", hash_generated_method = "0A8F75C2C3B9F200AD5F55F39434D08C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.052 -0400", hash_original_method = "AD11D1594D734C1EBF478FFED3A5EA0B", hash_generated_method = "D3E4B4075282D40930447342313BC9AB")
     public final float[] createFloatArray() {
         int N;
         N = readInt();
         {
-            boolean var677D811DE399D0DE094E279FE647ADA9_537273768 = (N >= 0 && N <= (dataAvail() >> 2));
+            boolean var677D811DE399D0DE094E279FE647ADA9_1121211084 = (N >= 0 && N <= (dataAvail() >> 2));
             {
                 float[] val;
                 val = new float[N];
@@ -959,9 +892,8 @@ public final class Parcel {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        float[] retVal = new float[1];
-        retVal[0] = dsTaint.getTaintFloat();
-        return retVal;
+        float[] varB2C245003BAB9224CFB496218F7DAFE0_1493251200 = {getTaintFloat()};
+        return varB2C245003BAB9224CFB496218F7DAFE0_1493251200;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N >= 0 && N <= (dataAvail() >> 2)) {
@@ -976,10 +908,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.992 -0400", hash_original_method = "5BAAFA2155FE07D9BA992B0E92A02429", hash_generated_method = "17FCF48466754FDEDEDDFBD9904524F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.053 -0400", hash_original_method = "5BAAFA2155FE07D9BA992B0E92A02429", hash_generated_method = "14B25522CE1B6C2AF409E3A30DA2910C")
     public final void readFloatArray(float[] val) {
-        dsTaint.addTaint(val[0]);
         int N;
         N = readInt();
         {
@@ -994,6 +924,7 @@ public final class Parcel {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("bad array lengths");
         } //End block
+        addTaint(val[0]);
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N == val.length) {
@@ -1006,10 +937,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.992 -0400", hash_original_method = "30BB607A5C46B583A0E7A88D0830BB99", hash_generated_method = "206A9900FB83EB700850049561009539")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.069 -0400", hash_original_method = "30BB607A5C46B583A0E7A88D0830BB99", hash_generated_method = "561E826B6C11C2F8933A6E912164FF64")
     public final void writeDoubleArray(double[] val) {
-        dsTaint.addTaint(val[0]);
         {
             int N;
             N = val.length;
@@ -1025,6 +954,7 @@ public final class Parcel {
         {
             writeInt(-1);
         } //End block
+        addTaint(val[0]);
         // ---------- Original Method ----------
         //if (val != null) {
             //int N = val.length;
@@ -1038,13 +968,12 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.993 -0400", hash_original_method = "EADE9932A44C79075558F2C2E2C44BF9", hash_generated_method = "08718DA039F10930993CD8F02E451315")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.071 -0400", hash_original_method = "EADE9932A44C79075558F2C2E2C44BF9", hash_generated_method = "1B4F35E771145FE968B1DC05F86B18C8")
     public final double[] createDoubleArray() {
         int N;
         N = readInt();
         {
-            boolean varAFA9B411100B0C263F15734A2739C902_887853327 = (N >= 0 && N <= (dataAvail() >> 3));
+            boolean varAFA9B411100B0C263F15734A2739C902_350648102 = (N >= 0 && N <= (dataAvail() >> 3));
             {
                 double[] val;
                 val = new double[N];
@@ -1057,9 +986,8 @@ public final class Parcel {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        double[] retVal = new double[1];
-        retVal[0] = dsTaint.getTaintFloat();
-        return retVal;
+        double[] var74D44D7D9EE6FE6C3433D694F869E521_689683534 = {getTaintDouble()};
+        return var74D44D7D9EE6FE6C3433D694F869E521_689683534;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N >= 0 && N <= (dataAvail() >> 3)) {
@@ -1074,10 +1002,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.993 -0400", hash_original_method = "1E5CFF0988982B6DD3E5010F6E58EAB2", hash_generated_method = "262BCBBD242187DA0645B7CBA59423CF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.072 -0400", hash_original_method = "1E5CFF0988982B6DD3E5010F6E58EAB2", hash_generated_method = "1C8457836D1451E352FFAAA4DE556DAF")
     public final void readDoubleArray(double[] val) {
-        dsTaint.addTaint(val[0]);
         int N;
         N = readInt();
         {
@@ -1092,6 +1018,7 @@ public final class Parcel {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("bad array lengths");
         } //End block
+        addTaint(val[0]);
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N == val.length) {
@@ -1104,10 +1031,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.993 -0400", hash_original_method = "869784FDBD7A62BA6DC61589E5325593", hash_generated_method = "29276E9B124BF9BEDD675727505DF2C6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.088 -0400", hash_original_method = "869784FDBD7A62BA6DC61589E5325593", hash_generated_method = "4E66B8DD87CB6C959EF863B6CB561938")
     public final void writeStringArray(String[] val) {
-        dsTaint.addTaint(val[0]);
         {
             int N;
             N = val.length;
@@ -1123,6 +1048,7 @@ public final class Parcel {
         {
             writeInt(-1);
         } //End block
+        addTaint(val[0].getTaint());
         // ---------- Original Method ----------
         //if (val != null) {
             //int N = val.length;
@@ -1136,9 +1062,10 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.994 -0400", hash_original_method = "E25A6435806EEE9817C8F94878902077", hash_generated_method = "C8D411EC5E51A9654E3168045D842977")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.090 -0400", hash_original_method = "E25A6435806EEE9817C8F94878902077", hash_generated_method = "2264396E6E294930BBA0E420854210E7")
     public final String[] createStringArray() {
+        String[] varB4EAC82CA7396A68D541C85D26508E83_284695053 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1441332573 = null; //Variable for return #2
         int N;
         N = readInt();
         {
@@ -1151,10 +1078,22 @@ public final class Parcel {
                     val[i] = readString();
                 } //End block
             } //End collapsed parenthetic
+            varB4EAC82CA7396A68D541C85D26508E83_284695053 = val;
         } //End block
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1441332573 = null;
+        } //End block
+        String[] varA7E53CE21691AB073D9660D615818899_1332483326; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1332483326 = varB4EAC82CA7396A68D541C85D26508E83_284695053;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1332483326 = varB4EAC82CA7396A68D541C85D26508E83_1441332573;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1332483326.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1332483326;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N >= 0) {
@@ -1169,10 +1108,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.994 -0400", hash_original_method = "856C598346084C5A7CB0C8EC3C30AFE8", hash_generated_method = "014040F55A7685712E11BD616AEE498A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.101 -0400", hash_original_method = "856C598346084C5A7CB0C8EC3C30AFE8", hash_generated_method = "2B9095FE4B077FA9FA582B880EB950DC")
     public final void readStringArray(String[] val) {
-        dsTaint.addTaint(val[0]);
         int N;
         N = readInt();
         {
@@ -1187,6 +1124,7 @@ public final class Parcel {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("bad array lengths");
         } //End block
+        addTaint(val[0].getTaint());
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N == val.length) {
@@ -1199,10 +1137,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.994 -0400", hash_original_method = "EF4C8799E7CA7F11199E2A94E26473B3", hash_generated_method = "4F19E6C92E494BE4FE420A12D4AB2D3B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.102 -0400", hash_original_method = "EF4C8799E7CA7F11199E2A94E26473B3", hash_generated_method = "0EAF8717A18C33E163736704A6B2C62A")
     public final void writeBinderArray(IBinder[] val) {
-        dsTaint.addTaint(val[0].dsTaint);
         {
             int N;
             N = val.length;
@@ -1218,6 +1154,7 @@ public final class Parcel {
         {
             writeInt(-1);
         } //End block
+        addTaint(val[0].getTaint());
         // ---------- Original Method ----------
         //if (val != null) {
             //int N = val.length;
@@ -1231,10 +1168,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.995 -0400", hash_original_method = "47477B6B20C2841826851A1DC451409B", hash_generated_method = "0287BE4F597C1251065B771325A197D5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.102 -0400", hash_original_method = "47477B6B20C2841826851A1DC451409B", hash_generated_method = "2BE2594F8BE29F54CC5DAE094DEA4A23")
     public final void writeCharSequenceArray(CharSequence[] val) {
-        dsTaint.addTaint(val[0]);
         {
             int N;
             N = val.length;
@@ -1250,6 +1185,7 @@ public final class Parcel {
         {
             writeInt(-1);
         } //End block
+        addTaint(val[0].getTaint());
         // ---------- Original Method ----------
         //if (val != null) {
             //int N = val.length;
@@ -1263,9 +1199,10 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.995 -0400", hash_original_method = "4DE08401A529CB5616CDC9DFD50DAFB3", hash_generated_method = "A8B002DAE98008B62F4B8151219145B8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.117 -0400", hash_original_method = "4DE08401A529CB5616CDC9DFD50DAFB3", hash_generated_method = "E6E3AB3006263405E24A6D1DB5E6BDD0")
     public final IBinder[] createBinderArray() {
+        IBinder[] varB4EAC82CA7396A68D541C85D26508E83_1038740667 = null; //Variable for return #1
+        IBinder[] varB4EAC82CA7396A68D541C85D26508E83_1713324486 = null; //Variable for return #2
         int N;
         N = readInt();
         {
@@ -1278,8 +1215,22 @@ public final class Parcel {
                     val[i] = readStrongBinder();
                 } //End block
             } //End collapsed parenthetic
+            varB4EAC82CA7396A68D541C85D26508E83_1038740667 = val;
         } //End block
-        return (IBinder[])dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1713324486 = null;
+        } //End block
+        IBinder[] varA7E53CE21691AB073D9660D615818899_712606410; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_712606410 = varB4EAC82CA7396A68D541C85D26508E83_1038740667;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_712606410 = varB4EAC82CA7396A68D541C85D26508E83_1713324486;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_712606410.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_712606410;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N >= 0) {
@@ -1294,10 +1245,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.995 -0400", hash_original_method = "3E3D11ECAF89B0D6B7212074DA0FB112", hash_generated_method = "EB72B8A171CA1FC5C3C25BBCD3B5086A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.117 -0400", hash_original_method = "3E3D11ECAF89B0D6B7212074DA0FB112", hash_generated_method = "636D88A9755F021521B43F38B0CA193C")
     public final void readBinderArray(IBinder[] val) {
-        dsTaint.addTaint(val[0].dsTaint);
         int N;
         N = readInt();
         {
@@ -1312,6 +1261,7 @@ public final class Parcel {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("bad array lengths");
         } //End block
+        addTaint(val[0].getTaint());
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N == val.length) {
@@ -1324,10 +1274,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.996 -0400", hash_original_method = "5826C07CBD3614FC61FFE172F3E36C59", hash_generated_method = "554839F076282A99C036C64C5BF8D788")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.118 -0400", hash_original_method = "5826C07CBD3614FC61FFE172F3E36C59", hash_generated_method = "86F8F92EA883D58D6AD9E65E161D23C6")
     public final <T extends Parcelable> void writeTypedList(List<T> val) {
-        dsTaint.addTaint(val.dsTaint);
         {
             writeInt(-1);
         } //End block
@@ -1347,6 +1295,7 @@ public final class Parcel {
                 writeInt(0);
             } //End block
         } //End block
+        addTaint(val.getTaint());
         // ---------- Original Method ----------
         //if (val == null) {
             //writeInt(-1);
@@ -1368,10 +1317,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.996 -0400", hash_original_method = "D0AECB36946CE861852315E400637CFF", hash_generated_method = "6D56B32C8516FF1142A9EA54946110E8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.119 -0400", hash_original_method = "D0AECB36946CE861852315E400637CFF", hash_generated_method = "66AFC74CE3D950BE5057EB288CB0A305")
     public final void writeStringList(List<String> val) {
-        dsTaint.addTaint(val.dsTaint);
         {
             writeInt(-1);
         } //End block
@@ -1383,6 +1330,7 @@ public final class Parcel {
         {
             writeString(val.get(i));
         } //End block
+        addTaint(val.getTaint());
         // ---------- Original Method ----------
         //if (val == null) {
             //writeInt(-1);
@@ -1398,10 +1346,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.996 -0400", hash_original_method = "7137D7435CDB5CC040EE6A964998B66D", hash_generated_method = "953F2FF8AE3A8E4604BAF410DF8425F1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.119 -0400", hash_original_method = "7137D7435CDB5CC040EE6A964998B66D", hash_generated_method = "EE2D7EA578D3DAAD36E7ABA3F754649E")
     public final void writeBinderList(List<IBinder> val) {
-        dsTaint.addTaint(val.dsTaint);
         {
             writeInt(-1);
         } //End block
@@ -1413,6 +1359,7 @@ public final class Parcel {
         {
             writeStrongBinder(val.get(i));
         } //End block
+        addTaint(val.getTaint());
         // ---------- Original Method ----------
         //if (val == null) {
             //writeInt(-1);
@@ -1428,12 +1375,9 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.996 -0400", hash_original_method = "029988DBA55E380B93A4CDBDA2CB7F3E", hash_generated_method = "682558C1F82D73E9BFCAD4F11DEE2C30")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.120 -0400", hash_original_method = "029988DBA55E380B93A4CDBDA2CB7F3E", hash_generated_method = "B4874F91CDF0A433FBED70D605FD922E")
     public final <T extends Parcelable> void writeTypedArray(T[] val,
             int parcelableFlags) {
-        dsTaint.addTaint(val[0].dsTaint);
-        dsTaint.addTaint(parcelableFlags);
         {
             int N;
             N = val.length;
@@ -1457,6 +1401,8 @@ public final class Parcel {
         {
             writeInt(-1);
         } //End block
+        addTaint(val[0].getTaint());
+        addTaint(parcelableFlags);
         // ---------- Original Method ----------
         //if (val != null) {
             //int N = val.length;
@@ -1476,10 +1422,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.997 -0400", hash_original_method = "D9566C4BE63552F29703FA1385C84129", hash_generated_method = "B1DDF9DA74AEAA1EE356DA9AF0E3FA68")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.146 -0400", hash_original_method = "D9566C4BE63552F29703FA1385C84129", hash_generated_method = "013DA4F999026AAE579652781535EF9B")
     public final void writeValue(Object v) {
-        dsTaint.addTaint(v.dsTaint);
         {
             writeInt(VAL_NULL);
         } //End block
@@ -1582,16 +1526,14 @@ public final class Parcel {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Parcel: unable to marshal value " + v);
         } //End block
+        addTaint(v.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.998 -0400", hash_original_method = "A58184BC725C2FE85E17C583E1DA6016", hash_generated_method = "017755E8A428B26C5793738EDEE8E3CD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.148 -0400", hash_original_method = "A58184BC725C2FE85E17C583E1DA6016", hash_generated_method = "05DC0370A064D93F9EFDAC93CD3A6D8B")
     public final void writeParcelable(Parcelable p, int parcelableFlags) {
-        dsTaint.addTaint(parcelableFlags);
-        dsTaint.addTaint(p.dsTaint);
         {
             writeString(null);
         } //End block
@@ -1599,6 +1541,8 @@ public final class Parcel {
         name = p.getClass().getName();
         writeString(name);
         p.writeToParcel(this, parcelableFlags);
+        addTaint(p.getTaint());
+        addTaint(parcelableFlags);
         // ---------- Original Method ----------
         //if (p == null) {
             //writeString(null);
@@ -1610,10 +1554,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.998 -0400", hash_original_method = "BCB9F78F7EC1F484C61BF7865779B2F9", hash_generated_method = "ACC4747E3E6262ADDA2685D329C44266")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.158 -0400", hash_original_method = "BCB9F78F7EC1F484C61BF7865779B2F9", hash_generated_method = "21C56E7D44E99B42256D116ACD37987B")
     public final void writeSerializable(Serializable s) {
-        dsTaint.addTaint(s.dsTaint);
         {
             writeString(null);
         } //End block
@@ -1636,6 +1578,7 @@ public final class Parcel {
                 "IOException writing serializable object (name = " + name +
                 ")", ioe);
         } //End block
+        addTaint(s.getTaint());
         // ---------- Original Method ----------
         //if (s == null) {
             //writeString(null);
@@ -1657,10 +1600,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.998 -0400", hash_original_method = "7DD11AC8769A37C0F9583E9AAFAA7192", hash_generated_method = "37B9DA4C88392626B400B78C4328FD81")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.159 -0400", hash_original_method = "7DD11AC8769A37C0F9583E9AAFAA7192", hash_generated_method = "5C9839AA7C57A73C70F1A68247A494CB")
     public final void writeException(Exception e) {
-        dsTaint.addTaint(e.dsTaint);
         int code;
         code = 0;
         {
@@ -1687,6 +1628,7 @@ public final class Parcel {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
         } //End block
         writeString(e.getMessage());
+        addTaint(e.getTaint());
         // ---------- Original Method ----------
         //int code = 0;
         //if (e instanceof SecurityException) {
@@ -1712,11 +1654,10 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.999 -0400", hash_original_method = "123C62676F5EFD49547DAF82EF108740", hash_generated_method = "93570DC3D4B078045ED137150941CB55")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.170 -0400", hash_original_method = "123C62676F5EFD49547DAF82EF108740", hash_generated_method = "589EA5B5DCFD3A544A490B6597A300CA")
     public final void writeNoException() {
         {
-            boolean var67AAFC75FFEDAFC4D52248FF88A9C8E7_2031018265 = (StrictMode.hasGatheredViolations());
+            boolean var67AAFC75FFEDAFC4D52248FF88A9C8E7_1662204908 = (StrictMode.hasGatheredViolations());
             {
                 writeInt(EX_HAS_REPLY_HEADER);
                 int sizePosition;
@@ -1749,8 +1690,7 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.999 -0400", hash_original_method = "82EBD768B4FCE70E559935E5298055BB", hash_generated_method = "F55C6933CEB93ACE162731DB834588A9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.170 -0400", hash_original_method = "82EBD768B4FCE70E559935E5298055BB", hash_generated_method = "F55C6933CEB93ACE162731DB834588A9")
     public final void readException() {
         int code;
         code = readExceptionCode();
@@ -1768,8 +1708,7 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.999 -0400", hash_original_method = "38AAEB1276A409D21345CE71D5A4968D", hash_generated_method = "0F4A009FA5B8B7E7BDF6F45E0C7D6FD7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.171 -0400", hash_original_method = "38AAEB1276A409D21345CE71D5A4968D", hash_generated_method = "62CD399AA039BF4D599E1C26D1C21B2B")
     public final int readExceptionCode() {
         int code;
         code = readInt();
@@ -1780,7 +1719,8 @@ public final class Parcel {
                 StrictMode.readAndHandleBinderCallViolations(this);
             } //End block
         } //End block
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_644519115 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_644519115;
         // ---------- Original Method ----------
         //int code = readInt();
         //if (code == EX_HAS_REPLY_HEADER) {
@@ -1796,11 +1736,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.000 -0400", hash_original_method = "16B6C7096EAAE541E38738222303A695", hash_generated_method = "C25B9B6293E56E754C460B9DF95B5DFA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.172 -0400", hash_original_method = "16B6C7096EAAE541E38738222303A695", hash_generated_method = "E1A6625007DA31B04BDAEDD7DCD27DD3")
     public final void readException(int code, String msg) {
-        dsTaint.addTaint(code);
-        dsTaint.addTaint(msg);
         //Begin case EX_SECURITY 
         if (DroidSafeAndroidRuntime.control) throw new SecurityException(msg);
         //End case EX_SECURITY 
@@ -1818,6 +1755,8 @@ public final class Parcel {
         //End case EX_ILLEGAL_STATE 
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Unknown exception code: " + code
                 + " msg " + msg);
+        addTaint(code);
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         //switch (code) {
             //case EX_SECURITY:
@@ -1836,77 +1775,74 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.000 -0400", hash_original_method = "97FB920EA9544B24495059FF8518145E", hash_generated_method = "4D27D11A07BD16D1BD00B62220B262D8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.176 -0400", hash_original_method = "97FB920EA9544B24495059FF8518145E", hash_generated_method = "9207A2FD5EA4D02E5D5D72257CCADF7A")
     public final int readInt() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2093692940 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2093692940;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.000 -0400", hash_original_method = "88765326927052F47E1B04CC1A370299", hash_generated_method = "1BED32960CC7B30FFB0566915F909F77")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.177 -0400", hash_original_method = "88765326927052F47E1B04CC1A370299", hash_generated_method = "414E68B65EF33EA4A3FE7C086AE24BB6")
     public final long readLong() {
-        return dsTaint.getTaintLong();
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_420134493 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_420134493;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.000 -0400", hash_original_method = "9BF95C525D78F630EDF572E34BF4D430", hash_generated_method = "0319B5675729D6F24FE91D7F2546EC22")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.177 -0400", hash_original_method = "9BF95C525D78F630EDF572E34BF4D430", hash_generated_method = "9E166EEDFC30231E5D00487598EF29B5")
     public final float readFloat() {
-        return dsTaint.getTaintFloat();
+        float var546ADE640B6EDFBC8A086EF31347E768_1310456569 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1310456569;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.000 -0400", hash_original_method = "FFE81D38F89970F2B0BAD4C68B43B4BA", hash_generated_method = "82AA2E162EED57F9D911FEF2C9C8EBEE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.177 -0400", hash_original_method = "FFE81D38F89970F2B0BAD4C68B43B4BA", hash_generated_method = "D7E89429D34B00A69E801A232CE88A51")
     public final double readDouble() {
-        return dsTaint.getTaintDouble();
+        double varE8CD7DA078A86726031AD64F35F5A6C0_243231596 = getTaintDouble();
+        return varE8CD7DA078A86726031AD64F35F5A6C0_243231596;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.000 -0400", hash_original_method = "E5D101F44C406F4D63DCAF323A3DBE7A", hash_generated_method = "F7D4B4078EFF3339328CFA46C807C963")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.189 -0400", hash_original_method = "E5D101F44C406F4D63DCAF323A3DBE7A", hash_generated_method = "1C9A6574A6BB76E4DCFE30F009ECD100")
     public final String readString() {
-        return dsTaint.getTaintString();
+        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.001 -0400", hash_original_method = "1E262BAA6376F101519B67935298363E", hash_generated_method = "5F0F98F0644A8FFB46F230B0B1B9139E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.191 -0400", hash_original_method = "1E262BAA6376F101519B67935298363E", hash_generated_method = "5593E52E8060345B5FEED90F32AE8A39")
     public final CharSequence readCharSequence() {
-        CharSequence var09AE683B7FDC546955A024D23E40E19D_1562930675 = (TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(this));
-        return dsTaint.getTaintString();
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_218381102 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_218381102 = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(this);
+        varB4EAC82CA7396A68D541C85D26508E83_218381102.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_218381102;
         // ---------- Original Method ----------
         //return TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.001 -0400", hash_original_method = "5B57CBCFFAE68CC288C10DD7232B6ED1", hash_generated_method = "83B272477F5B18FDE0C84B6561812E6A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.203 -0400", hash_original_method = "5B57CBCFFAE68CC288C10DD7232B6ED1", hash_generated_method = "44CAE844D4E5A4CBF2E99C7605E5B931")
     public final IBinder readStrongBinder() {
-        return (IBinder)dsTaint.getTaint();
+        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.001 -0400", hash_original_method = "624419D3E87C84C27536CFAE1C7248DF", hash_generated_method = "C1F55EA2F1A2FD7BAFD8E2B51A2AB813")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.205 -0400", hash_original_method = "624419D3E87C84C27536CFAE1C7248DF", hash_generated_method = "4EAD63A05CCD70502023913E325CF1F5")
     public final ParcelFileDescriptor readFileDescriptor() {
+        ParcelFileDescriptor varB4EAC82CA7396A68D541C85D26508E83_126831001 = null; //Variable for return #1
         FileDescriptor fd;
         fd = internalReadFileDescriptor();
-        {
-            Object varB83E08AB54891903402517AD6E315E36_896404013 = (new ParcelFileDescriptor(fd));
-        } //End flattened ternary
-        return (ParcelFileDescriptor)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_126831001 = fd != null ? new ParcelFileDescriptor(fd) : null;
+        varB4EAC82CA7396A68D541C85D26508E83_126831001.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_126831001;
         // ---------- Original Method ----------
         //FileDescriptor fd = internalReadFileDescriptor();
         //return fd != null ? new ParcelFileDescriptor(fd) : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.001 -0400", hash_original_method = "33B415422717616FBFFA4D8F233FE3A4", hash_generated_method = "7D5582C3B6F1E2A7E9117AF4EF5C7609")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.205 -0400", hash_original_method = "33B415422717616FBFFA4D8F233FE3A4", hash_generated_method = "0FD8D4B30F488C8E04BA04A3C811CF90")
     private FileDescriptor internalReadFileDescriptor() {
-        return (FileDescriptor)dsTaint.getTaint();
+        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
     }
 
     
@@ -1929,54 +1865,67 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.002 -0400", hash_original_method = "12B71841CE7C7BEB8DB394B4DC6EF58B", hash_generated_method = "CE62BAB0D0F45BA2C2E3E9C48C8C389C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.210 -0400", hash_original_method = "12B71841CE7C7BEB8DB394B4DC6EF58B", hash_generated_method = "4DB93AF083B971AAFEBFAF51779411DB")
     public final byte readByte() {
-        byte varA3491D8E17C6029A18B5C5A7657736E0_125925747 = ((byte)(readInt() & 0xff));
-        return dsTaint.getTaintByte();
+        byte varA3491D8E17C6029A18B5C5A7657736E0_349064534 = ((byte)(readInt() & 0xff));
+        byte var40EA57D3EE3C07BF1C102B466E1C3091_1592407265 = getTaintByte();
+        return var40EA57D3EE3C07BF1C102B466E1C3091_1592407265;
         // ---------- Original Method ----------
         //return (byte)(readInt() & 0xff);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.002 -0400", hash_original_method = "82825CDD252FB884333A0468F1B46F6F", hash_generated_method = "73814C12EFA23335E067919C67148854")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.211 -0400", hash_original_method = "82825CDD252FB884333A0468F1B46F6F", hash_generated_method = "DD80C69A4FBD75C22DA2DE0024EF0362")
     public final void readMap(Map outVal, ClassLoader loader) {
-        dsTaint.addTaint(outVal.dsTaint);
-        dsTaint.addTaint(loader.dsTaint);
         int N;
         N = readInt();
         readMapInternal(outVal, N, loader);
+        addTaint(outVal.getTaint());
+        addTaint(loader.getTaint());
         // ---------- Original Method ----------
         //int N = readInt();
         //readMapInternal(outVal, N, loader);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.003 -0400", hash_original_method = "C60DBA65518C72AFC52918F8818E7A4A", hash_generated_method = "87C2F25E0240077FCF4966A0E56453D8")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.211 -0400", hash_original_method = "C60DBA65518C72AFC52918F8818E7A4A", hash_generated_method = "AA627E185336E392AF6129F205DC7155")
     public final void readList(List outVal, ClassLoader loader) {
-        dsTaint.addTaint(outVal.dsTaint);
-        dsTaint.addTaint(loader.dsTaint);
         int N;
         N = readInt();
         readListInternal(outVal, N, loader);
+        addTaint(outVal.getTaint());
+        addTaint(loader.getTaint());
         // ---------- Original Method ----------
         //int N = readInt();
         //readListInternal(outVal, N, loader);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.003 -0400", hash_original_method = "0DC8809E3B9E75AF0CC28567E6782BE5", hash_generated_method = "6C09DF5FA92EF6872DC6CCE1138343E5")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.221 -0400", hash_original_method = "0DC8809E3B9E75AF0CC28567E6782BE5", hash_generated_method = "BE7A42D6197A259F375033BD311A42D4")
     public final HashMap readHashMap(ClassLoader loader) {
-        dsTaint.addTaint(loader.dsTaint);
+        HashMap varB4EAC82CA7396A68D541C85D26508E83_623204932 = null; //Variable for return #1
+        HashMap varB4EAC82CA7396A68D541C85D26508E83_385852425 = null; //Variable for return #2
         int N;
         N = readInt();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_623204932 = null;
+        } //End block
         HashMap m;
         m = new HashMap(N);
         readMapInternal(m, N, loader);
-        return (HashMap)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_385852425 = m;
+        addTaint(loader.getTaint());
+        HashMap varA7E53CE21691AB073D9660D615818899_1733998491; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1733998491 = varB4EAC82CA7396A68D541C85D26508E83_623204932;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1733998491 = varB4EAC82CA7396A68D541C85D26508E83_385852425;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1733998491.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1733998491;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N < 0) {
@@ -1988,28 +1937,44 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.003 -0400", hash_original_method = "30B879800FFE3D55BB9B30F39E994273", hash_generated_method = "DCAB8CF8EA9ECF92C31EDFF7612A2681")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.229 -0400", hash_original_method = "30B879800FFE3D55BB9B30F39E994273", hash_generated_method = "395931F86A68899D80FECC8F896A3671")
     public final Bundle readBundle() {
-        Bundle var9FCD0EFE653F67400EEFD6A452EB50FF_207692786 = (readBundle(null));
-        return (Bundle)dsTaint.getTaint();
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_1562876583 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1562876583 = readBundle(null);
+        varB4EAC82CA7396A68D541C85D26508E83_1562876583.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1562876583;
         // ---------- Original Method ----------
         //return readBundle(null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.003 -0400", hash_original_method = "7DBD463E649AEA6A8616F4943C405C7A", hash_generated_method = "7CB5D3413A7CFE65AB4DD159F1BADFC7")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.230 -0400", hash_original_method = "7DBD463E649AEA6A8616F4943C405C7A", hash_generated_method = "768901905E3730AFE65A0DCAD3ABE234")
     public final Bundle readBundle(ClassLoader loader) {
-        dsTaint.addTaint(loader.dsTaint);
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_1919953885 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_845305294 = null; //Variable for return #2
         int length;
         length = readInt();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1919953885 = null;
+        } //End block
         Bundle bundle;
         bundle = new Bundle(this, length);
         {
             bundle.setClassLoader(loader);
         } //End block
-        return (Bundle)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_845305294 = bundle;
+        addTaint(loader.getTaint());
+        Bundle varA7E53CE21691AB073D9660D615818899_1265087230; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1265087230 = varB4EAC82CA7396A68D541C85D26508E83_1919953885;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1265087230 = varB4EAC82CA7396A68D541C85D26508E83_845305294;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1265087230.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1265087230;
         // ---------- Original Method ----------
         //int length = readInt();
         //if (length < 0) {
@@ -2023,19 +1988,15 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.003 -0400", hash_original_method = "DCFF48487CDF8628FF2244CC4810775C", hash_generated_method = "D29A79680C2294D02518727A5DDE6ECF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.230 -0400", hash_original_method = "DCFF48487CDF8628FF2244CC4810775C", hash_generated_method = "1A8BF0398B9AF977D3A07C32F98D881E")
     public final byte[] createByteArray() {
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1286977793 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1286977793;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.004 -0400", hash_original_method = "40FE8430590711C6D2AB472A3973EA8A", hash_generated_method = "EECD3C4F5D816852F6AA013E99A7109D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.231 -0400", hash_original_method = "40FE8430590711C6D2AB472A3973EA8A", hash_generated_method = "C025AD6274F3E57547CC619D8003E25B")
     public final void readByteArray(byte[] val) {
-        dsTaint.addTaint(val[0]);
         byte[] ba;
         ba = createByteArray();
         {
@@ -2044,6 +2005,7 @@ public final class Parcel {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("bad array lengths");
         } //End block
+        addTaint(val[0]);
         // ---------- Original Method ----------
         //byte[] ba = createByteArray();
         //if (ba.length == val.length) {
@@ -2054,9 +2016,9 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.004 -0400", hash_original_method = "3F4E1D573E001DD6503628882E161682", hash_generated_method = "69ABF5EB46BB43B0C00A73277BB909E6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.247 -0400", hash_original_method = "3F4E1D573E001DD6503628882E161682", hash_generated_method = "A5F3E6200FA8E598251F4B04B58385FB")
     public final String[] readStringArray() {
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1869883099 = null; //Variable for return #1
         String[] array;
         array = null;
         int length;
@@ -2071,9 +2033,9 @@ public final class Parcel {
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        varB4EAC82CA7396A68D541C85D26508E83_1869883099 = array;
+        varB4EAC82CA7396A68D541C85D26508E83_1869883099.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1869883099;
         // ---------- Original Method ----------
         //String[] array = null;
         //int length = readInt();
@@ -2089,9 +2051,9 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.004 -0400", hash_original_method = "0A6BC69D8060353BD0BABF3E9B4D1085", hash_generated_method = "E0D7AFFDBAA53AC1F1573CCF0649AC54")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.248 -0400", hash_original_method = "0A6BC69D8060353BD0BABF3E9B4D1085", hash_generated_method = "7E473FCABE0503B3338DCD548B0A15D4")
     public final CharSequence[] readCharSequenceArray() {
+        CharSequence[] varB4EAC82CA7396A68D541C85D26508E83_1256273788 = null; //Variable for return #1
         CharSequence[] array;
         array = null;
         int length;
@@ -2106,9 +2068,9 @@ public final class Parcel {
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        CharSequence[] retVal = new CharSequence[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        varB4EAC82CA7396A68D541C85D26508E83_1256273788 = array;
+        varB4EAC82CA7396A68D541C85D26508E83_1256273788.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1256273788;
         // ---------- Original Method ----------
         //CharSequence[] array = null;
         //int length = readInt();
@@ -2124,16 +2086,31 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.004 -0400", hash_original_method = "0CB879EE6020D3E02716A43BE19D4D51", hash_generated_method = "794F5733049EC592E2A5D7CC48C8490B")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.249 -0400", hash_original_method = "0CB879EE6020D3E02716A43BE19D4D51", hash_generated_method = "FC1DFEC61E164D797E345BCB07530F1D")
     public final ArrayList readArrayList(ClassLoader loader) {
-        dsTaint.addTaint(loader.dsTaint);
+        ArrayList varB4EAC82CA7396A68D541C85D26508E83_2004562559 = null; //Variable for return #1
+        ArrayList varB4EAC82CA7396A68D541C85D26508E83_37867631 = null; //Variable for return #2
         int N;
         N = readInt();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_2004562559 = null;
+        } //End block
         ArrayList l;
         l = new ArrayList(N);
         readListInternal(l, N, loader);
-        return (ArrayList)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_37867631 = l;
+        addTaint(loader.getTaint());
+        ArrayList varA7E53CE21691AB073D9660D615818899_703021918; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_703021918 = varB4EAC82CA7396A68D541C85D26508E83_2004562559;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_703021918 = varB4EAC82CA7396A68D541C85D26508E83_37867631;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_703021918.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_703021918;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N < 0) {
@@ -2145,16 +2122,31 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.005 -0400", hash_original_method = "BFE5C5C5F5678C281D93BB53C31E26A0", hash_generated_method = "E421B10841DA6D15D95F93A403BA7E76")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.258 -0400", hash_original_method = "BFE5C5C5F5678C281D93BB53C31E26A0", hash_generated_method = "C91DB89BED144373EEA8349AE6AF7841")
     public final Object[] readArray(ClassLoader loader) {
-        dsTaint.addTaint(loader.dsTaint);
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_1726967225 = null; //Variable for return #1
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_297981266 = null; //Variable for return #2
         int N;
         N = readInt();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1726967225 = null;
+        } //End block
         Object[] l;
         l = new Object[N];
         readArrayInternal(l, N, loader);
-        return (Object[])dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_297981266 = l;
+        addTaint(loader.getTaint());
+        Object[] varA7E53CE21691AB073D9660D615818899_552392588; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_552392588 = varB4EAC82CA7396A68D541C85D26508E83_1726967225;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_552392588 = varB4EAC82CA7396A68D541C85D26508E83_297981266;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_552392588.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_552392588;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N < 0) {
@@ -2166,16 +2158,31 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.005 -0400", hash_original_method = "53952EC2EA973438719A76F49C86D9F1", hash_generated_method = "8A476B6C7F79A1BD97DB63359EDBEF15")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.259 -0400", hash_original_method = "53952EC2EA973438719A76F49C86D9F1", hash_generated_method = "3DE8C09822B314A30EA406BCE1B3D0C8")
     public final SparseArray readSparseArray(ClassLoader loader) {
-        dsTaint.addTaint(loader.dsTaint);
+        SparseArray varB4EAC82CA7396A68D541C85D26508E83_1728220598 = null; //Variable for return #1
+        SparseArray varB4EAC82CA7396A68D541C85D26508E83_1011706862 = null; //Variable for return #2
         int N;
         N = readInt();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1728220598 = null;
+        } //End block
         SparseArray sa;
         sa = new SparseArray(N);
         readSparseArrayInternal(sa, N, loader);
-        return (SparseArray)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1011706862 = sa;
+        addTaint(loader.getTaint());
+        SparseArray varA7E53CE21691AB073D9660D615818899_259799555; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_259799555 = varB4EAC82CA7396A68D541C85D26508E83_1728220598;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_259799555 = varB4EAC82CA7396A68D541C85D26508E83_1011706862;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_259799555.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_259799555;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N < 0) {
@@ -2187,15 +2194,30 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.005 -0400", hash_original_method = "04DCF387CF40E8397784231DC7CB64F8", hash_generated_method = "A5705A0A63081B1551A23D5169B8D000")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.260 -0400", hash_original_method = "04DCF387CF40E8397784231DC7CB64F8", hash_generated_method = "935DB73DECAA31F76C3F728D5B2C82EC")
     public final SparseBooleanArray readSparseBooleanArray() {
+        SparseBooleanArray varB4EAC82CA7396A68D541C85D26508E83_124092704 = null; //Variable for return #1
+        SparseBooleanArray varB4EAC82CA7396A68D541C85D26508E83_545715270 = null; //Variable for return #2
         int N;
         N = readInt();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_124092704 = null;
+        } //End block
         SparseBooleanArray sa;
         sa = new SparseBooleanArray(N);
         readSparseBooleanArrayInternal(sa, N);
-        return (SparseBooleanArray)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_545715270 = sa;
+        SparseBooleanArray varA7E53CE21691AB073D9660D615818899_1413454352; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1413454352 = varB4EAC82CA7396A68D541C85D26508E83_124092704;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1413454352 = varB4EAC82CA7396A68D541C85D26508E83_545715270;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1413454352.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1413454352;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N < 0) {
@@ -2207,17 +2229,20 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.006 -0400", hash_original_method = "456F7B8C59883BEB9D747B5AF3A070B1", hash_generated_method = "E093CF6632FB75A49CBDAB614FE355C7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.261 -0400", hash_original_method = "456F7B8C59883BEB9D747B5AF3A070B1", hash_generated_method = "C5A0485A05975A70B547A9ADA08D3F1B")
     public final <T> ArrayList<T> createTypedArrayList(Parcelable.Creator<T> c) {
-        dsTaint.addTaint(c.dsTaint);
+        ArrayList<T> varB4EAC82CA7396A68D541C85D26508E83_121056346 = null; //Variable for return #1
+        ArrayList<T> varB4EAC82CA7396A68D541C85D26508E83_1249079933 = null; //Variable for return #2
         int N;
         N = readInt();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_121056346 = null;
+        } //End block
         ArrayList<T> l;
         l = new ArrayList<T>(N);
         {
             {
-                boolean var3DB8322DDBEA41253B55CFA78FBE3A8A_1359038404 = (readInt() != 0);
+                boolean var3DB8322DDBEA41253B55CFA78FBE3A8A_78901977 = (readInt() != 0);
                 {
                     l.add(c.createFromParcel(this));
                 } //End block
@@ -2226,7 +2251,19 @@ public final class Parcel {
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return (ArrayList<T>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1249079933 = l;
+        addTaint(c.getTaint());
+        ArrayList<T> varA7E53CE21691AB073D9660D615818899_954704243; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_954704243 = varB4EAC82CA7396A68D541C85D26508E83_121056346;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_954704243 = varB4EAC82CA7396A68D541C85D26508E83_1249079933;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_954704243.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_954704243;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N < 0) {
@@ -2245,11 +2282,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.006 -0400", hash_original_method = "B9FCE8B620ADC76BF3A577C32D057CDB", hash_generated_method = "EB27C5E0F93CEDBEC39C8A5756DB8FD5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.286 -0400", hash_original_method = "B9FCE8B620ADC76BF3A577C32D057CDB", hash_generated_method = "620F1BEF62A79BC28A6F46B56F1A4F49")
     public final <T> void readTypedList(List<T> list, Parcelable.Creator<T> c) {
-        dsTaint.addTaint(c.dsTaint);
-        dsTaint.addTaint(list.dsTaint);
         int M;
         M = list.size();
         int N;
@@ -2258,7 +2292,7 @@ public final class Parcel {
         i = 0;
         {
             {
-                boolean var3DB8322DDBEA41253B55CFA78FBE3A8A_586620296 = (readInt() != 0);
+                boolean var3DB8322DDBEA41253B55CFA78FBE3A8A_1183129256 = (readInt() != 0);
                 {
                     list.set(i, c.createFromParcel(this));
                 } //End block
@@ -2269,7 +2303,7 @@ public final class Parcel {
         } //End block
         {
             {
-                boolean var3DB8322DDBEA41253B55CFA78FBE3A8A_1334791854 = (readInt() != 0);
+                boolean var3DB8322DDBEA41253B55CFA78FBE3A8A_1683846883 = (readInt() != 0);
                 {
                     list.add(c.createFromParcel(this));
                 } //End block
@@ -2281,6 +2315,8 @@ public final class Parcel {
         {
             list.remove(N);
         } //End block
+        addTaint(list.getTaint());
+        addTaint(c.getTaint());
         // ---------- Original Method ----------
         //int M = list.size();
         //int N = readInt();
@@ -2305,17 +2341,32 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.006 -0400", hash_original_method = "6BB9790DD7CE6638433A98D5801460E1", hash_generated_method = "2D8A6121984A62F7CB6949EE5C58870C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.287 -0400", hash_original_method = "6BB9790DD7CE6638433A98D5801460E1", hash_generated_method = "F4F80F0B85512BABD478711D93B56DB3")
     public final ArrayList<String> createStringArrayList() {
+        ArrayList<String> varB4EAC82CA7396A68D541C85D26508E83_280027818 = null; //Variable for return #1
+        ArrayList<String> varB4EAC82CA7396A68D541C85D26508E83_1637503501 = null; //Variable for return #2
         int N;
         N = readInt();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_280027818 = null;
+        } //End block
         ArrayList<String> l;
         l = new ArrayList<String>(N);
         {
             l.add(readString());
         } //End block
-        return (ArrayList<String>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1637503501 = l;
+        ArrayList<String> varA7E53CE21691AB073D9660D615818899_26466564; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_26466564 = varB4EAC82CA7396A68D541C85D26508E83_280027818;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_26466564 = varB4EAC82CA7396A68D541C85D26508E83_1637503501;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_26466564.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_26466564;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N < 0) {
@@ -2330,17 +2381,32 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.007 -0400", hash_original_method = "4AA47F929C1AD4C6AA4FF7E97EBA01C3", hash_generated_method = "F5B8626BD6D78CA0724D7C7C65138F6E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.288 -0400", hash_original_method = "4AA47F929C1AD4C6AA4FF7E97EBA01C3", hash_generated_method = "52E18307FA46C6AE3DE0677BA193630C")
     public final ArrayList<IBinder> createBinderArrayList() {
+        ArrayList<IBinder> varB4EAC82CA7396A68D541C85D26508E83_478792045 = null; //Variable for return #1
+        ArrayList<IBinder> varB4EAC82CA7396A68D541C85D26508E83_4745324 = null; //Variable for return #2
         int N;
         N = readInt();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_478792045 = null;
+        } //End block
         ArrayList<IBinder> l;
         l = new ArrayList<IBinder>(N);
         {
             l.add(readStrongBinder());
         } //End block
-        return (ArrayList<IBinder>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_4745324 = l;
+        ArrayList<IBinder> varA7E53CE21691AB073D9660D615818899_202990610; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_202990610 = varB4EAC82CA7396A68D541C85D26508E83_478792045;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_202990610 = varB4EAC82CA7396A68D541C85D26508E83_4745324;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_202990610.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_202990610;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N < 0) {
@@ -2355,10 +2421,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.007 -0400", hash_original_method = "9CB504FEFB4242E237E17E2EB9A48FBD", hash_generated_method = "1F1C16477E9E9BF8D2D05C1FCF571A95")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.289 -0400", hash_original_method = "9CB504FEFB4242E237E17E2EB9A48FBD", hash_generated_method = "4E9626C7EAB2858510E9168A5E74A2A0")
     public final void readStringList(List<String> list) {
-        dsTaint.addTaint(list.dsTaint);
         int M;
         M = list.size();
         int N;
@@ -2374,6 +2438,7 @@ public final class Parcel {
         {
             list.remove(N);
         } //End block
+        addTaint(list.getTaint());
         // ---------- Original Method ----------
         //int M = list.size();
         //int N = readInt();
@@ -2390,10 +2455,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.007 -0400", hash_original_method = "BD5E31C17A1894DBD3B1CCAA7C1D6816", hash_generated_method = "A3BFFDED1B0AACAAE5AC2CC14EE12221")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.300 -0400", hash_original_method = "BD5E31C17A1894DBD3B1CCAA7C1D6816", hash_generated_method = "D3ABF3FE41CAB97FD77F58CE769727CB")
     public final void readBinderList(List<IBinder> list) {
-        dsTaint.addTaint(list.dsTaint);
         int M;
         M = list.size();
         int N;
@@ -2409,6 +2472,7 @@ public final class Parcel {
         {
             list.remove(N);
         } //End block
+        addTaint(list.getTaint());
         // ---------- Original Method ----------
         //int M = list.size();
         //int N = readInt();
@@ -2425,12 +2489,15 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.008 -0400", hash_original_method = "3CEF6E6386B4F00BA8155F93C3068CB0", hash_generated_method = "5B64FFC22639041223C2C50799B56611")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.301 -0400", hash_original_method = "3CEF6E6386B4F00BA8155F93C3068CB0", hash_generated_method = "617E9DD50657387710EBED6B0EEB0AC9")
     public final <T> T[] createTypedArray(Parcelable.Creator<T> c) {
-        dsTaint.addTaint(c.dsTaint);
+        T[] varB4EAC82CA7396A68D541C85D26508E83_73588503 = null; //Variable for return #1
+        T[] varB4EAC82CA7396A68D541C85D26508E83_1417259739 = null; //Variable for return #2
         int N;
         N = readInt();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_73588503 = null;
+        } //End block
         T[] l;
         l = c.newArray(N);
         {
@@ -2438,14 +2505,26 @@ public final class Parcel {
             i = 0;
             {
                 {
-                    boolean varF3F4117B020949AD5A99383C367C3DCB_596505353 = (readInt() != 0);
+                    boolean varF3F4117B020949AD5A99383C367C3DCB_1706303720 = (readInt() != 0);
                     {
                         l[i] = c.createFromParcel(this);
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return (T[])dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1417259739 = l;
+        addTaint(c.getTaint());
+        T[] varA7E53CE21691AB073D9660D615818899_1330854417; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1330854417 = varB4EAC82CA7396A68D541C85D26508E83_73588503;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1330854417 = varB4EAC82CA7396A68D541C85D26508E83_1417259739;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1330854417.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1330854417;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N < 0) {
@@ -2461,11 +2540,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.008 -0400", hash_original_method = "94DCFDEC159CF16A54AB9BC1543AACB0", hash_generated_method = "E8A9C782BFF464C9D79DDBF348C9DAD5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.302 -0400", hash_original_method = "94DCFDEC159CF16A54AB9BC1543AACB0", hash_generated_method = "337D291ACE3388AFE5B448F9A8EE4FD3")
     public final <T> void readTypedArray(T[] val, Parcelable.Creator<T> c) {
-        dsTaint.addTaint(val[0].dsTaint);
-        dsTaint.addTaint(c.dsTaint);
         int N;
         N = readInt();
         {
@@ -2474,7 +2550,7 @@ public final class Parcel {
                 i = 0;
                 {
                     {
-                        boolean varDA2468261896472593A672B57BF55D76_598270221 = (readInt() != 0);
+                        boolean varDA2468261896472593A672B57BF55D76_1410225600 = (readInt() != 0);
                         {
                             val[i] = c.createFromParcel(this);
                         } //End block
@@ -2488,6 +2564,8 @@ public final class Parcel {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException("bad array lengths");
         } //End block
+        addTaint(val[0].getTaint());
+        addTaint(c.getTaint());
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N == val.length) {
@@ -2504,24 +2582,22 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.009 -0400", hash_original_method = "6C2CF48F71A46FC325FBB3DF7C6E0C74", hash_generated_method = "A4C7D4FCDCDAAC4783368A4ACEC5999A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.303 -0400", hash_original_method = "6C2CF48F71A46FC325FBB3DF7C6E0C74", hash_generated_method = "A582154449F2DD19272E45736D4F5393")
     @Deprecated
     public final <T> T[] readTypedArray(Parcelable.Creator<T> c) {
-        dsTaint.addTaint(c.dsTaint);
-        T[] varE2F2E33FF1456B068E2A0AD4222378A3_756923313 = (createTypedArray(c));
-        return (T[])dsTaint.getTaint();
+        T[] varB4EAC82CA7396A68D541C85D26508E83_2034728454 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2034728454 = createTypedArray(c);
+        addTaint(c.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_2034728454.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2034728454;
         // ---------- Original Method ----------
         //return createTypedArray(c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.009 -0400", hash_original_method = "B6CF25F021EC35EAE7839E69AD502686", hash_generated_method = "F24400B37FD6F8F5A8C245039A606925")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.303 -0400", hash_original_method = "B6CF25F021EC35EAE7839E69AD502686", hash_generated_method = "64305CE80CAA68D1406B7E1AC771C21D")
     public final <T extends Parcelable> void writeParcelableArray(T[] value,
             int parcelableFlags) {
-        dsTaint.addTaint(parcelableFlags);
-        dsTaint.addTaint(value[0].dsTaint);
         {
             int N;
             N = value.length;
@@ -2537,6 +2613,8 @@ public final class Parcel {
         {
             writeInt(-1);
         } //End block
+        addTaint(value[0].getTaint());
+        addTaint(parcelableFlags);
         // ---------- Original Method ----------
         //if (value != null) {
             //int N = value.length;
@@ -2550,86 +2628,113 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.010 -0400", hash_original_method = "BC2BD16709D000C887B8D48E60CFBD74", hash_generated_method = "C19671D157E021B9BE52FED3B48BD1CA")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.343 -0400", hash_original_method = "BC2BD16709D000C887B8D48E60CFBD74", hash_generated_method = "47B6CD556E7CC45B4ABEF300FD6FAB35")
     public final Object readValue(ClassLoader loader) {
-        dsTaint.addTaint(loader.dsTaint);
+        Object varB4EAC82CA7396A68D541C85D26508E83_1385572133 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_966598889 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_2135485825 = null; //Variable for return #3
+        Object varB4EAC82CA7396A68D541C85D26508E83_1163045635 = null; //Variable for return #4
+        Object varB4EAC82CA7396A68D541C85D26508E83_870603557 = null; //Variable for return #5
+        Object varB4EAC82CA7396A68D541C85D26508E83_506338829 = null; //Variable for return #6
+        Object varB4EAC82CA7396A68D541C85D26508E83_1184597717 = null; //Variable for return #7
+        Object varB4EAC82CA7396A68D541C85D26508E83_1571074709 = null; //Variable for return #8
+        Object varB4EAC82CA7396A68D541C85D26508E83_1240560144 = null; //Variable for return #9
+        Object varB4EAC82CA7396A68D541C85D26508E83_538870411 = null; //Variable for return #10
+        Object varB4EAC82CA7396A68D541C85D26508E83_2052893321 = null; //Variable for return #11
+        Object varB4EAC82CA7396A68D541C85D26508E83_1006857404 = null; //Variable for return #12
+        Object varB4EAC82CA7396A68D541C85D26508E83_253283358 = null; //Variable for return #13
+        Object varB4EAC82CA7396A68D541C85D26508E83_1829061155 = null; //Variable for return #14
+        Object varB4EAC82CA7396A68D541C85D26508E83_1969173730 = null; //Variable for return #15
+        Object varB4EAC82CA7396A68D541C85D26508E83_1138454771 = null; //Variable for return #16
+        Object varB4EAC82CA7396A68D541C85D26508E83_127256890 = null; //Variable for return #17
+        Object varB4EAC82CA7396A68D541C85D26508E83_1696807865 = null; //Variable for return #18
+        Object varB4EAC82CA7396A68D541C85D26508E83_1704152790 = null; //Variable for return #19
+        Object varB4EAC82CA7396A68D541C85D26508E83_318046276 = null; //Variable for return #20
+        Object varB4EAC82CA7396A68D541C85D26508E83_1245407353 = null; //Variable for return #21
+        Object varB4EAC82CA7396A68D541C85D26508E83_1623089508 = null; //Variable for return #22
+        Object varB4EAC82CA7396A68D541C85D26508E83_372946619 = null; //Variable for return #23
+        Object varB4EAC82CA7396A68D541C85D26508E83_967545380 = null; //Variable for return #24
+        Object varB4EAC82CA7396A68D541C85D26508E83_105100099 = null; //Variable for return #25
+        Object varB4EAC82CA7396A68D541C85D26508E83_1566487908 = null; //Variable for return #26
         int type;
         type = readInt();
+        //Begin case VAL_NULL 
+        varB4EAC82CA7396A68D541C85D26508E83_1385572133 = null;
+        //End case VAL_NULL 
         //Begin case VAL_STRING 
-        Object var47A9A8CCD823AA4FC350471F0CE0A4D9_2120472796 = (readString());
+        varB4EAC82CA7396A68D541C85D26508E83_966598889 = readString();
         //End case VAL_STRING 
         //Begin case VAL_INTEGER 
-        Object varC5FB9EBDFD702CC2CBDEAB5FB7412A2B_588751371 = (readInt());
+        varB4EAC82CA7396A68D541C85D26508E83_2135485825 = readInt();
         //End case VAL_INTEGER 
         //Begin case VAL_MAP 
-        Object varCB36CFAB316E49DEC6A95E3CDFA2C955_1675258535 = (readHashMap(loader));
+        varB4EAC82CA7396A68D541C85D26508E83_1163045635 = readHashMap(loader);
         //End case VAL_MAP 
         //Begin case VAL_PARCELABLE 
-        Object var81C62AF1D753B0568264BE3099E92A58_2089852713 = (readParcelable(loader));
+        varB4EAC82CA7396A68D541C85D26508E83_870603557 = readParcelable(loader);
         //End case VAL_PARCELABLE 
         //Begin case VAL_SHORT 
-        Object varA670377579853C1DB5383F40B8ABE2F8_602995913 = ((short) readInt());
+        varB4EAC82CA7396A68D541C85D26508E83_506338829 = (short) readInt();
         //End case VAL_SHORT 
         //Begin case VAL_LONG 
-        Object varB70BB8A0900FE4C9696A5298E5BA7FB0_1638636734 = (readLong());
+        varB4EAC82CA7396A68D541C85D26508E83_1184597717 = readLong();
         //End case VAL_LONG 
         //Begin case VAL_FLOAT 
-        Object var1A5223190EBE1F207CF67E9121597E32_174200828 = (readFloat());
+        varB4EAC82CA7396A68D541C85D26508E83_1571074709 = readFloat();
         //End case VAL_FLOAT 
         //Begin case VAL_DOUBLE 
-        Object var2588635C6BECF8A2D9B29B0C372B2276_1450582051 = (readDouble());
+        varB4EAC82CA7396A68D541C85D26508E83_1240560144 = readDouble();
         //End case VAL_DOUBLE 
         //Begin case VAL_BOOLEAN 
-        Object varA87E838ED7C4F762D5AF3A5387493CA2_2020558780 = (readInt() == 1);
+        varB4EAC82CA7396A68D541C85D26508E83_538870411 = readInt() == 1;
         //End case VAL_BOOLEAN 
         //Begin case VAL_CHARSEQUENCE 
-        Object var5678622BBD5F12A6676C580BC56CCBB9_852630213 = (readCharSequence());
+        varB4EAC82CA7396A68D541C85D26508E83_2052893321 = readCharSequence();
         //End case VAL_CHARSEQUENCE 
         //Begin case VAL_LIST 
-        Object varCBB891A59619A1B4B4E1CF620B9FA670_2089824259 = (readArrayList(loader));
+        varB4EAC82CA7396A68D541C85D26508E83_1006857404 = readArrayList(loader);
         //End case VAL_LIST 
         //Begin case VAL_BOOLEANARRAY 
-        Object var8530F7223F0B29CE450D224343B048FC_1871570020 = (createBooleanArray());
+        varB4EAC82CA7396A68D541C85D26508E83_253283358 = createBooleanArray();
         //End case VAL_BOOLEANARRAY 
         //Begin case VAL_BYTEARRAY 
-        Object var0A10D8AFBF9DE328C71E3F31971EF1FD_466112243 = (createByteArray());
+        varB4EAC82CA7396A68D541C85D26508E83_1829061155 = createByteArray();
         //End case VAL_BYTEARRAY 
         //Begin case VAL_STRINGARRAY 
-        Object var31F48A2A343436257E02B1C9C2596E69_454772639 = (readStringArray());
+        varB4EAC82CA7396A68D541C85D26508E83_1969173730 = readStringArray();
         //End case VAL_STRINGARRAY 
         //Begin case VAL_CHARSEQUENCEARRAY 
-        Object varB715EE69CD0BD13EB2D234C8F8B0DE9D_1687025427 = (readCharSequenceArray());
+        varB4EAC82CA7396A68D541C85D26508E83_1138454771 = readCharSequenceArray();
         //End case VAL_CHARSEQUENCEARRAY 
         //Begin case VAL_IBINDER 
-        Object var84347B990B5BD97A3751B9E6FF7A7E4C_1598720479 = (readStrongBinder());
+        varB4EAC82CA7396A68D541C85D26508E83_127256890 = readStrongBinder();
         //End case VAL_IBINDER 
         //Begin case VAL_OBJECTARRAY 
-        Object var98B7CD1D51AB7A9E018647E19EE11408_70882969 = (readArray(loader));
+        varB4EAC82CA7396A68D541C85D26508E83_1696807865 = readArray(loader);
         //End case VAL_OBJECTARRAY 
         //Begin case VAL_INTARRAY 
-        Object var9B770EC710CB092D4C15D3930AE89784_1091093573 = (createIntArray());
+        varB4EAC82CA7396A68D541C85D26508E83_1704152790 = createIntArray();
         //End case VAL_INTARRAY 
         //Begin case VAL_LONGARRAY 
-        Object varB4F4B96DD8F6421883038FA5C4BF1893_1153356694 = (createLongArray());
+        varB4EAC82CA7396A68D541C85D26508E83_318046276 = createLongArray();
         //End case VAL_LONGARRAY 
         //Begin case VAL_BYTE 
-        Object var8CBBC12923715DCC37177943AB007F4D_1193129766 = (readByte());
+        varB4EAC82CA7396A68D541C85D26508E83_1245407353 = readByte();
         //End case VAL_BYTE 
         //Begin case VAL_SERIALIZABLE 
-        Object varAB56E33CE4ED87672E7A74630AA5F595_2008320263 = (readSerializable());
+        varB4EAC82CA7396A68D541C85D26508E83_1623089508 = readSerializable();
         //End case VAL_SERIALIZABLE 
         //Begin case VAL_PARCELABLEARRAY 
-        Object varA88A85626B2092C0698E1F3EF15DD193_1194494577 = (readParcelableArray(loader));
+        varB4EAC82CA7396A68D541C85D26508E83_372946619 = readParcelableArray(loader);
         //End case VAL_PARCELABLEARRAY 
         //Begin case VAL_SPARSEARRAY 
-        Object var3C7CA5D427C57C7A3E723AE781E5498A_1141567398 = (readSparseArray(loader));
+        varB4EAC82CA7396A68D541C85D26508E83_967545380 = readSparseArray(loader);
         //End case VAL_SPARSEARRAY 
         //Begin case VAL_SPARSEBOOLEANARRAY 
-        Object varB95EF2623890BBA26DB5DB941C226CA3_438780697 = (readSparseBooleanArray());
+        varB4EAC82CA7396A68D541C85D26508E83_105100099 = readSparseBooleanArray();
         //End case VAL_SPARSEBOOLEANARRAY 
         //Begin case VAL_BUNDLE 
-        Object varC28DE805DB11E75F1E7AEB0631CD7984_2133289827 = (readBundle(loader));
+        varB4EAC82CA7396A68D541C85D26508E83_1566487908 = readBundle(loader);
         //End case VAL_BUNDLE 
         //Begin case default 
         int off;
@@ -2639,18 +2744,105 @@ public final class Parcel {
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                 "Parcel " + this + ": Unmarshalling unknown type code " + type + " at offset " + off);
         //End case default 
-        return (Object)dsTaint.getTaint();
+        addTaint(loader.getTaint());
+        Object varA7E53CE21691AB073D9660D615818899_571677893; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_1385572133;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_966598889;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_2135485825;
+                break;
+            case 4: //Assign result for return ordinal #4
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_1163045635;
+                break;
+            case 5: //Assign result for return ordinal #5
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_870603557;
+                break;
+            case 6: //Assign result for return ordinal #6
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_506338829;
+                break;
+            case 7: //Assign result for return ordinal #7
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_1184597717;
+                break;
+            case 8: //Assign result for return ordinal #8
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_1571074709;
+                break;
+            case 9: //Assign result for return ordinal #9
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_1240560144;
+                break;
+            case 10: //Assign result for return ordinal #10
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_538870411;
+                break;
+            case 11: //Assign result for return ordinal #11
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_2052893321;
+                break;
+            case 12: //Assign result for return ordinal #12
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_1006857404;
+                break;
+            case 13: //Assign result for return ordinal #13
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_253283358;
+                break;
+            case 14: //Assign result for return ordinal #14
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_1829061155;
+                break;
+            case 15: //Assign result for return ordinal #15
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_1969173730;
+                break;
+            case 16: //Assign result for return ordinal #16
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_1138454771;
+                break;
+            case 17: //Assign result for return ordinal #17
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_127256890;
+                break;
+            case 18: //Assign result for return ordinal #18
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_1696807865;
+                break;
+            case 19: //Assign result for return ordinal #19
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_1704152790;
+                break;
+            case 20: //Assign result for return ordinal #20
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_318046276;
+                break;
+            case 21: //Assign result for return ordinal #21
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_1245407353;
+                break;
+            case 22: //Assign result for return ordinal #22
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_1623089508;
+                break;
+            case 23: //Assign result for return ordinal #23
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_372946619;
+                break;
+            case 24: //Assign result for return ordinal #24
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_967545380;
+                break;
+            case 25: //Assign result for return ordinal #25
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_105100099;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_571677893 = varB4EAC82CA7396A68D541C85D26508E83_1566487908;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_571677893.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_571677893;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.011 -0400", hash_original_method = "973DB4BA749CEAB3796DAD314F27DB98", hash_generated_method = "C7D03C872B185E080002305B315220C5")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.345 -0400", hash_original_method = "973DB4BA749CEAB3796DAD314F27DB98", hash_generated_method = "23C28E9FE4F111A90457990AAB33A6D2")
     public final <T extends Parcelable> T readParcelable(ClassLoader loader) {
-        dsTaint.addTaint(loader.dsTaint);
+        T varB4EAC82CA7396A68D541C85D26508E83_1879691567 = null; //Variable for return #1
+        T varB4EAC82CA7396A68D541C85D26508E83_520795453 = null; //Variable for return #2
+        T varB4EAC82CA7396A68D541C85D26508E83_1005802445 = null; //Variable for return #3
         String name;
         name = readString();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1879691567 = null;
+        } //End block
         Parcelable.Creator<T> creator;
         {
             HashMap<String,Parcelable.Creator> map;
@@ -2701,21 +2893,38 @@ public final class Parcel {
             } //End block
         } //End block
         {
-            T var04A095804F0DCA8BCDC30E7F0F81A79B_381489373 = (((Parcelable.ClassLoaderCreator<T>)creator).createFromParcel(this, loader));
+            varB4EAC82CA7396A68D541C85D26508E83_520795453 = ((Parcelable.ClassLoaderCreator<T>)creator).createFromParcel(this, loader);
         } //End block
-        T var6422C3E9192CB4780F5712002153692A_1810843688 = (creator.createFromParcel(this));
-        return (T)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1005802445 = creator.createFromParcel(this);
+        addTaint(loader.getTaint());
+        T varA7E53CE21691AB073D9660D615818899_277166095; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_277166095 = varB4EAC82CA7396A68D541C85D26508E83_1879691567;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_277166095 = varB4EAC82CA7396A68D541C85D26508E83_520795453;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_277166095 = varB4EAC82CA7396A68D541C85D26508E83_1005802445;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_277166095.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_277166095;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.011 -0400", hash_original_method = "7F7B3246FDA8DADD28F39102743A1FDB", hash_generated_method = "3410A57621B8A048460ECF7F1C156AC4")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.363 -0400", hash_original_method = "7F7B3246FDA8DADD28F39102743A1FDB", hash_generated_method = "F11C72DAA51373C82C02053581446B24")
     public final Parcelable[] readParcelableArray(ClassLoader loader) {
-        dsTaint.addTaint(loader.dsTaint);
+        Parcelable[] varB4EAC82CA7396A68D541C85D26508E83_735686931 = null; //Variable for return #1
+        Parcelable[] varB4EAC82CA7396A68D541C85D26508E83_1059278609 = null; //Variable for return #2
         int N;
         N = readInt();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_735686931 = null;
+        } //End block
         Parcelable[] p;
         p = new Parcelable[N];
         {
@@ -2725,7 +2934,19 @@ public final class Parcel {
                 p[i] = (Parcelable) readParcelable(loader);
             } //End block
         } //End collapsed parenthetic
-        return (Parcelable[])dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1059278609 = p;
+        addTaint(loader.getTaint());
+        Parcelable[] varA7E53CE21691AB073D9660D615818899_156165603; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_156165603 = varB4EAC82CA7396A68D541C85D26508E83_735686931;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_156165603 = varB4EAC82CA7396A68D541C85D26508E83_1059278609;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_156165603.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_156165603;
         // ---------- Original Method ----------
         //int N = readInt();
         //if (N < 0) {
@@ -2739,11 +2960,15 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.011 -0400", hash_original_method = "71C92188775A0F7E9317C601C7CC8BB5", hash_generated_method = "43183220CB8FA291D8DB639D5F0CE2DB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.364 -0400", hash_original_method = "71C92188775A0F7E9317C601C7CC8BB5", hash_generated_method = "4374FA71957CB45C0DD19E0DDF156A3B")
     public final Serializable readSerializable() {
+        Serializable varB4EAC82CA7396A68D541C85D26508E83_1504077523 = null; //Variable for return #1
+        Serializable varB4EAC82CA7396A68D541C85D26508E83_1374098800 = null; //Variable for return #2
         String name;
         name = readString();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1504077523 = null;
+        } //End block
         byte[] serializedData;
         serializedData = createByteArray();
         ByteArrayInputStream bais;
@@ -2752,7 +2977,7 @@ public final class Parcel {
         {
             ObjectInputStream ois;
             ois = new ObjectInputStream(bais);
-            Serializable var4E7D88FB15C7BF67252F0C6970AC8FB2_1092588785 = ((Serializable) ois.readObject());
+            varB4EAC82CA7396A68D541C85D26508E83_1374098800 = (Serializable) ois.readObject();
         } //End block
         catch (IOException ioe)
         {
@@ -2766,7 +2991,17 @@ public final class Parcel {
                 "ClassNotFoundException reading a Serializable object (name = "
                 + name + ")", cnfe);
         } //End block
-        return (Serializable)dsTaint.getTaint();
+        Serializable varA7E53CE21691AB073D9660D615818899_1889409427; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1889409427 = varB4EAC82CA7396A68D541C85D26508E83_1504077523;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1889409427 = varB4EAC82CA7396A68D541C85D26508E83_1374098800;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1889409427.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1889409427;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -2792,8 +3027,7 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.012 -0400", hash_original_method = "8123E4A6E665502F6F718041F61607F2", hash_generated_method = "CB3AB49BF1BB21FE6CF409EBFB0090B3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.365 -0400", hash_original_method = "8123E4A6E665502F6F718041F61607F2", hash_generated_method = "CB3AB49BF1BB21FE6CF409EBFB0090B3")
     @Override
     protected void finalize() throws Throwable {
         destroy();
@@ -2807,32 +3041,24 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.012 -0400", hash_original_method = "C0427B473F1AF57292972C32F441E719", hash_generated_method = "61A4E66F7E3CD1708E9FB208543A8E37")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.365 -0400", hash_original_method = "C0427B473F1AF57292972C32F441E719", hash_generated_method = "61A4E66F7E3CD1708E9FB208543A8E37")
     private void freeBuffer() {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.012 -0400", hash_original_method = "70F6A5F1801DEC2DB8BE38968C81061C", hash_generated_method = "33F1A2AAB805399E51FE7F9BC259EA10")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.382 -0400", hash_original_method = "70F6A5F1801DEC2DB8BE38968C81061C", hash_generated_method = "2B68B9C20AB085D1D67AAC97913FD822")
     private void init(int obj) {
-        dsTaint.addTaint(obj);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.013 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "870C0C4D9949E316DFA0E367EFD712A9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.384 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "870C0C4D9949E316DFA0E367EFD712A9")
     private void destroy() {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.013 -0400", hash_original_method = "377C79A0AFFA00A75F96A5842171AC58", hash_generated_method = "51747A1666695CC69EFC2A8FFE815DF5")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.385 -0400", hash_original_method = "377C79A0AFFA00A75F96A5842171AC58", hash_generated_method = "FDA77D8BED4227F7134F0A85F2304FC3")
      void readMapInternal(Map outVal, int N,
         ClassLoader loader) {
-        dsTaint.addTaint(outVal.dsTaint);
-        dsTaint.addTaint(loader.dsTaint);
-        dsTaint.addTaint(N);
         {
             Object key;
             key = readValue(loader);
@@ -2840,6 +3066,9 @@ public final class Parcel {
             value = readValue(loader);
             outVal.put(key, value);
         } //End block
+        addTaint(outVal.getTaint());
+        addTaint(N);
+        addTaint(loader.getTaint());
         // ---------- Original Method ----------
         //while (N > 0) {
             //Object key = readValue(loader);
@@ -2850,18 +3079,17 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.013 -0400", hash_original_method = "9EEE2505D88E68CC65378BE9FEB363CC", hash_generated_method = "8B325B9A0EA2A9B987ADA85C60BABB9C")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.393 -0400", hash_original_method = "9EEE2505D88E68CC65378BE9FEB363CC", hash_generated_method = "A2A41D739E290B46EEE8B9D0EA453A11")
     private void readListInternal(List outVal, int N,
         ClassLoader loader) {
-        dsTaint.addTaint(outVal.dsTaint);
-        dsTaint.addTaint(loader.dsTaint);
-        dsTaint.addTaint(N);
         {
             Object value;
             value = readValue(loader);
             outVal.add(value);
         } //End block
+        addTaint(outVal.getTaint());
+        addTaint(N);
+        addTaint(loader.getTaint());
         // ---------- Original Method ----------
         //while (N > 0) {
             //Object value = readValue(loader);
@@ -2871,13 +3099,9 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.014 -0400", hash_original_method = "8048910DC1D629DD4CA2AB6051E757D5", hash_generated_method = "E3B978CAD012264BD6F95EDBC4CF7A15")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.394 -0400", hash_original_method = "8048910DC1D629DD4CA2AB6051E757D5", hash_generated_method = "7F94247DD046DF341C6E3D0C0D3D5B09")
     private void readArrayInternal(Object[] outVal, int N,
         ClassLoader loader) {
-        dsTaint.addTaint(outVal[0].dsTaint);
-        dsTaint.addTaint(loader.dsTaint);
-        dsTaint.addTaint(N);
         {
             int i;
             i = 0;
@@ -2887,6 +3111,9 @@ public final class Parcel {
                 outVal[i] = value;
             } //End block
         } //End collapsed parenthetic
+        addTaint(outVal[0].getTaint());
+        addTaint(N);
+        addTaint(loader.getTaint());
         // ---------- Original Method ----------
         //for (int i = 0; i < N; i++) {
             //Object value = readValue(loader);
@@ -2895,13 +3122,9 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.014 -0400", hash_original_method = "43DDAB261C65CF1F1B4E5B19576BB376", hash_generated_method = "4AB2612845A3C3EEF33DB06AD1CCFA0E")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.399 -0400", hash_original_method = "43DDAB261C65CF1F1B4E5B19576BB376", hash_generated_method = "69D30FA34C36146E1F984F8C0F1BE4F1")
     private void readSparseArrayInternal(SparseArray outVal, int N,
         ClassLoader loader) {
-        dsTaint.addTaint(outVal.dsTaint);
-        dsTaint.addTaint(loader.dsTaint);
-        dsTaint.addTaint(N);
         {
             int key;
             key = readInt();
@@ -2909,6 +3132,9 @@ public final class Parcel {
             value = readValue(loader);
             outVal.append(key, value);
         } //End block
+        addTaint(outVal.getTaint());
+        addTaint(N);
+        addTaint(loader.getTaint());
         // ---------- Original Method ----------
         //while (N > 0) {
             //int key = readInt();
@@ -2919,11 +3145,8 @@ public final class Parcel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.015 -0400", hash_original_method = "687B1CF2F9242ACE26C54A0109BE177B", hash_generated_method = "4C89AA11C257335E68E7BB71990A540F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.403 -0400", hash_original_method = "687B1CF2F9242ACE26C54A0109BE177B", hash_generated_method = "D55C2E7EE1098391CB3B9755C1B0F1A2")
     private void readSparseBooleanArrayInternal(SparseBooleanArray outVal, int N) {
-        dsTaint.addTaint(outVal.dsTaint);
-        dsTaint.addTaint(N);
         {
             int key;
             key = readInt();
@@ -2931,6 +3154,8 @@ public final class Parcel {
             value = this.readByte() == 1;
             outVal.append(key, value);
         } //End block
+        addTaint(outVal.getTaint());
+        addTaint(N);
         // ---------- Original Method ----------
         //while (N > 0) {
             //int key = readInt();
@@ -2941,70 +3166,130 @@ public final class Parcel {
     }
 
     
-    private static final boolean DEBUG_RECYCLE = false;
-    private static final String TAG = "Parcel";
-    private static final int POOL_SIZE = 6;
-    private static final Parcel[] sOwnedPool = new Parcel[POOL_SIZE];
-    private static final Parcel[] sHolderPool = new Parcel[POOL_SIZE];
-    private static final int VAL_NULL = -1;
-    private static final int VAL_STRING = 0;
-    private static final int VAL_INTEGER = 1;
-    private static final int VAL_MAP = 2;
-    private static final int VAL_BUNDLE = 3;
-    private static final int VAL_PARCELABLE = 4;
-    private static final int VAL_SHORT = 5;
-    private static final int VAL_LONG = 6;
-    private static final int VAL_FLOAT = 7;
-    private static final int VAL_DOUBLE = 8;
-    private static final int VAL_BOOLEAN = 9;
-    private static final int VAL_CHARSEQUENCE = 10;
-    private static final int VAL_LIST  = 11;
-    private static final int VAL_SPARSEARRAY = 12;
-    private static final int VAL_BYTEARRAY = 13;
-    private static final int VAL_STRINGARRAY = 14;
-    private static final int VAL_IBINDER = 15;
-    private static final int VAL_PARCELABLEARRAY = 16;
-    private static final int VAL_OBJECTARRAY = 17;
-    private static final int VAL_INTARRAY = 18;
-    private static final int VAL_LONGARRAY = 19;
-    private static final int VAL_BYTE = 20;
-    private static final int VAL_SERIALIZABLE = 21;
-    private static final int VAL_SPARSEBOOLEANARRAY = 22;
-    private static final int VAL_BOOLEANARRAY = 23;
-    private static final int VAL_CHARSEQUENCEARRAY = 24;
-    private static final int EX_SECURITY = -1;
-    private static final int EX_BAD_PARCELABLE = -2;
-    private static final int EX_ILLEGAL_ARGUMENT = -3;
-    private static final int EX_NULL_POINTER = -4;
-    private static final int EX_ILLEGAL_STATE = -5;
-    private static final int EX_HAS_REPLY_HEADER = -128;
-    public final static Parcelable.Creator<String> STRING_CREATOR = new Parcelable.Creator<String>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.015 -0400", hash_original_method = "CF5066ADB23AB15A8F47A7B0F4466503", hash_generated_method = "AE7E51AE7FA7CB39139E1AFDFC55A351")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.403 -0400", hash_original_field = "A71BA10A20EF888B1EF8CA16D55D9309", hash_generated_field = "EBFA74D7F7857CADB3FF1E1AB48831B7")
+
+    private static boolean DEBUG_RECYCLE = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.404 -0400", hash_original_field = "B28A49621CF2334B275ADEDF6302D3FE", hash_generated_field = "D23EF584E1746832C305403AD3AAD082")
+
+    private static String TAG = "Parcel";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.404 -0400", hash_original_field = "8CC9C9BA8E0F199B497EC24ADC83BF65", hash_generated_field = "1C8618095D28CA488FE38676C2BBDDE9")
+
+    private static int POOL_SIZE = 6;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.404 -0400", hash_original_field = "C8932CF14EADE23425A9D54B122FD8C9", hash_generated_field = "408FE67E4A83FB619009001722A1D9E2")
+
+    private static Parcel[] sOwnedPool = new Parcel[POOL_SIZE];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.413 -0400", hash_original_field = "7D0A268CFF89FF45FBD851483F1AA181", hash_generated_field = "32F8AA464FE2DB7D6C70747B9C2D225B")
+
+    private static Parcel[] sHolderPool = new Parcel[POOL_SIZE];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.413 -0400", hash_original_field = "ACEA6349EAE0AE22FE138A1505C3AC43", hash_generated_field = "BF4567EA4A93A5C4203B0F0097DDBAA3")
+
+    private static int VAL_NULL = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.413 -0400", hash_original_field = "A383EB6C18224D1E8B49FDE74C52AD41", hash_generated_field = "FF52F8B7C7FFDB4ED1EA4A56775E3F6A")
+
+    private static int VAL_STRING = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.413 -0400", hash_original_field = "90D1816FAD55D60EA32349F44BEE1FA1", hash_generated_field = "0DA5A11E30123514B69F5EE1EF18350A")
+
+    private static int VAL_INTEGER = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.414 -0400", hash_original_field = "AE858B0C1836E5CD5EA56F704DF57D42", hash_generated_field = "A74CA1F86DFF484AEEFA7D0B2A43158F")
+
+    private static int VAL_MAP = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.414 -0400", hash_original_field = "31533D34B6E9C81E65DCAE4C34B5EE04", hash_generated_field = "A74EC5515F4800CF7C84B39A9CECCBE7")
+
+    private static int VAL_BUNDLE = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.414 -0400", hash_original_field = "25D66E9FE0A96FA5502CB8C017BA33A7", hash_generated_field = "9EDF5EDBF4148B1BD8066D87AA952402")
+
+    private static int VAL_PARCELABLE = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.414 -0400", hash_original_field = "E4BD524F34367626F9C7CD376225C7FB", hash_generated_field = "6A74C05C8FD6026CD0A6A71CD73D4C32")
+
+    private static int VAL_SHORT = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.414 -0400", hash_original_field = "5DEC1A4B3D9350FA566473650ABEDC26", hash_generated_field = "A5161FF35430EEFBE67B97351C807046")
+
+    private static int VAL_LONG = 6;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.414 -0400", hash_original_field = "7C773DA5B01AAAE7B478B5183F72E7A5", hash_generated_field = "47FC4E03B57840E2FC44E1893AC89403")
+
+    private static int VAL_FLOAT = 7;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.414 -0400", hash_original_field = "B9673347A98E9E4F53B2D7677F3DB072", hash_generated_field = "5774246E92209FCF253BAA562BEC2812")
+
+    private static int VAL_DOUBLE = 8;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.414 -0400", hash_original_field = "CF553E461BBB2ACE9C33C7AE3EC116BF", hash_generated_field = "D5D9F6351E771A12DCD37A6D9E1F250E")
+
+    private static int VAL_BOOLEAN = 9;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.414 -0400", hash_original_field = "C4EFFF2F54E9F7853F6083EFC9E9D109", hash_generated_field = "E3D3620C43281E2F6FFB0C5AF51993D2")
+
+    private static int VAL_CHARSEQUENCE = 10;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.414 -0400", hash_original_field = "CF19CCA45146ED659BC8BE0770B83850", hash_generated_field = "A48B92F7200B5E1CF2B0B508EFEC6939")
+
+    private static int VAL_LIST = 11;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.414 -0400", hash_original_field = "A48C77C1642DC44BF3193BE6A03A4F27", hash_generated_field = "C2DF0DD57FA93039683C45724077C6C1")
+
+    private static int VAL_SPARSEARRAY = 12;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.414 -0400", hash_original_field = "7A27992AF9A0ABD9406AFAD7F69432D1", hash_generated_field = "622EE750BD6A0858AB511B39CF671D52")
+
+    private static int VAL_BYTEARRAY = 13;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.414 -0400", hash_original_field = "D293DEB200879D8E15F5D077CCFC795E", hash_generated_field = "4BDB13A662295CB4725004AC103E0742")
+
+    private static int VAL_STRINGARRAY = 14;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.414 -0400", hash_original_field = "7864638DD0ECA8DB5FEA6648DBAC22C7", hash_generated_field = "ADF79B7803B3CA7B62F6610C6EC03832")
+
+    private static int VAL_IBINDER = 15;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "8FF06F86C8A1DC58010E03FFF27D61BF", hash_generated_field = "33E8164E0026467FCAEB116E6DF06E34")
+
+    private static int VAL_PARCELABLEARRAY = 16;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "8DA9E444EB65D0B5DBF7F59EF7B370BB", hash_generated_field = "81051B8AA57FC9FF3156BE8FAC242601")
+
+    private static int VAL_OBJECTARRAY = 17;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "6857A57259DB7027514CD5286F44AA3D", hash_generated_field = "9770906FE34C56CF20EE4E7109A3B0AC")
+
+    private static int VAL_INTARRAY = 18;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "03AC5509ED82DD27DDD80111B0D6F105", hash_generated_field = "47AD29658F6BBCC19F6833967F8AF1C6")
+
+    private static int VAL_LONGARRAY = 19;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "E4540E289F5D42A14E7DC05C4CA668C0", hash_generated_field = "E35FABA610CBAFFDF6FEAB812A3CF1E9")
+
+    private static int VAL_BYTE = 20;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "2E1327ABAE1B48B171CC4B553304BEA1", hash_generated_field = "23391ADD49708E8BC4C33A87D7A17BA4")
+
+    private static int VAL_SERIALIZABLE = 21;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "A124CA776792D53D93CEC75233DBCF6A", hash_generated_field = "7D25677E90125E4AA8DDC750AB9A7909")
+
+    private static int VAL_SPARSEBOOLEANARRAY = 22;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "696AF07A4832CE39E55C7E5208DB7A0B", hash_generated_field = "3DEAAB76D31B46690A2C6A569698433A")
+
+    private static int VAL_BOOLEANARRAY = 23;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "FF01C04E922A7030EA9D324CCA0814E4", hash_generated_field = "DC431E1B8E0A12A43E2E2C5F87EF1CBD")
+
+    private static int VAL_CHARSEQUENCEARRAY = 24;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "3565AB005C087B9C54508E43A859B614", hash_generated_field = "7748559B29BD8EBE2E8975E6B41C715F")
+
+    private static int EX_SECURITY = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "02188DB64D8756EDBDBEB9D7F6FE9E72", hash_generated_field = "9303788E03E3CCD33C42715B32EC7E9D")
+
+    private static int EX_BAD_PARCELABLE = -2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "4377EB88638F3CE9554BB7F18D23AE22", hash_generated_field = "9BF54B0B4B0E7239394F6255D56B8057")
+
+    private static int EX_ILLEGAL_ARGUMENT = -3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "2A43B7B02F2CF68642F5BDF80DED8567", hash_generated_field = "14299595E47BD7B67F4C8F6BE8FAF2A6")
+
+    private static int EX_NULL_POINTER = -4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "6E8C36F4CB9BC94CE915825BFAAF4E3B", hash_generated_field = "7C7D00AE20CDB51E3EE5AE35D3FFE307")
+
+    private static int EX_ILLEGAL_STATE = -5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.415 -0400", hash_original_field = "E1BCE24EB8484F3581021F6250445299", hash_generated_field = "5BF7F70B7502B663FD6620238E357D5D")
+
+    private static int EX_HAS_REPLY_HEADER = -128;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.416 -0400", hash_original_field = "2D365FB9C0F84B811EE25074666800D6", hash_generated_field = "FB53F9F5DC3AAFE064E58E049D0C49AF")
+
+    public final static Parcelable.Creator<String> STRING_CREATOR
+             = new Parcelable.Creator<String>() {
         public String createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            String var88E96AAFD724559F9FD3FC52BB174D27_1061472089 = (source.readString());
-            return dsTaint.getTaintString();
-            // ---------- Original Method ----------
-            //return source.readString();
+            return source.readString();
         }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.016 -0400", hash_original_method = "6691A777569EDCC3CEA07BFC1CA591D5", hash_generated_method = "572E8B5360CBE3FE771840257DA2DE72")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public String[] newArray(int size) {
-            dsTaint.addTaint(size);
-            String[] var37E331573B49E6579C9EDCED9427AA6D_902642584 = (new String[size]);
-            String[] retVal = new String[1];
-            retVal[0] = dsTaint.getTaintString();
-            return retVal;
-            // ---------- Original Method ----------
-            //return new String[size];
+            return new String[size];
         }
+    };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.416 -0400", hash_original_field = "EAE59FB152640F6C5452B3D15C76FF4C", hash_generated_field = "410773AF06E3723060E4C10BA0585B52")
 
-        
-}; //Transformed anonymous class
-    private static final HashMap<ClassLoader,HashMap<String,Parcelable.Creator>>
-        mCreators = new HashMap<ClassLoader,HashMap<String,Parcelable.Creator>>();
+    private static HashMap<ClassLoader,HashMap<String,Parcelable.Creator>> mCreators = new HashMap<ClassLoader,HashMap<String,Parcelable.Creator>>();
 }
 

@@ -17,14 +17,21 @@ import javax.sip.header.Header;
 import javax.sip.header.HeaderFactory;
 
 public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipURIExt {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.087 -0400", hash_original_field = "873E9C0B50183B613336EEA1020F4369", hash_generated_field = "AD4D5BC0220CFD82443737C52505C486")
+
     protected Authority authority;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.087 -0400", hash_original_field = "3FAF7D735501DAD3EFB6210602CCAD3E", hash_generated_field = "F6A59563ED5E856D9CD91C684F4FC813")
+
     protected NameValueList uriParms;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.087 -0400", hash_original_field = "1B6D732887C57CD3A7AFDF7A80A8AAE5", hash_generated_field = "45901905C5831FBB34F7DCD157856090")
+
     protected NameValueList qheaders;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.087 -0400", hash_original_field = "D8C88703367A716690FE5F351532E182", hash_generated_field = "486D6B81CF5C668276377979467C5D05")
+
     protected TelephoneNumber telephoneSubscriber;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.471 -0400", hash_original_method = "4581AC1C0AE43A94306BF80DA76A0B36", hash_generated_method = "C518F6BE6D677C49B5D373A0ADD9B73A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SipUri() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.088 -0400", hash_original_method = "4581AC1C0AE43A94306BF80DA76A0B36", hash_generated_method = "C518F6BE6D677C49B5D373A0ADD9B73A")
+    public  SipUri() {
         this.scheme = SIP;
         this.uriParms = new NameValueList();
         this.qheaders = new NameValueList();
@@ -37,16 +44,15 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.471 -0400", hash_original_method = "40F35B976B5ABD0FB641A4F1A08DC6DF", hash_generated_method = "B5F72682AF959E1BCF63239855CA1BE1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.088 -0400", hash_original_method = "40F35B976B5ABD0FB641A4F1A08DC6DF", hash_generated_method = "68547EB2EAFD728D5BED31B87C434555")
     public void setScheme(String scheme) {
-        dsTaint.addTaint(scheme);
         {
-            boolean var97AD44F10E926B94254CAE8B4A864B93_1834529560 = (scheme.compareToIgnoreCase(SIP) != 0
+            boolean var97AD44F10E926B94254CAE8B4A864B93_1680658297 = (scheme.compareToIgnoreCase(SIP) != 0
             && scheme.compareToIgnoreCase(SIPS) != 0);
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("bad scheme " + scheme);
         } //End collapsed parenthetic
         this.scheme = scheme.toLowerCase();
+        addTaint(scheme.getTaint());
         // ---------- Original Method ----------
         //if (scheme.compareToIgnoreCase(SIP) != 0
             //&& scheme.compareToIgnoreCase(SIPS) != 0)
@@ -55,17 +61,18 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.472 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "FA0BB2BEE07FE20A886DD0258ABDE91D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.098 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "05398C258F571F443A749D239427BB2A")
     public String getScheme() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1167525423 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1167525423 = scheme;
+        varB4EAC82CA7396A68D541C85D26508E83_1167525423.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1167525423;
         // ---------- Original Method ----------
         //return scheme;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.472 -0400", hash_original_method = "B97988479159B246DBD5976667FAE614", hash_generated_method = "7A913D6E89C72AB83AFFF954FFBF7CD6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.101 -0400", hash_original_method = "B97988479159B246DBD5976667FAE614", hash_generated_method = "7A913D6E89C72AB83AFFF954FFBF7CD6")
     public void clearUriParms() {
         uriParms = new NameValueList();
         // ---------- Original Method ----------
@@ -73,8 +80,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.472 -0400", hash_original_method = "FDFE9380996AC8B536679A9DC84D64BE", hash_generated_method = "2A7ADE04855C8852A0651183D844B50B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.101 -0400", hash_original_method = "FDFE9380996AC8B536679A9DC84D64BE", hash_generated_method = "2A7ADE04855C8852A0651183D844B50B")
     public void clearPassword() {
         {
             UserInfo userInfo;
@@ -90,17 +96,18 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.472 -0400", hash_original_method = "92C8D5BE70E6877E725894DF3752DAAD", hash_generated_method = "1A29A28FFB77DEEB89287792CBA25DDA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.102 -0400", hash_original_method = "92C8D5BE70E6877E725894DF3752DAAD", hash_generated_method = "25F1307492E8EAD54343CF70012F5D8E")
     public Authority getAuthority() {
-        return (Authority)dsTaint.getTaint();
+        Authority varB4EAC82CA7396A68D541C85D26508E83_810645248 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_810645248 = this.authority;
+        varB4EAC82CA7396A68D541C85D26508E83_810645248.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_810645248;
         // ---------- Original Method ----------
         //return this.authority;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.472 -0400", hash_original_method = "44A5F82F772B2346E44573FA04C5E6BF", hash_generated_method = "546FDDE1F5876502A34904E6040940A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.102 -0400", hash_original_method = "44A5F82F772B2346E44573FA04C5E6BF", hash_generated_method = "546FDDE1F5876502A34904E6040940A2")
     public void clearQheaders() {
         qheaders = new NameValueList();
         // ---------- Original Method ----------
@@ -108,14 +115,12 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.473 -0400", hash_original_method = "9EAD5694A977A9D6081FC9F5B163E148", hash_generated_method = "AEAB39D7743C68882324480BF8E13994")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.112 -0400", hash_original_method = "9EAD5694A977A9D6081FC9F5B163E148", hash_generated_method = "E2FEE996F872DD26ADDCB80E62ED73D9")
     @SuppressWarnings("unchecked")
     @Override
     public boolean equals(Object that) {
-        dsTaint.addTaint(that.dsTaint);
         {
-            boolean var808EFC10B8F4455D1156A05691BEC636_2050824361 = (that==this);
+            boolean var808EFC10B8F4455D1156A05691BEC636_1350531964 = (that==this);
         } //End collapsed parenthetic
         {
             SipURI a;
@@ -123,33 +128,33 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
             SipURI b;
             b = (SipURI) that;
             {
-                boolean var3DAD500499FBDCF2474A0DD7D6A43FB0_1880456816 = (a.isSecure() ^ b.isSecure());
+                boolean var3DAD500499FBDCF2474A0DD7D6A43FB0_374227116 = (a.isSecure() ^ b.isSecure());
             } //End collapsed parenthetic
             {
-                boolean var704E29857B9D24BE4B1B80701D880A80_611680138 = (a.getUser()==null ^ b.getUser()==null);
+                boolean var704E29857B9D24BE4B1B80701D880A80_210826165 = (a.getUser()==null ^ b.getUser()==null);
             } //End collapsed parenthetic
             {
-                boolean varC58E713B7450E3011557684C96505C39_1532097870 = (a.getUserPassword()==null ^ b.getUserPassword()==null);
+                boolean varC58E713B7450E3011557684C96505C39_1296507926 = (a.getUserPassword()==null ^ b.getUserPassword()==null);
             } //End collapsed parenthetic
             {
-                boolean varD6ACDEEED2B014C2CE240A5BB9A6408C_1266491809 = (a.getUser()!=null && !RFC2396UrlDecoder.decode(a.getUser()).equals(RFC2396UrlDecoder.decode(b.getUser())));
+                boolean varD6ACDEEED2B014C2CE240A5BB9A6408C_485513097 = (a.getUser()!=null && !RFC2396UrlDecoder.decode(a.getUser()).equals(RFC2396UrlDecoder.decode(b.getUser())));
             } //End collapsed parenthetic
             {
-                boolean var729E26EDB58F2750945DC0B0CD69C74F_700593316 = (a.getUserPassword()!=null && !RFC2396UrlDecoder.decode(a.getUserPassword()).equals(RFC2396UrlDecoder.decode(b.getUserPassword())));
+                boolean var729E26EDB58F2750945DC0B0CD69C74F_135835854 = (a.getUserPassword()!=null && !RFC2396UrlDecoder.decode(a.getUserPassword()).equals(RFC2396UrlDecoder.decode(b.getUserPassword())));
             } //End collapsed parenthetic
             {
-                boolean varB2AE7DAFE4D623C36619676A1F26C655_981811445 = (a.getHost() == null ^ b.getHost() == null);
+                boolean varB2AE7DAFE4D623C36619676A1F26C655_841022195 = (a.getHost() == null ^ b.getHost() == null);
             } //End collapsed parenthetic
             {
-                boolean var548B93FB59C3C5854AF23CB4EDE37087_1804388029 = (a.getHost() != null && !a.getHost().equalsIgnoreCase(b.getHost()));
+                boolean var548B93FB59C3C5854AF23CB4EDE37087_52535315 = (a.getHost() != null && !a.getHost().equalsIgnoreCase(b.getHost()));
             } //End collapsed parenthetic
             {
-                boolean varC7F2A707C749FADCBCA7E25C56790F40_995999170 = (a.getPort() != b.getPort());
+                boolean varC7F2A707C749FADCBCA7E25C56790F40_1341341361 = (a.getPort() != b.getPort());
             } //End collapsed parenthetic
             {
                 Iterator i;
                 i = a.getParameterNames();
-                boolean varD8B5E52A597500CBD863E52A46B42708_570048678 = (i.hasNext());
+                boolean varD8B5E52A597500CBD863E52A46B42708_130189646 = (i.hasNext());
                 {
                     String pname;
                     pname = (String) i.next();
@@ -158,33 +163,33 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
                     String p2;
                     p2 = b.getParameter(pname);
                     {
-                        boolean var2A429907F6E3B98686BBD2EA978AFFE6_1810991257 = (p1!=null && p2!=null && !RFC2396UrlDecoder.decode(p1).equalsIgnoreCase(RFC2396UrlDecoder.decode(p2)));
+                        boolean var2A429907F6E3B98686BBD2EA978AFFE6_968100156 = (p1!=null && p2!=null && !RFC2396UrlDecoder.decode(p1).equalsIgnoreCase(RFC2396UrlDecoder.decode(p2)));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var427C16ABDA4EB8D3C9C9EF9935340458_97582283 = (a.getTransportParam()==null ^ b.getTransportParam()==null);
+                boolean var427C16ABDA4EB8D3C9C9EF9935340458_2084123554 = (a.getTransportParam()==null ^ b.getTransportParam()==null);
             } //End collapsed parenthetic
             {
-                boolean var5E48CD8F2CB1AFB3852FB9CE3A7FEF19_1338454900 = (a.getUserParam()==null ^ b.getUserParam()==null);
+                boolean var5E48CD8F2CB1AFB3852FB9CE3A7FEF19_351673704 = (a.getUserParam()==null ^ b.getUserParam()==null);
             } //End collapsed parenthetic
             {
-                boolean var1CAD38A75018FA486465431324399EDE_890955114 = (a.getTTLParam()==-1 ^ b.getTTLParam()==-1);
+                boolean var1CAD38A75018FA486465431324399EDE_948717467 = (a.getTTLParam()==-1 ^ b.getTTLParam()==-1);
             } //End collapsed parenthetic
             {
-                boolean var35B18F7355EA9EA4D1DC7ED18518C2A1_1487227638 = (a.getMethodParam()==null ^ b.getMethodParam()==null);
+                boolean var35B18F7355EA9EA4D1DC7ED18518C2A1_315877786 = (a.getMethodParam()==null ^ b.getMethodParam()==null);
             } //End collapsed parenthetic
             {
-                boolean varB4CA52932B1771A9881F31D72005C84C_1326433067 = (a.getMAddrParam()==null ^ b.getMAddrParam()==null);
+                boolean varB4CA52932B1771A9881F31D72005C84C_1441363904 = (a.getMAddrParam()==null ^ b.getMAddrParam()==null);
             } //End collapsed parenthetic
             {
-                boolean var45DA844974FC5013184143BF0E5C0B99_1623498456 = (a.getHeaderNames().hasNext() && !b.getHeaderNames().hasNext());
+                boolean var45DA844974FC5013184143BF0E5C0B99_683993053 = (a.getHeaderNames().hasNext() && !b.getHeaderNames().hasNext());
             } //End collapsed parenthetic
             {
-                boolean varBFB76F3DFF7FD2223F8A22D958B17BF9_674958671 = (!a.getHeaderNames().hasNext() && b.getHeaderNames().hasNext());
+                boolean varBFB76F3DFF7FD2223F8A22D958B17BF9_1351567712 = (!a.getHeaderNames().hasNext() && b.getHeaderNames().hasNext());
             } //End collapsed parenthetic
             {
-                boolean var73D441E8E3A4F6FA3DA2FD2716437D95_1194651526 = (a.getHeaderNames().hasNext() && b.getHeaderNames().hasNext());
+                boolean var73D441E8E3A4F6FA3DA2FD2716437D95_1141875344 = (a.getHeaderNames().hasNext() && b.getHeaderNames().hasNext());
                 {
                     HeaderFactory headerFactory;
                     headerFactory = null;
@@ -199,7 +204,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
                     {
                         Iterator i;
                         i = a.getHeaderNames();
-                        boolean var5A904445088E8F340E730368D637913B_312520372 = (i.hasNext());
+                        boolean var5A904445088E8F340E730368D637913B_1721256589 = (i.hasNext());
                         {
                             String hname;
                             hname = (String) i.next();
@@ -214,7 +219,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
                                 Header header2;
                                 header2 = headerFactory.createHeader(hname, RFC2396UrlDecoder.decode(h2));
                                 {
-                                    boolean varD5C1E0445459D68D145CA90087C85616_1230027053 = (!header1.equals(header2));
+                                    boolean varD5C1E0445459D68D145CA90087C85616_750242138 = (!header1.equals(header2));
                                 } //End collapsed parenthetic
                             } //End block
                             catch (ParseException e)
@@ -226,43 +231,48 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(that.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_954649201 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_954649201;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.474 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "7FFB5E6E6CD83C08E2D367BBED329908")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.116 -0400", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "A9315D382531EF51E0B9605870424E17")
     public String encode() {
-        String varFFB45C40AF627644780ECFF5921CFE15_1862632084 = (encode(new StringBuffer()).toString());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1393883328 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1393883328 = encode(new StringBuffer()).toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1393883328.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1393883328;
         // ---------- Original Method ----------
         //return encode(new StringBuffer()).toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.474 -0400", hash_original_method = "C22033B09BF680257BC2551F51CC4682", hash_generated_method = "05E7EABF500DFDD4CAE6C6C995BDD5AB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.118 -0400", hash_original_method = "C22033B09BF680257BC2551F51CC4682", hash_generated_method = "DD14B9383CB616616EB1519F81C1A2C9")
     public StringBuffer encode(StringBuffer buffer) {
-        dsTaint.addTaint(buffer.dsTaint);
+        StringBuffer varB4EAC82CA7396A68D541C85D26508E83_2049492000 = null; //Variable for return #1
         buffer.append(scheme).append(COLON);
         authority.encode(buffer);
         {
-            boolean varF56D09C2F80594AA787675634C167937_1019765276 = (!uriParms.isEmpty());
+            boolean varF56D09C2F80594AA787675634C167937_338053869 = (!uriParms.isEmpty());
             {
                 buffer.append(SEMICOLON);
                 uriParms.encode(buffer);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var456BAFF324BFA7394EA2AF8E00095090_28455183 = (!qheaders.isEmpty());
+            boolean var456BAFF324BFA7394EA2AF8E00095090_1162248415 = (!qheaders.isEmpty());
             {
                 buffer.append(QUESTION);
                 qheaders.encode(buffer);
             } //End block
         } //End collapsed parenthetic
-        return (StringBuffer)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2049492000 = buffer;
+        addTaint(buffer.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_2049492000.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2049492000;
         // ---------- Original Method ----------
         //buffer.append(scheme).append(COLON);
         //if (authority != null)
@@ -279,23 +289,24 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.474 -0400", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "EF0FCC59BED623625FEDC92BADC89DD0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.119 -0400", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "65603BD3830CB8F62DCCBE22CEE97884")
     public String toString() {
-        String var002E8E97D996E9DD2E7B0E1B0BD6187C_1447373224 = (this.encode());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1488283418 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1488283418 = this.encode();
+        varB4EAC82CA7396A68D541C85D26508E83_1488283418.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1488283418;
         // ---------- Original Method ----------
         //return this.encode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.475 -0400", hash_original_method = "000995A40BE4F62572B4CEC75CD27D06", hash_generated_method = "5D2DE8178B555E4AA9736F095EB7CFB1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.133 -0400", hash_original_method = "000995A40BE4F62572B4CEC75CD27D06", hash_generated_method = "9EA421F3E239DCE1B43D3BC9262F0DE8")
     public String getUserAtHost() {
+        String varB4EAC82CA7396A68D541C85D26508E83_2004197494 = null; //Variable for return #1
         String user;
         user = "";
         {
-            boolean var2E19B47438D44DE246325E874206758A_160804642 = (authority.getUserInfo() != null);
+            boolean var2E19B47438D44DE246325E874206758A_30225147 = (authority.getUserInfo() != null);
             user = authority.getUserInfo().getUser();
         } //End collapsed parenthetic
         String host;
@@ -303,7 +314,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
         StringBuffer s;
         s = null;
         {
-            boolean varD68E445BC0FFF6B8A1FF5F6BFB1F4754_371586433 = (user.equals(""));
+            boolean varD68E445BC0FFF6B8A1FF5F6BFB1F4754_770245680 = (user.equals(""));
             {
                 s = new StringBuffer();
             } //End block
@@ -311,8 +322,9 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
                 s = new StringBuffer(user).append(AT);
             } //End block
         } //End collapsed parenthetic
-        String var1DB94B6BED33EB35A596EC4B3E253DEF_1582657032 = (s.append(host).toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_2004197494 = s.append(host).toString();
+        varB4EAC82CA7396A68D541C85D26508E83_2004197494.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2004197494;
         // ---------- Original Method ----------
         //String user = "";
         //if (authority.getUserInfo() != null)
@@ -328,13 +340,14 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.475 -0400", hash_original_method = "6F248E410BDCE844EE042BFFA98482C9", hash_generated_method = "10275911E16B99ACF85D048E83555E56")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.141 -0400", hash_original_method = "6F248E410BDCE844EE042BFFA98482C9", hash_generated_method = "FA3203A19C0B9A02DFB5823F36EB9950")
     public String getUserAtHostPort() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1049435693 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2018601416 = null; //Variable for return #2
         String user;
         user = "";
         {
-            boolean var2E19B47438D44DE246325E874206758A_1113118895 = (authority.getUserInfo() != null);
+            boolean var2E19B47438D44DE246325E874206758A_939707627 = (authority.getUserInfo() != null);
             user = authority.getUserInfo().getUser();
         } //End collapsed parenthetic
         String host;
@@ -344,7 +357,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
         StringBuffer s;
         s = null;
         {
-            boolean varD68E445BC0FFF6B8A1FF5F6BFB1F4754_635790873 = (user.equals(""));
+            boolean varD68E445BC0FFF6B8A1FF5F6BFB1F4754_243149807 = (user.equals(""));
             {
                 s = new StringBuffer();
             } //End block
@@ -353,10 +366,20 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
             } //End block
         } //End collapsed parenthetic
         {
-            String var652B83F0301E3C39DBB4E7A41DAF5F07_2088421760 = (s.append(host).append(COLON).append(port).toString());
+            varB4EAC82CA7396A68D541C85D26508E83_1049435693 = s.append(host).append(COLON).append(port).toString();
         } //End block
-        String var1DB94B6BED33EB35A596EC4B3E253DEF_1337653095 = (s.append(host).toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_2018601416 = s.append(host).toString();
+        String varA7E53CE21691AB073D9660D615818899_713009248; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_713009248 = varB4EAC82CA7396A68D541C85D26508E83_1049435693;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_713009248 = varB4EAC82CA7396A68D541C85D26508E83_2018601416;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_713009248.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_713009248;
         // ---------- Original Method ----------
         //String user = "";
         //if (authority.getUserInfo() != null)
@@ -376,40 +399,44 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.475 -0400", hash_original_method = "208FE04DEC7ECCEEFC5A47E5D08BA557", hash_generated_method = "60C31C46C12B8196D930FDB7D90A6A33")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.142 -0400", hash_original_method = "208FE04DEC7ECCEEFC5A47E5D08BA557", hash_generated_method = "7176BAAB25640FCC9993FD87C7FDEEAE")
     public Object getParm(String parmname) {
-        dsTaint.addTaint(parmname);
+        Object varB4EAC82CA7396A68D541C85D26508E83_816353032 = null; //Variable for return #1
         Object obj;
         obj = uriParms.getValue(parmname);
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_816353032 = obj;
+        addTaint(parmname.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_816353032.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_816353032;
         // ---------- Original Method ----------
         //Object obj = uriParms.getValue(parmname);
         //return obj;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.475 -0400", hash_original_method = "DA8D1E67518AA478AB8C96314B0F321C", hash_generated_method = "07FF01F367988D81759E891254EF436C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.142 -0400", hash_original_method = "DA8D1E67518AA478AB8C96314B0F321C", hash_generated_method = "0F62E888A76AAA519D29B7E02E21BCD1")
     public String getMethod() {
-        String var2F5E014C709BBE35F4DBED1EDA645175_1843488483 = ((String) getParm(METHOD));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_400006614 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_400006614 = (String) getParm(METHOD);
+        varB4EAC82CA7396A68D541C85D26508E83_400006614.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_400006614;
         // ---------- Original Method ----------
         //return (String) getParm(METHOD);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.475 -0400", hash_original_method = "5EDAD210CE239248A46B40B8A7E4E067", hash_generated_method = "242CDDC2FFDCB810799BE797E876BF7E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.144 -0400", hash_original_method = "5EDAD210CE239248A46B40B8A7E4E067", hash_generated_method = "F90554A08B2A19ECF9B8E534E9BA367C")
     public NameValueList getParameters() {
-        return (NameValueList)dsTaint.getTaint();
+        NameValueList varB4EAC82CA7396A68D541C85D26508E83_409872045 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_409872045 = uriParms;
+        varB4EAC82CA7396A68D541C85D26508E83_409872045.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_409872045;
         // ---------- Original Method ----------
         //return uriParms;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.476 -0400", hash_original_method = "F23607C60777A1A36911A6FE06B11E71", hash_generated_method = "4FF98F06B904C85601629D95CCCE2CC2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.144 -0400", hash_original_method = "F23607C60777A1A36911A6FE06B11E71", hash_generated_method = "4FF98F06B904C85601629D95CCCE2CC2")
     public void removeParameters() {
         this.uriParms = new NameValueList();
         // ---------- Original Method ----------
@@ -417,30 +444,45 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.476 -0400", hash_original_method = "69A77D050D6DE602ACFB758F18CE1C2E", hash_generated_method = "A181DCCE8F71A8DF0854BFFF7325B2B1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.150 -0400", hash_original_method = "69A77D050D6DE602ACFB758F18CE1C2E", hash_generated_method = "6E2373AC318BD6BB5B9161B9930509AB")
     public NameValueList getQheaders() {
-        return (NameValueList)dsTaint.getTaint();
+        NameValueList varB4EAC82CA7396A68D541C85D26508E83_848490423 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_848490423 = qheaders;
+        varB4EAC82CA7396A68D541C85D26508E83_848490423.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_848490423;
         // ---------- Original Method ----------
         //return qheaders;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.476 -0400", hash_original_method = "C4F4158359E9C3CE01C658AE1B903AEE", hash_generated_method = "53CD996D388E965D03B2254F14828AD7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.150 -0400", hash_original_method = "C4F4158359E9C3CE01C658AE1B903AEE", hash_generated_method = "339866D5ECCE7896E3BBAAA94E178FA4")
     public String getUserType() {
-        String var83E0078BDBCAC07FD3A05143E451DC08_1012237814 = ((String) uriParms.getValue(USER));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1529270118 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1529270118 = (String) uriParms.getValue(USER);
+        varB4EAC82CA7396A68D541C85D26508E83_1529270118.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1529270118;
         // ---------- Original Method ----------
         //return (String) uriParms.getValue(USER);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.476 -0400", hash_original_method = "F7BA3F65C36127DC85DBDC366FBE67EC", hash_generated_method = "ED5A81FB187F8DCBA26BAF316913C064")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.152 -0400", hash_original_method = "F7BA3F65C36127DC85DBDC366FBE67EC", hash_generated_method = "3DE4D85291FB79A09BDFB0797DF015EC")
     public String getUserPassword() {
-        String var83584E48C2783EBC75FB769D5BB286F5_1435515982 = (authority.getPassword());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_448238453 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_600873821 = null; //Variable for return #2
+        varB4EAC82CA7396A68D541C85D26508E83_448238453 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_600873821 = authority.getPassword();
+        String varA7E53CE21691AB073D9660D615818899_959877715; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_959877715 = varB4EAC82CA7396A68D541C85D26508E83_448238453;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_959877715 = varB4EAC82CA7396A68D541C85D26508E83_600873821;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_959877715.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_959877715;
         // ---------- Original Method ----------
         //if (authority == null)
             //return null;
@@ -448,12 +490,11 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.476 -0400", hash_original_method = "EB4E37E6319716C20DB55C1D8565711A", hash_generated_method = "0C86C6A6208C9A0520B0E13E276975E8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.161 -0400", hash_original_method = "EB4E37E6319716C20DB55C1D8565711A", hash_generated_method = "F5E931F9FD4E29B837D54B7AA0A0DA04")
     public void setUserPassword(String password) {
-        dsTaint.addTaint(password);
         this.authority = new Authority();
         authority.setPassword(password);
+        addTaint(password.getTaint());
         // ---------- Original Method ----------
         //if (this.authority == null)
             //this.authority = new Authority();
@@ -461,13 +502,15 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.476 -0400", hash_original_method = "FBB7E1AC9741B23BB5B3EA84041A8793", hash_generated_method = "1EB8A5ADADB979950DDA13FBFCB5C630")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.161 -0400", hash_original_method = "FBB7E1AC9741B23BB5B3EA84041A8793", hash_generated_method = "6AF5C9289CD541BB6521925DBB81269D")
     public TelephoneNumber getTelephoneSubscriber() {
+        TelephoneNumber varB4EAC82CA7396A68D541C85D26508E83_2010911998 = null; //Variable for return #1
         {
             telephoneSubscriber = new TelephoneNumber();
         } //End block
-        return (TelephoneNumber)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2010911998 = telephoneSubscriber;
+        varB4EAC82CA7396A68D541C85D26508E83_2010911998.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2010911998;
         // ---------- Original Method ----------
         //if (telephoneSubscriber == null) {
             //telephoneSubscriber = new TelephoneNumber();
@@ -476,16 +519,28 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.477 -0400", hash_original_method = "B2DE769DC5E0088684B143D456F129CF", hash_generated_method = "FB11DFD034D976C2BE5DF4D897CAC7A8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.162 -0400", hash_original_method = "B2DE769DC5E0088684B143D456F129CF", hash_generated_method = "F21BFABD7BBD53255429FFFB064DC0DF")
     public HostPort getHostPort() {
+        HostPort varB4EAC82CA7396A68D541C85D26508E83_852449287 = null; //Variable for return #1
+        HostPort varB4EAC82CA7396A68D541C85D26508E83_1565936231 = null; //Variable for return #2
         {
-            boolean varA35D3DDB12550A696B0F3B18AECFDF7F_1194829632 = (authority == null || authority.getHost() == null);
+            boolean varA35D3DDB12550A696B0F3B18AECFDF7F_1898429401 = (authority == null || authority.getHost() == null);
+            varB4EAC82CA7396A68D541C85D26508E83_852449287 = null;
             {
-                HostPort varBD9D9E6D33BDC7F5ACA5D5AF1E23BCA4_1366912928 = (authority.getHostPort());
+                varB4EAC82CA7396A68D541C85D26508E83_1565936231 = authority.getHostPort();
             } //End block
         } //End collapsed parenthetic
-        return (HostPort)dsTaint.getTaint();
+        HostPort varA7E53CE21691AB073D9660D615818899_1382010376; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1382010376 = varB4EAC82CA7396A68D541C85D26508E83_852449287;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1382010376 = varB4EAC82CA7396A68D541C85D26508E83_1565936231;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1382010376.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1382010376;
         // ---------- Original Method ----------
         //if (authority == null || authority.getHost() == null )
             //return null;
@@ -495,13 +550,13 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.477 -0400", hash_original_method = "7F780725D3A26A9FAAA917ED82465734", hash_generated_method = "6E4D973AF91E3A7499F2629C1F92996F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.162 -0400", hash_original_method = "7F780725D3A26A9FAAA917ED82465734", hash_generated_method = "B2F9299DFFB852CDC113DEFFC061B530")
     public int getPort() {
         HostPort hp;
         hp = this.getHostPort();
-        int var367395E2945B2A27F48B64C482E41962_816310249 = (hp.getPort());
-        return dsTaint.getTaintInt();
+        int var367395E2945B2A27F48B64C482E41962_916526960 = (hp.getPort());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1222987433 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1222987433;
         // ---------- Original Method ----------
         //HostPort hp = this.getHostPort();
         //if (hp == null)
@@ -510,14 +565,31 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.477 -0400", hash_original_method = "40B106F658B1B0B8AE55FF744395EB77", hash_generated_method = "2753F794D5AA3E1DF985BF3BBB97C4E0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.163 -0400", hash_original_method = "40B106F658B1B0B8AE55FF744395EB77", hash_generated_method = "32CD84B7DC969E0F0622DECA829B2174")
     public String getHost() {
+        String varB4EAC82CA7396A68D541C85D26508E83_813750070 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1927716547 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1183957850 = null; //Variable for return #3
+        varB4EAC82CA7396A68D541C85D26508E83_813750070 = null;
         {
-            boolean varE82FD8B166FEACA8671C68F1E3F7834A_2015917140 = (authority.getHost() == null);
-            String var532706CB4159B858F6111B2F9DB7F340_1471662496 = (authority.getHost().encode());
+            boolean varE82FD8B166FEACA8671C68F1E3F7834A_1972348233 = (authority.getHost() == null);
+            varB4EAC82CA7396A68D541C85D26508E83_1927716547 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1183957850 = authority.getHost().encode();
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        String varA7E53CE21691AB073D9660D615818899_601233121; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_601233121 = varB4EAC82CA7396A68D541C85D26508E83_813750070;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_601233121 = varB4EAC82CA7396A68D541C85D26508E83_1927716547;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_601233121 = varB4EAC82CA7396A68D541C85D26508E83_1183957850;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_601233121.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_601233121;
         // ---------- Original Method ----------
         //if ( authority == null) return null;
         //else if (authority.getHost() == null ) return null;
@@ -525,13 +597,13 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.477 -0400", hash_original_method = "56CDDCF4149582CE88DAE7137BB51FB6", hash_generated_method = "5271B6000F7B093F19385690CF86A47B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.163 -0400", hash_original_method = "56CDDCF4149582CE88DAE7137BB51FB6", hash_generated_method = "5DC1386F9E7784D9A8C3BFA0797BB79D")
     public boolean isUserTelephoneSubscriber() {
         String usrtype;
         usrtype = (String) uriParms.getValue(USER);
-        boolean var18C173688EA6508503FB97650EB726B4_1471283267 = (usrtype.equalsIgnoreCase(PHONE));
-        return dsTaint.getTaintBoolean();
+        boolean var18C173688EA6508503FB97650EB726B4_497179339 = (usrtype.equalsIgnoreCase(PHONE));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1613827728 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1613827728;
         // ---------- Original Method ----------
         //String usrtype = (String) uriParms.getValue(USER);
         //if (usrtype == null)
@@ -540,8 +612,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.477 -0400", hash_original_method = "31B2EAABC2E978FD5373BC4C4C4BC54F", hash_generated_method = "1227094E9C88A68A3BC242D7DFA776A0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.173 -0400", hash_original_method = "31B2EAABC2E978FD5373BC4C4C4BC54F", hash_generated_method = "1227094E9C88A68A3BC242D7DFA776A0")
     public void removeTTL() {
         uriParms.delete(TTL);
         // ---------- Original Method ----------
@@ -550,8 +621,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.478 -0400", hash_original_method = "26682CE55BB39CA926871319A4C06C7F", hash_generated_method = "42A21207916C3DD5BD4C91F489951F56")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.173 -0400", hash_original_method = "26682CE55BB39CA926871319A4C06C7F", hash_generated_method = "42A21207916C3DD5BD4C91F489951F56")
     public void removeMAddr() {
         uriParms.delete(MADDR);
         // ---------- Original Method ----------
@@ -560,8 +630,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.478 -0400", hash_original_method = "17C4DDD354C5E051E7720776FDB1621B", hash_generated_method = "3DB3C2691C9A776C9BCE08501618026C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.173 -0400", hash_original_method = "17C4DDD354C5E051E7720776FDB1621B", hash_generated_method = "3DB3C2691C9A776C9BCE08501618026C")
     public void removeTransport() {
         uriParms.delete(TRANSPORT);
         // ---------- Original Method ----------
@@ -570,19 +639,17 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.478 -0400", hash_original_method = "3200AD1B535820580583A49AC076B7CA", hash_generated_method = "716B878794D1E1ABA2EBE30AA5F68BC6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.174 -0400", hash_original_method = "3200AD1B535820580583A49AC076B7CA", hash_generated_method = "B486C697E1F7AB0E8753152ADA454D0A")
     public void removeHeader(String name) {
-        dsTaint.addTaint(name);
         qheaders.delete(name);
+        addTaint(name.getTaint());
         // ---------- Original Method ----------
         //if (qheaders != null)
             //qheaders.delete(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.478 -0400", hash_original_method = "69EBEDDBEBD5610928D56ADB554A973E", hash_generated_method = "E903C32C0E8700933F47690CE9D407A7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.174 -0400", hash_original_method = "69EBEDDBEBD5610928D56ADB554A973E", hash_generated_method = "E903C32C0E8700933F47690CE9D407A7")
     public void removeHeaders() {
         qheaders = new NameValueList();
         // ---------- Original Method ----------
@@ -590,8 +657,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.478 -0400", hash_original_method = "4C60E3731E2F1A6A961C2EAF6730B8EA", hash_generated_method = "9631DAE8EDE2B7E14FB3CA0D0675F806")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.175 -0400", hash_original_method = "4C60E3731E2F1A6A961C2EAF6730B8EA", hash_generated_method = "9631DAE8EDE2B7E14FB3CA0D0675F806")
     public void removeUserType() {
         uriParms.delete(USER);
         // ---------- Original Method ----------
@@ -600,8 +666,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.479 -0400", hash_original_method = "A557BD8F16E39F3D746BC7787E72C291", hash_generated_method = "293540653E3C979EF343913001576563")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.175 -0400", hash_original_method = "A557BD8F16E39F3D746BC7787E72C291", hash_generated_method = "293540653E3C979EF343913001576563")
     public void removePort() {
         authority.removePort();
         // ---------- Original Method ----------
@@ -609,8 +674,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.479 -0400", hash_original_method = "80293F715FFD7AE029130C857C03E1EB", hash_generated_method = "530ED0384F1CE09160F46AB15F133C0D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.177 -0400", hash_original_method = "80293F715FFD7AE029130C857C03E1EB", hash_generated_method = "530ED0384F1CE09160F46AB15F133C0D")
     public void removeMethod() {
         uriParms.delete(METHOD);
         // ---------- Original Method ----------
@@ -619,14 +683,13 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.479 -0400", hash_original_method = "8653C52476DAA9902FEC7B8799779AA0", hash_generated_method = "285DA5E81A8B96A54D0EE86BB991B888")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.179 -0400", hash_original_method = "8653C52476DAA9902FEC7B8799779AA0", hash_generated_method = "DCB78FFFD93A3E8B29CCF7C5C550934F")
     public void setUser(String uname) {
-        dsTaint.addTaint(uname);
         {
             this.authority = new Authority();
         } //End block
         this.authority.setUser(uname);
+        addTaint(uname.getTaint());
         // ---------- Original Method ----------
         //if (this.authority == null) {
             //this.authority = new Authority();
@@ -635,8 +698,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.479 -0400", hash_original_method = "D79A18951B63A09462A96884D78AF17C", hash_generated_method = "4E243F3AE992330B75CE9FFE82B2DA90")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.181 -0400", hash_original_method = "D79A18951B63A09462A96884D78AF17C", hash_generated_method = "4E243F3AE992330B75CE9FFE82B2DA90")
     public void removeUser() {
         this.authority.removeUserInfo();
         // ---------- Original Method ----------
@@ -644,19 +706,18 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.479 -0400", hash_original_method = "29256DC0D79112DA6F3456FF1FC7A4DA", hash_generated_method = "209A98274ACE1ECB1AA7FD8CB9DC3866")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.193 -0400", hash_original_method = "29256DC0D79112DA6F3456FF1FC7A4DA", hash_generated_method = "09D06D9D32D2959B059EC76883985DFF")
     public void setDefaultParm(String name, Object value) {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(value.dsTaint);
         {
-            boolean varEEDC3DA8F3C9D16787FACF86B73B8464_915838468 = (uriParms.getValue(name) == null);
+            boolean varEEDC3DA8F3C9D16787FACF86B73B8464_1394564071 = (uriParms.getValue(name) == null);
             {
                 NameValue nv;
                 nv = new NameValue(name, value);
                 uriParms.set(nv);
             } //End block
         } //End collapsed parenthetic
+        addTaint(name.getTaint());
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //if (uriParms.getValue(name) == null) {
             //NameValue nv = new NameValue(name, value);
@@ -665,21 +726,19 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.479 -0400", hash_original_method = "8155A130BB5ECD11F95AAB0DA6526B6B", hash_generated_method = "4B7350B3CEA217D1647184531F707547")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.193 -0400", hash_original_method = "8155A130BB5ECD11F95AAB0DA6526B6B", hash_generated_method = "17C5E94A9E6A70133A97A70EC4723660")
     public void setAuthority(Authority authority) {
-        dsTaint.addTaint(authority.dsTaint);
+        this.authority = authority;
         // ---------- Original Method ----------
         //this.authority = authority;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.480 -0400", hash_original_method = "448F841326C9DE5F0C1061A977ECCF57", hash_generated_method = "B0E0E82A1B2605777E42919D3A27EA81")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.194 -0400", hash_original_method = "448F841326C9DE5F0C1061A977ECCF57", hash_generated_method = "D46A75EE3955F4C1627CEAEAD415D2A5")
     public void setHost(Host h) {
-        dsTaint.addTaint(h.dsTaint);
         this.authority = new Authority();
         this.authority.setHost(h);
+        addTaint(h.getTaint());
         // ---------- Original Method ----------
         //if (this.authority == null)
             //this.authority = new Authority();
@@ -687,42 +746,37 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.480 -0400", hash_original_method = "BF30B120DCA846B2AB31EE4276940CB4", hash_generated_method = "F239594C47927AC3224E05047828AFC9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.200 -0400", hash_original_method = "BF30B120DCA846B2AB31EE4276940CB4", hash_generated_method = "C12913C3D366050264426BFF362BC735")
     public void setUriParms(NameValueList parms) {
-        dsTaint.addTaint(parms.dsTaint);
+        uriParms = parms;
         // ---------- Original Method ----------
         //uriParms = parms;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.480 -0400", hash_original_method = "B486DF9BA471DAAE60D8533B7C47A65D", hash_generated_method = "BFAC987182B3E83FE554F5146A67B9F9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.200 -0400", hash_original_method = "B486DF9BA471DAAE60D8533B7C47A65D", hash_generated_method = "FE5B4E776547774ED470AA1A16BFD3FA")
     public void setUriParm(String name, Object value) {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(value.dsTaint);
         NameValue nv;
         nv = new NameValue(name, value);
         uriParms.set(nv);
+        addTaint(name.getTaint());
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //NameValue nv = new NameValue(name, value);
         //uriParms.set(nv);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.480 -0400", hash_original_method = "3BCF6EC7FF3BBA5809384A38F15B6A45", hash_generated_method = "39678384AFE39EAD15AD68C89E659893")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.201 -0400", hash_original_method = "3BCF6EC7FF3BBA5809384A38F15B6A45", hash_generated_method = "2E952D0669523402C7D8C7BA5EACD080")
     public void setQheaders(NameValueList parms) {
-        dsTaint.addTaint(parms.dsTaint);
+        qheaders = parms;
         // ---------- Original Method ----------
         //qheaders = parms;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.480 -0400", hash_original_method = "5C181333E4641A8C388789644A11AD43", hash_generated_method = "677381DB1A48A2D8D224FFBD2B3247D7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.201 -0400", hash_original_method = "5C181333E4641A8C388789644A11AD43", hash_generated_method = "AD18E88BB15FD395DDDE527465F3EAB6")
     public void setMAddr(String mAddr) {
-        dsTaint.addTaint(mAddr);
         NameValue nameValue;
         nameValue = uriParms.getNameValue(MADDR);
         Host host;
@@ -733,6 +787,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
             nameValue = new NameValue(MADDR, host);
             uriParms.set(nameValue);
         } //End block
+        addTaint(mAddr.getTaint());
         // ---------- Original Method ----------
         //NameValue nameValue = uriParms.getNameValue(MADDR);
         //Host host = new Host();
@@ -746,32 +801,29 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.480 -0400", hash_original_method = "FBDBB9DDA2030458399AB3B5F3F4F0C6", hash_generated_method = "C31086744B362B99B96D8B79578570A3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.201 -0400", hash_original_method = "FBDBB9DDA2030458399AB3B5F3F4F0C6", hash_generated_method = "8A044051CDE50DF66DB5F4919A9ADDF7")
     public void setUserParam(String usertype) {
-        dsTaint.addTaint(usertype);
         uriParms.set(USER, usertype);
+        addTaint(usertype.getTaint());
         // ---------- Original Method ----------
         //uriParms.set(USER, usertype);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.481 -0400", hash_original_method = "4C629B888B40F45F11F6D780770DFFA5", hash_generated_method = "1DA01AC97ED6670BF134CFA432A85AFE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.202 -0400", hash_original_method = "4C629B888B40F45F11F6D780770DFFA5", hash_generated_method = "E2EBAC1E3401C791ECBA5CEE723607E2")
     public void setMethod(String method) {
-        dsTaint.addTaint(method);
         uriParms.set(METHOD, method);
+        addTaint(method.getTaint());
         // ---------- Original Method ----------
         //uriParms.set(METHOD, method);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.481 -0400", hash_original_method = "E57262682E1156419367692D3CFC45F4", hash_generated_method = "2E0E96E637C910E0782CF3D51009E648")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.202 -0400", hash_original_method = "E57262682E1156419367692D3CFC45F4", hash_generated_method = "DB9468C4181DF24CB8F081CB6186D3E0")
     public void setIsdnSubAddress(String isdnSubAddress) {
-        dsTaint.addTaint(isdnSubAddress);
         telephoneSubscriber = new TelephoneNumber();
         telephoneSubscriber.setIsdnSubaddress(isdnSubAddress);
+        addTaint(isdnSubAddress.getTaint());
         // ---------- Original Method ----------
         //if (telephoneSubscriber == null)
             //telephoneSubscriber = new TelephoneNumber();
@@ -779,21 +831,19 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.481 -0400", hash_original_method = "988EFE784E2C119D10B2A809CB388B9F", hash_generated_method = "1E5C5E6947552CC526E5C10EBA34D865")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.202 -0400", hash_original_method = "988EFE784E2C119D10B2A809CB388B9F", hash_generated_method = "BABA85DAD3AFF0C47B1D5E16AE852918")
     public void setTelephoneSubscriber(TelephoneNumber tel) {
-        dsTaint.addTaint(tel.dsTaint);
+        telephoneSubscriber = tel;
         // ---------- Original Method ----------
         //telephoneSubscriber = tel;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.481 -0400", hash_original_method = "92A3A80BC1BE07F5BFACEB6CB4FB4561", hash_generated_method = "E6915C67882B1590247E324C62826898")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.210 -0400", hash_original_method = "92A3A80BC1BE07F5BFACEB6CB4FB4561", hash_generated_method = "3793BCB7810C3202E6B13D91190A0A2B")
     public void setPort(int p) {
-        dsTaint.addTaint(p);
         authority = new Authority();
         authority.setPort(p);
+        addTaint(p);
         // ---------- Original Method ----------
         //if (authority == null)
             //authority = new Authority();
@@ -801,65 +851,61 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.481 -0400", hash_original_method = "6341E21CDA970E0B49B9800DCF1B5945", hash_generated_method = "66C3BA554E32F0DB4FE62A4D04AF973B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.210 -0400", hash_original_method = "6341E21CDA970E0B49B9800DCF1B5945", hash_generated_method = "71DA099A942922283718D984BE6EAE57")
     public boolean hasParameter(String name) {
-        dsTaint.addTaint(name);
-        boolean varB53C0EC17E72D2114C17362E1819E2C4_80276415 = (uriParms.getValue(name) != null);
-        return dsTaint.getTaintBoolean();
+        boolean varB53C0EC17E72D2114C17362E1819E2C4_1919811707 = (uriParms.getValue(name) != null);
+        addTaint(name.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1310299791 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1310299791;
         // ---------- Original Method ----------
         //return uriParms.getValue(name) != null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.482 -0400", hash_original_method = "93D043490BF44801AA76F19310D9D034", hash_generated_method = "43338B3A46EBF2CD2677697B4C8F1AC4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.211 -0400", hash_original_method = "93D043490BF44801AA76F19310D9D034", hash_generated_method = "BF4D0D2CB253412BAB319C980743780D")
     public void setQHeader(NameValue nameValue) {
-        dsTaint.addTaint(nameValue.dsTaint);
         this.qheaders.set(nameValue);
+        addTaint(nameValue.getTaint());
         // ---------- Original Method ----------
         //this.qheaders.set(nameValue);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.482 -0400", hash_original_method = "CF8B8270AAB7EE0DBD09C8A6E6FE77D2", hash_generated_method = "BCA90F3C02BC0F9E5D3B12595E1D6293")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.211 -0400", hash_original_method = "CF8B8270AAB7EE0DBD09C8A6E6FE77D2", hash_generated_method = "B8F16E478C579B57B60FBBC42CEE55B9")
     public void setUriParameter(NameValue nameValue) {
-        dsTaint.addTaint(nameValue.dsTaint);
         this.uriParms.set(nameValue);
+        addTaint(nameValue.getTaint());
         // ---------- Original Method ----------
         //this.uriParms.set(nameValue);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.482 -0400", hash_original_method = "79BAB25129164A5068BFAB9AA7EFB4C6", hash_generated_method = "8CAEE22408DD639FBC5FC508EE63D394")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.211 -0400", hash_original_method = "79BAB25129164A5068BFAB9AA7EFB4C6", hash_generated_method = "D5AE1C1A833C8B8AAB729E05FD4F794C")
     public boolean hasTransport() {
-        boolean varC32CA468A2BD885B87AC82DBE3CF5DE6_2122602176 = (hasParameter(TRANSPORT));
-        return dsTaint.getTaintBoolean();
+        boolean varC32CA468A2BD885B87AC82DBE3CF5DE6_1159258039 = (hasParameter(TRANSPORT));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_189248456 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_189248456;
         // ---------- Original Method ----------
         //return hasParameter(TRANSPORT);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.482 -0400", hash_original_method = "80DDF5AC1394722FFD3DB956063197F8", hash_generated_method = "4045911A25CBD59B565FC790A62122E9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.212 -0400", hash_original_method = "80DDF5AC1394722FFD3DB956063197F8", hash_generated_method = "3B89554476663CECA1D605EAC55152BF")
     public void removeParameter(String name) {
-        dsTaint.addTaint(name);
         uriParms.delete(name);
+        addTaint(name.getTaint());
         // ---------- Original Method ----------
         //uriParms.delete(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.482 -0400", hash_original_method = "C8CB16861890EEF599D006A2C41B9058", hash_generated_method = "4CE0A16EC57B027604DF3D0A9007721F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.221 -0400", hash_original_method = "C8CB16861890EEF599D006A2C41B9058", hash_generated_method = "CF18EFCB3C18971A4A747BF76C2D1EC2")
     public void setHostPort(HostPort hostPort) {
-        dsTaint.addTaint(hostPort.dsTaint);
         {
             this.authority = new Authority();
         } //End block
         authority.setHostPort(hostPort);
+        addTaint(hostPort.getTaint());
         // ---------- Original Method ----------
         //if (this.authority == null) {
             //this.authority = new Authority();
@@ -868,16 +914,18 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.483 -0400", hash_original_method = "4FA40F4F8EA124691CF5F7EB5079802B", hash_generated_method = "6527ACD3136B4A088B545412E740B1F3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.228 -0400", hash_original_method = "4FA40F4F8EA124691CF5F7EB5079802B", hash_generated_method = "DBECBE375526459CC8CBEDBFE672FE91")
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_1696225182 = null; //Variable for return #1
         SipUri retval;
         retval = (SipUri) super.clone();
         retval.authority = (Authority) this.authority.clone();
         retval.uriParms = (NameValueList) this.uriParms.clone();
         retval.qheaders = (NameValueList) this.qheaders.clone();
         retval.telephoneSubscriber = (TelephoneNumber) this.telephoneSubscriber.clone();
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1696225182 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_1696225182.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1696225182;
         // ---------- Original Method ----------
         //SipUri retval = (SipUri) super.clone();
         //if (this.authority != null)
@@ -892,15 +940,15 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.483 -0400", hash_original_method = "D620A31F761EF988C6C51AF3A40C0F6E", hash_generated_method = "3F9CDBC88C21A0520EC2BFB3E841061B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.231 -0400", hash_original_method = "D620A31F761EF988C6C51AF3A40C0F6E", hash_generated_method = "B7E2B184F20A98909E6F26D231BF20E6")
     public String getHeader(String name) {
-        dsTaint.addTaint(name);
-        {
-            boolean varA976053CFE18017FFEA0B798B9148200_2775148 = (this.qheaders.getValue(name) != null);
-            Object varEA2E2E9E99D538F4B6F4AE8F35E3B678_1393425541 = (this.qheaders.getValue(name).toString());
-        } //End flattened ternary
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1640936537 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1640936537 = this.qheaders.getValue(name) != null
+            ? this.qheaders.getValue(name).toString()
+            : null;
+        addTaint(name.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1640936537.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1640936537;
         // ---------- Original Method ----------
         //return this.qheaders.getValue(name) != null
             //? this.qheaders.getValue(name).toString()
@@ -908,36 +956,52 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.483 -0400", hash_original_method = "4530375C3CFB28EF39A61BC561477425", hash_generated_method = "92E5981C6C12B7226D71293C49A5C4A0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.232 -0400", hash_original_method = "4530375C3CFB28EF39A61BC561477425", hash_generated_method = "57F0C03BB25301BFE63D66C0BBB38EE7")
     public Iterator<String> getHeaderNames() {
-        Iterator<String> var80B4FADA54A84344739C62F74A7F349E_192958545 = (this.qheaders.getNames());
-        return (Iterator<String>)dsTaint.getTaint();
+        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_405211086 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_405211086 = this.qheaders.getNames();
+        varB4EAC82CA7396A68D541C85D26508E83_405211086.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_405211086;
         // ---------- Original Method ----------
         //return this.qheaders.getNames();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.483 -0400", hash_original_method = "3F7D698AA93119CDF4AD07DDC087B33E", hash_generated_method = "C4E6F47DE6321C4D2B2DCCAF92F68152")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.232 -0400", hash_original_method = "3F7D698AA93119CDF4AD07DDC087B33E", hash_generated_method = "3FF7202B9258FF9BF125A096C4C3B734")
     public String getLrParam() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1024267489 = null; //Variable for return #1
         boolean haslr;
         haslr = this.hasParameter(LR);
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1024267489 = haslr ? "true" : null;
+        varB4EAC82CA7396A68D541C85D26508E83_1024267489.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1024267489;
         // ---------- Original Method ----------
         //boolean haslr = this.hasParameter(LR);
         //return haslr ? "true" : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.484 -0400", hash_original_method = "8D33CC87FEAA658432B140BA930B3AED", hash_generated_method = "6400890E1AAD6831F04096684340AF4F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.233 -0400", hash_original_method = "8D33CC87FEAA658432B140BA930B3AED", hash_generated_method = "1090292DBD234FFECBDF5E2AC7A781C3")
     public String getMAddrParam() {
+        String varB4EAC82CA7396A68D541C85D26508E83_587075791 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1888400553 = null; //Variable for return #2
         NameValue maddr;
         maddr = uriParms.getNameValue(MADDR);
+        varB4EAC82CA7396A68D541C85D26508E83_587075791 = null;
         String host;
         host = (String) maddr.getValueAsObject();
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1888400553 = host;
+        String varA7E53CE21691AB073D9660D615818899_310261611; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_310261611 = varB4EAC82CA7396A68D541C85D26508E83_587075791;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_310261611 = varB4EAC82CA7396A68D541C85D26508E83_1888400553;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_310261611.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_310261611;
         // ---------- Original Method ----------
         //NameValue maddr = uriParms.getNameValue(MADDR);
         //if (maddr == null)
@@ -947,25 +1011,42 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.484 -0400", hash_original_method = "B0014A6E847FE8E425D38FE4F75F3375", hash_generated_method = "29096676A2144047660A89760677E203")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.233 -0400", hash_original_method = "B0014A6E847FE8E425D38FE4F75F3375", hash_generated_method = "E9BCCE945AC007D29F965A345C061E03")
     public String getMethodParam() {
-        String varC83A770E353D0EC72DE869688B9C70E2_226066587 = (this.getParameter(METHOD));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_458490407 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_458490407 = this.getParameter(METHOD);
+        varB4EAC82CA7396A68D541C85D26508E83_458490407.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_458490407;
         // ---------- Original Method ----------
         //return this.getParameter(METHOD);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.484 -0400", hash_original_method = "B72E21D53820BAFF3F91285B817E8F6B", hash_generated_method = "41FF1217C73BA31831BCE47F899BA1F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.234 -0400", hash_original_method = "B72E21D53820BAFF3F91285B817E8F6B", hash_generated_method = "4B443D8300762B74AF7488DF8313A662")
     public String getParameter(String name) {
-        dsTaint.addTaint(name);
+        String varB4EAC82CA7396A68D541C85D26508E83_790472763 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_617817766 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_706917168 = null; //Variable for return #3
         Object val;
         val = uriParms.getValue(name);
-        String var95441B18ED228B9E74BF37F54C5F5827_1695518332 = (((GenericObject) val).encode());
-        String var1256D27AA7319A7570F46BC6DF2B0099_126982463 = (val.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_790472763 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_617817766 = ((GenericObject) val).encode();
+        varB4EAC82CA7396A68D541C85D26508E83_706917168 = val.toString();
+        addTaint(name.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_703012906; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_703012906 = varB4EAC82CA7396A68D541C85D26508E83_790472763;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_703012906 = varB4EAC82CA7396A68D541C85D26508E83_617817766;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_703012906 = varB4EAC82CA7396A68D541C85D26508E83_706917168;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_703012906.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_703012906;
         // ---------- Original Method ----------
         //Object val = uriParms.getValue(name);
         //if (val == null)
@@ -977,23 +1058,24 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.485 -0400", hash_original_method = "6E1DB232C6AA1FEC4050F87B0DECFBEC", hash_generated_method = "1594E087D3AB585A68A525767814FF18")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.234 -0400", hash_original_method = "6E1DB232C6AA1FEC4050F87B0DECFBEC", hash_generated_method = "35AD1F840A45D6C977964A625E21CA5A")
     public Iterator<String> getParameterNames() {
-        Iterator<String> var9054231EBB448A02C74A7FC4114B38B5_217767937 = (this.uriParms.getNames());
-        return (Iterator<String>)dsTaint.getTaint();
+        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_848306298 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_848306298 = this.uriParms.getNames();
+        varB4EAC82CA7396A68D541C85D26508E83_848306298.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_848306298;
         // ---------- Original Method ----------
         //return this.uriParms.getNames();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.485 -0400", hash_original_method = "EE7A560BCE3AD39DE27697785FE9A0B4", hash_generated_method = "BE8F7050459646529C185D74D83FAD70")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.242 -0400", hash_original_method = "EE7A560BCE3AD39DE27697785FE9A0B4", hash_generated_method = "9013FE4653D1D64D3EA23740DCAF80AF")
     public int getTTLParam() {
         Integer ttl;
         ttl = (Integer) uriParms.getValue("ttl");
-        int var0029DDF5A04E39C38FDA3213BBFAF36E_413140416 = (ttl.intValue());
-        return dsTaint.getTaintInt();
+        int var0029DDF5A04E39C38FDA3213BBFAF36E_1978997780 = (ttl.intValue());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_29156644 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_29156644;
         // ---------- Original Method ----------
         //Integer ttl = (Integer) uriParms.getValue("ttl");
         //if (ttl != null)
@@ -1003,13 +1085,25 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.485 -0400", hash_original_method = "D0FE42FB772BF560666581278B9E7996", hash_generated_method = "5CBE4A045AE2F26E784FBBBA49E49A0E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.252 -0400", hash_original_method = "D0FE42FB772BF560666581278B9E7996", hash_generated_method = "C4AEB6AFC1D290A7BF26113C37666EEA")
     public String getTransportParam() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1078585676 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_357915842 = null; //Variable for return #2
         {
-            String varC5DDEA1104C1175021CBF7D7B9AB08C6_358750017 = ((String) uriParms.getValue(TRANSPORT));
+            varB4EAC82CA7396A68D541C85D26508E83_1078585676 = (String) uriParms.getValue(TRANSPORT);
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_357915842 = null;
+        String varA7E53CE21691AB073D9660D615818899_203904019; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_203904019 = varB4EAC82CA7396A68D541C85D26508E83_1078585676;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_203904019 = varB4EAC82CA7396A68D541C85D26508E83_357915842;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_203904019.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_203904019;
         // ---------- Original Method ----------
         //if (uriParms != null) {
             //return (String) uriParms.getValue(TRANSPORT);
@@ -1018,64 +1112,62 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.485 -0400", hash_original_method = "3B107DCD343091F4FCEB3378B44D2024", hash_generated_method = "7B3980336520A718A6EE507A45F0A285")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.254 -0400", hash_original_method = "3B107DCD343091F4FCEB3378B44D2024", hash_generated_method = "13B9A034501F89B4863D9F0DC741DF33")
     public String getUser() {
-        String var5962E8A64EFD7A77CBBBDAEF3D5E0680_1929672846 = (authority.getUser());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_525014298 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_525014298 = authority.getUser();
+        varB4EAC82CA7396A68D541C85D26508E83_525014298.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_525014298;
         // ---------- Original Method ----------
         //return authority.getUser();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.485 -0400", hash_original_method = "5246336FD52DFE5F131EDCED707C7332", hash_generated_method = "187D504915D81061B47010A4AD3F5BF9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.254 -0400", hash_original_method = "5246336FD52DFE5F131EDCED707C7332", hash_generated_method = "C2E17441317641D480516F7C095BD54D")
     public boolean isSecure() {
-        boolean var680FB1BE27E0E163E02145271CF1265C_251438411 = (this.getScheme().equalsIgnoreCase(SIPS));
-        return dsTaint.getTaintBoolean();
+        boolean var680FB1BE27E0E163E02145271CF1265C_1607336341 = (this.getScheme().equalsIgnoreCase(SIPS));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1311153342 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1311153342;
         // ---------- Original Method ----------
         //return this.getScheme().equalsIgnoreCase(SIPS);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.485 -0400", hash_original_method = "56D579416E6E52BEF406E20E9865D4C4", hash_generated_method = "1EC287B5ECAA8A4CF7D918DE4BE7229F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.255 -0400", hash_original_method = "56D579416E6E52BEF406E20E9865D4C4", hash_generated_method = "8796A54AB1B6AE377DCEEF25ECAE35C9")
     public boolean isSipURI() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_968987497 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_968987497;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.486 -0400", hash_original_method = "DE18AAB14C75B00C0640CE3E9515471C", hash_generated_method = "6468832D93011C3521FEC178539ECEE3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.255 -0400", hash_original_method = "DE18AAB14C75B00C0640CE3E9515471C", hash_generated_method = "FFEAA2C1AB2BDE791B13A6334FB0FA85")
     public void setHeader(String name, String value) {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(value);
         NameValue nv;
         nv = new NameValue(name, value);
         qheaders.set(nv);
+        addTaint(name.getTaint());
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //NameValue nv = new NameValue(name, value);
         //qheaders.set(nv);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.486 -0400", hash_original_method = "8BEE64CFFA20AF8C2536A2ECB59F51EE", hash_generated_method = "6DFA033E9B72A9B1B2A6F44CDE2D20F0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.297 -0400", hash_original_method = "8BEE64CFFA20AF8C2536A2ECB59F51EE", hash_generated_method = "1148A0D43FA7219310CDCE4B6FC5B612")
     public void setHost(String host) throws ParseException {
-        dsTaint.addTaint(host);
         Host h;
         h = new Host(host);
         this.setHost(h);
+        addTaint(host.getTaint());
         // ---------- Original Method ----------
         //Host h = new Host(host);
         //this.setHost(h);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.486 -0400", hash_original_method = "DD9F3D6DD0A955FE88B26C596147A545", hash_generated_method = "FFD1D37F482D6599B51331C19EAD3783")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.297 -0400", hash_original_method = "DD9F3D6DD0A955FE88B26C596147A545", hash_generated_method = "FFD1D37F482D6599B51331C19EAD3783")
     public void setLrParam() {
         this.uriParms.set("lr",null);
         // ---------- Original Method ----------
@@ -1083,12 +1175,11 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.486 -0400", hash_original_method = "E9B55C57ECC7FC0F2DF8B4804D377AFB", hash_generated_method = "144E72E6BA985B04E10D681483F5B4E9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.297 -0400", hash_original_method = "E9B55C57ECC7FC0F2DF8B4804D377AFB", hash_generated_method = "569B601566D9B38CDC6FB956D8DF0BE2")
     public void setMAddrParam(String maddr) throws ParseException {
-        dsTaint.addTaint(maddr);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("bad maddr");
         setParameter("maddr", maddr);
+        addTaint(maddr.getTaint());
         // ---------- Original Method ----------
         //if (maddr == null)
             //throw new NullPointerException("bad maddr");
@@ -1096,23 +1187,19 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.487 -0400", hash_original_method = "378F5AA5131E869E77C4B19F60BAAC21", hash_generated_method = "09F46395B52DCEFFD79B6FEF51870AF5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.300 -0400", hash_original_method = "378F5AA5131E869E77C4B19F60BAAC21", hash_generated_method = "5B68A84013478C390B9A397B6961FE4E")
     public void setMethodParam(String method) throws ParseException {
-        dsTaint.addTaint(method);
         setParameter("method", method);
+        addTaint(method.getTaint());
         // ---------- Original Method ----------
         //setParameter("method", method);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.487 -0400", hash_original_method = "B29E45FE1B913173FAF4035EBB51958B", hash_generated_method = "502FF089EA8D1C0C49106F26BC7A966D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.301 -0400", hash_original_method = "B29E45FE1B913173FAF4035EBB51958B", hash_generated_method = "B9C86301DDA3A73AA5A32D46012A781F")
     public void setParameter(String name, String value) throws ParseException {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(value);
         {
-            boolean varFD8BA5FD35E31C0558A23A7937239A52_1804098921 = (name.equalsIgnoreCase("ttl"));
+            boolean varFD8BA5FD35E31C0558A23A7937239A52_234821495 = (name.equalsIgnoreCase("ttl"));
             {
                 try 
                 {
@@ -1125,6 +1212,8 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
             } //End block
         } //End collapsed parenthetic
         uriParms.set(name,value);
+        addTaint(name.getTaint());
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //if (name.equalsIgnoreCase("ttl")) {
             //try {
@@ -1137,12 +1226,11 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.487 -0400", hash_original_method = "93EA8C8ECDAC523AC50E68B355F469C8", hash_generated_method = "FDCBDB3F1A8BAF623A24909A418EEFE5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.301 -0400", hash_original_method = "93EA8C8ECDAC523AC50E68B355F469C8", hash_generated_method = "7A589808ED7E6C2BFD87AB94EB76C43A")
     public void setSecure(boolean secure) {
-        dsTaint.addTaint(secure);
         this.scheme = SIPS;
         this.scheme = SIP;
+        addTaint(secure);
         // ---------- Original Method ----------
         //if (secure)
             //this.scheme = SIPS;
@@ -1151,16 +1239,15 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.487 -0400", hash_original_method = "8785DA0B69A8C30F98EFE6C5EB1879AC", hash_generated_method = "78A089E17F8015656D4968B367E3B554")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.301 -0400", hash_original_method = "8785DA0B69A8C30F98EFE6C5EB1879AC", hash_generated_method = "42CD7E7472ACA5ABCD22C94E82F3D397")
     public void setTTLParam(int ttl) {
-        dsTaint.addTaint(ttl);
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad ttl value");
         {
             NameValue nv;
             nv = new NameValue("ttl", Integer.valueOf(ttl));
             uriParms.set(nv);
         } //End block
+        addTaint(ttl);
         // ---------- Original Method ----------
         //if (ttl <= 0)
             //throw new IllegalArgumentException("Bad ttl value");
@@ -1171,13 +1258,11 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.487 -0400", hash_original_method = "D4B3823C982965112DA168F305C25048", hash_generated_method = "3A2DD9525B1341FAC4F4E9F09D54EDDC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.304 -0400", hash_original_method = "D4B3823C982965112DA168F305C25048", hash_generated_method = "72550CE758ABFD5CE4C59D288A0A9E5B")
     public void setTransportParam(String transport) throws ParseException {
-        dsTaint.addTaint(transport);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null arg");
         {
-            boolean varD52FB728B1D6488FBD6394869977AA12_1290418968 = (transport.compareToIgnoreCase("UDP") == 0
+            boolean varD52FB728B1D6488FBD6394869977AA12_1095223368 = (transport.compareToIgnoreCase("UDP") == 0
             || transport.compareToIgnoreCase("TLS") == 0
             || transport.compareToIgnoreCase("TCP") == 0
             || transport.compareToIgnoreCase("SCTP") == 0);
@@ -1188,6 +1273,7 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
             } //End block
             if (DroidSafeAndroidRuntime.control) throw new ParseException("bad transport " + transport, 0);
         } //End collapsed parenthetic
+        addTaint(transport.getTaint());
         // ---------- Original Method ----------
         //if (transport == null)
             //throw new NullPointerException("null arg");
@@ -1202,56 +1288,59 @@ public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipU
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.488 -0400", hash_original_method = "1E6ECA3F7C52B01B50446520797B0E33", hash_generated_method = "39FE20DA24CC3A25A77E3087003B915B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.307 -0400", hash_original_method = "1E6ECA3F7C52B01B50446520797B0E33", hash_generated_method = "DD03C307E6A2A5D21A41EDF20A5E493D")
     public String getUserParam() {
-        String varBE15B96B59FF88E1D98B6AAE93006A18_1571579981 = (getParameter("user"));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1699270121 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1699270121 = getParameter("user");
+        varB4EAC82CA7396A68D541C85D26508E83_1699270121.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1699270121;
         // ---------- Original Method ----------
         //return getParameter("user");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.488 -0400", hash_original_method = "23F3E2D78AEB517CE17DC4369118F50D", hash_generated_method = "E0CD69F60269616872E6D868E8141D30")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.307 -0400", hash_original_method = "23F3E2D78AEB517CE17DC4369118F50D", hash_generated_method = "207D0C8AAF4C2E6A6BABCCFD7A3B6CDA")
     public boolean hasLrParam() {
-        boolean varFC6FB6D38ED03C2B27CF94B4AD499E80_1814976799 = (uriParms.getNameValue("lr") != null);
-        return dsTaint.getTaintBoolean();
+        boolean varFC6FB6D38ED03C2B27CF94B4AD499E80_1576312164 = (uriParms.getNameValue("lr") != null);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_533428556 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_533428556;
         // ---------- Original Method ----------
         //return uriParms.getNameValue("lr") != null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.488 -0400", hash_original_method = "BF370972F662FF42728C27309BA84910", hash_generated_method = "6C7BCEAC69A32C20A5BD81B7779D96ED")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.307 -0400", hash_original_method = "BF370972F662FF42728C27309BA84910", hash_generated_method = "192910E5997A273B5D5FAC9943ADF836")
     public boolean hasGrParam() {
-        boolean varFA89BEA4AFAFBB589EEA15E98039438D_1994125109 = (uriParms.getNameValue(GRUU) != null);
-        return dsTaint.getTaintBoolean();
+        boolean varFA89BEA4AFAFBB589EEA15E98039438D_1323334680 = (uriParms.getNameValue(GRUU) != null);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1384032536 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1384032536;
         // ---------- Original Method ----------
         //return uriParms.getNameValue(GRUU) != null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.488 -0400", hash_original_method = "80955EE8A827F28D322398606EB833AF", hash_generated_method = "FB0724276A56E6AD926BE6C88DB48B00")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.308 -0400", hash_original_method = "80955EE8A827F28D322398606EB833AF", hash_generated_method = "0216168731AF3B946D7ACA4A469ABEC3")
     public void setGrParam(String value) {
-        dsTaint.addTaint(value);
         this.uriParms.set(GRUU, value);
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //this.uriParms.set(GRUU, value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.488 -0400", hash_original_method = "215DF01DBB1883D8F30CF584508D27CC", hash_generated_method = "2631EF3FDE411109D0416D3688E5BB29")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.308 -0400", hash_original_method = "215DF01DBB1883D8F30CF584508D27CC", hash_generated_method = "82640B1DD35E8D84F40AD35B93470C2E")
     public String getGrParam() {
-        String var078443C45ED664C1AD56B05A930F1F48_1964451347 = ((String) this.uriParms.getValue(GRUU));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_477938645 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_477938645 = (String) this.uriParms.getValue(GRUU);
+        varB4EAC82CA7396A68D541C85D26508E83_477938645.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_477938645;
         // ---------- Original Method ----------
         //return (String) this.uriParms.getValue(GRUU);
     }
 
     
-    private static final long serialVersionUID = 7749781076218987044L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.308 -0400", hash_original_field = "FBC6DFE7D1C3D17A206CDAE04B65C0AA", hash_generated_field = "1756D08D945F2291D59A47FDBC04446D")
+
+    private static long serialVersionUID = 7749781076218987044L;
 }
 

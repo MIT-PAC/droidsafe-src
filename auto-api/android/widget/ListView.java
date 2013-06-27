@@ -33,49 +33,75 @@ import android.widget.RemoteViews.RemoteView;
 import java.util.ArrayList;
 
 public class ListView extends AbsListView {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.839 -0400", hash_original_field = "A0E111006ED777C10D75AA1677A2639C", hash_generated_field = "4BC24FD3C886BCFFDF832386DEC27D09")
+
     private ArrayList<FixedViewInfo> mHeaderViewInfos = Lists.newArrayList();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.839 -0400", hash_original_field = "CC679F55490278048131235E90055B39", hash_generated_field = "FD730016C2B4D9973A08935CB5CEEF24")
+
     private ArrayList<FixedViewInfo> mFooterViewInfos = Lists.newArrayList();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.839 -0400", hash_original_field = "F2EB92D46BFACFA75ABCA33DC6179915", hash_generated_field = "3837E71D24376BABDBC6EE7CD182AABB")
+
     Drawable mDivider;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_field = "FDC96C666CAD9FBF2EF59762861622A0", hash_generated_field = "E9BA9D611B13DC4B2EC5075D3CBC28DA")
+
     int mDividerHeight;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_field = "2E33162EDD274C7EDD1E1156F95BB8C5", hash_generated_field = "61CEC74004B40DBE67743F5C54E8DAE8")
+
     Drawable mOverScrollHeader;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_field = "CCC4EEA4F20C4786C3E2B61E4655BBA7", hash_generated_field = "FAAE7751E5086898A7D9334FDB1CBF58")
+
     Drawable mOverScrollFooter;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_field = "8BEFBF97EB4D2DF9EC8AA6449CB3CA5E", hash_generated_field = "D67B6F8B88187DB827FEE4CD95C0CD84")
+
     private boolean mIsCacheColorOpaque;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_field = "339C469036C2CC68131B6FFE99D261C1", hash_generated_field = "F64CA3AD07E4A441F83FB08509D5EA54")
+
     private boolean mDividerIsOpaque;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_field = "4D65FD0E015FCBFA86076C532AFC8520", hash_generated_field = "E4D279F003B799932AE6A47EC9C65A6F")
+
     private boolean mHeaderDividersEnabled;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_field = "7D3333BFE992E9D671CB18E1CC4F46F2", hash_generated_field = "D61311FF24E9C122770C1CC46CD91809")
+
     private boolean mFooterDividersEnabled;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_field = "CD24990D52A8F3E7E5EB9907AF3F4BCB", hash_generated_field = "1E6DAAB899E2A1039D680325576FF2F4")
+
     private boolean mAreAllItemsSelectable = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_field = "C81EE07A80353C16F692D53C68A2708C", hash_generated_field = "B872CC30C5370C029EE2A26D5DBEB2D2")
+
     private boolean mItemsCanFocus = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "AFFA54D19F07A10EE8847CF76FC95323")
+
     private Rect mTempRect = new Rect();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_field = "E00CE94A319056CF4CFCE4FD6B48FD75", hash_generated_field = "4B2413695EEECE37901862E70E0ADF71")
+
     private Paint mDividerPaint;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_field = "622C7E912E416442D6067E781BEF934A", hash_generated_field = "024149CFE1D444C692150EFEE0AEF359")
+
     private ArrowScrollFocusResult mArrowScrollFocusResult = new ArrowScrollFocusResult();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_field = "D85788A92B1851B4DB4DD47891274715", hash_generated_field = "21847DEAFE51D735E62E529ABB2AD8CB")
+
     private FocusSelector mFocusSelector;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.701 -0400", hash_original_method = "90B4B4BF6E484BC26800C5A789F4708D", hash_generated_method = "4167B827BA8B88E32E8E77CBCF3E7BD4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ListView(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_method = "90B4B4BF6E484BC26800C5A789F4708D", hash_generated_method = "2C921861B94DD394D15F8C9171AE49D3")
+    public  ListView(Context context) {
         this(context, null);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.702 -0400", hash_original_method = "5C8040E9D31754EC73AE53985C54C1B3", hash_generated_method = "FC7B347CB5EA352D3999CC437331BD05")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ListView(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.840 -0400", hash_original_method = "5C8040E9D31754EC73AE53985C54C1B3", hash_generated_method = "02B7F18DF6EB6DE61176AB28E53B2B54")
+    public  ListView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.listViewStyle);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.702 -0400", hash_original_method = "1588C0DF1CDF9192487B09246AC39E9C", hash_generated_method = "D67CF27ECBB2C61FA288C229417AB1C9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ListView(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.841 -0400", hash_original_method = "1588C0DF1CDF9192487B09246AC39E9C", hash_generated_method = "BC124FB1DCCB1630C66BC78A786F981F")
+    public  ListView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(defStyle);
-        dsTaint.addTaint(context.dsTaint);
         TypedArray a;
         a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.ListView, defStyle, 0);
@@ -112,22 +138,24 @@ public class ListView extends AbsListView {
         mHeaderDividersEnabled = a.getBoolean(R.styleable.ListView_headerDividersEnabled, true);
         mFooterDividersEnabled = a.getBoolean(R.styleable.ListView_footerDividersEnabled, true);
         a.recycle();
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
+        addTaint(defStyle);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.702 -0400", hash_original_method = "13CC3D3BB67006B8B223FEAA5CEB8AD3", hash_generated_method = "7D11B8061EE7A2DE5E7ECAC5024FCB4C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.842 -0400", hash_original_method = "13CC3D3BB67006B8B223FEAA5CEB8AD3", hash_generated_method = "6B7100C0CC1535E3DDF6733352F0682D")
     public int getMaxScrollAmount() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1546173580 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1546173580;
         // ---------- Original Method ----------
         //return (int) (MAX_SCROLL_FACTOR * (mBottom - mTop));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.703 -0400", hash_original_method = "C98C1C3289511C3CD05158CF07015375", hash_generated_method = "E998D977EC499A170B87198863DA545E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.842 -0400", hash_original_method = "C98C1C3289511C3CD05158CF07015375", hash_generated_method = "E998D977EC499A170B87198863DA545E")
     private void adjustViewsUpOrDown() {
         int childCount;
         childCount = getChildCount();
@@ -163,12 +191,8 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.703 -0400", hash_original_method = "52D3689EBA08A028E74C350405FC2CA4", hash_generated_method = "84981D2667830C5AA8DC276EA90C2E45")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.846 -0400", hash_original_method = "52D3689EBA08A028E74C350405FC2CA4", hash_generated_method = "23286197BA937E2B8C1E124B275A113E")
     public void addHeaderView(View v, Object data, boolean isSelectable) {
-        dsTaint.addTaint(v.dsTaint);
-        dsTaint.addTaint(isSelectable);
-        dsTaint.addTaint(data.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "Cannot add header view to list -- setAdapter has already been called.");
@@ -182,6 +206,9 @@ public class ListView extends AbsListView {
         {
             mDataSetObserver.onChanged();
         } //End block
+        addTaint(v.getTaint());
+        addTaint(data.getTaint());
+        addTaint(isSelectable);
         // ---------- Original Method ----------
         //if (mAdapter != null && ! (mAdapter instanceof HeaderViewListAdapter)) {
             //throw new IllegalStateException(
@@ -198,38 +225,35 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.703 -0400", hash_original_method = "9CDB9BC1941825D09F579B09BA5203C8", hash_generated_method = "1BEFE736682EA1877E84269EBBCC676F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.850 -0400", hash_original_method = "9CDB9BC1941825D09F579B09BA5203C8", hash_generated_method = "B3C619852BB06367E2DDB2F57BC57E55")
     public void addHeaderView(View v) {
-        dsTaint.addTaint(v.dsTaint);
         addHeaderView(v, null, true);
+        addTaint(v.getTaint());
         // ---------- Original Method ----------
         //addHeaderView(v, null, true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.703 -0400", hash_original_method = "9A198FE2F7DAA22CDFAB063EB95C8DFA", hash_generated_method = "DDB1C03B4479E37B7E92D0BF4F712843")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.850 -0400", hash_original_method = "9A198FE2F7DAA22CDFAB063EB95C8DFA", hash_generated_method = "563A04DA38D0BEF8DC9FC12EC1CD3955")
     @Override
     public int getHeaderViewsCount() {
-        int var51EB21BA6322BC21883B38109F793DB7_1210002241 = (mHeaderViewInfos.size());
-        return dsTaint.getTaintInt();
+        int var51EB21BA6322BC21883B38109F793DB7_1289299526 = (mHeaderViewInfos.size());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1681100147 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1681100147;
         // ---------- Original Method ----------
         //return mHeaderViewInfos.size();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.704 -0400", hash_original_method = "8EF6528E21853FD53F2FB8406F9F06D5", hash_generated_method = "36F9B504122929F6E144D11367732C70")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.851 -0400", hash_original_method = "8EF6528E21853FD53F2FB8406F9F06D5", hash_generated_method = "5E0C1790D2110D50F5A1B108994268C8")
     public boolean removeHeaderView(View v) {
-        dsTaint.addTaint(v.dsTaint);
         {
-            boolean varFC339A57DD06D9F6F47BBD3A88B06E10_902187872 = (mHeaderViewInfos.size() > 0);
+            boolean varFC339A57DD06D9F6F47BBD3A88B06E10_200681433 = (mHeaderViewInfos.size() > 0);
             {
                 boolean result;
                 result = false;
                 {
-                    boolean var9BFD45A2F2990893F8C6EA8C90DB82AA_1535496373 = (mAdapter != null && ((HeaderViewListAdapter) mAdapter).removeHeader(v));
+                    boolean var9BFD45A2F2990893F8C6EA8C90DB82AA_972047359 = (mAdapter != null && ((HeaderViewListAdapter) mAdapter).removeHeader(v));
                     {
                         {
                             mDataSetObserver.onChanged();
@@ -240,7 +264,9 @@ public class ListView extends AbsListView {
                 removeFixedViewInfo(v, mHeaderViewInfos);
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(v.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_293874897 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_293874897;
         // ---------- Original Method ----------
         //if (mHeaderViewInfos.size() > 0) {
             //boolean result = false;
@@ -257,11 +283,8 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.704 -0400", hash_original_method = "56A07A9A1AC012F692F90759B155683C", hash_generated_method = "D6BE232F82C6091B30ECCC98D8E3594E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.864 -0400", hash_original_method = "56A07A9A1AC012F692F90759B155683C", hash_generated_method = "A9604C13F02A1D8C894791AC5684D03E")
     private void removeFixedViewInfo(View v, ArrayList<FixedViewInfo> where) {
-        dsTaint.addTaint(v.dsTaint);
-        dsTaint.addTaint(where.dsTaint);
         int len;
         len = where.size();
         {
@@ -275,6 +298,8 @@ public class ListView extends AbsListView {
                 } //End block
             } //End block
         } //End collapsed parenthetic
+        addTaint(v.getTaint());
+        addTaint(where.getTaint());
         // ---------- Original Method ----------
         //int len = where.size();
         //for (int i = 0; i < len; ++i) {
@@ -287,12 +312,8 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.704 -0400", hash_original_method = "854663FFCE0B2EEEA12F571F4E080752", hash_generated_method = "9CAE48133D30DB654A007DA1A88FD979")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.864 -0400", hash_original_method = "854663FFCE0B2EEEA12F571F4E080752", hash_generated_method = "1C7FBA8A7069FCC36AFB5B3D2CBA2263")
     public void addFooterView(View v, Object data, boolean isSelectable) {
-        dsTaint.addTaint(v.dsTaint);
-        dsTaint.addTaint(isSelectable);
-        dsTaint.addTaint(data.dsTaint);
         FixedViewInfo info;
         info = new FixedViewInfo();
         info.view = v;
@@ -302,6 +323,9 @@ public class ListView extends AbsListView {
         {
             mDataSetObserver.onChanged();
         } //End block
+        addTaint(v.getTaint());
+        addTaint(data.getTaint());
+        addTaint(isSelectable);
         // ---------- Original Method ----------
         //FixedViewInfo info = new FixedViewInfo();
         //info.view = v;
@@ -314,38 +338,35 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.704 -0400", hash_original_method = "06A7CBCF71002E57CE516EE24D5E8CDC", hash_generated_method = "34E5EA05837A675B62150FC42A81C0D2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.865 -0400", hash_original_method = "06A7CBCF71002E57CE516EE24D5E8CDC", hash_generated_method = "57122EE7C6CF8ED4F3458E8ADE0651DA")
     public void addFooterView(View v) {
-        dsTaint.addTaint(v.dsTaint);
         addFooterView(v, null, true);
+        addTaint(v.getTaint());
         // ---------- Original Method ----------
         //addFooterView(v, null, true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.704 -0400", hash_original_method = "83BE551B6778E6D258871D9949AEF538", hash_generated_method = "4A4ACA9ED34C2C69CFCC1550B70459C4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.865 -0400", hash_original_method = "83BE551B6778E6D258871D9949AEF538", hash_generated_method = "8897791BCEA32B6CA1CC87D1A2C3DEAD")
     @Override
     public int getFooterViewsCount() {
-        int var05D2A206262A11BE7E645CDC53B4074D_1569379166 = (mFooterViewInfos.size());
-        return dsTaint.getTaintInt();
+        int var05D2A206262A11BE7E645CDC53B4074D_1670937660 = (mFooterViewInfos.size());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368640917 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368640917;
         // ---------- Original Method ----------
         //return mFooterViewInfos.size();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.705 -0400", hash_original_method = "D2E29F254410117CE819574854BB79EC", hash_generated_method = "10B2DCA92CFF7F8A9BD28FFD0CF0E7CB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.865 -0400", hash_original_method = "D2E29F254410117CE819574854BB79EC", hash_generated_method = "CF3FCF6A625BD5DBD3E401F32A9053D1")
     public boolean removeFooterView(View v) {
-        dsTaint.addTaint(v.dsTaint);
         {
-            boolean var16785181560AF1EBB84626B752BB868A_1530146158 = (mFooterViewInfos.size() > 0);
+            boolean var16785181560AF1EBB84626B752BB868A_397717932 = (mFooterViewInfos.size() > 0);
             {
                 boolean result;
                 result = false;
                 {
-                    boolean var9C4812C55FB91AE0FCF1729C742654B1_1264653867 = (mAdapter != null && ((HeaderViewListAdapter) mAdapter).removeFooter(v));
+                    boolean var9C4812C55FB91AE0FCF1729C742654B1_151434734 = (mAdapter != null && ((HeaderViewListAdapter) mAdapter).removeFooter(v));
                     {
                         {
                             mDataSetObserver.onChanged();
@@ -356,7 +377,9 @@ public class ListView extends AbsListView {
                 removeFixedViewInfo(v, mFooterViewInfos);
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(v.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1276437919 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1276437919;
         // ---------- Original Method ----------
         //if (mFooterViewInfos.size() > 0) {
             //boolean result = false;
@@ -373,39 +396,38 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.705 -0400", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "72F9192184BF51AC84CCAC2675006688")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.866 -0400", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "6B0E78F1B3860C0D1FE45624F8696AA1")
     @Override
     public ListAdapter getAdapter() {
-        return (ListAdapter)dsTaint.getTaint();
+        ListAdapter varB4EAC82CA7396A68D541C85D26508E83_27288028 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_27288028 = mAdapter;
+        varB4EAC82CA7396A68D541C85D26508E83_27288028.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_27288028;
         // ---------- Original Method ----------
         //return mAdapter;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.705 -0400", hash_original_method = "8AB2C6958FD7CEC3A8A71FE59763D6A4", hash_generated_method = "BABB9E618C0360D6B56D5B89A4C9F94A")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.866 -0400", hash_original_method = "8AB2C6958FD7CEC3A8A71FE59763D6A4", hash_generated_method = "D18E7401555F2345B6B780E77B86E39C")
     @android.view.RemotableViewMethod
     public void setRemoteViewsAdapter(Intent intent) {
-        dsTaint.addTaint(intent.dsTaint);
         super.setRemoteViewsAdapter(intent);
+        addTaint(intent.getTaint());
         // ---------- Original Method ----------
         //super.setRemoteViewsAdapter(intent);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.706 -0400", hash_original_method = "41402E7D77C488BF4C279E76F34BC4E2", hash_generated_method = "03A4096FCC083B3643D311DC2B700EFF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.867 -0400", hash_original_method = "41402E7D77C488BF4C279E76F34BC4E2", hash_generated_method = "56AB0911B7798E7D5E91BA23C14A6158")
     @Override
     public void setAdapter(ListAdapter adapter) {
-        dsTaint.addTaint(adapter.dsTaint);
         {
             mAdapter.unregisterDataSetObserver(mDataSetObserver);
         } //End block
         resetList();
         mRecycler.clear();
         {
-            boolean var424DAEFA84C4CC446223C4E25F5F060B_1548860875 = (mHeaderViewInfos.size() > 0|| mFooterViewInfos.size() > 0);
+            boolean var424DAEFA84C4CC446223C4E25F5F060B_707186990 = (mHeaderViewInfos.size() > 0|| mFooterViewInfos.size() > 0);
             {
                 mAdapter = new HeaderViewListAdapter(mHeaderViewInfos, mFooterViewInfos, adapter);
             } //End block
@@ -443,13 +465,13 @@ public class ListView extends AbsListView {
             checkSelectionChanged();
         } //End block
         requestLayout();
+        addTaint(adapter.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.706 -0400", hash_original_method = "2C61A8961B533B2EFAE2B5516136BD48", hash_generated_method = "2F9780A9A993D3382CEE1B6821096FDF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.880 -0400", hash_original_method = "2C61A8961B533B2EFAE2B5516136BD48", hash_generated_method = "2F9780A9A993D3382CEE1B6821096FDF")
     @Override
      void resetList() {
         clearRecycledState(mHeaderViewInfos);
@@ -464,10 +486,8 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.706 -0400", hash_original_method = "917FCC60A4286C5138F872CFDA18A6AE", hash_generated_method = "9A5FD6A3219AED63A63539AD5B65B36D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.881 -0400", hash_original_method = "917FCC60A4286C5138F872CFDA18A6AE", hash_generated_method = "A76A6F3FFDA1FE61E0961BCB357817DA")
     private void clearRecycledState(ArrayList<FixedViewInfo> infos) {
-        dsTaint.addTaint(infos.dsTaint);
         {
             int count;
             count = infos.size();
@@ -485,6 +505,7 @@ public class ListView extends AbsListView {
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        addTaint(infos.getTaint());
         // ---------- Original Method ----------
         //if (infos != null) {
             //final int count = infos.size();
@@ -499,21 +520,20 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.706 -0400", hash_original_method = "AE08170EA161B6A1BF0E53E679181532", hash_generated_method = "1FDB646C125CA832B6E1B2FFD931E9EA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.881 -0400", hash_original_method = "AE08170EA161B6A1BF0E53E679181532", hash_generated_method = "186F28567A3E0FEFB09163186C538C93")
     private boolean showingTopFadingEdge() {
         int listTop;
         listTop = mScrollY + mListPadding.top;
-        boolean varCCBED360491DE804AB67732329ABF3EB_1909411483 = ((mFirstPosition > 0) || (getChildAt(0).getTop() > listTop));
-        return dsTaint.getTaintBoolean();
+        boolean varCCBED360491DE804AB67732329ABF3EB_1883434730 = ((mFirstPosition > 0) || (getChildAt(0).getTop() > listTop));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2127402453 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2127402453;
         // ---------- Original Method ----------
         //final int listTop = mScrollY + mListPadding.top;
         //return (mFirstPosition > 0) || (getChildAt(0).getTop() > listTop);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.706 -0400", hash_original_method = "471206817827115E6FDE8330BC3BFE06", hash_generated_method = "29CBA5338191F6251A564713750C9A30")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.881 -0400", hash_original_method = "471206817827115E6FDE8330BC3BFE06", hash_generated_method = "FFCF76CC6B6DD07693BDE165C661B458")
     private boolean showingBottomFadingEdge() {
         int childCount;
         childCount = getChildCount();
@@ -523,7 +543,8 @@ public class ListView extends AbsListView {
         lastVisiblePosition = mFirstPosition + childCount - 1;
         int listBottom;
         listBottom = mScrollY + getHeight() - mListPadding.bottom;
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_803934250 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_803934250;
         // ---------- Original Method ----------
         //final int childCount = getChildCount();
         //final int bottomOfBottomChild = getChildAt(childCount - 1).getBottom();
@@ -534,13 +555,9 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.707 -0400", hash_original_method = "0248A9BC20DE00C469CC3A8962885EF5", hash_generated_method = "B1067E54E7173D87A55C85EC53FA983B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.883 -0400", hash_original_method = "0248A9BC20DE00C469CC3A8962885EF5", hash_generated_method = "24D1BA3BC9F4F27BB98F01914E801277")
     @Override
     public boolean requestChildRectangleOnScreen(View child, Rect rect, boolean immediate) {
-        dsTaint.addTaint(child.dsTaint);
-        dsTaint.addTaint(immediate);
-        dsTaint.addTaint(rect.dsTaint);
         int rectTopWithinChild;
         rectTopWithinChild = rect.top;
         rect.offset(child.getLeft(), child.getTop());
@@ -554,7 +571,7 @@ public class ListView extends AbsListView {
         int fadingEdge;
         fadingEdge = getVerticalFadingEdgeLength();
         {
-            boolean var60D2B66A5E3C386C88687929883234E5_278195145 = (showingTopFadingEdge());
+            boolean var60D2B66A5E3C386C88687929883234E5_1476682089 = (showingTopFadingEdge());
             {
                 {
                     listUnfadedTop += fadingEdge;
@@ -566,7 +583,7 @@ public class ListView extends AbsListView {
         int bottomOfBottomChild;
         bottomOfBottomChild = getChildAt(childCount - 1).getBottom();
         {
-            boolean varEC085D03DEF6DF005C7F3192FEB447ED_208661937 = (showingBottomFadingEdge());
+            boolean varEC085D03DEF6DF005C7F3192FEB447ED_237307951 = (showingBottomFadingEdge());
             {
                 {
                     listUnfadedBottom -= fadingEdge;
@@ -577,7 +594,7 @@ public class ListView extends AbsListView {
         scrollYDelta = 0;
         {
             {
-                boolean var1852437954D6FC93B41EE304F855C339_997405998 = (rect.height() > height);
+                boolean var1852437954D6FC93B41EE304F855C339_1874679260 = (rect.height() > height);
                 {
                     scrollYDelta += (rect.top - listUnfadedTop);
                 } //End block
@@ -591,7 +608,7 @@ public class ListView extends AbsListView {
         } //End block
         {
             {
-                boolean var1852437954D6FC93B41EE304F855C339_2140451566 = (rect.height() > height);
+                boolean var1852437954D6FC93B41EE304F855C339_1189881662 = (rect.height() > height);
                 {
                     scrollYDelta -= (listUnfadedBottom - rect.bottom);
                 } //End block
@@ -613,17 +630,19 @@ public class ListView extends AbsListView {
             mSelectedTop = child.getTop();
             invalidate();
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(child.getTaint());
+        addTaint(rect.getTaint());
+        addTaint(immediate);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2073831821 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2073831821;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.708 -0400", hash_original_method = "E78CA340B6692592484560299AF7A587", hash_generated_method = "04AC3B48B80E9D9A718776F20FC5EC06")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.905 -0400", hash_original_method = "E78CA340B6692592484560299AF7A587", hash_generated_method = "6791FC1B573FB49E98403CAC661E0FAE")
     @Override
      void fillGap(boolean down) {
-        dsTaint.addTaint(down);
         int count;
         count = getChildCount();
         {
@@ -650,16 +669,15 @@ public class ListView extends AbsListView {
             fillUp(mFirstPosition - 1, startOffset);
             correctTooLow(getChildCount());
         } //End block
+        addTaint(down);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.708 -0400", hash_original_method = "A51DD6537C0400974E1B605AE841C465", hash_generated_method = "3A2AF0FF8FF7A03278A8E4410A179F14")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.906 -0400", hash_original_method = "A51DD6537C0400974E1B605AE841C465", hash_generated_method = "E92DFC2356631A4E7B80D025ED156596")
     private View fillDown(int pos, int nextTop) {
-        dsTaint.addTaint(nextTop);
-        dsTaint.addTaint(pos);
+        View varB4EAC82CA7396A68D541C85D26508E83_1140345783 = null; //Variable for return #1
         View selectedView;
         selectedView = null;
         int end;
@@ -677,7 +695,11 @@ public class ListView extends AbsListView {
                 selectedView = child;
             } //End block
         } //End block
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1140345783 = selectedView;
+        addTaint(pos);
+        addTaint(nextTop);
+        varB4EAC82CA7396A68D541C85D26508E83_1140345783.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1140345783;
         // ---------- Original Method ----------
         //View selectedView = null;
         //int end = (mBottom - mTop);
@@ -697,11 +719,9 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.708 -0400", hash_original_method = "05C528C2066045A21E9535AE6FF4CD3D", hash_generated_method = "09EF89A084BB572797B3CCF251DFDE50")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.908 -0400", hash_original_method = "05C528C2066045A21E9535AE6FF4CD3D", hash_generated_method = "4BC15BCE11D0C7E991747ACC0892C9AE")
     private View fillUp(int pos, int nextBottom) {
-        dsTaint.addTaint(nextBottom);
-        dsTaint.addTaint(pos);
+        View varB4EAC82CA7396A68D541C85D26508E83_468599103 = null; //Variable for return #1
         View selectedView;
         selectedView = null;
         int end;
@@ -720,7 +740,11 @@ public class ListView extends AbsListView {
             } //End block
         } //End block
         mFirstPosition = pos + 1;
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_468599103 = selectedView;
+        addTaint(pos);
+        addTaint(nextBottom);
+        varB4EAC82CA7396A68D541C85D26508E83_468599103.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_468599103;
         // ---------- Original Method ----------
         //View selectedView = null;
         //int end = 0;
@@ -741,17 +765,18 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.708 -0400", hash_original_method = "E858B13EC4F52DD7B2125F2E9BA15919", hash_generated_method = "DA957F53C940A58C610199DD04E746AF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.909 -0400", hash_original_method = "E858B13EC4F52DD7B2125F2E9BA15919", hash_generated_method = "54703D246107E175E35EFBA96493B53D")
     private View fillFromTop(int nextTop) {
-        dsTaint.addTaint(nextTop);
+        View varB4EAC82CA7396A68D541C85D26508E83_1925972233 = null; //Variable for return #1
         mFirstPosition = Math.min(mFirstPosition, mSelectedPosition);
         mFirstPosition = Math.min(mFirstPosition, mItemCount - 1);
         {
             mFirstPosition = 0;
         } //End block
-        View varBC3312FAE5DAD2D4DA02F3A8FDDCF8D0_1033084059 = (fillDown(mFirstPosition, nextTop));
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1925972233 = fillDown(mFirstPosition, nextTop);
+        addTaint(nextTop);
+        varB4EAC82CA7396A68D541C85D26508E83_1925972233.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1925972233;
         // ---------- Original Method ----------
         //mFirstPosition = Math.min(mFirstPosition, mSelectedPosition);
         //mFirstPosition = Math.min(mFirstPosition, mItemCount - 1);
@@ -762,11 +787,9 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.709 -0400", hash_original_method = "BB6F12E082A75859BCEF500D953CB8EE", hash_generated_method = "D74DFF08B8B133C7015560ED3408C25A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.922 -0400", hash_original_method = "BB6F12E082A75859BCEF500D953CB8EE", hash_generated_method = "7C37FD40214E0FA2E760FD0EEF19A8C5")
     private View fillFromMiddle(int childrenTop, int childrenBottom) {
-        dsTaint.addTaint(childrenBottom);
-        dsTaint.addTaint(childrenTop);
+        View varB4EAC82CA7396A68D541C85D26508E83_1572944145 = null; //Variable for return #1
         int height;
         height = childrenBottom - childrenTop;
         int position;
@@ -787,7 +810,11 @@ public class ListView extends AbsListView {
         {
             correctTooLow(getChildCount());
         } //End block
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1572944145 = sel;
+        addTaint(childrenTop);
+        addTaint(childrenBottom);
+        varB4EAC82CA7396A68D541C85D26508E83_1572944145.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1572944145;
         // ---------- Original Method ----------
         //int height = childrenBottom - childrenTop;
         //int position = reconcileSelectedPosition();
@@ -808,11 +835,8 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.709 -0400", hash_original_method = "E7EAC0AC74052E989A5F3C8A8979A51D", hash_generated_method = "A32AEB441FFB249489C68DC347C4D119")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.922 -0400", hash_original_method = "E7EAC0AC74052E989A5F3C8A8979A51D", hash_generated_method = "5A4D5D03FA92D82EF74469EAA348ABDE")
     private void fillAboveAndBelow(View sel, int position) {
-        dsTaint.addTaint(position);
-        dsTaint.addTaint(sel.dsTaint);
         int dividerHeight;
         dividerHeight = mDividerHeight;
         {
@@ -825,6 +849,8 @@ public class ListView extends AbsListView {
             adjustViewsUpOrDown();
             fillUp(position - 1, sel.getTop() - dividerHeight);
         } //End block
+        addTaint(sel.getTaint());
+        addTaint(position);
         // ---------- Original Method ----------
         //final int dividerHeight = mDividerHeight;
         //if (!mStackFromBottom) {
@@ -839,12 +865,9 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.709 -0400", hash_original_method = "439BAC8174DEF92DB2EFE731B080B752", hash_generated_method = "A23F732A4E7722A283814D417F149C4E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.924 -0400", hash_original_method = "439BAC8174DEF92DB2EFE731B080B752", hash_generated_method = "7CCF0FD217A769E99EB8256AD16A738D")
     private View fillFromSelection(int selectedTop, int childrenTop, int childrenBottom) {
-        dsTaint.addTaint(childrenBottom);
-        dsTaint.addTaint(childrenTop);
-        dsTaint.addTaint(selectedTop);
+        View varB4EAC82CA7396A68D541C85D26508E83_1917343889 = null; //Variable for return #1
         int fadingEdgeLength;
         fadingEdgeLength = getVerticalFadingEdgeLength();
         int selectedPosition;
@@ -858,7 +881,7 @@ public class ListView extends AbsListView {
                 selectedPosition);
         sel = makeAndAddView(selectedPosition, selectedTop, true, mListPadding.left, true);
         {
-            boolean varBFC41726DC719E4AF23B91CEB6FCBE3E_1372173066 = (sel.getBottom() > bottomSelectionPixel);
+            boolean varBFC41726DC719E4AF23B91CEB6FCBE3E_106025963 = (sel.getBottom() > bottomSelectionPixel);
             {
                 int spaceAbove;
                 spaceAbove = sel.getTop() - topSelectionPixel;
@@ -869,7 +892,7 @@ public class ListView extends AbsListView {
                 sel.offsetTopAndBottom(-offset);
             } //End block
             {
-                boolean var14C65EDD6D5526A3271EC007E995AA33_247736105 = (sel.getTop() < topSelectionPixel);
+                boolean var14C65EDD6D5526A3271EC007E995AA33_90111719 = (sel.getTop() < topSelectionPixel);
                 {
                     int spaceAbove;
                     spaceAbove = topSelectionPixel - sel.getTop();
@@ -888,25 +911,30 @@ public class ListView extends AbsListView {
         {
             correctTooLow(getChildCount());
         } //End block
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1917343889 = sel;
+        addTaint(selectedTop);
+        addTaint(childrenTop);
+        addTaint(childrenBottom);
+        varB4EAC82CA7396A68D541C85D26508E83_1917343889.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1917343889;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.710 -0400", hash_original_method = "DDE472821830C07DE1368C905BA02EE1", hash_generated_method = "D1B55420780883D64C0D09193ECD6FC7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.924 -0400", hash_original_method = "DDE472821830C07DE1368C905BA02EE1", hash_generated_method = "BA29EB06B877620DDEDB713F0757E34E")
     private int getBottomSelectionPixel(int childrenBottom, int fadingEdgeLength,
             int selectedPosition) {
-        dsTaint.addTaint(childrenBottom);
-        dsTaint.addTaint(selectedPosition);
-        dsTaint.addTaint(fadingEdgeLength);
         int bottomSelectionPixel;
         bottomSelectionPixel = childrenBottom;
         {
             bottomSelectionPixel -= fadingEdgeLength;
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(childrenBottom);
+        addTaint(fadingEdgeLength);
+        addTaint(selectedPosition);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1449001431 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1449001431;
         // ---------- Original Method ----------
         //int bottomSelectionPixel = childrenBottom;
         //if (selectedPosition != mItemCount - 1) {
@@ -916,18 +944,18 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.710 -0400", hash_original_method = "173BB2BFF18272B67A930A02164FEB0F", hash_generated_method = "CF2F11399972288C98873D46CA0A72C2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.932 -0400", hash_original_method = "173BB2BFF18272B67A930A02164FEB0F", hash_generated_method = "EA6F63F22DF8E1AA07FD032E0AD70763")
     private int getTopSelectionPixel(int childrenTop, int fadingEdgeLength, int selectedPosition) {
-        dsTaint.addTaint(childrenTop);
-        dsTaint.addTaint(selectedPosition);
-        dsTaint.addTaint(fadingEdgeLength);
         int topSelectionPixel;
         topSelectionPixel = childrenTop;
         {
             topSelectionPixel += fadingEdgeLength;
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(childrenTop);
+        addTaint(fadingEdgeLength);
+        addTaint(selectedPosition);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1792968583 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1792968583;
         // ---------- Original Method ----------
         //int topSelectionPixel = childrenTop;
         //if (selectedPosition > 0) {
@@ -937,37 +965,30 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.710 -0400", hash_original_method = "19B54E9E42F50C19B80602093C26BC32", hash_generated_method = "C57ED4CF81BD8746881B4F077DBD4F0D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.932 -0400", hash_original_method = "19B54E9E42F50C19B80602093C26BC32", hash_generated_method = "7A5836635E40602F9283C444E4C38BE2")
     @android.view.RemotableViewMethod
     public void smoothScrollToPosition(int position) {
-        dsTaint.addTaint(position);
         super.smoothScrollToPosition(position);
+        addTaint(position);
         // ---------- Original Method ----------
         //super.smoothScrollToPosition(position);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.710 -0400", hash_original_method = "9A2E566018459C8A4F9FE2F49DBB98B8", hash_generated_method = "1553B8DCA139E22A83755C1BBBB59543")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.932 -0400", hash_original_method = "9A2E566018459C8A4F9FE2F49DBB98B8", hash_generated_method = "DF8A45AA7313754A97BDE7860400CCDD")
     @android.view.RemotableViewMethod
     public void smoothScrollByOffset(int offset) {
-        dsTaint.addTaint(offset);
         super.smoothScrollByOffset(offset);
+        addTaint(offset);
         // ---------- Original Method ----------
         //super.smoothScrollByOffset(offset);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.711 -0400", hash_original_method = "A6BE2578E6D412634113B39CFD73986F", hash_generated_method = "4791A7BB03FD0DBC9D5A6E8F6D5AC8A5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.947 -0400", hash_original_method = "A6BE2578E6D412634113B39CFD73986F", hash_generated_method = "BAB62927807BB2E2F8DB4919926DC814")
     private View moveSelection(View oldSel, View newSel, int delta, int childrenTop,
             int childrenBottom) {
-        dsTaint.addTaint(delta);
-        dsTaint.addTaint(oldSel.dsTaint);
-        dsTaint.addTaint(childrenBottom);
-        dsTaint.addTaint(childrenTop);
-        dsTaint.addTaint(newSel.dsTaint);
+        View varB4EAC82CA7396A68D541C85D26508E83_705641796 = null; //Variable for return #1
         int fadingEdgeLength;
         fadingEdgeLength = getVerticalFadingEdgeLength();
         int selectedPosition;
@@ -987,7 +1008,7 @@ public class ListView extends AbsListView {
             sel = makeAndAddView(selectedPosition, oldSel.getBottom() + dividerHeight, true,
                     mListPadding.left, true);
             {
-                boolean var809044946283DBF63F29397A5670A6D0_1501046566 = (sel.getBottom() > bottomSelectionPixel);
+                boolean var809044946283DBF63F29397A5670A6D0_923875550 = (sel.getBottom() > bottomSelectionPixel);
                 {
                     int spaceAbove;
                     spaceAbove = sel.getTop() - topSelectionPixel;
@@ -1023,7 +1044,7 @@ public class ListView extends AbsListView {
                         true);
             } //End block
             {
-                boolean var14C65EDD6D5526A3271EC007E995AA33_1457393234 = (sel.getTop() < topSelectionPixel);
+                boolean var14C65EDD6D5526A3271EC007E995AA33_1882929114 = (sel.getTop() < topSelectionPixel);
                 {
                     int spaceAbove;
                     spaceAbove = topSelectionPixel - sel.getTop();
@@ -1052,23 +1073,25 @@ public class ListView extends AbsListView {
             } //End block
             fillAboveAndBelow(sel, selectedPosition);
         } //End block
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_705641796 = sel;
+        addTaint(oldSel.getTaint());
+        addTaint(newSel.getTaint());
+        addTaint(delta);
+        addTaint(childrenTop);
+        addTaint(childrenBottom);
+        varB4EAC82CA7396A68D541C85D26508E83_705641796.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_705641796;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.711 -0400", hash_original_method = "CB33E140CB7C8CB590395A9B1EF6CC8D", hash_generated_method = "6F4D5855E53652794BDA812AF52D3871")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.948 -0400", hash_original_method = "CB33E140CB7C8CB590395A9B1EF6CC8D", hash_generated_method = "CB562179E80E983F25D5A843A3FFE302")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(w);
-        dsTaint.addTaint(oldh);
-        dsTaint.addTaint(oldw);
-        dsTaint.addTaint(h);
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_68321336 = (getChildCount() > 0);
+            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1022272790 = (getChildCount() > 0);
             {
                 View focusedChild;
                 focusedChild = getFocusedChild();
@@ -1089,6 +1112,10 @@ public class ListView extends AbsListView {
             } //End block
         } //End collapsed parenthetic
         super.onSizeChanged(w, h, oldw, oldh);
+        addTaint(w);
+        addTaint(h);
+        addTaint(oldw);
+        addTaint(oldh);
         // ---------- Original Method ----------
         //if (getChildCount() > 0) {
             //View focusedChild = getFocusedChild();
@@ -1107,13 +1134,10 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.712 -0400", hash_original_method = "593EBCA8FD80357C209889704061F804", hash_generated_method = "C8E09A3A3EFFCAB7510E2401786EE3D2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.949 -0400", hash_original_method = "593EBCA8FD80357C209889704061F804", hash_generated_method = "7D444C6C1C69A64D55588FDD489C4703")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(heightMeasureSpec);
-        dsTaint.addTaint(widthMeasureSpec);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int widthMode;
         widthMode = MeasureSpec.getMode(widthMeasureSpec);
@@ -1138,7 +1162,7 @@ public class ListView extends AbsListView {
             childHeight = child.getMeasuredHeight();
             childState = combineMeasuredStates(childState, child.getMeasuredState());
             {
-                boolean varEB7649CB6D51B846BFB1D35E91D4E330_897112222 = (recycleOnMeasure() && mRecycler.shouldRecycleViewType(
+                boolean varEB7649CB6D51B846BFB1D35E91D4E330_265608598 = (recycleOnMeasure() && mRecycler.shouldRecycleViewType(
                     ((LayoutParams) child.getLayoutParams()).viewType));
                 {
                     mRecycler.addScrapView(child, -1);
@@ -1161,17 +1185,15 @@ public class ListView extends AbsListView {
         } //End block
         setMeasuredDimension(widthSize , heightSize);
         mWidthMeasureSpec = widthMeasureSpec;
+        addTaint(widthMeasureSpec);
+        addTaint(heightMeasureSpec);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.713 -0400", hash_original_method = "F21C4EE74005F045F306FF7685001DDA", hash_generated_method = "C508B376C92B6994290CFDEEFB9AD4FC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.960 -0400", hash_original_method = "F21C4EE74005F045F306FF7685001DDA", hash_generated_method = "D11163DE4F2609941AABE65442786448")
     private void measureScrapChild(View child, int position, int widthMeasureSpec) {
-        dsTaint.addTaint(position);
-        dsTaint.addTaint(child.dsTaint);
-        dsTaint.addTaint(widthMeasureSpec);
         LayoutParams p;
         p = (LayoutParams) child.getLayoutParams();
         {
@@ -1194,30 +1216,27 @@ public class ListView extends AbsListView {
             childHeightSpec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
         } //End block
         child.measure(childWidthSpec, childHeightSpec);
+        addTaint(child.getTaint());
+        addTaint(position);
+        addTaint(widthMeasureSpec);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.713 -0400", hash_original_method = "8F0B08D4426D8F4F23EF014B56CDCFE6", hash_generated_method = "17866D3C60D7004237B8222605A631FF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.960 -0400", hash_original_method = "8F0B08D4426D8F4F23EF014B56CDCFE6", hash_generated_method = "825C54F9382D5A2BE1601C508D61F8AC")
     @ViewDebug.ExportedProperty(category = "list")
     protected boolean recycleOnMeasure() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1949003776 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1949003776;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.713 -0400", hash_original_method = "4E8DF0CF85AB0B6CF8E1C94B60E67D20", hash_generated_method = "9ADA6A01B2DA989D7AADBD48E6E933C6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.961 -0400", hash_original_method = "4E8DF0CF85AB0B6CF8E1C94B60E67D20", hash_generated_method = "6369F926860769362BD85A6B4E1D3445")
     final int measureHeightOfChildren(int widthMeasureSpec, int startPosition, int endPosition,
             final int maxHeight, int disallowPartialChildPosition) {
-        dsTaint.addTaint(disallowPartialChildPosition);
-        dsTaint.addTaint(maxHeight);
-        dsTaint.addTaint(widthMeasureSpec);
-        dsTaint.addTaint(endPosition);
-        dsTaint.addTaint(startPosition);
         ListAdapter adapter;
         adapter = mAdapter;
         int returnedHeight;
@@ -1245,7 +1264,7 @@ public class ListView extends AbsListView {
                     returnedHeight += dividerHeight;
                 } //End block
                 {
-                    boolean var533FFAA3904216431C0F5E425FC7EAF1_400915603 = (recyle && recycleBin.shouldRecycleViewType(
+                    boolean var533FFAA3904216431C0F5E425FC7EAF1_760898781 = (recyle && recycleBin.shouldRecycleViewType(
                     ((LayoutParams) child.getLayoutParams()).viewType));
                     {
                         recycleBin.addScrapView(child, -1);
@@ -1257,17 +1276,21 @@ public class ListView extends AbsListView {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintInt();
+        addTaint(widthMeasureSpec);
+        addTaint(startPosition);
+        addTaint(endPosition);
+        addTaint(maxHeight);
+        addTaint(disallowPartialChildPosition);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1280718796 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1280718796;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.714 -0400", hash_original_method = "79128C90442A789B94FF9502F8C045C1", hash_generated_method = "59575B1737FCF4405DB88CC310040AC8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.962 -0400", hash_original_method = "79128C90442A789B94FF9502F8C045C1", hash_generated_method = "9E6FE3F7CF7956F22CD97C7F9B640366")
     @Override
      int findMotionRow(int y) {
-        dsTaint.addTaint(y);
         int childCount;
         childCount = getChildCount();
         {
@@ -1279,7 +1302,7 @@ public class ListView extends AbsListView {
                         View v;
                         v = getChildAt(i);
                         {
-                            boolean var737FD9EF3BFA62490E57511E301591D9_1627310720 = (y <= v.getBottom());
+                            boolean var737FD9EF3BFA62490E57511E301591D9_252475434 = (y <= v.getBottom());
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
@@ -1292,13 +1315,15 @@ public class ListView extends AbsListView {
                         View v;
                         v = getChildAt(i);
                         {
-                            boolean varE7C2FBE8C17E6A36CCD2B0AC678BC146_687505211 = (y >= v.getTop());
+                            boolean varE7C2FBE8C17E6A36CCD2B0AC678BC146_1273289210 = (y >= v.getTop());
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(y);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2037092043 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2037092043;
         // ---------- Original Method ----------
         //int childCount = getChildCount();
         //if (childCount > 0) {
@@ -1322,11 +1347,11 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.714 -0400", hash_original_method = "C0E9548D6FEBBB39DCAB5DD502EC06AD", hash_generated_method = "8E0F0376D53E11B19775550A8099EA53")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.985 -0400", hash_original_method = "C0E9548D6FEBBB39DCAB5DD502EC06AD", hash_generated_method = "BD451D6C131122E4522A178477BAA195")
     private View fillSpecific(int position, int top) {
-        dsTaint.addTaint(position);
-        dsTaint.addTaint(top);
+        View varB4EAC82CA7396A68D541C85D26508E83_2080091263 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_993363818 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_1019861550 = null; //Variable for return #3
         boolean tempIsSelected;
         tempIsSelected = position == mSelectedPosition;
         View temp;
@@ -1356,16 +1381,38 @@ public class ListView extends AbsListView {
                 correctTooLow(childCount);
             } //End block
         } //End block
-        return (View)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_2080091263 = temp;
+        } //End block
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_993363818 = above;
+        } //End block
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1019861550 = below;
+        } //End block
+        addTaint(position);
+        addTaint(top);
+        View varA7E53CE21691AB073D9660D615818899_1325361478; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1325361478 = varB4EAC82CA7396A68D541C85D26508E83_2080091263;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1325361478 = varB4EAC82CA7396A68D541C85D26508E83_993363818;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1325361478 = varB4EAC82CA7396A68D541C85D26508E83_1019861550;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1325361478.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1325361478;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.714 -0400", hash_original_method = "C65533A90B04CD548C8B98EAAB2119A6", hash_generated_method = "C485B4AEAEAB25B61A87ECDE1B1E7F59")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.986 -0400", hash_original_method = "C65533A90B04CD548C8B98EAAB2119A6", hash_generated_method = "D14AE80B2538EAE4A63E1E4615B55316")
     private void correctTooHigh(int childCount) {
-        dsTaint.addTaint(childCount);
         int lastPosition;
         lastPosition = mFirstPosition + childCount - 1;
         {
@@ -1392,15 +1439,14 @@ public class ListView extends AbsListView {
                 } //End block
             } //End block
         } //End block
+        addTaint(childCount);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.715 -0400", hash_original_method = "D798F76D04F235C59E38C4C924A6B5C2", hash_generated_method = "510059D85EC6DD33BE1D1B2F3F5F0701")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.987 -0400", hash_original_method = "D798F76D04F235C59E38C4C924A6B5C2", hash_generated_method = "BD8D720D60DEBBDECC60A5C52CA23119")
     private void correctTooLow(int childCount) {
-        dsTaint.addTaint(childCount);
         {
             View firstChild;
             firstChild = getChildAt(0);
@@ -1434,13 +1480,13 @@ public class ListView extends AbsListView {
                 } //End block
             } //End block
         } //End block
+        addTaint(childCount);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.716 -0400", hash_original_method = "9877500E639FE4AE4AB75D2F74BF2E4E", hash_generated_method = "24BBCA003322EA0FA66A95E13D79C1A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.086 -0400", hash_original_method = "9877500E639FE4AE4AB75D2F74BF2E4E", hash_generated_method = "8B9ADB8C7DEF1E262314A15B427EB1FB")
     @Override
     protected void layoutChildren() {
         boolean blockLayoutRequests;
@@ -1512,7 +1558,7 @@ public class ListView extends AbsListView {
                 invokeOnItemScrollListener();
             } //End block
             {
-                boolean varA298A0CB79AEDD2E132E7DADF2F1B74D_1047666925 = (mItemCount != mAdapter.getCount());
+                boolean varA298A0CB79AEDD2E132E7DADF2F1B74D_867697320 = (mItemCount != mAdapter.getCount());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("The content of the adapter has changed but "
                         + "ListView did not receive a notification. Make sure the content of "
@@ -1548,7 +1594,7 @@ public class ListView extends AbsListView {
             focusedChild = getFocusedChild();
             {
                 {
-                    boolean varE616BE978FFFDD1A37C1939042B395B1_7301365 = (!dataChanged || isDirectChildHeaderOrFooter(focusedChild));
+                    boolean varE616BE978FFFDD1A37C1939042B395B1_804759836 = (!dataChanged || isDirectChildHeaderOrFooter(focusedChild));
                     {
                         focusLayoutRestoreDirectChild = focusedChild;
                         focusLayoutRestoreView = findFocus();
@@ -1624,7 +1670,7 @@ public class ListView extends AbsListView {
             recycleBin.scrapActiveViews();
             {
                 {
-                    boolean var9085EE91A28170DA4ACA96D9BF477D88_940414007 = (mItemsCanFocus && hasFocus() && !sel.hasFocus());
+                    boolean var9085EE91A28170DA4ACA96D9BF477D88_152599463 = (mItemsCanFocus && hasFocus() && !sel.hasFocus());
                     {
                         boolean focusWasTaken;
                         focusWasTaken = (sel == focusLayoutRestoreDirectChild &&
@@ -1659,14 +1705,14 @@ public class ListView extends AbsListView {
                     mSelectorRect.setEmpty();
                 } //End block
                 {
-                    boolean var3353F8886B6D2D3385EBD44764EEC6B6_1872712182 = (hasFocus() && focusLayoutRestoreView != null);
+                    boolean var3353F8886B6D2D3385EBD44764EEC6B6_1964454216 = (hasFocus() && focusLayoutRestoreView != null);
                     {
                         focusLayoutRestoreView.requestFocus();
                     } //End block
                 } //End collapsed parenthetic
             } //End block
             {
-                boolean var371628C1F86A56F688D98D9EF6B87E07_1093729298 = (focusLayoutRestoreView != null
+                boolean var371628C1F86A56F688D98D9EF6B87E07_1239561868 = (focusLayoutRestoreView != null
                     && focusLayoutRestoreView.getWindowToken() != null);
                 {
                     focusLayoutRestoreView.onFinishTemporaryDetach();
@@ -1693,10 +1739,8 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.717 -0400", hash_original_method = "1975AA11D0AB4A92B498BEF09326AA69", hash_generated_method = "6E0CC4317B9EC5C68B4FB30A8F51D708")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.094 -0400", hash_original_method = "1975AA11D0AB4A92B498BEF09326AA69", hash_generated_method = "F5E4DC46815E1D4016DD09BD9986DDE7")
     private boolean isDirectChildHeaderOrFooter(View child) {
-        dsTaint.addTaint(child.dsTaint);
         ArrayList<FixedViewInfo> headers;
         headers = mHeaderViewInfos;
         int numHeaders;
@@ -1706,7 +1750,7 @@ public class ListView extends AbsListView {
             i = 0;
             {
                 {
-                    boolean var2E97F2DD1ECC5E322C5090F5951EC49E_1234471811 = (child == headers.get(i).view);
+                    boolean var2E97F2DD1ECC5E322C5090F5951EC49E_699053429 = (child == headers.get(i).view);
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
@@ -1719,11 +1763,13 @@ public class ListView extends AbsListView {
             i = 0;
             {
                 {
-                    boolean varA845DE916470E49791E6F275395553FA_2136001327 = (child == footers.get(i).view);
+                    boolean varA845DE916470E49791E6F275395553FA_503221226 = (child == footers.get(i).view);
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(child.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1162259259 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1162259259;
         // ---------- Original Method ----------
         //final ArrayList<FixedViewInfo> headers = mHeaderViewInfos;
         //final int numHeaders = headers.size();
@@ -1743,15 +1789,11 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.718 -0400", hash_original_method = "EAF848DCFCD435D3CED323F008D83518", hash_generated_method = "9D0FC8E9617EBBAF69172FB4E2323D21")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.096 -0400", hash_original_method = "EAF848DCFCD435D3CED323F008D83518", hash_generated_method = "30CAD930D3C99E36115997581D78BA50")
     private View makeAndAddView(int position, int y, boolean flow, int childrenLeft,
             boolean selected) {
-        dsTaint.addTaint(position);
-        dsTaint.addTaint(selected);
-        dsTaint.addTaint(childrenLeft);
-        dsTaint.addTaint(flow);
-        dsTaint.addTaint(y);
+        View varB4EAC82CA7396A68D541C85D26508E83_1399322208 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1767427580 = null; //Variable for return #2
         View child;
         {
             child = mRecycler.getActiveView(position);
@@ -1761,11 +1803,28 @@ public class ListView extends AbsListView {
                             position, getChildCount());
                 } //End block
                 setupChild(child, position, y, flow, childrenLeft, selected, true);
+                varB4EAC82CA7396A68D541C85D26508E83_1399322208 = child;
             } //End block
         } //End block
         child = obtainView(position, mIsScrap);
         setupChild(child, position, y, flow, childrenLeft, selected, mIsScrap[0]);
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1767427580 = child;
+        addTaint(position);
+        addTaint(y);
+        addTaint(flow);
+        addTaint(childrenLeft);
+        addTaint(selected);
+        View varA7E53CE21691AB073D9660D615818899_1727954960; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1727954960 = varB4EAC82CA7396A68D541C85D26508E83_1399322208;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1727954960 = varB4EAC82CA7396A68D541C85D26508E83_1767427580;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1727954960.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1727954960;
         // ---------- Original Method ----------
         //View child;
         //if (!mDataChanged) {
@@ -1785,17 +1844,9 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.719 -0400", hash_original_method = "06B6C56B5992091F7319E58A5C4AE35A", hash_generated_method = "473F04E14909577DBA81CDAC37A7601C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.099 -0400", hash_original_method = "06B6C56B5992091F7319E58A5C4AE35A", hash_generated_method = "9DD0893BDA19C397D0394BD1E985A6B8")
     private void setupChild(View child, int position, int y, boolean flowDown, int childrenLeft,
             boolean selected, boolean recycled) {
-        dsTaint.addTaint(position);
-        dsTaint.addTaint(child.dsTaint);
-        dsTaint.addTaint(selected);
-        dsTaint.addTaint(recycled);
-        dsTaint.addTaint(childrenLeft);
-        dsTaint.addTaint(flowDown);
-        dsTaint.addTaint(y);
         boolean isSelected;
         isSelected = selected && shouldShowSelector();
         boolean updateChildSelected;
@@ -1837,7 +1888,7 @@ public class ListView extends AbsListView {
                 ((Checkable) child).setChecked(mCheckStates.get(position));
             } //End block
             {
-                boolean var6B8ECFCCB35D70022AE775423EF95EFF_552140841 = (getContext().getApplicationInfo().targetSdkVersion
+                boolean var6B8ECFCCB35D70022AE775423EF95EFF_262836421 = (getContext().getApplicationInfo().targetSdkVersion
                     >= android.os.Build.VERSION_CODES.HONEYCOMB);
                 {
                     child.setActivated(mCheckStates.get(position));
@@ -1881,52 +1932,55 @@ public class ListView extends AbsListView {
             child.offsetTopAndBottom(childTop - child.getTop());
         } //End block
         {
-            boolean varFE983D8157D9C3BB7AF96BB07D8A50F7_967339535 = (mCachingStarted && !child.isDrawingCacheEnabled());
+            boolean varFE983D8157D9C3BB7AF96BB07D8A50F7_1953650761 = (mCachingStarted && !child.isDrawingCacheEnabled());
             {
                 child.setDrawingCacheEnabled(true);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varCA9C9DB394586E5C1281E2A995FFCD63_1384717601 = (recycled && (((AbsListView.LayoutParams)child.getLayoutParams()).scrappedFromPosition)
+            boolean varCA9C9DB394586E5C1281E2A995FFCD63_481225215 = (recycled && (((AbsListView.LayoutParams)child.getLayoutParams()).scrappedFromPosition)
                 != position);
             {
                 child.jumpDrawablesToCurrentState();
             } //End block
         } //End collapsed parenthetic
+        addTaint(child.getTaint());
+        addTaint(position);
+        addTaint(y);
+        addTaint(flowDown);
+        addTaint(childrenLeft);
+        addTaint(selected);
+        addTaint(recycled);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.720 -0400", hash_original_method = "F40AC428F4D570BD34339564A5B5BB04", hash_generated_method = "5E526E879410D13A2A1BD3372CD9A417")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.101 -0400", hash_original_method = "F40AC428F4D570BD34339564A5B5BB04", hash_generated_method = "E02495E43BBEFF5A86EA2C5601F2C5C7")
     @Override
     protected boolean canAnimate() {
-        boolean varDA480D2F8FF037BACA5DB54A8FBF9642_81917343 = (super.canAnimate() && mItemCount > 0);
-        return dsTaint.getTaintBoolean();
+        boolean varDA480D2F8FF037BACA5DB54A8FBF9642_245810031 = (super.canAnimate() && mItemCount > 0);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1435942676 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1435942676;
         // ---------- Original Method ----------
         //return super.canAnimate() && mItemCount > 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.720 -0400", hash_original_method = "94D2F20BDBA41376781BE37B36941A8A", hash_generated_method = "008A9DA61F8B9AB3F1ED6E9157751131")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.102 -0400", hash_original_method = "94D2F20BDBA41376781BE37B36941A8A", hash_generated_method = "9CCC25E7FAB162595C36123BA6715042")
     @Override
     public void setSelection(int position) {
-        dsTaint.addTaint(position);
         setSelectionFromTop(position, 0);
+        addTaint(position);
         // ---------- Original Method ----------
         //setSelectionFromTop(position, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.720 -0400", hash_original_method = "04FF3361CA0379851E7CD86AE0D8A950", hash_generated_method = "09DFF25E8A23B103F61837295256C6C3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.113 -0400", hash_original_method = "04FF3361CA0379851E7CD86AE0D8A950", hash_generated_method = "E1D82DBCBDD7D3CF9DCDFCB898551352")
     public void setSelectionFromTop(int position, int y) {
-        dsTaint.addTaint(position);
-        dsTaint.addTaint(y);
         {
-            boolean var3DA6B9D2A4DFFBF2A8164819B7AFE9DF_568071274 = (!isInTouchMode());
+            boolean var3DA6B9D2A4DFFBF2A8164819B7AFE9DF_798610532 = (!isInTouchMode());
             {
                 position = lookForSelectablePosition(position, true);
                 {
@@ -1946,6 +2000,8 @@ public class ListView extends AbsListView {
             } //End block
             requestLayout();
         } //End block
+        addTaint(position);
+        addTaint(y);
         // ---------- Original Method ----------
         //if (mAdapter == null) {
             //return;
@@ -1970,11 +2026,9 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.721 -0400", hash_original_method = "813C2C2B521DC76439D7A0687ADC333C", hash_generated_method = "018A35329B31E44C4C8238ADB00D1E2C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.114 -0400", hash_original_method = "813C2C2B521DC76439D7A0687ADC333C", hash_generated_method = "DED801A417D86767F07D3825342BB8BE")
     @Override
      void setSelectionInt(int position) {
-        dsTaint.addTaint(position);
         setNextSelectedPositionInt(position);
         boolean awakeScrollbars;
         awakeScrollbars = false;
@@ -1992,6 +2046,7 @@ public class ListView extends AbsListView {
         {
             awakenScrollBars();
         } //End block
+        addTaint(position);
         // ---------- Original Method ----------
         //setNextSelectedPositionInt(position);
         //boolean awakeScrollbars = false;
@@ -2010,16 +2065,13 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.721 -0400", hash_original_method = "F611253C286EB5F8129DFD60BE22D44F", hash_generated_method = "A1D46AF0700FC52F8562662E31D840AC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.121 -0400", hash_original_method = "F611253C286EB5F8129DFD60BE22D44F", hash_generated_method = "8B48BF4ADF26D05454C6D2738916BDB5")
     @Override
      int lookForSelectablePosition(int position, boolean lookDown) {
-        dsTaint.addTaint(position);
-        dsTaint.addTaint(lookDown);
         ListAdapter adapter;
         adapter = mAdapter;
         {
-            boolean var35A1F64E67CC6E0C06A8BA9582F2435F_711013995 = (adapter == null || isInTouchMode());
+            boolean var35A1F64E67CC6E0C06A8BA9582F2435F_874304317 = (adapter == null || isInTouchMode());
         } //End collapsed parenthetic
         int count;
         count = adapter.getCount();
@@ -2027,24 +2079,26 @@ public class ListView extends AbsListView {
             {
                 position = Math.max(0, position);
                 {
-                    boolean varF9E3A5AB0092C9F908FE41D43CDE1F43_883157970 = (position < count && !adapter.isEnabled(position));
+                    boolean varF9E3A5AB0092C9F908FE41D43CDE1F43_179152230 = (position < count && !adapter.isEnabled(position));
                 } //End collapsed parenthetic
             } //End block
             {
                 position = Math.min(position, count - 1);
                 {
-                    boolean var86CF05D4F4C580D8A474D386CDE84CF9_1873731341 = (position >= 0 && !adapter.isEnabled(position));
+                    boolean var86CF05D4F4C580D8A474D386CDE84CF9_217232192 = (position >= 0 && !adapter.isEnabled(position));
                 } //End collapsed parenthetic
             } //End block
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(position);
+        addTaint(lookDown);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1089003675 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1089003675;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.721 -0400", hash_original_method = "BA94B118F7B33B042A8A5EE913A2CAC9", hash_generated_method = "6856869DC1BFBD01AB458454BA7C82EC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.122 -0400", hash_original_method = "BA94B118F7B33B042A8A5EE913A2CAC9", hash_generated_method = "6856869DC1BFBD01AB458454BA7C82EC")
     public void setSelectionAfterHeaderView() {
         int count;
         count = mHeaderViewInfos.size();
@@ -2073,24 +2127,24 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.721 -0400", hash_original_method = "C6695FE09C5666FBD7C0ECDD7FFCA6CE", hash_generated_method = "B48D6E590408F2B2E1D428C9898A5487")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.122 -0400", hash_original_method = "C6695FE09C5666FBD7C0ECDD7FFCA6CE", hash_generated_method = "714F74787A064FC72F838F80DF128492")
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
-        dsTaint.addTaint(event.dsTaint);
         boolean handled;
         handled = super.dispatchKeyEvent(event);
         {
             View focused;
             focused = getFocusedChild();
             {
-                boolean varD6F50D5E6BAAF6A4042506AB741CE740_813469271 = (focused != null && event.getAction() == KeyEvent.ACTION_DOWN);
+                boolean varD6F50D5E6BAAF6A4042506AB741CE740_1533194368 = (focused != null && event.getAction() == KeyEvent.ACTION_DOWN);
                 {
                     handled = onKeyDown(event.getKeyCode(), event);
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(event.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_351198 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_351198;
         // ---------- Original Method ----------
         //boolean handled = super.dispatchKeyEvent(event);
         //if (!handled) {
@@ -2103,55 +2157,51 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.722 -0400", hash_original_method = "82498D99AFEB0700B1F959E9E9927B59", hash_generated_method = "ACAAC0FF66E91EBA9E41C3CCB5D1D099")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.123 -0400", hash_original_method = "82498D99AFEB0700B1F959E9E9927B59", hash_generated_method = "7C2D67513B6DB05D34A5499933557E1D")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(keyCode);
-        dsTaint.addTaint(event.dsTaint);
-        boolean var7B6BE27715D36B6032CB7DA2718D4FF1_1382960499 = (commonKey(keyCode, 1, event));
-        return dsTaint.getTaintBoolean();
+        boolean var7B6BE27715D36B6032CB7DA2718D4FF1_375155631 = (commonKey(keyCode, 1, event));
+        addTaint(keyCode);
+        addTaint(event.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_949615191 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_949615191;
         // ---------- Original Method ----------
         //return commonKey(keyCode, 1, event);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.722 -0400", hash_original_method = "C105EC1B6481173F2A66D1C47882507B", hash_generated_method = "78D0EA82DABC3FBA3CB020AE81A05917")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.123 -0400", hash_original_method = "C105EC1B6481173F2A66D1C47882507B", hash_generated_method = "924968CDF3AFAB85D09CE932A454CB52")
     @Override
     public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(keyCode);
-        dsTaint.addTaint(event.dsTaint);
-        dsTaint.addTaint(repeatCount);
-        boolean varACEC8A58158104BC4BBB2FE543212B03_188542642 = (commonKey(keyCode, repeatCount, event));
-        return dsTaint.getTaintBoolean();
+        boolean varACEC8A58158104BC4BBB2FE543212B03_1722354246 = (commonKey(keyCode, repeatCount, event));
+        addTaint(keyCode);
+        addTaint(repeatCount);
+        addTaint(event.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1097706506 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1097706506;
         // ---------- Original Method ----------
         //return commonKey(keyCode, repeatCount, event);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.722 -0400", hash_original_method = "FFB4A1626C41573790F9B17FF23F8A09", hash_generated_method = "FCB3B6E67662CCC96DE8FC4A5EA44A4F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.123 -0400", hash_original_method = "FFB4A1626C41573790F9B17FF23F8A09", hash_generated_method = "DF0DF6B6E39E1E6B579FE42ED5485368")
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(keyCode);
-        dsTaint.addTaint(event.dsTaint);
-        boolean var7B6BE27715D36B6032CB7DA2718D4FF1_1378597096 = (commonKey(keyCode, 1, event));
-        return dsTaint.getTaintBoolean();
+        boolean var7B6BE27715D36B6032CB7DA2718D4FF1_486591197 = (commonKey(keyCode, 1, event));
+        addTaint(keyCode);
+        addTaint(event.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_283400915 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_283400915;
         // ---------- Original Method ----------
         //return commonKey(keyCode, 1, event);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.723 -0400", hash_original_method = "1DD47D400FE7B21B7ADCD2D234FB64A7", hash_generated_method = "1FC78F7479F23A57B137CA34EEA725FF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.126 -0400", hash_original_method = "1DD47D400FE7B21B7ADCD2D234FB64A7", hash_generated_method = "B7552189C40F7AFAD653B40918D1E23D")
     private boolean commonKey(int keyCode, int count, KeyEvent event) {
-        dsTaint.addTaint(keyCode);
-        dsTaint.addTaint(count);
-        dsTaint.addTaint(event.dsTaint);
         {
             layoutChildren();
         } //End block
@@ -2162,13 +2212,13 @@ public class ListView extends AbsListView {
         {
             //Begin case KeyEvent.KEYCODE_DPAD_UP 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_586225511 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_665494751 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded();
                     {
                         {
                             {
-                                boolean varA5B62ED4C691B4536F3BE2ACFD937D16_1452307577 = (arrowScroll(FOCUS_UP));
+                                boolean varA5B62ED4C691B4536F3BE2ACFD937D16_1256463650 = (arrowScroll(FOCUS_UP));
                                 {
                                     handled = true;
                                 } //End block
@@ -2177,7 +2227,7 @@ public class ListView extends AbsListView {
                     } //End block
                 } //End block
                 {
-                    boolean varAB36CD08CFCE6244F546B808D5F456D4_1107124858 = (event.hasModifiers(KeyEvent.META_ALT_ON));
+                    boolean varAB36CD08CFCE6244F546B808D5F456D4_350777302 = (event.hasModifiers(KeyEvent.META_ALT_ON));
                     {
                         handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_UP);
                     } //End block
@@ -2186,13 +2236,13 @@ public class ListView extends AbsListView {
             //End case KeyEvent.KEYCODE_DPAD_UP 
             //Begin case KeyEvent.KEYCODE_DPAD_DOWN 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_1117167998 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_1282149701 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded();
                     {
                         {
                             {
-                                boolean varAA5CCD5687C9D983EE1C69076A1EA7F2_808560090 = (arrowScroll(FOCUS_DOWN));
+                                boolean varAA5CCD5687C9D983EE1C69076A1EA7F2_1136005282 = (arrowScroll(FOCUS_DOWN));
                                 {
                                     handled = true;
                                 } //End block
@@ -2201,7 +2251,7 @@ public class ListView extends AbsListView {
                     } //End block
                 } //End block
                 {
-                    boolean varAB36CD08CFCE6244F546B808D5F456D4_2045816300 = (event.hasModifiers(KeyEvent.META_ALT_ON));
+                    boolean varAB36CD08CFCE6244F546B808D5F456D4_547409015 = (event.hasModifiers(KeyEvent.META_ALT_ON));
                     {
                         handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_DOWN);
                     } //End block
@@ -2210,7 +2260,7 @@ public class ListView extends AbsListView {
             //End case KeyEvent.KEYCODE_DPAD_DOWN 
             //Begin case KeyEvent.KEYCODE_DPAD_LEFT 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_988161367 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_548756620 = (event.hasNoModifiers());
                 {
                     handled = handleHorizontalFocusWithinListItem(View.FOCUS_LEFT);
                 } //End block
@@ -2218,7 +2268,7 @@ public class ListView extends AbsListView {
             //End case KeyEvent.KEYCODE_DPAD_LEFT 
             //Begin case KeyEvent.KEYCODE_DPAD_RIGHT 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_256625850 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_1836074879 = (event.hasNoModifiers());
                 {
                     handled = handleHorizontalFocusWithinListItem(View.FOCUS_RIGHT);
                 } //End block
@@ -2226,11 +2276,11 @@ public class ListView extends AbsListView {
             //End case KeyEvent.KEYCODE_DPAD_RIGHT 
             //Begin case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_947314265 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_737569157 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded();
                     {
-                        boolean var0998D8B15B32EB34977168615D32B617_279661172 = (!handled
+                        boolean var0998D8B15B32EB34977168615D32B617_792487012 = (!handled
                             && event.getRepeatCount() == 0 && getChildCount() > 0);
                         {
                             keyPressed();
@@ -2242,15 +2292,15 @@ public class ListView extends AbsListView {
             //End case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
             //Begin case KeyEvent.KEYCODE_SPACE 
             {
-                boolean varC5267D5BFE7A3E261BDE80A07A8ECCFA_177798805 = (mPopup == null || !mPopup.isShowing());
+                boolean varC5267D5BFE7A3E261BDE80A07A8ECCFA_867526239 = (mPopup == null || !mPopup.isShowing());
                 {
                     {
-                        boolean var3A3095F7575E47050F710FB26AF5006E_1841355211 = (event.hasNoModifiers());
+                        boolean var3A3095F7575E47050F710FB26AF5006E_1019248962 = (event.hasNoModifiers());
                         {
                             handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_DOWN);
                         } //End block
                         {
-                            boolean varC6F58190DE4A31A0CF9704EF99A62451_1158307319 = (event.hasModifiers(KeyEvent.META_SHIFT_ON));
+                            boolean varC6F58190DE4A31A0CF9704EF99A62451_133630818 = (event.hasModifiers(KeyEvent.META_SHIFT_ON));
                             {
                                 handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_UP);
                             } //End block
@@ -2262,12 +2312,12 @@ public class ListView extends AbsListView {
             //End case KeyEvent.KEYCODE_SPACE 
             //Begin case KeyEvent.KEYCODE_PAGE_UP 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_785354232 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_2046491375 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_UP);
                 } //End block
                 {
-                    boolean varAB36CD08CFCE6244F546B808D5F456D4_1335889125 = (event.hasModifiers(KeyEvent.META_ALT_ON));
+                    boolean varAB36CD08CFCE6244F546B808D5F456D4_1036991381 = (event.hasModifiers(KeyEvent.META_ALT_ON));
                     {
                         handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_UP);
                     } //End block
@@ -2276,12 +2326,12 @@ public class ListView extends AbsListView {
             //End case KeyEvent.KEYCODE_PAGE_UP 
             //Begin case KeyEvent.KEYCODE_PAGE_DOWN 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_695081153 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_911218522 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_DOWN);
                 } //End block
                 {
-                    boolean varAB36CD08CFCE6244F546B808D5F456D4_1680399464 = (event.hasModifiers(KeyEvent.META_ALT_ON));
+                    boolean varAB36CD08CFCE6244F546B808D5F456D4_1124203647 = (event.hasModifiers(KeyEvent.META_ALT_ON));
                     {
                         handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_DOWN);
                     } //End block
@@ -2290,7 +2340,7 @@ public class ListView extends AbsListView {
             //End case KeyEvent.KEYCODE_PAGE_DOWN 
             //Begin case KeyEvent.KEYCODE_MOVE_HOME 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_1622084219 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_647555388 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_UP);
                 } //End block
@@ -2298,7 +2348,7 @@ public class ListView extends AbsListView {
             //End case KeyEvent.KEYCODE_MOVE_HOME 
             //Begin case KeyEvent.KEYCODE_MOVE_END 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_936690617 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_1559163630 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_DOWN);
                 } //End block
@@ -2307,12 +2357,12 @@ public class ListView extends AbsListView {
             //Begin case KeyEvent.KEYCODE_TAB 
             {
                 {
-                    boolean varC77C0C11194BD87DFEE086A32DCE5C18_2017460654 = (event.hasNoModifiers());
+                    boolean varC77C0C11194BD87DFEE086A32DCE5C18_1307346614 = (event.hasNoModifiers());
                     {
                         handled = resurrectSelectionIfNeeded() || arrowScroll(FOCUS_DOWN);
                     } //End block
                     {
-                        boolean var7B1040B2192949CFC257B6EE7F25C319_2084977757 = (event.hasModifiers(KeyEvent.META_SHIFT_ON));
+                        boolean var7B1040B2192949CFC257B6EE7F25C319_1809783796 = (event.hasModifiers(KeyEvent.META_SHIFT_ON));
                         {
                             handled = resurrectSelectionIfNeeded() || arrowScroll(FOCUS_UP);
                         } //End block
@@ -2322,27 +2372,29 @@ public class ListView extends AbsListView {
             //End case KeyEvent.KEYCODE_TAB 
         } //End block
         {
-            boolean varF6449376E291BB335EF050093EE80110_797843563 = (sendToTextFilter(keyCode, count, event));
+            boolean varF6449376E291BB335EF050093EE80110_520098619 = (sendToTextFilter(keyCode, count, event));
         } //End collapsed parenthetic
         //Begin case KeyEvent.ACTION_DOWN 
-        boolean var8C6E6C19273FC56B5C56CC7DEF63ED7B_959911113 = (super.onKeyDown(keyCode, event));
+        boolean var8C6E6C19273FC56B5C56CC7DEF63ED7B_1640026381 = (super.onKeyDown(keyCode, event));
         //End case KeyEvent.ACTION_DOWN 
         //Begin case KeyEvent.ACTION_UP 
-        boolean varEDD771EBF66425AD21882AB08CD0EE48_2007635096 = (super.onKeyUp(keyCode, event));
+        boolean varEDD771EBF66425AD21882AB08CD0EE48_1013394013 = (super.onKeyUp(keyCode, event));
         //End case KeyEvent.ACTION_UP 
         //Begin case KeyEvent.ACTION_MULTIPLE 
-        boolean varC0357E39557DD275ECAF43C782C78502_1086973723 = (super.onKeyMultiple(keyCode, count, event));
+        boolean varC0357E39557DD275ECAF43C782C78502_18312171 = (super.onKeyMultiple(keyCode, count, event));
         //End case KeyEvent.ACTION_MULTIPLE 
-        return dsTaint.getTaintBoolean();
+        addTaint(keyCode);
+        addTaint(count);
+        addTaint(event.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1699038785 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1699038785;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.724 -0400", hash_original_method = "CFFD02C88D512DC860E9CC0FE1096C45", hash_generated_method = "2C27659025D665785FE3D29B6A92E999")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.143 -0400", hash_original_method = "CFFD02C88D512DC860E9CC0FE1096C45", hash_generated_method = "5255DE2D91BE04C38520A5DC42075F54")
      boolean pageScroll(int direction) {
-        dsTaint.addTaint(direction);
         int nextPage;
         nextPage = -1;
         boolean down;
@@ -2361,13 +2413,13 @@ public class ListView extends AbsListView {
                 mLayoutMode = LAYOUT_SPECIFIC;
                 mSpecificTop = mPaddingTop + getVerticalFadingEdgeLength();
                 {
-                    boolean varA164A5303752DF647D9BF6996D101837_1339093699 = (down && position > mItemCount - getChildCount());
+                    boolean varA164A5303752DF647D9BF6996D101837_987661050 = (down && position > mItemCount - getChildCount());
                     {
                         mLayoutMode = LAYOUT_FORCE_BOTTOM;
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var110612621C7A8EA496F1D2C158694581_1022901627 = (!down && position < getChildCount());
+                    boolean var110612621C7A8EA496F1D2C158694581_170698271 = (!down && position < getChildCount());
                     {
                         mLayoutMode = LAYOUT_FORCE_TOP;
                     } //End block
@@ -2375,23 +2427,23 @@ public class ListView extends AbsListView {
                 setSelectionInt(position);
                 invokeOnItemScrollListener();
                 {
-                    boolean var23B792A36C4A2414CF3FD466E934AAC2_1155787086 = (!awakenScrollBars());
+                    boolean var23B792A36C4A2414CF3FD466E934AAC2_652297547 = (!awakenScrollBars());
                     {
                         invalidate();
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(direction);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1529950241 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1529950241;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.724 -0400", hash_original_method = "8893A9BFD4970E039D8D32407D02C15E", hash_generated_method = "81A6713BEF8DD0DABECA40D8FF70EC7D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.151 -0400", hash_original_method = "8893A9BFD4970E039D8D32407D02C15E", hash_generated_method = "CA3FB2FDDC28F38C893C352EE7DCED27")
      boolean fullScroll(int direction) {
-        dsTaint.addTaint(direction);
         boolean moved;
         moved = false;
         {
@@ -2419,22 +2471,22 @@ public class ListView extends AbsListView {
             } //End block
         } //End block
         {
-            boolean var5B952B5E17217FEE8BC4BB0979561FA3_629490960 = (moved && !awakenScrollBars());
+            boolean var5B952B5E17217FEE8BC4BB0979561FA3_688035081 = (moved && !awakenScrollBars());
             {
                 awakenScrollBars();
                 invalidate();
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(direction);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1643126658 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1643126658;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.725 -0400", hash_original_method = "27083050B4DD915BDC5D45A692A1DFB7", hash_generated_method = "6A2E00368CF380C3DC506DA04DE149F9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.154 -0400", hash_original_method = "27083050B4DD915BDC5D45A692A1DFB7", hash_generated_method = "5A25B6D4438F7343BD578B752D32A80B")
     private boolean handleHorizontalFocusWithinListItem(int direction) {
-        dsTaint.addTaint(direction);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("direction must be one of"
                     + " {View.FOCUS_LEFT, View.FOCUS_RIGHT}");
@@ -2445,7 +2497,7 @@ public class ListView extends AbsListView {
             View selectedView;
             selectedView = getSelectedView();
             {
-                boolean var5A370CFD3CE8F716DF439EFB07635CD0_1352499950 = (selectedView != null && selectedView.hasFocus() &&
+                boolean var5A370CFD3CE8F716DF439EFB07635CD0_840760850 = (selectedView != null && selectedView.hasFocus() &&
                     selectedView instanceof ViewGroup);
                 {
                     View currentFocus;
@@ -2458,28 +2510,28 @@ public class ListView extends AbsListView {
                         offsetDescendantRectToMyCoords(currentFocus, mTempRect);
                         offsetRectIntoDescendantCoords(nextFocus, mTempRect);
                         {
-                            boolean var76D8898CFBC448597F15A4BC0E876792_2005501332 = (nextFocus.requestFocus(direction, mTempRect));
+                            boolean var76D8898CFBC448597F15A4BC0E876792_759437874 = (nextFocus.requestFocus(direction, mTempRect));
                         } //End collapsed parenthetic
                     } //End block
                     View globalNextFocus;
                     globalNextFocus = FocusFinder.getInstance().findNextFocus(
                         (ViewGroup) getRootView(), currentFocus, direction);
                     {
-                        boolean varB2F32E25506228F03370ADE074F28912_1683086537 = (isViewAncestorOf(globalNextFocus, this));
+                        boolean varB2F32E25506228F03370ADE074F28912_699048503 = (isViewAncestorOf(globalNextFocus, this));
                     } //End block
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(direction);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1761421023 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1761421023;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.725 -0400", hash_original_method = "6B5D7DFA7F5B692B993CC3912D59B646", hash_generated_method = "C78E4E70B1F5209C737AF8690E72D4CD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.156 -0400", hash_original_method = "6B5D7DFA7F5B692B993CC3912D59B646", hash_generated_method = "A6F1747C42C80CECB286634DED18F537")
      boolean arrowScroll(int direction) {
-        dsTaint.addTaint(direction);
         try 
         {
             mInLayout = true;
@@ -2493,7 +2545,9 @@ public class ListView extends AbsListView {
         {
             mInLayout = false;
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(direction);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1474640310 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1474640310;
         // ---------- Original Method ----------
         //try {
             //mInLayout = true;
@@ -2508,12 +2562,10 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.726 -0400", hash_original_method = "5F8F1549FF6A2936584D81A340335636", hash_generated_method = "6261349D9785AE6B05489F55860E83B6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.160 -0400", hash_original_method = "5F8F1549FF6A2936584D81A340335636", hash_generated_method = "D1244DBAF9353D651D7E53D1354B8696")
     private boolean arrowScrollImpl(int direction) {
-        dsTaint.addTaint(direction);
         {
-            boolean var4229DDB8D3BBE3C4FC615E86EF9AD4FF_33104341 = (getChildCount() <= 0);
+            boolean var4229DDB8D3BBE3C4FC615E86EF9AD4FF_409756693 = (getChildCount() <= 0);
         } //End collapsed parenthetic
         View selectedView;
         selectedView = getSelectedView();
@@ -2553,13 +2605,13 @@ public class ListView extends AbsListView {
             needToRedraw = true;
         } //End block
         {
-            boolean varB8E5D6C0579FB6C2780425B3D1ABD141_1234298139 = (mItemsCanFocus && (focusResult == null)
+            boolean varB8E5D6C0579FB6C2780425B3D1ABD141_1147741943 = (mItemsCanFocus && (focusResult == null)
                 && selectedView != null && selectedView.hasFocus());
             {
                 View focused;
                 focused = selectedView.findFocus();
                 {
-                    boolean var3BB0A88B4E6FC6416F98323008226B4B_884538647 = (!isViewAncestorOf(focused, this) || distanceToView(focused) > 0);
+                    boolean var3BB0A88B4E6FC6416F98323008226B4B_60411031 = (!isViewAncestorOf(focused, this) || distanceToView(focused) > 0);
                     {
                         focused.clearFocus();
                     } //End block
@@ -2567,7 +2619,7 @@ public class ListView extends AbsListView {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var089D086D835620A272CDDA708424B586_373855192 = (nextSelectedPosition == INVALID_POSITION && selectedView != null
+            boolean var089D086D835620A272CDDA708424B586_712640284 = (nextSelectedPosition == INVALID_POSITION && selectedView != null
                 && !isViewAncestorOf(selectedView, this));
             {
                 selectedView = null;
@@ -2581,27 +2633,24 @@ public class ListView extends AbsListView {
                 mSelectedTop = selectedView.getTop();
             } //End block
             {
-                boolean varC828E793AFDA5CD988FA9008B6EB3B30_854331851 = (!awakenScrollBars());
+                boolean varC828E793AFDA5CD988FA9008B6EB3B30_1172223618 = (!awakenScrollBars());
                 {
                     invalidate();
                 } //End block
             } //End collapsed parenthetic
             invokeOnItemScrollListener();
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(direction);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_374095909 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_374095909;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.726 -0400", hash_original_method = "5F7DFDAF299194D301FC447E78E3FD87", hash_generated_method = "7B2080CF31EE703FF7B72FEF1D59E2CD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.161 -0400", hash_original_method = "5F7DFDAF299194D301FC447E78E3FD87", hash_generated_method = "2FC40E240F1C6C5A7BFBCC75F8701F97")
     private void handleNewSelectionChange(View selectedView, int direction, int newSelectedPosition,
             boolean newFocusAssigned) {
-        dsTaint.addTaint(newFocusAssigned);
-        dsTaint.addTaint(direction);
-        dsTaint.addTaint(selectedView.dsTaint);
-        dsTaint.addTaint(newSelectedPosition);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("newSelectedPosition needs to be valid");
         } //End block
@@ -2637,22 +2686,22 @@ public class ListView extends AbsListView {
             bottomView.setSelected(!newFocusAssigned && !topSelected);
             measureAndAdjustDown(bottomView, bottomViewIndex, numChildren);
         } //End block
+        addTaint(selectedView.getTaint());
+        addTaint(direction);
+        addTaint(newSelectedPosition);
+        addTaint(newFocusAssigned);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.726 -0400", hash_original_method = "D9B7EDD91437C9CF7E31BD236F25B8F3", hash_generated_method = "B3744BEF5FB896CEF0989748A298C508")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.173 -0400", hash_original_method = "D9B7EDD91437C9CF7E31BD236F25B8F3", hash_generated_method = "99F6446370343F3D1AE3918FF0AA3381")
     private void measureAndAdjustDown(View child, int childIndex, int numChildren) {
-        dsTaint.addTaint(child.dsTaint);
-        dsTaint.addTaint(numChildren);
-        dsTaint.addTaint(childIndex);
         int oldHeight;
         oldHeight = child.getHeight();
         measureItem(child);
         {
-            boolean var7B22EF90C45277911AB272B76E96E5DA_1684552581 = (child.getMeasuredHeight() != oldHeight);
+            boolean var7B22EF90C45277911AB272B76E96E5DA_74251214 = (child.getMeasuredHeight() != oldHeight);
             {
                 relayoutMeasuredItem(child);
                 int heightDelta;
@@ -2666,6 +2715,9 @@ public class ListView extends AbsListView {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
+        addTaint(child.getTaint());
+        addTaint(childIndex);
+        addTaint(numChildren);
         // ---------- Original Method ----------
         //int oldHeight = child.getHeight();
         //measureItem(child);
@@ -2679,10 +2731,8 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.727 -0400", hash_original_method = "195C1D433E8B0F15028E4D73EB2D6DE2", hash_generated_method = "4511D5D0137F1AEFBBB4B5286C31E897")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.177 -0400", hash_original_method = "195C1D433E8B0F15028E4D73EB2D6DE2", hash_generated_method = "A47274493E5C76AA1D436CBAEFBB9138")
     private void measureItem(View child) {
-        dsTaint.addTaint(child.dsTaint);
         ViewGroup.LayoutParams p;
         p = child.getLayoutParams();
         {
@@ -2703,6 +2753,7 @@ public class ListView extends AbsListView {
             childHeightSpec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
         } //End block
         child.measure(childWidthSpec, childHeightSpec);
+        addTaint(child.getTaint());
         // ---------- Original Method ----------
         //ViewGroup.LayoutParams p = child.getLayoutParams();
         //if (p == null) {
@@ -2723,10 +2774,8 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.727 -0400", hash_original_method = "69D49227DB6AC5D384C2E3A710CB930F", hash_generated_method = "B1E9CD3D21037B22C755D267D79F2681")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.180 -0400", hash_original_method = "69D49227DB6AC5D384C2E3A710CB930F", hash_generated_method = "A0B3AC1C1E5CCEF2777353CC8A15AE4C")
     private void relayoutMeasuredItem(View child) {
-        dsTaint.addTaint(child.dsTaint);
         int w;
         w = child.getMeasuredWidth();
         int h;
@@ -2740,6 +2789,7 @@ public class ListView extends AbsListView {
         int childBottom;
         childBottom = childTop + h;
         child.layout(childLeft, childTop, childRight, childBottom);
+        addTaint(child.getTaint());
         // ---------- Original Method ----------
         //final int w = child.getMeasuredWidth();
         //final int h = child.getMeasuredHeight();
@@ -2751,21 +2801,18 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.727 -0400", hash_original_method = "42F2E28C8994E7757E02659DFEBDEFA8", hash_generated_method = "49E26982CA8948DBF6B3D5E6A3DF6D5A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.180 -0400", hash_original_method = "42F2E28C8994E7757E02659DFEBDEFA8", hash_generated_method = "746FA8A8FB3C029B2BB9B3F90552ECC3")
     private int getArrowScrollPreviewLength() {
-        int var32C3DF276D4CC5AB85EAD318AE4B92AE_963554663 = (Math.max(MIN_SCROLL_PREVIEW_PIXELS, getVerticalFadingEdgeLength()));
-        return dsTaint.getTaintInt();
+        int var32C3DF276D4CC5AB85EAD318AE4B92AE_1595268302 = (Math.max(MIN_SCROLL_PREVIEW_PIXELS, getVerticalFadingEdgeLength()));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923116846 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923116846;
         // ---------- Original Method ----------
         //return Math.max(MIN_SCROLL_PREVIEW_PIXELS, getVerticalFadingEdgeLength());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.728 -0400", hash_original_method = "0CBCA538A833739B1FF13F8466C4BF4D", hash_generated_method = "6C028F07A75EAFA3064B8D055E1FC283")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.187 -0400", hash_original_method = "0CBCA538A833739B1FF13F8466C4BF4D", hash_generated_method = "6EFDA172281792AE46FFFD6ACF8214EA")
     private int amountToScroll(int direction, int nextSelectedPosition) {
-        dsTaint.addTaint(direction);
-        dsTaint.addTaint(nextSelectedPosition);
         int listBottom;
         listBottom = getHeight() - mListPadding.bottom;
         int listTop;
@@ -2788,10 +2835,10 @@ public class ListView extends AbsListView {
                 goalBottom -= getArrowScrollPreviewLength();
             } //End block
             {
-                boolean var5F736F6450B740E6E9E57C387C57D4DD_1862757066 = (viewToMakeVisible.getBottom() <= goalBottom);
+                boolean var5F736F6450B740E6E9E57C387C57D4DD_383905728 = (viewToMakeVisible.getBottom() <= goalBottom);
             } //End collapsed parenthetic
             {
-                boolean var8324A997C3E5144DDD35F3BF25EFB670_1154184607 = (nextSelectedPosition != INVALID_POSITION
+                boolean var8324A997C3E5144DDD35F3BF25EFB670_475842353 = (nextSelectedPosition != INVALID_POSITION
                     && (goalBottom - viewToMakeVisible.getTop()) >= getMaxScrollAmount());
             } //End collapsed parenthetic
             int amountToScroll;
@@ -2801,7 +2848,7 @@ public class ListView extends AbsListView {
                 max = getChildAt(numChildren - 1).getBottom() - listBottom;
                 amountToScroll = Math.min(amountToScroll, max);
             } //End block
-            int var1934DA7AFCB63592141CB73FE3F03962_839884297 = (Math.min(amountToScroll, getMaxScrollAmount()));
+            int var1934DA7AFCB63592141CB73FE3F03962_1557498053 = (Math.min(amountToScroll, getMaxScrollAmount()));
         } //End block
         {
             int indexToMakeVisible;
@@ -2819,10 +2866,10 @@ public class ListView extends AbsListView {
                 goalTop += getArrowScrollPreviewLength();
             } //End block
             {
-                boolean var40E2B917BF16844A067981F2A72A29CC_913298931 = (viewToMakeVisible.getTop() >= goalTop);
+                boolean var40E2B917BF16844A067981F2A72A29CC_1280038186 = (viewToMakeVisible.getTop() >= goalTop);
             } //End collapsed parenthetic
             {
-                boolean varC22CD0C0296052301FAE425C57E08A6B_33152768 = (nextSelectedPosition != INVALID_POSITION &&
+                boolean varC22CD0C0296052301FAE425C57E08A6B_1078233343 = (nextSelectedPosition != INVALID_POSITION &&
                     (viewToMakeVisible.getBottom() - goalTop) >= getMaxScrollAmount());
             } //End collapsed parenthetic
             int amountToScroll;
@@ -2832,18 +2879,19 @@ public class ListView extends AbsListView {
                 max = listTop - getChildAt(0).getTop();
                 amountToScroll = Math.min(amountToScroll,  max);
             } //End block
-            int var1934DA7AFCB63592141CB73FE3F03962_946749290 = (Math.min(amountToScroll, getMaxScrollAmount()));
+            int var1934DA7AFCB63592141CB73FE3F03962_1660954620 = (Math.min(amountToScroll, getMaxScrollAmount()));
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(direction);
+        addTaint(nextSelectedPosition);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207621069 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207621069;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.728 -0400", hash_original_method = "760C70065AEFE7BC7EE2B10D159765ED", hash_generated_method = "230E65EC1E0BC9C15873B7F12EC1AF5A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.191 -0400", hash_original_method = "760C70065AEFE7BC7EE2B10D159765ED", hash_generated_method = "4672862BE476C0DBB5F5DB2C29F6004F")
     private int lookForSelectablePositionOnScreen(int direction) {
-        dsTaint.addTaint(direction);
         int firstPosition;
         firstPosition = mFirstPosition;
         {
@@ -2851,7 +2899,7 @@ public class ListView extends AbsListView {
             startPos = mSelectedPosition + 1;
             startPos = firstPosition;
             {
-                boolean varFD8F153F7B9B0445D1C8B98618EA7E23_1868905443 = (startPos >= mAdapter.getCount());
+                boolean varFD8F153F7B9B0445D1C8B98618EA7E23_1780837276 = (startPos >= mAdapter.getCount());
             } //End collapsed parenthetic
             {
                 startPos = firstPosition;
@@ -2865,7 +2913,7 @@ public class ListView extends AbsListView {
                 pos = startPos;
                 {
                     {
-                        boolean var705701EB8E699AA442E2F4E862DC96E7_885294159 = (adapter.isEnabled(pos)
+                        boolean var705701EB8E699AA442E2F4E862DC96E7_1524963792 = (adapter.isEnabled(pos)
                         && getChildAt(pos - firstPosition).getVisibility() == View.VISIBLE);
                     } //End collapsed parenthetic
                 } //End block
@@ -2878,7 +2926,7 @@ public class ListView extends AbsListView {
             startPos = mSelectedPosition - 1;
             startPos = firstPosition + getChildCount() - 1;
             {
-                boolean var52FACA214769BF23A240C7E957876F70_584480259 = (startPos < 0 || startPos >= mAdapter.getCount());
+                boolean var52FACA214769BF23A240C7E957876F70_1199908275 = (startPos < 0 || startPos >= mAdapter.getCount());
             } //End collapsed parenthetic
             {
                 startPos = last;
@@ -2890,27 +2938,31 @@ public class ListView extends AbsListView {
                 pos = startPos;
                 {
                     {
-                        boolean var705701EB8E699AA442E2F4E862DC96E7_832940944 = (adapter.isEnabled(pos)
+                        boolean var705701EB8E699AA442E2F4E862DC96E7_1027535970 = (adapter.isEnabled(pos)
                         && getChildAt(pos - firstPosition).getVisibility() == View.VISIBLE);
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(direction);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_225435659 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_225435659;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.729 -0400", hash_original_method = "2622F1B1638C7BCDD9C32B9CBE54AF85", hash_generated_method = "47741273D4E64E0B287151DD0A94ED4A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.193 -0400", hash_original_method = "2622F1B1638C7BCDD9C32B9CBE54AF85", hash_generated_method = "CF545AE2BD1DC99275B8EAE70CCF12B1")
     private ArrowScrollFocusResult arrowScrollFocused(final int direction) {
-        dsTaint.addTaint(direction);
+        ArrowScrollFocusResult varB4EAC82CA7396A68D541C85D26508E83_651019383 = null; //Variable for return #1
+        ArrowScrollFocusResult varB4EAC82CA7396A68D541C85D26508E83_879380641 = null; //Variable for return #2
+        ArrowScrollFocusResult varB4EAC82CA7396A68D541C85D26508E83_1790131289 = null; //Variable for return #3
+        ArrowScrollFocusResult varB4EAC82CA7396A68D541C85D26508E83_430809083 = null; //Variable for return #4
         View selectedView;
         selectedView = getSelectedView();
         View newFocus;
         {
-            boolean varA1513A08695E8074CF4C05D652884B2C_1795954723 = (selectedView != null && selectedView.hasFocus());
+            boolean varA1513A08695E8074CF4C05D652884B2C_1126494268 = (selectedView != null && selectedView.hasFocus());
             {
                 View oldFocus;
                 oldFocus = selectedView.findFocus();
@@ -2924,7 +2976,7 @@ public class ListView extends AbsListView {
                     listTop = mListPadding.top +
                         (topFadingEdgeShowing ? getArrowScrollPreviewLength() : 0);//DSFIXME:  CODE0008: Nested ternary operator in expression
                     int ySearchPoint;
-                    boolean var0C9DFED1B79DF626EEB83B6645BDE791_2014794897 = ((selectedView != null && selectedView.getTop() > listTop));
+                    boolean var0C9DFED1B79DF626EEB83B6645BDE791_1467377085 = ((selectedView != null && selectedView.getTop() > listTop));
                     ySearchPoint = selectedView.getTop();
                     ySearchPoint = listTop;
                     mTempRect.set(0, ySearchPoint, 0, ySearchPoint);
@@ -2936,7 +2988,7 @@ public class ListView extends AbsListView {
                     listBottom = getHeight() - mListPadding.bottom -
                         (bottomFadingEdgeShowing ? getArrowScrollPreviewLength() : 0);//DSFIXME:  CODE0008: Nested ternary operator in expression
                     int ySearchPoint;
-                    boolean var535C017266C0FE7A092B0CC38B96CB22_719176488 = ((selectedView != null && selectedView.getBottom() < listBottom));
+                    boolean var535C017266C0FE7A092B0CC38B96CB22_1251076154 = ((selectedView != null && selectedView.getBottom() < listBottom));
                     ySearchPoint = selectedView.getBottom();
                     ySearchPoint = listBottom;
                     mTempRect.set(0, ySearchPoint, 0, ySearchPoint);
@@ -2950,6 +3002,9 @@ public class ListView extends AbsListView {
             {
                 int selectablePosition;
                 selectablePosition = lookForSelectablePositionOnScreen(direction);
+                {
+                    varB4EAC82CA7396A68D541C85D26508E83_651019383 = null;
+                } //End block
             } //End block
             int focusScroll;
             focusScroll = amountToScrollToNewFocus(direction, newFocus, positionOfNewFocus);
@@ -2958,25 +3013,43 @@ public class ListView extends AbsListView {
             {
                 newFocus.requestFocus(direction);
                 mArrowScrollFocusResult.populate(positionOfNewFocus, focusScroll);
+                varB4EAC82CA7396A68D541C85D26508E83_879380641 = mArrowScrollFocusResult;
             } //End block
             {
-                boolean varEB2D69BE3268364AC7D3855A8FF1F45F_1654360097 = (distanceToView(newFocus) < maxScrollAmount);
+                boolean varEB2D69BE3268364AC7D3855A8FF1F45F_1872998484 = (distanceToView(newFocus) < maxScrollAmount);
                 {
                     newFocus.requestFocus(direction);
                     mArrowScrollFocusResult.populate(positionOfNewFocus, maxScrollAmount);
+                    varB4EAC82CA7396A68D541C85D26508E83_1790131289 = mArrowScrollFocusResult;
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return (ArrowScrollFocusResult)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_430809083 = null;
+        addTaint(direction);
+        ArrowScrollFocusResult varA7E53CE21691AB073D9660D615818899_979209521; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_979209521 = varB4EAC82CA7396A68D541C85D26508E83_651019383;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_979209521 = varB4EAC82CA7396A68D541C85D26508E83_879380641;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_979209521 = varB4EAC82CA7396A68D541C85D26508E83_1790131289;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_979209521 = varB4EAC82CA7396A68D541C85D26508E83_430809083;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_979209521.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_979209521;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.730 -0400", hash_original_method = "E7A74EC59726801D8AE9EB276549022E", hash_generated_method = "EE2F7D700AE6330F339DE08A75B23177")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.204 -0400", hash_original_method = "E7A74EC59726801D8AE9EB276549022E", hash_generated_method = "6B4DC1153FB1193E086F02665388EECF")
     private int positionOfNewFocus(View newFocus) {
-        dsTaint.addTaint(newFocus.dsTaint);
         int numChildren;
         numChildren = getChildCount();
         {
@@ -2986,13 +3059,15 @@ public class ListView extends AbsListView {
                 View child;
                 child = getChildAt(i);
                 {
-                    boolean var743CF1855186FF404A0881633A428604_700043704 = (isViewAncestorOf(newFocus, child));
+                    boolean var743CF1855186FF404A0881633A428604_1158047177 = (isViewAncestorOf(newFocus, child));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("newFocus is not a child of any of the"
                 + " children of the list!");
-        return dsTaint.getTaintInt();
+        addTaint(newFocus.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_403593876 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_403593876;
         // ---------- Original Method ----------
         //final int numChildren = getChildCount();
         //for (int i = 0; i < numChildren; i++) {
@@ -3006,15 +3081,15 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.730 -0400", hash_original_method = "3B08BDE00067F884387760F12D698F42", hash_generated_method = "E7645FFAC9360D838066677723C4E730")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.204 -0400", hash_original_method = "3B08BDE00067F884387760F12D698F42", hash_generated_method = "2D1B58493C7387A12554B65FA2BCC711")
     private boolean isViewAncestorOf(View child, View parent) {
-        dsTaint.addTaint(child.dsTaint);
-        dsTaint.addTaint(parent.dsTaint);
         ViewParent theParent;
         theParent = child.getParent();
-        boolean var31AD4BA23C577C9A637BA02E579FD0B2_1468723473 = ((theParent instanceof ViewGroup) && isViewAncestorOf((View) theParent, parent));
-        return dsTaint.getTaintBoolean();
+        boolean var31AD4BA23C577C9A637BA02E579FD0B2_178387806 = ((theParent instanceof ViewGroup) && isViewAncestorOf((View) theParent, parent));
+        addTaint(child.getTaint());
+        addTaint(parent.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_53039262 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_53039262;
         // ---------- Original Method ----------
         //if (child == parent) {
             //return true;
@@ -3024,12 +3099,8 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.730 -0400", hash_original_method = "972857949DC34A723A630B605759B3EF", hash_generated_method = "EAB98A086CEC593EF87B0D2AA9A2C0D9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.207 -0400", hash_original_method = "972857949DC34A723A630B605759B3EF", hash_generated_method = "4F7C98931C9853C12D790E9F0555ED51")
     private int amountToScrollToNewFocus(int direction, View newFocus, int positionOfNewFocus) {
-        dsTaint.addTaint(positionOfNewFocus);
-        dsTaint.addTaint(direction);
-        dsTaint.addTaint(newFocus.dsTaint);
         int amountToScroll;
         amountToScroll = 0;
         newFocus.getDrawingRect(mTempRect);
@@ -3052,16 +3123,18 @@ public class ListView extends AbsListView {
                 } //End block
             } //End block
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(direction);
+        addTaint(newFocus.getTaint());
+        addTaint(positionOfNewFocus);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_365102601 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_365102601;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.730 -0400", hash_original_method = "2468FB71A40A0019FA8D57CEA81AC8A6", hash_generated_method = "5CE3BE4A1DD76B60D86A3F9A2DC4DBBB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.207 -0400", hash_original_method = "2468FB71A40A0019FA8D57CEA81AC8A6", hash_generated_method = "91B7B3AEFCA0BFCBA82EE71FB488BD5A")
     private int distanceToView(View descendant) {
-        dsTaint.addTaint(descendant.dsTaint);
         int distance;
         distance = 0;
         descendant.getDrawingRect(mTempRect);
@@ -3074,7 +3147,9 @@ public class ListView extends AbsListView {
         {
             distance = mTempRect.top - listBottom;
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(descendant.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1465218993 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1465218993;
         // ---------- Original Method ----------
         //int distance = 0;
         //descendant.getDrawingRect(mTempRect);
@@ -3089,10 +3164,8 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.731 -0400", hash_original_method = "FAA0316A71F66D005638E2A277415AFB", hash_generated_method = "D6A9676E9019BF6AADE18FF577D98576")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.229 -0400", hash_original_method = "FAA0316A71F66D005638E2A277415AFB", hash_generated_method = "D59E29CFB2F173F0F3155182564115D7")
     private void scrollListItemsBy(int amount) {
-        dsTaint.addTaint(amount);
         offsetChildrenTopAndBottom(amount);
         int listBottom;
         listBottom = getHeight() - mListPadding.bottom;
@@ -3106,7 +3179,7 @@ public class ListView extends AbsListView {
             View last;
             last = getChildAt(numChildren - 1);
             {
-                boolean var5F1380678D3DF277A8634CE4F78FA5E2_816496209 = (last.getBottom() < listBottom);
+                boolean var5F1380678D3DF277A8634CE4F78FA5E2_1270400495 = (last.getBottom() < listBottom);
                 {
                     int lastVisiblePosition;
                     lastVisiblePosition = mFirstPosition + numChildren - 1;
@@ -3116,7 +3189,7 @@ public class ListView extends AbsListView {
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var5F1380678D3DF277A8634CE4F78FA5E2_1030499417 = (last.getBottom() < listBottom);
+                boolean var5F1380678D3DF277A8634CE4F78FA5E2_1398932657 = (last.getBottom() < listBottom);
                 {
                     offsetChildrenTopAndBottom(listBottom - last.getBottom());
                 } //End block
@@ -3124,12 +3197,12 @@ public class ListView extends AbsListView {
             View first;
             first = getChildAt(0);
             {
-                boolean var5DEAA936426734BA7061F416FF8C6D22_1731038502 = (first.getBottom() < listTop);
+                boolean var5DEAA936426734BA7061F416FF8C6D22_1871235585 = (first.getBottom() < listTop);
                 {
                     AbsListView.LayoutParams layoutParams;
                     layoutParams = (LayoutParams) first.getLayoutParams();
                     {
-                        boolean var2ED08FF5DD3428B26AE67127DC8E5467_268350865 = (recycleBin.shouldRecycleViewType(layoutParams.viewType));
+                        boolean var2ED08FF5DD3428B26AE67127DC8E5467_394302294 = (recycleBin.shouldRecycleViewType(layoutParams.viewType));
                         {
                             detachViewFromParent(first);
                             recycleBin.addScrapView(first, mFirstPosition);
@@ -3146,13 +3219,13 @@ public class ListView extends AbsListView {
             View first;
             first = getChildAt(0);
             {
-                boolean var4D6C61E96E1628FDB98784EB678A415B_143209895 = ((first.getTop() > listTop) && (mFirstPosition > 0));
+                boolean var4D6C61E96E1628FDB98784EB678A415B_1626692900 = ((first.getTop() > listTop) && (mFirstPosition > 0));
                 {
                     first = addViewAbove(first, mFirstPosition);
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean varEA4423DF7697B0235733DDAA9E5B11E5_1633358953 = (first.getTop() > listTop);
+                boolean varEA4423DF7697B0235733DDAA9E5B11E5_1300830032 = (first.getTop() > listTop);
                 {
                     offsetChildrenTopAndBottom(listTop - first.getTop());
                 } //End block
@@ -3162,12 +3235,12 @@ public class ListView extends AbsListView {
             View last;
             last = getChildAt(lastIndex);
             {
-                boolean var6CFFE8EA59E4FF6F1E1615BCEB3548F9_737854883 = (last.getTop() > listBottom);
+                boolean var6CFFE8EA59E4FF6F1E1615BCEB3548F9_1215425545 = (last.getTop() > listBottom);
                 {
                     AbsListView.LayoutParams layoutParams;
                     layoutParams = (LayoutParams) last.getLayoutParams();
                     {
-                        boolean var2ED08FF5DD3428B26AE67127DC8E5467_447755303 = (recycleBin.shouldRecycleViewType(layoutParams.viewType));
+                        boolean var2ED08FF5DD3428B26AE67127DC8E5467_722434938 = (recycleBin.shouldRecycleViewType(layoutParams.viewType));
                         {
                             detachViewFromParent(last);
                             recycleBin.addScrapView(last, mFirstPosition+lastIndex);
@@ -3180,16 +3253,15 @@ public class ListView extends AbsListView {
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        addTaint(amount);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.731 -0400", hash_original_method = "9F36487536DE2965CEF1C4C9236F1DF4", hash_generated_method = "3BA6A99D0AB05C0F1A88FFE53BA6AC78")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.234 -0400", hash_original_method = "9F36487536DE2965CEF1C4C9236F1DF4", hash_generated_method = "9C2FA3CC247825CFF338CE404498D419")
     private View addViewAbove(View theView, int position) {
-        dsTaint.addTaint(position);
-        dsTaint.addTaint(theView.dsTaint);
+        View varB4EAC82CA7396A68D541C85D26508E83_2093928114 = null; //Variable for return #1
         int abovePosition;
         abovePosition = position - 1;
         View view;
@@ -3198,7 +3270,11 @@ public class ListView extends AbsListView {
         edgeOfNewChild = theView.getTop() - mDividerHeight;
         setupChild(view, abovePosition, edgeOfNewChild, false, mListPadding.left,
                 false, mIsScrap[0]);
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2093928114 = view;
+        addTaint(theView.getTaint());
+        addTaint(position);
+        varB4EAC82CA7396A68D541C85D26508E83_2093928114.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2093928114;
         // ---------- Original Method ----------
         //int abovePosition = position - 1;
         //View view = obtainView(abovePosition, mIsScrap);
@@ -3209,11 +3285,9 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.732 -0400", hash_original_method = "D4F2FE3018B44C78CF4E93EBC6FE5FC7", hash_generated_method = "7891D603AD17CDB00509A97DF552C8FF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.235 -0400", hash_original_method = "D4F2FE3018B44C78CF4E93EBC6FE5FC7", hash_generated_method = "86ED48FBF29618164AB17251430E6878")
     private View addViewBelow(View theView, int position) {
-        dsTaint.addTaint(position);
-        dsTaint.addTaint(theView.dsTaint);
+        View varB4EAC82CA7396A68D541C85D26508E83_1095187186 = null; //Variable for return #1
         int belowPosition;
         belowPosition = position + 1;
         View view;
@@ -3222,7 +3296,11 @@ public class ListView extends AbsListView {
         edgeOfNewChild = theView.getBottom() + mDividerHeight;
         setupChild(view, belowPosition, edgeOfNewChild, true, mListPadding.left,
                 false, mIsScrap[0]);
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1095187186 = view;
+        addTaint(theView.getTaint());
+        addTaint(position);
+        varB4EAC82CA7396A68D541C85D26508E83_1095187186.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1095187186;
         // ---------- Original Method ----------
         //int belowPosition = position + 1;
         //View view = obtainView(belowPosition, mIsScrap);
@@ -3233,10 +3311,9 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.732 -0400", hash_original_method = "B028681B6F4AF7B56D2E022B96A1F853", hash_generated_method = "66AB0DC79C5610B39A7F9C56B5ADC6FD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.239 -0400", hash_original_method = "B028681B6F4AF7B56D2E022B96A1F853", hash_generated_method = "FAC3768DB5C6CA1E40D91C9DDCFC4DB7")
     public void setItemsCanFocus(boolean itemsCanFocus) {
-        dsTaint.addTaint(itemsCanFocus);
+        mItemsCanFocus = itemsCanFocus;
         {
             setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
         } //End block
@@ -3248,17 +3325,16 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.732 -0400", hash_original_method = "1C95AE1007B5CDC38C9B3E3B2904F365", hash_generated_method = "D5964FEEBF0CB16A36C69076DEF15775")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.240 -0400", hash_original_method = "1C95AE1007B5CDC38C9B3E3B2904F365", hash_generated_method = "93A5391749F06CB8460AE164E135EDDF")
     public boolean getItemsCanFocus() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_860069636 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_860069636;
         // ---------- Original Method ----------
         //return mItemsCanFocus;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.732 -0400", hash_original_method = "719E5FD40BAA2B7205DD0269FBFE398A", hash_generated_method = "A291F21364A1618A9C193022EF16E954")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.241 -0400", hash_original_method = "719E5FD40BAA2B7205DD0269FBFE398A", hash_generated_method = "E3D9FCF640F5B365F18ECC4127291388")
     @Override
     public boolean isOpaque() {
         boolean retValue;
@@ -3271,7 +3347,7 @@ public class ListView extends AbsListView {
             View first;
             first = getChildAt(0);
             {
-                boolean var37967F45E1391B4313D5330FBE659A90_1789581691 = (first == null || first.getTop() > listTop);
+                boolean var37967F45E1391B4313D5330FBE659A90_1728937271 = (first == null || first.getTop() > listTop);
             } //End collapsed parenthetic
             int listBottom;
             listBottom = getHeight() -
@@ -3279,10 +3355,11 @@ public class ListView extends AbsListView {
             View last;
             last = getChildAt(getChildCount() - 1);
             {
-                boolean varA905B41E3DA83EC3F86F88778ACFCAD2_605390196 = (last == null || last.getBottom() < listBottom);
+                boolean varA905B41E3DA83EC3F86F88778ACFCAD2_776757758 = (last == null || last.getBottom() < listBottom);
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1736910750 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1736910750;
         // ---------- Original Method ----------
         //boolean retValue = (mCachingActive && mIsCacheColorOpaque && mDividerIsOpaque &&
                 //hasOpaqueScrollbars()) || super.isOpaque();
@@ -3303,11 +3380,9 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.733 -0400", hash_original_method = "465D449366429949FD8ADA654918A0E2", hash_generated_method = "D6262830A33DD791354F7E1CFEEDDA36")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.241 -0400", hash_original_method = "465D449366429949FD8ADA654918A0E2", hash_generated_method = "812FFA0E47FA36AA943C82074F462D0D")
     @Override
     public void setCacheColorHint(int color) {
-        dsTaint.addTaint(color);
         boolean opaque;
         opaque = (color >>> 24) == 0xFF;
         mIsCacheColorOpaque = opaque;
@@ -3318,6 +3393,7 @@ public class ListView extends AbsListView {
             mDividerPaint.setColor(color);
         } //End block
         super.setCacheColorHint(color);
+        addTaint(color);
         // ---------- Original Method ----------
         //final boolean opaque = (color >>> 24) == 0xFF;
         //mIsCacheColorOpaque = opaque;
@@ -3331,12 +3407,8 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.733 -0400", hash_original_method = "9A5C934D25A361940ECD1D897C78B567", hash_generated_method = "3147EC4269130B4A00777EE40C4DB35F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.242 -0400", hash_original_method = "9A5C934D25A361940ECD1D897C78B567", hash_generated_method = "44AD31054B48B3DF3FDD14F5A9BE97D7")
      void drawOverscrollHeader(Canvas canvas, Drawable drawable, Rect bounds) {
-        dsTaint.addTaint(bounds.dsTaint);
-        dsTaint.addTaint(drawable.dsTaint);
-        dsTaint.addTaint(canvas.dsTaint);
         int height;
         height = drawable.getMinimumHeight();
         canvas.save();
@@ -3349,6 +3421,9 @@ public class ListView extends AbsListView {
         drawable.setBounds(bounds);
         drawable.draw(canvas);
         canvas.restore();
+        addTaint(canvas.getTaint());
+        addTaint(drawable.getTaint());
+        addTaint(bounds.getTaint());
         // ---------- Original Method ----------
         //final int height = drawable.getMinimumHeight();
         //canvas.save();
@@ -3363,12 +3438,8 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.733 -0400", hash_original_method = "3C862E16BE3AA71DC427E03E79AFA46F", hash_generated_method = "34C290BEB1A6FF48EBA09A61A314F674")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.242 -0400", hash_original_method = "3C862E16BE3AA71DC427E03E79AFA46F", hash_generated_method = "D827737DF836874EA18E1D76B2CE8BCB")
      void drawOverscrollFooter(Canvas canvas, Drawable drawable, Rect bounds) {
-        dsTaint.addTaint(bounds.dsTaint);
-        dsTaint.addTaint(drawable.dsTaint);
-        dsTaint.addTaint(canvas.dsTaint);
         int height;
         height = drawable.getMinimumHeight();
         canvas.save();
@@ -3381,6 +3452,9 @@ public class ListView extends AbsListView {
         drawable.setBounds(bounds);
         drawable.draw(canvas);
         canvas.restore();
+        addTaint(canvas.getTaint());
+        addTaint(drawable.getTaint());
+        addTaint(bounds.getTaint());
         // ---------- Original Method ----------
         //final int height = drawable.getMinimumHeight();
         //canvas.save();
@@ -3395,11 +3469,9 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.734 -0400", hash_original_method = "2FA3D064F2DBB643D61459E2FE6AA64C", hash_generated_method = "04FA613A6BBE814C1A3BFC0B09C346DF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.265 -0400", hash_original_method = "2FA3D064F2DBB643D61459E2FE6AA64C", hash_generated_method = "3AB94C9D3C2105A8BB197E00C9EA7443")
     @Override
     protected void dispatchDraw(Canvas canvas) {
-        dsTaint.addTaint(canvas.dsTaint);
         {
             mCachingActive = true;
         } //End block
@@ -3483,7 +3555,7 @@ public class ListView extends AbsListView {
                             bottom = child.getBottom();
                             {
                                 {
-                                    boolean var6726FD4BAAAC9954E951547807371C28_1536814801 = ((areAllItemsSelectable ||
+                                    boolean var6726FD4BAAAC9954E951547807371C28_1479198117 = ((areAllItemsSelectable ||
                                     (adapter.isEnabled(first + i) && (i == count - 1 ||
                                             adapter.isEnabled(first + i + 1)))));
                                     {
@@ -3531,7 +3603,7 @@ public class ListView extends AbsListView {
                             top = child.getTop();
                             {
                                 {
-                                    boolean var6726FD4BAAAC9954E951547807371C28_768348045 = ((areAllItemsSelectable ||
+                                    boolean var6726FD4BAAAC9954E951547807371C28_1677578135 = ((areAllItemsSelectable ||
                                     (adapter.isEnabled(first + i) && (i == count - 1 ||
                                             adapter.isEnabled(first + i + 1)))));
                                     {
@@ -3566,24 +3638,25 @@ public class ListView extends AbsListView {
             } //End block
         } //End block
         super.dispatchDraw(canvas);
+        addTaint(canvas.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.735 -0400", hash_original_method = "4EC2B6750B1C7732AC3B627095EC138F", hash_generated_method = "90422B49616CEEE057E60C6BD6611636")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.266 -0400", hash_original_method = "4EC2B6750B1C7732AC3B627095EC138F", hash_generated_method = "35456CF62CC3ACC46D548D6606DBE859")
     @Override
     protected boolean drawChild(Canvas canvas, View child, long drawingTime) {
-        dsTaint.addTaint(child.dsTaint);
-        dsTaint.addTaint(canvas.dsTaint);
-        dsTaint.addTaint(drawingTime);
         boolean more;
         more = super.drawChild(canvas, child, drawingTime);
         {
             mCachingActive = false;
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(canvas.getTaint());
+        addTaint(child.getTaint());
+        addTaint(drawingTime);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_464011552 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_464011552;
         // ---------- Original Method ----------
         //boolean more = super.drawChild(canvas, child, drawingTime);
         //if (mCachingActive && child.mCachingFailed) {
@@ -3593,16 +3666,15 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.735 -0400", hash_original_method = "AB3CC143C94AF212348DFB5018C60850", hash_generated_method = "3EB7BDEBCE11E9C9738A8E259C656730")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.266 -0400", hash_original_method = "AB3CC143C94AF212348DFB5018C60850", hash_generated_method = "58FAB2E691272B46AD9D9AAD33073A18")
      void drawDivider(Canvas canvas, Rect bounds, int childIndex) {
-        dsTaint.addTaint(bounds.dsTaint);
-        dsTaint.addTaint(canvas.dsTaint);
-        dsTaint.addTaint(childIndex);
         Drawable divider;
         divider = mDivider;
         divider.setBounds(bounds);
         divider.draw(canvas);
+        addTaint(canvas.getTaint());
+        addTaint(bounds.getTaint());
+        addTaint(childIndex);
         // ---------- Original Method ----------
         //final Drawable divider = mDivider;
         //divider.setBounds(bounds);
@@ -3610,25 +3682,26 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.736 -0400", hash_original_method = "7B5403D1FD6AC98A776FCB41ADD8E487", hash_generated_method = "7537692EA346C04B9FA44A2AA8311201")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.270 -0400", hash_original_method = "7B5403D1FD6AC98A776FCB41ADD8E487", hash_generated_method = "3293A48AB7CEB6A051FA433FD2892DB9")
     public Drawable getDivider() {
-        return (Drawable)dsTaint.getTaint();
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1624500556 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1624500556 = mDivider;
+        varB4EAC82CA7396A68D541C85D26508E83_1624500556.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1624500556;
         // ---------- Original Method ----------
         //return mDivider;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.736 -0400", hash_original_method = "7913B276C2BDCD5302E597BC9A4CB654", hash_generated_method = "E98D5CB3F686104EB6B8DB9C696EF2F6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.270 -0400", hash_original_method = "7913B276C2BDCD5302E597BC9A4CB654", hash_generated_method = "E21C76FA96F5BFD5336B757BD1BC5673")
     public void setDivider(Drawable divider) {
-        dsTaint.addTaint(divider.dsTaint);
         {
             mDividerHeight = divider.getIntrinsicHeight();
         } //End block
         {
             mDividerHeight = 0;
         } //End block
+        mDivider = divider;
         mDividerIsOpaque = divider == null || divider.getOpacity() == PixelFormat.OPAQUE;
         requestLayout();
         invalidate();
@@ -3645,19 +3718,18 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.736 -0400", hash_original_method = "229663AAAB1BC0B50485AD0B5CC199F3", hash_generated_method = "7C08A5E950B086A45ED2A5DDDF97D1F0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.273 -0400", hash_original_method = "229663AAAB1BC0B50485AD0B5CC199F3", hash_generated_method = "959A3AD3BE23D4C1FF0C75877AA83487")
     public int getDividerHeight() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_238671635 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_238671635;
         // ---------- Original Method ----------
         //return mDividerHeight;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.736 -0400", hash_original_method = "D3D08555D2F9E637F163A09E680CBA08", hash_generated_method = "061D9B0F35A5AD7FCD54C526E94FB60C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.274 -0400", hash_original_method = "D3D08555D2F9E637F163A09E680CBA08", hash_generated_method = "F0AE68FA46B0ADDC93935BBE3F16E6B1")
     public void setDividerHeight(int height) {
-        dsTaint.addTaint(height);
+        mDividerHeight = height;
         requestLayout();
         invalidate();
         // ---------- Original Method ----------
@@ -3667,10 +3739,9 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.736 -0400", hash_original_method = "97442AC2339A7874BFA41866E47D7310", hash_generated_method = "836F268831B52C5440821F729DBB3C39")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.274 -0400", hash_original_method = "97442AC2339A7874BFA41866E47D7310", hash_generated_method = "82E939478FD38F6F96EFD8736EAC5DA4")
     public void setHeaderDividersEnabled(boolean headerDividersEnabled) {
-        dsTaint.addTaint(headerDividersEnabled);
+        mHeaderDividersEnabled = headerDividersEnabled;
         invalidate();
         // ---------- Original Method ----------
         //mHeaderDividersEnabled = headerDividersEnabled;
@@ -3678,10 +3749,9 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.737 -0400", hash_original_method = "74ACE2244DDEB7C7F913E5E0F875653E", hash_generated_method = "00147BE60546070AA7C1555286013EA8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.274 -0400", hash_original_method = "74ACE2244DDEB7C7F913E5E0F875653E", hash_generated_method = "647057629C534B13B55E9BA37BB1D9B8")
     public void setFooterDividersEnabled(boolean footerDividersEnabled) {
-        dsTaint.addTaint(footerDividersEnabled);
+        mFooterDividersEnabled = footerDividersEnabled;
         invalidate();
         // ---------- Original Method ----------
         //mFooterDividersEnabled = footerDividersEnabled;
@@ -3689,10 +3759,9 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.737 -0400", hash_original_method = "953E541E16240F0325506F6534EE33B4", hash_generated_method = "3D8314C7C9F9CFA5DCA3E5AF2D73C5A1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.274 -0400", hash_original_method = "953E541E16240F0325506F6534EE33B4", hash_generated_method = "64DCB2C7DA1E915EE3294305D1356011")
     public void setOverscrollHeader(Drawable header) {
-        dsTaint.addTaint(header.dsTaint);
+        mOverScrollHeader = header;
         {
             invalidate();
         } //End block
@@ -3704,19 +3773,20 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.737 -0400", hash_original_method = "95FFBAE371294243FE9AD2355C3622A4", hash_generated_method = "7AE9D796FC92CCA6D5BF32413D1CA08D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.275 -0400", hash_original_method = "95FFBAE371294243FE9AD2355C3622A4", hash_generated_method = "A1958DC74038795697469F4E7A30FC88")
     public Drawable getOverscrollHeader() {
-        return (Drawable)dsTaint.getTaint();
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1955124507 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1955124507 = mOverScrollHeader;
+        varB4EAC82CA7396A68D541C85D26508E83_1955124507.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1955124507;
         // ---------- Original Method ----------
         //return mOverScrollHeader;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.737 -0400", hash_original_method = "E2CA032ECDDC156C9CE8335D95975846", hash_generated_method = "085FF4C90A20D75DB3C6FC30B7587E2E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.275 -0400", hash_original_method = "E2CA032ECDDC156C9CE8335D95975846", hash_generated_method = "1A6AF223BC637FBFCF894AE4D3360007")
     public void setOverscrollFooter(Drawable footer) {
-        dsTaint.addTaint(footer.dsTaint);
+        mOverScrollFooter = footer;
         invalidate();
         // ---------- Original Method ----------
         //mOverScrollFooter = footer;
@@ -3724,23 +3794,21 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.737 -0400", hash_original_method = "C43851852530BF4773181DC349AD3704", hash_generated_method = "BF5C087D97BE14B2AD77179A0FDE99BD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.278 -0400", hash_original_method = "C43851852530BF4773181DC349AD3704", hash_generated_method = "397B7988750E2FA155C270CBB3310911")
     public Drawable getOverscrollFooter() {
-        return (Drawable)dsTaint.getTaint();
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_885425820 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_885425820 = mOverScrollFooter;
+        varB4EAC82CA7396A68D541C85D26508E83_885425820.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_885425820;
         // ---------- Original Method ----------
         //return mOverScrollFooter;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.738 -0400", hash_original_method = "A140BD3D04197A195532B0C2217798E2", hash_generated_method = "09C9B3E4C30100603337CEAC0F5FBD6A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.281 -0400", hash_original_method = "A140BD3D04197A195532B0C2217798E2", hash_generated_method = "42E6FC77BF30CA92BDF3ECD80E39967E")
     @Override
     protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(gainFocus);
-        dsTaint.addTaint(direction);
-        dsTaint.addTaint(previouslyFocusedRect.dsTaint);
         super.onFocusChanged(gainFocus, direction, previouslyFocusedRect);
         ListAdapter adapter;
         adapter = mAdapter;
@@ -3751,7 +3819,7 @@ public class ListView extends AbsListView {
         {
             previouslyFocusedRect.offset(mScrollX, mScrollY);
             {
-                boolean var834FA86141DD35F45E58D6AC3B8AC266_1086180937 = (adapter.getCount() < getChildCount() + mFirstPosition);
+                boolean var834FA86141DD35F45E58D6AC3B8AC266_170339125 = (adapter.getCount() < getChildCount() + mFirstPosition);
                 {
                     mLayoutMode = LAYOUT_NORMAL;
                     layoutChildren();
@@ -3770,7 +3838,7 @@ public class ListView extends AbsListView {
                 i = 0;
                 {
                     {
-                        boolean varF0493CBC36FEE8A37314533655677361_1507948253 = (!adapter.isEnabled(firstPosition + i));
+                        boolean varF0493CBC36FEE8A37314533655677361_1248734178 = (!adapter.isEnabled(firstPosition + i));
                     } //End collapsed parenthetic
                     View other;
                     other = getChildAt(i);
@@ -3792,13 +3860,15 @@ public class ListView extends AbsListView {
         {
             requestLayout();
         } //End block
+        addTaint(gainFocus);
+        addTaint(direction);
+        addTaint(previouslyFocusedRect.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.738 -0400", hash_original_method = "33666A5E6A3C0638CD57027CC0FE1CC1", hash_generated_method = "6D61022DD5DE44775F7DF83DD1D92A65")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.291 -0400", hash_original_method = "33666A5E6A3C0638CD57027CC0FE1CC1", hash_generated_method = "6D61022DD5DE44775F7DF83DD1D92A65")
     @Override
     protected void onFinishInflate() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -3827,18 +3897,40 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.738 -0400", hash_original_method = "55B474F0526D1B513F7B1BB91F273A6A", hash_generated_method = "F6E66436AF1811567AE3C575A7B80BE9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.292 -0400", hash_original_method = "55B474F0526D1B513F7B1BB91F273A6A", hash_generated_method = "C45E1E8DDCE26EFB3F51C2B4746AF1F6")
     @Override
     protected View findViewTraversal(int id) {
-        dsTaint.addTaint(id);
+        View varB4EAC82CA7396A68D541C85D26508E83_167456261 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_179036799 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_1365540864 = null; //Variable for return #3
         View v;
         v = super.findViewTraversal(id);
         {
             v = findViewInHeadersOrFooters(mHeaderViewInfos, id);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_167456261 = v;
+            } //End block
             v = findViewInHeadersOrFooters(mFooterViewInfos, id);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_179036799 = v;
+            } //End block
         } //End block
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1365540864 = v;
+        addTaint(id);
+        View varA7E53CE21691AB073D9660D615818899_1067683580; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1067683580 = varB4EAC82CA7396A68D541C85D26508E83_167456261;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1067683580 = varB4EAC82CA7396A68D541C85D26508E83_179036799;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1067683580 = varB4EAC82CA7396A68D541C85D26508E83_1365540864;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1067683580.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1067683580;
         // ---------- Original Method ----------
         //View v;
         //v = super.findViewTraversal(id);
@@ -3856,11 +3948,10 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.739 -0400", hash_original_method = "CE5790FF46C8EC9157EF966632ADD833", hash_generated_method = "41D5ECB43B2CC965F536644423C98AD3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.294 -0400", hash_original_method = "CE5790FF46C8EC9157EF966632ADD833", hash_generated_method = "E36029084D0CF55C85FDD70BD8778227")
      View findViewInHeadersOrFooters(ArrayList<FixedViewInfo> where, int id) {
-        dsTaint.addTaint(id);
-        dsTaint.addTaint(where.dsTaint);
+        View varB4EAC82CA7396A68D541C85D26508E83_929945258 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1678335043 = null; //Variable for return #2
         {
             int len;
             len = where.size();
@@ -3871,15 +3962,31 @@ public class ListView extends AbsListView {
                 {
                     v = where.get(i).view;
                     {
-                        boolean var3F751ABEC959446BA6608C20A1A0BA91_2072205119 = (!v.isRootNamespace());
+                        boolean var3F751ABEC959446BA6608C20A1A0BA91_1754917269 = (!v.isRootNamespace());
                         {
                             v = v.findViewById(id);
+                            {
+                                varB4EAC82CA7396A68D541C85D26508E83_929945258 = v;
+                            } //End block
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1678335043 = null;
+        addTaint(where.getTaint());
+        addTaint(id);
+        View varA7E53CE21691AB073D9660D615818899_1858569248; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1858569248 = varB4EAC82CA7396A68D541C85D26508E83_929945258;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1858569248 = varB4EAC82CA7396A68D541C85D26508E83_1678335043;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1858569248.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1858569248;
         // ---------- Original Method ----------
         //if (where != null) {
             //int len = where.size();
@@ -3898,18 +4005,40 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.739 -0400", hash_original_method = "3E2A521CFE9847E9FDB3AEC6F88A76DD", hash_generated_method = "C35EB6ADD946054C32A02C38D35B7BD5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.312 -0400", hash_original_method = "3E2A521CFE9847E9FDB3AEC6F88A76DD", hash_generated_method = "E07AC37A807FC25CA4DCF32698EA4730")
     @Override
     protected View findViewWithTagTraversal(Object tag) {
-        dsTaint.addTaint(tag.dsTaint);
+        View varB4EAC82CA7396A68D541C85D26508E83_2050578803 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1819763572 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_533330448 = null; //Variable for return #3
         View v;
         v = super.findViewWithTagTraversal(tag);
         {
             v = findViewWithTagInHeadersOrFooters(mHeaderViewInfos, tag);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_2050578803 = v;
+            } //End block
             v = findViewWithTagInHeadersOrFooters(mFooterViewInfos, tag);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1819763572 = v;
+            } //End block
         } //End block
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_533330448 = v;
+        addTaint(tag.getTaint());
+        View varA7E53CE21691AB073D9660D615818899_774945544; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_774945544 = varB4EAC82CA7396A68D541C85D26508E83_2050578803;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_774945544 = varB4EAC82CA7396A68D541C85D26508E83_1819763572;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_774945544 = varB4EAC82CA7396A68D541C85D26508E83_533330448;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_774945544.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_774945544;
         // ---------- Original Method ----------
         //View v;
         //v = super.findViewWithTagTraversal(tag);
@@ -3927,11 +4056,10 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.739 -0400", hash_original_method = "FB5700AACE78A96EA34C4186153EA1D8", hash_generated_method = "5B7C04F73D68808DBD4E23FE1676A7BB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.319 -0400", hash_original_method = "FB5700AACE78A96EA34C4186153EA1D8", hash_generated_method = "75AC1A66BE15C09932351F2949F4D85D")
      View findViewWithTagInHeadersOrFooters(ArrayList<FixedViewInfo> where, Object tag) {
-        dsTaint.addTaint(tag.dsTaint);
-        dsTaint.addTaint(where.dsTaint);
+        View varB4EAC82CA7396A68D541C85D26508E83_1685013944 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1218849604 = null; //Variable for return #2
         {
             int len;
             len = where.size();
@@ -3942,15 +4070,31 @@ public class ListView extends AbsListView {
                 {
                     v = where.get(i).view;
                     {
-                        boolean var3F751ABEC959446BA6608C20A1A0BA91_810604445 = (!v.isRootNamespace());
+                        boolean var3F751ABEC959446BA6608C20A1A0BA91_924065425 = (!v.isRootNamespace());
                         {
                             v = v.findViewWithTag(tag);
+                            {
+                                varB4EAC82CA7396A68D541C85D26508E83_1685013944 = v;
+                            } //End block
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1218849604 = null;
+        addTaint(where.getTaint());
+        addTaint(tag.getTaint());
+        View varA7E53CE21691AB073D9660D615818899_493794392; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_493794392 = varB4EAC82CA7396A68D541C85D26508E83_1685013944;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_493794392 = varB4EAC82CA7396A68D541C85D26508E83_1218849604;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_493794392.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_493794392;
         // ---------- Original Method ----------
         //if (where != null) {
             //int len = where.size();
@@ -3969,19 +4113,41 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.740 -0400", hash_original_method = "C4FCF9CDE386456E06D0A36ACE84F436", hash_generated_method = "DC284FF6AC89B3D5642D593BCA2D78CC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.320 -0400", hash_original_method = "C4FCF9CDE386456E06D0A36ACE84F436", hash_generated_method = "85D178A6DB2BE63B9C215BE0325E2A58")
     @Override
     protected View findViewByPredicateTraversal(Predicate<View> predicate, View childToSkip) {
-        dsTaint.addTaint(childToSkip.dsTaint);
-        dsTaint.addTaint(predicate.dsTaint);
+        View varB4EAC82CA7396A68D541C85D26508E83_1465563796 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_583609048 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_2072286851 = null; //Variable for return #3
         View v;
         v = super.findViewByPredicateTraversal(predicate, childToSkip);
         {
             v = findViewByPredicateInHeadersOrFooters(mHeaderViewInfos, predicate, childToSkip);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1465563796 = v;
+            } //End block
             v = findViewByPredicateInHeadersOrFooters(mFooterViewInfos, predicate, childToSkip);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_583609048 = v;
+            } //End block
         } //End block
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2072286851 = v;
+        addTaint(predicate.getTaint());
+        addTaint(childToSkip.getTaint());
+        View varA7E53CE21691AB073D9660D615818899_1574455732; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1574455732 = varB4EAC82CA7396A68D541C85D26508E83_1465563796;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1574455732 = varB4EAC82CA7396A68D541C85D26508E83_583609048;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1574455732 = varB4EAC82CA7396A68D541C85D26508E83_2072286851;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1574455732.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1574455732;
         // ---------- Original Method ----------
         //View v;
         //v = super.findViewByPredicateTraversal(predicate, childToSkip);
@@ -3999,13 +4165,11 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.740 -0400", hash_original_method = "D1F1A1145A67766E94BF084DFEF4A6A9", hash_generated_method = "5977B4F4F782EFABDD877DD5C2E6BDD1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.328 -0400", hash_original_method = "D1F1A1145A67766E94BF084DFEF4A6A9", hash_generated_method = "505745298A6180763DAB479F401CE7C0")
      View findViewByPredicateInHeadersOrFooters(ArrayList<FixedViewInfo> where,
             Predicate<View> predicate, View childToSkip) {
-        dsTaint.addTaint(childToSkip.dsTaint);
-        dsTaint.addTaint(predicate.dsTaint);
-        dsTaint.addTaint(where.dsTaint);
+        View varB4EAC82CA7396A68D541C85D26508E83_909376298 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1851810812 = null; //Variable for return #2
         {
             int len;
             len = where.size();
@@ -4016,15 +4180,32 @@ public class ListView extends AbsListView {
                 {
                     v = where.get(i).view;
                     {
-                        boolean varE559F145C9972D4F93FC59CF981B09D2_2727651 = (v != childToSkip && !v.isRootNamespace());
+                        boolean varE559F145C9972D4F93FC59CF981B09D2_1544580427 = (v != childToSkip && !v.isRootNamespace());
                         {
                             v = v.findViewByPredicate(predicate);
+                            {
+                                varB4EAC82CA7396A68D541C85D26508E83_909376298 = v;
+                            } //End block
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1851810812 = null;
+        addTaint(where.getTaint());
+        addTaint(predicate.getTaint());
+        addTaint(childToSkip.getTaint());
+        View varA7E53CE21691AB073D9660D615818899_2137439670; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_2137439670 = varB4EAC82CA7396A68D541C85D26508E83_909376298;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_2137439670 = varB4EAC82CA7396A68D541C85D26508E83_1851810812;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_2137439670.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2137439670;
         // ---------- Original Method ----------
         //if (where != null) {
             //int len = where.size();
@@ -4043,14 +4224,13 @@ public class ListView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.741 -0400", hash_original_method = "7376DB3A956D54D1A994EA4B9B95B8AF", hash_generated_method = "EFE8605E66819339746D297022FA60D0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.328 -0400", hash_original_method = "7376DB3A956D54D1A994EA4B9B95B8AF", hash_generated_method = "B06720B42852258BFF5BB13804B831DF")
     @Deprecated
     public long[] getCheckItemIds() {
         {
-            boolean var92A5B2B773F784D23AACADEC549061AE_1069484834 = (mAdapter != null && mAdapter.hasStableIds());
+            boolean var92A5B2B773F784D23AACADEC549061AE_316865675 = (mAdapter != null && mAdapter.hasStableIds());
             {
-                long[] varEA0F92157511B761BCA87A37A949584F_748849269 = (getCheckedItemIds());
+                long[] varEA0F92157511B761BCA87A37A949584F_709128578 = (getCheckedItemIds());
             } //End block
         } //End collapsed parenthetic
         {
@@ -4069,7 +4249,7 @@ public class ListView extends AbsListView {
                 i = 0;
                 {
                     {
-                        boolean var06DB0322BE5DDF244F3C57344F69D711_2022919921 = (states.valueAt(i));
+                        boolean var06DB0322BE5DDF244F3C57344F69D711_1965954662 = (states.valueAt(i));
                         {
                             ids[checkedCount++] = adapter.getItemId(states.keyAt(i));
                         } //End block
@@ -4082,23 +4262,29 @@ public class ListView extends AbsListView {
                 System.arraycopy(ids, 0, result, 0, checkedCount);
             } //End block
         } //End block
-        long[] var6C93D8E1F6D98EBFFE119BBCCB99BC4A_737190727 = (new long[0]);
-        long[] retVal = new long[1];
-        retVal[0] = dsTaint.getTaintInt();
-        return retVal;
+        long[] var6C93D8E1F6D98EBFFE119BBCCB99BC4A_1486539181 = (new long[0]);
+        long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_158181392 = {getTaintLong()};
+        return var3908C7C3AF5171CEE1F112DAE77A5C4D_158181392;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
     public class FixedViewInfo {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.329 -0400", hash_original_field = "1BDA80F2BE4D3658E0BAA43FBE7AE8C1", hash_generated_field = "F4E21118122450D7DE8C5B004AEA690D")
+
         public View view;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.329 -0400", hash_original_field = "8D777F385D3DFEC8815D20F7496026DC", hash_generated_field = "FC3B89DB1B4BAEFF0C8DFDD10399B12A")
+
         public Object data;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.329 -0400", hash_original_field = "ADD60A1158B4B8A77E92EC580F3040CE", hash_generated_field = "51BB0A155CFD263D81C29BB4668379B4")
+
         public boolean isSelectable;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.741 -0400", hash_original_method = "DDBF5E90009D6BB6377BA935DDFF0692", hash_generated_method = "DDBF5E90009D6BB6377BA935DDFF0692")
-                public FixedViewInfo ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.329 -0400", hash_original_method = "67C6F15893AD18CF0EAE06202C68D9E8", hash_generated_method = "67C6F15893AD18CF0EAE06202C68D9E8")
+        public FixedViewInfo ()
         {
+            //Synthesized constructor
         }
 
 
@@ -4107,21 +4293,28 @@ public class ListView extends AbsListView {
 
     
     private class FocusSelector implements Runnable {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.329 -0400", hash_original_field = "2A02BDE12D932CD9DCA97106D487F8F5", hash_generated_field = "D614AE7D1AAE0276EA05A974DCBF0210")
+
         private int mPosition;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.329 -0400", hash_original_field = "1C2A16FEE0F2317B52A14EA25A87B83E", hash_generated_field = "9F00838B177601A91ACC5BEF0B2B59E5")
+
         private int mPositionTop;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.741 -0400", hash_original_method = "6EE5E7BF54E292ACF9A4E350E9D7F861", hash_generated_method = "6EE5E7BF54E292ACF9A4E350E9D7F861")
-                public FocusSelector ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.330 -0400", hash_original_method = "34C9C9AFBDE05AECFED95C79C10A76BA", hash_generated_method = "34C9C9AFBDE05AECFED95C79C10A76BA")
+        public FocusSelector ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.741 -0400", hash_original_method = "5C0213FE7A42F47411000D870177F1B7", hash_generated_method = "6202FAFACBE8373BBACCF39789E1554F")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.344 -0400", hash_original_method = "5C0213FE7A42F47411000D870177F1B7", hash_generated_method = "8368E6AC65C930A41D04298660A7A323")
         public FocusSelector setup(int position, int top) {
-            dsTaint.addTaint(position);
-            dsTaint.addTaint(top);
-            return (FocusSelector)dsTaint.getTaint();
+            FocusSelector varB4EAC82CA7396A68D541C85D26508E83_2099041540 = null; //Variable for return #1
+            mPosition = position;
+            mPositionTop = top;
+            varB4EAC82CA7396A68D541C85D26508E83_2099041540 = this;
+            varB4EAC82CA7396A68D541C85D26508E83_2099041540.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2099041540;
             // ---------- Original Method ----------
             //mPosition = position;
             //mPositionTop = top;
@@ -4129,8 +4322,7 @@ public class ListView extends AbsListView {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.742 -0400", hash_original_method = "1C9CFC3992CD17CE1A3B73D68C8C6081", hash_generated_method = "59BBD0E54B7536BB80D52C5363FBE175")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.344 -0400", hash_original_method = "1C9CFC3992CD17CE1A3B73D68C8C6081", hash_generated_method = "59BBD0E54B7536BB80D52C5363FBE175")
         public void run() {
             setSelectionFromTop(mPosition, mPositionTop);
             // ---------- Original Method ----------
@@ -4143,39 +4335,43 @@ public class ListView extends AbsListView {
 
     
     static private class ArrowScrollFocusResult {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.344 -0400", hash_original_field = "390A3127D73EBF1C2FE439B9B7D711F9", hash_generated_field = "51E21A7A6543942D242B4E74F7651C70")
+
         private int mSelectedPosition;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.344 -0400", hash_original_field = "9FA5FDE7E622E7E96DFD95286E06FD92", hash_generated_field = "A1DDFEC53FF7E81352EF3B979C9E665D")
+
         private int mAmountToScroll;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.742 -0400", hash_original_method = "5170EEC81D98BC961683A5C88C5B251E", hash_generated_method = "5170EEC81D98BC961683A5C88C5B251E")
-                public ArrowScrollFocusResult ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.344 -0400", hash_original_method = "F12FA46FC2E286992F273AF0197118D3", hash_generated_method = "F12FA46FC2E286992F273AF0197118D3")
+        public ArrowScrollFocusResult ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.743 -0400", hash_original_method = "E4C7C1A71AB7D603722F7CE31ED09575", hash_generated_method = "BC856696BE75989C71B0DE654ECF980B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.353 -0400", hash_original_method = "E4C7C1A71AB7D603722F7CE31ED09575", hash_generated_method = "C8559F673D941812E13F3F631D0BAA1F")
          void populate(int selectedPosition, int amountToScroll) {
-            dsTaint.addTaint(amountToScroll);
-            dsTaint.addTaint(selectedPosition);
+            mSelectedPosition = selectedPosition;
+            mAmountToScroll = amountToScroll;
             // ---------- Original Method ----------
             //mSelectedPosition = selectedPosition;
             //mAmountToScroll = amountToScroll;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.744 -0400", hash_original_method = "57FF42983620727F309A47A5C295AFEC", hash_generated_method = "33BD6DA274CD8ADC380BA7FD495DEF9F")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.353 -0400", hash_original_method = "57FF42983620727F309A47A5C295AFEC", hash_generated_method = "E98AB723D3A587DA0106A43FBEDCB3BE")
         public int getSelectedPosition() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1555940186 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1555940186;
             // ---------- Original Method ----------
             //return mSelectedPosition;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.744 -0400", hash_original_method = "547539826ED165E8A574C9320A564E9F", hash_generated_method = "B25B594C28EDFB221D7D92A3192ADFFD")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.356 -0400", hash_original_method = "547539826ED165E8A574C9320A564E9F", hash_generated_method = "E981636BAF05952D4FDDDFC0BF8D3142")
         public int getAmountToScroll() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_299294032 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_299294032;
             // ---------- Original Method ----------
             //return mAmountToScroll;
         }
@@ -4185,8 +4381,14 @@ public class ListView extends AbsListView {
 
 
     
-    static final int NO_POSITION = -1;
-    private static final float MAX_SCROLL_FACTOR = 0.33f;
-    private static final int MIN_SCROLL_PREVIEW_PIXELS = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.356 -0400", hash_original_field = "E1DEA0BEB2F8CF12C7B6244C21F007E5", hash_generated_field = "C3B344AB4D67603D7DE83E3840EE5CC5")
+
+    static int NO_POSITION = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.356 -0400", hash_original_field = "3559B51D9CE8D7099F97AA2C846ABFFB", hash_generated_field = "115054D5D3AA5A09F628FF22BEE34AB8")
+
+    private static float MAX_SCROLL_FACTOR = 0.33f;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.356 -0400", hash_original_field = "DA0484B66F107DB9B9104112BC0055B2", hash_generated_field = "27069A35235411347BBE52A339B44792")
+
+    private static int MIN_SCROLL_PREVIEW_PIXELS = 2;
 }
 

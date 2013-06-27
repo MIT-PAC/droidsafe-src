@@ -18,28 +18,59 @@ import libcore.icu.LocaleData;
 import libcore.icu.TimeZones;
 
 public class DateFormatSymbols implements Serializable, Cloneable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "F93C182ABF27C94E3A5B7A9F01CA9F60", hash_generated_field = "B3AAF3207AD6EC4015B2989CC1E896AA")
+
     private String localPatternChars;
-    String[] ampms, eras, months, shortMonths, shortWeekdays, weekdays;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "EE109C8604E524BC6D9E0C2587FEE2D8", hash_generated_field = "E9E36152E2B2CCE2D2DF7029FCA0E0AA")
+
+    String[] ampms;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "D026F0E07E8726FB52E3CC3E3D0D1375", hash_generated_field = "E0691941E69B86E10AC79FC9DFFC272D")
+
+    String[] eras;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "DA36CFAF48B9E19896E23E1207040D1E", hash_generated_field = "86F5593447744AB0D2426E4B6C92C689")
+
+    String[] months;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "7CFA6EB2E9F41003AC5C121106DC32C1", hash_generated_field = "0DF3792D47225D65FC03CC1EE597502D")
+
+    String[] shortMonths;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "F232077D652EDEE073A547D6F8C9DBAA", hash_generated_field = "9FF057C20818DAD49F561EBB25C5D177")
+
+    String[] shortWeekdays;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "92B9604FFB8FE10577DE981BE625A6D1", hash_generated_field = "F5A81D14F7FC350336EA1CDD45134728")
+
+    String[] weekdays;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "B121095E75CAC704B42EE21332C700E8", hash_generated_field = "402565001AFCC4D0F913CB823E99BBB5")
+
     transient String[] longStandAloneMonths;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "B8789910F74B7F8F96F476446A140202", hash_generated_field = "D3C2FF472DF92A6DB563114884CB2A55")
+
     transient String[] shortStandAloneMonths;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "1FFCA875E027B7EFD687FE2C578690E6", hash_generated_field = "A8C4ABDEC24C4081D6DC2DD240794CBF")
+
     transient String[] longStandAloneWeekdays;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "EDEEAFC9758166996DB88A34369B7E82", hash_generated_field = "5A1974ABC298872CE58EE882C634EEA7")
+
     transient String[] shortStandAloneWeekdays;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "D0872812CDF2B7417CF77B378EBAABF1", hash_generated_field = "7D22C959C8C5C0204FC82BE4EE6AC154")
+
     String[][] zoneStrings;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "7B7649AEDE091E38288525663FD40113", hash_generated_field = "95929A023295B932C341AB00B66AEC36")
+
     transient boolean customZoneStrings;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "FB216D9E8791E63C8D12BDC420956839", hash_generated_field = "B588E29C12BDB46B326FE934DDE5D1D8")
+
     transient Locale locale;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.033 -0400", hash_original_method = "5D59D1DAC1D60D67A4A902493CF704FB", hash_generated_method = "C859C77BBE7800A29A0C963324C5BAF5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public DateFormatSymbols() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.574 -0400", hash_original_method = "5D59D1DAC1D60D67A4A902493CF704FB", hash_generated_method = "C859C77BBE7800A29A0C963324C5BAF5")
+    public  DateFormatSymbols() {
         this(Locale.getDefault());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.033 -0400", hash_original_method = "10456A2571D0B6BA1CAC9BF624A7CB6F", hash_generated_method = "4E223A31880FF8E6499EA8BDDD9BB5EB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public DateFormatSymbols(Locale locale) {
-        dsTaint.addTaint(locale.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.575 -0400", hash_original_method = "10456A2571D0B6BA1CAC9BF624A7CB6F", hash_generated_method = "76154EF638B09EF895E47F2F699EA256")
+    public  DateFormatSymbols(Locale locale) {
+        this.locale = locale;
         this.localPatternChars = SimpleDateFormat.PATTERN_CHARS;
         LocaleData localeData;
         localeData = LocaleData.get(locale);
@@ -70,13 +101,15 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.033 -0400", hash_original_method = "D4F915DF738351C94CAE2742EF7502E4", hash_generated_method = "3B0C006621713707A650CA6671967E87")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.577 -0400", hash_original_method = "D4F915DF738351C94CAE2742EF7502E4", hash_generated_method = "00CA99C321BCB2628A28BD4EBFFA1315")
     synchronized String[][] internalZoneStrings() {
+        String[][] varB4EAC82CA7396A68D541C85D26508E83_43057646 = null; //Variable for return #1
         {
             zoneStrings = TimeZones.getZoneStrings(locale);
         } //End block
-        return (String[][])dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_43057646 = zoneStrings;
+        varB4EAC82CA7396A68D541C85D26508E83_43057646.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_43057646;
         // ---------- Original Method ----------
         //if (zoneStrings == null) {
             //zoneStrings = TimeZones.getZoneStrings(locale);
@@ -103,15 +136,14 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.034 -0400", hash_original_method = "E120B4C8193E856C74E13A18ACCA4F59", hash_generated_method = "2F2220E6CC849FF0549EB4E1F18C0BCE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.577 -0400", hash_original_method = "E120B4C8193E856C74E13A18ACCA4F59", hash_generated_method = "BD7C4E57C037C4434DB7EA8243AC64AF")
     private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-        dsTaint.addTaint(ois.dsTaint);
         ois.defaultReadObject();
         longStandAloneMonths = months;
         shortStandAloneMonths = shortMonths;
         longStandAloneWeekdays = weekdays;
         shortStandAloneWeekdays = shortWeekdays;
+        addTaint(ois.getTaint());
         // ---------- Original Method ----------
         //ois.defaultReadObject();
         //longStandAloneMonths = months;
@@ -121,31 +153,31 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.034 -0400", hash_original_method = "5B6B2CBEB972D19E7440DD4CD3FE992C", hash_generated_method = "44F20FE0A70BE9C6157477442C2FC6EF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.578 -0400", hash_original_method = "5B6B2CBEB972D19E7440DD4CD3FE992C", hash_generated_method = "B537106420CC00C4A69A93EF5AA315BF")
     private void writeObject(ObjectOutputStream oos) throws IOException {
-        dsTaint.addTaint(oos.dsTaint);
         internalZoneStrings();
         oos.defaultWriteObject();
+        addTaint(oos.getTaint());
         // ---------- Original Method ----------
         //internalZoneStrings();
         //oos.defaultWriteObject();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.034 -0400", hash_original_method = "8CF95CA28B578C998335BB5077A2FD41", hash_generated_method = "56A83F9FECADD3D5D9A2798799807F61")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.578 -0400", hash_original_method = "8CF95CA28B578C998335BB5077A2FD41", hash_generated_method = "A28DE5B8A841FBA2D158CDF1346089BC")
     @Override
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_1425813476 = null; //Variable for return #1
         try 
         {
-            Object varDEB570B566DA7549E2F197D0AFA5A2B6_645713368 = (super.clone());
+            varB4EAC82CA7396A68D541C85D26508E83_1425813476 = super.clone();
         } //End block
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         } //End block
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1425813476.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1425813476;
         // ---------- Original Method ----------
         //try {
             //return super.clone();
@@ -155,14 +187,12 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.035 -0400", hash_original_method = "94EAA904B302ADC25F17C85B071CCB2E", hash_generated_method = "D3E5D09156C240C40D25CD6E2B5AEB90")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.583 -0400", hash_original_method = "94EAA904B302ADC25F17C85B071CCB2E", hash_generated_method = "BEB4972F913059A7BCEAB91D2D9885E8")
     @Override
     public boolean equals(Object object) {
-        dsTaint.addTaint(object.dsTaint);
         DateFormatSymbols rhs;
         rhs = (DateFormatSymbols) object;
-        boolean var43A3CC75E8E7CD6A467AD89DFA8053C6_52470605 = (localPatternChars.equals(rhs.localPatternChars) &&
+        boolean var43A3CC75E8E7CD6A467AD89DFA8053C6_139761240 = (localPatternChars.equals(rhs.localPatternChars) &&
                 Arrays.equals(ampms, rhs.ampms) &&
                 Arrays.equals(eras, rhs.eras) &&
                 Arrays.equals(months, rhs.months) &&
@@ -170,7 +200,9 @@ public class DateFormatSymbols implements Serializable, Cloneable {
                 Arrays.equals(shortWeekdays, rhs.shortWeekdays) &&
                 Arrays.equals(weekdays, rhs.weekdays) &&
                 timeZoneStringsEqual(this, rhs));
-        return dsTaint.getTaintBoolean();
+        addTaint(object.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1667037376 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1667037376;
         // ---------- Original Method ----------
         //if (this == object) {
             //return true;
@@ -198,11 +230,11 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.035 -0400", hash_original_method = "315ADE63F84D6DC8A24FA118617E3BBD", hash_generated_method = "4EBBA7AA0DC3C17C6F8524915BE3C38A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.585 -0400", hash_original_method = "315ADE63F84D6DC8A24FA118617E3BBD", hash_generated_method = "D50F0AFC057484C9B57042FD71F5F4E7")
     @Override
     public String toString() {
-        String var52DF4A8A61EC8149ACFA6AA449E35423_2093528914 = (getClass().getName() +
+        String varB4EAC82CA7396A68D541C85D26508E83_1979365739 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1979365739 = getClass().getName() +
                 "[amPmStrings=" + Arrays.toString(ampms) +
                 ",customZoneStrings=" + customZoneStrings +
                 ",eras=" + Arrays.toString(eras) +
@@ -212,8 +244,9 @@ public class DateFormatSymbols implements Serializable, Cloneable {
                 ",shortWeekdays=" + Arrays.toString(shortWeekdays) +
                 ",weekdays=" + Arrays.toString(weekdays) +
                 ",zoneStrings=[" + Arrays.toString(internalZoneStrings()[0]) + "...]" +
-                "]");
-        return dsTaint.getTaintString();
+                "]";
+        varB4EAC82CA7396A68D541C85D26508E83_1979365739.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1979365739;
         // ---------- Original Method ----------
         //return getClass().getName() +
                 //"[amPmStrings=" + Arrays.toString(ampms) +
@@ -229,92 +262,89 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.036 -0400", hash_original_method = "72991BA97E8B1C753B319ABB9AE6A911", hash_generated_method = "CC7B12220504A25112D7B71C74FF698C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.585 -0400", hash_original_method = "72991BA97E8B1C753B319ABB9AE6A911", hash_generated_method = "27D3B7EBA379CB8945DD9C88CF7382DD")
     public String[] getAmPmStrings() {
-        String[] var57855B452C937C085B67D30105C480E5_629890272 = (ampms.clone());
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1875016767 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1875016767 = ampms.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_1875016767.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1875016767;
         // ---------- Original Method ----------
         //return ampms.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.036 -0400", hash_original_method = "BB9FAB8B89491AAFEBAE987DB8D7ADC9", hash_generated_method = "486CEB9FFBE18E93840101AB7481BE47")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.586 -0400", hash_original_method = "BB9FAB8B89491AAFEBAE987DB8D7ADC9", hash_generated_method = "32F02A0506C4FF906619BD92BC0CB057")
     public String[] getEras() {
-        String[] varA0B988F076913F91BBCED767CD303831_12758506 = (eras.clone());
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_890333095 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_890333095 = eras.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_890333095.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_890333095;
         // ---------- Original Method ----------
         //return eras.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.036 -0400", hash_original_method = "EEE83582BA421C729308A747699C1F8B", hash_generated_method = "65B42D62302597EAFC54AB064C9D7668")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.586 -0400", hash_original_method = "EEE83582BA421C729308A747699C1F8B", hash_generated_method = "32F8A9471D89596C400AF4C317D65A47")
     public String getLocalPatternChars() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_33060150 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_33060150 = localPatternChars;
+        varB4EAC82CA7396A68D541C85D26508E83_33060150.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_33060150;
         // ---------- Original Method ----------
         //return localPatternChars;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.036 -0400", hash_original_method = "7E7D6ABDEA9D17B1FB9A10690E51D2C0", hash_generated_method = "EA54D9D9C167C2528A115000D251CB5C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.600 -0400", hash_original_method = "7E7D6ABDEA9D17B1FB9A10690E51D2C0", hash_generated_method = "4B58553D05724E06BD39701EA1AC5BA4")
     public String[] getMonths() {
-        String[] var4F5EA16CB08E93215BF0F8822F097E6C_1504601829 = (months.clone());
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1261890951 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1261890951 = months.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_1261890951.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1261890951;
         // ---------- Original Method ----------
         //return months.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.036 -0400", hash_original_method = "B159D6A758F880417EB3F558245AB4C8", hash_generated_method = "497E5F4B3FB937CA1198490CF5A4F820")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.600 -0400", hash_original_method = "B159D6A758F880417EB3F558245AB4C8", hash_generated_method = "6C916F5E5CED16B01012A4C1864699C3")
     public String[] getShortMonths() {
-        String[] var30132FDCB20170AEB0C52CB299E11011_53894540 = (shortMonths.clone());
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1197326851 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1197326851 = shortMonths.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_1197326851.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1197326851;
         // ---------- Original Method ----------
         //return shortMonths.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.036 -0400", hash_original_method = "22143FF136703407DD6E3A76253CFCD4", hash_generated_method = "6056BEC4AB9E4B698F4D40E4D2163998")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.602 -0400", hash_original_method = "22143FF136703407DD6E3A76253CFCD4", hash_generated_method = "52E1267E57C885B049EC775E108BCAC3")
     public String[] getShortWeekdays() {
-        String[] var72784B65A11C994930100BC9470E3E83_1932858503 = (shortWeekdays.clone());
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_488963167 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_488963167 = shortWeekdays.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_488963167.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_488963167;
         // ---------- Original Method ----------
         //return shortWeekdays.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.037 -0400", hash_original_method = "9B40AAE5B3ACDD77762A9FF02C898A9B", hash_generated_method = "2446C306DDDFCEE2F7E44F78B8980D99")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.607 -0400", hash_original_method = "9B40AAE5B3ACDD77762A9FF02C898A9B", hash_generated_method = "0AE4EBBDC6CD5F292DD46B93BDEBAC41")
     public String[] getWeekdays() {
-        String[] var465683705B99F2263CE89A5E314C0FF7_261900237 = (weekdays.clone());
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1463294248 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1463294248 = weekdays.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_1463294248.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1463294248;
         // ---------- Original Method ----------
         //return weekdays.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.037 -0400", hash_original_method = "BCD39B9ED22174061A8487583A862B84", hash_generated_method = "4C8C6CE4182F74B573F4565F813074BA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.609 -0400", hash_original_method = "BCD39B9ED22174061A8487583A862B84", hash_generated_method = "0285150AFF2582A5C658C0A38E0A78A8")
     public String[][] getZoneStrings() {
-        String[][] var329334B2B606767E6E03ACA4C091DAD6_1291002400 = (clone2dStringArray(internalZoneStrings()));
-        return (String[][])dsTaint.getTaint();
+        String[][] varB4EAC82CA7396A68D541C85D26508E83_132283638 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_132283638 = clone2dStringArray(internalZoneStrings());
+        varB4EAC82CA7396A68D541C85D26508E83_132283638.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_132283638;
         // ---------- Original Method ----------
         //return clone2dStringArray(internalZoneStrings());
     }
@@ -329,8 +359,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.051 -0400", hash_original_method = "092997CB42FACC03E21BAFCA0C446C08", hash_generated_method = "230C4784C116B559E217C5FAEB4DC26A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.743 -0400", hash_original_method = "092997CB42FACC03E21BAFCA0C446C08", hash_generated_method = "44AE03057DC98C2FE15CF12DC748F939")
     @Override
     public int hashCode() {
         String[][] zoneStrings;
@@ -387,39 +416,35 @@ public class DateFormatSymbols implements Serializable, Cloneable {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_951760168 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_951760168;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.052 -0400", hash_original_method = "C567EF18556F46918292A2FE23B946BD", hash_generated_method = "686E484761CEE4CFF7308BD9439EF7A7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.744 -0400", hash_original_method = "C567EF18556F46918292A2FE23B946BD", hash_generated_method = "DE73325A9EFE1C7D0ECD66FCF4A02234")
     public void setAmPmStrings(String[] data) {
-        dsTaint.addTaint(data[0]);
         ampms = data.clone();
         // ---------- Original Method ----------
         //ampms = data.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.052 -0400", hash_original_method = "144479B04BA5F93BAF1BE491BC6DCE8F", hash_generated_method = "A6931C60FB8EC3F86D30A307BFBA296A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.744 -0400", hash_original_method = "144479B04BA5F93BAF1BE491BC6DCE8F", hash_generated_method = "CD7C7E57D9DD7095EEB50004EB8BC83B")
     public void setEras(String[] data) {
-        dsTaint.addTaint(data[0]);
         eras = data.clone();
         // ---------- Original Method ----------
         //eras = data.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.052 -0400", hash_original_method = "8CEB0632F689D252D9B5C4F3D13B9389", hash_generated_method = "2E1F198139C60D089AE7A570B7F88D4B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.744 -0400", hash_original_method = "8CEB0632F689D252D9B5C4F3D13B9389", hash_generated_method = "649DE06FC38CF0E23444049A52DF75E1")
     public void setLocalPatternChars(String data) {
-        dsTaint.addTaint(data);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
+        localPatternChars = data;
         // ---------- Original Method ----------
         //if (data == null) {
             //throw new NullPointerException();
@@ -428,50 +453,40 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.052 -0400", hash_original_method = "FF561E75C563B528E8ADE2D7DEADB24B", hash_generated_method = "3E6711DCB900248516F5D28612985406")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.754 -0400", hash_original_method = "FF561E75C563B528E8ADE2D7DEADB24B", hash_generated_method = "B78349A0B99F735427CA1D403EEE1075")
     public void setMonths(String[] data) {
-        dsTaint.addTaint(data[0]);
         months = data.clone();
         // ---------- Original Method ----------
         //months = data.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.052 -0400", hash_original_method = "6978BA653DCBEF5E7386E930F96F0A7F", hash_generated_method = "261128ACBC0B8AC7F2834430AB28FEC5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.757 -0400", hash_original_method = "6978BA653DCBEF5E7386E930F96F0A7F", hash_generated_method = "E3952CDA692F3B23A229F9D600872234")
     public void setShortMonths(String[] data) {
-        dsTaint.addTaint(data[0]);
         shortMonths = data.clone();
         // ---------- Original Method ----------
         //shortMonths = data.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.052 -0400", hash_original_method = "D0F3596C1C1C0E88C3194208B883F56E", hash_generated_method = "D1A3BBB011E6FBE2DC89048D17F75A4C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.762 -0400", hash_original_method = "D0F3596C1C1C0E88C3194208B883F56E", hash_generated_method = "6D95734F7E1EFF70EDF04DB57B96047A")
     public void setShortWeekdays(String[] data) {
-        dsTaint.addTaint(data[0]);
         shortWeekdays = data.clone();
         // ---------- Original Method ----------
         //shortWeekdays = data.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.053 -0400", hash_original_method = "8E95286ADE938FE6BC77C4018461282B", hash_generated_method = "38FC79514FE37BB6EF9542A0344569AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.763 -0400", hash_original_method = "8E95286ADE938FE6BC77C4018461282B", hash_generated_method = "5347FE4595A98E521296DAD0F934B3AD")
     public void setWeekdays(String[] data) {
-        dsTaint.addTaint(data[0]);
         weekdays = data.clone();
         // ---------- Original Method ----------
         //weekdays = data.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.056 -0400", hash_original_method = "97B75279909DC0B04FB710B3778B8E55", hash_generated_method = "AC4E167F22EDAB27594DCAACA92FB0B4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.809 -0400", hash_original_method = "97B75279909DC0B04FB710B3778B8E55", hash_generated_method = "1A0E814DB648838A7E638C7F5720FCE2")
     public void setZoneStrings(String[][] zoneStrings) {
-        dsTaint.addTaint(zoneStrings[0][0]);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
@@ -499,6 +514,8 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    private static final long serialVersionUID = -5987973545549424702L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.815 -0400", hash_original_field = "7856CC4F9AD25C25527045AAE8078678", hash_generated_field = "D6B09DC14559887DE9E1172F540C0E95")
+
+    private static long serialVersionUID = -5987973545549424702L;
 }
 

@@ -27,74 +27,92 @@ import libcore.io.Base64;
 import org.apache.harmony.security.utils.JarUtils;
 
 class JarVerifier {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.822 -0400", hash_original_field = "36C03847AF0883885A22C7148FF9D945", hash_generated_field = "9E85BB611D3EE89CADB45020535E6B11")
+
     private String jarName;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.822 -0400", hash_original_field = "39C63DDB96A31B9610CD976B896AD4F0", hash_generated_field = "1E6BF158A9ED964E950A909DB5592C82")
+
     private Manifest man;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.822 -0400", hash_original_field = "7F95040407D1DE1DD06100938FB014B8", hash_generated_field = "7597311A3575323E247960656BDFED83")
+
     private HashMap<String, byte[]> metaEntries = new HashMap<String, byte[]>(5);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.822 -0400", hash_original_field = "EA27612449888A6254ED42A8C6C42B91", hash_generated_field = "2BDBFF6FBB41B311A8CBB7404C6F64F0")
+
     private Hashtable<String, HashMap<String, Attributes>> signatures = new Hashtable<String, HashMap<String, Attributes>>(
             5);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.822 -0400", hash_original_field = "B44FC64946B64487171B584AE29B105E", hash_generated_field = "CCE59A401415332BBD6878BB346856BA")
+
     private Hashtable<String, Certificate[]> certificates = new Hashtable<String, Certificate[]>(
             5);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.822 -0400", hash_original_field = "D94070297E6AC792A9C25E0BCEB74EAB", hash_generated_field = "5AF74B143401640E5EEC8CA95954C829")
+
     private Hashtable<String, Certificate[]> verifiedEntries = new Hashtable<String, Certificate[]>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.822 -0400", hash_original_field = "C0B00F03876D83321535EB4B46A79FCE", hash_generated_field = "6B8C7E29F08A08768A13067ED2CA8C6A")
+
     int mainAttributesEnd;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.380 -0400", hash_original_method = "4436059C4E8276439A6065FE93A5DE5F", hash_generated_method = "9D4192CBA55616BACFCF551D31AEC0B6")
-    @DSModeled(DSC.SAFE)
-     JarVerifier(String name) {
-        dsTaint.addTaint(name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.823 -0400", hash_original_method = "4436059C4E8276439A6065FE93A5DE5F", hash_generated_method = "0A8DC9E44BE88658AD08D7EFC25F2EE1")
+      JarVerifier(String name) {
+        jarName = name;
         // ---------- Original Method ----------
         //jarName = name;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.381 -0400", hash_original_method = "A00C668D834700B7DBCD83DF376B2F68", hash_generated_method = "4805F8CD6A8EDDC8C9D79EF27A028A26")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.823 -0400", hash_original_method = "A00C668D834700B7DBCD83DF376B2F68", hash_generated_method = "0AE4DE462D27C99BF7511E5F32568FA9")
     private SecurityException invalidDigest(String signatureFile, String name, String jarName) {
-        dsTaint.addTaint(signatureFile);
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(jarName);
         if (DroidSafeAndroidRuntime.control) throw new SecurityException(signatureFile + " has invalid digest for " + name +
                 " in " + jarName);
-        return (SecurityException)dsTaint.getTaint();
+        addTaint(signatureFile.getTaint());
+        addTaint(name.getTaint());
+        addTaint(jarName.getTaint());
         // ---------- Original Method ----------
         //throw new SecurityException(signatureFile + " has invalid digest for " + name +
                 //" in " + jarName);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.381 -0400", hash_original_method = "6DF68FF1B39EE346E0EC276311EA5830", hash_generated_method = "3A21DACB7ED3216E0EC534484CD1F5A8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.827 -0400", hash_original_method = "6DF68FF1B39EE346E0EC276311EA5830", hash_generated_method = "AAA875AEE235418D0232F225DF87CC81")
     private SecurityException failedVerification(String jarName, String signatureFile) {
-        dsTaint.addTaint(signatureFile);
-        dsTaint.addTaint(jarName);
         if (DroidSafeAndroidRuntime.control) throw new SecurityException(jarName + " failed verification of " + signatureFile);
-        return (SecurityException)dsTaint.getTaint();
+        addTaint(jarName.getTaint());
+        addTaint(signatureFile.getTaint());
         // ---------- Original Method ----------
         //throw new SecurityException(jarName + " failed verification of " + signatureFile);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.381 -0400", hash_original_method = "6A6033A1386EA2314D4EF0CB331B3F5C", hash_generated_method = "64BE80EFCD5CAFDF449A2EB4C2F435E1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.851 -0400", hash_original_method = "6A6033A1386EA2314D4EF0CB331B3F5C", hash_generated_method = "D3A065D27DC8E9B9CC095A67A2A58CD2")
      VerifierEntry initEntry(String name) {
-        dsTaint.addTaint(name);
+        VerifierEntry varB4EAC82CA7396A68D541C85D26508E83_894270852 = null; //Variable for return #1
+        VerifierEntry varB4EAC82CA7396A68D541C85D26508E83_204710489 = null; //Variable for return #2
+        VerifierEntry varB4EAC82CA7396A68D541C85D26508E83_367826348 = null; //Variable for return #3
+        VerifierEntry varB4EAC82CA7396A68D541C85D26508E83_2131130424 = null; //Variable for return #4
+        VerifierEntry varB4EAC82CA7396A68D541C85D26508E83_1803995864 = null; //Variable for return #5
         {
-            boolean var1739105B34C5F197F51A0EEC2FCE22C4_1839112415 = (man == null || signatures.size() == 0);
+            boolean var1739105B34C5F197F51A0EEC2FCE22C4_1643137186 = (man == null || signatures.size() == 0);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_894270852 = null;
+            } //End block
         } //End collapsed parenthetic
         Attributes attributes;
         attributes = man.getAttributes(name);
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_204710489 = null;
+        } //End block
         ArrayList<Certificate> certs;
         certs = new ArrayList<Certificate>();
         Iterator<Map.Entry<String, HashMap<String, Attributes>>> it;
         it = signatures.entrySet().iterator();
         {
-            boolean var03729FD53960D8DCA3A41A13A0229637_1218145641 = (it.hasNext());
+            boolean var03729FD53960D8DCA3A41A13A0229637_1566030853 = (it.hasNext());
             {
                 Map.Entry<String, HashMap<String, Attributes>> entry;
                 entry = it.next();
                 HashMap<String, Attributes> hm;
                 hm = entry.getValue();
                 {
-                    boolean varA11FBA9D7341E0328282C6ADC9E3B007_1498300819 = (hm.get(name) != null);
+                    boolean varA11FBA9D7341E0328282C6ADC9E3B007_1353819090 = (hm.get(name) != null);
                     {
                         String signatureFile;
                         signatureFile = entry.getKey();
@@ -104,7 +122,10 @@ class JarVerifier {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varD07177C898FD12D837B9D5964F0C24CD_235545851 = (certs.isEmpty());
+            boolean varD07177C898FD12D837B9D5964F0C24CD_556500993 = (certs.isEmpty());
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_367826348 = null;
+            } //End block
         } //End collapsed parenthetic
         Certificate[] certificatesArray;
         certificatesArray = certs.toArray(new Certificate[certs.size()]);
@@ -116,7 +137,7 @@ class JarVerifier {
         StringTokenizer tokens;
         tokens = new StringTokenizer(algorithms);
         {
-            boolean var4A8B7054AF091A6B38EB732ACFC1CEDB_237617597 = (tokens.hasMoreTokens());
+            boolean var4A8B7054AF091A6B38EB732ACFC1CEDB_810430920 = (tokens.hasMoreTokens());
             {
                 String algorithm;
                 algorithm = tokens.nextToken();
@@ -126,42 +147,61 @@ class JarVerifier {
                 hashBytes = hash.getBytes(Charsets.ISO_8859_1);
                 try 
                 {
-                    VerifierEntry var79BF7AB399F8E8C867504849FFEE572B_1207647170 = (new VerifierEntry(name, MessageDigest
-                        .getInstance(algorithm), hashBytes, certificatesArray));
+                    varB4EAC82CA7396A68D541C85D26508E83_2131130424 = new VerifierEntry(name, MessageDigest
+                        .getInstance(algorithm), hashBytes, certificatesArray);
                 } //End block
                 catch (NoSuchAlgorithmException e)
                 { }
             } //End block
         } //End collapsed parenthetic
-        return (VerifierEntry)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1803995864 = null;
+        addTaint(name.getTaint());
+        VerifierEntry varA7E53CE21691AB073D9660D615818899_233231124; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_233231124 = varB4EAC82CA7396A68D541C85D26508E83_894270852;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_233231124 = varB4EAC82CA7396A68D541C85D26508E83_204710489;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_233231124 = varB4EAC82CA7396A68D541C85D26508E83_367826348;
+                break;
+            case 4: //Assign result for return ordinal #4
+                varA7E53CE21691AB073D9660D615818899_233231124 = varB4EAC82CA7396A68D541C85D26508E83_2131130424;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_233231124 = varB4EAC82CA7396A68D541C85D26508E83_1803995864;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_233231124.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_233231124;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.382 -0400", hash_original_method = "B24E46A89F6B78A5F74DC1F8899F1D36", hash_generated_method = "50A4D6062B7D0275478AB2DC435B7B10")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.852 -0400", hash_original_method = "B24E46A89F6B78A5F74DC1F8899F1D36", hash_generated_method = "ED12B2ED3232D85AB068B860172E6DC0")
      void addMetaEntry(String name, byte[] buf) {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(buf[0]);
         metaEntries.put(name.toUpperCase(Locale.US), buf);
+        addTaint(name.getTaint());
+        addTaint(buf[0]);
         // ---------- Original Method ----------
         //metaEntries.put(name.toUpperCase(Locale.US), buf);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.382 -0400", hash_original_method = "8A8EDD1088AB3F7694E04A76DE584752", hash_generated_method = "962C68C48FF8C051302C5C6883A0C6AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.853 -0400", hash_original_method = "8A8EDD1088AB3F7694E04A76DE584752", hash_generated_method = "9E71C3ADA75D8DC4A7428EB60CA5FDF1")
     synchronized boolean readCertificates() {
         Iterator<String> it;
         it = metaEntries.keySet().iterator();
         {
-            boolean var03729FD53960D8DCA3A41A13A0229637_2107008802 = (it.hasNext());
+            boolean var03729FD53960D8DCA3A41A13A0229637_1758081314 = (it.hasNext());
             {
                 String key;
                 key = it.next();
                 {
-                    boolean var4681B3668908FCE90CF6A905CFCA3F33_258371371 = (key.endsWith(".DSA") || key.endsWith(".RSA"));
+                    boolean var4681B3668908FCE90CF6A905CFCA3F33_1288136154 = (key.endsWith(".DSA") || key.endsWith(".RSA"));
                     {
                         verifyCertificate(key);
                         it.remove();
@@ -169,7 +209,8 @@ class JarVerifier {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1041241841 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1041241841;
         // ---------- Original Method ----------
         //if (metaEntries == null) {
             //return false;
@@ -189,10 +230,8 @@ class JarVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.383 -0400", hash_original_method = "E0F968F23AF085C0376D04DBFBF51D30", hash_generated_method = "1F6279C7828E589A361B0147A55EDE26")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.876 -0400", hash_original_method = "E0F968F23AF085C0376D04DBFBF51D30", hash_generated_method = "61297558BD05B0F792C6DC9F696971FC")
     private void verifyCertificate(String certFile) {
-        dsTaint.addTaint(certFile);
         String signatureFile;
         signatureFile = certFile.substring(0, certFile.lastIndexOf('.'))
                 + ".SF";
@@ -241,7 +280,7 @@ class JarVerifier {
             String digestAttribute;
             digestAttribute = "-Digest-Manifest-Main-Attributes";
             {
-                boolean var9660D2ABC682B0CBB44B33389EFC28FB_1427581310 = (!verify(attributes, digestAttribute, manifest, 0, mainAttributesEnd, false, true));
+                boolean var9660D2ABC682B0CBB44B33389EFC28FB_941002371 = (!verify(attributes, digestAttribute, manifest, 0, mainAttributesEnd, false, true));
                 {
                     if (DroidSafeAndroidRuntime.control) throw failedVerification(jarName, signatureFile);
                 } //End block
@@ -251,21 +290,21 @@ class JarVerifier {
         digestAttribute = "-Digest";
         digestAttribute = "-Digest-Manifest";
         {
-            boolean varBF55E30490CA8C888FC67F88CD7AD658_1807104880 = (!verify(attributes, digestAttribute, manifest, 0, manifest.length,
+            boolean varBF55E30490CA8C888FC67F88CD7AD658_391982825 = (!verify(attributes, digestAttribute, manifest, 0, manifest.length,
                 false, false));
             {
                 Iterator<Map.Entry<String, Attributes>> it;
                 it = entries.entrySet()
                     .iterator();
                 {
-                    boolean var3DEC40B862508A9A2151C7EC9CE55CF3_1059827434 = (it.hasNext());
+                    boolean var3DEC40B862508A9A2151C7EC9CE55CF3_303688379 = (it.hasNext());
                     {
                         Map.Entry<String, Attributes> entry;
                         entry = it.next();
                         Manifest.Chunk chunk;
                         chunk = man.getChunk(entry.getKey());
                         {
-                            boolean varAC1C8F34BDBC7D9F713C0353FA7B6FAF_24516628 = (!verify(entry.getValue(), "-Digest", manifest,
+                            boolean varAC1C8F34BDBC7D9F713C0353FA7B6FAF_524652405 = (!verify(entry.getValue(), "-Digest", manifest,
                         chunk.start, chunk.end, createdBySigntool, false));
                             {
                                 if (DroidSafeAndroidRuntime.control) throw invalidDigest(signatureFile, entry.getKey(), jarName);
@@ -277,41 +316,33 @@ class JarVerifier {
         } //End collapsed parenthetic
         metaEntries.put(signatureFile, null);
         signatures.put(signatureFile, entries);
+        addTaint(certFile.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.383 -0400", hash_original_method = "5E96175D15755C77B9F4C5D6341FECA1", hash_generated_method = "2A857A0AF2A73E832939BADBE36947C3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.877 -0400", hash_original_method = "5E96175D15755C77B9F4C5D6341FECA1", hash_generated_method = "27CCBD8B39BAC0602317753C0A8767E5")
      void setManifest(Manifest mf) {
-        dsTaint.addTaint(mf.dsTaint);
+        man = mf;
         // ---------- Original Method ----------
         //man = mf;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.383 -0400", hash_original_method = "61D9EDAFD8C0E1537C8EF2C7E942A904", hash_generated_method = "C8712D5F3D595AE0EA1E214D313B60E7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.890 -0400", hash_original_method = "61D9EDAFD8C0E1537C8EF2C7E942A904", hash_generated_method = "9CEF9FEB1784198433DE675EFC74BBE1")
      boolean isSignedJar() {
-        boolean var7CAE1A061A4DC00175B4D2E783D22316_269406867 = (certificates.size() > 0);
-        return dsTaint.getTaintBoolean();
+        boolean var7CAE1A061A4DC00175B4D2E783D22316_1376042599 = (certificates.size() > 0);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1325720671 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1325720671;
         // ---------- Original Method ----------
         //return certificates.size() > 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.384 -0400", hash_original_method = "C1D665F8901BA184CF5172955B73AB34", hash_generated_method = "E9AA564BF88CC9DAF7F14A7C93107917")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.893 -0400", hash_original_method = "C1D665F8901BA184CF5172955B73AB34", hash_generated_method = "B26845061473BEFAFA7A92A80E706F9C")
     private boolean verify(Attributes attributes, String entry, byte[] data,
             int start, int end, boolean ignoreSecondEndline, boolean ignorable) {
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(entry);
-        dsTaint.addTaint(ignoreSecondEndline);
-        dsTaint.addTaint(data[0]);
-        dsTaint.addTaint(attributes.dsTaint);
-        dsTaint.addTaint(ignorable);
-        dsTaint.addTaint(end);
         String algorithms;
         algorithms = attributes.getValue("Digest-Algorithms");
         {
@@ -320,7 +351,7 @@ class JarVerifier {
         StringTokenizer tokens;
         tokens = new StringTokenizer(algorithms);
         {
-            boolean var4A8B7054AF091A6B38EB732ACFC1CEDB_219937915 = (tokens.hasMoreTokens());
+            boolean var4A8B7054AF091A6B38EB732ACFC1CEDB_297103850 = (tokens.hasMoreTokens());
             {
                 String algorithm;
                 algorithm = tokens.nextToken();
@@ -343,23 +374,45 @@ class JarVerifier {
                 b = md.digest();
                 byte[] hashBytes;
                 hashBytes = hash.getBytes(Charsets.ISO_8859_1);
-                boolean varF4F3230BCA44283481584F405E42E5C9_1431700147 = (MessageDigest.isEqual(b, Base64.decode(hashBytes)));
+                boolean varF4F3230BCA44283481584F405E42E5C9_1021951410 = (MessageDigest.isEqual(b, Base64.decode(hashBytes)));
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(attributes.getTaint());
+        addTaint(entry.getTaint());
+        addTaint(data[0]);
+        addTaint(start);
+        addTaint(end);
+        addTaint(ignoreSecondEndline);
+        addTaint(ignorable);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2008589055 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2008589055;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.384 -0400", hash_original_method = "4AB9D8996D4C7F856FC4CD4DD096303E", hash_generated_method = "D3817E94B2504E6A45C6F960CDE18A99")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.911 -0400", hash_original_method = "4AB9D8996D4C7F856FC4CD4DD096303E", hash_generated_method = "2E352E5419816C5A4C6DF28C0B9F171E")
      Certificate[] getCertificates(String name) {
-        dsTaint.addTaint(name);
+        Certificate[] varB4EAC82CA7396A68D541C85D26508E83_81165337 = null; //Variable for return #1
+        Certificate[] varB4EAC82CA7396A68D541C85D26508E83_2051905626 = null; //Variable for return #2
         Certificate[] verifiedCerts;
         verifiedCerts = verifiedEntries.get(name);
-        Certificate[] varB666DFB21103BC8574440F7BDC96BF26_1551773941 = (verifiedCerts.clone());
-        return (Certificate[])dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_81165337 = null;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_2051905626 = verifiedCerts.clone();
+        addTaint(name.getTaint());
+        Certificate[] varA7E53CE21691AB073D9660D615818899_1030923533; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1030923533 = varB4EAC82CA7396A68D541C85D26508E83_81165337;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1030923533 = varB4EAC82CA7396A68D541C85D26508E83_2051905626;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1030923533.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1030923533;
         // ---------- Original Method ----------
         //Certificate[] verifiedCerts = verifiedEntries.get(name);
         //if (verifiedCerts == null) {
@@ -369,8 +422,7 @@ class JarVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.384 -0400", hash_original_method = "98B5FDE1FF609AB4DAC6F710E4FAE37E", hash_generated_method = "B134C21CF39C711019A6E185A2A3E9BB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.911 -0400", hash_original_method = "98B5FDE1FF609AB4DAC6F710E4FAE37E", hash_generated_method = "B134C21CF39C711019A6E185A2A3E9BB")
      void removeMetaEntries() {
         metaEntries = null;
         // ---------- Original Method ----------
@@ -392,19 +444,26 @@ class JarVerifier {
 
     
     class VerifierEntry extends OutputStream {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.912 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+
         private String name;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.912 -0400", hash_original_field = "C10F77963A2B21079156A0E5C5A4BB3C", hash_generated_field = "145A8FD0EC1911E7DDCA25F923899831")
+
         private MessageDigest digest;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.912 -0400", hash_original_field = "0800FC577294C34E0B28AD2839435945", hash_generated_field = "670F24B05EDED2247F0B4CD66AB4EE15")
+
         private byte[] hash;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.912 -0400", hash_original_field = "3CC41D0F46073BA8D93EA9DB2412437F", hash_generated_field = "6029E7C21A5106D4483252478B646415")
+
         private Certificate[] certificates;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.385 -0400", hash_original_method = "519B899FEA5DD6CF74252B8A7E9BDF9B", hash_generated_method = "6AD442DCA2D01FD3A1A50721C6655412")
-        @DSModeled(DSC.SAFE)
-         VerifierEntry(String name, MessageDigest digest, byte[] hash,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.937 -0400", hash_original_method = "519B899FEA5DD6CF74252B8A7E9BDF9B", hash_generated_method = "392088D1361F148BA7EABBED99C5FDBB")
+          VerifierEntry(String name, MessageDigest digest, byte[] hash,
                 Certificate[] certificates) {
-            dsTaint.addTaint(hash[0]);
-            dsTaint.addTaint(name);
-            dsTaint.addTaint(digest.dsTaint);
-            dsTaint.addTaint(certificates[0].dsTaint);
+            this.name = name;
+            this.digest = digest;
+            this.hash = hash;
+            this.certificates = certificates;
             // ---------- Original Method ----------
             //this.name = name;
             //this.digest = digest;
@@ -413,37 +472,34 @@ class JarVerifier {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.385 -0400", hash_original_method = "977E904E5666EA1924971461B3999364", hash_generated_method = "79797F1BF519D3A39D71BAE7F9ABE1E3")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.938 -0400", hash_original_method = "977E904E5666EA1924971461B3999364", hash_generated_method = "851854E1A229E9345EDE284398C8B3C4")
         @Override
         public void write(int value) {
-            dsTaint.addTaint(value);
             digest.update((byte) value);
+            addTaint(value);
             // ---------- Original Method ----------
             //digest.update((byte) value);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.385 -0400", hash_original_method = "8BB7D0A84FCC70584CF33970C6F95BDA", hash_generated_method = "6E7C0382982F1E7B9158C462F31AEBC0")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.938 -0400", hash_original_method = "8BB7D0A84FCC70584CF33970C6F95BDA", hash_generated_method = "2F17822BA892ADFF099CD9A221F557B2")
         @Override
         public void write(byte[] buf, int off, int nbytes) {
-            dsTaint.addTaint(nbytes);
-            dsTaint.addTaint(off);
-            dsTaint.addTaint(buf[0]);
             digest.update(buf, off, nbytes);
+            addTaint(buf[0]);
+            addTaint(off);
+            addTaint(nbytes);
             // ---------- Original Method ----------
             //digest.update(buf, off, nbytes);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.385 -0400", hash_original_method = "E514DAB8C6AF0A1EE37FB72F5B8B9108", hash_generated_method = "E7D81F2F18EDE1C5C329BE1D6CD1E724")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.941 -0400", hash_original_method = "E514DAB8C6AF0A1EE37FB72F5B8B9108", hash_generated_method = "42FB9436372F6463DB1DBC9C22F7C5DE")
          void verify() {
             byte[] d;
             d = digest.digest();
             {
-                boolean varF713951728C54611E5DA59160EF2FDFA_1538277057 = (!MessageDigest.isEqual(d, Base64.decode(hash)));
+                boolean varF713951728C54611E5DA59160EF2FDFA_1422343113 = (!MessageDigest.isEqual(d, Base64.decode(hash)));
                 {
                     if (DroidSafeAndroidRuntime.control) throw invalidDigest(JarFile.MANIFEST_NAME, name, jarName);
                 } //End block

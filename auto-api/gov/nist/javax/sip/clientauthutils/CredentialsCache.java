@@ -15,26 +15,24 @@ import javax.sip.address.*;
 import javax.sip.message.*;
 
 class CredentialsCache {
-    private ConcurrentHashMap<String, List<AuthorizationHeader>> authorizationHeaders =
-            new ConcurrentHashMap<String, List<AuthorizationHeader>>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.961 -0400", hash_original_field = "D81018253725EE02665AA28ECF9FB59A", hash_generated_field = "D736F54F12D200A8D25CC8A65E13F0DE")
+
+    private ConcurrentHashMap<String, List<AuthorizationHeader>> authorizationHeaders = new ConcurrentHashMap<String, List<AuthorizationHeader>>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.961 -0400", hash_original_field = "2C127BF32CCB4EDF2BF22FEA5A00E494", hash_generated_field = "02D2240A23798B540E9F3183DC11EA33")
+
     private Timer timer;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.569 -0400", hash_original_method = "27F7597F884C45C17FD9F63A315334B1", hash_generated_method = "35AF5F3D6526B94E57EBA60DB138FF21")
-    @DSModeled(DSC.SAFE)
-     CredentialsCache(Timer timer) {
-        dsTaint.addTaint(timer.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.962 -0400", hash_original_method = "27F7597F884C45C17FD9F63A315334B1", hash_generated_method = "A4870380C2579D8A506F75F9CC2B9DB5")
+      CredentialsCache(Timer timer) {
+        this.timer = timer;
         // ---------- Original Method ----------
         //this.timer = timer;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.570 -0400", hash_original_method = "557183176EBBC482C2193E58BCF0D460", hash_generated_method = "8970D2434463FB74CD025F73C84B872B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.963 -0400", hash_original_method = "557183176EBBC482C2193E58BCF0D460", hash_generated_method = "B5C7E1244DBB4C1F2230B48756E399B2")
      void cacheAuthorizationHeader(String callId,
             AuthorizationHeader authorization, int cacheTime) {
-        dsTaint.addTaint(cacheTime);
-        dsTaint.addTaint(authorization.dsTaint);
-        dsTaint.addTaint(callId);
         String user;
         user = authorization.getUsername();
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Call ID is null!");
@@ -51,12 +49,12 @@ class CredentialsCache {
             {
                 ListIterator<AuthorizationHeader> li;
                 li = authHeaders.listIterator();
-                boolean varD1722E42EA3CA8952F93B6521D875E61_204546883 = (li.hasNext());
+                boolean varD1722E42EA3CA8952F93B6521D875E61_585773212 = (li.hasNext());
                 {
                     AuthorizationHeader authHeader;
                     authHeader = (AuthorizationHeader) li.next();
                     {
-                        boolean varC5EB1AADFCCC32D729356E600B7D4975_729604032 = (realm.equals(authHeader.getRealm()));
+                        boolean varC5EB1AADFCCC32D729356E600B7D4975_1972320533 = (realm.equals(authHeader.getRealm()));
                         {
                             li.remove();
                         } //End block
@@ -68,19 +66,23 @@ class CredentialsCache {
         TimeoutTask timeoutTask;
         timeoutTask = new TimeoutTask( callId,user);
         this.timer.schedule(timeoutTask, cacheTime*1000);
+        addTaint(callId.getTaint());
+        addTaint(authorization.getTaint());
+        addTaint(cacheTime);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.570 -0400", hash_original_method = "0B5572B5CD4E87519D0DA5EDF97CD6AB", hash_generated_method = "6EBD53FE8CA29CCCC0CA203AB032486D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.963 -0400", hash_original_method = "0B5572B5CD4E87519D0DA5EDF97CD6AB", hash_generated_method = "D56E1614B68A59DBE54E06921C24BFD2")
      Collection<AuthorizationHeader> getCachedAuthorizationHeaders(
             String callid) {
-        dsTaint.addTaint(callid);
+        Collection<AuthorizationHeader> varB4EAC82CA7396A68D541C85D26508E83_1925088297 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Null arg!");
-        Collection<AuthorizationHeader> var0D808643CD5A915B3D6696D19C44033B_650516519 = (this.authorizationHeaders.get(callid));
-        return (Collection<AuthorizationHeader>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1925088297 = this.authorizationHeaders.get(callid);
+        addTaint(callid.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1925088297.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1925088297;
         // ---------- Original Method ----------
         //if (callid == null)
             //throw new NullPointerException("Null arg!");
@@ -88,33 +90,34 @@ class CredentialsCache {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.570 -0400", hash_original_method = "F30D19D7197AEDE7B7CBD76BE8FA4C90", hash_generated_method = "4A4B7771B3E8CD7CF7BD35BDB2C499B1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.963 -0400", hash_original_method = "F30D19D7197AEDE7B7CBD76BE8FA4C90", hash_generated_method = "5E8CACA192C4F9B49DE743916C47141A")
     public void removeAuthenticationHeader(String callId) {
-        dsTaint.addTaint(callId);
         this.authorizationHeaders.remove(callId);
+        addTaint(callId.getTaint());
         // ---------- Original Method ----------
         //this.authorizationHeaders.remove(callId);
     }
 
     
     class TimeoutTask extends TimerTask {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.964 -0400", hash_original_field = "0CD10A72F684313DCE7B6EF5F7F41411", hash_generated_field = "2657C3812CAC2EE2FF30C5C628C0A470")
+
         String callId;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.964 -0400", hash_original_field = "435E0648D634175C46BD40AC366545A8", hash_generated_field = "603671BF518F3A411771AE6211095177")
+
         String userName;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.570 -0400", hash_original_method = "40061A1217D263C30B9E268AD3A22381", hash_generated_method = "2544FEF505E5D0A689574AFB7D372FAC")
-        @DSModeled(DSC.SAFE)
-        public TimeoutTask(String userName, String proxyDomain) {
-            dsTaint.addTaint(proxyDomain);
-            dsTaint.addTaint(userName);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.964 -0400", hash_original_method = "40061A1217D263C30B9E268AD3A22381", hash_generated_method = "B40B0A9A0286B38E241689D6D6DF8EDC")
+        public  TimeoutTask(String userName, String proxyDomain) {
+            this.callId = proxyDomain;
+            this.userName = userName;
             // ---------- Original Method ----------
             //this.callId = proxyDomain;
             //this.userName = userName;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.570 -0400", hash_original_method = "55798103F4DC731E25C4381B99CDD4EB", hash_generated_method = "5663D056509E54F37247034B8867685B")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.965 -0400", hash_original_method = "55798103F4DC731E25C4381B99CDD4EB", hash_generated_method = "5663D056509E54F37247034B8867685B")
         @Override
         public void run() {
             authorizationHeaders.remove(callId);

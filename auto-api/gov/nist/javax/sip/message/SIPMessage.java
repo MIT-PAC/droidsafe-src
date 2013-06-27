@@ -83,26 +83,57 @@ import javax.sip.header.ViaHeader;
 import javax.sip.message.Request;
 
 public abstract class SIPMessage extends MessageObject implements javax.sip.message.Message, MessageExt {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.697 -0400", hash_original_field = "1E0E36F4EE56089C28BCB9B0F9B200D4", hash_generated_field = "4BA5E6BB1036D79534D4BE3D73466535")
+
     private String contentEncodingCharset = MessageFactoryImpl.getDefaultContentEncodingCharset();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.697 -0400", hash_original_field = "56B43B060CEE73356D58D497BA1C84EF", hash_generated_field = "3D632899724829D8B5950E7FD03861B1")
+
     protected boolean nullRequest;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.697 -0400", hash_original_field = "8068711CC630B2B1E236623A9F225BDE", hash_generated_field = "E835C2C2C7A6613C6BF5AAA84C167353")
+
     protected LinkedList<String> unrecognizedHeaders;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.697 -0400", hash_original_field = "4340FD73E75DF7A9D9E45902A59BA3A4", hash_generated_field = "247E0138E51DEE8295CE7FD03B5C7C7F")
+
     protected ConcurrentLinkedQueue<SIPHeader> headers;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.697 -0400", hash_original_field = "AC7113BAC9CAF3E84139BDAB33B013CD", hash_generated_field = "41941E45293112AC36DC5E7BE4DFF5AE")
+
     protected From fromHeader;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.697 -0400", hash_original_field = "B779FC79043D8E24F2CB866B1B31BF4F", hash_generated_field = "386FEF496B2D00FF2AEEA4F647EAA2EC")
+
     protected To toHeader;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.697 -0400", hash_original_field = "1124446E2524DA4D31B54C124ED3B1EA", hash_generated_field = "9243D81B8C37269C34D9BD3D6292835A")
+
     protected CSeq cSeqHeader;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.697 -0400", hash_original_field = "F4E470CD8970EBBE1902E50EB09F4952", hash_generated_field = "471E372FA6B60996CC5D5DA482544660")
+
     protected CallID callIdHeader;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.697 -0400", hash_original_field = "D7AC18F96FF3D69F56F179B05471A942", hash_generated_field = "BD2FD117E706370D42DF61B188BF8940")
+
     protected ContentLength contentLengthHeader;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.697 -0400", hash_original_field = "237F1BDE377EF84E632D622E7809F04B", hash_generated_field = "19F23DC4282A0EF2D6622C8B0C1149E7")
+
     protected MaxForwards maxForwardsHeader;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.697 -0400", hash_original_field = "F7BD60B75B29D79B660A2859395C1A24", hash_generated_field = "BEC7808019D8AD57BF06A5469459FF0A")
+
     protected int size;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.698 -0400", hash_original_field = "2ECFA4ADA27CE6869BB8F49F338F1D05", hash_generated_field = "BDA818F16CAD309D41556EC35AB6E563")
+
     private String messageContent;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.698 -0400", hash_original_field = "F39EF8B0045FE162F4D1F6DFC1649F07", hash_generated_field = "3E3D2657E47D4DE2C783823CF246BBAB")
+
     private byte[] messageContentBytes;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.698 -0400", hash_original_field = "BDA0AA4A25131E44F152C2811CF23974", hash_generated_field = "1560325BE0E32978EBE2ECDE71A6C345")
+
     private Object messageContentObject;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.698 -0400", hash_original_field = "4BEA1CEB6A7BE38EA2C72D63BB1811A8", hash_generated_field = "1C03D389CB46F0B01812A6FDFBD5DD7D")
+
     private Hashtable<String, SIPHeader> nameTable;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.698 -0400", hash_original_field = "756C73A51ADF7F04942C8BE97A032000", hash_generated_field = "89FDF1CBFFC083F61390A7888D3F82DE")
+
     protected Object applicationData;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.990 -0400", hash_original_method = "7EF8FE4247F4A54A74550FF503F5DF85", hash_generated_method = "9DF4127C06DEBDC679265FCD9AB742DC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SIPMessage() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.699 -0400", hash_original_method = "7EF8FE4247F4A54A74550FF503F5DF85", hash_generated_method = "9DF4127C06DEBDC679265FCD9AB742DC")
+    public  SIPMessage() {
         this.unrecognizedHeaders = new LinkedList<String>();
         this.headers = new ConcurrentLinkedQueue<SIPHeader>();
         nameTable = new Hashtable<String, SIPHeader>();
@@ -143,15 +174,15 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.990 -0400", hash_original_method = "4E875487FBA3E9E3C25B636513844812", hash_generated_method = "2C8B496E833E0BC713D3C6A6FF53F0BA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.710 -0400", hash_original_method = "4E875487FBA3E9E3C25B636513844812", hash_generated_method = "67EA91B7C4F39B93E2A41242AF3434BF")
     public LinkedList<String> getMessageAsEncodedStrings() {
+        LinkedList<String> varB4EAC82CA7396A68D541C85D26508E83_1186160900 = null; //Variable for return #1
         LinkedList<String> retval;
         retval = new LinkedList<String>();
         Iterator<SIPHeader> li;
         li = headers.iterator();
         {
-            boolean varBC3D864DE8830EFC1098D2C2F456529D_690337617 = (li.hasNext());
+            boolean varBC3D864DE8830EFC1098D2C2F456529D_631593865 = (li.hasNext());
             {
                 SIPHeader sipHeader;
                 sipHeader = (SIPHeader) li.next();
@@ -165,7 +196,9 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        return (LinkedList<String>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1186160900 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_1186160900.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1186160900;
         // ---------- Original Method ----------
         //LinkedList<String> retval = new LinkedList<String>();
         //Iterator<SIPHeader> li = headers.iterator();
@@ -182,23 +215,24 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.991 -0400", hash_original_method = "A27900405272FB61F2D6362A05DA41D6", hash_generated_method = "82ED62D06937C22B2D58D25D0B717853")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.711 -0400", hash_original_method = "A27900405272FB61F2D6362A05DA41D6", hash_generated_method = "9BA14D731AF75DF5AC95A895A02A4456")
     protected String encodeSIPHeaders() {
+        String varB4EAC82CA7396A68D541C85D26508E83_180993558 = null; //Variable for return #1
         StringBuffer encoding;
         encoding = new StringBuffer();
         Iterator<SIPHeader> it;
         it = this.headers.iterator();
         {
-            boolean var03729FD53960D8DCA3A41A13A0229637_753411019 = (it.hasNext());
+            boolean var03729FD53960D8DCA3A41A13A0229637_1332030034 = (it.hasNext());
             {
                 SIPHeader siphdr;
                 siphdr = (SIPHeader) it.next();
                 siphdr.encode(encoding);
             } //End block
         } //End collapsed parenthetic
-        String var19268621C0ADE5741B150EE79F15164C_293802784 = (contentLengthHeader.encode(encoding).append(NEWLINE).toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_180993558 = contentLengthHeader.encode(encoding).append(NEWLINE).toString();
+        varB4EAC82CA7396A68D541C85D26508E83_180993558.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_180993558;
         // ---------- Original Method ----------
         //StringBuffer encoding = new StringBuffer();
         //Iterator<SIPHeader> it = this.headers.iterator();
@@ -217,33 +251,31 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     public abstract String getDialogId(boolean isServerTransaction);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.991 -0400", hash_original_method = "AC5B2D97481875B2502EE3A7FDAB3C5D", hash_generated_method = "EDF6F1562D497A47DDD397D78AA9FC9F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.712 -0400", hash_original_method = "AC5B2D97481875B2502EE3A7FDAB3C5D", hash_generated_method = "4448F288B9453ED5F779F48E9A76D3B6")
     public boolean match(Object other) {
-        dsTaint.addTaint(other.dsTaint);
         {
-            boolean varAC16F771BB29A32F2C455E410359AF13_217084540 = (!other.getClass().equals(this.getClass()));
+            boolean varAC16F771BB29A32F2C455E410359AF13_684280824 = (!other.getClass().equals(this.getClass()));
         } //End collapsed parenthetic
         SIPMessage matchObj;
         matchObj = (SIPMessage) other;
         Iterator<SIPHeader> li;
         li = matchObj.getHeaders();
         {
-            boolean varBC3D864DE8830EFC1098D2C2F456529D_2113342696 = (li.hasNext());
+            boolean varBC3D864DE8830EFC1098D2C2F456529D_1549388708 = (li.hasNext());
             {
                 SIPHeader hisHeaders;
                 hisHeaders = (SIPHeader) li.next();
                 List<SIPHeader> myHeaders;
                 myHeaders = this.getHeaderList(hisHeaders.getHeaderName());
                 {
-                    boolean var1A87CEBFEDCDEA34F4CA0D4A3EFEF656_326169812 = (myHeaders == null || myHeaders.size() == 0);
+                    boolean var1A87CEBFEDCDEA34F4CA0D4A3EFEF656_92304313 = (myHeaders == null || myHeaders.size() == 0);
                 } //End collapsed parenthetic
                 {
                     ListIterator< ? > outerIterator;
                     outerIterator = ((SIPHeaderList< ? >) hisHeaders)
                         .listIterator();
                     {
-                        boolean var4B5292B8CB3E98B12515573A3508C4DF_1913409397 = (outerIterator.hasNext());
+                        boolean var4B5292B8CB3E98B12515573A3508C4DF_136867583 = (outerIterator.hasNext());
                         {
                             SIPHeader hisHeader;
                             hisHeader = (SIPHeader) outerIterator.next();
@@ -252,12 +284,12 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                             boolean found;
                             found = false;
                             {
-                                boolean varB2E7926CCD2DEA34339CB3F15E1E57D6_1114573067 = (innerIterator.hasNext());
+                                boolean varB2E7926CCD2DEA34339CB3F15E1E57D6_1541383429 = (innerIterator.hasNext());
                                 {
                                     SIPHeader myHeader;
                                     myHeader = (SIPHeader) innerIterator.next();
                                     {
-                                        boolean varB96E7D72BCDF0CE20043B09547ED5B50_1650185179 = (myHeader.match(hisHeader));
+                                        boolean varB96E7D72BCDF0CE20043B09547ED5B50_1954210394 = (myHeader.match(hisHeader));
                                         {
                                             found = true;
                                         } //End block
@@ -275,12 +307,12 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                     boolean found;
                     found = false;
                     {
-                        boolean varB3D6059B83D121ABA5AE6C0435970C24_1148476220 = (innerIterator.hasNext());
+                        boolean varB3D6059B83D121ABA5AE6C0435970C24_678123966 = (innerIterator.hasNext());
                         {
                             SIPHeader myHeader;
                             myHeader = (SIPHeader) innerIterator.next();
                             {
-                                boolean var6566F8FAB9C32C1FD403D502EB8A4D9C_1088869961 = (myHeader.match(hisHeader));
+                                boolean var6566F8FAB9C32C1FD403D502EB8A4D9C_1047250905 = (myHeader.match(hisHeader));
                                 {
                                     found = true;
                                 } //End block
@@ -290,18 +322,18 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(other.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_690996700 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_690996700;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.992 -0400", hash_original_method = "789EABA7F64EF1819B9EE91356F4E918", hash_generated_method = "7818627801AB8CDDE5BA129BFD80E65F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.726 -0400", hash_original_method = "789EABA7F64EF1819B9EE91356F4E918", hash_generated_method = "466F4EF935938899CD0912DF1E46932C")
     public void merge(Object template) {
-        dsTaint.addTaint(template.dsTaint);
         {
-            boolean var283342AFB2702617040FEF7CDFDA21F1_542777268 = (!template.getClass().equals(this.getClass()));
+            boolean var283342AFB2702617040FEF7CDFDA21F1_1737754668 = (!template.getClass().equals(this.getClass()));
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Bad class " + template.getClass());
         } //End collapsed parenthetic
         SIPMessage templateMessage;
@@ -325,7 +357,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                     ListIterator<SIPHeader> it;
                     it = myHdrs.listIterator();
                     {
-                        boolean var4CA2EDBF7D27138D75E73CCD01CCB025_493576823 = (it.hasNext());
+                        boolean var4CA2EDBF7D27138D75E73CCD01CCB025_457975373 = (it.hasNext());
                         {
                             SIPHeader sipHdr;
                             sipHdr = (SIPHeader) it.next();
@@ -335,20 +367,21 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                 } //End block
             } //End block
         } //End collapsed parenthetic
+        addTaint(template.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.998 -0400", hash_original_method = "79C45AA8D92059F002F56259D7022AFE", hash_generated_method = "52D337DE3AAC6507492125A3D3BD9482")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.802 -0400", hash_original_method = "79C45AA8D92059F002F56259D7022AFE", hash_generated_method = "1221A49B0F8F7E3655F37EC179258F98")
     public String encode() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1413495062 = null; //Variable for return #1
         StringBuffer encoding;
         encoding = new StringBuffer();
         Iterator<SIPHeader> it;
         it = this.headers.iterator();
         {
-            boolean var03729FD53960D8DCA3A41A13A0229637_2081538905 = (it.hasNext());
+            boolean var03729FD53960D8DCA3A41A13A0229637_1617013305 = (it.hasNext());
             {
                 SIPHeader siphdr;
                 siphdr = (SIPHeader) it.next();
@@ -356,9 +389,9 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<String> varFA17E7EA4EAE757CB30CF87AB56BCB8E_778283278 = (this.unrecognizedHeaders).iterator();
-            varFA17E7EA4EAE757CB30CF87AB56BCB8E_778283278.hasNext();
-            String unrecognized = varFA17E7EA4EAE757CB30CF87AB56BCB8E_778283278.next();
+            Iterator<String> varFA17E7EA4EAE757CB30CF87AB56BCB8E_628986924 = (this.unrecognizedHeaders).iterator();
+            varFA17E7EA4EAE757CB30CF87AB56BCB8E_628986924.hasNext();
+            String unrecognized = varFA17E7EA4EAE757CB30CF87AB56BCB8E_628986924.next();
             {
                 encoding.append(unrecognized).append(NEWLINE);
             } //End block
@@ -385,21 +418,20 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
             } //End block
             encoding.append(content);
         } //End block
-        String varB81683B37658DAABB0D3F9E81B4869CA_1629502514 = (encoding.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1413495062 = encoding.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1413495062.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1413495062;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.998 -0400", hash_original_method = "716A084604DD8483BAA5EE270A2C01EC", hash_generated_method = "F1C41FDA8E7CB25F919CA1928B6CD049")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.807 -0400", hash_original_method = "716A084604DD8483BAA5EE270A2C01EC", hash_generated_method = "10638D2E3A15D5A8996BBB1EA0BF7DF8")
     public byte[] encodeAsBytes(String transport) {
-        dsTaint.addTaint(transport);
         {
-            boolean varA83D0D387E30A4710F38765D733091FF_348100409 = (this instanceof SIPRequest && ((SIPRequest) this).isNullRequest());
+            boolean varA83D0D387E30A4710F38765D733091FF_1894486868 = (this instanceof SIPRequest && ((SIPRequest) this).isNullRequest());
             {
-                byte[] varEEF83FE8F2414029AB57C6129B64128C_359655929 = ("\r\n\r\n".getBytes());
+                byte[] varEEF83FE8F2414029AB57C6129B64128C_486308788 = ("\r\n\r\n".getBytes());
             } //End block
         } //End collapsed parenthetic
         ViaHeader topVia;
@@ -418,7 +450,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
             Iterator<SIPHeader> it;
             it = this.headers.iterator();
             {
-                boolean varB2FF4435B274CC4BE01D264DEA08F957_90708006 = (it.hasNext());
+                boolean varB2FF4435B274CC4BE01D264DEA08F957_1651017076 = (it.hasNext());
                 {
                     SIPHeader siphdr;
                     siphdr = (SIPHeader) it.next();
@@ -457,17 +489,17 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                 InternalErrorHandler.handleException(ex);
             } //End block
         } //End block
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        addTaint(transport.getTaint());
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_761850376 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_761850376;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.999 -0400", hash_original_method = "CAA2D0A800A8BA91CFE25E08D1466992", hash_generated_method = "046AFE04E8329C8778AA5AF36EF3F695")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.813 -0400", hash_original_method = "CAA2D0A800A8BA91CFE25E08D1466992", hash_generated_method = "79E734AE2014980D793B6B6A25A120F6")
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_1547345799 = null; //Variable for return #1
         SIPMessage retval;
         retval = (SIPMessage) super.clone();
         retval.nameTable = new Hashtable<String, SIPHeader>();
@@ -482,7 +514,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
             {
                 Iterator<SIPHeader> iter;
                 iter = headers.iterator();
-                boolean var8492AE2C695A56B730381A28B8BA3F6D_1287703626 = (iter.hasNext());
+                boolean var8492AE2C695A56B730381A28B8BA3F6D_571024771 = (iter.hasNext());
                 {
                     SIPHeader hdr;
                     hdr = (SIPHeader) iter.next();
@@ -493,15 +525,17 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
         retval.messageContentBytes = (byte[]) this.messageContentBytes.clone();
         retval.messageContentObject = makeClone(messageContentObject);
         retval.unrecognizedHeaders = this.unrecognizedHeaders;
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1547345799 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_1547345799.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1547345799;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.999 -0400", hash_original_method = "CE435A19EF4C3C8ADC65C5BBD44452BB", hash_generated_method = "DF8DCA95B185161056117CC367F85131")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.822 -0400", hash_original_method = "CE435A19EF4C3C8ADC65C5BBD44452BB", hash_generated_method = "59A5D4F55BCA97A26D4525647150072E")
     public String debugDump() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1443572578 = null; //Variable for return #1
         stringRepresentation = "";
         sprint("SIPMessage:");
         sprint("{");
@@ -520,7 +554,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                     String fieldName;
                     fieldName = f.getName();
                     {
-                        boolean var23F939341918CCB039A47328F0B892FA_598896559 = (f.get(this) != null && SIPHeader.class.isAssignableFrom(fieldType)
+                        boolean var23F939341918CCB039A47328F0B892FA_1161618582 = (f.get(this) != null && SIPHeader.class.isAssignableFrom(fieldType)
                         && fieldName.compareTo("headers") != 0);
                         {
                             sprint(fieldName + "=");
@@ -541,22 +575,22 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
         sprint(messageContent);
         sprint("}");
         {
-            boolean var4C7E5D19EA905354F5CD428885C482C2_1456291963 = (this.getContent() != null);
+            boolean var4C7E5D19EA905354F5CD428885C482C2_1155452358 = (this.getContent() != null);
             {
                 sprint(this.getContent().toString());
             } //End block
         } //End collapsed parenthetic
         sprint("}");
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1443572578 = stringRepresentation;
+        varB4EAC82CA7396A68D541C85D26508E83_1443572578.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1443572578;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.000 -0400", hash_original_method = "D9E90811A837F48EC447FF925318738A", hash_generated_method = "4444D734C3CFD06328B5EC2490A40FFD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.830 -0400", hash_original_method = "D9E90811A837F48EC447FF925318738A", hash_generated_method = "9CE4386FDF6C9B4F8424C994C2380479")
     private void attachHeader(SIPHeader h) {
-        dsTaint.addTaint(h.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("null header!");
         try 
         {
@@ -564,13 +598,14 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                 SIPHeaderList< ? > hl;
                 hl = (SIPHeaderList< ? >) h;
                 {
-                    boolean var394E2F20856295BBEFBFAE80A46F780D_2133801706 = (hl.isEmpty());
+                    boolean var394E2F20856295BBEFBFAE80A46F780D_1816242687 = (hl.isEmpty());
                 } //End collapsed parenthetic
             } //End block
             attachHeader(h, false, false);
         } //End block
         catch (SIPDuplicateHeaderException ex)
         { }
+        addTaint(h.getTaint());
         // ---------- Original Method ----------
         //if (h == null)
             //throw new IllegalArgumentException("null header!");
@@ -587,10 +622,8 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.000 -0400", hash_original_method = "230B17E5A17A83111BEC4A023E8D6F14", hash_generated_method = "BF0A4B54EBC0461AF09FACB43FB8D42B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.834 -0400", hash_original_method = "230B17E5A17A83111BEC4A023E8D6F14", hash_generated_method = "3973F43BDF57E22E347591EAEFFE7937")
     public void setHeader(Header sipHeader) {
-        dsTaint.addTaint(sipHeader.dsTaint);
         SIPHeader header;
         header = (SIPHeader) sipHeader;
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("null header!");
@@ -600,7 +633,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                 SIPHeaderList< ? > hl;
                 hl = (SIPHeaderList< ? >) header;
                 {
-                    boolean var394E2F20856295BBEFBFAE80A46F780D_156128863 = (hl.isEmpty());
+                    boolean var394E2F20856295BBEFBFAE80A46F780D_1999412496 = (hl.isEmpty());
                 } //End collapsed parenthetic
             } //End block
             this.removeHeader(header.getHeaderName());
@@ -610,6 +643,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
         {
             InternalErrorHandler.handleException(ex);
         } //End block
+        addTaint(sipHeader.getTaint());
         // ---------- Original Method ----------
         //SIPHeader header = (SIPHeader) sipHeader;
         //if (header == null)
@@ -628,14 +662,12 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.000 -0400", hash_original_method = "DC88726E428D89A7A7082B0D5F94DA0F", hash_generated_method = "A331E5EE20784E69FD047DA812B5EEB1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.835 -0400", hash_original_method = "DC88726E428D89A7A7082B0D5F94DA0F", hash_generated_method = "883BEA3AD234C50611F05C9CDD9C1082")
     public void setHeaders(java.util.List<SIPHeader> headers) {
-        dsTaint.addTaint(headers.dsTaint);
         ListIterator<SIPHeader> listIterator;
         listIterator = headers.listIterator();
         {
-            boolean var64B293ABD2B064B3F6A70551787AFBD5_583999785 = (listIterator.hasNext());
+            boolean var64B293ABD2B064B3F6A70551787AFBD5_2045652037 = (listIterator.hasNext());
             {
                 SIPHeader sipHeader;
                 sipHeader = (SIPHeader) listIterator.next();
@@ -647,6 +679,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                 { }
             } //End block
         } //End collapsed parenthetic
+        addTaint(headers.getTaint());
         // ---------- Original Method ----------
         //ListIterator<SIPHeader> listIterator = headers.listIterator();
         //while (listIterator.hasNext()) {
@@ -659,29 +692,24 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.000 -0400", hash_original_method = "9B17545BC9FC78AB24684381D78F3E60", hash_generated_method = "9CB6C09C2166F4983C8733046F0A9EF0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.835 -0400", hash_original_method = "9B17545BC9FC78AB24684381D78F3E60", hash_generated_method = "E410CC311470FEC5545821CB8000708C")
     public void attachHeader(SIPHeader h, boolean replaceflag) throws SIPDuplicateHeaderException {
-        dsTaint.addTaint(replaceflag);
-        dsTaint.addTaint(h.dsTaint);
         this.attachHeader(h, replaceflag, false);
+        addTaint(h.getTaint());
+        addTaint(replaceflag);
         // ---------- Original Method ----------
         //this.attachHeader(h, replaceflag, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.001 -0400", hash_original_method = "7BE2AED7224623BF9774680F8F08FE9F", hash_generated_method = "CC0BF96FDB783D6EA2C27AC0FA9E79B2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.845 -0400", hash_original_method = "7BE2AED7224623BF9774680F8F08FE9F", hash_generated_method = "9EC3FC33771375EE6DF0C14604D22670")
     public void attachHeader(SIPHeader header, boolean replaceFlag, boolean top) throws SIPDuplicateHeaderException {
-        dsTaint.addTaint(replaceFlag);
-        dsTaint.addTaint(header.dsTaint);
-        dsTaint.addTaint(top);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null header");
         } //End block
         SIPHeader h;
         {
-            boolean varFDBDF2C7B3EA303E85FC4F475643B632_166007609 = (ListMap.hasList(header) && !SIPHeaderList.class.isAssignableFrom(header.getClass()));
+            boolean varFDBDF2C7B3EA303E85FC4F475643B632_1101669612 = (ListMap.hasList(header) && !SIPHeaderList.class.isAssignableFrom(header.getClass()));
             {
                 SIPHeaderList<SIPHeader> hdrList;
                 hdrList = ListMap.getList(header);
@@ -698,7 +726,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
             nameTable.remove(headerNameLowerCase);
         } //End block
         {
-            boolean varFD544112D28585F2EA3523A14E11B4D2_345875909 = (nameTable.containsKey(headerNameLowerCase) && !(h instanceof SIPHeaderList));
+            boolean varFD544112D28585F2EA3523A14E11B4D2_1194701114 = (nameTable.containsKey(headerNameLowerCase) && !(h instanceof SIPHeaderList));
             {
                 {
                     try 
@@ -718,12 +746,12 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
             Iterator<SIPHeader> li;
             li = headers.iterator();
             {
-                boolean varD1722E42EA3CA8952F93B6521D875E61_1414471696 = (li.hasNext());
+                boolean varD1722E42EA3CA8952F93B6521D875E61_119848356 = (li.hasNext());
                 {
                     SIPHeader next;
                     next = (SIPHeader) li.next();
                     {
-                        boolean varF7DF1CC74D70E774011938D4CD0C0F10_2088947249 = (next.equals(originalHeader));
+                        boolean varF7DF1CC74D70E774011938D4CD0C0F10_471768369 = (next.equals(originalHeader));
                         {
                             li.remove();
                         } //End block
@@ -732,7 +760,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
             } //End collapsed parenthetic
         } //End block
         {
-            boolean varE6233AB522C882584164D87B1A152DBC_1987229484 = (!nameTable.containsKey(headerNameLowerCase));
+            boolean varE6233AB522C882584164D87B1A152DBC_587140142 = (!nameTable.containsKey(headerNameLowerCase));
             {
                 nameTable.put(headerNameLowerCase, h);
                 headers.add(h);
@@ -768,16 +796,16 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
         {
             this.maxForwardsHeader = (MaxForwards) h;
         } //End block
+        addTaint(header.getTaint());
+        addTaint(replaceFlag);
+        addTaint(top);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.002 -0400", hash_original_method = "870FE8D30093D63C50FAB8B7342DE2BD", hash_generated_method = "3061AE3416B1C51C6AE8C0B1148C7F40")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.859 -0400", hash_original_method = "870FE8D30093D63C50FAB8B7342DE2BD", hash_generated_method = "7A73FD539F795A9A3B688B717B0DBB3E")
     public void removeHeader(String headerName, boolean top) {
-        dsTaint.addTaint(headerName);
-        dsTaint.addTaint(top);
         String headerNameLowerCase;
         headerNameLowerCase = SIPHeaderNamesCache.toLowerCase(headerName);
         SIPHeader toRemove;
@@ -788,17 +816,17 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
             hdrList.removeFirst();
             hdrList.removeLast();
             {
-                boolean var07A70300EBEAD4C7EF18232220E71612_569859720 = (hdrList.isEmpty());
+                boolean var07A70300EBEAD4C7EF18232220E71612_1439934951 = (hdrList.isEmpty());
                 {
                     Iterator<SIPHeader> li;
                     li = this.headers.iterator();
                     {
-                        boolean var3B4C388F9F77D89F36DAE45711DE06F7_1661959598 = (li.hasNext());
+                        boolean var3B4C388F9F77D89F36DAE45711DE06F7_1288538390 = (li.hasNext());
                         {
                             SIPHeader sipHeader;
                             sipHeader = (SIPHeader) li.next();
                             {
-                                boolean var009E1FF0FE664B4BBC785303E466D8DE_1628556065 = (sipHeader.getName().equalsIgnoreCase(headerNameLowerCase));
+                                boolean var009E1FF0FE664B4BBC785303E466D8DE_624229945 = (sipHeader.getName().equalsIgnoreCase(headerNameLowerCase));
                                 li.remove();
                             } //End collapsed parenthetic
                         } //End block
@@ -830,26 +858,26 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
             Iterator<SIPHeader> li;
             li = this.headers.iterator();
             {
-                boolean varD1722E42EA3CA8952F93B6521D875E61_2000360413 = (li.hasNext());
+                boolean varD1722E42EA3CA8952F93B6521D875E61_1598224087 = (li.hasNext());
                 {
                     SIPHeader sipHeader;
                     sipHeader = (SIPHeader) li.next();
                     {
-                        boolean var330E19EEBCC4008A3544282ED6FC5397_1176924400 = (sipHeader.getName().equalsIgnoreCase(headerName));
+                        boolean var330E19EEBCC4008A3544282ED6FC5397_1301171818 = (sipHeader.getName().equalsIgnoreCase(headerName));
                         li.remove();
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        addTaint(headerName.getTaint());
+        addTaint(top);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.002 -0400", hash_original_method = "A43C3FE911C5904FA81F0CAD0EBF40FE", hash_generated_method = "BE19502CAE053DD30C6B59C5FC0957AC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.866 -0400", hash_original_method = "A43C3FE911C5904FA81F0CAD0EBF40FE", hash_generated_method = "A816CCF24846A759D2415A5D00C2815B")
     public void removeHeader(String headerName) {
-        dsTaint.addTaint(headerName);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null arg");
         String headerNameLowerCase;
         headerNameLowerCase = SIPHeaderNamesCache.toLowerCase(headerName);
@@ -876,42 +904,45 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
         Iterator<SIPHeader> li;
         li = this.headers.iterator();
         {
-            boolean varBC3D864DE8830EFC1098D2C2F456529D_476960165 = (li.hasNext());
+            boolean varBC3D864DE8830EFC1098D2C2F456529D_807583466 = (li.hasNext());
             {
                 SIPHeader sipHeader;
                 sipHeader = (SIPHeader) li.next();
                 {
-                    boolean varFFF8027342880D91B8946C60AFFB1639_1098047798 = (sipHeader.getName().equalsIgnoreCase(headerNameLowerCase));
+                    boolean varFFF8027342880D91B8946C60AFFB1639_1987315446 = (sipHeader.getName().equalsIgnoreCase(headerNameLowerCase));
                     li.remove();
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
+        addTaint(headerName.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.003 -0400", hash_original_method = "04B79D458A896A4F330B98FD27925CCB", hash_generated_method = "FE87E272EB3BF197C04C85EFFF613DF2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.874 -0400", hash_original_method = "04B79D458A896A4F330B98FD27925CCB", hash_generated_method = "EA66820B14C23A6625AD86F4550A4991")
     public String getTransactionId() {
+        String varB4EAC82CA7396A68D541C85D26508E83_158225067 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_562863385 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1319545598 = null; //Variable for return #3
         Via topVia;
         topVia = null;
         {
-            boolean var45427AD504224B42EAB753EE244922DA_2033607894 = (!this.getViaHeaders().isEmpty());
+            boolean var45427AD504224B42EAB753EE244922DA_1116943324 = (!this.getViaHeaders().isEmpty());
             {
                 topVia = (Via) this.getViaHeaders().getFirst();
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var056F2938B12C580EE182B380BF3D72E4_266696317 = (topVia != null
+            boolean var056F2938B12C580EE182B380BF3D72E4_559641269 = (topVia != null
                 && topVia.getBranch() != null
                 && topVia.getBranch().toUpperCase().startsWith(
                         SIPConstants.BRANCH_MAGIC_COOKIE_UPPER_CASE));
             {
                 {
-                    boolean varC5B42D35EFD1E3730754821E02818371_371286408 = (this.getCSeq().getMethod().equals(Request.CANCEL));
-                    String var337BFAEE86A617343F2051318818C7E1_673240140 = ((topVia.getBranch() + ":" + this.getCSeq().getMethod()).toLowerCase());
-                    String var69B1DA6E6B24DE9B815D1AE5BD1363E0_451709519 = (topVia.getBranch().toLowerCase());
+                    boolean varC5B42D35EFD1E3730754821E02818371_1271107467 = (this.getCSeq().getMethod().equals(Request.CANCEL));
+                    varB4EAC82CA7396A68D541C85D26508E83_158225067 = (topVia.getBranch() + ":" + this.getCSeq().getMethod()).toLowerCase();
+                    varB4EAC82CA7396A68D541C85D26508E83_562863385 = topVia.getBranch().toLowerCase();
                 } //End collapsed parenthetic
             } //End block
             {
@@ -922,7 +953,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                 To to;
                 to = (To) this.getTo();
                 {
-                    boolean var6A7392F4B3488A548307196F7AD78D4D_1913968615 = (from.hasTag());
+                    boolean var6A7392F4B3488A548307196F7AD78D4D_2084150888 = (from.hasTag());
                     retval.append(from.getTag()).append("-");
                 } //End collapsed parenthetic
                 String cid;
@@ -933,35 +964,48 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                 {
                     retval.append("-").append(topVia.getSentBy().encode());
                     {
-                        boolean var739F416062AF6DDEEFA862BDC661C203_555231803 = (!topVia.getSentBy().hasPort());
+                        boolean var739F416062AF6DDEEFA862BDC661C203_1998085562 = (!topVia.getSentBy().hasPort());
                         {
                             retval.append("-").append(5060);
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
                 {
-                    boolean varC5B42D35EFD1E3730754821E02818371_2035810540 = (this.getCSeq().getMethod().equals(Request.CANCEL));
+                    boolean varC5B42D35EFD1E3730754821E02818371_922654844 = (this.getCSeq().getMethod().equals(Request.CANCEL));
                     {
                         retval.append(Request.CANCEL);
                     } //End block
                 } //End collapsed parenthetic
-                String var4E35407A5FF00AD9EB1E8F1CE46453AD_429304195 = (retval.toString().toLowerCase().replace(":", "-").replace("@", "-")
-                    + Utils.getSignature());
+                varB4EAC82CA7396A68D541C85D26508E83_1319545598 = retval.toString().toLowerCase().replace(":", "-").replace("@", "-")
+                    + Utils.getSignature();
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        String varA7E53CE21691AB073D9660D615818899_979069223; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_979069223 = varB4EAC82CA7396A68D541C85D26508E83_158225067;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_979069223 = varB4EAC82CA7396A68D541C85D26508E83_562863385;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_979069223 = varB4EAC82CA7396A68D541C85D26508E83_1319545598;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_979069223.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_979069223;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.003 -0400", hash_original_method = "2D96B4A52CFB118A97F95400511B110F", hash_generated_method = "DE369D9EE46136A0A2064D884AAB7A33")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.875 -0400", hash_original_method = "2D96B4A52CFB118A97F95400511B110F", hash_generated_method = "B19C1FECAFAE1DE36D1CF427A1B673F1")
     public int hashCode() {
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                     "Invalid message! Cannot compute hashcode! call-id header is missing !");
-        int var16C3388685D263B76B89DE8120886CF4_644271161 = (this.callIdHeader.getCallId().hashCode());
-        return dsTaint.getTaintInt();
+        int var16C3388685D263B76B89DE8120886CF4_1219876577 = (this.callIdHeader.getCallId().hashCode());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1222122473 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1222122473;
         // ---------- Original Method ----------
         //if (this.callIdHeader == null)
             //throw new RuntimeException(
@@ -971,45 +1015,59 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.003 -0400", hash_original_method = "0B4068F7FDD81C59C44EF10BE948C047", hash_generated_method = "1765A846DE28AB1BCA3EE3588FA55DF5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.883 -0400", hash_original_method = "0B4068F7FDD81C59C44EF10BE948C047", hash_generated_method = "160FD7CE520D080E5DE49667D8145011")
     public boolean hasContent() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_713149922 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_713149922;
         // ---------- Original Method ----------
         //return messageContent != null || messageContentBytes != null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.004 -0400", hash_original_method = "16CF6C29A1D923EBFDFB9DE65000093A", hash_generated_method = "BE7E7FFD6466576380B3FD653839A5C3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.885 -0400", hash_original_method = "16CF6C29A1D923EBFDFB9DE65000093A", hash_generated_method = "DC16D218D88A49227A5549C236A21491")
     public Iterator<SIPHeader> getHeaders() {
-        Iterator<SIPHeader> var4BD74022A9AE592208A10B64261FB732_22775401 = (headers.iterator());
-        return (Iterator<SIPHeader>)dsTaint.getTaint();
+        Iterator<SIPHeader> varB4EAC82CA7396A68D541C85D26508E83_1364235477 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1364235477 = headers.iterator();
+        varB4EAC82CA7396A68D541C85D26508E83_1364235477.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1364235477;
         // ---------- Original Method ----------
         //return headers.iterator();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.004 -0400", hash_original_method = "1ADD77F2239C280F0A32414969B68312", hash_generated_method = "9BFA63AB54AFD097B400C9BC3594089A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.891 -0400", hash_original_method = "1ADD77F2239C280F0A32414969B68312", hash_generated_method = "FA3DAA17E6C0B63055DC85BFC2EED8D0")
     public Header getHeader(String headerName) {
-        dsTaint.addTaint(headerName);
-        Header var05BAFD934A4674A35E61E5715975D633_1719576952 = (getHeaderLowerCase(SIPHeaderNamesCache.toLowerCase(headerName)));
-        return (Header)dsTaint.getTaint();
+        Header varB4EAC82CA7396A68D541C85D26508E83_627785713 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_627785713 = getHeaderLowerCase(SIPHeaderNamesCache.toLowerCase(headerName));
+        addTaint(headerName.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_627785713.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_627785713;
         // ---------- Original Method ----------
         //return getHeaderLowerCase(SIPHeaderNamesCache.toLowerCase(headerName));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.004 -0400", hash_original_method = "32A79E235DDCC6E80E2B12189B346373", hash_generated_method = "F3829A2A3825067586AA8821DA8D803C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.903 -0400", hash_original_method = "32A79E235DDCC6E80E2B12189B346373", hash_generated_method = "C85B2FA7B65DEFC71AE2C74A872EA0A1")
     private Header getHeaderLowerCase(String lowerCaseHeaderName) {
-        dsTaint.addTaint(lowerCaseHeaderName);
+        Header varB4EAC82CA7396A68D541C85D26508E83_245209283 = null; //Variable for return #1
+        Header varB4EAC82CA7396A68D541C85D26508E83_202820467 = null; //Variable for return #2
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("bad name");
         SIPHeader sipHeader;
         sipHeader = (SIPHeader) nameTable.get(lowerCaseHeaderName);
-        Header var0039F077AD32644F4AE8559254DDE653_634008439 = ((Header) ((SIPHeaderList) sipHeader).getFirst());
-        return (Header)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_245209283 = (Header) ((SIPHeaderList) sipHeader).getFirst();
+        varB4EAC82CA7396A68D541C85D26508E83_202820467 = (Header) sipHeader;
+        addTaint(lowerCaseHeaderName.getTaint());
+        Header varA7E53CE21691AB073D9660D615818899_1677350336; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1677350336 = varB4EAC82CA7396A68D541C85D26508E83_245209283;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1677350336 = varB4EAC82CA7396A68D541C85D26508E83_202820467;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1677350336.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1677350336;
         // ---------- Original Method ----------
         //if (lowerCaseHeaderName == null)
             //throw new NullPointerException("bad name");
@@ -1021,64 +1079,84 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.004 -0400", hash_original_method = "094433154D44236D0991BBCF366E0E6A", hash_generated_method = "62CFCA487F8B461482C1294798183E69")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.905 -0400", hash_original_method = "094433154D44236D0991BBCF366E0E6A", hash_generated_method = "A1D02F9FCB6B3211BF8DD0D8C5804BFB")
     public ContentType getContentTypeHeader() {
-        ContentType var8FABC5FC4B42A7B5BF5AB71A90A0F4FF_971647984 = ((ContentType) getHeaderLowerCase(CONTENT_TYPE_LOWERCASE));
-        return (ContentType)dsTaint.getTaint();
+        ContentType varB4EAC82CA7396A68D541C85D26508E83_342636425 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_342636425 = (ContentType) getHeaderLowerCase(CONTENT_TYPE_LOWERCASE);
+        varB4EAC82CA7396A68D541C85D26508E83_342636425.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_342636425;
         // ---------- Original Method ----------
         //return (ContentType) getHeaderLowerCase(CONTENT_TYPE_LOWERCASE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.004 -0400", hash_original_method = "F29DC29143C65AC3E05B010248583D2F", hash_generated_method = "6F0B5435366E6ABF80348BC2EDC2232B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.910 -0400", hash_original_method = "F29DC29143C65AC3E05B010248583D2F", hash_generated_method = "5B52BCAF447C1D3D66A376A3CE711AA3")
     public ContentLengthHeader getContentLengthHeader() {
-        ContentLengthHeader var299BB4CEA2608AB3E7400A6FDD8CAA57_1634631282 = (this.getContentLength());
-        return (ContentLengthHeader)dsTaint.getTaint();
+        ContentLengthHeader varB4EAC82CA7396A68D541C85D26508E83_870084854 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_870084854 = this.getContentLength();
+        varB4EAC82CA7396A68D541C85D26508E83_870084854.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_870084854;
         // ---------- Original Method ----------
         //return this.getContentLength();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.004 -0400", hash_original_method = "E10DCB9A2200DABE5E8DE063DD5342F3", hash_generated_method = "4110D9DDA2335F696F2716AE547E8546")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.911 -0400", hash_original_method = "E10DCB9A2200DABE5E8DE063DD5342F3", hash_generated_method = "C6A3F05F8581ACFD91C77EB2285A92FC")
     public FromHeader getFrom() {
-        return (FromHeader)dsTaint.getTaint();
+        FromHeader varB4EAC82CA7396A68D541C85D26508E83_57397301 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_57397301 = (FromHeader) fromHeader;
+        varB4EAC82CA7396A68D541C85D26508E83_57397301.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_57397301;
         // ---------- Original Method ----------
         //return (FromHeader) fromHeader;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.005 -0400", hash_original_method = "10D7F219ADDA2D1F9DA30C2C2F401D03", hash_generated_method = "DFDD100BBE8CE361EB678600195D329D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.912 -0400", hash_original_method = "10D7F219ADDA2D1F9DA30C2C2F401D03", hash_generated_method = "3198E372457FDBBB84FF73A50C2EBDF3")
     public ErrorInfoList getErrorInfoHeaders() {
-        ErrorInfoList var71ED31A64933A532D005D9C3BA2A9D1B_1289499140 = ((ErrorInfoList) getSIPHeaderListLowerCase(ERROR_LOWERCASE));
-        return (ErrorInfoList)dsTaint.getTaint();
+        ErrorInfoList varB4EAC82CA7396A68D541C85D26508E83_710345796 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_710345796 = (ErrorInfoList) getSIPHeaderListLowerCase(ERROR_LOWERCASE);
+        varB4EAC82CA7396A68D541C85D26508E83_710345796.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_710345796;
         // ---------- Original Method ----------
         //return (ErrorInfoList) getSIPHeaderListLowerCase(ERROR_LOWERCASE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.005 -0400", hash_original_method = "6BBB646E6D7D64808CC70B68BEB17C86", hash_generated_method = "8FDF6168E78397990EBCD92F3ABA677C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.912 -0400", hash_original_method = "6BBB646E6D7D64808CC70B68BEB17C86", hash_generated_method = "842571ECAA17B2594C11FEC32FABC5B2")
     public ContactList getContactHeaders() {
-        ContactList var934DB6E152CA98F88D5F59FA963FB2FD_139639044 = ((ContactList) this.getSIPHeaderListLowerCase(CONTACT_LOWERCASE));
-        return (ContactList)dsTaint.getTaint();
+        ContactList varB4EAC82CA7396A68D541C85D26508E83_1836696914 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1836696914 = (ContactList) this.getSIPHeaderListLowerCase(CONTACT_LOWERCASE);
+        varB4EAC82CA7396A68D541C85D26508E83_1836696914.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1836696914;
         // ---------- Original Method ----------
         //return (ContactList) this.getSIPHeaderListLowerCase(CONTACT_LOWERCASE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.005 -0400", hash_original_method = "7930A8382B37585900D6B0ADAEF5E908", hash_generated_method = "43395FC1D86075CD2CDD3B10353226DA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.913 -0400", hash_original_method = "7930A8382B37585900D6B0ADAEF5E908", hash_generated_method = "53F989CC1B220DEB0D054A1215F190B1")
     public Contact getContactHeader() {
+        Contact varB4EAC82CA7396A68D541C85D26508E83_512678366 = null; //Variable for return #1
+        Contact varB4EAC82CA7396A68D541C85D26508E83_1257142313 = null; //Variable for return #2
         ContactList clist;
         clist = this.getContactHeaders();
         {
-            Contact var9AA9975600A1FD9D6D5606683A3D25DD_2102015291 = ((Contact) clist.getFirst());
+            varB4EAC82CA7396A68D541C85D26508E83_512678366 = (Contact) clist.getFirst();
         } //End block
-        return (Contact)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1257142313 = null;
+        } //End block
+        Contact varA7E53CE21691AB073D9660D615818899_983073055; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_983073055 = varB4EAC82CA7396A68D541C85D26508E83_512678366;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_983073055 = varB4EAC82CA7396A68D541C85D26508E83_1257142313;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_983073055.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_983073055;
         // ---------- Original Method ----------
         //ContactList clist = this.getContactHeaders();
         //if (clist != null) {
@@ -1089,26 +1167,25 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.005 -0400", hash_original_method = "F913627528E03E7BE96F6FC26EC1EAB5", hash_generated_method = "94B8253BE41D90EB65694C7137B1DA86")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.926 -0400", hash_original_method = "F913627528E03E7BE96F6FC26EC1EAB5", hash_generated_method = "82C55A77DBF3A94BC6C8C28661BE71F2")
     public ViaList getViaHeaders() {
-        ViaList var8BD7CDDAD677CF0B3A38295150B42AD4_68095081 = ((ViaList) getSIPHeaderListLowerCase(VIA_LOWERCASE));
-        return (ViaList)dsTaint.getTaint();
+        ViaList varB4EAC82CA7396A68D541C85D26508E83_1720970470 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1720970470 = (ViaList) getSIPHeaderListLowerCase(VIA_LOWERCASE);
+        varB4EAC82CA7396A68D541C85D26508E83_1720970470.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1720970470;
         // ---------- Original Method ----------
         //return (ViaList) getSIPHeaderListLowerCase(VIA_LOWERCASE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.005 -0400", hash_original_method = "4714C62FF03EE4A312864AB7EDBC16A3", hash_generated_method = "80298A791DA177D85FAF81E7CDB53630")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.932 -0400", hash_original_method = "4714C62FF03EE4A312864AB7EDBC16A3", hash_generated_method = "F3F662333D3AE8C0FAA5489ACA2336E5")
     public void setVia(java.util.List viaList) {
-        dsTaint.addTaint(viaList.dsTaint);
         ViaList vList;
         vList = new ViaList();
         ListIterator it;
         it = viaList.listIterator();
         {
-            boolean var03729FD53960D8DCA3A41A13A0229637_76340344 = (it.hasNext());
+            boolean var03729FD53960D8DCA3A41A13A0229637_421291900 = (it.hasNext());
             {
                 Via via;
                 via = (Via) it.next();
@@ -1116,6 +1193,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
             } //End block
         } //End collapsed parenthetic
         this.setHeader(vList);
+        addTaint(viaList.getTaint());
         // ---------- Original Method ----------
         //ViaList vList = new ViaList();
         //ListIterator it = viaList.listIterator();
@@ -1127,24 +1205,35 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.006 -0400", hash_original_method = "458FFC69EFF172F74B60E661629859D7", hash_generated_method = "37DA6A237494606E871DA1CC75EF5365")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.936 -0400", hash_original_method = "458FFC69EFF172F74B60E661629859D7", hash_generated_method = "67EDF1CD86F2C25AE371B91BD0C09BC3")
     public void setHeader(SIPHeaderList<Via> sipHeaderList) {
-        dsTaint.addTaint(sipHeaderList.dsTaint);
         this.setHeader((Header) sipHeaderList);
+        addTaint(sipHeaderList.getTaint());
         // ---------- Original Method ----------
         //this.setHeader((Header) sipHeaderList);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.006 -0400", hash_original_method = "D8225C1F89A591B431137F8AC67C8011", hash_generated_method = "B0A11D6296A0C27C66349B97CB1BA9E4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.949 -0400", hash_original_method = "D8225C1F89A591B431137F8AC67C8011", hash_generated_method = "A897C8BD00E6970EB309C1B8B3FCACDC")
     public Via getTopmostVia() {
+        Via varB4EAC82CA7396A68D541C85D26508E83_1094146813 = null; //Variable for return #1
+        Via varB4EAC82CA7396A68D541C85D26508E83_788479891 = null; //Variable for return #2
         {
-            boolean var7008E835C5FBF6766081DAE39E1151D8_1496277858 = (this.getViaHeaders() == null);
-            Via var6B6D9F0D621E376384143DE3408BEF7E_1890369456 = ((Via) (getViaHeaders().getFirst()));
+            boolean var7008E835C5FBF6766081DAE39E1151D8_400651631 = (this.getViaHeaders() == null);
+            varB4EAC82CA7396A68D541C85D26508E83_1094146813 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_788479891 = (Via) (getViaHeaders().getFirst());
         } //End collapsed parenthetic
-        return (Via)dsTaint.getTaint();
+        Via varA7E53CE21691AB073D9660D615818899_1860820906; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1860820906 = varB4EAC82CA7396A68D541C85D26508E83_1094146813;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1860820906 = varB4EAC82CA7396A68D541C85D26508E83_788479891;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1860820906.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1860820906;
         // ---------- Original Method ----------
         //if (this.getViaHeaders() == null)
             //return null;
@@ -1153,81 +1242,86 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.006 -0400", hash_original_method = "734B287C3C9508BBD63962A2764D9C01", hash_generated_method = "2DD6B7E297ABBEA990936BF60429DA7E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.949 -0400", hash_original_method = "734B287C3C9508BBD63962A2764D9C01", hash_generated_method = "3A700A58C081F81106B4108818638ED1")
     public CSeqHeader getCSeq() {
-        return (CSeqHeader)dsTaint.getTaint();
+        CSeqHeader varB4EAC82CA7396A68D541C85D26508E83_1565644316 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1565644316 = (CSeqHeader) cSeqHeader;
+        varB4EAC82CA7396A68D541C85D26508E83_1565644316.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1565644316;
         // ---------- Original Method ----------
         //return (CSeqHeader) cSeqHeader;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.006 -0400", hash_original_method = "6A92E6492A4EA537FE7E1089912E5A2E", hash_generated_method = "544177741BDFBC8067BF23948B6BBE86")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.950 -0400", hash_original_method = "6A92E6492A4EA537FE7E1089912E5A2E", hash_generated_method = "9DBB878EDA3823F0FD1183ACD357A113")
     public Authorization getAuthorization() {
-        Authorization varE567B257206F58F0AE77D8DA839CEEAE_1543350386 = ((Authorization) getHeaderLowerCase(AUTHORIZATION_LOWERCASE));
-        return (Authorization)dsTaint.getTaint();
+        Authorization varB4EAC82CA7396A68D541C85D26508E83_845644679 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_845644679 = (Authorization) getHeaderLowerCase(AUTHORIZATION_LOWERCASE);
+        varB4EAC82CA7396A68D541C85D26508E83_845644679.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_845644679;
         // ---------- Original Method ----------
         //return (Authorization) getHeaderLowerCase(AUTHORIZATION_LOWERCASE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.006 -0400", hash_original_method = "1941B7A53D19F77542CA45C05AFF9884", hash_generated_method = "AAFEC8F62D9AF94FD9EC444EBE53036C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.954 -0400", hash_original_method = "1941B7A53D19F77542CA45C05AFF9884", hash_generated_method = "77440F2305C5496F59306D845875B91E")
     public MaxForwardsHeader getMaxForwards() {
-        return (MaxForwardsHeader)dsTaint.getTaint();
+        MaxForwardsHeader varB4EAC82CA7396A68D541C85D26508E83_1760801018 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1760801018 = maxForwardsHeader;
+        varB4EAC82CA7396A68D541C85D26508E83_1760801018.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1760801018;
         // ---------- Original Method ----------
         //return maxForwardsHeader;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.007 -0400", hash_original_method = "08224707CDDBB2C37148D3B618E2B6B7", hash_generated_method = "B60997F30B8E8BD32AF7961379B7C3F7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.955 -0400", hash_original_method = "08224707CDDBB2C37148D3B618E2B6B7", hash_generated_method = "C7782781DD6A03E28DECD79DAD99D8FE")
     public void setMaxForwards(MaxForwardsHeader maxForwards) {
-        dsTaint.addTaint(maxForwards.dsTaint);
         this.setHeader(maxForwards);
+        addTaint(maxForwards.getTaint());
         // ---------- Original Method ----------
         //this.setHeader(maxForwards);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.007 -0400", hash_original_method = "7800F88C4B689BC7D7C78CBE850678CA", hash_generated_method = "B32A8E8D9ABF809AAE43FE087FF07D73")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.955 -0400", hash_original_method = "7800F88C4B689BC7D7C78CBE850678CA", hash_generated_method = "5915D1809537101B9DEB29C144C5E718")
     public RouteList getRouteHeaders() {
-        RouteList var4BA5B6FC35D3F378DAB54128FB776E18_1129165364 = ((RouteList) getSIPHeaderListLowerCase(ROUTE_LOWERCASE));
-        return (RouteList)dsTaint.getTaint();
+        RouteList varB4EAC82CA7396A68D541C85D26508E83_731511272 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_731511272 = (RouteList) getSIPHeaderListLowerCase(ROUTE_LOWERCASE);
+        varB4EAC82CA7396A68D541C85D26508E83_731511272.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_731511272;
         // ---------- Original Method ----------
         //return (RouteList) getSIPHeaderListLowerCase(ROUTE_LOWERCASE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.007 -0400", hash_original_method = "9DA69A74904D39D3267E3E1010C409F3", hash_generated_method = "50D54D6DA69F9F707456FA4967BB9BE1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.956 -0400", hash_original_method = "9DA69A74904D39D3267E3E1010C409F3", hash_generated_method = "BE752353C9E6B8E268D230378100A734")
     public CallIdHeader getCallId() {
-        return (CallIdHeader)dsTaint.getTaint();
+        CallIdHeader varB4EAC82CA7396A68D541C85D26508E83_2138176633 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2138176633 = callIdHeader;
+        varB4EAC82CA7396A68D541C85D26508E83_2138176633.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2138176633;
         // ---------- Original Method ----------
         //return callIdHeader;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.007 -0400", hash_original_method = "5127E494FA29164B5CB6A74D7F3B176F", hash_generated_method = "247BF5C4BCBE5B273F366CC8C038CC4E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.956 -0400", hash_original_method = "5127E494FA29164B5CB6A74D7F3B176F", hash_generated_method = "93D4EC778359912FC3F69DC75D69A78A")
     public void setCallId(CallIdHeader callId) {
-        dsTaint.addTaint(callId.dsTaint);
         this.setHeader(callId);
+        addTaint(callId.getTaint());
         // ---------- Original Method ----------
         //this.setHeader(callId);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.007 -0400", hash_original_method = "16037BFD4917B839A558D81FBF251209", hash_generated_method = "61D521CC2EAC1F67DFC1A553253BA261")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.956 -0400", hash_original_method = "16037BFD4917B839A558D81FBF251209", hash_generated_method = "F3D09F4F11A0A28101BC189451A23614")
     public void setCallId(String callId) throws java.text.ParseException {
-        dsTaint.addTaint(callId);
         {
             this.setHeader(new CallID());
         } //End block
         callIdHeader.setCallId(callId);
+        addTaint(callId.getTaint());
         // ---------- Original Method ----------
         //if (callIdHeader == null) {
             //this.setHeader(new CallID());
@@ -1236,61 +1330,77 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.008 -0400", hash_original_method = "6FCB806D3659BA1DF59CA318834E3C35", hash_generated_method = "D003EA90A64CB690DED1E302C3CCE9A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.967 -0400", hash_original_method = "6FCB806D3659BA1DF59CA318834E3C35", hash_generated_method = "89210B1DD1EA71DDF2D65E6B65FEDE20")
     public RecordRouteList getRecordRouteHeaders() {
-        RecordRouteList var89744DC1589B2FB661C8FD627A1883F8_1041951687 = ((RecordRouteList) this.getSIPHeaderListLowerCase(RECORDROUTE_LOWERCASE));
-        return (RecordRouteList)dsTaint.getTaint();
+        RecordRouteList varB4EAC82CA7396A68D541C85D26508E83_2087857008 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2087857008 = (RecordRouteList) this.getSIPHeaderListLowerCase(RECORDROUTE_LOWERCASE);
+        varB4EAC82CA7396A68D541C85D26508E83_2087857008.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2087857008;
         // ---------- Original Method ----------
         //return (RecordRouteList) this.getSIPHeaderListLowerCase(RECORDROUTE_LOWERCASE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.008 -0400", hash_original_method = "D2F3523F315E42C3CDB78FE4D7DBD860", hash_generated_method = "A4C5D9D8E1C98176463FFECD4B3BB051")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.968 -0400", hash_original_method = "D2F3523F315E42C3CDB78FE4D7DBD860", hash_generated_method = "2921285F761A4686362489F160CB8F72")
     public ToHeader getTo() {
-        return (ToHeader)dsTaint.getTaint();
+        ToHeader varB4EAC82CA7396A68D541C85D26508E83_405428072 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_405428072 = (ToHeader) toHeader;
+        varB4EAC82CA7396A68D541C85D26508E83_405428072.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_405428072;
         // ---------- Original Method ----------
         //return (ToHeader) toHeader;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.008 -0400", hash_original_method = "AA146219F068967CE3F55E3F637E86D7", hash_generated_method = "08E45E51480E9E603E8630DB5ACE3F1C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.968 -0400", hash_original_method = "AA146219F068967CE3F55E3F637E86D7", hash_generated_method = "2054F00F6867314407CF3FA28F4FDE51")
     public void setTo(ToHeader to) {
-        dsTaint.addTaint(to.dsTaint);
         this.setHeader(to);
+        addTaint(to.getTaint());
         // ---------- Original Method ----------
         //this.setHeader(to);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.008 -0400", hash_original_method = "61E9A0C02A79622F4076A17D3E8275D9", hash_generated_method = "9EF318709DCD641352DB0F74C12C6E0A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.968 -0400", hash_original_method = "61E9A0C02A79622F4076A17D3E8275D9", hash_generated_method = "E26DF63DDF37B39138EA3D063BD4E1F4")
     public void setFrom(FromHeader from) {
-        dsTaint.addTaint(from.dsTaint);
         this.setHeader(from);
+        addTaint(from.getTaint());
         // ---------- Original Method ----------
         //this.setHeader(from);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.008 -0400", hash_original_method = "BF14C97BBADF5B6B3DD1A606FFB97154", hash_generated_method = "9E3047D60853D83BC553C699328C53BA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.969 -0400", hash_original_method = "BF14C97BBADF5B6B3DD1A606FFB97154", hash_generated_method = "F946CEAF9361D6D2B1A1BDE53ECD2163")
     public ContentLengthHeader getContentLength() {
-        return (ContentLengthHeader)dsTaint.getTaint();
+        ContentLengthHeader varB4EAC82CA7396A68D541C85D26508E83_138746963 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_138746963 = this.contentLengthHeader;
+        varB4EAC82CA7396A68D541C85D26508E83_138746963.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_138746963;
         // ---------- Original Method ----------
         //return this.contentLengthHeader;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.008 -0400", hash_original_method = "40D47E0A8FD809ED2EC3170259DB7692", hash_generated_method = "C7FDE46D7976B73DED8437F2C835286A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.981 -0400", hash_original_method = "40D47E0A8FD809ED2EC3170259DB7692", hash_generated_method = "FFC513E2F670049C7D3BF0F7354327BA")
     public String getMessageContent() throws UnsupportedEncodingException {
+        String varB4EAC82CA7396A68D541C85D26508E83_458921601 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1836454462 = null; //Variable for return #2
+        varB4EAC82CA7396A68D541C85D26508E83_458921601 = null;
         {
             this.messageContent = new String(messageContentBytes, getCharset() );
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1836454462 = this.messageContent;
+        String varA7E53CE21691AB073D9660D615818899_1151890039; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1151890039 = varB4EAC82CA7396A68D541C85D26508E83_458921601;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1151890039 = varB4EAC82CA7396A68D541C85D26508E83_1836454462;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1151890039.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1151890039;
         // ---------- Original Method ----------
         //if (this.messageContent == null && this.messageContentBytes == null)
             //return null;
@@ -1301,8 +1411,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.009 -0400", hash_original_method = "0A8A11F2CA57642B3F77F3FF48221ABE", hash_generated_method = "9745CBA270404B99BFA8A5A0795C89DB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.982 -0400", hash_original_method = "0A8A11F2CA57642B3F77F3FF48221ABE", hash_generated_method = "8B0AA58E4F5DD9B025C92AC2000B41A9")
     public byte[] getRawContent() {
         try 
         {
@@ -1319,9 +1428,8 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
         {
             InternalErrorHandler.handleException(ex);
         } //End block
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_662300611 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_662300611;
         // ---------- Original Method ----------
         //try {
             //if ( this.messageContentBytes != null ) {
@@ -1339,19 +1447,18 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.009 -0400", hash_original_method = "AF476AB0E969B944040525792C5BC52E", hash_generated_method = "71EE7428A470EF90BF6F70E3F33BFE05")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.983 -0400", hash_original_method = "AF476AB0E969B944040525792C5BC52E", hash_generated_method = "21B618C6C7A31C64E1158733A6D4B327")
     public void setMessageContent(String type, String subType, String messageContent) {
-        dsTaint.addTaint(subType);
-        dsTaint.addTaint(messageContent);
-        dsTaint.addTaint(type);
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("messgeContent is null");
         ContentType ct;
         ct = new ContentType(type, subType);
         this.setHeader(ct);
+        this.messageContent = messageContent;
         this.messageContentBytes = null;
         this.messageContentObject = null;
         computeContentLength(messageContent);
+        addTaint(type.getTaint());
+        addTaint(subType.getTaint());
         // ---------- Original Method ----------
         //if (messageContent == null)
             //throw new IllegalArgumentException("messgeContent is null");
@@ -1364,11 +1471,8 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.010 -0400", hash_original_method = "F6727728B1118BFFD3FCC04534FCE621", hash_generated_method = "4828FD6E61FE21FA48117F9D96807572")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.983 -0400", hash_original_method = "F6727728B1118BFFD3FCC04534FCE621", hash_generated_method = "ABCBE7C0F118C12CBAD6D5858BBBB712")
     public void setContent(Object content, ContentTypeHeader contentTypeHeader) throws ParseException {
-        dsTaint.addTaint(content.dsTaint);
-        dsTaint.addTaint(contentTypeHeader.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null content");
         this.setHeader(contentTypeHeader);
         this.messageContent = null;
@@ -1380,7 +1484,9 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
         {
             this.messageContentBytes = (byte[]) content;
         } //End block
+        this.messageContentObject = content;
         computeContentLength(content);
+        addTaint(contentTypeHeader.getTaint());
         // ---------- Original Method ----------
         //if (content == null)
             //throw new NullPointerException("null content");
@@ -1398,10 +1504,33 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.010 -0400", hash_original_method = "54FC52177A1CB92C02565C30A4F8CE94", hash_generated_method = "2A8B6F5E0DB0EB60CF13CF5D01C31892")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.984 -0400", hash_original_method = "54FC52177A1CB92C02565C30A4F8CE94", hash_generated_method = "B27E0DFE47F35BE629F1839B56E1AE35")
     public Object getContent() {
-        return (Object)dsTaint.getTaint();
+        Object varB4EAC82CA7396A68D541C85D26508E83_710158210 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1337125375 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_1032512171 = null; //Variable for return #3
+        Object varB4EAC82CA7396A68D541C85D26508E83_1759413390 = null; //Variable for return #4
+        varB4EAC82CA7396A68D541C85D26508E83_710158210 = messageContentObject;
+        varB4EAC82CA7396A68D541C85D26508E83_1337125375 = this.messageContent;
+        varB4EAC82CA7396A68D541C85D26508E83_1032512171 = this.messageContentBytes;
+        varB4EAC82CA7396A68D541C85D26508E83_1759413390 = null;
+        Object varA7E53CE21691AB073D9660D615818899_185852563; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_185852563 = varB4EAC82CA7396A68D541C85D26508E83_710158210;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_185852563 = varB4EAC82CA7396A68D541C85D26508E83_1337125375;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_185852563 = varB4EAC82CA7396A68D541C85D26508E83_1032512171;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_185852563 = varB4EAC82CA7396A68D541C85D26508E83_1759413390;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_185852563.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_185852563;
         // ---------- Original Method ----------
         //if (this.messageContentObject != null)
             //return messageContentObject;
@@ -1414,17 +1543,16 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.010 -0400", hash_original_method = "567464035ABE474ACDCFF614F9D534B5", hash_generated_method = "3F7E16E659F366AE0D5A8E107DA925EB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.992 -0400", hash_original_method = "567464035ABE474ACDCFF614F9D534B5", hash_generated_method = "192CE7C31B0E17C2398FDD2D0C5BD23E")
     public void setMessageContent(String type, String subType, byte[] messageContent) {
-        dsTaint.addTaint(subType);
-        dsTaint.addTaint(messageContent[0]);
-        dsTaint.addTaint(type);
         ContentType ct;
         ct = new ContentType(type, subType);
         this.setHeader(ct);
         this.setMessageContent(messageContent);
         computeContentLength(messageContent);
+        addTaint(type.getTaint());
+        addTaint(subType.getTaint());
+        addTaint(messageContent[0]);
         // ---------- Original Method ----------
         //ContentType ct = new ContentType(type, subType);
         //this.setHeader(ct);
@@ -1433,17 +1561,12 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.010 -0400", hash_original_method = "39F2BE1EDB04320A3B64ACD0EA831DED", hash_generated_method = "8FD178995F945F40343D7CAF12657C7B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.993 -0400", hash_original_method = "39F2BE1EDB04320A3B64ACD0EA831DED", hash_generated_method = "0AFC8C9588F019835ABD9AC6FD201DF3")
     public void setMessageContent(String content, boolean strict, boolean computeContentLength, int givenLength) throws ParseException {
-        dsTaint.addTaint(content);
-        dsTaint.addTaint(givenLength);
-        dsTaint.addTaint(computeContentLength);
-        dsTaint.addTaint(strict);
         computeContentLength(content);
         {
             {
-                boolean var7F2E7916F611D748ECF2BCAD4DD266ED_417730455 = ((!strict && this.contentLengthHeader.getContentLength() != givenLength) 
+                boolean var7F2E7916F611D748ECF2BCAD4DD266ED_1406299072 = ((!strict && this.contentLengthHeader.getContentLength() != givenLength) 
                     || this.contentLengthHeader.getContentLength() < givenLength);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ParseException("Invalid content length "
@@ -1451,8 +1574,12 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        messageContent = content;
         messageContentBytes = null;
         messageContentObject = null;
+        addTaint(strict);
+        addTaint(computeContentLength);
+        addTaint(givenLength);
         // ---------- Original Method ----------
         //computeContentLength(content);
         //if ((!computeContentLength)) {
@@ -1468,11 +1595,10 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.011 -0400", hash_original_method = "19C7E154661732280AD152F3E186944D", hash_generated_method = "D5FD91F5BD699B596E63C58BAE1B3F20")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.993 -0400", hash_original_method = "19C7E154661732280AD152F3E186944D", hash_generated_method = "FE4B2F2B2435BA47A415DC55253399E0")
     public void setMessageContent(byte[] content) {
-        dsTaint.addTaint(content[0]);
         computeContentLength(content);
+        messageContentBytes = content;
         messageContent = null;
         messageContentObject = null;
         // ---------- Original Method ----------
@@ -1483,22 +1609,21 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.011 -0400", hash_original_method = "677A53CE4E6B4035F9B12FCECD3E865E", hash_generated_method = "56A3A38C2F2635FF82F955C7197748F2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.994 -0400", hash_original_method = "677A53CE4E6B4035F9B12FCECD3E865E", hash_generated_method = "865FF9968E58D71478C5268658985B60")
     public void setMessageContent(byte[] content, boolean computeContentLength, int givenLength) throws ParseException {
-        dsTaint.addTaint(content[0]);
-        dsTaint.addTaint(givenLength);
-        dsTaint.addTaint(computeContentLength);
         computeContentLength(content);
         {
-            boolean var53E9258046341087EA338AE330779B8F_1052091113 = ((!computeContentLength) && this.contentLengthHeader.getContentLength() < givenLength);
+            boolean var53E9258046341087EA338AE330779B8F_1597085389 = ((!computeContentLength) && this.contentLengthHeader.getContentLength() < givenLength);
             {
                 if (DroidSafeAndroidRuntime.control) throw new ParseException("Invalid content length "
                     + this.contentLengthHeader.getContentLength() + " / " + givenLength, 0);
             } //End block
         } //End collapsed parenthetic
+        messageContentBytes = content;
         messageContent = null;
         messageContentObject = null;
+        addTaint(computeContentLength);
+        addTaint(givenLength);
         // ---------- Original Method ----------
         //computeContentLength(content);
         //if ((!computeContentLength) && this.contentLengthHeader.getContentLength() < givenLength) {
@@ -1511,10 +1636,8 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.011 -0400", hash_original_method = "D3327D918F93ECC2995A4C67A415A1A5", hash_generated_method = "6A337C8809E4413DB6CA4ED101BA69DC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.005 -0400", hash_original_method = "D3327D918F93ECC2995A4C67A415A1A5", hash_generated_method = "2B5D747060AF0F624BCF432147E14A0A")
     private void computeContentLength(Object content) {
-        dsTaint.addTaint(content.dsTaint);
         int length;
         length = 0;
         {
@@ -1541,6 +1664,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
         } //End block
         catch (InvalidArgumentException e)
         { }
+        addTaint(content.getTaint());
         // ---------- Original Method ----------
         //int length = 0;
         //if (content != null) {
@@ -1563,8 +1687,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.012 -0400", hash_original_method = "B09AA5FB20D2965ADCD41D53860CDBE3", hash_generated_method = "EC9C60094C43878E3E0EBD84910DA36F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.006 -0400", hash_original_method = "B09AA5FB20D2965ADCD41D53860CDBE3", hash_generated_method = "EC9C60094C43878E3E0EBD84910DA36F")
     public void removeContent() {
         messageContent = null;
         messageContentBytes = null;
@@ -1586,23 +1709,38 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.012 -0400", hash_original_method = "B51D33B6E886062DB169564C9DA9DCD8", hash_generated_method = "696E3440037DB64D0F44669D7B04B340")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.007 -0400", hash_original_method = "B51D33B6E886062DB169564C9DA9DCD8", hash_generated_method = "4A111F3352210B0CB9CE876F351CB32A")
     @SuppressWarnings("unchecked")
     public ListIterator<SIPHeader> getHeaders(String headerName) {
-        dsTaint.addTaint(headerName);
+        ListIterator<SIPHeader> varB4EAC82CA7396A68D541C85D26508E83_995497527 = null; //Variable for return #1
+        ListIterator<SIPHeader> varB4EAC82CA7396A68D541C85D26508E83_732954373 = null; //Variable for return #2
+        ListIterator<SIPHeader> varB4EAC82CA7396A68D541C85D26508E83_1643043099 = null; //Variable for return #3
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null headerName");
         SIPHeader sipHeader;
         sipHeader = (SIPHeader) nameTable.get(SIPHeaderNamesCache
                 .toLowerCase(headerName));
-        ListIterator<SIPHeader> var7ECCF7E67BA81840EF3027EF4BC58D94_1688390140 = (new LinkedList<SIPHeader>().listIterator());
+        varB4EAC82CA7396A68D541C85D26508E83_995497527 = new LinkedList<SIPHeader>().listIterator();
         {
-            ListIterator<SIPHeader> var692D4D125D00D1B95B8C42836038F08A_1143230053 = (((SIPHeaderList<SIPHeader>) sipHeader).listIterator());
+            varB4EAC82CA7396A68D541C85D26508E83_732954373 = ((SIPHeaderList<SIPHeader>) sipHeader).listIterator();
         } //End block
         {
-            ListIterator<SIPHeader> var3320CDA44B36A7F6D56F5D007C25D1D5_2042292182 = (new HeaderIterator(this, sipHeader));
+            varB4EAC82CA7396A68D541C85D26508E83_1643043099 = new HeaderIterator(this, sipHeader);
         } //End block
-        return (ListIterator<SIPHeader>)dsTaint.getTaint();
+        addTaint(headerName.getTaint());
+        ListIterator<SIPHeader> varA7E53CE21691AB073D9660D615818899_2125849575; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_2125849575 = varB4EAC82CA7396A68D541C85D26508E83_995497527;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_2125849575 = varB4EAC82CA7396A68D541C85D26508E83_732954373;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_2125849575 = varB4EAC82CA7396A68D541C85D26508E83_1643043099;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_2125849575.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2125849575;
         // ---------- Original Method ----------
         //if (headerName == null)
             //throw new NullPointerException("null headerName");
@@ -1618,22 +1756,33 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.012 -0400", hash_original_method = "6CE50AA271DA9876F1700D8E280EAFD1", hash_generated_method = "1B7F2C1626E371A0708E1B8F5E9538AF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.015 -0400", hash_original_method = "6CE50AA271DA9876F1700D8E280EAFD1", hash_generated_method = "A76544936561C117BE95BFFAB7E7C9F6")
     public String getHeaderAsFormattedString(String name) {
-        dsTaint.addTaint(name);
+        String varB4EAC82CA7396A68D541C85D26508E83_669575579 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_94381357 = null; //Variable for return #2
         String lowerCaseName;
         lowerCaseName = name.toLowerCase();
         {
-            boolean varC2A08EC06B69AD4EEFB5CF0E06463703_531723602 = (this.nameTable.containsKey(lowerCaseName));
+            boolean varC2A08EC06B69AD4EEFB5CF0E06463703_1563008435 = (this.nameTable.containsKey(lowerCaseName));
             {
-                String var20B121387E1DB06EDA79959D01445417_802974540 = (this.nameTable.get(lowerCaseName).toString());
+                varB4EAC82CA7396A68D541C85D26508E83_669575579 = this.nameTable.get(lowerCaseName).toString();
             } //End block
             {
-                String varA5C47B0FEA0DD3F7D09F0538504C3E6B_1303362868 = (this.getHeader(name).toString());
+                varB4EAC82CA7396A68D541C85D26508E83_94381357 = this.getHeader(name).toString();
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        addTaint(name.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_785784790; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_785784790 = varB4EAC82CA7396A68D541C85D26508E83_669575579;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_785784790 = varB4EAC82CA7396A68D541C85D26508E83_94381357;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_785784790.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_785784790;
         // ---------- Original Method ----------
         //String lowerCaseName = name.toLowerCase();
         //if (this.nameTable.containsKey(lowerCaseName)) {
@@ -1644,32 +1793,50 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.012 -0400", hash_original_method = "2723C6F27F309BF6F386C5DF25AB6032", hash_generated_method = "154A997E117CF60ADB61AB453F497040")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.015 -0400", hash_original_method = "2723C6F27F309BF6F386C5DF25AB6032", hash_generated_method = "A11DF5142F13DE4AD11A80C3AE7830CD")
     private SIPHeader getSIPHeaderListLowerCase(String lowerCaseHeaderName) {
-        dsTaint.addTaint(lowerCaseHeaderName);
-        SIPHeader var855A207A743858BCD0DF173525588C56_2039186176 = (nameTable.get(lowerCaseHeaderName));
-        return (SIPHeader)dsTaint.getTaint();
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1839380797 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1839380797 = nameTable.get(lowerCaseHeaderName);
+        addTaint(lowerCaseHeaderName.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1839380797.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1839380797;
         // ---------- Original Method ----------
         //return nameTable.get(lowerCaseHeaderName);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.012 -0400", hash_original_method = "9F4B7A8AFA1B725FEEE6FA6CFA2755DF", hash_generated_method = "B149871B6DF48939C5BB23723F2076D5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.016 -0400", hash_original_method = "9F4B7A8AFA1B725FEEE6FA6CFA2755DF", hash_generated_method = "13C67F2CEC3E5DF5AD0735D57F0A13A5")
     @SuppressWarnings("unchecked")
     private List<SIPHeader> getHeaderList(String headerName) {
-        dsTaint.addTaint(headerName);
+        List<SIPHeader> varB4EAC82CA7396A68D541C85D26508E83_1909424795 = null; //Variable for return #1
+        List<SIPHeader> varB4EAC82CA7396A68D541C85D26508E83_1099156283 = null; //Variable for return #2
+        List<SIPHeader> varB4EAC82CA7396A68D541C85D26508E83_965427927 = null; //Variable for return #3
         SIPHeader sipHeader;
         sipHeader = (SIPHeader) nameTable.get(SIPHeaderNamesCache
                 .toLowerCase(headerName));
-        List<SIPHeader> var6F147AD2215A9E792CA381688656A2A1_158616059 = ((List<SIPHeader>) (((SIPHeaderList< ? >) sipHeader).getHeaderList()));
+        varB4EAC82CA7396A68D541C85D26508E83_1909424795 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1099156283 = (List<SIPHeader>) (((SIPHeaderList< ? >) sipHeader).getHeaderList());
         {
             LinkedList<SIPHeader> ll;
             ll = new LinkedList<SIPHeader>();
             ll.add(sipHeader);
+            varB4EAC82CA7396A68D541C85D26508E83_965427927 = ll;
         } //End block
-        return (List<SIPHeader>)dsTaint.getTaint();
+        addTaint(headerName.getTaint());
+        List<SIPHeader> varA7E53CE21691AB073D9660D615818899_1294183036; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1294183036 = varB4EAC82CA7396A68D541C85D26508E83_1909424795;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1294183036 = varB4EAC82CA7396A68D541C85D26508E83_1099156283;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1294183036 = varB4EAC82CA7396A68D541C85D26508E83_965427927;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1294183036.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1294183036;
         // ---------- Original Method ----------
         //SIPHeader sipHeader = (SIPHeader) nameTable.get(SIPHeaderNamesCache
                 //.toLowerCase(headerName));
@@ -1685,59 +1852,57 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.013 -0400", hash_original_method = "6DBF8105DE4FD1DC6BA28CCFFFEEC680", hash_generated_method = "57261ACE283C4233E775469FFD36D882")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.016 -0400", hash_original_method = "6DBF8105DE4FD1DC6BA28CCFFFEEC680", hash_generated_method = "D31983BB471BB8AE9EDD92ECF7EFFA47")
     public boolean hasHeader(String headerName) {
-        dsTaint.addTaint(headerName);
-        boolean var8F92FAB8130AFDAD062FD4FCF8454941_1957584086 = (nameTable.containsKey(SIPHeaderNamesCache.toLowerCase(headerName)));
-        return dsTaint.getTaintBoolean();
+        boolean var8F92FAB8130AFDAD062FD4FCF8454941_1281369372 = (nameTable.containsKey(SIPHeaderNamesCache.toLowerCase(headerName)));
+        addTaint(headerName.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_790886855 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_790886855;
         // ---------- Original Method ----------
         //return nameTable.containsKey(SIPHeaderNamesCache.toLowerCase(headerName));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.013 -0400", hash_original_method = "4231E4F79F4F1EB89656879CE689B66E", hash_generated_method = "D7351E924313A6C5A956DD278B5F9575")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.017 -0400", hash_original_method = "4231E4F79F4F1EB89656879CE689B66E", hash_generated_method = "293C4F5EB47B137622E0FBF25282432F")
     public boolean hasFromTag() {
-        boolean var0911B64052451985C6CF9283DDE5ABCA_229223104 = (fromHeader != null && fromHeader.getTag() != null);
-        return dsTaint.getTaintBoolean();
+        boolean var0911B64052451985C6CF9283DDE5ABCA_2145046111 = (fromHeader != null && fromHeader.getTag() != null);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_176191663 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_176191663;
         // ---------- Original Method ----------
         //return fromHeader != null && fromHeader.getTag() != null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.013 -0400", hash_original_method = "62BEDD072F48BB9AA18DBB87956D8F3D", hash_generated_method = "BF84B6BC0E711B70BF04BA0FE2CB6193")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.017 -0400", hash_original_method = "62BEDD072F48BB9AA18DBB87956D8F3D", hash_generated_method = "2637F5AC05843A3B03B6ECFDCE3D1023")
     public boolean hasToTag() {
-        boolean varD9AA5806DF483D6615D6AF7918F3DCC2_2126930672 = (toHeader != null && toHeader.getTag() != null);
-        return dsTaint.getTaintBoolean();
+        boolean varD9AA5806DF483D6615D6AF7918F3DCC2_1925926814 = (toHeader != null && toHeader.getTag() != null);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_460599512 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_460599512;
         // ---------- Original Method ----------
         //return toHeader != null && toHeader.getTag() != null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.013 -0400", hash_original_method = "5C72A9C802C6EC574622DB27171F7A2E", hash_generated_method = "E48932EFF875D9B56E22AC18B70CFA02")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.021 -0400", hash_original_method = "5C72A9C802C6EC574622DB27171F7A2E", hash_generated_method = "999874E3974EA0A4D64A74A70A39B7AE")
     public String getFromTag() {
-        {
-            Object varDF6D3C992BAEC5917A190B88CAFE2FA6_1758717290 = (fromHeader.getTag());
-        } //End flattened ternary
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1181136142 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1181136142 = fromHeader == null ? null : fromHeader.getTag();
+        varB4EAC82CA7396A68D541C85D26508E83_1181136142.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1181136142;
         // ---------- Original Method ----------
         //return fromHeader == null ? null : fromHeader.getTag();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.014 -0400", hash_original_method = "2974ECBC3FF627B3CB2268B4D90C9E07", hash_generated_method = "CC0CA6DF542403DB16E9368C40D6BEC6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.022 -0400", hash_original_method = "2974ECBC3FF627B3CB2268B4D90C9E07", hash_generated_method = "382BC4877621725C2DA497EEB1546B6B")
     public void setFromTag(String tag) {
-        dsTaint.addTaint(tag);
         try 
         {
             fromHeader.setTag(tag);
         } //End block
         catch (ParseException e)
         { }
+        addTaint(tag.getTaint());
         // ---------- Original Method ----------
         //try {
             //fromHeader.setTag(tag);
@@ -1746,16 +1911,15 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.014 -0400", hash_original_method = "7DFC8A6205B3CBC36E5183721A30EB01", hash_generated_method = "0C4FD00FFF66516104ECC410D89F7B29")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.022 -0400", hash_original_method = "7DFC8A6205B3CBC36E5183721A30EB01", hash_generated_method = "4417ED4E158BB7A1C22A138733D5DA53")
     public void setToTag(String tag) {
-        dsTaint.addTaint(tag);
         try 
         {
             toHeader.setTag(tag);
         } //End block
         catch (ParseException e)
         { }
+        addTaint(tag.getTaint());
         // ---------- Original Method ----------
         //try {
             //toHeader.setTag(tag);
@@ -1764,13 +1928,12 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.014 -0400", hash_original_method = "5B9C84C201385B92B0E684584F1ECF7E", hash_generated_method = "FEA6F135D590BE0F019B70CBC2A07407")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.038 -0400", hash_original_method = "5B9C84C201385B92B0E684584F1ECF7E", hash_generated_method = "55400D3BB1C1AC516DEE67577DE9411A")
     public String getToTag() {
-        {
-            Object var83AE8C99321DD4E96337F4CBB5EDFA99_214527682 = (toHeader.getTag());
-        } //End flattened ternary
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1763492858 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1763492858 = toHeader == null ? null : toHeader.getTag();
+        varB4EAC82CA7396A68D541C85D26508E83_1763492858.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1763492858;
         // ---------- Original Method ----------
         //return toHeader == null ? null : toHeader.getTag();
     }
@@ -1779,10 +1942,8 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     public abstract String getFirstLine();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.014 -0400", hash_original_method = "34A83ACBA422BB4E8AD74511B9BCE335", hash_generated_method = "3B5662A55C12DDAAF29614075AD3AEB6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.039 -0400", hash_original_method = "34A83ACBA422BB4E8AD74511B9BCE335", hash_generated_method = "36EBECAA2F71F186AE0CA22C9536C921")
     public void addHeader(Header sipHeader) {
-        dsTaint.addTaint(sipHeader.dsTaint);
         SIPHeader sh;
         sh = (SIPHeader) sipHeader;
         try 
@@ -1807,6 +1968,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
             catch (InvalidArgumentException e)
             { }
         } //End block
+        addTaint(sipHeader.getTaint());
         // ---------- Original Method ----------
         //SIPHeader sh = (SIPHeader) sipHeader;
         //try {
@@ -1827,20 +1989,17 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.015 -0400", hash_original_method = "8AEC9EB78EF51FE3B48C263748A725D0", hash_generated_method = "35079973855B85C0CF711BF80920FF8F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.039 -0400", hash_original_method = "8AEC9EB78EF51FE3B48C263748A725D0", hash_generated_method = "DEA0E19CDDDD5158D2B32F93CBF87B4A")
     public void addUnparsed(String unparsed) {
-        dsTaint.addTaint(unparsed);
         this.unrecognizedHeaders.add(unparsed);
+        addTaint(unparsed.getTaint());
         // ---------- Original Method ----------
         //this.unrecognizedHeaders.add(unparsed);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.015 -0400", hash_original_method = "8ACC7204C4B122EB788CE6764EA1EA77", hash_generated_method = "497DFD256A44E73169D350392C2C4D7B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.039 -0400", hash_original_method = "8ACC7204C4B122EB788CE6764EA1EA77", hash_generated_method = "B98160B2126575919C2266D27C5A3BBB")
     public void addHeader(String sipHeader) {
-        dsTaint.addTaint(sipHeader);
         String hdrString;
         hdrString = sipHeader.trim() + "\n";
         try 
@@ -1855,6 +2014,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
         {
             this.unrecognizedHeaders.add(hdrString);
         } //End block
+        addTaint(sipHeader.getTaint());
         // ---------- Original Method ----------
         //String hdrString = sipHeader.trim() + "\n";
         //try {
@@ -1867,25 +2027,26 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.015 -0400", hash_original_method = "F4B3A65BCC1C141571353972EC488146", hash_generated_method = "5A7172B551C50B192356A6D43115212C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.042 -0400", hash_original_method = "F4B3A65BCC1C141571353972EC488146", hash_generated_method = "CD3CA92364D1E41905A950362795473C")
     public ListIterator<String> getUnrecognizedHeaders() {
-        ListIterator<String> var9A7F26FF600D26EF99A513F30E21BAF6_1555016124 = (this.unrecognizedHeaders.listIterator());
-        return (ListIterator<String>)dsTaint.getTaint();
+        ListIterator<String> varB4EAC82CA7396A68D541C85D26508E83_1955024578 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1955024578 = this.unrecognizedHeaders.listIterator();
+        varB4EAC82CA7396A68D541C85D26508E83_1955024578.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1955024578;
         // ---------- Original Method ----------
         //return this.unrecognizedHeaders.listIterator();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.015 -0400", hash_original_method = "C08D5FBD41C305191A05DA7EC6E8BA34", hash_generated_method = "39566FC6D2678709C804303789543323")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.044 -0400", hash_original_method = "C08D5FBD41C305191A05DA7EC6E8BA34", hash_generated_method = "824CF90743CF394E4DA44641E3C7AAAD")
     public ListIterator<String> getHeaderNames() {
+        ListIterator<String> varB4EAC82CA7396A68D541C85D26508E83_615293644 = null; //Variable for return #1
         Iterator<SIPHeader> li;
         li = this.headers.iterator();
         LinkedList<String> retval;
         retval = new LinkedList<String>();
         {
-            boolean varBC3D864DE8830EFC1098D2C2F456529D_956332463 = (li.hasNext());
+            boolean varBC3D864DE8830EFC1098D2C2F456529D_356485135 = (li.hasNext());
             {
                 SIPHeader sipHeader;
                 sipHeader = (SIPHeader) li.next();
@@ -1894,8 +2055,9 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                 retval.add(name);
             } //End block
         } //End collapsed parenthetic
-        ListIterator<String> var4719AF0D120BC745937EBCE7A3F4B20D_549800699 = (retval.listIterator());
-        return (ListIterator<String>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_615293644 = retval.listIterator();
+        varB4EAC82CA7396A68D541C85D26508E83_615293644.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_615293644;
         // ---------- Original Method ----------
         //Iterator<SIPHeader> li = this.headers.iterator();
         //LinkedList<String> retval = new LinkedList<String>();
@@ -1908,12 +2070,10 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.016 -0400", hash_original_method = "19862554CF2CF162312B89332E1831C0", hash_generated_method = "997F9EC391E9105C4776827A3AF0E5A7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.060 -0400", hash_original_method = "19862554CF2CF162312B89332E1831C0", hash_generated_method = "AE8D1F650834C824DB57183BDFB5CE2C")
     public boolean equals(Object other) {
-        dsTaint.addTaint(other.dsTaint);
         {
-            boolean varAC16F771BB29A32F2C455E410359AF13_1654101795 = (!other.getClass().equals(this.getClass()));
+            boolean varAC16F771BB29A32F2C455E410359AF13_934658924 = (!other.getClass().equals(this.getClass()));
         } //End collapsed parenthetic
         SIPMessage otherMessage;
         otherMessage = (SIPMessage) other;
@@ -1922,10 +2082,10 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
         Iterator<SIPHeader> it;
         it = values.iterator();
         {
-            boolean varEA188AE5A9018452EA1222E9093CB12B_1629345376 = (nameTable.size() != otherMessage.nameTable.size());
+            boolean varEA188AE5A9018452EA1222E9093CB12B_58710818 = (nameTable.size() != otherMessage.nameTable.size());
         } //End collapsed parenthetic
         {
-            boolean var03729FD53960D8DCA3A41A13A0229637_132359852 = (it.hasNext());
+            boolean var03729FD53960D8DCA3A41A13A0229637_735867579 = (it.hasNext());
             {
                 SIPHeader mine;
                 mine = (SIPHeader) it.next();
@@ -1933,11 +2093,13 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
                 his = (SIPHeader) (otherMessage.nameTable.get(SIPHeaderNamesCache
                     .toLowerCase(mine.getName())));
                 {
-                    boolean var3911B8F0C4C9004033662F49D485738C_1980389290 = (!his.equals(mine));
+                    boolean var3911B8F0C4C9004033662F49D485738C_240679601 = (!his.equals(mine));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(other.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_723361928 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_723361928;
         // ---------- Original Method ----------
         //if (!other.getClass().equals(this.getClass())) {
             //return false;
@@ -1962,96 +2124,95 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.016 -0400", hash_original_method = "3C4825ADE695C84AAF8B57CDEA1CF4CB", hash_generated_method = "0BD43126BBCCE081BBA4282D602B2CE4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.061 -0400", hash_original_method = "3C4825ADE695C84AAF8B57CDEA1CF4CB", hash_generated_method = "59C48827652AE04C39496ACAA3FDBE6B")
     public javax.sip.header.ContentDispositionHeader getContentDisposition() {
-        javax.sip.header.ContentDispositionHeader varEB99E9915630BCE2C87A918252DCACD7_1702620130 = ((ContentDispositionHeader) getHeaderLowerCase(CONTENT_DISPOSITION_LOWERCASE));
-        return (javax.sip.header.ContentDispositionHeader)dsTaint.getTaint();
+        javax.sip.header.ContentDispositionHeader varB4EAC82CA7396A68D541C85D26508E83_1097596316 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1097596316 = (ContentDispositionHeader) getHeaderLowerCase(CONTENT_DISPOSITION_LOWERCASE);
+        varB4EAC82CA7396A68D541C85D26508E83_1097596316.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1097596316;
         // ---------- Original Method ----------
         //return (ContentDispositionHeader) getHeaderLowerCase(CONTENT_DISPOSITION_LOWERCASE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.016 -0400", hash_original_method = "46C03ED253FA9F93BF664C06918E9287", hash_generated_method = "2A9DFC11DA6783864C5747BE29A326F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.061 -0400", hash_original_method = "46C03ED253FA9F93BF664C06918E9287", hash_generated_method = "0E1D769DD3DF3B2E9DA255D3C6BE1454")
     public javax.sip.header.ContentEncodingHeader getContentEncoding() {
-        javax.sip.header.ContentEncodingHeader var7DBC8A4F3FBD106A5B1E2C416C53AE8D_1086585397 = ((ContentEncodingHeader) getHeaderLowerCase(CONTENT_ENCODING_LOWERCASE));
-        return (javax.sip.header.ContentEncodingHeader)dsTaint.getTaint();
+        javax.sip.header.ContentEncodingHeader varB4EAC82CA7396A68D541C85D26508E83_92347655 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_92347655 = (ContentEncodingHeader) getHeaderLowerCase(CONTENT_ENCODING_LOWERCASE);
+        varB4EAC82CA7396A68D541C85D26508E83_92347655.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_92347655;
         // ---------- Original Method ----------
         //return (ContentEncodingHeader) getHeaderLowerCase(CONTENT_ENCODING_LOWERCASE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.016 -0400", hash_original_method = "7F8FF7046ECB01AA1B56D3558C9342AE", hash_generated_method = "34390809D519323E686E259F80AF9361")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.067 -0400", hash_original_method = "7F8FF7046ECB01AA1B56D3558C9342AE", hash_generated_method = "FA3D3984EF582C50FB5B063529F19CDE")
     public javax.sip.header.ContentLanguageHeader getContentLanguage() {
-        javax.sip.header.ContentLanguageHeader varC4A65A7503A944BD9B0E7337C31F23C6_673030189 = ((ContentLanguageHeader) getHeaderLowerCase(CONTENT_LANGUAGE_LOWERCASE));
-        return (javax.sip.header.ContentLanguageHeader)dsTaint.getTaint();
+        javax.sip.header.ContentLanguageHeader varB4EAC82CA7396A68D541C85D26508E83_302839563 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_302839563 = (ContentLanguageHeader) getHeaderLowerCase(CONTENT_LANGUAGE_LOWERCASE);
+        varB4EAC82CA7396A68D541C85D26508E83_302839563.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_302839563;
         // ---------- Original Method ----------
         //return (ContentLanguageHeader) getHeaderLowerCase(CONTENT_LANGUAGE_LOWERCASE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.016 -0400", hash_original_method = "9AC8AD6CCC74995A67CEDA1778D18415", hash_generated_method = "D365F793E0FC5979E3AFE70F5EC7161C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.075 -0400", hash_original_method = "9AC8AD6CCC74995A67CEDA1778D18415", hash_generated_method = "0DA7CA2A02F598C91B9ABAE798CE98F0")
     public javax.sip.header.ExpiresHeader getExpires() {
-        javax.sip.header.ExpiresHeader var268B473CB54475A0C3C89D5D2A61D9E0_1724763102 = ((ExpiresHeader) getHeaderLowerCase(EXPIRES_LOWERCASE));
-        return (javax.sip.header.ExpiresHeader)dsTaint.getTaint();
+        javax.sip.header.ExpiresHeader varB4EAC82CA7396A68D541C85D26508E83_76873895 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_76873895 = (ExpiresHeader) getHeaderLowerCase(EXPIRES_LOWERCASE);
+        varB4EAC82CA7396A68D541C85D26508E83_76873895.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_76873895;
         // ---------- Original Method ----------
         //return (ExpiresHeader) getHeaderLowerCase(EXPIRES_LOWERCASE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.017 -0400", hash_original_method = "729B7ABDA713D8DD91F71F3C7E5D92DE", hash_generated_method = "E358A7E2B2A85F19AACA8D85785C01A7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.075 -0400", hash_original_method = "729B7ABDA713D8DD91F71F3C7E5D92DE", hash_generated_method = "94E069E2EB0360CBF333D21DF7ABFFDA")
     public void setExpires(ExpiresHeader expiresHeader) {
-        dsTaint.addTaint(expiresHeader.dsTaint);
         this.setHeader(expiresHeader);
+        addTaint(expiresHeader.getTaint());
         // ---------- Original Method ----------
         //this.setHeader(expiresHeader);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.017 -0400", hash_original_method = "9820BC2E150668B0FD803FA9E719FCCB", hash_generated_method = "E14414F396A6688BA39B361F42A0BC17")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.075 -0400", hash_original_method = "9820BC2E150668B0FD803FA9E719FCCB", hash_generated_method = "B2E7602D273568777C5927D56E478925")
     public void setContentDisposition(ContentDispositionHeader contentDispositionHeader) {
-        dsTaint.addTaint(contentDispositionHeader.dsTaint);
         this.setHeader(contentDispositionHeader);
+        addTaint(contentDispositionHeader.getTaint());
         // ---------- Original Method ----------
         //this.setHeader(contentDispositionHeader);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.017 -0400", hash_original_method = "664B5D910990D19402FB830D30BD43E8", hash_generated_method = "AED73E9C9C1D8F3AE643BB198F476594")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.076 -0400", hash_original_method = "664B5D910990D19402FB830D30BD43E8", hash_generated_method = "905EE132837454DB2AD93EF4693EF1CD")
     public void setContentEncoding(ContentEncodingHeader contentEncodingHeader) {
-        dsTaint.addTaint(contentEncodingHeader.dsTaint);
         this.setHeader(contentEncodingHeader);
+        addTaint(contentEncodingHeader.getTaint());
         // ---------- Original Method ----------
         //this.setHeader(contentEncodingHeader);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.017 -0400", hash_original_method = "F5B59DEA81E2E529FE4037C765469E44", hash_generated_method = "7A72D0644DD1762ECA6A0FF015BAC713")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.080 -0400", hash_original_method = "F5B59DEA81E2E529FE4037C765469E44", hash_generated_method = "E555A9AF374818536A532DA9B3FA2107")
     public void setContentLanguage(ContentLanguageHeader contentLanguageHeader) {
-        dsTaint.addTaint(contentLanguageHeader.dsTaint);
         this.setHeader(contentLanguageHeader);
+        addTaint(contentLanguageHeader.getTaint());
         // ---------- Original Method ----------
         //this.setHeader(contentLanguageHeader);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.017 -0400", hash_original_method = "5BC3E664403E9FC36E24FA33AD51CF36", hash_generated_method = "C78D4A9CB4F5FFFA87E177CEB40428C6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.127 -0400", hash_original_method = "5BC3E664403E9FC36E24FA33AD51CF36", hash_generated_method = "CE391EFE0A7DDF04A48FCCC05B6FB971")
     public void setContentLength(ContentLengthHeader contentLength) {
-        dsTaint.addTaint(contentLength.dsTaint);
         try 
         {
             this.contentLengthHeader.setContentLength(contentLength.getContentLength());
         } //End block
         catch (InvalidArgumentException ex)
         { }
+        addTaint(contentLength.getTaint());
         // ---------- Original Method ----------
         //try {
             //this.contentLengthHeader.setContentLength(contentLength.getContentLength());
@@ -2060,28 +2221,25 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.017 -0400", hash_original_method = "B722E58F0DD8E1CBC622964AAF1F9B26", hash_generated_method = "E75F6863F6FFB38FA7F9B2AEDDC96A64")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.127 -0400", hash_original_method = "B722E58F0DD8E1CBC622964AAF1F9B26", hash_generated_method = "2BDE89A0FF22729ECAFC892EB96A087D")
     public void setSize(int size) {
-        dsTaint.addTaint(size);
+        this.size = size;
         // ---------- Original Method ----------
         //this.size = size;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.018 -0400", hash_original_method = "54E84843E0EEE275508F3EB8305B3F4F", hash_generated_method = "E01873135ED0D928CC928ACC708D625A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.127 -0400", hash_original_method = "54E84843E0EEE275508F3EB8305B3F4F", hash_generated_method = "2DF800ECE523A38094C2A33395C829BB")
     public int getSize() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1962116990 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1962116990;
         // ---------- Original Method ----------
         //return this.size;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.018 -0400", hash_original_method = "51B72F61F828A2C6A4124D3A8929AD68", hash_generated_method = "6851948A8844B09C000F63C2494019DF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.128 -0400", hash_original_method = "51B72F61F828A2C6A4124D3A8929AD68", hash_generated_method = "65D6A0B55D71F54F626FFB0F1225ACBF")
     public void addLast(Header header) throws SipException, NullPointerException {
-        dsTaint.addTaint(header.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null arg!");
         try 
         {
@@ -2091,6 +2249,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
         {
             if (DroidSafeAndroidRuntime.control) throw new SipException("Cannot add header - header already exists");
         } //End block
+        addTaint(header.getTaint());
         // ---------- Original Method ----------
         //if (header == null)
             //throw new NullPointerException("null arg!");
@@ -2102,10 +2261,8 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.018 -0400", hash_original_method = "FB58DD3E1F3A0D99159750C09E15B568", hash_generated_method = "9ABBD47EEC61924C4D4F14123E8B2352")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.128 -0400", hash_original_method = "FB58DD3E1F3A0D99159750C09E15B568", hash_generated_method = "7CEBCA8C6BD42BA5CC640DABD0B4D334")
     public void addFirst(Header header) throws SipException, NullPointerException {
-        dsTaint.addTaint(header.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null arg!");
         try 
         {
@@ -2115,6 +2272,7 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
         {
             if (DroidSafeAndroidRuntime.control) throw new SipException("Cannot add header - header already exists");
         } //End block
+        addTaint(header.getTaint());
         // ---------- Original Method ----------
         //if (header == null)
             //throw new NullPointerException("null arg!");
@@ -2126,12 +2284,11 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.018 -0400", hash_original_method = "F7D2F7162E4B2A1EDD2D78AF07F98ED3", hash_generated_method = "7A5694BF17DADD11FA9E36E6E71F1529")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.128 -0400", hash_original_method = "F7D2F7162E4B2A1EDD2D78AF07F98ED3", hash_generated_method = "6798C97874DC7872F91387272829C9D6")
     public void removeFirst(String headerName) throws NullPointerException {
-        dsTaint.addTaint(headerName);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Null argument Provided!");
         this.removeHeader(headerName, true);
+        addTaint(headerName.getTaint());
         // ---------- Original Method ----------
         //if (headerName == null)
             //throw new NullPointerException("Null argument Provided!");
@@ -2139,12 +2296,11 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.018 -0400", hash_original_method = "B1A0AEB4CA388E0A9ED7E42FB6DA96D3", hash_generated_method = "CC322BA262BC39715FE1F90B7B9F4E00")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.128 -0400", hash_original_method = "B1A0AEB4CA388E0A9ED7E42FB6DA96D3", hash_generated_method = "BBD5B9CBE93C6962DBAB77BA763F4862")
     public void removeLast(String headerName) {
-        dsTaint.addTaint(headerName);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Null argument Provided!");
         this.removeHeader(headerName, false);
+        addTaint(headerName.getTaint());
         // ---------- Original Method ----------
         //if (headerName == null)
             //throw new NullPointerException("Null argument Provided!");
@@ -2152,39 +2308,44 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.019 -0400", hash_original_method = "1B0E35DCABA77A6424B3D6172B19A4B7", hash_generated_method = "EEBE233FC6242B31CAB487C7EC2CB7FB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.134 -0400", hash_original_method = "1B0E35DCABA77A6424B3D6172B19A4B7", hash_generated_method = "FE547DB1F0CA5E958E466C839E26E083")
     public void setCSeq(CSeqHeader cseqHeader) {
-        dsTaint.addTaint(cseqHeader.dsTaint);
         this.setHeader(cseqHeader);
+        addTaint(cseqHeader.getTaint());
         // ---------- Original Method ----------
         //this.setHeader(cseqHeader);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.019 -0400", hash_original_method = "552E0456C33D24CD63C8EBCDAC1D019B", hash_generated_method = "8D4DDB013B0F594611E074B5CF4E663E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.134 -0400", hash_original_method = "552E0456C33D24CD63C8EBCDAC1D019B", hash_generated_method = "E17DD994BC845C3BDBBD70ECC432242E")
     public void setApplicationData(Object applicationData) {
-        dsTaint.addTaint(applicationData.dsTaint);
+        this.applicationData = applicationData;
         // ---------- Original Method ----------
         //this.applicationData = applicationData;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.019 -0400", hash_original_method = "5F924FC61375970A4DC758380BEBFF0F", hash_generated_method = "38CB1AED90A48D60BFA15010A96EEDEF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.134 -0400", hash_original_method = "5F924FC61375970A4DC758380BEBFF0F", hash_generated_method = "3A98689C3B7B0341D3E979593379C246")
     public Object getApplicationData() {
-        return (Object)dsTaint.getTaint();
+        Object varB4EAC82CA7396A68D541C85D26508E83_847918210 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_847918210 = this.applicationData;
+        varB4EAC82CA7396A68D541C85D26508E83_847918210.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_847918210;
         // ---------- Original Method ----------
         //return this.applicationData;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.019 -0400", hash_original_method = "3FB4581572217B4D34EC8E3A9F62CA88", hash_generated_method = "8D8BA83C5C6A9E88BD0078F15BEE5E63")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.135 -0400", hash_original_method = "3FB4581572217B4D34EC8E3A9F62CA88", hash_generated_method = "110AF2A4D36ADAF774D5ED9E8928D6AE")
     public MultipartMimeContent getMultipartMimeContent() throws ParseException {
+        MultipartMimeContent varB4EAC82CA7396A68D541C85D26508E83_1046725990 = null; //Variable for return #1
+        MultipartMimeContent varB4EAC82CA7396A68D541C85D26508E83_1804478818 = null; //Variable for return #2
+        MultipartMimeContent varB4EAC82CA7396A68D541C85D26508E83_489636241 = null; //Variable for return #3
         {
-            boolean var2CC093753E0ADFD0794491E557D23CC9_524053298 = (this.contentLengthHeader.getContentLength() == 0);
+            boolean var2CC093753E0ADFD0794491E557D23CC9_906829073 = (this.contentLengthHeader.getContentLength() == 0);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1046725990 = null;
+            } //End block
         } //End collapsed parenthetic
         MultipartMimeContentImpl retval;
         retval = new MultipartMimeContentImpl(this
@@ -2196,12 +2357,27 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
             String body;
             body = new String( rawContent, getCharset() );
             retval.createContentList(body);
+            varB4EAC82CA7396A68D541C85D26508E83_1804478818 = retval;
         } //End block
         catch (UnsupportedEncodingException e)
         {
             InternalErrorHandler.handleException(e);
+            varB4EAC82CA7396A68D541C85D26508E83_489636241 = null;
         } //End block
-        return (MultipartMimeContent)dsTaint.getTaint();
+        MultipartMimeContent varA7E53CE21691AB073D9660D615818899_1891518150; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1891518150 = varB4EAC82CA7396A68D541C85D26508E83_1046725990;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1891518150 = varB4EAC82CA7396A68D541C85D26508E83_1804478818;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1891518150 = varB4EAC82CA7396A68D541C85D26508E83_489636241;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1891518150.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1891518150;
         // ---------- Original Method ----------
         //if (this.contentLengthHeader.getContentLength() == 0) {
             //return null;
@@ -2220,62 +2396,84 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.019 -0400", hash_original_method = "6A8980AC46BDEC47E118DEA889F580E2", hash_generated_method = "04F2E272C42A43A8FE4ED6F535E7AA17")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.136 -0400", hash_original_method = "6A8980AC46BDEC47E118DEA889F580E2", hash_generated_method = "F029F9AC60E66149F5F39DEF794868FF")
     public CallIdHeader getCallIdHeader() {
-        return (CallIdHeader)dsTaint.getTaint();
+        CallIdHeader varB4EAC82CA7396A68D541C85D26508E83_2020168395 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2020168395 = this.callIdHeader;
+        varB4EAC82CA7396A68D541C85D26508E83_2020168395.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2020168395;
         // ---------- Original Method ----------
         //return this.callIdHeader;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.020 -0400", hash_original_method = "616E19996CDDFB660618161B80D5BB27", hash_generated_method = "CBB75F7C9F6F1F9F6C0081119D0C38C8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.136 -0400", hash_original_method = "616E19996CDDFB660618161B80D5BB27", hash_generated_method = "BC213BA394F6250DBA6261A8286377A3")
     public FromHeader getFromHeader() {
-        return (FromHeader)dsTaint.getTaint();
+        FromHeader varB4EAC82CA7396A68D541C85D26508E83_390577173 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_390577173 = this.fromHeader;
+        varB4EAC82CA7396A68D541C85D26508E83_390577173.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_390577173;
         // ---------- Original Method ----------
         //return this.fromHeader;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.020 -0400", hash_original_method = "9C43D5663CBD78C15545690BFB01C4BF", hash_generated_method = "A9D6B5A5FBB0979FDB231A541A5F6BA0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.148 -0400", hash_original_method = "9C43D5663CBD78C15545690BFB01C4BF", hash_generated_method = "C69F052DBC97084D872C3BD584FDD252")
     public ToHeader getToHeader() {
-        return (ToHeader)dsTaint.getTaint();
+        ToHeader varB4EAC82CA7396A68D541C85D26508E83_1325053867 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1325053867 = this.toHeader;
+        varB4EAC82CA7396A68D541C85D26508E83_1325053867.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1325053867;
         // ---------- Original Method ----------
         //return this.toHeader;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.020 -0400", hash_original_method = "FE98900B9C779953579B6764E7283FC2", hash_generated_method = "0C5C6464B7F0F9E59D710D80E5CC34CC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.149 -0400", hash_original_method = "FE98900B9C779953579B6764E7283FC2", hash_generated_method = "6AC63136A0C2E4E22F7E7813C0EAA334")
     public ViaHeader getTopmostViaHeader() {
-        ViaHeader var1E5181D00548F0E8A036DFF7707B698B_725114496 = (this.getTopmostVia());
-        return (ViaHeader)dsTaint.getTaint();
+        ViaHeader varB4EAC82CA7396A68D541C85D26508E83_325693500 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_325693500 = this.getTopmostVia();
+        varB4EAC82CA7396A68D541C85D26508E83_325693500.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_325693500;
         // ---------- Original Method ----------
         //return this.getTopmostVia();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.020 -0400", hash_original_method = "2CE1B7EDE28DB048E923E7FFD28A72BE", hash_generated_method = "D3DAABFDE37AFF09546C504454371C59")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.153 -0400", hash_original_method = "2CE1B7EDE28DB048E923E7FFD28A72BE", hash_generated_method = "547A6D031002C3CEBE05E03FCDA1FE66")
     public CSeqHeader getCSeqHeader() {
-        return (CSeqHeader)dsTaint.getTaint();
+        CSeqHeader varB4EAC82CA7396A68D541C85D26508E83_1646053704 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1646053704 = this.cSeqHeader;
+        varB4EAC82CA7396A68D541C85D26508E83_1646053704.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1646053704;
         // ---------- Original Method ----------
         //return this.cSeqHeader;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.020 -0400", hash_original_method = "5D0D1F0E94EB86910B32FB17BCD97869", hash_generated_method = "9634D1CF243E2713F9E1D6974C97E7A4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.154 -0400", hash_original_method = "5D0D1F0E94EB86910B32FB17BCD97869", hash_generated_method = "830DB4AC1C1C92C15599A64B2DA68C5B")
     protected final String getCharset() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1376273158 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_308129889 = null; //Variable for return #2
         ContentType ct;
         ct = getContentTypeHeader();
         {
             String c;
             c = ct.getCharset();
+            varB4EAC82CA7396A68D541C85D26508E83_1376273158 = c!=null ? c : contentEncodingCharset;
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_308129889 = contentEncodingCharset;
+        String varA7E53CE21691AB073D9660D615818899_580846246; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_580846246 = varB4EAC82CA7396A68D541C85D26508E83_1376273158;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_580846246 = varB4EAC82CA7396A68D541C85D26508E83_308129889;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_580846246.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_580846246;
         // ---------- Original Method ----------
         //ContentType ct = getContentTypeHeader();
         //if (ct!=null) {
@@ -2285,17 +2483,16 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.020 -0400", hash_original_method = "F8575631397F30A77B6575B01C9E50F5", hash_generated_method = "1251A7015B33B27BFEEE3FDEB80B0EE4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.158 -0400", hash_original_method = "F8575631397F30A77B6575B01C9E50F5", hash_generated_method = "D7358F26D093A4E32E0C3A02F7311221")
     public boolean isNullRequest() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1990514043 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1990514043;
         // ---------- Original Method ----------
         //return  this.nullRequest;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.020 -0400", hash_original_method = "76987385F34084CF4A8C6AA1CD858E63", hash_generated_method = "9270889C04904F8C78507597689FCBFB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.163 -0400", hash_original_method = "76987385F34084CF4A8C6AA1CD858E63", hash_generated_method = "9270889C04904F8C78507597689FCBFB")
     public void setNullRequest() {
         this.nullRequest = true;
         // ---------- Original Method ----------
@@ -2312,25 +2509,47 @@ public abstract class SIPMessage extends MessageObject implements javax.sip.mess
     public abstract String toString();
 
     
-    private static final String CONTENT_TYPE_LOWERCASE = SIPHeaderNamesCache
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.169 -0400", hash_original_field = "75E2CD6B096F7C9EA9F441F09C141816", hash_generated_field = "068D223E1748F06573357D6E0C93718F")
+
+    private static String CONTENT_TYPE_LOWERCASE = SIPHeaderNamesCache
     .toLowerCase(ContentTypeHeader.NAME);
-    private static final String ERROR_LOWERCASE = SIPHeaderNamesCache.toLowerCase(ErrorInfo.NAME);
-    private static final String CONTACT_LOWERCASE = SIPHeaderNamesCache
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.169 -0400", hash_original_field = "29DF28A4B352F1941ADD2F1574849F4C", hash_generated_field = "CB3AF27778792F966750AACA6A38F463")
+
+    private static String ERROR_LOWERCASE = SIPHeaderNamesCache.toLowerCase(ErrorInfo.NAME);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.169 -0400", hash_original_field = "1BA2C1C4DCDE1F624162F4131AAE2119", hash_generated_field = "590BE103DF5E29902DC51A34B94DF180")
+
+    private static String CONTACT_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ContactHeader.NAME);
-    private static final String VIA_LOWERCASE = SIPHeaderNamesCache.toLowerCase(ViaHeader.NAME);
-    private static final String AUTHORIZATION_LOWERCASE = SIPHeaderNamesCache
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.169 -0400", hash_original_field = "48FC9BF18DDD312165B5D66B273DFFB9", hash_generated_field = "4BC3CDA715084CA31B0ADE6B2173B634")
+
+    private static String VIA_LOWERCASE = SIPHeaderNamesCache.toLowerCase(ViaHeader.NAME);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.169 -0400", hash_original_field = "7412D18F37312CBCB0F4A06C575DDCDC", hash_generated_field = "1B421A7E66A645377F0CDBFA175E598E")
+
+    private static String AUTHORIZATION_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(AuthorizationHeader.NAME);
-    private static final String ROUTE_LOWERCASE = SIPHeaderNamesCache
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.169 -0400", hash_original_field = "189EC181787A87BAA9A37498164BF033", hash_generated_field = "7DBB14FF48CF74D0DE3A5CA709382258")
+
+    private static String ROUTE_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(RouteHeader.NAME);
-    private static final String RECORDROUTE_LOWERCASE = SIPHeaderNamesCache
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.169 -0400", hash_original_field = "9C1ABF37105D0FE67D77A0E330DBA041", hash_generated_field = "5CBC5FBDD576A95665BBB5154509E377")
+
+    private static String RECORDROUTE_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(RecordRouteHeader.NAME);
-    private static final String CONTENT_DISPOSITION_LOWERCASE = SIPHeaderNamesCache
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.169 -0400", hash_original_field = "684B374F6D97A99BC68D07DD28F9F302", hash_generated_field = "A671CFA4DAEEF27CB28B29359EB48594")
+
+    private static String CONTENT_DISPOSITION_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ContentDispositionHeader.NAME);
-    private static final String CONTENT_ENCODING_LOWERCASE = SIPHeaderNamesCache
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.169 -0400", hash_original_field = "E2D2A30A5E5BCE2B69AEF1546064737F", hash_generated_field = "3E50C78FA482AC0229816B5CCAA59214")
+
+    private static String CONTENT_ENCODING_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ContentEncodingHeader.NAME);
-    private static final String CONTENT_LANGUAGE_LOWERCASE = SIPHeaderNamesCache
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.169 -0400", hash_original_field = "2871455B28BED5523B66335711F93B13", hash_generated_field = "5AD8BE2469CBED0F46AB241AF331532B")
+
+    private static String CONTENT_LANGUAGE_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ContentLanguageHeader.NAME);
-    private static final String EXPIRES_LOWERCASE = SIPHeaderNamesCache
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.169 -0400", hash_original_field = "DC12CEF71CECD7CA0E5991B99573EE4A", hash_generated_field = "085B7037647C056863DFFBADB79EF703")
+
+    private static String EXPIRES_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ExpiresHeader.NAME);
 }
 

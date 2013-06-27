@@ -16,9 +16,10 @@ import libcore.util.EmptyArray;
 
 public final class Daemons {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.665 -0400", hash_original_method = "6EE1D3D3CD0B81CFA27759049D391561", hash_generated_method = "6EE1D3D3CD0B81CFA27759049D391561")
-        public Daemons ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.396 -0400", hash_original_method = "12604031794E0E37BA5BBC4D434861F1", hash_generated_method = "12604031794E0E37BA5BBC4D434861F1")
+    public Daemons ()
     {
+        //Synthesized constructor
     }
 
 
@@ -37,16 +38,18 @@ public final class Daemons {
 
     
     private static abstract class Daemon implements Runnable {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.397 -0400", hash_original_field = "DC127F5D2483352FD20EADDB38FEB6D2", hash_generated_field = "3B3F78C77D023C4AC9933B933AD9AFEC")
+
         private Thread thread;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.666 -0400", hash_original_method = "A88E7802739B3958277E95A83F913069", hash_generated_method = "A88E7802739B3958277E95A83F913069")
-                public Daemon ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.412 -0400", hash_original_method = "E956A3D7836B08A486122F00857B9C56", hash_generated_method = "E956A3D7836B08A486122F00857B9C56")
+        public Daemon ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.666 -0400", hash_original_method = "BFB12BB46815FEE0BC693DC0650B4AEF", hash_generated_method = "D1B7C32EEBB5CBD1CDD8A6AF6B9872FB")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.413 -0400", hash_original_method = "BFB12BB46815FEE0BC693DC0650B4AEF", hash_generated_method = "D1B7C32EEBB5CBD1CDD8A6AF6B9872FB")
         public synchronized void start() {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("already running");
@@ -67,17 +70,16 @@ public final class Daemons {
         public abstract void run();
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.666 -0400", hash_original_method = "DAD25559614D18C95C6D7AD3A5FF9D6E", hash_generated_method = "50778E85ACCEA111E5C648E96C50A4D0")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.413 -0400", hash_original_method = "DAD25559614D18C95C6D7AD3A5FF9D6E", hash_generated_method = "E3BD802105B36039ECF1D78641EC3250")
         protected synchronized boolean isRunning() {
-            return dsTaint.getTaintBoolean();
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2131218025 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2131218025;
             // ---------- Original Method ----------
             //return thread != null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.667 -0400", hash_original_method = "87D921900F5E002E9B0AB652C178420C", hash_generated_method = "27B8EE26DCF234A1C89D52B6990A77A8")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.414 -0400", hash_original_method = "87D921900F5E002E9B0AB652C178420C", hash_generated_method = "27B8EE26DCF234A1C89D52B6990A77A8")
         public synchronized void interrupt() {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("not running");
@@ -91,8 +93,7 @@ public final class Daemons {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.667 -0400", hash_original_method = "26FE25A9A5C4B7C9ED7155D7450987C1", hash_generated_method = "3773FF745E767DE2419DDBB071A5FE1D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.414 -0400", hash_original_method = "26FE25A9A5C4B7C9ED7155D7450987C1", hash_generated_method = "3773FF745E767DE2419DDBB071A5FE1D")
         public void stop() {
             Thread threadToStop;
             {
@@ -131,13 +132,12 @@ public final class Daemons {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.667 -0400", hash_original_method = "71D841FC79E6E388CBA40EED62E5BA4E", hash_generated_method = "190DD19C06DBA03393A110568990F567")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.415 -0400", hash_original_method = "71D841FC79E6E388CBA40EED62E5BA4E", hash_generated_method = "CF4308858B7071A375F95F01340B5279")
         public synchronized StackTraceElement[] getStackTrace() {
-            {
-                Object var7C117FC58CEEFC4EC4FB699049DB4321_1648541485 = (thread.getStackTrace());
-            } //End flattened ternary
-            return (StackTraceElement[])dsTaint.getTaint();
+            StackTraceElement[] varB4EAC82CA7396A68D541C85D26508E83_1230706107 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1230706107 = thread != null ? thread.getStackTrace() : EmptyArray.STACK_TRACE_ELEMENT;
+            varB4EAC82CA7396A68D541C85D26508E83_1230706107.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1230706107;
             // ---------- Original Method ----------
             //return thread != null ? thread.getStackTrace() : EmptyArray.STACK_TRACE_ELEMENT;
         }
@@ -149,18 +149,18 @@ public final class Daemons {
     
     private static class ReferenceQueueDaemon extends Daemon {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.667 -0400", hash_original_method = "82172BC1EFA3A237D257702AE354C8DD", hash_generated_method = "82172BC1EFA3A237D257702AE354C8DD")
-                public ReferenceQueueDaemon ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.415 -0400", hash_original_method = "CD631EFADB4142F64B0E6D0342597BAC", hash_generated_method = "CD631EFADB4142F64B0E6D0342597BAC")
+        public ReferenceQueueDaemon ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.667 -0400", hash_original_method = "16C06FBAF3631080CE709DA6BD6140A9", hash_generated_method = "5BF353FCA7D167778774204CA3B03ECF")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.415 -0400", hash_original_method = "16C06FBAF3631080CE709DA6BD6140A9", hash_generated_method = "00E1335CA65C0B9A287431776954420D")
         @Override
         public void run() {
             {
-                boolean varC4B3EF749887CF146FD60924F3630457_2036405337 = (isRunning());
+                boolean varC4B3EF749887CF146FD60924F3630457_2104953402 = (isRunning());
                 {
                     Reference<?> list;
                     try 
@@ -197,10 +197,8 @@ public final class Daemons {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.668 -0400", hash_original_method = "0570BE5ED95D81092ACBC3B5B723C1BE", hash_generated_method = "DBDF730DD7F934A2C814F1468D146F40")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.416 -0400", hash_original_method = "0570BE5ED95D81092ACBC3B5B723C1BE", hash_generated_method = "84A7F1AFAD840BF764A7467BBBBAB1EF")
         private void enqueue(Reference<?> list) {
-            dsTaint.addTaint(list.dsTaint);
             {
                 Reference<?> reference;
                 {
@@ -215,6 +213,7 @@ public final class Daemons {
                 } //End block
                 reference.enqueueInternal();
             } //End block
+            addTaint(list.getTaint());
             // ---------- Original Method ----------
             //while (list != null) {
                 //Reference<?> reference;
@@ -232,28 +231,36 @@ public final class Daemons {
         }
 
         
-        private static final ReferenceQueueDaemon INSTANCE = new ReferenceQueueDaemon();
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.416 -0400", hash_original_field = "5650660E20B53883AE4489C1195AA841", hash_generated_field = "C888FDAABC82C1BE39B8B4F622ACB86E")
+
+        private static ReferenceQueueDaemon INSTANCE = new ReferenceQueueDaemon();
     }
 
 
     
     private static class FinalizerDaemon extends Daemon {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.416 -0400", hash_original_field = "4B4A54D76D30CD0234D169C4531A2DD6", hash_generated_field = "C8925685BD7A311AFFF903E7608E9D95")
+
         private ReferenceQueue<Object> queue = FinalizerReference.queue;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.416 -0400", hash_original_field = "701768BB7ADB1CB2751C9C863BA6D59D", hash_generated_field = "4F48F43C1EA34CA35E4F2B48487C2292")
+
         private volatile Object finalizingObject;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.416 -0400", hash_original_field = "B1777B42F737CBCB0DCE53521B3D003E", hash_generated_field = "6FF12A6336A3541467350E5F1F9250E6")
+
         private volatile long finalizingStartedNanos;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.668 -0400", hash_original_method = "35F3CB8B6ADE77580067E8C57E164A43", hash_generated_method = "35F3CB8B6ADE77580067E8C57E164A43")
-                public FinalizerDaemon ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.416 -0400", hash_original_method = "4CAA35D6DE3500E449D08F039EDA298E", hash_generated_method = "4CAA35D6DE3500E449D08F039EDA298E")
+        public FinalizerDaemon ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.668 -0400", hash_original_method = "C183E2A6A7B3ED28464B9D0F97F171B5", hash_generated_method = "658E69B22286D5ABEE5247C43C722541")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.421 -0400", hash_original_method = "C183E2A6A7B3ED28464B9D0F97F171B5", hash_generated_method = "FEF48B636FBCF2B7717C88C5057E21ED")
         @Override
         public void run() {
             {
-                boolean varC4B3EF749887CF146FD60924F3630457_763504882 = (isRunning());
+                boolean varC4B3EF749887CF146FD60924F3630457_1076678717 = (isRunning());
                 {
                     try 
                     {
@@ -273,11 +280,9 @@ public final class Daemons {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.668 -0400", hash_original_method = "BF4896400D2910C88936D4B81319EC1C", hash_generated_method = "B021827C3F816F4795256ECBDE301963")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.422 -0400", hash_original_method = "BF4896400D2910C88936D4B81319EC1C", hash_generated_method = "A90F72050F1D9B2C37A253C377CB5F4C")
         @FindBugsSuppressWarnings("FI_EXPLICIT_INVOCATION")
         private void doFinalize(FinalizerReference<?> reference) {
-            dsTaint.addTaint(reference.dsTaint);
             FinalizerReference.remove(reference);
             Object object;
             object = reference.get();
@@ -296,6 +301,7 @@ public final class Daemons {
             {
                 finalizingObject = null;
             } //End block
+            addTaint(reference.getTaint());
             // ---------- Original Method ----------
             //FinalizerReference.remove(reference);
             //Object object = reference.get();
@@ -312,25 +318,27 @@ public final class Daemons {
         }
 
         
-        private static final FinalizerDaemon INSTANCE = new FinalizerDaemon();
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.422 -0400", hash_original_field = "F3CD5CFCB43A075A403BBAF9D101689C", hash_generated_field = "BBCF9A271FBB1A4CBD61D557821EC8CB")
+
+        private static FinalizerDaemon INSTANCE = new FinalizerDaemon();
     }
 
 
     
     private static class FinalizerWatchdogDaemon extends Daemon {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.668 -0400", hash_original_method = "B03DF6E824102CC8FDA489F9DB31B37E", hash_generated_method = "B03DF6E824102CC8FDA489F9DB31B37E")
-                public FinalizerWatchdogDaemon ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.422 -0400", hash_original_method = "703968011540BAA8269C6E22457DD3B1", hash_generated_method = "703968011540BAA8269C6E22457DD3B1")
+        public FinalizerWatchdogDaemon ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.669 -0400", hash_original_method = "0D26D8241DE84FB86F73D585D59D0B9C", hash_generated_method = "561AD29BED78B78B042AFC05FC967EE0")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.423 -0400", hash_original_method = "0D26D8241DE84FB86F73D585D59D0B9C", hash_generated_method = "091AF0D43D2CDECB32C6DD9DAEA55B93")
         @Override
         public void run() {
             {
-                boolean varC4B3EF749887CF146FD60924F3630457_1580202586 = (isRunning());
+                boolean varC4B3EF749887CF146FD60924F3630457_909853060 = (isRunning());
                 {
                     Object object;
                     object = FinalizerDaemon.INSTANCE.finalizingObject;
@@ -352,7 +360,7 @@ public final class Daemons {
                         { }
                     } //End block
                     {
-                        boolean var68D19C7C3B190184EF9D4D6C9275C8D8_1438711625 = (object == null
+                        boolean var68D19C7C3B190184EF9D4D6C9275C8D8_58660368 = (object == null
                         || object != FinalizerDaemon.INSTANCE.finalizingObject
                         || VMRuntime.getRuntime().isDebuggerActive());
                     } //End collapsed parenthetic
@@ -372,12 +380,18 @@ public final class Daemons {
         }
 
         
-        private static final FinalizerWatchdogDaemon INSTANCE = new FinalizerWatchdogDaemon();
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.423 -0400", hash_original_field = "875E76F0367FD406AB3EACA1D853D3E1", hash_generated_field = "18BC9C45F52B223160FA850F3AC18137")
+
+        private static FinalizerWatchdogDaemon INSTANCE = new FinalizerWatchdogDaemon();
     }
 
 
     
-    private static final int NANOS_PER_MILLI = 1000000;
-    private static final long MAX_FINALIZE_MILLIS = 10L * 1000L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.423 -0400", hash_original_field = "90F159E16A269B6F875D096F21ED865D", hash_generated_field = "01FF75DD42CEEFF83B007A550DB754A1")
+
+    private static int NANOS_PER_MILLI = 1000000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.423 -0400", hash_original_field = "7E70092D9C82948944E1EEE8DBEBD35E", hash_generated_field = "2E720A2467C3B05E3A859E57E3198EEA")
+
+    private static long MAX_FINALIZE_MILLIS = 10L * 1000L;
 }
 

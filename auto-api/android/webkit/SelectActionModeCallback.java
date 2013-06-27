@@ -16,26 +16,29 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 class SelectActionModeCallback implements ActionMode.Callback {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.320 -0400", hash_original_field = "72439B8F99EB438C3DA5D9CD798C6786", hash_generated_field = "99346B50377E115231263981E00655CA")
+
     private WebView mWebView;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.320 -0400", hash_original_field = "3B382D379664B509F22D0EB5D96F2BA8", hash_generated_field = "941205D807AC4DF9704A65BDAF4756EC")
+
     private ActionMode mActionMode;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.738 -0400", hash_original_method = "9A70CE9C6D302823ADCE4222577CBD67", hash_generated_method = "9A70CE9C6D302823ADCE4222577CBD67")
-        public SelectActionModeCallback ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.320 -0400", hash_original_method = "5762F84230A8FBDA28C52CC5E7905CF7", hash_generated_method = "5762F84230A8FBDA28C52CC5E7905CF7")
+    public SelectActionModeCallback ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.739 -0400", hash_original_method = "2B5F8950C4750F957BA2CE7A16E0E578", hash_generated_method = "A81A6A241B9E7676FB033BC2DCE1B645")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.321 -0400", hash_original_method = "2B5F8950C4750F957BA2CE7A16E0E578", hash_generated_method = "3E39CDF9FDEC82BE13585E703DC3AFD8")
      void setWebView(WebView webView) {
-        dsTaint.addTaint(webView.dsTaint);
+        mWebView = webView;
         // ---------- Original Method ----------
         //mWebView = webView;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.739 -0400", hash_original_method = "AEE4CA66C11C42A4DFBE3B808BED80FD", hash_generated_method = "66D929DE2C21F83A863FCAAB4BD8A719")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.321 -0400", hash_original_method = "AEE4CA66C11C42A4DFBE3B808BED80FD", hash_generated_method = "66D929DE2C21F83A863FCAAB4BD8A719")
      void finish() {
         {
             mActionMode.finish();
@@ -47,13 +50,10 @@ class SelectActionModeCallback implements ActionMode.Callback {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.739 -0400", hash_original_method = "EEC72C77A82E33054EA06A487B276F43", hash_generated_method = "1A7BFF4F7C35A5C0D6775A62727B457A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.322 -0400", hash_original_method = "EEC72C77A82E33054EA06A487B276F43", hash_generated_method = "861515BEE1ECBBEF75CE8EFBD425BC59")
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(menu.dsTaint);
-        dsTaint.addTaint(mode.dsTaint);
         mode.getMenuInflater().inflate(com.android.internal.R.menu.webview_copy, menu);
         Context context;
         context = mWebView.getContext();
@@ -63,7 +63,7 @@ class SelectActionModeCallback implements ActionMode.Callback {
         mode.setTitle(allowText ?
                 context.getString(com.android.internal.R.string.textSelectionCABTitle) : null);
         {
-            boolean varDC330101E9FCC7E5F1AB6C44D489AA26_1633174677 = (!mode.isUiFocusable());
+            boolean varDC330101E9FCC7E5F1AB6C44D489AA26_2001083197 = (!mode.isUiFocusable());
             {
                 MenuItem findOnPageItem;
                 findOnPageItem = menu.findItem(com.android.internal.R.id.find);
@@ -72,7 +72,10 @@ class SelectActionModeCallback implements ActionMode.Callback {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        mActionMode = mode;
+        addTaint(menu.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1800538381 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1800538381;
         // ---------- Original Method ----------
         //mode.getMenuInflater().inflate(com.android.internal.R.menu.webview_copy, menu);
         //final Context context = mWebView.getContext();
@@ -91,28 +94,25 @@ class SelectActionModeCallback implements ActionMode.Callback {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.740 -0400", hash_original_method = "E3574021502A1E90BCF4C46DB1841054", hash_generated_method = "C15F922494B6CF421D187054AEFB832B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.333 -0400", hash_original_method = "E3574021502A1E90BCF4C46DB1841054", hash_generated_method = "BCFF0675D425200C2152AD8188890ABD")
     @Override
     public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(menu.dsTaint);
-        dsTaint.addTaint(mode.dsTaint);
-        return dsTaint.getTaintBoolean();
+        addTaint(mode.getTaint());
+        addTaint(menu.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_126117211 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_126117211;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.740 -0400", hash_original_method = "D632FC0DC2F573BE68AD858FDE491D0B", hash_generated_method = "2669054340AEBFD483F6B855F2BBDACD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.334 -0400", hash_original_method = "D632FC0DC2F573BE68AD858FDE491D0B", hash_generated_method = "C763DB72B1BCF0588E15C4F8D98BE2B7")
     @Override
     public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(item.dsTaint);
-        dsTaint.addTaint(mode.dsTaint);
         {
-            Object var2B22EE13B3F8EF78698CBA34390A5432_1819120791 = (item.getItemId());
+            Object var2B22EE13B3F8EF78698CBA34390A5432_861623509 = (item.getItemId());
             //Begin case android.R.id.copy 
             mWebView.copySelection();
             //End case android.R.id.copy 
@@ -159,19 +159,21 @@ class SelectActionModeCallback implements ActionMode.Callback {
             mWebView.getContext().startActivity(i);
             //End case com.android.internal.R.id.websearch 
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(mode.getTaint());
+        addTaint(item.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_375771382 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_375771382;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.740 -0400", hash_original_method = "E29E2B7D27E4F7A85592500EAD3A4CE6", hash_generated_method = "829F25B31E5F3DBCEFC80C0835DA32DC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.335 -0400", hash_original_method = "E29E2B7D27E4F7A85592500EAD3A4CE6", hash_generated_method = "D313794DBC346D0ACB5AB5EF3194A404")
     @Override
     public void onDestroyActionMode(ActionMode mode) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(mode.dsTaint);
         mWebView.selectionDone();
+        addTaint(mode.getTaint());
         // ---------- Original Method ----------
         //mWebView.selectionDone();
     }

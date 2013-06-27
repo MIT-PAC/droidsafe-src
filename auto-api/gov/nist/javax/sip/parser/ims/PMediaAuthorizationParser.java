@@ -20,27 +20,25 @@ import gov.nist.javax.sip.parser.TokenTypes;
 
 public class PMediaAuthorizationParser extends HeaderParser implements TokenTypes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.769 -0400", hash_original_method = "FCF1A64239185FEE2932A543D4AD92F3", hash_generated_method = "B6CAC083565524789D141A8924120139")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PMediaAuthorizationParser(String mediaAuthorization) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.750 -0400", hash_original_method = "FCF1A64239185FEE2932A543D4AD92F3", hash_generated_method = "7EAFE3DE02D9D17DF2E0738E9BDD2152")
+    public  PMediaAuthorizationParser(String mediaAuthorization) {
         super(mediaAuthorization);
-        dsTaint.addTaint(mediaAuthorization);
+        addTaint(mediaAuthorization.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.769 -0400", hash_original_method = "D716B8B267E7C915523592278E20949F", hash_generated_method = "3A2FF3FEE0EEADE369FB50ADF3DAE434")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PMediaAuthorizationParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.750 -0400", hash_original_method = "D716B8B267E7C915523592278E20949F", hash_generated_method = "DC168B067E61EC34E3696FA9D6B2308B")
+    public  PMediaAuthorizationParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.770 -0400", hash_original_method = "C50B4E6383FAF29D7342642FAF098C0C", hash_generated_method = "C1D6E321CB616EFCA0E70074FB4FFC95")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.765 -0400", hash_original_method = "C50B4E6383FAF29D7342642FAF098C0C", hash_generated_method = "5F23851F0B97C71B171DA9560DEF6E50")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_685007948 = null; //Variable for return #1
         PMediaAuthorizationList mediaAuthorizationList;
         mediaAuthorizationList = new PMediaAuthorizationList();
         dbg_enter("MediaAuthorizationParser.parse");
@@ -51,7 +49,7 @@ public class PMediaAuthorizationParser extends HeaderParser implements TokenType
             mediaAuthorization = new PMediaAuthorization();
             mediaAuthorization.setHeaderName(SIPHeaderNamesIms.P_MEDIA_AUTHORIZATION);
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_1692356148 = (lexer.lookAhead(0) != '\n');
+                boolean varA38820C66B6BCE71087D920E2767FF09_1649426272 = (lexer.lookAhead(0) != '\n');
                 {
                     this.lexer.match(TokenTypes.ID);
                     Token token;
@@ -67,7 +65,7 @@ public class PMediaAuthorizationParser extends HeaderParser implements TokenType
                     mediaAuthorizationList.add(mediaAuthorization);
                     this.lexer.SPorHT();
                     {
-                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_1009655466 = (lexer.lookAhead(0) == ',');
+                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_1112610046 = (lexer.lookAhead(0) == ',');
                         {
                             this.lexer.match(',');
                             mediaAuthorization = new PMediaAuthorization();
@@ -76,12 +74,14 @@ public class PMediaAuthorizationParser extends HeaderParser implements TokenType
                     this.lexer.SPorHT();
                 } //End block
             } //End collapsed parenthetic
+            varB4EAC82CA7396A68D541C85D26508E83_685007948 = mediaAuthorizationList;
         } //End block
         finally 
         {
             dbg_leave("MediaAuthorizationParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_685007948.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_685007948;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

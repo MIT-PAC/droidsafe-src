@@ -9,12 +9,13 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public final class NfcEvent {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.574 -0400", hash_original_field = "4A8BADE580C221E695275E8488E6ECA3", hash_generated_field = "3C5882DF1C6C01F0D0017D9C73957B88")
+
     public NfcAdapter nfcAdapter;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.061 -0400", hash_original_method = "EC9DC1FF5D63DBE437BD3C224D5FA5E1", hash_generated_method = "B17C5D448510D7C1989542C0C2D22088")
-    @DSModeled(DSC.SAFE)
-     NfcEvent(NfcAdapter nfcAdapter) {
-        dsTaint.addTaint(nfcAdapter.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.575 -0400", hash_original_method = "EC9DC1FF5D63DBE437BD3C224D5FA5E1", hash_generated_method = "C1D928D50AD6623D1CB143696CA7488A")
+      NfcEvent(NfcAdapter nfcAdapter) {
+        this.nfcAdapter = nfcAdapter;
         // ---------- Original Method ----------
         //this.nfcAdapter = nfcAdapter;
     }

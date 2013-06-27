@@ -20,42 +20,49 @@ import org.apache.harmony.security.asn1.BitString;
 import org.apache.harmony.security.utils.AlgNameMapper;
 
 public final class SubjectPublicKeyInfo {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.270 -0400", hash_original_field = "BAD9A1E8834FE6320A309045B8A95343", hash_generated_field = "FD325ED8A60C5BD558CCCC00BB18BE1E")
+
     private AlgorithmIdentifier algorithmID;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.270 -0400", hash_original_field = "00E628E96622093192BC4712D031097F", hash_generated_field = "741B868AD923CC223249852F373451D2")
+
     private byte[] subjectPublicKey;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.271 -0400", hash_original_field = "C36853EA059E0D71A67557E5EE54B835", hash_generated_field = "597E676F0E34E7523D486C2FEA821479")
+
     private PublicKey publicKey;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.271 -0400", hash_original_field = "0281DE09EFFCE9B1D9513C05E900A565", hash_generated_field = "1C126C29BD87C978D05FA9E071D552A8")
+
     private int unusedBits;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.271 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
+
     private byte[] encoding;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.925 -0400", hash_original_method = "253956FBAD4830165078A1D4A5A10C63", hash_generated_method = "DFADFBA9D1A1B2C280F3873E6AA22D48")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SubjectPublicKeyInfo(AlgorithmIdentifier algID, byte[] subjectPublicKey) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.271 -0400", hash_original_method = "253956FBAD4830165078A1D4A5A10C63", hash_generated_method = "339CF7EC583651837B0D109128CC42B0")
+    public  SubjectPublicKeyInfo(AlgorithmIdentifier algID, byte[] subjectPublicKey) {
         this(algID, subjectPublicKey, 0);
-        dsTaint.addTaint(algID.dsTaint);
-        dsTaint.addTaint(subjectPublicKey[0]);
+        addTaint(algID.getTaint());
+        addTaint(subjectPublicKey[0]);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.925 -0400", hash_original_method = "D57000139A93CCBF30D6DA3399D9D5D5", hash_generated_method = "070D6889C1301E7D94535F25630E89F9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SubjectPublicKeyInfo(AlgorithmIdentifier algID, byte[] subjectPublicKey, int unused) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.277 -0400", hash_original_method = "D57000139A93CCBF30D6DA3399D9D5D5", hash_generated_method = "44F5F07CE42F9214EAA5E6CEC2E18853")
+    public  SubjectPublicKeyInfo(AlgorithmIdentifier algID, byte[] subjectPublicKey, int unused) {
         this(algID, subjectPublicKey, 0, null);
-        dsTaint.addTaint(algID.dsTaint);
-        dsTaint.addTaint(subjectPublicKey[0]);
-        dsTaint.addTaint(unused);
+        addTaint(algID.getTaint());
+        addTaint(subjectPublicKey[0]);
+        addTaint(unused);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.925 -0400", hash_original_method = "78E5942A2DBBC7DA4B73868B62747270", hash_generated_method = "799731842DE9D20B1C43571131BEED1F")
-    @DSModeled(DSC.SAFE)
-    private SubjectPublicKeyInfo(AlgorithmIdentifier algID,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.277 -0400", hash_original_method = "78E5942A2DBBC7DA4B73868B62747270", hash_generated_method = "55B3A45EAE77C42BF8DBEEB82A2A5BF7")
+    private  SubjectPublicKeyInfo(AlgorithmIdentifier algID,
                                  byte[] subjectPublicKey, int unused,
                                  byte[] encoding) {
-        dsTaint.addTaint(algID.dsTaint);
-        dsTaint.addTaint(subjectPublicKey[0]);
-        dsTaint.addTaint(encoding[0]);
-        dsTaint.addTaint(unused);
+        this.algorithmID = algID;
+        this.subjectPublicKey = subjectPublicKey;
+        this.unusedBits = unused;
+        this.encoding = encoding;
         // ---------- Original Method ----------
         //this.algorithmID = algID;
         //this.subjectPublicKey = subjectPublicKey;
@@ -64,35 +71,33 @@ public final class SubjectPublicKeyInfo {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.925 -0400", hash_original_method = "D3585B3653154AD3FE820FC3C464AD5E", hash_generated_method = "20A717370F06DE2EAE6E9AFBD41205B3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.281 -0400", hash_original_method = "D3585B3653154AD3FE820FC3C464AD5E", hash_generated_method = "3D275F5E396B66E38065E4BE459C52EB")
     public AlgorithmIdentifier getAlgorithmIdentifier() {
-        return (AlgorithmIdentifier)dsTaint.getTaint();
+        AlgorithmIdentifier varB4EAC82CA7396A68D541C85D26508E83_1091178795 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1091178795 = algorithmID;
+        varB4EAC82CA7396A68D541C85D26508E83_1091178795.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1091178795;
         // ---------- Original Method ----------
         //return algorithmID;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.925 -0400", hash_original_method = "6DD3F56EFCD8D5575183C0DEA4BCE90C", hash_generated_method = "4AAD602FF9D28AB46488339835F8BA14")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.283 -0400", hash_original_method = "6DD3F56EFCD8D5575183C0DEA4BCE90C", hash_generated_method = "2F1FCCF84D9423A1042DE0265F38AD1C")
     public byte[] getSubjectPublicKey() {
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_717200235 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_717200235;
         // ---------- Original Method ----------
         //return subjectPublicKey;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.926 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "94FDBB09C313C97C9EDC6BBF307FBE8A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.285 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "BF4DF31BE40BFB68EA27E1F251B2EE02")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
         } //End block
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1799483864 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1799483864;
         // ---------- Original Method ----------
         //if (encoding == null) {
             //encoding = ASN1.encode(this);
@@ -101,9 +106,9 @@ public final class SubjectPublicKeyInfo {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.926 -0400", hash_original_method = "FA31FAEA1A381D04C25B0BE6D665660B", hash_generated_method = "83788718D12820DFD7C60C3355A57649")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.289 -0400", hash_original_method = "FA31FAEA1A381D04C25B0BE6D665660B", hash_generated_method = "2C71B13337D3F7CD7C3FBE39E1E15380")
     public PublicKey getPublicKey() {
+        PublicKey varB4EAC82CA7396A68D541C85D26508E83_1024916604 = null; //Variable for return #1
         {
             String alg_oid;
             alg_oid = algorithmID.getAlgorithm();
@@ -126,7 +131,9 @@ public final class SubjectPublicKeyInfo {
                         subjectPublicKey);
             } //End block
         } //End block
-        return (PublicKey)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1024916604 = publicKey;
+        varB4EAC82CA7396A68D541C85D26508E83_1024916604.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1024916604;
         // ---------- Original Method ----------
         //if (publicKey == null) {
             //String alg_oid = algorithmID.getAlgorithm();
@@ -150,48 +157,24 @@ public final class SubjectPublicKeyInfo {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.289 -0400", hash_original_field = "CC42040DA80C5D943F06D4C9E4EAF6E0", hash_generated_field = "48040307EA293E7C22FF1672E7CE9B9C")
+
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
-            AlgorithmIdentifier.ASN1, ASN1BitString.getInstance() }) {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.926 -0400", hash_original_method = "FD8EB31EDCB420BB285954F02E88B28A", hash_generated_method = "BF53F1B8883AD6E1C06BCB4A60BE0E95")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        @Override
-        protected Object getDecodedObject(BerInputStream in) {
-            dsTaint.addTaint(in.dsTaint);
-            Object[] values;
-            values = (Object[]) in.content;
-            Object varDD5775E3CDEA988CD2D50257A3F04524_779123750 = (new SubjectPublicKeyInfo(
+            AlgorithmIdentifier.ASN1, ASN1BitString.getInstance() }) {
+        @Override protected Object getDecodedObject(BerInputStream in) {
+            Object[] values = (Object[]) in.content;
+            return new SubjectPublicKeyInfo(
                     (AlgorithmIdentifier) values[0],
                     ((BitString) values[1]).bytes,
                     ((BitString) values[1]).unusedBits,
-                    in.getEncoded()));
-            return (Object)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //Object[] values = (Object[]) in.content;
-            //return new SubjectPublicKeyInfo(
-                    //(AlgorithmIdentifier) values[0],
-                    //((BitString) values[1]).bytes,
-                    //((BitString) values[1]).unusedBits,
-                    //in.getEncoded());
+                    in.getEncoded());
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.927 -0400", hash_original_method = "FDCC5514DD513A693728A41D76C4BE17", hash_generated_method = "F668CDC54600DD85A73569168CD4ED9C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        @Override
-        protected void getValues(Object object, Object[] values) {
-            dsTaint.addTaint(values[0].dsTaint);
-            dsTaint.addTaint(object.dsTaint);
-            SubjectPublicKeyInfo spki;
-            spki = (SubjectPublicKeyInfo) object;
+        @Override protected void getValues(Object object, Object[] values) {
+            SubjectPublicKeyInfo spki = (SubjectPublicKeyInfo) object;
             values[0] = spki.algorithmID;
             values[1] = new BitString(spki.subjectPublicKey, spki.unusedBits);
-            // ---------- Original Method ----------
-            //SubjectPublicKeyInfo spki = (SubjectPublicKeyInfo) object;
-            //values[0] = spki.algorithmID;
-            //values[1] = new BitString(spki.subjectPublicKey, spki.unusedBits);
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

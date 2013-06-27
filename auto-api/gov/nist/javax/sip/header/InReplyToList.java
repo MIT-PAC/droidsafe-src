@@ -11,21 +11,22 @@ import javax.sip.header.*;
 
 public final class InReplyToList extends SIPHeaderList<InReplyTo> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.006 -0400", hash_original_method = "352B2862B115206F092911A984BAE33E", hash_generated_method = "52313BE3C7A7A4FFFFF799BC507758A6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InReplyToList() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.054 -0400", hash_original_method = "352B2862B115206F092911A984BAE33E", hash_generated_method = "52313BE3C7A7A4FFFFF799BC507758A6")
+    public  InReplyToList() {
         super(InReplyTo.class, InReplyToHeader.NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.006 -0400", hash_original_method = "DCD4BD1433043890DC84CD67AE62360B", hash_generated_method = "84C39E4993A5E714D4259847DCCBDB6C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.055 -0400", hash_original_method = "DCD4BD1433043890DC84CD67AE62360B", hash_generated_method = "08A5BB00CF048E9A968470DA0D0D1F5C")
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_258782298 = null; //Variable for return #1
         InReplyToList retval;
         retval = new InReplyToList();
         retval.clonehlist(this.hlist);
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_258782298 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_258782298.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_258782298;
         // ---------- Original Method ----------
         //InReplyToList retval = new InReplyToList();
         //retval.clonehlist(this.hlist);
@@ -33,6 +34,8 @@ public final class InReplyToList extends SIPHeaderList<InReplyTo> {
     }
 
     
-    private static final long serialVersionUID = -7993498496830999237L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.055 -0400", hash_original_field = "2A446AA5963733707A1B3F286FE94EB3", hash_generated_field = "5A36048EDF4314F04A8E3BAD09701B48")
+
+    private static long serialVersionUID = -7993498496830999237L;
 }
 

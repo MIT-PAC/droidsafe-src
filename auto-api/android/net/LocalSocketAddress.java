@@ -9,42 +9,48 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public class LocalSocketAddress {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.163 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+
     private String name;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.163 -0400", hash_original_field = "89801E9E98979062E84647433A8ED3E9", hash_generated_field = "8F55F62DFCC7A64A0BD865276D82A096")
+
     private Namespace namespace;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.010 -0400", hash_original_method = "ACE50F43918FAC0899CFC1784787037A", hash_generated_method = "59C1A3DB07E8CC44F749383EA937A9B2")
-    @DSModeled(DSC.SAFE)
-    public LocalSocketAddress(String name, Namespace namespace) {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(namespace.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.164 -0400", hash_original_method = "ACE50F43918FAC0899CFC1784787037A", hash_generated_method = "FE1E334F7DF4398364F7B6F1ED51B831")
+    public  LocalSocketAddress(String name, Namespace namespace) {
+        this.name = name;
+        this.namespace = namespace;
         // ---------- Original Method ----------
         //this.name = name;
         //this.namespace = namespace;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.010 -0400", hash_original_method = "66D42DD819FBC28DB7D788D131A117E8", hash_generated_method = "27199BDAA56F55F3F6F6EB6E80E597CF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public LocalSocketAddress(String name) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.164 -0400", hash_original_method = "66D42DD819FBC28DB7D788D131A117E8", hash_generated_method = "61E02D07874E00F6E285A0B31501C3C1")
+    public  LocalSocketAddress(String name) {
         this(name,Namespace.ABSTRACT);
-        dsTaint.addTaint(name);
+        addTaint(name.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.010 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "3573899E99121C9CFE87F9DDAEE36810")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.176 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "2A85E133736441BFCAECFE5DAE072CA9")
     public String getName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2102232574 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2102232574 = name;
+        varB4EAC82CA7396A68D541C85D26508E83_2102232574.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2102232574;
         // ---------- Original Method ----------
         //return name;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.011 -0400", hash_original_method = "F383712D804FA1C6C6A9CA72960DBCA2", hash_generated_method = "4CA486DA6B997BF6502A5FDD8464AB48")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.176 -0400", hash_original_method = "F383712D804FA1C6C6A9CA72960DBCA2", hash_generated_method = "F40D8597F654B7D6FA2E6D17BB355C32")
     public Namespace getNamespace() {
-        return (Namespace)dsTaint.getTaint();
+        Namespace varB4EAC82CA7396A68D541C85D26508E83_2103750570 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2103750570 = namespace;
+        varB4EAC82CA7396A68D541C85D26508E83_2103750570.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2103750570;
         // ---------- Original Method ----------
         //return namespace;
     }

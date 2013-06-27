@@ -13,27 +13,25 @@ import java.text.ParseException;
 
 public class ContentTypeParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.268 -0400", hash_original_method = "AC2B50BA9F98FE0D35E93AB411532CED", hash_generated_method = "5CDA71F8B40741B9742C22ECA6F13BE1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ContentTypeParser(String contentType) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.693 -0400", hash_original_method = "AC2B50BA9F98FE0D35E93AB411532CED", hash_generated_method = "947A255A2E43F450BF732116A9038526")
+    public  ContentTypeParser(String contentType) {
         super(contentType);
-        dsTaint.addTaint(contentType);
+        addTaint(contentType.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.269 -0400", hash_original_method = "9BAC92854D082DF9DDE50098E692CCEB", hash_generated_method = "DE99E24C39AF203B83C8DFA2C04AE655")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected ContentTypeParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.693 -0400", hash_original_method = "9BAC92854D082DF9DDE50098E692CCEB", hash_generated_method = "33C6ACBCFC1C53EB6403F2BED8015A51")
+    protected  ContentTypeParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.269 -0400", hash_original_method = "8AB392911FDE1F0164CFD7A5CB623621", hash_generated_method = "3DC6EEDCE5CFF110CED898B2928C7279")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.706 -0400", hash_original_method = "8AB392911FDE1F0164CFD7A5CB623621", hash_generated_method = "A0711B5918EE10A9D2FDBF2A1051B8A6")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1026803519 = null; //Variable for return #1
         ContentType contentType;
         contentType = new ContentType();
         dbg_enter("ContentTypeParser.parse");
@@ -58,7 +56,9 @@ public class ContentTypeParser extends ParametersParser {
         {
             dbg_leave("ContentTypeParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1026803519 = contentType;
+        varB4EAC82CA7396A68D541C85D26508E83_1026803519.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1026803519;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

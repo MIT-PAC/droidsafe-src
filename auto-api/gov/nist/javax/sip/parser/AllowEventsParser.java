@@ -13,27 +13,25 @@ import java.text.ParseException;
 
 public class AllowEventsParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.232 -0400", hash_original_method = "B8B57389921DBA1CC2428437DFD404AC", hash_generated_method = "698C5D597078081ED62DB9871D32923F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AllowEventsParser(String allowEvents) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.433 -0400", hash_original_method = "B8B57389921DBA1CC2428437DFD404AC", hash_generated_method = "5AC91EE0056EEBBD86FC067D51E73555")
+    public  AllowEventsParser(String allowEvents) {
         super(allowEvents);
-        dsTaint.addTaint(allowEvents);
+        addTaint(allowEvents.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.232 -0400", hash_original_method = "53ECD40448666EF39463E8A30244C2E7", hash_generated_method = "DECAC95866A66A8CCF0DAC733990B998")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected AllowEventsParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.433 -0400", hash_original_method = "53ECD40448666EF39463E8A30244C2E7", hash_generated_method = "8FDDFDAA1BA9889E2ED576BBB1A6320C")
+    protected  AllowEventsParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.233 -0400", hash_original_method = "457BF63FCB5F5743303EA5CCFBD04779", hash_generated_method = "3D87166FEE049F40274B1ECF3CFA3807")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.441 -0400", hash_original_method = "457BF63FCB5F5743303EA5CCFBD04779", hash_generated_method = "694B2FDFED3ED5F9DF15B89254B44A7B")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1454832691 = null; //Variable for return #1
         dbg_enter("AllowEventsParser.parse");
         AllowEventsList list;
         list = new AllowEventsList();
@@ -51,7 +49,7 @@ public class AllowEventsParser extends HeaderParser {
             list.add(allowEvents);
             this.lexer.SPorHT();
             {
-                boolean var3D7F80AAA4BB4C7E5B5AFC820C1FE6A4_1874205516 = (lexer.lookAhead(0) == ',');
+                boolean var3D7F80AAA4BB4C7E5B5AFC820C1FE6A4_1461603657 = (lexer.lookAhead(0) == ',');
                 {
                     this.lexer.match(',');
                     this.lexer.SPorHT();
@@ -65,12 +63,14 @@ public class AllowEventsParser extends HeaderParser {
             } //End collapsed parenthetic
             this.lexer.SPorHT();
             this.lexer.match('\n');
+            varB4EAC82CA7396A68D541C85D26508E83_1454832691 = list;
         } //End block
         finally 
         {
             dbg_leave("AllowEventsParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1454832691.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1454832691;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

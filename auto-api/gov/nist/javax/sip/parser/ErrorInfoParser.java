@@ -13,27 +13,25 @@ import java.text.ParseException;
 
 public class ErrorInfoParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.274 -0400", hash_original_method = "5AFF5330EA4A2771143BBB17EF4E79AC", hash_generated_method = "3563031E1C138EFFA88B2CB495169E05")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ErrorInfoParser(String errorInfo) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.731 -0400", hash_original_method = "5AFF5330EA4A2771143BBB17EF4E79AC", hash_generated_method = "83D3B9F618EFC876DDE2B0F01045EEC6")
+    public  ErrorInfoParser(String errorInfo) {
         super(errorInfo);
-        dsTaint.addTaint(errorInfo);
+        addTaint(errorInfo.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.275 -0400", hash_original_method = "8F205A65B870DAE08BD525603424E427", hash_generated_method = "600E716D1185AAF1AEAAEC602CE12A74")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected ErrorInfoParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.732 -0400", hash_original_method = "8F205A65B870DAE08BD525603424E427", hash_generated_method = "5E6090731FD6E4E3002E0DA957BD8102")
+    protected  ErrorInfoParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.275 -0400", hash_original_method = "A1D86D832E01EE0ED40EBBDB518014BA", hash_generated_method = "30A1DF806BD6F814F8B151D5DAB32B2F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.741 -0400", hash_original_method = "A1D86D832E01EE0ED40EBBDB518014BA", hash_generated_method = "EDDA19B848D5AA7D80FC8551AF32C834")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_523699585 = null; //Variable for return #1
         dbg_enter("ErrorInfoParser.parse");
         ErrorInfoList list;
         list = new ErrorInfoList();
@@ -41,7 +39,7 @@ public class ErrorInfoParser extends ParametersParser {
         {
             headerName(TokenTypes.ERROR_INFO);
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_504407656 = (lexer.lookAhead(0) != '\n');
+                boolean varA38820C66B6BCE71087D920E2767FF09_807644852 = (lexer.lookAhead(0) != '\n');
                 {
                     {
                         ErrorInfo errorInfo;
@@ -59,7 +57,7 @@ public class ErrorInfoParser extends ParametersParser {
                         super.parse(errorInfo);
                         list.add(errorInfo);
                         {
-                            boolean var9AE54EB6EBAEA27AE99856C2C81EF714_1327739440 = (lexer.lookAhead(0) == ',');
+                            boolean var9AE54EB6EBAEA27AE99856C2C81EF714_1005119201 = (lexer.lookAhead(0) == ',');
                             {
                                 this.lexer.match(',');
                             } //End block
@@ -67,12 +65,14 @@ public class ErrorInfoParser extends ParametersParser {
                     } //End block
                 } //End block
             } //End collapsed parenthetic
+            varB4EAC82CA7396A68D541C85D26508E83_523699585 = list;
         } //End block
         finally 
         {
             dbg_leave("ErrorInfoParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_523699585.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_523699585;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

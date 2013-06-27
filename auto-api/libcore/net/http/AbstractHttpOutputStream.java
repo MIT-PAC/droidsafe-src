@@ -11,27 +11,28 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 abstract class AbstractHttpOutputStream extends OutputStream {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.344 -0400", hash_original_field = "349E686330723975502E9EF4F939A5AC", hash_generated_field = "BA207E645FA463C53A82992C378F82FC")
+
     protected boolean closed;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.057 -0400", hash_original_method = "660987567E9729E012396F4A68CFDBA3", hash_generated_method = "660987567E9729E012396F4A68CFDBA3")
-        public AbstractHttpOutputStream ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.344 -0400", hash_original_method = "2835FA09B3F183CC926451AC7D6D78D7", hash_generated_method = "2835FA09B3F183CC926451AC7D6D78D7")
+    public AbstractHttpOutputStream ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.057 -0400", hash_original_method = "BEB37A4CC4B7ECAA5E509CB7A19DC490", hash_generated_method = "1904859845F1C617BE62F7F8B2B0F9E8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.345 -0400", hash_original_method = "BEB37A4CC4B7ECAA5E509CB7A19DC490", hash_generated_method = "396AAE13669F56651BBE96A5280F663A")
     @Override
     public final void write(int data) throws IOException {
-        dsTaint.addTaint(data);
         write(new byte[] { (byte) data });
+        addTaint(data);
         // ---------- Original Method ----------
         //write(new byte[] { (byte) data });
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.058 -0400", hash_original_method = "9C8C395306DF0EF2B124A9030249421B", hash_generated_method = "7ED5824944EAAD3891275A558A397A99")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.345 -0400", hash_original_method = "9C8C395306DF0EF2B124A9030249421B", hash_generated_method = "7ED5824944EAAD3891275A558A397A99")
     protected final void checkNotClosed() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("stream closed");

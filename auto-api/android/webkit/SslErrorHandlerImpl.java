@@ -16,14 +16,21 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 
 class SslErrorHandlerImpl extends SslErrorHandler {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.577 -0400", hash_original_field = "0924E7DA0697C861A386D2C4A20421F8", hash_generated_field = "1DFA7AE1BD952C18E1D76D9BAFCEAA92")
+
     private LinkedList<LoadListener> mLoaderQueue;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.577 -0400", hash_original_field = "5AE885C01691F4B0DD5E72501AD24BAD", hash_generated_field = "0EBBEDC3B7330F6D7F551BA5F56946AB")
+
     private Bundle mSslPrefTable;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.577 -0400", hash_original_field = "724999CCACCD38C69F8741CE438C0D2D", hash_generated_field = "0823A225A6B98AC84669033E96217862")
+
     private SslErrorHandler mOriginHandler;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.577 -0400", hash_original_field = "FD98EF1D956356B754B181390D5904EB", hash_generated_field = "575F6C3ED9DF00A745593F15FF93C229")
+
     private LoadListener mLoadListener;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.763 -0400", hash_original_method = "A9D6B0D7435532871C80AFF391EAC1F3", hash_generated_method = "D5C6DF2322CEE0B4504A01219ED4C7CE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     SslErrorHandlerImpl() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.578 -0400", hash_original_method = "A9D6B0D7435532871C80AFF391EAC1F3", hash_generated_method = "D5C6DF2322CEE0B4504A01219ED4C7CE")
+      SslErrorHandlerImpl() {
         mLoaderQueue = new LinkedList<LoadListener>();
         mSslPrefTable = new Bundle();
         mOriginHandler = null;
@@ -36,29 +43,26 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.763 -0400", hash_original_method = "91EB591AB70C8A379D1426222FA143D7", hash_generated_method = "32D01511E75C1869312E6C2A802CF0E2")
-    @DSModeled(DSC.SAFE)
-    private SslErrorHandlerImpl(SslErrorHandler origin, LoadListener listener) {
-        dsTaint.addTaint(listener.dsTaint);
-        dsTaint.addTaint(origin.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.578 -0400", hash_original_method = "91EB591AB70C8A379D1426222FA143D7", hash_generated_method = "A88A0B916C7B5A9C81213D0D94E1F0CE")
+    private  SslErrorHandlerImpl(SslErrorHandler origin, LoadListener listener) {
+        mOriginHandler = origin;
+        mLoadListener = listener;
         // ---------- Original Method ----------
         //mOriginHandler = origin;
         //mLoadListener = listener;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.763 -0400", hash_original_method = "325914DF32EF22A63CA2688A9A750F18", hash_generated_method = "347339DBE851708299C5FA29C57D16D9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.590 -0400", hash_original_method = "325914DF32EF22A63CA2688A9A750F18", hash_generated_method = "3349F05503A16BD66477386FEF3CA1FC")
     @Override
     public void handleMessage(Message msg) {
-        dsTaint.addTaint(msg.dsTaint);
         //Begin case HANDLE_RESPONSE 
         LoadListener loader;
         loader = (LoadListener) msg.obj;
         //End case HANDLE_RESPONSE 
         //Begin case HANDLE_RESPONSE 
         {
-            Object varA01C5B011F8CB72025CD61FE1CF575D3_548867234 = (SslErrorHandlerImpl.this);
+            Object varA01C5B011F8CB72025CD61FE1CF575D3_285941884 = (SslErrorHandlerImpl.this);
             {
                 handleSslErrorResponse(loader, loader.sslError(),
                             msg.arg1 == 1);
@@ -67,6 +71,7 @@ class SslErrorHandlerImpl extends SslErrorHandler {
             } //End block
         } //End collapsed parenthetic
         //End case HANDLE_RESPONSE 
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         //switch (msg.what) {
             //case HANDLE_RESPONSE:
@@ -82,16 +87,16 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.764 -0400", hash_original_method = "D029A1C8EDAAF4B35F26BECE197613A0", hash_generated_method = "1C354F3B2AD65645131605B403BBFD83")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.591 -0400", hash_original_method = "D029A1C8EDAAF4B35F26BECE197613A0", hash_generated_method = "7EEF7B0ADE9A5D57A95EF65D6153BBDC")
     synchronized boolean saveState(Bundle outState) {
-        dsTaint.addTaint(outState.dsTaint);
         boolean success;
         success = (outState != null);
         {
             outState.putBundle("ssl-error-handler", mSslPrefTable);
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(outState.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1826606006 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1826606006;
         // ---------- Original Method ----------
         //boolean success = (outState != null);
         //if (success) {
@@ -101,10 +106,8 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.764 -0400", hash_original_method = "6F02B2C09ACF8BBAEA47573C8A17837E", hash_generated_method = "83AE0ED1338883C439045A17CEB0E9A5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.591 -0400", hash_original_method = "6F02B2C09ACF8BBAEA47573C8A17837E", hash_generated_method = "D071FE34016218984D5665D3CBCC400E")
     synchronized boolean restoreState(Bundle inState) {
-        dsTaint.addTaint(inState.dsTaint);
         boolean success;
         success = (inState != null);
         {
@@ -113,7 +116,8 @@ class SslErrorHandlerImpl extends SslErrorHandler {
                 mSslPrefTable = inState.getBundle("ssl-error-handler");
             } //End block
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1420051079 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1420051079;
         // ---------- Original Method ----------
         //boolean success = (inState != null);
         //if (success) {
@@ -126,8 +130,7 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.764 -0400", hash_original_method = "1C1564A7BC8E1B5AD415E60E6B0CBA09", hash_generated_method = "5E67DCC1BF128A2422A3A2FE824DEC86")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.592 -0400", hash_original_method = "1C1564A7BC8E1B5AD415E60E6B0CBA09", hash_generated_method = "5E67DCC1BF128A2422A3A2FE824DEC86")
     synchronized void clear() {
         mSslPrefTable.clear();
         // ---------- Original Method ----------
@@ -135,22 +138,21 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.764 -0400", hash_original_method = "C8D7B9DA233B276F8D5E9642BE0FE843", hash_generated_method = "A28BDC9F53BE521889B206E2B6749D58")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.592 -0400", hash_original_method = "C8D7B9DA233B276F8D5E9642BE0FE843", hash_generated_method = "8B3F2848A29F28334DE799C3A826D7DA")
     synchronized void handleSslErrorRequest(LoadListener loader) {
-        dsTaint.addTaint(loader.dsTaint);
         {
-            boolean var4CA682711E2F313295DD2C0DC4759245_76286825 = (!loader.cancelled());
+            boolean var4CA682711E2F313295DD2C0DC4759245_529987380 = (!loader.cancelled());
             {
                 mLoaderQueue.offer(loader);
                 {
-                    boolean var5A7C9FADECFA85DDBAA7E2DBAC8488F4_1738777964 = (loader == mLoaderQueue.peek());
+                    boolean var5A7C9FADECFA85DDBAA7E2DBAC8488F4_1814922834 = (loader == mLoaderQueue.peek());
                     {
                         fastProcessQueuedSslErrors();
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
+        addTaint(loader.getTaint());
         // ---------- Original Method ----------
         //if (DebugFlags.SSL_ERROR_HANDLER) {
             //Log.v(LOGTAG, "SslErrorHandler.handleSslErrorRequest(): " +
@@ -165,28 +167,28 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.765 -0400", hash_original_method = "F91D7F8A2853C263C312AB7E69DBEB4B", hash_generated_method = "7D71F885D421098F2304EAA94FF91324")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.593 -0400", hash_original_method = "F91D7F8A2853C263C312AB7E69DBEB4B", hash_generated_method = "B5F6A74F80762493C51326DBEC521423")
     synchronized boolean checkSslPrefTable(LoadListener loader,
             SslError error) {
-        dsTaint.addTaint(error.dsTaint);
-        dsTaint.addTaint(loader.dsTaint);
         String host;
         host = loader.host();
         int primary;
         primary = error.getPrimaryError();
         {
-            boolean var9D95C999D94E1CE612D5BC8693995EA5_1433802290 = (mSslPrefTable.containsKey(host) && primary <= mSslPrefTable.getInt(host));
+            boolean var9D95C999D94E1CE612D5BC8693995EA5_646501521 = (mSslPrefTable.containsKey(host) && primary <= mSslPrefTable.getInt(host));
             {
                 {
-                    boolean var9B23A35009EC718B2553DC7787FAADFC_1537165571 = (!loader.cancelled());
+                    boolean var9B23A35009EC718B2553DC7787FAADFC_2124501244 = (!loader.cancelled());
                     {
                         loader.handleSslErrorResponse(true);
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(loader.getTaint());
+        addTaint(error.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1325600115 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1325600115;
         // ---------- Original Method ----------
         //final String host = loader.host();
         //final int primary = error.getPrimaryError();
@@ -204,11 +206,10 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.765 -0400", hash_original_method = "04F6EA99CF8E9997D9FE1719C2DB77FD", hash_generated_method = "4A6F0487EE57E5F5DF613D3D09E13AC3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.593 -0400", hash_original_method = "04F6EA99CF8E9997D9FE1719C2DB77FD", hash_generated_method = "445EA3C44960C5825E561CE7CF641CE7")
      void fastProcessQueuedSslErrors() {
         {
-            boolean varC35987D150EBE78B368C54ADC1628B3E_617087851 = (processNextLoader());
+            boolean varC35987D150EBE78B368C54ADC1628B3E_195470169 = (processNextLoader());
             ;
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -216,14 +217,13 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.765 -0400", hash_original_method = "C17562BADC30EBD8B8536D75F1BFCDF6", hash_generated_method = "93306A2EB1C09D2804D7C382BFABE19D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.605 -0400", hash_original_method = "C17562BADC30EBD8B8536D75F1BFCDF6", hash_generated_method = "A7228FFDAC3F3BD3E3C78C3773F16DE5")
     private synchronized boolean processNextLoader() {
         LoadListener loader;
         loader = mLoaderQueue.peek();
         {
             {
-                boolean var3CC72E1AB5EF7351D7DC244355DFC372_1663327994 = (loader.cancelled());
+                boolean var3CC72E1AB5EF7351D7DC244355DFC372_1425671759 = (loader.cancelled());
                 {
                     mLoaderQueue.remove(loader);
                 } //End block
@@ -231,7 +231,7 @@ class SslErrorHandlerImpl extends SslErrorHandler {
             SslError error;
             error = loader.sslError();
             {
-                boolean var62D43182C73FC9F796C77F406880B021_1677578519 = (checkSslPrefTable(loader, error));
+                boolean var62D43182C73FC9F796C77F406880B021_732232407 = (checkSslPrefTable(loader, error));
                 {
                     mLoaderQueue.remove(loader);
                 } //End block
@@ -240,7 +240,8 @@ class SslErrorHandlerImpl extends SslErrorHandler {
             proxy = loader.getFrame().getCallbackProxy();
             proxy.onReceivedSslError(new SslErrorHandlerImpl(this, loader), error);
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1148563021 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1148563021;
         // ---------- Original Method ----------
         //LoadListener loader = mLoaderQueue.peek();
         //if (loader != null) {
@@ -263,8 +264,7 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.765 -0400", hash_original_method = "ED6C618278238A667ACAB98E6417F45B", hash_generated_method = "BFB346E78F75DDB0B1D1346783FC5E66")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.605 -0400", hash_original_method = "ED6C618278238A667ACAB98E6417F45B", hash_generated_method = "BFB346E78F75DDB0B1D1346783FC5E66")
     public void proceed() {
         mOriginHandler.sendMessage(mOriginHandler.obtainMessage(
                 HANDLE_RESPONSE, 1, 0, mLoadListener));
@@ -274,8 +274,7 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.766 -0400", hash_original_method = "12C4CCCD01DBAE6BF230314E9D5755CB", hash_generated_method = "5AA488227E2C0BB28A147339A287A4AF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.606 -0400", hash_original_method = "12C4CCCD01DBAE6BF230314E9D5755CB", hash_generated_method = "5AA488227E2C0BB28A147339A287A4AF")
     public void cancel() {
         mOriginHandler.sendMessage(mOriginHandler.obtainMessage(
                 HANDLE_RESPONSE, 0, 0, mLoadListener));
@@ -285,15 +284,11 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.766 -0400", hash_original_method = "5796F22078D6113D133FA1EE0019F75A", hash_generated_method = "ED75AFA8F771B195BABDC695EC5DC696")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.606 -0400", hash_original_method = "5796F22078D6113D133FA1EE0019F75A", hash_generated_method = "F8190B41779A2FE380CE18A8C35A6FF7")
     synchronized void handleSslErrorResponse(LoadListener loader,
             SslError error, boolean proceed) {
-        dsTaint.addTaint(error.dsTaint);
-        dsTaint.addTaint(loader.dsTaint);
-        dsTaint.addTaint(proceed);
         {
-            boolean var4CA682711E2F313295DD2C0DC4759245_967296418 = (!loader.cancelled());
+            boolean var4CA682711E2F313295DD2C0DC4759245_1729247839 = (!loader.cancelled());
             {
                 {
                     int primary;
@@ -303,7 +298,7 @@ class SslErrorHandlerImpl extends SslErrorHandler {
                     boolean hasKey;
                     hasKey = mSslPrefTable.containsKey(host);
                     {
-                        boolean varA566236BCFA27FF37E6F034EE75F2F7B_1841306418 = (!hasKey || primary > mSslPrefTable.getInt(host));
+                        boolean varA566236BCFA27FF37E6F034EE75F2F7B_203653127 = (!hasKey || primary > mSslPrefTable.getInt(host));
                         {
                             mSslPrefTable.putInt(host, primary);
                         } //End block
@@ -312,12 +307,19 @@ class SslErrorHandlerImpl extends SslErrorHandler {
                 loader.handleSslErrorResponse(proceed);
             } //End block
         } //End collapsed parenthetic
+        addTaint(loader.getTaint());
+        addTaint(error.getTaint());
+        addTaint(proceed);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    private static final String LOGTAG = "network";
-    private static final int HANDLE_RESPONSE = 100;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.606 -0400", hash_original_field = "9C0E52F6EA09A89CC23A82A807E7244F", hash_generated_field = "D6FF1579342774FD892BEA7EB0825E1D")
+
+    private static String LOGTAG = "network";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.606 -0400", hash_original_field = "3FDB2EE9DFDF8CF9920BB9704639148D", hash_generated_field = "CFE1CABA0F91762CA6D4FB348741EE19")
+
+    private static int HANDLE_RESPONSE = 100;
 }
 

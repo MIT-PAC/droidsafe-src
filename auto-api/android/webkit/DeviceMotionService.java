@@ -19,20 +19,35 @@ import java.lang.Runnable;
 import java.util.List;
 
 final class DeviceMotionService implements SensorEventListener {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.078 -0400", hash_original_field = "1D4FD4FBF6080AF66D4D90562FE06036", hash_generated_field = "66D108DFC043A6E0A2844E4843186070")
+
     private DeviceMotionAndOrientationManager mManager;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.078 -0400", hash_original_field = "130D713CAF236B328B5223DFA18F1488", hash_generated_field = "B2DDC5809B05187D32A84097DC68019C")
+
     private boolean mIsRunning;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.078 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
+
     private Handler mHandler;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.078 -0400", hash_original_field = "8CDFC97B128FB94D2A2F11FDAFFE50EA", hash_generated_field = "D8CC5B9F3DF5D78484C533BB7CDDA85C")
+
     private SensorManager mSensorManager;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.078 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
     private Context mContext;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.078 -0400", hash_original_field = "2C3606D875A88A4154C18923EE3485CF", hash_generated_field = "16AAE3611879142DAF4D4972E6DBF92E")
+
     private boolean mHaveSentErrorEvent;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.078 -0400", hash_original_field = "084498CA6FFD1B3976129A78E779839D", hash_generated_field = "16C911A75559FF3FC455929D8833F7AD")
+
     private Runnable mUpdateRunnable;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.078 -0400", hash_original_field = "B521B76CAC58E2A585AF8E91991B773E", hash_generated_field = "D4A570CD23CCC3472A74A9385901C82C")
+
     private float mLastAcceleration[];
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.130 -0400", hash_original_method = "F55301D24998230F1C8CCBC205AE8660", hash_generated_method = "8DABE17E17536201EACC5704B194CEA7")
-    @DSModeled(DSC.SAFE)
-    public DeviceMotionService(DeviceMotionAndOrientationManager manager, Context context) {
-        dsTaint.addTaint(manager.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.078 -0400", hash_original_method = "F55301D24998230F1C8CCBC205AE8660", hash_generated_method = "91D9E15C868D33484D657357AE6A6D5A")
+    public  DeviceMotionService(DeviceMotionAndOrientationManager manager, Context context) {
+        mManager = manager;
+        mContext = context;
         // ---------- Original Method ----------
         //mManager = manager;
         //assert(mManager != null);
@@ -41,8 +56,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.130 -0400", hash_original_method = "98B4404819C6BBBB3597C623BA4BB028", hash_generated_method = "B7F692BDF799E4ACD08DFAD15C4EC7B0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.079 -0400", hash_original_method = "98B4404819C6BBBB3597C623BA4BB028", hash_generated_method = "B7F692BDF799E4ACD08DFAD15C4EC7B0")
     public void start() {
         mIsRunning = true;
         registerForSensor();
@@ -52,8 +66,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.130 -0400", hash_original_method = "01C2E2F2F39858D9C160CE6783C7D17B", hash_generated_method = "D2F2FBC703239730100BC77A7A87E537")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.079 -0400", hash_original_method = "01C2E2F2F39858D9C160CE6783C7D17B", hash_generated_method = "D2F2FBC703239730100BC77A7A87E537")
     public void stop() {
         mIsRunning = false;
         stopSendingUpdates();
@@ -65,8 +78,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.130 -0400", hash_original_method = "7537A7F7CC7F152580C5E8AB37332B9F", hash_generated_method = "74AA08EED187C7AF41E2E27CF3870552")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.079 -0400", hash_original_method = "7537A7F7CC7F152580C5E8AB37332B9F", hash_generated_method = "74AA08EED187C7AF41E2E27CF3870552")
     public void suspend() {
         {
             stopSendingUpdates();
@@ -80,8 +92,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.131 -0400", hash_original_method = "06D001413EE6654679884BE0B710A988", hash_generated_method = "72CED80097AB1F64A75A2D2BE809ECA5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.087 -0400", hash_original_method = "06D001413EE6654679884BE0B710A988", hash_generated_method = "72CED80097AB1F64A75A2D2BE809ECA5")
     public void resume() {
         {
             registerForSensor();
@@ -93,14 +104,12 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.131 -0400", hash_original_method = "CDFAD74C98E46044259B3BCC3613C4C6", hash_generated_method = "59A9C13325F28103E518C0389F6C380B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.087 -0400", hash_original_method = "CDFAD74C98E46044259B3BCC3613C4C6", hash_generated_method = "731BEA37BC775E975E94C4C69813B7C9")
     private void sendErrorEvent() {
         mHaveSentErrorEvent = true;
         createHandler();
         mHandler.post(new Runnable() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.131 -0400", hash_original_method = "7A626774FEDB8F7ED99A6D9AA618F581", hash_generated_method = "A9B9AA3581038650352546A765A7D60E")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.087 -0400", hash_original_method = "7A626774FEDB8F7ED99A6D9AA618F581", hash_generated_method = "A9B9AA3581038650352546A765A7D60E")
             @Override
             public void run() {
                 {
@@ -131,13 +140,11 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.132 -0400", hash_original_method = "9B63FE7EDAA2DFAC9F6DE1381BA682EF", hash_generated_method = "9D08C4A621B8A6937125A807D051431F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.089 -0400", hash_original_method = "9B63FE7EDAA2DFAC9F6DE1381BA682EF", hash_generated_method = "4DC7B4EEAAC0C90FEF18738BCBA74F8F")
     private void createHandler() {
         mHandler = new Handler();
         mUpdateRunnable = new Runnable() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.132 -0400", hash_original_method = "BF4DF07DFA0B7EFFD5AC0E28D1CE9285", hash_generated_method = "9058959D11C31754F9029A679BB2DC7A")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.088 -0400", hash_original_method = "BF4DF07DFA0B7EFFD5AC0E28D1CE9285", hash_generated_method = "9058959D11C31754F9029A679BB2DC7A")
             @Override
             public void run() {
                 mManager.onMotionChange(new Double(mLastAcceleration[0]),
@@ -173,8 +180,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.132 -0400", hash_original_method = "A3A2E2444DD47EDD24E157A7D990CD47", hash_generated_method = "9D2E6C8D82D655D950CB0FEE1EEC48AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.089 -0400", hash_original_method = "A3A2E2444DD47EDD24E157A7D990CD47", hash_generated_method = "9D2E6C8D82D655D950CB0FEE1EEC48AE")
     private void startSendingUpdates() {
         createHandler();
         mUpdateRunnable.run();
@@ -184,8 +190,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.141 -0400", hash_original_method = "C91FFFB25BA3A01D4AF61CC044FBC20A", hash_generated_method = "BCE08908D6D1E37280656543AC394DA7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.089 -0400", hash_original_method = "C91FFFB25BA3A01D4AF61CC044FBC20A", hash_generated_method = "BCE08908D6D1E37280656543AC394DA7")
     private void stopSendingUpdates() {
         mHandler.removeCallbacks(mUpdateRunnable);
         mLastAcceleration = null;
@@ -195,11 +200,10 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.142 -0400", hash_original_method = "8EA92813CD5F00D63229FB53D6348E72", hash_generated_method = "70117127A973E2EEEDE50AF764CB8568")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.089 -0400", hash_original_method = "8EA92813CD5F00D63229FB53D6348E72", hash_generated_method = "91B570D9233D998E66D57EA4EF9E7FD3")
     private void registerForSensor() {
         {
-            boolean var7B71D659CEDC4F674BF637DDEB7E8F23_1431526058 = (!registerForAccelerometerSensor());
+            boolean var7B71D659CEDC4F674BF637DDEB7E8F23_1231059071 = (!registerForAccelerometerSensor());
             {
                 sendErrorEvent();
             } //End block
@@ -211,13 +215,15 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.142 -0400", hash_original_method = "D09B23AC902B5D9C0E49BB52A156F918", hash_generated_method = "68420051782C3B29E23DB6D9B57A438F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.090 -0400", hash_original_method = "D09B23AC902B5D9C0E49BB52A156F918", hash_generated_method = "2BBE375ED66A461AB5D7B97110F39B58")
     private SensorManager getSensorManager() {
+        SensorManager varB4EAC82CA7396A68D541C85D26508E83_935270831 = null; //Variable for return #1
         {
             mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         } //End block
-        return (SensorManager)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_935270831 = mSensorManager;
+        varB4EAC82CA7396A68D541C85D26508E83_935270831.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_935270831;
         // ---------- Original Method ----------
         //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
         //if (mSensorManager == null) {
@@ -227,18 +233,18 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.142 -0400", hash_original_method = "132C72132CB3FECC364192FB60290F0C", hash_generated_method = "E8308301A6E32D0AF4FFC0A7E96A2AB7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.090 -0400", hash_original_method = "132C72132CB3FECC364192FB60290F0C", hash_generated_method = "F7311A22F871A09AFEB90987A64EDB54")
     private boolean registerForAccelerometerSensor() {
         List<Sensor> sensors;
         sensors = getSensorManager().getSensorList(Sensor.TYPE_ACCELEROMETER);
         {
-            boolean var60EE0D8C32CDAFA59C16DF69FA87513D_185483065 = (sensors.isEmpty());
+            boolean var60EE0D8C32CDAFA59C16DF69FA87513D_439882888 = (sensors.isEmpty());
         } //End collapsed parenthetic
         createHandler();
-        boolean var9A009F83A3E9451F0925F7E801D939AA_1229229628 = (getSensorManager().registerListener(
+        boolean var9A009F83A3E9451F0925F7E801D939AA_576026064 = (getSensorManager().registerListener(
                 this, sensors.get(0), SensorManager.SENSOR_DELAY_UI, mHandler));
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_389429168 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_389429168;
         // ---------- Original Method ----------
         //List<Sensor> sensors = getSensorManager().getSensorList(Sensor.TYPE_ACCELEROMETER);
         //if (sensors.isEmpty()) {
@@ -250,8 +256,7 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.143 -0400", hash_original_method = "8F0ED17D95B5480F975ECDA7EDF68357", hash_generated_method = "9047F07B49AB7461A60D1DD86FDABEAE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.095 -0400", hash_original_method = "8F0ED17D95B5480F975ECDA7EDF68357", hash_generated_method = "9047F07B49AB7461A60D1DD86FDABEAE")
     private void unregisterFromSensor() {
         getSensorManager().unregisterListener(this);
         // ---------- Original Method ----------
@@ -259,17 +264,16 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.143 -0400", hash_original_method = "7AFE6EE6D4C15EE2C452A64798BB4D96", hash_generated_method = "E8E376837645579F14462C1DEA6B14ED")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.096 -0400", hash_original_method = "7AFE6EE6D4C15EE2C452A64798BB4D96", hash_generated_method = "39632DDAA61427DADDCF8C25D42B3697")
     public void onSensorChanged(SensorEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(event.dsTaint);
         boolean firstData;
         firstData = mLastAcceleration == null;
         mLastAcceleration = event.values;
         {
             startSendingUpdates();
         } //End block
+        addTaint(event.getTaint());
         // ---------- Original Method ----------
         //assert(event.values.length == 3);
         //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
@@ -285,17 +289,18 @@ final class DeviceMotionService implements SensorEventListener {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.143 -0400", hash_original_method = "4C77A6863BACF480F39B2826F5CA663C", hash_generated_method = "81A8C3534F22D079E33B44B7968F9E76")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.096 -0400", hash_original_method = "4C77A6863BACF480F39B2826F5CA663C", hash_generated_method = "1A434A1FCBBAC533510C9D8C55877D2F")
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(sensor.dsTaint);
-        dsTaint.addTaint(accuracy);
+        addTaint(sensor.getTaint());
+        addTaint(accuracy);
         // ---------- Original Method ----------
         //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
     }
 
     
-    private static final int INTERVAL_MILLIS = 100;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.096 -0400", hash_original_field = "6F01D460799E7BF514D22B06957DBD6A", hash_generated_field = "D31AE9A1336074CD351C9642646B206E")
+
+    private static int INTERVAL_MILLIS = 100;
 }
 

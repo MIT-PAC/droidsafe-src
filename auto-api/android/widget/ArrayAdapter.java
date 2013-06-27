@@ -20,94 +20,106 @@ import java.util.Comparator;
 import java.util.List;
 
 public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.661 -0400", hash_original_field = "EBF544E4173D2D8B065068D8E591BD40", hash_generated_field = "C5D6BBA40E88AD4B20810C36AB0B4200")
+
     private List<T> mObjects;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.661 -0400", hash_original_field = "B89DEBA2CB26B1AC973763E3E152017B", hash_generated_field = "C8F8FCD335E09ED70E70801AB39A894A")
+
     private Object mLock = new Object();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.661 -0400", hash_original_field = "513ECCC3F2175FF90ADFE90E4852BF1D", hash_generated_field = "6ED56B37E58621AEB8D63CC1C5EA1E67")
+
     private int mResource;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.661 -0400", hash_original_field = "4E551418A503FBC4B46C7DAAADA3FAEC", hash_generated_field = "605FFB4549B20BAE4E7EBD72916F9C8F")
+
     private int mDropDownResource;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.661 -0400", hash_original_field = "BB0FD1BF4E8B0289908324805EFFCBAF", hash_generated_field = "D4C9AF545A1F6103644303EF50B22F18")
+
     private int mFieldId = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.661 -0400", hash_original_field = "39770135A671276A8EDCF9E10B640D7D", hash_generated_field = "FE0D43348CFC831A210569F9A601B409")
+
     private boolean mNotifyOnChange = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.661 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
     private Context mContext;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.661 -0400", hash_original_field = "7E1411E28582E7BB5CB8D7EF06A96926", hash_generated_field = "D3DC3ECDE417C076679DF4CF25A2ECC3")
+
     private ArrayList<T> mOriginalValues;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.661 -0400", hash_original_field = "C781ED17A87FBE09F8079C6EC63D1F26", hash_generated_field = "A0F0365EB2712D5C3F88231E50941E9D")
+
     private ArrayFilter mFilter;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.661 -0400", hash_original_field = "D03597FDEDE23F3823480E0520822BB2", hash_generated_field = "CBB0EE0A851756643DA52E1D33B6B161")
+
     private LayoutInflater mInflater;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.270 -0400", hash_original_method = "789F3BF67B69FD6C237A5778FFC1188F", hash_generated_method = "E0A3039B87A888BC868A2F6820BDFEB5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ArrayAdapter(Context context, int textViewResourceId) {
-        dsTaint.addTaint(textViewResourceId);
-        dsTaint.addTaint(context.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.666 -0400", hash_original_method = "789F3BF67B69FD6C237A5778FFC1188F", hash_generated_method = "5339F759B567E344C6360CC18D6F29D4")
+    public  ArrayAdapter(Context context, int textViewResourceId) {
         init(context, textViewResourceId, 0, new ArrayList<T>());
+        addTaint(context.getTaint());
+        addTaint(textViewResourceId);
         // ---------- Original Method ----------
         //init(context, textViewResourceId, 0, new ArrayList<T>());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.270 -0400", hash_original_method = "8D997C3441EFBFDB8F1974C979BCB748", hash_generated_method = "1D428A41B04D6B1F462385777E79119A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ArrayAdapter(Context context, int resource, int textViewResourceId) {
-        dsTaint.addTaint(textViewResourceId);
-        dsTaint.addTaint(resource);
-        dsTaint.addTaint(context.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.666 -0400", hash_original_method = "8D997C3441EFBFDB8F1974C979BCB748", hash_generated_method = "208346FF4C5EF343977F36A9D1952D2C")
+    public  ArrayAdapter(Context context, int resource, int textViewResourceId) {
         init(context, resource, textViewResourceId, new ArrayList<T>());
+        addTaint(context.getTaint());
+        addTaint(resource);
+        addTaint(textViewResourceId);
         // ---------- Original Method ----------
         //init(context, resource, textViewResourceId, new ArrayList<T>());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.271 -0400", hash_original_method = "0DF55CD51396FFBE8E2D3620B337DDA2", hash_generated_method = "6DF26D9EAE2996E8F6D3AB57DC21CBF4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ArrayAdapter(Context context, int textViewResourceId, T[] objects) {
-        dsTaint.addTaint(textViewResourceId);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(objects[0].dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.666 -0400", hash_original_method = "0DF55CD51396FFBE8E2D3620B337DDA2", hash_generated_method = "955FD578659949341F1DD777876CCEBD")
+    public  ArrayAdapter(Context context, int textViewResourceId, T[] objects) {
         init(context, textViewResourceId, 0, Arrays.asList(objects));
+        addTaint(context.getTaint());
+        addTaint(textViewResourceId);
+        addTaint(objects[0].getTaint());
         // ---------- Original Method ----------
         //init(context, textViewResourceId, 0, Arrays.asList(objects));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.271 -0400", hash_original_method = "69F6C47A6CFAD9DAEB9B15D26A429BD2", hash_generated_method = "2211E17CF3FCAAE4507C83BF4C88A865")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ArrayAdapter(Context context, int resource, int textViewResourceId, T[] objects) {
-        dsTaint.addTaint(textViewResourceId);
-        dsTaint.addTaint(resource);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(objects[0].dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.667 -0400", hash_original_method = "69F6C47A6CFAD9DAEB9B15D26A429BD2", hash_generated_method = "C0DEAD7315A497B6DBF8BDF12B3352D3")
+    public  ArrayAdapter(Context context, int resource, int textViewResourceId, T[] objects) {
         init(context, resource, textViewResourceId, Arrays.asList(objects));
+        addTaint(context.getTaint());
+        addTaint(resource);
+        addTaint(textViewResourceId);
+        addTaint(objects[0].getTaint());
         // ---------- Original Method ----------
         //init(context, resource, textViewResourceId, Arrays.asList(objects));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.271 -0400", hash_original_method = "223AE4BB7D76AAEAE470FF2DB97AEEF6", hash_generated_method = "177E71A11DBDAFC3ED5EBFD38D9C45E9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ArrayAdapter(Context context, int textViewResourceId, List<T> objects) {
-        dsTaint.addTaint(textViewResourceId);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(objects.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.679 -0400", hash_original_method = "223AE4BB7D76AAEAE470FF2DB97AEEF6", hash_generated_method = "860C4E8E321CAB2DBA2573635A0C0E13")
+    public  ArrayAdapter(Context context, int textViewResourceId, List<T> objects) {
         init(context, textViewResourceId, 0, objects);
+        addTaint(context.getTaint());
+        addTaint(textViewResourceId);
+        addTaint(objects.getTaint());
         // ---------- Original Method ----------
         //init(context, textViewResourceId, 0, objects);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.271 -0400", hash_original_method = "25BF5070AB68B4CC94195FE94A6CDD15", hash_generated_method = "7421F5CF7225E11E991B437451CCBE62")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ArrayAdapter(Context context, int resource, int textViewResourceId, List<T> objects) {
-        dsTaint.addTaint(textViewResourceId);
-        dsTaint.addTaint(resource);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(objects.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.680 -0400", hash_original_method = "25BF5070AB68B4CC94195FE94A6CDD15", hash_generated_method = "4786F4DB480C4875E44E463550E1FCC9")
+    public  ArrayAdapter(Context context, int resource, int textViewResourceId, List<T> objects) {
         init(context, resource, textViewResourceId, objects);
+        addTaint(context.getTaint());
+        addTaint(resource);
+        addTaint(textViewResourceId);
+        addTaint(objects.getTaint());
         // ---------- Original Method ----------
         //init(context, resource, textViewResourceId, objects);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.271 -0400", hash_original_method = "576CB9C40229B2A1A68C443644828160", hash_generated_method = "B254EB887DDFDBE37BF47AA00DA0BEC8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.699 -0400", hash_original_method = "576CB9C40229B2A1A68C443644828160", hash_generated_method = "8CDA1AC8044C317C7FED82724EC47E36")
     public void add(T object) {
-        dsTaint.addTaint(object.dsTaint);
         {
             {
                 mOriginalValues.add(object);
@@ -117,6 +129,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
             } //End block
         } //End block
         notifyDataSetChanged();
+        addTaint(object.getTaint());
         // ---------- Original Method ----------
         //synchronized (mLock) {
             //if (mOriginalValues != null) {
@@ -129,10 +142,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.272 -0400", hash_original_method = "2106A171487E5CA0624DE157360DB991", hash_generated_method = "E5AD9E6948855E22FED2237D6BD1E51A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.700 -0400", hash_original_method = "2106A171487E5CA0624DE157360DB991", hash_generated_method = "CF98F411F6285DDABB58FF08AC251254")
     public void addAll(Collection<? extends T> collection) {
-        dsTaint.addTaint(collection.dsTaint);
         {
             {
                 mOriginalValues.addAll(collection);
@@ -142,6 +153,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
             } //End block
         } //End block
         notifyDataSetChanged();
+        addTaint(collection.getTaint());
         // ---------- Original Method ----------
         //synchronized (mLock) {
             //if (mOriginalValues != null) {
@@ -154,10 +166,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.272 -0400", hash_original_method = "0FB4566239B43452682D3C6768E6D3AE", hash_generated_method = "81C86894E25FE3762F9C2989293C5317")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.701 -0400", hash_original_method = "0FB4566239B43452682D3C6768E6D3AE", hash_generated_method = "E56FBEBA6DC79C25271EF392D862B306")
     public void addAll(T ... items) {
-        dsTaint.addTaint(items[0].dsTaint);
         {
             {
                 Collections.addAll(mOriginalValues, items);
@@ -167,6 +177,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
             } //End block
         } //End block
         notifyDataSetChanged();
+        addTaint(items[0].getTaint());
         // ---------- Original Method ----------
         //synchronized (mLock) {
             //if (mOriginalValues != null) {
@@ -179,11 +190,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.272 -0400", hash_original_method = "E6733B2C388AB0385CFE6D2E53E92DC8", hash_generated_method = "7F6C245B22123D358097B03EBCFBDC1A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.702 -0400", hash_original_method = "E6733B2C388AB0385CFE6D2E53E92DC8", hash_generated_method = "9615234190F7120EC8E7DBAD9DFB581B")
     public void insert(T object, int index) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(object.dsTaint);
         {
             {
                 mOriginalValues.add(index, object);
@@ -193,6 +201,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
             } //End block
         } //End block
         notifyDataSetChanged();
+        addTaint(object.getTaint());
+        addTaint(index);
         // ---------- Original Method ----------
         //synchronized (mLock) {
             //if (mOriginalValues != null) {
@@ -205,10 +215,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.272 -0400", hash_original_method = "6A184D6E0EB34E61EA380878C12E3D42", hash_generated_method = "1E6001E649EFF61005C196980787265D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.705 -0400", hash_original_method = "6A184D6E0EB34E61EA380878C12E3D42", hash_generated_method = "2AA98E3C5E5CBD374AEDEEFA87F2631C")
     public void remove(T object) {
-        dsTaint.addTaint(object.dsTaint);
         {
             {
                 mOriginalValues.remove(object);
@@ -218,6 +226,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
             } //End block
         } //End block
         notifyDataSetChanged();
+        addTaint(object.getTaint());
         // ---------- Original Method ----------
         //synchronized (mLock) {
             //if (mOriginalValues != null) {
@@ -230,8 +239,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.273 -0400", hash_original_method = "E80E28672DD45A1486192C70E40EF7F5", hash_generated_method = "D0EE9DB86B4184AD54D74223A6563EBD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.705 -0400", hash_original_method = "E80E28672DD45A1486192C70E40EF7F5", hash_generated_method = "D0EE9DB86B4184AD54D74223A6563EBD")
     public void clear() {
         {
             {
@@ -254,10 +262,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.273 -0400", hash_original_method = "56420943E8AF9990310F4859FACB8646", hash_generated_method = "06850C8AF58D240676E71B0B2EB7F15D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.714 -0400", hash_original_method = "56420943E8AF9990310F4859FACB8646", hash_generated_method = "A672839546E7A7C943E3A0A2FD28A1E1")
     public void sort(Comparator<? super T> comparator) {
-        dsTaint.addTaint(comparator.dsTaint);
         {
             {
                 Collections.sort(mOriginalValues, comparator);
@@ -267,6 +273,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
             } //End block
         } //End block
         notifyDataSetChanged();
+        addTaint(comparator.getTaint());
         // ---------- Original Method ----------
         //synchronized (mLock) {
             //if (mOriginalValues != null) {
@@ -279,8 +286,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.273 -0400", hash_original_method = "4B6963AC4824E23107C3535DF32052A8", hash_generated_method = "B498C1B15F4E1C97F48F52763590B81C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.719 -0400", hash_original_method = "4B6963AC4824E23107C3535DF32052A8", hash_generated_method = "B498C1B15F4E1C97F48F52763590B81C")
     @Override
     public void notifyDataSetChanged() {
         super.notifyDataSetChanged();
@@ -291,24 +297,21 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.274 -0400", hash_original_method = "B014C1A32626DBADC83EC827393C5854", hash_generated_method = "5A7AAA1E8E8A1ADDDA24BF901E930714")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.729 -0400", hash_original_method = "B014C1A32626DBADC83EC827393C5854", hash_generated_method = "DF16B68FF23EAD56FA4255B3D48770B3")
     public void setNotifyOnChange(boolean notifyOnChange) {
-        dsTaint.addTaint(notifyOnChange);
+        mNotifyOnChange = notifyOnChange;
         // ---------- Original Method ----------
         //mNotifyOnChange = notifyOnChange;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.274 -0400", hash_original_method = "0AB52E86A6B570420A2DD21D48564743", hash_generated_method = "D19DD457FB514A9CBD7D121F06EE3660")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.731 -0400", hash_original_method = "0AB52E86A6B570420A2DD21D48564743", hash_generated_method = "2E9BCD700482CBFCE630F7DA8D860DD7")
     private void init(Context context, int resource, int textViewResourceId, List<T> objects) {
-        dsTaint.addTaint(textViewResourceId);
-        dsTaint.addTaint(resource);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(objects.dsTaint);
+        mContext = context;
         mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mResource = mDropDownResource = resource;
+        mObjects = objects;
+        mFieldId = textViewResourceId;
         // ---------- Original Method ----------
         //mContext = context;
         //mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -318,78 +321,78 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.274 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "DFA42A6C39C27C217BA4B1F8A6817BD5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.732 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "E01A1744349FAAC86386651430F6C7E3")
     public Context getContext() {
-        return (Context)dsTaint.getTaint();
+        Context varB4EAC82CA7396A68D541C85D26508E83_60802596 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_60802596 = mContext;
+        varB4EAC82CA7396A68D541C85D26508E83_60802596.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_60802596;
         // ---------- Original Method ----------
         //return mContext;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.274 -0400", hash_original_method = "4A653ADD34C98191FCFB37B57CB3ED83", hash_generated_method = "D093F737DE0A10BCE562ED6235DE2920")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.736 -0400", hash_original_method = "4A653ADD34C98191FCFB37B57CB3ED83", hash_generated_method = "B965D1959A89060428F05F784D8AA9C7")
     public int getCount() {
-        int var5ADE4B4DEF5A0C302073793E67A9CF7D_1162062985 = (mObjects.size());
-        return dsTaint.getTaintInt();
+        int var5ADE4B4DEF5A0C302073793E67A9CF7D_583523564 = (mObjects.size());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012069569 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012069569;
         // ---------- Original Method ----------
         //return mObjects.size();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.275 -0400", hash_original_method = "88739C4EC6C6A6692FBDE51909D97703", hash_generated_method = "B2C7620DE9FCCEE25BF9103A8D549293")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.737 -0400", hash_original_method = "88739C4EC6C6A6692FBDE51909D97703", hash_generated_method = "496AD9AAB0E0923FB2606694F75FBA16")
     public T getItem(int position) {
-        dsTaint.addTaint(position);
-        T var543EEB610DC74386B0ACAC0C11A20DD4_1552151026 = (mObjects.get(position));
-        return (T)dsTaint.getTaint();
+        T varB4EAC82CA7396A68D541C85D26508E83_2091308279 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2091308279 = mObjects.get(position);
+        addTaint(position);
+        varB4EAC82CA7396A68D541C85D26508E83_2091308279.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2091308279;
         // ---------- Original Method ----------
         //return mObjects.get(position);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.275 -0400", hash_original_method = "4B52B65CCBAD37C22D6FCF1BE4A30381", hash_generated_method = "EABAF7E46F4CBD403BB32005A60A2DC4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.737 -0400", hash_original_method = "4B52B65CCBAD37C22D6FCF1BE4A30381", hash_generated_method = "74BB86248645046D4E03465DFAFBC137")
     public int getPosition(T item) {
-        dsTaint.addTaint(item.dsTaint);
-        int varD5AAEE2CF798CCCE08D67049B6E97450_829940763 = (mObjects.indexOf(item));
-        return dsTaint.getTaintInt();
+        int varD5AAEE2CF798CCCE08D67049B6E97450_1946358429 = (mObjects.indexOf(item));
+        addTaint(item.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2018021337 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2018021337;
         // ---------- Original Method ----------
         //return mObjects.indexOf(item);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.275 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "AA5DF335B2BC02EEAA6ECE822AE11A88")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.755 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "0AB5B15E1AAA3324BE603BC70ADE39E7")
     public long getItemId(int position) {
-        dsTaint.addTaint(position);
-        return dsTaint.getTaintLong();
+        addTaint(position);
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_362775006 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_362775006;
         // ---------- Original Method ----------
         //return position;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.275 -0400", hash_original_method = "180EEF863853B86A02E5E476168E516D", hash_generated_method = "D6D4B7C803BB873A9CD43A73F6710479")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.756 -0400", hash_original_method = "180EEF863853B86A02E5E476168E516D", hash_generated_method = "E3245C8BBDDF55AF4398CD392D9BC695")
     public View getView(int position, View convertView, ViewGroup parent) {
-        dsTaint.addTaint(position);
-        dsTaint.addTaint(parent.dsTaint);
-        dsTaint.addTaint(convertView.dsTaint);
-        View var1D4B27E24C6D471FAD6504E7C2A036BF_208818094 = (createViewFromResource(position, convertView, parent, mResource));
-        return (View)dsTaint.getTaint();
+        View varB4EAC82CA7396A68D541C85D26508E83_753052811 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_753052811 = createViewFromResource(position, convertView, parent, mResource);
+        addTaint(position);
+        addTaint(convertView.getTaint());
+        addTaint(parent.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_753052811.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_753052811;
         // ---------- Original Method ----------
         //return createViewFromResource(position, convertView, parent, mResource);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.276 -0400", hash_original_method = "86812A0CF4501D7696F9CF0CE2E4D2EB", hash_generated_method = "ADF4CCCEA7054CBB8FBD89E438FDC3D9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.757 -0400", hash_original_method = "86812A0CF4501D7696F9CF0CE2E4D2EB", hash_generated_method = "E662D5DF1B28EDE6D29EBA001029C3BC")
     private View createViewFromResource(int position, View convertView, ViewGroup parent,
             int resource) {
-        dsTaint.addTaint(position);
-        dsTaint.addTaint(resource);
-        dsTaint.addTaint(parent.dsTaint);
-        dsTaint.addTaint(convertView.dsTaint);
+        View varB4EAC82CA7396A68D541C85D26508E83_1346543977 = null; //Variable for return #1
         View view;
         TextView text;
         {
@@ -420,30 +423,36 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         {
             text.setText(item.toString());
         } //End block
-        return (View)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1346543977 = view;
+        addTaint(position);
+        addTaint(convertView.getTaint());
+        addTaint(parent.getTaint());
+        addTaint(resource);
+        varB4EAC82CA7396A68D541C85D26508E83_1346543977.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1346543977;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.276 -0400", hash_original_method = "614355FA33E2A17CA6280A34FDBFFDC0", hash_generated_method = "7FE708B12E1446E2E68CB984DD912751")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.762 -0400", hash_original_method = "614355FA33E2A17CA6280A34FDBFFDC0", hash_generated_method = "166D468151E808B5172814612FD9B5A0")
     public void setDropDownViewResource(int resource) {
-        dsTaint.addTaint(resource);
+        this.mDropDownResource = resource;
         // ---------- Original Method ----------
         //this.mDropDownResource = resource;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.276 -0400", hash_original_method = "55A24C3FF57565648C18AD1B34A1D191", hash_generated_method = "4184CDACC1D61BA9BF313F04CB9B2DBA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.762 -0400", hash_original_method = "55A24C3FF57565648C18AD1B34A1D191", hash_generated_method = "046E1C9D7557D1016C879DC7C6A94338")
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        dsTaint.addTaint(position);
-        dsTaint.addTaint(parent.dsTaint);
-        dsTaint.addTaint(convertView.dsTaint);
-        View var61C6E6B1526637B5811D151D53ADF284_87066794 = (createViewFromResource(position, convertView, parent, mDropDownResource));
-        return (View)dsTaint.getTaint();
+        View varB4EAC82CA7396A68D541C85D26508E83_1265801300 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1265801300 = createViewFromResource(position, convertView, parent, mDropDownResource);
+        addTaint(position);
+        addTaint(convertView.getTaint());
+        addTaint(parent.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1265801300.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1265801300;
         // ---------- Original Method ----------
         //return createViewFromResource(position, convertView, parent, mDropDownResource);
     }
@@ -456,13 +465,15 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.276 -0400", hash_original_method = "93D8CD6E71E9F9D3F84ACCA40E0F811C", hash_generated_method = "99064F35940E136CA8F828ECB2D7F96E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.763 -0400", hash_original_method = "93D8CD6E71E9F9D3F84ACCA40E0F811C", hash_generated_method = "0BD343932DCDEC3E9B7F047DA3F31DFC")
     public Filter getFilter() {
+        Filter varB4EAC82CA7396A68D541C85D26508E83_1469429073 = null; //Variable for return #1
         {
             mFilter = new ArrayFilter();
         } //End block
-        return (Filter)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1469429073 = mFilter;
+        varB4EAC82CA7396A68D541C85D26508E83_1469429073.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1469429073;
         // ---------- Original Method ----------
         //if (mFilter == null) {
             //mFilter = new ArrayFilter();
@@ -473,17 +484,17 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     
     private class ArrayFilter extends Filter {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.276 -0400", hash_original_method = "6A0FCBA1F5DC3ADD41DA0790308549D9", hash_generated_method = "6A0FCBA1F5DC3ADD41DA0790308549D9")
-                public ArrayFilter ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.763 -0400", hash_original_method = "1D9325EC6EFFDE6F3FA421C05C5C6F5E", hash_generated_method = "1D9325EC6EFFDE6F3FA421C05C5C6F5E")
+        public ArrayFilter ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.277 -0400", hash_original_method = "FCA1EE8188101C684A4D4FE1495B8102", hash_generated_method = "FC7A8B9D22A0F30C9881C864A5D8C337")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.781 -0400", hash_original_method = "FCA1EE8188101C684A4D4FE1495B8102", hash_generated_method = "5E7D40EA1E5229F9C9C1060DED5D6D4C")
         @Override
         protected FilterResults performFiltering(CharSequence prefix) {
-            dsTaint.addTaint(prefix);
+            FilterResults varB4EAC82CA7396A68D541C85D26508E83_1343459695 = null; //Variable for return #1
             FilterResults results;
             results = new FilterResults();
             {
@@ -492,7 +503,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
                 } //End block
             } //End block
             {
-                boolean varC2A2CF8A9676195B62AC39EAB2DC8746_301609117 = (prefix == null || prefix.length() == 0);
+                boolean varC2A2CF8A9676195B62AC39EAB2DC8746_1304451125 = (prefix == null || prefix.length() == 0);
                 {
                     ArrayList<T> list;
                     {
@@ -521,7 +532,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
                             String valueText;
                             valueText = value.toString().toLowerCase();
                             {
-                                boolean varC74DE7BC36FAC7675733A0D7891E756D_29931365 = (valueText.startsWith(prefixString));
+                                boolean varC74DE7BC36FAC7675733A0D7891E756D_1732956916 = (valueText.startsWith(prefixString));
                                 {
                                     newValues.add(value);
                                 } //End block
@@ -535,7 +546,7 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
                                         k = 0;
                                         {
                                             {
-                                                boolean var9D40720128ABFAE9C601988D1E59EBD5_1580078622 = (words[k].startsWith(prefixString));
+                                                boolean var9D40720128ABFAE9C601988D1E59EBD5_1670282274 = (words[k].startsWith(prefixString));
                                                 {
                                                     newValues.add(value);
                                                 } //End block
@@ -550,18 +561,18 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
                     results.count = newValues.size();
                 } //End block
             } //End collapsed parenthetic
-            return (FilterResults)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1343459695 = results;
+            addTaint(prefix.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1343459695.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1343459695;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.277 -0400", hash_original_method = "109574F1A4050F52746E85DE95C85548", hash_generated_method = "519EC364868086425372302AC702A35C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:03.782 -0400", hash_original_method = "109574F1A4050F52746E85DE95C85548", hash_generated_method = "BBDFD82DA2894E8E053DE505642A7414")
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            dsTaint.addTaint(results.dsTaint);
-            dsTaint.addTaint(constraint);
             mObjects = (List<T>) results.values;
             {
                 notifyDataSetChanged();
@@ -569,6 +580,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
             {
                 notifyDataSetInvalidated();
             } //End block
+            addTaint(constraint.getTaint());
+            addTaint(results.getTaint());
             // ---------- Original Method ----------
             //mObjects = (List<T>) results.values;
             //if (results.count > 0) {

@@ -18,16 +18,21 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
 public final class ContentInfo {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.792 -0400", hash_original_field = "130F43112BB8A7A7790EBFC08EE9D6AF", hash_generated_field = "282BA3ECCB824558DBD68D7EB102F89D")
+
     private int[] oid;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.793 -0400", hash_original_field = "9A0364B9E99BB480DD25E1F0284C8555", hash_generated_field = "ACC0ED8FE681AE1F8700C32DE8F586D0")
+
     private Object content;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.793 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
+
     private byte[] encoding;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.166 -0400", hash_original_method = "A1561DFF6C4CF564DBA671C7F4145BEE", hash_generated_method = "BB74E144C665A7778478D662723CFB67")
-    @DSModeled(DSC.SAFE)
-    private ContentInfo(int[] oid, Object content, byte[] encoding) {
-        dsTaint.addTaint(content.dsTaint);
-        dsTaint.addTaint(oid[0]);
-        dsTaint.addTaint(encoding[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.795 -0400", hash_original_method = "A1561DFF6C4CF564DBA671C7F4145BEE", hash_generated_method = "9710DC774A2005F19FDD1CDA7D15121F")
+    private  ContentInfo(int[] oid, Object content, byte[] encoding) {
+        this.oid = oid;
+        this.content = content;
+        this.encoding = encoding;
         // ---------- Original Method ----------
         //this.oid = oid;
         //this.content = content;
@@ -35,13 +40,28 @@ public final class ContentInfo {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.166 -0400", hash_original_method = "FEA779456A4B7718EE7D788C42FE9ED3", hash_generated_method = "45EF282F90E5AD4DC29EF2E49A76380C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.796 -0400", hash_original_method = "FEA779456A4B7718EE7D788C42FE9ED3", hash_generated_method = "43DCEAE27A60ABD47C642B0EAA93DA5A")
     public SignedData getSignedData() {
+        SignedData varB4EAC82CA7396A68D541C85D26508E83_951633188 = null; //Variable for return #1
+        SignedData varB4EAC82CA7396A68D541C85D26508E83_1548757044 = null; //Variable for return #2
         {
-            boolean var39A0E72567E8CA5BEA10BAB9AB37B8BD_1714913034 = (Arrays.equals(oid, SIGNED_DATA));
+            boolean var39A0E72567E8CA5BEA10BAB9AB37B8BD_688667782 = (Arrays.equals(oid, SIGNED_DATA));
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_951633188 = (SignedData)content;
+            } //End block
         } //End collapsed parenthetic
-        return (SignedData)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1548757044 = null;
+        SignedData varA7E53CE21691AB073D9660D615818899_645772829; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_645772829 = varB4EAC82CA7396A68D541C85D26508E83_951633188;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_645772829 = varB4EAC82CA7396A68D541C85D26508E83_1548757044;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_645772829.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_645772829;
         // ---------- Original Method ----------
         //if (Arrays.equals(oid, SIGNED_DATA)) {
             //return (SignedData)content;
@@ -50,35 +70,33 @@ public final class ContentInfo {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.166 -0400", hash_original_method = "7EF6AE96CD0AADFF5C056ACE9B248CB2", hash_generated_method = "6B73667F1680CA8373A396F6B91BA612")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.796 -0400", hash_original_method = "7EF6AE96CD0AADFF5C056ACE9B248CB2", hash_generated_method = "CE911498259754F4A1D11825BCC24C0D")
     public Object getContent() {
-        return (Object)dsTaint.getTaint();
+        Object varB4EAC82CA7396A68D541C85D26508E83_1645101074 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1645101074 = content;
+        varB4EAC82CA7396A68D541C85D26508E83_1645101074.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1645101074;
         // ---------- Original Method ----------
         //return content;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.166 -0400", hash_original_method = "47E7DB6049BFBF7F7143C81AA2952707", hash_generated_method = "23B07BD35A7AD222840F40BACA0D7F09")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.809 -0400", hash_original_method = "47E7DB6049BFBF7F7143C81AA2952707", hash_generated_method = "0E5AA1D5E2BD0801A439DE4C6179D9A9")
     public int[] getContentType() {
-        int[] retVal = new int[1];
-        retVal[0] = dsTaint.getTaintInt();
-        return retVal;
+        int[] varB4CCCA26F9DB9189C32F33E82D425CFB_512616589 = {getTaintInt()};
+        return varB4CCCA26F9DB9189C32F33E82D425CFB_512616589;
         // ---------- Original Method ----------
         //return oid;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.166 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "94FDBB09C313C97C9EDC6BBF307FBE8A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.809 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "02F96D3B56470420DEF5116500440909")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
         } //End block
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_937818456 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_937818456;
         // ---------- Original Method ----------
         //if (encoding == null) {
             //encoding = ASN1.encode(this);
@@ -87,10 +105,10 @@ public final class ContentInfo {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.170 -0400", hash_original_method = "E27EF60D80B9BCE694BEF49083131D32", hash_generated_method = "2193F1C3951EA225EC5565346BBC07A9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.845 -0400", hash_original_method = "E27EF60D80B9BCE694BEF49083131D32", hash_generated_method = "919B481850E09FF21B3667214CBBFEF9")
     @Override
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1691006274 = null; //Variable for return #1
         StringBuilder res;
         res = new StringBuilder();
         res.append("==== ContentInfo:");
@@ -109,8 +127,9 @@ public final class ContentInfo {
         } //End block
         res.append("\n== Content End");
         res.append("\n==== ContentInfo End\n");
-        String var3F7A63C0290A7D59CE78DF2F46EB4AAE_641566025 = (res.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1691006274 = res.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1691006274.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1691006274;
         // ---------- Original Method ----------
         //StringBuilder res = new StringBuilder();
         //res.append("==== ContentInfo:");
@@ -130,102 +149,72 @@ public final class ContentInfo {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.845 -0400", hash_original_field = "EC0B0867ECF016032CB3911730FBEC9A", hash_generated_field = "8428484335EE13FC1A9C1DBD7FDC9ECA")
+
     public static final int[] DATA = new int[] {1, 2, 840, 113549, 1, 7, 1};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.845 -0400", hash_original_field = "B251F00B738E5A8881347B5C1C958A0C", hash_generated_field = "FA9C6531E77BBE821FE5DE965089B375")
+
     public static final int[] SIGNED_DATA = new int[] {1, 2, 840, 113549, 1, 7, 2};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.845 -0400", hash_original_field = "43396B3BE64AAC4ADEFCE307B0DFAA0C", hash_generated_field = "24F7B5F6BDB9FBC78DB44F121268E140")
+
     public static final int[] ENVELOPED_DATA = new int[] {1, 2, 840, 113549, 1, 7, 3};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.845 -0400", hash_original_field = "2A77812730AB5F116058C7041138617B", hash_generated_field = "38ED391A43FCCD8D6A3947862294E2EC")
+
     public static final int[] SIGNED_AND_ENVELOPED_DATA = new int[] {1, 2, 840, 113549, 1, 7, 4};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.845 -0400", hash_original_field = "7BC9A46C38EDFFBD6DAE766D090376AD", hash_generated_field = "4AD29642C1C078CDFAC13F47A3E7D115")
+
     public static final int[] DIGESTED_DATA = new int[] {1, 2, 840, 113549, 1, 7, 5};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.845 -0400", hash_original_field = "65669469762ABBDD8810B8D46F8790D0", hash_generated_field = "B1F89B25721EB22E3FF5E0B6E95B1CC0")
+
     public static final int[] ENCRYPTED_DATA = new int[] {1, 2, 840, 113549, 1, 7, 6};
-    public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.845 -0400", hash_original_field = "651ACAACA5E1FB5842E2299B54939FE0", hash_generated_field = "F23B93D964AE7E1B216DBFAE49082621")
+
+    public static final ASN1Sequence ASN1 =
+        new ASN1Sequence(new ASN1Type[] {
                 ASN1Oid.getInstance(),
                 new ASN1Explicit(0, ASN1Any.getInstance())
-                }) {        {
+                })  {
+        {
             setOptional(1); 
         }
-        
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.170 -0400", hash_original_method = "DE814BC7A3ADD369EC16BC4834AE1E64", hash_generated_method = "63F122975F1F20927EF75EFB4F5119F1")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        @Override
-        protected void getValues(Object object, Object[] values) {
-            dsTaint.addTaint(values[0].dsTaint);
-            dsTaint.addTaint(object.dsTaint);
-            ContentInfo ci;
-            ci = (ContentInfo) object;
+
+        @Override protected void getValues(Object object, Object[] values) {
+            ContentInfo ci = (ContentInfo) object;
             values[0] = ci.oid;
-            {
-                {
-                    boolean var7B5F396FBF63E2FD3691C916106DD7DC_310053266 = (Arrays.equals(ci.oid, DATA));
-                    {
-                        {
-                            values[1] =
+            if (ci.content != null) {
+                if (Arrays.equals(ci.oid, DATA)) {
+                    if (ci.content != null) {
+                        values[1] =
                             ASN1OctetString.getInstance().encode(ci.content);
-                        } //End block
-                    } //End block
-                    {
-                        values[1] = SignedData.ASN1.encode(ci.content);
-                    } //End block
-                    {
-                        values[1] = ci.content;
-                    } //End block
-                } //End collapsed parenthetic
-            } //End block
-            // ---------- Original Method ----------
-            //ContentInfo ci = (ContentInfo) object;
-            //values[0] = ci.oid;
-            //if (ci.content != null) {
-                //if (Arrays.equals(ci.oid, DATA)) {
-                    //if (ci.content != null) {
-                        //values[1] =
-                            //ASN1OctetString.getInstance().encode(ci.content);
-                    //}
-                //} else if (ci.content instanceof SignedData) {
-                    //values[1] = SignedData.ASN1.encode(ci.content);
-                //} else {
-                    //values[1] = ci.content;
-                //}
-            //}
+                    }
+                } else if (ci.content instanceof SignedData) {
+                    values[1] = SignedData.ASN1.encode(ci.content);
+                } else {
+                    values[1] = ci.content;
+                }
+            }
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.171 -0400", hash_original_method = "C3EAC210669809D55F8F3014F8B268F8", hash_generated_method = "FC4386E6104FD865EAE02C9EC2D53667")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        @Override
-        protected Object getDecodedObject(BerInputStream in) throws IOException {
-            dsTaint.addTaint(in.dsTaint);
-            Object[] values;
-            values = (Object[]) in.content;
-            int[] oid;
-            oid = (int[]) values[0];
-            {
-                boolean var28ECC7BECFBC4E132BA25B25BB1C368A_134839393 = (Arrays.equals(oid, DATA));
-                {
-                    {
-                        Object varD09F70C08277AC19D85715B28EB2C902_1596817797 = (new ContentInfo(oid,
+        @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
+            Object[] values = (Object[]) in.content;
+            int[] oid = (int[]) values[0];
+            if (Arrays.equals(oid, DATA)) {
+                if (values[1] != null) {
+                    return new ContentInfo(oid,
                             ASN1OctetString.getInstance().decode((byte[])values[1]),
-                            in.getEncoded()));
-                    } //End block
-                    {
-                        Object var226995A98F453B65840DD85F16F1BA8B_1009628866 = (new ContentInfo((int[])values[0], null,
-                            in.getEncoded()));
-                    } //End block
-                } //End block
-            } //End collapsed parenthetic
-            {
-                boolean varF40B0D033986B8626C48A2FA6A8824EA_545613397 = (Arrays.equals(oid, SIGNED_DATA));
-                {
-                    Object var1FB0079ADE0EA206ED71736B3B09B99D_1992613880 = (new ContentInfo((int[])values[0],
+                            in.getEncoded());
+                }  else {
+                    return new ContentInfo((int[])values[0], null,
+                            in.getEncoded());
+                }
+            }
+            if (Arrays.equals(oid, SIGNED_DATA)) {
+                return new ContentInfo((int[])values[0],
                         SignedData.ASN1.decode((byte[])values[1]),
-                        in.getEncoded()));
-                } //End block
-            } //End collapsed parenthetic
-            Object var3E65F3A1585AACC9DD099CA157AB8924_1139972542 = (new ContentInfo((int[]) values[0], values[1], in.getEncoded()));
-            return (Object)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                        in.getEncoded());
+            }
+            return new ContentInfo((int[]) values[0], values[1], in.getEncoded());
         }
-
-        
-}; //Transformed anonymous class
+   };
 }
 

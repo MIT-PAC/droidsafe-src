@@ -10,22 +10,22 @@ import java.util.Iterator;
 
 public class NoSuchMethodError extends IncompatibleClassChangeError {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.895 -0400", hash_original_method = "80EBD198F916FEE348D274437586B5BC", hash_generated_method = "47FDE86C35A2EDC474B42FD4951F4771")
-    @DSModeled(DSC.SAFE)
-    public NoSuchMethodError() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.901 -0400", hash_original_method = "80EBD198F916FEE348D274437586B5BC", hash_generated_method = "47FDE86C35A2EDC474B42FD4951F4771")
+    public  NoSuchMethodError() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.895 -0400", hash_original_method = "4CC31AAD9CD08413E75D886E5A5CF2D3", hash_generated_method = "F86EC1DD3E899214CFA621D7EBC5A91F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public NoSuchMethodError(String detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.901 -0400", hash_original_method = "4CC31AAD9CD08413E75D886E5A5CF2D3", hash_generated_method = "F70A06E2B6A2049C050C4CF6BC542578")
+    public  NoSuchMethodError(String detailMessage) {
         super(detailMessage);
-        dsTaint.addTaint(detailMessage);
+        addTaint(detailMessage.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = -3765521442372831335L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.902 -0400", hash_original_field = "78428C3BD4379F8D5042ABC27C7729E6", hash_generated_field = "24B91EDA63CEEB3BF5C41FD30A987D17")
+
+    private static long serialVersionUID = -3765521442372831335L;
 }
 

@@ -10,46 +10,39 @@ import java.util.Iterator;
 import android.os.Message;
 import android.util.Log;
 import com.android.internal.telephony.DataConnection;
-import com.android.internal.telephony.DataConnectionTracker;
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.RILConstants;
 import com.android.internal.telephony.RetryManager;
 
 public class CdmaDataConnection extends DataConnection {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.383 -0400", hash_original_method = "F27C28FDFB283A8ADA0995D15025337B", hash_generated_method = "59886543D2258CE0293DF23B1EC04EBC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private CdmaDataConnection(CDMAPhone phone, String name, int id, RetryManager rm,
-            DataConnectionTracker dct) {
-        super(phone, name, id, rm, dct);
-        dsTaint.addTaint(id);
-        dsTaint.addTaint(phone.dsTaint);
-        dsTaint.addTaint(rm.dsTaint);
-        dsTaint.addTaint(dct.dsTaint);
-        dsTaint.addTaint(name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.377 -0400", hash_original_method = "90BEBC84F90039055B8CE59477380674", hash_generated_method = "CFCAA3A7DAB097D73558B18A0E89B29E")
+    private  CdmaDataConnection(CDMAPhone phone, String name, int id, RetryManager rm) {
+        super(phone, name, id, rm);
+        addTaint(phone.getTaint());
+        addTaint(name.getTaint());
+        addTaint(id);
+        addTaint(rm.getTaint());
         // ---------- Original Method ----------
     }
 
     
-        static CdmaDataConnection makeDataConnection(CDMAPhone phone, int id, RetryManager rm,
-            DataConnectionTracker dct) {
+        static CdmaDataConnection makeDataConnection(CDMAPhone phone, int id, RetryManager rm) {
         synchronized (mCountLock) {
             mCount += 1;
         }
         CdmaDataConnection cdmaDc = new CdmaDataConnection(phone, "CdmaDC-" + mCount,
-                id, rm, dct);
+                id, rm);
         cdmaDc.start();
         if (DBG) cdmaDc.log("Made " + cdmaDc.getName());
         return cdmaDc;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.384 -0400", hash_original_method = "1E0A08AF35615E9E10187C3143DD41F0", hash_generated_method = "3269C9B5C81C1AF5C8A4651BF314CE0B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.378 -0400", hash_original_method = "1E0A08AF35615E9E10187C3143DD41F0", hash_generated_method = "3E651FBBC2B7026960779FD37E76F232")
     @Override
     protected void onConnect(ConnectionParams cp) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(cp.dsTaint);
         log("CdmaDataConnection Connecting...");
         mApn = cp.apn;
         createTime = -1;
@@ -57,7 +50,7 @@ public class CdmaDataConnection extends DataConnection {
         lastFailCause = FailCause.NONE;
         int dataProfile;
         {
-            boolean var74177C9596C4964B7FDF6CB920D0B850_1327697862 = ((cp.apn != null) && (cp.apn.types.length > 0) && (cp.apn.types[0] != null) &&
+            boolean var74177C9596C4964B7FDF6CB920D0B850_162934645 = ((cp.apn != null) && (cp.apn.types.length > 0) && (cp.apn.types[0] != null) &&
                 (cp.apn.types[0].equals(Phone.APN_TYPE_DUN)));
             {
                 log("CdmaDataConnection using DUN");
@@ -76,35 +69,37 @@ public class CdmaDataConnection extends DataConnection {
                 null, null, null,
                 Integer.toString(RILConstants.SETUP_DATA_AUTH_PAP_CHAP),
                 RILConstants.SETUP_DATA_PROTOCOL_IP, msg);
+        addTaint(cp.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.385 -0400", hash_original_method = "3581014A48A474B85EE6C8602B0DDEFE", hash_generated_method = "4EFC3FAE5A0E1CBABDC3D6325BAB75B5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.379 -0400", hash_original_method = "3581014A48A474B85EE6C8602B0DDEFE", hash_generated_method = "C0377B9305104D989B14D52935341592")
     @Override
     public String toString() {
-        String var09F0BA1AE7EB600D74E5E177CB943B21_881737730 = ("State=" + getCurrentState().getName() + " create=" + createTime + " lastFail="
-                + lastFailTime + " lastFasilCause=" + lastFailCause);
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_694114207 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_694114207 = "State=" + getCurrentState().getName() + " create=" + createTime + " lastFail="
+                + lastFailTime + " lastFasilCause=" + lastFailCause;
+        varB4EAC82CA7396A68D541C85D26508E83_694114207.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_694114207;
         // ---------- Original Method ----------
         //return "State=" + getCurrentState().getName() + " create=" + createTime + " lastFail="
                 //+ lastFailTime + " lastFasilCause=" + lastFailCause;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.385 -0400", hash_original_method = "78F02BF6B20F01750FE4BD6062BC9879", hash_generated_method = "4A8B74A58093B3C9D3400E25FB4A6AC6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.382 -0400", hash_original_method = "78F02BF6B20F01750FE4BD6062BC9879", hash_generated_method = "1F676E254252A0FFE5B870698182BFB8")
     @Override
     protected boolean isDnsOk(String[] domainNameServers) {
-        dsTaint.addTaint(domainNameServers[0]);
         {
-            boolean var8C06B76FEAE693BB0F1D1CC645E9B66E_1669287402 = (NULL_IP.equals(domainNameServers[0])
+            boolean var8C06B76FEAE693BB0F1D1CC645E9B66E_304002585 = (NULL_IP.equals(domainNameServers[0])
                 && NULL_IP.equals(domainNameServers[1])
                 && !phone.isDnsCheckDisabled());
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(domainNameServers[0].getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_497154723 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_497154723;
         // ---------- Original Method ----------
         //if (NULL_IP.equals(domainNameServers[0])
                 //&& NULL_IP.equals(domainNameServers[1])
@@ -116,17 +111,18 @@ public class CdmaDataConnection extends DataConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.385 -0400", hash_original_method = "E3E03901000B497B61536E572BF51316", hash_generated_method = "A7A846DA1C21C7C7BCF2BA2B51000A14")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.383 -0400", hash_original_method = "E3E03901000B497B61536E572BF51316", hash_generated_method = "EB8C75A46F3714E41BD20C8651699298")
     @Override
     protected void log(String s) {
-        dsTaint.addTaint(s);
         Log.d(LOG_TAG, "[" + getName() + "] " + s);
+        addTaint(s.getTaint());
         // ---------- Original Method ----------
         //Log.d(LOG_TAG, "[" + getName() + "] " + s);
     }
 
     
-    private static final String LOG_TAG = "CDMA";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.386 -0400", hash_original_field = "951C150E6D062E6AED2C45BB9B756185", hash_generated_field = "3180393FBDFF3695C5B6689D6A3679D8")
+
+    private static String LOG_TAG = "CDMA";
 }
 

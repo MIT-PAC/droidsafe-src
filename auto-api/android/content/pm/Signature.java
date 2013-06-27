@@ -18,25 +18,29 @@ import java.security.cert.CertificateFactory;
 import java.util.Arrays;
 
 public class Signature implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.240 -0400", hash_original_field = "FC75508A279D3A4B73839B9A1CF5EE55", hash_generated_field = "82FF487F3BC72CD61B5A92D15C282FF7")
+
     private byte[] mSignature;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.250 -0400", hash_original_field = "D1324C907E3C733CA9E17C8F90836F79", hash_generated_field = "A977E573260D0E2786C71BC0961278A2")
+
     private int mHashCode;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.250 -0400", hash_original_field = "DA3577697B0DD709AF13F3080CF0FF14", hash_generated_field = "1E26145EC834378C0A9DBC88E0224A55")
+
     private boolean mHaveHashCode;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.250 -0400", hash_original_field = "1AFB5CB7071835101FAF1C82BAB11F44", hash_generated_field = "1DA2E56EBB947D41BB50077BEA325ECF")
+
     private SoftReference<String> mStringRef;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.973 -0400", hash_original_method = "D6836B125607EB452687B13BDE6808A1", hash_generated_method = "7ABB01D9845D572B894AFC033D3FC924")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Signature(byte[] signature) {
-        dsTaint.addTaint(signature[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.252 -0400", hash_original_method = "D6836B125607EB452687B13BDE6808A1", hash_generated_method = "35DC787169E2B15A0B726B2232D59558")
+    public  Signature(byte[] signature) {
         mSignature = signature.clone();
         // ---------- Original Method ----------
         //mSignature = signature.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.973 -0400", hash_original_method = "D3C2556D1F2D5F06D4836CF4CB37FB62", hash_generated_method = "E2B528320C9F8107B4BE78F91CBD4FA6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Signature(String text) {
-        dsTaint.addTaint(text);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.263 -0400", hash_original_method = "D3C2556D1F2D5F06D4836CF4CB37FB62", hash_generated_method = "80FAC6B9C90D0387C5F7457BB3CE39EB")
+    public  Signature(String text) {
         byte[] input;
         input = text.getBytes();
         int N;
@@ -60,6 +64,7 @@ public class Signature implements Parcelable {
             } //End block
         } //End collapsed parenthetic
         mSignature = sig;
+        addTaint(text.getTaint());
         // ---------- Original Method ----------
         //final byte[] input = text.getBytes();
         //final int N = input.length;
@@ -77,10 +82,8 @@ public class Signature implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.974 -0400", hash_original_method = "BBC65E3379EE4CCA92F27F7F3813E8E5", hash_generated_method = "F39AFB2EA6E0D628DD581DEA20C2C263")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private Signature(Parcel source) {
-        dsTaint.addTaint(source.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.266 -0400", hash_original_method = "BBC65E3379EE4CCA92F27F7F3813E8E5", hash_generated_method = "35AE48A1EC65609E4DC5E52450D21B19")
+    private  Signature(Parcel source) {
         mSignature = source.createByteArray();
         // ---------- Original Method ----------
         //mSignature = source.createByteArray();
@@ -100,23 +103,18 @@ public class Signature implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.974 -0400", hash_original_method = "01DD3741CD8E2948231CA6DA5A86A75B", hash_generated_method = "6BD483063A9E6ECD2C7B4F20C2953E5D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.276 -0400", hash_original_method = "01DD3741CD8E2948231CA6DA5A86A75B", hash_generated_method = "9018BC66E155075805EFF257313F8380")
     public char[] toChars() {
-        char[] varA4185AFF435A5F9E12F848CF267BEF10_361677796 = (toChars(null, null));
-        char[] retVal = new char[1];
-        retVal[0] = dsTaint.getTaintString().charAt(0);
-        return retVal;
+        char[] varA4185AFF435A5F9E12F848CF267BEF10_1409335811 = (toChars(null, null));
+        char[] var50607924ABD4C17119BAF3A1CE41C0EC_462496942 = {getTaintChar()};
+        return var50607924ABD4C17119BAF3A1CE41C0EC_462496942;
         // ---------- Original Method ----------
         //return toChars(null, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.975 -0400", hash_original_method = "AD9B978BF103416C8AF045B7D5E010A1", hash_generated_method = "253DF2C9B89B0C538CBBCB90CF8EE201")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.316 -0400", hash_original_method = "AD9B978BF103416C8AF045B7D5E010A1", hash_generated_method = "F87F1C0EC861DA758CB65D026DF63C7B")
     public char[] toChars(char[] existingArray, int[] outLen) {
-        dsTaint.addTaint(outLen[0]);
-        dsTaint.addTaint(existingArray[0]);
         byte[] sig;
         sig = mSignature;
         int N;
@@ -140,9 +138,10 @@ public class Signature implements Parcelable {
             } //End block
         } //End collapsed parenthetic
         outLen[0] = N;
-        char[] retVal = new char[1];
-        retVal[0] = dsTaint.getTaintString().charAt(0);
-        return retVal;
+        addTaint(existingArray[0]);
+        addTaint(outLen[0]);
+        char[] var50607924ABD4C17119BAF3A1CE41C0EC_402689739 = {getTaintChar()};
+        return var50607924ABD4C17119BAF3A1CE41C0EC_402689739;
         // ---------- Original Method ----------
         //byte[] sig = mSignature;
         //final int N = sig.length;
@@ -161,15 +160,30 @@ public class Signature implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.975 -0400", hash_original_method = "29DBF4766A3C463CDC6A362C590D645B", hash_generated_method = "502516074E6561E7F9A90293DEC02EAC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.324 -0400", hash_original_method = "29DBF4766A3C463CDC6A362C590D645B", hash_generated_method = "F9E6313563CBA0A54EC18CAE2D8286F1")
     public String toCharsString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_2020411310 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1428021730 = null; //Variable for return #2
         String str;
         str = null;
         str = mStringRef.get();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_2020411310 = str;
+        } //End block
         str = new String(toChars());
         mStringRef = new SoftReference<String>(str);
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1428021730 = str;
+        String varA7E53CE21691AB073D9660D615818899_204387492; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_204387492 = varB4EAC82CA7396A68D541C85D26508E83_2020411310;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_204387492 = varB4EAC82CA7396A68D541C85D26508E83_1428021730;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_204387492.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_204387492;
         // ---------- Original Method ----------
         //String str = mStringRef == null ? null : mStringRef.get();
         //if (str != null) {
@@ -181,15 +195,13 @@ public class Signature implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.975 -0400", hash_original_method = "4CD6431E4EA3D105FB97D345441783A7", hash_generated_method = "EEF5220A22BD5B5B0E7DFD2E23C08183")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.339 -0400", hash_original_method = "4CD6431E4EA3D105FB97D345441783A7", hash_generated_method = "831813293B12C653536A0A94FEA19F49")
     public byte[] toByteArray() {
         byte[] bytes;
         bytes = new byte[mSignature.length];
         System.arraycopy(mSignature, 0, bytes, 0, mSignature.length);
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1506028879 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1506028879;
         // ---------- Original Method ----------
         //byte[] bytes = new byte[mSignature.length];
         //System.arraycopy(mSignature, 0, bytes, 0, mSignature.length);
@@ -197,17 +209,18 @@ public class Signature implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.976 -0400", hash_original_method = "E5DE629FEFDBE513EC2140BEFF8592A6", hash_generated_method = "BD09D2D3E40F30943163F60DFD50E2C5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.340 -0400", hash_original_method = "E5DE629FEFDBE513EC2140BEFF8592A6", hash_generated_method = "DE550EB8AA8559A965549DF75E0ABACF")
     public PublicKey getPublicKey() throws CertificateException {
+        PublicKey varB4EAC82CA7396A68D541C85D26508E83_750279936 = null; //Variable for return #1
         CertificateFactory certFactory;
         certFactory = CertificateFactory.getInstance("X.509");
         ByteArrayInputStream bais;
         bais = new ByteArrayInputStream(mSignature);
         Certificate cert;
         cert = certFactory.generateCertificate(bais);
-        PublicKey var0EF176211D141EA8A03A77FB9CD669E5_695903360 = (cert.getPublicKey());
-        return (PublicKey)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_750279936 = cert.getPublicKey();
+        varB4EAC82CA7396A68D541C85D26508E83_750279936.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_750279936;
         // ---------- Original Method ----------
         //final CertificateFactory certFactory = CertificateFactory.getInstance("X.509");
         //final ByteArrayInputStream bais = new ByteArrayInputStream(mSignature);
@@ -216,22 +229,22 @@ public class Signature implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.976 -0400", hash_original_method = "F079A32CA15CD362613DEDB149309CFC", hash_generated_method = "79A783C41BAE711B1532DAEDAA1BC828")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.341 -0400", hash_original_method = "F079A32CA15CD362613DEDB149309CFC", hash_generated_method = "674565E9B173725E072B30A81D5F1C84")
     @Override
     public boolean equals(Object obj) {
-        dsTaint.addTaint(obj.dsTaint);
         try 
         {
             {
                 Signature other;
                 other = (Signature)obj;
-                boolean var93A7D6AE339F832ADAAF27B7F6ADCAAB_1463705162 = (this == other || Arrays.equals(mSignature, other.mSignature));
+                boolean var93A7D6AE339F832ADAAF27B7F6ADCAAB_1932781356 = (this == other || Arrays.equals(mSignature, other.mSignature));
             } //End block
         } //End block
         catch (ClassCastException e)
         { }
-        return dsTaint.getTaintBoolean();
+        addTaint(obj.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_175222090 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_175222090;
         // ---------- Original Method ----------
         //try {
             //if (obj != null) {
@@ -244,13 +257,13 @@ public class Signature implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.976 -0400", hash_original_method = "372447AEF502550B73E14443F4E70970", hash_generated_method = "EA24D37ED178514F14FBAFF31915489B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.345 -0400", hash_original_method = "372447AEF502550B73E14443F4E70970", hash_generated_method = "FA632019E9520F0BA437079C16D08C49")
     @Override
     public int hashCode() {
         mHashCode = Arrays.hashCode(mSignature);
         mHaveHashCode = true;
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_546367197 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_546367197;
         // ---------- Original Method ----------
         //if (mHaveHashCode) {
             //return mHashCode;
@@ -261,49 +274,36 @@ public class Signature implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.976 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.364 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "9F177B6BFBD738C09DB23CFE366AADB7")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_661479677 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_661479677;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.977 -0400", hash_original_method = "0B8B8E5420BBB8BD8CE54CF326578D2C", hash_generated_method = "927D2AE5892E93E637D56A51BD56DAFE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.365 -0400", hash_original_method = "0B8B8E5420BBB8BD8CE54CF326578D2C", hash_generated_method = "F1A0DEAFEEC32F115F05764B8A85FA40")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
-        dsTaint.addTaint(parcelableFlags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeByteArray(mSignature);
+        addTaint(dest.getTaint());
+        addTaint(parcelableFlags);
         // ---------- Original Method ----------
         //dest.writeByteArray(mSignature);
     }
 
     
-    public static final Parcelable.Creator<Signature> CREATOR = new Parcelable.Creator<Signature>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.977 -0400", hash_original_method = "59AB50688ABB8B89A247E93F4C76880C", hash_generated_method = "2335ABE38510F9F63B23ED0956B89E21")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.366 -0400", hash_original_field = "EF6321A08F8C07F931351347C004EC46", hash_generated_field = "D433CA4E2BE6EFC6C045D2BE6C7AFF6B")
+
+    public static final Parcelable.Creator<Signature> CREATOR
+            = new Parcelable.Creator<Signature>() {
         public Signature createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            Signature var56BA3AE71DAEEFAA30CD0531591BFD02_1606504921 = (new Signature(source));
-            return (Signature)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new Signature(source);
+            return new Signature(source);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.977 -0400", hash_original_method = "910E548F13237BE241520EC845542C7B", hash_generated_method = "8B63D3788DBF007CBC4DAF0545A0C137")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public Signature[] newArray(int size) {
-            dsTaint.addTaint(size);
-            Signature[] var58595B1D34FA575816F52D62548F24E1_1332869516 = (new Signature[size]);
-            return (Signature[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new Signature[size];
+            return new Signature[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

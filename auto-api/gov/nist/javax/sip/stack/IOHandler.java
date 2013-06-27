@@ -19,14 +19,18 @@ import javax.net.ssl.HandshakeCompletedListener;
 import javax.net.ssl.SSLSocket;
 
 class IOHandler {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.992 -0400", hash_original_field = "86B49D1C8FD26DA78BB808FB5DDCB721", hash_generated_field = "7C78FF5476489511BDB7D6F9C761D492")
+
     private Semaphore ioSemaphore = new Semaphore(1);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.992 -0400", hash_original_field = "37460D4BF2BA47A13FF9D922C4B14B2E", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
+
     private SipStackImpl sipStack;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.992 -0400", hash_original_field = "8BF3F4CDEE0036CE044C3EC8062F4B25", hash_generated_field = "B68F58F2C322702141148CA8E78DA8DE")
+
     private ConcurrentHashMap<String, Socket> socketTable;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.844 -0400", hash_original_method = "9386B11A19881B80900AAECD631287FD", hash_generated_method = "33DB924DCC7C594FE5C6B161DB956B5A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected IOHandler(SIPTransactionStack sipStack) {
-        dsTaint.addTaint(sipStack.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.001 -0400", hash_original_method = "9386B11A19881B80900AAECD631287FD", hash_generated_method = "30C5DFDA3ACE98208A6E4D447958B5B9")
+    protected  IOHandler(SIPTransactionStack sipStack) {
         this.sipStack = (SipStackImpl) sipStack;
         this.socketTable = new ConcurrentHashMap<String, Socket>();
         // ---------- Original Method ----------
@@ -40,44 +44,39 @@ class IOHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.845 -0400", hash_original_method = "C27932DA9A29AAAE15A518DF16F6A526", hash_generated_method = "B33EAE09D2969A98E63480E91DFAA40C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.006 -0400", hash_original_method = "C27932DA9A29AAAE15A518DF16F6A526", hash_generated_method = "E9F9D5C006349CBC8EC968B317A469BC")
     protected void putSocket(String key, Socket sock) {
-        dsTaint.addTaint(sock.dsTaint);
-        dsTaint.addTaint(key);
         socketTable.put(key, sock);
+        addTaint(key.getTaint());
+        addTaint(sock.getTaint());
         // ---------- Original Method ----------
         //socketTable.put(key, sock);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.845 -0400", hash_original_method = "89115ADF83703D7A5E1F215A0319659A", hash_generated_method = "4B6F37EFAA4A00D6F45D3DFBA466D9E6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.007 -0400", hash_original_method = "89115ADF83703D7A5E1F215A0319659A", hash_generated_method = "BE5FD594B3E9961099D763FEDAAC1372")
     protected Socket getSocket(String key) {
-        dsTaint.addTaint(key);
-        Socket varEE318964A5ABA3DD86D7AEF4F9CFFC24_1840531862 = ((Socket) socketTable.get(key));
-        return (Socket)dsTaint.getTaint();
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1170787060 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1170787060 = (Socket) socketTable.get(key);
+        addTaint(key.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1170787060.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1170787060;
         // ---------- Original Method ----------
         //return (Socket) socketTable.get(key);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.845 -0400", hash_original_method = "92816C2E9E6D943B13D719E81BC3AA88", hash_generated_method = "15CDBC878C7F3B0425F9AFDB0FCE2C83")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.016 -0400", hash_original_method = "92816C2E9E6D943B13D719E81BC3AA88", hash_generated_method = "C7765CA3E4D3F9731E15ED57EE0F3B45")
     protected void removeSocket(String key) {
-        dsTaint.addTaint(key);
         socketTable.remove(key);
+        addTaint(key.getTaint());
         // ---------- Original Method ----------
         //socketTable.remove(key);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.845 -0400", hash_original_method = "F53BBC08C4AFCA76781E5C2EA0968907", hash_generated_method = "3FF0BC200714AB07493CA14629565938")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.017 -0400", hash_original_method = "F53BBC08C4AFCA76781E5C2EA0968907", hash_generated_method = "7F1BB1BC126C85A98213CD7E0808B26A")
     private void writeChunks(OutputStream outputStream, byte[] bytes, int length) throws IOException {
-        dsTaint.addTaint(bytes[0]);
-        dsTaint.addTaint(outputStream.dsTaint);
-        dsTaint.addTaint(length);
         {
             int chunksize;
             chunksize = 8 * 1024;
@@ -94,6 +93,9 @@ class IOHandler {
             } //End collapsed parenthetic
         } //End block
         outputStream.flush();
+        addTaint(outputStream.getTaint());
+        addTaint(bytes[0]);
+        addTaint(length);
         // ---------- Original Method ----------
         //synchronized (outputStream) {
             //int chunksize = 8 * 1024;
@@ -106,14 +108,10 @@ class IOHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.846 -0400", hash_original_method = "175D748D3B44D56B75F881FF6379A368", hash_generated_method = "F37C2B276DD58A944B72B82DB10C3E64")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.019 -0400", hash_original_method = "175D748D3B44D56B75F881FF6379A368", hash_generated_method = "81FB747F5344F4BF36E148986B8CC846")
     public SocketAddress obtainLocalAddress(InetAddress dst, int dstPort,
             InetAddress localAddress, int localPort) throws IOException {
-        dsTaint.addTaint(localAddress.dsTaint);
-        dsTaint.addTaint(dstPort);
-        dsTaint.addTaint(localPort);
-        dsTaint.addTaint(dst.dsTaint);
+        SocketAddress varB4EAC82CA7396A68D541C85D26508E83_1544806380 = null; //Variable for return #1
         String key;
         key = makeKey(dst, dstPort);
         Socket clientSock;
@@ -123,8 +121,13 @@ class IOHandler {
                     localPort);
             putSocket(key, clientSock);
         } //End block
-        SocketAddress varE86E9679D247005D0B3C9E3910C683E2_873789086 = (clientSock.getLocalSocketAddress());
-        return (SocketAddress)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1544806380 = clientSock.getLocalSocketAddress();
+        addTaint(dst.getTaint());
+        addTaint(dstPort);
+        addTaint(localAddress.getTaint());
+        addTaint(localPort);
+        varB4EAC82CA7396A68D541C85D26508E83_1544806380.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1544806380;
         // ---------- Original Method ----------
         //String key = makeKey(dst, dstPort);
         //Socket clientSock = getSocket(key);
@@ -137,18 +140,13 @@ class IOHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.847 -0400", hash_original_method = "4FFA41D6F7F1FFB50CF7951492094FCE", hash_generated_method = "A9357FA50574D40DA7EB30188E2C3E40")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.054 -0400", hash_original_method = "4FFA41D6F7F1FFB50CF7951492094FCE", hash_generated_method = "FD253C27D258DD8542AF84D9A2A0EC5F")
     public Socket sendBytes(InetAddress senderAddress, InetAddress receiverAddress,
             int contactPort, String transport, byte[] bytes, boolean retry,
             MessageChannel messageChannel) throws IOException {
-        dsTaint.addTaint(senderAddress.dsTaint);
-        dsTaint.addTaint(bytes[0]);
-        dsTaint.addTaint(transport);
-        dsTaint.addTaint(messageChannel.dsTaint);
-        dsTaint.addTaint(contactPort);
-        dsTaint.addTaint(retry);
-        dsTaint.addTaint(receiverAddress.dsTaint);
+        Socket varB4EAC82CA7396A68D541C85D26508E83_582713048 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1982157923 = null; //Variable for return #2
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1334471114 = null; //Variable for return #3
         int retry_count;
         retry_count = 0;
         int max_retry;
@@ -157,7 +155,7 @@ class IOHandler {
         int length;
         length = bytes.length;
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1361601411 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_494906629 = (sipStack.isLoggingEnabled());
             {
                 sipStack.getStackLogger().logDebug(
                     "sendBytes " + transport + " inAddr " + receiverAddress.getHostAddress()
@@ -165,13 +163,13 @@ class IOHandler {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var1A97FA1C52344C6F82991A70F7F16D9A_2025287250 = (sipStack.isLoggingEnabled() && sipStack.isLogStackTraceOnMessageSend());
+            boolean var1A97FA1C52344C6F82991A70F7F16D9A_1443133098 = (sipStack.isLoggingEnabled() && sipStack.isLogStackTraceOnMessageSend());
             {
                 sipStack.getStackLogger().logStackTrace(StackLogger.TRACE_INFO);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varF32ED8CDFEFB2594AE29580FE7D2C53B_2114387368 = (transport.compareToIgnoreCase(TCP) == 0);
+            boolean varF32ED8CDFEFB2594AE29580FE7D2C53B_1485815812 = (transport.compareToIgnoreCase(TCP) == 0);
             {
                 String key;
                 key = makeKey(receiverAddress, contactPort);
@@ -195,7 +193,7 @@ class IOHandler {
                     {
                         {
                             {
-                                boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_1224190985 = (sipStack.isLoggingEnabled());
+                                boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_1823870121 = (sipStack.isLoggingEnabled());
                                 {
                                     sipStack.getStackLogger().logDebug("inaddr = " + receiverAddress);
                                     sipStack.getStackLogger().logDebug("port = " + contactPort);
@@ -218,7 +216,7 @@ class IOHandler {
                             catch (IOException ex)
                             {
                                 {
-                                    boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_292155626 = (sipStack.isLoggingEnabled());
+                                    boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_601859433 = (sipStack.isLoggingEnabled());
                                     sipStack.getStackLogger().logDebug(
                                         "IOException occured retryCount " + retry_count);
                                 } //End collapsed parenthetic
@@ -240,7 +238,7 @@ class IOHandler {
                 } //End block
                 {
                     {
-                        boolean varDA2675C4DA71C7DD141330FDB85BC848_1489166045 = (sipStack.isLoggingEnabled());
+                        boolean varDA2675C4DA71C7DD141330FDB85BC848_418873060 = (sipStack.isLoggingEnabled());
                         {
                             sipStack.getStackLogger().logDebug(this.socketTable.toString());
                             sipStack.getStackLogger().logError(
@@ -250,9 +248,10 @@ class IOHandler {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("Could not connect to " + receiverAddress + ":"
                         + contactPort);
                 } //End block
+                varB4EAC82CA7396A68D541C85D26508E83_582713048 = clientSock;
             } //End block
             {
-                boolean varBFE8E44C254EF553DDC47360C83E9B95_839514205 = (transport.compareToIgnoreCase(TLS) == 0);
+                boolean varBFE8E44C254EF553DDC47360C83E9B95_1166093640 = (transport.compareToIgnoreCase(TLS) == 0);
                 {
                     String key;
                     key = makeKey(receiverAddress, contactPort);
@@ -273,7 +272,7 @@ class IOHandler {
                         {
                             {
                                 {
-                                    boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_1884921952 = (sipStack.isLoggingEnabled());
+                                    boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_545840005 = (sipStack.isLoggingEnabled());
                                     {
                                         sipStack.getStackLogger().logDebug("inaddr = " + receiverAddress);
                                         sipStack.getStackLogger().logDebug("port = " + contactPort);
@@ -306,7 +305,7 @@ class IOHandler {
                                 catch (IOException ex)
                                 {
                                     {
-                                        boolean var6FE8ACC5352DCA3449210F8EDED912B3_1059844096 = (sipStack.isLoggingEnabled());
+                                        boolean var6FE8ACC5352DCA3449210F8EDED912B3_58748794 = (sipStack.isLoggingEnabled());
                                         sipStack.getStackLogger().logException(ex);
                                     } //End collapsed parenthetic
                                     removeSocket(key);
@@ -329,6 +328,7 @@ class IOHandler {
                         if (DroidSafeAndroidRuntime.control) throw new IOException("Could not connect to " + receiverAddress + ":"
                         + contactPort);
                     } //End block
+                    varB4EAC82CA7396A68D541C85D26508E83_1982157923 = clientSock;
                 } //End block
                 {
                     DatagramSocket datagramSock;
@@ -339,22 +339,42 @@ class IOHandler {
                     contactPort);
                     datagramSock.send(dgPacket);
                     datagramSock.close();
+                    varB4EAC82CA7396A68D541C85D26508E83_1334471114 = null;
                 } //End block
             } //End collapsed parenthetic
         } //End collapsed parenthetic
-        return (Socket)dsTaint.getTaint();
+        addTaint(senderAddress.getTaint());
+        addTaint(receiverAddress.getTaint());
+        addTaint(contactPort);
+        addTaint(transport.getTaint());
+        addTaint(bytes[0]);
+        addTaint(retry);
+        addTaint(messageChannel.getTaint());
+        Socket varA7E53CE21691AB073D9660D615818899_360706020; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_360706020 = varB4EAC82CA7396A68D541C85D26508E83_582713048;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_360706020 = varB4EAC82CA7396A68D541C85D26508E83_1982157923;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_360706020 = varB4EAC82CA7396A68D541C85D26508E83_1334471114;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_360706020.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_360706020;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.848 -0400", hash_original_method = "1D520544B315CDC75D81B88E4BB64341", hash_generated_method = "C7E0D2603D7020C5C487BD92986BC04F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.055 -0400", hash_original_method = "1D520544B315CDC75D81B88E4BB64341", hash_generated_method = "9C9DD9180AF66C2B58F643BF41B194D1")
     public void closeAll() {
         {
             Enumeration<Socket> values;
             values = socketTable.elements();
-            boolean var2E328B5AFAF57F06673F2C1E812A4A2B_1903246994 = (values.hasMoreElements());
+            boolean var2E328B5AFAF57F06673F2C1E812A4A2B_813404520 = (values.hasMoreElements());
             {
                 Socket s;
                 s = (Socket) values.nextElement();
@@ -377,7 +397,11 @@ class IOHandler {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.055 -0400", hash_original_field = "E7E305FD91DFAD258D05CEF692A3FDA3", hash_generated_field = "2A19A36B452D88CDD5B3F26D17F7563A")
+
     private static String TCP = "tcp";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.055 -0400", hash_original_field = "02AC7105BC9267167A7FE52691A37BAB", hash_generated_field = "1AD174C59CE89A66B72D18168F821A73")
+
     private static String TLS = "tls";
 }
 

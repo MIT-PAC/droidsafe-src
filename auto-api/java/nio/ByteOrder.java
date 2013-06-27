@@ -9,14 +9,17 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public final class ByteOrder {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.904 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+
     private String name;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.904 -0400", hash_original_field = "891F8A88F62B8EFE8A26063940061E98", hash_generated_field = "4ECB2B3E8E176FD36BB429A3A3830E89")
+
     public boolean needsSwap;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.491 -0400", hash_original_method = "B317EBC8D5650E5C34B265838B9D3EC5", hash_generated_method = "811E308AC774151CDB5D614032761341")
-    @DSModeled(DSC.SAFE)
-    private ByteOrder(String name, boolean needsSwap) {
-        dsTaint.addTaint(needsSwap);
-        dsTaint.addTaint(name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.905 -0400", hash_original_method = "B317EBC8D5650E5C34B265838B9D3EC5", hash_generated_method = "23C748F854E4D36213A9E09C7B4EA27E")
+    private  ByteOrder(String name, boolean needsSwap) {
+        this.name = name;
+        this.needsSwap = needsSwap;
         // ---------- Original Method ----------
         //this.name = name;
         //this.needsSwap = needsSwap;
@@ -33,18 +36,26 @@ public final class ByteOrder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.491 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "07B6DEDCDA0BCBF94ECA7AFA0C3C49FD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.906 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "D69BFC70AB15D14AEB25841E188BF2E2")
     @Override
     public String toString() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_814171379 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_814171379 = name;
+        varB4EAC82CA7396A68D541C85D26508E83_814171379.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_814171379;
         // ---------- Original Method ----------
         //return name;
     }
 
     
-    private static final ByteOrder NATIVE_ORDER;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.906 -0400", hash_original_field = "AE6E19EF8315BD154B64B6B93A475246", hash_generated_field = "92D01F42E3BD90FA81F44D4D587D8F69")
+
+    private static ByteOrder NATIVE_ORDER;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.906 -0400", hash_original_field = "3E3837EDE152D846A1D1C6E4B5DE4432", hash_generated_field = "1234A298A97F3B5962AA23B60561E395")
+
     public static final ByteOrder BIG_ENDIAN;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.906 -0400", hash_original_field = "D2A887BA52940D91ADCA3B45876DCF7C", hash_generated_field = "06734A84A8A70D790F1E88567660685A")
+
     public static final ByteOrder LITTLE_ENDIAN;
     static {
         boolean isLittleEndian = isLittleEndian();

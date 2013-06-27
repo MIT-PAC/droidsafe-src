@@ -15,51 +15,80 @@ import java.util.Map;
 import libcore.util.EmptyArray;
 
 public class Thread implements Runnable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "DFCB349389E84D15F92F0101BDA522EF", hash_generated_field = "AD2271ADED5B0642EAD7F6C10D7138A3")
+
     volatile VMThread vmThread;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "DB0F6F37EBEB6EA09489124345AF2A45", hash_generated_field = "323908075291FF73A0BF0480EC78D762")
+
     volatile ThreadGroup group;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "1F15FCF5421EECD6CA1B61337C319495", hash_generated_field = "1ED59F53ED2B99A4AD9663473B1CC006")
+
     volatile boolean daemon;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "34558C70E1377442D4C0DBDA56BC6C23")
+
     volatile String name;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "B988295C268025B49DFB3DF26171DDC3", hash_generated_field = "FDCCFF27A359BAE03856205C3A73A167")
+
     volatile int priority;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "DE15E127B153666F6C6C4FBCAE60419B", hash_generated_field = "31CCA7F61A6273CAFC2F2A0EB46C6C22")
+
     volatile long stackSize;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "42AEFBAE01D2DFD981F7DA7D823D689E", hash_generated_field = "3BC51F00CA4514C3C4790A78C316DD07")
+
     Runnable target;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "B80BB7740288FDA1F201890375A60C8F", hash_generated_field = "AE2623257C6319B5969DD2321BB374E1")
+
     private long id;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "6996C07FA899CEE946C99E7A25F61CC0", hash_generated_field = "BC582D53333FA9EE36376F01B3892F08")
+
     ThreadLocal.Values localValues;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "A9F47F486EE26178B4A9BD31D96AF7BF", hash_generated_field = "1DCD99C357BDD63DBAEA19AB3742D070")
+
     ThreadLocal.Values inheritableValues;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "39B85D264A49C16734A98A1B294FEB8F", hash_generated_field = "271AA7D4BE93A298543E329DAEB8D17F")
+
     private List<Runnable> interruptActions = new ArrayList<Runnable>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "8E1DEE07E23DAA726BAAF0EE9C3C8EE1", hash_generated_field = "C41102AB5C0E4C512DB1FC97849C5D3F")
+
     private ClassLoader contextClassLoader;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "D620DC3DE4E8991B36D1C529F352B7D6", hash_generated_field = "9E70AF0C0F09E0E8D22000D357561505")
+
     private UncaughtExceptionHandler uncaughtHandler;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "B34C39ECBBEB4BBF8B9FDE58CF443A44", hash_generated_field = "F52710C226B829B42671DDE4B1108733")
+
     boolean hasBeenStarted = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "A868BAFA6B5FA0E61CE2762A9B315944", hash_generated_field = "1586B270E49D73D94EC53EC7F719398A")
+
     private int parkState = ParkState.UNPARKED;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.510 -0400", hash_original_field = "14EE858A6EC2B082926F68B4AA434051", hash_generated_field = "34932EF005581D2A5FD235907377EED6")
+
     private Object parkBlocker;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.309 -0400", hash_original_method = "A2846A412942D9A4A6734B659C3C08EA", hash_generated_method = "FC648266C8623CAE59D46FDD8401EFDA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Thread() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.519 -0400", hash_original_method = "A2846A412942D9A4A6734B659C3C08EA", hash_generated_method = "FC648266C8623CAE59D46FDD8401EFDA")
+    public  Thread() {
         create(null, null, null, 0);
         // ---------- Original Method ----------
         //create(null, null, null, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.309 -0400", hash_original_method = "FFE43BBD5535897A2D4ADC63E06A2D0F", hash_generated_method = "6ABAA42CB6828F466E69DD86ECB6C992")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Thread(Runnable runnable) {
-        dsTaint.addTaint(runnable.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.519 -0400", hash_original_method = "FFE43BBD5535897A2D4ADC63E06A2D0F", hash_generated_method = "2464A64442E80B1B60D1952D0C97ED06")
+    public  Thread(Runnable runnable) {
         create(null, runnable, null, 0);
+        addTaint(runnable.getTaint());
         // ---------- Original Method ----------
         //create(null, runnable, null, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.310 -0400", hash_original_method = "BDCA95CAB999722EC25DF6B8E927C95F", hash_generated_method = "B6B04C63FE3323866055ED2D8F94995F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Thread(Runnable runnable, String threadName) {
-        dsTaint.addTaint(threadName);
-        dsTaint.addTaint(runnable.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.519 -0400", hash_original_method = "BDCA95CAB999722EC25DF6B8E927C95F", hash_generated_method = "AFE574EB0C205FBE7AFD927EC4189C3C")
+    public  Thread(Runnable runnable, String threadName) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         create(null, runnable, threadName, 0);
+        addTaint(runnable.getTaint());
+        addTaint(threadName.getTaint());
         // ---------- Original Method ----------
         //if (threadName == null) {
             //throw new NullPointerException();
@@ -68,14 +97,13 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.310 -0400", hash_original_method = "ACB5E26D2EF52FBACC4A4E78EC843CDD", hash_generated_method = "1165CE88E24D13BF282B424982762266")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Thread(String threadName) {
-        dsTaint.addTaint(threadName);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.519 -0400", hash_original_method = "ACB5E26D2EF52FBACC4A4E78EC843CDD", hash_generated_method = "60E9479F8F930222369338000E44863A")
+    public  Thread(String threadName) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         create(null, null, threadName, 0);
+        addTaint(threadName.getTaint());
         // ---------- Original Method ----------
         //if (threadName == null) {
             //throw new NullPointerException();
@@ -84,27 +112,25 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.310 -0400", hash_original_method = "CFE0254168731091471FC08E1B68E532", hash_generated_method = "B27628787EB7E972A863141D59604D88")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Thread(ThreadGroup group, Runnable runnable) {
-        dsTaint.addTaint(runnable.dsTaint);
-        dsTaint.addTaint(group.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.520 -0400", hash_original_method = "CFE0254168731091471FC08E1B68E532", hash_generated_method = "FB740864155F25137322B2037E472DD6")
+    public  Thread(ThreadGroup group, Runnable runnable) {
         create(group, runnable, null, 0);
+        addTaint(group.getTaint());
+        addTaint(runnable.getTaint());
         // ---------- Original Method ----------
         //create(group, runnable, null, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.311 -0400", hash_original_method = "492306C5FED9EC58991A5E8736E27F15", hash_generated_method = "91B30C86E76BC402F40EFAE4BE4B4DBE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Thread(ThreadGroup group, Runnable runnable, String threadName) {
-        dsTaint.addTaint(threadName);
-        dsTaint.addTaint(runnable.dsTaint);
-        dsTaint.addTaint(group.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.520 -0400", hash_original_method = "492306C5FED9EC58991A5E8736E27F15", hash_generated_method = "6FDDE2AC95F95B17827802AEA3781483")
+    public  Thread(ThreadGroup group, Runnable runnable, String threadName) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         create(group, runnable, threadName, 0);
+        addTaint(group.getTaint());
+        addTaint(runnable.getTaint());
+        addTaint(threadName.getTaint());
         // ---------- Original Method ----------
         //if (threadName == null) {
             //throw new NullPointerException();
@@ -113,15 +139,14 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.311 -0400", hash_original_method = "D83475E079BCC4E2E3558A574C3A704E", hash_generated_method = "C9EF4222598B259FC40C9550215CB44D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Thread(ThreadGroup group, String threadName) {
-        dsTaint.addTaint(threadName);
-        dsTaint.addTaint(group.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.520 -0400", hash_original_method = "D83475E079BCC4E2E3558A574C3A704E", hash_generated_method = "DAB5BE54DACE9F730A95C8C913536799")
+    public  Thread(ThreadGroup group, String threadName) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         create(group, null, threadName, 0);
+        addTaint(group.getTaint());
+        addTaint(threadName.getTaint());
         // ---------- Original Method ----------
         //if (threadName == null) {
             //throw new NullPointerException();
@@ -130,17 +155,16 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.311 -0400", hash_original_method = "38DDF80F64A6875AC3B97FC941143FB8", hash_generated_method = "7F244F5BDC154DCB77F15D800634D39F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Thread(ThreadGroup group, Runnable runnable, String threadName, long stackSize) {
-        dsTaint.addTaint(threadName);
-        dsTaint.addTaint(runnable.dsTaint);
-        dsTaint.addTaint(stackSize);
-        dsTaint.addTaint(group.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.529 -0400", hash_original_method = "38DDF80F64A6875AC3B97FC941143FB8", hash_generated_method = "0965F782E3842977756B3207844A6FBD")
+    public  Thread(ThreadGroup group, Runnable runnable, String threadName, long stackSize) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         create(group, runnable, threadName, stackSize);
+        addTaint(group.getTaint());
+        addTaint(runnable.getTaint());
+        addTaint(threadName.getTaint());
+        addTaint(stackSize);
         // ---------- Original Method ----------
         //if (threadName == null) {
             //throw new NullPointerException();
@@ -149,13 +173,8 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.312 -0400", hash_original_method = "DA36D17A4C27DE9C11E6923E1A7A26CA", hash_generated_method = "DFE7FB0AE064929E0F6D1B138ADB752C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     Thread(ThreadGroup group, String name, int priority, boolean daemon) {
-        dsTaint.addTaint(priority);
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(daemon);
-        dsTaint.addTaint(group.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.530 -0400", hash_original_method = "DA36D17A4C27DE9C11E6923E1A7A26CA", hash_generated_method = "8DFD98E58D0F1CEA1E9E4414BD48FB01")
+      Thread(ThreadGroup group, String name, int priority, boolean daemon) {
         {
             id = ++Thread.count;
         } //End block
@@ -163,10 +182,16 @@ public class Thread implements Runnable {
             this.name = "Thread-" + id;
         } //End block
         {
+            this.name = name;
+        } //End block
+        {
             if (DroidSafeAndroidRuntime.control) throw new InternalError("group not specified");
         } //End block
+        this.group = group;
         this.target = null;
         this.stackSize = 0;
+        this.priority = priority;
+        this.daemon = daemon;
         this.group.addThread(this);
         // ---------- Original Method ----------
         //synchronized (Thread.class) {
@@ -189,30 +214,31 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.313 -0400", hash_original_method = "B7E7B76C5A1CA256325AA2280577DF6E", hash_generated_method = "463FEED50A3D27D50FB0E50A333BC143")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.533 -0400", hash_original_method = "B7E7B76C5A1CA256325AA2280577DF6E", hash_generated_method = "E4CAC04E98CED39F9378396343051133")
     private void create(ThreadGroup group, Runnable runnable, String threadName, long stackSize) {
-        dsTaint.addTaint(threadName);
-        dsTaint.addTaint(runnable.dsTaint);
-        dsTaint.addTaint(stackSize);
-        dsTaint.addTaint(group.dsTaint);
         Thread currentThread;
         currentThread = Thread.currentThread();
         {
             group = currentThread.getThreadGroup();
         } //End block
         {
-            boolean var1C58EACCC96861E06E4F3C98EDF34DE2_2048691269 = (group.isDestroyed());
+            boolean var1C58EACCC96861E06E4F3C98EDF34DE2_1455474867 = (group.isDestroyed());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalThreadStateException("Group already destroyed");
             } //End block
         } //End collapsed parenthetic
+        this.group = group;
         {
             id = ++Thread.count;
         } //End block
         {
             this.name = "Thread-" + id;
         } //End block
+        {
+            this.name = threadName;
+        } //End block
+        this.target = runnable;
+        this.stackSize = stackSize;
         this.priority = currentThread.getPriority();
         this.contextClassLoader = currentThread.contextClassLoader;
         {
@@ -229,19 +255,18 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.313 -0400", hash_original_method = "9AC5D8EF15BD7837ACD785C0772615A1", hash_generated_method = "58C0335FEF548999868CED53D4078AEE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.533 -0400", hash_original_method = "9AC5D8EF15BD7837ACD785C0772615A1", hash_generated_method = "58C0335FEF548999868CED53D4078AEE")
     public final void checkAccess() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.314 -0400", hash_original_method = "6B880F3A25E0C40C35D8EAA702DA9116", hash_generated_method = "FD1FF37E93036295AE8795EC17CA3209")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.533 -0400", hash_original_method = "6B880F3A25E0C40C35D8EAA702DA9116", hash_generated_method = "686AB95FC7794461FAF2D9E4EA73B252")
     @Deprecated
     public int countStackFrames() {
-        int var9E94C75F0A654EE4FD94FC83E274820D_1490082640 = (getStackTrace().length);
-        return dsTaint.getTaintInt();
+        int var9E94C75F0A654EE4FD94FC83E274820D_1106160456 = (getStackTrace().length);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_790722621 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_790722621;
         // ---------- Original Method ----------
         //return getStackTrace().length;
     }
@@ -252,8 +277,7 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.314 -0400", hash_original_method = "E295DBEBB7624DABB0FA2D3E0377892B", hash_generated_method = "36C3BECAF55A9A5399EDB2847CA487F4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.534 -0400", hash_original_method = "E295DBEBB7624DABB0FA2D3E0377892B", hash_generated_method = "36C3BECAF55A9A5399EDB2847CA487F4")
     @Deprecated
     public void destroy() {
         if (DroidSafeAndroidRuntime.control) throw new NoSuchMethodError("Thread.destroy()");
@@ -285,10 +309,12 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.315 -0400", hash_original_method = "D65A36EB6AF7077545898D8D2274216D", hash_generated_method = "5BF82424C89F16969873C2C715D7A27F")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.551 -0400", hash_original_method = "D65A36EB6AF7077545898D8D2274216D", hash_generated_method = "E1BC8892B56A8A644C3BAD1D123853FE")
     public ClassLoader getContextClassLoader() {
-        return (ClassLoader)dsTaint.getTaint();
+        ClassLoader varB4EAC82CA7396A68D541C85D26508E83_202175808 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_202175808 = contextClassLoader;
+        varB4EAC82CA7396A68D541C85D26508E83_202175808.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_202175808;
         // ---------- Original Method ----------
         //return contextClassLoader;
     }
@@ -299,48 +325,53 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.316 -0400", hash_original_method = "AC34FCBA00CFFBED3290FFC752B7D422", hash_generated_method = "CEC0EAA37DD59216E388387B30D261C5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.552 -0400", hash_original_method = "AC34FCBA00CFFBED3290FFC752B7D422", hash_generated_method = "BA7DB4D1CFEF4670CE307EAABA6B11B8")
     public long getId() {
-        return dsTaint.getTaintLong();
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_2112278604 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_2112278604;
         // ---------- Original Method ----------
         //return id;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.319 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "656D8CA904D03A75C55F220277A90C06")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.552 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "5B40948EDFC4103ABC94CE9E1CE39CD4")
     public final String getName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_358458464 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_358458464 = name;
+        varB4EAC82CA7396A68D541C85D26508E83_358458464.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_358458464;
         // ---------- Original Method ----------
         //return name;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.320 -0400", hash_original_method = "0FA6C5514FC3354D3A5FFA078FF2070D", hash_generated_method = "38CC6CC3F0ECB14FF831EFB6E61CF3AB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.554 -0400", hash_original_method = "0FA6C5514FC3354D3A5FFA078FF2070D", hash_generated_method = "8151C56138A023BC62E0007F27BA7716")
     public final int getPriority() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2134645143 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2134645143;
         // ---------- Original Method ----------
         //return priority;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.320 -0400", hash_original_method = "105ECA4B48BD428C2A4BFADC722280E4", hash_generated_method = "CD4C71076B56B9BC07C097BC46D8038D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.558 -0400", hash_original_method = "105ECA4B48BD428C2A4BFADC722280E4", hash_generated_method = "4831AC38E71E32BB9E029008C93B478A")
     public StackTraceElement[] getStackTrace() {
+        StackTraceElement[] varB4EAC82CA7396A68D541C85D26508E83_771336832 = null; //Variable for return #1
         StackTraceElement ste[];
         ste = VMStack.getThreadStackTrace(this);
-        return (StackTraceElement[])dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_771336832 = ste != null ? ste : EmptyArray.STACK_TRACE_ELEMENT;
+        varB4EAC82CA7396A68D541C85D26508E83_771336832.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_771336832;
         // ---------- Original Method ----------
         //StackTraceElement ste[] = VMStack.getThreadStackTrace(this);
         //return ste != null ? ste : EmptyArray.STACK_TRACE_ELEMENT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.321 -0400", hash_original_method = "07EB6E55BA9633DD05ED126331098808", hash_generated_method = "87D469E8D26332CD426436152F6FAA39")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.563 -0400", hash_original_method = "07EB6E55BA9633DD05ED126331098808", hash_generated_method = "6ECD8B6FC904B1B7D26C7D5EFAB60295")
     public State getState() {
+        State varB4EAC82CA7396A68D541C85D26508E83_1554357758 = null; //Variable for return #1
+        State varB4EAC82CA7396A68D541C85D26508E83_1301228199 = null; //Variable for return #2
         VMThread vmt;
         vmt = this.vmThread;
         VMThread thread;
@@ -348,8 +379,22 @@ public class Thread implements Runnable {
         {
             int state;
             state = thread.getStatus();
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1554357758 = VMThread.STATE_MAP[state];
+            } //End block
         } //End block
-        return (State)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1301228199 = hasBeenStarted ? Thread.State.TERMINATED : Thread.State.NEW;
+        State varA7E53CE21691AB073D9660D615818899_1963280487; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1963280487 = varB4EAC82CA7396A68D541C85D26508E83_1554357758;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1963280487 = varB4EAC82CA7396A68D541C85D26508E83_1301228199;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1963280487.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1963280487;
         // ---------- Original Method ----------
         //VMThread vmt = this.vmThread;
         //VMThread thread = vmThread;
@@ -363,13 +408,30 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.321 -0400", hash_original_method = "00D5D6D0C2A305848EB6704B96DA1F7A", hash_generated_method = "A94991C3027FCBEB6079AEB10347F739")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.563 -0400", hash_original_method = "00D5D6D0C2A305848EB6704B96DA1F7A", hash_generated_method = "5307B597EDA81623BA08875119612515")
     public final ThreadGroup getThreadGroup() {
+        ThreadGroup varB4EAC82CA7396A68D541C85D26508E83_1924728825 = null; //Variable for return #1
+        ThreadGroup varB4EAC82CA7396A68D541C85D26508E83_2046493827 = null; //Variable for return #2
         {
-            boolean var171B2BD556C2DAB7616FF410FA854B68_1294615498 = (getState() == Thread.State.TERMINATED);
+            boolean var171B2BD556C2DAB7616FF410FA854B68_9549406 = (getState() == Thread.State.TERMINATED);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1924728825 = null;
+            } //End block
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_2046493827 = group;
+            } //End block
         } //End collapsed parenthetic
-        return (ThreadGroup)dsTaint.getTaint();
+        ThreadGroup varA7E53CE21691AB073D9660D615818899_1779921221; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1779921221 = varB4EAC82CA7396A68D541C85D26508E83_1924728825;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1779921221 = varB4EAC82CA7396A68D541C85D26508E83_2046493827;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1779921221.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1779921221;
         // ---------- Original Method ----------
         //if (getState() == Thread.State.TERMINATED) {
             //return null;
@@ -379,10 +441,23 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.321 -0400", hash_original_method = "5CF1F81DC91E6D2E78C73116F661ED4D", hash_generated_method = "E58950B893970B45AED1369ADF2FCD37")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.573 -0400", hash_original_method = "5CF1F81DC91E6D2E78C73116F661ED4D", hash_generated_method = "85BD4028B861C641CFC02C58FE4DB396")
     public UncaughtExceptionHandler getUncaughtExceptionHandler() {
-        return (UncaughtExceptionHandler)dsTaint.getTaint();
+        UncaughtExceptionHandler varB4EAC82CA7396A68D541C85D26508E83_936770850 = null; //Variable for return #1
+        UncaughtExceptionHandler varB4EAC82CA7396A68D541C85D26508E83_189438718 = null; //Variable for return #2
+        varB4EAC82CA7396A68D541C85D26508E83_936770850 = uncaughtHandler;
+        varB4EAC82CA7396A68D541C85D26508E83_189438718 = group;
+        UncaughtExceptionHandler varA7E53CE21691AB073D9660D615818899_632086494; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_632086494 = varB4EAC82CA7396A68D541C85D26508E83_936770850;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_632086494 = varB4EAC82CA7396A68D541C85D26508E83_189438718;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_632086494.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_632086494;
         // ---------- Original Method ----------
         //if (uncaughtHandler != null)
             //return uncaughtHandler;
@@ -391,8 +466,7 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.322 -0400", hash_original_method = "17DDF3808A6EBB129363B48719FB5512", hash_generated_method = "A6E18F908BBF5EA081EC8BF7D33A91C1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.573 -0400", hash_original_method = "17DDF3808A6EBB129363B48719FB5512", hash_generated_method = "A6E18F908BBF5EA081EC8BF7D33A91C1")
     public void interrupt() {
         {
             {
@@ -426,33 +500,33 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.322 -0400", hash_original_method = "FDF1C6D176BF98E9EEA025E5AC84BE96", hash_generated_method = "269F75EAF1BE3C4FD9591725166C658C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.586 -0400", hash_original_method = "FDF1C6D176BF98E9EEA025E5AC84BE96", hash_generated_method = "4ED2F32087B688304E162CF6A5B71B2B")
     public final boolean isAlive() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_927360042 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_927360042;
         // ---------- Original Method ----------
         //return (vmThread != null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.323 -0400", hash_original_method = "C545A28661A0C27F268C3C9CA79B188B", hash_generated_method = "14B6A9EB82BB82C6B1DA2736F3168383")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.586 -0400", hash_original_method = "C545A28661A0C27F268C3C9CA79B188B", hash_generated_method = "46EE8C412ED168A2E50D7D44266277A7")
     public final boolean isDaemon() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1213238764 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1213238764;
         // ---------- Original Method ----------
         //return daemon;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.323 -0400", hash_original_method = "8001B196EB7A1BAE7873C2E86818FA5F", hash_generated_method = "5C0BD88EC52BC28D4DEB2E7558222641")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.587 -0400", hash_original_method = "8001B196EB7A1BAE7873C2E86818FA5F", hash_generated_method = "E05C8C91773DF49B868A4547BD4B0BD2")
     public boolean isInterrupted() {
         VMThread vmt;
         vmt = this.vmThread;
         {
-            boolean varB147E6E3B016011716EF89C5EF4EE91E_1445670173 = (vmt.isInterrupted());
+            boolean varB147E6E3B016011716EF89C5EF4EE91E_175388088 = (vmt.isInterrupted());
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1594798902 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1594798902;
         // ---------- Original Method ----------
         //VMThread vmt = this.vmThread;
         //if (vmt != null) {
@@ -462,14 +536,13 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.323 -0400", hash_original_method = "39C10B080916DB467DF3B4EA48EC57E3", hash_generated_method = "D2C79D8C8A25ACA3170A4EF08A3F75EC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.587 -0400", hash_original_method = "39C10B080916DB467DF3B4EA48EC57E3", hash_generated_method = "4437F38FE40BF20A5EFD6E8E6A7E0A81")
     public final void join() throws InterruptedException {
         VMThread t;
         t = vmThread;
         {
             {
-                boolean var873063CBC3B5729E18294AEF568DDA2D_864696423 = (isAlive());
+                boolean var873063CBC3B5729E18294AEF568DDA2D_94764319 = (isAlive());
                 {
                     t.wait();
                 } //End block
@@ -488,21 +561,17 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.324 -0400", hash_original_method = "4A31F3D41623AEE48E003D8DCAD5BFFA", hash_generated_method = "E8ED09E19CD864F9FBB9B38C98B9552A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.587 -0400", hash_original_method = "4A31F3D41623AEE48E003D8DCAD5BFFA", hash_generated_method = "A8D83846828712BD73ECC565A31B1C62")
     public final void join(long millis) throws InterruptedException {
-        dsTaint.addTaint(millis);
         join(millis, 0);
+        addTaint(millis);
         // ---------- Original Method ----------
         //join(millis, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.324 -0400", hash_original_method = "7E549C860CA937D59E3BB1D99D89340F", hash_generated_method = "7B6BCD5AE77892DE54F42486FB98C586")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.594 -0400", hash_original_method = "7E549C860CA937D59E3BB1D99D89340F", hash_generated_method = "4484818FF126AE0EE52C2DD0CAA6FCC8")
     public final void join(long millis, int nanos) throws InterruptedException {
-        dsTaint.addTaint(nanos);
-        dsTaint.addTaint(millis);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
@@ -517,7 +586,7 @@ public class Thread implements Runnable {
         t = vmThread;
         {
             {
-                boolean var0566EB6AFDD7377E42AFAFF497085687_1983500137 = (!isAlive());
+                boolean var0566EB6AFDD7377E42AFAFF497085687_1761378029 = (!isAlive());
             } //End collapsed parenthetic
             long nanosToWait;
             nanosToWait = millis * NANOS_PER_MILLI + nanos;
@@ -526,7 +595,7 @@ public class Thread implements Runnable {
             {
                 t.wait(millis, nanos);
                 {
-                    boolean varCB6183A31E0FF6013B5249081F624AB9_1815582229 = (!isAlive());
+                    boolean varCB6183A31E0FF6013B5249081F624AB9_1283771632 = (!isAlive());
                 } //End collapsed parenthetic
                 long nanosElapsed;
                 nanosElapsed = System.nanoTime() - start;
@@ -536,13 +605,14 @@ public class Thread implements Runnable {
                 nanos = (int) (nanosRemaining - millis * NANOS_PER_MILLI);
             } //End block
         } //End block
+        addTaint(millis);
+        addTaint(nanos);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.325 -0400", hash_original_method = "A6ED0DA6D495D98AD3E3BF5221571689", hash_generated_method = "7127AFE74D1383F789C3C1650F177DCD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.599 -0400", hash_original_method = "A6ED0DA6D495D98AD3E3BF5221571689", hash_generated_method = "7127AFE74D1383F789C3C1650F177DCD")
     @Deprecated
     public final void resume() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
@@ -551,8 +621,7 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.326 -0400", hash_original_method = "74F6289977938D08C5FBC2624A0DC216", hash_generated_method = "2BF63E07544CF8CAC1A6A84003858A15")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.600 -0400", hash_original_method = "74F6289977938D08C5FBC2624A0DC216", hash_generated_method = "2BF63E07544CF8CAC1A6A84003858A15")
     public void run() {
         {
             target.run();
@@ -564,21 +633,21 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.326 -0400", hash_original_method = "93EFC46ED375C1C54A6285C5204CF25C", hash_generated_method = "F5745035FFB5FA4E2BB823CC598473E8")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.600 -0400", hash_original_method = "93EFC46ED375C1C54A6285C5204CF25C", hash_generated_method = "3571A2A1E3CF85993D3F0CF0F870AA51")
     public void setContextClassLoader(ClassLoader cl) {
-        dsTaint.addTaint(cl.dsTaint);
+        contextClassLoader = cl;
         // ---------- Original Method ----------
         //contextClassLoader = cl;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.326 -0400", hash_original_method = "9670EAA0D97E9800D90F260AB00393C1", hash_generated_method = "F7F23EADC4E250746DD0ECDAE69FB12D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.600 -0400", hash_original_method = "9670EAA0D97E9800D90F260AB00393C1", hash_generated_method = "1BD47DC7E674848DD559C3E42E28CCC6")
     public final void setDaemon(boolean isDaemon) {
-        dsTaint.addTaint(isDaemon);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalThreadStateException("Thread already started.");
+        } //End block
+        {
+            daemon = isDaemon;
         } //End block
         // ---------- Original Method ----------
         //if (hasBeenStarted) {
@@ -595,19 +664,18 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.327 -0400", hash_original_method = "C18D87700F0558E88B776CB695EE515A", hash_generated_method = "BAABE891E3F9BACB7029ED1135C8C89F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.601 -0400", hash_original_method = "C18D87700F0558E88B776CB695EE515A", hash_generated_method = "CC481D82408C87CD49CA0ECB7950D782")
     public final void pushInterruptAction$(Runnable interruptAction) {
-        dsTaint.addTaint(interruptAction.dsTaint);
         {
             interruptActions.add(interruptAction);
         } //End block
         {
-            boolean var43B340B57A719D4D7C0CFC3F5006FC45_1964502230 = (interruptAction != null && isInterrupted());
+            boolean var43B340B57A719D4D7C0CFC3F5006FC45_1311165309 = (interruptAction != null && isInterrupted());
             {
                 interruptAction.run();
             } //End block
         } //End collapsed parenthetic
+        addTaint(interruptAction.getTaint());
         // ---------- Original Method ----------
         //synchronized (interruptActions) {
             //interruptActions.add(interruptAction);
@@ -618,10 +686,8 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.328 -0400", hash_original_method = "134AC2DB3FFDAEE2D6D132954D878FFF", hash_generated_method = "6BB3413A4D3CDAD1592866D26AD96B21")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.601 -0400", hash_original_method = "134AC2DB3FFDAEE2D6D132954D878FFF", hash_generated_method = "53A8DD6BCC7953F65DDEEDCE24F8B6C7")
     public final void popInterruptAction$(Runnable interruptAction) {
-        dsTaint.addTaint(interruptAction.dsTaint);
         {
             Runnable removed;
             removed = interruptActions.remove(interruptActions.size() - 1);
@@ -630,6 +696,7 @@ public class Thread implements Runnable {
                         "Expected " + interruptAction + " but was " + removed);
             } //End block
         } //End block
+        addTaint(interruptAction.getTaint());
         // ---------- Original Method ----------
         //synchronized (interruptActions) {
             //Runnable removed = interruptActions.remove(interruptActions.size() - 1);
@@ -641,13 +708,12 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.328 -0400", hash_original_method = "52D88413A8A1215EC9D935022AA7508F", hash_generated_method = "DB0D81B1F1400F25DFAA286DA8CC93AF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.602 -0400", hash_original_method = "52D88413A8A1215EC9D935022AA7508F", hash_generated_method = "7BCFF61457EDE0DAC326CAB67B3874C9")
     public final void setName(String threadName) {
-        dsTaint.addTaint(threadName);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
+        name = threadName;
         VMThread vmt;
         vmt = this.vmThread;
         {
@@ -665,19 +731,18 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.328 -0400", hash_original_method = "A91023FCF06B8647A6CEF3B99492A3A2", hash_generated_method = "A83956B1D98BBEF6A1A3BEB39C7B0318")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.614 -0400", hash_original_method = "A91023FCF06B8647A6CEF3B99492A3A2", hash_generated_method = "41E4EA7F297AFFAE931470E797B73FB3")
     public final void setPriority(int priority) {
-        dsTaint.addTaint(priority);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Priority out of range");
         } //End block
         {
-            boolean var09022039D3A5CC2E35F1A0263EEA0B28_1553086340 = (priority > group.getMaxPriority());
+            boolean var09022039D3A5CC2E35F1A0263EEA0B28_999444059 = (priority > group.getMaxPriority());
             {
                 priority = group.getMaxPriority();
             } //End block
         } //End collapsed parenthetic
+        this.priority = priority;
         VMThread vmt;
         vmt = this.vmThread;
         {
@@ -698,10 +763,9 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.328 -0400", hash_original_method = "D58D250923779D2B2016D80FC2081BA1", hash_generated_method = "585F3021CB4ABD9753ADE488DDD8A1B0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.614 -0400", hash_original_method = "D58D250923779D2B2016D80FC2081BA1", hash_generated_method = "32052A607317B2CF4FD95D37AFA858D8")
     public void setUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
-        dsTaint.addTaint(handler.dsTaint);
+        uncaughtHandler = handler;
         // ---------- Original Method ----------
         //uncaughtHandler = handler;
     }
@@ -717,8 +781,7 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.329 -0400", hash_original_method = "389CF6E0D3A08F228CF4E4A156CC86D9", hash_generated_method = "A9E55DD47285DE615AB80AE7D304FD86")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.615 -0400", hash_original_method = "389CF6E0D3A08F228CF4E4A156CC86D9", hash_generated_method = "A9E55DD47285DE615AB80AE7D304FD86")
     public synchronized void start() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalThreadStateException("Thread already started.");
@@ -734,8 +797,7 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.329 -0400", hash_original_method = "345C33A5CF7530BB38CAED519DB524FA", hash_generated_method = "4CF021D91E790FABEAD72EF8B01ED19B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.616 -0400", hash_original_method = "345C33A5CF7530BB38CAED519DB524FA", hash_generated_method = "4CF021D91E790FABEAD72EF8B01ED19B")
     @Deprecated
     public final void stop() {
         stop(new ThreadDeath());
@@ -744,19 +806,17 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.329 -0400", hash_original_method = "B034829378D149E76566D897B904AD02", hash_generated_method = "C79078276977B9F78DCB76AA97D14CEB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.616 -0400", hash_original_method = "B034829378D149E76566D897B904AD02", hash_generated_method = "F4EC0ADB88C6F9F035AF7F23A73CC321")
     @Deprecated
     public final synchronized void stop(Throwable throwable) {
-        dsTaint.addTaint(throwable.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
+        addTaint(throwable.getTaint());
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.330 -0400", hash_original_method = "BFD882A151848FA6FDA9CF11B3EB5020", hash_generated_method = "9A7B3ED01C039412AA9411EB2D88C724")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.616 -0400", hash_original_method = "BFD882A151848FA6FDA9CF11B3EB5020", hash_generated_method = "9A7B3ED01C039412AA9411EB2D88C724")
     @Deprecated
     public final void suspend() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
@@ -765,12 +825,13 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.330 -0400", hash_original_method = "E21D755A7854968438B35D363D61DC14", hash_generated_method = "6A1817857CCC4DBB47F531140FC775CF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.617 -0400", hash_original_method = "E21D755A7854968438B35D363D61DC14", hash_generated_method = "B62021D2CBE7E75E4BCAD0F47E3FFABA")
     @Override
     public String toString() {
-        String var043BAB29BDEC42A229FDD571A271B3C3_2104569558 = ("Thread[" + name + "," + priority + "," + group.getName() + "]");
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1954423772 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1954423772 = "Thread[" + name + "," + priority + "," + group.getName() + "]";
+        varB4EAC82CA7396A68D541C85D26508E83_1954423772.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1954423772;
         // ---------- Original Method ----------
         //return "Thread[" + name + "," + priority + "," + group.getName() + "]";
     }
@@ -786,8 +847,7 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.331 -0400", hash_original_method = "A23472E398F1697320641EE9BCE07378", hash_generated_method = "155D260F9601300AEE8BB6DE80919762")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.619 -0400", hash_original_method = "A23472E398F1697320641EE9BCE07378", hash_generated_method = "155D260F9601300AEE8BB6DE80919762")
     public void unpark() {
         VMThread vmt;
         vmt = vmThread;
@@ -832,10 +892,8 @@ public class Thread implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.331 -0400", hash_original_method = "25C50086F373F8B2A1357A67BAD56EA4", hash_generated_method = "3B95F3BD60B4CD4FE216C1FBA18C1422")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.620 -0400", hash_original_method = "25C50086F373F8B2A1357A67BAD56EA4", hash_generated_method = "BEBA018E186F1236E964473C6764335E")
     public void parkFor(long nanos) {
-        dsTaint.addTaint(nanos);
         VMThread vmt;
         vmt = vmThread;
         {
@@ -876,15 +934,14 @@ public class Thread implements Runnable {
             } //End block
             //End case default 
         } //End block
+        addTaint(nanos);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.332 -0400", hash_original_method = "98F10CBBB26C44644E065EAD29E052AC", hash_generated_method = "09C0B78869214A2AA47CD38E14AD4125")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.625 -0400", hash_original_method = "98F10CBBB26C44644E065EAD29E052AC", hash_generated_method = "F3E0ECE32285763A0A5DD1B871700AAC")
     public void parkUntil(long time) {
-        dsTaint.addTaint(time);
         VMThread vmt;
         vmt = vmThread;
         {
@@ -900,6 +957,7 @@ public class Thread implements Runnable {
                 parkFor(delayMillis * NANOS_PER_MILLI);
             } //End block
         } //End block
+        addTaint(time);
         // ---------- Original Method ----------
         //VMThread vmt = vmThread;
         //if (vmt == null) {
@@ -918,15 +976,22 @@ public class Thread implements Runnable {
     
     private static class ParkState {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.333 -0400", hash_original_method = "764167A302C4BA0D6FD2D579A7D47E7F", hash_generated_method = "764167A302C4BA0D6FD2D579A7D47E7F")
-                public ParkState ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.625 -0400", hash_original_method = "13ABD2C1475A75B421FFE7ADB6CF97D6", hash_generated_method = "13ABD2C1475A75B421FFE7ADB6CF97D6")
+        public ParkState ()
         {
+            //Synthesized constructor
         }
 
 
-        private static final int UNPARKED = 1;
-        private static final int PREEMPTIVELY_UNPARKED = 2;
-        private static final int PARKED = 3;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.625 -0400", hash_original_field = "E764ADEE54F384BBC4FD06FD8EF08C01", hash_generated_field = "7BA6C4756DCFC3C4F20226537125E9FC")
+
+        private static int UNPARKED = 1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.625 -0400", hash_original_field = "04755C457D6EF4EAD76F049ABB047AA1", hash_generated_field = "D771756AE285ABF91C2AE6F527E53B27")
+
+        private static int PREEMPTIVELY_UNPARKED = 2;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.625 -0400", hash_original_field = "C7A56BEAC50908F3708BC4AC3CF7519C", hash_generated_field = "4459D64E8DA5BE7E69D1947ABD1D11A2")
+
+        private static int PARKED = 3;
     }
 
 
@@ -946,11 +1011,23 @@ public class Thread implements Runnable {
         void uncaughtException(Thread thread, Throwable ex);
     }
     
-    private static final int NANOS_PER_MILLI = 1000000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.625 -0400", hash_original_field = "90F159E16A269B6F875D096F21ED865D", hash_generated_field = "01FF75DD42CEEFF83B007A550DB754A1")
+
+    private static int NANOS_PER_MILLI = 1000000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.626 -0400", hash_original_field = "A75E0F742509618A299AC37B99AF7D9B", hash_generated_field = "706621D0D1857AEE97C3233E8B1CD39C")
+
     public static final int MAX_PRIORITY = 10;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.626 -0400", hash_original_field = "1264FCC1E4F8DDF0EE23E91F2EC7D41B", hash_generated_field = "4B0AE7C1DD2BB6CEB517D1F2268AEEFF")
+
     public static final int MIN_PRIORITY = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.626 -0400", hash_original_field = "1B497667C5350B8C5FE271A0E46B380B", hash_generated_field = "C493C9DD27E116A919077E0BD37657C0")
+
     public static final int NORM_PRIORITY = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.626 -0400", hash_original_field = "B1F8A23315AB697B67E425C4B5F81545", hash_generated_field = "6A0B7CDB09C9D5381ED29C2BE609D34C")
+
     private static int count = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.626 -0400", hash_original_field = "CF5362A11D29DA9A03A7D3AF3A8F9BBA", hash_generated_field = "5C82310D1632632F57D1ECC47F5F0326")
+
     private static UncaughtExceptionHandler defaultUncaughtHandler;
 }
 

@@ -9,12 +9,12 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public abstract class EncodedKeySpec implements KeySpec {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.619 -0400", hash_original_field = "4567E7356B633148D4D0693AC01FDEEE", hash_generated_field = "3144F97D80A45FCBB127B551D71851A1")
+
     private byte[] encodedKey;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.661 -0400", hash_original_method = "AB5BB16CE68A0965872FC49BB9877C19", hash_generated_method = "2E4FC2F67E151F375A8BFC7D4EFE28EF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public EncodedKeySpec(byte[] encodedKey) {
-        dsTaint.addTaint(encodedKey[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.621 -0400", hash_original_method = "AB5BB16CE68A0965872FC49BB9877C19", hash_generated_method = "31248C080AE7561C6892218AC4D58C46")
+    public  EncodedKeySpec(byte[] encodedKey) {
         this.encodedKey = new byte[encodedKey.length];
         System.arraycopy(encodedKey, 0,
                 this.encodedKey, 0, this.encodedKey.length);
@@ -25,15 +25,13 @@ public abstract class EncodedKeySpec implements KeySpec {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.662 -0400", hash_original_method = "F8B261F87BF90DD753274675BF9DA222", hash_generated_method = "337ED6A178D368B77771242F86CD4843")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.621 -0400", hash_original_method = "F8B261F87BF90DD753274675BF9DA222", hash_generated_method = "07252C91E5C6AE6846A36A2B8066C378")
     public byte[] getEncoded() {
         byte[] ret;
         ret = new byte[encodedKey.length];
         System.arraycopy(encodedKey, 0, ret, 0, ret.length);
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2039044841 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_2039044841;
         // ---------- Original Method ----------
         //byte[] ret = new byte[encodedKey.length];
         //System.arraycopy(encodedKey, 0, ret, 0, ret.length);

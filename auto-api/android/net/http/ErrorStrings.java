@@ -12,9 +12,8 @@ import android.util.Log;
 
 public class ErrorStrings {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.772 -0400", hash_original_method = "15196F3BFA8B9637883B8AE296FFF8F2", hash_generated_method = "0498F89C8088675FDFC23A8A118F14B3")
-    @DSModeled(DSC.SAFE)
-    private ErrorStrings() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.059 -0400", hash_original_method = "15196F3BFA8B9637883B8AE296FFF8F2", hash_generated_method = "0498F89C8088675FDFC23A8A118F14B3")
+    private  ErrorStrings() {
         // ---------- Original Method ----------
     }
 
@@ -65,6 +64,8 @@ public class ErrorStrings {
     }
 
     
-    private static final String LOGTAG = "Http";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.060 -0400", hash_original_field = "612150595DFE4003266A71271894AF14", hash_generated_field = "D801BA9EDE316931B4F9A041D653A61D")
+
+    private static String LOGTAG = "Http";
 }
 

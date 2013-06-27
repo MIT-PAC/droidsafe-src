@@ -12,27 +12,25 @@ import gov.nist.javax.sip.header.*;
 
 public class RouteParser extends AddressParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.520 -0400", hash_original_method = "DFF32A898CEC13D94295FA47E9C2EAB3", hash_generated_method = "1E50361E0E92D60B864580297B7C8B0E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public RouteParser(String route) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.213 -0400", hash_original_method = "DFF32A898CEC13D94295FA47E9C2EAB3", hash_generated_method = "CCB142AF0640712F5A880BE1E74E344B")
+    public  RouteParser(String route) {
         super(route);
-        dsTaint.addTaint(route);
+        addTaint(route.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.521 -0400", hash_original_method = "65EBCE19E35091936305B392D8A407A4", hash_generated_method = "F518C396E8B7BE1182F7C0309CD8390C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected RouteParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.220 -0400", hash_original_method = "65EBCE19E35091936305B392D8A407A4", hash_generated_method = "D86A25C00424C247C99545F5C2ADE94D")
+    protected  RouteParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.523 -0400", hash_original_method = "E0D86A54342F3A96677BD3492DB07E61", hash_generated_method = "21AE3AC03294003D53E6B781918946BD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.227 -0400", hash_original_method = "E0D86A54342F3A96677BD3492DB07E61", hash_generated_method = "366143928C1B9F499B694C166E3FEE23")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1350831729 = null; //Variable for return #1
         RouteList routeList;
         routeList = new RouteList();
         dbg_enter("parse");
@@ -56,12 +54,14 @@ public class RouteParser extends AddressParametersParser {
                 } //End block
                 if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected char");
             } //End block
+            varB4EAC82CA7396A68D541C85D26508E83_1350831729 = routeList;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1350831729.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1350831729;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

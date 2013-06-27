@@ -10,9 +10,8 @@ import java.util.Iterator;
 
 public final class IntegralToString {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.800 -0400", hash_original_method = "DF20FC0B1F395B5ECC5581BA0BD3AC0B", hash_generated_method = "724F18F022450896EB503A5FBBDA6BC7")
-    @DSModeled(DSC.SAFE)
-    private IntegralToString() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.823 -0400", hash_original_method = "DF20FC0B1F395B5ECC5581BA0BD3AC0B", hash_generated_method = "724F18F022450896EB503A5FBBDA6BC7")
+    private  IntegralToString() {
         // ---------- Original Method ----------
     }
 
@@ -340,61 +339,41 @@ public final class IntegralToString {
     }
 
     
-    private static final ThreadLocal<char[]> BUFFER = new ThreadLocal<char[]>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.815 -0400", hash_original_method = "2EBCA8DA39A849AFE3E3749C7F49BA79", hash_generated_method = "B64F4E4FB81E79CC61F1904F0BB47F0E")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.874 -0400", hash_original_field = "AB280E60F0CF35D4F468078DFDA43178", hash_generated_field = "B72B8BB11CFF9DD0FC2237D4817FD1DA")
+
+    private static ThreadLocal<char[]> BUFFER = new ThreadLocal<char[]>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.874 -0400", hash_original_method = "2EBCA8DA39A849AFE3E3749C7F49BA79", hash_generated_method = "575661B0D955C7EE2EFE8DFB6E44951D")
         @Override
         protected char[] initialValue() {
-            char[] var401101FA2F200BBC59DD27CE1AD00AD7_1205457138 = (new char[20]);
-            char[] retVal = new char[1];
-            retVal[0] = dsTaint.getTaintString().charAt(0);
-            return retVal;
+            char[] var401101FA2F200BBC59DD27CE1AD00AD7_1407371010 = (new char[20]);
+            char[] var50607924ABD4C17119BAF3A1CE41C0EC_2107241563 = {getTaintChar()};
+            return var50607924ABD4C17119BAF3A1CE41C0EC_2107241563;
             // ---------- Original Method ----------
             //return new char[20];
         }
 
         
-}; //Transformed anonymous class
-    private static final String[] SMALL_NONNEGATIVE_VALUES = new String[100];
-    private static final String[] SMALL_NEGATIVE_VALUES = new String[100];
-    private static final char[] TENS = {
-        '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
-        '1', '1', '1', '1', '1', '1', '1', '1', '1', '1',
-        '2', '2', '2', '2', '2', '2', '2', '2', '2', '2',
-        '3', '3', '3', '3', '3', '3', '3', '3', '3', '3',
-        '4', '4', '4', '4', '4', '4', '4', '4', '4', '4',
-        '5', '5', '5', '5', '5', '5', '5', '5', '5', '5',
-        '6', '6', '6', '6', '6', '6', '6', '6', '6', '6',
-        '7', '7', '7', '7', '7', '7', '7', '7', '7', '7',
-        '8', '8', '8', '8', '8', '8', '8', '8', '8', '8',
-        '9', '9', '9', '9', '9', '9', '9', '9', '9', '9'
-    };
-    private static final char[] ONES = {
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-    };
-    private static final char[] MOD_10_TABLE = {
-        0, 1, 2, 2, 3, 3, 4, 5, 5, 6, 7, 7, 8, 8, 9, 0
-    };
-    private static final char[] DIGITS = {
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
-        'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
-        'u', 'v', 'w', 'x', 'y', 'z'
-    };
-    private static final char[] UPPER_CASE_DIGITS = {
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
-        'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-        'U', 'V', 'W', 'X', 'Y', 'Z'
-    };
+};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.874 -0400", hash_original_field = "EAFB73603CE2CB8500F6DCC368134B80", hash_generated_field = "10F1A9F0A79564FDF741D9913F8DBDA3")
+
+    private static String[] SMALL_NONNEGATIVE_VALUES = new String[100];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.874 -0400", hash_original_field = "488857CAEF9939FF9A91517F8184C90C", hash_generated_field = "C47224BEF3BE0FC2C1A8150BECD5E9C0")
+
+    private static String[] SMALL_NEGATIVE_VALUES = new String[100];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.874 -0400", hash_original_field = "4E44F8641CA299D7987D949BD06F7C5E", hash_generated_field = "8107D16E7A9CFBBC3A641D1B14313394")
+
+    private static char[] TENS = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.874 -0400", hash_original_field = "2DFD29EBB5934DA81BA3D203A821EF23", hash_generated_field = "1B9F87B10B0EF538BFA9C680ABE58778")
+
+    private static char[] ONES = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.874 -0400", hash_original_field = "611CCEC708888401FC95E85326BFD8A1", hash_generated_field = "CBD055E1EDB2DB59199BB05EB60BA748")
+
+    private static char[] MOD_10_TABLE = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.874 -0400", hash_original_field = "4102EFFF5068B86037B1783FBB3A87A6", hash_generated_field = "D65854F37D133994A5CD968BA1C3B3CD")
+
+    private static char[] DIGITS = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.874 -0400", hash_original_field = "26697557AFB8BA6B08D03FD60A18E4FF", hash_generated_field = "AE4626EABB3CE7F739881CAAD918A316")
+
+    private static char[] UPPER_CASE_DIGITS = ;
 }
 

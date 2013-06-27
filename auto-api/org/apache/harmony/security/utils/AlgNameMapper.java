@@ -18,9 +18,8 @@ import org.apache.harmony.security.asn1.ObjectIdentifier;
 
 public class AlgNameMapper {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.354 -0400", hash_original_method = "22469560D029349EBF273B6D8BC83B7A", hash_generated_method = "31CEA5AC8FC09495AFA62E889F9BA508")
-    @DSModeled(DSC.SAFE)
-    private AlgNameMapper() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.981 -0400", hash_original_method = "22469560D029349EBF273B6D8BC83B7A", hash_generated_method = "31CEA5AC8FC09495AFA62E889F9BA508")
+    private  AlgNameMapper() {
         // ---------- Original Method ----------
     }
 
@@ -87,39 +86,21 @@ public class AlgNameMapper {
     }
 
     
-    private static final String[] serviceName = {
-            "Cipher",
-            "AlgorithmParameters",
-            "Signature"
-    };
-    private static final String[][] knownAlgMappings = {
-        {"1.2.840.10040.4.1",       "DSA"},
-        {"1.2.840.10040.4.3",       "SHA1withDSA"},
-        {"1.2.840.113549.1.1.1",    "RSA"},
-        
-        
-        
-        
-        {"1.2.840.113549.1.1.4",    "MD5withRSA"},
-        {"1.2.840.113549.1.1.5",    "SHA1withRSA"},
-        {"1.2.840.113549.1.3.1",    "DiffieHellman"},
-        {"1.2.840.113549.1.5.3",    "pbeWithMD5AndDES-CBC"},
-        {"1.2.840.113549.1.12.1.3", "pbeWithSHAAnd3-KeyTripleDES-CBC"},
-        {"1.2.840.113549.1.12.1.6", "pbeWithSHAAnd40BitRC2-CBC"},
-        {"1.2.840.113549.3.2",      "RC2-CBC"},
-        {"1.2.840.113549.3.3",      "RC2-EBC"},
-        {"1.2.840.113549.3.4",      "RC4"},
-        {"1.2.840.113549.3.5",      "RC4WithMAC"},
-        {"1.2.840.113549.3.6",      "DESx-CBC"},
-        {"1.2.840.113549.3.7",      "TripleDES-CBC"},
-        {"1.2.840.113549.3.8",      "rc5CBC"},
-        {"1.2.840.113549.3.9",      "RC5-CBC"},
-        {"1.2.840.113549.3.10",     "DESCDMF"},
-        {"2.23.42.9.11.4.1",        "ECDSA"},
-    };
-    private static final Map<String, String> alg2OidMap = new HashMap<String, String>();
-    private static final Map<String, String> oid2AlgMap = new HashMap<String, String>();
-    private static final Map<String, String> algAliasesMap = new HashMap<String, String>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.990 -0400", hash_original_field = "95C84005255BA71E4E0DFD9847C47864", hash_generated_field = "60A613F29F2DD02DC04547D07F1E2D11")
+
+    private static String[] serviceName = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.990 -0400", hash_original_field = "21B74BFA2FABF0E6722E810CB277A776", hash_generated_field = "673547DB94C3FF0A61D04BFC98AF9A97")
+
+    private static String[][] knownAlgMappings = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.990 -0400", hash_original_field = "79AEE170E734025FB4D0A1CA8B23FF1E", hash_generated_field = "AA7E25703B08667214E260C0765B3356")
+
+    private static Map<String, String> alg2OidMap = new HashMap<String, String>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.991 -0400", hash_original_field = "63669FC13871444DFC9A8E37922F5C59", hash_generated_field = "972FBC59AC4E460DBDAD1ABBE1593F18")
+
+    private static Map<String, String> oid2AlgMap = new HashMap<String, String>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.991 -0400", hash_original_field = "C445BEF557E723787EE59416CAA70AB4", hash_generated_field = "F0CE86D12D62C8E46193001437152EA4")
+
+    private static Map<String, String> algAliasesMap = new HashMap<String, String>();
     static {
         for (String[] element : knownAlgMappings) {
             String algUC = element[1].toUpperCase(Locale.US);

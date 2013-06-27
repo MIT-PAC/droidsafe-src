@@ -31,9 +31,8 @@ import libcore.util.ZoneInfoDB;
 
 public final class System {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.280 -0400", hash_original_method = "E6A64E449436C53F69301A453DED3B55", hash_generated_method = "56A6DF4ABD5F4C986DFF90DF1C5AAD2A")
-    @DSModeled(DSC.SAFE)
-    private System() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.378 -0400", hash_original_method = "E6A64E449436C53F69301A453DED3B55", hash_generated_method = "56A6DF4ABD5F4C986DFF90DF1C5AAD2A")
+    private  System() {
         // ---------- Original Method ----------
     }
 
@@ -92,7 +91,7 @@ public final class System {
 
     
         private static String getEnvByName(String name) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -170,8 +169,7 @@ public final class System {
 
     
         private static String[] specialProperties() {
-        String[] retVal = {DSUtils.UNKNOWN_STRING};
-        return retVal;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -306,7 +304,7 @@ public final class System {
 
     
         public static String mapLibraryName(String userLibName) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -315,73 +313,77 @@ public final class System {
 
     
     static class SystemEnvironment extends AbstractMap<String, String> {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.410 -0400", hash_original_field = "1D78DC8ED51214E518B5114FE24490AE", hash_generated_field = "AEDE8D1FD6B9D7350079530BA211AB11")
+
         private Map<String, String> map;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.289 -0400", hash_original_method = "B0FD4399CD935BEF9930B0D70FEAF52A", hash_generated_method = "CBD554627D13D786CF3A3840CB1CFDB9")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public SystemEnvironment(Map<String, String> map) {
-            dsTaint.addTaint(map.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.411 -0400", hash_original_method = "B0FD4399CD935BEF9930B0D70FEAF52A", hash_generated_method = "47274EE90A9CC35993F9EE134C77826B")
+        public  SystemEnvironment(Map<String, String> map) {
             this.map = Collections.unmodifiableMap(map);
             // ---------- Original Method ----------
             //this.map = Collections.unmodifiableMap(map);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.289 -0400", hash_original_method = "72D95E6A5E33F4212177AA7AB73DA48C", hash_generated_method = "9FDD1BAA55CA42F21BD63DA75AA8F05A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.417 -0400", hash_original_method = "72D95E6A5E33F4212177AA7AB73DA48C", hash_generated_method = "CA46E29D48F0539EF4FEA6B6E93CE9C9")
         @Override
         public Set<Entry<String, String>> entrySet() {
-            Set<Entry<String, String>> varA45F318ED8E7A8DCF28C1D811639BEB4_1394628627 = (map.entrySet());
-            return (Set<Entry<String, String>>)dsTaint.getTaint();
+            Set<Entry<String, String>> varB4EAC82CA7396A68D541C85D26508E83_661167872 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_661167872 = map.entrySet();
+            varB4EAC82CA7396A68D541C85D26508E83_661167872.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_661167872;
             // ---------- Original Method ----------
             //return map.entrySet();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.289 -0400", hash_original_method = "427258176260CD297BEE74A463DA23FE", hash_generated_method = "33A29C50C0F2961A2386446BD52198AA")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.417 -0400", hash_original_method = "427258176260CD297BEE74A463DA23FE", hash_generated_method = "E3D7FCA179D025850CA93E3FCEC66B98")
         @Override
         public String get(Object key) {
-            dsTaint.addTaint(key.dsTaint);
-            String var7D12E71168D078A4D747B94EC55200B2_790378944 = (map.get(toNonNullString(key)));
-            return dsTaint.getTaintString();
+            String varB4EAC82CA7396A68D541C85D26508E83_494275275 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_494275275 = map.get(toNonNullString(key));
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_494275275.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_494275275;
             // ---------- Original Method ----------
             //return map.get(toNonNullString(key));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.290 -0400", hash_original_method = "5AA47FBF2138F3E35206A54E79436C96", hash_generated_method = "0B7D75F8DB01CB68A3F591A6ACFD0E83")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.434 -0400", hash_original_method = "5AA47FBF2138F3E35206A54E79436C96", hash_generated_method = "7BEFAABD028F40378C181F48EEA32535")
         @Override
         public boolean containsKey(Object key) {
-            dsTaint.addTaint(key.dsTaint);
-            boolean var370902D7D7D89F24E5C316DE8C51F902_517495573 = (map.containsKey(toNonNullString(key)));
-            return dsTaint.getTaintBoolean();
+            boolean var370902D7D7D89F24E5C316DE8C51F902_564850183 = (map.containsKey(toNonNullString(key)));
+            addTaint(key.getTaint());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_856147144 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_856147144;
             // ---------- Original Method ----------
             //return map.containsKey(toNonNullString(key));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.290 -0400", hash_original_method = "CC6AE6A57D73BE839427BC40B3BC71D9", hash_generated_method = "D303EC20A4CEF9D349FD2D9B5DCD8531")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.435 -0400", hash_original_method = "CC6AE6A57D73BE839427BC40B3BC71D9", hash_generated_method = "5D4B350E490CC66061459F304DDEBDAF")
         @Override
         public boolean containsValue(Object value) {
-            dsTaint.addTaint(value.dsTaint);
-            boolean varF6ED1590D37AED4D2A39B7426648A8D9_1912278147 = (map.containsValue(toNonNullString(value)));
-            return dsTaint.getTaintBoolean();
+            boolean varF6ED1590D37AED4D2A39B7426648A8D9_90009965 = (map.containsValue(toNonNullString(value)));
+            addTaint(value.getTaint());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1000297359 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1000297359;
             // ---------- Original Method ----------
             //return map.containsValue(toNonNullString(value));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.290 -0400", hash_original_method = "5309B26B5A621654CCE92CC093E8959E", hash_generated_method = "66ABAA6F1CCA1FEA15A26300EAC7BB7C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.436 -0400", hash_original_method = "5309B26B5A621654CCE92CC093E8959E", hash_generated_method = "561F050D47E62C9460882E1EF7DBBAB4")
         private String toNonNullString(Object o) {
-            dsTaint.addTaint(o.dsTaint);
+            String varB4EAC82CA7396A68D541C85D26508E83_494426067 = null; //Variable for return #1
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             } //End block
-            return dsTaint.getTaintString();
+            varB4EAC82CA7396A68D541C85D26508E83_494426067 = (String) o;
+            addTaint(o.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_494426067.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_494426067;
             // ---------- Original Method ----------
             //if (o == null) {
                 //throw new NullPointerException();
@@ -394,10 +396,20 @@ public final class System {
 
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.436 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "38A011E6F7F8C1250D252BD46E263A94")
+
     public static final InputStream in;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.436 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "EDA52A46216AAC1140B1897CE51020F5")
+
     public static final PrintStream out;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.436 -0400", hash_original_field = "56BD7107802EBE56C6918992F0608EC6", hash_generated_field = "4AF680145FA7144D406FDF3A41509B54")
+
     public static final PrintStream err;
-    private static final String lineSeparator;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.436 -0400", hash_original_field = "2295B6F1520BB4ED9248E07AC41BC7AC", hash_generated_field = "4F120FCF427E27BF79D0B83F7A2E925B")
+
+    private static String lineSeparator;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.436 -0400", hash_original_field = "FF68C967DBCFC921F883320F9AD54F87", hash_generated_field = "1BAE2C7F16338C14042F582AEB6D8AC2")
+
     private static Properties systemProperties;
     static {
         err = new PrintStream(new FileOutputStream(FileDescriptor.err));

@@ -15,35 +15,38 @@ import java.net.URLStreamHandler;
 
 public final class HttpHandler extends URLStreamHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.211 -0400", hash_original_method = "2AEBFCBB5963D191E9003ACE28268EE6", hash_generated_method = "2AEBFCBB5963D191E9003ACE28268EE6")
-        public HttpHandler ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.629 -0400", hash_original_method = "19FB70242B210A6BA2C2EBCBFA2BC8EA", hash_generated_method = "19FB70242B210A6BA2C2EBCBFA2BC8EA")
+    public HttpHandler ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.212 -0400", hash_original_method = "36344CA950B2A976BD9D30B58C91386F", hash_generated_method = "400EB96A575ECF74148BDB3B9E1F3F57")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.634 -0400", hash_original_method = "36344CA950B2A976BD9D30B58C91386F", hash_generated_method = "685EF77E89EECFAB2F331849CE70E5EA")
     @Override
     protected URLConnection openConnection(URL u) throws IOException {
-        dsTaint.addTaint(u.dsTaint);
-        URLConnection varD70C8AD4140E0950033F58B7F7A40958_1074797802 = (new HttpURLConnectionImpl(u, getDefaultPort()));
-        return (URLConnection)dsTaint.getTaint();
+        URLConnection varB4EAC82CA7396A68D541C85D26508E83_1842732121 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1842732121 = new HttpURLConnectionImpl(u, getDefaultPort());
+        addTaint(u.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1842732121.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1842732121;
         // ---------- Original Method ----------
         //return new HttpURLConnectionImpl(u, getDefaultPort());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.212 -0400", hash_original_method = "1382348F6F5129438828F631F9FA5282", hash_generated_method = "0F542448DEA475F3A12E73EC7C832652")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.635 -0400", hash_original_method = "1382348F6F5129438828F631F9FA5282", hash_generated_method = "88E7D903F0D8053E8FAED8E8983AE05B")
     @Override
     protected URLConnection openConnection(URL url, Proxy proxy) throws IOException {
-        dsTaint.addTaint(proxy.dsTaint);
-        dsTaint.addTaint(url.dsTaint);
+        URLConnection varB4EAC82CA7396A68D541C85D26508E83_429027789 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("url == null || proxy == null");
         } //End block
-        URLConnection var68ED555109D3FE3AC060547D491F640B_778329211 = (new HttpURLConnectionImpl(url, getDefaultPort(), proxy));
-        return (URLConnection)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_429027789 = new HttpURLConnectionImpl(url, getDefaultPort(), proxy);
+        addTaint(url.getTaint());
+        addTaint(proxy.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_429027789.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_429027789;
         // ---------- Original Method ----------
         //if (url == null || proxy == null) {
             //throw new IllegalArgumentException("url == null || proxy == null");
@@ -52,11 +55,11 @@ public final class HttpHandler extends URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.212 -0400", hash_original_method = "FEEAB6915C12BF9E3FEC7C9D98366E77", hash_generated_method = "CFECB6501FBD8E2DF00BC08F09F4B6DD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.635 -0400", hash_original_method = "FEEAB6915C12BF9E3FEC7C9D98366E77", hash_generated_method = "8DE88765453442E477E8E6A474E77F50")
     @Override
     protected int getDefaultPort() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1436929691 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1436929691;
         // ---------- Original Method ----------
         //return 80;
     }

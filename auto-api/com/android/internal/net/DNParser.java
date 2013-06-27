@@ -12,16 +12,30 @@ import java.io.IOException;
 import javax.security.auth.x500.X500Principal;
 
 public final class DNParser {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.302 -0400", hash_original_field = "567C996739EDFA1CDBAD4C55A80580DF", hash_generated_field = "3D2CB8429158C4900E9EA4B3985C38C4")
+
     private String dn;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.303 -0400", hash_original_field = "2FA47F7C65FEC19CC163B195725E3844", hash_generated_field = "C7D2E1B1F4403418CA216FC250689056")
+
     private int length;
-    private int pos, beg, end;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.303 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
+
+    private int pos;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.303 -0400", hash_original_field = "63A08F52A29E0F7A1F987F4495164AB0", hash_generated_field = "281969654EB14E15446253F1D771C5B0")
+
+    private int beg;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.303 -0400", hash_original_field = "7F021A1415B86F2D013B2618FB31AE53", hash_generated_field = "BDD622074D0B9CD7867B17F38BB0017C")
+
+    private int end;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.303 -0400", hash_original_field = "B5FDDF1EF601E74DB01C1425561A38CB", hash_generated_field = "574083FEFFA006A1773B42DB36035D30")
+
     private int cur;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.303 -0400", hash_original_field = "B69D9BC635CCD79AD2C64BC862ABE3B4", hash_generated_field = "8CFCF0E96717F68959883591D279E158")
+
     private char[] chars;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.145 -0400", hash_original_method = "3E2925D928731F8540EF17AB0FA8675E", hash_generated_method = "C6AE420095EB518BA367737D31CB9D9A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public DNParser(X500Principal principal) {
-        dsTaint.addTaint(principal.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.311 -0400", hash_original_method = "3E2925D928731F8540EF17AB0FA8675E", hash_generated_method = "11360DB6ACF8FCF3E98B2CD56253A240")
+    public  DNParser(X500Principal principal) {
         this.dn = principal.getName(X500Principal.RFC2253);
         this.length = dn.length();
         // ---------- Original Method ----------
@@ -30,9 +44,13 @@ public final class DNParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.146 -0400", hash_original_method = "FF4BEB2C3B52F01ACB9FD25F4CE8A230", hash_generated_method = "0B649E855B5E439FD18FC0D9628B9DDE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.312 -0400", hash_original_method = "FF4BEB2C3B52F01ACB9FD25F4CE8A230", hash_generated_method = "63C3EF8CF996C190660031F94DA2115E")
     private String nextAT() throws IOException {
+        String varB4EAC82CA7396A68D541C85D26508E83_1260736230 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_742782508 = null; //Variable for return #2
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1260736230 = null;
+        } //End block
         beg = pos;
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException(ERROR_PARSE_ERROR);
@@ -46,16 +64,26 @@ public final class DNParser {
         {
             beg += 4;
         } //End block
-        String var0400BACEB4DCDFFFD96F8F041C31470F_1835767268 = (new String(chars, beg, end - beg));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_742782508 = new String(chars, beg, end - beg);
+        String varA7E53CE21691AB073D9660D615818899_1730221189; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1730221189 = varB4EAC82CA7396A68D541C85D26508E83_1260736230;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1730221189 = varB4EAC82CA7396A68D541C85D26508E83_742782508;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1730221189.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1730221189;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.146 -0400", hash_original_method = "6CE0A226336916B0D0BD29FA44800404", hash_generated_method = "917C76E22DB693BA8B6BA33E7444C116")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.325 -0400", hash_original_method = "6CE0A226336916B0D0BD29FA44800404", hash_generated_method = "45805EAD3B16F6FB896A5196720BB34C")
     private String quotedAV() throws IOException {
+        String varB4EAC82CA7396A68D541C85D26508E83_1428685079 = null; //Variable for return #1
         beg = pos;
         end = beg;
         {
@@ -69,8 +97,9 @@ public final class DNParser {
                 chars[end] = chars[pos];
             } //End block
         } //End block
-        String var0400BACEB4DCDFFFD96F8F041C31470F_558327779 = (new String(chars, beg, end - beg));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1428685079 = new String(chars, beg, end - beg);
+        varB4EAC82CA7396A68D541C85D26508E83_1428685079.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1428685079;
         // ---------- Original Method ----------
         //pos++;
         //beg = pos;
@@ -96,9 +125,9 @@ public final class DNParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.147 -0400", hash_original_method = "F2971F3EEE8ADD1AC7CDED4BAC19B062", hash_generated_method = "21D94E09B21529A3B6D2BCB89453AE52")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.330 -0400", hash_original_method = "F2971F3EEE8ADD1AC7CDED4BAC19B062", hash_generated_method = "486E3555411B0A0490DCF22057DDEAE6")
     private String hexAV() throws IOException {
+        String varB4EAC82CA7396A68D541C85D26508E83_1834647979 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException(ERROR_PARSE_ERROR);
         } //End block
@@ -130,24 +159,27 @@ public final class DNParser {
                 encoded[i] = (byte) getByte(p);
             } //End block
         } //End collapsed parenthetic
-        String varA08C5BD6C809188234D1750FD7D77E28_700105377 = (new String(chars, beg, hexLen));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1834647979 = new String(chars, beg, hexLen);
+        varB4EAC82CA7396A68D541C85D26508E83_1834647979.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1834647979;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.147 -0400", hash_original_method = "4DC639394A31828D7BD68247B83FBA07", hash_generated_method = "28AC8CDE24335F7F8BEAF1A380A7A909")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.337 -0400", hash_original_method = "4DC639394A31828D7BD68247B83FBA07", hash_generated_method = "233F3E03793C76855C1E47711172F25D")
     private String escapedAV() throws IOException {
+        String varB4EAC82CA7396A68D541C85D26508E83_1415950636 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_435415889 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1511395043 = null; //Variable for return #3
         beg = pos;
         end = pos;
         {
             {
-                String var927BED3135A2D08AB21C5F490FDEFB0D_665066057 = (new String(chars, beg, end - beg));
+                varB4EAC82CA7396A68D541C85D26508E83_1415950636 = new String(chars, beg, end - beg);
             } //End block
             //Begin case '+' ',' ';' 
-            String var7065A5E5E676F697BD5B3879B32F2464_1512732381 = (new String(chars, beg, end - beg));
+            varB4EAC82CA7396A68D541C85D26508E83_435415889 = new String(chars, beg, end - beg);
             //End case '+' ',' ';' 
             //Begin case '\\' 
             chars[end++] = getEscaped();
@@ -165,29 +197,42 @@ public final class DNParser {
             //End case ' ' 
             //Begin case ' ' 
             {
-                String var1F723E037F940D01AF13AC29E2DCF338_1556612529 = (new String(chars, beg, cur - beg));
+                varB4EAC82CA7396A68D541C85D26508E83_1511395043 = new String(chars, beg, cur - beg);
             } //End block
             //End case ' ' 
             //Begin case default 
             chars[end++] = chars[pos];
             //End case default 
         } //End block
-        return dsTaint.getTaintString();
+        String varA7E53CE21691AB073D9660D615818899_1585974284; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1585974284 = varB4EAC82CA7396A68D541C85D26508E83_1415950636;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1585974284 = varB4EAC82CA7396A68D541C85D26508E83_435415889;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1585974284 = varB4EAC82CA7396A68D541C85D26508E83_1511395043;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1585974284.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1585974284;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.147 -0400", hash_original_method = "53196F6413879CFC1842AAE874B37E3B", hash_generated_method = "4B5DF2D7D7F4280EED7C0A69E1842949")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.339 -0400", hash_original_method = "53196F6413879CFC1842AAE874B37E3B", hash_generated_method = "71C9AA501D7A5F5407DEBF0FA3957863")
     private char getEscaped() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException(ERROR_PARSE_ERROR);
         } //End block
         //Begin case default 
-        char var6B59433B346D0CF4C614C82DD9B9249C_278862709 = (getUTF8());
+        char var6B59433B346D0CF4C614C82DD9B9249C_1607513250 = (getUTF8());
         //End case default 
-        return dsTaint.getTaintChar();
+        char varA87DEB01C5F539E6BDA34829C8EF2368_290783607 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_290783607;
         // ---------- Original Method ----------
         //pos++;
         //if (pos == length) {
@@ -214,8 +259,7 @@ public final class DNParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.148 -0400", hash_original_method = "1AF4B344FDDD447575D7BAE99B8C4CD1", hash_generated_method = "99DC4A8387B0E064F219BB83735A28E4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.376 -0400", hash_original_method = "1AF4B344FDDD447575D7BAE99B8C4CD1", hash_generated_method = "82960F76DF44D4AA4406E0E223D1D388")
     private char getUTF8() throws IOException {
         int res;
         res = getByte(pos);
@@ -243,16 +287,15 @@ public final class DNParser {
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintChar();
+        char varA87DEB01C5F539E6BDA34829C8EF2368_498170373 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_498170373;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.148 -0400", hash_original_method = "2374C761E42CEC3E752725D6A1CCC05C", hash_generated_method = "33BAD73EB63AD892DE88BFAAF27223C8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.378 -0400", hash_original_method = "2374C761E42CEC3E752725D6A1CCC05C", hash_generated_method = "555E70D331FBEED5F0ABFD3362450F88")
     private int getByte(int position) throws IOException {
-        dsTaint.addTaint(position);
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException(ERROR_PARSE_ERROR);
         } //End block
@@ -283,7 +326,9 @@ public final class DNParser {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException(ERROR_PARSE_ERROR);
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(position);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_769563174 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_769563174;
         // ---------- Original Method ----------
         //if ((position + 1) >= length) {
             //throw new IOException(ERROR_PARSE_ERROR);
@@ -313,10 +358,13 @@ public final class DNParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.149 -0400", hash_original_method = "35FC8516F494B2993CB4F015ABFC8107", hash_generated_method = "5304FCED82321BBC8E548E9E281A9C21")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.389 -0400", hash_original_method = "35FC8516F494B2993CB4F015ABFC8107", hash_generated_method = "FD5C244115531FDBBBF5DE5416C3143E")
     public String find(String attributeType) {
-        dsTaint.addTaint(attributeType);
+        String varB4EAC82CA7396A68D541C85D26508E83_2086866718 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1393901857 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_236393060 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1812234068 = null; //Variable for return #4
+        String varB4EAC82CA7396A68D541C85D26508E83_900349134 = null; //Variable for return #5
         try 
         {
             pos = 0;
@@ -327,8 +375,14 @@ public final class DNParser {
             String attType;
             attType = nextAT();
             {
+                varB4EAC82CA7396A68D541C85D26508E83_2086866718 = null;
+            } //End block
+            {
                 String attValue;
                 attValue = "";
+                {
+                    varB4EAC82CA7396A68D541C85D26508E83_1393901857 = null;
+                } //End block
                 //Begin case '"' 
                 attValue = quotedAV();
                 //End case '"' 
@@ -339,8 +393,14 @@ public final class DNParser {
                 attValue = escapedAV();
                 //End case default 
                 {
-                    boolean var44AEC70A73EE84F9DA3DC9B3F47DAE8A_1063522554 = (attributeType.equalsIgnoreCase(attType));
+                    boolean var44AEC70A73EE84F9DA3DC9B3F47DAE8A_1306950186 = (attributeType.equalsIgnoreCase(attType));
+                    {
+                        varB4EAC82CA7396A68D541C85D26508E83_236393060 = attValue;
+                    } //End block
                 } //End collapsed parenthetic
+                {
+                    varB4EAC82CA7396A68D541C85D26508E83_1812234068 = null;
+                } //End block
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException(ERROR_PARSE_ERROR);
                 } //End block
@@ -351,14 +411,40 @@ public final class DNParser {
             } //End block
         } //End block
         catch (IOException e)
-        { }
-        return dsTaint.getTaintString();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_900349134 = null;
+        } //End block
+        addTaint(attributeType.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_1917015622; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1917015622 = varB4EAC82CA7396A68D541C85D26508E83_2086866718;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1917015622 = varB4EAC82CA7396A68D541C85D26508E83_1393901857;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_1917015622 = varB4EAC82CA7396A68D541C85D26508E83_236393060;
+                break;
+            case 4: //Assign result for return ordinal #4
+                varA7E53CE21691AB073D9660D615818899_1917015622 = varB4EAC82CA7396A68D541C85D26508E83_1812234068;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1917015622 = varB4EAC82CA7396A68D541C85D26508E83_900349134;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1917015622.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1917015622;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    private static final String TAG = "DNParser";
-    private static final String ERROR_PARSE_ERROR = "Failed to parse DN";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.397 -0400", hash_original_field = "6DAE49A6EC00A4949FEB1C9846028845", hash_generated_field = "58FF1A439D47E6C41F63886B6C328B96")
+
+    private static String TAG = "DNParser";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.397 -0400", hash_original_field = "88D1EAA420327EA474AE9B433B9E526C", hash_generated_field = "821FBA12893FDEC157499BA41725E870")
+
+    private static String ERROR_PARSE_ERROR = "Failed to parse DN";
 }
 

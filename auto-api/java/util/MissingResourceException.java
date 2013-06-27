@@ -9,40 +9,50 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public class MissingResourceException extends RuntimeException {
-    String className, key;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.520 -0400", hash_original_field = "6F66E878C62DB60568A3487869695820", hash_generated_field = "CA6BE7A479C5F3E68F3687DBA3A4A48F")
+
+    String className;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.520 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "FFE7EE17DFA37A68070A0F0495753B29")
+
+    String key;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.912 -0400", hash_original_method = "0B71E2B2311543F4039A5E1A5B0E2A4E", hash_generated_method = "64705D0D20DE1F3D987D4D3AE1BD5240")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public MissingResourceException(String detailMessage, String className,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.520 -0400", hash_original_method = "0B71E2B2311543F4039A5E1A5B0E2A4E", hash_generated_method = "A8C3057C394CB0529420169C64D4EF1E")
+    public  MissingResourceException(String detailMessage, String className,
             String resourceName) {
         super(detailMessage);
-        dsTaint.addTaint(detailMessage);
-        dsTaint.addTaint(className);
-        dsTaint.addTaint(resourceName);
+        this.className = className;
+        key = resourceName;
+        addTaint(detailMessage.getTaint());
         // ---------- Original Method ----------
         //this.className = className;
         //key = resourceName;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.913 -0400", hash_original_method = "8415940D3A1E5651F883E391EC68DA41", hash_generated_method = "FD0BF2C0E71CAD43679936E5C43FD82B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.521 -0400", hash_original_method = "8415940D3A1E5651F883E391EC68DA41", hash_generated_method = "6D7B717DB9376863C1D3E1142EE306BB")
     public String getClassName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1271038673 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1271038673 = className;
+        varB4EAC82CA7396A68D541C85D26508E83_1271038673.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1271038673;
         // ---------- Original Method ----------
         //return className;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.913 -0400", hash_original_method = "C39C8C9D5BC81C2FE68967748762171F", hash_generated_method = "5681BD529858D11322372A21207B4A9E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.524 -0400", hash_original_method = "C39C8C9D5BC81C2FE68967748762171F", hash_generated_method = "26C0753478AFAA44ABB3866A14799389")
     public String getKey() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1088346641 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1088346641 = key;
+        varB4EAC82CA7396A68D541C85D26508E83_1088346641.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1088346641;
         // ---------- Original Method ----------
         //return key;
     }
 
     
-    private static final long serialVersionUID = -4876345176062000401L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.524 -0400", hash_original_field = "44400619BCAA2353344518B6666297C1", hash_generated_field = "A6141335F9FFA6219E5FB08FB157A846")
+
+    private static long serialVersionUID = -4876345176062000401L;
 }
 

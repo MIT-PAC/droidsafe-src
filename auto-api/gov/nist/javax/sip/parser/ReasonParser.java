@@ -13,27 +13,25 @@ import java.text.ParseException;
 
 public class ReasonParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.498 -0400", hash_original_method = "B94DA4BEBB849BE0C94AD11E29C73BAF", hash_generated_method = "5404B7785AD224CABCB2EB3A8FF38B3C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ReasonParser(String reason) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.082 -0400", hash_original_method = "B94DA4BEBB849BE0C94AD11E29C73BAF", hash_generated_method = "EDC34466B4D5E43E48DF312EA7F6443B")
+    public  ReasonParser(String reason) {
         super(reason);
-        dsTaint.addTaint(reason);
+        addTaint(reason.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.498 -0400", hash_original_method = "A4DE926778D9613A22D41E6650D2AD81", hash_generated_method = "644ED76FAB8BDC8613EF6921AD6E2C0A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected ReasonParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.082 -0400", hash_original_method = "A4DE926778D9613A22D41E6650D2AD81", hash_generated_method = "8D67B45EB50722CA9321C66B020DC197")
+    protected  ReasonParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.498 -0400", hash_original_method = "C924C06E3DD994AE91BBC5A8A54B9FE3", hash_generated_method = "54588C4423A307FDA1EE51415E33F7B5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.084 -0400", hash_original_method = "C924C06E3DD994AE91BBC5A8A54B9FE3", hash_generated_method = "E00E0C7B786C6EF22F18F512D1B0FB4A")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_886026888 = null; //Variable for return #1
         ReasonList reasonList;
         reasonList = new ReasonList();
         dbg_enter("ReasonParser.parse");
@@ -42,7 +40,7 @@ public class ReasonParser extends ParametersParser {
             headerName(TokenTypes.REASON);
             this.lexer.SPorHT();
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_414797351 = (lexer.lookAhead(0) != '\n');
+                boolean varA38820C66B6BCE71087D920E2767FF09_1726130032 = (lexer.lookAhead(0) != '\n');
                 {
                     Reason reason;
                     reason = new Reason();
@@ -55,7 +53,7 @@ public class ReasonParser extends ParametersParser {
                     super.parse(reason);
                     reasonList.add(reason);
                     {
-                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_338661674 = (lexer.lookAhead(0) == ',');
+                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_1230884675 = (lexer.lookAhead(0) == ',');
                         {
                             this.lexer.match(',');
                             this.lexer.SPorHT();
@@ -69,7 +67,9 @@ public class ReasonParser extends ParametersParser {
         {
             dbg_leave("ReasonParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_886026888 = reasonList;
+        varB4EAC82CA7396A68D541C85D26508E83_886026888.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_886026888;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

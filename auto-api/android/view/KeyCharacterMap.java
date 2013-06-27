@@ -15,14 +15,17 @@ import android.util.SparseArray;
 import java.lang.Character;
 
 public class KeyCharacterMap {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.913 -0400", hash_original_field = "DD9A3A8FAD85AE1264DE035645B54BEC", hash_generated_field = "AE8D59B3F804A7C4665D164A31D2B414")
+
     private int mDeviceId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.913 -0400", hash_original_field = "34F930F150EAEEFF27D6C0C8E4629911", hash_generated_field = "E9A8054C2C57C0CE861FDCA982433D1A")
+
     private int mPtr;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.948 -0400", hash_original_method = "F25FFC35847D9654A71D98E78C4759D8", hash_generated_method = "0DE4B3C3625FB3DB578C393C40FFCE89")
-    @DSModeled(DSC.SAFE)
-    private KeyCharacterMap(int deviceId, int ptr) {
-        dsTaint.addTaint(deviceId);
-        dsTaint.addTaint(ptr);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.917 -0400", hash_original_method = "F25FFC35847D9654A71D98E78C4759D8", hash_generated_method = "BA7BA688730B5A8F24D16B2D5566D72A")
+    private  KeyCharacterMap(int deviceId, int ptr) {
+        mDeviceId = deviceId;
+        mPtr = ptr;
         // ---------- Original Method ----------
         //mDeviceId = deviceId;
         //mPtr = ptr;
@@ -74,8 +77,7 @@ public class KeyCharacterMap {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.949 -0400", hash_original_method = "C46984664DD9459250D6B9D7539380FB", hash_generated_method = "5308CBB561764EEE98811339213C570B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.928 -0400", hash_original_method = "C46984664DD9459250D6B9D7539380FB", hash_generated_method = "5308CBB561764EEE98811339213C570B")
     @Override
     protected void finalize() throws Throwable {
         {
@@ -113,17 +115,17 @@ public class KeyCharacterMap {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.949 -0400", hash_original_method = "9130955DF84228D9EE103102BFA3B17A", hash_generated_method = "4636670E4EAA33459F176F68F3A1AC90")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.929 -0400", hash_original_method = "9130955DF84228D9EE103102BFA3B17A", hash_generated_method = "BA8DE67C9C8276634978BEE7E6EA71E3")
     public int get(int keyCode, int metaState) {
-        dsTaint.addTaint(keyCode);
-        dsTaint.addTaint(metaState);
         metaState = KeyEvent.normalizeMetaState(metaState);
         char ch;
         ch = nativeGetCharacter(mPtr, keyCode, metaState);
         int map;
         map = COMBINING.get(ch);
-        return dsTaint.getTaintInt();
+        addTaint(keyCode);
+        addTaint(metaState);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_728907679 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_728907679;
         // ---------- Original Method ----------
         //metaState = KeyEvent.normalizeMetaState(metaState);
         //char ch = nativeGetCharacter(mPtr, keyCode, metaState);
@@ -136,19 +138,19 @@ public class KeyCharacterMap {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.950 -0400", hash_original_method = "5701A82EAD1DE3F7E3AD5DC604F1A78C", hash_generated_method = "C99DA33313A8D1905CD8646F1F71438F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.931 -0400", hash_original_method = "5701A82EAD1DE3F7E3AD5DC604F1A78C", hash_generated_method = "0F028C8E47F9E9C5B3E37F0CB58AF21D")
     public boolean getFallbackAction(int keyCode, int metaState,
             FallbackAction outFallbackAction) {
-        dsTaint.addTaint(keyCode);
-        dsTaint.addTaint(outFallbackAction.dsTaint);
-        dsTaint.addTaint(metaState);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("fallbackAction must not be null");
         } //End block
         metaState = KeyEvent.normalizeMetaState(metaState);
-        boolean varCE3900304199253D1A24A3B82C990EE8_2055511127 = (nativeGetFallbackAction(mPtr, keyCode, metaState, outFallbackAction));
-        return dsTaint.getTaintBoolean();
+        boolean varCE3900304199253D1A24A3B82C990EE8_1186390313 = (nativeGetFallbackAction(mPtr, keyCode, metaState, outFallbackAction));
+        addTaint(keyCode);
+        addTaint(metaState);
+        addTaint(outFallbackAction.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2081681191 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2081681191;
         // ---------- Original Method ----------
         //if (outFallbackAction == null) {
             //throw new IllegalArgumentException("fallbackAction must not be null");
@@ -158,41 +160,41 @@ public class KeyCharacterMap {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.950 -0400", hash_original_method = "6DABCB0117446A751E56C996ECEF0096", hash_generated_method = "5960C5FC647D786D1410A60B161ABD04")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.947 -0400", hash_original_method = "6DABCB0117446A751E56C996ECEF0096", hash_generated_method = "6898CC6B5C8D992E654711A78C97A7FE")
     public char getNumber(int keyCode) {
-        dsTaint.addTaint(keyCode);
-        char varDF198814D68AB4A952E3ABC833B9B8A4_1456259243 = (nativeGetNumber(mPtr, keyCode));
-        return dsTaint.getTaintChar();
+        char varDF198814D68AB4A952E3ABC833B9B8A4_1502191774 = (nativeGetNumber(mPtr, keyCode));
+        addTaint(keyCode);
+        char varA87DEB01C5F539E6BDA34829C8EF2368_854145558 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_854145558;
         // ---------- Original Method ----------
         //return nativeGetNumber(mPtr, keyCode);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.950 -0400", hash_original_method = "BB5B7EBB644AED6B3730BD9151F78F69", hash_generated_method = "633FEC5258CE7A01189D568E847A9718")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.948 -0400", hash_original_method = "BB5B7EBB644AED6B3730BD9151F78F69", hash_generated_method = "BE5881D021CE21BDB7CB20355AFEBE38")
     public char getMatch(int keyCode, char[] chars) {
-        dsTaint.addTaint(keyCode);
-        dsTaint.addTaint(chars[0]);
-        char var9F0B8F7534FA815F4917D99B8DF1A026_1493642534 = (getMatch(keyCode, chars, 0));
-        return dsTaint.getTaintChar();
+        char var9F0B8F7534FA815F4917D99B8DF1A026_1361745418 = (getMatch(keyCode, chars, 0));
+        addTaint(keyCode);
+        addTaint(chars[0]);
+        char varA87DEB01C5F539E6BDA34829C8EF2368_659515075 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_659515075;
         // ---------- Original Method ----------
         //return getMatch(keyCode, chars, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.950 -0400", hash_original_method = "41D073D91107291EA05310027D49190C", hash_generated_method = "4430D486E426BA14922760AFD731114D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.948 -0400", hash_original_method = "41D073D91107291EA05310027D49190C", hash_generated_method = "33E6789546533A56977E1C722A862E4F")
     public char getMatch(int keyCode, char[] chars, int metaState) {
-        dsTaint.addTaint(keyCode);
-        dsTaint.addTaint(metaState);
-        dsTaint.addTaint(chars[0]);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("chars must not be null.");
         } //End block
         metaState = KeyEvent.normalizeMetaState(metaState);
-        char var1E3A75249CA35C8B1285237F1D55E97D_60470732 = (nativeGetMatch(mPtr, keyCode, chars, metaState));
-        return dsTaint.getTaintChar();
+        char var1E3A75249CA35C8B1285237F1D55E97D_526980235 = (nativeGetMatch(mPtr, keyCode, chars, metaState));
+        addTaint(keyCode);
+        addTaint(chars[0]);
+        addTaint(metaState);
+        char varA87DEB01C5F539E6BDA34829C8EF2368_1778014296 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_1778014296;
         // ---------- Original Method ----------
         //if (chars == null) {
             //throw new IllegalArgumentException("chars must not be null.");
@@ -202,12 +204,12 @@ public class KeyCharacterMap {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.951 -0400", hash_original_method = "6DD5621B8D7662BB0D5EEF29B875BDA1", hash_generated_method = "8527AA1547B53674431B4F57CDEF75E7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.949 -0400", hash_original_method = "6DD5621B8D7662BB0D5EEF29B875BDA1", hash_generated_method = "6A644F2ABE1A7D605FE9911BFA7380A8")
     public char getDisplayLabel(int keyCode) {
-        dsTaint.addTaint(keyCode);
-        char var90AE32CAD5C582E5138E2843AD421D47_1968873982 = (nativeGetDisplayLabel(mPtr, keyCode));
-        return dsTaint.getTaintChar();
+        char var90AE32CAD5C582E5138E2843AD421D47_599696382 = (nativeGetDisplayLabel(mPtr, keyCode));
+        addTaint(keyCode);
+        char varA87DEB01C5F539E6BDA34829C8EF2368_1619809448 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_1619809448;
         // ---------- Original Method ----------
         //return nativeGetDisplayLabel(mPtr, keyCode);
     }
@@ -218,12 +220,9 @@ public class KeyCharacterMap {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.951 -0400", hash_original_method = "76D58BCFCDB16C229BEE46626C0804EB", hash_generated_method = "CBE0369082A79B81E75DEB0429A602F1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.960 -0400", hash_original_method = "76D58BCFCDB16C229BEE46626C0804EB", hash_generated_method = "43A6DED9F16EDA9B94DE3E1796AE636D")
     @Deprecated
     public boolean getKeyData(int keyCode, KeyData results) {
-        dsTaint.addTaint(keyCode);
-        dsTaint.addTaint(results.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(
                     "results.meta.length must be >= " + KeyData.META_LENGTH);
@@ -237,7 +236,10 @@ public class KeyCharacterMap {
         results.meta[2] = nativeGetCharacter(mPtr, keyCode, KeyEvent.META_ALT_ON);
         results.meta[3] = nativeGetCharacter(mPtr, keyCode,
                 KeyEvent.META_ALT_ON | KeyEvent.META_SHIFT_ON);
-        return dsTaint.getTaintBoolean();
+        addTaint(keyCode);
+        addTaint(results.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_392689219 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_392689219;
         // ---------- Original Method ----------
         //if (results.meta.length < KeyData.META_LENGTH) {
             //throw new IndexOutOfBoundsException(
@@ -258,15 +260,16 @@ public class KeyCharacterMap {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.952 -0400", hash_original_method = "75C550EBD18DF5C6523832F5B0CC290D", hash_generated_method = "8BA96D4E5134F200B4DAC3FE824E78C7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.961 -0400", hash_original_method = "75C550EBD18DF5C6523832F5B0CC290D", hash_generated_method = "6A6E30BC2E8B74564D48D11CBD793DF1")
     public KeyEvent[] getEvents(char[] chars) {
-        dsTaint.addTaint(chars[0]);
+        KeyEvent[] varB4EAC82CA7396A68D541C85D26508E83_792082780 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("chars must not be null.");
         } //End block
-        KeyEvent[] var79B16E446F0C956CCED11EF9AD5A052D_1214982712 = (nativeGetEvents(mPtr, mDeviceId, chars));
-        return (KeyEvent[])dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_792082780 = nativeGetEvents(mPtr, mDeviceId, chars);
+        addTaint(chars[0]);
+        varB4EAC82CA7396A68D541C85D26508E83_792082780.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_792082780;
         // ---------- Original Method ----------
         //if (chars == null) {
             //throw new IllegalArgumentException("chars must not be null.");
@@ -275,13 +278,13 @@ public class KeyCharacterMap {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.952 -0400", hash_original_method = "3285F5CD7518CBF681F7E4DAED1719BF", hash_generated_method = "68C4F0EC242902F93C342D14A0416281")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.967 -0400", hash_original_method = "3285F5CD7518CBF681F7E4DAED1719BF", hash_generated_method = "F16D8E674ABD96A7595E8059B473E509")
     public boolean isPrintingKey(int keyCode) {
-        dsTaint.addTaint(keyCode);
         int type;
         type = Character.getType(nativeGetDisplayLabel(mPtr, keyCode));
-        return dsTaint.getTaintBoolean();
+        addTaint(keyCode);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1549309456 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1549309456;
         // ---------- Original Method ----------
         //int type = Character.getType(nativeGetDisplayLabel(mPtr, keyCode));
         //switch (type)
@@ -298,23 +301,23 @@ public class KeyCharacterMap {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.952 -0400", hash_original_method = "BA716E54E3F5777C121637287957F9E5", hash_generated_method = "98EB5EDA709E7007B640441D6F1239CF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.972 -0400", hash_original_method = "BA716E54E3F5777C121637287957F9E5", hash_generated_method = "C035B110C18C26358F8284A848D29EC2")
     public int getKeyboardType() {
-        int var5804746570F479E54666D84988DB57C1_308797885 = (nativeGetKeyboardType(mPtr));
-        return dsTaint.getTaintInt();
+        int var5804746570F479E54666D84988DB57C1_1507975591 = (nativeGetKeyboardType(mPtr));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1969738382 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1969738382;
         // ---------- Original Method ----------
         //return nativeGetKeyboardType(mPtr);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.952 -0400", hash_original_method = "1B54B22E072CCA54689C03A0F5698E81", hash_generated_method = "E4AF211D74B19132276B1809F481CC8B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.973 -0400", hash_original_method = "1B54B22E072CCA54689C03A0F5698E81", hash_generated_method = "78C53D890100FC75243C9648DF644E5B")
     public int getModifierBehavior() {
         {
-            Object var6F1F68E94BE9EBA81DD665AD4038DA31_1806025720 = (getKeyboardType());
+            Object var6F1F68E94BE9EBA81DD665AD4038DA31_1112032272 = (getKeyboardType());
         } //End collapsed parenthetic
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_587569222 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_587569222;
         // ---------- Original Method ----------
         //switch (getKeyboardType()) {
             //case FULL:
@@ -346,15 +349,24 @@ public class KeyCharacterMap {
 
     
     public static class KeyData {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.983 -0400", hash_original_field = "EDD7E5ACED959081EE73D67CD32E0437", hash_generated_field = "10206615040C9B5E0B40E86C5E399A28")
+
         public char displayLabel;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.983 -0400", hash_original_field = "B1BC248A7FF2B2E95569F56DE68615DF", hash_generated_field = "C53E6ECAD71F4994DDB600BCB7228E67")
+
         public char number;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.983 -0400", hash_original_field = "31298D406F99FA910E1BB450CB1210C9", hash_generated_field = "B234B5BEA612AD563CF4084101F5BF63")
+
         public char[] meta = new char[META_LENGTH];
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.953 -0400", hash_original_method = "B4D0D5397B056CE88CBFFBC85D161ACD", hash_generated_method = "B4D0D5397B056CE88CBFFBC85D161ACD")
-                public KeyData ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.983 -0400", hash_original_method = "AA20F851FEA58DFB4FCE42162FC7E15E", hash_generated_method = "AA20F851FEA58DFB4FCE42162FC7E15E")
+        public KeyData ()
         {
+            //Synthesized constructor
         }
 
+
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.983 -0400", hash_original_field = "605E432175D9C11171F588C24F0372F3", hash_generated_field = "B7B5BF1414600355D7BF1611E9967D65")
 
         public static final int META_LENGTH = 4;
     }
@@ -363,11 +375,10 @@ public class KeyCharacterMap {
     
     public static class UnavailableException extends AndroidRuntimeException {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.953 -0400", hash_original_method = "463842D1BF3FEF123617A569E3B89D0B", hash_generated_method = "CCF2240AAD74537557F247059A42220A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public UnavailableException(String msg) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.984 -0400", hash_original_method = "463842D1BF3FEF123617A569E3B89D0B", hash_generated_method = "1BCAB3A4C9C611B069ED152144702993")
+        public  UnavailableException(String msg) {
             super(msg);
-            dsTaint.addTaint(msg);
+            addTaint(msg.getTaint());
             // ---------- Original Method ----------
         }
 
@@ -377,12 +388,17 @@ public class KeyCharacterMap {
 
     
     public static final class FallbackAction {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.984 -0400", hash_original_field = "B96BEB1FB95F7FA45257BB48942AEF8A", hash_generated_field = "000F6935635EB02934CE0DE5E09F2D3E")
+
         public int keyCode;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.984 -0400", hash_original_field = "A862CA74D6E47B766A6CD7CA4CED384B", hash_generated_field = "5236106FD9BFBDE1EF13C213F3E14407")
+
         public int metaState;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.953 -0400", hash_original_method = "8F71AD31F9558B535E788D218229A484", hash_generated_method = "8F71AD31F9558B535E788D218229A484")
-                public FallbackAction ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.984 -0400", hash_original_method = "789B682B3FBE45C1858DC98A8C26817D", hash_generated_method = "789B682B3FBE45C1858DC98A8C26817D")
+        public FallbackAction ()
         {
+            //Synthesized constructor
         }
 
 
@@ -390,26 +406,69 @@ public class KeyCharacterMap {
 
 
     
-    @Deprecated public static final int BUILT_IN_KEYBOARD = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.984 -0400", hash_original_field = "F572C81B0A403AEC5D7042E8DEBF3A2D", hash_generated_field = "59B4829C2D65190B8B4C0FA33230C1E4")
+
+    @Deprecated
+    public static final int BUILT_IN_KEYBOARD = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.984 -0400", hash_original_field = "79AA03C4AB09A8A3584C1579611E8AE6", hash_generated_field = "C3770B577FF433B8BFF698D5F722014E")
+
     public static final int VIRTUAL_KEYBOARD = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.984 -0400", hash_original_field = "E1852BD6E1BE8C53AE1ED4B95FE0BF31", hash_generated_field = "81DDA812F0A0EF21C694BF5A82F81EE3")
+
     public static final int NUMERIC = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.984 -0400", hash_original_field = "2AF081D98CE272B14B51F84FAA0E87C0", hash_generated_field = "CD3F247AFA1F26ABAD74821769ACFB70")
+
     public static final int PREDICTIVE = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.984 -0400", hash_original_field = "93AFCF8B39F04B6FD85150B6E11FA2E9", hash_generated_field = "157B02842601F7C0DED5E95134F38522")
+
     public static final int ALPHA = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.984 -0400", hash_original_field = "B2A3B389720B89BD78EBD0055A7BDCD2", hash_generated_field = "20E85A6090C38DE3E8C1E3AF96C136F0")
+
     public static final int FULL = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.984 -0400", hash_original_field = "3B09F063BC168781F3052CA607AD8EE8", hash_generated_field = "89216B40F08E21779835E6D1681D3FBA")
+
     public static final int SPECIAL_FUNCTION = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.985 -0400", hash_original_field = "43842CE63B7074FC29B707577200F6D1", hash_generated_field = "E6D8ABAEC54AD7FE6AC0637BE6B60C20")
+
     public static final char HEX_INPUT = '\uEF00';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.985 -0400", hash_original_field = "DF5D1D35865F8EB5AE22157081925B9F", hash_generated_field = "C292F8608784160E386A6728D1ED3563")
+
     public static final char PICKER_DIALOG_INPUT = '\uEF01';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.985 -0400", hash_original_field = "43DD74A09CA1EDEE1CEFB3139D14A179", hash_generated_field = "B89E5758383255A9C827FA145DE8507A")
+
     public static final int MODIFIER_BEHAVIOR_CHORDED = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.985 -0400", hash_original_field = "F46E5533C1B26A9D7420A875D97AEA38", hash_generated_field = "616FB0D0098A2547A5B190478FA72B55")
+
     public static final int MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.985 -0400", hash_original_field = "617ADA7708849339281DA72258A7638A", hash_generated_field = "A41BDDB2AF8DD199AC0801E6FA90000D")
+
     private static SparseArray<KeyCharacterMap> sInstances = new SparseArray<KeyCharacterMap>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.985 -0400", hash_original_field = "F3D0BF4B53FA5387C07DF0D7E5CFC53E", hash_generated_field = "11B1384F451F38AFF9AFE2392F709751")
+
     private static SparseIntArray COMBINING = new SparseIntArray();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.985 -0400", hash_original_field = "24A19292524D0E6F5DC1B44038CDFDE6", hash_generated_field = "B76722FF851A78D583E0DFB3CE65DF2C")
+
     private static SparseIntArray DEAD = new SparseIntArray();
-    private static final int ACUTE = '\u00B4' << 16;
-    private static final int GRAVE = '`' << 16;
-    private static final int CIRCUMFLEX = '^' << 16;
-    private static final int TILDE = '~' << 16;
-    private static final int UMLAUT = '\u00A8' << 16;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.985 -0400", hash_original_field = "E9F57DCC8A8CBAAFECFFEDA39105551C", hash_generated_field = "03F9AD52905A4B975E4C385CC62F4DE5")
+
+    private static int ACUTE = '\u00B4' << 16;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.985 -0400", hash_original_field = "392D216BCCB4771711DCDAD9FEFA0B04", hash_generated_field = "52B7F0B160B990838F3ACFB12B19C14D")
+
+    private static int GRAVE = '`' << 16;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.986 -0400", hash_original_field = "FD9819D70B388EB80DFBC874095B0617", hash_generated_field = "C2F32333D4B5714775DFA30A651D1219")
+
+    private static int CIRCUMFLEX = '^' << 16;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.986 -0400", hash_original_field = "C46C28DB7553734742BEB4717E1B81D4", hash_generated_field = "302B9CDBF18C7EC59EFEEFDF4B67E1EA")
+
+    private static int TILDE = '~' << 16;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.986 -0400", hash_original_field = "07A28FFCC7E8F1DF227B0987F964832B", hash_generated_field = "DF88278089B2BB63E27B5170D564AC2B")
+
+    private static int UMLAUT = '\u00A8' << 16;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.986 -0400", hash_original_field = "5FC5405C81FA99B46E753C2A887CD287", hash_generated_field = "0E06608D3648E37E5411DA551501463D")
+
     public static final int COMBINING_ACCENT = 0x80000000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.986 -0400", hash_original_field = "273265AF6A4B0BAA1779280BF7CEBFC6", hash_generated_field = "0F27E21C7E3F6FCD749479852C67E791")
+
     public static final int COMBINING_ACCENT_MASK = 0x7FFFFFFF;
     static {
         COMBINING.put('\u0300', (GRAVE >> 16) | COMBINING_ACCENT);

@@ -10,13 +10,14 @@ import java.util.Iterator;
 
 public class NotYetConnectedException extends IllegalStateException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.124 -0400", hash_original_method = "AFB89A7B95489A72D2FCAF41FDB5C39C", hash_generated_method = "CCD596B80CFA59E9BDDE447A6FB218D0")
-    @DSModeled(DSC.SAFE)
-    public NotYetConnectedException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.513 -0400", hash_original_method = "AFB89A7B95489A72D2FCAF41FDB5C39C", hash_generated_method = "CCD596B80CFA59E9BDDE447A6FB218D0")
+    public  NotYetConnectedException() {
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = 4697316551909513464L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.513 -0400", hash_original_field = "6CDD1AA0BD2EE78105096B5CD713BCA8", hash_generated_field = "42CACCE54EB62960610A553DB911E215")
+
+    private static long serialVersionUID = 4697316551909513464L;
 }
 

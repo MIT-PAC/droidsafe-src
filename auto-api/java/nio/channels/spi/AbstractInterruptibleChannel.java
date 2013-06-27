@@ -14,11 +14,16 @@ import java.nio.channels.ClosedByInterruptException;
 import java.nio.channels.InterruptibleChannel;
 
 public abstract class AbstractInterruptibleChannel implements Channel, InterruptibleChannel {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.584 -0400", hash_original_field = "1E79543A888DE7BB0ADBB289A8F4251D", hash_generated_field = "ACA7C061F36840D4F0EB869DD1E1AB7C")
+
     private volatile boolean closed = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.585 -0400", hash_original_field = "BA68CAEFFB1A8327FC6344D171E392C8", hash_generated_field = "40A458BD5C00C50CD6C70C9B2D7F702B")
+
     volatile boolean interrupted = false;
-    private final Runnable interruptAndCloseRunnable = new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.143 -0400", hash_original_method = "AE7E9C29A12236996DA74E23561B6760", hash_generated_method = "A82EC148D3A353CBA856B48EDD1EC897")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.592 -0400", hash_original_field = "EABFBB4303F4F38DE6361EA110D0C225", hash_generated_field = "B2D49D52DA0242C9BB4F0C2CC7C3410C")
+
+    private Runnable interruptAndCloseRunnable = new Runnable() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.591 -0400", hash_original_method = "AE7E9C29A12236996DA74E23561B6760", hash_generated_method = "A82EC148D3A353CBA856B48EDD1EC897")
         @Override
         public void run() {
             try 
@@ -37,27 +42,25 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
         }
 
         
-}; //Transformed anonymous class
+};
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.144 -0400", hash_original_method = "8D566223F7B6A201818F5E4BFCF4F6EB", hash_generated_method = "06F598EF6A4A993889CD9DF449D06062")
-    @DSModeled(DSC.SAFE)
-    protected AbstractInterruptibleChannel() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.592 -0400", hash_original_method = "8D566223F7B6A201818F5E4BFCF4F6EB", hash_generated_method = "06F598EF6A4A993889CD9DF449D06062")
+    protected  AbstractInterruptibleChannel() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.146 -0400", hash_original_method = "EEF08D7C99E69679C24335EC336EDE1D", hash_generated_method = "30C0D6B2AB303DC54CC8C51F91761B94")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.593 -0400", hash_original_method = "EEF08D7C99E69679C24335EC336EDE1D", hash_generated_method = "B6FD5AE31BBEBD36A7B421BD4C2442D1")
     @Override
     public synchronized final boolean isOpen() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_584074474 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_584074474;
         // ---------- Original Method ----------
         //return !closed;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.146 -0400", hash_original_method = "4C9E4AC237D7628755D560FFD1AA5234", hash_generated_method = "BCA59A95215F14F7536ADCAE6AB1CFE0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.600 -0400", hash_original_method = "4C9E4AC237D7628755D560FFD1AA5234", hash_generated_method = "BCA59A95215F14F7536ADCAE6AB1CFE0")
     @Override
     public final void close() throws IOException {
         {
@@ -80,8 +83,7 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.147 -0400", hash_original_method = "F0AA56CB3350B0CEA7EF4FF29453D45D", hash_generated_method = "6DCC83F0ECF94F334D94D331BE79DAA7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.612 -0400", hash_original_method = "F0AA56CB3350B0CEA7EF4FF29453D45D", hash_generated_method = "6DCC83F0ECF94F334D94D331BE79DAA7")
     protected final void begin() {
         Thread.currentThread().pushInterruptAction$(interruptAndCloseRunnable);
         // ---------- Original Method ----------
@@ -89,10 +91,8 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.147 -0400", hash_original_method = "9F919A15107680D02C9F3C07FD906976", hash_generated_method = "A9DFB77C1442091619A40F973FF47D75")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.629 -0400", hash_original_method = "9F919A15107680D02C9F3C07FD906976", hash_generated_method = "64CD59270C91E6188321961303BAFEB1")
     protected final void end(boolean success) throws AsynchronousCloseException {
-        dsTaint.addTaint(success);
         Thread.currentThread().popInterruptAction$(interruptAndCloseRunnable);
         {
             interrupted = false;
@@ -101,6 +101,7 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
         {
             if (DroidSafeAndroidRuntime.control) throw new AsynchronousCloseException();
         } //End block
+        addTaint(success);
         // ---------- Original Method ----------
         //Thread.currentThread().popInterruptAction$(interruptAndCloseRunnable);
         //if (interrupted) {

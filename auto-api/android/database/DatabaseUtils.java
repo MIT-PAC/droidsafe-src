@@ -28,14 +28,14 @@ import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.text.Collator;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 public class DatabaseUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.161 -0400", hash_original_method = "93F12AF889782015B364972CD69FB962", hash_generated_method = "93F12AF889782015B364972CD69FB962")
-        public DatabaseUtils ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.680 -0400", hash_original_method = "333D4DF31C6A57BA4790D091F2223BA8", hash_generated_method = "333D4DF31C6A57BA4790D091F2223BA8")
+    public DatabaseUtils ()
     {
+        //Synthesized constructor
     }
 
 
@@ -627,7 +627,7 @@ public class DatabaseUtils {
         if (sql.length() < 3) {
             return STATEMENT_OTHER;
         }
-        String prefixSql = sql.substring(0, 3).toUpperCase(Locale.US);
+        String prefixSql = sql.substring(0, 3).toUpperCase();
         if (prefixSql.equals("SEL")) {
             return STATEMENT_SELECT;
         } else if (prefixSql.equals("INS") ||
@@ -669,27 +669,39 @@ public class DatabaseUtils {
 
     
     public static class InsertHelper {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.848 -0400", hash_original_field = "2C1EEFAAB431F1A18FBAAB2A87866E85", hash_generated_field = "92D26B03BAC08A535924894FFC21F4C1")
+
         private SQLiteDatabase mDb;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.849 -0400", hash_original_field = "B71DEA0DF5DA23E0FBC017945459C34D", hash_generated_field = "92B06808D569C2D663D953BC8B279336")
+
         private String mTableName;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.849 -0400", hash_original_field = "11C985F30142FD30ACDDFE7CD3BD4A9B", hash_generated_field = "5AFDB64706963E9A447E7450FF8702D2")
+
         private HashMap<String, Integer> mColumns;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.849 -0400", hash_original_field = "1476A390C50866E58B8AF0E4D2CA1527", hash_generated_field = "09FBB1AE74AFBED9E0ABEDDB238A177E")
+
         private String mInsertSQL = null;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.850 -0400", hash_original_field = "0D20AC5F6BC35270667DEA7EE7143B72", hash_generated_field = "AAD873AB78403BAA5279E14A19451412")
+
         private SQLiteStatement mInsertStatement = null;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.850 -0400", hash_original_field = "17EC76BAB05004E63F8F765E8D3DC260", hash_generated_field = "62935F14EC8B4C3549EF440E40AC46A5")
+
         private SQLiteStatement mReplaceStatement = null;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.850 -0400", hash_original_field = "7B288F8220663431EEB2CA0F873AA44F", hash_generated_field = "90581E4B6149E61FC27485A9D17C51E2")
+
         private SQLiteStatement mPreparedStatement = null;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.171 -0400", hash_original_method = "24A3E628A21DF3387C7E8AFA040BF2F9", hash_generated_method = "C293D447409BD6AE2FB30E59E61DB2B1")
-        @DSModeled(DSC.SAFE)
-        public InsertHelper(SQLiteDatabase db, String tableName) {
-            dsTaint.addTaint(db.dsTaint);
-            dsTaint.addTaint(tableName);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.852 -0400", hash_original_method = "24A3E628A21DF3387C7E8AFA040BF2F9", hash_generated_method = "9304EA159E4A3B2A8E923B7EF28AE928")
+        public  InsertHelper(SQLiteDatabase db, String tableName) {
+            mDb = db;
+            mTableName = tableName;
             // ---------- Original Method ----------
             //mDb = db;
             //mTableName = tableName;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.172 -0400", hash_original_method = "C9A601B53671BC96A8E157301601DE92", hash_generated_method = "95182B1E472994D37EE42777AA4C580C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.890 -0400", hash_original_method = "C9A601B53671BC96A8E157301601DE92", hash_generated_method = "EA7D175EABF624EF5E9A38751413FCE1")
         private void buildSQL() throws SQLException {
             StringBuilder sb;
             sb = new StringBuilder(128);
@@ -708,7 +720,7 @@ public class DatabaseUtils {
                 cur = mDb.rawQuery("PRAGMA table_info(" + mTableName + ")", null);
                 mColumns = new HashMap<String, Integer>(cur.getCount());
                 {
-                    boolean varDD393CFA89BAE4D1CBFDDF232382228F_1303964735 = (cur.moveToNext());
+                    boolean varDD393CFA89BAE4D1CBFDDF232382228F_1098219916 = (cur.moveToNext());
                     {
                         String columnName;
                         columnName = cur.getString(TABLE_INFO_PRAGMA_COLUMNNAME_INDEX);
@@ -742,10 +754,10 @@ public class DatabaseUtils {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.172 -0400", hash_original_method = "102F3921944A0F32C4E4BE81F61A753B", hash_generated_method = "ED25A5538124D8F66E46BDBF31E35AAA")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.893 -0400", hash_original_method = "102F3921944A0F32C4E4BE81F61A753B", hash_generated_method = "4474D579515EAEB54BB9EB8D28471073")
         private SQLiteStatement getStatement(boolean allowReplace) throws SQLException {
-            dsTaint.addTaint(allowReplace);
+            SQLiteStatement varB4EAC82CA7396A68D541C85D26508E83_42245762 = null; //Variable for return #1
+            SQLiteStatement varB4EAC82CA7396A68D541C85D26508E83_882081736 = null; //Variable for return #2
             {
                 {
                     buildSQL();
@@ -753,14 +765,27 @@ public class DatabaseUtils {
                     replaceSQL = "INSERT OR REPLACE" + mInsertSQL.substring(6);
                     mReplaceStatement = mDb.compileStatement(replaceSQL);
                 } //End block
+                varB4EAC82CA7396A68D541C85D26508E83_42245762 = mReplaceStatement;
             } //End block
             {
                 {
                     buildSQL();
                     mInsertStatement = mDb.compileStatement(mInsertSQL);
                 } //End block
+                varB4EAC82CA7396A68D541C85D26508E83_882081736 = mInsertStatement;
             } //End block
-            return (SQLiteStatement)dsTaint.getTaint();
+            addTaint(allowReplace);
+            SQLiteStatement varA7E53CE21691AB073D9660D615818899_1150735407; //Final return value
+            switch (DroidSafeAndroidRuntime.switchControl) {
+                case 1: //Assign result for return ordinal #1
+                    varA7E53CE21691AB073D9660D615818899_1150735407 = varB4EAC82CA7396A68D541C85D26508E83_42245762;
+                    break;
+                default:
+                    varA7E53CE21691AB073D9660D615818899_1150735407 = varB4EAC82CA7396A68D541C85D26508E83_882081736;
+                    break;
+            }
+            varA7E53CE21691AB073D9660D615818899_1150735407.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1150735407;
             // ---------- Original Method ----------
             //if (allowReplace) {
                 //if (mReplaceStatement == null) {
@@ -779,18 +804,17 @@ public class DatabaseUtils {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.180 -0400", hash_original_method = "13ED4597857164B01AAF7D1C6E2C9384", hash_generated_method = "93D5B7DF2E7D5BD7497AF529DB530648")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.064 -0400", hash_original_method = "13ED4597857164B01AAF7D1C6E2C9384", hash_generated_method = "101502B5DF5424CE2C62F615F71284F3")
         private synchronized long insertInternal(ContentValues values, boolean allowReplace) {
-            dsTaint.addTaint(allowReplace);
-            dsTaint.addTaint(values.dsTaint);
             try 
             {
                 SQLiteStatement stmt;
                 stmt = getStatement(allowReplace);
                 stmt.clearBindings();
                 {
-                    Map.Entry<String, Object> e = values.valueSet()[0];
+                    Iterator<Map.Entry<String, Object>> var5642AFF97152BBE0EC7DF205B943CCD6_712359421 = (values.valueSet()).iterator();
+                    var5642AFF97152BBE0EC7DF205B943CCD6_712359421.hasNext();
+                    Map.Entry<String, Object> e = var5642AFF97152BBE0EC7DF205B943CCD6_712359421.next();
                     {
                         String key;
                         key = e.getKey();
@@ -799,27 +823,30 @@ public class DatabaseUtils {
                         DatabaseUtils.bindObjectToProgram(stmt, i, e.getValue());
                     } //End block
                 } //End collapsed parenthetic
-                long var023E52F16507A143FBACD2DB06F1711B_46295657 = (stmt.executeInsert());
+                long var023E52F16507A143FBACD2DB06F1711B_1066764592 = (stmt.executeInsert());
             } //End block
             catch (SQLException e)
             { }
-            return dsTaint.getTaintLong();
+            addTaint(values.getTaint());
+            addTaint(allowReplace);
+            long var0F5264038205EDFB1AC05FBB0E8C5E94_1099461625 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_1099461625;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.181 -0400", hash_original_method = "2FE6EA3004F5838FAFB27DD4EF6900C7", hash_generated_method = "5EA95F4121D2AB17CF6EAC6047FD46AC")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.081 -0400", hash_original_method = "2FE6EA3004F5838FAFB27DD4EF6900C7", hash_generated_method = "1EF7CEE001755D24B381CEF8346F7A3A")
         public int getColumnIndex(String key) {
-            dsTaint.addTaint(key);
             getStatement(false);
             Integer index;
             index = mColumns.get(key);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("column '" + key + "' is invalid");
             } //End block
-            return dsTaint.getTaintInt();
+            addTaint(key.getTaint());
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_593582246 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_593582246;
             // ---------- Original Method ----------
             //getStatement(false);
             //final Integer index = mColumns.get(key);
@@ -830,82 +857,75 @@ public class DatabaseUtils {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.182 -0400", hash_original_method = "898F1EFFAEB546E6A9657A001F4AE1E8", hash_generated_method = "86868EFEE54FC8BB82DF658BF2A21667")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.082 -0400", hash_original_method = "898F1EFFAEB546E6A9657A001F4AE1E8", hash_generated_method = "360F56ABBC2375B34BA70B6D86AEC98D")
         public void bind(int index, double value) {
-            dsTaint.addTaint(index);
-            dsTaint.addTaint(value);
             mPreparedStatement.bindDouble(index, value);
+            addTaint(index);
+            addTaint(value);
             // ---------- Original Method ----------
             //mPreparedStatement.bindDouble(index, value);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.182 -0400", hash_original_method = "85D356AA3C69D35869973C25B38955EB", hash_generated_method = "51129397ABDE327B330048C49B36B549")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.083 -0400", hash_original_method = "85D356AA3C69D35869973C25B38955EB", hash_generated_method = "C1439AC2510AC98C80BA8D990D559FA6")
         public void bind(int index, float value) {
-            dsTaint.addTaint(index);
-            dsTaint.addTaint(value);
             mPreparedStatement.bindDouble(index, value);
+            addTaint(index);
+            addTaint(value);
             // ---------- Original Method ----------
             //mPreparedStatement.bindDouble(index, value);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.182 -0400", hash_original_method = "76F2FAC154909632438A49671F5D33A8", hash_generated_method = "820F13391B129C3C490D1E972A4A24EB")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.087 -0400", hash_original_method = "76F2FAC154909632438A49671F5D33A8", hash_generated_method = "0BB337DE97C2A478389083BE49A1F0C7")
         public void bind(int index, long value) {
-            dsTaint.addTaint(index);
-            dsTaint.addTaint(value);
             mPreparedStatement.bindLong(index, value);
+            addTaint(index);
+            addTaint(value);
             // ---------- Original Method ----------
             //mPreparedStatement.bindLong(index, value);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.183 -0400", hash_original_method = "A73EABD891E538A0A03C5C4A49C29503", hash_generated_method = "34DC51E5FB3B4A1C6E5C10098A7B1B7D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.105 -0400", hash_original_method = "A73EABD891E538A0A03C5C4A49C29503", hash_generated_method = "338226FCDDB6F9DEA8AF5BFA2940FCBA")
         public void bind(int index, int value) {
-            dsTaint.addTaint(index);
-            dsTaint.addTaint(value);
             mPreparedStatement.bindLong(index, value);
+            addTaint(index);
+            addTaint(value);
             // ---------- Original Method ----------
             //mPreparedStatement.bindLong(index, value);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.183 -0400", hash_original_method = "D4E75DDD13795169D0FEAC83726F0F45", hash_generated_method = "494B242DAAB811C0BE33B1287946D057")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.106 -0400", hash_original_method = "D4E75DDD13795169D0FEAC83726F0F45", hash_generated_method = "0729DF5AE006AC03F0726721953AFDA9")
         public void bind(int index, boolean value) {
-            dsTaint.addTaint(index);
-            dsTaint.addTaint(value);
             mPreparedStatement.bindLong(index, value ? 1 : 0);
+            addTaint(index);
+            addTaint(value);
             // ---------- Original Method ----------
             //mPreparedStatement.bindLong(index, value ? 1 : 0);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.183 -0400", hash_original_method = "27990C90801E0788D0DEC119EA5D904E", hash_generated_method = "59D9F58871539B1DFDF5D9CCC2DB4F1E")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.107 -0400", hash_original_method = "27990C90801E0788D0DEC119EA5D904E", hash_generated_method = "71F226BC0CAFB423338E0D096377F58D")
         public void bindNull(int index) {
-            dsTaint.addTaint(index);
             mPreparedStatement.bindNull(index);
+            addTaint(index);
             // ---------- Original Method ----------
             //mPreparedStatement.bindNull(index);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.183 -0400", hash_original_method = "B7B8BDC3019EC6DD4050CE3C3C2D0B33", hash_generated_method = "94CD3D038258A004E36628F8387518A2")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.108 -0400", hash_original_method = "B7B8BDC3019EC6DD4050CE3C3C2D0B33", hash_generated_method = "C18301ED4ED20767B469D20E7CC94650")
         public void bind(int index, byte[] value) {
-            dsTaint.addTaint(index);
-            dsTaint.addTaint(value[0]);
             {
                 mPreparedStatement.bindNull(index);
             } //End block
             {
                 mPreparedStatement.bindBlob(index, value);
             } //End block
+            addTaint(index);
+            addTaint(value[0]);
             // ---------- Original Method ----------
             //if (value == null) {
                 //mPreparedStatement.bindNull(index);
@@ -915,17 +935,16 @@ public class DatabaseUtils {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.184 -0400", hash_original_method = "70AF33973781662CA48B1120B9D51D5F", hash_generated_method = "1443C4A4F0D90D07749D9849F7CAC7B7")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.122 -0400", hash_original_method = "70AF33973781662CA48B1120B9D51D5F", hash_generated_method = "EBFCE0749221346E1963D75A49D489BE")
         public void bind(int index, String value) {
-            dsTaint.addTaint(index);
-            dsTaint.addTaint(value);
             {
                 mPreparedStatement.bindNull(index);
             } //End block
             {
                 mPreparedStatement.bindString(index, value);
             } //End block
+            addTaint(index);
+            addTaint(value.getTaint());
             // ---------- Original Method ----------
             //if (value == null) {
                 //mPreparedStatement.bindNull(index);
@@ -935,19 +954,18 @@ public class DatabaseUtils {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.184 -0400", hash_original_method = "9556B578266975E5A98CFEB0C2204667", hash_generated_method = "1BD98C577E90E3F690B9D6ECF457CE23")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.123 -0400", hash_original_method = "9556B578266975E5A98CFEB0C2204667", hash_generated_method = "0A6EA8D6108B4C85E72608F653833624")
         public long insert(ContentValues values) {
-            dsTaint.addTaint(values.dsTaint);
-            long var7272FAC0398C10C383FD0AB1A343FC95_47335707 = (insertInternal(values, false));
-            return dsTaint.getTaintLong();
+            long var7272FAC0398C10C383FD0AB1A343FC95_1895425603 = (insertInternal(values, false));
+            addTaint(values.getTaint());
+            long var0F5264038205EDFB1AC05FBB0E8C5E94_150555448 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_150555448;
             // ---------- Original Method ----------
             //return insertInternal(values, false);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.184 -0400", hash_original_method = "C80CA050416DA84901D4F7B0B2F41300", hash_generated_method = "43E5E2DAFAC3AA1975D2E86CC1336097")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.137 -0400", hash_original_method = "C80CA050416DA84901D4F7B0B2F41300", hash_generated_method = "ECC03C3C2575EA28A005173F28A7D8B2")
         public long execute() {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("you must prepare this inserter before calling "
@@ -955,7 +973,7 @@ public class DatabaseUtils {
             } //End block
             try 
             {
-                long varB1E8ED66178D6CA6EC479BE8B17F02EA_723010023 = (mPreparedStatement.executeInsert());
+                long varB1E8ED66178D6CA6EC479BE8B17F02EA_288340506 = (mPreparedStatement.executeInsert());
             } //End block
             catch (SQLException e)
             { }
@@ -963,7 +981,8 @@ public class DatabaseUtils {
             {
                 mPreparedStatement = null;
             } //End block
-            return dsTaint.getTaintLong();
+            long var0F5264038205EDFB1AC05FBB0E8C5E94_784834856 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_784834856;
             // ---------- Original Method ----------
             //if (mPreparedStatement == null) {
                 //throw new IllegalStateException("you must prepare this inserter before calling "
@@ -981,8 +1000,7 @@ public class DatabaseUtils {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.184 -0400", hash_original_method = "BEDC7093698B9136E99447F456E9608C", hash_generated_method = "96E69F517E1DC08CC6DD30D24AD915BE")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.143 -0400", hash_original_method = "BEDC7093698B9136E99447F456E9608C", hash_generated_method = "96E69F517E1DC08CC6DD30D24AD915BE")
         public void prepareForInsert() {
             mPreparedStatement = getStatement(false);
             mPreparedStatement.clearBindings();
@@ -992,8 +1010,7 @@ public class DatabaseUtils {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.185 -0400", hash_original_method = "2DC72BFF923FF55EA48E8D651F79AFBE", hash_generated_method = "13626EAC2DF5D5A370098152654DFF39")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.144 -0400", hash_original_method = "2DC72BFF923FF55EA48E8D651F79AFBE", hash_generated_method = "13626EAC2DF5D5A370098152654DFF39")
         public void prepareForReplace() {
             mPreparedStatement = getStatement(true);
             mPreparedStatement.clearBindings();
@@ -1003,19 +1020,18 @@ public class DatabaseUtils {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.186 -0400", hash_original_method = "C177E80799F9F51057A5F361D4C5571B", hash_generated_method = "C5E6FBEB333DFEDCAACC103235F0A030")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.144 -0400", hash_original_method = "C177E80799F9F51057A5F361D4C5571B", hash_generated_method = "02EBE5033F8ACDC2D19FF9C256476A40")
         public long replace(ContentValues values) {
-            dsTaint.addTaint(values.dsTaint);
-            long var638A5CC2C9218D39B65A71C2E9E180A7_636488880 = (insertInternal(values, true));
-            return dsTaint.getTaintLong();
+            long var638A5CC2C9218D39B65A71C2E9E180A7_123487095 = (insertInternal(values, true));
+            addTaint(values.getTaint());
+            long var0F5264038205EDFB1AC05FBB0E8C5E94_2022129952 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_2022129952;
             // ---------- Original Method ----------
             //return insertInternal(values, true);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.187 -0400", hash_original_method = "21909697F743246FF7034BA444D2FBF0", hash_generated_method = "9699AAD9BACB2FE127ED86F2E236015E")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.146 -0400", hash_original_method = "21909697F743246FF7034BA444D2FBF0", hash_generated_method = "9699AAD9BACB2FE127ED86F2E236015E")
         public void close() {
             {
                 mInsertStatement.close();
@@ -1041,26 +1057,60 @@ public class DatabaseUtils {
         }
 
         
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.146 -0400", hash_original_field = "DE03D98EDC4D3D1EA9F2F4A4B7D844EB", hash_generated_field = "65A2F50AB6F61733B444F32A68BCAC15")
+
         public static final int TABLE_INFO_PRAGMA_COLUMNNAME_INDEX = 1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.146 -0400", hash_original_field = "0A6ACB3BBE4C15D840F48898D650CE3B", hash_generated_field = "E75F8B45A4A09AC1C6BBD56421B4EB2A")
+
         public static final int TABLE_INFO_PRAGMA_DEFAULT_INDEX = 4;
     }
 
 
     
-    private static final String TAG = "DatabaseUtils";
-    private static final boolean DEBUG = false;
-    private static final boolean LOCAL_LOGV = false;
-    private static final String[] countProjection = new String[]{"count(*)"};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.147 -0400", hash_original_field = "3016A0AB70A04654637C985E816CEAB9", hash_generated_field = "BED2F01F0F2AF5E8D76D73A8B501B8F5")
+
+    private static String TAG = "DatabaseUtils";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.147 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+
+    private static boolean DEBUG = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.147 -0400", hash_original_field = "AAFDAF871858750A211AC8DBE6D1B76E", hash_generated_field = "CC2202F61EADC67598F2CC0A7FEB5A35")
+
+    private static boolean LOCAL_LOGV = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.147 -0400", hash_original_field = "F088C9624B9C6FBF7B572D7FCA46710A", hash_generated_field = "535BC24132C7031F08240CC9084D8ECE")
+
+    private static String[] countProjection = new String[]{"count(*)"};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.147 -0400", hash_original_field = "03444EF4262BE1A020FCA4CED5EDF40F", hash_generated_field = "4648C235C26E35A03693F2CCB0369012")
+
     public static final int STATEMENT_SELECT = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.147 -0400", hash_original_field = "61BA11F945235A57A950B66AA6A3536B", hash_generated_field = "6B2A4824744946252E51300EBC79E592")
+
     public static final int STATEMENT_UPDATE = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.147 -0400", hash_original_field = "BD7F0CF10C54FBBBF390BF98C5D8E3CD", hash_generated_field = "2ACC3D548878CC219AA49F7804828063")
+
     public static final int STATEMENT_ATTACH = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.147 -0400", hash_original_field = "C431D567433A23710E28CD81C3F4E9F9", hash_generated_field = "02A421ACB07995DB47634279A2479B60")
+
     public static final int STATEMENT_BEGIN = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.148 -0400", hash_original_field = "653D3CB341CEF13E7AC4EBA5B5988361", hash_generated_field = "A6C603A158EA8E9046E04946D4516AA3")
+
     public static final int STATEMENT_COMMIT = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.148 -0400", hash_original_field = "8B0367281124B52E9B7950CF34ACC2B8", hash_generated_field = "8F86283F91FE4F97606CB017F6364760")
+
     public static final int STATEMENT_ABORT = 6;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.148 -0400", hash_original_field = "6F0BBAF18B35D27CD91106CAB6767601", hash_generated_field = "C15D3B7768DE951957CC8DFC9D19405B")
+
     public static final int STATEMENT_PRAGMA = 7;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.148 -0400", hash_original_field = "B3CC0EC5C5166FFD6DD380256B9576F0", hash_generated_field = "8DC2B7B4CA8DB7D59D8A5F9177912461")
+
     public static final int STATEMENT_DDL = 8;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.148 -0400", hash_original_field = "3020B3E1E6CA4903D7BEEF0DCDAED6B2", hash_generated_field = "52E7CCF3D2536FB7A3368B1F5E5546C4")
+
     public static final int STATEMENT_UNPREPARED = 9;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.148 -0400", hash_original_field = "C3786F39D3AE7D6B449AC57E4D726BC2", hash_generated_field = "5F2F4749E3B45E10482F4E32EAB579F5")
+
     public static final int STATEMENT_OTHER = 99;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.148 -0400", hash_original_field = "BFEC89007BE9644677E9D37B3E58753D", hash_generated_field = "64EC00AB4BE1B864318AEBC676ADD327")
+
     private static Collator mColl = null;
 }
 

@@ -13,31 +13,29 @@ import gov.nist.javax.sip.header.*;
 
 public class RequestLineParser extends Parser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.506 -0400", hash_original_method = "9E54F2AF74A618ACEB8F17B65C16A48F", hash_generated_method = "15188A143B04A791CB71F1C241E4DE7D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public RequestLineParser(String requestLine) {
-        dsTaint.addTaint(requestLine);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.186 -0400", hash_original_method = "9E54F2AF74A618ACEB8F17B65C16A48F", hash_generated_method = "ECC9D14D924F666200406F406E44BA1E")
+    public  RequestLineParser(String requestLine) {
         this.lexer = new Lexer("method_keywordLexer", requestLine);
+        addTaint(requestLine.getTaint());
         // ---------- Original Method ----------
         //this.lexer = new Lexer("method_keywordLexer", requestLine);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.506 -0400", hash_original_method = "A6666834E60C7B51DE2E6BABDAF9B193", hash_generated_method = "BA55EAB26E5AC43B7F743949DB497F6E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public RequestLineParser(Lexer lexer) {
-        dsTaint.addTaint(lexer.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.186 -0400", hash_original_method = "A6666834E60C7B51DE2E6BABDAF9B193", hash_generated_method = "11B589A13EED926FDBCAB426A03A5F5F")
+    public  RequestLineParser(Lexer lexer) {
         this.lexer = lexer;
         this.lexer.selectLexer("method_keywordLexer");
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
         //this.lexer = lexer;
         //this.lexer.selectLexer("method_keywordLexer");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.507 -0400", hash_original_method = "3F5CD164E270AAF338C0D4B97DF78E19", hash_generated_method = "FDD850BC314FB4E749B3FCF76386AFE1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.187 -0400", hash_original_method = "3F5CD164E270AAF338C0D4B97DF78E19", hash_generated_method = "21C458BC5EC0916095BE83CA6E384547")
     public RequestLine parse() throws ParseException {
+        RequestLine varB4EAC82CA7396A68D541C85D26508E83_1684821872 = null; //Variable for return #1
         dbg_enter("parse");
         try 
         {
@@ -60,12 +58,14 @@ public class RequestLineParser extends Parser {
             retval.setSipVersion(v);
             lexer.SPorHT();
             lexer.match('\n');
+            varB4EAC82CA7396A68D541C85D26508E83_1684821872 = retval;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        return (RequestLine)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1684821872.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1684821872;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("parse");

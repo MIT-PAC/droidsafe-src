@@ -19,29 +19,27 @@ import java.util.Iterator;
 
 public class ContactParser extends AddressParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.257 -0400", hash_original_method = "259D82B4FB0F930288D81B3FF39234D9", hash_generated_method = "6F1F663E585F7B5DE41C2F46B919E5FF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ContactParser(String contact) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.605 -0400", hash_original_method = "259D82B4FB0F930288D81B3FF39234D9", hash_generated_method = "62E82C69DA52DF4188E2B413B56E0050")
+    public  ContactParser(String contact) {
         super(contact);
-        dsTaint.addTaint(contact);
+        addTaint(contact.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.257 -0400", hash_original_method = "9392FB11C199E27843D6B36D0194676C", hash_generated_method = "282499AF7C1D664538020F7EEA6CE4EB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected ContactParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.605 -0400", hash_original_method = "9392FB11C199E27843D6B36D0194676C", hash_generated_method = "DAE8656B4427799C90FDB80B47901409")
+    protected  ContactParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
         this.lexer = lexer;
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
         //this.lexer = lexer;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.257 -0400", hash_original_method = "BF729EDB4B0BCD2BE7D180520FE998E8", hash_generated_method = "4A91CFAAFB8B1957B02B3C5E382A02B3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.607 -0400", hash_original_method = "BF729EDB4B0BCD2BE7D180520FE998E8", hash_generated_method = "66B283FAC3D3C07F86CB7B3F3F1B3014")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1710269115 = null; //Variable for return #1
         headerName(TokenTypes.CONTACT);
         ContactList retval;
         retval = new ContactList();
@@ -49,7 +47,7 @@ public class ContactParser extends AddressParametersParser {
             Contact contact;
             contact = new Contact();
             {
-                boolean varEE2545CD66997E09574EFE5DCBF7CEB1_1258065448 = (lexer.lookAhead(0) == '*');
+                boolean varEE2545CD66997E09574EFE5DCBF7CEB1_1559967885 = (lexer.lookAhead(0) == '*');
                 {
                     char next;
                     next = lexer.lookAhead(1);
@@ -75,7 +73,9 @@ public class ContactParser extends AddressParametersParser {
             } //End block
             if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected char");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1710269115 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_1710269115.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1710269115;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

@@ -15,34 +15,43 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SQLiteCursor extends AbstractWindowedCursor {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.015 -0400", hash_original_field = "03938FDF3029AF609FD8FCBAEE02B61F", hash_generated_field = "973CDCF4620458EDC8DC04989EC9D73D")
+
     private String mEditTable;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.015 -0400", hash_original_field = "11C985F30142FD30ACDDFE7CD3BD4A9B", hash_generated_field = "53DC72E56AF72859CCB6315DB649FC3E")
+
     private String[] mColumns;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.015 -0400", hash_original_field = "5B134E4A2754549415570918F1EB845F", hash_generated_field = "8A548C5C667EE7DF7972E25F8E1FD3F8")
+
     private SQLiteQuery mQuery;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.015 -0400", hash_original_field = "AC9FCB6C9481ACE03DAC8C5318667F64", hash_generated_field = "DF56BAF171B937E9CC6E593202E96226")
+
     private SQLiteCursorDriver mDriver;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.016 -0400", hash_original_field = "EBFB1F1A33D1A84D7D0E8E8AF5105388", hash_generated_field = "F4532CB59B1200B34E9685596B8185FB")
+
     private volatile int mCount = NO_COUNT;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.016 -0400", hash_original_field = "BF35522FC5AD02023860C40C8D630EAE", hash_generated_field = "5E829DFAED9C527F2433E5889E542D7A")
+
     private Map<String, Integer> mColumnNameMap;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.016 -0400", hash_original_field = "9581B90EA40AE59A20069CB826265080", hash_generated_field = "7D1AA4359A52B133BFAD994AB60E8C14")
+
     private Throwable mStackTrace;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.306 -0400", hash_original_method = "7DD8316FC8BAC42467B622126F8A148B", hash_generated_method = "443D2A99FF42EBCF28DD095A3C8CE169")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.030 -0400", hash_original_method = "7DD8316FC8BAC42467B622126F8A148B", hash_generated_method = "09B7124E53153D683FDAC379D3A1EFB2")
     @Deprecated
-    public SQLiteCursor(SQLiteDatabase db, SQLiteCursorDriver driver,
+    public  SQLiteCursor(SQLiteDatabase db, SQLiteCursorDriver driver,
             String editTable, SQLiteQuery query) {
         this(driver, editTable, query);
-        dsTaint.addTaint(db.dsTaint);
-        dsTaint.addTaint(query.dsTaint);
-        dsTaint.addTaint(driver.dsTaint);
-        dsTaint.addTaint(editTable);
+        addTaint(db.getTaint());
+        addTaint(driver.getTaint());
+        addTaint(editTable.getTaint());
+        addTaint(query.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.307 -0400", hash_original_method = "73EECE67D75C79AF0ED0AD77F55FFB21", hash_generated_method = "40B16FD0385734F170710A9A6388820E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SQLiteCursor(SQLiteCursorDriver driver, String editTable, SQLiteQuery query) {
-        dsTaint.addTaint(query.dsTaint);
-        dsTaint.addTaint(driver.dsTaint);
-        dsTaint.addTaint(editTable);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.051 -0400", hash_original_method = "73EECE67D75C79AF0ED0AD77F55FFB21", hash_generated_method = "C6217315B4AC3AFD97B9F18985D54D98")
+    public  SQLiteCursor(SQLiteCursorDriver driver, String editTable, SQLiteQuery query) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("query object cannot be null");
         } //End block
@@ -50,7 +59,7 @@ public class SQLiteCursor extends AbstractWindowedCursor {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("query.mDatabase cannot be null");
         } //End block
         {
-            boolean varBD0BED841C7A62596CB2EE0AC9816352_1575129792 = (StrictMode.vmSqliteObjectLeaksEnabled());
+            boolean varBD0BED841C7A62596CB2EE0AC9816352_1831491724 = (StrictMode.vmSqliteObjectLeaksEnabled());
             {
                 mStackTrace = new DatabaseObjectNotClosedException().fillInStackTrace();
             } //End block
@@ -58,7 +67,10 @@ public class SQLiteCursor extends AbstractWindowedCursor {
                 mStackTrace = null;
             } //End block
         } //End collapsed parenthetic
+        mDriver = driver;
+        mEditTable = editTable;
         mColumnNameMap = null;
+        mQuery = query;
         query.mDatabase.lock(query.mSql);
         try 
         {
@@ -73,7 +85,7 @@ public class SQLiteCursor extends AbstractWindowedCursor {
                     columnName = mQuery.columnNameLocked(i);
                     mColumns[i] = columnName;
                     {
-                        boolean var6E699E5A2763233841B13F54819B19BC_1994671188 = ("_id".equals(columnName));
+                        boolean var6E699E5A2763233841B13F54819B19BC_1298011632 = ("_id".equals(columnName));
                         {
                             mRowIdColumnIndex = i;
                         } //End block
@@ -90,10 +102,14 @@ public class SQLiteCursor extends AbstractWindowedCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.307 -0400", hash_original_method = "AF759727D3C973E194D48B5E653874F6", hash_generated_method = "EC7EF15947DCEC10E35602557BC3B603")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.065 -0400", hash_original_method = "AF759727D3C973E194D48B5E653874F6", hash_generated_method = "11E131B717C0B16AE193A9909EA9E6FF")
     public SQLiteDatabase getDatabase() {
-        return (SQLiteDatabase)dsTaint.getTaint();
+        SQLiteDatabase varB4EAC82CA7396A68D541C85D26508E83_363259292 = null; //Variable for return #1
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_363259292 = mQuery.mDatabase;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_363259292.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_363259292;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mQuery.mDatabase;
@@ -101,21 +117,21 @@ public class SQLiteCursor extends AbstractWindowedCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.308 -0400", hash_original_method = "B4A0D7606429FC274C47739DBFA1C1E0", hash_generated_method = "8841927BEF44CD22D97E8B21DA620015")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.067 -0400", hash_original_method = "B4A0D7606429FC274C47739DBFA1C1E0", hash_generated_method = "6F7F9FAAFEEC6516AFD1543136767A8C")
     @Override
     public boolean onMove(int oldPosition, int newPosition) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(newPosition);
-        dsTaint.addTaint(oldPosition);
         {
-            boolean varD2A5E171BD01B4A42E6C2327228CF01B_385592976 = (mWindow == null || newPosition < mWindow.getStartPosition() ||
+            boolean varD2A5E171BD01B4A42E6C2327228CF01B_1442731649 = (mWindow == null || newPosition < mWindow.getStartPosition() ||
                 newPosition >= (mWindow.getStartPosition() + mWindow.getNumRows()));
             {
                 fillWindow(newPosition);
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(oldPosition);
+        addTaint(newPosition);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_615642438 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_615642438;
         // ---------- Original Method ----------
         //if (mWindow == null || newPosition < mWindow.getStartPosition() ||
                 //newPosition >= (mWindow.getStartPosition() + mWindow.getNumRows())) {
@@ -125,14 +141,14 @@ public class SQLiteCursor extends AbstractWindowedCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.308 -0400", hash_original_method = "D7810D185EEBB48990AE6D5077F6CEAD", hash_generated_method = "0A643A3E4CDF1AD3010EE258981ECFE4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.075 -0400", hash_original_method = "D7810D185EEBB48990AE6D5077F6CEAD", hash_generated_method = "3CD8CC796B2A0F498301633962B38989")
     @Override
     public int getCount() {
         {
             fillWindow(0);
         } //End block
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1513327854 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1513327854;
         // ---------- Original Method ----------
         //if (mCount == NO_COUNT) {
             //fillWindow(0);
@@ -141,17 +157,15 @@ public class SQLiteCursor extends AbstractWindowedCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.308 -0400", hash_original_method = "1027AA1FD2FF7DB5721417BC40818677", hash_generated_method = "BB06769C9D4054D6298EE81A3ECF142F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.078 -0400", hash_original_method = "1027AA1FD2FF7DB5721417BC40818677", hash_generated_method = "B278C1B92D92569057770326B2ED98DF")
     private void fillWindow(int startPos) {
-        dsTaint.addTaint(startPos);
         clearOrCreateWindow(getDatabase().getPath());
         mWindow.setStartPosition(startPos);
         int count;
         count = getQuery().fillWindow(mWindow);
         {
             {
-                boolean varF062350F2983BA11C030C10A71A73C26_27461741 = (Log.isLoggable(TAG, Log.DEBUG));
+                boolean varF062350F2983BA11C030C10A71A73C26_144245794 = (Log.isLoggable(TAG, Log.DEBUG));
                 {
                     Log.d(TAG, "received count(*) from native_fill_window: " + count);
                 } //End block
@@ -162,6 +176,7 @@ public class SQLiteCursor extends AbstractWindowedCursor {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Row count should never be zero or negative "
                     + "when the start position is non-zero");
         } //End block
+        addTaint(startPos);
         // ---------- Original Method ----------
         //clearOrCreateWindow(getDatabase().getPath());
         //mWindow.setStartPosition(startPos);
@@ -178,20 +193,20 @@ public class SQLiteCursor extends AbstractWindowedCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.308 -0400", hash_original_method = "976132A7E3467B4AD1CD095C1F4D25D0", hash_generated_method = "43987399F835841D2E45ADFCFA82B5A2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.091 -0400", hash_original_method = "976132A7E3467B4AD1CD095C1F4D25D0", hash_generated_method = "2186E6689DCE930E07FFE5F4F6423B78")
     private synchronized SQLiteQuery getQuery() {
-        return (SQLiteQuery)dsTaint.getTaint();
+        SQLiteQuery varB4EAC82CA7396A68D541C85D26508E83_962440660 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_962440660 = mQuery;
+        varB4EAC82CA7396A68D541C85D26508E83_962440660.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_962440660;
         // ---------- Original Method ----------
         //return mQuery;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.309 -0400", hash_original_method = "96C3F6AE90641303728CA2622AC00A1C", hash_generated_method = "5242F019B99E891CD654A845F2DC4141")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.112 -0400", hash_original_method = "96C3F6AE90641303728CA2622AC00A1C", hash_generated_method = "FCC585DDF35B84AB5DD6AC5C662255DE")
     @Override
     public int getColumnIndex(String columnName) {
-        dsTaint.addTaint(columnName);
         {
             String[] columns;
             columns = mColumns;
@@ -218,28 +233,29 @@ public class SQLiteCursor extends AbstractWindowedCursor {
         Integer i;
         i = mColumnNameMap.get(columnName);
         {
-            int varFD096F7604415D4F8BC94DE088C66464_2111437554 = (i.intValue());
+            int varFD096F7604415D4F8BC94DE088C66464_323122596 = (i.intValue());
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(columnName.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_421381565 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_421381565;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.309 -0400", hash_original_method = "6996FDAE7F544E3AE18BC0C5BC1EECAC", hash_generated_method = "418AB809209F5691F671976F6DACB5FE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.113 -0400", hash_original_method = "6996FDAE7F544E3AE18BC0C5BC1EECAC", hash_generated_method = "7A9EE5BEDAD32E390A357256EE06D3B2")
     @Override
     public String[] getColumnNames() {
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1514144755 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1514144755 = mColumns;
+        varB4EAC82CA7396A68D541C85D26508E83_1514144755.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1514144755;
         // ---------- Original Method ----------
         //return mColumns;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.309 -0400", hash_original_method = "9A966315BEEEC4FF7AE600084283702B", hash_generated_method = "AE3732AB3FDAA1667813E03081E0D43D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.113 -0400", hash_original_method = "9A966315BEEEC4FF7AE600084283702B", hash_generated_method = "AE3732AB3FDAA1667813E03081E0D43D")
     @Override
     public void deactivate() {
         super.deactivate();
@@ -250,8 +266,7 @@ public class SQLiteCursor extends AbstractWindowedCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.310 -0400", hash_original_method = "448CAED0D85C68E057975FF7C64F6766", hash_generated_method = "F96B742494CD21F979DC2EF035C64825")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.115 -0400", hash_original_method = "448CAED0D85C68E057975FF7C64F6766", hash_generated_method = "F96B742494CD21F979DC2EF035C64825")
     @Override
     public void close() {
         super.close();
@@ -268,12 +283,11 @@ public class SQLiteCursor extends AbstractWindowedCursor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.310 -0400", hash_original_method = "EB44A3C249AFFC8E58A7028D8F44463C", hash_generated_method = "FB8FFD58875DCC29C9F0EEB288470B7C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.150 -0400", hash_original_method = "EB44A3C249AFFC8E58A7028D8F44463C", hash_generated_method = "0733EB42014F1E4B6944E49AB1FAC0CC")
     @Override
     public boolean requery() {
         {
-            boolean varF463C9E3EC09CF3DDC0E11AE27E5A7FD_1658555207 = (isClosed());
+            boolean varF463C9E3EC09CF3DDC0E11AE27E5A7FD_1834540496 = (isClosed());
         } //End collapsed parenthetic
         long timeStart;
         timeStart = 0;
@@ -294,7 +308,7 @@ public class SQLiteCursor extends AbstractWindowedCursor {
             catch (IllegalStateException e)
             { }
             {
-                boolean varD1EFE84BAA87D6F9DEA8464BF23840BD_1146251480 = (!db.equals(mQuery.mDatabase));
+                boolean varD1EFE84BAA87D6F9DEA8464BF23840BD_1335127278 = (!db.equals(mQuery.mDatabase));
                 {
                     try 
                     {
@@ -336,37 +350,35 @@ public class SQLiteCursor extends AbstractWindowedCursor {
             long timeEnd;
             timeEnd = System.currentTimeMillis();
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1387572682 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1387572682;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.311 -0400", hash_original_method = "5E8FFACADD72707A480415823E5A0DF8", hash_generated_method = "FC60DCEE2F5B8980CE7C4C87DCE947CD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.152 -0400", hash_original_method = "5E8FFACADD72707A480415823E5A0DF8", hash_generated_method = "1345308ED4E30FABD6209237CE7EAF2D")
     @Override
     public void setWindow(CursorWindow window) {
-        dsTaint.addTaint(window.dsTaint);
         super.setWindow(window);
         mCount = NO_COUNT;
+        addTaint(window.getTaint());
         // ---------- Original Method ----------
         //super.setWindow(window);
         //mCount = NO_COUNT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.315 -0400", hash_original_method = "F2A62A4628FC6852210F2ED0EED8C7EA", hash_generated_method = "A3B98191E159EA00C4490F66B4D0A5A9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.152 -0400", hash_original_method = "F2A62A4628FC6852210F2ED0EED8C7EA", hash_generated_method = "4072DECACD10F43A8E56B36F3B3D68DE")
     public void setSelectionArguments(String[] selectionArgs) {
-        dsTaint.addTaint(selectionArgs[0]);
         mDriver.setBindArguments(selectionArgs);
+        addTaint(selectionArgs[0].getTaint());
         // ---------- Original Method ----------
         //mDriver.setBindArguments(selectionArgs);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.316 -0400", hash_original_method = "3B748B9308D21E215FBA6A9497941AC3", hash_generated_method = "975EDD961DC890D052DE381C64A99AE8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.170 -0400", hash_original_method = "3B748B9308D21E215FBA6A9497941AC3", hash_generated_method = "975EDD961DC890D052DE381C64A99AE8")
     @Override
     protected void finalize() {
         try 
@@ -394,7 +406,11 @@ public class SQLiteCursor extends AbstractWindowedCursor {
     }
 
     
-    static final String TAG = "SQLiteCursor";
-    static final int NO_COUNT = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.171 -0400", hash_original_field = "834A112660C6E37DBC368D54B6CAFBE4", hash_generated_field = "C05D779C365B44403867608E8048ECC2")
+
+    static String TAG = "SQLiteCursor";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.171 -0400", hash_original_field = "D08D7E472E5B15D94238F087A1FF491A", hash_generated_field = "2FA9EDF4F2AD0BE96432FA4706EC370D")
+
+    static int NO_COUNT = -1;
 }
 

@@ -11,16 +11,21 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class UserInfo implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.290 -0400", hash_original_field = "B80BB7740288FDA1F201890375A60C8F", hash_generated_field = "FA0A3841DE31A9B4AD2F31B3665056D8")
+
     public int id;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.290 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
+
     public String name;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.290 -0400", hash_original_field = "4E5868D676CB634AA75B125A0F741ABF", hash_generated_field = "06C062A47B4E980AE7B4928732A7AB14")
+
     public int flags;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.982 -0400", hash_original_method = "D096C0D44FA6D8727E6F6C9E96EEA8B2", hash_generated_method = "0EDAF3C6E9D599CE6B057E550839744C")
-    @DSModeled(DSC.SAFE)
-    public UserInfo(int id, String name, int flags) {
-        dsTaint.addTaint(id);
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.304 -0400", hash_original_method = "D096C0D44FA6D8727E6F6C9E96EEA8B2", hash_generated_method = "58203309A1CB008008CCA5C9D79494EC")
+    public  UserInfo(int id, String name, int flags) {
+        this.id = id;
+        this.name = name;
+        this.flags = flags;
         // ---------- Original Method ----------
         //this.id = id;
         //this.name = name;
@@ -28,17 +33,14 @@ public class UserInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.982 -0400", hash_original_method = "FFEDB19A4FE2EC199D413AD96B705A93", hash_generated_method = "EF7390497822A172718BFC5C0489B1A3")
-    @DSModeled(DSC.SAFE)
-    public UserInfo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.305 -0400", hash_original_method = "FFEDB19A4FE2EC199D413AD96B705A93", hash_generated_method = "EF7390497822A172718BFC5C0489B1A3")
+    public  UserInfo() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.982 -0400", hash_original_method = "51A70C7FC3794F4822F30406E486F30B", hash_generated_method = "40FB5D61AA5CE0F1556C397326C61240")
-    @DSModeled(DSC.SAFE)
-    public UserInfo(UserInfo orig) {
-        dsTaint.addTaint(orig.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.319 -0400", hash_original_method = "51A70C7FC3794F4822F30406E486F30B", hash_generated_method = "C124218563C96B1CFCEC4164C772F706")
+    public  UserInfo(UserInfo orig) {
         name = orig.name;
         id = orig.id;
         flags = orig.flags;
@@ -49,10 +51,8 @@ public class UserInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.983 -0400", hash_original_method = "D2DCB71066BFE658C1047A9ADF1A8FE4", hash_generated_method = "79BCBCBCCAA10ABBF06F329A120AEEDD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private UserInfo(Parcel source) {
-        dsTaint.addTaint(source.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.320 -0400", hash_original_method = "D2DCB71066BFE658C1047A9ADF1A8FE4", hash_generated_method = "F6BA4C3FD87168476A3988CC8FF4FE69")
+    private  UserInfo(Parcel source) {
         id = source.readInt();
         name = source.readString();
         flags = source.readInt();
@@ -63,61 +63,61 @@ public class UserInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.983 -0400", hash_original_method = "C03AE380E4F338F1E70E5C1BDC1E37B9", hash_generated_method = "58F3FF9D781405663A64533F5381BFFC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.337 -0400", hash_original_method = "C03AE380E4F338F1E70E5C1BDC1E37B9", hash_generated_method = "EA72BB8ADF93EEF10CCA8D5857435554")
     public boolean isPrimary() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1504790450 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1504790450;
         // ---------- Original Method ----------
         //return (flags & FLAG_PRIMARY) == FLAG_PRIMARY;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.983 -0400", hash_original_method = "AB675EF64043DB6994A1BFFAAF9F7F55", hash_generated_method = "4A6F38CE67E6D28F5CCA7DD175DBA882")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.337 -0400", hash_original_method = "AB675EF64043DB6994A1BFFAAF9F7F55", hash_generated_method = "6D53F4C97867F61BDE12FC4719500F93")
     public boolean isAdmin() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1096444951 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1096444951;
         // ---------- Original Method ----------
         //return (flags & FLAG_ADMIN) == FLAG_ADMIN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.984 -0400", hash_original_method = "C17F5F8C940B592632E4868007F4D830", hash_generated_method = "4C94558D30408C496863A1AAFA052CE8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.338 -0400", hash_original_method = "C17F5F8C940B592632E4868007F4D830", hash_generated_method = "A771F01CFDF34CCF1DB59F75F1D9D28C")
     public boolean isGuest() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_718544084 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_718544084;
         // ---------- Original Method ----------
         //return (flags & FLAG_GUEST) == FLAG_GUEST;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.984 -0400", hash_original_method = "0DF6D7695BB85FE21EB781D1BB3F7789", hash_generated_method = "F2C1330236B86E14147B695F4B4D7D83")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.357 -0400", hash_original_method = "0DF6D7695BB85FE21EB781D1BB3F7789", hash_generated_method = "7AAFD184BA34AB1C9D2F4A38A9F2CBB8")
     @Override
     public String toString() {
-        String varA38A549FF21CF6A7619405AFCBE77D4D_1967160633 = ("UserInfo{" + id + ":" + name + ":" + Integer.toHexString(flags) + "}");
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1075417559 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1075417559 = "UserInfo{" + id + ":" + name + ":" + Integer.toHexString(flags) + "}";
+        varB4EAC82CA7396A68D541C85D26508E83_1075417559.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1075417559;
         // ---------- Original Method ----------
         //return "UserInfo{" + id + ":" + name + ":" + Integer.toHexString(flags) + "}";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.991 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.358 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "24EF50479C504CC4BA99ADD08DEB039C")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_313023406 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_313023406;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.991 -0400", hash_original_method = "82A3C338305AFFE9E85DC8705D16ECA4", hash_generated_method = "54FD5D2A424CF938CF3662CC5249006F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.363 -0400", hash_original_method = "82A3C338305AFFE9E85DC8705D16ECA4", hash_generated_method = "68209779AE83DCEB4B756C2D7CF72084")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
-        dsTaint.addTaint(parcelableFlags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeInt(id);
         dest.writeString(name);
         dest.writeInt(flags);
+        addTaint(dest.getTaint());
+        addTaint(parcelableFlags);
         // ---------- Original Method ----------
         //dest.writeInt(id);
         //dest.writeString(name);
@@ -125,32 +125,25 @@ public class UserInfo implements Parcelable {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.363 -0400", hash_original_field = "D88A0459F2264FBEB883685D701D54B8", hash_generated_field = "01AA02176D8B0D4469EBD90B8AA3C5A2")
+
     public static final int FLAG_PRIMARY = 0x00000001;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.363 -0400", hash_original_field = "29283B35DB6D96DA2B778FC7B147ABEA", hash_generated_field = "7DDE313CC6217C188DA5EDD964551F50")
+
     public static final int FLAG_ADMIN   = 0x00000002;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.363 -0400", hash_original_field = "DAFFC847C52B8C8C8DD311E9E5AE9532", hash_generated_field = "B5BAA9769DABC391F6635E59A724E0BC")
+
     public static final int FLAG_GUEST   = 0x00000004;
-    public static final Parcelable.Creator<UserInfo> CREATOR = new Parcelable.Creator<UserInfo>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.991 -0400", hash_original_method = "33AD9B8ED865CFD9BB809454A11B02C8", hash_generated_method = "89D055042C38FBCBD01D3C342239DB79")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:05.363 -0400", hash_original_field = "09A478919C59F371C3F438652185797C", hash_generated_field = "658D9FDDF53EA34B02D472AE07E66DBE")
+
+    public static final Parcelable.Creator<UserInfo> CREATOR
+            = new Parcelable.Creator<UserInfo>() {
         public UserInfo createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            UserInfo varB1C9D1758FF654761716D0F95CAFD6BF_1879284997 = (new UserInfo(source));
-            return (UserInfo)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new UserInfo(source);
+            return new UserInfo(source);
         }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.992 -0400", hash_original_method = "670B57990F72488A07B6DB78DC8AE996", hash_generated_method = "6CF84C10E29BEDB5EAD21AE414E07E02")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public UserInfo[] newArray(int size) {
-            dsTaint.addTaint(size);
-            UserInfo[] varAFB14D4A0C692149E1E5B6A79CA52E3A_411172718 = (new UserInfo[size]);
-            return (UserInfo[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new UserInfo[size];
+            return new UserInfo[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

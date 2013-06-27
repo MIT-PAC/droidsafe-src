@@ -10,9 +10,10 @@ import java.util.Iterator;
 
 public class InternalErrorHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.619 -0400", hash_original_method = "C3720E0BFE6A6050B3F66C1BBA2E43FE", hash_generated_method = "C3720E0BFE6A6050B3F66C1BBA2E43FE")
-        public InternalErrorHandler ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.607 -0400", hash_original_method = "CDCB3F88E1EC7C264BA47051910F3667", hash_generated_method = "CDCB3F88E1EC7C264BA47051910F3667")
+    public InternalErrorHandler ()
     {
+        //Synthesized constructor
     }
 
 

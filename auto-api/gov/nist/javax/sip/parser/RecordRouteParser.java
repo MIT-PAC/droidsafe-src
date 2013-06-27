@@ -14,27 +14,25 @@ import java.text.ParseException;
 
 public class RecordRouteParser extends AddressParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.500 -0400", hash_original_method = "C40758F2332745C9DEB0B2D886E345CA", hash_generated_method = "B00CE56B8F1586BAB88479F808DA5938")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public RecordRouteParser(String recordRoute) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.140 -0400", hash_original_method = "C40758F2332745C9DEB0B2D886E345CA", hash_generated_method = "859F58793738CCE6071390F952D8FAE8")
+    public  RecordRouteParser(String recordRoute) {
         super(recordRoute);
-        dsTaint.addTaint(recordRoute);
+        addTaint(recordRoute.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.500 -0400", hash_original_method = "3F2826642C5FF479B9C6E3756897DB2B", hash_generated_method = "32107450BC49524CC5C73E7BB12B55DC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected RecordRouteParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.145 -0400", hash_original_method = "3F2826642C5FF479B9C6E3756897DB2B", hash_generated_method = "519B4B40D18E6A19225855187561F20F")
+    protected  RecordRouteParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.500 -0400", hash_original_method = "C9CC1BA66A01768C307588A1D8322CF7", hash_generated_method = "4287D3E8B4DD83BB58F078FC0A8B13A0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.155 -0400", hash_original_method = "C9CC1BA66A01768C307588A1D8322CF7", hash_generated_method = "C501E6ECBEF60DB1CD43CD8B122B435E")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1366192769 = null; //Variable for return #1
         RecordRouteList recordRouteList;
         recordRouteList = new RecordRouteList();
         dbg_enter("RecordRouteParser.parse");
@@ -58,12 +56,14 @@ public class RecordRouteParser extends AddressParametersParser {
                 } //End block
                 if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected char");
             } //End block
+            varB4EAC82CA7396A68D541C85D26508E83_1366192769 = recordRouteList;
         } //End block
         finally 
         {
             dbg_leave("RecordRouteParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1366192769.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1366192769;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

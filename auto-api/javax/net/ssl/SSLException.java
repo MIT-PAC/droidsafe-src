@@ -11,38 +11,37 @@ import java.io.IOException;
 
 public class SSLException extends IOException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.085 -0400", hash_original_method = "767432C29D53FDFEE031F1BE821865F4", hash_generated_method = "D1B8D8D4A1C5BC847F9AAE5F17E600CE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SSLException(String reason) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.684 -0400", hash_original_method = "767432C29D53FDFEE031F1BE821865F4", hash_generated_method = "BE42D32C1B6DBB96F7457377099FD7BE")
+    public  SSLException(String reason) {
         super(reason);
-        dsTaint.addTaint(reason);
+        addTaint(reason.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.085 -0400", hash_original_method = "5FF36E085E786A28DDEEC1EBE169EDD3", hash_generated_method = "62F745A2E109BA91FB9779F2BC6CA9C0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SSLException(String message, Throwable cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.684 -0400", hash_original_method = "5FF36E085E786A28DDEEC1EBE169EDD3", hash_generated_method = "0CE8E414E6A51A3C1EEE8FFC083B4177")
+    public  SSLException(String message, Throwable cause) {
         super(message);
-        dsTaint.addTaint(message);
-        dsTaint.addTaint(cause.dsTaint);
         super.initCause(cause);
+        addTaint(message.getTaint());
+        addTaint(cause.getTaint());
         // ---------- Original Method ----------
         //super.initCause(cause);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.085 -0400", hash_original_method = "1E7679A49A32A86556807238CABB4D3B", hash_generated_method = "357612B4C6CFB2FD6F7FC1B91C99A572")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SSLException(Throwable cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.685 -0400", hash_original_method = "1E7679A49A32A86556807238CABB4D3B", hash_generated_method = "D2FD23F30F841D3DB81E61EF7C55AA0F")
+    public  SSLException(Throwable cause) {
         super(cause == null ? null : cause.toString());
-        dsTaint.addTaint(cause.dsTaint);
         super.initCause(cause);
+        addTaint(cause.getTaint());
         // ---------- Original Method ----------
         //super.initCause(cause);
     }
 
     
-    private static final long serialVersionUID = 4511006460650708967L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.685 -0400", hash_original_field = "47B1F27E3208411F6420B784F4A68144", hash_generated_field = "2C939DF2CD8D98AB55C491EF063681A4")
+
+    private static long serialVersionUID = 4511006460650708967L;
 }
 

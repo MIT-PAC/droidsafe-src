@@ -22,19 +22,23 @@ import java.util.StringTokenizer;
 import libcore.io.IoUtils;
 
 public class LogManager {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.317 -0400", hash_original_field = "E3744F330069AC8D2BE40C0CB5EFBDB6", hash_generated_field = "AD370BFFC6E9AB83396CFA02133C2A08")
+
     private Hashtable<String, Logger> loggers;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.318 -0400", hash_original_field = "50FE03AB7BF37089A7E88DA9B31FFB3B", hash_generated_field = "C2D8C40A30BA03E4CF83D1B1429A651D")
+
     private Properties props;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.318 -0400", hash_original_field = "9F99697C78E088CB04E67AFD7A9D1068", hash_generated_field = "3B43FF39F7B726230E736460CF0CFA39")
+
     private PropertyChangeSupport listeners;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.461 -0400", hash_original_method = "F83269E1889FF9DC50A0440D3CD9234B", hash_generated_method = "C8386DCA4C2E6590DDC5E130FB71800F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected LogManager() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.323 -0400", hash_original_method = "F83269E1889FF9DC50A0440D3CD9234B", hash_generated_method = "10DAE76C254C0DAB59601107802B0A1B")
+    protected  LogManager() {
         loggers = new Hashtable<String, Logger>();
         props = new Properties();
         listeners = new PropertyChangeSupport(this);
         Runtime.getRuntime().addShutdownHook(new Thread() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.461 -0400", hash_original_method = "1836317CB8E0A5E5B172790642D1742E", hash_generated_method = "59D9E72089082C0A3CB03237A4A6EC42")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.323 -0400", hash_original_method = "1836317CB8E0A5E5B172790642D1742E", hash_generated_method = "59D9E72089082C0A3CB03237A4A6EC42")
             @Override
             public void run() {
                 reset();
@@ -59,26 +63,25 @@ public class LogManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.461 -0400", hash_original_method = "9AC5D8EF15BD7837ACD785C0772615A1", hash_generated_method = "C308BE0846D76E01A367023713D9A840")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.323 -0400", hash_original_method = "9AC5D8EF15BD7837ACD785C0772615A1", hash_generated_method = "C308BE0846D76E01A367023713D9A840")
     public void checkAccess() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.461 -0400", hash_original_method = "9E275E191101B6346DE13876068F41E1", hash_generated_method = "92BC8A8EC571A285BE306D6BB2294B61")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.334 -0400", hash_original_method = "9E275E191101B6346DE13876068F41E1", hash_generated_method = "A5332C7ECCD207E55D83FE8554F9C2D6")
     public synchronized boolean addLogger(Logger logger) {
-        dsTaint.addTaint(logger.dsTaint);
         String name;
         name = logger.getName();
         {
-            boolean var8D9B5EDD22D5E90786B9DFCF2C7B2FED_460878611 = (loggers.get(name) != null);
+            boolean var8D9B5EDD22D5E90786B9DFCF2C7B2FED_1076018204 = (loggers.get(name) != null);
         } //End collapsed parenthetic
         addToFamilyTree(logger, name);
         loggers.put(name, logger);
         logger.setManager(this);
-        return dsTaint.getTaintBoolean();
+        addTaint(logger.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1637721760 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1637721760;
         // ---------- Original Method ----------
         //String name = logger.getName();
         //if (loggers.get(name) != null) {
@@ -91,18 +94,15 @@ public class LogManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.469 -0400", hash_original_method = "0070D539A38F64AFDE25421AB7DE8DFA", hash_generated_method = "9F824224FDA518A46F560AF25EB2695E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.419 -0400", hash_original_method = "0070D539A38F64AFDE25421AB7DE8DFA", hash_generated_method = "E9D530F3ECFB010154C75ED6F095F6CD")
     private void addToFamilyTree(Logger logger, String name) {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(logger.dsTaint);
         Logger parent;
         parent = null;
         int lastSeparator;
         String parentName;
         parentName = name;
         {
-            boolean var24311821043CD386ECA987B6ED2E2081_226443053 = ((lastSeparator = parentName.lastIndexOf('.')) != -1);
+            boolean var24311821043CD386ECA987B6ED2E2081_1318911553 = ((lastSeparator = parentName.lastIndexOf('.')) != -1);
             {
                 parentName = parentName.substring(0, lastSeparator);
                 parent = loggers.get(parentName);
@@ -110,7 +110,7 @@ public class LogManager {
                     setParent(logger, parent);
                 } //End block
                 {
-                    boolean var436F2D49C8476C95F0FD5686A4212BC7_1168501523 = (getProperty(parentName + ".level") != null ||
+                    boolean var436F2D49C8476C95F0FD5686A4212BC7_35299598 = (getProperty(parentName + ".level") != null ||
                     getProperty(parentName + ".handlers") != null);
                     {
                         parent = Logger.getLogger(parentName);
@@ -120,7 +120,7 @@ public class LogManager {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varE7420F5B75328DBDF911BFB1BBFE9320_1927852678 = (parent == null && (parent = loggers.get("")) != null);
+            boolean varE7420F5B75328DBDF911BFB1BBFE9320_1556395921 = (parent == null && (parent = loggers.get("")) != null);
             {
                 setParent(logger, parent);
             } //End block
@@ -130,14 +130,14 @@ public class LogManager {
         Collection<Logger> allLoggers;
         allLoggers = loggers.values();
         {
-            Iterator<Logger> var4A013FF40FFB4353AFEDD6717288ACC8_574746596 = (allLoggers).iterator();
-            var4A013FF40FFB4353AFEDD6717288ACC8_574746596.hasNext();
-            final Logger child = var4A013FF40FFB4353AFEDD6717288ACC8_574746596.next();
+            Iterator<Logger> var4A013FF40FFB4353AFEDD6717288ACC8_1584967075 = (allLoggers).iterator();
+            var4A013FF40FFB4353AFEDD6717288ACC8_1584967075.hasNext();
+            final Logger child = var4A013FF40FFB4353AFEDD6717288ACC8_1584967075.next();
             {
                 Logger oldParent;
                 oldParent = child.getParent();
                 {
-                    boolean varEE86372CE9D50F853F7F62A388B74232_1177069959 = (parent == oldParent && (name.length() == 0 || child.getName().startsWith(nameDot)));
+                    boolean varEE86372CE9D50F853F7F62A388B74232_344194615 = (parent == oldParent && (name.length() == 0 || child.getName().startsWith(nameDot)));
                     {
                         Logger thisLogger;
                         thisLogger = logger;
@@ -149,27 +149,31 @@ public class LogManager {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
+        addTaint(logger.getTaint());
+        addTaint(name.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.470 -0400", hash_original_method = "7CC5CB7CA011BF34DBD2626C5B91D261", hash_generated_method = "C9585BA446D2468662D5FE5250575B95")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.420 -0400", hash_original_method = "7CC5CB7CA011BF34DBD2626C5B91D261", hash_generated_method = "DC409A183238D0B3C4E0541F159E0D2B")
     public synchronized Logger getLogger(String name) {
-        dsTaint.addTaint(name);
-        Logger var31D32FC8C614FB34BA93480A2350EF8E_372572243 = (loggers.get(name));
-        return (Logger)dsTaint.getTaint();
+        Logger varB4EAC82CA7396A68D541C85D26508E83_1505334483 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1505334483 = loggers.get(name);
+        addTaint(name.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1505334483.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1505334483;
         // ---------- Original Method ----------
         //return loggers.get(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.470 -0400", hash_original_method = "A3ADDC952F848C9366B53F69C5A416F6", hash_generated_method = "30EB6A07B00414A0F401C4F728E2B2C1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.447 -0400", hash_original_method = "A3ADDC952F848C9366B53F69C5A416F6", hash_generated_method = "AF8153F3B54253D987B84C3BE5378731")
     public synchronized Enumeration<String> getLoggerNames() {
-        Enumeration<String> varDEE033790CB4C1EC587BADB5882B12FB_1186841605 = (loggers.keys());
-        return (Enumeration<String>)dsTaint.getTaint();
+        Enumeration<String> varB4EAC82CA7396A68D541C85D26508E83_1994819746 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1994819746 = loggers.keys();
+        varB4EAC82CA7396A68D541C85D26508E83_1994819746.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1994819746;
         // ---------- Original Method ----------
         //return loggers.keys();
     }
@@ -180,24 +184,24 @@ public class LogManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.471 -0400", hash_original_method = "308A02382C1792AE136BBB31488FF7DC", hash_generated_method = "23D2C0A31F2ED0B36ABE4E0614A52DA2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.448 -0400", hash_original_method = "308A02382C1792AE136BBB31488FF7DC", hash_generated_method = "E71637BAD0BD7E7CB1462D06F7A82CD0")
     public String getProperty(String name) {
-        dsTaint.addTaint(name);
-        String var078753C38135C55BB8C7094202FB1F55_1953867958 = (props.getProperty(name));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_389956887 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_389956887 = props.getProperty(name);
+        addTaint(name.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_389956887.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_389956887;
         // ---------- Original Method ----------
         //return props.getProperty(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.471 -0400", hash_original_method = "F9E79871CB75749F3B3C682DFBEA7367", hash_generated_method = "EA366D99A4CDF47CC01756B1420FDBCD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.449 -0400", hash_original_method = "F9E79871CB75749F3B3C682DFBEA7367", hash_generated_method = "1936DFBE678C68FD8FA2754F6DA76D27")
     public void readConfiguration() throws IOException {
         String configClassName;
         configClassName = System.getProperty("java.util.logging.config.class");
         {
-            boolean varDD1F3D94E4BF22F8C21B8724834F5A99_1994123887 = (configClassName == null || getInstanceByClass(configClassName) == null);
+            boolean varDD1F3D94E4BF22F8C21B8724834F5A99_896521976 = (configClassName == null || getInstanceByClass(configClassName) == null);
             {
                 String configFile;
                 configFile = System.getProperty("java.util.logging.config.file");
@@ -250,10 +254,8 @@ public class LogManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.476 -0400", hash_original_method = "5AA730DC7CE7051A789AED9B260AEA08", hash_generated_method = "0DD04E532AD1119C17B78B7D9A051945")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.567 -0400", hash_original_method = "5AA730DC7CE7051A789AED9B260AEA08", hash_generated_method = "DA1DF0B4EF37DE84EB9354146146179C")
     private synchronized void readConfigurationImpl(InputStream ins) throws IOException {
-        dsTaint.addTaint(ins.dsTaint);
         reset();
         props.load(ins);
         Logger root;
@@ -267,7 +269,7 @@ public class LogManager {
             StringTokenizer st;
             st = new StringTokenizer(configs, " ");
             {
-                boolean varA9BBA9119DD90070115272E6F9D4D419_361751275 = (st.hasMoreTokens());
+                boolean varA9BBA9119DD90070115272E6F9D4D419_969899591 = (st.hasMoreTokens());
                 {
                     String configerName;
                     configerName = st.nextToken();
@@ -278,9 +280,9 @@ public class LogManager {
         Collection<Logger> allLoggers;
         allLoggers = loggers.values();
         {
-            Iterator<Logger> var5DADD71C08A6A25BCD24EECB2286D82F_115212154 = (allLoggers).iterator();
-            var5DADD71C08A6A25BCD24EECB2286D82F_115212154.hasNext();
-            Logger logger = var5DADD71C08A6A25BCD24EECB2286D82F_115212154.next();
+            Iterator<Logger> var5DADD71C08A6A25BCD24EECB2286D82F_1064956962 = (allLoggers).iterator();
+            var5DADD71C08A6A25BCD24EECB2286D82F_1064956962.hasNext();
+            Logger logger = var5DADD71C08A6A25BCD24EECB2286D82F_1064956962.next();
             {
                 String property;
                 property = props.getProperty(logger.getName() + ".level");
@@ -290,32 +292,31 @@ public class LogManager {
             } //End block
         } //End collapsed parenthetic
         listeners.firePropertyChange(null, null, null);
+        addTaint(ins.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.476 -0400", hash_original_method = "0B5A5DFDBB36281B5E8835796DD30069", hash_generated_method = "1BD2D0AD2B94156FC9038B9D88B6A939")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.569 -0400", hash_original_method = "0B5A5DFDBB36281B5E8835796DD30069", hash_generated_method = "2033D464A9B31A1EC9418D2986523A7D")
     public void readConfiguration(InputStream ins) throws IOException {
-        dsTaint.addTaint(ins.dsTaint);
         checkAccess();
         readConfigurationImpl(ins);
+        addTaint(ins.getTaint());
         // ---------- Original Method ----------
         //checkAccess();
         //readConfigurationImpl(ins);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.476 -0400", hash_original_method = "C7F5D5A126D3CC9BC9332DC327B04AA6", hash_generated_method = "23B4398E546BD5CEBDCAEEC773F1ABA1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.573 -0400", hash_original_method = "C7F5D5A126D3CC9BC9332DC327B04AA6", hash_generated_method = "05FCCD30811757F3CFE33C02329B876B")
     public synchronized void reset() {
         checkAccess();
         props = new Properties();
         Enumeration<String> names;
         names = getLoggerNames();
         {
-            boolean var9F006A42B2CC9BF287474D33D9697C81_1462726617 = (names.hasMoreElements());
+            boolean var9F006A42B2CC9BF287474D33D9697C81_666853678 = (names.hasMoreElements());
             {
                 String name;
                 name = names.nextElement();
@@ -349,15 +350,14 @@ public class LogManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.477 -0400", hash_original_method = "89AE29101867526E131C7EEE62325170", hash_generated_method = "1D50085079CF99BF76F6A7D82678F9B0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.574 -0400", hash_original_method = "89AE29101867526E131C7EEE62325170", hash_generated_method = "882C6EE0CC053CC361FF9D6856595007")
     public void addPropertyChangeListener(PropertyChangeListener l) {
-        dsTaint.addTaint(l.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         checkAccess();
         listeners.addPropertyChangeListener(l);
+        addTaint(l.getTaint());
         // ---------- Original Method ----------
         //if (l == null) {
             //throw new NullPointerException();
@@ -367,30 +367,31 @@ public class LogManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.477 -0400", hash_original_method = "C0D7CB274D3F753AA28C566B595F1403", hash_generated_method = "D9AC513D3E03190529D0B3A22EAA3E87")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.574 -0400", hash_original_method = "C0D7CB274D3F753AA28C566B595F1403", hash_generated_method = "21A4C2E825498CC874F03598DE096E16")
     public void removePropertyChangeListener(PropertyChangeListener l) {
-        dsTaint.addTaint(l.dsTaint);
         checkAccess();
         listeners.removePropertyChangeListener(l);
+        addTaint(l.getTaint());
         // ---------- Original Method ----------
         //checkAccess();
         //listeners.removePropertyChangeListener(l);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.477 -0400", hash_original_method = "B934C7BD7B62C355AF995C71D51E6416", hash_generated_method = "F9F16EE0112CEA9C4CD77244731361B8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.607 -0400", hash_original_method = "B934C7BD7B62C355AF995C71D51E6416", hash_generated_method = "39FEA4D54E507689B6BBB9E889158E45")
     synchronized Logger getOrCreate(String name, String resourceBundleName) {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(resourceBundleName);
+        Logger varB4EAC82CA7396A68D541C85D26508E83_1715176951 = null; //Variable for return #1
         Logger result;
         result = getLogger(name);
         {
             result = new Logger(name, resourceBundleName);
             addLogger(result);
         } //End block
-        return (Logger)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1715176951 = result;
+        addTaint(name.getTaint());
+        addTaint(resourceBundleName.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1715176951.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1715176951;
         // ---------- Original Method ----------
         //Logger result = getLogger(name);
         //if (result == null) {
@@ -401,17 +402,16 @@ public class LogManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.477 -0400", hash_original_method = "B8E057E50526DE42F5AE7CC32A8A2058", hash_generated_method = "425ED7379598CBFFC96C8247539037BD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.612 -0400", hash_original_method = "B8E057E50526DE42F5AE7CC32A8A2058", hash_generated_method = "9F282BA13F692C4E1617CE25BD6E52C3")
     synchronized void setParent(Logger logger, Logger newParent) {
-        dsTaint.addTaint(logger.dsTaint);
-        dsTaint.addTaint(newParent.dsTaint);
         logger.parent = newParent;
         {
             setLevelRecursively(logger, null);
         } //End block
         newParent.children.add(logger);
         logger.updateDalvikLogHandler();
+        addTaint(logger.getTaint());
+        addTaint(newParent.getTaint());
         // ---------- Original Method ----------
         //logger.parent = newParent;
         //if (logger.levelObjVal == null) {
@@ -422,11 +422,8 @@ public class LogManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.481 -0400", hash_original_method = "46EC17C11FD929B8108F5C206F2B42C8", hash_generated_method = "D4C630DF6A2ECA94527F0C2391B65C6F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.670 -0400", hash_original_method = "46EC17C11FD929B8108F5C206F2B42C8", hash_generated_method = "B51EB27BEA33E9560EF842C50648D6A8")
     synchronized void setLevelRecursively(Logger logger, Level newLevel) {
-        dsTaint.addTaint(logger.dsTaint);
-        dsTaint.addTaint(newLevel.dsTaint);
         int previous;
         previous = logger.levelIntVal;
         logger.levelObjVal = newLevel;
@@ -440,9 +437,9 @@ public class LogManager {
         } //End block
         {
             {
-                Iterator<Logger> var269A6E3FAF8E58C011F2E1EF42BE0425_1127594768 = (logger.children).iterator();
-                var269A6E3FAF8E58C011F2E1EF42BE0425_1127594768.hasNext();
-                Logger child = var269A6E3FAF8E58C011F2E1EF42BE0425_1127594768.next();
+                Iterator<Logger> var269A6E3FAF8E58C011F2E1EF42BE0425_1217140420 = (logger.children).iterator();
+                var269A6E3FAF8E58C011F2E1EF42BE0425_1217140420.hasNext();
+                Logger child = var269A6E3FAF8E58C011F2E1EF42BE0425_1217140420.next();
                 {
                     {
                         setLevelRecursively(child, null);
@@ -450,6 +447,8 @@ public class LogManager {
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        addTaint(logger.getTaint());
+        addTaint(newLevel.getTaint());
         // ---------- Original Method ----------
         //int previous = logger.levelIntVal;
         //logger.levelObjVal = newLevel;
@@ -470,8 +469,14 @@ public class LogManager {
     }
 
     
-    private static final LoggingPermission perm = new LoggingPermission("control", null);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.670 -0400", hash_original_field = "236E63F5B17A2E84BD136AD72EB7D7B3", hash_generated_field = "C7322A2B58796BCD1C63DA2CFF4622FD")
+
+    private static LoggingPermission perm = new LoggingPermission("control", null);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.670 -0400", hash_original_field = "1D0258C2440A8D19E716292B231E3190", hash_generated_field = "60A931CC8E2121C9AF9FC8AFF4714295")
+
     static LogManager manager;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.670 -0400", hash_original_field = "B8CB929319EE85E0FA97E8ABD40DEBBC", hash_generated_field = "A7D53AAA4BF83E2F2365813530C06BF1")
+
     public static final String LOGGING_MXBEAN_NAME = "java.util.logging:type=Logging";
     static {
         String className = System.getProperty("java.util.logging.manager");

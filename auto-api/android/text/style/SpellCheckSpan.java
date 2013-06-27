@@ -12,72 +12,69 @@ import android.text.ParcelableSpan;
 import android.text.TextUtils;
 
 public class SpellCheckSpan implements ParcelableSpan {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.844 -0400", hash_original_field = "2CD5FC4A7984A2B11D32D28D974733BE", hash_generated_field = "CD03D035E3A34C62C050AB1056925600")
+
     private boolean mSpellCheckInProgress;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.921 -0400", hash_original_method = "F1D4E96290AC8C7754627E362363B9DA", hash_generated_method = "26BD444D89119A2293FF0670908802DE")
-    @DSModeled(DSC.SAFE)
-    public SpellCheckSpan() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.844 -0400", hash_original_method = "F1D4E96290AC8C7754627E362363B9DA", hash_generated_method = "26BD444D89119A2293FF0670908802DE")
+    public  SpellCheckSpan() {
         mSpellCheckInProgress = false;
         // ---------- Original Method ----------
         //mSpellCheckInProgress = false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.922 -0400", hash_original_method = "9BB9BE3CC699053708AEB172BEE11085", hash_generated_method = "E7E1E899A4943C4011CB5A0AAA55ED0E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SpellCheckSpan(Parcel src) {
-        dsTaint.addTaint(src.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.845 -0400", hash_original_method = "9BB9BE3CC699053708AEB172BEE11085", hash_generated_method = "612B7223728EBFB58F40A6C5D42F0175")
+    public  SpellCheckSpan(Parcel src) {
         mSpellCheckInProgress = (src.readInt() != 0);
         // ---------- Original Method ----------
         //mSpellCheckInProgress = (src.readInt() != 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.922 -0400", hash_original_method = "712093FDA6926C8B5E44D517F24CE2ED", hash_generated_method = "FA6F6FF9FC22F055C4408A4F2087AD74")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.845 -0400", hash_original_method = "712093FDA6926C8B5E44D517F24CE2ED", hash_generated_method = "7790FF52440767842592CC146F06EEF2")
     public void setSpellCheckInProgress(boolean inProgress) {
-        dsTaint.addTaint(inProgress);
+        mSpellCheckInProgress = inProgress;
         // ---------- Original Method ----------
         //mSpellCheckInProgress = inProgress;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.922 -0400", hash_original_method = "DF88C425EC6702745B81C07A898C5194", hash_generated_method = "C7371D4F1AA6DD6D3F4CF068DD5200A9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.846 -0400", hash_original_method = "DF88C425EC6702745B81C07A898C5194", hash_generated_method = "F498208D7550810981855D76CFC5A3C9")
     public boolean isSpellCheckInProgress() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1289352830 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1289352830;
         // ---------- Original Method ----------
         //return mSpellCheckInProgress;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.922 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0DB50BC0CCE4711867E95DEC1B2117C7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.859 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8B90B76AD0384481CF5C9DFBCA873D69")
     @Override
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_395417630 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_395417630;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.922 -0400", hash_original_method = "4374405C13E287E9F22B8DE100EB99A0", hash_generated_method = "55BFF41C5D7B5951AE8C9A06D11E33A9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.859 -0400", hash_original_method = "4374405C13E287E9F22B8DE100EB99A0", hash_generated_method = "D6A868E4BA800D91740464B23B852E81")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeInt(mSpellCheckInProgress ? 1 : 0);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeInt(mSpellCheckInProgress ? 1 : 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.923 -0400", hash_original_method = "8BC137FF3CFAC8D1FC70CD10E3E0E733", hash_generated_method = "C7A2D1D6D385E30AC2211CF4FCA02FF9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.987 -0400", hash_original_method = "8BC137FF3CFAC8D1FC70CD10E3E0E733", hash_generated_method = "3BD2B8DFDDDA9DEFC314D2FB52D349C1")
     @Override
     public int getSpanTypeId() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1766336151 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1766336151;
         // ---------- Original Method ----------
         //return TextUtils.SPELL_CHECK_SPAN;
     }

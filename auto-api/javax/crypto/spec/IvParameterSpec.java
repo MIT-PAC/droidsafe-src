@@ -11,12 +11,12 @@ import java.security.spec.AlgorithmParameterSpec;
 import java.util.Arrays;
 
 public class IvParameterSpec implements AlgorithmParameterSpec {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.296 -0400", hash_original_field = "F0B53B2DA041FCA49EF0B9839060B345", hash_generated_field = "EF60E6736481A45AB4AEED35775132C4")
+
     private byte[] iv;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.998 -0400", hash_original_method = "D9A5990E9ED63A0A9D454C79A44593C3", hash_generated_method = "8846104F206574A647C89FA5824E5FB5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public IvParameterSpec(byte[] iv) {
-        dsTaint.addTaint(iv[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.298 -0400", hash_original_method = "D9A5990E9ED63A0A9D454C79A44593C3", hash_generated_method = "323675160905283E4A22A0D0E9068531")
+    public  IvParameterSpec(byte[] iv) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("iv == null");
         } //End block
@@ -31,18 +31,15 @@ public class IvParameterSpec implements AlgorithmParameterSpec {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.998 -0400", hash_original_method = "60CA42675AB74B8A2A3519AD856C2D26", hash_generated_method = "632CEF97850EBF43354B0D9E6F017DDC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public IvParameterSpec(byte[] iv, int offset, int byteCount) {
-        dsTaint.addTaint(iv[0]);
-        dsTaint.addTaint(byteCount);
-        dsTaint.addTaint(offset);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.311 -0400", hash_original_method = "60CA42675AB74B8A2A3519AD856C2D26", hash_generated_method = "67E98522FE277E571A67C1E3B3291E07")
+    public  IvParameterSpec(byte[] iv, int offset, int byteCount) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
         Arrays.checkOffsetAndCount(iv.length, offset, byteCount);
         this.iv = new byte[byteCount];
         System.arraycopy(iv, offset, this.iv, 0, byteCount);
+        addTaint(offset);
         // ---------- Original Method ----------
         //if ((iv == null) || (iv.length - offset < byteCount)) {
             //throw new IllegalArgumentException();
@@ -53,15 +50,13 @@ public class IvParameterSpec implements AlgorithmParameterSpec {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.998 -0400", hash_original_method = "A92FDD2E910AFCA63CE828A3161FD7A9", hash_generated_method = "014003342E34B60E4DF15CFADDC66893")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.311 -0400", hash_original_method = "A92FDD2E910AFCA63CE828A3161FD7A9", hash_generated_method = "602B4BD590A30DFADBC6B3E85DC3961B")
     public byte[] getIV() {
         byte[] res;
         res = new byte[iv.length];
         System.arraycopy(iv, 0, res, 0, iv.length);
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1118651188 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1118651188;
         // ---------- Original Method ----------
         //byte[] res = new byte[iv.length];
         //System.arraycopy(iv, 0, res, 0, iv.length);

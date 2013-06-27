@@ -19,27 +19,25 @@ import java.text.ParseException;
 
 public class ReferencesParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.732 -0400", hash_original_method = "25FD33E3054230667E9A8F92C1B17418", hash_generated_method = "342D2A44D257EB16D195F5D231D382C7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ReferencesParser(String references) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.586 -0400", hash_original_method = "25FD33E3054230667E9A8F92C1B17418", hash_generated_method = "CD6E7E32788BACC1EB2EED70743A8412")
+    public  ReferencesParser(String references) {
         super(references);
-        dsTaint.addTaint(references);
+        addTaint(references.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.733 -0400", hash_original_method = "CBAD07AA72F20B2B658D118EA3760591", hash_generated_method = "1570C61613B3025F168726C4D18AB0C0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected ReferencesParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.586 -0400", hash_original_method = "CBAD07AA72F20B2B658D118EA3760591", hash_generated_method = "C2171F8AF6C79D90DB92DCAE037087DC")
+    protected  ReferencesParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.733 -0400", hash_original_method = "9AD39421D9E40B39389DA2F4797EEA52", hash_generated_method = "0F2171D70FB779FF25A874C97C7BC1DE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.587 -0400", hash_original_method = "9AD39421D9E40B39389DA2F4797EEA52", hash_generated_method = "3753EF0D01EF11F5D691B2550F6539CC")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1685359000 = null; //Variable for return #1
         dbg_enter("ReasonParser.parse");
         try 
         {
@@ -51,12 +49,14 @@ public class ReferencesParser extends ParametersParser {
             callId = lexer.byteStringNoSemicolon();
             references.setCallId(callId);
             super.parse(references);
+            varB4EAC82CA7396A68D541C85D26508E83_1685359000 = references;
         } //End block
         finally 
         {
             dbg_leave("ReferencesParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1685359000.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1685359000;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("ReasonParser.parse");

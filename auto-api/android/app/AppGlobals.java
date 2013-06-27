@@ -11,9 +11,10 @@ import android.content.pm.IPackageManager;
 
 public class AppGlobals {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.510 -0400", hash_original_method = "49E661FE1E7E5458348589D881533201", hash_generated_method = "49E661FE1E7E5458348589D881533201")
-        public AppGlobals ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:40.643 -0400", hash_original_method = "225CC013D111255E32A02621AE08F9A5", hash_generated_method = "225CC013D111255E32A02621AE08F9A5")
+    public AppGlobals ()
     {
+        //Synthesized constructor
     }
 
 

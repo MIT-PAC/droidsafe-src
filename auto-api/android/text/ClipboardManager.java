@@ -10,9 +10,10 @@ import java.util.Iterator;
 
 public abstract class ClipboardManager {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.000 -0400", hash_original_method = "96FC89CA7A654748673A68E601EDB67F", hash_generated_method = "96FC89CA7A654748673A68E601EDB67F")
-        public ClipboardManager ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:36.912 -0400", hash_original_method = "47A2DF210DD8BA7527F7EBA65DD74954", hash_generated_method = "47A2DF210DD8BA7527F7EBA65DD74954")
+    public ClipboardManager ()
     {
+        //Synthesized constructor
     }
 
 

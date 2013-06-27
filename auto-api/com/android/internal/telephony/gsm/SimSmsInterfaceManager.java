@@ -29,19 +29,27 @@ import java.util.Set;
 import static android.telephony.SmsManager.STATUS_ON_ICC_FREE;
 
 public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.463 -0400", hash_original_field = "B89DEBA2CB26B1AC973763E3E152017B", hash_generated_field = "C8F8FCD335E09ED70E70801AB39A894A")
+
     private Object mLock = new Object();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.468 -0400", hash_original_field = "51D04CAF6B674687BDD02BD17453D38D", hash_generated_field = "E5C2960DEEDF8FDAD07F7DFD4E59E129")
+
     private boolean mSuccess;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.468 -0400", hash_original_field = "8226893332EC8B3D4C41881E93F86D0B", hash_generated_field = "ED139F0AF6AD2DEBB50AE480C594897C")
+
     private List<SmsRawData> mSms;
-    private HashMap<Integer, HashSet<String>> mCellBroadcastSubscriptions =
-            new HashMap<Integer, HashSet<String>>();
-    private CellBroadcastRangeManager mCellBroadcastRangeManager =
-            new CellBroadcastRangeManager();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.468 -0400", hash_original_field = "5295D397E3B8ABF68AB05F812BD7E8EE", hash_generated_field = "B84253B8FA7AB46A694B9F6B58DBB692")
+
+    private HashMap<Integer, HashSet<String>> mCellBroadcastSubscriptions = new HashMap<Integer, HashSet<String>>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.468 -0400", hash_original_field = "4DB2139541B7A82F8504421C820CB49D", hash_generated_field = "BDB100102358F9C5E6439629D9C77938")
+
+    private CellBroadcastRangeManager mCellBroadcastRangeManager = new CellBroadcastRangeManager();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.527 -0400", hash_original_field = "6D394D9EA6E1664AF7305BEAB74AC6B5", hash_generated_field = "F4B17FF743B551D88D9574EA5D666A86")
+
     Handler mHandler = new Handler() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.852 -0400", hash_original_method = "2B211BBD733007234A9B9085CE23F724", hash_generated_method = "A2B89DEFE29FA6FC11A8BD9758FDC20A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.469 -0400", hash_original_method = "2B211BBD733007234A9B9085CE23F724", hash_generated_method = "791EB521B43B73C3BF37FF78C68699C9")
         @Override
         public void handleMessage(Message msg) {
-            dsTaint.addTaint(msg.dsTaint);
             AsyncResult ar;
             //Begin case EVENT_UPDATE_DONE 
             ar = (AsyncResult) msg.obj;
@@ -76,34 +84,32 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
                 mLock.notifyAll();
             } //End block
             //End case EVENT_SET_BROADCAST_ACTIVATION_DONE EVENT_SET_BROADCAST_CONFIG_DONE 
+            addTaint(msg.getTaint());
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-}; //Transformed anonymous class
+};
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.853 -0400", hash_original_method = "B76CF823F0B7FB39DC6F27A63B8B6D56", hash_generated_method = "A344388B79D37EA7F6B97BFF26711181")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SimSmsInterfaceManager(GSMPhone phone, SMSDispatcher dispatcher) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.528 -0400", hash_original_method = "B76CF823F0B7FB39DC6F27A63B8B6D56", hash_generated_method = "108DE3522F8B92E90007B83E3548EB41")
+    public  SimSmsInterfaceManager(GSMPhone phone, SMSDispatcher dispatcher) {
         super(phone);
-        dsTaint.addTaint(phone.dsTaint);
-        dsTaint.addTaint(dispatcher.dsTaint);
         mDispatcher = dispatcher;
+        addTaint(phone.getTaint());
+        addTaint(dispatcher.getTaint());
         // ---------- Original Method ----------
         //mDispatcher = dispatcher;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.853 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.528 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.853 -0400", hash_original_method = "B5C7D22959BE2F7C1AB4B825F6E12647", hash_generated_method = "2C33189D3CD18A31AF8A0FB6F1FC6A1D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.528 -0400", hash_original_method = "B5C7D22959BE2F7C1AB4B825F6E12647", hash_generated_method = "2C33189D3CD18A31AF8A0FB6F1FC6A1D")
     @Override
     protected void finalize() {
         try 
@@ -123,12 +129,8 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.854 -0400", hash_original_method = "F53F9B39BB318705FAF6F47512F2ECB5", hash_generated_method = "A0E98A428A8D8571031C556D0305BB9E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.529 -0400", hash_original_method = "F53F9B39BB318705FAF6F47512F2ECB5", hash_generated_method = "B6F1EE519EBEF0A2FBFA43DE94873150")
     public boolean updateMessageOnIccEf(int index, int status, byte[] pdu) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(status);
-        dsTaint.addTaint(pdu[0]);
         log("updateMessageOnIccEf: index=" + index +
                 " status=" + status + " ==> " +
                 "("+ Arrays.toString(pdu) + ")");
@@ -156,18 +158,18 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
                 log("interrupted while trying to update by index");
             } //End block
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(index);
+        addTaint(status);
+        addTaint(pdu[0]);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_579753846 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_579753846;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.854 -0400", hash_original_method = "5C5D2075C67DB185E1C8FAD979C1C6EE", hash_generated_method = "8B5D4006528D1FD1FD9EB390B4814140")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.530 -0400", hash_original_method = "5C5D2075C67DB185E1C8FAD979C1C6EE", hash_generated_method = "031243BEB55E1F1F347B6438947DD04D")
     public boolean copyMessageToIccEf(int status, byte[] pdu, byte[] smsc) {
-        dsTaint.addTaint(status);
-        dsTaint.addTaint(pdu[0]);
-        dsTaint.addTaint(smsc[0]);
         log("copyMessageToIccEf: status=" + status + " ==> " +
                 "pdu=("+ Arrays.toString(pdu) +
                 "), smsm=(" + Arrays.toString(smsc) +")");
@@ -187,7 +189,11 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
                 log("interrupted while trying to update by index");
             } //End block
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(status);
+        addTaint(pdu[0]);
+        addTaint(smsc[0]);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1538369020 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1538369020;
         // ---------- Original Method ----------
         //if (DBG) log("copyMessageToIccEf: status=" + status + " ==> " +
                 //"pdu=("+ Arrays.toString(pdu) +
@@ -208,9 +214,9 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.854 -0400", hash_original_method = "D4D266DBBD67105329BC4DC8BFFFFEC2", hash_generated_method = "B4F59054AA78204E5D7C6BCC2E8FB2F0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.531 -0400", hash_original_method = "D4D266DBBD67105329BC4DC8BFFFFEC2", hash_generated_method = "C6232848D9E4381E79ED67E3D5BC792A")
     public List<SmsRawData> getAllMessagesFromIccEf() {
+        List<SmsRawData> varB4EAC82CA7396A68D541C85D26508E83_1238682888 = null; //Variable for return #1
         log("getAllMessagesFromEF");
         Context context;
         context = mPhone.getContext();
@@ -230,7 +236,9 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
                 log("interrupted while trying to load from the SIM");
             } //End block
         } //End block
-        return (List<SmsRawData>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1238682888 = mSms;
+        varB4EAC82CA7396A68D541C85D26508E83_1238682888.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1238682888;
         // ---------- Original Method ----------
         //if (DBG) log("getAllMessagesFromEF");
         //Context context = mPhone.getContext();
@@ -250,33 +258,30 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.855 -0400", hash_original_method = "9E9858677901A40DCFB3014D7783E7CF", hash_generated_method = "3511A254D3B79E697B8BD9663CF39C97")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.532 -0400", hash_original_method = "9E9858677901A40DCFB3014D7783E7CF", hash_generated_method = "49C78BE030C8037DCF5D29F4FCED0B95")
     public boolean enableCellBroadcast(int messageIdentifier) {
-        dsTaint.addTaint(messageIdentifier);
-        boolean var8C8D74A8863606631DE54B7E9069A175_1008907328 = (enableCellBroadcastRange(messageIdentifier, messageIdentifier));
-        return dsTaint.getTaintBoolean();
+        boolean var8C8D74A8863606631DE54B7E9069A175_1136658139 = (enableCellBroadcastRange(messageIdentifier, messageIdentifier));
+        addTaint(messageIdentifier);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_142680206 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_142680206;
         // ---------- Original Method ----------
         //return enableCellBroadcastRange(messageIdentifier, messageIdentifier);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.855 -0400", hash_original_method = "E254B3C21063075DCFCF4B937B1FF66E", hash_generated_method = "477C33718AC3DC0879C7087D1123BA01")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.532 -0400", hash_original_method = "E254B3C21063075DCFCF4B937B1FF66E", hash_generated_method = "948A3622F3CBA954CC3787D6C2368190")
     public boolean disableCellBroadcast(int messageIdentifier) {
-        dsTaint.addTaint(messageIdentifier);
-        boolean varCED64931F28FE138F7464163BC3E19E0_352033537 = (disableCellBroadcastRange(messageIdentifier, messageIdentifier));
-        return dsTaint.getTaintBoolean();
+        boolean varCED64931F28FE138F7464163BC3E19E0_1297664164 = (disableCellBroadcastRange(messageIdentifier, messageIdentifier));
+        addTaint(messageIdentifier);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1522888355 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1522888355;
         // ---------- Original Method ----------
         //return disableCellBroadcastRange(messageIdentifier, messageIdentifier);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.855 -0400", hash_original_method = "8E661A700D601CF050E065CDC056070F", hash_generated_method = "05040CDD08E4E5B5A551982B54B2B574")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.532 -0400", hash_original_method = "8E661A700D601CF050E065CDC056070F", hash_generated_method = "5C1FDAC33CEDD3E04F06C0E878383599")
     public boolean enableCellBroadcastRange(int startMessageId, int endMessageId) {
-        dsTaint.addTaint(startMessageId);
-        dsTaint.addTaint(endMessageId);
         log("enableCellBroadcastRange");
         Context context;
         context = mPhone.getContext();
@@ -287,7 +292,7 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
         client = context.getPackageManager().getNameForUid(
                 Binder.getCallingUid());
         {
-            boolean varFBC088AEED27062F33727167AE6F95FA_1350420928 = (!mCellBroadcastRangeManager.enableRange(startMessageId, endMessageId, client));
+            boolean varFBC088AEED27062F33727167AE6F95FA_1551026998 = (!mCellBroadcastRangeManager.enableRange(startMessageId, endMessageId, client));
             {
                 log("Failed to add cell broadcast subscription for MID range " + startMessageId
                     + " to " + endMessageId + " from client " + client);
@@ -296,17 +301,17 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
         log("Added cell broadcast subscription for MID range " + startMessageId
                     + " to " + endMessageId + " from client " + client);
         setCellBroadcastActivation(!mCellBroadcastRangeManager.isEmpty());
-        return dsTaint.getTaintBoolean();
+        addTaint(startMessageId);
+        addTaint(endMessageId);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1317136713 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1317136713;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.855 -0400", hash_original_method = "47BAD55325978FFE5C517009A7EF2AB8", hash_generated_method = "7827771404563A7FF43A583BE1A9E14A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.533 -0400", hash_original_method = "47BAD55325978FFE5C517009A7EF2AB8", hash_generated_method = "3E053768321C9EBF3B139B5BA0F5455B")
     public boolean disableCellBroadcastRange(int startMessageId, int endMessageId) {
-        dsTaint.addTaint(startMessageId);
-        dsTaint.addTaint(endMessageId);
         log("disableCellBroadcastRange");
         Context context;
         context = mPhone.getContext();
@@ -317,7 +322,7 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
         client = context.getPackageManager().getNameForUid(
                 Binder.getCallingUid());
         {
-            boolean var6F1DF54DDA7D97E10487F0EAA0F27713_36160204 = (!mCellBroadcastRangeManager.disableRange(startMessageId, endMessageId, client));
+            boolean var6F1DF54DDA7D97E10487F0EAA0F27713_1455684328 = (!mCellBroadcastRangeManager.disableRange(startMessageId, endMessageId, client));
             {
                 log("Failed to remove cell broadcast subscription for MID range " + startMessageId
                     + " to " + endMessageId + " from client " + client);
@@ -326,16 +331,17 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
         log("Removed cell broadcast subscription for MID range " + startMessageId
                     + " to " + endMessageId + " from client " + client);
         setCellBroadcastActivation(!mCellBroadcastRangeManager.isEmpty());
-        return dsTaint.getTaintBoolean();
+        addTaint(startMessageId);
+        addTaint(endMessageId);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_829772708 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_829772708;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.856 -0400", hash_original_method = "13CBDA000CECA6BBED63F386B07FC011", hash_generated_method = "B8A1A1CCD99DD84C6A7319E5541B3E68")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.534 -0400", hash_original_method = "13CBDA000CECA6BBED63F386B07FC011", hash_generated_method = "CAFA0E7A07FA9683054507C6B3FBF38B")
     private boolean setCellBroadcastConfig(SmsBroadcastConfigInfo[] configs) {
-        dsTaint.addTaint(configs[0].dsTaint);
         log("Calling setGsmBroadcastConfig with " + configs.length + " configurations");
         {
             Message response;
@@ -351,7 +357,9 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
                 log("interrupted while trying to set cell broadcast config");
             } //End block
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(configs[0].getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1953562243 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1953562243;
         // ---------- Original Method ----------
         //if (DBG)
             //log("Calling setGsmBroadcastConfig with " + configs.length + " configurations");
@@ -369,10 +377,8 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.856 -0400", hash_original_method = "D2ABD2A7A42536455FF89EC95B86ABFC", hash_generated_method = "E703EA134305C001F2B9F92AE80DFAF6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.534 -0400", hash_original_method = "D2ABD2A7A42536455FF89EC95B86ABFC", hash_generated_method = "1A35E29D8B409C4E4699F648BD56A7A3")
     private boolean setCellBroadcastActivation(boolean activate) {
-        dsTaint.addTaint(activate);
         log("Calling setCellBroadcastActivation(" + activate + ')');
         {
             Message response;
@@ -388,7 +394,9 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
                 log("interrupted while trying to set cell broadcast activation");
             } //End block
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(activate);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_712071581 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_712071581;
         // ---------- Original Method ----------
         //if (DBG)
             //log("Calling setCellBroadcastActivation(" + activate + ')');
@@ -406,29 +414,29 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.856 -0400", hash_original_method = "8FFAE6152EC966DD60EE44B9C7188E3E", hash_generated_method = "8986D1D49B9FC02B297FC65F7ECA0335")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.534 -0400", hash_original_method = "8FFAE6152EC966DD60EE44B9C7188E3E", hash_generated_method = "A78A96AD63975F1872A34309071EE3EB")
     @Override
     protected void log(String msg) {
-        dsTaint.addTaint(msg);
         Log.d(LOG_TAG, "[SimSmsInterfaceManager] " + msg);
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         //Log.d(LOG_TAG, "[SimSmsInterfaceManager] " + msg);
     }
 
     
     class CellBroadcastRangeManager extends IntRangeManager {
-        private ArrayList<SmsBroadcastConfigInfo> mConfigList =
-                new ArrayList<SmsBroadcastConfigInfo>();
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.534 -0400", hash_original_field = "C44116DC6796845984805B9F9E58678C", hash_generated_field = "DF520AF3FDD23D6477ECBF735C000104")
+
+        private ArrayList<SmsBroadcastConfigInfo> mConfigList = new ArrayList<SmsBroadcastConfigInfo>();
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.856 -0400", hash_original_method = "A7FB68C3F7C46A3C9BA93C1BA7350276", hash_generated_method = "A7FB68C3F7C46A3C9BA93C1BA7350276")
-                public CellBroadcastRangeManager ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.535 -0400", hash_original_method = "C394C8BFADF1F863BE74B5C008CAC491", hash_generated_method = "C394C8BFADF1F863BE74B5C008CAC491")
+        public CellBroadcastRangeManager ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.857 -0400", hash_original_method = "9715F7B64D6F5D9B1FC00DACD193B4CE", hash_generated_method = "9FFE737D65BF3BA4E83567038136FE56")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.535 -0400", hash_original_method = "9715F7B64D6F5D9B1FC00DACD193B4CE", hash_generated_method = "9FFE737D65BF3BA4E83567038136FE56")
         protected void startUpdate() {
             mConfigList.clear();
             // ---------- Original Method ----------
@@ -436,32 +444,31 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.857 -0400", hash_original_method = "6A2FA862D29C9C6898FE89F28FC062F6", hash_generated_method = "9923414B02311CC02610680F9E241654")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.535 -0400", hash_original_method = "6A2FA862D29C9C6898FE89F28FC062F6", hash_generated_method = "07F902704F05DA41D4E44FBE2E8A25C4")
         protected void addRange(int startId, int endId, boolean selected) {
-            dsTaint.addTaint(selected);
-            dsTaint.addTaint(endId);
-            dsTaint.addTaint(startId);
             mConfigList.add(new SmsBroadcastConfigInfo(startId, endId,
                         SMS_CB_CODE_SCHEME_MIN, SMS_CB_CODE_SCHEME_MAX, selected));
+            addTaint(startId);
+            addTaint(endId);
+            addTaint(selected);
             // ---------- Original Method ----------
             //mConfigList.add(new SmsBroadcastConfigInfo(startId, endId,
                         //SMS_CB_CODE_SCHEME_MIN, SMS_CB_CODE_SCHEME_MAX, selected));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.866 -0400", hash_original_method = "1E945351230B27489052E59869E2AD9A", hash_generated_method = "85CF0D1BB325BCE4AA8B50725074EB04")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.564 -0400", hash_original_method = "1E945351230B27489052E59869E2AD9A", hash_generated_method = "1FC9B0F6F95EA39B70E640638E226D99")
         protected boolean finishUpdate() {
             {
-                boolean varFCD646C4E99CC667B09618B1E7707A11_1071690678 = (mConfigList.isEmpty());
+                boolean varFCD646C4E99CC667B09618B1E7707A11_1405439440 = (mConfigList.isEmpty());
                 {
                     SmsBroadcastConfigInfo[] configs;
                     configs = mConfigList.toArray(new SmsBroadcastConfigInfo[mConfigList.size()]);
-                    boolean var65B4DD29DFB765BB5E794AEBB8DA5BA3_614740714 = (setCellBroadcastConfig(configs));
+                    boolean var65B4DD29DFB765BB5E794AEBB8DA5BA3_1956180359 = (setCellBroadcastConfig(configs));
                 } //End block
             } //End collapsed parenthetic
-            return dsTaint.getTaintBoolean();
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1954606925 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1954606925;
             // ---------- Original Method ----------
             //if (mConfigList.isEmpty()) {
                 //return true;
@@ -477,13 +484,29 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
 
 
     
-    static final String LOG_TAG = "GSM";
-    static final boolean DBG = true;
-    private static final int EVENT_LOAD_DONE = 1;
-    private static final int EVENT_UPDATE_DONE = 2;
-    private static final int EVENT_SET_BROADCAST_ACTIVATION_DONE = 3;
-    private static final int EVENT_SET_BROADCAST_CONFIG_DONE = 4;
-    private static final int SMS_CB_CODE_SCHEME_MIN = 0;
-    private static final int SMS_CB_CODE_SCHEME_MAX = 255;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.564 -0400", hash_original_field = "41EBE7F32B96C1E2E9C209710486A443", hash_generated_field = "D3C0B237A982707BF0906F1B27E7321D")
+
+    static String LOG_TAG = "GSM";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.564 -0400", hash_original_field = "A4622F7F72162611C8E075EE443BC26E", hash_generated_field = "BA31E82B2F843C2330C45AAEA0F35804")
+
+    static boolean DBG = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.564 -0400", hash_original_field = "B0BA389891763CE058F1838506410614", hash_generated_field = "864E86E102EB0C5192094AD975590E57")
+
+    private static int EVENT_LOAD_DONE = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.564 -0400", hash_original_field = "FA5C825AD4E8BE0B56282EA4E98C2D84", hash_generated_field = "312F6B74742EA88AF68ECA2A708B5890")
+
+    private static int EVENT_UPDATE_DONE = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.564 -0400", hash_original_field = "B60BA1295CCFC2B789AA51D8AA66C386", hash_generated_field = "B105ACBA3705D18D77ADE5FB90559F5A")
+
+    private static int EVENT_SET_BROADCAST_ACTIVATION_DONE = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.565 -0400", hash_original_field = "C61701770F019E446DE5BBFF7502996B", hash_generated_field = "0CB28A6433E8F9146AEF9B992AD900B1")
+
+    private static int EVENT_SET_BROADCAST_CONFIG_DONE = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.565 -0400", hash_original_field = "3FCCB6C601A0DC41EA1AD349CB9AE7FB", hash_generated_field = "91BE3AD88FBF103AB55665A1BC130942")
+
+    private static int SMS_CB_CODE_SCHEME_MIN = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.565 -0400", hash_original_field = "3CA7A777CBDF7832989FADE4932F143B", hash_generated_field = "E701F0572E54F4EFA56BA65712CA9F12")
+
+    private static int SMS_CB_CODE_SCHEME_MAX = 255;
 }
 

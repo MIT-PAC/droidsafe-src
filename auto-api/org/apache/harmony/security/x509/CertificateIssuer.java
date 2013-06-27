@@ -15,24 +15,27 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.x501.Name;
 
 public final class CertificateIssuer extends ExtensionValue {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.485 -0400", hash_original_field = "3E6C2BC1E7F7E5E8C450394C747A8E9F", hash_generated_field = "30FEA84FB35EF28DB029D29044BA91EC")
+
     private X500Principal issuer;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.577 -0400", hash_original_method = "DA4BDBC496D2A998B5C29C74B17A91EA", hash_generated_method = "77BD8292F522060C2F26346305F90BCB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CertificateIssuer(byte[] encoding) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.491 -0400", hash_original_method = "DA4BDBC496D2A998B5C29C74B17A91EA", hash_generated_method = "45AD7D84F74F2142DA3FF47565C306EC")
+    public  CertificateIssuer(byte[] encoding) {
         super(encoding);
-        dsTaint.addTaint(encoding[0]);
+        addTaint(encoding[0]);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.577 -0400", hash_original_method = "A624F7DB93A0D045C3602F26988D09C5", hash_generated_method = "809888AE4CD2F29C7F0F041DB3844A92")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.492 -0400", hash_original_method = "A624F7DB93A0D045C3602F26988D09C5", hash_generated_method = "71F6B7D418810237ED6191D431283D06")
     public X500Principal getIssuer() throws IOException {
+        X500Principal varB4EAC82CA7396A68D541C85D26508E83_1930951000 = null; //Variable for return #1
         {
             issuer = (X500Principal) ASN1.decode(getEncoded());
         } //End block
-        return (X500Principal)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1930951000 = issuer;
+        varB4EAC82CA7396A68D541C85D26508E83_1930951000.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1930951000;
         // ---------- Original Method ----------
         //if (issuer == null) {
             //issuer = (X500Principal) ASN1.decode(getEncoded());
@@ -41,12 +44,9 @@ public final class CertificateIssuer extends ExtensionValue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.577 -0400", hash_original_method = "50826A9F4B6111EEE8495EBA7ED178B7", hash_generated_method = "4424F480461FE988F576EAAC80D9FDA1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.492 -0400", hash_original_method = "50826A9F4B6111EEE8495EBA7ED178B7", hash_generated_method = "E4759D7A5C40065FD80574D86B7EEF98")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
-        dsTaint.addTaint(prefix);
-        dsTaint.addTaint(sb.dsTaint);
         sb.append(prefix).append("Certificate Issuer: ");
         {
             try 
@@ -60,6 +60,8 @@ public final class CertificateIssuer extends ExtensionValue {
             } //End block
         } //End block
         sb.append(issuer).append('\n');
+        addTaint(sb.getTaint());
+        addTaint(prefix.getTaint());
         // ---------- Original Method ----------
         //sb.append(prefix).append("Certificate Issuer: ");
         //if (issuer == null) {
@@ -74,33 +76,17 @@ public final class CertificateIssuer extends ExtensionValue {
     }
 
     
-    public static final ASN1Type ASN1 = new ASN1Sequence(new ASN1Type[] { GeneralName.ASN1 }) {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.577 -0400", hash_original_method = "B2A2BF1AEEB9B5ED68F04D56AA862E02", hash_generated_method = "C67E6426673167A54AD28DC1D75DB398")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        @Override
-        public Object getDecodedObject(BerInputStream in) {
-            dsTaint.addTaint(in.dsTaint);
-            Object var3E5E69D0CB6F4DFC71AEC67CBE6BE9C2_502810807 = (((Name) ((GeneralName) ((Object[]) in.content)[0])
-                    .getName()).getX500Principal());
-            return (Object)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return ((Name) ((GeneralName) ((Object[]) in.content)[0])
-                    //.getName()).getX500Principal();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.493 -0400", hash_original_field = "26467BCE56C2E2E5052FBB838762A5FF", hash_generated_field = "FE3BF8D4A6349EB434E9E8BE6B183663")
+
+    public static final ASN1Type ASN1 = new ASN1Sequence(new ASN1Type[] { GeneralName.ASN1 }) {
+        @Override public Object getDecodedObject(BerInputStream in) {
+            return ((Name) ((GeneralName) ((Object[]) in.content)[0])
+                    .getName()).getX500Principal();
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.578 -0400", hash_original_method = "F62248487F946226E81F44B251123553", hash_generated_method = "0CE378D78D973F6CBAE1E23D108A714F")
-        @DSModeled(DSC.SAFE)
-        @Override
-        protected void getValues(Object object, Object[] values) {
-            dsTaint.addTaint(values[0].dsTaint);
-            dsTaint.addTaint(object.dsTaint);
+        @Override protected void getValues(Object object, Object[] values) {
             values[0] = object;
-            // ---------- Original Method ----------
-            //values[0] = object;
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

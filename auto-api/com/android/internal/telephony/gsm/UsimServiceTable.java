@@ -11,42 +11,44 @@ import com.android.internal.telephony.IccServiceTable;
 
 public final class UsimServiceTable extends IccServiceTable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.074 -0400", hash_original_method = "817BD5CF49BC23E6643D1124A4E1BE41", hash_generated_method = "954EFB53227271972229AC0B89EC4D63")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public UsimServiceTable(byte[] table) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.135 -0400", hash_original_method = "817BD5CF49BC23E6643D1124A4E1BE41", hash_generated_method = "6D7E057B1FC8F501ED71E554CCC54EE8")
+    public  UsimServiceTable(byte[] table) {
         super(table);
-        dsTaint.addTaint(table[0]);
+        addTaint(table[0]);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.074 -0400", hash_original_method = "DBA3BE1184DAC743D00CD4A8E44903BD", hash_generated_method = "82865A9BEBF2A9D680A93E53CE7EFE1E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.135 -0400", hash_original_method = "DBA3BE1184DAC743D00CD4A8E44903BD", hash_generated_method = "DC1DC6F2B1C22F7DD69C1E64232E7C7F")
     public boolean isAvailable(UsimService service) {
-        dsTaint.addTaint(service.dsTaint);
-        boolean var42BF4AA20E44FEE0BAC84FECFBD2EC6C_1902706786 = (super.isAvailable(service.ordinal()));
-        return dsTaint.getTaintBoolean();
+        boolean var42BF4AA20E44FEE0BAC84FECFBD2EC6C_593687680 = (super.isAvailable(service.ordinal()));
+        addTaint(service.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1151886222 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1151886222;
         // ---------- Original Method ----------
         //return super.isAvailable(service.ordinal());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.074 -0400", hash_original_method = "E87A72CCD83C43A988523404C93A686A", hash_generated_method = "870EA96D06C9A5963647F517714FDD8C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.135 -0400", hash_original_method = "E87A72CCD83C43A988523404C93A686A", hash_generated_method = "C62AFB8958AAAD4C985740FC6C211C5A")
     @Override
     protected String getTag() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1019250524 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1019250524 = "UsimServiceTable";
+        varB4EAC82CA7396A68D541C85D26508E83_1019250524.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1019250524;
         // ---------- Original Method ----------
         //return "UsimServiceTable";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:17.075 -0400", hash_original_method = "5896C19C7C6B06EFB443A2DEA834E8BC", hash_generated_method = "F3A60C4C6D706A5F1E2F90C5AFC338DD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:22.136 -0400", hash_original_method = "5896C19C7C6B06EFB443A2DEA834E8BC", hash_generated_method = "CB0CC5DCCA7108BFAA0A35FADAC6BA49")
     @Override
     protected Object[] getValues() {
-        Object[] var60DDC9B4704A16DD1176EB1E67CB1602_1497574536 = (UsimService.values());
-        return (Object[])dsTaint.getTaint();
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_307672638 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_307672638 = UsimService.values();
+        varB4EAC82CA7396A68D541C85D26508E83_307672638.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_307672638;
         // ---------- Original Method ----------
         //return UsimService.values();
     }

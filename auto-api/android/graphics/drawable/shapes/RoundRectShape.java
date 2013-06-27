@@ -13,25 +13,34 @@ import android.graphics.Path;
 import android.graphics.RectF;
 
 public class RoundRectShape extends RectShape {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.908 -0400", hash_original_field = "68D931F8388C49D8823BCF532F82A9A6", hash_generated_field = "6830495B7E4516D5AD2F6812EB294538")
+
     private float[] mOuterRadii;
-    private RectF   mInset;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.917 -0400", hash_original_field = "CF7B030D6062D49C71B570885E3215E0", hash_generated_field = "D2729CA6AA6C83F02D0889C112109BB9")
+
+    private RectF mInset;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.917 -0400", hash_original_field = "A6A16C7DD74ADEEBC4B029FFD9506FDE", hash_generated_field = "F28D8A31EA09EA2173CBE320E200D4AF")
+
     private float[] mInnerRadii;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.917 -0400", hash_original_field = "5B44FC9034F0DBA89B65AA417F353CFB", hash_generated_field = "8D82BE416946019DAC8D55ACEFBD37C0")
+
     private RectF mInnerRect;
-    private Path  mPath;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.917 -0400", hash_original_field = "FB4FCB3508FC66D4E3F113990AC335C6", hash_generated_field = "101E51A8003B09B39CD3C51138473AB6")
+
+    private Path mPath;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.726 -0400", hash_original_method = "BFB37C497FF277AFDA0C7FF1B797A20B", hash_generated_method = "CEB2551EBFE907EEF443B868768F8B29")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public RoundRectShape(float[] outerRadii, RectF inset,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.920 -0400", hash_original_method = "BFB37C497FF277AFDA0C7FF1B797A20B", hash_generated_method = "94B0D9B05F731E5147F7A0229DF87285")
+    public  RoundRectShape(float[] outerRadii, RectF inset,
                           float[] innerRadii) {
-        dsTaint.addTaint(outerRadii[0]);
-        dsTaint.addTaint(innerRadii[0]);
-        dsTaint.addTaint(inset.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException("outer radii must have >= 8 values");
         } //End block
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException("inner radii must have >= 8 values");
         } //End block
+        mOuterRadii = outerRadii;
+        mInset = inset;
+        mInnerRadii = innerRadii;
         {
             mInnerRect = new RectF();
         } //End block
@@ -53,25 +62,21 @@ public class RoundRectShape extends RectShape {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.727 -0400", hash_original_method = "2040FB3810CEA26BCA97DD1BCDDED3AB", hash_generated_method = "CD90CC21973D5E2125F2D0A7F2911B6E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.920 -0400", hash_original_method = "2040FB3810CEA26BCA97DD1BCDDED3AB", hash_generated_method = "B30DDC876EC034A877CEF75817710D39")
     @Override
     public void draw(Canvas canvas, Paint paint) {
-        dsTaint.addTaint(canvas.dsTaint);
-        dsTaint.addTaint(paint.dsTaint);
         canvas.drawPath(mPath, paint);
+        addTaint(canvas.getTaint());
+        addTaint(paint.getTaint());
         // ---------- Original Method ----------
         //canvas.drawPath(mPath, paint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.727 -0400", hash_original_method = "76E13F34AD3978846D0DA3AA18C0FAE1", hash_generated_method = "C411BD700A112214D8C2C9B832C4AE31")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.940 -0400", hash_original_method = "76E13F34AD3978846D0DA3AA18C0FAE1", hash_generated_method = "215960A9C47A6B55FFC37497042E458A")
     @Override
     protected void onResize(float w, float h) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(w);
-        dsTaint.addTaint(h);
         super.onResize(w, h);
         RectF r;
         r = rect();
@@ -86,7 +91,7 @@ public class RoundRectShape extends RectShape {
             mInnerRect.set(r.left + mInset.left, r.top + mInset.top,
                            r.right - mInset.right, r.bottom - mInset.bottom);
             {
-                boolean varFA69053F663231AFFAF816545E5D72F2_1842328047 = (mInnerRect.width() < w && mInnerRect.height() < h);
+                boolean varFA69053F663231AFFAF816545E5D72F2_376571471 = (mInnerRect.width() < w && mInnerRect.height() < h);
                 {
                     {
                         mPath.addRoundRect(mInnerRect, mInnerRadii, Path.Direction.CCW);
@@ -97,6 +102,8 @@ public class RoundRectShape extends RectShape {
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        addTaint(w);
+        addTaint(h);
         // ---------- Original Method ----------
         //super.onResize(w, h);
         //RectF r = rect();
@@ -120,10 +127,10 @@ public class RoundRectShape extends RectShape {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.727 -0400", hash_original_method = "C8F54F0C5741E48CA334E7AB381892D2", hash_generated_method = "39397D29070155A8A9133D0A3F194F27")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.964 -0400", hash_original_method = "C8F54F0C5741E48CA334E7AB381892D2", hash_generated_method = "E2ED11F1B00B8A641F3269DEEA518608")
     @Override
     public RoundRectShape clone() throws CloneNotSupportedException {
+        RoundRectShape varB4EAC82CA7396A68D541C85D26508E83_726880860 = null; //Variable for return #1
         RoundRectShape shape;
         shape = (RoundRectShape) super.clone();
         shape.mOuterRadii = mOuterRadii != null ? mOuterRadii.clone() : null;
@@ -131,7 +138,9 @@ public class RoundRectShape extends RectShape {
         shape.mInset = new RectF(mInset);
         shape.mInnerRect = new RectF(mInnerRect);
         shape.mPath = new Path(mPath);
-        return (RoundRectShape)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_726880860 = shape;
+        varB4EAC82CA7396A68D541C85D26508E83_726880860.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_726880860;
         // ---------- Original Method ----------
         //RoundRectShape shape = (RoundRectShape) super.clone();
         //shape.mOuterRadii = mOuterRadii != null ? mOuterRadii.clone() : null;

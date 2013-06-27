@@ -11,27 +11,29 @@ import gov.nist.javax.sip.header.SIPHeaderList;
 
 public class PMediaAuthorizationList extends SIPHeaderList<PMediaAuthorization> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.589 -0400", hash_original_method = "656C497A7A9D2E8465BD84DF21BD0C00", hash_generated_method = "9BCAC9929D32D2F555BF0B2B59C10BB5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PMediaAuthorizationList() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.286 -0400", hash_original_method = "656C497A7A9D2E8465BD84DF21BD0C00", hash_generated_method = "9BCAC9929D32D2F555BF0B2B59C10BB5")
+    public  PMediaAuthorizationList() {
         super(PMediaAuthorization.class, PMediaAuthorizationHeader.NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.589 -0400", hash_original_method = "535B60F78292A563EBB4CD53A0D5E752", hash_generated_method = "7AC3C61E8FB5C24B839316A0CC730F44")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.287 -0400", hash_original_method = "535B60F78292A563EBB4CD53A0D5E752", hash_generated_method = "7B799A6A40D09B164AF5B5517C2AEEDD")
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_127813268 = null; //Variable for return #1
         PMediaAuthorizationList retval;
         retval = new PMediaAuthorizationList();
-        Object varF7AD6DD8E2D0A0D86D7DC6EABC62B125_1659458761 = (retval.clonehlist(this.hlist));
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_127813268 = retval.clonehlist(this.hlist);
+        varB4EAC82CA7396A68D541C85D26508E83_127813268.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_127813268;
         // ---------- Original Method ----------
         //PMediaAuthorizationList retval = new PMediaAuthorizationList();
         //return retval.clonehlist(this.hlist);
     }
 
     
-    private static final long serialVersionUID = -8226328073989632317L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.287 -0400", hash_original_field = "29812CDE5546F301183126FFBF7F26AC", hash_generated_field = "3328714C1175ABD43EEC9266CAEFD360")
+
+    private static long serialVersionUID = -8226328073989632317L;
 }
 

@@ -13,18 +13,21 @@ import android.os.RemoteException;
 import java.io.IOException;
 
 public final class NfcV extends BasicTagTechnology {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.140 -0400", hash_original_field = "3934254C6C714B19DE22D4F58C5042D2", hash_generated_field = "121CAF4F22F2DB7E3FE6590C2E29C484")
+
     private byte mRespFlags;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.140 -0400", hash_original_field = "E9C54BDE6798E1875D8BC87A6FAA80B7", hash_generated_field = "22B4F1B6769CD74A976FDA7EB332E5E3")
+
     private byte mDsfId;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.235 -0400", hash_original_method = "F4045E9985ED2B22A83A671B7ECDE866", hash_generated_method = "767FED07BE7F4F0358D092056F9ADF74")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public NfcV(Tag tag) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.155 -0400", hash_original_method = "F4045E9985ED2B22A83A671B7ECDE866", hash_generated_method = "0077E3629C56FB4BB5474BEF58D7BA41")
+    public  NfcV(Tag tag) throws RemoteException {
         super(tag, TagTechnology.NFC_V);
-        dsTaint.addTaint(tag.dsTaint);
         Bundle extras;
         extras = tag.getTechExtras(TagTechnology.NFC_V);
         mRespFlags = extras.getByte(EXTRA_RESP_FLAGS);
         mDsfId = extras.getByte(EXTRA_DSFID);
+        addTaint(tag.getTaint());
         // ---------- Original Method ----------
         //Bundle extras = tag.getTechExtras(TagTechnology.NFC_V);
         //mRespFlags = extras.getByte(EXTRA_RESP_FLAGS);
@@ -42,48 +45,50 @@ public final class NfcV extends BasicTagTechnology {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.235 -0400", hash_original_method = "19D3A3646C1C2655B316DC5413F4466A", hash_generated_method = "EBD0CAA40C5609FE7C17369543CBB66A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.156 -0400", hash_original_method = "19D3A3646C1C2655B316DC5413F4466A", hash_generated_method = "2A0457D674BFFDA49051D6D7CC2AE520")
     public byte getResponseFlags() {
-        return dsTaint.getTaintByte();
+        byte var40EA57D3EE3C07BF1C102B466E1C3091_288080632 = getTaintByte();
+        return var40EA57D3EE3C07BF1C102B466E1C3091_288080632;
         // ---------- Original Method ----------
         //return mRespFlags;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.236 -0400", hash_original_method = "9F53E6713A0959247C46979AAE2F100E", hash_generated_method = "6EEAF4CCFE4C8A03B2A091B6066E0BC7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.156 -0400", hash_original_method = "9F53E6713A0959247C46979AAE2F100E", hash_generated_method = "2B3459898C1D550410130F3AE2AD8315")
     public byte getDsfId() {
-        return dsTaint.getTaintByte();
+        byte var40EA57D3EE3C07BF1C102B466E1C3091_1676985479 = getTaintByte();
+        return var40EA57D3EE3C07BF1C102B466E1C3091_1676985479;
         // ---------- Original Method ----------
         //return mDsfId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.236 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "A8986BED06162955A4F51AB6092D7518")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.157 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "90130BD70B853E17AB453AC7506C5A83")
     public byte[] transceive(byte[] data) throws IOException {
-        dsTaint.addTaint(data[0]);
-        byte[] var457CAD28AA5A950818B34ED801FB2565_2040500717 = (transceive(data, true));
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var457CAD28AA5A950818B34ED801FB2565_2028931632 = (transceive(data, true));
+        addTaint(data[0]);
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_930177640 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_930177640;
         // ---------- Original Method ----------
         //return transceive(data, true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.236 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "F6A3033B634AF25F42F551A4BDF904A4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.157 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "E3391C6399279DD4CF4B3F6F238F0F4E")
     public int getMaxTransceiveLength() {
-        int varAD50EB2A6987338433A93D587AD15277_923973376 = (getMaxTransceiveLengthInternal());
-        return dsTaint.getTaintInt();
+        int varAD50EB2A6987338433A93D587AD15277_1063142641 = (getMaxTransceiveLengthInternal());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1268024021 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1268024021;
         // ---------- Original Method ----------
         //return getMaxTransceiveLengthInternal();
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.173 -0400", hash_original_field = "C99DD94648D9D9F6D7060CF3152F88F2", hash_generated_field = "95711EE7AD682B156CC0B59B8BB1D20B")
+
     public static final String EXTRA_RESP_FLAGS = "respflags";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.173 -0400", hash_original_field = "CCB6A7BF3A94EDCFFED77B4B1FE0A21F", hash_generated_field = "575D53CDD0D0DA8B99F62F7C149BA7A1")
+
     public static final String EXTRA_DSFID = "dsfid";
 }
 

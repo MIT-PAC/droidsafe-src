@@ -21,34 +21,52 @@ import java.util.Map;
 import java.util.Random;
 
 public class RequestHandle {
-    private String        mUrl;
-    private WebAddress    mUri;
-    private String        mMethod;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.901 -0400", hash_original_field = "8299C83E9CFFA2EF5909444648349221", hash_generated_field = "9C2E85EC79E8F8349BF2E81BA4AC7991")
+
+    private String mUrl;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.901 -0400", hash_original_field = "5FBE3730DCFF234F97B15868D5CE649D", hash_generated_field = "93793E19832E1B2CEA9B3AE18495201F")
+
+    private WebAddress mUri;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.901 -0400", hash_original_field = "411D2DFDB93368C46AFADBEC76A54162", hash_generated_field = "46D356CEC2B798E53528C0BD5F09C873")
+
+    private String mMethod;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.901 -0400", hash_original_field = "9DA6583E4F64A78649E80D72BFE1DBCC", hash_generated_field = "A366B1C8ECA0EA3E5C2DAE5F1AFFA05D")
+
     private Map<String, String> mHeaders;
-    private RequestQueue  mRequestQueue;
-    private Request       mRequest;
-    private InputStream   mBodyProvider;
-    private int           mBodyLength;
-    private int           mRedirectCount = 0;
-    private Connection    mConnection;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.901 -0400", hash_original_field = "446B3D97C833B98F7071BDDC6133F7E3", hash_generated_field = "78C29B99FF935BC5FA797927660C2906")
+
+    private RequestQueue mRequestQueue;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.901 -0400", hash_original_field = "6F4B92891660455681591E8ACE541D68", hash_generated_field = "79AB1A57A5EF61E95F4BC3CF5EFCC5FE")
+
+    private Request mRequest;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.901 -0400", hash_original_field = "183171F08ABB3787068B330DBA7E5900", hash_generated_field = "D18E2D3147EECBD8F566EDA75779DDA2")
+
+    private InputStream mBodyProvider;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.901 -0400", hash_original_field = "6CA3426B844BC585985128D50030D1F5", hash_generated_field = "DAA6C79DB8D209A54BE4FF4B04B63B6B")
+
+    private int mBodyLength;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.901 -0400", hash_original_field = "AD4E85AF09CC6305596E8DE3A73ABA21", hash_generated_field = "7A4E35082A966BF8F9758B373DCB600C")
+
+    private int mRedirectCount = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.901 -0400", hash_original_field = "8FB9CEDC14BF8DE9558825242E11E275", hash_generated_field = "619FD7E303013DFEE90F58DA7C3DCACD")
+
+    private Connection mConnection;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.014 -0400", hash_original_method = "D52FB5C4B4CE262D3BDE3938D1D81A5F", hash_generated_method = "A80A9F49673240F9FCF22DF4247E5ECC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public RequestHandle(RequestQueue requestQueue, String url, WebAddress uri,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.903 -0400", hash_original_method = "D52FB5C4B4CE262D3BDE3938D1D81A5F", hash_generated_method = "F3F1D5CED65B10C65A5322626BC707F9")
+    public  RequestHandle(RequestQueue requestQueue, String url, WebAddress uri,
             String method, Map<String, String> headers,
             InputStream bodyProvider, int bodyLength, Request request) {
-        dsTaint.addTaint(headers.dsTaint);
-        dsTaint.addTaint(bodyProvider.dsTaint);
-        dsTaint.addTaint(bodyLength);
-        dsTaint.addTaint(request.dsTaint);
-        dsTaint.addTaint(requestQueue.dsTaint);
-        dsTaint.addTaint(method);
-        dsTaint.addTaint(uri.dsTaint);
-        dsTaint.addTaint(url);
         {
             headers = new HashMap<String, String>();
         } //End block
+        mHeaders = headers;
+        mBodyProvider = bodyProvider;
+        mBodyLength = bodyLength;
         mMethod = method == null? "GET" : method;
+        mUrl = url;
+        mUri = uri;
+        mRequestQueue = requestQueue;
+        mRequest = request;
         // ---------- Original Method ----------
         //if (headers == null) {
             //headers = new HashMap<String, String>();
@@ -64,30 +82,28 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.014 -0400", hash_original_method = "8F53D2F7ECBB6A0E31E2DA5BDF5FFE63", hash_generated_method = "1A0DEE484FC5581D090FAB0083510C13")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public RequestHandle(RequestQueue requestQueue, String url, WebAddress uri,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.905 -0400", hash_original_method = "8F53D2F7ECBB6A0E31E2DA5BDF5FFE63", hash_generated_method = "1865F73EFD089C397C6EE29A9878838E")
+    public  RequestHandle(RequestQueue requestQueue, String url, WebAddress uri,
             String method, Map<String, String> headers,
             InputStream bodyProvider, int bodyLength, Request request,
             Connection conn) {
         this(requestQueue, url, uri, method, headers, bodyProvider, bodyLength,
                 request);
-        dsTaint.addTaint(headers.dsTaint);
-        dsTaint.addTaint(conn.dsTaint);
-        dsTaint.addTaint(bodyProvider.dsTaint);
-        dsTaint.addTaint(bodyLength);
-        dsTaint.addTaint(request.dsTaint);
-        dsTaint.addTaint(requestQueue.dsTaint);
-        dsTaint.addTaint(method);
-        dsTaint.addTaint(uri.dsTaint);
-        dsTaint.addTaint(url);
+        mConnection = conn;
+        addTaint(requestQueue.getTaint());
+        addTaint(url.getTaint());
+        addTaint(uri.getTaint());
+        addTaint(method.getTaint());
+        addTaint(headers.getTaint());
+        addTaint(bodyProvider.getTaint());
+        addTaint(bodyLength);
+        addTaint(request.getTaint());
         // ---------- Original Method ----------
         //mConnection = conn;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.015 -0400", hash_original_method = "971FA82A9D84F9459C5196533729906E", hash_generated_method = "B8DC4F3364076874DE3E56FBC9E5B41C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.921 -0400", hash_original_method = "971FA82A9D84F9459C5196533729906E", hash_generated_method = "B8DC4F3364076874DE3E56FBC9E5B41C")
     public void cancel() {
         {
             mRequest.cancel();
@@ -99,13 +115,12 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.015 -0400", hash_original_method = "981EAB54F552460A30185E1B96B8DE52", hash_generated_method = "C023CF95D999AE90CC32331D6A2A1FFA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.922 -0400", hash_original_method = "981EAB54F552460A30185E1B96B8DE52", hash_generated_method = "64E5AEC4112F686D79C3149DDD6CBBF1")
     public void pauseRequest(boolean pause) {
-        dsTaint.addTaint(pause);
         {
             mRequest.setLoadingPaused(pause);
         } //End block
+        addTaint(pause);
         // ---------- Original Method ----------
         //if (mRequest != null) {
             //mRequest.setLoadingPaused(pause);
@@ -113,13 +128,12 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.015 -0400", hash_original_method = "2C5209A970780A5B14F30F7C2DFA5DF9", hash_generated_method = "1FA89F809906994ED811C2B0F7C1977B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.922 -0400", hash_original_method = "2C5209A970780A5B14F30F7C2DFA5DF9", hash_generated_method = "AA215AAF2F5C088AB202FA744ACC2877")
     public void handleSslErrorResponse(boolean proceed) {
-        dsTaint.addTaint(proceed);
         {
             mRequest.handleSslErrorResponse(proceed);
         } //End block
+        addTaint(proceed);
         // ---------- Original Method ----------
         //if (mRequest != null) {
             //mRequest.handleSslErrorResponse(proceed);
@@ -127,40 +141,35 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.015 -0400", hash_original_method = "1E2E2512E5F173592E2117FB4C479261", hash_generated_method = "7C07F6F0F65CF14BC51BDCB4C7FF8481")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.923 -0400", hash_original_method = "1E2E2512E5F173592E2117FB4C479261", hash_generated_method = "9D192B7B5BAEE953769AD3E37C4C2F36")
     public boolean isRedirectMax() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_145089182 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_145089182;
         // ---------- Original Method ----------
         //return mRedirectCount >= MAX_REDIRECT_COUNT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.016 -0400", hash_original_method = "3AC7970B74E2F8214DB13CA8BCAB44BF", hash_generated_method = "13AC0A5A45903A07F3A397DDD657E930")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.933 -0400", hash_original_method = "3AC7970B74E2F8214DB13CA8BCAB44BF", hash_generated_method = "C079CF27CB1827035008133A723DBEC0")
     public int getRedirectCount() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1715492241 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1715492241;
         // ---------- Original Method ----------
         //return mRedirectCount;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.016 -0400", hash_original_method = "FFEBE76B00A2A9B427C3877CD59FFD71", hash_generated_method = "F4AC95AD9B7D25DD6C0FF10F9B54AD8E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.934 -0400", hash_original_method = "FFEBE76B00A2A9B427C3877CD59FFD71", hash_generated_method = "75F6E6041180F5755B1072705080BEBF")
     public void setRedirectCount(int count) {
-        dsTaint.addTaint(count);
+        mRedirectCount = count;
         // ---------- Original Method ----------
         //mRedirectCount = count;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.016 -0400", hash_original_method = "44F47D5B04481BCE428881C329B8D0F8", hash_generated_method = "5EF560ECA0E495AFA26C786BD686DC8C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.957 -0400", hash_original_method = "44F47D5B04481BCE428881C329B8D0F8", hash_generated_method = "DADE1DBFD33E2447649D65FA7F5B607F")
     public boolean setupRedirect(String redirectTo, int statusCode,
             Map<String, String> cacheHeaders) {
-        dsTaint.addTaint(statusCode);
-        dsTaint.addTaint(redirectTo);
-        dsTaint.addTaint(cacheHeaders.dsTaint);
         {
             HttpLog.v("RequestHandle.setupRedirect(): redirectCount " +
                   mRedirectCount);
@@ -175,7 +184,7 @@ public class RequestHandle {
                            com.android.internal.R.string.httpErrorRedirectLoop);
         } //End block
         {
-            boolean varD28027E3C8C66D5850ACF2C8E5F3A9AE_1801267532 = (mUrl.startsWith("https:") && redirectTo.startsWith("http:"));
+            boolean varD28027E3C8C66D5850ACF2C8E5F3A9AE_427518715 = (mUrl.startsWith("https:") && redirectTo.startsWith("http:"));
             {
                 {
                     HttpLog.v("blowing away the referer on an https -> http redirect");
@@ -183,6 +192,7 @@ public class RequestHandle {
                 mHeaders.remove("Referer");
             } //End block
         } //End collapsed parenthetic
+        mUrl = redirectTo;
         try 
         {
             mUri = new WebAddress(mUrl);
@@ -195,13 +205,13 @@ public class RequestHandle {
         String cookie;
         cookie = CookieManager.getInstance().getCookie(mUri);
         {
-            boolean var6E2855FE1453DF0044F1B1E343DD13F2_75297414 = (cookie != null && cookie.length() > 0);
+            boolean var6E2855FE1453DF0044F1B1E343DD13F2_712763569 = (cookie != null && cookie.length() > 0);
             {
                 mHeaders.put("Cookie", cookie);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varF39D40D4EB771BAD1F65F2E1AED2EAA7_692423270 = ((statusCode == 302 || statusCode == 303) && mMethod.equals("POST"));
+            boolean varF39D40D4EB771BAD1F65F2E1AED2EAA7_1860040534 = ((statusCode == 302 || statusCode == 303) && mMethod.equals("POST"));
             {
                 {
                     HttpLog.v("replacing POST with GET on redirect to " + redirectTo);
@@ -227,18 +237,17 @@ public class RequestHandle {
         } //End block
         mHeaders.putAll(cacheHeaders);
         createAndQueueNewRequest();
-        return dsTaint.getTaintBoolean();
+        addTaint(statusCode);
+        addTaint(cacheHeaders.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_591203823 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_591203823;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.017 -0400", hash_original_method = "38ABF845B1FE2E62FC6D2FD8DBFFE504", hash_generated_method = "90C095888A2F650D921476BE6ABD35F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.958 -0400", hash_original_method = "38ABF845B1FE2E62FC6D2FD8DBFFE504", hash_generated_method = "BDA1DFD3D41967B9A70186B64C7DB0D6")
     public void setupBasicAuthResponse(boolean isProxy, String username, String password) {
-        dsTaint.addTaint(username);
-        dsTaint.addTaint(isProxy);
-        dsTaint.addTaint(password);
         String response;
         response = computeBasicAuthResponse(username, password);
         {
@@ -246,6 +255,9 @@ public class RequestHandle {
         } //End block
         mHeaders.put(authorizationHeader(isProxy), "Basic " + response);
         setupAuthResponse();
+        addTaint(isProxy);
+        addTaint(username.getTaint());
+        addTaint(password.getTaint());
         // ---------- Original Method ----------
         //String response = computeBasicAuthResponse(username, password);
         //if (HttpLog.LOGV) {
@@ -256,8 +268,7 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.017 -0400", hash_original_method = "B5A5838E4BCFB5CBC22C9A029CA123B8", hash_generated_method = "27F4EFA6BBB623F02A3600AE46D5AA59")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.959 -0400", hash_original_method = "B5A5838E4BCFB5CBC22C9A029CA123B8", hash_generated_method = "3C38947BCB1283ABC681DD76DC7A29D7")
     public void setupDigestAuthResponse(boolean isProxy,
                                         String username,
                                         String password,
@@ -266,14 +277,6 @@ public class RequestHandle {
                                         String QOP,
                                         String algorithm,
                                         String opaque) {
-        dsTaint.addTaint(username);
-        dsTaint.addTaint(nonce);
-        dsTaint.addTaint(realm);
-        dsTaint.addTaint(opaque);
-        dsTaint.addTaint(isProxy);
-        dsTaint.addTaint(QOP);
-        dsTaint.addTaint(password);
-        dsTaint.addTaint(algorithm);
         String response;
         response = computeDigestAuthResponse(
                 username, password, realm, nonce, QOP, algorithm, opaque);
@@ -282,6 +285,14 @@ public class RequestHandle {
         } //End block
         mHeaders.put(authorizationHeader(isProxy), "Digest " + response);
         setupAuthResponse();
+        addTaint(isProxy);
+        addTaint(username.getTaint());
+        addTaint(password.getTaint());
+        addTaint(realm.getTaint());
+        addTaint(nonce.getTaint());
+        addTaint(QOP.getTaint());
+        addTaint(algorithm.getTaint());
+        addTaint(opaque.getTaint());
         // ---------- Original Method ----------
         //String response = computeDigestAuthResponse(
                 //username, password, realm, nonce, QOP, algorithm, opaque);
@@ -293,8 +304,7 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.018 -0400", hash_original_method = "671BE1071898035C0F84A86A39735052", hash_generated_method = "BDED742C89263CC4B8DD9B59171D8B71")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.975 -0400", hash_original_method = "671BE1071898035C0F84A86A39735052", hash_generated_method = "BDED742C89263CC4B8DD9B59171D8B71")
     private void setupAuthResponse() {
         try 
         {
@@ -319,10 +329,12 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.018 -0400", hash_original_method = "E02C2F0EA498C425350A019498EEA751", hash_generated_method = "62949885DA7AA8A8610A072FDCE708A8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.976 -0400", hash_original_method = "E02C2F0EA498C425350A019498EEA751", hash_generated_method = "EB3A3523F755893D615FF90DA4A9A026")
     public String getMethod() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1457641045 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1457641045 = mMethod;
+        varB4EAC82CA7396A68D541C85D26508E83_1457641045.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1457641045;
         // ---------- Original Method ----------
         //return mMethod;
     }
@@ -335,8 +347,7 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.018 -0400", hash_original_method = "8819509041D3F58366571B93CC9E3D4B", hash_generated_method = "739C8F45FA1E2134F512E5E5B3753B74")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.976 -0400", hash_original_method = "8819509041D3F58366571B93CC9E3D4B", hash_generated_method = "739C8F45FA1E2134F512E5E5B3753B74")
     public void waitUntilComplete() {
         mRequest.waitUntilComplete();
         // ---------- Original Method ----------
@@ -344,8 +355,7 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.019 -0400", hash_original_method = "420B4AD7BC25160624AF5D40CF27D44F", hash_generated_method = "F91A8CE46D61889C28091CE3D2FAC9BB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.977 -0400", hash_original_method = "420B4AD7BC25160624AF5D40CF27D44F", hash_generated_method = "F91A8CE46D61889C28091CE3D2FAC9BB")
     public void processRequest() {
         {
             mConnection.processRequests(mRequest);
@@ -357,8 +367,7 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.019 -0400", hash_original_method = "21566870DD44046714482EED382208F4", hash_generated_method = "C059D81C852A1617239C1E2ED9AE13CC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.015 -0400", hash_original_method = "21566870DD44046714482EED382208F4", hash_generated_method = "6AC21F36E6C5E99C3155772D9F2535CC")
     private String computeDigestAuthResponse(String username,
                                              String password,
                                              String realm,
@@ -366,13 +375,7 @@ public class RequestHandle {
                                              String QOP,
                                              String algorithm,
                                              String opaque) {
-        dsTaint.addTaint(username);
-        dsTaint.addTaint(nonce);
-        dsTaint.addTaint(realm);
-        dsTaint.addTaint(opaque);
-        dsTaint.addTaint(QOP);
-        dsTaint.addTaint(password);
-        dsTaint.addTaint(algorithm);
+        String varB4EAC82CA7396A68D541C85D26508E83_592702976 = null; //Variable for return #1
         Assert.assertNotNull(username);
         Assert.assertNotNull(password);
         Assert.assertNotNull(realm);
@@ -402,7 +405,16 @@ public class RequestHandle {
         {
             response += ", qop=" + QOP + ", nc=" + nc + ", cnonce=" + doubleQuote(cnonce);
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_592702976 = response;
+        addTaint(username.getTaint());
+        addTaint(password.getTaint());
+        addTaint(realm.getTaint());
+        addTaint(nonce.getTaint());
+        addTaint(QOP.getTaint());
+        addTaint(algorithm.getTaint());
+        addTaint(opaque.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_592702976.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_592702976;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -417,31 +429,47 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.020 -0400", hash_original_method = "7BFA5C62C730E408B108712B34B74DD9", hash_generated_method = "D56C793EE4C37E04E966361AA43F8BE1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.036 -0400", hash_original_method = "7BFA5C62C730E408B108712B34B74DD9", hash_generated_method = "2BA5CC8147310A1316E9B511B492EA9C")
     private String computeDigest(
         String A1, String A2, String nonce, String QOP, String nc, String cnonce) {
-        dsTaint.addTaint(A2);
-        dsTaint.addTaint(cnonce);
-        dsTaint.addTaint(A1);
-        dsTaint.addTaint(nc);
-        dsTaint.addTaint(nonce);
-        dsTaint.addTaint(QOP);
+        String varB4EAC82CA7396A68D541C85D26508E83_2077370116 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1926805748 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1288745345 = null; //Variable for return #3
         {
             HttpLog.v("computeDigest(): QOP: " + QOP);
         } //End block
         {
-            String varA3F178392AF7441E3A3E394389BC64CA_1816024310 = (KD(H(A1), nonce + ":" + H(A2)));
+            varB4EAC82CA7396A68D541C85D26508E83_2077370116 = KD(H(A1), nonce + ":" + H(A2));
         } //End block
         {
             {
-                boolean var787B3A44C2C97C691E216FE225E2DA94_1578278696 = (QOP.equalsIgnoreCase("auth"));
+                boolean var787B3A44C2C97C691E216FE225E2DA94_615763019 = (QOP.equalsIgnoreCase("auth"));
                 {
-                    String varDECF3639F39E7C3F5F1373126A9FD2D5_805059209 = (KD(H(A1), nonce + ":" + nc + ":" + cnonce + ":" + QOP + ":" + H(A2)));
+                    varB4EAC82CA7396A68D541C85D26508E83_1926805748 = KD(H(A1), nonce + ":" + nc + ":" + cnonce + ":" + QOP + ":" + H(A2));
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1288745345 = null;
+        addTaint(A1.getTaint());
+        addTaint(A2.getTaint());
+        addTaint(nonce.getTaint());
+        addTaint(QOP.getTaint());
+        addTaint(nc.getTaint());
+        addTaint(cnonce.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_414253370; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_414253370 = varB4EAC82CA7396A68D541C85D26508E83_2077370116;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_414253370 = varB4EAC82CA7396A68D541C85D26508E83_1926805748;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_414253370 = varB4EAC82CA7396A68D541C85D26508E83_1288745345;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_414253370.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_414253370;
         // ---------- Original Method ----------
         //if (HttpLog.LOGV) {
             //HttpLog.v("computeDigest(): QOP: " + QOP);
@@ -457,22 +485,23 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.020 -0400", hash_original_method = "BB88C0CE3A8E823447F9A5A2F73C21EF", hash_generated_method = "B31CE0134BAE3BA80D18F53DC2220373")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.038 -0400", hash_original_method = "BB88C0CE3A8E823447F9A5A2F73C21EF", hash_generated_method = "0738DE56FE6A938EA738895006337C58")
     private String KD(String secret, String data) {
-        dsTaint.addTaint(data);
-        dsTaint.addTaint(secret);
-        String var554E18952A7E679E1C9B747C9E6F1FF4_1314860048 = (H(secret + ":" + data));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1277240506 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1277240506 = H(secret + ":" + data);
+        addTaint(secret.getTaint());
+        addTaint(data.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1277240506.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1277240506;
         // ---------- Original Method ----------
         //return H(secret + ":" + data);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.021 -0400", hash_original_method = "ACD3D964B796417ECD09BF2089A3A365", hash_generated_method = "BC0D36B59C841C77F81241829C6777D5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.043 -0400", hash_original_method = "ACD3D964B796417ECD09BF2089A3A365", hash_generated_method = "81C62A6DABCA9E4FF1F24E69A3A12ECC")
     private String H(String param) {
-        dsTaint.addTaint(param);
+        String varB4EAC82CA7396A68D541C85D26508E83_1869318299 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2020485639 = null; //Variable for return #2
         {
             try 
             {
@@ -481,7 +510,7 @@ public class RequestHandle {
                 byte[] d;
                 d = md5.digest(param.getBytes());
                 {
-                    String var490E26CE609F98A607B96BB89B2C5C4C_2001223472 = (bufferToHex(d));
+                    varB4EAC82CA7396A68D541C85D26508E83_1869318299 = bufferToHex(d);
                 } //End block
             } //End block
             catch (NoSuchAlgorithmException e)
@@ -489,7 +518,19 @@ public class RequestHandle {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(e);
             } //End block
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_2020485639 = null;
+        addTaint(param.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_1283748749; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1283748749 = varB4EAC82CA7396A68D541C85D26508E83_1869318299;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1283748749 = varB4EAC82CA7396A68D541C85D26508E83_2020485639;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1283748749.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1283748749;
         // ---------- Original Method ----------
         //if (param != null) {
             //try {
@@ -506,10 +547,11 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.021 -0400", hash_original_method = "F71FFAFC3CF70E71567406DE8A9A2D97", hash_generated_method = "DC5576B98C58FA73A4C15EE979DF11FE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.078 -0400", hash_original_method = "F71FFAFC3CF70E71567406DE8A9A2D97", hash_generated_method = "7B0BD0B5E9C71926937EB0E51EA03139")
     private String bufferToHex(byte[] buffer) {
-        dsTaint.addTaint(buffer[0]);
+        String varB4EAC82CA7396A68D541C85D26508E83_458314670 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_587331979 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1114571881 = null; //Variable for return #3
         char hexChars[];
         {
             int length;
@@ -529,10 +571,28 @@ public class RequestHandle {
                         hex.append(hexChars[l]);
                     } //End block
                 } //End collapsed parenthetic
-                String var5B4319ECE144FE94C5014928E0AF4C4C_468783191 = (hex.toString());
+                varB4EAC82CA7396A68D541C85D26508E83_458314670 = hex.toString();
+            } //End block
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_587331979 = "";
             } //End block
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1114571881 = null;
+        addTaint(buffer[0]);
+        String varA7E53CE21691AB073D9660D615818899_1066405035; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1066405035 = varB4EAC82CA7396A68D541C85D26508E83_458314670;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1066405035 = varB4EAC82CA7396A68D541C85D26508E83_587331979;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1066405035 = varB4EAC82CA7396A68D541C85D26508E83_1114571881;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1066405035.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1066405035;
         // ---------- Original Method ----------
         //final char hexChars[] =
             //{ '0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f' };
@@ -555,17 +615,18 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.022 -0400", hash_original_method = "15E2F72950F37D4FA5596F6CA90D9CCE", hash_generated_method = "308C94B742FFCD1E10C6C4A714C0CB10")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.080 -0400", hash_original_method = "15E2F72950F37D4FA5596F6CA90D9CCE", hash_generated_method = "36ED7662513D9F5A3CB457E996E22C9B")
     private String computeCnonce() {
+        String varB4EAC82CA7396A68D541C85D26508E83_140476415 = null; //Variable for return #1
         Random rand;
         rand = new Random();
         int nextInt;
         nextInt = rand.nextInt();
         nextInt = (nextInt == Integer.MIN_VALUE) ?
                 Integer.MAX_VALUE : Math.abs(nextInt);
-        String varC35997D032E6FADF93B91696D80914F3_410394985 = (Integer.toString(nextInt, 16));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_140476415 = Integer.toString(nextInt, 16);
+        varB4EAC82CA7396A68D541C85D26508E83_140476415.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_140476415;
         // ---------- Original Method ----------
         //Random rand = new Random();
         //int nextInt = rand.nextInt();
@@ -575,11 +636,26 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.022 -0400", hash_original_method = "2F687A14AA3727476BB6949A7966696D", hash_generated_method = "60E165E5742F94A44F9669036C4C81E3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.096 -0400", hash_original_method = "2F687A14AA3727476BB6949A7966696D", hash_generated_method = "79B25DFB68AE15F759EA467857C402E2")
     private String doubleQuote(String param) {
-        dsTaint.addTaint(param);
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2095652327 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1339072650 = null; //Variable for return #2
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_2095652327 = "\"" + param + "\"";
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_1339072650 = null;
+        addTaint(param.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_45241260; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_45241260 = varB4EAC82CA7396A68D541C85D26508E83_2095652327;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_45241260 = varB4EAC82CA7396A68D541C85D26508E83_1339072650;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_45241260.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_45241260;
         // ---------- Original Method ----------
         //if (param != null) {
             //return "\"" + param + "\"";
@@ -588,8 +664,7 @@ public class RequestHandle {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.022 -0400", hash_original_method = "85265833A731D9185DA35397C2BF1AAD", hash_generated_method = "1E0D72EFD58DC7560AD8C6398A57547E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.097 -0400", hash_original_method = "85265833A731D9185DA35397C2BF1AAD", hash_generated_method = "1E0D72EFD58DC7560AD8C6398A57547E")
     private void createAndQueueNewRequest() {
         {
             RequestHandle newHandle;
@@ -621,8 +696,14 @@ public class RequestHandle {
     }
 
     
-    private final static String AUTHORIZATION_HEADER = "Authorization";
-    private final static String PROXY_AUTHORIZATION_HEADER = "Proxy-Authorization";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.097 -0400", hash_original_field = "7C8E6E744ADE74D7FCB99C3518DFFA34", hash_generated_field = "AF65CBC112AA6C1E2E348DC93D5BB6F1")
+
+    private static String AUTHORIZATION_HEADER = "Authorization";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.097 -0400", hash_original_field = "83E9CB9D73BDEA162C1F761E11D38582", hash_generated_field = "95199902CB1B0CA3F9512C960D5AB924")
+
+    private static String PROXY_AUTHORIZATION_HEADER = "Proxy-Authorization";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.097 -0400", hash_original_field = "CC6051DDCF8265AA39F970CBDAF70626", hash_generated_field = "10E8B936E7F026B41A9464F94DC77E7F")
+
     public final static int MAX_REDIRECT_COUNT = 16;
 }
 

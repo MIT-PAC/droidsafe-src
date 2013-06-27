@@ -14,100 +14,120 @@ import libcore.util.BasicLruCache;
 import libcore.util.EmptyArray;
 
 public abstract class Enum<E extends Enum<E>> implements Serializable, Comparable<E> {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.427 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+
     private String name;
-    private int ordinal;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.427 -0400", hash_original_field = "281858037F7DCF7ED49271BB92C60526", hash_generated_field = "9B9D896414A0E67CE9221B96A63BE0CD")
+
+    int ordinal;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.689 -0400", hash_original_method = "2DD8D404884977C1C225DE3C5244FDA0", hash_generated_method = "3C2ABA71BBDE3A1E044A771ABA95B245")
-    @DSModeled(DSC.SAFE)
-    protected Enum(String name, int ordinal) {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(ordinal);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.432 -0400", hash_original_method = "2DD8D404884977C1C225DE3C5244FDA0", hash_generated_method = "3A3CD01EC43B734FD3F8DAA5CF280987")
+    protected  Enum(String name, int ordinal) {
+        this.name = name;
+        this.ordinal = ordinal;
         // ---------- Original Method ----------
         //this.name = name;
         //this.ordinal = ordinal;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.689 -0400", hash_original_method = "B829A2DCF2B6B038F9421827E4B40BDF", hash_generated_method = "964A63D5360B676B99ED7B64A0FDD36D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.432 -0400", hash_original_method = "B829A2DCF2B6B038F9421827E4B40BDF", hash_generated_method = "143C362A77F8ECD2769F3CAECDB57CDC")
     public final String name() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1210376069 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1210376069 = name;
+        varB4EAC82CA7396A68D541C85D26508E83_1210376069.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1210376069;
         // ---------- Original Method ----------
         //return name;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.690 -0400", hash_original_method = "F85866CCC5D845B1D53CAF0C5BA97CF5", hash_generated_method = "6C0FC637AEF0E07635B4B8803ADFF7FB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.433 -0400", hash_original_method = "F85866CCC5D845B1D53CAF0C5BA97CF5", hash_generated_method = "CEC73ED38A22EF12028855BC5BB309D6")
     public final int ordinal() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1097524327 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1097524327;
         // ---------- Original Method ----------
         //return ordinal;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.690 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "07B6DEDCDA0BCBF94ECA7AFA0C3C49FD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.433 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "5197A53E0CFACF2AAF1A73A08A067AAC")
     @Override
     public String toString() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2034120038 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2034120038 = name;
+        varB4EAC82CA7396A68D541C85D26508E83_2034120038.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2034120038;
         // ---------- Original Method ----------
         //return name;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.690 -0400", hash_original_method = "75011B979FEDB2DAAF1F1F1C2C24B4BF", hash_generated_method = "C2C3011E1C73CB48A8F4A51CFD543144")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.433 -0400", hash_original_method = "75011B979FEDB2DAAF1F1F1C2C24B4BF", hash_generated_method = "9704FC90FEBED3B84D39682C5E67F874")
     @Override
     public final boolean equals(Object other) {
-        dsTaint.addTaint(other.dsTaint);
-        return dsTaint.getTaintBoolean();
+        addTaint(other.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2142634918 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2142634918;
         // ---------- Original Method ----------
         //return this == other;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.690 -0400", hash_original_method = "EA441E584394EE19D2A56603F808DF7D", hash_generated_method = "D967BF68C84C27239820B860ABFD6F35")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.434 -0400", hash_original_method = "EA441E584394EE19D2A56603F808DF7D", hash_generated_method = "5B1105DFB2CDD989410A4FA96CF50F45")
     @Override
     public final int hashCode() {
-        int var7757EFC4B98575F4A69036771684C57E_856815747 = (ordinal + (name == null ? 0 : name.hashCode())); //DSFIXME:  CODE0008: Nested ternary operator in expression
-        return dsTaint.getTaintInt();
+        int var7757EFC4B98575F4A69036771684C57E_406986715 = (ordinal + (name == null ? 0 : name.hashCode())); //DSFIXME:  CODE0008: Nested ternary operator in expression
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_83754221 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_83754221;
         // ---------- Original Method ----------
         //return ordinal + (name == null ? 0 : name.hashCode());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.691 -0400", hash_original_method = "E819DB208756D0A4B5DFB72B3A772B65", hash_generated_method = "793C8241B0588E44083381264991548D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.434 -0400", hash_original_method = "E819DB208756D0A4B5DFB72B3A772B65", hash_generated_method = "7CFDAA36D607D56DCBB441FFA1E83CF5")
     @Override
     protected final Object clone() throws CloneNotSupportedException {
         if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException("Enums may not be cloned");
-        return (Object)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new CloneNotSupportedException("Enums may not be cloned");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.691 -0400", hash_original_method = "914B430886739457D899D0D840F0325C", hash_generated_method = "CAA3A94FF9F726DBA8DA1F6319A04C26")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.434 -0400", hash_original_method = "914B430886739457D899D0D840F0325C", hash_generated_method = "4644FAF45477AC601C2CD24213200412")
     public final int compareTo(E o) {
-        dsTaint.addTaint(o.dsTaint);
-        return dsTaint.getTaintInt();
+        addTaint(o.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_457283777 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_457283777;
         // ---------- Original Method ----------
         //return ordinal - o.ordinal;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.691 -0400", hash_original_method = "0D462A5B0CC7E5E79CA20DB4952DBB5B", hash_generated_method = "C7B23DDC4F8263878ACD2974B907C608")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.443 -0400", hash_original_method = "0D462A5B0CC7E5E79CA20DB4952DBB5B", hash_generated_method = "1BBDAEC04793E8F3EA02CAC633A39CDC")
     @SuppressWarnings("unchecked")
     public final Class<E> getDeclaringClass() {
+        Class<E> varB4EAC82CA7396A68D541C85D26508E83_1088254238 = null; //Variable for return #1
+        Class<E> varB4EAC82CA7396A68D541C85D26508E83_26783191 = null; //Variable for return #2
         Class<?> myClass;
         myClass = getClass();
         Class<?> mySuperClass;
         mySuperClass = myClass.getSuperclass();
-        return (Class<E>)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1088254238 = (Class<E>)myClass;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_26783191 = (Class<E>)mySuperClass;
+        Class<E> varA7E53CE21691AB073D9660D615818899_1264271705; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1264271705 = varB4EAC82CA7396A68D541C85D26508E83_1088254238;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1264271705 = varB4EAC82CA7396A68D541C85D26508E83_26783191;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1264271705.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1264271705;
         // ---------- Original Method ----------
         //Class<?> myClass = getClass();
         //Class<?> mySuperClass = myClass.getSuperclass();
@@ -140,8 +160,7 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.692 -0400", hash_original_method = "3012BD4162FEB4D4063E0B4E3944BED9", hash_generated_method = "FE1C663109CE5DFABF002048A3AF339A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.447 -0400", hash_original_method = "3012BD4162FEB4D4063E0B4E3944BED9", hash_generated_method = "FE1C663109CE5DFABF002048A3AF339A")
     @Override
     @SuppressWarnings("FinalizeDoesntCallSuperFinalize")
     protected final void finalize() {
@@ -149,19 +168,22 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
     }
 
     
-    private static final long serialVersionUID = -4300926546619394005L;
-    private static final BasicLruCache<Class<? extends Enum>, Object[]> sharedConstantsCache = new BasicLruCache<Class<? extends Enum>, Object[]>(64) {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.692 -0400", hash_original_method = "4DA067D184DCA03E4A8499CE8148F1DB", hash_generated_method = "27ED43C87CA81D6863C2C909B769138A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.447 -0400", hash_original_field = "7DBCEA52E8DCD6AE5AC7B75D618534F3", hash_generated_field = "7965F57B8F8F319E8512B13FAE13C9AD")
+
+    private static long serialVersionUID = -4300926546619394005L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.449 -0400", hash_original_field = "9E1AB9651106D78F89D200A6B8A75C99", hash_generated_field = "2FB518AF8A0DE7287BE3A150134241BF")
+
+    private static BasicLruCache<Class<? extends Enum>, Object[]> sharedConstantsCache = new BasicLruCache<Class<? extends Enum>, Object[]>(64) {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.448 -0400", hash_original_method = "4DA067D184DCA03E4A8499CE8148F1DB", hash_generated_method = "ADA028285C462EFE47703D8F8F0FFC43")
         @Override
         protected Object[] create(Class<? extends Enum> enumType) {
-            dsTaint.addTaint(enumType.dsTaint);
+            Object[] varB4EAC82CA7396A68D541C85D26508E83_1757866168 = null; //Variable for return #1
             Method method;
             method = (Method) Class.getDeclaredConstructorOrMethod(
                     enumType, "values", EmptyArray.CLASS);
             try 
             {
-                Object[] varB28655DAFC9E6BD40C5D48F62FFE72C2_1234685454 = ((Object[]) method.invoke((Object[]) null));
+                varB4EAC82CA7396A68D541C85D26508E83_1757866168 = (Object[]) method.invoke((Object[]) null);
             } //End block
             catch (IllegalAccessException impossible)
             {
@@ -171,7 +193,9 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError();
             } //End block
-            return (Object[])dsTaint.getTaint();
+            addTaint(enumType.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1757866168.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1757866168;
             // ---------- Original Method ----------
             //Method method = (Method) Class.getDeclaredConstructorOrMethod(
                     //enumType, "values", EmptyArray.CLASS);
@@ -185,6 +209,6 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
         }
 
         
-}; //Transformed anonymous class
+};
 }
 

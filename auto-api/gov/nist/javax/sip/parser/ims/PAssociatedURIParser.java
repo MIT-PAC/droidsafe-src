@@ -26,27 +26,25 @@ import gov.nist.javax.sip.parser.HeaderParser;
 
 public class PAssociatedURIParser extends AddressParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.756 -0400", hash_original_method = "0CDE275ECCBEF2889E9182D2465C2E20", hash_generated_method = "8D1F1299C018A1BD7FD81C6FA276D2A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PAssociatedURIParser(String associatedURI) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.659 -0400", hash_original_method = "0CDE275ECCBEF2889E9182D2465C2E20", hash_generated_method = "AAA76F953DE189B56CE0BA684D5A584B")
+    public  PAssociatedURIParser(String associatedURI) {
         super(associatedURI);
-        dsTaint.addTaint(associatedURI);
+        addTaint(associatedURI.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.756 -0400", hash_original_method = "70EC41EF34A2E6E96E3702280780921E", hash_generated_method = "66A1D31E121EC0AC35F0D28CAAE0A8A0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected PAssociatedURIParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.659 -0400", hash_original_method = "70EC41EF34A2E6E96E3702280780921E", hash_generated_method = "88BF51253EB3690D123C074323173C5F")
+    protected  PAssociatedURIParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.756 -0400", hash_original_method = "DA45542244416E40599094AA9DB4C3E3", hash_generated_method = "EC6DD9792B09E1B44B6D63C473FF0B9C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.668 -0400", hash_original_method = "DA45542244416E40599094AA9DB4C3E3", hash_generated_method = "902C0E396EA281F1F0EC233B01BAF811")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_605871316 = null; //Variable for return #1
         dbg_enter("PAssociatedURIParser.parse");
         PAssociatedURIList associatedURIList;
         associatedURIList = new PAssociatedURIList();
@@ -60,7 +58,7 @@ public class PAssociatedURIParser extends AddressParametersParser {
             associatedURIList.add(associatedURI);
             this.lexer.SPorHT();
             {
-                boolean var3D7F80AAA4BB4C7E5B5AFC820C1FE6A4_755247230 = (lexer.lookAhead(0) == ',');
+                boolean var3D7F80AAA4BB4C7E5B5AFC820C1FE6A4_202301620 = (lexer.lookAhead(0) == ',');
                 {
                     this.lexer.match(',');
                     this.lexer.SPorHT();
@@ -72,12 +70,14 @@ public class PAssociatedURIParser extends AddressParametersParser {
             } //End collapsed parenthetic
             this.lexer.SPorHT();
             this.lexer.match('\n');
+            varB4EAC82CA7396A68D541C85D26508E83_605871316 = associatedURIList;
         } //End block
         finally 
         {
             dbg_leave("PAssociatedURIParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_605871316.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_605871316;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

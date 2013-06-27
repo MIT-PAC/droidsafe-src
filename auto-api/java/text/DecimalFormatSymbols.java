@@ -18,32 +18,64 @@ import libcore.icu.ICU;
 import libcore.icu.LocaleData;
 
 public class DecimalFormatSymbols implements Cloneable, Serializable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "8AD80D213027B16530912C1C1C7453EF", hash_generated_field = "182114D634E44B2F9FF8FA9BEA6A2670")
+
     private char zeroDigit;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "29A1470067B045281DEAF936A75D8C06", hash_generated_field = "6CB8DCB59FFD8713E9C1C344A13F088C")
+
     private char digit;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "48A6CA504F67CF2BD9895069CD4472FA", hash_generated_field = "E461D5D24B0D46970F3080026F5DAB3B")
+
     private char decimalSeparator;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "3A708173CA04CA37E5B22F97B4BC43CF", hash_generated_field = "5568C6DB84C3654DEE73CAFF55A6B581")
+
     private char groupingSeparator;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "CD221E3F127BA556BCF5DA2798A424B3", hash_generated_field = "6DF33D45ABDB8FE2C16C7A6B5B22148B")
+
     private char patternSeparator;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "354F047BA64552895B016BBDD60AB174", hash_generated_field = "35D478E85B6B0AC367D6451335AED786")
+
     private char percent;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "D6C9C9F61F0116B9930F4EDD0F9D8227", hash_generated_field = "83CD8C34421477BE2D582B86E50D13B3")
+
     private char perMill;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "368D90094DFA80CD83BD48905254BFA2", hash_generated_field = "BE354A6C767B6735025B72C2F3218447")
+
     private char monetarySeparator;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "094850D5B1A3856672905D85A426AC77", hash_generated_field = "418B8DC329FE67FA16666E2093EA0558")
+
     private char minusSign;
-    private String infinity, NaN, currencySymbol, intlCurrencySymbol;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "F2FDEE93271556E428DD9507B3DA7235", hash_generated_field = "E87067D299572259E6A5A50B5C50F402")
+
+    private String infinity;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "7ECFB3BF076A6A9635F975FE96AC97FD", hash_generated_field = "84564C16EC7DF5A18776A88E04BB85F2")
+
+    private String NaN;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "C5613A5A91579972FBAE451ACABEB080", hash_generated_field = "9155F1D4247E37AE2D732FFAE046AD76")
+
+    private String currencySymbol;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "880FF64D34B5489D22BD4683FE484CE8", hash_generated_field = "A7BD4117286329CC7FB1D92F79A53FB8")
+
+    private String intlCurrencySymbol;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "1AF0389838508D7016A9841EB6273962", hash_generated_field = "E59704290C574597EDF0C1232CAFF8C9")
+
     private transient Currency currency;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "FB216D9E8791E63C8D12BDC420956839", hash_generated_field = "28E42E34FE73475FADA137DE37E55757")
+
     private transient Locale locale;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.050 -0400", hash_original_field = "95B0BA924E85C891BF81984E42E23DBB", hash_generated_field = "3597EF8DA5A09BA6DA4C6C1E5177AE99")
+
     private transient String exponentSeparator;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.266 -0400", hash_original_method = "91524EB1B511A6593A9E4C16AA4F2798", hash_generated_method = "56C5B7DBED39CFE7A5BF60DA4A9A951E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public DecimalFormatSymbols() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.051 -0400", hash_original_method = "91524EB1B511A6593A9E4C16AA4F2798", hash_generated_method = "56C5B7DBED39CFE7A5BF60DA4A9A951E")
+    public  DecimalFormatSymbols() {
         this(Locale.getDefault());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.267 -0400", hash_original_method = "0AEA27B26006219100D92BC0021E5648", hash_generated_method = "79212F372479F7F6C448BBB8F9878AD9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public DecimalFormatSymbols(Locale locale) {
-        dsTaint.addTaint(locale.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.111 -0400", hash_original_method = "0AEA27B26006219100D92BC0021E5648", hash_generated_method = "A717958FEDCCEB20B03CC3F4451C1126")
+    public  DecimalFormatSymbols(Locale locale) {
         LocaleData localeData;
         localeData = LocaleData.get(locale);
         this.zeroDigit = localeData.zeroDigit;
@@ -58,6 +90,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         this.infinity = localeData.infinity;
         this.NaN = localeData.NaN;
         this.exponentSeparator = localeData.exponentSeparator;
+        this.locale = locale;
         try 
         {
             currency = Currency.getInstance(locale);
@@ -93,19 +126,20 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.268 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "861441C0AD2D6A1BEDFB7B7449665351")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.115 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "C31A8EE5789C13F60FA09F2F0B621E08")
     @Override
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_637808756 = null; //Variable for return #1
         try 
         {
-            Object varDEB570B566DA7549E2F197D0AFA5A2B6_1783118356 = (super.clone());
+            varB4EAC82CA7396A68D541C85D26508E83_637808756 = super.clone();
         } //End block
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
         } //End block
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_637808756.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_637808756;
         // ---------- Original Method ----------
         //try {
             //return super.clone();
@@ -115,14 +149,12 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.268 -0400", hash_original_method = "B3296A7E858EAC27CB28889E1F7A56D1", hash_generated_method = "2CECC66B86B2156D2B3EBFFB0E1224D2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.116 -0400", hash_original_method = "B3296A7E858EAC27CB28889E1F7A56D1", hash_generated_method = "C36993A184D76E4309E64F4B784DE4C2")
     @Override
     public boolean equals(Object object) {
-        dsTaint.addTaint(object.dsTaint);
         DecimalFormatSymbols obj;
         obj = (DecimalFormatSymbols) object;
-        boolean varC158CC4243FB554C90CC017AB48211C2_414555818 = (currency.equals(obj.currency) &&
+        boolean varC158CC4243FB554C90CC017AB48211C2_191393102 = (currency.equals(obj.currency) &&
                 currencySymbol.equals(obj.currencySymbol) &&
                 decimalSeparator == obj.decimalSeparator &&
                 digit == obj.digit &&
@@ -137,17 +169,19 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
                 perMill == obj.perMill &&
                 percent == obj.percent &&
                 zeroDigit == obj.zeroDigit);
-        return dsTaint.getTaintBoolean();
+        addTaint(object.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1306888917 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1306888917;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.269 -0400", hash_original_method = "A8625956386363E3EFDBA37B24F1F247", hash_generated_method = "7B6664F8FC03B8AE8978CE01AE722207")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.126 -0400", hash_original_method = "A8625956386363E3EFDBA37B24F1F247", hash_generated_method = "5C5FBA1D12D1CA520A36865D29B4EA6D")
     @Override
     public String toString() {
-        String varA8FD58D00DF2FE04003DDA0387EED1A1_1963257238 = (getClass().getName() +
+        String varB4EAC82CA7396A68D541C85D26508E83_230846031 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_230846031 = getClass().getName() +
                 "[currency=" + currency +
                 ",currencySymbol=" + currencySymbol +
                 ",decimalSeparator=" + decimalSeparator +
@@ -163,8 +197,9 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
                 ",perMill=" + perMill +
                 ",percent=" + percent +
                 ",zeroDigit=" + zeroDigit +
-                "]");
-        return dsTaint.getTaintString();
+                "]";
+        varB4EAC82CA7396A68D541C85D26508E83_230846031.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_230846031;
         // ---------- Original Method ----------
         //return getClass().getName() +
                 //"[currency=" + currency +
@@ -186,143 +221,154 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.269 -0400", hash_original_method = "595F433D4A540AB9FD57454DFC2D00CA", hash_generated_method = "6F1B17BE4A19389EC4E5D6F94E767849")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.127 -0400", hash_original_method = "595F433D4A540AB9FD57454DFC2D00CA", hash_generated_method = "33BB8E4FE4BD6ECC67E34107B404563D")
     public Currency getCurrency() {
-        return (Currency)dsTaint.getTaint();
+        Currency varB4EAC82CA7396A68D541C85D26508E83_1495313590 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1495313590 = currency;
+        varB4EAC82CA7396A68D541C85D26508E83_1495313590.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1495313590;
         // ---------- Original Method ----------
         //return currency;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.269 -0400", hash_original_method = "9A7223B2A10801087A5753E160EB5AD9", hash_generated_method = "DF91092143FF19D656832CC0032C69FA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.128 -0400", hash_original_method = "9A7223B2A10801087A5753E160EB5AD9", hash_generated_method = "7C9E5CC067631DEDA1A73FEE8272BAB5")
     public String getInternationalCurrencySymbol() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1870077273 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1870077273 = intlCurrencySymbol;
+        varB4EAC82CA7396A68D541C85D26508E83_1870077273.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1870077273;
         // ---------- Original Method ----------
         //return intlCurrencySymbol;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.269 -0400", hash_original_method = "44BA6DF186734A9129EE433C5393A649", hash_generated_method = "DA14079F1428C017BB2DE9C518AFD202")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.129 -0400", hash_original_method = "44BA6DF186734A9129EE433C5393A649", hash_generated_method = "F62EB01AE254E24C7C71DD1693DF8FC6")
     public String getCurrencySymbol() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_283666400 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_283666400 = currencySymbol;
+        varB4EAC82CA7396A68D541C85D26508E83_283666400.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_283666400;
         // ---------- Original Method ----------
         //return currencySymbol;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.270 -0400", hash_original_method = "C908C2BC77C07C5C3074706ADD440EBB", hash_generated_method = "E52C0825A1F427DAD573DC0D37CD3E86")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.129 -0400", hash_original_method = "C908C2BC77C07C5C3074706ADD440EBB", hash_generated_method = "2463CD051296F610320C9172B74B3F3D")
     public char getDecimalSeparator() {
-        return dsTaint.getTaintChar();
+        char varA87DEB01C5F539E6BDA34829C8EF2368_631461077 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_631461077;
         // ---------- Original Method ----------
         //return decimalSeparator;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.270 -0400", hash_original_method = "4E80424FBB82914FDC63C744E843DFA5", hash_generated_method = "E2EC32F121A53DF354FBE33A625B2334")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.129 -0400", hash_original_method = "4E80424FBB82914FDC63C744E843DFA5", hash_generated_method = "F1E16AC9381F6A464E698E4A72B89EDF")
     public char getDigit() {
-        return dsTaint.getTaintChar();
+        char varA87DEB01C5F539E6BDA34829C8EF2368_1103730422 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_1103730422;
         // ---------- Original Method ----------
         //return digit;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.270 -0400", hash_original_method = "0D8DAB63E4E740341CDDC10B95F6771D", hash_generated_method = "54ACEC08F2B597A2BD8076095EF3B75D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.142 -0400", hash_original_method = "0D8DAB63E4E740341CDDC10B95F6771D", hash_generated_method = "33ECB7311AD758AE16501B9E6AABA1BF")
     public char getGroupingSeparator() {
-        return dsTaint.getTaintChar();
+        char varA87DEB01C5F539E6BDA34829C8EF2368_848808051 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_848808051;
         // ---------- Original Method ----------
         //return groupingSeparator;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.270 -0400", hash_original_method = "195513F858098AF1B8C98F122DD853CE", hash_generated_method = "97288FC2E2BB8B0208BC2321982A6577")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.144 -0400", hash_original_method = "195513F858098AF1B8C98F122DD853CE", hash_generated_method = "256BB0B92A7CDF25F6CC79ADA3D57204")
     public String getInfinity() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_89698682 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_89698682 = infinity;
+        varB4EAC82CA7396A68D541C85D26508E83_89698682.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_89698682;
         // ---------- Original Method ----------
         //return infinity;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.270 -0400", hash_original_method = "B02DD985FFD3C706D5501C97C0FC9E68", hash_generated_method = "013DFE12D8B706F0D602BE73044B6AAB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.144 -0400", hash_original_method = "B02DD985FFD3C706D5501C97C0FC9E68", hash_generated_method = "2BBF217DA7DF3D5C22B74E510A126AB0")
     public char getMinusSign() {
-        return dsTaint.getTaintChar();
+        char varA87DEB01C5F539E6BDA34829C8EF2368_68349733 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_68349733;
         // ---------- Original Method ----------
         //return minusSign;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.270 -0400", hash_original_method = "C02AEBD6916CB8991D4B6D1CCA4BA867", hash_generated_method = "0F7D128907288C0B51728F61BFA5A1A8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.144 -0400", hash_original_method = "C02AEBD6916CB8991D4B6D1CCA4BA867", hash_generated_method = "99881A38C92C6A9F87B649074D5C2F8D")
     public char getMonetaryDecimalSeparator() {
-        return dsTaint.getTaintChar();
+        char varA87DEB01C5F539E6BDA34829C8EF2368_1373394089 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_1373394089;
         // ---------- Original Method ----------
         //return monetarySeparator;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.271 -0400", hash_original_method = "A7A5B5565C9E586C08E861055D3F830D", hash_generated_method = "3ECD63CE1CA002A5DD5B0FA7C4C284B0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.144 -0400", hash_original_method = "A7A5B5565C9E586C08E861055D3F830D", hash_generated_method = "792D04C7DC9FBB4690236264DBC49EE4")
     public String getNaN() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1167627252 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1167627252 = NaN;
+        varB4EAC82CA7396A68D541C85D26508E83_1167627252.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1167627252;
         // ---------- Original Method ----------
         //return NaN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.271 -0400", hash_original_method = "D38F7AE8E1369570AEDB785398752C04", hash_generated_method = "7E447246634D2FF90B88653279E9DF51")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.145 -0400", hash_original_method = "D38F7AE8E1369570AEDB785398752C04", hash_generated_method = "B9E448F6E4675926C02CAD09CA04FE1F")
     public char getPatternSeparator() {
-        return dsTaint.getTaintChar();
+        char varA87DEB01C5F539E6BDA34829C8EF2368_308473713 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_308473713;
         // ---------- Original Method ----------
         //return patternSeparator;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.271 -0400", hash_original_method = "0F05A385A7483224A3B3B115F4941DEA", hash_generated_method = "3D59E1751F162F9F08002CE70B75BBCC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.145 -0400", hash_original_method = "0F05A385A7483224A3B3B115F4941DEA", hash_generated_method = "74309D0B0395A2392CDFB14F7E99F689")
     public char getPercent() {
-        return dsTaint.getTaintChar();
+        char varA87DEB01C5F539E6BDA34829C8EF2368_1849910709 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_1849910709;
         // ---------- Original Method ----------
         //return percent;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.271 -0400", hash_original_method = "DDC83740D050E65F948D715CA46AA4E6", hash_generated_method = "EC99D3A10D45B7D6EC1FCABA0B5EAF9D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.145 -0400", hash_original_method = "DDC83740D050E65F948D715CA46AA4E6", hash_generated_method = "DE4255E26024D24C7BAB3B27C65694D2")
     public char getPerMill() {
-        return dsTaint.getTaintChar();
+        char varA87DEB01C5F539E6BDA34829C8EF2368_1651500985 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_1651500985;
         // ---------- Original Method ----------
         //return perMill;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.271 -0400", hash_original_method = "5E609E25361E12310E119A02851AA08C", hash_generated_method = "ECB4DFD9B58825DA7D38B010DFA09190")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.162 -0400", hash_original_method = "5E609E25361E12310E119A02851AA08C", hash_generated_method = "A67A190F243112B34E8BB6F8090F2A32")
     public char getZeroDigit() {
-        return dsTaint.getTaintChar();
+        char varA87DEB01C5F539E6BDA34829C8EF2368_1215849458 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_1215849458;
         // ---------- Original Method ----------
         //return zeroDigit;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.271 -0400", hash_original_method = "819A49232B9C4BF84239DF8CB1CAA3C1", hash_generated_method = "6FC575DED97F8F2606CF903B48943081")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.164 -0400", hash_original_method = "819A49232B9C4BF84239DF8CB1CAA3C1", hash_generated_method = "6CB27CA96BA662A0E8DC6119AD1903CF")
     public String getExponentSeparator() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_797679515 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_797679515 = exponentSeparator;
+        varB4EAC82CA7396A68D541C85D26508E83_797679515.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_797679515;
         // ---------- Original Method ----------
         //return exponentSeparator;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.272 -0400", hash_original_method = "730AF15AAE06AD4A292A18D5EB73C960", hash_generated_method = "A128B9173ED3C809C2A6BE743D3F2F62")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.166 -0400", hash_original_method = "730AF15AAE06AD4A292A18D5EB73C960", hash_generated_method = "80FFAE6121BEF97DF217F5BF0701F050")
     @Override
     public int hashCode() {
         int result;
@@ -341,7 +387,8 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         result = 31*result + NaN.hashCode();
         result = 31*result + currencySymbol.hashCode();
         result = 31*result + intlCurrencySymbol.hashCode();
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1676057631 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1676057631;
         // ---------- Original Method ----------
         //int result = 17;
         //result = 31*result + zeroDigit;
@@ -362,13 +409,12 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.272 -0400", hash_original_method = "92D5537D8B3843A17694170BBEA5586B", hash_generated_method = "CCFFB5023FBE0069D270C957ABF19A94")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.181 -0400", hash_original_method = "92D5537D8B3843A17694170BBEA5586B", hash_generated_method = "6B8EEED2B17092FFB0A922029CAD848C")
     public void setCurrency(Currency currency) {
-        dsTaint.addTaint(currency.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
+        this.currency = currency;
         intlCurrencySymbol = currency.getCurrencyCode();
         currencySymbol = currency.getSymbol(locale);
         // ---------- Original Method ----------
@@ -384,16 +430,14 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.273 -0400", hash_original_method = "207176AE532CCEDF88793D675BD5BB7E", hash_generated_method = "73C39B505F65A206AE826A257079677C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.181 -0400", hash_original_method = "207176AE532CCEDF88793D675BD5BB7E", hash_generated_method = "6E4A10B0AA8D54CCECAF9677764C19BB")
     public void setInternationalCurrencySymbol(String value) {
-        dsTaint.addTaint(value);
         {
             currency = null;
             intlCurrencySymbol = null;
         } //End block
         {
-            boolean var8EB9949666341D3A42DA12AD2DEE9D4F_537519039 = (value.equals(intlCurrencySymbol));
+            boolean var8EB9949666341D3A42DA12AD2DEE9D4F_470164338 = (value.equals(intlCurrencySymbol));
         } //End collapsed parenthetic
         try 
         {
@@ -404,6 +448,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         {
             currency = null;
         } //End block
+        intlCurrencySymbol = value;
         // ---------- Original Method ----------
         //if (value == null) {
             //currency = null;
@@ -423,121 +468,108 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.273 -0400", hash_original_method = "29E8104D01D46C7E9FE837881A4B811D", hash_generated_method = "E99A14AE8E7D3ED6893A7E7099DF2B80")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.182 -0400", hash_original_method = "29E8104D01D46C7E9FE837881A4B811D", hash_generated_method = "A1B254E664FC163A6D6D66EE9051B9E5")
     public void setCurrencySymbol(String value) {
-        dsTaint.addTaint(value);
+        this.currencySymbol = value;
         // ---------- Original Method ----------
         //this.currencySymbol = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.273 -0400", hash_original_method = "9AC8CCC4F998C35713D40EA8501A574C", hash_generated_method = "2889DDFA4E8957BD569EEF9E97ED25C8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.182 -0400", hash_original_method = "9AC8CCC4F998C35713D40EA8501A574C", hash_generated_method = "4539C6F9693002CBFA4139FAA5A10266")
     public void setDecimalSeparator(char value) {
-        dsTaint.addTaint(value);
+        this.decimalSeparator = value;
         // ---------- Original Method ----------
         //this.decimalSeparator = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.273 -0400", hash_original_method = "D6FAF1D38DB7E623F52AE4E3C83BC924", hash_generated_method = "5C39A235F01227F9F85AA7258CD2FDC9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.182 -0400", hash_original_method = "D6FAF1D38DB7E623F52AE4E3C83BC924", hash_generated_method = "7711FAE92BC9F01A058CFEF49755A394")
     public void setDigit(char value) {
-        dsTaint.addTaint(value);
+        this.digit = value;
         // ---------- Original Method ----------
         //this.digit = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.273 -0400", hash_original_method = "9D270588D20ED0589BF78FE9A748D06B", hash_generated_method = "94A4FECF99C6FDE5044C54D389B7D65E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.182 -0400", hash_original_method = "9D270588D20ED0589BF78FE9A748D06B", hash_generated_method = "C292B529EBE5F04DB57AE205EC3B991A")
     public void setGroupingSeparator(char value) {
-        dsTaint.addTaint(value);
+        this.groupingSeparator = value;
         // ---------- Original Method ----------
         //this.groupingSeparator = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.274 -0400", hash_original_method = "253C85BF9C056E30DB4FF21631672E45", hash_generated_method = "7BEEB580F96A578DABA7A49A79666D57")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.183 -0400", hash_original_method = "253C85BF9C056E30DB4FF21631672E45", hash_generated_method = "ABF5584BEC1CA4A91D70149ED70C9A27")
     public void setInfinity(String value) {
-        dsTaint.addTaint(value);
+        this.infinity = value;
         // ---------- Original Method ----------
         //this.infinity = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.274 -0400", hash_original_method = "D3F4D7B2767531D5CB8D7EDFAA19A0F0", hash_generated_method = "6A909044F19EB0A49BF7BECCA08265EA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.183 -0400", hash_original_method = "D3F4D7B2767531D5CB8D7EDFAA19A0F0", hash_generated_method = "97F2E98A9053428A52AC61901D7A6FEA")
     public void setMinusSign(char value) {
-        dsTaint.addTaint(value);
+        this.minusSign = value;
         // ---------- Original Method ----------
         //this.minusSign = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.274 -0400", hash_original_method = "5DC5988EDD7C3CC1FE974B80FD913370", hash_generated_method = "5508AD210E57E84DF70590BF84129997")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.183 -0400", hash_original_method = "5DC5988EDD7C3CC1FE974B80FD913370", hash_generated_method = "37C329CB534FCBA848ADC17C5247D834")
     public void setMonetaryDecimalSeparator(char value) {
-        dsTaint.addTaint(value);
+        this.monetarySeparator = value;
         // ---------- Original Method ----------
         //this.monetarySeparator = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.274 -0400", hash_original_method = "6A48D24176C36753AA1CCB849BDA297D", hash_generated_method = "BFF53660793BACEAFB6D32CC736E3A30")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.197 -0400", hash_original_method = "6A48D24176C36753AA1CCB849BDA297D", hash_generated_method = "AA33C8D18B728D340C95D0AD4D935FA8")
     public void setNaN(String value) {
-        dsTaint.addTaint(value);
+        this.NaN = value;
         // ---------- Original Method ----------
         //this.NaN = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.274 -0400", hash_original_method = "F9CB88FF85D83DD076D59F9C65C2F022", hash_generated_method = "9F4687BFE7F260C6D19956897F360423")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.198 -0400", hash_original_method = "F9CB88FF85D83DD076D59F9C65C2F022", hash_generated_method = "3017D9D53BF3860D543CEE81C7ED5A22")
     public void setPatternSeparator(char value) {
-        dsTaint.addTaint(value);
+        this.patternSeparator = value;
         // ---------- Original Method ----------
         //this.patternSeparator = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.275 -0400", hash_original_method = "82CC4266781153E2E37AE97635E76BF7", hash_generated_method = "E4F9770738C2D34E08112925B3812984")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.198 -0400", hash_original_method = "82CC4266781153E2E37AE97635E76BF7", hash_generated_method = "4EDEC5C156FF56FDE2BCE58452EA9BAA")
     public void setPercent(char value) {
-        dsTaint.addTaint(value);
+        this.percent = value;
         // ---------- Original Method ----------
         //this.percent = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.275 -0400", hash_original_method = "A113C8FE00852B00BE817507D877FFEC", hash_generated_method = "95065D92C902560432CA1851DC3688DC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.198 -0400", hash_original_method = "A113C8FE00852B00BE817507D877FFEC", hash_generated_method = "2304401BB8B19A673A86CB5806CCD958")
     public void setPerMill(char value) {
-        dsTaint.addTaint(value);
+        this.perMill = value;
         // ---------- Original Method ----------
         //this.perMill = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.275 -0400", hash_original_method = "1F31C9A94279CEAA9BC58336D0C15AE7", hash_generated_method = "299125E3DD9C65E2193E0C77CF862491")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.199 -0400", hash_original_method = "1F31C9A94279CEAA9BC58336D0C15AE7", hash_generated_method = "0DC2F198C5C3860518C6B4FFDAA37AED")
     public void setZeroDigit(char value) {
-        dsTaint.addTaint(value);
+        this.zeroDigit = value;
         // ---------- Original Method ----------
         //this.zeroDigit = value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.275 -0400", hash_original_method = "9B9F6C7BB1C5EA5DED0636F1E4439683", hash_generated_method = "CAF2798BB6F81C6F9AB02567D337308D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.199 -0400", hash_original_method = "9B9F6C7BB1C5EA5DED0636F1E4439683", hash_generated_method = "C2D672E8013B5AEA26D251C812D6DB9D")
     public void setExponentSeparator(String value) {
-        dsTaint.addTaint(value);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
+        this.exponentSeparator = value;
         // ---------- Original Method ----------
         //if (value == null) {
             //throw new NullPointerException();
@@ -546,10 +578,8 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.276 -0400", hash_original_method = "AC413B5955CC7818D3CB585AD477DBD8", hash_generated_method = "5DBF2FA3EFC5A80179D08EE97BC25336")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.208 -0400", hash_original_method = "AC413B5955CC7818D3CB585AD477DBD8", hash_generated_method = "498682A82FC1B87E34A34CECAF359939")
     private void writeObject(ObjectOutputStream stream) throws IOException {
-        dsTaint.addTaint(stream.dsTaint);
         ObjectOutputStream.PutField fields;
         fields = stream.putFields();
         fields.put("currencySymbol", currencySymbol);
@@ -570,15 +600,14 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         fields.put("zeroDigit", getZeroDigit());
         fields.put("locale", locale);
         stream.writeFields();
+        addTaint(stream.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:30.276 -0400", hash_original_method = "6B45962B37C777732BB6D07E7138D37B", hash_generated_method = "4138537880C9A72ED74369AFF62CD05E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.209 -0400", hash_original_method = "6B45962B37C777732BB6D07E7138D37B", hash_generated_method = "6310BE663E2CD0A0CD8332A9EF9B5FD0")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-        dsTaint.addTaint(stream.dsTaint);
         ObjectInputStream.GetField fields;
         fields = stream.readFields();
         int serialVersionOnStream;
@@ -619,30 +648,17 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         {
             currency = null;
         } //End block
+        addTaint(stream.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    private static final long serialVersionUID = 5772796243397350300L;
-    private static final ObjectStreamField[] serialPersistentFields = {
-        new ObjectStreamField("currencySymbol", String.class),
-        new ObjectStreamField("decimalSeparator", char.class),
-        new ObjectStreamField("digit", char.class),
-        new ObjectStreamField("exponential", char.class),
-        new ObjectStreamField("exponentialSeparator", String.class),
-        new ObjectStreamField("groupingSeparator", char.class),
-        new ObjectStreamField("infinity", String.class),
-        new ObjectStreamField("intlCurrencySymbol", String.class),
-        new ObjectStreamField("minusSign", char.class),
-        new ObjectStreamField("monetarySeparator", char.class),
-        new ObjectStreamField("NaN", String.class),
-        new ObjectStreamField("patternSeparator", char.class),
-        new ObjectStreamField("percent", char.class),
-        new ObjectStreamField("perMill", char.class),
-        new ObjectStreamField("serialVersionOnStream", int.class),
-        new ObjectStreamField("zeroDigit", char.class),
-        new ObjectStreamField("locale", Locale.class),
-    };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.209 -0400", hash_original_field = "C1546AD2F0A1B24A763042F20510D2DC", hash_generated_field = "752AA812D1A9FCEB34A34C7D7F8E3C6F")
+
+    private static long serialVersionUID = 5772796243397350300L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.209 -0400", hash_original_field = "A497A46D73270DC9F3E7811070586C67", hash_generated_field = "DF3B779AC65293AACA2C768A9CD43464")
+
+    private static ObjectStreamField[] serialPersistentFields = ;
 }
 

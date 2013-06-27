@@ -17,13 +17,15 @@ import java.util.Map;
 import org.apache.harmony.security.x501.Name;
 
 public final class X500Principal implements Serializable, Principal {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.484 -0400", hash_original_field = "567C996739EDFA1CDBAD4C55A80580DF", hash_generated_field = "CFC846905F9BAB769B1824279452E9D4")
+
     private transient Name dn;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.484 -0400", hash_original_field = "3FD37E7C1754DA8004AB09E17AD51B85", hash_generated_field = "6B8880E941EC803BC6CC2DFD6A5E024B")
+
     private transient String canonicalName;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.210 -0400", hash_original_method = "A3047134DA2BBFDCD9EABEAC496A6A0D", hash_generated_method = "1BD768D9F61F8AE69FC0A1FCBCBFC65A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public X500Principal(byte[] name) {
-        dsTaint.addTaint(name[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.487 -0400", hash_original_method = "A3047134DA2BBFDCD9EABEAC496A6A0D", hash_generated_method = "D1670BCBFC7E9E6DDA75D14700463F25")
+    public  X500Principal(byte[] name) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Name cannot be null");
         } //End block
@@ -47,10 +49,8 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.210 -0400", hash_original_method = "BF19E6A321D84C3196CD725DF225766B", hash_generated_method = "C1472C2C2E2EDAA85652E79A4FA377AB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public X500Principal(InputStream in) {
-        dsTaint.addTaint(in.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.487 -0400", hash_original_method = "BF19E6A321D84C3196CD725DF225766B", hash_generated_method = "862B6082B8FE622BFD0D1334D6D0970F")
+    public  X500Principal(InputStream in) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("in == null");
         } //End block
@@ -74,10 +74,8 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.210 -0400", hash_original_method = "4B12F08D986FED39E34C8D26B1B878DE", hash_generated_method = "308B5F47B4A69271B14FB047697CCCB2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public X500Principal(String name) {
-        dsTaint.addTaint(name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.488 -0400", hash_original_method = "4B12F08D986FED39E34C8D26B1B878DE", hash_generated_method = "971A99D48F138A498C8CF6478A3FE9EB")
+    public  X500Principal(String name) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Name cannot be null");
         } //End block
@@ -101,11 +99,8 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.210 -0400", hash_original_method = "2009C8B3D7F2D72E316D77325E1D8621", hash_generated_method = "E635D1ED90936D3B011DACFDEACCA434")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public X500Principal(String name, Map<String,String> keywordMap) {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(keywordMap.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.488 -0400", hash_original_method = "2009C8B3D7F2D72E316D77325E1D8621", hash_generated_method = "697ACD877E62AAFAF1A3311DF3A049AB")
+    public  X500Principal(String name, Map<String,String> keywordMap) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Name cannot be null");
         } //End block
@@ -129,15 +124,13 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.211 -0400", hash_original_method = "9E8384C79D62223409840D75AB5AB58E", hash_generated_method = "8C233511EA030C7110160CB2FE47C9E3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.489 -0400", hash_original_method = "9E8384C79D62223409840D75AB5AB58E", hash_generated_method = "94952B045952BE7DF7C519E8633C27C2")
     private IllegalArgumentException incorrectInputEncoding(IOException e) {
-        dsTaint.addTaint(e.dsTaint);
         IllegalArgumentException iae;
         iae = new IllegalArgumentException("Incorrect input encoding");
         iae.initCause(e);
         if (DroidSafeAndroidRuntime.control) throw iae;
-        return (IllegalArgumentException)dsTaint.getTaint();
+        addTaint(e.getTaint());
         // ---------- Original Method ----------
         //IllegalArgumentException iae = new IllegalArgumentException("Incorrect input encoding");
         //iae.initCause(e);
@@ -145,16 +138,14 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.211 -0400", hash_original_method = "6436965683334E035C1CE670538AE7C6", hash_generated_method = "CC54168E3F31F6FBF90BCAACAAAED592")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.490 -0400", hash_original_method = "6436965683334E035C1CE670538AE7C6", hash_generated_method = "8AC362FFB7A8D084C8D9B570E0D5CF67")
     private IllegalArgumentException incorrectInputName(IOException e, String name) {
-        dsTaint.addTaint(e.dsTaint);
-        dsTaint.addTaint(name);
         IllegalArgumentException iae;
         iae = new IllegalArgumentException("Incorrect input name:" + name);
         iae.initCause(e);
         if (DroidSafeAndroidRuntime.control) throw iae;
-        return (IllegalArgumentException)dsTaint.getTaint();
+        addTaint(e.getTaint());
+        addTaint(name.getTaint());
         // ---------- Original Method ----------
         //IllegalArgumentException iae = new IllegalArgumentException("Incorrect input name:" + name);
         //iae.initCause(e);
@@ -162,13 +153,15 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.211 -0400", hash_original_method = "4587ED52F7AA726C7418DB94B8315A23", hash_generated_method = "3A7B057D07B4286C3FB170815FE35D02")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.490 -0400", hash_original_method = "4587ED52F7AA726C7418DB94B8315A23", hash_generated_method = "6D6030EA127514AA451F9BEF9000E458")
     private synchronized String getCanonicalName() {
+        String varB4EAC82CA7396A68D541C85D26508E83_2064572226 = null; //Variable for return #1
         {
             canonicalName = dn.getName(CANONICAL);
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_2064572226 = canonicalName;
+        varB4EAC82CA7396A68D541C85D26508E83_2064572226.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2064572226;
         // ---------- Original Method ----------
         //if (canonicalName == null) {
             //canonicalName = dn.getName(CANONICAL);
@@ -177,18 +170,18 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.211 -0400", hash_original_method = "16164FE0EFFEA9276C58202163E56457", hash_generated_method = "BD4F29EEBA705A6AE36EAFF6B57A79DB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.496 -0400", hash_original_method = "16164FE0EFFEA9276C58202163E56457", hash_generated_method = "343445FAAD74997E859411E5EB40FF5E")
     @Override
     public boolean equals(Object o) {
-        dsTaint.addTaint(o.dsTaint);
         {
-            boolean var9B27E520BBC2DDC5CC18F0AC09DC0048_837834531 = (o == null || this.getClass() != o.getClass());
+            boolean var9B27E520BBC2DDC5CC18F0AC09DC0048_596662614 = (o == null || this.getClass() != o.getClass());
         } //End collapsed parenthetic
         X500Principal principal;
         principal = (X500Principal) o;
-        boolean var52630933BE63050CF1143372FB4ADF8E_1200492664 = (getCanonicalName().equals(principal.getCanonicalName()));
-        return dsTaint.getTaintBoolean();
+        boolean var52630933BE63050CF1143372FB4ADF8E_408528252 = (getCanonicalName().equals(principal.getCanonicalName()));
+        addTaint(o.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1212465173 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1212465173;
         // ---------- Original Method ----------
         //if (this == o) {
             //return true;
@@ -201,17 +194,15 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.211 -0400", hash_original_method = "0D44433D57FF4BE42B367E2D93A9CEDF", hash_generated_method = "A53D66BC07078BFB2EE186C28EE39AA4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.502 -0400", hash_original_method = "0D44433D57FF4BE42B367E2D93A9CEDF", hash_generated_method = "AC57DCB906223BA83786D23E62E56881")
     public byte[] getEncoded() {
         byte[] src;
         src = dn.getEncoded();
         byte[] dst;
         dst = new byte[src.length];
         System.arraycopy(src, 0, dst, 0, dst.length);
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_631513103 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_631513103;
         // ---------- Original Method ----------
         //byte[] src = dn.getEncoded();
         //byte[] dst = new byte[src.length];
@@ -220,28 +211,40 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.212 -0400", hash_original_method = "2BCB4CFF6EEF485C6E2E6569B64BAD8B", hash_generated_method = "ED46F57D406E4A989D40652A628B9CC1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.517 -0400", hash_original_method = "2BCB4CFF6EEF485C6E2E6569B64BAD8B", hash_generated_method = "6C8F12B4BFA9229129586080225214D8")
     public String getName() {
-        String var44C9769EDF99E276E74EFDE10CCF5B71_325064086 = (dn.getName(RFC2253));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_974998621 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_974998621 = dn.getName(RFC2253);
+        varB4EAC82CA7396A68D541C85D26508E83_974998621.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_974998621;
         // ---------- Original Method ----------
         //return dn.getName(RFC2253);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.212 -0400", hash_original_method = "DC6B95F939C1817F13ECF66B400795F1", hash_generated_method = "173099CB3590816247B9BF0E7E087BB5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.518 -0400", hash_original_method = "DC6B95F939C1817F13ECF66B400795F1", hash_generated_method = "C1239F2E2516D385376A2391C8D281E0")
     public String getName(String format) {
-        dsTaint.addTaint(format);
+        String varB4EAC82CA7396A68D541C85D26508E83_1564269210 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_366048744 = null; //Variable for return #2
         {
-            boolean var7BB6BC064FD8B633AC4A7BB6004A0653_1107008586 = (CANONICAL.equals(format));
+            boolean var7BB6BC064FD8B633AC4A7BB6004A0653_1100457235 = (CANONICAL.equals(format));
             {
-                String var86D23E2AB4D607C1E11D180B6C9CAF99_1927113403 = (getCanonicalName());
+                varB4EAC82CA7396A68D541C85D26508E83_1564269210 = getCanonicalName();
             } //End block
         } //End collapsed parenthetic
-        String var1602C26595CAA4BCC73450DEE341A514_255601183 = (dn.getName(format));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_366048744 = dn.getName(format);
+        addTaint(format.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_2113532872; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_2113532872 = varB4EAC82CA7396A68D541C85D26508E83_1564269210;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_2113532872 = varB4EAC82CA7396A68D541C85D26508E83_366048744;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_2113532872.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2113532872;
         // ---------- Original Method ----------
         //if (CANONICAL.equals(format)) {
             //return getCanonicalName();
@@ -250,17 +253,16 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.213 -0400", hash_original_method = "F26EAC27584EEA69A397CAF64D802897", hash_generated_method = "615DF6C9BADC8E4CCA08F90EA1B67063")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.519 -0400", hash_original_method = "F26EAC27584EEA69A397CAF64D802897", hash_generated_method = "0D7A2A7100A2E4930B180A3B1FD00C23")
     public String getName(String format, Map<String, String> oidMap) {
-        dsTaint.addTaint(oidMap.dsTaint);
-        dsTaint.addTaint(format);
+        String varB4EAC82CA7396A68D541C85D26508E83_15848550 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1428790483 = null; //Variable for return #2
         String rfc1779Name;
         rfc1779Name = dn.getName(RFC1779);
         String rfc2253Name;
         rfc2253Name = dn.getName(RFC2253);
         {
-            boolean var317C58144C2D356F44C249FF9A422765_910389685 = (format.equalsIgnoreCase("RFC1779"));
+            boolean var317C58144C2D356F44C249FF9A422765_1881776018 = (format.equalsIgnoreCase("RFC1779"));
             {
                 StringBuilder resultName;
                 resultName = new StringBuilder(rfc1779Name);
@@ -269,7 +271,7 @@ public final class X500Principal implements Serializable, Principal {
                 int equalIndex;
                 equalIndex = -1;
                 {
-                    boolean var2C7EED22DB4E70B23D1B5814ECC24A58_1983996063 = (-1 != (equalIndex = resultName.lastIndexOf("=", fromIndex)));
+                    boolean var2C7EED22DB4E70B23D1B5814ECC24A58_1219137964 = (-1 != (equalIndex = resultName.lastIndexOf("=", fromIndex)));
                     {
                         int commaIndex;
                         commaIndex = resultName.lastIndexOf(",", equalIndex);
@@ -277,13 +279,13 @@ public final class X500Principal implements Serializable, Principal {
                         subName = resultName.substring(commaIndex + 1,
                         equalIndex).trim();
                         {
-                            boolean var2F5BE577C6E17AE90AC52170AB09B569_2113991782 = (subName.length() > 4
+                            boolean var2F5BE577C6E17AE90AC52170AB09B569_1409331069 = (subName.length() > 4
                         && subName.substring(0, 4).equals("OID."));
                             {
                                 String subSubName;
                                 subSubName = subName.substring(4);
                                 {
-                                    boolean var166A28986D6012D0BD61EB43E53C6B20_854024577 = (oidMap.containsKey(subSubName));
+                                    boolean var166A28986D6012D0BD61EB43E53C6B20_686486046 = (oidMap.containsKey(subSubName));
                                     {
                                         String replaceName;
                                         replaceName = oidMap.get(subSubName);
@@ -296,10 +298,10 @@ public final class X500Principal implements Serializable, Principal {
                         fromIndex = commaIndex;
                     } //End block
                 } //End collapsed parenthetic
-                String var99962FAA8051C00F007BE7586A77CB22_711931351 = (resultName.toString());
+                varB4EAC82CA7396A68D541C85D26508E83_15848550 = resultName.toString();
             } //End block
             {
-                boolean varFD7A06A215C222B594B904F0CE620625_1376396473 = (format.equalsIgnoreCase("RFC2253"));
+                boolean varFD7A06A215C222B594B904F0CE620625_265702358 = (format.equalsIgnoreCase("RFC2253"));
                 {
                     StringBuilder resultName;
                     resultName = new StringBuilder(rfc2253Name);
@@ -314,7 +316,7 @@ public final class X500Principal implements Serializable, Principal {
                     int subsidyEqualIndex;
                     subsidyEqualIndex = -1;
                     {
-                        boolean var7DE2CCB1FC9DF985FE99CF9F770CA885_337253566 = (-1 != (equalIndex = resultName.lastIndexOf("=", fromIndex)));
+                        boolean var7DE2CCB1FC9DF985FE99CF9F770CA885_348271820 = (-1 != (equalIndex = resultName.lastIndexOf("=", fromIndex)));
                         {
                             subsidyEqualIndex = subsidyName.lastIndexOf("=",
                         subsidyFromIndex);
@@ -324,7 +326,7 @@ public final class X500Principal implements Serializable, Principal {
                             subName = resultName.substring(commaIndex + 1,
                         equalIndex).trim();
                             {
-                                boolean var689293F83B3EB1602CE23B7EB35A0D7D_92833099 = (oidMap.containsKey(subName));
+                                boolean var689293F83B3EB1602CE23B7EB35A0D7D_1589532103 = (oidMap.containsKey(subName));
                                 {
                                     int subOrignalEndIndex;
                                     subOrignalEndIndex = resultName
@@ -345,80 +347,88 @@ public final class X500Principal implements Serializable, Principal {
                             subsidyFromIndex = subsidyEqualIndex - 1;
                         } //End block
                     } //End collapsed parenthetic
-                    String varAE728F0FF478521C4F23B34058A0AE20_1435230103 = (resultName.toString());
+                    varB4EAC82CA7396A68D541C85D26508E83_1428790483 = resultName.toString();
                 } //End block
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("invalid format specified: " + format);
                 } //End block
             } //End collapsed parenthetic
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        addTaint(format.getTaint());
+        addTaint(oidMap.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_735472651; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_735472651 = varB4EAC82CA7396A68D541C85D26508E83_15848550;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_735472651 = varB4EAC82CA7396A68D541C85D26508E83_1428790483;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_735472651.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_735472651;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.213 -0400", hash_original_method = "4EF4800FE4F6884E38EE2C97450FA744", hash_generated_method = "0EFC35E68A5713F4530C537384816F35")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.520 -0400", hash_original_method = "4EF4800FE4F6884E38EE2C97450FA744", hash_generated_method = "EBAA441CA6A95E171445FA01A018A104")
     @Override
     public int hashCode() {
-        int var385DD4FDA480CB6B9347ADFCBE096CAA_1134941323 = (getCanonicalName().hashCode());
-        return dsTaint.getTaintInt();
+        int var385DD4FDA480CB6B9347ADFCBE096CAA_689512251 = (getCanonicalName().hashCode());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1918008494 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1918008494;
         // ---------- Original Method ----------
         //return getCanonicalName().hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.213 -0400", hash_original_method = "FEC69921702EBFC3E3DC123C0BE46430", hash_generated_method = "F1E842A73A46C845ED87521835A4D9B0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.528 -0400", hash_original_method = "FEC69921702EBFC3E3DC123C0BE46430", hash_generated_method = "E6B4560C0B578001A09476CFECA9F3BD")
     @Override
     public String toString() {
-        String varC02F27386B412960420B0837EA1DF6A8_622959452 = (dn.getName(RFC1779));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1837596920 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1837596920 = dn.getName(RFC1779);
+        varB4EAC82CA7396A68D541C85D26508E83_1837596920.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1837596920;
         // ---------- Original Method ----------
         //return dn.getName(RFC1779);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.213 -0400", hash_original_method = "11CA04BE900A069B4C6C484CD5BEB982", hash_generated_method = "C1FF087F5E3D0E68439295583B2065D7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.532 -0400", hash_original_method = "11CA04BE900A069B4C6C484CD5BEB982", hash_generated_method = "0386439EAF585343B117859A12EA3602")
     private void writeObject(ObjectOutputStream out) throws IOException {
-        dsTaint.addTaint(out.dsTaint);
         out.writeObject(dn.getEncoded());
+        addTaint(out.getTaint());
         // ---------- Original Method ----------
         //out.writeObject(dn.getEncoded());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.213 -0400", hash_original_method = "8759D8976B48D4CB6209F3200BF3598B", hash_generated_method = "D7EBA8640D21E950548358926708E13E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.533 -0400", hash_original_method = "8759D8976B48D4CB6209F3200BF3598B", hash_generated_method = "152ACDA71726E5032041ABE752F2EA68")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-        dsTaint.addTaint(in.dsTaint);
         dn = (Name) Name.ASN1.decode((byte[]) in.readObject());
         // ---------- Original Method ----------
         //dn = (Name) Name.ASN1.decode((byte[]) in.readObject());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.214 -0400", hash_original_method = "84EFD5BFB0134499160A2521897988D3", hash_generated_method = "AC47F7A34E1A29F9E8B2BA6404A6CF36")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.533 -0400", hash_original_method = "84EFD5BFB0134499160A2521897988D3", hash_generated_method = "E22FC9C2B89B67248497FA99B504152E")
     private String substituteNameFromMap(String name, Map<String, String> keywordMap) {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(keywordMap.dsTaint);
+        String varB4EAC82CA7396A68D541C85D26508E83_731383518 = null; //Variable for return #1
         StringBuilder sbName;
         sbName = new StringBuilder(name);
         int fromIndex;
         fromIndex = sbName.length();
         int equalIndex;
         {
-            boolean var9971E52280D48DA133734AD4567B4879_171431867 = (-1 != (equalIndex = sbName.lastIndexOf("=", fromIndex)));
+            boolean var9971E52280D48DA133734AD4567B4879_1251926701 = (-1 != (equalIndex = sbName.lastIndexOf("=", fromIndex)));
             {
                 int commaIndex;
                 commaIndex = sbName.lastIndexOf(",", equalIndex);
                 String subName;
                 subName = sbName.substring(commaIndex + 1, equalIndex).trim();
                 {
-                    boolean var9423E14BCBD60669169FA5083F5CAB59_1798087164 = (keywordMap.containsKey(subName));
+                    boolean var9423E14BCBD60669169FA5083F5CAB59_1640226803 = (keywordMap.containsKey(subName));
                     {
                         sbName.replace(commaIndex + 1, equalIndex, keywordMap.get(subName));
                     } //End block
@@ -426,8 +436,11 @@ public final class X500Principal implements Serializable, Principal {
                 fromIndex = commaIndex;
             } //End block
         } //End collapsed parenthetic
-        String var6CB6E669096FD38CED8ED2EE831A4C25_926719761 = (sbName.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_731383518 = sbName.toString();
+        addTaint(name.getTaint());
+        addTaint(keywordMap.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_731383518.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_731383518;
         // ---------- Original Method ----------
         //StringBuilder sbName = new StringBuilder(name);
         //int fromIndex = sbName.length();
@@ -444,9 +457,17 @@ public final class X500Principal implements Serializable, Principal {
     }
 
     
-    private static final long serialVersionUID = -500463348111345721L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.535 -0400", hash_original_field = "8DD0850A45DD8279208B0A47E4970B1B", hash_generated_field = "609908791419F032C748947B5CE55445")
+
+    private static long serialVersionUID = -500463348111345721L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.535 -0400", hash_original_field = "43F9C433C6C27576D56B459CD29942CC", hash_generated_field = "82CE65EBAABC70666F50B8A10883BA7F")
+
     public static final String CANONICAL = "CANONICAL";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.535 -0400", hash_original_field = "E56BCDB17498A8325666AA28E444D830", hash_generated_field = "DBAC8AB28BADF6FBFEEA44C4163EFD9F")
+
     public static final String RFC1779 = "RFC1779";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.535 -0400", hash_original_field = "2A20ED380CA46C19AFB99FB1EE259E06", hash_generated_field = "C120F901C78A5D9CE52D3BC1A7B434D8")
+
     public static final String RFC2253 = "RFC2253";
 }
 

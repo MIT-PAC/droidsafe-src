@@ -15,82 +15,78 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 
 public class StyleSpan extends MetricAffectingSpan implements ParcelableSpan {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.085 -0400", hash_original_field = "16896C9E7463BF6DF9DB6B58257F1327", hash_generated_field = "2C93712457B79293762FFB4C4660914F")
+
     private int mStyle;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.938 -0400", hash_original_method = "CB9EF90D73212D1B02A5528CB9665E4D", hash_generated_method = "82C18918F70D9D1B44399AA4986C6786")
-    @DSModeled(DSC.SAFE)
-    public StyleSpan(int style) {
-        dsTaint.addTaint(style);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.092 -0400", hash_original_method = "CB9EF90D73212D1B02A5528CB9665E4D", hash_generated_method = "20E261DB45592C7A8E2B0565C32D51B3")
+    public  StyleSpan(int style) {
+        mStyle = style;
         // ---------- Original Method ----------
         //mStyle = style;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.938 -0400", hash_original_method = "02AE991FD30EFB3911FE5E70F7128BC4", hash_generated_method = "308712177C161310AA0833EF47160E1D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public StyleSpan(Parcel src) {
-        dsTaint.addTaint(src.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.093 -0400", hash_original_method = "02AE991FD30EFB3911FE5E70F7128BC4", hash_generated_method = "DA3F115CA81C47BA19C70316FB6DD3C3")
+    public  StyleSpan(Parcel src) {
         mStyle = src.readInt();
         // ---------- Original Method ----------
         //mStyle = src.readInt();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.938 -0400", hash_original_method = "C2E273380763004C4C8E32A154731A96", hash_generated_method = "8F1E7EF17C57F6A84BE4CFBFBEC12FBA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.098 -0400", hash_original_method = "C2E273380763004C4C8E32A154731A96", hash_generated_method = "665E051D69DF8F11E751C714810223DE")
     public int getSpanTypeId() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_881282985 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_881282985;
         // ---------- Original Method ----------
         //return TextUtils.STYLE_SPAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.938 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.104 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DEA1BCC349C9B6C7BD9A63F87051479D")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1779956524 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1779956524;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.939 -0400", hash_original_method = "9FF3B3C6BD83D888752F465547E6E91F", hash_generated_method = "F8372E2C6FAE1BAEDFCEBBFC4FB81A67")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.109 -0400", hash_original_method = "9FF3B3C6BD83D888752F465547E6E91F", hash_generated_method = "AEFE324C6D2DD56DF1A0D9A77D7D3A9F")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeInt(mStyle);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeInt(mStyle);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.939 -0400", hash_original_method = "6995AD72D9F4DF103A9CB7EC694D7036", hash_generated_method = "2AB6BE57834CD959EE2F40B95E6B8721")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.109 -0400", hash_original_method = "6995AD72D9F4DF103A9CB7EC694D7036", hash_generated_method = "0BE073D9FB9C5652E1FA9E423CC8C9D4")
     public int getStyle() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1664099542 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1664099542;
         // ---------- Original Method ----------
         //return mStyle;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.939 -0400", hash_original_method = "71A0215A3FEBF509106C7457A8525E21", hash_generated_method = "21A3D114B78225DE9F9785FF01C9C752")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.109 -0400", hash_original_method = "71A0215A3FEBF509106C7457A8525E21", hash_generated_method = "E364188F21EA713099CD2402C631CAF2")
     @Override
     public void updateDrawState(TextPaint ds) {
-        dsTaint.addTaint(ds.dsTaint);
         apply(ds, mStyle);
+        addTaint(ds.getTaint());
         // ---------- Original Method ----------
         //apply(ds, mStyle);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.939 -0400", hash_original_method = "78F275D913B08D5544D3EE3C8B4C4B82", hash_generated_method = "E9435BAFD70E4C5BD6C788E546A2E6C2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.110 -0400", hash_original_method = "78F275D913B08D5544D3EE3C8B4C4B82", hash_generated_method = "CE2E525CD4AB250DB76C4A2C66201128")
     @Override
     public void updateMeasureState(TextPaint paint) {
-        dsTaint.addTaint(paint.dsTaint);
         apply(paint, mStyle);
+        addTaint(paint.getTaint());
         // ---------- Original Method ----------
         //apply(paint, mStyle);
     }

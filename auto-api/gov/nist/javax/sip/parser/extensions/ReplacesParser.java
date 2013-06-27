@@ -14,27 +14,25 @@ import java.text.ParseException;
 
 public class ReplacesParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.743 -0400", hash_original_method = "F53F10172FA8BD8FD32B526A24946E78", hash_generated_method = "29BD8B60C540ABB44CDB9CB99FB62A24")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ReplacesParser(String callID) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.636 -0400", hash_original_method = "F53F10172FA8BD8FD32B526A24946E78", hash_generated_method = "368EEDE79D60B6F140654B7800BA2E08")
+    public  ReplacesParser(String callID) {
         super(callID);
-        dsTaint.addTaint(callID);
+        addTaint(callID.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.743 -0400", hash_original_method = "668CF87BAE793626F7B81C622AF1AD1A", hash_generated_method = "AF3FB0D3008F985E1063B5E4061D546B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected ReplacesParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.636 -0400", hash_original_method = "668CF87BAE793626F7B81C622AF1AD1A", hash_generated_method = "4434B90B2946AD9E5DAAEF47B7AD1FBA")
+    protected  ReplacesParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.743 -0400", hash_original_method = "C779AD4EE203E642C9A6B93773CE1027", hash_generated_method = "8E2A82E4D2CAD735D7D4BD5B50B197D2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.637 -0400", hash_original_method = "C779AD4EE203E642C9A6B93773CE1027", hash_generated_method = "A03316DD01592A289FC7839EAFBD11E1")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_236690038 = null; //Variable for return #1
         dbg_enter("parse");
         try 
         {
@@ -47,12 +45,14 @@ public class ReplacesParser extends ParametersParser {
             this.lexer.SPorHT();
             super.parse(replaces);
             replaces.setCallId(callId);
+            varB4EAC82CA7396A68D541C85D26508E83_236690038 = replaces;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_236690038.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_236690038;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("parse");

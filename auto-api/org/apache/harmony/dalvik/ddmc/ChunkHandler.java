@@ -12,9 +12,8 @@ import java.nio.ByteOrder;
 
 public abstract class ChunkHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.781 -0400", hash_original_method = "0BD4350C5F4AC480382F0B830C677606", hash_generated_method = "85D4A412A038AD8195337BC6AC5AD626")
-    @DSModeled(DSC.SAFE)
-    public ChunkHandler() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.725 -0400", hash_original_method = "0BD4350C5F4AC480382F0B830C677606", hash_generated_method = "85D4A412A038AD8195337BC6AC5AD626")
+    public  ChunkHandler() {
         // ---------- Original Method ----------
     }
 
@@ -85,7 +84,11 @@ public abstract class ChunkHandler {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.740 -0400", hash_original_field = "46A63A0B1FE335CA411CDC37C8B4C323", hash_generated_field = "A2C17307B2D961989393A7361B1B3146")
+
     public static final ByteOrder CHUNK_ORDER = ByteOrder.BIG_ENDIAN;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.740 -0400", hash_original_field = "CF649E15C7ED8616BA88686838F6DD5A", hash_generated_field = "87F77568F8CFE33172C27D380CE00E97")
+
     public static final int CHUNK_FAIL = type("FAIL");
 }
 

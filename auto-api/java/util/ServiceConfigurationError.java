@@ -10,25 +10,25 @@ import java.util.Iterator;
 
 public class ServiceConfigurationError extends Error {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.220 -0400", hash_original_method = "EBAE74DC80F9C6BC38A9630AD570AE77", hash_generated_method = "8166FEB2A7CFBD5A660988010F43ACE2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ServiceConfigurationError(String message) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.022 -0400", hash_original_method = "EBAE74DC80F9C6BC38A9630AD570AE77", hash_generated_method = "B25D0384CA532381692A4EAA5C51AD23")
+    public  ServiceConfigurationError(String message) {
         super(message);
-        dsTaint.addTaint(message);
+        addTaint(message.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.220 -0400", hash_original_method = "29CC4F4897E024335846D9CA60D25833", hash_generated_method = "3554FB338FC4659EA558F86D7499D112")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ServiceConfigurationError(String message, Throwable cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.023 -0400", hash_original_method = "29CC4F4897E024335846D9CA60D25833", hash_generated_method = "9C129F4EAB48AA508D73FE58F0C1122C")
+    public  ServiceConfigurationError(String message, Throwable cause) {
         super(message, cause);
-        dsTaint.addTaint(message);
-        dsTaint.addTaint(cause.dsTaint);
+        addTaint(message.getTaint());
+        addTaint(cause.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = 74132770414881L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.023 -0400", hash_original_field = "723DA869693936CAFD445A5899E84FCF", hash_generated_field = "4DC6F2231FBC7AFE11440713511B2DA6")
+
+    private static long serialVersionUID = 74132770414881L;
 }
 

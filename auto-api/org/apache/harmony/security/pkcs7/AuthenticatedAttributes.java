@@ -13,39 +13,42 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.x501.AttributeTypeAndValue;
 
 final class AuthenticatedAttributes {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.732 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
+
     private byte[] encoding;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.732 -0400", hash_original_field = "6898DC6E12D104D17852F4A4A49EA05A", hash_generated_field = "147A37554AFD2423D8BB55EBBE06C894")
+
     private List<AttributeTypeAndValue> authenticatedAttributes;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.159 -0400", hash_original_method = "56322F0DE2F5B85A8944FA9A9F9F5ADE", hash_generated_method = "7B4B46006311348A83D7DB6329E0DD04")
-    @DSModeled(DSC.SAFE)
-    private AuthenticatedAttributes(byte[] encoding,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.736 -0400", hash_original_method = "56322F0DE2F5B85A8944FA9A9F9F5ADE", hash_generated_method = "160A13FCA6726717A1B9C3D9A09862BE")
+    private  AuthenticatedAttributes(byte[] encoding,
             List<AttributeTypeAndValue> authenticatedAttributes) {
-        dsTaint.addTaint(authenticatedAttributes.dsTaint);
-        dsTaint.addTaint(encoding[0]);
+        this.encoding = encoding;
+        this.authenticatedAttributes = authenticatedAttributes;
         // ---------- Original Method ----------
         //this.encoding = encoding;
         //this.authenticatedAttributes = authenticatedAttributes;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.159 -0400", hash_original_method = "17512B9B260049DCE667B4C278AB32BC", hash_generated_method = "1A8B46DEC5B5530CBBFA237DB29AA786")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.737 -0400", hash_original_method = "17512B9B260049DCE667B4C278AB32BC", hash_generated_method = "B603E08319D267F531C8CAA0B895BC28")
     public List<AttributeTypeAndValue> getAttributes() {
-        return (List<AttributeTypeAndValue>)dsTaint.getTaint();
+        List<AttributeTypeAndValue> varB4EAC82CA7396A68D541C85D26508E83_1929760266 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1929760266 = authenticatedAttributes;
+        varB4EAC82CA7396A68D541C85D26508E83_1929760266.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1929760266;
         // ---------- Original Method ----------
         //return authenticatedAttributes;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.159 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "94FDBB09C313C97C9EDC6BBF307FBE8A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.738 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "FA64DB6AF2969C641DDD00EBC752C61C")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
         } //End block
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_493230333 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_493230333;
         // ---------- Original Method ----------
         //if (encoding == null) {
             //encoding = ASN1.encode(this);
@@ -54,21 +57,14 @@ final class AuthenticatedAttributes {
     }
 
     
-    public static final ASN1SetOf ASN1 = new ASN1SetOf(AttributeTypeAndValue.ASN1) {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.159 -0400", hash_original_method = "5573740F3DACB7D46EB4DD6230978B94", hash_generated_method = "EC73E7361A1991A446A31EE06C09ED35")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        @Override
-        public Object getDecodedObject(BerInputStream in) {
-            dsTaint.addTaint(in.dsTaint);
-            Object var4A8786FBB0ECE2C0AD66FCDF56211D64_1598913324 = (new AuthenticatedAttributes(in.getEncoded(),
-                    (List<AttributeTypeAndValue>) in.content));
-            return (Object)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new AuthenticatedAttributes(in.getEncoded(),
-                    //(List<AttributeTypeAndValue>) in.content);
-        }
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.738 -0400", hash_original_field = "2611A8BAF0FBA182E1D618DBDEE9F51B", hash_generated_field = "F0C53D8DBCC45A640193D6CD74C62FBF")
 
-        
-}; //Transformed anonymous class
+    public static final ASN1SetOf ASN1 =
+        new ASN1SetOf(AttributeTypeAndValue.ASN1) {
+        @Override public Object getDecodedObject(BerInputStream in) {
+            return new AuthenticatedAttributes(in.getEncoded(),
+                    (List<AttributeTypeAndValue>) in.content);
+        }
+    };
 }
 

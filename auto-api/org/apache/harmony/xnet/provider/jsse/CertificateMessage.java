@@ -16,14 +16,15 @@ import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 
 public class CertificateMessage extends Message {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.461 -0400", hash_original_field = "5C99E9C56C11BC780A27097694149CBA", hash_generated_field = "9B4CC3CF13ACA419D4B9B38AD77D3648")
+
     X509Certificate[] certs;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.461 -0400", hash_original_field = "1BADBD8AD1CD27E7BFE9874C7A4827EB", hash_generated_field = "57935D50E807950C7290BDE1C251A925")
+
     byte[][] encoded_certs;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.539 -0400", hash_original_method = "3441A786FC97408CA6232DAAE3F595DF", hash_generated_method = "9E212FAEDB277DBCBE7ECC36DB31D732")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CertificateMessage(HandshakeIODataStream in, int length) throws IOException {
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(in.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.471 -0400", hash_original_method = "3441A786FC97408CA6232DAAE3F595DF", hash_generated_method = "0C618BEB7D70527927D39EA560DD165D")
+    public  CertificateMessage(HandshakeIODataStream in, int length) throws IOException {
         int l;
         l = in.readUint24();
         {
@@ -69,20 +70,21 @@ public class CertificateMessage extends Message {
         {
             fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect CertificateMessage");
         } //End block
+        addTaint(in.getTaint());
+        addTaint(length);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.540 -0400", hash_original_method = "A869E13906426823448DC988F0CB5F8A", hash_generated_method = "88D69C1ACB3EAF600AC5D2AFD50F187D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CertificateMessage(X509Certificate[] certs) {
-        dsTaint.addTaint(certs[0].dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.479 -0400", hash_original_method = "A869E13906426823448DC988F0CB5F8A", hash_generated_method = "1C6B875D377CA6915A3A9D71F0CCE836")
+    public  CertificateMessage(X509Certificate[] certs) {
         {
             this.certs = new X509Certificate[0];
             encoded_certs = new byte[0][0];
             length = 3;
         } //End block
+        this.certs = certs;
         {
             encoded_certs = new byte[certs.length][];
             {
@@ -135,11 +137,9 @@ public class CertificateMessage extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.540 -0400", hash_original_method = "345309F322E0CB3C0BD3B9A37C988F09", hash_generated_method = "510A14FC19332C170075FA5805CD15A0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.484 -0400", hash_original_method = "345309F322E0CB3C0BD3B9A37C988F09", hash_generated_method = "5F82DDABC1316F0102E04CB0ABD4E501")
     @Override
     public void send(HandshakeIODataStream out) {
-        dsTaint.addTaint(out.dsTaint);
         int total_length;
         total_length = 0;
         {
@@ -177,26 +177,28 @@ public class CertificateMessage extends Message {
                 out.write(encoded_certs[i]);
             } //End block
         } //End collapsed parenthetic
+        addTaint(out.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.541 -0400", hash_original_method = "B57A0154C34F76610C0A1E207F806B75", hash_generated_method = "EA44E242DAEDD87266F46C0FFC2F575E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.485 -0400", hash_original_method = "B57A0154C34F76610C0A1E207F806B75", hash_generated_method = "D97DE31AC9EC932B23E0C996FF3E1E66")
     public String getAuthType() {
-        String var2051A9F00BCB268D31B8DADFB8F28858_785834809 = (certs[0].getPublicKey().getAlgorithm());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_710648868 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_710648868 = certs[0].getPublicKey().getAlgorithm();
+        varB4EAC82CA7396A68D541C85D26508E83_710648868.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_710648868;
         // ---------- Original Method ----------
         //return certs[0].getPublicKey().getAlgorithm();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.541 -0400", hash_original_method = "F562E1306C68C131628B54BA54665996", hash_generated_method = "BB33FA91DEA2BC507BBD6297240C799D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.490 -0400", hash_original_method = "F562E1306C68C131628B54BA54665996", hash_generated_method = "6961C2BAD142538826446E49EA59E787")
     @Override
     public int getType() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_412237820 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_412237820;
         // ---------- Original Method ----------
         //return Handshake.CERTIFICATE;
     }

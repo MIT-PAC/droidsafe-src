@@ -9,32 +9,38 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public final class FinalizerReference<T> extends Reference<T> {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.781 -0400", hash_original_field = "0EDA241FC65CCF35D9743309AC395215", hash_generated_field = "F4C159F0B6076ECC1F9CAA1CB201F6E0")
+
     private T zombie;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.781 -0400", hash_original_field = "FCB08B164AC83E09964DEB24F2D2E80B", hash_generated_field = "931A49835AE6DF8D2727A2766B72C4E8")
+
     private FinalizerReference prev;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.781 -0400", hash_original_field = "D0CAB90D8D20D57E2F2B9BE52F7DD25D", hash_generated_field = "0895DC7BB9249EF0B39CCA8400E2652C")
+
     private FinalizerReference next;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.707 -0400", hash_original_method = "794711F8A2A85EA506452F6F39733664", hash_generated_method = "E9D2674FD9EDFF04F073132BAA4A0C01")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public FinalizerReference(T r, ReferenceQueue<? super T> q) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.791 -0400", hash_original_method = "794711F8A2A85EA506452F6F39733664", hash_generated_method = "73CE904CF1B06B9C2B91D70E1BEB41EC")
+    public  FinalizerReference(T r, ReferenceQueue<? super T> q) {
         super(r, q);
-        dsTaint.addTaint(r.dsTaint);
-        dsTaint.addTaint(q.dsTaint);
+        addTaint(r.getTaint());
+        addTaint(q.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.707 -0400", hash_original_method = "832B7710CFA0BEA3E25E81BFE41C7B96", hash_generated_method = "9CE9B27573DEAE2EF965D655347FEBD3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.792 -0400", hash_original_method = "832B7710CFA0BEA3E25E81BFE41C7B96", hash_generated_method = "580110359F36897980B8918346311B24")
     @Override
     public T get() {
-        return (T)dsTaint.getTaint();
+        T varB4EAC82CA7396A68D541C85D26508E83_117347341 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_117347341 = zombie;
+        varB4EAC82CA7396A68D541C85D26508E83_117347341.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_117347341;
         // ---------- Original Method ----------
         //return zombie;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.708 -0400", hash_original_method = "B5E36D5C5E2E18FD73C503842BC207C6", hash_generated_method = "AA79A11271518D347BCB1CB74D552364")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.792 -0400", hash_original_method = "B5E36D5C5E2E18FD73C503842BC207C6", hash_generated_method = "AA79A11271518D347BCB1CB74D552364")
     @Override
     public void clear() {
         zombie = null;
@@ -84,16 +90,18 @@ public final class FinalizerReference<T> extends Reference<T> {
 
     
     private static class Sentinel {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.793 -0400", hash_original_field = "7444D387F44EDE1F73252C1AE20DC826", hash_generated_field = "BBB41717FFD03365F94834C608C18643")
+
         boolean finalized = false;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.708 -0400", hash_original_method = "4488DA5EA3835A576C1BA348BF212030", hash_generated_method = "4488DA5EA3835A576C1BA348BF212030")
-                public Sentinel ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.793 -0400", hash_original_method = "E2AD40226AFB74C4AE2C6FB439A5AA79", hash_generated_method = "E2AD40226AFB74C4AE2C6FB439A5AA79")
+        public Sentinel ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.708 -0400", hash_original_method = "0B77E3D00E3E63F9573A7AA23F424DE4", hash_generated_method = "C853D95507C1B6CBA3AFB545F976D807")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.805 -0400", hash_original_method = "0B77E3D00E3E63F9573A7AA23F424DE4", hash_generated_method = "C853D95507C1B6CBA3AFB545F976D807")
         @Override
         protected synchronized void finalize() throws Throwable {
             finalized = true;
@@ -104,8 +112,7 @@ public final class FinalizerReference<T> extends Reference<T> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.709 -0400", hash_original_method = "A29097CA472383A8F0DF21D7D263FC96", hash_generated_method = "D6E8CB57AB6F46B5CCA224F7EDA538A5")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.808 -0400", hash_original_method = "A29097CA472383A8F0DF21D7D263FC96", hash_generated_method = "D6E8CB57AB6F46B5CCA224F7EDA538A5")
         synchronized void awaitFinalization() throws InterruptedException {
             {
                 wait();
@@ -121,7 +128,11 @@ public final class FinalizerReference<T> extends Reference<T> {
 
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.808 -0400", hash_original_field = "E491E49FF2A29423B3EC90DBE3F3F909", hash_generated_field = "ACA725B85508F4962A184A7170B54E9F")
+
     public static final ReferenceQueue<Object> queue = new ReferenceQueue<Object>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.808 -0400", hash_original_field = "E44CB42EFC4A81D53C78F68458FE60A7", hash_generated_field = "F1FE4453AD6DA8D79B965F88B219654D")
+
     private static FinalizerReference head = null;
 }
 

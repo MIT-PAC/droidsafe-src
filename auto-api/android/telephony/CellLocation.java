@@ -19,9 +19,10 @@ import com.android.internal.telephony.Phone;
 
 public abstract class CellLocation {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.351 -0400", hash_original_method = "623DB351F111CAAADBC7A0AEE07D47FE", hash_generated_method = "623DB351F111CAAADBC7A0AEE07D47FE")
-        public CellLocation ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:34.469 -0400", hash_original_method = "18EEA113758CA529F35B4B776EC100D9", hash_generated_method = "18EEA113758CA529F35B4B776EC100D9")
+    public CellLocation ()
     {
+        //Synthesized constructor
     }
 
 

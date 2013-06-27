@@ -12,22 +12,24 @@ import android.os.Parcelable;
 import java.io.IOException;
 
 public final class TransceiveResult implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.856 -0400", hash_original_field = "313AEF43C06545BCEAC152A1C285EBE1", hash_generated_field = "898029569E5207542E445F1B5791BBF2")
+
     int mResult;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.856 -0400", hash_original_field = "BFFE7E0589B22CE865458FA1B0436BE6", hash_generated_field = "9B327001CAAE073009DBABE5CADFA298")
+
     byte[] mResponseData;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.138 -0400", hash_original_method = "BA3E23EA94CFCB76E8DA5A162A199F9F", hash_generated_method = "76EE348DBFF83AE1130D22221FCF2AC2")
-    @DSModeled(DSC.SAFE)
-    public TransceiveResult(final int result, final byte[] data) {
-        dsTaint.addTaint(result);
-        dsTaint.addTaint(data[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.857 -0400", hash_original_method = "BA3E23EA94CFCB76E8DA5A162A199F9F", hash_generated_method = "52B26C94A414FFC514E277A7C1EC7257")
+    public  TransceiveResult(final int result, final byte[] data) {
+        mResult = result;
+        mResponseData = data;
         // ---------- Original Method ----------
         //mResult = result;
         //mResponseData = data;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.139 -0400", hash_original_method = "B3157A12430DB97B40C44B33A50DEAC2", hash_generated_method = "BE03441B770050F306AF527BAC970C0E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.858 -0400", hash_original_method = "B3157A12430DB97B40C44B33A50DEAC2", hash_generated_method = "9DAB9728BD6DCD8DF834FF7285EC6BF0")
     public byte[] getResponseOrThrow() throws IOException {
         //Begin case RESULT_TAGLOST 
         if (DroidSafeAndroidRuntime.control) throw new TagLostException("Tag was lost.");
@@ -38,9 +40,8 @@ public final class TransceiveResult implements Parcelable {
         //Begin case default 
         if (DroidSafeAndroidRuntime.control) throw new IOException("Transceive failed");
         //End case default 
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1626928349 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1626928349;
         // ---------- Original Method ----------
         //switch (mResult) {
             //case RESULT_SUCCESS:
@@ -55,27 +56,26 @@ public final class TransceiveResult implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.140 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0DB50BC0CCE4711867E95DEC1B2117C7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.858 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "473DFCC6A8DF5BCE393F803262CBE69E")
     @Override
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_979405130 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_979405130;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.140 -0400", hash_original_method = "561D73418397BF7826CB5BA2EBF58A4C", hash_generated_method = "41443339FE119DB2756AF007C8AF900F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.859 -0400", hash_original_method = "561D73418397BF7826CB5BA2EBF58A4C", hash_generated_method = "AE5C41012813B141CADE3CEF7CE376C0")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeInt(mResult);
         {
             dest.writeInt(mResponseData.length);
             dest.writeByteArray(mResponseData);
         } //End block
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeInt(mResult);
         //if (mResult == RESULT_SUCCESS) {
@@ -85,56 +85,41 @@ public final class TransceiveResult implements Parcelable {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.860 -0400", hash_original_field = "7220CC5FE09F8E0AD236B0794719C2B8", hash_generated_field = "93D71095BCD71B4D4475A608C17F7F57")
+
     public static final int RESULT_SUCCESS = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.860 -0400", hash_original_field = "DC58DEC1ADFE5C84D68D0AA62D585476", hash_generated_field = "4FD1539AD317A1A31DD1A35AD83E5BE8")
+
     public static final int RESULT_FAILURE = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.877 -0400", hash_original_field = "BB3496D11307C2AA450314C4DB6739E2", hash_generated_field = "96BC6B774CB901ED0AE4953C2ADCF528")
+
     public static final int RESULT_TAGLOST = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.877 -0400", hash_original_field = "37B6DEDCD47B84C75BAA8DE8677173D4", hash_generated_field = "FAFE791CB93F99512ACDB648AE7425C7")
+
     public static final int RESULT_EXCEEDED_LENGTH = 3;
-    public static final Parcelable.Creator<TransceiveResult> CREATOR = new Parcelable.Creator<TransceiveResult>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.141 -0400", hash_original_method = "BFC8A39F82125AA8B2493EE990788449", hash_generated_method = "B9A27DEF3D20302A686BEA3F267D0055")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.877 -0400", hash_original_field = "FFC0712FDE7CBA72C474F4F97F95AC1D", hash_generated_field = "9C8EC90C6F5B038F4E844B19E185F53B")
+
+    public static final Parcelable.Creator<TransceiveResult> CREATOR =
+            new Parcelable.Creator<TransceiveResult>() {
         @Override
         public TransceiveResult createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            int result;
-            result = in.readInt();
+            int result = in.readInt();
             byte[] responseData;
-            {
-                int responseLength;
-                responseLength = in.readInt();
+
+            if (result == RESULT_SUCCESS) {
+                int responseLength = in.readInt();
                 responseData = new byte[responseLength];
                 in.readByteArray(responseData);
-            } //End block
-            {
+            } else {
                 responseData = null;
-            } //End block
-            TransceiveResult var6B1B7DC4C6EDEFE9BAAE99A8C4F3BC38_157955551 = (new TransceiveResult(result, responseData));
-            return (TransceiveResult)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //int result = in.readInt();
-            //byte[] responseData;
-            //if (result == RESULT_SUCCESS) {
-                //int responseLength = in.readInt();
-                //responseData = new byte[responseLength];
-                //in.readByteArray(responseData);
-            //} else {
-                //responseData = null;
-            //}
-            //return new TransceiveResult(result, responseData);
+            }
+            return new TransceiveResult(result, responseData);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.141 -0400", hash_original_method = "B5998B203B4504A6E25715B8DD72366B", hash_generated_method = "B115C21E503FCC5739BF3E472CAC3112")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public TransceiveResult[] newArray(int size) {
-            dsTaint.addTaint(size);
-            TransceiveResult[] var7F3A8B1762226F3687620F2ED43596DB_1254105496 = (new TransceiveResult[size]);
-            return (TransceiveResult[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new TransceiveResult[size];
+            return new TransceiveResult[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

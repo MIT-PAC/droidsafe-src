@@ -18,17 +18,22 @@ import java.util.List;
 import org.apache.harmony.security.fortress.Engine;
 
 public class CertificateFactory {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.491 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
+
     private Provider provider;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.491 -0400", hash_original_field = "96FF779E0BE718F2D29D8C56320393D2", hash_generated_field = "B931F49514C7C80BDCB99D7936A2923D")
+
     private CertificateFactorySpi spiImpl;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.491 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
+
     private String type;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.638 -0400", hash_original_method = "8F22BB9FD67741B57F6E16F313DC406A", hash_generated_method = "EF2B238CEFA1E4D0EF35D794E1D1775A")
-    @DSModeled(DSC.SAFE)
-    protected CertificateFactory(CertificateFactorySpi certFacSpi,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.491 -0400", hash_original_method = "8F22BB9FD67741B57F6E16F313DC406A", hash_generated_method = "48FF456B73A12C26B39567DE9F0035F0")
+    protected  CertificateFactory(CertificateFactorySpi certFacSpi,
             Provider provider, String type) {
-        dsTaint.addTaint(certFacSpi.dsTaint);
-        dsTaint.addTaint(provider.dsTaint);
-        dsTaint.addTaint(type);
+        this.provider = provider;
+        this.type = type;
+        this.spiImpl = certFacSpi;
         // ---------- Original Method ----------
         //this.provider = provider;
         //this.type = type;
@@ -80,59 +85,66 @@ public class CertificateFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.640 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "828895F1878B3605546159F61AC099C2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.498 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "D89660CFFFDD2B89B20E664861FAE1A0")
     public final Provider getProvider() {
-        return (Provider)dsTaint.getTaint();
+        Provider varB4EAC82CA7396A68D541C85D26508E83_1542246719 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1542246719 = provider;
+        varB4EAC82CA7396A68D541C85D26508E83_1542246719.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1542246719;
         // ---------- Original Method ----------
         //return provider;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.640 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "2AE4CD67D4DDBE32BC864794C06C4464")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.498 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "2E68A0D35CD34CA0EC5AA0C4D94CFD17")
     public final String getType() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_105555841 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_105555841 = type;
+        varB4EAC82CA7396A68D541C85D26508E83_105555841.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_105555841;
         // ---------- Original Method ----------
         //return type;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.640 -0400", hash_original_method = "056686B78E96E8E09F6472D6283D322E", hash_generated_method = "CBA1921CF4D6D689EC0AE5489B9BDACA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.503 -0400", hash_original_method = "056686B78E96E8E09F6472D6283D322E", hash_generated_method = "14624E7089FF31A1CA91FC16D1710599")
     public final Certificate generateCertificate(InputStream inStream) throws CertificateException {
-        dsTaint.addTaint(inStream.dsTaint);
-        Certificate var290A1817FD4922D7D781EDD67ABDDC91_1655891568 = (spiImpl.engineGenerateCertificate(inStream));
-        return (Certificate)dsTaint.getTaint();
+        Certificate varB4EAC82CA7396A68D541C85D26508E83_450412377 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_450412377 = spiImpl.engineGenerateCertificate(inStream);
+        addTaint(inStream.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_450412377.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_450412377;
         // ---------- Original Method ----------
         //return spiImpl.engineGenerateCertificate(inStream);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.640 -0400", hash_original_method = "E0154FCC8B9DF343492D74548A8DABBF", hash_generated_method = "79C3DE434817C20DBAFF86A9DC5C0E4F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.505 -0400", hash_original_method = "E0154FCC8B9DF343492D74548A8DABBF", hash_generated_method = "E79C836F990ECC4003DFBFB053186267")
     public final Iterator<String> getCertPathEncodings() {
-        Iterator<String> var488C09C9180DFC2B89A37E087DE88F3D_1138154824 = (spiImpl.engineGetCertPathEncodings());
-        return (Iterator<String>)dsTaint.getTaint();
+        Iterator<String> varB4EAC82CA7396A68D541C85D26508E83_1039127452 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1039127452 = spiImpl.engineGetCertPathEncodings();
+        varB4EAC82CA7396A68D541C85D26508E83_1039127452.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1039127452;
         // ---------- Original Method ----------
         //return spiImpl.engineGetCertPathEncodings();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.641 -0400", hash_original_method = "3A334BAABFC8F8F07B1C887BAAF7ABEE", hash_generated_method = "831AC3339337393B1B78742B1B5AF549")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.514 -0400", hash_original_method = "3A334BAABFC8F8F07B1C887BAAF7ABEE", hash_generated_method = "C9AD7D1F9D6F205DE7CC361527A63276")
     public final CertPath generateCertPath(InputStream inStream) throws CertificateException {
-        dsTaint.addTaint(inStream.dsTaint);
+        CertPath varB4EAC82CA7396A68D541C85D26508E83_1569912201 = null; //Variable for return #1
         Iterator<String> it;
         it = getCertPathEncodings();
         {
-            boolean varF026B59EDDFD91F5680511797C117EE1_960278177 = (!it.hasNext());
+            boolean varF026B59EDDFD91F5680511797C117EE1_2127777535 = (!it.hasNext());
             {
                 if (DroidSafeAndroidRuntime.control) throw new CertificateException("There are no CertPath encodings");
             } //End block
         } //End collapsed parenthetic
-        CertPath var068C0431712350623F56E31A2F2D5B58_1018818201 = (spiImpl.engineGenerateCertPath(inStream, it.next()));
-        return (CertPath)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1569912201 = spiImpl.engineGenerateCertPath(inStream, it.next());
+        addTaint(inStream.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1569912201.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1569912201;
         // ---------- Original Method ----------
         //Iterator<String> it = getCertPathEncodings();
         //if (!it.hasNext()) {
@@ -142,63 +154,72 @@ public class CertificateFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.641 -0400", hash_original_method = "2B5CC92C0290261B5C7A25A0F691CEF6", hash_generated_method = "AD373DD47ADC892327F0B1881CF4049A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.515 -0400", hash_original_method = "2B5CC92C0290261B5C7A25A0F691CEF6", hash_generated_method = "AAD9AD3E344EA4832699DC08FCC79DD5")
     public final CertPath generateCertPath(InputStream inStream, String encoding) throws CertificateException {
-        dsTaint.addTaint(encoding);
-        dsTaint.addTaint(inStream.dsTaint);
-        CertPath var279C1DB2476042E22950F547D0E6601F_363743434 = (spiImpl.engineGenerateCertPath(inStream, encoding));
-        return (CertPath)dsTaint.getTaint();
+        CertPath varB4EAC82CA7396A68D541C85D26508E83_1981755242 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1981755242 = spiImpl.engineGenerateCertPath(inStream, encoding);
+        addTaint(inStream.getTaint());
+        addTaint(encoding.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1981755242.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1981755242;
         // ---------- Original Method ----------
         //return spiImpl.engineGenerateCertPath(inStream, encoding);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.641 -0400", hash_original_method = "FE6370346FB92E14C140A17484E61066", hash_generated_method = "63CA079BD5FCDC431152D05A8B446F93")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.523 -0400", hash_original_method = "FE6370346FB92E14C140A17484E61066", hash_generated_method = "D996C26D87921008B780321DDEC7FDD3")
     public final CertPath generateCertPath(List<? extends Certificate> certificates) throws CertificateException {
-        dsTaint.addTaint(certificates.dsTaint);
-        CertPath varA89C55C6ED6BCE1EB185FABB0E988F1C_804811984 = (spiImpl.engineGenerateCertPath(certificates));
-        return (CertPath)dsTaint.getTaint();
+        CertPath varB4EAC82CA7396A68D541C85D26508E83_1583786534 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1583786534 = spiImpl.engineGenerateCertPath(certificates);
+        addTaint(certificates.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1583786534.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1583786534;
         // ---------- Original Method ----------
         //return spiImpl.engineGenerateCertPath(certificates);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.641 -0400", hash_original_method = "2C42C184C3EAF19809C332EBF46CD8DC", hash_generated_method = "4082942A6A47101C93E023D8A04FF59C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.524 -0400", hash_original_method = "2C42C184C3EAF19809C332EBF46CD8DC", hash_generated_method = "A906001D82FB2BD3279F475B93883182")
     public final Collection<? extends Certificate> generateCertificates(InputStream inStream) throws CertificateException {
-        dsTaint.addTaint(inStream.dsTaint);
-        Collection<? extends Certificate> varA09CF4ADE489A878BECA75E51ABB3A25_1134903127 = (spiImpl.engineGenerateCertificates(inStream));
-        return (Collection<? extends Certificate>)dsTaint.getTaint();
+        Collection<? extends Certificate> varB4EAC82CA7396A68D541C85D26508E83_1232279292 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1232279292 = spiImpl.engineGenerateCertificates(inStream);
+        addTaint(inStream.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1232279292.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1232279292;
         // ---------- Original Method ----------
         //return spiImpl.engineGenerateCertificates(inStream);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.641 -0400", hash_original_method = "61C041CED79E728E684417F700AE9F1B", hash_generated_method = "A3B15FC0F885F24B1914005D84B8D8EC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.524 -0400", hash_original_method = "61C041CED79E728E684417F700AE9F1B", hash_generated_method = "93109F3F26F8CA09967221DA2718119E")
     public final CRL generateCRL(InputStream inStream) throws CRLException {
-        dsTaint.addTaint(inStream.dsTaint);
-        CRL var3BDB897853814070C31B44E3E4A2AFD8_1255870181 = (spiImpl.engineGenerateCRL(inStream));
-        return (CRL)dsTaint.getTaint();
+        CRL varB4EAC82CA7396A68D541C85D26508E83_1999473536 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1999473536 = spiImpl.engineGenerateCRL(inStream);
+        addTaint(inStream.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1999473536.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1999473536;
         // ---------- Original Method ----------
         //return spiImpl.engineGenerateCRL(inStream);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.642 -0400", hash_original_method = "82C17943BE49A882CA4049864C9D79C5", hash_generated_method = "F18B872C822D695C4E6FEFE3091516DA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.529 -0400", hash_original_method = "82C17943BE49A882CA4049864C9D79C5", hash_generated_method = "12524E7462B665CBA77268B3AA4B2198")
     public final Collection<? extends CRL> generateCRLs(InputStream inStream) throws CRLException {
-        dsTaint.addTaint(inStream.dsTaint);
-        Collection<? extends CRL> var4FEACF81F94DBCB6D0726A9371D59E76_232936510 = (spiImpl.engineGenerateCRLs(inStream));
-        return (Collection<? extends CRL>)dsTaint.getTaint();
+        Collection<? extends CRL> varB4EAC82CA7396A68D541C85D26508E83_1536965769 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1536965769 = spiImpl.engineGenerateCRLs(inStream);
+        addTaint(inStream.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1536965769.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1536965769;
         // ---------- Original Method ----------
         //return spiImpl.engineGenerateCRLs(inStream);
     }
 
     
-    private static final String SERVICE = "CertificateFactory";
-    private static final Engine ENGINE = new Engine(SERVICE);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.529 -0400", hash_original_field = "B841CBE76346F2F1B8808B92FE062632", hash_generated_field = "B69254DA5A911D534D2ADF4BE9FA6F45")
+
+    private static String SERVICE = "CertificateFactory";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.529 -0400", hash_original_field = "48254CA5EA2459783D1EB8D6358A6F88", hash_generated_field = "82D6520D3C45D5046B0A4FDCEDAFF880")
+
+    private static Engine ENGINE = new Engine(SERVICE);
 }
 

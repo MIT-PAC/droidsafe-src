@@ -17,9 +17,10 @@ import android.util.Log;
 
 public final class URLUtil {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:03.807 -0400", hash_original_method = "0350B31F182A8A84D35FA1814385A948", hash_generated_method = "0350B31F182A8A84D35FA1814385A948")
-        public URLUtil ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.857 -0400", hash_original_method = "581EF9FF4A1E1085E3970232802A3705", hash_generated_method = "581EF9FF4A1E1085E3970232802A3705")
+    public URLUtil ()
     {
+        //Synthesized constructor
     }
 
 
@@ -301,13 +302,24 @@ public final class URLUtil {
     }
 
     
-    private static final String LOGTAG = "webkit";
-    static final String ASSET_BASE = "file:///android_asset/";
-    static final String RESOURCE_BASE = "file:///android_res/";
-    static final String FILE_BASE = "file://";
-    static final String PROXY_BASE = "file:///cookieless_proxy/";
-    private static final Pattern CONTENT_DISPOSITION_PATTERN =
-            Pattern.compile("attachment;\\s*filename\\s*=\\s*(\"?)([^\"]*)\\1\\s*$",
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.879 -0400", hash_original_field = "9722F24E24D81405093C0E61AAF58518", hash_generated_field = "E56CE2F3E60B73E43C117C0293F7827E")
+
+    private static String LOGTAG = "webkit";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.879 -0400", hash_original_field = "BACD749C65C027DBF29226FBBB30A932", hash_generated_field = "BB100449F0520BE7D02116CCF9D17A9C")
+
+    static String ASSET_BASE = "file:///android_asset/";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.883 -0400", hash_original_field = "9376DDBC43C10F9E023EFBC3708B397C", hash_generated_field = "B6CA1F8B0AA9671E397677F3AF822C2A")
+
+    static String RESOURCE_BASE = "file:///android_res/";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.883 -0400", hash_original_field = "B7A11B6B0F190799195F07BEE76A8891", hash_generated_field = "4E4E0CFE5CBFE7DFBCDEBC17F14F042C")
+
+    static String FILE_BASE = "file://";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.883 -0400", hash_original_field = "04B24A8C89E94214A450F2E3B193AF72", hash_generated_field = "C15742325AE1D06FA04C0D9FE0899B48")
+
+    static String PROXY_BASE = "file:///cookieless_proxy/";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.883 -0400", hash_original_field = "91C530073C1D8723C9CBBE1EE5BB80A9", hash_generated_field = "66C857337595A59C000E129D27A4D96A")
+
+    private static Pattern CONTENT_DISPOSITION_PATTERN = Pattern.compile("attachment;\\s*filename\\s*=\\s*(\"?)([^\"]*)\\1\\s*$",
             Pattern.CASE_INSENSITIVE);
 }
 

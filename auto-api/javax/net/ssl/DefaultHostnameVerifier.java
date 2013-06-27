@@ -20,17 +20,15 @@ import java.util.Locale;
 
 class DefaultHostnameVerifier implements HostnameVerifier {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.036 -0400", hash_original_method = "4A6F398602E5F38CEFB0B6BC8CB5C447", hash_generated_method = "4A6F398602E5F38CEFB0B6BC8CB5C447")
-        public DefaultHostnameVerifier ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.508 -0400", hash_original_method = "1ABE3FCDF9FB32248BCD2F796A0E487C", hash_generated_method = "1ABE3FCDF9FB32248BCD2F796A0E487C")
+    public DefaultHostnameVerifier ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.039 -0400", hash_original_method = "648595920530E4C54EAA991A797FC9D5", hash_generated_method = "482C718CECAF153187DC2D5C44C3CD8C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.542 -0400", hash_original_method = "648595920530E4C54EAA991A797FC9D5", hash_generated_method = "E2ABE83C512A7378A56CFF828029D754")
     public final boolean verify(String host, SSLSession session) {
-        dsTaint.addTaint(host);
-        dsTaint.addTaint(session.dsTaint);
         Certificate[] certs;
         try 
         {
@@ -45,19 +43,22 @@ class DefaultHostnameVerifier implements HostnameVerifier {
         String firstCn;
         firstCn = getFirstCn(x509);
         {
-            boolean var29EDEFEF2843435DB2D9ED7F0A830B4A_1846113672 = (matches(hostName, firstCn));
+            boolean var29EDEFEF2843435DB2D9ED7F0A830B4A_277749172 = (matches(hostName, firstCn));
         } //End collapsed parenthetic
         {
-            Iterator<String> var85D067CFAE92C30817A3CFD58AF3EDFF_1865852820 = (getDNSSubjectAlts(x509)).iterator();
-            var85D067CFAE92C30817A3CFD58AF3EDFF_1865852820.hasNext();
-            String cn = var85D067CFAE92C30817A3CFD58AF3EDFF_1865852820.next();
+            Iterator<String> var85D067CFAE92C30817A3CFD58AF3EDFF_1087444565 = (getDNSSubjectAlts(x509)).iterator();
+            var85D067CFAE92C30817A3CFD58AF3EDFF_1087444565.hasNext();
+            String cn = var85D067CFAE92C30817A3CFD58AF3EDFF_1087444565.next();
             {
                 {
-                    boolean varAA8A1F5E9B1AFEFBACB19B19015D2736_1719424737 = (matches(hostName, cn));
+                    boolean varAA8A1F5E9B1AFEFBACB19B19015D2736_42030566 = (matches(hostName, cn));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(host.getTaint());
+        addTaint(session.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1924384705 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1924384705;
         // ---------- Original Method ----------
         //Certificate[] certs;
         //try {
@@ -80,27 +81,27 @@ class DefaultHostnameVerifier implements HostnameVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.040 -0400", hash_original_method = "310064F85DB6CB010FFDA9849E47D727", hash_generated_method = "8B855654459BC6CE79BFAC6D28DE69A3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.566 -0400", hash_original_method = "310064F85DB6CB010FFDA9849E47D727", hash_generated_method = "00E492AE0DAB5F0C621635777673C02B")
     private boolean matches(String hostName, String cn) {
-        dsTaint.addTaint(cn);
-        dsTaint.addTaint(hostName);
         cn = cn.toLowerCase(Locale.ENGLISH);
         {
-            boolean varF7D3801EBF5FB948A1E85640EC3BD086_1935721263 = (cn.startsWith("*."));
+            boolean varF7D3801EBF5FB948A1E85640EC3BD086_1592491066 = (cn.startsWith("*."));
             {
                 int matchLength;
                 matchLength = cn.length() - 1;
-                boolean var42068F7156658AC8E7BBA3792503CC9B_1051873752 = (hostName.regionMatches(hostName.length() - matchLength, cn, 1, matchLength)
+                boolean var42068F7156658AC8E7BBA3792503CC9B_686585330 = (hostName.regionMatches(hostName.length() - matchLength, cn, 1, matchLength)
                     && cn.indexOf('.', 2) != -1
                     && acceptableCountryWildcard(cn)
                     && !InetAddress.isNumeric(hostName));
             } //End block
             {
-                boolean varBED26020AD4B547D64FB1356A9AD9C82_975385209 = (hostName.equals(cn));
+                boolean varBED26020AD4B547D64FB1356A9AD9C82_999100528 = (hostName.equals(cn));
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(hostName.getTaint());
+        addTaint(cn.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1254268946 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1254268946;
         // ---------- Original Method ----------
         //if (cn == null) {
             //return false;
@@ -118,15 +119,13 @@ class DefaultHostnameVerifier implements HostnameVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.040 -0400", hash_original_method = "FE150C1B8C346B276109DA6F46173FD5", hash_generated_method = "A0C6A4A1F25B10E952022597E379988F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.598 -0400", hash_original_method = "FE150C1B8C346B276109DA6F46173FD5", hash_generated_method = "4B2BE37A03169513F05BC02B1F38D0FD")
     private boolean acceptableCountryWildcard(String cn) {
-        dsTaint.addTaint(cn);
         int cnLen;
         cnLen = cn.length();
         {
             {
-                boolean var864F55A9DD3A6ABB8C8A48AFBD8437A1_1203155420 = (cn.charAt(cnLen - 3) == '.');
+                boolean var864F55A9DD3A6ABB8C8A48AFBD8437A1_859628155 = (cn.charAt(cnLen - 3) == '.');
                 {
                     String s;
                     s = cn.substring(2, cnLen - 3);
@@ -135,7 +134,9 @@ class DefaultHostnameVerifier implements HostnameVerifier {
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(cn.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1915943256 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1915943256;
         // ---------- Original Method ----------
         //int cnLen = cn.length();
         //if (cnLen >= 7 && cnLen <= 9) {
@@ -149,10 +150,10 @@ class DefaultHostnameVerifier implements HostnameVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.042 -0400", hash_original_method = "6C819E0D5A8E8E96C06210327678F487", hash_generated_method = "79095C49536242ABF55F1C3AE4D06523")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.633 -0400", hash_original_method = "6C819E0D5A8E8E96C06210327678F487", hash_generated_method = "81AEAA106A25F13F7D94304EF9707118")
     private String getFirstCn(X509Certificate cert) {
-        dsTaint.addTaint(cert.dsTaint);
+        String varB4EAC82CA7396A68D541C85D26508E83_433266866 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1778004480 = null; //Variable for return #2
         String subjectPrincipal;
         subjectPrincipal = cert.getSubjectX500Principal().toString();
         {
@@ -161,11 +162,23 @@ class DefaultHostnameVerifier implements HostnameVerifier {
                 int x;
                 x = token.indexOf("CN=");
                 {
-                    String var04D1C201A7E9D77A8AEFED09E3821DEC_1213116522 = (token.substring(x + 3));
+                    varB4EAC82CA7396A68D541C85D26508E83_433266866 = token.substring(x + 3);
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1778004480 = null;
+        addTaint(cert.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_158008251; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_158008251 = varB4EAC82CA7396A68D541C85D26508E83_433266866;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_158008251 = varB4EAC82CA7396A68D541C85D26508E83_1778004480;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_158008251.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_158008251;
         // ---------- Original Method ----------
         //String subjectPrincipal = cert.getSubjectX500Principal().toString();
         //for (String token : subjectPrincipal.split(",")) {
@@ -178,10 +191,11 @@ class DefaultHostnameVerifier implements HostnameVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.043 -0400", hash_original_method = "F40DC2B7DE530D6D3AB694EABABE065F", hash_generated_method = "D51CCADAD5736A876FED4799039116FF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.648 -0400", hash_original_method = "F40DC2B7DE530D6D3AB694EABABE065F", hash_generated_method = "DF26A11FC5F91B2EF0F454C2A1174421")
     private List<String> getDNSSubjectAlts(X509Certificate cert) {
-        dsTaint.addTaint(cert.dsTaint);
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_97294825 = null; //Variable for return #1
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_1590265271 = null; //Variable for return #2
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_1758754085 = null; //Variable for return #3
         Collection<List<?>> subjectAlternativeNames;
         try 
         {
@@ -190,10 +204,10 @@ class DefaultHostnameVerifier implements HostnameVerifier {
         catch (CertificateParsingException cpe)
         {
             System.logI("Error parsing certificate", cpe);
-            List<String> var1F7E6404BCDE565051377D8968B6B9AF_1463573641 = (Collections.emptyList());
+            varB4EAC82CA7396A68D541C85D26508E83_97294825 = Collections.emptyList();
         } //End block
         {
-            List<String> var1F7E6404BCDE565051377D8968B6B9AF_1255446620 = (Collections.emptyList());
+            varB4EAC82CA7396A68D541C85D26508E83_1590265271 = Collections.emptyList();
         } //End block
         List<String> subjectAltList;
         subjectAltList = new ArrayList<String>();
@@ -208,7 +222,22 @@ class DefaultHostnameVerifier implements HostnameVerifier {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        return (List<String>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1758754085 = subjectAltList;
+        addTaint(cert.getTaint());
+        List<String> varA7E53CE21691AB073D9660D615818899_1202502138; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1202502138 = varB4EAC82CA7396A68D541C85D26508E83_97294825;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1202502138 = varB4EAC82CA7396A68D541C85D26508E83_1590265271;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1202502138 = varB4EAC82CA7396A68D541C85D26508E83_1758754085;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1202502138.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1202502138;
         // ---------- Original Method ----------
         //Collection<List<?>> subjectAlternativeNames;
         //try {
@@ -231,9 +260,9 @@ class DefaultHostnameVerifier implements HostnameVerifier {
     }
 
     
-    private static final String[] BAD_COUNTRY_2LDS =
-          { "ac", "co", "com", "ed", "edu", "go", "gouv", "gov", "info",
-            "lg", "ne", "net", "or", "org" };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.649 -0400", hash_original_field = "76B1D705F0ADC634FC0CFCB99B6D9F38", hash_generated_field = "CDC440FB866F8832F4E054010D717632")
+
+    private static String[] BAD_COUNTRY_2LDS = ;
     static {
         Arrays.sort(BAD_COUNTRY_2LDS);
     }

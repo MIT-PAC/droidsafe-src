@@ -12,28 +12,30 @@ import libcore.icu.TimeZones;
 import libcore.util.ZoneInfoDB;
 
 public abstract class TimeZone implements Serializable, Cloneable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.950 -0400", hash_original_field = "B718ADEC73E04CE3EC720DD11A06A308", hash_generated_field = "771D545AF32E3EF0A7656F85E986567C")
+
     private String ID;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.787 -0400", hash_original_method = "9668D4D4A28DB894D48B4297168D73B9", hash_generated_method = "8E92B7E01B365C66B79257355E0DA018")
-    @DSModeled(DSC.SAFE)
-    public TimeZone() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.957 -0400", hash_original_method = "9668D4D4A28DB894D48B4297168D73B9", hash_generated_method = "8E92B7E01B365C66B79257355E0DA018")
+    public  TimeZone() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.787 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "7A1B3C378002819554DCB77D2FE65BB9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.962 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "657E013037F377A3D14051FE1C18AC80")
     @Override
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_1667307797 = null; //Variable for return #1
         try 
         {
-            Object varDEB570B566DA7549E2F197D0AFA5A2B6_1721737482 = (super.clone());
+            varB4EAC82CA7396A68D541C85D26508E83_1667307797 = super.clone();
         } //End block
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
         } //End block
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1667307797.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1667307797;
         // ---------- Original Method ----------
         //try {
             //return super.clone();
@@ -61,45 +63,46 @@ public abstract class TimeZone implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.788 -0400", hash_original_method = "E1D5D6F100BA788FCF57724352534F76", hash_generated_method = "BCF321625C22B9BBF3C077C8CDADF914")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.969 -0400", hash_original_method = "E1D5D6F100BA788FCF57724352534F76", hash_generated_method = "F06A06CE60AB93C0D930D0B479A8F259")
     public final String getDisplayName() {
-        String var127F69A4CE8F9BF22C093B29F518E2B6_859894373 = (getDisplayName(false, LONG, Locale.getDefault()));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1955272185 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1955272185 = getDisplayName(false, LONG, Locale.getDefault());
+        varB4EAC82CA7396A68D541C85D26508E83_1955272185.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1955272185;
         // ---------- Original Method ----------
         //return getDisplayName(false, LONG, Locale.getDefault());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.788 -0400", hash_original_method = "813ED5DCC833F8E276BEA923F4174960", hash_generated_method = "F0F89B90546933395FFDEAFB9D50378C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.969 -0400", hash_original_method = "813ED5DCC833F8E276BEA923F4174960", hash_generated_method = "7C34DFBA63B1F8DDBF2C164E7FF42796")
     public final String getDisplayName(Locale locale) {
-        dsTaint.addTaint(locale.dsTaint);
-        String var050E743F370BFF064FBD2B5F0A0CD97F_359635258 = (getDisplayName(false, LONG, locale));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1431259563 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1431259563 = getDisplayName(false, LONG, locale);
+        addTaint(locale.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1431259563.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1431259563;
         // ---------- Original Method ----------
         //return getDisplayName(false, LONG, locale);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.788 -0400", hash_original_method = "084F77DA9DC739656E2D52FB38C28132", hash_generated_method = "2BC51DD36A344AE2A7F8BD30D2C33243")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.970 -0400", hash_original_method = "084F77DA9DC739656E2D52FB38C28132", hash_generated_method = "F4645EB2E4D6391D140292C2393851A8")
     public final String getDisplayName(boolean daylightTime, int style) {
-        dsTaint.addTaint(daylightTime);
-        dsTaint.addTaint(style);
-        String var5524BF6F6260EF84AC68DDD375B3ADB3_477554570 = (getDisplayName(daylightTime, style, Locale.getDefault()));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2085678328 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2085678328 = getDisplayName(daylightTime, style, Locale.getDefault());
+        addTaint(daylightTime);
+        addTaint(style);
+        varB4EAC82CA7396A68D541C85D26508E83_2085678328.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2085678328;
         // ---------- Original Method ----------
         //return getDisplayName(daylightTime, style, Locale.getDefault());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.789 -0400", hash_original_method = "4F4A34040AF2984EDE789FC8C17113CE", hash_generated_method = "9E27027F48B14E66A19638FFB3D16C00")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.971 -0400", hash_original_method = "4F4A34040AF2984EDE789FC8C17113CE", hash_generated_method = "555B8EA9D2C25D53F263EE1B0EC39A28")
     public String getDisplayName(boolean daylightTime, int style, Locale locale) {
-        dsTaint.addTaint(daylightTime);
-        dsTaint.addTaint(style);
-        dsTaint.addTaint(locale.dsTaint);
+        String varB4EAC82CA7396A68D541C85D26508E83_1874656108 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_748867473 = null; //Variable for return #2
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
@@ -109,6 +112,9 @@ public abstract class TimeZone implements Serializable, Cloneable {
         zoneStrings = TimeZones.getZoneStrings(locale);
         String result;
         result = TimeZones.getDisplayName(zoneStrings, getID(), daylightTime, style);
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1874656108 = result;
+        } //End block
         int offset;
         offset = getRawOffset();
         {
@@ -128,30 +134,42 @@ public abstract class TimeZone implements Serializable, Cloneable {
         appendNumber(builder, 2, offset / 60);
         builder.append(':');
         appendNumber(builder, 2, offset % 60);
-        String var687AAF24B90629C9BFCFE9608FDCE6E7_413171383 = (builder.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_748867473 = builder.toString();
+        addTaint(daylightTime);
+        addTaint(style);
+        addTaint(locale.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_2119360867; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_2119360867 = varB4EAC82CA7396A68D541C85D26508E83_1874656108;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_2119360867 = varB4EAC82CA7396A68D541C85D26508E83_748867473;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_2119360867.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2119360867;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.792 -0400", hash_original_method = "7CED7894325BE9D599DFC54349DF84F9", hash_generated_method = "3B7554BFC89BDE6A572C386453CCBB89")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.971 -0400", hash_original_method = "7CED7894325BE9D599DFC54349DF84F9", hash_generated_method = "DDC710D89EB32817ABFFC3A0D8725EAD")
     private void appendNumber(StringBuilder builder, int count, int value) {
-        dsTaint.addTaint(count);
-        dsTaint.addTaint(value);
-        dsTaint.addTaint(builder.dsTaint);
         String string;
         string = Integer.toString(value);
         {
             int i;
             i = 0;
-            boolean var60F896EAE0FB6F70417007BC6180AE2D_1212810344 = (i < count - string.length());
+            boolean var60F896EAE0FB6F70417007BC6180AE2D_1672016579 = (i < count - string.length());
             {
                 builder.append('0');
             } //End block
         } //End collapsed parenthetic
         builder.append(string);
+        addTaint(builder.getTaint());
+        addTaint(count);
+        addTaint(value);
         // ---------- Original Method ----------
         //String string = Integer.toString(value);
         //for (int i = 0; i < count - string.length(); i++) {
@@ -161,39 +179,41 @@ public abstract class TimeZone implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.793 -0400", hash_original_method = "6351E64C485F9179F5E10C6B44486847", hash_generated_method = "967D0D2173FC07F73DF03E66201BAFD1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.972 -0400", hash_original_method = "6351E64C485F9179F5E10C6B44486847", hash_generated_method = "07331380FA3DCEFDB46F784146A105D7")
     public String getID() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1607683942 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1607683942 = ID;
+        varB4EAC82CA7396A68D541C85D26508E83_1607683942.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1607683942;
         // ---------- Original Method ----------
         //return ID;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.795 -0400", hash_original_method = "88FDDC2A48FC14F19CA7C51175C63814", hash_generated_method = "AA557474B81B4007F6E629A12B4201AF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.972 -0400", hash_original_method = "88FDDC2A48FC14F19CA7C51175C63814", hash_generated_method = "3BD33BB01DC921933D0DC7CA09F96990")
     public int getDSTSavings() {
         {
-            boolean varD465851E9E434204690C9B57B379C53B_206168845 = (useDaylightTime());
+            boolean varD465851E9E434204690C9B57B379C53B_706227077 = (useDaylightTime());
         } //End flattened ternary
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1358371740 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1358371740;
         // ---------- Original Method ----------
         //return useDaylightTime() ? 3600000 : 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.795 -0400", hash_original_method = "C756709CC23E72027C31097576D8FC0B", hash_generated_method = "5EE8CAC35006A1FA7AEB5465BECBA40C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.972 -0400", hash_original_method = "C756709CC23E72027C31097576D8FC0B", hash_generated_method = "72DAB8123FA8B45169213752A57243B0")
     public int getOffset(long time) {
-        dsTaint.addTaint(time);
         {
-            boolean varEABB6925ABADAFBDB9B2FC1A8A73A51F_1401922925 = (inDaylightTime(new Date(time)));
+            boolean varEABB6925ABADAFBDB9B2FC1A8A73A51F_29923732 = (inDaylightTime(new Date(time)));
             {
-                int varAA9C7E238B9438161564979025C6A540_1382785075 = (getRawOffset() + getDSTSavings());
+                int varAA9C7E238B9438161564979025C6A540_185755409 = (getRawOffset() + getDSTSavings());
             } //End block
         } //End collapsed parenthetic
-        int var5AED50E979B76D88BD85212CE8481F16_1557278236 = (getRawOffset());
-        return dsTaint.getTaintInt();
+        int var5AED50E979B76D88BD85212CE8481F16_1641858572 = (getRawOffset());
+        addTaint(time);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1868758757 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1868758757;
         // ---------- Original Method ----------
         //if (inDaylightTime(new Date(time))) {
             //return getRawOffset() + getDSTSavings();
@@ -282,12 +302,12 @@ public abstract class TimeZone implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.796 -0400", hash_original_method = "7F1959D5E252281790218EA5AF7B09B6", hash_generated_method = "A505240EEA93996EA5E95F393155BF54")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.998 -0400", hash_original_method = "7F1959D5E252281790218EA5AF7B09B6", hash_generated_method = "DAF2FD1CA41317534E582737611B8A47")
     public boolean hasSameRules(TimeZone timeZone) {
-        dsTaint.addTaint(timeZone.dsTaint);
-        boolean varC4531B82AE3DA1529D1D05C5D56AD76C_1241407478 = (getRawOffset() == timeZone.getRawOffset());
-        return dsTaint.getTaintBoolean();
+        boolean varC4531B82AE3DA1529D1D05C5D56AD76C_1437061267 = (getRawOffset() == timeZone.getRawOffset());
+        addTaint(timeZone.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1531622374 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1531622374;
         // ---------- Original Method ----------
         //if (timeZone == null) {
             //return false;
@@ -316,13 +336,12 @@ public abstract class TimeZone implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:33.797 -0400", hash_original_method = "085ABCA184084E0387E0912A6F36E37B", hash_generated_method = "2EE4A392962C24205062319448FC1A5C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.999 -0400", hash_original_method = "085ABCA184084E0387E0912A6F36E37B", hash_generated_method = "655105E407ABC601928436ACEC7B62CE")
     public void setID(String id) {
-        dsTaint.addTaint(id);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
+        ID = id;
         // ---------- Original Method ----------
         //if (id == null) {
             //throw new NullPointerException();
@@ -337,10 +356,20 @@ public abstract class TimeZone implements Serializable, Cloneable {
     public abstract boolean useDaylightTime();
 
     
-    private static final long serialVersionUID = 3581463369166924961L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.000 -0400", hash_original_field = "A587EBC60576AE59123FD6EE4ACC1509", hash_generated_field = "6FB3FB67E789BD459E53A6D7000DBE51")
+
+    private static long serialVersionUID = 3581463369166924961L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.000 -0400", hash_original_field = "AB4915390C381EF5996BBC8C05836AF5", hash_generated_field = "F0EC76EF0A1325A66146C39A7A2DD364")
+
     public static final int SHORT = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.000 -0400", hash_original_field = "3BAE48DEAAE333CB107BC1132F4F4146", hash_generated_field = "F5FF9843F59090FE170F992D775343D2")
+
     public static final int LONG = 1;
-    static final TimeZone GMT = new SimpleTimeZone(0, "GMT");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.000 -0400", hash_original_field = "C171914A8DC07BC9CEEB93EBFAE6BC81", hash_generated_field = "A7E4E2EACD9A3E3499E9D3DFDD2AECFA")
+
+    static TimeZone GMT = new SimpleTimeZone(0, "GMT");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.000 -0400", hash_original_field = "D0491A75C542D67DF607F8F1BED6615E", hash_generated_field = "C615B22DCB0D6F7D43244D81DC929B8B")
+
     private static TimeZone defaultTimeZone;
 }
 

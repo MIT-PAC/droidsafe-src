@@ -16,14 +16,19 @@ import java.util.List;
 import static android.telephony.SmsManager.STATUS_ON_ICC_FREE;
 
 public abstract class IccSmsInterfaceManager extends ISms.Stub {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.415 -0400", hash_original_field = "44BC87C3198CFC247427A5305FDEA9BE", hash_generated_field = "C5284483C4CF8ED630A2E2607ED30E12")
+
     protected PhoneBase mPhone;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.415 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
+
     protected Context mContext;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.418 -0400", hash_original_field = "DBF05840F0B51F776B05018389E7959D", hash_generated_field = "AC8E6363A1434BE5D4DA002E7C8CA149")
+
     protected SMSDispatcher mDispatcher;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.440 -0400", hash_original_method = "78E99F4B2BD1DF9D391D1AFBEE29FD49", hash_generated_method = "A1513F2504C9958FC4894D5DA9B321DE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected IccSmsInterfaceManager(PhoneBase phone) {
-        dsTaint.addTaint(phone.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.418 -0400", hash_original_method = "78E99F4B2BD1DF9D391D1AFBEE29FD49", hash_generated_method = "24E2DDD26F72C69DBA3FD42FF9AA575D")
+    protected  IccSmsInterfaceManager(PhoneBase phone) {
+        mPhone = phone;
         mContext = phone.getContext();
         // ---------- Original Method ----------
         //mPhone = phone;
@@ -31,14 +36,13 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.440 -0400", hash_original_method = "D94224C2F430A720CDDDF796E6F87142", hash_generated_method = "9ED274ED83B696AB5FAF8A8B45BAEC17")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.423 -0400", hash_original_method = "D94224C2F430A720CDDDF796E6F87142", hash_generated_method = "AE9AF6E81C49F452E55781C7847130B5")
     protected void enforceReceiveAndSend(String message) {
-        dsTaint.addTaint(message);
         mContext.enforceCallingPermission(
                 "android.permission.RECEIVE_SMS", message);
         mContext.enforceCallingPermission(
                 "android.permission.SEND_SMS", message);
+        addTaint(message.getTaint());
         // ---------- Original Method ----------
         //mContext.enforceCallingPermission(
                 //"android.permission.RECEIVE_SMS", message);
@@ -47,21 +51,14 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.440 -0400", hash_original_method = "2CBD208E09A1050F1D8C833305F8E60D", hash_generated_method = "5A0B608B858548C7795A22E2E24CC7BF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.424 -0400", hash_original_method = "2CBD208E09A1050F1D8C833305F8E60D", hash_generated_method = "98C2A491FA8194112DF5C14FABAB59ED")
     public void sendData(String destAddr, String scAddr, int destPort,
             byte[] data, PendingIntent sentIntent, PendingIntent deliveryIntent) {
-        dsTaint.addTaint(scAddr);
-        dsTaint.addTaint(destAddr);
-        dsTaint.addTaint(sentIntent.dsTaint);
-        dsTaint.addTaint(data[0]);
-        dsTaint.addTaint(destPort);
-        dsTaint.addTaint(deliveryIntent.dsTaint);
         mPhone.getContext().enforceCallingPermission(
                 "android.permission.SEND_SMS",
                 "Sending SMS message");
         {
-            boolean var70BCCE476745B25D958813066B9E6E38_1836731087 = (Log.isLoggable("SMS", Log.VERBOSE));
+            boolean var70BCCE476745B25D958813066B9E6E38_350938144 = (Log.isLoggable("SMS", Log.VERBOSE));
             {
                 log("sendData: destAddr=" + destAddr + " scAddr=" + scAddr + " destPort=" +
                 destPort + " data='"+ HexDump.toHexString(data)  + "' sentIntent=" +
@@ -69,6 +66,12 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
             } //End block
         } //End collapsed parenthetic
         mDispatcher.sendData(destAddr, scAddr, destPort, data, sentIntent, deliveryIntent);
+        addTaint(destAddr.getTaint());
+        addTaint(scAddr.getTaint());
+        addTaint(destPort);
+        addTaint(data[0]);
+        addTaint(sentIntent.getTaint());
+        addTaint(deliveryIntent.getTaint());
         // ---------- Original Method ----------
         //mPhone.getContext().enforceCallingPermission(
                 //"android.permission.SEND_SMS",
@@ -82,20 +85,14 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.441 -0400", hash_original_method = "9F601681CEADDF9DEDCDA3A25A2BC5E0", hash_generated_method = "5E1390613C5C9723D1D2706265473AA0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.431 -0400", hash_original_method = "9F601681CEADDF9DEDCDA3A25A2BC5E0", hash_generated_method = "5F5A18565BD94C06ECB8C19CC49E4AA3")
     public void sendText(String destAddr, String scAddr,
             String text, PendingIntent sentIntent, PendingIntent deliveryIntent) {
-        dsTaint.addTaint(text);
-        dsTaint.addTaint(scAddr);
-        dsTaint.addTaint(destAddr);
-        dsTaint.addTaint(sentIntent.dsTaint);
-        dsTaint.addTaint(deliveryIntent.dsTaint);
         mPhone.getContext().enforceCallingOrSelfPermission(
                 "android.permission.SEND_SMS",
                 "Sending SMS message");
         {
-            boolean var70BCCE476745B25D958813066B9E6E38_2104607650 = (Log.isLoggable("SMS", Log.VERBOSE));
+            boolean var70BCCE476745B25D958813066B9E6E38_1428576333 = (Log.isLoggable("SMS", Log.VERBOSE));
             {
                 log("sendText: destAddr=" + destAddr + " scAddr=" + scAddr +
                 " text='"+ text + "' sentIntent=" +
@@ -103,6 +100,11 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
             } //End block
         } //End collapsed parenthetic
         mDispatcher.sendText(destAddr, scAddr, text, sentIntent, deliveryIntent);
+        addTaint(destAddr.getTaint());
+        addTaint(scAddr.getTaint());
+        addTaint(text.getTaint());
+        addTaint(sentIntent.getTaint());
+        addTaint(deliveryIntent.getTaint());
         // ---------- Original Method ----------
         //mPhone.getContext().enforceCallingOrSelfPermission(
                 //"android.permission.SEND_SMS",
@@ -116,27 +118,21 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.445 -0400", hash_original_method = "D9EE0BE48B3A066597B9F477CD500C6B", hash_generated_method = "D38423018D9BD179460E77DF8A8259EB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.471 -0400", hash_original_method = "D9EE0BE48B3A066597B9F477CD500C6B", hash_generated_method = "D59CBBA6F1A72AF66C4566ED95D5C40E")
     public void sendMultipartText(String destAddr, String scAddr, List<String> parts,
             List<PendingIntent> sentIntents, List<PendingIntent> deliveryIntents) {
-        dsTaint.addTaint(deliveryIntents.dsTaint);
-        dsTaint.addTaint(scAddr);
-        dsTaint.addTaint(destAddr);
-        dsTaint.addTaint(sentIntents.dsTaint);
-        dsTaint.addTaint(parts.dsTaint);
         mPhone.getContext().enforceCallingPermission(
                 "android.permission.SEND_SMS",
                 "Sending SMS message");
         {
-            boolean var70BCCE476745B25D958813066B9E6E38_1161513665 = (Log.isLoggable("SMS", Log.VERBOSE));
+            boolean var70BCCE476745B25D958813066B9E6E38_739805467 = (Log.isLoggable("SMS", Log.VERBOSE));
             {
                 int i;
                 i = 0;
                 {
-                    Iterator<String> var4E9C8AFBA69334251664FB12D52EFE6A_859323851 = (parts).iterator();
-                    var4E9C8AFBA69334251664FB12D52EFE6A_859323851.hasNext();
-                    String part = var4E9C8AFBA69334251664FB12D52EFE6A_859323851.next();
+                    Iterator<String> var4E9C8AFBA69334251664FB12D52EFE6A_309386598 = (parts).iterator();
+                    var4E9C8AFBA69334251664FB12D52EFE6A_309386598.hasNext();
+                    String part = var4E9C8AFBA69334251664FB12D52EFE6A_309386598.next();
                     {
                         log("sendMultipartText: destAddr=" + destAddr + ", srAddr=" + scAddr +
                         ", part[" + (i++) + "]=" + part);
@@ -146,6 +142,11 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
         } //End collapsed parenthetic
         mDispatcher.sendMultipartText(destAddr, scAddr, (ArrayList<String>) parts,
                 (ArrayList<PendingIntent>) sentIntents, (ArrayList<PendingIntent>) deliveryIntents);
+        addTaint(destAddr.getTaint());
+        addTaint(scAddr.getTaint());
+        addTaint(parts.getTaint());
+        addTaint(sentIntents.getTaint());
+        addTaint(deliveryIntents.getTaint());
         // ---------- Original Method ----------
         //mPhone.getContext().enforceCallingPermission(
                 //"android.permission.SEND_SMS",
@@ -162,10 +163,9 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.445 -0400", hash_original_method = "26382ED0E59B10B13781F79838E812B0", hash_generated_method = "D62422899DBDC079B0A33B77185FDC58")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.485 -0400", hash_original_method = "26382ED0E59B10B13781F79838E812B0", hash_generated_method = "B0596CC840CB163AEFB4043F054A633E")
     protected ArrayList<SmsRawData> buildValidRawData(ArrayList<byte[]> messages) {
-        dsTaint.addTaint(messages.dsTaint);
+        ArrayList<SmsRawData> varB4EAC82CA7396A68D541C85D26508E83_1421067034 = null; //Variable for return #1
         int count;
         count = messages.size();
         ArrayList<SmsRawData> ret;
@@ -184,7 +184,10 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        return (ArrayList<SmsRawData>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1421067034 = ret;
+        addTaint(messages.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1421067034.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1421067034;
         // ---------- Original Method ----------
         //int count = messages.size();
         //ArrayList<SmsRawData> ret;
@@ -201,11 +204,8 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.446 -0400", hash_original_method = "D79D646E773875E9B0C4106E95D311F1", hash_generated_method = "646FD13AE7AD764270B2D12E647D9F44")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.486 -0400", hash_original_method = "D79D646E773875E9B0C4106E95D311F1", hash_generated_method = "2BCE503F618E635AFF21BD97702CD499")
     protected byte[] makeSmsRecordData(int status, byte[] pdu) {
-        dsTaint.addTaint(status);
-        dsTaint.addTaint(pdu[0]);
         byte[] data;
         data = new byte[IccConstants.SMS_RECORD_LENGTH];
         data[0] = (byte)(status & 7);
@@ -217,9 +217,10 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
                 data[j] = -1;
             } //End block
         } //End collapsed parenthetic
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        addTaint(status);
+        addTaint(pdu[0]);
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1584893172 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1584893172;
         // ---------- Original Method ----------
         //byte[] data = new byte[IccConstants.SMS_RECORD_LENGTH];
         //data[0] = (byte)(status & 7);

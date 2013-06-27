@@ -12,9 +12,8 @@ import android.os.Parcelable;
 
 public abstract class InputEvent implements Parcelable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.883 -0400", hash_original_method = "5E30BC92EB346FB6C373466BBBDCD9C6", hash_generated_method = "4C32157640739D892888BF135F5DE17B")
-    @DSModeled(DSC.SAFE)
-     InputEvent() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.411 -0400", hash_original_method = "5E30BC92EB346FB6C373466BBBDCD9C6", hash_generated_method = "4C32157640739D892888BF135F5DE17B")
+      InputEvent() {
         // ---------- Original Method ----------
     }
 
@@ -22,11 +21,12 @@ public abstract class InputEvent implements Parcelable {
     public abstract int getDeviceId();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.884 -0400", hash_original_method = "65C564B77C92C924B4A35B510EAEB2C6", hash_generated_method = "128A7EEA70B7517CE95B7ABF3B109734")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.413 -0400", hash_original_method = "65C564B77C92C924B4A35B510EAEB2C6", hash_generated_method = "FF4348AAFFD2075777EABB5D4C132C67")
     public final InputDevice getDevice() {
-        InputDevice var8976E3AEF9BC842E9D5212F39B20D649_875823050 = (InputDevice.getDevice(getDeviceId()));
-        return (InputDevice)dsTaint.getTaint();
+        InputDevice varB4EAC82CA7396A68D541C85D26508E83_793640588 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_793640588 = InputDevice.getDevice(getDeviceId());
+        varB4EAC82CA7396A68D541C85D26508E83_793640588.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_793640588;
         // ---------- Original Method ----------
         //return InputDevice.getDevice(getDeviceId());
     }
@@ -53,57 +53,39 @@ public abstract class InputEvent implements Parcelable {
     public abstract long getEventTimeNano();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.885 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.425 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "CF485D3FBB53A8E75F9C61F9E70AC512")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_338759531 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_338759531;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    protected static final int PARCEL_TOKEN_MOTION_EVENT = 1;
-    protected static final int PARCEL_TOKEN_KEY_EVENT = 2;
-    public static final Parcelable.Creator<InputEvent> CREATOR = new Parcelable.Creator<InputEvent>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.885 -0400", hash_original_method = "1E6CF60294C8C01670FD09697A2C8F1E", hash_generated_method = "752CAF85549C10F8DD62C070F4DD2032")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.426 -0400", hash_original_field = "9FCAD6001E54B39BF7B91756522D50FA", hash_generated_field = "0CC582244B5CFF535AF801E81340AA3C")
+
+    protected static int PARCEL_TOKEN_MOTION_EVENT = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.426 -0400", hash_original_field = "32C6904ED6B2400200DEC29637EE8125", hash_generated_field = "6118031713C089EE76041B40189DC50D")
+
+    protected static int PARCEL_TOKEN_KEY_EVENT = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:47.426 -0400", hash_original_field = "04B291F0A19F70F4DCABF30040F87AB0", hash_generated_field = "DFF9DB35F1A192334CC0B98EE577AF20")
+
+    public static final Parcelable.Creator<InputEvent> CREATOR
+            = new Parcelable.Creator<InputEvent>() {
         public InputEvent createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            int token;
-            token = in.readInt();
-            {
-                InputEvent varF62C4D46AE56930B650DC43D329C3220_990020332 = (KeyEvent.createFromParcelBody(in));
-            } //End block
-            {
-                InputEvent varF54134CFC3F42A3F36017A362089264C_673920123 = (MotionEvent.createFromParcelBody(in));
-            } //End block
-            {
-                if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Unexpected input event type token in parcel.");
-            } //End block
-            return (InputEvent)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //int token = in.readInt();
-            //if (token == PARCEL_TOKEN_KEY_EVENT) {
-                //return KeyEvent.createFromParcelBody(in);
-            //} else if (token == PARCEL_TOKEN_MOTION_EVENT) {
-                //return MotionEvent.createFromParcelBody(in);
-            //} else {
-                //throw new IllegalStateException("Unexpected input event type token in parcel.");
-            //}
+            int token = in.readInt();
+            if (token == PARCEL_TOKEN_KEY_EVENT) {
+                return KeyEvent.createFromParcelBody(in);
+            } else if (token == PARCEL_TOKEN_MOTION_EVENT) {
+                return MotionEvent.createFromParcelBody(in);
+            } else {
+                throw new IllegalStateException("Unexpected input event type token in parcel.");
+            }
         }
-
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.885 -0400", hash_original_method = "7DD87234BD0A6395014BBD1487432510", hash_generated_method = "A894F5E80F3898E780981226253BEF80")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public InputEvent[] newArray(int size) {
-            dsTaint.addTaint(size);
-            InputEvent[] var40E69ABFBCADE6447C6D56F5C150F104_521366124 = (new InputEvent[size]);
-            return (InputEvent[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new InputEvent[size];
+            return new InputEvent[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

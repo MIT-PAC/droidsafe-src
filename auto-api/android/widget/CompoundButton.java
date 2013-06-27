@@ -21,39 +21,45 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
 public abstract class CompoundButton extends Button implements Checkable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.606 -0400", hash_original_field = "B7985199D35C1155A55567C458443B15", hash_generated_field = "5B3EF9355FF9C7031B185F0E3C8A05A3")
+
     private boolean mChecked;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.606 -0400", hash_original_field = "911429B0E8C3F9D379452962885E164A", hash_generated_field = "F7281DF8986A8AAA3358888CEF5418EC")
+
     private int mButtonResource;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.606 -0400", hash_original_field = "CE69191B8D46DC7CD6168E55304ABD24", hash_generated_field = "5933F8BEFDC1D6F561EDC936859AE435")
+
     private boolean mBroadcasting;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.606 -0400", hash_original_field = "7E16EF1021873CBCE6E6FEB6B7F4EB95", hash_generated_field = "504A761B2A37294B367C41E884729E06")
+
     private Drawable mButtonDrawable;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.606 -0400", hash_original_field = "1A92EAC72E569629103256FCA72C7A7E", hash_generated_field = "CADA2218212B45C2541514362AD86DC5")
+
     private OnCheckedChangeListener mOnCheckedChangeListener;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.606 -0400", hash_original_field = "D9409AC53F31501D16A634468204FD89", hash_generated_field = "568693E6FE3597BED062BE1553841524")
+
     private OnCheckedChangeListener mOnCheckedChangeWidgetListener;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.379 -0400", hash_original_method = "09BDBE7CE6F05C0EF8277BC374FA0AC6", hash_generated_method = "41DD20B14896048E3989D9FCCE8BA525")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CompoundButton(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.614 -0400", hash_original_method = "09BDBE7CE6F05C0EF8277BC374FA0AC6", hash_generated_method = "368C048C7070EA937F4D6E8B7BC1059F")
+    public  CompoundButton(Context context) {
         this(context, null);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.379 -0400", hash_original_method = "971C0A1E5EDCDBE9454DEBB4776AC79B", hash_generated_method = "292A9003D8F8249B2E7A7026B58A137B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CompoundButton(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.614 -0400", hash_original_method = "971C0A1E5EDCDBE9454DEBB4776AC79B", hash_generated_method = "49AAC351D56302E5F53F0FA6BA95999D")
+    public  CompoundButton(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.379 -0400", hash_original_method = "486B323903576A8E24B1C8D9A5D1C983", hash_generated_method = "71491528A3CB29DE73917BC83B1E3328")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CompoundButton(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.615 -0400", hash_original_method = "486B323903576A8E24B1C8D9A5D1C983", hash_generated_method = "5A7601D1695437B3B2C221A8E4FDBE0D")
+    public  CompoundButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(defStyle);
-        dsTaint.addTaint(context.dsTaint);
         TypedArray a;
         a = context.obtainStyledAttributes(
                         attrs, com.android.internal.R.styleable.CompoundButton, defStyle, 0);
@@ -67,6 +73,9 @@ public abstract class CompoundButton extends Button implements Checkable {
                 .getBoolean(com.android.internal.R.styleable.CompoundButton_checked, false);
         setChecked(checked);
         a.recycle();
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
+        addTaint(defStyle);
         // ---------- Original Method ----------
         //TypedArray a =
                 //context.obtainStyledAttributes(
@@ -82,8 +91,7 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.379 -0400", hash_original_method = "E1B1AD330E2148117F43C315FF6D1DED", hash_generated_method = "3679ED1F891BEC88079198707411C40A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.615 -0400", hash_original_method = "E1B1AD330E2148117F43C315FF6D1DED", hash_generated_method = "3679ED1F891BEC88079198707411C40A")
     public void toggle() {
         setChecked(!mChecked);
         // ---------- Original Method ----------
@@ -91,34 +99,33 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.380 -0400", hash_original_method = "CF8A2026FDAB35E1C88301DD3EB518FB", hash_generated_method = "47DF0C1DF670B626D55351D0FC2F14A3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.615 -0400", hash_original_method = "CF8A2026FDAB35E1C88301DD3EB518FB", hash_generated_method = "CEF839B3D28CD4D0ECDDA227A4185FA2")
     @Override
     public boolean performClick() {
         toggle();
-        boolean varFDB962A01BB6992CCE0825DD130F7D67_1899186987 = (super.performClick());
-        return dsTaint.getTaintBoolean();
+        boolean varFDB962A01BB6992CCE0825DD130F7D67_912116833 = (super.performClick());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_619774803 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_619774803;
         // ---------- Original Method ----------
         //toggle();
         //return super.performClick();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.380 -0400", hash_original_method = "1057BD246BBC96B40BF6B862055C5AB8", hash_generated_method = "617B031E915555E011BB44555F369867")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.616 -0400", hash_original_method = "1057BD246BBC96B40BF6B862055C5AB8", hash_generated_method = "76C08C4E07B32CFA7790AADBC02E2FF7")
     @ViewDebug.ExportedProperty
     public boolean isChecked() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1791250876 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1791250876;
         // ---------- Original Method ----------
         //return mChecked;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.380 -0400", hash_original_method = "CA54800DCB28AE61300AD40B91914282", hash_generated_method = "2839726629972D407C82C084420DFDAF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.616 -0400", hash_original_method = "CA54800DCB28AE61300AD40B91914282", hash_generated_method = "70C10E8F0DE900426B29F32EDA7E2523")
     public void setChecked(boolean checked) {
-        dsTaint.addTaint(checked);
         {
+            mChecked = checked;
             refreshDrawableState();
             mBroadcasting = true;
             {
@@ -148,28 +155,25 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.380 -0400", hash_original_method = "C2FB0C98D5222F68A09A56AA82371FFE", hash_generated_method = "162D5CD6DD70DC94E38F064351E3D564")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.616 -0400", hash_original_method = "C2FB0C98D5222F68A09A56AA82371FFE", hash_generated_method = "E7A52B8D01F324B4A1B6AA133FD3E1C1")
     public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
-        dsTaint.addTaint(listener.dsTaint);
+        mOnCheckedChangeListener = listener;
         // ---------- Original Method ----------
         //mOnCheckedChangeListener = listener;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.381 -0400", hash_original_method = "CC17A77F98E8CA70C4846D647AA35249", hash_generated_method = "5A2B9BE8B8FF1283C337C8A3CD024509")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.617 -0400", hash_original_method = "CC17A77F98E8CA70C4846D647AA35249", hash_generated_method = "A56A31C0300B93A41C104B6DF066BB90")
      void setOnCheckedChangeWidgetListener(OnCheckedChangeListener listener) {
-        dsTaint.addTaint(listener.dsTaint);
+        mOnCheckedChangeWidgetListener = listener;
         // ---------- Original Method ----------
         //mOnCheckedChangeWidgetListener = listener;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.381 -0400", hash_original_method = "854EF2446DBF034657A969188723C50F", hash_generated_method = "AB22523B1F3D863BC800E98683FD0A7A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.617 -0400", hash_original_method = "854EF2446DBF034657A969188723C50F", hash_generated_method = "21F999BD8B255467959553355F827311")
     public void setButtonDrawable(int resid) {
-        dsTaint.addTaint(resid);
+        mButtonResource = resid;
         Drawable d;
         d = null;
         {
@@ -189,10 +193,8 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.381 -0400", hash_original_method = "82099279959514BCCDE965E8456BDB6A", hash_generated_method = "AE77F82CD91A6453D2E72B97F50C077F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.618 -0400", hash_original_method = "82099279959514BCCDE965E8456BDB6A", hash_generated_method = "636A3ED6AE58129C71B71C3C175EB41F")
     public void setButtonDrawable(Drawable d) {
-        dsTaint.addTaint(d.dsTaint);
         {
             {
                 mButtonDrawable.setCallback(null);
@@ -201,6 +203,7 @@ public abstract class CompoundButton extends Button implements Checkable {
             d.setCallback(this);
             d.setState(getDrawableState());
             d.setVisible(getVisibility() == VISIBLE, false);
+            mButtonDrawable = d;
             mButtonDrawable.setState(null);
             setMinHeight(mButtonDrawable.getIntrinsicHeight());
         } //End block
@@ -222,29 +225,27 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.381 -0400", hash_original_method = "E1DFB2AF73729EA8AA28BE1E77594577", hash_generated_method = "E6ACD88241B33A8DDBF7251DC1B35F77")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.618 -0400", hash_original_method = "E1DFB2AF73729EA8AA28BE1E77594577", hash_generated_method = "C5E84CDB159FDC21AE91720249A51759")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(event.dsTaint);
         super.onInitializeAccessibilityEvent(event);
         event.setChecked(mChecked);
+        addTaint(event.getTaint());
         // ---------- Original Method ----------
         //super.onInitializeAccessibilityEvent(event);
         //event.setChecked(mChecked);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.382 -0400", hash_original_method = "9295691F1B4364B400425405F52CF8A7", hash_generated_method = "74D094CEFB1D6801D5495141841A0B2D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.618 -0400", hash_original_method = "9295691F1B4364B400425405F52CF8A7", hash_generated_method = "E5F7677139F52A01AC2F9D36EBB8FADD")
     @Override
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(info.dsTaint);
         super.onInitializeAccessibilityNodeInfo(info);
         info.setCheckable(true);
         info.setChecked(mChecked);
+        addTaint(info.getTaint());
         // ---------- Original Method ----------
         //super.onInitializeAccessibilityNodeInfo(info);
         //info.setCheckable(true);
@@ -252,12 +253,10 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.382 -0400", hash_original_method = "B5E74BEF46452CACB638287F10D23674", hash_generated_method = "06F3D7D49D6BF3CF948A1598657A651C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.704 -0400", hash_original_method = "B5E74BEF46452CACB638287F10D23674", hash_generated_method = "D5B5B9A8DFFC4E998EF7A58AED6A07E6")
     @Override
     protected void onDraw(Canvas canvas) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(canvas.dsTaint);
         super.onDraw(canvas);
         Drawable buttonDrawable;
         buttonDrawable = mButtonDrawable;
@@ -277,6 +276,7 @@ public abstract class CompoundButton extends Button implements Checkable {
             buttonDrawable.setBounds(0, y, buttonDrawable.getIntrinsicWidth(), y + height);
             buttonDrawable.draw(canvas);
         } //End block
+        addTaint(canvas.getTaint());
         // ---------- Original Method ----------
         //super.onDraw(canvas);
         //final Drawable buttonDrawable = mButtonDrawable;
@@ -298,23 +298,21 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.382 -0400", hash_original_method = "E661308564BAD0BE96E34DA026589671", hash_generated_method = "71E74D47FE0A8812194D6CB1578E52FC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.704 -0400", hash_original_method = "E661308564BAD0BE96E34DA026589671", hash_generated_method = "EC3C555728C2EB0DE3EF8E964C203FB8")
     @Override
     protected int[] onCreateDrawableState(int extraSpace) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(extraSpace);
         int[] drawableState;
         drawableState = super.onCreateDrawableState(extraSpace + 1);
         {
-            boolean varCEC0E711DC0F7C8E920C6F998438D53D_1119623683 = (isChecked());
+            boolean varCEC0E711DC0F7C8E920C6F998438D53D_520688956 = (isChecked());
             {
                 mergeDrawableStates(drawableState, CHECKED_STATE_SET);
             } //End block
         } //End collapsed parenthetic
-        int[] retVal = new int[1];
-        retVal[0] = dsTaint.getTaintInt();
-        return retVal;
+        addTaint(extraSpace);
+        int[] varB4CCCA26F9DB9189C32F33E82D425CFB_676867514 = {getTaintInt()};
+        return varB4CCCA26F9DB9189C32F33E82D425CFB_676867514;
         // ---------- Original Method ----------
         //final int[] drawableState = super.onCreateDrawableState(extraSpace + 1);
         //if (isChecked()) {
@@ -324,8 +322,7 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.383 -0400", hash_original_method = "7BF0D1F93DFA890868347E7C98BCCE2C", hash_generated_method = "CA547362BA13BAE1A4D068330EF152B8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.705 -0400", hash_original_method = "7BF0D1F93DFA890868347E7C98BCCE2C", hash_generated_method = "CA547362BA13BAE1A4D068330EF152B8")
     @Override
     protected void drawableStateChanged() {
         super.drawableStateChanged();
@@ -345,20 +342,19 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.383 -0400", hash_original_method = "63DA0D6846E19577C9E55E51C4E55CAC", hash_generated_method = "7C1FB714BC21F3E633C8464AE3DDE632")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.705 -0400", hash_original_method = "63DA0D6846E19577C9E55E51C4E55CAC", hash_generated_method = "418438FB42038CB0309DCDCCA5F4B5D6")
     @Override
     protected boolean verifyDrawable(Drawable who) {
-        dsTaint.addTaint(who.dsTaint);
-        boolean var8BBEA139816D93F09A5C54F2A2C942A4_737851652 = (super.verifyDrawable(who) || who == mButtonDrawable);
-        return dsTaint.getTaintBoolean();
+        boolean var8BBEA139816D93F09A5C54F2A2C942A4_2049090791 = (super.verifyDrawable(who) || who == mButtonDrawable);
+        addTaint(who.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1209934657 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1209934657;
         // ---------- Original Method ----------
         //return super.verifyDrawable(who) || who == mButtonDrawable;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.383 -0400", hash_original_method = "22D17E2BEF2192B0ED8786E02090A3E8", hash_generated_method = "603085D5CFEF4919B14F420F25110E1E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.706 -0400", hash_original_method = "22D17E2BEF2192B0ED8786E02090A3E8", hash_generated_method = "603085D5CFEF4919B14F420F25110E1E")
     @Override
     public void jumpDrawablesToCurrentState() {
         super.jumpDrawablesToCurrentState();
@@ -369,18 +365,20 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.383 -0400", hash_original_method = "C906A6F68E532E790B1685DD63ECE7DE", hash_generated_method = "F508EB383CD03F3279E58E3A62FF61D6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.719 -0400", hash_original_method = "C906A6F68E532E790B1685DD63ECE7DE", hash_generated_method = "AAFC858E3E3D93A12D9C0709EC6195AF")
     @Override
     public Parcelable onSaveInstanceState() {
         //DSFIXME:  CODE0009: Possible callback target function detected
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_802244072 = null; //Variable for return #1
         setFreezesText(true);
         Parcelable superState;
         superState = super.onSaveInstanceState();
         SavedState ss;
         ss = new SavedState(superState);
         ss.checked = isChecked();
-        return (Parcelable)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_802244072 = ss;
+        varB4EAC82CA7396A68D541C85D26508E83_802244072.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_802244072;
         // ---------- Original Method ----------
         //setFreezesText(true);
         //Parcelable superState = super.onSaveInstanceState();
@@ -390,17 +388,16 @@ public abstract class CompoundButton extends Button implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.384 -0400", hash_original_method = "82857D3CD54F7EB52721411B0B0DD538", hash_generated_method = "FA30504C9763782448206F7D635025AB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.720 -0400", hash_original_method = "82857D3CD54F7EB52721411B0B0DD538", hash_generated_method = "BA39E0C2B16547FED4F38247351E91F3")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(state.dsTaint);
         SavedState ss;
         ss = (SavedState) state;
         super.onRestoreInstanceState(ss.getSuperState());
         setChecked(ss.checked);
         requestLayout();
+        addTaint(state.getTaint());
         // ---------- Original Method ----------
         //SavedState ss = (SavedState) state;
         //super.onRestoreInstanceState(ss.getSuperState());
@@ -410,50 +407,49 @@ public abstract class CompoundButton extends Button implements Checkable {
 
     
     static class SavedState extends BaseSavedState {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.720 -0400", hash_original_field = "3793EA52A7BE2D7DEAFD858FDA50775C", hash_generated_field = "6F0D05495423C9405B09D32CCA18EA7F")
+
         boolean checked;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.384 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "AB6E14E26999AC4D7AF1972CF22F65E4")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         SavedState(Parcelable superState) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.720 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "3F4F70129FCB46E4AE0D334AE4D70CF6")
+          SavedState(Parcelable superState) {
             super(superState);
-            dsTaint.addTaint(superState.dsTaint);
+            addTaint(superState.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.384 -0400", hash_original_method = "527F999E441AD9A28BC136B181E8236B", hash_generated_method = "3382FC357BEDFEDDAE5B611EF4BCA50D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        private SavedState(Parcel in) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.721 -0400", hash_original_method = "527F999E441AD9A28BC136B181E8236B", hash_generated_method = "D51BA829018FE61D140FB0956773F5A3")
+        private  SavedState(Parcel in) {
             super(in);
-            dsTaint.addTaint(in.dsTaint);
             checked = (Boolean)in.readValue(null);
             // ---------- Original Method ----------
             //checked = (Boolean)in.readValue(null);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.384 -0400", hash_original_method = "42336FB9BEBA29D5024EB2A7DFCC6545", hash_generated_method = "2ADB320BC55B6074F8255C537B588506")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.721 -0400", hash_original_method = "42336FB9BEBA29D5024EB2A7DFCC6545", hash_generated_method = "0A4A73E3117FC7A7EE15B410D409C48D")
         @Override
         public void writeToParcel(Parcel out, int flags) {
-            dsTaint.addTaint(flags);
-            dsTaint.addTaint(out.dsTaint);
             super.writeToParcel(out, flags);
             out.writeValue(checked);
+            addTaint(out.getTaint());
+            addTaint(flags);
             // ---------- Original Method ----------
             //super.writeToParcel(out, flags);
             //out.writeValue(checked);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.385 -0400", hash_original_method = "F6EC4DB06CBAC48467361A043CC860D0", hash_generated_method = "7AC616253F172DC56DBB2C79B5737177")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.736 -0400", hash_original_method = "F6EC4DB06CBAC48467361A043CC860D0", hash_generated_method = "17325E39E72E49EE1C229BF5EA39B0D9")
         @Override
         public String toString() {
-            String varD5C1D90283B549415C90083C4A907E37_2073810381 = ("CompoundButton.SavedState{"
+            String varB4EAC82CA7396A68D541C85D26508E83_1461094819 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1461094819 = "CompoundButton.SavedState{"
                     + Integer.toHexString(System.identityHashCode(this))
-                    + " checked=" + checked + "}");
-            return dsTaint.getTaintString();
+                    + " checked=" + checked + "}";
+            varB4EAC82CA7396A68D541C85D26508E83_1461094819.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1461094819;
             // ---------- Original Method ----------
             //return "CompoundButton.SavedState{"
                     //+ Integer.toHexString(System.identityHashCode(this))
@@ -461,30 +457,18 @@ public abstract class CompoundButton extends Button implements Checkable {
         }
 
         
-        public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<SavedState>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.385 -0400", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "E0B7CDDEF4A88D123C122A6FE2B3F957")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.737 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
+
+        public static final Parcelable.Creator<SavedState> CREATOR
+                = new Parcelable.Creator<SavedState>() {
             public SavedState createFromParcel(Parcel in) {
-                dsTaint.addTaint(in.dsTaint);
-                SavedState var41ED8F3548F5060881BBE51AB9112A3F_83214606 = (new SavedState(in));
-                return (SavedState)dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new SavedState(in);
+                return new SavedState(in);
             }
 
-            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.385 -0400", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "AA0B8CE8511C3DD6D5E1A595B5605339")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
             public SavedState[] newArray(int size) {
-                dsTaint.addTaint(size);
-                SavedState[] varB5C72E5BBB181D4CA93D7BAA0B8B5E3D_1733736777 = (new SavedState[size]);
-                return (SavedState[])dsTaint.getTaint();
-                // ---------- Original Method ----------
-                //return new SavedState[size];
+                return new SavedState[size];
             }
-
-            
-}; //Transformed anonymous class
+        };
     }
 
 
@@ -494,8 +478,8 @@ public abstract class CompoundButton extends Button implements Checkable {
         void onCheckedChanged(CompoundButton buttonView, boolean isChecked);
     }
     
-    private static final int[] CHECKED_STATE_SET = {
-        R.attr.state_checked
-    };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.737 -0400", hash_original_field = "312B7CC8C1FC8133C5B1FE8103106614", hash_generated_field = "1BE754A3D76CBF6C6D9CFEED6B3E0D55")
+
+    private static int[] CHECKED_STATE_SET = ;
 }
 

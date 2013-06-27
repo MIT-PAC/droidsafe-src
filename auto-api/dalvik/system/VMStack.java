@@ -10,9 +10,10 @@ import java.util.Iterator;
 
 public final class VMStack {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.301 -0400", hash_original_method = "B578E03A50A9A42FA38BED0735EDE6FE", hash_generated_method = "B578E03A50A9A42FA38BED0735EDE6FE")
-        public VMStack ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.051 -0400", hash_original_method = "48F2A5F5D0FB61BCDEE57F0E62DA7F3A", hash_generated_method = "48F2A5F5D0FB61BCDEE57F0E62DA7F3A")
+    public VMStack ()
     {
+        //Synthesized constructor
     }
 
 

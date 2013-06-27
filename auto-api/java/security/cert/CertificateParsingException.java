@@ -10,41 +10,39 @@ import java.util.Iterator;
 
 public class CertificateParsingException extends CertificateException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.647 -0400", hash_original_method = "52C1CA38DD038BC33FD4ADF2F8CE17BE", hash_generated_method = "88C95C840E0A23A3217C3384B3ACA72B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CertificateParsingException(String msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.516 -0400", hash_original_method = "52C1CA38DD038BC33FD4ADF2F8CE17BE", hash_generated_method = "7D00B39D2745C634B4988C0485121EF5")
+    public  CertificateParsingException(String msg) {
         super(msg);
-        dsTaint.addTaint(msg);
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.647 -0400", hash_original_method = "8DA8B534EA167A5C50442E9F25486020", hash_generated_method = "B20A17E5EA8D79E40D983186BAEA27C7")
-    @DSModeled(DSC.SAFE)
-    public CertificateParsingException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.516 -0400", hash_original_method = "8DA8B534EA167A5C50442E9F25486020", hash_generated_method = "B20A17E5EA8D79E40D983186BAEA27C7")
+    public  CertificateParsingException() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.647 -0400", hash_original_method = "7DFD64EF17D16B3CA905ED3004EA7773", hash_generated_method = "48590C7772CA9F32777F6F6B57BBA75C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CertificateParsingException(String message, Throwable cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.516 -0400", hash_original_method = "7DFD64EF17D16B3CA905ED3004EA7773", hash_generated_method = "B500AB5363634F4B2A7699F42B73D581")
+    public  CertificateParsingException(String message, Throwable cause) {
         super(message, cause);
-        dsTaint.addTaint(message);
-        dsTaint.addTaint(cause.dsTaint);
+        addTaint(message.getTaint());
+        addTaint(cause.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.647 -0400", hash_original_method = "655AB0A50E551680E7DF5C232C5D908E", hash_generated_method = "0B84534E64F4D8D7AC3D61B2807FA5A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CertificateParsingException(Throwable cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.516 -0400", hash_original_method = "655AB0A50E551680E7DF5C232C5D908E", hash_generated_method = "ADE038C680AFEC87C884763142874BA2")
+    public  CertificateParsingException(Throwable cause) {
         super(cause);
-        dsTaint.addTaint(cause.dsTaint);
+        addTaint(cause.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = -7989222416793322029L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.517 -0400", hash_original_field = "DD366147DF16CFCE91DD1289251E3597", hash_generated_field = "20F5CBC320130610E1F71F94C7440F52")
+
+    private static long serialVersionUID = -7989222416793322029L;
 }
 

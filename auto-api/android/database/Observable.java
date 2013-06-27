@@ -10,31 +10,33 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 public abstract class Observable<T> {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.665 -0400", hash_original_field = "4568676A708AC893FC758A70E573C153", hash_generated_field = "C42053F6BE4C24F1A28BE5E5A9547CA9")
+
     protected ArrayList<T> mObservers = new ArrayList<T>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.208 -0400", hash_original_method = "5E773864FBF02F62D708D93F9DBCDF62", hash_generated_method = "5E773864FBF02F62D708D93F9DBCDF62")
-        public Observable ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.666 -0400", hash_original_method = "70464F2D6E4F3B59517C778B3B1A93D5", hash_generated_method = "70464F2D6E4F3B59517C778B3B1A93D5")
+    public Observable ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.208 -0400", hash_original_method = "E1D85670162EF30644779B34B74FE79F", hash_generated_method = "60DF4334AB32F1FD21CD8CB763935615")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.667 -0400", hash_original_method = "E1D85670162EF30644779B34B74FE79F", hash_generated_method = "1DDBDABFB61F81A05CCCBDDDFDC35983")
     public void registerObserver(T observer) {
         //DSFIXME: CODE0010: Possible callback registration function detected
-        dsTaint.addTaint(observer.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The observer is null.");
         } //End block
         {
             {
-                boolean varB1C365CA1474DBF7A76FDBEB30F97622_86801711 = (mObservers.contains(observer));
+                boolean varB1C365CA1474DBF7A76FDBEB30F97622_1514960473 = (mObservers.contains(observer));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Observer " + observer + " is already registered.");
                 } //End block
             } //End collapsed parenthetic
             mObservers.add(observer);
         } //End block
+        addTaint(observer.getTaint());
         // ---------- Original Method ----------
         //if (observer == null) {
             //throw new IllegalArgumentException("The observer is null.");
@@ -48,10 +50,8 @@ public abstract class Observable<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.209 -0400", hash_original_method = "5FAF0F37EA51171D6350539680C2708B", hash_generated_method = "8DFFD96CD2E81A77244F6D5C81A77C67")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.668 -0400", hash_original_method = "5FAF0F37EA51171D6350539680C2708B", hash_generated_method = "29F6312CD04289030E426AD2D4979805")
     public void unregisterObserver(T observer) {
-        dsTaint.addTaint(observer.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The observer is null.");
         } //End block
@@ -63,6 +63,7 @@ public abstract class Observable<T> {
             } //End block
             mObservers.remove(index);
         } //End block
+        addTaint(observer.getTaint());
         // ---------- Original Method ----------
         //if (observer == null) {
             //throw new IllegalArgumentException("The observer is null.");
@@ -77,8 +78,7 @@ public abstract class Observable<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.209 -0400", hash_original_method = "68DB825828DE5D87C3617DBC5932D86C", hash_generated_method = "15DCF18EAD87632038A03531805C5E0F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.690 -0400", hash_original_method = "68DB825828DE5D87C3617DBC5932D86C", hash_generated_method = "15DCF18EAD87632038A03531805C5E0F")
     public void unregisterAll() {
         {
             mObservers.clear();

@@ -16,27 +16,25 @@ import java.text.ParseException;
 
 public class AlertInfoParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.228 -0400", hash_original_method = "D981F7025F52BA8E1CEDC583E21B710C", hash_generated_method = "D8020D0DE98BA046F7FF2558402C47F6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AlertInfoParser(String alertInfo) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.320 -0400", hash_original_method = "D981F7025F52BA8E1CEDC583E21B710C", hash_generated_method = "41BACA132BB4D5A2EA759A0E45FC23E8")
+    public  AlertInfoParser(String alertInfo) {
         super(alertInfo);
-        dsTaint.addTaint(alertInfo);
+        addTaint(alertInfo.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.228 -0400", hash_original_method = "FBB9329DBFDB9634284D1CD105BFF940", hash_generated_method = "225393D2F1DAD5C4AA811F50B313DD06")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected AlertInfoParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.320 -0400", hash_original_method = "FBB9329DBFDB9634284D1CD105BFF940", hash_generated_method = "FD6C3DC5F66F572DD8205BD78C09C230")
+    protected  AlertInfoParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.229 -0400", hash_original_method = "01178CDB4B591AEEFEAB9C463FFB7ADD", hash_generated_method = "04F92FD32646FB07947023E9A36C6FE3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.321 -0400", hash_original_method = "01178CDB4B591AEEFEAB9C463FFB7ADD", hash_generated_method = "C3E3E332E2805A084E04F70585B60592")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1892146544 = null; //Variable for return #1
         dbg_enter("AlertInfoParser.parse");
         AlertInfoList list;
         list = new AlertInfoList();
@@ -44,7 +42,7 @@ public class AlertInfoParser extends ParametersParser {
         {
             headerName(TokenTypes.ALERT_INFO);
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_918729206 = (lexer.lookAhead(0) != '\n');
+                boolean varA38820C66B6BCE71087D920E2767FF09_1999881917 = (lexer.lookAhead(0) != '\n');
                 {
                     AlertInfo alertInfo;
                     alertInfo = new AlertInfo();
@@ -54,7 +52,7 @@ public class AlertInfoParser extends ParametersParser {
                     {
                         this.lexer.SPorHT();
                         {
-                            boolean varE004C7CB8B05EEA814FA2754FBC458B9_1718964791 = (this.lexer.lookAhead(0) == '<');
+                            boolean varE004C7CB8B05EEA814FA2754FBC458B9_536240588 = (this.lexer.lookAhead(0) == '<');
                             {
                                 this.lexer.match('<');
                                 urlParser = new URLParser((Lexer) this.lexer);
@@ -72,7 +70,7 @@ public class AlertInfoParser extends ParametersParser {
                         super.parse(alertInfo);
                         list.add(alertInfo);
                         {
-                            boolean var9AE54EB6EBAEA27AE99856C2C81EF714_1598851220 = (lexer.lookAhead(0) == ',');
+                            boolean var9AE54EB6EBAEA27AE99856C2C81EF714_517605798 = (lexer.lookAhead(0) == ',');
                             {
                                 this.lexer.match(',');
                             } //End block
@@ -80,12 +78,14 @@ public class AlertInfoParser extends ParametersParser {
                     } //End block
                 } //End block
             } //End collapsed parenthetic
+            varB4EAC82CA7396A68D541C85D26508E83_1892146544 = list;
         } //End block
         finally 
         {
             dbg_leave("AlertInfoParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1892146544.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1892146544;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

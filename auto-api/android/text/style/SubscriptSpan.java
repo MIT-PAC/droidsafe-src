@@ -14,65 +14,60 @@ import android.text.TextUtils;
 
 public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.940 -0400", hash_original_method = "416865739F2C1ABBE61451113480FAB4", hash_generated_method = "431381B5FAFD384F6FEF99A75F935F86")
-    @DSModeled(DSC.SAFE)
-    public SubscriptSpan() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.032 -0400", hash_original_method = "416865739F2C1ABBE61451113480FAB4", hash_generated_method = "431381B5FAFD384F6FEF99A75F935F86")
+    public  SubscriptSpan() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.941 -0400", hash_original_method = "71E3921D1341E00E4D27F607004C29AC", hash_generated_method = "20D6B1D3E3020D1CC174B660AC5F5F2D")
-    @DSModeled(DSC.SAFE)
-    public SubscriptSpan(Parcel src) {
-        dsTaint.addTaint(src.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.032 -0400", hash_original_method = "71E3921D1341E00E4D27F607004C29AC", hash_generated_method = "E3F85E1D6FA0CC2C53BEF83804B496BD")
+    public  SubscriptSpan(Parcel src) {
+        addTaint(src.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.941 -0400", hash_original_method = "CB8400634E0A005DFA226D39FFA147D9", hash_generated_method = "BAB6E9CC52219FBAE72B51D544B60AB0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.039 -0400", hash_original_method = "CB8400634E0A005DFA226D39FFA147D9", hash_generated_method = "B8465D3A7E4FF2761B61FA9401402A65")
     public int getSpanTypeId() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471817941 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471817941;
         // ---------- Original Method ----------
         //return TextUtils.SUBSCRIPT_SPAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.941 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.040 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A2A52AC3B3919412C04ABE486AA4F29D")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295357790 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295357790;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.941 -0400", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "5AF02C39344A4D99F1196D802145D467")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.051 -0400", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "E7DBC20584A55C26974D54383A48E9F7")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.941 -0400", hash_original_method = "9DCCA482100D1E9EC8F2615F051D6490", hash_generated_method = "853ADD9BEB83A7A3DF440814D19BC89E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.051 -0400", hash_original_method = "9DCCA482100D1E9EC8F2615F051D6490", hash_generated_method = "D1E1706279C9F8A9EF8CDDF2CF68D55C")
     @Override
     public void updateDrawState(TextPaint tp) {
-        dsTaint.addTaint(tp.dsTaint);
         tp.baselineShift -= (int) (tp.ascent() / 2);
+        addTaint(tp.getTaint());
         // ---------- Original Method ----------
         //tp.baselineShift -= (int) (tp.ascent() / 2);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.942 -0400", hash_original_method = "7DFDD8213FBD02BEC2253684A70AD5F4", hash_generated_method = "02729D01CDAB52E17A8402E6647E7938")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.052 -0400", hash_original_method = "7DFDD8213FBD02BEC2253684A70AD5F4", hash_generated_method = "1A8037C31851F13711CF3284149B246F")
     @Override
     public void updateMeasureState(TextPaint tp) {
-        dsTaint.addTaint(tp.dsTaint);
         tp.baselineShift -= (int) (tp.ascent() / 2);
+        addTaint(tp.getTaint());
         // ---------- Original Method ----------
         //tp.baselineShift -= (int) (tp.ascent() / 2);
     }

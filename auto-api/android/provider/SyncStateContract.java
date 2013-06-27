@@ -19,19 +19,23 @@ import android.util.Pair;
 
 public class SyncStateContract {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.008 -0400", hash_original_method = "B24E0234ACB6CF872DFA47329BAAF4B6", hash_generated_method = "B24E0234ACB6CF872DFA47329BAAF4B6")
-        public SyncStateContract ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.307 -0400", hash_original_method = "57D9D9CBA9A7CAF29AF0EFFDD8322E47", hash_generated_method = "57D9D9CBA9A7CAF29AF0EFFDD8322E47")
+    public SyncStateContract ()
     {
+        //Synthesized constructor
     }
 
 
     public static class Constants implements Columns {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.008 -0400", hash_original_method = "404BF387A93CDF279F9DC8890EE31A59", hash_generated_method = "404BF387A93CDF279F9DC8890EE31A59")
-                public Constants ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.308 -0400", hash_original_method = "E59499DF9DD0978456F50DA5893CC8F6", hash_generated_method = "E59499DF9DD0978456F50DA5893CC8F6")
+        public Constants ()
         {
+            //Synthesized constructor
         }
 
+
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.308 -0400", hash_original_field = "A3998A2226F391887143F6182498BE88", hash_generated_field = "FA8A31E4C831AAEF706E8EC3EE0F6F62")
 
         public static final String CONTENT_DIRECTORY = "syncstate";
     }
@@ -40,9 +44,10 @@ public class SyncStateContract {
     
     public static final class Helpers {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.008 -0400", hash_original_method = "25F5BA4AE912F3F3CD855478D073B471", hash_generated_method = "25F5BA4AE912F3F3CD855478D073B471")
-                public Helpers ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.309 -0400", hash_original_method = "9749A8A424C5761B245394E68B42F39B", hash_generated_method = "9749A8A424C5761B245394E68B42F39B")
+        public Helpers ()
         {
+            //Synthesized constructor
         }
 
 
@@ -134,9 +139,12 @@ public class SyncStateContract {
         }
 
         
-        private static final String[] DATA_PROJECTION = new String[]{Columns.DATA, Columns._ID};
-        private static final String SELECT_BY_ACCOUNT =
-                Columns.ACCOUNT_NAME + "=? AND " + Columns.ACCOUNT_TYPE + "=?";
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.319 -0400", hash_original_field = "67466F5088A2454BA84DE190FF255DB2", hash_generated_field = "346ABB56BC9E9FFF53C1FC26D2C48BBA")
+
+        private static String[] DATA_PROJECTION = new String[]{Columns.DATA, Columns._ID};
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:29.320 -0400", hash_original_field = "B50704C91C2FA0071A2DE9645CF6C0F4", hash_generated_field = "A03C5DF2B4AC30F64BB3B8E8D79D6A22")
+
+        private static String SELECT_BY_ACCOUNT = Columns.ACCOUNT_NAME + "=? AND " + Columns.ACCOUNT_TYPE + "=?";
     }
 
 

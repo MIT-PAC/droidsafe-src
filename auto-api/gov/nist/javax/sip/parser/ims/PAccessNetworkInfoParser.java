@@ -20,27 +20,25 @@ import gov.nist.javax.sip.parser.TokenTypes;
 
 public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.749 -0400", hash_original_method = "6DB4AD794C60B8862A83AFB0C9C82A92", hash_generated_method = "5AE52B7648A92522F32F1EDC15CCE625")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PAccessNetworkInfoParser(String accessNetwork) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.647 -0400", hash_original_method = "6DB4AD794C60B8862A83AFB0C9C82A92", hash_generated_method = "0626EAFE4B05112392B453E5EB07C05A")
+    public  PAccessNetworkInfoParser(String accessNetwork) {
         super(accessNetwork);
-        dsTaint.addTaint(accessNetwork);
+        addTaint(accessNetwork.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.750 -0400", hash_original_method = "3B0D9C588403AF5495F889BAEC6E0FEE", hash_generated_method = "9E0FDC71988841AB8CB87DB13791425A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected PAccessNetworkInfoParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.647 -0400", hash_original_method = "3B0D9C588403AF5495F889BAEC6E0FEE", hash_generated_method = "68D1D3CFA3C0BDE696C93371CF1A8F52")
+    protected  PAccessNetworkInfoParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.750 -0400", hash_original_method = "0BB1DE6FBD7AB2CBAE3BF43510D39D52", hash_generated_method = "7C199D2F912CE675B8BB1F37FDC044EE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.662 -0400", hash_original_method = "0BB1DE6FBD7AB2CBAE3BF43510D39D52", hash_generated_method = "613DF079AA1ABF3A6668981DD612E1E9")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_422815815 = null; //Variable for return #1
         dbg_enter("AccessNetworkInfoParser.parse");
         try 
         {
@@ -55,7 +53,7 @@ public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes
             accessNetworkInfo.setAccessType(token.getTokenValue());
             this.lexer.SPorHT();
             {
-                boolean var23D2B54EEDE70417D1C6C30933AF4A72_173398952 = (lexer.lookAhead(0) == ';');
+                boolean var23D2B54EEDE70417D1C6C30933AF4A72_1979894234 = (lexer.lookAhead(0) == ';');
                 {
                     this.lexer.match(';');
                     this.lexer.SPorHT();
@@ -67,12 +65,14 @@ public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes
             } //End collapsed parenthetic
             this.lexer.SPorHT();
             this.lexer.match('\n');
+            varB4EAC82CA7396A68D541C85D26508E83_422815815 = accessNetworkInfo;
         } //End block
         finally 
         {
             dbg_leave("AccessNetworkInfoParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_422815815.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_422815815;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

@@ -10,34 +10,48 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 public class IccCardStatus {
-    private CardState  mCardState;
-    private PinState   mUniversalPinState;
-    private int        mGsmUmtsSubscriptionAppIndex;
-    private int        mCdmaSubscriptionAppIndex;
-    private int        mImsSubscriptionAppIndex;
-    private int        mNumApplications;
-    private ArrayList<IccCardApplication> mApplications =
-            new ArrayList<IccCardApplication>(CARD_MAX_APPS);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.782 -0400", hash_original_field = "B5278EC7E3332C34F3E9480E899A5F4E", hash_generated_field = "9AED67EEE170BD9DAD5D65F0CE4452F9")
+
+    private CardState mCardState;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.782 -0400", hash_original_field = "152D6E7C0308956D4C8858B0EA7E2DB9", hash_generated_field = "1DDE8EC46673F45F99B09063FF5B571E")
+
+    private PinState mUniversalPinState;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.782 -0400", hash_original_field = "3E8DC37F731F198865915768FB05C367", hash_generated_field = "090D7E62D114F08B9CA4CF4D1B53543A")
+
+    private int mGsmUmtsSubscriptionAppIndex;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.782 -0400", hash_original_field = "C0CBC2A81F0876A1D29E0DD01BDCB0D2", hash_generated_field = "0CB2051C72F8A9F185E8515861584ED4")
+
+    private int mCdmaSubscriptionAppIndex;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.782 -0400", hash_original_field = "396B4A6976B7DC9E2179C8BE7CC98B90", hash_generated_field = "839C2CEF025CD77CEE8431A6690D5463")
+
+    private int mImsSubscriptionAppIndex;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.782 -0400", hash_original_field = "360D6A6B07C55B04E0858861D2699CF8", hash_generated_field = "7829DD0F9B94AC0F0A078A40E3A30616")
+
+    private int mNumApplications;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.782 -0400", hash_original_field = "237E11857BAFAA3AA116B773CD491149", hash_generated_field = "03B1A6FBCA9A9355A5688EA97989AA4B")
+
+    private ArrayList<IccCardApplication> mApplications = new ArrayList<IccCardApplication>(CARD_MAX_APPS);
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.294 -0400", hash_original_method = "B1DBE66DA40980F3FDD270609402F013", hash_generated_method = "B1DBE66DA40980F3FDD270609402F013")
-        public IccCardStatus ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.782 -0400", hash_original_method = "E3AA20EE9B616A59DB2B25CE475E2F88", hash_generated_method = "E3AA20EE9B616A59DB2B25CE475E2F88")
+    public IccCardStatus ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.294 -0400", hash_original_method = "FA0602D88E7C21991E0740ABD82BDA04", hash_generated_method = "4F8EDB5ABC949101E9A5CEA6129E76DF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.783 -0400", hash_original_method = "FA0602D88E7C21991E0740ABD82BDA04", hash_generated_method = "324A82E6D16D20CF528246938E3AF162")
     public CardState getCardState() {
-        return (CardState)dsTaint.getTaint();
+        CardState varB4EAC82CA7396A68D541C85D26508E83_1727463193 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1727463193 = mCardState;
+        varB4EAC82CA7396A68D541C85D26508E83_1727463193.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1727463193;
         // ---------- Original Method ----------
         //return mCardState;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.295 -0400", hash_original_method = "DF1BA1B7D815247B6DDD09A8150ACB8E", hash_generated_method = "FBDB025F2A2B9358D84A041F6646C3CA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.783 -0400", hash_original_method = "DF1BA1B7D815247B6DDD09A8150ACB8E", hash_generated_method = "129DC0128092D4CDBF2170B5D21676E6")
     public void setCardState(int state) {
-        dsTaint.addTaint(state);
         //Begin case 0 
         mCardState = CardState.CARDSTATE_ABSENT;
         //End case 0 
@@ -50,6 +64,7 @@ public class IccCardStatus {
         //Begin case default 
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Unrecognized RIL_CardState: " + state);
         //End case default 
+        addTaint(state);
         // ---------- Original Method ----------
         //switch(state) {
         //case 0:
@@ -67,19 +82,19 @@ public class IccCardStatus {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.295 -0400", hash_original_method = "EAD880236056BC0FED4A918911F5B846", hash_generated_method = "4A36A86BA49DF3075A020AB0545D18F4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.784 -0400", hash_original_method = "EAD880236056BC0FED4A918911F5B846", hash_generated_method = "8606901978D86C6BD1D34AFF47BF01AD")
     public PinState getUniversalPinState() {
-        return (PinState)dsTaint.getTaint();
+        PinState varB4EAC82CA7396A68D541C85D26508E83_1277496214 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1277496214 = mUniversalPinState;
+        varB4EAC82CA7396A68D541C85D26508E83_1277496214.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1277496214;
         // ---------- Original Method ----------
         //return mUniversalPinState;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.295 -0400", hash_original_method = "B5D48B53E99405CE8B767A81E3B60FC3", hash_generated_method = "1BDE401C1F12B16EEF95137B72A66E1D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.856 -0400", hash_original_method = "B5D48B53E99405CE8B767A81E3B60FC3", hash_generated_method = "0C139E91A6794361850581F0EE65077D")
     public void setUniversalPinState(int state) {
-        dsTaint.addTaint(state);
         //Begin case 0 
         mUniversalPinState = PinState.PINSTATE_UNKNOWN;
         //End case 0 
@@ -101,6 +116,7 @@ public class IccCardStatus {
         //Begin case default 
         if (DroidSafeAndroidRuntime.control) throw new RuntimeException("Unrecognized RIL_PinState: " + state);
         //End case default 
+        addTaint(state);
         // ---------- Original Method ----------
         //switch(state) {
         //case 0:
@@ -127,103 +143,99 @@ public class IccCardStatus {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.295 -0400", hash_original_method = "BB106B954443B302CECFC313EF7CB395", hash_generated_method = "F2D0DAB991DD213AECA4AE5F0F1DD7C3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.856 -0400", hash_original_method = "BB106B954443B302CECFC313EF7CB395", hash_generated_method = "0F90A7FE8811DB09FFCE57C543DC97E1")
     public int getGsmUmtsSubscriptionAppIndex() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_464731001 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_464731001;
         // ---------- Original Method ----------
         //return mGsmUmtsSubscriptionAppIndex;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.295 -0400", hash_original_method = "08BD9E6DFC873F65C3F784287907D5E3", hash_generated_method = "47D3B1866E607FD38EB778257655A357")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.857 -0400", hash_original_method = "08BD9E6DFC873F65C3F784287907D5E3", hash_generated_method = "03968C0784B0953DB1DC116AD2BB207A")
     public void setGsmUmtsSubscriptionAppIndex(int gsmUmtsSubscriptionAppIndex) {
-        dsTaint.addTaint(gsmUmtsSubscriptionAppIndex);
+        mGsmUmtsSubscriptionAppIndex = gsmUmtsSubscriptionAppIndex;
         // ---------- Original Method ----------
         //mGsmUmtsSubscriptionAppIndex = gsmUmtsSubscriptionAppIndex;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.296 -0400", hash_original_method = "2A192AC2BA1E64618C17CC6A1074F688", hash_generated_method = "4F00528632B733093049E35BE0FC04FE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.857 -0400", hash_original_method = "2A192AC2BA1E64618C17CC6A1074F688", hash_generated_method = "991ABAF882E0AD5A3BA9AF6E1BAC12E4")
     public int getCdmaSubscriptionAppIndex() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1518439418 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1518439418;
         // ---------- Original Method ----------
         //return mCdmaSubscriptionAppIndex;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.296 -0400", hash_original_method = "891E989E2EC1A38AF8B37DBC8E8322CF", hash_generated_method = "355E3DEEF251B6B01A8008D4B65B1E55")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.857 -0400", hash_original_method = "891E989E2EC1A38AF8B37DBC8E8322CF", hash_generated_method = "6D1B0649C9CFAF249D62B999C50E4C43")
     public void setCdmaSubscriptionAppIndex(int cdmaSubscriptionAppIndex) {
-        dsTaint.addTaint(cdmaSubscriptionAppIndex);
+        mCdmaSubscriptionAppIndex = cdmaSubscriptionAppIndex;
         // ---------- Original Method ----------
         //mCdmaSubscriptionAppIndex = cdmaSubscriptionAppIndex;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.296 -0400", hash_original_method = "66775E00E5C07C014B4CD9717DAD3963", hash_generated_method = "457ECFD09112F695E53A8A76AC7F4FC6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.857 -0400", hash_original_method = "66775E00E5C07C014B4CD9717DAD3963", hash_generated_method = "FA4956BEBC47BD4E3CA4FBA25AB76BF5")
     public int getImsSubscriptionAppIndex() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2019518091 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2019518091;
         // ---------- Original Method ----------
         //return mImsSubscriptionAppIndex;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.296 -0400", hash_original_method = "F62298652BB86C33D896C0D398774EF1", hash_generated_method = "73775D4A8C338CAF1D2A010BB6468F03")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.858 -0400", hash_original_method = "F62298652BB86C33D896C0D398774EF1", hash_generated_method = "EDDFA44F41288CFC56DC7BAF3703C59D")
     public void setImsSubscriptionAppIndex(int imsSubscriptionAppIndex) {
-        dsTaint.addTaint(imsSubscriptionAppIndex);
+        mImsSubscriptionAppIndex = imsSubscriptionAppIndex;
         // ---------- Original Method ----------
         //mImsSubscriptionAppIndex = imsSubscriptionAppIndex;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.296 -0400", hash_original_method = "73A878FBCD525FA581932F7C6A7C55D4", hash_generated_method = "C70291C570F0F2255FC4FCBCAC3E65CA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.858 -0400", hash_original_method = "73A878FBCD525FA581932F7C6A7C55D4", hash_generated_method = "FB8096EE3158959BF8BAD3C7C6A6A659")
     public int getNumApplications() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_736192513 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_736192513;
         // ---------- Original Method ----------
         //return mNumApplications;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.296 -0400", hash_original_method = "6F974EA3499D29038B295A1FDDF2D7B1", hash_generated_method = "5C632E30244C24809D5277A75D640703")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.858 -0400", hash_original_method = "6F974EA3499D29038B295A1FDDF2D7B1", hash_generated_method = "E0EE19C0A0A8F7AD8CB842C7430E7BAA")
     public void setNumApplications(int numApplications) {
-        dsTaint.addTaint(numApplications);
+        mNumApplications = numApplications;
         // ---------- Original Method ----------
         //mNumApplications = numApplications;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.296 -0400", hash_original_method = "A2EAD3988F60EC73A08878F3FE639EE8", hash_generated_method = "D691D42C81A30FA5E18749895CC6146C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.858 -0400", hash_original_method = "A2EAD3988F60EC73A08878F3FE639EE8", hash_generated_method = "38BA05FD585779959ADE2AC5945F94BA")
     public void addApplication(IccCardApplication application) {
-        dsTaint.addTaint(application.dsTaint);
         mApplications.add(application);
+        addTaint(application.getTaint());
         // ---------- Original Method ----------
         //mApplications.add(application);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.297 -0400", hash_original_method = "57D1023FA4D5ED682F8C58AD605F19ED", hash_generated_method = "FBFE1F35AFFD939525EE2B3DF847D2D7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.859 -0400", hash_original_method = "57D1023FA4D5ED682F8C58AD605F19ED", hash_generated_method = "B98FAD21748C5EDCDFB0840FD71A55AF")
     public IccCardApplication getApplication(int index) {
-        dsTaint.addTaint(index);
-        IccCardApplication var49B9C0C4780A581FE0E144FA3F666ACC_1074080218 = (mApplications.get(index));
-        return (IccCardApplication)dsTaint.getTaint();
+        IccCardApplication varB4EAC82CA7396A68D541C85D26508E83_531047897 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_531047897 = mApplications.get(index);
+        addTaint(index);
+        varB4EAC82CA7396A68D541C85D26508E83_531047897.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_531047897;
         // ---------- Original Method ----------
         //return mApplications.get(index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.297 -0400", hash_original_method = "29E2CBB78335356F6993D73415A74DA6", hash_generated_method = "77918F19A240EECB548501EE9D0F6BBB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.869 -0400", hash_original_method = "29E2CBB78335356F6993D73415A74DA6", hash_generated_method = "00DCF0A0DDDC1207FEDC5CEE6F7937C5")
     @Override
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1349278554 = null; //Variable for return #1
         IccCardApplication app;
         StringBuilder sb;
         sb = new StringBuilder();
@@ -242,8 +254,9 @@ public class IccCardStatus {
         } //End block
         sb.append(",ism_id=").append(mImsSubscriptionAppIndex);
         sb.append("}");
-        String var806458D832AB974D230FEE4CBBDBD390_1916362781 = (sb.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1349278554 = sb.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1349278554.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1349278554;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -278,6 +291,8 @@ public class IccCardStatus {
     }
 
     
-    static final int CARD_MAX_APPS = 8;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.869 -0400", hash_original_field = "9077F12194B02D6EF8AF620DF49E8A1B", hash_generated_field = "6E6E6D7DE72DDDBB0F831E36A0ECBF42")
+
+    static int CARD_MAX_APPS = 8;
 }
 

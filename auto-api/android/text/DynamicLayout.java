@@ -13,61 +13,81 @@ import android.text.style.WrapTogetherSpan;
 import java.lang.ref.WeakReference;
 
 public class DynamicLayout extends Layout {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.459 -0400", hash_original_field = "70C30248F16505818D6F9EB3DE4F855F", hash_generated_field = "15367B8B2C746CFC484DB8A82189D9A1")
+
     private CharSequence mBase;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.459 -0400", hash_original_field = "D29BCBAAD55DD1B1C5A0A9EB22E25252", hash_generated_field = "D786E4FA619E26D15C3AF77D65AC82C9")
+
     private CharSequence mDisplay;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.459 -0400", hash_original_field = "47CD6CB6B9A4FA63425D0BEAFAF438EE", hash_generated_field = "AF0A8CD0AADCD6558B917FE8D5B77F9C")
+
     private ChangeWatcher mWatcher;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.459 -0400", hash_original_field = "5C7867EDEC78F5A3873DA83596FFE315", hash_generated_field = "D5F745DDCD7E7F8BB6FD2B9B3C8B76DB")
+
     private boolean mIncludePad;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.459 -0400", hash_original_field = "A6C851B8D237A237217AF4B1A1901277", hash_generated_field = "17C12DE3A8C50D21AE8FD7905F843126")
+
     private boolean mEllipsize;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.459 -0400", hash_original_field = "5713AC9F49879DE1055FA780DFEFDF1C", hash_generated_field = "C354DF48C5764CCC7B8B820C49BF2BBD")
+
     private int mEllipsizedWidth;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.459 -0400", hash_original_field = "23595B992DF8C4652BDAE896F06DBE1E", hash_generated_field = "669F1DFECFA42485F4E61492CB215143")
+
     private TextUtils.TruncateAt mEllipsizeAt;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.459 -0400", hash_original_field = "268A075DF5CE7F2275707CC0D79AD1E3", hash_generated_field = "F71EEB15D0A10CA360B6D2DAC14050D2")
+
     private PackedIntVector mInts;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.459 -0400", hash_original_field = "EBF544E4173D2D8B065068D8E591BD40", hash_generated_field = "98DE842C94CE85760CB5F06A2EB32DA3")
+
     private PackedObjectVector<Directions> mObjects;
-    private int mTopPadding, mBottomPadding;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.459 -0400", hash_original_field = "A6796D45932911E4DA1D9D40D1BD23B8", hash_generated_field = "74C5EEEB9113B0F29D66E0A4983A6BC3")
+
+    private int mTopPadding;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.459 -0400", hash_original_field = "097A31AA17188409E251DABE4869FAFE", hash_generated_field = "8A7C981A0C6837E513C477AD1250B374")
+
+    private int mBottomPadding;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.023 -0400", hash_original_method = "DB07DE8DB9A02739307D238F9A46C5FB", hash_generated_method = "9DAFBF591D7F8AC485DDCA6D18C98CA1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public DynamicLayout(CharSequence base,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.460 -0400", hash_original_method = "DB07DE8DB9A02739307D238F9A46C5FB", hash_generated_method = "FA44B837B658169917187694D7917C1E")
+    public  DynamicLayout(CharSequence base,
                          TextPaint paint,
                          int width, Alignment align,
                          float spacingmult, float spacingadd,
                          boolean includepad) {
         this(base, base, paint, width, align, spacingmult, spacingadd,
              includepad);
-        dsTaint.addTaint(includepad);
-        dsTaint.addTaint(align.dsTaint);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(base);
-        dsTaint.addTaint(paint.dsTaint);
-        dsTaint.addTaint(spacingadd);
-        dsTaint.addTaint(spacingmult);
+        addTaint(base.getTaint());
+        addTaint(paint.getTaint());
+        addTaint(width);
+        addTaint(align.getTaint());
+        addTaint(spacingmult);
+        addTaint(spacingadd);
+        addTaint(includepad);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.024 -0400", hash_original_method = "BEECDC91516286CCE30494A55398B48A", hash_generated_method = "7B516DE2F3BFF3D3D6AF4C6696256F3F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public DynamicLayout(CharSequence base, CharSequence display,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.461 -0400", hash_original_method = "BEECDC91516286CCE30494A55398B48A", hash_generated_method = "C80BB7234B4076E4BB34D9FF4B3AFC9B")
+    public  DynamicLayout(CharSequence base, CharSequence display,
                          TextPaint paint,
                          int width, Alignment align,
                          float spacingmult, float spacingadd,
                          boolean includepad) {
         this(base, display, paint, width, align, spacingmult, spacingadd,
              includepad, null, 0);
-        dsTaint.addTaint(includepad);
-        dsTaint.addTaint(align.dsTaint);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(base);
-        dsTaint.addTaint(paint.dsTaint);
-        dsTaint.addTaint(display);
-        dsTaint.addTaint(spacingadd);
-        dsTaint.addTaint(spacingmult);
+        addTaint(base.getTaint());
+        addTaint(display.getTaint());
+        addTaint(paint.getTaint());
+        addTaint(width);
+        addTaint(align.getTaint());
+        addTaint(spacingmult);
+        addTaint(spacingadd);
+        addTaint(includepad);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.024 -0400", hash_original_method = "F5040E07E9B927EF44F79345AA20F61D", hash_generated_method = "2F3F788CFF50D261AF7EF132DA44DB2A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public DynamicLayout(CharSequence base, CharSequence display,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.467 -0400", hash_original_method = "F5040E07E9B927EF44F79345AA20F61D", hash_generated_method = "D036986D8EC2A2562B5290B2FF8DEF8F")
+    public  DynamicLayout(CharSequence base, CharSequence display,
                          TextPaint paint,
                          int width, Alignment align,
                          float spacingmult, float spacingadd,
@@ -75,23 +95,22 @@ public class DynamicLayout extends Layout {
                          TextUtils.TruncateAt ellipsize, int ellipsizedWidth) {
         this(base, display, paint, width, align, TextDirectionHeuristics.FIRSTSTRONG_LTR,
                 spacingmult, spacingadd, includepad, ellipsize, ellipsizedWidth);
-        dsTaint.addTaint(includepad);
-        dsTaint.addTaint(ellipsizedWidth);
-        dsTaint.addTaint(align.dsTaint);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(base);
-        dsTaint.addTaint(paint.dsTaint);
-        dsTaint.addTaint(display);
-        dsTaint.addTaint(spacingadd);
-        dsTaint.addTaint(spacingmult);
-        dsTaint.addTaint(ellipsize.dsTaint);
+        addTaint(base.getTaint());
+        addTaint(display.getTaint());
+        addTaint(paint.getTaint());
+        addTaint(width);
+        addTaint(align.getTaint());
+        addTaint(spacingmult);
+        addTaint(spacingadd);
+        addTaint(includepad);
+        addTaint(ellipsize.getTaint());
+        addTaint(ellipsizedWidth);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.025 -0400", hash_original_method = "E989442183EB5456191B90B4A9B0462E", hash_generated_method = "B1F3C01B607DFE39518952388A08B660")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public DynamicLayout(CharSequence base, CharSequence display,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.471 -0400", hash_original_method = "E989442183EB5456191B90B4A9B0462E", hash_generated_method = "19FB8F83A71C9D003F1AAA577FEC417C")
+    public  DynamicLayout(CharSequence base, CharSequence display,
                          TextPaint paint,
                          int width, Alignment align, TextDirectionHeuristic textDir,
                          float spacingmult, float spacingadd,
@@ -103,25 +122,20 @@ public class DynamicLayout extends Layout {
                     ? new SpannedEllipsizer(display)
                     : new Ellipsizer(display),
               paint, width, align, textDir, spacingmult, spacingadd);
-        dsTaint.addTaint(includepad);
-        dsTaint.addTaint(textDir.dsTaint);
-        dsTaint.addTaint(ellipsizedWidth);
-        dsTaint.addTaint(align.dsTaint);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(base);
-        dsTaint.addTaint(paint.dsTaint);
-        dsTaint.addTaint(display);
-        dsTaint.addTaint(spacingadd);
-        dsTaint.addTaint(spacingmult);
-        dsTaint.addTaint(ellipsize.dsTaint);
+        mBase = base;
+        mDisplay = display;
         {
             mInts = new PackedIntVector(COLUMNS_ELLIPSIZE);
+            mEllipsizedWidth = ellipsizedWidth;
+            mEllipsizeAt = ellipsize;
         } //End block
         {
             mInts = new PackedIntVector(COLUMNS_NORMAL);
+            mEllipsizedWidth = width;
             mEllipsizeAt = null;
         } //End block
         mObjects = new PackedObjectVector<Directions>(1);
+        mIncludePad = includepad;
         {
             Ellipsizer e;
             e = (Ellipsizer) getText();
@@ -169,18 +183,18 @@ public class DynamicLayout extends Layout {
                        Spannable.SPAN_INCLUSIVE_INCLUSIVE |
                        (PRIORITY << Spannable.SPAN_PRIORITY_SHIFT));
         } //End block
+        addTaint(paint.getTaint());
+        addTaint(align.getTaint());
+        addTaint(textDir.getTaint());
+        addTaint(spacingmult);
+        addTaint(spacingadd);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.026 -0400", hash_original_method = "680F026D747328AC88C64FC8C5845240", hash_generated_method = "5F2B3BD3F58EE2297986D885E947AFA2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.508 -0400", hash_original_method = "680F026D747328AC88C64FC8C5845240", hash_generated_method = "76139989F38E0B4113C11DB546FAE0E5")
     private void reflow(CharSequence s, int where, int before, int after) {
-        dsTaint.addTaint(after);
-        dsTaint.addTaint(s);
-        dsTaint.addTaint(before);
-        dsTaint.addTaint(where);
         CharSequence text;
         text = mDisplay;
         int len;
@@ -268,7 +282,7 @@ public class DynamicLayout extends Layout {
         int n;
         n = reflowed.getLineCount();
         {
-            boolean varA8F26B230E6C690FEFF73B0BFCB1FB0E_1278609853 = (where + after != len &&
+            boolean varA8F26B230E6C690FEFF73B0BFCB1FB0E_1442271756 = (where + after != len &&
             reflowed.getLineStart(n - 1) == where + after);
         } //End collapsed parenthetic
         mInts.deleteAt(startline, endline - startline);
@@ -328,131 +342,136 @@ public class DynamicLayout extends Layout {
             sStaticLayout = reflowed;
             reflowed.finish();
         } //End block
+        addTaint(s.getTaint());
+        addTaint(where);
+        addTaint(before);
+        addTaint(after);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.027 -0400", hash_original_method = "152FA51B02D5FF2B246CE19D3B6F70D3", hash_generated_method = "A3DA7D630250ACB8AF39BDB96D16C826")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.510 -0400", hash_original_method = "152FA51B02D5FF2B246CE19D3B6F70D3", hash_generated_method = "04B18F644A1F40C531B978BCA2BEDC1B")
     @Override
     public int getLineCount() {
-        int var5CACA94FC5780744C6E7317B6E5C4CD8_154518811 = (mInts.size() - 1);
-        return dsTaint.getTaintInt();
+        int var5CACA94FC5780744C6E7317B6E5C4CD8_1052638046 = (mInts.size() - 1);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2118572498 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2118572498;
         // ---------- Original Method ----------
         //return mInts.size() - 1;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.027 -0400", hash_original_method = "D6F378A47E9DC69D83D62FCE6E90C326", hash_generated_method = "0F958FAA991A1E6B04A164C9A8A306C3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.527 -0400", hash_original_method = "D6F378A47E9DC69D83D62FCE6E90C326", hash_generated_method = "E8D8324DCA75D6616315FC3CACBA009E")
     @Override
     public int getLineTop(int line) {
-        dsTaint.addTaint(line);
-        int var93A1DB78A00AEEDC2C8FFA797CB1C236_484123022 = (mInts.getValue(line, TOP));
-        return dsTaint.getTaintInt();
+        int var93A1DB78A00AEEDC2C8FFA797CB1C236_1498411454 = (mInts.getValue(line, TOP));
+        addTaint(line);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_395444715 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_395444715;
         // ---------- Original Method ----------
         //return mInts.getValue(line, TOP);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.027 -0400", hash_original_method = "730DAEEEE356A285055D20F0106F731A", hash_generated_method = "109772C205153496FB0B5C972E7B883A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.528 -0400", hash_original_method = "730DAEEEE356A285055D20F0106F731A", hash_generated_method = "21056767A71FE246FB3FE91FFFA64DEC")
     @Override
     public int getLineDescent(int line) {
-        dsTaint.addTaint(line);
-        int var2F83A1C66F15F4DFFD63244CE36A39E3_2042591348 = (mInts.getValue(line, DESCENT));
-        return dsTaint.getTaintInt();
+        int var2F83A1C66F15F4DFFD63244CE36A39E3_745095086 = (mInts.getValue(line, DESCENT));
+        addTaint(line);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1755739529 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1755739529;
         // ---------- Original Method ----------
         //return mInts.getValue(line, DESCENT);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.027 -0400", hash_original_method = "2D0F6CD810E708D2F846F779125A5CEA", hash_generated_method = "F206EA5706BB03E12D42588724BBE759")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.528 -0400", hash_original_method = "2D0F6CD810E708D2F846F779125A5CEA", hash_generated_method = "5FE8B9E9D5130774FF159A4ADB54B83F")
     @Override
     public int getLineStart(int line) {
-        dsTaint.addTaint(line);
-        int var2E609AA1AE48CD56C499FC299D542025_150682514 = (mInts.getValue(line, START) & START_MASK);
-        return dsTaint.getTaintInt();
+        int var2E609AA1AE48CD56C499FC299D542025_575030846 = (mInts.getValue(line, START) & START_MASK);
+        addTaint(line);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809393311 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809393311;
         // ---------- Original Method ----------
         //return mInts.getValue(line, START) & START_MASK;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.028 -0400", hash_original_method = "A0EC5BA65111126AB58C28059BDF3DD2", hash_generated_method = "5925A373488BA0AAE23B0146DD7EB807")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.529 -0400", hash_original_method = "A0EC5BA65111126AB58C28059BDF3DD2", hash_generated_method = "FC3B4AA58F61927C44F9B3F6A7661A89")
     @Override
     public boolean getLineContainsTab(int line) {
-        dsTaint.addTaint(line);
-        boolean var6812F2F3EF40E71A52EA6BFF67D6C857_1472371308 = ((mInts.getValue(line, TAB) & TAB_MASK) != 0);
-        return dsTaint.getTaintBoolean();
+        boolean var6812F2F3EF40E71A52EA6BFF67D6C857_377620917 = ((mInts.getValue(line, TAB) & TAB_MASK) != 0);
+        addTaint(line);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1996488870 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1996488870;
         // ---------- Original Method ----------
         //return (mInts.getValue(line, TAB) & TAB_MASK) != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.028 -0400", hash_original_method = "54E53FDCC15DB3057A5F7E1DF0F2D93F", hash_generated_method = "E039E42D952FCEA7014A840F0F7AEA2F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.530 -0400", hash_original_method = "54E53FDCC15DB3057A5F7E1DF0F2D93F", hash_generated_method = "9891D091212EB90B6E02E43440E183B3")
     @Override
     public int getParagraphDirection(int line) {
-        dsTaint.addTaint(line);
-        int var70DA67A2D1659A19E3C11C8D9A8D14F9_1974832131 = (mInts.getValue(line, DIR) >> DIR_SHIFT);
-        return dsTaint.getTaintInt();
+        int var70DA67A2D1659A19E3C11C8D9A8D14F9_418532976 = (mInts.getValue(line, DIR) >> DIR_SHIFT);
+        addTaint(line);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1218022907 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1218022907;
         // ---------- Original Method ----------
         //return mInts.getValue(line, DIR) >> DIR_SHIFT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.028 -0400", hash_original_method = "632C7F2120605B5CA7A1A3052A452575", hash_generated_method = "DEAF74EFE29E57FC0CE700DA169BBB22")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.530 -0400", hash_original_method = "632C7F2120605B5CA7A1A3052A452575", hash_generated_method = "253552B479372E36964E853E3570454B")
     @Override
     public final Directions getLineDirections(int line) {
-        dsTaint.addTaint(line);
-        Directions var8693E7DC274E1A774545E81E67386E84_223350478 = (mObjects.getValue(line, 0));
-        return (Directions)dsTaint.getTaint();
+        Directions varB4EAC82CA7396A68D541C85D26508E83_283698394 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_283698394 = mObjects.getValue(line, 0);
+        addTaint(line);
+        varB4EAC82CA7396A68D541C85D26508E83_283698394.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_283698394;
         // ---------- Original Method ----------
         //return mObjects.getValue(line, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.028 -0400", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "FA47B026F2C44A937D9C405114C71495")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.542 -0400", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "1949318BB8DE1BD99BA222985738FDC8")
     @Override
     public int getTopPadding() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1926752454 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1926752454;
         // ---------- Original Method ----------
         //return mTopPadding;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.028 -0400", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "6889C8E9FBF2C0906C69CE0D62BF8388")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.543 -0400", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "A8B8275E2BB9F4699B1F484E31FB0512")
     @Override
     public int getBottomPadding() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_303638676 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_303638676;
         // ---------- Original Method ----------
         //return mBottomPadding;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.029 -0400", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "1883110F0CECE5EEE366F4E7139C3405")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.543 -0400", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "FEF280EB63D73B7B513F2F3223B40490")
     @Override
     public int getEllipsizedWidth() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_533428200 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_533428200;
         // ---------- Original Method ----------
         //return mEllipsizedWidth;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.029 -0400", hash_original_method = "C2BA24D83CCF8B46DBDB9E42876D7FC0", hash_generated_method = "B9442E049643B65E403AD532A949B5FD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.543 -0400", hash_original_method = "C2BA24D83CCF8B46DBDB9E42876D7FC0", hash_generated_method = "83D0401A0DDA882305F9FCF4A1332686")
     @Override
     public int getEllipsisStart(int line) {
-        dsTaint.addTaint(line);
-        int varD7B9ACF21B6113CC7B0610D40B77095D_1954105169 = (mInts.getValue(line, ELLIPSIS_START));
-        return dsTaint.getTaintInt();
+        int varD7B9ACF21B6113CC7B0610D40B77095D_84075219 = (mInts.getValue(line, ELLIPSIS_START));
+        addTaint(line);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_259978796 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_259978796;
         // ---------- Original Method ----------
         //if (mEllipsizeAt == null) {
             //return 0;
@@ -461,13 +480,13 @@ public class DynamicLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.029 -0400", hash_original_method = "8861D8B0168294A81E05E00D1A35F6B4", hash_generated_method = "9D7ABF09C0C22AF498064BB949C151CF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.544 -0400", hash_original_method = "8861D8B0168294A81E05E00D1A35F6B4", hash_generated_method = "C1D8E4D11D2B9DE1E427E6D403E512CB")
     @Override
     public int getEllipsisCount(int line) {
-        dsTaint.addTaint(line);
-        int var2F960C4354B27712541F6BCCD9E7C558_1763478064 = (mInts.getValue(line, ELLIPSIS_COUNT));
-        return dsTaint.getTaintInt();
+        int var2F960C4354B27712541F6BCCD9E7C558_1658236169 = (mInts.getValue(line, ELLIPSIS_COUNT));
+        addTaint(line);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_33121675 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_33121675;
         // ---------- Original Method ----------
         //if (mEllipsizeAt == null) {
             //return 0;
@@ -477,29 +496,28 @@ public class DynamicLayout extends Layout {
 
     
     private static class ChangeWatcher implements TextWatcher, SpanWatcher {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.544 -0400", hash_original_field = "AF58F50E47532278404C3D8470630FC4", hash_generated_field = "8D1810AB5CD5D0106C47C451BC1214A2")
+
         private WeakReference<DynamicLayout> mLayout;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.029 -0400", hash_original_method = "5B008785D1A2C7A00F27EBFB90B5E73C", hash_generated_method = "55C19458D07DAC20982CFF91255AAA1B")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public ChangeWatcher(DynamicLayout layout) {
-            dsTaint.addTaint(layout.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.544 -0400", hash_original_method = "5B008785D1A2C7A00F27EBFB90B5E73C", hash_generated_method = "B82CCE3403554F8EA355C68CA40E1262")
+        public  ChangeWatcher(DynamicLayout layout) {
             mLayout = new WeakReference<DynamicLayout>(layout);
             // ---------- Original Method ----------
             //mLayout = new WeakReference<DynamicLayout>(layout);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.030 -0400", hash_original_method = "86BF27AD60282A12928BABF6F115B549", hash_generated_method = "74F09637E4BAFD0CB52EA9D36E40B5D9")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.557 -0400", hash_original_method = "86BF27AD60282A12928BABF6F115B549", hash_generated_method = "C70E54DCA07EF91059F4849C50632E79")
         private void reflow(CharSequence s, int where, int before, int after) {
-            dsTaint.addTaint(after);
-            dsTaint.addTaint(s);
-            dsTaint.addTaint(before);
-            dsTaint.addTaint(where);
             DynamicLayout ml;
             ml = mLayout.get();
             ml.reflow(s, where, before, after);
             ((Spannable) s).removeSpan(this);
+            addTaint(s.getTaint());
+            addTaint(where);
+            addTaint(before);
+            addTaint(after);
             // ---------- Original Method ----------
             //DynamicLayout ml = mLayout.get();
             //if (ml != null)
@@ -509,83 +527,77 @@ public class DynamicLayout extends Layout {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.030 -0400", hash_original_method = "95E45B237E67DBC952009C430C254747", hash_generated_method = "643AF5AB5291FE6E324867AFA035F42F")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.557 -0400", hash_original_method = "95E45B237E67DBC952009C430C254747", hash_generated_method = "4F775BE1160AA8E838671D141E4576EC")
         public void beforeTextChanged(CharSequence s, int where, int before, int after) {
-            dsTaint.addTaint(after);
-            dsTaint.addTaint(s);
-            dsTaint.addTaint(before);
-            dsTaint.addTaint(where);
+            addTaint(s.getTaint());
+            addTaint(where);
+            addTaint(before);
+            addTaint(after);
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.030 -0400", hash_original_method = "64CFCAB8C5BCD960BA37993088223F2C", hash_generated_method = "9CCA3A33D8ACCFBAC0FF1B014FB5FEA0")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.558 -0400", hash_original_method = "64CFCAB8C5BCD960BA37993088223F2C", hash_generated_method = "F3D86709FA423F741928E6B3E79331A4")
         public void onTextChanged(CharSequence s, int where, int before, int after) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(after);
-            dsTaint.addTaint(s);
-            dsTaint.addTaint(before);
-            dsTaint.addTaint(where);
             reflow(s, where, before, after);
+            addTaint(s.getTaint());
+            addTaint(where);
+            addTaint(before);
+            addTaint(after);
             // ---------- Original Method ----------
             //reflow(s, where, before, after);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.030 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "E1E9B48623236A758AA5D88D665C2448")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.558 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "B1E73F6E6A3A9E89AEF9681CB19F89E5")
         public void afterTextChanged(Editable s) {
-            dsTaint.addTaint(s.dsTaint);
+            addTaint(s.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.030 -0400", hash_original_method = "37363E0323D4735EAF9288F365B55BBF", hash_generated_method = "A6AF03853FB3F32313625024FE1166DC")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.567 -0400", hash_original_method = "37363E0323D4735EAF9288F365B55BBF", hash_generated_method = "4C017584AE0F4814C51C5CA62247C632")
         public void onSpanAdded(Spannable s, Object o, int start, int end) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(s.dsTaint);
-            dsTaint.addTaint(start);
-            dsTaint.addTaint(o.dsTaint);
-            dsTaint.addTaint(end);
             reflow(s, start, end - start, end - start);
+            addTaint(s.getTaint());
+            addTaint(o.getTaint());
+            addTaint(start);
+            addTaint(end);
             // ---------- Original Method ----------
             //if (o instanceof UpdateLayout)
                 //reflow(s, start, end - start, end - start);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.031 -0400", hash_original_method = "A697CB019B21FC660F8DBD66680C7AE1", hash_generated_method = "C0D5150FE7ACEC28BDCD2B28640B742C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.568 -0400", hash_original_method = "A697CB019B21FC660F8DBD66680C7AE1", hash_generated_method = "23B0436D72C3392806FAE1B1375AD190")
         public void onSpanRemoved(Spannable s, Object o, int start, int end) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(s.dsTaint);
-            dsTaint.addTaint(start);
-            dsTaint.addTaint(o.dsTaint);
-            dsTaint.addTaint(end);
             reflow(s, start, end - start, end - start);
+            addTaint(s.getTaint());
+            addTaint(o.getTaint());
+            addTaint(start);
+            addTaint(end);
             // ---------- Original Method ----------
             //if (o instanceof UpdateLayout)
                 //reflow(s, start, end - start, end - start);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.031 -0400", hash_original_method = "003DE2DC22FE06A8925B46C1AFC5A2FC", hash_generated_method = "F16DED5C6F748DA91C3A74C383FD817D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.573 -0400", hash_original_method = "003DE2DC22FE06A8925B46C1AFC5A2FC", hash_generated_method = "6FD5A13FE0605F943B351C77C76985A5")
         public void onSpanChanged(Spannable s, Object o, int start, int end, int nstart, int nend) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(nstart);
-            dsTaint.addTaint(s.dsTaint);
-            dsTaint.addTaint(start);
-            dsTaint.addTaint(o.dsTaint);
-            dsTaint.addTaint(nend);
-            dsTaint.addTaint(end);
             {
                 reflow(s, start, end - start, end - start);
                 reflow(s, nstart, nend - nstart, nend - nstart);
             } //End block
+            addTaint(s.getTaint());
+            addTaint(o.getTaint());
+            addTaint(start);
+            addTaint(end);
+            addTaint(nstart);
+            addTaint(nend);
             // ---------- Original Method ----------
             //if (o instanceof UpdateLayout) {
                 //reflow(s, start, end - start, end - start);
@@ -598,21 +610,53 @@ public class DynamicLayout extends Layout {
 
 
     
-    private static final int PRIORITY = 128;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.573 -0400", hash_original_field = "3EFDE694331F395874E68C1564D97D01", hash_generated_field = "B39264F5C3595B9D142990C0F923E905")
+
+    private static int PRIORITY = 128;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.574 -0400", hash_original_field = "3E985220B3B2B397EBA733973484F2C1", hash_generated_field = "8547CB2E7AAF865B43A1389F1EFA4F37")
+
     private static StaticLayout sStaticLayout = new StaticLayout(null);
-    private static final Object[] sLock = new Object[0];
-    private static final int START = 0;
-    private static final int DIR = START;
-    private static final int TAB = START;
-    private static final int TOP = 1;
-    private static final int DESCENT = 2;
-    private static final int COLUMNS_NORMAL = 3;
-    private static final int ELLIPSIS_START = 3;
-    private static final int ELLIPSIS_COUNT = 4;
-    private static final int COLUMNS_ELLIPSIZE = 5;
-    private static final int START_MASK = 0x1FFFFFFF;
-    private static final int DIR_SHIFT  = 30;
-    private static final int TAB_MASK   = 0x20000000;
-    private static final int ELLIPSIS_UNDEFINED = 0x80000000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.574 -0400", hash_original_field = "FD588D0BA09E2DE573D6AB2267D28AEB", hash_generated_field = "2414935848B92962C171B2E9A09E6A7D")
+
+    private static Object[] sLock = new Object[0];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.574 -0400", hash_original_field = "28651E175A74BF99AEB0613FFD9E4311", hash_generated_field = "AE5FE26EA7B9C33A397985D690BEF58C")
+
+    private static int START = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.574 -0400", hash_original_field = "96C94187E98129DC7ED52B022D56B56E", hash_generated_field = "6D6C23CE3BFB22BC047670327434A860")
+
+    private static int DIR = START;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.574 -0400", hash_original_field = "03E7882B92ED9688C792A4DF3CCA212F", hash_generated_field = "05A11F5EBF953A33392F393CCDD725E2")
+
+    private static int TAB = START;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.574 -0400", hash_original_field = "571D16AE4FA766DA4380F84D324027BE", hash_generated_field = "84E5B0980A9DB65D83B460DD28EC105D")
+
+    private static int TOP = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.574 -0400", hash_original_field = "4DF1087155B53EE865ED8DEFEF0D2F7E", hash_generated_field = "BCA811FF720210FC7C8CADA392DE1774")
+
+    private static int DESCENT = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.574 -0400", hash_original_field = "3AE51DFCA721DA74B9FE7AE826399C5B", hash_generated_field = "82B151F86E6336E7EBABD8B0D2554020")
+
+    private static int COLUMNS_NORMAL = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.574 -0400", hash_original_field = "11658650D3EBC5004F1DE2593A19D91C", hash_generated_field = "EB2805516F22F0D795546FE4326DA5A9")
+
+    private static int ELLIPSIS_START = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.574 -0400", hash_original_field = "9DEA8A3EF4097355E23BEB471268468C", hash_generated_field = "542C907F634133B97C93B9DB7D8B9BDC")
+
+    private static int ELLIPSIS_COUNT = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.574 -0400", hash_original_field = "55DF56DF384DF5793030D40F84610E92", hash_generated_field = "A3A118F5E931345ED3AA870AD0322498")
+
+    private static int COLUMNS_ELLIPSIZE = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.574 -0400", hash_original_field = "479F76462347F1E81B6EC92F50573413", hash_generated_field = "F4AF13B0F41E7915D7A01D78326744F8")
+
+    private static int START_MASK = 0x1FFFFFFF;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.574 -0400", hash_original_field = "3CE9D0897644F1685651D602FF457A11", hash_generated_field = "26F6116498B4B99F247AFFED1D2ADAC3")
+
+    private static int DIR_SHIFT = 30;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.574 -0400", hash_original_field = "C52FA1DB43D0A9E4AB2D27DC3ED50BD6", hash_generated_field = "CE6C698FB46054E82230E9F62AB1B199")
+
+    private static int TAB_MASK = 0x20000000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.575 -0400", hash_original_field = "89FC1B0F65C5879D4CBF1940D7C8EE5F", hash_generated_field = "BBFA86E9FFA8835C9A2649C05E016888")
+
+    private static int ELLIPSIS_UNDEFINED = 0x80000000;
 }
 

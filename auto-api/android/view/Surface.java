@@ -14,25 +14,42 @@ import android.os.Parcel;
 import android.util.Log;
 
 public class Surface implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.312 -0400", hash_original_field = "BD9155F16322AD91398B71690C8B7AEA", hash_generated_field = "3070A52A13AD896F784FBCE51B4EC514")
+
     private int mSurfaceControl;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.312 -0400", hash_original_field = "CA195FDEC5D859B1105216AEBB374C45", hash_generated_field = "A0D4D8EA840808F4949CA72E7B280524")
+
     private int mSaveCount;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.312 -0400", hash_original_field = "B27B52DEE91FF1260919C0152F8A3F5A", hash_generated_field = "8D4942A1FCE89D15FDC57EFABEDBC717")
+
     private Canvas mCanvas;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.312 -0400", hash_original_field = "6B7A1524BE726B23C7CE5739BBDA3408", hash_generated_field = "135E03AE60E04B6C9A1CE3A6EC7E0070")
+
     private int mNativeSurface;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.312 -0400", hash_original_field = "53362B083976939F1558AE45894FA6BA", hash_generated_field = "81B134DE4CE27806029BB8F16BA06618")
+
     private int mSurfaceGenerationId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.312 -0400", hash_original_field = "311C2C8498DF6A626CBDB8AA4193499C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
+
     private String mName;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.312 -0400", hash_original_field = "0B3437FCE64116004DAA46396A3DFAE5", hash_generated_field = "84B770FB871F6914572C383213400F31")
+
     private Translator mCompatibilityTranslator;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.312 -0400", hash_original_field = "7EA6797302956B6C6E1F30D1DB430A8F", hash_generated_field = "29B3084AC9F7B25FE01001CD958BE3DB")
+
     private Matrix mCompatibleMatrix;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.312 -0400", hash_original_field = "7E7F7481BAE64F4953D7B0B6B9BFBCD2", hash_generated_field = "3D60FB93273F748E494C53BEB8064D29")
+
     private Exception mCreationStack;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.298 -0400", hash_original_method = "3C6D5ED7C9D2AD52254061DCBE40C6B7", hash_generated_method = "4D37784A014D92ACC11781F1EEA802C9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Surface(SurfaceTexture surfaceTexture) {
-        dsTaint.addTaint(surfaceTexture.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.313 -0400", hash_original_method = "3C6D5ED7C9D2AD52254061DCBE40C6B7", hash_generated_method = "754C4D5864A3B80F22E7A9AA21CA31AA")
+    public  Surface(SurfaceTexture surfaceTexture) {
         {
             mCreationStack = new Exception();
         } //End block
         mCanvas = new CompatibleCanvas();
         initFromSurfaceTexture(surfaceTexture);
+        addTaint(surfaceTexture.getTaint());
         // ---------- Original Method ----------
         //if (DEBUG_RELEASE) {
             //mCreationStack = new Exception();
@@ -42,22 +59,21 @@ public class Surface implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.298 -0400", hash_original_method = "63DD348776A9AD7A69FD5A5406A9D749", hash_generated_method = "49DA2959BC2F2D96C477B548496DB618")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Surface(SurfaceSession s,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.314 -0400", hash_original_method = "63DD348776A9AD7A69FD5A5406A9D749", hash_generated_method = "D6E03E5C895781CDBC48E3146DF37F9B")
+    public  Surface(SurfaceSession s,
             int pid, int display, int w, int h, int format, int flags) throws OutOfResourcesException {
-        dsTaint.addTaint(w);
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(s.dsTaint);
-        dsTaint.addTaint(display);
-        dsTaint.addTaint(pid);
-        dsTaint.addTaint(format);
-        dsTaint.addTaint(h);
         {
             mCreationStack = new Exception();
         } //End block
         mCanvas = new CompatibleCanvas();
         init(s,pid,null,display,w,h,format,flags);
+        addTaint(s.getTaint());
+        addTaint(pid);
+        addTaint(display);
+        addTaint(w);
+        addTaint(h);
+        addTaint(format);
+        addTaint(flags);
         // ---------- Original Method ----------
         //if (DEBUG_RELEASE) {
             //mCreationStack = new Exception();
@@ -67,23 +83,22 @@ public class Surface implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.298 -0400", hash_original_method = "77F92398B62C28FF78E552B775B6A70A", hash_generated_method = "7C2290FB36CDEF420EBE84468B4F5CF7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Surface(SurfaceSession s,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.314 -0400", hash_original_method = "77F92398B62C28FF78E552B775B6A70A", hash_generated_method = "C9C90119E7874EE27607D15765E88A98")
+    public  Surface(SurfaceSession s,
             int pid, String name, int display, int w, int h, int format, int flags) throws OutOfResourcesException {
-        dsTaint.addTaint(w);
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(s.dsTaint);
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(display);
-        dsTaint.addTaint(pid);
-        dsTaint.addTaint(format);
-        dsTaint.addTaint(h);
         {
             mCreationStack = new Exception();
         } //End block
         mCanvas = new CompatibleCanvas();
         init(s,pid,name,display,w,h,format,flags);
+        mName = name;
+        addTaint(s.getTaint());
+        addTaint(pid);
+        addTaint(display);
+        addTaint(w);
+        addTaint(h);
+        addTaint(format);
+        addTaint(flags);
         // ---------- Original Method ----------
         //if (DEBUG_RELEASE) {
             //mCreationStack = new Exception();
@@ -94,9 +109,8 @@ public class Surface implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.298 -0400", hash_original_method = "CA741F0DB07B20B1C302E68F5EF5136C", hash_generated_method = "632413C73B8BFD6A837FF217F9EC67B2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Surface() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.328 -0400", hash_original_method = "CA741F0DB07B20B1C302E68F5EF5136C", hash_generated_method = "632413C73B8BFD6A837FF217F9EC67B2")
+    public  Surface() {
         {
             mCreationStack = new Exception();
         } //End block
@@ -109,86 +123,77 @@ public class Surface implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.299 -0400", hash_original_method = "6ECF42DC85BE770B3A0C34165723456A", hash_generated_method = "463F8946171A5DEA5DA2CD88B16D4182")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private Surface(Parcel source) throws OutOfResourcesException {
-        dsTaint.addTaint(source.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.329 -0400", hash_original_method = "6ECF42DC85BE770B3A0C34165723456A", hash_generated_method = "B14C61E503B75756022B4AF10523C263")
+    private  Surface(Parcel source) throws OutOfResourcesException {
         init(source);
+        addTaint(source.getTaint());
         // ---------- Original Method ----------
         //init(source);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.299 -0400", hash_original_method = "F1240C06AF1BA9E648B2E780B8155F1C", hash_generated_method = "F4AF210A3FAC410753DB168A3B10A798")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.329 -0400", hash_original_method = "F1240C06AF1BA9E648B2E780B8155F1C", hash_generated_method = "17C09BB21704A7D2AD878DCBFD84A67F")
     public boolean isValid() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_157327636 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_157327636;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.299 -0400", hash_original_method = "1E8C38EACEA1E94FE658824D01FD2A18", hash_generated_method = "41B8B73906B263B02861ABB4EEE712F2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.330 -0400", hash_original_method = "1E8C38EACEA1E94FE658824D01FD2A18", hash_generated_method = "41B8B73906B263B02861ABB4EEE712F2")
     public void release() {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.299 -0400", hash_original_method = "F02785EB89A3C576418753FA8D7724E3", hash_generated_method = "150E980F9B3B135064FCAE2FC03C72A7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.331 -0400", hash_original_method = "F02785EB89A3C576418753FA8D7724E3", hash_generated_method = "0B4E9485EDBD1471C2D94612EBFE3BDC")
     public Canvas lockCanvas(Rect dirty) throws OutOfResourcesException, IllegalArgumentException {
-        dsTaint.addTaint(dirty.dsTaint);
-        Canvas var06391638DF2BB3BAE0D4C56F992675E4_460311278 = (lockCanvasNative(dirty));
-        return (Canvas)dsTaint.getTaint();
+        Canvas varB4EAC82CA7396A68D541C85D26508E83_1003058563 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1003058563 = lockCanvasNative(dirty);
+        addTaint(dirty.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1003058563.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1003058563;
         // ---------- Original Method ----------
         //return lockCanvasNative(dirty);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.299 -0400", hash_original_method = "1664CDF216B0331D581B002047F21426", hash_generated_method = "BED22ECC1E129FBFA1C290E3E0E577B4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.335 -0400", hash_original_method = "1664CDF216B0331D581B002047F21426", hash_generated_method = "BEEB767D1AF96D89BEAA4AD680C9B81D")
     public void unlockCanvasAndPost(Canvas canvas) {
-        dsTaint.addTaint(canvas.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.299 -0400", hash_original_method = "9F24053A4EC94DBA8AA05836E657F81D", hash_generated_method = "9EA362434A64E923BAD3D6F466682BC5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.335 -0400", hash_original_method = "9F24053A4EC94DBA8AA05836E657F81D", hash_generated_method = "B038027C53527359282F71DFE3BF979F")
     public void unlockCanvas(Canvas canvas) {
-        dsTaint.addTaint(canvas.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.299 -0400", hash_original_method = "FD610F755B3A8168C37DFBCC26EDD5A5", hash_generated_method = "6B988EB72E30F4A991CCBEC6A2A49CC0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.348 -0400", hash_original_method = "FD610F755B3A8168C37DFBCC26EDD5A5", hash_generated_method = "1F8CB27C1556AA6A970EB9BD726D2E15")
     @Override
     public String toString() {
-        String varE88DD8035859E6656014442E27A29678_2024510026 = ("Surface(name=" + mName + ", identity=" + getIdentity() + ")");
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1362084640 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1362084640 = "Surface(name=" + mName + ", identity=" + getIdentity() + ")";
+        varB4EAC82CA7396A68D541C85D26508E83_1362084640.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1362084640;
         // ---------- Original Method ----------
         //return "Surface(name=" + mName + ", identity=" + getIdentity() + ")";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.300 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.349 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BAE2C0CFC97EC5B6916A38E78708171F")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_214909138 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_214909138;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.300 -0400", hash_original_method = "A2AACDDA330848E1D1B1D4F055379C04", hash_generated_method = "4D78E5F0B41D052FC0B0DE683E5127A7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.349 -0400", hash_original_method = "A2AACDDA330848E1D1B1D4F055379C04", hash_generated_method = "6B3262E758E40230A0EC3EBB44B77D83")
     public void readFromParcel(Parcel source) {
-        dsTaint.addTaint(source.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.300 -0400", hash_original_method = "C84F8D8C205C1B394ACE8E5A5C73E3F6", hash_generated_method = "5D255B20FFEB71AB75EB7E138934A32F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.350 -0400", hash_original_method = "C84F8D8C205C1B394ACE8E5A5C73E3F6", hash_generated_method = "ED3C20853EE283140D61863E7CC05F99")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
     }
 
     
@@ -196,39 +201,34 @@ public class Surface implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.300 -0400", hash_original_method = "1CEDD42C8B2FBCD0475C0CDDE7D9C910", hash_generated_method = "869C647CA5A40D50A945A4EC72A0A034")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.350 -0400", hash_original_method = "1CEDD42C8B2FBCD0475C0CDDE7D9C910", hash_generated_method = "F18D52817B86CDD9D9B7AFE1583B9211")
     public void copyFrom(Surface o) {
-        dsTaint.addTaint(o.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.300 -0400", hash_original_method = "16EE9E8EF08EFD3BA0284B735E7BCC13", hash_generated_method = "79C33644E053CBAC95E906A8A577DFF7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.351 -0400", hash_original_method = "16EE9E8EF08EFD3BA0284B735E7BCC13", hash_generated_method = "F539196FFF94F06C660BECF76F48FD3B")
     public void transferFrom(Surface o) {
-        dsTaint.addTaint(o.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.301 -0400", hash_original_method = "4CE5C8D563EAB7D0D818407349F1750B", hash_generated_method = "4BD3AA2CB59DF5E4474CE26B5E060576")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.353 -0400", hash_original_method = "4CE5C8D563EAB7D0D818407349F1750B", hash_generated_method = "DD5C11FD02714E5B9AE768FAC5ABC478")
     public int getGenerationId() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1548523116 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1548523116;
         // ---------- Original Method ----------
         //return mSurfaceGenerationId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.301 -0400", hash_original_method = "CB1C97A8279A76B0FD2F8557CCA1DF81", hash_generated_method = "B180D096DF3B46478D2CF3AD2EA95C77")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.362 -0400", hash_original_method = "CB1C97A8279A76B0FD2F8557CCA1DF81", hash_generated_method = "88AF8C8024C0F4A3A7C15154C1589891")
      void setCompatibilityTranslator(Translator translator) {
-        dsTaint.addTaint(translator.dsTaint);
         {
             float appScale;
             appScale = translator.applicationScale;
             mCompatibleMatrix = new Matrix();
             mCompatibleMatrix.setScale(appScale, appScale);
         } //End block
+        addTaint(translator.getTaint());
         // ---------- Original Method ----------
         //if (translator != null) {
             //float appScale = translator.applicationScale;
@@ -238,17 +238,14 @@ public class Surface implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.301 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "1FA264C4250124C0FC0A99BBC4E0C9DF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.363 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "1FA264C4250124C0FC0A99BBC4E0C9DF")
     public void destroy() {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.301 -0400", hash_original_method = "187F763AA53C0F8EE9F854FE8C7B0DA2", hash_generated_method = "B3FDA16DCB854337B91C7DD3319F7572")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.365 -0400", hash_original_method = "187F763AA53C0F8EE9F854FE8C7B0DA2", hash_generated_method = "0FF923E44844D20FE339E44DC3CFAC90")
     private Canvas lockCanvasNative(Rect dirty) {
-        dsTaint.addTaint(dirty.dsTaint);
-        return (Canvas)dsTaint.getTaint();
+        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
     }
 
     
@@ -287,105 +284,77 @@ public class Surface implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.302 -0400", hash_original_method = "428DEA65454197BAB1AB2F833BF39B55", hash_generated_method = "8E6354FBC794E3AE298D99E97962F954")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.382 -0400", hash_original_method = "428DEA65454197BAB1AB2F833BF39B55", hash_generated_method = "E0D75CEE93E7BC9B4DD23C1CF3F705CA")
     public void setLayer(int zorder) {
-        dsTaint.addTaint(zorder);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.302 -0400", hash_original_method = "7F99A19F828A289B6FD343EC8CB65512", hash_generated_method = "DBC00E1254EC679A25ABDE18AC1FB1AF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.382 -0400", hash_original_method = "7F99A19F828A289B6FD343EC8CB65512", hash_generated_method = "0D41602CA9F11D64EA909C3FC190DFDC")
     public void setPosition(int x, int y) {
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
         setPosition((float)x, (float)y);
+        addTaint(x);
+        addTaint(y);
         // ---------- Original Method ----------
         //setPosition((float)x, (float)y);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.303 -0400", hash_original_method = "D556E449F3DAE9E225E5655A6439B288", hash_generated_method = "18F8B05B80FBAA72897DF2E4D8BE0FD8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.382 -0400", hash_original_method = "D556E449F3DAE9E225E5655A6439B288", hash_generated_method = "01FE99E049CADF15099A4358AD7A0805")
     public void setPosition(float x, float y) {
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.303 -0400", hash_original_method = "7F2FB86FF01FCE5B1880FA85C66C3806", hash_generated_method = "282890DD97649F603219ABE8F6206664")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.385 -0400", hash_original_method = "7F2FB86FF01FCE5B1880FA85C66C3806", hash_generated_method = "0C10C6ECA537BF9EC48FDC78E37F8231")
     public void setSize(int w, int h) {
-        dsTaint.addTaint(w);
-        dsTaint.addTaint(h);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.303 -0400", hash_original_method = "58365D1B8E35BD4BC81D336D692C97A2", hash_generated_method = "2CAEE5E9ABBD44ABA77ACDEBF6780153")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.386 -0400", hash_original_method = "58365D1B8E35BD4BC81D336D692C97A2", hash_generated_method = "2CAEE5E9ABBD44ABA77ACDEBF6780153")
     public void hide() {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.303 -0400", hash_original_method = "9067AC917FFB66A9E8FF84EA37A89CBE", hash_generated_method = "5B805FC97056DA9ABD80353A6133FF8B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.391 -0400", hash_original_method = "9067AC917FFB66A9E8FF84EA37A89CBE", hash_generated_method = "5B805FC97056DA9ABD80353A6133FF8B")
     public void show() {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.303 -0400", hash_original_method = "8BC3F7928D017996CA20E3AD22A58A3C", hash_generated_method = "19E1C0D9B425BE14BDA4660EED36ED0C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.392 -0400", hash_original_method = "8BC3F7928D017996CA20E3AD22A58A3C", hash_generated_method = "8C6B9697066F095BC8F8EF08CAE0653C")
     public void setTransparentRegionHint(Region region) {
-        dsTaint.addTaint(region.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.303 -0400", hash_original_method = "021CC1A8FCE5777EEDC941EBD3709765", hash_generated_method = "139768D2879E2B580D783D8BC66CA43E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.392 -0400", hash_original_method = "021CC1A8FCE5777EEDC941EBD3709765", hash_generated_method = "67D2E54DFF8E42EBA7F80A015B7CFC5C")
     public void setAlpha(float alpha) {
-        dsTaint.addTaint(alpha);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.303 -0400", hash_original_method = "C221BDABC27AE9327206947389DE8DAC", hash_generated_method = "A497D5D6C8C7E06ACE721495CA388F04")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.396 -0400", hash_original_method = "C221BDABC27AE9327206947389DE8DAC", hash_generated_method = "53D9B02179F6297CD55494A6D45AF1D9")
     public void setMatrix(float dsdx, float dtdx, float dsdy, float dtdy) {
-        dsTaint.addTaint(dtdy);
-        dsTaint.addTaint(dtdx);
-        dsTaint.addTaint(dsdy);
-        dsTaint.addTaint(dsdx);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.303 -0400", hash_original_method = "1F5223037E46C5C80D7D4FC991D282C9", hash_generated_method = "35DAF2726170E3F4ED3AD17631545F9B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.397 -0400", hash_original_method = "1F5223037E46C5C80D7D4FC991D282C9", hash_generated_method = "35DAF2726170E3F4ED3AD17631545F9B")
     public void freeze() {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.304 -0400", hash_original_method = "510610C10E363AFDA52A6703982BC316", hash_generated_method = "3D863391F4DF022CA3C29E823A9BD026")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.397 -0400", hash_original_method = "510610C10E363AFDA52A6703982BC316", hash_generated_method = "3D863391F4DF022CA3C29E823A9BD026")
     public void unfreeze() {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.304 -0400", hash_original_method = "B3E5D6D54C5D692662BF006C8E303D59", hash_generated_method = "629441113546F751011735BB9B4871F2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.398 -0400", hash_original_method = "B3E5D6D54C5D692662BF006C8E303D59", hash_generated_method = "38006CD8D091D568FF5D25EE4FF6244D")
     public void setFreezeTint(int tint) {
-        dsTaint.addTaint(tint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.304 -0400", hash_original_method = "C7085AACC0EA197CCDBEBDC91CFFCA9E", hash_generated_method = "DB4BA7BD99E55F00C9B07D406D866641")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.399 -0400", hash_original_method = "C7085AACC0EA197CCDBEBDC91CFFCA9E", hash_generated_method = "70F2C2CA80B62E417117E816D656E3E8")
     public void setFlags(int flags, int mask) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(mask);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.304 -0400", hash_original_method = "1BAE2B05EDDA8E2427743FE96FA46E82", hash_generated_method = "7C6EF9F1826766D199070573FA4D17F2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.402 -0400", hash_original_method = "1BAE2B05EDDA8E2427743FE96FA46E82", hash_generated_method = "7C6EF9F1826766D199070573FA4D17F2")
     @Override
     protected void finalize() throws Throwable {
         try 
@@ -414,56 +383,41 @@ public class Surface implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.304 -0400", hash_original_method = "6CC4E2A6788D537FAA561FF2F1482110", hash_generated_method = "CDCB2013225E5EE142E5B708F6BEFD4F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.415 -0400", hash_original_method = "6CC4E2A6788D537FAA561FF2F1482110", hash_generated_method = "AD08DA90139772E5809887C477D9C600")
     private void init(SurfaceSession s,
             int pid, String name, int display, int w, int h, int format, int flags) throws OutOfResourcesException {
-        dsTaint.addTaint(w);
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(s.dsTaint);
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(display);
-        dsTaint.addTaint(pid);
-        dsTaint.addTaint(format);
-        dsTaint.addTaint(h);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.304 -0400", hash_original_method = "F10A64920BEF86A35D10AFBE49D37C12", hash_generated_method = "E63C8CD396F5438D99BFF7E036FE8160")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.416 -0400", hash_original_method = "F10A64920BEF86A35D10AFBE49D37C12", hash_generated_method = "56C7840171875D3B671212B1B91DD491")
     private void init(Parcel source) {
-        dsTaint.addTaint(source.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.305 -0400", hash_original_method = "EBFCAC1A806E7105045857BE7B671E13", hash_generated_method = "90C349AF062E2AAB0779544F3ADABDD3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.416 -0400", hash_original_method = "EBFCAC1A806E7105045857BE7B671E13", hash_generated_method = "79DA3604975EAAE9A3B23926E4F66416")
     private void initFromSurfaceTexture(SurfaceTexture surfaceTexture) {
-        dsTaint.addTaint(surfaceTexture.dsTaint);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.305 -0400", hash_original_method = "A65BCA62207C2D99277C23D442CBFDBD", hash_generated_method = "1E569029FC2875CD47F79DE12B451F0F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.416 -0400", hash_original_method = "A65BCA62207C2D99277C23D442CBFDBD", hash_generated_method = "68C79CD352A3A0FA9D7A14AC5A61F141")
     private int getIdentity() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_436333924 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_436333924;
     }
 
     
     public static class OutOfResourcesException extends Exception {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.305 -0400", hash_original_method = "61F4EF1E830289140B20E24C64AAB8C1", hash_generated_method = "A594474F57F2910DF90E8F2B34F97C87")
-        @DSModeled(DSC.SAFE)
-        public OutOfResourcesException() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.416 -0400", hash_original_method = "61F4EF1E830289140B20E24C64AAB8C1", hash_generated_method = "A594474F57F2910DF90E8F2B34F97C87")
+        public  OutOfResourcesException() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.305 -0400", hash_original_method = "939C993D5367F7A0F0B43DA6997565C5", hash_generated_method = "D2827E50CE1819C8467D6B826BD6F810")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public OutOfResourcesException(String name) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.417 -0400", hash_original_method = "939C993D5367F7A0F0B43DA6997565C5", hash_generated_method = "5C61F340B8BA1A59560151D83B1A6E5F")
+        public  OutOfResourcesException(String name) {
             super(name);
-            dsTaint.addTaint(name);
+            addTaint(name.getTaint());
             // ---------- Original Method ----------
         }
 
@@ -473,16 +427,18 @@ public class Surface implements Parcelable {
 
     
     private class CompatibleCanvas extends Canvas {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.417 -0400", hash_original_field = "1385AF6333A941634ABB92BEDB3ACBE3", hash_generated_field = "379D1DE57EE71D7AC75E059FE9ADC328")
+
         private Matrix mOrigMatrix = null;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.305 -0400", hash_original_method = "7C0C39022D98B8B786DDAA1C7F558FD5", hash_generated_method = "7C0C39022D98B8B786DDAA1C7F558FD5")
-                public CompatibleCanvas ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.417 -0400", hash_original_method = "9F84EE428B625E49141923C25C0021D6", hash_generated_method = "9F84EE428B625E49141923C25C0021D6")
+        public CompatibleCanvas ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.306 -0400", hash_original_method = "4436A903F00C274285C5C4A8B9E9A836", hash_generated_method = "83295D6C27C606CF8806B51586CF168D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.417 -0400", hash_original_method = "4436A903F00C274285C5C4A8B9E9A836", hash_generated_method = "F24FFAC50FFDE524B1793C9CED8CDB24")
         @Override
         public int getWidth() {
             int w;
@@ -490,7 +446,8 @@ public class Surface implements Parcelable {
             {
                 w = (int)(w * mCompatibilityTranslator.applicationInvertedScale + .5f);
             } //End block
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_858974881 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_858974881;
             // ---------- Original Method ----------
             //int w = super.getWidth();
             //if (mCompatibilityTranslator != null) {
@@ -500,8 +457,7 @@ public class Surface implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.306 -0400", hash_original_method = "F355CB2C14EBD84D4AE7E0F5ECAE6C3D", hash_generated_method = "991AF742A0AC2D9CE6D6EE6F91D50B79")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.452 -0400", hash_original_method = "F355CB2C14EBD84D4AE7E0F5ECAE6C3D", hash_generated_method = "5E802907F1770DF3CEE64836B25F70E5")
         @Override
         public int getHeight() {
             int h;
@@ -509,7 +465,8 @@ public class Surface implements Parcelable {
             {
                 h = (int)(h * mCompatibilityTranslator.applicationInvertedScale + .5f);
             } //End block
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_886412028 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_886412028;
             // ---------- Original Method ----------
             //int h = super.getHeight();
             //if (mCompatibilityTranslator != null) {
@@ -519,13 +476,11 @@ public class Surface implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.306 -0400", hash_original_method = "50EBC9F34A364763AC7C9602053D9FF8", hash_generated_method = "55C5AF7EDA3E9A925FDB8B338BCC07D0")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.453 -0400", hash_original_method = "50EBC9F34A364763AC7C9602053D9FF8", hash_generated_method = "6F655A2EFEF9F49A52A3FA6F9A0318D2")
         @Override
         public void setMatrix(Matrix matrix) {
-            dsTaint.addTaint(matrix.dsTaint);
             {
-                boolean varC243940C8E980702D435CDAA12C8D323_1595007388 = (mCompatibleMatrix == null || mOrigMatrix == null || mOrigMatrix.equals(matrix));
+                boolean varC243940C8E980702D435CDAA12C8D323_521028813 = (mCompatibleMatrix == null || mOrigMatrix == null || mOrigMatrix.equals(matrix));
                 {
                     super.setMatrix(matrix);
                 } //End block
@@ -536,6 +491,7 @@ public class Surface implements Parcelable {
                     super.setMatrix(m);
                 } //End block
             } //End collapsed parenthetic
+            addTaint(matrix.getTaint());
             // ---------- Original Method ----------
             //if (mCompatibleMatrix == null || mOrigMatrix == null || mOrigMatrix.equals(matrix)) {
                 //super.setMatrix(matrix);
@@ -547,16 +503,15 @@ public class Surface implements Parcelable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.306 -0400", hash_original_method = "8FC81697AA41EC8DD4975B897D7BBDC3", hash_generated_method = "29C68E485155C294C0C4D92B544A354C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_method = "8FC81697AA41EC8DD4975B897D7BBDC3", hash_generated_method = "F10DAD310DCAF7180B50EEF63385464B")
         @Override
         public void getMatrix(Matrix m) {
-            dsTaint.addTaint(m.dsTaint);
             super.getMatrix(m);
             {
                 mOrigMatrix = new Matrix();
             } //End block
             mOrigMatrix.set(m);
+            addTaint(m.getTaint());
             // ---------- Original Method ----------
             //super.getMatrix(m);
             //if (mOrigMatrix == null) {
@@ -570,60 +525,83 @@ public class Surface implements Parcelable {
 
 
     
-    private static final String LOG_TAG = "Surface";
-    private static final boolean DEBUG_RELEASE = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "6DDF7D23DFB2FB1CF2DB3648A8B85071", hash_generated_field = "829448AC4AFEBE11A49CABE24573D858")
+
+    private static String LOG_TAG = "Surface";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "B115923E6C18F47C6311DFE70CFF34FB", hash_generated_field = "F16BB7866BA04E45F6140CACF6066FC7")
+
+    private static boolean DEBUG_RELEASE = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "21335678A732A081CE6933E8E8DAE075", hash_generated_field = "D3D30099A50791E5BBCDD89F15ECA592")
+
     public static final int ROTATION_0       = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "0CF44681CE486D2977FD54AF7AE3682F", hash_generated_field = "F2A2C6EEDF86C1E16C9FCE94434DC53A")
+
     public static final int ROTATION_90      = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "6BAB164EC4B724052F5B85BF9979BFF6", hash_generated_field = "E18D27FB35F9722D54432B8305BC4C14")
+
     public static final int ROTATION_180     = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "8F5A482B6F26FF67329F8CCFE971642D", hash_generated_field = "F81154964A7735929776F4BD9D5367B7")
+
     public static final int ROTATION_270     = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "A0BDC3D0947F49327858A7C3EA043B63", hash_generated_field = "2569277C8E27FDFD7DA43282F812897F")
+
     public static final int HIDDEN              = 0x00000004;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "041755E0FB1FE65D79E0385846833AF4", hash_generated_field = "0DBFC41D21E0536C69753FAF5773D22D")
+
     public static final int SECURE              = 0x00000080;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "209E01D187557EE76FB90CF108963F5D", hash_generated_field = "B4E5B4B144F4C46C4721120F7AEB539C")
+
     public static final int NON_PREMULTIPLIED   = 0x00000100;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "2DDB37C4FE8E030ADDA21E9EFC2C9A53", hash_generated_field = "787D10C57614CA43DFEEABE50199B538")
+
     public static final int OPAQUE              = 0x00000400;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "D4E7561879EC3972DDE1AB327CBF3EAE", hash_generated_field = "4144F4EBFF817C8C47FA9745FCD5529D")
+
     public static final int PROTECTED_APP       = 0x00000800;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "DF169A3E9DE529BE228AF3021B6332BE", hash_generated_field = "2FE2BFC9986E44BEF9C952166E40148E")
+
     public static final int FX_SURFACE_NORMAL   = 0x00000000;
-    @Deprecated public static final int FX_SURFACE_BLUR     = 0x00010000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "61DD00CE0D4B94896FBC7DF41785C80C", hash_generated_field = "B41A8A674D59D1BA27FDF13A7BE1EE34")
+
+    @Deprecated
+    public static final int FX_SURFACE_BLUR     = 0x00010000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "50E30092BB3F853C637EB7C5F6A57AEF", hash_generated_field = "CC10EA1184AB37BE19F2FD9D27FD26D7")
+
     public static final int FX_SURFACE_DIM     = 0x00020000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.454 -0400", hash_original_field = "5B96371DD0C90E3EE75D05B0946C70ED", hash_generated_field = "1EAE9F8197E9996FAEB8F7CC6BCA9F6A")
+
     public static final int FX_SURFACE_SCREENSHOT   = 0x00030000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.455 -0400", hash_original_field = "C5C825A72DFE30CF97B57EDAFA52757A", hash_generated_field = "9FFCE6C9349CD57B4435EDF8BDD8A3F7")
+
     public static final int FX_SURFACE_MASK     = 0x000F0000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.455 -0400", hash_original_field = "41322578DA891D6298C638FF37D2E46E", hash_generated_field = "FFF1AB1FE91D68AE5A8FEEB979D6675B")
+
     public static final int SURFACE_HIDDEN    = 0x01;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.455 -0400", hash_original_field = "B7D4285D19076ACBFEF95FC45E28A66B", hash_generated_field = "329C5A7EAF9BA2418EB85688C52E41C0")
+
     public static final int SURFACE_FROZEN     = 0x02;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.455 -0400", hash_original_field = "ABE07E03E14E99F86ABEC697B5FBDBEA", hash_generated_field = "3B67C17B3862342915009A6C0F5CA9F5")
+
     public static final int SURFACE_DITHER    = 0x04;
     static { nativeClassInit(); }
     
-    public static final Parcelable.Creator<Surface> CREATOR = new Parcelable.Creator<Surface>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.307 -0400", hash_original_method = "B8797068538D7B2F1963613F92E62B32", hash_generated_method = "9C42A322D9313EF40BD0662ED20CE300")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.455 -0400", hash_original_field = "8D1981611D47C7C4E4F15592707A3675", hash_generated_field = "B681B4338E63E9BDE475C3E1E59180D7")
+
+    public static final Parcelable.Creator<Surface> CREATOR
+            = new Parcelable.Creator<Surface>()
+    {
         public Surface createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            try 
-            {
-                Surface varC876D7109D86F553F86244AD6FD53202_1462214343 = (new Surface(source));
-            } //End block
-            catch (Exception e)
-            { }
-            return (Surface)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //try {
-                //return new Surface(source);
-            //} catch (Exception e) {
-                //Log.e(LOG_TAG, "Exception creating surface from parcel", e);
-            //}
-            //return null;
+            try {
+                return new Surface(source);
+            } catch (Exception e) {
+                Log.e(LOG_TAG, "Exception creating surface from parcel", e);
+            }
+            return null;
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:59.307 -0400", hash_original_method = "38FBCD3B929BD371241F41AD88A154ED", hash_generated_method = "C455176C0F7EF0E80FC371D0A679AD47")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public Surface[] newArray(int size) {
-            dsTaint.addTaint(size);
-            Surface[] var3736F3394504CAA74B80E0A8DFE9649F_1780420911 = (new Surface[size]);
-            return (Surface[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new Surface[size];
+            return new Surface[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

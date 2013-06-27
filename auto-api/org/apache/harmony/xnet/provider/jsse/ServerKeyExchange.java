@@ -14,23 +14,38 @@ import java.security.interfaces.RSAPublicKey;
 import java.security.spec.RSAPublicKeySpec;
 
 public class ServerKeyExchange extends Message {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.158 -0400", hash_original_field = "A4B5CEBA5CB5266E48EF58509253C548", hash_generated_field = "F2393EDA2114C170A28B32BCFE39CA4A")
+
     BigInteger par1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.158 -0400", hash_original_field = "A44801A7A0E742E9C7A7556B9B22A51D", hash_generated_field = "EACF62C123FC164BE029507CCE179CCF")
+
     byte[] bytes1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.158 -0400", hash_original_field = "E88C2E31C94DBA9E37EB394165345BE2", hash_generated_field = "49DF98649AA30F777A7B9E97B2259031")
+
     BigInteger par2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.158 -0400", hash_original_field = "23ACCEECF103768F091B36010844EA27", hash_generated_field = "A1E23DAADE58A1B5E338B97B1B783D02")
+
     byte[] bytes2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.158 -0400", hash_original_field = "B2CD717F860FE999FE1B3F4F4CBFD70D", hash_generated_field = "04ADECD493FBEAF3F6DA9C0D47888E6A")
+
     BigInteger par3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.158 -0400", hash_original_field = "DA1812648B0B1EC93962F174E6095D65", hash_generated_field = "A96D0DD7D69372A4FE08B07AE1E6E7B2")
+
     byte[] bytes3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.158 -0400", hash_original_field = "0800FC577294C34E0B28AD2839435945", hash_generated_field = "6195FCC77BFDBC9D95F3A31F9C19748F")
+
     byte[] hash;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.158 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "2C21B14519E4B3866FCF3554754DEBAE")
+
     private RSAPublicKey key;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.394 -0400", hash_original_method = "BAF04F24660E6C5095996548EBED85A1", hash_generated_method = "EB3D12F8ED749ECCA2A253E2E1CF03DB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ServerKeyExchange(BigInteger par1, BigInteger par2, BigInteger par3,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.159 -0400", hash_original_method = "BAF04F24660E6C5095996548EBED85A1", hash_generated_method = "261F38D8CE093F00967CC6B20C7465C3")
+    public  ServerKeyExchange(BigInteger par1, BigInteger par2, BigInteger par3,
             byte[] hash) {
-        dsTaint.addTaint(hash[0]);
-        dsTaint.addTaint(par3.dsTaint);
-        dsTaint.addTaint(par2.dsTaint);
-        dsTaint.addTaint(par1.dsTaint);
+        this.par1 = par1;
+        this.par2 = par2;
+        this.par3 = par3;
+        this.hash = hash;
         bytes1 = toUnsignedByteArray(this.par1);
         bytes2 = toUnsignedByteArray(this.par2);
         length = 4 + bytes1.length + bytes2.length;
@@ -62,13 +77,9 @@ public class ServerKeyExchange extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.394 -0400", hash_original_method = "0FED75D6D7B207E32712BBEB8093B91D", hash_generated_method = "BEF8B1F4F22A6A0CE1E3C3E57B794E10")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ServerKeyExchange(HandshakeIODataStream in, int length,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.172 -0400", hash_original_method = "0FED75D6D7B207E32712BBEB8093B91D", hash_generated_method = "1D8B19AEB3018F16E83E9E507E284391")
+    public  ServerKeyExchange(HandshakeIODataStream in, int length,
             int keyExchange) throws IOException {
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(keyExchange);
-        dsTaint.addTaint(in.dsTaint);
         int size;
         size = in.readUint16();
         bytes1 = in.read(size);
@@ -100,6 +111,8 @@ public class ServerKeyExchange extends Message {
             fatalAlert(AlertProtocol.DECODE_ERROR,
                     "DECODE ERROR: incorrect ServerKeyExchange");
         } //End block
+        addTaint(length);
+        addTaint(keyExchange);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -120,11 +133,9 @@ public class ServerKeyExchange extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.395 -0400", hash_original_method = "2B7BAEA20D94561E69BFE5897EA1BEB9", hash_generated_method = "413A4438EAE06EED12C6FF676ECC1D79")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.173 -0400", hash_original_method = "2B7BAEA20D94561E69BFE5897EA1BEB9", hash_generated_method = "7E005FEEAB5E933C76537489AA7460F6")
     @Override
     public void send(HandshakeIODataStream out) {
-        dsTaint.addTaint(out.dsTaint);
         out.writeUint16(bytes1.length);
         out.write(bytes1);
         out.writeUint16(bytes2.length);
@@ -137,6 +148,7 @@ public class ServerKeyExchange extends Message {
             out.writeUint16(hash.length);
             out.write(hash);
         } //End block
+        addTaint(out.getTaint());
         // ---------- Original Method ----------
         //out.writeUint16(bytes1.length);
         //out.write(bytes1);
@@ -153,9 +165,14 @@ public class ServerKeyExchange extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.395 -0400", hash_original_method = "72FB1E0FC95B638A772EDD07E458B713", hash_generated_method = "01757745249D344512C8173EABB5D3A6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.173 -0400", hash_original_method = "72FB1E0FC95B638A772EDD07E458B713", hash_generated_method = "B383B0DE3AC6B61929A3EE83B166D7AF")
     public RSAPublicKey getRSAPublicKey() {
+        RSAPublicKey varB4EAC82CA7396A68D541C85D26508E83_128741785 = null; //Variable for return #1
+        RSAPublicKey varB4EAC82CA7396A68D541C85D26508E83_785796720 = null; //Variable for return #2
+        RSAPublicKey varB4EAC82CA7396A68D541C85D26508E83_989559869 = null; //Variable for return #3
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_128741785 = key;
+        } //End block
         try 
         {
             KeyFactory kf;
@@ -164,8 +181,24 @@ public class ServerKeyExchange extends Message {
                     par2));
         } //End block
         catch (Exception e)
-        { }
-        return (RSAPublicKey)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_785796720 = null;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_989559869 = key;
+        RSAPublicKey varA7E53CE21691AB073D9660D615818899_1280766155; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1280766155 = varB4EAC82CA7396A68D541C85D26508E83_128741785;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1280766155 = varB4EAC82CA7396A68D541C85D26508E83_785796720;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1280766155 = varB4EAC82CA7396A68D541C85D26508E83_989559869;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1280766155.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1280766155;
         // ---------- Original Method ----------
         //if (key != null) {
             //return key;
@@ -181,11 +214,11 @@ public class ServerKeyExchange extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.395 -0400", hash_original_method = "620B9D3699DFA1CCAA0EB56AC40BC192", hash_generated_method = "7F738F7937F26D158004C690D6AD0691")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.181 -0400", hash_original_method = "620B9D3699DFA1CCAA0EB56AC40BC192", hash_generated_method = "B4282E99F0DD9E22D9CDC0D7F242EDC6")
     @Override
     public int getType() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_55047146 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_55047146;
         // ---------- Original Method ----------
         //return Handshake.SERVER_KEY_EXCHANGE;
     }

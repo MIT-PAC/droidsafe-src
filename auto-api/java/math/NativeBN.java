@@ -10,9 +10,10 @@ import java.util.Iterator;
 
 final class NativeBN {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.720 -0400", hash_original_method = "4564AA6C9C4D1C60FADD0A1F163084BA", hash_generated_method = "4564AA6C9C4D1C60FADD0A1F163084BA")
-        public NativeBN ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.745 -0400", hash_original_method = "E90C9F7618B8847FE731998C9CEE159F", hash_generated_method = "E90C9F7618B8847FE731998C9CEE159F")
+    public NativeBN ()
     {
+        //Synthesized constructor
     }
 
 
@@ -22,7 +23,7 @@ final class NativeBN {
 
     
         public static String ERR_error_string(int e) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -86,24 +87,22 @@ final class NativeBN {
 
     
         public static String BN_bn2dec(int a) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static String BN_bn2hex(int a) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         public static byte[] BN_bn2bin(int a) {
-        byte[] retVal = {DSUtils.UNKNOWN_BYTE};
-        return retVal;
+        return {DSUtils.UNKNOWN_BYTE};
     }
 
     
         public static int[] bn2litEndInts(int a) {
-        int[] retVal = {DSUtils.UNKNOWN_INT};
-        return retVal;
+        return {DSUtils.UNKNOWN_INT};
     }
 
     

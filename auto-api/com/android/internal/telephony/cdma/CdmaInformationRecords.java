@@ -11,12 +11,12 @@ import static com.android.internal.telephony.RILConstants.*;
 import android.os.Parcel;
 
 public final class CdmaInformationRecords {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.969 -0400", hash_original_field = "DE17F0F24B49F8364187891F8550FFBB", hash_generated_field = "946952F9E0B02B6DCE06B7EC0F5CF726")
+
     public Object record;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.476 -0400", hash_original_method = "71E05E964ADC392142B0BD4E6150C714", hash_generated_method = "C772D5324FFFDA509BA39762760465E7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CdmaInformationRecords(Parcel p) {
-        dsTaint.addTaint(p.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.975 -0400", hash_original_method = "71E05E964ADC392142B0BD4E6150C714", hash_generated_method = "6157F4839DBCDDBC0FA94038CE646A44")
+    public  CdmaInformationRecords(Parcel p) {
         int id;
         id = p.readInt();
         //Begin case RIL_CDMA_DISPLAY_INFO_REC RIL_CDMA_EXTENDED_DISPLAY_INFO_REC 
@@ -71,26 +71,31 @@ public final class CdmaInformationRecords {
 
     
     public static class CdmaSignalInfoRec {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.976 -0400", hash_original_field = "9B5E5A2DCDDD73BC362DB72D9FF0D915", hash_generated_field = "766EEFBCBBC32A8B09E311AB27FDF552")
+
         public boolean isPresent;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.976 -0400", hash_original_field = "14A5734B93F10BF0E2238159D9B18160", hash_generated_field = "C3DBA856A516B712CA372B9887F75527")
+
         public int signalType;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.976 -0400", hash_original_field = "EFBC0E530FEE35C4625A059700403C54", hash_generated_field = "644C4013AC325045134F2A1D3FE944BE")
+
         public int alertPitch;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.976 -0400", hash_original_field = "521345A9FB579F52117F27BE6E0673EE", hash_generated_field = "EA292986602D36792255D5DBC38A5C75")
+
         public int signal;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.478 -0400", hash_original_method = "65C1B1FAB01F8320C332C9AE75D3022E", hash_generated_method = "46E0D37F3F57B4E83750C7DDAE4663DA")
-        @DSModeled(DSC.SAFE)
-        public CdmaSignalInfoRec() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.976 -0400", hash_original_method = "65C1B1FAB01F8320C332C9AE75D3022E", hash_generated_method = "46E0D37F3F57B4E83750C7DDAE4663DA")
+        public  CdmaSignalInfoRec() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.479 -0400", hash_original_method = "086C7141CE5438F46B273808409370D3", hash_generated_method = "F25823E7487DE28FBED78282785E76C9")
-        @DSModeled(DSC.SAFE)
-        public CdmaSignalInfoRec(int isPresent, int signalType, int alertPitch, int signal) {
-            dsTaint.addTaint(alertPitch);
-            dsTaint.addTaint(signal);
-            dsTaint.addTaint(signalType);
-            dsTaint.addTaint(isPresent);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.976 -0400", hash_original_method = "086C7141CE5438F46B273808409370D3", hash_generated_method = "5A3733FEE3EDECBA3F3B4D069806D900")
+        public  CdmaSignalInfoRec(int isPresent, int signalType, int alertPitch, int signal) {
             this.isPresent = isPresent != 0;
+            this.signalType = signalType;
+            this.alertPitch = alertPitch;
+            this.signal = signal;
             // ---------- Original Method ----------
             //this.isPresent = isPresent != 0;
             //this.signalType = signalType;
@@ -99,11 +104,18 @@ public final class CdmaInformationRecords {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.479 -0400", hash_original_method = "7B06985E180C621ECAFE7B9C193EA068", hash_generated_method = "8CD7A844E70A454AA50181E1CBC1484A")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.977 -0400", hash_original_method = "7B06985E180C621ECAFE7B9C193EA068", hash_generated_method = "3E24923E1215E9EE4702C84C83C5096E")
         @Override
         public String toString() {
-            return dsTaint.getTaintString();
+            String varB4EAC82CA7396A68D541C85D26508E83_761848729 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_761848729 = "CdmaSignalInfo: {" +
+                    " isPresent: " + isPresent +
+                    ", signalType: " + signalType +
+                    ", alertPitch: " + alertPitch +
+                    ", signal: " + signal +
+                    " }";
+            varB4EAC82CA7396A68D541C85D26508E83_761848729.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_761848729;
             // ---------- Original Method ----------
             //return "CdmaSignalInfo: {" +
                     //" isPresent: " + isPresent +
@@ -119,29 +131,33 @@ public final class CdmaInformationRecords {
 
     
     public static class CdmaDisplayInfoRec {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.977 -0400", hash_original_field = "B80BB7740288FDA1F201890375A60C8F", hash_generated_field = "FA0A3841DE31A9B4AD2F31B3665056D8")
+
         public int id;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.977 -0400", hash_original_field = "2C1743A391305FBF367DF8E4F069F9F9", hash_generated_field = "8B80A8499BEE1CECC8CC54BE2313A487")
+
         public String alpha;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.479 -0400", hash_original_method = "57D8FEC1FF8A1AEABF24ABAE12007FFA", hash_generated_method = "34E64B2DC3D3A4C3A73FE14E43401681")
-        @DSModeled(DSC.SAFE)
-        public CdmaDisplayInfoRec(int id, String alpha) {
-            dsTaint.addTaint(id);
-            dsTaint.addTaint(alpha);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.977 -0400", hash_original_method = "57D8FEC1FF8A1AEABF24ABAE12007FFA", hash_generated_method = "326F1BA753A5949E5766B1E813FC2BC2")
+        public  CdmaDisplayInfoRec(int id, String alpha) {
+            this.id = id;
+            this.alpha = alpha;
             // ---------- Original Method ----------
             //this.id = id;
             //this.alpha = alpha;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.480 -0400", hash_original_method = "CF7F6486CAA3B052EADF0380EBB958B2", hash_generated_method = "64E4664B663C2E749A501B008FEC9E55")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.978 -0400", hash_original_method = "CF7F6486CAA3B052EADF0380EBB958B2", hash_generated_method = "26B3821EC98763F9BC9372A8CF1DDA7F")
         @Override
         public String toString() {
-            String var91E2CD098EACAB654FE48435C303240B_1096392764 = ("CdmaDisplayInfoRec: {" +
+            String varB4EAC82CA7396A68D541C85D26508E83_616162163 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_616162163 = "CdmaDisplayInfoRec: {" +
                     " id: " + CdmaInformationRecords.idToString(id) +
                     ", alpha: " + alpha +
-                    " }");
-            return dsTaint.getTaintString();
+                    " }";
+            varB4EAC82CA7396A68D541C85D26508E83_616162163.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_616162163;
             // ---------- Original Method ----------
             //return "CdmaDisplayInfoRec: {" +
                     //" id: " + CdmaInformationRecords.idToString(id) +
@@ -155,27 +171,34 @@ public final class CdmaInformationRecords {
 
     
     public static class CdmaNumberInfoRec {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.978 -0400", hash_original_field = "B80BB7740288FDA1F201890375A60C8F", hash_generated_field = "FA0A3841DE31A9B4AD2F31B3665056D8")
+
         public int id;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.978 -0400", hash_original_field = "B1BC248A7FF2B2E95569F56DE68615DF", hash_generated_field = "35C5A82434F6EB5F96609BC97C13822F")
+
         public String number;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.978 -0400", hash_original_field = "C96EC7AE450E302C973C98A94F4C4F8E", hash_generated_field = "CB3EAF3D5F0A0A8019887D94BD69E2CF")
+
         public byte numberType;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.978 -0400", hash_original_field = "38786F58063652B570260E8A16FE7DB3", hash_generated_field = "A686DB57205923FB5B2D36D67D5CBD81")
+
         public byte numberPlan;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.978 -0400", hash_original_field = "72AB8AF56BDDAB33B269C5964B26620A", hash_generated_field = "7FC700614E6544C130C161B9A5C9632E")
+
         public byte pi;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.978 -0400", hash_original_field = "AC5585D98646D255299C359140537783", hash_generated_field = "C6891584B2AAB055A74385EF80945343")
+
         public byte si;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.480 -0400", hash_original_method = "30901569B1879A594122A889E080532A", hash_generated_method = "2F87CD43D952CFFEDBE01751A1E5E47A")
-        @DSModeled(DSC.SAFE)
-        public CdmaNumberInfoRec(int id, String number, int numberType, int numberPlan, int pi,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.988 -0400", hash_original_method = "30901569B1879A594122A889E080532A", hash_generated_method = "690172E6F7BA29309BBB8093AD84EB95")
+        public  CdmaNumberInfoRec(int id, String number, int numberType, int numberPlan, int pi,
                 int si) {
-            dsTaint.addTaint(id);
-            dsTaint.addTaint(number);
-            dsTaint.addTaint(pi);
-            dsTaint.addTaint(numberPlan);
-            dsTaint.addTaint(si);
-            dsTaint.addTaint(numberType);
+            this.number = number;
             this.numberType = (byte)numberType;
             this.numberPlan = (byte)numberPlan;
             this.pi = (byte)pi;
             this.si = (byte)si;
+            addTaint(id);
             // ---------- Original Method ----------
             //this.number = number;
             //this.numberType = (byte)numberType;
@@ -185,19 +208,20 @@ public final class CdmaInformationRecords {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.480 -0400", hash_original_method = "AA45E08965936A74DE899E6F859B6FCB", hash_generated_method = "EA4AFFB4F30EE0CF2979649A907C67D0")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.989 -0400", hash_original_method = "AA45E08965936A74DE899E6F859B6FCB", hash_generated_method = "C70CA10F579310480EF98DDE32E02593")
         @Override
         public String toString() {
-            String var7F8B009B42E18F250273B1E3891F512D_1832306979 = ("CdmaNumberInfoRec: {" +
+            String varB4EAC82CA7396A68D541C85D26508E83_615530900 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_615530900 = "CdmaNumberInfoRec: {" +
                     " id: " + CdmaInformationRecords.idToString(id) +
                     ", number: " + number +
                     ", numberType: " + numberType +
                     ", numberPlan: " + numberPlan +
                     ", pi: " + pi +
                     ", si: " + si +
-                    " }");
-            return dsTaint.getTaintString();
+                    " }";
+            varB4EAC82CA7396A68D541C85D26508E83_615530900.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_615530900;
             // ---------- Original Method ----------
             //return "CdmaNumberInfoRec: {" +
                     //" id: " + CdmaInformationRecords.idToString(id) +
@@ -215,21 +239,19 @@ public final class CdmaInformationRecords {
 
     
     public static class CdmaRedirectingNumberInfoRec {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.990 -0400", hash_original_field = "25C3E1D6729C48E14B59D39DCC45B24F", hash_generated_field = "99633BDA8A94484B44D1C34D187B3B50")
+
         public CdmaNumberInfoRec numberInfoRec;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.990 -0400", hash_original_field = "05F3670D20A2214AADC366C668114D4C", hash_generated_field = "9FE98E978C471B60CAECFC7C3520403D")
+
         public int redirectingReason;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.480 -0400", hash_original_method = "7CFE91613E5CCC29F21B49D48FA73AF0", hash_generated_method = "2E1A21FC93FF11498717D072B49D9CF7")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public CdmaRedirectingNumberInfoRec(String number, int numberType, int numberPlan,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.990 -0400", hash_original_method = "7CFE91613E5CCC29F21B49D48FA73AF0", hash_generated_method = "C06E5A1E7A56909B077F555D8B6EF00E")
+        public  CdmaRedirectingNumberInfoRec(String number, int numberType, int numberPlan,
                 int pi, int si, int reason) {
-            dsTaint.addTaint(reason);
-            dsTaint.addTaint(number);
-            dsTaint.addTaint(pi);
-            dsTaint.addTaint(numberPlan);
-            dsTaint.addTaint(si);
-            dsTaint.addTaint(numberType);
             numberInfoRec = new CdmaNumberInfoRec(RIL_CDMA_REDIRECTING_NUMBER_INFO_REC,
                                                   number, numberType, numberPlan, pi, si);
+            redirectingReason = reason;
             // ---------- Original Method ----------
             //numberInfoRec = new CdmaNumberInfoRec(RIL_CDMA_REDIRECTING_NUMBER_INFO_REC,
                                                   //number, numberType, numberPlan, pi, si);
@@ -237,11 +259,16 @@ public final class CdmaInformationRecords {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.481 -0400", hash_original_method = "D87DB983AB005EF9C7C06219E3B89A0C", hash_generated_method = "32264F3F0D41B435FFE8E3806FFDAB45")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.991 -0400", hash_original_method = "D87DB983AB005EF9C7C06219E3B89A0C", hash_generated_method = "8E4AE8B7CA72FBEF1DDF207F3C2BFEA8")
         @Override
         public String toString() {
-            return dsTaint.getTaintString();
+            String varB4EAC82CA7396A68D541C85D26508E83_787766021 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_787766021 = "CdmaNumberInfoRec: {" +
+                    " numberInfoRec: " + numberInfoRec +
+                    ", redirectingReason: " + redirectingReason +
+                    " }";
+            varB4EAC82CA7396A68D541C85D26508E83_787766021.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_787766021;
             // ---------- Original Method ----------
             //return "CdmaNumberInfoRec: {" +
                     //" numberInfoRec: " + numberInfoRec +
@@ -250,30 +277,45 @@ public final class CdmaInformationRecords {
         }
 
         
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.991 -0400", hash_original_field = "594C5172577F9EDBDC1FE8A52ADB4B96", hash_generated_field = "277DB1ED9D8523A313B00F353F323926")
+
         public static final int REASON_UNKNOWN = 0;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.991 -0400", hash_original_field = "5D408F3F2AA6604DCAE5CB0CC5C23669", hash_generated_field = "BFECBF2F322B080474B18D52C3763171")
+
         public static final int REASON_CALL_FORWARDING_BUSY = 1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.991 -0400", hash_original_field = "BD5B706C84F8C4FEF8395724F23B177B", hash_generated_field = "3A378579595DC0A8A2A183210D309EE2")
+
         public static final int REASON_CALL_FORWARDING_NO_REPLY = 2;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.991 -0400", hash_original_field = "78CC9C801726DA24CAEE2B5EA9DCFF95", hash_generated_field = "F305C42B924390152DB31E2F978F6DE2")
+
         public static final int REASON_CALLED_DTE_OUT_OF_ORDER = 9;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.991 -0400", hash_original_field = "679174943441F473DDE93ECA7B63B11C", hash_generated_field = "2B3D0D1CAAE1F9CAB91B5CE3508AE59F")
+
         public static final int REASON_CALL_FORWARDING_BY_THE_CALLED_DTE = 10;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.991 -0400", hash_original_field = "3E0953717234646B3EF4D9E7181C6AF7", hash_generated_field = "50F39F32B6D0C02AD7AE5CD226E74F32")
+
         public static final int REASON_CALL_FORWARDING_UNCONDITIONAL = 15;
     }
 
 
     
     public static class CdmaLineControlInfoRec {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.991 -0400", hash_original_field = "51F76510DB9AFD8B2B321B58B3DA8F1E", hash_generated_field = "AB56D4429F407E23BE97E22B04B26614")
+
         public byte lineCtrlPolarityIncluded;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.991 -0400", hash_original_field = "49C1E86987D0F175B60BEE8B7207F008", hash_generated_field = "4A2666C41EAEED4AED61B59638861893")
+
         public byte lineCtrlToggle;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.991 -0400", hash_original_field = "B558D62052F2AAA60339D50C4B00FD42", hash_generated_field = "CA6BFBA917641BED860E222D7FBB7EA9")
+
         public byte lineCtrlReverse;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.991 -0400", hash_original_field = "793A9472E554CF1AE3A60654CBBB2ADB", hash_generated_field = "5CC1C9B9C9C711F0F6DB72D7CBDA44CD")
+
         public byte lineCtrlPowerDenial;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.481 -0400", hash_original_method = "CD5D73B58C4B4B187F005CD1226E94E1", hash_generated_method = "8AC2720344C700AB56094627639C9483")
-        @DSModeled(DSC.SAFE)
-        public CdmaLineControlInfoRec(int lineCtrlPolarityIncluded, int lineCtrlToggle,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.000 -0400", hash_original_method = "CD5D73B58C4B4B187F005CD1226E94E1", hash_generated_method = "CDCFD7FACCCF9C61B58EF258030C2710")
+        public  CdmaLineControlInfoRec(int lineCtrlPolarityIncluded, int lineCtrlToggle,
                 int lineCtrlReverse, int lineCtrlPowerDenial) {
-            dsTaint.addTaint(lineCtrlReverse);
-            dsTaint.addTaint(lineCtrlToggle);
-            dsTaint.addTaint(lineCtrlPowerDenial);
-            dsTaint.addTaint(lineCtrlPolarityIncluded);
             this.lineCtrlPolarityIncluded = (byte)lineCtrlPolarityIncluded;
             this.lineCtrlToggle = (byte)lineCtrlToggle;
             this.lineCtrlReverse = (byte)lineCtrlReverse;
@@ -286,11 +328,18 @@ public final class CdmaInformationRecords {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.481 -0400", hash_original_method = "31B594EC48675C621293EE1C64F7F9A1", hash_generated_method = "D0CED30CF315BD86B2DACA87566514BD")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.001 -0400", hash_original_method = "31B594EC48675C621293EE1C64F7F9A1", hash_generated_method = "F4DE1407491A05BF6383BD4150B61F6F")
         @Override
         public String toString() {
-            return dsTaint.getTaintString();
+            String varB4EAC82CA7396A68D541C85D26508E83_1611988968 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1611988968 = "CdmaLineControlInfoRec: {" +
+                    " lineCtrlPolarityIncluded: " + lineCtrlPolarityIncluded +
+                    " lineCtrlToggle: " + lineCtrlToggle +
+                    " lineCtrlReverse: " + lineCtrlReverse +
+                    " lineCtrlPowerDenial: " + lineCtrlPowerDenial +
+                    " }";
+            varB4EAC82CA7396A68D541C85D26508E83_1611988968.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1611988968;
             // ---------- Original Method ----------
             //return "CdmaLineControlInfoRec: {" +
                     //" lineCtrlPolarityIncluded: " + lineCtrlPolarityIncluded +
@@ -306,23 +355,27 @@ public final class CdmaInformationRecords {
 
     
     public static class CdmaT53ClirInfoRec {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.001 -0400", hash_original_field = "560220FC3242A805F094EDCE47F35702", hash_generated_field = "5AFE3443E8650E50C762D52B5A87BAB6")
+
         public byte cause;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.481 -0400", hash_original_method = "7027858F3A41904E7AAC3077331910E1", hash_generated_method = "01BD0E3876F0A05253F58CEB43D0A40F")
-        @DSModeled(DSC.SAFE)
-        public CdmaT53ClirInfoRec(int cause) {
-            dsTaint.addTaint(cause);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.006 -0400", hash_original_method = "7027858F3A41904E7AAC3077331910E1", hash_generated_method = "253A7471455B9175589BC749538D99AF")
+        public  CdmaT53ClirInfoRec(int cause) {
             this.cause = (byte)cause;
             // ---------- Original Method ----------
             //this.cause = (byte)cause;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.481 -0400", hash_original_method = "74C570B6C9610C7A851D818E47741A96", hash_generated_method = "B5F3DBE99182F938C47C2E4DD29EB48D")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.006 -0400", hash_original_method = "74C570B6C9610C7A851D818E47741A96", hash_generated_method = "9F1D8B33321E13D0878EE1651F6943A0")
         @Override
         public String toString() {
-            return dsTaint.getTaintString();
+            String varB4EAC82CA7396A68D541C85D26508E83_262309668 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_262309668 = "CdmaT53ClirInfoRec: {" +
+                    " cause: " + cause +
+                    " }";
+            varB4EAC82CA7396A68D541C85D26508E83_262309668.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_262309668;
             // ---------- Original Method ----------
             //return "CdmaT53ClirInfoRec: {" +
                     //" cause: " + cause +
@@ -335,14 +388,15 @@ public final class CdmaInformationRecords {
 
     
     public static class CdmaT53AudioControlInfoRec {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.007 -0400", hash_original_field = "FA09BE8AA44A4075CBF13A8A2319AFC9", hash_generated_field = "9F199F8EB7C7978BE968369E879DA5EF")
+
         public byte uplink;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.007 -0400", hash_original_field = "42B847BA9F4B93FFC70109444A79680C", hash_generated_field = "4A6E9F7B5738F6C5F1F886C571587FA7")
+
         public byte downlink;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.482 -0400", hash_original_method = "50F8C49F080380C1715EB0BA46949181", hash_generated_method = "2F9D3762C01AB9C8123ED0D55DDA7859")
-        @DSModeled(DSC.SAFE)
-        public CdmaT53AudioControlInfoRec(int uplink, int downlink) {
-            dsTaint.addTaint(uplink);
-            dsTaint.addTaint(downlink);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.007 -0400", hash_original_method = "50F8C49F080380C1715EB0BA46949181", hash_generated_method = "E9EA2FB2EFC618036683820BD1761210")
+        public  CdmaT53AudioControlInfoRec(int uplink, int downlink) {
             this.uplink = (byte) uplink;
             this.downlink = (byte) downlink;
             // ---------- Original Method ----------
@@ -351,11 +405,16 @@ public final class CdmaInformationRecords {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.482 -0400", hash_original_method = "2D0051C7D271A045193565807D73F90A", hash_generated_method = "5620B6CCB931C97B0E7F12512D079D3B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.007 -0400", hash_original_method = "2D0051C7D271A045193565807D73F90A", hash_generated_method = "C8C3D1E602FC2C930088F7CC797DD064")
         @Override
         public String toString() {
-            return dsTaint.getTaintString();
+            String varB4EAC82CA7396A68D541C85D26508E83_1722922762 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1722922762 = "CdmaT53AudioControlInfoRec: {" +
+                    " uplink: " + uplink +
+                    " downlink: " + downlink +
+                    " }";
+            varB4EAC82CA7396A68D541C85D26508E83_1722922762.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1722922762;
             // ---------- Original Method ----------
             //return "CdmaT53AudioControlInfoRec: {" +
                     //" uplink: " + uplink +
@@ -368,16 +427,38 @@ public final class CdmaInformationRecords {
 
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.007 -0400", hash_original_field = "9548D9C8E9EF68C79D95A3BD185A3C3A", hash_generated_field = "D58CC7EE04EC01B8C2610AF2C51563EA")
+
     public static final int RIL_CDMA_DISPLAY_INFO_REC = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.008 -0400", hash_original_field = "CF98E5D475234111DDEFF10C2D4203FD", hash_generated_field = "77CF7299DA136D5486F92438975FB303")
+
     public static final int RIL_CDMA_CALLED_PARTY_NUMBER_INFO_REC = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.008 -0400", hash_original_field = "55B9143D5FEF5E248DDAD851DB21D6D5", hash_generated_field = "6A383AB2E2A2D5C8791774FF4E731FCA")
+
     public static final int RIL_CDMA_CALLING_PARTY_NUMBER_INFO_REC = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.008 -0400", hash_original_field = "E3E0EB3901E4E2E512DA012DA5D1A978", hash_generated_field = "5304006DFD5A984FD958B01E360D4BEB")
+
     public static final int RIL_CDMA_CONNECTED_NUMBER_INFO_REC = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.008 -0400", hash_original_field = "AEE6BED4D02E5A3CD67A153CD4F122F6", hash_generated_field = "FE3402021EBBE593405377DF31763AA9")
+
     public static final int RIL_CDMA_SIGNAL_INFO_REC = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.008 -0400", hash_original_field = "12876CC1ECD3F2474845B26FC410940C", hash_generated_field = "EA81C11EFDCA8CA107CEC699BDEB2F68")
+
     public static final int RIL_CDMA_REDIRECTING_NUMBER_INFO_REC = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.008 -0400", hash_original_field = "A8066B2FB943E6C78A9C958191AD477A", hash_generated_field = "FF8AB1FAC5CAADCA6EC088533EB9E2FB")
+
     public static final int RIL_CDMA_LINE_CONTROL_INFO_REC = 6;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.008 -0400", hash_original_field = "D96E08C83037C20359A97FC2B9841F38", hash_generated_field = "0909FC4977E8F961F49349A83270C779")
+
     public static final int RIL_CDMA_EXTENDED_DISPLAY_INFO_REC = 7;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.008 -0400", hash_original_field = "B6B2A367A0DDB82F535CCF9DB4756281", hash_generated_field = "07BE9745C82BF289CF0AD44776115D67")
+
     public static final int RIL_CDMA_T53_CLIR_INFO_REC = 8;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.008 -0400", hash_original_field = "A1507DACB83FAE887315D44F364E3B76", hash_generated_field = "12BE36023C341FCE2FA754564FF325D3")
+
     public static final int RIL_CDMA_T53_RELEASE_INFO_REC = 9;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.008 -0400", hash_original_field = "91CE6AA483A4E470FBE26831AB6A17D6", hash_generated_field = "D8136FAFE78425A58150838DEE3E42DE")
+
     public static final int RIL_CDMA_T53_AUDIO_CONTROL_INFO_REC = 10;
 }
 

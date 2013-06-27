@@ -11,9 +11,10 @@ import javax.microedition.khronos.opengles.GL;
 
 public abstract class EGLContext {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.007 -0400", hash_original_method = "2470AE6AF91AC6F20E3E72FC26F6F30F", hash_generated_method = "2470AE6AF91AC6F20E3E72FC26F6F30F")
-        public EGLContext ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.377 -0400", hash_original_method = "08AE013F5F70C27B6C3BCCA082C95AAF", hash_generated_method = "08AE013F5F70C27B6C3BCCA082C95AAF")
+    public EGLContext ()
     {
+        //Synthesized constructor
     }
 
 
@@ -25,6 +26,8 @@ public abstract class EGLContext {
     public abstract GL getGL();
 
     
-    private static final EGL EGL_INSTANCE = new com.google.android.gles_jni.EGLImpl();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.378 -0400", hash_original_field = "8FA0140371A1967018E732A94D26DE99", hash_generated_field = "36FAA6302B2748469CF1235878C79F9C")
+
+    private static EGL EGL_INSTANCE = new com.google.android.gles_jni.EGLImpl();
 }
 

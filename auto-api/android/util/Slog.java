@@ -13,9 +13,8 @@ import java.io.StringWriter;
 
 public final class Slog {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.337 -0400", hash_original_method = "0FAE0F80FD2D23A71DD156687BF7DB2B", hash_generated_method = "DEFE956F21EBCABD3F10CEE138B68EC7")
-    @DSModeled(DSC.SAFE)
-    private Slog() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.378 -0400", hash_original_method = "0FAE0F80FD2D23A71DD156687BF7DB2B", hash_generated_method = "DEFE956F21EBCABD3F10CEE138B68EC7")
+    private  Slog() {
         // ---------- Original Method ----------
     }
 

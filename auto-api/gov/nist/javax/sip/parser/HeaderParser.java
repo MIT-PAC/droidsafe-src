@@ -13,30 +13,27 @@ import java.text.ParseException;
 
 public class HeaderParser extends Parser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.287 -0400", hash_original_method = "D7BF0781EB1B150DCC61F7ABE4F04AEB", hash_generated_method = "BE1AF4AD959EC370AB22D1BEFB66FF56")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected HeaderParser(String header) {
-        dsTaint.addTaint(header);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.799 -0400", hash_original_method = "D7BF0781EB1B150DCC61F7ABE4F04AEB", hash_generated_method = "01DBEC03B2CB347A4566513BB13E1FE3")
+    protected  HeaderParser(String header) {
         this.lexer = new Lexer("command_keywordLexer", header);
+        addTaint(header.getTaint());
         // ---------- Original Method ----------
         //this.lexer = new Lexer("command_keywordLexer", header);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.287 -0400", hash_original_method = "844D98E200F4C4A3FE69D132F5D518A2", hash_generated_method = "8C0855B1CFE89C598BEC55468AC9023D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected HeaderParser(Lexer lexer) {
-        dsTaint.addTaint(lexer.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.803 -0400", hash_original_method = "844D98E200F4C4A3FE69D132F5D518A2", hash_generated_method = "F1A83F91A44FD4BA40A408F306CA687A")
+    protected  HeaderParser(Lexer lexer) {
         this.lexer = lexer;
         this.lexer.selectLexer("command_keywordLexer");
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
         //this.lexer = lexer;
         //this.lexer.selectLexer("command_keywordLexer");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.288 -0400", hash_original_method = "3252974D26894AAD7C4FB2AFA441C9B3", hash_generated_method = "0DD6BA45C3E55C46D24974DC6043F663")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.804 -0400", hash_original_method = "3252974D26894AAD7C4FB2AFA441C9B3", hash_generated_method = "6A7044F3614B0EA71E2265FAEDC2C68A")
     protected int wkday() throws ParseException {
         dbg_enter("wkday");
         try 
@@ -46,19 +43,19 @@ public class HeaderParser extends Parser {
             String id;
             id = tok.toLowerCase();
             {
-                boolean varFBBD09A165C3CD21B7CB07BB2947A8C6_1358567934 = (TokenNames.MON.equalsIgnoreCase(id));
+                boolean varFBBD09A165C3CD21B7CB07BB2947A8C6_507237591 = (TokenNames.MON.equalsIgnoreCase(id));
                 {
-                    boolean varA0B9871A289865119D112F580831DCD0_1902698240 = (TokenNames.TUE.equalsIgnoreCase(id));
+                    boolean varA0B9871A289865119D112F580831DCD0_1507093768 = (TokenNames.TUE.equalsIgnoreCase(id));
                     {
-                        boolean var35080559ECE6280BC3F96EB0045ED968_328792974 = (TokenNames.WED.equalsIgnoreCase(id));
+                        boolean var35080559ECE6280BC3F96EB0045ED968_961390623 = (TokenNames.WED.equalsIgnoreCase(id));
                         {
-                            boolean var682C1883901FF8641C6B50F4B8DD6A10_438552670 = (TokenNames.THU.equalsIgnoreCase(id));
+                            boolean var682C1883901FF8641C6B50F4B8DD6A10_1179107641 = (TokenNames.THU.equalsIgnoreCase(id));
                             {
-                                boolean varA2A1C2732A98E67B628DE72612F71350_840778792 = (TokenNames.FRI.equalsIgnoreCase(id));
+                                boolean varA2A1C2732A98E67B628DE72612F71350_534847896 = (TokenNames.FRI.equalsIgnoreCase(id));
                                 {
-                                    boolean varAED658A37D1D624744CAC013F45A97D1_205503906 = (TokenNames.SAT.equalsIgnoreCase(id));
+                                    boolean varAED658A37D1D624744CAC013F45A97D1_877083078 = (TokenNames.SAT.equalsIgnoreCase(id));
                                     {
-                                        boolean varD8F3B695147616021483803FA469195C_1907322656 = (TokenNames.SUN.equalsIgnoreCase(id));
+                                        boolean varD8F3B695147616021483803FA469195C_1433621263 = (TokenNames.SUN.equalsIgnoreCase(id));
                                         if (DroidSafeAndroidRuntime.control) throw createParseException("bad wkday");
                                     } //End collapsed parenthetic
                                 } //End collapsed parenthetic
@@ -72,15 +69,16 @@ public class HeaderParser extends Parser {
         {
             dbg_leave("wkday");
         } //End block
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1021669299 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1021669299;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.288 -0400", hash_original_method = "C8449F66AC8DB5DC1EE33D138B3717DE", hash_generated_method = "76292E7B0D91AB58582ADC07591382BD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.812 -0400", hash_original_method = "C8449F66AC8DB5DC1EE33D138B3717DE", hash_generated_method = "D4ADCAD94645FBCD5137765CCB783815")
     protected Calendar date() throws ParseException {
+        Calendar varB4EAC82CA7396A68D541C85D26508E83_633153008 = null; //Variable for return #1
         try 
         {
             Calendar retval;
@@ -95,62 +93,62 @@ public class HeaderParser extends Parser {
             String month;
             month = lexer.ttoken().toLowerCase();
             {
-                boolean var9743F073DC13D11A170547C6332EA441_1281157437 = (month.equals("jan"));
+                boolean var9743F073DC13D11A170547C6332EA441_23428193 = (month.equals("jan"));
                 {
                     retval.set(Calendar.MONTH, Calendar.JANUARY);
                 } //End block
                 {
-                    boolean var2118529D719391BDEC0B6E339390CA00_1952165171 = (month.equals("feb"));
+                    boolean var2118529D719391BDEC0B6E339390CA00_983443720 = (month.equals("feb"));
                     {
                         retval.set(Calendar.MONTH, Calendar.FEBRUARY);
                     } //End block
                     {
-                        boolean varF2858B81441E0AABDAD312E1A6511F2E_115681036 = (month.equals("mar"));
+                        boolean varF2858B81441E0AABDAD312E1A6511F2E_1669693991 = (month.equals("mar"));
                         {
                             retval.set(Calendar.MONTH, Calendar.MARCH);
                         } //End block
                         {
-                            boolean var7C6B5F5685CF2B4C959CE97ACBFE690A_922573802 = (month.equals("apr"));
+                            boolean var7C6B5F5685CF2B4C959CE97ACBFE690A_1227037584 = (month.equals("apr"));
                             {
                                 retval.set(Calendar.MONTH, Calendar.APRIL);
                             } //End block
                             {
-                                boolean varFB33E58DBB0B2E1031E4918AF1E03AB5_1026756761 = (month.equals("may"));
+                                boolean varFB33E58DBB0B2E1031E4918AF1E03AB5_1675755290 = (month.equals("may"));
                                 {
                                     retval.set(Calendar.MONTH, Calendar.MAY);
                                 } //End block
                                 {
-                                    boolean varE06819B3892FC278D4AEDDDF96946D0A_1685668124 = (month.equals("jun"));
+                                    boolean varE06819B3892FC278D4AEDDDF96946D0A_466606163 = (month.equals("jun"));
                                     {
                                         retval.set(Calendar.MONTH, Calendar.JUNE);
                                     } //End block
                                     {
-                                        boolean var1A89EB1F66E757EFB63FBA3804435455_565122284 = (month.equals("jul"));
+                                        boolean var1A89EB1F66E757EFB63FBA3804435455_1904321602 = (month.equals("jul"));
                                         {
                                             retval.set(Calendar.MONTH, Calendar.JULY);
                                         } //End block
                                         {
-                                            boolean var6724DCBF558B5DA45EBF2AAE3F3F3E3B_466525798 = (month.equals("aug"));
+                                            boolean var6724DCBF558B5DA45EBF2AAE3F3F3E3B_1662744598 = (month.equals("aug"));
                                             {
                                                 retval.set(Calendar.MONTH, Calendar.AUGUST);
                                             } //End block
                                             {
-                                                boolean varD81EC2556AFC62DC4BD9B743B703BE5D_1145513185 = (month.equals("sep"));
+                                                boolean varD81EC2556AFC62DC4BD9B743B703BE5D_609988120 = (month.equals("sep"));
                                                 {
                                                     retval.set(Calendar.MONTH, Calendar.SEPTEMBER);
                                                 } //End block
                                                 {
-                                                    boolean var3B86497E6630B448890CD02542810333_2103159300 = (month.equals("oct"));
+                                                    boolean var3B86497E6630B448890CD02542810333_6697049 = (month.equals("oct"));
                                                     {
                                                         retval.set(Calendar.MONTH, Calendar.OCTOBER);
                                                     } //End block
                                                     {
-                                                        boolean var37ADD223AA87DAFF3B87F6E4A98522E7_1641674798 = (month.equals("nov"));
+                                                        boolean var37ADD223AA87DAFF3B87F6E4A98522E7_552809150 = (month.equals("nov"));
                                                         {
                                                             retval.set(Calendar.MONTH, Calendar.NOVEMBER);
                                                         } //End block
                                                         {
-                                                            boolean var4F0C3E471E78B53BFED0511B116F3AE6_2050100583 = (month.equals("dec"));
+                                                            boolean var4F0C3E471E78B53BFED0511B116F3AE6_338698693 = (month.equals("dec"));
                                                             {
                                                                 retval.set(Calendar.MONTH, Calendar.DECEMBER);
                                                             } //End block
@@ -172,21 +170,21 @@ public class HeaderParser extends Parser {
             int yr;
             yr = Integer.parseInt(s2);
             retval.set(Calendar.YEAR, yr);
+            varB4EAC82CA7396A68D541C85D26508E83_633153008 = retval;
         } //End block
         catch (Exception ex)
         {
             if (DroidSafeAndroidRuntime.control) throw createParseException("bad date field");
         } //End block
-        return (Calendar)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_633153008.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_633153008;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.289 -0400", hash_original_method = "A339A3BD9B311A61AF23D5CD23AA066A", hash_generated_method = "190C0CC82F741DAC5916684343FC6FC1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.820 -0400", hash_original_method = "A339A3BD9B311A61AF23D5CD23AA066A", hash_generated_method = "2237A6C9E3C26797E2E95C0F7372638F")
     protected void time(Calendar calendar) throws ParseException {
-        dsTaint.addTaint(calendar.dsTaint);
         try 
         {
             String s;
@@ -209,6 +207,7 @@ public class HeaderParser extends Parser {
         {
             if (DroidSafeAndroidRuntime.control) throw createParseException("error processing time ");
         } //End block
+        addTaint(calendar.getTaint());
         // ---------- Original Method ----------
         //try {
             //String s = lexer.number();
@@ -228,9 +227,9 @@ public class HeaderParser extends Parser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.289 -0400", hash_original_method = "D87C47C2DE06FF746589C19C83F3FD66", hash_generated_method = "3305FCFBC87000A494E770D89ECB2C90")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.830 -0400", hash_original_method = "D87C47C2DE06FF746589C19C83F3FD66", hash_generated_method = "2BB5FA50F269DEEFD5CFE8EDA1C9C806")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1175047009 = null; //Variable for return #1
         String name;
         name = lexer.getNextToken(':');
         lexer.consume(1);
@@ -239,7 +238,9 @@ public class HeaderParser extends Parser {
         ExtensionHeaderImpl retval;
         retval = new ExtensionHeaderImpl(name);
         retval.setValue(body);
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1175047009 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_1175047009.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1175047009;
         // ---------- Original Method ----------
         //String name = lexer.getNextToken(':');
         //lexer.consume(1);
@@ -250,14 +251,13 @@ public class HeaderParser extends Parser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.289 -0400", hash_original_method = "E611EE61C75972DE5AB5B484EC7DE89C", hash_generated_method = "711A14DD7EBFE1E9347D2E3E65A86A8E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.831 -0400", hash_original_method = "E611EE61C75972DE5AB5B484EC7DE89C", hash_generated_method = "B75AAFB90FCC5F82614CCBEA95FFED24")
     protected void headerName(int tok) throws ParseException {
-        dsTaint.addTaint(tok);
         this.lexer.match(tok);
         this.lexer.SPorHT();
         this.lexer.match(':');
         this.lexer.SPorHT();
+        addTaint(tok);
         // ---------- Original Method ----------
         //this.lexer.match(tok);
         //this.lexer.SPorHT();

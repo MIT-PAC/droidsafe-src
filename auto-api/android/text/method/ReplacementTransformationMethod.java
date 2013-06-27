@@ -18,9 +18,10 @@ import android.view.View;
 
 public abstract class ReplacementTransformationMethod implements TransformationMethod {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.669 -0400", hash_original_method = "B17F65175FF40B8BBE4A804240F7E3CD", hash_generated_method = "B17F65175FF40B8BBE4A804240F7E3CD")
-        public ReplacementTransformationMethod ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.635 -0400", hash_original_method = "1B7B28F98DAC94187572CC248AC52BB7", hash_generated_method = "1B7B28F98DAC94187572CC248AC52BB7")
+    public ReplacementTransformationMethod ()
     {
+        //Synthesized constructor
     }
 
 
@@ -30,11 +31,13 @@ public abstract class ReplacementTransformationMethod implements TransformationM
     protected abstract char[] getReplacement();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.670 -0400", hash_original_method = "194DC730C60A1F45F368AD90A104F0FE", hash_generated_method = "9F0AA5689AC10889593ABD32419BDDB4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.645 -0400", hash_original_method = "194DC730C60A1F45F368AD90A104F0FE", hash_generated_method = "45428A780C1EC91D85D4258F8807B448")
     public CharSequence getTransformation(CharSequence source, View v) {
-        dsTaint.addTaint(v.dsTaint);
-        dsTaint.addTaint(source);
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1958096291 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1330341273 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1830766375 = null; //Variable for return #3
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1076489235 = null; //Variable for return #4
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1737190798 = null; //Variable for return #5
         char[] original;
         original = getOriginal();
         char[] replacement;
@@ -49,7 +52,7 @@ public abstract class ReplacementTransformationMethod implements TransformationM
                 i = 0;
                 {
                     {
-                        boolean var5D9E69D176AC23816183A8DC001D54D2_1655065635 = (TextUtils.indexOf(source, original[i]) >= 0);
+                        boolean var5D9E69D176AC23816183A8DC001D54D2_1642566662 = (TextUtils.indexOf(source, original[i]) >= 0);
                         {
                             doNothing = false;
                         } //End block
@@ -57,57 +60,86 @@ public abstract class ReplacementTransformationMethod implements TransformationM
                 } //End block
             } //End collapsed parenthetic
             {
+                varB4EAC82CA7396A68D541C85D26508E83_1958096291 = source;
+            } //End block
+            {
                 {
-                    CharSequence var669E31D05E8234FFAC75FF4CE4A28DAA_1235827320 = (new SpannedString(new SpannedReplacementCharSequence(
+                    varB4EAC82CA7396A68D541C85D26508E83_1330341273 = new SpannedString(new SpannedReplacementCharSequence(
                                                         (Spanned) source,
-                                                        original, replacement)));
+                                                        original, replacement));
                 } //End block
                 {
-                    CharSequence varB82880E63536362973A5B3FC32A17ACF_985340875 = (new ReplacementCharSequence(source,
+                    varB4EAC82CA7396A68D541C85D26508E83_1830766375 = new ReplacementCharSequence(source,
                                                        original,
-                                                       replacement).toString());
+                                                       replacement).toString();
                 } //End block
             } //End block
         } //End block
         {
-            CharSequence varC6F8901BA71AA866F5FE35E7103D72D8_410849582 = (new SpannedReplacementCharSequence((Spanned) source,
-                                                      original, replacement));
+            varB4EAC82CA7396A68D541C85D26508E83_1076489235 = new SpannedReplacementCharSequence((Spanned) source,
+                                                      original, replacement);
         } //End block
         {
-            CharSequence var069727547B22154FF553EC63F8A3ED40_1707428814 = (new ReplacementCharSequence(source, original, replacement));
+            varB4EAC82CA7396A68D541C85D26508E83_1737190798 = new ReplacementCharSequence(source, original, replacement);
         } //End block
-        return dsTaint.getTaintString();
+        addTaint(source.getTaint());
+        addTaint(v.getTaint());
+        CharSequence varA7E53CE21691AB073D9660D615818899_1271172960; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1271172960 = varB4EAC82CA7396A68D541C85D26508E83_1958096291;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1271172960 = varB4EAC82CA7396A68D541C85D26508E83_1330341273;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_1271172960 = varB4EAC82CA7396A68D541C85D26508E83_1830766375;
+                break;
+            case 4: //Assign result for return ordinal #4
+                varA7E53CE21691AB073D9660D615818899_1271172960 = varB4EAC82CA7396A68D541C85D26508E83_1076489235;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1271172960 = varB4EAC82CA7396A68D541C85D26508E83_1737190798;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1271172960.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1271172960;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.670 -0400", hash_original_method = "13D8211EBDC6D4196EF2DDB70ED5CACD", hash_generated_method = "23495149C93C84951AFCB2F4B17330A5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.646 -0400", hash_original_method = "13D8211EBDC6D4196EF2DDB70ED5CACD", hash_generated_method = "BBF679B18897E2BF5AC3F72CB72D0972")
     public void onFocusChanged(View view, CharSequence sourceText,
                                boolean focused, int direction,
                                Rect previouslyFocusedRect) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(direction);
-        dsTaint.addTaint(sourceText);
-        dsTaint.addTaint(previouslyFocusedRect.dsTaint);
-        dsTaint.addTaint(focused);
-        dsTaint.addTaint(view.dsTaint);
+        addTaint(view.getTaint());
+        addTaint(sourceText.getTaint());
+        addTaint(focused);
+        addTaint(direction);
+        addTaint(previouslyFocusedRect.getTaint());
         // ---------- Original Method ----------
     }
 
     
     private static class ReplacementCharSequence implements CharSequence, GetChars {
-        private char[] mOriginal, mReplacement;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.647 -0400", hash_original_field = "8526EC2FF812D96CA9274ACA8998FC20", hash_generated_field = "FC1254D314CD4AAE23C5354189DEA616")
+
+        private char[] mOriginal;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.647 -0400", hash_original_field = "05B11DD59B8E9A2C20387164079C6C37", hash_generated_field = "82418157EFFFE0C2D72794E96D9A0F0E")
+
+        private char[] mReplacement;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.647 -0400", hash_original_field = "6917951DFB797D97827BAAA584F128DE", hash_generated_field = "1DB65A9625E780B230F7C604C99C0F5D")
+
         private CharSequence mSource;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.670 -0400", hash_original_method = "F89FC48B18F547DBB1705366EEF3AC7C", hash_generated_method = "4216698B3A8E4C8C4ACAB4DB24BD748A")
-        @DSModeled(DSC.SAFE)
-        public ReplacementCharSequence(CharSequence source, char[] original,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.656 -0400", hash_original_method = "F89FC48B18F547DBB1705366EEF3AC7C", hash_generated_method = "7440FAA0F491D27D7D153C80FF2CC4EE")
+        public  ReplacementCharSequence(CharSequence source, char[] original,
                                        char[] replacement) {
-            dsTaint.addTaint(replacement[0]);
-            dsTaint.addTaint(source);
-            dsTaint.addTaint(original[0]);
+            mSource = source;
+            mOriginal = original;
+            mReplacement = replacement;
             // ---------- Original Method ----------
             //mSource = source;
             //mOriginal = original;
@@ -115,20 +147,18 @@ public abstract class ReplacementTransformationMethod implements TransformationM
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.671 -0400", hash_original_method = "FE3E30D6F998A38B269E405486258D53", hash_generated_method = "2DBABE0E16F1523566F381BCC4A6C4C2")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.657 -0400", hash_original_method = "FE3E30D6F998A38B269E405486258D53", hash_generated_method = "E27490336315AD0A27F638E6BADB5AC5")
         public int length() {
-            int var2AA1AAF84029D80557A421966334F312_1056314299 = (mSource.length());
-            return dsTaint.getTaintInt();
+            int var2AA1AAF84029D80557A421966334F312_87701688 = (mSource.length());
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_262680074 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_262680074;
             // ---------- Original Method ----------
             //return mSource.length();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.671 -0400", hash_original_method = "F5CDEE5D506853CF95A4D9E8A551C716", hash_generated_method = "2804862C2DAECB12EC24FA4E8A87C3D0")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.658 -0400", hash_original_method = "F5CDEE5D506853CF95A4D9E8A551C716", hash_generated_method = "334BA190B18AC4EB23A07FFCBCFB0D2D")
         public char charAt(int i) {
-            dsTaint.addTaint(i);
             char c;
             c = mSource.charAt(i);
             int n;
@@ -142,7 +172,9 @@ public abstract class ReplacementTransformationMethod implements TransformationM
                     } //End block
                 } //End block
             } //End collapsed parenthetic
-            return dsTaint.getTaintChar();
+            addTaint(i);
+            char varA87DEB01C5F539E6BDA34829C8EF2368_348021350 = getTaintChar();
+            return varA87DEB01C5F539E6BDA34829C8EF2368_348021350;
             // ---------- Original Method ----------
             //char c = mSource.charAt(i);
             //int n = mOriginal.length;
@@ -155,16 +187,17 @@ public abstract class ReplacementTransformationMethod implements TransformationM
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.671 -0400", hash_original_method = "16B48B66F40BC5C2F3D95D2C2FC575C8", hash_generated_method = "E4BF5F569B9A84F9C3BCF4F6D0C95364")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.680 -0400", hash_original_method = "16B48B66F40BC5C2F3D95D2C2FC575C8", hash_generated_method = "DEDDC7BD85AD1222F7BC4C3AA4D65790")
         public CharSequence subSequence(int start, int end) {
-            dsTaint.addTaint(start);
-            dsTaint.addTaint(end);
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1252178590 = null; //Variable for return #1
             char[] c;
             c = new char[end - start];
             getChars(start, end, c, 0);
-            CharSequence varB864288B483FBEC03BC969CD741571C3_1619983093 = (new String(c));
-            return dsTaint.getTaintString();
+            varB4EAC82CA7396A68D541C85D26508E83_1252178590 = new String(c);
+            addTaint(start);
+            addTaint(end);
+            varB4EAC82CA7396A68D541C85D26508E83_1252178590.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1252178590;
             // ---------- Original Method ----------
             //char[] c = new char[end - start];
             //getChars(start, end, c, 0);
@@ -172,14 +205,15 @@ public abstract class ReplacementTransformationMethod implements TransformationM
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.678 -0400", hash_original_method = "C6C9F4F28222CB23CDD8D19463D6DD00", hash_generated_method = "6A81B37CD7100D76AC9CECD3C0CD34FD")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.681 -0400", hash_original_method = "C6C9F4F28222CB23CDD8D19463D6DD00", hash_generated_method = "DF589829E117EDB692928F7B93413031")
         public String toString() {
+            String varB4EAC82CA7396A68D541C85D26508E83_1977918148 = null; //Variable for return #1
             char[] c;
             c = new char[length()];
             getChars(0, length(), c, 0);
-            String varB864288B483FBEC03BC969CD741571C3_1778134949 = (new String(c));
-            return dsTaint.getTaintString();
+            varB4EAC82CA7396A68D541C85D26508E83_1977918148 = new String(c);
+            varB4EAC82CA7396A68D541C85D26508E83_1977918148.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1977918148;
             // ---------- Original Method ----------
             //char[] c = new char[length()];
             //getChars(0, length(), c, 0);
@@ -187,13 +221,8 @@ public abstract class ReplacementTransformationMethod implements TransformationM
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.679 -0400", hash_original_method = "296CE0E87E188E4485863573C8375539", hash_generated_method = "F53796F4683650574A6BF94A8BB5470C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.682 -0400", hash_original_method = "296CE0E87E188E4485863573C8375539", hash_generated_method = "D03AC0BBDC876ABF7B349DD16EF958FD")
         public void getChars(int start, int end, char[] dest, int off) {
-            dsTaint.addTaint(dest[0]);
-            dsTaint.addTaint(start);
-            dsTaint.addTaint(off);
-            dsTaint.addTaint(end);
             TextUtils.getChars(mSource, start, end, dest, off);
             int offend;
             offend = end - start + off;
@@ -216,6 +245,10 @@ public abstract class ReplacementTransformationMethod implements TransformationM
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
+            addTaint(start);
+            addTaint(end);
+            addTaint(dest[0]);
+            addTaint(off);
             // ---------- Original Method ----------
             //TextUtils.getChars(mSource, start, end, dest, off);
             //int offend = end - start + off;
@@ -236,87 +269,90 @@ public abstract class ReplacementTransformationMethod implements TransformationM
 
     
     private static class SpannedReplacementCharSequence extends ReplacementCharSequence implements Spanned {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.682 -0400", hash_original_field = "2A174ADD3219E7DC0B72155FF67EC4B5", hash_generated_field = "69C78554F8ABB9B2C492FD314F3ED2EE")
+
         private Spanned mSpanned;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.679 -0400", hash_original_method = "CAA9811C5358881331EB71A9EC7C0C0E", hash_generated_method = "9BAB1169F107B5EA88B910554427716F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public SpannedReplacementCharSequence(Spanned source, char[] original,
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.696 -0400", hash_original_method = "CAA9811C5358881331EB71A9EC7C0C0E", hash_generated_method = "D7FD18C185DDF616159BDB6EC24D122B")
+        public  SpannedReplacementCharSequence(Spanned source, char[] original,
                                               char[] replacement) {
             super(source, original, replacement);
-            dsTaint.addTaint(replacement[0]);
-            dsTaint.addTaint(source.dsTaint);
-            dsTaint.addTaint(original[0]);
+            mSpanned = source;
+            addTaint(original[0]);
+            addTaint(replacement[0]);
             // ---------- Original Method ----------
             //mSpanned = source;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.679 -0400", hash_original_method = "C46F3FF4F9C2D4E0959AE37E95AA6C52", hash_generated_method = "E939AA750C3F13F7FD79FEE17AF78490")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.698 -0400", hash_original_method = "C46F3FF4F9C2D4E0959AE37E95AA6C52", hash_generated_method = "F3A85413E168C6CDC2E465F878408A19")
         public CharSequence subSequence(int start, int end) {
-            dsTaint.addTaint(start);
-            dsTaint.addTaint(end);
-            CharSequence varDEE5A68118C9F1DD28A7A5311566DBD7_1885179930 = (new SpannedString(this).subSequence(start, end));
-            return dsTaint.getTaintString();
+            CharSequence varB4EAC82CA7396A68D541C85D26508E83_1747373389 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1747373389 = new SpannedString(this).subSequence(start, end);
+            addTaint(start);
+            addTaint(end);
+            varB4EAC82CA7396A68D541C85D26508E83_1747373389.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1747373389;
             // ---------- Original Method ----------
             //return new SpannedString(this).subSequence(start, end);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.679 -0400", hash_original_method = "E8AB479016A2E00AFF48AA43F345FA2A", hash_generated_method = "44EE813753CE694AA28A3D9F4123C72C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.713 -0400", hash_original_method = "E8AB479016A2E00AFF48AA43F345FA2A", hash_generated_method = "31770A9F389EEC478B454267DF09FBD7")
         public <T> T[] getSpans(int start, int end, Class<T> type) {
-            dsTaint.addTaint(start);
-            dsTaint.addTaint(type.dsTaint);
-            dsTaint.addTaint(end);
-            T[] varD7D8544F4A8114420D7401F18A483DF9_1077872450 = (mSpanned.getSpans(start, end, type));
-            return (T[])dsTaint.getTaint();
+            T[] varB4EAC82CA7396A68D541C85D26508E83_1402222676 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1402222676 = mSpanned.getSpans(start, end, type);
+            addTaint(start);
+            addTaint(end);
+            addTaint(type.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1402222676.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1402222676;
             // ---------- Original Method ----------
             //return mSpanned.getSpans(start, end, type);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.680 -0400", hash_original_method = "2071284CDE64572D4D3F80F80EB4C823", hash_generated_method = "24610582EFEB1A23A2F63A98E6980FD2")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.714 -0400", hash_original_method = "2071284CDE64572D4D3F80F80EB4C823", hash_generated_method = "F0F4907CAFDA4EC3590E8ECED99CC9A5")
         public int getSpanStart(Object tag) {
-            dsTaint.addTaint(tag.dsTaint);
-            int varD7924E7B7A12FA5A3B050A8325F5D9BE_2140072587 = (mSpanned.getSpanStart(tag));
-            return dsTaint.getTaintInt();
+            int varD7924E7B7A12FA5A3B050A8325F5D9BE_94666162 = (mSpanned.getSpanStart(tag));
+            addTaint(tag.getTaint());
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1337725053 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1337725053;
             // ---------- Original Method ----------
             //return mSpanned.getSpanStart(tag);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.680 -0400", hash_original_method = "B1DC38D90632AE4EB220020E4C5B16DF", hash_generated_method = "3EAD2E81FBF25F9D549037CCFDA0508F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.715 -0400", hash_original_method = "B1DC38D90632AE4EB220020E4C5B16DF", hash_generated_method = "E8BABEBB7399B2DD2318229AC6C04E6E")
         public int getSpanEnd(Object tag) {
-            dsTaint.addTaint(tag.dsTaint);
-            int varFDD9D023F9FB8A63C470934B7C2E8224_2001539573 = (mSpanned.getSpanEnd(tag));
-            return dsTaint.getTaintInt();
+            int varFDD9D023F9FB8A63C470934B7C2E8224_1979730549 = (mSpanned.getSpanEnd(tag));
+            addTaint(tag.getTaint());
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_792367731 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_792367731;
             // ---------- Original Method ----------
             //return mSpanned.getSpanEnd(tag);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.680 -0400", hash_original_method = "A386D5CC8A9C15386840381A75E4D6FD", hash_generated_method = "3FDCE95D3D1A35ACADDD854BDB7B5534")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.715 -0400", hash_original_method = "A386D5CC8A9C15386840381A75E4D6FD", hash_generated_method = "1F848CB485EED420115CE02D83F0FE11")
         public int getSpanFlags(Object tag) {
-            dsTaint.addTaint(tag.dsTaint);
-            int var689A4E26E56E6EC55263E3776149ED4A_1201196652 = (mSpanned.getSpanFlags(tag));
-            return dsTaint.getTaintInt();
+            int var689A4E26E56E6EC55263E3776149ED4A_792174883 = (mSpanned.getSpanFlags(tag));
+            addTaint(tag.getTaint());
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_209184957 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_209184957;
             // ---------- Original Method ----------
             //return mSpanned.getSpanFlags(tag);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.680 -0400", hash_original_method = "0259540B9EDC3EBDD85F9EA3B2A19C33", hash_generated_method = "64AACD49141EEDBC07312A489BC0B131")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.718 -0400", hash_original_method = "0259540B9EDC3EBDD85F9EA3B2A19C33", hash_generated_method = "08E83FDD6005DA673A26572333C5A631")
         public int nextSpanTransition(int start, int end, Class type) {
-            dsTaint.addTaint(start);
-            dsTaint.addTaint(type.dsTaint);
-            dsTaint.addTaint(end);
-            int var5119F035B8E56D52F8F813C80B67C353_855418437 = (mSpanned.nextSpanTransition(start, end, type));
-            return dsTaint.getTaintInt();
+            int var5119F035B8E56D52F8F813C80B67C353_918520718 = (mSpanned.nextSpanTransition(start, end, type));
+            addTaint(start);
+            addTaint(end);
+            addTaint(type.getTaint());
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1808539481 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1808539481;
             // ---------- Original Method ----------
             //return mSpanned.nextSpanTransition(start, end, type);
         }

@@ -16,58 +16,98 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 
 public class Scroller {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "C5AB706852158521E9D44BF62A49B1C9", hash_generated_field = "B9E13EBC2196F570555262A42E5818EF")
+
     private int mMode;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "9801264300876A677AA3DC64764E3FC2", hash_generated_field = "28E51E686EEF26C8A77C03ED820E724F")
+
     private int mStartX;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "D2D722716779C955F0ECDDD867837AC9", hash_generated_field = "2C4FD2F4594E993A1C0AA896A5F50971")
+
     private int mStartY;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "0290041E535A652B7A5D076F92AD8748", hash_generated_field = "71B9BE40F3EB3F420DA51BED11A1FACC")
+
     private int mFinalX;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "E945BD36FB44D6509A1812FCFC09A99C", hash_generated_field = "14970227CEB8B8463C037E05672A799A")
+
     private int mFinalY;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "7CBEADDF3BF87C8E9592002066182081", hash_generated_field = "AD8B01E82643B27CD370F8D831F238C1")
+
     private int mMinX;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "41704F54749AA189526CA9FAE67380B0", hash_generated_field = "B2C478BEE6C183081971A9B0A8AE4922")
+
     private int mMaxX;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "9A9EF11E7F21CEC6B9588949DB8D8B36", hash_generated_field = "4011ABA5F49EA845B8922B89156403C8")
+
     private int mMinY;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "E1883BCCD9952BD3FB3A6632B7B0AD20", hash_generated_field = "1B35EABD97FF7D29EE26B2F8FC71C0DC")
+
     private int mMaxY;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "6BD2791CD07D2430F146D6C23A460588", hash_generated_field = "060DFB2652993DA63F3C736F2D32C4A0")
+
     private int mCurrX;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "09D2830408454AE5F3DC6A19638B48BC", hash_generated_field = "DBCFB0FF1F686A6075CBC61640B46359")
+
     private int mCurrY;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "4FBE52F16DA5DC1AFB86B1520E59C2C0", hash_generated_field = "20EEDA67D8E4F20D3E4CA3D911CCA492")
+
     private long mStartTime;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "25395741BFE51A7D136A5C7109AAD2D8", hash_generated_field = "A658ABE5235D82E385D992CF2A9ACD3B")
+
     private int mDuration;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "88FA122E67CA1EBC0345CB7CDF675306", hash_generated_field = "C3F9F7F2BFB7C0487094A4AE88371035")
+
     private float mDurationReciprocal;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "7506E0D544261999834610DAFF4B3959", hash_generated_field = "BD1886B2C0F2736203D0E4959638388A")
+
     private float mDeltaX;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.496 -0400", hash_original_field = "15C5117A7F2734882A39F674EFD72C28", hash_generated_field = "B328B232FC86598D50E8994C967C8DF9")
+
     private float mDeltaY;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.497 -0400", hash_original_field = "BB077E6B2FCDFA3F0EF71EB099A18F49", hash_generated_field = "0B1DE3EEB5BF08E36FD9B568D72D59CC")
+
     private boolean mFinished;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.497 -0400", hash_original_field = "DA3E6FC5A778B3C344EE09B26563FD22", hash_generated_field = "67BF1E9EFEC019D28BF77934CF035B72")
+
     private Interpolator mInterpolator;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.497 -0400", hash_original_field = "0674FBD78043F84E1B63598E85DD9F83", hash_generated_field = "DB496AACF49E477CC5F54743876A46FF")
+
     private boolean mFlywheel;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.497 -0400", hash_original_field = "437EB8FD5FAD507D203D1F22AFAD95FB", hash_generated_field = "4B9AC7BF5E01DBE21607C260ED737A0D")
+
     private float mVelocity;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.497 -0400", hash_original_field = "04F2FB84FDBD333F0C6C423EA089E199", hash_generated_field = "C2BDDF1F4D015B5A70949ADE337CCAA9")
+
     private float mDeceleration;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.497 -0400", hash_original_field = "0C6F53CC4039F5408DEF57C18E1965F5", hash_generated_field = "C099BB189EED7BFC70ED32FE3657313E")
+
     private float mPpi;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.431 -0400", hash_original_method = "F0B1F091C7D17598674B0DE91138DFE8", hash_generated_method = "024D29F8C6984A5062CD4E585D4B3E70")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Scroller(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.497 -0400", hash_original_method = "F0B1F091C7D17598674B0DE91138DFE8", hash_generated_method = "3BBBFF3F09D0AF83F934785F1CA71EED")
+    public  Scroller(Context context) {
         this(context, null);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.431 -0400", hash_original_method = "26C129B43F046C683A3A546D94D7B25F", hash_generated_method = "3C3FB5F3B098791ED1687FE8FF066846")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Scroller(Context context, Interpolator interpolator) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.497 -0400", hash_original_method = "26C129B43F046C683A3A546D94D7B25F", hash_generated_method = "EF452702A7A73630AAA9B7C4E5B00ECB")
+    public  Scroller(Context context, Interpolator interpolator) {
         this(context, interpolator,
                 context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.HONEYCOMB);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(interpolator.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(interpolator.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.431 -0400", hash_original_method = "DB17BDB963992533B7D3120B4F8AA0BD", hash_generated_method = "30EB2A96D2D9F8B9DC1948B8156ABD52")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Scroller(Context context, Interpolator interpolator, boolean flywheel) {
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(flywheel);
-        dsTaint.addTaint(interpolator.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.498 -0400", hash_original_method = "DB17BDB963992533B7D3120B4F8AA0BD", hash_generated_method = "BAF062CCBB73EBD946542B564A845C7E")
+    public  Scroller(Context context, Interpolator interpolator, boolean flywheel) {
         mFinished = true;
+        mInterpolator = interpolator;
         mPpi = context.getResources().getDisplayMetrics().density * 160.0f;
         mDeceleration = computeDeceleration(ViewConfiguration.getScrollFriction());
+        mFlywheel = flywheel;
         // ---------- Original Method ----------
         //mFinished = true;
         //mInterpolator = interpolator;
@@ -77,21 +117,19 @@ public class Scroller {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.431 -0400", hash_original_method = "7DBB574AF8BCDDD777C332A70FF88B50", hash_generated_method = "CC5FAD9E5BBA1621F396D2E58F1A6744")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.498 -0400", hash_original_method = "7DBB574AF8BCDDD777C332A70FF88B50", hash_generated_method = "C44A601CD635F484BC869D788997D666")
     public final void setFriction(float friction) {
-        dsTaint.addTaint(friction);
         mDeceleration = computeDeceleration(friction);
         // ---------- Original Method ----------
         //mDeceleration = computeDeceleration(friction);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.432 -0400", hash_original_method = "B6D5379ECD830F8ABC23D18179CF1E64", hash_generated_method = "F012A95BB76B3A564092699AB65D199C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.507 -0400", hash_original_method = "B6D5379ECD830F8ABC23D18179CF1E64", hash_generated_method = "37762DCE6C60ED7A8BCB77E8332ECDDB")
     private float computeDeceleration(float friction) {
-        dsTaint.addTaint(friction);
-        return dsTaint.getTaintFloat();
+        addTaint(friction);
+        float var546ADE640B6EDFBC8A086EF31347E768_878309655 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_878309655;
         // ---------- Original Method ----------
         //return SensorManager.GRAVITY_EARTH   
                       //* 39.37f               
@@ -100,99 +138,97 @@ public class Scroller {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.432 -0400", hash_original_method = "FC91CF543B97ECA9AF0E75894ECCBF47", hash_generated_method = "9BB92D7148A4297B88A8772F41977D2B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.507 -0400", hash_original_method = "FC91CF543B97ECA9AF0E75894ECCBF47", hash_generated_method = "07FE69F4D8D1D86294B811E70DE4E132")
     public final boolean isFinished() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_236778489 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_236778489;
         // ---------- Original Method ----------
         //return mFinished;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.432 -0400", hash_original_method = "D2A5F5698F1FC9281D0C68AF0BDE844E", hash_generated_method = "DDF6113595EAD0EC81CFA5746959F77A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.508 -0400", hash_original_method = "D2A5F5698F1FC9281D0C68AF0BDE844E", hash_generated_method = "D6C7C127B9A2DD566E1703BC4B7A58DD")
     public final void forceFinished(boolean finished) {
-        dsTaint.addTaint(finished);
+        mFinished = finished;
         // ---------- Original Method ----------
         //mFinished = finished;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.432 -0400", hash_original_method = "C5CB9F23218BD0303C05492AF6E52DA2", hash_generated_method = "DF7BDE0D395FF28B951392AE0C3F3E8F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.508 -0400", hash_original_method = "C5CB9F23218BD0303C05492AF6E52DA2", hash_generated_method = "D576EDBC795E3E0E9D861AB358FE91F9")
     public final int getDuration() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1508354198 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1508354198;
         // ---------- Original Method ----------
         //return mDuration;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.432 -0400", hash_original_method = "BBE38D2570F755B77B8BCEE3883878A8", hash_generated_method = "2BDB2C673E18DCCDE37FCD0496B07B9E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.508 -0400", hash_original_method = "BBE38D2570F755B77B8BCEE3883878A8", hash_generated_method = "21775CE97E870E617F1FDC909BBB1AAB")
     public final int getCurrX() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2009802843 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2009802843;
         // ---------- Original Method ----------
         //return mCurrX;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.432 -0400", hash_original_method = "F6ADC6344D48E201FCE3042AD823C1E1", hash_generated_method = "71FE73CE585F457BACDC5082534CCF45")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.509 -0400", hash_original_method = "F6ADC6344D48E201FCE3042AD823C1E1", hash_generated_method = "2E59DAB55A082C91EDB6AE221C1DF963")
     public final int getCurrY() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1936751557 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1936751557;
         // ---------- Original Method ----------
         //return mCurrY;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.432 -0400", hash_original_method = "B027DED22A5B5763CA61B11517344C6D", hash_generated_method = "CAF4936F5FD0735939AD351AE04C8E54")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.510 -0400", hash_original_method = "B027DED22A5B5763CA61B11517344C6D", hash_generated_method = "66E01E5BE0B7A3D71EE64A31A7090DEC")
     public float getCurrVelocity() {
-        float var4E1A0AA14190C662937E996756C006EC_1559374614 = (mVelocity - mDeceleration * timePassed() / 2000.0f);
-        return dsTaint.getTaintFloat();
+        float var4E1A0AA14190C662937E996756C006EC_1226154797 = (mVelocity - mDeceleration * timePassed() / 2000.0f);
+        float var546ADE640B6EDFBC8A086EF31347E768_276545397 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_276545397;
         // ---------- Original Method ----------
         //return mVelocity - mDeceleration * timePassed() / 2000.0f;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.433 -0400", hash_original_method = "E9E5B4E6E70EEEC71B101472B8ED332D", hash_generated_method = "E6591FB00AD8924B84AD968CE4E5BF67")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.510 -0400", hash_original_method = "E9E5B4E6E70EEEC71B101472B8ED332D", hash_generated_method = "471E01D202C0805AAE5D55266D9BCF8A")
     public final int getStartX() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1812863955 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1812863955;
         // ---------- Original Method ----------
         //return mStartX;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.433 -0400", hash_original_method = "96DB239ADDDE6565887119C487206B3B", hash_generated_method = "7924277F2A4979C536B2A6042B6149D0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.511 -0400", hash_original_method = "96DB239ADDDE6565887119C487206B3B", hash_generated_method = "7EEE5D9E9AC5B20AE2BF1C0A92D39496")
     public final int getStartY() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2088167115 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2088167115;
         // ---------- Original Method ----------
         //return mStartY;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.433 -0400", hash_original_method = "FA811E85285FC4A5EAEC6F3CADDA829D", hash_generated_method = "9925C4BE76790E7E2F0B5DD1929EB538")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.511 -0400", hash_original_method = "FA811E85285FC4A5EAEC6F3CADDA829D", hash_generated_method = "B7E38818DCFD0999957BAE872BFAC04E")
     public final int getFinalX() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_506531464 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_506531464;
         // ---------- Original Method ----------
         //return mFinalX;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.433 -0400", hash_original_method = "39F49202EF2D412808D46FE4B1B455BA", hash_generated_method = "01202C555800DE55EC1A58CCCA0F8FB8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.511 -0400", hash_original_method = "39F49202EF2D412808D46FE4B1B455BA", hash_generated_method = "BBAF477AF7A183C789826B69755B7211")
     public final int getFinalY() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1582686617 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1582686617;
         // ---------- Original Method ----------
         //return mFinalY;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.434 -0400", hash_original_method = "1D0B82032F5CA4B8FBC2BBD45CD555A7", hash_generated_method = "C8C30D25A4604A291401B3A4860891B0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.536 -0400", hash_original_method = "1D0B82032F5CA4B8FBC2BBD45CD555A7", hash_generated_method = "2AAEAE1FC65CB64FDEC08A6718158D06")
     public boolean computeScrollOffset() {
         int timePassed;
         timePassed = (int)(AnimationUtils.currentAnimationTimeMillis() - mStartTime);
@@ -268,38 +304,37 @@ public class Scroller {
             mCurrY = mFinalY;
             mFinished = true;
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1318074723 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1318074723;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.434 -0400", hash_original_method = "2558578E34A043045AE1AF32A3800D82", hash_generated_method = "0DC814646443983F552E03C5B6023BD4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.538 -0400", hash_original_method = "2558578E34A043045AE1AF32A3800D82", hash_generated_method = "A07157DD1E11902F09548DA565746592")
     public void startScroll(int startX, int startY, int dx, int dy) {
-        dsTaint.addTaint(startX);
-        dsTaint.addTaint(startY);
-        dsTaint.addTaint(dx);
-        dsTaint.addTaint(dy);
         startScroll(startX, startY, dx, dy, DEFAULT_DURATION);
+        addTaint(startX);
+        addTaint(startY);
+        addTaint(dx);
+        addTaint(dy);
         // ---------- Original Method ----------
         //startScroll(startX, startY, dx, dy, DEFAULT_DURATION);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.434 -0400", hash_original_method = "81DB7D22C5A12E34B7101A322373D8F4", hash_generated_method = "A70C4A42EA38739F98ABF45AF9BA68DF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.541 -0400", hash_original_method = "81DB7D22C5A12E34B7101A322373D8F4", hash_generated_method = "4116373163E1068BC0B7EF53F8D2F6A2")
     public void startScroll(int startX, int startY, int dx, int dy, int duration) {
-        dsTaint.addTaint(duration);
-        dsTaint.addTaint(startX);
-        dsTaint.addTaint(startY);
-        dsTaint.addTaint(dx);
-        dsTaint.addTaint(dy);
         mMode = SCROLL_MODE;
         mFinished = false;
+        mDuration = duration;
         mStartTime = AnimationUtils.currentAnimationTimeMillis();
+        mStartX = startX;
+        mStartY = startY;
         mFinalX = startX + dx;
         mFinalY = startY + dy;
+        mDeltaX = dx;
+        mDeltaY = dy;
         mDurationReciprocal = 1.0f / (float) mDuration;
         // ---------- Original Method ----------
         //mMode = SCROLL_MODE;
@@ -316,18 +351,9 @@ public class Scroller {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.435 -0400", hash_original_method = "9117CBBBDEAEC710E4E0E8355A758A12", hash_generated_method = "3220F9D11DEA084D31BA183384BC6F41")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.550 -0400", hash_original_method = "9117CBBBDEAEC710E4E0E8355A758A12", hash_generated_method = "0C1F5A6A498CA3A52080611C363BD623")
     public void fling(int startX, int startY, int velocityX, int velocityY,
             int minX, int maxX, int minY, int maxY) {
-        dsTaint.addTaint(velocityX);
-        dsTaint.addTaint(startX);
-        dsTaint.addTaint(startY);
-        dsTaint.addTaint(velocityY);
-        dsTaint.addTaint(maxY);
-        dsTaint.addTaint(maxX);
-        dsTaint.addTaint(minX);
-        dsTaint.addTaint(minY);
         {
             float oldVel;
             oldVel = getCurrVelocity();
@@ -346,7 +372,7 @@ public class Scroller {
             float oldVelocityY;
             oldVelocityY = ndy * oldVel;
             {
-                boolean var86A175506156C862CC1BDCAE0428DBA5_1498993707 = (Math.signum(velocityX) == Math.signum(oldVelocityX) &&
+                boolean var86A175506156C862CC1BDCAE0428DBA5_1619408223 = (Math.signum(velocityX) == Math.signum(oldVelocityX) &&
                     Math.signum(velocityY) == Math.signum(oldVelocityY));
                 {
                     velocityX += oldVelocityX;
@@ -363,6 +389,8 @@ public class Scroller {
         l = Math.log(START_TENSION * velocity / ALPHA);
         mDuration = (int) (1000.0 * Math.exp(l / (DECELERATION_RATE - 1.0)));
         mStartTime = AnimationUtils.currentAnimationTimeMillis();
+        mStartX = startX;
+        mStartY = startY;
         float coeffX;
         coeffX = 1.0f;
         coeffX = velocityX / velocity;
@@ -371,12 +399,18 @@ public class Scroller {
         coeffY = velocityY / velocity;
         int totalDistance;
         totalDistance = (int) (ALPHA * Math.exp(DECELERATION_RATE / (DECELERATION_RATE - 1.0) * l));
+        mMinX = minX;
+        mMaxX = maxX;
+        mMinY = minY;
+        mMaxY = maxY;
         mFinalX = startX + Math.round(totalDistance * coeffX);
         mFinalX = Math.min(mFinalX, mMaxX);
         mFinalX = Math.max(mFinalX, mMinX);
         mFinalY = startY + Math.round(totalDistance * coeffY);
         mFinalY = Math.min(mFinalY, mMaxY);
         mFinalY = Math.max(mFinalY, mMinY);
+        addTaint(velocityX);
+        addTaint(velocityY);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -396,8 +430,7 @@ public class Scroller {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.435 -0400", hash_original_method = "685B5069D17FA4EA234CACB4808C2E58", hash_generated_method = "3080BC0F4CADDDC7981DD8286E6C232A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.551 -0400", hash_original_method = "685B5069D17FA4EA234CACB4808C2E58", hash_generated_method = "3080BC0F4CADDDC7981DD8286E6C232A")
     public void abortAnimation() {
         mCurrX = mFinalX;
         mCurrY = mFinalY;
@@ -409,10 +442,8 @@ public class Scroller {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.436 -0400", hash_original_method = "B7B8889BAD93C262A7F1BCB27AD999FF", hash_generated_method = "28650550CAB6DBB8F9BAED1C3739DEDA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.552 -0400", hash_original_method = "B7B8889BAD93C262A7F1BCB27AD999FF", hash_generated_method = "C440E9767C6FEC511E49812B6B1D1E58")
     public void extendDuration(int extend) {
-        dsTaint.addTaint(extend);
         int passed;
         passed = timePassed();
         mDuration = passed + extend;
@@ -426,20 +457,19 @@ public class Scroller {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.436 -0400", hash_original_method = "2E2DDE91830A97E8B4307DB61F63C9CC", hash_generated_method = "C17F79A5EB48577F1315D3E6EA531B02")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.552 -0400", hash_original_method = "2E2DDE91830A97E8B4307DB61F63C9CC", hash_generated_method = "FE89F4A881A6B84369ADE04A0939E521")
     public int timePassed() {
-        int varB31274B63FB1A219A03CF7B3308E210D_1387518355 = ((int)(AnimationUtils.currentAnimationTimeMillis() - mStartTime));
-        return dsTaint.getTaintInt();
+        int varB31274B63FB1A219A03CF7B3308E210D_1571384943 = ((int)(AnimationUtils.currentAnimationTimeMillis() - mStartTime));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_119513776 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_119513776;
         // ---------- Original Method ----------
         //return (int)(AnimationUtils.currentAnimationTimeMillis() - mStartTime);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.436 -0400", hash_original_method = "EE7294042EF8679A239A5BDA33848B52", hash_generated_method = "EC89157C6E8F6D3787F84DAE40981D0F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.552 -0400", hash_original_method = "EE7294042EF8679A239A5BDA33848B52", hash_generated_method = "21EC3B2014C84C3EE583448EE5BD5FA3")
     public void setFinalX(int newX) {
-        dsTaint.addTaint(newX);
+        mFinalX = newX;
         mDeltaX = mFinalX - mStartX;
         mFinished = false;
         // ---------- Original Method ----------
@@ -449,10 +479,9 @@ public class Scroller {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.436 -0400", hash_original_method = "E7F00F8A662510F71298FE30A619B84A", hash_generated_method = "FFA5CB6BA68AC45386561E73167043F2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.553 -0400", hash_original_method = "E7F00F8A662510F71298FE30A619B84A", hash_generated_method = "695711FF07897043DCFF9272D8CE7BA1")
     public void setFinalY(int newY) {
-        dsTaint.addTaint(newY);
+        mFinalY = newY;
         mDeltaY = mFinalY - mStartY;
         mFinished = false;
         // ---------- Original Method ----------
@@ -462,29 +491,47 @@ public class Scroller {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.436 -0400", hash_original_method = "8B3C79E02507006E36F2788C827D3070", hash_generated_method = "9F785AE8441F90C55C7E31368D28141C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.553 -0400", hash_original_method = "8B3C79E02507006E36F2788C827D3070", hash_generated_method = "373476421F69B6621F94AD487814FD90")
     public boolean isScrollingInDirection(float xvel, float yvel) {
-        dsTaint.addTaint(xvel);
-        dsTaint.addTaint(yvel);
-        boolean var059728334551CBB30CCF37D7663E618C_813990436 = (!mFinished && Math.signum(xvel) == Math.signum(mFinalX - mStartX) &&
+        boolean var059728334551CBB30CCF37D7663E618C_726421887 = (!mFinished && Math.signum(xvel) == Math.signum(mFinalX - mStartX) &&
                 Math.signum(yvel) == Math.signum(mFinalY - mStartY));
-        return dsTaint.getTaintBoolean();
+        addTaint(xvel);
+        addTaint(yvel);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1780602064 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1780602064;
         // ---------- Original Method ----------
         //return !mFinished && Math.signum(xvel) == Math.signum(mFinalX - mStartX) &&
                 //Math.signum(yvel) == Math.signum(mFinalY - mStartY);
     }
 
     
-    private static final int DEFAULT_DURATION = 250;
-    private static final int SCROLL_MODE = 0;
-    private static final int FLING_MODE = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.553 -0400", hash_original_field = "CE9861B4DE523D1EC20661AA772D40A0", hash_generated_field = "CA7BCE631E650DEB07A51879EA48B1C0")
+
+    private static int DEFAULT_DURATION = 250;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.553 -0400", hash_original_field = "F504EA849E0919286438EDA205B8A9E4", hash_generated_field = "C112D93115638A046D164717A3779591")
+
+    private static int SCROLL_MODE = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.553 -0400", hash_original_field = "FDE5999E3553362156971D68664D6C5B", hash_generated_field = "5B3C0A52CF9919E7137022E4D10DEEE7")
+
+    private static int FLING_MODE = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.553 -0400", hash_original_field = "19034483E00B29048133BC8926F1814A", hash_generated_field = "2564FD12FAC96B1440815F377BD8C411")
+
     private static float DECELERATION_RATE = (float) (Math.log(0.75) / Math.log(0.9));
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.553 -0400", hash_original_field = "96145DE212B09BD4F27A0678A8A46438", hash_generated_field = "D1E55FA511AC8DBB15DE29964200AC6B")
+
     private static float ALPHA = 800;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.553 -0400", hash_original_field = "FA9AC90B5A6E4380DADACDFD13974020", hash_generated_field = "B423EA056F8FF25F121E7449EFE88A98")
+
     private static float START_TENSION = 0.4f;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.568 -0400", hash_original_field = "685EEB9A58FD714F2875D9DEC4260D27", hash_generated_field = "27DBFD6C76112C4B1F73E7F2EA5D3AA4")
+
     private static float END_TENSION = 1.0f - START_TENSION;
-    private static final int NB_SAMPLES = 100;
-    private static final float[] SPLINE = new float[NB_SAMPLES + 1];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.569 -0400", hash_original_field = "0974E8FC7A93081E4C491C4AFD29D565", hash_generated_field = "6706058D788CA3F6D1F2D0B2805E9E76")
+
+    private static int NB_SAMPLES = 100;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.569 -0400", hash_original_field = "C2A8B044ACE7DA8A6739566186BFBC78", hash_generated_field = "9B19D38E190956436FCC4A5344A01F94")
+
+    private static float[] SPLINE = new float[NB_SAMPLES + 1];
     static {
         float x_min = 0.0f;
         for (int i = 0; i <= NB_SAMPLES; i++) {
@@ -508,7 +555,11 @@ public class Scroller {
         sViscousFluidNormalize = 1.0f / viscousFluid(1.0f);
     }
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.569 -0400", hash_original_field = "8372C9E7F6EE29F03FED5990174B5C5B", hash_generated_field = "1C432C24B5FBB274ECE9C0B14CF36243")
+
     private static float sViscousFluidScale;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.569 -0400", hash_original_field = "B45C476255D3DD4A76FD8D0F03CB1163", hash_generated_field = "4E11B8A84F2C6FEABC4146BC9CB98208")
+
     private static float sViscousFluidNormalize;
 }
 

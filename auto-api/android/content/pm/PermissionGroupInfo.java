@@ -12,21 +12,22 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 
 public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.305 -0400", hash_original_field = "392A6E47A749448B7E51283719BBB183", hash_generated_field = "7C42762252277BD13653A4A0CE44470E")
+
     public int descriptionRes;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.305 -0400", hash_original_field = "F132344C9D3F23D988965BDF2FE9E96E", hash_generated_field = "DC8641D3F3115BD1A7EE01A008EB7DE8")
+
     public CharSequence nonLocalizedDescription;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.723 -0400", hash_original_method = "82344B3D2D2745586AE3E2C39F67E56D", hash_generated_method = "C344FD7EBA0ACA0405579BE9BC8FB4E5")
-    @DSModeled(DSC.SAFE)
-    public PermissionGroupInfo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.326 -0400", hash_original_method = "82344B3D2D2745586AE3E2C39F67E56D", hash_generated_method = "C344FD7EBA0ACA0405579BE9BC8FB4E5")
+    public  PermissionGroupInfo() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.723 -0400", hash_original_method = "86BDB0F775205D222755746395606069", hash_generated_method = "A7C3C3782EFD92FB3BEB478BA67709BA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PermissionGroupInfo(PermissionGroupInfo orig) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.327 -0400", hash_original_method = "86BDB0F775205D222755746395606069", hash_generated_method = "9E42539179CB72B7DF3C7D104B792B22")
+    public  PermissionGroupInfo(PermissionGroupInfo orig) {
         super(orig);
-        dsTaint.addTaint(orig.dsTaint);
         descriptionRes = orig.descriptionRes;
         nonLocalizedDescription = orig.nonLocalizedDescription;
         // ---------- Original Method ----------
@@ -35,11 +36,9 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.723 -0400", hash_original_method = "251C6C67446670431867B6BD14427B23", hash_generated_method = "53AF4D8DCFD78624E2E2AD7081BE834F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private PermissionGroupInfo(Parcel source) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.329 -0400", hash_original_method = "251C6C67446670431867B6BD14427B23", hash_generated_method = "C80CEF62BF9EA33C58DF216289241944")
+    private  PermissionGroupInfo(Parcel source) {
         super(source);
-        dsTaint.addTaint(source.dsTaint);
         descriptionRes = source.readInt();
         nonLocalizedDescription = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
         // ---------- Original Method ----------
@@ -48,15 +47,37 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.724 -0400", hash_original_method = "EA6AC5CC522A2884BAFD1D1CC4525D81", hash_generated_method = "3CAADC11D089FD537440DDDB84E66E99")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.348 -0400", hash_original_method = "EA6AC5CC522A2884BAFD1D1CC4525D81", hash_generated_method = "7CD0599ECBB68169510BCE984BF489D6")
     public CharSequence loadDescription(PackageManager pm) {
-        dsTaint.addTaint(pm.dsTaint);
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1311300321 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_456022474 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1332337820 = null; //Variable for return #3
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1311300321 = nonLocalizedDescription;
+        } //End block
         {
             CharSequence label;
             label = pm.getText(packageName, descriptionRes, null);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_456022474 = label;
+            } //End block
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1332337820 = null;
+        addTaint(pm.getTaint());
+        CharSequence varA7E53CE21691AB073D9660D615818899_2020857314; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_2020857314 = varB4EAC82CA7396A68D541C85D26508E83_1311300321;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_2020857314 = varB4EAC82CA7396A68D541C85D26508E83_456022474;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_2020857314 = varB4EAC82CA7396A68D541C85D26508E83_1332337820;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_2020857314.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2020857314;
         // ---------- Original Method ----------
         //if (nonLocalizedDescription != null) {
             //return nonLocalizedDescription;
@@ -71,13 +92,14 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.724 -0400", hash_original_method = "712313A7FB39E8068296CCC509012BB3", hash_generated_method = "CC95222E46DC7D23EB81FBC5913C7A9F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.350 -0400", hash_original_method = "712313A7FB39E8068296CCC509012BB3", hash_generated_method = "B82AC0B30D954FBB04C1AE8591BBB483")
     public String toString() {
-        String var8AC2E9E0E8A492DB25B79D9659A141B7_132867885 = ("PermissionGroupInfo{"
+        String varB4EAC82CA7396A68D541C85D26508E83_2067693488 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2067693488 = "PermissionGroupInfo{"
             + Integer.toHexString(System.identityHashCode(this))
-            + " " + name + "}");
-        return dsTaint.getTaintString();
+            + " " + name + "}";
+        varB4EAC82CA7396A68D541C85D26508E83_2067693488.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2067693488;
         // ---------- Original Method ----------
         //return "PermissionGroupInfo{"
             //+ Integer.toHexString(System.identityHashCode(this))
@@ -85,23 +107,22 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.724 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.351 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D48D0F1605FFA3AE7CADE76CFDE4474E")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_713294552 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_713294552;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.724 -0400", hash_original_method = "48DC2E300D4B0399A780C6669617C26B", hash_generated_method = "475A68EDC93C2FB562394D996DBDA120")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.356 -0400", hash_original_method = "48DC2E300D4B0399A780C6669617C26B", hash_generated_method = "78475FB280E9FDF2A4BBFEC200A2A74F")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
-        dsTaint.addTaint(parcelableFlags);
-        dsTaint.addTaint(dest.dsTaint);
         super.writeToParcel(dest, parcelableFlags);
         dest.writeInt(descriptionRes);
         TextUtils.writeToParcel(nonLocalizedDescription, dest, parcelableFlags);
+        addTaint(dest.getTaint());
+        addTaint(parcelableFlags);
         // ---------- Original Method ----------
         //super.writeToParcel(dest, parcelableFlags);
         //dest.writeInt(descriptionRes);
@@ -109,29 +130,16 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     }
 
     
-    public static final Creator<PermissionGroupInfo> CREATOR = new Creator<PermissionGroupInfo>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.725 -0400", hash_original_method = "187B40B88C67C0925A9FFCFB53E91019", hash_generated_method = "6E6F7D9B8A16DE743B70C4F108138E74")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.372 -0400", hash_original_field = "C5F42F5EC446394F1B5E3897D28E68B6", hash_generated_field = "157E7C3FA4773BF05F9A4ED13A8D2703")
+
+    public static final Creator<PermissionGroupInfo> CREATOR =
+            new Creator<PermissionGroupInfo>() {
         public PermissionGroupInfo createFromParcel(Parcel source) {
-            dsTaint.addTaint(source.dsTaint);
-            PermissionGroupInfo var6527F6BC5300B9194A9B1B5D5C34E68D_1431361630 = (new PermissionGroupInfo(source));
-            return (PermissionGroupInfo)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new PermissionGroupInfo(source);
+            return new PermissionGroupInfo(source);
         }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:44.725 -0400", hash_original_method = "E8CF26CD838EA459740518D5D22D5674", hash_generated_method = "05D83CA6F6038DA831396B8A3D5AEB58")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public PermissionGroupInfo[] newArray(int size) {
-            dsTaint.addTaint(size);
-            PermissionGroupInfo[] var606601EF81C1D862DFBBEA6F93B6413D_1233978608 = (new PermissionGroupInfo[size]);
-            return (PermissionGroupInfo[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new PermissionGroupInfo[size];
+            return new PermissionGroupInfo[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

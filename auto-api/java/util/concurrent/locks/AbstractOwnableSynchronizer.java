@@ -9,33 +9,37 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public abstract class AbstractOwnableSynchronizer implements java.io.Serializable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.063 -0400", hash_original_field = "132FCF3C7BFF939868B511E35AD62FD4", hash_generated_field = "C1E5D5F5CE2C40C66D9F63320FBEDDDF")
+
     private transient Thread exclusiveOwnerThread;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.100 -0400", hash_original_method = "09FACEDDA2CFE0BD4863CBAC9CCC5DB1", hash_generated_method = "D297C3151434464F48AC3AE139C059A0")
-    @DSModeled(DSC.SAFE)
-    protected AbstractOwnableSynchronizer() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.063 -0400", hash_original_method = "09FACEDDA2CFE0BD4863CBAC9CCC5DB1", hash_generated_method = "D297C3151434464F48AC3AE139C059A0")
+    protected  AbstractOwnableSynchronizer() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.100 -0400", hash_original_method = "54BE2CB7A2B251833C1274201519DC0B", hash_generated_method = "CB24C586E09E8E1662B4246965C0CB6E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.064 -0400", hash_original_method = "54BE2CB7A2B251833C1274201519DC0B", hash_generated_method = "13F014A12C92310672C211F0153DBA38")
     protected final void setExclusiveOwnerThread(Thread t) {
-        dsTaint.addTaint(t.dsTaint);
+        exclusiveOwnerThread = t;
         // ---------- Original Method ----------
         //exclusiveOwnerThread = t;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.100 -0400", hash_original_method = "B27D03344136636BB9AA0892188CCAE3", hash_generated_method = "B28712E23E9A7104FD7E581050AE797D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.064 -0400", hash_original_method = "B27D03344136636BB9AA0892188CCAE3", hash_generated_method = "B37156C76D55F54ABF0E7B8BBC6759E8")
     protected final Thread getExclusiveOwnerThread() {
-        return (Thread)dsTaint.getTaint();
+        Thread varB4EAC82CA7396A68D541C85D26508E83_751579547 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_751579547 = exclusiveOwnerThread;
+        varB4EAC82CA7396A68D541C85D26508E83_751579547.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_751579547;
         // ---------- Original Method ----------
         //return exclusiveOwnerThread;
     }
 
     
-    private static final long serialVersionUID = 3737899427754241961L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.064 -0400", hash_original_field = "FA409379A41D70A7326C19C768F673CD", hash_generated_field = "25430D836D37689CA03BCD07500FFC72")
+
+    private static long serialVersionUID = 3737899427754241961L;
 }
 

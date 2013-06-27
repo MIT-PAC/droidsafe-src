@@ -15,20 +15,23 @@ import android.util.Log;
 import java.io.IOException;
 
 public final class IsoDep extends BasicTagTechnology {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.881 -0400", hash_original_field = "F4F4BB2F9EB2DC5DB314559654709FE8", hash_generated_field = "C1B33D9EC979F28624EE472E9265053E")
+
     private byte[] mHiLayerResponse = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.881 -0400", hash_original_field = "22B2164B7144C7AFBD0B67213E9A40D7", hash_generated_field = "7255E07206283D65FDE42F0CB345FA56")
+
     private byte[] mHistBytes = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.151 -0400", hash_original_method = "FFBD1FB2ECDDD8F0799F6AF75CBD6C12", hash_generated_method = "30B6F7A6A753E498047482CDD0986FB6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public IsoDep(Tag tag) throws RemoteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.897 -0400", hash_original_method = "FFBD1FB2ECDDD8F0799F6AF75CBD6C12", hash_generated_method = "35C2DB01B7B6ACF55D2B7FDBAF8B0F50")
+    public  IsoDep(Tag tag) throws RemoteException {
         super(tag, TagTechnology.ISO_DEP);
-        dsTaint.addTaint(tag.dsTaint);
         Bundle extras;
         extras = tag.getTechExtras(TagTechnology.ISO_DEP);
         {
             mHiLayerResponse = extras.getByteArray(EXTRA_HI_LAYER_RESP);
             mHistBytes = extras.getByteArray(EXTRA_HIST_BYTES);
         } //End block
+        addTaint(tag.getTaint());
         // ---------- Original Method ----------
         //Bundle extras = tag.getTechExtras(TagTechnology.ISO_DEP);
         //if (extras != null) {
@@ -48,10 +51,8 @@ public final class IsoDep extends BasicTagTechnology {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.152 -0400", hash_original_method = "C12C31601200CC9185BEA621DAA9D522", hash_generated_method = "AE5E9BCAFF8135C2D8102EB6436E045B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.899 -0400", hash_original_method = "C12C31601200CC9185BEA621DAA9D522", hash_generated_method = "03CBB0DAB8A89831C739E3037E912ADE")
     public void setTimeout(int timeout) {
-        dsTaint.addTaint(timeout);
         try 
         {
             int err;
@@ -62,6 +63,7 @@ public final class IsoDep extends BasicTagTechnology {
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(timeout);
         // ---------- Original Method ----------
         //try {
             //int err = mTag.getTagService().setTimeout(TagTechnology.ISO_DEP, timeout);
@@ -74,16 +76,16 @@ public final class IsoDep extends BasicTagTechnology {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.152 -0400", hash_original_method = "DE4D3DFA438B7711A20A8976B1AA544A", hash_generated_method = "4B0B3223FF6BFAEB7BD6897374AEC54F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.912 -0400", hash_original_method = "DE4D3DFA438B7711A20A8976B1AA544A", hash_generated_method = "0857B8E83191EEB9D42C5DCE5C20F2A8")
     public int getTimeout() {
         try 
         {
-            int varC5FF19B810CBF66E7DB7FC8454C4AFCA_960048035 = (mTag.getTagService().getTimeout(TagTechnology.ISO_DEP));
+            int varC5FF19B810CBF66E7DB7FC8454C4AFCA_237366249 = (mTag.getTagService().getTimeout(TagTechnology.ISO_DEP));
         } //End block
         catch (RemoteException e)
         { }
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1206198837 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1206198837;
         // ---------- Original Method ----------
         //try {
             //return mTag.getTagService().getTimeout(TagTechnology.ISO_DEP);
@@ -94,53 +96,53 @@ public final class IsoDep extends BasicTagTechnology {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.153 -0400", hash_original_method = "4E22C8A1A17AEE88575C62DC6B93AE32", hash_generated_method = "7251CEED416610F31EA0C0BA1C8CB340")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.913 -0400", hash_original_method = "4E22C8A1A17AEE88575C62DC6B93AE32", hash_generated_method = "00834235ED23D6ACA55941739F1576A1")
     public byte[] getHistoricalBytes() {
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2068814642 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_2068814642;
         // ---------- Original Method ----------
         //return mHistBytes;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.155 -0400", hash_original_method = "7FAA32860355D81337B89B991C6D0641", hash_generated_method = "E404404C1619BF5B6C4E1D797269E9C7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.913 -0400", hash_original_method = "7FAA32860355D81337B89B991C6D0641", hash_generated_method = "85CBDCCAE2DCE6791767964DDEA72259")
     public byte[] getHiLayerResponse() {
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1167531791 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1167531791;
         // ---------- Original Method ----------
         //return mHiLayerResponse;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.155 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "D327AA43EDA07417576173B36F2919CE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.924 -0400", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "CB8C3671BFB95B2ABB3A51989E4925E0")
     public byte[] transceive(byte[] data) throws IOException {
-        dsTaint.addTaint(data[0]);
-        byte[] var457CAD28AA5A950818B34ED801FB2565_242974013 = (transceive(data, true));
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var457CAD28AA5A950818B34ED801FB2565_1020431553 = (transceive(data, true));
+        addTaint(data[0]);
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_183293597 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_183293597;
         // ---------- Original Method ----------
         //return transceive(data, true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.155 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "D5543300ABE90FB338C56E061E83C3C5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.924 -0400", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "A55A00477A776A9B769867CEA5322B27")
     public int getMaxTransceiveLength() {
-        int varAD50EB2A6987338433A93D587AD15277_2090129230 = (getMaxTransceiveLengthInternal());
-        return dsTaint.getTaintInt();
+        int varAD50EB2A6987338433A93D587AD15277_1561590318 = (getMaxTransceiveLengthInternal());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1196319495 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1196319495;
         // ---------- Original Method ----------
         //return getMaxTransceiveLengthInternal();
     }
 
     
-    private static final String TAG = "NFC";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.924 -0400", hash_original_field = "839E89798F641D78E99C5732B39CA844", hash_generated_field = "75254E4C21911FCCBBD25490236328DA")
+
+    private static String TAG = "NFC";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.924 -0400", hash_original_field = "72352BC6B0DC471E2C939FC0BA692C27", hash_generated_field = "0E2E65346F18311034DF7A7BA8ADFB90")
+
     public static final String EXTRA_HI_LAYER_RESP = "hiresp";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.924 -0400", hash_original_field = "1B1E1C168088B9F721F5154BBBEEEA75", hash_generated_field = "21C86F60B2A1F20B574EAB41D200309D")
+
     public static final String EXTRA_HIST_BYTES = "histbytes";
 }
 

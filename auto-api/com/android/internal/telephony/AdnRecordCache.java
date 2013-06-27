@@ -17,18 +17,25 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public final class AdnRecordCache extends Handler implements IccConstants {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.159 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "4D74BFF297E0DF8FA98FF6D8A8DBA78C")
+
     PhoneBase phone;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.159 -0400", hash_original_field = "7AD5A27BB7D2D34D0C8EDF89584607A1", hash_generated_field = "E3717E9C9DFB544AEE98C8317196D94A")
+
     private UsimPhoneBookManager mUsimPhoneBookManager;
-    SparseArray<ArrayList<AdnRecord>> adnLikeFiles
-        = new SparseArray<ArrayList<AdnRecord>>();
-    SparseArray<ArrayList<Message>> adnLikeWaiters
-        = new SparseArray<ArrayList<Message>>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.159 -0400", hash_original_field = "9C684D7A3EA68688C4C426C547E2FB4C", hash_generated_field = "FD7F02A9AF4E80E8401852CE1D6CCCF1")
+
+    SparseArray<ArrayList<AdnRecord>> adnLikeFiles = new SparseArray<ArrayList<AdnRecord>>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.159 -0400", hash_original_field = "ADAFB2076C74460469DCA43C10C1385F", hash_generated_field = "F4925A71D0D9BED40A87B97AA5176B7D")
+
+    SparseArray<ArrayList<Message>> adnLikeWaiters = new SparseArray<ArrayList<Message>>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.159 -0400", hash_original_field = "8478D847935CCE397652858C36803AB9", hash_generated_field = "F677C0CE26C976C7845C3614A71718EB")
+
     SparseArray<Message> userWriteResponse = new SparseArray<Message>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.628 -0400", hash_original_method = "778B025D62231C2A3FAD8914E2C62313", hash_generated_method = "3DB7CB20C1EDD45D634A71CA729A9263")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AdnRecordCache(PhoneBase phone) {
-        dsTaint.addTaint(phone.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.161 -0400", hash_original_method = "778B025D62231C2A3FAD8914E2C62313", hash_generated_method = "D7D947F84080CF4D64D3A5D475032C17")
+    public  AdnRecordCache(PhoneBase phone) {
+        this.phone = phone;
         mUsimPhoneBookManager = new UsimPhoneBookManager(phone, this);
         // ---------- Original Method ----------
         //this.phone = phone;
@@ -36,8 +43,7 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.628 -0400", hash_original_method = "C51C4513003EDC9EA86A76A3037140C3", hash_generated_method = "39E1DB1685B71CBB7026B24F81570F04")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.162 -0400", hash_original_method = "C51C4513003EDC9EA86A76A3037140C3", hash_generated_method = "39E1DB1685B71CBB7026B24F81570F04")
     public void reset() {
         adnLikeFiles.clear();
         mUsimPhoneBookManager.reset();
@@ -51,8 +57,7 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.628 -0400", hash_original_method = "D74CB42B2A20381108736DF447231499", hash_generated_method = "122286100505123A2D0285B9BB47FB0C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.162 -0400", hash_original_method = "D74CB42B2A20381108736DF447231499", hash_generated_method = "122286100505123A2D0285B9BB47FB0C")
     private void clearWaiters() {
         int size;
         size = adnLikeWaiters.size();
@@ -79,8 +84,7 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.628 -0400", hash_original_method = "AA0A19B306C1CFC2139DB9008BF6A4C8", hash_generated_method = "E2639E70BE8F9FBF1625A0B198D387C6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.163 -0400", hash_original_method = "AA0A19B306C1CFC2139DB9008BF6A4C8", hash_generated_method = "E2639E70BE8F9FBF1625A0B198D387C6")
     private void clearUserWriters() {
         int size;
         size = userWriteResponse.size();
@@ -101,22 +105,23 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.629 -0400", hash_original_method = "F416E740ABBE99926C901CF2ED82B3B0", hash_generated_method = "359CB8F324770CCF55A0532E30A4AB08")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.170 -0400", hash_original_method = "F416E740ABBE99926C901CF2ED82B3B0", hash_generated_method = "10A37B4B3315D810A0BF8AD29B0BCEB6")
     public ArrayList<AdnRecord> getRecordsIfLoaded(int efid) {
-        dsTaint.addTaint(efid);
-        ArrayList<AdnRecord> var782F6793FDABD08BA37B9C9E7F193D47_808756373 = (adnLikeFiles.get(efid));
-        return (ArrayList<AdnRecord>)dsTaint.getTaint();
+        ArrayList<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_865605736 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_865605736 = adnLikeFiles.get(efid);
+        addTaint(efid);
+        varB4EAC82CA7396A68D541C85D26508E83_865605736.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_865605736;
         // ---------- Original Method ----------
         //return adnLikeFiles.get(efid);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.629 -0400", hash_original_method = "0198A12501638F8F5669817EF7B81F42", hash_generated_method = "67EB1BA166B6ACB025F04B85D1047F84")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.171 -0400", hash_original_method = "0198A12501638F8F5669817EF7B81F42", hash_generated_method = "5FE778F91364481AF2B2B335FF199512")
      int extensionEfForEf(int efid) {
-        dsTaint.addTaint(efid);
-        return dsTaint.getTaintInt();
+        addTaint(efid);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1981021242 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1981021242;
         // ---------- Original Method ----------
         //switch (efid) {
             //case EF_MBDN: return EF_EXT6;
@@ -130,17 +135,16 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.629 -0400", hash_original_method = "A626AB07A72819AA36869010FF1E4126", hash_generated_method = "AC5A2C9581D94F5DD1AD65ACD2572247")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.171 -0400", hash_original_method = "A626AB07A72819AA36869010FF1E4126", hash_generated_method = "84E2EFE75E5734CC2C34C5828BEB917A")
     private void sendErrorResponse(Message response, String errString) {
-        dsTaint.addTaint(response.dsTaint);
-        dsTaint.addTaint(errString);
         {
             Exception e;
             e = new RuntimeException(errString);
             AsyncResult.forMessage(response).exception = e;
             response.sendToTarget();
         } //End block
+        addTaint(response.getTaint());
+        addTaint(errString.getTaint());
         // ---------- Original Method ----------
         //if (response != null) {
             //Exception e = new RuntimeException(errString);
@@ -150,15 +154,9 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.630 -0400", hash_original_method = "92DB73E806C3C282A27A1468C26BF7B3", hash_generated_method = "F5B4C38FC1FDD02AC955425B1CAB98A8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.173 -0400", hash_original_method = "92DB73E806C3C282A27A1468C26BF7B3", hash_generated_method = "A63451CA9F52522F06BA00A4912F723E")
     public void updateAdnByIndex(int efid, AdnRecord adn, int recordIndex, String pin2,
             Message response) {
-        dsTaint.addTaint(response.dsTaint);
-        dsTaint.addTaint(pin2);
-        dsTaint.addTaint(recordIndex);
-        dsTaint.addTaint(adn.dsTaint);
-        dsTaint.addTaint(efid);
         int extensionEF;
         extensionEF = extensionEfForEf(efid);
         {
@@ -173,6 +171,11 @@ public final class AdnRecordCache extends Handler implements IccConstants {
         new AdnRecordLoader(phone).updateEF(adn, efid, extensionEF,
                 recordIndex, pin2,
                 obtainMessage(EVENT_UPDATE_ADN_DONE, efid, recordIndex, adn));
+        addTaint(efid);
+        addTaint(adn.getTaint());
+        addTaint(recordIndex);
+        addTaint(pin2.getTaint());
+        addTaint(response.getTaint());
         // ---------- Original Method ----------
         //int extensionEF = extensionEfForEf(efid);
         //if (extensionEF < 0) {
@@ -191,15 +194,9 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.630 -0400", hash_original_method = "71F49E0E0C93DA66D27CAD14CA0014CE", hash_generated_method = "79C515CCFFDA32BB25E19F5D84F7BC2B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.180 -0400", hash_original_method = "71F49E0E0C93DA66D27CAD14CA0014CE", hash_generated_method = "35AE815EC3E2F99E803FED691BF8D287")
     public void updateAdnBySearch(int efid, AdnRecord oldAdn, AdnRecord newAdn,
             String pin2, Message response) {
-        dsTaint.addTaint(response.dsTaint);
-        dsTaint.addTaint(oldAdn.dsTaint);
-        dsTaint.addTaint(pin2);
-        dsTaint.addTaint(newAdn.dsTaint);
-        dsTaint.addTaint(efid);
         int extensionEF;
         extensionEF = extensionEfForEf(efid);
         {
@@ -222,10 +219,10 @@ public final class AdnRecordCache extends Handler implements IccConstants {
         {
             Iterator<AdnRecord> it;
             it = oldAdnList.iterator();
-            boolean var03729FD53960D8DCA3A41A13A0229637_1324702013 = (it.hasNext());
+            boolean var03729FD53960D8DCA3A41A13A0229637_825136975 = (it.hasNext());
             {
                 {
-                    boolean var109153AE8FA7C60942D7115B9D4CF678_531097556 = (oldAdn.isEqual(it.next()));
+                    boolean var109153AE8FA7C60942D7115B9D4CF678_1560413720 = (oldAdn.isEqual(it.next()));
                     {
                         index = count;
                     } //End block
@@ -254,17 +251,18 @@ public final class AdnRecordCache extends Handler implements IccConstants {
         new AdnRecordLoader(phone).updateEF(newAdn, efid, extensionEF,
                 index, pin2,
                 obtainMessage(EVENT_UPDATE_ADN_DONE, efid, index, newAdn));
+        addTaint(efid);
+        addTaint(oldAdn.getTaint());
+        addTaint(newAdn.getTaint());
+        addTaint(pin2.getTaint());
+        addTaint(response.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.631 -0400", hash_original_method = "05810E0F51AA47EAC0C24CA3CBEDF0F7", hash_generated_method = "DF7280FFB1F3BA0D0D4B18EBC43FF29A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.187 -0400", hash_original_method = "05810E0F51AA47EAC0C24CA3CBEDF0F7", hash_generated_method = "2E2EBCCBA5E4A3E60C301373F960A26E")
     public void requestLoadAllAdnLike(int efid, int extensionEf, Message response) {
-        dsTaint.addTaint(response.dsTaint);
-        dsTaint.addTaint(extensionEf);
-        dsTaint.addTaint(efid);
         ArrayList<Message> waiters;
         ArrayList<AdnRecord> result;
         {
@@ -295,16 +293,16 @@ public final class AdnRecordCache extends Handler implements IccConstants {
         } //End block
         new AdnRecordLoader(phone).loadAllFromEF(efid, extensionEf,
             obtainMessage(EVENT_LOAD_ALL_ADN_LIKE_DONE, efid, 0));
+        addTaint(efid);
+        addTaint(extensionEf);
+        addTaint(response.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.632 -0400", hash_original_method = "06D7CFA235737447F2D0DAD9C5CA936C", hash_generated_method = "0D1644B7BFB879EA0C770C81FDCE4B49")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.194 -0400", hash_original_method = "06D7CFA235737447F2D0DAD9C5CA936C", hash_generated_method = "DC68663876F5E7668A8CEADFD6313999")
     private void notifyWaiters(ArrayList<Message> waiters, AsyncResult ar) {
-        dsTaint.addTaint(waiters.dsTaint);
-        dsTaint.addTaint(ar.dsTaint);
         {
             int i, s;
             i = 0;
@@ -316,6 +314,8 @@ public final class AdnRecordCache extends Handler implements IccConstants {
                 waiter.sendToTarget();
             } //End block
         } //End collapsed parenthetic
+        addTaint(waiters.getTaint());
+        addTaint(ar.getTaint());
         // ---------- Original Method ----------
         //if (waiters == null) {
             //return;
@@ -328,10 +328,8 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.633 -0400", hash_original_method = "EDA0843A3B437B2415185CC41779F06F", hash_generated_method = "625307883114C3E2E973581862E9E482")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.195 -0400", hash_original_method = "EDA0843A3B437B2415185CC41779F06F", hash_generated_method = "FE9E01473B1769FD691DEF95B1F4E5C1")
     public void handleMessage(Message msg) {
-        dsTaint.addTaint(msg.dsTaint);
         AsyncResult ar;
         int efid;
         //Begin case EVENT_LOAD_ALL_ADN_LIKE_DONE 
@@ -390,12 +388,17 @@ public final class AdnRecordCache extends Handler implements IccConstants {
         //Begin case EVENT_UPDATE_ADN_DONE 
         response.sendToTarget();
         //End case EVENT_UPDATE_ADN_DONE 
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    static final int EVENT_LOAD_ALL_ADN_LIKE_DONE = 1;
-    static final int EVENT_UPDATE_ADN_DONE = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.195 -0400", hash_original_field = "03AB7BF51351057C2E3D1FF08AB06611", hash_generated_field = "C1B82D8F0B621A6FADDEBB05B098C323")
+
+    static int EVENT_LOAD_ALL_ADN_LIKE_DONE = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.195 -0400", hash_original_field = "7C5CFEC1409E135FD47F8C89B6004DD5", hash_generated_field = "F6D2F3754C189D8919B297178DAD628E")
+
+    static int EVENT_UPDATE_ADN_DONE = 2;
 }
 

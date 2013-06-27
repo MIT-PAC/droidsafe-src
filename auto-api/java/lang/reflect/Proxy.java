@@ -14,20 +14,20 @@ import java.util.Map;
 import java.util.WeakHashMap;
 
 public class Proxy implements Serializable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.213 -0400", hash_original_field = "2510C39011C5BE704182423E3A695E91", hash_generated_field = "89B0705CC0F6BF714E0545A8467AD6EB")
+
     protected InvocationHandler h;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.015 -0400", hash_original_method = "1299DC7DDC1977A0E223548A22BEB1B2", hash_generated_method = "D647A7D612843DD58BA0B0DD89164A21")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.214 -0400", hash_original_method = "1299DC7DDC1977A0E223548A22BEB1B2", hash_generated_method = "D647A7D612843DD58BA0B0DD89164A21")
     @SuppressWarnings("unused")
-    private Proxy() {
+    private  Proxy() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.015 -0400", hash_original_method = "4536AE1A64E0852F0920CAD3D2F2C594", hash_generated_method = "D515EC287420E8240223F51AE67D3F32")
-    @DSModeled(DSC.SAFE)
-    protected Proxy(InvocationHandler h) {
-        dsTaint.addTaint(h.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.214 -0400", hash_original_method = "4536AE1A64E0852F0920CAD3D2F2C594", hash_generated_method = "698C4B548DC7670D8B6A3E54EBD2B093")
+    protected  Proxy(InvocationHandler h) {
+        this.h = h;
         // ---------- Original Method ----------
         //this.h = h;
     }
@@ -175,9 +175,17 @@ public class Proxy implements Serializable {
     }
 
     
-    private static final long serialVersionUID = -2222568056686623797L;
-    private static final Map<ClassLoader, Map<String, WeakReference<Class<?>>>> loaderCache = new WeakHashMap<ClassLoader, Map<String, WeakReference<Class<?>>>>();
-    private static final Map<Class<?>, String> proxyCache = new WeakHashMap<Class<?>, String>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.228 -0400", hash_original_field = "D386C92C7838EE8E51BC9D21FAEBA973", hash_generated_field = "A2B675BDE80B58BB7B35733E68384596")
+
+    private static long serialVersionUID = -2222568056686623797L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.228 -0400", hash_original_field = "6C950B76DEE3DAD7981B8D3EF12B636B", hash_generated_field = "9901A71A6467286695A997BCD4D5F8DB")
+
+    private static Map<ClassLoader, Map<String, WeakReference<Class<?>>>> loaderCache = new WeakHashMap<ClassLoader, Map<String, WeakReference<Class<?>>>>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.228 -0400", hash_original_field = "4C738840F7F4B6A87D2B79A8D35E9B6A", hash_generated_field = "BE828D97978EE21BFEDA6E490843DB0F")
+
+    private static Map<Class<?>, String> proxyCache = new WeakHashMap<Class<?>, String>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.229 -0400", hash_original_field = "12B2C2F32FB453007DDBD4D3641ED421", hash_generated_field = "D9EF94FD4EC58A4FD3C03727E5FB6ABC")
+
     private static int NextClassNameIndex = 0;
 }
 

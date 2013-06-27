@@ -12,23 +12,26 @@ import java.util.Arrays;
 import libcore.util.EmptyArray;
 
 abstract class AbstractStringBuilder {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.160 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "C068225E28B5BE74066BE5338158F76B")
+
     private char[] value;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.161 -0400", hash_original_field = "E2942A04780E223B215EB8B663CF5353", hash_generated_field = "82CC849FCF58347832EA6BB917282DBE")
+
     private int count;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.161 -0400", hash_original_field = "9E81E7B963C71363E2FB3EEFCFECFC0E", hash_generated_field = "208F8AA93D19EFFECF64F85E89AD016E")
+
     private boolean shared;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.399 -0400", hash_original_method = "C4ACD0AC259F7EA41C20592CA02F17C8", hash_generated_method = "7E18A23DEBF832E11F71B13CFDB1A343")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     AbstractStringBuilder() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.168 -0400", hash_original_method = "C4ACD0AC259F7EA41C20592CA02F17C8", hash_generated_method = "7E18A23DEBF832E11F71B13CFDB1A343")
+      AbstractStringBuilder() {
         value = new char[INITIAL_CAPACITY];
         // ---------- Original Method ----------
         //value = new char[INITIAL_CAPACITY];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.399 -0400", hash_original_method = "18E3A9BF20D4EDF142A00D9C9EE6DE65", hash_generated_method = "B01803B029A74D70DF66FD53D514183E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     AbstractStringBuilder(int capacity) {
-        dsTaint.addTaint(capacity);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.169 -0400", hash_original_method = "18E3A9BF20D4EDF142A00D9C9EE6DE65", hash_generated_method = "6FE33D43FB57ED25AB066978A5449548")
+      AbstractStringBuilder(int capacity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NegativeArraySizeException();
         } //End block
@@ -41,10 +44,8 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.400 -0400", hash_original_method = "0C09A579E41A9FFDC9603418777FC2FA", hash_generated_method = "45A5141B12ED78FED4407FEA611491C9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     AbstractStringBuilder(String string) {
-        dsTaint.addTaint(string);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.169 -0400", hash_original_method = "0C09A579E41A9FFDC9603418777FC2FA", hash_generated_method = "83BF7EE3FC5376E0A4CCA6CA8877D61D")
+      AbstractStringBuilder(String string) {
         count = string.length();
         shared = false;
         value = new char[count + INITIAL_CAPACITY];
@@ -57,35 +58,28 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.400 -0400", hash_original_method = "CA36BDE7C01AB0B5E4CF30DF6E006183", hash_generated_method = "82477EAE287FEBA389EBF3809AC0476B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.169 -0400", hash_original_method = "CA36BDE7C01AB0B5E4CF30DF6E006183", hash_generated_method = "E9097F276976FD24EC69393D48CABF94")
     final char[] getValue() {
-        char[] retVal = new char[1];
-        retVal[0] = dsTaint.getTaintString().charAt(0);
-        return retVal;
+        char[] var50607924ABD4C17119BAF3A1CE41C0EC_1385927476 = {getTaintChar()};
+        return var50607924ABD4C17119BAF3A1CE41C0EC_1385927476;
         // ---------- Original Method ----------
         //return value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.400 -0400", hash_original_method = "BF651BBA1175DAD67C837DDC7CF4E9BB", hash_generated_method = "40905074D1E002B62F0D167BAE20385D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.174 -0400", hash_original_method = "BF651BBA1175DAD67C837DDC7CF4E9BB", hash_generated_method = "19F0A2951066248F9CF32E75819EF61E")
     final char[] shareValue() {
         shared = true;
-        char[] retVal = new char[1];
-        retVal[0] = dsTaint.getTaintString().charAt(0);
-        return retVal;
+        char[] var50607924ABD4C17119BAF3A1CE41C0EC_581260641 = {getTaintChar()};
+        return var50607924ABD4C17119BAF3A1CE41C0EC_581260641;
         // ---------- Original Method ----------
         //shared = true;
         //return value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.400 -0400", hash_original_method = "8C798CD9819DA5BF9BBE1043F1031580", hash_generated_method = "004AD6A31535717BDA48CAAD59314F27")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.179 -0400", hash_original_method = "8C798CD9819DA5BF9BBE1043F1031580", hash_generated_method = "C0879A15B741CC0CA0812D94D2E68AA1")
     final void set(char[] val, int len) throws InvalidObjectException {
-        dsTaint.addTaint(val[0]);
-        dsTaint.addTaint(len);
         {
             val = EmptyArray.CHAR;
         } //End block
@@ -93,6 +87,8 @@ abstract class AbstractStringBuilder {
             if (DroidSafeAndroidRuntime.control) throw new InvalidObjectException("count out of range");
         } //End block
         shared = false;
+        value = val;
+        count = len;
         // ---------- Original Method ----------
         //if (val == null) {
             //val = EmptyArray.CHAR;
@@ -106,10 +102,8 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.400 -0400", hash_original_method = "8DE386E9EA04BE56519C8A6264F91502", hash_generated_method = "5842B2802BAEE1DA7D06DC49D72E079F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.180 -0400", hash_original_method = "8DE386E9EA04BE56519C8A6264F91502", hash_generated_method = "FC1ECC1B6EEB663230F177D79D76E23C")
     private void enlargeBuffer(int min) {
-        dsTaint.addTaint(min);
         int newCount;
         newCount = ((value.length >> 1) + value.length) + 2;
         char[] newData;
@@ -117,6 +111,7 @@ abstract class AbstractStringBuilder {
         System.arraycopy(value, 0, newData, 0, count);
         value = newData;
         shared = false;
+        addTaint(min);
         // ---------- Original Method ----------
         //int newCount = ((value.length >> 1) + value.length) + 2;
         //char[] newData = new char[min > newCount ? min : newCount];
@@ -126,8 +121,7 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.401 -0400", hash_original_method = "BE4C961EA91A0D5BF81DD6DF988583CA", hash_generated_method = "08108BC472AEB9D1E6CD6D954D95A44A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.180 -0400", hash_original_method = "BE4C961EA91A0D5BF81DD6DF988583CA", hash_generated_method = "08108BC472AEB9D1E6CD6D954D95A44A")
     final void appendNull() {
         int newCount;
         newCount = count + 4;
@@ -150,10 +144,8 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.401 -0400", hash_original_method = "8C85C9AFF9EA1123A22A14B3A5C3C022", hash_generated_method = "46AA84CD7C582E519BE6199DA800B737")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.187 -0400", hash_original_method = "8C85C9AFF9EA1123A22A14B3A5C3C022", hash_generated_method = "32DC324E7F894AFBF4F3CE1448FF291E")
     final void append0(char[] chars) {
-        dsTaint.addTaint(chars[0]);
         int newCount;
         newCount = count + chars.length;
         {
@@ -161,6 +153,7 @@ abstract class AbstractStringBuilder {
         } //End block
         System.arraycopy(chars, 0, value, count, chars.length);
         count = newCount;
+        addTaint(chars[0]);
         // ---------- Original Method ----------
         //int newCount = count + chars.length;
         //if (newCount > value.length) {
@@ -171,12 +164,8 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.401 -0400", hash_original_method = "7BE8867E430B01B44EC74C0F78249D07", hash_generated_method = "EB647F252C25CB37B3E76CD5735D3650")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.195 -0400", hash_original_method = "7BE8867E430B01B44EC74C0F78249D07", hash_generated_method = "30231D3D140A3E4B78E82457A327D606")
     final void append0(char[] chars, int offset, int length) {
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(chars[0]);
-        dsTaint.addTaint(offset);
         Arrays.checkOffsetAndCount(chars.length, offset, length);
         int newCount;
         newCount = count + length;
@@ -185,6 +174,9 @@ abstract class AbstractStringBuilder {
         } //End block
         System.arraycopy(chars, offset, value, count, length);
         count = newCount;
+        addTaint(chars[0]);
+        addTaint(offset);
+        addTaint(length);
         // ---------- Original Method ----------
         //Arrays.checkOffsetAndCount(chars.length, offset, length);
         //int newCount = count + length;
@@ -196,10 +188,8 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.401 -0400", hash_original_method = "ECBEE238E1E86380FF7C7052710927A2", hash_generated_method = "D7D48D89BFD243431331571E6F867B9C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.196 -0400", hash_original_method = "ECBEE238E1E86380FF7C7052710927A2", hash_generated_method = "398AE6984C650B7C505FB5974E5D0554")
     final void append0(char ch) {
-        dsTaint.addTaint(ch);
         {
             enlargeBuffer(count + 1);
         } //End block
@@ -212,10 +202,8 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.402 -0400", hash_original_method = "B96D71BE07A8651AC5DD35DFB1E0B9E9", hash_generated_method = "CE81F1C615FD7358074B93E6AFEBDC8D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.197 -0400", hash_original_method = "B96D71BE07A8651AC5DD35DFB1E0B9E9", hash_generated_method = "6E251ACDF913746C445A929DF494E461")
     final void append0(String string) {
-        dsTaint.addTaint(string);
         {
             appendNull();
         } //End block
@@ -228,6 +216,7 @@ abstract class AbstractStringBuilder {
         } //End block
         string._getChars(0, length, value, count);
         count = newCount;
+        addTaint(string.getTaint());
         // ---------- Original Method ----------
         //if (string == null) {
             //appendNull();
@@ -243,17 +232,13 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.402 -0400", hash_original_method = "C43881C5821BA2B06BD7E52CBFC700AF", hash_generated_method = "509BA87F32ABE919CE3A85AC6A0853B3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.198 -0400", hash_original_method = "C43881C5821BA2B06BD7E52CBFC700AF", hash_generated_method = "AA4A95CB31EFC06882FE032A4D3F47BA")
     final void append0(CharSequence s, int start, int end) {
-        dsTaint.addTaint(s);
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(end);
         {
             s = "null";
         } //End block
         {
-            boolean var89DBE3D09A4757E86A87E512699BEC01_1472478607 = ((start | end) < 0 || start > end || end > s.length());
+            boolean var89DBE3D09A4757E86A87E512699BEC01_1960525053 = ((start | end) < 0 || start > end || end > s.length());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
             } //End block
@@ -289,28 +274,30 @@ abstract class AbstractStringBuilder {
             } //End collapsed parenthetic
         } //End block
         this.count = newCount;
+        addTaint(start);
+        addTaint(end);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.402 -0400", hash_original_method = "4EDD82B1AA77527A58B2DDD935211532", hash_generated_method = "881518166AF5FC1809FB0973B2359E40")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.198 -0400", hash_original_method = "4EDD82B1AA77527A58B2DDD935211532", hash_generated_method = "57E2BD5A92BF5FB9C39CCFDF611482AA")
     public int capacity() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658435758 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_658435758;
         // ---------- Original Method ----------
         //return value.length;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.402 -0400", hash_original_method = "447DEA66ED097ABAE0E9735DA732DBDF", hash_generated_method = "0F5F6BBF5427EAE15E1D01CBF6E6FB48")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.198 -0400", hash_original_method = "447DEA66ED097ABAE0E9735DA732DBDF", hash_generated_method = "4ED6A0D62AFB4E697DA75E82872F316C")
     public char charAt(int index) {
-        dsTaint.addTaint(index);
         {
             if (DroidSafeAndroidRuntime.control) throw indexAndLength(index);
         } //End block
-        return dsTaint.getTaintChar();
+        addTaint(index);
+        char varA87DEB01C5F539E6BDA34829C8EF2368_1869628007 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_1869628007;
         // ---------- Original Method ----------
         //if (index < 0 || index >= count) {
             //throw indexAndLength(index);
@@ -319,34 +306,27 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.403 -0400", hash_original_method = "FC4FB8D4DBB369ED29C378FB60B58B5D", hash_generated_method = "8DEC028604C63258258F5286BF7816F3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.208 -0400", hash_original_method = "FC4FB8D4DBB369ED29C378FB60B58B5D", hash_generated_method = "3BAA7497F0414B8D9D56510DDB119646")
     private StringIndexOutOfBoundsException indexAndLength(int index) {
-        dsTaint.addTaint(index);
         if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(count, index);
-        return (StringIndexOutOfBoundsException)dsTaint.getTaint();
+        addTaint(index);
         // ---------- Original Method ----------
         //throw new StringIndexOutOfBoundsException(count, index);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.403 -0400", hash_original_method = "ABFB3D9F0C982EE0B945F30A8DA651B2", hash_generated_method = "3F5E1C381CBC84583B6AB6305819B152")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.209 -0400", hash_original_method = "ABFB3D9F0C982EE0B945F30A8DA651B2", hash_generated_method = "36B0B40AF5F4C672627A26D7C22A8FA1")
     private StringIndexOutOfBoundsException startEndAndLength(int start, int end) {
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(end);
         if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(count, start, end - start);
-        return (StringIndexOutOfBoundsException)dsTaint.getTaint();
+        addTaint(start);
+        addTaint(end);
         // ---------- Original Method ----------
         //throw new StringIndexOutOfBoundsException(count, start, end - start);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.403 -0400", hash_original_method = "19BE941D07BAB030F14923AC484F383F", hash_generated_method = "D9C6E064D02DAA095BB812F7498AF46E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.213 -0400", hash_original_method = "19BE941D07BAB030F14923AC484F383F", hash_generated_method = "C5250AEA21093D2CFF9DCB4F16681FC5")
     final void delete0(int start, int end) {
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(end);
         {
             {
                 end = count;
@@ -376,10 +356,8 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.403 -0400", hash_original_method = "54D305E0C27E04AE130B9F0D173AF3D5", hash_generated_method = "FFD3A529DAACB1614D0289B68471C1CD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.214 -0400", hash_original_method = "54D305E0C27E04AE130B9F0D173AF3D5", hash_generated_method = "AB6D072542DC5004A180625B58CE9155")
     final void deleteCharAt0(int index) {
-        dsTaint.addTaint(index);
         {
             if (DroidSafeAndroidRuntime.control) throw indexAndLength(index);
         } //End block
@@ -398,6 +376,7 @@ abstract class AbstractStringBuilder {
                 shared = false;
             } //End block
         } //End block
+        addTaint(index);
         // ---------- Original Method ----------
         //if (index < 0 || index >= count) {
             //throw indexAndLength(index);
@@ -418,15 +397,14 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.404 -0400", hash_original_method = "DB245C34644491EEEAB0523333BD6692", hash_generated_method = "EDBBD72F0D58BC19471C7B99058CAAA0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.222 -0400", hash_original_method = "DB245C34644491EEEAB0523333BD6692", hash_generated_method = "4A0BB35211ED04E829067F60C8EBF190")
     public void ensureCapacity(int min) {
-        dsTaint.addTaint(min);
         {
             int ourMin;
             ourMin = value.length*2 + 2;
             enlargeBuffer(Math.max(ourMin, min));
         } //End block
+        addTaint(min);
         // ---------- Original Method ----------
         //if (min > value.length) {
             //int ourMin = value.length*2 + 2;
@@ -435,17 +413,16 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.404 -0400", hash_original_method = "AE7F72EED3837594CFBBCCC4060D7909", hash_generated_method = "89486E080A3285A2E9CDFFB09A83F8F4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.222 -0400", hash_original_method = "AE7F72EED3837594CFBBCCC4060D7909", hash_generated_method = "EFACE025E8162EED0314AFB1378DEF76")
     public void getChars(int start, int end, char[] dst, int dstStart) {
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(dst[0]);
-        dsTaint.addTaint(dstStart);
-        dsTaint.addTaint(end);
         {
             if (DroidSafeAndroidRuntime.control) throw startEndAndLength(start, end);
         } //End block
         System.arraycopy(value, start, dst, dstStart, end - start);
+        addTaint(start);
+        addTaint(end);
+        addTaint(dst[0]);
+        addTaint(dstStart);
         // ---------- Original Method ----------
         //if (start > count || end > count || start > end) {
             //throw startEndAndLength(start, end);
@@ -454,11 +431,8 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.404 -0400", hash_original_method = "93FE28F62EFBAB9F8EBF9F9ADC8E87C8", hash_generated_method = "6D701477E07CA7DA8649A8962229AD1B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.222 -0400", hash_original_method = "93FE28F62EFBAB9F8EBF9F9ADC8E87C8", hash_generated_method = "747E3B3EAD654A711E65D4C34943D102")
     final void insert0(int index, char[] chars) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(chars[0]);
         {
             if (DroidSafeAndroidRuntime.control) throw indexAndLength(index);
         } //End block
@@ -467,6 +441,7 @@ abstract class AbstractStringBuilder {
             System.arraycopy(chars, 0, value, index, chars.length);
             count += chars.length;
         } //End block
+        addTaint(index);
         // ---------- Original Method ----------
         //if (index < 0 || index > count) {
             //throw indexAndLength(index);
@@ -479,24 +454,23 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.404 -0400", hash_original_method = "D46FA7C87DEEBA750439C9564B3FB7FE", hash_generated_method = "EB6A6C43D880485D1813390E7240A343")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.234 -0400", hash_original_method = "D46FA7C87DEEBA750439C9564B3FB7FE", hash_generated_method = "122DFF0189BB122D16DEC9C765BB8902")
     final void insert0(int index, char[] chars, int start, int length) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(chars[0]);
         {
             {
                 {
                     move(length, index);
                     System.arraycopy(chars, start, value, index, length);
+                    count += length;
                 } //End block
             } //End block
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException("this.length=" + count
                 + "; index=" + index + "; chars.length=" + chars.length
                 + "; start=" + start + "; length=" + length);
+        addTaint(index);
+        addTaint(chars[0]);
+        addTaint(start);
         // ---------- Original Method ----------
         //if (index >= 0 && index <= count) {
             //if (start >= 0 && length >= 0 && length <= chars.length - start) {
@@ -514,11 +488,8 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.405 -0400", hash_original_method = "20DD23A1E6916CB9CC20932D676C3164", hash_generated_method = "0352ECABB6F570902AD381C9B785D6E5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.234 -0400", hash_original_method = "20DD23A1E6916CB9CC20932D676C3164", hash_generated_method = "93DA36F06271D08C4000CC7E13C7951D")
     final void insert0(int index, char ch) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(ch);
         {
             if (DroidSafeAndroidRuntime.control) throw new ArrayIndexOutOfBoundsException(count, index);
         } //End block
@@ -534,11 +505,8 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.405 -0400", hash_original_method = "9E8CB9B48D87CB2577EC00CC04D06833", hash_generated_method = "946232BAA650B359538F95A695AA3093")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.235 -0400", hash_original_method = "9E8CB9B48D87CB2577EC00CC04D06833", hash_generated_method = "859F92B4189BED2100A97CE469E0BAEE")
     final void insert0(int index, String string) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(string);
         {
             {
                 string = "null";
@@ -554,6 +522,8 @@ abstract class AbstractStringBuilder {
         {
             if (DroidSafeAndroidRuntime.control) throw indexAndLength(index);
         } //End block
+        addTaint(index);
+        addTaint(string.getTaint());
         // ---------- Original Method ----------
         //if (index >= 0 && index <= count) {
             //if (string == null) {
@@ -571,23 +541,22 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.405 -0400", hash_original_method = "10AE187E8F37FB4E725DAC6B12ECB82F", hash_generated_method = "63CD01962FEAD1258EB2F3CCD08ABAEE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.235 -0400", hash_original_method = "10AE187E8F37FB4E725DAC6B12ECB82F", hash_generated_method = "E3E6073213295B983272C62C6DFA14E3")
     final void insert0(int index, CharSequence s, int start, int end) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(s);
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(end);
         {
             s = "null";
         } //End block
         {
-            boolean var499DCA3E97A15B9D8FE01D782B7A07A5_1697250594 = ((index | start | end) < 0 || index > count || start > end || end > s.length());
+            boolean var499DCA3E97A15B9D8FE01D782B7A07A5_158416261 = ((index | start | end) < 0 || index > count || start > end || end > s.length());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
             } //End block
         } //End collapsed parenthetic
         insert0(index, s.subSequence(start, end).toString());
+        addTaint(index);
+        addTaint(s.getTaint());
+        addTaint(start);
+        addTaint(end);
         // ---------- Original Method ----------
         //if (s == null) {
             //s = "null";
@@ -599,20 +568,17 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.405 -0400", hash_original_method = "A4F75F4D0C7ABF3196500E489B73A8D4", hash_generated_method = "6A0CE42C1903827D291888BEF557F2DF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.242 -0400", hash_original_method = "A4F75F4D0C7ABF3196500E489B73A8D4", hash_generated_method = "716BFACA550E54FBBC470E9CAC92A682")
     public int length() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_47604381 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_47604381;
         // ---------- Original Method ----------
         //return count;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.406 -0400", hash_original_method = "E2C445AFFEE441B211B71B3E0E3E89EA", hash_generated_method = "4502A4A410E2D4F5D78F4226B9CA3256")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.259 -0400", hash_original_method = "E2C445AFFEE441B211B71B3E0E3E89EA", hash_generated_method = "AE37A3B3F0BF27225C3923CED28A4A9A")
     private void move(int size, int index) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(size);
         int newCount;
         {
             {
@@ -629,6 +595,8 @@ abstract class AbstractStringBuilder {
         System.arraycopy(value, index, newData, index + size, count - index);
         value = newData;
         shared = false;
+        addTaint(size);
+        addTaint(index);
         // ---------- Original Method ----------
         //int newCount;
         //if (value.length - count >= size) {
@@ -648,12 +616,8 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.406 -0400", hash_original_method = "467233E9D0CCB909364F18BB14890489", hash_generated_method = "73AE8BC0267D2D6D9012FD1655AA10EB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.260 -0400", hash_original_method = "467233E9D0CCB909364F18BB14890489", hash_generated_method = "F3BE99ACA951584678539B09257F62CD")
     final void replace0(int start, int end, String string) {
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(string);
-        dsTaint.addTaint(end);
         {
             {
                 end = count;
@@ -696,13 +660,15 @@ abstract class AbstractStringBuilder {
             } //End block
         } //End block
         if (DroidSafeAndroidRuntime.control) throw startEndAndLength(start, end);
+        addTaint(start);
+        addTaint(end);
+        addTaint(string.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.407 -0400", hash_original_method = "227A175682657414C42D64433DAB4FBA", hash_generated_method = "AB7A833C7F0221A323427F80E6E73CDD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.264 -0400", hash_original_method = "227A175682657414C42D64433DAB4FBA", hash_generated_method = "AB7A833C7F0221A323427F80E6E73CDD")
     final void reverse0() {
         {
             int end;
@@ -796,11 +762,8 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.407 -0400", hash_original_method = "5EFF2E769F54F3F7450C4FCC35538F65", hash_generated_method = "EBED57D34D4778BC135851E1BAF855AC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.277 -0400", hash_original_method = "5EFF2E769F54F3F7450C4FCC35538F65", hash_generated_method = "FED66A96D4FA84C46B96B468ED844BA6")
     public void setCharAt(int index, char ch) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(ch);
         {
             if (DroidSafeAndroidRuntime.control) throw indexAndLength(index);
         } //End block
@@ -821,10 +784,8 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.408 -0400", hash_original_method = "CCD67F72D75D83378F17335F6F9DC00A", hash_generated_method = "99BA47A7AD938588C8BAFEF6496E2D3C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.278 -0400", hash_original_method = "CCD67F72D75D83378F17335F6F9DC00A", hash_generated_method = "A234A84BC219471D6F830E005B4C6ED3")
     public void setLength(int length) {
-        dsTaint.addTaint(length);
         {
             if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException("length < 0: " + length);
         } //End block
@@ -845,6 +806,7 @@ abstract class AbstractStringBuilder {
                 } //End block
             } //End block
         } //End block
+        count = length;
         // ---------- Original Method ----------
         //if (length < 0) {
             //throw new StringIndexOutOfBoundsException("length < 0: " + length);
@@ -867,15 +829,29 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.408 -0400", hash_original_method = "1708C6B44328EC2FA5364A52800D811B", hash_generated_method = "250C6A78068B0B9F0F687521AA88D1C3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.279 -0400", hash_original_method = "1708C6B44328EC2FA5364A52800D811B", hash_generated_method = "E9C751180B196C9A7A082AE0286D0605")
     public String substring(int start) {
-        dsTaint.addTaint(start);
+        String varB4EAC82CA7396A68D541C85D26508E83_2121979494 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_520291715 = null; //Variable for return #2
         {
-            String varFF5D7C0C0693CDD5283542456758DA09_945759929 = (new String(value, start, count - start));
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_2121979494 = "";
+            } //End block
+            varB4EAC82CA7396A68D541C85D26508E83_520291715 = new String(value, start, count - start);
         } //End block
         if (DroidSafeAndroidRuntime.control) throw indexAndLength(start);
-        return dsTaint.getTaintString();
+        addTaint(start);
+        String varA7E53CE21691AB073D9660D615818899_1563866846; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1563866846 = varB4EAC82CA7396A68D541C85D26508E83_2121979494;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1563866846 = varB4EAC82CA7396A68D541C85D26508E83_520291715;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1563866846.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1563866846;
         // ---------- Original Method ----------
         //if (start >= 0 && start <= count) {
             //if (start == count) {
@@ -887,16 +863,30 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.408 -0400", hash_original_method = "7121FB14814A84CA4ADE1E9CCF3D54F6", hash_generated_method = "2008660AF3C02C0A42BA922BD09ACBA1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.286 -0400", hash_original_method = "7121FB14814A84CA4ADE1E9CCF3D54F6", hash_generated_method = "74A09F1C25BCD4CFC1F1EFFE71F7C498")
     public String substring(int start, int end) {
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(end);
+        String varB4EAC82CA7396A68D541C85D26508E83_32656910 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_126197720 = null; //Variable for return #2
         {
-            String var7517ACAC1294EB85B5ED3A9C2C8C284E_250854270 = (new String(value, start, end - start));
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_32656910 = "";
+            } //End block
+            varB4EAC82CA7396A68D541C85D26508E83_126197720 = new String(value, start, end - start);
         } //End block
         if (DroidSafeAndroidRuntime.control) throw startEndAndLength(start, end);
-        return dsTaint.getTaintString();
+        addTaint(start);
+        addTaint(end);
+        String varA7E53CE21691AB073D9660D615818899_591856208; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_591856208 = varB4EAC82CA7396A68D541C85D26508E83_32656910;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_591856208 = varB4EAC82CA7396A68D541C85D26508E83_126197720;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_591856208.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_591856208;
         // ---------- Original Method ----------
         //if (start >= 0 && start <= end && end <= count) {
             //if (start == end) {
@@ -908,18 +898,36 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.408 -0400", hash_original_method = "F5CABA8208B35CC620F77C4ED2D48018", hash_generated_method = "AC5D26FD6A035A8487563E52E4B8D5AF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.287 -0400", hash_original_method = "F5CABA8208B35CC620F77C4ED2D48018", hash_generated_method = "746D3FE7D795119934FFFA02923A85F2")
     @Override
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_808061524 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1158237230 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_2080822533 = null; //Variable for return #3
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_808061524 = "";
+        } //End block
         int wasted;
         wasted = value.length - count;
         {
-            String var83CDB60D885F69ADB94B9FF090DF9615_990709548 = (new String(value, 0, count));
+            varB4EAC82CA7396A68D541C85D26508E83_1158237230 = new String(value, 0, count);
         } //End block
         shared = true;
-        String varB17172BEED2BE74C0D7F241925D62E10_585680027 = (new String(0, count, value));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_2080822533 = new String(0, count, value);
+        String varA7E53CE21691AB073D9660D615818899_963747962; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_963747962 = varB4EAC82CA7396A68D541C85D26508E83_808061524;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_963747962 = varB4EAC82CA7396A68D541C85D26508E83_1158237230;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_963747962 = varB4EAC82CA7396A68D541C85D26508E83_2080822533;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_963747962.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_963747962;
         // ---------- Original Method ----------
         //if (count == 0) {
             //return "";
@@ -934,34 +942,32 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.408 -0400", hash_original_method = "30B2B5AAE6BF00B7B5DE2415CD1C93C0", hash_generated_method = "BBE35FCE4055C70F6CDFFE7BD1A85151")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.288 -0400", hash_original_method = "30B2B5AAE6BF00B7B5DE2415CD1C93C0", hash_generated_method = "6C672B55BA1A36592FDF7227866840FE")
     public CharSequence subSequence(int start, int end) {
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(end);
-        CharSequence varC847D8C41835030B7BEFF7774EE43A1F_1485674143 = (substring(start, end));
-        return dsTaint.getTaintString();
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_506155506 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_506155506 = substring(start, end);
+        addTaint(start);
+        addTaint(end);
+        varB4EAC82CA7396A68D541C85D26508E83_506155506.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_506155506;
         // ---------- Original Method ----------
         //return substring(start, end);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.409 -0400", hash_original_method = "7103B0EDA0D88809AB4D74CA424F106F", hash_generated_method = "5A280D8575F184F92D66BCC8975983C4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.288 -0400", hash_original_method = "7103B0EDA0D88809AB4D74CA424F106F", hash_generated_method = "8867E0F4226F77B7CD3154733CC1F313")
     public int indexOf(String string) {
-        dsTaint.addTaint(string);
-        int var69BB5E01AE8CE71924DBD4CF1DEEFE55_876940215 = (indexOf(string, 0));
-        return dsTaint.getTaintInt();
+        int var69BB5E01AE8CE71924DBD4CF1DEEFE55_1269671695 = (indexOf(string, 0));
+        addTaint(string.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1440209879 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1440209879;
         // ---------- Original Method ----------
         //return indexOf(string, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.409 -0400", hash_original_method = "58EF09653819A20604D2729AAEA1E73D", hash_generated_method = "B45C1A7925E229F077C72BFB0DD1AA99")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.293 -0400", hash_original_method = "58EF09653819A20604D2729AAEA1E73D", hash_generated_method = "F1A5181AF01FA63F38458859B9B5F5F8")
     public int indexOf(String subString, int start) {
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(subString);
         {
             start = 0;
         } //End block
@@ -984,33 +990,33 @@ abstract class AbstractStringBuilder {
                 o1 = i;
                 o2 = 0;
                 {
-                    boolean var07F0F34C78F832D4432771EF4DCEE186_591602528 = (++o2 < subCount && value[++o1] == subString.charAt(o2));
+                    boolean var07F0F34C78F832D4432771EF4DCEE186_1137805939 = (++o2 < subCount && value[++o1] == subString.charAt(o2));
                 } //End collapsed parenthetic
                 start = i + 1;
             } //End block
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(subString.getTaint());
+        addTaint(start);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571566507 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571566507;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.409 -0400", hash_original_method = "692347B4AF93950259A2DA740A39B258", hash_generated_method = "1E9969BA81C87C9E3D700E6A0B18F7D8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.293 -0400", hash_original_method = "692347B4AF93950259A2DA740A39B258", hash_generated_method = "AF61A40E3F4B09E0D1CCA7372CAB4E58")
     public int lastIndexOf(String string) {
-        dsTaint.addTaint(string);
-        int var629483EEC7DE422E0B8E730771A3942E_231394598 = (lastIndexOf(string, count));
-        return dsTaint.getTaintInt();
+        int var629483EEC7DE422E0B8E730771A3942E_911339816 = (lastIndexOf(string, count));
+        addTaint(string.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_851021939 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_851021939;
         // ---------- Original Method ----------
         //return lastIndexOf(string, count);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.410 -0400", hash_original_method = "7130CA0E46A667075374433A3B5D2D85", hash_generated_method = "F725923507709638254EE5D648961D46")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.305 -0400", hash_original_method = "7130CA0E46A667075374433A3B5D2D85", hash_generated_method = "8BD1EF7CB0AEAC4E459E643DD62D123F")
     public int lastIndexOf(String subString, int start) {
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(subString);
         int subCount;
         subCount = subString.length();
         {
@@ -1034,21 +1040,23 @@ abstract class AbstractStringBuilder {
                     o1 = i;
                     o2 = 0;
                     {
-                        boolean varC6F1A2D739E8E9688B6BA89C00E8647F_470981412 = (++o2 < subCount
+                        boolean varC6F1A2D739E8E9688B6BA89C00E8647F_679744917 = (++o2 < subCount
                             && value[++o1] == subString.charAt(o2));
                     } //End collapsed parenthetic
                     start = i - 1;
                 } //End block
             } //End block
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(subString.getTaint());
+        addTaint(start);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_671857068 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_671857068;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.410 -0400", hash_original_method = "DFFDB9C5FDBA0FB3D8B8BAEB0765C9A3", hash_generated_method = "455DB6A5A459B4A1DCF028D172027D5A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.306 -0400", hash_original_method = "DFFDB9C5FDBA0FB3D8B8BAEB0765C9A3", hash_generated_method = "455DB6A5A459B4A1DCF028D172027D5A")
     public void trimToSize() {
         {
             char[] newValue;
@@ -1067,15 +1075,15 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.410 -0400", hash_original_method = "E01C43C5D144342C7BDF51C53F549AB8", hash_generated_method = "5A8931CF52744FA2173AA67B8776E0D9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.306 -0400", hash_original_method = "E01C43C5D144342C7BDF51C53F549AB8", hash_generated_method = "3BC773DF3B6423481CA497FC583CD1E6")
     public int codePointAt(int index) {
-        dsTaint.addTaint(index);
         {
             if (DroidSafeAndroidRuntime.control) throw indexAndLength(index);
         } //End block
-        int var754C26F5C1DC59BD50BDC20E577E9886_735576770 = (Character.codePointAt(value, index, count));
-        return dsTaint.getTaintInt();
+        int var754C26F5C1DC59BD50BDC20E577E9886_1601854826 = (Character.codePointAt(value, index, count));
+        addTaint(index);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_265998282 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_265998282;
         // ---------- Original Method ----------
         //if (index < 0 || index >= count) {
             //throw indexAndLength(index);
@@ -1084,15 +1092,15 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.410 -0400", hash_original_method = "F58237612B89D3EA2A0CCEABA41468D6", hash_generated_method = "FA7D6B4E03F395D4406FE5A7A449C0A1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.306 -0400", hash_original_method = "F58237612B89D3EA2A0CCEABA41468D6", hash_generated_method = "3F85AB33C46E8733E57496AC9E3B9DE6")
     public int codePointBefore(int index) {
-        dsTaint.addTaint(index);
         {
             if (DroidSafeAndroidRuntime.control) throw indexAndLength(index);
         } //End block
-        int var47513E82D5F330EECEA70775E6161519_1039376543 = (Character.codePointBefore(value, index));
-        return dsTaint.getTaintInt();
+        int var47513E82D5F330EECEA70775E6161519_706339278 = (Character.codePointBefore(value, index));
+        addTaint(index);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_314741148 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_314741148;
         // ---------- Original Method ----------
         //if (index < 1 || index > count) {
             //throw indexAndLength(index);
@@ -1101,16 +1109,16 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.411 -0400", hash_original_method = "012FBC57A3E4CD6B3DAD71A54F843207", hash_generated_method = "245998849CE17DB07506E8A7A8C8B005")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.307 -0400", hash_original_method = "012FBC57A3E4CD6B3DAD71A54F843207", hash_generated_method = "27FF9922561457C53922EFE8E75C0DDD")
     public int codePointCount(int start, int end) {
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(end);
         {
             if (DroidSafeAndroidRuntime.control) throw startEndAndLength(start, end);
         } //End block
-        int var3CCF693878924901A110D91C3295E7F1_1396537227 = (Character.codePointCount(value, start, end - start));
-        return dsTaint.getTaintInt();
+        int var3CCF693878924901A110D91C3295E7F1_1429146727 = (Character.codePointCount(value, start, end - start));
+        addTaint(start);
+        addTaint(end);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_982305237 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_982305237;
         // ---------- Original Method ----------
         //if (start < 0 || end > count || start > end) {
             //throw startEndAndLength(start, end);
@@ -1119,20 +1127,22 @@ abstract class AbstractStringBuilder {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.411 -0400", hash_original_method = "AC95F45AA90228D3C037EE242B5DE1AD", hash_generated_method = "7652FC0CE4E7F1525C782C0645D4DFF5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.307 -0400", hash_original_method = "AC95F45AA90228D3C037EE242B5DE1AD", hash_generated_method = "9488B2565B6D22DA3008FD1AC56A6A89")
     public int offsetByCodePoints(int index, int codePointOffset) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(codePointOffset);
-        int var8106FFBFDD8426C615EB8F94705A68B6_234342541 = (Character.offsetByCodePoints(value, 0, count, index,
+        int var8106FFBFDD8426C615EB8F94705A68B6_1799989585 = (Character.offsetByCodePoints(value, 0, count, index,
                 codePointOffset));
-        return dsTaint.getTaintInt();
+        addTaint(index);
+        addTaint(codePointOffset);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_945446046 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_945446046;
         // ---------- Original Method ----------
         //return Character.offsetByCodePoints(value, 0, count, index,
                 //codePointOffset);
     }
 
     
-    static final int INITIAL_CAPACITY = 16;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.307 -0400", hash_original_field = "60E8041D14101DDB569AC77FCB6B5097", hash_generated_field = "36FB1DCC3FECC4C5B441A4A419F91EE5")
+
+    static int INITIAL_CAPACITY = 16;
 }
 

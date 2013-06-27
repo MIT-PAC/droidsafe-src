@@ -11,33 +11,34 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class Picture {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.278 -0400", hash_original_field = "205AF319C70DD39AC12A7A810F070D6A", hash_generated_field = "A1B5C5158D5DEB28A2820BEDFBA48246")
+
     private Canvas mRecordingCanvas;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.279 -0400", hash_original_field = "EB3D0953DBC0B65EBA1482F45D0B169C", hash_generated_field = "08C3B2ACCECB8572107176C70CDC69B3")
+
     private int mNativePicture;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.513 -0400", hash_original_method = "2489F1714C6AB52D2B9965C8B69500DD", hash_generated_method = "63528B2E8ADC16DD1C04E65808C24AEE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Picture() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.279 -0400", hash_original_method = "2489F1714C6AB52D2B9965C8B69500DD", hash_generated_method = "63528B2E8ADC16DD1C04E65808C24AEE")
+    public  Picture() {
         this(nativeConstructor(0));
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.514 -0400", hash_original_method = "0B8FC63E2385743B0CD030A74D7237E0", hash_generated_method = "F5EFA12A8B351631D4C3BC8C70C0EC38")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Picture(Picture src) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.290 -0400", hash_original_method = "0B8FC63E2385743B0CD030A74D7237E0", hash_generated_method = "BEB05DE5939B8E76EE1EA7255E1E3D3A")
+    public  Picture(Picture src) {
         this(nativeConstructor(src != null ? src.mNativePicture : 0));
-        dsTaint.addTaint(src.dsTaint);
+        addTaint(src.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.514 -0400", hash_original_method = "4720BFD5C543F65C552F0739FF1DD2E7", hash_generated_method = "FA9F35E992BEC50354E22559AF0AF48E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private Picture(int nativePicture) {
-        dsTaint.addTaint(nativePicture);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.291 -0400", hash_original_method = "4720BFD5C543F65C552F0739FF1DD2E7", hash_generated_method = "696BDC1CE19AB8BA9C4FC0E201030DC9")
+    private  Picture(int nativePicture) {
         {
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException();
         } //End block
+        mNativePicture = nativePicture;
         // ---------- Original Method ----------
         //if (nativePicture == 0) {
             //throw new RuntimeException();
@@ -46,15 +47,17 @@ public class Picture {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.515 -0400", hash_original_method = "20E22D7D195E3391E43BD9FB13A423DE", hash_generated_method = "641AE2154621E5555685D4ADD376BD3E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.292 -0400", hash_original_method = "20E22D7D195E3391E43BD9FB13A423DE", hash_generated_method = "C7FB7749CB2DC4E7C843304C269A17AE")
     public Canvas beginRecording(int width, int height) {
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(width);
+        Canvas varB4EAC82CA7396A68D541C85D26508E83_31901095 = null; //Variable for return #1
         int ni;
         ni = nativeBeginRecording(mNativePicture, width, height);
         mRecordingCanvas = new RecordingCanvas(this, ni);
-        return (Canvas)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_31901095 = mRecordingCanvas;
+        addTaint(width);
+        addTaint(height);
+        varB4EAC82CA7396A68D541C85D26508E83_31901095.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_31901095;
         // ---------- Original Method ----------
         //int ni = nativeBeginRecording(mNativePicture, width, height);
         //mRecordingCanvas = new RecordingCanvas(this, ni);
@@ -62,8 +65,7 @@ public class Picture {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.515 -0400", hash_original_method = "4B70DEBF1EF0DC56C3D034BE86F32949", hash_generated_method = "2A735E704B28EC1A42C597E28B57117E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.293 -0400", hash_original_method = "4B70DEBF1EF0DC56C3D034BE86F32949", hash_generated_method = "2A735E704B28EC1A42C597E28B57117E")
     public void endRecording() {
         {
             mRecordingCanvas = null;
@@ -77,28 +79,27 @@ public class Picture {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.515 -0400", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "DF8B748F0B24EE0E7526D789A40020BB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.293 -0400", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "EEEA87399DADB1FC53EEB4CD84F67D74")
     public int getWidth() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_564922008 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_564922008;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.515 -0400", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "74072A037789FBB3D4EA8BB8DEA4D056")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.311 -0400", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "1E076FB57FF5372916781DD0CAA5685D")
     public int getHeight() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_649424416 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_649424416;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.515 -0400", hash_original_method = "DC7CFB067EE80684132B2B92372F3B79", hash_generated_method = "633963F5F072F72C92FDA7DC309646AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.315 -0400", hash_original_method = "DC7CFB067EE80684132B2B92372F3B79", hash_generated_method = "1D1A6DC2019C480DB087EE9558CED8B0")
     public void draw(Canvas canvas) {
-        dsTaint.addTaint(canvas.dsTaint);
         {
             endRecording();
         } //End block
         nativeDraw(canvas.mNativeCanvas, mNativePicture);
+        addTaint(canvas.getTaint());
         // ---------- Original Method ----------
         //if (mRecordingCanvas != null) {
             //endRecording();
@@ -113,20 +114,19 @@ public class Picture {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.516 -0400", hash_original_method = "5D2FA2739AFC080B35312B93ED4EB821", hash_generated_method = "441DE6E4E634A651FF12FB8ADD0B65AA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.320 -0400", hash_original_method = "5D2FA2739AFC080B35312B93ED4EB821", hash_generated_method = "A14A026BD7248BABAF56D90DB28346AE")
     public void writeToStream(OutputStream stream) {
-        dsTaint.addTaint(stream.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
-            boolean varAD32F998F4C478CC17387CBF60C9B455_1912967397 = (!nativeWriteToStream(mNativePicture, stream,
+            boolean varAD32F998F4C478CC17387CBF60C9B455_567478557 = (!nativeWriteToStream(mNativePicture, stream,
                              new byte[WORKING_STREAM_STORAGE]));
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException();
             } //End block
         } //End collapsed parenthetic
+        addTaint(stream.getTaint());
         // ---------- Original Method ----------
         //if (stream == null) {
             //throw new NullPointerException();
@@ -138,8 +138,7 @@ public class Picture {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.516 -0400", hash_original_method = "A9ACB715DF1E16C6B20EA656F0034A3C", hash_generated_method = "65406D5C08A00AE047C5B3642566D2E9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.321 -0400", hash_original_method = "A9ACB715DF1E16C6B20EA656F0034A3C", hash_generated_method = "65406D5C08A00AE047C5B3642566D2E9")
     protected void finalize() throws Throwable {
         nativeDestructor(mNativePicture);
         // ---------- Original Method ----------
@@ -147,10 +146,10 @@ public class Picture {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.516 -0400", hash_original_method = "C2445D1D52466847173519B3E77D61F5", hash_generated_method = "CB8B2656981EE7FEE6CBC63085B8657C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.322 -0400", hash_original_method = "C2445D1D52466847173519B3E77D61F5", hash_generated_method = "2AA1B0C9558C5809ED2420FE5D32E4B9")
     final int ni() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1293357348 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1293357348;
         // ---------- Original Method ----------
         //return mNativePicture;
     }
@@ -192,42 +191,41 @@ public class Picture {
 
     
     private static class RecordingCanvas extends Canvas {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.344 -0400", hash_original_field = "E97A703985A58F8707A878E051453537", hash_generated_field = "C3E778DE5EE29E2C4788703FE56860BD")
+
         private Picture mPicture;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.518 -0400", hash_original_method = "2A456EE78DB6B79255D736BC2BE0949A", hash_generated_method = "40EA16A7D165F184D0AB890684ADEC5E")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public RecordingCanvas(Picture pict, int nativeCanvas) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.344 -0400", hash_original_method = "2A456EE78DB6B79255D736BC2BE0949A", hash_generated_method = "34FAA35CB0E8018DEF9044A9719C9EAC")
+        public  RecordingCanvas(Picture pict, int nativeCanvas) {
             super(nativeCanvas);
-            dsTaint.addTaint(pict.dsTaint);
-            dsTaint.addTaint(nativeCanvas);
+            mPicture = pict;
+            addTaint(nativeCanvas);
             // ---------- Original Method ----------
             //mPicture = pict;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.518 -0400", hash_original_method = "6CF0BDC754DD98C47DAA94E49A23367D", hash_generated_method = "2737CF1609058F58A178E6841D10C1FE")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.345 -0400", hash_original_method = "6CF0BDC754DD98C47DAA94E49A23367D", hash_generated_method = "652B8C3612779FC2C8AECF59CE79EE22")
         @Override
         public void setBitmap(Bitmap bitmap) {
-            dsTaint.addTaint(bitmap.dsTaint);
             if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                                 "Cannot call setBitmap on a picture canvas");
+            addTaint(bitmap.getTaint());
             // ---------- Original Method ----------
             //throw new RuntimeException(
                                 //"Cannot call setBitmap on a picture canvas");
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.519 -0400", hash_original_method = "37BF59928A286475E8AAF8FA82084BAA", hash_generated_method = "E38BF59079A0F5D188E2F6484E7E01DD")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.345 -0400", hash_original_method = "37BF59928A286475E8AAF8FA82084BAA", hash_generated_method = "756662CA5F7651CB7487595690B5AE89")
         @Override
         public void drawPicture(Picture picture) {
-            dsTaint.addTaint(picture.dsTaint);
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(
                             "Cannot draw a picture into its recording canvas");
             } //End block
             super.drawPicture(picture);
+            addTaint(picture.getTaint());
             // ---------- Original Method ----------
             //if (mPicture == picture) {
                 //throw new RuntimeException(
@@ -241,6 +239,8 @@ public class Picture {
 
 
     
-    private static final int WORKING_STREAM_STORAGE = 16 * 1024;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:12.346 -0400", hash_original_field = "324F32D1CC16C414475D1414D2041A3B", hash_generated_field = "082ABB0758BAA3B0F3EEFE889C918FE9")
+
+    private static int WORKING_STREAM_STORAGE = 16 * 1024;
 }
 

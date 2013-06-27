@@ -15,108 +15,99 @@ import java.net.UnknownHostException;
 import libcore.util.EmptyArray;
 
 class DefaultSSLSocketFactory extends SSLSocketFactory {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.467 -0400", hash_original_field = "A35A1CBBA413D923284FE4F467EA17EB", hash_generated_field = "9CF404529F089526CB6A4794BF7634AB")
+
     private String errMessage;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.046 -0400", hash_original_method = "518A173F954BA705CC3BF505F9E13E1E", hash_generated_method = "DB9646B52A95DE8A321640CE92B5371E")
-    @DSModeled(DSC.SAFE)
-     DefaultSSLSocketFactory(String mes) {
-        dsTaint.addTaint(mes);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.468 -0400", hash_original_method = "518A173F954BA705CC3BF505F9E13E1E", hash_generated_method = "5F8808C0137C671CECF9FCB4803684EB")
+      DefaultSSLSocketFactory(String mes) {
+        errMessage = mes;
         // ---------- Original Method ----------
         //errMessage = mes;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.046 -0400", hash_original_method = "12108FA96648EC8E1683C3067260A382", hash_generated_method = "92AFAEB08A0598071634AB26BA355610")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.468 -0400", hash_original_method = "12108FA96648EC8E1683C3067260A382", hash_generated_method = "CF8A43A736CF0DB0AD6755B57149179C")
     @Override
     public String[] getDefaultCipherSuites() {
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_800071765 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_800071765 = EmptyArray.STRING;
+        varB4EAC82CA7396A68D541C85D26508E83_800071765.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_800071765;
         // ---------- Original Method ----------
         //return EmptyArray.STRING;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.046 -0400", hash_original_method = "02FB44E3332A242283DAD5FC179FF843", hash_generated_method = "5A390AC14B34E796549B75DB1A9E1C8F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.469 -0400", hash_original_method = "02FB44E3332A242283DAD5FC179FF843", hash_generated_method = "DC653CFEACF52E707C293ADC312E8A60")
     @Override
     public String[] getSupportedCipherSuites() {
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1104014423 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1104014423 = EmptyArray.STRING;
+        varB4EAC82CA7396A68D541C85D26508E83_1104014423.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1104014423;
         // ---------- Original Method ----------
         //return EmptyArray.STRING;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.046 -0400", hash_original_method = "80973C4D16E76F8CBD9DC9AFB2C6FFD0", hash_generated_method = "782CDAA0A392B9BF09B0FC11E00B8CD8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.469 -0400", hash_original_method = "80973C4D16E76F8CBD9DC9AFB2C6FFD0", hash_generated_method = "3D7D477365F0D2FD7CDB9AE71F501847")
     @Override
     public Socket createSocket(Socket s, String host, int port, boolean autoClose) throws IOException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(host);
-        dsTaint.addTaint(s.dsTaint);
-        dsTaint.addTaint(autoClose);
         if (DroidSafeAndroidRuntime.control) throw new SocketException(errMessage);
-        return (Socket)dsTaint.getTaint();
+        addTaint(s.getTaint());
+        addTaint(host.getTaint());
+        addTaint(port);
+        addTaint(autoClose);
         // ---------- Original Method ----------
         //throw new SocketException(errMessage);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.046 -0400", hash_original_method = "DA3DD563FBA8107A1A984067F5EE0D59", hash_generated_method = "28068A00CF1AE963159AA8C791EBBF38")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.469 -0400", hash_original_method = "DA3DD563FBA8107A1A984067F5EE0D59", hash_generated_method = "13266D8DB93DC91D064EDC48625FB745")
     @Override
     public Socket createSocket(String host, int port) throws IOException, UnknownHostException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(host);
         if (DroidSafeAndroidRuntime.control) throw new SocketException(errMessage);
-        return (Socket)dsTaint.getTaint();
+        addTaint(host.getTaint());
+        addTaint(port);
         // ---------- Original Method ----------
         //throw new SocketException(errMessage);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.046 -0400", hash_original_method = "8FF7B0825A4C1BFCEAEA97A8A771852A", hash_generated_method = "E91877E2189256971664CDC720281794")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.470 -0400", hash_original_method = "8FF7B0825A4C1BFCEAEA97A8A771852A", hash_generated_method = "4C691C4237B2212CAFBF644211E3D7A7")
     @Override
     public Socket createSocket(String host, int port, InetAddress localHost, int localPort) throws IOException, UnknownHostException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(host);
-        dsTaint.addTaint(localPort);
-        dsTaint.addTaint(localHost.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new SocketException(errMessage);
-        return (Socket)dsTaint.getTaint();
+        addTaint(host.getTaint());
+        addTaint(port);
+        addTaint(localHost.getTaint());
+        addTaint(localPort);
         // ---------- Original Method ----------
         //throw new SocketException(errMessage);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.047 -0400", hash_original_method = "F1FA6E0F26B33554BE365A5605459FC6", hash_generated_method = "24AD23A54F7BD1317A104BE1DF190C25")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.470 -0400", hash_original_method = "F1FA6E0F26B33554BE365A5605459FC6", hash_generated_method = "76EDCD58FD496DE1B63D4A11ED982D17")
     @Override
     public Socket createSocket(InetAddress host, int port) throws IOException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(host.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new SocketException(errMessage);
-        return (Socket)dsTaint.getTaint();
+        addTaint(host.getTaint());
+        addTaint(port);
         // ---------- Original Method ----------
         //throw new SocketException(errMessage);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.047 -0400", hash_original_method = "5A01435F50BC90BAF50A86E164E9FD29", hash_generated_method = "720A2006DC5F2C3589D4DA829C34C800")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.471 -0400", hash_original_method = "5A01435F50BC90BAF50A86E164E9FD29", hash_generated_method = "2B140B6CA7BF7309D246E8256206159F")
     @Override
     public Socket createSocket(InetAddress address, int port, InetAddress localAddress,
             int localPort) throws IOException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(address.dsTaint);
-        dsTaint.addTaint(localAddress.dsTaint);
-        dsTaint.addTaint(localPort);
         if (DroidSafeAndroidRuntime.control) throw new SocketException(errMessage);
-        return (Socket)dsTaint.getTaint();
+        addTaint(address.getTaint());
+        addTaint(port);
+        addTaint(localAddress.getTaint());
+        addTaint(localPort);
         // ---------- Original Method ----------
         //throw new SocketException(errMessage);
     }

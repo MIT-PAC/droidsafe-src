@@ -10,30 +10,43 @@ import java.util.Iterator;
 
 public class SSLv3Constants {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.282 -0400", hash_original_method = "C5B7834880C7D54E27805AF2C5F19DC2", hash_generated_method = "C5B7834880C7D54E27805AF2C5F19DC2")
-        public SSLv3Constants ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.032 -0400", hash_original_method = "69F121EA0CB9BBC349DC8505C0D3C215", hash_generated_method = "69F121EA0CB9BBC349DC8505C0D3C215")
+    public SSLv3Constants ()
     {
+        //Synthesized constructor
     }
 
 
-    static final byte[] client = new byte[] { 0x43, 0x4C, 0x4E, 0x54 };
-    static final byte[] server = new byte[] { 0x53, 0x52, 0x56, 0x52 };
-    static final byte[] MD5pad1 = new byte[] { 0x36, 0x36, 0x36, 0x36,
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.032 -0400", hash_original_field = "2AC3DEAAA8B5D52C51788AC09C3F4A49", hash_generated_field = "7FA4089513630629508572D80D392B6D")
+
+    static byte[] client = new byte[] { 0x43, 0x4C, 0x4E, 0x54 };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.033 -0400", hash_original_field = "427B6C028E75003584F76E166B9796BB", hash_generated_field = "5F5B2E0FB741E4E590043032707F5D48")
+
+    static byte[] server = new byte[] { 0x53, 0x52, 0x56, 0x52 };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.033 -0400", hash_original_field = "0F7F429BB38B1A47D104323AD5436569", hash_generated_field = "9C00EBC462E1CFEECBDA37D63879D91D")
+
+    static byte[] MD5pad1 = new byte[] { 0x36, 0x36, 0x36, 0x36,
             0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36,
             0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36,
             0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36,
             0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36 };
-    static final byte[] SHApad1 = new byte[] { 0x36, 0x36, 0x36, 0x36,
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.033 -0400", hash_original_field = "9773B5FD0EE8353958E9ABF5E03CCD31", hash_generated_field = "7A9A0114D962565ADF70A11213D0E822")
+
+    static byte[] SHApad1 = new byte[] { 0x36, 0x36, 0x36, 0x36,
             0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36,
             0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36,
             0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36, 0x36,
             0x36, 0x36, 0x36 };
-    static final byte[] MD5pad2 = new byte[] { 0x5C, 0x5C, 0x5C, 0x5C,
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.033 -0400", hash_original_field = "5DE71F0B03663380E0D2166095EC1CAB", hash_generated_field = "F8DB21CA74A03D4F373BA9F69D4790E1")
+
+    static byte[] MD5pad2 = new byte[] { 0x5C, 0x5C, 0x5C, 0x5C,
             0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C,
             0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C,
             0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C,
             0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C };
-    static final byte[] SHApad2 = new byte[] { 0x5C, 0x5C, 0x5C, 0x5C,
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.033 -0400", hash_original_field = "12679FEBFCB7F5E694C4DEA15288A336", hash_generated_field = "A394982B62DDAB8D5581F128DE14198D")
+
+    static byte[] SHApad2 = new byte[] { 0x5C, 0x5C, 0x5C, 0x5C,
             0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C,
             0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C,
             0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C, 0x5C,

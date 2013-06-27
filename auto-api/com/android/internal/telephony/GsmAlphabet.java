@@ -22,9 +22,8 @@ import static android.telephony.SmsMessage.MAX_USER_DATA_SEPTETS_WITH_HEADER;
 
 public class GsmAlphabet {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.178 -0400", hash_original_method = "ACEB66A7A5EB57C667A16876F7FFD7A1", hash_generated_method = "9D914C4804B753FB0D925E0024275993")
-    @DSModeled(DSC.SAFE)
-    private GsmAlphabet() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.485 -0400", hash_original_method = "ACEB66A7A5EB57C667A16876F7FFD7A1", hash_generated_method = "9D914C4804B753FB0D925E0024275993")
+    private  GsmAlphabet() {
         // ---------- Original Method ----------
     }
 
@@ -555,14 +554,19 @@ public class GsmAlphabet {
 
     
     private static class LanguagePairCount {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.516 -0400", hash_original_field = "3A3CB397ADE05A407F0D792E87F6F299", hash_generated_field = "751385C2D4084786D52A9F254B89775D")
+
         int languageCode;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.516 -0400", hash_original_field = "C952B21C8E1E6EA1BFBDA4335931DBF0", hash_generated_field = "2ABCA39022907433C3B5065AE66DDA55")
+
         int[] septetCounts;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.516 -0400", hash_original_field = "FA96D72628AD78B424E796DF9177A4C4", hash_generated_field = "538C50EAF301EE2CC9D2096166C6CEE7")
+
         int[] unencodableCounts;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.184 -0400", hash_original_method = "62389A632F9774EDFBFC18A0B528AAFD", hash_generated_method = "EE479A4DAC697A779A2FA5E4942DF9EB")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         LanguagePairCount(int code) {
-            dsTaint.addTaint(code);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.516 -0400", hash_original_method = "62389A632F9774EDFBFC18A0B528AAFD", hash_generated_method = "77B6E0FF290915DCA003EDAF16CAAD47")
+          LanguagePairCount(int code) {
+            this.languageCode = code;
             int maxSingleShiftCode;
             maxSingleShiftCode = sHighestEnabledSingleShiftCode;
             septetCounts = new int[maxSingleShiftCode + 1];
@@ -607,193 +611,45 @@ public class GsmAlphabet {
 
 
     
-    private static final String TAG = "GSM";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.517 -0400", hash_original_field = "1E54D398F6654D474F0F5192DC98EDCC", hash_generated_field = "8BC77F4B5E1482D39A3C5083797AFB8D")
+
+    private static String TAG = "GSM";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.517 -0400", hash_original_field = "83E2E53BC5D628A00F74973C0828D312", hash_generated_field = "01B4701196E8E146FCB4ABE9EBFE561A")
+
     public static final byte GSM_EXTENDED_ESCAPE = 0x1B;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.517 -0400", hash_original_field = "AD6F7CFC9406C3F8AD68F0A7C4F3C303", hash_generated_field = "E7C187193C05B2BE92F97B401ABD1A56")
+
     public static final int UDH_SEPTET_COST_LENGTH = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.517 -0400", hash_original_field = "22BA7F2F78CC9082AE110ABA358462A3", hash_generated_field = "CBFC8557EFC74CEEF14352FADE5BCE44")
+
     public static final int UDH_SEPTET_COST_ONE_SHIFT_TABLE = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.517 -0400", hash_original_field = "65DB77D05C33F2258AC9F6FC92FAC80D", hash_generated_field = "E0214C53588E79AF1E1679ED35E28F19")
+
     public static final int UDH_SEPTET_COST_TWO_SHIFT_TABLES = 7;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.517 -0400", hash_original_field = "C21D2E8F2D7CB95111AB1184C353F100", hash_generated_field = "8F3BC9CF64CC8917571C6ADB052B3A62")
+
     public static final int UDH_SEPTET_COST_CONCATENATED_MESSAGE = 6;
-    private static final SparseIntArray[] sCharsToGsmTables;
-    private static final SparseIntArray[] sCharsToShiftTables;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.517 -0400", hash_original_field = "6825F1DFB1958CFDF02A05E7F173EC56", hash_generated_field = "B45451A3D3324EFBFEB9E27D9B614D45")
+
+    private static SparseIntArray[] sCharsToGsmTables;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.517 -0400", hash_original_field = "A56B9E2E62E4459E7628AF163CFE0E20", hash_generated_field = "0B96A40055A95B2257379B3584AA9523")
+
+    private static SparseIntArray[] sCharsToShiftTables;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.517 -0400", hash_original_field = "8957A49BB200B611FDBE5403C52866A1", hash_generated_field = "2ECC027C28F9F71EED05C10584CA030F")
+
     private static int[] sEnabledSingleShiftTables;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.517 -0400", hash_original_field = "AD983259565FC9E37CFB9D682F9AD1A8", hash_generated_field = "3A09A08C6E3D262BBDA43B757C45805B")
+
     private static int[] sEnabledLockingShiftTables;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.517 -0400", hash_original_field = "AFBC260B8EF65D7E5411FF4A74B35187", hash_generated_field = "912597CF8776978E6C995535FD23DDFD")
+
     private static int sHighestEnabledSingleShiftCode;
-    private static final String[] sLanguageTables = {
-        
-        "@\u00a3$\u00a5\u00e8\u00e9\u00f9\u00ec\u00f2\u00c7\n\u00d8\u00f8\r\u00c5\u00e5\u0394_"
-            
-            + "\u03a6\u0393\u039b\u03a9\u03a0\u03a8\u03a3\u0398\u039e\uffff\u00c6\u00e6\u00df"
-            
-            + "\u00c9 !\"#\u00a4%&'()*+,-./0123456789:;<=>?\u00a1ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            
-            + "\u00c4\u00d6\u00d1\u00dc\u00a7\u00bfabcdefghijklmnopqrstuvwxyz\u00e4\u00f6\u00f1"
-            
-            + "\u00fc\u00e0",
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.517 -0400", hash_original_field = "583F60D042B2E4ED9B0B63C2F42E4376", hash_generated_field = "6D4102DB6985579C55768C98771F28C2")
 
-        
-        "@\u00a3$\u00a5\u20ac\u00e9\u00f9\u0131\u00f2\u00c7\n\u011e\u011f\r\u00c5\u00e5\u0394_"
-            
-            + "\u03a6\u0393\u039b\u03a9\u03a0\u03a8\u03a3\u0398\u039e\uffff\u015e\u015f\u00df"
-            
-            + "\u00c9 !\"#\u00a4%&'()*+,-./0123456789:;<=>?\u0130ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            
-            + "\u00c4\u00d6\u00d1\u00dc\u00a7\u00e7abcdefghijklmnopqrstuvwxyz\u00e4\u00f6\u00f1"
-            
-            + "\u00fc\u00e0",
+    private static String[] sLanguageTables = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:14.517 -0400", hash_original_field = "ED8E1D9DAF8EC0116220715DF9C5259D", hash_generated_field = "E0D6A460783E477257863C11E7B23ADE")
 
-        
-        "",
-
-        
-        "@\u00a3$\u00a5\u00ea\u00e9\u00fa\u00ed\u00f3\u00e7\n\u00d4\u00f4\r\u00c1\u00e1\u0394_"
-            
-            + "\u00aa\u00c7\u00c0\u221e^\\\u20ac\u00d3|\uffff\u00c2\u00e2\u00ca\u00c9 !\"#\u00ba"
-            
-            + "%&'()*+,-./0123456789:;<=>?\u00cdABCDEFGHIJKLMNOPQRSTUVWXYZ\u00c3\u00d5\u00da\u00dc"
-            
-            + "\u00a7~abcdefghijklmnopqrstuvwxyz\u00e3\u00f5`\u00fc\u00e0",
-
-        
-        "\u0981\u0982\u0983\u0985\u0986\u0987\u0988\u0989\u098a\u098b\n\u098c \r \u098f\u0990"
-            
-            + "  \u0993\u0994\u0995\u0996\u0997\u0998\u0999\u099a\uffff\u099b\u099c\u099d\u099e"
-            
-            + " !\u099f\u09a0\u09a1\u09a2\u09a3\u09a4)(\u09a5\u09a6,\u09a7.\u09a80123456789:; "
-            
-            + "\u09aa\u09ab?\u09ac\u09ad\u09ae\u09af\u09b0 \u09b2   \u09b6\u09b7\u09b8\u09b9"
-            
-            + "\u09bc\u09bd\u09be\u09bf\u09c0\u09c1\u09c2\u09c3\u09c4  \u09c7\u09c8  \u09cb\u09cc"
-            
-            + "\u09cd\u09ceabcdefghijklmnopqrstuvwxyz\u09d7\u09dc\u09dd\u09f0\u09f1",
-
-        
-        "\u0a81\u0a82\u0a83\u0a85\u0a86\u0a87\u0a88\u0a89\u0a8a\u0a8b\n\u0a8c\u0a8d\r \u0a8f\u0a90"
-            
-            + "\u0a91 \u0a93\u0a94\u0a95\u0a96\u0a97\u0a98\u0a99\u0a9a\uffff\u0a9b\u0a9c\u0a9d"
-            
-            + "\u0a9e !\u0a9f\u0aa0\u0aa1\u0aa2\u0aa3\u0aa4)(\u0aa5\u0aa6,\u0aa7.\u0aa80123456789:;"
-            
-            + " \u0aaa\u0aab?\u0aac\u0aad\u0aae\u0aaf\u0ab0 \u0ab2\u0ab3 \u0ab5\u0ab6\u0ab7\u0ab8"
-            
-            + "\u0ab9\u0abc\u0abd\u0abe\u0abf\u0ac0\u0ac1\u0ac2\u0ac3\u0ac4\u0ac5 \u0ac7\u0ac8"
-            
-            + "\u0ac9 \u0acb\u0acc\u0acd\u0ad0abcdefghijklmnopqrstuvwxyz\u0ae0\u0ae1\u0ae2\u0ae3"
-            
-            + "\u0af1",
-
-        
-        "\u0901\u0902\u0903\u0905\u0906\u0907\u0908\u0909\u090a\u090b\n\u090c\u090d\r\u090e\u090f"
-            
-            + "\u0910\u0911\u0912\u0913\u0914\u0915\u0916\u0917\u0918\u0919\u091a\uffff\u091b\u091c"
-            
-            + "\u091d\u091e !\u091f\u0920\u0921\u0922\u0923\u0924)(\u0925\u0926,\u0927.\u0928012345"
-            
-            + "6789:;\u0929\u092a\u092b?\u092c\u092d\u092e\u092f\u0930\u0931\u0932\u0933\u0934"
-            
-            + "\u0935\u0936\u0937\u0938\u0939\u093c\u093d\u093e\u093f\u0940\u0941\u0942\u0943\u0944"
-            
-            + "\u0945\u0946\u0947\u0948\u0949\u094a\u094b\u094c\u094d\u0950abcdefghijklmnopqrstuvwx"
-            
-            + "yz\u0972\u097b\u097c\u097e\u097f",
-
-        
-        " \u0c82\u0c83\u0c85\u0c86\u0c87\u0c88\u0c89\u0c8a\u0c8b\n\u0c8c \r\u0c8e\u0c8f\u0c90 "
-            
-            + "\u0c92\u0c93\u0c94\u0c95\u0c96\u0c97\u0c98\u0c99\u0c9a\uffff\u0c9b\u0c9c\u0c9d\u0c9e"
-            
-            + " !\u0c9f\u0ca0\u0ca1\u0ca2\u0ca3\u0ca4)(\u0ca5\u0ca6,\u0ca7.\u0ca80123456789:; "
-            
-            + "\u0caa\u0cab?\u0cac\u0cad\u0cae\u0caf\u0cb0\u0cb1\u0cb2\u0cb3 \u0cb5\u0cb6\u0cb7"
-            
-            + "\u0cb8\u0cb9\u0cbc\u0cbd\u0cbe\u0cbf\u0cc0\u0cc1\u0cc2\u0cc3\u0cc4 \u0cc6\u0cc7"
-            
-            + "\u0cc8 \u0cca\u0ccb\u0ccc\u0ccd\u0cd5abcdefghijklmnopqrstuvwxyz\u0cd6\u0ce0\u0ce1"
-            
-            + "\u0ce2\u0ce3",
-
-        
-        " \u0d02\u0d03\u0d05\u0d06\u0d07\u0d08\u0d09\u0d0a\u0d0b\n\u0d0c \r\u0d0e\u0d0f\u0d10 "
-            
-            + "\u0d12\u0d13\u0d14\u0d15\u0d16\u0d17\u0d18\u0d19\u0d1a\uffff\u0d1b\u0d1c\u0d1d\u0d1e"
-            
-            + " !\u0d1f\u0d20\u0d21\u0d22\u0d23\u0d24)(\u0d25\u0d26,\u0d27.\u0d280123456789:; "
-            
-            + "\u0d2a\u0d2b?\u0d2c\u0d2d\u0d2e\u0d2f\u0d30\u0d31\u0d32\u0d33\u0d34\u0d35\u0d36"
-            
-            + "\u0d37\u0d38\u0d39 \u0d3d\u0d3e\u0d3f\u0d40\u0d41\u0d42\u0d43\u0d44 \u0d46\u0d47"
-            
-            + "\u0d48 \u0d4a\u0d4b\u0d4c\u0d4d\u0d57abcdefghijklmnopqrstuvwxyz\u0d60\u0d61\u0d62"
-            
-            + "\u0d63\u0d79",
-
-        
-        "\u0b01\u0b02\u0b03\u0b05\u0b06\u0b07\u0b08\u0b09\u0b0a\u0b0b\n\u0b0c \r \u0b0f\u0b10  "
-            
-            + "\u0b13\u0b14\u0b15\u0b16\u0b17\u0b18\u0b19\u0b1a\uffff\u0b1b\u0b1c\u0b1d\u0b1e !"
-            
-            + "\u0b1f\u0b20\u0b21\u0b22\u0b23\u0b24)(\u0b25\u0b26,\u0b27.\u0b280123456789:; \u0b2a"
-            
-            + "\u0b2b?\u0b2c\u0b2d\u0b2e\u0b2f\u0b30 \u0b32\u0b33 \u0b35\u0b36\u0b37\u0b38\u0b39"
-            
-            + "\u0b3c\u0b3d\u0b3e\u0b3f\u0b40\u0b41\u0b42\u0b43\u0b44  \u0b47\u0b48  \u0b4b\u0b4c"
-            
-            + "\u0b4d\u0b56abcdefghijklmnopqrstuvwxyz\u0b57\u0b60\u0b61\u0b62\u0b63",
-
-        
-        "\u0a01\u0a02\u0a03\u0a05\u0a06\u0a07\u0a08\u0a09\u0a0a \n  \r \u0a0f\u0a10  \u0a13\u0a14"
-            
-            + "\u0a15\u0a16\u0a17\u0a18\u0a19\u0a1a\uffff\u0a1b\u0a1c\u0a1d\u0a1e !\u0a1f\u0a20"
-            
-            + "\u0a21\u0a22\u0a23\u0a24)(\u0a25\u0a26,\u0a27.\u0a280123456789:; \u0a2a\u0a2b?\u0a2c"
-            
-            + "\u0a2d\u0a2e\u0a2f\u0a30 \u0a32\u0a33 \u0a35\u0a36 \u0a38\u0a39\u0a3c \u0a3e\u0a3f"
-            
-            + "\u0a40\u0a41\u0a42    \u0a47\u0a48  \u0a4b\u0a4c\u0a4d\u0a51abcdefghijklmnopqrstuvwx"
-            
-            + "yz\u0a70\u0a71\u0a72\u0a73\u0a74",
-
-        
-        " \u0b82\u0b83\u0b85\u0b86\u0b87\u0b88\u0b89\u0b8a \n  \r\u0b8e\u0b8f\u0b90 \u0b92\u0b93"
-            
-            + "\u0b94\u0b95   \u0b99\u0b9a\uffff \u0b9c \u0b9e !\u0b9f   \u0ba3\u0ba4)(  , .\u0ba8"
-            
-            + "0123456789:;\u0ba9\u0baa ?  \u0bae\u0baf\u0bb0\u0bb1\u0bb2\u0bb3\u0bb4\u0bb5\u0bb6"
-            
-            + "\u0bb7\u0bb8\u0bb9  \u0bbe\u0bbf\u0bc0\u0bc1\u0bc2   \u0bc6\u0bc7\u0bc8 \u0bca\u0bcb"
-            
-            + "\u0bcc\u0bcd\u0bd0abcdefghijklmnopqrstuvwxyz\u0bd7\u0bf0\u0bf1\u0bf2\u0bf9",
-
-        
-        "\u0c01\u0c02\u0c03\u0c05\u0c06\u0c07\u0c08\u0c09\u0c0a\u0c0b\n\u0c0c \r\u0c0e\u0c0f\u0c10"
-            
-            + " \u0c12\u0c13\u0c14\u0c15\u0c16\u0c17\u0c18\u0c19\u0c1a\uffff\u0c1b\u0c1c\u0c1d"
-            
-            + "\u0c1e !\u0c1f\u0c20\u0c21\u0c22\u0c23\u0c24)(\u0c25\u0c26,\u0c27.\u0c280123456789:;"
-            
-            + " \u0c2a\u0c2b?\u0c2c\u0c2d\u0c2e\u0c2f\u0c30\u0c31\u0c32\u0c33 \u0c35\u0c36\u0c37"
-            
-            + "\u0c38\u0c39 \u0c3d\u0c3e\u0c3f\u0c40\u0c41\u0c42\u0c43\u0c44 \u0c46\u0c47\u0c48 "
-            
-            + "\u0c4a\u0c4b\u0c4c\u0c4d\u0c55abcdefghijklmnopqrstuvwxyz\u0c56\u0c60\u0c61\u0c62"
-            
-            + "\u0c63",
-
-        
-        "\u0627\u0622\u0628\u067b\u0680\u067e\u06a6\u062a\u06c2\u067f\n\u0679\u067d\r\u067a\u067c"
-            
-            + "\u062b\u062c\u0681\u0684\u0683\u0685\u0686\u0687\u062d\u062e\u062f\uffff\u068c\u0688"
-            
-            + "\u0689\u068a !\u068f\u068d\u0630\u0631\u0691\u0693)(\u0699\u0632,\u0696.\u0698012345"
-            
-            + "6789:;\u069a\u0633\u0634?\u0635\u0636\u0637\u0638\u0639\u0641\u0642\u06a9\u06aa"
-            
-            + "\u06ab\u06af\u06b3\u06b1\u0644\u0645\u0646\u06ba\u06bb\u06bc\u0648\u06c4\u06d5\u06c1"
-            
-            + "\u06be\u0621\u06cc\u06d0\u06d2\u064d\u0650\u064f\u0657\u0654abcdefghijklmnopqrstuvwx"
-            
-            + "yz\u0655\u0651\u0653\u0656\u0670"
-    };
-    private static final String[] sLanguageShiftTables = new String[]{
+    private static String[] sLanguageShiftTables = new String[]{
         
         "          \u000c         ^                   {}     \\            [~] |               "
             

@@ -10,14 +10,16 @@ import java.util.Iterator;
 import java.util.Arrays;
 
 public class PushbackInputStream extends FilterInputStream {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.524 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
+
     protected byte[] buf;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.524 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "3039C52FCC40405280C80DE756778CBF")
+
     protected int pos;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.239 -0400", hash_original_method = "AC9553B1FAFFB4A8FBFF65B03BBACC5E", hash_generated_method = "3EA4C3F6820B69D77D347A6C786D0808")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PushbackInputStream(InputStream in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.525 -0400", hash_original_method = "AC9553B1FAFFB4A8FBFF65B03BBACC5E", hash_generated_method = "3F5564E951E35BDFCBCD7F9B903974D4")
+    public  PushbackInputStream(InputStream in) {
         super(in);
-        dsTaint.addTaint(in.dsTaint);
         buf = (in == null) ? null : new byte[1];
         pos = 1;
         // ---------- Original Method ----------
@@ -26,16 +28,14 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.240 -0400", hash_original_method = "5FC607CA483EF0D15EF5263D4BBC83BA", hash_generated_method = "12C7857FDEF9B861ECA8FB17D9FFD153")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PushbackInputStream(InputStream in, int size) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.525 -0400", hash_original_method = "5FC607CA483EF0D15EF5263D4BBC83BA", hash_generated_method = "557A561B285AE4A5FF11EBA9CAFF2AA0")
+    public  PushbackInputStream(InputStream in, int size) {
         super(in);
-        dsTaint.addTaint(in.dsTaint);
-        dsTaint.addTaint(size);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("size <= 0");
         } //End block
         buf = (in == null) ? null : new byte[size];
+        pos = size;
         // ---------- Original Method ----------
         //if (size <= 0) {
             //throw new IllegalArgumentException("size <= 0");
@@ -45,15 +45,15 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.241 -0400", hash_original_method = "446E244C062F8716B384D306C558B705", hash_generated_method = "8866BD9858D75FF921046C4B49B09B69")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.526 -0400", hash_original_method = "446E244C062F8716B384D306C558B705", hash_generated_method = "FC70185428F31D8C1B3AF3C0862FEBFA")
     @Override
     public int available() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException();
         } //End block
-        int varA950E43363A0DE1963921B3C18F6DA58_159878726 = (buf.length - pos + in.available());
-        return dsTaint.getTaintInt();
+        int varA950E43363A0DE1963921B3C18F6DA58_1713116836 = (buf.length - pos + in.available());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1302591067 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1302591067;
         // ---------- Original Method ----------
         //if (buf == null) {
             //throw new IOException();
@@ -62,8 +62,7 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.241 -0400", hash_original_method = "74DA7764B5809B26A354DD7668DF4A77", hash_generated_method = "3C987CC4CB0AECE751E27D46E3DCA943")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.526 -0400", hash_original_method = "74DA7764B5809B26A354DD7668DF4A77", hash_generated_method = "3C987CC4CB0AECE751E27D46E3DCA943")
     @Override
     public void close() throws IOException {
         {
@@ -80,25 +79,25 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.241 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "68288F8CAFD57F6B45948F556AADD5DE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.526 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "8FEA6520FF074ECC8A7968DC4176AC23")
     @Override
     public boolean markSupported() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1092812258 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1092812258;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.241 -0400", hash_original_method = "146BBECA823F7801A366293B4A5C7497", hash_generated_method = "6017DA84956048D88137CD8375103FA9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.527 -0400", hash_original_method = "146BBECA823F7801A366293B4A5C7497", hash_generated_method = "7C57AF9E00A83E14C7F10261D57DB135")
     @Override
     public int read() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException();
         } //End block
-        int var2EE2703F88097027B4DEA42C13801E06_88832068 = (in.read());
-        return dsTaint.getTaintInt();
+        int var2EE2703F88097027B4DEA42C13801E06_1274897802 = (in.read());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_480955989 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_480955989;
         // ---------- Original Method ----------
         //if (buf == null) {
             //throw new IOException();
@@ -110,13 +109,9 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.242 -0400", hash_original_method = "1B53276B26E96C9AEFE2F3C951EF5EAE", hash_generated_method = "850269ABC7418A971920076E6092817E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.528 -0400", hash_original_method = "1B53276B26E96C9AEFE2F3C951EF5EAE", hash_generated_method = "AE43DD740DE44532B484F01F1796E01F")
     @Override
     public int read(byte[] buffer, int offset, int length) throws IOException {
-        dsTaint.addTaint(buffer[0]);
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(offset);
         {
             if (DroidSafeAndroidRuntime.control) throw streamClosed();
         } //End block
@@ -135,27 +130,27 @@ public class PushbackInputStream extends FilterInputStream {
         } //End block
         int inCopied;
         inCopied = in.read(buffer, newOffset, length - copiedBytes);
-        return dsTaint.getTaintInt();
+        addTaint(buffer[0]);
+        addTaint(offset);
+        addTaint(length);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1760603143 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1760603143;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.242 -0400", hash_original_method = "2E2FBA951DCC3C9DB1EDAE98D88B8EBD", hash_generated_method = "5587775E37268521FE1AF2E5489B92BD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.528 -0400", hash_original_method = "2E2FBA951DCC3C9DB1EDAE98D88B8EBD", hash_generated_method = "FAE066DB8A7BB73956AD5304292735D2")
     private IOException streamClosed() throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new IOException("PushbackInputStream is closed");
-        return (IOException)dsTaint.getTaint();
         // ---------- Original Method ----------
         //throw new IOException("PushbackInputStream is closed");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.242 -0400", hash_original_method = "640B22F7B00DCEA150CE7BE86C25A8AB", hash_generated_method = "89CCCAEC91CEEAB7B0CA81E06B39E5B1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.540 -0400", hash_original_method = "640B22F7B00DCEA150CE7BE86C25A8AB", hash_generated_method = "2AD66596E8F9E0D15D0F5A07C85E2265")
     @Override
     public long skip(long byteCount) throws IOException {
-        dsTaint.addTaint(byteCount);
         {
             if (DroidSafeAndroidRuntime.control) throw streamClosed();
         } //End block
@@ -168,7 +163,9 @@ public class PushbackInputStream extends FilterInputStream {
         {
             numSkipped += in.skip(byteCount - numSkipped);
         } //End block
-        return dsTaint.getTaintLong();
+        addTaint(byteCount);
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1831531467 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1831531467;
         // ---------- Original Method ----------
         //if (in == null) {
             //throw streamClosed();
@@ -188,22 +185,17 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.242 -0400", hash_original_method = "C8192A3011924069F2B71E7D3088F3DC", hash_generated_method = "40F47FADBDA460FD51FB701EAD7B0C74")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.540 -0400", hash_original_method = "C8192A3011924069F2B71E7D3088F3DC", hash_generated_method = "7B45023432F7868636C37F9593E29869")
     public void unread(byte[] buffer) throws IOException {
-        dsTaint.addTaint(buffer[0]);
         unread(buffer, 0, buffer.length);
+        addTaint(buffer[0]);
         // ---------- Original Method ----------
         //unread(buffer, 0, buffer.length);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.243 -0400", hash_original_method = "DF65BDEADDE37C8EC8A6D2405E9B2E68", hash_generated_method = "BF2C6CB65ECED5ADE696D87F0783BE3F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.541 -0400", hash_original_method = "DF65BDEADDE37C8EC8A6D2405E9B2E68", hash_generated_method = "C29945E90C922C14AE31FF7AAE40127C")
     public void unread(byte[] buffer, int offset, int length) throws IOException {
-        dsTaint.addTaint(buffer[0]);
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(offset);
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Pushback buffer full");
         } //End block
@@ -213,6 +205,8 @@ public class PushbackInputStream extends FilterInputStream {
         } //End block
         System.arraycopy(buffer, offset, buf, pos - length, length);
         pos = pos - length;
+        addTaint(buffer[0]);
+        addTaint(offset);
         // ---------- Original Method ----------
         //if (length > pos) {
             //throw new IOException("Pushback buffer full");
@@ -226,10 +220,8 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.243 -0400", hash_original_method = "98848F28DD25FD585D8212E035CA9267", hash_generated_method = "2F598F35F19B4C94C635864E7E34AC1C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.541 -0400", hash_original_method = "98848F28DD25FD585D8212E035CA9267", hash_generated_method = "FF8F5E277009446652B3889DDE2B2EA1")
     public void unread(int oneByte) throws IOException {
-        dsTaint.addTaint(oneByte);
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException();
         } //End block
@@ -248,17 +240,15 @@ public class PushbackInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.243 -0400", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "B31C26BECE0372A4FA48EE5727FE34E2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.541 -0400", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "374E02FA36CE7C442AE21827EF6D82FC")
     @Override
     public void mark(int readlimit) {
-        dsTaint.addTaint(readlimit);
+        addTaint(readlimit);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.243 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "A9C0F826408505F69F969DEF2E274553")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.541 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "A9C0F826408505F69F969DEF2E274553")
     @Override
     public void reset() throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new IOException();

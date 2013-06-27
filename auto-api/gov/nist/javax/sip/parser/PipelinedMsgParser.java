@@ -14,31 +14,39 @@ import java.text.ParseException;
 import java.io.*;
 
 public final class PipelinedMsgParser implements Runnable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.984 -0400", hash_original_field = "0BFCB22B0FA3021CB632B75985A84AE3", hash_generated_field = "E951DA693006702904D44903EC071300")
+
     protected SIPMessageListener sipMessageListener;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.985 -0400", hash_original_field = "9842605C72E3BC73DA5398CE4B5EB840", hash_generated_field = "8890F3B68DD2F65EEDEBEEF6284B3EE1")
+
     private Thread mythread;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.985 -0400", hash_original_field = "2759837858165AEB83DF72AAAD1EDF36", hash_generated_field = "EE0974413FD18213D1855469CB35ED3B")
+
     private Pipeline rawInputStream;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.985 -0400", hash_original_field = "BF1B271FFDC69F10249067CA74EC9584", hash_generated_field = "6056A74FE8111EC12B2D46373C91E6E1")
+
     private int maxMessageSize;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.985 -0400", hash_original_field = "00E1B751A8E3E1D3B531BBBCD4E40948", hash_generated_field = "87B02180527F6273015739A99F276EBD")
+
     private int sizeCounter;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.472 -0400", hash_original_method = "E22CE959BAB24F19C875E84872180E07", hash_generated_method = "362C6A06EBFCC475DC7BD25EA8D59893")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected PipelinedMsgParser() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.985 -0400", hash_original_method = "E22CE959BAB24F19C875E84872180E07", hash_generated_method = "362C6A06EBFCC475DC7BD25EA8D59893")
+    protected  PipelinedMsgParser() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.472 -0400", hash_original_method = "A3AB807F1456A67D8271D731B6987080", hash_generated_method = "8C7A0D75A79F67B84166865211C9BB69")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PipelinedMsgParser(SIPMessageListener sipMessageListener,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.987 -0400", hash_original_method = "A3AB807F1456A67D8271D731B6987080", hash_generated_method = "42B0CF46200A61F1D64551D16CA8B0BC")
+    public  PipelinedMsgParser(SIPMessageListener sipMessageListener,
             Pipeline in, boolean debug, int maxMessageSize) {
         this();
-        dsTaint.addTaint(sipMessageListener.dsTaint);
-        dsTaint.addTaint(maxMessageSize);
-        dsTaint.addTaint(debug);
-        dsTaint.addTaint(in.dsTaint);
+        this.sipMessageListener = sipMessageListener;
+        rawInputStream = in;
+        this.maxMessageSize = maxMessageSize;
         mythread = new Thread(this);
         mythread.setName("PipelineThread-" + getNewUid());
+        addTaint(debug);
         // ---------- Original Method ----------
         //this.sipMessageListener = sipMessageListener;
         //rawInputStream = in;
@@ -48,23 +56,21 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.473 -0400", hash_original_method = "BDF51C7E7DDD69BD9B7D7DBBB57B9FF1", hash_generated_method = "1942376166532E4DF1606F4644033334")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PipelinedMsgParser(SIPMessageListener mhandler, Pipeline in,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.987 -0400", hash_original_method = "BDF51C7E7DDD69BD9B7D7DBBB57B9FF1", hash_generated_method = "9A2FF3D67C3FDB9A469FDD2C647B3854")
+    public  PipelinedMsgParser(SIPMessageListener mhandler, Pipeline in,
             int maxMsgSize) {
         this(mhandler, in, false, maxMsgSize);
-        dsTaint.addTaint(maxMsgSize);
-        dsTaint.addTaint(mhandler.dsTaint);
-        dsTaint.addTaint(in.dsTaint);
+        addTaint(mhandler.getTaint());
+        addTaint(in.getTaint());
+        addTaint(maxMsgSize);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.473 -0400", hash_original_method = "748DD8A3EFE43FF431548555AB3BE25D", hash_generated_method = "730F244645D7ED95BC4863A40FCEB4F9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PipelinedMsgParser(Pipeline in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.987 -0400", hash_original_method = "748DD8A3EFE43FF431548555AB3BE25D", hash_generated_method = "3038AA5B53537C11A13D7FA6558B7FA2")
+    public  PipelinedMsgParser(Pipeline in) {
         this(null, in, false, 0);
-        dsTaint.addTaint(in.dsTaint);
+        addTaint(in.getTaint());
         // ---------- Original Method ----------
     }
 
@@ -74,8 +80,7 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.473 -0400", hash_original_method = "AFB6FAED7CE2C798D2C88DCB60C1E3BA", hash_generated_method = "5A7C2DED95E3A949F3D0D6A47527D147")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.991 -0400", hash_original_method = "AFB6FAED7CE2C798D2C88DCB60C1E3BA", hash_generated_method = "5A7C2DED95E3A949F3D0D6A47527D147")
     public void processInput() {
         mythread.start();
         // ---------- Original Method ----------
@@ -83,9 +88,9 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.473 -0400", hash_original_method = "7B58421AA7682D1CD65CE1288FB2F0E9", hash_generated_method = "993836DEF9D15872EDD6BD971F18CDA4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.992 -0400", hash_original_method = "7B58421AA7682D1CD65CE1288FB2F0E9", hash_generated_method = "A8CD57831061B21F1C6BE581BB6927E5")
     protected Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_83587476 = null; //Variable for return #1
         PipelinedMsgParser p;
         p = new PipelinedMsgParser();
         p.rawInputStream = this.rawInputStream;
@@ -93,7 +98,9 @@ public final class PipelinedMsgParser implements Runnable {
         Thread mythread;
         mythread = new Thread(p);
         mythread.setName("PipelineThread");
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_83587476 = p;
+        varB4EAC82CA7396A68D541C85D26508E83_83587476.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_83587476;
         // ---------- Original Method ----------
         //PipelinedMsgParser p = new PipelinedMsgParser();
         //p.rawInputStream = this.rawInputStream;
@@ -104,19 +111,17 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.473 -0400", hash_original_method = "AE1DFBE29C50512ACC863FBFFDC539ED", hash_generated_method = "2604D25AB408AAF7CFD751703F8B43D5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.995 -0400", hash_original_method = "AE1DFBE29C50512ACC863FBFFDC539ED", hash_generated_method = "853BB09F699662204A7FAC41D98CD659")
     public void setMessageListener(SIPMessageListener mlistener) {
-        dsTaint.addTaint(mlistener.dsTaint);
+        sipMessageListener = mlistener;
         // ---------- Original Method ----------
         //sipMessageListener = mlistener;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.474 -0400", hash_original_method = "CA26412E58B11F2830D7673D2CC5E1EF", hash_generated_method = "9FC7A8607CC63F1F9D3B1A70A2E54D65")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.008 -0400", hash_original_method = "CA26412E58B11F2830D7673D2CC5E1EF", hash_generated_method = "4C65B283DB308C40DC158F8C2063D7AD")
     private String readLine(InputStream inputStream) throws IOException {
-        dsTaint.addTaint(inputStream.dsTaint);
+        String varB4EAC82CA7396A68D541C85D26508E83_369025454 = null; //Variable for return #1
         StringBuffer retval;
         retval = new StringBuffer("");
         {
@@ -132,8 +137,10 @@ public final class PipelinedMsgParser implements Runnable {
             } //End block
             retval.append(ch);
         } //End block
-        String var0F1F65BA89BF920BA1A29FC87F91B969_543508658 = (retval.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_369025454 = retval.toString();
+        addTaint(inputStream.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_369025454.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_369025454;
         // ---------- Original Method ----------
         //StringBuffer retval = new StringBuffer("");
         //while (true) {
@@ -158,8 +165,7 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.475 -0400", hash_original_method = "4591706E6DAAE4ED54EAE930623099BB", hash_generated_method = "C690A0AF5116B6CE8A94347AAFAAF4A0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.010 -0400", hash_original_method = "4591706E6DAAE4ED54EAE930623099BB", hash_generated_method = "4E7416D21F38EA40D58FF71A2112A837")
     public void run() {
         Pipeline inputStream;
         inputStream = this.rawInputStream;
@@ -178,7 +184,7 @@ public final class PipelinedMsgParser implements Runnable {
                     {
                         line1 = readLine(inputStream);
                         {
-                            boolean var18A2C9203A3D833765FF2840DAA6399A_1127152789 = (line1.equals("\n"));
+                            boolean var18A2C9203A3D833765FF2840DAA6399A_92466423 = (line1.equals("\n"));
                             {
                                 {
                                     Debug.println("Discarding blank line. ");
@@ -201,7 +207,7 @@ public final class PipelinedMsgParser implements Runnable {
                         line2 = readLine(inputStream);
                         inputBuffer.append(line2);
                         {
-                            boolean var161D78251336BA90A13BBA4567AF4368_1941424251 = (line2.trim().equals(""));
+                            boolean var161D78251336BA90A13BBA4567AF4368_2095812827 = (line2.trim().equals(""));
                         } //End collapsed parenthetic
                     } //End block
                     catch (IOException ex)
@@ -304,8 +310,7 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.475 -0400", hash_original_method = "CD7CB4D97896F4DDC9750ED4F3C04317", hash_generated_method = "D8499A34E86CDA9E47E8F0CCF5D7CBA5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.010 -0400", hash_original_method = "CD7CB4D97896F4DDC9750ED4F3C04317", hash_generated_method = "D8499A34E86CDA9E47E8F0CCF5D7CBA5")
     public void close() {
         try 
         {
@@ -321,6 +326,8 @@ public final class PipelinedMsgParser implements Runnable {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.011 -0400", hash_original_field = "0CB100AF67BD2EB1F0E2A464C0F12B08", hash_generated_field = "C945ED2D87187C29A8B309C59A8903B9")
+
     private static int uid = 0;
 }
 

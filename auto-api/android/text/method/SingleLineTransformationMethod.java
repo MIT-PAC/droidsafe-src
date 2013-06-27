@@ -18,29 +18,26 @@ import android.view.View;
 
 public class SingleLineTransformationMethod extends ReplacementTransformationMethod {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.702 -0400", hash_original_method = "86DF3C1361F534D6F1A98F6BD7B07246", hash_generated_method = "86DF3C1361F534D6F1A98F6BD7B07246")
-        public SingleLineTransformationMethod ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.872 -0400", hash_original_method = "D4568A7EAB6F00728EAF3C3E423FA0FE", hash_generated_method = "D4568A7EAB6F00728EAF3C3E423FA0FE")
+    public SingleLineTransformationMethod ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.703 -0400", hash_original_method = "64C6D73F3773427C2A2F245DBEBF22E0", hash_generated_method = "2ADF437FB49E6A588C8F87F3066AA092")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.873 -0400", hash_original_method = "64C6D73F3773427C2A2F245DBEBF22E0", hash_generated_method = "91C8299DB1AE417CE0FD6F165285E4AD")
     protected char[] getOriginal() {
-        char[] retVal = new char[1];
-        retVal[0] = dsTaint.getTaintString().charAt(0);
-        return retVal;
+        char[] var50607924ABD4C17119BAF3A1CE41C0EC_950347123 = {getTaintChar()};
+        return var50607924ABD4C17119BAF3A1CE41C0EC_950347123;
         // ---------- Original Method ----------
         //return ORIGINAL;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.703 -0400", hash_original_method = "44611EB51BD7B665366AA2036C731932", hash_generated_method = "09D90675D1759039528493A05E99DA0A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.873 -0400", hash_original_method = "44611EB51BD7B665366AA2036C731932", hash_generated_method = "DD9CABB66C5156F5389E42FB9CB391C5")
     protected char[] getReplacement() {
-        char[] retVal = new char[1];
-        retVal[0] = dsTaint.getTaintString().charAt(0);
-        return retVal;
+        char[] var50607924ABD4C17119BAF3A1CE41C0EC_547132946 = {getTaintChar()};
+        return var50607924ABD4C17119BAF3A1CE41C0EC_547132946;
         // ---------- Original Method ----------
         //return REPLACEMENT;
     }
@@ -54,8 +51,14 @@ public class SingleLineTransformationMethod extends ReplacementTransformationMet
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.874 -0400", hash_original_field = "4AC4EB788451F78EBC24616F6EFC82B2", hash_generated_field = "98B422AB3100EE03E170C8673A5F0723")
+
     private static char[] ORIGINAL = new char[] { '\n', '\r' };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.874 -0400", hash_original_field = "185EEC0054C0F25266726A820450EC7F", hash_generated_field = "4BECEA87476210D9FCD61E1027EFAAFB")
+
     private static char[] REPLACEMENT = new char[] { ' ', '\uFEFF' };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.874 -0400", hash_original_field = "06E23A628CBDEAB09E91C69789BB1974", hash_generated_field = "6480497BDC465266B7D9E18C73F9BE9F")
+
     private static SingleLineTransformationMethod sInstance;
 }
 

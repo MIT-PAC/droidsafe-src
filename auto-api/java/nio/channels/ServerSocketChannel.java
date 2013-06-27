@@ -14,11 +14,10 @@ import java.nio.channels.spi.SelectorProvider;
 
 public abstract class ServerSocketChannel extends AbstractSelectableChannel {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.138 -0400", hash_original_method = "D01FB77CE4D99625B967A0B24C153D7F", hash_generated_method = "5B401135C98B9CFA10905D115F72DADE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected ServerSocketChannel(SelectorProvider selectorProvider) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.557 -0400", hash_original_method = "D01FB77CE4D99625B967A0B24C153D7F", hash_generated_method = "11CDF703A4591FA5F7E5C70AF9A7C9BA")
+    protected  ServerSocketChannel(SelectorProvider selectorProvider) {
         super(selectorProvider);
-        dsTaint.addTaint(selectorProvider.dsTaint);
+        addTaint(selectorProvider.getTaint());
         // ---------- Original Method ----------
     }
 
@@ -28,11 +27,11 @@ public abstract class ServerSocketChannel extends AbstractSelectableChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.138 -0400", hash_original_method = "63BB8F155E94FEBA5DA1D0A1F3E44C8C", hash_generated_method = "BC1065FF0B4291E206F88390D2D73560")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.558 -0400", hash_original_method = "63BB8F155E94FEBA5DA1D0A1F3E44C8C", hash_generated_method = "AEC1CE40B2266AFDD221528A512C6AD8")
     @Override
     public final int validOps() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_462243937 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_462243937;
         // ---------- Original Method ----------
         //return SelectionKey.OP_ACCEPT;
     }

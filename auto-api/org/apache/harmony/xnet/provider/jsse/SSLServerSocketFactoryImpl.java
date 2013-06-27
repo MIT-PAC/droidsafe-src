@@ -15,12 +15,15 @@ import javax.net.ssl.SSLServerSocketFactory;
 import libcore.util.EmptyArray;
 
 public class SSLServerSocketFactoryImpl extends SSLServerSocketFactory {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.816 -0400", hash_original_field = "275693D255E1C48D7D5797E25BF7F3FC", hash_generated_field = "D3BEC3280BC0116C55BDEA33933A255E")
+
     private SSLParametersImpl sslParameters;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.816 -0400", hash_original_field = "ED2222BD8464114597349D4FC408BA2C", hash_generated_field = "2D5C9847E3AA9248107E9F6E4986B2D4")
+
     private IOException instantiationException;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.176 -0400", hash_original_method = "73CB7C407A43304FA150044B815B6A46", hash_generated_method = "DA509C88D8CBE2F9A5C5ADAE49E05105")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SSLServerSocketFactoryImpl() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.817 -0400", hash_original_method = "73CB7C407A43304FA150044B815B6A46", hash_generated_method = "DA509C88D8CBE2F9A5C5ADAE49E05105")
+    public  SSLServerSocketFactoryImpl() {
         try 
         {
             this.sslParameters = SSLParametersImpl.getDefault();
@@ -44,10 +47,8 @@ public class SSLServerSocketFactoryImpl extends SSLServerSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.177 -0400", hash_original_method = "76241236FAFD17D5464286E69E45CFDE", hash_generated_method = "2F04A234242E76EB70E5C220D27A76D3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected SSLServerSocketFactoryImpl(SSLParametersImpl sslParameters) {
-        dsTaint.addTaint(sslParameters.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.817 -0400", hash_original_method = "76241236FAFD17D5464286E69E45CFDE", hash_generated_method = "BC3AAD450653E595B44F6BC12859BFC7")
+    protected  SSLServerSocketFactoryImpl(SSLParametersImpl sslParameters) {
         this.sslParameters = (SSLParametersImpl) sslParameters.clone();
         this.sslParameters.setUseClientMode(false);
         // ---------- Original Method ----------
@@ -56,14 +57,26 @@ public class SSLServerSocketFactoryImpl extends SSLServerSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.177 -0400", hash_original_method = "D2E4703F25DE73045253D43D661F8658", hash_generated_method = "8435528020FA3379A457B17B65901846")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.829 -0400", hash_original_method = "D2E4703F25DE73045253D43D661F8658", hash_generated_method = "09072BEACDDC27B0B2E94D9FA694EB4D")
     @Override
     public String[] getDefaultCipherSuites() {
-        String[] varC3ED4EB907904E69984EFC846C8D14D7_875106258 = (sslParameters.getEnabledCipherSuites());
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1379003375 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1611678368 = null; //Variable for return #2
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1379003375 = EmptyArray.STRING;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_1611678368 = sslParameters.getEnabledCipherSuites();
+        String[] varA7E53CE21691AB073D9660D615818899_22921883; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_22921883 = varB4EAC82CA7396A68D541C85D26508E83_1379003375;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_22921883 = varB4EAC82CA7396A68D541C85D26508E83_1611678368;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_22921883.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_22921883;
         // ---------- Original Method ----------
         //if (instantiationException != null) {
             //return EmptyArray.STRING;
@@ -72,14 +85,26 @@ public class SSLServerSocketFactoryImpl extends SSLServerSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.177 -0400", hash_original_method = "107E6937D2B525F81A260013B97CF7D4", hash_generated_method = "A35D9FAEB8922DC8FCE9DA8CAF541146")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.829 -0400", hash_original_method = "107E6937D2B525F81A260013B97CF7D4", hash_generated_method = "0AD4E98B731D3923969D58C74E183A69")
     @Override
     public String[] getSupportedCipherSuites() {
-        String[] var7538431C68A39BDF527B3279B9F226C5_1182216261 = (CipherSuite.getSupportedCipherSuiteNames());
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_861290022 = null; //Variable for return #1
+        String[] varB4EAC82CA7396A68D541C85D26508E83_282211936 = null; //Variable for return #2
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_861290022 = EmptyArray.STRING;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_282211936 = CipherSuite.getSupportedCipherSuiteNames();
+        String[] varA7E53CE21691AB073D9660D615818899_1231125221; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1231125221 = varB4EAC82CA7396A68D541C85D26508E83_861290022;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1231125221 = varB4EAC82CA7396A68D541C85D26508E83_282211936;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1231125221.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1231125221;
         // ---------- Original Method ----------
         //if (instantiationException != null) {
             //return EmptyArray.STRING;
@@ -88,15 +113,16 @@ public class SSLServerSocketFactoryImpl extends SSLServerSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.177 -0400", hash_original_method = "8CBCDC02B624BDC3EBB9915D8C4D504E", hash_generated_method = "8809E5088898AB2DBF63C123D4EBD82C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.832 -0400", hash_original_method = "8CBCDC02B624BDC3EBB9915D8C4D504E", hash_generated_method = "E4A8B8F6DDEC1FC6909C6C7AB2A3876F")
     @Override
     public ServerSocket createServerSocket() throws IOException {
+        ServerSocket varB4EAC82CA7396A68D541C85D26508E83_1576756416 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw instantiationException;
         } //End block
-        ServerSocket var51285FD75453AC49A33A48BF761B748F_1003581501 = (new SSLServerSocketImpl((SSLParametersImpl) sslParameters.clone()));
-        return (ServerSocket)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1576756416 = new SSLServerSocketImpl((SSLParametersImpl) sslParameters.clone());
+        varB4EAC82CA7396A68D541C85D26508E83_1576756416.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1576756416;
         // ---------- Original Method ----------
         //if (instantiationException != null) {
             //throw instantiationException;
@@ -105,17 +131,18 @@ public class SSLServerSocketFactoryImpl extends SSLServerSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.178 -0400", hash_original_method = "38B1F9FB8A801D54D6140D98F9574C0C", hash_generated_method = "981B8614078C2FC366331D83F2369F6E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.833 -0400", hash_original_method = "38B1F9FB8A801D54D6140D98F9574C0C", hash_generated_method = "6D29D094EB93564B1824EADD995D058F")
     @Override
     public ServerSocket createServerSocket(int port) throws IOException {
-        dsTaint.addTaint(port);
+        ServerSocket varB4EAC82CA7396A68D541C85D26508E83_213604924 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw instantiationException;
         } //End block
-        ServerSocket var86AC53EB1DB8BE4DF3E35FF8BCF26367_780469867 = (new SSLServerSocketImpl(port,
-                (SSLParametersImpl) sslParameters.clone()));
-        return (ServerSocket)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_213604924 = new SSLServerSocketImpl(port,
+                (SSLParametersImpl) sslParameters.clone());
+        addTaint(port);
+        varB4EAC82CA7396A68D541C85D26508E83_213604924.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_213604924;
         // ---------- Original Method ----------
         //if (instantiationException != null) {
             //throw instantiationException;
@@ -125,18 +152,19 @@ public class SSLServerSocketFactoryImpl extends SSLServerSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.178 -0400", hash_original_method = "DB92DF56A4C60994E7A02C3BBC7271E4", hash_generated_method = "E10671347A38866AD23020C465D06AC5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.833 -0400", hash_original_method = "DB92DF56A4C60994E7A02C3BBC7271E4", hash_generated_method = "819D3CED9AE7E37610F7E4D96EB4D3A5")
     @Override
     public ServerSocket createServerSocket(int port, int backlog) throws IOException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(backlog);
+        ServerSocket varB4EAC82CA7396A68D541C85D26508E83_1473835446 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw instantiationException;
         } //End block
-        ServerSocket var539639286468742E9918EB40E4D93786_166003612 = (new SSLServerSocketImpl(port, backlog,
-                (SSLParametersImpl) sslParameters.clone()));
-        return (ServerSocket)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1473835446 = new SSLServerSocketImpl(port, backlog,
+                (SSLParametersImpl) sslParameters.clone());
+        addTaint(port);
+        addTaint(backlog);
+        varB4EAC82CA7396A68D541C85D26508E83_1473835446.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1473835446;
         // ---------- Original Method ----------
         //if (instantiationException != null) {
             //throw instantiationException;
@@ -146,20 +174,21 @@ public class SSLServerSocketFactoryImpl extends SSLServerSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.178 -0400", hash_original_method = "05EB93BEC7CA6CC8959662993B7E734B", hash_generated_method = "217BE7603FCD799FE30A089403E7E7DB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.838 -0400", hash_original_method = "05EB93BEC7CA6CC8959662993B7E734B", hash_generated_method = "19AE81F86367A4046161B3918A901DCB")
     @Override
     public ServerSocket createServerSocket(int port, int backlog,
             InetAddress iAddress) throws IOException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(iAddress.dsTaint);
-        dsTaint.addTaint(backlog);
+        ServerSocket varB4EAC82CA7396A68D541C85D26508E83_1733964968 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw instantiationException;
         } //End block
-        ServerSocket var965D1FCA157BFAFFE5AC97A18C46CB79_1761090883 = (new SSLServerSocketImpl(port, backlog, iAddress,
-                (SSLParametersImpl) sslParameters.clone()));
-        return (ServerSocket)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1733964968 = new SSLServerSocketImpl(port, backlog, iAddress,
+                (SSLParametersImpl) sslParameters.clone());
+        addTaint(port);
+        addTaint(backlog);
+        addTaint(iAddress.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1733964968.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1733964968;
         // ---------- Original Method ----------
         //if (instantiationException != null) {
             //throw instantiationException;

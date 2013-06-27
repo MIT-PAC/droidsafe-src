@@ -30,24 +30,48 @@ import android.os.SystemProperties;
 import com.android.internal.R;
 
 public abstract class IccCard {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.074 -0400", hash_original_field = "503F6607C959C61B036C1484733875DB", hash_generated_field = "621F1F8A1A73F0186C3B2A8FD458DBF8")
+
     protected String mLogTag;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.074 -0400", hash_original_field = "44ACAC101472BE8FC80671CD461C5D61", hash_generated_field = "05625C1A8AEC158E47E651E2912A02BB")
+
     protected boolean mDbg;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.074 -0400", hash_original_field = "DE32B65E7EE0B55BC712321AEEA728A8", hash_generated_field = "9B1F8CAC61F695F54D4232EE65554395")
+
     private IccCardStatus mIccCardStatus = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.074 -0400", hash_original_field = "1D598FE22B106935C0C063CC508FA455", hash_generated_field = "B2CB76BA7B9E699C7A661DE6BE3920DB")
+
     protected State mState = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.074 -0400", hash_original_field = "44BC87C3198CFC247427A5305FDEA9BE", hash_generated_field = "C5284483C4CF8ED630A2E2607ED30E12")
+
     protected PhoneBase mPhone;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.074 -0400", hash_original_field = "4E7FCC656AA6F8FBB8616A81CB62D667", hash_generated_field = "BB4D0C0D6F697E88C9F5A7A0E99C541E")
+
     private RegistrantList mAbsentRegistrants = new RegistrantList();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.074 -0400", hash_original_field = "6710CED66CE3362B59772BAE61AD7DD9", hash_generated_field = "7FBB4558DC3714EECB6D5E802875936C")
+
     private RegistrantList mPinLockedRegistrants = new RegistrantList();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.074 -0400", hash_original_field = "B9AB100E7FC5A76FFBE28B818830C025", hash_generated_field = "810D4E60FCDB2F59BE3AFC34BFC4D065")
+
     private RegistrantList mNetworkLockedRegistrants = new RegistrantList();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.074 -0400", hash_original_field = "1445211AF5BB90E5C392311CE390CE34", hash_generated_field = "6F5CD85185F4F8603950244B00F7B22C")
+
     private boolean mDesiredPinLocked;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.074 -0400", hash_original_field = "4E6FF6737A71D42C0FAB7F364606445B", hash_generated_field = "4055529E8474844347F470FAB93250EC")
+
     private boolean mDesiredFdnEnabled;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.074 -0400", hash_original_field = "843C2F0DC295527B0EA88ECB15133B30", hash_generated_field = "4F01E642146FEA0D727EF809A7BAFF77")
+
     private boolean mIccPinLocked = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.074 -0400", hash_original_field = "BF434A14237EBD649B50D12B7DBD86B8", hash_generated_field = "385C08A9E0809A77275EED9469D8B1F1")
+
     private boolean mIccFdnEnabled = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.091 -0400", hash_original_field = "8DDBBF399F5C4180FC40887A4067CEFE", hash_generated_field = "177F516E3B8D394913C7F8CF88192564")
+
     protected Handler mHandler = new Handler() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.254 -0400", hash_original_method = "4D8A280AC680F77EA465CFA0E90830BC", hash_generated_method = "7942542D9B3B43DFD2FAB5D0B2A49724")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.090 -0400", hash_original_method = "4D8A280AC680F77EA465CFA0E90830BC", hash_generated_method = "628A259BA249F1A1D0ECF617B0AD4CA9")
         @Override
         public void handleMessage(Message msg) {
-            dsTaint.addTaint(msg.dsTaint);
             AsyncResult ar;
             int serviceClassX;
             serviceClassX = CommandsInterface.SERVICE_CLASS_VOICE +
@@ -177,20 +201,20 @@ public abstract class IccCard {
             //Begin case EVENT_CARD_ADDED 
             onIccSwap(true);
             //End case EVENT_CARD_ADDED 
+            addTaint(msg.getTaint());
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-}; //Transformed anonymous class
+};
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.255 -0400", hash_original_method = "A83C78588609731AFA33B82B4815F4C9", hash_generated_method = "5F6E1FB5CFB70C3895DBB4678C3118A0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public IccCard(PhoneBase phone, String logTag, Boolean dbg) {
-        dsTaint.addTaint(phone.dsTaint);
-        dsTaint.addTaint(logTag);
-        dsTaint.addTaint(dbg.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.096 -0400", hash_original_method = "A83C78588609731AFA33B82B4815F4C9", hash_generated_method = "67B5BD0EE12240734C95456487DA84CE")
+    public  IccCard(PhoneBase phone, String logTag, Boolean dbg) {
+        mPhone = phone;
         mPhone.mCM.registerForIccStatusChanged(mHandler, EVENT_ICC_STATUS_CHANGED, null);
+        mLogTag = logTag;
+        mDbg = dbg;
         // ---------- Original Method ----------
         //mPhone = phone;
         //mPhone.mCM.registerForIccStatusChanged(mHandler, EVENT_ICC_STATUS_CHANGED, null);
@@ -199,22 +223,64 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.255 -0400", hash_original_method = "B45586395D9726A6E3A7A444B2DA9D4A", hash_generated_method = "E5D897DFC132C7913F933035F2907B9B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.097 -0400", hash_original_method = "B45586395D9726A6E3A7A444B2DA9D4A", hash_generated_method = "9FA2D28A23927FE8029DDC198674DB5A")
     public State getState() {
+        State varB4EAC82CA7396A68D541C85D26508E83_46176622 = null; //Variable for return #1
+        State varB4EAC82CA7396A68D541C85D26508E83_647928583 = null; //Variable for return #2
+        State varB4EAC82CA7396A68D541C85D26508E83_502869486 = null; //Variable for return #3
+        State varB4EAC82CA7396A68D541C85D26508E83_211879061 = null; //Variable for return #4
+        State varB4EAC82CA7396A68D541C85D26508E83_79007559 = null; //Variable for return #5
+        State varB4EAC82CA7396A68D541C85D26508E83_501084128 = null; //Variable for return #6
         {
             {
-                Object var665508131374E03DAE4229BE09CD1E54_972960139 = (mPhone.mCM.getRadioState());
+                Object var665508131374E03DAE4229BE09CD1E54_850265859 = (mPhone.mCM.getRadioState());
+                //Begin case RADIO_OFF RADIO_UNAVAILABLE SIM_NOT_READY RUIM_NOT_READY 
+                varB4EAC82CA7396A68D541C85D26508E83_46176622 = State.UNKNOWN;
+                //End case RADIO_OFF RADIO_UNAVAILABLE SIM_NOT_READY RUIM_NOT_READY 
+                //Begin case SIM_LOCKED_OR_ABSENT RUIM_LOCKED_OR_ABSENT 
+                varB4EAC82CA7396A68D541C85D26508E83_647928583 = State.UNKNOWN;
+                //End case SIM_LOCKED_OR_ABSENT RUIM_LOCKED_OR_ABSENT 
+                //Begin case SIM_READY RUIM_READY NV_READY 
+                varB4EAC82CA7396A68D541C85D26508E83_502869486 = State.READY;
+                //End case SIM_READY RUIM_READY NV_READY 
+                //Begin case NV_NOT_READY 
+                varB4EAC82CA7396A68D541C85D26508E83_211879061 = State.ABSENT;
+                //End case NV_NOT_READY 
             } //End collapsed parenthetic
         } //End block
-        return (State)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_79007559 = mState;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_501084128 = State.UNKNOWN;
+        State varA7E53CE21691AB073D9660D615818899_1725100605; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1725100605 = varB4EAC82CA7396A68D541C85D26508E83_46176622;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1725100605 = varB4EAC82CA7396A68D541C85D26508E83_647928583;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_1725100605 = varB4EAC82CA7396A68D541C85D26508E83_502869486;
+                break;
+            case 4: //Assign result for return ordinal #4
+                varA7E53CE21691AB073D9660D615818899_1725100605 = varB4EAC82CA7396A68D541C85D26508E83_211879061;
+                break;
+            case 5: //Assign result for return ordinal #5
+                varA7E53CE21691AB073D9660D615818899_1725100605 = varB4EAC82CA7396A68D541C85D26508E83_79007559;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1725100605 = varB4EAC82CA7396A68D541C85D26508E83_501084128;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1725100605.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1725100605;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.255 -0400", hash_original_method = "EF67D81D926CA0EC8F8754BC29C8826B", hash_generated_method = "8FB4003EBB7FCD2F2B0FD7E02F818470")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.098 -0400", hash_original_method = "EF67D81D926CA0EC8F8754BC29C8826B", hash_generated_method = "8FB4003EBB7FCD2F2B0FD7E02F818470")
     public void dispose() {
         mPhone.mCM.unregisterForIccStatusChanged(mHandler);
         // ---------- Original Method ----------
@@ -222,8 +288,7 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.255 -0400", hash_original_method = "C148A728067D02A221BE75C987C5D733", hash_generated_method = "DA32AB009F09FF38C5F0C4E45A947EAB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.106 -0400", hash_original_method = "C148A728067D02A221BE75C987C5D733", hash_generated_method = "DA32AB009F09FF38C5F0C4E45A947EAB")
     protected void finalize() {
         Log.d(mLogTag, "IccCard finalized");
         // ---------- Original Method ----------
@@ -231,22 +296,21 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.255 -0400", hash_original_method = "45A4F957AA9A104F89D6FFEF5C13C9B4", hash_generated_method = "1378C63A426D950EE6DCBCDDCFAA0B63")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.106 -0400", hash_original_method = "45A4F957AA9A104F89D6FFEF5C13C9B4", hash_generated_method = "023FEB605C44A8F25C02EBCF2C38B1DF")
     public void registerForAbsent(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
-        dsTaint.addTaint(what);
-        dsTaint.addTaint(obj.dsTaint);
-        dsTaint.addTaint(h.dsTaint);
         Registrant r;
         r = new Registrant (h, what, obj);
         mAbsentRegistrants.add(r);
         {
-            boolean var9D1D545BFB2ACC918D763D35EA51A235_1388393610 = (getState() == State.ABSENT);
+            boolean var9D1D545BFB2ACC918D763D35EA51A235_1660518299 = (getState() == State.ABSENT);
             {
                 r.notifyRegistrant();
             } //End block
         } //End collapsed parenthetic
+        addTaint(h.getTaint());
+        addTaint(what);
+        addTaint(obj.getTaint());
         // ---------- Original Method ----------
         //Registrant r = new Registrant (h, what, obj);
         //mAbsentRegistrants.add(r);
@@ -256,32 +320,30 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.256 -0400", hash_original_method = "A388490F008524959D490318F4B49030", hash_generated_method = "B84D131D6F8D668EFF38E46A82C5CD57")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.107 -0400", hash_original_method = "A388490F008524959D490318F4B49030", hash_generated_method = "1943DB3B866D01B93B4514E5831169F3")
     public void unregisterForAbsent(Handler h) {
-        dsTaint.addTaint(h.dsTaint);
         mAbsentRegistrants.remove(h);
+        addTaint(h.getTaint());
         // ---------- Original Method ----------
         //mAbsentRegistrants.remove(h);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.256 -0400", hash_original_method = "DD13D18C49861341C8AF8EABF1CC2E24", hash_generated_method = "0CD7FA118A3A32CA4011BDCC940059BC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.107 -0400", hash_original_method = "DD13D18C49861341C8AF8EABF1CC2E24", hash_generated_method = "614F8CC3D7049A63FC9D8F5DDD0C8CE5")
     public void registerForNetworkLocked(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
-        dsTaint.addTaint(what);
-        dsTaint.addTaint(obj.dsTaint);
-        dsTaint.addTaint(h.dsTaint);
         Registrant r;
         r = new Registrant (h, what, obj);
         mNetworkLockedRegistrants.add(r);
         {
-            boolean var2F3573EBEB4638AFD6B56CE330BB1FB4_345213475 = (getState() == State.NETWORK_LOCKED);
+            boolean var2F3573EBEB4638AFD6B56CE330BB1FB4_1268327088 = (getState() == State.NETWORK_LOCKED);
             {
                 r.notifyRegistrant();
             } //End block
         } //End collapsed parenthetic
+        addTaint(h.getTaint());
+        addTaint(what);
+        addTaint(obj.getTaint());
         // ---------- Original Method ----------
         //Registrant r = new Registrant (h, what, obj);
         //mNetworkLockedRegistrants.add(r);
@@ -291,32 +353,30 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.256 -0400", hash_original_method = "5CEB6427435BFB9EC514E781B4093E7E", hash_generated_method = "86C95021EC47CCD19EA543067750F76F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.107 -0400", hash_original_method = "5CEB6427435BFB9EC514E781B4093E7E", hash_generated_method = "B75B86B8FD071EE3C5E9889CF4FB8D3C")
     public void unregisterForNetworkLocked(Handler h) {
-        dsTaint.addTaint(h.dsTaint);
         mNetworkLockedRegistrants.remove(h);
+        addTaint(h.getTaint());
         // ---------- Original Method ----------
         //mNetworkLockedRegistrants.remove(h);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.256 -0400", hash_original_method = "A158B3B1FDF0C70FEF29C25B6F4DD072", hash_generated_method = "791E9CEA83FE127735CB5132D397B0EB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.118 -0400", hash_original_method = "A158B3B1FDF0C70FEF29C25B6F4DD072", hash_generated_method = "BACBB7EFAE9A313FE48F902ECB00E36C")
     public void registerForLocked(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
-        dsTaint.addTaint(what);
-        dsTaint.addTaint(obj.dsTaint);
-        dsTaint.addTaint(h.dsTaint);
         Registrant r;
         r = new Registrant (h, what, obj);
         mPinLockedRegistrants.add(r);
         {
-            boolean var4F041DD310E7150642EAFA2D007725C8_79993802 = (getState().isPinLocked());
+            boolean var4F041DD310E7150642EAFA2D007725C8_118843036 = (getState().isPinLocked());
             {
                 r.notifyRegistrant();
             } //End block
         } //End collapsed parenthetic
+        addTaint(h.getTaint());
+        addTaint(what);
+        addTaint(obj.getTaint());
         // ---------- Original Method ----------
         //Registrant r = new Registrant (h, what, obj);
         //mPinLockedRegistrants.add(r);
@@ -326,113 +386,106 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.256 -0400", hash_original_method = "5667345A02500557814700DAC5845BCA", hash_generated_method = "3238A33867E9C0E54F3927689BD2BC10")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.119 -0400", hash_original_method = "5667345A02500557814700DAC5845BCA", hash_generated_method = "2AC03AF538A32A18D598A6271B836CDD")
     public void unregisterForLocked(Handler h) {
-        dsTaint.addTaint(h.dsTaint);
         mPinLockedRegistrants.remove(h);
+        addTaint(h.getTaint());
         // ---------- Original Method ----------
         //mPinLockedRegistrants.remove(h);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.257 -0400", hash_original_method = "ADEE02A4D2D0DF5B5C1110C0F3EF40D9", hash_generated_method = "405FFD2716D5B32F8EC7FF392667BCCC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.119 -0400", hash_original_method = "ADEE02A4D2D0DF5B5C1110C0F3EF40D9", hash_generated_method = "D05AE6ADB4D9B2B969F70ED3A669186E")
     public void supplyPin(String pin, Message onComplete) {
-        dsTaint.addTaint(pin);
-        dsTaint.addTaint(onComplete.dsTaint);
         mPhone.mCM.supplyIccPin(pin, mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
+        addTaint(pin.getTaint());
+        addTaint(onComplete.getTaint());
         // ---------- Original Method ----------
         //mPhone.mCM.supplyIccPin(pin, mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.257 -0400", hash_original_method = "F069297D525546A0218C2FB5A43E0287", hash_generated_method = "007676AACD004DAE377A9CD8E4659378")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.119 -0400", hash_original_method = "F069297D525546A0218C2FB5A43E0287", hash_generated_method = "E4EE9E4E2F7F9AEB25C5EA85D7646FFE")
     public void supplyPuk(String puk, String newPin, Message onComplete) {
-        dsTaint.addTaint(onComplete.dsTaint);
-        dsTaint.addTaint(puk);
-        dsTaint.addTaint(newPin);
         mPhone.mCM.supplyIccPuk(puk, newPin,
                 mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
+        addTaint(puk.getTaint());
+        addTaint(newPin.getTaint());
+        addTaint(onComplete.getTaint());
         // ---------- Original Method ----------
         //mPhone.mCM.supplyIccPuk(puk, newPin,
                 //mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.257 -0400", hash_original_method = "35EFF2F2C787166AB4A51F303C9455F4", hash_generated_method = "997A630B401EFCB10356D0DDAD6E231A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.121 -0400", hash_original_method = "35EFF2F2C787166AB4A51F303C9455F4", hash_generated_method = "23342709D52898C81EDF643DC2337E3A")
     public void supplyPin2(String pin2, Message onComplete) {
-        dsTaint.addTaint(pin2);
-        dsTaint.addTaint(onComplete.dsTaint);
         mPhone.mCM.supplyIccPin2(pin2,
                 mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
+        addTaint(pin2.getTaint());
+        addTaint(onComplete.getTaint());
         // ---------- Original Method ----------
         //mPhone.mCM.supplyIccPin2(pin2,
                 //mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.257 -0400", hash_original_method = "982062922CE016EAC29E809D9B066C8E", hash_generated_method = "3BC354B1F7A81AD2A8D2A8C98AC3763D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.121 -0400", hash_original_method = "982062922CE016EAC29E809D9B066C8E", hash_generated_method = "F18BE459A210D03198DAFB3923570AB3")
     public void supplyPuk2(String puk2, String newPin2, Message onComplete) {
-        dsTaint.addTaint(puk2);
-        dsTaint.addTaint(onComplete.dsTaint);
-        dsTaint.addTaint(newPin2);
         mPhone.mCM.supplyIccPuk2(puk2, newPin2,
                 mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
+        addTaint(puk2.getTaint());
+        addTaint(newPin2.getTaint());
+        addTaint(onComplete.getTaint());
         // ---------- Original Method ----------
         //mPhone.mCM.supplyIccPuk2(puk2, newPin2,
                 //mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.257 -0400", hash_original_method = "96497D4DFF6E2FE9CEEE26788CBD4E3F", hash_generated_method = "FF11D5560FABDD7145FCFC6659C54715")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.127 -0400", hash_original_method = "96497D4DFF6E2FE9CEEE26788CBD4E3F", hash_generated_method = "12AD4854EE8B1FA1060EE1819A28EE88")
     public void supplyNetworkDepersonalization(String pin, Message onComplete) {
-        dsTaint.addTaint(pin);
-        dsTaint.addTaint(onComplete.dsTaint);
         mPhone.mCM.supplyNetworkDepersonalization(pin,
                 mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
+        addTaint(pin.getTaint());
+        addTaint(onComplete.getTaint());
         // ---------- Original Method ----------
         //mPhone.mCM.supplyNetworkDepersonalization(pin,
                 //mHandler.obtainMessage(EVENT_PINPUK_DONE, onComplete));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.257 -0400", hash_original_method = "BCA6EFC1210C838BF4CD916790946AA6", hash_generated_method = "A00530B202809B5ED469576EFE18C72F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.127 -0400", hash_original_method = "BCA6EFC1210C838BF4CD916790946AA6", hash_generated_method = "203A5CB4B1F73071AD72D3383FAB4AFD")
     public boolean getIccLockEnabled() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_269941481 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_269941481;
         // ---------- Original Method ----------
         //return mIccPinLocked;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.258 -0400", hash_original_method = "F2BBF6EB30564DA8841F6D4A48D01D80", hash_generated_method = "8928FBE0EE56586F1949AF911E293944")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.127 -0400", hash_original_method = "F2BBF6EB30564DA8841F6D4A48D01D80", hash_generated_method = "4A2353095B5C0F8C87B633E495EEABC9")
     public boolean getIccFdnEnabled() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1118616347 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1118616347;
         // ---------- Original Method ----------
         //return mIccFdnEnabled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.258 -0400", hash_original_method = "3DCE16ED303A66C1573E6E04CDCFB500", hash_generated_method = "D41ED8B9B192D8160DAD84CB4F38E0B8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.136 -0400", hash_original_method = "3DCE16ED303A66C1573E6E04CDCFB500", hash_generated_method = "544FD5010B449443910D20362F86013F")
     public void setIccLockEnabled(boolean enabled,
              String password, Message onComplete) {
-        dsTaint.addTaint(enabled);
-        dsTaint.addTaint(onComplete.dsTaint);
-        dsTaint.addTaint(password);
         int serviceClassX;
         serviceClassX = CommandsInterface.SERVICE_CLASS_VOICE +
                  CommandsInterface.SERVICE_CLASS_DATA +
                  CommandsInterface.SERVICE_CLASS_FAX;
+        mDesiredPinLocked = enabled;
         mPhone.mCM.setFacilityLock(CommandsInterface.CB_FACILITY_BA_SIM,
                  enabled, password, serviceClassX,
                  mHandler.obtainMessage(EVENT_CHANGE_FACILITY_LOCK_DONE, onComplete));
+        addTaint(password.getTaint());
+        addTaint(onComplete.getTaint());
         // ---------- Original Method ----------
         //int serviceClassX;
         //serviceClassX = CommandsInterface.SERVICE_CLASS_VOICE +
@@ -445,21 +498,20 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.258 -0400", hash_original_method = "42161809775FC8FDBB38BE3E5058E399", hash_generated_method = "6243560B833EFBDF015360BE7EAE064D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.137 -0400", hash_original_method = "42161809775FC8FDBB38BE3E5058E399", hash_generated_method = "57AE8798CB4A2225FE017AF10A1C4C38")
     public void setIccFdnEnabled(boolean enabled,
              String password, Message onComplete) {
-        dsTaint.addTaint(enabled);
-        dsTaint.addTaint(onComplete.dsTaint);
-        dsTaint.addTaint(password);
         int serviceClassX;
         serviceClassX = CommandsInterface.SERVICE_CLASS_VOICE +
                  CommandsInterface.SERVICE_CLASS_DATA +
                  CommandsInterface.SERVICE_CLASS_FAX +
                  CommandsInterface.SERVICE_CLASS_SMS;
+        mDesiredFdnEnabled = enabled;
         mPhone.mCM.setFacilityLock(CommandsInterface.CB_FACILITY_BA_FD,
                  enabled, password, serviceClassX,
                  mHandler.obtainMessage(EVENT_CHANGE_FACILITY_FDN_DONE, onComplete));
+        addTaint(password.getTaint());
+        addTaint(onComplete.getTaint());
         // ---------- Original Method ----------
         //int serviceClassX;
         //serviceClassX = CommandsInterface.SERVICE_CLASS_VOICE +
@@ -473,30 +525,28 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.258 -0400", hash_original_method = "CFACBB8EE591380B6F953CA4501BCE4D", hash_generated_method = "EA017A8B4ED4FD5A3F972F5DC6FB6FAB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.137 -0400", hash_original_method = "CFACBB8EE591380B6F953CA4501BCE4D", hash_generated_method = "EAD131B57FCC5B057053D037C1DA7A30")
     public void changeIccLockPassword(String oldPassword, String newPassword,
              Message onComplete) {
-        dsTaint.addTaint(onComplete.dsTaint);
-        dsTaint.addTaint(newPassword);
-        dsTaint.addTaint(oldPassword);
         mPhone.mCM.changeIccPin(oldPassword, newPassword,
                  mHandler.obtainMessage(EVENT_CHANGE_ICC_PASSWORD_DONE, onComplete));
+        addTaint(oldPassword.getTaint());
+        addTaint(newPassword.getTaint());
+        addTaint(onComplete.getTaint());
         // ---------- Original Method ----------
         //mPhone.mCM.changeIccPin(oldPassword, newPassword,
                  //mHandler.obtainMessage(EVENT_CHANGE_ICC_PASSWORD_DONE, onComplete));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.259 -0400", hash_original_method = "78AE6F1E64D3743DF4893D59C6AFA5E2", hash_generated_method = "336EAC55661AD17A224AB4B4132282C2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.138 -0400", hash_original_method = "78AE6F1E64D3743DF4893D59C6AFA5E2", hash_generated_method = "BC416E50D02810623466A946D3E528B7")
     public void changeIccFdnPassword(String oldPassword, String newPassword,
              Message onComplete) {
-        dsTaint.addTaint(onComplete.dsTaint);
-        dsTaint.addTaint(newPassword);
-        dsTaint.addTaint(oldPassword);
         mPhone.mCM.changeIccPin2(oldPassword, newPassword,
                  mHandler.obtainMessage(EVENT_CHANGE_ICC_PASSWORD_DONE, onComplete));
+        addTaint(oldPassword.getTaint());
+        addTaint(newPassword.getTaint());
+        addTaint(onComplete.getTaint());
         // ---------- Original Method ----------
         //mPhone.mCM.changeIccPin2(oldPassword, newPassword,
                  //mHandler.obtainMessage(EVENT_CHANGE_ICC_PASSWORD_DONE, onComplete));
@@ -506,8 +556,7 @@ public abstract class IccCard {
     public abstract String getServiceProviderName();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.259 -0400", hash_original_method = "26BBB856B8138972809A4E6EC2BCC376", hash_generated_method = "4A1645AE835255FE7642245C74B88BD6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.138 -0400", hash_original_method = "26BBB856B8138972809A4E6EC2BCC376", hash_generated_method = "4A1645AE835255FE7642245C74B88BD6")
     protected void updateStateProperty() {
         mPhone.setSystemProperty(TelephonyProperties.PROPERTY_SIM_STATE, getState().toString());
         // ---------- Original Method ----------
@@ -515,11 +564,10 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.259 -0400", hash_original_method = "B8050A82EEEB3E75B61D0D7FED84BD4F", hash_generated_method = "C075136A8F14990B91F468855C77EECA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.153 -0400", hash_original_method = "B8050A82EEEB3E75B61D0D7FED84BD4F", hash_generated_method = "6E95396EDB57B48B75EF0D41DBD0630D")
     private void getIccCardStatusDone(AsyncResult ar) {
-        dsTaint.addTaint(ar.dsTaint);
         handleIccCardStatus((IccCardStatus) ar.result);
+        addTaint(ar.getTaint());
         // ---------- Original Method ----------
         //if (ar.exception != null) {
             //Log.e(mLogTag,"Error getting ICC status. "
@@ -531,10 +579,8 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.260 -0400", hash_original_method = "EDEEC41729C236C302C7B6E1F1DF026D", hash_generated_method = "836852A0ED21D135D9C63A0B415BF85C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.155 -0400", hash_original_method = "EDEEC41729C236C302C7B6E1F1DF026D", hash_generated_method = "4AA504635F840C14E6A2997AE3D6DE74")
     private void handleIccCardStatus(IccCardStatus newCardStatus) {
-        dsTaint.addTaint(newCardStatus.dsTaint);
         boolean transitionedIntoPinLocked;
         boolean transitionedIntoAbsent;
         boolean transitionedIntoNetworkLocked;
@@ -543,6 +589,7 @@ public abstract class IccCard {
         boolean isIccCardAdded;
         State oldState, newState;
         oldState = mState;
+        mIccCardStatus = newCardStatus;
         newState = getIccCardState();
         mState = newState;
         updateStateProperty();
@@ -592,20 +639,15 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.261 -0400", hash_original_method = "482C40D5983445C1A7C95EBEDC56AC82", hash_generated_method = "04204A965582B7DFF0E27640D1BC737A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.165 -0400", hash_original_method = "482C40D5983445C1A7C95EBEDC56AC82", hash_generated_method = "38ED36F41B7AFD4DE099961E2B5D1A88")
     private void onIccSwap(boolean isAdded) {
-        dsTaint.addTaint(isAdded);
         DialogInterface.OnClickListener listener;
         listener = null;
         listener = new DialogInterface.OnClickListener() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.261 -0400", hash_original_method = "9D3F97D682E1929CAA7D6B8E66CF9703", hash_generated_method = "0E293DA1AB752E8D2073A40A3CF935D2")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.163 -0400", hash_original_method = "9D3F97D682E1929CAA7D6B8E66CF9703", hash_generated_method = "0F1BCD0B574A39E4CE8762D1FE312F41")
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(which);
-                dsTaint.addTaint(dialog.dsTaint);
                 {
                     log("Reboot due to SIM swap");
                     PowerManager pm;
@@ -613,6 +655,8 @@ public abstract class IccCard {
                     .getSystemService(Context.POWER_SERVICE);
                     pm.reboot("SIM is added.");
                 } //End block
+                addTaint(dialog.getTaint());
+                addTaint(which);
                 // ---------- Original Method ----------
                 //if (which == DialogInterface.BUTTON_POSITIVE) {
                     //if (mDbg) log("Reboot due to SIM swap");
@@ -640,15 +684,14 @@ public abstract class IccCard {
             .create();
         dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
         dialog.show();
+        addTaint(isAdded);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.261 -0400", hash_original_method = "F212AE1E9E62E46B160458ACE7EF1DC3", hash_generated_method = "43FF40CDA7A1A766DA972DED48C64569")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.182 -0400", hash_original_method = "F212AE1E9E62E46B160458ACE7EF1DC3", hash_generated_method = "7EA27A2C37DC5103ABB18F89013BE5D7")
     private void onQueryFdnEnabled(AsyncResult ar) {
-        dsTaint.addTaint(ar.dsTaint);
         {
             log("Error in querying facility lock:" + ar.exception);
         } //End block
@@ -658,6 +701,7 @@ public abstract class IccCard {
             mIccFdnEnabled = (0!=ints[0]);
             log("Query facility lock : "  + mIccFdnEnabled);
         } //End block
+        addTaint(ar.getTaint());
         // ---------- Original Method ----------
         //if(ar.exception != null) {
             //if(mDbg) log("Error in querying facility lock:" + ar.exception);
@@ -673,10 +717,8 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.261 -0400", hash_original_method = "2D3A559A68B85B440A539D217592B783", hash_generated_method = "6B0E34C30689329088EE798B8245F793")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.183 -0400", hash_original_method = "2D3A559A68B85B440A539D217592B783", hash_generated_method = "73F460C21757DF2988C05062D0DC7571")
     private void onQueryFacilityLock(AsyncResult ar) {
-        dsTaint.addTaint(ar.dsTaint);
         {
             log("Error in querying facility lock:" + ar.exception);
         } //End block
@@ -686,6 +728,7 @@ public abstract class IccCard {
             mIccPinLocked = (0!=ints[0]);
             log("Query facility lock : "  + mIccPinLocked);
         } //End block
+        addTaint(ar.getTaint());
         // ---------- Original Method ----------
         //if(ar.exception != null) {
             //if (mDbg) log("Error in querying facility lock:" + ar.exception);
@@ -701,11 +744,8 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.262 -0400", hash_original_method = "BEDA05141A25EA0E8449469A2D08AE66", hash_generated_method = "DF533FA2E6EF3F77EA41A5343D2AD719")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.184 -0400", hash_original_method = "BEDA05141A25EA0E8449469A2D08AE66", hash_generated_method = "6168D6EAC847403A6570C6DC58D7579C")
     public void broadcastIccStateChangedIntent(String value, String reason) {
-        dsTaint.addTaint(reason);
-        dsTaint.addTaint(value);
         Intent intent;
         intent = new Intent(TelephonyIntents.ACTION_SIM_STATE_CHANGED);
         intent.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
@@ -715,6 +755,8 @@ public abstract class IccCard {
         log("Broadcasting intent ACTION_SIM_STATE_CHANGED " +  value
                 + " reason " + reason);
         ActivityManagerNative.broadcastStickyIntent(intent, READ_PHONE_STATE);
+        addTaint(value.getTaint());
+        addTaint(reason.getTaint());
         // ---------- Original Method ----------
         //Intent intent = new Intent(TelephonyIntents.ACTION_SIM_STATE_CHANGED);
         //intent.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
@@ -727,14 +769,29 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.262 -0400", hash_original_method = "531282E014DCDC26F790CA6DADE3C8C6", hash_generated_method = "2F91F4C7CD68CE45B6152D824FDAC5F9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.197 -0400", hash_original_method = "531282E014DCDC26F790CA6DADE3C8C6", hash_generated_method = "B3C6FE06C017F77F1EF3361CC3C432C9")
     public State getIccCardState() {
+        State varB4EAC82CA7396A68D541C85D26508E83_753294952 = null; //Variable for return #1
+        State varB4EAC82CA7396A68D541C85D26508E83_45124530 = null; //Variable for return #2
+        State varB4EAC82CA7396A68D541C85D26508E83_873396274 = null; //Variable for return #3
+        State varB4EAC82CA7396A68D541C85D26508E83_1196253927 = null; //Variable for return #4
+        State varB4EAC82CA7396A68D541C85D26508E83_2087963594 = null; //Variable for return #5
+        State varB4EAC82CA7396A68D541C85D26508E83_912392040 = null; //Variable for return #6
+        State varB4EAC82CA7396A68D541C85D26508E83_2096090186 = null; //Variable for return #7
         {
-            boolean var37EB664FE23E2FAE1F059F1BE9FE3DC1_1497441292 = (!mIccCardStatus.getCardState().isCardPresent());
+            varB4EAC82CA7396A68D541C85D26508E83_753294952 = IccCard.State.ABSENT;
+        } //End block
+        {
+            boolean var37EB664FE23E2FAE1F059F1BE9FE3DC1_1267782534 = (!mIccCardStatus.getCardState().isCardPresent());
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_45124530 = IccCard.State.ABSENT;
+            } //End block
         } //End collapsed parenthetic
         RadioState currentRadioState;
         currentRadioState = mPhone.mCM.getRadioState();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_873396274 = IccCard.State.NOT_READY;
+        } //End block
         {
             State csimState;
             csimState = getAppState(mIccCardStatus.getCdmaSubscriptionAppIndex());
@@ -742,57 +799,193 @@ public abstract class IccCard {
             usimState = getAppState(mIccCardStatus.getGsmUmtsSubscriptionAppIndex());
             log("USIM=" + usimState + " CSIM=" + csimState);
             {
-                boolean var77E61B402E06F4B2589B17903F68887C_1094493405 = (mPhone.getLteOnCdmaMode() == Phone.LTE_ON_CDMA_TRUE);
+                boolean var77E61B402E06F4B2589B17903F68887C_1303388079 = (mPhone.getLteOnCdmaMode() == Phone.LTE_ON_CDMA_TRUE);
                 {
-                    State var55370511744D280B9A118D3BDEB96B4F_1843521395 = (getConsolidatedState(csimState, usimState, csimState));
+                    varB4EAC82CA7396A68D541C85D26508E83_1196253927 = getConsolidatedState(csimState, usimState, csimState);
                 } //End block
             } //End collapsed parenthetic
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_2087963594 = csimState;
+            } //End block
+            varB4EAC82CA7396A68D541C85D26508E83_912392040 = usimState;
         } //End block
-        return (State)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2096090186 = IccCard.State.ABSENT;
+        State varA7E53CE21691AB073D9660D615818899_801728925; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_801728925 = varB4EAC82CA7396A68D541C85D26508E83_753294952;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_801728925 = varB4EAC82CA7396A68D541C85D26508E83_45124530;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_801728925 = varB4EAC82CA7396A68D541C85D26508E83_873396274;
+                break;
+            case 4: //Assign result for return ordinal #4
+                varA7E53CE21691AB073D9660D615818899_801728925 = varB4EAC82CA7396A68D541C85D26508E83_1196253927;
+                break;
+            case 5: //Assign result for return ordinal #5
+                varA7E53CE21691AB073D9660D615818899_801728925 = varB4EAC82CA7396A68D541C85D26508E83_2087963594;
+                break;
+            case 6: //Assign result for return ordinal #6
+                varA7E53CE21691AB073D9660D615818899_801728925 = varB4EAC82CA7396A68D541C85D26508E83_912392040;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_801728925 = varB4EAC82CA7396A68D541C85D26508E83_2096090186;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_801728925.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_801728925;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.263 -0400", hash_original_method = "809395990E0197CB644B1DF3288DB707", hash_generated_method = "D8A2A335F2F487CBBBBB48E57534724B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.200 -0400", hash_original_method = "809395990E0197CB644B1DF3288DB707", hash_generated_method = "8C0BDCD167A17F785E92EA91D94E87DF")
     private State getAppState(int appIndex) {
-        dsTaint.addTaint(appIndex);
+        State varB4EAC82CA7396A68D541C85D26508E83_1666831200 = null; //Variable for return #1
+        State varB4EAC82CA7396A68D541C85D26508E83_874477429 = null; //Variable for return #2
+        State varB4EAC82CA7396A68D541C85D26508E83_1460354483 = null; //Variable for return #3
+        State varB4EAC82CA7396A68D541C85D26508E83_358855884 = null; //Variable for return #4
+        State varB4EAC82CA7396A68D541C85D26508E83_445620693 = null; //Variable for return #5
+        State varB4EAC82CA7396A68D541C85D26508E83_1977742632 = null; //Variable for return #6
+        State varB4EAC82CA7396A68D541C85D26508E83_1025864756 = null; //Variable for return #7
+        State varB4EAC82CA7396A68D541C85D26508E83_929755842 = null; //Variable for return #8
+        State varB4EAC82CA7396A68D541C85D26508E83_1224393609 = null; //Variable for return #9
         IccCardApplication app;
         {
             app = mIccCardStatus.getApplication(appIndex);
         } //End block
         {
-            boolean varD79448EF50A427003D4C76CECD605C72_267243007 = (app.pin1.isPermBlocked());
+            varB4EAC82CA7396A68D541C85D26508E83_1666831200 = IccCard.State.ABSENT;
+        } //End block
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_874477429 = IccCard.State.ABSENT;
+        } //End block
+        {
+            boolean varD79448EF50A427003D4C76CECD605C72_2024903007 = (app.pin1.isPermBlocked());
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1460354483 = IccCard.State.PERM_DISABLED;
+            } //End block
         } //End collapsed parenthetic
         {
-            boolean var1945F3B200D512171D5265F4A46FA51E_418759669 = (app.app_state.isPinRequired());
+            boolean var1945F3B200D512171D5265F4A46FA51E_14414818 = (app.app_state.isPinRequired());
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_358855884 = IccCard.State.PIN_REQUIRED;
+            } //End block
         } //End collapsed parenthetic
         {
-            boolean var61EBE391DFCFAFB0FB7193188270151E_1227294234 = (app.app_state.isPukRequired());
+            boolean var61EBE391DFCFAFB0FB7193188270151E_173686245 = (app.app_state.isPukRequired());
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_445620693 = IccCard.State.PUK_REQUIRED;
+            } //End block
         } //End collapsed parenthetic
         {
-            boolean varA6084E236BBD4BA404CD38B01625DB98_574955684 = (app.app_state.isSubscriptionPersoEnabled());
+            boolean varA6084E236BBD4BA404CD38B01625DB98_689167465 = (app.app_state.isSubscriptionPersoEnabled());
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1977742632 = IccCard.State.NETWORK_LOCKED;
+            } //End block
         } //End collapsed parenthetic
         {
-            boolean var0542E857D2243312200D238063975376_669335564 = (app.app_state.isAppReady());
+            boolean var0542E857D2243312200D238063975376_1393482434 = (app.app_state.isAppReady());
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1025864756 = IccCard.State.READY;
+            } //End block
         } //End collapsed parenthetic
         {
-            boolean var6CCD9C0F390C721F8CA6FD75317DDB79_122564562 = (app.app_state.isAppNotReady());
+            boolean var6CCD9C0F390C721F8CA6FD75317DDB79_1886632458 = (app.app_state.isAppNotReady());
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_929755842 = IccCard.State.NOT_READY;
+            } //End block
         } //End collapsed parenthetic
-        return (State)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1224393609 = IccCard.State.NOT_READY;
+        addTaint(appIndex);
+        State varA7E53CE21691AB073D9660D615818899_623738302; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_623738302 = varB4EAC82CA7396A68D541C85D26508E83_1666831200;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_623738302 = varB4EAC82CA7396A68D541C85D26508E83_874477429;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_623738302 = varB4EAC82CA7396A68D541C85D26508E83_1460354483;
+                break;
+            case 4: //Assign result for return ordinal #4
+                varA7E53CE21691AB073D9660D615818899_623738302 = varB4EAC82CA7396A68D541C85D26508E83_358855884;
+                break;
+            case 5: //Assign result for return ordinal #5
+                varA7E53CE21691AB073D9660D615818899_623738302 = varB4EAC82CA7396A68D541C85D26508E83_445620693;
+                break;
+            case 6: //Assign result for return ordinal #6
+                varA7E53CE21691AB073D9660D615818899_623738302 = varB4EAC82CA7396A68D541C85D26508E83_1977742632;
+                break;
+            case 7: //Assign result for return ordinal #7
+                varA7E53CE21691AB073D9660D615818899_623738302 = varB4EAC82CA7396A68D541C85D26508E83_1025864756;
+                break;
+            case 8: //Assign result for return ordinal #8
+                varA7E53CE21691AB073D9660D615818899_623738302 = varB4EAC82CA7396A68D541C85D26508E83_929755842;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_623738302 = varB4EAC82CA7396A68D541C85D26508E83_1224393609;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_623738302.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_623738302;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.263 -0400", hash_original_method = "292BB37BE4996383C23DC23B1670D1D7", hash_generated_method = "6FA486BD6C1F62C300076DF637B1A85B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.299 -0400", hash_original_method = "292BB37BE4996383C23DC23B1670D1D7", hash_generated_method = "A45C4EEADE59890DCDA12A7E448BC2E2")
     private State getConsolidatedState(State left, State right, State preferredState) {
-        dsTaint.addTaint(left.dsTaint);
-        dsTaint.addTaint(preferredState.dsTaint);
-        dsTaint.addTaint(right.dsTaint);
-        return (State)dsTaint.getTaint();
+        State varB4EAC82CA7396A68D541C85D26508E83_1954899601 = null; //Variable for return #1
+        State varB4EAC82CA7396A68D541C85D26508E83_935537987 = null; //Variable for return #2
+        State varB4EAC82CA7396A68D541C85D26508E83_400072540 = null; //Variable for return #3
+        State varB4EAC82CA7396A68D541C85D26508E83_1886689651 = null; //Variable for return #4
+        State varB4EAC82CA7396A68D541C85D26508E83_971845888 = null; //Variable for return #5
+        State varB4EAC82CA7396A68D541C85D26508E83_394447280 = null; //Variable for return #6
+        State varB4EAC82CA7396A68D541C85D26508E83_1566032757 = null; //Variable for return #7
+        varB4EAC82CA7396A68D541C85D26508E83_1954899601 = left;
+        varB4EAC82CA7396A68D541C85D26508E83_935537987 = right;
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_400072540 = State.READY;
+        } //End block
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1886689651 = IccCard.State.NOT_READY;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_971845888 = left;
+        varB4EAC82CA7396A68D541C85D26508E83_394447280 = right;
+        varB4EAC82CA7396A68D541C85D26508E83_1566032757 = preferredState;
+        addTaint(left.getTaint());
+        addTaint(right.getTaint());
+        addTaint(preferredState.getTaint());
+        State varA7E53CE21691AB073D9660D615818899_1571069530; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1571069530 = varB4EAC82CA7396A68D541C85D26508E83_1954899601;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1571069530 = varB4EAC82CA7396A68D541C85D26508E83_935537987;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_1571069530 = varB4EAC82CA7396A68D541C85D26508E83_400072540;
+                break;
+            case 4: //Assign result for return ordinal #4
+                varA7E53CE21691AB073D9660D615818899_1571069530 = varB4EAC82CA7396A68D541C85D26508E83_1886689651;
+                break;
+            case 5: //Assign result for return ordinal #5
+                varA7E53CE21691AB073D9660D615818899_1571069530 = varB4EAC82CA7396A68D541C85D26508E83_971845888;
+                break;
+            case 6: //Assign result for return ordinal #6
+                varA7E53CE21691AB073D9660D615818899_1571069530 = varB4EAC82CA7396A68D541C85D26508E83_394447280;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1571069530 = varB4EAC82CA7396A68D541C85D26508E83_1566032757;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1571069530.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1571069530;
         // ---------- Original Method ----------
         //if (right == IccCard.State.ABSENT) return left;
         //if (left == IccCard.State.ABSENT) return right;
@@ -809,20 +1002,20 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.263 -0400", hash_original_method = "B5E8B5923B9BC39502C2387B1882FFE9", hash_generated_method = "272128D2E081836390698AAB352C3305")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.300 -0400", hash_original_method = "B5E8B5923B9BC39502C2387B1882FFE9", hash_generated_method = "D03A2E2CABEA21D4103AC421DCAF0883")
     public boolean isApplicationOnIcc(IccCardApplication.AppType type) {
-        dsTaint.addTaint(type.dsTaint);
         {
             int i;
             i = 0;
-            boolean var2346A46A01A4552FF6397DC9B45B0FA6_712740947 = (i < mIccCardStatus.getNumApplications());
+            boolean var2346A46A01A4552FF6397DC9B45B0FA6_160464491 = (i < mIccCardStatus.getNumApplications());
             {
                 IccCardApplication app;
                 app = mIccCardStatus.getApplication(i);
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(type.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_936275179 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_936275179;
         // ---------- Original Method ----------
         //if (mIccCardStatus == null) return false;
         //for (int i = 0 ; i < mIccCardStatus.getNumApplications(); i++) {
@@ -835,13 +1028,13 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.263 -0400", hash_original_method = "1BA9D03EECE1275906E702F57E19B9C4", hash_generated_method = "C5B15B662FBB076F9E13336B49506FC2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.301 -0400", hash_original_method = "1BA9D03EECE1275906E702F57E19B9C4", hash_generated_method = "07C4D17D0B75637A5C9F09B230BC2E5D")
     public boolean hasIccCard() {
         {
-            boolean var5F1FEE56A00FEFA0965524059C0855DA_189265326 = (mIccCardStatus.getCardState().isCardPresent());
+            boolean var5F1FEE56A00FEFA0965524059C0855DA_1163385046 = (mIccCardStatus.getCardState().isCardPresent());
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1524259794 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1524259794;
         // ---------- Original Method ----------
         //if (mIccCardStatus == null) {
             //return false;
@@ -851,11 +1044,10 @@ public abstract class IccCard {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.264 -0400", hash_original_method = "8040171B9171EEC88FFD4AC75BEDD9D4", hash_generated_method = "C62F179D0C9E55B2082CC12E64F81079")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.301 -0400", hash_original_method = "8040171B9171EEC88FFD4AC75BEDD9D4", hash_generated_method = "623DE00DDDF8C6544CC3EC79B4218C86")
     private void log(String msg) {
-        dsTaint.addTaint(msg);
         Log.d(mLogTag, "[IccCard] " + msg);
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         //Log.d(mLogTag, "[IccCard] " + msg);
     }
@@ -881,31 +1073,83 @@ public abstract class IccCard {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "4E8D0274A2974A4104009ED903CA7DF6", hash_generated_field = "13296FAB897D65BFBDA3BB2C514373EF")
+
     static public final String INTENT_KEY_ICC_STATE = "ss";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "415E0FF726B9974E357FB6FFD5403327", hash_generated_field = "559004855AF26038D1301B2EB2A81958")
+
     static public final String INTENT_VALUE_ICC_NOT_READY = "NOT_READY";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "A698CB27956FF8C110377324B7929A28", hash_generated_field = "09E173E394E5D91B9D74B048E28CDA40")
+
     static public final String INTENT_VALUE_ICC_ABSENT = "ABSENT";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "6CE86164A5E1A9E092A8E0A5B9DED311", hash_generated_field = "B9ECAC99CC48A7FA1E2E4234F2D4F8DD")
+
     static public final String INTENT_VALUE_ICC_LOCKED = "LOCKED";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "D6153E40940FA2E2661254B4416303B4", hash_generated_field = "299CBCB1408043E9A327CC84FDCBEEB1")
+
     static public final String INTENT_VALUE_ICC_READY = "READY";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "F4914C0EE6491535F1EC45D22E8DEED2", hash_generated_field = "B11FF3A7F190CFA1F78B0A44A9BC2F7F")
+
     static public final String INTENT_VALUE_ICC_IMSI = "IMSI";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "ABBD1334DF4188600B92AC80B86F8DE3", hash_generated_field = "5A47219824FC4CE98A1CDF755912F5D3")
+
     static public final String INTENT_VALUE_ICC_LOADED = "LOADED";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "EFADDC467AAB577159B8395EF08A71E4", hash_generated_field = "B52DE1E639231C806713539135C0EC44")
+
     static public final String INTENT_KEY_LOCKED_REASON = "reason";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "F4281583CA82139E6D5B4ED808D7371B", hash_generated_field = "8CB239DD07ED9D2B9354AF9790A52085")
+
     static public final String INTENT_VALUE_LOCKED_ON_PIN = "PIN";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "5308AEA1C22392C049E02997D987CC31", hash_generated_field = "9D4E8CF5E08E88C5263AD804A1CC2E40")
+
     static public final String INTENT_VALUE_LOCKED_ON_PUK = "PUK";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "0E8D2CB33D7F1323388E2E9E64C40DF4", hash_generated_field = "E414FAB7F3419E8267A72ED727E98329")
+
     static public final String INTENT_VALUE_LOCKED_NETWORK = "NETWORK";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "EC74C91AB18DA5EB7F83CDB921DE4FAE", hash_generated_field = "1AC6CFB4E094233EA40DDF5454436669")
+
     static public final String INTENT_VALUE_ABSENT_ON_PERM_DISABLED = "PERM_DISABLED";
-    protected static final int EVENT_ICC_LOCKED_OR_ABSENT = 1;
-    private static final int EVENT_GET_ICC_STATUS_DONE = 2;
-    protected static final int EVENT_RADIO_OFF_OR_NOT_AVAILABLE = 3;
-    private static final int EVENT_PINPUK_DONE = 4;
-    private static final int EVENT_REPOLL_STATUS_DONE = 5;
-    protected static final int EVENT_ICC_READY = 6;
-    private static final int EVENT_QUERY_FACILITY_LOCK_DONE = 7;
-    private static final int EVENT_CHANGE_FACILITY_LOCK_DONE = 8;
-    private static final int EVENT_CHANGE_ICC_PASSWORD_DONE = 9;
-    private static final int EVENT_QUERY_FACILITY_FDN_DONE = 10;
-    private static final int EVENT_CHANGE_FACILITY_FDN_DONE = 11;
-    private static final int EVENT_ICC_STATUS_CHANGED = 12;
-    private static final int EVENT_CARD_REMOVED = 13;
-    private static final int EVENT_CARD_ADDED = 14;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "DF3208C608C8153D3ED7FF08E95ABEAD", hash_generated_field = "C355031893AA6F70BF0C7EAFAAAC92C8")
+
+    protected static int EVENT_ICC_LOCKED_OR_ABSENT = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "D4E84F7920E0975E27CBE7069F5CFBF8", hash_generated_field = "1C223501040E36BF6C507FB19E12A949")
+
+    private static int EVENT_GET_ICC_STATUS_DONE = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "726D8DA480BD0D2C8D1177303E93D4C0", hash_generated_field = "E752FF5C2462253BD474F6D801D49231")
+
+    protected static int EVENT_RADIO_OFF_OR_NOT_AVAILABLE = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "93DA8E59C4139915F236D3ED564C0914", hash_generated_field = "C9D3D6C543EF903F2BCDBF2706098B3F")
+
+    private static int EVENT_PINPUK_DONE = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "0A2D0AB9EF09FB4BF143B595A70FCC7C", hash_generated_field = "9224A34C3020AEB212F19FCF1644282E")
+
+    private static int EVENT_REPOLL_STATUS_DONE = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "7711A73FCB7752619A0750B474C480F0", hash_generated_field = "0B63C4AC1C3B1147D01B73CEC685E43D")
+
+    protected static int EVENT_ICC_READY = 6;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "47663F5B966A9E46338F0BB331FD5A17", hash_generated_field = "70FD77E648D208D392B3777D14D3E347")
+
+    private static int EVENT_QUERY_FACILITY_LOCK_DONE = 7;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "99009BA3BF30CF722936C81F997BC5B6", hash_generated_field = "613AAE3AE68E2D4A4DE5F0F780AAEA58")
+
+    private static int EVENT_CHANGE_FACILITY_LOCK_DONE = 8;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.302 -0400", hash_original_field = "5D770D7915D16CFC9643E79BD347C3AA", hash_generated_field = "A6B6A55AF38ECE6B9C888EF0075FFDA3")
+
+    private static int EVENT_CHANGE_ICC_PASSWORD_DONE = 9;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.303 -0400", hash_original_field = "DCF6C78CAED9FD3FCC33C8D43C378FF0", hash_generated_field = "03B74E94C64C6A4FE46C31DEB718C7FB")
+
+    private static int EVENT_QUERY_FACILITY_FDN_DONE = 10;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.303 -0400", hash_original_field = "605FAA42EB0E0BFB73A948B47A066901", hash_generated_field = "590635CA6E35BCB589B92A7EEAE312F0")
+
+    private static int EVENT_CHANGE_FACILITY_FDN_DONE = 11;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.303 -0400", hash_original_field = "8CB1C0D04994FA3BFB96074A15C85D58", hash_generated_field = "68E9EB4E1DFB1859611BA2714104E8F1")
+
+    private static int EVENT_ICC_STATUS_CHANGED = 12;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.303 -0400", hash_original_field = "FB7E9591376FC5D385C90334A6B74395", hash_generated_field = "8C387563913E7C2475D106DA2FB73A40")
+
+    private static int EVENT_CARD_REMOVED = 13;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.303 -0400", hash_original_field = "2DA616E9DFA974F9578E475C34C23EEE", hash_generated_field = "41BF8EF5653E692982FA48D5FF4635E9")
+
+    private static int EVENT_CARD_ADDED = 14;
 }
 

@@ -10,19 +10,20 @@ import java.util.Iterator;
 
 public class SystemProperties {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.385 -0400", hash_original_method = "973B75DDC8E858143851BE20F8D2B3ED", hash_generated_method = "973B75DDC8E858143851BE20F8D2B3ED")
-        public SystemProperties ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.372 -0400", hash_original_method = "2ADA160F039E0597E5E49685589340CB", hash_generated_method = "2ADA160F039E0597E5E49685589340CB")
+    public SystemProperties ()
     {
+        //Synthesized constructor
     }
 
 
         private static String native_get(String key) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         private static String native_get(String key, String def) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -97,7 +98,11 @@ public class SystemProperties {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.389 -0400", hash_original_field = "421F11BB25DB9C1D0DC4AB6BF3C20D97", hash_generated_field = "780DCAA353568BD378E28553216C8395")
+
     public static final int PROP_NAME_MAX = 31;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.389 -0400", hash_original_field = "AD073E405F956424F3753E80AEBE91DB", hash_generated_field = "2AB02350084E9F1FB1771551A1B2E17D")
+
     public static final int PROP_VALUE_MAX = 91;
 }
 

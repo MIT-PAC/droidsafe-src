@@ -19,13 +19,18 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 
 public class SSLContextImpl extends SSLContextSpi {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.531 -0400", hash_original_field = "BBF2E072FADE089E3AAF9C311B04B922", hash_generated_field = "18DF1224C27021F1A3724F6E02033981")
+
     private ClientSessionContext clientSessionContext;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.531 -0400", hash_original_field = "CFD3E7982F5FF61303CFF556E2DA3D97", hash_generated_field = "C5EBE7874A86EC861FFFE1CE7FF9026A")
+
     private ServerSessionContext serverSessionContext;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.531 -0400", hash_original_field = "275693D255E1C48D7D5797E25BF7F3FC", hash_generated_field = "193A05E0CE57E1D6165874B1C5DC807D")
+
     protected SSLParametersImpl sslParameters;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.094 -0400", hash_original_method = "BB3D0F5B2222977574D305A8CAD6912B", hash_generated_method = "C2EBBF6280DAA1C2D96BF5ECCA7861E1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SSLContextImpl() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.531 -0400", hash_original_method = "BB3D0F5B2222977574D305A8CAD6912B", hash_generated_method = "C2EBBF6280DAA1C2D96BF5ECCA7861E1")
+    public  SSLContextImpl() {
         clientSessionContext = new ClientSessionContext();
         serverSessionContext = new ServerSessionContext();
         // ---------- Original Method ----------
@@ -34,10 +39,8 @@ public class SSLContextImpl extends SSLContextSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.094 -0400", hash_original_method = "81573CDE574A4A011582FBBAB6C3BF9A", hash_generated_method = "0446A20D1147425D0B2FE2265AAE7795")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected SSLContextImpl(DefaultSSLContextImpl dummy) throws GeneralSecurityException, IOException {
-        dsTaint.addTaint(dummy.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.532 -0400", hash_original_method = "81573CDE574A4A011582FBBAB6C3BF9A", hash_generated_method = "90A96C08D19DE63F7D3534347B37A6D0")
+    protected  SSLContextImpl(DefaultSSLContextImpl dummy) throws GeneralSecurityException, IOException {
         {
             {
                 clientSessionContext = new ClientSessionContext();
@@ -54,19 +57,16 @@ public class SSLContextImpl extends SSLContextSpi {
                                                   clientSessionContext,
                                                   serverSessionContext);
         } //End block
+        addTaint(dummy.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.094 -0400", hash_original_method = "0824770EA02EDCBB315A7517C68CBF9B", hash_generated_method = "C8D4A2FBD1F2958F90A56B3A09EF7646")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.532 -0400", hash_original_method = "0824770EA02EDCBB315A7517C68CBF9B", hash_generated_method = "5ED612AF34CD0AC820A10D3E7C4E5A8B")
     @Override
     public void engineInit(KeyManager[] kms, TrustManager[] tms,
             SecureRandom sr) throws KeyManagementException {
-        dsTaint.addTaint(kms[0].dsTaint);
-        dsTaint.addTaint(tms[0].dsTaint);
-        dsTaint.addTaint(sr.dsTaint);
         sslParameters = new SSLParametersImpl(kms, tms, sr,
                                               clientSessionContext, serverSessionContext);
         // ---------- Original Method ----------
@@ -75,15 +75,16 @@ public class SSLContextImpl extends SSLContextSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.095 -0400", hash_original_method = "004191AE8609FCF33514DFCEA01A5714", hash_generated_method = "37274F3FEC8415FE3696FF737F2D960A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.541 -0400", hash_original_method = "004191AE8609FCF33514DFCEA01A5714", hash_generated_method = "1D1C5112026760DCFB785ED493B00839")
     @Override
     public SSLSocketFactory engineGetSocketFactory() {
+        SSLSocketFactory varB4EAC82CA7396A68D541C85D26508E83_1740204976 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("SSLContext is not initialized.");
         } //End block
-        SSLSocketFactory varA94E961FDF8645C67D1D8264B005FB05_1141368258 = (new SSLSocketFactoryImpl(sslParameters));
-        return (SSLSocketFactory)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1740204976 = new SSLSocketFactoryImpl(sslParameters);
+        varB4EAC82CA7396A68D541C85D26508E83_1740204976.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1740204976;
         // ---------- Original Method ----------
         //if (sslParameters == null) {
             //throw new IllegalStateException("SSLContext is not initialized.");
@@ -92,15 +93,16 @@ public class SSLContextImpl extends SSLContextSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.095 -0400", hash_original_method = "65E8F32416A9204F9A4329BBE6993AED", hash_generated_method = "A9306D02FEB9CF3D4E3BEFCBD1BA1066")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.556 -0400", hash_original_method = "65E8F32416A9204F9A4329BBE6993AED", hash_generated_method = "73162F348B9D8FD5581C49330FE8EFE5")
     @Override
     public SSLServerSocketFactory engineGetServerSocketFactory() {
+        SSLServerSocketFactory varB4EAC82CA7396A68D541C85D26508E83_499390531 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("SSLContext is not initialized.");
         } //End block
-        SSLServerSocketFactory varBD871B6656F712EBE9D0834311DBD534_1254561985 = (new SSLServerSocketFactoryImpl(sslParameters));
-        return (SSLServerSocketFactory)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_499390531 = new SSLServerSocketFactoryImpl(sslParameters);
+        varB4EAC82CA7396A68D541C85D26508E83_499390531.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_499390531;
         // ---------- Original Method ----------
         //if (sslParameters == null) {
             //throw new IllegalStateException("SSLContext is not initialized.");
@@ -109,20 +111,21 @@ public class SSLContextImpl extends SSLContextSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.095 -0400", hash_original_method = "29CE564F844B35192AD02B59CF29ABFD", hash_generated_method = "6CB17C0E5E7424A46390B3F3963B5DDA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.556 -0400", hash_original_method = "29CE564F844B35192AD02B59CF29ABFD", hash_generated_method = "7C790085B8AEBFE601E913837F0D6061")
     @Override
     public SSLEngine engineCreateSSLEngine(String host, int port) {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(host);
+        SSLEngine varB4EAC82CA7396A68D541C85D26508E83_1757539093 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("SSLContext is not initialized.");
         } //End block
         SSLParametersImpl p;
         p = (SSLParametersImpl) sslParameters.clone();
         p.setUseClientMode(false);
-        SSLEngine var82E903F477FA428EF04E9F4237E0B394_644359771 = (new SSLEngineImpl(host, port, p));
-        return (SSLEngine)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1757539093 = new SSLEngineImpl(host, port, p);
+        addTaint(host.getTaint());
+        addTaint(port);
+        varB4EAC82CA7396A68D541C85D26508E83_1757539093.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1757539093;
         // ---------- Original Method ----------
         //if (sslParameters == null) {
             //throw new IllegalStateException("SSLContext is not initialized.");
@@ -133,18 +136,19 @@ public class SSLContextImpl extends SSLContextSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.095 -0400", hash_original_method = "1B7221E2350F2BEF0C28DC221F83475D", hash_generated_method = "E8BC148B014112F5DE11F1BA3A6F68AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.557 -0400", hash_original_method = "1B7221E2350F2BEF0C28DC221F83475D", hash_generated_method = "4991DDD67E913694268CD2A08A5936E9")
     @Override
     public SSLEngine engineCreateSSLEngine() {
+        SSLEngine varB4EAC82CA7396A68D541C85D26508E83_495368386 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("SSLContext is not initialized.");
         } //End block
         SSLParametersImpl p;
         p = (SSLParametersImpl) sslParameters.clone();
         p.setUseClientMode(false);
-        SSLEngine var785504DDDC4F5BEFB0D108607C822AE9_1201779899 = (new SSLEngineImpl(p));
-        return (SSLEngine)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_495368386 = new SSLEngineImpl(p);
+        varB4EAC82CA7396A68D541C85D26508E83_495368386.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_495368386;
         // ---------- Original Method ----------
         //if (sslParameters == null) {
             //throw new IllegalStateException("SSLContext is not initialized.");
@@ -155,26 +159,32 @@ public class SSLContextImpl extends SSLContextSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.095 -0400", hash_original_method = "D250F9B5B60A63355C4DD3366841F3DE", hash_generated_method = "7743C3DE032AE84E561FD1F5C9F6973E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.557 -0400", hash_original_method = "D250F9B5B60A63355C4DD3366841F3DE", hash_generated_method = "69D8EAF6A4BF2F685DBFD3A5DE757181")
     @Override
     public ServerSessionContext engineGetServerSessionContext() {
-        return (ServerSessionContext)dsTaint.getTaint();
+        ServerSessionContext varB4EAC82CA7396A68D541C85D26508E83_371481344 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_371481344 = serverSessionContext;
+        varB4EAC82CA7396A68D541C85D26508E83_371481344.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_371481344;
         // ---------- Original Method ----------
         //return serverSessionContext;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:42.096 -0400", hash_original_method = "F7A52ACBCF1ABAC2A6697027AD059F72", hash_generated_method = "A4D573996DA7B201B8DAF2DAAEE41BEE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.557 -0400", hash_original_method = "F7A52ACBCF1ABAC2A6697027AD059F72", hash_generated_method = "E86EA3976DFBEF1714A9C44D2C394851")
     @Override
     public ClientSessionContext engineGetClientSessionContext() {
-        return (ClientSessionContext)dsTaint.getTaint();
+        ClientSessionContext varB4EAC82CA7396A68D541C85D26508E83_1276812879 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1276812879 = clientSessionContext;
+        varB4EAC82CA7396A68D541C85D26508E83_1276812879.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1276812879;
         // ---------- Original Method ----------
         //return clientSessionContext;
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.558 -0400", hash_original_field = "FE12143B9433BC939A46323087706E75", hash_generated_field = "705088B5C2C8B220095047F197D99BA7")
+
     private static DefaultSSLContextImpl DEFAULT_SSL_CONTEXT_IMPL;
 }
 

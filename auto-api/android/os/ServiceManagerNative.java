@@ -10,9 +10,8 @@ import java.util.Iterator;
 
 public abstract class ServiceManagerNative extends Binder implements IServiceManager {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.208 -0400", hash_original_method = "9F01F56EAD98DCCF5588838D591C9215", hash_generated_method = "85C73BFA46F2172E7BBE49D58C0ED876")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ServiceManagerNative() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.305 -0400", hash_original_method = "9F01F56EAD98DCCF5588838D591C9215", hash_generated_method = "85C73BFA46F2172E7BBE49D58C0ED876")
+    public  ServiceManagerNative() {
         attachInterface(this, descriptor);
         // ---------- Original Method ----------
         //attachInterface(this, descriptor);
@@ -32,14 +31,9 @@ public abstract class ServiceManagerNative extends Binder implements IServiceMan
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.209 -0400", hash_original_method = "77391B19BF1D318FBD43A52170DD3D86", hash_generated_method = "7AE70AE8EA2AE8EED4A3AE80C3F25D3F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.317 -0400", hash_original_method = "77391B19BF1D318FBD43A52170DD3D86", hash_generated_method = "001053720C097EA2A4B198DD0BC9D3EA")
     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(data.dsTaint);
-        dsTaint.addTaint(reply.dsTaint);
-        dsTaint.addTaint(code);
         try 
         {
             //Begin case IServiceManager.GET_SERVICE_TRANSACTION 
@@ -92,16 +86,23 @@ public abstract class ServiceManagerNative extends Binder implements IServiceMan
         } //End block
         catch (RemoteException e)
         { }
-        return dsTaint.getTaintBoolean();
+        addTaint(code);
+        addTaint(data.getTaint());
+        addTaint(reply.getTaint());
+        addTaint(flags);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_628316990 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_628316990;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.210 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "1992535F0C7EB8757F965477F5292EC0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.318 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "18EAD91C255544ACB10EF22DCD186221")
     public IBinder asBinder() {
-        return (IBinder)dsTaint.getTaint();
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_840974512 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_840974512 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_840974512.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_840974512;
         // ---------- Original Method ----------
         //return this;
     }
@@ -110,30 +111,32 @@ public abstract class ServiceManagerNative extends Binder implements IServiceMan
 }
 
 class ServiceManagerProxy implements IServiceManager {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.318 -0400", hash_original_field = "571FFBF4D13799B98890AF05D7751D0E", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
+
     private IBinder mRemote;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.211 -0400", hash_original_method = "84032B28A83A581245FB022389F526C9", hash_generated_method = "B3D035B579EE2F057C2F3BEA51AE412C")
-    @DSModeled(DSC.SAFE)
-    public ServiceManagerProxy(IBinder remote) {
-        dsTaint.addTaint(remote.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.322 -0400", hash_original_method = "84032B28A83A581245FB022389F526C9", hash_generated_method = "9C93C75DE81E92FB068744B3E68A0310")
+    public  ServiceManagerProxy(IBinder remote) {
+        mRemote = remote;
         // ---------- Original Method ----------
         //mRemote = remote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.212 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "DD6FDB77557F0A5920AFCE061E8D4085")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.337 -0400", hash_original_method = "315E1319E410798CBDE68A27410B7DFB", hash_generated_method = "2268C5FEF694F23AA61DEB6EC825F2F0")
     public IBinder asBinder() {
-        return (IBinder)dsTaint.getTaint();
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_341716589 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_341716589 = mRemote;
+        varB4EAC82CA7396A68D541C85D26508E83_341716589.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_341716589;
         // ---------- Original Method ----------
         //return mRemote;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.213 -0400", hash_original_method = "02C17092CC4D0E934B4324BDE37272C4", hash_generated_method = "93B0B4E5D59CC90BEA3AE4E5B88B8E28")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.338 -0400", hash_original_method = "02C17092CC4D0E934B4324BDE37272C4", hash_generated_method = "48041FB9A5AB73E4FEF9D18D98533D0C")
     public IBinder getService(String name) throws RemoteException {
-        dsTaint.addTaint(name);
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_1341091850 = null; //Variable for return #1
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -145,7 +148,10 @@ class ServiceManagerProxy implements IServiceManager {
         binder = reply.readStrongBinder();
         reply.recycle();
         data.recycle();
-        return (IBinder)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1341091850 = binder;
+        addTaint(name.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1341091850.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1341091850;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -159,10 +165,9 @@ class ServiceManagerProxy implements IServiceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.214 -0400", hash_original_method = "5C8E64034E0715CC0FF2A576ACC0AB5A", hash_generated_method = "BEC919ABBA65F597AA645075C766BCFA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.339 -0400", hash_original_method = "5C8E64034E0715CC0FF2A576ACC0AB5A", hash_generated_method = "C57E1AF171E03BAD648A7A3A0D3C98D9")
     public IBinder checkService(String name) throws RemoteException {
-        dsTaint.addTaint(name);
+        IBinder varB4EAC82CA7396A68D541C85D26508E83_1645657093 = null; //Variable for return #1
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -174,7 +179,10 @@ class ServiceManagerProxy implements IServiceManager {
         binder = reply.readStrongBinder();
         reply.recycle();
         data.recycle();
-        return (IBinder)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1645657093 = binder;
+        addTaint(name.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1645657093.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1645657093;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -188,11 +196,8 @@ class ServiceManagerProxy implements IServiceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.214 -0400", hash_original_method = "5E591506D5DD50AD56DFCE9C7D5E988A", hash_generated_method = "722242D2B6357948F9666F7318DB4A05")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.341 -0400", hash_original_method = "5E591506D5DD50AD56DFCE9C7D5E988A", hash_generated_method = "DA943F0ABD001A16720BDAB73005D5F5")
     public void addService(String name, IBinder service) throws RemoteException {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(service.dsTaint);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -203,6 +208,8 @@ class ServiceManagerProxy implements IServiceManager {
         mRemote.transact(ADD_SERVICE_TRANSACTION, data, reply, 0);
         reply.recycle();
         data.recycle();
+        addTaint(name.getTaint());
+        addTaint(service.getTaint());
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -215,9 +222,9 @@ class ServiceManagerProxy implements IServiceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.214 -0400", hash_original_method = "FC27781B3E4C3CFB72E5AC6A897CA1D1", hash_generated_method = "B453F9004C13EF390C0B6FB9AE965D80")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.356 -0400", hash_original_method = "FC27781B3E4C3CFB72E5AC6A897CA1D1", hash_generated_method = "F2E9D070450D8F2DCF56B888537BDC01")
     public String[] listServices() throws RemoteException {
+        String[] varB4EAC82CA7396A68D541C85D26508E83_986527862 = null; //Variable for return #1
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -228,9 +235,9 @@ class ServiceManagerProxy implements IServiceManager {
         list = reply.readStringArray();
         reply.recycle();
         data.recycle();
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        varB4EAC82CA7396A68D541C85D26508E83_986527862 = list;
+        varB4EAC82CA7396A68D541C85D26508E83_986527862.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_986527862;
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();
@@ -243,10 +250,8 @@ class ServiceManagerProxy implements IServiceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.215 -0400", hash_original_method = "8A24F25196050E86CC22CCEE8401DF5F", hash_generated_method = "61BEAD5E1A4F592535807222D303F8FE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.357 -0400", hash_original_method = "8A24F25196050E86CC22CCEE8401DF5F", hash_generated_method = "15868B32BDA09D4939D623101A2674EC")
     public void setPermissionController(IPermissionController controller) throws RemoteException {
-        dsTaint.addTaint(controller.dsTaint);
         Parcel data;
         data = Parcel.obtain();
         Parcel reply;
@@ -256,6 +261,7 @@ class ServiceManagerProxy implements IServiceManager {
         mRemote.transact(SET_PERMISSION_CONTROLLER_TRANSACTION, data, reply, 0);
         reply.recycle();
         data.recycle();
+        addTaint(controller.getTaint());
         // ---------- Original Method ----------
         //Parcel data = Parcel.obtain();
         //Parcel reply = Parcel.obtain();

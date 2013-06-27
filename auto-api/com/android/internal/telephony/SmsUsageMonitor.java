@@ -16,15 +16,18 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class SmsUsageMonitor {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.608 -0400", hash_original_field = "7D2C0C2BF475877740FC4F4370379B27", hash_generated_field = "8251D8E7267A3EFD6EC445592CA97E50")
+
     private int mCheckPeriod;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.608 -0400", hash_original_field = "9975895F9DB80EFF35D4CCBB757209DA", hash_generated_field = "88D310A8EA39C1E84390420AD9B4808A")
+
     private int mMaxAllowed;
-    private HashMap<String, ArrayList<Long>> mSmsStamp =
-            new HashMap<String, ArrayList<Long>>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.608 -0400", hash_original_field = "C43BF27E7C4A474A450E53DD288AFA67", hash_generated_field = "344057D2A728653FEC86F60CEF36E56B")
+
+    private HashMap<String, ArrayList<Long>> mSmsStamp = new HashMap<String, ArrayList<Long>>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.537 -0400", hash_original_method = "AA58276D63D2163182FD805D073EE67C", hash_generated_method = "DC4CB3C208476984B8DFDF0885903535")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SmsUsageMonitor(ContentResolver resolver) {
-        dsTaint.addTaint(resolver.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.611 -0400", hash_original_method = "AA58276D63D2163182FD805D073EE67C", hash_generated_method = "41E1494827BFC473DCA67AF4C2849C94")
+    public  SmsUsageMonitor(ContentResolver resolver) {
         mMaxAllowed = Settings.Secure.getInt(resolver,
                 Settings.Secure.SMS_OUTGOING_CHECK_MAX_COUNT,
                 DEFAULT_SMS_MAX_COUNT);
@@ -41,8 +44,7 @@ public class SmsUsageMonitor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.538 -0400", hash_original_method = "7B2C29F4698952FF45E2699BBB5DEB62", hash_generated_method = "F5020B67D30B77B9A0B8E7C878C54BF3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.622 -0400", hash_original_method = "7B2C29F4698952FF45E2699BBB5DEB62", hash_generated_method = "F5020B67D30B77B9A0B8E7C878C54BF3")
      void dispose() {
         mSmsStamp.clear();
         // ---------- Original Method ----------
@@ -50,11 +52,8 @@ public class SmsUsageMonitor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.539 -0400", hash_original_method = "EA1BFE3566BC11C4D089155AC6363183", hash_generated_method = "AB6406B8DDE6D3794387493C28465C78")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.623 -0400", hash_original_method = "EA1BFE3566BC11C4D089155AC6363183", hash_generated_method = "A2D84DEA8B13C250FF1D4986E19442BC")
     public boolean check(String appName, int smsWaiting) {
-        dsTaint.addTaint(appName);
-        dsTaint.addTaint(smsWaiting);
         {
             removeExpiredTimestamps();
             ArrayList<Long> sentList;
@@ -63,9 +62,12 @@ public class SmsUsageMonitor {
                 sentList = new ArrayList<Long>();
                 mSmsStamp.put(appName, sentList);
             } //End block
-            boolean var091A67795636C5B7E20E47F6F889C23B_1365297283 = (isUnderLimit(sentList, smsWaiting));
+            boolean var091A67795636C5B7E20E47F6F889C23B_263822012 = (isUnderLimit(sentList, smsWaiting));
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(appName.getTaint());
+        addTaint(smsWaiting);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2031545100 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2031545100;
         // ---------- Original Method ----------
         //synchronized (mSmsStamp) {
             //removeExpiredTimestamps();
@@ -79,8 +81,7 @@ public class SmsUsageMonitor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.539 -0400", hash_original_method = "0C89C3F43D481EBAFC32AEEAE6183BD3", hash_generated_method = "635D2BEF4283F1572E9A114FED3BD3FA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.623 -0400", hash_original_method = "0C89C3F43D481EBAFC32AEEAE6183BD3", hash_generated_method = "8B5FD7C61DA08EEFCCB6EF36B71C89A4")
     private void removeExpiredTimestamps() {
         long beginCheckPeriod;
         beginCheckPeriod = System.currentTimeMillis() - mCheckPeriod;
@@ -88,14 +89,14 @@ public class SmsUsageMonitor {
             Iterator<Map.Entry<String, ArrayList<Long>>> iter;
             iter = mSmsStamp.entrySet().iterator();
             {
-                boolean var8492AE2C695A56B730381A28B8BA3F6D_1467419288 = (iter.hasNext());
+                boolean var8492AE2C695A56B730381A28B8BA3F6D_106909545 = (iter.hasNext());
                 {
                     Map.Entry<String, ArrayList<Long>> entry;
                     entry = iter.next();
                     ArrayList<Long> oldList;
                     oldList = entry.getValue();
                     {
-                        boolean var6B058BCE74663B8CCC2D65D7403CD832_965930922 = (oldList.isEmpty() || oldList.get(oldList.size() - 1) < beginCheckPeriod);
+                        boolean var6B058BCE74663B8CCC2D65D7403CD832_1741033876 = (oldList.isEmpty() || oldList.get(oldList.size() - 1) < beginCheckPeriod);
                         {
                             iter.remove();
                         } //End block
@@ -118,24 +119,21 @@ public class SmsUsageMonitor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.540 -0400", hash_original_method = "FED252455D0F59F9866280B84F72F407", hash_generated_method = "A99C8C8216E04F1E3C6256B9BE0F02A0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.624 -0400", hash_original_method = "FED252455D0F59F9866280B84F72F407", hash_generated_method = "1440A2EC6F90053B199CD92905F2A5BE")
     private boolean isUnderLimit(ArrayList<Long> sent, int smsWaiting) {
-        dsTaint.addTaint(sent.dsTaint);
-        dsTaint.addTaint(smsWaiting);
         Long ct;
         ct = System.currentTimeMillis();
         long beginCheckPeriod;
         beginCheckPeriod = ct - mCheckPeriod;
         Log.d(TAG, "SMS send size=" + sent.size() + " time=" + ct);
         {
-            boolean var5667D581C2F5DFCA02DEFCCDFE1CFB02_1898628633 = (!sent.isEmpty() && sent.get(0) < beginCheckPeriod);
+            boolean var5667D581C2F5DFCA02DEFCCDFE1CFB02_484949171 = (!sent.isEmpty() && sent.get(0) < beginCheckPeriod);
             {
                 sent.remove(0);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varDFD6A4FA9327973346539BB265A37305_1670273906 = ((sent.size() + smsWaiting) <= mMaxAllowed);
+            boolean varDFD6A4FA9327973346539BB265A37305_1759963563 = ((sent.size() + smsWaiting) <= mMaxAllowed);
             {
                 {
                     int i;
@@ -146,7 +144,10 @@ public class SmsUsageMonitor {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(sent.getTaint());
+        addTaint(smsWaiting);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1067268048 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1067268048;
         // ---------- Original Method ----------
         //Long ct = System.currentTimeMillis();
         //long beginCheckPeriod = ct - mCheckPeriod;
@@ -164,8 +165,14 @@ public class SmsUsageMonitor {
     }
 
     
-    private static final String TAG = "SmsStorageMonitor";
-    private static final int DEFAULT_SMS_CHECK_PERIOD = 3600000;
-    private static final int DEFAULT_SMS_MAX_COUNT = 100;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.624 -0400", hash_original_field = "35B10AB3CDA09F3B2F3131AD6DBAA325", hash_generated_field = "3D20442FA204AFA6A0E06C1C02874F18")
+
+    private static String TAG = "SmsStorageMonitor";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.624 -0400", hash_original_field = "86C04E306979E0A3ED6C10E477ABFEDA", hash_generated_field = "5185F3B2E79B05237C76E54CB8486A17")
+
+    private static int DEFAULT_SMS_CHECK_PERIOD = 3600000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.624 -0400", hash_original_field = "5B383FE3921C2BBCDC2AD6E7B1F1197C", hash_generated_field = "19B0A01E258D04139A95054354C2C76B")
+
+    private static int DEFAULT_SMS_MAX_COUNT = 100;
 }
 

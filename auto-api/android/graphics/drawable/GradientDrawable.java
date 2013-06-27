@@ -29,43 +29,68 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 
 public class GradientDrawable extends Drawable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.605 -0400", hash_original_field = "7A93543FFB4741C41CAFDAC91FC3D12D", hash_generated_field = "F8FC523C37AC4F355E3A52C1D395B9CA")
+
     private GradientState mGradientState;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.605 -0400", hash_original_field = "90FF0E236CECDE0BABB7F37F4CFBC91F", hash_generated_field = "8CCF9C9412E7832608B259DB16DC0EB2")
+
     private Paint mFillPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.606 -0400", hash_original_field = "9AC2544B5F9B8F60AA16656C94B57A8E", hash_generated_field = "017017AA9AF1862D01EDDEC3A7AB7775")
+
     private Rect mPadding;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.606 -0400", hash_original_field = "6DCD2896FB1BA879F4BA417938FBF583", hash_generated_field = "9FB471477563645F319E80BA6D6ED905")
+
     private Paint mStrokePaint;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.606 -0400", hash_original_field = "8B2ED40D22A4C08C94CFC40B6DE589B8", hash_generated_field = "5D6D299C9DDEDCCB11EFFA1C147C3DF6")
+
     private ColorFilter mColorFilter;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.606 -0400", hash_original_field = "964D4F44E49C213AB7292F7E0E37C642", hash_generated_field = "3503E015FBD1508491B2F18FDC5DAF9F")
+
     private int mAlpha = 0xFF;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.606 -0400", hash_original_field = "39F3EFC8FE0445AB43D96028DA65CB34", hash_generated_field = "B8E34DBCCD5A9935E92ED2F73AF5F8B7")
+
     private boolean mDither;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.606 -0400", hash_original_field = "DBC2DDFC3AA0B07663EC95BA4102B76C", hash_generated_field = "7CD81E52C80B218AD927A0157374D5AD")
+
     private Path mPath = new Path();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.607 -0400", hash_original_field = "995C0FB7B00A0A1E82DD4C30778697FC", hash_generated_field = "E080B89EC7A364FFC5B71FB812B38393")
+
     private RectF mRect = new RectF();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.607 -0400", hash_original_field = "5870A18F50D7C3B8DE43F07B2A8E2BC8", hash_generated_field = "A6ACFEE6A39EC6759FF9E6489D52AFB1")
+
     private Paint mLayerPaint;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.607 -0400", hash_original_field = "0AC65B89ECE55C9155BA940BC20ABBBA", hash_generated_field = "82A739DA370CC4D4C339BB7C440434C4")
+
     private boolean mRectIsDirty;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.607 -0400", hash_original_field = "9FB80C30383848C8D006680B5F3BDAF9", hash_generated_field = "5CA5A1EF3CAA45117BCACBC34EF05952")
+
     private boolean mMutated;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.608 -0400", hash_original_field = "9333534E7B66A8D431355B79E08642AE", hash_generated_field = "FB9692F405D4B8918DCE56B27CC81A6B")
+
     private Path mRingPath;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.608 -0400", hash_original_field = "9952E276AFE35FE0B1FB7B2BDEB787AA", hash_generated_field = "EAB2B54D4BC3106764331272E438AA0A")
+
     private boolean mPathIsDirty = true;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.320 -0400", hash_original_method = "64287040FBFB7F81692AADB4245B0378", hash_generated_method = "78296307B8E83E1FC392EC6080C25EE7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public GradientDrawable() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.620 -0400", hash_original_method = "64287040FBFB7F81692AADB4245B0378", hash_generated_method = "78296307B8E83E1FC392EC6080C25EE7")
+    public  GradientDrawable() {
         this(new GradientState(Orientation.TOP_BOTTOM, null));
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.320 -0400", hash_original_method = "48FF7A4A9E39F0BE519CF2AE778248C7", hash_generated_method = "30E94B4DF9AE4A42FFF6AE55B8C90BDD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public GradientDrawable(Orientation orientation, int[] colors) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.620 -0400", hash_original_method = "48FF7A4A9E39F0BE519CF2AE778248C7", hash_generated_method = "9F2225174BB0A90F90F775B4D26A0910")
+    public  GradientDrawable(Orientation orientation, int[] colors) {
         this(new GradientState(orientation, colors));
-        dsTaint.addTaint(orientation.dsTaint);
-        dsTaint.addTaint(colors[0]);
+        addTaint(orientation.getTaint());
+        addTaint(colors[0]);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.320 -0400", hash_original_method = "11AB49F3A166C4EC986EE8723C09CE3C", hash_generated_method = "17FB1E8E03D9D8888E0C2C676DDA8710")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private GradientDrawable(GradientState state) {
-        dsTaint.addTaint(state.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.632 -0400", hash_original_method = "11AB49F3A166C4EC986EE8723C09CE3C", hash_generated_method = "EB17AAEC21D5CB5883C8C3AB3D6841B1")
+    private  GradientDrawable(GradientState state) {
+        mGradientState = state;
         initializeWithState(state);
         mRectIsDirty = true;
         // ---------- Original Method ----------
@@ -75,18 +100,18 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.321 -0400", hash_original_method = "0B8807A1903E03E118A45AC647AD9F24", hash_generated_method = "EF170CEA1CDF9ABC90517684B042BAD4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.654 -0400", hash_original_method = "0B8807A1903E03E118A45AC647AD9F24", hash_generated_method = "EA06C26C8BBF20A594432012B4E212AE")
     @Override
     public boolean getPadding(Rect padding) {
-        dsTaint.addTaint(padding.dsTaint);
         {
             padding.set(mPadding);
         } //End block
         {
-            boolean var26681595319194856AEB3747307B6E08_1927518956 = (super.getPadding(padding));
+            boolean var26681595319194856AEB3747307B6E08_982410766 = (super.getPadding(padding));
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(padding.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_626766203 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_626766203;
         // ---------- Original Method ----------
         //if (mPadding != null) {
             //padding.set(mPadding);
@@ -97,13 +122,12 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.321 -0400", hash_original_method = "71F948CC6AEC5EB6067752059DA33574", hash_generated_method = "996D9AA9996C3116E18878B2987B9C7A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.659 -0400", hash_original_method = "71F948CC6AEC5EB6067752059DA33574", hash_generated_method = "FCBE9193C12F25CC29BBDD2EEC566408")
     public void setCornerRadii(float[] radii) {
-        dsTaint.addTaint(radii[0]);
         mGradientState.setCornerRadii(radii);
         mPathIsDirty = true;
         invalidateSelf();
+        addTaint(radii[0]);
         // ---------- Original Method ----------
         //mGradientState.setCornerRadii(radii);
         //mPathIsDirty = true;
@@ -111,13 +135,12 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.321 -0400", hash_original_method = "AFB7C3E5AE7C3BBB28B141F7A3B472BE", hash_generated_method = "43767CB5CC58A30703769B6364F7A7CB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.660 -0400", hash_original_method = "AFB7C3E5AE7C3BBB28B141F7A3B472BE", hash_generated_method = "F22FBE70113DC36528EF20A07EA57260")
     public void setCornerRadius(float radius) {
-        dsTaint.addTaint(radius);
         mGradientState.setCornerRadius(radius);
         mPathIsDirty = true;
         invalidateSelf();
+        addTaint(radius);
         // ---------- Original Method ----------
         //mGradientState.setCornerRadius(radius);
         //mPathIsDirty = true;
@@ -125,24 +148,18 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.322 -0400", hash_original_method = "6A0F62EB2F02BD455327DA9DA2DD0568", hash_generated_method = "17906B2A0239ECB768D5540B48C956F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.661 -0400", hash_original_method = "6A0F62EB2F02BD455327DA9DA2DD0568", hash_generated_method = "B4F773A1BF847FFF8CF641E8B9C6EC52")
     public void setStroke(int width, int color) {
-        dsTaint.addTaint(color);
-        dsTaint.addTaint(width);
         setStroke(width, color, 0, 0);
+        addTaint(width);
+        addTaint(color);
         // ---------- Original Method ----------
         //setStroke(width, color, 0, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.322 -0400", hash_original_method = "F36B912577B048DA0236870F939930FC", hash_generated_method = "2428D0DEC3A2CB4A54E858D75D883B2C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.663 -0400", hash_original_method = "F36B912577B048DA0236870F939930FC", hash_generated_method = "700EC90209283DF1CB02115D7B94A462")
     public void setStroke(int width, int color, float dashWidth, float dashGap) {
-        dsTaint.addTaint(color);
-        dsTaint.addTaint(dashGap);
-        dsTaint.addTaint(dashWidth);
-        dsTaint.addTaint(width);
         mGradientState.setStroke(width, color, dashWidth, dashGap);
         {
             mStrokePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -157,6 +174,10 @@ public class GradientDrawable extends Drawable {
         } //End block
         mStrokePaint.setPathEffect(e);
         invalidateSelf();
+        addTaint(width);
+        addTaint(color);
+        addTaint(dashWidth);
+        addTaint(dashGap);
         // ---------- Original Method ----------
         //mGradientState.setStroke(width, color, dashWidth, dashGap);
         //if (mStrokePaint == null)  {
@@ -174,14 +195,13 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.323 -0400", hash_original_method = "DBF55AE12AFE7021A6EFA67946A43E31", hash_generated_method = "2D49269D3BC48D015E4FD139FBFE80B9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.678 -0400", hash_original_method = "DBF55AE12AFE7021A6EFA67946A43E31", hash_generated_method = "5FA98507D9A924147867D5A9D89417D1")
     public void setSize(int width, int height) {
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(width);
         mGradientState.setSize(width, height);
         mPathIsDirty = true;
         invalidateSelf();
+        addTaint(width);
+        addTaint(height);
         // ---------- Original Method ----------
         //mGradientState.setSize(width, height);
         //mPathIsDirty = true;
@@ -189,14 +209,13 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.323 -0400", hash_original_method = "70A303A49D3D529F927A8B25154245C2", hash_generated_method = "47A393BBE022BAE9B3D35261F04E57D6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.679 -0400", hash_original_method = "70A303A49D3D529F927A8B25154245C2", hash_generated_method = "D4D504E2107E4EA1E51D16F22F9DF437")
     public void setShape(int shape) {
-        dsTaint.addTaint(shape);
         mRingPath = null;
         mPathIsDirty = true;
         mGradientState.setShape(shape);
         invalidateSelf();
+        addTaint(shape);
         // ---------- Original Method ----------
         //mRingPath = null;
         //mPathIsDirty = true;
@@ -205,13 +224,12 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.323 -0400", hash_original_method = "18DB26B14B71A02370E6DE427E61924A", hash_generated_method = "8AC93C871A663B47DBC30F9006A54788")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.691 -0400", hash_original_method = "18DB26B14B71A02370E6DE427E61924A", hash_generated_method = "0D656E63F355DADB6011279EABB75D59")
     public void setGradientType(int gradient) {
-        dsTaint.addTaint(gradient);
         mGradientState.setGradientType(gradient);
         mRectIsDirty = true;
         invalidateSelf();
+        addTaint(gradient);
         // ---------- Original Method ----------
         //mGradientState.setGradientType(gradient);
         //mRectIsDirty = true;
@@ -219,14 +237,13 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.323 -0400", hash_original_method = "45A2D9788BC882B134EC764255BF8E5D", hash_generated_method = "4A840B96DC976FB1944E763755C67B1E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.697 -0400", hash_original_method = "45A2D9788BC882B134EC764255BF8E5D", hash_generated_method = "022B292683128C415AAABCEE5B536C2C")
     public void setGradientCenter(float x, float y) {
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
         mGradientState.setGradientCenter(x, y);
         mRectIsDirty = true;
         invalidateSelf();
+        addTaint(x);
+        addTaint(y);
         // ---------- Original Method ----------
         //mGradientState.setGradientCenter(x, y);
         //mRectIsDirty = true;
@@ -234,13 +251,12 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.324 -0400", hash_original_method = "C7CA2F8177799FD0AFA978CBCB22DF14", hash_generated_method = "5C6D1E636E5FF660BCB2AAFD6B36137C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.698 -0400", hash_original_method = "C7CA2F8177799FD0AFA978CBCB22DF14", hash_generated_method = "20562707949A618B0A95C187F377DF41")
     public void setGradientRadius(float gradientRadius) {
-        dsTaint.addTaint(gradientRadius);
         mGradientState.setGradientRadius(gradientRadius);
         mRectIsDirty = true;
         invalidateSelf();
+        addTaint(gradientRadius);
         // ---------- Original Method ----------
         //mGradientState.setGradientRadius(gradientRadius);
         //mRectIsDirty = true;
@@ -248,10 +264,8 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.324 -0400", hash_original_method = "76C6B5A7FB76D454B2D8C7EAA5B46C4F", hash_generated_method = "31772AF55B15894FB5DC6280721D24D4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.699 -0400", hash_original_method = "76C6B5A7FB76D454B2D8C7EAA5B46C4F", hash_generated_method = "2E9C7352FC465108C4CB664D03418E5C")
     public void setUseLevel(boolean useLevel) {
-        dsTaint.addTaint(useLevel);
         mGradientState.mUseLevel = useLevel;
         mRectIsDirty = true;
         invalidateSelf();
@@ -262,26 +276,24 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.324 -0400", hash_original_method = "0886E73CB45EE282B3AFC0BE37F5BE6C", hash_generated_method = "BEC4CD90B03396CD59CD22F5D42CDFCA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.700 -0400", hash_original_method = "0886E73CB45EE282B3AFC0BE37F5BE6C", hash_generated_method = "474C9787EE80607A9BA2B3CD8964EA50")
     private int modulateAlpha(int alpha) {
-        dsTaint.addTaint(alpha);
         int scale;
         scale = mAlpha + (mAlpha >> 7);
-        return dsTaint.getTaintInt();
+        addTaint(alpha);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1053062021 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1053062021;
         // ---------- Original Method ----------
         //int scale = mAlpha + (mAlpha >> 7);
         //return alpha * scale >> 8;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.326 -0400", hash_original_method = "ACDDE907D9101C7CDDBBB954BA4F617E", hash_generated_method = "F6155539A9F786C9C544F66DDD8CC9D9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.742 -0400", hash_original_method = "ACDDE907D9101C7CDDBBB954BA4F617E", hash_generated_method = "1DA59EF15CF47607C939D05A2D77079E")
     @Override
     public void draw(Canvas canvas) {
-        dsTaint.addTaint(canvas.dsTaint);
         {
-            boolean varBA9DE832C2A11F9FBBE974DC63DFFCC8_625636655 = (!ensureValidRect());
+            boolean varBA9DE832C2A11F9FBBE974DC63DFFCC8_2127254108 = (!ensureValidRect());
         } //End collapsed parenthetic
         int prevFillAlpha;
         prevFillAlpha = mFillPaint.getAlpha();
@@ -396,15 +408,17 @@ public class GradientDrawable extends Drawable {
                 mStrokePaint.setAlpha(prevStrokeAlpha);
             } //End block
         } //End block
+        addTaint(canvas.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.327 -0400", hash_original_method = "FA54FBF5F964BB48C4F923A57A9FF840", hash_generated_method = "0E06A68AC31BB429BFE4131599A1EF3D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.779 -0400", hash_original_method = "FA54FBF5F964BB48C4F923A57A9FF840", hash_generated_method = "8DB3E2B104E96AC6E0E14DF603AF52AF")
     private Path buildRing(GradientState st) {
-        dsTaint.addTaint(st.dsTaint);
+        Path varB4EAC82CA7396A68D541C85D26508E83_1872970145 = null; //Variable for return #1
+        Path varB4EAC82CA7396A68D541C85D26508E83_875251701 = null; //Variable for return #2
+        varB4EAC82CA7396A68D541C85D26508E83_1872970145 = mRingPath;
         mPathIsDirty = false;
         float sweep;
         sweep = (360.0f * getLevel() / 10000.0f);
@@ -446,19 +460,30 @@ public class GradientDrawable extends Drawable {
             ringPath.addOval(bounds, Path.Direction.CW);
             ringPath.addOval(innerBounds, Path.Direction.CCW);
         } //End block
-        return (Path)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_875251701 = ringPath;
+        addTaint(st.getTaint());
+        Path varA7E53CE21691AB073D9660D615818899_537694338; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_537694338 = varB4EAC82CA7396A68D541C85D26508E83_1872970145;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_537694338 = varB4EAC82CA7396A68D541C85D26508E83_875251701;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_537694338.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_537694338;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.327 -0400", hash_original_method = "A6E3DC666A9DC913CF167BAEE3BA3755", hash_generated_method = "4DEE7FD8814C8DBFC342F744BE5533A8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.780 -0400", hash_original_method = "A6E3DC666A9DC913CF167BAEE3BA3755", hash_generated_method = "E2AFD499F4A73DF66FCF79C1BF8F2229")
     public void setColor(int argb) {
-        dsTaint.addTaint(argb);
         mGradientState.setSolidColor(argb);
         mFillPaint.setColor(argb);
         invalidateSelf();
+        addTaint(argb);
         // ---------- Original Method ----------
         //mGradientState.setSolidColor(argb);
         //mFillPaint.setColor(argb);
@@ -466,25 +491,24 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.327 -0400", hash_original_method = "3865DA4989774EEF9AAAD48E0098B1D2", hash_generated_method = "E787BAEB5231CA9C7767D6919D598B03")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.781 -0400", hash_original_method = "3865DA4989774EEF9AAAD48E0098B1D2", hash_generated_method = "03F01E02C05AD1A1A164B293F3928361")
     @Override
     public int getChangingConfigurations() {
-        int var1B39BFEFC75CC9A4ED8324DAA238E57F_355620139 = (super.getChangingConfigurations()
+        int var1B39BFEFC75CC9A4ED8324DAA238E57F_385362198 = (super.getChangingConfigurations()
                 | mGradientState.mChangingConfigurations);
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1232403221 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1232403221;
         // ---------- Original Method ----------
         //return super.getChangingConfigurations()
                 //| mGradientState.mChangingConfigurations;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.328 -0400", hash_original_method = "5182E1ED546D38ED0370680C356A26EE", hash_generated_method = "307AB80D6D8E25CF130984F302B62686")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.781 -0400", hash_original_method = "5182E1ED546D38ED0370680C356A26EE", hash_generated_method = "9B771BA6D3F8B2E7E865EBADFD3BB5CB")
     @Override
     public void setAlpha(int alpha) {
-        dsTaint.addTaint(alpha);
         {
+            mAlpha = alpha;
             invalidateSelf();
         } //End block
         // ---------- Original Method ----------
@@ -495,12 +519,11 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.328 -0400", hash_original_method = "9DFE5D886E6229E65D3F438DE9F28624", hash_generated_method = "F9FD182C53109E365D35A920B113A01E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.782 -0400", hash_original_method = "9DFE5D886E6229E65D3F438DE9F28624", hash_generated_method = "E96FC7737BDCFE119580C5267A1996E3")
     @Override
     public void setDither(boolean dither) {
-        dsTaint.addTaint(dither);
         {
+            mDither = dither;
             invalidateSelf();
         } //End block
         // ---------- Original Method ----------
@@ -511,12 +534,11 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.328 -0400", hash_original_method = "0D338CBBF9E8A18D18E6BF68648024B0", hash_generated_method = "3E87C369D0FF8F63CC695D513518D282")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.783 -0400", hash_original_method = "0D338CBBF9E8A18D18E6BF68648024B0", hash_generated_method = "51C58ED617FC753572A6A9D0C9CB4655")
     @Override
     public void setColorFilter(ColorFilter cf) {
-        dsTaint.addTaint(cf.dsTaint);
         {
+            mColorFilter = cf;
             invalidateSelf();
         } //End block
         // ---------- Original Method ----------
@@ -527,26 +549,25 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.328 -0400", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "ABA86D69E3485D7E8F9A1E6F7D7F161F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.783 -0400", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "EBC24A25A12FEA87206C187D261B333E")
     @Override
     public int getOpacity() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_383478468 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_383478468;
         // ---------- Original Method ----------
         //return PixelFormat.TRANSLUCENT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.329 -0400", hash_original_method = "8123137F2C4F03B6AAC99B13B8B696DA", hash_generated_method = "545CC7DF69CA7C1C6D248962D534FA03")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.803 -0400", hash_original_method = "8123137F2C4F03B6AAC99B13B8B696DA", hash_generated_method = "5580BDE6A3C74A2FE32C5823D03C8EB0")
     @Override
     protected void onBoundsChange(Rect r) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(r.dsTaint);
         super.onBoundsChange(r);
         mRingPath = null;
         mPathIsDirty = true;
         mRectIsDirty = true;
+        addTaint(r.getTaint());
         // ---------- Original Method ----------
         //super.onBoundsChange(r);
         //mRingPath = null;
@@ -555,17 +576,17 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.329 -0400", hash_original_method = "394C06781A7C1BB568DD9A62F4177986", hash_generated_method = "FBC133FA5D2BE192EDCCFE382E30AD5F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.810 -0400", hash_original_method = "394C06781A7C1BB568DD9A62F4177986", hash_generated_method = "A97B8CE7552039B571A22D5CBD2DD2A4")
     @Override
     protected boolean onLevelChange(int level) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(level);
         super.onLevelChange(level);
         mRectIsDirty = true;
         mPathIsDirty = true;
         invalidateSelf();
-        return dsTaint.getTaintBoolean();
+        addTaint(level);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1469043457 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1469043457;
         // ---------- Original Method ----------
         //super.onLevelChange(level);
         //mRectIsDirty = true;
@@ -575,8 +596,7 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.333 -0400", hash_original_method = "A926FB4015A038016094FA9870012FFA", hash_generated_method = "AAC5D5BC75D12A0CDD4470F4E359BF05")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:14.892 -0400", hash_original_method = "A926FB4015A038016094FA9870012FFA", hash_generated_method = "EDC80A0A6FDC7D73126D1384EBA64B32")
     private boolean ensureValidRect() {
         {
             mRectIsDirty = false;
@@ -747,21 +767,18 @@ public class GradientDrawable extends Drawable {
                 } //End block
             } //End block
         } //End block
-        boolean var30E025E3B836A2C788D549C3B113FC2D_14940037 = (!mRect.isEmpty());
-        return dsTaint.getTaintBoolean();
+        boolean var30E025E3B836A2C788D549C3B113FC2D_1514215868 = (!mRect.isEmpty());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_648943536 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_648943536;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.340 -0400", hash_original_method = "E432865D544D266B015263529D7B28D5", hash_generated_method = "F21137BB44A3A931912477569C6AF7E8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.023 -0400", hash_original_method = "E432865D544D266B015263529D7B28D5", hash_generated_method = "C1ECF878A7B1644C8C695AD4AB6FC45F")
     @Override
     public void inflate(Resources r, XmlPullParser parser,
             AttributeSet attrs) throws XmlPullParserException, IOException {
-        dsTaint.addTaint(r.dsTaint);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(parser.dsTaint);
         GradientState st;
         st = mGradientState;
         TypedArray a;
@@ -799,14 +816,14 @@ public class GradientDrawable extends Drawable {
         innerDepth = parser.getDepth() + 1;
         int depth;
         {
-            boolean varDA8A11B5A0155BE87587061A0D1D99DC_238748768 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
+            boolean varDA8A11B5A0155BE87587061A0D1D99DC_1744585117 = ((type=parser.next()) != XmlPullParser.END_DOCUMENT
                && ((depth=parser.getDepth()) >= innerDepth
                        || type != XmlPullParser.END_TAG));
             {
                 String name;
                 name = parser.getName();
                 {
-                    boolean var3319812AA088443FD1D3A5BB020CC733_1574323088 = (name.equals("size"));
+                    boolean var3319812AA088443FD1D3A5BB020CC733_1281312526 = (name.equals("size"));
                     {
                         a = r.obtainAttributes(attrs,
                         com.android.internal.R.styleable.GradientDrawableSize);
@@ -820,7 +837,7 @@ public class GradientDrawable extends Drawable {
                         setSize(width, height);
                     } //End block
                     {
-                        boolean var13D3F8D713AACA51C37FD91C445A32D1_1403231231 = (name.equals("gradient"));
+                        boolean var13D3F8D713AACA51C37FD91C445A32D1_431128114 = (name.equals("gradient"));
                         {
                             a = r.obtainAttributes(attrs,
                         com.android.internal.R.styleable.GradientDrawableGradient);
@@ -921,7 +938,7 @@ public class GradientDrawable extends Drawable {
                             } //End block
                         } //End block
                         {
-                            boolean var77525D664C592F28B26A6CD8C67737E6_379736677 = (name.equals("solid"));
+                            boolean var77525D664C592F28B26A6CD8C67737E6_1405711556 = (name.equals("solid"));
                             {
                                 a = r.obtainAttributes(attrs,
                         com.android.internal.R.styleable.GradientDrawableSolid);
@@ -932,7 +949,7 @@ public class GradientDrawable extends Drawable {
                                 setColor(argb);
                             } //End block
                             {
-                                boolean varC0495157E2DDB9B86006CF2755D3E0C5_1243298096 = (name.equals("stroke"));
+                                boolean varC0495157E2DDB9B86006CF2755D3E0C5_1096354166 = (name.equals("stroke"));
                                 {
                                     a = r.obtainAttributes(attrs,
                         com.android.internal.R.styleable.GradientDrawableStroke);
@@ -957,7 +974,7 @@ public class GradientDrawable extends Drawable {
                                     a.recycle();
                                 } //End block
                                 {
-                                    boolean varC5E3FCBC94B952A08166FFFCCC10F540_467142556 = (name.equals("corners"));
+                                    boolean varC5E3FCBC94B952A08166FFFCCC10F540_1540666613 = (name.equals("corners"));
                                     {
                                         a = r.obtainAttributes(attrs,
                         com.android.internal.R.styleable.DrawableCorners);
@@ -988,7 +1005,7 @@ public class GradientDrawable extends Drawable {
                                         a.recycle();
                                     } //End block
                                     {
-                                        boolean var73614EBC6E52B1FB538E626BACD291BD_378502398 = (name.equals("padding"));
+                                        boolean var73614EBC6E52B1FB538E626BACD291BD_81576824 = (name.equals("padding"));
                                         {
                                             a = r.obtainAttributes(attrs,
                         com.android.internal.R.styleable.GradientDrawablePadding);
@@ -1012,6 +1029,9 @@ public class GradientDrawable extends Drawable {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
+        addTaint(r.getTaint());
+        addTaint(parser.getTaint());
+        addTaint(attrs.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -1028,51 +1048,55 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.341 -0400", hash_original_method = "312782D78F9C32949C3B038C307C5C9C", hash_generated_method = "0BC26DCA935847321041FF634870B8DB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.027 -0400", hash_original_method = "312782D78F9C32949C3B038C307C5C9C", hash_generated_method = "878BC24EF8A019F340617E6290F9DFDC")
     @Override
     public int getIntrinsicWidth() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_488782138 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_488782138;
         // ---------- Original Method ----------
         //return mGradientState.mWidth;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.341 -0400", hash_original_method = "A19A1B01925414A773BB5AE9FBB4894A", hash_generated_method = "7E116AB6D07CEA7875F276B8AE8280E1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.027 -0400", hash_original_method = "A19A1B01925414A773BB5AE9FBB4894A", hash_generated_method = "2FB4BDDA5F25111EE0218E61EFDBEBAF")
     @Override
     public int getIntrinsicHeight() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200083026 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200083026;
         // ---------- Original Method ----------
         //return mGradientState.mHeight;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.341 -0400", hash_original_method = "DD96D81CE576A9B12867099611327831", hash_generated_method = "3D24DC3E63D485C4CB942E50B02D2384")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.031 -0400", hash_original_method = "DD96D81CE576A9B12867099611327831", hash_generated_method = "0DA1D29DBC088966F871AA6AEF8C0E0F")
     @Override
     public ConstantState getConstantState() {
+        ConstantState varB4EAC82CA7396A68D541C85D26508E83_1458618217 = null; //Variable for return #1
         mGradientState.mChangingConfigurations = getChangingConfigurations();
-        return (ConstantState)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1458618217 = mGradientState;
+        varB4EAC82CA7396A68D541C85D26508E83_1458618217.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1458618217;
         // ---------- Original Method ----------
         //mGradientState.mChangingConfigurations = getChangingConfigurations();
         //return mGradientState;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.342 -0400", hash_original_method = "D4EF431721248824E2CCEA5FA3C5FD74", hash_generated_method = "3FFF10952F4862DF0FB95BAFEE29537A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.049 -0400", hash_original_method = "D4EF431721248824E2CCEA5FA3C5FD74", hash_generated_method = "5D8EAB9E639AB53228697517D3CBF179")
     @Override
     public Drawable mutate() {
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_14819838 = null; //Variable for return #1
         {
-            boolean varC94B19053599294E7944C8C841976773_64227982 = (!mMutated && super.mutate() == this);
+            boolean varC94B19053599294E7944C8C841976773_394099127 = (!mMutated && super.mutate() == this);
             {
                 mGradientState = new GradientState(mGradientState);
                 initializeWithState(mGradientState);
                 mMutated = true;
             } //End block
         } //End collapsed parenthetic
-        return (Drawable)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_14819838 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_14819838.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_14819838;
         // ---------- Original Method ----------
         //if (!mMutated && super.mutate() == this) {
             //mGradientState = new GradientState(mGradientState);
@@ -1083,10 +1107,8 @@ public class GradientDrawable extends Drawable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.342 -0400", hash_original_method = "7FA7686AE1E8AEF57BBE0E6293CFBCA1", hash_generated_method = "928B4C683C2774960602711954C4721D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.066 -0400", hash_original_method = "7FA7686AE1E8AEF57BBE0E6293CFBCA1", hash_generated_method = "77CA83EE5255EEBCC302622A15BBC8F0")
     private void initializeWithState(GradientState state) {
-        dsTaint.addTaint(state.dsTaint);
         {
             mFillPaint.setColor(state.mSolidColor);
         } //End block
@@ -1135,59 +1157,111 @@ public class GradientDrawable extends Drawable {
 
     
     final static class GradientState extends ConstantState {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.067 -0400", hash_original_field = "276E0645C4E2084773D0EB8C5576428C", hash_generated_field = "0AA9CE94E21E2967183254C710B3C74D")
+
         public int mChangingConfigurations;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.067 -0400", hash_original_field = "C6B10B6E8FCFBBD6158DCF7BAF067E37", hash_generated_field = "30E32F1749CDDDAEE9911840601071DF")
+
         public int mShape = RECTANGLE;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.067 -0400", hash_original_field = "5676A2E63CEC3653FC9C82DADC4AF123", hash_generated_field = "56AB8E99AC45CB5CF4856C66FC6C47BB")
+
         public int mGradient = LINEAR_GRADIENT;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.067 -0400", hash_original_field = "7EA67827B94D10D1A4B368659EA63B71", hash_generated_field = "5AAEB1A21C682D9B78B733C0CAC81941")
+
         public Orientation mOrientation;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.067 -0400", hash_original_field = "F5B754067786840AA79148E1DA0BE95F", hash_generated_field = "3DBFAFBF2A210B2DCF4FE4AD0EE5F8A6")
+
         public int[] mColors;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.067 -0400", hash_original_field = "6CF1BB39416B1F09EF9D4E55A7941DD8", hash_generated_field = "173AA4B8B328A9892BF919E827149210")
+
         public int[] mTempColors;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.067 -0400", hash_original_field = "661C7BCF2E48C776BC9666E0EB9575F4", hash_generated_field = "43B2C9F377E90B066E4C6E0D502B88B5")
+
         public float[] mTempPositions;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.067 -0400", hash_original_field = "26068CDE4606F66C00056226111A3D61", hash_generated_field = "0691E3BE2D5AF1DE0154EF51BF6FCC3F")
+
         public float[] mPositions;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.068 -0400", hash_original_field = "0667246F9F18FDB890097AB34879167E", hash_generated_field = "17699B1A481FD58663277C59922F1CEC")
+
         public boolean mHasSolidColor;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.068 -0400", hash_original_field = "F761CF39D7B955BCB3910DD42D5B01E4", hash_generated_field = "6D0CD94C8238CE1C7956AFFDD29448AB")
+
         public int mSolidColor;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.068 -0400", hash_original_field = "F5273FFC49F0A2E75F684E1694B3B99D", hash_generated_field = "FBAAA34191259B10F232ADA2E3E6394F")
+
         public int mStrokeWidth = -1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.068 -0400", hash_original_field = "5795B8DC82C65556442F6200AD3A0EFC", hash_generated_field = "419129050F20C5FB9C65BFF93C429846")
+
         public int mStrokeColor;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.068 -0400", hash_original_field = "E3F49F22E23DB70A5F66B08B231C5462", hash_generated_field = "E26B465C065311CE0DE125D881B1D6E4")
+
         public float mStrokeDashWidth;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.068 -0400", hash_original_field = "A9F8F629DF69B895A0A45B9469988030", hash_generated_field = "B7852ABE2A09DB5F018447DAFA4BEEA9")
+
         public float mStrokeDashGap;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.068 -0400", hash_original_field = "B6EC135CB02066C1F33BA594902CBCC5", hash_generated_field = "17C7B79DFE9D3EEDD5E13C8AE4106B7D")
+
         public float mRadius;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.068 -0400", hash_original_field = "8140156D1EB5C39D070BB9A29E414C53", hash_generated_field = "0DA8B2C59E5420343AB30AE4DAA09601")
+
         public float[] mRadiusArray;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.068 -0400", hash_original_field = "9AC2544B5F9B8F60AA16656C94B57A8E", hash_generated_field = "8BBE9A045863D1F1F36EF813DE381D19")
+
         public Rect mPadding;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.068 -0400", hash_original_field = "A95631D81A2F2A7712CA1BACF8C3ED06", hash_generated_field = "1F9F6152246BD7DF79E6A284B49AF5F7")
+
         public int mWidth = -1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.069 -0400", hash_original_field = "B3AC750C72790F3A16FDCF47C86F48B7", hash_generated_field = "3A8CC26D109E69BFF346846D33EDE147")
+
         public int mHeight = -1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.071 -0400", hash_original_field = "1447A3152E9A5913C6245E29FDB204D1", hash_generated_field = "EB439DDC162B134FDA45E4F31A401D74")
+
         public float mInnerRadiusRatio;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.071 -0400", hash_original_field = "AD2C3563C09F6E98C0E761B5139A13A9", hash_generated_field = "39143D03DDE6F90F181E5B5DD3A18D8A")
+
         public float mThicknessRatio;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.071 -0400", hash_original_field = "731FB099D813D36E5B5100327955DDC0", hash_generated_field = "4DAAD7CE805773321F0C839951BF2F2D")
+
         public int mInnerRadius;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.072 -0400", hash_original_field = "504B9C20E398FD3A7D439D846A6CD818", hash_generated_field = "6358B57C3CC1F35B6E87ABD152B05898")
+
         public int mThickness;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.072 -0400", hash_original_field = "E23468CE053BA9207F87E59A2E6FAF8E", hash_generated_field = "5320CC7D83EC889F3C8D0197A0A7D909")
+
         private float mCenterX = 0.5f;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.072 -0400", hash_original_field = "E67B30AFFEB9530950B311F9AE35117B", hash_generated_field = "F307C555105E507E98EC0E358F605D84")
+
         private float mCenterY = 0.5f;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.072 -0400", hash_original_field = "CFEBBA7E330C7A3AC631943D5B123D20", hash_generated_field = "B9F1B6CC2ED8A4CB332BB75E0FD2137D")
+
         private float mGradientRadius = 0.5f;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.073 -0400", hash_original_field = "60A954EDC3ADF7263D111F1071671693", hash_generated_field = "5175CF60B12798080A42C69647993770")
+
         private boolean mUseLevel;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.073 -0400", hash_original_field = "C95C1388DC880DCBF9DACF9BC48190A8", hash_generated_field = "61E410A7B6997232E247B7717F217062")
+
         private boolean mUseLevelForShape;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.342 -0400", hash_original_method = "9C4B8156D5998AA4F070091BFAC51297", hash_generated_method = "36EA0AD2FEF9D7DF957604ED73351F6F")
-        @DSModeled(DSC.SAFE)
-         GradientState() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.073 -0400", hash_original_method = "9C4B8156D5998AA4F070091BFAC51297", hash_generated_method = "36EA0AD2FEF9D7DF957604ED73351F6F")
+          GradientState() {
             mOrientation = Orientation.TOP_BOTTOM;
             // ---------- Original Method ----------
             //mOrientation = Orientation.TOP_BOTTOM;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.343 -0400", hash_original_method = "D56C041244D40E3233BE0185764F984A", hash_generated_method = "14B5405AF90FD00854F0C9DAAC88B90F")
-        @DSModeled(DSC.SAFE)
-         GradientState(Orientation orientation, int[] colors) {
-            dsTaint.addTaint(orientation.dsTaint);
-            dsTaint.addTaint(colors[0]);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.088 -0400", hash_original_method = "D56C041244D40E3233BE0185764F984A", hash_generated_method = "DCD98CC869C46D3675D13FDE4D8B9C1F")
+          GradientState(Orientation orientation, int[] colors) {
+            mOrientation = orientation;
+            mColors = colors;
             // ---------- Original Method ----------
             //mOrientation = orientation;
             //mColors = colors;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.344 -0400", hash_original_method = "E9F630A8A3449D4E0942DD92A53A8789", hash_generated_method = "1BD8CACC5580193E6563E06DCC5D8686")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public GradientState(GradientState state) {
-            dsTaint.addTaint(state.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.096 -0400", hash_original_method = "E9F630A8A3449D4E0942DD92A53A8789", hash_generated_method = "FA71A05B2C53DD8A42D023CCB0AA7AFA")
+        public  GradientState(GradientState state) {
             mChangingConfigurations = state.mChangingConfigurations;
             mShape = state.mShape;
             mGradient = state.mGradient;
@@ -1227,73 +1301,71 @@ public class GradientDrawable extends Drawable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.344 -0400", hash_original_method = "995801C56CB4C9E6715A12BAA40CCB03", hash_generated_method = "375C6957B40A8B2BB54FE8F68AB10FAF")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.111 -0400", hash_original_method = "995801C56CB4C9E6715A12BAA40CCB03", hash_generated_method = "C688F69364CD3708026A42408AE3D53F")
         @Override
         public Drawable newDrawable() {
-            Drawable varF587ED15A3D687BB8713586B3822D8D1_549804291 = (new GradientDrawable(this));
-            return (Drawable)dsTaint.getTaint();
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_1550109734 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1550109734 = new GradientDrawable(this);
+            varB4EAC82CA7396A68D541C85D26508E83_1550109734.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1550109734;
             // ---------- Original Method ----------
             //return new GradientDrawable(this);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.344 -0400", hash_original_method = "C54DA0CD853A4A5864DFD734D15AF82F", hash_generated_method = "FC234BA1468E2432044E3F2173851DB5")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.117 -0400", hash_original_method = "C54DA0CD853A4A5864DFD734D15AF82F", hash_generated_method = "4F7D296D87CEA44235A3D3B70CD4E990")
         @Override
         public Drawable newDrawable(Resources res) {
-            dsTaint.addTaint(res.dsTaint);
-            Drawable varF587ED15A3D687BB8713586B3822D8D1_1114245372 = (new GradientDrawable(this));
-            return (Drawable)dsTaint.getTaint();
+            Drawable varB4EAC82CA7396A68D541C85D26508E83_818851470 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_818851470 = new GradientDrawable(this);
+            addTaint(res.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_818851470.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_818851470;
             // ---------- Original Method ----------
             //return new GradientDrawable(this);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.344 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "36011B0CFA5B1C48E438EB66BB35159E")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.125 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "D05F27330975E47085EB2CBAD8BCBD22")
         @Override
         public int getChangingConfigurations() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1945796186 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1945796186;
             // ---------- Original Method ----------
             //return mChangingConfigurations;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.345 -0400", hash_original_method = "0F10CA732F07DD9FE38CDA7CBCDABA95", hash_generated_method = "7B76E2273885F0DC6D3B0502E0FD65AB")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.126 -0400", hash_original_method = "0F10CA732F07DD9FE38CDA7CBCDABA95", hash_generated_method = "A3BF6B156577AD7EA2864200A6B2814C")
         public void setShape(int shape) {
-            dsTaint.addTaint(shape);
+            mShape = shape;
             // ---------- Original Method ----------
             //mShape = shape;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.345 -0400", hash_original_method = "6060B2E1C6E57F715C4E87E13018C121", hash_generated_method = "3E98AE1B46522413D5465BCB56B828B8")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.126 -0400", hash_original_method = "6060B2E1C6E57F715C4E87E13018C121", hash_generated_method = "3AF067B4A790D8213658929FBB0E68D9")
         public void setGradientType(int gradient) {
-            dsTaint.addTaint(gradient);
+            mGradient = gradient;
             // ---------- Original Method ----------
             //mGradient = gradient;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.345 -0400", hash_original_method = "90316D628B1BD1AAC4CD928A74CE9FD1", hash_generated_method = "DE906B42F6B9F05C8C7D60C857D74C8F")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.127 -0400", hash_original_method = "90316D628B1BD1AAC4CD928A74CE9FD1", hash_generated_method = "4D02E3166FD3347AE6D9D6E0C8FEC8F1")
         public void setGradientCenter(float x, float y) {
-            dsTaint.addTaint(y);
-            dsTaint.addTaint(x);
+            mCenterX = x;
+            mCenterY = y;
             // ---------- Original Method ----------
             //mCenterX = x;
             //mCenterY = y;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.346 -0400", hash_original_method = "829DF5400D64CA55E626852A56B8E3B1", hash_generated_method = "CB31EA3A5196CD864ACCA87818050BD4")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.127 -0400", hash_original_method = "829DF5400D64CA55E626852A56B8E3B1", hash_generated_method = "3317E7F80C009F128AAB1DCE552FD5F5")
         public void setSolidColor(int argb) {
-            dsTaint.addTaint(argb);
             mHasSolidColor = true;
+            mSolidColor = argb;
             mColors = null;
             // ---------- Original Method ----------
             //mHasSolidColor = true;
@@ -1302,24 +1374,22 @@ public class GradientDrawable extends Drawable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.356 -0400", hash_original_method = "0625749E363A97E3FB7A01916551E363", hash_generated_method = "51C19D8757EEECC1F4E3C817DC330A32")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.150 -0400", hash_original_method = "0625749E363A97E3FB7A01916551E363", hash_generated_method = "C44E1F10EA13CAA1D96956245AF57DBD")
         public void setStroke(int width, int color) {
-            dsTaint.addTaint(color);
-            dsTaint.addTaint(width);
+            mStrokeWidth = width;
+            mStrokeColor = color;
             // ---------- Original Method ----------
             //mStrokeWidth = width;
             //mStrokeColor = color;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.356 -0400", hash_original_method = "62694733BCC23283C4956406C2DF326D", hash_generated_method = "7E453BBBAD9E88A977BDE336F5BE84EF")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.151 -0400", hash_original_method = "62694733BCC23283C4956406C2DF326D", hash_generated_method = "215F441E5518AD68D917B36A2FBC122A")
         public void setStroke(int width, int color, float dashWidth, float dashGap) {
-            dsTaint.addTaint(color);
-            dsTaint.addTaint(dashGap);
-            dsTaint.addTaint(dashWidth);
-            dsTaint.addTaint(width);
+            mStrokeWidth = width;
+            mStrokeColor = color;
+            mStrokeDashWidth = dashWidth;
+            mStrokeDashGap = dashGap;
             // ---------- Original Method ----------
             //mStrokeWidth = width;
             //mStrokeColor = color;
@@ -1328,13 +1398,12 @@ public class GradientDrawable extends Drawable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.358 -0400", hash_original_method = "55392135B56F7FBDA5D3E3F94BBF1F23", hash_generated_method = "DD4910B58AA1110469EFF909D4C2A088")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.154 -0400", hash_original_method = "55392135B56F7FBDA5D3E3F94BBF1F23", hash_generated_method = "7866DFFF2318BFDA7AF20B36B2345CD8")
         public void setCornerRadius(float radius) {
-            dsTaint.addTaint(radius);
             {
                 radius = 0;
             } //End block
+            mRadius = radius;
             mRadiusArray = null;
             // ---------- Original Method ----------
             //if (radius < 0) {
@@ -1345,10 +1414,9 @@ public class GradientDrawable extends Drawable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.359 -0400", hash_original_method = "17EB6FE4DB8FF42541FF19B71843B23B", hash_generated_method = "4D5466CBB0FC1068965EB31940BB11CA")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.155 -0400", hash_original_method = "17EB6FE4DB8FF42541FF19B71843B23B", hash_generated_method = "9DECCCC75B85A859408DC363F59D2EA4")
         public void setCornerRadii(float[] radii) {
-            dsTaint.addTaint(radii[0]);
+            mRadiusArray = radii;
             {
                 mRadius = 0;
             } //End block
@@ -1360,21 +1428,19 @@ public class GradientDrawable extends Drawable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.359 -0400", hash_original_method = "2560E21D822EB58266D32B5FBCFCA888", hash_generated_method = "B8824A448B9B7B91DD29FEC2964E0A45")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.170 -0400", hash_original_method = "2560E21D822EB58266D32B5FBCFCA888", hash_generated_method = "937C2CF909C70F6CCE7A1CB2903577B5")
         public void setSize(int width, int height) {
-            dsTaint.addTaint(height);
-            dsTaint.addTaint(width);
+            mWidth = width;
+            mHeight = height;
             // ---------- Original Method ----------
             //mWidth = width;
             //mHeight = height;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:48.360 -0400", hash_original_method = "2D6DAC1104AA515AA78A28549F71CF0A", hash_generated_method = "8E3DF5F276A3573AF9EAB37A7199A649")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.172 -0400", hash_original_method = "2D6DAC1104AA515AA78A28549F71CF0A", hash_generated_method = "47173080DDFD0B34A1D1F0DBFA24FE39")
         public void setGradientRadius(float gradientRadius) {
-            dsTaint.addTaint(gradientRadius);
+            mGradientRadius = gradientRadius;
             // ---------- Original Method ----------
             //mGradientRadius = gradientRadius;
         }
@@ -1384,12 +1450,26 @@ public class GradientDrawable extends Drawable {
 
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.172 -0400", hash_original_field = "6F6AD2BCE07B65CD47EF4D9E6AB86535", hash_generated_field = "46F776F4431B4AF5C3D3F15529915765")
+
     public static final int RECTANGLE = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.172 -0400", hash_original_field = "FA8319B0F3C7FFA99A9E2ED3934E43A6", hash_generated_field = "92F4ECF41E9A60B25A48F6BCF0A0A460")
+
     public static final int OVAL = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.172 -0400", hash_original_field = "D7BF7169F91A744DA6D893A0B94DE568", hash_generated_field = "8FA318F64C1EA44E4135E7B1C9F3F53D")
+
     public static final int LINE = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.172 -0400", hash_original_field = "4E5E35B60A98BA38CA2EE85CA463EE6B", hash_generated_field = "49E47CDC93342C4EA5D171A90156D57F")
+
     public static final int RING = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.172 -0400", hash_original_field = "A46CDAED2F7CD310C857690734CA8898", hash_generated_field = "9F6612F723A63EEE72B0859940E37105")
+
     public static final int LINEAR_GRADIENT = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.172 -0400", hash_original_field = "E7C810F9A8263081A505D6276CA240DD", hash_generated_field = "262A5D2CC9AE6734365493D15224EC30")
+
     public static final int RADIAL_GRADIENT = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.172 -0400", hash_original_field = "F8EB4F09BE09B068FC74D809D5EDB13D", hash_generated_field = "6BE6B5DD9A6FF64825BE79B8763B5D70")
+
     public static final int SWEEP_GRADIENT  = 2;
 }
 

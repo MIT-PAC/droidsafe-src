@@ -12,41 +12,41 @@ import java.security.Permission;
 
 public final class RuntimePermission extends BasicPermission {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.032 -0400", hash_original_method = "4B2115E5C37ED723471172D5C8F80B46", hash_generated_method = "B40FFA7EF1C415A3C596650238FF819B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public RuntimePermission(String permissionName) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.130 -0400", hash_original_method = "4B2115E5C37ED723471172D5C8F80B46", hash_generated_method = "152F2835EE644AC6F0BD82FFF888E07E")
+    public  RuntimePermission(String permissionName) {
         super("");
-        dsTaint.addTaint(permissionName);
+        addTaint(permissionName.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.032 -0400", hash_original_method = "E2D7FAA6FF83E30EF411D458EDB8F08D", hash_generated_method = "75B9A7DF4DBF38F334BA4AF8513694BD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public RuntimePermission(String name, String actions) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.131 -0400", hash_original_method = "E2D7FAA6FF83E30EF411D458EDB8F08D", hash_generated_method = "FE97726153430AE1C5C8B8AC13841AB7")
+    public  RuntimePermission(String name, String actions) {
         super("", "");
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(actions);
+        addTaint(name.getTaint());
+        addTaint(actions.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.032 -0400", hash_original_method = "1D3A92DE09AD9A3275C68C126C1F0E4E", hash_generated_method = "78D5B880748AF30E3541B5048A11E963")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.133 -0400", hash_original_method = "1D3A92DE09AD9A3275C68C126C1F0E4E", hash_generated_method = "A46FC6885CF9757E7D44A17AAAE3C08B")
     @Override
     public String getActions() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_942925690 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_942925690 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_942925690.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_942925690;
         // ---------- Original Method ----------
         //return null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:26.032 -0400", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "83CC2500DF371EE023C9FE28ADE5B8AA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.139 -0400", hash_original_method = "15107D2478EB5CA607140B3E4F96BD4D", hash_generated_method = "E406D7115ECA02FA3B9FD1EEA242295B")
     @Override
     public boolean implies(Permission permission) {
-        dsTaint.addTaint(permission.dsTaint);
-        return dsTaint.getTaintBoolean();
+        addTaint(permission.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_349138513 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_349138513;
         // ---------- Original Method ----------
         //return true;
     }

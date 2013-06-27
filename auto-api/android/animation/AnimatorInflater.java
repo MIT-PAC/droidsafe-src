@@ -23,9 +23,10 @@ import java.util.ArrayList;
 
 public class AnimatorInflater {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:30.866 -0400", hash_original_method = "D51751BDFABEC30E79428354FD4A1BAF", hash_generated_method = "D51751BDFABEC30E79428354FD4A1BAF")
-        public AnimatorInflater ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:45.569 -0400", hash_original_method = "755519606CB6AC3A2C6456CA27261C19", hash_generated_method = "755519606CB6AC3A2C6456CA27261C19")
+    public AnimatorInflater ()
     {
+        //Synthesized constructor
     }
 
 
@@ -236,11 +237,23 @@ public class AnimatorInflater {
     }
 
     
-    private static final int TOGETHER = 0;
-    private static final int SEQUENTIALLY = 1;
-    private static final int VALUE_TYPE_FLOAT       = 0;
-    private static final int VALUE_TYPE_INT         = 1;
-    private static final int VALUE_TYPE_COLOR       = 4;
-    private static final int VALUE_TYPE_CUSTOM      = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:45.781 -0400", hash_original_field = "C1FCEF32161A7BF89FDA53D614301098", hash_generated_field = "A8307AF47BADB45021E58F8C7112B399")
+
+    private static int TOGETHER = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:45.794 -0400", hash_original_field = "B568DA5D545ECA4D1ECFB6CD119EC659", hash_generated_field = "35738883661080F24E81978BBD7CE0F6")
+
+    private static int SEQUENTIALLY = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:45.796 -0400", hash_original_field = "10812D1AA64AC84BBC01F77ADD149F5F", hash_generated_field = "6E72B2C57F750656DEEA1CF23A004D42")
+
+    private static int VALUE_TYPE_FLOAT = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:45.810 -0400", hash_original_field = "011B104C1718919D9F0DE0394AE94E7A", hash_generated_field = "AF934C3F2F1450BF19EA06587B26F994")
+
+    private static int VALUE_TYPE_INT = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:45.811 -0400", hash_original_field = "F5C489E68DFCBFC6812B2F1E6603C7E4", hash_generated_field = "A7DFEEE2F26B07CF5C63B55CC180BCEC")
+
+    private static int VALUE_TYPE_COLOR = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:45.827 -0400", hash_original_field = "03B5A78BF4EF38ED0FA277295CCE4F73", hash_generated_field = "1E901D905428E37C5E96BE8B10995A36")
+
+    private static int VALUE_TYPE_CUSTOM = 5;
 }
 

@@ -9,13 +9,16 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 class SynchronizedPool<T extends Poolable<T>> implements Pool<T> {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.559 -0400", hash_original_field = "6A0D6954D813A9663B4032F3610B6FB3", hash_generated_field = "105D132186E8AA24291EFCF7D115902D")
+
     private Pool<T> mPool;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.559 -0400", hash_original_field = "D99C4DF571068C060F9624A3098FE796", hash_generated_field = "7811049C9A4FE55905A497F504D75A1C")
+
     private Object mLock;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.385 -0400", hash_original_method = "5C8F49372B1FEAE144C54A4EE1C5257C", hash_generated_method = "88786E320E85B478083CA0474421C005")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SynchronizedPool(Pool<T> pool) {
-        dsTaint.addTaint(pool.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.560 -0400", hash_original_method = "5C8F49372B1FEAE144C54A4EE1C5257C", hash_generated_method = "08AD1B277A66B454B7C2A97FDADFDCDA")
+    public  SynchronizedPool(Pool<T> pool) {
+        mPool = pool;
         mLock = this;
         // ---------- Original Method ----------
         //mPool = pool;
@@ -23,24 +26,24 @@ class SynchronizedPool<T extends Poolable<T>> implements Pool<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.385 -0400", hash_original_method = "3B08DD84C1E94356AB4532B92432A6B9", hash_generated_method = "7E505616F1023115692B0A6F53009D4B")
-    @DSModeled(DSC.SAFE)
-    public SynchronizedPool(Pool<T> pool, Object lock) {
-        dsTaint.addTaint(pool.dsTaint);
-        dsTaint.addTaint(lock.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.568 -0400", hash_original_method = "3B08DD84C1E94356AB4532B92432A6B9", hash_generated_method = "F11802ED8034E95562E73DD644752488")
+    public  SynchronizedPool(Pool<T> pool, Object lock) {
+        mPool = pool;
+        mLock = lock;
         // ---------- Original Method ----------
         //mPool = pool;
         //mLock = lock;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.385 -0400", hash_original_method = "33DD110D68F95CA8E21FED144538609A", hash_generated_method = "AFB87791964B97E47B0F58B8BDD94A5D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.572 -0400", hash_original_method = "33DD110D68F95CA8E21FED144538609A", hash_generated_method = "C29158791F49CC42D48DF3A37294F51C")
     public T acquire() {
+        T varB4EAC82CA7396A68D541C85D26508E83_303569576 = null; //Variable for return #1
         {
-            T var75B4EE73D779A6B622DF15BCBC3CE1A3_83439352 = (mPool.acquire());
+            varB4EAC82CA7396A68D541C85D26508E83_303569576 = mPool.acquire();
         } //End block
-        return (T)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_303569576.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_303569576;
         // ---------- Original Method ----------
         //synchronized (mLock) {
             //return mPool.acquire();
@@ -48,13 +51,12 @@ class SynchronizedPool<T extends Poolable<T>> implements Pool<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.386 -0400", hash_original_method = "D3A44672BBA01F45A0EA27E869DCFDD8", hash_generated_method = "0AD27621CA5244D2D80C471776C0CCEF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.578 -0400", hash_original_method = "D3A44672BBA01F45A0EA27E869DCFDD8", hash_generated_method = "5408D5B32FDCDD52E393A634523F5FA1")
     public void release(T element) {
-        dsTaint.addTaint(element.dsTaint);
         {
             mPool.release(element);
         } //End block
+        addTaint(element.getTaint());
         // ---------- Original Method ----------
         //synchronized (mLock) {
             //mPool.release(element);

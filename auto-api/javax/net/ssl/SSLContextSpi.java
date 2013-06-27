@@ -13,9 +13,8 @@ import java.security.SecureRandom;
 
 public abstract class SSLContextSpi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.072 -0400", hash_original_method = "C071A8DB81BAA2AB9BA30E20CDF7E4D3", hash_generated_method = "540369CB178536FB780D6C1CC0EB32F7")
-    @DSModeled(DSC.SAFE)
-    public SSLContextSpi() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.602 -0400", hash_original_method = "C071A8DB81BAA2AB9BA30E20CDF7E4D3", hash_generated_method = "540369CB178536FB780D6C1CC0EB32F7")
+    public  SSLContextSpi() {
         // ---------- Original Method ----------
     }
 
@@ -42,30 +41,31 @@ public abstract class SSLContextSpi {
     protected abstract SSLSessionContext engineGetClientSessionContext();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.073 -0400", hash_original_method = "38369B007DD3DFBC2F17B36F6861DA09", hash_generated_method = "3A2B12D96133BED7A3B63BF740BBEE60")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.605 -0400", hash_original_method = "38369B007DD3DFBC2F17B36F6861DA09", hash_generated_method = "8795FA3A45FF71888AFF2A06A1275614")
     protected javax.net.ssl.SSLParameters engineGetDefaultSSLParameters() {
-        javax.net.ssl.SSLParameters varA88690751E6E243921AF7C555FA73EAE_1004956081 = (createSSLParameters(false));
-        return (javax.net.ssl.SSLParameters)dsTaint.getTaint();
+        javax.net.ssl.SSLParameters varB4EAC82CA7396A68D541C85D26508E83_241838325 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_241838325 = createSSLParameters(false);
+        varB4EAC82CA7396A68D541C85D26508E83_241838325.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_241838325;
         // ---------- Original Method ----------
         //return createSSLParameters(false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.073 -0400", hash_original_method = "86210C07C6F5D2D352BAF9AB53AE79CE", hash_generated_method = "C43E1D8793818F5BA10739796B57A48C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.616 -0400", hash_original_method = "86210C07C6F5D2D352BAF9AB53AE79CE", hash_generated_method = "F66B606FE8FD4A7F9DBAD0976CD0F176")
     protected javax.net.ssl.SSLParameters engineGetSupportedSSLParameters() {
-        javax.net.ssl.SSLParameters var9B4B3DA1FAEA114E873DD933F1EEB541_203093169 = (createSSLParameters(true));
-        return (javax.net.ssl.SSLParameters)dsTaint.getTaint();
+        javax.net.ssl.SSLParameters varB4EAC82CA7396A68D541C85D26508E83_871414418 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_871414418 = createSSLParameters(true);
+        varB4EAC82CA7396A68D541C85D26508E83_871414418.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_871414418;
         // ---------- Original Method ----------
         //return createSSLParameters(true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.073 -0400", hash_original_method = "511D5113A1843E08B751FF4FDB4F02E4", hash_generated_method = "E5BBEF0E30B552A9DF63C351975486A7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.636 -0400", hash_original_method = "511D5113A1843E08B751FF4FDB4F02E4", hash_generated_method = "764305559E05C323E527CFA3EE0066C5")
     private javax.net.ssl.SSLParameters createSSLParameters(boolean supported) {
-        dsTaint.addTaint(supported);
+        javax.net.ssl.SSLParameters varB4EAC82CA7396A68D541C85D26508E83_239582487 = null; //Variable for return #1
         try 
         {
             SSLSocket s;
@@ -86,12 +86,15 @@ public abstract class SSLContextSpi {
             p.setProtocols(protocols);
             p.setNeedClientAuth(s.getNeedClientAuth());
             p.setWantClientAuth(s.getWantClientAuth());
+            varB4EAC82CA7396A68D541C85D26508E83_239582487 = p;
         } //End block
         catch (IOException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Could not access supported SSL parameters");
         } //End block
-        return (javax.net.ssl.SSLParameters)dsTaint.getTaint();
+        addTaint(supported);
+        varB4EAC82CA7396A68D541C85D26508E83_239582487.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_239582487;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

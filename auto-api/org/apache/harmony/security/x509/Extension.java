@@ -19,23 +19,38 @@ import org.apache.harmony.security.asn1.ObjectIdentifier;
 import org.apache.harmony.security.utils.Array;
 
 public final class Extension {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.761 -0400", hash_original_field = "81A958EC06A2C622709F6D43796C0CC6", hash_generated_field = "8FF788D802F19156A5C417E4A45E7E12")
+
     private int[] extnID;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.761 -0400", hash_original_field = "C11702F8B721F2CD8532E5E9274B9E88", hash_generated_field = "1083E6F765C894CB0636109B4BF9EBDC")
+
     private String extnID_str;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.761 -0400", hash_original_field = "7E85BCB66FB9A809D5AB4F62A8B8BEA8", hash_generated_field = "A48F124796E85FB5FCAB8EC4B6BBE7D0")
+
     private boolean critical;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.761 -0400", hash_original_field = "C508F11B9788D23F670969FC1FC8CE29", hash_generated_field = "20FC9E7634FE8CC649C67A24E78428BB")
+
     private byte[] extnValue;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.761 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
+
     private byte[] encoding;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.761 -0400", hash_original_field = "F35A92C45027DF54487736F7C73F35E4", hash_generated_field = "E823D869E9BDEB05E84E11DD9C5D645B")
+
     private byte[] rawExtnValue;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.761 -0400", hash_original_field = "9D14BBAB97C8DBDEE261B5A3F5FA625E", hash_generated_field = "438348B11B927145AC75EBC3AE4EBA57")
+
     protected ExtensionValue extnValueObject;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.761 -0400", hash_original_field = "C0F64CDD095C698E0A8A22FA4E7E76FA", hash_generated_field = "49181044EA66271CEFB24754874F9828")
+
     private boolean valueDecoded = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.667 -0400", hash_original_method = "772675EFC6AAA2D937AD864985824958", hash_generated_method = "63FF57C2523229C9C9E84A707320E8F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Extension(String extnID, boolean critical,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.775 -0400", hash_original_method = "772675EFC6AAA2D937AD864985824958", hash_generated_method = "50760EB0ED9565090BA8684D8B00AE4E")
+    public  Extension(String extnID, boolean critical,
             ExtensionValue extnValueObject) {
-        dsTaint.addTaint(critical);
-        dsTaint.addTaint(extnID);
-        dsTaint.addTaint(extnValueObject.dsTaint);
+        this.extnID_str = extnID;
         this.extnID = ObjectIdentifier.toIntArray(extnID);
+        this.critical = critical;
+        this.extnValueObject = extnValueObject;
         this.valueDecoded = true;
         this.extnValue = extnValueObject.getEncoded();
         // ---------- Original Method ----------
@@ -48,13 +63,12 @@ public final class Extension {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.667 -0400", hash_original_method = "CDEFB016C5499D8DADD8F004F1D30D96", hash_generated_method = "3F776391EA3036E7D91F12A9CF8775E7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Extension(String extnID, boolean critical, byte[] extnValue) {
-        dsTaint.addTaint(critical);
-        dsTaint.addTaint(extnID);
-        dsTaint.addTaint(extnValue[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.775 -0400", hash_original_method = "CDEFB016C5499D8DADD8F004F1D30D96", hash_generated_method = "735B7734C17EB3020FD2E48FFAF24114")
+    public  Extension(String extnID, boolean critical, byte[] extnValue) {
+        this.extnID_str = extnID;
         this.extnID = ObjectIdentifier.toIntArray(extnID);
+        this.critical = critical;
+        this.extnValue = extnValue;
         // ---------- Original Method ----------
         //this.extnID_str = extnID;
         //this.extnID = ObjectIdentifier.toIntArray(extnID);
@@ -63,12 +77,11 @@ public final class Extension {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.668 -0400", hash_original_method = "345C69C0F4252C8238B8F3F8FD2D0F67", hash_generated_method = "EED854EAAA6646A083CA330D7661FBC6")
-    @DSModeled(DSC.SAFE)
-    public Extension(int[] extnID, boolean critical, byte[] extnValue) {
-        dsTaint.addTaint(critical);
-        dsTaint.addTaint(extnID[0]);
-        dsTaint.addTaint(extnValue[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.776 -0400", hash_original_method = "345C69C0F4252C8238B8F3F8FD2D0F67", hash_generated_method = "D97F8633F554235658DAFAFD0C28C8C5")
+    public  Extension(int[] extnID, boolean critical, byte[] extnValue) {
+        this.extnID = extnID;
+        this.critical = critical;
+        this.extnValue = extnValue;
         // ---------- Original Method ----------
         //this.extnID = extnID;
         //this.critical = critical;
@@ -76,39 +89,36 @@ public final class Extension {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.668 -0400", hash_original_method = "AB0587524B2C2DEDC0BB33A1419E0149", hash_generated_method = "0E1B0A6230700AEEF3A1C911260ECFD4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Extension(String extnID, byte[] extnValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.776 -0400", hash_original_method = "AB0587524B2C2DEDC0BB33A1419E0149", hash_generated_method = "359F60EE83B36A248D2E1524C57840CB")
+    public  Extension(String extnID, byte[] extnValue) {
         this(extnID, NON_CRITICAL, extnValue);
-        dsTaint.addTaint(extnID);
-        dsTaint.addTaint(extnValue[0]);
+        addTaint(extnID.getTaint());
+        addTaint(extnValue[0]);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.668 -0400", hash_original_method = "2B9F71DD37B484A7E5BC50F8CEC81A97", hash_generated_method = "278425B5AFB9B2A8D01B1174A0B75525")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Extension(int[] extnID, byte[] extnValue) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.776 -0400", hash_original_method = "2B9F71DD37B484A7E5BC50F8CEC81A97", hash_generated_method = "1A2061EBB3D383F1BDB8FE270DA0A4AA")
+    public  Extension(int[] extnID, byte[] extnValue) {
         this(extnID, NON_CRITICAL, extnValue);
-        dsTaint.addTaint(extnID[0]);
-        dsTaint.addTaint(extnValue[0]);
+        addTaint(extnID[0]);
+        addTaint(extnValue[0]);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.668 -0400", hash_original_method = "22B9D2F4819411931A16D6B56F128648", hash_generated_method = "15BB32D6E2DEAF1E861556009C4A6F1A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private Extension(int[] extnID, boolean critical, byte[] extnValue,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.781 -0400", hash_original_method = "22B9D2F4819411931A16D6B56F128648", hash_generated_method = "79D91F320D3425D113667CA390D8F11A")
+    private  Extension(int[] extnID, boolean critical, byte[] extnValue,
             byte[] rawExtnValue, byte[] encoding,
             ExtensionValue decodedExtValue) {
         this(extnID, critical, extnValue);
-        dsTaint.addTaint(rawExtnValue[0]);
-        dsTaint.addTaint(critical);
-        dsTaint.addTaint(extnID[0]);
-        dsTaint.addTaint(extnValue[0]);
-        dsTaint.addTaint(encoding[0]);
-        dsTaint.addTaint(decodedExtValue.dsTaint);
+        this.rawExtnValue = rawExtnValue;
+        this.encoding = encoding;
+        this.extnValueObject = decodedExtValue;
         this.valueDecoded = (decodedExtValue != null);
+        addTaint(extnID[0]);
+        addTaint(critical);
+        addTaint(extnValue[0]);
         // ---------- Original Method ----------
         //this.rawExtnValue = rawExtnValue;
         //this.encoding = encoding;
@@ -117,13 +127,15 @@ public final class Extension {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.668 -0400", hash_original_method = "E60578C52DB7CB76AFDFFD6E54EB94BA", hash_generated_method = "428FDB2FB67E0CBF5982EBC89F2EDF03")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.782 -0400", hash_original_method = "E60578C52DB7CB76AFDFFD6E54EB94BA", hash_generated_method = "1E9A78B3B336B85E06678793CE9B797D")
     public String getExtnID() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1190906957 = null; //Variable for return #1
         {
             extnID_str = ObjectIdentifier.toString(extnID);
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1190906957 = extnID_str;
+        varB4EAC82CA7396A68D541C85D26508E83_1190906957.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1190906957;
         // ---------- Original Method ----------
         //if (extnID_str == null) {
             //extnID_str = ObjectIdentifier.toString(extnID);
@@ -132,35 +144,31 @@ public final class Extension {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.669 -0400", hash_original_method = "369AB9F41A626798BB3BCC89236BACDA", hash_generated_method = "E0D559C634CE2BBCFA4C167005018C32")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.782 -0400", hash_original_method = "369AB9F41A626798BB3BCC89236BACDA", hash_generated_method = "528E3198DBDB56952930B024A85DFFAA")
     public boolean getCritical() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1644111486 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1644111486;
         // ---------- Original Method ----------
         //return critical;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.669 -0400", hash_original_method = "F9C60F4D31E709EEBAC29B8CD2952B48", hash_generated_method = "06250FAD9FDC9FED0BFA05D2F148574B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.782 -0400", hash_original_method = "F9C60F4D31E709EEBAC29B8CD2952B48", hash_generated_method = "F037B75173F3530B8F50A7047BC1AB9F")
     public byte[] getExtnValue() {
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1595262703 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1595262703;
         // ---------- Original Method ----------
         //return extnValue;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.669 -0400", hash_original_method = "B972EB2ABEF1534D23452658D280F82C", hash_generated_method = "0BD3FBA6089D0BC9778F3178FC9982B9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.783 -0400", hash_original_method = "B972EB2ABEF1534D23452658D280F82C", hash_generated_method = "D67F5539CEA48263C8C867356FBE81EB")
     public byte[] getRawExtnValue() {
         {
             rawExtnValue = ASN1OctetString.getInstance().encode(extnValue);
         } //End block
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1622697303 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1622697303;
         // ---------- Original Method ----------
         //if (rawExtnValue == null) {
             //rawExtnValue = ASN1OctetString.getInstance().encode(extnValue);
@@ -169,15 +177,13 @@ public final class Extension {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.669 -0400", hash_original_method = "289715FCA6A05E78591BCAEFF536AB92", hash_generated_method = "6327CAE212A0C41DB90E4ADD52440D48")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.783 -0400", hash_original_method = "289715FCA6A05E78591BCAEFF536AB92", hash_generated_method = "EA1CDB454693FDF886F94886D74796CF")
     public byte[] getEncoded() {
         {
             encoding = Extension.ASN1.encode(this);
         } //End block
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1342349894 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1342349894;
         // ---------- Original Method ----------
         //if (encoding == null) {
             //encoding = Extension.ASN1.encode(this);
@@ -186,17 +192,17 @@ public final class Extension {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.669 -0400", hash_original_method = "20B333A0BC1DB524B0482115BC352DF4", hash_generated_method = "FB9C9A8315586C756A859E3ABC694B3E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.783 -0400", hash_original_method = "20B333A0BC1DB524B0482115BC352DF4", hash_generated_method = "3BB6BC219D8649643B56845E093853A9")
     @Override
     public boolean equals(Object ext) {
-        dsTaint.addTaint(ext.dsTaint);
         Extension extension;
         extension = (Extension) ext;
-        boolean var9DCFD56BF24A6A1546F9545527B1BEF4_524590270 = (Arrays.equals(extnID, extension.extnID)
+        boolean var9DCFD56BF24A6A1546F9545527B1BEF4_503492898 = (Arrays.equals(extnID, extension.extnID)
             && (critical == extension.critical)
             && Arrays.equals(extnValue, extension.extnValue));
-        return dsTaint.getTaintBoolean();
+        addTaint(ext.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1325386926 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1325386926;
         // ---------- Original Method ----------
         //if (!(ext instanceof Extension)) {
             //return false;
@@ -208,24 +214,26 @@ public final class Extension {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.670 -0400", hash_original_method = "0E35AAFACBBEB06CE332961CEFE27EA0", hash_generated_method = "43FD62A78EFF1C6D2F6F38ADA97FE48B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.787 -0400", hash_original_method = "0E35AAFACBBEB06CE332961CEFE27EA0", hash_generated_method = "B0DC601AF0BE3C6AA809D00BE15088D4")
     @Override
     public int hashCode() {
-        int var5B5A1F8476FB12CFA8AEDE9AB0880DDA_1419022103 = ((Arrays.hashCode(extnID) * 37 + (critical ? 1 : 0)) * 37 + Arrays.hashCode(extnValue)); //DSFIXME:  CODE0008: Nested ternary operator in expression
-        return dsTaint.getTaintInt();
+        int var5B5A1F8476FB12CFA8AEDE9AB0880DDA_237732202 = ((Arrays.hashCode(extnID) * 37 + (critical ? 1 : 0)) * 37 + Arrays.hashCode(extnValue)); //DSFIXME:  CODE0008: Nested ternary operator in expression
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_891026594 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_891026594;
         // ---------- Original Method ----------
         //return (Arrays.hashCode(extnID) * 37 + (critical ? 1 : 0)) * 37 + Arrays.hashCode(extnValue);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.670 -0400", hash_original_method = "95AE85BA4B02CE08CCFC1E936A7A9C52", hash_generated_method = "6AAD7424F1BDB605E9865B5829E8AA30")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.792 -0400", hash_original_method = "95AE85BA4B02CE08CCFC1E936A7A9C52", hash_generated_method = "CAF845E0C7907D73F4C86CBEA49C7A80")
     public ExtensionValue getDecodedExtensionValue() throws IOException {
+        ExtensionValue varB4EAC82CA7396A68D541C85D26508E83_39384688 = null; //Variable for return #1
         {
             decodeExtensionValue();
         } //End block
-        return (ExtensionValue)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_39384688 = extnValueObject;
+        varB4EAC82CA7396A68D541C85D26508E83_39384688.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_39384688;
         // ---------- Original Method ----------
         //if (!valueDecoded) {
             //decodeExtensionValue();
@@ -234,9 +242,10 @@ public final class Extension {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.670 -0400", hash_original_method = "E99A050D2989B02D8A38B58525424B82", hash_generated_method = "F0FD4E8D1BEF46F2DEFF39D5ED16B225")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.793 -0400", hash_original_method = "E99A050D2989B02D8A38B58525424B82", hash_generated_method = "58B6116F4DC184FD25E813CFADC2FB21")
     public KeyUsage getKeyUsageValue() {
+        KeyUsage varB4EAC82CA7396A68D541C85D26508E83_2081554846 = null; //Variable for return #1
+        KeyUsage varB4EAC82CA7396A68D541C85D26508E83_289497888 = null; //Variable for return #2
         {
             try 
             {
@@ -245,7 +254,23 @@ public final class Extension {
             catch (IOException ignored)
             { }
         } //End block
-        return (KeyUsage)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_2081554846 = (KeyUsage) extnValueObject;
+        } //End block
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_289497888 = null;
+        } //End block
+        KeyUsage varA7E53CE21691AB073D9660D615818899_456253446; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_456253446 = varB4EAC82CA7396A68D541C85D26508E83_2081554846;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_456253446 = varB4EAC82CA7396A68D541C85D26508E83_289497888;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_456253446.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_456253446;
         // ---------- Original Method ----------
         //if (!valueDecoded) {
             //try {
@@ -261,9 +286,10 @@ public final class Extension {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.670 -0400", hash_original_method = "685788692D49D3921B7D2E066C2897C4", hash_generated_method = "05000204ED49AC93525C3FD996816872")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.793 -0400", hash_original_method = "685788692D49D3921B7D2E066C2897C4", hash_generated_method = "C791A32124756C793B445F8B145CC7DA")
     public BasicConstraints getBasicConstraintsValue() {
+        BasicConstraints varB4EAC82CA7396A68D541C85D26508E83_1774903838 = null; //Variable for return #1
+        BasicConstraints varB4EAC82CA7396A68D541C85D26508E83_2004788759 = null; //Variable for return #2
         {
             try 
             {
@@ -272,7 +298,23 @@ public final class Extension {
             catch (IOException ignored)
             { }
         } //End block
-        return (BasicConstraints)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1774903838 = (BasicConstraints) extnValueObject;
+        } //End block
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_2004788759 = null;
+        } //End block
+        BasicConstraints varA7E53CE21691AB073D9660D615818899_334336651; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_334336651 = varB4EAC82CA7396A68D541C85D26508E83_1774903838;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_334336651 = varB4EAC82CA7396A68D541C85D26508E83_2004788759;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_334336651.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_334336651;
         // ---------- Original Method ----------
         //if (!valueDecoded) {
             //try {
@@ -288,109 +330,108 @@ public final class Extension {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.671 -0400", hash_original_method = "9C77FF45155916489182A216F1E7CCEA", hash_generated_method = "51A1F12F6C8E24E0253D0C590526222F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.804 -0400", hash_original_method = "9C77FF45155916489182A216F1E7CCEA", hash_generated_method = "23949A41E41A0CB1BC4321E1F7DAB3A8")
     private void decodeExtensionValue() throws IOException {
         valueDecoded = true;
         {
-            boolean varAB54FC05496F6295091A57B6D1F917E4_44961242 = (Arrays.equals(extnID, SUBJ_KEY_ID));
+            boolean varAB54FC05496F6295091A57B6D1F917E4_1214570228 = (Arrays.equals(extnID, SUBJ_KEY_ID));
             {
                 extnValueObject = SubjectKeyIdentifier.decode(extnValue);
             } //End block
             {
-                boolean var79029BF70BB25748F0031BECDFC677F0_1356340491 = (Arrays.equals(extnID, KEY_USAGE));
+                boolean var79029BF70BB25748F0031BECDFC677F0_819124630 = (Arrays.equals(extnID, KEY_USAGE));
                 {
                     extnValueObject = new KeyUsage(extnValue);
                 } //End block
                 {
-                    boolean var29928D2F0E1AE92B4EE44FD113DA26AA_1096671668 = (Arrays.equals(extnID, SUBJECT_ALT_NAME));
+                    boolean var29928D2F0E1AE92B4EE44FD113DA26AA_1001769692 = (Arrays.equals(extnID, SUBJECT_ALT_NAME));
                     {
                         extnValueObject = new AlternativeName(
                     AlternativeName.SUBJECT, extnValue);
                     } //End block
                     {
-                        boolean varD20C75BE6CC43A14751C65D119228C3A_802142783 = (Arrays.equals(extnID, ISSUER_ALTERNATIVE_NAME));
+                        boolean varD20C75BE6CC43A14751C65D119228C3A_1567743153 = (Arrays.equals(extnID, ISSUER_ALTERNATIVE_NAME));
                         {
                             extnValueObject = new AlternativeName(
                     AlternativeName.SUBJECT, extnValue);
                         } //End block
                         {
-                            boolean varBE53E1A959872908090C494A7AB2392D_1152424358 = (Arrays.equals(extnID, BASIC_CONSTRAINTS));
+                            boolean varBE53E1A959872908090C494A7AB2392D_485887164 = (Arrays.equals(extnID, BASIC_CONSTRAINTS));
                             {
                                 extnValueObject = new BasicConstraints(extnValue);
                             } //End block
                             {
-                                boolean var5A791D62D10D7BF57CD09CA0530210CA_952542016 = (Arrays.equals(extnID, NAME_CONSTRAINTS));
+                                boolean var5A791D62D10D7BF57CD09CA0530210CA_786584691 = (Arrays.equals(extnID, NAME_CONSTRAINTS));
                                 {
                                     extnValueObject = NameConstraints.decode(extnValue);
                                 } //End block
                                 {
-                                    boolean var112C83EF4DD7E7E88ECFE15117D39C6D_815607537 = (Arrays.equals(extnID, CERTIFICATE_POLICIES));
+                                    boolean var112C83EF4DD7E7E88ECFE15117D39C6D_1267366702 = (Arrays.equals(extnID, CERTIFICATE_POLICIES));
                                     {
                                         extnValueObject = CertificatePolicies.decode(extnValue);
                                     } //End block
                                     {
-                                        boolean var9997835AD8D731E68A43122000F851E4_1368760873 = (Arrays.equals(extnID, AUTH_KEY_ID));
+                                        boolean var9997835AD8D731E68A43122000F851E4_264774630 = (Arrays.equals(extnID, AUTH_KEY_ID));
                                         {
                                             extnValueObject = AuthorityKeyIdentifier.decode(extnValue);
                                         } //End block
                                         {
-                                            boolean var09F276B08BD777DFF04E4CD8796848A1_420276091 = (Arrays.equals(extnID, POLICY_CONSTRAINTS));
+                                            boolean var09F276B08BD777DFF04E4CD8796848A1_875725967 = (Arrays.equals(extnID, POLICY_CONSTRAINTS));
                                             {
                                                 extnValueObject = new PolicyConstraints(extnValue);
                                             } //End block
                                             {
-                                                boolean var6EF1777FA134D2C6F1F80DD9F9A47B8D_1979614296 = (Arrays.equals(extnID, EXTENDED_KEY_USAGE));
+                                                boolean var6EF1777FA134D2C6F1F80DD9F9A47B8D_1300468712 = (Arrays.equals(extnID, EXTENDED_KEY_USAGE));
                                                 {
                                                     extnValueObject = new ExtendedKeyUsage(extnValue);
                                                 } //End block
                                                 {
-                                                    boolean var44A5226B44D58B9425B0E256BE9FB527_1064444536 = (Arrays.equals(extnID, INHIBIT_ANY_POLICY));
+                                                    boolean var44A5226B44D58B9425B0E256BE9FB527_50087416 = (Arrays.equals(extnID, INHIBIT_ANY_POLICY));
                                                     {
                                                         extnValueObject = new InhibitAnyPolicy(extnValue);
                                                     } //End block
                                                     {
-                                                        boolean var93521D58B41ADFE8278B6F7231FF23E7_922155314 = (Arrays.equals(extnID, CERTIFICATE_ISSUER));
+                                                        boolean var93521D58B41ADFE8278B6F7231FF23E7_1305307887 = (Arrays.equals(extnID, CERTIFICATE_ISSUER));
                                                         {
                                                             extnValueObject = new CertificateIssuer(extnValue);
                                                         } //End block
                                                         {
-                                                            boolean varD5FFB1153C5E90B82F14EF6589E1DC95_1760915346 = (Arrays.equals(extnID, CRL_DISTR_POINTS));
+                                                            boolean varD5FFB1153C5E90B82F14EF6589E1DC95_1430262141 = (Arrays.equals(extnID, CRL_DISTR_POINTS));
                                                             {
                                                                 extnValueObject = CRLDistributionPoints.decode(extnValue);
                                                             } //End block
                                                             {
-                                                                boolean var8A49AD6C907832B5A81CD0DE1019700B_2011507063 = (Arrays.equals(extnID, CERTIFICATE_ISSUER));
+                                                                boolean var8A49AD6C907832B5A81CD0DE1019700B_1521490628 = (Arrays.equals(extnID, CERTIFICATE_ISSUER));
                                                                 {
                                                                     extnValueObject = new ReasonCode(extnValue);
                                                                 } //End block
                                                                 {
-                                                                    boolean var3C464CC7970A9FAE3C292FB9DB775A18_38704571 = (Arrays.equals(extnID, INVALIDITY_DATE));
+                                                                    boolean var3C464CC7970A9FAE3C292FB9DB775A18_769688403 = (Arrays.equals(extnID, INVALIDITY_DATE));
                                                                     {
                                                                         extnValueObject = new InvalidityDate(extnValue);
                                                                     } //End block
                                                                     {
-                                                                        boolean varDF59FBD3E702A0531884AAD7E88B6DAC_1119497470 = (Arrays.equals(extnID, REASON_CODE));
+                                                                        boolean varDF59FBD3E702A0531884AAD7E88B6DAC_1755740625 = (Arrays.equals(extnID, REASON_CODE));
                                                                         {
                                                                             extnValueObject = new ReasonCode(extnValue);
                                                                         } //End block
                                                                         {
-                                                                            boolean varCA92F6DC87650A9732A66EC46314EC63_1926428185 = (Arrays.equals(extnID, CRL_NUMBER));
+                                                                            boolean varCA92F6DC87650A9732A66EC46314EC63_864384170 = (Arrays.equals(extnID, CRL_NUMBER));
                                                                             {
                                                                                 extnValueObject = new CRLNumber(extnValue);
                                                                             } //End block
                                                                             {
-                                                                                boolean var9CB5BC68027662BFA0C2D20DA8D9A010_1898283448 = (Arrays.equals(extnID, ISSUING_DISTR_POINTS));
+                                                                                boolean var9CB5BC68027662BFA0C2D20DA8D9A010_597550994 = (Arrays.equals(extnID, ISSUING_DISTR_POINTS));
                                                                                 {
                                                                                     extnValueObject = IssuingDistributionPoint.decode(extnValue);
                                                                                 } //End block
                                                                                 {
-                                                                                    boolean varB24AC34B42C7A4E2668F5DCE93D76645_1524452874 = (Arrays.equals(extnID, AUTHORITY_INFO_ACCESS));
+                                                                                    boolean varB24AC34B42C7A4E2668F5DCE93D76645_1291142754 = (Arrays.equals(extnID, AUTHORITY_INFO_ACCESS));
                                                                                     {
                                                                                         extnValueObject = InfoAccessSyntax.decode(extnValue);
                                                                                     } //End block
                                                                                     {
-                                                                                        boolean varD2BB3DB505EC9CA31C9F97B0FCBEAE86_563049743 = (Arrays.equals(extnID, SUBJECT_INFO_ACCESS));
+                                                                                        boolean varD2BB3DB505EC9CA31C9F97B0FCBEAE86_62531833 = (Arrays.equals(extnID, SUBJECT_INFO_ACCESS));
                                                                                         {
                                                                                             extnValueObject = InfoAccessSyntax.decode(extnValue);
                                                                                         } //End block
@@ -419,11 +460,8 @@ public final class Extension {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.672 -0400", hash_original_method = "42AE8F5966FF1390F79700B69123055B", hash_generated_method = "A24DABCDC12397DEE007DBA5412404BC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.811 -0400", hash_original_method = "42AE8F5966FF1390F79700B69123055B", hash_generated_method = "86D8ED149F7E007C3E5FD94312E41378")
     public void dumpValue(StringBuilder sb, String prefix) {
-        dsTaint.addTaint(prefix);
-        dsTaint.addTaint(sb.dsTaint);
         sb.append("OID: ").append(getExtnID()).append(", Critical: ").append(critical).append('\n');
         {
             try 
@@ -438,102 +476,102 @@ public final class Extension {
         } //End block
         sb.append(prefix);
         {
-            boolean varA221B1146EC21CCCA34E2F25D5224B62_1293695912 = (Arrays.equals(extnID, SUBJ_DIRECTORY_ATTRS));
+            boolean varA221B1146EC21CCCA34E2F25D5224B62_396412191 = (Arrays.equals(extnID, SUBJ_DIRECTORY_ATTRS));
             {
                 sb.append("Subject Directory Attributes Extension");
             } //End block
             {
-                boolean var8DF0EC9A6AEA6EFB3FB5C280D7D74F9B_1920056280 = (Arrays.equals(extnID, SUBJ_KEY_ID));
+                boolean var8DF0EC9A6AEA6EFB3FB5C280D7D74F9B_1522861644 = (Arrays.equals(extnID, SUBJ_KEY_ID));
                 {
                     sb.append("Subject Key Identifier Extension");
                 } //End block
                 {
-                    boolean varF4C07E0FE65656621B8BCE269E8B58EF_251408024 = (Arrays.equals(extnID, KEY_USAGE));
+                    boolean varF4C07E0FE65656621B8BCE269E8B58EF_350144293 = (Arrays.equals(extnID, KEY_USAGE));
                     {
                         sb.append("Key Usage Extension");
                     } //End block
                     {
-                        boolean varAA372AED1E2AA1D54925B54D69F8DB90_1827045792 = (Arrays.equals(extnID, PRIVATE_KEY_USAGE_PERIOD));
+                        boolean varAA372AED1E2AA1D54925B54D69F8DB90_1348068227 = (Arrays.equals(extnID, PRIVATE_KEY_USAGE_PERIOD));
                         {
                             sb.append("Private Key Usage Period Extension");
                         } //End block
                         {
-                            boolean var798B3C516162896973F8A912AADF2342_1492753693 = (Arrays.equals(extnID, SUBJECT_ALT_NAME));
+                            boolean var798B3C516162896973F8A912AADF2342_173963683 = (Arrays.equals(extnID, SUBJECT_ALT_NAME));
                             {
                                 sb.append("Subject Alternative Name Extension");
                             } //End block
                             {
-                                boolean varA7C4827A995FE964AABC87414038EBBE_1368227565 = (Arrays.equals(extnID, ISSUER_ALTERNATIVE_NAME));
+                                boolean varA7C4827A995FE964AABC87414038EBBE_57745620 = (Arrays.equals(extnID, ISSUER_ALTERNATIVE_NAME));
                                 {
                                     sb.append("Issuer Alternative Name Extension");
                                 } //End block
                                 {
-                                    boolean varE21A4DBDF9C91AE82217AC44614585FE_618724864 = (Arrays.equals(extnID, BASIC_CONSTRAINTS));
+                                    boolean varE21A4DBDF9C91AE82217AC44614585FE_1370459594 = (Arrays.equals(extnID, BASIC_CONSTRAINTS));
                                     {
                                         sb.append("Basic Constraints Extension");
                                     } //End block
                                     {
-                                        boolean var7169DD5CE39017F9C9B4B9884B1B9568_2121207036 = (Arrays.equals(extnID, NAME_CONSTRAINTS));
+                                        boolean var7169DD5CE39017F9C9B4B9884B1B9568_626106942 = (Arrays.equals(extnID, NAME_CONSTRAINTS));
                                         {
                                             sb.append("Name Constraints Extension");
                                         } //End block
                                         {
-                                            boolean varECD4FFAE2DF9F6D6E5520D99835A6F31_96553621 = (Arrays.equals(extnID, CRL_DISTR_POINTS));
+                                            boolean varECD4FFAE2DF9F6D6E5520D99835A6F31_1387938581 = (Arrays.equals(extnID, CRL_DISTR_POINTS));
                                             {
                                                 sb.append("CRL Distribution Points Extension");
                                             } //End block
                                             {
-                                                boolean var13FF4F808684FD573126EE212EA51786_1560676405 = (Arrays.equals(extnID, CERTIFICATE_POLICIES));
+                                                boolean var13FF4F808684FD573126EE212EA51786_1626961146 = (Arrays.equals(extnID, CERTIFICATE_POLICIES));
                                                 {
                                                     sb.append("Certificate Policies Extension");
                                                 } //End block
                                                 {
-                                                    boolean varAE8E329E1E0543065CC25EC5F26F8882_349686172 = (Arrays.equals(extnID, POLICY_MAPPINGS));
+                                                    boolean varAE8E329E1E0543065CC25EC5F26F8882_519138262 = (Arrays.equals(extnID, POLICY_MAPPINGS));
                                                     {
                                                         sb.append("Policy Mappings Extension");
                                                     } //End block
                                                     {
-                                                        boolean var462955B2DF2534E3BC83A1D61ACA2B44_1385838904 = (Arrays.equals(extnID, AUTH_KEY_ID));
+                                                        boolean var462955B2DF2534E3BC83A1D61ACA2B44_919678043 = (Arrays.equals(extnID, AUTH_KEY_ID));
                                                         {
                                                             sb.append("Authority Key Identifier Extension");
                                                         } //End block
                                                         {
-                                                            boolean varB2C78479445E120DEA730A255DC280D6_723123779 = (Arrays.equals(extnID, POLICY_CONSTRAINTS));
+                                                            boolean varB2C78479445E120DEA730A255DC280D6_1022589448 = (Arrays.equals(extnID, POLICY_CONSTRAINTS));
                                                             {
                                                                 sb.append("Policy Constraints Extension");
                                                             } //End block
                                                             {
-                                                                boolean var7E91A6CA310680B093FD88063F8ED148_393135045 = (Arrays.equals(extnID, EXTENDED_KEY_USAGE));
+                                                                boolean var7E91A6CA310680B093FD88063F8ED148_738354365 = (Arrays.equals(extnID, EXTENDED_KEY_USAGE));
                                                                 {
                                                                     sb.append("Extended Key Usage Extension");
                                                                 } //End block
                                                                 {
-                                                                    boolean var2B9738A611418D1A003180D5A0034093_1685149452 = (Arrays.equals(extnID, INHIBIT_ANY_POLICY));
+                                                                    boolean var2B9738A611418D1A003180D5A0034093_1583312292 = (Arrays.equals(extnID, INHIBIT_ANY_POLICY));
                                                                     {
                                                                         sb.append("Inhibit Any-Policy Extension");
                                                                     } //End block
                                                                     {
-                                                                        boolean var2FDC903F1140F0C783B43300553D7073_1685678207 = (Arrays.equals(extnID, AUTHORITY_INFO_ACCESS));
+                                                                        boolean var2FDC903F1140F0C783B43300553D7073_411606754 = (Arrays.equals(extnID, AUTHORITY_INFO_ACCESS));
                                                                         {
                                                                             sb.append("Authority Information Access Extension");
                                                                         } //End block
                                                                         {
-                                                                            boolean var1A9F19376AD1E1128CDFDE7F880CFF1A_375019410 = (Arrays.equals(extnID, SUBJECT_INFO_ACCESS));
+                                                                            boolean var1A9F19376AD1E1128CDFDE7F880CFF1A_559089923 = (Arrays.equals(extnID, SUBJECT_INFO_ACCESS));
                                                                             {
                                                                                 sb.append("Subject Information Access Extension");
                                                                             } //End block
                                                                             {
-                                                                                boolean var64EE348197FCEC58F6DF3BD83E5F3361_1089258428 = (Arrays.equals(extnID, INVALIDITY_DATE));
+                                                                                boolean var64EE348197FCEC58F6DF3BD83E5F3361_844206035 = (Arrays.equals(extnID, INVALIDITY_DATE));
                                                                                 {
                                                                                     sb.append("Invalidity Date Extension");
                                                                                 } //End block
                                                                                 {
-                                                                                    boolean varFEBBBF17861D8A2A8A1CDCEDBEADDB9A_1655826626 = (Arrays.equals(extnID, CRL_NUMBER));
+                                                                                    boolean varFEBBBF17861D8A2A8A1CDCEDBEADDB9A_264864425 = (Arrays.equals(extnID, CRL_NUMBER));
                                                                                     {
                                                                                         sb.append("CRL Number Extension");
                                                                                     } //End block
                                                                                     {
-                                                                                        boolean var7A124ADB859F1043EEDF9FC8C3E2A3CB_23935145 = (Arrays.equals(extnID, REASON_CODE));
+                                                                                        boolean var7A124ADB859F1043EEDF9FC8C3E2A3CB_384182776 = (Arrays.equals(extnID, REASON_CODE));
                                                                                         {
                                                                                             sb.append("Reason Code Extension");
                                                                                         } //End block
@@ -562,39 +600,93 @@ public final class Extension {
         } //End collapsed parenthetic
         sb.append('\n').append(prefix).append("Unparsed Extension Value:\n");
         sb.append(Array.toString(extnValue, prefix));
+        addTaint(sb.getTaint());
+        addTaint(prefix.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "9D770FFDDC15870F3D3A340ACD808078", hash_generated_field = "6E31BBAF500C1070EE1FFA080111393F")
+
     public static final boolean CRITICAL = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "61B04E4695AA5F374EEFDAD16E9E0524", hash_generated_field = "57D4ADD3A20722C1472A183BBA626F17")
+
     public static final boolean NON_CRITICAL = false;
-    static final int[] SUBJ_DIRECTORY_ATTRS = {2, 5, 29, 9};
-    static final int[] SUBJ_KEY_ID = {2, 5, 29, 14};
-    static final int[] KEY_USAGE = {2, 5, 29, 15};
-    static final int[] PRIVATE_KEY_USAGE_PERIOD = {2, 5, 29, 16};
-    static final int[] SUBJECT_ALT_NAME = {2, 5, 29, 17};
-    static final int[] ISSUER_ALTERNATIVE_NAME = {2, 5, 29, 18};
-    static final int[] BASIC_CONSTRAINTS = {2, 5, 29, 19};
-    static final int[] NAME_CONSTRAINTS = {2, 5, 29, 30};
-    static final int[] CRL_DISTR_POINTS = {2, 5, 29, 31};
-    static final int[] CERTIFICATE_POLICIES = {2, 5, 29, 32};
-    static final int[] POLICY_MAPPINGS = {2, 5, 29, 33};
-    static final int[] AUTH_KEY_ID = {2, 5, 29, 35};
-    static final int[] POLICY_CONSTRAINTS = {2, 5, 29, 36};
-    static final int[] EXTENDED_KEY_USAGE = {2, 5, 29, 37};
-    static final int[] FRESHEST_CRL = {2, 5, 29, 46};
-    static final int[] INHIBIT_ANY_POLICY = {2, 5, 29, 54};
-    static final int[] AUTHORITY_INFO_ACCESS =
-                                            {1, 3, 6, 1, 5, 5, 7, 1, 1};
-    static final int[] SUBJECT_INFO_ACCESS =
-                                            {1, 3, 6, 1, 5, 5, 7, 1, 11};
-    static final int[] ISSUING_DISTR_POINT = {2, 5, 29, 28};
-    static final int[] CRL_NUMBER = {2, 5, 29, 20};
-    static final int[] CERTIFICATE_ISSUER = {2, 5, 29, 29};
-    static final int[] INVALIDITY_DATE = {2, 5, 29, 24};
-    static final int[] REASON_CODE = {2, 5, 29, 21};
-    static final int[] ISSUING_DISTR_POINTS = {2, 5, 29, 28};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "27AC59456ABCB1CE64FC2C3053748D09", hash_generated_field = "5D9644CC1EF9D601703C014467D83108")
+
+    static int[] SUBJ_DIRECTORY_ATTRS = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "719C2AB0E2F06E3BD1FF47B05C669C52", hash_generated_field = "4C12B6B5DF0766FFBAC6212D32BCD39F")
+
+    static int[] SUBJ_KEY_ID = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "B58C569327B16FBE6BA2EC3275E60A70", hash_generated_field = "4D5DB42518847C66081F9D64F96D3132")
+
+    static int[] KEY_USAGE = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "11C15EF3E2ED91D6D2AE5ADD3AAB40C0", hash_generated_field = "F6AF864BEA102E4E5BD2BCDA5DC73FA1")
+
+    static int[] PRIVATE_KEY_USAGE_PERIOD = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "763E9AF8FC55F30DD20FEB41EE56E8F5", hash_generated_field = "0C6E93D58585562DA1700D8FD644A0F0")
+
+    static int[] SUBJECT_ALT_NAME = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "6389938383D6D3F2B15BB97818ADA090", hash_generated_field = "57CBA38502F4392A96155BF5751A6F8A")
+
+    static int[] ISSUER_ALTERNATIVE_NAME = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "E2763B92F43C78EB5AE7CA4C13875A2E", hash_generated_field = "B11C9226B535AD4912DE4F6FD18C2EC1")
+
+    static int[] BASIC_CONSTRAINTS = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "2CC72DB0339D067215FFC0B86EBC615B", hash_generated_field = "3E67461B3486C98C8ABD9B72C6ECE8F1")
+
+    static int[] NAME_CONSTRAINTS = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "C6D831E4B714E4BEBA10A0311994F721", hash_generated_field = "8242E4E00B0E51601D5C3A0596B1A081")
+
+    static int[] CRL_DISTR_POINTS = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "54E4E62889082A4291C82572415D3FD3", hash_generated_field = "968AE6D1B62C557633831F71A552C7FD")
+
+    static int[] CERTIFICATE_POLICIES = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "92B4E401637FF5C4D11E2E6AA1497575", hash_generated_field = "88A67F485B7C12E394CF65DBB9002046")
+
+    static int[] POLICY_MAPPINGS = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "09CD194DEE87CC00E22813CE03AA2189", hash_generated_field = "924A3A8D0F1CC5D06063134B4606A3F4")
+
+    static int[] AUTH_KEY_ID = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "3A149D04714488EAABB6793BAAC971C7", hash_generated_field = "1E99D8966CBE82EF23E55F57A389D979")
+
+    static int[] POLICY_CONSTRAINTS = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "A8CB7D09038D802044B2796F8FEC3D21", hash_generated_field = "D17A59D9591AE5FA5E92177212D878C0")
+
+    static int[] EXTENDED_KEY_USAGE = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "711DE24A0324604FFC2C892BE38CA12B", hash_generated_field = "78B807AF607113BC5B4124DF16EF7C4C")
+
+    static int[] FRESHEST_CRL = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "E584FD6E092027A6F9AE59B800B4BEE1", hash_generated_field = "7753BC8CD8CEBF4435A2DDB216180EC9")
+
+    static int[] INHIBIT_ANY_POLICY = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.812 -0400", hash_original_field = "F887D8CC4B9E928778BB90E4DD18EC2B", hash_generated_field = "C3A36328EB3C4A3AC241420A8F01A902")
+
+    static int[] AUTHORITY_INFO_ACCESS = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.813 -0400", hash_original_field = "E570A9AB6529D0B74A5004F2E1A61DC9", hash_generated_field = "E2CEA34A9744A9C6C6F69CD6CF16A17C")
+
+    static int[] SUBJECT_INFO_ACCESS = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.813 -0400", hash_original_field = "ADDCB4B21210BC97410BFAB822DE5567", hash_generated_field = "B284773A3A778C9A1BCD154F3859C77C")
+
+    static int[] ISSUING_DISTR_POINT = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.813 -0400", hash_original_field = "A1BE3CEA110171E88491EB6296EC8BCE", hash_generated_field = "E411153131BDAE5C1DCCD7D53284CEC8")
+
+    static int[] CRL_NUMBER = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.813 -0400", hash_original_field = "A5C359B3674964EBA0BAD84A851DDECE", hash_generated_field = "8850777F55D31E580CCA2BB185113B3B")
+
+    static int[] CERTIFICATE_ISSUER = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.813 -0400", hash_original_field = "274041C10371CF3BFE121AE51FD7402B", hash_generated_field = "ED6A4EBB61F6CC9BA6C69ACEEF617D1E")
+
+    static int[] INVALIDITY_DATE = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.813 -0400", hash_original_field = "78516CB1FE0FD6BF662239155F765B89", hash_generated_field = "A0017E3FFC11D0EC7C87C28D876BE841")
+
+    static int[] REASON_CODE = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.813 -0400", hash_original_field = "BC1CA6B2C393BDBE6FD729838874757D", hash_generated_field = "5080E931F453223C392C559BE7EE53D7")
+
+    static int[] ISSUING_DISTR_POINTS = ;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.813 -0400", hash_original_field = "162B518F6D507BF8606DF33C2285800B", hash_generated_field = "3978C13F4770C29C9F00A89FB623B39E")
+
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
             ASN1Oid.getInstance(),
             ASN1Boolean.getInstance(),
@@ -606,76 +698,36 @@ public final class Extension {
                         {super.getDecodedObject(in), in.getEncoded()};
                 }
             }
-        }) {        {
+        }) {
+        {
             setDefault(Boolean.FALSE, 1);
         }
-        
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.673 -0400", hash_original_method = "76E4451FF0478DD5E12D05D308694266", hash_generated_method = "3D2ABFCAFBF917840E74F866055BBC2C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        @Override
-        protected Object getDecodedObject(BerInputStream in) throws IOException {
-            dsTaint.addTaint(in.dsTaint);
-            Object[] values;
-            values = (Object[]) in.content;
-            int[] oid;
-            oid = (int[]) values[0];
-            byte[] extnValue;
-            extnValue = (byte[]) ((Object[]) values[2])[0];
-            byte[] rawExtnValue;
-            rawExtnValue = (byte[]) ((Object[]) values[2])[1];
-            ExtensionValue decodedExtValue;
-            decodedExtValue = null;
-            {
-                boolean varAE9AE3710E891E85486735315E12C933_597847898 = (Arrays.equals(oid, KEY_USAGE));
-                {
-                    decodedExtValue = new KeyUsage(extnValue);
-                } //End block
-                {
-                    boolean var3B30FF49E22BF647083F3FFC7E0CA761_748327159 = (Arrays.equals(oid, BASIC_CONSTRAINTS));
-                    {
-                        decodedExtValue = new BasicConstraints(extnValue);
-                    } //End block
-                } //End collapsed parenthetic
-            } //End collapsed parenthetic
-            Object var21971006B780D34B658EF754CDDC8B04_1385488684 = (new Extension((int[]) values[0], (Boolean) values[1],
-                    extnValue, rawExtnValue, in.getEncoded(), decodedExtValue));
-            return (Object)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //Object[] values = (Object[]) in.content;
-            //int[] oid = (int[]) values[0];
-            //byte[] extnValue = (byte[]) ((Object[]) values[2])[0];
-            //byte[] rawExtnValue = (byte[]) ((Object[]) values[2])[1];
-            //ExtensionValue decodedExtValue = null;
-            //if (Arrays.equals(oid, KEY_USAGE)) {
-                //decodedExtValue = new KeyUsage(extnValue);
-            //} else if (Arrays.equals(oid, BASIC_CONSTRAINTS)) {
-                //decodedExtValue = new BasicConstraints(extnValue);
-            //}
-            //return new Extension((int[]) values[0], (Boolean) values[1],
-                    //extnValue, rawExtnValue, in.getEncoded(), decodedExtValue);
+
+        @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
+            Object[] values = (Object[]) in.content;
+
+            int[] oid = (int[]) values[0];
+            byte[] extnValue = (byte[]) ((Object[]) values[2])[0];
+            byte[] rawExtnValue = (byte[]) ((Object[]) values[2])[1];
+
+            ExtensionValue decodedExtValue = null;
+            
+            if (Arrays.equals(oid, KEY_USAGE)) {
+                decodedExtValue = new KeyUsage(extnValue);
+            } else if (Arrays.equals(oid, BASIC_CONSTRAINTS)) {
+                decodedExtValue = new BasicConstraints(extnValue);
+            }
+
+            return new Extension((int[]) values[0], (Boolean) values[1],
+                    extnValue, rawExtnValue, in.getEncoded(), decodedExtValue);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.673 -0400", hash_original_method = "C2EBD010FE004A7CF9B3B50ACF2F1130", hash_generated_method = "E3944718CF8D1C554C19C6F7FA916B25")
-        @DSModeled(DSC.SAFE)
-        @Override
-        protected void getValues(Object object, Object[] values) {
-            dsTaint.addTaint(values[0].dsTaint);
-            dsTaint.addTaint(object.dsTaint);
-            Extension ext;
-            ext = (Extension) object;
+        @Override protected void getValues(Object object, Object[] values) {
+            Extension ext = (Extension) object;
             values[0] = ext.extnID;
             values[1] = (ext.critical) ? Boolean.TRUE : Boolean.FALSE;
             values[2] = ext.extnValue;
-            // ---------- Original Method ----------
-            //Extension ext = (Extension) object;
-            //values[0] = ext.extnID;
-            //values[1] = (ext.critical) ? Boolean.TRUE : Boolean.FALSE;
-            //values[2] = ext.extnValue;
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

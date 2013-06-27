@@ -12,12 +12,15 @@ import java.io.IOException;
 import libcore.io.IoBridge;
 
 public abstract class DatagramSocketImpl implements SocketOptions {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.930 -0400", hash_original_field = "36EBA1E1E343279857EA7F69A597324E", hash_generated_field = "22B1DDEE70BE0A6499271C452045F538")
+
     protected FileDescriptor fd;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.930 -0400", hash_original_field = "55FC25CF376E1B7BFFBC2D46F357C231", hash_generated_field = "835B3BA626C36002B6BEC677A2C9AE47")
+
     protected int localPort;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.789 -0400", hash_original_method = "36741B3348F3C30E5BB773EA210AEA7B", hash_generated_method = "BE9AB5AB91B36FA3C83AE715C819627B")
-    @DSModeled(DSC.SAFE)
-    public DatagramSocketImpl() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.931 -0400", hash_original_method = "36741B3348F3C30E5BB773EA210AEA7B", hash_generated_method = "BE9AB5AB91B36FA3C83AE715C819627B")
+    public  DatagramSocketImpl() {
         localPort = -1;
         // ---------- Original Method ----------
         //localPort = -1;
@@ -33,29 +36,32 @@ public abstract class DatagramSocketImpl implements SocketOptions {
     protected abstract void create() throws SocketException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.789 -0400", hash_original_method = "C1B4172ED9A628993584DE4384B8AF55", hash_generated_method = "EAD66F9260E01901E44F8BA8437BA9E5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.937 -0400", hash_original_method = "C1B4172ED9A628993584DE4384B8AF55", hash_generated_method = "08CAB9422750FFCAC04D584C14039C05")
     protected FileDescriptor getFileDescriptor() {
-        return (FileDescriptor)dsTaint.getTaint();
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1287056235 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1287056235 = fd;
+        varB4EAC82CA7396A68D541C85D26508E83_1287056235.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1287056235;
         // ---------- Original Method ----------
         //return fd;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.789 -0400", hash_original_method = "0E5E291FF84E111D5E99E4DCFA7BD180", hash_generated_method = "6617A428BCB0E13E543F9F4E11E7D1AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.938 -0400", hash_original_method = "0E5E291FF84E111D5E99E4DCFA7BD180", hash_generated_method = "EE6A1CACC35721225647A6CD2FA73502")
      InetAddress getLocalAddress() {
-        InetAddress var540A9FDEE04145BDE375376F63493F5B_483120492 = (IoBridge.getSocketLocalAddress(fd));
-        return (InetAddress)dsTaint.getTaint();
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_49496612 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_49496612 = IoBridge.getSocketLocalAddress(fd);
+        varB4EAC82CA7396A68D541C85D26508E83_49496612.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_49496612;
         // ---------- Original Method ----------
         //return IoBridge.getSocketLocalAddress(fd);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.789 -0400", hash_original_method = "85505F9FF32DDEB1685867EF44676F61", hash_generated_method = "36A31B89C5A6678C7B9A4CEEBEE75110")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.938 -0400", hash_original_method = "85505F9FF32DDEB1685867EF44676F61", hash_generated_method = "1EB31380FFD62B4C54E29E336F9CCAF1")
     protected int getLocalPort() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1318822624 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1318822624;
         // ---------- Original Method ----------
         //return localPort;
     }
@@ -98,17 +104,15 @@ protected abstract byte getTTL() throws IOException;
 protected abstract void setTTL(byte ttl) throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.791 -0400", hash_original_method = "4B57C399BF813581E92D5F53070EA8D4", hash_generated_method = "CE6A4597D520FD1DDAA1329FEDEFCA54")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.965 -0400", hash_original_method = "4B57C399BF813581E92D5F53070EA8D4", hash_generated_method = "E7DBAC303B615040EE910A59E8442AC9")
     protected void connect(InetAddress inetAddr, int port) throws SocketException {
-        dsTaint.addTaint(port);
-        dsTaint.addTaint(inetAddr.dsTaint);
+        addTaint(inetAddr.getTaint());
+        addTaint(port);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.791 -0400", hash_original_method = "E948DE2D4A723F3312DB782756156847", hash_generated_method = "CD37B12F2AD777DD5DE0335AE279D597")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.971 -0400", hash_original_method = "E948DE2D4A723F3312DB782756156847", hash_generated_method = "CD37B12F2AD777DD5DE0335AE279D597")
     protected void disconnect() {
         // ---------- Original Method ----------
     }

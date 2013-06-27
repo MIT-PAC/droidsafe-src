@@ -10,28 +10,35 @@ import java.util.Iterator;
 import android.os.Handler;
 
 public abstract class ContentObserver {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.008 -0400", hash_original_field = "DDB508BA6BDDCDC9D416A8817238314C", hash_generated_field = "02AF804D48FC2EFA36319D85B176604C")
+
     private Transport mTransport;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.008 -0400", hash_original_field = "DD465B0839A70592931A97D99A9DB042", hash_generated_field = "B291AA80E80AF2EADD13F4FAD6374324")
+
     private Object lock = new Object();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.033 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "A163099B522120C606A3CA562F90E927")
+
     Handler mHandler;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.972 -0400", hash_original_method = "DEDF781BC2901F5DB53B414F0A999CAB", hash_generated_method = "D32203DFE904DA590B30EBF90A4531D8")
-    @DSModeled(DSC.SAFE)
-    public ContentObserver(Handler handler) {
-        dsTaint.addTaint(handler.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.034 -0400", hash_original_method = "DEDF781BC2901F5DB53B414F0A999CAB", hash_generated_method = "256B09D59F656DF49A982C4626C638E5")
+    public  ContentObserver(Handler handler) {
+        mHandler = handler;
         // ---------- Original Method ----------
         //mHandler = handler;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.973 -0400", hash_original_method = "01F21475A40B0383A9D17C9A77564941", hash_generated_method = "C0E96ABEEF31A61DE4B45365752FFC07")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.035 -0400", hash_original_method = "01F21475A40B0383A9D17C9A77564941", hash_generated_method = "7199A0D71F4956EBE39C1DE45334FB45")
     public IContentObserver getContentObserver() {
+        IContentObserver varB4EAC82CA7396A68D541C85D26508E83_227293140 = null; //Variable for return #1
         {
             {
                 mTransport = new Transport(this);
             } //End block
+            varB4EAC82CA7396A68D541C85D26508E83_227293140 = mTransport;
         } //End block
-        return (IContentObserver)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_227293140.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_227293140;
         // ---------- Original Method ----------
         //synchronized(lock) {
             //if (mTransport == null) {
@@ -42,9 +49,9 @@ public abstract class ContentObserver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.973 -0400", hash_original_method = "0CB42947C64AC2776A7D9A6FF8C462FE", hash_generated_method = "CC50EE39931321FA2C8237598822D18A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.041 -0400", hash_original_method = "0CB42947C64AC2776A7D9A6FF8C462FE", hash_generated_method = "53247E8B1569088E7BEE0B18F19A9053")
     public IContentObserver releaseContentObserver() {
+        IContentObserver varB4EAC82CA7396A68D541C85D26508E83_812426122 = null; //Variable for return #1
         {
             Transport oldTransport;
             oldTransport = mTransport;
@@ -52,8 +59,10 @@ public abstract class ContentObserver {
                 oldTransport.releaseContentObserver();
                 mTransport = null;
             } //End block
+            varB4EAC82CA7396A68D541C85D26508E83_812426122 = oldTransport;
         } //End block
-        return (IContentObserver)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_812426122.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_812426122;
         // ---------- Original Method ----------
         //synchronized(lock) {
             //Transport oldTransport = mTransport;
@@ -66,34 +75,32 @@ public abstract class ContentObserver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.973 -0400", hash_original_method = "A5B2D8696143266ED24B145CF029F206", hash_generated_method = "BF34175F0D5DDDA4A66822A3C03FFBB9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.046 -0400", hash_original_method = "A5B2D8696143266ED24B145CF029F206", hash_generated_method = "538B6FDE2C538F1AF0A36A21306050BB")
     public boolean deliverSelfNotifications() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1069433930 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1069433930;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.974 -0400", hash_original_method = "6EAEE94A5AFBBE3CB405FFF6432059B8", hash_generated_method = "6631C4CD0261FD94949D94429C47FDC6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.048 -0400", hash_original_method = "6EAEE94A5AFBBE3CB405FFF6432059B8", hash_generated_method = "43E4B8EB52312D77453544CB6778AF9B")
     public void onChange(boolean selfChange) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(selfChange);
+        addTaint(selfChange);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.974 -0400", hash_original_method = "16E18AEBF4A0FC6BFB0625D1ABE0E3ED", hash_generated_method = "ACF64F7886E8F7291B933B534FE619FE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.064 -0400", hash_original_method = "16E18AEBF4A0FC6BFB0625D1ABE0E3ED", hash_generated_method = "5CCC8EE4664D233E8BE6AEDBF2646872")
     public final void dispatchChange(boolean selfChange) {
-        dsTaint.addTaint(selfChange);
         {
             onChange(selfChange);
         } //End block
         {
             mHandler.post(new NotificationRunnable(selfChange));
         } //End block
+        addTaint(selfChange);
         // ---------- Original Method ----------
         //if (mHandler == null) {
             //onChange(selfChange);
@@ -104,19 +111,19 @@ public abstract class ContentObserver {
 
     
     private final class NotificationRunnable implements Runnable {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.064 -0400", hash_original_field = "9257B96EA3E776729E1D45E7076891EA", hash_generated_field = "7939677200C76A653999F1C89FF176B1")
+
         private boolean mSelf;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.974 -0400", hash_original_method = "640FAC8E4E08E48125055D1606ED9C9B", hash_generated_method = "DE355743D5E4F526CB8065BBF85E3E77")
-        @DSModeled(DSC.SAFE)
-        public NotificationRunnable(boolean self) {
-            dsTaint.addTaint(self);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.065 -0400", hash_original_method = "640FAC8E4E08E48125055D1606ED9C9B", hash_generated_method = "8106FFA6B3D07725DE2FEEBDB49EF1E5")
+        public  NotificationRunnable(boolean self) {
+            mSelf = self;
             // ---------- Original Method ----------
             //mSelf = self;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.974 -0400", hash_original_method = "ADCF046F07EA9B09E2364857C3DDF0F7", hash_generated_method = "30ECC851BB12D6B371695B1BC5CB6757")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.066 -0400", hash_original_method = "ADCF046F07EA9B09E2364857C3DDF0F7", hash_generated_method = "30ECC851BB12D6B371695B1BC5CB6757")
         public void run() {
             ContentObserver.this.onChange(mSelf);
             // ---------- Original Method ----------
@@ -129,26 +136,27 @@ public abstract class ContentObserver {
 
     
     private static final class Transport extends IContentObserver.Stub {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.067 -0400", hash_original_field = "C267D355D6BA0921A3D8E50CDCC2651C", hash_generated_field = "9DAED586938CBB73A279F50F5ECBF202")
+
         ContentObserver mContentObserver;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.975 -0400", hash_original_method = "C30CAD402A0C8AFFD18AB2CC7EC4F204", hash_generated_method = "05BC08A5482186950400CC2B58B8BD42")
-        @DSModeled(DSC.SAFE)
-        public Transport(ContentObserver contentObserver) {
-            dsTaint.addTaint(contentObserver.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.094 -0400", hash_original_method = "C30CAD402A0C8AFFD18AB2CC7EC4F204", hash_generated_method = "FED9587C99F66F414D9E27DD1EDE5BC9")
+        public  Transport(ContentObserver contentObserver) {
+            mContentObserver = contentObserver;
             // ---------- Original Method ----------
             //mContentObserver = contentObserver;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.975 -0400", hash_original_method = "158F530B046C6D686908DD95065C53F9", hash_generated_method = "CC56DAA860DB3DA1577768BE1B7428FD")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.095 -0400", hash_original_method = "158F530B046C6D686908DD95065C53F9", hash_generated_method = "3128229DBC66E9C5DC4F49EB891DAC83")
         public boolean deliverSelfNotifications() {
             ContentObserver contentObserver;
             contentObserver = mContentObserver;
             {
-                boolean var48E239F26E510CFEEA586BDE1698ED7B_434395319 = (contentObserver.deliverSelfNotifications());
+                boolean var48E239F26E510CFEEA586BDE1698ED7B_687369264 = (contentObserver.deliverSelfNotifications());
             } //End block
-            return dsTaint.getTaintBoolean();
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1130367846 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1130367846;
             // ---------- Original Method ----------
             //ContentObserver contentObserver = mContentObserver;
             //if (contentObserver != null) {
@@ -158,16 +166,15 @@ public abstract class ContentObserver {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.975 -0400", hash_original_method = "71BABE68DF8E341DA3CAF0778B2BD246", hash_generated_method = "0B06EBEDEE130AD42B6AC26D1A89B2EC")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.101 -0400", hash_original_method = "71BABE68DF8E341DA3CAF0778B2BD246", hash_generated_method = "5DA143F322B7D6482104310B97B36ADC")
         public void onChange(boolean selfChange) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(selfChange);
             ContentObserver contentObserver;
             contentObserver = mContentObserver;
             {
                 contentObserver.dispatchChange(selfChange);
             } //End block
+            addTaint(selfChange);
             // ---------- Original Method ----------
             //ContentObserver contentObserver = mContentObserver;
             //if (contentObserver != null) {
@@ -176,8 +183,7 @@ public abstract class ContentObserver {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:45.975 -0400", hash_original_method = "A0916E3A0DA123DBB345BC81644B70F3", hash_generated_method = "ADD05F525B1B13738DD98FA14B241126")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.103 -0400", hash_original_method = "A0916E3A0DA123DBB345BC81644B70F3", hash_generated_method = "ADD05F525B1B13738DD98FA14B241126")
         public void releaseContentObserver() {
             mContentObserver = null;
             // ---------- Original Method ----------

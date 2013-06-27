@@ -18,37 +18,34 @@ import android.text.Spanned;
 
 public abstract class NumberKeyListener extends BaseKeyListener implements InputFilter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.507 -0400", hash_original_method = "2E122C36C81AB5355F43AAE9F0CC7229", hash_generated_method = "2E122C36C81AB5355F43AAE9F0CC7229")
-        public NumberKeyListener ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.182 -0400", hash_original_method = "4B29623A8F76435C1A957FA964420338", hash_generated_method = "4B29623A8F76435C1A957FA964420338")
+    public NumberKeyListener ()
     {
+        //Synthesized constructor
     }
 
 
     protected abstract char[] getAcceptedChars();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.514 -0400", hash_original_method = "C0C70824215D530CCBC4D0D762C70EA3", hash_generated_method = "07CC42425F32D9C2496B7768E4E7DDD3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.183 -0400", hash_original_method = "C0C70824215D530CCBC4D0D762C70EA3", hash_generated_method = "15920619F3FDA2C06F537A98D0397283")
     protected int lookup(KeyEvent event, Spannable content) {
-        dsTaint.addTaint(content.dsTaint);
-        dsTaint.addTaint(event.dsTaint);
-        int var1621D9B0E059528E3DCB0577C0A2C9B8_383367704 = (event.getMatch(getAcceptedChars(), event.getMetaState() | getMetaState(content)));
-        return dsTaint.getTaintInt();
+        int var1621D9B0E059528E3DCB0577C0A2C9B8_969836874 = (event.getMatch(getAcceptedChars(), event.getMetaState() | getMetaState(content)));
+        addTaint(event.getTaint());
+        addTaint(content.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_884363562 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_884363562;
         // ---------- Original Method ----------
         //return event.getMatch(getAcceptedChars(), event.getMetaState() | getMetaState(content));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.514 -0400", hash_original_method = "CB7791CDEF3F29FF221CF4242D732189", hash_generated_method = "D4865EE18CCBCE60D1B0EA295F2B1FEA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.184 -0400", hash_original_method = "CB7791CDEF3F29FF221CF4242D732189", hash_generated_method = "76930399CA281407B3DADF6A3CF2C644")
     public CharSequence filter(CharSequence source, int start, int end,
                                Spanned dest, int dstart, int dend) {
-        dsTaint.addTaint(dest.dsTaint);
-        dsTaint.addTaint(dstart);
-        dsTaint.addTaint(source);
-        dsTaint.addTaint(dend);
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(end);
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_355732958 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1850438173 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_517749147 = null; //Variable for return #3
         char[] accept;
         accept = getAcceptedChars();
         boolean filter;
@@ -58,10 +55,16 @@ public abstract class NumberKeyListener extends BaseKeyListener implements Input
             i = start;
             {
                 {
-                    boolean var7ECCC53748A568D46FD2C52601F853F4_1162869049 = (!ok(accept, source.charAt(i)));
+                    boolean var7ECCC53748A568D46FD2C52601F853F4_1214252627 = (!ok(accept, source.charAt(i)));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_355732958 = null;
+        } //End block
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1850438173 = "";
+        } //End block
         SpannableStringBuilder filtered;
         filtered = new SpannableStringBuilder(source, start, end);
         i -= start;
@@ -73,14 +76,34 @@ public abstract class NumberKeyListener extends BaseKeyListener implements Input
             j = end - 1;
             {
                 {
-                    boolean var14F2A669F71CA4FE1D5A088E37357DB1_588519355 = (!ok(accept, source.charAt(j)));
+                    boolean var14F2A669F71CA4FE1D5A088E37357DB1_738098235 = (!ok(accept, source.charAt(j)));
                     {
                         filtered.delete(j, j + 1);
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_517749147 = filtered;
+        addTaint(source.getTaint());
+        addTaint(start);
+        addTaint(end);
+        addTaint(dest.getTaint());
+        addTaint(dstart);
+        addTaint(dend);
+        CharSequence varA7E53CE21691AB073D9660D615818899_264777174; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_264777174 = varB4EAC82CA7396A68D541C85D26508E83_355732958;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_264777174 = varB4EAC82CA7396A68D541C85D26508E83_1850438173;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_264777174 = varB4EAC82CA7396A68D541C85D26508E83_517749147;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_264777174.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_264777174;
         // ---------- Original Method ----------
         //char[] accept = getAcceptedChars();
         //boolean filter = false;
@@ -120,16 +143,11 @@ public abstract class NumberKeyListener extends BaseKeyListener implements Input
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:57.515 -0400", hash_original_method = "A33764BD45F2F5F121C837A63F0C5C57", hash_generated_method = "0D5C39E9D54E55D8636CC1C662279932")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:42.199 -0400", hash_original_method = "A33764BD45F2F5F121C837A63F0C5C57", hash_generated_method = "7BFDEBF290F14BE0CD35BEAB30D96B9A")
     @Override
     public boolean onKeyDown(View view, Editable content,
                              int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(content.dsTaint);
-        dsTaint.addTaint(keyCode);
-        dsTaint.addTaint(event.dsTaint);
-        dsTaint.addTaint(view.dsTaint);
         int selStart, selEnd;
         {
             int a;
@@ -160,7 +178,7 @@ public abstract class NumberKeyListener extends BaseKeyListener implements Input
         } //End block
         {
             {
-                boolean var0C02D08E46FB5445DFEFCD06B092449E_991220254 = (selStart == selEnd && selEnd > 0 &&
+                boolean var0C02D08E46FB5445DFEFCD06B092449E_798283582 = (selStart == selEnd && selEnd > 0 &&
                     content.charAt(selStart - 1) == '0');
                 {
                     content.replace(selStart - 1, selEnd, String.valueOf('+'));
@@ -169,8 +187,13 @@ public abstract class NumberKeyListener extends BaseKeyListener implements Input
             } //End collapsed parenthetic
         } //End block
         adjustMetaAfterKeypress(content);
-        boolean var250B4652E205BB567180858BBC354846_1061241917 = (super.onKeyDown(view, content, keyCode, event));
-        return dsTaint.getTaintBoolean();
+        boolean var250B4652E205BB567180858BBC354846_838904533 = (super.onKeyDown(view, content, keyCode, event));
+        addTaint(view.getTaint());
+        addTaint(content.getTaint());
+        addTaint(keyCode);
+        addTaint(event.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_363744284 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_363744284;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

@@ -15,9 +15,8 @@ import java.security.spec.AlgorithmParameterSpec;
 
 public abstract class MacSpi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.988 -0400", hash_original_method = "EEBADA04ED7B15342A993162A4F56017", hash_generated_method = "8D6409E06ABF820FA39D434786DC17A2")
-    @DSModeled(DSC.SAFE)
-    public MacSpi() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.179 -0400", hash_original_method = "EEBADA04ED7B15342A993162A4F56017", hash_generated_method = "8D6409E06ABF820FA39D434786DC17A2")
+    public  MacSpi() {
         // ---------- Original Method ----------
     }
 
@@ -35,16 +34,14 @@ public abstract class MacSpi {
     protected abstract void engineUpdate(byte[] input, int offset, int len);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.988 -0400", hash_original_method = "7BFE449B7BFB03ADBCFF5433860FD67B", hash_generated_method = "EB6E780E07A64A1527483CDBB82DDD47")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.212 -0400", hash_original_method = "7BFE449B7BFB03ADBCFF5433860FD67B", hash_generated_method = "DA9F02009ACE31E685F65B0E23B8B410")
     protected void engineUpdate(ByteBuffer input) {
-        dsTaint.addTaint(input.dsTaint);
         {
-            boolean varE54245A319FB90E6E4BB7E9A96B716C3_2027194709 = (!input.hasRemaining());
+            boolean varE54245A319FB90E6E4BB7E9A96B716C3_452875569 = (!input.hasRemaining());
         } //End collapsed parenthetic
         byte[] bInput;
         {
-            boolean var011961AA1A198646CB962085FB0562D5_383435706 = (input.hasArray());
+            boolean var011961AA1A198646CB962085FB0562D5_166671796 = (input.hasArray());
             {
                 bInput = input.array();
                 int offset;
@@ -62,6 +59,7 @@ public abstract class MacSpi {
                 engineUpdate(bInput, 0, bInput.length);
             } //End block
         } //End collapsed parenthetic
+        addTaint(input.getTaint());
         // ---------- Original Method ----------
         //if (!input.hasRemaining()) {
             //return;
@@ -88,12 +86,13 @@ public abstract class MacSpi {
     protected abstract void engineReset();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:35.989 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "6A227C2D1D640F62C3CA336F7897C954")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.213 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "E54444BA7C7EEB06F24F82981695D69E")
     @Override
     public Object clone() throws CloneNotSupportedException {
-        Object var234434AAD2BC7C43140CB7A97B63D24C_431478187 = (super.clone());
-        return (Object)dsTaint.getTaint();
+        Object varB4EAC82CA7396A68D541C85D26508E83_124642875 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_124642875 = super.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_124642875.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_124642875;
         // ---------- Original Method ----------
         //return super.clone();
     }

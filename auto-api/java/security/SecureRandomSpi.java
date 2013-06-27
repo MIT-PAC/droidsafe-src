@@ -11,9 +11,10 @@ import java.io.Serializable;
 
 public abstract class SecureRandomSpi implements Serializable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.525 -0400", hash_original_method = "00464996810138782590FE80CA45757C", hash_generated_method = "00464996810138782590FE80CA45757C")
-        public SecureRandomSpi ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.155 -0400", hash_original_method = "80C7AF93ECB1E3D5135CFB765D8A9626", hash_generated_method = "80C7AF93ECB1E3D5135CFB765D8A9626")
+    public SecureRandomSpi ()
     {
+        //Synthesized constructor
     }
 
 
@@ -26,6 +27,8 @@ public abstract class SecureRandomSpi implements Serializable {
     protected abstract byte[] engineGenerateSeed(int numBytes);
 
     
-    private static final long serialVersionUID = -2991854161009191830L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.155 -0400", hash_original_field = "264DBA7E929051B2931581083A1B45BD", hash_generated_field = "D8EAC7C63EA0EAC0061C7B715AFBFA0C")
+
+    private static long serialVersionUID = -2991854161009191830L;
 }
 

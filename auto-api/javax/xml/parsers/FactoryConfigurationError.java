@@ -9,58 +9,68 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public class FactoryConfigurationError extends Error {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.563 -0400", hash_original_field = "42552B1F133F9F8EB406D4F306EA9FD1", hash_generated_field = "70BD42A5533D521458BB067703B0D3E8")
+
     private Exception exception;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.388 -0400", hash_original_method = "6620C9D65D7B9B8AED04F1E2286BE37D", hash_generated_method = "3197EEE679B539DCD98F16DC71478ECF")
-    @DSModeled(DSC.SAFE)
-    public FactoryConfigurationError() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.563 -0400", hash_original_method = "6620C9D65D7B9B8AED04F1E2286BE37D", hash_generated_method = "3197EEE679B539DCD98F16DC71478ECF")
+    public  FactoryConfigurationError() {
         this.exception = null;
         // ---------- Original Method ----------
         //this.exception = null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.389 -0400", hash_original_method = "48F1E682C4A714972A38A39D612B5275", hash_generated_method = "1585F7C32F25F261CCA8E64391C4F86C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public FactoryConfigurationError(String msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.563 -0400", hash_original_method = "48F1E682C4A714972A38A39D612B5275", hash_generated_method = "9DC941C2231A2F72CA371472EF0C1DF4")
+    public  FactoryConfigurationError(String msg) {
         super(msg);
-        dsTaint.addTaint(msg);
         this.exception = null;
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         //this.exception = null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.390 -0400", hash_original_method = "50F0E936640865FC69642EB9E9B7DACD", hash_generated_method = "7C5FD515AE4654908AAA96C62463A667")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public FactoryConfigurationError(Exception e) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.563 -0400", hash_original_method = "50F0E936640865FC69642EB9E9B7DACD", hash_generated_method = "DECEA99A83213F9667E844B2E4FA90A5")
+    public  FactoryConfigurationError(Exception e) {
         super(e.toString());
-        dsTaint.addTaint(e.dsTaint);
+        this.exception = e;
         // ---------- Original Method ----------
         //this.exception = e;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.390 -0400", hash_original_method = "6DA0E2DE853AFE92CEEE23D7625EA5CB", hash_generated_method = "7D76D44D97063C4E78DFC0D2C186570C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public FactoryConfigurationError(Exception e, String msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.564 -0400", hash_original_method = "6DA0E2DE853AFE92CEEE23D7625EA5CB", hash_generated_method = "71461E7E24A718322463F62D96ED3685")
+    public  FactoryConfigurationError(Exception e, String msg) {
         super(msg);
-        dsTaint.addTaint(e.dsTaint);
-        dsTaint.addTaint(msg);
+        this.exception = e;
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         //this.exception = e;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.390 -0400", hash_original_method = "3CFCD04CF304E9364ADFC7DBDB377B80", hash_generated_method = "EEF3F997B3CCAF3DD36B4D2B802C2369")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.564 -0400", hash_original_method = "3CFCD04CF304E9364ADFC7DBDB377B80", hash_generated_method = "7345F0FE1BB05FCEA14B9E211CBA62F9")
     public String getMessage() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1881889420 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_397801518 = null; //Variable for return #2
         String message;
         message = super.getMessage ();
         {
-            String var408515ED3D09EC3C3B76800C4BFC9C6C_477737183 = (exception.getMessage());
+            varB4EAC82CA7396A68D541C85D26508E83_1881889420 = exception.getMessage();
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_397801518 = message;
+        String varA7E53CE21691AB073D9660D615818899_353680151; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_353680151 = varB4EAC82CA7396A68D541C85D26508E83_1881889420;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_353680151 = varB4EAC82CA7396A68D541C85D26508E83_397801518;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_353680151.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_353680151;
         // ---------- Original Method ----------
         //String message = super.getMessage ();
         //if (message == null && exception != null) {
@@ -70,10 +80,12 @@ public class FactoryConfigurationError extends Error {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.390 -0400", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "2C3AFB92F97725E71A554ACC471B64B4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.565 -0400", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "761B4C7AEB3705A0AB62C45A3A88380A")
     public Exception getException() {
-        return (Exception)dsTaint.getTaint();
+        Exception varB4EAC82CA7396A68D541C85D26508E83_439872992 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_439872992 = exception;
+        varB4EAC82CA7396A68D541C85D26508E83_439872992.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_439872992;
         // ---------- Original Method ----------
         //return exception;
     }

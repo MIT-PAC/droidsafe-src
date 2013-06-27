@@ -17,27 +17,25 @@ import java.text.ParseException;
 
 public class PChargingFunctionAddressesParser extends ParametersParser implements TokenTypes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.761 -0400", hash_original_method = "E6802C10162BF9ECF1CA7A726DBBAC6F", hash_generated_method = "BB98CB4F157993233BED571F48EF3863")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PChargingFunctionAddressesParser(String charging) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.690 -0400", hash_original_method = "E6802C10162BF9ECF1CA7A726DBBAC6F", hash_generated_method = "99B4FC5EC71086DA9B4D0A62B1EB4666")
+    public  PChargingFunctionAddressesParser(String charging) {
         super(charging);
-        dsTaint.addTaint(charging);
+        addTaint(charging.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.762 -0400", hash_original_method = "D9D24A0C312DDEF7581D0ED53212D170", hash_generated_method = "B4E6FC03732B78F4896F8A4E3EA5A1F1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected PChargingFunctionAddressesParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.690 -0400", hash_original_method = "D9D24A0C312DDEF7581D0ED53212D170", hash_generated_method = "B3C77CB743A80BBE679CA6123EBAE8BA")
+    protected  PChargingFunctionAddressesParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.762 -0400", hash_original_method = "5C436260248E496F94134402F46D8C6D", hash_generated_method = "C45A0833B5515CB5DB46F257F9D537F9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.699 -0400", hash_original_method = "5C436260248E496F94134402F46D8C6D", hash_generated_method = "A937C8D52993EC398774EDDE47094E06")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1340196240 = null; //Variable for return #1
         dbg_enter("parse");
         try 
         {
@@ -47,7 +45,7 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
             try 
             {
                 {
-                    boolean var053C2AA6A70B74FC601942C3CC901981_909283165 = (lexer.lookAhead(0) != '\n');
+                    boolean var053C2AA6A70B74FC601942C3CC901981_880023474 = (lexer.lookAhead(0) != '\n');
                     {
                         this.parseParameter(chargingFunctionAddresses);
                         this.lexer.SPorHT();
@@ -63,21 +61,21 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
                 if (DroidSafeAndroidRuntime.control) throw ex;
             } //End block
             super.parse(chargingFunctionAddresses);
+            varB4EAC82CA7396A68D541C85D26508E83_1340196240 = chargingFunctionAddresses;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1340196240.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1340196240;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.762 -0400", hash_original_method = "E7DC882A60F6AF0A0416E9B2C1439960", hash_generated_method = "5EE13F5E051E95825026C0B3528AEB29")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.700 -0400", hash_original_method = "E7DC882A60F6AF0A0416E9B2C1439960", hash_generated_method = "77652FD738AE17AC03974B9CAC8EC1D6")
     protected void parseParameter(PChargingFunctionAddresses chargingFunctionAddresses) throws ParseException {
-        dsTaint.addTaint(chargingFunctionAddresses.dsTaint);
         dbg_enter("parseParameter");
         try 
         {
@@ -89,6 +87,7 @@ public class PChargingFunctionAddressesParser extends ParametersParser implement
         {
             dbg_leave("parseParameter");
         } //End block
+        addTaint(chargingFunctionAddresses.getTaint());
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("parseParameter");

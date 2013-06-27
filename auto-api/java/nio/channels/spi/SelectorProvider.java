@@ -18,9 +18,8 @@ import java.util.ServiceLoader;
 
 public abstract class SelectorProvider {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.170 -0400", hash_original_method = "DDE564F0B2C96394E14746CA546F5611", hash_generated_method = "6B40AAE650197172BEF43AA1CD6DE226")
-    @DSModeled(DSC.SAFE)
-    protected SelectorProvider() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.614 -0400", hash_original_method = "DDE564F0B2C96394E14746CA546F5611", hash_generated_method = "6B40AAE650197172BEF43AA1CD6DE226")
+    protected  SelectorProvider() {
         // ---------- Original Method ----------
     }
 
@@ -63,15 +62,19 @@ public abstract class SelectorProvider {
     public abstract SocketChannel openSocketChannel() throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.170 -0400", hash_original_method = "1567929400994F6BBA42155A37789D93", hash_generated_method = "A84E323188B8F689844E807FBA408318")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.618 -0400", hash_original_method = "1567929400994F6BBA42155A37789D93", hash_generated_method = "B6B1B7C0E54BCBF070519F60D64054D7")
     public Channel inheritedChannel() throws IOException {
-        return (Channel)dsTaint.getTaint();
+        Channel varB4EAC82CA7396A68D541C85D26508E83_1168931482 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1168931482 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1168931482.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1168931482;
         // ---------- Original Method ----------
         //return null;
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.622 -0400", hash_original_field = "A84D4D80E229BA36EE3D0C6D573ECAAF", hash_generated_field = "D035C1A1A75D6145DD94D05B3D58FE60")
+
     private static SelectorProvider provider = null;
 }
 

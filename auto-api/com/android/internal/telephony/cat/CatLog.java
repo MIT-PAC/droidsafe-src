@@ -11,9 +11,10 @@ import android.util.Log;
 
 public abstract class CatLog {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.644 -0400", hash_original_method = "E908EB780EE5769F1F4960A4CC03E886", hash_generated_method = "E908EB780EE5769F1F4960A4CC03E886")
-        public CatLog ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.861 -0400", hash_original_method = "FB8735822A90C92F7E615B03189A3F55", hash_generated_method = "FB8735822A90C92F7E615B03189A3F55")
+    public CatLog ()
     {
+        //Synthesized constructor
     }
 
 
@@ -35,6 +36,8 @@ public abstract class CatLog {
     }
 
     
-    static final boolean DEBUG = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:16.861 -0400", hash_original_field = "BC4FF4C62A62F66D6D2E0A35B84DD24A", hash_generated_field = "D489EAF34F91A28D84195CAE8F826646")
+
+    static boolean DEBUG = true;
 }
 

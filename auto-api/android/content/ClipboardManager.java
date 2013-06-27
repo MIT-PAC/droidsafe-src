@@ -17,12 +17,16 @@ import android.util.Log;
 import java.util.ArrayList;
 
 public class ClipboardManager extends android.text.ClipboardManager {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.576 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
     private Context mContext;
-    private ArrayList<OnPrimaryClipChangedListener> mPrimaryClipChangedListeners
-             = new ArrayList<OnPrimaryClipChangedListener>();
-    private final IOnPrimaryClipChangedListener.Stub mPrimaryClipChangedServiceListener = new IOnPrimaryClipChangedListener.Stub() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.059 -0400", hash_original_method = "70003E26F597B4FA21D37DAC4C2F415E", hash_generated_method = "F52487E39EC4F57260159A7A23B22DB7")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.577 -0400", hash_original_field = "C4FB4E35010BD7489930A3D26DDC0ADA", hash_generated_field = "B370CC70701B98C8E793C01805C62652")
+
+    private ArrayList<OnPrimaryClipChangedListener> mPrimaryClipChangedListeners = new ArrayList<OnPrimaryClipChangedListener>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.588 -0400", hash_original_field = "6A00B923E2A779854F5FF695F32BEBAA", hash_generated_field = "F65B4ED5551856ABADA32BDB747C1CDF")
+
+    private IOnPrimaryClipChangedListener.Stub mPrimaryClipChangedServiceListener = new IOnPrimaryClipChangedListener.Stub() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.587 -0400", hash_original_method = "70003E26F597B4FA21D37DAC4C2F415E", hash_generated_method = "F52487E39EC4F57260159A7A23B22DB7")
         public void dispatchPrimaryClipChanged() {
             mHandler.sendEmptyMessage(MSG_REPORT_PRIMARY_CLIP_CHANGED);
             // ---------- Original Method ----------
@@ -30,16 +34,17 @@ public class ClipboardManager extends android.text.ClipboardManager {
         }
 
         
-}; //Transformed anonymous class
-    private final Handler mHandler = new Handler() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.060 -0400", hash_original_method = "5AAF932430F5A3E1179C80D13696BD76", hash_generated_method = "21912E96496EFBF611DCE316B8FCF5C5")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.589 -0400", hash_original_field = "A7B290A804ED4D1BFB9EEF0AABB57AC2", hash_generated_field = "3D0C6A0EEBDA8C4D2A855FB07C25AA11")
+
+    private Handler mHandler = new Handler() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.589 -0400", hash_original_method = "5AAF932430F5A3E1179C80D13696BD76", hash_generated_method = "FA752C471052CE88E1745A4EC756AD64")
         @Override
         public void handleMessage(Message msg) {
-            dsTaint.addTaint(msg.dsTaint);
             //Begin case MSG_REPORT_PRIMARY_CLIP_CHANGED 
             reportPrimaryClipChanged();
             //End case MSG_REPORT_PRIMARY_CLIP_CHANGED 
+            addTaint(msg.getTaint());
             // ---------- Original Method ----------
             //switch (msg.what) {
                 //case MSG_REPORT_PRIMARY_CLIP_CHANGED:
@@ -48,13 +53,12 @@ public class ClipboardManager extends android.text.ClipboardManager {
         }
 
         
-}; //Transformed anonymous class
+};
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.060 -0400", hash_original_method = "97558C16BA3BDE6476EDF618E25B9B81", hash_generated_method = "EA6FDF912E51BEFDB07FF7C02B2FB79F")
-    @DSModeled(DSC.SAFE)
-    public ClipboardManager(Context context, Handler handler) {
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(handler.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.590 -0400", hash_original_method = "97558C16BA3BDE6476EDF618E25B9B81", hash_generated_method = "FAEA0E95B891197CEE51FD28FD553C61")
+    public  ClipboardManager(Context context, Handler handler) {
+        mContext = context;
+        addTaint(handler.getTaint());
         // ---------- Original Method ----------
         //mContext = context;
     }
@@ -72,16 +76,15 @@ public class ClipboardManager extends android.text.ClipboardManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.061 -0400", hash_original_method = "9758ADBACC2D859F954394BF2EAF123A", hash_generated_method = "E1CB92D623771C5135D1CDB9C5DFF35C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.601 -0400", hash_original_method = "9758ADBACC2D859F954394BF2EAF123A", hash_generated_method = "5C69CB3812A9A0703F7F1F30BC19865D")
     public void setPrimaryClip(ClipData clip) {
-        dsTaint.addTaint(clip.dsTaint);
         try 
         {
             getService().setPrimaryClip(clip);
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(clip.getTaint());
         // ---------- Original Method ----------
         //try {
             //getService().setPrimaryClip(clip);
@@ -90,16 +93,29 @@ public class ClipboardManager extends android.text.ClipboardManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.061 -0400", hash_original_method = "50B348CB23C6EF42B3CBE9B194465F2B", hash_generated_method = "8022F04DFEBC6C77AA9B78183405767E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.621 -0400", hash_original_method = "50B348CB23C6EF42B3CBE9B194465F2B", hash_generated_method = "13C8933DD7C995038B9950D7FE3326DA")
     public ClipData getPrimaryClip() {
+        ClipData varB4EAC82CA7396A68D541C85D26508E83_1416231363 = null; //Variable for return #1
+        ClipData varB4EAC82CA7396A68D541C85D26508E83_1714194561 = null; //Variable for return #2
         try 
         {
-            ClipData var3225996981D61B82C5D11E20D0A48EDA_126943668 = (getService().getPrimaryClip(mContext.getPackageName()));
+            varB4EAC82CA7396A68D541C85D26508E83_1416231363 = getService().getPrimaryClip(mContext.getPackageName());
         } //End block
         catch (RemoteException e)
-        { }
-        return (ClipData)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1714194561 = null;
+        } //End block
+        ClipData varA7E53CE21691AB073D9660D615818899_1286886213; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1286886213 = varB4EAC82CA7396A68D541C85D26508E83_1416231363;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1286886213 = varB4EAC82CA7396A68D541C85D26508E83_1714194561;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1286886213.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1286886213;
         // ---------- Original Method ----------
         //try {
             //return getService().getPrimaryClip(mContext.getPackageName());
@@ -109,16 +125,29 @@ public class ClipboardManager extends android.text.ClipboardManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.062 -0400", hash_original_method = "678ECBBFE5F09A43CDAAF81F6FD5AC97", hash_generated_method = "ABC05265AC88E80B430BE32B09F5B2F3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.627 -0400", hash_original_method = "678ECBBFE5F09A43CDAAF81F6FD5AC97", hash_generated_method = "43E81F5467C18456E6ADC3C052C380D8")
     public ClipDescription getPrimaryClipDescription() {
+        ClipDescription varB4EAC82CA7396A68D541C85D26508E83_1078235001 = null; //Variable for return #1
+        ClipDescription varB4EAC82CA7396A68D541C85D26508E83_211088420 = null; //Variable for return #2
         try 
         {
-            ClipDescription var1832F070027C37D41B4E6F1F2F661056_1966644106 = (getService().getPrimaryClipDescription());
+            varB4EAC82CA7396A68D541C85D26508E83_1078235001 = getService().getPrimaryClipDescription();
         } //End block
         catch (RemoteException e)
-        { }
-        return (ClipDescription)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_211088420 = null;
+        } //End block
+        ClipDescription varA7E53CE21691AB073D9660D615818899_20083694; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_20083694 = varB4EAC82CA7396A68D541C85D26508E83_1078235001;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_20083694 = varB4EAC82CA7396A68D541C85D26508E83_211088420;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_20083694.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_20083694;
         // ---------- Original Method ----------
         //try {
             //return getService().getPrimaryClipDescription();
@@ -128,16 +157,16 @@ public class ClipboardManager extends android.text.ClipboardManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.062 -0400", hash_original_method = "CBBCF938F0063A19991B3E7A8193FD4F", hash_generated_method = "7747930F00C44FE43A723FC9BF1DD764")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.636 -0400", hash_original_method = "CBBCF938F0063A19991B3E7A8193FD4F", hash_generated_method = "B0608A7293C8A184729B4872A6392F9E")
     public boolean hasPrimaryClip() {
         try 
         {
-            boolean var3C757C01DE776AE9A44F6650B0C4FBA6_323114701 = (getService().hasPrimaryClip());
+            boolean var3C757C01DE776AE9A44F6650B0C4FBA6_1773873602 = (getService().hasPrimaryClip());
         } //End block
         catch (RemoteException e)
         { }
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1418202510 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1418202510;
         // ---------- Original Method ----------
         //try {
             //return getService().hasPrimaryClip();
@@ -147,13 +176,11 @@ public class ClipboardManager extends android.text.ClipboardManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.063 -0400", hash_original_method = "E5044C03AB4AD3DC9569B565F2008B98", hash_generated_method = "7A40F748ABD358A873AC2391B15382F3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.649 -0400", hash_original_method = "E5044C03AB4AD3DC9569B565F2008B98", hash_generated_method = "C223A1527697F67165421823B0E4DB79")
     public void addPrimaryClipChangedListener(OnPrimaryClipChangedListener what) {
-        dsTaint.addTaint(what.dsTaint);
         {
             {
-                boolean var6174F040073C34898448239A43E2EAFC_1794240692 = (mPrimaryClipChangedListeners.size() == 0);
+                boolean var6174F040073C34898448239A43E2EAFC_148686607 = (mPrimaryClipChangedListeners.size() == 0);
                 {
                     try 
                     {
@@ -166,6 +193,7 @@ public class ClipboardManager extends android.text.ClipboardManager {
             } //End collapsed parenthetic
             mPrimaryClipChangedListeners.add(what);
         } //End block
+        addTaint(what.getTaint());
         // ---------- Original Method ----------
         //synchronized (mPrimaryClipChangedListeners) {
             //if (mPrimaryClipChangedListeners.size() == 0) {
@@ -180,14 +208,12 @@ public class ClipboardManager extends android.text.ClipboardManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.063 -0400", hash_original_method = "7128B19124A44EC27CC4C323B8513057", hash_generated_method = "2C9F0C89E7487B1A55738A96098BFF84")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.650 -0400", hash_original_method = "7128B19124A44EC27CC4C323B8513057", hash_generated_method = "9868800EA9026BE892E4FB06AD592BC5")
     public void removePrimaryClipChangedListener(OnPrimaryClipChangedListener what) {
-        dsTaint.addTaint(what.dsTaint);
         {
             mPrimaryClipChangedListeners.remove(what);
             {
-                boolean var6174F040073C34898448239A43E2EAFC_195341208 = (mPrimaryClipChangedListeners.size() == 0);
+                boolean var6174F040073C34898448239A43E2EAFC_1351107105 = (mPrimaryClipChangedListeners.size() == 0);
                 {
                     try 
                     {
@@ -199,6 +225,7 @@ public class ClipboardManager extends android.text.ClipboardManager {
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        addTaint(what.getTaint());
         // ---------- Original Method ----------
         //synchronized (mPrimaryClipChangedListeners) {
             //mPrimaryClipChangedListeners.remove(what);
@@ -213,18 +240,30 @@ public class ClipboardManager extends android.text.ClipboardManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.064 -0400", hash_original_method = "D9D561BF0732BC43D4A46DB226A10D9C", hash_generated_method = "798F3C55BB0334D0C5BF0AD7DC08BC58")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.675 -0400", hash_original_method = "D9D561BF0732BC43D4A46DB226A10D9C", hash_generated_method = "D339B8D0B2FC4AB5FA8D0331D9BC258F")
     public CharSequence getText() {
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2013625724 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_710969848 = null; //Variable for return #2
         ClipData clip;
         clip = getPrimaryClip();
         {
-            boolean var199BC11988A51D31CFFDE3AC3DC661B9_1048591046 = (clip != null && clip.getItemCount() > 0);
+            boolean var199BC11988A51D31CFFDE3AC3DC661B9_865338486 = (clip != null && clip.getItemCount() > 0);
             {
-                CharSequence var2FE90B321F188CF62C49319BD130D036_117372434 = (clip.getItemAt(0).coerceToText(mContext));
+                varB4EAC82CA7396A68D541C85D26508E83_2013625724 = clip.getItemAt(0).coerceToText(mContext);
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_710969848 = null;
+        CharSequence varA7E53CE21691AB073D9660D615818899_1210171188; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1210171188 = varB4EAC82CA7396A68D541C85D26508E83_2013625724;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1210171188 = varB4EAC82CA7396A68D541C85D26508E83_710969848;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1210171188.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1210171188;
         // ---------- Original Method ----------
         //ClipData clip = getPrimaryClip();
         //if (clip != null && clip.getItemCount() > 0) {
@@ -234,26 +273,25 @@ public class ClipboardManager extends android.text.ClipboardManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.064 -0400", hash_original_method = "31E7EB6BE33A923560F7B9C2B2D8F3DA", hash_generated_method = "6BEE5BD243FFE34687672E77356A7D83")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.676 -0400", hash_original_method = "31E7EB6BE33A923560F7B9C2B2D8F3DA", hash_generated_method = "E87B08892C0344F4FFB230228225650C")
     public void setText(CharSequence text) {
-        dsTaint.addTaint(text);
         setPrimaryClip(ClipData.newPlainText(null, text));
+        addTaint(text.getTaint());
         // ---------- Original Method ----------
         //setPrimaryClip(ClipData.newPlainText(null, text));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.065 -0400", hash_original_method = "9F22D463FB706DEB91BA1565CF5CF48D", hash_generated_method = "E06E996134C46D7B4A81B083AB16658B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.677 -0400", hash_original_method = "9F22D463FB706DEB91BA1565CF5CF48D", hash_generated_method = "F13D423BB3A6D2310DA0ABB7D2288F18")
     public boolean hasText() {
         try 
         {
-            boolean var5090D494BD5C885F44AA60AE07CD9967_2015130167 = (getService().hasClipboardText());
+            boolean var5090D494BD5C885F44AA60AE07CD9967_1399523286 = (getService().hasClipboardText());
         } //End block
         catch (RemoteException e)
         { }
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_163004895 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_163004895;
         // ---------- Original Method ----------
         //try {
             //return getService().hasClipboardText();
@@ -263,8 +301,7 @@ public class ClipboardManager extends android.text.ClipboardManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:40.065 -0400", hash_original_method = "0985A14308F67055EBA5FC0B7343D794", hash_generated_method = "CCF40207AA7C5CA7B9CFDA549D648159")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.688 -0400", hash_original_method = "0985A14308F67055EBA5FC0B7343D794", hash_generated_method = "CCF40207AA7C5CA7B9CFDA549D648159")
      void reportPrimaryClipChanged() {
         Object[] listeners;
         {
@@ -298,8 +335,14 @@ public class ClipboardManager extends android.text.ClipboardManager {
         void onPrimaryClipChanged();
     }
     
-    private final static Object sStaticLock = new Object();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.688 -0400", hash_original_field = "6F01FC6BDB2E7BC12F6360B41E8B2316", hash_generated_field = "B2F80621A6DDB41CF5B09DFD74B499E3")
+
+    private static Object sStaticLock = new Object();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.688 -0400", hash_original_field = "5B4BCAAF27A7649717520CAA43216111", hash_generated_field = "7DAD8437C868C87DD2CEB4861B4C57D1")
+
     private static IClipboard sService;
-    static final int MSG_REPORT_PRIMARY_CLIP_CHANGED = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.688 -0400", hash_original_field = "0EDC3B36A8AD58E17D93760B7667D1D3", hash_generated_field = "9DEAE1A273A8D4F25142D38FD732757D")
+
+    static int MSG_REPORT_PRIMARY_CLIP_CHANGED = 1;
 }
 

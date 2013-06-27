@@ -10,22 +10,22 @@ import java.util.Iterator;
 
 public class IllegalMonitorStateException extends RuntimeException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.740 -0400", hash_original_method = "A830880207AC191B3684BF337F5E0247", hash_generated_method = "0C4EAA93E01B549DF2002FFF068D6996")
-    @DSModeled(DSC.SAFE)
-    public IllegalMonitorStateException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.569 -0400", hash_original_method = "A830880207AC191B3684BF337F5E0247", hash_generated_method = "0C4EAA93E01B549DF2002FFF068D6996")
+    public  IllegalMonitorStateException() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.740 -0400", hash_original_method = "1591087F36D115C0B3CDF3D9C0FC50C3", hash_generated_method = "C184B6D203423BFC85C1387645FA8668")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public IllegalMonitorStateException(String detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.569 -0400", hash_original_method = "1591087F36D115C0B3CDF3D9C0FC50C3", hash_generated_method = "7E08F7F82383228A5914133957B6BAF2")
+    public  IllegalMonitorStateException(String detailMessage) {
         super(detailMessage);
-        dsTaint.addTaint(detailMessage);
+        addTaint(detailMessage.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = 3713306369498869069L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.570 -0400", hash_original_field = "E4313FC7C4613B149FC3AFAE9C70AB60", hash_generated_field = "84D67D4656F0C3C10139FE6217466C49")
+
+    private static long serialVersionUID = 3713306369498869069L;
 }
 

@@ -14,27 +14,25 @@ import javax.sip.*;
 
 public class AcceptEncodingParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.206 -0400", hash_original_method = "865E86FA800E1D68F0770AD3080D258F", hash_generated_method = "77FFDDFA2EEA841CFB76E0C1F94BB3DD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AcceptEncodingParser(String acceptEncoding) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.063 -0400", hash_original_method = "865E86FA800E1D68F0770AD3080D258F", hash_generated_method = "F0F93EB7D3971DD3BFB62EE12CA6FFF8")
+    public  AcceptEncodingParser(String acceptEncoding) {
         super(acceptEncoding);
-        dsTaint.addTaint(acceptEncoding);
+        addTaint(acceptEncoding.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.206 -0400", hash_original_method = "2A31652D0F06752F063CE4D7769684DB", hash_generated_method = "912036D92C4EFE517DFA4D79A8519500")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected AcceptEncodingParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.063 -0400", hash_original_method = "2A31652D0F06752F063CE4D7769684DB", hash_generated_method = "275A392B40423395F120EDEEAEEEC6CC")
+    protected  AcceptEncodingParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.206 -0400", hash_original_method = "A9DB3F83816CED00173237937952E9D8", hash_generated_method = "6727D3BD1E5E976A4A3A3C0C7E530356")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.075 -0400", hash_original_method = "A9DB3F83816CED00173237937952E9D8", hash_generated_method = "713EFBA6C8DECD073E326E47E9DF2299")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1364093314 = null; //Variable for return #1
         AcceptEncodingList acceptEncodingList;
         acceptEncodingList = new AcceptEncodingList();
         dbg_enter("AcceptEncodingParser.parse");
@@ -42,7 +40,7 @@ public class AcceptEncodingParser extends HeaderParser {
         {
             headerName(TokenTypes.ACCEPT_ENCODING);
             {
-                boolean var1FFD4C60FBFDEA303315F5CA0F26F4D7_227248593 = (lexer.lookAhead(0) == '\n');
+                boolean var1FFD4C60FBFDEA303315F5CA0F26F4D7_64018153 = (lexer.lookAhead(0) == '\n');
                 {
                     AcceptEncoding acceptEncoding;
                     acceptEncoding = new AcceptEncoding();
@@ -50,12 +48,12 @@ public class AcceptEncodingParser extends HeaderParser {
                 } //End block
                 {
                     {
-                        boolean varEE7E52664D9AD5CC0BCC54974CA397F5_543508885 = (lexer.lookAhead(0) != '\n');
+                        boolean varEE7E52664D9AD5CC0BCC54974CA397F5_152705445 = (lexer.lookAhead(0) != '\n');
                         {
                             AcceptEncoding acceptEncoding;
                             acceptEncoding = new AcceptEncoding();
                             {
-                                boolean varD42C1A55C19AAEC8287557F1254134A8_428767452 = (lexer.lookAhead(0) != ';');
+                                boolean varD42C1A55C19AAEC8287557F1254134A8_457746099 = (lexer.lookAhead(0) != ';');
                                 {
                                     lexer.match(TokenTypes.ID);
                                     Token value;
@@ -64,7 +62,7 @@ public class AcceptEncodingParser extends HeaderParser {
                                 } //End block
                             } //End collapsed parenthetic
                             {
-                                boolean varE91A1AFB3AE8E5E9730856A1A36B3A33_1647858803 = (lexer.lookAhead(0) == ';');
+                                boolean varE91A1AFB3AE8E5E9730856A1A36B3A33_737072264 = (lexer.lookAhead(0) == ';');
                                 {
                                     this.lexer.match(';');
                                     this.lexer.SPorHT();
@@ -94,7 +92,7 @@ public class AcceptEncodingParser extends HeaderParser {
                             } //End collapsed parenthetic
                             acceptEncodingList.add(acceptEncoding);
                             {
-                                boolean varBB8B123DF79A8601AA2894E0E9CB4B5B_235944602 = (lexer.lookAhead(0) == ',');
+                                boolean varBB8B123DF79A8601AA2894E0E9CB4B5B_1754430504 = (lexer.lookAhead(0) == ',');
                                 {
                                     this.lexer.match(',');
                                     this.lexer.SPorHT();
@@ -104,12 +102,14 @@ public class AcceptEncodingParser extends HeaderParser {
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
+            varB4EAC82CA7396A68D541C85D26508E83_1364093314 = acceptEncodingList;
         } //End block
         finally 
         {
             dbg_leave("AcceptEncodingParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1364093314.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1364093314;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

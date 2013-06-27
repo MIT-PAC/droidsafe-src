@@ -15,49 +15,48 @@ import gov.nist.javax.sip.header.AddressParametersHeader;
 
 public class PAssertedIdentity extends AddressParametersHeader implements PAssertedIdentityHeader, SIPHeaderNamesIms, ExtensionHeader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.542 -0400", hash_original_method = "4DB521A98546EC6C210A063C8DC8A3AB", hash_generated_method = "2ABBDAC614E9DAF77F684B5D14D90D87")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PAssertedIdentity(AddressImpl address) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.162 -0400", hash_original_method = "4DB521A98546EC6C210A063C8DC8A3AB", hash_generated_method = "ECDE4F5491B010A785DC78B96DCB82B0")
+    public  PAssertedIdentity(AddressImpl address) {
         super(NAME);
-        dsTaint.addTaint(address.dsTaint);
         this.address = address;
+        addTaint(address.getTaint());
         // ---------- Original Method ----------
         //this.address = address;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.542 -0400", hash_original_method = "7A9E6607376C61D3870CDBD630C80B00", hash_generated_method = "44DEFC0ABC6FF74FF8AD15DA6F9C8AD2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PAssertedIdentity() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.162 -0400", hash_original_method = "7A9E6607376C61D3870CDBD630C80B00", hash_generated_method = "44DEFC0ABC6FF74FF8AD15DA6F9C8AD2")
+    public  PAssertedIdentity() {
         super(NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.543 -0400", hash_original_method = "A02034091310C74B28639EFAE9360C33", hash_generated_method = "6585C787530BD966A3B6F7A35820C4DB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.172 -0400", hash_original_method = "A02034091310C74B28639EFAE9360C33", hash_generated_method = "6A6C961E819541A5CAB730F83243C7C6")
     public String encodeBody() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1536379576 = null; //Variable for return #1
         StringBuffer retval;
         retval = new StringBuffer();
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_203683358 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
+            boolean varA8A94084CEDB8AE131E76CDFE26F1997_531379274 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
             {
                 retval.append(LESS_THAN);
             } //End block
         } //End collapsed parenthetic
         retval.append(address.encode());
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_485173556 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
+            boolean varA8A94084CEDB8AE131E76CDFE26F1997_1871187560 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
             {
                 retval.append(GREATER_THAN);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_1861729342 = (!parameters.isEmpty());
+            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_986937675 = (!parameters.isEmpty());
             retval.append(COMMA + this.parameters.encode());
         } //End collapsed parenthetic
-        String var0F1F65BA89BF920BA1A29FC87F91B969_485124078 = (retval.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1536379576 = retval.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1536379576.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1536379576;
         // ---------- Original Method ----------
         //StringBuffer retval = new StringBuffer();
         //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
@@ -73,23 +72,24 @@ public class PAssertedIdentity extends AddressParametersHeader implements PAsser
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.543 -0400", hash_original_method = "0E5911CB2B858F97AB1667F7876EAA3E", hash_generated_method = "15C7E051314CE872905D978D964E9C9F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.172 -0400", hash_original_method = "0E5911CB2B858F97AB1667F7876EAA3E", hash_generated_method = "1B31B9630CE23A4CC3EB08E904060314")
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_966455549 = null; //Variable for return #1
         PAssertedIdentity retval;
         retval = (PAssertedIdentity) super.clone();
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_966455549 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_966455549.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_966455549;
         // ---------- Original Method ----------
         //PAssertedIdentity retval = (PAssertedIdentity) super.clone();
         //return retval;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.543 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "3173C219DBD7EAE475390DAFD6FD461B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.173 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
     public void setValue(String value) throws ParseException {
-        dsTaint.addTaint(value);
         if (DroidSafeAndroidRuntime.control) throw new ParseException(value,0);
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //throw new ParseException(value,0);
     }

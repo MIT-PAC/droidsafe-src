@@ -13,27 +13,25 @@ import java.text.ParseException;
 
 public class ContentLanguageParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.264 -0400", hash_original_method = "0E099EDE885EEFB21F71B8A7B980DD82", hash_generated_method = "A0A4C55E1C76A00108493947743966E1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ContentLanguageParser(String contentLanguage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.681 -0400", hash_original_method = "0E099EDE885EEFB21F71B8A7B980DD82", hash_generated_method = "89C9A160B2C1B8A9C1BDA1A76AFA4AEF")
+    public  ContentLanguageParser(String contentLanguage) {
         super(contentLanguage);
-        dsTaint.addTaint(contentLanguage);
+        addTaint(contentLanguage.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.265 -0400", hash_original_method = "2896A247DEE95FE46B57871751B12905", hash_generated_method = "58E69282816410365E32B83744FBCED7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected ContentLanguageParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.681 -0400", hash_original_method = "2896A247DEE95FE46B57871751B12905", hash_generated_method = "FD31EB8813837D78ACC5589B695912D3")
+    protected  ContentLanguageParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.265 -0400", hash_original_method = "B9174D052A2AFCDDC5C88393A2D6AF07", hash_generated_method = "48C073F9E220866103EDD9749FB518E4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.687 -0400", hash_original_method = "B9174D052A2AFCDDC5C88393A2D6AF07", hash_generated_method = "33A88B9D466B47DF1712D8D64588F775")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_18703962 = null; //Variable for return #1
         dbg_enter("ContentLanguageParser.parse");
         ContentLanguageList list;
         list = new ContentLanguageList();
@@ -41,7 +39,7 @@ public class ContentLanguageParser extends HeaderParser {
         {
             headerName(TokenTypes.CONTENT_LANGUAGE);
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_534344649 = (lexer.lookAhead(0) != '\n');
+                boolean varA38820C66B6BCE71087D920E2767FF09_1298950856 = (lexer.lookAhead(0) != '\n');
                 {
                     this.lexer.SPorHT();
                     this.lexer.match(TokenTypes.ID);
@@ -52,7 +50,7 @@ public class ContentLanguageParser extends HeaderParser {
                     this.lexer.SPorHT();
                     list.add(cl);
                     {
-                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_1983433216 = (lexer.lookAhead(0) == ',');
+                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_1884465618 = (lexer.lookAhead(0) == ',');
                         {
                             this.lexer.match(',');
                             this.lexer.SPorHT();
@@ -66,6 +64,7 @@ public class ContentLanguageParser extends HeaderParser {
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
+            varB4EAC82CA7396A68D541C85D26508E83_18703962 = list;
         } //End block
         catch (ParseException ex)
         {
@@ -75,7 +74,8 @@ public class ContentLanguageParser extends HeaderParser {
         {
             dbg_leave("ContentLanguageParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_18703962.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_18703962;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

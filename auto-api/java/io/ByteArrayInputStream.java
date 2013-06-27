@@ -10,16 +10,23 @@ import java.util.Iterator;
 import java.util.Arrays;
 
 public class ByteArrayInputStream extends InputStream {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.583 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
+
     protected byte[] buf;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.583 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "3039C52FCC40405280C80DE756778CBF")
+
     protected int pos;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.583 -0400", hash_original_field = "EA82410C7A9991816B5EEEEBE195E20A", hash_generated_field = "5CD36671CA275C4800A9D662FF24FD61")
+
     protected int mark;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.584 -0400", hash_original_field = "E2942A04780E223B215EB8B663CF5353", hash_generated_field = "CADFF8C1F208C99E14B28CFC1A04442F")
+
     protected int count;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.435 -0400", hash_original_method = "CF1B6A0EB8AC88640F4210354AA3396D", hash_generated_method = "9343ECD5AE79DD88562E53C38961151F")
-    @DSModeled(DSC.SAFE)
-    public ByteArrayInputStream(byte[] buf) {
-        dsTaint.addTaint(buf[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.584 -0400", hash_original_method = "CF1B6A0EB8AC88640F4210354AA3396D", hash_generated_method = "A0B0F5C55FABD496502CD1493CE61372")
+    public  ByteArrayInputStream(byte[] buf) {
         this.mark = 0;
+        this.buf = buf;
         this.count = buf.length;
         // ---------- Original Method ----------
         //this.mark = 0;
@@ -28,12 +35,11 @@ public class ByteArrayInputStream extends InputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.436 -0400", hash_original_method = "CF3AD622E6B16C040D235FE2C3A31C84", hash_generated_method = "26DF4E67B52B86C2361C80D82EA22A3F")
-    @DSModeled(DSC.SAFE)
-    public ByteArrayInputStream(byte[] buf, int offset, int length) {
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(buf[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.584 -0400", hash_original_method = "CF3AD622E6B16C040D235FE2C3A31C84", hash_generated_method = "D1E790062826309E9586368E1A175542")
+    public  ByteArrayInputStream(byte[] buf, int offset, int length) {
+        this.buf = buf;
+        pos = offset;
+        mark = offset;
         count = offset + length > buf.length ? buf.length : offset + length;
         // ---------- Original Method ----------
         //this.buf = buf;
@@ -43,69 +49,67 @@ public class ByteArrayInputStream extends InputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.436 -0400", hash_original_method = "60B3E89517A58F980CEC13EE6BBDFCDA", hash_generated_method = "273A0A194543EB406E458FDF5ABCA4AD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.584 -0400", hash_original_method = "60B3E89517A58F980CEC13EE6BBDFCDA", hash_generated_method = "662404E04BC98EB811B00F89570F5AB6")
     @Override
     public synchronized int available() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_143808819 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_143808819;
         // ---------- Original Method ----------
         //return count - pos;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.436 -0400", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "6B4749673D8A7A62B822BE7109DA1BE7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.585 -0400", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "6B4749673D8A7A62B822BE7109DA1BE7")
     @Override
     public void close() throws IOException {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.436 -0400", hash_original_method = "78F90254D622F331873962595002D35F", hash_generated_method = "F369DEEB3B8C12C7F234BFC77F23E32A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.585 -0400", hash_original_method = "78F90254D622F331873962595002D35F", hash_generated_method = "E9AFBC14CFC872FA782DC7FDB8371ACF")
     @Override
     public synchronized void mark(int readlimit) {
-        dsTaint.addTaint(readlimit);
         mark = pos;
+        addTaint(readlimit);
         // ---------- Original Method ----------
         //mark = pos;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.436 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "4C8BC0E845541479E10014C1D7864553")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.585 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "6F33C0766B63BB4479E1C6BAFB4E22FB")
     @Override
     public boolean markSupported() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1863425250 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1863425250;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.437 -0400", hash_original_method = "BB56F6666E3E1FB5BE1E06064B4DC5BD", hash_generated_method = "C7F3818823E4C09DB9CAB11F07ABB0F1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.586 -0400", hash_original_method = "BB56F6666E3E1FB5BE1E06064B4DC5BD", hash_generated_method = "B5BB6FADDD0DADEDF3C239B7AA76874A")
     @Override
     public synchronized int read() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43233555 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43233555;
         // ---------- Original Method ----------
         //return pos < count ? buf[pos++] & 0xFF : -1;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.437 -0400", hash_original_method = "2397610A056026EF1112E9790F6EF360", hash_generated_method = "438C9F24949F233232842FDF03790D50")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.586 -0400", hash_original_method = "2397610A056026EF1112E9790F6EF360", hash_generated_method = "D5AE847F0899AE8A273369A101A0C561")
     @Override
     public synchronized int read(byte[] buffer, int offset, int length) {
-        dsTaint.addTaint(buffer[0]);
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(offset);
         Arrays.checkOffsetAndCount(buffer.length, offset, length);
         int copylen;
         copylen = this.count - pos;
         copylen = length;
         System.arraycopy(this.buf, pos, buffer, offset, copylen);
         pos += copylen;
-        return dsTaint.getTaintInt();
+        addTaint(buffer[0]);
+        addTaint(offset);
+        addTaint(length);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_73711377 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_73711377;
         // ---------- Original Method ----------
         //Arrays.checkOffsetAndCount(buffer.length, offset, length);
         //if (this.pos >= this.count) {
@@ -121,8 +125,7 @@ public class ByteArrayInputStream extends InputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.437 -0400", hash_original_method = "C62CA45FA6D33EC45CB5D1463505B2CA", hash_generated_method = "5F81C3DDB804B4E1ED077DCCACC7F88D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.591 -0400", hash_original_method = "C62CA45FA6D33EC45CB5D1463505B2CA", hash_generated_method = "5F81C3DDB804B4E1ED077DCCACC7F88D")
     @Override
     public synchronized void reset() {
         pos = mark;
@@ -131,15 +134,14 @@ public class ByteArrayInputStream extends InputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.438 -0400", hash_original_method = "18E56C09FFA023CF1EF098815CAD3886", hash_generated_method = "CD05403E189A316B2DE686EA6AB43AF0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.591 -0400", hash_original_method = "18E56C09FFA023CF1EF098815CAD3886", hash_generated_method = "09266112059031FC67F07AF2B3C1F1BD")
     @Override
     public synchronized long skip(long byteCount) {
-        dsTaint.addTaint(byteCount);
         int temp;
         temp = pos;
         pos = this.count - pos < byteCount ? this.count : (int) (pos + byteCount);
-        return dsTaint.getTaintLong();
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_918537065 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_918537065;
         // ---------- Original Method ----------
         //if (byteCount <= 0) {
             //return 0;

@@ -12,26 +12,32 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AudioGroup {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.234 -0400", hash_original_field = "A1ADF33EC233D9220AFA3F7B9CA06090", hash_generated_field = "FA164271CF2AFF347DB26D34D85762CF")
+
     private Map<AudioStream, Integer> mStreams;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.234 -0400", hash_original_field = "69195263FDF704D386CDDE3B1ADC9F0C", hash_generated_field = "4C7DBC83368DD32BF5C59F718910AF60")
+
     private int mMode = MODE_ON_HOLD;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.234 -0400", hash_original_field = "8AF77D45DED615EEBE14D961B1D7F7CE", hash_generated_field = "9DD3DA3B4DB5A1786C464E9BB7FF265B")
+
     private int mNative;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.134 -0400", hash_original_method = "9E113DACC3DCFC949CC90EBD557A2ACA", hash_generated_method = "0A80C29DBACA16C4F76FC1A830D63EA7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AudioGroup() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.235 -0400", hash_original_method = "9E113DACC3DCFC949CC90EBD557A2ACA", hash_generated_method = "0A80C29DBACA16C4F76FC1A830D63EA7")
+    public  AudioGroup() {
         mStreams = new HashMap<AudioStream, Integer>();
         // ---------- Original Method ----------
         //mStreams = new HashMap<AudioStream, Integer>();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.134 -0400", hash_original_method = "868089D57ED1EE56E9ACF33DE8DED38E", hash_generated_method = "27F359E756A71A4D4844D4D2248F3A87")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.238 -0400", hash_original_method = "868089D57ED1EE56E9ACF33DE8DED38E", hash_generated_method = "C19DB03876AFA499A1817CF93C0BAA72")
     public AudioStream[] getStreams() {
+        AudioStream[] varB4EAC82CA7396A68D541C85D26508E83_1574294124 = null; //Variable for return #1
         {
-            AudioStream[] varB86D8BBD4FFBDC772AC682BB7ADBAAC6_147245630 = (mStreams.keySet().toArray(new AudioStream[mStreams.size()]));
+            varB4EAC82CA7396A68D541C85D26508E83_1574294124 = mStreams.keySet().toArray(new AudioStream[mStreams.size()]);
         } //End block
-        return (AudioStream[])dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1574294124.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1574294124;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mStreams.keySet().toArray(new AudioStream[mStreams.size()]);
@@ -39,24 +45,23 @@ public class AudioGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.134 -0400", hash_original_method = "46CDEAEE57FC46504BB8BB611AFCF88D", hash_generated_method = "1B0905CC702C46C8C3A70BD6A436C7FD")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.258 -0400", hash_original_method = "46CDEAEE57FC46504BB8BB611AFCF88D", hash_generated_method = "42C05D68A38C13A0C2CAA5F9A6CC0568")
     public int getMode() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1030680649 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1030680649;
         // ---------- Original Method ----------
         //return mMode;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.134 -0400", hash_original_method = "3B407E7A126047BBCD9831E47F9B5D99", hash_generated_method = "ECB9FB904ECBEE178F1C33E1F2370590")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.259 -0400", hash_original_method = "3B407E7A126047BBCD9831E47F9B5D99", hash_generated_method = "5221C08244862F3B8D3F235F45B991C1")
     public void setMode(int mode) {
-        dsTaint.addTaint(mode);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid mode");
         } //End block
         {
             nativeSetMode(mode);
+            mMode = mode;
         } //End block
         // ---------- Original Method ----------
         //if (mode < 0 || mode > MODE_LAST) {
@@ -69,21 +74,15 @@ public class AudioGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.135 -0400", hash_original_method = "49E777EBA85E577A92F07DB5E1A4FF69", hash_generated_method = "87F5A020EAEBDA368AF201E77AA17138")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.259 -0400", hash_original_method = "49E777EBA85E577A92F07DB5E1A4FF69", hash_generated_method = "506A37E6792F21E53D3F6FDBE4ED0F16")
     private void nativeSetMode(int mode) {
-        dsTaint.addTaint(mode);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.135 -0400", hash_original_method = "91004DD6DF12C73407D3712D3F37E9FF", hash_generated_method = "B166CFC41E0CE8702F59F63327ACCE43")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.260 -0400", hash_original_method = "91004DD6DF12C73407D3712D3F37E9FF", hash_generated_method = "20D6DD475617F5D65B8DBA3DAEBCFB48")
     synchronized void add(AudioStream stream, AudioCodec codec, int dtmfType) {
-        dsTaint.addTaint(stream.dsTaint);
-        dsTaint.addTaint(codec.dsTaint);
-        dsTaint.addTaint(dtmfType);
         {
-            boolean var462179FDA5D963857F5CDBF7C2D70E51_554395305 = (!mStreams.containsKey(stream));
+            boolean var462179FDA5D963857F5CDBF7C2D70E51_19635445 = (!mStreams.containsKey(stream));
             {
                 try 
                 {
@@ -103,6 +102,9 @@ public class AudioGroup {
                 } //End block
             } //End block
         } //End collapsed parenthetic
+        addTaint(stream.getTaint());
+        addTaint(codec.getTaint());
+        addTaint(dtmfType);
         // ---------- Original Method ----------
         //if (!mStreams.containsKey(stream)) {
             //try {
@@ -120,28 +122,20 @@ public class AudioGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.135 -0400", hash_original_method = "779FC85A590DA71DFFB7AE3A48802754", hash_generated_method = "33743FA1825382B98C203316F71F432E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.263 -0400", hash_original_method = "779FC85A590DA71DFFB7AE3A48802754", hash_generated_method = "649CA0A7A04D96E68294E9EEAD7DE3F3")
     private void nativeAdd(int mode, int socket, String remoteAddress,
             int remotePort, String codecSpec, int dtmfType) {
-        dsTaint.addTaint(codecSpec);
-        dsTaint.addTaint(remoteAddress);
-        dsTaint.addTaint(socket);
-        dsTaint.addTaint(remotePort);
-        dsTaint.addTaint(dtmfType);
-        dsTaint.addTaint(mode);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.136 -0400", hash_original_method = "E79257D576B41A04A93E4BDE1747C69F", hash_generated_method = "534E682CDC7C8AF39B71ABC3A35E96B2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.292 -0400", hash_original_method = "E79257D576B41A04A93E4BDE1747C69F", hash_generated_method = "FE7427ECEB853CCDBCDD959410E9038D")
     synchronized void remove(AudioStream stream) {
-        dsTaint.addTaint(stream.dsTaint);
         Integer socket;
         socket = mStreams.remove(stream);
         {
             nativeRemove(socket);
         } //End block
+        addTaint(stream.getTaint());
         // ---------- Original Method ----------
         //Integer socket = mStreams.remove(stream);
         //if (socket != null) {
@@ -150,23 +144,20 @@ public class AudioGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.136 -0400", hash_original_method = "B9A11772A106AE9307E1900F5171D964", hash_generated_method = "60EEB5A84522CB30F4AA53F5EC6695AB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.293 -0400", hash_original_method = "B9A11772A106AE9307E1900F5171D964", hash_generated_method = "FB353169F1C9BF8BEE1773EEEE62E147")
     private void nativeRemove(int socket) {
-        dsTaint.addTaint(socket);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.136 -0400", hash_original_method = "9822465C491E40F2280BD966A816AB8D", hash_generated_method = "8E3BC1304AE7C9F1B18556E224E219F6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.294 -0400", hash_original_method = "9822465C491E40F2280BD966A816AB8D", hash_generated_method = "1D3C9B9BDA207982B79288C9F9B874D4")
     public void sendDtmf(int event) {
-        dsTaint.addTaint(event);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid event");
         } //End block
         {
             nativeSendDtmf(event);
         } //End block
+        addTaint(event);
         // ---------- Original Method ----------
         //if (event < 0 || event > 15) {
             //throw new IllegalArgumentException("Invalid event");
@@ -177,15 +168,12 @@ public class AudioGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.136 -0400", hash_original_method = "679235D0DC30313046A01D4FDDB17DEF", hash_generated_method = "53F23F74DD7E160B1B714A4893E66FA8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.294 -0400", hash_original_method = "679235D0DC30313046A01D4FDDB17DEF", hash_generated_method = "941DDD9A7FDB872AD700C070C8E036BF")
     private void nativeSendDtmf(int event) {
-        dsTaint.addTaint(event);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.136 -0400", hash_original_method = "C7FD23B4AAD822C8D51633C16B0BB499", hash_generated_method = "FEEADEC12D5D8DC1127D9ABF951EFE9D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.295 -0400", hash_original_method = "C7FD23B4AAD822C8D51633C16B0BB499", hash_generated_method = "FEEADEC12D5D8DC1127D9ABF951EFE9D")
     public void clear() {
         {
             mStreams.clear();
@@ -199,8 +187,7 @@ public class AudioGroup {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.137 -0400", hash_original_method = "33021D83EBB0A5B0B0CD9D3745D70974", hash_generated_method = "714CF28135346593C7022C3C55084927")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.295 -0400", hash_original_method = "33021D83EBB0A5B0B0CD9D3745D70974", hash_generated_method = "714CF28135346593C7022C3C55084927")
     @Override
     protected void finalize() throws Throwable {
         clear();
@@ -211,11 +198,21 @@ public class AudioGroup {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.295 -0400", hash_original_field = "98192EACA477A586761B6D8CDB089C5D", hash_generated_field = "C466F26B6C54C57012B25D93B43C8CA1")
+
     public static final int MODE_ON_HOLD = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.295 -0400", hash_original_field = "D2F89274C448233CCFB1966837368D47", hash_generated_field = "0FA96ED453D89F1C2DF647EAC5D004AB")
+
     public static final int MODE_MUTED = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.296 -0400", hash_original_field = "E2791FE7213F504CD091FEF19A00F984", hash_generated_field = "522E920E044FB5E01D5448F2B3D022F8")
+
     public static final int MODE_NORMAL = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.296 -0400", hash_original_field = "0C55CD278FE41B37D1616CECC284B970", hash_generated_field = "DBC4601D49F876BB8D452756F285D1C8")
+
     public static final int MODE_ECHO_SUPPRESSION = 3;
-    private static final int MODE_LAST = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.296 -0400", hash_original_field = "AF8485CCCA8A2CDAE6DDEB6959D43343", hash_generated_field = "FF6CC6B6CD5E66C393F0943FE0A77929")
+
+    private static int MODE_LAST = 3;
     static {
         System.loadLibrary("rtp_jni");
     }

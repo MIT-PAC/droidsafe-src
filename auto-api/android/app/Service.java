@@ -21,94 +21,101 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
 public abstract class Service extends ContextWrapper implements ComponentCallbacks2 {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.824 -0400", hash_original_field = "4637F257714ED0010AAAD4B2D42CA0B5", hash_generated_field = "4DECD94BE6B0174DE36067CBF50C84C9")
+
     private ActivityThread mThread = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.824 -0400", hash_original_field = "9C9A43E4F7CE518B16A0CE63968FBD24", hash_generated_field = "BE683FA5966EBD9F84092C95A35E6E34")
+
     private String mClassName = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.828 -0400", hash_original_field = "ED4E44FF349B21B06FEEAE24746F6E3F", hash_generated_field = "DAC5D9DD61EA17334F7C3255730A488C")
+
     private IBinder mToken = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.828 -0400", hash_original_field = "0E83E5B4A6743C9CF722DEE507C614EA", hash_generated_field = "4662AB87CC0467DEECD3520FB534F4C7")
+
     private Application mApplication = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.829 -0400", hash_original_field = "C2CE3B463721CA6F9C1803334A9E5B3F", hash_generated_field = "EC19CF3CBCE73E0074A7B2A120F55C7D")
+
     private IActivityManager mActivityManager = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.829 -0400", hash_original_field = "D313BB14685A14C8B35EEB59D7673DD6", hash_generated_field = "056DB6B553A04FAC52364200FA203D0E")
+
     private boolean mStartCompatibility = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.843 -0400", hash_original_method = "D0179C650F036CDA92B50348E0090B82", hash_generated_method = "F9D63210E10597231C4F4BD03B0C29AC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Service() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.839 -0400", hash_original_method = "D0179C650F036CDA92B50348E0090B82", hash_generated_method = "F9D63210E10597231C4F4BD03B0C29AC")
+    public  Service() {
         super(null);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.843 -0400", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "8CE7C8F4B14D9FB3ED66AED3A5AE2EA8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.841 -0400", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "351C115912F38FAA3A7FACD8B13B281C")
     public final Application getApplication() {
-        return (Application)dsTaint.getTaint();
+        Application varB4EAC82CA7396A68D541C85D26508E83_2040538710 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2040538710 = mApplication;
+        varB4EAC82CA7396A68D541C85D26508E83_2040538710.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2040538710;
         // ---------- Original Method ----------
         //return mApplication;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.844 -0400", hash_original_method = "A550D0299CAB894F5185E5356A7BB697", hash_generated_method = "7564C9BAB223A8E7FAC043FBCC648B76")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.858 -0400", hash_original_method = "A550D0299CAB894F5185E5356A7BB697", hash_generated_method = "7564C9BAB223A8E7FAC043FBCC648B76")
     public void onCreate() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.844 -0400", hash_original_method = "8DB0845BC67A569482FD95D924F2B38E", hash_generated_method = "2D8037B326492CA5323C8086BF88B483")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.865 -0400", hash_original_method = "8DB0845BC67A569482FD95D924F2B38E", hash_generated_method = "8219973C28906A5A49CAD34BA7928B86")
     @Deprecated
     public void onStart(Intent intent, int startId) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(startId);
-        dsTaint.addTaint(intent.dsTaint);
+        addTaint(intent.getTaint());
+        addTaint(startId);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.845 -0400", hash_original_method = "C7065D6B9C7065CE68918429E4AC852C", hash_generated_method = "56B0F0723534132C7A78C57EA169C696")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.885 -0400", hash_original_method = "C7065D6B9C7065CE68918429E4AC852C", hash_generated_method = "687C7CEC26A492527D97852FFD87473A")
     public int onStartCommand(Intent intent, int flags, int startId) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(startId);
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(intent.dsTaint);
         onStart(intent, startId);
-        return dsTaint.getTaintInt();
+        addTaint(intent.getTaint());
+        addTaint(flags);
+        addTaint(startId);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1639847601 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1639847601;
         // ---------- Original Method ----------
         //onStart(intent, startId);
         //return mStartCompatibility ? START_STICKY_COMPATIBILITY : START_STICKY;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.846 -0400", hash_original_method = "7E0E89252855B3CDBF126F525B8DFC31", hash_generated_method = "E5C4FFF396F837C85A1D40A9B232BFA0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.898 -0400", hash_original_method = "7E0E89252855B3CDBF126F525B8DFC31", hash_generated_method = "E5C4FFF396F837C85A1D40A9B232BFA0")
     public void onDestroy() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.848 -0400", hash_original_method = "8287235C28E9D1E310027A2DDEB95FCD", hash_generated_method = "62ADC209A3CA21C2E5A975A58EB63DBA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.899 -0400", hash_original_method = "8287235C28E9D1E310027A2DDEB95FCD", hash_generated_method = "BA7F1E69C22467D62A959775F321C0BA")
     public void onConfigurationChanged(Configuration newConfig) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(newConfig.dsTaint);
+        addTaint(newConfig.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.849 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "39AEB8790734ECC8DC70BBAAEE0BAB0B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.916 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "39AEB8790734ECC8DC70BBAAEE0BAB0B")
     public void onLowMemory() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.849 -0400", hash_original_method = "3AE0D4ACEA3D5F3B779A378D5AB27A6A", hash_generated_method = "C9C9C0A5CE6C55C02F314458C48A02DB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.918 -0400", hash_original_method = "3AE0D4ACEA3D5F3B779A378D5AB27A6A", hash_generated_method = "C1AFC91F30E138BA03233A690A40C0CC")
     public void onTrimMemory(int level) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(level);
+        addTaint(level);
         // ---------- Original Method ----------
     }
 
@@ -116,37 +123,34 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     public abstract IBinder onBind(Intent intent);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.850 -0400", hash_original_method = "5942B5AC8056FD2F0F888A571E85A724", hash_generated_method = "70627336DAA6556133D7ECF409E58DE9")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.926 -0400", hash_original_method = "5942B5AC8056FD2F0F888A571E85A724", hash_generated_method = "4B396BC5C07E258B0CAAA3F674457907")
     public boolean onUnbind(Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(intent.dsTaint);
-        return dsTaint.getTaintBoolean();
+        addTaint(intent.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_597771514 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_597771514;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.850 -0400", hash_original_method = "96E602EF97C136D1349E20B0217FC297", hash_generated_method = "08E519AFC7DF9D3738AC79DFB80958BB")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.945 -0400", hash_original_method = "96E602EF97C136D1349E20B0217FC297", hash_generated_method = "8F8E56AABCA0613BF8FBF0BDA2865E2C")
     public void onRebind(Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(intent.dsTaint);
+        addTaint(intent.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.850 -0400", hash_original_method = "8FB0E93CA9596F065DFD6DBA45B93821", hash_generated_method = "C1F551EA14BAD230334A2EF296257CD9")
-    @DSModeled(DSC.SPEC)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.962 -0400", hash_original_method = "8FB0E93CA9596F065DFD6DBA45B93821", hash_generated_method = "B691CB7FFACC5EF486F16983D7110EA8")
     public void onTaskRemoved(Intent rootIntent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(rootIntent.dsTaint);
+        addTaint(rootIntent.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.851 -0400", hash_original_method = "63DABFC9549E2FB476F01FDE2AC0A25B", hash_generated_method = "9C957CF5C3759100051FFDCA4A386C02")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.964 -0400", hash_original_method = "63DABFC9549E2FB476F01FDE2AC0A25B", hash_generated_method = "9C957CF5C3759100051FFDCA4A386C02")
     public final void stopSelf() {
         stopSelf(-1);
         // ---------- Original Method ----------
@@ -154,10 +158,8 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.851 -0400", hash_original_method = "945F4D421616C07D2272A8F5A6D0EDF6", hash_generated_method = "9CE6A57E716C9BE522AB53136D7D35D2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.974 -0400", hash_original_method = "945F4D421616C07D2272A8F5A6D0EDF6", hash_generated_method = "BB688D4B61CB9A4FD52B1F916C693A4F")
     public final void stopSelf(int startId) {
-        dsTaint.addTaint(startId);
         try 
         {
             mActivityManager.stopServiceToken(
@@ -165,6 +167,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(startId);
         // ---------- Original Method ----------
         //if (mActivityManager == null) {
             //return;
@@ -177,18 +180,18 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.852 -0400", hash_original_method = "12B5F8394AD7AE16AD90C8F95EA27CB9", hash_generated_method = "F89BBD0877BB5172276831781C08AE24")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.989 -0400", hash_original_method = "12B5F8394AD7AE16AD90C8F95EA27CB9", hash_generated_method = "CE3B2A63AC4B621BBA8A64C5E1EAF699")
     public final boolean stopSelfResult(int startId) {
-        dsTaint.addTaint(startId);
         try 
         {
-            boolean varCE7B9204F75B305989A80280BC281E88_797305280 = (mActivityManager.stopServiceToken(
+            boolean varCE7B9204F75B305989A80280BC281E88_422505075 = (mActivityManager.stopServiceToken(
                     new ComponentName(this, mClassName), mToken, startId));
         } //End block
         catch (RemoteException ex)
         { }
-        return dsTaint.getTaintBoolean();
+        addTaint(startId);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_403409625 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_403409625;
         // ---------- Original Method ----------
         //if (mActivityManager == null) {
             //return false;
@@ -202,21 +205,17 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.852 -0400", hash_original_method = "3B13E95A68EC397B0EFBCB7AA4B170BC", hash_generated_method = "82FDA52486A8D7202C21FA56BED80A86")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.007 -0400", hash_original_method = "3B13E95A68EC397B0EFBCB7AA4B170BC", hash_generated_method = "6045C21E4FADE12E063F2EF52169C031")
     @Deprecated
     public final void setForeground(boolean isForeground) {
-        dsTaint.addTaint(isForeground);
+        addTaint(isForeground);
         // ---------- Original Method ----------
         //Log.w(TAG, "setForeground: ignoring old API call on " + getClass().getName());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.853 -0400", hash_original_method = "4FFCDBDE627194B5F1589AC610EF3404", hash_generated_method = "ADB80685729264E297F96482D2C0A7A5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.009 -0400", hash_original_method = "4FFCDBDE627194B5F1589AC610EF3404", hash_generated_method = "1378635B40CD5AEFB29F9FA198F834BF")
     public final void startForeground(int id, Notification notification) {
-        dsTaint.addTaint(id);
-        dsTaint.addTaint(notification.dsTaint);
         try 
         {
             mActivityManager.setServiceForeground(
@@ -225,6 +224,8 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(id);
+        addTaint(notification.getTaint());
         // ---------- Original Method ----------
         //try {
             //mActivityManager.setServiceForeground(
@@ -235,10 +236,8 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.853 -0400", hash_original_method = "4C19D500B60A0A1E30AA501DC977F119", hash_generated_method = "242CD875282225E88A752A0A138C113C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.010 -0400", hash_original_method = "4C19D500B60A0A1E30AA501DC977F119", hash_generated_method = "FE664499487C88B97DE7FF149723A36F")
     public final void stopForeground(boolean removeNotification) {
-        dsTaint.addTaint(removeNotification);
         try 
         {
             mActivityManager.setServiceForeground(
@@ -247,6 +246,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(removeNotification);
         // ---------- Original Method ----------
         //try {
             //mActivityManager.setServiceForeground(
@@ -257,34 +257,31 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.854 -0400", hash_original_method = "708CD3B4DCC4F45281F620E4C375E85F", hash_generated_method = "7C2170951AD07BC3DF60848762CED294")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.032 -0400", hash_original_method = "708CD3B4DCC4F45281F620E4C375E85F", hash_generated_method = "EAEE2D67D868F8581157CF1309675359")
     protected void dump(FileDescriptor fd, PrintWriter writer, String[] args) {
-        dsTaint.addTaint(args[0]);
-        dsTaint.addTaint(writer.dsTaint);
-        dsTaint.addTaint(fd.dsTaint);
         writer.println("nothing to dump");
+        addTaint(fd.getTaint());
+        addTaint(writer.getTaint());
+        addTaint(args[0].getTaint());
         // ---------- Original Method ----------
         //writer.println("nothing to dump");
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.855 -0400", hash_original_method = "9EEE96C6B536EA578538BBE977205B62", hash_generated_method = "4FA6957C30D2F8722104658F232425A5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.170 -0400", hash_original_method = "9EEE96C6B536EA578538BBE977205B62", hash_generated_method = "435AE336B063223155D9788AD533C256")
     public final void attach(
             Context context,
             ActivityThread thread, String className, IBinder token,
             Application application, Object activityManager) {
-        dsTaint.addTaint(application.dsTaint);
-        dsTaint.addTaint(activityManager.dsTaint);
-        dsTaint.addTaint(token.dsTaint);
-        dsTaint.addTaint(thread.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(className);
         attachBaseContext(context);
+        mThread = thread;
+        mClassName = className;
+        mToken = token;
+        mApplication = application;
         mActivityManager = (IActivityManager)activityManager;
         mStartCompatibility = getApplicationInfo().targetSdkVersion
                 < Build.VERSION_CODES.ECLAIR;
+        addTaint(context.getTaint());
         // ---------- Original Method ----------
         //attachBaseContext(context);
         //mThread = thread;
@@ -297,23 +294,43 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.856 -0400", hash_original_method = "8DA57A133C364DA0C4CA877026045103", hash_generated_method = "9A2CDC7DD806C609997C138BCC25F933")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.177 -0400", hash_original_method = "8DA57A133C364DA0C4CA877026045103", hash_generated_method = "EEB0F429C0ABCCF6C15D8075C7794EAD")
     final String getClassName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_918612487 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_918612487 = mClassName;
+        varB4EAC82CA7396A68D541C85D26508E83_918612487.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_918612487;
         // ---------- Original Method ----------
         //return mClassName;
     }
 
     
-    private static final String TAG = "Service";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.177 -0400", hash_original_field = "A59B3C2E563000CF632F248E775E1904", hash_generated_field = "9F7CA2450E1EF254A43A2D25A1E03183")
+
+    private static String TAG = "Service";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.178 -0400", hash_original_field = "A7FFE065CC9A3392353ADEFC234DB80E", hash_generated_field = "86EFEF5908B3F0A48EAB2E5148EFD2CE")
+
     public static final int START_CONTINUATION_MASK = 0xf;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.178 -0400", hash_original_field = "B482663B18AF5B7CDFC5F414649216FE", hash_generated_field = "6AB8AE8C585B1915F248A48E422129E7")
+
     public static final int START_STICKY_COMPATIBILITY = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.179 -0400", hash_original_field = "739F292F3821E9177EB89CEC18B63BE1", hash_generated_field = "C488F1F47EE1B6BEB81C4B247221B19D")
+
     public static final int START_STICKY = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.179 -0400", hash_original_field = "25D170F2C83C83DDA900D53916E5AA17", hash_generated_field = "842E5BD5CBB5E2EFE4C7F51F34DD7682")
+
     public static final int START_NOT_STICKY = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.197 -0400", hash_original_field = "5C814B9861AF6F7E712527533FBAE499", hash_generated_field = "F19A890EE4A2FB7E7378A4C58AC77ECC")
+
     public static final int START_REDELIVER_INTENT = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.198 -0400", hash_original_field = "A3FF3F746AA9A5546103848F380F9135", hash_generated_field = "FD5FC98B1B2FB67809451B9816107761")
+
     public static final int START_TASK_REMOVED_COMPLETE = 1000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.198 -0400", hash_original_field = "A41F525E00C4E5BD4E5DD05D948500A2", hash_generated_field = "BAB9A01E808DDE43FF848B5DFA65963D")
+
     public static final int START_FLAG_REDELIVERY = 0x0001;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.209 -0400", hash_original_field = "4209853D508AB854AF214FB3791A38FB", hash_generated_field = "A3148E49A6C6B3EB316E1423172174D4")
+
     public static final int START_FLAG_RETRY = 0x0002;
 }
 

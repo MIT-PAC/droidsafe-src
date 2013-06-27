@@ -13,38 +13,30 @@ import org.apache.harmony.security.asn1.ASN1Type;
 
 public final class DirectoryString {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.505 -0400", hash_original_method = "7175B1E9416E14F4EEA3B1FA3995AEFC", hash_generated_method = "7175B1E9416E14F4EEA3B1FA3995AEFC")
-        public DirectoryString ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.219 -0400", hash_original_method = "53F57E3BE98311F5CEA26B08849D5BFD", hash_generated_method = "53F57E3BE98311F5CEA26B08849D5BFD")
+    public DirectoryString ()
     {
+        //Synthesized constructor
     }
 
+
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.219 -0400", hash_original_field = "E7E2E2A95D92BDA7E2FD183733591C19", hash_generated_field = "9D15DB0196D54BA7CB009367A7A70C68")
 
     public static final ASN1Choice ASN1 = new ASN1Choice(new ASN1Type[] {
            ASN1StringType.TELETEXSTRING,
            ASN1StringType.PRINTABLESTRING,
            ASN1StringType.UNIVERSALSTRING,
            ASN1StringType.UTF8STRING,
-           ASN1StringType.BMPSTRING }) {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.505 -0400", hash_original_method = "B50919D6E7CA13884A6C9F096964941D", hash_generated_method = "2295646329199676050FCE8D3D26C17C")
-        @DSModeled(DSC.SAFE)
+           ASN1StringType.BMPSTRING }) {
+
         public int getIndex(java.lang.Object object) {
-            dsTaint.addTaint(object.dsTaint);
-            return dsTaint.getTaintInt();
-            // ---------- Original Method ----------
-            //return 1;
+            return 1; 
+            
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.505 -0400", hash_original_method = "75F68B3A16DBDA02F9B0A49BA52B584E", hash_generated_method = "034259263D6A1DB22C3247102039B9A1")
-        @DSModeled(DSC.SAFE)
         public Object getObjectToEncode(Object object) {
-            dsTaint.addTaint(object.dsTaint);
-            return (Object)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return  object;
+            return  object;
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

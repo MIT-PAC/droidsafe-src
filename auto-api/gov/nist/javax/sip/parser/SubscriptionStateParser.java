@@ -14,27 +14,25 @@ import javax.sip.*;
 
 public class SubscriptionStateParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.597 -0400", hash_original_method = "604DE186E2AE6B899B90A7B635A83D11", hash_generated_method = "7B80DE7FC33BD27CF2C6FB95BF270E0E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SubscriptionStateParser(String subscriptionState) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.307 -0400", hash_original_method = "604DE186E2AE6B899B90A7B635A83D11", hash_generated_method = "EE4717884D1C4FD3720AE6096B59C6FE")
+    public  SubscriptionStateParser(String subscriptionState) {
         super(subscriptionState);
-        dsTaint.addTaint(subscriptionState);
+        addTaint(subscriptionState.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.597 -0400", hash_original_method = "DBAE404317B64960398576BE2AFF6197", hash_generated_method = "2456A4B790B6254510139092DD867BCE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected SubscriptionStateParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.307 -0400", hash_original_method = "DBAE404317B64960398576BE2AFF6197", hash_generated_method = "3DF077F7D908C07527C65DF0BE095586")
+    protected  SubscriptionStateParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.598 -0400", hash_original_method = "0E07F05FFE6C1C2F83533D7132328ECC", hash_generated_method = "55E8D5F40C35809F6FFA20815919C34B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.317 -0400", hash_original_method = "0E07F05FFE6C1C2F83533D7132328ECC", hash_generated_method = "DCB035BDA5EE2FC8BDE10ABE3DD976D5")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1660764222 = null; //Variable for return #1
         dbg_enter("SubscriptionStateParser.parse");
         SubscriptionState subscriptionState;
         subscriptionState = new SubscriptionState();
@@ -47,7 +45,7 @@ public class SubscriptionStateParser extends HeaderParser {
             token = lexer.getNextToken();
             subscriptionState.setState(token.getTokenValue());
             {
-                boolean var23D2B54EEDE70417D1C6C30933AF4A72_1172912688 = (lexer.lookAhead(0) == ';');
+                boolean var23D2B54EEDE70417D1C6C30933AF4A72_691183600 = (lexer.lookAhead(0) == ';');
                 {
                     this.lexer.match(';');
                     this.lexer.SPorHT();
@@ -56,7 +54,7 @@ public class SubscriptionStateParser extends HeaderParser {
                     String value;
                     value = token.getTokenValue();
                     {
-                        boolean var8CA0A679E60695598CA7208019527079_2126228145 = (value.equalsIgnoreCase("reason"));
+                        boolean var8CA0A679E60695598CA7208019527079_1616470288 = (value.equalsIgnoreCase("reason"));
                         {
                             this.lexer.match('=');
                             this.lexer.SPorHT();
@@ -66,7 +64,7 @@ public class SubscriptionStateParser extends HeaderParser {
                             subscriptionState.setReasonCode(value);
                         } //End block
                         {
-                            boolean var414B5D94C2993E1BAEBD747D160C7C92_660618664 = (value.equalsIgnoreCase("expires"));
+                            boolean var414B5D94C2993E1BAEBD747D160C7C92_1931377513 = (value.equalsIgnoreCase("expires"));
                             {
                                 this.lexer.match('=');
                                 this.lexer.SPorHT();
@@ -89,7 +87,7 @@ public class SubscriptionStateParser extends HeaderParser {
                                 } //End block
                             } //End block
                             {
-                                boolean varBD4F51A266EE0B22E2DF148FAC6041BC_936484789 = (value.equalsIgnoreCase("retry-after"));
+                                boolean varBD4F51A266EE0B22E2DF148FAC6041BC_2011072518 = (value.equalsIgnoreCase("retry-after"));
                                 {
                                     this.lexer.match('=');
                                     this.lexer.SPorHT();
@@ -132,7 +130,9 @@ public class SubscriptionStateParser extends HeaderParser {
         {
             dbg_leave("SubscriptionStateParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1660764222 = subscriptionState;
+        varB4EAC82CA7396A68D541C85D26508E83_1660764222.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1660764222;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

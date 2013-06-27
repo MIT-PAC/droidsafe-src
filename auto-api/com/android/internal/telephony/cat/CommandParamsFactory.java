@@ -16,16 +16,22 @@ import java.util.Iterator;
 import java.util.List;
 
 class CommandParamsFactory extends Handler {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.554 -0400", hash_original_field = "10B237369439DE6AB484E8A6DD54A69C", hash_generated_field = "066A6762D0C2A5B772EAA58E81EAA0D0")
+
     private IconLoader mIconLoader;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.554 -0400", hash_original_field = "6D5B91F83FB91B54278560BE96826869", hash_generated_field = "70CAC59D17D3D0BA6E05827D916BDA7A")
+
     private CommandParams mCmdParams = null;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.555 -0400", hash_original_field = "2EC1C70BEA068846D2DD4DD6524EB7C3", hash_generated_field = "BCA982B96F91D9BC42753272B3011D5D")
+
     private int mIconLoadState = LOAD_NO_ICON;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.555 -0400", hash_original_field = "F61832AE4199B01FFC1C38C9632A67D4", hash_generated_field = "14B912560D20DD60BB608B0ED44E164A")
+
     private RilMessageDecoder mCaller = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.852 -0400", hash_original_method = "7BCA60CE4AA4C3E7854AB72DFCEE5CF9", hash_generated_method = "5F794E89175F96977DE574BDC494165B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private CommandParamsFactory(RilMessageDecoder caller, IccFileHandler fh) {
-        dsTaint.addTaint(caller.dsTaint);
-        dsTaint.addTaint(fh.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.555 -0400", hash_original_method = "7BCA60CE4AA4C3E7854AB72DFCEE5CF9", hash_generated_method = "58DF729E5AC1C5DFA0BE2B31CFDA387B")
+    private  CommandParamsFactory(RilMessageDecoder caller, IccFileHandler fh) {
+        mCaller = caller;
         mIconLoader = IconLoader.getInstance(this, fh);
         // ---------- Original Method ----------
         //mCaller = caller;
@@ -45,10 +51,9 @@ class CommandParamsFactory extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.853 -0400", hash_original_method = "2E4478F23D166A2E5E35D0CD5C4A129E", hash_generated_method = "3AC0BEEDB84928E98B70B507D0597287")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.558 -0400", hash_original_method = "2E4478F23D166A2E5E35D0CD5C4A129E", hash_generated_method = "F6E5E055B1293847C7CE82100AAE0619")
     private CommandDetails processCommandDetails(List<ComprehensionTlv> ctlvs) {
-        dsTaint.addTaint(ctlvs.dsTaint);
+        CommandDetails varB4EAC82CA7396A68D541C85D26508E83_1435967466 = null; //Variable for return #1
         CommandDetails cmdDet;
         cmdDet = null;
         {
@@ -66,7 +71,10 @@ class CommandParamsFactory extends Handler {
                 } //End block
             } //End block
         } //End block
-        return (CommandDetails)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1435967466 = cmdDet;
+        addTaint(ctlvs.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1435967466.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1435967466;
         // ---------- Original Method ----------
         //CommandDetails cmdDet = null;
         //if (ctlvs != null) {
@@ -84,14 +92,12 @@ class CommandParamsFactory extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.853 -0400", hash_original_method = "2A81A2B758F59F5E5B56A3715437E583", hash_generated_method = "B1C728A7C3200D34B5F5A4AF84A1AA89")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.562 -0400", hash_original_method = "1AA16ED3503C2EABAE519A247570B4D1", hash_generated_method = "66580076F6BDF3276AA99131F6B49AFD")
      void make(BerTlv berTlv) {
-        dsTaint.addTaint(berTlv.dsTaint);
         mCmdParams = null;
         mIconLoadState = LOAD_NO_ICON;
         {
-            boolean varDEE29F504DEACF8D3E8405B472C2921F_2136200265 = (berTlv.getTag() != BerTlv.BER_PROACTIVE_COMMAND_TAG);
+            boolean varDEE29F504DEACF8D3E8405B472C2921F_1768426122 = (berTlv.getTag() != BerTlv.BER_PROACTIVE_COMMAND_TAG);
             {
                 sendCmdParams(ResultCode.CMD_TYPE_NOT_UNDERSTOOD);
             } //End block
@@ -153,9 +159,6 @@ class CommandParamsFactory extends Handler {
             //Begin case PROVIDE_LOCAL_INFORMATION 
             cmdPending = processProvideLocalInfo(cmdDet, ctlvs);
             //End case PROVIDE_LOCAL_INFORMATION 
-            //Begin case OPEN_CHANNEL CLOSE_CHANNEL RECEIVE_DATA SEND_DATA 
-            cmdPending = processBIPClient(cmdDet, ctlvs);
-            //End case OPEN_CHANNEL CLOSE_CHANNEL RECEIVE_DATA SEND_DATA 
             //Begin case default 
             mCmdParams = new CommandParams(cmdDet);
             //End case default 
@@ -171,19 +174,19 @@ class CommandParamsFactory extends Handler {
         {
             sendCmdParams(ResultCode.OK);
         } //End block
+        addTaint(berTlv.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.854 -0400", hash_original_method = "31E304CCF35AF359465BB09182AC4380", hash_generated_method = "E3DECC503015FE1A1E0B7B840506F134")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.563 -0400", hash_original_method = "31E304CCF35AF359465BB09182AC4380", hash_generated_method = "C37ED711937EC74C1BB4D83E5259DA68")
     @Override
     public void handleMessage(Message msg) {
-        dsTaint.addTaint(msg.dsTaint);
         //Begin case MSG_ID_LOAD_ICON_DONE 
         sendCmdParams(setIcons(msg.obj));
         //End case MSG_ID_LOAD_ICON_DONE 
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         //switch (msg.what) {
         //case MSG_ID_LOAD_ICON_DONE:
@@ -193,14 +196,17 @@ class CommandParamsFactory extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.858 -0400", hash_original_method = "3AB391E8251356D82C52829EE4B32ED7", hash_generated_method = "FB9D0F92BF330927C8C68469DEA62B7C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.623 -0400", hash_original_method = "3AB391E8251356D82C52829EE4B32ED7", hash_generated_method = "D1D3A4C55666E863363ECFF3D7E76E4D")
     private ResultCode setIcons(Object data) {
-        dsTaint.addTaint(data.dsTaint);
+        ResultCode varB4EAC82CA7396A68D541C85D26508E83_223011613 = null; //Variable for return #1
+        ResultCode varB4EAC82CA7396A68D541C85D26508E83_233518327 = null; //Variable for return #2
         Bitmap[] icons;
         icons = null;
         int iconIndex;
         iconIndex = 0;
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_223011613 = ResultCode.PRFRMD_ICON_NOT_DISPLAYED;
+        } //End block
         //Begin case LOAD_SINGLE_ICON 
         mCmdParams.setIcon((Bitmap) data);
         //End case LOAD_SINGLE_ICON 
@@ -209,15 +215,25 @@ class CommandParamsFactory extends Handler {
         //End case LOAD_MULTI_ICONS 
         //Begin case LOAD_MULTI_ICONS 
         {
-            Iterator<Bitmap> var50610057585CADFE38834953CAA22540_903949017 = (icons).iterator();
-            var50610057585CADFE38834953CAA22540_903949017.hasNext();
-            Bitmap icon = var50610057585CADFE38834953CAA22540_903949017.next();
+            Bitmap icon = icons[0];
             {
                 mCmdParams.setIcon(icon);
             } //End block
         } //End collapsed parenthetic
         //End case LOAD_MULTI_ICONS 
-        return (ResultCode)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_233518327 = ResultCode.OK;
+        addTaint(data.getTaint());
+        ResultCode varA7E53CE21691AB073D9660D615818899_1355453733; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1355453733 = varB4EAC82CA7396A68D541C85D26508E83_223011613;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1355453733 = varB4EAC82CA7396A68D541C85D26508E83_233518327;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1355453733.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1355453733;
         // ---------- Original Method ----------
         //Bitmap[] icons = null;
         //int iconIndex = 0;
@@ -239,51 +255,66 @@ class CommandParamsFactory extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.858 -0400", hash_original_method = "075D6D54A772D277DACB0A1749F22220", hash_generated_method = "0E07016EF3D0D5DE6CDC5695697BAC01")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.627 -0400", hash_original_method = "075D6D54A772D277DACB0A1749F22220", hash_generated_method = "C9FD6C92BFBCDD2999BD5776C3EAE1DC")
     private void sendCmdParams(ResultCode resCode) {
-        dsTaint.addTaint(resCode.dsTaint);
         mCaller.sendMsgParamsDecoded(resCode, mCmdParams);
+        addTaint(resCode.getTaint());
         // ---------- Original Method ----------
         //mCaller.sendMsgParamsDecoded(resCode, mCmdParams);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.858 -0400", hash_original_method = "747AFE004560A767DF481C3AA8002660", hash_generated_method = "509947BA644532270C73E1D673DC14B9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.627 -0400", hash_original_method = "747AFE004560A767DF481C3AA8002660", hash_generated_method = "38D6542E2AAAF6C23FBAFC6B3D511B9C")
     private ComprehensionTlv searchForTag(ComprehensionTlvTag tag,
             List<ComprehensionTlv> ctlvs) {
-        dsTaint.addTaint(ctlvs.dsTaint);
-        dsTaint.addTaint(tag.dsTaint);
+        ComprehensionTlv varB4EAC82CA7396A68D541C85D26508E83_2039794312 = null; //Variable for return #1
         Iterator<ComprehensionTlv> iter;
         iter = ctlvs.iterator();
-        ComprehensionTlv varA93430CB44F5735F27A8B8FCE5790AD6_1005636393 = (searchForNextTag(tag, iter));
-        return (ComprehensionTlv)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2039794312 = searchForNextTag(tag, iter);
+        addTaint(tag.getTaint());
+        addTaint(ctlvs.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_2039794312.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2039794312;
         // ---------- Original Method ----------
         //Iterator<ComprehensionTlv> iter = ctlvs.iterator();
         //return searchForNextTag(tag, iter);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.859 -0400", hash_original_method = "D88B588A55F67F23980463DF8FB0DA04", hash_generated_method = "58F540CB87DD4E49EB161A729794A869")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.632 -0400", hash_original_method = "D88B588A55F67F23980463DF8FB0DA04", hash_generated_method = "4F17ED41D4219B26A1176E2C6DA3CC9B")
     private ComprehensionTlv searchForNextTag(ComprehensionTlvTag tag,
             Iterator<ComprehensionTlv> iter) {
-        dsTaint.addTaint(tag.dsTaint);
-        dsTaint.addTaint(iter.dsTaint);
+        ComprehensionTlv varB4EAC82CA7396A68D541C85D26508E83_1253547909 = null; //Variable for return #1
+        ComprehensionTlv varB4EAC82CA7396A68D541C85D26508E83_981008967 = null; //Variable for return #2
         int tagValue;
         tagValue = tag.value();
         {
-            boolean varADABAFEBBAB7E585DD903333BD7F20A8_1799711462 = (iter.hasNext());
+            boolean varADABAFEBBAB7E585DD903333BD7F20A8_1508735408 = (iter.hasNext());
             {
                 ComprehensionTlv ctlv;
                 ctlv = iter.next();
                 {
-                    boolean var6D1ED3DBC0A231E0CFE6119240CEE6F9_2046977339 = (ctlv.getTag() == tagValue);
+                    boolean var6D1ED3DBC0A231E0CFE6119240CEE6F9_148507096 = (ctlv.getTag() == tagValue);
+                    {
+                        varB4EAC82CA7396A68D541C85D26508E83_1253547909 = ctlv;
+                    } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return (ComprehensionTlv)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_981008967 = null;
+        addTaint(tag.getTaint());
+        addTaint(iter.getTaint());
+        ComprehensionTlv varA7E53CE21691AB073D9660D615818899_13251161; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_13251161 = varB4EAC82CA7396A68D541C85D26508E83_1253547909;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_13251161 = varB4EAC82CA7396A68D541C85D26508E83_981008967;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_13251161.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_13251161;
         // ---------- Original Method ----------
         //int tagValue = tag.value();
         //while (iter.hasNext()) {
@@ -296,12 +327,9 @@ class CommandParamsFactory extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.859 -0400", hash_original_method = "7E1C347C9C4DEE22923C4A46BE429D13", hash_generated_method = "EBFF2381F996895ACF661BF2678AB338")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.638 -0400", hash_original_method = "7E1C347C9C4DEE22923C4A46BE429D13", hash_generated_method = "F91BF3F466541D092BC4D5784C54BCAA")
     private boolean processDisplayText(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
-        dsTaint.addTaint(ctlvs.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
         CatLog.d(this, "process DisplayText");
         TextMessage textMsg;
         textMsg = new TextMessage();
@@ -337,18 +365,17 @@ class CommandParamsFactory extends Handler {
             mIconLoader.loadIcon(iconId.recordNumber, this
                     .obtainMessage(MSG_ID_LOAD_ICON_DONE));
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(ctlvs.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_230433162 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_230433162;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.860 -0400", hash_original_method = "7C3BADEB42DA2C878C6C5ABCBE524429", hash_generated_method = "C0C0EC1E6ED2379C9F1E2ED36393A72C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.652 -0400", hash_original_method = "7C3BADEB42DA2C878C6C5ABCBE524429", hash_generated_method = "275BD8D51686611F35D77D44FD2E6E88")
     private boolean processSetUpIdleModeText(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
-        dsTaint.addTaint(ctlvs.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
         CatLog.d(this, "process SetUpIdleModeText");
         TextMessage textMsg;
         textMsg = new TextMessage();
@@ -373,18 +400,17 @@ class CommandParamsFactory extends Handler {
             mIconLoader.loadIcon(iconId.recordNumber, this
                     .obtainMessage(MSG_ID_LOAD_ICON_DONE));
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(ctlvs.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2139329945 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2139329945;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.860 -0400", hash_original_method = "025DF7E231D7740FB891A823A7EE822B", hash_generated_method = "2AE00F7B1BC8B74FECCD3D8758CCE528")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.654 -0400", hash_original_method = "025DF7E231D7740FB891A823A7EE822B", hash_generated_method = "684D253E8AD5D606A1A8ABC1FF126472")
     private boolean processGetInkey(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
-        dsTaint.addTaint(ctlvs.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
         CatLog.d(this, "process GetInkey");
         Input input;
         input = new Input();
@@ -420,18 +446,17 @@ class CommandParamsFactory extends Handler {
             mIconLoader.loadIcon(iconId.recordNumber, this
                     .obtainMessage(MSG_ID_LOAD_ICON_DONE));
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(ctlvs.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_152112248 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_152112248;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.861 -0400", hash_original_method = "03663C70D425FF89FCC6E89BA931B637", hash_generated_method = "2AC7DFC8E2FC6A71DC5B701AB9113457")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.662 -0400", hash_original_method = "03663C70D425FF89FCC6E89BA931B637", hash_generated_method = "3DFF2A4861273940245A3FA73C56156E")
     private boolean processGetInput(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
-        dsTaint.addTaint(ctlvs.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
         CatLog.d(this, "process GetInput");
         Input input;
         input = new Input();
@@ -484,23 +509,24 @@ class CommandParamsFactory extends Handler {
             mIconLoader.loadIcon(iconId.recordNumber, this
                     .obtainMessage(MSG_ID_LOAD_ICON_DONE));
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(ctlvs.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1317280091 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1317280091;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.862 -0400", hash_original_method = "328C209D553235E9687156E0E720555C", hash_generated_method = "BA9992287831E9033428551D2C89A44C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.663 -0400", hash_original_method = "328C209D553235E9687156E0E720555C", hash_generated_method = "7718E5D6EB40EA6C1197AFD9CC5CF75E")
     private boolean processRefresh(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) {
-        dsTaint.addTaint(ctlvs.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
         CatLog.d(this, "process Refresh");
         //Begin case REFRESH_NAA_INIT_AND_FULL_FILE_CHANGE REFRESH_NAA_INIT_AND_FILE_CHANGE REFRESH_NAA_INIT REFRESH_UICC_RESET 
         mCmdParams = new DisplayTextParams(cmdDet, null);
         //End case REFRESH_NAA_INIT_AND_FULL_FILE_CHANGE REFRESH_NAA_INIT_AND_FILE_CHANGE REFRESH_NAA_INIT REFRESH_UICC_RESET 
-        return dsTaint.getTaintBoolean();
+        addTaint(ctlvs.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1049813131 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1049813131;
         // ---------- Original Method ----------
         //CatLog.d(this, "process Refresh");
         //switch (cmdDet.commandQualifier) {
@@ -515,12 +541,9 @@ class CommandParamsFactory extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.862 -0400", hash_original_method = "BCD1A4E1E4B160F1064A009F1000860C", hash_generated_method = "704A61B60853C21B46520FE2CA5A8414")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.678 -0400", hash_original_method = "BCD1A4E1E4B160F1064A009F1000860C", hash_generated_method = "A55D8908F2BA4C4CA63F5DE1F4205439")
     private boolean processSelectItem(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
-        dsTaint.addTaint(ctlvs.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
         CatLog.d(this, "process SelectItem");
         Menu menu;
         menu = new Menu();
@@ -543,7 +566,7 @@ class CommandParamsFactory extends Handler {
             } //End block
         } //End block
         {
-            boolean varAE5D498766CFF06FB57D1173A501E0FB_1589956928 = (menu.items.size() == 0);
+            boolean varAE5D498766CFF06FB57D1173A501E0FB_1111132209 = (menu.items.size() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new ResultException(ResultCode.REQUIRED_VALUES_MISSING);
             } //End block
@@ -597,18 +620,17 @@ class CommandParamsFactory extends Handler {
         mIconLoader.loadIcons(recordNumbers, this
                     .obtainMessage(MSG_ID_LOAD_ICON_DONE));
         //End case LOAD_MULTI_ICONS 
-        return dsTaint.getTaintBoolean();
+        addTaint(ctlvs.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_814137123 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_814137123;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.864 -0400", hash_original_method = "A40BEAAD1582CC67F32BB145B8ABDE84", hash_generated_method = "E94AE381C3D2F81B139A26F839D9060C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.680 -0400", hash_original_method = "A40BEAAD1582CC67F32BB145B8ABDE84", hash_generated_method = "BA2EEB84C747D32C8DA418CD6CF3FF56")
     private boolean processEventNotify(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
-        dsTaint.addTaint(ctlvs.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
         CatLog.d(this, "process EventNotify");
         TextMessage textMsg;
         textMsg = new TextMessage();
@@ -630,32 +652,31 @@ class CommandParamsFactory extends Handler {
             mIconLoader.loadIcon(iconId.recordNumber, this
                     .obtainMessage(MSG_ID_LOAD_ICON_DONE));
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(ctlvs.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_620672657 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_620672657;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.864 -0400", hash_original_method = "C7EE76D8654D8C691124AB97A0520EED", hash_generated_method = "F093D0E167503EACF6C47C09C5D15530")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.704 -0400", hash_original_method = "C7EE76D8654D8C691124AB97A0520EED", hash_generated_method = "09DCEF0000A6535AFB5B21F3E4295C02")
     private boolean processSetUpEventList(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) {
-        dsTaint.addTaint(ctlvs.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
         CatLog.d(this, "process SetUpEventList");
-        return dsTaint.getTaintBoolean();
+        addTaint(cmdDet.getTaint());
+        addTaint(ctlvs.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_867384546 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_867384546;
         // ---------- Original Method ----------
         //CatLog.d(this, "process SetUpEventList");
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.865 -0400", hash_original_method = "8945EEF95EF30DB6F3AC6F2F65AD50C7", hash_generated_method = "7BCA0A920608F0A8FC81FAA5F1F53448")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.711 -0400", hash_original_method = "8945EEF95EF30DB6F3AC6F2F65AD50C7", hash_generated_method = "7D03C298E8E3685B6E2EA7B5974F9826")
     private boolean processLaunchBrowser(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
-        dsTaint.addTaint(ctlvs.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
         CatLog.d(this, "process LaunchBrowser");
         TextMessage confirmMsg;
         confirmMsg = new TextMessage();
@@ -710,18 +731,17 @@ class CommandParamsFactory extends Handler {
             mIconLoader.loadIcon(iconId.recordNumber, this
                     .obtainMessage(MSG_ID_LOAD_ICON_DONE));
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(ctlvs.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_953737847 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_953737847;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.866 -0400", hash_original_method = "9E25ADC04DC19743F5D672C3FA9262A8", hash_generated_method = "2BCAC9D67F99B4FB12584D2A4C2BE7C3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.714 -0400", hash_original_method = "9E25ADC04DC19743F5D672C3FA9262A8", hash_generated_method = "BBB8866304CA8DD788BBF41C3AFDD996")
     private boolean processPlayTone(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
-        dsTaint.addTaint(ctlvs.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
         CatLog.d(this, "process PlayTone");
         Tone tone;
         tone = null;
@@ -735,7 +755,7 @@ class CommandParamsFactory extends Handler {
         ctlv = searchForTag(ComprehensionTlvTag.TONE, ctlvs);
         {
             {
-                boolean var474268E675612C4353368685B55E93EB_1305946570 = (ctlv.getLength() > 0);
+                boolean var474268E675612C4353368685B55E93EB_936793692 = (ctlv.getLength() > 0);
                 {
                     try 
                     {
@@ -777,18 +797,17 @@ class CommandParamsFactory extends Handler {
             mIconLoader.loadIcon(iconId.recordNumber, this
                     .obtainMessage(MSG_ID_LOAD_ICON_DONE));
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(ctlvs.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2115427865 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2115427865;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.866 -0400", hash_original_method = "1675CA7AE4DACD4909A19602008CCD7F", hash_generated_method = "DF63511EBD5D3DBB597F8738F671219E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.716 -0400", hash_original_method = "1675CA7AE4DACD4909A19602008CCD7F", hash_generated_method = "47D6E97B1B324507F1FB3EC28200F7C1")
     private boolean processSetupCall(CommandDetails cmdDet,
             List<ComprehensionTlv> ctlvs) throws ResultException {
-        dsTaint.addTaint(ctlvs.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
         CatLog.d(this, "process SetupCall");
         Iterator<ComprehensionTlv> iter;
         iter = ctlvs.iterator();
@@ -830,17 +849,16 @@ class CommandParamsFactory extends Handler {
             mIconLoader.loadIcons(recordNumbers, this
                     .obtainMessage(MSG_ID_LOAD_ICON_DONE));
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(ctlvs.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_971980469 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_971980469;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.867 -0400", hash_original_method = "A94C1A7A0EB7DC9619C535A1C0085435", hash_generated_method = "35B7CCC4B29A4CA1B647B45510373552")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.717 -0400", hash_original_method = "A94C1A7A0EB7DC9619C535A1C0085435", hash_generated_method = "B990A34C06EDF9201D660EE61B10E643")
     private boolean processProvideLocalInfo(CommandDetails cmdDet, List<ComprehensionTlv> ctlvs) throws ResultException {
-        dsTaint.addTaint(ctlvs.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
         CatLog.d(this, "process ProvideLocalInfo");
         //Begin case DTTZ_SETTING 
         CatLog.d(this, "PLI [DTTZ_SETTING]");
@@ -863,7 +881,9 @@ class CommandParamsFactory extends Handler {
         //Begin case default 
         if (DroidSafeAndroidRuntime.control) throw new ResultException(ResultCode.BEYOND_TERMINAL_CAPABILITY);
         //End case default 
-        return dsTaint.getTaintBoolean();
+        addTaint(ctlvs.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_341014347 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_341014347;
         // ---------- Original Method ----------
         //CatLog.d(this, "process ProvideLocalInfo");
         //switch (cmdDet.commandQualifier) {
@@ -884,58 +904,38 @@ class CommandParamsFactory extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.867 -0400", hash_original_method = "4613B38A8D553E22A78DE459C1D09801", hash_generated_method = "1793B02C9F729DDEC66E8FB27B795CAB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private boolean processBIPClient(CommandDetails cmdDet,
-                                     List<ComprehensionTlv> ctlvs) throws ResultException {
-        dsTaint.addTaint(ctlvs.dsTaint);
-        dsTaint.addTaint(cmdDet.dsTaint);
-        AppInterface.CommandType commandType;
-        commandType = AppInterface.CommandType.fromInt(cmdDet.typeOfCommand);
-        {
-            CatLog.d(this, "process "+ commandType.name());
-        } //End block
-        TextMessage textMsg;
-        textMsg = new TextMessage();
-        IconId iconId;
-        iconId = null;
-        ComprehensionTlv ctlv;
-        ctlv = null;
-        boolean has_alpha_id;
-        has_alpha_id = false;
-        ctlv = searchForTag(ComprehensionTlvTag.ALPHA_ID, ctlvs);
-        {
-            textMsg.text = ValueParser.retrieveAlphaId(ctlv);
-            CatLog.d(this, "alpha TLV text=" + textMsg.text);
-            has_alpha_id = true;
-        } //End block
-        ctlv = searchForTag(ComprehensionTlvTag.ICON_ID, ctlvs);
-        {
-            iconId = ValueParser.retrieveIconId(ctlv);
-            textMsg.iconSelfExplanatory = iconId.selfExplanatory;
-        } //End block
-        textMsg.responseNeeded = false;
-        mCmdParams = new BIPClientParams(cmdDet, textMsg, has_alpha_id);
-        {
-            mIconLoadState = LOAD_SINGLE_ICON;
-            mIconLoader.loadIcon(iconId.recordNumber, this.obtainMessage(MSG_ID_LOAD_ICON_DONE));
-        } //End block
-        return dsTaint.getTaintBoolean();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.717 -0400", hash_original_field = "CEBC5A2FE2A04C1669E8EF2F3D151E4D", hash_generated_field = "A02E695433658795D44A91F9AE9E9D68")
 
-    
     private static CommandParamsFactory sInstance = null;
-    static final int MSG_ID_LOAD_ICON_DONE = 1;
-    static final int LOAD_NO_ICON           = 0;
-    static final int LOAD_SINGLE_ICON       = 1;
-    static final int LOAD_MULTI_ICONS       = 2;
-    static final int REFRESH_NAA_INIT_AND_FULL_FILE_CHANGE  = 0x00;
-    static final int REFRESH_NAA_INIT_AND_FILE_CHANGE       = 0x02;
-    static final int REFRESH_NAA_INIT                       = 0x03;
-    static final int REFRESH_UICC_RESET                     = 0x04;
-    static final int DTTZ_SETTING                           = 0x03;
-    static final int LANGUAGE_SETTING                       = 0x04;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.717 -0400", hash_original_field = "F06FC8D30143C69FD9E3180EB141CFD6", hash_generated_field = "6BA990F35996A535FB0D183372D34DBF")
+
+    static int MSG_ID_LOAD_ICON_DONE = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.717 -0400", hash_original_field = "2BCC173F891239A5A8576F2AEC0B91A0", hash_generated_field = "A11440B84734D826277EEBFBEF670160")
+
+    static int LOAD_NO_ICON = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.717 -0400", hash_original_field = "A57771E5C7F2CE97D71E159649709634", hash_generated_field = "6715247E872F8550D75B9D87CA4D7AB8")
+
+    static int LOAD_SINGLE_ICON = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.717 -0400", hash_original_field = "900BD676D0EFA2244326DDA407C01CF9", hash_generated_field = "43266D4FC9DFEF411BE2490370084FDA")
+
+    static int LOAD_MULTI_ICONS = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.717 -0400", hash_original_field = "2FAA3391556637CDCAED99C9E616C7C0", hash_generated_field = "7F970340E87821B99A31F344EE5F8AFD")
+
+    static int REFRESH_NAA_INIT_AND_FULL_FILE_CHANGE = 0x00;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.717 -0400", hash_original_field = "699D69C7B5F124C6D3F7F032DB01A49C", hash_generated_field = "14B4063B977BE3B04E5076C262FD2866")
+
+    static int REFRESH_NAA_INIT_AND_FILE_CHANGE = 0x02;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.717 -0400", hash_original_field = "0DA0EEC5D7E4FD4199ABD57860E04B02", hash_generated_field = "2629C1699ACD4B7C4AFE6DAF2BC29B8D")
+
+    static int REFRESH_NAA_INIT = 0x03;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.717 -0400", hash_original_field = "9884D2460CE792B1DEC3C6893B0BC27C", hash_generated_field = "8979A7075279E503B40360F81675AA17")
+
+    static int REFRESH_UICC_RESET = 0x04;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.717 -0400", hash_original_field = "CD5701BD2A2C97379C4A10266493FC0C", hash_generated_field = "FE22C9517B34BC0313C8BAB059AC34EE")
+
+    static int DTTZ_SETTING = 0x03;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.717 -0400", hash_original_field = "B86AE44C2E0468CA3371EBAA7E72DB95", hash_generated_field = "05B04A0F9DB5F8BA5184DC0018961A1D")
+
+    static int LANGUAGE_SETTING = 0x04;
 }
 

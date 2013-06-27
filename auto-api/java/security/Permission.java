@@ -11,36 +11,37 @@ import java.io.Serializable;
 
 public abstract class Permission implements Guard, Serializable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.400 -0400", hash_original_method = "A3ABD4D844A912132701BDB49CC172D4", hash_generated_method = "7572FAD9F417E23F177C6EE478AC4312")
-    @DSModeled(DSC.SAFE)
-    public Permission(String name) {
-        dsTaint.addTaint(name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.068 -0400", hash_original_method = "A3ABD4D844A912132701BDB49CC172D4", hash_generated_method = "60BBD61DE20E08273982FAC06D418A9B")
+    public  Permission(String name) {
+        addTaint(name.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.400 -0400", hash_original_method = "BD1D69B57EF82CC836CADC372B210DA8", hash_generated_method = "86A98FA2495A1FE6D33CA00AE2935AA5")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.069 -0400", hash_original_method = "BD1D69B57EF82CC836CADC372B210DA8", hash_generated_method = "44980253F7475E5AD79E8D97619E0A42")
     public final String getName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1488452296 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1488452296 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1488452296.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1488452296;
         // ---------- Original Method ----------
         //return null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.400 -0400", hash_original_method = "C84962AC42FE97CD37014EB04A226348", hash_generated_method = "8EE53E52ED462DA9EF6E68F482949E50")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.069 -0400", hash_original_method = "C84962AC42FE97CD37014EB04A226348", hash_generated_method = "7B46358E0B69DA0AB94C3564AB046E79")
     public void checkGuard(Object obj) throws SecurityException {
-        dsTaint.addTaint(obj.dsTaint);
+        addTaint(obj.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.400 -0400", hash_original_method = "3B418AF4D3F113F25455A16498EE96FC", hash_generated_method = "166B602A6210F9717706C927A557BCB3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.073 -0400", hash_original_method = "3B418AF4D3F113F25455A16498EE96FC", hash_generated_method = "16EA492ED036F08A6CEFA12EC0DA1956")
     public PermissionCollection newPermissionCollection() {
-        PermissionCollection var7D15FAC7674E3953D2AF7B04A646C53D_2123870715 = (new AllPermissionCollection());
-        return (PermissionCollection)dsTaint.getTaint();
+        PermissionCollection varB4EAC82CA7396A68D541C85D26508E83_2031279167 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2031279167 = new AllPermissionCollection();
+        varB4EAC82CA7396A68D541C85D26508E83_2031279167.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2031279167;
         // ---------- Original Method ----------
         //return new AllPermissionCollection();
     }

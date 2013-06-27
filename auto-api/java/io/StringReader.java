@@ -10,15 +10,22 @@ import java.util.Iterator;
 import java.util.Arrays;
 
 public class StringReader extends Reader {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.833 -0400", hash_original_field = "341BE97D9AFF90C9978347F66F945B77", hash_generated_field = "787A2B4D426AC144FB23E0D0502FE70E")
+
     private String str;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.833 -0400", hash_original_field = "492E5D488B8C3F3A5B37BE9C27216BA1", hash_generated_field = "D9BE4F291B7CF1E403126100EC51CB87")
+
     private int markpos = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.833 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
+
     private int pos;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.833 -0400", hash_original_field = "E2942A04780E223B215EB8B663CF5353", hash_generated_field = "82CC849FCF58347832EA6BB917282DBE")
+
     private int count;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.341 -0400", hash_original_method = "FB44DCC8276A9B32CF15DCC88FC63BEE", hash_generated_method = "F74623862265BE1C91BB5274AD134D0A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public StringReader(String str) {
-        dsTaint.addTaint(str);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.834 -0400", hash_original_method = "FB44DCC8276A9B32CF15DCC88FC63BEE", hash_generated_method = "2BB533358CA78E399DDA1F3F66175075")
+    public  StringReader(String str) {
+        this.str = str;
         this.count = str.length();
         // ---------- Original Method ----------
         //this.str = str;
@@ -26,8 +33,7 @@ public class StringReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.342 -0400", hash_original_method = "827A4A30AD2891E9194C78AEA719C92F", hash_generated_method = "56CB6D45E1B04874E8BB64A2135F32B4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.835 -0400", hash_original_method = "827A4A30AD2891E9194C78AEA719C92F", hash_generated_method = "56CB6D45E1B04874E8BB64A2135F32B4")
     @Override
     public void close() {
         str = null;
@@ -36,20 +42,18 @@ public class StringReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.342 -0400", hash_original_method = "E02036AA0C500209CBC33A804345F86B", hash_generated_method = "627FEA8D7C2106B9F807B833B7DE036E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.835 -0400", hash_original_method = "E02036AA0C500209CBC33A804345F86B", hash_generated_method = "877E6F57E66E0A6DA3F2AE9F83677FB4")
     private boolean isClosed() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1795750841 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1795750841;
         // ---------- Original Method ----------
         //return str == null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.342 -0400", hash_original_method = "F8F979F8EBA759C2F6A839AF0D90FFA4", hash_generated_method = "2EF20C10E4A60E6E2E1B6472EEC1A73F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.835 -0400", hash_original_method = "F8F979F8EBA759C2F6A839AF0D90FFA4", hash_generated_method = "9477A35EF17C11B1D62E277F2ABD71F9")
     @Override
     public void mark(int readLimit) throws IOException {
-        dsTaint.addTaint(readLimit);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
@@ -57,6 +61,7 @@ public class StringReader extends Reader {
             checkNotClosed();
             markpos = pos;
         } //End block
+        addTaint(readLimit);
         // ---------- Original Method ----------
         //if (readLimit < 0) {
             //throw new IllegalArgumentException();
@@ -68,11 +73,10 @@ public class StringReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.342 -0400", hash_original_method = "52097AD3D6FE0975840C468FF1E0F766", hash_generated_method = "EAC21384C45FF19AFC4924DD28F456EE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.835 -0400", hash_original_method = "52097AD3D6FE0975840C468FF1E0F766", hash_generated_method = "59214DA41F41CC45C11D96576EE53BA6")
     private void checkNotClosed() throws IOException {
         {
-            boolean varF463C9E3EC09CF3DDC0E11AE27E5A7FD_1634607493 = (isClosed());
+            boolean varF463C9E3EC09CF3DDC0E11AE27E5A7FD_763800375 = (isClosed());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("StringReader is closed");
             } //End block
@@ -84,27 +88,27 @@ public class StringReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.342 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "4C8BC0E845541479E10014C1D7864553")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.836 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "F8703DB0332E148E8DBF596291DBAF10")
     @Override
     public boolean markSupported() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_681548986 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_681548986;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.342 -0400", hash_original_method = "7FFE2BA54C7A195E9FE8B5D995EC9572", hash_generated_method = "B03F1306A38241292DD3DCAE2D50622A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.836 -0400", hash_original_method = "7FFE2BA54C7A195E9FE8B5D995EC9572", hash_generated_method = "0AEE7B16F8D90093BD8386D8BAF6E056")
     @Override
     public int read() throws IOException {
         {
             checkNotClosed();
             {
-                int var0F580E3D69302FA8221AA508D5192A84_1085503808 = (str.charAt(pos++));
+                int var0F580E3D69302FA8221AA508D5192A84_1346363015 = (str.charAt(pos++));
             } //End block
         } //End block
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1979264358 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1979264358;
         // ---------- Original Method ----------
         //synchronized (lock) {
             //checkNotClosed();
@@ -116,13 +120,9 @@ public class StringReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.343 -0400", hash_original_method = "85EEB2DAA826BA4238F8F98E34D3FBD9", hash_generated_method = "5E87C197D1FCF4F16E73777C5A24E76D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.837 -0400", hash_original_method = "85EEB2DAA826BA4238F8F98E34D3FBD9", hash_generated_method = "81B281A3AC626EA34E0D59B37EBC4078")
     @Override
     public int read(char[] buf, int offset, int len) throws IOException {
-        dsTaint.addTaint(len);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(buf[0]);
         {
             checkNotClosed();
             Arrays.checkOffsetAndCount(buf.length, offset, len);
@@ -134,7 +134,11 @@ public class StringReader extends Reader {
             read = end - pos;
             pos = end;
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(buf[0]);
+        addTaint(offset);
+        addTaint(len);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_42811920 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_42811920;
         // ---------- Original Method ----------
         //synchronized (lock) {
             //checkNotClosed();
@@ -154,14 +158,14 @@ public class StringReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.343 -0400", hash_original_method = "3162F271739E7EAF4DA155264EC5FC94", hash_generated_method = "26B26044EC41387C75F3C410F3ABF1EE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.838 -0400", hash_original_method = "3162F271739E7EAF4DA155264EC5FC94", hash_generated_method = "06A420D16C6CB25DC665FDAF44871DC9")
     @Override
     public boolean ready() throws IOException {
         {
             checkNotClosed();
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_825582735 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_825582735;
         // ---------- Original Method ----------
         //synchronized (lock) {
             //checkNotClosed();
@@ -170,8 +174,7 @@ public class StringReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.343 -0400", hash_original_method = "038BDF0065CA5B8ADE3B96C7C6A96C49", hash_generated_method = "83AB864F4946B1529535589675BD20F1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.847 -0400", hash_original_method = "038BDF0065CA5B8ADE3B96C7C6A96C49", hash_generated_method = "83AB864F4946B1529535589675BD20F1")
     @Override
     public void reset() throws IOException {
         {
@@ -186,11 +189,9 @@ public class StringReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.343 -0400", hash_original_method = "62CF7546C0F2369A3238D86713E4D3AD", hash_generated_method = "68BAD3583C71FE472DFF32B7D59E553F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.847 -0400", hash_original_method = "62CF7546C0F2369A3238D86713E4D3AD", hash_generated_method = "BC120860E7689EA611DD7FEA54BCF503")
     @Override
     public long skip(long charCount) throws IOException {
-        dsTaint.addTaint(charCount);
         {
             checkNotClosed();
             int minSkip;
@@ -203,8 +204,10 @@ public class StringReader extends Reader {
             {
                 charCount = minSkip;
             } //End block
+            pos += charCount;
         } //End block
-        return dsTaint.getTaintLong();
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_589617157 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_589617157;
         // ---------- Original Method ----------
         //synchronized (lock) {
             //checkNotClosed();

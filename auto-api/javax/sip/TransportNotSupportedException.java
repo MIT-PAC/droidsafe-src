@@ -10,28 +10,25 @@ import java.util.Iterator;
 
 public class TransportNotSupportedException extends SipException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.264 -0400", hash_original_method = "A9536702FA2FD929BCAA03BE02DE378D", hash_generated_method = "E158EFA88D439F44ECE432CEE5044D3E")
-    @DSModeled(DSC.SAFE)
-    public TransportNotSupportedException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.031 -0400", hash_original_method = "A9536702FA2FD929BCAA03BE02DE378D", hash_generated_method = "E158EFA88D439F44ECE432CEE5044D3E")
+    public  TransportNotSupportedException() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.265 -0400", hash_original_method = "72633799E19427EF47046C691F2C9C95", hash_generated_method = "E3CEE852217B57F7E5B346E742B37DD4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public TransportNotSupportedException(String message) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.031 -0400", hash_original_method = "72633799E19427EF47046C691F2C9C95", hash_generated_method = "6B49829F6267E8EEEBF96FAAF00AF27A")
+    public  TransportNotSupportedException(String message) {
         super(message);
-        dsTaint.addTaint(message);
+        addTaint(message.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.265 -0400", hash_original_method = "F97CF6294699591851DD663A9DDDF701", hash_generated_method = "FC28E9BBD4F4A65B8BBF24E41631CD72")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public TransportNotSupportedException(String message, Throwable cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.031 -0400", hash_original_method = "F97CF6294699591851DD663A9DDDF701", hash_generated_method = "EB0DE5EB98253BF02E929E8FD922C636")
+    public  TransportNotSupportedException(String message, Throwable cause) {
         super(message, cause);
-        dsTaint.addTaint(message);
-        dsTaint.addTaint(cause.dsTaint);
+        addTaint(message.getTaint());
+        addTaint(cause.getTaint());
         // ---------- Original Method ----------
     }
 

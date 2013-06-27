@@ -19,39 +19,45 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
 public class CheckedTextView extends TextView implements Checkable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.571 -0400", hash_original_field = "B7985199D35C1155A55567C458443B15", hash_generated_field = "5B3EF9355FF9C7031B185F0E3C8A05A3")
+
     private boolean mChecked;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.571 -0400", hash_original_field = "8E42736531499FEAFD90DF42FF8EDA89", hash_generated_field = "56D9A5B5697E1794767C7AC768CAFE0C")
+
     private int mCheckMarkResource;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.571 -0400", hash_original_field = "550B61CA95009D77CE3932CF1B84D700", hash_generated_field = "C10062341C3645D6C852294631265BE5")
+
     private Drawable mCheckMarkDrawable;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.571 -0400", hash_original_field = "71B6E943F69F1AE17D88D60525D4C0CB", hash_generated_field = "79F756395206E1EEB26019E0D87C14AB")
+
     private int mBasePadding;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.571 -0400", hash_original_field = "C8C9C178BA68779160D68C33A60A4C89", hash_generated_field = "66183B11F152F514120E9BC4BB1F25CE")
+
     private int mCheckMarkWidth;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.571 -0400", hash_original_field = "51D95399A36ED4034B2FC9D634C13862", hash_generated_field = "C623C63EB2FF5407B90C6E9E1CE126E8")
+
     private boolean mNeedRequestlayout;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.360 -0400", hash_original_method = "D98B8279143D8DB42D11ECE4C668DA6C", hash_generated_method = "CD794385C25CB51A9E9B5214C68D2DD5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CheckedTextView(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.575 -0400", hash_original_method = "D98B8279143D8DB42D11ECE4C668DA6C", hash_generated_method = "C1A1B30DB9754943DFDDE64EE8731EFE")
+    public  CheckedTextView(Context context) {
         this(context, null);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.360 -0400", hash_original_method = "36596E5D7755B07B6F1DB63ABEA718CD", hash_generated_method = "6129FCBEF2EBBC09A25E8F2DE0C41A67")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CheckedTextView(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.575 -0400", hash_original_method = "36596E5D7755B07B6F1DB63ABEA718CD", hash_generated_method = "E9CFF49B6FD8550595DD63F2D74A4EE6")
+    public  CheckedTextView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.360 -0400", hash_original_method = "B58B3AE8D95B44872F8433BF803A9C37", hash_generated_method = "3DE842E98CBAE41657531F0D1CCEE789")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CheckedTextView(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.575 -0400", hash_original_method = "B58B3AE8D95B44872F8433BF803A9C37", hash_generated_method = "2B30D6C6EFF1BC36BB76DC06BFF8E2A3")
+    public  CheckedTextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(defStyle);
-        dsTaint.addTaint(context.dsTaint);
         TypedArray a;
         a = context.obtainStyledAttributes(attrs,
                 R.styleable.CheckedTextView, defStyle, 0);
@@ -64,6 +70,9 @@ public class CheckedTextView extends TextView implements Checkable {
         checked = a.getBoolean(R.styleable.CheckedTextView_checked, false);
         setChecked(checked);
         a.recycle();
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
+        addTaint(defStyle);
         // ---------- Original Method ----------
         //TypedArray a = context.obtainStyledAttributes(attrs,
                 //R.styleable.CheckedTextView, defStyle, 0);
@@ -77,8 +86,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.361 -0400", hash_original_method = "E1B1AD330E2148117F43C315FF6D1DED", hash_generated_method = "3679ED1F891BEC88079198707411C40A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.576 -0400", hash_original_method = "E1B1AD330E2148117F43C315FF6D1DED", hash_generated_method = "3679ED1F891BEC88079198707411C40A")
     public void toggle() {
         setChecked(!mChecked);
         // ---------- Original Method ----------
@@ -86,21 +94,20 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.361 -0400", hash_original_method = "1057BD246BBC96B40BF6B862055C5AB8", hash_generated_method = "617B031E915555E011BB44555F369867")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.576 -0400", hash_original_method = "1057BD246BBC96B40BF6B862055C5AB8", hash_generated_method = "8B6F89A1E86D44CE10115ECCB00481BA")
     @ViewDebug.ExportedProperty
     public boolean isChecked() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_731922446 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_731922446;
         // ---------- Original Method ----------
         //return mChecked;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.361 -0400", hash_original_method = "F58397C66404D0D65BC532CFA70D8C12", hash_generated_method = "CB2182F7111ADCB84CECF6292D49EA13")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.576 -0400", hash_original_method = "F58397C66404D0D65BC532CFA70D8C12", hash_generated_method = "53C7BE272317B4DDDF43F0B0DDB00511")
     public void setChecked(boolean checked) {
-        dsTaint.addTaint(checked);
         {
+            mChecked = checked;
             refreshDrawableState();
         } //End block
         // ---------- Original Method ----------
@@ -111,10 +118,9 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.361 -0400", hash_original_method = "3FCCCD2AA960312D010B10C25B3E1D95", hash_generated_method = "EF6E1ABFD30743D91C8B11462C1E38F2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.577 -0400", hash_original_method = "3FCCCD2AA960312D010B10C25B3E1D95", hash_generated_method = "E3ADA40B568EEEC4404D5D68BC8D512C")
     public void setCheckMarkDrawable(int resid) {
-        dsTaint.addTaint(resid);
+        mCheckMarkResource = resid;
         Drawable d;
         d = null;
         {
@@ -134,10 +140,8 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.362 -0400", hash_original_method = "93DA6C15D035807E73845CA0E25952EE", hash_generated_method = "ED390639B9E22192326E2E812C5646AD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.581 -0400", hash_original_method = "93DA6C15D035807E73845CA0E25952EE", hash_generated_method = "FAC80602BB1A2528C04BBDA3A6E8FDC2")
     public void setCheckMarkDrawable(Drawable d) {
-        dsTaint.addTaint(d.dsTaint);
         {
             mCheckMarkDrawable.setCallback(null);
             unscheduleDrawable(mCheckMarkDrawable);
@@ -154,6 +158,7 @@ public class CheckedTextView extends TextView implements Checkable {
         {
             mCheckMarkWidth = 0;
         } //End block
+        mCheckMarkDrawable = d;
         resolvePadding();
         // ---------- Original Method ----------
         //if (mCheckMarkDrawable != null) {
@@ -176,8 +181,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.362 -0400", hash_original_method = "7617145132345CC873AC9F4B73DFB7CD", hash_generated_method = "54F9C2E0E3E1117BFA66CF5FDA4FE37C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.582 -0400", hash_original_method = "7617145132345CC873AC9F4B73DFB7CD", hash_generated_method = "54F9C2E0E3E1117BFA66CF5FDA4FE37C")
     @Override
     protected void resolvePadding() {
         super.resolvePadding();
@@ -203,28 +207,25 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.362 -0400", hash_original_method = "7A1CD8A3A060B0E646E3DFF2DD87386A", hash_generated_method = "F68FD08704297378AA2BECDB0847E879")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.596 -0400", hash_original_method = "7A1CD8A3A060B0E646E3DFF2DD87386A", hash_generated_method = "55F122B04E8CF3F17D1F88AEAE81FF29")
     @Override
     public void setPadding(int left, int top, int right, int bottom) {
-        dsTaint.addTaint(bottom);
-        dsTaint.addTaint(left);
-        dsTaint.addTaint(right);
-        dsTaint.addTaint(top);
         super.setPadding(left, top, right, bottom);
         mBasePadding = mPaddingRight;
+        addTaint(left);
+        addTaint(top);
+        addTaint(right);
+        addTaint(bottom);
         // ---------- Original Method ----------
         //super.setPadding(left, top, right, bottom);
         //mBasePadding = mPaddingRight;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.363 -0400", hash_original_method = "B19E130BF4CF411642FF2978EAC8260B", hash_generated_method = "F9357D34D4140A4EE8BBB96C4899605D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.597 -0400", hash_original_method = "B19E130BF4CF411642FF2978EAC8260B", hash_generated_method = "F521FB540487C8EF915503957C340A43")
     @Override
     protected void onDraw(Canvas canvas) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(canvas.dsTaint);
         super.onDraw(canvas);
         Drawable checkMarkDrawable;
         checkMarkDrawable = mCheckMarkDrawable;
@@ -250,28 +251,27 @@ public class CheckedTextView extends TextView implements Checkable {
                     y + height);
             checkMarkDrawable.draw(canvas);
         } //End block
+        addTaint(canvas.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.363 -0400", hash_original_method = "E661308564BAD0BE96E34DA026589671", hash_generated_method = "602D6AC90C1E6C0734A78FF8952CEB20")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.597 -0400", hash_original_method = "E661308564BAD0BE96E34DA026589671", hash_generated_method = "2241107B537E9E2CD40B66BF6FB14BB1")
     @Override
     protected int[] onCreateDrawableState(int extraSpace) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(extraSpace);
         int[] drawableState;
         drawableState = super.onCreateDrawableState(extraSpace + 1);
         {
-            boolean varCEC0E711DC0F7C8E920C6F998438D53D_900620222 = (isChecked());
+            boolean varCEC0E711DC0F7C8E920C6F998438D53D_2049255210 = (isChecked());
             {
                 mergeDrawableStates(drawableState, CHECKED_STATE_SET);
             } //End block
         } //End collapsed parenthetic
-        int[] retVal = new int[1];
-        retVal[0] = dsTaint.getTaintInt();
-        return retVal;
+        addTaint(extraSpace);
+        int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1530988352 = {getTaintInt()};
+        return varB4CCCA26F9DB9189C32F33E82D425CFB_1530988352;
         // ---------- Original Method ----------
         //final int[] drawableState = super.onCreateDrawableState(extraSpace + 1);
         //if (isChecked()) {
@@ -281,8 +281,7 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.363 -0400", hash_original_method = "856DABB8A541BB631DA077FA70F1A5D5", hash_generated_method = "1D8708C85CB98371E29284849A2BA698")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.598 -0400", hash_original_method = "856DABB8A541BB631DA077FA70F1A5D5", hash_generated_method = "1D8708C85CB98371E29284849A2BA698")
     @Override
     protected void drawableStateChanged() {
         super.drawableStateChanged();
@@ -302,29 +301,26 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.364 -0400", hash_original_method = "E1DFB2AF73729EA8AA28BE1E77594577", hash_generated_method = "E6ACD88241B33A8DDBF7251DC1B35F77")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.598 -0400", hash_original_method = "E1DFB2AF73729EA8AA28BE1E77594577", hash_generated_method = "C5E84CDB159FDC21AE91720249A51759")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(event.dsTaint);
         super.onInitializeAccessibilityEvent(event);
         event.setChecked(mChecked);
+        addTaint(event.getTaint());
         // ---------- Original Method ----------
         //super.onInitializeAccessibilityEvent(event);
         //event.setChecked(mChecked);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.364 -0400", hash_original_method = "800F92BFA9EDE937B28EAF651D664B90", hash_generated_method = "3C009400F7A153CD93A66C615AE9E4B9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.598 -0400", hash_original_method = "800F92BFA9EDE937B28EAF651D664B90", hash_generated_method = "7E47F6A6C6DFDF930FD9EB9ACB36AE77")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(event.dsTaint);
         super.onPopulateAccessibilityEvent(event);
         {
-            boolean varCEC0E711DC0F7C8E920C6F998438D53D_705203883 = (isChecked());
+            boolean varCEC0E711DC0F7C8E920C6F998438D53D_677947397 = (isChecked());
             {
                 event.getText().add(mContext.getString(R.string.radiobutton_selected));
             } //End block
@@ -332,6 +328,7 @@ public class CheckedTextView extends TextView implements Checkable {
                 event.getText().add(mContext.getString(R.string.radiobutton_not_selected));
             } //End block
         } //End collapsed parenthetic
+        addTaint(event.getTaint());
         // ---------- Original Method ----------
         //super.onPopulateAccessibilityEvent(event);
         //if (isChecked()) {
@@ -342,22 +339,21 @@ public class CheckedTextView extends TextView implements Checkable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:06.364 -0400", hash_original_method = "31E71954214D2E567F10971C83F42BE3", hash_generated_method = "8129B71F40411F81463DA2D6E4249B0F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.599 -0400", hash_original_method = "31E71954214D2E567F10971C83F42BE3", hash_generated_method = "33692B24ECBE73993DF36A49ECD612AC")
     @Override
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(info.dsTaint);
         super.onInitializeAccessibilityNodeInfo(info);
         info.setChecked(mChecked);
+        addTaint(info.getTaint());
         // ---------- Original Method ----------
         //super.onInitializeAccessibilityNodeInfo(info);
         //info.setChecked(mChecked);
     }
 
     
-    private static final int[] CHECKED_STATE_SET = {
-        R.attr.state_checked
-    };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:04.599 -0400", hash_original_field = "312B7CC8C1FC8133C5B1FE8103106614", hash_generated_field = "1BE754A3D76CBF6C6D9CFEED6B3E0D55")
+
+    private static int[] CHECKED_STATE_SET = ;
 }
 

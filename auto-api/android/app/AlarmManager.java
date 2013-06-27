@@ -13,29 +13,29 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 
 public class AlarmManager {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.775 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "86B776A6A69718EFA060C569C84D8641")
+
     private IAlarmManager mService;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.441 -0400", hash_original_method = "777E43DCC11684FA65853DF87647331C", hash_generated_method = "0868CC825ECDC4D77CD82934222509C3")
-    @DSModeled(DSC.SAFE)
-     AlarmManager(IAlarmManager service) {
-        dsTaint.addTaint(service.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.776 -0400", hash_original_method = "777E43DCC11684FA65853DF87647331C", hash_generated_method = "C807E43424CB7C729C805FCAFCCB79C4")
+      AlarmManager(IAlarmManager service) {
+        mService = service;
         // ---------- Original Method ----------
         //mService = service;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.442 -0400", hash_original_method = "62DAF5BCFF42E7C3B71DA4EC3FF03273", hash_generated_method = "E01141BE8BF0F1611BC7909C7DAAD465")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.792 -0400", hash_original_method = "62DAF5BCFF42E7C3B71DA4EC3FF03273", hash_generated_method = "060D92FF5CCC2275C60DE3047C61630C")
     public void set(int type, long triggerAtTime, PendingIntent operation) {
-        dsTaint.addTaint(operation.dsTaint);
-        dsTaint.addTaint(type);
-        dsTaint.addTaint(triggerAtTime);
         try 
         {
             mService.set(type, triggerAtTime, operation);
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(type);
+        addTaint(triggerAtTime);
+        addTaint(operation.getTaint());
         // ---------- Original Method ----------
         //try {
             //mService.set(type, triggerAtTime, operation);
@@ -44,20 +44,19 @@ public class AlarmManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.443 -0400", hash_original_method = "B76B6BC989D8817E7D8138A521E8EB08", hash_generated_method = "612FA1BAEEF25F2408569F7CE4CF6C2F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.794 -0400", hash_original_method = "B76B6BC989D8817E7D8138A521E8EB08", hash_generated_method = "55DA4475E79257CA341876398D9077E3")
     public void setRepeating(int type, long triggerAtTime, long interval,
             PendingIntent operation) {
-        dsTaint.addTaint(operation.dsTaint);
-        dsTaint.addTaint(interval);
-        dsTaint.addTaint(type);
-        dsTaint.addTaint(triggerAtTime);
         try 
         {
             mService.setRepeating(type, triggerAtTime, interval, operation);
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(type);
+        addTaint(triggerAtTime);
+        addTaint(interval);
+        addTaint(operation.getTaint());
         // ---------- Original Method ----------
         //try {
             //mService.setRepeating(type, triggerAtTime, interval, operation);
@@ -66,20 +65,19 @@ public class AlarmManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.444 -0400", hash_original_method = "BA6CD3CD848F31D3C4801F13BE104684", hash_generated_method = "192E21F63FF61E5531DFA8ACEF5EAFDA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.815 -0400", hash_original_method = "BA6CD3CD848F31D3C4801F13BE104684", hash_generated_method = "70008594B1A564B68C6F4DF6F3B8848D")
     public void setInexactRepeating(int type, long triggerAtTime, long interval,
             PendingIntent operation) {
-        dsTaint.addTaint(operation.dsTaint);
-        dsTaint.addTaint(interval);
-        dsTaint.addTaint(type);
-        dsTaint.addTaint(triggerAtTime);
         try 
         {
             mService.setInexactRepeating(type, triggerAtTime, interval, operation);
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(type);
+        addTaint(triggerAtTime);
+        addTaint(interval);
+        addTaint(operation.getTaint());
         // ---------- Original Method ----------
         //try {
             //mService.setInexactRepeating(type, triggerAtTime, interval, operation);
@@ -88,16 +86,15 @@ public class AlarmManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.445 -0400", hash_original_method = "201C17E876772752E3C1FB6083A5FC0F", hash_generated_method = "35C1FA47A9E2F7F59A9DCDDDC386C3A7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.817 -0400", hash_original_method = "201C17E876772752E3C1FB6083A5FC0F", hash_generated_method = "22018CCCF7704D105945F9504E0C1498")
     public void cancel(PendingIntent operation) {
-        dsTaint.addTaint(operation.dsTaint);
         try 
         {
             mService.remove(operation);
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(operation.getTaint());
         // ---------- Original Method ----------
         //try {
             //mService.remove(operation);
@@ -106,16 +103,15 @@ public class AlarmManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.445 -0400", hash_original_method = "3A70CE6E172EDC0255F255C60401C6D7", hash_generated_method = "EB62F601E12FA9713486C2B9C0E944B3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.832 -0400", hash_original_method = "3A70CE6E172EDC0255F255C60401C6D7", hash_generated_method = "E5CED6B9B68D154CC6470B95686BA5DD")
     public void setTime(long millis) {
-        dsTaint.addTaint(millis);
         try 
         {
             mService.setTime(millis);
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(millis);
         // ---------- Original Method ----------
         //try {
             //mService.setTime(millis);
@@ -124,16 +120,15 @@ public class AlarmManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:36.446 -0400", hash_original_method = "7328E8391AD5750BAC4B3B8A138446CC", hash_generated_method = "546A33D5FE3CDF2DDB8BB26FFB4425D6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.834 -0400", hash_original_method = "7328E8391AD5750BAC4B3B8A138446CC", hash_generated_method = "182371D668734157F922FF057293545F")
     public void setTimeZone(String timeZone) {
-        dsTaint.addTaint(timeZone);
         try 
         {
             mService.setTimeZone(timeZone);
         } //End block
         catch (RemoteException ex)
         { }
+        addTaint(timeZone.getTaint());
         // ---------- Original Method ----------
         //try {
             //mService.setTimeZone(timeZone);
@@ -142,14 +137,32 @@ public class AlarmManager {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.846 -0400", hash_original_field = "5E1E77863C8E6490C44436BE3A56C251", hash_generated_field = "3BDDF2E6C62B61826F4AFF48F237BDD3")
+
     public static final int RTC_WAKEUP = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.846 -0400", hash_original_field = "E127F27E2E9809EA3815ED6DEE1B202D", hash_generated_field = "EB67B90A8A2E111C6347420D2B97F28C")
+
     public static final int RTC = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.859 -0400", hash_original_field = "858FC67A1C7310E0E9594322644A0C9D", hash_generated_field = "ABF765CFDB37414A63F9D9B3EB8070AA")
+
     public static final int ELAPSED_REALTIME_WAKEUP = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.859 -0400", hash_original_field = "C63B7F85BFDAC1E98047CD4653AEEF96", hash_generated_field = "CB9D2A7B12A900A079B5C7C73BD1E071")
+
     public static final int ELAPSED_REALTIME = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.860 -0400", hash_original_field = "6A8E55324C90536CDF1A0FD33C798F28", hash_generated_field = "BC6DE1F06E7A4A96C50BEC47050378FE")
+
     public static final long INTERVAL_FIFTEEN_MINUTES = 15 * 60 * 1000;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.860 -0400", hash_original_field = "7BEAF73C04E0707111B3C39423553EF3", hash_generated_field = "D7247C7D04FAD26613BA5A928B7A127F")
+
     public static final long INTERVAL_HALF_HOUR = 2*INTERVAL_FIFTEEN_MINUTES;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.878 -0400", hash_original_field = "7E0FA646D345ABE8BCBD76B0572E29C7", hash_generated_field = "65DF78638E6704F70AB927B27E503A2F")
+
     public static final long INTERVAL_HOUR = 2*INTERVAL_HALF_HOUR;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.879 -0400", hash_original_field = "23F14586630BE9F5A58DCDEE891781A6", hash_generated_field = "4FB20661ECA35BFCFD5B4B24221EA2B2")
+
     public static final long INTERVAL_HALF_DAY = 12*INTERVAL_HOUR;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:38.880 -0400", hash_original_field = "970A0FC923282B138C0E365794CE1967", hash_generated_field = "4A18EAC313489EC85F334E948E3F7EA3")
+
     public static final long INTERVAL_DAY = 2*INTERVAL_HALF_DAY;
 }
 

@@ -37,16 +37,21 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class WallpaperManager {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.788 -0400", hash_original_field = "84013B9B56B226FA2280C6FF3BE1B5D7", hash_generated_field = "79E763BC7220887CD284E78890CFBD39")
+
     private float mWallpaperXStep = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.788 -0400", hash_original_field = "D3C49CE46785D3C0A547BF9D502791F7", hash_generated_field = "4E298C71D3B5B2CA896AF40FC8DB3101")
+
     private float mWallpaperYStep = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.789 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
     private Context mContext;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.140 -0400", hash_original_method = "AA9944AB0F8A7F99E0205835B0AC132C", hash_generated_method = "6E9AD51953EF3B4B39555E789855F3B7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     WallpaperManager(Context context, Handler handler) {
-        dsTaint.addTaint(context.dsTaint);
-        dsTaint.addTaint(handler.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.811 -0400", hash_original_method = "AA9944AB0F8A7F99E0205835B0AC132C", hash_generated_method = "A419C48CEE082980FF6F01DBE73F398D")
+      WallpaperManager(Context context, Handler handler) {
+        mContext = context;
         initGlobals(context.getMainLooper());
+        addTaint(handler.getTaint());
         // ---------- Original Method ----------
         //mContext = context;
         //initGlobals(context.getMainLooper());
@@ -68,26 +73,41 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.141 -0400", hash_original_method = "6F9497943DE7A2ADCF716329D67D9BA7", hash_generated_method = "80629E77D345986E7B42BF6F6E4104EA")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.829 -0400", hash_original_method = "6F9497943DE7A2ADCF716329D67D9BA7", hash_generated_method = "3F50A9ECFCD2820B8C3A41DB96F13331")
     public IWallpaperManager getIWallpaperManager() {
-        return (IWallpaperManager)dsTaint.getTaint();
+        IWallpaperManager varB4EAC82CA7396A68D541C85D26508E83_1845959031 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1845959031 = sGlobals.mService;
+        varB4EAC82CA7396A68D541C85D26508E83_1845959031.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1845959031;
         // ---------- Original Method ----------
         //return sGlobals.mService;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.142 -0400", hash_original_method = "983E953189104E5D3E1EF4C33892C5EB", hash_generated_method = "5AA6F091BC3AE0165BF0C79EFA0A7FE3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.857 -0400", hash_original_method = "983E953189104E5D3E1EF4C33892C5EB", hash_generated_method = "FCBEFB5A4ADA0079660FD5CA66A6E471")
     public Drawable getDrawable() {
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1024542111 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_62254755 = null; //Variable for return #2
         Bitmap bm;
         bm = sGlobals.peekWallpaperBitmap(mContext, true);
         {
             Drawable dr;
             dr = new BitmapDrawable(mContext.getResources(), bm);
             dr.setDither(false);
+            varB4EAC82CA7396A68D541C85D26508E83_1024542111 = dr;
         } //End block
-        return (Drawable)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_62254755 = null;
+        Drawable varA7E53CE21691AB073D9660D615818899_1501453857; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1501453857 = varB4EAC82CA7396A68D541C85D26508E83_1024542111;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1501453857 = varB4EAC82CA7396A68D541C85D26508E83_62254755;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1501453857.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1501453857;
         // ---------- Original Method ----------
         //Bitmap bm = sGlobals.peekWallpaperBitmap(mContext, true);
         //if (bm != null) {
@@ -99,17 +119,30 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.142 -0400", hash_original_method = "EA4956080FAF0CF8E371329CB76D5A40", hash_generated_method = "C3BEB62EF7B2C30179F9479A8EACBE5E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:53.875 -0400", hash_original_method = "EA4956080FAF0CF8E371329CB76D5A40", hash_generated_method = "FB4BBCB63CD57268DEAE6C8B6A274B48")
     public Drawable peekDrawable() {
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_615251493 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1752850899 = null; //Variable for return #2
         Bitmap bm;
         bm = sGlobals.peekWallpaperBitmap(mContext, false);
         {
             Drawable dr;
             dr = new BitmapDrawable(mContext.getResources(), bm);
             dr.setDither(false);
+            varB4EAC82CA7396A68D541C85D26508E83_615251493 = dr;
         } //End block
-        return (Drawable)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1752850899 = null;
+        Drawable varA7E53CE21691AB073D9660D615818899_207905683; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_207905683 = varB4EAC82CA7396A68D541C85D26508E83_615251493;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_207905683 = varB4EAC82CA7396A68D541C85D26508E83_1752850899;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_207905683.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_207905683;
         // ---------- Original Method ----------
         //Bitmap bm = sGlobals.peekWallpaperBitmap(mContext, false);
         //if (bm != null) {
@@ -121,15 +154,27 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.143 -0400", hash_original_method = "8FF7C2E7F253EDCD7E0E3FAE36FB4E5D", hash_generated_method = "40DBBD500A5A6D9730F2267AE9F80F48")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.020 -0400", hash_original_method = "8FF7C2E7F253EDCD7E0E3FAE36FB4E5D", hash_generated_method = "BF44BD38C368D9F2AAFBD8EBDFDFB062")
     public Drawable getFastDrawable() {
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1416246763 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_887675814 = null; //Variable for return #2
         Bitmap bm;
         bm = sGlobals.peekWallpaperBitmap(mContext, true);
         {
-            Drawable var57BB4CA893E8B65CF0B8D723649ACF1C_2114878735 = (new FastBitmapDrawable(bm));
+            varB4EAC82CA7396A68D541C85D26508E83_1416246763 = new FastBitmapDrawable(bm);
         } //End block
-        return (Drawable)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_887675814 = null;
+        Drawable varA7E53CE21691AB073D9660D615818899_903139947; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_903139947 = varB4EAC82CA7396A68D541C85D26508E83_1416246763;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_903139947 = varB4EAC82CA7396A68D541C85D26508E83_887675814;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_903139947.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_903139947;
         // ---------- Original Method ----------
         //Bitmap bm = sGlobals.peekWallpaperBitmap(mContext, true);
         //if (bm != null) {
@@ -139,15 +184,27 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.143 -0400", hash_original_method = "8A28F31302CE106CFE820B9CBC0915AE", hash_generated_method = "80334FF660B7391A1E2379AF87692BA7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.035 -0400", hash_original_method = "8A28F31302CE106CFE820B9CBC0915AE", hash_generated_method = "59F16624962948AF1951E583E03FE527")
     public Drawable peekFastDrawable() {
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_429525381 = null; //Variable for return #1
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1922249133 = null; //Variable for return #2
         Bitmap bm;
         bm = sGlobals.peekWallpaperBitmap(mContext, false);
         {
-            Drawable var57BB4CA893E8B65CF0B8D723649ACF1C_1709012055 = (new FastBitmapDrawable(bm));
+            varB4EAC82CA7396A68D541C85D26508E83_429525381 = new FastBitmapDrawable(bm);
         } //End block
-        return (Drawable)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1922249133 = null;
+        Drawable varA7E53CE21691AB073D9660D615818899_734396905; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_734396905 = varB4EAC82CA7396A68D541C85D26508E83_429525381;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_734396905 = varB4EAC82CA7396A68D541C85D26508E83_1922249133;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_734396905.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_734396905;
         // ---------- Original Method ----------
         //Bitmap bm = sGlobals.peekWallpaperBitmap(mContext, false);
         //if (bm != null) {
@@ -157,18 +214,18 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.144 -0400", hash_original_method = "214C7E80807DBED0084465B1D80DE965", hash_generated_method = "DCCEF115656E0608A0875270087578D6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.042 -0400", hash_original_method = "214C7E80807DBED0084465B1D80DE965", hash_generated_method = "E83D5BD20D95EF4FFBFAD0FF9876C32E")
     public Bitmap getBitmap() {
-        Bitmap varC5A62E31C8CF28EAB4E8CD7BF5D73C26_1675024992 = (sGlobals.peekWallpaperBitmap(mContext, true));
-        return (Bitmap)dsTaint.getTaint();
+        Bitmap varB4EAC82CA7396A68D541C85D26508E83_725045102 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_725045102 = sGlobals.peekWallpaperBitmap(mContext, true);
+        varB4EAC82CA7396A68D541C85D26508E83_725045102.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_725045102;
         // ---------- Original Method ----------
         //return sGlobals.peekWallpaperBitmap(mContext, true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.144 -0400", hash_original_method = "9DD74CD1F13AD5E4F4CF15160B046494", hash_generated_method = "E137D675DA1C337DD2F3C32778252113")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.064 -0400", hash_original_method = "9DD74CD1F13AD5E4F4CF15160B046494", hash_generated_method = "E137D675DA1C337DD2F3C32778252113")
     public void forgetLoadedWallpaper() {
         sGlobals.forgetLoadedWallpaper();
         // ---------- Original Method ----------
@@ -176,16 +233,29 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.154 -0400", hash_original_method = "BFBEA651CA003E449BAD7FB6481A127E", hash_generated_method = "E6BD335F4C5F9EA77D3B171E4738859D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.071 -0400", hash_original_method = "BFBEA651CA003E449BAD7FB6481A127E", hash_generated_method = "0748C0E78D32E96965AFF2C1F35BD240")
     public WallpaperInfo getWallpaperInfo() {
+        WallpaperInfo varB4EAC82CA7396A68D541C85D26508E83_338990156 = null; //Variable for return #1
+        WallpaperInfo varB4EAC82CA7396A68D541C85D26508E83_1108022262 = null; //Variable for return #2
         try 
         {
-            WallpaperInfo var8D7349806B95D51C01BB29F9D9446009_1961736443 = (sGlobals.mService.getWallpaperInfo());
+            varB4EAC82CA7396A68D541C85D26508E83_338990156 = sGlobals.mService.getWallpaperInfo();
         } //End block
         catch (RemoteException e)
-        { }
-        return (WallpaperInfo)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1108022262 = null;
+        } //End block
+        WallpaperInfo varA7E53CE21691AB073D9660D615818899_560172431; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_560172431 = varB4EAC82CA7396A68D541C85D26508E83_338990156;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_560172431 = varB4EAC82CA7396A68D541C85D26508E83_1108022262;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_560172431.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_560172431;
         // ---------- Original Method ----------
         //try {
             //return sGlobals.mService.getWallpaperInfo();
@@ -195,10 +265,8 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.156 -0400", hash_original_method = "A9B0C110F9B2DD6C9D3DF08018F94DD2", hash_generated_method = "C67FA620D63EA5D83C1F793C8F7477AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.101 -0400", hash_original_method = "A9B0C110F9B2DD6C9D3DF08018F94DD2", hash_generated_method = "68F1388EE0FD5134A237B196D86F23E5")
     public void setResource(int resid) throws IOException {
-        dsTaint.addTaint(resid);
         try 
         {
             Resources resources;
@@ -224,6 +292,7 @@ public class WallpaperManager {
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(resid);
         // ---------- Original Method ----------
         //try {
             //Resources resources = mContext.getResources();
@@ -245,10 +314,8 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.159 -0400", hash_original_method = "24319E223B48D297B4260CBD63DF9776", hash_generated_method = "E8245E3BEE43A99C010D89DFF0BA5EBC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.108 -0400", hash_original_method = "24319E223B48D297B4260CBD63DF9776", hash_generated_method = "2F93477BD3838ACA61A3FFC42B246C10")
     public void setBitmap(Bitmap bitmap) throws IOException {
-        dsTaint.addTaint(bitmap.dsTaint);
         try 
         {
             ParcelFileDescriptor fd;
@@ -269,6 +336,7 @@ public class WallpaperManager {
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(bitmap.getTaint());
         // ---------- Original Method ----------
         //try {
             //ParcelFileDescriptor fd = sGlobals.mService.setWallpaper(null);
@@ -289,10 +357,8 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.160 -0400", hash_original_method = "201E3B54F176FDB2F716DB9554E16862", hash_generated_method = "2487F7F075FE0D619864502FC10CD16D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.131 -0400", hash_original_method = "201E3B54F176FDB2F716DB9554E16862", hash_generated_method = "C71CB75BF227E6E0926F3DD8719F88D3")
     public void setStream(InputStream data) throws IOException {
-        dsTaint.addTaint(data.dsTaint);
         try 
         {
             ParcelFileDescriptor fd;
@@ -313,6 +379,7 @@ public class WallpaperManager {
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(data.getTaint());
         // ---------- Original Method ----------
         //try {
             //ParcelFileDescriptor fd = sGlobals.mService.setWallpaper(null);
@@ -333,20 +400,19 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.162 -0400", hash_original_method = "4C0B3C480EF9954FF86E8D84EAD55CC1", hash_generated_method = "1B0F7D88C08F288AEC2923005297DC5C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.133 -0400", hash_original_method = "4C0B3C480EF9954FF86E8D84EAD55CC1", hash_generated_method = "5076A27174A19843B924CDD997842BF6")
     private void setWallpaper(InputStream data, FileOutputStream fos) throws IOException {
-        dsTaint.addTaint(fos.dsTaint);
-        dsTaint.addTaint(data.dsTaint);
         byte[] buffer;
         buffer = new byte[32768];
         int amt;
         {
-            boolean var2B17B59B4F2F4E2A010AD44AD7A027B9_1562140725 = ((amt=data.read(buffer)) > 0);
+            boolean var2B17B59B4F2F4E2A010AD44AD7A027B9_708477199 = ((amt=data.read(buffer)) > 0);
             {
                 fos.write(buffer, 0, amt);
             } //End block
         } //End collapsed parenthetic
+        addTaint(data.getTaint());
+        addTaint(fos.getTaint());
         // ---------- Original Method ----------
         //byte[] buffer = new byte[32768];
         //int amt;
@@ -356,16 +422,16 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.163 -0400", hash_original_method = "D1A5F81505B1F3B03FABBA4410A80898", hash_generated_method = "8C5571BA87E9FCE574680CB4BEC466AB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.151 -0400", hash_original_method = "D1A5F81505B1F3B03FABBA4410A80898", hash_generated_method = "4EFF2614EF238A92E88F22E04BE85201")
     public int getDesiredMinimumWidth() {
         try 
         {
-            int varF4210454002966C2A27768BDBD596292_53946768 = (sGlobals.mService.getWidthHint());
+            int varF4210454002966C2A27768BDBD596292_361416955 = (sGlobals.mService.getWidthHint());
         } //End block
         catch (RemoteException e)
         { }
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_308117511 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_308117511;
         // ---------- Original Method ----------
         //try {
             //return sGlobals.mService.getWidthHint();
@@ -375,16 +441,16 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.165 -0400", hash_original_method = "B18A5C89DB794D80A7E1B5CE60755D7A", hash_generated_method = "7B2681A21804C5DAA7A517757AD75D60")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.167 -0400", hash_original_method = "B18A5C89DB794D80A7E1B5CE60755D7A", hash_generated_method = "508F95040EEB30AD87A6D3494DF87154")
     public int getDesiredMinimumHeight() {
         try 
         {
-            int var73CA9014DB323FE5C953F725553245A9_2085073853 = (sGlobals.mService.getHeightHint());
+            int var73CA9014DB323FE5C953F725553245A9_1962090424 = (sGlobals.mService.getHeightHint());
         } //End block
         catch (RemoteException e)
         { }
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_683830505 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_683830505;
         // ---------- Original Method ----------
         //try {
             //return sGlobals.mService.getHeightHint();
@@ -394,17 +460,16 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.165 -0400", hash_original_method = "24150471411E1AC7EC2E370FB5C4066A", hash_generated_method = "6E8FB9E147AA2C0A9930F151CAF4F817")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.169 -0400", hash_original_method = "24150471411E1AC7EC2E370FB5C4066A", hash_generated_method = "7442132A8A7D3CCB68C1A224E0CB2303")
     public void suggestDesiredDimensions(int minimumWidth, int minimumHeight) {
-        dsTaint.addTaint(minimumWidth);
-        dsTaint.addTaint(minimumHeight);
         try 
         {
             sGlobals.mService.setDimensionHints(minimumWidth, minimumHeight);
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(minimumWidth);
+        addTaint(minimumHeight);
         // ---------- Original Method ----------
         //try {
             //sGlobals.mService.setDimensionHints(minimumWidth, minimumHeight);
@@ -413,12 +478,8 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.166 -0400", hash_original_method = "50451375F0F7110E301C30296ACA8A65", hash_generated_method = "1091BE2FE61AF4D81F765D8AD289311B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.197 -0400", hash_original_method = "50451375F0F7110E301C30296ACA8A65", hash_generated_method = "407746CE8C25C463352F25EC550EB7B0")
     public void setWallpaperOffsets(IBinder windowToken, float xOffset, float yOffset) {
-        dsTaint.addTaint(yOffset);
-        dsTaint.addTaint(xOffset);
-        dsTaint.addTaint(windowToken.dsTaint);
         IBinder fWindowToken;
         fWindowToken = windowToken;
         float fXOffset;
@@ -426,8 +487,7 @@ public class WallpaperManager {
         float fYOffset;
         fYOffset = yOffset;
         sGlobals.getHandler().post(new Runnable() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.166 -0400", hash_original_method = "FB60FC39BBF5735DAB5B94EDE4106EB9", hash_generated_method = "87E65C58A468E8226DAED1B7F431869A")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.195 -0400", hash_original_method = "FB60FC39BBF5735DAB5B94EDE4106EB9", hash_generated_method = "87E65C58A468E8226DAED1B7F431869A")
             public void run() {
                 try 
                 {
@@ -447,6 +507,9 @@ public class WallpaperManager {
                 //}
             }
 });
+        addTaint(windowToken.getTaint());
+        addTaint(xOffset);
+        addTaint(yOffset);
         // ---------- Original Method ----------
         //final IBinder fWindowToken = windowToken;
         //final float fXOffset = xOffset;
@@ -464,27 +527,19 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.167 -0400", hash_original_method = "D2E7CBA6FEE1F1016E75D81DE5B86ECC", hash_generated_method = "8B46853DE256BA635130B2008BFCF534")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.211 -0400", hash_original_method = "D2E7CBA6FEE1F1016E75D81DE5B86ECC", hash_generated_method = "EADA38664BEC7414A75FE025CEA53E62")
     public void setWallpaperOffsetSteps(float xStep, float yStep) {
-        dsTaint.addTaint(xStep);
-        dsTaint.addTaint(yStep);
+        mWallpaperXStep = xStep;
+        mWallpaperYStep = yStep;
         // ---------- Original Method ----------
         //mWallpaperXStep = xStep;
         //mWallpaperYStep = yStep;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.167 -0400", hash_original_method = "5FDBB12430A98A22274A04FEE86533CB", hash_generated_method = "BC54562C39D83E1BAFE186A3F0F48182")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.213 -0400", hash_original_method = "5FDBB12430A98A22274A04FEE86533CB", hash_generated_method = "74198F7DAD6A1E6DB7BE47885B3B17C2")
     public void sendWallpaperCommand(IBinder windowToken, String action,
             int x, int y, int z, Bundle extras) {
-        dsTaint.addTaint(action);
-        dsTaint.addTaint(windowToken.dsTaint);
-        dsTaint.addTaint(z);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(extras.dsTaint);
-        dsTaint.addTaint(x);
         try 
         {
             ViewRootImpl.getWindowSession(mContext.getMainLooper()).sendWallpaperCommand(
@@ -492,6 +547,12 @@ public class WallpaperManager {
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(windowToken.getTaint());
+        addTaint(action.getTaint());
+        addTaint(x);
+        addTaint(y);
+        addTaint(z);
+        addTaint(extras.getTaint());
         // ---------- Original Method ----------
         //try {
             //ViewRootImpl.getWindowSession(mContext.getMainLooper()).sendWallpaperCommand(
@@ -501,10 +562,8 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.167 -0400", hash_original_method = "4003FD7579057D5A21D7509B89350DFE", hash_generated_method = "42D361038B62B5273E9649334C9D43A0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.233 -0400", hash_original_method = "4003FD7579057D5A21D7509B89350DFE", hash_generated_method = "D360D5ABD82CAE5BA1F439042FF6AA02")
     public void clearWallpaperOffsets(IBinder windowToken) {
-        dsTaint.addTaint(windowToken.dsTaint);
         try 
         {
             ViewRootImpl.getWindowSession(mContext.getMainLooper()).setWallpaperPosition(
@@ -512,6 +571,7 @@ public class WallpaperManager {
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(windowToken.getTaint());
         // ---------- Original Method ----------
         //try {
             //ViewRootImpl.getWindowSession(mContext.getMainLooper()).setWallpaperPosition(
@@ -521,8 +581,7 @@ public class WallpaperManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.168 -0400", hash_original_method = "C7793256C05758E1D6CDFCE99A7FE546", hash_generated_method = "AB99E5138557A852157F08526E2516F1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.244 -0400", hash_original_method = "C7793256C05758E1D6CDFCE99A7FE546", hash_generated_method = "AB99E5138557A852157F08526E2516F1")
     public void clear() throws IOException {
         setResource(com.android.internal.R.drawable.default_wallpaper);
         // ---------- Original Method ----------
@@ -576,17 +635,28 @@ public class WallpaperManager {
 
     
     static class FastBitmapDrawable extends Drawable {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.247 -0400", hash_original_field = "C4C105852193F50EEB9E84F09C746611", hash_generated_field = "4EFA3179E01F3A6C04DAAC2298E5BFE4")
+
         private Bitmap mBitmap;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.247 -0400", hash_original_field = "A3DB1626A190732E588FD0D14FC8FB31", hash_generated_field = "380984B6D3BA888BD05804A5D24041AE")
+
         private int mWidth;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.247 -0400", hash_original_field = "483542B05A951AA16D89C7F809C20811", hash_generated_field = "9A13F430E09A05B31C551CE62B9A37C1")
+
         private int mHeight;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.248 -0400", hash_original_field = "E635C9C85981E1DCE6AEF62F70750A33", hash_generated_field = "DA577E86F21E75B26C2B7DE9380FC9DD")
+
         private int mDrawLeft;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.248 -0400", hash_original_field = "F9576DC303B2C6B7B08894614FE4B0E1", hash_generated_field = "BC12CCF55C693145726833EAB6B40601")
+
         private int mDrawTop;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.267 -0400", hash_original_field = "78E27F80AC0100441F897783EFA42851", hash_generated_field = "75BCEEBE83B26919B33E8EA8B289919E")
+
         private Paint mPaint;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.169 -0400", hash_original_method = "A000E3823EF3583E37A464733E9034D5", hash_generated_method = "F4617B733C6BED9B2000871A2D9E7989")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        private FastBitmapDrawable(Bitmap bitmap) {
-            dsTaint.addTaint(bitmap.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.281 -0400", hash_original_method = "A000E3823EF3583E37A464733E9034D5", hash_generated_method = "38655F32CD9DFD57679F12FD7FFD5218")
+        private  FastBitmapDrawable(Bitmap bitmap) {
+            mBitmap = bitmap;
             mWidth = bitmap.getWidth();
             mHeight = bitmap.getHeight();
             setBounds(0, 0, mWidth, mHeight);
@@ -602,35 +672,29 @@ public class WallpaperManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.169 -0400", hash_original_method = "740DEE0C93073DC91C8FEF81BF30F5D6", hash_generated_method = "3D54186EEC1031948389938B9F2AD936")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.288 -0400", hash_original_method = "740DEE0C93073DC91C8FEF81BF30F5D6", hash_generated_method = "CDB3E3C8DD4FC718A8B6F97DA4AAB1F9")
         @Override
         public void draw(Canvas canvas) {
-            dsTaint.addTaint(canvas.dsTaint);
             canvas.drawBitmap(mBitmap, mDrawLeft, mDrawTop, mPaint);
+            addTaint(canvas.getTaint());
             // ---------- Original Method ----------
             //canvas.drawBitmap(mBitmap, mDrawLeft, mDrawTop, mPaint);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.170 -0400", hash_original_method = "20937ACEFD1116260A9689661466F3F7", hash_generated_method = "19E72E8AB5576C6CA1E35275077EED2E")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.290 -0400", hash_original_method = "20937ACEFD1116260A9689661466F3F7", hash_generated_method = "256CCC1336BE974835E9BF497D3B98E7")
         @Override
         public int getOpacity() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_402888283 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_402888283;
             // ---------- Original Method ----------
             //return PixelFormat.OPAQUE;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.170 -0400", hash_original_method = "AD75C11A4E8AD86B9F9EB3DCD5857128", hash_generated_method = "390FD5357CA51E9055173F6E498864F2")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.296 -0400", hash_original_method = "AD75C11A4E8AD86B9F9EB3DCD5857128", hash_generated_method = "DD8AC77956034A39F37DA405A27E901A")
         @Override
         public void setBounds(int left, int top, int right, int bottom) {
-            dsTaint.addTaint(bottom);
-            dsTaint.addTaint(left);
-            dsTaint.addTaint(right);
-            dsTaint.addTaint(top);
             mDrawLeft = left + (right-left - mWidth) / 2;
             mDrawTop = top + (bottom-top - mHeight) / 2;
             // ---------- Original Method ----------
@@ -639,85 +703,81 @@ public class WallpaperManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.170 -0400", hash_original_method = "51482143A770E9CBA4E27420DA4BB83A", hash_generated_method = "E6C8C0555D605E678827E9D05FAEE678")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.297 -0400", hash_original_method = "51482143A770E9CBA4E27420DA4BB83A", hash_generated_method = "F1E157EB267A3FB00B5413AB828345AB")
         @Override
         public void setAlpha(int alpha) {
-            dsTaint.addTaint(alpha);
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Not supported with this drawable");
+            addTaint(alpha);
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.171 -0400", hash_original_method = "6EF98891DC00D446E5280E44B83BE80B", hash_generated_method = "C96F29F6C490136DD09F8799A1A5AA1F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.327 -0400", hash_original_method = "6EF98891DC00D446E5280E44B83BE80B", hash_generated_method = "B9935E48B330368A7D876CC9E6CBAC47")
         @Override
         public void setColorFilter(ColorFilter cf) {
-            dsTaint.addTaint(cf.dsTaint);
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Not supported with this drawable");
+            addTaint(cf.getTaint());
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.171 -0400", hash_original_method = "BBAE54C669BC97BDF73F051E3161B7DC", hash_generated_method = "94201CB36FD22C4FE95E354456A14195")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.328 -0400", hash_original_method = "BBAE54C669BC97BDF73F051E3161B7DC", hash_generated_method = "8894EC0F2ED6D14203A39CF91C6FE296")
         @Override
         public void setDither(boolean dither) {
-            dsTaint.addTaint(dither);
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Not supported with this drawable");
+            addTaint(dither);
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.172 -0400", hash_original_method = "072B9683A9FDD22E6BC18017D9B8BE50", hash_generated_method = "8D383E352F877CBC2BF84AA433971E40")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.341 -0400", hash_original_method = "072B9683A9FDD22E6BC18017D9B8BE50", hash_generated_method = "05E5DEE1948BF85AD3E710E8ADAB697B")
         @Override
         public void setFilterBitmap(boolean filter) {
-            dsTaint.addTaint(filter);
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Not supported with this drawable");
+            addTaint(filter);
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.172 -0400", hash_original_method = "7C6E7C05DAF2C7C11CBD631A19BA11F2", hash_generated_method = "38BEC3E71D17563C4CD2A100A7508A63")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.342 -0400", hash_original_method = "7C6E7C05DAF2C7C11CBD631A19BA11F2", hash_generated_method = "4AD0856BD2F27CF8841A82A300AABE5C")
         @Override
         public int getIntrinsicWidth() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1023983814 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1023983814;
             // ---------- Original Method ----------
             //return mWidth;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.172 -0400", hash_original_method = "3C735D6B09C7947D1D4F4735F7E16410", hash_generated_method = "12A97A4C1391C4E0C5E5133813BAFA58")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.363 -0400", hash_original_method = "3C735D6B09C7947D1D4F4735F7E16410", hash_generated_method = "9D9B77BF4ABD581D89A5E02EA43DB664")
         @Override
         public int getIntrinsicHeight() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_759770459 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_759770459;
             // ---------- Original Method ----------
             //return mHeight;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.173 -0400", hash_original_method = "6C36D8FD6C4DA506CC2056E38D29BDE3", hash_generated_method = "F89E15DD00F93E87461D8C90ED8203AB")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.368 -0400", hash_original_method = "6C36D8FD6C4DA506CC2056E38D29BDE3", hash_generated_method = "D58DAF3CE1C52B0593E9260B1BD8DD74")
         @Override
         public int getMinimumWidth() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_312354841 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_312354841;
             // ---------- Original Method ----------
             //return mWidth;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.173 -0400", hash_original_method = "F7F1B37FEC841079758C9B817D6DD4F6", hash_generated_method = "8BADF994D917E73285FE9128CDBF2D07")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.391 -0400", hash_original_method = "F7F1B37FEC841079758C9B817D6DD4F6", hash_generated_method = "2970B6A5ECB7E1BB1E1596A73682E4FC")
         @Override
         public int getMinimumHeight() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1481595502 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1481595502;
             // ---------- Original Method ----------
             //return mHeight;
         }
@@ -728,30 +788,35 @@ public class WallpaperManager {
 
     
     static class Globals extends IWallpaperManagerCallback.Stub {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.391 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "5245D2ACF9BCB6EB2851F6A6EAF2BF16")
+
         private IWallpaperManager mService;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.392 -0400", hash_original_field = "58B578A12BDF7C3A2A94BAD6A36D39B5", hash_generated_field = "C4E8C03ED548D1B4E21D66638AE05698")
+
         private Bitmap mWallpaper;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.406 -0400", hash_original_field = "38E51BE28DE288EB99141B1F4A850676", hash_generated_field = "2C326FED1949B0798BBC7F12C35F2605")
+
         private Bitmap mDefaultWallpaper;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.406 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
+
         private Handler mHandler;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.174 -0400", hash_original_method = "0C6EE30FFC6BD0B5A33D648A5B68FF7C", hash_generated_method = "C26CA93779833D02D5915F4434503EA0")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         Globals(Looper looper) {
-            dsTaint.addTaint(looper.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.417 -0400", hash_original_method = "0C6EE30FFC6BD0B5A33D648A5B68FF7C", hash_generated_method = "402F4D1700F821D8CF1CCC4CA60BF0A6")
+          Globals(Looper looper) {
             IBinder b;
             b = ServiceManager.getService(Context.WALLPAPER_SERVICE);
             mService = IWallpaperManager.Stub.asInterface(b);
             mHandler = new Handler(looper) {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.174 -0400", hash_original_method = "21A8DB01A9CD0DD17CF9725E26AFC9F4", hash_generated_method = "EA21E5B1FFADAB4682FA94B20FAAE848")
-                @DSModeled(DSC.SAFE)
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.416 -0400", hash_original_method = "21A8DB01A9CD0DD17CF9725E26AFC9F4", hash_generated_method = "EC73ECE13B5E38BA6AF1AF45966D0B62")
                 @Override
                 public void handleMessage(Message msg) {
-                    dsTaint.addTaint(msg.dsTaint);
                     //Begin case MSG_CLEAR_WALLPAPER 
                     {
                         mWallpaper = null;
                         mDefaultWallpaper = null;
                     } //End block
                     //End case MSG_CLEAR_WALLPAPER 
+                    addTaint(msg.getTaint());
                     // ---------- Original Method ----------
                     //switch (msg.what) {
                         //case MSG_CLEAR_WALLPAPER:
@@ -782,8 +847,7 @@ public class WallpaperManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.174 -0400", hash_original_method = "F846E10F84F4E35E470DA1B587CB2864", hash_generated_method = "288447422A981A1450135744449D6BD1")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.442 -0400", hash_original_method = "F846E10F84F4E35E470DA1B587CB2864", hash_generated_method = "288447422A981A1450135744449D6BD1")
         public void onWallpaperChanged() {
             //DSFIXME:  CODE0009: Possible callback target function detected
             mHandler.sendEmptyMessage(MSG_CLEAR_WALLPAPER);
@@ -792,21 +856,30 @@ public class WallpaperManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.185 -0400", hash_original_method = "10E7D4FA7AE5C5A4DFE91478AE111D01", hash_generated_method = "8F54973AA943C2C00E08B8BBB03BB7F6")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.461 -0400", hash_original_method = "10E7D4FA7AE5C5A4DFE91478AE111D01", hash_generated_method = "411F21BDC3E0E466F884C21D2FD918E6")
         public Handler getHandler() {
-            return (Handler)dsTaint.getTaint();
+            Handler varB4EAC82CA7396A68D541C85D26508E83_1804843539 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1804843539 = mHandler;
+            varB4EAC82CA7396A68D541C85D26508E83_1804843539.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1804843539;
             // ---------- Original Method ----------
             //return mHandler;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.189 -0400", hash_original_method = "D22E4158438EA0372FD1CBCCE67470DB", hash_generated_method = "27CA0A0963166DAD4A11F7E49C89FE8E")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.492 -0400", hash_original_method = "D22E4158438EA0372FD1CBCCE67470DB", hash_generated_method = "A3AAE930D02948E25044278953D0FA65")
         public Bitmap peekWallpaperBitmap(Context context, boolean returnDefault) {
-            dsTaint.addTaint(returnDefault);
-            dsTaint.addTaint(context.dsTaint);
+            Bitmap varB4EAC82CA7396A68D541C85D26508E83_1204434170 = null; //Variable for return #1
+            Bitmap varB4EAC82CA7396A68D541C85D26508E83_1879918960 = null; //Variable for return #2
+            Bitmap varB4EAC82CA7396A68D541C85D26508E83_1676905827 = null; //Variable for return #3
+            Bitmap varB4EAC82CA7396A68D541C85D26508E83_52533388 = null; //Variable for return #4
             {
+                {
+                    varB4EAC82CA7396A68D541C85D26508E83_1204434170 = mWallpaper;
+                } //End block
+                {
+                    varB4EAC82CA7396A68D541C85D26508E83_1879918960 = mDefaultWallpaper;
+                } //End block
                 mWallpaper = null;
                 try 
                 {
@@ -817,20 +890,38 @@ public class WallpaperManager {
                 {
                     {
                         mDefaultWallpaper = getDefaultWallpaperLocked(context);
+                        varB4EAC82CA7396A68D541C85D26508E83_1676905827 = mDefaultWallpaper;
                     } //End block
                     {
                         mDefaultWallpaper = null;
                     } //End block
                 } //End block
+                varB4EAC82CA7396A68D541C85D26508E83_52533388 = mWallpaper;
             } //End block
-            return (Bitmap)dsTaint.getTaint();
+            addTaint(returnDefault);
+            Bitmap varA7E53CE21691AB073D9660D615818899_772756586; //Final return value
+            switch (DroidSafeAndroidRuntime.switchControl) {
+                case 1: //Assign result for return ordinal #1
+                    varA7E53CE21691AB073D9660D615818899_772756586 = varB4EAC82CA7396A68D541C85D26508E83_1204434170;
+                    break;
+                case 2: //Assign result for return ordinal #2
+                    varA7E53CE21691AB073D9660D615818899_772756586 = varB4EAC82CA7396A68D541C85D26508E83_1879918960;
+                    break;
+                case 3: //Assign result for return ordinal #3
+                    varA7E53CE21691AB073D9660D615818899_772756586 = varB4EAC82CA7396A68D541C85D26508E83_1676905827;
+                    break;
+                default:
+                    varA7E53CE21691AB073D9660D615818899_772756586 = varB4EAC82CA7396A68D541C85D26508E83_52533388;
+                    break;
+            }
+            varA7E53CE21691AB073D9660D615818899_772756586.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_772756586;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.190 -0400", hash_original_method = "0171ADD4BBF298493CC8451FAA0D3640", hash_generated_method = "3151A98DD7FE11BDFB8D5F0E76230461")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.494 -0400", hash_original_method = "0171ADD4BBF298493CC8451FAA0D3640", hash_generated_method = "3151A98DD7FE11BDFB8D5F0E76230461")
         public void forgetLoadedWallpaper() {
             {
                 mWallpaper = null;
@@ -844,9 +935,10 @@ public class WallpaperManager {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.190 -0400", hash_original_method = "16667119AC99E737F53C6C4F154ADE70", hash_generated_method = "0E3F8B41966DBBEAE5D4931D79EC184E")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.522 -0400", hash_original_method = "16667119AC99E737F53C6C4F154ADE70", hash_generated_method = "6AF16C83F3B71979D513AB3A06D9B7E5")
         private Bitmap getCurrentWallpaperLocked() {
+            Bitmap varB4EAC82CA7396A68D541C85D26508E83_2048666049 = null; //Variable for return #1
+            Bitmap varB4EAC82CA7396A68D541C85D26508E83_2041455907 = null; //Variable for return #2
             try 
             {
                 Bundle params;
@@ -865,7 +957,7 @@ public class WallpaperManager {
                         Bitmap bm;
                         bm = BitmapFactory.decodeFileDescriptor(
                                 fd.getFileDescriptor(), null, options);
-                        Bitmap var76262638CC71A7993D218B6125912D78_1582177041 = (generateBitmap(bm, width, height));
+                        varB4EAC82CA7396A68D541C85D26508E83_2048666049 = generateBitmap(bm, width, height);
                     } //End block
                     catch (OutOfMemoryError e)
                     { }
@@ -882,16 +974,27 @@ public class WallpaperManager {
             } //End block
             catch (RemoteException e)
             { }
-            return (Bitmap)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_2041455907 = null;
+            Bitmap varA7E53CE21691AB073D9660D615818899_677970098; //Final return value
+            switch (DroidSafeAndroidRuntime.switchControl) {
+                case 1: //Assign result for return ordinal #1
+                    varA7E53CE21691AB073D9660D615818899_677970098 = varB4EAC82CA7396A68D541C85D26508E83_2048666049;
+                    break;
+                default:
+                    varA7E53CE21691AB073D9660D615818899_677970098 = varB4EAC82CA7396A68D541C85D26508E83_2041455907;
+                    break;
+            }
+            varA7E53CE21691AB073D9660D615818899_677970098.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_677970098;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.192 -0400", hash_original_method = "7D56EB02955E82C8DDBD02F9FFA3CE84", hash_generated_method = "D887C0B3D08510D2CCD8354314340DE0")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.543 -0400", hash_original_method = "7D56EB02955E82C8DDBD02F9FFA3CE84", hash_generated_method = "F2200250EC093B75D43594F156D14BA4")
         private Bitmap getDefaultWallpaperLocked(Context context) {
-            dsTaint.addTaint(context.dsTaint);
+            Bitmap varB4EAC82CA7396A68D541C85D26508E83_1722499540 = null; //Variable for return #1
+            Bitmap varB4EAC82CA7396A68D541C85D26508E83_761844700 = null; //Variable for return #2
             try 
             {
                 InputStream is;
@@ -908,7 +1011,7 @@ public class WallpaperManager {
                         options = new BitmapFactory.Options();
                         Bitmap bm;
                         bm = BitmapFactory.decodeStream(is, null, options);
-                        Bitmap var76262638CC71A7993D218B6125912D78_2053818908 = (generateBitmap(bm, width, height));
+                        varB4EAC82CA7396A68D541C85D26508E83_1722499540 = generateBitmap(bm, width, height);
                     } //End block
                     catch (OutOfMemoryError e)
                     { }
@@ -925,26 +1028,58 @@ public class WallpaperManager {
             } //End block
             catch (RemoteException e)
             { }
-            return (Bitmap)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_761844700 = null;
+            addTaint(context.getTaint());
+            Bitmap varA7E53CE21691AB073D9660D615818899_80317912; //Final return value
+            switch (DroidSafeAndroidRuntime.switchControl) {
+                case 1: //Assign result for return ordinal #1
+                    varA7E53CE21691AB073D9660D615818899_80317912 = varB4EAC82CA7396A68D541C85D26508E83_1722499540;
+                    break;
+                default:
+                    varA7E53CE21691AB073D9660D615818899_80317912 = varB4EAC82CA7396A68D541C85D26508E83_761844700;
+                    break;
+            }
+            varA7E53CE21691AB073D9660D615818899_80317912.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_80317912;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        private static final int MSG_CLEAR_WALLPAPER = 1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.544 -0400", hash_original_field = "F1F1BF9B224FCAF5DF81E5526C089928", hash_generated_field = "CDA052AD3D01AEB981F8DA96F863DC71")
+
+        private static int MSG_CLEAR_WALLPAPER = 1;
     }
 
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.544 -0400", hash_original_field = "5E5CA8515FB353F692CCE4E2CD540205", hash_generated_field = "48A0CC9AB0B3F0E9E45F7F457712B59F")
+
     private static String TAG = "WallpaperManager";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.544 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+
     private static boolean DEBUG = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.545 -0400", hash_original_field = "AE1D5613EB1ED29BAF3381A28C27DFAF", hash_generated_field = "DEFFCFE16339DBDBF08B336D28EF6A17")
+
     public static final String ACTION_LIVE_WALLPAPER_CHOOSER
             = "android.service.wallpaper.LIVE_WALLPAPER_CHOOSER";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.545 -0400", hash_original_field = "DE257FD4977D6A04A6C5F5061AFDD7BC", hash_generated_field = "BF5D2A76907CE9E554A3FE854675BFD7")
+
     public static final String WALLPAPER_PREVIEW_META_DATA = "android.wallpaper.preview";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.569 -0400", hash_original_field = "B4CED6A8F9ED2A8F59AB300E0C6705D4", hash_generated_field = "F96B596B27509EEB5AD3777B9E252E5D")
+
     public static final String COMMAND_TAP = "android.wallpaper.tap";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.569 -0400", hash_original_field = "6455ECA38E74E9465D6048417F1532EA", hash_generated_field = "818BE2DF368F81E0A32AC1FE0FD288C9")
+
     public static final String COMMAND_SECONDARY_TAP = "android.wallpaper.secondaryTap";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.569 -0400", hash_original_field = "A7FC4256BE49D01D37FE69B85AA024B5", hash_generated_field = "70F84F0650C85E3FC996BE9B45E4D2C5")
+
     public static final String COMMAND_DROP = "android.home.drop";
-    private static final Object sSync = new Object[0];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.570 -0400", hash_original_field = "43179E88F59B44607089B9CA3FB276A3", hash_generated_field = "8ADC9D5409EF08C11599C5B6EABC3165")
+
+    private static Object sSync = new Object[0];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:54.576 -0400", hash_original_field = "7FD9B6E291F1091AAE6622BF638EAD65", hash_generated_field = "FAC961618570B702A278896949F1B020")
+
     private static Globals sGlobals;
 }
 

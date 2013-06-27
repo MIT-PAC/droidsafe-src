@@ -14,9 +14,8 @@ import java.net.UnknownHostException;
 
 public final class Log {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.221 -0400", hash_original_method = "869367D375FC874369E92ACB08C85ECE", hash_generated_method = "A62EB914C3FFD50186C13765FE4CB4E6")
-    @DSModeled(DSC.SAFE)
-    private Log() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.891 -0400", hash_original_method = "869367D375FC874369E92ACB08C85ECE", hash_generated_method = "A62EB914C3FFD50186C13765FE4CB4E6")
+    private  Log() {
         // ---------- Original Method ----------
     }
 
@@ -140,12 +139,11 @@ public final class Log {
     
     private static class TerribleFailure extends Exception {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.227 -0400", hash_original_method = "0F8223B52B3C6FF6727F78AC7E36D4B8", hash_generated_method = "024C5D9BFCCE77DFDD68BFCCB2AB6ACE")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         TerribleFailure(String msg, Throwable cause) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.916 -0400", hash_original_method = "0F8223B52B3C6FF6727F78AC7E36D4B8", hash_generated_method = "C1561E5D30B86F3897AF8E18F385FFFE")
+          TerribleFailure(String msg, Throwable cause) {
             super(msg, cause);
-            dsTaint.addTaint(cause.dsTaint);
-            dsTaint.addTaint(msg);
+            addTaint(msg.getTaint());
+            addTaint(cause.getTaint());
             // ---------- Original Method ----------
         }
 
@@ -158,29 +156,50 @@ public final class Log {
         void onTerribleFailure(String tag, TerribleFailure what);
     }
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.917 -0400", hash_original_field = "CAD8C4DC986F95096FF26D44987A3C24", hash_generated_field = "183ECC1630CBD890D38268E5859FD6F6")
+
     public static final int VERBOSE = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.917 -0400", hash_original_field = "8F6DDEBAE3A3DB44389E1FB1E5408AD7", hash_generated_field = "26AABFCC751A881E695E902E0608E346")
+
     public static final int DEBUG = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.917 -0400", hash_original_field = "5759D9AAA2E6F04AD55217CD59B534EC", hash_generated_field = "6A8CBF4155F7D9169D37C74D4C14F8A9")
+
     public static final int INFO = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.917 -0400", hash_original_field = "394364B7D3297C26950D2238139AFF91", hash_generated_field = "6A26B7A055D881912AAB57C2278AA725")
+
     public static final int WARN = 5;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.917 -0400", hash_original_field = "7FD6D66B926D8917D561E5E98CA696D5", hash_generated_field = "B6B991924F4F8C2A773B84BA83915632")
+
     public static final int ERROR = 6;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.917 -0400", hash_original_field = "CBB8FCA07981B9789A4AC58A4B746FF2", hash_generated_field = "9BB2A0262D13A08A51875E90349F0239")
+
     public static final int ASSERT = 7;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.917 -0400", hash_original_field = "1A1695BDB6E58ED53BC49925AFADC824", hash_generated_field = "7133E8B8C00EDE45DD493C68637B60E0")
+
     private static TerribleFailureHandler sWtfHandler = new TerribleFailureHandler() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.227 -0400", hash_original_method = "90BA23F8182E406DC4D5C312FC444694", hash_generated_method = "68273E1AAB9EED38EAB5E10B55C7BD24")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.917 -0400", hash_original_method = "90BA23F8182E406DC4D5C312FC444694", hash_generated_method = "4C8A9452FEB3740EEFD06B4E1BFB8698")
         public void onTerribleFailure(String tag, TerribleFailure what) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(what.dsTaint);
-            dsTaint.addTaint(tag);
             RuntimeInit.wtf(tag, what);
+            addTaint(tag.getTaint());
+            addTaint(what.getTaint());
             // ---------- Original Method ----------
             //RuntimeInit.wtf(tag, what);
         }
 
         
-}; //Transformed anonymous class
+};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.917 -0400", hash_original_field = "79AC738350B55062D8BE39604A4D333F", hash_generated_field = "7E86192626B20953FA1B583614101236")
+
     public static final int LOG_ID_MAIN = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.917 -0400", hash_original_field = "9E1ECB1B07074063EAD437D86EF6B3AD", hash_generated_field = "E89D862BC59B25829A8E08E5B964FC9E")
+
     public static final int LOG_ID_RADIO = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.917 -0400", hash_original_field = "FAA78458B5500C2103973A96E9E071A2", hash_generated_field = "4947723A852DD11847F2EDCCBC616E97")
+
     public static final int LOG_ID_EVENTS = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.917 -0400", hash_original_field = "01DCA39D17DAA065D26E61F28B010BD3", hash_generated_field = "DBE2B7C9E039730F0529887D92D731CF")
+
     public static final int LOG_ID_SYSTEM = 3;
 }
 

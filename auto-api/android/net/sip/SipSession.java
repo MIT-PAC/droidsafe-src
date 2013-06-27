@@ -11,13 +11,16 @@ import android.os.RemoteException;
 import android.util.Log;
 
 public final class SipSession {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.959 -0400", hash_original_field = "585864B1433B33593F88424BEC9E09EF", hash_generated_field = "B127E608132911BCC4FB99E4A8F915FC")
+
     private ISipSession mSession;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.959 -0400", hash_original_field = "9B3DD33B99719CE65C53FA6749E2AD69", hash_generated_field = "55B4CC9A7CFEB5835D007742DA36AADE")
+
     private Listener mListener;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.394 -0400", hash_original_method = "B71DAA3D1365DDABF697A1D97F8D88A8", hash_generated_method = "F159024882C3476F8A377D2EB928AC1E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     SipSession(ISipSession realSession) {
-        dsTaint.addTaint(realSession.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.972 -0400", hash_original_method = "B71DAA3D1365DDABF697A1D97F8D88A8", hash_generated_method = "36D981E3452C300DADB2CDC7CE07E3E6")
+      SipSession(ISipSession realSession) {
+        mSession = realSession;
         {
             try 
             {
@@ -38,28 +41,40 @@ public final class SipSession {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.395 -0400", hash_original_method = "26EA80DBAC1B6413B57EA6A425A19EE9", hash_generated_method = "5EB0C916964D680F9B5C0EB3DFC4F3E7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     SipSession(ISipSession realSession, Listener listener) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.972 -0400", hash_original_method = "26EA80DBAC1B6413B57EA6A425A19EE9", hash_generated_method = "588AC4DBA7B4CD249DF3DF0B977DB305")
+      SipSession(ISipSession realSession, Listener listener) {
         this(realSession);
-        dsTaint.addTaint(listener.dsTaint);
-        dsTaint.addTaint(realSession.dsTaint);
         setListener(listener);
+        addTaint(realSession.getTaint());
+        addTaint(listener.getTaint());
         // ---------- Original Method ----------
         //setListener(listener);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.396 -0400", hash_original_method = "E9A721906097EBC1FEB98095FAB057F5", hash_generated_method = "DBB7CE06EBEED40B71C87F16EE455B08")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.978 -0400", hash_original_method = "E9A721906097EBC1FEB98095FAB057F5", hash_generated_method = "51F6E4758659900A418A153CFA24731E")
     public String getLocalIp() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1431263074 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1162293654 = null; //Variable for return #2
         try 
         {
-            String var0ADCD22A05C2B1D0284B748801B30A93_389447614 = (mSession.getLocalIp());
+            varB4EAC82CA7396A68D541C85D26508E83_1431263074 = mSession.getLocalIp();
         } //End block
         catch (RemoteException e)
-        { }
-        return dsTaint.getTaintString();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1162293654 = "127.0.0.1";
+        } //End block
+        String varA7E53CE21691AB073D9660D615818899_1532483494; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1532483494 = varB4EAC82CA7396A68D541C85D26508E83_1431263074;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1532483494 = varB4EAC82CA7396A68D541C85D26508E83_1162293654;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1532483494.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1532483494;
         // ---------- Original Method ----------
         //try {
             //return mSession.getLocalIp();
@@ -70,16 +85,29 @@ public final class SipSession {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.397 -0400", hash_original_method = "87F54D512869FBB2D14566F63922D1B6", hash_generated_method = "DE41EA8FC20729835D7CE23BEE69F221")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.979 -0400", hash_original_method = "87F54D512869FBB2D14566F63922D1B6", hash_generated_method = "DC764A0144F7F9BF310A0E0C6DF1F7A7")
     public SipProfile getLocalProfile() {
+        SipProfile varB4EAC82CA7396A68D541C85D26508E83_985266278 = null; //Variable for return #1
+        SipProfile varB4EAC82CA7396A68D541C85D26508E83_1888637704 = null; //Variable for return #2
         try 
         {
-            SipProfile var5E1E1E65123BEE29A9CB22EAD573CFD8_1480766696 = (mSession.getLocalProfile());
+            varB4EAC82CA7396A68D541C85D26508E83_985266278 = mSession.getLocalProfile();
         } //End block
         catch (RemoteException e)
-        { }
-        return (SipProfile)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1888637704 = null;
+        } //End block
+        SipProfile varA7E53CE21691AB073D9660D615818899_1942829373; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1942829373 = varB4EAC82CA7396A68D541C85D26508E83_985266278;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1942829373 = varB4EAC82CA7396A68D541C85D26508E83_1888637704;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1942829373.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1942829373;
         // ---------- Original Method ----------
         //try {
             //return mSession.getLocalProfile();
@@ -90,16 +118,29 @@ public final class SipSession {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.397 -0400", hash_original_method = "D61110CB083F8C813E52FD778D269E44", hash_generated_method = "D1E6C9C150FA0AD677C92BC01B870AC1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.980 -0400", hash_original_method = "D61110CB083F8C813E52FD778D269E44", hash_generated_method = "43FE648F7B3931AB53D383C64AE39F55")
     public SipProfile getPeerProfile() {
+        SipProfile varB4EAC82CA7396A68D541C85D26508E83_1362888060 = null; //Variable for return #1
+        SipProfile varB4EAC82CA7396A68D541C85D26508E83_1642094562 = null; //Variable for return #2
         try 
         {
-            SipProfile varA061DC31E8E2562D99E981A239D7EED5_833437665 = (mSession.getPeerProfile());
+            varB4EAC82CA7396A68D541C85D26508E83_1362888060 = mSession.getPeerProfile();
         } //End block
         catch (RemoteException e)
-        { }
-        return (SipProfile)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1642094562 = null;
+        } //End block
+        SipProfile varA7E53CE21691AB073D9660D615818899_179371235; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_179371235 = varB4EAC82CA7396A68D541C85D26508E83_1362888060;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_179371235 = varB4EAC82CA7396A68D541C85D26508E83_1642094562;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_179371235.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_179371235;
         // ---------- Original Method ----------
         //try {
             //return mSession.getPeerProfile();
@@ -110,16 +151,16 @@ public final class SipSession {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.397 -0400", hash_original_method = "9EA9E21B58E34C7FB49C45688377E72F", hash_generated_method = "13F83EE2EC9DCE4BE39B3309D69EB734")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.980 -0400", hash_original_method = "9EA9E21B58E34C7FB49C45688377E72F", hash_generated_method = "4F9972772FF19EA123B10AC80254AB04")
     public int getState() {
         try 
         {
-            int var5C9BD891D63C83243CB7DCB3EA826EE9_1183407643 = (mSession.getState());
+            int var5C9BD891D63C83243CB7DCB3EA826EE9_442080741 = (mSession.getState());
         } //End block
         catch (RemoteException e)
         { }
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_390085563 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_390085563;
         // ---------- Original Method ----------
         //try {
             //return mSession.getState();
@@ -130,16 +171,16 @@ public final class SipSession {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.397 -0400", hash_original_method = "9EAE3F24E2C650B2D541A86A9F9A7795", hash_generated_method = "4BDFA00F4D2443D5C9607EAABD55ACAB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.012 -0400", hash_original_method = "9EAE3F24E2C650B2D541A86A9F9A7795", hash_generated_method = "81318955AA3CA57201C7326B74208A66")
     public boolean isInCall() {
         try 
         {
-            boolean var756F7B5AF584B3E3C76961D5CC547EFB_589994095 = (mSession.isInCall());
+            boolean var756F7B5AF584B3E3C76961D5CC547EFB_1390914699 = (mSession.isInCall());
         } //End block
         catch (RemoteException e)
         { }
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1044285814 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1044285814;
         // ---------- Original Method ----------
         //try {
             //return mSession.isInCall();
@@ -150,16 +191,29 @@ public final class SipSession {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.398 -0400", hash_original_method = "A52F1B195D0D0A598BE5EAF9C188D1E2", hash_generated_method = "DAA18E54FA3EAB47119DAF87D284146F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.014 -0400", hash_original_method = "A52F1B195D0D0A598BE5EAF9C188D1E2", hash_generated_method = "8FD9F7C553FBE0FC4341CD3517CC4AED")
     public String getCallId() {
+        String varB4EAC82CA7396A68D541C85D26508E83_96083931 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1144492776 = null; //Variable for return #2
         try 
         {
-            String varE47AB60BE9B4BCFFEC05E6A601322D1F_119411753 = (mSession.getCallId());
+            varB4EAC82CA7396A68D541C85D26508E83_96083931 = mSession.getCallId();
         } //End block
         catch (RemoteException e)
-        { }
-        return dsTaint.getTaintString();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1144492776 = null;
+        } //End block
+        String varA7E53CE21691AB073D9660D615818899_943653770; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_943653770 = varB4EAC82CA7396A68D541C85D26508E83_96083931;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_943653770 = varB4EAC82CA7396A68D541C85D26508E83_1144492776;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_943653770.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_943653770;
         // ---------- Original Method ----------
         //try {
             //return mSession.getCallId();
@@ -170,25 +224,23 @@ public final class SipSession {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.398 -0400", hash_original_method = "DF1CB7C0481108A53612C7FB72F6204A", hash_generated_method = "D0CC6097B0E00F029FDD5F325D8127FE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.019 -0400", hash_original_method = "DF1CB7C0481108A53612C7FB72F6204A", hash_generated_method = "B57A845A372FD6A039C823BE04B31497")
     public void setListener(Listener listener) {
-        dsTaint.addTaint(listener.dsTaint);
+        mListener = listener;
         // ---------- Original Method ----------
         //mListener = listener;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.398 -0400", hash_original_method = "8D2FD08823732E1C2D815A7E90C0FC77", hash_generated_method = "A5465BBDE1FA66DD27AAE0C58BAE7CBF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.020 -0400", hash_original_method = "8D2FD08823732E1C2D815A7E90C0FC77", hash_generated_method = "726D65C48D55FF7A95B4275FB51BDB93")
     public void register(int duration) {
-        dsTaint.addTaint(duration);
         try 
         {
             mSession.register(duration);
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(duration);
         // ---------- Original Method ----------
         //try {
             //mSession.register(duration);
@@ -198,8 +250,7 @@ public final class SipSession {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.398 -0400", hash_original_method = "E4AB4EE14705E79FAB12EC8A1515405F", hash_generated_method = "15915D17B734726F063C06BEDF2C586F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.021 -0400", hash_original_method = "E4AB4EE14705E79FAB12EC8A1515405F", hash_generated_method = "15915D17B734726F063C06BEDF2C586F")
     public void unregister() {
         try 
         {
@@ -216,19 +267,18 @@ public final class SipSession {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.399 -0400", hash_original_method = "D9BC3F90AB4006B9EA6C3281D0F8E8EF", hash_generated_method = "C352CC7EB272DE3899FF0303CB209B67")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.022 -0400", hash_original_method = "D9BC3F90AB4006B9EA6C3281D0F8E8EF", hash_generated_method = "BB80CAB87054E9FC76A23B6CAE26547B")
     public void makeCall(SipProfile callee, String sessionDescription,
             int timeout) {
-        dsTaint.addTaint(sessionDescription);
-        dsTaint.addTaint(callee.dsTaint);
-        dsTaint.addTaint(timeout);
         try 
         {
             mSession.makeCall(callee, sessionDescription, timeout);
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(callee.getTaint());
+        addTaint(sessionDescription.getTaint());
+        addTaint(timeout);
         // ---------- Original Method ----------
         //try {
             //mSession.makeCall(callee, sessionDescription, timeout);
@@ -238,17 +288,16 @@ public final class SipSession {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.399 -0400", hash_original_method = "A5A5F75F0E41462274C36F9EA8217848", hash_generated_method = "090A100930F7FFE1D42AF30BE76BF6EE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.023 -0400", hash_original_method = "A5A5F75F0E41462274C36F9EA8217848", hash_generated_method = "7FA213D7CDE20F282EC35A936C3075A8")
     public void answerCall(String sessionDescription, int timeout) {
-        dsTaint.addTaint(sessionDescription);
-        dsTaint.addTaint(timeout);
         try 
         {
             mSession.answerCall(sessionDescription, timeout);
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(sessionDescription.getTaint());
+        addTaint(timeout);
         // ---------- Original Method ----------
         //try {
             //mSession.answerCall(sessionDescription, timeout);
@@ -258,8 +307,7 @@ public final class SipSession {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.399 -0400", hash_original_method = "B98ACA998657ED3CD995605D9A274D2E", hash_generated_method = "E55C0707BC087D614AF4675C2179A526")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.040 -0400", hash_original_method = "B98ACA998657ED3CD995605D9A274D2E", hash_generated_method = "E55C0707BC087D614AF4675C2179A526")
     public void endCall() {
         try 
         {
@@ -276,17 +324,16 @@ public final class SipSession {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.399 -0400", hash_original_method = "0DCF9DE8E2729C90E933890D545801E4", hash_generated_method = "93983E3EB9D2BBF5CCBEFB6A8A10FA88")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.060 -0400", hash_original_method = "0DCF9DE8E2729C90E933890D545801E4", hash_generated_method = "C0DD866B31DD7DDFFCD669FC04F31793")
     public void changeCall(String sessionDescription, int timeout) {
-        dsTaint.addTaint(sessionDescription);
-        dsTaint.addTaint(timeout);
         try 
         {
             mSession.changeCall(sessionDescription, timeout);
         } //End block
         catch (RemoteException e)
         { }
+        addTaint(sessionDescription.getTaint());
+        addTaint(timeout);
         // ---------- Original Method ----------
         //try {
             //mSession.changeCall(sessionDescription, timeout);
@@ -296,218 +343,100 @@ public final class SipSession {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.399 -0400", hash_original_method = "457DE503669A22F9796CDD5163AC081E", hash_generated_method = "0F879EFBC8E50ECAF87CC82D4ED34056")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.060 -0400", hash_original_method = "457DE503669A22F9796CDD5163AC081E", hash_generated_method = "1CE9465E697B42EA1DBE7C50C32BA7F9")
      ISipSession getRealSession() {
-        return (ISipSession)dsTaint.getTaint();
+        ISipSession varB4EAC82CA7396A68D541C85D26508E83_1669759989 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1669759989 = mSession;
+        varB4EAC82CA7396A68D541C85D26508E83_1669759989.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1669759989;
         // ---------- Original Method ----------
         //return mSession;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.403 -0400", hash_original_method = "346C5E2A278D0A9A8B61352C5712D581", hash_generated_method = "420398C2C8EDCC3F8E7B3A487850C5DD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.066 -0400", hash_original_method = "346C5E2A278D0A9A8B61352C5712D581", hash_generated_method = "69AFDE91A74547EA21C4ADE6B7190D00")
     private ISipSessionListener createListener() {
-        ISipSessionListener varD1D5E737649D77ED2393D1B0AA330164_861084148 = (new ISipSessionListener.Stub() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.400 -0400", hash_original_method = "F6AAC6893DA28A6718407EB8FE09E79E", hash_generated_method = "B3426F2226E72EB6F7CAE9370DDBA818")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+        ISipSessionListener varB4EAC82CA7396A68D541C85D26508E83_296239218 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_296239218 = new ISipSessionListener.Stub() {
             public void onCalling(ISipSession session) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(session.dsTaint);
-                {
+                if (mListener != null) {
                     mListener.onCalling(SipSession.this);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mListener != null) {
-                    //mListener.onCalling(SipSession.this);
-                //}
+                }
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.400 -0400", hash_original_method = "F39F3E64BA1A6416EAD6DDAB559ACFA9", hash_generated_method = "751B04EEE0A27B02A54AB99D16D00801")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
             public void onRinging(ISipSession session, SipProfile caller,
                     String sessionDescription) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(caller.dsTaint);
-                dsTaint.addTaint(session.dsTaint);
-                dsTaint.addTaint(sessionDescription);
-                {
+                if (mListener != null) {
                     mListener.onRinging(SipSession.this, caller,
                             sessionDescription);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mListener != null) {
-                    //mListener.onRinging(SipSession.this, caller,
-                            //sessionDescription);
-                //}
+                }
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.401 -0400", hash_original_method = "6B72F4AC5AF01B3C76E99D25DF7CE23C", hash_generated_method = "D55D1B094FFB67D4C0C9E1CAFDCA4973")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
             public void onRingingBack(ISipSession session) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(session.dsTaint);
-                {
+                if (mListener != null) {
                     mListener.onRingingBack(SipSession.this);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mListener != null) {
-                    //mListener.onRingingBack(SipSession.this);
-                //}
+                }
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.401 -0400", hash_original_method = "7B493B636814EC87BC27F7B3F6ABFCA1", hash_generated_method = "19162F1026CFC926146C4568B0E10952")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
             public void onCallEstablished(ISipSession session,
                     String sessionDescription) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(session.dsTaint);
-                dsTaint.addTaint(sessionDescription);
-                {
+                if (mListener != null) {
                     mListener.onCallEstablished(SipSession.this,
                             sessionDescription);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mListener != null) {
-                    //mListener.onCallEstablished(SipSession.this,
-                            //sessionDescription);
-                //}
+                }
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.401 -0400", hash_original_method = "AA30F7F581FD80E3580953394BBBB04E", hash_generated_method = "8B7FC80960038F42AEF8C1183ADC82AD")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
             public void onCallEnded(ISipSession session) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(session.dsTaint);
-                {
+                if (mListener != null) {
                     mListener.onCallEnded(SipSession.this);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mListener != null) {
-                    //mListener.onCallEnded(SipSession.this);
-                //}
+                }
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.401 -0400", hash_original_method = "07497F1819563A3E4B5DE3C018AD8629", hash_generated_method = "C0F5C1DC6ECE5C50E09C001C8C427050")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
             public void onCallBusy(ISipSession session) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(session.dsTaint);
-                {
+                if (mListener != null) {
                     mListener.onCallBusy(SipSession.this);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mListener != null) {
-                    //mListener.onCallBusy(SipSession.this);
-                //}
+                }
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.402 -0400", hash_original_method = "1A8896FB5D333A131446D18B22452BAA", hash_generated_method = "D1BD8A36576FF55F62F781DFBBB802E7")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
             public void onCallTransferring(ISipSession session,
                     String sessionDescription) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(session.dsTaint);
-                dsTaint.addTaint(sessionDescription);
-                {
+                if (mListener != null) {
                     mListener.onCallTransferring(
                             new SipSession(session, SipSession.this.mListener),
                             sessionDescription);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mListener != null) {
-                    //mListener.onCallTransferring(
-                            //new SipSession(session, SipSession.this.mListener),
-                            //sessionDescription);
-                //}
+                }
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.402 -0400", hash_original_method = "874992DC0EF89EE44CCC20DF46598EA2", hash_generated_method = "BB098BA478CCBAF20C087D1A735BD482")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
             public void onCallChangeFailed(ISipSession session, int errorCode,
                     String message) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(message);
-                dsTaint.addTaint(session.dsTaint);
-                dsTaint.addTaint(errorCode);
-                {
+                if (mListener != null) {
                     mListener.onCallChangeFailed(SipSession.this, errorCode,
                             message);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mListener != null) {
-                    //mListener.onCallChangeFailed(SipSession.this, errorCode,
-                            //message);
-                //}
+                }
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.402 -0400", hash_original_method = "5CA7526479580C1B86EDF9030D6C8D8F", hash_generated_method = "D656CED9D836B25D926343E7D8A7D90E")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
             public void onError(ISipSession session, int errorCode, String message) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(message);
-                dsTaint.addTaint(session.dsTaint);
-                dsTaint.addTaint(errorCode);
-                {
+                if (mListener != null) {
                     mListener.onError(SipSession.this, errorCode, message);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mListener != null) {
-                    //mListener.onError(SipSession.this, errorCode, message);
-                //}
+                }
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.402 -0400", hash_original_method = "000778F0FB8347C3C0C1BE031E88B800", hash_generated_method = "F06F35303E2FE6676854AADCD1B0ED88")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
             public void onRegistering(ISipSession session) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(session.dsTaint);
-                {
+                if (mListener != null) {
                     mListener.onRegistering(SipSession.this);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mListener != null) {
-                    //mListener.onRegistering(SipSession.this);
-                //}
+                }
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.402 -0400", hash_original_method = "33C53CCC0AA43F97F76FD9E19F36CB34", hash_generated_method = "6670414C602A37966D70A565C7100C30")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
             public void onRegistrationDone(ISipSession session, int duration) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(duration);
-                dsTaint.addTaint(session.dsTaint);
-                {
+                if (mListener != null) {
                     mListener.onRegistrationDone(SipSession.this, duration);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mListener != null) {
-                    //mListener.onRegistrationDone(SipSession.this, duration);
-                //}
+                }
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.403 -0400", hash_original_method = "62D838A50BD723A90EE32C76390900AC", hash_generated_method = "775A135E6858B32E6A7972C4D6AA3993")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
             public void onRegistrationFailed(ISipSession session, int errorCode,
                     String message) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(message);
-                dsTaint.addTaint(session.dsTaint);
-                dsTaint.addTaint(errorCode);
-                {
+                if (mListener != null) {
                     mListener.onRegistrationFailed(SipSession.this, errorCode,
                             message);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mListener != null) {
-                    //mListener.onRegistrationFailed(SipSession.this, errorCode,
-                            //message);
-                //}
+                }
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.403 -0400", hash_original_method = "65F153D5FCC86BC79261A858F3680A02", hash_generated_method = "1D93388B2763CDB4C9761A33D04F7065")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
             public void onRegistrationTimeout(ISipSession session) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(session.dsTaint);
-                {
+                if (mListener != null) {
                     mListener.onRegistrationTimeout(SipSession.this);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mListener != null) {
-                    //mListener.onRegistrationTimeout(SipSession.this);
-                //}
+                }
             }
-});
-        return (ISipSessionListener)dsTaint.getTaint();
+        };
+        varB4EAC82CA7396A68D541C85D26508E83_296239218.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_296239218;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -515,9 +444,8 @@ public final class SipSession {
     
     public static class State {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.404 -0400", hash_original_method = "1314C653F2455ACB4C7CC9637DF86BCF", hash_generated_method = "362016197A85F3060127375CB2C169F9")
-        @DSModeled(DSC.SAFE)
-        private State() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.067 -0400", hash_original_method = "1314C653F2455ACB4C7CC9637DF86BCF", hash_generated_method = "362016197A85F3060127375CB2C169F9")
+        private  State() {
             // ---------- Original Method ----------
         }
 
@@ -550,17 +478,41 @@ public final class SipSession {
         }
 
         
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.067 -0400", hash_original_field = "99A1F425B57D19FD75E48DF2C2C74A47", hash_generated_field = "D6CF7815116771C30F5505C0D30DAAA0")
+
         public static final int READY_TO_CALL = 0;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.068 -0400", hash_original_field = "23212F5EE4F8A111A02BC17B034D7D77", hash_generated_field = "6E8D637253813E25EE79327490FD11DB")
+
         public static final int REGISTERING = 1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.068 -0400", hash_original_field = "238419291A66C1089DF7A69A3DCDAE34", hash_generated_field = "53325B9453E2CDBB5536AA0006D59656")
+
         public static final int DEREGISTERING = 2;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.068 -0400", hash_original_field = "7F7D4BEEA76C0E0FBB872E6F7B2C9E42", hash_generated_field = "4CF84D38E6E85F0013C36CDED43365C3")
+
         public static final int INCOMING_CALL = 3;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.068 -0400", hash_original_field = "B7BB9561DD6FD2BDAA83862BE868FC7C", hash_generated_field = "8FCBA6A42A23BE1381F16A8A22F19DFB")
+
         public static final int INCOMING_CALL_ANSWERING = 4;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.068 -0400", hash_original_field = "9D8A65355A87278E5637B5FCA9F77F71", hash_generated_field = "D525E8AB9F7FA02B8F0A85C344DB10F6")
+
         public static final int OUTGOING_CALL = 5;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.068 -0400", hash_original_field = "D6A1E138D04923F28A4070DA4D4C3CB8", hash_generated_field = "427EF79B93399A5C3B799BBBE9407455")
+
         public static final int OUTGOING_CALL_RING_BACK = 6;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.068 -0400", hash_original_field = "8A154CBDEBD55CB733461C499E6BFB17", hash_generated_field = "03C3904064D9ACFD5D047226208158C2")
+
         public static final int OUTGOING_CALL_CANCELING = 7;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.068 -0400", hash_original_field = "0049140B8BB0B18A3B2E9943AB155113", hash_generated_field = "2DD221BAEB49EF885927070B38698CD6")
+
         public static final int IN_CALL = 8;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.068 -0400", hash_original_field = "785460D49D2EB9EA797E7FE950A2EDF6", hash_generated_field = "FD07CBF55A8245950B7B2648AFEEBDFB")
+
         public static final int PINGING = 9;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.068 -0400", hash_original_field = "1624A640D44E34DB103131BCABD62C6A", hash_generated_field = "43AC0184E67B2E974A2CDEEC81A3D3DF")
+
         public static final int ENDING_CALL = 10;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.068 -0400", hash_original_field = "BFB26318EC54871807746114F98B080E", hash_generated_field = "777618F477CD835F0BBFD9A5E1AF42B8")
+
         public static final int NOT_DEFINED = 101;
     }
 
@@ -568,142 +520,130 @@ public final class SipSession {
     
     public static class Listener {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.404 -0400", hash_original_method = "926C6F0FEA0BD66B8F2ADD2E3C0DFCB9", hash_generated_method = "926C6F0FEA0BD66B8F2ADD2E3C0DFCB9")
-                public Listener ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.068 -0400", hash_original_method = "5575F820891B6AD64AFC44C76A4BA5AF", hash_generated_method = "5575F820891B6AD64AFC44C76A4BA5AF")
+        public Listener ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.404 -0400", hash_original_method = "AE0E913F9E3F8804DBC653BF8673EC2F", hash_generated_method = "4B7E5AFEBDFFF813929F02D7E1895097")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.084 -0400", hash_original_method = "AE0E913F9E3F8804DBC653BF8673EC2F", hash_generated_method = "DEA829A09039A527CA98846EDC2F4ACF")
         public void onCalling(SipSession session) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(session.dsTaint);
+            addTaint(session.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.404 -0400", hash_original_method = "A6495E0C14482D9554C3F987B616D040", hash_generated_method = "2CB0D2FB872459DDD2D528EAEC847AB8")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.085 -0400", hash_original_method = "A6495E0C14482D9554C3F987B616D040", hash_generated_method = "D2FE500449CA2504C9B71457B8EA5453")
         public void onRinging(SipSession session, SipProfile caller,
                 String sessionDescription) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(caller.dsTaint);
-            dsTaint.addTaint(session.dsTaint);
-            dsTaint.addTaint(sessionDescription);
+            addTaint(session.getTaint());
+            addTaint(caller.getTaint());
+            addTaint(sessionDescription.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.405 -0400", hash_original_method = "3040682D1BCFEA9BA338FA9FE200A62D", hash_generated_method = "83929D5A962166117775EB24521D0095")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.085 -0400", hash_original_method = "3040682D1BCFEA9BA338FA9FE200A62D", hash_generated_method = "734D120B16431C158B81B709F8D3F8DF")
         public void onRingingBack(SipSession session) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(session.dsTaint);
+            addTaint(session.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.405 -0400", hash_original_method = "E5D299BA3CDE0EE166AC2795783FB427", hash_generated_method = "356B532048B9B5D0D7E444F2143A61E2")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.085 -0400", hash_original_method = "E5D299BA3CDE0EE166AC2795783FB427", hash_generated_method = "243BEA7166B8A5E29C68ED25D0865C26")
         public void onCallEstablished(SipSession session,
                 String sessionDescription) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(session.dsTaint);
-            dsTaint.addTaint(sessionDescription);
+            addTaint(session.getTaint());
+            addTaint(sessionDescription.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.405 -0400", hash_original_method = "711404AF80F30F53943AF0817E2DC7DA", hash_generated_method = "8AFCEF665FED690406C231F804A4581A")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.086 -0400", hash_original_method = "711404AF80F30F53943AF0817E2DC7DA", hash_generated_method = "4B4B0C8857AD559F3C6FAE56F4202E36")
         public void onCallEnded(SipSession session) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(session.dsTaint);
+            addTaint(session.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.407 -0400", hash_original_method = "DF73FA582D888219D7BAD8AC6A6DFD56", hash_generated_method = "E7A209D4765BE7F3BC2551F78154F54C")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.087 -0400", hash_original_method = "DF73FA582D888219D7BAD8AC6A6DFD56", hash_generated_method = "3CB7A353A87EFF26ADA549ED713B3DD5")
         public void onCallBusy(SipSession session) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(session.dsTaint);
+            addTaint(session.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.410 -0400", hash_original_method = "BA5AD9CB5800C0FF06E65720317D213F", hash_generated_method = "733AF8870BB89B58F89F53453DB95B7C")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.087 -0400", hash_original_method = "BA5AD9CB5800C0FF06E65720317D213F", hash_generated_method = "9389B51D6338B1B039E32D37BAF2C49F")
         public void onCallTransferring(SipSession newSession,
                 String sessionDescription) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(sessionDescription);
-            dsTaint.addTaint(newSession.dsTaint);
+            addTaint(newSession.getTaint());
+            addTaint(sessionDescription.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.410 -0400", hash_original_method = "4CD681E2D11D80A916993A5E2A67B6D2", hash_generated_method = "542939ED4D5470AF6C1C4A23B9456AD9")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.100 -0400", hash_original_method = "4CD681E2D11D80A916993A5E2A67B6D2", hash_generated_method = "D7EF0224F0CDF59CBF008227DAF727E4")
         public void onError(SipSession session, int errorCode,
                 String errorMessage) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(errorMessage);
-            dsTaint.addTaint(session.dsTaint);
-            dsTaint.addTaint(errorCode);
+            addTaint(session.getTaint());
+            addTaint(errorCode);
+            addTaint(errorMessage.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.411 -0400", hash_original_method = "98747504BDA403336DDC3899112D7C4E", hash_generated_method = "7D5624497C07E715477C34DA02446B1B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.100 -0400", hash_original_method = "98747504BDA403336DDC3899112D7C4E", hash_generated_method = "5F24C8B8159D82EF6700BA14B872750F")
         public void onCallChangeFailed(SipSession session, int errorCode,
                 String errorMessage) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(errorMessage);
-            dsTaint.addTaint(session.dsTaint);
-            dsTaint.addTaint(errorCode);
+            addTaint(session.getTaint());
+            addTaint(errorCode);
+            addTaint(errorMessage.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.411 -0400", hash_original_method = "20558DF6BFC1217A7001B14AA50A9A03", hash_generated_method = "0CF55F9661E17210ECF1F32ED5D8839E")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.100 -0400", hash_original_method = "20558DF6BFC1217A7001B14AA50A9A03", hash_generated_method = "49556F3917EE074EE7287D4C2426EBC3")
         public void onRegistering(SipSession session) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(session.dsTaint);
+            addTaint(session.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.411 -0400", hash_original_method = "7504CEF239C11FEA532F08720FD2042B", hash_generated_method = "6EAD2D0196E284D7EE872D2B037DBA14")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.101 -0400", hash_original_method = "7504CEF239C11FEA532F08720FD2042B", hash_generated_method = "FBEF814628A6B17E4528CB04E1F2F9B1")
         public void onRegistrationDone(SipSession session, int duration) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(duration);
-            dsTaint.addTaint(session.dsTaint);
+            addTaint(session.getTaint());
+            addTaint(duration);
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.411 -0400", hash_original_method = "3E873AF3736F468DF3025CAE14D73D95", hash_generated_method = "785B6554A490FFC98C4D95CD1254C0EC")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.101 -0400", hash_original_method = "3E873AF3736F468DF3025CAE14D73D95", hash_generated_method = "27A36AAC9516CB737E4D229703284149")
         public void onRegistrationFailed(SipSession session, int errorCode,
                 String errorMessage) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(errorMessage);
-            dsTaint.addTaint(session.dsTaint);
-            dsTaint.addTaint(errorCode);
+            addTaint(session.getTaint());
+            addTaint(errorCode);
+            addTaint(errorMessage.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:52.412 -0400", hash_original_method = "43D598AFE19AB6009363638DB64C1F7B", hash_generated_method = "A434666F1F3585F4B05C628D7F353A79")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.102 -0400", hash_original_method = "43D598AFE19AB6009363638DB64C1F7B", hash_generated_method = "92DD4357599040EC3BD89E95FDDF4AD7")
         public void onRegistrationTimeout(SipSession session) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(session.dsTaint);
+            addTaint(session.getTaint());
             // ---------- Original Method ----------
         }
 
@@ -712,6 +652,8 @@ public final class SipSession {
 
 
     
-    private static final String TAG = "SipSession";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:23.102 -0400", hash_original_field = "D9ED94DB6A5D4F0166BBD806D4CCC0A3", hash_generated_field = "C43FCB8A6E930C31158984A5E68D5425")
+
+    private static String TAG = "SipSession";
 }
 

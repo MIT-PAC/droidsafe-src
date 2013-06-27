@@ -19,49 +19,49 @@ import android.util.AttributeSet;
 import android.util.Log;
 
 class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.673 -0400", hash_original_field = "D1487CA8252F4AA0A95324AB4DDD5316", hash_generated_field = "13262EB3751B753EEB3302EF75D8B1E5")
+
     private PreferenceManager mPreferenceManager;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.694 -0400", hash_original_method = "50527EB8D19F2F0D64584B04C3D41EF2", hash_generated_method = "B05E63022534BCA9A3BAC3C90F40D6A6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PreferenceInflater(Context context, PreferenceManager preferenceManager) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.674 -0400", hash_original_method = "50527EB8D19F2F0D64584B04C3D41EF2", hash_generated_method = "D6D28B12B333061A7C201785812F6799")
+    public  PreferenceInflater(Context context, PreferenceManager preferenceManager) {
         super(context);
-        dsTaint.addTaint(preferenceManager.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
         init(preferenceManager);
+        addTaint(context.getTaint());
+        addTaint(preferenceManager.getTaint());
         // ---------- Original Method ----------
         //init(preferenceManager);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.694 -0400", hash_original_method = "CBCBABB7FE70B103F3E123A80F4BFEB8", hash_generated_method = "8EADDA3F76D823C220D89DFAA845BF1E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     PreferenceInflater(GenericInflater<Preference, PreferenceGroup> original, PreferenceManager preferenceManager, Context newContext) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.674 -0400", hash_original_method = "CBCBABB7FE70B103F3E123A80F4BFEB8", hash_generated_method = "809E76E315FCFAE6A68DEDAD22D7D4BC")
+      PreferenceInflater(GenericInflater<Preference, PreferenceGroup> original, PreferenceManager preferenceManager, Context newContext) {
         super(original, newContext);
-        dsTaint.addTaint(newContext.dsTaint);
-        dsTaint.addTaint(preferenceManager.dsTaint);
-        dsTaint.addTaint(original.dsTaint);
         init(preferenceManager);
+        addTaint(original.getTaint());
+        addTaint(preferenceManager.getTaint());
+        addTaint(newContext.getTaint());
         // ---------- Original Method ----------
         //init(preferenceManager);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.695 -0400", hash_original_method = "FF1F94752C869BA06052B7A67A109910", hash_generated_method = "83CCBC6B43DB11E8BCEC3BEEFF5E109A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.678 -0400", hash_original_method = "FF1F94752C869BA06052B7A67A109910", hash_generated_method = "83A01685055DBF0D837A2F08B03AFBE8")
     @Override
     public GenericInflater<Preference, PreferenceGroup> cloneInContext(Context newContext) {
-        dsTaint.addTaint(newContext.dsTaint);
-        GenericInflater<Preference, PreferenceGroup> varB09E589CD05BFB173DC590A570A0585B_37414562 = (new PreferenceInflater(this, mPreferenceManager, newContext));
-        return (GenericInflater<Preference, PreferenceGroup>)dsTaint.getTaint();
+        GenericInflater<Preference, PreferenceGroup> varB4EAC82CA7396A68D541C85D26508E83_633833796 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_633833796 = new PreferenceInflater(this, mPreferenceManager, newContext);
+        addTaint(newContext.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_633833796.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_633833796;
         // ---------- Original Method ----------
         //return new PreferenceInflater(this, mPreferenceManager, newContext);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.695 -0400", hash_original_method = "7B227AC4C6BF5338AF52F597A9EDC5E2", hash_generated_method = "B9DB4BE304E6C7D69C3395C040F1FD15")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.679 -0400", hash_original_method = "7B227AC4C6BF5338AF52F597A9EDC5E2", hash_generated_method = "97D721084DFEECEA5417B367F5EF73D1")
     private void init(PreferenceManager preferenceManager) {
-        dsTaint.addTaint(preferenceManager.dsTaint);
+        mPreferenceManager = preferenceManager;
         setDefaultPackage("android.preference.");
         // ---------- Original Method ----------
         //mPreferenceManager = preferenceManager;
@@ -69,19 +69,15 @@ class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.696 -0400", hash_original_method = "295C055EC64DF7189FE6DF67209CBBC4", hash_generated_method = "4DA4632D4C871407BFD0DDD9C6ECF210")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.721 -0400", hash_original_method = "295C055EC64DF7189FE6DF67209CBBC4", hash_generated_method = "AB4790B57AA81D12806FA9F92743EFA1")
     @Override
     protected boolean onCreateCustomFromTag(XmlPullParser parser, Preference parentPreference,
             AttributeSet attrs) throws XmlPullParserException {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(parentPreference.dsTaint);
-        dsTaint.addTaint(parser.dsTaint);
         String tag;
         tag = parser.getName();
         {
-            boolean var5BE944252877569CC94E888792E6D758_1897327362 = (tag.equals(INTENT_TAG_NAME));
+            boolean var5BE944252877569CC94E888792E6D758_1950112140 = (tag.equals(INTENT_TAG_NAME));
             {
                 Intent intent;
                 intent = null;
@@ -102,7 +98,7 @@ class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
                 } //End block
             } //End block
             {
-                boolean varFA18FB7EC231D2706E0747E224A5CB67_228969400 = (tag.equals(EXTRA_TAG_NAME));
+                boolean varFA18FB7EC231D2706E0747E224A5CB67_1509037609 = (tag.equals(EXTRA_TAG_NAME));
                 {
                     getContext().getResources().parseBundleExtra(EXTRA_TAG_NAME, attrs,
                     parentPreference.getExtras());
@@ -121,25 +117,44 @@ class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
                 } //End block
             } //End collapsed parenthetic
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(parser.getTaint());
+        addTaint(parentPreference.getTaint());
+        addTaint(attrs.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1750840894 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1750840894;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:54.696 -0400", hash_original_method = "677330D7578A225E3A8F3B018B853A0C", hash_generated_method = "39A989201178844634956BE93478CBC0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.723 -0400", hash_original_method = "677330D7578A225E3A8F3B018B853A0C", hash_generated_method = "DC1B06238CADD7C0021EF45E4FB5E03F")
     @Override
     protected PreferenceGroup onMergeRoots(PreferenceGroup givenRoot, boolean attachToGivenRoot,
             PreferenceGroup xmlRoot) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(givenRoot.dsTaint);
-        dsTaint.addTaint(xmlRoot.dsTaint);
-        dsTaint.addTaint(attachToGivenRoot);
+        PreferenceGroup varB4EAC82CA7396A68D541C85D26508E83_656477447 = null; //Variable for return #1
+        PreferenceGroup varB4EAC82CA7396A68D541C85D26508E83_550126898 = null; //Variable for return #2
         {
             xmlRoot.onAttachedToHierarchy(mPreferenceManager);
+            varB4EAC82CA7396A68D541C85D26508E83_656477447 = xmlRoot;
         } //End block
-        return (PreferenceGroup)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_550126898 = givenRoot;
+        } //End block
+        addTaint(givenRoot.getTaint());
+        addTaint(attachToGivenRoot);
+        addTaint(xmlRoot.getTaint());
+        PreferenceGroup varA7E53CE21691AB073D9660D615818899_1104874969; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1104874969 = varB4EAC82CA7396A68D541C85D26508E83_656477447;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1104874969 = varB4EAC82CA7396A68D541C85D26508E83_550126898;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1104874969.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1104874969;
         // ---------- Original Method ----------
         //if (givenRoot == null) {
             //xmlRoot.onAttachedToHierarchy(mPreferenceManager);
@@ -150,8 +165,14 @@ class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
     }
 
     
-    private static final String TAG = "PreferenceInflater";
-    private static final String INTENT_TAG_NAME = "intent";
-    private static final String EXTRA_TAG_NAME = "extra";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.723 -0400", hash_original_field = "CC8ACA106F6290F3A7C71CC6BC7F2325", hash_generated_field = "72D2B67EA0587E878C52C861938B38C7")
+
+    private static String TAG = "PreferenceInflater";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.723 -0400", hash_original_field = "1D953FC9E39CE8F449C111E1CEABB7F3", hash_generated_field = "9E983E2402CFA0D345C53FB213E91182")
+
+    private static String INTENT_TAG_NAME = "intent";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:28.723 -0400", hash_original_field = "82F944EA1D0CD5852D3BD9F756FE9CEE", hash_generated_field = "A9614149531C4CE1E1C1E6562D151965")
+
+    private static String EXTRA_TAG_NAME = "extra";
 }
 

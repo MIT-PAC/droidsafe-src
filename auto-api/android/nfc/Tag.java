@@ -26,29 +26,40 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public final class Tag implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.873 -0400", hash_original_field = "6AC7F06B6413A1BE9C136DC7DF0D2B60", hash_generated_field = "81204E2516309774DDE98BCC95D4D337")
+
     byte[] mId;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.874 -0400", hash_original_field = "ED0C37574A71E31009E6BAC4C65FADD1", hash_generated_field = "0DB184F1652D71E136D886FBACFA9D55")
+
     int[] mTechList;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.874 -0400", hash_original_field = "4E650265F80DA408E0A91929BFDAFC60", hash_generated_field = "0A081329FBF347BBA8CA3CE5FE7B2456")
+
     String[] mTechStringList;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.874 -0400", hash_original_field = "8663114DCB1828187003F31E6C7AC81D", hash_generated_field = "F97EAF8BD7993C915DB2079CA2A6444E")
+
     Bundle[] mTechExtras;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.874 -0400", hash_original_field = "2C5FEB0198F897EC9ED4F5F58999D842", hash_generated_field = "6F0A5804F925E3493BDF27F4D6450311")
+
     int mServiceHandle;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.874 -0400", hash_original_field = "C4F66777987458EB95FEC3CBFE87E71B", hash_generated_field = "E7BFA6F23523ACB74649DA6B13E29836")
+
     INfcTag mTagService;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.874 -0400", hash_original_field = "824FFD6D91C3217E3C5250F0EF6A1CF5", hash_generated_field = "CE330E3DB3AFE653E7D80FC8FC48F20D")
+
     int mConnectedTechnology;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.090 -0400", hash_original_method = "AAC199A9C4358959332D7A7260D2B126", hash_generated_method = "356B323664A8C389A6146D29B61E1DB4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Tag(byte[] id, int[] techList, Bundle[] techListExtras, int serviceHandle,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.892 -0400", hash_original_method = "AAC199A9C4358959332D7A7260D2B126", hash_generated_method = "ECF94C4315A91B94468F250CE3B48BE4")
+    public  Tag(byte[] id, int[] techList, Bundle[] techListExtras, int serviceHandle,
             INfcTag tagService) {
-        dsTaint.addTaint(id[0]);
-        dsTaint.addTaint(tagService.dsTaint);
-        dsTaint.addTaint(techList[0]);
-        dsTaint.addTaint(serviceHandle);
-        dsTaint.addTaint(techListExtras[0].dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("rawTargets cannot be null");
         } //End block
+        mId = id;
         mTechList = Arrays.copyOf(techList, techList.length);
         mTechStringList = generateTechStringList(techList);
         mTechExtras = Arrays.copyOf(techListExtras, techList.length);
+        mServiceHandle = serviceHandle;
+        mTagService = tagService;
         mConnectedTechnology = -1;
         // ---------- Original Method ----------
         //if (techList == null) {
@@ -69,10 +80,9 @@ public final class Tag implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.091 -0400", hash_original_method = "AA46592E4023484A1FFE154B94A62E4A", hash_generated_method = "0888EAB1D1F080A844048007E86749F4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.915 -0400", hash_original_method = "AA46592E4023484A1FFE154B94A62E4A", hash_generated_method = "EC531C428EF6DA64D38FB30CBE579020")
     private String[] generateTechStringList(int[] techList) {
-        dsTaint.addTaint(techList[0]);
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1274261828 = null; //Variable for return #1
         int size;
         size = techList.length;
         String[] strings;
@@ -113,50 +123,49 @@ public final class Tag implements Parcelable {
                 //End case default 
             } //End block
         } //End collapsed parenthetic
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        varB4EAC82CA7396A68D541C85D26508E83_1274261828 = strings;
+        addTaint(techList[0]);
+        varB4EAC82CA7396A68D541C85D26508E83_1274261828.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1274261828;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.092 -0400", hash_original_method = "89421ECB0C954DB9BA373A13BA3FAA83", hash_generated_method = "DA351054133898929D2FB477DC920D8B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.915 -0400", hash_original_method = "89421ECB0C954DB9BA373A13BA3FAA83", hash_generated_method = "3FBC082A59FD1AEEE397A719A84D6109")
     public int getServiceHandle() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_920358578 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_920358578;
         // ---------- Original Method ----------
         //return mServiceHandle;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.092 -0400", hash_original_method = "119449B9FCBA8EB72735DF05D41F23E7", hash_generated_method = "810A2C5F66EB970795CB54D5A6DE34C9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.916 -0400", hash_original_method = "119449B9FCBA8EB72735DF05D41F23E7", hash_generated_method = "FF8FDF73204C69FF053C91EE08CADBF2")
     public byte[] getId() {
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2098543729 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_2098543729;
         // ---------- Original Method ----------
         //return mId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.092 -0400", hash_original_method = "ED11FAFB07CA3B90E3FEDDA21BAFA279", hash_generated_method = "78E048F7855DC2BED8A9952190F9946D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.916 -0400", hash_original_method = "ED11FAFB07CA3B90E3FEDDA21BAFA279", hash_generated_method = "6CCCB6440C0DE59A8DB329CF54B81565")
     public String[] getTechList() {
-        String[] retVal = new String[1];
-        retVal[0] = dsTaint.getTaintString();
-        return retVal;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_851604568 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_851604568 = mTechStringList;
+        varB4EAC82CA7396A68D541C85D26508E83_851604568.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_851604568;
         // ---------- Original Method ----------
         //return mTechStringList;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.092 -0400", hash_original_method = "4E5CB2043A65C51A8349137C18388B2C", hash_generated_method = "C07E364DAF806B79CA822F0E8B6F8984")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.917 -0400", hash_original_method = "4E5CB2043A65C51A8349137C18388B2C", hash_generated_method = "C66EA7A102A5E6118D77B461805C0D33")
     public Tag rediscover() throws IOException {
+        Tag varB4EAC82CA7396A68D541C85D26508E83_2058979572 = null; //Variable for return #1
         {
-            boolean varEBFAF4397126CBA96A40D8CC684FB913_2075615819 = (getConnectedTechnology() != -1);
+            boolean varEBFAF4397126CBA96A40D8CC684FB913_761760754 = (getConnectedTechnology() != -1);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Close connection to the technology first!");
             } //End block
@@ -166,6 +175,9 @@ public final class Tag implements Parcelable {
             Tag newTag;
             newTag = mTagService.rediscover(getServiceHandle());
             {
+                varB4EAC82CA7396A68D541C85D26508E83_2058979572 = newTag;
+            } //End block
+            {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("Failed to rediscover tag");
             } //End block
         } //End block
@@ -173,7 +185,8 @@ public final class Tag implements Parcelable {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("NFC service dead");
         } //End block
-        return (Tag)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2058979572.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2058979572;
         // ---------- Original Method ----------
         //if (getConnectedTechnology() != -1) {
             //throw new IllegalStateException("Close connection to the technology first!");
@@ -191,14 +204,14 @@ public final class Tag implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.095 -0400", hash_original_method = "066FD8962F433FECE6D4FD3B60FADEA0", hash_generated_method = "26F7154DBBEA9A3BFE2FE46DAEC51E19")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.968 -0400", hash_original_method = "066FD8962F433FECE6D4FD3B60FADEA0", hash_generated_method = "1617CEFF6A308470D6E4130FA2BC5D46")
     public boolean hasTech(int techType) {
-        dsTaint.addTaint(techType);
         {
             int tech = mTechList[0];
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(techType);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_565286860 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_565286860;
         // ---------- Original Method ----------
         //for (int tech : mTechList) {
             //if (tech == techType) return true;
@@ -207,10 +220,10 @@ public final class Tag implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.096 -0400", hash_original_method = "31360E4A8CC1CC354A13744DCF6ABA65", hash_generated_method = "6FB506E77F889D792877085CAA92CB4B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.986 -0400", hash_original_method = "31360E4A8CC1CC354A13744DCF6ABA65", hash_generated_method = "06D4E6BB2D99D9EE1C1A73F7F7784C4E")
     public Bundle getTechExtras(int tech) {
-        dsTaint.addTaint(tech);
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_1143391189 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_49763821 = null; //Variable for return #2
         int pos;
         pos = -1;
         {
@@ -222,7 +235,22 @@ public final class Tag implements Parcelable {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        return (Bundle)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1143391189 = null;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_49763821 = mTechExtras[pos];
+        addTaint(tech);
+        Bundle varA7E53CE21691AB073D9660D615818899_2002275010; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_2002275010 = varB4EAC82CA7396A68D541C85D26508E83_1143391189;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_2002275010 = varB4EAC82CA7396A68D541C85D26508E83_49763821;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_2002275010.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2002275010;
         // ---------- Original Method ----------
         //int pos = -1;
         //for (int idx = 0; idx < mTechList.length; idx++) {
@@ -238,19 +266,21 @@ public final class Tag implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.096 -0400", hash_original_method = "67284B405524DECAA6F6D36DFD293E76", hash_generated_method = "8D53EE637E395B4536319296740481EE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.987 -0400", hash_original_method = "67284B405524DECAA6F6D36DFD293E76", hash_generated_method = "D8337BAC6C302222E92C0C077AE4DCC3")
     public INfcTag getTagService() {
-        return (INfcTag)dsTaint.getTaint();
+        INfcTag varB4EAC82CA7396A68D541C85D26508E83_1937984157 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1937984157 = mTagService;
+        varB4EAC82CA7396A68D541C85D26508E83_1937984157.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1937984157;
         // ---------- Original Method ----------
         //return mTagService;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.096 -0400", hash_original_method = "DF673271FDC7A52A9E2682FF9A4E5D76", hash_generated_method = "25E220FD00929CFB1F669A56554D21CF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.991 -0400", hash_original_method = "DF673271FDC7A52A9E2682FF9A4E5D76", hash_generated_method = "3CD8F7DD26401C7CB8003017483B54EE")
     @Override
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1270582406 = null; //Variable for return #1
         StringBuilder sb;
         sb = new StringBuilder("TAG: Tech [");
         String[] techList;
@@ -268,8 +298,9 @@ public final class Tag implements Parcelable {
             } //End block
         } //End collapsed parenthetic
         sb.append("]");
-        String var806458D832AB974D230FEE4CBBDBD390_391916855 = (sb.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1270582406 = sb.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1270582406.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1270582406;
         // ---------- Original Method ----------
         //StringBuilder sb = new StringBuilder("TAG: Tech [");
         //String[] techList = getTechList();
@@ -306,22 +337,19 @@ public final class Tag implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.097 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0DB50BC0CCE4711867E95DEC1B2117C7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.007 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D8090BF786B40B6B014025616181C079")
     @Override
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_309183950 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_309183950;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.097 -0400", hash_original_method = "B1506093B1A3D95B1E6C500EDA575BD4", hash_generated_method = "DE64E44EB6250A81387317CA57BD03C4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.024 -0400", hash_original_method = "B1506093B1A3D95B1E6C500EDA575BD4", hash_generated_method = "E396537DE0894B06934B7069FD0B2FDD")
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         int isMock;
         isMock = 1;
         isMock = 0;
@@ -334,6 +362,8 @@ public final class Tag implements Parcelable {
         {
             dest.writeStrongBinder(mTagService.asBinder());
         } //End block
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //int isMock = (mTagService == null)?1:0;
         //writeBytesWithNull(dest, mId);
@@ -348,10 +378,11 @@ public final class Tag implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.097 -0400", hash_original_method = "5C3F1EA15BE184F081C4AA8C7B39A394", hash_generated_method = "2862C4CBAD065A0369EF6C515E8D087C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.026 -0400", hash_original_method = "5C3F1EA15BE184F081C4AA8C7B39A394", hash_generated_method = "BBC7664A12EF363FDA3A403E4CF26E5E")
     public synchronized void setConnectedTechnology(int technology) {
-        dsTaint.addTaint(technology);
+        {
+            mConnectedTechnology = technology;
+        } //End block
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Close other technology first!");
         } //End block
@@ -364,17 +395,16 @@ public final class Tag implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.097 -0400", hash_original_method = "B7538F13EF8EEF4B4D475104909015D7", hash_generated_method = "A7ACA3DBAEF40B60586D2EB00EA1162E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.026 -0400", hash_original_method = "B7538F13EF8EEF4B4D475104909015D7", hash_generated_method = "5EF5A52CC5EAA21171D2B5EB80568FB9")
     public int getConnectedTechnology() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_386918924 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_386918924;
         // ---------- Original Method ----------
         //return mConnectedTechnology;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.098 -0400", hash_original_method = "4FE592F130B2AB198D9A9024B7A375C0", hash_generated_method = "CDDFA9CDCDA74E225B20B2008ED8B5D1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.027 -0400", hash_original_method = "4FE592F130B2AB198D9A9024B7A375C0", hash_generated_method = "CDDFA9CDCDA74E225B20B2008ED8B5D1")
     public void setTechnologyDisconnected() {
         mConnectedTechnology = -1;
         // ---------- Original Method ----------
@@ -382,62 +412,35 @@ public final class Tag implements Parcelable {
     }
 
     
-    public static final Parcelable.Creator<Tag> CREATOR = new Parcelable.Creator<Tag>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.098 -0400", hash_original_method = "C00F8D9D166881C90A27311ADAB142C9", hash_generated_method = "A7FB5EF578D7D1602840409A49EBBC8D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.027 -0400", hash_original_field = "B7CF6CEBA53F7894015357BCDA86AD40", hash_generated_field = "5753E43B3B6E37C6E072C87A5DFEC09F")
+
+    public static final Parcelable.Creator<Tag> CREATOR =
+            new Parcelable.Creator<Tag>() {
         @Override
         public Tag createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
             INfcTag tagService;
-            byte[] id;
-            id = Tag.readBytesWithNull(in);
-            int[] techList;
-            techList = new int[in.readInt()];
+
+            
+            byte[] id = Tag.readBytesWithNull(in);
+            int[] techList = new int[in.readInt()];
             in.readIntArray(techList);
-            Bundle[] techExtras;
-            techExtras = in.createTypedArray(Bundle.CREATOR);
-            int serviceHandle;
-            serviceHandle = in.readInt();
-            int isMock;
-            isMock = in.readInt();
-            {
+            Bundle[] techExtras = in.createTypedArray(Bundle.CREATOR);
+            int serviceHandle = in.readInt();
+            int isMock = in.readInt();
+            if (isMock == 0) {
                 tagService = INfcTag.Stub.asInterface(in.readStrongBinder());
-            } //End block
-            {
+            }
+            else {
                 tagService = null;
-            } //End block
-            Tag var8A1857BBB51D140686F76998E3CAD07C_36851671 = (new Tag(id, techList, techExtras, serviceHandle, tagService));
-            return (Tag)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //INfcTag tagService;
-            //byte[] id = Tag.readBytesWithNull(in);
-            //int[] techList = new int[in.readInt()];
-            //in.readIntArray(techList);
-            //Bundle[] techExtras = in.createTypedArray(Bundle.CREATOR);
-            //int serviceHandle = in.readInt();
-            //int isMock = in.readInt();
-            //if (isMock == 0) {
-                //tagService = INfcTag.Stub.asInterface(in.readStrongBinder());
-            //}
-            //else {
-                //tagService = null;
-            //}
-            //return new Tag(id, techList, techExtras, serviceHandle, tagService);
+            }
+
+            return new Tag(id, techList, techExtras, serviceHandle, tagService);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.098 -0400", hash_original_method = "C2E20987B78EDAE1EFF0E2E8A03B4F87", hash_generated_method = "F2C25AEC25392014CB184653806F0550")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         @Override
         public Tag[] newArray(int size) {
-            dsTaint.addTaint(size);
-            Tag[] var2CA1F1B772DD749871AA52A82A487701_477122457 = (new Tag[size]);
-            return (Tag[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new Tag[size];
+            return new Tag[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

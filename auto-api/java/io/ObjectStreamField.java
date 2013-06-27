@@ -12,21 +12,31 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class ObjectStreamField implements Comparable<Object> {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.295 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+
     private String name;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.295 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "E8909FCC8837B5FE7A3CBA40C0098CCB")
+
     private Object type;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.295 -0400", hash_original_field = "7A86C157EE9713C34FBD7A1EE40F0C5A", hash_generated_field = "B7E810BF01B52122CB927525A0CA4721")
+
     int offset;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.295 -0400", hash_original_field = "EB43610BFF4BF58AA2AF0BA56299D57A", hash_generated_field = "A6469B3C05A6E61AD188C77E4C87AFA0")
+
     private String typeString;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.295 -0400", hash_original_field = "962FA027E49514EF42DADB2095E8C618", hash_generated_field = "1925D0B4ADBD655AA714AC16DE1F0973")
+
     private boolean unshared;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.295 -0400", hash_original_field = "08F60B1F77A7ECFDC92540AF3E6C2887", hash_generated_field = "B10B376FF3C60E9314732C46A8CA6340")
+
     private boolean isDeserialized;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.174 -0400", hash_original_method = "0D657EDEC08CB18117CF62EC578D6020", hash_generated_method = "76C8C8E8C662BB165F33BA5CAAF503B6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ObjectStreamField(String name, Class<?> cl) {
-        dsTaint.addTaint(cl.dsTaint);
-        dsTaint.addTaint(name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.296 -0400", hash_original_method = "0D657EDEC08CB18117CF62EC578D6020", hash_generated_method = "7D64C1E5079C1595A78499F1CD7D2B04")
+    public  ObjectStreamField(String name, Class<?> cl) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
+        this.name = name;
         this.type = new WeakReference<Class<?>>(cl);
         // ---------- Original Method ----------
         //if (name == null || cl == null) {
@@ -37,16 +47,14 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.174 -0400", hash_original_method = "B329D182B18083287B5598787B9BCF42", hash_generated_method = "7577A693E9CD49E81E6606C196520D13")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ObjectStreamField(String name, Class<?> cl, boolean unshared) {
-        dsTaint.addTaint(unshared);
-        dsTaint.addTaint(cl.dsTaint);
-        dsTaint.addTaint(name);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.296 -0400", hash_original_method = "B329D182B18083287B5598787B9BCF42", hash_generated_method = "549592D84BBC9126454BFC055E2D972B")
+    public  ObjectStreamField(String name, Class<?> cl, boolean unshared) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
+        this.name = name;
         this.type = (cl.getClassLoader() == null) ? cl : new WeakReference<Class<?>>(cl);
+        this.unshared = unshared;
         // ---------- Original Method ----------
         //if (name == null || cl == null) {
             //throw new NullPointerException();
@@ -57,14 +65,12 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.174 -0400", hash_original_method = "7045B1DBF21073AA43E994CE221E4094", hash_generated_method = "AB8D0C7D7EFED6319A3EC0C1F1639939")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     ObjectStreamField(String signature, String name) {
-        dsTaint.addTaint(name);
-        dsTaint.addTaint(signature);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.297 -0400", hash_original_method = "7045B1DBF21073AA43E994CE221E4094", hash_generated_method = "F2CB169C8FF966E2B41881A277E9476A")
+      ObjectStreamField(String signature, String name) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
+        this.name = name;
         this.typeString = signature.replace('.', '/').intern();
         defaultResolve();
         this.isDeserialized = true;
@@ -79,18 +85,18 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.174 -0400", hash_original_method = "11ADA6ED2A991966CB49663045730556", hash_generated_method = "F3859BD90106E455E698C7CCEB911128")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.297 -0400", hash_original_method = "11ADA6ED2A991966CB49663045730556", hash_generated_method = "9F96B15406570A66BCA2BCD6FFF42B83")
     public int compareTo(Object o) {
-        dsTaint.addTaint(o.dsTaint);
         ObjectStreamField f;
         f = (ObjectStreamField) o;
         boolean thisPrimitive;
         thisPrimitive = this.isPrimitive();
         boolean fPrimitive;
         fPrimitive = f.isPrimitive();
-        int var2F3A4BA37EC730562BE97B6E5BC529E7_2091651151 = (this.getName().compareTo(f.getName()));
-        return dsTaint.getTaintInt();
+        int var2F3A4BA37EC730562BE97B6E5BC529E7_1263705233 = (this.getName().compareTo(f.getName()));
+        addTaint(o.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1883180105 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1883180105;
         // ---------- Original Method ----------
         //ObjectStreamField f = (ObjectStreamField) o;
         //boolean thisPrimitive = this.isPrimitive();
@@ -102,31 +108,45 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.175 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "3573899E99121C9CFE87F9DDAEE36810")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.297 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "DBA8CCB806B2411AD171352143FECBF5")
     public String getName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1775239007 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1775239007 = name;
+        varB4EAC82CA7396A68D541C85D26508E83_1775239007.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1775239007;
         // ---------- Original Method ----------
         //return name;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.175 -0400", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "1CDEFA10A2F1E723CA8578AEEBEAF140")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.298 -0400", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "BDAA1553ED4A6B9D548E6E511D250DDD")
     public int getOffset() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1558132778 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1558132778;
         // ---------- Original Method ----------
         //return offset;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.175 -0400", hash_original_method = "FF08482EB56AA685DDAE41A39E334998", hash_generated_method = "C94C8FC565C2438664AC02C9DDA2820A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.298 -0400", hash_original_method = "FF08482EB56AA685DDAE41A39E334998", hash_generated_method = "475378BF2187E5A44C1C8FF8BEFF7632")
      Class<?> getTypeInternal() {
+        Class<?> varB4EAC82CA7396A68D541C85D26508E83_1903127810 = null; //Variable for return #1
+        Class<?> varB4EAC82CA7396A68D541C85D26508E83_2087884946 = null; //Variable for return #2
         {
-            Class<?> var37E922112FD164FAA1FD46A51C3D9839_1088125844 = ((Class<?>) ((WeakReference<?>) type).get());
+            varB4EAC82CA7396A68D541C85D26508E83_1903127810 = (Class<?>) ((WeakReference<?>) type).get();
         } //End block
-        return (Class<?>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2087884946 = (Class<?>) type;
+        Class<?> varA7E53CE21691AB073D9660D615818899_86374272; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_86374272 = varB4EAC82CA7396A68D541C85D26508E83_1903127810;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_86374272 = varB4EAC82CA7396A68D541C85D26508E83_2087884946;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_86374272.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_86374272;
         // ---------- Original Method ----------
         //if (type instanceof WeakReference) {
             //return (Class<?>) ((WeakReference<?>) type).get();
@@ -135,15 +155,30 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.175 -0400", hash_original_method = "9634509EF2A12286AE62950CEFC0E304", hash_generated_method = "71D1A30A6F33B0CA88247797DA5511A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.303 -0400", hash_original_method = "9634509EF2A12286AE62950CEFC0E304", hash_generated_method = "8F94326A482747209022D9A1520524F8")
     public Class<?> getType() {
+        Class<?> varB4EAC82CA7396A68D541C85D26508E83_927641139 = null; //Variable for return #1
+        Class<?> varB4EAC82CA7396A68D541C85D26508E83_1778933615 = null; //Variable for return #2
         Class<?> cl;
         cl = getTypeInternal();
         {
-            boolean varA3679B8742DABFD077DA559AF7FB1A74_2103091614 = (isDeserialized && !cl.isPrimitive());
+            boolean varA3679B8742DABFD077DA559AF7FB1A74_607766428 = (isDeserialized && !cl.isPrimitive());
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_927641139 = Object.class;
+            } //End block
         } //End collapsed parenthetic
-        return (Class<?>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1778933615 = cl;
+        Class<?> varA7E53CE21691AB073D9660D615818899_362600361; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_362600361 = varB4EAC82CA7396A68D541C85D26508E83_927641139;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_362600361 = varB4EAC82CA7396A68D541C85D26508E83_1778933615;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_362600361.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_362600361;
         // ---------- Original Method ----------
         //Class<?> cl = getTypeInternal();
         //if (isDeserialized && !cl.isPrimitive()) {
@@ -153,24 +188,24 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.175 -0400", hash_original_method = "6C03FA17A8A9EDC07915A4F462B31BC8", hash_generated_method = "CEBD9D10D97CF6DB17DAE228AA7C2780")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.315 -0400", hash_original_method = "6C03FA17A8A9EDC07915A4F462B31BC8", hash_generated_method = "076EA4312FF2FA3663A927F7E2EF7771")
     public char getTypeCode() {
-        char var1177AA956C7DA25FE5A8F4F00F47BA9F_258494311 = (typeCodeOf(getTypeInternal()));
-        return dsTaint.getTaintChar();
+        char var1177AA956C7DA25FE5A8F4F00F47BA9F_1097995592 = (typeCodeOf(getTypeInternal()));
+        char varA87DEB01C5F539E6BDA34829C8EF2368_68402653 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_68402653;
         // ---------- Original Method ----------
         //return typeCodeOf(getTypeInternal());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.176 -0400", hash_original_method = "1261A37E9B201158D41DADA58D3D498E", hash_generated_method = "B23AD0B49926D4CB214178D07210AC1F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.316 -0400", hash_original_method = "1261A37E9B201158D41DADA58D3D498E", hash_generated_method = "26999BA9426232FD4D97994BE76459A1")
     private char typeCodeOf(Class<?> type) {
-        dsTaint.addTaint(type.dsTaint);
         {
-            boolean var6A7B33E76BE12D29FD67A26D06CDE611_1921135690 = (type.isArray());
+            boolean var6A7B33E76BE12D29FD67A26D06CDE611_331536955 = (type.isArray());
         } //End collapsed parenthetic
-        return dsTaint.getTaintChar();
+        addTaint(type.getTaint());
+        char varA87DEB01C5F539E6BDA34829C8EF2368_1915447517 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_1915447517;
         // ---------- Original Method ----------
         //if (type == int.class) {
             //return 'I';
@@ -196,11 +231,15 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.176 -0400", hash_original_method = "AF834EA72E67DF4239AA5209B5DE5F81", hash_generated_method = "2A3C704526AA8D1BC3EBE857BA6905DD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.316 -0400", hash_original_method = "AF834EA72E67DF4239AA5209B5DE5F81", hash_generated_method = "83FD08A3D62D82C6DFDBDBC30DE463A5")
     public String getTypeString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_350456314 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_306500087 = null; //Variable for return #2
         {
-            boolean var66A0FD8833FB78ABA18BF193F91E7A7D_1296373164 = (isPrimitive());
+            boolean var66A0FD8833FB78ABA18BF193F91E7A7D_304935911 = (isPrimitive());
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_350456314 = null;
+            } //End block
         } //End collapsed parenthetic
         {
             Class<?> t;
@@ -208,12 +247,23 @@ public class ObjectStreamField implements Comparable<Object> {
             String typeName;
             typeName = t.getName().replace('.', '/');
             String str;
-            boolean var5E131F98AD76D0BF9AAD526EFBF40306_1414541865 = ((t.isArray()));
+            boolean var5E131F98AD76D0BF9AAD526EFBF40306_796662556 = ((t.isArray()));
             str = typeName;
             str = ("L" + typeName + ';');
             typeString = str.intern();
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_306500087 = typeString;
+        String varA7E53CE21691AB073D9660D615818899_1203928934; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1203928934 = varB4EAC82CA7396A68D541C85D26508E83_350456314;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1203928934 = varB4EAC82CA7396A68D541C85D26508E83_306500087;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1203928934.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1203928934;
         // ---------- Original Method ----------
         //if (isPrimitive()) {
             //return null;
@@ -228,29 +278,29 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.177 -0400", hash_original_method = "109BC8E5B51BF330504215C17ADD6478", hash_generated_method = "C41ED3716CE5C3D5F5609997760755C6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.317 -0400", hash_original_method = "109BC8E5B51BF330504215C17ADD6478", hash_generated_method = "DA7E4E82B77811C0A384C2958B92A260")
     public boolean isPrimitive() {
         Class<?> t;
         t = getTypeInternal();
-        boolean varB421F220FEF97A3E096A81B170604319_316168574 = (t != null && t.isPrimitive());
-        return dsTaint.getTaintBoolean();
+        boolean varB421F220FEF97A3E096A81B170604319_1507641566 = (t != null && t.isPrimitive());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1018795023 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1018795023;
         // ---------- Original Method ----------
         //Class<?> t = getTypeInternal();
         //return t != null && t.isPrimitive();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.178 -0400", hash_original_method = "6EE925571D11CA9854483CD43D60AA5F", hash_generated_method = "4F53FA17AD217152127849F3CE604498")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.317 -0400", hash_original_method = "6EE925571D11CA9854483CD43D60AA5F", hash_generated_method = "7382D403E1F825A2A843B1D7C72C6BEC")
      boolean writeField(DataOutputStream out) throws IOException {
-        dsTaint.addTaint(out.dsTaint);
         Class<?> t;
         t = getTypeInternal();
         out.writeByte(typeCodeOf(t));
         out.writeUTF(name);
-        boolean var7719FC2E2C2407A9C763B64F0A563F59_1282092050 = ((t != null && t.isPrimitive()));
-        return dsTaint.getTaintBoolean();
+        boolean var7719FC2E2C2407A9C763B64F0A563F59_501246581 = ((t != null && t.isPrimitive()));
+        addTaint(out.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_332831396 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_332831396;
         // ---------- Original Method ----------
         //Class<?> t = getTypeInternal();
         //out.writeByte(typeCodeOf(t));
@@ -259,48 +309,46 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.179 -0400", hash_original_method = "7A66A074CFBB1A834E24DFB5B3A643D5", hash_generated_method = "040E9C91814A135377B6660D063F9782")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.317 -0400", hash_original_method = "7A66A074CFBB1A834E24DFB5B3A643D5", hash_generated_method = "4305F7EB15B8D74A66017D2CC764F457")
     protected void setOffset(int newValue) {
-        dsTaint.addTaint(newValue);
+        this.offset = newValue;
         // ---------- Original Method ----------
         //this.offset = newValue;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.180 -0400", hash_original_method = "ABFAE4540EC552EECBD4679559074925", hash_generated_method = "79F796336F8C70817DC40B5538E67657")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.318 -0400", hash_original_method = "ABFAE4540EC552EECBD4679559074925", hash_generated_method = "22BD2792A8A18ACD473DB4B2EE957B12")
     @Override
     public String toString() {
-        String var350C8D1821DF5F14E3D06B2B85E30460_770266124 = (this.getClass().getName() + '(' + getName() + ':' + getTypeInternal() + ')');
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1439618208 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1439618208 = this.getClass().getName() + '(' + getName() + ':' + getTypeInternal() + ')';
+        varB4EAC82CA7396A68D541C85D26508E83_1439618208.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1439618208;
         // ---------- Original Method ----------
         //return this.getClass().getName() + '(' + getName() + ':' + getTypeInternal() + ')';
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.180 -0400", hash_original_method = "48E3281BF72BF66E5E96F9E4056E97FC", hash_generated_method = "99E4DD30AFF04B2A58F37B266252A7B5")
-    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.322 -0400", hash_original_method = "48E3281BF72BF66E5E96F9E4056E97FC", hash_generated_method = "AF10B8B3AD30554BD7C4F9A30F11DFD5")
      void resolve(ClassLoader loader) {
-        dsTaint.addTaint(loader.dsTaint);
         {
-            boolean var2D678C45C1F58BEAC668B5F88029903B_975236689 = (typeString == null && isPrimitive());
+            boolean var2D678C45C1F58BEAC668B5F88029903B_227035582 = (typeString == null && isPrimitive());
             {
                 typeString = String.valueOf(getTypeCode());
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varF774A382C8A76B03DD267611340345A4_159472398 = (typeString.length() == 1);
+            boolean varF774A382C8A76B03DD267611340345A4_17201243 = (typeString.length() == 1);
             {
                 {
-                    boolean var38E4603B2800FF20134BFF86D9CC31CE_1578071680 = (defaultResolve());
+                    boolean var38E4603B2800FF20134BFF86D9CC31CE_843638588 = (defaultResolve());
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         String className;
         className = typeString.replace('/', '.');
         {
-            boolean var4A650C5F977360D4DD17F8170EBAC5FA_134102706 = (className.charAt(0) == 'L');
+            boolean var4A650C5F977360D4DD17F8170EBAC5FA_673523050 = (className.charAt(0) == 'L');
             {
                 className = className.substring(1, className.length() - 1);
             } //End block
@@ -313,6 +361,7 @@ public class ObjectStreamField implements Comparable<Object> {
         } //End block
         catch (ClassNotFoundException e)
         { }
+        addTaint(loader.getTaint());
         // ---------- Original Method ----------
         //if (typeString == null && isPrimitive()) {
             //typeString = String.valueOf(getTypeCode());
@@ -334,29 +383,27 @@ public class ObjectStreamField implements Comparable<Object> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.180 -0400", hash_original_method = "F21E97E0131CF96F90294027D325F2F1", hash_generated_method = "775E7D1A33FD3999AB99DC2AB2F01C1A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.333 -0400", hash_original_method = "F21E97E0131CF96F90294027D325F2F1", hash_generated_method = "B16D63DCBB1F79D635C6BFB5F93BCCE2")
     public boolean isUnshared() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_50183926 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_50183926;
         // ---------- Original Method ----------
         //return unshared;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.181 -0400", hash_original_method = "68701E3ED15FAA74732CE575E0F04E5E", hash_generated_method = "79D0B20E282E78FAEDC658F874CE354E")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.334 -0400", hash_original_method = "68701E3ED15FAA74732CE575E0F04E5E", hash_generated_method = "78989AD0A169EB11A9E371D43CF1C2E1")
      void setUnshared(boolean unshared) {
-        dsTaint.addTaint(unshared);
+        this.unshared = unshared;
         // ---------- Original Method ----------
         //this.unshared = unshared;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.181 -0400", hash_original_method = "E1E63B3BD3E5801BD481EB78C5FBD93C", hash_generated_method = "DA181FC0B521A1E498261D322078E4F3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.335 -0400", hash_original_method = "E1E63B3BD3E5801BD481EB78C5FBD93C", hash_generated_method = "7ABA9481DD8CE013E65A53D8E433F107")
     private boolean defaultResolve() {
         {
-            Object varA76659841820C1031EE708C4EE618FAA_1815962706 = (typeString.charAt(0));
+            Object varA76659841820C1031EE708C4EE618FAA_1663264863 = (typeString.charAt(0));
             //Begin case 'I' 
             type = int.class;
             //End case 'I' 
@@ -385,7 +432,8 @@ public class ObjectStreamField implements Comparable<Object> {
             type = Object.class;
             //End case default 
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1780746501 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1780746501;
         // ---------- Original Method ----------
         //switch (typeString.charAt(0)) {
         //case 'I':

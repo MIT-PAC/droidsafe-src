@@ -10,14 +10,9 @@ import java.util.Iterator;
 
 public class SweepGradient extends Shader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.826 -0400", hash_original_method = "64A53BB5A652BD9568EA8C5A648F5375", hash_generated_method = "5F5B71117DF197BC8214ED7E0D5EAB0E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SweepGradient(float cx, float cy,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.145 -0400", hash_original_method = "64A53BB5A652BD9568EA8C5A648F5375", hash_generated_method = "463537946803D69503004BC054F19C41")
+    public  SweepGradient(float cx, float cy,
                          int colors[], float positions[]) {
-        dsTaint.addTaint(positions);
-        dsTaint.addTaint(colors);
-        dsTaint.addTaint(cy);
-        dsTaint.addTaint(cx);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("needs >= 2 number of colors");
         } //End block
@@ -27,6 +22,10 @@ public class SweepGradient extends Shader {
         } //End block
         native_instance = nativeCreate1(cx, cy, colors, positions);
         native_shader = nativePostCreate1(native_instance, cx, cy, colors, positions);
+        addTaint(cx);
+        addTaint(cy);
+        addTaint(colors);
+        addTaint(positions);
         // ---------- Original Method ----------
         //if (colors.length < 2) {
             //throw new IllegalArgumentException("needs >= 2 number of colors");
@@ -40,15 +39,14 @@ public class SweepGradient extends Shader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:47.826 -0400", hash_original_method = "1126924377A1AF5E908D05CFB28B37FF", hash_generated_method = "1DC2B17E4E03C480B91CDDA0EA7A0506")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SweepGradient(float cx, float cy, int color0, int color1) {
-        dsTaint.addTaint(cy);
-        dsTaint.addTaint(cx);
-        dsTaint.addTaint(color1);
-        dsTaint.addTaint(color0);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.156 -0400", hash_original_method = "1126924377A1AF5E908D05CFB28B37FF", hash_generated_method = "373ADA740D8DE786DBE7403B2FAAFD84")
+    public  SweepGradient(float cx, float cy, int color0, int color1) {
         native_instance = nativeCreate2(cx, cy, color0, color1);
         native_shader = nativePostCreate2(native_instance, cx, cy, color0, color1);
+        addTaint(cx);
+        addTaint(cy);
+        addTaint(color0);
+        addTaint(color1);
         // ---------- Original Method ----------
         //native_instance = nativeCreate2(cx, cy, color0, color1);
         //native_shader = nativePostCreate2(native_instance, cx, cy, color0, color1);

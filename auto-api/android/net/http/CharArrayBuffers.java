@@ -12,9 +12,10 @@ import org.apache.http.protocol.HTTP;
 
 class CharArrayBuffers {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.718 -0400", hash_original_method = "778D6ECDCF59395EDEE32BBD87397379", hash_generated_method = "778D6ECDCF59395EDEE32BBD87397379")
-        public CharArrayBuffers ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.919 -0400", hash_original_method = "757048C9429CD89F62E53746321F0081", hash_generated_method = "757048C9429CD89F62E53746321F0081")
+    public CharArrayBuffers ()
     {
+        //Synthesized constructor
     }
 
 
@@ -65,6 +66,8 @@ class CharArrayBuffers {
     }
 
     
-    static final char uppercaseAddon = 'a' - 'A';
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.921 -0400", hash_original_field = "A72A9F2075F99CA53C967159767FC043", hash_generated_field = "2DD3A4AC05FA27E996922F2474ACEEA3")
+
+    static char uppercaseAddon = 'a' - 'A';
 }
 

@@ -27,9 +27,10 @@ import org.apache.harmony.luni.internal.util.TimezoneGetter;
 
 public class RuntimeInit {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.267 -0400", hash_original_method = "8FA505D683EF3586614AABD2B679262A", hash_generated_method = "8FA505D683EF3586614AABD2B679262A")
-        public RuntimeInit ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.555 -0400", hash_original_method = "82505B17DF4892252BD2E987919E8FA9", hash_generated_method = "82505B17DF4892252BD2E987919E8FA9")
+    public RuntimeInit ()
     {
+        //Synthesized constructor
     }
 
 
@@ -211,17 +212,15 @@ public class RuntimeInit {
     
     private static class UncaughtHandler implements Thread.UncaughtExceptionHandler {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.269 -0400", hash_original_method = "B53C81BF9A0D31B4E959B1B00E82AE28", hash_generated_method = "B53C81BF9A0D31B4E959B1B00E82AE28")
-                public UncaughtHandler ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.590 -0400", hash_original_method = "DEBC568C3CCF1424A96EDBFCCD0328BF", hash_generated_method = "DEBC568C3CCF1424A96EDBFCCD0328BF")
+        public UncaughtHandler ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.270 -0400", hash_original_method = "498D7614C18F40B02B7387DE4641DDCF", hash_generated_method = "CEEDD02AE7393626C581464EB8E8D852")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.596 -0400", hash_original_method = "498D7614C18F40B02B7387DE4641DDCF", hash_generated_method = "A98996ADEDBCAA208467608BF438E4F2")
         public void uncaughtException(Thread t, Throwable e) {
-            dsTaint.addTaint(e.dsTaint);
-            dsTaint.addTaint(t.dsTaint);
             try 
             {
                 mCrashing = true;
@@ -235,6 +234,8 @@ public class RuntimeInit {
                 Process.killProcess(Process.myPid());
                 System.exit(10);
             } //End block
+            addTaint(t.getTaint());
+            addTaint(e.getTaint());
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
@@ -245,32 +246,33 @@ public class RuntimeInit {
 
     
     static class Arguments {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.596 -0400", hash_original_field = "5FB52C4DFFDBD9F9BAD0FDF89CA414E2", hash_generated_field = "54F1E4F701E6BC5080DD319C8D10B220")
+
         String startClass;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.596 -0400", hash_original_field = "CC8D290819A005A96D012B30D48D8B94", hash_generated_field = "711B2441164D898E55743AC3E8A55306")
+
         String[] startArgs;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.270 -0400", hash_original_method = "35BDC5101A4DE38616FDCE6EF4D8CA10", hash_generated_method = "7C3C468C8855B70D2E2F10F8CC7B8088")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         Arguments(String args[]) throws IllegalArgumentException {
-            dsTaint.addTaint(args);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.596 -0400", hash_original_method = "35BDC5101A4DE38616FDCE6EF4D8CA10", hash_generated_method = "93727DD36372CF1A291DAD9D71E1FF73")
+          Arguments(String args[]) throws IllegalArgumentException {
             parseArgs(args);
+            addTaint(args.getTaint());
             // ---------- Original Method ----------
             //parseArgs(args);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.270 -0400", hash_original_method = "8231389587D8A1396F36A075174F3D3F", hash_generated_method = "294CFBDC0BE35FBD72BB51C968F0794B")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.604 -0400", hash_original_method = "8231389587D8A1396F36A075174F3D3F", hash_generated_method = "1D5C631DA7D8A4907D79BED78CA7ACAF")
         private void parseArgs(String args[]) throws IllegalArgumentException {
-            dsTaint.addTaint(args);
             int curArg;
             curArg = 0;
             {
                 String arg;
                 arg = args[curArg];
                 {
-                    boolean var566DD555814D764ED9A29C42F8874316_875650150 = (arg.equals("--"));
+                    boolean var566DD555814D764ED9A29C42F8874316_2051967681 = (arg.equals("--"));
                     {
-                        boolean var8DF5AAC12FA4329A4CC6BF5AA3E9BEE4_451439068 = (!arg.startsWith("--"));
+                        boolean var8DF5AAC12FA4329A4CC6BF5AA3E9BEE4_1350557050 = (!arg.startsWith("--"));
                     } //End collapsed parenthetic
                 } //End collapsed parenthetic
             } //End block
@@ -304,10 +306,20 @@ public class RuntimeInit {
 
 
     
-    private final static String TAG = "AndroidRuntime";
-    private final static boolean DEBUG = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.604 -0400", hash_original_field = "F88265C21754A18C5BC383814994D78A", hash_generated_field = "5EE5B1AF8151F27122B430818DCB5757")
+
+    private static String TAG = "AndroidRuntime";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.604 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+
+    private static boolean DEBUG = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.604 -0400", hash_original_field = "84D10A1ED612E61DBF6880F6E3EE533A", hash_generated_field = "9FD51B35B9E2224AA107F59D57389A34")
+
     private static boolean initialized;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.604 -0400", hash_original_field = "777B24D90C777256AC6D770CED6B0E76", hash_generated_field = "254F062FB27979B6C2E631565CC9502B")
+
     private static IBinder mApplicationObject;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.604 -0400", hash_original_field = "2C716F2860097FF2151CEBE01C614E86", hash_generated_field = "7061173743FAA271B75796C94B51B8DD")
+
     private static volatile boolean mCrashing = false;
     static {
         android.ddm.DdmRegister.registerHandlers();

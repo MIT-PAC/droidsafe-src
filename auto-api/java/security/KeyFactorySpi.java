@@ -12,9 +12,10 @@ import java.security.spec.KeySpec;
 
 public abstract class KeyFactorySpi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.329 -0400", hash_original_method = "AF4BD510DBC14C57BFA28DAEDECC0ECB", hash_generated_method = "AF4BD510DBC14C57BFA28DAEDECC0ECB")
-        public KeyFactorySpi ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.971 -0400", hash_original_method = "54B4D82F193E9DD361521453DB006D9F", hash_generated_method = "54B4D82F193E9DD361521453DB006D9F")
+    public KeyFactorySpi ()
     {
+        //Synthesized constructor
     }
 
 

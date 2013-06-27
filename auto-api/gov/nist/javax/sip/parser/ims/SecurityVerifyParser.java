@@ -16,27 +16,25 @@ import gov.nist.javax.sip.header.ims.SecurityVerifyList;
 
 public class SecurityVerifyParser extends SecurityAgreeParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.794 -0400", hash_original_method = "BCFA55D46A541D95C3FC5F794766C9E2", hash_generated_method = "BD11BEFDE8DE28F3D1A1B25D7C5478C4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SecurityVerifyParser(String security) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.855 -0400", hash_original_method = "BCFA55D46A541D95C3FC5F794766C9E2", hash_generated_method = "337A1AF37D0033800B875D00B549A93B")
+    public  SecurityVerifyParser(String security) {
         super(security);
-        dsTaint.addTaint(security);
+        addTaint(security.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.794 -0400", hash_original_method = "DBB46518F45FFBB63E0CEF5174A1D8CA", hash_generated_method = "A3310783DB9CCEA9B86FDF30EB0BB636")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected SecurityVerifyParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.862 -0400", hash_original_method = "DBB46518F45FFBB63E0CEF5174A1D8CA", hash_generated_method = "54704F2AE7D7B1EB9D6B3709AD237588")
+    protected  SecurityVerifyParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.794 -0400", hash_original_method = "AF5E151367487D790A8CFB3D3D9DB14C", hash_generated_method = "8110F00B9A3135E8FBBB96EC74936BD8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.863 -0400", hash_original_method = "AF5E151367487D790A8CFB3D3D9DB14C", hash_generated_method = "327204076457FA80EBB1EEF46BD956B5")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1340142059 = null; //Variable for return #1
         dbg_enter("SecuriryVerify parse");
         try 
         {
@@ -45,12 +43,14 @@ public class SecurityVerifyParser extends SecurityAgreeParser {
             secVerify = new SecurityVerify();
             SecurityVerifyList secVerifyList;
             secVerifyList = (SecurityVerifyList) super.parse(secVerify);
+            varB4EAC82CA7396A68D541C85D26508E83_1340142059 = secVerifyList;
         } //End block
         finally 
         {
             dbg_leave("SecuriryVerify parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1340142059.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1340142059;
         // ---------- Original Method ----------
         //dbg_enter("SecuriryVerify parse");
         //try {

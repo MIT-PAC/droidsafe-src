@@ -13,9 +13,8 @@ import java.security.KeyStoreException;
 
 public abstract class TrustManagerFactorySpi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.120 -0400", hash_original_method = "A9501ACA551B0C72B8BE137F9D419E50", hash_generated_method = "A8B11A5AB68CA4B531481F488581B329")
-    @DSModeled(DSC.SAFE)
-    public TrustManagerFactorySpi() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.738 -0400", hash_original_method = "A9501ACA551B0C72B8BE137F9D419E50", hash_generated_method = "A8B11A5AB68CA4B531481F488581B329")
+    public  TrustManagerFactorySpi() {
         // ---------- Original Method ----------
     }
 

@@ -13,9 +13,10 @@ import java.util.concurrent.Executors;
 
 public class QueuedWork {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:38.544 -0400", hash_original_method = "8F8E40AC566D2FFCA7679DA62C466F71", hash_generated_method = "8F8E40AC566D2FFCA7679DA62C466F71")
-        public QueuedWork ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.272 -0400", hash_original_method = "94C2F41E1F3AD149B563D9E976EAD755", hash_generated_method = "94C2F41E1F3AD149B563D9E976EAD755")
+    public QueuedWork ()
     {
+        //Synthesized constructor
     }
 
 
@@ -52,8 +53,11 @@ public class QueuedWork {
     }
 
     
-    private static final ConcurrentLinkedQueue<Runnable> sPendingWorkFinishers =
-            new ConcurrentLinkedQueue<Runnable>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.297 -0400", hash_original_field = "1706E13519BFEA1A235A6A0B9DEDABA8", hash_generated_field = "85D5D5413BAD58F35FF9881BA8C0775A")
+
+    private static ConcurrentLinkedQueue<Runnable> sPendingWorkFinishers = new ConcurrentLinkedQueue<Runnable>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:52.298 -0400", hash_original_field = "16D70348D8388507803729D3BE713163", hash_generated_field = "48846E427360D3B755393A8B7AB28CDC")
+
     private static ExecutorService sSingleThreadExecutor = null;
 }
 

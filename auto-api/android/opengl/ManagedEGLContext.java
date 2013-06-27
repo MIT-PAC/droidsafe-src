@@ -18,12 +18,13 @@ import android.util.Log;
 import com.google.android.gles_jni.EGLImpl;
 
 public abstract class ManagedEGLContext {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.190 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "5F205B80EE2B67A11B019B523ECA191F")
+
     EGLContext mContext;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.305 -0400", hash_original_method = "9D266735F37ADE970716DE5C813A7490", hash_generated_method = "767E122B1A6AF139B793945643282773")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ManagedEGLContext(EGLContext context) {
-        dsTaint.addTaint(context.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.281 -0400", hash_original_method = "9D266735F37ADE970716DE5C813A7490", hash_generated_method = "80BFBBCB029C11F50A5526EEBE7A5BF6")
+    public  ManagedEGLContext(EGLContext context) {
+        mContext = context;
         {
             sActive.add(this);
         } //End block
@@ -35,17 +36,18 @@ public abstract class ManagedEGLContext {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.306 -0400", hash_original_method = "0BA5CAD8B17303B4C3A912EF0F9065A7", hash_generated_method = "7625AB1D754B02E35F44925BCAD262A7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.281 -0400", hash_original_method = "0BA5CAD8B17303B4C3A912EF0F9065A7", hash_generated_method = "07185F8BA98C70CA30466D7F11E726F2")
     public EGLContext getContext() {
-        return (EGLContext)dsTaint.getTaint();
+        EGLContext varB4EAC82CA7396A68D541C85D26508E83_1739108403 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1739108403 = mContext;
+        varB4EAC82CA7396A68D541C85D26508E83_1739108403.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1739108403;
         // ---------- Original Method ----------
         //return mContext;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.306 -0400", hash_original_method = "3A3C884C8DD72479D5B7016BF0489D57", hash_generated_method = "418519E6B0AAFC40765D5AFF890A67AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.282 -0400", hash_original_method = "3A3C884C8DD72479D5B7016BF0489D57", hash_generated_method = "418519E6B0AAFC40765D5AFF890A67AE")
     public void terminate() {
         execTerminate();
         // ---------- Original Method ----------
@@ -53,8 +55,7 @@ public abstract class ManagedEGLContext {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:53.306 -0400", hash_original_method = "B8E737E7A559452A0DBE946D6943CE60", hash_generated_method = "B6770F67CF9038CAE7126511421AF7E1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.282 -0400", hash_original_method = "B8E737E7A559452A0DBE946D6943CE60", hash_generated_method = "B6770F67CF9038CAE7126511421AF7E1")
      void execTerminate() {
         onTerminate(mContext);
         // ---------- Original Method ----------
@@ -95,7 +96,11 @@ public abstract class ManagedEGLContext {
     }
 
     
-    static final String TAG = "ManagedEGLContext";
-    static final ArrayList<ManagedEGLContext> sActive = new ArrayList<ManagedEGLContext>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.296 -0400", hash_original_field = "C32C7EFB226A1237656FB484619788F2", hash_generated_field = "D1B3C0753A96666CBF8CF74ECDCF5642")
+
+    static String TAG = "ManagedEGLContext";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.296 -0400", hash_original_field = "57EF06F27E8024F8C91B1EE5646F021E", hash_generated_field = "23C088857FB637810EBB47FDFA089C02")
+
+    static ArrayList<ManagedEGLContext> sActive = new ArrayList<ManagedEGLContext>();
 }
 

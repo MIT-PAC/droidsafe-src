@@ -17,18 +17,30 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.165 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "4FEA837943E73EF5CB83661843F1AD15")
+
     protected PhoneBase phone;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.165 -0400", hash_original_field = "2997832A50D1A4B04AAED3D387CB11EB", hash_generated_field = "A9FC3B8D9025A6D655B1A245F81835AF")
+
     protected AdnRecordCache adnCache;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.165 -0400", hash_original_field = "B89DEBA2CB26B1AC973763E3E152017B", hash_generated_field = "DAB8F4E90F4E3EAE5A2A9019275DAB3F")
+
     protected Object mLock = new Object();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.165 -0400", hash_original_field = "7E55978E096520E8CDAECF1333070CED", hash_generated_field = "E5B26C030F2ABDD85D0CB8A10D64DB7B")
+
     protected int recordSize[];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.165 -0400", hash_original_field = "260CA9DD8A4577FC00B7BD5810298076", hash_generated_field = "113121599E8140F8C4C329198A2D7722")
+
     protected boolean success;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.165 -0400", hash_original_field = "6E52C40BB8FC91FF39EE5C79B4211F67", hash_generated_field = "71F18D31BD5AF48450CA4612AD1865B0")
+
     protected List<AdnRecord> records;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.181 -0400", hash_original_field = "F240289ECF5C81105F1EF992E6E2ADFE", hash_generated_field = "C92ACE41E8B15D237F3FC3F4CE51566E")
+
     protected Handler mBaseHandler = new Handler() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.378 -0400", hash_original_method = "F8C0BA183015902A4341C34058945BDE", hash_generated_method = "691A0D538788D0BB08D9876609F9283B")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.180 -0400", hash_original_method = "F8C0BA183015902A4341C34058945BDE", hash_generated_method = "941FD1090CAF73E06F07DEB3BDEE7189")
         @Override
         public void handleMessage(Message msg) {
-            dsTaint.addTaint(msg.dsTaint);
             AsyncResult ar;
             //Begin case EVENT_GET_SIZE_DONE 
             ar = (AsyncResult) msg.obj;
@@ -70,19 +82,19 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
                 notifyPending(ar);
             } //End block
             //End case EVENT_LOAD_DONE 
+            addTaint(msg.getTaint());
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.380 -0400", hash_original_method = "AEA2E9D2067E99FB1331FC981CC14937", hash_generated_method = "32A72025DCD374AF1CDBD92E89DAD742")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.181 -0400", hash_original_method = "AEA2E9D2067E99FB1331FC981CC14937", hash_generated_method = "30964B2E056A124E578AD19D36FF206D")
         private void notifyPending(AsyncResult ar) {
-            dsTaint.addTaint(ar.dsTaint);
             AtomicBoolean status;
             status = (AtomicBoolean) ar.userObj;
             status.set(true);
             mLock.notifyAll();
+            addTaint(ar.getTaint());
             // ---------- Original Method ----------
             //if (ar.userObj == null) {
                 //return;
@@ -93,26 +105,23 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
         }
 
         
-}; //Transformed anonymous class
+};
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.381 -0400", hash_original_method = "A61AB5A9E61C78C524F0A299EDDA8B31", hash_generated_method = "2254754453A57523A33B77ACF458452C")
-    @DSModeled(DSC.SAFE)
-    public IccPhoneBookInterfaceManager(PhoneBase phone) {
-        dsTaint.addTaint(phone.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.185 -0400", hash_original_method = "A61AB5A9E61C78C524F0A299EDDA8B31", hash_generated_method = "F8239CE1F53CC35117D554BE23C34DE0")
+    public  IccPhoneBookInterfaceManager(PhoneBase phone) {
+        this.phone = phone;
         // ---------- Original Method ----------
         //this.phone = phone;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.381 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.185 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.381 -0400", hash_original_method = "96914FA697D4DDB9AE25582FAB4A6818", hash_generated_method = "1E7A9ED6D1CCD6DE353231DD77EAE9D8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.186 -0400", hash_original_method = "96914FA697D4DDB9AE25582FAB4A6818", hash_generated_method = "1E7A9ED6D1CCD6DE353231DD77EAE9D8")
     protected void publish() {
         ServiceManager.addService("simphonebook", this);
         // ---------- Original Method ----------
@@ -126,19 +135,12 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     protected abstract void loge(String msg);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.382 -0400", hash_original_method = "6BE84EAB1F25CDC10E8188E3A1C3A959", hash_generated_method = "631FDDB0E7243C344A029CC0208D2985")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.187 -0400", hash_original_method = "6BE84EAB1F25CDC10E8188E3A1C3A959", hash_generated_method = "D36D3E02CE7231405B2F4C870E3FE91A")
     public boolean updateAdnRecordsInEfBySearch(int efid,
             String oldTag, String oldPhoneNumber,
             String newTag, String newPhoneNumber, String pin2) {
-        dsTaint.addTaint(pin2);
-        dsTaint.addTaint(newTag);
-        dsTaint.addTaint(oldPhoneNumber);
-        dsTaint.addTaint(oldTag);
-        dsTaint.addTaint(newPhoneNumber);
-        dsTaint.addTaint(efid);
         {
-            boolean var9B9745B744DE229D86237C6E47057CAE_1149106451 = (phone.getContext().checkCallingOrSelfPermission(
+            boolean var9B9745B744DE229D86237C6E47057CAE_1552133557 = (phone.getContext().checkCallingOrSelfPermission(
                 android.Manifest.permission.WRITE_CONTACTS)
             != PackageManager.PERMISSION_GRANTED);
             {
@@ -164,23 +166,24 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             adnCache.updateAdnBySearch(efid, oldAdn, newAdn, pin2, response);
             waitForResult(status);
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(efid);
+        addTaint(oldTag.getTaint());
+        addTaint(oldPhoneNumber.getTaint());
+        addTaint(newTag.getTaint());
+        addTaint(newPhoneNumber.getTaint());
+        addTaint(pin2.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1488066413 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1488066413;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.382 -0400", hash_original_method = "102FC1C0583C00426ED85686CB9EA64E", hash_generated_method = "9B222AD45DEA2B2DF408CCC42F031604")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.188 -0400", hash_original_method = "102FC1C0583C00426ED85686CB9EA64E", hash_generated_method = "A2A2AA3606BC30D27416EBAFD765AF28")
     public boolean updateAdnRecordsInEfByIndex(int efid, String newTag,
             String newPhoneNumber, int index, String pin2) {
-        dsTaint.addTaint(index);
-        dsTaint.addTaint(pin2);
-        dsTaint.addTaint(newTag);
-        dsTaint.addTaint(newPhoneNumber);
-        dsTaint.addTaint(efid);
         {
-            boolean var7C20BC9080702E0128DD71ABE9A4ADDC_376753355 = (phone.getContext().checkCallingOrSelfPermission(
+            boolean var7C20BC9080702E0128DD71ABE9A4ADDC_2104464733 = (phone.getContext().checkCallingOrSelfPermission(
                 android.Manifest.permission.WRITE_CONTACTS)
                 != PackageManager.PERMISSION_GRANTED);
             {
@@ -203,7 +206,13 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             adnCache.updateAdnByIndex(efid, newAdn, index, pin2, response);
             waitForResult(status);
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(efid);
+        addTaint(newTag.getTaint());
+        addTaint(newPhoneNumber.getTaint());
+        addTaint(index);
+        addTaint(pin2.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1624800894 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1624800894;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -212,12 +221,11 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     public abstract int[] getAdnRecordsSize(int efid);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.383 -0400", hash_original_method = "2EC5B47F5C71460FB1C246E071649E17", hash_generated_method = "E0D9FE30A55AAE66021797B895AA86D5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.210 -0400", hash_original_method = "2EC5B47F5C71460FB1C246E071649E17", hash_generated_method = "536E41981EED7A5C57B4BB00E1A8EBE7")
     public List<AdnRecord> getAdnRecordsInEf(int efid) {
-        dsTaint.addTaint(efid);
+        List<AdnRecord> varB4EAC82CA7396A68D541C85D26508E83_724676288 = null; //Variable for return #1
         {
-            boolean var539E4FD5A70571EEC200A34F44B8BBBA_397563045 = (phone.getContext().checkCallingOrSelfPermission(
+            boolean var539E4FD5A70571EEC200A34F44B8BBBA_241936505 = (phone.getContext().checkCallingOrSelfPermission(
                 android.Manifest.permission.READ_CONTACTS)
                 != PackageManager.PERMISSION_GRANTED);
             {
@@ -236,7 +244,10 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             adnCache.requestLoadAllAdnLike(efid, adnCache.extensionEfForEf(efid), response);
             waitForResult(status);
         } //End block
-        return (List<AdnRecord>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_724676288 = records;
+        addTaint(efid);
+        varB4EAC82CA7396A68D541C85D26508E83_724676288.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_724676288;
         // ---------- Original Method ----------
         //if (phone.getContext().checkCallingOrSelfPermission(
                 //android.Manifest.permission.READ_CONTACTS)
@@ -257,12 +268,11 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.383 -0400", hash_original_method = "323B98E2749A47EA83AB3530A004F85D", hash_generated_method = "32480C754D38054A47D096F258C2418F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.210 -0400", hash_original_method = "323B98E2749A47EA83AB3530A004F85D", hash_generated_method = "666127651F6F91B7BE2BE177822C2B1D")
     protected void checkThread() {
         {
             {
-                boolean var939C0019ED0A3EFF0AFB1602184EBB94_1355620681 = (mBaseHandler.getLooper().equals(Looper.myLooper()));
+                boolean var939C0019ED0A3EFF0AFB1602184EBB94_2117475138 = (mBaseHandler.getLooper().equals(Looper.myLooper()));
                 {
                     loge("query() called on the main UI thread!");
                     if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
@@ -281,12 +291,10 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.383 -0400", hash_original_method = "FD540EF7FFA0769933308F8586A1F0A4", hash_generated_method = "5892361A3DD12E3B844AFF565F827B11")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.296 -0400", hash_original_method = "FD540EF7FFA0769933308F8586A1F0A4", hash_generated_method = "AD9C203F02C7D6BC0767F50886AC2828")
     protected void waitForResult(AtomicBoolean status) {
-        dsTaint.addTaint(status.dsTaint);
         {
-            boolean var54E916846D120E4C0E15EB524D5AB066_12029177 = (!status.get());
+            boolean var54E916846D120E4C0E15EB524D5AB066_1460979379 = (!status.get());
             {
                 try 
                 {
@@ -298,6 +306,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
                 } //End block
             } //End block
         } //End collapsed parenthetic
+        addTaint(status.getTaint());
         // ---------- Original Method ----------
         //while (!status.get()) {
             //try {
@@ -309,16 +318,16 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:11.383 -0400", hash_original_method = "6710BA71BBE2AF73325E69DE756B39B5", hash_generated_method = "8CC5C5E6AAE92336A9200665BC07D0E0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.296 -0400", hash_original_method = "6710BA71BBE2AF73325E69DE756B39B5", hash_generated_method = "ED7EF49AE036BBE9D5B8C12202928113")
     private int updateEfForIccType(int efid) {
-        dsTaint.addTaint(efid);
         {
             {
-                boolean var13648D229DF6DF3D9FC1C8923B7156DF_688161658 = (phone.getIccCard().isApplicationOnIcc(IccCardApplication.AppType.APPTYPE_USIM));
+                boolean var13648D229DF6DF3D9FC1C8923B7156DF_1376324417 = (phone.getIccCard().isApplicationOnIcc(IccCardApplication.AppType.APPTYPE_USIM));
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(efid);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_543492143 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_543492143;
         // ---------- Original Method ----------
         //if (efid == IccConstants.EF_ADN) {
             //if (phone.getIccCard().isApplicationOnIcc(IccCardApplication.AppType.APPTYPE_USIM)) {
@@ -329,10 +338,20 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
     }
 
     
-    protected static final boolean DBG = true;
-    protected static final boolean ALLOW_SIM_OP_IN_UI_THREAD = false;
-    protected static final int EVENT_GET_SIZE_DONE = 1;
-    protected static final int EVENT_LOAD_DONE = 2;
-    protected static final int EVENT_UPDATE_DONE = 3;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.296 -0400", hash_original_field = "A4622F7F72162611C8E075EE443BC26E", hash_generated_field = "D751668EF011EB030075908D0A6ACFD9")
+
+    protected static boolean DBG = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.296 -0400", hash_original_field = "D649A9D800FCFD8F33135A965A502597", hash_generated_field = "FA1D71E4244EC597340436BF479EB1D2")
+
+    protected static boolean ALLOW_SIM_OP_IN_UI_THREAD = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.296 -0400", hash_original_field = "70904D17185E41D9EFB2AA2CAD6BE368", hash_generated_field = "526B6F1B800490ABBB8B1A3089D0E50B")
+
+    protected static int EVENT_GET_SIZE_DONE = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.296 -0400", hash_original_field = "9B2F039A6EFDFA6B33692A78EEFEE489", hash_generated_field = "A7765961752A627813BD8D2C5D10EFDD")
+
+    protected static int EVENT_LOAD_DONE = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:15.296 -0400", hash_original_field = "E4F7B0BFE9DAA3D3D6C2A4388043DBB8", hash_generated_field = "584022641802CC9F2BDEEFE5D7435C92")
+
+    protected static int EVENT_UPDATE_DONE = 3;
 }
 

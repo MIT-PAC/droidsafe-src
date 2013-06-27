@@ -11,9 +11,10 @@ import android.text.Layout.Directions;
 
 class AndroidBidi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:55.949 -0400", hash_original_method = "6C39468C8DD7CF0E7D5BCCF74A037B2D", hash_generated_method = "6C39468C8DD7CF0E7D5BCCF74A037B2D")
-        public AndroidBidi ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:36.872 -0400", hash_original_method = "67801A817F22277FC821400294E4A632", hash_generated_method = "67801A817F22277FC821400294E4A632")
+    public AndroidBidi ()
     {
+        //Synthesized constructor
     }
 
 

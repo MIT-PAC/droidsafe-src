@@ -15,36 +15,61 @@ import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 
 public class GenericSignatureParser {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.938 -0400", hash_original_field = "2CD56E5B83C33F80B2D25820C51596A0", hash_generated_field = "3A123DBAC2896D22118ACC4A0DBF2815")
+
     public ListOfTypes exceptionTypes;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.938 -0400", hash_original_field = "11427856321C6E9F5321CA879704C8FE", hash_generated_field = "755AC25C18AC88DD7B505952EB00E2FC")
+
     public ListOfTypes parameterTypes;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.938 -0400", hash_original_field = "898BB6A86E0DA433332CBC4F55D3E967", hash_generated_field = "96CAE8588B8CB92AE83279FEB36F4121")
+
     public TypeVariable[] formalTypeParameters;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.938 -0400", hash_original_field = "9CD6843F4536590CD86F933708C7371E", hash_generated_field = "8FCAB3423DB3533C393A75EA17B6B1D8")
+
     public Type returnType;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.939 -0400", hash_original_field = "833750AC635FCC57DC33ECAFE365F9A7", hash_generated_field = "7BF0B57018D92E424F704D1E59B55203")
+
     public Type fieldType;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.939 -0400", hash_original_field = "2E8612447B369F7E0D27C66E9273CB06", hash_generated_field = "0A3DD769080BC24A9D258283D7D7DC30")
+
     public ListOfTypes interfaceTypes;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.939 -0400", hash_original_field = "2DC4A623293420174B22464D58B6A831", hash_generated_field = "2B6C083B05F286DFD7F93749F54AF5DA")
+
     public Type superclassType;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.939 -0400", hash_original_field = "4A527F83A3A4CA7E1D70ADB26A35B72E", hash_generated_field = "34AC02C91B7B47224132768354947AB0")
+
     public ClassLoader loader;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.940 -0400", hash_original_field = "AA84DC6545C7C550F5338E00F04FD372", hash_generated_field = "4BEC95563D8D0B015ABDE90FC2F1C6AF")
+
     GenericDeclaration genericDecl;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.940 -0400", hash_original_field = "97BFF26855A8BFA63E05D5477E794B24", hash_generated_field = "4D622F1F51FE2777B0E8D81C997E113C")
+
     char symbol;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.940 -0400", hash_original_field = "F393F3F5E496869A15BC72CBFD56F541", hash_generated_field = "67D18ED1400CD458B308847E018D0637")
+
     String identifier;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.940 -0400", hash_original_field = "2E51B1AB42E8A4A67F3445174BE5191B", hash_generated_field = "5CB70878869318B356B4B3C25335C11E")
+
     private boolean eof;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.940 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "AF37951EAE101F357ACAF48FB7E85D88")
+
     char[] buffer;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.940 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "5780BC7BCF265A6425A5A90F1AD9B24E")
+
     int pos;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.809 -0400", hash_original_method = "B4AF29B80F8E14619B64C65F02963718", hash_generated_method = "B68D0C387F4540F0D10AC94FCCF7A2A2")
-    @DSModeled(DSC.BAN)
-    public GenericSignatureParser(ClassLoader loader) {
-        dsTaint.addTaint(loader.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.949 -0400", hash_original_method = "B4AF29B80F8E14619B64C65F02963718", hash_generated_method = "C049BAD034A575B3E9230CA1104DE603")
+    public  GenericSignatureParser(ClassLoader loader) {
+        this.loader = loader;
         // ---------- Original Method ----------
         //this.loader = loader;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.809 -0400", hash_original_method = "6F9101760876DEB9422AEF7944CF1BF2", hash_generated_method = "94D85AB9D6DF7D1DB94FA1307B65F320")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.952 -0400", hash_original_method = "6F9101760876DEB9422AEF7944CF1BF2", hash_generated_method = "7B98AFA204D8E0471A99B93A78803DD0")
      void setInput(GenericDeclaration genericDecl, String input) {
-        dsTaint.addTaint(input);
-        dsTaint.addTaint(genericDecl.dsTaint);
         {
+            this.genericDecl = genericDecl;
             this.buffer = input.toCharArray();
             this.eof = false;
             scanSymbol();
@@ -65,12 +90,9 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.810 -0400", hash_original_method = "408B9941E0DDFF19B1C3AECDF838B6FF", hash_generated_method = "2BCF983B8A901F8E63656BA4AA1FE8B3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.957 -0400", hash_original_method = "408B9941E0DDFF19B1C3AECDF838B6FF", hash_generated_method = "4D664429977D8A6CA4313FB72A5EE2C0")
     public void parseForClass(GenericDeclaration genericDecl,
             String signature) {
-        dsTaint.addTaint(genericDecl.dsTaint);
-        dsTaint.addTaint(signature);
         setInput(genericDecl, signature);
         {
             parseClassSignature();
@@ -89,6 +111,8 @@ public class GenericSignatureParser {
                 this.interfaceTypes = ListOfTypes.EMPTY;
             } //End block
         } //End block
+        addTaint(genericDecl.getTaint());
+        addTaint(signature.getTaint());
         // ---------- Original Method ----------
         //setInput(genericDecl, signature);
         //if (!eof) {
@@ -108,13 +132,9 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.810 -0400", hash_original_method = "15DFE7F1F24F7739B7BEC1E53A5655D9", hash_generated_method = "6B5A63A8697FB5F9A45F57BB3D15F7D3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.967 -0400", hash_original_method = "15DFE7F1F24F7739B7BEC1E53A5655D9", hash_generated_method = "4B3DF99849521C382E97C9315C5A6857")
     public void parseForMethod(GenericDeclaration genericDecl,
             String signature, Class<?>[] rawExceptionTypes) {
-        dsTaint.addTaint(rawExceptionTypes[0].dsTaint);
-        dsTaint.addTaint(genericDecl.dsTaint);
-        dsTaint.addTaint(signature);
         setInput(genericDecl, signature);
         {
             parseMethodTypeSignature(rawExceptionTypes);
@@ -135,6 +155,9 @@ public class GenericSignatureParser {
                 this.returnType = void.class;
             } //End block
         } //End block
+        addTaint(genericDecl.getTaint());
+        addTaint(signature.getTaint());
+        addTaint(rawExceptionTypes[0].getTaint());
         // ---------- Original Method ----------
         //setInput(genericDecl, signature);
         //if (!eof) {
@@ -156,13 +179,9 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.811 -0400", hash_original_method = "0C9CA8BB038974E4A40BF19F7EB72426", hash_generated_method = "6B237DC3CD5D7B0A8079F447648A9B03")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.972 -0400", hash_original_method = "0C9CA8BB038974E4A40BF19F7EB72426", hash_generated_method = "4B406DE06323DE28A856CE573F9C15A7")
     public void parseForConstructor(GenericDeclaration genericDecl,
             String signature, Class<?>[] rawExceptionTypes) {
-        dsTaint.addTaint(rawExceptionTypes[0].dsTaint);
-        dsTaint.addTaint(genericDecl.dsTaint);
-        dsTaint.addTaint(signature);
         setInput(genericDecl, signature);
         {
             parseMethodTypeSignature(rawExceptionTypes);
@@ -181,6 +200,9 @@ public class GenericSignatureParser {
                 this.exceptionTypes = ListOfTypes.EMPTY;
             } //End block
         } //End block
+        addTaint(genericDecl.getTaint());
+        addTaint(signature.getTaint());
+        addTaint(rawExceptionTypes[0].getTaint());
         // ---------- Original Method ----------
         //setInput(genericDecl, signature);
         //if (!eof) {
@@ -200,16 +222,15 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.811 -0400", hash_original_method = "F697D7E02D0C8DEEF4B0854E9491CC15", hash_generated_method = "3DC3916E7F85DD61AC9EAF31C15C0F45")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.973 -0400", hash_original_method = "F697D7E02D0C8DEEF4B0854E9491CC15", hash_generated_method = "68F3BE0EC37F1E3A9FAF7D7E3911B166")
     public void parseForField(GenericDeclaration genericDecl,
             String signature) {
-        dsTaint.addTaint(genericDecl.dsTaint);
-        dsTaint.addTaint(signature);
         setInput(genericDecl, signature);
         {
             this.fieldType = parseFieldTypeSignature();
         } //End block
+        addTaint(genericDecl.getTaint());
+        addTaint(signature.getTaint());
         // ---------- Original Method ----------
         //setInput(genericDecl, signature);
         //if (!eof) {
@@ -218,8 +239,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.811 -0400", hash_original_method = "2A6822DB636AAE3DC282A54EED7D514D", hash_generated_method = "6AD39E41A42F3007E3245DCC8D631ADD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.974 -0400", hash_original_method = "2A6822DB636AAE3DC282A54EED7D514D", hash_generated_method = "6AD39E41A42F3007E3245DCC8D631ADD")
      void parseClassSignature() {
         parseOptFormalTypeParameters();
         this.superclassType = parseClassTypeSignature();
@@ -237,8 +257,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.811 -0400", hash_original_method = "F25135739D6C61926B7C7AB20920C0C3", hash_generated_method = "FC8572DC0B7CE0E4159E608A5A30484D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.974 -0400", hash_original_method = "F25135739D6C61926B7C7AB20920C0C3", hash_generated_method = "FC8572DC0B7CE0E4159E608A5A30484D")
      void parseOptFormalTypeParameters() {
         ListOfVariables typeParams;
         typeParams = new ListOfVariables();
@@ -265,9 +284,9 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.812 -0400", hash_original_method = "8E4B54F231B830B261D22AAC458F74D2", hash_generated_method = "79049915EE58EE838F540BC908E9367F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.981 -0400", hash_original_method = "8E4B54F231B830B261D22AAC458F74D2", hash_generated_method = "18772702BAD7E5177BEC46E64F5C7BC3")
      ImplForVariable<GenericDeclaration> parseFormalTypeParameter() {
+        ImplForVariable<GenericDeclaration> varB4EAC82CA7396A68D541C85D26508E83_1889432112 = null; //Variable for return #1
         scanIdentifier();
         String name;
         name = identifier.intern();
@@ -281,8 +300,9 @@ public class GenericSignatureParser {
             scanSymbol();
             bounds.add(parseFieldTypeSignature());
         } //End block
-        ImplForVariable<GenericDeclaration> var3194557A4F60DB80FA624EBDEA93957D_597422728 = (new ImplForVariable<GenericDeclaration>(genericDecl, name, bounds));
-        return (ImplForVariable<GenericDeclaration>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1889432112 = new ImplForVariable<GenericDeclaration>(genericDecl, name, bounds);
+        varB4EAC82CA7396A68D541C85D26508E83_1889432112.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1889432112;
         // ---------- Original Method ----------
         //scanIdentifier();
         //String name = identifier.intern();
@@ -299,25 +319,40 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.812 -0400", hash_original_method = "39858CB077F5F270CB13BCD8F5E588C4", hash_generated_method = "5AD4F9824DDAD0F23A8974CC6E3BCD2B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.988 -0400", hash_original_method = "39858CB077F5F270CB13BCD8F5E588C4", hash_generated_method = "C1CEEBC8493A43812B62D009371D2A46")
      Type parseFieldTypeSignature() {
+        Type varB4EAC82CA7396A68D541C85D26508E83_1902491994 = null; //Variable for return #1
+        Type varB4EAC82CA7396A68D541C85D26508E83_353134127 = null; //Variable for return #2
+        Type varB4EAC82CA7396A68D541C85D26508E83_513737469 = null; //Variable for return #3
         //Begin case 'L' 
-        Type var5460A2FAE8640DF5F08CAD751C28BF41_870236702 = (parseClassTypeSignature());
+        varB4EAC82CA7396A68D541C85D26508E83_1902491994 = parseClassTypeSignature();
         //End case 'L' 
         //Begin case '[' 
         scanSymbol();
         //End case '[' 
         //Begin case '[' 
-        Type varE0105E0B7469BF82F3833ADD7D72B480_197774045 = (new ImplForArray(parseTypeSignature()));
+        varB4EAC82CA7396A68D541C85D26508E83_353134127 = new ImplForArray(parseTypeSignature());
         //End case '[' 
         //Begin case 'T' 
-        Type var783AD106C3F71B5D9E2DF55ADC7F6053_896562063 = (parseTypeVariableSignature());
+        varB4EAC82CA7396A68D541C85D26508E83_513737469 = parseTypeVariableSignature();
         //End case 'T' 
         //Begin case default 
         if (DroidSafeAndroidRuntime.control) throw new GenericSignatureFormatError();
         //End case default 
-        return (Type)dsTaint.getTaint();
+        Type varA7E53CE21691AB073D9660D615818899_255791043; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_255791043 = varB4EAC82CA7396A68D541C85D26508E83_1902491994;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_255791043 = varB4EAC82CA7396A68D541C85D26508E83_353134127;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_255791043 = varB4EAC82CA7396A68D541C85D26508E83_513737469;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_255791043.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_255791043;
         // ---------- Original Method ----------
         //switch (symbol) {
         //case 'L':
@@ -333,9 +368,9 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.812 -0400", hash_original_method = "0940B5693D1CE1CEA33652B7603676B3", hash_generated_method = "74FCC752A8619C367EAAFACA2D04033F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.996 -0400", hash_original_method = "0940B5693D1CE1CEA33652B7603676B3", hash_generated_method = "9A184780D4F71D58754B469DE99BC172")
      Type parseClassTypeSignature() {
+        Type varB4EAC82CA7396A68D541C85D26508E83_483552147 = null; //Variable for return #1
         expect('L');
         StringBuilder qualIdent;
         qualIdent = new StringBuilder();
@@ -361,15 +396,17 @@ public class GenericSignatureParser {
                     loader);
         } //End block
         expect(';');
-        return (Type)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_483552147 = type;
+        varB4EAC82CA7396A68D541C85D26508E83_483552147.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_483552147;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.812 -0400", hash_original_method = "FCA6C6C42F8D0470CBF5F70C4C8E2247", hash_generated_method = "8F3FFD1C25FB45B3BE1602BC51877E13")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.005 -0400", hash_original_method = "FCA6C6C42F8D0470CBF5F70C4C8E2247", hash_generated_method = "FCFC6E0765B205D3C303D8AEC3F8BC77")
      ListOfTypes parseOptTypeArguments() {
+        ListOfTypes varB4EAC82CA7396A68D541C85D26508E83_1793787153 = null; //Variable for return #1
         ListOfTypes typeArgs;
         typeArgs = new ListOfTypes(8);
         {
@@ -380,7 +417,9 @@ public class GenericSignatureParser {
             } //End block
             expect('>');
         } //End block
-        return (ListOfTypes)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1793787153 = typeArgs;
+        varB4EAC82CA7396A68D541C85D26508E83_1793787153.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1793787153;
         // ---------- Original Method ----------
         //ListOfTypes typeArgs = new ListOfTypes(8);
         //if (symbol == '<') {
@@ -395,9 +434,12 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.813 -0400", hash_original_method = "C611A5720E520CD6B6248914D1F9FF4D", hash_generated_method = "04A8959ED7A0E5FD7643AEE866EDECFE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.006 -0400", hash_original_method = "C611A5720E520CD6B6248914D1F9FF4D", hash_generated_method = "17C1D346BA4A5A2E383D85F3FE5EC030")
      Type parseTypeArgument() {
+        Type varB4EAC82CA7396A68D541C85D26508E83_692164653 = null; //Variable for return #1
+        Type varB4EAC82CA7396A68D541C85D26508E83_651423742 = null; //Variable for return #2
+        Type varB4EAC82CA7396A68D541C85D26508E83_882471716 = null; //Variable for return #3
+        Type varB4EAC82CA7396A68D541C85D26508E83_1559202423 = null; //Variable for return #4
         ListOfTypes extendsBound;
         extendsBound = new ListOfTypes(1);
         ListOfTypes superBound;
@@ -405,23 +447,39 @@ public class GenericSignatureParser {
         {
             scanSymbol();
             extendsBound.add(Object.class);
-            Type var87EF2698D1B001F25D7A0B7A38EB02F8_784529415 = (new ImplForWildcard(extendsBound, superBound));
+            varB4EAC82CA7396A68D541C85D26508E83_692164653 = new ImplForWildcard(extendsBound, superBound);
         } //End block
         {
             scanSymbol();
             extendsBound.add(parseFieldTypeSignature());
-            Type var87EF2698D1B001F25D7A0B7A38EB02F8_765948739 = (new ImplForWildcard(extendsBound, superBound));
+            varB4EAC82CA7396A68D541C85D26508E83_651423742 = new ImplForWildcard(extendsBound, superBound);
         } //End block
         {
             scanSymbol();
             superBound.add(parseFieldTypeSignature());
             extendsBound.add(Object.class);
-            Type var87EF2698D1B001F25D7A0B7A38EB02F8_1344826983 = (new ImplForWildcard(extendsBound, superBound));
+            varB4EAC82CA7396A68D541C85D26508E83_882471716 = new ImplForWildcard(extendsBound, superBound);
         } //End block
         {
-            Type var9BB984CA430AD56F579C91DF8CC58D02_2073837359 = (parseFieldTypeSignature());
+            varB4EAC82CA7396A68D541C85D26508E83_1559202423 = parseFieldTypeSignature();
         } //End block
-        return (Type)dsTaint.getTaint();
+        Type varA7E53CE21691AB073D9660D615818899_1403126883; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1403126883 = varB4EAC82CA7396A68D541C85D26508E83_692164653;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1403126883 = varB4EAC82CA7396A68D541C85D26508E83_651423742;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_1403126883 = varB4EAC82CA7396A68D541C85D26508E83_882471716;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1403126883 = varB4EAC82CA7396A68D541C85D26508E83_1559202423;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1403126883.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1403126883;
         // ---------- Original Method ----------
         //ListOfTypes extendsBound = new ListOfTypes(1);
         //ListOfTypes superBound = new ListOfTypes(1);
@@ -447,14 +505,15 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.813 -0400", hash_original_method = "FF6DECA5851C272F523D7639C2D071BC", hash_generated_method = "73AF1B6376815B51B10EA89AC04476BB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.010 -0400", hash_original_method = "FF6DECA5851C272F523D7639C2D071BC", hash_generated_method = "2F9B09C0665690EB40582F4C5C65798B")
      ImplForVariable<GenericDeclaration> parseTypeVariableSignature() {
+        ImplForVariable<GenericDeclaration> varB4EAC82CA7396A68D541C85D26508E83_1481079153 = null; //Variable for return #1
         expect('T');
         scanIdentifier();
         expect(';');
-        ImplForVariable<GenericDeclaration> varA8EC0715DCBF47B2D5D489E65A8E56FB_555177984 = (new ImplForVariable<GenericDeclaration>(genericDecl, identifier));
-        return (ImplForVariable<GenericDeclaration>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1481079153 = new ImplForVariable<GenericDeclaration>(genericDecl, identifier);
+        varB4EAC82CA7396A68D541C85D26508E83_1481079153.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1481079153;
         // ---------- Original Method ----------
         //expect('T');
         //scanIdentifier();
@@ -463,37 +522,100 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.813 -0400", hash_original_method = "ABCBB21DD03AAC76512AB0248A5CE39A", hash_generated_method = "5058AFEF106D16859C42C7ABC564F597")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.012 -0400", hash_original_method = "ABCBB21DD03AAC76512AB0248A5CE39A", hash_generated_method = "509CF9417EC8181490B0F8725685157F")
      Type parseTypeSignature() {
+        Type varB4EAC82CA7396A68D541C85D26508E83_151410952 = null; //Variable for return #1
+        Type varB4EAC82CA7396A68D541C85D26508E83_1615805214 = null; //Variable for return #2
+        Type varB4EAC82CA7396A68D541C85D26508E83_587960182 = null; //Variable for return #3
+        Type varB4EAC82CA7396A68D541C85D26508E83_672350183 = null; //Variable for return #4
+        Type varB4EAC82CA7396A68D541C85D26508E83_376072154 = null; //Variable for return #5
+        Type varB4EAC82CA7396A68D541C85D26508E83_1953079427 = null; //Variable for return #6
+        Type varB4EAC82CA7396A68D541C85D26508E83_1530296649 = null; //Variable for return #7
+        Type varB4EAC82CA7396A68D541C85D26508E83_1559452551 = null; //Variable for return #8
+        Type varB4EAC82CA7396A68D541C85D26508E83_1375432639 = null; //Variable for return #9
         //Begin case 'B' 
         scanSymbol();
+        //End case 'B' 
+        //Begin case 'B' 
+        varB4EAC82CA7396A68D541C85D26508E83_151410952 = byte.class;
         //End case 'B' 
         //Begin case 'C' 
         scanSymbol();
         //End case 'C' 
+        //Begin case 'C' 
+        varB4EAC82CA7396A68D541C85D26508E83_1615805214 = char.class;
+        //End case 'C' 
         //Begin case 'D' 
         scanSymbol();
+        //End case 'D' 
+        //Begin case 'D' 
+        varB4EAC82CA7396A68D541C85D26508E83_587960182 = double.class;
         //End case 'D' 
         //Begin case 'F' 
         scanSymbol();
         //End case 'F' 
+        //Begin case 'F' 
+        varB4EAC82CA7396A68D541C85D26508E83_672350183 = float.class;
+        //End case 'F' 
         //Begin case 'I' 
         scanSymbol();
+        //End case 'I' 
+        //Begin case 'I' 
+        varB4EAC82CA7396A68D541C85D26508E83_376072154 = int.class;
         //End case 'I' 
         //Begin case 'J' 
         scanSymbol();
         //End case 'J' 
+        //Begin case 'J' 
+        varB4EAC82CA7396A68D541C85D26508E83_1953079427 = long.class;
+        //End case 'J' 
         //Begin case 'S' 
         scanSymbol();
+        //End case 'S' 
+        //Begin case 'S' 
+        varB4EAC82CA7396A68D541C85D26508E83_1530296649 = short.class;
         //End case 'S' 
         //Begin case 'Z' 
         scanSymbol();
         //End case 'Z' 
+        //Begin case 'Z' 
+        varB4EAC82CA7396A68D541C85D26508E83_1559452551 = boolean.class;
+        //End case 'Z' 
         //Begin case default 
-        Type var92DBC4FA4E2487BA403973D096E12584_184367688 = (parseFieldTypeSignature());
+        varB4EAC82CA7396A68D541C85D26508E83_1375432639 = parseFieldTypeSignature();
         //End case default 
-        return (Type)dsTaint.getTaint();
+        Type varA7E53CE21691AB073D9660D615818899_2136738066; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_151410952;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_1615805214;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_587960182;
+                break;
+            case 4: //Assign result for return ordinal #4
+                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_672350183;
+                break;
+            case 5: //Assign result for return ordinal #5
+                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_376072154;
+                break;
+            case 6: //Assign result for return ordinal #6
+                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_1953079427;
+                break;
+            case 7: //Assign result for return ordinal #7
+                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_1530296649;
+                break;
+            case 8: //Assign result for return ordinal #8
+                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_1559452551;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_1375432639;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_2136738066.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2136738066;
         // ---------- Original Method ----------
         //switch (symbol) {
         //case 'B': scanSymbol(); return byte.class;
@@ -510,10 +632,8 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.814 -0400", hash_original_method = "BD4178EAA9E41C4057CACEBF28047848", hash_generated_method = "E6804DD3832DBEAAA50412B0D66CF500")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.014 -0400", hash_original_method = "BD4178EAA9E41C4057CACEBF28047848", hash_generated_method = "D2940C586D8ECAB409C65CAD07A93EAE")
      void parseMethodTypeSignature(Class<?>[] rawExceptionTypes) {
-        dsTaint.addTaint(rawExceptionTypes[0].dsTaint);
         parseOptFormalTypeParameters();
         parameterTypes = new ListOfTypes(16);
         expect('(');
@@ -545,24 +665,35 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.814 -0400", hash_original_method = "6FEAF434B1E5FC2FC9EAA724A7A39FCB", hash_generated_method = "E588A8396DBE537DF31011ADDFB4233E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.014 -0400", hash_original_method = "6FEAF434B1E5FC2FC9EAA724A7A39FCB", hash_generated_method = "CB696D48BC9F229EAD795CE718E7E5D1")
      Type parseReturnType() {
+        Type varB4EAC82CA7396A68D541C85D26508E83_1170118375 = null; //Variable for return #1
+        Type varB4EAC82CA7396A68D541C85D26508E83_437351726 = null; //Variable for return #2
         {
-            Type varA139ADE5D63D4A5EA488BE81839B440A_394791317 = (parseTypeSignature());
+            varB4EAC82CA7396A68D541C85D26508E83_1170118375 = parseTypeSignature();
         } //End block
         {
             scanSymbol();
+            varB4EAC82CA7396A68D541C85D26508E83_437351726 = void.class;
         } //End block
-        return (Type)dsTaint.getTaint();
+        Type varA7E53CE21691AB073D9660D615818899_410355648; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_410355648 = varB4EAC82CA7396A68D541C85D26508E83_1170118375;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_410355648 = varB4EAC82CA7396A68D541C85D26508E83_437351726;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_410355648.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_410355648;
         // ---------- Original Method ----------
         //if (symbol != 'V') { return parseTypeSignature(); }
         //else { scanSymbol(); return void.class; }
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.814 -0400", hash_original_method = "CAE4999AD72CF442B6BBF401B7699A36", hash_generated_method = "2AEB0226C7D192BA1030997411AB9788")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.019 -0400", hash_original_method = "CAE4999AD72CF442B6BBF401B7699A36", hash_generated_method = "2AEB0226C7D192BA1030997411AB9788")
      void scanSymbol() {
         {
             {
@@ -591,16 +722,15 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.815 -0400", hash_original_method = "D25C52D6AA7AD670E052B9729E548EBD", hash_generated_method = "CA42F1EEBDA534E592C531B8A746F671")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.020 -0400", hash_original_method = "D25C52D6AA7AD670E052B9729E548EBD", hash_generated_method = "6B1C782BE814EC3F9F505678FA0E48FD")
      void expect(char c) {
-        dsTaint.addTaint(c);
         {
             scanSymbol();
         } //End block
         {
             if (DroidSafeAndroidRuntime.control) throw new GenericSignatureFormatError();
         } //End block
+        addTaint(c);
         // ---------- Original Method ----------
         //if (symbol == c) {
             //scanSymbol();
@@ -610,11 +740,11 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.815 -0400", hash_original_method = "1CE8B25C92A2D6D9FB5D5E3D923D48F0", hash_generated_method = "AC5F9F5ACD01EE87E6EFCF6DBC29F410")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.020 -0400", hash_original_method = "1CE8B25C92A2D6D9FB5D5E3D923D48F0", hash_generated_method = "69693E0C61CF69E3F4852D44B27266C5")
      boolean isStopSymbol(char ch) {
-        dsTaint.addTaint(ch);
-        return dsTaint.getTaintBoolean();
+        addTaint(ch);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_591981921 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_591981921;
         // ---------- Original Method ----------
         //switch (ch) {
         //case ':':
@@ -628,21 +758,20 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.815 -0400", hash_original_method = "A47433FA08CE7DFA194FC642B799E216", hash_generated_method = "F2B939163B60E6B1C0E4523AFFC90DA6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.021 -0400", hash_original_method = "A47433FA08CE7DFA194FC642B799E216", hash_generated_method = "5BD5731933E48E6E26DBC4C16B2C9821")
      void scanIdentifier() {
         {
             StringBuilder identBuf;
             identBuf = new StringBuilder(32);
             {
-                boolean varBA8951A438FB95E4147857CD77D7FDCF_284834498 = (!isStopSymbol(symbol));
+                boolean varBA8951A438FB95E4147857CD77D7FDCF_1214940649 = (!isStopSymbol(symbol));
                 {
                     identBuf.append(symbol);
                     {
                         char ch;
                         ch = buffer[pos];
                         {
-                            boolean varC7ECC067547E5D886884C9CD83B3361C_1692233383 = ((ch >= 'a') && (ch <= 'z') || (ch >= 'A') && (ch <= 'Z')
+                            boolean varC7ECC067547E5D886884C9CD83B3361C_361762293 = ((ch >= 'a') && (ch <= 'z') || (ch >= 'A') && (ch <= 'Z')
                             || !isStopSymbol(ch));
                             {
                                 identBuf.append(buffer[pos]);

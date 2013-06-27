@@ -13,27 +13,25 @@ import java.text.ParseException;
 
 public class UnsupportedParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.694 -0400", hash_original_method = "A2BE521086BBB92362B9FD64733842A2", hash_generated_method = "62E9D4FF7F05BDBEA9E5659423070D30")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public UnsupportedParser(String unsupported) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.373 -0400", hash_original_method = "A2BE521086BBB92362B9FD64733842A2", hash_generated_method = "7809126EFAC73A571FF3B7A48A899ADF")
+    public  UnsupportedParser(String unsupported) {
         super(unsupported);
-        dsTaint.addTaint(unsupported);
+        addTaint(unsupported.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.694 -0400", hash_original_method = "FB5DFA63EA36D3A5606EA09CE2E82C0B", hash_generated_method = "57C62D2C6DEB4583B9BA4FF010775DC1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected UnsupportedParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.377 -0400", hash_original_method = "FB5DFA63EA36D3A5606EA09CE2E82C0B", hash_generated_method = "8674C2FC274DA68E9AAEFD11180FC307")
+    protected  UnsupportedParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.695 -0400", hash_original_method = "9F68B71E39A8D368C1910EB63F18B506", hash_generated_method = "FBCE94D7B53BF86E1EF468BCF37F979C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.379 -0400", hash_original_method = "9F68B71E39A8D368C1910EB63F18B506", hash_generated_method = "BAA0F1528DCE5499D1609A057944CFFE")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_387465967 = null; //Variable for return #1
         UnsupportedList unsupportedList;
         unsupportedList = new UnsupportedList();
         dbg_enter("UnsupportedParser.parse");
@@ -41,7 +39,7 @@ public class UnsupportedParser extends HeaderParser {
         {
             headerName(TokenTypes.UNSUPPORTED);
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_1888887736 = (lexer.lookAhead(0) != '\n');
+                boolean varA38820C66B6BCE71087D920E2767FF09_1974152014 = (lexer.lookAhead(0) != '\n');
                 {
                     this.lexer.SPorHT();
                     Unsupported unsupported;
@@ -54,7 +52,7 @@ public class UnsupportedParser extends HeaderParser {
                     this.lexer.SPorHT();
                     unsupportedList.add(unsupported);
                     {
-                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_307090723 = (lexer.lookAhead(0) == ',');
+                        boolean var7DC6EF7D2962860F171D1CEF6887AFF5_1217207778 = (lexer.lookAhead(0) == ',');
                         {
                             this.lexer.match(',');
                             this.lexer.SPorHT();
@@ -73,7 +71,9 @@ public class UnsupportedParser extends HeaderParser {
         {
             dbg_leave("UnsupportedParser.parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_387465967 = unsupportedList;
+        varB4EAC82CA7396A68D541C85D26508E83_387465967.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_387465967;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

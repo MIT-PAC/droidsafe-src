@@ -10,33 +10,32 @@ import java.util.Iterator;
 import java.text.ParseException;
 
 public final class AllowEvents extends SIPHeader implements javax.sip.header.AllowEventsHeader {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.419 -0400", hash_original_field = "2F264034C73ACBD6BAAE70DD7EDB3D3F", hash_generated_field = "8B4AE3944FE26E1E3D2F161694AF8E90")
+
     protected String eventType;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.663 -0400", hash_original_method = "B300CC10915D88E488A895EA20EE2A09", hash_generated_method = "60A08C0FBE41C8160995AE7F013B9128")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AllowEvents() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.419 -0400", hash_original_method = "B300CC10915D88E488A895EA20EE2A09", hash_generated_method = "60A08C0FBE41C8160995AE7F013B9128")
+    public  AllowEvents() {
         super(ALLOW_EVENTS);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.664 -0400", hash_original_method = "5D2656FB66C7C3040E5BEE12ACA7E341", hash_generated_method = "AE38046FD39C6A1B8605557CE226E428")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AllowEvents(String m) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.419 -0400", hash_original_method = "5D2656FB66C7C3040E5BEE12ACA7E341", hash_generated_method = "614CF3514F02380A9D78B1E9692E01B2")
+    public  AllowEvents(String m) {
         super(ALLOW_EVENTS);
-        dsTaint.addTaint(m);
+        eventType = m;
         // ---------- Original Method ----------
         //eventType = m;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.664 -0400", hash_original_method = "A10AD710FF1C0BA35C48E4F204BD5CD1", hash_generated_method = "2513D4F15881EB394662AD8B656BA20E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.427 -0400", hash_original_method = "A10AD710FF1C0BA35C48E4F204BD5CD1", hash_generated_method = "3718623EBCAF4982DC07A5C12B677F8B")
     public void setEventType(String eventType) throws ParseException {
-        dsTaint.addTaint(eventType);
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                 "JAIN-SIP Exception,"
                     + "AllowEvents, setEventType(), the eventType parameter is null");
+        this.eventType = eventType;
         // ---------- Original Method ----------
         //if (eventType == null)
             //throw new NullPointerException(
@@ -46,24 +45,30 @@ public final class AllowEvents extends SIPHeader implements javax.sip.header.All
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.664 -0400", hash_original_method = "801AF3F6658A2A453A4D4DA9830DAF46", hash_generated_method = "C98A0BA88560DFB15A24DD3ACA4BE028")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.427 -0400", hash_original_method = "801AF3F6658A2A453A4D4DA9830DAF46", hash_generated_method = "30D3416EBA32D8EE15768B7B30F6951A")
     public String getEventType() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2054062490 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2054062490 = eventType;
+        varB4EAC82CA7396A68D541C85D26508E83_2054062490.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2054062490;
         // ---------- Original Method ----------
         //return eventType;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:20.664 -0400", hash_original_method = "895FBB9B6BA00626F6F635DDC47F48B7", hash_generated_method = "9E39547B832B10EB62BDDCC2A3735190")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.427 -0400", hash_original_method = "895FBB9B6BA00626F6F635DDC47F48B7", hash_generated_method = "0532CFCA8C9DFA5BF27688935CE467D5")
     protected String encodeBody() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_185220026 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_185220026 = eventType;
+        varB4EAC82CA7396A68D541C85D26508E83_185220026.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_185220026;
         // ---------- Original Method ----------
         //return eventType;
     }
 
     
-    private static final long serialVersionUID = 617962431813193114L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.428 -0400", hash_original_field = "D26554E56E6998210017FC87B96E228A", hash_generated_field = "EB9A29BDC49ED5A6522BAE1787587472")
+
+    private static long serialVersionUID = 617962431813193114L;
 }
 

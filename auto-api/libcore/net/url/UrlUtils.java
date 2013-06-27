@@ -11,9 +11,8 @@ import java.util.Locale;
 
 public final class UrlUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.670 -0400", hash_original_method = "F053AECC4082C3B5C824758EB45DBA0C", hash_generated_method = "C53F924364698517C893492550830BCA")
-    @DSModeled(DSC.SAFE)
-    private UrlUtils() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.270 -0400", hash_original_method = "F053AECC4082C3B5C824758EB45DBA0C", hash_generated_method = "C53F924364698517C893492550830BCA")
+    private  UrlUtils() {
         // ---------- Original Method ----------
     }
 

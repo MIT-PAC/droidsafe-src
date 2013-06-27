@@ -11,27 +11,29 @@ import gov.nist.javax.sip.header.SIPHeaderList;
 
 public class PrivacyList extends SIPHeaderList<Privacy> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.639 -0400", hash_original_method = "45F84AF986B8E1D18781B003920274BC", hash_generated_method = "1112F36E1D63D8A6DB0A3433FC13B944")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PrivacyList() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.426 -0400", hash_original_method = "45F84AF986B8E1D18781B003920274BC", hash_generated_method = "1112F36E1D63D8A6DB0A3433FC13B944")
+    public  PrivacyList() {
         super(Privacy.class, PrivacyHeader.NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.640 -0400", hash_original_method = "09C54AFDDBF31F8225613CB28A3AFCA3", hash_generated_method = "4084497F18BE2AA167B39E8E73ED0B21")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.427 -0400", hash_original_method = "09C54AFDDBF31F8225613CB28A3AFCA3", hash_generated_method = "0710966A2DF7BE72083FAB4DAE3B10FC")
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_1101367776 = null; //Variable for return #1
         PrivacyList retval;
         retval = new PrivacyList();
-        Object varF7AD6DD8E2D0A0D86D7DC6EABC62B125_407179523 = (retval.clonehlist(this.hlist));
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1101367776 = retval.clonehlist(this.hlist);
+        varB4EAC82CA7396A68D541C85D26508E83_1101367776.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1101367776;
         // ---------- Original Method ----------
         //PrivacyList retval = new PrivacyList();
         //return retval.clonehlist(this.hlist);
     }
 
     
-    private static final long serialVersionUID = 1798720509806307461L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.427 -0400", hash_original_field = "C0CA76C219951888324430E8E7118357", hash_generated_field = "C55D295070CABE986E91959B76F3BB53")
+
+    private static long serialVersionUID = 1798720509806307461L;
 }
 

@@ -24,16 +24,21 @@ import android.util.EventLog;
 import com.android.internal.telephony.gsm.GsmDataConnectionTracker;
 
 public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.177 -0400", hash_original_field = "B5F20DF0028332D17F33E3BF40040A23", hash_generated_field = "879F4AF456AD7D7A9BB5520F0BAD6F62")
+
     CDMALTEPhone mCdmaLtePhone;
-    private ServiceState  mLteSS;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.177 -0400", hash_original_field = "422A4AE190845160AC9AC0B750445158", hash_generated_field = "CCE1FE524FD9420E4F8B07A4C62521E0")
+
+    private ServiceState mLteSS;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.177 -0400", hash_original_field = "8F9DBE53F0380067CC21F8BCAF3A13AB", hash_generated_field = "33DD1D28F358EBB2DB6B0718CE46393E")
+
     private boolean mNeedToRegForSimLoaded = true;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.516 -0400", hash_original_method = "47593605762760CA14FD5EED8D416F47", hash_generated_method = "120D2620EC673327380F747E6972D98A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CdmaLteServiceStateTracker(CDMALTEPhone phone) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.184 -0400", hash_original_method = "47593605762760CA14FD5EED8D416F47", hash_generated_method = "11DA1E1C518A4BE5A894F01418433984")
+    public  CdmaLteServiceStateTracker(CDMALTEPhone phone) {
         super(phone);
-        dsTaint.addTaint(phone.dsTaint);
         cm.registerForSIMReady(this, EVENT_SIM_READY, null);
+        mCdmaLtePhone = phone;
         mLteSS = new ServiceState();
         log("CdmaLteServiceStateTracker Constructors");
         // ---------- Original Method ----------
@@ -44,8 +49,7 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.516 -0400", hash_original_method = "E8B96682BA406A5B61C3BDB5E6938EBA", hash_generated_method = "C9E65A83CD4B2E304C5D2B05ECCE7357")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.184 -0400", hash_original_method = "E8B96682BA406A5B61C3BDB5E6938EBA", hash_generated_method = "C9E65A83CD4B2E304C5D2B05ECCE7357")
     @Override
     public void dispose() {
         cm.unregisterForSIMReady(this);
@@ -56,11 +60,9 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.518 -0400", hash_original_method = "D5AC4DEC3B42E743000565D518230B6D", hash_generated_method = "04F7EC646AD6518E13C7D0E0D58D6674")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.188 -0400", hash_original_method = "D5AC4DEC3B42E743000565D518230B6D", hash_generated_method = "DFD1BC25E6D629A75BC081684C8630F0")
     @Override
     public void handleMessage(Message msg) {
-        dsTaint.addTaint(msg.dsTaint);
         AsyncResult ar;
         int[] ints;
         String[] strings;
@@ -100,7 +102,7 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
         //End case EVENT_SIM_RECORDS_LOADED 
         //Begin case EVENT_SIM_RECORDS_LOADED 
         {
-            boolean var9D34BD6BCEA8823A6E7690D862CEC2C3_1499368306 = ((sim != null) && sim.isProvisioned());
+            boolean var9D34BD6BCEA8823A6E7690D862CEC2C3_1275101829 = ((sim != null) && sim.isProvisioned());
             {
                 mMdn = sim.getMdn();
                 mMin = sim.getMin();
@@ -118,28 +120,25 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
         //Begin case default 
         super.handleMessage(msg);
         //End case default 
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.519 -0400", hash_original_method = "F7DAEBCFC7E85FA3AD1692EAA757E22A", hash_generated_method = "35F1B7B55C195478C93E750CB3E32075")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.189 -0400", hash_original_method = "F7DAEBCFC7E85FA3AD1692EAA757E22A", hash_generated_method = "FA3060E6DE889A075C4DD548B09B8298")
     @Override
     protected void setCdmaTechnology(int radioTechnology) {
-        dsTaint.addTaint(radioTechnology);
         newSS.setRadioTechnology(radioTechnology);
+        addTaint(radioTechnology);
         // ---------- Original Method ----------
         //newSS.setRadioTechnology(radioTechnology);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.521 -0400", hash_original_method = "DA636A49D82699419B2FBA1150F1CBEF", hash_generated_method = "70B25FD4FB870917F427C81CFC97A752")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.190 -0400", hash_original_method = "DA636A49D82699419B2FBA1150F1CBEF", hash_generated_method = "8BBF98FE819A9FCFF6E614248E638BE5")
     @Override
     protected void handlePollStateResultMessage(int what, AsyncResult ar) {
-        dsTaint.addTaint(what);
-        dsTaint.addTaint(ar.dsTaint);
         {
             log("handlePollStateResultMessage: EVENT_POLL_STATE_GPRS");
             String states[];
@@ -168,31 +167,29 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
         {
             super.handlePollStateResultMessage(what, ar);
         } //End block
+        addTaint(what);
+        addTaint(ar.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.522 -0400", hash_original_method = "1D3F6C65DB762B56FF7135205F7AED1D", hash_generated_method = "8AE901A925E2CCBCE4B512603BBA39AF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.203 -0400", hash_original_method = "10E4D98F7F6A52C0BD2C384AE2F36499", hash_generated_method = "FE4E9808A03FFE71C90B9C094045E9B6")
     @Override
     protected void setSignalStrengthDefaultValues() {
-        mSignalStrength = new SignalStrength(99, -1, -1, -1, -1, -1, -1,
-                -1, -1, -1, SignalStrength.INVALID_SNR, -1, false);
+        mSignalStrength = new SignalStrength(99, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, false);
         // ---------- Original Method ----------
-        //mSignalStrength = new SignalStrength(99, -1, -1, -1, -1, -1, -1,
-                //-1, -1, -1, SignalStrength.INVALID_SNR, -1, false);
+        //mSignalStrength = new SignalStrength(99, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.523 -0400", hash_original_method = "B583B233911BF73B0CF330862869CA80", hash_generated_method = "6965B02E4485AD281C0D39CB865F1054")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.215 -0400", hash_original_method = "B583B233911BF73B0CF330862869CA80", hash_generated_method = "B1C9888C4925C0D9DD212C3A27BC818C")
     @Override
     protected void pollState() {
         pollingContext = new int[1];
         pollingContext[0] = 0;
         {
-            Object varA9E12DC9226BD6A76EE86EBF3C63475C_1098881813 = (cm.getRadioState());
+            Object varA9E12DC9226BD6A76EE86EBF3C63475C_356453128 = (cm.getRadioState());
             //Begin case RADIO_UNAVAILABLE 
             newSS.setStateOutOfService();
             //End case RADIO_UNAVAILABLE 
@@ -252,12 +249,11 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.525 -0400", hash_original_method = "8C8D67873F7E3A192C41A2E8D9515387", hash_generated_method = "DDE9FD6BCDBAF1DC2EB8806EE9785F37")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.241 -0400", hash_original_method = "8C8D67873F7E3A192C41A2E8D9515387", hash_generated_method = "E756C8339A242CCFE62D577213C7F4E9")
     @Override
     protected void pollStateDone() {
         {
-            boolean var85740719351D67237F92A95FD3ABA8BA_1272498423 = (mLteSS.getState() == ServiceState.STATE_IN_SERVICE);
+            boolean var85740719351D67237F92A95FD3ABA8BA_1530690761 = (mLteSS.getState() == ServiceState.STATE_IN_SERVICE);
             {
                 newNetworkType = mLteSS.getRadioTechnology();
                 mNewDataConnectionState = mLteSS.getState();
@@ -272,7 +268,7 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varF8098F829C01844ABD87B8B4A0FC9D4A_37392578 = (newSS.getState() == ServiceState.STATE_OUT_OF_SERVICE);
+            boolean varF8098F829C01844ABD87B8B4A0FC9D4A_1395866637 = (newSS.getState() == ServiceState.STATE_OUT_OF_SERVICE);
             {
                 int networkMode;
                 networkMode = android.provider.Settings.Secure.getInt(phone.getContext()
@@ -341,7 +337,7 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
                 + " hasLostMultiApnSupport=" + hasLostMultiApnSupport);
         } //End block
         {
-            boolean varFBC93C93BF6E0681C0D933A82F5AF355_1677825819 = (ss.getState() != newSS.getState()
+            boolean varFBC93C93BF6E0681C0D933A82F5AF355_1115490703 = (ss.getState() != newSS.getState()
                 || mDataConnectionState != mNewDataConnectionState);
             {
                 EventLog.writeEvent(EventLogTags.CDMA_SERVICE_STATE_CHANGE, ss.getState(),
@@ -380,11 +376,11 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
         } //End block
         {
             {
-                boolean var72283BC64009A3DEA26FA3DDFEC94971_569674847 = (phone.isEriFileLoaded());
+                boolean var72283BC64009A3DEA26FA3DDFEC94971_971210985 = (phone.isEriFileLoaded());
                 {
                     String eriText;
                     {
-                        boolean var0782B3C53497F07CDAB38A690B362545_1599506219 = (ss.getState() == ServiceState.STATE_IN_SERVICE);
+                        boolean var0782B3C53497F07CDAB38A690B362545_1062406835 = (ss.getState() == ServiceState.STATE_IN_SERVICE);
                         {
                             eriText = phone.getCdmaEriText();
                         } //End block
@@ -397,14 +393,14 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var12C9A31E4BF3A482FBF5E32FA9877B39_649764979 = (cm.getSimState().isSIMReady());
+                boolean var12C9A31E4BF3A482FBF5E32FA9877B39_567283830 = (cm.getSimState().isSIMReady());
                 {
                     boolean showSpn;
                     showSpn = ((CdmaLteUiccRecords)phone.mIccRecords).getCsimSpnDisplayCondition();
                     int iconIndex;
                     iconIndex = ss.getCdmaEriIconIndex();
                     {
-                        boolean var3546F4D93F8FF71613BC20AED7ABF5DE_512945403 = (showSpn && (iconIndex == EriInfo.ROAMING_INDICATOR_OFF) &&
+                        boolean var3546F4D93F8FF71613BC20AED7ABF5DE_1351197609 = (showSpn && (iconIndex == EriInfo.ROAMING_INDICATOR_OFF) &&
                     isInHomeSidNid(ss.getSystemId(), ss.getNetworkId()));
                         {
                             ss.setOperatorAlphaLong(phone.mIccRecords.getServiceProviderName());
@@ -472,12 +468,10 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.527 -0400", hash_original_method = "8D30BBD98AE13644E5394C7E27460D08", hash_generated_method = "72ED88178F14AD9DF63806B4D3570F08")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.244 -0400", hash_original_method = "0ED1F162D4C144EF609907545C4226C8", hash_generated_method = "CAA199D7405441665CE8704999033F24")
     @Override
     protected void onSignalStrengthResult(AsyncResult ar) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(ar.dsTaint);
         SignalStrength oldSignalStrength;
         oldSignalStrength = mSignalStrength;
         {
@@ -486,16 +480,11 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
         {
             int[] ints;
             ints = (int[])ar.result;
-            int lteRssi;
-            lteRssi = -1;
-            int lteRsrp;
+            int lteCqi, lteRsrp;
+            lteCqi = 99;
             lteRsrp = -1;
-            int lteRsrq;
-            lteRsrq = -1;
-            int lteRssnr;
-            lteRssnr = SignalStrength.INVALID_SNR;
-            int lteCqi;
-            lteCqi = -1;
+            int lteRssi;
+            lteRssi = 99;
             int offset;
             offset = 2;
             int cdmaDbm;
@@ -514,11 +503,9 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
             evdoSnr = ints[offset + 4];
             evdoSnr = -1;
             {
-                lteRssi = ints[offset+5];
-                lteRsrp = ints[offset+6];
-                lteRsrq = ints[offset+7];
-                lteRssnr = ints[offset+8];
-                lteCqi = ints[offset+9];
+                lteRssi = (ints[offset + 5] >= 0) ? ints[offset + 5] : 99;
+                lteRsrp = (ints[offset + 6] < 0) ? ints[offset + 6] : -1;
+                lteCqi = (ints[offset + 7] >= 0) ? ints[offset + 7] : 99;
             } //End block
             {
                 mSignalStrength = new SignalStrength(99, -1, cdmaDbm, cdmaEcio, evdoRssi, evdoEcio,
@@ -526,7 +513,7 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
             } //End block
             {
                 mSignalStrength = new SignalStrength(99, -1, cdmaDbm, cdmaEcio, evdoRssi, evdoEcio,
-                        evdoSnr, lteRssi, lteRsrp, lteRsrq, lteRssnr, lteCqi, true);
+                        evdoSnr, lteRssi, lteRsrp, -1, -1, lteCqi, true);
             } //End block
         } //End block
         try 
@@ -538,34 +525,35 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
             loge("onSignalStrengthResult() Phone already destroyed: " + ex
                     + "SignalStrength not notified");
         } //End block
+        addTaint(ar.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.527 -0400", hash_original_method = "020897B26D59971A2D338DF9E45E01F9", hash_generated_method = "EE2A2B72EEE425983518F98478C5BB15")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.244 -0400", hash_original_method = "020897B26D59971A2D338DF9E45E01F9", hash_generated_method = "1FAFBA328EF503478EC289AA68E5FD2C")
     @Override
     public boolean isConcurrentVoiceAndDataAllowed() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_586444425 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_586444425;
         // ---------- Original Method ----------
         //return (networkType == ServiceState.RADIO_TECHNOLOGY_LTE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.527 -0400", hash_original_method = "CF88CF61D429A57A2B7C32EDDBA3E37B", hash_generated_method = "9E15F33F003545436AAA71F6D935CE17")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.258 -0400", hash_original_method = "CF88CF61D429A57A2B7C32EDDBA3E37B", hash_generated_method = "CDF0213BC33C5B961AE1E8F5C6D66D9F")
     private boolean isInHomeSidNid(int sid, int nid) {
-        dsTaint.addTaint(sid);
-        dsTaint.addTaint(nid);
         {
-            boolean var8DFAF15637FBBDA85495DB9127D9BC24_628463319 = (isSidsAllZeros());
+            boolean var8DFAF15637FBBDA85495DB9127D9BC24_1916391972 = (isSidsAllZeros());
         } //End collapsed parenthetic
         {
             int i;
             i = 0;
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(sid);
+        addTaint(nid);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_811218324 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_811218324;
         // ---------- Original Method ----------
         //if (isSidsAllZeros()) return true;
         //if (mHomeSystemId.length != mHomeNetworkId.length) return true;
@@ -581,22 +569,20 @@ public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.527 -0400", hash_original_method = "3CA2CE2F434AACC848657E54771E66A4", hash_generated_method = "ADF8B0045CF03CFB6A862DBC3FDFFA7D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.260 -0400", hash_original_method = "3CA2CE2F434AACC848657E54771E66A4", hash_generated_method = "BCEA2E1D20D832C750B189C41E37C215")
     @Override
     protected void log(String s) {
-        dsTaint.addTaint(s);
         Log.d(LOG_TAG, "[CdmaLteSST] " + s);
+        addTaint(s.getTaint());
         // ---------- Original Method ----------
         //Log.d(LOG_TAG, "[CdmaLteSST] " + s);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:13.528 -0400", hash_original_method = "CE31FBC457ABF05FA318FEB73DCA10E2", hash_generated_method = "046D9473D323F5CA8846AEB7EF855922")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.261 -0400", hash_original_method = "CE31FBC457ABF05FA318FEB73DCA10E2", hash_generated_method = "9CAD79F5F2E82C48926C38487323D3F6")
     @Override
     protected void loge(String s) {
-        dsTaint.addTaint(s);
+        addTaint(s.getTaint());
         // ---------- Original Method ----------
         //Log.e(LOG_TAG, "[CdmaLteSST] " + s);
     }

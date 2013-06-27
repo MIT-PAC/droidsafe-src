@@ -14,20 +14,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Menu implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.842 -0400", hash_original_field = "691D502CFD0E0626CD3B058E5682AD1C", hash_generated_field = "476ABB1F52C3A12124EEACDB58E8E189")
+
     public List<Item> items;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "195FA8DF6FC9B5CFB062F802C5E71427", hash_generated_field = "5A5E763DDA809E466D258B0BEF7B3CF1")
+
     public List<TextAttribute> titleAttrs;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "A44325CD80CA8B3708910F324AD665E0", hash_generated_field = "CB58C9A657B05B968317B537DCD37634")
+
     public PresentationType presentationType;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "D5D3DB1765287EEF77D7927CC956F50A", hash_generated_field = "8A90568C6E332919F11E323BA0057155")
+
     public String title;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "D794263776054546DBA5B1ED2CC754D6", hash_generated_field = "098A35A0443838BE0B42D9CC5F647B03")
+
     public Bitmap titleIcon;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "8FE94B374176FBB177C44C8192C32021", hash_generated_field = "3A0377EDF9C782CB4D4BFE39FE615D31")
+
     public int defaultItem;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "96A3428F0F548A8F00D3CEC1EBAE0C1E", hash_generated_field = "C7573512761AE15B4F2E1EC9799C356F")
+
     public boolean softKeyPreferred;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "95C3E9257A5998B6C3758B36FBDB8DD8", hash_generated_field = "B089F8BA7DD3EF733FF9A54CE2F03291")
+
     public boolean helpAvailable;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "2C96220247CE6637DCD0E5D1096649B1", hash_generated_field = "0FAF24D8129D04267CF76644994A3196")
+
     public boolean titleIconSelfExplanatory;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "2F1407D5232300DC3271B60FBC5FDA47", hash_generated_field = "6B371AD473F156CDACB463C287BE9F73")
+
     public boolean itemsIconSelfExplanatory;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.947 -0400", hash_original_method = "2E99B961E06FFBDF1C6EFBD0F84C03B4", hash_generated_method = "A863469DD6195991058FA32E29A64698")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Menu() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.858 -0400", hash_original_method = "2E99B961E06FFBDF1C6EFBD0F84C03B4", hash_generated_method = "A863469DD6195991058FA32E29A64698")
+    public  Menu() {
         items = new ArrayList<Item>();
         title = null;
         titleAttrs = null;
@@ -52,10 +71,8 @@ public class Menu implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.948 -0400", hash_original_method = "170B02CF9C000CCCFFA0390811062CB3", hash_generated_method = "676093082E6378D21CF35B944CE8E0EF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private Menu(Parcel in) {
-        dsTaint.addTaint(in.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.859 -0400", hash_original_method = "170B02CF9C000CCCFFA0390811062CB3", hash_generated_method = "50313345F584A8E864EA9EBE382D46C8")
+    private  Menu(Parcel in) {
         title = in.readString();
         titleIcon = in.readParcelable(null);
         items = new ArrayList<Item>();
@@ -94,20 +111,17 @@ public class Menu implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.948 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.859 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2F1C24ECE524FEECA88DD8D0584AD4E0")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1723103193 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1723103193;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.949 -0400", hash_original_method = "B96ACF1C9395307298AAD1BDB077B52A", hash_generated_method = "BD79AFC181155D428CC6987B0D97E237")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.860 -0400", hash_original_method = "B96ACF1C9395307298AAD1BDB077B52A", hash_generated_method = "E16B872D374B2475F9F46792C5123DEF")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeString(title);
         dest.writeParcelable(titleIcon, flags);
         int size;
@@ -126,6 +140,8 @@ public class Menu implements Parcelable {
         dest.writeInt(titleIconSelfExplanatory ? 1 : 0);
         dest.writeInt(itemsIconSelfExplanatory ? 1 : 0);
         dest.writeInt(presentationType.ordinal());
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeString(title);
         //dest.writeParcelable(titleIcon, flags);
@@ -143,29 +159,16 @@ public class Menu implements Parcelable {
     }
 
     
-    public static final Parcelable.Creator<Menu> CREATOR = new Parcelable.Creator<Menu>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.949 -0400", hash_original_method = "B445093B170171BD842D7C958982DF35", hash_generated_method = "618226FE8309EF9631ED7E041E0D538A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.860 -0400", hash_original_field = "F280FAF502E3EC830C212739EA877C0E", hash_generated_field = "55BC0B4641874E81A5D070AF9C451A82")
+
+    public static final Parcelable.Creator<Menu> CREATOR = new Parcelable.Creator<Menu>() {
         public Menu createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            Menu var75D803CF59F99C0D8F9BBFFF020D4D84_1877515692 = (new Menu(in));
-            return (Menu)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new Menu(in);
+            return new Menu(in);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:12.949 -0400", hash_original_method = "F22AD3E8083B6C85A43FA20A727DB120", hash_generated_method = "B80B4A9F74F392BAAA8121E84F76D1D1")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public Menu[] newArray(int size) {
-            dsTaint.addTaint(size);
-            Menu[] varC1CAD0198B3B9C6AB5F5AEDCADCB0908_759671543 = (new Menu[size]);
-            return (Menu[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new Menu[size];
+            return new Menu[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

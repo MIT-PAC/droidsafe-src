@@ -14,9 +14,10 @@ import java.nio.charset.CodingErrorAction;
 
 public final class NativeConverter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:38.285 -0400", hash_original_method = "ED1FBA2D4F3FEAFD342188643402D746", hash_generated_method = "ED1FBA2D4F3FEAFD342188643402D746")
-        public NativeConverter ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.076 -0400", hash_original_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D", hash_generated_method = "B3DE170E5D5FA99ECB84F9E7CDF4AF7D")
+    public NativeConverter ()
     {
+        //Synthesized constructor
     }
 
 
@@ -50,8 +51,7 @@ public final class NativeConverter {
 
     
         public static byte[] getSubstitutionBytes(long converterHandle) {
-        byte[] retVal = {DSUtils.UNKNOWN_BYTE};
-        return retVal;
+        return {DSUtils.UNKNOWN_BYTE};
     }
 
     
@@ -86,8 +86,7 @@ public final class NativeConverter {
 
     
         public static String[] getAvailableCharsetNames() {
-        String[] retVal = {DSUtils.UNKNOWN_STRING};
-        return retVal;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     

@@ -13,14 +13,15 @@ import java.util.Arrays;
 import javax.crypto.SecretKey;
 
 public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.340 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "AEF19C0A7530E140588DCBA91FF66D28")
+
     private byte[] key;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.340 -0400", hash_original_field = "ED469618898D75B149E5C7C4B6A1C415", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
+
     private String algorithm;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.002 -0400", hash_original_method = "46BCBD91E8C2018C32B65BFBDD14DAE3", hash_generated_method = "C3BA9150AA0A8295FCA81CB84D3234C0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SecretKeySpec(byte[] key, String algorithm) {
-        dsTaint.addTaint(key[0]);
-        dsTaint.addTaint(algorithm);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.341 -0400", hash_original_method = "46BCBD91E8C2018C32B65BFBDD14DAE3", hash_generated_method = "CE5D8B8B2979A20CDBFDF1415C912153")
+    public  SecretKeySpec(byte[] key, String algorithm) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("key == null");
         } //End block
@@ -30,6 +31,7 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("algorithm == null");
         } //End block
+        this.algorithm = algorithm;
         this.key = new byte[key.length];
         System.arraycopy(key, 0, this.key, 0, key.length);
         // ---------- Original Method ----------
@@ -48,13 +50,8 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.002 -0400", hash_original_method = "97539A44FE944982691962B490B5A049", hash_generated_method = "B593AADC54346733100B5251840E3090")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SecretKeySpec(byte[] key, int offset, int len, String algorithm) {
-        dsTaint.addTaint(len);
-        dsTaint.addTaint(offset);
-        dsTaint.addTaint(key[0]);
-        dsTaint.addTaint(algorithm);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.341 -0400", hash_original_method = "97539A44FE944982691962B490B5A049", hash_generated_method = "1959FB083C106E1B89967E761A1FFBD9")
+    public  SecretKeySpec(byte[] key, int offset, int len, String algorithm) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("key == null");
         } //End block
@@ -70,8 +67,10 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("algorithm == null");
         } //End block
+        this.algorithm = algorithm;
         this.key = new byte[len];
         System.arraycopy(key, offset, this.key, 0, len);
+        addTaint(offset);
         // ---------- Original Method ----------
         //if (key == null) {
             //throw new IllegalArgumentException("key == null");
@@ -94,33 +93,35 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.002 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "AB6B64DEEAE2006CFA3127C5F18A75FB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.342 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "B295FE29D79A38EA3970B3005DA68F88")
     public String getAlgorithm() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2028052841 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2028052841 = algorithm;
+        varB4EAC82CA7396A68D541C85D26508E83_2028052841.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2028052841;
         // ---------- Original Method ----------
         //return algorithm;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.002 -0400", hash_original_method = "DA06499CB28B740B0D3C21B02311BB46", hash_generated_method = "FCCF36A7A55AD29DDCD0302FFB6B0974")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.342 -0400", hash_original_method = "DA06499CB28B740B0D3C21B02311BB46", hash_generated_method = "F7DB0086E82988E3DC388634444F39CB")
     public String getFormat() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1202723711 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1202723711 = "RAW";
+        varB4EAC82CA7396A68D541C85D26508E83_1202723711.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1202723711;
         // ---------- Original Method ----------
         //return "RAW";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.002 -0400", hash_original_method = "3F6C1397C7B2518265F6653D66E9AC87", hash_generated_method = "2F78319AE1588AC0E7041B5AF8F52631")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.356 -0400", hash_original_method = "3F6C1397C7B2518265F6653D66E9AC87", hash_generated_method = "C51635BDE85E434B92D24B930FE950EF")
     public byte[] getEncoded() {
         byte[] result;
         result = new byte[key.length];
         System.arraycopy(key, 0, result, 0, key.length);
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_366329589 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_366329589;
         // ---------- Original Method ----------
         //byte[] result = new byte[key.length];
         //System.arraycopy(key, 0, result, 0, key.length);
@@ -128,8 +129,7 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.004 -0400", hash_original_method = "561BEB6A8D834A34E4D5A2503144263D", hash_generated_method = "92F1A6B7F9BD4AEB0E1BA25003DE8720")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.382 -0400", hash_original_method = "561BEB6A8D834A34E4D5A2503144263D", hash_generated_method = "B8E65F3729F2832A1908ED4B9C0BD16A")
     @Override
     public int hashCode() {
         int result;
@@ -140,7 +140,8 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
                 result += element;
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_856476804 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_856476804;
         // ---------- Original Method ----------
         //int result = algorithm.length();
         //for (byte element : key) {
@@ -150,19 +151,19 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.005 -0400", hash_original_method = "7E1551F3E39A01E70E4CFF4FAB6C7AC5", hash_generated_method = "05CA2C249163D80F48B6F7063B470EC5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.383 -0400", hash_original_method = "7E1551F3E39A01E70E4CFF4FAB6C7AC5", hash_generated_method = "4411CB83F7FFB3EFB396AD54F101EEAD")
     @Override
     public boolean equals(Object obj) {
-        dsTaint.addTaint(obj.dsTaint);
         {
-            boolean var8D1D3E5F4C020ED4FA594AED365B4BD8_1871206797 = (obj == this);
+            boolean var8D1D3E5F4C020ED4FA594AED365B4BD8_1273802254 = (obj == this);
         } //End collapsed parenthetic
         SecretKeySpec ks;
         ks = (SecretKeySpec) obj;
-        boolean varF2E5A45CF56A7633348AC78DE027833D_1894897476 = ((algorithm.equalsIgnoreCase(ks.algorithm))
+        boolean varF2E5A45CF56A7633348AC78DE027833D_257965137 = ((algorithm.equalsIgnoreCase(ks.algorithm))
             && (Arrays.equals(key, ks.key)));
-        return dsTaint.getTaintBoolean();
+        addTaint(obj.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1274444173 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1274444173;
         // ---------- Original Method ----------
         //if (obj == this) {
             //return true;
@@ -176,6 +177,8 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
     }
 
     
-    private static final long serialVersionUID = 6577238317307289933L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.383 -0400", hash_original_field = "5088DB7B37FA60A2A439242D11325983", hash_generated_field = "9C1CA0BEDD16C8356FE648BE89A54429")
+
+    private static long serialVersionUID = 6577238317307289933L;
 }
 

@@ -10,27 +10,29 @@ import java.util.Iterator;
 import java.lang.reflect.Array;
 
 public class UnsafeArrayList<T> extends AbstractList<T> {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.456 -0400", hash_original_field = "481A5F16B24D461E31D85ABA607238B8", hash_generated_field = "42DB228EAC7DA8545EB1D1E5B9915BD3")
+
     private Class<T> elementType;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.456 -0400", hash_original_field = "F1F713C9E000F5D3F280ADBD124DF4F5", hash_generated_field = "87F498EE2D482CA5067EA4360008A092")
+
     private T[] array;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.456 -0400", hash_original_field = "F7BD60B75B29D79B660A2859395C1A24", hash_generated_field = "F06612A05C836674433E69C513561353")
+
     private int size;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.147 -0400", hash_original_method = "D398440EEBE08F157EA10B9D3F4B575B", hash_generated_method = "5B1C9A3CB6499DCBB9C0A883A3655DC4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public UnsafeArrayList(Class<T> elementType, int initialCapacity) {
-        dsTaint.addTaint(initialCapacity);
-        dsTaint.addTaint(elementType.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.457 -0400", hash_original_method = "D398440EEBE08F157EA10B9D3F4B575B", hash_generated_method = "F07679F0FB5C7D0607D217046F47FB25")
+    public  UnsafeArrayList(Class<T> elementType, int initialCapacity) {
         this.array = (T[]) Array.newInstance(elementType, initialCapacity);
+        this.elementType = elementType;
         // ---------- Original Method ----------
         //this.array = (T[]) Array.newInstance(elementType, initialCapacity);
         //this.elementType = elementType;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.147 -0400", hash_original_method = "B6C593001C4EDD88B75B904464FE5D63", hash_generated_method = "B8E0031FBB75A5568868A563C55E1904")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.470 -0400", hash_original_method = "B6C593001C4EDD88B75B904464FE5D63", hash_generated_method = "A733179FA74A69459340258DADDF0BAF")
     @Override
     public boolean add(T element) {
-        dsTaint.addTaint(element.dsTaint);
         {
             T[] newArray;
             newArray = (T[]) Array.newInstance(elementType, size * 2);
@@ -38,7 +40,8 @@ public class UnsafeArrayList<T> extends AbstractList<T> {
             array = newArray;
         } //End block
         array[size++] = element;
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1657349915 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1657349915;
         // ---------- Original Method ----------
         //if (size == array.length) {
             //T[] newArray = (T[]) Array.newInstance(elementType, size * 2);
@@ -51,29 +54,33 @@ public class UnsafeArrayList<T> extends AbstractList<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.147 -0400", hash_original_method = "E1B1B3AC94057B841216C896CA029484", hash_generated_method = "379446B88D880E00B60C7CE775479577")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.472 -0400", hash_original_method = "E1B1B3AC94057B841216C896CA029484", hash_generated_method = "8E5FC38D3F4F21213ABD445EDB0D3A8C")
     public T[] array() {
-        return (T[])dsTaint.getTaint();
+        T[] varB4EAC82CA7396A68D541C85D26508E83_993204748 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_993204748 = array;
+        varB4EAC82CA7396A68D541C85D26508E83_993204748.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_993204748;
         // ---------- Original Method ----------
         //return array;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.148 -0400", hash_original_method = "6AAD1AE5FDA036294C1A8E6B43833A30", hash_generated_method = "B6347D55F36096CEE3920CAC0BB89594")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.474 -0400", hash_original_method = "6AAD1AE5FDA036294C1A8E6B43833A30", hash_generated_method = "7152D83D3EF1122710749F8E0F170950")
     public T get(int i) {
-        dsTaint.addTaint(i);
-        return (T)dsTaint.getTaint();
+        T varB4EAC82CA7396A68D541C85D26508E83_2080251582 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2080251582 = array[i];
+        addTaint(i);
+        varB4EAC82CA7396A68D541C85D26508E83_2080251582.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2080251582;
         // ---------- Original Method ----------
         //return array[i];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.148 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "5952D8F6ECECE9C90DA6440092EF19A0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.480 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "66771A13935FBD4E75D20B7D50E1D0A5")
     public int size() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429667477 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429667477;
         // ---------- Original Method ----------
         //return size;
     }

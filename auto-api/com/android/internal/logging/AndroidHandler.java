@@ -20,42 +20,37 @@ import java.util.logging.Logger;
 
 public class AndroidHandler extends Handler implements DalvikLogHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.113 -0400", hash_original_method = "3144D6BF2066D661F792BBA409558AA4", hash_generated_method = "499BDCB128B25531C4DD756ECC316A4F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AndroidHandler() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.119 -0400", hash_original_method = "3144D6BF2066D661F792BBA409558AA4", hash_generated_method = "499BDCB128B25531C4DD756ECC316A4F")
+    public  AndroidHandler() {
         setFormatter(THE_FORMATTER);
         // ---------- Original Method ----------
         //setFormatter(THE_FORMATTER);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.113 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.119 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
     @Override
     public void close() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.114 -0400", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "4A4713C8ADAF7778CF4E4BBDA39355C2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.120 -0400", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "4A4713C8ADAF7778CF4E4BBDA39355C2")
     @Override
     public void flush() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.114 -0400", hash_original_method = "CEA54EC9759DF54F81D3C4C5F0B6BD15", hash_generated_method = "7E39AFEA1C1ED3E46E82F7018AC4B24E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.121 -0400", hash_original_method = "CEA54EC9759DF54F81D3C4C5F0B6BD15", hash_generated_method = "D53FA8E575FDBBC34EE121AF0AA4B514")
     @Override
     public void publish(LogRecord record) {
-        dsTaint.addTaint(record.dsTaint);
         int level;
         level = getAndroidLevel(record.getLevel());
         String tag;
         tag = DalvikLogging.loggerNameToTag(record.getLoggerName());
         {
-            boolean varE5C6F5796C07A86B43D31059C7E1466E_1313155537 = (!Log.isLoggable(tag, level));
+            boolean varE5C6F5796C07A86B43D31059C7E1466E_480330067 = (!Log.isLoggable(tag, level));
         } //End collapsed parenthetic
         try 
         {
@@ -65,6 +60,7 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
         } //End block
         catch (RuntimeException e)
         { }
+        addTaint(record.getTaint());
         // ---------- Original Method ----------
         //int level = getAndroidLevel(record.getLevel());
         //String tag = DalvikLogging.loggerNameToTag(record.getLoggerName());
@@ -80,17 +76,12 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.114 -0400", hash_original_method = "23FAB086781713B49A4D1AC40EDC6A51", hash_generated_method = "CE1FC8CE450499A0DD6B65D2D650E0F8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.134 -0400", hash_original_method = "23FAB086781713B49A4D1AC40EDC6A51", hash_generated_method = "7FAC163EC368CC6C7C7A702B793BCC2C")
     public void publish(Logger source, String tag, Level level, String message) {
-        dsTaint.addTaint(message);
-        dsTaint.addTaint(level.dsTaint);
-        dsTaint.addTaint(source.dsTaint);
-        dsTaint.addTaint(tag);
         int priority;
         priority = getAndroidLevel(level);
         {
-            boolean varA3063426528B7BB2C222641072B6B376_819360071 = (!Log.isLoggable(tag, priority));
+            boolean varA3063426528B7BB2C222641072B6B376_1519632723 = (!Log.isLoggable(tag, priority));
         } //End collapsed parenthetic
         try 
         {
@@ -98,6 +89,10 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
         } //End block
         catch (RuntimeException e)
         { }
+        addTaint(source.getTaint());
+        addTaint(tag.getTaint());
+        addTaint(level.getTaint());
+        addTaint(message.getTaint());
         // ---------- Original Method ----------
         //int priority = getAndroidLevel(level);
         //if (!Log.isLoggable(tag, priority)) {
@@ -125,12 +120,14 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
     }
 
     
-    private static final Formatter THE_FORMATTER = new Formatter() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:10.115 -0400", hash_original_method = "5552BF51EFD27F1F4C5C7AE17D37E3F1", hash_generated_method = "1E3907FD66CC15DD37EDDB848C334BF3")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.136 -0400", hash_original_field = "05CB8D5FA80AAAD88471EF57C0EC546F", hash_generated_field = "3DE40AB675D719C226F90D53F0C1BBCB")
+
+    private static Formatter THE_FORMATTER = new Formatter() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.136 -0400", hash_original_method = "5552BF51EFD27F1F4C5C7AE17D37E3F1", hash_generated_method = "F1ED86646DF824472C9CB6AFAAF8ACC3")
         @Override
         public String format(LogRecord r) {
-            dsTaint.addTaint(r.dsTaint);
+            String varB4EAC82CA7396A68D541C85D26508E83_2004955564 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_824736856 = null; //Variable for return #2
             Throwable thrown;
             thrown = r.getThrown();
             {
@@ -142,12 +139,23 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
                 sw.write("\n");
                 thrown.printStackTrace(pw);
                 pw.flush();
-                String var8119C4FCFB3551812228C2BF013F6E0C_944012479 = (sw.toString());
+                varB4EAC82CA7396A68D541C85D26508E83_2004955564 = sw.toString();
             } //End block
             {
-                String var83400180F3D0AF24F989B46B7D4A990B_1499488657 = (r.getMessage());
+                varB4EAC82CA7396A68D541C85D26508E83_824736856 = r.getMessage();
             } //End block
-            return dsTaint.getTaintString();
+            addTaint(r.getTaint());
+            String varA7E53CE21691AB073D9660D615818899_1761288566; //Final return value
+            switch (DroidSafeAndroidRuntime.switchControl) {
+                case 1: //Assign result for return ordinal #1
+                    varA7E53CE21691AB073D9660D615818899_1761288566 = varB4EAC82CA7396A68D541C85D26508E83_2004955564;
+                    break;
+                default:
+                    varA7E53CE21691AB073D9660D615818899_1761288566 = varB4EAC82CA7396A68D541C85D26508E83_824736856;
+                    break;
+            }
+            varA7E53CE21691AB073D9660D615818899_1761288566.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1761288566;
             // ---------- Original Method ----------
             //Throwable thrown = r.getThrown();
             //if (thrown != null) {
@@ -164,6 +172,6 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
         }
 
         
-}; //Transformed anonymous class
+};
 }
 

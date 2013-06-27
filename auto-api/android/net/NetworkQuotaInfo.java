@@ -11,16 +11,21 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class NetworkQuotaInfo implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.537 -0400", hash_original_field = "E081766EDB5BBAB91596FB5A1B03B4B8", hash_generated_field = "0C1817B4E94B497C8227D0B7A72FE116")
+
     private long mEstimatedBytes;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.537 -0400", hash_original_field = "407B6D18E17605524108F73C59330777", hash_generated_field = "73638FB16A6CA962DBF7ED0C324F9A49")
+
     private long mSoftLimitBytes;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.537 -0400", hash_original_field = "A2D5EBBE48D8BF149BE44E9240D2555E", hash_generated_field = "76CD01F9EEF38C6FB9C997FE2E595ECC")
+
     private long mHardLimitBytes;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.126 -0400", hash_original_method = "660F75E1FFA6B2DFE2CDD12BDF75A84D", hash_generated_method = "39633A8159D658C5651D9CCB7CD87A84")
-    @DSModeled(DSC.SAFE)
-    public NetworkQuotaInfo(long estimatedBytes, long softLimitBytes, long hardLimitBytes) {
-        dsTaint.addTaint(softLimitBytes);
-        dsTaint.addTaint(estimatedBytes);
-        dsTaint.addTaint(hardLimitBytes);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.541 -0400", hash_original_method = "660F75E1FFA6B2DFE2CDD12BDF75A84D", hash_generated_method = "91C439B321E81D734DBCF25192A8DAA4")
+    public  NetworkQuotaInfo(long estimatedBytes, long softLimitBytes, long hardLimitBytes) {
+        mEstimatedBytes = estimatedBytes;
+        mSoftLimitBytes = softLimitBytes;
+        mHardLimitBytes = hardLimitBytes;
         // ---------- Original Method ----------
         //mEstimatedBytes = estimatedBytes;
         //mSoftLimitBytes = softLimitBytes;
@@ -28,10 +33,8 @@ public class NetworkQuotaInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.126 -0400", hash_original_method = "F9FF260BD3516E5193BB69E75EACBCC6", hash_generated_method = "08B705ED5947F0B945593E579BDA53C0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public NetworkQuotaInfo(Parcel in) {
-        dsTaint.addTaint(in.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.542 -0400", hash_original_method = "F9FF260BD3516E5193BB69E75EACBCC6", hash_generated_method = "506083803062B317728026A841CC5B03")
+    public  NetworkQuotaInfo(Parcel in) {
         mEstimatedBytes = in.readLong();
         mSoftLimitBytes = in.readLong();
         mHardLimitBytes = in.readLong();
@@ -42,50 +45,49 @@ public class NetworkQuotaInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.127 -0400", hash_original_method = "9A1B44DAAD2420BC074FF7BE5F6986CE", hash_generated_method = "05F686AB5ACE033216E3C50FC71B4D96")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.543 -0400", hash_original_method = "9A1B44DAAD2420BC074FF7BE5F6986CE", hash_generated_method = "95B88869D4DD5CF7DD9FCD6FF370BB18")
     public long getEstimatedBytes() {
-        return dsTaint.getTaintLong();
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1032851839 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1032851839;
         // ---------- Original Method ----------
         //return mEstimatedBytes;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.127 -0400", hash_original_method = "C8858C0BE5B1D5B7AD428D2F09A67941", hash_generated_method = "D2B0B299087F0687C3A281C610E0ADE1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.543 -0400", hash_original_method = "C8858C0BE5B1D5B7AD428D2F09A67941", hash_generated_method = "627D83DCF9AB2A54F3B1AC0B03D8F8B3")
     public long getSoftLimitBytes() {
-        return dsTaint.getTaintLong();
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_334667658 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_334667658;
         // ---------- Original Method ----------
         //return mSoftLimitBytes;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.127 -0400", hash_original_method = "32F0E566D231A4A60EB6312295EBA3AB", hash_generated_method = "2DB0B411B2B9FE25973B11FA8C17CDC8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.543 -0400", hash_original_method = "32F0E566D231A4A60EB6312295EBA3AB", hash_generated_method = "08781FA3A400900A056E1AF193857A55")
     public long getHardLimitBytes() {
-        return dsTaint.getTaintLong();
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_968510807 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_968510807;
         // ---------- Original Method ----------
         //return mHardLimitBytes;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.127 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.544 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6742486C6402F55F063DCA1E62793037")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1394199109 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1394199109;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.127 -0400", hash_original_method = "62923C632AA7262774DF27E525AA9FBB", hash_generated_method = "78890832AAE82643A3F89C66375C3C42")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.557 -0400", hash_original_method = "62923C632AA7262774DF27E525AA9FBB", hash_generated_method = "29313C7040244B115F480E8FF48464C6")
     public void writeToParcel(Parcel out, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(out.dsTaint);
         out.writeLong(mEstimatedBytes);
         out.writeLong(mSoftLimitBytes);
         out.writeLong(mHardLimitBytes);
+        addTaint(out.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //out.writeLong(mEstimatedBytes);
         //out.writeLong(mSoftLimitBytes);
@@ -93,30 +95,19 @@ public class NetworkQuotaInfo implements Parcelable {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.557 -0400", hash_original_field = "3A6F0957B225CC85FBDC5752E5B857F6", hash_generated_field = "E539E13304AD2EFC43281BB48BCCC988")
+
     public static final long NO_LIMIT = -1;
-    public static final Creator<NetworkQuotaInfo> CREATOR = new Creator<NetworkQuotaInfo>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.128 -0400", hash_original_method = "85674AC106ECA128FFF8A8B0ECC3EA12", hash_generated_method = "7C7660DEE652C34E2F1BF7935304A2E1")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.557 -0400", hash_original_field = "C30C13B2174CCA474AC0B4E26A8A8887", hash_generated_field = "10C90A69725B1168CB9C00401EAC67D7")
+
+    public static final Creator<NetworkQuotaInfo> CREATOR = new Creator<NetworkQuotaInfo>() {
         public NetworkQuotaInfo createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            NetworkQuotaInfo varEC4A755A980311266D91DE6D7F5C2056_788212902 = (new NetworkQuotaInfo(in));
-            return (NetworkQuotaInfo)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new NetworkQuotaInfo(in);
+            return new NetworkQuotaInfo(in);
         }
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:51.128 -0400", hash_original_method = "2633585C810677A0333642C3ADAC298A", hash_generated_method = "1E26668A22D9F23E110CC1A2D97F4B5D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
         public NetworkQuotaInfo[] newArray(int size) {
-            dsTaint.addTaint(size);
-            NetworkQuotaInfo[] var8359C847D2485B31DEA268B179C115FE_1682541961 = (new NetworkQuotaInfo[size]);
-            return (NetworkQuotaInfo[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new NetworkQuotaInfo[size];
+            return new NetworkQuotaInfo[size];
         }
-
-        
-}; //Transformed anonymous class
+    };
 }
 

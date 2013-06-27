@@ -11,22 +11,28 @@ import java.util.*;
 import java.text.ParseException;
 
 public class StringTokenizer {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.927 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "ED717DDCA3146879332E3CB1E590C4E3")
+
     protected String buffer;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.927 -0400", hash_original_field = "F310BA9E515FC1007B79A48DB3F601F5", hash_generated_field = "5E4B7A8AC8566734721FEEDF567651D1")
+
     protected int bufferLen;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.927 -0400", hash_original_field = "4D9AD2B37053671B594B237BD061B3F2", hash_generated_field = "3DF1878C9AB8F7D115E0E6CEFC4F73A0")
+
     protected int ptr;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.927 -0400", hash_original_field = "4226D6C7FF127D8F1524553080F4827A", hash_generated_field = "0F0615C013337AE815CBF333AD213822")
+
     protected int savedPtr;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.772 -0400", hash_original_method = "54BA219EC49F828609CB54EE2A82793E", hash_generated_method = "829CC47E9AA7BAE84979A930F35B1839")
-    @DSModeled(DSC.SAFE)
-    protected StringTokenizer() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.946 -0400", hash_original_method = "54BA219EC49F828609CB54EE2A82793E", hash_generated_method = "829CC47E9AA7BAE84979A930F35B1839")
+    protected  StringTokenizer() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.773 -0400", hash_original_method = "DA5ACD58DF915D63245F1B44E5CF5026", hash_generated_method = "C62A58366E32D14F2F88D1ABE785244E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public StringTokenizer(String buffer) {
-        dsTaint.addTaint(buffer);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.948 -0400", hash_original_method = "DA5ACD58DF915D63245F1B44E5CF5026", hash_generated_method = "932701E03D6383C1215DA8D23CF0D394")
+    public  StringTokenizer(String buffer) {
+        this.buffer = buffer;
         bufferLen = buffer.length();
         ptr = 0;
         // ---------- Original Method ----------
@@ -36,17 +42,18 @@ public class StringTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.773 -0400", hash_original_method = "51D68C0C294E8AE98A6D3675712278FD", hash_generated_method = "6B7D0D50B0C0BF353A687CF8330AF125")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.948 -0400", hash_original_method = "51D68C0C294E8AE98A6D3675712278FD", hash_generated_method = "07D47CF698B4DFA8B3371C6A5EE13B6C")
     public String nextToken() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1901572515 = null; //Variable for return #1
         int startIdx;
         startIdx = ptr;
         {
             char c;
             c = buffer.charAt(ptr);
         } //End block
-        String var4113E8803C9F0BFB56BF5E9FF9A1020D_1105881690 = (buffer.substring(startIdx, ptr));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1901572515 = buffer.substring(startIdx, ptr);
+        varB4EAC82CA7396A68D541C85D26508E83_1901572515.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1901572515;
         // ---------- Original Method ----------
         //int startIdx = ptr;
         //while (ptr < bufferLen) {
@@ -60,10 +67,10 @@ public class StringTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.773 -0400", hash_original_method = "CE3ED718DBD97A207FB6B56A3D84C961", hash_generated_method = "2D4C2142DCBEB9134FABEE278DA053B0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.949 -0400", hash_original_method = "CE3ED718DBD97A207FB6B56A3D84C961", hash_generated_method = "58E0663B6605A018313C33641B2F131B")
     public boolean hasMoreChars() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_249273340 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_249273340;
         // ---------- Original Method ----------
         //return ptr < bufferLen;
     }
@@ -110,19 +117,20 @@ public class StringTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.775 -0400", hash_original_method = "4D480BDC007302EAB6B0602B0495288F", hash_generated_method = "D81DDADFDA8A63E0069BBB6078164C09")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.958 -0400", hash_original_method = "4D480BDC007302EAB6B0602B0495288F", hash_generated_method = "1B0B2742E61395C73F348A60C31AE3B3")
     public String getLine() {
+        String varB4EAC82CA7396A68D541C85D26508E83_909611873 = null; //Variable for return #1
         int startIdx;
         startIdx = ptr;
         {
-            boolean var3E5C2DFEAE57C26240823D68137FFEDA_529502925 = (ptr < bufferLen && buffer.charAt(ptr) != '\n');
+            boolean var3E5C2DFEAE57C26240823D68137FFEDA_893876770 = (ptr < bufferLen && buffer.charAt(ptr) != '\n');
         } //End collapsed parenthetic
         {
-            boolean var8A771B1C0BE2C3E6D5EFBE7A86678BF7_2072310675 = (ptr < bufferLen && buffer.charAt(ptr) == '\n');
+            boolean var8A771B1C0BE2C3E6D5EFBE7A86678BF7_804404701 = (ptr < bufferLen && buffer.charAt(ptr) == '\n');
         } //End collapsed parenthetic
-        String var4113E8803C9F0BFB56BF5E9FF9A1020D_1357743964 = (buffer.substring(startIdx, ptr));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_909611873 = buffer.substring(startIdx, ptr);
+        varB4EAC82CA7396A68D541C85D26508E83_909611873.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_909611873;
         // ---------- Original Method ----------
         //int startIdx = ptr;
         //while (ptr < bufferLen && buffer.charAt(ptr) != '\n') {
@@ -135,15 +143,17 @@ public class StringTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.776 -0400", hash_original_method = "CE231B51EB0438B81CB38E6BFC514388", hash_generated_method = "186274A28E21E11BE9BA19FAE08FFDD4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.959 -0400", hash_original_method = "CE231B51EB0438B81CB38E6BFC514388", hash_generated_method = "C634F143B31C4546C8E9B7B8BE10FE03")
     public String peekLine() {
+        String varB4EAC82CA7396A68D541C85D26508E83_2130432692 = null; //Variable for return #1
         int curPos;
         curPos = ptr;
         String retval;
         retval = this.getLine();
         ptr = curPos;
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_2130432692 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_2130432692.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2130432692;
         // ---------- Original Method ----------
         //int curPos = ptr;
         //String retval = this.getLine();
@@ -152,27 +162,27 @@ public class StringTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.776 -0400", hash_original_method = "593E91DFCA6EC80AB3947C1558B0F334", hash_generated_method = "9F91797B037C102E218B6A38DEA72134")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.965 -0400", hash_original_method = "593E91DFCA6EC80AB3947C1558B0F334", hash_generated_method = "C9CAD9A8CE2F39660BB1D2C72645179A")
     public char lookAhead() throws ParseException {
-        char var68DCA68240D0BFA25831E87862A3B5AD_779201586 = (lookAhead(0));
-        return dsTaint.getTaintChar();
+        char var68DCA68240D0BFA25831E87862A3B5AD_108378939 = (lookAhead(0));
+        char varA87DEB01C5F539E6BDA34829C8EF2368_862557880 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_862557880;
         // ---------- Original Method ----------
         //return lookAhead(0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.776 -0400", hash_original_method = "3B0FA34B88A8E17E6C68E43CAD5255AA", hash_generated_method = "69610FB5D9FC11602B0273D4AE790F98")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.965 -0400", hash_original_method = "3B0FA34B88A8E17E6C68E43CAD5255AA", hash_generated_method = "C075DF732F03D852418DF79594F9F657")
     public char lookAhead(int k) throws ParseException {
-        dsTaint.addTaint(k);
         try 
         {
-            char var53EB20F63B0B1B93DD30B783A1C8D85B_1130520567 = (buffer.charAt(ptr + k));
+            char var53EB20F63B0B1B93DD30B783A1C8D85B_161856592 = (buffer.charAt(ptr + k));
         } //End block
         catch (IndexOutOfBoundsException e)
         { }
-        return dsTaint.getTaintChar();
+        addTaint(k);
+        char varA87DEB01C5F539E6BDA34829C8EF2368_905883523 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_905883523;
         // ---------- Original Method ----------
         //try {
             //return buffer.charAt(ptr + k);
@@ -183,14 +193,14 @@ public class StringTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.776 -0400", hash_original_method = "D29CC80BBA7473591484322BC854C4EB", hash_generated_method = "E4A7922EACCFA2FCD7B78CA186483BDB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.965 -0400", hash_original_method = "D29CC80BBA7473591484322BC854C4EB", hash_generated_method = "1F71E84C960F91D1EB508BA59AF747CA")
     public char getNextChar() throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new ParseException(
                 buffer + " getNextChar: End of buffer",
                 ptr);
-        char var1B9765F94E007E5D13CF38C0B9A2E40C_888431771 = (buffer.charAt(ptr++));
-        return dsTaint.getTaintChar();
+        char var1B9765F94E007E5D13CF38C0B9A2E40C_2141206838 = (buffer.charAt(ptr++));
+        char varA87DEB01C5F539E6BDA34829C8EF2368_493556019 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_493556019;
         // ---------- Original Method ----------
         //if (ptr >= bufferLen)
             //throw new ParseException(
@@ -201,8 +211,7 @@ public class StringTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.776 -0400", hash_original_method = "5C7E03ECFF7AB12146D632F9E4D67AA3", hash_generated_method = "2A55CB0583276391A21A96648042B85C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.966 -0400", hash_original_method = "5C7E03ECFF7AB12146D632F9E4D67AA3", hash_generated_method = "2A55CB0583276391A21A96648042B85C")
     public void consume() {
         ptr = savedPtr;
         // ---------- Original Method ----------
@@ -210,29 +219,30 @@ public class StringTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.776 -0400", hash_original_method = "4CE3B95DEACD36E71CE4EC6691FB056B", hash_generated_method = "EFD039B59E56754493E62D15C102AF14")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.966 -0400", hash_original_method = "4CE3B95DEACD36E71CE4EC6691FB056B", hash_generated_method = "3D8CF103538B45433DCFDACE276082D3")
     public void consume(int k) {
-        dsTaint.addTaint(k);
+        ptr += k;
         // ---------- Original Method ----------
         //ptr += k;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.777 -0400", hash_original_method = "790B12C2E8304128473A5E51B3B58D54", hash_generated_method = "DFB9656087AE379076A600C6431412BC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.966 -0400", hash_original_method = "790B12C2E8304128473A5E51B3B58D54", hash_generated_method = "DD5962DA3161727CF5F315B6927F4E35")
     public Vector<String> getLines() {
+        Vector<String> varB4EAC82CA7396A68D541C85D26508E83_1142041920 = null; //Variable for return #1
         Vector<String> result;
         result = new Vector<String>();
         {
-            boolean var4CD8DFB4D7D780E6A99745A5919C270E_1052017421 = (hasMoreChars());
+            boolean var4CD8DFB4D7D780E6A99745A5919C270E_1903662078 = (hasMoreChars());
             {
                 String line;
                 line = getLine();
                 result.addElement(line);
             } //End block
         } //End collapsed parenthetic
-        return (Vector<String>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1142041920 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_1142041920.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1142041920;
         // ---------- Original Method ----------
         //Vector<String> result = new Vector<String>();
         //while (hasMoreChars()) {
@@ -243,10 +253,9 @@ public class StringTokenizer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.777 -0400", hash_original_method = "758FF66D123B700B938FDF74929D0C7F", hash_generated_method = "FDCC9A17C451B7F66C9553A2B34DAEAC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.978 -0400", hash_original_method = "758FF66D123B700B938FDF74929D0C7F", hash_generated_method = "4C1A3070325A0E565C76616A4E1DF2E6")
     public String getNextToken(char delim) throws ParseException {
-        dsTaint.addTaint(delim);
+        String varB4EAC82CA7396A68D541C85D26508E83_1282034535 = null; //Variable for return #1
         int startIdx;
         startIdx = ptr;
         {
@@ -255,8 +264,10 @@ public class StringTokenizer {
             if (DroidSafeAndroidRuntime.control) throw new ParseException("EOL reached", 0);
             consume(1);
         } //End block
-        String var4113E8803C9F0BFB56BF5E9FF9A1020D_1388638030 = (buffer.substring(startIdx, ptr));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1282034535 = buffer.substring(startIdx, ptr);
+        addTaint(delim);
+        varB4EAC82CA7396A68D541C85D26508E83_1282034535.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1282034535;
         // ---------- Original Method ----------
         //int startIdx = ptr;
         //while (true) {

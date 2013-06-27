@@ -21,14 +21,19 @@ import javax.sip.header.HeaderFactory;
 import javax.sip.message.Message;
 
 public class MultipartMimeContentImpl implements MultipartMimeContent {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.617 -0400", hash_original_field = "1405CE9A3C3312B897AB90A8EB46A75F", hash_generated_field = "FD0E7DDD1AF822BB0A779B8E067816D9")
+
     private List<Content> contentList = new LinkedList<Content>();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.618 -0400", hash_original_field = "E5B9309EA09247F9D21AF6D605EAB11E", hash_generated_field = "CE73E72EF711E1E06248C7F0F370E9AA")
+
     private ContentTypeHeader multipartMimeContentTypeHeader;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.618 -0400", hash_original_field = "81FD830C85363675EDB98D2879916D8C", hash_generated_field = "ED35814FA47AF2DBDA1D10B34E2A8ED6")
+
     private String boundary;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.847 -0400", hash_original_method = "2BDD067347267A613FC6CB4251D41452", hash_generated_method = "22D73382FF87A13636C08CFCAA49FF98")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public MultipartMimeContentImpl(ContentTypeHeader contentTypeHeader) {
-        dsTaint.addTaint(contentTypeHeader.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.618 -0400", hash_original_method = "2BDD067347267A613FC6CB4251D41452", hash_generated_method = "0FA7E4EBDBFC8D2D5E32009F85807634")
+    public  MultipartMimeContentImpl(ContentTypeHeader contentTypeHeader) {
+        this.multipartMimeContentTypeHeader = contentTypeHeader;
         this.boundary = contentTypeHeader.getParameter(BOUNDARY);
         // ---------- Original Method ----------
         //this.multipartMimeContentTypeHeader = contentTypeHeader;
@@ -36,42 +41,45 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.847 -0400", hash_original_method = "B89677B4178E2DAF7E61A39544E04AE5", hash_generated_method = "003007E722D6DD2ADEFC5917D288B63B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.632 -0400", hash_original_method = "B89677B4178E2DAF7E61A39544E04AE5", hash_generated_method = "65417FE435FA0A35E4FB71EF201A600D")
     public boolean add(Content content) {
-        dsTaint.addTaint(content.dsTaint);
-        boolean varA68F685D0CC10459739E65FD0BF87C7D_493504041 = (contentList.add((ContentImpl) content));
-        return dsTaint.getTaintBoolean();
+        boolean varA68F685D0CC10459739E65FD0BF87C7D_358143632 = (contentList.add((ContentImpl) content));
+        addTaint(content.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1815788904 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1815788904;
         // ---------- Original Method ----------
         //return contentList.add((ContentImpl) content);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.847 -0400", hash_original_method = "4590DD0C77A768FED1E8ACE7CF0313E8", hash_generated_method = "D2DD55D603A8E4CAB9A8C034CDA97549")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.634 -0400", hash_original_method = "4590DD0C77A768FED1E8ACE7CF0313E8", hash_generated_method = "64B569E6930546F525DF1367AB818676")
     public ContentTypeHeader getContentTypeHeader() {
-        return (ContentTypeHeader)dsTaint.getTaint();
+        ContentTypeHeader varB4EAC82CA7396A68D541C85D26508E83_187473806 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_187473806 = multipartMimeContentTypeHeader;
+        varB4EAC82CA7396A68D541C85D26508E83_187473806.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_187473806;
         // ---------- Original Method ----------
         //return multipartMimeContentTypeHeader;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.849 -0400", hash_original_method = "1253C501D0F5CE66AF0270C83E3A62D6", hash_generated_method = "B3E52F003768620BC462F7D54733C73F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.681 -0400", hash_original_method = "1253C501D0F5CE66AF0270C83E3A62D6", hash_generated_method = "143CAD14DF329D4856494D3B1FD2FCD4")
     @Override
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_908435391 = null; //Variable for return #1
         StringBuffer stringBuffer;
         stringBuffer = new StringBuffer();
         {
-            Iterator<Content> var6E413069D239ECC55CE8E2D17947347F_832808297 = (this.contentList).iterator();
-            var6E413069D239ECC55CE8E2D17947347F_832808297.hasNext();
-            Content content = var6E413069D239ECC55CE8E2D17947347F_832808297.next();
+            Iterator<Content> var6E413069D239ECC55CE8E2D17947347F_1941941377 = (this.contentList).iterator();
+            var6E413069D239ECC55CE8E2D17947347F_1941941377.hasNext();
+            Content content = var6E413069D239ECC55CE8E2D17947347F_1941941377.next();
             {
                 stringBuffer.append(content.toString());
             } //End block
         } //End collapsed parenthetic
-        String varDA81C9F07CC59CC4C40534A05D59CCBA_58820003 = (stringBuffer.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_908435391 = stringBuffer.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_908435391.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_908435391;
         // ---------- Original Method ----------
         //StringBuffer stringBuffer = new StringBuffer();
         //for (Content content : this.contentList) {
@@ -81,10 +89,8 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.874 -0400", hash_original_method = "968D057F7853F8246DB89EBE38C4B30E", hash_generated_method = "20A0A7CFB006E78E3AD1F183AAB6BCD7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.964 -0400", hash_original_method = "968D057F7853F8246DB89EBE38C4B30E", hash_generated_method = "1C11650D27D94A4BBEE1F2058A7E5762")
     public void createContentList(String body) throws ParseException {
-        dsTaint.addTaint(body);
         try 
         {
             HeaderFactoryExt headerFactory;
@@ -106,12 +112,12 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
                     StringBuffer strbuf;
                     strbuf = new StringBuffer(nextPart);
                     {
-                        boolean varF6B34452D9317EB430FD16C9EB750636_73554541 = (strbuf.length() > 0
+                        boolean varF6B34452D9317EB430FD16C9EB750636_397040158 = (strbuf.length() > 0
                         && (strbuf.charAt(0) == '\r' || strbuf.charAt(0) == '\n'));
                         strbuf.deleteCharAt(0);
                     } //End collapsed parenthetic
                     {
-                        boolean var86EAD981F1663D4F8BE3173251430A52_1355213005 = (strbuf.length() == 0);
+                        boolean var86EAD981F1663D4F8BE3173251430A52_1788164021 = (strbuf.length() == 0);
                     } //End collapsed parenthetic
                     nextPart = strbuf.toString();
                     int position;
@@ -156,25 +162,26 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
         {
             if (DroidSafeAndroidRuntime.control) throw new ParseException("Invalid Multipart mime format", 0);
         } //End block
+        addTaint(body.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.877 -0400", hash_original_method = "3C7197D83A3DC33713AACEA2691D16BA", hash_generated_method = "2BA5BF683C4F1D1537C8F3F874092933")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.008 -0400", hash_original_method = "3C7197D83A3DC33713AACEA2691D16BA", hash_generated_method = "A66F56546CAD8ACF98AD1CBE761F79F2")
     public Content getContentByType(String contentType, String contentSubtype) {
-        dsTaint.addTaint(contentType);
-        dsTaint.addTaint(contentSubtype);
+        Content varB4EAC82CA7396A68D541C85D26508E83_1512957067 = null; //Variable for return #1
+        Content varB4EAC82CA7396A68D541C85D26508E83_172284676 = null; //Variable for return #2
         Content retval;
         retval = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1512957067 = null;
         {
-            Iterator<Content> varA98691AACA259DB31819633E0D4CADFB_44004028 = (contentList).iterator();
-            varA98691AACA259DB31819633E0D4CADFB_44004028.hasNext();
-            Content content = varA98691AACA259DB31819633E0D4CADFB_44004028.next();
+            Iterator<Content> varA98691AACA259DB31819633E0D4CADFB_893501465 = (contentList).iterator();
+            varA98691AACA259DB31819633E0D4CADFB_893501465.hasNext();
+            Content content = varA98691AACA259DB31819633E0D4CADFB_893501465.next();
             {
                 {
-                    boolean varA576A6C8757808F54C881C4105946187_1480452792 = (content.getContentTypeHeader().getContentType().equalsIgnoreCase(contentType)
+                    boolean varA576A6C8757808F54C881C4105946187_567307995 = (content.getContentTypeHeader().getContentType().equalsIgnoreCase(contentType)
                     && content.getContentTypeHeader().getContentSubType().equalsIgnoreCase(
                             contentSubtype));
                     {
@@ -183,7 +190,20 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return (Content)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_172284676 = retval;
+        addTaint(contentType.getTaint());
+        addTaint(contentSubtype.getTaint());
+        Content varA7E53CE21691AB073D9660D615818899_1293325384; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1293325384 = varB4EAC82CA7396A68D541C85D26508E83_1512957067;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1293325384 = varB4EAC82CA7396A68D541C85D26508E83_172284676;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1293325384.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1293325384;
         // ---------- Original Method ----------
         //Content retval = null;
         //if (contentList == null)
@@ -200,36 +220,38 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.877 -0400", hash_original_method = "5D236D4E42081CC93B2BC0976B6D3581", hash_generated_method = "E4452FE18C12950A573BA94055DA7649")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.018 -0400", hash_original_method = "5D236D4E42081CC93B2BC0976B6D3581", hash_generated_method = "61FDD4044E49C6BE51FF0776C167A96C")
     public void addContent(Content content) {
-        dsTaint.addTaint(content.dsTaint);
         this.add(content);
+        addTaint(content.getTaint());
         // ---------- Original Method ----------
         //this.add(content);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.877 -0400", hash_original_method = "DFB35A5106E2AD2A9D629D81C13D382C", hash_generated_method = "595F63E1AD3379A1C7FA9D46C89E2AD3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.019 -0400", hash_original_method = "DFB35A5106E2AD2A9D629D81C13D382C", hash_generated_method = "82D17B26BDDE315B513C7F676AEB3CFC")
     public Iterator<Content> getContents() {
-        Iterator<Content> varC3B15954D445CEE3C992E42758EF8307_1073256971 = (this.contentList.iterator());
-        return (Iterator<Content>)dsTaint.getTaint();
+        Iterator<Content> varB4EAC82CA7396A68D541C85D26508E83_1165680129 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1165680129 = this.contentList.iterator();
+        varB4EAC82CA7396A68D541C85D26508E83_1165680129.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1165680129;
         // ---------- Original Method ----------
         //return this.contentList.iterator();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.877 -0400", hash_original_method = "B0C4727628A80D66AB97702342F94FFA", hash_generated_method = "A073845C3C5E303329FC3C2D494EFB44")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.019 -0400", hash_original_method = "B0C4727628A80D66AB97702342F94FFA", hash_generated_method = "6A3A1C164CF601AE190F4E0823924E0B")
     public int getContentCount() {
-        int var48A67136D94FF8B65B3931EDBD6C7D85_494687146 = (this.contentList.size());
-        return dsTaint.getTaintInt();
+        int var48A67136D94FF8B65B3931EDBD6C7D85_1926074530 = (this.contentList.size());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_152592779 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_152592779;
         // ---------- Original Method ----------
         //return this.contentList.size();
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.019 -0400", hash_original_field = "2F0EF796951D6A4B81B056A52B0C99F3", hash_generated_field = "9E4348587CD55FA4C6062879941EE6EC")
+
     public static String BOUNDARY = "boundary";
 }
 

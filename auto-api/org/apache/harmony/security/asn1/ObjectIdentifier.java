@@ -10,41 +10,43 @@ import java.util.Iterator;
 import java.util.Arrays;
 
 public final class ObjectIdentifier {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.709 -0400", hash_original_field = "130F43112BB8A7A7790EBFC08EE9D6AF", hash_generated_field = "282BA3ECCB824558DBD68D7EB102F89D")
+
     private int[] oid;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.710 -0400", hash_original_field = "DE27C66C20C38B882DA535901EBF09FA", hash_generated_field = "B67A2A548CCCA3ABBCDCF1E77441B37F")
+
     private String soid;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.127 -0400", hash_original_method = "20230C77538103726EF6427B9F75CADF", hash_generated_method = "5A21B54DD6AD871F70495A6929B08A59")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ObjectIdentifier(int[] oid) {
-        dsTaint.addTaint(oid[0]);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.715 -0400", hash_original_method = "20230C77538103726EF6427B9F75CADF", hash_generated_method = "695B95975CC186A99EED9C9A4C949FFD")
+    public  ObjectIdentifier(int[] oid) {
         validate(oid);
+        this.oid = oid;
         // ---------- Original Method ----------
         //validate(oid);
         //this.oid = oid;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.127 -0400", hash_original_method = "33C298706B9DEBE0D1CFE9C3A9D89C98", hash_generated_method = "42868728053BC844805EFDD2D2B25A19")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ObjectIdentifier(String strOid) {
-        dsTaint.addTaint(strOid);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.730 -0400", hash_original_method = "33C298706B9DEBE0D1CFE9C3A9D89C98", hash_generated_method = "29DFD93289F4CBDE2E7B748208083263")
+    public  ObjectIdentifier(String strOid) {
         this.oid = toIntArray(strOid);
+        this.soid = strOid;
         // ---------- Original Method ----------
         //this.oid = toIntArray(strOid);
         //this.soid = strOid;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.127 -0400", hash_original_method = "7A1590EC642F64148081547F7DE77EEF", hash_generated_method = "A12E4EA125364493A91987F534146AC6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.730 -0400", hash_original_method = "7A1590EC642F64148081547F7DE77EEF", hash_generated_method = "F428C2292F718F9D328BFA5D42D93B76")
     @Override
     public boolean equals(Object o) {
-        dsTaint.addTaint(o.dsTaint);
         {
-            boolean var9B27E520BBC2DDC5CC18F0AC09DC0048_199887616 = (o == null || this.getClass() != o.getClass());
+            boolean var9B27E520BBC2DDC5CC18F0AC09DC0048_2105875446 = (o == null || this.getClass() != o.getClass());
         } //End collapsed parenthetic
-        boolean var85CA6B7259588F8D393C14CCCE2DBEB8_50978780 = (Arrays.equals(oid, ((ObjectIdentifier) o).oid));
-        return dsTaint.getTaintBoolean();
+        boolean var85CA6B7259588F8D393C14CCCE2DBEB8_880246271 = (Arrays.equals(oid, ((ObjectIdentifier) o).oid));
+        addTaint(o.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1235760325 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1235760325;
         // ---------- Original Method ----------
         //if (this == o) {
             //return true;
@@ -56,14 +58,16 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.127 -0400", hash_original_method = "CBAF5DCAABB7CFC3E05C923E938DB148", hash_generated_method = "877FC279D70087DA94BA9F6AB750A602")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.731 -0400", hash_original_method = "CBAF5DCAABB7CFC3E05C923E938DB148", hash_generated_method = "39F8CF1D2772E37A7943DBA8F261DEFF")
     @Override
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1951258595 = null; //Variable for return #1
         {
             soid = toString(oid);
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1951258595 = soid;
+        varB4EAC82CA7396A68D541C85D26508E83_1951258595.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1951258595;
         // ---------- Original Method ----------
         //if (soid == null) {
             //soid = toString(oid);
@@ -72,8 +76,7 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:40.128 -0400", hash_original_method = "8929009F517116C951EAF49377701B44", hash_generated_method = "D7B65A07BC40D536563BCB6DC39CB01C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.731 -0400", hash_original_method = "8929009F517116C951EAF49377701B44", hash_generated_method = "4FCB5212AF26EBA67DACECCDD1413B9D")
     @Override
     public int hashCode() {
         int intHash;
@@ -85,7 +88,8 @@ public final class ObjectIdentifier {
                 intHash += oid[i] << (8 * i);
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1054270027 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1054270027;
         // ---------- Original Method ----------
         //int intHash = 0;
         //for (int i = 0; i < oid.length && i < 4; i++) {

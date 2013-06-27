@@ -13,45 +13,46 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public final class ObjectAnimator extends ValueAnimator {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.070 -0400", hash_original_field = "562619214306F5C11A815E975B7D2477", hash_generated_field = "532AA6353374D87021D18089A8C99282")
+
     private Object mTarget;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.070 -0400", hash_original_field = "AFC1281EACDFDDEC758551A3AAE3876C", hash_generated_field = "A5D083978DF1D40FFF516AEB84BBF3F8")
+
     private String mPropertyName;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.073 -0400", hash_original_field = "3BE74FBBD7FF163511D9CBD518CBA4A5", hash_generated_field = "17ADCF9554A0CCEDE828D4C3909FCAFB")
+
     private Property mProperty;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.683 -0400", hash_original_method = "C409E7B2E0E9411E53B94F67FBBD17CB", hash_generated_method = "3F67C7C40A1D89645B17D105E342199D")
-    @DSModeled(DSC.SAFE)
-    public ObjectAnimator() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.075 -0400", hash_original_method = "C409E7B2E0E9411E53B94F67FBBD17CB", hash_generated_method = "3F67C7C40A1D89645B17D105E342199D")
+    public  ObjectAnimator() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.684 -0400", hash_original_method = "72D05C8CED3E11A756BC68866B4296D0", hash_generated_method = "ED4DF055B466351B22407118D0106EB1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private ObjectAnimator(Object target, String propertyName) {
-        dsTaint.addTaint(propertyName);
-        dsTaint.addTaint(target.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.089 -0400", hash_original_method = "72D05C8CED3E11A756BC68866B4296D0", hash_generated_method = "1D81765CF4A12858856FB023F952261D")
+    private  ObjectAnimator(Object target, String propertyName) {
+        mTarget = target;
         setPropertyName(propertyName);
+        addTaint(propertyName.getTaint());
         // ---------- Original Method ----------
         //mTarget = target;
         //setPropertyName(propertyName);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.694 -0400", hash_original_method = "F7624EC0BC93A299A0815B7F750DA685", hash_generated_method = "4A487AD9C12B13730B3003E744749DB3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private <T> ObjectAnimator(T target, Property<T, ?> property) {
-        dsTaint.addTaint(target.dsTaint);
-        dsTaint.addTaint(property.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.115 -0400", hash_original_method = "F7624EC0BC93A299A0815B7F750DA685", hash_generated_method = "8EE497D27CEBF0533E003D6032449D57")
+    private <T>  ObjectAnimator(T target, Property<T, ?> property) {
+        mTarget = target;
         setProperty(property);
+        addTaint(property.getTaint());
         // ---------- Original Method ----------
         //mTarget = target;
         //setProperty(property);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.695 -0400", hash_original_method = "9BD9C177E2BB2F7D9011362061D59F72", hash_generated_method = "124B980D3EE3B01C8688117A9F4DA1A3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.129 -0400", hash_original_method = "9BD9C177E2BB2F7D9011362061D59F72", hash_generated_method = "99078DA03E5651E86D034D895D728ACA")
     public void setPropertyName(String propertyName) {
-        dsTaint.addTaint(propertyName);
         {
             PropertyValuesHolder valuesHolder;
             valuesHolder = mValues[0];
@@ -61,6 +62,7 @@ public final class ObjectAnimator extends ValueAnimator {
             mValuesMap.remove(oldName);
             mValuesMap.put(propertyName, valuesHolder);
         } //End block
+        mPropertyName = propertyName;
         mInitialized = false;
         // ---------- Original Method ----------
         //if (mValues != null) {
@@ -75,10 +77,8 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.697 -0400", hash_original_method = "B6C27508DB7D8F3AB8749306282F7776", hash_generated_method = "C1C90D13A8B74CBFBE7447DBFE847553")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.161 -0400", hash_original_method = "B6C27508DB7D8F3AB8749306282F7776", hash_generated_method = "CB0971919A67203EEE27E2E9E45C75C4")
     public void setProperty(Property property) {
-        dsTaint.addTaint(property.dsTaint);
         {
             PropertyValuesHolder valuesHolder;
             valuesHolder = mValues[0];
@@ -91,6 +91,7 @@ public final class ObjectAnimator extends ValueAnimator {
         {
             mPropertyName = property.getName();
         } //End block
+        mProperty = property;
         mInitialized = false;
         // ---------- Original Method ----------
         //if (mValues != null) {
@@ -108,10 +109,12 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.697 -0400", hash_original_method = "53B20749B4CEAC5C134A85897865D0FE", hash_generated_method = "19C243F0DAD668218C8EB3848FFD0192")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.188 -0400", hash_original_method = "53B20749B4CEAC5C134A85897865D0FE", hash_generated_method = "F1020C640D016BFB64A00D5EAB6D3FE4")
     public String getPropertyName() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1939833336 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1939833336 = mPropertyName;
+        varB4EAC82CA7396A68D541C85D26508E83_1939833336.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1939833336;
         // ---------- Original Method ----------
         //return mPropertyName;
     }
@@ -173,11 +176,9 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.711 -0400", hash_original_method = "5C1AD477A95BE17D3D6636E100CB747E", hash_generated_method = "791501B1A27923744BA5CA2B9A487F76")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.278 -0400", hash_original_method = "5C1AD477A95BE17D3D6636E100CB747E", hash_generated_method = "5B6231E7C40364D96D9BA02DC89633CE")
     @Override
     public void setIntValues(int... values) {
-        dsTaint.addTaint(values[0]);
         {
             {
                 setValues(PropertyValuesHolder.ofInt(mProperty, values));
@@ -189,6 +190,7 @@ public final class ObjectAnimator extends ValueAnimator {
         {
             super.setIntValues(values);
         } //End block
+        addTaint(values[0]);
         // ---------- Original Method ----------
         //if (mValues == null || mValues.length == 0) {
             //if (mProperty != null) {
@@ -202,11 +204,9 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.712 -0400", hash_original_method = "BECFA01C089C05BCDFA6C4149CD77C82", hash_generated_method = "97623658C1B3593594C208FAB342B588")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.311 -0400", hash_original_method = "BECFA01C089C05BCDFA6C4149CD77C82", hash_generated_method = "332EC15F08B57FE299D0CE6A8E5850F6")
     @Override
     public void setFloatValues(float... values) {
-        dsTaint.addTaint(values[0]);
         {
             {
                 setValues(PropertyValuesHolder.ofFloat(mProperty, values));
@@ -218,6 +218,7 @@ public final class ObjectAnimator extends ValueAnimator {
         {
             super.setFloatValues(values);
         } //End block
+        addTaint(values[0]);
         // ---------- Original Method ----------
         //if (mValues == null || mValues.length == 0) {
             //if (mProperty != null) {
@@ -231,11 +232,9 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.714 -0400", hash_original_method = "B3827B31EA19B66EB767F4A848C1D3E5", hash_generated_method = "9A5A2093ECFA311234AFE7E4D9B18934")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.343 -0400", hash_original_method = "B3827B31EA19B66EB767F4A848C1D3E5", hash_generated_method = "082BB2A77203708C89F0240D87050F72")
     @Override
     public void setObjectValues(Object... values) {
-        dsTaint.addTaint(values[0].dsTaint);
         {
             {
                 setValues(PropertyValuesHolder.ofObject(mProperty, (TypeEvaluator)null, values));
@@ -247,6 +246,7 @@ public final class ObjectAnimator extends ValueAnimator {
         {
             super.setObjectValues(values);
         } //End block
+        addTaint(values[0].getTaint());
         // ---------- Original Method ----------
         //if (mValues == null || mValues.length == 0) {
             //if (mProperty != null) {
@@ -260,8 +260,7 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.716 -0400", hash_original_method = "56CCF5D2849A2C2A18C16A03F4D35824", hash_generated_method = "7DF663F09394BFEA548F149051E152C2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.371 -0400", hash_original_method = "56CCF5D2849A2C2A18C16A03F4D35824", hash_generated_method = "7DF663F09394BFEA548F149051E152C2")
     @Override
     public void start() {
         {
@@ -296,8 +295,7 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.718 -0400", hash_original_method = "58C84EAE8A6F0E173B983D834F02804C", hash_generated_method = "137E5821CE786116C4E689E86268E952")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.391 -0400", hash_original_method = "58C84EAE8A6F0E173B983D834F02804C", hash_generated_method = "137E5821CE786116C4E689E86268E952")
     @Override
      void initAnimation() {
         {
@@ -323,38 +321,41 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.726 -0400", hash_original_method = "954A06F8CA33C0A594F77D3B920078B4", hash_generated_method = "E03FBB9CE719868D13CA68C8E157727B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.414 -0400", hash_original_method = "954A06F8CA33C0A594F77D3B920078B4", hash_generated_method = "88028310521BC04FF7A613AE27AC3876")
     @Override
     public ObjectAnimator setDuration(long duration) {
-        dsTaint.addTaint(duration);
+        ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_1241628240 = null; //Variable for return #1
         super.setDuration(duration);
-        return (ObjectAnimator)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1241628240 = this;
+        addTaint(duration);
+        varB4EAC82CA7396A68D541C85D26508E83_1241628240.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1241628240;
         // ---------- Original Method ----------
         //super.setDuration(duration);
         //return this;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.728 -0400", hash_original_method = "AF1F3CF2C666AC410BA38EDE7AFA44BA", hash_generated_method = "A5826E8CD3491E5B2736AD8217A05D25")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.430 -0400", hash_original_method = "AF1F3CF2C666AC410BA38EDE7AFA44BA", hash_generated_method = "37A32DE2C8A9E417406B1DF3E99E6F1D")
     public Object getTarget() {
-        return (Object)dsTaint.getTaint();
+        Object varB4EAC82CA7396A68D541C85D26508E83_78449654 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_78449654 = mTarget;
+        varB4EAC82CA7396A68D541C85D26508E83_78449654.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_78449654;
         // ---------- Original Method ----------
         //return mTarget;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.730 -0400", hash_original_method = "08B359BFA7826C6DC05DFFE8229162D4", hash_generated_method = "369AA5A618F4D2D3A4B08FB7AE621536")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.455 -0400", hash_original_method = "08B359BFA7826C6DC05DFFE8229162D4", hash_generated_method = "CDD72FE987BB5AFC1C4DACFB89010FCC")
     @Override
     public void setTarget(Object target) {
-        dsTaint.addTaint(target.dsTaint);
         {
             Object oldTarget;
             oldTarget = mTarget;
+            mTarget = target;
             {
-                boolean var2C98E48E4B4F691EA736E0E5C65FA038_912846296 = (oldTarget != null && target != null && oldTarget.getClass() == target.getClass());
+                boolean var2C98E48E4B4F691EA736E0E5C65FA038_264977079 = (oldTarget != null && target != null && oldTarget.getClass() == target.getClass());
             } //End collapsed parenthetic
             mInitialized = false;
         } //End block
@@ -370,8 +371,7 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.731 -0400", hash_original_method = "E0694B6EB6C164E3B15E1A0481C3ED42", hash_generated_method = "CAC2CEBA4DB9FB2A9C9011854DF1B925")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.473 -0400", hash_original_method = "E0694B6EB6C164E3B15E1A0481C3ED42", hash_generated_method = "CAC2CEBA4DB9FB2A9C9011854DF1B925")
     @Override
     public void setupStartValues() {
         initAnimation();
@@ -393,8 +393,7 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.742 -0400", hash_original_method = "92466FCD37C3DD1F8AE0CEC84015AF5E", hash_generated_method = "73FCB81C2A7805EB8C979D166B750567")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.490 -0400", hash_original_method = "92466FCD37C3DD1F8AE0CEC84015AF5E", hash_generated_method = "73FCB81C2A7805EB8C979D166B750567")
     @Override
     public void setupEndValues() {
         initAnimation();
@@ -416,11 +415,9 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.743 -0400", hash_original_method = "4BDD5FFF3171B4A6B3EE2F328E3988FB", hash_generated_method = "F4257CAD5420C96863DF40C2D91D61AF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.502 -0400", hash_original_method = "4BDD5FFF3171B4A6B3EE2F328E3988FB", hash_generated_method = "471191A63A87CC820196409826C0E996")
     @Override
      void animateValue(float fraction) {
-        dsTaint.addTaint(fraction);
         super.animateValue(fraction);
         int numValues;
         numValues = mValues.length;
@@ -431,6 +428,7 @@ public final class ObjectAnimator extends ValueAnimator {
                 mValues[i].setAnimatedValue(mTarget);
             } //End block
         } //End collapsed parenthetic
+        addTaint(fraction);
         // ---------- Original Method ----------
         //super.animateValue(fraction);
         //int numValues = mValues.length;
@@ -440,23 +438,25 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.744 -0400", hash_original_method = "90D327822AEC361513F70606A9AC65F7", hash_generated_method = "327B7C0483956276F8E273AB7615615B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.519 -0400", hash_original_method = "90D327822AEC361513F70606A9AC65F7", hash_generated_method = "BAD137025FB46CC5E01DCDADECE24A51")
     @Override
     public ObjectAnimator clone() {
+        ObjectAnimator varB4EAC82CA7396A68D541C85D26508E83_146647704 = null; //Variable for return #1
         ObjectAnimator anim;
         anim = (ObjectAnimator) super.clone();
-        return (ObjectAnimator)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_146647704 = anim;
+        varB4EAC82CA7396A68D541C85D26508E83_146647704.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_146647704;
         // ---------- Original Method ----------
         //final ObjectAnimator anim = (ObjectAnimator) super.clone();
         //return anim;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:32.745 -0400", hash_original_method = "0AD6D5BD218B220E887BD38666E44260", hash_generated_method = "2919ADA2E69FF29C6392F0FB13A21FD6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.543 -0400", hash_original_method = "0AD6D5BD218B220E887BD38666E44260", hash_generated_method = "6E624F03007526DF778AFACD1274318B")
     @Override
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_349737165 = null; //Variable for return #1
         String returnVal;
         returnVal = "ObjectAnimator@" + Integer.toHexString(hashCode()) + ", target " +
             mTarget;
@@ -469,7 +469,9 @@ public final class ObjectAnimator extends ValueAnimator {
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_349737165 = returnVal;
+        varB4EAC82CA7396A68D541C85D26508E83_349737165.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_349737165;
         // ---------- Original Method ----------
         //String returnVal = "ObjectAnimator@" + Integer.toHexString(hashCode()) + ", target " +
             //mTarget;
@@ -482,6 +484,8 @@ public final class ObjectAnimator extends ValueAnimator {
     }
 
     
-    private static final boolean DBG = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:10:51.546 -0400", hash_original_field = "0F6F0EB642B3F46DE2B2DF48DA4427EF", hash_generated_field = "B7C4E93D97D072890A37A56076D870F8")
+
+    private static boolean DBG = false;
 }
 

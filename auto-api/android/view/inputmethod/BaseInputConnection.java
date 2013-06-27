@@ -29,27 +29,38 @@ import android.view.ViewRootImpl;
 
 class ComposingText implements NoCopySpan {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.235 -0400", hash_original_method = "AC1C05763994F75EE2F0136BFF94672B", hash_generated_method = "AC1C05763994F75EE2F0136BFF94672B")
-        public ComposingText ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.928 -0400", hash_original_method = "299AC39680AC1BE3A17612B5D7B1D330", hash_generated_method = "299AC39680AC1BE3A17612B5D7B1D330")
+    public ComposingText ()
     {
+        //Synthesized constructor
     }
 
 
 }
 
 public class BaseInputConnection implements InputConnection {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.929 -0400", hash_original_field = "14E624678D0167A1D4F7B9DAF4BB3911", hash_generated_field = "141F0EFC0D8976518F576600E5590698")
+
     protected InputMethodManager mIMM;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.929 -0400", hash_original_field = "4FDD02795CD9F6B3D3D1A34A14720073", hash_generated_field = "97ACD18EF4B48BDC424981A4C6E55C66")
+
     View mTargetView;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.929 -0400", hash_original_field = "7A74C515F1C024E4A8A2C659CD63F25D", hash_generated_field = "B578BC86523A8ED06C11106F457EA3A1")
+
     boolean mDummyMode;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.929 -0400", hash_original_field = "DC2DB2F90A8C23F2FDC026A43D03668D", hash_generated_field = "252704B80FDD4D9B6E86ECF1CBD2B09A")
+
     private Object[] mDefaultComposingSpans;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.929 -0400", hash_original_field = "03FD58BE1D67B8547AADB1829EF91363", hash_generated_field = "BC747A06F00EC3CB73FDE2D30B84DC2D")
+
     Editable mEditable;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.929 -0400", hash_original_field = "C7BC21409380B9440A2B406EA5A8934C", hash_generated_field = "5553093AC34FB198BC290668CD3A4BD4")
+
     KeyCharacterMap mKeyCharacterMap;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.236 -0400", hash_original_method = "1A943D99EC75638EA04879F1FF8F4BB3", hash_generated_method = "E3C5D2AE4804EC627271931CFA5820BF")
-    @DSModeled(DSC.SAFE)
-     BaseInputConnection(InputMethodManager mgr, boolean fullEditor) {
-        dsTaint.addTaint(fullEditor);
-        dsTaint.addTaint(mgr.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.937 -0400", hash_original_method = "1A943D99EC75638EA04879F1FF8F4BB3", hash_generated_method = "D904201E77FBD444E7EC22E5A2FA95EE")
+      BaseInputConnection(InputMethodManager mgr, boolean fullEditor) {
+        mIMM = mgr;
         mTargetView = null;
         mDummyMode = !fullEditor;
         // ---------- Original Method ----------
@@ -59,13 +70,11 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.236 -0400", hash_original_method = "8D9F46A02734088C3A101A4C25C68420", hash_generated_method = "A9C1F7AAB47B1CC7720AF5F1E76DD225")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public BaseInputConnection(View targetView, boolean fullEditor) {
-        dsTaint.addTaint(targetView.dsTaint);
-        dsTaint.addTaint(fullEditor);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.938 -0400", hash_original_method = "8D9F46A02734088C3A101A4C25C68420", hash_generated_method = "7E503C534998A7CE2443D4066DFB4BA4")
+    public  BaseInputConnection(View targetView, boolean fullEditor) {
         mIMM = (InputMethodManager)targetView.getContext().getSystemService(
                 Context.INPUT_METHOD_SERVICE);
+        mTargetView = targetView;
         mDummyMode = !fullEditor;
         // ---------- Original Method ----------
         //mIMM = (InputMethodManager)targetView.getContext().getSystemService(
@@ -128,14 +137,16 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.237 -0400", hash_original_method = "A97F5DFC2840DF7B5D61C809FDCD4D64", hash_generated_method = "EF45C84D50101F113A9EAE9CD94950DD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.940 -0400", hash_original_method = "A97F5DFC2840DF7B5D61C809FDCD4D64", hash_generated_method = "524F37BD386DBD7DC0C10957C6603B2D")
     public Editable getEditable() {
+        Editable varB4EAC82CA7396A68D541C85D26508E83_1279569950 = null; //Variable for return #1
         {
             mEditable = Editable.Factory.getInstance().newEditable("");
             Selection.setSelection(mEditable, 0);
         } //End block
-        return (Editable)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1279569950 = mEditable;
+        varB4EAC82CA7396A68D541C85D26508E83_1279569950.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1279569950;
         // ---------- Original Method ----------
         //if (mEditable == null) {
             //mEditable = Editable.Factory.getInstance().newEditable("");
@@ -145,32 +156,32 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.237 -0400", hash_original_method = "E28DA299470AFBBB55E3F0E22CB4A567", hash_generated_method = "DA7C7C324B5B20F757AA0280810B40A7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.940 -0400", hash_original_method = "E28DA299470AFBBB55E3F0E22CB4A567", hash_generated_method = "7DEF46131838EC0D89FD2469A6ED9FC3")
     public boolean beginBatchEdit() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1339562666 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1339562666;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.237 -0400", hash_original_method = "68C20202F4C35ADB2F9CDE7850BF84CC", hash_generated_method = "8AEF51FF9991B6522DD2C7714DDCCC36")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.941 -0400", hash_original_method = "68C20202F4C35ADB2F9CDE7850BF84CC", hash_generated_method = "707B753BDC91B570FBE928923FE265B1")
     public boolean endBatchEdit() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1299933002 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1299933002;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.237 -0400", hash_original_method = "BC6513316EC80C5373FB6263D33C3F52", hash_generated_method = "04D055F501BA7422EA3DAFA31D097A7F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.941 -0400", hash_original_method = "BC6513316EC80C5373FB6263D33C3F52", hash_generated_method = "1445FE3C86298D7E485437CBBA68AABC")
     public boolean clearMetaKeyStates(int states) {
-        dsTaint.addTaint(states);
         Editable content;
         content = getEditable();
         MetaKeyKeyListener.clearMetaKeyState(content, states);
-        return dsTaint.getTaintBoolean();
+        addTaint(states);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1885548054 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1885548054;
         // ---------- Original Method ----------
         //final Editable content = getEditable();
         //if (content == null) return false;
@@ -179,34 +190,34 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.238 -0400", hash_original_method = "AA7244FCF81F32F7DEF3D51FAE032B7D", hash_generated_method = "7ABD16CED86DE2375200AA9DF84EEE22")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.941 -0400", hash_original_method = "AA7244FCF81F32F7DEF3D51FAE032B7D", hash_generated_method = "FE068266CF22A9F2AA2338B4910F37FA")
     public boolean commitCompletion(CompletionInfo text) {
-        dsTaint.addTaint(text.dsTaint);
-        return dsTaint.getTaintBoolean();
+        addTaint(text.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1590272345 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1590272345;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.238 -0400", hash_original_method = "8ECFF7D6DBED10855DA2C653047584D7", hash_generated_method = "845602FFBE263C80042B0C826E95C403")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.942 -0400", hash_original_method = "8ECFF7D6DBED10855DA2C653047584D7", hash_generated_method = "4E0B7D376E12B38F33E1D5B25A6D05F9")
     public boolean commitCorrection(CorrectionInfo correctionInfo) {
-        dsTaint.addTaint(correctionInfo.dsTaint);
-        return dsTaint.getTaintBoolean();
+        addTaint(correctionInfo.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1467480404 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1467480404;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.238 -0400", hash_original_method = "25125C99E3204B3B6C4C8BDE15E97EE8", hash_generated_method = "66BBBFB67E0FEBDBBC7C22C2556A7002")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.956 -0400", hash_original_method = "25125C99E3204B3B6C4C8BDE15E97EE8", hash_generated_method = "2A2DD31200E3A58C6229924898069939")
     public boolean commitText(CharSequence text, int newCursorPosition) {
-        dsTaint.addTaint(newCursorPosition);
-        dsTaint.addTaint(text);
         replaceText(text, newCursorPosition, false);
         sendCurrentText();
-        return dsTaint.getTaintBoolean();
+        addTaint(text.getTaint());
+        addTaint(newCursorPosition);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_909324777 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_909324777;
         // ---------- Original Method ----------
         //if (DEBUG) Log.v(TAG, "commitText " + text);
         //replaceText(text, newCursorPosition, false);
@@ -215,11 +226,8 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.239 -0400", hash_original_method = "74B12EE6F294A949F3B11979331384E6", hash_generated_method = "CF91C57AE13BF595B1D28E2ED388A420")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.957 -0400", hash_original_method = "74B12EE6F294A949F3B11979331384E6", hash_generated_method = "86DCD36127376A504A24176AAE285585")
     public boolean deleteSurroundingText(int leftLength, int rightLength) {
-        dsTaint.addTaint(leftLength);
-        dsTaint.addTaint(rightLength);
         Editable content;
         content = getEditable();
         beginBatchEdit();
@@ -261,20 +269,22 @@ public class BaseInputConnection implements InputConnection {
             int end;
             end = b + rightLength;
             {
-                boolean var1D97357640B2DA5E7AF46CBA2449F06C_1292209623 = (end > content.length());
+                boolean var1D97357640B2DA5E7AF46CBA2449F06C_1158649342 = (end > content.length());
                 end = content.length();
             } //End collapsed parenthetic
             content.delete(b, end);
         } //End block
         endBatchEdit();
-        return dsTaint.getTaintBoolean();
+        addTaint(leftLength);
+        addTaint(rightLength);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1664951044 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1664951044;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.239 -0400", hash_original_method = "1CCB9955A4205D39AC8709BDCAB9AF4C", hash_generated_method = "1CC97E64E0F5E9110B631F1953989752")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.958 -0400", hash_original_method = "1CCB9955A4205D39AC8709BDCAB9AF4C", hash_generated_method = "CA4F13DD8560EF8BB8C2AD37AFED2BBE")
     public boolean finishComposingText() {
         Editable content;
         content = getEditable();
@@ -284,7 +294,8 @@ public class BaseInputConnection implements InputConnection {
             endBatchEdit();
             sendCurrentText();
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1558098499 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1558098499;
         // ---------- Original Method ----------
         //if (DEBUG) Log.v(TAG, "finishComposingText");
         //final Editable content = getEditable();
@@ -298,10 +309,8 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.239 -0400", hash_original_method = "A12ABCD2EB4522E8FE53DB6299A361B5", hash_generated_method = "CD7B22ADAC07158470F258966D0F03EC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.958 -0400", hash_original_method = "A12ABCD2EB4522E8FE53DB6299A361B5", hash_generated_method = "4E053BFF7FFBA6FE958303890D7ED1C0")
     public int getCursorCapsMode(int reqModes) {
-        dsTaint.addTaint(reqModes);
         Editable content;
         content = getEditable();
         int a;
@@ -314,8 +323,10 @@ public class BaseInputConnection implements InputConnection {
             a = b;
             b = tmp;
         } //End block
-        int var4FC7E907996324A6E769D9F7DF7B82C2_528797911 = (TextUtils.getCapsMode(content, a, reqModes));
-        return dsTaint.getTaintInt();
+        int var4FC7E907996324A6E769D9F7DF7B82C2_1650057011 = (TextUtils.getCapsMode(content, a, reqModes));
+        addTaint(reqModes);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_755632390 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_755632390;
         // ---------- Original Method ----------
         //if (mDummyMode) return 0;
         //final Editable content = getEditable();
@@ -331,24 +342,28 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.239 -0400", hash_original_method = "A2A8D9B6A3DC6DA18051F8E023FD4A27", hash_generated_method = "A55EB0D01459D8657C1B94D5ED460C01")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.958 -0400", hash_original_method = "A2A8D9B6A3DC6DA18051F8E023FD4A27", hash_generated_method = "1EB51D1AB7E5FB488AB81C7B439D3B6D")
     public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(request.dsTaint);
-        return (ExtractedText)dsTaint.getTaint();
+        ExtractedText varB4EAC82CA7396A68D541C85D26508E83_1521639384 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1521639384 = null;
+        addTaint(request.getTaint());
+        addTaint(flags);
+        varB4EAC82CA7396A68D541C85D26508E83_1521639384.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1521639384;
         // ---------- Original Method ----------
         //return null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.240 -0400", hash_original_method = "75E370B84589846A89A63AE625719BF1", hash_generated_method = "B4FA58AA26BBF8C9188EE320AD6C4333")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.959 -0400", hash_original_method = "75E370B84589846A89A63AE625719BF1", hash_generated_method = "9C2806E600209FFC1FD701422701198B")
     public CharSequence getTextBeforeCursor(int length, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(length);
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_500925356 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1724568107 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_914476889 = null; //Variable for return #3
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1220702727 = null; //Variable for return #4
         Editable content;
         content = getEditable();
+        varB4EAC82CA7396A68D541C85D26508E83_500925356 = null;
         int a;
         a = Selection.getSelectionStart(content);
         int b;
@@ -360,13 +375,34 @@ public class BaseInputConnection implements InputConnection {
             b = tmp;
         } //End block
         {
+            varB4EAC82CA7396A68D541C85D26508E83_1724568107 = "";
+        } //End block
+        {
             length = a;
         } //End block
         {
-            CharSequence var3D09FA9D639A4A42AAC189D37959A2B7_450273299 = (content.subSequence(a - length, a));
+            varB4EAC82CA7396A68D541C85D26508E83_914476889 = content.subSequence(a - length, a);
         } //End block
-        CharSequence varDC25761CF9EACC6A9F636A7BD3D05AFA_1518264491 = (TextUtils.substring(content, a - length, a));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1220702727 = TextUtils.substring(content, a - length, a);
+        addTaint(length);
+        addTaint(flags);
+        CharSequence varA7E53CE21691AB073D9660D615818899_1818044009; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1818044009 = varB4EAC82CA7396A68D541C85D26508E83_500925356;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1818044009 = varB4EAC82CA7396A68D541C85D26508E83_1724568107;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_1818044009 = varB4EAC82CA7396A68D541C85D26508E83_914476889;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1818044009 = varB4EAC82CA7396A68D541C85D26508E83_1220702727;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1818044009.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1818044009;
         // ---------- Original Method ----------
         //final Editable content = getEditable();
         //if (content == null) return null;
@@ -390,12 +426,15 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.240 -0400", hash_original_method = "ED9D872BFDE8C5E26AC99155DBA149BF", hash_generated_method = "F541C34C1278B0F5AC24138FDEEEBE56")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.979 -0400", hash_original_method = "ED9D872BFDE8C5E26AC99155DBA149BF", hash_generated_method = "54F6BB253D0F1FC4FD5B2B75E8577AB0")
     public CharSequence getSelectedText(int flags) {
-        dsTaint.addTaint(flags);
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1364604219 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1466662981 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1392722766 = null; //Variable for return #3
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_62469319 = null; //Variable for return #4
         Editable content;
         content = getEditable();
+        varB4EAC82CA7396A68D541C85D26508E83_1364604219 = null;
         int a;
         a = Selection.getSelectionStart(content);
         int b;
@@ -406,11 +445,29 @@ public class BaseInputConnection implements InputConnection {
             a = b;
             b = tmp;
         } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_1466662981 = null;
         {
-            CharSequence var573F585F6C273E0B2BD0E5838B1C288F_2025617187 = (content.subSequence(a, b));
+            varB4EAC82CA7396A68D541C85D26508E83_1392722766 = content.subSequence(a, b);
         } //End block
-        CharSequence var009D1501F23C55676B44938BE17B5EB2_637949517 = (TextUtils.substring(content, a, b));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_62469319 = TextUtils.substring(content, a, b);
+        addTaint(flags);
+        CharSequence varA7E53CE21691AB073D9660D615818899_1426949380; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1426949380 = varB4EAC82CA7396A68D541C85D26508E83_1364604219;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1426949380 = varB4EAC82CA7396A68D541C85D26508E83_1466662981;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_1426949380 = varB4EAC82CA7396A68D541C85D26508E83_1392722766;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1426949380 = varB4EAC82CA7396A68D541C85D26508E83_62469319;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1426949380.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1426949380;
         // ---------- Original Method ----------
         //final Editable content = getEditable();
         //if (content == null) return null;
@@ -429,13 +486,14 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.240 -0400", hash_original_method = "08096EEE0873EB795CD58B469F10D5B2", hash_generated_method = "9111C01E67D0ACE017E1861267946698")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.989 -0400", hash_original_method = "08096EEE0873EB795CD58B469F10D5B2", hash_generated_method = "B68EDDAA96CBAF748459C19C3BEEFE78")
     public CharSequence getTextAfterCursor(int length, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(length);
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_774067843 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_35404883 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1506348316 = null; //Variable for return #3
         Editable content;
         content = getEditable();
+        varB4EAC82CA7396A68D541C85D26508E83_774067843 = null;
         int a;
         a = Selection.getSelectionStart(content);
         int b;
@@ -450,16 +508,31 @@ public class BaseInputConnection implements InputConnection {
             b = 0;
         } //End block
         {
-            boolean var7ECC0DB8B673AA466FD8BC7FC09E2D15_1565541197 = (b + length > content.length());
+            boolean var7ECC0DB8B673AA466FD8BC7FC09E2D15_677069448 = (b + length > content.length());
             {
                 length = content.length() - b;
             } //End block
         } //End collapsed parenthetic
         {
-            CharSequence var4CBBA902C75BC3529C6A29BD8528F10E_1332004595 = (content.subSequence(b, b + length));
+            varB4EAC82CA7396A68D541C85D26508E83_35404883 = content.subSequence(b, b + length);
         } //End block
-        CharSequence varE5F327044141AC3240ED4893E2C8481B_872603453 = (TextUtils.substring(content, b, b + length));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1506348316 = TextUtils.substring(content, b, b + length);
+        addTaint(length);
+        addTaint(flags);
+        CharSequence varA7E53CE21691AB073D9660D615818899_1084676322; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1084676322 = varB4EAC82CA7396A68D541C85D26508E83_774067843;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1084676322 = varB4EAC82CA7396A68D541C85D26508E83_35404883;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1084676322 = varB4EAC82CA7396A68D541C85D26508E83_1506348316;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1084676322.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1084676322;
         // ---------- Original Method ----------
         //final Editable content = getEditable();
         //if (content == null) return null;
@@ -483,10 +556,8 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.240 -0400", hash_original_method = "F533043312AA12AABEB855D393677CB5", hash_generated_method = "69A77C5FBE3EACB956C07E4AA971941E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.002 -0400", hash_original_method = "F533043312AA12AABEB855D393677CB5", hash_generated_method = "F6CBF0529E378CE9EC5BE664118133BA")
     public boolean performEditorAction(int actionCode) {
-        dsTaint.addTaint(actionCode);
         long eventTime;
         eventTime = SystemClock.uptimeMillis();
         sendKeyEvent(new KeyEvent(eventTime, eventTime,
@@ -499,7 +570,9 @@ public class BaseInputConnection implements InputConnection {
                 KeyCharacterMap.VIRTUAL_KEYBOARD, 0,
                 KeyEvent.FLAG_SOFT_KEYBOARD | KeyEvent.FLAG_KEEP_TOUCH_MODE
                 | KeyEvent.FLAG_EDITOR_ACTION));
-        return dsTaint.getTaintBoolean();
+        addTaint(actionCode);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_137297935 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_137297935;
         // ---------- Original Method ----------
         //long eventTime = SystemClock.uptimeMillis();
         //sendKeyEvent(new KeyEvent(eventTime, eventTime,
@@ -516,34 +589,34 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.241 -0400", hash_original_method = "CC9943DA76C04BDA8199AB8562F111EF", hash_generated_method = "A666F91D1CAA2FBD638650024C9F0437")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.014 -0400", hash_original_method = "CC9943DA76C04BDA8199AB8562F111EF", hash_generated_method = "1B94AAABFA9B2FC690D4FFAD7D78B0C3")
     public boolean performContextMenuAction(int id) {
-        dsTaint.addTaint(id);
-        return dsTaint.getTaintBoolean();
+        addTaint(id);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1847724858 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1847724858;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.241 -0400", hash_original_method = "E554B360562612AFCC9A87837C58FB1E", hash_generated_method = "133D5A8EE897F7067676CE2A7A296F89")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.014 -0400", hash_original_method = "E554B360562612AFCC9A87837C58FB1E", hash_generated_method = "892390CBCBC9984938CC93FC41720F09")
     public boolean performPrivateCommand(String action, Bundle data) {
-        dsTaint.addTaint(data.dsTaint);
-        dsTaint.addTaint(action);
-        return dsTaint.getTaintBoolean();
+        addTaint(action.getTaint());
+        addTaint(data.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_377171277 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_377171277;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.241 -0400", hash_original_method = "9F64937BB19F72531BAD6E029A24112C", hash_generated_method = "CF61CE2C3027FB8AEB011B2498A1F82C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.014 -0400", hash_original_method = "9F64937BB19F72531BAD6E029A24112C", hash_generated_method = "E28BC129AF15A69AB9A8FA181CBA458D")
     public boolean setComposingText(CharSequence text, int newCursorPosition) {
-        dsTaint.addTaint(newCursorPosition);
-        dsTaint.addTaint(text);
         replaceText(text, newCursorPosition, true);
-        return dsTaint.getTaintBoolean();
+        addTaint(text.getTaint());
+        addTaint(newCursorPosition);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_556876086 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_556876086;
         // ---------- Original Method ----------
         //if (DEBUG) Log.v(TAG, "setComposingText " + text);
         //replaceText(text, newCursorPosition, true);
@@ -551,11 +624,8 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.241 -0400", hash_original_method = "683D72CF1BBC9E7A391F140A2B9406BC", hash_generated_method = "966DF9941AF4C5C582147E1A1639E092")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.015 -0400", hash_original_method = "683D72CF1BBC9E7A391F140A2B9406BC", hash_generated_method = "BF8BFAAF537049FC9ED02425A3DF3F26")
     public boolean setComposingRegion(int start, int end) {
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(end);
         Editable content;
         content = getEditable();
         {
@@ -593,23 +663,23 @@ public class BaseInputConnection implements InputConnection {
             endBatchEdit();
             sendCurrentText();
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(start);
+        addTaint(end);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_851980286 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_851980286;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.242 -0400", hash_original_method = "06BE1F921CCFEC5EE49CD2FF18114BBC", hash_generated_method = "D02DD2BC37714577DF256791B6B00CDB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.016 -0400", hash_original_method = "06BE1F921CCFEC5EE49CD2FF18114BBC", hash_generated_method = "7CE0918D9FB7816F27B4FE688C27B4B1")
     public boolean setSelection(int start, int end) {
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(end);
         Editable content;
         content = getEditable();
         int len;
         len = content.length();
         {
-            boolean varA1F7AC2D1C7D9F96E09A09209C846F35_786671080 = (start == end && MetaKeyKeyListener.getMetaState(content,
+            boolean varA1F7AC2D1C7D9F96E09A09209C846F35_2060780694 = (start == end && MetaKeyKeyListener.getMetaState(content,
                 MetaKeyKeyListener.META_SELECTING) != 0);
             {
                 Selection.extendSelection(content, start);
@@ -618,7 +688,10 @@ public class BaseInputConnection implements InputConnection {
                 Selection.setSelection(content, start, end);
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintBoolean();
+        addTaint(start);
+        addTaint(end);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1210603181 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1210603181;
         // ---------- Original Method ----------
         //if (DEBUG) Log.v(TAG, "setSelection " + start + ", " + end);
         //final Editable content = getEditable();
@@ -637,10 +710,8 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.242 -0400", hash_original_method = "F539697840E1FFDBA9E983D0C0D8D0DD", hash_generated_method = "689768541C49FCE423A37E5412FFF147")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.016 -0400", hash_original_method = "F539697840E1FFDBA9E983D0C0D8D0DD", hash_generated_method = "57E5532E4A5EEAAE5C3A99D0CB5A95AC")
     public boolean sendKeyEvent(KeyEvent event) {
-        dsTaint.addTaint(event.dsTaint);
         {
             Handler h;
             h = mTargetView.getHandler();
@@ -655,7 +726,9 @@ public class BaseInputConnection implements InputConnection {
                         event));
             } //End block
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(event.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_693554335 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_693554335;
         // ---------- Original Method ----------
         //synchronized (mIMM.mH) {
             //Handler h = mTargetView != null ? mTargetView.getHandler() : null;
@@ -673,20 +746,19 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.242 -0400", hash_original_method = "FA18FCA0F08D3E4AC2B0D49617508B22", hash_generated_method = "0E3567C0067EC3D31EF00AD7849BF985")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.017 -0400", hash_original_method = "FA18FCA0F08D3E4AC2B0D49617508B22", hash_generated_method = "71BF5FACE11EE5D3491CD8961178B4B9")
     public boolean reportFullscreenMode(boolean enabled) {
-        dsTaint.addTaint(enabled);
         mIMM.setFullscreenMode(enabled);
-        return dsTaint.getTaintBoolean();
+        addTaint(enabled);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1292407779 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1292407779;
         // ---------- Original Method ----------
         //mIMM.setFullscreenMode(enabled);
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.242 -0400", hash_original_method = "BDE0428D54DBC47996CEC1E4604D5DEE", hash_generated_method = "300CCF1D880232974841D88E60902B91")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.030 -0400", hash_original_method = "BDE0428D54DBC47996CEC1E4604D5DEE", hash_generated_method = "300CCF1D880232974841D88E60902B91")
     private void sendCurrentText() {
         Editable content;
         content = getEditable();
@@ -724,8 +796,7 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.243 -0400", hash_original_method = "30261E28269E8D45DD173790F761946A", hash_generated_method = "63E65ECC238DC7754FBC19F734575036")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.032 -0400", hash_original_method = "30261E28269E8D45DD173790F761946A", hash_generated_method = "63E65ECC238DC7754FBC19F734575036")
     private void ensureDefaultComposingSpans() {
         {
             Context context;
@@ -758,13 +829,9 @@ public class BaseInputConnection implements InputConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:02.244 -0400", hash_original_method = "A9689D9BE329300E95AF0BB78D1B0A9D", hash_generated_method = "A1F8DABA7CB2F3AAC79BECFBEE78688C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.034 -0400", hash_original_method = "A9689D9BE329300E95AF0BB78D1B0A9D", hash_generated_method = "F53357DCFF724EAD6E925EAA9CC10F5A")
     private void replaceText(CharSequence text, int newCursorPosition,
             boolean composing) {
-        dsTaint.addTaint(newCursorPosition);
-        dsTaint.addTaint(text);
-        dsTaint.addTaint(composing);
         Editable content;
         content = getEditable();
         beginBatchEdit();
@@ -832,7 +899,7 @@ public class BaseInputConnection implements InputConnection {
         } //End block
         newCursorPosition = 0;
         {
-            boolean var1E349D85B106544D1972E08C42A1AAA3_673733606 = (newCursorPosition > content.length());
+            boolean var1E349D85B106544D1972E08C42A1AAA3_874119460 = (newCursorPosition > content.length());
             newCursorPosition = content.length();
         } //End collapsed parenthetic
         Selection.setSelection(content, newCursorPosition);
@@ -844,13 +911,22 @@ public class BaseInputConnection implements InputConnection {
             TextUtils.dumpSpans(content, lp, "  ");
         } //End block
         endBatchEdit();
+        addTaint(text.getTaint());
+        addTaint(newCursorPosition);
+        addTaint(composing);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    private static final boolean DEBUG = false;
-    private static final String TAG = "BaseInputConnection";
-    static final Object COMPOSING = new ComposingText();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.034 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+
+    private static boolean DEBUG = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.034 -0400", hash_original_field = "BAA57012083A507882C8ACD4608B3E53", hash_generated_field = "6C7B4ECE4A75446B54A8C008C249E2DB")
+
+    private static String TAG = "BaseInputConnection";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:56.034 -0400", hash_original_field = "6A146B7CB527A9187E4E6A97BD4E3C80", hash_generated_field = "C62A98D0BEE930C51B3B0D280544348C")
+
+    static Object COMPOSING = new ComposingText();
 }
 

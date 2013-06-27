@@ -11,9 +11,8 @@ import java.util.Random;
 
 public final class MathUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:58.287 -0400", hash_original_method = "36B7D6354601651DD814431AA0DFA6C7", hash_generated_method = "DED0A2D08FDE4310446B2635C520DAE6")
-    @DSModeled(DSC.SAFE)
-    private MathUtils() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.300 -0400", hash_original_method = "36B7D6354601651DD814431AA0DFA6C7", hash_generated_method = "DED0A2D08FDE4310446B2635C520DAE6")
+    private  MathUtils() {
         // ---------- Original Method ----------
     }
 
@@ -195,8 +194,14 @@ public final class MathUtils {
     }
 
     
-    private static final Random sRandom = new Random();
-    private static final float DEG_TO_RAD = 3.1415926f / 180.0f;
-    private static final float RAD_TO_DEG = 180.0f / 3.1415926f;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.347 -0400", hash_original_field = "7C8DEDA9EB3621928A05A47C5A919301", hash_generated_field = "49947FC84F60F7947A10F6BCB673BC57")
+
+    private static Random sRandom = new Random();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.347 -0400", hash_original_field = "71A09FE344749BC6419F5997EF16BB95", hash_generated_field = "266CFC156C42D7C3C02C88190C292AD1")
+
+    private static float DEG_TO_RAD = 3.1415926f / 180.0f;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.348 -0400", hash_original_field = "0A75BD7A342F5F73B5BF4B04FA82DDAC", hash_generated_field = "D4C194D6A8D721779392C9307181F25E")
+
+    private static float RAD_TO_DEG = 180.0f / 3.1415926f;
 }
 

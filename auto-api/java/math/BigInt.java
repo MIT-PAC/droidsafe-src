@@ -9,16 +9,18 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 final class BigInt {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.325 -0400", hash_original_field = "93F416957F94153A0658C38C2890FA30", hash_generated_field = "2E7F69903943700473696173A4E00017")
+
     transient int bignum = 0;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.448 -0400", hash_original_method = "4BDD2FB5BA3A95393178CD82E6D74B74", hash_generated_method = "4BDD2FB5BA3A95393178CD82E6D74B74")
-        public BigInt ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.325 -0400", hash_original_method = "1310F12C90284BE28EAEC322C36620BE", hash_generated_method = "1310F12C90284BE28EAEC322C36620BE")
+    public BigInt ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.456 -0400", hash_original_method = "BE6B93B7FDC95635F38722D58894F3B6", hash_generated_method = "6A3286CF45E3A22103D7740507159402")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.327 -0400", hash_original_method = "BE6B93B7FDC95635F38722D58894F3B6", hash_generated_method = "6A3286CF45E3A22103D7740507159402")
     @Override
     protected void finalize() throws Throwable {
         try 
@@ -44,21 +46,22 @@ final class BigInt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.457 -0400", hash_original_method = "AE4D2CED095C616381028CC9DA4809A2", hash_generated_method = "FB2C9C5DE3048A30D22DE0D6C75F5419")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.327 -0400", hash_original_method = "AE4D2CED095C616381028CC9DA4809A2", hash_generated_method = "27DB2F80A61E5FD036FE8102CC6FC9AD")
     @Override
     public String toString() {
-        String var3CC7B8F4F95D45CD564BBBF3D3714232_1036559245 = (this.decString());
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_2138709530 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2138709530 = this.decString();
+        varB4EAC82CA7396A68D541C85D26508E83_2138709530.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2138709530;
         // ---------- Original Method ----------
         //return this.decString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.457 -0400", hash_original_method = "5BE7FB396EC56810A84432A49B351D93", hash_generated_method = "1E859F9B96F4A43E7BE1EEEEE7F80173")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.327 -0400", hash_original_method = "5BE7FB396EC56810A84432A49B351D93", hash_generated_method = "EEE6EEF95853D3EB586F2F70F8682B42")
      int getNativeBIGNUM() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2019972970 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2019972970;
         // ---------- Original Method ----------
         //return this.bignum;
     }
@@ -97,8 +100,7 @@ final class BigInt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.458 -0400", hash_original_method = "271E8D5D7DE583053F26E9ECE2A9ACB3", hash_generated_method = "C284E5EDF24B5CD7B90D49A0CBBCB56C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.336 -0400", hash_original_method = "271E8D5D7DE583053F26E9ECE2A9ACB3", hash_generated_method = "C284E5EDF24B5CD7B90D49A0CBBCB56C")
     private void makeValid() {
         {
             this.bignum = NativeBN.BN_new();
@@ -125,25 +127,26 @@ final class BigInt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.459 -0400", hash_original_method = "8941EBA58E329563221FF533A53A6CC6", hash_generated_method = "84FEF7E7251A1C987223B7B020607351")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.336 -0400", hash_original_method = "8941EBA58E329563221FF533A53A6CC6", hash_generated_method = "2C8C5825C971E55CBCCDE2936DC422DF")
      void putCopy(BigInt from) {
-        dsTaint.addTaint(from.dsTaint);
         this.makeValid();
         Check(NativeBN.BN_copy(this.bignum, from.bignum));
+        addTaint(from.getTaint());
         // ---------- Original Method ----------
         //this.makeValid();
         //Check(NativeBN.BN_copy(this.bignum, from.bignum));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.459 -0400", hash_original_method = "05F85FC1363853C2D04A531626254DA4", hash_generated_method = "FCF1C9EFDDFF8DCE2194DE39D292C5AA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.337 -0400", hash_original_method = "05F85FC1363853C2D04A531626254DA4", hash_generated_method = "47E55C9C6F4BC850EB12A73D80A044A6")
      BigInt copy() {
+        BigInt varB4EAC82CA7396A68D541C85D26508E83_1654236681 = null; //Variable for return #1
         BigInt bi;
         bi = new BigInt();
         bi.putCopy(this);
-        return (BigInt)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1654236681 = bi;
+        varB4EAC82CA7396A68D541C85D26508E83_1654236681.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1654236681;
         // ---------- Original Method ----------
         //BigInt bi = new BigInt();
         //bi.putCopy(this);
@@ -151,46 +154,40 @@ final class BigInt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.460 -0400", hash_original_method = "30A332A63D32AA82B1909AFA5FBB53FE", hash_generated_method = "B43ED0C6BFD33DF76C1A9AD85FF7D5AA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.337 -0400", hash_original_method = "30A332A63D32AA82B1909AFA5FBB53FE", hash_generated_method = "9F4FE1739F998FF63CA0C442321A153A")
      void putLongInt(long val) {
-        dsTaint.addTaint(val);
         this.makeValid();
         Check(NativeBN.putLongInt(this.bignum, val));
+        addTaint(val);
         // ---------- Original Method ----------
         //this.makeValid();
         //Check(NativeBN.putLongInt(this.bignum, val));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.460 -0400", hash_original_method = "2D149BF96A898165FFEB2983CC63FA56", hash_generated_method = "2A77BDBF68825EC024937D236D7F5322")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.337 -0400", hash_original_method = "2D149BF96A898165FFEB2983CC63FA56", hash_generated_method = "621D5A75DD981DDD500FB666D54321E8")
      void putULongInt(long val, boolean neg) {
-        dsTaint.addTaint(val);
-        dsTaint.addTaint(neg);
         this.makeValid();
         Check(NativeBN.putULongInt(this.bignum, val, neg));
+        addTaint(val);
+        addTaint(neg);
         // ---------- Original Method ----------
         //this.makeValid();
         //Check(NativeBN.putULongInt(this.bignum, val, neg));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.460 -0400", hash_original_method = "9B61495EA965D6A6D5A899C3BAA9567B", hash_generated_method = "F36D12D263E2AEEEE50A58E6F2EE0155")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.351 -0400", hash_original_method = "9B61495EA965D6A6D5A899C3BAA9567B", hash_generated_method = "F37D2EFDD9099236B0A0A50FAC43A037")
     private NumberFormatException invalidBigInteger(String s) {
-        dsTaint.addTaint(s);
         if (DroidSafeAndroidRuntime.control) throw new NumberFormatException("Invalid BigInteger: " + s);
-        return (NumberFormatException)dsTaint.getTaint();
+        addTaint(s.getTaint());
         // ---------- Original Method ----------
         //throw new NumberFormatException("Invalid BigInteger: " + s);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.461 -0400", hash_original_method = "6076EA670724B5FC9E7D900E17BB8270", hash_generated_method = "06704A0297B266EC868B6B23A1E7F9D1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.351 -0400", hash_original_method = "6076EA670724B5FC9E7D900E17BB8270", hash_generated_method = "3E77AF221BE4560F561DCB21D4E7410B")
      void putDecString(String original) {
-        dsTaint.addTaint(original);
         String s;
         s = checkString(original, 10);
         this.makeValid();
@@ -198,11 +195,12 @@ final class BigInt {
         usedLen = NativeBN.BN_dec2bn(this.bignum, s);
         Check((usedLen > 0));
         {
-            boolean varA13F3142E694CF8397A4AEFE6967A458_336014224 = (usedLen < s.length());
+            boolean varA13F3142E694CF8397A4AEFE6967A458_1228674439 = (usedLen < s.length());
             {
                 if (DroidSafeAndroidRuntime.control) throw invalidBigInteger(original);
             } //End block
         } //End collapsed parenthetic
+        addTaint(original.getTaint());
         // ---------- Original Method ----------
         //String s = checkString(original, 10);
         //this.makeValid();
@@ -214,10 +212,8 @@ final class BigInt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.461 -0400", hash_original_method = "77EC4D791D3A431E14DA888080E50FCA", hash_generated_method = "2E11A4D63CAE6604C66743E84811B6F7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.351 -0400", hash_original_method = "77EC4D791D3A431E14DA888080E50FCA", hash_generated_method = "62DB06A1A5D076FBD3A5B1D61E93BEB8")
      void putHexString(String original) {
-        dsTaint.addTaint(original);
         String s;
         s = checkString(original, 16);
         this.makeValid();
@@ -225,11 +221,12 @@ final class BigInt {
         usedLen = NativeBN.BN_hex2bn(this.bignum, s);
         Check((usedLen > 0));
         {
-            boolean varA13F3142E694CF8397A4AEFE6967A458_1515894449 = (usedLen < s.length());
+            boolean varA13F3142E694CF8397A4AEFE6967A458_1295365315 = (usedLen < s.length());
             {
                 if (DroidSafeAndroidRuntime.control) throw invalidBigInteger(original);
             } //End block
         } //End collapsed parenthetic
+        addTaint(original.getTaint());
         // ---------- Original Method ----------
         //String s = checkString(original, 16);
         //this.makeValid();
@@ -241,11 +238,9 @@ final class BigInt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.462 -0400", hash_original_method = "509B8D432808DFEEDB9A2530ACB4E595", hash_generated_method = "09B3A11C2982B86FD2E7251709A8ABF7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.352 -0400", hash_original_method = "509B8D432808DFEEDB9A2530ACB4E595", hash_generated_method = "9A9890B22F660C2292809CC1C2305073")
      String checkString(String s, int base) {
-        dsTaint.addTaint(s);
-        dsTaint.addTaint(base);
+        String varB4EAC82CA7396A68D541C85D26508E83_187338637 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
@@ -269,7 +264,7 @@ final class BigInt {
             char ch;
             ch = s.charAt(i);
             {
-                boolean varF5FD1498482E4E0987145634F68F58CE_1238174520 = (Character.digit(ch, base) == -1);
+                boolean varF5FD1498482E4E0987145634F68F58CE_593067260 = (Character.digit(ch, base) == -1);
                 {
                     if (DroidSafeAndroidRuntime.control) throw invalidBigInteger(s);
                 } //End block
@@ -278,10 +273,11 @@ final class BigInt {
                 nonAscii = true;
             } //End block
         } //End block
-        {
-            Object varB5F5A26F93A2E990D6691629F8036A0D_1735531839 = (toAscii(s, base));
-        } //End flattened ternary
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_187338637 = nonAscii ? toAscii(s, base) : s;
+        addTaint(s.getTaint());
+        addTaint(base);
+        varB4EAC82CA7396A68D541C85D26508E83_187338637.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_187338637;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -302,118 +298,112 @@ final class BigInt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.477 -0400", hash_original_method = "ACDB63EFF9B325E839800C11A6F974A8", hash_generated_method = "D8651FFF26828AF6D1744B4683405FB9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.353 -0400", hash_original_method = "ACDB63EFF9B325E839800C11A6F974A8", hash_generated_method = "43EFF414FBB7D78601A6A3E50FECCB70")
      void putBigEndian(byte[] a, boolean neg) {
-        dsTaint.addTaint(neg);
-        dsTaint.addTaint(a[0]);
         this.makeValid();
         Check(NativeBN.BN_bin2bn(a, a.length, neg, this.bignum));
+        addTaint(a[0]);
+        addTaint(neg);
         // ---------- Original Method ----------
         //this.makeValid();
         //Check(NativeBN.BN_bin2bn(a, a.length, neg, this.bignum));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.478 -0400", hash_original_method = "F46F553C794EFAECC5CBB83791E423EA", hash_generated_method = "A1F3C2A15E3EFAF2C3DCF122D2FAF653")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.353 -0400", hash_original_method = "F46F553C794EFAECC5CBB83791E423EA", hash_generated_method = "F0EE44A85BD597609CA749B27F66BE74")
      void putLittleEndianInts(int[] a, boolean neg) {
-        dsTaint.addTaint(neg);
-        dsTaint.addTaint(a[0]);
         this.makeValid();
         Check(NativeBN.litEndInts2bn(a, a.length, neg, this.bignum));
+        addTaint(a[0]);
+        addTaint(neg);
         // ---------- Original Method ----------
         //this.makeValid();
         //Check(NativeBN.litEndInts2bn(a, a.length, neg, this.bignum));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.478 -0400", hash_original_method = "78A05CDDAF5055249AF6E8FAF4BFB01A", hash_generated_method = "18939C44A1A289CA12D5A1996F5FE4BE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.363 -0400", hash_original_method = "78A05CDDAF5055249AF6E8FAF4BFB01A", hash_generated_method = "4009FE82AC021BB5FF09463897DA8BFE")
      void putBigEndianTwosComplement(byte[] a) {
-        dsTaint.addTaint(a[0]);
         this.makeValid();
         Check(NativeBN.twosComp2bn(a, a.length, this.bignum));
+        addTaint(a[0]);
         // ---------- Original Method ----------
         //this.makeValid();
         //Check(NativeBN.twosComp2bn(a, a.length, this.bignum));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.478 -0400", hash_original_method = "27EA3CFBEF77EFE881C6E2FB553F4CC2", hash_generated_method = "B894382EFAC20C10C85E2268F80E657D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.364 -0400", hash_original_method = "27EA3CFBEF77EFE881C6E2FB553F4CC2", hash_generated_method = "B707CF2D9DB388B5ACE8F8FD70992C48")
      long longInt() {
-        long var568B96714232996F05A67FEC3007E730_486010677 = (NativeBN.longInt(this.bignum));
-        return dsTaint.getTaintLong();
+        long var568B96714232996F05A67FEC3007E730_162528178 = (NativeBN.longInt(this.bignum));
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_695521528 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_695521528;
         // ---------- Original Method ----------
         //return NativeBN.longInt(this.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.478 -0400", hash_original_method = "91D15DC45533D4FB86FF476EA9D84EB9", hash_generated_method = "D1494416C1F71B03AFD3894329892968")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.364 -0400", hash_original_method = "91D15DC45533D4FB86FF476EA9D84EB9", hash_generated_method = "D50FBC1F2F6C4F2B1314A003679FD9FB")
      String decString() {
-        String var5A47DA5D3E43120D41343DABBE5AC364_1778179885 = (NativeBN.BN_bn2dec(this.bignum));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_431774206 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_431774206 = NativeBN.BN_bn2dec(this.bignum);
+        varB4EAC82CA7396A68D541C85D26508E83_431774206.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_431774206;
         // ---------- Original Method ----------
         //return NativeBN.BN_bn2dec(this.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.478 -0400", hash_original_method = "41C3EB22F67E33809F4134B2F2306A6C", hash_generated_method = "AF67F59BB4414E0F18B9550A91472F35")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.379 -0400", hash_original_method = "41C3EB22F67E33809F4134B2F2306A6C", hash_generated_method = "3259C37F8DFF4EEDF321C9D19F90BFFB")
      String hexString() {
-        String var06AEA38752C175D9E728ED660283F1F9_802980072 = (NativeBN.BN_bn2hex(this.bignum));
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_175620580 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_175620580 = NativeBN.BN_bn2hex(this.bignum);
+        varB4EAC82CA7396A68D541C85D26508E83_175620580.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_175620580;
         // ---------- Original Method ----------
         //return NativeBN.BN_bn2hex(this.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.479 -0400", hash_original_method = "5BFAE0D787CB740802A929B95296D76B", hash_generated_method = "64A60FF31E38A77BBD5996436D78B3E5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.379 -0400", hash_original_method = "5BFAE0D787CB740802A929B95296D76B", hash_generated_method = "66FDE3A8ED52A05392F9E68C02AA252A")
      byte[] bigEndianMagnitude() {
-        byte[] var5713A3D0946171715E55913A347440FF_1940560306 = (NativeBN.BN_bn2bin(this.bignum));
-        byte[] retVal = new byte[1];
-        retVal[0] = (byte)dsTaint.getTaintInt();
-        return retVal;
+        byte[] var5713A3D0946171715E55913A347440FF_1343434270 = (NativeBN.BN_bn2bin(this.bignum));
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1664929956 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1664929956;
         // ---------- Original Method ----------
         //return NativeBN.BN_bn2bin(this.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.479 -0400", hash_original_method = "9306CD68F08E506A6F565B6B5DE53B97", hash_generated_method = "4C73A401A44726694014D8FC137B8D47")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.380 -0400", hash_original_method = "9306CD68F08E506A6F565B6B5DE53B97", hash_generated_method = "F8B5EFC3D023F4CA9D65441C4E503A02")
      int[] littleEndianIntsMagnitude() {
-        int[] var6E1D22610BFEAF10D5E9C9888883D31F_167997651 = (NativeBN.bn2litEndInts(this.bignum));
-        int[] retVal = new int[1];
-        retVal[0] = dsTaint.getTaintInt();
-        return retVal;
+        int[] var6E1D22610BFEAF10D5E9C9888883D31F_1371645960 = (NativeBN.bn2litEndInts(this.bignum));
+        int[] varB4CCCA26F9DB9189C32F33E82D425CFB_223685891 = {getTaintInt()};
+        return varB4CCCA26F9DB9189C32F33E82D425CFB_223685891;
         // ---------- Original Method ----------
         //return NativeBN.bn2litEndInts(this.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.479 -0400", hash_original_method = "20C3F9921E8308474D657B401A5C4926", hash_generated_method = "2B3DDE83FCA9062CC62CA0C6F26F692C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.380 -0400", hash_original_method = "20C3F9921E8308474D657B401A5C4926", hash_generated_method = "3521685D65EF35F8EC77A21D5F81B5BA")
      int sign() {
-        int varA6FFB2EBC8E064F4B12AFD8977763B21_1513285805 = (NativeBN.sign(this.bignum));
-        return dsTaint.getTaintInt();
+        int varA6FFB2EBC8E064F4B12AFD8977763B21_981684765 = (NativeBN.sign(this.bignum));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_782860710 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_782860710;
         // ---------- Original Method ----------
         //return NativeBN.sign(this.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.479 -0400", hash_original_method = "D1EC3F455E1B2B87D60E54F4D60552ED", hash_generated_method = "E59866852D74982334F00618269CB566")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.381 -0400", hash_original_method = "D1EC3F455E1B2B87D60E54F4D60552ED", hash_generated_method = "5436B33A2F42F6E99AE3F117CEF82174")
      void setSign(int val) {
-        dsTaint.addTaint(val);
         {
             NativeBN.BN_set_negative(this.bignum, 0);
         } //End block
         {
             NativeBN.BN_set_negative(this.bignum, 1);
         } //End block
+        addTaint(val);
         // ---------- Original Method ----------
         //if (val > 0) {
             //NativeBN.BN_set_negative(this.bignum, 0);
@@ -423,35 +413,35 @@ final class BigInt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.479 -0400", hash_original_method = "0C4139075DA080C92B767C8D6DDC4F59", hash_generated_method = "A1B3F846AD32D22E23801EA9EFF95CA8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.381 -0400", hash_original_method = "0C4139075DA080C92B767C8D6DDC4F59", hash_generated_method = "B301CD2E2227185C97F8D746B93E548D")
      boolean twosCompFitsIntoBytes(int desiredByteCount) {
-        dsTaint.addTaint(desiredByteCount);
         int actualByteCount;
         actualByteCount = (NativeBN.bitLength(this.bignum) + 7) / 8;
-        return dsTaint.getTaintBoolean();
+        addTaint(desiredByteCount);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1996681940 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1996681940;
         // ---------- Original Method ----------
         //int actualByteCount = (NativeBN.bitLength(this.bignum) + 7) / 8;
         //return actualByteCount <= desiredByteCount;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.480 -0400", hash_original_method = "06E4028740CFBC5E8F4DC5B6A30B93E1", hash_generated_method = "67268A876ACFBCB6CC2CB9AA04E4FC37")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.387 -0400", hash_original_method = "06E4028740CFBC5E8F4DC5B6A30B93E1", hash_generated_method = "03BCC3B09D754B8CF2B747F972DD661D")
      int bitLength() {
-        int var27C992443C21A44A87944D4A58DDEBF4_158816259 = (NativeBN.bitLength(this.bignum));
-        return dsTaint.getTaintInt();
+        int var27C992443C21A44A87944D4A58DDEBF4_866640065 = (NativeBN.bitLength(this.bignum));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_42936325 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_42936325;
         // ---------- Original Method ----------
         //return NativeBN.bitLength(this.bignum);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.480 -0400", hash_original_method = "7AF9A4C10272398CEA0DB42D124E2F09", hash_generated_method = "52A6298589B390438163B77A115685AC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.388 -0400", hash_original_method = "7AF9A4C10272398CEA0DB42D124E2F09", hash_generated_method = "144A5EA1EBD2FBFF915AB6DB8E9F1B25")
      boolean isBitSet(int n) {
-        dsTaint.addTaint(n);
-        boolean var41FF7BE6D0CC98059B7B09D26E2122CC_403025065 = (NativeBN.BN_is_bit_set(this.bignum, n));
-        return dsTaint.getTaintBoolean();
+        boolean var41FF7BE6D0CC98059B7B09D26E2122CC_872964488 = (NativeBN.BN_is_bit_set(this.bignum, n));
+        addTaint(n);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_568511033 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_568511033;
         // ---------- Original Method ----------
         //return NativeBN.BN_is_bit_set(this.bignum, n);
     }
@@ -464,31 +454,28 @@ final class BigInt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.480 -0400", hash_original_method = "E387E2D423D242DA7510EDC2247E6A5C", hash_generated_method = "B39A6ACE8CFC9FD605CA96D4DADBA3F6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.388 -0400", hash_original_method = "E387E2D423D242DA7510EDC2247E6A5C", hash_generated_method = "8E99E53D11860E6CEF110BC79F6C4567")
      void shift(int n) {
-        dsTaint.addTaint(n);
         Check(NativeBN.BN_shift(this.bignum, this.bignum, n));
+        addTaint(n);
         // ---------- Original Method ----------
         //Check(NativeBN.BN_shift(this.bignum, this.bignum, n));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.481 -0400", hash_original_method = "3376DF594C58E0E875033FD1F81D1456", hash_generated_method = "7CDBA3D5BB72658BFBBE20037B4D3399")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.388 -0400", hash_original_method = "3376DF594C58E0E875033FD1F81D1456", hash_generated_method = "7E084BFEDB883F61C6C7FF03338957C6")
      void addPositiveInt(int w) {
-        dsTaint.addTaint(w);
         Check(NativeBN.BN_add_word(this.bignum, w));
+        addTaint(w);
         // ---------- Original Method ----------
         //Check(NativeBN.BN_add_word(this.bignum, w));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.481 -0400", hash_original_method = "5EBBBBFBA0490D7B09CF7B986217857B", hash_generated_method = "4117AEB65B23184D5644EBB6F394545B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.403 -0400", hash_original_method = "5EBBBBFBA0490D7B09CF7B986217857B", hash_generated_method = "BDDBD1113B4AA7D1B4E6FA7548A4EDF1")
      void multiplyByPositiveInt(int w) {
-        dsTaint.addTaint(w);
         Check(NativeBN.BN_mul_word(this.bignum, w));
+        addTaint(w);
         // ---------- Original Method ----------
         //Check(NativeBN.BN_mul_word(this.bignum, w));
     }
@@ -508,11 +495,10 @@ final class BigInt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.481 -0400", hash_original_method = "0051E42AE39953CC88EC24F561CB2DC4", hash_generated_method = "30F7F5096493C709A2F70B613C5BD0D7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.412 -0400", hash_original_method = "0051E42AE39953CC88EC24F561CB2DC4", hash_generated_method = "2A68044FACA0ADA2AD3A3006E9D9BB38")
      void add(BigInt a) {
-        dsTaint.addTaint(a.dsTaint);
         Check(NativeBN.BN_add(this.bignum, this.bignum, a.bignum));
+        addTaint(a.getTaint());
         // ---------- Original Method ----------
         //Check(NativeBN.BN_add(this.bignum, this.bignum, a.bignum));
     }
@@ -600,12 +586,12 @@ final class BigInt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:27.483 -0400", hash_original_method = "E070D8C138AEEC2CD37718FB0D1B5E61", hash_generated_method = "1B96ED81621FBF6226645ABFC49913B2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.434 -0400", hash_original_method = "E070D8C138AEEC2CD37718FB0D1B5E61", hash_generated_method = "97440F5CE8B8A7B4C3E037F479D4D221")
      boolean isPrime(int certainty) {
-        dsTaint.addTaint(certainty);
-        boolean varC73FF920A9D497BA034F5C82FDD4C8FD_292508794 = (NativeBN.BN_is_prime_ex(bignum, certainty, 0));
-        return dsTaint.getTaintBoolean();
+        boolean varC73FF920A9D497BA034F5C82FDD4C8FD_988930725 = (NativeBN.BN_is_prime_ex(bignum, certainty, 0));
+        addTaint(certainty);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_6397493 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_6397493;
         // ---------- Original Method ----------
         //return NativeBN.BN_is_prime_ex(bignum, certainty, 0);
     }

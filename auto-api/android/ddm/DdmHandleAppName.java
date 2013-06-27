@@ -15,9 +15,8 @@ import java.nio.ByteBuffer;
 
 public class DdmHandleAppName extends ChunkHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.923 -0400", hash_original_method = "D8F21F6A35B29C82CC84858F5D50C10E", hash_generated_method = "4AA0C4196E29438E7A86C54BEE924FD0")
-    @DSModeled(DSC.SAFE)
-    private DdmHandleAppName() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.581 -0400", hash_original_method = "D8F21F6A35B29C82CC84858F5D50C10E", hash_generated_method = "4AA0C4196E29438E7A86C54BEE924FD0")
+    private  DdmHandleAppName() {
         // ---------- Original Method ----------
     }
 
@@ -26,25 +25,25 @@ public class DdmHandleAppName extends ChunkHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.923 -0400", hash_original_method = "FF1AB110B94FCC8AEFA697D75FFC57DD", hash_generated_method = "234EA70F7C5F3B8EA6891C34DC4DD59D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.598 -0400", hash_original_method = "FF1AB110B94FCC8AEFA697D75FFC57DD", hash_generated_method = "234EA70F7C5F3B8EA6891C34DC4DD59D")
     public void connected() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.923 -0400", hash_original_method = "7ECE87C8E0B6AC612BF4B05EB3BE89DA", hash_generated_method = "A03BB8B8FD980F77D1775E26C3251D60")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.599 -0400", hash_original_method = "7ECE87C8E0B6AC612BF4B05EB3BE89DA", hash_generated_method = "A03BB8B8FD980F77D1775E26C3251D60")
     public void disconnected() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:46.924 -0400", hash_original_method = "9322B8B253BE8A74DE6E5A2942EC5C84", hash_generated_method = "7458DEBFD63C607D44914CB6D33230B6")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.600 -0400", hash_original_method = "9322B8B253BE8A74DE6E5A2942EC5C84", hash_generated_method = "4B4F199EAF71489ADFFE2786CEF03991")
     public Chunk handleChunk(Chunk request) {
-        dsTaint.addTaint(request.dsTaint);
-        return (Chunk)dsTaint.getTaint();
+        Chunk varB4EAC82CA7396A68D541C85D26508E83_967663446 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_967663446 = null;
+        addTaint(request.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_967663446.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_967663446;
         // ---------- Original Method ----------
         //return null;
     }
@@ -75,8 +74,14 @@ public class DdmHandleAppName extends ChunkHandler {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.618 -0400", hash_original_field = "C0EC2ED0C0CF89300CB83DEFFF3FBA06", hash_generated_field = "A00FA52EEEF4E9D0FDBABD362F30DDE4")
+
     public static final int CHUNK_APNM = type("APNM");
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.618 -0400", hash_original_field = "E59EB9719FA44D601D4143CDA4B04189", hash_generated_field = "13D874CFFECF1B13A69B63BC4FD01026")
+
     private volatile static String mAppName = "";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.618 -0400", hash_original_field = "6D0F3A12D1E77DB82707A844A474112E", hash_generated_field = "CB6FB73A6BC364A591CA00981BD0CE53")
+
     private static DdmHandleAppName mInstance = new DdmHandleAppName();
 }
 

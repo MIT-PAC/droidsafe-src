@@ -12,26 +12,37 @@ import android.os.Parcel;
 import java.net.InetAddress;
 
 public class DhcpInfo implements Parcelable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:18.623 -0400", hash_original_field = "9D0DE3EE8DA929F164DA3D6942A26C0E", hash_generated_field = "C724F9C20BA29ABA1B784CD7B6F790AC")
+
     public int ipAddress;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:18.624 -0400", hash_original_field = "3E21AB62FB17400301D9F0156B6C3031", hash_generated_field = "4A25F063CFF1A08AFBDF399724369996")
+
     public int gateway;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:18.640 -0400", hash_original_field = "3F5C8ADFE42894248788EF03028CCA0B", hash_generated_field = "425E646BC1F92E2E3580929E14D019CB")
+
     public int netmask;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:18.640 -0400", hash_original_field = "EA7A64692946A5F46EC886328D133D7D", hash_generated_field = "257F82C9AA70827B0BA2B4E037775503")
+
     public int dns1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:18.640 -0400", hash_original_field = "A831E6BCC55C70D2AE9E7E84ADC9028D", hash_generated_field = "BC9DD1C3178F0AAF32A5A79882B2C471")
+
     public int dns2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:18.640 -0400", hash_original_field = "836C673259E51101A01E755A34F97359", hash_generated_field = "955CDA6770D7F45900D23A25A1E286DF")
+
     public int serverAddress;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:18.640 -0400", hash_original_field = "EFDB6D9EA18998638D28A31554B9189B", hash_generated_field = "7EE02913D8BA0209DD0BF7B47A6FCC6D")
+
     public int leaseDuration;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:50.549 -0400", hash_original_method = "C1DF7E5F229CB04932AB2C91464EDDF1", hash_generated_method = "529F08EF9721051414135D71EEC80E9A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public DhcpInfo() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:18.641 -0400", hash_original_method = "C1DF7E5F229CB04932AB2C91464EDDF1", hash_generated_method = "529F08EF9721051414135D71EEC80E9A")
+    public  DhcpInfo() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:50.549 -0400", hash_original_method = "39B86796FD777927684A932467EC8639", hash_generated_method = "CA7F047FBBD18AB1ED8EB98236DAAB8B")
-    @DSModeled(DSC.SAFE)
-    public DhcpInfo(DhcpInfo source) {
-        dsTaint.addTaint(source.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:18.644 -0400", hash_original_method = "39B86796FD777927684A932467EC8639", hash_generated_method = "AA0D1DAC538D3232F83CD124A4E9EE89")
+    public  DhcpInfo(DhcpInfo source) {
         {
             ipAddress = source.ipAddress;
             gateway = source.gateway;
@@ -54,9 +65,9 @@ public class DhcpInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:50.550 -0400", hash_original_method = "8D7B8EC19D16628B2975B72E53B9E8C8", hash_generated_method = "0E96BDCA2804E2FDBBF0853BA6740713")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:18.670 -0400", hash_original_method = "8D7B8EC19D16628B2975B72E53B9E8C8", hash_generated_method = "3C265ECD7D12AFBD8B696D94F24FF3BB")
     public String toString() {
+        String varB4EAC82CA7396A68D541C85D26508E83_132312498 = null; //Variable for return #1
         StringBuffer str;
         str = new StringBuffer();
         str.append("ipaddr ");
@@ -72,8 +83,9 @@ public class DhcpInfo implements Parcelable {
         str.append(" DHCP server ");
         putAddress(str, serverAddress);
         str.append(" lease ").append(leaseDuration).append(" seconds");
-        String varCDF926920844FBB113EB20FEB0C3BED9_1293305685 = (str.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_132312498 = str.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_132312498.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_132312498;
         // ---------- Original Method ----------
         //StringBuffer str = new StringBuffer();
         //str.append("ipaddr ");
@@ -98,20 +110,17 @@ public class DhcpInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:50.551 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "ED77793910767EAAB4C12F70F75B9095")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:18.671 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "82CA980EF0C4CBB732C9CBC45012EF83")
     public int describeContents() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1005908398 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1005908398;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:50.551 -0400", hash_original_method = "EAB5EBBB3C53B9EB39B520A9586CC73F", hash_generated_method = "5B551E391B024E0E7667415C8D8BB553")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:18.674 -0400", hash_original_method = "EAB5EBBB3C53B9EB39B520A9586CC73F", hash_generated_method = "FE668C08237B83BF82D22B429B0583CA")
     public void writeToParcel(Parcel dest, int flags) {
-        dsTaint.addTaint(flags);
-        dsTaint.addTaint(dest.dsTaint);
         dest.writeInt(ipAddress);
         dest.writeInt(gateway);
         dest.writeInt(netmask);
@@ -119,6 +128,8 @@ public class DhcpInfo implements Parcelable {
         dest.writeInt(dns2);
         dest.writeInt(serverAddress);
         dest.writeInt(leaseDuration);
+        addTaint(dest.getTaint());
+        addTaint(flags);
         // ---------- Original Method ----------
         //dest.writeInt(ipAddress);
         //dest.writeInt(gateway);
@@ -130,45 +141,25 @@ public class DhcpInfo implements Parcelable {
     }
 
     
-    public static final Creator<DhcpInfo> CREATOR = new Creator<DhcpInfo>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:50.553 -0400", hash_original_method = "F44837DFDE4E00511933DFB4D7F0040E", hash_generated_method = "5F97D55755F233EB24E39BA1D5C48EAC")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public DhcpInfo createFromParcel(Parcel in) {
-            dsTaint.addTaint(in.dsTaint);
-            DhcpInfo info;
-            info = new DhcpInfo();
-            info.ipAddress = in.readInt();
-            info.gateway = in.readInt();
-            info.netmask = in.readInt();
-            info.dns1 = in.readInt();
-            info.dns2 = in.readInt();
-            info.serverAddress = in.readInt();
-            info.leaseDuration = in.readInt();
-            return (DhcpInfo)dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //DhcpInfo info = new DhcpInfo();
-            //info.ipAddress = in.readInt();
-            //info.gateway = in.readInt();
-            //info.netmask = in.readInt();
-            //info.dns1 = in.readInt();
-            //info.dns2 = in.readInt();
-            //info.serverAddress = in.readInt();
-            //info.leaseDuration = in.readInt();
-            //return info;
-        }
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:18.675 -0400", hash_original_field = "9856C027FECDC0A66630F7DFB04D7434", hash_generated_field = "89C286478D97EE5D122EFDEA836E1240")
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:50.556 -0400", hash_original_method = "807ED57C7D32921184285C1BE9B084C4", hash_generated_method = "A1B9869FCB225E02F55CE3E0F96E53D7")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public DhcpInfo[] newArray(int size) {
-            dsTaint.addTaint(size);
-            DhcpInfo[] var025B8E96467F6687B8F475AC4F271E0A_772939000 = (new DhcpInfo[size]);
-            return (DhcpInfo[])dsTaint.getTaint();
-            // ---------- Original Method ----------
-            //return new DhcpInfo[size];
-        }
+    public static final Creator<DhcpInfo> CREATOR =
+        new Creator<DhcpInfo>() {
+            public DhcpInfo createFromParcel(Parcel in) {
+                DhcpInfo info = new DhcpInfo();
+                info.ipAddress = in.readInt();
+                info.gateway = in.readInt();
+                info.netmask = in.readInt();
+                info.dns1 = in.readInt();
+                info.dns2 = in.readInt();
+                info.serverAddress = in.readInt();
+                info.leaseDuration = in.readInt();
+                return info;
+            }
 
-        
-}; //Transformed anonymous class
+            public DhcpInfo[] newArray(int size) {
+                return new DhcpInfo[size];
+            }
+        };
 }
 

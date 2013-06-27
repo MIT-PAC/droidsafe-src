@@ -9,42 +9,45 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 class MapEntry<K, V> implements Map.Entry<K, V>, Cloneable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.252 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "F780C5984CF24E477CB9559E91475987")
+
     K key;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.252 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "A7E8A049E4C72FD5713D3AFD6CBF7C08")
+
     V value;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.908 -0400", hash_original_method = "1776FA5E19E8D82B200F9151CF90A74A", hash_generated_method = "8156EFD8597848C18A5A30F97D4C252F")
-    @DSModeled(DSC.SAFE)
-     MapEntry(K theKey) {
-        dsTaint.addTaint(theKey.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.252 -0400", hash_original_method = "1776FA5E19E8D82B200F9151CF90A74A", hash_generated_method = "CBCD735FCAC72B0E750457D5D44BE736")
+      MapEntry(K theKey) {
+        key = theKey;
         // ---------- Original Method ----------
         //key = theKey;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.908 -0400", hash_original_method = "D494BFA0BCF5AB6B3E53FE04C11D2F42", hash_generated_method = "7ABFE299B2E45D0F15DC000B4E7EA24B")
-    @DSModeled(DSC.SAFE)
-     MapEntry(K theKey, V theValue) {
-        dsTaint.addTaint(theKey.dsTaint);
-        dsTaint.addTaint(theValue.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.265 -0400", hash_original_method = "D494BFA0BCF5AB6B3E53FE04C11D2F42", hash_generated_method = "63672617A0FD25776E962F4E19FA2F6F")
+      MapEntry(K theKey, V theValue) {
+        key = theKey;
+        value = theValue;
         // ---------- Original Method ----------
         //key = theKey;
         //value = theValue;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.908 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "4DE6BDC3CD2A556209C36988D99D74F0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.266 -0400", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "6DAC717AF19FE2F77AE13CB03C7D7911")
     @Override
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_1151692239 = null; //Variable for return #1
         try 
         {
-            Object varDEB570B566DA7549E2F197D0AFA5A2B6_740261308 = (super.clone());
+            varB4EAC82CA7396A68D541C85D26508E83_1151692239 = super.clone();
         } //End block
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
         } //End block
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1151692239.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1151692239;
         // ---------- Original Method ----------
         //try {
             //return super.clone();
@@ -54,20 +57,20 @@ class MapEntry<K, V> implements Map.Entry<K, V>, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.908 -0400", hash_original_method = "5E665954E6171F76B6FD9130152FC1D9", hash_generated_method = "F3A07E70E648F3B950B6C4A70B2FF550")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.266 -0400", hash_original_method = "5E665954E6171F76B6FD9130152FC1D9", hash_generated_method = "E7EA9614C0D4F4109408D7B2A912F189")
     @Override
     public boolean equals(Object object) {
-        dsTaint.addTaint(object.dsTaint);
         {
             Map.Entry<?, ?> entry;
             entry = (Map.Entry<?, ?>) object;
-            boolean varA968BD7EB7991BA4A759E0255BB341DA_132756953 = ((key == null ? entry.getKey() == null : key.equals(entry
+            boolean varA968BD7EB7991BA4A759E0255BB341DA_1162634817 = ((key == null ? entry.getKey() == null : key.equals(entry
                     .getKey()))
                     && (value == null ? entry.getValue() == null : value
                             .equals(entry.getValue()))); //DSFIXME:  CODE0008: Nested ternary operator in expression
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(object.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1296420727 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1296420727;
         // ---------- Original Method ----------
         //if (this == object) {
             //return true;
@@ -83,44 +86,50 @@ class MapEntry<K, V> implements Map.Entry<K, V>, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.909 -0400", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "72E8E211F4CBB9A3E7EA7C601BF9517D")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.267 -0400", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "1B847F19AE8A51DAB7E8B5CA22026737")
     public K getKey() {
-        return (K)dsTaint.getTaint();
+        K varB4EAC82CA7396A68D541C85D26508E83_1084347825 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1084347825 = key;
+        varB4EAC82CA7396A68D541C85D26508E83_1084347825.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1084347825;
         // ---------- Original Method ----------
         //return key;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.909 -0400", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "1716B03F3EEDEC9A8CDFDC8FCC55E236")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.280 -0400", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "B78335949E2C28E89BE6E941EB598952")
     public V getValue() {
-        return (V)dsTaint.getTaint();
+        V varB4EAC82CA7396A68D541C85D26508E83_1311594322 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1311594322 = value;
+        varB4EAC82CA7396A68D541C85D26508E83_1311594322.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1311594322;
         // ---------- Original Method ----------
         //return value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.909 -0400", hash_original_method = "6416487D313DFCFD3052C01ADB883217", hash_generated_method = "671E95AFC44670C253A299A795BD93D3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.281 -0400", hash_original_method = "6416487D313DFCFD3052C01ADB883217", hash_generated_method = "4F77049CBAF78CFDC76405A4C7A4A67E")
     @Override
     public int hashCode() {
-        int var405BA182403049FF248011FD048FE4C0_1748511633 = ((key == null ? 0 : key.hashCode())
+        int var405BA182403049FF248011FD048FE4C0_1855270894 = ((key == null ? 0 : key.hashCode())
                 ^ (value == null ? 0 : value.hashCode())); //DSFIXME:  CODE0008: Nested ternary operator in expression
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1060702267 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1060702267;
         // ---------- Original Method ----------
         //return (key == null ? 0 : key.hashCode())
                 //^ (value == null ? 0 : value.hashCode());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.909 -0400", hash_original_method = "123DAF07FFBE76C8EE5BD5879EB92827", hash_generated_method = "6C04AFB63E89CDE7EFCF5132A9B136AE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.282 -0400", hash_original_method = "123DAF07FFBE76C8EE5BD5879EB92827", hash_generated_method = "231589D017DA883DB960A049A590CEB5")
     public V setValue(V object) {
-        dsTaint.addTaint(object.dsTaint);
+        V varB4EAC82CA7396A68D541C85D26508E83_643587677 = null; //Variable for return #1
         V result;
         result = value;
-        return (V)dsTaint.getTaint();
+        value = object;
+        varB4EAC82CA7396A68D541C85D26508E83_643587677 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_643587677.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_643587677;
         // ---------- Original Method ----------
         //V result = value;
         //value = object;
@@ -128,11 +137,13 @@ class MapEntry<K, V> implements Map.Entry<K, V>, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.909 -0400", hash_original_method = "D7D954865532EB22F9DFE06F79F78E27", hash_generated_method = "4002110D0218F85825FBB09C78ED072B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.282 -0400", hash_original_method = "D7D954865532EB22F9DFE06F79F78E27", hash_generated_method = "C1BBCA475DF76CD2937AFBC918F5FF5D")
     @Override
     public String toString() {
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_769838579 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_769838579 = key + "=" + value;
+        varB4EAC82CA7396A68D541C85D26508E83_769838579.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_769838579;
         // ---------- Original Method ----------
         //return key + "=" + value;
     }

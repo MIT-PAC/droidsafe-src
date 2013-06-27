@@ -13,22 +13,22 @@ import java.util.List;
 
 final class ProxySelectorImpl extends ProxySelector {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.070 -0400", hash_original_method = "F89A8EEF2F1DE063B17CD9397EAAC594", hash_generated_method = "F89A8EEF2F1DE063B17CD9397EAAC594")
-        public ProxySelectorImpl ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.777 -0400", hash_original_method = "132D2379FE75BA7CC4F9F650D388CD2E", hash_generated_method = "132D2379FE75BA7CC4F9F650D388CD2E")
+    public ProxySelectorImpl ()
     {
+        //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.071 -0400", hash_original_method = "01DD13242757A7D8F74EE28AFD708C0E", hash_generated_method = "C3A120823BB8730AA99223DA4A83A121")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.787 -0400", hash_original_method = "01DD13242757A7D8F74EE28AFD708C0E", hash_generated_method = "04D2B6793EC0816A04A159E59567AEEC")
     @Override
     public void connectFailed(URI uri, SocketAddress sa, IOException ioe) {
-        dsTaint.addTaint(sa.dsTaint);
-        dsTaint.addTaint(ioe.dsTaint);
-        dsTaint.addTaint(uri.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         } //End block
+        addTaint(uri.getTaint());
+        addTaint(sa.getTaint());
+        addTaint(ioe.getTaint());
         // ---------- Original Method ----------
         //if (uri == null || sa == null || ioe == null) {
             //throw new IllegalArgumentException();
@@ -36,22 +36,27 @@ final class ProxySelectorImpl extends ProxySelector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.072 -0400", hash_original_method = "28B2C18C3900BEE8EC547F5A9EDC2C1E", hash_generated_method = "75499541A66AA83D3A01F52D1F19D967")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.788 -0400", hash_original_method = "28B2C18C3900BEE8EC547F5A9EDC2C1E", hash_generated_method = "2EE04AFC80006BE14EDD2535DAAA7182")
     @Override
     public List<Proxy> select(URI uri) {
-        dsTaint.addTaint(uri.dsTaint);
-        List<Proxy> var061AD6C488E0FD26D1F2E6B800D617A5_1793955452 = (Collections.singletonList(selectOneProxy(uri)));
-        return (List<Proxy>)dsTaint.getTaint();
+        List<Proxy> varB4EAC82CA7396A68D541C85D26508E83_1813212302 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1813212302 = Collections.singletonList(selectOneProxy(uri));
+        addTaint(uri.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1813212302.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1813212302;
         // ---------- Original Method ----------
         //return Collections.singletonList(selectOneProxy(uri));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.073 -0400", hash_original_method = "77552E7F4A5B4D6DFBBFBB4C81DE3154", hash_generated_method = "92F9CAFACAF9D87E2699DC4B3347DC6F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.870 -0400", hash_original_method = "77552E7F4A5B4D6DFBBFBB4C81DE3154", hash_generated_method = "416DBBFE4F69B0C3D50A39F3122B8F55")
     private Proxy selectOneProxy(URI uri) {
-        dsTaint.addTaint(uri.dsTaint);
+        Proxy varB4EAC82CA7396A68D541C85D26508E83_963035833 = null; //Variable for return #1
+        Proxy varB4EAC82CA7396A68D541C85D26508E83_2067346670 = null; //Variable for return #2
+        Proxy varB4EAC82CA7396A68D541C85D26508E83_1034638535 = null; //Variable for return #3
+        Proxy varB4EAC82CA7396A68D541C85D26508E83_49601827 = null; //Variable for return #4
+        Proxy varB4EAC82CA7396A68D541C85D26508E83_505275623 = null; //Variable for return #5
+        Proxy varB4EAC82CA7396A68D541C85D26508E83_1559434897 = null; //Variable for return #6
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("uri == null");
         } //End block
@@ -69,65 +74,118 @@ final class ProxySelectorImpl extends ProxySelector {
         boolean httpProxyOkay;
         httpProxyOkay = true;
         {
-            boolean var099C3DB490FA18F5B96DE8EDEA1D5BD1_1662056876 = ("http".equalsIgnoreCase(scheme));
+            boolean var099C3DB490FA18F5B96DE8EDEA1D5BD1_494355162 = ("http".equalsIgnoreCase(scheme));
             {
                 port = 80;
                 nonProxyHostsKey = "http.nonProxyHosts";
                 proxy = lookupProxy("http.proxyHost", "http.proxyPort", Proxy.Type.HTTP, port);
             } //End block
             {
-                boolean varBE5CD356012198A0BB12BE01A0345AF9_1678050358 = ("https".equalsIgnoreCase(scheme));
+                boolean varBE5CD356012198A0BB12BE01A0345AF9_1768689134 = ("https".equalsIgnoreCase(scheme));
                 {
                     port = 443;
                     nonProxyHostsKey = "https.nonProxyHosts";
                     proxy = lookupProxy("https.proxyHost", "https.proxyPort", Proxy.Type.HTTP, port);
                 } //End block
                 {
-                    boolean var2128F31844E17B47A150E79CC0F2EB02_1476059942 = ("ftp".equalsIgnoreCase(scheme));
+                    boolean var2128F31844E17B47A150E79CC0F2EB02_961033352 = ("ftp".equalsIgnoreCase(scheme));
                     {
                         port = 80;
                         nonProxyHostsKey = "ftp.nonProxyHosts";
                         proxy = lookupProxy("ftp.proxyHost", "ftp.proxyPort", Proxy.Type.HTTP, port);
                     } //End block
                     {
-                        boolean varAEA5A4A3FC367439E50E9738D52FA87C_1611036092 = ("socket".equalsIgnoreCase(scheme));
+                        boolean varAEA5A4A3FC367439E50E9738D52FA87C_1239006602 = ("socket".equalsIgnoreCase(scheme));
                         {
                             httpProxyOkay = false;
+                        } //End block
+                        {
+                            varB4EAC82CA7396A68D541C85D26508E83_963035833 = Proxy.NO_PROXY;
                         } //End block
                     } //End collapsed parenthetic
                 } //End collapsed parenthetic
             } //End collapsed parenthetic
         } //End collapsed parenthetic
         {
-            boolean var90DD54E078CD81F4F882B77E685DB85A_239408258 = (nonProxyHostsKey != null
+            boolean var90DD54E078CD81F4F882B77E685DB85A_599590159 = (nonProxyHostsKey != null
                 && isNonProxyHost(uri.getHost(), System.getProperty(nonProxyHostsKey)));
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_2067346670 = Proxy.NO_PROXY;
+            } //End block
         } //End collapsed parenthetic
         {
+            varB4EAC82CA7396A68D541C85D26508E83_1034638535 = proxy;
+        } //End block
+        {
             proxy = lookupProxy("proxyHost", "proxyPort", Proxy.Type.HTTP, port);
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_49601827 = proxy;
+            } //End block
         } //End block
         proxy = lookupProxy("socksProxyHost", "socksProxyPort", Proxy.Type.SOCKS, 1080);
-        return (Proxy)dsTaint.getTaint();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_505275623 = proxy;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_1559434897 = Proxy.NO_PROXY;
+        addTaint(uri.getTaint());
+        Proxy varA7E53CE21691AB073D9660D615818899_1105141945; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1105141945 = varB4EAC82CA7396A68D541C85D26508E83_963035833;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1105141945 = varB4EAC82CA7396A68D541C85D26508E83_2067346670;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_1105141945 = varB4EAC82CA7396A68D541C85D26508E83_1034638535;
+                break;
+            case 4: //Assign result for return ordinal #4
+                varA7E53CE21691AB073D9660D615818899_1105141945 = varB4EAC82CA7396A68D541C85D26508E83_49601827;
+                break;
+            case 5: //Assign result for return ordinal #5
+                varA7E53CE21691AB073D9660D615818899_1105141945 = varB4EAC82CA7396A68D541C85D26508E83_505275623;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1105141945 = varB4EAC82CA7396A68D541C85D26508E83_1559434897;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1105141945.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1105141945;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.073 -0400", hash_original_method = "8F772B362E14FE9459180F7871735648", hash_generated_method = "750B1C20C8E4F10D7C594282412EFFF2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.872 -0400", hash_original_method = "8F772B362E14FE9459180F7871735648", hash_generated_method = "97B122E688738DE21B98EE24737C6BE8")
     private Proxy lookupProxy(String hostKey, String portKey, Proxy.Type type, int defaultPort) {
-        dsTaint.addTaint(portKey);
-        dsTaint.addTaint(defaultPort);
-        dsTaint.addTaint(hostKey);
-        dsTaint.addTaint(type.dsTaint);
+        Proxy varB4EAC82CA7396A68D541C85D26508E83_1389478992 = null; //Variable for return #1
+        Proxy varB4EAC82CA7396A68D541C85D26508E83_1362727518 = null; //Variable for return #2
         String host;
         host = System.getProperty(hostKey);
         {
-            boolean var72B3AAE23DD516E6BEEC93DCD65ADD44_2002461503 = (host == null || host.isEmpty());
+            boolean var72B3AAE23DD516E6BEEC93DCD65ADD44_1243579346 = (host == null || host.isEmpty());
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1389478992 = null;
+            } //End block
         } //End collapsed parenthetic
         int port;
         port = getSystemPropertyInt(portKey, defaultPort);
-        Proxy var93E5AD263C05E4FBFDFE33C0821A2E7C_1072842327 = (new Proxy(type, InetSocketAddress.createUnresolved(host, port)));
-        return (Proxy)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1362727518 = new Proxy(type, InetSocketAddress.createUnresolved(host, port));
+        addTaint(hostKey.getTaint());
+        addTaint(portKey.getTaint());
+        addTaint(type.getTaint());
+        addTaint(defaultPort);
+        Proxy varA7E53CE21691AB073D9660D615818899_927056071; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_927056071 = varB4EAC82CA7396A68D541C85D26508E83_1389478992;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_927056071 = varB4EAC82CA7396A68D541C85D26508E83_1362727518;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_927056071.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_927056071;
         // ---------- Original Method ----------
         //String host = System.getProperty(hostKey);
         //if (host == null || host.isEmpty()) {
@@ -138,22 +196,22 @@ final class ProxySelectorImpl extends ProxySelector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.074 -0400", hash_original_method = "36E6CCC8C23DA7DA61B6599903A6840E", hash_generated_method = "846E59710B3DA4675AAA20EE49921BBC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.872 -0400", hash_original_method = "36E6CCC8C23DA7DA61B6599903A6840E", hash_generated_method = "A3EB1C47A1B2542220C7B26DEC9ED3E0")
     private int getSystemPropertyInt(String key, int defaultValue) {
-        dsTaint.addTaint(defaultValue);
-        dsTaint.addTaint(key);
         String string;
         string = System.getProperty(key);
         {
             try 
             {
-                int var3715EC1DDE30CC1B193F456CA99A0396_374841300 = (Integer.parseInt(string));
+                int var3715EC1DDE30CC1B193F456CA99A0396_172709713 = (Integer.parseInt(string));
             } //End block
             catch (NumberFormatException ignored)
             { }
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(key.getTaint());
+        addTaint(defaultValue);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681822232 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681822232;
         // ---------- Original Method ----------
         //String string = System.getProperty(key);
         //if (string != null) {
@@ -166,17 +224,14 @@ final class ProxySelectorImpl extends ProxySelector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:28.074 -0400", hash_original_method = "960A16929DB84D35FDCE84F421A041D1", hash_generated_method = "5D7BA0A2CF06BC69F11E81B3789F9985")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.876 -0400", hash_original_method = "960A16929DB84D35FDCE84F421A041D1", hash_generated_method = "2D78D073B479F68CF538EC71AFC05217")
     private boolean isNonProxyHost(String host, String nonProxyHosts) {
-        dsTaint.addTaint(host);
-        dsTaint.addTaint(nonProxyHosts);
         StringBuilder patternBuilder;
         patternBuilder = new StringBuilder();
         {
             int i;
             i = 0;
-            boolean var34D84132F51D26BE58DFA3C8D2058636_1444453318 = (i < nonProxyHosts.length());
+            boolean var34D84132F51D26BE58DFA3C8D2058636_1232724971 = (i < nonProxyHosts.length());
             {
                 char c;
                 c = nonProxyHosts.charAt(i);
@@ -193,8 +248,11 @@ final class ProxySelectorImpl extends ProxySelector {
         } //End collapsed parenthetic
         String pattern;
         pattern = patternBuilder.toString();
-        boolean var9EF2FD8C4CC99942090209B67BA77704_1461538336 = (host.matches(pattern));
-        return dsTaint.getTaintBoolean();
+        boolean var9EF2FD8C4CC99942090209B67BA77704_911504152 = (host.matches(pattern));
+        addTaint(host.getTaint());
+        addTaint(nonProxyHosts.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_182193934 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_182193934;
         // ---------- Original Method ----------
         //if (host == null || nonProxyHosts == null) {
             //return false;

@@ -10,9 +10,10 @@ import java.util.Iterator;
 
 final class HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:39.086 -0400", hash_original_method = "61C7F1510C6C08EE23D0987EC404E147", hash_generated_method = "61C7F1510C6C08EE23D0987EC404E147")
-        public HeaderParser ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.578 -0400", hash_original_method = "C3E16CB5840D33E016F8223898DE7315", hash_generated_method = "C3E16CB5840D33E016F8223898DE7315")
+    public HeaderParser ()
     {
+        //Synthesized constructor
     }
 
 

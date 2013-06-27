@@ -11,13 +11,14 @@ import java.io.IOException;
 
 public class EndOfBufferException extends IOException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.746 -0400", hash_original_method = "B387D76A75821C43CC4EBF5308FC51E5", hash_generated_method = "6DCE126A7E1ADDC6C23BC29B82C20CEE")
-    @DSModeled(DSC.SAFE)
-    public EndOfBufferException() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.971 -0400", hash_original_method = "B387D76A75821C43CC4EBF5308FC51E5", hash_generated_method = "6DCE126A7E1ADDC6C23BC29B82C20CEE")
+    public  EndOfBufferException() {
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = 1838636631255369519L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.972 -0400", hash_original_field = "B9CEBE6D172D9BBB858070BFE06AD747", hash_generated_field = "820F47113A31B872FE49D8F2EE99FB19")
+
+    private static long serialVersionUID = 1838636631255369519L;
 }
 

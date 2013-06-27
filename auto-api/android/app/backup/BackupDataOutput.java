@@ -12,12 +12,12 @@ import java.io.FileDescriptor;
 import java.io.IOException;
 
 public class BackupDataOutput {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:55.561 -0400", hash_original_field = "99113DA95FFD8908386D2B9606B738F9", hash_generated_field = "B54359389579FCBEAD7641AAB8EECDC6")
+
     int mBackupWriter;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.739 -0400", hash_original_method = "519CBE74D64F306E29EEFC8CCFEDDE23", hash_generated_method = "F3D6F29601239DB17D608A9BFF636522")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public BackupDataOutput(FileDescriptor fd) {
-        dsTaint.addTaint(fd.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:55.563 -0400", hash_original_method = "519CBE74D64F306E29EEFC8CCFEDDE23", hash_generated_method = "F8796C98DA70FFAC92E782E32F46300F")
+    public  BackupDataOutput(FileDescriptor fd) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         mBackupWriter = ctor(fd);
         {
@@ -32,17 +32,17 @@ public class BackupDataOutput {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.740 -0400", hash_original_method = "64DACF34CA37B4EE5BF2F213E613C915", hash_generated_method = "792DC71C79C8D382117DB4E46453BC4B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:55.573 -0400", hash_original_method = "64DACF34CA37B4EE5BF2F213E613C915", hash_generated_method = "19AC09CFC27F64A4663CE56295D85867")
     public int writeEntityHeader(String key, int dataSize) throws IOException {
-        dsTaint.addTaint(dataSize);
-        dsTaint.addTaint(key);
         int result;
         result = writeEntityHeader_native(mBackupWriter, key, dataSize);
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("result=0x" + Integer.toHexString(result));
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(key.getTaint());
+        addTaint(dataSize);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785190561 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785190561;
         // ---------- Original Method ----------
         //int result = writeEntityHeader_native(mBackupWriter, key, dataSize);
         //if (result >= 0) {
@@ -53,17 +53,17 @@ public class BackupDataOutput {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.740 -0400", hash_original_method = "1F7BD9065C295005115986DC5C5FEFFC", hash_generated_method = "0957214B900232B1A21C05B2C29EAC25")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:55.574 -0400", hash_original_method = "1F7BD9065C295005115986DC5C5FEFFC", hash_generated_method = "DEB255861647F0545DF6911BE4172C0A")
     public int writeEntityData(byte[] data, int size) throws IOException {
-        dsTaint.addTaint(data[0]);
-        dsTaint.addTaint(size);
         int result;
         result = writeEntityData_native(mBackupWriter, data, size);
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("result=0x" + Integer.toHexString(result));
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(data[0]);
+        addTaint(size);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1079596421 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1079596421;
         // ---------- Original Method ----------
         //int result = writeEntityData_native(mBackupWriter, data, size);
         //if (result >= 0) {
@@ -74,18 +74,16 @@ public class BackupDataOutput {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.741 -0400", hash_original_method = "BD5511530074677855FB5F031E6A0A48", hash_generated_method = "96D036607834050CBC8833059DBD3F58")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:55.587 -0400", hash_original_method = "BD5511530074677855FB5F031E6A0A48", hash_generated_method = "B7BAA6FD7838EF815FAD67FE9A62146A")
     public void setKeyPrefix(String keyPrefix) {
-        dsTaint.addTaint(keyPrefix);
         setKeyPrefix_native(mBackupWriter, keyPrefix);
+        addTaint(keyPrefix.getTaint());
         // ---------- Original Method ----------
         //setKeyPrefix_native(mBackupWriter, keyPrefix);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:39.741 -0400", hash_original_method = "7380B31B3FE738857D26F18ED18C23C7", hash_generated_method = "9C603892475912CA423BEAEF1B06C23D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:55.589 -0400", hash_original_method = "7380B31B3FE738857D26F18ED18C23C7", hash_generated_method = "9C603892475912CA423BEAEF1B06C23D")
     protected void finalize() throws Throwable {
         try 
         {

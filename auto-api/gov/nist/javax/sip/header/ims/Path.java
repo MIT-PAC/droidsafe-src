@@ -14,49 +14,48 @@ import gov.nist.javax.sip.header.ims.PathHeader;
 
 public class Path extends gov.nist.javax.sip.header.AddressParametersHeader implements PathHeader, SIPHeaderNamesIms, ExtensionHeader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.633 -0400", hash_original_method = "1A5DC98D9C587097429AD2D82BB7A094", hash_generated_method = "F401750ADFDCB017C037ACB022E3E6F4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Path(AddressImpl address) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.410 -0400", hash_original_method = "1A5DC98D9C587097429AD2D82BB7A094", hash_generated_method = "5F59B98D299AC7BFD7ACF0C1CB5028E9")
+    public  Path(AddressImpl address) {
         super(NAME);
-        dsTaint.addTaint(address.dsTaint);
         this.address = address;
+        addTaint(address.getTaint());
         // ---------- Original Method ----------
         //this.address = address;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.633 -0400", hash_original_method = "1037FC87002CAE3F016A3DA3F4CF1390", hash_generated_method = "6BA54447352AEF48A71AC6B629E6A91B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public Path() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.410 -0400", hash_original_method = "1037FC87002CAE3F016A3DA3F4CF1390", hash_generated_method = "6BA54447352AEF48A71AC6B629E6A91B")
+    public  Path() {
         super(NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.633 -0400", hash_original_method = "DD9AA0788424353442B0CFE218D97412", hash_generated_method = "82BB4983C31E5C15A199E73500867F1D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.411 -0400", hash_original_method = "DD9AA0788424353442B0CFE218D97412", hash_generated_method = "5E537AB32FECDE209F449B6811E02BEA")
     public String encodeBody() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1558613538 = null; //Variable for return #1
         StringBuffer retval;
         retval = new StringBuffer();
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_1084370553 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
+            boolean varA8A94084CEDB8AE131E76CDFE26F1997_1829979692 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
             {
                 retval.append(LESS_THAN);
             } //End block
         } //End collapsed parenthetic
         retval.append(address.encode());
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_82172464 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
+            boolean varA8A94084CEDB8AE131E76CDFE26F1997_949219824 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
             {
                 retval.append(GREATER_THAN);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_396666844 = (!parameters.isEmpty());
+            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_1291450870 = (!parameters.isEmpty());
             retval.append(SEMICOLON + this.parameters.encode());
         } //End collapsed parenthetic
-        String var0F1F65BA89BF920BA1A29FC87F91B969_427405483 = (retval.toString());
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_1558613538 = retval.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1558613538.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1558613538;
         // ---------- Original Method ----------
         //StringBuffer retval = new StringBuffer();
         //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
@@ -72,11 +71,10 @@ public class Path extends gov.nist.javax.sip.header.AddressParametersHeader impl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.633 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "3173C219DBD7EAE475390DAFD6FD461B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.411 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
     public void setValue(String value) throws ParseException {
-        dsTaint.addTaint(value);
         if (DroidSafeAndroidRuntime.control) throw new ParseException(value,0);
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //throw new ParseException(value,0);
     }

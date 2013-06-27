@@ -14,45 +14,43 @@ import java.io.ObjectOutputStream;
 
 public class InvalidPropertiesFormatException extends IOException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.493 -0400", hash_original_method = "00EAAF64B023AA3E2882C7003D2FFD8D", hash_generated_method = "1D7F91A6EC7216C15397F5DD961FC6DC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InvalidPropertiesFormatException(String m) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.100 -0400", hash_original_method = "00EAAF64B023AA3E2882C7003D2FFD8D", hash_generated_method = "EBA1C1CF9DDCDAB8AD09C608F35943B1")
+    public  InvalidPropertiesFormatException(String m) {
         super(m);
-        dsTaint.addTaint(m);
+        addTaint(m.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.493 -0400", hash_original_method = "9AA9838C1FE2F17D83D4EAE179EF6104", hash_generated_method = "4C56173CD9EF98A8A7885654E89D9C35")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InvalidPropertiesFormatException(Throwable c) {
-        dsTaint.addTaint(c.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.101 -0400", hash_original_method = "9AA9838C1FE2F17D83D4EAE179EF6104", hash_generated_method = "7E4CC95A0C3E10453592AD342098569F")
+    public  InvalidPropertiesFormatException(Throwable c) {
         initCause(c);
+        addTaint(c.getTaint());
         // ---------- Original Method ----------
         //initCause(c);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.493 -0400", hash_original_method = "D501A96831B009EDE0E99C982A162728", hash_generated_method = "9641599CF94EF725F431E4B3ED534E42")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.101 -0400", hash_original_method = "D501A96831B009EDE0E99C982A162728", hash_generated_method = "1FA2FA59A0AB409DED5CB9B001CCF5FA")
     private void writeObject(ObjectOutputStream out) throws NotSerializableException {
-        dsTaint.addTaint(out.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NotSerializableException();
+        addTaint(out.getTaint());
         // ---------- Original Method ----------
         //throw new NotSerializableException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:32.493 -0400", hash_original_method = "B2CAB4BC3D811DD242C577EA7CF7F980", hash_generated_method = "4307DEDFCC4956A69A9B2AE1A757EB1C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.101 -0400", hash_original_method = "B2CAB4BC3D811DD242C577EA7CF7F980", hash_generated_method = "E5B9AB5EEC4D816A6EF1C2B3FCAB0E7C")
     private void readObject(ObjectInputStream in) throws NotSerializableException {
-        dsTaint.addTaint(in.dsTaint);
         if (DroidSafeAndroidRuntime.control) throw new NotSerializableException();
+        addTaint(in.getTaint());
         // ---------- Original Method ----------
         //throw new NotSerializableException();
     }
 
     
-    private static final long serialVersionUID = 7763056076009360219L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:52.101 -0400", hash_original_field = "1FD7AC3D2CBAF873F8F983A2BAC82DA8", hash_generated_field = "E2C8D6C1424BBB141D80914144B3CE6F")
+
+    private static long serialVersionUID = 7763056076009360219L;
 }
 

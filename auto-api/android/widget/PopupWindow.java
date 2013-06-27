@@ -30,48 +30,127 @@ import android.view.WindowManager;
 import java.lang.ref.WeakReference;
 
 public class PopupWindow {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
     private Context mContext;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "306519E50E3A91B9733D09F5D8EB985C", hash_generated_field = "3C750A4AE06B71AF3A05B7797C7182A4")
+
     private WindowManager mWindowManager;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "4100ADFCD62B8FAC1A156667D9A8612E", hash_generated_field = "182408C3124602AF2E2446547BFC5990")
+
     private boolean mIsShowing;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "4FAC955900EEC35ED2CDB7752E904C45", hash_generated_field = "9700652AF3F2C5A2E0A0AFE403A12B64")
+
     private boolean mIsDropdown;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "9E8FE4D07A56D54AEE159583A4429FE8", hash_generated_field = "9EE0242EB014EEED0CD7F44EEE7EA48F")
+
     private View mContentView;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "C0F7B5AE8B2815DB5F788955DE092FEA", hash_generated_field = "677D1CB7D78258D08289E18B4B225566")
+
     private View mPopupView;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "07D4AD4D81CD2ED098EE3F04028AD5C2", hash_generated_field = "26ADB48C5A4311C541C946E4573DD3BE")
+
     private boolean mFocusable;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "AA7C531BC7795BA5494A7D5EB3204D15", hash_generated_field = "B74EBB15400870AA6ADEE3D1E89366AA")
+
     private int mInputMethodMode = INPUT_METHOD_FROM_FOCUSABLE;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "4F2735C494280C91B336F362D66AE525", hash_generated_field = "504E8B046E68A38DD3E86D295ED153C0")
+
     private int mSoftInputMode = WindowManager.LayoutParams.SOFT_INPUT_STATE_UNCHANGED;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "A605AEEF51B195DF68B4D03E0A44560B", hash_generated_field = "81D20D477E5343219A40993A2D5A9281")
+
     private boolean mTouchable = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "089689A1823B6A453A5E5EAF00F479D6", hash_generated_field = "E535EDD135AEF4C6D12D2FCC5626D0B4")
+
     private boolean mOutsideTouchable = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "DD17DE052A15FBA0E48B98F8543A24F6", hash_generated_field = "1F43204AC614FA8E190D827A0B960C07")
+
     private boolean mClippingEnabled = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "DED47B632D01506CCBEBA9571D0A6265", hash_generated_field = "6B0DF01241CF4AF0DF57F3BB0179F510")
+
     private int mSplitTouchEnabled = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "157F17B91F343BA4E168B1E33200F7F1", hash_generated_field = "22CD68096C89BB0267ECAB9CEED72BD4")
+
     private boolean mLayoutInScreen;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "6638D062311A6AB39ECF031AC3F7BA51", hash_generated_field = "F7BA441F0E6563EAA35858C9FBEC3C9D")
+
     private boolean mClipToScreen;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "EFBE09421249670269F0C3BDEB412056", hash_generated_field = "E18DD07EB2577F208D13A033471EF4B0")
+
     private boolean mAllowScrollingAnchorParent = true;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "25095863FE7BF289ADF304DCC9485C0B", hash_generated_field = "4F2A0AC1A5A72DEAB8A91CCC311892CE")
+
     private boolean mLayoutInsetDecor = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "4EA003FF8B599770ADF79B2AB272C6EB", hash_generated_field = "AA45A743419186F82617924E3E71CD81")
+
     private boolean mNotTouchModal;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "DBFE8676BB8E60198A4C3A8DE984769D", hash_generated_field = "72A5C0221AA7C77012D45B0D5814CA05")
+
     private OnTouchListener mTouchInterceptor;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "FD104D99D022B917A55C66942C8DD087", hash_generated_field = "E1584971BBD05AECB0B7B9F417D8A13C")
+
     private int mWidthMode;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "A3DB1626A190732E588FD0D14FC8FB31", hash_generated_field = "380984B6D3BA888BD05804A5D24041AE")
+
     private int mWidth;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.048 -0400", hash_original_field = "6F78086ED489C76AF68CD63FF2E0DD48", hash_generated_field = "8A8A535915DEF11E8818FDD746192E2F")
+
     private int mLastWidth;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.049 -0400", hash_original_field = "2B9BACF3978ACE4CCEF1FEEF4F5D6DD5", hash_generated_field = "942FD12E1BB37FE50F8815646F385BF0")
+
     private int mHeightMode;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.049 -0400", hash_original_field = "483542B05A951AA16D89C7F809C20811", hash_generated_field = "9A13F430E09A05B31C551CE62B9A37C1")
+
     private int mHeight;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.049 -0400", hash_original_field = "A96810B37246B550B03551EFDB789584", hash_generated_field = "7D971819672E66B14BFF50845F865AA1")
+
     private int mLastHeight;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.063 -0400", hash_original_field = "D63213AAA0338DCBF8F6B541183B1E87", hash_generated_field = "3FD6DB919B847EDFE0B5956AF8A9BD61")
+
     private int mPopupWidth;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.063 -0400", hash_original_field = "9B5836C1C09FF1DDB39EFE31D977DC2D", hash_generated_field = "81FC9D55F4BDFA3779C66DE9184556C7")
+
     private int mPopupHeight;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.063 -0400", hash_original_field = "1A122A41C440AB3A641940A9089395BC", hash_generated_field = "904FF38CA36EA4CCC3C2CCEC4DCDD3BD")
+
     private int[] mDrawingLocation = new int[2];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.063 -0400", hash_original_field = "4334E35BB5E4C72AD7D1AB6B3F817ECA", hash_generated_field = "E837BED31FD3509BD57D12D959724198")
+
     private int[] mScreenLocation = new int[2];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.063 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "AFFA54D19F07A10EE8847CF76FC95323")
+
     private Rect mTempRect = new Rect();
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.063 -0400", hash_original_field = "0FD12110A291B3958F114906D990C478", hash_generated_field = "0925F2C91F8CBA797C183309FA7634C5")
+
     private Drawable mBackground;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.063 -0400", hash_original_field = "B8B18092E45BA94D853A507ABDA726EF", hash_generated_field = "E17C64A85543ECD9874F1E70F5E7D722")
+
     private Drawable mAboveAnchorBackgroundDrawable;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.063 -0400", hash_original_field = "EC891369E261116A9AB3441B4699A1D9", hash_generated_field = "FF8C2A1514D8DB3BCCA18DE7013BFFDC")
+
     private Drawable mBelowAnchorBackgroundDrawable;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.063 -0400", hash_original_field = "57D2370CEAFD062F8EF7CD0CD808B39B", hash_generated_field = "0D6DFCDD3C93CA68BA06073646439B09")
+
     private boolean mAboveAnchor;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.063 -0400", hash_original_field = "FB63600BBB7707A2C1DBB29516DB9717", hash_generated_field = "9BD03BD39A060D11ED1286EBFF9AC4DB")
+
     private int mWindowLayoutType = WindowManager.LayoutParams.TYPE_APPLICATION_PANEL;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.063 -0400", hash_original_field = "B6794399ABC229B6F5098657922184B3", hash_generated_field = "91E70DA930AA00EAD499671BBD6F37EB")
+
     private OnDismissListener mOnDismissListener;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.063 -0400", hash_original_field = "2C071A5321FE10E45F0AB6D217FF33C9", hash_generated_field = "2356D264A59ECD4DA5DAEA961FD9C071")
+
     private boolean mIgnoreCheekPress = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.063 -0400", hash_original_field = "4295100925E097D9FFEFBAC590D9839F", hash_generated_field = "2D667A20717B87BB0939831DD6C37380")
+
     private int mAnimationStyle = -1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.063 -0400", hash_original_field = "8A2549E4A331F412E0868B04A8E3C179", hash_generated_field = "841D2F2B9FEBE43FD9F75F29253325CB")
+
     private WeakReference<View> mAnchor;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.067 -0400", hash_original_field = "8AA9181EAEA04588ABD6B3AB55C1B57C", hash_generated_field = "E86FDACDB44467C59A1D9E8F0EC7BF72")
+
     private OnScrollChangedListener mOnScrollChangedListener = new OnScrollChangedListener() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.982 -0400", hash_original_method = "8F0CC5ACEB252AEA9146DA3982ED4810", hash_generated_method = "1F2D12D00022C0731CEBA3D61231C987")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.067 -0400", hash_original_method = "8F0CC5ACEB252AEA9146DA3982ED4810", hash_generated_method = "1F2D12D00022C0731CEBA3D61231C987")
         public void onScrollChanged() {
             //DSFIXME:  CODE0009: Possible callback target function detected
             View anchor;
@@ -95,46 +174,44 @@ public class PopupWindow {
         }
 
         
-}; //Transformed anonymous class
-    private int mAnchorXoff, mAnchorYoff;
+};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.067 -0400", hash_original_field = "F170BC3F21E6816CF0857FF17CC3E8A8", hash_generated_field = "3E89D2F69E75793719092294948AC6C2")
+
+    private int mAnchorXoff;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.067 -0400", hash_original_field = "A2E2D94557B5FCE0E46C1252F1382457", hash_generated_field = "C642333984FB0C821A5D09038A79D9E2")
+
+    private int mAnchorYoff;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.982 -0400", hash_original_method = "A7D29AF9F459F2E9972F382B06EBA7BC", hash_generated_method = "4CED1785F3883C59E0FC404C924B9571")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PopupWindow(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.067 -0400", hash_original_method = "A7D29AF9F459F2E9972F382B06EBA7BC", hash_generated_method = "9C07D03A56300782A8BC762C1E6C14C9")
+    public  PopupWindow(Context context) {
         this(context, null);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.983 -0400", hash_original_method = "366007D96D9B418EA2EA6640B7FB7C46", hash_generated_method = "ED86D6062F3F7563F812A28DDE36FF66")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PopupWindow(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.067 -0400", hash_original_method = "366007D96D9B418EA2EA6640B7FB7C46", hash_generated_method = "67F23DFA245DA27CD7B1A7989D056B12")
+    public  PopupWindow(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.popupWindowStyle);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.983 -0400", hash_original_method = "FAD82A2A4F32A008B236FC8E4F83669F", hash_generated_method = "E5C17F6FF156DAC590740ABF0EC48517")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PopupWindow(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.068 -0400", hash_original_method = "FAD82A2A4F32A008B236FC8E4F83669F", hash_generated_method = "FA0128067A513777793AEAE34EBB9F04")
+    public  PopupWindow(Context context, AttributeSet attrs, int defStyle) {
         this(context, attrs, defStyle, 0);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(defStyle);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
+        addTaint(defStyle);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.983 -0400", hash_original_method = "079F601C7A8694616AB9480B0999FF46", hash_generated_method = "72A77036AD1B6A817479CE6CDECDEADB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PopupWindow(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        dsTaint.addTaint(defStyleRes);
-        dsTaint.addTaint(defStyleAttr);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.073 -0400", hash_original_method = "079F601C7A8694616AB9480B0999FF46", hash_generated_method = "31D788E3E5C5B8E1C63996BC8AE9B051")
+    public  PopupWindow(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        mContext = context;
         mWindowManager = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
         TypedArray a;
         a = context.obtainStyledAttributes(
@@ -172,56 +249,50 @@ public class PopupWindow {
             } //End block
         } //End block
         a.recycle();
+        addTaint(attrs.getTaint());
+        addTaint(defStyleAttr);
+        addTaint(defStyleRes);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.984 -0400", hash_original_method = "E34384426EB8697F688915D9E72B588C", hash_generated_method = "596F84E29B0A712DA0AAE3A0BA66CFD5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PopupWindow() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.075 -0400", hash_original_method = "E34384426EB8697F688915D9E72B588C", hash_generated_method = "596F84E29B0A712DA0AAE3A0BA66CFD5")
+    public  PopupWindow() {
         this(null, 0, 0);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.984 -0400", hash_original_method = "57135C41538C9CD08914B3D745201B31", hash_generated_method = "6363D595C9485EDD93A35E37FAA8548B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PopupWindow(View contentView) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.075 -0400", hash_original_method = "57135C41538C9CD08914B3D745201B31", hash_generated_method = "5D0A2F7305AB92DB61AD479A88482F82")
+    public  PopupWindow(View contentView) {
         this(contentView, 0, 0);
-        dsTaint.addTaint(contentView.dsTaint);
+        addTaint(contentView.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.984 -0400", hash_original_method = "52D8423742F4089F7506898A8921688C", hash_generated_method = "645CB7A245B52DC6931D60CD1F77B123")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PopupWindow(int width, int height) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.076 -0400", hash_original_method = "52D8423742F4089F7506898A8921688C", hash_generated_method = "6D46564051F1A809CC23C28C37B25602")
+    public  PopupWindow(int width, int height) {
         this(null, width, height);
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(width);
+        addTaint(width);
+        addTaint(height);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.984 -0400", hash_original_method = "824FA1289D7F0041B91552EC537ECD03", hash_generated_method = "8F6281BE45B77220CC34BF18DCB7F20E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PopupWindow(View contentView, int width, int height) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.077 -0400", hash_original_method = "824FA1289D7F0041B91552EC537ECD03", hash_generated_method = "8A2E9AA7B1DE5B7B73B9754BC6577B25")
+    public  PopupWindow(View contentView, int width, int height) {
         this(contentView, width, height, false);
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(contentView.dsTaint);
+        addTaint(contentView.getTaint());
+        addTaint(width);
+        addTaint(height);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.984 -0400", hash_original_method = "45A20F34B738086A724C95615CA38820", hash_generated_method = "EE68F4E365F847D59C4CD8F89D908CE7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public PopupWindow(View contentView, int width, int height, boolean focusable) {
-        dsTaint.addTaint(focusable);
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(contentView.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.077 -0400", hash_original_method = "45A20F34B738086A724C95615CA38820", hash_generated_method = "F73935062EBDF51F8A924163CE7A1D4F")
+    public  PopupWindow(View contentView, int width, int height, boolean focusable) {
         {
             mContext = contentView.getContext();
             mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
@@ -230,6 +301,9 @@ public class PopupWindow {
         setWidth(width);
         setHeight(height);
         setFocusable(focusable);
+        addTaint(width);
+        addTaint(height);
+        addTaint(focusable);
         // ---------- Original Method ----------
         //if (contentView != null) {
             //mContext = contentView.getContext();
@@ -242,35 +316,35 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.984 -0400", hash_original_method = "63340AE07D2726BC056EFE5BE3E2FF29", hash_generated_method = "21B193E0967196A34A5D6C5645071B75")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.088 -0400", hash_original_method = "63340AE07D2726BC056EFE5BE3E2FF29", hash_generated_method = "85CEF17AFBD1F5F4938F9535D3A96BD7")
     public Drawable getBackground() {
-        return (Drawable)dsTaint.getTaint();
+        Drawable varB4EAC82CA7396A68D541C85D26508E83_1740474137 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1740474137 = mBackground;
+        varB4EAC82CA7396A68D541C85D26508E83_1740474137.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1740474137;
         // ---------- Original Method ----------
         //return mBackground;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.985 -0400", hash_original_method = "96D2484B6380046D33AB8470E20080B0", hash_generated_method = "1709A7CB6DCE0B9E248CAA8B3F402522")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.088 -0400", hash_original_method = "96D2484B6380046D33AB8470E20080B0", hash_generated_method = "D16C3A30D1BEDA85C77BADB55334CCBB")
     public void setBackgroundDrawable(Drawable background) {
-        dsTaint.addTaint(background.dsTaint);
+        mBackground = background;
         // ---------- Original Method ----------
         //mBackground = background;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.985 -0400", hash_original_method = "41CA7DA63F7D92402D2B673FD03355D6", hash_generated_method = "730DA9344EF429DDE0A21685D7304D11")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.088 -0400", hash_original_method = "41CA7DA63F7D92402D2B673FD03355D6", hash_generated_method = "3B233C8FDFF7312057E9CD02AF81A2E6")
     public int getAnimationStyle() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_938219625 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_938219625;
         // ---------- Original Method ----------
         //return mAnimationStyle;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.985 -0400", hash_original_method = "A2D9F7F5158A57BAC36D16E33D2F221F", hash_generated_method = "BCC06A2E85690E757FF10740FDE4D8C7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.089 -0400", hash_original_method = "A2D9F7F5158A57BAC36D16E33D2F221F", hash_generated_method = "BCC06A2E85690E757FF10740FDE4D8C7")
     public void setIgnoreCheekPress() {
         mIgnoreCheekPress = true;
         // ---------- Original Method ----------
@@ -278,31 +352,31 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.985 -0400", hash_original_method = "46489C40917944BA93E8F6D8658EE802", hash_generated_method = "56972EB16FE174226F722756D1C46EF1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.089 -0400", hash_original_method = "46489C40917944BA93E8F6D8658EE802", hash_generated_method = "30E663249BFF81A95B0EE39AF735EB89")
     public void setAnimationStyle(int animationStyle) {
-        dsTaint.addTaint(animationStyle);
+        mAnimationStyle = animationStyle;
         // ---------- Original Method ----------
         //mAnimationStyle = animationStyle;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.985 -0400", hash_original_method = "1FBDC8A7B1B2CCF1CAFCE9F94E1B072D", hash_generated_method = "461D848C10F9E16D5F0A59F1E988B6BC")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.090 -0400", hash_original_method = "1FBDC8A7B1B2CCF1CAFCE9F94E1B072D", hash_generated_method = "69330D027ACD0A0B5419136A7EACC7B7")
     public View getContentView() {
-        return (View)dsTaint.getTaint();
+        View varB4EAC82CA7396A68D541C85D26508E83_895617446 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_895617446 = mContentView;
+        varB4EAC82CA7396A68D541C85D26508E83_895617446.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_895617446;
         // ---------- Original Method ----------
         //return mContentView;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.986 -0400", hash_original_method = "647C3E968C5C98ECF0A359511A938D87", hash_generated_method = "55259E134A70BB592604D98430EEF811")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.094 -0400", hash_original_method = "647C3E968C5C98ECF0A359511A938D87", hash_generated_method = "08B53B8F82DC32A09BE6F226B625CF53")
     public void setContentView(View contentView) {
-        dsTaint.addTaint(contentView.dsTaint);
         {
-            boolean var4A685BA46E35F21FC0CB2BDAFA9CFEA5_1496926777 = (isShowing());
+            boolean var4A685BA46E35F21FC0CB2BDAFA9CFEA5_2049251101 = (isShowing());
         } //End collapsed parenthetic
+        mContentView = contentView;
         {
             mContext = mContentView.getContext();
         } //End block
@@ -323,127 +397,119 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.986 -0400", hash_original_method = "DE25D00870282EA3EAE9EBB02519A2CA", hash_generated_method = "E250301E77142AB38BC647C7BF37EEF4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.094 -0400", hash_original_method = "DE25D00870282EA3EAE9EBB02519A2CA", hash_generated_method = "130FE76FE298B90583B66B9C1E8E1782")
     public void setTouchInterceptor(OnTouchListener l) {
-        dsTaint.addTaint(l.dsTaint);
+        mTouchInterceptor = l;
         // ---------- Original Method ----------
         //mTouchInterceptor = l;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.986 -0400", hash_original_method = "40BB85E3EB9B026A95FA1376FB5C6D2D", hash_generated_method = "822D07B496179847F704F9DA37606B14")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.101 -0400", hash_original_method = "40BB85E3EB9B026A95FA1376FB5C6D2D", hash_generated_method = "DE207EA95290B388AEAD66CAB9FC147F")
     public boolean isFocusable() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1158727932 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1158727932;
         // ---------- Original Method ----------
         //return mFocusable;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.986 -0400", hash_original_method = "ABAB7A7DE4A915B0505D233953D72C47", hash_generated_method = "327E85E6CD6C09CEB29AF65FE352A7F8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.102 -0400", hash_original_method = "ABAB7A7DE4A915B0505D233953D72C47", hash_generated_method = "73B30D7B6EF00BF878189A326F3284C3")
     public void setFocusable(boolean focusable) {
-        dsTaint.addTaint(focusable);
+        mFocusable = focusable;
         // ---------- Original Method ----------
         //mFocusable = focusable;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.986 -0400", hash_original_method = "01F2BFCF39394BA4008813FFB1127C10", hash_generated_method = "D686AED94BD8264DBE7A8EEF96D79F39")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.102 -0400", hash_original_method = "01F2BFCF39394BA4008813FFB1127C10", hash_generated_method = "9F7033D9F47F37E744CDA17C1A8DD00F")
     public int getInputMethodMode() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1413939723 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1413939723;
         // ---------- Original Method ----------
         //return mInputMethodMode;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.986 -0400", hash_original_method = "960CEBA1FA646F0DDCC5CA21C9FFA47A", hash_generated_method = "7A3F23BAA393C348E5EDD82DC8E08CD2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.102 -0400", hash_original_method = "960CEBA1FA646F0DDCC5CA21C9FFA47A", hash_generated_method = "A6E33B617E3054749700BA5054FB5936")
     public void setInputMethodMode(int mode) {
-        dsTaint.addTaint(mode);
+        mInputMethodMode = mode;
         // ---------- Original Method ----------
         //mInputMethodMode = mode;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.986 -0400", hash_original_method = "4B11C5E74D17332CC7C67B3F22EF8E33", hash_generated_method = "DC469E15B2E5E6F5A24BBAF4CFA814F1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.103 -0400", hash_original_method = "4B11C5E74D17332CC7C67B3F22EF8E33", hash_generated_method = "1D7C1083F51FF0DA3819F794F94DE227")
     public void setSoftInputMode(int mode) {
-        dsTaint.addTaint(mode);
+        mSoftInputMode = mode;
         // ---------- Original Method ----------
         //mSoftInputMode = mode;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.987 -0400", hash_original_method = "76888AB414E08DF2E7D12678F406D7A5", hash_generated_method = "F6408571B6A6D72188F6C92B64A9B6D1")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.103 -0400", hash_original_method = "76888AB414E08DF2E7D12678F406D7A5", hash_generated_method = "071D1A21FF05FB42A0258DAC5A0FC89B")
     public int getSoftInputMode() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_507921515 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_507921515;
         // ---------- Original Method ----------
         //return mSoftInputMode;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.987 -0400", hash_original_method = "AE839D196CDFD95E127ACD4470F67375", hash_generated_method = "D460C883FDFBDDBD334E4EBFB1A61577")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.109 -0400", hash_original_method = "AE839D196CDFD95E127ACD4470F67375", hash_generated_method = "4A7F5F7E19435C6CA46C4BA23B09EBA9")
     public boolean isTouchable() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1124518034 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1124518034;
         // ---------- Original Method ----------
         //return mTouchable;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.987 -0400", hash_original_method = "BEB1F63A70D555DEE12C0C7D4BDF7831", hash_generated_method = "0FD3AAE6BAB8F09590819C7326B19728")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.109 -0400", hash_original_method = "BEB1F63A70D555DEE12C0C7D4BDF7831", hash_generated_method = "53CC1C5C2E5530440B2CCE60DCC9D428")
     public void setTouchable(boolean touchable) {
-        dsTaint.addTaint(touchable);
+        mTouchable = touchable;
         // ---------- Original Method ----------
         //mTouchable = touchable;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.987 -0400", hash_original_method = "FF3CAF88B8F1C23DC4869C5AECE8973C", hash_generated_method = "CC97289AC4207AEE75FABDA0525822FE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.123 -0400", hash_original_method = "FF3CAF88B8F1C23DC4869C5AECE8973C", hash_generated_method = "0C89C92054B1648B08B5C4771453BBF2")
     public boolean isOutsideTouchable() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_280736622 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_280736622;
         // ---------- Original Method ----------
         //return mOutsideTouchable;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.987 -0400", hash_original_method = "8E0154BCB2D650E765619E048D3C66EA", hash_generated_method = "BE9EFA8D4A2B6FC6B4F695E7F1935D91")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.123 -0400", hash_original_method = "8E0154BCB2D650E765619E048D3C66EA", hash_generated_method = "FE2AEFBB8C4EEBABE5D6E1A098A60CB0")
     public void setOutsideTouchable(boolean touchable) {
-        dsTaint.addTaint(touchable);
+        mOutsideTouchable = touchable;
         // ---------- Original Method ----------
         //mOutsideTouchable = touchable;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.987 -0400", hash_original_method = "5D90AAFBBA18C52B8D43E4274612DFE0", hash_generated_method = "81DCD469B83246BE007FF5E42939B080")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.124 -0400", hash_original_method = "5D90AAFBBA18C52B8D43E4274612DFE0", hash_generated_method = "EB1D5CCE3013A5D1427E1E9F80BE52EB")
     public boolean isClippingEnabled() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_300775700 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_300775700;
         // ---------- Original Method ----------
         //return mClippingEnabled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.988 -0400", hash_original_method = "C644B67739A8A92EE97D978CC897DC79", hash_generated_method = "941A802A957F8D2147BA86494963BB62")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.124 -0400", hash_original_method = "C644B67739A8A92EE97D978CC897DC79", hash_generated_method = "684E85C82CBEB4AB4A8C43DA093096AD")
     public void setClippingEnabled(boolean enabled) {
-        dsTaint.addTaint(enabled);
+        mClippingEnabled = enabled;
         // ---------- Original Method ----------
         //mClippingEnabled = enabled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.988 -0400", hash_original_method = "86AECB53D9496C7054030FB1672ECE9B", hash_generated_method = "7B9897F4D2904112643C12A1DFCFB25C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.125 -0400", hash_original_method = "86AECB53D9496C7054030FB1672ECE9B", hash_generated_method = "235F8CA48AA18F6B969B7FF20C467B2E")
     public void setClipToScreenEnabled(boolean enabled) {
-        dsTaint.addTaint(enabled);
+        mClipToScreen = enabled;
         setClippingEnabled(!enabled);
         // ---------- Original Method ----------
         //mClipToScreen = enabled;
@@ -451,22 +517,21 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.988 -0400", hash_original_method = "AB712E1EFFE4EAE7A80987CD7E1E8D4B", hash_generated_method = "5BD67358BC02083831A6B64B981A563A")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.125 -0400", hash_original_method = "AB712E1EFFE4EAE7A80987CD7E1E8D4B", hash_generated_method = "FE43850C7268C6EE8DB37340BB239900")
      void setAllowScrollingAnchorParent(boolean enabled) {
-        dsTaint.addTaint(enabled);
+        mAllowScrollingAnchorParent = enabled;
         // ---------- Original Method ----------
         //mAllowScrollingAnchorParent = enabled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.988 -0400", hash_original_method = "CD003A57AD290217AC32D20DAA9F9760", hash_generated_method = "4CBBDE3B9800DC7986014BF58C23E49E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.129 -0400", hash_original_method = "CD003A57AD290217AC32D20DAA9F9760", hash_generated_method = "7D821CA1CC722404EAC4A1ADD110351E")
     public boolean isSplitTouchEnabled() {
         {
-            boolean varEEA1697260544E0A5861DD090A86C488_1818151017 = (mContext.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.HONEYCOMB);
+            boolean varEEA1697260544E0A5861DD090A86C488_756709821 = (mContext.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.HONEYCOMB);
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1533564247 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1533564247;
         // ---------- Original Method ----------
         //if (mSplitTouchEnabled < 0 && mContext != null) {
             //return mContext.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.HONEYCOMB;
@@ -475,149 +540,133 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.988 -0400", hash_original_method = "8E279F2F2689369B00326EC855CADBF3", hash_generated_method = "3B6A79EF6B9F9B33A0C3B8534171DFAF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.130 -0400", hash_original_method = "8E279F2F2689369B00326EC855CADBF3", hash_generated_method = "16FCD3DA62C4843F4FE76768308439EA")
     public void setSplitTouchEnabled(boolean enabled) {
-        dsTaint.addTaint(enabled);
         mSplitTouchEnabled = enabled ? 1 : 0;
         // ---------- Original Method ----------
         //mSplitTouchEnabled = enabled ? 1 : 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.988 -0400", hash_original_method = "10EB43954998F08298066292E6DC8079", hash_generated_method = "CC63D426CCBEAAAE9205650AD85820D4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.130 -0400", hash_original_method = "10EB43954998F08298066292E6DC8079", hash_generated_method = "FD299F98231094D2FA6E8F16A4EB285F")
     public boolean isLayoutInScreenEnabled() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1690165137 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1690165137;
         // ---------- Original Method ----------
         //return mLayoutInScreen;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.989 -0400", hash_original_method = "181FE02772B59DB435AF1D6C410875BB", hash_generated_method = "1191DD4D487BBD0FB31E4C8ABC1F81BF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.130 -0400", hash_original_method = "181FE02772B59DB435AF1D6C410875BB", hash_generated_method = "223E785F0B8E3AC353A80B21D7B051A2")
     public void setLayoutInScreenEnabled(boolean enabled) {
-        dsTaint.addTaint(enabled);
+        mLayoutInScreen = enabled;
         // ---------- Original Method ----------
         //mLayoutInScreen = enabled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.989 -0400", hash_original_method = "FEA07B591038B9982257E6B6F9EA89DD", hash_generated_method = "8B6BC5EED2281791AD141A4D2F59D50B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.145 -0400", hash_original_method = "FEA07B591038B9982257E6B6F9EA89DD", hash_generated_method = "B17F3787A243E7C34D946849ECA3B77D")
     public void setLayoutInsetDecor(boolean enabled) {
-        dsTaint.addTaint(enabled);
+        mLayoutInsetDecor = enabled;
         // ---------- Original Method ----------
         //mLayoutInsetDecor = enabled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.989 -0400", hash_original_method = "7DF3C488F6920E6663FDD36E5737A8E3", hash_generated_method = "E54EC64A98D34134B477CF85449F5D79")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.146 -0400", hash_original_method = "7DF3C488F6920E6663FDD36E5737A8E3", hash_generated_method = "86D8C382E8DE29516140D730E3EA62C0")
     public void setWindowLayoutType(int layoutType) {
-        dsTaint.addTaint(layoutType);
+        mWindowLayoutType = layoutType;
         // ---------- Original Method ----------
         //mWindowLayoutType = layoutType;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.989 -0400", hash_original_method = "B0A202A53A476A9F6F2E7DEE1AC7BFD5", hash_generated_method = "C9A1EBB3CE9445D9C026410CE350BCD3")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.146 -0400", hash_original_method = "B0A202A53A476A9F6F2E7DEE1AC7BFD5", hash_generated_method = "054CC459384B5065A1F8FD2135734584")
     public int getWindowLayoutType() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1179621335 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1179621335;
         // ---------- Original Method ----------
         //return mWindowLayoutType;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.989 -0400", hash_original_method = "B8930E34962345C50EA9D19D5D77CFE8", hash_generated_method = "4D2261997BA71B1A5DE91889AA23331C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.146 -0400", hash_original_method = "B8930E34962345C50EA9D19D5D77CFE8", hash_generated_method = "19AEA7D6541C507D6EB32AC9EE42DBE9")
     public void setTouchModal(boolean touchModal) {
-        dsTaint.addTaint(touchModal);
         mNotTouchModal = !touchModal;
         // ---------- Original Method ----------
         //mNotTouchModal = !touchModal;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.989 -0400", hash_original_method = "756D1E68507199C9976BFEB56A60134A", hash_generated_method = "550623870B22A9A2B7740DF42EAD85FE")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.147 -0400", hash_original_method = "756D1E68507199C9976BFEB56A60134A", hash_generated_method = "386434F8D6065CAF3B8B583908DED42B")
     public void setWindowLayoutMode(int widthSpec, int heightSpec) {
-        dsTaint.addTaint(heightSpec);
-        dsTaint.addTaint(widthSpec);
+        mWidthMode = widthSpec;
+        mHeightMode = heightSpec;
         // ---------- Original Method ----------
         //mWidthMode = widthSpec;
         //mHeightMode = heightSpec;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.990 -0400", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "3A252BA8FC341E1B5E481922385845B0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.147 -0400", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "CF1E5619D6F868A441C27DA94B5CE409")
     public int getHeight() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_667997000 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_667997000;
         // ---------- Original Method ----------
         //return mHeight;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.990 -0400", hash_original_method = "BA89F279BB207625BAE694FF1E8671B8", hash_generated_method = "C3997CC97C69A56FDDF4F88F718D4048")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.147 -0400", hash_original_method = "BA89F279BB207625BAE694FF1E8671B8", hash_generated_method = "5421EB99FBB05FB66E8A75CFDF238048")
     public void setHeight(int height) {
-        dsTaint.addTaint(height);
+        mHeight = height;
         // ---------- Original Method ----------
         //mHeight = height;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.990 -0400", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "3885B1CF593DA65DFEFDA3B3659F368F")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.148 -0400", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "63C5A5BF21C43903DAAF992C9814EC10")
     public int getWidth() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_295396923 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_295396923;
         // ---------- Original Method ----------
         //return mWidth;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.990 -0400", hash_original_method = "684C7FEA8A4B53DA843B69F25AEC8ECA", hash_generated_method = "333B87DBA0784ECCCA2E5B795A5FD13C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.148 -0400", hash_original_method = "684C7FEA8A4B53DA843B69F25AEC8ECA", hash_generated_method = "708EDDEF80D7966FCCE04921295DE407")
     public void setWidth(int width) {
-        dsTaint.addTaint(width);
+        mWidth = width;
         // ---------- Original Method ----------
         //mWidth = width;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.990 -0400", hash_original_method = "2222AA4AEDF5C752B222A7F4E8915559", hash_generated_method = "3A00FE10989B3204EB33117DB09451C8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.148 -0400", hash_original_method = "2222AA4AEDF5C752B222A7F4E8915559", hash_generated_method = "6F570C240BD0DF953F4EB39ACEAEAF61")
     public boolean isShowing() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_270072469 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_270072469;
         // ---------- Original Method ----------
         //return mIsShowing;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.990 -0400", hash_original_method = "7355F7E30A53327DA70C15AA0141C8AD", hash_generated_method = "8D5CC7E4385A4106ED6AADC08D9063E8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.148 -0400", hash_original_method = "7355F7E30A53327DA70C15AA0141C8AD", hash_generated_method = "222809ADC30D869701C47E5D68E32A45")
     public void showAtLocation(View parent, int gravity, int x, int y) {
-        dsTaint.addTaint(parent.dsTaint);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
-        dsTaint.addTaint(gravity);
         showAtLocation(parent.getWindowToken(), gravity, x, y);
+        addTaint(parent.getTaint());
+        addTaint(gravity);
+        addTaint(x);
+        addTaint(y);
         // ---------- Original Method ----------
         //showAtLocation(parent.getWindowToken(), gravity, x, y);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.991 -0400", hash_original_method = "B99D3AF8D05FDFEAE8059FF95B29B82E", hash_generated_method = "D09B84CBAA43617E5F5B4912E3C60B8E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.163 -0400", hash_original_method = "B99D3AF8D05FDFEAE8059FF95B29B82E", hash_generated_method = "B0B6DE8191B55F90C75D48EB907BB2C2")
     public void showAtLocation(IBinder token, int gravity, int x, int y) {
-        dsTaint.addTaint(token.dsTaint);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
-        dsTaint.addTaint(gravity);
         {
-            boolean var9BC9BAF6F3002BB79EBDDA5435C62A79_1729702607 = (isShowing() || mContentView == null);
+            boolean var9BC9BAF6F3002BB79EBDDA5435C62A79_168161683 = (isShowing() || mContentView == null);
         } //End collapsed parenthetic
         unregisterForScrollChanged();
         mIsShowing = true;
@@ -635,6 +684,10 @@ public class PopupWindow {
         p.height = mLastHeight = mHeightMode;
         p.width = mLastWidth = mWidthMode;
         invokePopup(p);
+        addTaint(token.getTaint());
+        addTaint(gravity);
+        addTaint(x);
+        addTaint(y);
         // ---------- Original Method ----------
         //if (isShowing() || mContentView == null) {
             //return;
@@ -657,24 +710,19 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.991 -0400", hash_original_method = "C9F3BB2940AB236715592F07C984C554", hash_generated_method = "AC6CC4C5480FD8482636B10BE9A64C05")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.163 -0400", hash_original_method = "C9F3BB2940AB236715592F07C984C554", hash_generated_method = "0C67003C09A325345ECE3D5DC84AF9A7")
     public void showAsDropDown(View anchor) {
-        dsTaint.addTaint(anchor.dsTaint);
         showAsDropDown(anchor, 0, 0);
+        addTaint(anchor.getTaint());
         // ---------- Original Method ----------
         //showAsDropDown(anchor, 0, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.991 -0400", hash_original_method = "624B6ED3EB88D2A91AFF60DB37AE2E29", hash_generated_method = "9C715EDDCDD345D7D7366926C8F4E19C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.164 -0400", hash_original_method = "624B6ED3EB88D2A91AFF60DB37AE2E29", hash_generated_method = "04D96E14424A01A16D7530D4C5663550")
     public void showAsDropDown(View anchor, int xoff, int yoff) {
-        dsTaint.addTaint(xoff);
-        dsTaint.addTaint(yoff);
-        dsTaint.addTaint(anchor.dsTaint);
         {
-            boolean var9BC9BAF6F3002BB79EBDDA5435C62A79_220805841 = (isShowing() || mContentView == null);
+            boolean var9BC9BAF6F3002BB79EBDDA5435C62A79_1845865586 = (isShowing() || mContentView == null);
         } //End collapsed parenthetic
         registerForScrollChanged(anchor, xoff, yoff);
         mIsShowing = true;
@@ -687,6 +735,9 @@ public class PopupWindow {
         p.width = mLastWidth = mWidthMode;
         p.windowAnimations = computeAnimationResource();
         invokePopup(p);
+        addTaint(anchor.getTaint());
+        addTaint(xoff);
+        addTaint(yoff);
         // ---------- Original Method ----------
         //if (isShowing() || mContentView == null) {
             //return;
@@ -704,11 +755,10 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.992 -0400", hash_original_method = "ACCF8C7A05331E8E4B71A7F0F84ED581", hash_generated_method = "F76666A717A35A019A37C92B467EB7B2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.164 -0400", hash_original_method = "ACCF8C7A05331E8E4B71A7F0F84ED581", hash_generated_method = "94294C75061A1D79AA8D5AA83CE7A91A")
     private void updateAboveAnchor(boolean aboveAnchor) {
-        dsTaint.addTaint(aboveAnchor);
         {
+            mAboveAnchor = aboveAnchor;
             {
                 {
                     {
@@ -741,19 +791,17 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.992 -0400", hash_original_method = "3CCA39FA6959E2A6CCCA2648E4E5EA51", hash_generated_method = "9796489715376E79ECE8493BE51AAF20")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.166 -0400", hash_original_method = "3CCA39FA6959E2A6CCCA2648E4E5EA51", hash_generated_method = "B7239B9C17131E8634F4715E294513C9")
     public boolean isAboveAnchor() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1025853866 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1025853866;
         // ---------- Original Method ----------
         //return mAboveAnchor;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.992 -0400", hash_original_method = "DA370B626B41FE86866E281D10A5B6B7", hash_generated_method = "3A813AD53E0EF8F800E9A5103FBA2729")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.166 -0400", hash_original_method = "DA370B626B41FE86866E281D10A5B6B7", hash_generated_method = "F38306196C0967994DCCEFD9084DDEF8")
     private void preparePopup(WindowManager.LayoutParams p) {
-        dsTaint.addTaint(p.dsTaint);
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("You must specify a valid content view by "
                     + "calling setContentView() before attempting to show the popup.");
@@ -786,15 +834,14 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.992 -0400", hash_original_method = "CC3762287DEDA3D715BCCB052800207D", hash_generated_method = "CA06179485061D963E8097C0B3E941B6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.241 -0400", hash_original_method = "CC3762287DEDA3D715BCCB052800207D", hash_generated_method = "787952604DE7997FCECEF5616DE55898")
     private void invokePopup(WindowManager.LayoutParams p) {
-        dsTaint.addTaint(p.dsTaint);
         {
             p.packageName = mContext.getPackageName();
         } //End block
         mPopupView.setFitsSystemWindows(mLayoutInsetDecor);
         mWindowManager.addView(mPopupView, p);
+        addTaint(p.getTaint());
         // ---------- Original Method ----------
         //if (mContext != null) {
             //p.packageName = mContext.getPackageName();
@@ -804,10 +851,9 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.993 -0400", hash_original_method = "D97E1B6317AF67D9DC41A6FB19D27D69", hash_generated_method = "B38CC39BA202F94357D8E9E28E9EEE08")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.250 -0400", hash_original_method = "D97E1B6317AF67D9DC41A6FB19D27D69", hash_generated_method = "F662A9D882C78796CF07C0C28546119A")
     private WindowManager.LayoutParams createPopupLayout(IBinder token) {
-        dsTaint.addTaint(token.dsTaint);
+        WindowManager.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1051048153 = null; //Variable for return #1
         WindowManager.LayoutParams p;
         p = new WindowManager.LayoutParams();
         p.gravity = Gravity.LEFT | Gravity.TOP;
@@ -824,7 +870,10 @@ public class PopupWindow {
         p.token = token;
         p.softInputMode = mSoftInputMode;
         p.setTitle("PopupWindow:" + Integer.toHexString(hashCode()));
-        return (WindowManager.LayoutParams)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1051048153 = p;
+        addTaint(token.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1051048153.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1051048153;
         // ---------- Original Method ----------
         //WindowManager.LayoutParams p = new WindowManager.LayoutParams();
         //p.gravity = Gravity.LEFT | Gravity.TOP;
@@ -844,10 +893,8 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.993 -0400", hash_original_method = "731A130870E20EEF0406E3AA79CC1D53", hash_generated_method = "D6769A4152F3EB506DE3111DB6137F64")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.252 -0400", hash_original_method = "731A130870E20EEF0406E3AA79CC1D53", hash_generated_method = "C3AF80A4C5FD4C38301F93730965C0CC")
     private int computeFlags(int curFlags) {
-        dsTaint.addTaint(curFlags);
         curFlags &= ~(
                 WindowManager.LayoutParams.FLAG_IGNORE_CHEEK_PRESSES |
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
@@ -878,7 +925,7 @@ public class PopupWindow {
             curFlags |= WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS;
         } //End block
         {
-            boolean varC512B087080D8F65FDEBB4C012341A4B_1863295943 = (isSplitTouchEnabled());
+            boolean varC512B087080D8F65FDEBB4C012341A4B_1088928775 = (isSplitTouchEnabled());
             {
                 curFlags |= WindowManager.LayoutParams.FLAG_SPLIT_TOUCH;
             } //End block
@@ -892,16 +939,18 @@ public class PopupWindow {
         {
             curFlags |= WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(curFlags);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_52935018 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_52935018;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.994 -0400", hash_original_method = "2B29575EF3002A68968C6947831DCCDB", hash_generated_method = "979A41F68930260B7897ED04A23957E9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.269 -0400", hash_original_method = "2B29575EF3002A68968C6947831DCCDB", hash_generated_method = "667258CD436240E1BEA2E227EE906613")
     private int computeAnimationResource() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128323541 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128323541;
         // ---------- Original Method ----------
         //if (mAnimationStyle == -1) {
             //if (mIsDropdown) {
@@ -915,14 +964,9 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.995 -0400", hash_original_method = "5A11C37B27567E510AD1092CF1C461D0", hash_generated_method = "412C058893102DD09C1C92297AB60BA7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.272 -0400", hash_original_method = "5A11C37B27567E510AD1092CF1C461D0", hash_generated_method = "6E9F080AFA705ACAB5CDECC72227687C")
     private boolean findDropDownPosition(View anchor, WindowManager.LayoutParams p,
             int xoff, int yoff) {
-        dsTaint.addTaint(xoff);
-        dsTaint.addTaint(p.dsTaint);
-        dsTaint.addTaint(yoff);
-        dsTaint.addTaint(anchor.dsTaint);
         int anchorHeight;
         anchorHeight = anchor.getHeight();
         anchor.getLocationInWindow(mDrawingLocation);
@@ -940,7 +984,7 @@ public class PopupWindow {
         View root;
         root = anchor.getRootView();
         {
-            boolean var74CA561700F828A0D92807B977326861_621417021 = (screenY + mPopupHeight > displayFrame.bottom ||
+            boolean var74CA561700F828A0D92807B977326861_2011915293 = (screenY + mPopupHeight > displayFrame.bottom ||
                 p.x + mPopupWidth - root.getWidth() > 0);
             {
                 {
@@ -992,41 +1036,42 @@ public class PopupWindow {
             } //End block
         } //End block
         p.gravity |= Gravity.DISPLAY_CLIP_VERTICAL;
-        return dsTaint.getTaintBoolean();
+        addTaint(anchor.getTaint());
+        addTaint(p.getTaint());
+        addTaint(xoff);
+        addTaint(yoff);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_466144313 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_466144313;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.995 -0400", hash_original_method = "023150F59911D5483F51543A59288631", hash_generated_method = "971ABFE26E18515961ED688F5FC063A4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.272 -0400", hash_original_method = "023150F59911D5483F51543A59288631", hash_generated_method = "6AFB2663271496478A92D6240A323FAA")
     public int getMaxAvailableHeight(View anchor) {
-        dsTaint.addTaint(anchor.dsTaint);
-        int varA711B8768F5CD08E9377B11ECAC1715F_315207275 = (getMaxAvailableHeight(anchor, 0));
-        return dsTaint.getTaintInt();
+        int varA711B8768F5CD08E9377B11ECAC1715F_94636162 = (getMaxAvailableHeight(anchor, 0));
+        addTaint(anchor.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2116963069 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2116963069;
         // ---------- Original Method ----------
         //return getMaxAvailableHeight(anchor, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.995 -0400", hash_original_method = "782C0234D711C16ED6DF402CCEC14809", hash_generated_method = "A3E0B777CF7AA9C98C0F2C0767EECFA5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.276 -0400", hash_original_method = "782C0234D711C16ED6DF402CCEC14809", hash_generated_method = "B0AFD9795A270DC9A0420D2B797A1D68")
     public int getMaxAvailableHeight(View anchor, int yOffset) {
-        dsTaint.addTaint(yOffset);
-        dsTaint.addTaint(anchor.dsTaint);
-        int var469BE61637FC70E4C9728196B89D54FF_1529470731 = (getMaxAvailableHeight(anchor, yOffset, false));
-        return dsTaint.getTaintInt();
+        int var469BE61637FC70E4C9728196B89D54FF_692860053 = (getMaxAvailableHeight(anchor, yOffset, false));
+        addTaint(anchor.getTaint());
+        addTaint(yOffset);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1490861879 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1490861879;
         // ---------- Original Method ----------
         //return getMaxAvailableHeight(anchor, yOffset, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.995 -0400", hash_original_method = "6127242297D2005B4B3434B0EF072B4C", hash_generated_method = "0C00DB95DDA0640D1020F7255EF70CD2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.276 -0400", hash_original_method = "6127242297D2005B4B3434B0EF072B4C", hash_generated_method = "10ECA4129C3B05B3B5FE0A2A9B40AA45")
     public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomDecorations) {
-        dsTaint.addTaint(ignoreBottomDecorations);
-        dsTaint.addTaint(yOffset);
-        dsTaint.addTaint(anchor.dsTaint);
         Rect displayFrame;
         displayFrame = new Rect();
         anchor.getWindowVisibleDisplayFrame(displayFrame);
@@ -1050,17 +1095,20 @@ public class PopupWindow {
             mBackground.getPadding(mTempRect);
             returnedHeight -= mTempRect.top + mTempRect.bottom;
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(anchor.getTaint());
+        addTaint(yOffset);
+        addTaint(ignoreBottomDecorations);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_907181747 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_907181747;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.996 -0400", hash_original_method = "206A53D80E1660978DCF21A355028E66", hash_generated_method = "016DE289FC183CD62B9C68152C2E85DA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.293 -0400", hash_original_method = "206A53D80E1660978DCF21A355028E66", hash_generated_method = "90F09652F789A296268900807FB61F23")
     public void dismiss() {
         {
-            boolean var2C554DDD957DC9A014B8B4DE4C803696_1378976437 = (isShowing() && mPopupView != null);
+            boolean var2C554DDD957DC9A014B8B4DE4C803696_748031445 = (isShowing() && mPopupView != null);
             {
                 mIsShowing = false;
                 unregisterForScrollChanged();
@@ -1099,20 +1147,18 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.996 -0400", hash_original_method = "93E9EBCE36575249CB74D4FBEF26A1CF", hash_generated_method = "643E4F0BCFB41F37F7652CA2F64A2246")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.293 -0400", hash_original_method = "93E9EBCE36575249CB74D4FBEF26A1CF", hash_generated_method = "8A15ECA68636163A82E11179DEBF050D")
     public void setOnDismissListener(OnDismissListener onDismissListener) {
-        dsTaint.addTaint(onDismissListener.dsTaint);
+        mOnDismissListener = onDismissListener;
         // ---------- Original Method ----------
         //mOnDismissListener = onDismissListener;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.996 -0400", hash_original_method = "488D5DDCA6B0F8C983ED8CA34502865A", hash_generated_method = "600CF8F226E51EF9C84C72B1C58B89D5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.294 -0400", hash_original_method = "488D5DDCA6B0F8C983ED8CA34502865A", hash_generated_method = "83C2D4DC11745D26AEBA464B1C1558EF")
     public void update() {
         {
-            boolean var792B694D840F3959F85BC36B57C55AEF_847951397 = (!isShowing() || mContentView == null);
+            boolean var792B694D840F3959F85BC36B57C55AEF_322679876 = (!isShowing() || mContentView == null);
         } //End collapsed parenthetic
         WindowManager.LayoutParams p;
         p = (WindowManager.LayoutParams)
@@ -1157,15 +1203,14 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.996 -0400", hash_original_method = "99E415F6DCFBC1202511EEF5D071A55C", hash_generated_method = "E42D4561058D371AB67907EF673BCF2F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.294 -0400", hash_original_method = "99E415F6DCFBC1202511EEF5D071A55C", hash_generated_method = "9AA19E688C3FB603C38ADEF0BB4530C4")
     public void update(int width, int height) {
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(width);
         WindowManager.LayoutParams p;
         p = (WindowManager.LayoutParams)
                 mPopupView.getLayoutParams();
         update(p.x, p.y, width, height, false);
+        addTaint(width);
+        addTaint(height);
         // ---------- Original Method ----------
         //WindowManager.LayoutParams p = (WindowManager.LayoutParams)
                 //mPopupView.getLayoutParams();
@@ -1173,35 +1218,30 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.996 -0400", hash_original_method = "848B641343A16858C863B802CDF64CDF", hash_generated_method = "6479C5808B1C141525FABDB6B0543316")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.295 -0400", hash_original_method = "848B641343A16858C863B802CDF64CDF", hash_generated_method = "69135259B53DA7A3D1C53657EF6DFE26")
     public void update(int x, int y, int width, int height) {
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
         update(x, y, width, height, false);
+        addTaint(x);
+        addTaint(y);
+        addTaint(width);
+        addTaint(height);
         // ---------- Original Method ----------
         //update(x, y, width, height, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.997 -0400", hash_original_method = "7F49F99468193710A8807FDE38269850", hash_generated_method = "EDF7DA5427F9DE8E0428A5D6A9132B43")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.300 -0400", hash_original_method = "7F49F99468193710A8807FDE38269850", hash_generated_method = "C94EC44CCBDCB7B4AF7596E44A818AA8")
     public void update(int x, int y, int width, int height, boolean force) {
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(force);
-        dsTaint.addTaint(y);
-        dsTaint.addTaint(x);
         {
+            mLastWidth = width;
             setWidth(width);
         } //End block
         {
+            mLastHeight = height;
             setHeight(height);
         } //End block
         {
-            boolean var792B694D840F3959F85BC36B57C55AEF_1498307684 = (!isShowing() || mContentView == null);
+            boolean var792B694D840F3959F85BC36B57C55AEF_302812362 = (!isShowing() || mContentView == null);
         } //End collapsed parenthetic
         WindowManager.LayoutParams p;
         p = (WindowManager.LayoutParams) mPopupView.getLayoutParams();
@@ -1244,59 +1284,56 @@ public class PopupWindow {
         {
             mWindowManager.updateViewLayout(mPopupView, p);
         } //End block
+        addTaint(x);
+        addTaint(y);
+        addTaint(force);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.997 -0400", hash_original_method = "2E7624B1CB6DF9766B6E25C708FAA465", hash_generated_method = "15B9CFC31F479DDE1C8FCC35E5CE3D24")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.300 -0400", hash_original_method = "2E7624B1CB6DF9766B6E25C708FAA465", hash_generated_method = "9C50D29725A23526BE8D558D63378C1F")
     public void update(View anchor, int width, int height) {
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(anchor.dsTaint);
         update(anchor, false, 0, 0, true, width, height);
+        addTaint(anchor.getTaint());
+        addTaint(width);
+        addTaint(height);
         // ---------- Original Method ----------
         //update(anchor, false, 0, 0, true, width, height);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.997 -0400", hash_original_method = "B8D2EE4CAAF22B5FC8CA5A06E5BF0669", hash_generated_method = "C3232F74E737BB846225473DDA2E55C7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.308 -0400", hash_original_method = "B8D2EE4CAAF22B5FC8CA5A06E5BF0669", hash_generated_method = "00BEEACD1C914FDC0038C32D15766000")
     public void update(View anchor, int xoff, int yoff, int width, int height) {
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(xoff);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(yoff);
-        dsTaint.addTaint(anchor.dsTaint);
         update(anchor, true, xoff, yoff, true, width, height);
+        addTaint(anchor.getTaint());
+        addTaint(xoff);
+        addTaint(yoff);
+        addTaint(width);
+        addTaint(height);
         // ---------- Original Method ----------
         //update(anchor, true, xoff, yoff, true, width, height);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.998 -0400", hash_original_method = "F5290879A773899EB945D797134BA900", hash_generated_method = "DF1D1DF714C7445D135F2EF33382236E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.315 -0400", hash_original_method = "F5290879A773899EB945D797134BA900", hash_generated_method = "25577D759FD6B7FAF0AF35FDA802207F")
     private void update(View anchor, boolean updateLocation, int xoff, int yoff,
             boolean updateDimension, int width, int height) {
-        dsTaint.addTaint(updateDimension);
-        dsTaint.addTaint(height);
-        dsTaint.addTaint(xoff);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(yoff);
-        dsTaint.addTaint(updateLocation);
-        dsTaint.addTaint(anchor.dsTaint);
         {
-            boolean var792B694D840F3959F85BC36B57C55AEF_148607433 = (!isShowing() || mContentView == null);
+            boolean var792B694D840F3959F85BC36B57C55AEF_939929018 = (!isShowing() || mContentView == null);
         } //End collapsed parenthetic
         WeakReference<View> oldAnchor;
         oldAnchor = mAnchor;
         boolean needsUpdate;
         needsUpdate = updateLocation && (mAnchorXoff != xoff || mAnchorYoff != yoff);
         {
-            boolean varBA4588A4E37197031A7BA0375487BCBA_1929743214 = (oldAnchor == null || oldAnchor.get() != anchor || (needsUpdate && !mIsDropdown));
+            boolean varBA4588A4E37197031A7BA0375487BCBA_1603815828 = (oldAnchor == null || oldAnchor.get() != anchor || (needsUpdate && !mIsDropdown));
             {
                 registerForScrollChanged(anchor, xoff, yoff);
+            } //End block
+            {
+                mAnchorXoff = xoff;
+                mAnchorYoff = yoff;
             } //End block
         } //End collapsed parenthetic
         WindowManager.LayoutParams p;
@@ -1306,7 +1343,13 @@ public class PopupWindow {
                 width = mPopupWidth;
             } //End block
             {
+                mPopupWidth = width;
+            } //End block
+            {
                 height = mPopupHeight;
+            } //End block
+            {
+                mPopupHeight = height;
             } //End block
         } //End block
         int x;
@@ -1320,13 +1363,15 @@ public class PopupWindow {
             updateAboveAnchor(findDropDownPosition(anchor, p, mAnchorXoff, mAnchorYoff));
         } //End block
         update(p.x, p.y, width, height, x != p.x || y != p.y);
+        addTaint(anchor.getTaint());
+        addTaint(updateLocation);
+        addTaint(updateDimension);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.998 -0400", hash_original_method = "032144363E44618DF1C4EE95BC82AD16", hash_generated_method = "3941AAE17C8AC0CB83D0C52071E97C56")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.317 -0400", hash_original_method = "032144363E44618DF1C4EE95BC82AD16", hash_generated_method = "3941AAE17C8AC0CB83D0C52071E97C56")
     private void unregisterForScrollChanged() {
         WeakReference<View> anchorRef;
         anchorRef = mAnchor;
@@ -1355,12 +1400,8 @@ public class PopupWindow {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.999 -0400", hash_original_method = "F426C621D66F93AA8E883C7FBA8C8657", hash_generated_method = "6B264676E7764D5612A97FE039702FAC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.331 -0400", hash_original_method = "F426C621D66F93AA8E883C7FBA8C8657", hash_generated_method = "EA900A1897E383A4833761149635D656")
     private void registerForScrollChanged(View anchor, int xoff, int yoff) {
-        dsTaint.addTaint(xoff);
-        dsTaint.addTaint(yoff);
-        dsTaint.addTaint(anchor.dsTaint);
         unregisterForScrollChanged();
         mAnchor = new WeakReference<View>(anchor);
         ViewTreeObserver vto;
@@ -1368,6 +1409,8 @@ public class PopupWindow {
         {
             vto.addOnScrollChangedListener(mOnScrollChangedListener);
         } //End block
+        mAnchorXoff = xoff;
+        mAnchorYoff = yoff;
         // ---------- Original Method ----------
         //unregisterForScrollChanged();
         //mAnchor = new WeakReference<View>(anchor);
@@ -1382,32 +1425,29 @@ public class PopupWindow {
     
     private class PopupViewContainer extends FrameLayout {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:07.999 -0400", hash_original_method = "2CEF1E9B6EE64B78C8FCC7C360A10341", hash_generated_method = "C1E8995C9B0B8DAA59A7D7ABE8ADA27A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public PopupViewContainer(Context context) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.332 -0400", hash_original_method = "2CEF1E9B6EE64B78C8FCC7C360A10341", hash_generated_method = "5E9A647D72DC263E9352A7381E95B0CA")
+        public  PopupViewContainer(Context context) {
             super(context);
-            dsTaint.addTaint(context.dsTaint);
+            addTaint(context.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.000 -0400", hash_original_method = "60250F32C750F199B013D0293AAF47D3", hash_generated_method = "D3B94D085D9AAF492F2FDEDB280E365B")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.332 -0400", hash_original_method = "60250F32C750F199B013D0293AAF47D3", hash_generated_method = "FABDA116AB72201C89A7C60F7FB306F5")
         @Override
         protected int[] onCreateDrawableState(int extraSpace) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(extraSpace);
             {
                 int[] drawableState;
                 drawableState = super.onCreateDrawableState(extraSpace + 1);
                 View.mergeDrawableStates(drawableState, ABOVE_ANCHOR_STATE_SET);
             } //End block
             {
-                int[] var74CE87D3619881427F9757CCE4F4BF6A_209211784 = (super.onCreateDrawableState(extraSpace));
+                int[] var74CE87D3619881427F9757CCE4F4BF6A_329068493 = (super.onCreateDrawableState(extraSpace));
             } //End block
-            int[] retVal = new int[1];
-            retVal[0] = dsTaint.getTaintInt();
-            return retVal;
+            addTaint(extraSpace);
+            int[] varB4CCCA26F9DB9189C32F33E82D425CFB_2099611367 = {getTaintInt()};
+            return varB4CCCA26F9DB9189C32F33E82D425CFB_2099611367;
             // ---------- Original Method ----------
             //if (mAboveAnchor) {
                 //final int[] drawableState = super.onCreateDrawableState(extraSpace + 1);
@@ -1419,22 +1459,20 @@ public class PopupWindow {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.000 -0400", hash_original_method = "A2DD55E78C6B8B19849AEC8708A214E9", hash_generated_method = "E9D457B7099087F4D752B085F0CAE158")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.333 -0400", hash_original_method = "A2DD55E78C6B8B19849AEC8708A214E9", hash_generated_method = "6078517475F5E8E6EF24095F7E41707D")
         @Override
         public boolean dispatchKeyEvent(KeyEvent event) {
-            dsTaint.addTaint(event.dsTaint);
             {
-                boolean varC71B767C5D14CF758CFC7EA9349BEE50_317191646 = (event.getKeyCode() == KeyEvent.KEYCODE_BACK);
+                boolean varC71B767C5D14CF758CFC7EA9349BEE50_858748395 = (event.getKeyCode() == KeyEvent.KEYCODE_BACK);
                 {
                     {
-                        boolean var0530024EDAEF285FA074A5D0CCF9FBC3_1757979242 = (getKeyDispatcherState() == null);
+                        boolean var0530024EDAEF285FA074A5D0CCF9FBC3_183910568 = (getKeyDispatcherState() == null);
                         {
-                            boolean var9B794F99509F39111FB8A6A64D542633_1113532583 = (super.dispatchKeyEvent(event));
+                            boolean var9B794F99509F39111FB8A6A64D542633_2117551581 = (super.dispatchKeyEvent(event));
                         } //End block
                     } //End collapsed parenthetic
                     {
-                        boolean varF456D875C94EFA50F4F83E456081D7DC_980958647 = (event.getAction() == KeyEvent.ACTION_DOWN
+                        boolean varF456D875C94EFA50F4F83E456081D7DC_1565914220 = (event.getAction() == KeyEvent.ACTION_DOWN
                         && event.getRepeatCount() == 0);
                         {
                             KeyEvent.DispatcherState state;
@@ -1444,12 +1482,12 @@ public class PopupWindow {
                             } //End block
                         } //End block
                         {
-                            boolean var6A33DE310C5D908541C47FFDD30D2802_521536213 = (event.getAction() == KeyEvent.ACTION_UP);
+                            boolean var6A33DE310C5D908541C47FFDD30D2802_802810681 = (event.getAction() == KeyEvent.ACTION_UP);
                             {
                                 KeyEvent.DispatcherState state;
                                 state = getKeyDispatcherState();
                                 {
-                                    boolean var220DFBBB57806723689C9C46DFE1C558_492747236 = (state != null && state.isTracking(event) && !event.isCanceled());
+                                    boolean var220DFBBB57806723689C9C46DFE1C558_1998384154 = (state != null && state.isTracking(event) && !event.isCanceled());
                                     {
                                         dismiss();
                                     } //End block
@@ -1457,28 +1495,30 @@ public class PopupWindow {
                             } //End block
                         } //End collapsed parenthetic
                     } //End collapsed parenthetic
-                    boolean var97BD0C91372FF8CDE07B475E38FE656A_1590584591 = (super.dispatchKeyEvent(event));
+                    boolean var97BD0C91372FF8CDE07B475E38FE656A_1966607545 = (super.dispatchKeyEvent(event));
                 } //End block
                 {
-                    boolean var97BD0C91372FF8CDE07B475E38FE656A_1616636688 = (super.dispatchKeyEvent(event));
+                    boolean var97BD0C91372FF8CDE07B475E38FE656A_1585572014 = (super.dispatchKeyEvent(event));
                 } //End block
             } //End collapsed parenthetic
-            return dsTaint.getTaintBoolean();
+            addTaint(event.getTaint());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_646490271 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_646490271;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.001 -0400", hash_original_method = "C7733BB60CAB256C1ABFC72965DD2E24", hash_generated_method = "97D9C57E6A97EA385A4602EE74D89791")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.334 -0400", hash_original_method = "C7733BB60CAB256C1ABFC72965DD2E24", hash_generated_method = "2C01E29027BF8C5D066BB79C7B159CF1")
         @Override
         public boolean dispatchTouchEvent(MotionEvent ev) {
-            dsTaint.addTaint(ev.dsTaint);
             {
-                boolean var93C4222DC4A59A9B32842AA419F1377C_1215706204 = (mTouchInterceptor != null && mTouchInterceptor.onTouch(this, ev));
+                boolean var93C4222DC4A59A9B32842AA419F1377C_1596851984 = (mTouchInterceptor != null && mTouchInterceptor.onTouch(this, ev));
             } //End collapsed parenthetic
-            boolean varD9CFC974DB9B4187D396B15CE784ECB1_2091380976 = (super.dispatchTouchEvent(ev));
-            return dsTaint.getTaintBoolean();
+            boolean varD9CFC974DB9B4187D396B15CE784ECB1_1673738084 = (super.dispatchTouchEvent(ev));
+            addTaint(ev.getTaint());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_890111482 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_890111482;
             // ---------- Original Method ----------
             //if (mTouchInterceptor != null && mTouchInterceptor.onTouch(this, ev)) {
                 //return true;
@@ -1487,33 +1527,33 @@ public class PopupWindow {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.001 -0400", hash_original_method = "2EFE76B74388A6782646D0ACFFECA21F", hash_generated_method = "3DBCB017307CBDBCB1440F20A82654D8")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.335 -0400", hash_original_method = "2EFE76B74388A6782646D0ACFFECA21F", hash_generated_method = "E78F2D65C16DCCC35A456E0FEC75FB48")
         @Override
         public boolean onTouchEvent(MotionEvent event) {
             //DSFIXME:  CODE0009: Possible callback target function detected
-            dsTaint.addTaint(event.dsTaint);
             int x;
             x = (int) event.getX();
             int y;
             y = (int) event.getY();
             {
-                boolean var0FCE2C8AA5CE2F3DB17871F164D2ABD3_988971198 = ((event.getAction() == MotionEvent.ACTION_DOWN)
+                boolean var0FCE2C8AA5CE2F3DB17871F164D2ABD3_1739929381 = ((event.getAction() == MotionEvent.ACTION_DOWN)
                     && ((x < 0) || (x >= getWidth()) || (y < 0) || (y >= getHeight())));
                 {
                     dismiss();
                 } //End block
                 {
-                    boolean var267E05D3737D25CB7AC9FBB08A12D390_404222089 = (event.getAction() == MotionEvent.ACTION_OUTSIDE);
+                    boolean var267E05D3737D25CB7AC9FBB08A12D390_2011936940 = (event.getAction() == MotionEvent.ACTION_OUTSIDE);
                     {
                         dismiss();
                     } //End block
                     {
-                        boolean varEFC6B821CDB4DB5344876A10D775A068_427204600 = (super.onTouchEvent(event));
+                        boolean varEFC6B821CDB4DB5344876A10D775A068_1001562014 = (super.onTouchEvent(event));
                     } //End block
                 } //End collapsed parenthetic
             } //End collapsed parenthetic
-            return dsTaint.getTaintBoolean();
+            addTaint(event.getTaint());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_572793285 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_572793285;
             // ---------- Original Method ----------
             //final int x = (int) event.getX();
             //final int y = (int) event.getY();
@@ -1530,17 +1570,16 @@ public class PopupWindow {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:08.001 -0400", hash_original_method = "EB4F4EE30B31AEB9BDFF308A3D2D5CAC", hash_generated_method = "E864F6754E1C78C6E3715484BB9D1676")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.351 -0400", hash_original_method = "EB4F4EE30B31AEB9BDFF308A3D2D5CAC", hash_generated_method = "4F9FF4D7D2FB8B0078F4048622D25F4D")
         @Override
         public void sendAccessibilityEvent(int eventType) {
-            dsTaint.addTaint(eventType);
             {
                 mContentView.sendAccessibilityEvent(eventType);
             } //End block
             {
                 super.sendAccessibilityEvent(eventType);
             } //End block
+            addTaint(eventType);
             // ---------- Original Method ----------
             //if (mContentView != null) {
                 //mContentView.sendAccessibilityEvent(eventType);
@@ -1550,7 +1589,9 @@ public class PopupWindow {
         }
 
         
-        private static final String TAG = "PopupWindow.PopupViewContainer";
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.351 -0400", hash_original_field = "D449010BF1EF4FD4CDACB1483101094D", hash_generated_field = "82FFDAFFDEC0A4E693DF9CABCBE6F6CF")
+
+        private static String TAG = "PopupWindow.PopupViewContainer";
     }
 
 
@@ -1560,10 +1601,18 @@ public class PopupWindow {
         public void onDismiss();
     }
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.351 -0400", hash_original_field = "873CD8303E150C0023A5A0952E0C3FDE", hash_generated_field = "EC879018D8E62A80ED7D5976B9A1B7A2")
+
     public static final int INPUT_METHOD_FROM_FOCUSABLE = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.351 -0400", hash_original_field = "6129920895E2F2D47FADD35814B7EF6A", hash_generated_field = "620E7E20B08AC8DE8E08A876F15941F3")
+
     public static final int INPUT_METHOD_NEEDED = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.351 -0400", hash_original_field = "03AFDC5E672A4B0142D6C7FFC5351ED3", hash_generated_field = "34E45A8A1172450CBFBC57CBC51A7F74")
+
     public static final int INPUT_METHOD_NOT_NEEDED = 2;
-    private static final int[] ABOVE_ANCHOR_STATE_SET = new int[] {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:08.351 -0400", hash_original_field = "049F117D2BC9BFBE1D299F88D069231A", hash_generated_field = "F7C47885263AE84AD61ECC758D89A111")
+
+    private static int[] ABOVE_ANCHOR_STATE_SET = new int[] {
         com.android.internal.R.attr.state_above_anchor
     };
 }

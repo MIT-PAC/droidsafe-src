@@ -18,29 +18,34 @@ import java.nio.charset.UnmappableCharacterException;
 import java.util.Arrays;
 
 public class InputStreamReader extends Reader {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.152 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "9DA78E40E39AA56A72373CEA8B1326DF")
+
     private InputStream in;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.152 -0400", hash_original_field = "1BD372EDACBB8876856A0324150C4E1B", hash_generated_field = "C1BD264EA71B8905202FEFE2EB6106E5")
+
     private boolean endOfInput = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.152 -0400", hash_original_field = "3A6BDBA8FB33A88CF7D52A1AF07A9C00", hash_generated_field = "E190C0DE068854E0E786DAC309DED1B8")
+
     private CharsetDecoder decoder;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.152 -0400", hash_original_field = "50E41AB3FDB67E2442AFB04B480B97A2", hash_generated_field = "A3FC74598F816F44A8E790B9843EEF7E")
+
     private ByteBuffer bytes = ByteBuffer.allocate(8192);
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.828 -0400", hash_original_method = "3590A2EED02D10C52AB0172AD4BE22C4", hash_generated_method = "73161F0B246AE3084A360E06EA84EE17")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InputStreamReader(InputStream in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.152 -0400", hash_original_method = "3590A2EED02D10C52AB0172AD4BE22C4", hash_generated_method = "C11E1C8740A43C21BC55AB18059CCFB4")
+    public  InputStreamReader(InputStream in) {
         this(in, Charset.defaultCharset());
-        dsTaint.addTaint(in.dsTaint);
+        addTaint(in.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.828 -0400", hash_original_method = "EBBB6FD529AC9BA283207DBA01D68764", hash_generated_method = "0CBE523C0F798CB4CFE31B29C74ABE03")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InputStreamReader(InputStream in, final String enc) throws UnsupportedEncodingException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.161 -0400", hash_original_method = "EBBB6FD529AC9BA283207DBA01D68764", hash_generated_method = "B19D799ED9C44B276EEBF3E22A0E9CFA")
+    public  InputStreamReader(InputStream in, final String enc) throws UnsupportedEncodingException {
         super(in);
-        dsTaint.addTaint(in.dsTaint);
-        dsTaint.addTaint(enc);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
+        this.in = in;
         try 
         {
             decoder = Charset.forName(enc).newDecoder().onMalformedInput(
@@ -70,13 +75,12 @@ public class InputStreamReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.828 -0400", hash_original_method = "A7068E06FC6AB9497581BF79FF6884E3", hash_generated_method = "43747D8EB8EAE0AB7D4E0D1326C21511")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InputStreamReader(InputStream in, CharsetDecoder dec) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.163 -0400", hash_original_method = "A7068E06FC6AB9497581BF79FF6884E3", hash_generated_method = "B08D041F736141AFFE6AB91E312D04A3")
+    public  InputStreamReader(InputStream in, CharsetDecoder dec) {
         super(in);
-        dsTaint.addTaint(dec.dsTaint);
-        dsTaint.addTaint(in.dsTaint);
         dec.averageCharsPerByte();
+        this.in = in;
+        decoder = dec;
         bytes.limit(0);
         // ---------- Original Method ----------
         //dec.averageCharsPerByte();
@@ -86,12 +90,10 @@ public class InputStreamReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.829 -0400", hash_original_method = "F689BDB30C937E91D3C146F93A07A4B9", hash_generated_method = "ADB50AFC1BCC617D2A5FE1EEEA991A6A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public InputStreamReader(InputStream in, Charset charset) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.163 -0400", hash_original_method = "F689BDB30C937E91D3C146F93A07A4B9", hash_generated_method = "638E03BD1AF4CDE5E50D3D3938B8A100")
+    public  InputStreamReader(InputStream in, Charset charset) {
         super(in);
-        dsTaint.addTaint(charset.dsTaint);
-        dsTaint.addTaint(in.dsTaint);
+        this.in = in;
         decoder = charset.newDecoder().onMalformedInput(
                 CodingErrorAction.REPLACE).onUnmappableCharacter(
                 CodingErrorAction.REPLACE);
@@ -105,8 +107,7 @@ public class InputStreamReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.829 -0400", hash_original_method = "FE46DA5B445A82E67613621D1604074D", hash_generated_method = "91CD4FB6B2BDBF7D5C31CD457304E226")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.167 -0400", hash_original_method = "FE46DA5B445A82E67613621D1604074D", hash_generated_method = "91CD4FB6B2BDBF7D5C31CD457304E226")
     @Override
     public void close() throws IOException {
         {
@@ -133,14 +134,28 @@ public class InputStreamReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.829 -0400", hash_original_method = "4B46B0B3D8C39E950459FB803D7FD65D", hash_generated_method = "53A5555AF8167F7D0419978367C5CC73")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.168 -0400", hash_original_method = "4B46B0B3D8C39E950459FB803D7FD65D", hash_generated_method = "2D0CB5C3BCB4E2C4E5631CE9498DD883")
     public String getEncoding() {
+        String varB4EAC82CA7396A68D541C85D26508E83_1329582194 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_595163993 = null; //Variable for return #2
         {
-            boolean var3A7D61B68AE823F6A30349D498C59A5C_875321230 = (!isOpen());
+            boolean var3A7D61B68AE823F6A30349D498C59A5C_1788666652 = (!isOpen());
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1329582194 = null;
+            } //End block
         } //End collapsed parenthetic
-        String var817FF4900D55FF602379C3CEBE77261F_226166954 = (HistoricalCharsetNames.get(decoder.charset()));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_595163993 = HistoricalCharsetNames.get(decoder.charset());
+        String varA7E53CE21691AB073D9660D615818899_2044824744; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_2044824744 = varB4EAC82CA7396A68D541C85D26508E83_1329582194;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_2044824744 = varB4EAC82CA7396A68D541C85D26508E83_595163993;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_2044824744.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2044824744;
         // ---------- Original Method ----------
         //if (!isOpen()) {
             //return null;
@@ -149,13 +164,12 @@ public class InputStreamReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.829 -0400", hash_original_method = "42220754D208F7633D722D928E4FD163", hash_generated_method = "9544D61362AFDDE436A3D8CEF5379A6C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.169 -0400", hash_original_method = "42220754D208F7633D722D928E4FD163", hash_generated_method = "3EE45D69BCBB44E7E1AA93BF2C3326ED")
     @Override
     public int read() throws IOException {
         {
             {
-                boolean varC984E2D68DED4A73C5D827F4E91A6961_1240246987 = (!isOpen());
+                boolean varC984E2D68DED4A73C5D827F4E91A6961_1421094560 = (!isOpen());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("InputStreamReader is closed");
                 } //End block
@@ -163,10 +177,11 @@ public class InputStreamReader extends Reader {
             char[] buf;
             buf = new char[1];
             {
-                boolean varBFA2CBA932C78B2EDB4EFBCC9C2BD268_860873072 = (read(buf, 0, 1) != -1);
+                boolean varBFA2CBA932C78B2EDB4EFBCC9C2BD268_182740190 = (read(buf, 0, 1) != -1);
             } //End flattened ternary
         } //End block
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_679518901 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_679518901;
         // ---------- Original Method ----------
         //synchronized (lock) {
             //if (!isOpen()) {
@@ -178,16 +193,12 @@ public class InputStreamReader extends Reader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.830 -0400", hash_original_method = "610EEC39BC95175186F6D1B73FBDC240", hash_generated_method = "F7036159B2D65A6B59E4073CFDE9D1F2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.178 -0400", hash_original_method = "610EEC39BC95175186F6D1B73FBDC240", hash_generated_method = "C57E06F0F88FA5A95C0EA6772037511A")
     @Override
     public int read(char[] buffer, int offset, int length) throws IOException {
-        dsTaint.addTaint(buffer[0]);
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(offset);
         {
             {
-                boolean varC984E2D68DED4A73C5D827F4E91A6961_1248907849 = (!isOpen());
+                boolean varC984E2D68DED4A73C5D827F4E91A6961_349305431 = (!isOpen());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("InputStreamReader is closed");
                 } //End block
@@ -200,13 +211,13 @@ public class InputStreamReader extends Reader {
             boolean needInput;
             needInput = !bytes.hasRemaining();
             {
-                boolean var6EA51BFF030AC0EE79ECA43CE531D9FC_799050850 = (out.hasRemaining());
+                boolean var6EA51BFF030AC0EE79ECA43CE531D9FC_576312062 = (out.hasRemaining());
                 {
                     {
                         try 
                         {
                             {
-                                boolean var4AC61F8278E79629BB6185CF1B67BBC0_63652414 = (in.available() == 0 && out.position() > offset);
+                                boolean var4AC61F8278E79629BB6185CF1B67BBC0_456058055 = (in.available() == 0 && out.position() > offset);
                             } //End collapsed parenthetic
                         } //End block
                         catch (IOException e)
@@ -225,10 +236,10 @@ public class InputStreamReader extends Reader {
                     } //End block
                     result = decoder.decode(bytes, out, false);
                     {
-                        boolean varAC4D83163F80498905F17C73ED1D644E_1284321380 = (result.isUnderflow());
+                        boolean varAC4D83163F80498905F17C73ED1D644E_1399967183 = (result.isUnderflow());
                         {
                             {
-                                boolean var48640C2061CEED262B55902D998F4A8C_1946213943 = (bytes.limit() == bytes.capacity());
+                                boolean var48640C2061CEED262B55902D998F4A8C_1422022956 = (bytes.limit() == bytes.capacity());
                                 {
                                     bytes.compact();
                                     bytes.limit(bytes.position());
@@ -246,33 +257,36 @@ public class InputStreamReader extends Reader {
                 decoder.reset();
             } //End block
             {
-                boolean var6B3A7901B659B60BD25125F126644325_1546621780 = (result.isMalformed() || result.isUnmappable());
+                boolean var6B3A7901B659B60BD25125F126644325_733063625 = (result.isMalformed() || result.isUnmappable());
                 {
                     result.throwException();
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean varE052619487BC744D8B744A86EA346CB4_1574197432 = (out.position() - offset == 0);
-                Object var0963A0483AED66CC947363DDE1373507_1449787573 = (out.position() - offset);
+                boolean varE052619487BC744D8B744A86EA346CB4_1496839167 = (out.position() - offset == 0);
+                Object var0963A0483AED66CC947363DDE1373507_269499252 = (out.position() - offset);
             } //End flattened ternary
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(buffer[0]);
+        addTaint(offset);
+        addTaint(length);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1558475609 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1558475609;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.831 -0400", hash_original_method = "2814A675517787CC2FFF66E2663BBAA6", hash_generated_method = "05F559D4652E1BD1F3A59BE500066616")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.184 -0400", hash_original_method = "2814A675517787CC2FFF66E2663BBAA6", hash_generated_method = "674A0C3610C18642C3344B6DFA7F1AFF")
     private boolean isOpen() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_898441076 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_898441076;
         // ---------- Original Method ----------
         //return in != null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.831 -0400", hash_original_method = "281B3CA6768822BAE894DB2D1EB23921", hash_generated_method = "6B58ED906FF68D8E6C0F41521E8CF377")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.189 -0400", hash_original_method = "281B3CA6768822BAE894DB2D1EB23921", hash_generated_method = "BBC46E2A27331883622D6041DE280670")
     @Override
     public boolean ready() throws IOException {
         {
@@ -281,12 +295,13 @@ public class InputStreamReader extends Reader {
             } //End block
             try 
             {
-                boolean varD153F2A141285B7908CE526B5F4D7ED6_1529627985 = (bytes.hasRemaining() || in.available() > 0);
+                boolean varD153F2A141285B7908CE526B5F4D7ED6_2103846187 = (bytes.hasRemaining() || in.available() > 0);
             } //End block
             catch (IOException e)
             { }
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_520252929 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_520252929;
         // ---------- Original Method ----------
         //synchronized (lock) {
             //if (in == null) {

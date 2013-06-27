@@ -11,19 +11,19 @@ import java.util.Arrays;
 import libcore.util.SneakyThrow;
 
 public class FilterOutputStream extends OutputStream {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.913 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "F5E376611CAAF4EE829F9CD268525BC2")
+
     protected OutputStream out;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.794 -0400", hash_original_method = "970F937F317FD0AE06FB76477C0F6F62", hash_generated_method = "0701F5917C5AA25544C19B28DDA9DD59")
-    @DSModeled(DSC.SAFE)
-    public FilterOutputStream(OutputStream out) {
-        dsTaint.addTaint(out.dsTaint);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.913 -0400", hash_original_method = "970F937F317FD0AE06FB76477C0F6F62", hash_generated_method = "F989161D9880425FAE37888895ADB2DD")
+    public  FilterOutputStream(OutputStream out) {
+        this.out = out;
         // ---------- Original Method ----------
         //this.out = out;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.794 -0400", hash_original_method = "C1E29F96DEA4D8E16CD646B2E66B7808", hash_generated_method = "DED80C76F2DDAD8BB057F50B48C2882B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.914 -0400", hash_original_method = "C1E29F96DEA4D8E16CD646B2E66B7808", hash_generated_method = "DED80C76F2DDAD8BB057F50B48C2882B")
     @Override
     public void close() throws IOException {
         Throwable thrown;
@@ -69,8 +69,7 @@ public class FilterOutputStream extends OutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.794 -0400", hash_original_method = "C99FBA65B0D308569620507D6E099042", hash_generated_method = "A2EF74EEF7203CB573D4B22064D57305")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.914 -0400", hash_original_method = "C99FBA65B0D308569620507D6E099042", hash_generated_method = "A2EF74EEF7203CB573D4B22064D57305")
     @Override
     public void flush() throws IOException {
         out.flush();
@@ -79,13 +78,9 @@ public class FilterOutputStream extends OutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.794 -0400", hash_original_method = "6F432F0CBACFD3E73C2E675DFA6BA23C", hash_generated_method = "1419A9B4F5785D0C3103C1159A727D86")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.914 -0400", hash_original_method = "6F432F0CBACFD3E73C2E675DFA6BA23C", hash_generated_method = "4F8667CAC7E44A67C6DAB06530E69651")
     @Override
     public void write(byte[] buffer, int offset, int length) throws IOException {
-        dsTaint.addTaint(buffer[0]);
-        dsTaint.addTaint(length);
-        dsTaint.addTaint(offset);
         Arrays.checkOffsetAndCount(buffer.length, offset, length);
         {
             int i;
@@ -94,6 +89,9 @@ public class FilterOutputStream extends OutputStream {
                 write(buffer[offset + i]);
             } //End block
         } //End collapsed parenthetic
+        addTaint(buffer[0]);
+        addTaint(offset);
+        addTaint(length);
         // ---------- Original Method ----------
         //Arrays.checkOffsetAndCount(buffer.length, offset, length);
         //for (int i = 0; i < length; i++) {
@@ -102,12 +100,11 @@ public class FilterOutputStream extends OutputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:24.795 -0400", hash_original_method = "10EC24027333F66A6325D4B91084AA70", hash_generated_method = "FBAC90BF8D85DBC55B8DDA682C2BB2E9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.914 -0400", hash_original_method = "10EC24027333F66A6325D4B91084AA70", hash_generated_method = "8D7C17AF8B5A147E6248279AD64AC877")
     @Override
     public void write(int oneByte) throws IOException {
-        dsTaint.addTaint(oneByte);
         out.write(oneByte);
+        addTaint(oneByte);
         // ---------- Original Method ----------
         //out.write(oneByte);
     }

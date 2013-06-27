@@ -11,9 +11,10 @@ import org.xml.sax.Attributes;
 
 abstract class ExpatAttributes implements Attributes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.058 -0400", hash_original_method = "0D2CF6070C325F98E7CB203AC3F89A5D", hash_generated_method = "0D2CF6070C325F98E7CB203AC3F89A5D")
-        public ExpatAttributes ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.436 -0400", hash_original_method = "D4DF1C9BC2FF91CA250847447EABC788", hash_generated_method = "D4DF1C9BC2FF91CA250847447EABC788")
+    public ExpatAttributes ()
     {
+        //Synthesized constructor
     }
 
 
@@ -26,15 +27,29 @@ abstract class ExpatAttributes implements Attributes {
     public abstract int getPointer();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.059 -0400", hash_original_method = "57C7829583448928D2E62C8F0C20470B", hash_generated_method = "C3325D23CC003C19A9A17A64062C7FA0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.437 -0400", hash_original_method = "57C7829583448928D2E62C8F0C20470B", hash_generated_method = "49AF09B337C0DEF2696A6FA86E656ADC")
     public String getURI(int index) {
-        dsTaint.addTaint(index);
+        String varB4EAC82CA7396A68D541C85D26508E83_1313490275 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2042796311 = null; //Variable for return #2
         {
-            boolean var203EB8F451F243B3D8A451211B677024_558745155 = (index < 0 || index >= getLength());
+            boolean var203EB8F451F243B3D8A451211B677024_1943934152 = (index < 0 || index >= getLength());
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_1313490275 = null;
+            } //End block
         } //End collapsed parenthetic
-        String varF2484E9595FC3EE4BEA03C9CE34227BC_827389981 = (getURI(getParserPointer(), getPointer(), index));
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_2042796311 = getURI(getParserPointer(), getPointer(), index);
+        addTaint(index);
+        String varA7E53CE21691AB073D9660D615818899_346837529; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_346837529 = varB4EAC82CA7396A68D541C85D26508E83_1313490275;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_346837529 = varB4EAC82CA7396A68D541C85D26508E83_2042796311;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_346837529.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_346837529;
         // ---------- Original Method ----------
         //if (index < 0 || index >= getLength()) {
             //return null;
@@ -43,15 +58,15 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.059 -0400", hash_original_method = "0BE26DE1FC37C5F8E294AD66DA35C798", hash_generated_method = "118320556BCB40085FBB441AC3E0FA20")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.438 -0400", hash_original_method = "0BE26DE1FC37C5F8E294AD66DA35C798", hash_generated_method = "CE001BAE1A38B4C709494634FCE6CC89")
     public String getLocalName(int index) {
-        dsTaint.addTaint(index);
-        {
-            boolean varB7146D451FF05C9346A46AB43DC09A3E_2057077566 = ((index < 0 || index >= getLength()));
-            Object var5AF2C25FE6C9225A49702AFC388B4707_1523604318 = (getLocalName(getParserPointer(), getPointer(), index));
-        } //End flattened ternary
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_695823256 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_695823256 = (index < 0 || index >= getLength())
+                ? null
+                : getLocalName(getParserPointer(), getPointer(), index);
+        addTaint(index);
+        varB4EAC82CA7396A68D541C85D26508E83_695823256.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_695823256;
         // ---------- Original Method ----------
         //return (index < 0 || index >= getLength())
                 //? null
@@ -59,15 +74,15 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.059 -0400", hash_original_method = "0E62167FF9D29B28633236898C212817", hash_generated_method = "3A0FC60950E14B2C308FCF053A210639")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.439 -0400", hash_original_method = "0E62167FF9D29B28633236898C212817", hash_generated_method = "ABD62EACDD906FF8698F623926907884")
     public String getQName(int index) {
-        dsTaint.addTaint(index);
-        {
-            boolean varB7146D451FF05C9346A46AB43DC09A3E_482067050 = ((index < 0 || index >= getLength()));
-            Object varA3CEA0A2CC07A8CE7662E786DD5ED774_1536387940 = (getQName(getParserPointer(), getPointer(), index));
-        } //End flattened ternary
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1154673542 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1154673542 = (index < 0 || index >= getLength())
+                ? null
+                : getQName(getParserPointer(), getPointer(), index);
+        addTaint(index);
+        varB4EAC82CA7396A68D541C85D26508E83_1154673542.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1154673542;
         // ---------- Original Method ----------
         //return (index < 0 || index >= getLength())
                 //? null
@@ -75,28 +90,27 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.060 -0400", hash_original_method = "906F8D6EEECA09A0EB9B2E9E5289B227", hash_generated_method = "7F53B5D0727005D6197172508873838A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.440 -0400", hash_original_method = "906F8D6EEECA09A0EB9B2E9E5289B227", hash_generated_method = "DCCC480E587DFCCCD111BB6CD053BF53")
     public String getType(int index) {
-        dsTaint.addTaint(index);
-        {
-            boolean varB7146D451FF05C9346A46AB43DC09A3E_1896565633 = ((index < 0 || index >= getLength()));
-        } //End flattened ternary
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1899295397 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1899295397 = (index < 0 || index >= getLength()) ? null : CDATA;
+        addTaint(index);
+        varB4EAC82CA7396A68D541C85D26508E83_1899295397.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1899295397;
         // ---------- Original Method ----------
         //return (index < 0 || index >= getLength()) ? null : CDATA;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.060 -0400", hash_original_method = "3269AF76DE45F61A692FCC87354CAB72", hash_generated_method = "8F7A51927A7BE55CB26F2A858A701712")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.442 -0400", hash_original_method = "3269AF76DE45F61A692FCC87354CAB72", hash_generated_method = "E74F8272E4A85D5EE22B50CC3B5496CB")
     public String getValue(int index) {
-        dsTaint.addTaint(index);
-        {
-            boolean varB7146D451FF05C9346A46AB43DC09A3E_252077096 = ((index < 0 || index >= getLength()));
-            Object varA3838F13DB699C4A1FFC4B2B38DC0DF5_1194394046 = (getValueByIndex(getPointer(), index));
-        } //End flattened ternary
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_828071157 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_828071157 = (index < 0 || index >= getLength())
+                ? null
+                : getValueByIndex(getPointer(), index);
+        addTaint(index);
+        varB4EAC82CA7396A68D541C85D26508E83_828071157.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_828071157;
         // ---------- Original Method ----------
         //return (index < 0 || index >= getLength())
                 //? null
@@ -104,11 +118,8 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.060 -0400", hash_original_method = "C871C7E3F593C081235C517FE9A1E558", hash_generated_method = "5B652588AFB3028EA3F4AD5C3B948809")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.443 -0400", hash_original_method = "C871C7E3F593C081235C517FE9A1E558", hash_generated_method = "D61C32D5A5F4BC779E2C15E4D376C574")
     public int getIndex(String uri, String localName) {
-        dsTaint.addTaint(localName);
-        dsTaint.addTaint(uri);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("uri");
         } //End block
@@ -117,8 +128,11 @@ abstract class ExpatAttributes implements Attributes {
         } //End block
         int pointer;
         pointer = getPointer();
-        int var475C57EF25B01A7CB049CE2D3EAD6E3C_95298557 = (getIndex(pointer, uri, localName));
-        return dsTaint.getTaintInt();
+        int var475C57EF25B01A7CB049CE2D3EAD6E3C_331927435 = (getIndex(pointer, uri, localName));
+        addTaint(uri.getTaint());
+        addTaint(localName.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_682752741 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_682752741;
         // ---------- Original Method ----------
         //if (uri == null) {
             //throw new NullPointerException("uri");
@@ -134,17 +148,17 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.061 -0400", hash_original_method = "980758BEF60D7C26C232D3CAD78E7835", hash_generated_method = "1CB00BD1A35C6BED00F43B27B6B21E73")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.446 -0400", hash_original_method = "980758BEF60D7C26C232D3CAD78E7835", hash_generated_method = "A5847AEC9033F12BEBAC5148C4BCA313")
     public int getIndex(String qName) {
-        dsTaint.addTaint(qName);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("uri");
         } //End block
         int pointer;
         pointer = getPointer();
-        int var96B5423CA7106BED454AAFC40E7EE7D4_644489031 = (getIndexForQName(pointer, qName));
-        return dsTaint.getTaintInt();
+        int var96B5423CA7106BED454AAFC40E7EE7D4_1573227057 = (getIndexForQName(pointer, qName));
+        addTaint(qName.getTaint());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1608007508 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1608007508;
         // ---------- Original Method ----------
         //if (qName == null) {
             //throw new NullPointerException("uri");
@@ -157,21 +171,20 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.061 -0400", hash_original_method = "374AA6D4EA76C101E4A1F3245973703C", hash_generated_method = "DAE1E94730652EA42D142229D924B22F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.457 -0400", hash_original_method = "374AA6D4EA76C101E4A1F3245973703C", hash_generated_method = "5750072C98498346DE1D86EAA2459296")
     public String getType(String uri, String localName) {
-        dsTaint.addTaint(localName);
-        dsTaint.addTaint(uri);
+        String varB4EAC82CA7396A68D541C85D26508E83_954948068 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("uri");
         } //End block
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("local name");
         } //End block
-        {
-            boolean var01B7D3C37121DB1BAE57121ABA3800CC_1685275801 = (getIndex(uri, localName) == -1);
-        } //End flattened ternary
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_954948068 = getIndex(uri, localName) == -1 ? null : CDATA;
+        addTaint(uri.getTaint());
+        addTaint(localName.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_954948068.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_954948068;
         // ---------- Original Method ----------
         //if (uri == null) {
             //throw new NullPointerException("uri");
@@ -183,24 +196,22 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.061 -0400", hash_original_method = "845C2A9D603CFD94A25AD0FA47DD5097", hash_generated_method = "F6B84D6F8B5BCBFDC2B944344D76B6C6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.458 -0400", hash_original_method = "845C2A9D603CFD94A25AD0FA47DD5097", hash_generated_method = "439FA2238BA8001D8AE01E2CD206406B")
     public String getType(String qName) {
-        dsTaint.addTaint(qName);
-        {
-            boolean var09BCCAB3B05F2B3CECC72C18F9A1EFA7_522159185 = (getIndex(qName) == -1);
-        } //End flattened ternary
-        return dsTaint.getTaintString();
+        String varB4EAC82CA7396A68D541C85D26508E83_1198207741 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1198207741 = getIndex(qName) == -1 ? null : CDATA;
+        addTaint(qName.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1198207741.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1198207741;
         // ---------- Original Method ----------
         //return getIndex(qName) == -1 ? null : CDATA;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.061 -0400", hash_original_method = "C565081F95CF8700320081FA5DB3FD15", hash_generated_method = "2ED9C4796051638412FE69E525BC569C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.464 -0400", hash_original_method = "C565081F95CF8700320081FA5DB3FD15", hash_generated_method = "7A9625E63C3563523616C9146B8EBB94")
     public String getValue(String uri, String localName) {
-        dsTaint.addTaint(localName);
-        dsTaint.addTaint(uri);
+        String varB4EAC82CA7396A68D541C85D26508E83_1491011308 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1768443997 = null; //Variable for return #2
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("uri");
         } //End block
@@ -209,8 +220,23 @@ abstract class ExpatAttributes implements Attributes {
         } //End block
         int pointer;
         pointer = getPointer();
-        String var7754412F23BA45753F7F8E0ACB668C3D_699799878 = (getValue(pointer, uri, localName));
-        return dsTaint.getTaintString();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1491011308 = null;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_1768443997 = getValue(pointer, uri, localName);
+        addTaint(uri.getTaint());
+        addTaint(localName.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_253253533; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_253253533 = varB4EAC82CA7396A68D541C85D26508E83_1491011308;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_253253533 = varB4EAC82CA7396A68D541C85D26508E83_1768443997;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_253253533.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_253253533;
         // ---------- Original Method ----------
         //if (uri == null) {
             //throw new NullPointerException("uri");
@@ -226,17 +252,31 @@ abstract class ExpatAttributes implements Attributes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.062 -0400", hash_original_method = "11A6BF5F6E86FB8B88CA0053A4EF72DA", hash_generated_method = "AC431587161D25FB9AE17EB62937A15F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.474 -0400", hash_original_method = "11A6BF5F6E86FB8B88CA0053A4EF72DA", hash_generated_method = "B6FD727688C56C8FFB2F1A5D7DBE7643")
     public String getValue(String qName) {
-        dsTaint.addTaint(qName);
+        String varB4EAC82CA7396A68D541C85D26508E83_838723781 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1057010378 = null; //Variable for return #2
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("qName");
         } //End block
         int pointer;
         pointer = getPointer();
-        String varAAB7800DEB842EAC50B120E903CB1AB6_559120644 = (getValueForQName(pointer, qName));
-        return dsTaint.getTaintString();
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_838723781 = null;
+        } //End block
+        varB4EAC82CA7396A68D541C85D26508E83_1057010378 = getValueForQName(pointer, qName);
+        addTaint(qName.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_1591241278; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1591241278 = varB4EAC82CA7396A68D541C85D26508E83_838723781;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1591241278 = varB4EAC82CA7396A68D541C85D26508E83_1057010378;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1591241278.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1591241278;
         // ---------- Original Method ----------
         //if (qName == null) {
             //throw new NullPointerException("qName");
@@ -250,22 +290,22 @@ abstract class ExpatAttributes implements Attributes {
 
     
         private static String getURI(int pointer, int attributePointer, int index) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         private static String getLocalName(int pointer, int attributePointer, int index) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         private static String getQName(int pointer, int attributePointer, int index) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         private static String getValueByIndex(int attributePointer, int index) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
@@ -280,22 +320,22 @@ abstract class ExpatAttributes implements Attributes {
 
     
         private static String getValue(int attributePointer, String uri, String localName) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
         private static String getValueForQName(int attributePointer, String qName) {
-        return DSUtils.UNKNOWN_STRING;
+        //DSFIXME:  CODE0012: Native static method requires manual modeling
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:41.063 -0400", hash_original_method = "9C2FF3514BF1A56FDD02B5A5C31F714B", hash_generated_method = "FB0CA7C7800BC55D8D68FCC9B7FF9F1C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.476 -0400", hash_original_method = "9C2FF3514BF1A56FDD02B5A5C31F714B", hash_generated_method = "89627B71E85340B676FC2D21222B8514")
     protected void freeAttributes(int pointer) {
-        dsTaint.addTaint(pointer);
     }
 
     
-    private static final String CDATA = "CDATA";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.476 -0400", hash_original_field = "833C91B89EDFBBA3080C06DEF8403445", hash_generated_field = "050E939B0DC084CC0946490A05021B46")
+
+    private static String CDATA = "CDATA";
 }
 

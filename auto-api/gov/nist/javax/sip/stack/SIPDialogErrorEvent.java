@@ -10,32 +10,39 @@ import java.util.Iterator;
 import java.util.EventObject;
 
 public class SIPDialogErrorEvent extends EventObject {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.129 -0400", hash_original_field = "90EF706EA3C5F1087D72CE0C7E7231EE", hash_generated_field = "CA6E243727AC764060BF1536B58E325A")
+
     private int errorID;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:23.434 -0400", hash_original_method = "63B6C69AA01911B678EB33AE8A4167CE", hash_generated_method = "7E66F4DF3527A1E6CD6586EB40DD8222")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-     SIPDialogErrorEvent(
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.130 -0400", hash_original_method = "63B6C69AA01911B678EB33AE8A4167CE", hash_generated_method = "DC238B59F72F8469C91CECA766531A29")
+      SIPDialogErrorEvent(
         SIPDialog sourceDialog,
         int dialogErrorID) {
         super(sourceDialog);
-        dsTaint.addTaint(dialogErrorID);
-        dsTaint.addTaint(sourceDialog.dsTaint);
+        errorID = dialogErrorID;
+        addTaint(sourceDialog.getTaint());
         // ---------- Original Method ----------
         //errorID = dialogErrorID;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:23.434 -0400", hash_original_method = "0519EBFB6DA70B425C38921D23DA7A64", hash_generated_method = "B86210BDA60B949FF41CE9DC66CFC0C2")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.130 -0400", hash_original_method = "0519EBFB6DA70B425C38921D23DA7A64", hash_generated_method = "8B8E4D7877687BD1A9EE0C9C6484BD7E")
     public int getErrorID() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1955136627 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1955136627;
         // ---------- Original Method ----------
         //return errorID;
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.130 -0400", hash_original_field = "CDE8D05AE558006D8C6D89A0F6682BEA", hash_generated_field = "1114A70B449A938175EAD82492CF8BE8")
+
     public static final int DIALOG_ACK_NOT_RECEIVED_TIMEOUT = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.130 -0400", hash_original_field = "3658A2E66C77840BBFED818960D10473", hash_generated_field = "A8906351F5DF1D3C4CD5261710E4A09F")
+
     public static final int DIALOG_ACK_NOT_SENT_TIMEOUT = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.130 -0400", hash_original_field = "A113C71A01FE4CEAA060C2EFB14ACA14", hash_generated_field = "7B2972FA2C4C6425C27AD10065E88AB6")
+
     public static final int DIALOG_REINVITE_TIMEOUT = 3;
 }
 

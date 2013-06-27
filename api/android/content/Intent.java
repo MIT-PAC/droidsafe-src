@@ -135,8 +135,7 @@ public class Intent implements Parcelable, Cloneable {
 	
 	@DSModeled(value = DSC.SAFE)
 	public Uri getData() {
-		return (Uri)dsTaint.getTaint();
-        //return mData;
+        return mData;
     }
 	
 	@DSModeled(value = DSC.SAFE)

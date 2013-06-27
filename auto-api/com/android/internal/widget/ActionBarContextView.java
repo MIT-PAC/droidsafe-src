@@ -31,46 +31,66 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class ActionBarContextView extends AbsActionBarView implements AnimatorListener {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.321 -0400", hash_original_field = "4B03BBB3AD21DBD17B2B689923FCF1F6", hash_generated_field = "ECAB18871B55104BACD4283C12B1074D")
+
     private CharSequence mTitle;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.321 -0400", hash_original_field = "6EDD40BFDEB251E34BDCB1CE9C263665", hash_generated_field = "775125B4EBC8ED0F3E5FBA051277E18D")
+
     private CharSequence mSubtitle;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.321 -0400", hash_original_field = "6D2EE1E387531C84DD880458CD9B9060", hash_generated_field = "24F281CC402C90EA9D9EB00DDCF618F4")
+
     private View mClose;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.321 -0400", hash_original_field = "0F85706FF7ACEA880EA803CB0E63A48D", hash_generated_field = "58BF9FCCDFB47B7346A31DF060279244")
+
     private View mCustomView;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.321 -0400", hash_original_field = "E04DEDB0B406830A59065795F4A530C9", hash_generated_field = "53515DAB03CBCC904881F85C0D0B24F4")
+
     private LinearLayout mTitleLayout;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.321 -0400", hash_original_field = "5F3FDB05EE6E2581CC95AB22CADCE47B", hash_generated_field = "3B26FAD098CFEC3A217F2BF71097A83E")
+
     private TextView mTitleView;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.321 -0400", hash_original_field = "68B3FAC852E3272F9F54C6B1610054DA", hash_generated_field = "5B91EC47B0CD462AA7928A5697458750")
+
     private TextView mSubtitleView;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.321 -0400", hash_original_field = "F00D2B188EA8D8F58E0764D2012CA069", hash_generated_field = "CFEDF1432A06310A2FB06B788CC20410")
+
     private int mTitleStyleRes;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.321 -0400", hash_original_field = "C0606F823BBDDA71B84334C05C268230", hash_generated_field = "9FA8532B8CB2D1269C79565E301C661F")
+
     private int mSubtitleStyleRes;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.321 -0400", hash_original_field = "2225C949EA81FBFB7C5583F73183E256", hash_generated_field = "EAFF30D2C8DDA41FABEEAF56960F2296")
+
     private Drawable mSplitBackground;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.321 -0400", hash_original_field = "40A500CAA798F3EB011971DCA401C2FB", hash_generated_field = "33771BEA3F609DD1955FEC169216294A")
+
     private Animator mCurrentAnimation;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.321 -0400", hash_original_field = "2617AFF41B3BE696F7430186B046AEFC", hash_generated_field = "8265308A3A327A796C7CC259CBBF12AC")
+
     private boolean mAnimateInOnLayout;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.321 -0400", hash_original_field = "535E559CD7B99D09B7149CE1751E3916", hash_generated_field = "7231072E88C5D78E0458C5139E2E8DF1")
+
     private int mAnimationMode;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.875 -0400", hash_original_method = "2EBFD0846938BB846291BE9F4AD94F04", hash_generated_method = "F44C7F7F93AF60DBC7C576268CF2419A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ActionBarContextView(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.329 -0400", hash_original_method = "2EBFD0846938BB846291BE9F4AD94F04", hash_generated_method = "36E4F0BA0A93AF1939B2F4DCD87398AA")
+    public  ActionBarContextView(Context context) {
         this(context, null);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.875 -0400", hash_original_method = "43CDEE17F6E403B0B882E0F499365FE4", hash_generated_method = "061E5743B773FB2493983540DFBD0847")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ActionBarContextView(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.330 -0400", hash_original_method = "43CDEE17F6E403B0B882E0F499365FE4", hash_generated_method = "8E70D20FDB3F04B61DA16551FB4B3754")
+    public  ActionBarContextView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.actionModeStyle);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.875 -0400", hash_original_method = "19C70EFA7CD06BD307662BD45113B543", hash_generated_method = "45DF5E7AD9223DA3C20A8D6E3B1B2C3E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ActionBarContextView(Context context, AttributeSet attrs, int defStyle) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.331 -0400", hash_original_method = "19C70EFA7CD06BD307662BD45113B543", hash_generated_method = "05C40E61E59901B88D7933B87E80018E")
+    public  ActionBarContextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(defStyle);
-        dsTaint.addTaint(context.dsTaint);
         TypedArray a;
         a = context.obtainStyledAttributes(attrs, R.styleable.ActionMode, defStyle, 0);
         setBackgroundDrawable(a.getDrawable(
@@ -84,6 +104,9 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
         mSplitBackground = a.getDrawable(
                 com.android.internal.R.styleable.ActionMode_backgroundSplit);
         a.recycle();
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
+        addTaint(defStyle);
         // ---------- Original Method ----------
         //TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ActionMode, defStyle, 0);
         //setBackgroundDrawable(a.getDrawable(
@@ -100,8 +123,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.876 -0400", hash_original_method = "B72CC99F1AE7F170915B2F32514E502E", hash_generated_method = "557C076842D7BAB87119015349CF3395")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.331 -0400", hash_original_method = "B72CC99F1AE7F170915B2F32514E502E", hash_generated_method = "557C076842D7BAB87119015349CF3395")
     @Override
     public void onDetachedFromWindow() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -119,11 +141,9 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.876 -0400", hash_original_method = "E552720A78112C3EB9A59B322D8064C9", hash_generated_method = "41282C50A8841942D19110902C79BEC7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.350 -0400", hash_original_method = "E552720A78112C3EB9A59B322D8064C9", hash_generated_method = "A64A966C45E5198A81B41EC526BE624F")
     @Override
     public void setSplitActionBar(boolean split) {
-        dsTaint.addTaint(split);
         {
             {
                 LayoutParams layoutParams;
@@ -153,28 +173,27 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
             } //End block
             super.setSplitActionBar(split);
         } //End block
+        addTaint(split);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.876 -0400", hash_original_method = "2AF53FC77EF46E1AB46FFEE70D9B4BD3", hash_generated_method = "BB6582E227FA3D63B10E464E5D338D7C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.350 -0400", hash_original_method = "2AF53FC77EF46E1AB46FFEE70D9B4BD3", hash_generated_method = "B605154034957D668B9E756F3C9F46CD")
     public void setContentHeight(int height) {
-        dsTaint.addTaint(height);
         mContentHeight = height;
+        addTaint(height);
         // ---------- Original Method ----------
         //mContentHeight = height;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.877 -0400", hash_original_method = "BF35621F736CEABB1B31AE57D0749737", hash_generated_method = "5703BCAB969BDFF2F3CF77F899DA5EC8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.351 -0400", hash_original_method = "BF35621F736CEABB1B31AE57D0749737", hash_generated_method = "6E197DFE3D2B6928F20A4E6ECFADB76F")
     public void setCustomView(View view) {
-        dsTaint.addTaint(view.dsTaint);
         {
             removeView(mCustomView);
         } //End block
+        mCustomView = view;
         {
             removeView(mTitleLayout);
             mTitleLayout = null;
@@ -199,10 +218,9 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.877 -0400", hash_original_method = "211EB79F55FBE601162C52B7DDCEAE29", hash_generated_method = "031A8CE92EEEE9A1FB29D045523C199D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.351 -0400", hash_original_method = "211EB79F55FBE601162C52B7DDCEAE29", hash_generated_method = "3068752903ECBB84927D6D1A0EFBCED0")
     public void setTitle(CharSequence title) {
-        dsTaint.addTaint(title);
+        mTitle = title;
         initTitle();
         // ---------- Original Method ----------
         //mTitle = title;
@@ -210,10 +228,9 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.877 -0400", hash_original_method = "7D9357B6D11390EB60D28E00C6F28FA8", hash_generated_method = "BEF1D4B38AEE0C8D87463EF723E9E0A6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.352 -0400", hash_original_method = "7D9357B6D11390EB60D28E00C6F28FA8", hash_generated_method = "B14BABC7DBB2EABEF924921B7507BA92")
     public void setSubtitle(CharSequence subtitle) {
-        dsTaint.addTaint(subtitle);
+        mSubtitle = subtitle;
         initTitle();
         // ---------- Original Method ----------
         //mSubtitle = subtitle;
@@ -221,26 +238,29 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.877 -0400", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "7A540A7B0E4496A8FAF388C1F1064A47")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.353 -0400", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "024DB9E7349F95D86B0B5E69A292D90B")
     public CharSequence getTitle() {
-        return dsTaint.getTaintString();
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1590921576 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1590921576 = mTitle;
+        varB4EAC82CA7396A68D541C85D26508E83_1590921576.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1590921576;
         // ---------- Original Method ----------
         //return mTitle;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.878 -0400", hash_original_method = "8334E54E49A430BB5E2CB9D01857CDC7", hash_generated_method = "A3BDF4A264E5596560582BA0B36F537B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.353 -0400", hash_original_method = "8334E54E49A430BB5E2CB9D01857CDC7", hash_generated_method = "B4D0B13DBD1147B5CE521DA486E739C1")
     public CharSequence getSubtitle() {
-        return dsTaint.getTaintString();
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1834727174 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1834727174 = mSubtitle;
+        varB4EAC82CA7396A68D541C85D26508E83_1834727174.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1834727174;
         // ---------- Original Method ----------
         //return mSubtitle;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.878 -0400", hash_original_method = "790F9E36BA88F469E91A3DDEB8BA7A0E", hash_generated_method = "01E22404EA8C9506B3EF43EA86B9715A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.359 -0400", hash_original_method = "790F9E36BA88F469E91A3DDEB8BA7A0E", hash_generated_method = "6DADFDAD81B9C3BC1F9D0B5FD9FFAF18")
     private void initTitle() {
         {
             LayoutInflater inflater;
@@ -265,7 +285,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
         mSubtitleView.setVisibility(hasSubtitle ? VISIBLE : GONE);
         mTitleLayout.setVisibility(hasTitle || hasSubtitle ? VISIBLE : GONE);
         {
-            boolean var3A8301BC648C0D99D98FE6154410787A_1636144882 = (mTitleLayout.getParent() == null);
+            boolean var3A8301BC648C0D99D98FE6154410787A_663736730 = (mTitleLayout.getParent() == null);
             {
                 addView(mTitleLayout);
             } //End block
@@ -275,10 +295,8 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.879 -0400", hash_original_method = "6CF0CC9D4208F5A3169016F9961CD359", hash_generated_method = "366792EA7D0EB5A04260BC2537B729FE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.376 -0400", hash_original_method = "6CF0CC9D4208F5A3169016F9961CD359", hash_generated_method = "9A633C9159066A9213003AD4FBE05F98")
     public void initForMode(final ActionMode mode) {
-        dsTaint.addTaint(mode.dsTaint);
         {
             LayoutInflater inflater;
             inflater = LayoutInflater.from(mContext);
@@ -286,7 +304,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
             addView(mClose);
         } //End block
         {
-            boolean var3F2B07AD129A1B42F4010FDA38D1B689_477278200 = (mClose.getParent() == null);
+            boolean var3F2B07AD129A1B42F4010FDA38D1B689_1086564097 = (mClose.getParent() == null);
             {
                 addView(mClose);
             } //End block
@@ -294,12 +312,11 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
         View closeButton;
         closeButton = mClose.findViewById(R.id.action_mode_close_button);
         closeButton.setOnClickListener(new OnClickListener() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.879 -0400", hash_original_method = "67B70578F0892507CE1943EF7ED1845C", hash_generated_method = "2893EC3CCC99DB1E742991A068ABD51E")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.375 -0400", hash_original_method = "67B70578F0892507CE1943EF7ED1845C", hash_generated_method = "393BF4B4E68042F128F39E87CE78FB26")
             public void onClick(View v) {
                 //DSFIXME:  CODE0009: Possible callback target function detected
-                dsTaint.addTaint(v.dsTaint);
                 mode.finish();
+                addTaint(v.getTaint());
                 // ---------- Original Method ----------
                 //mode.finish();
             }
@@ -332,13 +349,13 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
             mSplitView.addView(mMenuView, layoutParams);
         } //End block
         mAnimateInOnLayout = true;
+        addTaint(mode.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.879 -0400", hash_original_method = "45A4BF13DB4610A7D54223CBAAD97337", hash_generated_method = "745B8B66475F4A40396395F66FFF9CA0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.379 -0400", hash_original_method = "45A4BF13DB4610A7D54223CBAAD97337", hash_generated_method = "745B8B66475F4A40396395F66FFF9CA0")
     public void closeMode() {
         {
             killMode();
@@ -362,8 +379,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.880 -0400", hash_original_method = "A219535592712D030952E62AEE6B3C28", hash_generated_method = "1F4EA41D6887CB0DF8C3EC659F8BF760")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.380 -0400", hash_original_method = "A219535592712D030952E62AEE6B3C28", hash_generated_method = "1F4EA41D6887CB0DF8C3EC659F8BF760")
     private void finishAnimation() {
         Animator a;
         a = mCurrentAnimation;
@@ -380,8 +396,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.880 -0400", hash_original_method = "2B49C690F775A4BD526B81BD0C8494DB", hash_generated_method = "F8B2017962A97F59AC5932BC0432217E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.399 -0400", hash_original_method = "2B49C690F775A4BD526B81BD0C8494DB", hash_generated_method = "F8B2017962A97F59AC5932BC0432217E")
     public void killMode() {
         finishAnimation();
         removeAllViews();
@@ -403,14 +418,14 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.880 -0400", hash_original_method = "6ECDD9C0917165AAFEF87E5E5EC8B474", hash_generated_method = "742B95EEA046D1CF9F985793BFACF4A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.400 -0400", hash_original_method = "6ECDD9C0917165AAFEF87E5E5EC8B474", hash_generated_method = "4CE442FAE42984CBABAFCAD8CC44C6EF")
     @Override
     public boolean showOverflowMenu() {
         {
-            boolean varE02B1D76FDCE55870555B6FA38688077_1739621608 = (mActionMenuPresenter.showOverflowMenu());
+            boolean varE02B1D76FDCE55870555B6FA38688077_481076786 = (mActionMenuPresenter.showOverflowMenu());
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1980984525 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1980984525;
         // ---------- Original Method ----------
         //if (mActionMenuPresenter != null) {
             //return mActionMenuPresenter.showOverflowMenu();
@@ -419,14 +434,14 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.880 -0400", hash_original_method = "5D05982F33AF24415676BD0317DE2206", hash_generated_method = "3379F23115B0CE6185ED483C658941FE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.401 -0400", hash_original_method = "5D05982F33AF24415676BD0317DE2206", hash_generated_method = "2CF3E57244C3FE8DBAA4AADE496360BA")
     @Override
     public boolean hideOverflowMenu() {
         {
-            boolean var8BAEDFF24230E7488EEC35AEFACB6A9F_866446353 = (mActionMenuPresenter.hideOverflowMenu());
+            boolean var8BAEDFF24230E7488EEC35AEFACB6A9F_1245158963 = (mActionMenuPresenter.hideOverflowMenu());
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_854460820 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_854460820;
         // ---------- Original Method ----------
         //if (mActionMenuPresenter != null) {
             //return mActionMenuPresenter.hideOverflowMenu();
@@ -435,14 +450,14 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.880 -0400", hash_original_method = "2F838D8CBDDC91E04D7A8F0F52ABF2C8", hash_generated_method = "CBD8C6DC1D701857FFA9513E673659E4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.401 -0400", hash_original_method = "2F838D8CBDDC91E04D7A8F0F52ABF2C8", hash_generated_method = "FC0643FA338A50EE4A5819490D5D62BC")
     @Override
     public boolean isOverflowMenuShowing() {
         {
-            boolean varD524E4D1CE3A164128E687BA5686CD0D_1069294462 = (mActionMenuPresenter.isOverflowMenuShowing());
+            boolean varD524E4D1CE3A164128E687BA5686CD0D_147433481 = (mActionMenuPresenter.isOverflowMenuShowing());
         } //End block
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_22263400 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_22263400;
         // ---------- Original Method ----------
         //if (mActionMenuPresenter != null) {
             //return mActionMenuPresenter.isOverflowMenuShowing();
@@ -451,36 +466,35 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.881 -0400", hash_original_method = "73CB5175F40E2B68B8D41267F726F54F", hash_generated_method = "07BB2168AEF660C103ACD2795C99F231")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.411 -0400", hash_original_method = "73CB5175F40E2B68B8D41267F726F54F", hash_generated_method = "5E77346000194358A83EAC62608CBE03")
     @Override
     protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
-        ViewGroup.LayoutParams var36AF474DCA49F71E6CD166C7DDCFB936_810917995 = (new MarginLayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-        return (ViewGroup.LayoutParams)dsTaint.getTaint();
+        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_2050629706 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2050629706 = new MarginLayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        varB4EAC82CA7396A68D541C85D26508E83_2050629706.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2050629706;
         // ---------- Original Method ----------
         //return new MarginLayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.881 -0400", hash_original_method = "5C07F753B3F2B1F9F4C858C93EDD71AE", hash_generated_method = "221A48E53342933AE18FF9180FCABF02")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.411 -0400", hash_original_method = "5C07F753B3F2B1F9F4C858C93EDD71AE", hash_generated_method = "BCD182B08F7BCFCB5567C86AE4821E0B")
     @Override
     public ViewGroup.LayoutParams generateLayoutParams(AttributeSet attrs) {
-        dsTaint.addTaint(attrs.dsTaint);
-        ViewGroup.LayoutParams var9287B1C620FE2FF843157943FFD9C70F_928109624 = (new MarginLayoutParams(getContext(), attrs));
-        return (ViewGroup.LayoutParams)dsTaint.getTaint();
+        ViewGroup.LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1850461292 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1850461292 = new MarginLayoutParams(getContext(), attrs);
+        addTaint(attrs.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1850461292.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1850461292;
         // ---------- Original Method ----------
         //return new MarginLayoutParams(getContext(), attrs);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.882 -0400", hash_original_method = "ADE259D11B02655AAFB5EBCEC641AC5E", hash_generated_method = "56C638CB432EF51FE0F3A38A97AC67A2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.413 -0400", hash_original_method = "ADE259D11B02655AAFB5EBCEC641AC5E", hash_generated_method = "4191623FC2CCA86BE31E0D85A17BBD08")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(heightMeasureSpec);
-        dsTaint.addTaint(widthMeasureSpec);
         int widthMode;
         widthMode = MeasureSpec.getMode(widthMeasureSpec);
         {
@@ -513,7 +527,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
             availableWidth -= lp.leftMargin + lp.rightMargin;
         } //End block
         {
-            boolean var1178C40D6B4B3394C757D204E5BDCC27_1747171713 = (mMenuView != null && mMenuView.getParent() == this);
+            boolean var1178C40D6B4B3394C757D204E5BDCC27_37380046 = (mMenuView != null && mMenuView.getParent() == this);
             {
                 availableWidth = measureChildView(mMenuView, availableWidth,
                     childSpecHeight, 0);
@@ -563,14 +577,16 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
         {
             setMeasuredDimension(contentWidth, maxHeight);
         } //End block
+        addTaint(widthMeasureSpec);
+        addTaint(heightMeasureSpec);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.882 -0400", hash_original_method = "1F1E13F5C24EF6D24D9BF3983118D5E2", hash_generated_method = "525B3AFCC19EFF2E8C691F8A9459ABC0")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.414 -0400", hash_original_method = "1F1E13F5C24EF6D24D9BF3983118D5E2", hash_generated_method = "8AB04A5FEC6FA3AADE6D88CAC6FFB18A")
     private Animator makeInAnimation() {
+        Animator varB4EAC82CA7396A68D541C85D26508E83_305145974 = null; //Variable for return #1
         mClose.setTranslationX(-mClose.getWidth() -
                 ((MarginLayoutParams) mClose.getLayoutParams()).leftMargin);
         ObjectAnimator buttonAnimator;
@@ -603,15 +619,17 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
                 } //End collapsed parenthetic
             } //End block
         } //End block
-        return (Animator)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_305145974 = set;
+        varB4EAC82CA7396A68D541C85D26508E83_305145974.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_305145974;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.883 -0400", hash_original_method = "BAA3822313887C49DB18D4BC04440E7E", hash_generated_method = "D52F867A54BD3F93E0BE636A4D97303F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.424 -0400", hash_original_method = "BAA3822313887C49DB18D4BC04440E7E", hash_generated_method = "5BCB46A49ABECAF9357A5E695EC952A7")
     private Animator makeOutAnimation() {
+        Animator varB4EAC82CA7396A68D541C85D26508E83_1124883440 = null; //Variable for return #1
         ObjectAnimator buttonAnimator;
         buttonAnimator = ObjectAnimator.ofFloat(mClose, "translationX",
                 -mClose.getWidth() - ((MarginLayoutParams) mClose.getLayoutParams()).leftMargin);
@@ -642,22 +660,18 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
                 } //End collapsed parenthetic
             } //End block
         } //End block
-        return (Animator)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1124883440 = set;
+        varB4EAC82CA7396A68D541C85D26508E83_1124883440.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1124883440;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.883 -0400", hash_original_method = "EAC754957749E93A677F7BF2F54929F7", hash_generated_method = "21FA8AFBDE188938B479D5CCE214491B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.430 -0400", hash_original_method = "EAC754957749E93A677F7BF2F54929F7", hash_generated_method = "D59AD636A85838AB7DF113D3964DD299")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(t);
-        dsTaint.addTaint(b);
-        dsTaint.addTaint(r);
-        dsTaint.addTaint(l);
-        dsTaint.addTaint(changed);
         int x;
         x = getPaddingLeft();
         int y;
@@ -665,7 +679,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
         int contentHeight;
         contentHeight = b - t - getPaddingTop() - getPaddingBottom();
         {
-            boolean var8961E9B959AFEC04EA20AF6092DB526E_802117582 = (mClose != null && mClose.getVisibility() != GONE);
+            boolean var8961E9B959AFEC04EA20AF6092DB526E_1855886576 = (mClose != null && mClose.getVisibility() != GONE);
             {
                 MarginLayoutParams lp;
                 lp = (MarginLayoutParams) mClose.getLayoutParams();
@@ -690,31 +704,34 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
         {
             x -= positionChildInverse(mMenuView, x, y, contentHeight);
         } //End block
+        addTaint(changed);
+        addTaint(l);
+        addTaint(t);
+        addTaint(r);
+        addTaint(b);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.884 -0400", hash_original_method = "B990D1A680B01C8A5486D22741D7E96B", hash_generated_method = "C15E52C113AB38D8B645FC895A607B2B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.430 -0400", hash_original_method = "B990D1A680B01C8A5486D22741D7E96B", hash_generated_method = "B2B2A92B36E552BECB72262238AEF578")
     @Override
     public void onAnimationStart(Animator animation) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(animation.dsTaint);
+        addTaint(animation.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.884 -0400", hash_original_method = "5DF138862D9EBBC48B8DDB31E593969C", hash_generated_method = "8C43D037D404FB55628627561FB6F307")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.431 -0400", hash_original_method = "5DF138862D9EBBC48B8DDB31E593969C", hash_generated_method = "A4EB3E1952AEDA6F52397D481FF73618")
     @Override
     public void onAnimationEnd(Animator animation) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(animation.dsTaint);
         {
             killMode();
         } //End block
         mAnimationMode = ANIMATE_IDLE;
+        addTaint(animation.getTaint());
         // ---------- Original Method ----------
         //if (mAnimationMode == ANIMATE_OUT) {
             //killMode();
@@ -723,44 +740,40 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.884 -0400", hash_original_method = "16FF962612CA0CC38B4765F38064800C", hash_generated_method = "48C2321585D7270ECEF5AA43CFB95837")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.431 -0400", hash_original_method = "16FF962612CA0CC38B4765F38064800C", hash_generated_method = "87B148FBA6A6D3270D8BD7F9EEB4C6C1")
     @Override
     public void onAnimationCancel(Animator animation) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(animation.dsTaint);
+        addTaint(animation.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.885 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "2D32F9A43E5261B156C7705DA49965D8")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.431 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "4BE2C3EAC3B10B8BD5CE86F0E3077935")
     @Override
     public void onAnimationRepeat(Animator animation) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(animation.dsTaint);
+        addTaint(animation.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.885 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "B6A28B76ECD4015FD614215B915AB786")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.453 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "611F5B0E7E9593EBF3A50C1EA0E287B7")
     @Override
     public boolean shouldDelayChildPressedState() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1034893430 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1034893430;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.885 -0400", hash_original_method = "237F1A60A9E9685B4EADEDCFF21B9A19", hash_generated_method = "A363103CFC8DC9DF01AC2FD0E8CB5CC1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.454 -0400", hash_original_method = "237F1A60A9E9685B4EADEDCFF21B9A19", hash_generated_method = "B9C21550940CFB12A111BAE86627C4D1")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(event.dsTaint);
         {
-            boolean varC84EC12C0993677C63B7E5F379D6D168_1350360050 = (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
+            boolean varC84EC12C0993677C63B7E5F379D6D168_868426477 = (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
             {
                 event.setSource(this);
                 event.setClassName(getClass().getName());
@@ -771,6 +784,7 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
                 super.onInitializeAccessibilityEvent(event);
             } //End block
         } //End collapsed parenthetic
+        addTaint(event.getTaint());
         // ---------- Original Method ----------
         //if (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
             //event.setSource(this);
@@ -783,9 +797,17 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     }
 
     
-    private static final String TAG = "ActionBarContextView";
-    private static final int ANIMATE_IDLE = 0;
-    private static final int ANIMATE_IN = 1;
-    private static final int ANIMATE_OUT = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.454 -0400", hash_original_field = "739489FAD6929E44E2450E802B918903", hash_generated_field = "3C64AF1E569A0A3F28E47812DD15F8C9")
+
+    private static String TAG = "ActionBarContextView";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.454 -0400", hash_original_field = "AF00BC2BF674D3EFAB3DFBD00DBA4532", hash_generated_field = "C727E330DEFB6AF0448E759D562731AF")
+
+    private static int ANIMATE_IDLE = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.463 -0400", hash_original_field = "3C1F5798ED90853371F7E27F97227A2D", hash_generated_field = "28145639A9E95CA5A857EBEBFBD7FCBE")
+
+    private static int ANIMATE_IN = 1;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.463 -0400", hash_original_field = "12EBE1750465D044EFC402BA687119AE", hash_generated_field = "2AFE78B43057E021BDC7C37069039BB5")
+
+    private static int ANIMATE_OUT = 2;
 }
 

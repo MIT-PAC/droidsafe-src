@@ -18,35 +18,49 @@ import android.view.accessibility.AccessibilityEvent;
 import android.widget.LinearLayout;
 
 public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvoker, MenuView {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.303 -0400", hash_original_field = "CFE8F878843D1CA6A8D8B333030E59FA", hash_generated_field = "D444FB62DCB4C4F94C883BDD2D0F7012")
+
     private MenuBuilder mMenu;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.303 -0400", hash_original_field = "0E213F9463B6EFE55ADA2109C5E5DC56", hash_generated_field = "3619C222EA285420CD3DE70ECE0D1D48")
+
     private boolean mReserveOverflow;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.303 -0400", hash_original_field = "24BE2DD94A844242C35ABB990B9E3B93", hash_generated_field = "BC36FBD9CCAFE590BF9A0B51503C858E")
+
     private ActionMenuPresenter mPresenter;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.303 -0400", hash_original_field = "91949478145170F53463EA7B1D93DAAB", hash_generated_field = "6B2CAAF6AA38EAEFE2FA3F0FE80C1E20")
+
     private boolean mFormatItems;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.304 -0400", hash_original_field = "9EAE809C529287B9D5ACFCE152326FD4", hash_generated_field = "7ADECD8C88CFFA290657D73715D82527")
+
     private int mFormatItemsWidth;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.304 -0400", hash_original_field = "C0CB7E511A75AFCB98C3B0342F6802E9", hash_generated_field = "303D27EFA1C100E376A8416C573EAB8F")
+
     private int mMinCellSize;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.304 -0400", hash_original_field = "25DB108BA28ED0013D5558630CEBAF2D", hash_generated_field = "32B1FF10CA48AFEEB7A5989848197D17")
+
     private int mGeneratedItemPadding;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.304 -0400", hash_original_field = "B1E8AEB61B975F039E0DDB567198268F", hash_generated_field = "A7412B938C8635F667A20F8A5F45CA3A")
+
     private int mMeasuredExtraWidth;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.439 -0400", hash_original_method = "AC153E2863979DC17A482AC64988B640", hash_generated_method = "0502853E2ACFFF587E07AC453C2D0EC8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ActionMenuView(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.304 -0400", hash_original_method = "AC153E2863979DC17A482AC64988B640", hash_generated_method = "5F3CB5A8A49E2CC16CAE28F7B3615920")
+    public  ActionMenuView(Context context) {
         this(context, null);
-        dsTaint.addTaint(context.dsTaint);
+        addTaint(context.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.440 -0400", hash_original_method = "35E28BCF8B52367FF953A9B63C9F4F20", hash_generated_method = "6B37BA40ED2EA8EEF39D524BD88A23B6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ActionMenuView(Context context, AttributeSet attrs) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.317 -0400", hash_original_method = "35E28BCF8B52367FF953A9B63C9F4F20", hash_generated_method = "B6CD56CB479301472721DA516CE60C66")
+    public  ActionMenuView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        dsTaint.addTaint(attrs.dsTaint);
-        dsTaint.addTaint(context.dsTaint);
         setBaselineAligned(false);
         float density;
         density = context.getResources().getDisplayMetrics().density;
         mMinCellSize = (int) (MIN_CELL_SIZE * density);
         mGeneratedItemPadding = (int) (GENERATED_ITEM_PADDING * density);
+        addTaint(context.getTaint());
+        addTaint(attrs.getTaint());
         // ---------- Original Method ----------
         //setBaselineAligned(false);
         //final float density = context.getResources().getDisplayMetrics().density;
@@ -55,39 +69,37 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.440 -0400", hash_original_method = "F8B2E0B9AF6B77951E8DA779DE9E37B4", hash_generated_method = "6D749CD7B62F9DDF32C96DFF97EA4444")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.318 -0400", hash_original_method = "F8B2E0B9AF6B77951E8DA779DE9E37B4", hash_generated_method = "2D2E0A69D628FF0C713DCBD58D8FEF6B")
     public void setPresenter(ActionMenuPresenter presenter) {
-        dsTaint.addTaint(presenter.dsTaint);
+        mPresenter = presenter;
         // ---------- Original Method ----------
         //mPresenter = presenter;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.440 -0400", hash_original_method = "309FFF524EE8C98ED8919EC0ED593079", hash_generated_method = "01C22B2D5C4FDED52E043852730990BF")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.322 -0400", hash_original_method = "309FFF524EE8C98ED8919EC0ED593079", hash_generated_method = "6236745561CB38DAFC4E63FE571885C9")
     public boolean isExpandedFormat() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_304071878 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_304071878;
         // ---------- Original Method ----------
         //return mFormatItems;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.440 -0400", hash_original_method = "8C9F73227D09E5C25F24B8EE1F20BF37", hash_generated_method = "147CF86609E726B68EA96526C38E4A81")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.323 -0400", hash_original_method = "8C9F73227D09E5C25F24B8EE1F20BF37", hash_generated_method = "878CA30BCE10156E465B0B3D76431A8F")
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(newConfig.dsTaint);
         super.onConfigurationChanged(newConfig);
         mPresenter.updateMenuView(false);
         {
-            boolean varFFBC8C8E161FD649FDC01AB3F026CE61_1963587395 = (mPresenter != null && mPresenter.isOverflowMenuShowing());
+            boolean varFFBC8C8E161FD649FDC01AB3F026CE61_2053260341 = (mPresenter != null && mPresenter.isOverflowMenuShowing());
             {
                 mPresenter.hideOverflowMenu();
                 mPresenter.showOverflowMenu();
             } //End block
         } //End collapsed parenthetic
+        addTaint(newConfig.getTaint());
         // ---------- Original Method ----------
         //super.onConfigurationChanged(newConfig);
         //mPresenter.updateMenuView(false);
@@ -98,13 +110,10 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.441 -0400", hash_original_method = "7A0AC3F9A12B78835921801D3FB6DAA4", hash_generated_method = "F55697F8927823BDD363D6187F59CBAC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.340 -0400", hash_original_method = "7A0AC3F9A12B78835921801D3FB6DAA4", hash_generated_method = "EE8551D5960A18CBB873CC9800B7A2DE")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(heightMeasureSpec);
-        dsTaint.addTaint(widthMeasureSpec);
         boolean wasFormatted;
         wasFormatted = mFormatItems;
         mFormatItems = MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.EXACTLY;
@@ -123,6 +132,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         } //End block
+        addTaint(heightMeasureSpec);
         // ---------- Original Method ----------
         //final boolean wasFormatted = mFormatItems;
         //mFormatItems = MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.EXACTLY;
@@ -142,11 +152,8 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.468 -0400", hash_original_method = "904CFC5C82A7517026F4582C82215F76", hash_generated_method = "3926BB1286A27CABEFFD9B60EECED6BF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.414 -0400", hash_original_method = "904CFC5C82A7517026F4582C82215F76", hash_generated_method = "7CA1A4BD5155A02EB6C1DA1F0EAC273A")
     private void onMeasureExactFormat(int widthMeasureSpec, int heightMeasureSpec) {
-        dsTaint.addTaint(heightMeasureSpec);
-        dsTaint.addTaint(widthMeasureSpec);
         int heightMode;
         heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int widthSize;
@@ -190,7 +197,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                 View child;
                 child = getChildAt(i);
                 {
-                    boolean varE5A6421440835A22FD9C00B75E3D1565_928727053 = (child.getVisibility() == GONE);
+                    boolean varE5A6421440835A22FD9C00B75E3D1565_1136107222 = (child.getVisibility() == GONE);
                 } //End collapsed parenthetic
                 boolean isGeneratedItem;
                 isGeneratedItem = child instanceof ActionMenuItemView;
@@ -344,6 +351,8 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         } //End block
         setMeasuredDimension(widthSize, heightSize);
         mMeasuredExtraWidth = cellsRemaining * cellSize;
+        addTaint(widthMeasureSpec);
+        addTaint(heightMeasureSpec);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -377,16 +386,10 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.469 -0400", hash_original_method = "CF95DF9C40DBA0243EC42554D6345F0F", hash_generated_method = "F6F28070BA62F879A2AF6D133112A53F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.428 -0400", hash_original_method = "CF95DF9C40DBA0243EC42554D6345F0F", hash_generated_method = "7D5C5D0D604AFFCB81BE896EC6115D26")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        dsTaint.addTaint(bottom);
-        dsTaint.addTaint(left);
-        dsTaint.addTaint(right);
-        dsTaint.addTaint(top);
-        dsTaint.addTaint(changed);
         {
             super.onLayout(changed, left, top, right, bottom);
         } //End block
@@ -413,14 +416,14 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                 View v;
                 v = getChildAt(i);
                 {
-                    boolean varDA63034006064F4C7F0A3E1C4DB8D066_992520983 = (v.getVisibility() == GONE);
+                    boolean varDA63034006064F4C7F0A3E1C4DB8D066_618076986 = (v.getVisibility() == GONE);
                 } //End collapsed parenthetic
                 LayoutParams p;
                 p = (LayoutParams) v.getLayoutParams();
                 {
                     overflowWidth = v.getMeasuredWidth();
                     {
-                        boolean varCAC00097357B8B7C575A4308C6C0DBA2_1905559349 = (hasDividerBeforeChildAt(i));
+                        boolean varCAC00097357B8B7C575A4308C6C0DBA2_1343799840 = (hasDividerBeforeChildAt(i));
                         {
                             overflowWidth += dividerWidth;
                         } //End block
@@ -445,7 +448,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                     nonOverflowWidth += size;
                     widthRemaining -= size;
                     {
-                        boolean varCAC00097357B8B7C575A4308C6C0DBA2_11475045 = (hasDividerBeforeChildAt(i));
+                        boolean varCAC00097357B8B7C575A4308C6C0DBA2_284338349 = (hasDividerBeforeChildAt(i));
                         {
                             nonOverflowWidth += dividerWidth;
                         } //End block
@@ -483,7 +486,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                 LayoutParams lp;
                 lp = (LayoutParams) v.getLayoutParams();
                 {
-                    boolean var49B93947E8B636089049537FC51034AE_719005469 = (v.getVisibility() == GONE || lp.isOverflowButton);
+                    boolean var49B93947E8B636089049537FC51034AE_1736557235 = (v.getVisibility() == GONE || lp.isOverflowButton);
                 } //End collapsed parenthetic
                 startLeft += lp.leftMargin;
                 int width;
@@ -496,13 +499,17 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
                 startLeft += width + lp.rightMargin + spacerSize;
             } //End block
         } //End collapsed parenthetic
+        addTaint(changed);
+        addTaint(left);
+        addTaint(top);
+        addTaint(right);
+        addTaint(bottom);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.470 -0400", hash_original_method = "BCFF92F724E40A93547AD27810B374B7", hash_generated_method = "20B039D9957A5ED6936C442629CD13D4")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.432 -0400", hash_original_method = "BCFF92F724E40A93547AD27810B374B7", hash_generated_method = "20B039D9957A5ED6936C442629CD13D4")
     @Override
     public void onDetachedFromWindow() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -514,33 +521,34 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.470 -0400", hash_original_method = "9F44211E52A7149BFED02520B6DEF800", hash_generated_method = "80374BA640797FE3A442BB5CD0497E41")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.433 -0400", hash_original_method = "9F44211E52A7149BFED02520B6DEF800", hash_generated_method = "3C6C29F870D773B6B6C0F197992321EB")
     public boolean isOverflowReserved() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1915500694 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1915500694;
         // ---------- Original Method ----------
         //return mReserveOverflow;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.470 -0400", hash_original_method = "F5103BD0EA93D884CF8413DB778005C1", hash_generated_method = "F7B14D18D1E1868C08B4739715A89089")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.433 -0400", hash_original_method = "F5103BD0EA93D884CF8413DB778005C1", hash_generated_method = "15B323109E8BF25E66710A01C5BEDE02")
     public void setOverflowReserved(boolean reserveOverflow) {
-        dsTaint.addTaint(reserveOverflow);
+        mReserveOverflow = reserveOverflow;
         // ---------- Original Method ----------
         //mReserveOverflow = reserveOverflow;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.470 -0400", hash_original_method = "DEBB4048965D8045F192555AB279F2BA", hash_generated_method = "FC4A6BAF6E939FD8C4A5B12088A998EE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.461 -0400", hash_original_method = "DEBB4048965D8045F192555AB279F2BA", hash_generated_method = "40F328FFE05B056663F0BB9E1EC805E6")
     @Override
     protected LayoutParams generateDefaultLayoutParams() {
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_630020850 = null; //Variable for return #1
         LayoutParams params;
         params = new LayoutParams(LayoutParams.WRAP_CONTENT,
                 LayoutParams.WRAP_CONTENT);
         params.gravity = Gravity.CENTER_VERTICAL;
-        return (LayoutParams)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_630020850 = params;
+        varB4EAC82CA7396A68D541C85D26508E83_630020850.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_630020850;
         // ---------- Original Method ----------
         //LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT,
                 //LayoutParams.WRAP_CONTENT);
@@ -549,32 +557,45 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.470 -0400", hash_original_method = "AED9080C69042489485342721EE0B0B1", hash_generated_method = "1A872D2FF3AEEE878CADF2239DED75CF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.461 -0400", hash_original_method = "AED9080C69042489485342721EE0B0B1", hash_generated_method = "100BCF7F15A504C2041F6E53D94E1F28")
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        dsTaint.addTaint(attrs.dsTaint);
-        LayoutParams var1608545582BA25B7A0B072469C4B0958_2024969066 = (new LayoutParams(getContext(), attrs));
-        return (LayoutParams)dsTaint.getTaint();
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1032027268 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1032027268 = new LayoutParams(getContext(), attrs);
+        addTaint(attrs.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1032027268.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1032027268;
         // ---------- Original Method ----------
         //return new LayoutParams(getContext(), attrs);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.471 -0400", hash_original_method = "6543FCE3043AA8E09E4AB46D137D1290", hash_generated_method = "123DE01F6F0A1001C6CF8D64FB2AD288")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.462 -0400", hash_original_method = "6543FCE3043AA8E09E4AB46D137D1290", hash_generated_method = "453C212D946AF3869742CAE07CE9A27E")
     @Override
     protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
-        dsTaint.addTaint(p.dsTaint);
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1990643484 = null; //Variable for return #1
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_1083791607 = null; //Variable for return #2
         {
             LayoutParams result;
             result = new LayoutParams((LayoutParams) p);
             {
                 result.gravity = Gravity.CENTER_VERTICAL;
             } //End block
+            varB4EAC82CA7396A68D541C85D26508E83_1990643484 = result;
         } //End block
-        LayoutParams var63E3DA67FB7B65B584D5E515426C9EE0_1029284016 = (generateDefaultLayoutParams());
-        return (LayoutParams)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1083791607 = generateDefaultLayoutParams();
+        addTaint(p.getTaint());
+        LayoutParams varA7E53CE21691AB073D9660D615818899_40540730; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_40540730 = varB4EAC82CA7396A68D541C85D26508E83_1990643484;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_40540730 = varB4EAC82CA7396A68D541C85D26508E83_1083791607;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_40540730.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_40540730;
         // ---------- Original Method ----------
         //if (p instanceof LayoutParams) {
             //LayoutParams result = new LayoutParams((LayoutParams) p);
@@ -587,24 +608,26 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.471 -0400", hash_original_method = "C7A39F9D75FC22971A40D0A54E61424A", hash_generated_method = "DF10D831EA47BAF961E15D287768CEA0")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.462 -0400", hash_original_method = "C7A39F9D75FC22971A40D0A54E61424A", hash_generated_method = "7804D2237D67C05F7FFD87F2F78F9705")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
-        dsTaint.addTaint(p.dsTaint);
-        return dsTaint.getTaintBoolean();
+        addTaint(p.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2094481506 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2094481506;
         // ---------- Original Method ----------
         //return p != null && p instanceof LayoutParams;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.471 -0400", hash_original_method = "AF673847AD60845228ED5C7DBF294789", hash_generated_method = "78E6B8C687F079CC2F4E742182187BCA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.463 -0400", hash_original_method = "AF673847AD60845228ED5C7DBF294789", hash_generated_method = "6D6885D3AB6E8B55657266153CC96D68")
     public LayoutParams generateOverflowButtonLayoutParams() {
+        LayoutParams varB4EAC82CA7396A68D541C85D26508E83_2017575155 = null; //Variable for return #1
         LayoutParams result;
         result = generateDefaultLayoutParams();
         result.isOverflowButton = true;
-        return (LayoutParams)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2017575155 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_2017575155.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2017575155;
         // ---------- Original Method ----------
         //LayoutParams result = generateDefaultLayoutParams();
         //result.isOverflowButton = true;
@@ -612,40 +635,37 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.471 -0400", hash_original_method = "52251A4D38FF83C9B55C46C571A25CAE", hash_generated_method = "B52B40DCB3DE1636BFEB2DC1093254AB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.463 -0400", hash_original_method = "52251A4D38FF83C9B55C46C571A25CAE", hash_generated_method = "531D3FD8CBCE0E06C7B51A9FB2B50165")
     public boolean invokeItem(MenuItemImpl item) {
-        dsTaint.addTaint(item.dsTaint);
-        boolean varC4283B859DE61FC835DAD199DF70A5FF_570770299 = (mMenu.performItemAction(item, 0));
-        return dsTaint.getTaintBoolean();
+        boolean varC4283B859DE61FC835DAD199DF70A5FF_1293022979 = (mMenu.performItemAction(item, 0));
+        addTaint(item.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1186405837 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1186405837;
         // ---------- Original Method ----------
         //return mMenu.performItemAction(item, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.471 -0400", hash_original_method = "DC1BDB1B98459EBD06B93B75A5D0D038", hash_generated_method = "FBA95F5089A97F634B8AB54EB99D40CB")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.464 -0400", hash_original_method = "DC1BDB1B98459EBD06B93B75A5D0D038", hash_generated_method = "0AF41B310E66EC79EC576C2DBC04E291")
     public int getWindowAnimations() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_384874261 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_384874261;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.472 -0400", hash_original_method = "EDB3B7E883C1486DD9AED3AB15C0E44B", hash_generated_method = "388CD5601A558F9CC7A709A5E7AEBAC4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.484 -0400", hash_original_method = "EDB3B7E883C1486DD9AED3AB15C0E44B", hash_generated_method = "E50EB2D0FDCBBA00CCFEFF4A83375DDF")
     public void initialize(MenuBuilder menu) {
-        dsTaint.addTaint(menu.dsTaint);
+        mMenu = menu;
         // ---------- Original Method ----------
         //mMenu = menu;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.472 -0400", hash_original_method = "9B32BE6DC23F13B511A55013BB42C488", hash_generated_method = "57F7C5A5259F2748194FDDC8A153D144")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.485 -0400", hash_original_method = "9B32BE6DC23F13B511A55013BB42C488", hash_generated_method = "22E95A67159EC6CC5FA3035B28A83DE2")
     @Override
     protected boolean hasDividerBeforeChildAt(int childIndex) {
-        dsTaint.addTaint(childIndex);
         View childBefore;
         childBefore = getChildAt(childIndex - 1);
         View child;
@@ -653,7 +673,7 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         boolean result;
         result = false;
         {
-            boolean var208B2155B1BCB653E775DCCF74C07E92_1344418027 = (childIndex < getChildCount() && childBefore instanceof ActionMenuChildView);
+            boolean var208B2155B1BCB653E775DCCF74C07E92_1094195618 = (childIndex < getChildCount() && childBefore instanceof ActionMenuChildView);
             {
                 result |= ((ActionMenuChildView) childBefore).needsDividerAfter();
             } //End block
@@ -661,7 +681,9 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         {
             result |= ((ActionMenuChildView) child).needsDividerBefore();
         } //End block
-        return dsTaint.getTaintBoolean();
+        addTaint(childIndex);
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_839317740 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_839317740;
         // ---------- Original Method ----------
         //final View childBefore = getChildAt(childIndex - 1);
         //final View child = getChildAt(childIndex);
@@ -676,64 +698,71 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.472 -0400", hash_original_method = "87E5D39D1D82C11AB077A37A8786E27E", hash_generated_method = "0DF98FFD1E1AC308EDA6BD193C9AA979")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.486 -0400", hash_original_method = "87E5D39D1D82C11AB077A37A8786E27E", hash_generated_method = "8C65E2D1372385F50430D8FCE5302487")
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
-        dsTaint.addTaint(event.dsTaint);
-        return dsTaint.getTaintBoolean();
+        addTaint(event.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_961125782 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_961125782;
         // ---------- Original Method ----------
         //return false;
     }
 
     
     public static class LayoutParams extends LinearLayout.LayoutParams {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.487 -0400", hash_original_field = "BC891BAF62FC8DDB492AD764B3ECB81D", hash_generated_field = "06AA5094630821EA9900D65F21750F66")
+
         @ViewDebug.ExportedProperty(category = "layout") public boolean isOverflowButton;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.487 -0400", hash_original_field = "E7EEEFE3F1DABDA5F3DF051861EACC10", hash_generated_field = "E1D8EB1EB816463205B2DDDF77A75406")
+
         @ViewDebug.ExportedProperty(category = "layout") public int cellsUsed;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.487 -0400", hash_original_field = "676598AABCF21B3A19E3058EF2F83A07", hash_generated_field = "C29D7D4D121FC646F2A1DA13C25BE452")
+
         @ViewDebug.ExportedProperty(category = "layout") public int extraPixels;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.487 -0400", hash_original_field = "34ADC2548F6C20BFDE9DEF65C39FC4CD", hash_generated_field = "3C4066DDF8E8E17F2EF63131655754FD")
+
         @ViewDebug.ExportedProperty(category = "layout") public boolean expandable;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.487 -0400", hash_original_field = "13DDB03DB32CFB3CB44D09E16E3A67C5", hash_generated_field = "E66E784ED3625370EFD8B17A60737371")
+
         @ViewDebug.ExportedProperty(category = "layout") public boolean preventEdgeOffset;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.487 -0400", hash_original_field = "1A6130A21D7D578D81A168EBCF0D9921", hash_generated_field = "A93A7FF052663F567D43ED21528A4163")
+
         public boolean expanded;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.472 -0400", hash_original_method = "35869249D2D5BC08819A8507F87D33FD", hash_generated_method = "29097574B95BAB8FE5C81F6EF894805C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public LayoutParams(Context c, AttributeSet attrs) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.487 -0400", hash_original_method = "35869249D2D5BC08819A8507F87D33FD", hash_generated_method = "0DBD7DD67030DB53521B4CBB550D5399")
+        public  LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
-            dsTaint.addTaint(c.dsTaint);
-            dsTaint.addTaint(attrs.dsTaint);
+            addTaint(c.getTaint());
+            addTaint(attrs.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.472 -0400", hash_original_method = "1AEEB2B6AE567062F04CDAB99E43CD26", hash_generated_method = "F8D2596254542C30841863FFBBC8BF3A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public LayoutParams(LayoutParams other) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.487 -0400", hash_original_method = "1AEEB2B6AE567062F04CDAB99E43CD26", hash_generated_method = "5F38F7306F4BCF2F00B15945AC196DD5")
+        public  LayoutParams(LayoutParams other) {
             super((LinearLayout.LayoutParams) other);
-            dsTaint.addTaint(other.dsTaint);
             isOverflowButton = other.isOverflowButton;
             // ---------- Original Method ----------
             //isOverflowButton = other.isOverflowButton;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.473 -0400", hash_original_method = "5CB9C8D742F9EAB0281FCB85ADC86E3D", hash_generated_method = "189B648828156F0CD096DBED94417537")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public LayoutParams(int width, int height) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.503 -0400", hash_original_method = "5CB9C8D742F9EAB0281FCB85ADC86E3D", hash_generated_method = "1E4B24B979DDE2F01038D43AA1C9565A")
+        public  LayoutParams(int width, int height) {
             super(width, height);
-            dsTaint.addTaint(height);
-            dsTaint.addTaint(width);
             isOverflowButton = false;
+            addTaint(width);
+            addTaint(height);
             // ---------- Original Method ----------
             //isOverflowButton = false;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:18.473 -0400", hash_original_method = "0D80B5BE9184580A03D083B0A94309F3", hash_generated_method = "D5B4432A80F04F3FD773A0D5453CE65D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-        public LayoutParams(int width, int height, boolean isOverflowButton) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.503 -0400", hash_original_method = "0D80B5BE9184580A03D083B0A94309F3", hash_generated_method = "EC402BDDF2DD511DF4ABF769A80D1437")
+        public  LayoutParams(int width, int height, boolean isOverflowButton) {
             super(width, height);
-            dsTaint.addTaint(height);
-            dsTaint.addTaint(width);
-            dsTaint.addTaint(isOverflowButton);
+            this.isOverflowButton = isOverflowButton;
+            addTaint(width);
+            addTaint(height);
             // ---------- Original Method ----------
             //this.isOverflowButton = isOverflowButton;
         }
@@ -748,8 +777,14 @@ public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvo
         public boolean needsDividerAfter();
     }
     
-    private static final String TAG = "ActionMenuView";
-    static final int MIN_CELL_SIZE = 56;
-    static final int GENERATED_ITEM_PADDING = 4;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.504 -0400", hash_original_field = "B9C30FC7E4A7160F4B35C4CEFD8C059C", hash_generated_field = "02AFED4D310BB3C61955829EF022518D")
+
+    private static String TAG = "ActionMenuView";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.504 -0400", hash_original_field = "31E1444ACC597D97F7D1F308819AC54B", hash_generated_field = "8CA4A800D900D5D6501D74A1D290A629")
+
+    static int MIN_CELL_SIZE = 56;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:27.504 -0400", hash_original_field = "2BD151CF00588194F99C1F7C0113FF34", hash_generated_field = "BCF79347E61D6E19A720B5441E73A82E")
+
+    static int GENERATED_ITEM_PADDING = 4;
 }
 

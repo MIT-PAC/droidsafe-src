@@ -12,27 +12,25 @@ import java.text.*;
 
 public class CallIDParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.246 -0400", hash_original_method = "F1036F08BD30FBFF0AA178D5C9E11EFA", hash_generated_method = "E8047EC926202E46375707A38DBEDA51")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public CallIDParser(String callID) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.530 -0400", hash_original_method = "F1036F08BD30FBFF0AA178D5C9E11EFA", hash_generated_method = "9EC9E27A01CA541D68B2882987190249")
+    public  CallIDParser(String callID) {
         super(callID);
-        dsTaint.addTaint(callID);
+        addTaint(callID.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.246 -0400", hash_original_method = "02CCA397F58454A50D3B0688C937A37B", hash_generated_method = "B428D189DEA67A22CB3E2383D72BD60F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected CallIDParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.535 -0400", hash_original_method = "02CCA397F58454A50D3B0688C937A37B", hash_generated_method = "AF7C53B2BE10E4C6A0A946D5BDF02341")
+    protected  CallIDParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.246 -0400", hash_original_method = "1EBE66F04307D347AFA5B564B58F8AB6", hash_generated_method = "980E32A13CE2F2CB1984F1CE450611B5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.540 -0400", hash_original_method = "1EBE66F04307D347AFA5B564B58F8AB6", hash_generated_method = "5E00880CA987E3070BE1FC1790F96F4E")
     public SIPHeader parse() throws ParseException {
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1226315980 = null; //Variable for return #1
         dbg_enter("parse");
         try 
         {
@@ -46,12 +44,14 @@ public class CallIDParser extends HeaderParser {
             String rest;
             rest = lexer.getRest();
             callID.setCallId(rest.trim());
+            varB4EAC82CA7396A68D541C85D26508E83_1226315980 = callID;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        return (SIPHeader)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1226315980.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1226315980;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("parse");

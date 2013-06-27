@@ -13,28 +13,31 @@ import javax.sip.*;
 import javax.sip.header.ExtensionHeader;
 
 public class MinSE extends ParametersHeader implements ExtensionHeader, MinSEHeader {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.952 -0400", hash_original_field = "09BCB72D61C0D6D1EFF5336DA6881557", hash_generated_field = "C13B9F005337F50619E5092E1337E1D0")
+
     public int expires;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.505 -0400", hash_original_method = "FF95F949FD2A1D95680CD0A1163B2941", hash_generated_method = "4E41930010A8369BD320B3492D85970B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public MinSE() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.953 -0400", hash_original_method = "FF95F949FD2A1D95680CD0A1163B2941", hash_generated_method = "4E41930010A8369BD320B3492D85970B")
+    public  MinSE() {
         super(NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.505 -0400", hash_original_method = "B1D6BF5FEA5681AEA45EA9D4CACD9FB8", hash_generated_method = "36108631B9B64D5D7841DEDD47315A02")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.963 -0400", hash_original_method = "B1D6BF5FEA5681AEA45EA9D4CACD9FB8", hash_generated_method = "5509859D06852EAE9A27C18A978F91D8")
     public String encodeBody() {
+        String varB4EAC82CA7396A68D541C85D26508E83_800699677 = null; //Variable for return #1
         String retval;
         retval = Integer.toString(expires);
         {
-            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_2026612095 = (!parameters.isEmpty());
+            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_917492943 = (!parameters.isEmpty());
             {
                 retval += SEMICOLON + parameters.encode();
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_800699677 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_800699677.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_800699677;
         // ---------- Original Method ----------
         //String retval = Integer.toString(expires);
         //if (!parameters.isEmpty()) {
@@ -44,30 +47,28 @@ public class MinSE extends ParametersHeader implements ExtensionHeader, MinSEHea
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.505 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "3173C219DBD7EAE475390DAFD6FD461B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.964 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
     public void setValue(String value) throws ParseException {
-        dsTaint.addTaint(value);
         if (DroidSafeAndroidRuntime.control) throw new ParseException(value,0);
+        addTaint(value.getTaint());
         // ---------- Original Method ----------
         //throw new ParseException(value,0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.505 -0400", hash_original_method = "47881175D7C463BCCB25030D767AD658", hash_generated_method = "60423F18F704DCC829EC803D3BFEF274")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.964 -0400", hash_original_method = "47881175D7C463BCCB25030D767AD658", hash_generated_method = "55AAF744D9EE3C2A902100123ED9E2E0")
     public int getExpires() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_742375176 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_742375176;
         // ---------- Original Method ----------
         //return expires;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.506 -0400", hash_original_method = "A313D6724829247498596D0326F894CE", hash_generated_method = "CCB9F749035467D307A431C280729B50")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.964 -0400", hash_original_method = "A313D6724829247498596D0326F894CE", hash_generated_method = "1F94C2B6C4EFAB2003C10C5168D24F2A")
     public void setExpires(int expires) throws InvalidArgumentException {
-        dsTaint.addTaint(expires);
         if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException("bad argument " + expires);
+        this.expires = expires;
         // ---------- Original Method ----------
         //if (expires < 0)
             //throw new InvalidArgumentException("bad argument " + expires);
@@ -75,7 +76,11 @@ public class MinSE extends ParametersHeader implements ExtensionHeader, MinSEHea
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.964 -0400", hash_original_field = "F4D2F38DED5855149C9EF7802D2BE091", hash_generated_field = "E1530D0326084B5B0CBC7960EB119C5D")
+
     public static final String NAME = "Min-SE";
-    private static final long serialVersionUID = 3134344915465784267L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.964 -0400", hash_original_field = "2F10AFAED544B12D512EC416C57EE12B", hash_generated_field = "53BFCEBE88DAA1CC27A27399F3FE4701")
+
+    private static long serialVersionUID = 3134344915465784267L;
 }
 

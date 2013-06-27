@@ -14,9 +14,8 @@ import libcore.io.SizeOf;
 
 public class ModifiedUtf8 {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:29.265 -0400", hash_original_method = "64489454DCC17A9858C56DA9699AAAE7", hash_generated_method = "7413CA2F03D7938EC2CAD9273A6D3E8D")
-    @DSModeled(DSC.SAFE)
-    private ModifiedUtf8() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.821 -0400", hash_original_method = "64489454DCC17A9858C56DA9699AAAE7", hash_generated_method = "7413CA2F03D7938EC2CAD9273A6D3E8D")
+    private  ModifiedUtf8() {
         // ---------- Original Method ----------
     }
 

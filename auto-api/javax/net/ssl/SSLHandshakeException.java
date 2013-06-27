@@ -10,34 +10,33 @@ import java.util.Iterator;
 
 public class SSLHandshakeException extends SSLException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.087 -0400", hash_original_method = "82B36E212F934FE090A9654C18E5A390", hash_generated_method = "00CC919DB07B5DC59B13124220FB0ACA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SSLHandshakeException(String reason) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.675 -0400", hash_original_method = "82B36E212F934FE090A9654C18E5A390", hash_generated_method = "86E9F925F24EF66E8D14EE055E3C99F9")
+    public  SSLHandshakeException(String reason) {
         super(reason);
-        dsTaint.addTaint(reason);
+        addTaint(reason.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.087 -0400", hash_original_method = "6E4EDFE9C902AE43BD6AF73325E7CB73", hash_generated_method = "3A5448F5BF313D0FDFA21716816D45F3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SSLHandshakeException(Throwable cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.675 -0400", hash_original_method = "6E4EDFE9C902AE43BD6AF73325E7CB73", hash_generated_method = "9E854348974BED872AA7C89159962F7C")
+    public  SSLHandshakeException(Throwable cause) {
         super(cause);
-        dsTaint.addTaint(cause.dsTaint);
+        addTaint(cause.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.088 -0400", hash_original_method = "7F0A583E3C5916ED2C2C7E0A6DE82F31", hash_generated_method = "83492E90D0C08535B4C3274087D0999D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SSLHandshakeException(String reason, Throwable cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.675 -0400", hash_original_method = "7F0A583E3C5916ED2C2C7E0A6DE82F31", hash_generated_method = "DE46FBEEE9471091620265510C89E912")
+    public  SSLHandshakeException(String reason, Throwable cause) {
         super(reason, cause);
-        dsTaint.addTaint(cause.dsTaint);
-        dsTaint.addTaint(reason);
+        addTaint(reason.getTaint());
+        addTaint(cause.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = -5045881315018326890L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.675 -0400", hash_original_field = "34CF5929FA9094A1E7F5D07A29A845A9", hash_generated_field = "7F4E73683E4DF2678A7A5CBD06B3C6B9")
+
+    private static long serialVersionUID = -5045881315018326890L;
 }
 

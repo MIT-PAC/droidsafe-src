@@ -10,87 +10,80 @@ import java.util.Iterator;
 
 public class AssertionError extends Error {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.428 -0400", hash_original_method = "632C9A91920500ECFBFF7CDB1241885E", hash_generated_method = "8BB24CECD8503B4A4EB9C799C7E7073F")
-    @DSModeled(DSC.SAFE)
-    public AssertionError() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.983 -0400", hash_original_method = "632C9A91920500ECFBFF7CDB1241885E", hash_generated_method = "8BB24CECD8503B4A4EB9C799C7E7073F")
+    public  AssertionError() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.428 -0400", hash_original_method = "DB301E384A0E7AC0DA0AB52BDA1439A9", hash_generated_method = "8F1CCACB32C9492C715A4177D4C8950C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AssertionError(String detailMessage, Throwable cause) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.983 -0400", hash_original_method = "DB301E384A0E7AC0DA0AB52BDA1439A9", hash_generated_method = "E0DE7E9B188FB1239E72EC36AB4D6F2E")
+    public  AssertionError(String detailMessage, Throwable cause) {
         super(detailMessage, cause);
-        dsTaint.addTaint(cause.dsTaint);
-        dsTaint.addTaint(detailMessage);
+        addTaint(detailMessage.getTaint());
+        addTaint(cause.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.428 -0400", hash_original_method = "CD7903E922C4B27895502309BFA5EB07", hash_generated_method = "E4A13012467CB9909EA5C5FCE8E9E95F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AssertionError(Object detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.983 -0400", hash_original_method = "CD7903E922C4B27895502309BFA5EB07", hash_generated_method = "93F781A4BE394C9AD6445470A714B9AE")
+    public  AssertionError(Object detailMessage) {
         super(String.valueOf(detailMessage),
                 (detailMessage instanceof Throwable ? (Throwable) detailMessage : null));
-        dsTaint.addTaint(detailMessage.dsTaint);
+        addTaint(detailMessage.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.429 -0400", hash_original_method = "BB55778BC77D5B95187F495DBBF45981", hash_generated_method = "E97A1629585AE03B1CC5D097A15C9789")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AssertionError(boolean detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.983 -0400", hash_original_method = "BB55778BC77D5B95187F495DBBF45981", hash_generated_method = "C1E7297D9408A56B99BB21E80127806E")
+    public  AssertionError(boolean detailMessage) {
         this(String.valueOf(detailMessage));
-        dsTaint.addTaint(detailMessage);
+        addTaint(detailMessage);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.429 -0400", hash_original_method = "0919D94AF324C3859333ED19301CBB4C", hash_generated_method = "9F6BC72DF55247EE5DBDB8AE92CA86EE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AssertionError(char detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.987 -0400", hash_original_method = "0919D94AF324C3859333ED19301CBB4C", hash_generated_method = "5E706F1FE2C06D19CC3B7D6EF3518A65")
+    public  AssertionError(char detailMessage) {
         this(String.valueOf(detailMessage));
-        dsTaint.addTaint(detailMessage);
+        addTaint(detailMessage);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.429 -0400", hash_original_method = "462DB8F5A907CF4FAF9D9C058DE243DA", hash_generated_method = "623402F51D3285CC14F8C2FD54B2BDDC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AssertionError(int detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.993 -0400", hash_original_method = "462DB8F5A907CF4FAF9D9C058DE243DA", hash_generated_method = "E08BACE49551A8970A62DB8792DDE201")
+    public  AssertionError(int detailMessage) {
         this(Integer.toString(detailMessage));
-        dsTaint.addTaint(detailMessage);
+        addTaint(detailMessage);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.429 -0400", hash_original_method = "0B1F386E30482F841F5BBFF8DA2D4AD5", hash_generated_method = "7EBF92271B2D9B706594A2CA78B77939")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AssertionError(long detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.994 -0400", hash_original_method = "0B1F386E30482F841F5BBFF8DA2D4AD5", hash_generated_method = "F3D057B8A460BE8AE984F4339C106278")
+    public  AssertionError(long detailMessage) {
         this(Long.toString(detailMessage));
-        dsTaint.addTaint(detailMessage);
+        addTaint(detailMessage);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.429 -0400", hash_original_method = "00A378BEF68E5943BA88BAF8271D8A43", hash_generated_method = "380694614662BE3A989F2996F68A226D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AssertionError(float detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.994 -0400", hash_original_method = "00A378BEF68E5943BA88BAF8271D8A43", hash_generated_method = "1DB3FE8F2F4FE4951776E3B7C74E1CB0")
+    public  AssertionError(float detailMessage) {
         this(Float.toString(detailMessage));
-        dsTaint.addTaint(detailMessage);
+        addTaint(detailMessage);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:25.429 -0400", hash_original_method = "7A2F5DA0FAF43875CE47806BEFC9388A", hash_generated_method = "8CB578C2FD63D8A2ECBBE15EFFEF0407")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public AssertionError(double detailMessage) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.994 -0400", hash_original_method = "7A2F5DA0FAF43875CE47806BEFC9388A", hash_generated_method = "0C4059270EA33285C1BF8CD3EBA17BBC")
+    public  AssertionError(double detailMessage) {
         this(Double.toString(detailMessage));
-        dsTaint.addTaint(detailMessage);
+        addTaint(detailMessage);
         // ---------- Original Method ----------
     }
 
     
-    private static final long serialVersionUID = -5013299493970297370L;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.994 -0400", hash_original_field = "4D2F709F14AE1603369D414531DBDCB7", hash_generated_field = "01003A6790C005BB2A56C163A18A11FA")
+
+    private static long serialVersionUID = -5013299493970297370L;
 }
 

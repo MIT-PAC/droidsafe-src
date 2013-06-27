@@ -13,28 +13,24 @@ import java.text.ParseException;
 
 public class AddressParametersParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.218 -0400", hash_original_method = "C3BA12083B7F74793C4F2E2FB3C1DB43", hash_generated_method = "CB6EB236CD792D7831180F49DF09B097")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected AddressParametersParser(Lexer lexer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.202 -0400", hash_original_method = "C3BA12083B7F74793C4F2E2FB3C1DB43", hash_generated_method = "0A98B82046309B91B28D34D99AE83B32")
+    protected  AddressParametersParser(Lexer lexer) {
         super(lexer);
-        dsTaint.addTaint(lexer.dsTaint);
+        addTaint(lexer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.218 -0400", hash_original_method = "D3B3C15A6507A072481DABC46CDC9E97", hash_generated_method = "E50B0E43618D16E5DDCBAF4ED92622BA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    protected AddressParametersParser(String buffer) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.202 -0400", hash_original_method = "D3B3C15A6507A072481DABC46CDC9E97", hash_generated_method = "FE6FDA4F8652475F409E7BF0F7526903")
+    protected  AddressParametersParser(String buffer) {
         super(buffer);
-        dsTaint.addTaint(buffer);
+        addTaint(buffer.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:22.219 -0400", hash_original_method = "CAB6813880E3A34B3347219ABB88ECB8", hash_generated_method = "707383D7FD3F86E91DFD7EB8082E8621")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.203 -0400", hash_original_method = "CAB6813880E3A34B3347219ABB88ECB8", hash_generated_method = "A4CB3FD278B82923D5B2736C5183DC4A")
     protected void parse(AddressParametersHeader addressParametersHeader) throws ParseException {
-        dsTaint.addTaint(addressParametersHeader.dsTaint);
         dbg_enter("AddressParametersParser.parse");
         try 
         {
@@ -47,7 +43,7 @@ public class AddressParametersParser extends ParametersParser {
             char la;
             la = this.lexer.lookAhead(0);
             {
-                boolean var89A296B3201ECAD292C08595A9E0F0E3_624868692 = (this.lexer.hasMoreChars() &&
+                boolean var89A296B3201ECAD292C08595A9E0F0E3_529155887 = (this.lexer.hasMoreChars() &&
                  la != '\0' &&
                  la != '\n' &&
                  this.lexer.startsId());
@@ -65,6 +61,7 @@ public class AddressParametersParser extends ParametersParser {
         {
             dbg_leave("AddressParametersParser.parse");
         } //End block
+        addTaint(addressParametersHeader.getTaint());
         // ---------- Original Method ----------
         //dbg_enter("AddressParametersParser.parse");
         //try {

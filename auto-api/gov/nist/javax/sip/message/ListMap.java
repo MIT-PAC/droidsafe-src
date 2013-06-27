@@ -13,9 +13,10 @@ import java.util.Hashtable;
 
 class ListMap {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:21.689 -0400", hash_original_method = "570DA50C51CA910AC1BA48DF3926EDA5", hash_generated_method = "570DA50C51CA910AC1BA48DF3926EDA5")
-        public ListMap ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.561 -0400", hash_original_method = "3B4FA022548893E6C8E65FE681D24699", hash_generated_method = "3B4FA022548893E6C8E65FE681D24699")
+    public ListMap ()
     {
+        //Synthesized constructor
     }
 
 
@@ -102,7 +103,11 @@ class ListMap {
     }
 
     
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.564 -0400", hash_original_field = "1B2224DE52334EF5CB80B405CB11D33A", hash_generated_field = "62CC7C40693B8912372FB3323E83E945")
+
     private static Hashtable<Class<?>,Class<?>> headerListTable;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.565 -0400", hash_original_field = "84D10A1ED612E61DBF6880F6E3EE533A", hash_generated_field = "9FD51B35B9E2224AA107F59D57389A34")
+
     private static boolean initialized;
     static {
         initializeListMap();

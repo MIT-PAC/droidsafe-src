@@ -18,28 +18,37 @@ import static java.util.TreeMap.Relation.*;
 import libcore.util.Objects;
 
 public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>, NavigableMap<K, V>, Cloneable, Serializable {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.760 -0400", hash_original_field = "4092F21BD0E2CC3C9CA971DF59AA8608", hash_generated_field = "10E826BC31BCAB9BF3EF3CC29146C2D4")
+
     Comparator<? super K> comparator;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.760 -0400", hash_original_field = "63A9F0EA7BB98050796B649E85481845", hash_generated_field = "85295BCB9659691A12B83D4313F1A2F9")
+
     Node<K, V> root;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.760 -0400", hash_original_field = "4C519DE3531208469B40CCB51004CD2D", hash_generated_field = "689FC3CB9A887B5817C15E9CFDD066DB")
+
     int size = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.760 -0400", hash_original_field = "8626C3CD64A823DD7B97C6F5EF45A8FC", hash_generated_field = "7C38AA8724D6D8AD727BB2AB85887DF0")
+
     int modCount = 0;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.760 -0400", hash_original_field = "D4E06C98DBA5A687CB6C836BF538EC81", hash_generated_field = "78564EACF73DB0AEDD2E075A8DFF1B13")
+
     private EntrySet entrySet;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.760 -0400", hash_original_field = "3E8ABCE844B6A8A95397486A3899B536", hash_generated_field = "455D81AE8BC4090CF8AD993E78862377")
+
     private KeySet keySet;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.045 -0400", hash_original_method = "A79D85B768A2B786B5F2ACD3F2B9D249", hash_generated_method = "CFE342F2F41F7796DB24A93B3EC5E9D4")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.761 -0400", hash_original_method = "A79D85B768A2B786B5F2ACD3F2B9D249", hash_generated_method = "CFE342F2F41F7796DB24A93B3EC5E9D4")
     @SuppressWarnings("unchecked")
-    public TreeMap() {
+    public  TreeMap() {
         this.comparator = (Comparator<? super K>) NATURAL_ORDER;
         // ---------- Original Method ----------
         //this.comparator = (Comparator<? super K>) NATURAL_ORDER;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.048 -0400", hash_original_method = "317880CC1AD8B8CC7D9C11CC941EE8C3", hash_generated_method = "83DFF81168746787EC772572751FF68E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public TreeMap(Map<? extends K, ? extends V> copyFrom) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.813 -0400", hash_original_method = "317880CC1AD8B8CC7D9C11CC941EE8C3", hash_generated_method = "D5F7002165857F6E4A37D803A7EDC81E")
+    public  TreeMap(Map<? extends K, ? extends V> copyFrom) {
         this();
-        dsTaint.addTaint(copyFrom.dsTaint);
         {
             copyFrom.entrySet().iterator().hasNext();
             Map.Entry<? extends K, ? extends V> entry = copyFrom.entrySet().iterator().next();
@@ -47,6 +56,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 putInternal(entry.getKey(), entry.getValue());
             } //End block
         } //End collapsed parenthetic
+        addTaint(copyFrom.getTaint());
         // ---------- Original Method ----------
         //for (Map.Entry<? extends K, ? extends V> entry : copyFrom.entrySet()) {
             //putInternal(entry.getKey(), entry.getValue());
@@ -54,11 +64,12 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.048 -0400", hash_original_method = "C1FE892CAD9D3780A675F5A8CA11F4FA", hash_generated_method = "C0E9CC47B1398B3B3DBACCF875250B44")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.813 -0400", hash_original_method = "C1FE892CAD9D3780A675F5A8CA11F4FA", hash_generated_method = "A5FA904989BCCDB3DA871E0B26BCC9ED")
     @SuppressWarnings("unchecked")
-    public TreeMap(Comparator<? super K> comparator) {
-        dsTaint.addTaint(comparator.dsTaint);
+    public  TreeMap(Comparator<? super K> comparator) {
+        {
+            this.comparator = comparator;
+        } //End block
         {
             this.comparator = (Comparator<? super K>) NATURAL_ORDER;
         } //End block
@@ -71,11 +82,9 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.051 -0400", hash_original_method = "2607F9CE6A88866DC32D385287E67644", hash_generated_method = "9AE65D25C9D8023257BA1A8591E1212E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.858 -0400", hash_original_method = "2607F9CE6A88866DC32D385287E67644", hash_generated_method = "0D83ED9D530594A5ECD516091B277AF9")
     @SuppressWarnings("unchecked")
-    public TreeMap(SortedMap<K, ? extends V> copyFrom) {
-        dsTaint.addTaint(copyFrom.dsTaint);
+    public  TreeMap(SortedMap<K, ? extends V> copyFrom) {
         Comparator<? super K> sourceComparator;
         sourceComparator = copyFrom.comparator();
         {
@@ -91,6 +100,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 putInternal(entry.getKey(), entry.getValue());
             } //End block
         } //End collapsed parenthetic
+        addTaint(copyFrom.getTaint());
         // ---------- Original Method ----------
         //Comparator<? super K> sourceComparator = copyFrom.comparator();
         //if (sourceComparator != null) {
@@ -104,10 +114,10 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.051 -0400", hash_original_method = "FB8B1056739768AF92CF25DB3C2D30EB", hash_generated_method = "99BA114BEA7AE9908F2DA23FFEE2289E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.859 -0400", hash_original_method = "FB8B1056739768AF92CF25DB3C2D30EB", hash_generated_method = "D5952C7AF4291949D38E3DEB729FEB03")
     @Override
     public Object clone() {
+        Object varB4EAC82CA7396A68D541C85D26508E83_693420321 = null; //Variable for return #1
         try 
         {
             @SuppressWarnings("unchecked") TreeMap<K, V> map;
@@ -115,12 +125,14 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             map.root = root != null ? root.copy(null) : null;
             map.entrySet = null;
             map.keySet = null;
+            varB4EAC82CA7396A68D541C85D26508E83_693420321 = map;
         } //End block
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         } //End block
-        return (Object)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_693420321.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_693420321;
         // ---------- Original Method ----------
         //try {
             //@SuppressWarnings("unchecked") 
@@ -135,70 +147,69 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.051 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "2127DA49D089D6CBC77B455A0DBDC124")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.860 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "8B2098DDC9D5C90239E5E1896151984E")
     @Override
     public int size() {
-        return dsTaint.getTaintInt();
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_588458038 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_588458038;
         // ---------- Original Method ----------
         //return size;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.051 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "4BEC7A3919A556BE19BE40EE7160C52B")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.860 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "DA26A8957BB588505F3EF19EE2A0F689")
     @Override
     public boolean isEmpty() {
-        return dsTaint.getTaintBoolean();
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_743079537 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_743079537;
         // ---------- Original Method ----------
         //return size == 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.052 -0400", hash_original_method = "C35732A40B74AF28951D9E96FE33879B", hash_generated_method = "E0548EB1D251E37F1C5CB02D8FE8C5AB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.860 -0400", hash_original_method = "C35732A40B74AF28951D9E96FE33879B", hash_generated_method = "E29B4C53352725A2CD0FC0953E7ADAE2")
     @Override
     public V get(Object key) {
-        dsTaint.addTaint(key.dsTaint);
+        V varB4EAC82CA7396A68D541C85D26508E83_2022669946 = null; //Variable for return #1
         Entry<K, V> entry;
         entry = findByObject(key);
-        {
-            Object varDDD7292C065899F2728EAD5CD98A4F68_1654731373 = (entry.getValue());
-        } //End flattened ternary
-        return (V)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2022669946 = entry != null ? entry.getValue() : null;
+        addTaint(key.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_2022669946.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2022669946;
         // ---------- Original Method ----------
         //Entry<K, V> entry = findByObject(key);
         //return entry != null ? entry.getValue() : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.052 -0400", hash_original_method = "CD38E6D478445847B9B0A556F5E63837", hash_generated_method = "989EAA52D2C2DD5780FD28D783B88ABE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.861 -0400", hash_original_method = "CD38E6D478445847B9B0A556F5E63837", hash_generated_method = "087A53A85EB29D91A1C2568C4247CBAD")
     @Override
     public boolean containsKey(Object key) {
-        dsTaint.addTaint(key.dsTaint);
-        boolean var169B170947F44477F294694A95E8B219_1811422337 = (findByObject(key) != null);
-        return dsTaint.getTaintBoolean();
+        boolean var169B170947F44477F294694A95E8B219_947114323 = (findByObject(key) != null);
+        addTaint(key.getTaint());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1573790422 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1573790422;
         // ---------- Original Method ----------
         //return findByObject(key) != null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.052 -0400", hash_original_method = "09423F07E68B4770E107529B69AA8334", hash_generated_method = "5CD0C66DD6A733A15553031E470D497F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.879 -0400", hash_original_method = "09423F07E68B4770E107529B69AA8334", hash_generated_method = "55DBE98F2B62457027453ACFADD8B076")
     @Override
     public V put(K key, V value) {
-        dsTaint.addTaint(value.dsTaint);
-        dsTaint.addTaint(key.dsTaint);
-        V var286DC1D6FE6BD99771DB62C242D34D70_1554962276 = (putInternal(key, value));
-        return (V)dsTaint.getTaint();
+        V varB4EAC82CA7396A68D541C85D26508E83_752084204 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_752084204 = putInternal(key, value);
+        addTaint(key.getTaint());
+        addTaint(value.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_752084204.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_752084204;
         // ---------- Original Method ----------
         //return putInternal(key, value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.052 -0400", hash_original_method = "EA5BE6ED678D7376259BCC3DB1C01E21", hash_generated_method = "25747B87C7C6F2CC69ED86A75548B960")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.880 -0400", hash_original_method = "EA5BE6ED678D7376259BCC3DB1C01E21", hash_generated_method = "25747B87C7C6F2CC69ED86A75548B960")
     @Override
     public void clear() {
         root = null;
@@ -210,31 +221,35 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.052 -0400", hash_original_method = "0207194EB3BB344ADD94A18916C183DF", hash_generated_method = "63FFBB88666899CCBC9D0238E2CE2EC6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.880 -0400", hash_original_method = "0207194EB3BB344ADD94A18916C183DF", hash_generated_method = "2F0CD2DB5B1DB1F66120750A112ACBC6")
     @Override
     public V remove(Object key) {
-        dsTaint.addTaint(key.dsTaint);
+        V varB4EAC82CA7396A68D541C85D26508E83_583842466 = null; //Variable for return #1
         Node<K, V> node;
         node = removeInternalByKey(key);
-        return (V)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_583842466 = node != null ? node.value : null;
+        addTaint(key.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_583842466.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_583842466;
         // ---------- Original Method ----------
         //Node<K, V> node = removeInternalByKey(key);
         //return node != null ? node.value : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.053 -0400", hash_original_method = "73D5DA91D47B13631BBA1FF4FFC14006", hash_generated_method = "ED3E7105D392B62D4C3E8297DB21D14F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.881 -0400", hash_original_method = "73D5DA91D47B13631BBA1FF4FFC14006", hash_generated_method = "D0F3CDE454573147DD8BCF5E6160ECD0")
      V putInternal(K key, V value) {
-        dsTaint.addTaint(value.dsTaint);
-        dsTaint.addTaint(key.dsTaint);
+        V varB4EAC82CA7396A68D541C85D26508E83_254443638 = null; //Variable for return #1
         Node<K, V> created;
         created = find(key, Relation.CREATE);
         V result;
         result = created.value;
         created.value = value;
-        return (V)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_254443638 = result;
+        addTaint(key.getTaint());
+        addTaint(value.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_254443638.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_254443638;
         // ---------- Original Method ----------
         //Node<K, V> created = find(key, Relation.CREATE);
         //V result = created.value;
@@ -243,11 +258,21 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.053 -0400", hash_original_method = "A47B461F1595004F5F78D5AE91E8DCD0", hash_generated_method = "CACF750EE791E64D9A66B5FE93D7060D")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.906 -0400", hash_original_method = "A47B461F1595004F5F78D5AE91E8DCD0", hash_generated_method = "5E073311E68DC1FB0FF67FFC52E19362")
      Node<K, V> find(K key, Relation relation) {
-        dsTaint.addTaint(relation.dsTaint);
-        dsTaint.addTaint(key.dsTaint);
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_2055687940 = null; //Variable for return #1
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_447075256 = null; //Variable for return #2
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_73703548 = null; //Variable for return #3
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1454462140 = null; //Variable for return #4
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1566866005 = null; //Variable for return #5
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1890935044 = null; //Variable for return #6
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1476426246 = null; //Variable for return #7
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1080848081 = null; //Variable for return #8
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1601423899 = null; //Variable for return #9
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1316909629 = null; //Variable for return #10
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_224907671 = null; //Variable for return #11
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1754182870 = null; //Variable for return #12
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_635689454 = null; //Variable for return #13
         {
             {
                 if (DroidSafeAndroidRuntime.control) throw new ClassCastException(key.getClass().getName() + " is not Comparable");
@@ -255,6 +280,10 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             {
                 root = new Node<K, V>(null, key);
                 size = 1;
+                varB4EAC82CA7396A68D541C85D26508E83_2055687940 = root;
+            } //End block
+            {
+                varB4EAC82CA7396A68D541C85D26508E83_447075256 = null;
             } //End block
         } //End block
         @SuppressWarnings("unchecked") Comparable<Object> comparableKey;
@@ -268,10 +297,13 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             comparison = comparator.compare(key, nearest.key);
             {
                 //Begin case LOWER 
-                Node<K, V> var6A988A9BDC609329B721B0F5708527C0_2128450825 = (nearest.prev());
+                varB4EAC82CA7396A68D541C85D26508E83_73703548 = nearest.prev();
                 //End case LOWER 
+                //Begin case FLOOR EQUAL CREATE CEILING 
+                varB4EAC82CA7396A68D541C85D26508E83_1454462140 = nearest;
+                //End case FLOOR EQUAL CREATE CEILING 
                 //Begin case HIGHER 
-                Node<K, V> varDAA2591EEA78F448691CDB26099D1445_613788090 = (nearest.next());
+                varB4EAC82CA7396A68D541C85D26508E83_1566866005 = nearest.next();
                 //End case HIGHER 
             } //End block
             Node<K, V> child;
@@ -282,8 +314,14 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             } //End block
             {
                 //Begin case LOWER FLOOR 
-                Node<K, V> var6A988A9BDC609329B721B0F5708527C0_1993146963 = (nearest.prev());
+                varB4EAC82CA7396A68D541C85D26508E83_1890935044 = nearest.prev();
                 //End case LOWER FLOOR 
+                //Begin case CEILING HIGHER 
+                varB4EAC82CA7396A68D541C85D26508E83_1476426246 = nearest;
+                //End case CEILING HIGHER 
+                //Begin case EQUAL 
+                varB4EAC82CA7396A68D541C85D26508E83_1080848081 = null;
+                //End case EQUAL 
                 //Begin case CREATE 
                 Node<K, V> created;
                 created = new Node<K, V>(nearest, key);
@@ -294,11 +332,20 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 //Begin case CREATE 
                 rebalance(nearest, true);
                 //End case CREATE 
+                //Begin case CREATE 
+                varB4EAC82CA7396A68D541C85D26508E83_1601423899 = created;
+                //End case CREATE 
             } //End block
             {
+                //Begin case LOWER FLOOR 
+                varB4EAC82CA7396A68D541C85D26508E83_1316909629 = nearest;
+                //End case LOWER FLOOR 
                 //Begin case CEILING HIGHER 
-                Node<K, V> varDAA2591EEA78F448691CDB26099D1445_1811200836 = (nearest.next());
+                varB4EAC82CA7396A68D541C85D26508E83_224907671 = nearest.next();
                 //End case CEILING HIGHER 
+                //Begin case EQUAL 
+                varB4EAC82CA7396A68D541C85D26508E83_1754182870 = null;
+                //End case EQUAL 
                 //Begin case CREATE 
                 Node<K, V> created;
                 created = new Node<K, V>(nearest, key);
@@ -309,35 +356,85 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 //Begin case CREATE 
                 rebalance(nearest, true);
                 //End case CREATE 
+                //Begin case CREATE 
+                varB4EAC82CA7396A68D541C85D26508E83_635689454 = created;
+                //End case CREATE 
             } //End block
         } //End block
-        return (Node<K, V>)dsTaint.getTaint();
+        addTaint(relation.getTaint());
+        Node<K, V> varA7E53CE21691AB073D9660D615818899_1039860520; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1039860520 = varB4EAC82CA7396A68D541C85D26508E83_2055687940;
+                break;
+            case 2: //Assign result for return ordinal #2
+                varA7E53CE21691AB073D9660D615818899_1039860520 = varB4EAC82CA7396A68D541C85D26508E83_447075256;
+                break;
+            case 3: //Assign result for return ordinal #3
+                varA7E53CE21691AB073D9660D615818899_1039860520 = varB4EAC82CA7396A68D541C85D26508E83_73703548;
+                break;
+            case 4: //Assign result for return ordinal #4
+                varA7E53CE21691AB073D9660D615818899_1039860520 = varB4EAC82CA7396A68D541C85D26508E83_1454462140;
+                break;
+            case 5: //Assign result for return ordinal #5
+                varA7E53CE21691AB073D9660D615818899_1039860520 = varB4EAC82CA7396A68D541C85D26508E83_1566866005;
+                break;
+            case 6: //Assign result for return ordinal #6
+                varA7E53CE21691AB073D9660D615818899_1039860520 = varB4EAC82CA7396A68D541C85D26508E83_1890935044;
+                break;
+            case 7: //Assign result for return ordinal #7
+                varA7E53CE21691AB073D9660D615818899_1039860520 = varB4EAC82CA7396A68D541C85D26508E83_1476426246;
+                break;
+            case 8: //Assign result for return ordinal #8
+                varA7E53CE21691AB073D9660D615818899_1039860520 = varB4EAC82CA7396A68D541C85D26508E83_1080848081;
+                break;
+            case 9: //Assign result for return ordinal #9
+                varA7E53CE21691AB073D9660D615818899_1039860520 = varB4EAC82CA7396A68D541C85D26508E83_1601423899;
+                break;
+            case 10: //Assign result for return ordinal #10
+                varA7E53CE21691AB073D9660D615818899_1039860520 = varB4EAC82CA7396A68D541C85D26508E83_1316909629;
+                break;
+            case 11: //Assign result for return ordinal #11
+                varA7E53CE21691AB073D9660D615818899_1039860520 = varB4EAC82CA7396A68D541C85D26508E83_224907671;
+                break;
+            case 12: //Assign result for return ordinal #12
+                varA7E53CE21691AB073D9660D615818899_1039860520 = varB4EAC82CA7396A68D541C85D26508E83_1754182870;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1039860520 = varB4EAC82CA7396A68D541C85D26508E83_635689454;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1039860520.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1039860520;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.054 -0400", hash_original_method = "C267D163E835004AE4803D9A2BC1E552", hash_generated_method = "6CA901FD1923776D65F4609977D291AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.909 -0400", hash_original_method = "C267D163E835004AE4803D9A2BC1E552", hash_generated_method = "EDBC0887F6EAEC555B517D4D192EF643")
     @SuppressWarnings("unchecked")
      Node<K, V> findByObject(Object key) {
-        dsTaint.addTaint(key.dsTaint);
-        Node<K, V> var5F6F4D349557FD85F3DF8AD05D69DA1F_1790241789 = (find((K) key, EQUAL));
-        return (Node<K, V>)dsTaint.getTaint();
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1173990549 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1173990549 = find((K) key, EQUAL);
+        addTaint(key.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1173990549.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1173990549;
         // ---------- Original Method ----------
         //return find((K) key, EQUAL);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.054 -0400", hash_original_method = "8678505752B854905CFE7B96C4FE458B", hash_generated_method = "7041836748CDDB197622AECBD13F1531")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.928 -0400", hash_original_method = "8678505752B854905CFE7B96C4FE458B", hash_generated_method = "EDDFE2AB6D77019537433F8B03604C1D")
      Node<K, V> findByEntry(Entry<?, ?> entry) {
-        dsTaint.addTaint(entry.dsTaint);
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1924820697 = null; //Variable for return #1
         Node<K, V> mine;
         mine = findByObject(entry.getKey());
         boolean valuesEqual;
         valuesEqual = mine != null && Objects.equal(mine.value, entry.getValue());
-        return (Node<K, V>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1924820697 = valuesEqual ? mine : null;
+        addTaint(entry.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1924820697.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1924820697;
         // ---------- Original Method ----------
         //Node<K, V> mine = findByObject(entry.getKey());
         //boolean valuesEqual = mine != null && Objects.equal(mine.value, entry.getValue());
@@ -345,10 +442,8 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.054 -0400", hash_original_method = "FAD76EC8E4C5DF9CCDE64BA514AC9743", hash_generated_method = "C15434F27D20D69A0AD8D52CF80E6C3F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.934 -0400", hash_original_method = "FAD76EC8E4C5DF9CCDE64BA514AC9743", hash_generated_method = "829F2DC186393E27F305515F02A5DD3D")
      void removeInternal(Node<K, V> node) {
-        dsTaint.addTaint(node.dsTaint);
         Node<K, V> left;
         left = node.left;
         Node<K, V> right;
@@ -393,21 +488,24 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             replaceInParent(node, null);
         } //End block
         rebalance(originalParent, false);
+        addTaint(node.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.055 -0400", hash_original_method = "C9B9883A6728DC2F4DBB90BDF61B9978", hash_generated_method = "3383793E163A8EB5B1BD2783F268FFF7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.934 -0400", hash_original_method = "C9B9883A6728DC2F4DBB90BDF61B9978", hash_generated_method = "403ECE532CECA08B9ED3FDC8AD95CAA6")
      Node<K, V> removeInternalByKey(Object key) {
-        dsTaint.addTaint(key.dsTaint);
+        Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1516821571 = null; //Variable for return #1
         Node<K, V> node;
         node = findByObject(key);
         {
             removeInternal(node);
         } //End block
-        return (Node<K, V>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1516821571 = node;
+        addTaint(key.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1516821571.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1516821571;
         // ---------- Original Method ----------
         //Node<K, V> node = findByObject(key);
         //if (node != null) {
@@ -417,11 +515,8 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.055 -0400", hash_original_method = "8CBFE12E379E7871AFCE5B0FC5C284CB", hash_generated_method = "624873D25B2D5F5141AD5568E46FC2B7")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:55.935 -0400", hash_original_method = "8CBFE12E379E7871AFCE5B0FC5C284CB", hash_generated_method = "5D9C04E6B48B66D85F2051BBA336997D")
     private void replaceInParent(Node<K, V> node, Node<K, V> replacement) {
-        dsTaint.addTaint(replacement.dsTaint);
-        dsTaint.addTaint(node.dsTaint);
         Node<K, V> parent;
         parent = node.parent;
         node.parent = null;
@@ -436,6 +531,10 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 parent.right = replacement;
             } //End block
         } //End block
+        {
+            root = replacement;
+        } //End block
+        addTaint(node.getTaint());
         // ---------- Original Method ----------
         //Node<K, V> parent = node.parent;
         //node.parent = null;
@@ -455,11 +554,8 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.055 -0400", hash_original_method = "DE22B63E2A021BAF8A5DCC142FCC4B40", hash_generated_method = "3FAB6FFB72E1F994B7A797AAA71D3448")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.040 -0400", hash_original_method = "DE22B63E2A021BAF8A5DCC142FCC4B40", hash_generated_method = "41613B51E1B5900AA3F99F24B9CA38F2")
     private void rebalance(Node<K, V> unbalanced, boolean insert) {
-        dsTaint.addTaint(insert);
-        dsTaint.addTaint(unbalanced.dsTaint);
         {
             Node<K, V> node;
             node = unbalanced;
@@ -527,15 +623,15 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 } //End block
             } //End block
         } //End collapsed parenthetic
+        addTaint(unbalanced.getTaint());
+        addTaint(insert);
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.057 -0400", hash_original_method = "6326CB79DBF89391F00F9AB13B0E81D9", hash_generated_method = "DA8DD91308A4B65B318C2D9A003C9F76")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.042 -0400", hash_original_method = "6326CB79DBF89391F00F9AB13B0E81D9", hash_generated_method = "29E24C70394F131BDC1B8808649E5575")
     private void rotateLeft(Node<K, V> root) {
-        dsTaint.addTaint(root.dsTaint);
         Node<K, V> left;
         left = root.left;
         Node<K, V> pivot;
@@ -574,10 +670,8 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.058 -0400", hash_original_method = "DF035E309292DEA6067E726F513C85C3", hash_generated_method = "C071E281475D4C3E839183EC2FFC4F20")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.051 -0400", hash_original_method = "DF035E309292DEA6067E726F513C85C3", hash_generated_method = "5541990C0BDCC254D68C4A2537F73601")
     private void rotateRight(Node<K, V> root) {
-        dsTaint.addTaint(root.dsTaint);
         Node<K, V> pivot;
         pivot = root.left;
         Node<K, V> right;
@@ -616,36 +710,51 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.058 -0400", hash_original_method = "E2F61A98BB539F90A11465C6A8354CE5", hash_generated_method = "BD47854D6496F9294728C18D57AE71A1")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.061 -0400", hash_original_method = "E2F61A98BB539F90A11465C6A8354CE5", hash_generated_method = "28F61022C22B4B3CD39880D3CD472637")
     private SimpleImmutableEntry<K, V> immutableCopy(Entry<K, V> entry) {
-        dsTaint.addTaint(entry.dsTaint);
-        {
-            Object var03D618631891EE782D97F8369D312785_1064517955 = (new SimpleImmutableEntry<K, V>(entry));
-        } //End flattened ternary
-        return (SimpleImmutableEntry<K, V>)dsTaint.getTaint();
+        SimpleImmutableEntry<K, V> varB4EAC82CA7396A68D541C85D26508E83_376483897 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_376483897 = entry == null ? null : new SimpleImmutableEntry<K, V>(entry);
+        addTaint(entry.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_376483897.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_376483897;
         // ---------- Original Method ----------
         //return entry == null ? null : new SimpleImmutableEntry<K, V>(entry);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.060 -0400", hash_original_method = "9F2AE61C584701540103A59451B8FA45", hash_generated_method = "EE0E069380C89ECF33CEFDA8F62FF39A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.062 -0400", hash_original_method = "9F2AE61C584701540103A59451B8FA45", hash_generated_method = "5AB48E2DAEE8EE725ADD730E5322CFB1")
     public Entry<K, V> firstEntry() {
-        Entry<K, V> var91697C82AF12979B72ED8D5517077B0E_1143104362 = (immutableCopy(root == null ? null : root.first())); //DSFIXME:  CODE0008: Nested ternary operator in expression
-        return (Entry<K, V>)dsTaint.getTaint();
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_670419899 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_670419899 = immutableCopy(root == null ? null : root.first());
+        varB4EAC82CA7396A68D541C85D26508E83_670419899.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_670419899;
         // ---------- Original Method ----------
         //return immutableCopy(root == null ? null : root.first());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.060 -0400", hash_original_method = "2730A7A2197248AC3B653DF430BA3F4A", hash_generated_method = "DBEE90E0EA9E6E0ED8CCAE4D428B8B40")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.064 -0400", hash_original_method = "2730A7A2197248AC3B653DF430BA3F4A", hash_generated_method = "E814E73F098CF9D0EC8ABC809D81D02C")
     private Entry<K, V> internalPollFirstEntry() {
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1775466665 = null; //Variable for return #1
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1509371865 = null; //Variable for return #2
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_1775466665 = null;
+        } //End block
         Node<K, V> result;
         result = root.first();
         removeInternal(result);
-        return (Entry<K, V>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1509371865 = result;
+        Entry<K, V> varA7E53CE21691AB073D9660D615818899_2133499432; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_2133499432 = varB4EAC82CA7396A68D541C85D26508E83_1775466665;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_2133499432 = varB4EAC82CA7396A68D541C85D26508E83_1509371865;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_2133499432.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2133499432;
         // ---------- Original Method ----------
         //if (root == null) {
             //return null;
@@ -656,24 +765,26 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.060 -0400", hash_original_method = "1456A4986DE10120F25B46536C8BF169", hash_generated_method = "E71B62D22011D3B4FDFA81B2BFEFB105")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.064 -0400", hash_original_method = "1456A4986DE10120F25B46536C8BF169", hash_generated_method = "3A208C0F19B72CBCBAD0BBECCC7F8B9B")
     public Entry<K, V> pollFirstEntry() {
-        Entry<K, V> var2DD0DA1167DFD6680DF2814CCC0024FA_945961022 = (immutableCopy(internalPollFirstEntry()));
-        return (Entry<K, V>)dsTaint.getTaint();
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_2092636266 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2092636266 = immutableCopy(internalPollFirstEntry());
+        varB4EAC82CA7396A68D541C85D26508E83_2092636266.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2092636266;
         // ---------- Original Method ----------
         //return immutableCopy(internalPollFirstEntry());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.060 -0400", hash_original_method = "B0B89D697E050FAAC6816A6E8B1E56A4", hash_generated_method = "6B413BDDFA5DB8EA11976FE7FB9FA22E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.086 -0400", hash_original_method = "B0B89D697E050FAAC6816A6E8B1E56A4", hash_generated_method = "9C994903536C71A0ECED26A83587E83E")
     public K firstKey() {
+        K varB4EAC82CA7396A68D541C85D26508E83_418191209 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
         } //End block
-        K var808169D4062ACF553C2513AD3EE389E3_12992017 = (root.first().getKey());
-        return (K)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_418191209 = root.first().getKey();
+        varB4EAC82CA7396A68D541C85D26508E83_418191209.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_418191209;
         // ---------- Original Method ----------
         //if (root == null) {
             //throw new NoSuchElementException();
@@ -682,23 +793,39 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.060 -0400", hash_original_method = "9DDE470F0E6425136CCDC59F74FCDED6", hash_generated_method = "B258E084DA1B45B17F99AC2D2BFE8716")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.087 -0400", hash_original_method = "9DDE470F0E6425136CCDC59F74FCDED6", hash_generated_method = "085C3F8F24DF0AFD0EDE3A1827313A0D")
     public Entry<K, V> lastEntry() {
-        Entry<K, V> varCB82AD30BDE1CF7B30FA2F2B8FFF1AF6_1103348300 = (immutableCopy(root == null ? null : root.last())); //DSFIXME:  CODE0008: Nested ternary operator in expression
-        return (Entry<K, V>)dsTaint.getTaint();
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_747199602 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_747199602 = immutableCopy(root == null ? null : root.last());
+        varB4EAC82CA7396A68D541C85D26508E83_747199602.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_747199602;
         // ---------- Original Method ----------
         //return immutableCopy(root == null ? null : root.last());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.061 -0400", hash_original_method = "A726E2736A4C282A51BDD8062FE5CCFA", hash_generated_method = "AD0041ED06A957D48C37A374DC418641")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.088 -0400", hash_original_method = "A726E2736A4C282A51BDD8062FE5CCFA", hash_generated_method = "60BC2847289184E585603B1929F3FC01")
     private Entry<K, V> internalPollLastEntry() {
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_680613125 = null; //Variable for return #1
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_709776850 = null; //Variable for return #2
+        {
+            varB4EAC82CA7396A68D541C85D26508E83_680613125 = null;
+        } //End block
         Node<K, V> result;
         result = root.last();
         removeInternal(result);
-        return (Entry<K, V>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_709776850 = result;
+        Entry<K, V> varA7E53CE21691AB073D9660D615818899_995630139; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_995630139 = varB4EAC82CA7396A68D541C85D26508E83_680613125;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_995630139 = varB4EAC82CA7396A68D541C85D26508E83_709776850;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_995630139.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_995630139;
         // ---------- Original Method ----------
         //if (root == null) {
             //return null;
@@ -709,24 +836,26 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.061 -0400", hash_original_method = "5064879999AB9A13D0821F605568F112", hash_generated_method = "E8AB3710E3A395AFAFEA6154F5FF00A5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.088 -0400", hash_original_method = "5064879999AB9A13D0821F605568F112", hash_generated_method = "30D3D452B85CDAC8D77AE1042447717F")
     public Entry<K, V> pollLastEntry() {
-        Entry<K, V> var81CEC5DDB72A8FC1D52EAF1F2C6E1769_1910970500 = (immutableCopy(internalPollLastEntry()));
-        return (Entry<K, V>)dsTaint.getTaint();
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_572662814 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_572662814 = immutableCopy(internalPollLastEntry());
+        varB4EAC82CA7396A68D541C85D26508E83_572662814.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_572662814;
         // ---------- Original Method ----------
         //return immutableCopy(internalPollLastEntry());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.061 -0400", hash_original_method = "9EE1928205B19C964D03E8011BB7E907", hash_generated_method = "144C80AEE3300CE2E4EA67DF040F594A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.103 -0400", hash_original_method = "9EE1928205B19C964D03E8011BB7E907", hash_generated_method = "098A1C5FC5581409059CD1B1F50594E9")
     public K lastKey() {
+        K varB4EAC82CA7396A68D541C85D26508E83_349054070 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
         } //End block
-        K varA55DE5EAFF8E2D4E1470238AFBDC1446_358089226 = (root.last().getKey());
-        return (K)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_349054070 = root.last().getKey();
+        varB4EAC82CA7396A68D541C85D26508E83_349054070.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_349054070;
         // ---------- Original Method ----------
         //if (root == null) {
             //throw new NoSuchElementException();
@@ -735,185 +864,185 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.062 -0400", hash_original_method = "9D71F38DCAD7DBC2AA9FACCDA9CF4866", hash_generated_method = "9950E0F3B3AC48C9D3F807C8F1AA5CEF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.104 -0400", hash_original_method = "9D71F38DCAD7DBC2AA9FACCDA9CF4866", hash_generated_method = "6C5ADD9AB732695F4AACFE0D37B47441")
     public Entry<K, V> lowerEntry(K key) {
-        dsTaint.addTaint(key.dsTaint);
-        Entry<K, V> varF4B11A3A54D92CC29E1FEDB5BBEC8427_1685039468 = (immutableCopy(find(key, LOWER)));
-        return (Entry<K, V>)dsTaint.getTaint();
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1027116804 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1027116804 = immutableCopy(find(key, LOWER));
+        addTaint(key.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1027116804.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1027116804;
         // ---------- Original Method ----------
         //return immutableCopy(find(key, LOWER));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.062 -0400", hash_original_method = "BC9464ECC7239B355BB45B80204BADD6", hash_generated_method = "2E0C4990955A563B5582E2F3F853FCDD")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.104 -0400", hash_original_method = "BC9464ECC7239B355BB45B80204BADD6", hash_generated_method = "6CBE6829BD5202C204CF3F67899D0564")
     public K lowerKey(K key) {
-        dsTaint.addTaint(key.dsTaint);
+        K varB4EAC82CA7396A68D541C85D26508E83_87646374 = null; //Variable for return #1
         Entry<K, V> entry;
         entry = find(key, LOWER);
-        {
-            Object var4B8D962F1524E92662DE034798AAC65A_1124747943 = (entry.getKey());
-        } //End flattened ternary
-        return (K)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_87646374 = entry != null ? entry.getKey() : null;
+        addTaint(key.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_87646374.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_87646374;
         // ---------- Original Method ----------
         //Entry<K, V> entry = find(key, LOWER);
         //return entry != null ? entry.getKey() : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.063 -0400", hash_original_method = "5D12D4D534218428856149792C7C973A", hash_generated_method = "7C63A884489B2DEF0F632BE60FCE25C5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.106 -0400", hash_original_method = "5D12D4D534218428856149792C7C973A", hash_generated_method = "A16FC20174AA0EE4EA0519CF6D4DA554")
     public Entry<K, V> floorEntry(K key) {
-        dsTaint.addTaint(key.dsTaint);
-        Entry<K, V> varAA00A36E7D90CF7484C2AA7BFB9036A1_1894093975 = (immutableCopy(find(key, FLOOR)));
-        return (Entry<K, V>)dsTaint.getTaint();
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1170164737 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1170164737 = immutableCopy(find(key, FLOOR));
+        addTaint(key.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1170164737.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1170164737;
         // ---------- Original Method ----------
         //return immutableCopy(find(key, FLOOR));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.063 -0400", hash_original_method = "9E3521C1E5D0BB4CA97E65B4B91FC561", hash_generated_method = "3179A3E805E9D0DDB4EB4072D57A6270")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.106 -0400", hash_original_method = "9E3521C1E5D0BB4CA97E65B4B91FC561", hash_generated_method = "B82B61273AED729FA19EE3EA1D6B6E86")
     public K floorKey(K key) {
-        dsTaint.addTaint(key.dsTaint);
+        K varB4EAC82CA7396A68D541C85D26508E83_1830090708 = null; //Variable for return #1
         Entry<K, V> entry;
         entry = find(key, FLOOR);
-        {
-            Object var4B8D962F1524E92662DE034798AAC65A_1532023004 = (entry.getKey());
-        } //End flattened ternary
-        return (K)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1830090708 = entry != null ? entry.getKey() : null;
+        addTaint(key.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1830090708.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1830090708;
         // ---------- Original Method ----------
         //Entry<K, V> entry = find(key, FLOOR);
         //return entry != null ? entry.getKey() : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.064 -0400", hash_original_method = "14BBCA12BBBC651385215255CDF3836D", hash_generated_method = "74A48CCC9E3BA6A47D272C198D38F8D7")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.136 -0400", hash_original_method = "14BBCA12BBBC651385215255CDF3836D", hash_generated_method = "13A3A89F2C81775DF91A4A6F77146086")
     public Entry<K, V> ceilingEntry(K key) {
-        dsTaint.addTaint(key.dsTaint);
-        Entry<K, V> var5FDAD4FEC5E903AD4D7C9B4926AF956C_1550691030 = (immutableCopy(find(key, CEILING)));
-        return (Entry<K, V>)dsTaint.getTaint();
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1381323414 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1381323414 = immutableCopy(find(key, CEILING));
+        addTaint(key.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1381323414.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1381323414;
         // ---------- Original Method ----------
         //return immutableCopy(find(key, CEILING));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.064 -0400", hash_original_method = "818E984E93F7F07D0C27D2493F11C2A5", hash_generated_method = "1478AC66D013B950038A5C2985716ECF")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.136 -0400", hash_original_method = "818E984E93F7F07D0C27D2493F11C2A5", hash_generated_method = "9841646EDA1C56AAAAF09CD9EA15CEB6")
     public K ceilingKey(K key) {
-        dsTaint.addTaint(key.dsTaint);
+        K varB4EAC82CA7396A68D541C85D26508E83_2105406979 = null; //Variable for return #1
         Entry<K, V> entry;
         entry = find(key, CEILING);
-        {
-            Object var4B8D962F1524E92662DE034798AAC65A_1943618096 = (entry.getKey());
-        } //End flattened ternary
-        return (K)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2105406979 = entry != null ? entry.getKey() : null;
+        addTaint(key.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_2105406979.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2105406979;
         // ---------- Original Method ----------
         //Entry<K, V> entry = find(key, CEILING);
         //return entry != null ? entry.getKey() : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.064 -0400", hash_original_method = "AC2414FDDF42A1318F8CC45C80E09BC1", hash_generated_method = "92F65589E45B3139684E5F01E8D6D3D8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.137 -0400", hash_original_method = "AC2414FDDF42A1318F8CC45C80E09BC1", hash_generated_method = "F813A81BEC077D85AFE21468C72317F5")
     public Entry<K, V> higherEntry(K key) {
-        dsTaint.addTaint(key.dsTaint);
-        Entry<K, V> varE7778894287DDB6FC47EE2D8B0DFA8E9_1439998928 = (immutableCopy(find(key, HIGHER)));
-        return (Entry<K, V>)dsTaint.getTaint();
+        Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1562504115 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1562504115 = immutableCopy(find(key, HIGHER));
+        addTaint(key.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1562504115.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1562504115;
         // ---------- Original Method ----------
         //return immutableCopy(find(key, HIGHER));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.065 -0400", hash_original_method = "0C080E769BA3B62EBC93442ECCB0FC7D", hash_generated_method = "E4B1B84B9E5FA592B223BF8C2AEDC7BC")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.138 -0400", hash_original_method = "0C080E769BA3B62EBC93442ECCB0FC7D", hash_generated_method = "364C847256E8075C7F6A123C9CDD9B04")
     public K higherKey(K key) {
-        dsTaint.addTaint(key.dsTaint);
+        K varB4EAC82CA7396A68D541C85D26508E83_743838104 = null; //Variable for return #1
         Entry<K, V> entry;
         entry = find(key, HIGHER);
-        {
-            Object var4B8D962F1524E92662DE034798AAC65A_1686057774 = (entry.getKey());
-        } //End flattened ternary
-        return (K)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_743838104 = entry != null ? entry.getKey() : null;
+        addTaint(key.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_743838104.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_743838104;
         // ---------- Original Method ----------
         //Entry<K, V> entry = find(key, HIGHER);
         //return entry != null ? entry.getKey() : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.065 -0400", hash_original_method = "6A8618E17145F23513711DA8498038AE", hash_generated_method = "9DDEED32BAB4C23BACD25C1D7DDED1E9")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.139 -0400", hash_original_method = "6A8618E17145F23513711DA8498038AE", hash_generated_method = "13104699E439DAAB310EF9AE40A00EA8")
     public Comparator<? super K> comparator() {
-        return (Comparator<? super K>)dsTaint.getTaint();
+        Comparator<? super K> varB4EAC82CA7396A68D541C85D26508E83_1362520676 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1362520676 = comparator != NATURAL_ORDER ? comparator : null;
+        varB4EAC82CA7396A68D541C85D26508E83_1362520676.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1362520676;
         // ---------- Original Method ----------
         //return comparator != NATURAL_ORDER ? comparator : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.065 -0400", hash_original_method = "D2C4C51D99D6D10356C2F96D116110D2", hash_generated_method = "A3ABA476C9AD1AC763D659A937DE979C")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.143 -0400", hash_original_method = "D2C4C51D99D6D10356C2F96D116110D2", hash_generated_method = "2BDE35CA34E827BB86FB5D58183419DE")
     @Override
     public Set<Entry<K, V>> entrySet() {
+        Set<Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_277614557 = null; //Variable for return #1
         EntrySet result;
         result = entrySet;
-        {
-            Object var8EEA31F996A0AE22A7B2AC281EA5A60C_1222135581 = ((entrySet = new EntrySet()));
-        } //End flattened ternary
-        return (Set<Entry<K, V>>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_277614557 = result != null ? result : (entrySet = new EntrySet());
+        varB4EAC82CA7396A68D541C85D26508E83_277614557.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_277614557;
         // ---------- Original Method ----------
         //EntrySet result = entrySet;
         //return result != null ? result : (entrySet = new EntrySet());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.066 -0400", hash_original_method = "0E17D4043440FAA66222611D1AC45111", hash_generated_method = "DFE005FCFBF23F654EF70BE552624783")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.147 -0400", hash_original_method = "0E17D4043440FAA66222611D1AC45111", hash_generated_method = "6292445A2E2442A5530F6D4CFFA38A1C")
     @Override
     public Set<K> keySet() {
+        Set<K> varB4EAC82CA7396A68D541C85D26508E83_1173020519 = null; //Variable for return #1
         KeySet result;
         result = keySet;
-        {
-            Object varB5B77DAF0CA06DFD739ACDEAEEA4B87A_1670873147 = ((keySet = new KeySet()));
-        } //End flattened ternary
-        return (Set<K>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1173020519 = result != null ? result : (keySet = new KeySet());
+        varB4EAC82CA7396A68D541C85D26508E83_1173020519.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1173020519;
         // ---------- Original Method ----------
         //KeySet result = keySet;
         //return result != null ? result : (keySet = new KeySet());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.066 -0400", hash_original_method = "016115EA38C293C7AAA8E892AEA754CA", hash_generated_method = "5A94FD65E674A0CB698CD9323ED452E6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.162 -0400", hash_original_method = "016115EA38C293C7AAA8E892AEA754CA", hash_generated_method = "CC0B66F5ED542A7328B86390EA4CC1BA")
     public NavigableSet<K> navigableKeySet() {
+        NavigableSet<K> varB4EAC82CA7396A68D541C85D26508E83_2011577148 = null; //Variable for return #1
         KeySet result;
         result = keySet;
-        {
-            Object varB5B77DAF0CA06DFD739ACDEAEEA4B87A_1280452317 = ((keySet = new KeySet()));
-        } //End flattened ternary
-        return (NavigableSet<K>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2011577148 = result != null ? result : (keySet = new KeySet());
+        varB4EAC82CA7396A68D541C85D26508E83_2011577148.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2011577148;
         // ---------- Original Method ----------
         //KeySet result = keySet;
         //return result != null ? result : (keySet = new KeySet());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.066 -0400", hash_original_method = "DA6DE2093EE8DE46EE4576501F54E528", hash_generated_method = "AADF13A732AF8A75C1CBFBB9DACFEAB8")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.163 -0400", hash_original_method = "DA6DE2093EE8DE46EE4576501F54E528", hash_generated_method = "EC1157DB71467DAAF9C2B8A322E06CBA")
     public NavigableMap<K, V> subMap(K from, boolean fromInclusive, K to, boolean toInclusive) {
-        dsTaint.addTaint(to.dsTaint);
-        dsTaint.addTaint(fromInclusive);
-        dsTaint.addTaint(toInclusive);
-        dsTaint.addTaint(from.dsTaint);
+        NavigableMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_1412209106 = null; //Variable for return #1
         Bound fromBound;
         fromBound = INCLUSIVE;
         fromBound = EXCLUSIVE;
         Bound toBound;
         toBound = INCLUSIVE;
         toBound = EXCLUSIVE;
-        NavigableMap<K, V> var054BAF669D4459134524014BD4A6EFBF_1729153393 = (new BoundedMap(true, from, fromBound, to, toBound));
-        return (NavigableMap<K, V>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1412209106 = new BoundedMap(true, from, fromBound, to, toBound);
+        addTaint(from.getTaint());
+        addTaint(fromInclusive);
+        addTaint(to.getTaint());
+        addTaint(toInclusive);
+        varB4EAC82CA7396A68D541C85D26508E83_1412209106.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1412209106;
         // ---------- Original Method ----------
         //Bound fromBound = fromInclusive ? INCLUSIVE : EXCLUSIVE;
         //Bound toBound = toInclusive ? INCLUSIVE : EXCLUSIVE;
@@ -921,87 +1050,94 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.066 -0400", hash_original_method = "193BA03007E91EBBDB489C20B60BFC88", hash_generated_method = "3CD78198629AB681AF6C5FE52AECD61B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.164 -0400", hash_original_method = "193BA03007E91EBBDB489C20B60BFC88", hash_generated_method = "758E7C3124D39B749795C871B448E71F")
     public SortedMap<K, V> subMap(K fromInclusive, K toExclusive) {
-        dsTaint.addTaint(fromInclusive.dsTaint);
-        dsTaint.addTaint(toExclusive.dsTaint);
-        SortedMap<K, V> var03D08967ED52E0048065A20AFB492FEE_1721891479 = (new BoundedMap(true, fromInclusive, INCLUSIVE, toExclusive, EXCLUSIVE));
-        return (SortedMap<K, V>)dsTaint.getTaint();
+        SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_2135539294 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2135539294 = new BoundedMap(true, fromInclusive, INCLUSIVE, toExclusive, EXCLUSIVE);
+        addTaint(fromInclusive.getTaint());
+        addTaint(toExclusive.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_2135539294.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2135539294;
         // ---------- Original Method ----------
         //return new BoundedMap(true, fromInclusive, INCLUSIVE, toExclusive, EXCLUSIVE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.067 -0400", hash_original_method = "FA312E74B0C04D741489E3323E0FFDFE", hash_generated_method = "5D3A06B549FCB15088A8A0B172226F38")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.168 -0400", hash_original_method = "FA312E74B0C04D741489E3323E0FFDFE", hash_generated_method = "593A8A280FFFB020497775CCC8521A1C")
     public NavigableMap<K, V> headMap(K to, boolean inclusive) {
-        dsTaint.addTaint(inclusive);
-        dsTaint.addTaint(to.dsTaint);
+        NavigableMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_791188867 = null; //Variable for return #1
         Bound toBound;
         toBound = INCLUSIVE;
         toBound = EXCLUSIVE;
-        NavigableMap<K, V> var8D2217666628A0B8F341ABD6E6595BF3_1179556648 = (new BoundedMap(true, null, NO_BOUND, to, toBound));
-        return (NavigableMap<K, V>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_791188867 = new BoundedMap(true, null, NO_BOUND, to, toBound);
+        addTaint(to.getTaint());
+        addTaint(inclusive);
+        varB4EAC82CA7396A68D541C85D26508E83_791188867.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_791188867;
         // ---------- Original Method ----------
         //Bound toBound = inclusive ? INCLUSIVE : EXCLUSIVE;
         //return new BoundedMap(true, null, NO_BOUND, to, toBound);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.067 -0400", hash_original_method = "CAC178CA3C39A0AC08FB27C63F9A635C", hash_generated_method = "7403CBDB6DA0210D847C45AB69C876F2")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.197 -0400", hash_original_method = "CAC178CA3C39A0AC08FB27C63F9A635C", hash_generated_method = "E692D486D9FB75F08BEE6767A38BD5AE")
     public SortedMap<K, V> headMap(K toExclusive) {
-        dsTaint.addTaint(toExclusive.dsTaint);
-        SortedMap<K, V> varDB1C8B07F30243D91E4CCEA365377AAB_1313100317 = (new BoundedMap(true, null, NO_BOUND, toExclusive, EXCLUSIVE));
-        return (SortedMap<K, V>)dsTaint.getTaint();
+        SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_10703893 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_10703893 = new BoundedMap(true, null, NO_BOUND, toExclusive, EXCLUSIVE);
+        addTaint(toExclusive.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_10703893.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_10703893;
         // ---------- Original Method ----------
         //return new BoundedMap(true, null, NO_BOUND, toExclusive, EXCLUSIVE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.067 -0400", hash_original_method = "828BC950C20B857C189141DA99499F09", hash_generated_method = "60DFDB630B946D5BAC73FB4CDF0AE185")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.198 -0400", hash_original_method = "828BC950C20B857C189141DA99499F09", hash_generated_method = "BB3D4861EE99828EF637EAF348DB7399")
     public NavigableMap<K, V> tailMap(K from, boolean inclusive) {
-        dsTaint.addTaint(inclusive);
-        dsTaint.addTaint(from.dsTaint);
+        NavigableMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_399468908 = null; //Variable for return #1
         Bound fromBound;
         fromBound = INCLUSIVE;
         fromBound = EXCLUSIVE;
-        NavigableMap<K, V> var49875892219989D5EF6874329A3A868E_1216013041 = (new BoundedMap(true, from, fromBound, null, NO_BOUND));
-        return (NavigableMap<K, V>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_399468908 = new BoundedMap(true, from, fromBound, null, NO_BOUND);
+        addTaint(from.getTaint());
+        addTaint(inclusive);
+        varB4EAC82CA7396A68D541C85D26508E83_399468908.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_399468908;
         // ---------- Original Method ----------
         //Bound fromBound = inclusive ? INCLUSIVE : EXCLUSIVE;
         //return new BoundedMap(true, from, fromBound, null, NO_BOUND);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.067 -0400", hash_original_method = "79B47D2E0956F27B23E0B18E5FD19D6A", hash_generated_method = "B6D1502D7C21EF253F3D4DFB18553C41")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.198 -0400", hash_original_method = "79B47D2E0956F27B23E0B18E5FD19D6A", hash_generated_method = "468C9D343DCACD465800CE264E16F757")
     public SortedMap<K, V> tailMap(K fromInclusive) {
-        dsTaint.addTaint(fromInclusive.dsTaint);
-        SortedMap<K, V> varAD1E02098D787A3216F85C02FD11D54C_983296305 = (new BoundedMap(true, fromInclusive, INCLUSIVE, null, NO_BOUND));
-        return (SortedMap<K, V>)dsTaint.getTaint();
+        SortedMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_2035670714 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2035670714 = new BoundedMap(true, fromInclusive, INCLUSIVE, null, NO_BOUND);
+        addTaint(fromInclusive.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_2035670714.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2035670714;
         // ---------- Original Method ----------
         //return new BoundedMap(true, fromInclusive, INCLUSIVE, null, NO_BOUND);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.067 -0400", hash_original_method = "5AD6A5A37D3C9366BEF11B75DC396D31", hash_generated_method = "F0D9A095CB53BA798D93C0A81EDA9950")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.199 -0400", hash_original_method = "5AD6A5A37D3C9366BEF11B75DC396D31", hash_generated_method = "D1D90E4847FD1B7DA0A17643E665CA62")
     public NavigableMap<K, V> descendingMap() {
-        NavigableMap<K, V> var12F4366B5F71837F0AE2B014B974F59E_2045622348 = (new BoundedMap(false, null, NO_BOUND, null, NO_BOUND));
-        return (NavigableMap<K, V>)dsTaint.getTaint();
+        NavigableMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_126591233 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_126591233 = new BoundedMap(false, null, NO_BOUND, null, NO_BOUND);
+        varB4EAC82CA7396A68D541C85D26508E83_126591233.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_126591233;
         // ---------- Original Method ----------
         //return new BoundedMap(false, null, NO_BOUND, null, NO_BOUND);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.068 -0400", hash_original_method = "1207DF79B9959BCB242E95030D6177B0", hash_generated_method = "8D90C0FDF628E88D68F543294404B5AE")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.199 -0400", hash_original_method = "1207DF79B9959BCB242E95030D6177B0", hash_generated_method = "7A0E6A0AE9FCB9BA103D535C90FA9D08")
     public NavigableSet<K> descendingKeySet() {
-        NavigableSet<K> var788D31692CC1663DAFB1AB6BA92F5FF1_1268943081 = (new BoundedMap(false, null, NO_BOUND, null, NO_BOUND).navigableKeySet());
-        return (NavigableSet<K>)dsTaint.getTaint();
+        NavigableSet<K> varB4EAC82CA7396A68D541C85D26508E83_1572034429 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1572034429 = new BoundedMap(false, null, NO_BOUND, null, NO_BOUND).navigableKeySet();
+        varB4EAC82CA7396A68D541C85D26508E83_1572034429.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1572034429;
         // ---------- Original Method ----------
         //return new BoundedMap(false, null, NO_BOUND, null, NO_BOUND).navigableKeySet();
     }
@@ -1017,22 +1153,21 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.075 -0400", hash_original_method = "BF81D129CE69F9BEB40CAD27F974F3C8", hash_generated_method = "2B00EAA19914F49D520B512067CAD909")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.314 -0400", hash_original_method = "BF81D129CE69F9BEB40CAD27F974F3C8", hash_generated_method = "E9A000D4C57F2AB4815C02434EFADFCD")
     private void writeObject(ObjectOutputStream stream) throws IOException {
-        dsTaint.addTaint(stream.dsTaint);
         stream.putFields().put("comparator", comparator != NATURAL_ORDER ? comparator : null);
         stream.writeFields();
         stream.writeInt(size);
         {
-            Iterator<Map.Entry<K, V>> var40A6EBFD1C8AB95DF2D9F4B462803CBE_1189813452 = (entrySet()).iterator();
-            var40A6EBFD1C8AB95DF2D9F4B462803CBE_1189813452.hasNext();
-            Map.Entry<K, V> entry = var40A6EBFD1C8AB95DF2D9F4B462803CBE_1189813452.next();
+            Iterator<Map.Entry<K, V>> var40A6EBFD1C8AB95DF2D9F4B462803CBE_1807478970 = (entrySet()).iterator();
+            var40A6EBFD1C8AB95DF2D9F4B462803CBE_1807478970.hasNext();
+            Map.Entry<K, V> entry = var40A6EBFD1C8AB95DF2D9F4B462803CBE_1807478970.next();
             {
                 stream.writeObject(entry.getKey());
                 stream.writeObject(entry.getValue());
             } //End block
         } //End collapsed parenthetic
+        addTaint(stream.getTaint());
         // ---------- Original Method ----------
         //stream.putFields().put("comparator", comparator != NATURAL_ORDER ? comparator : null);
         //stream.writeFields();
@@ -1044,11 +1179,9 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.076 -0400", hash_original_method = "4DE82E48A11AFCCB2DCFEAE704B1F475", hash_generated_method = "FA2578CCED00FB043710439C4B906D7F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.328 -0400", hash_original_method = "4DE82E48A11AFCCB2DCFEAE704B1F475", hash_generated_method = "A6862155C8797DD5C5DCDADAA69B5495")
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-        dsTaint.addTaint(stream.dsTaint);
         GetField fields;
         fields = stream.readFields();
         comparator = (Comparator<? super K>) fields.get("comparator", null);
@@ -1064,6 +1197,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 putInternal((K) stream.readObject(), (V) stream.readObject());
             } //End block
         } //End collapsed parenthetic
+        addTaint(stream.getTaint());
         // ---------- Original Method ----------
         //GetField fields = stream.readFields();
         //comparator = (Comparator<? super K>) fields.get("comparator", null);
@@ -1107,18 +1241,29 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
 
     
     static class Node<K, V> implements Map.Entry<K, V> {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.328 -0400", hash_original_field = "D0E45878043844FFC41AAC437E86B602", hash_generated_field = "8813BD57943FF9B7DFC4722D0BF25C24")
+
         Node<K, V> parent;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.328 -0400", hash_original_field = "811882FECD5C7618D7099EBBD39EA254", hash_generated_field = "25F53C0BDEE77B7CD3BD6D035AA5E15F")
+
         Node<K, V> left;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.328 -0400", hash_original_field = "7C4F29407893C334A6CB7A87BF045C0D", hash_generated_field = "37DD2CA6D859801A463F8F880FD4F30D")
+
         Node<K, V> right;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.328 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "F780C5984CF24E477CB9559E91475987")
+
         K key;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.329 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "A7E8A049E4C72FD5713D3AFD6CBF7C08")
+
         V value;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.329 -0400", hash_original_field = "B435E227D5DD201E1768B2BCB2E0AA81", hash_generated_field = "CE84F1587D182C1F0A32D7CD44443A18")
+
         int height;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.076 -0400", hash_original_method = "62891C3DA898C4CAE2A216E3248BC6D0", hash_generated_method = "920D3DDD011ADE58A63933B8109FEDF0")
-        @DSModeled(DSC.SAFE)
-         Node(Node<K, V> parent, K key) {
-            dsTaint.addTaint(parent.dsTaint);
-            dsTaint.addTaint(key.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.329 -0400", hash_original_method = "62891C3DA898C4CAE2A216E3248BC6D0", hash_generated_method = "DE342B9B0B30391F4646033D3553010C")
+          Node(Node<K, V> parent, K key) {
+            this.parent = parent;
+            this.key = key;
             this.height = 1;
             // ---------- Original Method ----------
             //this.parent = parent;
@@ -1127,10 +1272,9 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.076 -0400", hash_original_method = "81E3C4E28B5839A0B87A03CA341E9BD1", hash_generated_method = "402477AB28495F6134B21C9DEF7C62D1")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.339 -0400", hash_original_method = "81E3C4E28B5839A0B87A03CA341E9BD1", hash_generated_method = "746130FD26DC227E4E6DBA37336B2D15")
          Node<K, V> copy(Node<K, V> parent) {
-            dsTaint.addTaint(parent.dsTaint);
+            Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_298028960 = null; //Variable for return #1
             Node<K, V> result;
             result = new Node<K, V>(parent, key);
             {
@@ -1141,7 +1285,10 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             } //End block
             result.value = value;
             result.height = height;
-            return (Node<K, V>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_298028960 = result;
+            addTaint(parent.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_298028960.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_298028960;
             // ---------- Original Method ----------
             //Node<K, V> result = new Node<K, V>(parent, key);
             //if (left != null) {
@@ -1156,31 +1303,37 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.077 -0400", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "72E8E211F4CBB9A3E7EA7C601BF9517D")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.344 -0400", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "174EC81D76D499F25F2868670FD01F19")
         public K getKey() {
-            return (K)dsTaint.getTaint();
+            K varB4EAC82CA7396A68D541C85D26508E83_178374200 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_178374200 = key;
+            varB4EAC82CA7396A68D541C85D26508E83_178374200.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_178374200;
             // ---------- Original Method ----------
             //return key;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.077 -0400", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "1716B03F3EEDEC9A8CDFDC8FCC55E236")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.366 -0400", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "5264057936A60B37FED235A3B5227B0A")
         public V getValue() {
-            return (V)dsTaint.getTaint();
+            V varB4EAC82CA7396A68D541C85D26508E83_626265389 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_626265389 = value;
+            varB4EAC82CA7396A68D541C85D26508E83_626265389.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_626265389;
             // ---------- Original Method ----------
             //return value;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.077 -0400", hash_original_method = "B73895AEE255DB24C138E57D2456050E", hash_generated_method = "4333C41A04860BA6AEEB70B0D6A9817D")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.367 -0400", hash_original_method = "B73895AEE255DB24C138E57D2456050E", hash_generated_method = "7D957110D61C54E098FEF4FDF761F0DD")
         public V setValue(V value) {
-            dsTaint.addTaint(value.dsTaint);
+            V varB4EAC82CA7396A68D541C85D26508E83_39133181 = null; //Variable for return #1
             V oldValue;
             oldValue = this.value;
-            return (V)dsTaint.getTaint();
+            this.value = value;
+            varB4EAC82CA7396A68D541C85D26508E83_39133181 = oldValue;
+            varB4EAC82CA7396A68D541C85D26508E83_39133181.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_39133181;
             // ---------- Original Method ----------
             //V oldValue = this.value;
             //this.value = value;
@@ -1188,18 +1341,18 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.077 -0400", hash_original_method = "08E0671CAB8873A0A05165CE64371DB8", hash_generated_method = "924E0E7A8BD6BFCD5B948E923CCC4555")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.367 -0400", hash_original_method = "08E0671CAB8873A0A05165CE64371DB8", hash_generated_method = "D7603C793B59681182365A31922C15CD")
         @Override
         public boolean equals(Object o) {
-            dsTaint.addTaint(o.dsTaint);
             {
                 Map.Entry other;
                 other = (Map.Entry) o;
-                boolean var7912CC5897005EB768B2514BECBB8DA1_484686079 = ((key == null ? other.getKey() == null : key.equals(other.getKey()))
+                boolean var7912CC5897005EB768B2514BECBB8DA1_1750837321 = ((key == null ? other.getKey() == null : key.equals(other.getKey()))
                         && (value == null ? other.getValue() == null : value.equals(other.getValue()))); //DSFIXME:  CODE0008: Nested ternary operator in expression
             } //End block
-            return dsTaint.getTaintBoolean();
+            addTaint(o.getTaint());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_592203043 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_592203043;
             // ---------- Original Method ----------
             //if (o instanceof Map.Entry) {
                 //Map.Entry other = (Map.Entry) o;
@@ -1210,44 +1363,65 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.078 -0400", hash_original_method = "6416487D313DFCFD3052C01ADB883217", hash_generated_method = "BB6B9E2570D624452DFF3009566E0E69")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.367 -0400", hash_original_method = "6416487D313DFCFD3052C01ADB883217", hash_generated_method = "2B78BC82777DF31E0AE8BFAC8FBA9E1C")
         @Override
         public int hashCode() {
-            int var4B5981580A705D92ADA4BF72B6E1E3C5_900585867 = ((key == null ? 0 : key.hashCode())
+            int var4B5981580A705D92ADA4BF72B6E1E3C5_1516243261 = ((key == null ? 0 : key.hashCode())
                     ^ (value == null ? 0 : value.hashCode())); //DSFIXME:  CODE0008: Nested ternary operator in expression
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_554216948 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_554216948;
             // ---------- Original Method ----------
             //return (key == null ? 0 : key.hashCode())
                     //^ (value == null ? 0 : value.hashCode());
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.078 -0400", hash_original_method = "D7D954865532EB22F9DFE06F79F78E27", hash_generated_method = "4002110D0218F85825FBB09C78ED072B")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.368 -0400", hash_original_method = "D7D954865532EB22F9DFE06F79F78E27", hash_generated_method = "9DE7777B206312F8A8D9C2F97E554562")
         @Override
         public String toString() {
-            return dsTaint.getTaintString();
+            String varB4EAC82CA7396A68D541C85D26508E83_1265526827 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1265526827 = key + "=" + value;
+            varB4EAC82CA7396A68D541C85D26508E83_1265526827.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1265526827;
             // ---------- Original Method ----------
             //return key + "=" + value;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.078 -0400", hash_original_method = "4A8921E3C940E88A3EF0004D6F064697", hash_generated_method = "332BE24614C49BDD6CDF566A1697C5D7")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.385 -0400", hash_original_method = "4A8921E3C940E88A3EF0004D6F064697", hash_generated_method = "0A78B519DEF18A56F006A0E57EBAE400")
          Node<K, V> next() {
+            Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1835044343 = null; //Variable for return #1
+            Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1880064116 = null; //Variable for return #2
+            Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_324258435 = null; //Variable for return #3
             {
-                Node<K, V> var2EF4FAB4BFD6E9F96FD38031DFD813CF_1445182417 = (right.first());
+                varB4EAC82CA7396A68D541C85D26508E83_1835044343 = right.first();
             } //End block
             Node<K, V> node;
             node = this;
             Node<K, V> parent;
             parent = node.parent;
             {
+                {
+                    varB4EAC82CA7396A68D541C85D26508E83_1880064116 = parent;
+                } //End block
                 node = parent;
                 parent = node.parent;
             } //End block
-            return (Node<K, V>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_324258435 = null;
+            Node<K, V> varA7E53CE21691AB073D9660D615818899_1143920795; //Final return value
+            switch (DroidSafeAndroidRuntime.switchControl) {
+                case 1: //Assign result for return ordinal #1
+                    varA7E53CE21691AB073D9660D615818899_1143920795 = varB4EAC82CA7396A68D541C85D26508E83_1835044343;
+                    break;
+                case 2: //Assign result for return ordinal #2
+                    varA7E53CE21691AB073D9660D615818899_1143920795 = varB4EAC82CA7396A68D541C85D26508E83_1880064116;
+                    break;
+                default:
+                    varA7E53CE21691AB073D9660D615818899_1143920795 = varB4EAC82CA7396A68D541C85D26508E83_324258435;
+                    break;
+            }
+            varA7E53CE21691AB073D9660D615818899_1143920795.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1143920795;
             // ---------- Original Method ----------
             //if (right != null) {
                 //return right.first();
@@ -1265,21 +1439,40 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.079 -0400", hash_original_method = "A5795D04699EE4D7981584600E0900FB", hash_generated_method = "BD9E016863CDD309E78EB0B7C3250CBB")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.386 -0400", hash_original_method = "A5795D04699EE4D7981584600E0900FB", hash_generated_method = "9417C4AFFAEFE53390FC406BB5ADD70D")
         public Node<K, V> prev() {
+            Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1301698205 = null; //Variable for return #1
+            Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1210643816 = null; //Variable for return #2
+            Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1402336919 = null; //Variable for return #3
             {
-                Node<K, V> var79BDCF9DB0B2B23947BF70D4B1A1B748_829432568 = (left.last());
+                varB4EAC82CA7396A68D541C85D26508E83_1301698205 = left.last();
             } //End block
             Node<K, V> node;
             node = this;
             Node<K, V> parent;
             parent = node.parent;
             {
+                {
+                    varB4EAC82CA7396A68D541C85D26508E83_1210643816 = parent;
+                } //End block
                 node = parent;
                 parent = node.parent;
             } //End block
-            return (Node<K, V>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1402336919 = null;
+            Node<K, V> varA7E53CE21691AB073D9660D615818899_91825040; //Final return value
+            switch (DroidSafeAndroidRuntime.switchControl) {
+                case 1: //Assign result for return ordinal #1
+                    varA7E53CE21691AB073D9660D615818899_91825040 = varB4EAC82CA7396A68D541C85D26508E83_1301698205;
+                    break;
+                case 2: //Assign result for return ordinal #2
+                    varA7E53CE21691AB073D9660D615818899_91825040 = varB4EAC82CA7396A68D541C85D26508E83_1210643816;
+                    break;
+                default:
+                    varA7E53CE21691AB073D9660D615818899_91825040 = varB4EAC82CA7396A68D541C85D26508E83_1402336919;
+                    break;
+            }
+            varA7E53CE21691AB073D9660D615818899_91825040.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_91825040;
             // ---------- Original Method ----------
             //if (left != null) {
                 //return left.last();
@@ -1297,9 +1490,9 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.079 -0400", hash_original_method = "4F7C0267C30B98E081694FF304478F8A", hash_generated_method = "14A8E59368CD9AA6DD66A477E22B3184")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.387 -0400", hash_original_method = "4F7C0267C30B98E081694FF304478F8A", hash_generated_method = "5FEE33AD0EA4A6103C2C850284566EE7")
         public Node<K, V> first() {
+            Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1130395481 = null; //Variable for return #1
             Node<K, V> node;
             node = this;
             Node<K, V> child;
@@ -1308,7 +1501,9 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 node = child;
                 child = node.left;
             } //End block
-            return (Node<K, V>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1130395481 = node;
+            varB4EAC82CA7396A68D541C85D26508E83_1130395481.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1130395481;
             // ---------- Original Method ----------
             //Node<K, V> node = this;
             //Node<K, V> child = node.left;
@@ -1320,9 +1515,9 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.079 -0400", hash_original_method = "E5BF79B4B513B5631F4BBC9604CA3FC9", hash_generated_method = "F9BD48458D8CFB57D3E4D053858DC9BC")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.402 -0400", hash_original_method = "E5BF79B4B513B5631F4BBC9604CA3FC9", hash_generated_method = "0817BC618D7A1B71A6815283BB7F8785")
         public Node<K, V> last() {
+            Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_233571363 = null; //Variable for return #1
             Node<K, V> node;
             node = this;
             Node<K, V> child;
@@ -1331,7 +1526,9 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 node = child;
                 child = node.right;
             } //End block
-            return (Node<K, V>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_233571363 = node;
+            varB4EAC82CA7396A68D541C85D26508E83_233571363.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_233571363;
             // ---------- Original Method ----------
             //Node<K, V> node = this;
             //Node<K, V> child = node.right;
@@ -1348,31 +1545,36 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
 
     
     abstract class MapIterator<T> implements Iterator<T> {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.402 -0400", hash_original_field = "D0CAB90D8D20D57E2F2B9BE52F7DD25D", hash_generated_field = "4E383A6783C389E295874CEC0140061D")
+
         protected Node<K, V> next;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.402 -0400", hash_original_field = "98BD1C45684CF587AC2347A92DD7BB51", hash_generated_field = "A9411E67538F8DD40B9344B2A6DD22CB")
+
         protected Node<K, V> last;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.402 -0400", hash_original_field = "587E194BCD330DA9D6CB9DB53EA8709A", hash_generated_field = "AB0DDF01BBCC99511DA5FB1867F9AF26")
+
         protected int expectedModCount = modCount;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.079 -0400", hash_original_method = "1934503C2038D80E73C2C0A3DE09B0C3", hash_generated_method = "893CA80EB94644EA04161024646A8CC3")
-        @DSModeled(DSC.SAFE)
-         MapIterator(Node<K, V> next) {
-            dsTaint.addTaint(next.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.403 -0400", hash_original_method = "1934503C2038D80E73C2C0A3DE09B0C3", hash_generated_method = "8E0327A33AFF8D45EE12C60F2FAE7675")
+          MapIterator(Node<K, V> next) {
+            this.next = next;
             // ---------- Original Method ----------
             //this.next = next;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.080 -0400", hash_original_method = "5C1B7B0DA20667590A4D5C5559468A28", hash_generated_method = "29B457758B43EA4A6E8E90F7268F57BD")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.403 -0400", hash_original_method = "5C1B7B0DA20667590A4D5C5559468A28", hash_generated_method = "E4D033EFD39EAE1CE85E4E6303C9EFE5")
         public boolean hasNext() {
-            return dsTaint.getTaintBoolean();
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_404768930 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_404768930;
             // ---------- Original Method ----------
             //return next != null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.080 -0400", hash_original_method = "85C80BB4AD318538DB8131E722149B15", hash_generated_method = "CCC70D77FAA6F251EB6084169DB32EA0")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.408 -0400", hash_original_method = "85C80BB4AD318538DB8131E722149B15", hash_generated_method = "87B45192B465723ED225B75CFCB294FF")
         protected Node<K, V> stepForward() {
+            Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1679711420 = null; //Variable for return #1
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
@@ -1381,7 +1583,9 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             } //End block
             last = next;
             next = next.next();
-            return (Node<K, V>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1679711420 = last;
+            varB4EAC82CA7396A68D541C85D26508E83_1679711420.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1679711420;
             // ---------- Original Method ----------
             //if (next == null) {
                 //throw new NoSuchElementException();
@@ -1395,9 +1599,9 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.081 -0400", hash_original_method = "A54C5D61E9DBD724A09A36F78C304124", hash_generated_method = "707DAD764CFB8BF9CB4652333D4EC053")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.421 -0400", hash_original_method = "A54C5D61E9DBD724A09A36F78C304124", hash_generated_method = "C4FBC65E1380CAAE53E9BCC8619727A0")
         protected Node<K, V> stepBackward() {
+            Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_587793547 = null; //Variable for return #1
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
@@ -1406,7 +1610,9 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             } //End block
             last = next;
             next = next.prev();
-            return (Node<K, V>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_587793547 = last;
+            varB4EAC82CA7396A68D541C85D26508E83_587793547.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_587793547;
             // ---------- Original Method ----------
             //if (next == null) {
                 //throw new NoSuchElementException();
@@ -1420,8 +1626,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.081 -0400", hash_original_method = "36CB2F7F3A40368DEE67850156136E6A", hash_generated_method = "68E79A243AD9DF221A3356BB1D7AE83F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.422 -0400", hash_original_method = "36CB2F7F3A40368DEE67850156136E6A", hash_generated_method = "68E79A243AD9DF221A3356BB1D7AE83F")
         public void remove() {
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
@@ -1445,37 +1650,34 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     
     class EntrySet extends AbstractSet<Map.Entry<K, V>> {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.081 -0400", hash_original_method = "2F953926D7C5D976A09AA3C5A1A35BD1", hash_generated_method = "2F953926D7C5D976A09AA3C5A1A35BD1")
-                public EntrySet ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.422 -0400", hash_original_method = "AA90B2AD56C6E037D76F6D8ACC9327A5", hash_generated_method = "AA90B2AD56C6E037D76F6D8ACC9327A5")
+        public EntrySet ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.082 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "2127DA49D089D6CBC77B455A0DBDC124")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.422 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "FB502B8DB06B74D83FE034CE0520F2C8")
         @Override
         public int size() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1977113486 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1977113486;
             // ---------- Original Method ----------
             //return size;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.082 -0400", hash_original_method = "B4D4FA13F54A295418FF58C47A14DDE9", hash_generated_method = "7FE61748A4E2C69C95C8A855D9682FF9")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.423 -0400", hash_original_method = "B4D4FA13F54A295418FF58C47A14DDE9", hash_generated_method = "354C2CC948152E82EE5DA972E7447741")
         @Override
         public Iterator<Entry<K, V>> iterator() {
-            Iterator<Entry<K, V>> varB1AFC3FD067115C02B8FF8F72F2A29FD_162481887 = (new MapIterator<Entry<K, V>>(root == null ? null : root.first()) {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.082 -0400", hash_original_method = "86F000434530E8D6B0755FFE9A16C5F8", hash_generated_method = "E4EFC85793562BACBF2B8A9B4335585A")
-                //DSFIXME:  CODE0002: Requires DSC value to be set
+            Iterator<Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_1667188327 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1667188327 = new MapIterator<Entry<K, V>>(root == null ? null : root.first()) {
                 public Entry<K, V> next() {
-                    Entry<K, V> var7D35D3E95C131BA5C99A60A5908903AD_11100728 = (stepForward());
-                    return (Entry<K, V>)dsTaint.getTaint();
-                    // ---------- Original Method ----------
-                    //return stepForward();
+                    return stepForward();
                 }
-}); //DSFIXME:  CODE0008: Nested ternary operator in expression
-            return (Iterator<Entry<K, V>>)dsTaint.getTaint();
+            };
+            varB4EAC82CA7396A68D541C85D26508E83_1667188327.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1667188327;
             // ---------- Original Method ----------
             //return new MapIterator<Entry<K, V>>(root == null ? null : root.first()) {
                 //public Entry<K, V> next() {
@@ -1485,27 +1687,27 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.083 -0400", hash_original_method = "AAE5A29808B951CC80BD03F648B6A63A", hash_generated_method = "624FEFCF364703A1D99B22EB4CF7DE1F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.436 -0400", hash_original_method = "AAE5A29808B951CC80BD03F648B6A63A", hash_generated_method = "1B49D75FECE5B31A3E254CF2A0A748A8")
         @Override
         public boolean contains(Object o) {
-            dsTaint.addTaint(o.dsTaint);
-            boolean var12117A785F30278636E2FCE711DC72F4_200890869 = (o instanceof Entry && findByEntry((Entry<?, ?>) o) != null);
-            return dsTaint.getTaintBoolean();
+            boolean var12117A785F30278636E2FCE711DC72F4_129803034 = (o instanceof Entry && findByEntry((Entry<?, ?>) o) != null);
+            addTaint(o.getTaint());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1073218312 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1073218312;
             // ---------- Original Method ----------
             //return o instanceof Entry && findByEntry((Entry<?, ?>) o) != null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.083 -0400", hash_original_method = "50402191313F22EA9CF206F14CC9A5A4", hash_generated_method = "B54D7445B08C198D0EE718B28E4CAEC5")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.437 -0400", hash_original_method = "50402191313F22EA9CF206F14CC9A5A4", hash_generated_method = "CB3A6983E05A03348601E9BC9DDBB7F2")
         @Override
         public boolean remove(Object o) {
-            dsTaint.addTaint(o.dsTaint);
             Node<K, V> node;
             node = findByEntry((Entry<?, ?>) o);
             removeInternal(node);
-            return dsTaint.getTaintBoolean();
+            addTaint(o.getTaint());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_726091678 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_726091678;
             // ---------- Original Method ----------
             //if (!(o instanceof Entry)) {
                 //return false;
@@ -1519,8 +1721,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.083 -0400", hash_original_method = "1CC2A082C181027407DFF573950B6D85", hash_generated_method = "E132377B1C3D8FD49066BD79A34C72A8")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.438 -0400", hash_original_method = "1CC2A082C181027407DFF573950B6D85", hash_generated_method = "E132377B1C3D8FD49066BD79A34C72A8")
         @Override
         public void clear() {
             TreeMap.this.clear();
@@ -1535,37 +1736,34 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
     
     class KeySet extends AbstractSet<K> implements NavigableSet<K> {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.083 -0400", hash_original_method = "AD2AA12DF2DCFDBEC9B4D1AB308E571A", hash_generated_method = "AD2AA12DF2DCFDBEC9B4D1AB308E571A")
-                public KeySet ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.438 -0400", hash_original_method = "8EEFEB9CAE8A4D06D5B6F35742C5D3CF", hash_generated_method = "8EEFEB9CAE8A4D06D5B6F35742C5D3CF")
+        public KeySet ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.084 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "2127DA49D089D6CBC77B455A0DBDC124")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.438 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "F4B7022C185F6BDA669EAF4D835ED4D0")
         @Override
         public int size() {
-            return dsTaint.getTaintInt();
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1122051493 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1122051493;
             // ---------- Original Method ----------
             //return size;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.084 -0400", hash_original_method = "7A518595D7BAAD9E696AF11FE92FFDBE", hash_generated_method = "D9AA0B4FB67ED6EF4D248063C5AEB6BB")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.454 -0400", hash_original_method = "7A518595D7BAAD9E696AF11FE92FFDBE", hash_generated_method = "66B2BA53613BBEE602C70001856D7278")
         @Override
         public Iterator<K> iterator() {
-            Iterator<K> var2B1B602FB3020AA4BC610E88B5AD841C_461927412 = (new MapIterator<K>(root == null ? null : root.first()) {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.084 -0400", hash_original_method = "E581E07EB6E816B7B0F53BDF6AE52418", hash_generated_method = "68CAD0D011F9DF88D2CD8822E2F886E8")
-                //DSFIXME:  CODE0002: Requires DSC value to be set
+            Iterator<K> varB4EAC82CA7396A68D541C85D26508E83_530786803 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_530786803 = new MapIterator<K>(root == null ? null : root.first()) {
                 public K next() {
-                    K varF1617C620A609839F1FA2D64FEFC594A_2134683579 = (stepForward().key);
-                    return (K)dsTaint.getTaint();
-                    // ---------- Original Method ----------
-                    //return stepForward().key;
+                    return stepForward().key;
                 }
-}); //DSFIXME:  CODE0008: Nested ternary operator in expression
-            return (Iterator<K>)dsTaint.getTaint();
+            };
+            varB4EAC82CA7396A68D541C85D26508E83_530786803.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_530786803;
             // ---------- Original Method ----------
             //return new MapIterator<K>(root == null ? null : root.first()) {
                 //public K next() {
@@ -1575,20 +1773,16 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.085 -0400", hash_original_method = "C8D968F3C5FE84BB3D2A53544A3D4B19", hash_generated_method = "5D0045EFF4103EC26FDEFEF228BB9E31")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.455 -0400", hash_original_method = "C8D968F3C5FE84BB3D2A53544A3D4B19", hash_generated_method = "57371E8263567EDC5201E383B4AFF949")
         public Iterator<K> descendingIterator() {
-            Iterator<K> varAA8F5FB6EB0D7024407297363765F6B1_69573043 = (new MapIterator<K>(root == null ? null : root.last()) {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.085 -0400", hash_original_method = "30CD89883F8CEF7ECE49A6E9F42F1507", hash_generated_method = "8020805957B2BE2E668866895FD4CA73")
-                //DSFIXME:  CODE0002: Requires DSC value to be set
+            Iterator<K> varB4EAC82CA7396A68D541C85D26508E83_535909122 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_535909122 = new MapIterator<K>(root == null ? null : root.last()) {
                 public K next() {
-                    K var71FF50A7997C2220EA4C7EFB29BC0587_69984961 = (stepBackward().key);
-                    return (K)dsTaint.getTaint();
-                    // ---------- Original Method ----------
-                    //return stepBackward().key;
+                    return stepBackward().key;
                 }
-}); //DSFIXME:  CODE0008: Nested ternary operator in expression
-            return (Iterator<K>)dsTaint.getTaint();
+            };
+            varB4EAC82CA7396A68D541C85D26508E83_535909122.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_535909122;
             // ---------- Original Method ----------
             //return new MapIterator<K>(root == null ? null : root.last()) {
                 //public K next() {
@@ -1598,32 +1792,31 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.085 -0400", hash_original_method = "55474555B71DFC8666AC2B6E4F0261A5", hash_generated_method = "DA1E255EE5E460B50E1FAF73F3001373")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.455 -0400", hash_original_method = "55474555B71DFC8666AC2B6E4F0261A5", hash_generated_method = "6034C12F80CCE43C43A97F90A76F2E3D")
         @Override
         public boolean contains(Object o) {
-            dsTaint.addTaint(o.dsTaint);
-            boolean var997BAB39B2F072D5CD66A271F3B6E196_687571590 = (containsKey(o));
-            return dsTaint.getTaintBoolean();
+            boolean var997BAB39B2F072D5CD66A271F3B6E196_775594252 = (containsKey(o));
+            addTaint(o.getTaint());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1773506478 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1773506478;
             // ---------- Original Method ----------
             //return containsKey(o);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.085 -0400", hash_original_method = "174345B10BAB0003712B28F94B9BEA53", hash_generated_method = "75E9D9B5746B2EE74C60CB6DEF946BBC")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.456 -0400", hash_original_method = "174345B10BAB0003712B28F94B9BEA53", hash_generated_method = "CA119B39B7003B3642023C2B80BD804B")
         @Override
         public boolean remove(Object key) {
-            dsTaint.addTaint(key.dsTaint);
-            boolean varE16D747D3226990FB8F8723539274182_692249934 = (removeInternalByKey(key) != null);
-            return dsTaint.getTaintBoolean();
+            boolean varE16D747D3226990FB8F8723539274182_1460386086 = (removeInternalByKey(key) != null);
+            addTaint(key.getTaint());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_937117151 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_937117151;
             // ---------- Original Method ----------
             //return removeInternalByKey(key) != null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.086 -0400", hash_original_method = "1CC2A082C181027407DFF573950B6D85", hash_generated_method = "E132377B1C3D8FD49066BD79A34C72A8")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.457 -0400", hash_original_method = "1CC2A082C181027407DFF573950B6D85", hash_generated_method = "E132377B1C3D8FD49066BD79A34C72A8")
         @Override
         public void clear() {
             TreeMap.this.clear();
@@ -1632,187 +1825,199 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.086 -0400", hash_original_method = "E1A1305471DEE1FE749764F6E03BE3A0", hash_generated_method = "CA15790FBBCE75A3C6F57C5F72B7F8C1")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.457 -0400", hash_original_method = "E1A1305471DEE1FE749764F6E03BE3A0", hash_generated_method = "FA2A703CC23F29CE172BC54597F850DF")
         public Comparator<? super K> comparator() {
-            Comparator<? super K> var2487665AC7A2CC89F64C1A7B4151CFFF_1568685339 = (TreeMap.this.comparator());
-            return (Comparator<? super K>)dsTaint.getTaint();
+            Comparator<? super K> varB4EAC82CA7396A68D541C85D26508E83_254927657 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_254927657 = TreeMap.this.comparator();
+            varB4EAC82CA7396A68D541C85D26508E83_254927657.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_254927657;
             // ---------- Original Method ----------
             //return TreeMap.this.comparator();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.086 -0400", hash_original_method = "3067DEE01FBBBFD061436C7D4561F434", hash_generated_method = "F14FD0F5802EC50202BB7392EF05ED21")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.461 -0400", hash_original_method = "3067DEE01FBBBFD061436C7D4561F434", hash_generated_method = "394997E46671D2651CCA73374EF81883")
         public K first() {
-            K varEA9ABE1AF2A9358BDAA77226B4553F9C_1656939477 = (firstKey());
-            return (K)dsTaint.getTaint();
+            K varB4EAC82CA7396A68D541C85D26508E83_1973624357 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1973624357 = firstKey();
+            varB4EAC82CA7396A68D541C85D26508E83_1973624357.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1973624357;
             // ---------- Original Method ----------
             //return firstKey();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.086 -0400", hash_original_method = "39C87F788E647BCD3FB86FFF34D7EF10", hash_generated_method = "ED3D47BF11B140A3549E7673D1D7F8A7")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.480 -0400", hash_original_method = "39C87F788E647BCD3FB86FFF34D7EF10", hash_generated_method = "18709D716EE1742A51A5E6D4E4EEAC4B")
         public K last() {
-            K var4E5EB7D1078667D29EA70FAC2161BB72_822065343 = (lastKey());
-            return (K)dsTaint.getTaint();
+            K varB4EAC82CA7396A68D541C85D26508E83_2128432469 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_2128432469 = lastKey();
+            varB4EAC82CA7396A68D541C85D26508E83_2128432469.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2128432469;
             // ---------- Original Method ----------
             //return lastKey();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.086 -0400", hash_original_method = "5CFE05BF706A06BBB501067306F1B9ED", hash_generated_method = "23029731CCABA7AC886AC425385791C2")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.481 -0400", hash_original_method = "5CFE05BF706A06BBB501067306F1B9ED", hash_generated_method = "23A9A99F0626664BA77CC7B437DBDAC7")
         public K lower(K key) {
-            dsTaint.addTaint(key.dsTaint);
-            K var475BD0FCF76DB09FCE7B3689FBCF1B30_1187802016 = (lowerKey(key));
-            return (K)dsTaint.getTaint();
+            K varB4EAC82CA7396A68D541C85D26508E83_1640735106 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1640735106 = lowerKey(key);
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1640735106.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1640735106;
             // ---------- Original Method ----------
             //return lowerKey(key);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.087 -0400", hash_original_method = "10BABB7BB2E837824A13AAE89EE7EC6F", hash_generated_method = "84B2F6A802189B29A9D23DBA856FA38F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.481 -0400", hash_original_method = "10BABB7BB2E837824A13AAE89EE7EC6F", hash_generated_method = "FCD5F60964A88B8947E573FC9B24D55A")
         public K floor(K key) {
-            dsTaint.addTaint(key.dsTaint);
-            K var568F19E8CED46AB67D471C07AEF14D94_1471873992 = (floorKey(key));
-            return (K)dsTaint.getTaint();
+            K varB4EAC82CA7396A68D541C85D26508E83_75393776 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_75393776 = floorKey(key);
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_75393776.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_75393776;
             // ---------- Original Method ----------
             //return floorKey(key);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.087 -0400", hash_original_method = "2AD4706A6D818B709A1E2CA64B48B4B9", hash_generated_method = "FE85A27761D0B6AAD9DC14EEEF98C4CE")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.482 -0400", hash_original_method = "2AD4706A6D818B709A1E2CA64B48B4B9", hash_generated_method = "5562492C1D3FA8A759FA641BCDB7974F")
         public K ceiling(K key) {
-            dsTaint.addTaint(key.dsTaint);
-            K varE800CF10B89C185E918CFD2CE3432015_531066183 = (ceilingKey(key));
-            return (K)dsTaint.getTaint();
+            K varB4EAC82CA7396A68D541C85D26508E83_893649480 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_893649480 = ceilingKey(key);
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_893649480.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_893649480;
             // ---------- Original Method ----------
             //return ceilingKey(key);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.087 -0400", hash_original_method = "8CC63649234BFC57DB10A2387AE34DD6", hash_generated_method = "5683FD938382384BACFCD6F11E3F5532")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.482 -0400", hash_original_method = "8CC63649234BFC57DB10A2387AE34DD6", hash_generated_method = "332231079BA14D9E27ACA435597181D8")
         public K higher(K key) {
-            dsTaint.addTaint(key.dsTaint);
-            K var3BD8F3923A952E40F404AE2D34B50021_1665247454 = (higherKey(key));
-            return (K)dsTaint.getTaint();
+            K varB4EAC82CA7396A68D541C85D26508E83_1278730216 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1278730216 = higherKey(key);
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1278730216.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1278730216;
             // ---------- Original Method ----------
             //return higherKey(key);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.088 -0400", hash_original_method = "0E3C9584B722234668005FBA598A1EC0", hash_generated_method = "25077FA3002DEB5CE23BDE0C25B46D12")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.483 -0400", hash_original_method = "0E3C9584B722234668005FBA598A1EC0", hash_generated_method = "220930BFD7B4BEC7D1266BBF340FB55B")
         public K pollFirst() {
+            K varB4EAC82CA7396A68D541C85D26508E83_1875695914 = null; //Variable for return #1
             Entry<K, V> entry;
             entry = internalPollFirstEntry();
-            {
-                Object var89F8384D8DD2CA583B7A90F311F2A4B1_1467710947 = (entry.getKey());
-            } //End flattened ternary
-            return (K)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1875695914 = entry != null ? entry.getKey() : null;
+            varB4EAC82CA7396A68D541C85D26508E83_1875695914.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1875695914;
             // ---------- Original Method ----------
             //Entry<K, V> entry = internalPollFirstEntry();
             //return entry != null ? entry.getKey() : null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.088 -0400", hash_original_method = "ABD0A1CFCFA4D3D1F242F2375F97811C", hash_generated_method = "E379AE2CA4B266BCA29BACE12F972BC6")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.483 -0400", hash_original_method = "ABD0A1CFCFA4D3D1F242F2375F97811C", hash_generated_method = "6407F44028BA2ADF463D502C24B786FB")
         public K pollLast() {
+            K varB4EAC82CA7396A68D541C85D26508E83_4440206 = null; //Variable for return #1
             Entry<K, V> entry;
             entry = internalPollLastEntry();
-            {
-                Object var89F8384D8DD2CA583B7A90F311F2A4B1_2067800121 = (entry.getKey());
-            } //End flattened ternary
-            return (K)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_4440206 = entry != null ? entry.getKey() : null;
+            varB4EAC82CA7396A68D541C85D26508E83_4440206.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_4440206;
             // ---------- Original Method ----------
             //Entry<K, V> entry = internalPollLastEntry();
             //return entry != null ? entry.getKey() : null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.088 -0400", hash_original_method = "21828DA90728B75367EF3BEE7D62C832", hash_generated_method = "A17F3E32C5D847E252D7841412F75608")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.497 -0400", hash_original_method = "21828DA90728B75367EF3BEE7D62C832", hash_generated_method = "FBCC20573443269E240ED7C3F725556A")
         public NavigableSet<K> subSet(K from, boolean fromInclusive, K to, boolean toInclusive) {
-            dsTaint.addTaint(to.dsTaint);
-            dsTaint.addTaint(fromInclusive);
-            dsTaint.addTaint(toInclusive);
-            dsTaint.addTaint(from.dsTaint);
-            NavigableSet<K> varF92FE939FAADF410928C920688845576_803667973 = (TreeMap.this.subMap(from, fromInclusive, to, toInclusive).navigableKeySet());
-            return (NavigableSet<K>)dsTaint.getTaint();
+            NavigableSet<K> varB4EAC82CA7396A68D541C85D26508E83_1307472118 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1307472118 = TreeMap.this.subMap(from, fromInclusive, to, toInclusive).navigableKeySet();
+            addTaint(from.getTaint());
+            addTaint(fromInclusive);
+            addTaint(to.getTaint());
+            addTaint(toInclusive);
+            varB4EAC82CA7396A68D541C85D26508E83_1307472118.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1307472118;
             // ---------- Original Method ----------
             //return TreeMap.this.subMap(from, fromInclusive, to, toInclusive).navigableKeySet();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.089 -0400", hash_original_method = "B37C6130D4B0113815E317EEB111D1E9", hash_generated_method = "896453655A69D211A2D287DC21F2DCA1")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.498 -0400", hash_original_method = "B37C6130D4B0113815E317EEB111D1E9", hash_generated_method = "0F342E490AAA70F8AAC9E37619F94516")
         public SortedSet<K> subSet(K fromInclusive, K toExclusive) {
-            dsTaint.addTaint(fromInclusive.dsTaint);
-            dsTaint.addTaint(toExclusive.dsTaint);
-            SortedSet<K> varC6FAFDAF1D0EB98F47E3BA77B4064028_218587177 = (TreeMap.this.subMap(fromInclusive, true, toExclusive, false).navigableKeySet());
-            return (SortedSet<K>)dsTaint.getTaint();
+            SortedSet<K> varB4EAC82CA7396A68D541C85D26508E83_2037566648 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_2037566648 = TreeMap.this.subMap(fromInclusive, true, toExclusive, false).navigableKeySet();
+            addTaint(fromInclusive.getTaint());
+            addTaint(toExclusive.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_2037566648.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2037566648;
             // ---------- Original Method ----------
             //return TreeMap.this.subMap(fromInclusive, true, toExclusive, false).navigableKeySet();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.089 -0400", hash_original_method = "15C518A93EE21ED6E81237BD492369B4", hash_generated_method = "3C795AC16B9FC390E87D1F2E3FCE09A0")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.511 -0400", hash_original_method = "15C518A93EE21ED6E81237BD492369B4", hash_generated_method = "4572F69C0543CA12CC7981CA12C792E6")
         public NavigableSet<K> headSet(K to, boolean inclusive) {
-            dsTaint.addTaint(inclusive);
-            dsTaint.addTaint(to.dsTaint);
-            NavigableSet<K> varB37A3AC42A2B1005AB3B277A761DA730_1315233048 = (TreeMap.this.headMap(to, inclusive).navigableKeySet());
-            return (NavigableSet<K>)dsTaint.getTaint();
+            NavigableSet<K> varB4EAC82CA7396A68D541C85D26508E83_1422345852 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1422345852 = TreeMap.this.headMap(to, inclusive).navigableKeySet();
+            addTaint(to.getTaint());
+            addTaint(inclusive);
+            varB4EAC82CA7396A68D541C85D26508E83_1422345852.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1422345852;
             // ---------- Original Method ----------
             //return TreeMap.this.headMap(to, inclusive).navigableKeySet();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.090 -0400", hash_original_method = "1E1BD4D122D1F75D80BDC2474EF32137", hash_generated_method = "FBE925A50B7925C09ECEC80D80776DBC")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.511 -0400", hash_original_method = "1E1BD4D122D1F75D80BDC2474EF32137", hash_generated_method = "F2A7CE28D00699D0A0BA82218EBF20C5")
         public SortedSet<K> headSet(K toExclusive) {
-            dsTaint.addTaint(toExclusive.dsTaint);
-            SortedSet<K> var4A1C3A9FC62B2A3888489C1D3F44AFE1_1183789134 = (TreeMap.this.headMap(toExclusive, false).navigableKeySet());
-            return (SortedSet<K>)dsTaint.getTaint();
+            SortedSet<K> varB4EAC82CA7396A68D541C85D26508E83_1291137297 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1291137297 = TreeMap.this.headMap(toExclusive, false).navigableKeySet();
+            addTaint(toExclusive.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1291137297.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1291137297;
             // ---------- Original Method ----------
             //return TreeMap.this.headMap(toExclusive, false).navigableKeySet();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.091 -0400", hash_original_method = "3007AE414049BD587DD344AEC05F7630", hash_generated_method = "AA87E81C9836815691A7EC33C0C4C66F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.512 -0400", hash_original_method = "3007AE414049BD587DD344AEC05F7630", hash_generated_method = "44E818573A9B00C11DEC483488C9CC9C")
         public NavigableSet<K> tailSet(K from, boolean inclusive) {
-            dsTaint.addTaint(inclusive);
-            dsTaint.addTaint(from.dsTaint);
-            NavigableSet<K> var79AC81160E828D49DCF9E0468A96BE96_1710893773 = (TreeMap.this.tailMap(from, inclusive).navigableKeySet());
-            return (NavigableSet<K>)dsTaint.getTaint();
+            NavigableSet<K> varB4EAC82CA7396A68D541C85D26508E83_1079126447 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1079126447 = TreeMap.this.tailMap(from, inclusive).navigableKeySet();
+            addTaint(from.getTaint());
+            addTaint(inclusive);
+            varB4EAC82CA7396A68D541C85D26508E83_1079126447.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1079126447;
             // ---------- Original Method ----------
             //return TreeMap.this.tailMap(from, inclusive).navigableKeySet();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.091 -0400", hash_original_method = "4DA58A152F26E7271643C0314BDDDB69", hash_generated_method = "83AD6783029D571E60924D8ED654B36B")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.512 -0400", hash_original_method = "4DA58A152F26E7271643C0314BDDDB69", hash_generated_method = "9808182751C92FD0EE43F6B0C419444C")
         public SortedSet<K> tailSet(K fromInclusive) {
-            dsTaint.addTaint(fromInclusive.dsTaint);
-            SortedSet<K> var787DDC5D63F27B9350D66F52D279622A_1926997917 = (TreeMap.this.tailMap(fromInclusive, true).navigableKeySet());
-            return (SortedSet<K>)dsTaint.getTaint();
+            SortedSet<K> varB4EAC82CA7396A68D541C85D26508E83_538922708 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_538922708 = TreeMap.this.tailMap(fromInclusive, true).navigableKeySet();
+            addTaint(fromInclusive.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_538922708.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_538922708;
             // ---------- Original Method ----------
             //return TreeMap.this.tailMap(fromInclusive, true).navigableKeySet();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.091 -0400", hash_original_method = "1704B63D396CC7A2877008D7CE821A20", hash_generated_method = "08C305CDC8BCA4205CC749999B6521BB")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.513 -0400", hash_original_method = "1704B63D396CC7A2877008D7CE821A20", hash_generated_method = "9E6029833A85D9D01AA087D0DDBCAC9F")
         public NavigableSet<K> descendingSet() {
-            NavigableSet<K> var929F6B70CAAA59E1766EAB1B7C2C1384_1107434004 = (new BoundedMap(false, null, NO_BOUND, null, NO_BOUND).navigableKeySet());
-            return (NavigableSet<K>)dsTaint.getTaint();
+            NavigableSet<K> varB4EAC82CA7396A68D541C85D26508E83_397621598 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_397621598 = new BoundedMap(false, null, NO_BOUND, null, NO_BOUND).navigableKeySet();
+            varB4EAC82CA7396A68D541C85D26508E83_397621598.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_397621598;
             // ---------- Original Method ----------
             //return new BoundedMap(false, null, NO_BOUND, null, NO_BOUND).navigableKeySet();
         }
@@ -1853,25 +2058,33 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
 
     
     final class BoundedMap extends AbstractMap<K, V> implements NavigableMap<K, V>, Serializable {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.513 -0400", hash_original_field = "9C9AB624360885FCF93B7643C93B6748", hash_generated_field = "BC70714ECDFF7490EBA777F7B93EF439")
+
         private transient boolean ascending;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.513 -0400", hash_original_field = "D98A07F84921B24EE30F86FD8CD85C3C", hash_generated_field = "EEAE90D76D5F301C983CBE52CC99E066")
+
         private transient K from;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.513 -0400", hash_original_field = "8632C30284D52AAEE2237CDB621740BD", hash_generated_field = "8ED035FAE673A429CD23C9E2219BCCAB")
+
         private transient Bound fromBound;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.513 -0400", hash_original_field = "01B6E20344B68835C5ED1DDEDF20D531", hash_generated_field = "61687A1A941C5D04AF6012AAB46409E8")
+
         private transient K to;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.513 -0400", hash_original_field = "7CA17358064D231F30EBE9DEA6953FC3", hash_generated_field = "AA1B7E444C65D0CB4426137E2FCF44C2")
+
         private transient Bound toBound;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.513 -0400", hash_original_field = "D4E06C98DBA5A687CB6C836BF538EC81", hash_generated_field = "71A92C43EAA002A1D21DF22BACB230F5")
+
         private transient BoundedEntrySet entrySet;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.513 -0400", hash_original_field = "3E8ABCE844B6A8A95397486A3899B536", hash_generated_field = "8C5699591CBD5CFF428C3B6D5369D846")
+
         private transient BoundedKeySet keySet;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.092 -0400", hash_original_method = "EAF770A918D33B7B0B98CAAC01791FDE", hash_generated_method = "6A569243BB97CAE9EA478E10F4004343")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         BoundedMap(boolean ascending, K from, Bound fromBound, K to, Bound toBound) {
-            dsTaint.addTaint(to.dsTaint);
-            dsTaint.addTaint(toBound.dsTaint);
-            dsTaint.addTaint(fromBound.dsTaint);
-            dsTaint.addTaint(ascending);
-            dsTaint.addTaint(from.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.517 -0400", hash_original_method = "EAF770A918D33B7B0B98CAAC01791FDE", hash_generated_method = "9A90164F7EAA2E91C7CDFA454F04C7C5")
+          BoundedMap(boolean ascending, K from, Bound fromBound, K to, Bound toBound) {
             {
                 {
-                    boolean varDF5DEF900BBEA61318C4B860BE963A0C_184836183 = (comparator.compare(from, to) > 0);
+                    boolean varDF5DEF900BBEA61318C4B860BE963A0C_389973462 = (comparator.compare(from, to) > 0);
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(from + " > " + to);
                     } //End block
@@ -1883,6 +2096,11 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             {
                 comparator.compare(to, to);
             } //End block
+            this.ascending = ascending;
+            this.from = from;
+            this.fromBound = fromBound;
+            this.to = to;
+            this.toBound = toBound;
             // ---------- Original Method ----------
             //if (fromBound != NO_BOUND && toBound != NO_BOUND) {
                 //if (comparator.compare(from, to) > 0) {
@@ -1901,69 +2119,68 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.092 -0400", hash_original_method = "0165FF9BE82C19127CA9F7A8EFBCC5F6", hash_generated_method = "43AFB3418896CDA4367E8F7FE6719D35")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.533 -0400", hash_original_method = "0165FF9BE82C19127CA9F7A8EFBCC5F6", hash_generated_method = "E25C36324C621305BB211655662E4891")
         @Override
         public int size() {
-            int varFAAE4FEB39919E901926F6E4652B275E_492640105 = (count(entrySet().iterator()));
-            return dsTaint.getTaintInt();
+            int varFAAE4FEB39919E901926F6E4652B275E_206911631 = (count(entrySet().iterator()));
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_583061020 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_583061020;
             // ---------- Original Method ----------
             //return count(entrySet().iterator());
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.092 -0400", hash_original_method = "25ACC65054E604EE8ADED763702CFAA7", hash_generated_method = "2D335581DFE852C4525165515FA62E89")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.533 -0400", hash_original_method = "25ACC65054E604EE8ADED763702CFAA7", hash_generated_method = "6F7AE07724D1221953599B2AB63C04C3")
         @Override
         public boolean isEmpty() {
-            boolean var19B0E21581FF256C0BE5D0F9299E6746_1836639488 = (endpoint(true) == null);
-            return dsTaint.getTaintBoolean();
+            boolean var19B0E21581FF256C0BE5D0F9299E6746_204381456 = (endpoint(true) == null);
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_236880704 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_236880704;
             // ---------- Original Method ----------
             //return endpoint(true) == null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.092 -0400", hash_original_method = "00AB887CF1625BBE035D7C27E115F8F5", hash_generated_method = "CEAD6378C85ECB940E065AC168F1ECFE")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.534 -0400", hash_original_method = "00AB887CF1625BBE035D7C27E115F8F5", hash_generated_method = "58D86D304A2BA8D30F7BE5586AE9FF6E")
         @Override
         public V get(Object key) {
-            dsTaint.addTaint(key.dsTaint);
-            {
-                boolean var9135CD85F99C2376B2054E1BFF183EE5_1386380630 = (isInBounds(key));
-                Object varDCA787235BE6A2E5196575B0FAC0DEDE_1868123685 = (TreeMap.this.get(key));
-            } //End flattened ternary
-            return (V)dsTaint.getTaint();
+            V varB4EAC82CA7396A68D541C85D26508E83_1071077857 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1071077857 = isInBounds(key) ? TreeMap.this.get(key) : null;
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1071077857.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1071077857;
             // ---------- Original Method ----------
             //return isInBounds(key) ? TreeMap.this.get(key) : null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.093 -0400", hash_original_method = "97933E3E15C41B402232AC9CC0472CF2", hash_generated_method = "49AE485EDF69ABFCC1817CB1743D6AAE")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.535 -0400", hash_original_method = "97933E3E15C41B402232AC9CC0472CF2", hash_generated_method = "78FD4AA5530BBA20D0E89F6CC28FFC34")
         @Override
         public boolean containsKey(Object key) {
-            dsTaint.addTaint(key.dsTaint);
-            boolean varA3E267D2E614E41BB78FB5916F69E5F6_1183539595 = (isInBounds(key) && TreeMap.this.containsKey(key));
-            return dsTaint.getTaintBoolean();
+            boolean varA3E267D2E614E41BB78FB5916F69E5F6_2097779200 = (isInBounds(key) && TreeMap.this.containsKey(key));
+            addTaint(key.getTaint());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_470756688 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_470756688;
             // ---------- Original Method ----------
             //return isInBounds(key) && TreeMap.this.containsKey(key);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.093 -0400", hash_original_method = "AA5BBA9E7D3BEE615F1E652A3C2B8A57", hash_generated_method = "C76D36FDC8121CF8BBCD532C1926629C")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.557 -0400", hash_original_method = "AA5BBA9E7D3BEE615F1E652A3C2B8A57", hash_generated_method = "7CC2DB0C3146249250D22361A124AF5D")
         @Override
         public V put(K key, V value) {
-            dsTaint.addTaint(value.dsTaint);
-            dsTaint.addTaint(key.dsTaint);
+            V varB4EAC82CA7396A68D541C85D26508E83_242700862 = null; //Variable for return #1
             {
-                boolean varAD602F34696280F613EFFCC6CD1936C9_1951787803 = (!isInBounds(key));
+                boolean varAD602F34696280F613EFFCC6CD1936C9_1621423461 = (!isInBounds(key));
                 {
                     if (DroidSafeAndroidRuntime.control) throw outOfBounds(key, fromBound, toBound);
                 } //End block
             } //End collapsed parenthetic
-            V var8F551A1DF75EEEC56F34F3A9504C8B20_1396796413 = (putInternal(key, value));
-            return (V)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_242700862 = putInternal(key, value);
+            addTaint(key.getTaint());
+            addTaint(value.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_242700862.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_242700862;
             // ---------- Original Method ----------
             //if (!isInBounds(key)) {
                 //throw outOfBounds(key, fromBound, toBound);
@@ -1972,60 +2189,58 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.093 -0400", hash_original_method = "FD860E76286147E5825948B59334B12A", hash_generated_method = "21AD36195AE99FF74FCC8CB8D05DFC85")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.558 -0400", hash_original_method = "FD860E76286147E5825948B59334B12A", hash_generated_method = "C8BB0810E3382176EC7956BEF450E89E")
         @Override
         public V remove(Object key) {
-            dsTaint.addTaint(key.dsTaint);
-            {
-                boolean var9135CD85F99C2376B2054E1BFF183EE5_1529657747 = (isInBounds(key));
-                Object var4AF1CF7C51C3940F4140C0E33E762C29_84770936 = (TreeMap.this.remove(key));
-            } //End flattened ternary
-            return (V)dsTaint.getTaint();
+            V varB4EAC82CA7396A68D541C85D26508E83_2142855565 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_2142855565 = isInBounds(key) ? TreeMap.this.remove(key) : null;
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_2142855565.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2142855565;
             // ---------- Original Method ----------
             //return isInBounds(key) ? TreeMap.this.remove(key) : null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.093 -0400", hash_original_method = "CBDDB4BBE438A9DB233DEA58A1C969FA", hash_generated_method = "88E3C73B736DE6A682A68CEBAA4BA670")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.558 -0400", hash_original_method = "CBDDB4BBE438A9DB233DEA58A1C969FA", hash_generated_method = "BF33969F545F62CC02276EF50BD3CEA4")
         @SuppressWarnings("unchecked")
         private boolean isInBounds(Object key) {
-            dsTaint.addTaint(key.dsTaint);
-            boolean varA5F72E2E91F3E285BA97AAF5A99A4DA1_1556886071 = (isInBounds((K) key, fromBound, toBound));
-            return dsTaint.getTaintBoolean();
+            boolean varA5F72E2E91F3E285BA97AAF5A99A4DA1_1212916429 = (isInBounds((K) key, fromBound, toBound));
+            addTaint(key.getTaint());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_844765295 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_844765295;
             // ---------- Original Method ----------
             //return isInBounds((K) key, fromBound, toBound);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.094 -0400", hash_original_method = "692642A6AE210FFE582C89EC91302D79", hash_generated_method = "259194691ED3EE035D024B2E10860F04")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.559 -0400", hash_original_method = "692642A6AE210FFE582C89EC91302D79", hash_generated_method = "234FB54F25A5C5F099AAA85423813A7B")
         private boolean isInBounds(K key, Bound fromBound, Bound toBound) {
-            dsTaint.addTaint(toBound.dsTaint);
-            dsTaint.addTaint(fromBound.dsTaint);
-            dsTaint.addTaint(key.dsTaint);
             {
                 {
-                    boolean var9F6E7E65C5DF7B537032AF04E3982098_881395509 = (comparator.compare(key, from) < 0);
+                    boolean var9F6E7E65C5DF7B537032AF04E3982098_1315561802 = (comparator.compare(key, from) < 0);
                 } //End collapsed parenthetic
             } //End block
             {
                 {
-                    boolean varFBA4E02ED99BA8F4A60A17B22AA50698_216958503 = (comparator.compare(key, from) <= 0);
+                    boolean varFBA4E02ED99BA8F4A60A17B22AA50698_308289702 = (comparator.compare(key, from) <= 0);
                 } //End collapsed parenthetic
             } //End block
             {
                 {
-                    boolean var3BF67E403FFC608A69421DC18FA2C214_833349557 = (comparator.compare(key, to) > 0);
+                    boolean var3BF67E403FFC608A69421DC18FA2C214_702045718 = (comparator.compare(key, to) > 0);
                 } //End collapsed parenthetic
             } //End block
             {
                 {
-                    boolean varEA1D9A2226B6707B7C8DE8BD2619E59B_989267739 = (comparator.compare(key, to) >= 0);
+                    boolean varEA1D9A2226B6707B7C8DE8BD2619E59B_804802055 = (comparator.compare(key, to) >= 0);
                 } //End collapsed parenthetic
             } //End block
-            return dsTaint.getTaintBoolean();
+            addTaint(key.getTaint());
+            addTaint(fromBound.getTaint());
+            addTaint(toBound.getTaint());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1671196016 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1671196016;
             // ---------- Original Method ----------
             //if (fromBound == INCLUSIVE) {
                 //if (comparator.compare(key, from) < 0) {
@@ -2049,41 +2264,42 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.094 -0400", hash_original_method = "CAAC4C1A33B13586569CF07F541A55C7", hash_generated_method = "085CBA4508402791A84CE4E06EBBAD49")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.559 -0400", hash_original_method = "CAAC4C1A33B13586569CF07F541A55C7", hash_generated_method = "F1D78B2789FC3FA42AC8599EE72655B7")
         private Node<K, V> bound(Node<K, V> node, Bound fromBound, Bound toBound) {
-            dsTaint.addTaint(node.dsTaint);
-            dsTaint.addTaint(toBound.dsTaint);
-            dsTaint.addTaint(fromBound.dsTaint);
-            {
-                boolean varC116C584CC9981AECCA6F0640121C4B9_638659560 = (node != null && isInBounds(node.getKey(), fromBound, toBound));
-            } //End flattened ternary
-            return (Node<K, V>)dsTaint.getTaint();
+            Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1915022939 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1915022939 = node != null && isInBounds(node.getKey(), fromBound, toBound) ? node : null;
+            addTaint(node.getTaint());
+            addTaint(fromBound.getTaint());
+            addTaint(toBound.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1915022939.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1915022939;
             // ---------- Original Method ----------
             //return node != null && isInBounds(node.getKey(), fromBound, toBound) ? node : null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.094 -0400", hash_original_method = "692355E3656C196457301F91A19D5157", hash_generated_method = "B2D70082F3E7192A8C58BC76C066221B")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.559 -0400", hash_original_method = "692355E3656C196457301F91A19D5157", hash_generated_method = "196D150FD3B90F4477B9D1F05BDB0B9E")
         public Entry<K, V> firstEntry() {
-            Entry<K, V> var4A477756646ABEF870028743EA09F8EC_1133672107 = (immutableCopy(endpoint(true)));
-            return (Entry<K, V>)dsTaint.getTaint();
+            Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1644297583 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1644297583 = immutableCopy(endpoint(true));
+            varB4EAC82CA7396A68D541C85D26508E83_1644297583.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1644297583;
             // ---------- Original Method ----------
             //return immutableCopy(endpoint(true));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.094 -0400", hash_original_method = "3800FF04B85DB50D775ADF76A89AF0FD", hash_generated_method = "0412AE5779647E40B7E7E72D7991E081")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.560 -0400", hash_original_method = "3800FF04B85DB50D775ADF76A89AF0FD", hash_generated_method = "AC6017253DC4CA0F533107E1A5169BF4")
         public Entry<K, V> pollFirstEntry() {
+            Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1137430095 = null; //Variable for return #1
             Node<K, V> result;
             result = endpoint(true);
             {
                 removeInternal(result);
             } //End block
-            Entry<K, V> varC10CFBE1B9807D081D784E25B519FE7E_2049417769 = (immutableCopy(result));
-            return (Entry<K, V>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1137430095 = immutableCopy(result);
+            varB4EAC82CA7396A68D541C85D26508E83_1137430095.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1137430095;
             // ---------- Original Method ----------
             //Node<K, V> result = endpoint(true);
             //if (result != null) {
@@ -2093,16 +2309,17 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.095 -0400", hash_original_method = "1DE5152AF86A2FB092CD0802BF299C85", hash_generated_method = "E47433288D492A85BCFA5613B253C058")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.573 -0400", hash_original_method = "1DE5152AF86A2FB092CD0802BF299C85", hash_generated_method = "BE4E36A05C8D02231CFD222037C52A29")
         public K firstKey() {
+            K varB4EAC82CA7396A68D541C85D26508E83_549603424 = null; //Variable for return #1
             Entry<K, V> entry;
             entry = endpoint(true);
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
-            K var4B8D962F1524E92662DE034798AAC65A_847256935 = (entry.getKey());
-            return (K)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_549603424 = entry.getKey();
+            varB4EAC82CA7396A68D541C85D26508E83_549603424.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_549603424;
             // ---------- Original Method ----------
             //Entry<K, V> entry = endpoint(true);
             //if (entry == null) {
@@ -2112,26 +2329,28 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.095 -0400", hash_original_method = "3349B358C55B472B88F39549996E074C", hash_generated_method = "429BD917493DE01414D6FD010D7B37C5")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.574 -0400", hash_original_method = "3349B358C55B472B88F39549996E074C", hash_generated_method = "B27976D71F1ECC2D7BAAEB799AAC3092")
         public Entry<K, V> lastEntry() {
-            Entry<K, V> varB6A1B7F0F8557CC304E4C72A892B03F9_183986230 = (immutableCopy(endpoint(false)));
-            return (Entry<K, V>)dsTaint.getTaint();
+            Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1666551108 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1666551108 = immutableCopy(endpoint(false));
+            varB4EAC82CA7396A68D541C85D26508E83_1666551108.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1666551108;
             // ---------- Original Method ----------
             //return immutableCopy(endpoint(false));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.095 -0400", hash_original_method = "4E391E55891B2D72162CA8FBBFDB8088", hash_generated_method = "9AFC6E994121B59A1EA0FB911C2BE7DC")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.574 -0400", hash_original_method = "4E391E55891B2D72162CA8FBBFDB8088", hash_generated_method = "A2CDDDFBCDDEA780F4542E3588525C13")
         public Entry<K, V> pollLastEntry() {
+            Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1567357311 = null; //Variable for return #1
             Node<K, V> result;
             result = endpoint(false);
             {
                 removeInternal(result);
             } //End block
-            Entry<K, V> varC10CFBE1B9807D081D784E25B519FE7E_121434338 = (immutableCopy(result));
-            return (Entry<K, V>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1567357311 = immutableCopy(result);
+            varB4EAC82CA7396A68D541C85D26508E83_1567357311.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1567357311;
             // ---------- Original Method ----------
             //Node<K, V> result = endpoint(false);
             //if (result != null) {
@@ -2141,16 +2360,17 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.095 -0400", hash_original_method = "394B9DCC52DC405017E9FB6F95D12436", hash_generated_method = "FA8F7A13778EE101066DA48C1D9C362E")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.575 -0400", hash_original_method = "394B9DCC52DC405017E9FB6F95D12436", hash_generated_method = "C5611FF3AE877DFA0217D7416F391705")
         public K lastKey() {
+            K varB4EAC82CA7396A68D541C85D26508E83_324692931 = null; //Variable for return #1
             Entry<K, V> entry;
             entry = endpoint(false);
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
-            K var4B8D962F1524E92662DE034798AAC65A_982956504 = (entry.getKey());
-            return (K)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_324692931 = entry.getKey();
+            varB4EAC82CA7396A68D541C85D26508E83_324692931.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_324692931;
             // ---------- Original Method ----------
             //Entry<K, V> entry = endpoint(false);
             //if (entry == null) {
@@ -2160,10 +2380,10 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.095 -0400", hash_original_method = "83D48F5C9D4926E1668CDBC652A8BB3D", hash_generated_method = "0DA58CDBD5AD094E5663F32784E2BAF0")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.576 -0400", hash_original_method = "83D48F5C9D4926E1668CDBC652A8BB3D", hash_generated_method = "CAE04CF15B36CDCBCF5F2A95782BDA3B")
         private Node<K, V> endpoint(boolean first) {
-            dsTaint.addTaint(first);
+            Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_427224487 = null; //Variable for return #1
+            Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_699496293 = null; //Variable for return #2
             Node<K, V> node;
             {
                 //Begin case NO_BOUND 
@@ -2178,7 +2398,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 //Begin case default 
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError();
                 //End case default 
-                Node<K, V> var83B74AA9D3A2FC2A95056081BE86827F_953664084 = (bound(node, NO_BOUND, toBound));
+                varB4EAC82CA7396A68D541C85D26508E83_427224487 = bound(node, NO_BOUND, toBound);
             } //End block
             {
                 //Begin case NO_BOUND 
@@ -2193,19 +2413,28 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 //Begin case default 
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError();
                 //End case default 
-                Node<K, V> var0C5D193A5BFBF64BBA8D6E7FB91219A8_701202172 = (bound(node, fromBound, NO_BOUND));
+                varB4EAC82CA7396A68D541C85D26508E83_699496293 = bound(node, fromBound, NO_BOUND);
             } //End block
-            return (Node<K, V>)dsTaint.getTaint();
+            addTaint(first);
+            Node<K, V> varA7E53CE21691AB073D9660D615818899_1508490378; //Final return value
+            switch (DroidSafeAndroidRuntime.switchControl) {
+                case 1: //Assign result for return ordinal #1
+                    varA7E53CE21691AB073D9660D615818899_1508490378 = varB4EAC82CA7396A68D541C85D26508E83_427224487;
+                    break;
+                default:
+                    varA7E53CE21691AB073D9660D615818899_1508490378 = varB4EAC82CA7396A68D541C85D26508E83_699496293;
+                    break;
+            }
+            varA7E53CE21691AB073D9660D615818899_1508490378.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1508490378;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.096 -0400", hash_original_method = "4CDC04225A960E79B8311D7465BD3125", hash_generated_method = "3F8ABC85D7A0FF9A532B33CFFCED02C0")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.587 -0400", hash_original_method = "4CDC04225A960E79B8311D7465BD3125", hash_generated_method = "B489CAD30974D76ED41C46B40E88A106")
         private Entry<K, V> findBounded(K key, Relation relation) {
-            dsTaint.addTaint(relation.dsTaint);
-            dsTaint.addTaint(key.dsTaint);
+            Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1809288091 = null; //Variable for return #1
             relation = relation.forOrder(ascending);
             Bound fromBoundForCheck;
             fromBoundForCheck = fromBound;
@@ -2239,131 +2468,145 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 } //End block
                 fromBoundForCheck = NO_BOUND;
             } //End block
-            Entry<K, V> varC4960990CFB3B4F10B005DBFC572F18B_1955243642 = (bound(find(key, relation), fromBoundForCheck, toBoundForCheck));
-            return (Entry<K, V>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1809288091 = bound(find(key, relation), fromBoundForCheck, toBoundForCheck);
+            addTaint(key.getTaint());
+            addTaint(relation.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1809288091.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1809288091;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.096 -0400", hash_original_method = "BD9CF59DC295A4AE3510934F298E27E6", hash_generated_method = "88EE310DE7D4458DD141AF413E105644")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.588 -0400", hash_original_method = "BD9CF59DC295A4AE3510934F298E27E6", hash_generated_method = "CDCEA731333302C43246B6AC10D906D3")
         public Entry<K, V> lowerEntry(K key) {
-            dsTaint.addTaint(key.dsTaint);
-            Entry<K, V> var49E3C017DDA5E77A73FD777A1A941CFE_825243445 = (immutableCopy(findBounded(key, LOWER)));
-            return (Entry<K, V>)dsTaint.getTaint();
+            Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_2066832344 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_2066832344 = immutableCopy(findBounded(key, LOWER));
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_2066832344.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2066832344;
             // ---------- Original Method ----------
             //return immutableCopy(findBounded(key, LOWER));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.096 -0400", hash_original_method = "EBA87E3AFD9E90051DFFEBD0117773EA", hash_generated_method = "0E2F8C95E0EA91760C232B54ACD7EB27")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.603 -0400", hash_original_method = "EBA87E3AFD9E90051DFFEBD0117773EA", hash_generated_method = "5349311B28F03348FAE2BC796E0B444D")
         public K lowerKey(K key) {
-            dsTaint.addTaint(key.dsTaint);
+            K varB4EAC82CA7396A68D541C85D26508E83_397612906 = null; //Variable for return #1
             Entry<K, V> entry;
             entry = findBounded(key, LOWER);
-            {
-                Object var89F8384D8DD2CA583B7A90F311F2A4B1_612766065 = (entry.getKey());
-            } //End flattened ternary
-            return (K)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_397612906 = entry != null ? entry.getKey() : null;
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_397612906.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_397612906;
             // ---------- Original Method ----------
             //Entry<K, V> entry = findBounded(key, LOWER);
             //return entry != null ? entry.getKey() : null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.096 -0400", hash_original_method = "581C54D570AF4193E6400C576ED95C35", hash_generated_method = "DA69E556E6AE51B5BA514542A58DF028")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.604 -0400", hash_original_method = "581C54D570AF4193E6400C576ED95C35", hash_generated_method = "9608831E8AB33DE49127845AC26962A8")
         public Entry<K, V> floorEntry(K key) {
-            dsTaint.addTaint(key.dsTaint);
-            Entry<K, V> var53162E819F91269ADC18976393EA39D9_630288828 = (immutableCopy(findBounded(key, FLOOR)));
-            return (Entry<K, V>)dsTaint.getTaint();
+            Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1390846271 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1390846271 = immutableCopy(findBounded(key, FLOOR));
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1390846271.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1390846271;
             // ---------- Original Method ----------
             //return immutableCopy(findBounded(key, FLOOR));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.097 -0400", hash_original_method = "E92237DAC033388A5150FD58D66D705D", hash_generated_method = "8AFEC388871A83A895A6DAAFABCECB0A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.615 -0400", hash_original_method = "E92237DAC033388A5150FD58D66D705D", hash_generated_method = "99AC3452EC76B090651B9FE2C16F52FA")
         public K floorKey(K key) {
-            dsTaint.addTaint(key.dsTaint);
+            K varB4EAC82CA7396A68D541C85D26508E83_612936799 = null; //Variable for return #1
             Entry<K, V> entry;
             entry = findBounded(key, FLOOR);
-            {
-                Object var89F8384D8DD2CA583B7A90F311F2A4B1_324774483 = (entry.getKey());
-            } //End flattened ternary
-            return (K)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_612936799 = entry != null ? entry.getKey() : null;
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_612936799.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_612936799;
             // ---------- Original Method ----------
             //Entry<K, V> entry = findBounded(key, FLOOR);
             //return entry != null ? entry.getKey() : null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.097 -0400", hash_original_method = "C11821BD096982DAE03E94867B2C92BE", hash_generated_method = "7EBE413BBD66F07E042BE04A3CE03B00")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.617 -0400", hash_original_method = "C11821BD096982DAE03E94867B2C92BE", hash_generated_method = "7CCBE29DA4E751F9DE0503AA0EA77646")
         public Entry<K, V> ceilingEntry(K key) {
-            dsTaint.addTaint(key.dsTaint);
-            Entry<K, V> varF829DF5632FF7CC677B851446FA8358F_2017586811 = (immutableCopy(findBounded(key, CEILING)));
-            return (Entry<K, V>)dsTaint.getTaint();
+            Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_858008695 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_858008695 = immutableCopy(findBounded(key, CEILING));
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_858008695.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_858008695;
             // ---------- Original Method ----------
             //return immutableCopy(findBounded(key, CEILING));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.097 -0400", hash_original_method = "01AF63D6DC81CC48D8C6B0BE37F83B4D", hash_generated_method = "186583C524B4BEBFFBA54FB491D0FDBF")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.630 -0400", hash_original_method = "01AF63D6DC81CC48D8C6B0BE37F83B4D", hash_generated_method = "1BA039EADD72692DA191BDD286012CE6")
         public K ceilingKey(K key) {
-            dsTaint.addTaint(key.dsTaint);
+            K varB4EAC82CA7396A68D541C85D26508E83_1440567536 = null; //Variable for return #1
             Entry<K, V> entry;
             entry = findBounded(key, CEILING);
-            {
-                Object var89F8384D8DD2CA583B7A90F311F2A4B1_1509505754 = (entry.getKey());
-            } //End flattened ternary
-            return (K)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1440567536 = entry != null ? entry.getKey() : null;
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1440567536.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1440567536;
             // ---------- Original Method ----------
             //Entry<K, V> entry = findBounded(key, CEILING);
             //return entry != null ? entry.getKey() : null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.097 -0400", hash_original_method = "4DE66AB7FA66EBE29F4E4509967D65D0", hash_generated_method = "8EF843774233939CEF8FCAB596921C77")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.631 -0400", hash_original_method = "4DE66AB7FA66EBE29F4E4509967D65D0", hash_generated_method = "22ED94911CE142982A8A5C405ED4B5DF")
         public Entry<K, V> higherEntry(K key) {
-            dsTaint.addTaint(key.dsTaint);
-            Entry<K, V> var5017B9B4B55FC3DCD39FDB020AD9AC2B_1265099580 = (immutableCopy(findBounded(key, HIGHER)));
-            return (Entry<K, V>)dsTaint.getTaint();
+            Entry<K, V> varB4EAC82CA7396A68D541C85D26508E83_1780733517 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1780733517 = immutableCopy(findBounded(key, HIGHER));
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1780733517.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1780733517;
             // ---------- Original Method ----------
             //return immutableCopy(findBounded(key, HIGHER));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.098 -0400", hash_original_method = "47A499322D06CDAFFEC1D4DA0A079F0A", hash_generated_method = "5F4B50CD82BC4C1AB485E8E43E269F06")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.650 -0400", hash_original_method = "47A499322D06CDAFFEC1D4DA0A079F0A", hash_generated_method = "5AF1DC2E2B4E044679BF81585975CA71")
         public K higherKey(K key) {
-            dsTaint.addTaint(key.dsTaint);
+            K varB4EAC82CA7396A68D541C85D26508E83_94864896 = null; //Variable for return #1
             Entry<K, V> entry;
             entry = findBounded(key, HIGHER);
-            {
-                Object var89F8384D8DD2CA583B7A90F311F2A4B1_15964710 = (entry.getKey());
-            } //End flattened ternary
-            return (K)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_94864896 = entry != null ? entry.getKey() : null;
+            addTaint(key.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_94864896.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_94864896;
             // ---------- Original Method ----------
             //Entry<K, V> entry = findBounded(key, HIGHER);
             //return entry != null ? entry.getKey() : null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.098 -0400", hash_original_method = "631801B6DE22632DEACA2B547DEBE43A", hash_generated_method = "DCC9EF0DC9693EF434A64D8F3F58FA75")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.650 -0400", hash_original_method = "631801B6DE22632DEACA2B547DEBE43A", hash_generated_method = "0811A8F6260BCDFF2B66304991B95E93")
         public Comparator<? super K> comparator() {
+            Comparator<? super K> varB4EAC82CA7396A68D541C85D26508E83_1402182286 = null; //Variable for return #1
+            Comparator<? super K> varB4EAC82CA7396A68D541C85D26508E83_2005275221 = null; //Variable for return #2
             {
-                Comparator<? super K> var4EFCFF1E7C20902B6A370F2A482D639F_1936795603 = (TreeMap.this.comparator());
+                varB4EAC82CA7396A68D541C85D26508E83_1402182286 = TreeMap.this.comparator();
             } //End block
             {
-                Comparator<? super K> var7777CBBA6524383189220439D91F8386_238385322 = (Collections.reverseOrder(comparator));
+                varB4EAC82CA7396A68D541C85D26508E83_2005275221 = Collections.reverseOrder(comparator);
             } //End block
-            return (Comparator<? super K>)dsTaint.getTaint();
+            Comparator<? super K> varA7E53CE21691AB073D9660D615818899_1625310166; //Final return value
+            switch (DroidSafeAndroidRuntime.switchControl) {
+                case 1: //Assign result for return ordinal #1
+                    varA7E53CE21691AB073D9660D615818899_1625310166 = varB4EAC82CA7396A68D541C85D26508E83_1402182286;
+                    break;
+                default:
+                    varA7E53CE21691AB073D9660D615818899_1625310166 = varB4EAC82CA7396A68D541C85D26508E83_2005275221;
+                    break;
+            }
+            varA7E53CE21691AB073D9660D615818899_1625310166.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1625310166;
             // ---------- Original Method ----------
             //if (ascending) {
             //return TreeMap.this.comparator();
@@ -2373,83 +2616,85 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.098 -0400", hash_original_method = "7F86A739037DCA8312EEE2819E1107F8", hash_generated_method = "9F75123D0491AC30197F9A90E935C696")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.651 -0400", hash_original_method = "7F86A739037DCA8312EEE2819E1107F8", hash_generated_method = "779E28B97DF3CF560E4C033B306A98EE")
         @Override
         public Set<Entry<K, V>> entrySet() {
+            Set<Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_1907422382 = null; //Variable for return #1
             BoundedEntrySet result;
             result = entrySet;
-            {
-                Object var06F56A3E1A72792A058B617DFBC26BAF_86314608 = ((entrySet = new BoundedEntrySet()));
-            } //End flattened ternary
-            return (Set<Entry<K, V>>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1907422382 = result != null ? result : (entrySet = new BoundedEntrySet());
+            varB4EAC82CA7396A68D541C85D26508E83_1907422382.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1907422382;
             // ---------- Original Method ----------
             //BoundedEntrySet result = entrySet;
             //return result != null ? result : (entrySet = new BoundedEntrySet());
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.098 -0400", hash_original_method = "8D1D053C1D8B0756868AB879DB7CB086", hash_generated_method = "E5AC29E57881C53B0F635E8723E7526A")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.651 -0400", hash_original_method = "8D1D053C1D8B0756868AB879DB7CB086", hash_generated_method = "A62C7556DD4677F5CF7CB4ED1211D8A9")
         @Override
         public Set<K> keySet() {
-            Set<K> varC031E4767BC23709B128EF5E3409EAEC_68761200 = (navigableKeySet());
-            return (Set<K>)dsTaint.getTaint();
+            Set<K> varB4EAC82CA7396A68D541C85D26508E83_2034232031 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_2034232031 = navigableKeySet();
+            varB4EAC82CA7396A68D541C85D26508E83_2034232031.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2034232031;
             // ---------- Original Method ----------
             //return navigableKeySet();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.099 -0400", hash_original_method = "58209BC6FD1C6420A0C3CE4B441A6EA8", hash_generated_method = "AF938661676FFF52AC8E53D11AFF10FF")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.652 -0400", hash_original_method = "58209BC6FD1C6420A0C3CE4B441A6EA8", hash_generated_method = "AA09D1F4158CCCAD2512B5340B42CB4A")
         public NavigableSet<K> navigableKeySet() {
+            NavigableSet<K> varB4EAC82CA7396A68D541C85D26508E83_1332334686 = null; //Variable for return #1
             BoundedKeySet result;
             result = keySet;
-            {
-                Object var432629C1BD30DF87707253BD52D0E68C_1500469157 = ((keySet = new BoundedKeySet()));
-            } //End flattened ternary
-            return (NavigableSet<K>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1332334686 = result != null ? result : (keySet = new BoundedKeySet());
+            varB4EAC82CA7396A68D541C85D26508E83_1332334686.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1332334686;
             // ---------- Original Method ----------
             //BoundedKeySet result = keySet;
             //return result != null ? result : (keySet = new BoundedKeySet());
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.099 -0400", hash_original_method = "6D358EC631E9E279A9C759613AD4CBF5", hash_generated_method = "A61AAC83FA2485F7099BD48D3431CA28")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.653 -0400", hash_original_method = "6D358EC631E9E279A9C759613AD4CBF5", hash_generated_method = "75E67F1FC0DCE66C709767D7F81D3479")
         public NavigableMap<K, V> descendingMap() {
-            NavigableMap<K, V> var18870BEBD48F8C3BF33CF82C41710D31_478832557 = (new BoundedMap(!ascending, from, fromBound, to, toBound));
-            return (NavigableMap<K, V>)dsTaint.getTaint();
+            NavigableMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_494887067 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_494887067 = new BoundedMap(!ascending, from, fromBound, to, toBound);
+            varB4EAC82CA7396A68D541C85D26508E83_494887067.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_494887067;
             // ---------- Original Method ----------
             //return new BoundedMap(!ascending, from, fromBound, to, toBound);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.099 -0400", hash_original_method = "E068C75BD35AA3BEC427F457C352E2B5", hash_generated_method = "8AFCE2484B00ED9109E41532557893DA")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.653 -0400", hash_original_method = "E068C75BD35AA3BEC427F457C352E2B5", hash_generated_method = "B84C9F52BF039D8FF7BA4DBBE13C36C2")
         public NavigableSet<K> descendingKeySet() {
-            NavigableSet<K> var90AC92C6A05DE7658D745EA746EA20FC_1406825324 = (new BoundedMap(!ascending, from, fromBound, to, toBound).navigableKeySet());
-            return (NavigableSet<K>)dsTaint.getTaint();
+            NavigableSet<K> varB4EAC82CA7396A68D541C85D26508E83_329125402 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_329125402 = new BoundedMap(!ascending, from, fromBound, to, toBound).navigableKeySet();
+            varB4EAC82CA7396A68D541C85D26508E83_329125402.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_329125402;
             // ---------- Original Method ----------
             //return new BoundedMap(!ascending, from, fromBound, to, toBound).navigableKeySet();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.099 -0400", hash_original_method = "3DC9A98D108EA5F857802D111DD4C7BC", hash_generated_method = "A69B789FCD23975D389CA6B56C5DDF0B")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.668 -0400", hash_original_method = "3DC9A98D108EA5F857802D111DD4C7BC", hash_generated_method = "E63F506EEC5DA8B36678559DA202C403")
         public NavigableMap<K, V> subMap(K from, boolean fromInclusive, K to, boolean toInclusive) {
-            dsTaint.addTaint(to.dsTaint);
-            dsTaint.addTaint(fromInclusive);
-            dsTaint.addTaint(toInclusive);
-            dsTaint.addTaint(from.dsTaint);
+            NavigableMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_2104076176 = null; //Variable for return #1
             Bound fromBound;
             fromBound = INCLUSIVE;
             fromBound = EXCLUSIVE;
             Bound toBound;
             toBound = INCLUSIVE;
             toBound = EXCLUSIVE;
-            NavigableMap<K, V> var20B592584BC039D7D72F3E40688B285C_570226044 = (subMap(from, fromBound, to, toBound));
-            return (NavigableMap<K, V>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_2104076176 = subMap(from, fromBound, to, toBound);
+            addTaint(from.getTaint());
+            addTaint(fromInclusive);
+            addTaint(to.getTaint());
+            addTaint(toInclusive);
+            varB4EAC82CA7396A68D541C85D26508E83_2104076176.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2104076176;
             // ---------- Original Method ----------
             //Bound fromBound = fromInclusive ? INCLUSIVE : EXCLUSIVE;
             //Bound toBound = toInclusive ? INCLUSIVE : EXCLUSIVE;
@@ -2457,84 +2702,87 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.099 -0400", hash_original_method = "85C9C855FCFD7C01DE62316D427AA356", hash_generated_method = "948661A1EA6369346A235AE56BD3051D")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.668 -0400", hash_original_method = "85C9C855FCFD7C01DE62316D427AA356", hash_generated_method = "0965B1788CFA79528CBD80A36515615D")
         public NavigableMap<K, V> subMap(K fromInclusive, K toExclusive) {
-            dsTaint.addTaint(fromInclusive.dsTaint);
-            dsTaint.addTaint(toExclusive.dsTaint);
-            NavigableMap<K, V> var74A6890EEA15D328BE1DF402367AC3EE_452789307 = (subMap(fromInclusive, INCLUSIVE, toExclusive, EXCLUSIVE));
-            return (NavigableMap<K, V>)dsTaint.getTaint();
+            NavigableMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_1535710165 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1535710165 = subMap(fromInclusive, INCLUSIVE, toExclusive, EXCLUSIVE);
+            addTaint(fromInclusive.getTaint());
+            addTaint(toExclusive.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_1535710165.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1535710165;
             // ---------- Original Method ----------
             //return subMap(fromInclusive, INCLUSIVE, toExclusive, EXCLUSIVE);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.099 -0400", hash_original_method = "F0BAF6F2CF2FCD82E483E31B5C869204", hash_generated_method = "4EC5BB74C7D913747AF5813073A2D1D3")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.672 -0400", hash_original_method = "F0BAF6F2CF2FCD82E483E31B5C869204", hash_generated_method = "4E63EC30DF9C5E4E47388DEA38BFDAD6")
         public NavigableMap<K, V> headMap(K to, boolean inclusive) {
-            dsTaint.addTaint(inclusive);
-            dsTaint.addTaint(to.dsTaint);
+            NavigableMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_2052103601 = null; //Variable for return #1
             Bound toBound;
             toBound = INCLUSIVE;
             toBound = EXCLUSIVE;
-            NavigableMap<K, V> varE2521AFD311C1CF75C9D0C3A25FC2174_1853405018 = (subMap(null, NO_BOUND, to, toBound));
-            return (NavigableMap<K, V>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_2052103601 = subMap(null, NO_BOUND, to, toBound);
+            addTaint(to.getTaint());
+            addTaint(inclusive);
+            varB4EAC82CA7396A68D541C85D26508E83_2052103601.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2052103601;
             // ---------- Original Method ----------
             //Bound toBound = inclusive ? INCLUSIVE : EXCLUSIVE;
             //return subMap(null, NO_BOUND, to, toBound);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.100 -0400", hash_original_method = "ABFE13DC9073E46E049BB999D5306953", hash_generated_method = "911A78D7A87E181A9A0040D4ED6A7047")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.686 -0400", hash_original_method = "ABFE13DC9073E46E049BB999D5306953", hash_generated_method = "E36C922F79B856CD9E7CB51D6F628B17")
         public NavigableMap<K, V> headMap(K toExclusive) {
-            dsTaint.addTaint(toExclusive.dsTaint);
-            NavigableMap<K, V> var161932101AABB5B600CE7FDA25BE03E6_1200792995 = (subMap(null, NO_BOUND, toExclusive, EXCLUSIVE));
-            return (NavigableMap<K, V>)dsTaint.getTaint();
+            NavigableMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_961127790 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_961127790 = subMap(null, NO_BOUND, toExclusive, EXCLUSIVE);
+            addTaint(toExclusive.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_961127790.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_961127790;
             // ---------- Original Method ----------
             //return subMap(null, NO_BOUND, toExclusive, EXCLUSIVE);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.100 -0400", hash_original_method = "26986665A8C827C93D404190F2752B4C", hash_generated_method = "6CD97C1F66C79CF2279DCBF895545796")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.687 -0400", hash_original_method = "26986665A8C827C93D404190F2752B4C", hash_generated_method = "6F95A527EE8832ED0AC52177C431118B")
         public NavigableMap<K, V> tailMap(K from, boolean inclusive) {
-            dsTaint.addTaint(inclusive);
-            dsTaint.addTaint(from.dsTaint);
+            NavigableMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_540345459 = null; //Variable for return #1
             Bound fromBound;
             fromBound = INCLUSIVE;
             fromBound = EXCLUSIVE;
-            NavigableMap<K, V> var3BB4FB5B1FEFA64BF14D2559066721EE_1396331651 = (subMap(from, fromBound, null, NO_BOUND));
-            return (NavigableMap<K, V>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_540345459 = subMap(from, fromBound, null, NO_BOUND);
+            addTaint(from.getTaint());
+            addTaint(inclusive);
+            varB4EAC82CA7396A68D541C85D26508E83_540345459.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_540345459;
             // ---------- Original Method ----------
             //Bound fromBound = inclusive ? INCLUSIVE : EXCLUSIVE;
             //return subMap(from, fromBound, null, NO_BOUND);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.100 -0400", hash_original_method = "CF387452C0473BBA846F53D5C56CE3B2", hash_generated_method = "DB79E2033688391008197D0C44FC1E72")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.688 -0400", hash_original_method = "CF387452C0473BBA846F53D5C56CE3B2", hash_generated_method = "A136A75C42CE1B2EA191B5C2FD8A5324")
         public NavigableMap<K, V> tailMap(K fromInclusive) {
-            dsTaint.addTaint(fromInclusive.dsTaint);
-            NavigableMap<K, V> varEA6F137E8B17463734F984DED03116AD_1763790356 = (subMap(fromInclusive, INCLUSIVE, null, NO_BOUND));
-            return (NavigableMap<K, V>)dsTaint.getTaint();
+            NavigableMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_931310353 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_931310353 = subMap(fromInclusive, INCLUSIVE, null, NO_BOUND);
+            addTaint(fromInclusive.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_931310353.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_931310353;
             // ---------- Original Method ----------
             //return subMap(fromInclusive, INCLUSIVE, null, NO_BOUND);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.100 -0400", hash_original_method = "0BE57F9811CA6209D3A6FF727B140802", hash_generated_method = "56BC1744F40CE90C04A2F66065C56614")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.703 -0400", hash_original_method = "0BE57F9811CA6209D3A6FF727B140802", hash_generated_method = "984E2BB32277F7C819D879EC1097BED3")
         private NavigableMap<K, V> subMap(K from, Bound fromBound, K to, Bound toBound) {
-            dsTaint.addTaint(to.dsTaint);
-            dsTaint.addTaint(toBound.dsTaint);
-            dsTaint.addTaint(fromBound.dsTaint);
-            dsTaint.addTaint(from.dsTaint);
+            NavigableMap<K, V> varB4EAC82CA7396A68D541C85D26508E83_634717406 = null; //Variable for return #1
             {
                 K fromTmp;
                 fromTmp = from;
                 Bound fromBoundTmp;
                 fromBoundTmp = fromBound;
+                from = to;
+                fromBound = toBound;
                 to = fromTmp;
                 toBound = fromBoundTmp;
             } //End block
@@ -2547,7 +2795,7 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 fromBoundToCheck = INCLUSIVE;
                 fromBoundToCheck = this.fromBound;
                 {
-                    boolean var1DAE628D732342D7BC54FD4D3278CE34_936483585 = (!isInBounds(from, fromBoundToCheck, this.toBound));
+                    boolean var1DAE628D732342D7BC54FD4D3278CE34_1112401295 = (!isInBounds(from, fromBoundToCheck, this.toBound));
                     {
                         if (DroidSafeAndroidRuntime.control) throw outOfBounds(to, fromBoundToCheck, this.toBound);
                     } //End block
@@ -2562,42 +2810,44 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
                 toBoundToCheck = INCLUSIVE;
                 toBoundToCheck = this.toBound;
                 {
-                    boolean var5922B8A01789147118CB04C1CDD52F79_415662145 = (!isInBounds(to, this.fromBound, toBoundToCheck));
+                    boolean var5922B8A01789147118CB04C1CDD52F79_2072583870 = (!isInBounds(to, this.fromBound, toBoundToCheck));
                     {
                         if (DroidSafeAndroidRuntime.control) throw outOfBounds(to, this.fromBound, toBoundToCheck);
                     } //End block
                 } //End collapsed parenthetic
             } //End block
-            NavigableMap<K, V> var3501FCD90E7637D59099A57F1C35DD98_908533662 = (new BoundedMap(ascending, from, fromBound, to, toBound));
-            return (NavigableMap<K, V>)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_634717406 = new BoundedMap(ascending, from, fromBound, to, toBound);
+            varB4EAC82CA7396A68D541C85D26508E83_634717406.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_634717406;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.101 -0400", hash_original_method = "65FB71F2A366D35F7884C2869AFAA6ED", hash_generated_method = "F0A2058DC3BF29DF844758A06E1AD410")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.703 -0400", hash_original_method = "65FB71F2A366D35F7884C2869AFAA6ED", hash_generated_method = "46C883979C9AEAEB0AC47A13BBEF85FC")
         private IllegalArgumentException outOfBounds(Object value, Bound fromBound, Bound toBound) {
-            dsTaint.addTaint(toBound.dsTaint);
-            dsTaint.addTaint(fromBound.dsTaint);
-            dsTaint.addTaint(value.dsTaint);
-            IllegalArgumentException varA0438CE0741623F7F68D8DC9E3FC3D30_702004917 = (new IllegalArgumentException(value + " not in range "
-                    + fromBound.leftCap(from) + ".." + toBound.rightCap(to)));
-            return (IllegalArgumentException)dsTaint.getTaint();
+            IllegalArgumentException varB4EAC82CA7396A68D541C85D26508E83_575354003 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_575354003 = new IllegalArgumentException(value + " not in range "
+                    + fromBound.leftCap(from) + ".." + toBound.rightCap(to));
+            addTaint(value.getTaint());
+            addTaint(fromBound.getTaint());
+            addTaint(toBound.getTaint());
+            varB4EAC82CA7396A68D541C85D26508E83_575354003.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_575354003;
             // ---------- Original Method ----------
             //return new IllegalArgumentException(value + " not in range "
                     //+ fromBound.leftCap(from) + ".." + toBound.rightCap(to));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.101 -0400", hash_original_method = "9F20C8CFE1A741092D9743A31C3F8586", hash_generated_method = "B59530F3290E978D19FCF087E2C35D6E")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.704 -0400", hash_original_method = "9F20C8CFE1A741092D9743A31C3F8586", hash_generated_method = "5ECC48643D7A980421D074EC314CDCFF")
          Object writeReplace() throws ObjectStreamException {
-            {
-                Object var379F03EFEF9609B6C095C3B1E12D5202_810617283 = (new AscendingSubMap<K, V>(TreeMap.this, from, fromBound, to, toBound));
-                Object varF62D8F0697F67B2C19C54935F9D16A63_134872117 = (new DescendingSubMap<K, V>(TreeMap.this, from, fromBound, to, toBound));
-            } //End flattened ternary
-            return (Object)dsTaint.getTaint();
+            Object varB4EAC82CA7396A68D541C85D26508E83_957797394 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_957797394 = ascending
+                    ? new AscendingSubMap<K, V>(TreeMap.this, from, fromBound, to, toBound)
+                    : new DescendingSubMap<K, V>(TreeMap.this, from, fromBound, to, toBound);
+            varB4EAC82CA7396A68D541C85D26508E83_957797394.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_957797394;
             // ---------- Original Method ----------
             //return ascending
                     //? new AscendingSubMap<K, V>(TreeMap.this, from, fromBound, to, toBound)
@@ -2607,28 +2857,29 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         
         abstract class BoundedIterator<T> extends MapIterator<T> {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.101 -0400", hash_original_method = "30CDAF663F351A84269F6FB0B072EFA9", hash_generated_method = "1F3D2FED93AFB92C7193318D60F1D705")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
-            protected BoundedIterator(Node<K, V> next) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.704 -0400", hash_original_method = "30CDAF663F351A84269F6FB0B072EFA9", hash_generated_method = "DCA6AE078FF061847F66F0A7A80CFEA2")
+            protected  BoundedIterator(Node<K, V> next) {
                 super(next);
-                dsTaint.addTaint(next.dsTaint);
+                addTaint(next.getTaint());
                 // ---------- Original Method ----------
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.101 -0400", hash_original_method = "E9206CF01CB691A7CC292AD03FA9736C", hash_generated_method = "E12CEE4F45CF2FA7D2AC1AB9562960AD")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.705 -0400", hash_original_method = "E9206CF01CB691A7CC292AD03FA9736C", hash_generated_method = "7997431BE6BFB68A3A5116D3D3268CA5")
             @Override
             protected Node<K, V> stepForward() {
+                Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1433910661 = null; //Variable for return #1
                 Node<K, V> result;
                 result = super.stepForward();
                 {
-                    boolean varB492F846C21C09F0364F2416324ABD06_1832656153 = (next != null && !isInBounds(next.key, NO_BOUND, toBound));
+                    boolean varB492F846C21C09F0364F2416324ABD06_599107108 = (next != null && !isInBounds(next.key, NO_BOUND, toBound));
                     {
                         next = null;
                     } //End block
                 } //End collapsed parenthetic
-                return (Node<K, V>)dsTaint.getTaint();
+                varB4EAC82CA7396A68D541C85D26508E83_1433910661 = result;
+                varB4EAC82CA7396A68D541C85D26508E83_1433910661.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_1433910661;
                 // ---------- Original Method ----------
                 //Node<K, V> result = super.stepForward();
                 //if (next != null && !isInBounds(next.key, NO_BOUND, toBound)) {
@@ -2638,19 +2889,21 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.102 -0400", hash_original_method = "E55F6A3E56D317586EA4F65D3F74D30B", hash_generated_method = "7EEA4005609A91A9AB370A57540D71EF")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.705 -0400", hash_original_method = "E55F6A3E56D317586EA4F65D3F74D30B", hash_generated_method = "A01CB354FCC8A254B57491EF123DF5FD")
             @Override
             protected Node<K, V> stepBackward() {
+                Node<K, V> varB4EAC82CA7396A68D541C85D26508E83_1394758128 = null; //Variable for return #1
                 Node<K, V> result;
                 result = super.stepBackward();
                 {
-                    boolean varA14FF8A4CC2199BAF982AB4CC94D03CC_1087007916 = (next != null && !isInBounds(next.key, fromBound, NO_BOUND));
+                    boolean varA14FF8A4CC2199BAF982AB4CC94D03CC_1049259967 = (next != null && !isInBounds(next.key, fromBound, NO_BOUND));
                     {
                         next = null;
                     } //End block
                 } //End collapsed parenthetic
-                return (Node<K, V>)dsTaint.getTaint();
+                varB4EAC82CA7396A68D541C85D26508E83_1394758128 = result;
+                varB4EAC82CA7396A68D541C85D26508E83_1394758128.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_1394758128;
                 // ---------- Original Method ----------
                 //Node<K, V> result = super.stepBackward();
                 //if (next != null && !isInBounds(next.key, fromBound, NO_BOUND)) {
@@ -2666,52 +2919,46 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         
         final class BoundedEntrySet extends AbstractSet<Entry<K, V>> {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.102 -0400", hash_original_method = "C4340F1CFE2D477525C4902F551FF57B", hash_generated_method = "C4340F1CFE2D477525C4902F551FF57B")
-                        public BoundedEntrySet ()
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.720 -0400", hash_original_method = "6A727A04787362E0DA8C9D4EFA8450E8", hash_generated_method = "6A727A04787362E0DA8C9D4EFA8450E8")
+            public BoundedEntrySet ()
             {
+                //Synthesized constructor
             }
 
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.102 -0400", hash_original_method = "29BBB3BE9EA7B6D6C0B83C28F05082A4", hash_generated_method = "F98925567BD0A212C53B4A59124C9C86")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.721 -0400", hash_original_method = "29BBB3BE9EA7B6D6C0B83C28F05082A4", hash_generated_method = "3B2326A63374B10E3A6522F205D54094")
             @Override
             public int size() {
-                int var69D9F234E7E76618743D3D698A58599B_1814062775 = (BoundedMap.this.size());
-                return dsTaint.getTaintInt();
+                int var69D9F234E7E76618743D3D698A58599B_162034511 = (BoundedMap.this.size());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_747189181 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_747189181;
                 // ---------- Original Method ----------
                 //return BoundedMap.this.size();
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.102 -0400", hash_original_method = "AEA447F4A69E282FABF93736832EBAA3", hash_generated_method = "EC8E83D5E943845D9F28661618C5695C")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.722 -0400", hash_original_method = "AEA447F4A69E282FABF93736832EBAA3", hash_generated_method = "AF581FA187093B6F293DE66A8BB32F69")
             @Override
             public boolean isEmpty() {
-                boolean varF1E2DF8AD3E4C9C508E293B19251E66A_1483861962 = (BoundedMap.this.isEmpty());
-                return dsTaint.getTaintBoolean();
+                boolean varF1E2DF8AD3E4C9C508E293B19251E66A_444877402 = (BoundedMap.this.isEmpty());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_435856750 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_435856750;
                 // ---------- Original Method ----------
                 //return BoundedMap.this.isEmpty();
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.102 -0400", hash_original_method = "0E267F64AB80178C28467CD978AC79C8", hash_generated_method = "38EA8D422DFACB8408E0B164AEC15B5F")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.735 -0400", hash_original_method = "0E267F64AB80178C28467CD978AC79C8", hash_generated_method = "D3B7CA250FE527B021570CA390E7ADCA")
             @Override
             public Iterator<Entry<K, V>> iterator() {
-                Iterator<Entry<K, V>> varE7617E70A9F4D611390AF871C24ED537_755809542 = (new BoundedIterator<Entry<K, V>>(endpoint(true)) {                    
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.102 -0400", hash_original_method = "336D5542BA5231E0955145F5F84B4BBD", hash_generated_method = "F3C3D41F23E60954AB7B818439C8CE9D")
-                    //DSFIXME:  CODE0002: Requires DSC value to be set
+                Iterator<Entry<K, V>> varB4EAC82CA7396A68D541C85D26508E83_1779564076 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_1779564076 = new BoundedIterator<Entry<K, V>>(endpoint(true)) {
                     public Entry<K, V> next() {
-                        {
-                            Object var0045FF2416F55F1A6AC2E6F16F72D4A4_619410021 = (stepForward());
-                            Object varC6A5586ABEB8963BE954F8D1901250EE_62643155 = (stepBackward());
-                        } //End flattened ternary
-                        return (Entry<K, V>)dsTaint.getTaint();
-                        // ---------- Original Method ----------
-                        //return ascending ? stepForward() : stepBackward();
+                        return ascending ? stepForward() : stepBackward();
                     }
-});
-                return (Iterator<Entry<K, V>>)dsTaint.getTaint();
+                };
+                varB4EAC82CA7396A68D541C85D26508E83_1779564076.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_1779564076;
                 // ---------- Original Method ----------
                 //return new BoundedIterator<Entry<K, V>>(endpoint(true)) {
                     //public Entry<K, V> next() {
@@ -2721,15 +2968,15 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.103 -0400", hash_original_method = "954A21A7B25CC1709817AC62B8C6864E", hash_generated_method = "4C5CA153F07398DC97020B4EC8F39A6D")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.736 -0400", hash_original_method = "954A21A7B25CC1709817AC62B8C6864E", hash_generated_method = "0C1649D3CA02E5D07BED78936B1EC2E3")
             @Override
             public boolean contains(Object o) {
-                dsTaint.addTaint(o.dsTaint);
                 Entry<?, ?> entry;
                 entry = (Entry<?, ?>) o;
-                boolean varC238596BFA0BDAC8F31141888DBD9FC9_1921699082 = (isInBounds(entry.getKey()) && findByEntry(entry) != null);
-                return dsTaint.getTaintBoolean();
+                boolean varC238596BFA0BDAC8F31141888DBD9FC9_410247831 = (isInBounds(entry.getKey()) && findByEntry(entry) != null);
+                addTaint(o.getTaint());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1972907291 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1972907291;
                 // ---------- Original Method ----------
                 //if (!(o instanceof Entry)) {
                     //return false;
@@ -2739,15 +2986,15 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.103 -0400", hash_original_method = "EF59D88655EE445530DBDC219FDD1A5F", hash_generated_method = "5430BF43AF1D5B70A052174D140DCA69")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.736 -0400", hash_original_method = "EF59D88655EE445530DBDC219FDD1A5F", hash_generated_method = "873B16DCD87E01001318F250198A5732")
             @Override
             public boolean remove(Object o) {
-                dsTaint.addTaint(o.dsTaint);
                 Entry<?, ?> entry;
                 entry = (Entry<?, ?>) o;
-                boolean var155AF0A9D9B42FB9DF7C214F267A7E1B_1846614260 = (isInBounds(entry.getKey()) && TreeMap.this.entrySet().remove(entry));
-                return dsTaint.getTaintBoolean();
+                boolean var155AF0A9D9B42FB9DF7C214F267A7E1B_133631856 = (isInBounds(entry.getKey()) && TreeMap.this.entrySet().remove(entry));
+                addTaint(o.getTaint());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_397996037 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_397996037;
                 // ---------- Original Method ----------
                 //if (!(o instanceof Entry)) {
                     //return false;
@@ -2763,49 +3010,46 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         
         final class BoundedKeySet extends AbstractSet<K> implements NavigableSet<K> {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.103 -0400", hash_original_method = "E2D3F876A53715BED290C7F87B02539C", hash_generated_method = "E2D3F876A53715BED290C7F87B02539C")
-                        public BoundedKeySet ()
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.739 -0400", hash_original_method = "9AD1259E686AD3B6150FA3E61E8BAA17", hash_generated_method = "9AD1259E686AD3B6150FA3E61E8BAA17")
+            public BoundedKeySet ()
             {
+                //Synthesized constructor
             }
 
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.103 -0400", hash_original_method = "29BBB3BE9EA7B6D6C0B83C28F05082A4", hash_generated_method = "02D90F70BE15EA2E38D315279F221B17")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.739 -0400", hash_original_method = "29BBB3BE9EA7B6D6C0B83C28F05082A4", hash_generated_method = "A94FE664AAFAAB6369DD2984A44915D3")
             @Override
             public int size() {
-                int var69D9F234E7E76618743D3D698A58599B_1735925201 = (BoundedMap.this.size());
-                return dsTaint.getTaintInt();
+                int var69D9F234E7E76618743D3D698A58599B_1323080184 = (BoundedMap.this.size());
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_296346366 = getTaintInt();
+                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_296346366;
                 // ---------- Original Method ----------
                 //return BoundedMap.this.size();
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.103 -0400", hash_original_method = "AEA447F4A69E282FABF93736832EBAA3", hash_generated_method = "CB0F306C08E31D6962E48E658C920D10")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.740 -0400", hash_original_method = "AEA447F4A69E282FABF93736832EBAA3", hash_generated_method = "C90BDB2CB865A7C3BDB5EE06485E0FF4")
             @Override
             public boolean isEmpty() {
-                boolean varF1E2DF8AD3E4C9C508E293B19251E66A_2114749713 = (BoundedMap.this.isEmpty());
-                return dsTaint.getTaintBoolean();
+                boolean varF1E2DF8AD3E4C9C508E293B19251E66A_1160262200 = (BoundedMap.this.isEmpty());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_855934561 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_855934561;
                 // ---------- Original Method ----------
                 //return BoundedMap.this.isEmpty();
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.106 -0400", hash_original_method = "8539DDED7A19368CB3D09440D6A62269", hash_generated_method = "EED610CB0AF25A133F33CE4A3B75EFA4")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.752 -0400", hash_original_method = "8539DDED7A19368CB3D09440D6A62269", hash_generated_method = "00DC9C707DD361C6555FE2E2BE28A22D")
             @Override
             public Iterator<K> iterator() {
-                Iterator<K> var4101BDC7221B43B8EF249F98965F3739_779190608 = (new BoundedIterator<K>(endpoint(true)) {                    
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.106 -0400", hash_original_method = "3A3F5ECB2E6902CB8A6D0DE3222F8B33", hash_generated_method = "650C6369C4BF2E02AB9A7073F4D241DC")
-                    //DSFIXME:  CODE0002: Requires DSC value to be set
+                Iterator<K> varB4EAC82CA7396A68D541C85D26508E83_1896165218 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_1896165218 = new BoundedIterator<K>(endpoint(true)) {
                     public K next() {
-                        K var3265F7DEA8317691510BFB56F433AA22_432377952 = ((ascending ? stepForward() : stepBackward()).key); //DSFIXME:  CODE0008: Nested ternary operator in expression
-                        return (K)dsTaint.getTaint();
-                        // ---------- Original Method ----------
-                        //return (ascending ? stepForward() : stepBackward()).key;
+                        return (ascending ? stepForward() : stepBackward()).key;
                     }
-});
-                return (Iterator<K>)dsTaint.getTaint();
+                };
+                varB4EAC82CA7396A68D541C85D26508E83_1896165218.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_1896165218;
                 // ---------- Original Method ----------
                 //return new BoundedIterator<K>(endpoint(true)) {
                     //public K next() {
@@ -2815,20 +3059,16 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.106 -0400", hash_original_method = "74923548E6D3A508C57DDA053BC0EE64", hash_generated_method = "E20C1C0CA76D7875A8B0F81AF5EDB9A4")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.753 -0400", hash_original_method = "74923548E6D3A508C57DDA053BC0EE64", hash_generated_method = "18542DF6A491C13AF15BD26E972F3177")
             public Iterator<K> descendingIterator() {
-                Iterator<K> var320B2E7C741042E53FDFAEE3FE0ED30B_662348584 = (new BoundedIterator<K>(endpoint(false)) {                    
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.106 -0400", hash_original_method = "3DCBF0E7821BEEE7C84D65AF30CA29D6", hash_generated_method = "C97B18846247940392A2480EEF190259")
-                    //DSFIXME:  CODE0002: Requires DSC value to be set
+                Iterator<K> varB4EAC82CA7396A68D541C85D26508E83_1717349198 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_1717349198 = new BoundedIterator<K>(endpoint(false)) {
                     public K next() {
-                        K var86F7170DA1165040324167B1674F15D4_1771632358 = ((ascending ? stepBackward() : stepForward()).key); //DSFIXME:  CODE0008: Nested ternary operator in expression
-                        return (K)dsTaint.getTaint();
-                        // ---------- Original Method ----------
-                        //return (ascending ? stepBackward() : stepForward()).key;
+                        return (ascending ? stepBackward() : stepForward()).key;
                     }
-});
-                return (Iterator<K>)dsTaint.getTaint();
+                };
+                varB4EAC82CA7396A68D541C85D26508E83_1717349198.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_1717349198;
                 // ---------- Original Method ----------
                 //return new BoundedIterator<K>(endpoint(false)) {
                     //public K next() {
@@ -2838,211 +3078,223 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.106 -0400", hash_original_method = "F2816D590B9E0F32B93C47AB444AEEED", hash_generated_method = "1990EB443540C01A18788CAB0673DD81")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.754 -0400", hash_original_method = "F2816D590B9E0F32B93C47AB444AEEED", hash_generated_method = "BE07EC7921D729B393C9F307D8504A7A")
             @Override
             public boolean contains(Object key) {
-                dsTaint.addTaint(key.dsTaint);
-                boolean varDEADC564C50A1257392A09A833F9988B_670286134 = (isInBounds(key) && findByObject(key) != null);
-                return dsTaint.getTaintBoolean();
+                boolean varDEADC564C50A1257392A09A833F9988B_1198621458 = (isInBounds(key) && findByObject(key) != null);
+                addTaint(key.getTaint());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_585239194 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_585239194;
                 // ---------- Original Method ----------
                 //return isInBounds(key) && findByObject(key) != null;
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.107 -0400", hash_original_method = "ADEDE1B4ABE9B2F86F8B629056F35200", hash_generated_method = "A662F3E689FBDF44D90075A9F373E234")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.754 -0400", hash_original_method = "ADEDE1B4ABE9B2F86F8B629056F35200", hash_generated_method = "1170BE233C585ABFC97408F95B6F2078")
             @Override
             public boolean remove(Object key) {
-                dsTaint.addTaint(key.dsTaint);
-                boolean var55612E9AB490EF3FFBD38F202307B8D4_75999916 = (isInBounds(key) && removeInternalByKey(key) != null);
-                return dsTaint.getTaintBoolean();
+                boolean var55612E9AB490EF3FFBD38F202307B8D4_29832360 = (isInBounds(key) && removeInternalByKey(key) != null);
+                addTaint(key.getTaint());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1185763669 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1185763669;
                 // ---------- Original Method ----------
                 //return isInBounds(key) && removeInternalByKey(key) != null;
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.107 -0400", hash_original_method = "3067DEE01FBBBFD061436C7D4561F434", hash_generated_method = "FB4172F3652B248FC55A25EBD0C11F8B")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.770 -0400", hash_original_method = "3067DEE01FBBBFD061436C7D4561F434", hash_generated_method = "DF672BB942C09696EADF34E254CA9E23")
             public K first() {
-                K varE22EDE26363A40A00EFF03C7035872E0_1306594022 = (firstKey());
-                return (K)dsTaint.getTaint();
+                K varB4EAC82CA7396A68D541C85D26508E83_1488483261 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_1488483261 = firstKey();
+                varB4EAC82CA7396A68D541C85D26508E83_1488483261.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_1488483261;
                 // ---------- Original Method ----------
                 //return firstKey();
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.107 -0400", hash_original_method = "4985BB63726B115899F1811F08E80BDF", hash_generated_method = "4CD00123A35E8189C2D8599D18B957BE")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.782 -0400", hash_original_method = "4985BB63726B115899F1811F08E80BDF", hash_generated_method = "DF0011F1242635497F21DFCE4C665AFF")
             public K pollFirst() {
+                K varB4EAC82CA7396A68D541C85D26508E83_1360523250 = null; //Variable for return #1
                 Entry<K, ?> entry;
                 entry = pollFirstEntry();
-                {
-                    Object varD72C0ADBA213ED9F1E64858437A5A9A7_1634198410 = (entry.getKey());
-                } //End flattened ternary
-                return (K)dsTaint.getTaint();
+                varB4EAC82CA7396A68D541C85D26508E83_1360523250 = entry != null ? entry.getKey() : null;
+                varB4EAC82CA7396A68D541C85D26508E83_1360523250.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_1360523250;
                 // ---------- Original Method ----------
                 //Entry<K, ?> entry = pollFirstEntry();
                 //return entry != null ? entry.getKey() : null;
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.107 -0400", hash_original_method = "39C87F788E647BCD3FB86FFF34D7EF10", hash_generated_method = "545E80B5700B8C74EF417FA1C20F083F")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.782 -0400", hash_original_method = "39C87F788E647BCD3FB86FFF34D7EF10", hash_generated_method = "755BF8B6D7C755EB3D1C363BD0824FDB")
             public K last() {
-                K var1259CADB733D4F3EEEE72461A39A8456_1835167354 = (lastKey());
-                return (K)dsTaint.getTaint();
+                K varB4EAC82CA7396A68D541C85D26508E83_243308774 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_243308774 = lastKey();
+                varB4EAC82CA7396A68D541C85D26508E83_243308774.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_243308774;
                 // ---------- Original Method ----------
                 //return lastKey();
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.108 -0400", hash_original_method = "B202B1B2AAB477548F6A0AD72C9B1701", hash_generated_method = "9843C7F56760D091F296489686F4744B")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.783 -0400", hash_original_method = "B202B1B2AAB477548F6A0AD72C9B1701", hash_generated_method = "96CCF945AB8FF49C99909FDD82C76654")
             public K pollLast() {
+                K varB4EAC82CA7396A68D541C85D26508E83_2052981009 = null; //Variable for return #1
                 Entry<K, ?> entry;
                 entry = pollLastEntry();
-                {
-                    Object varD72C0ADBA213ED9F1E64858437A5A9A7_1590921661 = (entry.getKey());
-                } //End flattened ternary
-                return (K)dsTaint.getTaint();
+                varB4EAC82CA7396A68D541C85D26508E83_2052981009 = entry != null ? entry.getKey() : null;
+                varB4EAC82CA7396A68D541C85D26508E83_2052981009.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_2052981009;
                 // ---------- Original Method ----------
                 //Entry<K, ?> entry = pollLastEntry();
                 //return entry != null ? entry.getKey() : null;
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.108 -0400", hash_original_method = "5CFE05BF706A06BBB501067306F1B9ED", hash_generated_method = "F2DDA5699EB9A95C0D6CE67DCD13DFF5")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.783 -0400", hash_original_method = "5CFE05BF706A06BBB501067306F1B9ED", hash_generated_method = "666F5121542BE2FBB4E41CBC8CD5E22E")
             public K lower(K key) {
-                dsTaint.addTaint(key.dsTaint);
-                K varC8CA35B34879A5BBD97ABB8E8EAD5EB1_531519109 = (lowerKey(key));
-                return (K)dsTaint.getTaint();
+                K varB4EAC82CA7396A68D541C85D26508E83_184731373 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_184731373 = lowerKey(key);
+                addTaint(key.getTaint());
+                varB4EAC82CA7396A68D541C85D26508E83_184731373.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_184731373;
                 // ---------- Original Method ----------
                 //return lowerKey(key);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.108 -0400", hash_original_method = "10BABB7BB2E837824A13AAE89EE7EC6F", hash_generated_method = "A8EAFDA72DF50739CF6FB9531DB8DEFF")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.783 -0400", hash_original_method = "10BABB7BB2E837824A13AAE89EE7EC6F", hash_generated_method = "22DE82E9823B27A1FECDB90A8CECE782")
             public K floor(K key) {
-                dsTaint.addTaint(key.dsTaint);
-                K varD09AD4788238A5CED608A1BF0E5D1D7F_75027765 = (floorKey(key));
-                return (K)dsTaint.getTaint();
+                K varB4EAC82CA7396A68D541C85D26508E83_720180639 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_720180639 = floorKey(key);
+                addTaint(key.getTaint());
+                varB4EAC82CA7396A68D541C85D26508E83_720180639.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_720180639;
                 // ---------- Original Method ----------
                 //return floorKey(key);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.108 -0400", hash_original_method = "2AD4706A6D818B709A1E2CA64B48B4B9", hash_generated_method = "DD69780B6D62192AEC8AAAA340A59E09")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.784 -0400", hash_original_method = "2AD4706A6D818B709A1E2CA64B48B4B9", hash_generated_method = "6DC9A393ADA5951D498C6828CD14551C")
             public K ceiling(K key) {
-                dsTaint.addTaint(key.dsTaint);
-                K var52D28137C5EDE984721BFD710675DC0F_634997772 = (ceilingKey(key));
-                return (K)dsTaint.getTaint();
+                K varB4EAC82CA7396A68D541C85D26508E83_1007971537 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_1007971537 = ceilingKey(key);
+                addTaint(key.getTaint());
+                varB4EAC82CA7396A68D541C85D26508E83_1007971537.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_1007971537;
                 // ---------- Original Method ----------
                 //return ceilingKey(key);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.108 -0400", hash_original_method = "8CC63649234BFC57DB10A2387AE34DD6", hash_generated_method = "3CC56D9380AF08146EA7B59EF21A2517")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.784 -0400", hash_original_method = "8CC63649234BFC57DB10A2387AE34DD6", hash_generated_method = "A67192E429452D06DE9F7D3FBA0ED1E9")
             public K higher(K key) {
-                dsTaint.addTaint(key.dsTaint);
-                K var27E969402503A92141B8193AA2FC438A_1665028204 = (higherKey(key));
-                return (K)dsTaint.getTaint();
+                K varB4EAC82CA7396A68D541C85D26508E83_17162539 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_17162539 = higherKey(key);
+                addTaint(key.getTaint());
+                varB4EAC82CA7396A68D541C85D26508E83_17162539.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_17162539;
                 // ---------- Original Method ----------
                 //return higherKey(key);
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.108 -0400", hash_original_method = "C5DD330893039070B9523799F47D2DEB", hash_generated_method = "3941F11FC49C131156EA82ED6F581D4E")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.799 -0400", hash_original_method = "C5DD330893039070B9523799F47D2DEB", hash_generated_method = "305A8D67FA9DA946B75479CD07284873")
             public Comparator<? super K> comparator() {
-                Comparator<? super K> var00F595C821A260475D2C8A9157D79018_960788694 = (BoundedMap.this.comparator());
-                return (Comparator<? super K>)dsTaint.getTaint();
+                Comparator<? super K> varB4EAC82CA7396A68D541C85D26508E83_2033617959 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_2033617959 = BoundedMap.this.comparator();
+                varB4EAC82CA7396A68D541C85D26508E83_2033617959.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_2033617959;
                 // ---------- Original Method ----------
                 //return BoundedMap.this.comparator();
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.109 -0400", hash_original_method = "21039715CA3F916EA62F8064E71FC6CA", hash_generated_method = "A16596E1D6B714B7CB70F2A6CC5BA9F0")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.800 -0400", hash_original_method = "21039715CA3F916EA62F8064E71FC6CA", hash_generated_method = "71D87E53AB7CEEFA64C2601ADE2B0074")
             public NavigableSet<K> subSet(K from, boolean fromInclusive, K to, boolean toInclusive) {
-                dsTaint.addTaint(to.dsTaint);
-                dsTaint.addTaint(fromInclusive);
-                dsTaint.addTaint(toInclusive);
-                dsTaint.addTaint(from.dsTaint);
-                NavigableSet<K> var6CB83A4AEF7A36080313376C8A56BB48_1720816975 = (subMap(from, fromInclusive, to, toInclusive).navigableKeySet());
-                return (NavigableSet<K>)dsTaint.getTaint();
+                NavigableSet<K> varB4EAC82CA7396A68D541C85D26508E83_2144410276 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_2144410276 = subMap(from, fromInclusive, to, toInclusive).navigableKeySet();
+                addTaint(from.getTaint());
+                addTaint(fromInclusive);
+                addTaint(to.getTaint());
+                addTaint(toInclusive);
+                varB4EAC82CA7396A68D541C85D26508E83_2144410276.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_2144410276;
                 // ---------- Original Method ----------
                 //return subMap(from, fromInclusive, to, toInclusive).navigableKeySet();
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.109 -0400", hash_original_method = "AA0E5149ADFB9D8316CC8EA86FBC0B9E", hash_generated_method = "47505987AAC829A3B6A5CAD4ADC85E10")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.800 -0400", hash_original_method = "AA0E5149ADFB9D8316CC8EA86FBC0B9E", hash_generated_method = "F5A53B8DBF81229070A849A35B7E7445")
             public SortedSet<K> subSet(K fromInclusive, K toExclusive) {
-                dsTaint.addTaint(fromInclusive.dsTaint);
-                dsTaint.addTaint(toExclusive.dsTaint);
-                SortedSet<K> var979679B636B038708723E255D7275809_1140132194 = (subMap(fromInclusive, toExclusive).navigableKeySet());
-                return (SortedSet<K>)dsTaint.getTaint();
+                SortedSet<K> varB4EAC82CA7396A68D541C85D26508E83_1864221777 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_1864221777 = subMap(fromInclusive, toExclusive).navigableKeySet();
+                addTaint(fromInclusive.getTaint());
+                addTaint(toExclusive.getTaint());
+                varB4EAC82CA7396A68D541C85D26508E83_1864221777.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_1864221777;
                 // ---------- Original Method ----------
                 //return subMap(fromInclusive, toExclusive).navigableKeySet();
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.109 -0400", hash_original_method = "EDDD3784AC7E9834A18CCB5F2AE27346", hash_generated_method = "9671BD7B8E87234FFD51C21FB99362CA")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.801 -0400", hash_original_method = "EDDD3784AC7E9834A18CCB5F2AE27346", hash_generated_method = "1AAD9F32CCF6965D9A6496226966DE11")
             public NavigableSet<K> headSet(K to, boolean inclusive) {
-                dsTaint.addTaint(inclusive);
-                dsTaint.addTaint(to.dsTaint);
-                NavigableSet<K> varA465CE6FE43AAA87C98D7E92F4EA614A_939602319 = (headMap(to, inclusive).navigableKeySet());
-                return (NavigableSet<K>)dsTaint.getTaint();
+                NavigableSet<K> varB4EAC82CA7396A68D541C85D26508E83_388208966 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_388208966 = headMap(to, inclusive).navigableKeySet();
+                addTaint(to.getTaint());
+                addTaint(inclusive);
+                varB4EAC82CA7396A68D541C85D26508E83_388208966.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_388208966;
                 // ---------- Original Method ----------
                 //return headMap(to, inclusive).navigableKeySet();
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.109 -0400", hash_original_method = "85EE899AF4D85617CB858518BA70EA12", hash_generated_method = "9914CFFF1AED60819986B06FCF666FE9")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.801 -0400", hash_original_method = "85EE899AF4D85617CB858518BA70EA12", hash_generated_method = "9CE23649DD4098B52DC973D3DEE28636")
             public SortedSet<K> headSet(K toExclusive) {
-                dsTaint.addTaint(toExclusive.dsTaint);
-                SortedSet<K> var78B614F54CD75B1427B0E4001EC03FD2_810315507 = (headMap(toExclusive).navigableKeySet());
-                return (SortedSet<K>)dsTaint.getTaint();
+                SortedSet<K> varB4EAC82CA7396A68D541C85D26508E83_1442652257 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_1442652257 = headMap(toExclusive).navigableKeySet();
+                addTaint(toExclusive.getTaint());
+                varB4EAC82CA7396A68D541C85D26508E83_1442652257.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_1442652257;
                 // ---------- Original Method ----------
                 //return headMap(toExclusive).navigableKeySet();
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.109 -0400", hash_original_method = "B964A303D464756EDD8E9C26A8D54411", hash_generated_method = "1D938DB872BF266D6C4E694DECB0DEA0")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.805 -0400", hash_original_method = "B964A303D464756EDD8E9C26A8D54411", hash_generated_method = "CF850FF3C923CD7EC3DF610DC07E7740")
             public NavigableSet<K> tailSet(K from, boolean inclusive) {
-                dsTaint.addTaint(inclusive);
-                dsTaint.addTaint(from.dsTaint);
-                NavigableSet<K> var1BB4478007407ED929DB1EA901876653_202672749 = (tailMap(from, inclusive).navigableKeySet());
-                return (NavigableSet<K>)dsTaint.getTaint();
+                NavigableSet<K> varB4EAC82CA7396A68D541C85D26508E83_1503249213 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_1503249213 = tailMap(from, inclusive).navigableKeySet();
+                addTaint(from.getTaint());
+                addTaint(inclusive);
+                varB4EAC82CA7396A68D541C85D26508E83_1503249213.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_1503249213;
                 // ---------- Original Method ----------
                 //return tailMap(from, inclusive).navigableKeySet();
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.110 -0400", hash_original_method = "9536952691BDDFD3D8EFB20A3BD9AE85", hash_generated_method = "3EE659A8AEC5E4F7BB09D036C9F90BFC")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.816 -0400", hash_original_method = "9536952691BDDFD3D8EFB20A3BD9AE85", hash_generated_method = "245AF754F8DBDB30165949D7EE92D42C")
             public SortedSet<K> tailSet(K fromInclusive) {
-                dsTaint.addTaint(fromInclusive.dsTaint);
-                SortedSet<K> varAD280FBA9CC1A4E49367439FCC9998BF_973348892 = (tailMap(fromInclusive).navigableKeySet());
-                return (SortedSet<K>)dsTaint.getTaint();
+                SortedSet<K> varB4EAC82CA7396A68D541C85D26508E83_608282715 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_608282715 = tailMap(fromInclusive).navigableKeySet();
+                addTaint(fromInclusive.getTaint());
+                varB4EAC82CA7396A68D541C85D26508E83_608282715.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_608282715;
                 // ---------- Original Method ----------
                 //return tailMap(fromInclusive).navigableKeySet();
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.110 -0400", hash_original_method = "2BD89B2F5D5D75B5A66FC121E2BE77F9", hash_generated_method = "B600A6A7A9C161A29A6EFC9AAF9B47DD")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.817 -0400", hash_original_method = "2BD89B2F5D5D75B5A66FC121E2BE77F9", hash_generated_method = "A9DE4BC8DE69A65CB998410F7CA71CFF")
             public NavigableSet<K> descendingSet() {
-                NavigableSet<K> var26A6654EC6C38F80CE6F5BDE2CCE66DD_101153441 = (new BoundedMap(!ascending, from, fromBound, to, toBound).navigableKeySet());
-                return (NavigableSet<K>)dsTaint.getTaint();
+                NavigableSet<K> varB4EAC82CA7396A68D541C85D26508E83_1813827320 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_1813827320 = new BoundedMap(!ascending, from, fromBound, to, toBound).navigableKeySet();
+                varB4EAC82CA7396A68D541C85D26508E83_1813827320.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_1813827320;
                 // ---------- Original Method ----------
                 //return new BoundedMap(!ascending, from, fromBound, to, toBound).navigableKeySet();
             }
@@ -3057,22 +3309,33 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
 
     
     static abstract class NavigableSubMap<K, V> extends AbstractMap<K, V> implements Serializable {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.934 -0400", hash_original_field = "6F8F57715090DA2632453988D9A1501B", hash_generated_field = "B4717CF7B02EE2D309DEC599DAA1DA31")
+
         TreeMap<K, V> m;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.934 -0400", hash_original_field = "7CE8636C076F5F42316676F7CA5CCFBE", hash_generated_field = "281EBE4703232193C289CCB42FC430E9")
+
         Object lo;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.934 -0400", hash_original_field = "49F68A5C8493EC2C0BF489821C21FC3B", hash_generated_field = "EE270961C9ABF0EB22776F11E5EA361C")
+
         Object hi;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.934 -0400", hash_original_field = "0F5BB94160321573CBA39E65B009DB81", hash_generated_field = "D276D04527E3A57EE21A2E9A0B8A1207")
+
         boolean fromStart;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.934 -0400", hash_original_field = "A7515FC4FC23FB8889BFBA1242727AA1", hash_generated_field = "949B6DE90AB1D05CDD408410B1AFD766")
+
         boolean toEnd;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.934 -0400", hash_original_field = "A7CF08EB9369574B3716AAA5776C2B8D", hash_generated_field = "21B44DD2A9CF91217A1B213D6DC61745")
+
         boolean loInclusive;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.934 -0400", hash_original_field = "A4BF0B040F2788C41F2B3BBC34352A92", hash_generated_field = "B6BC458569D2A14CE4BE7D6F92D77203")
+
         boolean hiInclusive;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.110 -0400", hash_original_method = "C1ACA683FC5CFCA3BE29823730AC5B8B", hash_generated_method = "628F1F0FDEE3F980B1DE03B1D95ED3A3")
-        @DSModeled(DSC.SAFE)
-         NavigableSubMap(TreeMap<K, V> delegate, K from, Bound fromBound, K to, Bound toBound) {
-            dsTaint.addTaint(to.dsTaint);
-            dsTaint.addTaint(toBound.dsTaint);
-            dsTaint.addTaint(fromBound.dsTaint);
-            dsTaint.addTaint(from.dsTaint);
-            dsTaint.addTaint(delegate.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.936 -0400", hash_original_method = "C1ACA683FC5CFCA3BE29823730AC5B8B", hash_generated_method = "D5980D3B68B4F742E542A915179E4C63")
+          NavigableSubMap(TreeMap<K, V> delegate, K from, Bound fromBound, K to, Bound toBound) {
+            this.m = delegate;
+            this.lo = from;
+            this.hi = to;
             this.fromStart = fromBound == NO_BOUND;
             this.toEnd = toBound == NO_BOUND;
             this.loInclusive = fromBound == INCLUSIVE;
@@ -3088,21 +3351,19 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.111 -0400", hash_original_method = "98169B5D59A5E61A69F2A37D56262114", hash_generated_method = "2ADCBE450663D97C27DD6FDDB9E616C8")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.937 -0400", hash_original_method = "98169B5D59A5E61A69F2A37D56262114", hash_generated_method = "3CAF377124FBFCFBABACDE8606964B0B")
         @Override
         public Set<Entry<K, V>> entrySet() {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-            return (Set<Entry<K, V>>)dsTaint.getTaint();
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.111 -0400", hash_original_method = "6A8A4C8549808D70F841B9593D31A43F", hash_generated_method = "FCADCEB5A5C9CF0D7BB46D9AFAFE32DC")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.937 -0400", hash_original_method = "6A8A4C8549808D70F841B9593D31A43F", hash_generated_method = "BCB6B91410A9D0ABC206623BCBCD1DDB")
         @SuppressWarnings("unchecked")
         protected Object readResolve() throws ObjectStreamException {
+            Object varB4EAC82CA7396A68D541C85D26508E83_1204450577 = null; //Variable for return #1
             Bound fromBound;
             fromBound = NO_BOUND;
             fromBound = (loInclusive ? INCLUSIVE : EXCLUSIVE);
@@ -3111,8 +3372,9 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
             toBound = (hiInclusive ? INCLUSIVE : EXCLUSIVE);
             boolean ascending;
             ascending = !(this instanceof DescendingSubMap);
-            Object var08CC73B87B1675313039795FC1F9E93D_589870220 = (m.new BoundedMap(ascending, (K) lo, fromBound, (K) hi, toBound));
-            return (Object)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1204450577 = m.new BoundedMap(ascending, (K) lo, fromBound, (K) hi, toBound);
+            varB4EAC82CA7396A68D541C85D26508E83_1204450577.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1204450577;
             // ---------- Original Method ----------
             //Bound fromBound = fromStart ? NO_BOUND : (loInclusive ? INCLUSIVE : EXCLUSIVE);
             //Bound toBound = toEnd ? NO_BOUND : (hiInclusive ? INCLUSIVE : EXCLUSIVE);
@@ -3121,87 +3383,101 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        private static final long serialVersionUID = -2102997345730753016L;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.938 -0400", hash_original_field = "24DD802BAD101B93E8408F7D464B2F7C", hash_generated_field = "B6DBB99D66C7D5257F18744C6ED55042")
+
+        private static long serialVersionUID = -2102997345730753016L;
     }
 
 
     
     static class DescendingSubMap<K, V> extends NavigableSubMap<K, V> {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.938 -0400", hash_original_field = "9895B45EF9B1655F7485C1A0A0B5F7B1", hash_generated_field = "4B9119BDF2383B87567C450919484206")
+
         Comparator<K> reverseComparator;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.111 -0400", hash_original_method = "FDAA1F4436CE129642763FB7A272001D", hash_generated_method = "179DAFDD9A9101078E482746F1A3E3B9")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         DescendingSubMap(TreeMap<K, V> delegate, K from, Bound fromBound, K to, Bound toBound) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.938 -0400", hash_original_method = "FDAA1F4436CE129642763FB7A272001D", hash_generated_method = "403BC4E2D5604955FA33199087DB72AD")
+          DescendingSubMap(TreeMap<K, V> delegate, K from, Bound fromBound, K to, Bound toBound) {
             super(delegate, from, fromBound, to, toBound);
-            dsTaint.addTaint(to.dsTaint);
-            dsTaint.addTaint(toBound.dsTaint);
-            dsTaint.addTaint(fromBound.dsTaint);
-            dsTaint.addTaint(from.dsTaint);
-            dsTaint.addTaint(delegate.dsTaint);
+            addTaint(delegate.getTaint());
+            addTaint(from.getTaint());
+            addTaint(fromBound.getTaint());
+            addTaint(to.getTaint());
+            addTaint(toBound.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        private static final long serialVersionUID = 912986545866120460L;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.938 -0400", hash_original_field = "52D0D343187A178B79D894969A386899", hash_generated_field = "EFA8ED22E30CE9903B2F3A838ED881F4")
+
+        private static long serialVersionUID = 912986545866120460L;
     }
 
 
     
     static class AscendingSubMap<K, V> extends NavigableSubMap<K, V> {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.111 -0400", hash_original_method = "C32F016187D7478ED63A0FCF56CB93EB", hash_generated_method = "DD1A7563C349F23CA446CE4F9D8F0999")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
-         AscendingSubMap(TreeMap<K, V> delegate, K from, Bound fromBound, K to, Bound toBound) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.938 -0400", hash_original_method = "C32F016187D7478ED63A0FCF56CB93EB", hash_generated_method = "CB936BEDAF7FEDB34599950C363DBD15")
+          AscendingSubMap(TreeMap<K, V> delegate, K from, Bound fromBound, K to, Bound toBound) {
             super(delegate, from, fromBound, to, toBound);
-            dsTaint.addTaint(to.dsTaint);
-            dsTaint.addTaint(toBound.dsTaint);
-            dsTaint.addTaint(fromBound.dsTaint);
-            dsTaint.addTaint(from.dsTaint);
-            dsTaint.addTaint(delegate.dsTaint);
+            addTaint(delegate.getTaint());
+            addTaint(from.getTaint());
+            addTaint(fromBound.getTaint());
+            addTaint(to.getTaint());
+            addTaint(toBound.getTaint());
             // ---------- Original Method ----------
         }
 
         
-        private static final long serialVersionUID = 912986545866124060L;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.939 -0400", hash_original_field = "B7AE5FA51DF371C0F9A4E87B021D4132", hash_generated_field = "476C935E303A86073A4CED2972DE762E")
+
+        private static long serialVersionUID = 912986545866124060L;
     }
 
 
     
     class SubMap extends AbstractMap<K, V> implements Serializable {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.939 -0400", hash_original_field = "430A77C88BFBC96EB36AF12A2DC1DEB7", hash_generated_field = "7CA688EFC5D14AE4FAAF4A0FA771CBD0")
+
         Object fromKey;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.939 -0400", hash_original_field = "A8F9F07D66AF8C1622E025437E7B26CE", hash_generated_field = "40A3A7AC103CBB24D1824415661519AF")
+
         Object toKey;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.939 -0400", hash_original_field = "0F5BB94160321573CBA39E65B009DB81", hash_generated_field = "D276D04527E3A57EE21A2E9A0B8A1207")
+
         boolean fromStart;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.939 -0400", hash_original_field = "A7515FC4FC23FB8889BFBA1242727AA1", hash_generated_field = "949B6DE90AB1D05CDD408410B1AFD766")
+
         boolean toEnd;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.112 -0400", hash_original_method = "1497E4A70A7CCC376BB7A4F5336DC150", hash_generated_method = "1497E4A70A7CCC376BB7A4F5336DC150")
-                public SubMap ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.939 -0400", hash_original_method = "F30568FCC0DA5EEA09201E340702FDB4", hash_generated_method = "F30568FCC0DA5EEA09201E340702FDB4")
+        public SubMap ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.112 -0400", hash_original_method = "98169B5D59A5E61A69F2A37D56262114", hash_generated_method = "2ADCBE450663D97C27DD6FDDB9E616C8")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.948 -0400", hash_original_method = "98169B5D59A5E61A69F2A37D56262114", hash_generated_method = "3CAF377124FBFCFBABACDE8606964B0B")
         @Override
         public Set<Entry<K, V>> entrySet() {
             if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-            return (Set<Entry<K, V>>)dsTaint.getTaint();
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.112 -0400", hash_original_method = "AC95C6CC81DF8BD4B0519A49635D6CF0", hash_generated_method = "EC1D3B0A068E0326C9142A5BDC6B4968")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.949 -0400", hash_original_method = "AC95C6CC81DF8BD4B0519A49635D6CF0", hash_generated_method = "91CB9AC9BBAFC9F6E7A2EA63B1E28B14")
         @SuppressWarnings("unchecked")
         protected Object readResolve() throws ObjectStreamException {
+            Object varB4EAC82CA7396A68D541C85D26508E83_1333718678 = null; //Variable for return #1
             Bound fromBound;
             fromBound = NO_BOUND;
             fromBound = INCLUSIVE;
             Bound toBound;
             toBound = NO_BOUND;
             toBound = EXCLUSIVE;
-            Object var04CD6C0C3004889AA1E5E47A29853376_310038224 = (new BoundedMap(true, (K) fromKey, fromBound, (K) toKey, toBound));
-            return (Object)dsTaint.getTaint();
+            varB4EAC82CA7396A68D541C85D26508E83_1333718678 = new BoundedMap(true, (K) fromKey, fromBound, (K) toKey, toBound);
+            varB4EAC82CA7396A68D541C85D26508E83_1333718678.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1333718678;
             // ---------- Original Method ----------
             //Bound fromBound = fromStart ? NO_BOUND : INCLUSIVE;
             //Bound toBound = toEnd ? NO_BOUND : EXCLUSIVE;
@@ -3209,25 +3485,31 @@ public class TreeMap<K, V> extends AbstractMap<K, V> implements SortedMap<K, V>,
         }
 
         
-        private static final long serialVersionUID = -6520786458950516097L;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.950 -0400", hash_original_field = "EB690E9D3449E3ACDD044094944C88A2", hash_generated_field = "1C1BE65D094A2A2CF312563B1B5E5211")
+
+        private static long serialVersionUID = -6520786458950516097L;
     }
 
 
     
-    @SuppressWarnings("unchecked") private static final Comparator<Comparable> NATURAL_ORDER = new Comparator<Comparable>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:34.112 -0400", hash_original_method = "078A1DB9555D9E606EA5FF406F56B2E6", hash_generated_method = "D8D5524CBA6FBF6484703F07CF0B451F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.950 -0400", hash_original_field = "AAD864C939B46188F070706401E1932C", hash_generated_field = "32AF0C3C3D2AD769936B5B8F09BD0206")
+
+    @SuppressWarnings("unchecked") private static Comparator<Comparable> NATURAL_ORDER = new Comparator<Comparable>() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.950 -0400", hash_original_method = "078A1DB9555D9E606EA5FF406F56B2E6", hash_generated_method = "5D4CF0428855D4E3BA89E6C8AAD4B962")
         public int compare(Comparable a, Comparable b) {
-            dsTaint.addTaint(b.dsTaint);
-            dsTaint.addTaint(a.dsTaint);
-            int varC15B2565AD7A5177ED0132648C5386D9_939511398 = (a.compareTo(b));
-            return dsTaint.getTaintInt();
+            int varC15B2565AD7A5177ED0132648C5386D9_1577898284 = (a.compareTo(b));
+            addTaint(a.getTaint());
+            addTaint(b.getTaint());
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1485232600 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1485232600;
             // ---------- Original Method ----------
             //return a.compareTo(b);
         }
 
         
-}; //Transformed anonymous class
-    private static final long serialVersionUID = 919286545866124006L;
+};
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:56.950 -0400", hash_original_field = "0CB2D400AD555324093441A5EA2C6B7E", hash_generated_field = "BA41D7ADB475E35CDFC9F7B608EF580C")
+
+    private static long serialVersionUID = 919286545866124006L;
 }
 

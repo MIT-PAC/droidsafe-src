@@ -11,11 +11,10 @@ import android.util.AndroidRuntimeException;
 
 public class ReceiverCallNotAllowedException extends AndroidRuntimeException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:42.075 -0400", hash_original_method = "AFC9E27B420303F62AF3B362BCC79465", hash_generated_method = "0771A4417FC2632EF7786E771A288DD3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public ReceiverCallNotAllowedException(String msg) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.852 -0400", hash_original_method = "AFC9E27B420303F62AF3B362BCC79465", hash_generated_method = "A9BA6CA01738F043FA6EE9601C06B57B")
+    public  ReceiverCallNotAllowedException(String msg) {
         super(msg);
-        dsTaint.addTaint(msg);
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
     }
 

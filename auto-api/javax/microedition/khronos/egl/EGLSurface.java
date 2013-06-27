@@ -10,9 +10,10 @@ import java.util.Iterator;
 
 public abstract class EGLSurface {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:36.008 -0400", hash_original_method = "BC261F5A63B6380F687FD9297114E18B", hash_generated_method = "BC261F5A63B6380F687FD9297114E18B")
-        public EGLSurface ()
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.384 -0400", hash_original_method = "ED241E1FB4E4BE69D503584C2B122273", hash_generated_method = "ED241E1FB4E4BE69D503584C2B122273")
+    public EGLSurface ()
     {
+        //Synthesized constructor
     }
 
 

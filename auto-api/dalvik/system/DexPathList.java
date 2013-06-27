@@ -18,18 +18,19 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipFile;
 
 final class DexPathList {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.215 -0400", hash_original_field = "A2C9CF9447D978C776C79B242368B7FE", hash_generated_field = "C26455FF0303CF3616EEE8FEAA4F7A0F")
+
     private ClassLoader definingContext;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.216 -0400", hash_original_field = "97F48307FDC20679621A3A171AEF734A", hash_generated_field = "A7619B7365AE4C331D989E49ADBEFBCB")
+
     private Element[] dexElements;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.216 -0400", hash_original_field = "76035906E4CB2898CB1ABDF661AC6DCE", hash_generated_field = "AE1EF9991574B5A7C61DD485E05882A3")
+
     private File[] nativeLibraryDirectories;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.247 -0400", hash_original_method = "391CC1D8031EEADD5869B9B2E6DEDA56", hash_generated_method = "5C0E2F6FC1FD42DF59F1F856DC1BE0A2")
-    @DSModeled(DSC.BAN)
-    public DexPathList(ClassLoader definingContext, String dexPath,
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.217 -0400", hash_original_method = "391CC1D8031EEADD5869B9B2E6DEDA56", hash_generated_method = "06BDB98B6409ED9F15C4612CC7C6136C")
+    public  DexPathList(ClassLoader definingContext, String dexPath,
             String libraryPath, File optimizedDirectory) {
-        dsTaint.addTaint(definingContext.dsTaint);
-        dsTaint.addTaint(optimizedDirectory.dsTaint);
-        dsTaint.addTaint(dexPath);
-        dsTaint.addTaint(libraryPath);
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("definingContext == null");
         } //End block
@@ -38,7 +39,7 @@ final class DexPathList {
         } //End block
         {
             {
-                boolean varD93CE39D5961AECAA042D96C165FFDC0_2094966518 = (!optimizedDirectory.exists());
+                boolean varD93CE39D5961AECAA042D96C165FFDC0_922607139 = (!optimizedDirectory.exists());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
                         "optimizedDirectory doesn't exist: "
@@ -46,7 +47,7 @@ final class DexPathList {
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean varF3D464DBA78635702CCAB9C7B75BD5C3_983366208 = (!(optimizedDirectory.canRead()
+                boolean varF3D464DBA78635702CCAB9C7B75BD5C3_893379664 = (!(optimizedDirectory.canRead()
                             && optimizedDirectory.canWrite()));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException(
@@ -55,6 +56,7 @@ final class DexPathList {
                 } //End block
             } //End collapsed parenthetic
         } //End block
+        this.definingContext = definingContext;
         this.dexElements =
             makeDexElements(splitDexPath(dexPath), optimizedDirectory);
         this.nativeLibraryDirectories = splitLibraryPath(libraryPath);
@@ -173,22 +175,39 @@ final class DexPathList {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.251 -0400", hash_original_method = "D0077BF0C677FC7F0C28C59D93206805", hash_generated_method = "66776CE3097E1BE8030296E38F3389B5")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.258 -0400", hash_original_method = "D0077BF0C677FC7F0C28C59D93206805", hash_generated_method = "B8D97933E87C8D21E6C0B90F959DD008")
     public Class findClass(String name) {
-        dsTaint.addTaint(name);
+        Class varB4EAC82CA7396A68D541C85D26508E83_375066635 = null; //Variable for return #1
+        Class varB4EAC82CA7396A68D541C85D26508E83_2004399086 = null; //Variable for return #2
         {
-            Element element = dexElements[0];
+            Iterator<Element> varF1D603C6DC3EACB73DA0406834E64496_1121205013 = (dexElements).iterator();
+            varF1D603C6DC3EACB73DA0406834E64496_1121205013.hasNext();
+            Element element = varF1D603C6DC3EACB73DA0406834E64496_1121205013.next();
             {
                 DexFile dex;
                 dex = element.dexFile;
                 {
                     Class clazz;
                     clazz = dex.loadClassBinaryName(name, definingContext);
+                    {
+                        varB4EAC82CA7396A68D541C85D26508E83_375066635 = clazz;
+                    } //End block
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        return (Class)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_2004399086 = null;
+        addTaint(name.getTaint());
+        Class varA7E53CE21691AB073D9660D615818899_242895001; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_242895001 = varB4EAC82CA7396A68D541C85D26508E83_375066635;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_242895001 = varB4EAC82CA7396A68D541C85D26508E83_2004399086;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_242895001.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_242895001;
         // ---------- Original Method ----------
         //for (Element element : dexElements) {
             //DexFile dex = element.dexFile;
@@ -203,18 +222,33 @@ final class DexPathList {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.259 -0400", hash_original_method = "5F5378C3BB7399B364C8BA4B56CD7FC5", hash_generated_method = "4D180182CF0F141430BE93B08E896417")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.297 -0400", hash_original_method = "5F5378C3BB7399B364C8BA4B56CD7FC5", hash_generated_method = "13E904A93741D93B4EBBD5F087E9D102")
     public URL findResource(String name) {
-        dsTaint.addTaint(name);
+        URL varB4EAC82CA7396A68D541C85D26508E83_1338873478 = null; //Variable for return #1
+        URL varB4EAC82CA7396A68D541C85D26508E83_130284933 = null; //Variable for return #2
         {
             Element element = dexElements[0];
             {
                 URL url;
                 url = element.findResource(name);
+                {
+                    varB4EAC82CA7396A68D541C85D26508E83_1338873478 = url;
+                } //End block
             } //End block
         } //End collapsed parenthetic
-        return (URL)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_130284933 = null;
+        addTaint(name.getTaint());
+        URL varA7E53CE21691AB073D9660D615818899_1167786549; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1167786549 = varB4EAC82CA7396A68D541C85D26508E83_1338873478;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1167786549 = varB4EAC82CA7396A68D541C85D26508E83_130284933;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1167786549.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1167786549;
         // ---------- Original Method ----------
         //for (Element element : dexElements) {
             //URL url = element.findResource(name);
@@ -226,16 +260,15 @@ final class DexPathList {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.261 -0400", hash_original_method = "804A7034A2DFDDBE0ECC495815CB31BB", hash_generated_method = "01337AB4D972F44F630839C4997283AA")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.300 -0400", hash_original_method = "804A7034A2DFDDBE0ECC495815CB31BB", hash_generated_method = "4459CA091E97DA75D1EE179F352BB142")
     public Enumeration<URL> findResources(String name) {
-        dsTaint.addTaint(name);
+        Enumeration<URL> varB4EAC82CA7396A68D541C85D26508E83_1644987921 = null; //Variable for return #1
         ArrayList<URL> result;
         result = new ArrayList<URL>();
         {
-            Iterator<Element> varF1D603C6DC3EACB73DA0406834E64496_1507636950 = (dexElements).iterator();
-            varF1D603C6DC3EACB73DA0406834E64496_1507636950.hasNext();
-            Element element = varF1D603C6DC3EACB73DA0406834E64496_1507636950.next();
+            Iterator<Element> varF1D603C6DC3EACB73DA0406834E64496_1021668794 = (dexElements).iterator();
+            varF1D603C6DC3EACB73DA0406834E64496_1021668794.hasNext();
+            Element element = varF1D603C6DC3EACB73DA0406834E64496_1021668794.next();
             {
                 URL url;
                 url = element.findResource(name);
@@ -244,8 +277,10 @@ final class DexPathList {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        Enumeration<URL> var869F826C89C63069DDCF00C847A7B479_1947073066 = (Collections.enumeration(result));
-        return (Enumeration<URL>)dsTaint.getTaint();
+        varB4EAC82CA7396A68D541C85D26508E83_1644987921 = Collections.enumeration(result);
+        addTaint(name.getTaint());
+        varB4EAC82CA7396A68D541C85D26508E83_1644987921.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1644987921;
         // ---------- Original Method ----------
         //ArrayList<URL> result = new ArrayList<URL>();
         //for (Element element : dexElements) {
@@ -258,10 +293,10 @@ final class DexPathList {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.266 -0400", hash_original_method = "240DC3968F2BE784AD66FA40662DC8EC", hash_generated_method = "408B738459EBB033421487BEF7FE1E20")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.360 -0400", hash_original_method = "240DC3968F2BE784AD66FA40662DC8EC", hash_generated_method = "DB08195774C63BF9E1177380DC4749F8")
     public String findLibrary(String libraryName) {
-        dsTaint.addTaint(libraryName);
+        String varB4EAC82CA7396A68D541C85D26508E83_1352635058 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_483445756 = null; //Variable for return #2
         String fileName;
         fileName = System.mapLibraryName(libraryName);
         {
@@ -270,14 +305,26 @@ final class DexPathList {
                 File file;
                 file = new File(directory, fileName);
                 {
-                    boolean varC7394EA2DBCB91C973A311E8518DD73C_79033136 = (file.exists() && file.isFile() && file.canRead());
+                    boolean varC7394EA2DBCB91C973A311E8518DD73C_1500194141 = (file.exists() && file.isFile() && file.canRead());
                     {
-                        String var8CBF9B921DBCA83C7BACA109D187B091_767481274 = (file.getPath());
+                        varB4EAC82CA7396A68D541C85D26508E83_1352635058 = file.getPath();
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintString();
+        varB4EAC82CA7396A68D541C85D26508E83_483445756 = null;
+        addTaint(libraryName.getTaint());
+        String varA7E53CE21691AB073D9660D615818899_1850754132; //Final return value
+        switch (DroidSafeAndroidRuntime.switchControl) {
+            case 1: //Assign result for return ordinal #1
+                varA7E53CE21691AB073D9660D615818899_1850754132 = varB4EAC82CA7396A68D541C85D26508E83_1352635058;
+                break;
+            default:
+                varA7E53CE21691AB073D9660D615818899_1850754132 = varB4EAC82CA7396A68D541C85D26508E83_483445756;
+                break;
+        }
+        varA7E53CE21691AB073D9660D615818899_1850754132.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1850754132;
         // ---------- Original Method ----------
         //String fileName = System.mapLibraryName(libraryName);
         //for (File directory : nativeLibraryDirectories) {
@@ -291,16 +338,21 @@ final class DexPathList {
 
     
     static class Element {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.361 -0400", hash_original_field = "8C7DD922AD47494FC02C388E12C00EAC", hash_generated_field = "2F2F994FE64CD70831C1033A4A29832A")
+
         public File file;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.361 -0400", hash_original_field = "85B746DE3B5C6F50B7F3A33A94BD4DBE", hash_generated_field = "8D3206573610C2D0826105B08DB3519F")
+
         public ZipFile zipFile;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.361 -0400", hash_original_field = "07711BC335994A9454983BFAB25063AA", hash_generated_field = "605FB7C70C2875B1FD6B68477587F1B5")
+
         public DexFile dexFile;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.266 -0400", hash_original_method = "6D7B88020BD7097C5D3BFE418F13B214", hash_generated_method = "311F63A729BCCC69D677BF7C5060A45C")
-        @DSModeled(DSC.SAFE)
-        public Element(File file, ZipFile zipFile, DexFile dexFile) {
-            dsTaint.addTaint(zipFile.dsTaint);
-            dsTaint.addTaint(file.dsTaint);
-            dsTaint.addTaint(dexFile.dsTaint);
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.366 -0400", hash_original_method = "6D7B88020BD7097C5D3BFE418F13B214", hash_generated_method = "D256E2B985F1BE23E6B46E6D305762AC")
+        public  Element(File file, ZipFile zipFile, DexFile dexFile) {
+            this.file = file;
+            this.zipFile = zipFile;
+            this.dexFile = dexFile;
             // ---------- Original Method ----------
             //this.file = file;
             //this.zipFile = zipFile;
@@ -308,22 +360,36 @@ final class DexPathList {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:19.267 -0400", hash_original_method = "853A43CB46D2A1F46888921026F3A6BF", hash_generated_method = "2754E19E8D3944E4285621C5A84F33ED")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.367 -0400", hash_original_method = "853A43CB46D2A1F46888921026F3A6BF", hash_generated_method = "F616CE8781B92187B8CFF0FA04F86C28")
         public URL findResource(String name) {
-            dsTaint.addTaint(name);
+            URL varB4EAC82CA7396A68D541C85D26508E83_1330347085 = null; //Variable for return #1
+            URL varB4EAC82CA7396A68D541C85D26508E83_1999929146 = null; //Variable for return #2
             {
-                boolean var42372B44F4C376120C0651D6EE365C60_766147383 = ((zipFile == null) || (zipFile.getEntry(name) == null));
+                boolean var42372B44F4C376120C0651D6EE365C60_388867100 = ((zipFile == null) || (zipFile.getEntry(name) == null));
+                {
+                    varB4EAC82CA7396A68D541C85D26508E83_1330347085 = null;
+                } //End block
             } //End collapsed parenthetic
             try 
             {
-                URL var16903FDAE22AB516BEBD328AEA8355E6_434507048 = (new URL("jar:" + file.toURL() + "!/" + name));
+                varB4EAC82CA7396A68D541C85D26508E83_1999929146 = new URL("jar:" + file.toURL() + "!/" + name);
             } //End block
             catch (MalformedURLException ex)
             {
                 if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
             } //End block
-            return (URL)dsTaint.getTaint();
+            addTaint(name.getTaint());
+            URL varA7E53CE21691AB073D9660D615818899_963249771; //Final return value
+            switch (DroidSafeAndroidRuntime.switchControl) {
+                case 1: //Assign result for return ordinal #1
+                    varA7E53CE21691AB073D9660D615818899_963249771 = varB4EAC82CA7396A68D541C85D26508E83_1330347085;
+                    break;
+                default:
+                    varA7E53CE21691AB073D9660D615818899_963249771 = varB4EAC82CA7396A68D541C85D26508E83_1999929146;
+                    break;
+            }
+            varA7E53CE21691AB073D9660D615818899_963249771.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_963249771;
             // ---------- Original Method ----------
             //if ((zipFile == null) || (zipFile.getEntry(name) == null)) {
                 //return null;
@@ -340,9 +406,17 @@ final class DexPathList {
 
 
     
-    private static final String DEX_SUFFIX = ".dex";
-    private static final String JAR_SUFFIX = ".jar";
-    private static final String ZIP_SUFFIX = ".zip";
-    private static final String APK_SUFFIX = ".apk";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.367 -0400", hash_original_field = "BC6C75D8F878544D55CA796D95026124", hash_generated_field = "D86914CBE9196AE0FECF9CB4D76A1118")
+
+    private static String DEX_SUFFIX = ".dex";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.367 -0400", hash_original_field = "06FB4DCCFD53A4A1F3A18E020F026F35", hash_generated_field = "A3EAC6173EC8888778BFF1DE7FA1FE7D")
+
+    private static String JAR_SUFFIX = ".jar";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.368 -0400", hash_original_field = "7AC17D63B2FCD25FA6ABF6002E877D0C", hash_generated_field = "8FA3EAA7C9AAFA3BBBA958F6CDAA8C31")
+
+    private static String ZIP_SUFFIX = ".zip";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.368 -0400", hash_original_field = "DA2A78C7A359D1C9A401E9408106FDFD", hash_generated_field = "3269558108C0F3522B3F908AE1F5457A")
+
+    private static String APK_SUFFIX = ".apk";
 }
 

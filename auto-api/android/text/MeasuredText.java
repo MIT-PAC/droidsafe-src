@@ -15,20 +15,39 @@ import android.util.Log;
 import com.android.internal.util.ArrayUtils;
 
 class MeasuredText {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.755 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "A59BBC07E5E46996D793B2F37E80BD24")
+
     CharSequence mText;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.756 -0400", hash_original_field = "356F326DD07BF3C178D92993F42C8258", hash_generated_field = "56525EE47BD7FA6F8CF4F7593CA30653")
+
     int mTextStart;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.756 -0400", hash_original_field = "3776CDE0A92BD5E30198555CE9E92337", hash_generated_field = "F268DBF02C69AE56F5D7B811DF02DD71")
+
     float[] mWidths;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.756 -0400", hash_original_field = "7C3722E3CD3CCC07C587A93513F1BB79", hash_generated_field = "221D78AA948575C2C408290E651B0D1C")
+
     char[] mChars;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.756 -0400", hash_original_field = "83F99C72ABCF954424B37B0FFAB0F5BC", hash_generated_field = "653966A07B2E0880FE25B3845B58F732")
+
     byte[] mLevels;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.756 -0400", hash_original_field = "90B0D92F580EFEB979A78726B5A06046", hash_generated_field = "1D096AE80A1F47FBC923E53A1E78A2C9")
+
     int mDir;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.756 -0400", hash_original_field = "EB002D02793BF9AC45C93C8B0E0D177A", hash_generated_field = "E7219AC9CF15F6988B4E84BAD92B2CE6")
+
     boolean mEasy;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.756 -0400", hash_original_field = "B74CDC798B150A72FBFBFAE7161611A0", hash_generated_field = "4B68EEB0ED264408F73553B8964D2663")
+
     int mLen;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.756 -0400", hash_original_field = "A8470CE6E0050B0E832FDE52720C7250", hash_generated_field = "649CC94BF1D5A5FECFE4D2F006B35728")
+
     private int mPos;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.756 -0400", hash_original_field = "B3CE09DC80997D762CCFEE11916EE7B6", hash_generated_field = "BD23BE48855C3EDD93B6A5A7CA353122")
+
     private TextPaint mWorkPaint;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.174 -0400", hash_original_method = "D598B3CBC464CFD963CF00BDB269B2BE", hash_generated_method = "42783F836CB64369EF4A69ACD2229E3E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    private MeasuredText() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.757 -0400", hash_original_method = "D598B3CBC464CFD963CF00BDB269B2BE", hash_generated_method = "42783F836CB64369EF4A69ACD2229E3E")
+    private  MeasuredText() {
         mWorkPaint = new TextPaint();
         // ---------- Original Method ----------
         //mWorkPaint = new TextPaint();
@@ -71,13 +90,10 @@ class MeasuredText {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.175 -0400", hash_original_method = "AA7EC2CF46DA02829550CC76130A18E2", hash_generated_method = "ABABE0306844CB1EBE15BC7D2BACE79B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.772 -0400", hash_original_method = "AA7EC2CF46DA02829550CC76130A18E2", hash_generated_method = "1D91C6E38A887BBBBEDB3D815E4B707C")
      void setPara(CharSequence text, int start, int end, TextDirectionHeuristic textDir) {
-        dsTaint.addTaint(textDir.dsTaint);
-        dsTaint.addTaint(text);
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(end);
+        mText = text;
+        mTextStart = start;
         int len;
         len = end - start;
         mLen = len;
@@ -114,7 +130,7 @@ class MeasuredText {
             } //End collapsed parenthetic
         } //End block
         {
-            boolean var82EDE20A06D36920DD87167C8229ACD8_1938543073 = ((textDir == TextDirectionHeuristics.LTR ||
+            boolean var82EDE20A06D36920DD87167C8229ACD8_226995706 = ((textDir == TextDirectionHeuristics.LTR ||
                 textDir == TextDirectionHeuristics.FIRSTSTRONG_LTR ||
                 textDir == TextDirectionHeuristics.ANYRTL_LTR) &&
                 TextUtils.doesNotNeedBidi(mChars, 0, len));
@@ -148,17 +164,15 @@ class MeasuredText {
                 mEasy = false;
             } //End block
         } //End collapsed parenthetic
+        addTaint(end);
+        addTaint(textDir.getTaint());
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.176 -0400", hash_original_method = "DC7A3D7065A333C10C0F305EED7320B6", hash_generated_method = "44C783DAE5A1A8E649D4D08B5F840628")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.782 -0400", hash_original_method = "DC7A3D7065A333C10C0F305EED7320B6", hash_generated_method = "1F0B6580E58ACCC461AD5A90F3CE4E6A")
      float addStyleRun(TextPaint paint, int len, Paint.FontMetricsInt fm) {
-        dsTaint.addTaint(fm.dsTaint);
-        dsTaint.addTaint(paint.dsTaint);
-        dsTaint.addTaint(len);
         {
             paint.getFontMetricsInt(fm);
         } //End block
@@ -169,7 +183,7 @@ class MeasuredText {
             int flags;
             flags = Canvas.DIRECTION_LTR;
             flags = Canvas.DIRECTION_RTL;
-            float varEEDF1E9BF171FF1DF27B67B290C34949_1348501360 = (paint.getTextRunAdvances(mChars, p, len, p, len, flags, mWidths, p));
+            float varEEDF1E9BF171FF1DF27B67B290C34949_1052966740 = (paint.getTextRunAdvances(mChars, p, len, p, len, flags, mWidths, p));
         } //End block
         float totalAdvance;
         totalAdvance = 0;
@@ -192,20 +206,18 @@ class MeasuredText {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintFloat();
+        addTaint(paint.getTaint());
+        addTaint(fm.getTaint());
+        float var546ADE640B6EDFBC8A086EF31347E768_319502388 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_319502388;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.177 -0400", hash_original_method = "18B04B5B33F859850D856F2E2DC299C7", hash_generated_method = "F430B8762FF4B40A232BDA3C53635FC9")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.793 -0400", hash_original_method = "18B04B5B33F859850D856F2E2DC299C7", hash_generated_method = "5DC2E1BED010C393CCFAFD9B8832941F")
      float addStyleRun(TextPaint paint, MetricAffectingSpan[] spans, int len,
             Paint.FontMetricsInt fm) {
-        dsTaint.addTaint(fm.dsTaint);
-        dsTaint.addTaint(spans[0].dsTaint);
-        dsTaint.addTaint(paint.dsTaint);
-        dsTaint.addTaint(len);
         TextPaint workPaint;
         workPaint = mWorkPaint;
         workPaint.set(paint);
@@ -242,6 +254,7 @@ class MeasuredText {
                 e = mPos + len;
                 w[i] = 0;
             } //End collapsed parenthetic
+            mPos += len;
         } //End block
         {
             {
@@ -253,19 +266,18 @@ class MeasuredText {
                 fm.bottom += workPaint.baselineShift;
             } //End block
         } //End block
-        return dsTaint.getTaintFloat();
+        addTaint(paint.getTaint());
+        addTaint(spans[0].getTaint());
+        addTaint(fm.getTaint());
+        float var546ADE640B6EDFBC8A086EF31347E768_1658203342 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1658203342;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.177 -0400", hash_original_method = "F30A282CEAB73A5948442153B9251096", hash_generated_method = "5C0790B546ADD7190761394B6002A495")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.794 -0400", hash_original_method = "F30A282CEAB73A5948442153B9251096", hash_generated_method = "9EF290F779B0C1F98D8276BB1AF6E684")
      int breakText(int start, int limit, boolean forwards, float width) {
-        dsTaint.addTaint(limit);
-        dsTaint.addTaint(start);
-        dsTaint.addTaint(width);
-        dsTaint.addTaint(forwards);
         float[] w;
         w = mWidths;
         {
@@ -274,7 +286,7 @@ class MeasuredText {
                 i = start;
                 {
                     {
-                        boolean varF1EB4927EB76265507D93088705D8094_331089851 = ((width -= w[i]) < 0);
+                        boolean varF1EB4927EB76265507D93088705D8094_1213914707 = ((width -= w[i]) < 0);
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
@@ -285,12 +297,17 @@ class MeasuredText {
                 i = limit;
                 {
                     {
-                        boolean varF1EB4927EB76265507D93088705D8094_718385701 = ((width -= w[i]) < 0);
+                        boolean varF1EB4927EB76265507D93088705D8094_1708920088 = ((width -= w[i]) < 0);
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        return dsTaint.getTaintInt();
+        addTaint(start);
+        addTaint(limit);
+        addTaint(forwards);
+        addTaint(width);
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_872943014 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_872943014;
         // ---------- Original Method ----------
         //float[] w = mWidths;
         //if (forwards) {
@@ -310,11 +327,8 @@ class MeasuredText {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:39:56.178 -0400", hash_original_method = "053843F92349BBB89263F41FED96E473", hash_generated_method = "421B48D0BEE7D1DDE6DD4B9823A7AF0C")
-    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.806 -0400", hash_original_method = "053843F92349BBB89263F41FED96E473", hash_generated_method = "2A89E9D0D5F99176227A5224A926B684")
      float measure(int start, int limit) {
-        dsTaint.addTaint(limit);
-        dsTaint.addTaint(start);
         float width;
         width = 0;
         float[] w;
@@ -326,7 +340,10 @@ class MeasuredText {
                 width += w[i];
             } //End block
         } //End collapsed parenthetic
-        return dsTaint.getTaintFloat();
+        addTaint(start);
+        addTaint(limit);
+        float var546ADE640B6EDFBC8A086EF31347E768_1656494525 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1656494525;
         // ---------- Original Method ----------
         //float width = 0;
         //float[] w = mWidths;
@@ -337,8 +354,14 @@ class MeasuredText {
     }
 
     
-    private static final boolean localLOGV = false;
-    private static final Object[] sLock = new Object[0];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.806 -0400", hash_original_field = "6225589B7095A2A8B4D13D7070C07695", hash_generated_field = "318E208AAF5321A27E7D01AA2760853C")
+
+    private static boolean localLOGV = false;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.806 -0400", hash_original_field = "FD588D0BA09E2DE573D6AB2267D28AEB", hash_generated_field = "2414935848B92962C171B2E9A09E6A7D")
+
+    private static Object[] sLock = new Object[0];
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.806 -0400", hash_original_field = "9CC83DBD7EC6E0EE354732DB8357A7DA", hash_generated_field = "E84B170D94FAA90534173168110EF774")
+
     private static MeasuredText[] sCached = new MeasuredText[3];
 }
 

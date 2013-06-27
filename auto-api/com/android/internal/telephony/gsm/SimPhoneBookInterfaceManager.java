@@ -14,19 +14,17 @@ import com.android.internal.telephony.IccPhoneBookInterfaceManager;
 
 public class SimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.814 -0400", hash_original_method = "EB9FF0C7D9857B55B5A29EA1164E80F0", hash_generated_method = "A4E29422201B6F2956C36BD77D98C90A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
-    public SimPhoneBookInterfaceManager(GSMPhone phone) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.305 -0400", hash_original_method = "EB9FF0C7D9857B55B5A29EA1164E80F0", hash_generated_method = "67A0ACE92A93706063A7631C22735047")
+    public  SimPhoneBookInterfaceManager(GSMPhone phone) {
         super(phone);
-        dsTaint.addTaint(phone.dsTaint);
         adnCache = phone.mIccRecords.getAdnCache();
+        addTaint(phone.getTaint());
         // ---------- Original Method ----------
         //adnCache = phone.mIccRecords.getAdnCache();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.815 -0400", hash_original_method = "9B378D368B78D2E2F938DA57C729E6B5", hash_generated_method = "9A4F77B4E25F9CFE2D71D8AC605A621B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.305 -0400", hash_original_method = "9B378D368B78D2E2F938DA57C729E6B5", hash_generated_method = "9A4F77B4E25F9CFE2D71D8AC605A621B")
     public void dispose() {
         super.dispose();
         // ---------- Original Method ----------
@@ -34,8 +32,7 @@ public class SimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.815 -0400", hash_original_method = "11E9A9A4D579433D0F36A7564F8CD864", hash_generated_method = "4C6721F5A9C5E61BF8F6FC55DBAC4727")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.306 -0400", hash_original_method = "11E9A9A4D579433D0F36A7564F8CD864", hash_generated_method = "4C6721F5A9C5E61BF8F6FC55DBAC4727")
     protected void finalize() {
         try 
         {
@@ -54,10 +51,8 @@ public class SimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.815 -0400", hash_original_method = "F8C8B1EC8901BE31BE40309AF8515A8A", hash_generated_method = "578C0C76F5BDF0799D86E551B1C3D0B6")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.314 -0400", hash_original_method = "F8C8B1EC8901BE31BE40309AF8515A8A", hash_generated_method = "1ACC1187FC16DE8F58856D28036A6EEB")
     public int[] getAdnRecordsSize(int efid) {
-        dsTaint.addTaint(efid);
         logd("getAdnRecordsSize: efid=" + efid);
         {
             checkThread();
@@ -69,9 +64,9 @@ public class SimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
             phone.getIccFileHandler().getEFLinearRecordSize(efid, response);
             waitForResult(status);
         } //End block
-        int[] retVal = new int[1];
-        retVal[0] = dsTaint.getTaintInt();
-        return retVal;
+        addTaint(efid);
+        int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1871660135 = {getTaintInt()};
+        return varB4CCCA26F9DB9189C32F33E82D425CFB_1871660135;
         // ---------- Original Method ----------
         //if (DBG) logd("getAdnRecordsSize: efid=" + efid);
         //synchronized(mLock) {
@@ -86,25 +81,25 @@ public class SimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.815 -0400", hash_original_method = "7E6B689FB87F8B4FC5FFEDD55BD71E24", hash_generated_method = "E96A3AB0BBE1327395E9931DF61A493E")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.315 -0400", hash_original_method = "7E6B689FB87F8B4FC5FFEDD55BD71E24", hash_generated_method = "05B82BB398702D4F65967737AA29DAF3")
     protected void logd(String msg) {
-        dsTaint.addTaint(msg);
         Log.d(LOG_TAG, "[SimPbInterfaceManager] " + msg);
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         //Log.d(LOG_TAG, "[SimPbInterfaceManager] " + msg);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:16.816 -0400", hash_original_method = "3C81ED33713B877CE55C1136EDE4985A", hash_generated_method = "D95819DEDF635558AFAEAE4B54A40004")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.315 -0400", hash_original_method = "3C81ED33713B877CE55C1136EDE4985A", hash_generated_method = "9F7B016C36DFFE84C1135F8325127F9A")
     protected void loge(String msg) {
-        dsTaint.addTaint(msg);
+        addTaint(msg.getTaint());
         // ---------- Original Method ----------
         //Log.e(LOG_TAG, "[SimPbInterfaceManager] " + msg);
     }
 
     
-    static final String LOG_TAG = "GSM";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:21.315 -0400", hash_original_field = "41EBE7F32B96C1E2E9C209710486A443", hash_generated_field = "D3C0B237A982707BF0906F1B27E7321D")
+
+    static String LOG_TAG = "GSM";
 }
 

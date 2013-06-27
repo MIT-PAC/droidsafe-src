@@ -19,24 +19,23 @@ import java.util.HashMap;
 import java.util.Vector;
 
 public final class WebIconDatabase {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.011 -0400", hash_original_field = "FD607A408617F0526DD1616AA88B403D", hash_generated_field = "00A17466879DDA676F4AD092B7751870")
+
     private EventHandler mEventHandler = new EventHandler();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.010 -0400", hash_original_method = "D97F7EFB28FBFEC67D724170FB0509C5", hash_generated_method = "282A0D53C15427A619DE121EA3CBF850")
-    @DSModeled(DSC.SAFE)
-    private WebIconDatabase() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.012 -0400", hash_original_method = "D97F7EFB28FBFEC67D724170FB0509C5", hash_generated_method = "282A0D53C15427A619DE121EA3CBF850")
+    private  WebIconDatabase() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.010 -0400", hash_original_method = "3087EA5DA62EA4F11A4DE20CD6A73D07", hash_generated_method = "52CA0B715083442F7015981DF17B46EB")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.012 -0400", hash_original_method = "3087EA5DA62EA4F11A4DE20CD6A73D07", hash_generated_method = "E67AD884B3081610B726BFBF3123634E")
     public void open(String path) {
-        dsTaint.addTaint(path);
         {
             File db;
             db = new File(path);
             {
-                boolean varB622938D402E011904848985C78EB22E_1129521499 = (!db.exists());
+                boolean varB622938D402E011904848985C78EB22E_1857008103 = (!db.exists());
                 {
                     db.mkdirs();
                 } //End block
@@ -44,6 +43,7 @@ public final class WebIconDatabase {
             mEventHandler.postMessage(
                     Message.obtain(null, EventHandler.OPEN, db.getAbsolutePath()));
         } //End block
+        addTaint(path.getTaint());
         // ---------- Original Method ----------
         //if (path != null) {
             //File db = new File(path);
@@ -56,8 +56,7 @@ public final class WebIconDatabase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.011 -0400", hash_original_method = "331AABE14B3E5742E4C5E7CDDA5A9C2E", hash_generated_method = "A4D270AD90EEAE71E57F3A5DC98F2FC3")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.012 -0400", hash_original_method = "331AABE14B3E5742E4C5E7CDDA5A9C2E", hash_generated_method = "A4D270AD90EEAE71E57F3A5DC98F2FC3")
     public void close() {
         mEventHandler.postMessage(
                 Message.obtain(null, EventHandler.CLOSE));
@@ -67,8 +66,7 @@ public final class WebIconDatabase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.011 -0400", hash_original_method = "A85BFB776007018F103CC92C345AF37F", hash_generated_method = "7BDEB7DCE0A1FAA95EC131AE3AF5AB03")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.013 -0400", hash_original_method = "A85BFB776007018F103CC92C345AF37F", hash_generated_method = "7BDEB7DCE0A1FAA95EC131AE3AF5AB03")
     public void removeAllIcons() {
         mEventHandler.postMessage(
                 Message.obtain(null, EventHandler.REMOVE_ALL));
@@ -78,15 +76,14 @@ public final class WebIconDatabase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.011 -0400", hash_original_method = "794C674767A8A815CC73A4F95B03095B", hash_generated_method = "4F96FDC368A76CAD4BADA90F3F9D9483")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.013 -0400", hash_original_method = "794C674767A8A815CC73A4F95B03095B", hash_generated_method = "41EDC090B0AFC324665D0343BFACB4D7")
     public void requestIconForPageUrl(String url, IconListener listener) {
-        dsTaint.addTaint(listener.dsTaint);
-        dsTaint.addTaint(url);
         Message msg;
         msg = Message.obtain(null, EventHandler.REQUEST_ICON, listener);
         msg.getData().putString("url", url);
         mEventHandler.postMessage(msg);
+        addTaint(url.getTaint());
+        addTaint(listener.getTaint());
         // ---------- Original Method ----------
         //if (listener == null || url == null) {
             //return;
@@ -97,15 +94,11 @@ public final class WebIconDatabase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.011 -0400", hash_original_method = "7ACE864BB2DE1EE9743E78ECD884C38E", hash_generated_method = "6B217B786F1ED35339F5A61368B17D2A")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.024 -0400", hash_original_method = "7ACE864BB2DE1EE9743E78ECD884C38E", hash_generated_method = "3593E32E6267233EDDB8F055E6A13FBF")
     public void bulkRequestIconForPageUrl(ContentResolver cr, String where,
             IconListener listener) {
-        dsTaint.addTaint(cr.dsTaint);
-        dsTaint.addTaint(listener.dsTaint);
-        dsTaint.addTaint(where);
         {
-            boolean var46D479A9F8E9FE39318F478CD5FAD643_1738421766 = (mEventHandler.hasHandler());
+            boolean var46D479A9F8E9FE39318F478CD5FAD643_267349695 = (mEventHandler.hasHandler());
             {
                 HashMap<String, Object> map;
                 map = new HashMap<String, Object>();
@@ -117,6 +110,9 @@ public final class WebIconDatabase {
                 mEventHandler.postMessage(msg);
             } //End block
         } //End collapsed parenthetic
+        addTaint(cr.getTaint());
+        addTaint(where.getTaint());
+        addTaint(listener.getTaint());
         // ---------- Original Method ----------
         //if (listener == null) {
             //return;
@@ -133,14 +129,13 @@ public final class WebIconDatabase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.011 -0400", hash_original_method = "4FB0334B2FC007108F7A611624721C63", hash_generated_method = "FF1D9BCDFE4293301C495B7CC8FF8C8B")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.025 -0400", hash_original_method = "4FB0334B2FC007108F7A611624721C63", hash_generated_method = "CB6A83006639F905EF822ABC21EE6B82")
     public void retainIconForPageUrl(String url) {
-        dsTaint.addTaint(url);
         {
             mEventHandler.postMessage(
                     Message.obtain(null, EventHandler.RETAIN_ICON, url));
         } //End block
+        addTaint(url.getTaint());
         // ---------- Original Method ----------
         //if (url != null) {
             //mEventHandler.postMessage(
@@ -149,14 +144,13 @@ public final class WebIconDatabase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.012 -0400", hash_original_method = "742C1A356F3DFC35D629978FF2508090", hash_generated_method = "A13F8BE05F9DC5912CC0A9304DDF9B2F")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.025 -0400", hash_original_method = "742C1A356F3DFC35D629978FF2508090", hash_generated_method = "E3B1A3A01423C337B01064C1A4D145AB")
     public void releaseIconForPageUrl(String url) {
-        dsTaint.addTaint(url);
         {
             mEventHandler.postMessage(
                     Message.obtain(null, EventHandler.RELEASE_ICON, url));
         } //End block
+        addTaint(url.getTaint());
         // ---------- Original Method ----------
         //if (url != null) {
             //mEventHandler.postMessage(
@@ -173,8 +167,7 @@ public final class WebIconDatabase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.012 -0400", hash_original_method = "B1AD2CC25FCD72FA4E655F2F00EE9B34", hash_generated_method = "C9CAC81B44791934BB05AC045BCDD274")
-    //DSFIXME:  CODE0002: Requires DSC value to be set
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.026 -0400", hash_original_method = "B1AD2CC25FCD72FA4E655F2F00EE9B34", hash_generated_method = "C9CAC81B44791934BB05AC045BCDD274")
      void createHandler() {
         mEventHandler.createHandler();
         // ---------- Original Method ----------
@@ -208,23 +201,27 @@ public final class WebIconDatabase {
 
     
     private static class EventHandler extends Handler {
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.038 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
+
         private Handler mHandler;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.038 -0400", hash_original_field = "ED45FF5D313A78F9E6C93B2590E118DE", hash_generated_field = "9B89FFC17BC75E97744A4692FA4B431D")
+
         private Vector<Message> mMessages = new Vector<Message>();
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.013 -0400", hash_original_method = "A6B283281D2E30FEC9C27B06A0776A9C", hash_generated_method = "A6B283281D2E30FEC9C27B06A0776A9C")
-                public EventHandler ()
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.038 -0400", hash_original_method = "FFA7F4A8F990D2647EE1D5FBAEBEF779", hash_generated_method = "FFA7F4A8F990D2647EE1D5FBAEBEF779")
+        public EventHandler ()
         {
+            //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.013 -0400", hash_original_method = "933A9372A0E78DFEA9569EC4FAF2FF2F", hash_generated_method = "E0C15EE9824E6CEDC684173D91D506D4")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.039 -0400", hash_original_method = "933A9372A0E78DFEA9569EC4FAF2FF2F", hash_generated_method = "024450BAD6A97B45D6A3096E3B694518")
         @Override
         public void handleMessage(Message msg) {
-            dsTaint.addTaint(msg.dsTaint);
             //Begin case ICON_RESULT 
             ((IconResult) msg.obj).dispatch();
             //End case ICON_RESULT 
+            addTaint(msg.getTaint());
             // ---------- Original Method ----------
             //switch (msg.what) {
                 //case ICON_RESULT:
@@ -234,16 +231,13 @@ public final class WebIconDatabase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.014 -0400", hash_original_method = "93C53855D8E83D18C38BE52A1D7D3DDC", hash_generated_method = "62E5803FC35A5F84227335C9872EF637")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.170 -0400", hash_original_method = "93C53855D8E83D18C38BE52A1D7D3DDC", hash_generated_method = "C5D428C45C3853EC58060296A2D9D283")
         private synchronized void createHandler() {
             {
                 mHandler = new Handler() {                    
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.014 -0400", hash_original_method = "3C22CFB4454B8CCB86512982F7DADD26", hash_generated_method = "5C5C40A50EE641C2AC60C775056A583B")
-                    //DSFIXME:  CODE0002: Requires DSC value to be set
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.040 -0400", hash_original_method = "3C22CFB4454B8CCB86512982F7DADD26", hash_generated_method = "3BE19EEE75DAA48B44FF5F8665B75B56")
                     @Override
                     public void handleMessage(Message msg) {
-                        dsTaint.addTaint(msg.dsTaint);
                         //Begin case OPEN 
                         nativeOpen((String) msg.obj);
                         //End case OPEN 
@@ -273,6 +267,7 @@ public final class WebIconDatabase {
                         //Begin case RELEASE_ICON 
                         nativeReleaseIconForPageUrl((String) msg.obj);
                         //End case RELEASE_ICON 
+                        addTaint(msg.getTaint());
                         // ---------- Original Method ----------
                         // Original Method Too Long, Refer to Original Implementation
                     }
@@ -291,25 +286,24 @@ public final class WebIconDatabase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.014 -0400", hash_original_method = "9D0DE68A4BFD007DC242C5FC5FA57FA9", hash_generated_method = "0C0D3CEE1521A4E77D3114E4DBDC0F12")
-        @DSModeled(DSC.SAFE)
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.170 -0400", hash_original_method = "9D0DE68A4BFD007DC242C5FC5FA57FA9", hash_generated_method = "5F05CB59E1BD98244813EBB913825ADB")
         private synchronized boolean hasHandler() {
-            return dsTaint.getTaintBoolean();
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_551242493 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_551242493;
             // ---------- Original Method ----------
             //return mHandler != null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.015 -0400", hash_original_method = "4B2498A7504C7636E794F105FA929903", hash_generated_method = "FC39336D5BA1355C29E1DFC1376F4332")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.171 -0400", hash_original_method = "4B2498A7504C7636E794F105FA929903", hash_generated_method = "EC1942C222D230CADE8FBD413B6677C1")
         private synchronized void postMessage(Message msg) {
-            dsTaint.addTaint(msg.dsTaint);
             {
                 mMessages.add(msg);
             } //End block
             {
                 mHandler.sendMessage(msg);
             } //End block
+            addTaint(msg.getTaint());
             // ---------- Original Method ----------
             //if (mMessages != null) {
                 //mMessages.add(msg);
@@ -319,10 +313,8 @@ public final class WebIconDatabase {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.015 -0400", hash_original_method = "14DAA8F1389B41CD064DE9C446247235", hash_generated_method = "2A9FD38FE61D0D909F982C1AE555CC1F")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.171 -0400", hash_original_method = "14DAA8F1389B41CD064DE9C446247235", hash_generated_method = "F1DC9AF385BDBF4A61363A752F79CACC")
         private void bulkRequestIcons(Message msg) {
-            dsTaint.addTaint(msg.dsTaint);
             HashMap map;
             map = (HashMap) msg.obj;
             IconListener listener;
@@ -340,7 +332,7 @@ public final class WebIconDatabase {
                         new String[] { Browser.BookmarkColumns.URL },
                         where, null, null);
                 {
-                    boolean varED44997391BF703F93FF8714A8F8E209_809947736 = (c.moveToFirst());
+                    boolean varED44997391BF703F93FF8714A8F8E209_600452107 = (c.moveToFirst());
                     {
                         {
                             String url;
@@ -348,7 +340,7 @@ public final class WebIconDatabase {
                             requestIconAndSendResult(url, listener);
                         } //End block
                         {
-                            boolean varC617FF8D7663D3FF178F4C9831B26157_1532274906 = (c.moveToNext());
+                            boolean varC617FF8D7663D3FF178F4C9831B26157_287444988 = (c.moveToNext());
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
@@ -359,22 +351,22 @@ public final class WebIconDatabase {
             {
                 c.close();
             } //End block
+            addTaint(msg.getTaint());
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.015 -0400", hash_original_method = "FD70C30826AD390D3E7262DECFBF2A75", hash_generated_method = "298F9B2FDBAC8968A9A5D5ABAFC88397")
-        //DSFIXME:  CODE0002: Requires DSC value to be set
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.172 -0400", hash_original_method = "FD70C30826AD390D3E7262DECFBF2A75", hash_generated_method = "232EB3B29E06FEF1D4876693A43028E4")
         private void requestIconAndSendResult(String url, IconListener listener) {
-            dsTaint.addTaint(listener.dsTaint);
-            dsTaint.addTaint(url);
             Bitmap icon;
             icon = nativeIconForPageUrl(url);
             {
                 sendMessage(obtainMessage(ICON_RESULT,
                             new IconResult(url, icon, listener)));
             } //End block
+            addTaint(url.getTaint());
+            addTaint(listener.getTaint());
             // ---------- Original Method ----------
             //Bitmap icon = nativeIconForPageUrl(url);
             //if (icon != null) {
@@ -385,16 +377,21 @@ public final class WebIconDatabase {
 
         
         private class IconResult {
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.172 -0400", hash_original_field = "8299C83E9CFFA2EF5909444648349221", hash_generated_field = "9C2E85EC79E8F8349BF2E81BA4AC7991")
+
             private String mUrl;
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.172 -0400", hash_original_field = "1A265556E59DF15CAEC4E55FB61E68C7", hash_generated_field = "817E9CCF7085AADAC424D9C5A9C974DC")
+
             private Bitmap mIcon;
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.172 -0400", hash_original_field = "9B3DD33B99719CE65C53FA6749E2AD69", hash_generated_field = "5923DC2A4A9F5F2A44874626DE94545F")
+
             private IconListener mListener;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.015 -0400", hash_original_method = "88D8D1712732D1C320641A492AB35980", hash_generated_method = "DD3D8B8FDCBBBA76213B4457EC8641DA")
-            @DSModeled(DSC.SAFE)
-             IconResult(String url, Bitmap icon, IconListener l) {
-                dsTaint.addTaint(icon.dsTaint);
-                dsTaint.addTaint(l.dsTaint);
-                dsTaint.addTaint(url);
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.178 -0400", hash_original_method = "88D8D1712732D1C320641A492AB35980", hash_generated_method = "02AF325532F14A0DBED7958BA93541CF")
+              IconResult(String url, Bitmap icon, IconListener l) {
+                mUrl = url;
+                mIcon = icon;
+                mListener = l;
                 // ---------- Original Method ----------
                 //mUrl = url;
                 //mIcon = icon;
@@ -402,8 +399,7 @@ public final class WebIconDatabase {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.1", generated_on = "2013-06-21 15:40:04.016 -0400", hash_original_method = "0BD69C5EE78EDD047C8FC1E711DA2EA8", hash_generated_method = "37E27E327CE1FC5B9184E444CD4F387F")
-            //DSFIXME:  CODE0002: Requires DSC value to be set
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.178 -0400", hash_original_method = "0BD69C5EE78EDD047C8FC1E711DA2EA8", hash_generated_method = "37E27E327CE1FC5B9184E444CD4F387F")
              void dispatch() {
                 mListener.onReceivedIcon(mUrl, mIcon);
                 // ---------- Original Method ----------
@@ -415,14 +411,30 @@ public final class WebIconDatabase {
 
 
         
-        static final int OPEN         = 0;
-        static final int CLOSE        = 1;
-        static final int REMOVE_ALL   = 2;
-        static final int REQUEST_ICON = 3;
-        static final int RETAIN_ICON  = 4;
-        static final int RELEASE_ICON = 5;
-        static final int BULK_REQUEST_ICON = 6;
-        private static final int ICON_RESULT = 10;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.178 -0400", hash_original_field = "43717087C14CDCDCFDB18BD5D73ABF14", hash_generated_field = "FA2601CBDDBCF7012A56ECA557088F09")
+
+        static int OPEN = 0;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.178 -0400", hash_original_field = "18310FC3CD7070BE891619B822283AE9", hash_generated_field = "03DCA87D2516B8CAD943934FEFD3645D")
+
+        static int CLOSE = 1;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.178 -0400", hash_original_field = "21B244C6846C6ADF33D927F052761C6E", hash_generated_field = "D483B253ECC7EC3722C1ABFD9D301763")
+
+        static int REMOVE_ALL = 2;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.178 -0400", hash_original_field = "537C6DB203C5D8D84ADD60B22C45CC1A", hash_generated_field = "93916869D6F243A576659861814C98ED")
+
+        static int REQUEST_ICON = 3;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.178 -0400", hash_original_field = "B7004FBC13FA77F75E28084C88B3C052", hash_generated_field = "B749CB1EA8C581AB1BF39992BAFD6F38")
+
+        static int RETAIN_ICON = 4;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.178 -0400", hash_original_field = "A965153BA664276AC54748DB21E81458", hash_generated_field = "DE0CF17A11BA1129925990891D576A48")
+
+        static int RELEASE_ICON = 5;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.178 -0400", hash_original_field = "97DDCAE8EE3CF6051295DDB51D779E89", hash_generated_field = "9808B5A8E5C0341EC926F557FA3FB564")
+
+        static int BULK_REQUEST_ICON = 6;
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.178 -0400", hash_original_field = "56556CDDF4E8A1A0524A2C00FD227265", hash_generated_field = "47C20139DD5648455137C33367B904F2")
+
+        private static int ICON_RESULT = 10;
     }
 
 
@@ -432,7 +444,11 @@ public final class WebIconDatabase {
         public void onReceivedIcon(String url, Bitmap icon);
     }
     
-    private static final String LOGTAG = "WebIconDatabase";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.179 -0400", hash_original_field = "8357A9E0412FA3D1716757D2F1D5F1BA", hash_generated_field = "6847764DACAFCD2E18567D81D1852BB0")
+
+    private static String LOGTAG = "WebIconDatabase";
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:00.179 -0400", hash_original_field = "02465D8C3B346AC5C8E8CC44424AAA09", hash_generated_field = "30A3B2F719758B961B07CE52D4048FB9")
+
     private static WebIconDatabase sIconDatabase;
 }
 
