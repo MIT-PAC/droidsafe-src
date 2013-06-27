@@ -98,7 +98,14 @@ public class SecuritySpecification  {
 		return false;
 	}
 	
+	/**
+	 * Add the list of output events to the input event according to the type
+	 * of specification we want to generate (conformance or diagnosis).  
+	 * 
+	 * Never add a output event if it already appears in the event block. 
+	 */
 	public void addOutputEventToInputEvent(Method inputEvent, List<Method> oes) {
+	    
 	    if (conformanceSpec)
 	        addToInputEventCombine(inputEvent, oes);
 	    else
@@ -131,6 +138,10 @@ public class SecuritySpecification  {
 		if (!eventBlocks.containsKey(inputEvent))
 			eventBlocks.put(inputEvent, new ArrayList<Method>());
 		
+		//Don't add output event it the equals test says it is already there.
+		if (eventBlocks.get(inputEvent).contains(outputEvent))
+		    return;
+		
 		//see if we already have this method (signature) in the input event block
 		//it may be the same method but with different concrete allowed args
 		Method sameMethod = null;
@@ -149,8 +160,9 @@ public class SecuritySpecification  {
 	}
 	
 	/**
-	 * Add the outputevent to the input event's api call list.  Error if the outputevent is
-	 * already there.
+	 * Add the outputevent to the input event's api call list.  Don't group methods.
+	 * 
+	 * Don't add if the output event is already in the list as determined by .equals().
 	 */
 	private void addToInputEvent(Method inputEvent, Method outputEvent) {
 		
@@ -159,6 +171,10 @@ public class SecuritySpecification  {
 		
 		if (!eventBlocks.containsKey(inputEvent))
 			eventBlocks.put(inputEvent, new ArrayList<Method>());
+		
+		//Don't add output event it the equals test says it is already there.
+        if (eventBlocks.get(inputEvent).contains(outputEvent))
+            return;
 		
 		eventBlocks.get(inputEvent).add(outputEvent);
 	}

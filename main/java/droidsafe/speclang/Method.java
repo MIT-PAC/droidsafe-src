@@ -276,50 +276,39 @@ public class Method implements Comparable<Method> {
 		return API.v().isSupportedMethod(sootMethod);
 	}
 	
+	
 
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Arrays.hashCode(args);
-		result = prime * result + ((lines == null) ? 0 : lines.hashCode());
-		result = prime * result
-				+ ((receiver == null) ? 0 : receiver.hashCode());
-		result = prime * result
-				+ ((sootMethod == null) ? 0 : sootMethod.hashCode());
-		return result;
-	}
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + Arrays.hashCode(args);
+        result = prime * result + ((lines == null) ? 0 : lines.hashCode());
+        result = prime * result + ((receiver == null) ? 0 : receiver.hashCode());
+        result = prime * result + ((sootMethod == null) ? 0 : sootMethod.hashCode());
+        return result;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Method other = (Method) obj;
-		if (!Arrays.equals(args, other.args))
-			return false;
-		if (lines == null) {
-			if (other.lines != null)
-				return false;
-		} else if (!lines.equals(other.lines))
-			return false;
-		if (receiver == null) {
-			if (other.receiver != null)
-				return false;
-		} else if (!receiver.equals(other.receiver))
-			return false;
-		if (sootMethod == null) {
-			if (other.sootMethod != null)
-				return false;
-		} else if (!sootMethod.equals(other.sootMethod))
-			return false;
-		return true;
-	}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+        Method other = (Method) obj;
+        if (!Arrays.equals(args, other.args)) return false;
+        if (lines == null) {
+            if (other.lines != null) return false;
+        } else if (!lines.equals(other.lines)) return false;
+        if (receiver == null) {
+            if (other.receiver != null) return false;
+        } else if (!receiver.equals(other.receiver)) return false;
+        if (sootMethod == null) {
+            if (other.sootMethod != null) return false;
+        } else if (!sootMethod.equals(other.sootMethod)) return false;
+        return true;
+    }
 
-	public void setReceiver(Object rec) {
+    public void setReceiver(Object rec) {
 		this.receiver = rec;
 	}
 	
