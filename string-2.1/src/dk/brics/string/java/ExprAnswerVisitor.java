@@ -12,6 +12,7 @@ import soot.jimple.CmpgExpr;
 import soot.jimple.CmplExpr;
 import soot.jimple.DivExpr;
 import soot.jimple.DoubleConstant;
+import soot.jimple.DynamicInvokeExpr;
 import soot.jimple.EqExpr;
 import soot.jimple.ExprSwitch;
 import soot.jimple.FloatConstant;
@@ -267,6 +268,10 @@ public abstract class ExprAnswerVisitor<Q, A> {
             answer = ExprAnswerVisitor.this.caseThisRef(v, question);
         }
 	    
+        // LWG: soot 2.5.0
+        public void caseDynamicInvokeExpr(DynamicInvokeExpr v) {
+    		throw new UnsupportedOperationException();
+        }
 	}
 	
 	public A caseArrayRef(ArrayRef v, Q question)

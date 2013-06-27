@@ -55,6 +55,7 @@ import dk.brics.string.grammar.UnaryProduction;
 import dk.brics.string.grammar.UnitProduction;
 import dk.brics.string.grammar.operations.Grammar2MLFA;
 import dk.brics.string.intermediate.Application;
+import dk.brics.string.intermediate.Method;
 import dk.brics.string.intermediate.Statement;
 import dk.brics.string.intermediate.StringStatement;
 import dk.brics.string.intermediate.operations.AliasAnalysis;
@@ -271,6 +272,31 @@ public class StringAnalysis {
         // release memory
         // G.reset();
         
+        // LWG
+        int totalStmts = 0;
+        int wrapperStmts = 0;
+        int wrapperStmts_f_ev = 0;
+        int wrapperStmts_f_str = 0;
+        int wrapperStmts_m = 0;
+        for (Method m : app.getMethods()) {
+            int stmts = m.getStatements().size();
+            totalStmts += stmts;
+            if (m.getName().equals("<wrapper>")) {
+                wrapperStmts += stmts;              
+            }
+            if (m.getName().equals("<wrapper>_f_ev")) {
+            	wrapperStmts_f_ev += stmts;              
+            }
+            if (m.getName().equals("<wrapper>_f_str")) {
+            	wrapperStmts_f_str += stmts;              
+            }
+            if (m.getName().equals("<wrapper>_m")) {
+            	wrapperStmts_m += stmts;              
+            }
+        }
+        log.info(applicationClasses.size()+" classes, "+app.getFields().size()+" fields, "+app.getMethods().size()+" methods, "+totalStmts+" stmts, ("+
+        wrapperStmts+", "+wrapperStmts_f_ev+", "+wrapperStmts_f_str+", "+wrapperStmts_m+") <wrapper> stmts");
+
         //
         //	Analyze the intermediate code
         //

@@ -175,8 +175,10 @@ public class AliasTable {
 		Integer i1 = Integer.valueOf(key1);
 		Integer i2 = Integer.valueOf(key2);
 		Map<Integer, AliasStatus> map2 = map.get(i1);
-		if (map2 == null)
+		if (map2 == null) {
 			map2 = new HashMap<Integer, AliasStatus>();
+			map.put(i1, map2);
+		}
 		if (status == DEFAULT_ELEMENT) {
 			if (currentStatus == null)
 				return false;

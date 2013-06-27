@@ -142,7 +142,6 @@ public class AliasInfo {
         		continue;
         	if (var == a)
         		continue;
-        	
         	AliasStatus status = aliasing.getAliasStatus(a, var).leastUpperBound(other.aliasing.getAliasStatus(b, var));
         	changed |= aliasing.setAliasStatus(a, var, status);
         }
@@ -444,6 +443,18 @@ public class AliasInfo {
         			continue; // ignore the trivial non-aliases
         		sb.append(" (" + var1 + "," + var2 + ")");
         	}
+        }
+        sb.append("\nMaybe Aliases:");
+        for (Variable var1 : live) {
+            for (Variable var2 : live) {
+                if (var1.getKey() >= var2.getKey())
+                    continue;
+                if (aliasing.getAliasStatus(var1, var2) != AliasStatus.MAYBE)
+                    continue;
+                if (var1.getType().cannotBeAliasOf(var2.getType()))
+                    continue; // ignore the trivial non-aliases
+                sb.append(" (" + var1 + "," + var2 + ")");
+            }
         }
         sb.append("\nLive: " + live + "\n");
         sb.append("Corrupted: " + corrupted + "\n");
