@@ -13,11 +13,11 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BerOutputStream;
 
 public final class ReasonFlags {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.202 -0400", hash_original_field = "4E5868D676CB634AA75B125A0F741ABF", hash_generated_field = "EDA6943CEE7FB962748614E813BD6977")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.063 -0400", hash_original_field = "4E5868D676CB634AA75B125A0F741ABF", hash_generated_field = "EDA6943CEE7FB962748614E813BD6977")
 
     private boolean[] flags;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.203 -0400", hash_original_method = "0723455182874DC076BEC16F53F1DAFE", hash_generated_method = "ACE7EB18781E115780B1426F26EFDD8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.065 -0400", hash_original_method = "0723455182874DC076BEC16F53F1DAFE", hash_generated_method = "ACE7EB18781E115780B1426F26EFDD8E")
     public  ReasonFlags(boolean[] flags) {
         this.flags = flags;
         // ---------- Original Method ----------
@@ -25,7 +25,7 @@ public final class ReasonFlags {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.226 -0400", hash_original_method = "4426D7C44C68FE2DDBEE0B08652B6069", hash_generated_method = "DF61174E3DA518C2DF0E243469DAC3DA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.066 -0400", hash_original_method = "4426D7C44C68FE2DDBEE0B08652B6069", hash_generated_method = "DF61174E3DA518C2DF0E243469DAC3DA")
     public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix);
         sb.append("ReasonFlags [\n");
@@ -55,10 +55,20 @@ public final class ReasonFlags {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.226 -0400", hash_original_field = "CDF089F9218B4B6ED828B2FB67D9A884", hash_generated_field = "A15D30EA6043F64B2732D7941FC767CA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.066 -0400", hash_original_field = "CDF089F9218B4B6ED828B2FB67D9A884", hash_generated_field = "0103BFE97A417A1D95D62E2ECE163382")
 
-    static String[] REASONS = ;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.226 -0400", hash_original_field = "57F71CEED326110CDAC13EC2F1222EE2", hash_generated_field = "9A6C9509CE1B547AF3B36185903C2664")
+    static String[] REASONS = {
+        "unused",
+        "keyCompromise",
+        "cACompromise",
+        "affiliationChanged",
+        "superseded",
+        "cessationOfOperation",
+        "certificateHold",
+        "privilegeWithdrawn",
+        "aACompromise"
+    };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.066 -0400", hash_original_field = "57F71CEED326110CDAC13EC2F1222EE2", hash_generated_field = "9A6C9509CE1B547AF3B36185903C2664")
 
     public static final ASN1BitString ASN1 =
                             new ASN1BitString.ASN1NamedBitList(REASONS.length) {

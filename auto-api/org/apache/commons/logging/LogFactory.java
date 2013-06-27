@@ -24,7 +24,7 @@ import java.util.Properties;
 
 public abstract class LogFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.037 -0400", hash_original_method = "F774CEA84649DC0B4D4BCA84E3BCF878", hash_generated_method = "A8E7489E7B239B2C7DA374E4667D6148")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.066 -0400", hash_original_method = "F774CEA84649DC0B4D4BCA84E3BCF878", hash_generated_method = "A8E7489E7B239B2C7DA374E4667D6148")
     protected  LogFactory() {
         // ---------- Original Method ----------
     }
@@ -809,51 +809,51 @@ public abstract class LogFactory {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.087 -0400", hash_original_field = "C204A9B59300974326208E4CDAAE19D1", hash_generated_field = "1E5E53EF4DC914F529A3609C0F88BF62")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "C204A9B59300974326208E4CDAAE19D1", hash_generated_field = "1E5E53EF4DC914F529A3609C0F88BF62")
 
     public static final String PRIORITY_KEY = "priority";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.087 -0400", hash_original_field = "300F4DBFFA7891677949497F9E506653", hash_generated_field = "BA01E062102B079BBF63D15DBC3413CC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "300F4DBFFA7891677949497F9E506653", hash_generated_field = "BA01E062102B079BBF63D15DBC3413CC")
 
     public static final String TCCL_KEY = "use_tccl";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.087 -0400", hash_original_field = "0BDD01E9DB208B8382588D96385B1AF5", hash_generated_field = "11D26AB77645C1028DCD1B23280DFF25")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "0BDD01E9DB208B8382588D96385B1AF5", hash_generated_field = "11D26AB77645C1028DCD1B23280DFF25")
 
     public static final String FACTORY_PROPERTY =
         "org.apache.commons.logging.LogFactory";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.087 -0400", hash_original_field = "F525BACEEBDBBBDE83858C7AC7E5C6BD", hash_generated_field = "F345A9589B47EE896ADF27E2B65BF2CA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "F525BACEEBDBBBDE83858C7AC7E5C6BD", hash_generated_field = "F345A9589B47EE896ADF27E2B65BF2CA")
 
     public static final String FACTORY_DEFAULT =
         "org.apache.commons.logging.impl.LogFactoryImpl";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.087 -0400", hash_original_field = "A408860A600424928531920305A936A6", hash_generated_field = "B4211EE3317940F3DF5F8CBEDEE45D44")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "A408860A600424928531920305A936A6", hash_generated_field = "B4211EE3317940F3DF5F8CBEDEE45D44")
 
     public static final String FACTORY_PROPERTIES =
         "commons-logging.properties";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.087 -0400", hash_original_field = "90B4E58079F1D9D0D9DAC17B54272960", hash_generated_field = "9F88D5F443D9266F39FDD3A5ADA26221")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "90B4E58079F1D9D0D9DAC17B54272960", hash_generated_field = "9F88D5F443D9266F39FDD3A5ADA26221")
 
     protected static String SERVICE_ID = "META-INF/services/org.apache.commons.logging.LogFactory";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.087 -0400", hash_original_field = "9A9D1BC218D6C73F887406CEC02601FD", hash_generated_field = "6A8778658C9B0B4DE94213091D0DE3B3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "9A9D1BC218D6C73F887406CEC02601FD", hash_generated_field = "6A8778658C9B0B4DE94213091D0DE3B3")
 
     public static final String DIAGNOSTICS_DEST_PROPERTY =
         "org.apache.commons.logging.diagnostics.dest";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.087 -0400", hash_original_field = "3889CA185E89F644935C6B6A0BE1B6A8", hash_generated_field = "502D4A8426F2D567358D7FA7868419EB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "3889CA185E89F644935C6B6A0BE1B6A8", hash_generated_field = "502D4A8426F2D567358D7FA7868419EB")
 
     private static PrintStream diagnosticsStream = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.087 -0400", hash_original_field = "12E9A3CB39556B526310F08DE8C2A838", hash_generated_field = "50207E8543E2F4B02545B1FC7108DCA6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "12E9A3CB39556B526310F08DE8C2A838", hash_generated_field = "50207E8543E2F4B02545B1FC7108DCA6")
 
     private static String diagnosticPrefix;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.087 -0400", hash_original_field = "6315DD8A75BE0327DA3A155FD6357E12", hash_generated_field = "D6581D8C069D3D0B5FC9CCEC021029A7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "6315DD8A75BE0327DA3A155FD6357E12", hash_generated_field = "D6581D8C069D3D0B5FC9CCEC021029A7")
 
     public static final String HASHTABLE_IMPLEMENTATION_PROPERTY =
         "org.apache.commons.logging.LogFactory.HashtableImpl";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.088 -0400", hash_original_field = "10A47EEBECB467F525A615F207CF8490", hash_generated_field = "AD019B377D1F17B58B875A5F4438C13B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "10A47EEBECB467F525A615F207CF8490", hash_generated_field = "AD019B377D1F17B58B875A5F4438C13B")
 
     private static String WEAK_HASHTABLE_CLASSNAME = "org.apache.commons.logging.impl.WeakHashtable";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.088 -0400", hash_original_field = "8CBE7E518BFACE3BBC6F8B5E38467F8F", hash_generated_field = "59780F9C7686D986D4425308AC009E0C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "8CBE7E518BFACE3BBC6F8B5E38467F8F", hash_generated_field = "59780F9C7686D986D4425308AC009E0C")
 
     private static ClassLoader thisClassLoader;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.088 -0400", hash_original_field = "C9ACB1071BA9E80750C401CC668D1337", hash_generated_field = "E19D6CB1141429FE2CFD096492E04245")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.116 -0400", hash_original_field = "C9ACB1071BA9E80750C401CC668D1337", hash_generated_field = "E19D6CB1141429FE2CFD096492E04245")
 
     protected static Hashtable factories = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.088 -0400", hash_original_field = "483E32A11E7D7FDDE0FD1E8601D0C5AC", hash_generated_field = "D7891BCD06A51439A7F138B7BA8EB96E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.117 -0400", hash_original_field = "483E32A11E7D7FDDE0FD1E8601D0C5AC", hash_generated_field = "D7891BCD06A51439A7F138B7BA8EB96E")
 
     protected static LogFactory nullClassLoaderFactory = null;
     static {

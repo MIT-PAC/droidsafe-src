@@ -14,7 +14,7 @@ import java.io.OutputStream;
 
 public class EndianUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.605 -0400", hash_original_method = "4B733419E920224AADA57540D2C30FA6", hash_generated_method = "E488AF8E03869E4C02B403C6E6593ADC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.771 -0400", hash_original_method = "4B733419E920224AADA57540D2C30FA6", hash_generated_method = "E488AF8E03869E4C02B403C6E6593ADC")
     public  EndianUtils() {
         super();
         // ---------- Original Method ----------

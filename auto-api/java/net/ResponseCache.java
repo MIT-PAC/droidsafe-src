@@ -13,7 +13,7 @@ import java.util.Map;
 
 public abstract class ResponseCache {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.735 -0400", hash_original_method = "D16C43EEDC21B64FF5979CBD3059BA6B", hash_generated_method = "D16C43EEDC21B64FF5979CBD3059BA6B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.803 -0400", hash_original_method = "D16C43EEDC21B64FF5979CBD3059BA6B", hash_generated_method = "D16C43EEDC21B64FF5979CBD3059BA6B")
     public ResponseCache ()
     {
         //Synthesized constructor
@@ -37,7 +37,7 @@ public abstract class ResponseCache {
     public abstract CacheRequest put(URI uri, URLConnection connection) throws IOException;
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.736 -0400", hash_original_field = "F640D19B77A00C869D2801E49C0E0481", hash_generated_field = "977723D7A34AC2663C01851D0C5635D6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.804 -0400", hash_original_field = "F640D19B77A00C869D2801E49C0E0481", hash_generated_field = "977723D7A34AC2663C01851D0C5635D6")
 
     private static ResponseCache defaultResponseCache = null;
 }

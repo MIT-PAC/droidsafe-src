@@ -13,7 +13,7 @@ import org.apache.http.HttpHost;
 
 public class URIUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.160 -0400", hash_original_method = "76E8736EFBBC9BF69FA0C2D7E3BBC6EF", hash_generated_method = "77A26DB302405FD332BF0150E844EF5E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.080 -0400", hash_original_method = "76E8736EFBBC9BF69FA0C2D7E3BBC6EF", hash_generated_method = "77A26DB302405FD332BF0150E844EF5E")
     private  URIUtils() {
         // ---------- Original Method ----------
     }

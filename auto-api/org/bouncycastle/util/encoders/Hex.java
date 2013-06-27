@@ -13,7 +13,7 @@ import java.io.OutputStream;
 
 public class Hex {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.840 -0400", hash_original_method = "2062DFA17AA591396821D3397343CC6D", hash_generated_method = "2062DFA17AA591396821D3397343CC6D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.854 -0400", hash_original_method = "2062DFA17AA591396821D3397343CC6D", hash_generated_method = "2062DFA17AA591396821D3397343CC6D")
     public Hex ()
     {
         //Synthesized constructor
@@ -96,7 +96,7 @@ public class Hex {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.850 -0400", hash_original_field = "47B1E2CC247F9E9D15422E2198CF336B", hash_generated_field = "CD06561BBE541F9661BD17B2BEF707A4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.857 -0400", hash_original_field = "47B1E2CC247F9E9D15422E2198CF336B", hash_generated_field = "CD06561BBE541F9661BD17B2BEF707A4")
 
     private static Encoder encoder = new HexEncoder();
 }

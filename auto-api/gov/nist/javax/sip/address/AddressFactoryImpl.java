@@ -13,38 +13,38 @@ import javax.sip.address.*;
 
 public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.366 -0400", hash_original_method = "5EAE66D49E862BAEE0E410CA69871D83", hash_generated_method = "BC48FF6852307C189B528CA214114244")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.053 -0400", hash_original_method = "5EAE66D49E862BAEE0E410CA69871D83", hash_generated_method = "BC48FF6852307C189B528CA214114244")
     public  AddressFactoryImpl() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.367 -0400", hash_original_method = "BCAEEC1C0FA5608D92211F34DF6950F5", hash_generated_method = "773FE0869D493D1F33E0C988C99E859F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.061 -0400", hash_original_method = "BCAEEC1C0FA5608D92211F34DF6950F5", hash_generated_method = "7ECA99EC934A7BB3D6C422799688CFA3")
     public javax.sip.address.Address createAddress() {
-        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_856767092 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_856767092 = new AddressImpl();
-        varB4EAC82CA7396A68D541C85D26508E83_856767092.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_856767092;
+        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_267085888 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_267085888 = new AddressImpl();
+        varB4EAC82CA7396A68D541C85D26508E83_267085888.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_267085888;
         // ---------- Original Method ----------
         //return new AddressImpl();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.367 -0400", hash_original_method = "8ECE0FD94D831C743ACA34A8ACB9471A", hash_generated_method = "7B8F84E1E9B51E0547DC990DAAF75265")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.062 -0400", hash_original_method = "8ECE0FD94D831C743ACA34A8ACB9471A", hash_generated_method = "42CBF2BE131F9CFCDA6EA411861BF500")
     public javax.sip.address.Address createAddress(
         String displayName,
         javax.sip.address.URI uri) {
-        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_1617328002 = null; //Variable for return #1
+        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_1614103629 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null  URI");
         AddressImpl addressImpl;
         addressImpl = new AddressImpl();
         addressImpl.setDisplayName(displayName);
         addressImpl.setURI(uri);
-        varB4EAC82CA7396A68D541C85D26508E83_1617328002 = addressImpl;
+        varB4EAC82CA7396A68D541C85D26508E83_1614103629 = addressImpl;
         addTaint(displayName.getTaint());
         addTaint(uri.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1617328002.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1617328002;
+        varB4EAC82CA7396A68D541C85D26508E83_1614103629.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1614103629;
         // ---------- Original Method ----------
         //if (uri == null)
             //throw new NullPointerException("null  URI");
@@ -56,9 +56,9 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.368 -0400", hash_original_method = "606F4ADF8EBB5ECDC152643EADDC0AC8", hash_generated_method = "2AF9778A13C5993B0671637FBFA424F4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.066 -0400", hash_original_method = "606F4ADF8EBB5ECDC152643EADDC0AC8", hash_generated_method = "072B41AF65A8CBC0D445778765E9AA9F")
     public javax.sip.address.SipURI createSipURI(String uri) throws ParseException {
-        javax.sip.address.SipURI varB4EAC82CA7396A68D541C85D26508E83_271597841 = null; //Variable for return #1
+        javax.sip.address.SipURI varB4EAC82CA7396A68D541C85D26508E83_41305907 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null URI");
         try 
         {
@@ -66,15 +66,15 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
             smp = new StringMsgParser();
             SipUri sipUri;
             sipUri = smp.parseSIPUrl(uri);
-            varB4EAC82CA7396A68D541C85D26508E83_271597841 = (SipURI) sipUri;
+            varB4EAC82CA7396A68D541C85D26508E83_41305907 = (SipURI) sipUri;
         } //End block
         catch (ParseException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new ParseException(ex.getMessage(), 0);
         } //End block
         addTaint(uri.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_271597841.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_271597841;
+        varB4EAC82CA7396A68D541C85D26508E83_41305907.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_41305907;
         // ---------- Original Method ----------
         //if (uri == null)
             //throw new NullPointerException("null URI");
@@ -88,9 +88,9 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.374 -0400", hash_original_method = "97FF8506F533416A8B40E097933B45CB", hash_generated_method = "335ED3B0981F154B5F1C8187BE3B7FDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.081 -0400", hash_original_method = "97FF8506F533416A8B40E097933B45CB", hash_generated_method = "B2551853DF3130ED5012C11611E3DE4C")
     public javax.sip.address.SipURI createSipURI(String user, String host) throws ParseException {
-        javax.sip.address.SipURI varB4EAC82CA7396A68D541C85D26508E83_81389891 = null; //Variable for return #1
+        javax.sip.address.SipURI varB4EAC82CA7396A68D541C85D26508E83_11363646 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null host");
         StringBuffer uriString;
         uriString = new StringBuffer("sip:");
@@ -99,7 +99,7 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
             uriString.append("@");
         } //End block
         {
-            boolean var2FAFE57E14E8948019EC1FCC7CC0D82E_14195133 = (host.indexOf(':') != host.lastIndexOf(':')
+            boolean var2FAFE57E14E8948019EC1FCC7CC0D82E_725993806 = (host.indexOf(':') != host.lastIndexOf(':')
             && host.trim().charAt(0) != '[');
             host = '[' + host + ']';
         } //End collapsed parenthetic
@@ -110,7 +110,7 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
         {
             SipUri sipUri;
             sipUri = smp.parseSIPUrl(uriString.toString());
-            varB4EAC82CA7396A68D541C85D26508E83_81389891 = sipUri;
+            varB4EAC82CA7396A68D541C85D26508E83_11363646 = sipUri;
         } //End block
         catch (ParseException ex)
         {
@@ -118,8 +118,8 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
         } //End block
         addTaint(user.getTaint());
         addTaint(host.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_81389891.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_81389891;
+        varB4EAC82CA7396A68D541C85D26508E83_11363646.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_11363646;
         // ---------- Original Method ----------
         //if (host == null)
             //throw new NullPointerException("null host");
@@ -142,9 +142,9 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.417 -0400", hash_original_method = "D04D6AFFDB458F909DE8ED46FFEF9C7A", hash_generated_method = "5F1694E53857CF805755CB5A779BFAAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.081 -0400", hash_original_method = "D04D6AFFDB458F909DE8ED46FFEF9C7A", hash_generated_method = "51E11A2F790AA3A4FE622474473CAA16")
     public javax.sip.address.TelURL createTelURL(String uri) throws ParseException {
-        javax.sip.address.TelURL varB4EAC82CA7396A68D541C85D26508E83_1076546291 = null; //Variable for return #1
+        javax.sip.address.TelURL varB4EAC82CA7396A68D541C85D26508E83_366913671 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null url");
         String telUrl;
         telUrl = "tel:" + uri;
@@ -154,15 +154,15 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
             smp = new StringMsgParser();
             TelURLImpl timp;
             timp = (TelURLImpl) smp.parseUrl(telUrl);
-            varB4EAC82CA7396A68D541C85D26508E83_1076546291 = (TelURL) timp;
+            varB4EAC82CA7396A68D541C85D26508E83_366913671 = (TelURL) timp;
         } //End block
         catch (ParseException ex)
         {
             if (DroidSafeAndroidRuntime.control) throw new ParseException(ex.getMessage(), 0);
         } //End block
         addTaint(uri.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1076546291.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1076546291;
+        varB4EAC82CA7396A68D541C85D26508E83_366913671.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_366913671;
         // ---------- Original Method ----------
         //if (uri == null)
             //throw new NullPointerException("null url");
@@ -177,17 +177,17 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.418 -0400", hash_original_method = "5762E0D071920DC6C61FB0E25B45CBE7", hash_generated_method = "240EC84190485FBB53A8E3CCF6046642")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.083 -0400", hash_original_method = "5762E0D071920DC6C61FB0E25B45CBE7", hash_generated_method = "C5E02D1788CC9BABD0A1B0CF8F4BB868")
     public javax.sip.address.Address createAddress(javax.sip.address.URI uri) {
-        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_336394467 = null; //Variable for return #1
+        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_1226646634 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null address");
         AddressImpl addressImpl;
         addressImpl = new AddressImpl();
         addressImpl.setURI(uri);
-        varB4EAC82CA7396A68D541C85D26508E83_336394467 = addressImpl;
+        varB4EAC82CA7396A68D541C85D26508E83_1226646634 = addressImpl;
         addTaint(uri.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_336394467.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_336394467;
+        varB4EAC82CA7396A68D541C85D26508E83_1226646634.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1226646634;
         // ---------- Original Method ----------
         //if (uri == null)
             //throw new NullPointerException("null address");
@@ -197,13 +197,13 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.419 -0400", hash_original_method = "9FCBFE264C415F40E8FC1E843482D494", hash_generated_method = "1093660EC95F276CE3206385548A1595")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.090 -0400", hash_original_method = "9FCBFE264C415F40E8FC1E843482D494", hash_generated_method = "79452533D33606981F7A4F27383325E3")
     public javax.sip.address.Address createAddress(String address) throws java.text.ParseException {
-        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_1161394110 = null; //Variable for return #1
-        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_1791027046 = null; //Variable for return #2
+        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_531022320 = null; //Variable for return #1
+        javax.sip.address.Address varB4EAC82CA7396A68D541C85D26508E83_7169458 = null; //Variable for return #2
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null address");
         {
-            boolean var59CDB029431E23F05C0BDC176DF3E717_750579534 = (address.equals("*"));
+            boolean var59CDB029431E23F05C0BDC176DF3E717_1207921857 = (address.equals("*"));
             {
                 AddressImpl addressImpl;
                 addressImpl = new AddressImpl();
@@ -212,26 +212,26 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
                 uri = new SipUri();
                 uri.setUser("*");
                 addressImpl.setURI( uri );
-                varB4EAC82CA7396A68D541C85D26508E83_1161394110 = addressImpl;
+                varB4EAC82CA7396A68D541C85D26508E83_531022320 = addressImpl;
             } //End block
             {
                 StringMsgParser smp;
                 smp = new StringMsgParser();
-                varB4EAC82CA7396A68D541C85D26508E83_1791027046 = smp.parseAddress(address);
+                varB4EAC82CA7396A68D541C85D26508E83_7169458 = smp.parseAddress(address);
             } //End block
         } //End collapsed parenthetic
         addTaint(address.getTaint());
-        javax.sip.address.Address varA7E53CE21691AB073D9660D615818899_1908313655; //Final return value
+        javax.sip.address.Address varA7E53CE21691AB073D9660D615818899_1186823555; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1908313655 = varB4EAC82CA7396A68D541C85D26508E83_1161394110;
+                varA7E53CE21691AB073D9660D615818899_1186823555 = varB4EAC82CA7396A68D541C85D26508E83_531022320;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1908313655 = varB4EAC82CA7396A68D541C85D26508E83_1791027046;
+                varA7E53CE21691AB073D9660D615818899_1186823555 = varB4EAC82CA7396A68D541C85D26508E83_7169458;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1908313655.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1908313655;
+        varA7E53CE21691AB073D9660D615818899_1186823555.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1186823555;
         // ---------- Original Method ----------
         //if (address == null)
             //throw new NullPointerException("null address");
@@ -249,12 +249,12 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.421 -0400", hash_original_method = "6FB194DE255E537B19EA8E2695800E2E", hash_generated_method = "ED8FA729FF4208ACC2D2821C9267B215")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.110 -0400", hash_original_method = "6FB194DE255E537B19EA8E2695800E2E", hash_generated_method = "92FBBF6FCF7EEAFFDCE5F9859D204E6B")
     public javax.sip.address.URI createURI(String uri) throws ParseException {
-        javax.sip.address.URI varB4EAC82CA7396A68D541C85D26508E83_2136535903 = null; //Variable for return #1
-        javax.sip.address.URI varB4EAC82CA7396A68D541C85D26508E83_371552332 = null; //Variable for return #2
-        javax.sip.address.URI varB4EAC82CA7396A68D541C85D26508E83_525870188 = null; //Variable for return #3
-        javax.sip.address.URI varB4EAC82CA7396A68D541C85D26508E83_867371405 = null; //Variable for return #4
+        javax.sip.address.URI varB4EAC82CA7396A68D541C85D26508E83_236563011 = null; //Variable for return #1
+        javax.sip.address.URI varB4EAC82CA7396A68D541C85D26508E83_121887614 = null; //Variable for return #2
+        javax.sip.address.URI varB4EAC82CA7396A68D541C85D26508E83_1663883151 = null; //Variable for return #3
+        javax.sip.address.URI varB4EAC82CA7396A68D541C85D26508E83_168634719 = null; //Variable for return #4
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException("null arg");
         try 
         {
@@ -264,19 +264,19 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
             scheme = urlParser.peekScheme();
             if (DroidSafeAndroidRuntime.control) throw new ParseException("bad scheme", 0);
             {
-                boolean varE2F7924392B5C383F206C4D411500B61_671256198 = (scheme.equalsIgnoreCase("sip"));
+                boolean varE2F7924392B5C383F206C4D411500B61_372862013 = (scheme.equalsIgnoreCase("sip"));
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_2136535903 = (javax.sip.address.URI) urlParser.sipURL(true);
+                    varB4EAC82CA7396A68D541C85D26508E83_236563011 = (javax.sip.address.URI) urlParser.sipURL(true);
                 } //End block
                 {
-                    boolean var1AE11AE07B613BEE507AC5604A3ABAEB_576071586 = (scheme.equalsIgnoreCase("sips"));
+                    boolean var1AE11AE07B613BEE507AC5604A3ABAEB_1245935039 = (scheme.equalsIgnoreCase("sips"));
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_371552332 = (javax.sip.address.URI) urlParser.sipURL(true);
+                        varB4EAC82CA7396A68D541C85D26508E83_121887614 = (javax.sip.address.URI) urlParser.sipURL(true);
                     } //End block
                     {
-                        boolean var651E6735B443E1F2F7617E6D9D2AB450_520762556 = (scheme.equalsIgnoreCase("tel"));
+                        boolean var651E6735B443E1F2F7617E6D9D2AB450_505143494 = (scheme.equalsIgnoreCase("tel"));
                         {
-                            varB4EAC82CA7396A68D541C85D26508E83_525870188 = (javax.sip.address.URI) urlParser.telURL(true);
+                            varB4EAC82CA7396A68D541C85D26508E83_1663883151 = (javax.sip.address.URI) urlParser.telURL(true);
                         } //End block
                     } //End collapsed parenthetic
                 } //End collapsed parenthetic
@@ -286,25 +286,25 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
         {
             if (DroidSafeAndroidRuntime.control) throw new ParseException(ex.getMessage(), 0);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_867371405 = new gov.nist.javax.sip.address.GenericURI(uri);
+        varB4EAC82CA7396A68D541C85D26508E83_168634719 = new gov.nist.javax.sip.address.GenericURI(uri);
         addTaint(uri.getTaint());
-        javax.sip.address.URI varA7E53CE21691AB073D9660D615818899_1237490815; //Final return value
+        javax.sip.address.URI varA7E53CE21691AB073D9660D615818899_205123482; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1237490815 = varB4EAC82CA7396A68D541C85D26508E83_2136535903;
+                varA7E53CE21691AB073D9660D615818899_205123482 = varB4EAC82CA7396A68D541C85D26508E83_236563011;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1237490815 = varB4EAC82CA7396A68D541C85D26508E83_371552332;
+                varA7E53CE21691AB073D9660D615818899_205123482 = varB4EAC82CA7396A68D541C85D26508E83_121887614;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_1237490815 = varB4EAC82CA7396A68D541C85D26508E83_525870188;
+                varA7E53CE21691AB073D9660D615818899_205123482 = varB4EAC82CA7396A68D541C85D26508E83_1663883151;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1237490815 = varB4EAC82CA7396A68D541C85D26508E83_867371405;
+                varA7E53CE21691AB073D9660D615818899_205123482 = varB4EAC82CA7396A68D541C85D26508E83_168634719;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1237490815.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1237490815;
+        varA7E53CE21691AB073D9660D615818899_205123482.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_205123482;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

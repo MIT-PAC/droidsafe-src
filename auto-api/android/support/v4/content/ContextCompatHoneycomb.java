@@ -12,7 +12,7 @@ import android.content.Intent;
 
 class ContextCompatHoneycomb {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:32.407 -0400", hash_original_method = "6C3A5F3C3C189F8EBC0E14B8C641BDD7", hash_generated_method = "6C3A5F3C3C189F8EBC0E14B8C641BDD7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:33.724 -0400", hash_original_method = "6C3A5F3C3C189F8EBC0E14B8C641BDD7", hash_generated_method = "6C3A5F3C3C189F8EBC0E14B8C641BDD7")
     public ContextCompatHoneycomb ()
     {
         //Synthesized constructor

@@ -12,7 +12,7 @@ import android.content.pm.ResolveInfo;
 
 class AccessibilityServiceInfoCompatIcs {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:30.081 -0400", hash_original_method = "9B73EB9A9914C24E49AE97BE4E097848", hash_generated_method = "9B73EB9A9914C24E49AE97BE4E097848")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:31.643 -0400", hash_original_method = "9B73EB9A9914C24E49AE97BE4E097848", hash_generated_method = "9B73EB9A9914C24E49AE97BE4E097848")
     public AccessibilityServiceInfoCompatIcs ()
     {
         //Synthesized constructor

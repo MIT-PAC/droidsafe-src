@@ -15,14 +15,14 @@ import java.util.Arrays;
 import org.apache.commons.io.IOUtils;
 
 public class MagicNumberFileFilter extends AbstractFileFilter implements Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.621 -0400", hash_original_field = "13FC37855C259675D642D1E909CA4D05", hash_generated_field = "43B4B88F8872CE70BC0ACCCB066E1B74")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.649 -0400", hash_original_field = "13FC37855C259675D642D1E909CA4D05", hash_generated_field = "43B4B88F8872CE70BC0ACCCB066E1B74")
 
     private byte[] magicNumbers;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.621 -0400", hash_original_field = "747672084EE79DD5D3FA62FFFB692680", hash_generated_field = "EAC26F9C009071957019CBC1252212E9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.649 -0400", hash_original_field = "747672084EE79DD5D3FA62FFFB692680", hash_generated_field = "EAC26F9C009071957019CBC1252212E9")
 
     private long byteOffset;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.643 -0400", hash_original_method = "C78AFEA84D3E16F05915DC512C12F4E5", hash_generated_method = "EDC715867B78B13AD3D49925A24AB8D2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.662 -0400", hash_original_method = "C78AFEA84D3E16F05915DC512C12F4E5", hash_generated_method = "EDC715867B78B13AD3D49925A24AB8D2")
     public  MagicNumberFileFilter(byte[] magicNumber) {
         this(magicNumber, 0);
         addTaint(magicNumber[0]);
@@ -30,7 +30,7 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.644 -0400", hash_original_method = "46FC766430A04DE64FCA15E7760EC637", hash_generated_method = "FF2C6EB63A99DA454E02E1DA64EA61EA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.663 -0400", hash_original_method = "46FC766430A04DE64FCA15E7760EC637", hash_generated_method = "FF2C6EB63A99DA454E02E1DA64EA61EA")
     public  MagicNumberFileFilter(String magicNumber) {
         this(magicNumber, 0);
         addTaint(magicNumber.getTaint());
@@ -38,13 +38,13 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.644 -0400", hash_original_method = "DEAF1CD32A03908C66FCBD851D1A4D16", hash_generated_method = "784C96647B8AEF8049B459B5AD175ECF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.663 -0400", hash_original_method = "DEAF1CD32A03908C66FCBD851D1A4D16", hash_generated_method = "1EBED18CFFFEDA174F534F0D5B91DA23")
     public  MagicNumberFileFilter(String magicNumber, long offset) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The magic number cannot be null");
         } //End block
         {
-            boolean var8D68F61BC62A144C3DC618700C0337A2_575213119 = (magicNumber.length() == 0);
+            boolean var8D68F61BC62A144C3DC618700C0337A2_749740210 = (magicNumber.length() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The magic number must contain at least one byte");
             } //End block
@@ -69,7 +69,7 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.645 -0400", hash_original_method = "D2ACF25BC388A9DF48A2CB806BA6CFAE", hash_generated_method = "4FA0FED05C3DE9116D3D64021BAB2374")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.664 -0400", hash_original_method = "D2ACF25BC388A9DF48A2CB806BA6CFAE", hash_generated_method = "4FA0FED05C3DE9116D3D64021BAB2374")
     public  MagicNumberFileFilter(byte[] magicNumber, long offset) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The magic number cannot be null");
@@ -99,11 +99,11 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.645 -0400", hash_original_method = "B71D2F390F50A93DB66E9BFC22DCB2BE", hash_generated_method = "6F233E00DF27DEA4F5A7DC8FAB574CED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.665 -0400", hash_original_method = "B71D2F390F50A93DB66E9BFC22DCB2BE", hash_generated_method = "6CB72B62D63DD9348B47F848A279BFFA")
     @Override
     public boolean accept(File file) {
         {
-            boolean var2C56F8140BFB13474DA89180C4D6AD9D_1385181516 = (file != null && file.isFile() && file.canRead());
+            boolean var2C56F8140BFB13474DA89180C4D6AD9D_2139932818 = (file != null && file.isFile() && file.canRead());
             {
                 RandomAccessFile randomAccessFile;
                 randomAccessFile = null;
@@ -115,7 +115,7 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
                     randomAccessFile.seek(byteOffset);
                     int read;
                     read = randomAccessFile.read(fileBytes);
-                    boolean varE564DDF876A3E0FBD38EFF53C02D3D07_1870105379 = (Arrays.equals(this.magicNumbers, fileBytes));
+                    boolean varE564DDF876A3E0FBD38EFF53C02D3D07_1345161783 = (Arrays.equals(this.magicNumbers, fileBytes));
                 } //End block
                 catch (IOException ioe)
                 { }
@@ -126,8 +126,8 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
             } //End block
         } //End collapsed parenthetic
         addTaint(file.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_560204769 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_560204769;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1917205623 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1917205623;
         // ---------- Original Method ----------
         //if (file != null && file.isFile() && file.canRead()) {
             //RandomAccessFile randomAccessFile = null;
@@ -149,10 +149,10 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.646 -0400", hash_original_method = "CB513BDE86C193A798DC85AC9115E8A4", hash_generated_method = "890813C8627E0B589419338C39BB3674")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.666 -0400", hash_original_method = "CB513BDE86C193A798DC85AC9115E8A4", hash_generated_method = "74E5EA84199767709D0220BC5B732B24")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_269698578 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1468199242 = null; //Variable for return #1
         StringBuilder builder;
         builder = new StringBuilder(super.toString());
         builder.append("(");
@@ -160,9 +160,9 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
         builder.append(",");
         builder.append(this.byteOffset);
         builder.append(")");
-        varB4EAC82CA7396A68D541C85D26508E83_269698578 = builder.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_269698578.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_269698578;
+        varB4EAC82CA7396A68D541C85D26508E83_1468199242 = builder.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1468199242.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1468199242;
         // ---------- Original Method ----------
         //StringBuilder builder = new StringBuilder(super.toString());
         //builder.append("(");
@@ -174,7 +174,7 @@ public class MagicNumberFileFilter extends AbstractFileFilter implements Seriali
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.646 -0400", hash_original_field = "FBCB37A1E33C99FA744AAB732452D4C7", hash_generated_field = "07EF47B3C9E12C9445C303FAD2412D16")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.666 -0400", hash_original_field = "FBCB37A1E33C99FA744AAB732452D4C7", hash_generated_field = "07EF47B3C9E12C9445C303FAD2412D16")
 
     private static long serialVersionUID = -547733176983104172L;
 }

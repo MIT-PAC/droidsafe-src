@@ -13,7 +13,7 @@ import java.text.ParseException;
 
 public class ContentTypeParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.693 -0400", hash_original_method = "AC2B50BA9F98FE0D35E93AB411532CED", hash_generated_method = "947A255A2E43F450BF732116A9038526")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.691 -0400", hash_original_method = "AC2B50BA9F98FE0D35E93AB411532CED", hash_generated_method = "947A255A2E43F450BF732116A9038526")
     public  ContentTypeParser(String contentType) {
         super(contentType);
         addTaint(contentType.getTaint());
@@ -21,7 +21,7 @@ public class ContentTypeParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.693 -0400", hash_original_method = "9BAC92854D082DF9DDE50098E692CCEB", hash_generated_method = "33C6ACBCFC1C53EB6403F2BED8015A51")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.691 -0400", hash_original_method = "9BAC92854D082DF9DDE50098E692CCEB", hash_generated_method = "33C6ACBCFC1C53EB6403F2BED8015A51")
     protected  ContentTypeParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -29,9 +29,9 @@ public class ContentTypeParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.706 -0400", hash_original_method = "8AB392911FDE1F0164CFD7A5CB623621", hash_generated_method = "A0711B5918EE10A9D2FDBF2A1051B8A6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.692 -0400", hash_original_method = "8AB392911FDE1F0164CFD7A5CB623621", hash_generated_method = "5BDF61446909E0A0DFED6CD4DA96748A")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1026803519 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_2112666280 = null; //Variable for return #1
         ContentType contentType;
         contentType = new ContentType();
         dbg_enter("ContentTypeParser.parse");
@@ -56,9 +56,9 @@ public class ContentTypeParser extends ParametersParser {
         {
             dbg_leave("ContentTypeParser.parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1026803519 = contentType;
-        varB4EAC82CA7396A68D541C85D26508E83_1026803519.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1026803519;
+        varB4EAC82CA7396A68D541C85D26508E83_2112666280 = contentType;
+        varB4EAC82CA7396A68D541C85D26508E83_2112666280.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2112666280;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

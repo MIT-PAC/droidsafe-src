@@ -15,7 +15,7 @@ import java.util.Stack;
 
 public class FilenameUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.104 -0400", hash_original_method = "461960E755FB4E28A3B792846EE26E3A", hash_generated_method = "D1DDAB26E96BB650AFF4B4AA3C6F7EF3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.156 -0400", hash_original_method = "461960E755FB4E28A3B792846EE26E3A", hash_generated_method = "D1DDAB26E96BB650AFF4B4AA3C6F7EF3")
     public  FilenameUtils() {
         super();
         // ---------- Original Method ----------
@@ -582,22 +582,22 @@ public class FilenameUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.161 -0400", hash_original_field = "ACEA14CE04E80F46629146BDE5025DB2", hash_generated_field = "7234F8134ACF380A30401FD4610B5AC2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.186 -0400", hash_original_field = "ACEA14CE04E80F46629146BDE5025DB2", hash_generated_field = "7234F8134ACF380A30401FD4610B5AC2")
 
     public static final char EXTENSION_SEPARATOR = '.';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.161 -0400", hash_original_field = "487180F1EA4987E2C7E3A3BF4C2B5A7F", hash_generated_field = "EF31746C1B4AC2F2D7C4F25968201A61")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.186 -0400", hash_original_field = "487180F1EA4987E2C7E3A3BF4C2B5A7F", hash_generated_field = "EF31746C1B4AC2F2D7C4F25968201A61")
 
     public static final String EXTENSION_SEPARATOR_STR = Character.toString(EXTENSION_SEPARATOR);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.161 -0400", hash_original_field = "C507995E7602DD44CF1C076EDB9FA686", hash_generated_field = "5374B0E53025F52FA697AFA22B0382B7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.186 -0400", hash_original_field = "C507995E7602DD44CF1C076EDB9FA686", hash_generated_field = "5374B0E53025F52FA697AFA22B0382B7")
 
     private static char UNIX_SEPARATOR = '/';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.161 -0400", hash_original_field = "8EF861A48F62F61A703CED3EE2D957D1", hash_generated_field = "09FA03438579468EE88B4F0C590D8941")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.186 -0400", hash_original_field = "8EF861A48F62F61A703CED3EE2D957D1", hash_generated_field = "09FA03438579468EE88B4F0C590D8941")
 
     private static char WINDOWS_SEPARATOR = '\\';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.162 -0400", hash_original_field = "0681588BF6278A2F8B42EAB1BC990CE9", hash_generated_field = "044BBCB029DE1AB2192BD28302F1B37C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.186 -0400", hash_original_field = "0681588BF6278A2F8B42EAB1BC990CE9", hash_generated_field = "044BBCB029DE1AB2192BD28302F1B37C")
 
     private static char SYSTEM_SEPARATOR = File.separatorChar;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.162 -0400", hash_original_field = "7FEEE63CC08C20A93843AB94CB08500C", hash_generated_field = "2A28DC30883BB462B6189EBE9A942A14")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.186 -0400", hash_original_field = "7FEEE63CC08C20A93843AB94CB08500C", hash_generated_field = "2A28DC30883BB462B6189EBE9A942A14")
 
     private static char OTHER_SEPARATOR;
     static {

@@ -15,27 +15,27 @@ import java.net.URLStreamHandler;
 
 public class JarHandler extends URLStreamHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.932 -0400", hash_original_method = "0A284EE1D1173C3D5D1EE186B211FF85", hash_generated_method = "0A284EE1D1173C3D5D1EE186B211FF85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.143 -0400", hash_original_method = "0A284EE1D1173C3D5D1EE186B211FF85", hash_generated_method = "0A284EE1D1173C3D5D1EE186B211FF85")
     public JarHandler ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.940 -0400", hash_original_method = "BD0D54E815B3E8434D2BE4AD1DDC7411", hash_generated_method = "915A211E8E9930AB99D8913949D27AFF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.144 -0400", hash_original_method = "BD0D54E815B3E8434D2BE4AD1DDC7411", hash_generated_method = "FF0457411E63557C4ED8CA29ED4A8C3B")
     @Override
     protected URLConnection openConnection(URL u) throws IOException {
-        URLConnection varB4EAC82CA7396A68D541C85D26508E83_159390630 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_159390630 = new JarURLConnectionImpl(u);
+        URLConnection varB4EAC82CA7396A68D541C85D26508E83_1006962757 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1006962757 = new JarURLConnectionImpl(u);
         addTaint(u.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_159390630.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_159390630;
+        varB4EAC82CA7396A68D541C85D26508E83_1006962757.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1006962757;
         // ---------- Original Method ----------
         //return new JarURLConnectionImpl(u);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.941 -0400", hash_original_method = "57C5D17E5E318F4D460452A0FAAB1E77", hash_generated_method = "B090455700E4F3AF6CD5EDE59FD82566")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.159 -0400", hash_original_method = "57C5D17E5E318F4D460452A0FAAB1E77", hash_generated_method = "CDD0B636E220E137C7D079D4B07A8271")
     @Override
     protected void parseURL(URL url, String spec, int start, int limit) {
         String file;
@@ -50,18 +50,18 @@ public class JarHandler extends URLStreamHandler {
             spec = "";
         } //End block
         {
-            boolean var3948E0BE2774036E4123DB53B312CCF1_927102760 = (spec.indexOf("!/") == -1 && (file.indexOf("!/") == -1));
+            boolean var3948E0BE2774036E4123DB53B312CCF1_1478966755 = (spec.indexOf("!/") == -1 && (file.indexOf("!/") == -1));
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Cannot find \"!/\"");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var663670DD1E5C39043C69A7F64A2C1292_1339908412 = (file.isEmpty());
+            boolean var663670DD1E5C39043C69A7F64A2C1292_459807972 = (file.isEmpty());
             {
                 file = spec;
             } //End block
             {
-                boolean varE8C8F246188348661A8B133D5E9D1FF7_1768087903 = (spec.charAt(0) == '/');
+                boolean varE8C8F246188348661A8B133D5E9D1FF7_417129276 = (spec.charAt(0) == '/');
                 {
                     file = file.substring(0, file.indexOf('!') + 1) + spec;
                 } //End block
@@ -93,10 +93,10 @@ public class JarHandler extends URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.942 -0400", hash_original_method = "F692A804EFA22D479A24DA08ED26F838", hash_generated_method = "3D8C1321E45C6C8F6F5C279E2081D541")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.164 -0400", hash_original_method = "F692A804EFA22D479A24DA08ED26F838", hash_generated_method = "C7F89E6604F8DBCAC485C42320ACF789")
     @Override
     protected String toExternalForm(URL url) {
-        String varB4EAC82CA7396A68D541C85D26508E83_879340153 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2047598891 = null; //Variable for return #1
         StringBuilder sb;
         sb = new StringBuilder();
         sb.append("jar:");
@@ -106,10 +106,10 @@ public class JarHandler extends URLStreamHandler {
         {
             sb.append(ref);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_879340153 = sb.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_2047598891 = sb.toString();
         addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_879340153.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_879340153;
+        varB4EAC82CA7396A68D541C85D26508E83_2047598891.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2047598891;
         // ---------- Original Method ----------
         //StringBuilder sb = new StringBuilder();
         //sb.append("jar:");

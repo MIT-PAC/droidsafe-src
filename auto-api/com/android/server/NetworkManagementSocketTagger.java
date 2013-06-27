@@ -22,7 +22,7 @@ import java.nio.charset.Charsets;
 
 public final class NetworkManagementSocketTagger extends SocketTagger {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.549 -0400", hash_original_method = "00C0D10B5E2369FA378DABF797EE6BED", hash_generated_method = "00C0D10B5E2369FA378DABF797EE6BED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.020 -0400", hash_original_method = "00C0D10B5E2369FA378DABF797EE6BED", hash_generated_method = "00C0D10B5E2369FA378DABF797EE6BED")
     public NetworkManagementSocketTagger ()
     {
         //Synthesized constructor
@@ -49,7 +49,7 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.551 -0400", hash_original_method = "754D4D42EA09C30B28CC17EDE05EFAAB", hash_generated_method = "FF657039C3D5A4082044E37F847D0613")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.030 -0400", hash_original_method = "754D4D42EA09C30B28CC17EDE05EFAAB", hash_generated_method = "FF657039C3D5A4082044E37F847D0613")
     @Override
     public void tag(FileDescriptor fd) throws SocketException {
         SocketTags options;
@@ -70,7 +70,7 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.551 -0400", hash_original_method = "C210639DA77D00249F794C3EBD98DE8A", hash_generated_method = "2493A7287DC3768C6CB6D3F8E3BF7BDA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.036 -0400", hash_original_method = "C210639DA77D00249F794C3EBD98DE8A", hash_generated_method = "2493A7287DC3768C6CB6D3F8E3BF7BDA")
     private void tagSocketFd(FileDescriptor fd, int tag, int uid) {
         int errno;
         errno = native_tagSocketFd(fd, tag, uid);
@@ -89,7 +89,7 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.552 -0400", hash_original_method = "4EBF01D3564F87055EEC05DD0727DB2B", hash_generated_method = "F6DD27AB3D8D558851532DA1FA12394E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.036 -0400", hash_original_method = "4EBF01D3564F87055EEC05DD0727DB2B", hash_generated_method = "F6DD27AB3D8D558851532DA1FA12394E")
     @Override
     public void untag(FileDescriptor fd) throws SocketException {
         unTagSocketFd(fd);
@@ -102,7 +102,7 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.565 -0400", hash_original_method = "5654F79E328B73E29CE69FDDA4191C15", hash_generated_method = "6A11004FD0D48BD54B256FD4437DEE6B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.041 -0400", hash_original_method = "5654F79E328B73E29CE69FDDA4191C15", hash_generated_method = "6A11004FD0D48BD54B256FD4437DEE6B")
     private void unTagSocketFd(FileDescriptor fd) {
         SocketTags options;
         options = threadSocketTags.get();
@@ -162,14 +162,14 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
 
     
     public static class SocketTags {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.646 -0400", hash_original_field = "43D9A321814CC19839C3B970D085CF8B", hash_generated_field = "50A065B7832C2F855A22AFE5278B6084")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.051 -0400", hash_original_field = "43D9A321814CC19839C3B970D085CF8B", hash_generated_field = "50A065B7832C2F855A22AFE5278B6084")
 
         public int statsTag = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.646 -0400", hash_original_field = "AAAEF0C090C595DB37D6A71350CE5BBC", hash_generated_field = "F090CAEE4F015DE3D658DF54EB1373DA")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.051 -0400", hash_original_field = "AAAEF0C090C595DB37D6A71350CE5BBC", hash_generated_field = "F090CAEE4F015DE3D658DF54EB1373DA")
 
         public int statsUid = -1;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.646 -0400", hash_original_method = "9733D1794190B487674895963987601C", hash_generated_method = "9733D1794190B487674895963987601C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.051 -0400", hash_original_method = "9733D1794190B487674895963987601C", hash_generated_method = "9733D1794190B487674895963987601C")
         public SocketTags ()
         {
             //Synthesized constructor
@@ -180,25 +180,25 @@ public final class NetworkManagementSocketTagger extends SocketTagger {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.646 -0400", hash_original_field = "95528F4C91A8F59FF7FB083630FD1EEE", hash_generated_field = "F28D0706B0E44AE2F2782C6D91C04763")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.051 -0400", hash_original_field = "95528F4C91A8F59FF7FB083630FD1EEE", hash_generated_field = "F28D0706B0E44AE2F2782C6D91C04763")
 
     private static String TAG = "NetworkManagementSocketTagger";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.646 -0400", hash_original_field = "928751A5F820D0540184847C19228178", hash_generated_field = "C9CC2E40086B1CEC61926BE423F58428")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.051 -0400", hash_original_field = "928751A5F820D0540184847C19228178", hash_generated_field = "C9CC2E40086B1CEC61926BE423F58428")
 
     private static boolean LOGD = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.646 -0400", hash_original_field = "50D195D854324B4A6E90F599FAF53FD7", hash_generated_field = "C87E4DC0D4A7E46AAC66AA6123EEBFD8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.051 -0400", hash_original_field = "50D195D854324B4A6E90F599FAF53FD7", hash_generated_field = "C87E4DC0D4A7E46AAC66AA6123EEBFD8")
 
     public static final String PROP_QTAGUID_ENABLED = "net.qtaguid_enabled";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.646 -0400", hash_original_field = "EABA550F7532129DA0224DDFD599C69B", hash_generated_field = "ABCD7024E1820626EBC1CAADA4772AD2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.052 -0400", hash_original_field = "EABA550F7532129DA0224DDFD599C69B", hash_generated_field = "640E06B04FDC29F9631BCC91599F7C19")
 
     private static ThreadLocal<SocketTags> threadSocketTags = new ThreadLocal<SocketTags>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.646 -0400", hash_original_method = "917426AFC28735098682F2B9D9CB79DB", hash_generated_method = "E9D60D3EED206A050C29468CE114783A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.052 -0400", hash_original_method = "917426AFC28735098682F2B9D9CB79DB", hash_generated_method = "B71B3994737B13CBD4FC6C8603DAED26")
         @Override
         protected SocketTags initialValue() {
-            SocketTags varB4EAC82CA7396A68D541C85D26508E83_1656792806 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1656792806 = new SocketTags();
-            varB4EAC82CA7396A68D541C85D26508E83_1656792806.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1656792806;
+            SocketTags varB4EAC82CA7396A68D541C85D26508E83_2130480214 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_2130480214 = new SocketTags();
+            varB4EAC82CA7396A68D541C85D26508E83_2130480214.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2130480214;
             // ---------- Original Method ----------
             //return new SocketTags();
         }

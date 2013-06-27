@@ -14,41 +14,41 @@ import java.io.Serializable;
 import java.util.Random;
 
 public class BigInteger extends Number implements Comparable<BigInteger>, Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "33A2DB2A239C5BAAA46376495EE5F6ED", hash_generated_field = "1B931597CE47BECC94315E7FDFB3AE18")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.527 -0400", hash_original_field = "33A2DB2A239C5BAAA46376495EE5F6ED", hash_generated_field = "1B931597CE47BECC94315E7FDFB3AE18")
 
     private transient BigInt bigInt;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "F0121707B716C3D41C45CEC890F8FEBD", hash_generated_field = "B1CF9FA5CC5896A14634587A7438CDD0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.527 -0400", hash_original_field = "F0121707B716C3D41C45CEC890F8FEBD", hash_generated_field = "B1CF9FA5CC5896A14634587A7438CDD0")
 
     private transient boolean nativeIsValid = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "562B560548EAC394A69BD390BABAEBE5", hash_generated_field = "36EDDB91E81C2B3A992259BBDA560C8D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.527 -0400", hash_original_field = "562B560548EAC394A69BD390BABAEBE5", hash_generated_field = "36EDDB91E81C2B3A992259BBDA560C8D")
 
     private transient boolean javaIsValid = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "A2AACBD15B619A9B9E5581A6C33BD2B1", hash_generated_field = "EF92B8843E3664BCE02DEF9DAE8B81D8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.527 -0400", hash_original_field = "A2AACBD15B619A9B9E5581A6C33BD2B1", hash_generated_field = "EF92B8843E3664BCE02DEF9DAE8B81D8")
 
     transient int[] digits;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "56F736C2BD891F3A00F34C71E5AD8378", hash_generated_field = "49E386B29ED8E51F4B9308F78ED67301")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.527 -0400", hash_original_field = "56F736C2BD891F3A00F34C71E5AD8378", hash_generated_field = "49E386B29ED8E51F4B9308F78ED67301")
 
     transient int numberLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "04B29480233F4DEF5C875875B6BDC3B1", hash_generated_field = "92BF56588B083F4EFC932B66DB92601C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.527 -0400", hash_original_field = "04B29480233F4DEF5C875875B6BDC3B1", hash_generated_field = "92BF56588B083F4EFC932B66DB92601C")
 
     transient int sign;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "553C03BFED44A9505466470F56E3ADC5", hash_generated_field = "6063015DEF6F532F83AE577B35CA2F93")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.527 -0400", hash_original_field = "553C03BFED44A9505466470F56E3ADC5", hash_generated_field = "6063015DEF6F532F83AE577B35CA2F93")
 
     private transient int firstNonzeroDigit = -2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "327B0A3531EA3D97749FE579CC4632A4", hash_generated_field = "9E963B134F5112D99A51A8B2403DC06B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.527 -0400", hash_original_field = "327B0A3531EA3D97749FE579CC4632A4", hash_generated_field = "9E963B134F5112D99A51A8B2403DC06B")
 
     private int signum;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "28C3D8F4B7E312AF5E0D6B59A50EFD1C", hash_generated_field = "62EEE6A49B1745E7CDFD636319A9ED04")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.527 -0400", hash_original_field = "28C3D8F4B7E312AF5E0D6B59A50EFD1C", hash_generated_field = "62EEE6A49B1745E7CDFD636319A9ED04")
 
     private byte[] magnitude;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.445 -0400", hash_original_field = "B81E47D2AA677809E4BE3C9232B2407F", hash_generated_field = "3D9A07F218385AD7A5B345B923EAF46E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.527 -0400", hash_original_field = "B81E47D2AA677809E4BE3C9232B2407F", hash_generated_field = "3D9A07F218385AD7A5B345B923EAF46E")
 
     private transient int hashCode = 0;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.446 -0400", hash_original_method = "E2046ACAAE3FADB78A197B33030B87EF", hash_generated_method = "3692A01A842ED88D7B0B7D06B95E593C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.528 -0400", hash_original_method = "E2046ACAAE3FADB78A197B33030B87EF", hash_generated_method = "2D4C2A18CF2E929A950786C145C59844")
       BigInteger(BigInt bigInt) {
         {
-            boolean varCBCE59BC652D0587CC25D4F0C19CC324_1919855105 = (bigInt == null || bigInt.getNativeBIGNUM() == 0);
+            boolean varCBCE59BC652D0587CC25D4F0C19CC324_1610908485 = (bigInt == null || bigInt.getNativeBIGNUM() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError();
             } //End block
@@ -63,7 +63,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.446 -0400", hash_original_method = "6A0326FFA4F8DFD22C6BE505D4303A06", hash_generated_method = "55FCDBFB4835752CB686FAA9AE63931C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.529 -0400", hash_original_method = "6A0326FFA4F8DFD22C6BE505D4303A06", hash_generated_method = "55FCDBFB4835752CB686FAA9AE63931C")
       BigInteger(int sign, long value) {
         BigInt bigInt;
         bigInt = new BigInt();
@@ -78,7 +78,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.453 -0400", hash_original_method = "8FE766A630C587CF3D36C6776BEC57AB", hash_generated_method = "9D5A992E0E61ADC1EA67DF0D6E21AF4A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.529 -0400", hash_original_method = "8FE766A630C587CF3D36C6776BEC57AB", hash_generated_method = "9D5A992E0E61ADC1EA67DF0D6E21AF4A")
       BigInteger(int sign, int numberLength, int[] digits) {
         setJavaRepresentation(sign, numberLength, digits);
         addTaint(sign);
@@ -89,7 +89,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.454 -0400", hash_original_method = "0CDCBE4F35D9E336AD3EE0D0E2D0776D", hash_generated_method = "448A70D33081051C8A47ABC82B816F43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.533 -0400", hash_original_method = "0CDCBE4F35D9E336AD3EE0D0E2D0776D", hash_generated_method = "448A70D33081051C8A47ABC82B816F43")
     public  BigInteger(int numBits, Random random) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("numBits < 0: " + numBits);
@@ -135,7 +135,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.455 -0400", hash_original_method = "E06C60E93C7C91BB266029ED9C3D532A", hash_generated_method = "96E12250D1C79C6C0E675539E8BA8DB3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.534 -0400", hash_original_method = "E06C60E93C7C91BB266029ED9C3D532A", hash_generated_method = "96E12250D1C79C6C0E675539E8BA8DB3")
     public  BigInteger(int bitLength, int certainty, Random unused) {
         {
             if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("bitLength < 2: " + bitLength);
@@ -152,7 +152,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.468 -0400", hash_original_method = "858DE6DF463E0F4BFB47F99F590AB0EF", hash_generated_method = "5B3C474263B131654FAC29BF779FBB37")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.535 -0400", hash_original_method = "858DE6DF463E0F4BFB47F99F590AB0EF", hash_generated_method = "5B3C474263B131654FAC29BF779FBB37")
     public  BigInteger(String value) {
         BigInt bigInt;
         bigInt = new BigInt();
@@ -166,7 +166,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.469 -0400", hash_original_method = "A13EC41ACC3DF589C11C4779074EEB6B", hash_generated_method = "683CB73626994EBAC54E64FD0CEC28D7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.637 -0400", hash_original_method = "A13EC41ACC3DF589C11C4779074EEB6B", hash_generated_method = "8ADEDBBEF4899CE7EF7ACC8C1ECA5B43")
     public  BigInteger(String value, int radix) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("value == null");
@@ -188,7 +188,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
                 if (DroidSafeAndroidRuntime.control) throw new NumberFormatException("Invalid radix: " + radix);
             } //End block
             {
-                boolean var61FDD46CB4F2D30108ACB79894E33C39_1753315573 = (value.isEmpty());
+                boolean var61FDD46CB4F2D30108ACB79894E33C39_1271891149 = (value.isEmpty());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new NumberFormatException("value.isEmpty()");
                 } //End block
@@ -221,7 +221,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.490 -0400", hash_original_method = "4725614D4A9FDEE6DBC2F6DB247469CF", hash_generated_method = "FCFC253D52A9232745E1F72C242A3ECC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.694 -0400", hash_original_method = "4725614D4A9FDEE6DBC2F6DB247469CF", hash_generated_method = "FCFC253D52A9232745E1F72C242A3ECC")
     public  BigInteger(int signum, byte[] magnitude) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("magnitude == null");
@@ -265,7 +265,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.491 -0400", hash_original_method = "ABB1E16F13BE7B2CA5EC1AADB52B2350", hash_generated_method = "5E0192300D683E47FF7F4C1D3699B570")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.694 -0400", hash_original_method = "ABB1E16F13BE7B2CA5EC1AADB52B2350", hash_generated_method = "5E0192300D683E47FF7F4C1D3699B570")
     public  BigInteger(byte[] value) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NumberFormatException("value.length == 0");
@@ -285,38 +285,38 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.503 -0400", hash_original_method = "7B92331634E6E3BE19D048B912B09B7F", hash_generated_method = "FCE35A1BFABF1BC4B9D5F234C9FC4AA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.695 -0400", hash_original_method = "7B92331634E6E3BE19D048B912B09B7F", hash_generated_method = "69193076BCB5DFD5F8B105F180046033")
      BigInt getBigInt() {
-        BigInt varB4EAC82CA7396A68D541C85D26508E83_820956860 = null; //Variable for return #1
-        BigInt varB4EAC82CA7396A68D541C85D26508E83_981494476 = null; //Variable for return #2
-        BigInt varB4EAC82CA7396A68D541C85D26508E83_656131506 = null; //Variable for return #3
+        BigInt varB4EAC82CA7396A68D541C85D26508E83_398434665 = null; //Variable for return #1
+        BigInt varB4EAC82CA7396A68D541C85D26508E83_227862459 = null; //Variable for return #2
+        BigInt varB4EAC82CA7396A68D541C85D26508E83_1941622117 = null; //Variable for return #3
         {
-            varB4EAC82CA7396A68D541C85D26508E83_820956860 = bigInt;
+            varB4EAC82CA7396A68D541C85D26508E83_398434665 = bigInt;
         } //End block
         {
             {
-                varB4EAC82CA7396A68D541C85D26508E83_981494476 = bigInt;
+                varB4EAC82CA7396A68D541C85D26508E83_227862459 = bigInt;
             } //End block
             BigInt bigInt;
             bigInt = new BigInt();
             bigInt.putLittleEndianInts(digits, (sign < 0));
             setBigInt(bigInt);
-            varB4EAC82CA7396A68D541C85D26508E83_656131506 = bigInt;
+            varB4EAC82CA7396A68D541C85D26508E83_1941622117 = bigInt;
         } //End block
-        BigInt varA7E53CE21691AB073D9660D615818899_1312338759; //Final return value
+        BigInt varA7E53CE21691AB073D9660D615818899_311156344; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1312338759 = varB4EAC82CA7396A68D541C85D26508E83_820956860;
+                varA7E53CE21691AB073D9660D615818899_311156344 = varB4EAC82CA7396A68D541C85D26508E83_398434665;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1312338759 = varB4EAC82CA7396A68D541C85D26508E83_981494476;
+                varA7E53CE21691AB073D9660D615818899_311156344 = varB4EAC82CA7396A68D541C85D26508E83_227862459;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1312338759 = varB4EAC82CA7396A68D541C85D26508E83_656131506;
+                varA7E53CE21691AB073D9660D615818899_311156344 = varB4EAC82CA7396A68D541C85D26508E83_1941622117;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1312338759.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1312338759;
+        varA7E53CE21691AB073D9660D615818899_311156344.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_311156344;
         // ---------- Original Method ----------
         //if (nativeIsValid) {
             //return bigInt;
@@ -333,7 +333,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.508 -0400", hash_original_method = "CC364AFCED646D5BD618C239A0F61C61", hash_generated_method = "FB8F32B7985E2B240502D873FAE13D52")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.714 -0400", hash_original_method = "CC364AFCED646D5BD618C239A0F61C61", hash_generated_method = "FB8F32B7985E2B240502D873FAE13D52")
     private void setBigInt(BigInt bigInt) {
         this.bigInt = bigInt;
         this.nativeIsValid = true;
@@ -343,7 +343,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.509 -0400", hash_original_method = "DA7CFD2DB9135F0E2C89139BCCCBB12F", hash_generated_method = "0F64427ABCDD686DC8AEFEEE13813050")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.714 -0400", hash_original_method = "DA7CFD2DB9135F0E2C89139BCCCBB12F", hash_generated_method = "0F64427ABCDD686DC8AEFEEE13813050")
     private void setJavaRepresentation(int sign, int numberLength, int[] digits) {
         {
             ;
@@ -369,7 +369,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.513 -0400", hash_original_method = "E11A76F306D885B62849938EE7ACFF1F", hash_generated_method = "7FD6176B1059E967EE7FA7FB5E533B6E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.715 -0400", hash_original_method = "E11A76F306D885B62849938EE7ACFF1F", hash_generated_method = "7FD6176B1059E967EE7FA7FB5E533B6E")
      void prepareJavaRepresentation() {
         {
             int sign;
@@ -408,43 +408,43 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.516 -0400", hash_original_method = "F45D943577A758DE4A75A5CD2DF6D206", hash_generated_method = "4806A5E9A5E2342CC20C2669FBDEB778")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.715 -0400", hash_original_method = "F45D943577A758DE4A75A5CD2DF6D206", hash_generated_method = "DA6C99B5E645C4B06CCC2EA75F37DF7F")
     public byte[] toByteArray() {
-        byte[] var3BE346B2FB665BD8F6B33361C4C01498_1367681711 = (twosComplement());
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1960527322 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1960527322;
+        byte[] var3BE346B2FB665BD8F6B33361C4C01498_1830508281 = (twosComplement());
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2027732959 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_2027732959;
         // ---------- Original Method ----------
         //return twosComplement();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.526 -0400", hash_original_method = "4D099B3B9B18238917CAE07611FC89C9", hash_generated_method = "5FFE376E13247436A477766EBEAE29B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.745 -0400", hash_original_method = "4D099B3B9B18238917CAE07611FC89C9", hash_generated_method = "6CC5E25028D88CEF0E39CCF89C0FBE71")
     public BigInteger abs() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_880806920 = null; //Variable for return #1
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_71994394 = null; //Variable for return #2
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_254179352 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_285307811 = null; //Variable for return #2
         BigInt bigInt;
         bigInt = getBigInt();
         {
-            boolean var62DB935F980131F1A8A6EA88CF668813_1827362047 = (bigInt.sign() >= 0);
+            boolean var62DB935F980131F1A8A6EA88CF668813_1968297033 = (bigInt.sign() >= 0);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_880806920 = this;
+                varB4EAC82CA7396A68D541C85D26508E83_254179352 = this;
             } //End block
         } //End collapsed parenthetic
         BigInt a;
         a = bigInt.copy();
         a.setSign(1);
-        varB4EAC82CA7396A68D541C85D26508E83_71994394 = new BigInteger(a);
-        BigInteger varA7E53CE21691AB073D9660D615818899_1827416278; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_285307811 = new BigInteger(a);
+        BigInteger varA7E53CE21691AB073D9660D615818899_475949899; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1827416278 = varB4EAC82CA7396A68D541C85D26508E83_880806920;
+                varA7E53CE21691AB073D9660D615818899_475949899 = varB4EAC82CA7396A68D541C85D26508E83_254179352;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1827416278 = varB4EAC82CA7396A68D541C85D26508E83_71994394;
+                varA7E53CE21691AB073D9660D615818899_475949899 = varB4EAC82CA7396A68D541C85D26508E83_285307811;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1827416278.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1827416278;
+        varA7E53CE21691AB073D9660D615818899_475949899.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_475949899;
         // ---------- Original Method ----------
         //BigInt bigInt = getBigInt();
         //if (bigInt.sign() >= 0) {
@@ -456,32 +456,32 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.530 -0400", hash_original_method = "DFABA71B5B9AE3E4CD65AD4AD666E31C", hash_generated_method = "E0BE2466421EB4041C427832FF47C6F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.746 -0400", hash_original_method = "DFABA71B5B9AE3E4CD65AD4AD666E31C", hash_generated_method = "51524BC6DB8E2D5DBE8176DDC2303ABE")
     public BigInteger negate() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_11219811 = null; //Variable for return #1
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1382487392 = null; //Variable for return #2
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_486983117 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_231461936 = null; //Variable for return #2
         BigInt bigInt;
         bigInt = getBigInt();
         int sign;
         sign = bigInt.sign();
         {
-            varB4EAC82CA7396A68D541C85D26508E83_11219811 = this;
+            varB4EAC82CA7396A68D541C85D26508E83_486983117 = this;
         } //End block
         BigInt a;
         a = bigInt.copy();
         a.setSign(-sign);
-        varB4EAC82CA7396A68D541C85D26508E83_1382487392 = new BigInteger(a);
-        BigInteger varA7E53CE21691AB073D9660D615818899_2035995292; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_231461936 = new BigInteger(a);
+        BigInteger varA7E53CE21691AB073D9660D615818899_43155509; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_2035995292 = varB4EAC82CA7396A68D541C85D26508E83_11219811;
+                varA7E53CE21691AB073D9660D615818899_43155509 = varB4EAC82CA7396A68D541C85D26508E83_486983117;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_2035995292 = varB4EAC82CA7396A68D541C85D26508E83_1382487392;
+                varA7E53CE21691AB073D9660D615818899_43155509 = varB4EAC82CA7396A68D541C85D26508E83_231461936;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2035995292.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_2035995292;
+        varA7E53CE21691AB073D9660D615818899_43155509.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_43155509;
         // ---------- Original Method ----------
         //BigInt bigInt = getBigInt();
         //int sign = bigInt.sign();
@@ -494,43 +494,43 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.541 -0400", hash_original_method = "5B8AB174D1647BD6610121BBBEE51EE5", hash_generated_method = "3ADD259A899F45231102D03C8CB8739A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.747 -0400", hash_original_method = "5B8AB174D1647BD6610121BBBEE51EE5", hash_generated_method = "36AEC8ABCD13AEB4A9C370A583F37A39")
     public BigInteger add(BigInteger value) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_120997478 = null; //Variable for return #1
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1680749486 = null; //Variable for return #2
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_493262943 = null; //Variable for return #3
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1929377503 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_124583440 = null; //Variable for return #2
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1875359715 = null; //Variable for return #3
         BigInt lhs;
         lhs = getBigInt();
         BigInt rhs;
         rhs = value.getBigInt();
         {
-            boolean var715C4C2597076EBBD7DE116903FFEC43_1969101121 = (rhs.sign() == 0);
+            boolean var715C4C2597076EBBD7DE116903FFEC43_2373266 = (rhs.sign() == 0);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_120997478 = this;
+                varB4EAC82CA7396A68D541C85D26508E83_1929377503 = this;
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var5A6924AA8D9332981417DC839AF99791_819239817 = (lhs.sign() == 0);
+            boolean var5A6924AA8D9332981417DC839AF99791_1637225298 = (lhs.sign() == 0);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1680749486 = value;
+                varB4EAC82CA7396A68D541C85D26508E83_124583440 = value;
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_493262943 = new BigInteger(BigInt.addition(lhs, rhs));
+        varB4EAC82CA7396A68D541C85D26508E83_1875359715 = new BigInteger(BigInt.addition(lhs, rhs));
         addTaint(value.getTaint());
-        BigInteger varA7E53CE21691AB073D9660D615818899_668293431; //Final return value
+        BigInteger varA7E53CE21691AB073D9660D615818899_613993180; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_668293431 = varB4EAC82CA7396A68D541C85D26508E83_120997478;
+                varA7E53CE21691AB073D9660D615818899_613993180 = varB4EAC82CA7396A68D541C85D26508E83_1929377503;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_668293431 = varB4EAC82CA7396A68D541C85D26508E83_1680749486;
+                varA7E53CE21691AB073D9660D615818899_613993180 = varB4EAC82CA7396A68D541C85D26508E83_124583440;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_668293431 = varB4EAC82CA7396A68D541C85D26508E83_493262943;
+                varA7E53CE21691AB073D9660D615818899_613993180 = varB4EAC82CA7396A68D541C85D26508E83_1875359715;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_668293431.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_668293431;
+        varA7E53CE21691AB073D9660D615818899_613993180.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_613993180;
         // ---------- Original Method ----------
         //BigInt lhs = getBigInt();
         //BigInt rhs = value.getBigInt();
@@ -544,33 +544,33 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.542 -0400", hash_original_method = "753BA04897A44EE33BA2055C50810858", hash_generated_method = "52044E6B03960D7BC55369F873CB28DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.775 -0400", hash_original_method = "753BA04897A44EE33BA2055C50810858", hash_generated_method = "C650B3A78382F9518D377ABD5B9EE45D")
     public BigInteger subtract(BigInteger value) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_2056151822 = null; //Variable for return #1
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_493741569 = null; //Variable for return #2
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_818433472 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1755520225 = null; //Variable for return #2
         BigInt lhs;
         lhs = getBigInt();
         BigInt rhs;
         rhs = value.getBigInt();
         {
-            boolean var715C4C2597076EBBD7DE116903FFEC43_1245169165 = (rhs.sign() == 0);
+            boolean var715C4C2597076EBBD7DE116903FFEC43_685469133 = (rhs.sign() == 0);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_2056151822 = this;
+                varB4EAC82CA7396A68D541C85D26508E83_818433472 = this;
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_493741569 = new BigInteger(BigInt.subtraction(lhs, rhs));
+        varB4EAC82CA7396A68D541C85D26508E83_1755520225 = new BigInteger(BigInt.subtraction(lhs, rhs));
         addTaint(value.getTaint());
-        BigInteger varA7E53CE21691AB073D9660D615818899_1523426101; //Final return value
+        BigInteger varA7E53CE21691AB073D9660D615818899_1636535236; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1523426101 = varB4EAC82CA7396A68D541C85D26508E83_2056151822;
+                varA7E53CE21691AB073D9660D615818899_1636535236 = varB4EAC82CA7396A68D541C85D26508E83_818433472;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1523426101 = varB4EAC82CA7396A68D541C85D26508E83_493741569;
+                varA7E53CE21691AB073D9660D615818899_1636535236 = varB4EAC82CA7396A68D541C85D26508E83_1755520225;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1523426101.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1523426101;
+        varA7E53CE21691AB073D9660D615818899_1636535236.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1636535236;
         // ---------- Original Method ----------
         //BigInt lhs = getBigInt();
         //BigInt rhs = value.getBigInt();
@@ -581,11 +581,11 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.542 -0400", hash_original_method = "0A534AADB97A9D37B49476B54B03D66A", hash_generated_method = "F600068442D549EF0C9B84C6278961F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.775 -0400", hash_original_method = "0A534AADB97A9D37B49476B54B03D66A", hash_generated_method = "9034658DEA3E1C1A9A2A3B19F9A2BB87")
     public int signum() {
-        int var78785A1AB216D9DE61B723A960BFD6AE_499381314 = (getBigInt().sign());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_992315479 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_992315479;
+        int var78785A1AB216D9DE61B723A960BFD6AE_805216032 = (getBigInt().sign());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_495586116 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_495586116;
         // ---------- Original Method ----------
         //if (javaIsValid) {
             //return sign;
@@ -594,56 +594,56 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.552 -0400", hash_original_method = "1B97FA7BE1DE29423609E814DD90E66F", hash_generated_method = "7211456D722CA665D0FEA87166AE7FB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.776 -0400", hash_original_method = "1B97FA7BE1DE29423609E814DD90E66F", hash_generated_method = "399976A2889AE4E88BE5DB2359657AE4")
     public BigInteger shiftRight(int n) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1350005320 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1350005320 = shiftLeft(-n);
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1773824659 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1773824659 = shiftLeft(-n);
         addTaint(n);
-        varB4EAC82CA7396A68D541C85D26508E83_1350005320.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1350005320;
+        varB4EAC82CA7396A68D541C85D26508E83_1773824659.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1773824659;
         // ---------- Original Method ----------
         //return shiftLeft(-n);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.620 -0400", hash_original_method = "3E0E92A5CC7CF6FE74FD251028917DBB", hash_generated_method = "475F3EE9EFDC30FCA2377B29E539BFD3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.793 -0400", hash_original_method = "3E0E92A5CC7CF6FE74FD251028917DBB", hash_generated_method = "61A7768CDF2A1E601992623FAA10F512")
     public BigInteger shiftLeft(int n) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1302505582 = null; //Variable for return #1
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1169620201 = null; //Variable for return #2
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1945848303 = null; //Variable for return #3
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1852789011 = null; //Variable for return #4
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1112862918 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1683956868 = null; //Variable for return #2
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_840224402 = null; //Variable for return #3
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_2075035348 = null; //Variable for return #4
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1302505582 = this;
+            varB4EAC82CA7396A68D541C85D26508E83_1112862918 = this;
         } //End block
         int sign;
         sign = signum();
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1169620201 = this;
+            varB4EAC82CA7396A68D541C85D26508E83_1683956868 = this;
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1945848303 = new BigInteger(BigInt.shift(getBigInt(), n));
+            varB4EAC82CA7396A68D541C85D26508E83_840224402 = new BigInteger(BigInt.shift(getBigInt(), n));
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1852789011 = BitLevel.shiftRight(this, -n);
+            varB4EAC82CA7396A68D541C85D26508E83_2075035348 = BitLevel.shiftRight(this, -n);
         } //End block
         addTaint(n);
-        BigInteger varA7E53CE21691AB073D9660D615818899_1724521611; //Final return value
+        BigInteger varA7E53CE21691AB073D9660D615818899_783046601; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1724521611 = varB4EAC82CA7396A68D541C85D26508E83_1302505582;
+                varA7E53CE21691AB073D9660D615818899_783046601 = varB4EAC82CA7396A68D541C85D26508E83_1112862918;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1724521611 = varB4EAC82CA7396A68D541C85D26508E83_1169620201;
+                varA7E53CE21691AB073D9660D615818899_783046601 = varB4EAC82CA7396A68D541C85D26508E83_1683956868;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_1724521611 = varB4EAC82CA7396A68D541C85D26508E83_1945848303;
+                varA7E53CE21691AB073D9660D615818899_783046601 = varB4EAC82CA7396A68D541C85D26508E83_840224402;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1724521611 = varB4EAC82CA7396A68D541C85D26508E83_1852789011;
+                varA7E53CE21691AB073D9660D615818899_783046601 = varB4EAC82CA7396A68D541C85D26508E83_2075035348;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1724521611.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1724521611;
+        varA7E53CE21691AB073D9660D615818899_783046601.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_783046601;
         // ---------- Original Method ----------
         //if (n == 0) {
             //return this;
@@ -660,25 +660,25 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.621 -0400", hash_original_method = "3F948826829C47AB028976261F4B8D55", hash_generated_method = "3D3EF11C587A9D2328696588686B064F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.797 -0400", hash_original_method = "3F948826829C47AB028976261F4B8D55", hash_generated_method = "A6DE91BE4F7AF87650F922DE4956C4DA")
      BigInteger shiftLeftOneBit() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1255945769 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1255945769 = (signum() == 0) ? this : BitLevel.shiftLeftOneBit(this);
-        varB4EAC82CA7396A68D541C85D26508E83_1255945769.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1255945769;
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1319656221 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1319656221 = (signum() == 0) ? this : BitLevel.shiftLeftOneBit(this);
+        varB4EAC82CA7396A68D541C85D26508E83_1319656221.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1319656221;
         // ---------- Original Method ----------
         //return (signum() == 0) ? this : BitLevel.shiftLeftOneBit(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.622 -0400", hash_original_method = "5DD770E4600136986E52E3D1EE5F1B27", hash_generated_method = "039BC42AE5644BF00EC9C331705280B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.797 -0400", hash_original_method = "5DD770E4600136986E52E3D1EE5F1B27", hash_generated_method = "71F6604FA128A13D1C422D01596E20FE")
     public int bitLength() {
         {
-            int varEF6F0F502ED0A4A2C2EE418CF96465E4_1196928387 = (BitLevel.bitLength(this));
+            int varEF6F0F502ED0A4A2C2EE418CF96465E4_1383822639 = (BitLevel.bitLength(this));
         } //End block
-        int var788BC3441C63E42B6C6F5C344E860F68_1462848084 = (getBigInt().bitLength());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1316645247 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1316645247;
+        int var788BC3441C63E42B6C6F5C344E860F68_525687463 = (getBigInt().bitLength());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1851296755 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1851296755;
         // ---------- Original Method ----------
         //if (!nativeIsValid && javaIsValid) {
             //return BitLevel.bitLength(this);
@@ -687,7 +687,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.623 -0400", hash_original_method = "22DB08B3CA9DDA99CEE301218284C513", hash_generated_method = "EFF516B0C806E505126938ED7DAD9447")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.817 -0400", hash_original_method = "22DB08B3CA9DDA99CEE301218284C513", hash_generated_method = "D998E355FC9B60A932C1DCEA5C47C52F")
     public boolean testBit(int n) {
         {
             if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("n < 0: " + n);
@@ -695,7 +695,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
         int sign;
         sign = signum();
         {
-            boolean varF17D7AFCFA584F08AA65771D9B761AB7_498943562 = (getBigInt().isBitSet(n));
+            boolean varF17D7AFCFA584F08AA65771D9B761AB7_983455977 = (getBigInt().isBitSet(n));
         } //End block
         {
             prepareJavaRepresentation();
@@ -716,39 +716,39 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
             } //End block
         } //End block
         addTaint(n);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1337302297 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1337302297;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_710508289 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_710508289;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.628 -0400", hash_original_method = "0A60006224C30F0C8DC4E0C8D16895AE", hash_generated_method = "70D84C82B1262C8EFB344CD380C66D2F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.818 -0400", hash_original_method = "0A60006224C30F0C8DC4E0C8D16895AE", hash_generated_method = "6A169A4C1CCD910B926A25CFE070A0D4")
     public BigInteger setBit(int n) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1247049096 = null; //Variable for return #1
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1166000264 = null; //Variable for return #2
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_896720467 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1308435951 = null; //Variable for return #2
         prepareJavaRepresentation();
         {
-            boolean var5D4D017D7F453054D257FB916BD85DB7_859768739 = (!testBit(n));
+            boolean var5D4D017D7F453054D257FB916BD85DB7_1339199145 = (!testBit(n));
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1247049096 = BitLevel.flipBit(this, n);
+                varB4EAC82CA7396A68D541C85D26508E83_896720467 = BitLevel.flipBit(this, n);
             } //End block
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1166000264 = this;
+                varB4EAC82CA7396A68D541C85D26508E83_1308435951 = this;
             } //End block
         } //End collapsed parenthetic
         addTaint(n);
-        BigInteger varA7E53CE21691AB073D9660D615818899_13706522; //Final return value
+        BigInteger varA7E53CE21691AB073D9660D615818899_158017596; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_13706522 = varB4EAC82CA7396A68D541C85D26508E83_1247049096;
+                varA7E53CE21691AB073D9660D615818899_158017596 = varB4EAC82CA7396A68D541C85D26508E83_896720467;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_13706522 = varB4EAC82CA7396A68D541C85D26508E83_1166000264;
+                varA7E53CE21691AB073D9660D615818899_158017596 = varB4EAC82CA7396A68D541C85D26508E83_1308435951;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_13706522.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_13706522;
+        varA7E53CE21691AB073D9660D615818899_158017596.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_158017596;
         // ---------- Original Method ----------
         //prepareJavaRepresentation();
         //if (!testBit(n)) {
@@ -759,32 +759,32 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.633 -0400", hash_original_method = "8D8C5374E542B708B8A1B41B31DCBF03", hash_generated_method = "489FC68B3E2DE151A9D0AABEA1C872B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.819 -0400", hash_original_method = "8D8C5374E542B708B8A1B41B31DCBF03", hash_generated_method = "962B64D2ABCADFC7D97A2DB77B081007")
     public BigInteger clearBit(int n) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_756184178 = null; //Variable for return #1
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1254048550 = null; //Variable for return #2
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1436460147 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_2061886243 = null; //Variable for return #2
         prepareJavaRepresentation();
         {
-            boolean varA357D3076F2B8D19676817F90ACD1333_1373078155 = (testBit(n));
+            boolean varA357D3076F2B8D19676817F90ACD1333_1452860963 = (testBit(n));
             {
-                varB4EAC82CA7396A68D541C85D26508E83_756184178 = BitLevel.flipBit(this, n);
+                varB4EAC82CA7396A68D541C85D26508E83_1436460147 = BitLevel.flipBit(this, n);
             } //End block
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1254048550 = this;
+                varB4EAC82CA7396A68D541C85D26508E83_2061886243 = this;
             } //End block
         } //End collapsed parenthetic
         addTaint(n);
-        BigInteger varA7E53CE21691AB073D9660D615818899_1877463324; //Final return value
+        BigInteger varA7E53CE21691AB073D9660D615818899_1352352001; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1877463324 = varB4EAC82CA7396A68D541C85D26508E83_756184178;
+                varA7E53CE21691AB073D9660D615818899_1352352001 = varB4EAC82CA7396A68D541C85D26508E83_1436460147;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1877463324 = varB4EAC82CA7396A68D541C85D26508E83_1254048550;
+                varA7E53CE21691AB073D9660D615818899_1352352001 = varB4EAC82CA7396A68D541C85D26508E83_2061886243;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1877463324.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1877463324;
+        varA7E53CE21691AB073D9660D615818899_1352352001.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1352352001;
         // ---------- Original Method ----------
         //prepareJavaRepresentation();
         //if (testBit(n)) {
@@ -795,17 +795,17 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.634 -0400", hash_original_method = "F1D37134A8936EE90081AD78D8487F59", hash_generated_method = "3B88EFB7471D9E1799C119E8A942B117")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.842 -0400", hash_original_method = "F1D37134A8936EE90081AD78D8487F59", hash_generated_method = "58F6237A17A3F6F69D8A5E67EE992A44")
     public BigInteger flipBit(int n) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_2062771094 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1258592751 = null; //Variable for return #1
         prepareJavaRepresentation();
         {
             if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("n < 0: " + n);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2062771094 = BitLevel.flipBit(this, n);
+        varB4EAC82CA7396A68D541C85D26508E83_1258592751 = BitLevel.flipBit(this, n);
         addTaint(n);
-        varB4EAC82CA7396A68D541C85D26508E83_2062771094.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2062771094;
+        varB4EAC82CA7396A68D541C85D26508E83_1258592751.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1258592751;
         // ---------- Original Method ----------
         //prepareJavaRepresentation();
         //if (n < 0) {
@@ -815,14 +815,14 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.634 -0400", hash_original_method = "8383F139074E92B6BF621C4AC408CB05", hash_generated_method = "6E4FDE4DCEC927C70346B3EE220CE984")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.843 -0400", hash_original_method = "8383F139074E92B6BF621C4AC408CB05", hash_generated_method = "77EC4CF0392E7EB21173C46D1C1EB0D4")
     public int getLowestSetBit() {
         prepareJavaRepresentation();
         int i;
         i = getFirstNonzeroDigit();
-        int var08486A238466E45EF685C7096473496F_613882592 = (((i << 5) + Integer.numberOfTrailingZeros(digits[i])));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2135567846 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2135567846;
+        int var08486A238466E45EF685C7096473496F_1750814877 = (((i << 5) + Integer.numberOfTrailingZeros(digits[i])));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_100066080 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_100066080;
         // ---------- Original Method ----------
         //prepareJavaRepresentation();
         //if (sign == 0) {
@@ -833,40 +833,40 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.635 -0400", hash_original_method = "2461573222D281ABCA9F3F34AA40AFB9", hash_generated_method = "ACC2028C29F0EA9546AC69E7DC07A50F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.843 -0400", hash_original_method = "2461573222D281ABCA9F3F34AA40AFB9", hash_generated_method = "FD31068AB75F3DCD36CD31DEFF0499F4")
     public int bitCount() {
         prepareJavaRepresentation();
-        int var03F1A887008EE5D56B89D17C00839C9F_813776080 = (BitLevel.bitCount(this));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1013067733 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1013067733;
+        int var03F1A887008EE5D56B89D17C00839C9F_573351492 = (BitLevel.bitCount(this));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1629589476 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1629589476;
         // ---------- Original Method ----------
         //prepareJavaRepresentation();
         //return BitLevel.bitCount(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.644 -0400", hash_original_method = "CD87C1AB82AE5BD1BDB1D71C1F7F211A", hash_generated_method = "63146B76BC9834F752A9A9AD3FEB11B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.843 -0400", hash_original_method = "CD87C1AB82AE5BD1BDB1D71C1F7F211A", hash_generated_method = "B8E6BEB7ADCF98BA370A1728D6F243F8")
     public BigInteger not() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1582326725 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_327972889 = null; //Variable for return #1
         this.prepareJavaRepresentation();
-        varB4EAC82CA7396A68D541C85D26508E83_1582326725 = Logical.not(this);
-        varB4EAC82CA7396A68D541C85D26508E83_1582326725.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1582326725;
+        varB4EAC82CA7396A68D541C85D26508E83_327972889 = Logical.not(this);
+        varB4EAC82CA7396A68D541C85D26508E83_327972889.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_327972889;
         // ---------- Original Method ----------
         //this.prepareJavaRepresentation();
         //return Logical.not(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.644 -0400", hash_original_method = "B57E8848F50ED2CEFC86EA20A70D185D", hash_generated_method = "C34B471A9A507563133C30030A167601")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.844 -0400", hash_original_method = "B57E8848F50ED2CEFC86EA20A70D185D", hash_generated_method = "8E0220FC1C51E3883FCF173B02D6C95A")
     public BigInteger and(BigInteger value) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_192490926 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_441375607 = null; //Variable for return #1
         this.prepareJavaRepresentation();
         value.prepareJavaRepresentation();
-        varB4EAC82CA7396A68D541C85D26508E83_192490926 = Logical.and(this, value);
+        varB4EAC82CA7396A68D541C85D26508E83_441375607 = Logical.and(this, value);
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_192490926.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_192490926;
+        varB4EAC82CA7396A68D541C85D26508E83_441375607.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_441375607;
         // ---------- Original Method ----------
         //this.prepareJavaRepresentation();
         //value.prepareJavaRepresentation();
@@ -874,15 +874,15 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.645 -0400", hash_original_method = "AED35BC9F3B39A40B35087479AE4F222", hash_generated_method = "77086F1BF036F52D0CDDB26DB9EEC806")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.865 -0400", hash_original_method = "AED35BC9F3B39A40B35087479AE4F222", hash_generated_method = "ED0FCB2D3F13FCC6070122FB4BBAA9C3")
     public BigInteger or(BigInteger value) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1503949610 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1837641267 = null; //Variable for return #1
         this.prepareJavaRepresentation();
         value.prepareJavaRepresentation();
-        varB4EAC82CA7396A68D541C85D26508E83_1503949610 = Logical.or(this, value);
+        varB4EAC82CA7396A68D541C85D26508E83_1837641267 = Logical.or(this, value);
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1503949610.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1503949610;
+        varB4EAC82CA7396A68D541C85D26508E83_1837641267.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1837641267;
         // ---------- Original Method ----------
         //this.prepareJavaRepresentation();
         //value.prepareJavaRepresentation();
@@ -890,15 +890,15 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.646 -0400", hash_original_method = "0162D315FD06686CC7830A3D5D5A796E", hash_generated_method = "5D07BDEF641054874715A10ABC9B292B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.866 -0400", hash_original_method = "0162D315FD06686CC7830A3D5D5A796E", hash_generated_method = "6F0D5D1ECAD3FB7D95EDF2E655324410")
     public BigInteger xor(BigInteger value) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1706466504 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_579335806 = null; //Variable for return #1
         this.prepareJavaRepresentation();
         value.prepareJavaRepresentation();
-        varB4EAC82CA7396A68D541C85D26508E83_1706466504 = Logical.xor(this, value);
+        varB4EAC82CA7396A68D541C85D26508E83_579335806 = Logical.xor(this, value);
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1706466504.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1706466504;
+        varB4EAC82CA7396A68D541C85D26508E83_579335806.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_579335806;
         // ---------- Original Method ----------
         //this.prepareJavaRepresentation();
         //value.prepareJavaRepresentation();
@@ -906,15 +906,15 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.647 -0400", hash_original_method = "A8A90B9F7EBADE4F51C070D1C780A515", hash_generated_method = "1A893B47342EF5B4749392EEC90276A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.867 -0400", hash_original_method = "A8A90B9F7EBADE4F51C070D1C780A515", hash_generated_method = "C7AD63416F1CDC0B80AFBC713A8916A0")
     public BigInteger andNot(BigInteger value) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1306533540 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1740631538 = null; //Variable for return #1
         this.prepareJavaRepresentation();
         value.prepareJavaRepresentation();
-        varB4EAC82CA7396A68D541C85D26508E83_1306533540 = Logical.andNot(this, value);
+        varB4EAC82CA7396A68D541C85D26508E83_1740631538 = Logical.andNot(this, value);
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1306533540.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1306533540;
+        varB4EAC82CA7396A68D541C85D26508E83_1740631538.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1740631538;
         // ---------- Original Method ----------
         //this.prepareJavaRepresentation();
         //value.prepareJavaRepresentation();
@@ -922,18 +922,18 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.647 -0400", hash_original_method = "F298334B66A6EA4DC89E250C44198AEA", hash_generated_method = "5FEBCBEF7D57B04B812CAD80F6CD8C9C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.867 -0400", hash_original_method = "F298334B66A6EA4DC89E250C44198AEA", hash_generated_method = "98B3B8CA24EAC4907AEAB96D47D076C9")
     @Override
     public int intValue() {
         {
-            boolean var736C79FFC0E47BDF554712724F023607_2010986313 = (nativeIsValid && bigInt.twosCompFitsIntoBytes(4));
+            boolean var736C79FFC0E47BDF554712724F023607_1573441001 = (nativeIsValid && bigInt.twosCompFitsIntoBytes(4));
             {
-                int var3C648FDB51952E7A4326C06E11E5D714_461254623 = ((int) bigInt.longInt());
+                int var3C648FDB51952E7A4326C06E11E5D714_188984426 = ((int) bigInt.longInt());
             } //End block
         } //End collapsed parenthetic
         this.prepareJavaRepresentation();
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1712656020 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1712656020;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1965082246 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1965082246;
         // ---------- Original Method ----------
         //if (nativeIsValid && bigInt.twosCompFitsIntoBytes(4)) {
             //return (int) bigInt.longInt();
@@ -943,21 +943,21 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.657 -0400", hash_original_method = "22A0F6A18293749D1CD57F54133930DD", hash_generated_method = "7A1AA404F78ABA8F75B75DF944D537D7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.893 -0400", hash_original_method = "22A0F6A18293749D1CD57F54133930DD", hash_generated_method = "97BC7C0C2FA0DB7A515660344A7D0CC0")
     @Override
     public long longValue() {
         {
-            boolean varC4F1CBA5BA1CCD278A875F7CBF5B1567_1683071803 = (nativeIsValid && bigInt.twosCompFitsIntoBytes(8));
+            boolean varC4F1CBA5BA1CCD278A875F7CBF5B1567_1806721493 = (nativeIsValid && bigInt.twosCompFitsIntoBytes(8));
             {
-                long var4AAAA41C9D1DFB9DDFD6709151B2DF14_101039311 = (bigInt.longInt());
+                long var4AAAA41C9D1DFB9DDFD6709151B2DF14_639659926 = (bigInt.longInt());
             } //End block
         } //End collapsed parenthetic
         prepareJavaRepresentation();
         long value;
         value = ((long) digits[1]) << 32 | digits[0] & 0xFFFFFFFFL;
         value = digits[0] & 0xFFFFFFFFL;
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_903769452 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_903769452;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_49131581 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_49131581;
         // ---------- Original Method ----------
         //if (nativeIsValid && bigInt.twosCompFitsIntoBytes(8)) {
             //return bigInt.longInt();
@@ -970,64 +970,64 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.657 -0400", hash_original_method = "85C514A29B5895D821780B89C4F747B0", hash_generated_method = "45D106B47970740E89354895CEA47C66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.893 -0400", hash_original_method = "85C514A29B5895D821780B89C4F747B0", hash_generated_method = "E84AD82A057735AE33FB0E4D422710BD")
     @Override
     public float floatValue() {
-        float var988FDD4E54336618413CB2C701826BC6_1088616665 = ((float) doubleValue());
-        float var546ADE640B6EDFBC8A086EF31347E768_215516550 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_215516550;
+        float var988FDD4E54336618413CB2C701826BC6_532607700 = ((float) doubleValue());
+        float var546ADE640B6EDFBC8A086EF31347E768_76796907 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_76796907;
         // ---------- Original Method ----------
         //return (float) doubleValue();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.658 -0400", hash_original_method = "3D8E394E07D4F37AF2C6D72F08026A5D", hash_generated_method = "DAA6597CAE092E95F9EE5AFA0750C1EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.894 -0400", hash_original_method = "3D8E394E07D4F37AF2C6D72F08026A5D", hash_generated_method = "349945F62230CE8D2C66CD679BF373FF")
     @Override
     public double doubleValue() {
-        double var986CEBD15E6E1AF84E0E0543465AB73A_2050523350 = (Conversion.bigInteger2Double(this));
-        double varE8CD7DA078A86726031AD64F35F5A6C0_1671625111 = getTaintDouble();
-        return varE8CD7DA078A86726031AD64F35F5A6C0_1671625111;
+        double var986CEBD15E6E1AF84E0E0543465AB73A_2095482360 = (Conversion.bigInteger2Double(this));
+        double varE8CD7DA078A86726031AD64F35F5A6C0_765226394 = getTaintDouble();
+        return varE8CD7DA078A86726031AD64F35F5A6C0_765226394;
         // ---------- Original Method ----------
         //return Conversion.bigInteger2Double(this);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.658 -0400", hash_original_method = "2F090DBB15C308A00016A444F7C5A620", hash_generated_method = "D28B59B518F02D9F21D96BF628C30655")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.894 -0400", hash_original_method = "2F090DBB15C308A00016A444F7C5A620", hash_generated_method = "81A7622E5814B365E9A782295D4798D9")
     public int compareTo(BigInteger value) {
-        int varE8DF5E315CCF42EB1CBFEE65CA4A8DF2_1290576276 = (BigInt.cmp(getBigInt(), value.getBigInt()));
+        int varE8DF5E315CCF42EB1CBFEE65CA4A8DF2_1886325791 = (BigInt.cmp(getBigInt(), value.getBigInt()));
         addTaint(value.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1904539697 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1904539697;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2031263616 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2031263616;
         // ---------- Original Method ----------
         //return BigInt.cmp(getBigInt(), value.getBigInt());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.658 -0400", hash_original_method = "909F517DD4A19D55540D3A4577FBCF84", hash_generated_method = "BFE0155463F444F946C8C02EA00E71D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.907 -0400", hash_original_method = "909F517DD4A19D55540D3A4577FBCF84", hash_generated_method = "A6022091775636A7C3F0B919780041B7")
     public BigInteger min(BigInteger value) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_486936240 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_486936240 = this.compareTo(value) == -1 ? this : value;
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1410298320 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1410298320 = this.compareTo(value) == -1 ? this : value;
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_486936240.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_486936240;
+        varB4EAC82CA7396A68D541C85D26508E83_1410298320.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1410298320;
         // ---------- Original Method ----------
         //return this.compareTo(value) == -1 ? this : value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.659 -0400", hash_original_method = "6C03178B5A42138223A2B4814CF874FD", hash_generated_method = "560B484ABDBFB1BF84121A186F4A0DBE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.907 -0400", hash_original_method = "6C03178B5A42138223A2B4814CF874FD", hash_generated_method = "64D4CD3B8EAC098FFC843E1E46F0FF28")
     public BigInteger max(BigInteger value) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1891300826 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1891300826 = this.compareTo(value) == 1 ? this : value;
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_347555100 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_347555100 = this.compareTo(value) == 1 ? this : value;
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1891300826.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1891300826;
+        varB4EAC82CA7396A68D541C85D26508E83_347555100.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_347555100;
         // ---------- Original Method ----------
         //return this.compareTo(value) == 1 ? this : value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.659 -0400", hash_original_method = "8BD8EE457DCE4BEA017BA4C9967BFC77", hash_generated_method = "1F8E59499DC7A950E0AB93D822787A39")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.908 -0400", hash_original_method = "8BD8EE457DCE4BEA017BA4C9967BFC77", hash_generated_method = "C30E92A83EFFC9A86A44BD67D4860BAE")
     @Override
     public int hashCode() {
         prepareJavaRepresentation();
@@ -1039,8 +1039,8 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
             } //End block
         } //End collapsed parenthetic
         hashCode = hashCode * sign;
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_642761452 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_642761452;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521733990 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521733990;
         // ---------- Original Method ----------
         //if (hashCode != 0) {
             //return hashCode;
@@ -1054,15 +1054,15 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.664 -0400", hash_original_method = "D6CA37529D0AAA6915B88189BBB9DE43", hash_generated_method = "774A8A862AC9359FF21C36074DD2B39E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.908 -0400", hash_original_method = "D6CA37529D0AAA6915B88189BBB9DE43", hash_generated_method = "FAB15DA899D93AE4A1D62660E3631D4B")
     @Override
     public boolean equals(Object x) {
         {
-            boolean var8C5538CAE31374871D89268FAA638122_2061137870 = (this.compareTo((BigInteger) x) == 0);
+            boolean var8C5538CAE31374871D89268FAA638122_1355736921 = (this.compareTo((BigInteger) x) == 0);
         } //End block
         addTaint(x.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1952727315 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1952727315;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1700583093 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1700583093;
         // ---------- Original Method ----------
         //if (this == x) {
             //return true;
@@ -1074,41 +1074,41 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.665 -0400", hash_original_method = "466A78542936FDDF00F235F55782CDB1", hash_generated_method = "642F50FDD11D3C4C4B9247AE73390D7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.908 -0400", hash_original_method = "466A78542936FDDF00F235F55782CDB1", hash_generated_method = "D7F97961A87F56719481EBDF57E02549")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1253317686 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1253317686 = getBigInt().decString();
-        varB4EAC82CA7396A68D541C85D26508E83_1253317686.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1253317686;
+        String varB4EAC82CA7396A68D541C85D26508E83_80783947 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_80783947 = getBigInt().decString();
+        varB4EAC82CA7396A68D541C85D26508E83_80783947.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_80783947;
         // ---------- Original Method ----------
         //return getBigInt().decString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.666 -0400", hash_original_method = "DC1B34095F4DDEED7FED4CD9DAE6BCA6", hash_generated_method = "8342F489C50554AAB1326973C29B9A26")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.909 -0400", hash_original_method = "DC1B34095F4DDEED7FED4CD9DAE6BCA6", hash_generated_method = "149F05DCEABF7B31EFCD2AF0EE6E9D22")
     public String toString(int radix) {
-        String varB4EAC82CA7396A68D541C85D26508E83_2083975910 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1821704488 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_253046666 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1262485770 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2083975910 = getBigInt().decString();
+            varB4EAC82CA7396A68D541C85D26508E83_253046666 = getBigInt().decString();
         } //End block
         {
             prepareJavaRepresentation();
-            varB4EAC82CA7396A68D541C85D26508E83_1821704488 = Conversion.bigInteger2String(this, radix);
+            varB4EAC82CA7396A68D541C85D26508E83_1262485770 = Conversion.bigInteger2String(this, radix);
         } //End block
         addTaint(radix);
-        String varA7E53CE21691AB073D9660D615818899_1771801730; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_240554549; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1771801730 = varB4EAC82CA7396A68D541C85D26508E83_2083975910;
+                varA7E53CE21691AB073D9660D615818899_240554549 = varB4EAC82CA7396A68D541C85D26508E83_253046666;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1771801730 = varB4EAC82CA7396A68D541C85D26508E83_1821704488;
+                varA7E53CE21691AB073D9660D615818899_240554549 = varB4EAC82CA7396A68D541C85D26508E83_1262485770;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1771801730.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1771801730;
+        varA7E53CE21691AB073D9660D615818899_240554549.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_240554549;
         // ---------- Original Method ----------
         //if (radix == 10) {
             //return getBigInt().decString();
@@ -1119,40 +1119,40 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.666 -0400", hash_original_method = "DF6919CA8C1CE81A76193FCEFAE3FDAA", hash_generated_method = "DEB18DC5DE6715D7837E5BD419CD2188")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.909 -0400", hash_original_method = "DF6919CA8C1CE81A76193FCEFAE3FDAA", hash_generated_method = "14C159AAB7171CAAC17A71F00AF53837")
     public BigInteger gcd(BigInteger value) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1307647874 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1307647874 = new BigInteger(BigInt.gcd(getBigInt(), value.getBigInt()));
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1206453592 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1206453592 = new BigInteger(BigInt.gcd(getBigInt(), value.getBigInt()));
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1307647874.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1307647874;
+        varB4EAC82CA7396A68D541C85D26508E83_1206453592.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1206453592;
         // ---------- Original Method ----------
         //return new BigInteger(BigInt.gcd(getBigInt(), value.getBigInt()));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.672 -0400", hash_original_method = "7A377385A7A35B42B025ADA39BD9F319", hash_generated_method = "8DA2CCB535EB9E8B56FC8F114B43D278")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.912 -0400", hash_original_method = "7A377385A7A35B42B025ADA39BD9F319", hash_generated_method = "57750CE76AC36EC2EB7B1BAD418365EA")
     public BigInteger multiply(BigInteger value) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1982340447 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1982340447 = new BigInteger(BigInt.product(getBigInt(), value.getBigInt()));
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1378083530 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1378083530 = new BigInteger(BigInt.product(getBigInt(), value.getBigInt()));
         addTaint(value.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1982340447.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1982340447;
+        varB4EAC82CA7396A68D541C85D26508E83_1378083530.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1378083530;
         // ---------- Original Method ----------
         //return new BigInteger(BigInt.product(getBigInt(), value.getBigInt()));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.672 -0400", hash_original_method = "670CEDEE32713500748765AA85174DA4", hash_generated_method = "DB811B301B5BC9A964F3D1F5A6E8E7EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.913 -0400", hash_original_method = "670CEDEE32713500748765AA85174DA4", hash_generated_method = "1081A855D4A6759FE2E32AD001DF1955")
     public BigInteger pow(int exp) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_201799483 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1582402313 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("exp < 0: " + exp);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_201799483 = new BigInteger(BigInt.exp(getBigInt(), exp));
+        varB4EAC82CA7396A68D541C85D26508E83_1582402313 = new BigInteger(BigInt.exp(getBigInt(), exp));
         addTaint(exp);
-        varB4EAC82CA7396A68D541C85D26508E83_201799483.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_201799483;
+        varB4EAC82CA7396A68D541C85D26508E83_1582402313.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1582402313;
         // ---------- Original Method ----------
         //if (exp < 0) {
             //throw new ArithmeticException("exp < 0: " + exp);
@@ -1161,9 +1161,9 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.673 -0400", hash_original_method = "0021B26ACCFD58807A129BEBBFC75B78", hash_generated_method = "B6026742AF6AA40C05F29DF5E00D16AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.913 -0400", hash_original_method = "0021B26ACCFD58807A129BEBBFC75B78", hash_generated_method = "E5C680CDA5446121FCD40E5C400D36B4")
     public BigInteger[] divideAndRemainder(BigInteger divisor) {
-        BigInteger[] varB4EAC82CA7396A68D541C85D26508E83_2042482125 = null; //Variable for return #1
+        BigInteger[] varB4EAC82CA7396A68D541C85D26508E83_1793069679 = null; //Variable for return #1
         BigInt divisorBigInt;
         divisorBigInt = divisor.getBigInt();
         BigInt quotient;
@@ -1171,10 +1171,10 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
         BigInt remainder;
         remainder = new BigInt();
         BigInt.division(getBigInt(), divisorBigInt, quotient, remainder);
-        varB4EAC82CA7396A68D541C85D26508E83_2042482125 = new BigInteger[] {new BigInteger(quotient), new BigInteger(remainder) };
+        varB4EAC82CA7396A68D541C85D26508E83_1793069679 = new BigInteger[] {new BigInteger(quotient), new BigInteger(remainder) };
         addTaint(divisor.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2042482125.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2042482125;
+        varB4EAC82CA7396A68D541C85D26508E83_1793069679.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1793069679;
         // ---------- Original Method ----------
         //BigInt divisorBigInt = divisor.getBigInt();
         //BigInt quotient = new BigInt();
@@ -1184,16 +1184,16 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.673 -0400", hash_original_method = "E605E3D77E9B13D877DA6B6F47D67F1F", hash_generated_method = "3638BCA154EA92B4D298017FAE26622B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.951 -0400", hash_original_method = "E605E3D77E9B13D877DA6B6F47D67F1F", hash_generated_method = "CF2595EF165A4B0801433A4AAD7B11BE")
     public BigInteger divide(BigInteger divisor) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_110034776 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_471971652 = null; //Variable for return #1
         BigInt quotient;
         quotient = new BigInt();
         BigInt.division(getBigInt(), divisor.getBigInt(), quotient, null);
-        varB4EAC82CA7396A68D541C85D26508E83_110034776 = new BigInteger(quotient);
+        varB4EAC82CA7396A68D541C85D26508E83_471971652 = new BigInteger(quotient);
         addTaint(divisor.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_110034776.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_110034776;
+        varB4EAC82CA7396A68D541C85D26508E83_471971652.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_471971652;
         // ---------- Original Method ----------
         //BigInt quotient = new BigInt();
         //BigInt.division(getBigInt(), divisor.getBigInt(), quotient, null);
@@ -1201,16 +1201,16 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.685 -0400", hash_original_method = "FFD2A7C70BA79F9B512531A9A18B49EF", hash_generated_method = "8C0862418D677E41D7655BCB3C96C14A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.951 -0400", hash_original_method = "FFD2A7C70BA79F9B512531A9A18B49EF", hash_generated_method = "FDF716BF8E128882CAB554433AF71642")
     public BigInteger remainder(BigInteger divisor) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_2050018883 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_185835368 = null; //Variable for return #1
         BigInt remainder;
         remainder = new BigInt();
         BigInt.division(getBigInt(), divisor.getBigInt(), null, remainder);
-        varB4EAC82CA7396A68D541C85D26508E83_2050018883 = new BigInteger(remainder);
+        varB4EAC82CA7396A68D541C85D26508E83_185835368 = new BigInteger(remainder);
         addTaint(divisor.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2050018883.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2050018883;
+        varB4EAC82CA7396A68D541C85D26508E83_185835368.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_185835368;
         // ---------- Original Method ----------
         //BigInt remainder = new BigInt();
         //BigInt.division(getBigInt(), divisor.getBigInt(), null, remainder);
@@ -1218,19 +1218,19 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.686 -0400", hash_original_method = "D09D0373DFB5DF67EDACA66D474BB75C", hash_generated_method = "75BE1649B463F1B895178B33B6D4657B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.952 -0400", hash_original_method = "D09D0373DFB5DF67EDACA66D474BB75C", hash_generated_method = "065471E3082D8C48D56E3966C7869879")
     public BigInteger modInverse(BigInteger m) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1924720091 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_297290776 = null; //Variable for return #1
         {
-            boolean var15873CD3F31198FD54273FC8BF634C9A_998794009 = (m.signum() <= 0);
+            boolean var15873CD3F31198FD54273FC8BF634C9A_399856692 = (m.signum() <= 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("modulus not positive");
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1924720091 = new BigInteger(BigInt.modInverse(getBigInt(), m.getBigInt()));
+        varB4EAC82CA7396A68D541C85D26508E83_297290776 = new BigInteger(BigInt.modInverse(getBigInt(), m.getBigInt()));
         addTaint(m.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1924720091.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1924720091;
+        varB4EAC82CA7396A68D541C85D26508E83_297290776.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_297290776;
         // ---------- Original Method ----------
         //if (m.signum() <= 0) {
             //throw new ArithmeticException("modulus not positive");
@@ -1239,24 +1239,24 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.686 -0400", hash_original_method = "4B2E2C43A8E0C70699BFC0E4EF01E685", hash_generated_method = "19760D318E076FD96002D13CC22C17F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.953 -0400", hash_original_method = "4B2E2C43A8E0C70699BFC0E4EF01E685", hash_generated_method = "07BCF22BE8409E8E860E09B765AD5F80")
     public BigInteger modPow(BigInteger exponent, BigInteger m) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1445034719 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1058768696 = null; //Variable for return #1
         {
-            boolean var15873CD3F31198FD54273FC8BF634C9A_161074520 = (m.signum() <= 0);
+            boolean var15873CD3F31198FD54273FC8BF634C9A_1146397189 = (m.signum() <= 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("m.signum() <= 0");
             } //End block
         } //End collapsed parenthetic
         BigInteger base;
-        boolean varE2809D8580A02DD733D2DE31DC8AE895_1246565548 = (exponent.signum() < 0);
+        boolean varE2809D8580A02DD733D2DE31DC8AE895_1154484530 = (exponent.signum() < 0);
         base = modInverse(m);
         base = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1445034719 = new BigInteger(BigInt.modExp(base.getBigInt(), exponent.getBigInt(), m.getBigInt()));
+        varB4EAC82CA7396A68D541C85D26508E83_1058768696 = new BigInteger(BigInt.modExp(base.getBigInt(), exponent.getBigInt(), m.getBigInt()));
         addTaint(exponent.getTaint());
         addTaint(m.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1445034719.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1445034719;
+        varB4EAC82CA7396A68D541C85D26508E83_1058768696.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1058768696;
         // ---------- Original Method ----------
         //if (m.signum() <= 0) {
             //throw new ArithmeticException("m.signum() <= 0");
@@ -1266,19 +1266,19 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.687 -0400", hash_original_method = "ADC51A8E4A4079F65268593A33DD74A7", hash_generated_method = "D00B03941917DB276C3529ADB10EA91E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.953 -0400", hash_original_method = "ADC51A8E4A4079F65268593A33DD74A7", hash_generated_method = "4BBBD6893A42BB9E90DF8E9D1F7C961D")
     public BigInteger mod(BigInteger m) {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_223555240 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1258474310 = null; //Variable for return #1
         {
-            boolean var15873CD3F31198FD54273FC8BF634C9A_257290299 = (m.signum() <= 0);
+            boolean var15873CD3F31198FD54273FC8BF634C9A_448423406 = (m.signum() <= 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("m.signum() <= 0");
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_223555240 = new BigInteger(BigInt.modulus(getBigInt(), m.getBigInt()));
+        varB4EAC82CA7396A68D541C85D26508E83_1258474310 = new BigInteger(BigInt.modulus(getBigInt(), m.getBigInt()));
         addTaint(m.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_223555240.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_223555240;
+        varB4EAC82CA7396A68D541C85D26508E83_1258474310.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1258474310;
         // ---------- Original Method ----------
         //if (m.signum() <= 0) {
             //throw new ArithmeticException("m.signum() <= 0");
@@ -1287,12 +1287,12 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.691 -0400", hash_original_method = "718D211034BAE1DECACA1D72CB4CBB13", hash_generated_method = "205037BDB66BB31DE2A2F806CCC3762E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.953 -0400", hash_original_method = "718D211034BAE1DECACA1D72CB4CBB13", hash_generated_method = "323C360CE71977E3C2DFF4D27CDE8230")
     public boolean isProbablePrime(int certainty) {
-        boolean var527C2D985EF61BA5C7404EDA1C84F2DB_651055758 = (getBigInt().isPrime(certainty));
+        boolean var527C2D985EF61BA5C7404EDA1C84F2DB_209807019 = (getBigInt().isPrime(certainty));
         addTaint(certainty);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1016939668 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1016939668;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1574571650 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1574571650;
         // ---------- Original Method ----------
         //if (certainty <= 0) {
             //return true;
@@ -1301,15 +1301,15 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.707 -0400", hash_original_method = "BB43921F4E806BD72B6F518E8CD8937B", hash_generated_method = "A5915FBF7129E546DA0194E1E44B936E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.954 -0400", hash_original_method = "BB43921F4E806BD72B6F518E8CD8937B", hash_generated_method = "DB474646CFAFEDE6806D750BBCF8BD5F")
     public BigInteger nextProbablePrime() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1547436392 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1154506237 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new ArithmeticException("sign < 0");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1547436392 = Primality.nextProbablePrime(this);
-        varB4EAC82CA7396A68D541C85D26508E83_1547436392.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1547436392;
+        varB4EAC82CA7396A68D541C85D26508E83_1154506237 = Primality.nextProbablePrime(this);
+        varB4EAC82CA7396A68D541C85D26508E83_1154506237.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1154506237;
         // ---------- Original Method ----------
         //if (sign < 0) {
             //throw new ArithmeticException("sign < 0");
@@ -1323,11 +1323,11 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.710 -0400", hash_original_method = "F2F8EDC382104DB344E8DD617201B0F3", hash_generated_method = "B20B4F214B82E4B400E9349ED7694A43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.962 -0400", hash_original_method = "F2F8EDC382104DB344E8DD617201B0F3", hash_generated_method = "C7CE4A32B02FB36526210624C92CECC3")
     private byte[] twosComplement() {
         prepareJavaRepresentation();
         {
-            byte[] var871F8A6A5DD979D0CBC073DD77C1CF91_871387654 = (new byte[] { 0 });
+            byte[] var871F8A6A5DD979D0CBC073DD77C1CF91_1790649568 = (new byte[] { 0 });
         } //End block
         BigInteger temp;
         temp = this;
@@ -1402,8 +1402,8 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
                 } //End collapsed parenthetic
             } //End block
         } //End block
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1102504181 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1102504181;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_119119890 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_119119890;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -1466,7 +1466,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.715 -0400", hash_original_method = "4BA60B28A036933466CC713B9C7854B3", hash_generated_method = "C0FAF23AD8B8DD21F134C46C40099717")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.977 -0400", hash_original_method = "4BA60B28A036933466CC713B9C7854B3", hash_generated_method = "389C078F18E2C727E58F06CACE018134")
      int getFirstNonzeroDigit() {
         {
             int i;
@@ -1483,8 +1483,8 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
             } //End block
             firstNonzeroDigit = i;
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_260773046 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_260773046;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1223112125 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1223112125;
         // ---------- Original Method ----------
         //if (firstNonzeroDigit == -2) {
             //int i;
@@ -1501,16 +1501,16 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.722 -0400", hash_original_method = "FABC86F56C336DE2152BE8F133BAAD74", hash_generated_method = "232A9A799ACB0017F538B738071F3D5C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.977 -0400", hash_original_method = "FABC86F56C336DE2152BE8F133BAAD74", hash_generated_method = "903A58B8DCEA19FB54611D6E83199F29")
      BigInteger copy() {
-        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1571979186 = null; //Variable for return #1
+        BigInteger varB4EAC82CA7396A68D541C85D26508E83_1075135014 = null; //Variable for return #1
         prepareJavaRepresentation();
         int[] copyDigits;
         copyDigits = new int[numberLength];
         System.arraycopy(digits, 0, copyDigits, 0, numberLength);
-        varB4EAC82CA7396A68D541C85D26508E83_1571979186 = new BigInteger(sign, numberLength, copyDigits);
-        varB4EAC82CA7396A68D541C85D26508E83_1571979186.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1571979186;
+        varB4EAC82CA7396A68D541C85D26508E83_1075135014 = new BigInteger(sign, numberLength, copyDigits);
+        varB4EAC82CA7396A68D541C85D26508E83_1075135014.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1075135014;
         // ---------- Original Method ----------
         //prepareJavaRepresentation();
         //int[] copyDigits = new int[numberLength];
@@ -1519,7 +1519,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_method = "883E43F5C4566D0C2A7853533F533817", hash_generated_method = "26081922C42C9651482BD8CDA83FCE2C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.978 -0400", hash_original_method = "883E43F5C4566D0C2A7853533F533817", hash_generated_method = "26081922C42C9651482BD8CDA83FCE2C")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
         BigInt bigInt;
@@ -1535,7 +1535,7 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_method = "4837A11F07A86A58815A56F1112D57DF", hash_generated_method = "E6B2FEC6F5BDFA37D2A8196B99A86AEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.979 -0400", hash_original_method = "4837A11F07A86A58815A56F1112D57DF", hash_generated_method = "E6B2FEC6F5BDFA37D2A8196B99A86AEC")
     private void writeObject(ObjectOutputStream out) throws IOException {
         BigInt bigInt;
         bigInt = getBigInt();
@@ -1551,23 +1551,26 @@ public class BigInteger extends Number implements Comparable<BigInteger>, Serial
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_field = "63016A922509DF10F65084D6222C77C8", hash_generated_field = "2BEA6AB5FBF34BD6FB442D8BA65065DF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.985 -0400", hash_original_field = "63016A922509DF10F65084D6222C77C8", hash_generated_field = "2BEA6AB5FBF34BD6FB442D8BA65065DF")
 
     private static long serialVersionUID = -8287574255936472291L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_field = "78897A137AA91788C51A9D5D88BD6B22", hash_generated_field = "26A57E8798A6CA862A91D3C87254CE3F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.985 -0400", hash_original_field = "78897A137AA91788C51A9D5D88BD6B22", hash_generated_field = "26A57E8798A6CA862A91D3C87254CE3F")
 
     public static final BigInteger ZERO = new BigInteger(0, 0);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_field = "E938017D6125C253391B6FF2A79B2347", hash_generated_field = "61E4C0227042D85901BA98B2F2CD52C4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.996 -0400", hash_original_field = "E938017D6125C253391B6FF2A79B2347", hash_generated_field = "61E4C0227042D85901BA98B2F2CD52C4")
 
     public static final BigInteger ONE = new BigInteger(1, 1);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_field = "4252D38540440B1F1E5C9806E972B4B1", hash_generated_field = "7A2B2FAA86270609C420795EB3DF7501")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.997 -0400", hash_original_field = "4252D38540440B1F1E5C9806E972B4B1", hash_generated_field = "7A2B2FAA86270609C420795EB3DF7501")
 
     public static final BigInteger TEN = new BigInteger(1, 10);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_field = "C8DE16A040E4D20B9E7749B6EA765BF0", hash_generated_field = "263B59B8310B73C674B762005157A3FB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.997 -0400", hash_original_field = "C8DE16A040E4D20B9E7749B6EA765BF0", hash_generated_field = "263B59B8310B73C674B762005157A3FB")
 
     static BigInteger MINUS_ONE = new BigInteger(-1, 1);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.723 -0400", hash_original_field = "43E384A873FB243B7D032AB564F5C6C0", hash_generated_field = "F46E265CAF65100D4BE9D793DD0AD694")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.997 -0400", hash_original_field = "43E384A873FB243B7D032AB564F5C6C0", hash_generated_field = "E6E5745F3F4A7C923A5A27C33D7E64F9")
 
-    static BigInteger[] SMALL_VALUES = ;
+    static BigInteger[] SMALL_VALUES = { ZERO, ONE, new BigInteger(1, 2),
+            new BigInteger(1, 3), new BigInteger(1, 4), new BigInteger(1, 5),
+            new BigInteger(1, 6), new BigInteger(1, 7), new BigInteger(1, 8),
+            new BigInteger(1, 9), TEN };
 }
 

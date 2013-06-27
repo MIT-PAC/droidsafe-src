@@ -15,26 +15,26 @@ import java.util.ListIterator;
 import java.util.LinkedList;
 
 class HttpAuthHandlerImpl extends HttpAuthHandler {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.884 -0400", hash_original_field = "92BCA70246F96A0F4366A7F1448D9E16", hash_generated_field = "E0FAA2A6C497494B58133B8740B95CC3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.746 -0400", hash_original_field = "92BCA70246F96A0F4366A7F1448D9E16", hash_generated_field = "E0FAA2A6C497494B58133B8740B95CC3")
 
     private Network mNetwork;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.884 -0400", hash_original_field = "0924E7DA0697C861A386D2C4A20421F8", hash_generated_field = "1DFA7AE1BD952C18E1D76D9BAFCEAA92")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.746 -0400", hash_original_field = "0924E7DA0697C861A386D2C4A20421F8", hash_generated_field = "1DFA7AE1BD952C18E1D76D9BAFCEAA92")
 
     private LinkedList<LoadListener> mLoaderQueue;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.884 -0400", hash_original_field = "98833F887433A020D9AC475903355379", hash_generated_field = "FBA1E121D7E2FF697782F001BE51E87B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.746 -0400", hash_original_field = "98833F887433A020D9AC475903355379", hash_generated_field = "FBA1E121D7E2FF697782F001BE51E87B")
 
     Object mRequestInFlightLock = new Object();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.884 -0400", hash_original_field = "8CD96C4C1FB9EADAE7C8DEFDA59DF052", hash_generated_field = "D45D4B46CC19E8188195D2A11D8D61D7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.746 -0400", hash_original_field = "8CD96C4C1FB9EADAE7C8DEFDA59DF052", hash_generated_field = "D45D4B46CC19E8188195D2A11D8D61D7")
 
     boolean mRequestInFlight;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.884 -0400", hash_original_field = "2FB3EB7CD104D0E14FE0487884A12591", hash_generated_field = "F6C0B2A92BAD484AE3E9DE7409D6C7A8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.746 -0400", hash_original_field = "2FB3EB7CD104D0E14FE0487884A12591", hash_generated_field = "F6C0B2A92BAD484AE3E9DE7409D6C7A8")
 
     String mUsername;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.884 -0400", hash_original_field = "5C6B7EE711155A7472DA571800057A96", hash_generated_field = "6E680D0312272F1C50F2E99ACBEA882B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.746 -0400", hash_original_field = "5C6B7EE711155A7472DA571800057A96", hash_generated_field = "6E680D0312272F1C50F2E99ACBEA882B")
 
     String mPassword;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.907 -0400", hash_original_method = "DD7F5BEFB1D050713E2D554BF9DDD08D", hash_generated_method = "8911D217534BAC31E2F8A0A202A6FEB6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.747 -0400", hash_original_method = "DD7F5BEFB1D050713E2D554BF9DDD08D", hash_generated_method = "8911D217534BAC31E2F8A0A202A6FEB6")
       HttpAuthHandlerImpl(Network network) {
         mNetwork = network;
         mLoaderQueue = new LinkedList<LoadListener>();
@@ -44,7 +44,7 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.908 -0400", hash_original_method = "92EA526117BA58D828A346DC2F14E6C7", hash_generated_method = "B1C28822D44BC8B0CA35B11FD811907D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.747 -0400", hash_original_method = "92EA526117BA58D828A346DC2F14E6C7", hash_generated_method = "B1C28822D44BC8B0CA35B11FD811907D")
     @Override
     public void handleMessage(Message msg) {
         LoadListener loader;
@@ -88,7 +88,7 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.909 -0400", hash_original_method = "633BAC1354102784355BBDC241836385", hash_generated_method = "078CDE30E34F1E5159730C58A6F8875B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.748 -0400", hash_original_method = "633BAC1354102784355BBDC241836385", hash_generated_method = "1A011F972F7FBECFC6D27682018D916C")
     private boolean handleResponseForSynchronousRequest(String username, String password) {
         LoadListener loader;
         loader = null;
@@ -96,14 +96,14 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
             loader = mLoaderQueue.peek();
         } //End block
         {
-            boolean var221166D89B647BFDA3D85F45A3E4348F_657808506 = (loader.isSynchronous());
+            boolean var221166D89B647BFDA3D85F45A3E4348F_591537788 = (loader.isSynchronous());
             {
                 mUsername = username;
                 mPassword = password;
             } //End block
         } //End collapsed parenthetic
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1442890910 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1442890910;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_730037232 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_730037232;
         // ---------- Original Method ----------
         //LoadListener loader = null;
         //synchronized (mLoaderQueue) {
@@ -118,7 +118,7 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.909 -0400", hash_original_method = "D0913A95E2E0984BDC30D85F1A6DD6EF", hash_generated_method = "C96FDDEB25AEAE33C868369E88FC51C0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.748 -0400", hash_original_method = "D0913A95E2E0984BDC30D85F1A6DD6EF", hash_generated_method = "C96FDDEB25AEAE33C868369E88FC51C0")
     private void signalRequestComplete() {
         {
             mRequestInFlight = false;
@@ -133,10 +133,10 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.910 -0400", hash_original_method = "3FC26787C5211E44D8B34B9447EFC8D6", hash_generated_method = "B5E6F61C88BFC6DF7E09828F2B9882D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.749 -0400", hash_original_method = "3FC26787C5211E44D8B34B9447EFC8D6", hash_generated_method = "596FC1EDA92088B1212754751451F524")
     public void proceed(String username, String password) {
         {
-            boolean var48EB5472B994D58361A4636BAEC97DA1_391178170 = (handleResponseForSynchronousRequest(username, password));
+            boolean var48EB5472B994D58361A4636BAEC97DA1_1653998228 = (handleResponseForSynchronousRequest(username, password));
             {
                 signalRequestComplete();
             } //End block
@@ -162,10 +162,10 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.910 -0400", hash_original_method = "1C78A3648C04874A6B02C5BA2CA8304A", hash_generated_method = "43F1AAE6A452FCA1CCC4C267C71CE7CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.753 -0400", hash_original_method = "1C78A3648C04874A6B02C5BA2CA8304A", hash_generated_method = "D674FDB258BEB489275CAB4A1842CE1E")
     public void cancel() {
         {
-            boolean varE3A4C0A30ABB3BD770ADE223EB4A6CC1_204525570 = (handleResponseForSynchronousRequest(null, null));
+            boolean varE3A4C0A30ABB3BD770ADE223EB4A6CC1_1209431594 = (handleResponseForSynchronousRequest(null, null));
             {
                 signalRequestComplete();
             } //End block
@@ -182,7 +182,7 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.911 -0400", hash_original_method = "0DB7D7C368B555F88B0E01139A6FA13A", hash_generated_method = "CDA7333CB612D8B5E1E05551900BC5E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.768 -0400", hash_original_method = "0DB7D7C368B555F88B0E01139A6FA13A", hash_generated_method = "2C10717D8B2E10D23D2BCA0348263439")
     public boolean useHttpAuthUsernamePassword() {
         LoadListener loader;
         loader = null;
@@ -190,10 +190,10 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
             loader = mLoaderQueue.peek();
         } //End block
         {
-            boolean varE8520BA1038614FF7EE7C51C46F527D1_866845612 = (!loader.authCredentialsInvalid());
+            boolean varE8520BA1038614FF7EE7C51C46F527D1_480151061 = (!loader.authCredentialsInvalid());
         } //End block
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2052984927 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2052984927;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_626745617 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_626745617;
         // ---------- Original Method ----------
         //LoadListener loader = null;
         //synchronized (mLoaderQueue) {
@@ -206,10 +206,10 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.911 -0400", hash_original_method = "69FA3518C12F8613622C8FCCAB6F2AF7", hash_generated_method = "D487CD4C831FE1388E074C89482DD783")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.768 -0400", hash_original_method = "69FA3518C12F8613622C8FCCAB6F2AF7", hash_generated_method = "C5F7065BACC5208BFB4D2BAE41879789")
      void handleAuthRequest(LoadListener loader) {
         {
-            boolean var221166D89B647BFDA3D85F45A3E4348F_1103495292 = (loader.isSynchronous());
+            boolean var221166D89B647BFDA3D85F45A3E4348F_855522096 = (loader.isSynchronous());
             {
                 waitForRequestToComplete();
                 {
@@ -239,7 +239,7 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.927 -0400", hash_original_method = "886E13332A9209796D68B57BD4AA101D", hash_generated_method = "8E8DD249AB23742088627630533DAA85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.769 -0400", hash_original_method = "886E13332A9209796D68B57BD4AA101D", hash_generated_method = "8E8DD249AB23742088627630533DAA85")
     private void waitForRequestToComplete() {
         {
             {
@@ -264,7 +264,7 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.927 -0400", hash_original_method = "915750F5CD3DA8563236F4856CDF7624", hash_generated_method = "AAE1A22D91FDAEF8FE55254AA5A2653E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.769 -0400", hash_original_method = "915750F5CD3DA8563236F4856CDF7624", hash_generated_method = "FE0AD7F2D8F450FF03948479C7A6F310")
     private void processNextLoader() {
         LoadListener loader;
         loader = null;
@@ -278,7 +278,7 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
             CallbackProxy proxy;
             proxy = loader.getFrame().getCallbackProxy();
             String hostname;
-            boolean varB1DB9B9D9A13B0735B7565BED708C327_141405455 = (loader.proxyAuthenticate());
+            boolean varB1DB9B9D9A13B0735B7565BED708C327_1437159052 = (loader.proxyAuthenticate());
             hostname = mNetwork.getProxyHostname();
             hostname = loader.host();
             String realm;
@@ -312,13 +312,13 @@ class HttpAuthHandlerImpl extends HttpAuthHandler {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.928 -0400", hash_original_field = "9C0E52F6EA09A89CC23A82A807E7244F", hash_generated_field = "D6FF1579342774FD892BEA7EB0825E1D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.769 -0400", hash_original_field = "9C0E52F6EA09A89CC23A82A807E7244F", hash_generated_field = "D6FF1579342774FD892BEA7EB0825E1D")
 
     private static String LOGTAG = "network";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.928 -0400", hash_original_field = "9A2AE89924929921CDB39F682EE97CD7", hash_generated_field = "53380D5D41E2C5C7C0553568623D8851")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.770 -0400", hash_original_field = "9A2AE89924929921CDB39F682EE97CD7", hash_generated_field = "53380D5D41E2C5C7C0553568623D8851")
 
     private static int AUTH_PROCEED = 100;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.928 -0400", hash_original_field = "2075C787E601ADE7A2B6630E2147FC94", hash_generated_field = "7FDEA7337433436507657612C68287DD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.770 -0400", hash_original_field = "2075C787E601ADE7A2B6630E2147FC94", hash_generated_field = "7FDEA7337433436507657612C68287DD")
 
     private static int AUTH_CANCEL = 200;
 }

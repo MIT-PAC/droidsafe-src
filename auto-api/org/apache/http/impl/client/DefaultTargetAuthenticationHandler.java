@@ -17,14 +17,14 @@ import org.apache.http.protocol.HttpContext;
 
 public class DefaultTargetAuthenticationHandler extends AbstractAuthenticationHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.408 -0400", hash_original_method = "83B142C3BB9A0955DF4A02493E658347", hash_generated_method = "4FACE08269B9BC298D130C2482F30092")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.431 -0400", hash_original_method = "83B142C3BB9A0955DF4A02493E658347", hash_generated_method = "4FACE08269B9BC298D130C2482F30092")
     public  DefaultTargetAuthenticationHandler() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.410 -0400", hash_original_method = "0F8C1618FD9AF6BE64F2E7BA50B72FEE", hash_generated_method = "7112666EC6946C1221A3F06C20BE4034")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.432 -0400", hash_original_method = "0F8C1618FD9AF6BE64F2E7BA50B72FEE", hash_generated_method = "1D105963B96C5DA91234EF4BD438F4ED")
     public boolean isAuthenticationRequested(
             final HttpResponse response, 
             final HttpContext context) {
@@ -35,8 +35,8 @@ public class DefaultTargetAuthenticationHandler extends AbstractAuthenticationHa
         status = response.getStatusLine().getStatusCode();
         addTaint(response.getTaint());
         addTaint(context.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_923450796 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_923450796;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2134282799 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2134282799;
         // ---------- Original Method ----------
         //if (response == null) {
             //throw new IllegalArgumentException("HTTP response may not be null");
@@ -46,21 +46,21 @@ public class DefaultTargetAuthenticationHandler extends AbstractAuthenticationHa
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.418 -0400", hash_original_method = "439347D8B5B1C5ED414F3DCFF9000C1C", hash_generated_method = "D0CA1D91C78CC681C11AC0308B78992A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.440 -0400", hash_original_method = "439347D8B5B1C5ED414F3DCFF9000C1C", hash_generated_method = "881B52A7371F33ED7FA6DE46682AB96A")
     public Map<String, Header> getChallenges(
             final HttpResponse response, 
             final HttpContext context) throws MalformedChallengeException {
-        Map<String, Header> varB4EAC82CA7396A68D541C85D26508E83_683675048 = null; //Variable for return #1
+        Map<String, Header> varB4EAC82CA7396A68D541C85D26508E83_503349712 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP response may not be null");
         } //End block
         Header[] headers;
         headers = response.getHeaders(AUTH.WWW_AUTH);
-        varB4EAC82CA7396A68D541C85D26508E83_683675048 = parseChallenges(headers);
+        varB4EAC82CA7396A68D541C85D26508E83_503349712 = parseChallenges(headers);
         addTaint(response.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_683675048.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_683675048;
+        varB4EAC82CA7396A68D541C85D26508E83_503349712.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_503349712;
         // ---------- Original Method ----------
         //if (response == null) {
             //throw new IllegalArgumentException("HTTP response may not be null");

@@ -31,7 +31,7 @@ import org.bouncycastle.crypto.params.KeyParameter;
 
 final class PEMUtilities {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.655 -0400", hash_original_method = "5344C5F9BC7B07765B0DBE5794533466", hash_generated_method = "5344C5F9BC7B07765B0DBE5794533466")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.625 -0400", hash_original_method = "5344C5F9BC7B07765B0DBE5794533466", hash_generated_method = "5344C5F9BC7B07765B0DBE5794533466")
     public PEMUtilities ()
     {
         //Synthesized constructor
@@ -241,13 +241,13 @@ final class PEMUtilities {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.680 -0400", hash_original_field = "2581F8E8D8EAC34D6BAA8775FC5C9993", hash_generated_field = "53860B0740EBCFF8DE66E3F0331E6AED")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.683 -0400", hash_original_field = "2581F8E8D8EAC34D6BAA8775FC5C9993", hash_generated_field = "53860B0740EBCFF8DE66E3F0331E6AED")
 
     private static Map KEYSIZES = new HashMap();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.680 -0400", hash_original_field = "2FA31FB335BBC8C31CAFD396289B97CE", hash_generated_field = "5971E7021C419A0400CAC29D69C24F96")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.683 -0400", hash_original_field = "2FA31FB335BBC8C31CAFD396289B97CE", hash_generated_field = "5971E7021C419A0400CAC29D69C24F96")
 
     private static Set PKCS5_SCHEME_1 = new HashSet();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.680 -0400", hash_original_field = "3B5F523E2F13A1F193A9251985277744", hash_generated_field = "DD71B54F8343A3781FA64EAF52C13F59")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.683 -0400", hash_original_field = "3B5F523E2F13A1F193A9251985277744", hash_generated_field = "DD71B54F8343A3781FA64EAF52C13F59")
 
     private static Set PKCS5_SCHEME_2 = new HashSet();
     static {

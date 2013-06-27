@@ -15,23 +15,23 @@ import org.bouncycastle.crypto.Mac;
 import org.bouncycastle.crypto.params.KeyParameter;
 
 public class HMac implements Mac {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.751 -0400", hash_original_field = "C10F77963A2B21079156A0E5C5A4BB3C", hash_generated_field = "F5CA32AF1F0185FA6739BEFB868D9AC1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.614 -0400", hash_original_field = "C10F77963A2B21079156A0E5C5A4BB3C", hash_generated_field = "F5CA32AF1F0185FA6739BEFB868D9AC1")
 
     private Digest digest;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.751 -0400", hash_original_field = "9255F8D1984F4EA41BF6AA324C3097B4", hash_generated_field = "F92FB817FD31D1DFBC1B86920B98A48F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.614 -0400", hash_original_field = "9255F8D1984F4EA41BF6AA324C3097B4", hash_generated_field = "F92FB817FD31D1DFBC1B86920B98A48F")
 
     private int digestSize;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.751 -0400", hash_original_field = "BD69FB59C68C6BC7846F1ED1E90E6664", hash_generated_field = "626390B5DF0BD15522168222272F5EEF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.614 -0400", hash_original_field = "BD69FB59C68C6BC7846F1ED1E90E6664", hash_generated_field = "626390B5DF0BD15522168222272F5EEF")
 
     private int blockLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.751 -0400", hash_original_field = "246C6BB318FCC65906CD761CAAA44D1E", hash_generated_field = "6D892D969D7D84936665B5BDF4E8E0CF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.614 -0400", hash_original_field = "246C6BB318FCC65906CD761CAAA44D1E", hash_generated_field = "6D892D969D7D84936665B5BDF4E8E0CF")
 
     private byte[] inputPad;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.751 -0400", hash_original_field = "477C684E7A079D19275A8F4492779756", hash_generated_field = "7F3F56B21FEDB8B51DB60B7746F1D214")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.614 -0400", hash_original_field = "477C684E7A079D19275A8F4492779756", hash_generated_field = "7F3F56B21FEDB8B51DB60B7746F1D214")
 
     private byte[] outputPad;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.751 -0400", hash_original_method = "C60799DEC8C5FCA2E5B3602865045199", hash_generated_method = "9C926F4439ACF642136557790644812D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.614 -0400", hash_original_method = "C60799DEC8C5FCA2E5B3602865045199", hash_generated_method = "9C926F4439ACF642136557790644812D")
     public  HMac(
         Digest digest) {
         this(digest, getByteLength(digest));
@@ -40,7 +40,7 @@ public class HMac implements Mac {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.755 -0400", hash_original_method = "2F24A8925EE1F6A5F74219B54F49BAF8", hash_generated_method = "BE12F9EADFC7A313DFF86BD76AF11427")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.615 -0400", hash_original_method = "2F24A8925EE1F6A5F74219B54F49BAF8", hash_generated_method = "BE12F9EADFC7A313DFF86BD76AF11427")
     private  HMac(
         Digest digest,
         int    byteLength) {
@@ -73,29 +73,29 @@ public class HMac implements Mac {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.756 -0400", hash_original_method = "6A332A653F94B07A686BBEFB849C6DAB", hash_generated_method = "742D57FFCF50819F9D43C8DE8A22767C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.616 -0400", hash_original_method = "6A332A653F94B07A686BBEFB849C6DAB", hash_generated_method = "C84DE895662B97AB84F6D530E08E2B32")
     public String getAlgorithmName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1634660195 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1634660195 = digest.getAlgorithmName() + "/HMAC";
-        varB4EAC82CA7396A68D541C85D26508E83_1634660195.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1634660195;
+        String varB4EAC82CA7396A68D541C85D26508E83_1587718830 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1587718830 = digest.getAlgorithmName() + "/HMAC";
+        varB4EAC82CA7396A68D541C85D26508E83_1587718830.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1587718830;
         // ---------- Original Method ----------
         //return digest.getAlgorithmName() + "/HMAC";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.757 -0400", hash_original_method = "DF57895E7914F211606EA32A352DF2A7", hash_generated_method = "0EC53E61FB9ADE9F2EE00961AC6B0F61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.625 -0400", hash_original_method = "DF57895E7914F211606EA32A352DF2A7", hash_generated_method = "4288D9EEE4575677575F9D7D71AE5778")
     public Digest getUnderlyingDigest() {
-        Digest varB4EAC82CA7396A68D541C85D26508E83_1326154948 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1326154948 = digest;
-        varB4EAC82CA7396A68D541C85D26508E83_1326154948.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1326154948;
+        Digest varB4EAC82CA7396A68D541C85D26508E83_948145910 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_948145910 = digest;
+        varB4EAC82CA7396A68D541C85D26508E83_948145910.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_948145910;
         // ---------- Original Method ----------
         //return digest;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.778 -0400", hash_original_method = "3101A36249D850D878FF580C09B22824", hash_generated_method = "1CF02E14F7E5C75B30CCEE21A1DFFA01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.627 -0400", hash_original_method = "3101A36249D850D878FF580C09B22824", hash_generated_method = "1CF02E14F7E5C75B30CCEE21A1DFFA01")
     public void init(
         CipherParameters params) {
         digest.reset();
@@ -145,16 +145,16 @@ public class HMac implements Mac {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.779 -0400", hash_original_method = "26B5BCE6AD930971148E6F9157D6A115", hash_generated_method = "30FC734B511F107C53A62A27FFCA1CEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.628 -0400", hash_original_method = "26B5BCE6AD930971148E6F9157D6A115", hash_generated_method = "ABE135F803954FB89DBF262A3F90F0E1")
     public int getMacSize() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_969390212 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_969390212;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_558301322 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_558301322;
         // ---------- Original Method ----------
         //return digestSize;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.791 -0400", hash_original_method = "C3086ADC6CE1A5F257F3E90CDD54BB5C", hash_generated_method = "0BCD34B96EADD4905C9691CC99546487")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.628 -0400", hash_original_method = "C3086ADC6CE1A5F257F3E90CDD54BB5C", hash_generated_method = "0BCD34B96EADD4905C9691CC99546487")
     public void update(
         byte in) {
         digest.update(in);
@@ -164,7 +164,7 @@ public class HMac implements Mac {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.792 -0400", hash_original_method = "AD060FC4829937C54A58DD468A8ECBD5", hash_generated_method = "46DE5869A6141EEAED720A9EEF8DD477")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.638 -0400", hash_original_method = "AD060FC4829937C54A58DD468A8ECBD5", hash_generated_method = "46DE5869A6141EEAED720A9EEF8DD477")
     public void update(
         byte[] in,
         int inOff,
@@ -178,7 +178,7 @@ public class HMac implements Mac {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.792 -0400", hash_original_method = "E110C7DBF05C7A4DE1DAAF3289785A06", hash_generated_method = "C90D5C06DBB8FEBD5225FC76F4F2BFEE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.639 -0400", hash_original_method = "E110C7DBF05C7A4DE1DAAF3289785A06", hash_generated_method = "EFABE7914833A369F9CBC470DADA005A")
     public int doFinal(
         byte[] out,
         int outOff) {
@@ -192,8 +192,8 @@ public class HMac implements Mac {
         reset();
         addTaint(out[0]);
         addTaint(outOff);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_116433356 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_116433356;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_856566987 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_856566987;
         // ---------- Original Method ----------
         //byte[] tmp = new byte[digestSize];
         //digest.doFinal(tmp, 0);
@@ -205,7 +205,7 @@ public class HMac implements Mac {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.813 -0400", hash_original_method = "3989731AACDA6B2FAA3C843D8746ADA9", hash_generated_method = "22472C0C76108A5E431142EFA5C05491")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.639 -0400", hash_original_method = "3989731AACDA6B2FAA3C843D8746ADA9", hash_generated_method = "22472C0C76108A5E431142EFA5C05491")
     public void reset() {
         digest.reset();
         digest.update(inputPad, 0, inputPad.length);
@@ -215,13 +215,13 @@ public class HMac implements Mac {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.813 -0400", hash_original_field = "C96C1EB1408887454699B3F47E13349B", hash_generated_field = "3A73C108559A08578CC1D8B654748F51")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.639 -0400", hash_original_field = "C96C1EB1408887454699B3F47E13349B", hash_generated_field = "3A73C108559A08578CC1D8B654748F51")
 
     private static byte IPAD = (byte)0x36;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.813 -0400", hash_original_field = "ECCE7A0C7F50384E7E73C9807794AA83", hash_generated_field = "B328C697751523DE6E1363FD3F32B352")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.639 -0400", hash_original_field = "ECCE7A0C7F50384E7E73C9807794AA83", hash_generated_field = "B328C697751523DE6E1363FD3F32B352")
 
     private static byte OPAD = (byte)0x5C;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.813 -0400", hash_original_field = "AF7C35E64C77C1344CE71E1977CA0011", hash_generated_field = "8154B75C53A1CCD4098DE06BC1B2DEA2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.639 -0400", hash_original_field = "AF7C35E64C77C1344CE71E1977CA0011", hash_generated_field = "8154B75C53A1CCD4098DE06BC1B2DEA2")
 
     private static Hashtable blockLengths;
     static {

@@ -13,20 +13,20 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public class UriMatcher {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.966 -0400", hash_original_field = "8D867CBFB20E1BFF428C0F34B70EC406", hash_generated_field = "814428A5309A583B3B018643DB7956B1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.659 -0400", hash_original_field = "8D867CBFB20E1BFF428C0F34B70EC406", hash_generated_field = "814428A5309A583B3B018643DB7956B1")
 
     private int mCode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.966 -0400", hash_original_field = "0897AC215ECF8155758EFD206F32E8DB", hash_generated_field = "D99A25611C9835F538CE42B4D7286035")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.659 -0400", hash_original_field = "0897AC215ECF8155758EFD206F32E8DB", hash_generated_field = "D99A25611C9835F538CE42B4D7286035")
 
     private int mWhich;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.966 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "2EBA23F479A3FA4159B4CC40D57E4F25")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.660 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "2EBA23F479A3FA4159B4CC40D57E4F25")
 
     private String mText;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.966 -0400", hash_original_field = "6699FE97ED54C04992AEDA784C483D4D", hash_generated_field = "EB732DCEC890E5DB40D18C782CD31559")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.660 -0400", hash_original_field = "6699FE97ED54C04992AEDA784C483D4D", hash_generated_field = "EB732DCEC890E5DB40D18C782CD31559")
 
     private ArrayList<UriMatcher> mChildren;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.979 -0400", hash_original_method = "3A2C7DFB4FC2B15E53BF2781D24B3722", hash_generated_method = "ADB90D56817187EC14E399B483620996")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.661 -0400", hash_original_method = "3A2C7DFB4FC2B15E53BF2781D24B3722", hash_generated_method = "ADB90D56817187EC14E399B483620996")
     public  UriMatcher(int code) {
         mCode = code;
         mWhich = -1;
@@ -40,7 +40,7 @@ public class UriMatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.984 -0400", hash_original_method = "02B7CF0C93AE1B23BA80DE9D9DFF6FFA", hash_generated_method = "961CCE42CAD03B4C745729506ACEF774")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.692 -0400", hash_original_method = "02B7CF0C93AE1B23BA80DE9D9DFF6FFA", hash_generated_method = "961CCE42CAD03B4C745729506ACEF774")
     private  UriMatcher() {
         mCode = NO_MATCH;
         mWhich = -1;
@@ -54,7 +54,7 @@ public class UriMatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.987 -0400", hash_original_method = "2E3898492678127443A40FFAA44913F1", hash_generated_method = "4EFC138720F8946BF531970D6CF6A181")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.704 -0400", hash_original_method = "2E3898492678127443A40FFAA44913F1", hash_generated_method = "2DF70E083E6B43A6F53A48050497D100")
     public void addURI(String authority, String path, int code) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("code " + code + " is invalid: it must be positive");
@@ -85,7 +85,7 @@ public class UriMatcher {
                     {
                         child = children.get(j);
                         {
-                            boolean varAF69555A47401354DB698CF192B24B8D_161303436 = (token.equals(child.mText));
+                            boolean varAF69555A47401354DB698CF192B24B8D_986003417 = (token.equals(child.mText));
                             {
                                 node = child;
                             } //End block
@@ -95,12 +95,12 @@ public class UriMatcher {
                 {
                     child = new UriMatcher();
                     {
-                        boolean varDF8BE0FB621795E83272C57320469194_840639302 = (token.equals("#"));
+                        boolean varDF8BE0FB621795E83272C57320469194_224528874 = (token.equals("#"));
                         {
                             child.mWhich = NUMBER;
                         } //End block
                         {
-                            boolean var3128E3E855036724C83E0031F6A280BF_1232186749 = (token.equals("*"));
+                            boolean var3128E3E855036724C83E0031F6A280BF_136794550 = (token.equals("*"));
                             {
                                 child.mWhich = TEXT;
                             } //End block
@@ -123,7 +123,7 @@ public class UriMatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.076 -0400", hash_original_method = "4993091A11603906CAD34405800B45EB", hash_generated_method = "E5A98A18FD8F6AF743DD0FE34FB82FFA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.719 -0400", hash_original_method = "4993091A11603906CAD34405800B45EB", hash_generated_method = "B8BD0E53F30ACC797895CB22704C6C7D")
     public int match(Uri uri) {
         List<String> pathSegments;
         pathSegments = uri.getPathSegments();
@@ -132,7 +132,7 @@ public class UriMatcher {
         UriMatcher node;
         node = this;
         {
-            boolean var6CFBCB60140A82718A01256C3BAC9FED_2007642998 = (li == 0 && uri.getAuthority() == null);
+            boolean var6CFBCB60140A82718A01256C3BAC9FED_463367310 = (li == 0 && uri.getAuthority() == null);
         } //End collapsed parenthetic
         {
             int i;
@@ -154,7 +154,7 @@ public class UriMatcher {
                         n = list.get(j);
                         //Begin case EXACT 
                         {
-                            boolean varF3943A9C2F70AEA6806D132200507AF3_773291241 = (n.mText.equals(u));
+                            boolean varF3943A9C2F70AEA6806D132200507AF3_1375554261 = (n.mText.equals(u));
                             {
                                 node = n;
                             } //End block
@@ -185,26 +185,26 @@ public class UriMatcher {
             } //End block
         } //End collapsed parenthetic
         addTaint(uri.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_675803390 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_675803390;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1827586786 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1827586786;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.076 -0400", hash_original_field = "94F36874C5D55F4A52687DE2167E8E9C", hash_generated_field = "EC83DD3596C16D8C7F528F9C8BD122E7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.719 -0400", hash_original_field = "94F36874C5D55F4A52687DE2167E8E9C", hash_generated_field = "EC83DD3596C16D8C7F528F9C8BD122E7")
 
     public static final int NO_MATCH = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.076 -0400", hash_original_field = "637D8D350C28FD91CCC86A2D9F75FD3F", hash_generated_field = "68A889663414BB738D8FD0F3D0124E94")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.719 -0400", hash_original_field = "637D8D350C28FD91CCC86A2D9F75FD3F", hash_generated_field = "68A889663414BB738D8FD0F3D0124E94")
 
     static Pattern PATH_SPLIT_PATTERN = Pattern.compile("/");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.076 -0400", hash_original_field = "F8C49111424DFDBC8B840505E8F56076", hash_generated_field = "7CF2356C6B58AB64FB1951B2AA815AAD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.719 -0400", hash_original_field = "F8C49111424DFDBC8B840505E8F56076", hash_generated_field = "7CF2356C6B58AB64FB1951B2AA815AAD")
 
     private static int EXACT = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.076 -0400", hash_original_field = "8EBF1B465BEA05EAA3866C94BE48BA46", hash_generated_field = "CC82E8C6EB6AA8AA022AB8818EF06A59")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.731 -0400", hash_original_field = "8EBF1B465BEA05EAA3866C94BE48BA46", hash_generated_field = "CC82E8C6EB6AA8AA022AB8818EF06A59")
 
     private static int NUMBER = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:00.076 -0400", hash_original_field = "19A352E1EB96A3718FB1818AAEACEF30", hash_generated_field = "346BC84D82F8641A586A9FF1E4BCC93E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.731 -0400", hash_original_field = "19A352E1EB96A3718FB1818AAEACEF30", hash_generated_field = "346BC84D82F8641A586A9FF1E4BCC93E")
 
     private static int TEXT = 2;
 }

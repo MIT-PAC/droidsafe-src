@@ -29,32 +29,32 @@ import libcore.util.Objects;
 import org.apache.harmony.xnet.provider.jsse.OpenSSLSocketImpl;
 
 final class HttpConnection {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.761 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "8E0ACE0F30850C9F1F71EFC5F985F46E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.148 -0400", hash_original_field = "884D9804999FC47A3C2694E49AD2536A", hash_generated_field = "8E0ACE0F30850C9F1F71EFC5F985F46E")
 
     private Address address;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.761 -0400", hash_original_field = "61F2529360AEC54F5DC9804B842CF3FA", hash_generated_field = "8626E3C3C4BFCB66E8863775B28E01CC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.148 -0400", hash_original_field = "61F2529360AEC54F5DC9804B842CF3FA", hash_generated_field = "8626E3C3C4BFCB66E8863775B28E01CC")
 
     private Socket socket;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.761 -0400", hash_original_field = "267171E6BFB2A04E5670F3CE06C59060", hash_generated_field = "92444C781A1F5D159CDAA9528EFB69D8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.148 -0400", hash_original_field = "267171E6BFB2A04E5670F3CE06C59060", hash_generated_field = "92444C781A1F5D159CDAA9528EFB69D8")
 
     private InputStream inputStream;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.761 -0400", hash_original_field = "BE2DEEC210B01069983CFC5912275FFC", hash_generated_field = "765C7DA707EC84D85188E77508C6D245")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.148 -0400", hash_original_field = "BE2DEEC210B01069983CFC5912275FFC", hash_generated_field = "765C7DA707EC84D85188E77508C6D245")
 
     private OutputStream outputStream;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.761 -0400", hash_original_field = "35A6B86135C918691DB6BDDEEDC40F5D", hash_generated_field = "649CC3E68690FE0D5C49F1CB1C97C793")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.148 -0400", hash_original_field = "35A6B86135C918691DB6BDDEEDC40F5D", hash_generated_field = "649CC3E68690FE0D5C49F1CB1C97C793")
 
     private SSLSocket unverifiedSocket;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.761 -0400", hash_original_field = "57145BE2C615DF714549C7E2CB75DFBA", hash_generated_field = "CE8322B162FF12735FB871E7AA8B8BA9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.148 -0400", hash_original_field = "57145BE2C615DF714549C7E2CB75DFBA", hash_generated_field = "CE8322B162FF12735FB871E7AA8B8BA9")
 
     private SSLSocket sslSocket;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.761 -0400", hash_original_field = "7F29EFC37D2FAB75329714E35FF0FA41", hash_generated_field = "1135E3111E26F3F567DE353BD59C3E31")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.148 -0400", hash_original_field = "7F29EFC37D2FAB75329714E35FF0FA41", hash_generated_field = "1135E3111E26F3F567DE353BD59C3E31")
 
     private InputStream sslInputStream;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.761 -0400", hash_original_field = "9849A86BF3DB5860C860E92D92CF41D0", hash_generated_field = "A6FD5A356329B1E885E1D97B809AB43D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.148 -0400", hash_original_field = "9849A86BF3DB5860C860E92D92CF41D0", hash_generated_field = "A6FD5A356329B1E885E1D97B809AB43D")
 
     private OutputStream sslOutputStream;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.763 -0400", hash_original_method = "02721492ABE8A93C98AFD47B69F8145D", hash_generated_method = "23BC0DB339B654D19E94B8D045C7E607")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.149 -0400", hash_original_method = "02721492ABE8A93C98AFD47B69F8145D", hash_generated_method = "23BC0DB339B654D19E94B8D045C7E607")
     private  HttpConnection(Address config, int connectTimeout) throws IOException {
         this.address = config;
         Socket socketCandidate;
@@ -132,7 +132,7 @@ final class HttpConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.769 -0400", hash_original_method = "50D4F2062BD74B4850A586FC88599309", hash_generated_method = "B63879B3617FE401C7B93A2945C0011E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.159 -0400", hash_original_method = "50D4F2062BD74B4850A586FC88599309", hash_generated_method = "B63879B3617FE401C7B93A2945C0011E")
     public void closeSocketAndStreams() {
         IoUtils.closeQuietly(sslOutputStream);
         IoUtils.closeQuietly(sslInputStream);
@@ -150,7 +150,7 @@ final class HttpConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.770 -0400", hash_original_method = "8353DEF033DB8B4F652D08F1BE7D5FB2", hash_generated_method = "3222FA7BE8872A3008DD55002BF382F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.160 -0400", hash_original_method = "8353DEF033DB8B4F652D08F1BE7D5FB2", hash_generated_method = "3222FA7BE8872A3008DD55002BF382F5")
     public void setSoTimeout(int readTimeout) throws SocketException {
         socket.setSoTimeout(readTimeout);
         addTaint(readTimeout);
@@ -159,31 +159,31 @@ final class HttpConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.782 -0400", hash_original_method = "97D9B93978E46D1095C2BFB6FD92F6AE", hash_generated_method = "DCDB824E6AFA5AE325E151DD7A9FB67F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.160 -0400", hash_original_method = "97D9B93978E46D1095C2BFB6FD92F6AE", hash_generated_method = "EBF2531E5869966BD8F55B18EE3C321B")
     public OutputStream getOutputStream() throws IOException {
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_892255305 = null; //Variable for return #1
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_520624434 = null; //Variable for return #2
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_732498859 = null; //Variable for return #1
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_1150744191 = null; //Variable for return #2
         {
             {
                 sslOutputStream = sslSocket.getOutputStream();
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_892255305 = sslOutputStream;
+            varB4EAC82CA7396A68D541C85D26508E83_732498859 = sslOutputStream;
         } //End block
         {
             outputStream = socket.getOutputStream();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_520624434 = outputStream;
-        OutputStream varA7E53CE21691AB073D9660D615818899_120226992; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1150744191 = outputStream;
+        OutputStream varA7E53CE21691AB073D9660D615818899_1997900599; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_120226992 = varB4EAC82CA7396A68D541C85D26508E83_892255305;
+                varA7E53CE21691AB073D9660D615818899_1997900599 = varB4EAC82CA7396A68D541C85D26508E83_732498859;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_120226992 = varB4EAC82CA7396A68D541C85D26508E83_520624434;
+                varA7E53CE21691AB073D9660D615818899_1997900599 = varB4EAC82CA7396A68D541C85D26508E83_1150744191;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_120226992.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_120226992;
+        varA7E53CE21691AB073D9660D615818899_1997900599.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1997900599;
         // ---------- Original Method ----------
         //if (sslSocket != null) {
             //if (sslOutputStream == null) {
@@ -197,15 +197,15 @@ final class HttpConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.797 -0400", hash_original_method = "1360CB9715FEE0D075363C3EF21DD92C", hash_generated_method = "570E5C28157F5A7ADCF3095483587290")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.161 -0400", hash_original_method = "1360CB9715FEE0D075363C3EF21DD92C", hash_generated_method = "9FDF10A21666402ADF8C1525C4E58859")
     public InputStream getInputStream() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1487025854 = null; //Variable for return #1
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_175867084 = null; //Variable for return #2
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1088716833 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_747193873 = null; //Variable for return #2
         {
             {
                 sslInputStream = sslSocket.getInputStream();
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1487025854 = sslInputStream;
+            varB4EAC82CA7396A68D541C85D26508E83_1088716833 = sslInputStream;
         } //End block
         {
             int bufferSize;
@@ -214,18 +214,18 @@ final class HttpConnection {
                     ? socket.getInputStream()
                     : new BufferedInputStream(socket.getInputStream(), bufferSize);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_175867084 = inputStream;
-        InputStream varA7E53CE21691AB073D9660D615818899_1415498896; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_747193873 = inputStream;
+        InputStream varA7E53CE21691AB073D9660D615818899_1208684821; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1415498896 = varB4EAC82CA7396A68D541C85D26508E83_1487025854;
+                varA7E53CE21691AB073D9660D615818899_1208684821 = varB4EAC82CA7396A68D541C85D26508E83_1088716833;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1415498896 = varB4EAC82CA7396A68D541C85D26508E83_175867084;
+                varA7E53CE21691AB073D9660D615818899_1208684821 = varB4EAC82CA7396A68D541C85D26508E83_747193873;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1415498896.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1415498896;
+        varA7E53CE21691AB073D9660D615818899_1208684821.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1208684821;
         // ---------- Original Method ----------
         //if (sslSocket != null) {
             //if (sslInputStream == null) {
@@ -242,29 +242,29 @@ final class HttpConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.797 -0400", hash_original_method = "EA9CBC15CAAA468AF10BBF1CD02918CF", hash_generated_method = "4ACA7270C49EC81699707F03E41F4AEF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.161 -0400", hash_original_method = "EA9CBC15CAAA468AF10BBF1CD02918CF", hash_generated_method = "D7D1591B2600A54C260CC890A7464F93")
     protected Socket getSocket() {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_794458496 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_794458496 = sslSocket != null ? sslSocket : socket;
-        varB4EAC82CA7396A68D541C85D26508E83_794458496.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_794458496;
+        Socket varB4EAC82CA7396A68D541C85D26508E83_675512693 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_675512693 = sslSocket != null ? sslSocket : socket;
+        varB4EAC82CA7396A68D541C85D26508E83_675512693.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_675512693;
         // ---------- Original Method ----------
         //return sslSocket != null ? sslSocket : socket;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.798 -0400", hash_original_method = "9472CD13980FF331A1EC2B82F4638C6F", hash_generated_method = "F5F9630A5FD06132BBE17BB92A2F1542")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.170 -0400", hash_original_method = "9472CD13980FF331A1EC2B82F4638C6F", hash_generated_method = "8C85704D041F83937EB9B22F3FA36E49")
     public Address getAddress() {
-        Address varB4EAC82CA7396A68D541C85D26508E83_716457833 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_716457833 = address;
-        varB4EAC82CA7396A68D541C85D26508E83_716457833.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_716457833;
+        Address varB4EAC82CA7396A68D541C85D26508E83_380772061 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_380772061 = address;
+        varB4EAC82CA7396A68D541C85D26508E83_380772061.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_380772061;
         // ---------- Original Method ----------
         //return address;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.798 -0400", hash_original_method = "15C1B21595200C1DF5857AC28380107D", hash_generated_method = "DB4CF08725D179D0BFB55C6ED479E89F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.171 -0400", hash_original_method = "15C1B21595200C1DF5857AC28380107D", hash_generated_method = "DB4CF08725D179D0BFB55C6ED479E89F")
     public void setupSecureSocket(SSLSocketFactory sslSocketFactory, boolean tlsTolerant) throws IOException {
         unverifiedSocket = (SSLSocket) sslSocketFactory.createSocket(socket,
                 address.uriHost, address.uriPort, true );
@@ -295,20 +295,20 @@ final class HttpConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.799 -0400", hash_original_method = "E313A7AB78F75EDB07568DFA09A3BF60", hash_generated_method = "F6BD7B8D2174CFA6400C879EC833EDA3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.172 -0400", hash_original_method = "E313A7AB78F75EDB07568DFA09A3BF60", hash_generated_method = "D8D6B920B0B9192580496C09439448A2")
     public SSLSocket verifySecureSocketHostname(HostnameVerifier hostnameVerifier) throws IOException {
-        SSLSocket varB4EAC82CA7396A68D541C85D26508E83_2006966763 = null; //Variable for return #1
+        SSLSocket varB4EAC82CA7396A68D541C85D26508E83_389374795 = null; //Variable for return #1
         {
-            boolean varCDF545EAAED9B38C453E5D9476E6ADD6_537453644 = (!hostnameVerifier.verify(address.uriHost, unverifiedSocket.getSession()));
+            boolean varCDF545EAAED9B38C453E5D9476E6ADD6_1846761694 = (!hostnameVerifier.verify(address.uriHost, unverifiedSocket.getSession()));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("Hostname '" + address.uriHost + "' was not verified");
             } //End block
         } //End collapsed parenthetic
         sslSocket = unverifiedSocket;
-        varB4EAC82CA7396A68D541C85D26508E83_2006966763 = sslSocket;
+        varB4EAC82CA7396A68D541C85D26508E83_389374795 = sslSocket;
         addTaint(hostnameVerifier.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2006966763.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2006966763;
+        varB4EAC82CA7396A68D541C85D26508E83_389374795.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_389374795;
         // ---------- Original Method ----------
         //if (!hostnameVerifier.verify(address.uriHost, unverifiedSocket.getSession())) {
             //throw new IOException("Hostname '" + address.uriHost + "' was not verified");
@@ -318,26 +318,26 @@ final class HttpConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.799 -0400", hash_original_method = "0390CC00C23D2289E08AFB9047DDDB88", hash_generated_method = "21BD895365FB449AF5FB0D700D341DE3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.172 -0400", hash_original_method = "0390CC00C23D2289E08AFB9047DDDB88", hash_generated_method = "1B1930A91D79CD90D0C13C8EAC70C14D")
     public SSLSocket getSecureSocketIfConnected() {
-        SSLSocket varB4EAC82CA7396A68D541C85D26508E83_1763841533 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1763841533 = sslSocket;
-        varB4EAC82CA7396A68D541C85D26508E83_1763841533.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1763841533;
+        SSLSocket varB4EAC82CA7396A68D541C85D26508E83_1275990245 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1275990245 = sslSocket;
+        varB4EAC82CA7396A68D541C85D26508E83_1275990245.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1275990245;
         // ---------- Original Method ----------
         //return sslSocket;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.800 -0400", hash_original_method = "197418179C71EABCF647B3FA4C9F9D3C", hash_generated_method = "3906E1C6D7FB879233D6814636874948")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.173 -0400", hash_original_method = "197418179C71EABCF647B3FA4C9F9D3C", hash_generated_method = "667887A3E986D7D98AFFD6F41494F23C")
      boolean isStale() throws IOException {
         {
-            boolean var2BDB1C5DA0DBD4955C884B844F21F17B_1410210778 = (!isEligibleForRecycling());
+            boolean var2BDB1C5DA0DBD4955C884B844F21F17B_581671853 = (!isEligibleForRecycling());
         } //End collapsed parenthetic
         InputStream in;
         in = getInputStream();
         {
-            boolean varE684FF4D92AACF44A45D4FF9CA23ABC5_21198720 = (in.available() > 0);
+            boolean varE684FF4D92AACF44A45D4FF9CA23ABC5_1690962440 = (in.available() > 0);
         } //End collapsed parenthetic
         Socket socket;
         socket = getSocket();
@@ -361,8 +361,8 @@ final class HttpConnection {
         {
             socket.setSoTimeout(soTimeout);
         } //End block
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_63116914 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_63116914;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_977780893 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_977780893;
         // ---------- Original Method ----------
         //if (!isEligibleForRecycling()) {
             //return true;
@@ -392,13 +392,13 @@ final class HttpConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.817 -0400", hash_original_method = "10486D7D4909022462833E73661236C1", hash_generated_method = "F0BC7ED9E0BF477EBEFD58846F5CDCE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.173 -0400", hash_original_method = "10486D7D4909022462833E73661236C1", hash_generated_method = "285CFEA822FDDE8DF5D971E475632134")
     protected boolean isEligibleForRecycling() {
-        boolean varAABC120FA4E0F230A6E6A152DA4E58E8_1650946876 = (!socket.isClosed()
+        boolean varAABC120FA4E0F230A6E6A152DA4E58E8_1277154246 = (!socket.isClosed()
                 && !socket.isInputShutdown()
                 && !socket.isOutputShutdown());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_50534001 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_50534001;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_982864100 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_982864100;
         // ---------- Original Method ----------
         //return !socket.isClosed()
                 //&& !socket.isInputShutdown()
@@ -407,26 +407,26 @@ final class HttpConnection {
 
     
     public static final class Address {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.817 -0400", hash_original_field = "431387EB7262E1CFC79B125EB8A67C60", hash_generated_field = "EE0BB8F1739D62A5A5C8EDF7D478A66B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.174 -0400", hash_original_field = "431387EB7262E1CFC79B125EB8A67C60", hash_generated_field = "EE0BB8F1739D62A5A5C8EDF7D478A66B")
 
         private Proxy proxy;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.817 -0400", hash_original_field = "CC28AE9251E6147BF76E0CB323DC3286", hash_generated_field = "07AEE931A3DB127ADD85468783C7312B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.174 -0400", hash_original_field = "CC28AE9251E6147BF76E0CB323DC3286", hash_generated_field = "07AEE931A3DB127ADD85468783C7312B")
 
         private boolean requiresTunnel;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.817 -0400", hash_original_field = "A73597CDD217965CB3BDD6F840530FA2", hash_generated_field = "2E25E6A02EC1EA9F050C57679AE98E79")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.174 -0400", hash_original_field = "A73597CDD217965CB3BDD6F840530FA2", hash_generated_field = "2E25E6A02EC1EA9F050C57679AE98E79")
 
         private String uriHost;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.817 -0400", hash_original_field = "E303D03FFD439EEA6DF993A2BD678A7D", hash_generated_field = "E82B694E22483837DC8A7FA45AAFFD3E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.174 -0400", hash_original_field = "E303D03FFD439EEA6DF993A2BD678A7D", hash_generated_field = "E82B694E22483837DC8A7FA45AAFFD3E")
 
         private int uriPort;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.817 -0400", hash_original_field = "44D85B9165E3687DE1B20F831C8ACC96", hash_generated_field = "B2FB257AF7E44452ADEDE39DC00B96E5")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.174 -0400", hash_original_field = "44D85B9165E3687DE1B20F831C8ACC96", hash_generated_field = "B2FB257AF7E44452ADEDE39DC00B96E5")
 
         private String socketHost;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.818 -0400", hash_original_field = "29CB723510D405BDECD2AB1AE955037B", hash_generated_field = "B6CE69B75628186CDBBBC00DA03652CE")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.174 -0400", hash_original_field = "29CB723510D405BDECD2AB1AE955037B", hash_generated_field = "B6CE69B75628186CDBBBC00DA03652CE")
 
         private int socketPort;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.818 -0400", hash_original_method = "56C3F1DA7938694CED60FE34095C0213", hash_generated_method = "2090EDCF2F749D57DB0C828E6D058B86")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.174 -0400", hash_original_method = "56C3F1DA7938694CED60FE34095C0213", hash_generated_method = "2090EDCF2F749D57DB0C828E6D058B86")
         public  Address(URI uri) {
             this.proxy = null;
             this.requiresTunnel = false;
@@ -444,7 +444,7 @@ final class HttpConnection {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.819 -0400", hash_original_method = "A6C9CB15451FF69F0D42BB48C7372F2F", hash_generated_method = "5A248B8CB69ADCC79488E64780625913")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.184 -0400", hash_original_method = "A6C9CB15451FF69F0D42BB48C7372F2F", hash_generated_method = "5A248B8CB69ADCC79488E64780625913")
         public  Address(URI uri, Proxy proxy, boolean requiresTunnel) {
             this.proxy = proxy;
             this.requiresTunnel = requiresTunnel;
@@ -476,31 +476,31 @@ final class HttpConnection {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.819 -0400", hash_original_method = "19AE87D83FEEE8E799F844F8A7A84495", hash_generated_method = "323F48E5C6AAA690AA2149D5153F62A1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.184 -0400", hash_original_method = "19AE87D83FEEE8E799F844F8A7A84495", hash_generated_method = "BBDC6617720CCF7A2F19A9D4B71FC864")
         public Proxy getProxy() {
-            Proxy varB4EAC82CA7396A68D541C85D26508E83_140807790 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_140807790 = proxy;
-            varB4EAC82CA7396A68D541C85D26508E83_140807790.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_140807790;
+            Proxy varB4EAC82CA7396A68D541C85D26508E83_2050587139 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_2050587139 = proxy;
+            varB4EAC82CA7396A68D541C85D26508E83_2050587139.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2050587139;
             // ---------- Original Method ----------
             //return proxy;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.820 -0400", hash_original_method = "104FF09B2C80755ABB27A6E9EA994C0B", hash_generated_method = "643346398E3E8D60345072BD568C31B0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.185 -0400", hash_original_method = "104FF09B2C80755ABB27A6E9EA994C0B", hash_generated_method = "ECEF280AE780C5E603254993678C3EE7")
         @Override
         public boolean equals(Object other) {
             {
                 Address that;
                 that = (Address) other;
-                boolean varCCBC1779637276BBD0AC744EE215BB93_560685787 = (Objects.equal(this.proxy, that.proxy)
+                boolean varCCBC1779637276BBD0AC744EE215BB93_1918733597 = (Objects.equal(this.proxy, that.proxy)
                         && this.uriHost.equals(that.uriHost)
                         && this.uriPort == that.uriPort
                         && this.requiresTunnel == that.requiresTunnel);
             } //End block
             addTaint(other.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1327969673 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1327969673;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2102254263 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2102254263;
             // ---------- Original Method ----------
             //if (other instanceof Address) {
                 //Address that = (Address) other;
@@ -513,7 +513,7 @@ final class HttpConnection {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.837 -0400", hash_original_method = "03AAE27C923B9ECFDFA09DAEE6900F4B", hash_generated_method = "30C7AC108B73D2ED5B12A0DCF4343111")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.186 -0400", hash_original_method = "03AAE27C923B9ECFDFA09DAEE6900F4B", hash_generated_method = "D86118E4BD25E45482227E568F67DB5E")
         @Override
         public int hashCode() {
             int result;
@@ -522,8 +522,8 @@ final class HttpConnection {
             result = 31 * result + uriPort;
             result = 31 * result + (proxy != null ? proxy.hashCode() : 0);
             result = 31 * result + (requiresTunnel ? 1 : 0);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_36245846 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_36245846;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1590442738 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1590442738;
             // ---------- Original Method ----------
             //int result = 17;
             //result = 31 * result + uriHost.hashCode();
@@ -534,13 +534,13 @@ final class HttpConnection {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.838 -0400", hash_original_method = "D7960E9C2008885C55D097BA1D2C0C2A", hash_generated_method = "9C89BE700ED87A92AA7C4AC1E899716C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.187 -0400", hash_original_method = "D7960E9C2008885C55D097BA1D2C0C2A", hash_generated_method = "FF11220B95790D54019852F0802EECF9")
         public HttpConnection connect(int connectTimeout) throws IOException {
-            HttpConnection varB4EAC82CA7396A68D541C85D26508E83_1987586181 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1987586181 = new HttpConnection(this, connectTimeout);
+            HttpConnection varB4EAC82CA7396A68D541C85D26508E83_1933171407 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1933171407 = new HttpConnection(this, connectTimeout);
             addTaint(connectTimeout);
-            varB4EAC82CA7396A68D541C85D26508E83_1987586181.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1987586181;
+            varB4EAC82CA7396A68D541C85D26508E83_1933171407.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1933171407;
             // ---------- Original Method ----------
             //return new HttpConnection(this, connectTimeout);
         }

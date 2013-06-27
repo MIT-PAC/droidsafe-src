@@ -10,22 +10,22 @@ import java.util.Iterator;
 import java.text.ParseException;
 
 public abstract class ParserCore {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.785 -0400", hash_original_field = "9F927900A282DAFC832F8F2BDF850983", hash_generated_field = "AF108A7E81C8C1348B39F9FCBD8C60E7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.300 -0400", hash_original_field = "9F927900A282DAFC832F8F2BDF850983", hash_generated_field = "AF108A7E81C8C1348B39F9FCBD8C60E7")
 
     protected LexerCore lexer;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.785 -0400", hash_original_method = "23390B10F07F5D8E9EE5EBAB724E0597", hash_generated_method = "23390B10F07F5D8E9EE5EBAB724E0597")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.300 -0400", hash_original_method = "23390B10F07F5D8E9EE5EBAB724E0597", hash_generated_method = "23390B10F07F5D8E9EE5EBAB724E0597")
     public ParserCore ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.804 -0400", hash_original_method = "2B8F776DAFC357EFC899FF251A427EF6", hash_generated_method = "5DFCE8E62F4939AA1A880194B50626C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.301 -0400", hash_original_method = "2B8F776DAFC357EFC899FF251A427EF6", hash_generated_method = "ED75E45343A2016535675ECDCF2B469F")
     protected NameValue nameValue(char separator) throws ParseException {
-        NameValue varB4EAC82CA7396A68D541C85D26508E83_819078431 = null; //Variable for return #1
-        NameValue varB4EAC82CA7396A68D541C85D26508E83_438594117 = null; //Variable for return #2
-        NameValue varB4EAC82CA7396A68D541C85D26508E83_375967197 = null; //Variable for return #3
+        NameValue varB4EAC82CA7396A68D541C85D26508E83_905239524 = null; //Variable for return #1
+        NameValue varB4EAC82CA7396A68D541C85D26508E83_905486183 = null; //Variable for return #2
+        NameValue varB4EAC82CA7396A68D541C85D26508E83_1220587365 = null; //Variable for return #3
         dbg_enter("nameValue");
         try 
         {
@@ -47,7 +47,7 @@ public abstract class ParserCore {
                     boolean isFlag;
                     isFlag = false;
                     {
-                        boolean var16FB55FE897EE64C0FC602655BA882F2_1280647565 = (lexer.lookAhead(0) == '\"');
+                        boolean var16FB55FE897EE64C0FC602655BA882F2_1507774419 = (lexer.lookAhead(0) == '\"');
                         {
                             str = lexer.quotedString();
                             quoted = true;
@@ -66,15 +66,15 @@ public abstract class ParserCore {
                     NameValue nv;
                     nv = new NameValue(name.tokenValue,str,isFlag);
                     nv.setQuotedValue();
-                    varB4EAC82CA7396A68D541C85D26508E83_819078431 = nv;
+                    varB4EAC82CA7396A68D541C85D26508E83_905239524 = nv;
                 } //End block
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_438594117 = new NameValue(name.tokenValue,"",true);
+                    varB4EAC82CA7396A68D541C85D26508E83_905486183 = new NameValue(name.tokenValue,"",true);
                 } //End block
             } //End block
             catch (ParseException ex)
             {
-                varB4EAC82CA7396A68D541C85D26508E83_375967197 = new NameValue(name.tokenValue,null,false);
+                varB4EAC82CA7396A68D541C85D26508E83_1220587365 = new NameValue(name.tokenValue,null,false);
             } //End block
         } //End block
         finally 
@@ -82,26 +82,26 @@ public abstract class ParserCore {
             dbg_leave("nameValue");
         } //End block
         addTaint(separator);
-        NameValue varA7E53CE21691AB073D9660D615818899_1155755306; //Final return value
+        NameValue varA7E53CE21691AB073D9660D615818899_812379831; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1155755306 = varB4EAC82CA7396A68D541C85D26508E83_819078431;
+                varA7E53CE21691AB073D9660D615818899_812379831 = varB4EAC82CA7396A68D541C85D26508E83_905239524;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1155755306 = varB4EAC82CA7396A68D541C85D26508E83_438594117;
+                varA7E53CE21691AB073D9660D615818899_812379831 = varB4EAC82CA7396A68D541C85D26508E83_905486183;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1155755306 = varB4EAC82CA7396A68D541C85D26508E83_375967197;
+                varA7E53CE21691AB073D9660D615818899_812379831 = varB4EAC82CA7396A68D541C85D26508E83_1220587365;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1155755306.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1155755306;
+        varA7E53CE21691AB073D9660D615818899_812379831.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_812379831;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.804 -0400", hash_original_method = "FEF315A443660226B56655DBFD660360", hash_generated_method = "39BF05C2EADFD98F7933FBAD6B1F9569")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.302 -0400", hash_original_method = "FEF315A443660226B56655DBFD660360", hash_generated_method = "39BF05C2EADFD98F7933FBAD6B1F9569")
     protected void dbg_enter(String rule) {
         StringBuffer stringBuffer;
         stringBuffer = new StringBuffer();
@@ -131,7 +131,7 @@ public abstract class ParserCore {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.805 -0400", hash_original_method = "1BC6FB469729E22F0BBD9E3870285FA5", hash_generated_method = "5359D83DB03E37BAEE6A3543B18F471B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.303 -0400", hash_original_method = "1BC6FB469729E22F0BBD9E3870285FA5", hash_generated_method = "5359D83DB03E37BAEE6A3543B18F471B")
     protected void dbg_leave(String rule) {
         StringBuffer stringBuffer;
         stringBuffer = new StringBuffer();
@@ -163,18 +163,18 @@ public abstract class ParserCore {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.809 -0400", hash_original_method = "96EC2DBFF0EC1BA1DEDB704D9ED6E4AE", hash_generated_method = "C5E8E13C3D35995AE6173FB65358042C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.303 -0400", hash_original_method = "96EC2DBFF0EC1BA1DEDB704D9ED6E4AE", hash_generated_method = "A3F164C5B99C4A3728DA011D19E16FCA")
     protected NameValue nameValue() throws ParseException {
-        NameValue varB4EAC82CA7396A68D541C85D26508E83_1262590325 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1262590325 = nameValue('=');
-        varB4EAC82CA7396A68D541C85D26508E83_1262590325.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1262590325;
+        NameValue varB4EAC82CA7396A68D541C85D26508E83_1213363504 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1213363504 = nameValue('=');
+        varB4EAC82CA7396A68D541C85D26508E83_1213363504.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1213363504;
         // ---------- Original Method ----------
         //return nameValue('=');
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.813 -0400", hash_original_method = "9816EEB9F7DF054BEDA3076A1CE20DA0", hash_generated_method = "6F665FEEADE1FA4D0B33F8051548AFCB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.306 -0400", hash_original_method = "9816EEB9F7DF054BEDA3076A1CE20DA0", hash_generated_method = "6F665FEEADE1FA4D0B33F8051548AFCB")
     protected void peekLine(String rule) {
         {
             Debug.println(rule +" " + lexer.peekLine());
@@ -187,10 +187,10 @@ public abstract class ParserCore {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.813 -0400", hash_original_field = "83846441597C43A253E4BA178E096F17", hash_generated_field = "C7421C837BE84CB71F0718DB57F8E962")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.306 -0400", hash_original_field = "83846441597C43A253E4BA178E096F17", hash_generated_field = "C7421C837BE84CB71F0718DB57F8E962")
 
     public static final boolean debug = Debug.parserDebug;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.813 -0400", hash_original_field = "D5906A698AA118FAAE31F8E6C8C9EB5B", hash_generated_field = "80C87DAAFBB424B160F9721506874F09")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.306 -0400", hash_original_field = "D5906A698AA118FAAE31F8E6C8C9EB5B", hash_generated_field = "80C87DAAFBB424B160F9721506874F09")
 
     static int nesting_level;
 }

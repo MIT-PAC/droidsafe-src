@@ -25,7 +25,7 @@ import org.xmlpull.v1.XmlSerializer;
 
 public class Xml {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.624 -0400", hash_original_method = "6C88D7BAFDCBAE4F23C5F1A45165C3FD", hash_generated_method = "2C6DE3496EE724680E95E9E6CED96C9B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.342 -0400", hash_original_method = "6C88D7BAFDCBAE4F23C5F1A45165C3FD", hash_generated_method = "2C6DE3496EE724680E95E9E6CED96C9B")
     public  Xml() {
         // ---------- Original Method ----------
     }
@@ -101,17 +101,17 @@ public class Xml {
     
     static class XmlSerializerFactory {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.631 -0400", hash_original_method = "C9EFF15750F86CC83530A41F4DEECEE2", hash_generated_method = "C9EFF15750F86CC83530A41F4DEECEE2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.363 -0400", hash_original_method = "C9EFF15750F86CC83530A41F4DEECEE2", hash_generated_method = "C9EFF15750F86CC83530A41F4DEECEE2")
         public XmlSerializerFactory ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.631 -0400", hash_original_field = "02E7496A7669E1B9CCA733100DF17FC1", hash_generated_field = "79A62B9F3546C1F55FB9CC8F9B31A39D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.363 -0400", hash_original_field = "02E7496A7669E1B9CCA733100DF17FC1", hash_generated_field = "79A62B9F3546C1F55FB9CC8F9B31A39D")
 
         static String TYPE = "org.kxml2.io.KXmlParser,org.kxml2.io.KXmlSerializer";
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.631 -0400", hash_original_field = "7123A699D77DB6479A1D8ECE2C4F1C16", hash_generated_field = "15959610877C4FD5EF3381E3547B65EC")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.363 -0400", hash_original_field = "7123A699D77DB6479A1D8ECE2C4F1C16", hash_generated_field = "15959610877C4FD5EF3381E3547B65EC")
 
         static XmlPullParserFactory instance;
         static {
@@ -138,7 +138,7 @@ public class Xml {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.632 -0400", hash_original_field = "34C1F6B518B9248A65D50F5DA60C6C55", hash_generated_field = "21348723A34C602952749C00F7C301A8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.363 -0400", hash_original_field = "34C1F6B518B9248A65D50F5DA60C6C55", hash_generated_field = "21348723A34C602952749C00F7C301A8")
 
     public static String FEATURE_RELAXED = "http://xmlpull.org/v1/doc/features.html#relaxed";
 }

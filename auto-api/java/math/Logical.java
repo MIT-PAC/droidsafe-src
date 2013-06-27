@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 class Logical {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.429 -0400", hash_original_method = "E0A3DE35724A26B6DFF41660E2732E13", hash_generated_method = "F49FF7A55DC565304B6F8190D337CD80")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.686 -0400", hash_original_method = "E0A3DE35724A26B6DFF41660E2732E13", hash_generated_method = "F49FF7A55DC565304B6F8190D337CD80")
     private  Logical() {
         // ---------- Original Method ----------
     }

@@ -31,7 +31,7 @@ import libcore.util.MutableInt;
 
 public final class IoBridge {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.957 -0400", hash_original_method = "4BE9929C9EF4F07FA420F9178CCE2A9A", hash_generated_method = "1249D99A029C3582A74310C04E7ECC4A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.250 -0400", hash_original_method = "4BE9929C9EF4F07FA420F9178CCE2A9A", hash_generated_method = "1249D99A029C3582A74310C04E7ECC4A")
     private  IoBridge() {
         // ---------- Original Method ----------
     }
@@ -531,13 +531,13 @@ public final class IoBridge {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.001 -0400", hash_original_field = "366042E0CF4CF60FDE4D7EBA72AC2D58", hash_generated_field = "D17A14E38001E033C6CF0435284406CD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.298 -0400", hash_original_field = "366042E0CF4CF60FDE4D7EBA72AC2D58", hash_generated_field = "D17A14E38001E033C6CF0435284406CD")
 
     public static final int JAVA_MCAST_JOIN_GROUP = 19;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.001 -0400", hash_original_field = "A6CBD5844730FBD3CC4AD03361347ED8", hash_generated_field = "9C4097429B3752CDC227A02807A933CC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.298 -0400", hash_original_field = "A6CBD5844730FBD3CC4AD03361347ED8", hash_generated_field = "9C4097429B3752CDC227A02807A933CC")
 
     public static final int JAVA_MCAST_LEAVE_GROUP = 20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.001 -0400", hash_original_field = "E2A59D8A2E2DEA56CCD7C43BA250E8F1", hash_generated_field = "0B9C57C378DB16A9B350E5C837748819")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.299 -0400", hash_original_field = "E2A59D8A2E2DEA56CCD7C43BA250E8F1", hash_generated_field = "0B9C57C378DB16A9B350E5C837748819")
 
     public static final int JAVA_IP_MULTICAST_TTL = 17;
 }

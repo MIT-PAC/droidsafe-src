@@ -12,38 +12,38 @@ import libcore.io.Streams;
 
 public abstract class InputStream extends Object implements Closeable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.978 -0400", hash_original_method = "24B6F89B4CF6382DB2E4A4E334B70B5D", hash_generated_method = "232D3ABC66DDB0962216577ED704AA4D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.001 -0400", hash_original_method = "24B6F89B4CF6382DB2E4A4E334B70B5D", hash_generated_method = "232D3ABC66DDB0962216577ED704AA4D")
     public  InputStream() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.979 -0400", hash_original_method = "1AA324AC6812BCD54DB71C20D6BA0F20", hash_generated_method = "C3EB5F1B82260CBFEEB4AE3A740A4415")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.002 -0400", hash_original_method = "1AA324AC6812BCD54DB71C20D6BA0F20", hash_generated_method = "82969E1FD846A074F25CD01DDB6E62B6")
     public int available() throws IOException {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_399341354 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_399341354;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_636319027 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_636319027;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.979 -0400", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "74372D27DE595543DBC3B69FBB71373E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.002 -0400", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "74372D27DE595543DBC3B69FBB71373E")
     public void close() throws IOException {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.979 -0400", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "7B9F66D07F75DF8B4C4E6E1ACAEF159F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.003 -0400", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "7B9F66D07F75DF8B4C4E6E1ACAEF159F")
     public void mark(int readlimit) {
         addTaint(readlimit);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.979 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "D82AAA176517D7C43B4D653587CAA89F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.004 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "67C0A19DAF137B425CB118C58A5284C3")
     public boolean markSupported() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_587301970 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_587301970;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_793579164 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_793579164;
         // ---------- Original Method ----------
         //return false;
     }
@@ -52,18 +52,18 @@ public abstract class InputStream extends Object implements Closeable {
     public abstract int read() throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.986 -0400", hash_original_method = "73C43862A3B640F09D97EB0273F5287B", hash_generated_method = "5F538F9E4B27661A5D2ABA1CFBE8A87F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.022 -0400", hash_original_method = "73C43862A3B640F09D97EB0273F5287B", hash_generated_method = "92CBE8F300186302FA45A025C957D31C")
     public int read(byte[] buffer) throws IOException {
-        int var6FC2792F895D13BB16201EFCBA1330E5_1538949725 = (read(buffer, 0, buffer.length));
+        int var6FC2792F895D13BB16201EFCBA1330E5_302276927 = (read(buffer, 0, buffer.length));
         addTaint(buffer[0]);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_617425437 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_617425437;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163044261 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163044261;
         // ---------- Original Method ----------
         //return read(buffer, 0, buffer.length);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.987 -0400", hash_original_method = "287E8AA63F5F0E35884524D6430753F1", hash_generated_method = "FCF07E93A3A7A1D3B24D7AB27A6C8AD2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.023 -0400", hash_original_method = "287E8AA63F5F0E35884524D6430753F1", hash_generated_method = "15D2F1B07A299854ED22257D518B8C49")
     public int read(byte[] buffer, int offset, int length) throws IOException {
         Arrays.checkOffsetAndCount(buffer.length, offset, length);
         {
@@ -74,7 +74,7 @@ public abstract class InputStream extends Object implements Closeable {
                 try 
                 {
                     {
-                        boolean var906137A6060AF34E5FF4A077340C70B0_1341975101 = ((c = read()) == -1);
+                        boolean var906137A6060AF34E5FF4A077340C70B0_1929056240 = ((c = read()) == -1);
                     } //End collapsed parenthetic
                 } //End block
                 catch (IOException e)
@@ -87,8 +87,8 @@ public abstract class InputStream extends Object implements Closeable {
         addTaint(buffer[0]);
         addTaint(offset);
         addTaint(length);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_849093728 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_849093728;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328036242 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328036242;
         // ---------- Original Method ----------
         //Arrays.checkOffsetAndCount(buffer.length, offset, length);
         //for (int i = 0; i < length; i++) {
@@ -109,7 +109,7 @@ public abstract class InputStream extends Object implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.987 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "C0D0914B605E4163C857D6AE3F030FDE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.023 -0400", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "C0D0914B605E4163C857D6AE3F030FDE")
     public synchronized void reset() throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new IOException();
         // ---------- Original Method ----------
@@ -117,12 +117,12 @@ public abstract class InputStream extends Object implements Closeable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.987 -0400", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "4991665C0B45CE15CA21908AB55DCCBD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.024 -0400", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "0038C1FFA3847689080B4186D20ACCC0")
     public long skip(long byteCount) throws IOException {
-        long var242616A7471CF01D821614D0D0C41129_1288556555 = (Streams.skipByReading(this, byteCount));
+        long var242616A7471CF01D821614D0D0C41129_109377514 = (Streams.skipByReading(this, byteCount));
         addTaint(byteCount);
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_734409658 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_734409658;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_242542365 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_242542365;
         // ---------- Original Method ----------
         //return Streams.skipByReading(this, byteCount);
     }

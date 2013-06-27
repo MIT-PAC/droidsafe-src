@@ -14,7 +14,7 @@ import android.support.v4.app.NavUtils;
 
 class NavUtilsJB {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:32.079 -0400", hash_original_method = "D4A651A611CC51B857BCA8DE73B73039", hash_generated_method = "D4A651A611CC51B857BCA8DE73B73039")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:33.382 -0400", hash_original_method = "D4A651A611CC51B857BCA8DE73B73039", hash_generated_method = "D4A651A611CC51B857BCA8DE73B73039")
     public NavUtilsJB ()
     {
         //Synthesized constructor

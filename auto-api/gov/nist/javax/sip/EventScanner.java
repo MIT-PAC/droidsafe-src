@@ -15,23 +15,23 @@ import javax.sip.*;
 import gov.nist.core.ThreadAuditor;
 
 class EventScanner implements Runnable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.372 -0400", hash_original_field = "DC3583D0854933870215DB386EA8D30E", hash_generated_field = "14EA4271F1CA4E544DF5B6D3AACE226C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.960 -0400", hash_original_field = "DC3583D0854933870215DB386EA8D30E", hash_generated_field = "14EA4271F1CA4E544DF5B6D3AACE226C")
 
     private boolean isStopped;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.372 -0400", hash_original_field = "1FDC49C806523B6E8C1509C3BF8BDC31", hash_generated_field = "FA603FB92FA509FB776643125A3C791C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.960 -0400", hash_original_field = "1FDC49C806523B6E8C1509C3BF8BDC31", hash_generated_field = "FA603FB92FA509FB776643125A3C791C")
 
     private int refCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.372 -0400", hash_original_field = "2F257C654F11384A90D2E638E4BD28E3", hash_generated_field = "3C5E83405A53D5FBE5E156D2F74AA766")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.960 -0400", hash_original_field = "2F257C654F11384A90D2E638E4BD28E3", hash_generated_field = "3C5E83405A53D5FBE5E156D2F74AA766")
 
     private LinkedList pendingEvents = new LinkedList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.372 -0400", hash_original_field = "C33F74E52313CD1C332E99C7F2371316", hash_generated_field = "541298A2BEEF8B73EB205968B699A50C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.960 -0400", hash_original_field = "C33F74E52313CD1C332E99C7F2371316", hash_generated_field = "467BA1CC5CE0750BC552D8D3070838DC")
 
-    private int[] eventMutex = ;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.373 -0400", hash_original_field = "37460D4BF2BA47A13FF9D922C4B14B2E", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
+    private int[] eventMutex = { 0 };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.960 -0400", hash_original_field = "37460D4BF2BA47A13FF9D922C4B14B2E", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
 
     private SipStackImpl sipStack;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.373 -0400", hash_original_method = "ABAFBB618BA49E3B8625E32FADC601ED", hash_generated_method = "A36BDF82DB6A086DE7528373F1430B45")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.961 -0400", hash_original_method = "ABAFBB618BA49E3B8625E32FADC601ED", hash_generated_method = "A36BDF82DB6A086DE7528373F1430B45")
     public  EventScanner(SipStackImpl sipStackImpl) {
         this.pendingEvents = new LinkedList();
         Thread myThread;
@@ -50,7 +50,7 @@ class EventScanner implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.373 -0400", hash_original_method = "ECD8E06DC4873A7C1CEDFF4BF8BB2937", hash_generated_method = "AD5B2262F75DA4EE43BEE7BD51AB7DD4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.961 -0400", hash_original_method = "ECD8E06DC4873A7C1CEDFF4BF8BB2937", hash_generated_method = "AD5B2262F75DA4EE43BEE7BD51AB7DD4")
     public void incrementRefcount() {
         // ---------- Original Method ----------
         //synchronized (eventMutex) {
@@ -59,10 +59,10 @@ class EventScanner implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.374 -0400", hash_original_method = "A71B34BF35FB557BC1E9288C6E8DE3F6", hash_generated_method = "A232889EB4E9E59F028C60670251A3D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.961 -0400", hash_original_method = "A71B34BF35FB557BC1E9288C6E8DE3F6", hash_generated_method = "AEC32131C6956A2175DA4F2186DF5933")
     public void addEvent(EventWrapper eventWrapper) {
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1214370788 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1949621775 = (sipStack.isLoggingEnabled());
             sipStack.getStackLogger().logDebug("addEvent " + eventWrapper);
         } //End collapsed parenthetic
         {
@@ -80,7 +80,7 @@ class EventScanner implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.432 -0400", hash_original_method = "66FF7F77E84125B131D0D04138A3FE42", hash_generated_method = "15CA8A14BEEE9ABAAAE16BAC0C02E8B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.962 -0400", hash_original_method = "66FF7F77E84125B131D0D04138A3FE42", hash_generated_method = "15CA8A14BEEE9ABAAAE16BAC0C02E8B7")
     public void stop() {
         {
             {
@@ -100,7 +100,7 @@ class EventScanner implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.432 -0400", hash_original_method = "F0E51D59DB287FD1630B012799B48A4C", hash_generated_method = "C66616AFD8AF33AAF409EA16B9D85E3F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.975 -0400", hash_original_method = "F0E51D59DB287FD1630B012799B48A4C", hash_generated_method = "C66616AFD8AF33AAF409EA16B9D85E3F")
     public void forceStop() {
         {
             this.isStopped = true;
@@ -116,12 +116,12 @@ class EventScanner implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.441 -0400", hash_original_method = "1FB221E344118E77FADF803461DF7CDF", hash_generated_method = "B93C124D944A15ADFDF31F44E8A22338")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.995 -0400", hash_original_method = "1FB221E344118E77FADF803461DF7CDF", hash_generated_method = "C0F30210F5C2229A9E3CDBE5311CC00F")
     public void deliverEvent(EventWrapper eventWrapper) {
         EventObject sipEvent;
         sipEvent = eventWrapper.sipEvent;
         {
-            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1571448758 = (sipStack.isLoggingEnabled());
+            boolean varADC6B4D22F314E4E23507BEFD4A59D21_1743370810 = (sipStack.isLoggingEnabled());
             sipStack.getStackLogger().logDebug(
                     "sipEvent = " + sipEvent + "source = "
                             + sipEvent.getSource());
@@ -141,7 +141,7 @@ class EventScanner implements Runnable {
                 sipRequest = (SIPRequest) ((RequestEvent) sipEvent)
                         .getRequest();
                 {
-                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_2130868455 = (sipStack.isLoggingEnabled());
+                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_262355719 = (sipStack.isLoggingEnabled());
                     {
                         sipStack.getStackLogger().logDebug(
                             "deliverEvent : "
@@ -157,16 +157,16 @@ class EventScanner implements Runnable {
                 tx = (SIPServerTransaction) sipStack
                         .findTransaction(sipRequest, true);
                 {
-                    boolean varABA408BBD63BFCD59CB650AF6E82158B_1309613739 = (tx != null && !tx.passToListener());
+                    boolean varABA408BBD63BFCD59CB650AF6E82158B_329060834 = (tx != null && !tx.passToListener());
                     {
                         {
-                            boolean varC3B5E7671D1E2105E5AC4017D9693676_697531258 = (sipRequest.getMethod().equals(Request.ACK)
+                            boolean varC3B5E7671D1E2105E5AC4017D9693676_519371330 = (sipRequest.getMethod().equals(Request.ACK)
                             && tx.isInviteTransaction() &&
                             ( tx.getLastResponse().getStatusCode()/100 == 2 ||
                                 sipStack.isNon2XXAckPassedToListener()));
                             {
                                 {
-                                    boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_552208509 = (sipStack.isLoggingEnabled());
+                                    boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_2072046319 = (sipStack.isLoggingEnabled());
                                     sipStack
                                     .getStackLogger()
                                     .logDebug(
@@ -175,7 +175,7 @@ class EventScanner implements Runnable {
                             } //End block
                             {
                                 {
-                                    boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_1538052802 = (sipStack.isLoggingEnabled());
+                                    boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_1003868294 = (sipStack.isLoggingEnabled());
                                     sipStack.getStackLogger().logDebug(
                                     "transaction already exists! " + tx);
                                 } //End collapsed parenthetic
@@ -183,10 +183,10 @@ class EventScanner implements Runnable {
                         } //End collapsed parenthetic
                     } //End block
                     {
-                        boolean var7E0AF8DADF4AF1961B001AB80C9B77F2_1453006070 = (sipStack.findPendingTransaction(sipRequest) != null);
+                        boolean var7E0AF8DADF4AF1961B001AB80C9B77F2_287353824 = (sipStack.findPendingTransaction(sipRequest) != null);
                         {
                             {
-                                boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_916418911 = (sipStack.isLoggingEnabled());
+                                boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_1508505857 = (sipStack.isLoggingEnabled());
                                 sipStack.getStackLogger().logDebug(
                                 "transaction already exists!!");
                             } //End collapsed parenthetic
@@ -202,7 +202,7 @@ class EventScanner implements Runnable {
                 try 
                 {
                     {
-                        boolean varDA2675C4DA71C7DD141330FDB85BC848_42927325 = (sipStack.isLoggingEnabled());
+                        boolean varDA2675C4DA71C7DD141330FDB85BC848_659159267 = (sipStack.isLoggingEnabled());
                         {
                             sipStack.getStackLogger()
                                 .logDebug(
@@ -214,7 +214,7 @@ class EventScanner implements Runnable {
                     } //End collapsed parenthetic
                     sipListener.processRequest((RequestEvent) sipEvent);
                     {
-                        boolean varDA2675C4DA71C7DD141330FDB85BC848_1332829787 = (sipStack.isLoggingEnabled());
+                        boolean varDA2675C4DA71C7DD141330FDB85BC848_199861712 = (sipStack.isLoggingEnabled());
                         {
                             sipStack.getStackLogger().logDebug(
                                 "Done processing Message "
@@ -236,7 +236,7 @@ class EventScanner implements Runnable {
             finally 
             {
                 {
-                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_289867610 = (sipStack.isLoggingEnabled());
+                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1495281130 = (sipStack.isLoggingEnabled());
                     {
                         sipStack.getStackLogger().logDebug(
                             "Done processing Message "
@@ -245,7 +245,7 @@ class EventScanner implements Runnable {
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var2083A76A6D8AF74603B62F2F49401901_561512819 = (eventWrapper.transaction != null
+                    boolean var2083A76A6D8AF74603B62F2F49401901_159829849 = (eventWrapper.transaction != null
                         && ((SIPServerTransaction) eventWrapper.transaction)
                                 .passToListener());
                     {
@@ -256,7 +256,7 @@ class EventScanner implements Runnable {
                 sipStack
                             .removePendingTransaction((SIPServerTransaction) eventWrapper.transaction);
                 {
-                    boolean varC6D1EA0FBA4A15D7C8B243CC1A9F2443_1730527564 = (eventWrapper.transaction.getOriginalRequest().getMethod()
+                    boolean varC6D1EA0FBA4A15D7C8B243CC1A9F2443_1433399269 = (eventWrapper.transaction.getOriginalRequest().getMethod()
                         .equals(Request.ACK));
                     {
                         eventWrapper.transaction
@@ -278,7 +278,7 @@ class EventScanner implements Runnable {
                 try 
                 {
                     {
-                        boolean varDA2675C4DA71C7DD141330FDB85BC848_1157804972 = (sipStack.isLoggingEnabled());
+                        boolean varDA2675C4DA71C7DD141330FDB85BC848_1005333832 = (sipStack.isLoggingEnabled());
                         {
                             sipStack.getStackLogger().logDebug(
                                 "Calling listener for "
@@ -294,13 +294,13 @@ class EventScanner implements Runnable {
                         sipListener.processResponse((ResponseEvent) sipEvent);
                     } //End block
                     {
-                        boolean var7F4DBD75E39C7C0F71DEDD3AA5FA2992_1746388411 = ((sipDialog != null && (sipDialog.getState() == null || !sipDialog
+                        boolean var7F4DBD75E39C7C0F71DEDD3AA5FA2992_1174153056 = ((sipDialog != null && (sipDialog.getState() == null || !sipDialog
                             .getState().equals(DialogState.TERMINATED)))
                             && (sipResponse.getStatusCode() == Response.CALL_OR_TRANSACTION_DOES_NOT_EXIST || sipResponse
                                     .getStatusCode() == Response.REQUEST_TIMEOUT));
                         {
                             {
-                                boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_1197585762 = (sipStack.isLoggingEnabled());
+                                boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_1317997498 = (sipStack.isLoggingEnabled());
                                 {
                                     sipStack.getStackLogger().logDebug(
                                     "Removing dialog on 408 or 481 response");
@@ -310,13 +310,13 @@ class EventScanner implements Runnable {
                         } //End block
                     } //End collapsed parenthetic
                     {
-                        boolean varF75F1409CD905B3A8E1071A740610DAA_1155130897 = (sipResponse.getCSeq().getMethod()
+                        boolean varF75F1409CD905B3A8E1071A740610DAA_2057885831 = (sipResponse.getCSeq().getMethod()
                             .equals(Request.INVITE)
                             && sipDialog != null
                             && sipResponse.getStatusCode() == 200);
                         {
                             {
-                                boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_2106948905 = (sipStack.isLoggingEnabled());
+                                boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_393918575 = (sipStack.isLoggingEnabled());
                                 {
                                     sipStack.getStackLogger().logDebug(
                                     "Warning! unacknowledged dialog. " + sipDialog.getState());
@@ -333,7 +333,7 @@ class EventScanner implements Runnable {
                 SIPClientTransaction ct;
                 ct = (SIPClientTransaction) eventWrapper.transaction;
                 {
-                    boolean var3EE2000A6C965E993857D46DE0969DC5_621789812 = (ct != null
+                    boolean var3EE2000A6C965E993857D46DE0969DC5_1739248625 = (ct != null
                         && TransactionState.COMPLETED == ct.getState()
                         && ct.getOriginalRequest() != null
                         && !ct.getOriginalRequest().getMethod().equals(
@@ -346,7 +346,7 @@ class EventScanner implements Runnable {
             finally 
             {
                 {
-                    boolean var3BD50EFD7081DE4BDD6DBC4E580257A7_265905652 = (eventWrapper.transaction != null
+                    boolean var3BD50EFD7081DE4BDD6DBC4E580257A7_287424992 = (eventWrapper.transaction != null
                         && eventWrapper.transaction.passToListener());
                     {
                         eventWrapper.transaction.releaseSem();
@@ -390,7 +390,7 @@ class EventScanner implements Runnable {
             try 
             {
                 {
-                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_347374093 = (sipStack.isLoggingEnabled());
+                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1473521589 = (sipStack.isLoggingEnabled());
                     {
                         sipStack.getStackLogger().logDebug(
                             "About to deliver transactionTerminatedEvent");
@@ -410,7 +410,7 @@ class EventScanner implements Runnable {
             catch (AbstractMethodError ame)
             {
                 {
-                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1057827494 = (sipStack.isLoggingEnabled());
+                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_1205961385 = (sipStack.isLoggingEnabled());
                     sipStack
                         .getStackLogger()
                         .logWarning(
@@ -431,7 +431,7 @@ class EventScanner implements Runnable {
             catch (AbstractMethodError ame)
             {
                 {
-                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_444972978 = (sipStack.isLoggingEnabled());
+                    boolean var36EC98FEAC99F5AF404FDE8DC613FB19_571824392 = (sipStack.isLoggingEnabled());
                     sipStack.getStackLogger().logWarning(
                         "Unable to call sipListener.processDialogTerminated");
                 } //End collapsed parenthetic
@@ -450,7 +450,7 @@ class EventScanner implements Runnable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.446 -0400", hash_original_method = "5CCAE779A521C5AA39F7D74A098F474A", hash_generated_method = "4F701CA20BA1D890A47E0209494CCA34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:29.007 -0400", hash_original_method = "5CCAE779A521C5AA39F7D74A098F474A", hash_generated_method = "BD33172075E5088F56862A15B5684108")
     public void run() {
         try 
         {
@@ -462,11 +462,11 @@ class EventScanner implements Runnable {
                 LinkedList eventsToDeliver;
                 {
                     {
-                        boolean var4F290D24366D7BE53D8AD1AE0ED7AC69_730855915 = (pendingEvents.isEmpty());
+                        boolean var4F290D24366D7BE53D8AD1AE0ED7AC69_495551414 = (pendingEvents.isEmpty());
                         {
                             {
                                 {
-                                    boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_7544043 = (sipStack.isLoggingEnabled());
+                                    boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_1539284913 = (sipStack.isLoggingEnabled());
                                     sipStack.getStackLogger().logDebug(
                                         "Stopped event scanner!!");
                                 } //End collapsed parenthetic
@@ -479,7 +479,7 @@ class EventScanner implements Runnable {
                             catch (InterruptedException ex)
                             {
                                 {
-                                    boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_1685167001 = (sipStack.isLoggingEnabled());
+                                    boolean varA5D47C3A6259BCCCC2265DD1F84B75D4_1387417158 = (sipStack.isLoggingEnabled());
                                     sipStack.getStackLogger().logDebug("Interrupted!");
                                 } //End collapsed parenthetic
                             } //End block
@@ -491,11 +491,11 @@ class EventScanner implements Runnable {
                 ListIterator iterator;
                 iterator = eventsToDeliver.listIterator();
                 {
-                    boolean varA524DEFD7CC0C913305DE8790C40B8FE_1270896140 = (iterator.hasNext());
+                    boolean varA524DEFD7CC0C913305DE8790C40B8FE_546425585 = (iterator.hasNext());
                     {
                         eventWrapper = (EventWrapper) iterator.next();
                         {
-                            boolean var2AB968A8303910EE00F810B6DE3410F9_1904558807 = (sipStack.isLoggingEnabled());
+                            boolean var2AB968A8303910EE00F810B6DE3410F9_2072851623 = (sipStack.isLoggingEnabled());
                             {
                                 sipStack.getStackLogger().logDebug(
                                 "Processing " + eventWrapper + "nevents "
@@ -509,7 +509,7 @@ class EventScanner implements Runnable {
                         catch (Exception e)
                         {
                             {
-                                boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_829113226 = (sipStack.isLoggingEnabled());
+                                boolean var2DBDF8C316D1B42D56D4B0E041CAF41F_2076779816 = (sipStack.isLoggingEnabled());
                                 {
                                     sipStack.getStackLogger().logError(
                                     "Unexpected exception caught while delivering event -- carrying on bravely", e);
@@ -523,7 +523,7 @@ class EventScanner implements Runnable {
         finally 
         {
             {
-                boolean varCD7A6467843458627CC99D2CD95A9CA6_2118412039 = (sipStack.isLoggingEnabled());
+                boolean varCD7A6467843458627CC99D2CD95A9CA6_1676668115 = (sipStack.isLoggingEnabled());
                 {
                     {
                         sipStack.getStackLogger().logFatalError("Event scanner exited abnormally");

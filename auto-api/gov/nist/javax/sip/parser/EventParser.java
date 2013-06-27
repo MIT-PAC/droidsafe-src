@@ -13,7 +13,7 @@ import java.text.ParseException;
 
 public class EventParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.725 -0400", hash_original_method = "50E5FEDABD0DAB8D49656909229ED832", hash_generated_method = "8C401A9349282DEAE8DDE7C582DC6819")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.731 -0400", hash_original_method = "50E5FEDABD0DAB8D49656909229ED832", hash_generated_method = "8C401A9349282DEAE8DDE7C582DC6819")
     public  EventParser(String event) {
         super(event);
         addTaint(event.getTaint());
@@ -21,7 +21,7 @@ public class EventParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.732 -0400", hash_original_method = "D3468855FFD30B89A817AFCB4CE0E283", hash_generated_method = "5F9356AEB1E32F1B037B6F9ECBCE6D31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.731 -0400", hash_original_method = "D3468855FFD30B89A817AFCB4CE0E283", hash_generated_method = "5F9356AEB1E32F1B037B6F9ECBCE6D31")
     protected  EventParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -29,9 +29,9 @@ public class EventParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.733 -0400", hash_original_method = "DF7492B0F439F0DD586A6D33E917DC2B", hash_generated_method = "16DD6239E8E0B8C78927C21730344EE0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.738 -0400", hash_original_method = "DF7492B0F439F0DD586A6D33E917DC2B", hash_generated_method = "90175DD83C7C62FC09C97B70AC7CC052")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1953093520 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1423834743 = null; //Variable for return #1
         dbg_enter("EventParser.parse");
         try 
         {
@@ -48,7 +48,7 @@ public class EventParser extends ParametersParser {
             super.parse(event);
             this.lexer.SPorHT();
             this.lexer.match('\n');
-            varB4EAC82CA7396A68D541C85D26508E83_1953093520 = event;
+            varB4EAC82CA7396A68D541C85D26508E83_1423834743 = event;
         } //End block
         catch (ParseException ex)
         {
@@ -58,8 +58,8 @@ public class EventParser extends ParametersParser {
         {
             dbg_leave("EventParser.parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1953093520.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1953093520;
+        varB4EAC82CA7396A68D541C85D26508E83_1423834743.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1423834743;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("EventParser.parse");

@@ -18,7 +18,7 @@ import java.util.Vector;
 
 public class ECNamedCurveTable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.820 -0400", hash_original_method = "BD64543C1F72D4D2B4CE5D415F2B3F42", hash_generated_method = "BD64543C1F72D4D2B4CE5D415F2B3F42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.738 -0400", hash_original_method = "BD64543C1F72D4D2B4CE5D415F2B3F42", hash_generated_method = "BD64543C1F72D4D2B4CE5D415F2B3F42")
     public ECNamedCurveTable ()
     {
         //Synthesized constructor

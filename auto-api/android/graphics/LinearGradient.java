@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public class LinearGradient extends Shader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.657 -0400", hash_original_method = "E21158B8192A6A62E47E5DB23E5C8298", hash_generated_method = "24CAFA479A98150D13D836B237869017")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:13.026 -0400", hash_original_method = "E21158B8192A6A62E47E5DB23E5C8298", hash_generated_method = "24CAFA479A98150D13D836B237869017")
     public  LinearGradient(float x0, float y0, float x1, float y1,
                           int colors[], float positions[], TileMode tile) {
         {
@@ -42,7 +42,7 @@ public class LinearGradient extends Shader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.659 -0400", hash_original_method = "138E7D6C6B15213658AC13EABF129E3A", hash_generated_method = "42C8961BD65093AE777D9AF004D99C63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:13.027 -0400", hash_original_method = "138E7D6C6B15213658AC13EABF129E3A", hash_generated_method = "42C8961BD65093AE777D9AF004D99C63")
     public  LinearGradient(float x0, float y0, float x1, float y1,
                           int color0, int color1, TileMode tile) {
         native_instance = nativeCreate2(x0, y0, x1, y1, color0, color1, tile.nativeInt);
@@ -62,35 +62,35 @@ public class LinearGradient extends Shader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.688 -0400", hash_original_method = "B94A77D14C5B8671FB729EA28F4EAAD5", hash_generated_method = "2D432D29230CD37F1055F8FE147A0DC2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:13.028 -0400", hash_original_method = "B94A77D14C5B8671FB729EA28F4EAAD5", hash_generated_method = "63276F7572C4871BD58A41059BD0CB6A")
     private int nativeCreate1(float x0, float y0, float x1, float y1,
             int colors[], float positions[], int tileMode) {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1658677680 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1658677680;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372877970 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372877970;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.688 -0400", hash_original_method = "CCD3C7044708751014C9FDE6E03EC148", hash_generated_method = "31D802777F5E5F0CC94D530EAA39157A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:13.028 -0400", hash_original_method = "CCD3C7044708751014C9FDE6E03EC148", hash_generated_method = "0EF27B80D992A83E982ABC1290DF499E")
     private int nativeCreate2(float x0, float y0, float x1, float y1,
             int color0, int color1, int tileMode) {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464320664 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464320664;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_602789406 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_602789406;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.689 -0400", hash_original_method = "3D4FC89E238038D87C8D1AA41C910405", hash_generated_method = "7F8EEDAA25ECDF1C0E48E6A6CE66F5C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:13.054 -0400", hash_original_method = "3D4FC89E238038D87C8D1AA41C910405", hash_generated_method = "15BE7B03FECA62974D3F5266DBBF8FA8")
     private int nativePostCreate1(int native_shader, float x0, float y0, float x1, float y1,
             int colors[], float positions[], int tileMode) {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1508915199 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1508915199;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1645688803 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1645688803;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.702 -0400", hash_original_method = "9C29B9E72B1A16A8D3A2370F81F87105", hash_generated_method = "40C2AE8924EB05111A4E6C9E9D3A14BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:13.054 -0400", hash_original_method = "9C29B9E72B1A16A8D3A2370F81F87105", hash_generated_method = "43B8ED8A37E1CB6AC1A48BD2E107F3EE")
     private int nativePostCreate2(int native_shader, float x0, float y0, float x1, float y1,
             int color0, int color1, int tileMode) {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724249010 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724249010;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_426178726 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_426178726;
     }
 
     

@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 class Grego {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.959 -0400", hash_original_method = "C0174AAA570C46558C7AC4376248DE88", hash_generated_method = "C0174AAA570C46558C7AC4376248DE88")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.868 -0400", hash_original_method = "C0174AAA570C46558C7AC4376248DE88", hash_generated_method = "C0174AAA570C46558C7AC4376248DE88")
     public Grego ()
     {
         //Synthesized constructor
@@ -134,37 +134,37 @@ class Grego {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.976 -0400", hash_original_field = "8EA3B832CD3C302AF52945CC0DE9FBA1", hash_generated_field = "7D64A3FC8737BD139D4A4EC76A162D74")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.880 -0400", hash_original_field = "8EA3B832CD3C302AF52945CC0DE9FBA1", hash_generated_field = "7D64A3FC8737BD139D4A4EC76A162D74")
 
     public static final long MIN_MILLIS = -184303902528000000L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.976 -0400", hash_original_field = "6AAA7EC401F32F29B2561AD89856A5D9", hash_generated_field = "AC1B834FE88F5D5F1FE88CDF0E1A7184")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.881 -0400", hash_original_field = "6AAA7EC401F32F29B2561AD89856A5D9", hash_generated_field = "AC1B834FE88F5D5F1FE88CDF0E1A7184")
 
     public static final long MAX_MILLIS = 183882168921600000L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.976 -0400", hash_original_field = "5EED10FA88958EB199A2240A28DDEB87", hash_generated_field = "2EF9C87A008E40D02EA88BD84F8FF273")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.881 -0400", hash_original_field = "5EED10FA88958EB199A2240A28DDEB87", hash_generated_field = "2EF9C87A008E40D02EA88BD84F8FF273")
 
     public static final int MILLIS_PER_SECOND = 1000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.976 -0400", hash_original_field = "A64BE52066E4629C49F5F48269C68568", hash_generated_field = "C055A950E29AE0E28E103E4673C5C8AA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.881 -0400", hash_original_field = "A64BE52066E4629C49F5F48269C68568", hash_generated_field = "C055A950E29AE0E28E103E4673C5C8AA")
 
     public static final int MILLIS_PER_MINUTE = 60*MILLIS_PER_SECOND;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.976 -0400", hash_original_field = "9494A2C33DDCD8C860345014C9C75EBC", hash_generated_field = "ADBE5A05CBF815BE08BDC5F808F3D3D5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.881 -0400", hash_original_field = "9494A2C33DDCD8C860345014C9C75EBC", hash_generated_field = "ADBE5A05CBF815BE08BDC5F808F3D3D5")
 
     public static final int MILLIS_PER_HOUR = 60*MILLIS_PER_MINUTE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.976 -0400", hash_original_field = "A583A1C964FF431E413661B4EA189AF5", hash_generated_field = "ECE0514DCAD5F465EEEFC8CE42892C8B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.881 -0400", hash_original_field = "A583A1C964FF431E413661B4EA189AF5", hash_generated_field = "ECE0514DCAD5F465EEEFC8CE42892C8B")
 
     public static final int MILLIS_PER_DAY = 24*MILLIS_PER_HOUR;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.976 -0400", hash_original_field = "9A829918B2B504F94AF239579EBB02E6", hash_generated_field = "49638D3B713808F645BF0F5B99096C8A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.881 -0400", hash_original_field = "9A829918B2B504F94AF239579EBB02E6", hash_generated_field = "49638D3B713808F645BF0F5B99096C8A")
 
     private static int JULIAN_1_CE = 1721426;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.976 -0400", hash_original_field = "4E54BEDC3EFD999D27A4BE996708AD28", hash_generated_field = "CCBB1013588B6357374983D46E9818B1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.881 -0400", hash_original_field = "4E54BEDC3EFD999D27A4BE996708AD28", hash_generated_field = "CCBB1013588B6357374983D46E9818B1")
 
     private static int JULIAN_1970_CE = 2440588;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.976 -0400", hash_original_field = "D90A64D2D82E10047C40193B92DA90F1", hash_generated_field = "110CFCB0F994FC41542FC09280D20BF2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.881 -0400", hash_original_field = "D90A64D2D82E10047C40193B92DA90F1", hash_generated_field = "110CFCB0F994FC41542FC09280D20BF2")
 
     private static int[] MONTH_LENGTH = new int[] {
         31,28,31,30,31,30,31,31,30,31,30,31,
         31,29,31,30,31,30,31,31,30,31,30,31
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.976 -0400", hash_original_field = "EBD594D20EBDB6E21C2544A127075D09", hash_generated_field = "F0CEF8C2253B79349F65F83BD76DCC70")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.881 -0400", hash_original_field = "EBD594D20EBDB6E21C2544A127075D09", hash_generated_field = "F0CEF8C2253B79349F65F83BD76DCC70")
 
     private static int[] DAYS_BEFORE = new int[] {
         0,31,59,90,120,151,181,212,243,273,304,334,

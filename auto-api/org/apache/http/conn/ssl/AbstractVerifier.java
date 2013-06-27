@@ -28,14 +28,14 @@ import javax.net.ssl.SSLSocket;
 
 public abstract class AbstractVerifier implements X509HostnameVerifier {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.659 -0400", hash_original_method = "F9761A2E230B965E685AB0F097FC8BA3", hash_generated_method = "B512B82EB5D4AD689C485137CF7AD9E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.669 -0400", hash_original_method = "F9761A2E230B965E685AB0F097FC8BA3", hash_generated_method = "B512B82EB5D4AD689C485137CF7AD9E0")
     public  AbstractVerifier() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.667 -0400", hash_original_method = "A023267D72420C341ECC242060C387E3", hash_generated_method = "0A912B3E6E45858B4E4183214054F7C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.669 -0400", hash_original_method = "A023267D72420C341ECC242060C387E3", hash_generated_method = "0A912B3E6E45858B4E4183214054F7C1")
     public final void verify(String host, SSLSocket ssl) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("host to verify is null");
@@ -60,7 +60,7 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.675 -0400", hash_original_method = "43EDB91BF0A5D9A44DF28C7ADED9E98C", hash_generated_method = "D86B1CB70A60D21560E7A8E88C3E6427")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.670 -0400", hash_original_method = "43EDB91BF0A5D9A44DF28C7ADED9E98C", hash_generated_method = "4C047FD5123B57C73FF7C481FFB44517")
     public final boolean verify(String host, SSLSession session) {
         try 
         {
@@ -74,8 +74,8 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
         { }
         addTaint(host.getTaint());
         addTaint(session.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_973732399 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_973732399;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1748779396 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1748779396;
         // ---------- Original Method ----------
         //try {
             //Certificate[] certs = session.getPeerCertificates();
@@ -89,7 +89,7 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.676 -0400", hash_original_method = "08CBAD509C26DA74CD541E0020FFDCD1", hash_generated_method = "48C005DB1F50521AAC42BFBE21975F57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.671 -0400", hash_original_method = "08CBAD509C26DA74CD541E0020FFDCD1", hash_generated_method = "48C005DB1F50521AAC42BFBE21975F57")
     public final void verify(String host, X509Certificate cert) throws SSLException {
         String[] cns;
         cns = getCNs(cert);
@@ -105,7 +105,7 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.765 -0400", hash_original_method = "9A07FB90ABAE18EA37F4E80ACC04FEE0", hash_generated_method = "0341F0BED53C7FBC33345251F9CF1466")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.853 -0400", hash_original_method = "9A07FB90ABAE18EA37F4E80ACC04FEE0", hash_generated_method = "D6F9668294F4379A8634463F07D1289B")
     public final void verify(final String host, final String[] cns,
                              final String[] subjectAlts,
                              final boolean strictWithSubDomains) throws SSLException {
@@ -125,7 +125,7 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
             } //End collapsed parenthetic
         } //End block
         {
-            boolean var55C5C26F0BF22C4008A3E37E2E8525D7_953539117 = (names.isEmpty());
+            boolean var55C5C26F0BF22C4008A3E37E2E8525D7_316818960 = (names.isEmpty());
             {
                 String msg;
                 msg = "Certificate for <" + host + "> doesn't contain CN or DNS subjectAlt";
@@ -141,7 +141,7 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
         {
             Iterator<String> it;
             it = names.iterator();
-            boolean var03729FD53960D8DCA3A41A13A0229637_1171737282 = (it.hasNext());
+            boolean var03729FD53960D8DCA3A41A13A0229637_1742253000 = (it.hasNext());
             {
                 String cn;
                 cn = it.next();
@@ -150,7 +150,7 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
                 buf.append(cn);
                 buf.append('>');
                 {
-                    boolean var3DEC40B862508A9A2151C7EC9CE55CF3_1497465995 = (it.hasNext());
+                    boolean var3DEC40B862508A9A2151C7EC9CE55CF3_2111541935 = (it.hasNext());
                     {
                         buf.append(" OR");
                     } //End block
@@ -258,9 +258,10 @@ public abstract class AbstractVerifier implements X509HostnameVerifier {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.771 -0400", hash_original_field = "76B1D705F0ADC634FC0CFCB99B6D9F38", hash_generated_field = "CDC440FB866F8832F4E054010D717632")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.855 -0400", hash_original_field = "76B1D705F0ADC634FC0CFCB99B6D9F38", hash_generated_field = "28A8061CDF15FD396E8AFC89C5D72DEE")
 
-    private static String[] BAD_COUNTRY_2LDS = ;
+    private static String[] BAD_COUNTRY_2LDS = { "ac", "co", "com", "ed", "edu", "go", "gouv", "gov", "info",
+            "lg", "ne", "net", "or", "org" };
     static {
         Arrays.sort(BAD_COUNTRY_2LDS);
     }

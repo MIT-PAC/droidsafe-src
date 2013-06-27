@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 class JSON {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:21.422 -0400", hash_original_method = "4E4E4AE7CF91B852034C25B487459E58", hash_generated_method = "4E4E4AE7CF91B852034C25B487459E58")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.396 -0400", hash_original_method = "4E4E4AE7CF91B852034C25B487459E58", hash_generated_method = "4E4E4AE7CF91B852034C25B487459E58")
     public JSON ()
     {
         //Synthesized constructor

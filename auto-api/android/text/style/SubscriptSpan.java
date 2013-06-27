@@ -14,38 +14,38 @@ import android.text.TextUtils;
 
 public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.032 -0400", hash_original_method = "416865739F2C1ABBE61451113480FAB4", hash_generated_method = "431381B5FAFD384F6FEF99A75F935F86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.801 -0400", hash_original_method = "416865739F2C1ABBE61451113480FAB4", hash_generated_method = "431381B5FAFD384F6FEF99A75F935F86")
     public  SubscriptSpan() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.032 -0400", hash_original_method = "71E3921D1341E00E4D27F607004C29AC", hash_generated_method = "E3F85E1D6FA0CC2C53BEF83804B496BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.801 -0400", hash_original_method = "71E3921D1341E00E4D27F607004C29AC", hash_generated_method = "E3F85E1D6FA0CC2C53BEF83804B496BD")
     public  SubscriptSpan(Parcel src) {
         addTaint(src.getTaint());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.039 -0400", hash_original_method = "CB8400634E0A005DFA226D39FFA147D9", hash_generated_method = "B8465D3A7E4FF2761B61FA9401402A65")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.802 -0400", hash_original_method = "CB8400634E0A005DFA226D39FFA147D9", hash_generated_method = "F0796BC77C487924B12C6D6952171C98")
     public int getSpanTypeId() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471817941 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471817941;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_336822469 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_336822469;
         // ---------- Original Method ----------
         //return TextUtils.SUBSCRIPT_SPAN;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.040 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A2A52AC3B3919412C04ABE486AA4F29D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.802 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BD612C169DE0A48C19021AF3CC3AD931")
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295357790 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1295357790;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_664559473 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_664559473;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.051 -0400", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "E7DBC20584A55C26974D54383A48E9F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.803 -0400", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "E7DBC20584A55C26974D54383A48E9F7")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(dest.getTaint());
         addTaint(flags);
@@ -53,7 +53,7 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.051 -0400", hash_original_method = "9DCCA482100D1E9EC8F2615F051D6490", hash_generated_method = "D1E1706279C9F8A9EF8CDDF2CF68D55C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.816 -0400", hash_original_method = "9DCCA482100D1E9EC8F2615F051D6490", hash_generated_method = "D1E1706279C9F8A9EF8CDDF2CF68D55C")
     @Override
     public void updateDrawState(TextPaint tp) {
         tp.baselineShift -= (int) (tp.ascent() / 2);
@@ -63,7 +63,7 @@ public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:44.052 -0400", hash_original_method = "7DFDD8213FBD02BEC2253684A70AD5F4", hash_generated_method = "1A8037C31851F13711CF3284149B246F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.827 -0400", hash_original_method = "7DFDD8213FBD02BEC2253684A70AD5F4", hash_generated_method = "1A8037C31851F13711CF3284149B246F")
     @Override
     public void updateMeasureState(TextPaint tp) {
         tp.baselineShift -= (int) (tp.ascent() / 2);

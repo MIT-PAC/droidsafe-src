@@ -13,17 +13,17 @@ import android.util.Pools;
 import android.util.PoolableManager;
 
 public final class VelocityTracker implements Poolable<VelocityTracker> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.692 -0400", hash_original_field = "34F930F150EAEEFF27D6C0C8E4629911", hash_generated_field = "E9A8054C2C57C0CE861FDCA982433D1A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.264 -0400", hash_original_field = "34F930F150EAEEFF27D6C0C8E4629911", hash_generated_field = "E9A8054C2C57C0CE861FDCA982433D1A")
 
     private int mPtr;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.692 -0400", hash_original_field = "2271A9775971F952514B94408144FAA0", hash_generated_field = "5B4B8EC4C61CE05CF5BB2F5E71D6C6C3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.264 -0400", hash_original_field = "2271A9775971F952514B94408144FAA0", hash_generated_field = "5B4B8EC4C61CE05CF5BB2F5E71D6C6C3")
 
     private VelocityTracker mNext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.692 -0400", hash_original_field = "224D05F4261498DA1D9DF38424832532", hash_generated_field = "BD952C5DD2D86B34B4D5F4AFE196E837")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.264 -0400", hash_original_field = "224D05F4261498DA1D9DF38424832532", hash_generated_field = "BD952C5DD2D86B34B4D5F4AFE196E837")
 
     private boolean mIsPooled;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.692 -0400", hash_original_method = "F7334C8DF7CFD0702F8B319FC0AAEBEC", hash_generated_method = "D85E3DAABC499710A355B9A59E327BBA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.264 -0400", hash_original_method = "F7334C8DF7CFD0702F8B319FC0AAEBEC", hash_generated_method = "D85E3DAABC499710A355B9A59E327BBA")
     private  VelocityTracker() {
         mPtr = nativeInitialize();
         // ---------- Original Method ----------
@@ -73,7 +73,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.708 -0400", hash_original_method = "E0F67E3C99A5EE80DA0668A59C0EFAE4", hash_generated_method = "0846A8ED2E43BFFDC09D1A7A77AFC8B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.280 -0400", hash_original_method = "E0F67E3C99A5EE80DA0668A59C0EFAE4", hash_generated_method = "0846A8ED2E43BFFDC09D1A7A77AFC8B7")
     public void recycle() {
         sPool.release(this);
         // ---------- Original Method ----------
@@ -81,7 +81,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.708 -0400", hash_original_method = "2CC1A1BE49EC62DFF418BB32459396A9", hash_generated_method = "74AE9F16F0DD1BBCC61D5A9BA8889C0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.280 -0400", hash_original_method = "2CC1A1BE49EC62DFF418BB32459396A9", hash_generated_method = "74AE9F16F0DD1BBCC61D5A9BA8889C0C")
     public void setNextPoolable(VelocityTracker element) {
         mNext = element;
         // ---------- Original Method ----------
@@ -89,27 +89,27 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.709 -0400", hash_original_method = "DEA3C3D2ED346DE60DC91CC9918022D0", hash_generated_method = "359F553167049F04F5E82CAF76821DA8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.281 -0400", hash_original_method = "DEA3C3D2ED346DE60DC91CC9918022D0", hash_generated_method = "E011D19047365389267A34C80DAF8037")
     public VelocityTracker getNextPoolable() {
-        VelocityTracker varB4EAC82CA7396A68D541C85D26508E83_1552283631 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1552283631 = mNext;
-        varB4EAC82CA7396A68D541C85D26508E83_1552283631.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1552283631;
+        VelocityTracker varB4EAC82CA7396A68D541C85D26508E83_1843483595 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1843483595 = mNext;
+        varB4EAC82CA7396A68D541C85D26508E83_1843483595.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1843483595;
         // ---------- Original Method ----------
         //return mNext;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.709 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "44BF334B1FCCD82A7943013EEC1E155A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.281 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "DFBF943A24B02B3C973CCF636D9D2C8E")
     public boolean isPooled() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_821101027 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_821101027;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_543962549 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_543962549;
         // ---------- Original Method ----------
         //return mIsPooled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.710 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.300 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
     public void setPooled(boolean isPooled) {
         mIsPooled = isPooled;
         // ---------- Original Method ----------
@@ -117,7 +117,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.710 -0400", hash_original_method = "388B6019F11DE2E32EE5A9A9056EF526", hash_generated_method = "67860CE34A62351A9262D687B4539116")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.301 -0400", hash_original_method = "388B6019F11DE2E32EE5A9A9056EF526", hash_generated_method = "67860CE34A62351A9262D687B4539116")
     @Override
     protected void finalize() throws Throwable {
         try 
@@ -143,7 +143,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.710 -0400", hash_original_method = "3EB8DC396E0D228312A300339405C305", hash_generated_method = "E72C8D02D6D5031CDDA2CF440FD3B4C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.301 -0400", hash_original_method = "3EB8DC396E0D228312A300339405C305", hash_generated_method = "E72C8D02D6D5031CDDA2CF440FD3B4C9")
     public void clear() {
         nativeClear(mPtr);
         // ---------- Original Method ----------
@@ -151,7 +151,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.717 -0400", hash_original_method = "47F4DCEEC62F25E97556D9BB3D79B1AA", hash_generated_method = "CD616A172A9FFB7D428464500E045924")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.316 -0400", hash_original_method = "47F4DCEEC62F25E97556D9BB3D79B1AA", hash_generated_method = "CD616A172A9FFB7D428464500E045924")
     public void addMovement(MotionEvent event) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("event must not be null");
@@ -166,7 +166,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.718 -0400", hash_original_method = "2C861C2E66E6C5ED5AC5356AA16D4AE7", hash_generated_method = "BBF9490F7CF1E53129DB46E631BD4CBF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.317 -0400", hash_original_method = "2C861C2E66E6C5ED5AC5356AA16D4AE7", hash_generated_method = "BBF9490F7CF1E53129DB46E631BD4CBF")
     public void computeCurrentVelocity(int units) {
         nativeComputeCurrentVelocity(mPtr, units, Float.MAX_VALUE);
         addTaint(units);
@@ -175,7 +175,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.718 -0400", hash_original_method = "AAC1E150F0714A1C0618591FDBA33AD9", hash_generated_method = "CB99D8FC95D8490A5FD5988BF36A10AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.317 -0400", hash_original_method = "AAC1E150F0714A1C0618591FDBA33AD9", hash_generated_method = "CB99D8FC95D8490A5FD5988BF36A10AB")
     public void computeCurrentVelocity(int units, float maxVelocity) {
         nativeComputeCurrentVelocity(mPtr, units, maxVelocity);
         addTaint(units);
@@ -185,60 +185,60 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.718 -0400", hash_original_method = "175B9FF596A60DD4A27A3E2F4F8FB36B", hash_generated_method = "D15AB4D506C606D83BB49DD10033FB30")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.317 -0400", hash_original_method = "175B9FF596A60DD4A27A3E2F4F8FB36B", hash_generated_method = "656DBC84DE1FB02010D0268265CD0C81")
     public float getXVelocity() {
-        float varEF6EB6007A69FA84B157F348BC46F077_1743472462 = (nativeGetXVelocity(mPtr, ACTIVE_POINTER_ID));
-        float var546ADE640B6EDFBC8A086EF31347E768_623240574 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_623240574;
+        float varEF6EB6007A69FA84B157F348BC46F077_702215385 = (nativeGetXVelocity(mPtr, ACTIVE_POINTER_ID));
+        float var546ADE640B6EDFBC8A086EF31347E768_1377731253 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1377731253;
         // ---------- Original Method ----------
         //return nativeGetXVelocity(mPtr, ACTIVE_POINTER_ID);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.719 -0400", hash_original_method = "7522D7DB1CC0324C793DB225FECF96EF", hash_generated_method = "4AD5BE851EF62139A03787B7F33147D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.318 -0400", hash_original_method = "7522D7DB1CC0324C793DB225FECF96EF", hash_generated_method = "AA26B39A7AD15750365702926FDEE4E5")
     public float getYVelocity() {
-        float varA836CE77B04F283B3AE722B99F53A026_1705515997 = (nativeGetYVelocity(mPtr, ACTIVE_POINTER_ID));
-        float var546ADE640B6EDFBC8A086EF31347E768_150036435 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_150036435;
+        float varA836CE77B04F283B3AE722B99F53A026_911496709 = (nativeGetYVelocity(mPtr, ACTIVE_POINTER_ID));
+        float var546ADE640B6EDFBC8A086EF31347E768_1813787244 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1813787244;
         // ---------- Original Method ----------
         //return nativeGetYVelocity(mPtr, ACTIVE_POINTER_ID);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.719 -0400", hash_original_method = "E88E46619158ECDA6CFC39862B1412B8", hash_generated_method = "04E6582A7D72763D956C6A9F42D6CD63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.318 -0400", hash_original_method = "E88E46619158ECDA6CFC39862B1412B8", hash_generated_method = "636356CBB625FF03B4EA33F0D65C5094")
     public float getXVelocity(int id) {
-        float var7B1658FD1F00DCF18FF085C070307AFF_1401410450 = (nativeGetXVelocity(mPtr, id));
+        float var7B1658FD1F00DCF18FF085C070307AFF_1870871784 = (nativeGetXVelocity(mPtr, id));
         addTaint(id);
-        float var546ADE640B6EDFBC8A086EF31347E768_1441538188 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1441538188;
+        float var546ADE640B6EDFBC8A086EF31347E768_978480504 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_978480504;
         // ---------- Original Method ----------
         //return nativeGetXVelocity(mPtr, id);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.719 -0400", hash_original_method = "3A1681E069274B63F81D41BA2ABBDF60", hash_generated_method = "055C88BAD35A447C8768EE1D3CB1F8E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.327 -0400", hash_original_method = "3A1681E069274B63F81D41BA2ABBDF60", hash_generated_method = "48889695096BA841B67A289A6BB6E0E5")
     public float getYVelocity(int id) {
-        float varB6CE2C7467D225522F782DC0FFE159B9_1587825260 = (nativeGetYVelocity(mPtr, id));
+        float varB6CE2C7467D225522F782DC0FFE159B9_2021265672 = (nativeGetYVelocity(mPtr, id));
         addTaint(id);
-        float var546ADE640B6EDFBC8A086EF31347E768_1173373185 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1173373185;
+        float var546ADE640B6EDFBC8A086EF31347E768_1028596701 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1028596701;
         // ---------- Original Method ----------
         //return nativeGetYVelocity(mPtr, id);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.731 -0400", hash_original_method = "53182452353A9C74BE3B46A3229E5647", hash_generated_method = "B93C6B00A5F95C87B7113F7E848F05A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.327 -0400", hash_original_method = "53182452353A9C74BE3B46A3229E5647", hash_generated_method = "8A6FB6C73893CA738EA850024C69E822")
     public boolean getEstimator(int id, int degree, int horizonMillis, Estimator outEstimator) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("outEstimator must not be null");
         } //End block
-        boolean varB9B431FEE5CF127FE496DD1277AA2E23_1407650584 = (nativeGetEstimator(mPtr, id, degree, horizonMillis, outEstimator));
+        boolean varB9B431FEE5CF127FE496DD1277AA2E23_1997150076 = (nativeGetEstimator(mPtr, id, degree, horizonMillis, outEstimator));
         addTaint(id);
         addTaint(degree);
         addTaint(horizonMillis);
         addTaint(outEstimator.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2018743815 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2018743815;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_973722215 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_973722215;
         // ---------- Original Method ----------
         //if (outEstimator == null) {
             //throw new IllegalArgumentException("outEstimator must not be null");
@@ -248,49 +248,49 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
 
     
     public static final class Estimator {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.731 -0400", hash_original_field = "F912F76B126AAE00981054A0E1B74B9E", hash_generated_field = "61DA8F5CEF6813A46E4848AB215FB7FC")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.328 -0400", hash_original_field = "F912F76B126AAE00981054A0E1B74B9E", hash_generated_field = "61DA8F5CEF6813A46E4848AB215FB7FC")
 
         public float[] xCoeff = new float[MAX_DEGREE + 1];
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.731 -0400", hash_original_field = "917AB8BA1B6C7A079A777F441F7E0131", hash_generated_field = "480F859A6490FEB0D5736DA11D90A335")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.328 -0400", hash_original_field = "917AB8BA1B6C7A079A777F441F7E0131", hash_generated_field = "480F859A6490FEB0D5736DA11D90A335")
 
         public float[] yCoeff = new float[MAX_DEGREE + 1];
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.731 -0400", hash_original_field = "FB81C91EB92D6CB64AEB64C3F37EF2C4", hash_generated_field = "A21FC26B54D92E07E39E10EA3DEF93F3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.328 -0400", hash_original_field = "FB81C91EB92D6CB64AEB64C3F37EF2C4", hash_generated_field = "A21FC26B54D92E07E39E10EA3DEF93F3")
 
         public int degree;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.731 -0400", hash_original_field = "8BF91B0F43DDF159ED36AD0F50EE3E04", hash_generated_field = "9300AFCF844D22EA28DB8E928CFE60EB")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.328 -0400", hash_original_field = "8BF91B0F43DDF159ED36AD0F50EE3E04", hash_generated_field = "9300AFCF844D22EA28DB8E928CFE60EB")
 
         public float confidence;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.731 -0400", hash_original_method = "3C04CD9D0E5CF8A244AF16BC346C84B6", hash_generated_method = "3C04CD9D0E5CF8A244AF16BC346C84B6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.328 -0400", hash_original_method = "3C04CD9D0E5CF8A244AF16BC346C84B6", hash_generated_method = "3C04CD9D0E5CF8A244AF16BC346C84B6")
         public Estimator ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.732 -0400", hash_original_method = "EF4145D98D5D09EB61112BFE6D9F064E", hash_generated_method = "ED106BFF88596598A90ADCFD94F1CADB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.328 -0400", hash_original_method = "EF4145D98D5D09EB61112BFE6D9F064E", hash_generated_method = "B7D8B8D28C27B75FFEFFAF0DC6D01CFC")
         public float estimateX(float time) {
-            float varD2F41F7DCCDB33B464FD432116295CA0_1775309426 = (estimate(time, xCoeff));
+            float varD2F41F7DCCDB33B464FD432116295CA0_1761106413 = (estimate(time, xCoeff));
             addTaint(time);
-            float var546ADE640B6EDFBC8A086EF31347E768_795915161 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_795915161;
+            float var546ADE640B6EDFBC8A086EF31347E768_1387790582 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_1387790582;
             // ---------- Original Method ----------
             //return estimate(time, xCoeff);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.732 -0400", hash_original_method = "4B57BC9609218FF4FD5DA8FDF96C43D9", hash_generated_method = "A103F4AE42ED1BF5CCE6BE648A7139C6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.328 -0400", hash_original_method = "4B57BC9609218FF4FD5DA8FDF96C43D9", hash_generated_method = "3F72541AD39DC6B0C917CBE5DCDF6D36")
         public float estimateY(float time) {
-            float varD96A25489895EAFDAB21F43C286C60AD_654369704 = (estimate(time, yCoeff));
+            float varD96A25489895EAFDAB21F43C286C60AD_799584629 = (estimate(time, yCoeff));
             addTaint(time);
-            float var546ADE640B6EDFBC8A086EF31347E768_1077469495 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_1077469495;
+            float var546ADE640B6EDFBC8A086EF31347E768_1608977264 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_1608977264;
             // ---------- Original Method ----------
             //return estimate(time, yCoeff);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.733 -0400", hash_original_method = "17E8AE405780B4520E14D05EC083CF07", hash_generated_method = "30BA4BEE984AF5C2D92913B44690F38E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.329 -0400", hash_original_method = "17E8AE405780B4520E14D05EC083CF07", hash_generated_method = "4083BE256AE34310D3D75EEA63B60B86")
         private float estimate(float time, float[] c) {
             float a;
             a = 0;
@@ -306,8 +306,8 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
             } //End collapsed parenthetic
             addTaint(time);
             addTaint(c[0]);
-            float var546ADE640B6EDFBC8A086EF31347E768_1262129845 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_1262129845;
+            float var546ADE640B6EDFBC8A086EF31347E768_746577210 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_746577210;
             // ---------- Original Method ----------
             //float a = 0;
             //float scale = 1;
@@ -319,14 +319,14 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.733 -0400", hash_original_field = "A54F523E6A7DF5613B641195F2A7AF2B", hash_generated_field = "2907B8D670A69B2663312E1AD6A6B7E9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.329 -0400", hash_original_field = "A54F523E6A7DF5613B641195F2A7AF2B", hash_generated_field = "2907B8D670A69B2663312E1AD6A6B7E9")
 
         private static int MAX_DEGREE = 2;
     }
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.733 -0400", hash_original_field = "7D322AC6B02AE1303D1EE66F45C4A4CD", hash_generated_field = "5A476611E66F2F82DDD196D1A394CC9F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.329 -0400", hash_original_field = "7D322AC6B02AE1303D1EE66F45C4A4CD", hash_generated_field = "5A476611E66F2F82DDD196D1A394CC9F")
 
     private static Pool<VelocityTracker> sPool = Pools.synchronizedPool(
             Pools.finitePool(new PoolableManager<VelocityTracker>() {
@@ -341,7 +341,7 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
                     element.clear();
                 }
             }, 2));
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:49.733 -0400", hash_original_field = "B23005BED9309443B0ABD014F4C6507F", hash_generated_field = "9C60E6F0DC418C96025261ABA72B512D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:51.329 -0400", hash_original_field = "B23005BED9309443B0ABD014F4C6507F", hash_generated_field = "9C60E6F0DC418C96025261ABA72B512D")
 
     private static int ACTIVE_POINTER_ID = -1;
 }

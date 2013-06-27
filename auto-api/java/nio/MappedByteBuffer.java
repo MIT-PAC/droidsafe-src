@@ -14,18 +14,18 @@ import libcore.io.Memory;
 import static libcore.io.OsConstants.*;
 
 public abstract class MappedByteBuffer extends ByteBuffer {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.737 -0400", hash_original_field = "D6ABAEBF6F398D52A8B336BB018AF0B8", hash_generated_field = "D7679EF467A9ABFED1C67E3C246585AB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.751 -0400", hash_original_field = "D6ABAEBF6F398D52A8B336BB018AF0B8", hash_generated_field = "D7679EF467A9ABFED1C67E3C246585AB")
 
     DirectByteBuffer wrapped;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.737 -0400", hash_original_field = "54E7387E52E874C96887778FCFC7FAC0", hash_generated_field = "2A1F112DD9317D05E828544B748EF0B7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.752 -0400", hash_original_field = "54E7387E52E874C96887778FCFC7FAC0", hash_generated_field = "2A1F112DD9317D05E828544B748EF0B7")
 
     private MapMode mapMode;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.738 -0400", hash_original_method = "B4624F88D9C5C045F8BDE794FFD519CF", hash_generated_method = "1DFFEE1A343168DE37435329FE51A7EA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.761 -0400", hash_original_method = "B4624F88D9C5C045F8BDE794FFD519CF", hash_generated_method = "592F47ECEE49D493C4D649EB670BB79D")
       MappedByteBuffer(ByteBuffer directBuffer) {
         super(directBuffer.capacity, directBuffer.block);
         {
-            boolean varDC8DBD478B08EB0C265C25CC94CB6B1C_1389224223 = (!directBuffer.isDirect());
+            boolean varDC8DBD478B08EB0C265C25CC94CB6B1C_455574979 = (!directBuffer.isDirect());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
             } //End block
@@ -41,7 +41,7 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.738 -0400", hash_original_method = "638BC1993DAD17C2741F99B13CBD8BD7", hash_generated_method = "3696F6B779A20513AF0D49CF8B1A093E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.762 -0400", hash_original_method = "638BC1993DAD17C2741F99B13CBD8BD7", hash_generated_method = "3696F6B779A20513AF0D49CF8B1A093E")
       MappedByteBuffer(MemoryBlock block, int capacity, int offset, MapMode mapMode) {
         super(capacity, block);
         this.mapMode = mapMode;
@@ -61,7 +61,7 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.742 -0400", hash_original_method = "C9D4A4A6949ED0E6DB022AC73D44B615", hash_generated_method = "C17EF2F325A787EB0BEAE0B7F7171077")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.763 -0400", hash_original_method = "C9D4A4A6949ED0E6DB022AC73D44B615", hash_generated_method = "F3F77E4C7E2A018CF7C7F69531EE334F")
     public final boolean isLoaded() {
         long address;
         address = block.toInt();
@@ -87,8 +87,8 @@ public abstract class MappedByteBuffer extends ByteBuffer {
         } //End block
         catch (ErrnoException errnoException)
         { }
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_557168501 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_557168501;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1815586654 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1815586654;
         // ---------- Original Method ----------
         //long address = block.toInt();
         //long size = block.getSize();
@@ -115,9 +115,9 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.743 -0400", hash_original_method = "61E403E118E1A4E788B2CC284AD4ABD1", hash_generated_method = "997C5A6D4B0FABD7A0929850CFCC86A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.763 -0400", hash_original_method = "61E403E118E1A4E788B2CC284AD4ABD1", hash_generated_method = "0CD1EBEB9619F3C4C49AE8C451FF612F")
     public final MappedByteBuffer load() {
-        MappedByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1474048396 = null; //Variable for return #1
+        MappedByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1344410676 = null; //Variable for return #1
         try 
         {
             Libcore.os.mlock(block.toInt(), block.getSize());
@@ -125,9 +125,9 @@ public abstract class MappedByteBuffer extends ByteBuffer {
         } //End block
         catch (ErrnoException ignored)
         { }
-        varB4EAC82CA7396A68D541C85D26508E83_1474048396 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1474048396.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1474048396;
+        varB4EAC82CA7396A68D541C85D26508E83_1344410676 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1344410676.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1344410676;
         // ---------- Original Method ----------
         //try {
             //Libcore.os.mlock(block.toInt(), block.getSize());
@@ -138,9 +138,9 @@ public abstract class MappedByteBuffer extends ByteBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.766 -0400", hash_original_method = "F84161825A8E4C54BC8547EBE9290572", hash_generated_method = "30F5C24E5E4B56FF7E094697CEB90A4E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.782 -0400", hash_original_method = "F84161825A8E4C54BC8547EBE9290572", hash_generated_method = "CC27EB38C094FEA4DCA878ACDAFA2BA7")
     public final MappedByteBuffer force() {
-        MappedByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1094015062 = null; //Variable for return #1
+        MappedByteBuffer varB4EAC82CA7396A68D541C85D26508E83_1468475517 = null; //Variable for return #1
         {
             try 
             {
@@ -151,9 +151,9 @@ public abstract class MappedByteBuffer extends ByteBuffer {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError(errnoException);
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1094015062 = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1094015062.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1094015062;
+        varB4EAC82CA7396A68D541C85D26508E83_1468475517 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_1468475517.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1468475517;
         // ---------- Original Method ----------
         //if (mapMode == MapMode.READ_WRITE) {
             //try {

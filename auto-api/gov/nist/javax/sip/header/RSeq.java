@@ -10,47 +10,47 @@ import java.util.Iterator;
 import javax.sip.InvalidArgumentException;
 
 public class RSeq extends SIPHeader implements javax.sip.header.RSeqHeader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.234 -0400", hash_original_field = "1C021ADF174562C07D271E889F46BABF", hash_generated_field = "C1658771442CAEB41DDFE88E4F8049F6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.297 -0400", hash_original_field = "1C021ADF174562C07D271E889F46BABF", hash_generated_field = "C1658771442CAEB41DDFE88E4F8049F6")
 
     protected long sequenceNumber;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.253 -0400", hash_original_method = "1AAF86792C53F220850630A2C399A377", hash_generated_method = "6A0A39043D78AB195C93E6EDE279F663")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.297 -0400", hash_original_method = "1AAF86792C53F220850630A2C399A377", hash_generated_method = "6A0A39043D78AB195C93E6EDE279F663")
     public  RSeq() {
         super(NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.254 -0400", hash_original_method = "39133A5DFA90BF891F6ADEE458981A87", hash_generated_method = "FE6D60F75BAA27F5AB157CC273F89636")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.297 -0400", hash_original_method = "39133A5DFA90BF891F6ADEE458981A87", hash_generated_method = "44F651B239C7247C8941B434B6C358DA")
     public int getSequenceNumber() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_421497494 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_421497494;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_271501616 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_271501616;
         // ---------- Original Method ----------
         //return (int)this.sequenceNumber;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.254 -0400", hash_original_method = "5D7C81BCBFD28CA691320147DF9DB2DE", hash_generated_method = "64EB1BC7E24A44F75D6CC40675000722")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.297 -0400", hash_original_method = "5D7C81BCBFD28CA691320147DF9DB2DE", hash_generated_method = "2859A94E26B1837AC7B25AA302A26B97")
     protected String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1144860798 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1144860798 = Long.toString(this.sequenceNumber);
-        varB4EAC82CA7396A68D541C85D26508E83_1144860798.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1144860798;
+        String varB4EAC82CA7396A68D541C85D26508E83_1599864687 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1599864687 = Long.toString(this.sequenceNumber);
+        varB4EAC82CA7396A68D541C85D26508E83_1599864687.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1599864687;
         // ---------- Original Method ----------
         //return Long.toString(this.sequenceNumber);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.254 -0400", hash_original_method = "5EE204E642716446A9A561BAE9DA4271", hash_generated_method = "DF88510D10FC301DC15EC1E0125BBE1D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.298 -0400", hash_original_method = "5EE204E642716446A9A561BAE9DA4271", hash_generated_method = "B0C02C7A341FC1CAD11A172E78F8AACA")
     public long getSeqNumber() {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_2043457554 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_2043457554;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1477004299 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1477004299;
         // ---------- Original Method ----------
         //return this.sequenceNumber;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.255 -0400", hash_original_method = "479EDE29655FEADB0A6AC8DE2CF03B87", hash_generated_method = "8A0AF97038E7237A3C5A3DCA9536FD51")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.298 -0400", hash_original_method = "479EDE29655FEADB0A6AC8DE2CF03B87", hash_generated_method = "8A0AF97038E7237A3C5A3DCA9536FD51")
     public void setSeqNumber(long sequenceNumber) throws InvalidArgumentException {
         if (DroidSafeAndroidRuntime.control) throw new InvalidArgumentException(
                     "Bad seq number " + sequenceNumber);
@@ -63,7 +63,7 @@ public class RSeq extends SIPHeader implements javax.sip.header.RSeqHeader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.255 -0400", hash_original_method = "34CCD2A626C0B5A84694D440C0C4B269", hash_generated_method = "6363357D5FF8625057D7270046E349CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.298 -0400", hash_original_method = "34CCD2A626C0B5A84694D440C0C4B269", hash_generated_method = "6363357D5FF8625057D7270046E349CE")
     public void setSequenceNumber(int sequenceNumber) throws InvalidArgumentException {
         this.setSeqNumber(sequenceNumber);
         addTaint(sequenceNumber);
@@ -72,7 +72,7 @@ public class RSeq extends SIPHeader implements javax.sip.header.RSeqHeader {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.255 -0400", hash_original_field = "4C2D12D7F2E32667A2D1C242B442F590", hash_generated_field = "3D1FBF2C8B3E89C144F734B835B15955")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.298 -0400", hash_original_field = "4C2D12D7F2E32667A2D1C242B442F590", hash_generated_field = "3D1FBF2C8B3E89C144F734B835B15955")
 
     private static long serialVersionUID = 8765762413224043394L;
 }

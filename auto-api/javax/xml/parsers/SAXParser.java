@@ -22,13 +22,13 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public abstract class SAXParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.931 -0400", hash_original_method = "60861A80C08610A003AEF9BD086AC67B", hash_generated_method = "D85D3D2B092B8D57ADC303B7697DCEA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.560 -0400", hash_original_method = "60861A80C08610A003AEF9BD086AC67B", hash_generated_method = "D85D3D2B092B8D57ADC303B7697DCEA9")
     protected  SAXParser() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.932 -0400", hash_original_method = "EE92C6E107D176D208870C8A6C9502AF", hash_generated_method = "9143287AF68609AEF72DB0E83AD02E5E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.561 -0400", hash_original_method = "EE92C6E107D176D208870C8A6C9502AF", hash_generated_method = "9143287AF68609AEF72DB0E83AD02E5E")
     public void reset() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
             "This SAXParser, \"" + this.getClass().getName() + "\", does not support the reset functionality."
@@ -44,7 +44,7 @@ public abstract class SAXParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.932 -0400", hash_original_method = "E0E7EFA387CE9D5F50CEC1024059C3F8", hash_generated_method = "3BF926A22AFDDCE87FB7B48973BD8736")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.561 -0400", hash_original_method = "E0E7EFA387CE9D5F50CEC1024059C3F8", hash_generated_method = "3BF926A22AFDDCE87FB7B48973BD8736")
     public void parse(InputStream is, HandlerBase hb) throws SAXException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("InputStream cannot be null");
@@ -63,7 +63,7 @@ public abstract class SAXParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.942 -0400", hash_original_method = "E43A55A8544E4B0EB3A11D0317C825F2", hash_generated_method = "8B0A4F350917F2E0E2B7A9E2217F65C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.563 -0400", hash_original_method = "E43A55A8544E4B0EB3A11D0317C825F2", hash_generated_method = "8B0A4F350917F2E0E2B7A9E2217F65C4")
     public void parse(
         InputStream is,
         HandlerBase hb,
@@ -88,7 +88,7 @@ public abstract class SAXParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.944 -0400", hash_original_method = "F19248E94372C80DC5D37D9D6B998C8A", hash_generated_method = "E34A9A817A6921306B135261504BBAA6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.563 -0400", hash_original_method = "F19248E94372C80DC5D37D9D6B998C8A", hash_generated_method = "E34A9A817A6921306B135261504BBAA6")
     public void parse(InputStream is, DefaultHandler dh) throws SAXException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("InputStream cannot be null");
@@ -107,7 +107,7 @@ public abstract class SAXParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.952 -0400", hash_original_method = "1FC33240EB3C018A09EA92FF8A96D1A8", hash_generated_method = "D7E3005E8EC0E1E37CDD388DD5B7B143")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.563 -0400", hash_original_method = "1FC33240EB3C018A09EA92FF8A96D1A8", hash_generated_method = "D7E3005E8EC0E1E37CDD388DD5B7B143")
     public void parse(
         InputStream is,
         DefaultHandler dh,
@@ -132,7 +132,7 @@ public abstract class SAXParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.956 -0400", hash_original_method = "67AC143C34CF78ECFB000A375BF6460F", hash_generated_method = "355CAA6535086B41DCA4E067435C00E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.566 -0400", hash_original_method = "67AC143C34CF78ECFB000A375BF6460F", hash_generated_method = "355CAA6535086B41DCA4E067435C00E9")
     public void parse(String uri, HandlerBase hb) throws SAXException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("uri cannot be null");
@@ -151,7 +151,7 @@ public abstract class SAXParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.956 -0400", hash_original_method = "9D1B9B5B338D189F5FEB6183087C0F90", hash_generated_method = "B725F301391E46D5155E6089FDB77503")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.566 -0400", hash_original_method = "9D1B9B5B338D189F5FEB6183087C0F90", hash_generated_method = "B725F301391E46D5155E6089FDB77503")
     public void parse(String uri, DefaultHandler dh) throws SAXException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("uri cannot be null");
@@ -170,7 +170,7 @@ public abstract class SAXParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.957 -0400", hash_original_method = "0F0EB1667ABEA41C60E7456F327FDB47", hash_generated_method = "030008D2230FCA9BC1682FA23F85C9A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.572 -0400", hash_original_method = "0F0EB1667ABEA41C60E7456F327FDB47", hash_generated_method = "030008D2230FCA9BC1682FA23F85C9A0")
     public void parse(File f, HandlerBase hb) throws SAXException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("File cannot be null");
@@ -198,7 +198,7 @@ public abstract class SAXParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.957 -0400", hash_original_method = "4E507AEF2C358B180E5AB169C6F8A741", hash_generated_method = "AD6E210902CB87AC48154A4CB6F3570A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.572 -0400", hash_original_method = "4E507AEF2C358B180E5AB169C6F8A741", hash_generated_method = "AD6E210902CB87AC48154A4CB6F3570A")
     public void parse(File f, DefaultHandler dh) throws SAXException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("File cannot be null");
@@ -226,7 +226,7 @@ public abstract class SAXParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.969 -0400", hash_original_method = "07160A7FD95C7E2FA31C88097829A206", hash_generated_method = "6A8419F8A36A586F0849A32A28034B9B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.573 -0400", hash_original_method = "07160A7FD95C7E2FA31C88097829A206", hash_generated_method = "6A8419F8A36A586F0849A32A28034B9B")
     public void parse(InputSource is, HandlerBase hb) throws SAXException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("InputSource cannot be null");
@@ -257,7 +257,7 @@ public abstract class SAXParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.969 -0400", hash_original_method = "8F425B137DCEBCB18BE581A6911D8EA7", hash_generated_method = "8970434458AB9F6636A63F07D7D184C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.574 -0400", hash_original_method = "8F425B137DCEBCB18BE581A6911D8EA7", hash_generated_method = "8970434458AB9F6636A63F07D7D184C6")
     public void parse(InputSource is, DefaultHandler dh) throws SAXException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("InputSource cannot be null");
@@ -308,7 +308,7 @@ public abstract class SAXParser {
         throws SAXNotRecognizedException, SAXNotSupportedException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.970 -0400", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "2E2EBD7A2D5464481CAA84ECE27CE0D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.581 -0400", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "2E2EBD7A2D5464481CAA84ECE27CE0D0")
     public Schema getSchema() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
             "This parser does not support specification \""
@@ -328,7 +328,7 @@ public abstract class SAXParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.971 -0400", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "F5605533885E57ED27F27860F5EC9512")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.587 -0400", hash_original_method = "2D701854F0A16C5A4E7C38BB02DF4544", hash_generated_method = "DDB6671A4A00277A7F3A3A9A29881B35")
     public boolean isXIncludeAware() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
             "This parser does not support specification \""
@@ -337,8 +337,8 @@ public abstract class SAXParser {
             + this.getClass().getPackage().getSpecificationVersion()
             + "\""
             );
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1057569809 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1057569809;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_235580405 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_235580405;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException(
             //"This parser does not support specification \""
@@ -350,7 +350,7 @@ public abstract class SAXParser {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.971 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.588 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
 
     private static boolean DEBUG = false;
 }

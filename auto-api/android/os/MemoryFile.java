@@ -14,20 +14,20 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class MemoryFile {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.658 -0400", hash_original_field = "651CEF29F37C9F53091FD6A9046D9F00", hash_generated_field = "472902F3844A9738091A7090C080AB6E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.108 -0400", hash_original_field = "651CEF29F37C9F53091FD6A9046D9F00", hash_generated_field = "472902F3844A9738091A7090C080AB6E")
 
     private FileDescriptor mFD;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.659 -0400", hash_original_field = "9C8E67CB570F7F2DF167C544686B922A", hash_generated_field = "1BE2BFB4A5E404FE17164B090FF85336")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.108 -0400", hash_original_field = "9C8E67CB570F7F2DF167C544686B922A", hash_generated_field = "1BE2BFB4A5E404FE17164B090FF85336")
 
     private int mAddress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.659 -0400", hash_original_field = "429F431E8CD8AC287AA27460675EAEFE", hash_generated_field = "E9E17726F18BEC3E5C2C142D209555FD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.108 -0400", hash_original_field = "429F431E8CD8AC287AA27460675EAEFE", hash_generated_field = "E9E17726F18BEC3E5C2C142D209555FD")
 
     private int mLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.659 -0400", hash_original_field = "D56569F1BD1DB3D7FF8A7B1E40755DF0", hash_generated_field = "7D003ADAD6B352F39344F33BE33DE0E3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.109 -0400", hash_original_field = "D56569F1BD1DB3D7FF8A7B1E40755DF0", hash_generated_field = "7D003ADAD6B352F39344F33BE33DE0E3")
 
     private boolean mAllowPurging = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.660 -0400", hash_original_method = "DB289001A1CA8608ADAAFD372FAC3009", hash_generated_method = "9F1420795173186650A51F7155E52B33")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.109 -0400", hash_original_method = "DB289001A1CA8608ADAAFD372FAC3009", hash_generated_method = "9F1420795173186650A51F7155E52B33")
     public  MemoryFile(String name, int length) throws IOException {
         mLength = length;
         mFD = native_open(name, length);
@@ -86,11 +86,11 @@ public class MemoryFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.678 -0400", hash_original_method = "DD734A9458D0580E341A373C2DD4F619", hash_generated_method = "3CE1916EFD86E2B3E3C056F5907D0D6C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.132 -0400", hash_original_method = "DD734A9458D0580E341A373C2DD4F619", hash_generated_method = "3C6CEAF03B444D2EE147A13095C5351D")
     public void close() {
         deactivate();
         {
-            boolean var87E69C193F176802B13B2F1C81F5377B_647295431 = (!isClosed());
+            boolean var87E69C193F176802B13B2F1C81F5377B_1688941362 = (!isClosed());
             {
                 native_close(mFD);
             } //End block
@@ -103,10 +103,10 @@ public class MemoryFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.679 -0400", hash_original_method = "08DA91581CCCF703195AD89F50B4F4A1", hash_generated_method = "E0D43BAE15DFB721361F40CFFD67DBB9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.133 -0400", hash_original_method = "08DA91581CCCF703195AD89F50B4F4A1", hash_generated_method = "567C0B47C10E994FBEE64BBB948C8E88")
      void deactivate() {
         {
-            boolean var941F9BDB19A5D518067C6257AB508A03_1726362484 = (!isDeactivated());
+            boolean var941F9BDB19A5D518067C6257AB508A03_1661390653 = (!isDeactivated());
             {
                 try 
                 {
@@ -129,30 +129,30 @@ public class MemoryFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.696 -0400", hash_original_method = "6DDBFC199C19310599F0713304591847", hash_generated_method = "07FD0C18E204511A1830776EC4C55A32")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.133 -0400", hash_original_method = "6DDBFC199C19310599F0713304591847", hash_generated_method = "2B2793A92B1DAB2457766C31F469CD1D")
     private boolean isDeactivated() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_524630937 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_524630937;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1481502345 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1481502345;
         // ---------- Original Method ----------
         //return mAddress == 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.697 -0400", hash_original_method = "3246A0B1468E43E22E475A6EAB25C98D", hash_generated_method = "0EA20B7BB10804C040ECDFCD579941BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.133 -0400", hash_original_method = "3246A0B1468E43E22E475A6EAB25C98D", hash_generated_method = "F9724B3628F34FC573600570AB7E5997")
     private boolean isClosed() {
-        boolean varFA3F4C45AF333D629D1394D6A839E3C9_1047392255 = (!mFD.valid());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1255664834 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1255664834;
+        boolean varFA3F4C45AF333D629D1394D6A839E3C9_2126231684 = (!mFD.valid());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_513395552 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_513395552;
         // ---------- Original Method ----------
         //return !mFD.valid();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.709 -0400", hash_original_method = "41074FB4CF57E698C714BECD1DB74DD1", hash_generated_method = "D7CADAF7E0465BD50463288348C15B3A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.134 -0400", hash_original_method = "41074FB4CF57E698C714BECD1DB74DD1", hash_generated_method = "B4A1B5561DB16D67319458037C3C9B1E")
     @Override
     protected void finalize() {
         {
-            boolean var87E69C193F176802B13B2F1C81F5377B_752659 = (!isClosed());
+            boolean var87E69C193F176802B13B2F1C81F5377B_1825965899 = (!isClosed());
             {
                 close();
             } //End block
@@ -165,25 +165,25 @@ public class MemoryFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.709 -0400", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "4BCDCEAA6C999698CD17592E992EA1E4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.134 -0400", hash_original_method = "C0D624CC7CEFFAF650D54F4FB963FAF6", hash_generated_method = "ABF3563D35A7C7537F836E342E03238D")
     public int length() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1995609617 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1995609617;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1543544555 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1543544555;
         // ---------- Original Method ----------
         //return mLength;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.719 -0400", hash_original_method = "36BC15D120E9C0B3759A6273F0B6F394", hash_generated_method = "ABC6CF4E047F9C18B8598E668440633A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.135 -0400", hash_original_method = "36BC15D120E9C0B3759A6273F0B6F394", hash_generated_method = "C1F38E746C4F4FBF925F46441E0EDC78")
     public boolean isPurgingAllowed() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2091935285 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2091935285;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1088838910 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1088838910;
         // ---------- Original Method ----------
         //return mAllowPurging;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.720 -0400", hash_original_method = "4E65A3A585AE016FD322D2CFB53AD9E7", hash_generated_method = "6B18C26018605F2547398CAB6C7D67B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.136 -0400", hash_original_method = "4E65A3A585AE016FD322D2CFB53AD9E7", hash_generated_method = "F94D48F5E734552882EA7325E1D0A092")
     synchronized public boolean allowPurging(boolean allowPurging) throws IOException {
         boolean oldValue;
         oldValue = mAllowPurging;
@@ -191,8 +191,8 @@ public class MemoryFile {
             native_pin(mFD, !allowPurging);
             mAllowPurging = allowPurging;
         } //End block
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_49922163 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_49922163;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1281468933 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1281468933;
         // ---------- Original Method ----------
         //boolean oldValue = mAllowPurging;
         //if (oldValue != allowPurging) {
@@ -203,32 +203,32 @@ public class MemoryFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.732 -0400", hash_original_method = "1F9A300CE55BE9E69C06FFD4C6B98E29", hash_generated_method = "F6B018AA142AFF8E5B4272BFD626FBF8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.148 -0400", hash_original_method = "1F9A300CE55BE9E69C06FFD4C6B98E29", hash_generated_method = "95653DE1DC7403D998CFAF81CBAD9105")
     public InputStream getInputStream() {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1359790479 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1359790479 = new MemoryInputStream();
-        varB4EAC82CA7396A68D541C85D26508E83_1359790479.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1359790479;
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_705211795 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_705211795 = new MemoryInputStream();
+        varB4EAC82CA7396A68D541C85D26508E83_705211795.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_705211795;
         // ---------- Original Method ----------
         //return new MemoryInputStream();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.733 -0400", hash_original_method = "0A8C4757301CE72EF10D99AE7CF53794", hash_generated_method = "A541A7BD195C3FEF84B5462DC98139A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.149 -0400", hash_original_method = "0A8C4757301CE72EF10D99AE7CF53794", hash_generated_method = "62F11506961D2DE76F758407197E6E67")
     public OutputStream getOutputStream() {
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_860593112 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_860593112 = new MemoryOutputStream();
-        varB4EAC82CA7396A68D541C85D26508E83_860593112.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_860593112;
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_1809292243 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1809292243 = new MemoryOutputStream();
+        varB4EAC82CA7396A68D541C85D26508E83_1809292243.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1809292243;
         // ---------- Original Method ----------
         //return new MemoryOutputStream();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.734 -0400", hash_original_method = "E94CD8A455128D534B69DAAECC501B12", hash_generated_method = "F65BE7263FDE1B4C0B2C89DC4EEB1061")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.150 -0400", hash_original_method = "E94CD8A455128D534B69DAAECC501B12", hash_generated_method = "7E3976CAA90C1C58A2E8589C50601196")
     public int readBytes(byte[] buffer, int srcOffset, int destOffset, int count) throws IOException {
         {
-            boolean var69AE6633AAE7BF7BCBFA61A26FCE0675_1157643832 = (isDeactivated());
+            boolean var69AE6633AAE7BF7BCBFA61A26FCE0675_1933397997 = (isDeactivated());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("Can't read from deactivated memory file.");
             } //End block
@@ -236,13 +236,13 @@ public class MemoryFile {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
         } //End block
-        int varBC098400FC4EDE9D23C50CE46391CB5B_701201872 = (native_read(mFD, mAddress, buffer, srcOffset, destOffset, count, mAllowPurging));
+        int varBC098400FC4EDE9D23C50CE46391CB5B_1286770044 = (native_read(mFD, mAddress, buffer, srcOffset, destOffset, count, mAllowPurging));
         addTaint(buffer[0]);
         addTaint(srcOffset);
         addTaint(destOffset);
         addTaint(count);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061164338 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061164338;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1320869806 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1320869806;
         // ---------- Original Method ----------
         //if (isDeactivated()) {
             //throw new IOException("Can't read from deactivated memory file.");
@@ -257,10 +257,10 @@ public class MemoryFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.735 -0400", hash_original_method = "6737AABC2F88EDB7F71CE587CF7F9739", hash_generated_method = "5BDE24FAC6411425CEE663754D8DDFE3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.150 -0400", hash_original_method = "6737AABC2F88EDB7F71CE587CF7F9739", hash_generated_method = "E3D2B1E636468A9282078E8DF4B4518E")
     public void writeBytes(byte[] buffer, int srcOffset, int destOffset, int count) throws IOException {
         {
-            boolean var69AE6633AAE7BF7BCBFA61A26FCE0675_1004242065 = (isDeactivated());
+            boolean var69AE6633AAE7BF7BCBFA61A26FCE0675_2069449424 = (isDeactivated());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("Can't write to deactivated memory file.");
             } //End block
@@ -287,12 +287,12 @@ public class MemoryFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.742 -0400", hash_original_method = "2D6523548F3A6408618EC64E9280F841", hash_generated_method = "0B4EC4EA674CD3C1C17BF3467762FD2B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.151 -0400", hash_original_method = "2D6523548F3A6408618EC64E9280F841", hash_generated_method = "FC709230EEBC047DEB03C95FBC410096")
     public FileDescriptor getFileDescriptor() throws IOException {
-        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_723183341 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_723183341 = mFD;
-        varB4EAC82CA7396A68D541C85D26508E83_723183341.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_723183341;
+        FileDescriptor varB4EAC82CA7396A68D541C85D26508E83_1695109588 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1695109588 = mFD;
+        varB4EAC82CA7396A68D541C85D26508E83_1695109588.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1695109588;
         // ---------- Original Method ----------
         //return mFD;
     }
@@ -304,28 +304,28 @@ public class MemoryFile {
 
     
     private class MemoryInputStream extends InputStream {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.743 -0400", hash_original_field = "347231F94AB7C260D952FF25D7F7F6C4", hash_generated_field = "1CE465393F7752DBE05602CD816C716E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.168 -0400", hash_original_field = "347231F94AB7C260D952FF25D7F7F6C4", hash_generated_field = "1CE465393F7752DBE05602CD816C716E")
 
         private int mMark = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.743 -0400", hash_original_field = "7870015E19539D5B7C0F8E6D8A862618", hash_generated_field = "435D9FD8F79260F74ED3D88EC0019701")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.168 -0400", hash_original_field = "7870015E19539D5B7C0F8E6D8A862618", hash_generated_field = "435D9FD8F79260F74ED3D88EC0019701")
 
         private int mOffset = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.743 -0400", hash_original_field = "9893382187B6BE4A813F3C19CC69B8AF", hash_generated_field = "E7241BA1F5B2EEFC9242D732AA7BD5A0")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.168 -0400", hash_original_field = "9893382187B6BE4A813F3C19CC69B8AF", hash_generated_field = "E7241BA1F5B2EEFC9242D732AA7BD5A0")
 
         private byte[] mSingleByte;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.743 -0400", hash_original_method = "8819C64327DEAF910328E1B34E1904BC", hash_generated_method = "8819C64327DEAF910328E1B34E1904BC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.168 -0400", hash_original_method = "8819C64327DEAF910328E1B34E1904BC", hash_generated_method = "8819C64327DEAF910328E1B34E1904BC")
         public MemoryInputStream ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.753 -0400", hash_original_method = "C946C15ECBD8592757BE5150DF65639B", hash_generated_method = "34673581C073A9FE235BB5DBBCA28AB9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.169 -0400", hash_original_method = "C946C15ECBD8592757BE5150DF65639B", hash_generated_method = "002A558E9CB4CF2D9E17935803B7EA8C")
         @Override
         public int available() throws IOException {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_986475946 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_986475946;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_616393545 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_616393545;
             // ---------- Original Method ----------
             //if (mOffset >= mLength) {
                 //return 0;
@@ -334,17 +334,17 @@ public class MemoryFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.754 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "FADECB6C0B918B771B05E96E90695B9E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.170 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "7D0B3E605D84E936AF0E647B70070564")
         @Override
         public boolean markSupported() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1760312022 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1760312022;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_411904643 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_411904643;
             // ---------- Original Method ----------
             //return true;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.754 -0400", hash_original_method = "D9C9FB514524CC537FCE6FACAF9A295C", hash_generated_method = "AF5321611A336F9FC05FFEE23E084B6E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.170 -0400", hash_original_method = "D9C9FB514524CC537FCE6FACAF9A295C", hash_generated_method = "AF5321611A336F9FC05FFEE23E084B6E")
         @Override
         public void mark(int readlimit) {
             mMark = mOffset;
@@ -354,7 +354,7 @@ public class MemoryFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.764 -0400", hash_original_method = "35916CEFACB2EEB27C627D30B06B91CE", hash_generated_method = "51C43F06C3033D3370FC41BB3D926B97")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.170 -0400", hash_original_method = "35916CEFACB2EEB27C627D30B06B91CE", hash_generated_method = "51C43F06C3033D3370FC41BB3D926B97")
         @Override
         public void reset() throws IOException {
             mOffset = mMark;
@@ -363,7 +363,7 @@ public class MemoryFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.770 -0400", hash_original_method = "A1D8D948EA118F9A15401118B0635D27", hash_generated_method = "55911C376F5B982AECE1D8021E7175AE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.174 -0400", hash_original_method = "A1D8D948EA118F9A15401118B0635D27", hash_generated_method = "4783A9AC9BB3578CB909368CC8AA8545")
         @Override
         public int read() throws IOException {
             {
@@ -371,8 +371,8 @@ public class MemoryFile {
             } //End block
             int result;
             result = read(mSingleByte, 0, 1);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_462903835 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_462903835;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865866966 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865866966;
             // ---------- Original Method ----------
             //if (mSingleByte == null) {
                 //mSingleByte = new byte[1];
@@ -385,7 +385,7 @@ public class MemoryFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.776 -0400", hash_original_method = "BFF461741A45AAAD780835BEF712AE09", hash_generated_method = "9FDA8CF75209BB3795CAAEE8A1D208EA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.174 -0400", hash_original_method = "BFF461741A45AAAD780835BEF712AE09", hash_generated_method = "9349DB60EF981B383D25CE73FA2D13C7")
         @Override
         public int read(byte buffer[], int offset, int count) throws IOException {
             {
@@ -400,8 +400,8 @@ public class MemoryFile {
             addTaint(buffer);
             addTaint(offset);
             addTaint(count);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_845847173 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_845847173;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1639051847 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1639051847;
             // ---------- Original Method ----------
             //if (offset < 0 || count < 0 || offset + count > buffer.length) {
                 //throw new IndexOutOfBoundsException();
@@ -418,15 +418,15 @@ public class MemoryFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.783 -0400", hash_original_method = "9D84182613F8631FDE5947AEAB012BC6", hash_generated_method = "16216AC8EFC9CBB10E0B7BE5B6EBC4A2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.175 -0400", hash_original_method = "9D84182613F8631FDE5947AEAB012BC6", hash_generated_method = "022776E27E788D34E8935FB82F457F08")
         @Override
         public long skip(long n) throws IOException {
             {
                 n = mLength - mOffset;
             } //End block
             mOffset += n;
-            long var0F5264038205EDFB1AC05FBB0E8C5E94_1719649319 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1719649319;
+            long var0F5264038205EDFB1AC05FBB0E8C5E94_837808017 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_837808017;
             // ---------- Original Method ----------
             //if (mOffset + n > mLength) {
                 //n = mLength - mOffset;
@@ -441,21 +441,21 @@ public class MemoryFile {
 
     
     private class MemoryOutputStream extends OutputStream {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.783 -0400", hash_original_field = "7870015E19539D5B7C0F8E6D8A862618", hash_generated_field = "435D9FD8F79260F74ED3D88EC0019701")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.175 -0400", hash_original_field = "7870015E19539D5B7C0F8E6D8A862618", hash_generated_field = "435D9FD8F79260F74ED3D88EC0019701")
 
         private int mOffset = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.783 -0400", hash_original_field = "9893382187B6BE4A813F3C19CC69B8AF", hash_generated_field = "E7241BA1F5B2EEFC9242D732AA7BD5A0")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.175 -0400", hash_original_field = "9893382187B6BE4A813F3C19CC69B8AF", hash_generated_field = "E7241BA1F5B2EEFC9242D732AA7BD5A0")
 
         private byte[] mSingleByte;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.783 -0400", hash_original_method = "E9EA5EC07A45A76AA096F4AAFF6BF1DB", hash_generated_method = "E9EA5EC07A45A76AA096F4AAFF6BF1DB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.175 -0400", hash_original_method = "E9EA5EC07A45A76AA096F4AAFF6BF1DB", hash_generated_method = "E9EA5EC07A45A76AA096F4AAFF6BF1DB")
         public MemoryOutputStream ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.784 -0400", hash_original_method = "E169D47904A982CBC090A3E5EE81FFA1", hash_generated_method = "0D38C675FCCCCCDA88E36012C53E73DC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.188 -0400", hash_original_method = "E169D47904A982CBC090A3E5EE81FFA1", hash_generated_method = "0D38C675FCCCCCDA88E36012C53E73DC")
         @Override
         public void write(byte buffer[], int offset, int count) throws IOException {
             writeBytes(buffer, offset, mOffset, count);
@@ -468,7 +468,7 @@ public class MemoryFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.795 -0400", hash_original_method = "873021528A0C471EBDB778DCC5A89FEF", hash_generated_method = "2C99C99CEE6FD721A4133C5DC1E17E10")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.189 -0400", hash_original_method = "873021528A0C471EBDB778DCC5A89FEF", hash_generated_method = "2C99C99CEE6FD721A4133C5DC1E17E10")
         @Override
         public void write(int oneByte) throws IOException {
             {
@@ -489,13 +489,13 @@ public class MemoryFile {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.795 -0400", hash_original_field = "3081A19470620560723AFCCFD231D233", hash_generated_field = "5D3F94A828767D0FA960A9A7B583EDC1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.189 -0400", hash_original_field = "3081A19470620560723AFCCFD231D233", hash_generated_field = "5D3F94A828767D0FA960A9A7B583EDC1")
 
     private static String TAG = "MemoryFile";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.795 -0400", hash_original_field = "8485B64C5FEEDD71B9F0C2B303033EAA", hash_generated_field = "947B8E8A65B230DCAC8585ADD4182488")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.189 -0400", hash_original_field = "8485B64C5FEEDD71B9F0C2B303033EAA", hash_generated_field = "947B8E8A65B230DCAC8585ADD4182488")
 
     private static int PROT_READ = 0x1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.795 -0400", hash_original_field = "4AC8997208999500EC0C56E354EE8162", hash_generated_field = "B02C9446BA84E5354E70FF70EAD3A032")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.189 -0400", hash_original_field = "4AC8997208999500EC0C56E354EE8162", hash_generated_field = "B02C9446BA84E5354E70FF70EAD3A032")
 
     private static int PROT_WRITE = 0x2;
 }

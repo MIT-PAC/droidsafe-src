@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public class Matrix {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.974 -0400", hash_original_method = "80154EE353DD9055CB6181108953825F", hash_generated_method = "80154EE353DD9055CB6181108953825F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.432 -0400", hash_original_method = "80154EE353DD9055CB6181108953825F", hash_generated_method = "80154EE353DD9055CB6181108953825F")
     public Matrix ()
     {
         //Synthesized constructor
@@ -465,7 +465,7 @@ public class Matrix {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.052 -0400", hash_original_field = "01FC29FDECEE450BD310A7C8C01A19CA", hash_generated_field = "C95A08DC210B6BA0599BF41E4D3A17FA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:27.507 -0400", hash_original_field = "01FC29FDECEE450BD310A7C8C01A19CA", hash_generated_field = "C95A08DC210B6BA0599BF41E4D3A17FA")
 
     private static float[] sTemp = new float[32];
 }

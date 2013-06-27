@@ -18,7 +18,7 @@ import java.io.OutputStream;
 
 class ViewStateSerializer {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.652 -0400", hash_original_method = "49BFAAEC63FD743661F2FA5579ECB6BF", hash_generated_method = "118ABB2718261FF45C39549C1EF9F141")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:01.422 -0400", hash_original_method = "49BFAAEC63FD743661F2FA5579ECB6BF", hash_generated_method = "118ABB2718261FF45C39549C1EF9F141")
     private  ViewStateSerializer() {
         // ---------- Original Method ----------
     }
@@ -73,10 +73,10 @@ class ViewStateSerializer {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.654 -0400", hash_original_field = "324F32D1CC16C414475D1414D2041A3B", hash_generated_field = "082ABB0758BAA3B0F3EEFE889C918FE9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:01.423 -0400", hash_original_field = "324F32D1CC16C414475D1414D2041A3B", hash_generated_field = "082ABB0758BAA3B0F3EEFE889C918FE9")
 
     private static int WORKING_STREAM_STORAGE = 16 * 1024;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.654 -0400", hash_original_field = "B2D9386FD77395AEBE0B153BAD0CF478", hash_generated_field = "9BB92AC0A8D083E958B24167BC63EF9A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:01.423 -0400", hash_original_field = "B2D9386FD77395AEBE0B153BAD0CF478", hash_generated_field = "9BB92AC0A8D083E958B24167BC63EF9A")
 
     static int VERSION = 1;
 }

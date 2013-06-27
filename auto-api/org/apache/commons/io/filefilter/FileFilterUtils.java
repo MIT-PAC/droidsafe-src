@@ -21,7 +21,7 @@ import org.apache.commons.io.IOCase;
 
 public class FileFilterUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.659 -0400", hash_original_method = "258D2A85E3ECF820EDC9682F6EE3C0F9", hash_generated_method = "CA9F53CC4FA02CAE301E64D9C1DC0F50")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.672 -0400", hash_original_method = "258D2A85E3ECF820EDC9682F6EE3C0F9", hash_generated_method = "CA9F53CC4FA02CAE301E64D9C1DC0F50")
     public  FileFilterUtils() {
         // ---------- Original Method ----------
     }
@@ -297,11 +297,11 @@ public class FileFilterUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.748 -0400", hash_original_field = "35F1508C0FD3636D3837A9E1B3DD7AEC", hash_generated_field = "A2D7C5E49F9F81FFC05A966F0F941D1D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.720 -0400", hash_original_field = "35F1508C0FD3636D3837A9E1B3DD7AEC", hash_generated_field = "A2D7C5E49F9F81FFC05A966F0F941D1D")
 
     private static IOFileFilter cvsFilter = notFileFilter(
             and(directoryFileFilter(), nameFileFilter("CVS")));
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.748 -0400", hash_original_field = "6A23038387ACAE6FED24CDD901D90206", hash_generated_field = "44FC9FABF8404BB83E56F5D7D5F3A409")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.720 -0400", hash_original_field = "6A23038387ACAE6FED24CDD901D90206", hash_generated_field = "44FC9FABF8404BB83E56F5D7D5F3A409")
 
     private static IOFileFilter svnFilter = notFileFilter(
             and(directoryFileFilter(), nameFileFilter(".svn")));

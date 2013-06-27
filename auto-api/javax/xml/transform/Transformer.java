@@ -11,13 +11,13 @@ import java.util.Properties;
 
 public abstract class Transformer {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.871 -0400", hash_original_method = "962E0FC22D29E2A2CD7F27A68548CC24", hash_generated_method = "CCED2B9E561763560F0FF6AAF0DC8DE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.480 -0400", hash_original_method = "962E0FC22D29E2A2CD7F27A68548CC24", hash_generated_method = "CCED2B9E561763560F0FF6AAF0DC8DE8")
     protected  Transformer() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.871 -0400", hash_original_method = "B0AC372F01A204B1818DEED996AF8866", hash_generated_method = "CEC5BEFB5050D08C6EB4FC8CFF4F0F97")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.492 -0400", hash_original_method = "B0AC372F01A204B1818DEED996AF8866", hash_generated_method = "CEC5BEFB5050D08C6EB4FC8CFF4F0F97")
     public void reset() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
             "This Transformer, \"" + this.getClass().getName() + "\", does not support the reset functionality."

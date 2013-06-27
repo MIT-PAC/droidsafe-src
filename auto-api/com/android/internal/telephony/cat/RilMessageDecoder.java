@@ -15,23 +15,23 @@ import com.android.internal.util.StateMachine;
 import android.os.Message;
 
 class RilMessageDecoder extends StateMachine {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.888 -0400", hash_original_field = "323B97ECC7245864248EAE86A2F8A7C0", hash_generated_field = "1D31B9527FBE265BC5A565819E7A3298")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.441 -0400", hash_original_field = "323B97ECC7245864248EAE86A2F8A7C0", hash_generated_field = "1D31B9527FBE265BC5A565819E7A3298")
 
     private CommandParamsFactory mCmdParamsFactory = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.888 -0400", hash_original_field = "591FE4342F4414E6BB57B72904737054", hash_generated_field = "AB545A711A7AD12E762D048FCDAEAF6C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.441 -0400", hash_original_field = "591FE4342F4414E6BB57B72904737054", hash_generated_field = "AB545A711A7AD12E762D048FCDAEAF6C")
 
     private RilMessage mCurrentRilMessage = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.888 -0400", hash_original_field = "F61832AE4199B01FFC1C38C9632A67D4", hash_generated_field = "3825A5A20225788FF84555766B230175")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.441 -0400", hash_original_field = "F61832AE4199B01FFC1C38C9632A67D4", hash_generated_field = "3825A5A20225788FF84555766B230175")
 
     private Handler mCaller = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.888 -0400", hash_original_field = "3EBE40B8AFD876D3F86FD0C082916602", hash_generated_field = "E3AB6B1D1176FD0063AAF06152A6C3C1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.441 -0400", hash_original_field = "3EBE40B8AFD876D3F86FD0C082916602", hash_generated_field = "E3AB6B1D1176FD0063AAF06152A6C3C1")
 
     private StateStart mStateStart = new StateStart();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.888 -0400", hash_original_field = "EB2974EB549E456C6C1AA2217190E491", hash_generated_field = "AA59174CBCE92AAF8CF1CF2D3197AB32")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.442 -0400", hash_original_field = "EB2974EB549E456C6C1AA2217190E491", hash_generated_field = "AA59174CBCE92AAF8CF1CF2D3197AB32")
 
     private StateCmdParamsReady mStateCmdParamsReady = new StateCmdParamsReady();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.888 -0400", hash_original_method = "80000F6682C0A8DA18E484599E848E2C", hash_generated_method = "5F4E68F54CB745219D0E765FBD98B005")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.444 -0400", hash_original_method = "80000F6682C0A8DA18E484599E848E2C", hash_generated_method = "5F4E68F54CB745219D0E765FBD98B005")
     private  RilMessageDecoder(Handler caller, IccFileHandler fh) {
         super("RilMessageDecoder");
         addState(mStateStart);
@@ -57,7 +57,7 @@ class RilMessageDecoder extends StateMachine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.889 -0400", hash_original_method = "558F46FD0EDA24F51E513C644847EA22", hash_generated_method = "C4B85E5F538EFA442C60F5FA74ED9ED1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.447 -0400", hash_original_method = "558F46FD0EDA24F51E513C644847EA22", hash_generated_method = "C4B85E5F538EFA442C60F5FA74ED9ED1")
     public void sendStartDecodingMessageParams(RilMessage rilMsg) {
         Message msg;
         msg = obtainMessage(CMD_START);
@@ -71,7 +71,7 @@ class RilMessageDecoder extends StateMachine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.890 -0400", hash_original_method = "66DFFFB44E1DF2E53F71A8A0807BF75D", hash_generated_method = "040CD74CAA4CF46256D35EACC127A158")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.449 -0400", hash_original_method = "66DFFFB44E1DF2E53F71A8A0807BF75D", hash_generated_method = "040CD74CAA4CF46256D35EACC127A158")
     public void sendMsgParamsDecoded(ResultCode resCode, CommandParams cmdParams) {
         Message msg;
         msg = obtainMessage(RilMessageDecoder.CMD_PARAMS_READY);
@@ -88,7 +88,7 @@ class RilMessageDecoder extends StateMachine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.895 -0400", hash_original_method = "D82B03DF0CAD2B5CB90F2219FBBA492B", hash_generated_method = "6E51FC15E43A188327623AAC7DEE1BE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.449 -0400", hash_original_method = "D82B03DF0CAD2B5CB90F2219FBBA492B", hash_generated_method = "6E51FC15E43A188327623AAC7DEE1BE8")
     private void sendCmdForExecution(RilMessage rilMsg) {
         Message msg;
         msg = mCaller.obtainMessage(CatService.MSG_ID_RIL_MSG_DECODED,
@@ -102,7 +102,7 @@ class RilMessageDecoder extends StateMachine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.972 -0400", hash_original_method = "7155A04451229DB43083FDF7F69C4418", hash_generated_method = "DC75E2B8F37CBC5225C9DE9A0B478479")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.457 -0400", hash_original_method = "7155A04451229DB43083FDF7F69C4418", hash_generated_method = "5CD2E719F8DEC19E2C0EE75404D05745")
     private boolean decodeMessageParams(RilMessage rilMsg) {
         boolean decodingStarted;
         mCurrentRilMessage = rilMsg;
@@ -146,8 +146,8 @@ class RilMessageDecoder extends StateMachine {
         //Begin case default 
         decodingStarted = false;
         //End case default 
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1298993800 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1298993800;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1882166368 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1882166368;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -155,19 +155,19 @@ class RilMessageDecoder extends StateMachine {
     
     private class StateStart extends State {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.972 -0400", hash_original_method = "C10CD2CE94A1CED10886036D2E1F3CE9", hash_generated_method = "C10CD2CE94A1CED10886036D2E1F3CE9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.460 -0400", hash_original_method = "C10CD2CE94A1CED10886036D2E1F3CE9", hash_generated_method = "C10CD2CE94A1CED10886036D2E1F3CE9")
         public StateStart ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.973 -0400", hash_original_method = "57F9642232CB19CA7FAC73C8363E6E1D", hash_generated_method = "9637CDF74FC991A3292BCEEF91C58E68")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.461 -0400", hash_original_method = "57F9642232CB19CA7FAC73C8363E6E1D", hash_generated_method = "CB626B18033036FF5F63C3B46DE01B40")
         @Override
         public boolean processMessage(Message msg) {
             {
                 {
-                    boolean var3808E777C759EF8D4B42122C317932A7_520421207 = (decodeMessageParams((RilMessage)msg.obj));
+                    boolean var3808E777C759EF8D4B42122C317932A7_2003562440 = (decodeMessageParams((RilMessage)msg.obj));
                     {
                         transitionTo(mStateCmdParamsReady);
                     } //End block
@@ -178,8 +178,8 @@ class RilMessageDecoder extends StateMachine {
                          CMD_START + " got " + msg.what);
             } //End block
             addTaint(msg.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_245661542 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_245661542;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_408687060 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_408687060;
             // ---------- Original Method ----------
             //if (msg.what == CMD_START) {
                 //if (decodeMessageParams((RilMessage)msg.obj)) {
@@ -199,14 +199,14 @@ class RilMessageDecoder extends StateMachine {
     
     private class StateCmdParamsReady extends State {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.973 -0400", hash_original_method = "B99964FB7C360B547C7ED4636595450B", hash_generated_method = "B99964FB7C360B547C7ED4636595450B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.461 -0400", hash_original_method = "B99964FB7C360B547C7ED4636595450B", hash_generated_method = "B99964FB7C360B547C7ED4636595450B")
         public StateCmdParamsReady ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.974 -0400", hash_original_method = "17A6F88C736680351817FD1B07408EDF", hash_generated_method = "B2A54B5D998D2F8FFC1BB0BD016FC017")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.462 -0400", hash_original_method = "17A6F88C736680351817FD1B07408EDF", hash_generated_method = "8A54738FEC88E04BFFDAB16B4C1AC1C4")
         @Override
         public boolean processMessage(Message msg) {
             {
@@ -221,8 +221,8 @@ class RilMessageDecoder extends StateMachine {
                 deferMessage(msg);
             } //End block
             addTaint(msg.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_153563286 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_153563286;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_631559469 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_631559469;
             // ---------- Original Method ----------
             //if (msg.what == CMD_PARAMS_READY) {
                 //mCurrentRilMessage.mResCode = ResultCode.fromInt(msg.arg1);
@@ -242,13 +242,13 @@ class RilMessageDecoder extends StateMachine {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.974 -0400", hash_original_field = "B68395A74681A0DDBC38547AD7EF0ABA", hash_generated_field = "DDE2542F5CBA4C407A4FCFA2FC47E990")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.462 -0400", hash_original_field = "B68395A74681A0DDBC38547AD7EF0ABA", hash_generated_field = "DDE2542F5CBA4C407A4FCFA2FC47E990")
 
     private static int CMD_START = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.974 -0400", hash_original_field = "7EC9A96549249183230352DC0416584B", hash_generated_field = "347F9B8588AD09EC379A04C0FFA52562")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.462 -0400", hash_original_field = "7EC9A96549249183230352DC0416584B", hash_generated_field = "347F9B8588AD09EC379A04C0FFA52562")
 
     private static int CMD_PARAMS_READY = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.974 -0400", hash_original_field = "CEBC5A2FE2A04C1669E8EF2F3D151E4D", hash_generated_field = "A7EDEBAD815A463752575C104B099CEC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.462 -0400", hash_original_field = "CEBC5A2FE2A04C1669E8EF2F3D151E4D", hash_generated_field = "A7EDEBAD815A463752575C104B099CEC")
 
     private static RilMessageDecoder sInstance = null;
 }

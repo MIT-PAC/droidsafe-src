@@ -14,11 +14,11 @@ import java.net.SocketException;
 import libcore.util.EmptyArray;
 
 class DefaultSSLServerSocketFactory extends SSLServerSocketFactory {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.464 -0400", hash_original_field = "A35A1CBBA413D923284FE4F467EA17EB", hash_generated_field = "9CF404529F089526CB6A4794BF7634AB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.100 -0400", hash_original_field = "A35A1CBBA413D923284FE4F467EA17EB", hash_generated_field = "9CF404529F089526CB6A4794BF7634AB")
 
     private String errMessage;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.464 -0400", hash_original_method = "75914460F849F70EB9C61E69E22A6D0F", hash_generated_method = "D44D9734EF6EA12716A4A51DD204BD62")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.101 -0400", hash_original_method = "75914460F849F70EB9C61E69E22A6D0F", hash_generated_method = "D44D9734EF6EA12716A4A51DD204BD62")
       DefaultSSLServerSocketFactory(String mes) {
         errMessage = mes;
         // ---------- Original Method ----------
@@ -26,31 +26,31 @@ class DefaultSSLServerSocketFactory extends SSLServerSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.465 -0400", hash_original_method = "12108FA96648EC8E1683C3067260A382", hash_generated_method = "E6A4956693FEE92F41CC04E6384521AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.101 -0400", hash_original_method = "12108FA96648EC8E1683C3067260A382", hash_generated_method = "B8AA07470AC523F1A177E2008B1B081E")
     @Override
     public String[] getDefaultCipherSuites() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1845289556 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1845289556 = EmptyArray.STRING;
-        varB4EAC82CA7396A68D541C85D26508E83_1845289556.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1845289556;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1328767451 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1328767451 = EmptyArray.STRING;
+        varB4EAC82CA7396A68D541C85D26508E83_1328767451.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1328767451;
         // ---------- Original Method ----------
         //return EmptyArray.STRING;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.465 -0400", hash_original_method = "02FB44E3332A242283DAD5FC179FF843", hash_generated_method = "F1D92C70EEBCA835CC4181DA559D4594")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.101 -0400", hash_original_method = "02FB44E3332A242283DAD5FC179FF843", hash_generated_method = "88D7DAD629DDDB60634B5820BE6C8E5F")
     @Override
     public String[] getSupportedCipherSuites() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1958940514 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1958940514 = EmptyArray.STRING;
-        varB4EAC82CA7396A68D541C85D26508E83_1958940514.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1958940514;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1902578638 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1902578638 = EmptyArray.STRING;
+        varB4EAC82CA7396A68D541C85D26508E83_1902578638.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1902578638;
         // ---------- Original Method ----------
         //return EmptyArray.STRING;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.466 -0400", hash_original_method = "3CA5D0FA144D223B163E20364EF717CA", hash_generated_method = "CD0F0F0CDE476F807ABE0A42201BFF5C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.103 -0400", hash_original_method = "3CA5D0FA144D223B163E20364EF717CA", hash_generated_method = "CD0F0F0CDE476F807ABE0A42201BFF5C")
     @Override
     public ServerSocket createServerSocket(int port) throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new SocketException(errMessage);
@@ -60,7 +60,7 @@ class DefaultSSLServerSocketFactory extends SSLServerSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.466 -0400", hash_original_method = "72A7F975E743E745F7B0696336C67E27", hash_generated_method = "4DA4E5590F28C7F9DA1E7B2C6BF50B3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.106 -0400", hash_original_method = "72A7F975E743E745F7B0696336C67E27", hash_generated_method = "4DA4E5590F28C7F9DA1E7B2C6BF50B3B")
     @Override
     public ServerSocket createServerSocket(int port, int backlog) throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new SocketException(errMessage);
@@ -71,7 +71,7 @@ class DefaultSSLServerSocketFactory extends SSLServerSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.466 -0400", hash_original_method = "46FACB6F6AB575F914E1C4CC8DD6AA24", hash_generated_method = "3806206BD7814E64E72096C13D146997")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.111 -0400", hash_original_method = "46FACB6F6AB575F914E1C4CC8DD6AA24", hash_generated_method = "3806206BD7814E64E72096C13D146997")
     @Override
     public ServerSocket createServerSocket(int port, int backlog, InetAddress iAddress) throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new SocketException(errMessage);

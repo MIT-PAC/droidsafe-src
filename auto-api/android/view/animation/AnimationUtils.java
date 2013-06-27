@@ -19,7 +19,7 @@ import java.io.IOException;
 
 public class AnimationUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.187 -0400", hash_original_method = "356F4D62C52EA54268D4026A2BB604AB", hash_generated_method = "356F4D62C52EA54268D4026A2BB604AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.479 -0400", hash_original_method = "356F4D62C52EA54268D4026A2BB604AB", hash_generated_method = "356F4D62C52EA54268D4026A2BB604AB")
     public AnimationUtils ()
     {
         //Synthesized constructor
@@ -233,10 +233,10 @@ public class AnimationUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.201 -0400", hash_original_field = "C1FCEF32161A7BF89FDA53D614301098", hash_generated_field = "A8307AF47BADB45021E58F8C7112B399")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.496 -0400", hash_original_field = "C1FCEF32161A7BF89FDA53D614301098", hash_generated_field = "A8307AF47BADB45021E58F8C7112B399")
 
     private static int TOGETHER = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.201 -0400", hash_original_field = "B568DA5D545ECA4D1ECFB6CD119EC659", hash_generated_field = "35738883661080F24E81978BBD7CE0F6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.496 -0400", hash_original_field = "B568DA5D545ECA4D1ECFB6CD119EC659", hash_generated_field = "35738883661080F24E81978BBD7CE0F6")
 
     private static int SEQUENTIALLY = 1;
 }

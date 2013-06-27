@@ -12,7 +12,7 @@ import java.util.Locale;
 
 public final class ICU {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.039 -0400", hash_original_method = "41D0A20E3850008EA50DF809FC4EB919", hash_generated_method = "41D0A20E3850008EA50DF809FC4EB919")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.639 -0400", hash_original_method = "41D0A20E3850008EA50DF809FC4EB919", hash_generated_method = "41D0A20E3850008EA50DF809FC4EB919")
     public ICU ()
     {
         //Synthesized constructor
@@ -225,13 +225,13 @@ public final class ICU {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.084 -0400", hash_original_field = "88013DEF7F73488714320DFBA5CBDA04", hash_generated_field = "BE35828B892076AC7390E82ED7757E24")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.659 -0400", hash_original_field = "88013DEF7F73488714320DFBA5CBDA04", hash_generated_field = "BE35828B892076AC7390E82ED7757E24")
 
     private static String[] isoLanguages;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.084 -0400", hash_original_field = "5608ECD95723058790445D0401D02553", hash_generated_field = "DD8EDDECCA2B05E89485367EA0F1D58F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.659 -0400", hash_original_field = "5608ECD95723058790445D0401D02553", hash_generated_field = "DD8EDDECCA2B05E89485367EA0F1D58F")
 
     private static String[] isoCountries;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.084 -0400", hash_original_field = "5FB2CB19CCC322B383B07F128D410B7F", hash_generated_field = "5054072110B01E76431E0948BDF07C94")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.659 -0400", hash_original_field = "5FB2CB19CCC322B383B07F128D410B7F", hash_generated_field = "5054072110B01E76431E0948BDF07C94")
 
     private static Locale[] availableLocalesCache;
 }

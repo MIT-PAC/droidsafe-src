@@ -10,11 +10,11 @@ import java.util.Iterator;
 import android.database.CursorWindow;
 
 public abstract class SQLiteClosable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.776 -0400", hash_original_field = "0802B8E2DAE298D5C141DE08467D5410", hash_generated_field = "DCE5AF4DC7C8F75088B97A64E4AB1192")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.327 -0400", hash_original_field = "0802B8E2DAE298D5C141DE08467D5410", hash_generated_field = "DCE5AF4DC7C8F75088B97A64E4AB1192")
 
     private int mReferenceCount = 1;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.776 -0400", hash_original_method = "A9F6E0E907A2CB5A9B2E32487BA16D84", hash_generated_method = "A9F6E0E907A2CB5A9B2E32487BA16D84")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.327 -0400", hash_original_method = "A9F6E0E907A2CB5A9B2E32487BA16D84", hash_generated_method = "A9F6E0E907A2CB5A9B2E32487BA16D84")
     public SQLiteClosable ()
     {
         //Synthesized constructor
@@ -24,14 +24,14 @@ public abstract class SQLiteClosable {
     protected abstract void onAllReferencesReleased();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.777 -0400", hash_original_method = "E024C98C9CCE430E2F2A96AB4D1C1206", hash_generated_method = "3847CCA86EF22D8030ACE2211D68342D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.330 -0400", hash_original_method = "E024C98C9CCE430E2F2A96AB4D1C1206", hash_generated_method = "3847CCA86EF22D8030ACE2211D68342D")
     protected void onAllReferencesReleasedFromContainer() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.777 -0400", hash_original_method = "1061625992B0C8C116E9B0FDA746DD53", hash_generated_method = "E1C9E3F7C5F37E93374A232562C01032")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.331 -0400", hash_original_method = "1061625992B0C8C116E9B0FDA746DD53", hash_generated_method = "E1C9E3F7C5F37E93374A232562C01032")
     public void acquireReference() {
         {
             {
@@ -50,7 +50,7 @@ public abstract class SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.798 -0400", hash_original_method = "9A856B4F8EE35DA89AAA5714CDA66263", hash_generated_method = "4A17BBD9A435ABAC8FFB392A51AB3C22")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.332 -0400", hash_original_method = "9A856B4F8EE35DA89AAA5714CDA66263", hash_generated_method = "4A17BBD9A435ABAC8FFB392A51AB3C22")
     public void releaseReference() {
         boolean refCountIsZero;
         refCountIsZero = false;
@@ -71,7 +71,7 @@ public abstract class SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.799 -0400", hash_original_method = "09E098F074A456ED367ED67E041E3D74", hash_generated_method = "EE972F60D52976575418ABA56B93EE87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.333 -0400", hash_original_method = "09E098F074A456ED367ED67E041E3D74", hash_generated_method = "EE972F60D52976575418ABA56B93EE87")
     public void releaseReferenceFromContainer() {
         boolean refCountIsZero;
         refCountIsZero = false;
@@ -92,9 +92,9 @@ public abstract class SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:09.815 -0400", hash_original_method = "DF04C7F4D466F671C367EF5E9F18369F", hash_generated_method = "6AF6209F2B67654F0A776214CE3094B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.347 -0400", hash_original_method = "DF04C7F4D466F671C367EF5E9F18369F", hash_generated_method = "2EBB977BDD9B1AA49310569F4D73C09F")
     private String getObjInfo() {
-        String varB4EAC82CA7396A68D541C85D26508E83_177880668 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_200670661 = null; //Variable for return #1
         StringBuilder buff;
         buff = new StringBuilder();
         buff.append(this.getClass().getName());
@@ -112,9 +112,9 @@ public abstract class SQLiteClosable {
             buff.append(((CursorWindow)this).getStartPosition());
         } //End block
         buff.append(") ");
-        varB4EAC82CA7396A68D541C85D26508E83_177880668 = buff.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_177880668.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_177880668;
+        varB4EAC82CA7396A68D541C85D26508E83_200670661 = buff.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_200670661.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_200670661;
         // ---------- Original Method ----------
         //StringBuilder buff = new StringBuilder();
         //buff.append(this.getClass().getName());

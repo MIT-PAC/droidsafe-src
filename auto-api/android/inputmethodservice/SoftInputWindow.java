@@ -17,14 +17,14 @@ import android.view.MotionEvent;
 import android.view.WindowManager;
 
 class SoftInputWindow extends Dialog {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.796 -0400", hash_original_field = "6161C99CAA240E7F1DA73FC1A16EB6C7", hash_generated_field = "9399A9196ADA53199056D05EEBB238C5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.464 -0400", hash_original_field = "6161C99CAA240E7F1DA73FC1A16EB6C7", hash_generated_field = "9399A9196ADA53199056D05EEBB238C5")
 
     KeyEvent.DispatcherState mDispatcherState;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.796 -0400", hash_original_field = "6B97A3575489EA5B3E0E3FCBACC05EED", hash_generated_field = "E67C945376AAE00DB9440E3399BD8397")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.464 -0400", hash_original_field = "6B97A3575489EA5B3E0E3FCBACC05EED", hash_generated_field = "E67C945376AAE00DB9440E3399BD8397")
 
     private Rect mBounds = new Rect();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.797 -0400", hash_original_method = "CB2FD50E46BEAA500E1BA02FF1CB309D", hash_generated_method = "862830495DEED3270CE4D060E0B3C77E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.477 -0400", hash_original_method = "CB2FD50E46BEAA500E1BA02FF1CB309D", hash_generated_method = "862830495DEED3270CE4D060E0B3C77E")
     public  SoftInputWindow(Context context, int theme,
             KeyEvent.DispatcherState dispatcherState) {
         super(context, theme);
@@ -38,7 +38,7 @@ class SoftInputWindow extends Dialog {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.798 -0400", hash_original_method = "DE19D8588D226C63B985BFE529D19F5B", hash_generated_method = "E26DCFA60127C843E9D6161F280B84E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.478 -0400", hash_original_method = "DE19D8588D226C63B985BFE529D19F5B", hash_generated_method = "E26DCFA60127C843E9D6161F280B84E7")
     public void setToken(IBinder token) {
         WindowManager.LayoutParams lp;
         lp = getWindow().getAttributes();
@@ -52,7 +52,7 @@ class SoftInputWindow extends Dialog {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.798 -0400", hash_original_method = "948733408C213A09362904F3B801CDB6", hash_generated_method = "59E933446D859E78A9DFCA3ACB9A1752")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.479 -0400", hash_original_method = "948733408C213A09362904F3B801CDB6", hash_generated_method = "59E933446D859E78A9DFCA3ACB9A1752")
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -65,15 +65,15 @@ class SoftInputWindow extends Dialog {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.818 -0400", hash_original_method = "6F026F4BC5B101183B4B9B4DF989B709", hash_generated_method = "4A98DBFA594AC7882511C8A9FF5576DA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.487 -0400", hash_original_method = "6F026F4BC5B101183B4B9B4DF989B709", hash_generated_method = "ACDD3DCCF7519E8C6A4BC122E0896A6C")
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         getWindow().getDecorView().getHitRect(mBounds);
         {
-            boolean varE6125949DD9BCF7F5B590BF41FEF9107_463078856 = (ev.isWithinBoundsNoHistory(mBounds.left, mBounds.top,
+            boolean varE6125949DD9BCF7F5B590BF41FEF9107_1667361601 = (ev.isWithinBoundsNoHistory(mBounds.left, mBounds.top,
                 mBounds.right - 1, mBounds.bottom - 1));
             {
-                boolean varBD2C793D269E3760D25440F90251F71E_1187224311 = (super.dispatchTouchEvent(ev));
+                boolean varBD2C793D269E3760D25440F90251F71E_1275115314 = (super.dispatchTouchEvent(ev));
             } //End block
             {
                 MotionEvent temp;
@@ -85,8 +85,8 @@ class SoftInputWindow extends Dialog {
             } //End block
         } //End collapsed parenthetic
         addTaint(ev.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2113440679 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2113440679;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1765024382 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1765024382;
         // ---------- Original Method ----------
         //getWindow().getDecorView().getHitRect(mBounds);
         //if (ev.isWithinBoundsNoHistory(mBounds.left, mBounds.top,
@@ -102,12 +102,12 @@ class SoftInputWindow extends Dialog {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.819 -0400", hash_original_method = "9B0D08AECE95E0C5A74220E56FAF5BBC", hash_generated_method = "427BB67E0E118EB3FF0DAF123280D6A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.502 -0400", hash_original_method = "9B0D08AECE95E0C5A74220E56FAF5BBC", hash_generated_method = "4D56D23393CE5E5633DD2EA97FDE62E5")
     public int getSize() {
         WindowManager.LayoutParams lp;
         lp = getWindow().getAttributes();
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923473789 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1923473789;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_250990094 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_250990094;
         // ---------- Original Method ----------
         //WindowManager.LayoutParams lp = getWindow().getAttributes();
         //if (lp.gravity == Gravity.TOP || lp.gravity == Gravity.BOTTOM) {
@@ -118,7 +118,7 @@ class SoftInputWindow extends Dialog {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.820 -0400", hash_original_method = "32B4C6FEAFD2BF15DEEB55504FF34518", hash_generated_method = "98F7B092179709E0DBD3C1C6EA2CBE3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.504 -0400", hash_original_method = "32B4C6FEAFD2BF15DEEB55504FF34518", hash_generated_method = "98F7B092179709E0DBD3C1C6EA2CBE3B")
     public void setSize(int size) {
         WindowManager.LayoutParams lp;
         lp = getWindow().getAttributes();
@@ -145,7 +145,7 @@ class SoftInputWindow extends Dialog {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.840 -0400", hash_original_method = "E3269318E29BDA61BD7E82E14CD77997", hash_generated_method = "1EEFACA54543E36CA925CEBA2A9439D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.512 -0400", hash_original_method = "E3269318E29BDA61BD7E82E14CD77997", hash_generated_method = "1EEFACA54543E36CA925CEBA2A9439D6")
     public void setGravity(int gravity) {
         WindowManager.LayoutParams lp;
         lp = getWindow().getAttributes();
@@ -176,7 +176,7 @@ class SoftInputWindow extends Dialog {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:15.843 -0400", hash_original_method = "F6A5F856FF7B400209C66879FBEA71E5", hash_generated_method = "4AC41C51771A4A810F18DCEEB6129B80")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:17.539 -0400", hash_original_method = "F6A5F856FF7B400209C66879FBEA71E5", hash_generated_method = "4AC41C51771A4A810F18DCEEB6129B80")
     private void initDockWindow() {
         WindowManager.LayoutParams lp;
         lp = getWindow().getAttributes();

@@ -13,7 +13,7 @@ import gov.nist.javax.sip.header.*;
 
 public class RequestLineParser extends Parser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.186 -0400", hash_original_method = "9E54F2AF74A618ACEB8F17B65C16A48F", hash_generated_method = "ECC9D14D924F666200406F406E44BA1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.082 -0400", hash_original_method = "9E54F2AF74A618ACEB8F17B65C16A48F", hash_generated_method = "ECC9D14D924F666200406F406E44BA1E")
     public  RequestLineParser(String requestLine) {
         this.lexer = new Lexer("method_keywordLexer", requestLine);
         addTaint(requestLine.getTaint());
@@ -22,7 +22,7 @@ public class RequestLineParser extends Parser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.186 -0400", hash_original_method = "A6666834E60C7B51DE2E6BABDAF9B193", hash_generated_method = "11B589A13EED926FDBCAB426A03A5F5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.083 -0400", hash_original_method = "A6666834E60C7B51DE2E6BABDAF9B193", hash_generated_method = "11B589A13EED926FDBCAB426A03A5F5F")
     public  RequestLineParser(Lexer lexer) {
         this.lexer = lexer;
         this.lexer.selectLexer("method_keywordLexer");
@@ -33,9 +33,9 @@ public class RequestLineParser extends Parser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.187 -0400", hash_original_method = "3F5CD164E270AAF338C0D4B97DF78E19", hash_generated_method = "21C458BC5EC0916095BE83CA6E384547")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.083 -0400", hash_original_method = "3F5CD164E270AAF338C0D4B97DF78E19", hash_generated_method = "4AC671F4DB65C7F51A50D730C53C137E")
     public RequestLine parse() throws ParseException {
-        RequestLine varB4EAC82CA7396A68D541C85D26508E83_1684821872 = null; //Variable for return #1
+        RequestLine varB4EAC82CA7396A68D541C85D26508E83_1118053072 = null; //Variable for return #1
         dbg_enter("parse");
         try 
         {
@@ -58,14 +58,14 @@ public class RequestLineParser extends Parser {
             retval.setSipVersion(v);
             lexer.SPorHT();
             lexer.match('\n');
-            varB4EAC82CA7396A68D541C85D26508E83_1684821872 = retval;
+            varB4EAC82CA7396A68D541C85D26508E83_1118053072 = retval;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1684821872.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1684821872;
+        varB4EAC82CA7396A68D541C85D26508E83_1118053072.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1118053072;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("parse");

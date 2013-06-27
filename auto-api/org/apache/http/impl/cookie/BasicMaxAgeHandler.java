@@ -13,14 +13,14 @@ import org.apache.http.cookie.SetCookie;
 
 public class BasicMaxAgeHandler extends AbstractCookieAttributeHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.138 -0400", hash_original_method = "B0446CDE16622CCB68895B794F750D42", hash_generated_method = "DA4D840327CEBBF0C24EEEA6E9EA8A83")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.266 -0400", hash_original_method = "B0446CDE16622CCB68895B794F750D42", hash_generated_method = "DA4D840327CEBBF0C24EEEA6E9EA8A83")
     public  BasicMaxAgeHandler() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.138 -0400", hash_original_method = "A8EE51F3135F41C00ED9344CF5263715", hash_generated_method = "CBDC93842CA7828D6280A659FE206BC7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.322 -0400", hash_original_method = "A8EE51F3135F41C00ED9344CF5263715", hash_generated_method = "CBDC93842CA7828D6280A659FE206BC7")
     public void parse(final SetCookie cookie, final String value) throws MalformedCookieException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");

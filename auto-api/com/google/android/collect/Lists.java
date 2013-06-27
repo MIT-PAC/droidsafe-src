@@ -12,7 +12,7 @@ import java.util.Collections;
 
 public class Lists {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:28.691 -0400", hash_original_method = "440C6E9BC1692F21363DE1B8F62E6180", hash_generated_method = "440C6E9BC1692F21363DE1B8F62E6180")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.080 -0400", hash_original_method = "440C6E9BC1692F21363DE1B8F62E6180", hash_generated_method = "440C6E9BC1692F21363DE1B8F62E6180")
     public Lists ()
     {
         //Synthesized constructor

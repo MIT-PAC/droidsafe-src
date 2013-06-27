@@ -17,30 +17,30 @@ import java.util.HashSet;
 import java.util.List;
 
 public class FileCleaningTracker {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.655 -0400", hash_original_field = "C7F7B8E1996E1473C0F68167EB1C48D9", hash_generated_field = "213531C24E01D75B6586561286CC3D19")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.772 -0400", hash_original_field = "C7F7B8E1996E1473C0F68167EB1C48D9", hash_generated_field = "213531C24E01D75B6586561286CC3D19")
 
     ReferenceQueue<Object> q = new ReferenceQueue<Object>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.655 -0400", hash_original_field = "2A7D757FDCBA664FEF63517E768369A2", hash_generated_field = "14A8C4C39789CC6394C0F07624C236D3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.772 -0400", hash_original_field = "2A7D757FDCBA664FEF63517E768369A2", hash_generated_field = "14A8C4C39789CC6394C0F07624C236D3")
 
     Collection<Tracker> trackers = Collections.synchronizedSet(new HashSet<Tracker>());
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.655 -0400", hash_original_field = "C1AC752923DF7FFB821113227C5B1909", hash_generated_field = "AC2F776E50A8843D73CFC7D977CF20B7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.772 -0400", hash_original_field = "C1AC752923DF7FFB821113227C5B1909", hash_generated_field = "AC2F776E50A8843D73CFC7D977CF20B7")
 
     List<String> deleteFailures = Collections.synchronizedList(new ArrayList<String>());
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.655 -0400", hash_original_field = "2B3F18F02063A34FC73F392335C02AA3", hash_generated_field = "FC69D0639783984C922B494B12D9334F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.772 -0400", hash_original_field = "2B3F18F02063A34FC73F392335C02AA3", hash_generated_field = "FC69D0639783984C922B494B12D9334F")
 
     volatile boolean exitWhenFinished = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.655 -0400", hash_original_field = "8F9C4BE97DDE5A4499A5CA37360E6FAE", hash_generated_field = "FF1EED7D363F9E58AB5605C1B22B97F7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.772 -0400", hash_original_field = "8F9C4BE97DDE5A4499A5CA37360E6FAE", hash_generated_field = "FF1EED7D363F9E58AB5605C1B22B97F7")
 
     Thread reaper;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.655 -0400", hash_original_method = "426A3F67BDF174C11E9DF835FA4ECA6C", hash_generated_method = "426A3F67BDF174C11E9DF835FA4ECA6C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.772 -0400", hash_original_method = "426A3F67BDF174C11E9DF835FA4ECA6C", hash_generated_method = "426A3F67BDF174C11E9DF835FA4ECA6C")
     public FileCleaningTracker ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.655 -0400", hash_original_method = "F07020199FD227FDE709D6E57E38422A", hash_generated_method = "7529397C6148DE80D8E9BE7F8F88FD3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.776 -0400", hash_original_method = "F07020199FD227FDE709D6E57E38422A", hash_generated_method = "7529397C6148DE80D8E9BE7F8F88FD3B")
     public void track(File file, Object marker) {
         track(file, marker, (FileDeleteStrategy) null);
         addTaint(file.getTaint());
@@ -50,7 +50,7 @@ public class FileCleaningTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.659 -0400", hash_original_method = "86C594F1F9E71F35FFEC0A77C084143C", hash_generated_method = "43196371CE61D98A9CCE25CBB092AE7E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.776 -0400", hash_original_method = "86C594F1F9E71F35FFEC0A77C084143C", hash_generated_method = "43196371CE61D98A9CCE25CBB092AE7E")
     public void track(File file, Object marker, FileDeleteStrategy deleteStrategy) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("The file must not be null");
@@ -67,7 +67,7 @@ public class FileCleaningTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.660 -0400", hash_original_method = "A3E86DDC0D794AB85A77D2E23B6B45C0", hash_generated_method = "3A8AAC58FD4C7257046E8CED49B8396D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.776 -0400", hash_original_method = "A3E86DDC0D794AB85A77D2E23B6B45C0", hash_generated_method = "3A8AAC58FD4C7257046E8CED49B8396D")
     public void track(String path, Object marker) {
         track(path, marker, (FileDeleteStrategy) null);
         addTaint(path.getTaint());
@@ -77,7 +77,7 @@ public class FileCleaningTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.660 -0400", hash_original_method = "543B22C2EC07CA4C1AEB003D5BB6B718", hash_generated_method = "CB8F452D5BC4BCEFA1929E4A70B2F473")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.782 -0400", hash_original_method = "543B22C2EC07CA4C1AEB003D5BB6B718", hash_generated_method = "CB8F452D5BC4BCEFA1929E4A70B2F473")
     public void track(String path, Object marker, FileDeleteStrategy deleteStrategy) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("The path must not be null");
@@ -94,7 +94,7 @@ public class FileCleaningTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.661 -0400", hash_original_method = "954E11DA9D99B56A3E0C00DDF1274471", hash_generated_method = "DCF3B97236E7A9C29FEB57A01A9C52B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.791 -0400", hash_original_method = "954E11DA9D99B56A3E0C00DDF1274471", hash_generated_method = "DCF3B97236E7A9C29FEB57A01A9C52B9")
     private synchronized void addTracker(String path, Object marker, FileDeleteStrategy deleteStrategy) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("No new trackers can be added once exitWhenFinished() is called");
@@ -119,28 +119,28 @@ public class FileCleaningTracker {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.663 -0400", hash_original_method = "0EFA130573A478F2919BB30F1541B30D", hash_generated_method = "C6817C8B3DD5BC66490EFCB5CF4B988B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.791 -0400", hash_original_method = "0EFA130573A478F2919BB30F1541B30D", hash_generated_method = "65FDC0477CB09CC67981F22B038D2C8D")
     public int getTrackCount() {
-        int var7853BB5C1D06EADAC5F74F0DBD6FDCE0_848029453 = (trackers.size());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1246861243 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1246861243;
+        int var7853BB5C1D06EADAC5F74F0DBD6FDCE0_1913805799 = (trackers.size());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1424757692 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1424757692;
         // ---------- Original Method ----------
         //return trackers.size();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.663 -0400", hash_original_method = "643CA49BD82C37C2D2981C66A57227C8", hash_generated_method = "0B3D107E72672B2F0581A4392DB6692E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.792 -0400", hash_original_method = "643CA49BD82C37C2D2981C66A57227C8", hash_generated_method = "AA12FA97DA21A3A4925D3809115EFF8B")
     public List<String> getDeleteFailures() {
-        List<String> varB4EAC82CA7396A68D541C85D26508E83_1557461736 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1557461736 = deleteFailures;
-        varB4EAC82CA7396A68D541C85D26508E83_1557461736.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1557461736;
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_1160055555 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1160055555 = deleteFailures;
+        varB4EAC82CA7396A68D541C85D26508E83_1160055555.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1160055555;
         // ---------- Original Method ----------
         //return deleteFailures;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.663 -0400", hash_original_method = "4DFB4596FA2073A710F42E9B9443E144", hash_generated_method = "9177AAD41BE6B5E70CE3C0F8D3C5AC38")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.792 -0400", hash_original_method = "4DFB4596FA2073A710F42E9B9443E144", hash_generated_method = "9177AAD41BE6B5E70CE3C0F8D3C5AC38")
     public synchronized void exitWhenFinished() {
         exitWhenFinished = true;
         {
@@ -160,7 +160,7 @@ public class FileCleaningTracker {
     
     private final class Reaper extends Thread {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.674 -0400", hash_original_method = "8A2C8203FCA0486478B916225D009300", hash_generated_method = "8903C57A96C128C901B95AAA66D3F861")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.792 -0400", hash_original_method = "8A2C8203FCA0486478B916225D009300", hash_generated_method = "8903C57A96C128C901B95AAA66D3F861")
           Reaper() {
             super("File Reaper");
             setPriority(Thread.MAX_PRIORITY);
@@ -171,11 +171,11 @@ public class FileCleaningTracker {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.674 -0400", hash_original_method = "63BD1C8F3C17781753BA16C837ECEC6F", hash_generated_method = "3E8225654C459232FABA9FC91D504E3F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.793 -0400", hash_original_method = "63BD1C8F3C17781753BA16C837ECEC6F", hash_generated_method = "34B923106C5EBBDBBD05DE6F7C422DE6")
         @Override
         public void run() {
             {
-                boolean var8ADA4FBD2A52A519FCE8DACC390EADFC_2000420466 = (exitWhenFinished == false || trackers.size() > 0);
+                boolean var8ADA4FBD2A52A519FCE8DACC390EADFC_1364733817 = (exitWhenFinished == false || trackers.size() > 0);
                 {
                     try 
                     {
@@ -183,7 +183,7 @@ public class FileCleaningTracker {
                         tracker = (Tracker) q.remove();
                         trackers.remove(tracker);
                         {
-                            boolean var99BD88113948D5AC8A3BFE23164FCEB4_1663233076 = (!tracker.delete());
+                            boolean var99BD88113948D5AC8A3BFE23164FCEB4_13605081 = (!tracker.delete());
                             {
                                 deleteFailures.add(tracker.getPath());
                             } //End block
@@ -215,14 +215,14 @@ public class FileCleaningTracker {
 
     
     private static final class Tracker extends PhantomReference<Object> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.675 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "E58B218DC2BC9CF2BD65F7BE2F7C20BE")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.793 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "E58B218DC2BC9CF2BD65F7BE2F7C20BE")
 
         private String path;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.675 -0400", hash_original_field = "747B2CCEC93E4A0453F3DE516A284004", hash_generated_field = "B4FF12F6828CA41D190DAA3E50AD77C4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.793 -0400", hash_original_field = "747B2CCEC93E4A0453F3DE516A284004", hash_generated_field = "B4FF12F6828CA41D190DAA3E50AD77C4")
 
         private FileDeleteStrategy deleteStrategy;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.675 -0400", hash_original_method = "D194994672CF72D739AD2FC5B3B2AA56", hash_generated_method = "01AFBCAB55A574A3B70B684BEB4BB5F4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.793 -0400", hash_original_method = "D194994672CF72D739AD2FC5B3B2AA56", hash_generated_method = "01AFBCAB55A574A3B70B684BEB4BB5F4")
           Tracker(String path, FileDeleteStrategy deleteStrategy, Object marker, ReferenceQueue<? super Object> queue) {
             super(marker, queue);
             this.path = path;
@@ -235,22 +235,22 @@ public class FileCleaningTracker {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.682 -0400", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "5D201A01D3FD30C71041CDDD88574D59")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.794 -0400", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "60A1A6921E778C2CE4CDA2FD3656F662")
         public String getPath() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1805857364 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1805857364 = path;
-            varB4EAC82CA7396A68D541C85D26508E83_1805857364.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1805857364;
+            String varB4EAC82CA7396A68D541C85D26508E83_1931401795 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1931401795 = path;
+            varB4EAC82CA7396A68D541C85D26508E83_1931401795.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1931401795;
             // ---------- Original Method ----------
             //return path;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.682 -0400", hash_original_method = "D48AE50A84087A4C1BFE9CE0B93380B9", hash_generated_method = "A8583F9B7974503B5A88DFEED969AE7F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.794 -0400", hash_original_method = "D48AE50A84087A4C1BFE9CE0B93380B9", hash_generated_method = "D9614402C596C91157293ECCB52E4A7A")
         public boolean delete() {
-            boolean var16512D20B0098962570808FE3BD35F8A_300269423 = (deleteStrategy.deleteQuietly(new File(path)));
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1019061114 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1019061114;
+            boolean var16512D20B0098962570808FE3BD35F8A_1696819007 = (deleteStrategy.deleteQuietly(new File(path)));
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_275619264 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_275619264;
             // ---------- Original Method ----------
             //return deleteStrategy.deleteQuietly(new File(path));
         }

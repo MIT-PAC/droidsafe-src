@@ -13,14 +13,14 @@ import javax.sip.header.ExtensionHeader;
 import gov.nist.javax.sip.header.ParametersHeader;
 
 public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetworkInfoHeader, ExtensionHeader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.191 -0400", hash_original_field = "C094CFF5A400E24D3E32C2F411A1B793", hash_generated_field = "4265F4D4355352003752ED1DA82667CD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.248 -0400", hash_original_field = "C094CFF5A400E24D3E32C2F411A1B793", hash_generated_field = "4265F4D4355352003752ED1DA82667CD")
 
     private String accessType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.192 -0400", hash_original_field = "849A050A2DDE1357870F15A44C8398CE", hash_generated_field = "0CDE7F70FD33947CCE71E89D96DB001C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.248 -0400", hash_original_field = "849A050A2DDE1357870F15A44C8398CE", hash_generated_field = "0CDE7F70FD33947CCE71E89D96DB001C")
 
     private Object extendAccessInfo;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.192 -0400", hash_original_method = "DEE74A53744AC3C87B8E5D43A4E5AAF1", hash_generated_method = "65F3138D03DFD60A3C1CA7CFEA9ABE25")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.312 -0400", hash_original_method = "DEE74A53744AC3C87B8E5D43A4E5AAF1", hash_generated_method = "65F3138D03DFD60A3C1CA7CFEA9ABE25")
     public  PAccessNetworkInfo() {
         super(PAccessNetworkInfoHeader.NAME);
         parameters.setSeparator(SEMICOLON);
@@ -29,7 +29,7 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.192 -0400", hash_original_method = "6534876DB72B3A707C2CB418BA871B14", hash_generated_method = "C6C4AC41683770AA77BF93DC1DFE5880")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.313 -0400", hash_original_method = "6534876DB72B3A707C2CB418BA871B14", hash_generated_method = "C6C4AC41683770AA77BF93DC1DFE5880")
     public  PAccessNetworkInfo(String accessTypeVal) {
         this();
         setAccessType(accessTypeVal);
@@ -39,7 +39,7 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.192 -0400", hash_original_method = "D6FCF3C8B020A71473FC0BA5D5C4EFFC", hash_generated_method = "FD58C0FA587CA80AB39107E8E6A6EC63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.314 -0400", hash_original_method = "D6FCF3C8B020A71473FC0BA5D5C4EFFC", hash_generated_method = "FD58C0FA587CA80AB39107E8E6A6EC63")
     public void setAccessType(String accessTypeVal) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                     "JAIN-SIP Exception, "
@@ -54,18 +54,18 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.193 -0400", hash_original_method = "7B5E071ADED3A6B6E006FB21C0442CF7", hash_generated_method = "92322149580AF264ACFD8468A42C9B53")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.314 -0400", hash_original_method = "7B5E071ADED3A6B6E006FB21C0442CF7", hash_generated_method = "91CA65B65C3109289475F75A46983444")
     public String getAccessType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_789366949 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_789366949 = accessType;
-        varB4EAC82CA7396A68D541C85D26508E83_789366949.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_789366949;
+        String varB4EAC82CA7396A68D541C85D26508E83_1425292764 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1425292764 = accessType;
+        varB4EAC82CA7396A68D541C85D26508E83_1425292764.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1425292764;
         // ---------- Original Method ----------
         //return accessType;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.193 -0400", hash_original_method = "E9F3B4E9864C75E8FFBFA10460D6CC15", hash_generated_method = "E3564B435DF915E7951FB01017599309")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.319 -0400", hash_original_method = "E9F3B4E9864C75E8FFBFA10460D6CC15", hash_generated_method = "E3564B435DF915E7951FB01017599309")
     public void setCGI3GPP(String cgi) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                     "JAIN-SIP Exception, "
@@ -81,18 +81,18 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.194 -0400", hash_original_method = "DB7CBC31CF308121D9BAFEDB35CD4092", hash_generated_method = "09CE3C6A38FA60BA2D0E9CE4B33AA722")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.320 -0400", hash_original_method = "DB7CBC31CF308121D9BAFEDB35CD4092", hash_generated_method = "E7AA5354E90A549FAA833C5D91441D63")
     public String getCGI3GPP() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1667510832 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1667510832 = getParameter(ParameterNamesIms.CGI_3GPP);
-        varB4EAC82CA7396A68D541C85D26508E83_1667510832.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1667510832;
+        String varB4EAC82CA7396A68D541C85D26508E83_883355736 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_883355736 = getParameter(ParameterNamesIms.CGI_3GPP);
+        varB4EAC82CA7396A68D541C85D26508E83_883355736.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_883355736;
         // ---------- Original Method ----------
         //return getParameter(ParameterNamesIms.CGI_3GPP);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.198 -0400", hash_original_method = "3441B9130B7E2309E30E20A20941366E", hash_generated_method = "C8A38BFCB49DE546804D99E3416A9ECB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.320 -0400", hash_original_method = "3441B9130B7E2309E30E20A20941366E", hash_generated_method = "C8A38BFCB49DE546804D99E3416A9ECB")
     public void setUtranCellID3GPP(String utranCellID) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                     "JAIN-SIP Exception, "
@@ -108,18 +108,18 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.208 -0400", hash_original_method = "0ADE7B7C3AF1E996E987AFD2A2268F3F", hash_generated_method = "32377D03A919CA6814E224D7ACB92F8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.321 -0400", hash_original_method = "0ADE7B7C3AF1E996E987AFD2A2268F3F", hash_generated_method = "77BC1B0DCC9209E766C124E0BADFF139")
     public String getUtranCellID3GPP() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1315150908 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1315150908 = getParameter(ParameterNamesIms.UTRAN_CELL_ID_3GPP);
-        varB4EAC82CA7396A68D541C85D26508E83_1315150908.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1315150908;
+        String varB4EAC82CA7396A68D541C85D26508E83_781504471 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_781504471 = getParameter(ParameterNamesIms.UTRAN_CELL_ID_3GPP);
+        varB4EAC82CA7396A68D541C85D26508E83_781504471.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_781504471;
         // ---------- Original Method ----------
         //return getParameter(ParameterNamesIms.UTRAN_CELL_ID_3GPP);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.208 -0400", hash_original_method = "36CD4D2ED6BE8C30DC84C656A727D43F", hash_generated_method = "78AF17FA9876266D15C7DE38B05C1D2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.324 -0400", hash_original_method = "36CD4D2ED6BE8C30DC84C656A727D43F", hash_generated_method = "78AF17FA9876266D15C7DE38B05C1D2A")
     public void setDSLLocation(String dslLocation) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                     "JAIN-SIP Exception, "
@@ -135,18 +135,18 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.209 -0400", hash_original_method = "4D20CBE53C80D56010466434BFFF6884", hash_generated_method = "19FAF8218166E01B028006E16071334E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.325 -0400", hash_original_method = "4D20CBE53C80D56010466434BFFF6884", hash_generated_method = "ABB072B44A079D4AF666A3D897D6C672")
     public String getDSLLocation() {
-        String varB4EAC82CA7396A68D541C85D26508E83_705202261 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_705202261 = getParameter(ParameterNamesIms.DSL_LOCATION);
-        varB4EAC82CA7396A68D541C85D26508E83_705202261.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_705202261;
+        String varB4EAC82CA7396A68D541C85D26508E83_1177131488 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1177131488 = getParameter(ParameterNamesIms.DSL_LOCATION);
+        varB4EAC82CA7396A68D541C85D26508E83_1177131488.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1177131488;
         // ---------- Original Method ----------
         //return getParameter(ParameterNamesIms.DSL_LOCATION);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.209 -0400", hash_original_method = "8FAF3F13595D3CEC54730D14353CA65A", hash_generated_method = "70B8D3A18F1D71B85C3EB7CF16A47BBA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.344 -0400", hash_original_method = "8FAF3F13595D3CEC54730D14353CA65A", hash_generated_method = "70B8D3A18F1D71B85C3EB7CF16A47BBA")
     public void setCI3GPP2(String ci3Gpp2) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                     "JAIN-SIP Exception, "
@@ -162,21 +162,21 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.210 -0400", hash_original_method = "18AE63A32B787BFBE4E7AAC618BF3721", hash_generated_method = "66A5ECDC19672440448F5DD03DE18852")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.345 -0400", hash_original_method = "18AE63A32B787BFBE4E7AAC618BF3721", hash_generated_method = "236BE1EC391D5E886AE2C0C0E4A246F8")
     public String getCI3GPP2() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1530679185 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1530679185 = getParameter(ParameterNamesIms.CI_3GPP2);
-        varB4EAC82CA7396A68D541C85D26508E83_1530679185.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1530679185;
+        String varB4EAC82CA7396A68D541C85D26508E83_886702156 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_886702156 = getParameter(ParameterNamesIms.CI_3GPP2);
+        varB4EAC82CA7396A68D541C85D26508E83_886702156.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_886702156;
         // ---------- Original Method ----------
         //return getParameter(ParameterNamesIms.CI_3GPP2);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.223 -0400", hash_original_method = "EBE4690A0158C298C62212A7BC5E46A3", hash_generated_method = "6F277F90600ADF6B9AF0893A8E58A5EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.346 -0400", hash_original_method = "EBE4690A0158C298C62212A7BC5E46A3", hash_generated_method = "69E7BCC487B0B29747F4314DA344431F")
     public void setParameter(String name, Object value) {
         {
-            boolean varD2413D96B5F8C50CF3206E0562B11CE3_1728804628 = (name.equalsIgnoreCase(ParameterNamesIms.CGI_3GPP)
+            boolean varD2413D96B5F8C50CF3206E0562B11CE3_13683445 = (name.equalsIgnoreCase(ParameterNamesIms.CGI_3GPP)
                 || name.equalsIgnoreCase(ParameterNamesIms.UTRAN_CELL_ID_3GPP)
                 || name.equalsIgnoreCase(ParameterNamesIms.DSL_LOCATION)
                 || name.equalsIgnoreCase(ParameterNamesIms.CI_3GPP2));
@@ -209,7 +209,7 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.224 -0400", hash_original_method = "14EC79395C271902F7A8954DCD0CA9FB", hash_generated_method = "B7BE74D4C25222EE2CA299844C6F3829")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.346 -0400", hash_original_method = "14EC79395C271902F7A8954DCD0CA9FB", hash_generated_method = "B7BE74D4C25222EE2CA299844C6F3829")
     public void setExtensionAccessInfo(Object extendAccessInfo) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                     "JAIN-SIP Exception, "
@@ -224,42 +224,42 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.224 -0400", hash_original_method = "1DDCE9F900020BBCC56ECC227A2A793D", hash_generated_method = "0091D2C0D1839E6DE8025F4BBDF85ECF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.347 -0400", hash_original_method = "1DDCE9F900020BBCC56ECC227A2A793D", hash_generated_method = "C008262C7A1080241156EB2F09838D0E")
     public Object getExtensionAccessInfo() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1475378023 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1475378023 = this.extendAccessInfo;
-        varB4EAC82CA7396A68D541C85D26508E83_1475378023.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1475378023;
+        Object varB4EAC82CA7396A68D541C85D26508E83_1208421380 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1208421380 = this.extendAccessInfo;
+        varB4EAC82CA7396A68D541C85D26508E83_1208421380.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1208421380;
         // ---------- Original Method ----------
         //return this.extendAccessInfo;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.232 -0400", hash_original_method = "1EAFA3D993C26925ABBC9977DB42C837", hash_generated_method = "FF5AECEFE99CBA224EBE94DB0911BB9B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.364 -0400", hash_original_method = "1EAFA3D993C26925ABBC9977DB42C837", hash_generated_method = "EF3689171799E61179201C338FD8C94F")
     protected String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_830434840 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1318646590 = null; //Variable for return #1
         StringBuffer encoding;
         encoding = new StringBuffer();
         {
-            boolean var0C52BDEAC32FB4CA69D41C41117E9F63_178482136 = (getAccessType() != null);
+            boolean var0C52BDEAC32FB4CA69D41C41117E9F63_1942750208 = (getAccessType() != null);
             encoding.append(getAccessType());
         } //End collapsed parenthetic
         {
-            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_1124676594 = (!parameters.isEmpty());
+            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_912924632 = (!parameters.isEmpty());
             {
                 encoding.append(SEMICOLON + SP + this.parameters.encode());
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varA51DF3E70B4B6F22AEF496F2D20C8BB1_1225206178 = (getExtensionAccessInfo() != null);
+            boolean varA51DF3E70B4B6F22AEF496F2D20C8BB1_506018767 = (getExtensionAccessInfo() != null);
             {
                 encoding.append(SEMICOLON + SP
                     + getExtensionAccessInfo().toString());
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_830434840 = encoding.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_830434840.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_830434840;
+        varB4EAC82CA7396A68D541C85D26508E83_1318646590 = encoding.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1318646590.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1318646590;
         // ---------- Original Method ----------
         //StringBuffer encoding = new StringBuffer();
         //if (getAccessType() != null)
@@ -275,7 +275,7 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.232 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.366 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
     public void setValue(String value) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new ParseException(value, 0);
         addTaint(value.getTaint());
@@ -284,25 +284,25 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.238 -0400", hash_original_method = "3C3E67AEA43A987A78987E8A7C9369D7", hash_generated_method = "F8D0247EE5D734096427E8EF0B54FD3A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.378 -0400", hash_original_method = "3C3E67AEA43A987A78987E8A7C9369D7", hash_generated_method = "E5628B7B4C7AF88C962C3822E77CE1C5")
     public boolean equals(Object other) {
-        boolean varA1F3002C153A325AFDA4385B75CBB9D0_781210953 = ((other instanceof PAccessNetworkInfoHeader) && super.equals(other));
+        boolean varA1F3002C153A325AFDA4385B75CBB9D0_106748497 = ((other instanceof PAccessNetworkInfoHeader) && super.equals(other));
         addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1784583934 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1784583934;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1944414941 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1944414941;
         // ---------- Original Method ----------
         //return (other instanceof PAccessNetworkInfoHeader) && super.equals(other);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.249 -0400", hash_original_method = "80A80943646C1EE5D35A726D4DDD4538", hash_generated_method = "ACDB2A9C3C0B1208883988C7698CF9D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.379 -0400", hash_original_method = "80A80943646C1EE5D35A726D4DDD4538", hash_generated_method = "C1E1CEFF3814DCEF4B60DE1BCB958370")
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_183861918 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1685813941 = null; //Variable for return #1
         PAccessNetworkInfo retval;
         retval = (PAccessNetworkInfo) super.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_183861918 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_183861918.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_183861918;
+        varB4EAC82CA7396A68D541C85D26508E83_1685813941 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_1685813941.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1685813941;
         // ---------- Original Method ----------
         //PAccessNetworkInfo retval = (PAccessNetworkInfo) super.clone();
         //return retval;

@@ -13,42 +13,42 @@ import com.android.internal.util.ArrayUtils;
 import java.lang.reflect.Array;
 
 public class SpannableStringBuilder implements CharSequence, GetChars, Spannable, Editable, Appendable, GraphicsOperations {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.847 -0400", hash_original_field = "8EF1F84508C44788B91A5266E4C71739", hash_generated_field = "489605ABB55A73F593690CC2882D1D5E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.738 -0400", hash_original_field = "8EF1F84508C44788B91A5266E4C71739", hash_generated_field = "489605ABB55A73F593690CC2882D1D5E")
 
     private InputFilter[] mFilters = NO_FILTERS;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.848 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "6CB0C9E6186F94D00B15A6B38EEADB93")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.738 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "6CB0C9E6186F94D00B15A6B38EEADB93")
 
     private char[] mText;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.848 -0400", hash_original_field = "E921ED8427024DA9A4D36EB8F6C8FE82", hash_generated_field = "40EFB69E13F0CDEFCFD23CECDA09F21F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.738 -0400", hash_original_field = "E921ED8427024DA9A4D36EB8F6C8FE82", hash_generated_field = "40EFB69E13F0CDEFCFD23CECDA09F21F")
 
     private int mGapStart;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.848 -0400", hash_original_field = "5A93D3E21E60377E98165B3EF2A06465", hash_generated_field = "A295E6D1722C924D1E523308C8F24CB5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.738 -0400", hash_original_field = "5A93D3E21E60377E98165B3EF2A06465", hash_generated_field = "A295E6D1722C924D1E523308C8F24CB5")
 
     private int mGapLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.848 -0400", hash_original_field = "B8BD6FDCBEDAFD097A52EBBE1CF0F79A", hash_generated_field = "64DC9467A0917D43133A286556BA813F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.738 -0400", hash_original_field = "B8BD6FDCBEDAFD097A52EBBE1CF0F79A", hash_generated_field = "64DC9467A0917D43133A286556BA813F")
 
     private Object[] mSpans;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.848 -0400", hash_original_field = "F1D8F8A94BA747744CA1C740BC88AFFE", hash_generated_field = "84CB203FE2C516ED9C3D0BE9F569E2FC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.738 -0400", hash_original_field = "F1D8F8A94BA747744CA1C740BC88AFFE", hash_generated_field = "84CB203FE2C516ED9C3D0BE9F569E2FC")
 
     private int[] mSpanStarts;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.848 -0400", hash_original_field = "644B4FD16A6F71B2ED6EADC13E20FB53", hash_generated_field = "B6B8A934A26F4A20670B5A234A93FAF3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.738 -0400", hash_original_field = "644B4FD16A6F71B2ED6EADC13E20FB53", hash_generated_field = "B6B8A934A26F4A20670B5A234A93FAF3")
 
     private int[] mSpanEnds;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.848 -0400", hash_original_field = "E9EBB0640FA76A599FDD30354136C22F", hash_generated_field = "F6EC87D3CD6571312E304AA9452368CA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.738 -0400", hash_original_field = "E9EBB0640FA76A599FDD30354136C22F", hash_generated_field = "F6EC87D3CD6571312E304AA9452368CA")
 
     private int[] mSpanFlags;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.848 -0400", hash_original_field = "4FDCC29E70C8591103A1AD2BB2AC7494", hash_generated_field = "BDC8CC3C9B276345952883B6B6FC3B62")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.738 -0400", hash_original_field = "4FDCC29E70C8591103A1AD2BB2AC7494", hash_generated_field = "BDC8CC3C9B276345952883B6B6FC3B62")
 
     private int mSpanCount;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.848 -0400", hash_original_method = "FC61BFC3FC94A92F6E91F05B84386B00", hash_generated_method = "803E26A984ACC0C077D94CC677976F62")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.739 -0400", hash_original_method = "FC61BFC3FC94A92F6E91F05B84386B00", hash_generated_method = "803E26A984ACC0C077D94CC677976F62")
     public  SpannableStringBuilder() {
         this("");
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.869 -0400", hash_original_method = "9676D8694A6D1EC55F8FB5E1D9DC6D95", hash_generated_method = "AD8306198DF2DA98740386F2F808A31C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.739 -0400", hash_original_method = "9676D8694A6D1EC55F8FB5E1D9DC6D95", hash_generated_method = "AD8306198DF2DA98740386F2F808A31C")
     public  SpannableStringBuilder(CharSequence text) {
         this(text, 0, text.length());
         addTaint(text.getTaint());
@@ -56,7 +56,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.871 -0400", hash_original_method = "D35C3B0425645BAC16D8668E04F8F0BF", hash_generated_method = "1D512080B441EDCDEDAAA74A1F78F910")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.744 -0400", hash_original_method = "D35C3B0425645BAC16D8668E04F8F0BF", hash_generated_method = "1D512080B441EDCDEDAAA74A1F78F910")
     public  SpannableStringBuilder(CharSequence text, int start, int end) {
         int srclen;
         srclen = end - start;
@@ -113,7 +113,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.886 -0400", hash_original_method = "8A39C40193810117501439EDABBFE6E5", hash_generated_method = "A3A70B2393ECA6C17D3868DF49B17497")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.745 -0400", hash_original_method = "8A39C40193810117501439EDABBFE6E5", hash_generated_method = "BF7C18C746B8A41937D4E31AC55F8557")
     public char charAt(int where) {
         int len;
         len = length();
@@ -124,8 +124,8 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("charAt: " + where + " >= length " + len);
         } //End block
         addTaint(where);
-        char varA87DEB01C5F539E6BDA34829C8EF2368_293680099 = getTaintChar();
-        return varA87DEB01C5F539E6BDA34829C8EF2368_293680099;
+        char varA87DEB01C5F539E6BDA34829C8EF2368_210576425 = getTaintChar();
+        return varA87DEB01C5F539E6BDA34829C8EF2368_210576425;
         // ---------- Original Method ----------
         //int len = length();
         //if (where < 0) {
@@ -140,16 +140,16 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.887 -0400", hash_original_method = "9A6AB9CE1EAE128DD9B2405D2B37CA46", hash_generated_method = "E6C94E2AE9065FCB8E933D4D089DDF93")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.745 -0400", hash_original_method = "9A6AB9CE1EAE128DD9B2405D2B37CA46", hash_generated_method = "AB5E337BB170091588EFC60D37D5CD0E")
     public int length() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1773260276 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1773260276;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1377562311 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1377562311;
         // ---------- Original Method ----------
         //return mText.length - mGapLength;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.888 -0400", hash_original_method = "976FC6C6553888C069C4B298C5B14B80", hash_generated_method = "9EEE207984453C5985A51947208626F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.756 -0400", hash_original_method = "976FC6C6553888C069C4B298C5B14B80", hash_generated_method = "9EEE207984453C5985A51947208626F1")
     private void resizeFor(int size) {
         int newlen;
         newlen = ArrayUtils.idealCharArraySize(size + 1);
@@ -195,7 +195,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.894 -0400", hash_original_method = "D9447594759C2324F4C84ED525D8EBA8", hash_generated_method = "FDB11D20466C45B2F4FA4983CA080E8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.758 -0400", hash_original_method = "D9447594759C2324F4C84ED525D8EBA8", hash_generated_method = "FDB11D20466C45B2F4FA4983CA080E8E")
     private void moveGapTo(int where) {
         boolean atend;
         atend = (where == length());
@@ -243,48 +243,48 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.913 -0400", hash_original_method = "05B349B857A56AE010B814959800B44E", hash_generated_method = "BFB7F822B4E727A271C2422B619F0A9A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.762 -0400", hash_original_method = "05B349B857A56AE010B814959800B44E", hash_generated_method = "4FADB0B7D0AFF0378BB65321CD194124")
     public SpannableStringBuilder insert(int where, CharSequence tb, int start, int end) {
-        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_591403416 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_591403416 = replace(where, where, tb, start, end);
+        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_2080944123 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2080944123 = replace(where, where, tb, start, end);
         addTaint(where);
         addTaint(tb.getTaint());
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_591403416.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_591403416;
+        varB4EAC82CA7396A68D541C85D26508E83_2080944123.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2080944123;
         // ---------- Original Method ----------
         //return replace(where, where, tb, start, end);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.914 -0400", hash_original_method = "8FF3D73D08A9AFA2B9C652CF8F4F615D", hash_generated_method = "FBD9A3BF43A513484B05629CE3AE8678")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.762 -0400", hash_original_method = "8FF3D73D08A9AFA2B9C652CF8F4F615D", hash_generated_method = "F1BC76B09310F8A2F61390BFFEAF04BC")
     public SpannableStringBuilder insert(int where, CharSequence tb) {
-        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_1910444088 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1910444088 = replace(where, where, tb, 0, tb.length());
+        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_875199404 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_875199404 = replace(where, where, tb, 0, tb.length());
         addTaint(where);
         addTaint(tb.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1910444088.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1910444088;
+        varB4EAC82CA7396A68D541C85D26508E83_875199404.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_875199404;
         // ---------- Original Method ----------
         //return replace(where, where, tb, 0, tb.length());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.915 -0400", hash_original_method = "CCAFF8AC74D86E62008C289B374BD199", hash_generated_method = "4E5DA47D551D05818A4D1706C6BEEF9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.774 -0400", hash_original_method = "CCAFF8AC74D86E62008C289B374BD199", hash_generated_method = "1F2E6F3C10CC019935672C8B50B149B8")
     public SpannableStringBuilder delete(int start, int end) {
-        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_606871234 = null; //Variable for return #1
+        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_1106033966 = null; //Variable for return #1
         SpannableStringBuilder ret;
         ret = replace(start, end, "", 0, 0);
         {
-            boolean varCFB5555CC98A8456696144D750C956C3_2045376949 = (mGapLength > 2 * length());
+            boolean varCFB5555CC98A8456696144D750C956C3_1283550050 = (mGapLength > 2 * length());
             resizeFor(length());
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_606871234 = ret;
+        varB4EAC82CA7396A68D541C85D26508E83_1106033966 = ret;
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_606871234.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_606871234;
+        varB4EAC82CA7396A68D541C85D26508E83_1106033966.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1106033966;
         // ---------- Original Method ----------
         //SpannableStringBuilder ret = replace(start, end, "", 0, 0);
         //if (mGapLength > 2 * length())
@@ -293,7 +293,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.919 -0400", hash_original_method = "D18AC1E4EB05736F525932BC47697F9D", hash_generated_method = "2F4BCC7A2ECD16DA4BAF7CFF6AC91F91")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.775 -0400", hash_original_method = "D18AC1E4EB05736F525932BC47697F9D", hash_generated_method = "2F4BCC7A2ECD16DA4BAF7CFF6AC91F91")
     public void clear() {
         replace(0, length(), "", 0, 0);
         // ---------- Original Method ----------
@@ -301,7 +301,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.922 -0400", hash_original_method = "DCA8D2BE237B08ED7EF41B903E9CA024", hash_generated_method = "8B58AFD8E28E53BDB0EA374748EB297C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.786 -0400", hash_original_method = "DCA8D2BE237B08ED7EF41B903E9CA024", hash_generated_method = "8B58AFD8E28E53BDB0EA374748EB297C")
     public void clearSpans() {
         {
             int i;
@@ -336,66 +336,66 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.923 -0400", hash_original_method = "A87DD944FE6567F6923432E1C1B56712", hash_generated_method = "89FC9BCB8BB1FCCF008FED56CA96D3F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.787 -0400", hash_original_method = "A87DD944FE6567F6923432E1C1B56712", hash_generated_method = "3B27B45E79B85F5C666BBFF8940313A7")
     public SpannableStringBuilder append(CharSequence text) {
-        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_467892997 = null; //Variable for return #1
+        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_160703571 = null; //Variable for return #1
         int length;
         length = length();
-        varB4EAC82CA7396A68D541C85D26508E83_467892997 = replace(length, length, text, 0, text.length());
+        varB4EAC82CA7396A68D541C85D26508E83_160703571 = replace(length, length, text, 0, text.length());
         addTaint(text.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_467892997.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_467892997;
+        varB4EAC82CA7396A68D541C85D26508E83_160703571.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_160703571;
         // ---------- Original Method ----------
         //int length = length();
         //return replace(length, length, text, 0, text.length());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.948 -0400", hash_original_method = "2E8C7D2887FD28E969B785C3CCFE69E2", hash_generated_method = "8BB3635CF626B2CF70EAFE5960186A78")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.788 -0400", hash_original_method = "2E8C7D2887FD28E969B785C3CCFE69E2", hash_generated_method = "A7F819FF89251590130E540BEB863692")
     public SpannableStringBuilder append(CharSequence text, int start, int end) {
-        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_2087589310 = null; //Variable for return #1
+        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_961671134 = null; //Variable for return #1
         int length;
         length = length();
-        varB4EAC82CA7396A68D541C85D26508E83_2087589310 = replace(length, length, text, start, end);
+        varB4EAC82CA7396A68D541C85D26508E83_961671134 = replace(length, length, text, start, end);
         addTaint(text.getTaint());
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_2087589310.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2087589310;
+        varB4EAC82CA7396A68D541C85D26508E83_961671134.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_961671134;
         // ---------- Original Method ----------
         //int length = length();
         //return replace(length, length, text, start, end);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.949 -0400", hash_original_method = "CAF0941E3E4124F46031A9B624CEE660", hash_generated_method = "65E8BCC4D992AD4A45F2B60C02162545")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.798 -0400", hash_original_method = "CAF0941E3E4124F46031A9B624CEE660", hash_generated_method = "E24B188301117F1FE4B6CCA46CE49D27")
     public SpannableStringBuilder append(char text) {
-        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_2048987117 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2048987117 = append(String.valueOf(text));
+        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_1859560419 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1859560419 = append(String.valueOf(text));
         addTaint(text);
-        varB4EAC82CA7396A68D541C85D26508E83_2048987117.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2048987117;
+        varB4EAC82CA7396A68D541C85D26508E83_1859560419.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1859560419;
         // ---------- Original Method ----------
         //return append(String.valueOf(text));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.950 -0400", hash_original_method = "3C715BB6E3D7DD6490206A10C6A892D0", hash_generated_method = "B256799CDB4EEC5AD3EF1D6B6D62CE62")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.799 -0400", hash_original_method = "3C715BB6E3D7DD6490206A10C6A892D0", hash_generated_method = "122EC60928944C6B02685E2E996A4853")
     private int change(int start, int end, CharSequence tb, int tbstart, int tbend) {
-        int var3016398390FA3B4EF0297C32DD8390A3_1295557591 = (change(true, start, end, tb, tbstart, tbend));
+        int var3016398390FA3B4EF0297C32DD8390A3_823424660 = (change(true, start, end, tb, tbstart, tbend));
         addTaint(start);
         addTaint(end);
         addTaint(tb.getTaint());
         addTaint(tbstart);
         addTaint(tbend);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396799942 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396799942;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2141128685 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2141128685;
         // ---------- Original Method ----------
         //return change(true, start, end, tb, tbstart, tbend);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.952 -0400", hash_original_method = "84DCE273834998C04B3160C57E76984B", hash_generated_method = "EF73F20A38151E65649B06816AD3C7E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.812 -0400", hash_original_method = "84DCE273834998C04B3160C57E76984B", hash_generated_method = "5BF3516895DAD67110C24A4EDC307ADC")
     private int change(boolean notify, int start, int end,
                        CharSequence tb, int tbstart, int tbend) {
         checkRange("replace", start, end);
@@ -427,7 +427,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
                         {
                             st = end;
                             {
-                                boolean varBFE60C587C9C6F6C8D150DFF94D33D1A_2146613088 = (st > end && charAt(st - 1) == '\n');
+                                boolean varBFE60C587C9C6F6C8D150DFF94D33D1A_525642440 = (st > end && charAt(st - 1) == '\n');
                             } //End collapsed parenthetic
                         } //End collapsed parenthetic
                     } //End block
@@ -435,7 +435,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
                         {
                             en = end;
                             {
-                                boolean varB4FE50EC2B1C228FAAAD3CF5EDD3BF5A_63793019 = (en > end && charAt(en - 1) == '\n');
+                                boolean varB4FE50EC2B1C228FAAAD3CF5EDD3BF5A_1914808003 = (en > end && charAt(en - 1) == '\n');
                             } //End collapsed parenthetic
                         } //End collapsed parenthetic
                     } //End block
@@ -469,7 +469,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
                     st = tbstart;
                     en = tbend;
                     {
-                        boolean varE962BA69F8DD7114748830F1B8735548_1126709544 = (getSpanStart(spans[i]) < 0);
+                        boolean varE962BA69F8DD7114748830F1B8735548_314483453 = (getSpanStart(spans[i]) < 0);
                         {
                             setSpan(false, spans[i],
                             st - tbstart + start,
@@ -518,14 +518,14 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
         addTaint(tb.getTaint());
         addTaint(tbstart);
         addTaint(tbend);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_237184875 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_237184875;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_111560450 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_111560450;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.980 -0400", hash_original_method = "5F40E5580DD9B6C8070DDBE86036D0A0", hash_generated_method = "812A2FA06DF7BB56AFA7AB3AE1A90FCD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.820 -0400", hash_original_method = "5F40E5580DD9B6C8070DDBE86036D0A0", hash_generated_method = "812A2FA06DF7BB56AFA7AB3AE1A90FCD")
     private void removeSpan(int i) {
         Object object;
         object = mSpans[i];
@@ -561,25 +561,25 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.981 -0400", hash_original_method = "F007284EC0E266D0B466C6FB60440DED", hash_generated_method = "FDB43C886F858660D24ABC97FCD207A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.840 -0400", hash_original_method = "F007284EC0E266D0B466C6FB60440DED", hash_generated_method = "7A75FC047D1D5BC85BDF361E806CFA01")
     public SpannableStringBuilder replace(int start, int end, CharSequence tb) {
-        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_960633490 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_960633490 = replace(start, end, tb, 0, tb.length());
+        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_34211981 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_34211981 = replace(start, end, tb, 0, tb.length());
         addTaint(start);
         addTaint(end);
         addTaint(tb.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_960633490.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_960633490;
+        varB4EAC82CA7396A68D541C85D26508E83_34211981.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_34211981;
         // ---------- Original Method ----------
         //return replace(start, end, tb, 0, tb.length());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:39.991 -0400", hash_original_method = "653147CE10EC22F15BE8C423BD65FA32", hash_generated_method = "35E58E93791EC0B8049166D102570FCC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.851 -0400", hash_original_method = "653147CE10EC22F15BE8C423BD65FA32", hash_generated_method = "EC5237DF338786082C7298CFF78AAE2B")
     public SpannableStringBuilder replace(final int start, final int end,
                         CharSequence tb, int tbstart, int tbend) {
-        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_1231161147 = null; //Variable for return #1
-        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_641697933 = null; //Variable for return #2
+        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_1087125251 = null; //Variable for return #1
+        SpannableStringBuilder varB4EAC82CA7396A68D541C85D26508E83_532516495 = null; //Variable for return #2
         int filtercount;
         filtercount = mFilters.length;
         {
@@ -597,7 +597,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
             } //End block
         } //End collapsed parenthetic
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1231161147 = this;
+            varB4EAC82CA7396A68D541C85D26508E83_1087125251 = this;
         } //End block
         {
             change(start, end, tb, tbstart, tbend);
@@ -644,29 +644,29 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
             sendTextChange(recipients, start, origlen, inserted);
             sendTextHasChanged(recipients);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_641697933 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_532516495 = this;
         addTaint(start);
         addTaint(end);
         addTaint(tb.getTaint());
         addTaint(tbstart);
         addTaint(tbend);
-        SpannableStringBuilder varA7E53CE21691AB073D9660D615818899_1351985265; //Final return value
+        SpannableStringBuilder varA7E53CE21691AB073D9660D615818899_1974924739; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1351985265 = varB4EAC82CA7396A68D541C85D26508E83_1231161147;
+                varA7E53CE21691AB073D9660D615818899_1974924739 = varB4EAC82CA7396A68D541C85D26508E83_1087125251;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1351985265 = varB4EAC82CA7396A68D541C85D26508E83_641697933;
+                varA7E53CE21691AB073D9660D615818899_1974924739 = varB4EAC82CA7396A68D541C85D26508E83_532516495;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1351985265.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1351985265;
+        varA7E53CE21691AB073D9660D615818899_1974924739.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1974924739;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.080 -0400", hash_original_method = "69D700DE18AC29DD7D1DA7BDFB6B76AF", hash_generated_method = "94FF4C102C7FFBA9EBF61F9FC5208E1F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.853 -0400", hash_original_method = "69D700DE18AC29DD7D1DA7BDFB6B76AF", hash_generated_method = "94FF4C102C7FFBA9EBF61F9FC5208E1F")
     public void setSpan(Object what, int start, int end, int flags) {
         setSpan(true, what, start, end, flags);
         addTaint(what.getTaint());
@@ -678,7 +678,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.084 -0400", hash_original_method = "2D459893E2DC729F5693ABCD511FCC18", hash_generated_method = "8E5FD0D9264AE540B87F668FFA31ACDB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.872 -0400", hash_original_method = "2D459893E2DC729F5693ABCD511FCC18", hash_generated_method = "0D538088D5FD54448DB1576DE8CCFE2C")
     private void setSpan(boolean send, Object what, int start, int end, int flags) {
         int nstart;
         nstart = start;
@@ -687,7 +687,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
         checkRange("setSpan", start, end);
         {
             {
-                boolean var50D67EA6491FC514B6D92D2E40689E61_1481846194 = (start != 0 && start != length());
+                boolean var50D67EA6491FC514B6D92D2E40689E61_207255589 = (start != 0 && start != length());
                 {
                     char c;
                     c = charAt(start - 1);
@@ -697,7 +697,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
         } //End block
         {
             {
-                boolean var5B6CF9C5E41E159F793AF4E9C33451FF_1768157569 = (end != 0 && end != length());
+                boolean var5B6CF9C5E41E159F793AF4E9C33451FF_2021950846 = (end != 0 && end != length());
                 {
                     char c;
                     c = charAt(end - 1);
@@ -712,7 +712,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
             int flag;
             flag = (flags & START_MASK) >> START_SHIFT;
             {
-                boolean var178F36AF86CF523AC45E3DA928EB6603_1184012979 = (flag == POINT || (flag == PARAGRAPH && start == length()));
+                boolean var178F36AF86CF523AC45E3DA928EB6603_4780103 = (flag == POINT || (flag == PARAGRAPH && start == length()));
                 start += mGapLength;
             } //End collapsed parenthetic
         } //End block
@@ -723,7 +723,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
             int flag;
             flag = (flags & END_MASK);
             {
-                boolean var80BFA6A9886ED960BFDD8DFECE7B441C_1747614334 = (flag == POINT || (flag == PARAGRAPH && end == length()));
+                boolean var80BFA6A9886ED960BFDD8DFECE7B441C_742625352 = (flag == POINT || (flag == PARAGRAPH && end == length()));
                 end += mGapLength;
             } //End collapsed parenthetic
         } //End block
@@ -780,7 +780,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.095 -0400", hash_original_method = "F7FA44646A47341A9BCB6EBFF8147DB3", hash_generated_method = "8CE2229E2BB1F6E39550B2A9968BE01C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.873 -0400", hash_original_method = "F7FA44646A47341A9BCB6EBFF8147DB3", hash_generated_method = "8CE2229E2BB1F6E39550B2A9968BE01C")
     public void removeSpan(Object what) {
         {
             int i;
@@ -802,7 +802,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.096 -0400", hash_original_method = "DD4C166AC7D5C475EE46AC767DBD33EB", hash_generated_method = "7C2B0F787D4D982D2FC1E374CB3CB03D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.886 -0400", hash_original_method = "DD4C166AC7D5C475EE46AC767DBD33EB", hash_generated_method = "66DB2F76AC1032E1E8329A056BD1807B")
     public int getSpanStart(Object what) {
         int count;
         count = mSpanCount;
@@ -820,8 +820,8 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
             } //End block
         } //End collapsed parenthetic
         addTaint(what.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_646113011 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_646113011;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_654198254 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_654198254;
         // ---------- Original Method ----------
         //int count = mSpanCount;
         //Object[] spans = mSpans;
@@ -837,7 +837,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.097 -0400", hash_original_method = "1CAC5A6045B202B1FC928510B17AEEDD", hash_generated_method = "77FA78A0A780CBEE26D6C6DEFA1A6B3A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.887 -0400", hash_original_method = "1CAC5A6045B202B1FC928510B17AEEDD", hash_generated_method = "783AA2C005225417ADAB701466DF8F09")
     public int getSpanEnd(Object what) {
         int count;
         count = mSpanCount;
@@ -855,8 +855,8 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
             } //End block
         } //End collapsed parenthetic
         addTaint(what.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_331833841 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_331833841;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1875297187 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1875297187;
         // ---------- Original Method ----------
         //int count = mSpanCount;
         //Object[] spans = mSpans;
@@ -872,7 +872,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.116 -0400", hash_original_method = "DA0589F2510DDCCEED97B90C9189C1B9", hash_generated_method = "35A69B78CFB3FD7AFCBD47A13C83B24D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.894 -0400", hash_original_method = "DA0589F2510DDCCEED97B90C9189C1B9", hash_generated_method = "FD1F4C92B9D28469B5CC87B86256E5E2")
     public int getSpanFlags(Object what) {
         int count;
         count = mSpanCount;
@@ -883,8 +883,8 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
             i = count - 1;
         } //End collapsed parenthetic
         addTaint(what.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_634713933 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_634713933;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_630261875 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_630261875;
         // ---------- Original Method ----------
         //int count = mSpanCount;
         //Object[] spans = mSpans;
@@ -897,15 +897,15 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.127 -0400", hash_original_method = "5CF7F75C8FAF8266A003E04C7C47A211", hash_generated_method = "DC5E801EF8B36CE228F0D2EB1AF747DA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.909 -0400", hash_original_method = "5CF7F75C8FAF8266A003E04C7C47A211", hash_generated_method = "0A44F8791CA01916706FF364B3AFD17C")
     @SuppressWarnings("unchecked")
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
-        T[] varB4EAC82CA7396A68D541C85D26508E83_1070415557 = null; //Variable for return #1
-        T[] varB4EAC82CA7396A68D541C85D26508E83_2123729761 = null; //Variable for return #2
-        T[] varB4EAC82CA7396A68D541C85D26508E83_286744814 = null; //Variable for return #3
-        T[] varB4EAC82CA7396A68D541C85D26508E83_945679451 = null; //Variable for return #4
-        T[] varB4EAC82CA7396A68D541C85D26508E83_38161988 = null; //Variable for return #5
-        varB4EAC82CA7396A68D541C85D26508E83_1070415557 = ArrayUtils.emptyArray(kind);
+        T[] varB4EAC82CA7396A68D541C85D26508E83_1216093595 = null; //Variable for return #1
+        T[] varB4EAC82CA7396A68D541C85D26508E83_1133140357 = null; //Variable for return #2
+        T[] varB4EAC82CA7396A68D541C85D26508E83_924293400 = null; //Variable for return #3
+        T[] varB4EAC82CA7396A68D541C85D26508E83_1674690410 = null; //Variable for return #4
+        T[] varB4EAC82CA7396A68D541C85D26508E83_2084918487 = null; //Variable for return #5
+        varB4EAC82CA7396A68D541C85D26508E83_1216093595 = ArrayUtils.emptyArray(kind);
         int spanCount;
         spanCount = mSpanCount;
         Object[] spans;
@@ -941,7 +941,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
                     spanEnd -= gaplen;
                 } //End block
                 {
-                    boolean var4C3968C27883F1B4B4C15526A74C7F41_1952650412 = (!kind.isInstance(spans[i]));
+                    boolean var4C3968C27883F1B4B4C15526A74C7F41_1881384264 = (!kind.isInstance(spans[i]));
                 } //End collapsed parenthetic
                 {
                     ret1 = (T) spans[i];
@@ -972,49 +972,49 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
             } //End block
         } //End collapsed parenthetic
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2123729761 = ArrayUtils.emptyArray(kind);
+            varB4EAC82CA7396A68D541C85D26508E83_1133140357 = ArrayUtils.emptyArray(kind);
         } //End block
         {
             ret = (T[]) Array.newInstance(kind, 1);
             ret[0] = ret1;
-            varB4EAC82CA7396A68D541C85D26508E83_286744814 = ret;
+            varB4EAC82CA7396A68D541C85D26508E83_924293400 = ret;
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_945679451 = ret;
+            varB4EAC82CA7396A68D541C85D26508E83_1674690410 = ret;
         } //End block
         T[] nret;
         nret = (T[]) Array.newInstance(kind, count);
         System.arraycopy(ret, 0, nret, 0, count);
-        varB4EAC82CA7396A68D541C85D26508E83_38161988 = nret;
+        varB4EAC82CA7396A68D541C85D26508E83_2084918487 = nret;
         addTaint(queryStart);
         addTaint(queryEnd);
         addTaint(kind.getTaint());
-        T[] varA7E53CE21691AB073D9660D615818899_409232451; //Final return value
+        T[] varA7E53CE21691AB073D9660D615818899_1653560930; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_409232451 = varB4EAC82CA7396A68D541C85D26508E83_1070415557;
+                varA7E53CE21691AB073D9660D615818899_1653560930 = varB4EAC82CA7396A68D541C85D26508E83_1216093595;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_409232451 = varB4EAC82CA7396A68D541C85D26508E83_2123729761;
+                varA7E53CE21691AB073D9660D615818899_1653560930 = varB4EAC82CA7396A68D541C85D26508E83_1133140357;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_409232451 = varB4EAC82CA7396A68D541C85D26508E83_286744814;
+                varA7E53CE21691AB073D9660D615818899_1653560930 = varB4EAC82CA7396A68D541C85D26508E83_924293400;
                 break;
             case 4: //Assign result for return ordinal #4
-                varA7E53CE21691AB073D9660D615818899_409232451 = varB4EAC82CA7396A68D541C85D26508E83_945679451;
+                varA7E53CE21691AB073D9660D615818899_1653560930 = varB4EAC82CA7396A68D541C85D26508E83_1674690410;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_409232451 = varB4EAC82CA7396A68D541C85D26508E83_38161988;
+                varA7E53CE21691AB073D9660D615818899_1653560930 = varB4EAC82CA7396A68D541C85D26508E83_2084918487;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_409232451.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_409232451;
+        varA7E53CE21691AB073D9660D615818899_1653560930.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1653560930;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.136 -0400", hash_original_method = "AC3B57A902A92307655B10B6A320F4FA", hash_generated_method = "602E59D6BACD92307CD5CA0E3B82F259")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.915 -0400", hash_original_method = "AC3B57A902A92307655B10B6A320F4FA", hash_generated_method = "51F65219DB67C55029F432B9EC25B60F")
     public int nextSpanTransition(int start, int limit, Class kind) {
         int count;
         count = mSpanCount;
@@ -1042,11 +1042,11 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
                 st -= gaplen;
                 en -= gaplen;
                 {
-                    boolean varF6D66FD5D17035475727187422C2B841_1122165777 = (st > start && st < limit && kind.isInstance(spans[i]));
+                    boolean varF6D66FD5D17035475727187422C2B841_101722889 = (st > start && st < limit && kind.isInstance(spans[i]));
                     limit = st;
                 } //End collapsed parenthetic
                 {
-                    boolean varDD4114CCD8FA698F5DA31E38C7560428_619336722 = (en > start && en < limit && kind.isInstance(spans[i]));
+                    boolean varDD4114CCD8FA698F5DA31E38C7560428_1172737461 = (en > start && en < limit && kind.isInstance(spans[i]));
                     limit = en;
                 } //End collapsed parenthetic
             } //End block
@@ -1054,8 +1054,8 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
         addTaint(start);
         addTaint(limit);
         addTaint(kind.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_996082564 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_996082564;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1607036495 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1607036495;
         // ---------- Original Method ----------
         //int count = mSpanCount;
         //Object[] spans = mSpans;
@@ -1082,20 +1082,20 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.151 -0400", hash_original_method = "31E22DABAC481CACAF1D07C50FD19E47", hash_generated_method = "3B094CECDBBC1506098B084D9A60A238")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.916 -0400", hash_original_method = "31E22DABAC481CACAF1D07C50FD19E47", hash_generated_method = "5362199C7883F4D77C0BAC048BFB7803")
     public CharSequence subSequence(int start, int end) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_79888255 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_79888255 = new SpannableStringBuilder(this, start, end);
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_475852506 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_475852506 = new SpannableStringBuilder(this, start, end);
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_79888255.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_79888255;
+        varB4EAC82CA7396A68D541C85D26508E83_475852506.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_475852506;
         // ---------- Original Method ----------
         //return new SpannableStringBuilder(this, start, end);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.152 -0400", hash_original_method = "063174DC666DF3AA6ABCE47B5208FD87", hash_generated_method = "2A0D72E210C61D373E7AC9FC6C1C560E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.917 -0400", hash_original_method = "063174DC666DF3AA6ABCE47B5208FD87", hash_generated_method = "2A0D72E210C61D373E7AC9FC6C1C560E")
     public void getChars(int start, int end, char[] dest, int destoff) {
         checkRange("getChars", start, end);
         {
@@ -1131,18 +1131,18 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.152 -0400", hash_original_method = "4F74498D478E367DDE05120AE1CE9765", hash_generated_method = "32FBE2A3F6D2E7BD11D80B94D218891C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.927 -0400", hash_original_method = "4F74498D478E367DDE05120AE1CE9765", hash_generated_method = "976EE0E039DCF9866BA6087C30E76F4D")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1361648225 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_977307931 = null; //Variable for return #1
         int len;
         len = length();
         char[] buf;
         buf = new char[len];
         getChars(0, len, buf, 0);
-        varB4EAC82CA7396A68D541C85D26508E83_1361648225 = new String(buf);
-        varB4EAC82CA7396A68D541C85D26508E83_1361648225.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1361648225;
+        varB4EAC82CA7396A68D541C85D26508E83_977307931 = new String(buf);
+        varB4EAC82CA7396A68D541C85D26508E83_977307931.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_977307931;
         // ---------- Original Method ----------
         //int len = length();
         //char[] buf = new char[len];
@@ -1151,17 +1151,17 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.153 -0400", hash_original_method = "5E2755BFE298194FA4E39DBC872CF6D4", hash_generated_method = "45780D8C91C905C5BC76DBD9E4FDF996")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.928 -0400", hash_original_method = "5E2755BFE298194FA4E39DBC872CF6D4", hash_generated_method = "71033EDC9437D065473D826ED2A316B7")
     public String substring(int start, int end) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1410608864 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1385710015 = null; //Variable for return #1
         char[] buf;
         buf = new char[end - start];
         getChars(start, end, buf, 0);
-        varB4EAC82CA7396A68D541C85D26508E83_1410608864 = new String(buf);
+        varB4EAC82CA7396A68D541C85D26508E83_1385710015 = new String(buf);
         addTaint(start);
         addTaint(end);
-        varB4EAC82CA7396A68D541C85D26508E83_1410608864.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1410608864;
+        varB4EAC82CA7396A68D541C85D26508E83_1385710015.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1385710015;
         // ---------- Original Method ----------
         //char[] buf = new char[end - start];
         //getChars(start, end, buf, 0);
@@ -1169,9 +1169,9 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.170 -0400", hash_original_method = "9EEE5F03C950DBDA8CD631C0E0A3B78A", hash_generated_method = "5DE7862BEC9A2ED49CBF9493A226A75C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.929 -0400", hash_original_method = "9EEE5F03C950DBDA8CD631C0E0A3B78A", hash_generated_method = "EA878FA66FF8B09567959AA60F420871")
     private TextWatcher[] sendTextWillChange(int start, int before, int after) {
-        TextWatcher[] varB4EAC82CA7396A68D541C85D26508E83_306601855 = null; //Variable for return #1
+        TextWatcher[] varB4EAC82CA7396A68D541C85D26508E83_1588013178 = null; //Variable for return #1
         TextWatcher[] recip;
         recip = getSpans(start, start + before, TextWatcher.class);
         int n;
@@ -1183,12 +1183,12 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
                 recip[i].beforeTextChanged(this, start, before, after);
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_306601855 = recip;
+        varB4EAC82CA7396A68D541C85D26508E83_1588013178 = recip;
         addTaint(start);
         addTaint(before);
         addTaint(after);
-        varB4EAC82CA7396A68D541C85D26508E83_306601855.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_306601855;
+        varB4EAC82CA7396A68D541C85D26508E83_1588013178.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1588013178;
         // ---------- Original Method ----------
         //TextWatcher[] recip = getSpans(start, start + before, TextWatcher.class);
         //int n = recip.length;
@@ -1199,7 +1199,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.170 -0400", hash_original_method = "B0F46C63F0D82B2972BAF2786F5024B6", hash_generated_method = "8015F0F761768172AD52E21C98A5E38D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.929 -0400", hash_original_method = "B0F46C63F0D82B2972BAF2786F5024B6", hash_generated_method = "8015F0F761768172AD52E21C98A5E38D")
     private void sendTextChange(TextWatcher[] recip, int start, int before, int after) {
         int n;
         n = recip.length;
@@ -1222,7 +1222,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.171 -0400", hash_original_method = "B7AEF4E180417D3A92FE965B8D29719A", hash_generated_method = "E627494E95641D8412CEC2EC4F7B13CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.944 -0400", hash_original_method = "B7AEF4E180417D3A92FE965B8D29719A", hash_generated_method = "E627494E95641D8412CEC2EC4F7B13CB")
     private void sendTextHasChanged(TextWatcher[] recip) {
         int n;
         n = recip.length;
@@ -1242,7 +1242,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.178 -0400", hash_original_method = "39DD82D37A3679E95040612AC2A4CD5D", hash_generated_method = "0595A9B4DAEF0F8C1D21B66471F5E25E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.945 -0400", hash_original_method = "39DD82D37A3679E95040612AC2A4CD5D", hash_generated_method = "0595A9B4DAEF0F8C1D21B66471F5E25E")
     private void sendSpanAdded(Object what, int start, int end) {
         SpanWatcher[] recip;
         recip = getSpans(start, end, SpanWatcher.class);
@@ -1267,7 +1267,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.182 -0400", hash_original_method = "8451F34A8F8537B6F36684962116E358", hash_generated_method = "EB5A0EF1407904CDF29307EA65D39CAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.955 -0400", hash_original_method = "8451F34A8F8537B6F36684962116E358", hash_generated_method = "EB5A0EF1407904CDF29307EA65D39CAE")
     private void sendSpanRemoved(Object what, int start, int end) {
         SpanWatcher[] recip;
         recip = getSpans(start, end, SpanWatcher.class);
@@ -1292,7 +1292,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.197 -0400", hash_original_method = "89C4871AB16E570ACF45A07B8EFEFB25", hash_generated_method = "CA84F5F7102270EBD924C8212542108C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.956 -0400", hash_original_method = "89C4871AB16E570ACF45A07B8EFEFB25", hash_generated_method = "CA84F5F7102270EBD924C8212542108C")
     private void sendSpanChanged(Object what, int s, int e, int st, int en) {
         SpanWatcher[] recip;
         recip = getSpans(Math.min(s, st), Math.max(e, en), SpanWatcher.class);
@@ -1324,7 +1324,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.199 -0400", hash_original_method = "70C480F1BBBBF461E174788F8B29326C", hash_generated_method = "DE1FAF1E68B7B13B5A9C11AC99D9BC5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.960 -0400", hash_original_method = "70C480F1BBBBF461E174788F8B29326C", hash_generated_method = "DE1FAF1E68B7B13B5A9C11AC99D9BC5F")
     private void checkRange(final String operation, int start, int end) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(operation + " " +
@@ -1366,7 +1366,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.202 -0400", hash_original_method = "78639A54CC0D16962D9B6A20CA716009", hash_generated_method = "81D8C73500CE7967C9B39C1E4D81A8B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.965 -0400", hash_original_method = "78639A54CC0D16962D9B6A20CA716009", hash_generated_method = "81D8C73500CE7967C9B39C1E4D81A8B3")
     public void drawText(Canvas c, int start, int end,
                          float x, float y, Paint p) {
         checkRange("drawText", start, end);
@@ -1404,7 +1404,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.203 -0400", hash_original_method = "623CEE9BFDFC43532CC6E8FD83D183BD", hash_generated_method = "D13903E57997194C476E47CA61553D5A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.966 -0400", hash_original_method = "623CEE9BFDFC43532CC6E8FD83D183BD", hash_generated_method = "D13903E57997194C476E47CA61553D5A")
     public void drawTextRun(Canvas c, int start, int end,
             int contextStart, int contextEnd,
             float x, float y, int flags, Paint p) {
@@ -1454,7 +1454,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.220 -0400", hash_original_method = "5FD711D7C19B78DA72F1C64F29FD53D3", hash_generated_method = "CB20EDD72205B87DFC8A5D5AFB1821A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.971 -0400", hash_original_method = "5FD711D7C19B78DA72F1C64F29FD53D3", hash_generated_method = "F49F2F20368BA5BA15E4725527580056")
     public float measureText(int start, int end, Paint p) {
         checkRange("measureText", start, end);
         float ret;
@@ -1474,8 +1474,8 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
         addTaint(start);
         addTaint(end);
         addTaint(p.getTaint());
-        float var546ADE640B6EDFBC8A086EF31347E768_1678879531 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1678879531;
+        float var546ADE640B6EDFBC8A086EF31347E768_463749040 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_463749040;
         // ---------- Original Method ----------
         //checkRange("measureText", start, end);
         //float ret;
@@ -1493,7 +1493,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.232 -0400", hash_original_method = "0B996033AABA85CCC99081E62BD26114", hash_generated_method = "24679FCD587A09899E5B896D4D6A9E61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.973 -0400", hash_original_method = "0B996033AABA85CCC99081E62BD26114", hash_generated_method = "9621BEBBFAF4273600E54258002B5BBC")
     public int getTextWidths(int start, int end, float[] widths, Paint p) {
         checkRange("getTextWidths", start, end);
         int ret;
@@ -1515,8 +1515,8 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
         addTaint(end);
         addTaint(widths[0]);
         addTaint(p.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1714718411 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1714718411;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_292637601 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_292637601;
         // ---------- Original Method ----------
         //checkRange("getTextWidths", start, end);
         //int ret;
@@ -1535,7 +1535,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.234 -0400", hash_original_method = "FE2235DDEA2C6A2285ED2D1196CDD9B2", hash_generated_method = "CFB41DB1C841B3ACA6C0189A9D884D1C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.991 -0400", hash_original_method = "FE2235DDEA2C6A2285ED2D1196CDD9B2", hash_generated_method = "321E46FAE87268FE4E5D5784C56E3474")
     public float getTextRunAdvances(int start, int end, int contextStart, int contextEnd, int flags,
             float[] advances, int advancesPos, Paint p) {
         float ret;
@@ -1567,8 +1567,8 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
         addTaint(advances[0]);
         addTaint(advancesPos);
         addTaint(p.getTaint());
-        float var546ADE640B6EDFBC8A086EF31347E768_1193158430 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1193158430;
+        float var546ADE640B6EDFBC8A086EF31347E768_1766328322 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1766328322;
         // ---------- Original Method ----------
         //float ret;
         //int contextLen = contextEnd - contextStart;
@@ -1590,7 +1590,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.252 -0400", hash_original_method = "C231D32FAB37A7BF2DFD000F849A602C", hash_generated_method = "C8925C383FDE3DFF3519268A66F57926")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:41.993 -0400", hash_original_method = "C231D32FAB37A7BF2DFD000F849A602C", hash_generated_method = "F10CF05B2558A595A301DD1BC235230F")
     public float getTextRunAdvances(int start, int end, int contextStart, int contextEnd, int flags,
             float[] advances, int advancesPos, Paint p, int reserved) {
         float ret;
@@ -1623,14 +1623,14 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
         addTaint(advancesPos);
         addTaint(p.getTaint());
         addTaint(reserved);
-        float var546ADE640B6EDFBC8A086EF31347E768_810985151 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_810985151;
+        float var546ADE640B6EDFBC8A086EF31347E768_521961278 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_521961278;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.256 -0400", hash_original_method = "ABDF9C9F21432D98EAA229A3E812D636", hash_generated_method = "F9AFF72439A4B700639736DB2241EFFC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.017 -0400", hash_original_method = "ABDF9C9F21432D98EAA229A3E812D636", hash_generated_method = "6325125B86E8AE4F88E1FB8723D5CB64")
     @Deprecated
     public int getTextRunCursor(int contextStart, int contextEnd, int flags, int offset,
             int cursorOpt, Paint p) {
@@ -1659,8 +1659,8 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
         addTaint(offset);
         addTaint(cursorOpt);
         addTaint(p.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2017690290 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2017690290;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1046013857 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1046013857;
         // ---------- Original Method ----------
         //int ret;
         //int contextLen = contextEnd - contextStart;
@@ -1681,7 +1681,7 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.257 -0400", hash_original_method = "43280B91F5BF9A1999DA6A7ED3115D4A", hash_generated_method = "744F518B881384CEDE5FE548D9D5EA1F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.018 -0400", hash_original_method = "43280B91F5BF9A1999DA6A7ED3115D4A", hash_generated_method = "744F518B881384CEDE5FE548D9D5EA1F")
     public void setFilters(InputFilter[] filters) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
@@ -1695,33 +1695,33 @@ public class SpannableStringBuilder implements CharSequence, GetChars, Spannable
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.277 -0400", hash_original_method = "E0010D0DD1DD8F03E408AEE972028B3D", hash_generated_method = "208E7AC7B755B9878C220E68885F5D34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.018 -0400", hash_original_method = "E0010D0DD1DD8F03E408AEE972028B3D", hash_generated_method = "A70907427E861799350A83A20314F1D0")
     public InputFilter[] getFilters() {
-        InputFilter[] varB4EAC82CA7396A68D541C85D26508E83_38755065 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_38755065 = mFilters;
-        varB4EAC82CA7396A68D541C85D26508E83_38755065.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_38755065;
+        InputFilter[] varB4EAC82CA7396A68D541C85D26508E83_374010476 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_374010476 = mFilters;
+        varB4EAC82CA7396A68D541C85D26508E83_374010476.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_374010476;
         // ---------- Original Method ----------
         //return mFilters;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.277 -0400", hash_original_field = "A0DA38A5AAD1658278F1D161AF84C1BC", hash_generated_field = "5EFB7145770F29A6A7C59573A11D8B1E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.018 -0400", hash_original_field = "A0DA38A5AAD1658278F1D161AF84C1BC", hash_generated_field = "5EFB7145770F29A6A7C59573A11D8B1E")
 
     private static InputFilter[] NO_FILTERS = new InputFilter[0];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.277 -0400", hash_original_field = "8E25CB8BBC7F057E695EB32AFA1A76C1", hash_generated_field = "9CBAA8561F04DE9BE83D4D8D281F2BD6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.018 -0400", hash_original_field = "8E25CB8BBC7F057E695EB32AFA1A76C1", hash_generated_field = "9CBAA8561F04DE9BE83D4D8D281F2BD6")
 
     private static int POINT = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.277 -0400", hash_original_field = "01108F1ED53C20D4E3131B788368B220", hash_generated_field = "B86D3298389D18833991FD397F6943AA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.019 -0400", hash_original_field = "01108F1ED53C20D4E3131B788368B220", hash_generated_field = "B86D3298389D18833991FD397F6943AA")
 
     private static int PARAGRAPH = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.277 -0400", hash_original_field = "5CBC27631C132E42BC6EE2620FBE874C", hash_generated_field = "FBB8D04EB4CAF02C00ECE88D80872CBE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.019 -0400", hash_original_field = "5CBC27631C132E42BC6EE2620FBE874C", hash_generated_field = "FBB8D04EB4CAF02C00ECE88D80872CBE")
 
     private static int START_MASK = 0xF0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.277 -0400", hash_original_field = "A6B335A49CDCE8810689E33B5A49F35D", hash_generated_field = "DA8D949728BE6ED413D3E1541B329D87")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.019 -0400", hash_original_field = "A6B335A49CDCE8810689E33B5A49F35D", hash_generated_field = "DA8D949728BE6ED413D3E1541B329D87")
 
     private static int END_MASK = 0x0F;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.277 -0400", hash_original_field = "408D27312BE6845294059D1D121D5FC2", hash_generated_field = "013AB387A6657736E63B14DD89C1216C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.019 -0400", hash_original_field = "408D27312BE6845294059D1D121D5FC2", hash_generated_field = "013AB387A6657736E63B14DD89C1216C")
 
     private static int START_SHIFT = 4;
 }

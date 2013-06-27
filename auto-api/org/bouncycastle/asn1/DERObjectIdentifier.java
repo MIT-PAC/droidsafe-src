@@ -13,11 +13,11 @@ import java.io.OutputStream;
 import java.math.BigInteger;
 
 public class DERObjectIdentifier extends ASN1Object {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.106 -0400", hash_original_field = "F393F3F5E496869A15BC72CBFD56F541", hash_generated_field = "67D18ED1400CD458B308847E018D0637")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.248 -0400", hash_original_field = "F393F3F5E496869A15BC72CBFD56F541", hash_generated_field = "67D18ED1400CD458B308847E018D0637")
 
     String identifier;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.108 -0400", hash_original_method = "41784C2F0BEC0E535BBC46B058BAD130", hash_generated_method = "9C42EEEC133A8540DD4233E29563542A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.262 -0400", hash_original_method = "41784C2F0BEC0E535BBC46B058BAD130", hash_generated_method = "9C42EEEC133A8540DD4233E29563542A")
       DERObjectIdentifier(
         byte[]  bytes) {
         StringBuffer objId;
@@ -82,11 +82,11 @@ public class DERObjectIdentifier extends ASN1Object {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.111 -0400", hash_original_method = "475B203FC54A32C4FE512A1ADD61E543", hash_generated_method = "6B80EE97DBFA99893F5C8F714C0EAE61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.263 -0400", hash_original_method = "475B203FC54A32C4FE512A1ADD61E543", hash_generated_method = "E937B3C05D0ED6026B62DE56475C922F")
     public  DERObjectIdentifier(
         String  identifier) {
         {
-            boolean varD4FAFFC1BD4AA673DC9F47F3DDC13D57_2031591574 = (!isValidIdentifier(identifier));
+            boolean varD4FAFFC1BD4AA673DC9F47F3DDC13D57_1606676448 = (!isValidIdentifier(identifier));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("string " + identifier + " not an OID");
             } //End block
@@ -126,18 +126,18 @@ public class DERObjectIdentifier extends ASN1Object {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.127 -0400", hash_original_method = "9387C33D0DE26CACBA5D2CF5AB6F5FB6", hash_generated_method = "63F6509047B899A32ECCD324D38A2EF8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.276 -0400", hash_original_method = "9387C33D0DE26CACBA5D2CF5AB6F5FB6", hash_generated_method = "5CC891888C89DFBB354D8C10A79FC090")
     public String getId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_65288440 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_65288440 = identifier;
-        varB4EAC82CA7396A68D541C85D26508E83_65288440.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_65288440;
+        String varB4EAC82CA7396A68D541C85D26508E83_334614331 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_334614331 = identifier;
+        varB4EAC82CA7396A68D541C85D26508E83_334614331.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_334614331;
         // ---------- Original Method ----------
         //return identifier;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.128 -0400", hash_original_method = "7C147E60AEA70A2E84F8C4657E7FBA13", hash_generated_method = "1C96BAD1789790BD11788FBC7AA25D13")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.276 -0400", hash_original_method = "7C147E60AEA70A2E84F8C4657E7FBA13", hash_generated_method = "1C96BAD1789790BD11788FBC7AA25D13")
     private void writeField(
         OutputStream    out,
         long            fieldValue) throws IOException {
@@ -166,7 +166,7 @@ public class DERObjectIdentifier extends ASN1Object {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.131 -0400", hash_original_method = "58F2C435CDACAD8814E2A1351775DAC9", hash_generated_method = "1638769D02F0E7F1B0D50FEAC8CD65DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.278 -0400", hash_original_method = "58F2C435CDACAD8814E2A1351775DAC9", hash_generated_method = "1638769D02F0E7F1B0D50FEAC8CD65DE")
     private void writeField(
         OutputStream    out,
         BigInteger      fieldValue) throws IOException {
@@ -214,7 +214,7 @@ public class DERObjectIdentifier extends ASN1Object {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.135 -0400", hash_original_method = "ECFD3ADA5852656A886183CB7FE8CA3F", hash_generated_method = "EE2FAAADA800A6229A94E25CE7387A3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.296 -0400", hash_original_method = "ECFD3ADA5852656A886183CB7FE8CA3F", hash_generated_method = "3ADD216871B9262E620C0CB6F99D3755")
      void encode(
         DEROutputStream out) throws IOException {
         OIDTokenizer tok;
@@ -227,12 +227,12 @@ public class DERObjectIdentifier extends ASN1Object {
                     Integer.parseInt(tok.nextToken()) * 40
                     + Integer.parseInt(tok.nextToken()));
         {
-            boolean var89512C99A8AC3353295C5F4DBB97E3D6_563905493 = (tok.hasMoreTokens());
+            boolean var89512C99A8AC3353295C5F4DBB97E3D6_1368234986 = (tok.hasMoreTokens());
             {
                 String token;
                 token = tok.nextToken();
                 {
-                    boolean var687605A3A0DF464929B96AA74CA43050_1197022733 = (token.length() < 18);
+                    boolean var687605A3A0DF464929B96AA74CA43050_345002749 = (token.length() < 18);
                     {
                         writeField(bOut, Long.parseLong(token));
                     } //End block
@@ -272,23 +272,23 @@ public class DERObjectIdentifier extends ASN1Object {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.135 -0400", hash_original_method = "F84420975A0078554FCD832859033A65", hash_generated_method = "4DB667D00A4A79EA19AB584820656E7F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.296 -0400", hash_original_method = "F84420975A0078554FCD832859033A65", hash_generated_method = "DBADF8A502E329B3390713C37A584FC2")
     public int hashCode() {
-        int var8978AA144A14510CB1789B7CB4B8CE9F_1629954571 = (identifier.hashCode());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1827191101 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1827191101;
+        int var8978AA144A14510CB1789B7CB4B8CE9F_390480375 = (identifier.hashCode());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1704416974 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1704416974;
         // ---------- Original Method ----------
         //return identifier.hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.136 -0400", hash_original_method = "0655D55E620898111D8D6A0724E88908", hash_generated_method = "E269D7D82BCB4A5E20D165FD101E1080")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.297 -0400", hash_original_method = "0655D55E620898111D8D6A0724E88908", hash_generated_method = "E4CBB74C7D95F27DB44B1FA660853ED6")
      boolean asn1Equals(
         DERObject  o) {
-        boolean var749A4FD9858CC8128C3F813A12C6F443_1769620768 = (identifier.equals(((DERObjectIdentifier)o).identifier));
+        boolean var749A4FD9858CC8128C3F813A12C6F443_685313857 = (identifier.equals(((DERObjectIdentifier)o).identifier));
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_730717363 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_730717363;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_913121064 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_913121064;
         // ---------- Original Method ----------
         //if (!(o instanceof DERObjectIdentifier))
         //{
@@ -298,12 +298,12 @@ public class DERObjectIdentifier extends ASN1Object {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.139 -0400", hash_original_method = "7A5AF873124B543657B1C40A56842B0C", hash_generated_method = "2462F18A1E9A07A5C2ED68FBA6663F74")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.297 -0400", hash_original_method = "7A5AF873124B543657B1C40A56842B0C", hash_generated_method = "5B1BBD86EADBEF1852EB3FF2CA6F218C")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1978100191 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1978100191 = getId();
-        varB4EAC82CA7396A68D541C85D26508E83_1978100191.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1978100191;
+        String varB4EAC82CA7396A68D541C85D26508E83_1594629196 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1594629196 = getId();
+        varB4EAC82CA7396A68D541C85D26508E83_1594629196.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1594629196;
         // ---------- Original Method ----------
         //return getId();
     }

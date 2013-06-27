@@ -18,7 +18,7 @@ import org.apache.http.cookie.SetCookie2;
 
 public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.476 -0400", hash_original_method = "E334DF66885CCF73C2314DA776277136", hash_generated_method = "4761D766B683CA7DF86AA940A4C091A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.712 -0400", hash_original_method = "E334DF66885CCF73C2314DA776277136", hash_generated_method = "4761D766B683CA7DF86AA940A4C091A8")
     public  RFC2965PortAttributeHandler() {
         super();
         // ---------- Original Method ----------
@@ -57,7 +57,7 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.477 -0400", hash_original_method = "681AF804F244AC355854B5C9066D8457", hash_generated_method = "4A37EDD7FA5AB3595C6F945E9D9A88F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.714 -0400", hash_original_method = "681AF804F244AC355854B5C9066D8457", hash_generated_method = "A8BB0DF1480868F022358FB8B4FE2EF5")
     public void parse(final SetCookie cookie, final String portValue) throws MalformedCookieException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
@@ -66,7 +66,7 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
             SetCookie2 cookie2;
             cookie2 = (SetCookie2) cookie;
             {
-                boolean var86A8FFF96C7F683CE3CBC2F88023AC58_362141153 = (portValue != null && portValue.trim().length() > 0);
+                boolean var86A8FFF96C7F683CE3CBC2F88023AC58_853522813 = (portValue != null && portValue.trim().length() > 0);
                 {
                     int[] ports;
                     ports = parsePortAttribute(portValue);
@@ -90,7 +90,7 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.478 -0400", hash_original_method = "9E12D702FFAE2715567401C9ACEBCA90", hash_generated_method = "B7A3F76542B07DA176368D05733E1D61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.726 -0400", hash_original_method = "9E12D702FFAE2715567401C9ACEBCA90", hash_generated_method = "2256BC87B265D73430016496FED919A2")
     public void validate(final Cookie cookie, final CookieOrigin origin) throws MalformedCookieException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
@@ -101,11 +101,11 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
         int port;
         port = origin.getPort();
         {
-            boolean var5612C47998A5419B8EEB60E3F3947730_2006082002 = (cookie instanceof ClientCookie 
+            boolean var5612C47998A5419B8EEB60E3F3947730_1850525134 = (cookie instanceof ClientCookie 
                 && ((ClientCookie) cookie).containsAttribute(ClientCookie.PORT_ATTR));
             {
                 {
-                    boolean varE5D61C63A1F61CB1025C19159B89B5F3_972488551 = (!portMatch(port, cookie.getPorts()));
+                    boolean varE5D61C63A1F61CB1025C19159B89B5F3_575017453 = (!portMatch(port, cookie.getPorts()));
                     {
                         if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException(
                         "Port attribute violates RFC 2965: "
@@ -135,7 +135,7 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.483 -0400", hash_original_method = "DF68EC2DBEDB1856460C90C9AF4C7622", hash_generated_method = "2A86754B95D7975C1CCFA39013010C56")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.727 -0400", hash_original_method = "DF68EC2DBEDB1856460C90C9AF4C7622", hash_generated_method = "F78FF4240A7AD0CA5BAE4E8849EC0564")
     public boolean match(final Cookie cookie, final CookieOrigin origin) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
@@ -146,21 +146,21 @@ public class RFC2965PortAttributeHandler implements CookieAttributeHandler {
         int port;
         port = origin.getPort();
         {
-            boolean var5612C47998A5419B8EEB60E3F3947730_537073596 = (cookie instanceof ClientCookie 
+            boolean var5612C47998A5419B8EEB60E3F3947730_1505252235 = (cookie instanceof ClientCookie 
                 && ((ClientCookie) cookie).containsAttribute(ClientCookie.PORT_ATTR));
             {
                 {
-                    boolean var4EF3EE66FBE764604CEF811F8CF3E1EE_446916603 = (cookie.getPorts() == null);
+                    boolean var4EF3EE66FBE764604CEF811F8CF3E1EE_822365278 = (cookie.getPorts() == null);
                 } //End collapsed parenthetic
                 {
-                    boolean varE5D61C63A1F61CB1025C19159B89B5F3_747184999 = (!portMatch(port, cookie.getPorts()));
+                    boolean varE5D61C63A1F61CB1025C19159B89B5F3_1022759971 = (!portMatch(port, cookie.getPorts()));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         addTaint(cookie.getTaint());
         addTaint(origin.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1886640347 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1886640347;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2088289327 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2088289327;
         // ---------- Original Method ----------
         //if (cookie == null) {
             //throw new IllegalArgumentException("Cookie may not be null");

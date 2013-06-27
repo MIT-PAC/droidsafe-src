@@ -27,36 +27,36 @@ import libcore.icu.NativeDecimalFormat;
 import libcore.io.IoUtils;
 
 public final class Formatter implements Closeable, Flushable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.432 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "3DC9338DC786F95D1A95A8961D85A2A6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.222 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "3DC9338DC786F95D1A95A8961D85A2A6")
 
     private Appendable out;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.432 -0400", hash_original_field = "FB216D9E8791E63C8D12BDC420956839", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.222 -0400", hash_original_field = "FB216D9E8791E63C8D12BDC420956839", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
 
     private Locale locale;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.432 -0400", hash_original_field = "61DD86C2DC75C3F569EC619BD283A33F", hash_generated_field = "613B0CE96D5332BFAF1329D4F111938C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.233 -0400", hash_original_field = "61DD86C2DC75C3F569EC619BD283A33F", hash_generated_field = "613B0CE96D5332BFAF1329D4F111938C")
 
     private Object arg;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.432 -0400", hash_original_field = "1E79543A888DE7BB0ADBB289A8F4251D", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.233 -0400", hash_original_field = "1E79543A888DE7BB0ADBB289A8F4251D", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
 
     private boolean closed = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.432 -0400", hash_original_field = "B7B849C43DF0AE6D73905E0D7DFFBD21", hash_generated_field = "FB61E2282DE2F9A3C415CEE063007787")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.233 -0400", hash_original_field = "B7B849C43DF0AE6D73905E0D7DFFBD21", hash_generated_field = "FB61E2282DE2F9A3C415CEE063007787")
 
     private FormatToken formatToken;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.432 -0400", hash_original_field = "460DFB1105EAD6E581494BC8EB7172AC", hash_generated_field = "94160D1F6EC5CF5867F2CCE7946E9FCB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.233 -0400", hash_original_field = "460DFB1105EAD6E581494BC8EB7172AC", hash_generated_field = "94160D1F6EC5CF5867F2CCE7946E9FCB")
 
     private IOException lastIOException;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.432 -0400", hash_original_field = "E3E7EE28E6489646D907CCB03E05DAAD", hash_generated_field = "C9E2992A298A3ADEBF6945150F771649")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.233 -0400", hash_original_field = "E3E7EE28E6489646D907CCB03E05DAAD", hash_generated_field = "C9E2992A298A3ADEBF6945150F771649")
 
     private LocaleData localeData;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.433 -0400", hash_original_method = "776A8092D7EB6A8CE9FA3707C90FDC71", hash_generated_method = "84D520F5378D0961C20054F1B6C8CEC3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.234 -0400", hash_original_method = "776A8092D7EB6A8CE9FA3707C90FDC71", hash_generated_method = "84D520F5378D0961C20054F1B6C8CEC3")
     public  Formatter() {
         this(new StringBuilder(), Locale.getDefault());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.433 -0400", hash_original_method = "C10A7E7C6014F1D5457B2868B8DDD5FA", hash_generated_method = "31E6013FD29F4E00375F2E0819EFEC43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.234 -0400", hash_original_method = "C10A7E7C6014F1D5457B2868B8DDD5FA", hash_generated_method = "31E6013FD29F4E00375F2E0819EFEC43")
     public  Formatter(Appendable a) {
         this(a, Locale.getDefault());
         addTaint(a.getTaint());
@@ -64,7 +64,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.433 -0400", hash_original_method = "949ED46E62E9C1FD97345CAB1F572157", hash_generated_method = "1F77DEC42C276C4F532BB809AEBFC555")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.234 -0400", hash_original_method = "949ED46E62E9C1FD97345CAB1F572157", hash_generated_method = "1F77DEC42C276C4F532BB809AEBFC555")
     public  Formatter(Locale l) {
         this(new StringBuilder(), l);
         addTaint(l.getTaint());
@@ -72,7 +72,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.434 -0400", hash_original_method = "731A0E308D6775F1250BD9086CA3748C", hash_generated_method = "76EB4A86010C765538F0CD5F267904FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.239 -0400", hash_original_method = "731A0E308D6775F1250BD9086CA3748C", hash_generated_method = "76EB4A86010C765538F0CD5F267904FB")
     public  Formatter(Appendable a, Locale l) {
         {
             out = new StringBuilder();
@@ -91,7 +91,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.434 -0400", hash_original_method = "55110CB3A063CDDA9DDF2A6FEEDBC4D6", hash_generated_method = "70BDD2B3DD755EDDD96C2C4A66B6ADFD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.239 -0400", hash_original_method = "55110CB3A063CDDA9DDF2A6FEEDBC4D6", hash_generated_method = "70BDD2B3DD755EDDD96C2C4A66B6ADFD")
     public  Formatter(String fileName) throws FileNotFoundException {
         this(new File(fileName));
         addTaint(fileName.getTaint());
@@ -99,7 +99,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.434 -0400", hash_original_method = "D05AE6CA9B3694824C73C0B398D66198", hash_generated_method = "5E175B6E8111D40A645C215D023FFEEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.240 -0400", hash_original_method = "D05AE6CA9B3694824C73C0B398D66198", hash_generated_method = "5E175B6E8111D40A645C215D023FFEEA")
     public  Formatter(String fileName, String csn) throws FileNotFoundException,
             UnsupportedEncodingException {
         this(new File(fileName), csn);
@@ -109,7 +109,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.434 -0400", hash_original_method = "106406A68116E4DC11358A25DB96C9D8", hash_generated_method = "5E89EAE84986EA97D043AD55A3E15F94")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.240 -0400", hash_original_method = "106406A68116E4DC11358A25DB96C9D8", hash_generated_method = "5E89EAE84986EA97D043AD55A3E15F94")
     public  Formatter(String fileName, String csn, Locale l) throws FileNotFoundException, UnsupportedEncodingException {
         this(new File(fileName), csn, l);
         addTaint(fileName.getTaint());
@@ -119,7 +119,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.435 -0400", hash_original_method = "56C5088BBC7ACEBB0E3B42C5FC534A61", hash_generated_method = "589E7B2AC2ADE54B3D54DCD41B50441F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.240 -0400", hash_original_method = "56C5088BBC7ACEBB0E3B42C5FC534A61", hash_generated_method = "589E7B2AC2ADE54B3D54DCD41B50441F")
     public  Formatter(File file) throws FileNotFoundException {
         this(new FileOutputStream(file));
         addTaint(file.getTaint());
@@ -127,7 +127,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.435 -0400", hash_original_method = "15C3BB1BBEBB7DA2B256558B7A83F1D2", hash_generated_method = "F5E9451ABCBDE9893AA26A6A1D7AA59B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.240 -0400", hash_original_method = "15C3BB1BBEBB7DA2B256558B7A83F1D2", hash_generated_method = "F5E9451ABCBDE9893AA26A6A1D7AA59B")
     public  Formatter(File file, String csn) throws FileNotFoundException,
             UnsupportedEncodingException {
         this(file, csn, Locale.getDefault());
@@ -137,7 +137,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.436 -0400", hash_original_method = "11FC304A866A57AD6707E0AE5ACD74C6", hash_generated_method = "66CFD219CFA238E5D23F00C12D075619")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.241 -0400", hash_original_method = "11FC304A866A57AD6707E0AE5ACD74C6", hash_generated_method = "66CFD219CFA238E5D23F00C12D075619")
     public  Formatter(File file, String csn, Locale l) throws FileNotFoundException, UnsupportedEncodingException {
         FileOutputStream fout;
         fout = null;
@@ -174,7 +174,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.447 -0400", hash_original_method = "18094D8509766CE6FC608D9540C5972B", hash_generated_method = "86DB88A0468A92B37477CC3A3583D801")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.242 -0400", hash_original_method = "18094D8509766CE6FC608D9540C5972B", hash_generated_method = "86DB88A0468A92B37477CC3A3583D801")
     public  Formatter(OutputStream os) {
         out = new BufferedWriter(new OutputStreamWriter(os, Charset.defaultCharset()));
         locale = Locale.getDefault();
@@ -184,7 +184,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.447 -0400", hash_original_method = "F6295FD9F7AB3AB7F721531D402E7F81", hash_generated_method = "84790D15860A1225F92619D8FE2D1847")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.242 -0400", hash_original_method = "F6295FD9F7AB3AB7F721531D402E7F81", hash_generated_method = "84790D15860A1225F92619D8FE2D1847")
     public  Formatter(OutputStream os, String csn) throws UnsupportedEncodingException {
         this(os, csn, Locale.getDefault());
         addTaint(os.getTaint());
@@ -193,7 +193,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.448 -0400", hash_original_method = "339D31BAB557832A3B8A75EB377C0635", hash_generated_method = "8BEF5CEA51D6B567DEC1210198AC5CE9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.246 -0400", hash_original_method = "339D31BAB557832A3B8A75EB377C0635", hash_generated_method = "8BEF5CEA51D6B567DEC1210198AC5CE9")
     public  Formatter(OutputStream os, String csn, Locale l) throws UnsupportedEncodingException {
         out = new BufferedWriter(new OutputStreamWriter(os, csn));
         locale = l;
@@ -203,7 +203,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.452 -0400", hash_original_method = "6A92C9283CC7B01627E24F0E27824A3B", hash_generated_method = "EF9BC443EC2682F3121DB34BBAB1CB88")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.247 -0400", hash_original_method = "6A92C9283CC7B01627E24F0E27824A3B", hash_generated_method = "EF9BC443EC2682F3121DB34BBAB1CB88")
     public  Formatter(PrintStream ps) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -219,19 +219,19 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.453 -0400", hash_original_method = "9D62CCD9646FE324AC0FFA6EB7C17C6C", hash_generated_method = "290252297B85389E74E4DE45C54282A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.256 -0400", hash_original_method = "9D62CCD9646FE324AC0FFA6EB7C17C6C", hash_generated_method = "D61B27A6DE26EE81C30D46150263A647")
     private NativeDecimalFormat getDecimalFormat(String pattern) {
-        NativeDecimalFormat varB4EAC82CA7396A68D541C85D26508E83_772691634 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_772691634 = cachedDecimalFormat.get().update(localeData, pattern);
+        NativeDecimalFormat varB4EAC82CA7396A68D541C85D26508E83_1000873642 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1000873642 = cachedDecimalFormat.get().update(localeData, pattern);
         addTaint(pattern.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_772691634.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_772691634;
+        varB4EAC82CA7396A68D541C85D26508E83_1000873642.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1000873642;
         // ---------- Original Method ----------
         //return cachedDecimalFormat.get().update(localeData, pattern);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.454 -0400", hash_original_method = "E3DA6A4C963B6E9187963221C571CEC2", hash_generated_method = "CED13C9417F36F227519AB72CA97A589")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.257 -0400", hash_original_method = "E3DA6A4C963B6E9187963221C571CEC2", hash_generated_method = "CED13C9417F36F227519AB72CA97A589")
     private void checkNotClosed() {
         {
             if (DroidSafeAndroidRuntime.control) throw new FormatterClosedException();
@@ -243,47 +243,47 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.454 -0400", hash_original_method = "B5A8A4A4A455286143E3BD4E75C6F0FE", hash_generated_method = "E1E0716E72A4AD5B0EA90C282036CDA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.257 -0400", hash_original_method = "B5A8A4A4A455286143E3BD4E75C6F0FE", hash_generated_method = "A018C6C7DB06DA4E858D700EBC581032")
     public Locale locale() {
-        Locale varB4EAC82CA7396A68D541C85D26508E83_236772904 = null; //Variable for return #1
+        Locale varB4EAC82CA7396A68D541C85D26508E83_1504472737 = null; //Variable for return #1
         checkNotClosed();
-        varB4EAC82CA7396A68D541C85D26508E83_236772904 = locale;
-        varB4EAC82CA7396A68D541C85D26508E83_236772904.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_236772904;
+        varB4EAC82CA7396A68D541C85D26508E83_1504472737 = locale;
+        varB4EAC82CA7396A68D541C85D26508E83_1504472737.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1504472737;
         // ---------- Original Method ----------
         //checkNotClosed();
         //return locale;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.455 -0400", hash_original_method = "D73A5BF8E95D39CBD6819B9B1AA13C8D", hash_generated_method = "E1F19BB639971AD7BFD971DBE22EA849")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.257 -0400", hash_original_method = "D73A5BF8E95D39CBD6819B9B1AA13C8D", hash_generated_method = "902DD0EAFDA950BDD6B824076DB34E40")
     public Appendable out() {
-        Appendable varB4EAC82CA7396A68D541C85D26508E83_1890335573 = null; //Variable for return #1
+        Appendable varB4EAC82CA7396A68D541C85D26508E83_500915850 = null; //Variable for return #1
         checkNotClosed();
-        varB4EAC82CA7396A68D541C85D26508E83_1890335573 = out;
-        varB4EAC82CA7396A68D541C85D26508E83_1890335573.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1890335573;
+        varB4EAC82CA7396A68D541C85D26508E83_500915850 = out;
+        varB4EAC82CA7396A68D541C85D26508E83_500915850.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_500915850;
         // ---------- Original Method ----------
         //checkNotClosed();
         //return out;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.455 -0400", hash_original_method = "39CF8FB3A631311648D12D228411CE26", hash_generated_method = "D629435BD798FAF900EA3CB5E37F257D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.258 -0400", hash_original_method = "39CF8FB3A631311648D12D228411CE26", hash_generated_method = "A4802686B126C2FD8ABC344B6622BCCA")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_245328061 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_815891732 = null; //Variable for return #1
         checkNotClosed();
-        varB4EAC82CA7396A68D541C85D26508E83_245328061 = out.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_245328061.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_245328061;
+        varB4EAC82CA7396A68D541C85D26508E83_815891732 = out.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_815891732.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_815891732;
         // ---------- Original Method ----------
         //checkNotClosed();
         //return out.toString();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.456 -0400", hash_original_method = "E9CBCF5548B5D691C8801114F0C41C59", hash_generated_method = "013B35C8AAE53BF641F7E9D982E1D4C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.258 -0400", hash_original_method = "E9CBCF5548B5D691C8801114F0C41C59", hash_generated_method = "013B35C8AAE53BF641F7E9D982E1D4C6")
     public void flush() {
         checkNotClosed();
         {
@@ -308,7 +308,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.465 -0400", hash_original_method = "16C1939C51EF65BBD0A872F925CE78BF", hash_generated_method = "707CBA92274B8C8AF142983EEBDF49F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.259 -0400", hash_original_method = "16C1939C51EF65BBD0A872F925CE78BF", hash_generated_method = "707CBA92274B8C8AF142983EEBDF49F5")
     public void close() {
         {
             closed = true;
@@ -337,33 +337,33 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.466 -0400", hash_original_method = "AF5FE6AF92A07FF4E461FEC03ECD4D84", hash_generated_method = "EEA769EEB339DFFD9709BF5C5DC17E9E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.259 -0400", hash_original_method = "AF5FE6AF92A07FF4E461FEC03ECD4D84", hash_generated_method = "F23CD95D816404C2765A2424151E2A01")
     public IOException ioException() {
-        IOException varB4EAC82CA7396A68D541C85D26508E83_1575888903 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1575888903 = lastIOException;
-        varB4EAC82CA7396A68D541C85D26508E83_1575888903.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1575888903;
+        IOException varB4EAC82CA7396A68D541C85D26508E83_126044296 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_126044296 = lastIOException;
+        varB4EAC82CA7396A68D541C85D26508E83_126044296.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_126044296;
         // ---------- Original Method ----------
         //return lastIOException;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.467 -0400", hash_original_method = "EE9FCF62B0D200225753D8BA586AA3F5", hash_generated_method = "788E87AEC2A7D52099961AA6D5537782")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.268 -0400", hash_original_method = "EE9FCF62B0D200225753D8BA586AA3F5", hash_generated_method = "871DF1DE868E7EC049232D16005187EF")
     public Formatter format(String format, Object... args) {
-        Formatter varB4EAC82CA7396A68D541C85D26508E83_1923392637 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1923392637 = format(this.locale, format, args);
+        Formatter varB4EAC82CA7396A68D541C85D26508E83_235226080 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_235226080 = format(this.locale, format, args);
         addTaint(format.getTaint());
         addTaint(args[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1923392637.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1923392637;
+        varB4EAC82CA7396A68D541C85D26508E83_235226080.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_235226080;
         // ---------- Original Method ----------
         //return format(this.locale, format, args);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.468 -0400", hash_original_method = "F45273151F6DD69ACB6CCC03C59753A4", hash_generated_method = "3749D8A288767DD725E9552B6C2A68FE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.269 -0400", hash_original_method = "F45273151F6DD69ACB6CCC03C59753A4", hash_generated_method = "54E332607813200261B08CE17235E407")
     public Formatter format(Locale l, String format, Object... args) {
-        Formatter varB4EAC82CA7396A68D541C85D26508E83_112837971 = null; //Variable for return #1
+        Formatter varB4EAC82CA7396A68D541C85D26508E83_219724498 = null; //Variable for return #1
         Locale originalLocale;
         originalLocale = locale;
         try 
@@ -376,11 +376,11 @@ public final class Formatter implements Closeable, Flushable {
         {
             this.locale = originalLocale;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_112837971 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_219724498 = this;
         addTaint(format.getTaint());
         addTaint(args[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_112837971.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_112837971;
+        varB4EAC82CA7396A68D541C85D26508E83_219724498.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_219724498;
         // ---------- Original Method ----------
         //Locale originalLocale = locale;
         //try {
@@ -394,7 +394,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.474 -0400", hash_original_method = "960E24FB807777DEBBE8328729AF6A3F", hash_generated_method = "2D1E8936942173BF05B1349BD5740BD2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.270 -0400", hash_original_method = "960E24FB807777DEBBE8328729AF6A3F", hash_generated_method = "C8DC0198B18E1FDF3CEBF31365C992F6")
     private void doFormat(String format, Object... args) {
         checkNotClosed();
         FormatSpecifierParser fsp;
@@ -427,10 +427,10 @@ public final class Formatter implements Closeable, Flushable {
                 Object argument;
                 argument = null;
                 {
-                    boolean var15437F24151F4B9BB4CF0F9304E51BA9_2147099231 = (token.requireArgument());
+                    boolean var15437F24151F4B9BB4CF0F9304E51BA9_76864861 = (token.requireArgument());
                     {
                         int index;
-                        boolean varE3D8046091E4D6BBC992AF3D15742E1E_1288181829 = (token.getArgIndex() == FormatToken.UNSET);
+                        boolean varE3D8046091E4D6BBC992AF3D15742E1E_1149505584 = (token.getArgIndex() == FormatToken.UNSET);
                         index = currentObjectIndex++;
                         index = token.getArgIndex();
                         argument = getArgument(args, index, fsp, lastArgument, hasLastArgumentSet);
@@ -453,7 +453,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.475 -0400", hash_original_method = "4A93F3F0DF6F4E45CC93AF5660722832", hash_generated_method = "7B8F10843DEF23B6000374A8576830D5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.278 -0400", hash_original_method = "4A93F3F0DF6F4E45CC93AF5660722832", hash_generated_method = "7B8F10843DEF23B6000374A8576830D5")
     private void outputCharSequence(CharSequence cs, int start, int end) {
         try 
         {
@@ -475,44 +475,44 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.491 -0400", hash_original_method = "4EF20CF84298D39EE17983F53878C341", hash_generated_method = "356619E3E6B728AA5054105BE948DD56")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.279 -0400", hash_original_method = "4EF20CF84298D39EE17983F53878C341", hash_generated_method = "C9BC21D89AF24B658BB63AE83EA6979F")
     private Object getArgument(Object[] args, int index, FormatSpecifierParser fsp,
             Object lastArgument, boolean hasLastArgumentSet) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_611906231 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_1460915803 = null; //Variable for return #2
-        Object varB4EAC82CA7396A68D541C85D26508E83_135020389 = null; //Variable for return #3
+        Object varB4EAC82CA7396A68D541C85D26508E83_1102875242 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_895794714 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_1944106513 = null; //Variable for return #3
         {
             if (DroidSafeAndroidRuntime.control) throw new MissingFormatArgumentException("<");
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_611906231 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1102875242 = null;
         } //End block
         {
             if (DroidSafeAndroidRuntime.control) throw new MissingFormatArgumentException(fsp.getFormatSpecifierText());
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1460915803 = lastArgument;
+            varB4EAC82CA7396A68D541C85D26508E83_895794714 = lastArgument;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_135020389 = args[index];
+        varB4EAC82CA7396A68D541C85D26508E83_1944106513 = args[index];
         addTaint(args[0].getTaint());
         addTaint(index);
         addTaint(fsp.getTaint());
         addTaint(lastArgument.getTaint());
         addTaint(hasLastArgumentSet);
-        Object varA7E53CE21691AB073D9660D615818899_1117294415; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_501242425; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1117294415 = varB4EAC82CA7396A68D541C85D26508E83_611906231;
+                varA7E53CE21691AB073D9660D615818899_501242425 = varB4EAC82CA7396A68D541C85D26508E83_1102875242;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1117294415 = varB4EAC82CA7396A68D541C85D26508E83_1460915803;
+                varA7E53CE21691AB073D9660D615818899_501242425 = varB4EAC82CA7396A68D541C85D26508E83_895794714;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1117294415 = varB4EAC82CA7396A68D541C85D26508E83_135020389;
+                varA7E53CE21691AB073D9660D615818899_501242425 = varB4EAC82CA7396A68D541C85D26508E83_1944106513;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1117294415.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1117294415;
+        varA7E53CE21691AB073D9660D615818899_501242425.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_501242425;
         // ---------- Original Method ----------
         //if (index == FormatToken.LAST_ARGUMENT_INDEX && !hasLastArgumentSet) {
             //throw new MissingFormatArgumentException("<");
@@ -530,27 +530,27 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.493 -0400", hash_original_method = "0237F1DF7BD7A386A4F4D1B44D43876F", hash_generated_method = "7E2E940AFF15D6B71F7A214E86C80A49")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.292 -0400", hash_original_method = "0237F1DF7BD7A386A4F4D1B44D43876F", hash_generated_method = "6AA744FA9316AF7E94BC19BABD11355B")
     private CharSequence transform(FormatToken token, Object argument) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_118599313 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1443812627 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_935847221 = null; //Variable for return #3
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_307183159 = null; //Variable for return #4
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_648032700 = null; //Variable for return #5
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_712266077 = null; //Variable for return #6
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_797677058 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_164261119 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_635171869 = null; //Variable for return #3
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_997899096 = null; //Variable for return #4
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2081961334 = null; //Variable for return #5
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2045036181 = null; //Variable for return #6
         this.formatToken = token;
         this.arg = argument;
         {
-            boolean var774D16194421B6759CE7C28102870BC1_747891360 = (token.isDefault());
+            boolean var774D16194421B6759CE7C28102870BC1_1056328516 = (token.isDefault());
             {
                 {
-                    Object var3AF4190693AD8752FD689B6D6C2F4FD0_341996876 = (token.getConversionType());
+                    Object var3AF4190693AD8752FD689B6D6C2F4FD0_411359809 = (token.getConversionType());
                     //Begin case 's' 
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_118599313 = "null";
+                        varB4EAC82CA7396A68D541C85D26508E83_797677058 = "null";
                     } //End block
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_1443812627 = arg.toString();
+                        varB4EAC82CA7396A68D541C85D26508E83_164261119 = arg.toString();
                     } //End block
                     //End case 's' 
                     //Begin case 'd' 
@@ -561,11 +561,11 @@ public final class Formatter implements Closeable, Flushable {
                     {
                         {
                             IntegralToString.appendInt((StringBuilder) out, ((Number) arg).intValue());
-                            varB4EAC82CA7396A68D541C85D26508E83_935847221 = null;
+                            varB4EAC82CA7396A68D541C85D26508E83_635171869 = null;
                         } //End block
                         {
                             IntegralToString.appendLong((StringBuilder) out, ((Long) arg).longValue());
-                            varB4EAC82CA7396A68D541C85D26508E83_307183159 = null;
+                            varB4EAC82CA7396A68D541C85D26508E83_997899096 = null;
                         } //End block
                     } //End block
                     //End case 'd' 
@@ -573,7 +573,7 @@ public final class Formatter implements Closeable, Flushable {
                     {
                         String result;
                         result = arg.toString();
-                        varB4EAC82CA7396A68D541C85D26508E83_648032700 = needLocalizedDigits ? localizeDigits(result) : result;
+                        varB4EAC82CA7396A68D541C85D26508E83_2081961334 = needLocalizedDigits ? localizeDigits(result) : result;
                     } //End block
                     //End case 'd' 
                 } //End collapsed parenthetic
@@ -582,7 +582,7 @@ public final class Formatter implements Closeable, Flushable {
         formatToken.checkFlags(arg);
         CharSequence result;
         {
-            Object var1A1A65DF413B75C3108F1920C1E23A5B_2055166188 = (token.getConversionType());
+            Object var1A1A65DF413B75C3108F1920C1E23A5B_1002985357 = (token.getConversionType());
             //Begin case 'B' 'b' 
             result = transformFromBoolean();
             //End case 'B' 'b' 
@@ -620,43 +620,43 @@ public final class Formatter implements Closeable, Flushable {
             //End case default 
         } //End collapsed parenthetic
         {
-            boolean var1DB4C6B053C2BBEFBDA3D42D86D066E6_1866146269 = (Character.isUpperCase(token.getConversionType()));
+            boolean var1DB4C6B053C2BBEFBDA3D42D86D066E6_1156635032 = (Character.isUpperCase(token.getConversionType()));
             {
                 {
                     result = result.toString().toUpperCase(locale);
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_712266077 = result;
-        CharSequence varA7E53CE21691AB073D9660D615818899_1638633687; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_2045036181 = result;
+        CharSequence varA7E53CE21691AB073D9660D615818899_1723500585; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1638633687 = varB4EAC82CA7396A68D541C85D26508E83_118599313;
+                varA7E53CE21691AB073D9660D615818899_1723500585 = varB4EAC82CA7396A68D541C85D26508E83_797677058;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1638633687 = varB4EAC82CA7396A68D541C85D26508E83_1443812627;
+                varA7E53CE21691AB073D9660D615818899_1723500585 = varB4EAC82CA7396A68D541C85D26508E83_164261119;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_1638633687 = varB4EAC82CA7396A68D541C85D26508E83_935847221;
+                varA7E53CE21691AB073D9660D615818899_1723500585 = varB4EAC82CA7396A68D541C85D26508E83_635171869;
                 break;
             case 4: //Assign result for return ordinal #4
-                varA7E53CE21691AB073D9660D615818899_1638633687 = varB4EAC82CA7396A68D541C85D26508E83_307183159;
+                varA7E53CE21691AB073D9660D615818899_1723500585 = varB4EAC82CA7396A68D541C85D26508E83_997899096;
                 break;
             case 5: //Assign result for return ordinal #5
-                varA7E53CE21691AB073D9660D615818899_1638633687 = varB4EAC82CA7396A68D541C85D26508E83_648032700;
+                varA7E53CE21691AB073D9660D615818899_1723500585 = varB4EAC82CA7396A68D541C85D26508E83_2081961334;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1638633687 = varB4EAC82CA7396A68D541C85D26508E83_712266077;
+                varA7E53CE21691AB073D9660D615818899_1723500585 = varB4EAC82CA7396A68D541C85D26508E83_2045036181;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1638633687.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1638633687;
+        varA7E53CE21691AB073D9660D615818899_1723500585.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1723500585;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.499 -0400", hash_original_method = "D44F27ADB431306CEB9F9E1F25036901", hash_generated_method = "124E61E1871259646BE10006ACCFBD1F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.292 -0400", hash_original_method = "D44F27ADB431306CEB9F9E1F25036901", hash_generated_method = "124E61E1871259646BE10006ACCFBD1F")
     private IllegalFormatConversionException badArgumentType() {
         if (DroidSafeAndroidRuntime.control) throw new IllegalFormatConversionException(formatToken.getConversionType(), arg.getClass());
         // ---------- Original Method ----------
@@ -664,9 +664,9 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.502 -0400", hash_original_method = "8CD3AC57424B332A3611698407D98FD3", hash_generated_method = "B484557D5075E732FF51BDE3659BFCFF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.293 -0400", hash_original_method = "8CD3AC57424B332A3611698407D98FD3", hash_generated_method = "1F638624888998830EF549E9297710B2")
     private CharSequence localizeDigits(CharSequence s) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_307239433 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2131957147 = null; //Variable for return #1
         int length;
         length = s.length();
         int offsetToLocalizedDigits;
@@ -685,10 +685,10 @@ public final class Formatter implements Closeable, Flushable {
                 result.append(ch);
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_307239433 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_2131957147 = result;
         addTaint(s.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_307239433.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_307239433;
+        varB4EAC82CA7396A68D541C85D26508E83_2131957147.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2131957147;
         // ---------- Original Method ----------
         //int length = s.length();
         //int offsetToLocalizedDigits = localeData.zeroDigit - '0';
@@ -704,9 +704,9 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.503 -0400", hash_original_method = "CC3FF2DA7072A05A8664F97319F6C752", hash_generated_method = "5553DDF9BA830F10E3EC2C349BE8205E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.311 -0400", hash_original_method = "CC3FF2DA7072A05A8664F97319F6C752", hash_generated_method = "7EFEEC311493EAB1D3F91F5965ED8A19")
     private CharSequence insertGrouping(CharSequence s) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1026255342 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_741048011 = null; //Variable for return #1
         StringBuilder result;
         result = new StringBuilder(s.length() + s.length()/3);
         int digitsLength;
@@ -714,7 +714,7 @@ public final class Formatter implements Closeable, Flushable {
         int i;
         i = 0;
         {
-            boolean var9A0E6F317753A236C52C55D585498BB1_857377488 = (s.charAt(0) == '-');
+            boolean var9A0E6F317753A236C52C55D585498BB1_681184938 = (s.charAt(0) == '-');
             {
                 result.append('-');
             } //End block
@@ -727,17 +727,17 @@ public final class Formatter implements Closeable, Flushable {
         result.append(s, i, i + headLength);
         i += headLength;
         {
-            boolean var9E95E9D345FEFD15BDBA0B863D5CE5D9_2099937577 = (i < s.length());
+            boolean var9E95E9D345FEFD15BDBA0B863D5CE5D9_343917682 = (i < s.length());
             i += 3;
             {
                 result.append(localeData.groupingSeparator);
                 result.append(s, i, i + 3);
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1026255342 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_741048011 = result;
         addTaint(s.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1026255342.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1026255342;
+        varB4EAC82CA7396A68D541C85D26508E83_741048011.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_741048011;
         // ---------- Original Method ----------
         //StringBuilder result = new StringBuilder(s.length() + s.length()/3);
         //int digitsLength = s.length();
@@ -761,9 +761,9 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.504 -0400", hash_original_method = "54F34C95EDCEEE411BD250D07A12E500", hash_generated_method = "43C34DCABDE399566D9554B23FF0BD81")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.312 -0400", hash_original_method = "54F34C95EDCEEE411BD250D07A12E500", hash_generated_method = "DD6798C55CAD06A8B20B0C022F6763DE")
     private CharSequence transformFromBoolean() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_437168302 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1006559755 = null; //Variable for return #1
         CharSequence result;
         {
             result = arg.toString();
@@ -774,9 +774,9 @@ public final class Formatter implements Closeable, Flushable {
         {
             result = "true";
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_437168302 = padding(result, 0);
-        varB4EAC82CA7396A68D541C85D26508E83_437168302.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_437168302;
+        varB4EAC82CA7396A68D541C85D26508E83_1006559755 = padding(result, 0);
+        varB4EAC82CA7396A68D541C85D26508E83_1006559755.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1006559755;
         // ---------- Original Method ----------
         //CharSequence result;
         //if (arg instanceof Boolean) {
@@ -790,9 +790,9 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.519 -0400", hash_original_method = "FEE63D21FF5AA7B8F21641D7D3CB6697", hash_generated_method = "01FA02EB5AC06CE38E6BE1762340914A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.312 -0400", hash_original_method = "FEE63D21FF5AA7B8F21641D7D3CB6697", hash_generated_method = "379956CD5900BEA17C854C8E14625FC5")
     private CharSequence transformFromHashCode() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2055504460 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_761014341 = null; //Variable for return #1
         CharSequence result;
         {
             result = "null";
@@ -800,9 +800,9 @@ public final class Formatter implements Closeable, Flushable {
         {
             result = Integer.toHexString(arg.hashCode());
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2055504460 = padding(result, 0);
-        varB4EAC82CA7396A68D541C85D26508E83_2055504460.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2055504460;
+        varB4EAC82CA7396A68D541C85D26508E83_761014341 = padding(result, 0);
+        varB4EAC82CA7396A68D541C85D26508E83_761014341.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_761014341;
         // ---------- Original Method ----------
         //CharSequence result;
         //if (arg == null) {
@@ -814,10 +814,10 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.520 -0400", hash_original_method = "41FDF272148D1D909A3CC241D4F2B404", hash_generated_method = "DFF473BF0176150EFBD69C5A7753677E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.313 -0400", hash_original_method = "41FDF272148D1D909A3CC241D4F2B404", hash_generated_method = "545D9FD920ADB78A7C3ACF5F67BAF2EC")
     private CharSequence transformFromString() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1492759769 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1615320547 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1165420654 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1518675671 = null; //Variable for return #2
         {
             int flags;
             flags = 0;
@@ -828,30 +828,30 @@ public final class Formatter implements Closeable, Flushable {
                 flags |= FormattableFlags.ALTERNATE;
             } //End block
             {
-                boolean varE5047B2B0C3ABA50902192D0CF9C9641_1260478306 = (Character.isUpperCase(formatToken.getConversionType()));
+                boolean varE5047B2B0C3ABA50902192D0CF9C9641_2145679397 = (Character.isUpperCase(formatToken.getConversionType()));
                 {
                     flags |= FormattableFlags.UPPERCASE;
                 } //End block
             } //End collapsed parenthetic
             ((Formattable) arg).formatTo(this, flags, formatToken.getWidth(),
                     formatToken.getPrecision());
-            varB4EAC82CA7396A68D541C85D26508E83_1492759769 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1165420654 = null;
         } //End block
         CharSequence result;
         result = arg.toString();
         result = "null";
-        varB4EAC82CA7396A68D541C85D26508E83_1615320547 = padding(result, 0);
-        CharSequence varA7E53CE21691AB073D9660D615818899_68947223; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1518675671 = padding(result, 0);
+        CharSequence varA7E53CE21691AB073D9660D615818899_360592498; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_68947223 = varB4EAC82CA7396A68D541C85D26508E83_1492759769;
+                varA7E53CE21691AB073D9660D615818899_360592498 = varB4EAC82CA7396A68D541C85D26508E83_1165420654;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_68947223 = varB4EAC82CA7396A68D541C85D26508E83_1615320547;
+                varA7E53CE21691AB073D9660D615818899_360592498 = varB4EAC82CA7396A68D541C85D26508E83_1518675671;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_68947223.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_68947223;
+        varA7E53CE21691AB073D9660D615818899_360592498.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_360592498;
         // ---------- Original Method ----------
         //if (arg instanceof Formattable) {
             //int flags = 0;
@@ -873,22 +873,22 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.521 -0400", hash_original_method = "78103310C8550D540C751775D2E73F1B", hash_generated_method = "077A0C6A1C50DC980E738D0C3BF099E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.323 -0400", hash_original_method = "78103310C8550D540C751775D2E73F1B", hash_generated_method = "115612040C09B020C3E31139106B9882")
     private CharSequence transformFromCharacter() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_609295162 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1785952514 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1256617553 = null; //Variable for return #3
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_624916292 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1759700963 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1040316364 = null; //Variable for return #3
         {
-            varB4EAC82CA7396A68D541C85D26508E83_609295162 = padding("null", 0);
+            varB4EAC82CA7396A68D541C85D26508E83_624916292 = padding("null", 0);
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1785952514 = padding(String.valueOf(arg), 0);
+            varB4EAC82CA7396A68D541C85D26508E83_1759700963 = padding(String.valueOf(arg), 0);
         } //End block
         {
             int codePoint;
             codePoint = ((Number) arg).intValue();
             {
-                boolean var6F543C204E9C4F46177946447429AAE1_673440753 = (!Character.isValidCodePoint(codePoint));
+                boolean var6F543C204E9C4F46177946447429AAE1_1227513057 = (!Character.isValidCodePoint(codePoint));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalFormatCodePointException(codePoint);
                 } //End block
@@ -896,25 +896,25 @@ public final class Formatter implements Closeable, Flushable {
             CharSequence result;
             result = String.valueOf((char) codePoint);
             result = String.valueOf(Character.toChars(codePoint));
-            varB4EAC82CA7396A68D541C85D26508E83_1256617553 = padding(result, 0);
+            varB4EAC82CA7396A68D541C85D26508E83_1040316364 = padding(result, 0);
         } //End block
         {
             if (DroidSafeAndroidRuntime.control) throw badArgumentType();
         } //End block
-        CharSequence varA7E53CE21691AB073D9660D615818899_31871654; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_652993926; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_31871654 = varB4EAC82CA7396A68D541C85D26508E83_609295162;
+                varA7E53CE21691AB073D9660D615818899_652993926 = varB4EAC82CA7396A68D541C85D26508E83_624916292;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_31871654 = varB4EAC82CA7396A68D541C85D26508E83_1785952514;
+                varA7E53CE21691AB073D9660D615818899_652993926 = varB4EAC82CA7396A68D541C85D26508E83_1759700963;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_31871654 = varB4EAC82CA7396A68D541C85D26508E83_1256617553;
+                varA7E53CE21691AB073D9660D615818899_652993926 = varB4EAC82CA7396A68D541C85D26508E83_1040316364;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_31871654.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_31871654;
+        varA7E53CE21691AB073D9660D615818899_652993926.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_652993926;
         // ---------- Original Method ----------
         //if (arg == null) {
             //return padding("null", 0);
@@ -936,21 +936,21 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.522 -0400", hash_original_method = "1802F533F155B8AA49557FA5A74B7DBE", hash_generated_method = "FC6DCF3086D4CC0C5C9E3B66D161F143")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.333 -0400", hash_original_method = "1802F533F155B8AA49557FA5A74B7DBE", hash_generated_method = "BC31FD914D37EF6AF3A81A276E774F93")
     private CharSequence transformFromPercent() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1985651281 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1985651281 = padding("%", 0);
-        varB4EAC82CA7396A68D541C85D26508E83_1985651281.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1985651281;
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1959091886 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1959091886 = padding("%", 0);
+        varB4EAC82CA7396A68D541C85D26508E83_1959091886.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1959091886;
         // ---------- Original Method ----------
         //return padding("%", 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.528 -0400", hash_original_method = "EF7726D1BC858C4C5BDC40B9ACBD3ABF", hash_generated_method = "D4E4F4D2969BF321E73FAEBF510CEB18")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.343 -0400", hash_original_method = "EF7726D1BC858C4C5BDC40B9ACBD3ABF", hash_generated_method = "C21CB2DF34C8D517993294A8B521D4F1")
     private CharSequence padding(CharSequence source, int startIndex) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_2086249176 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1865243302 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_840449034 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1624945176 = null; //Variable for return #2
         int start;
         start = startIndex;
         int width;
@@ -972,13 +972,13 @@ public final class Formatter implements Closeable, Flushable {
             width = Math.max(source.length(), width);
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2086249176 = source;
+            varB4EAC82CA7396A68D541C85D26508E83_840449034 = source;
         } //End block
         char paddingChar;
         paddingChar = '\u0020';
         {
             {
-                boolean var5580C15E55C4240F2395BB7B30D9E99A_340018210 = (formatToken.getConversionType() == 'd');
+                boolean var5580C15E55C4240F2395BB7B30D9E99A_985090986 = (formatToken.getConversionType() == 'd');
                 {
                     paddingChar = localeData.zeroDigit;
                 } //End block
@@ -1003,40 +1003,40 @@ public final class Formatter implements Closeable, Flushable {
         {
             result.insert(start, paddingChars);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1865243302 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_1624945176 = result;
         addTaint(source.getTaint());
         addTaint(startIndex);
-        CharSequence varA7E53CE21691AB073D9660D615818899_1828597205; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_547644374; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1828597205 = varB4EAC82CA7396A68D541C85D26508E83_2086249176;
+                varA7E53CE21691AB073D9660D615818899_547644374 = varB4EAC82CA7396A68D541C85D26508E83_840449034;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1828597205 = varB4EAC82CA7396A68D541C85D26508E83_1865243302;
+                varA7E53CE21691AB073D9660D615818899_547644374 = varB4EAC82CA7396A68D541C85D26508E83_1624945176;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1828597205.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1828597205;
+        varA7E53CE21691AB073D9660D615818899_547644374.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_547644374;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.533 -0400", hash_original_method = "AA67EEFB247ACC7BDA1BABCD03B30A80", hash_generated_method = "2E80FB0E4C124734BCE6D9AB3B58A990")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.346 -0400", hash_original_method = "AA67EEFB247ACC7BDA1BABCD03B30A80", hash_generated_method = "7613B332C68A74F5A5767A184C478547")
     private StringBuilder toStringBuilder(CharSequence cs) {
-        StringBuilder varB4EAC82CA7396A68D541C85D26508E83_2057849958 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2057849958 = cs instanceof StringBuilder ? (StringBuilder) cs : new StringBuilder(cs);
+        StringBuilder varB4EAC82CA7396A68D541C85D26508E83_1475106851 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1475106851 = cs instanceof StringBuilder ? (StringBuilder) cs : new StringBuilder(cs);
         addTaint(cs.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2057849958.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2057849958;
+        varB4EAC82CA7396A68D541C85D26508E83_1475106851.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1475106851;
         // ---------- Original Method ----------
         //return cs instanceof StringBuilder ? (StringBuilder) cs : new StringBuilder(cs);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.534 -0400", hash_original_method = "CE1A2CC9741A13D14659E3953A660AC1", hash_generated_method = "4DC01CE13DF6448AE9B9CEDDE4C32CA8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.347 -0400", hash_original_method = "CE1A2CC9741A13D14659E3953A660AC1", hash_generated_method = "FFA4E0996135329AB24ED670FC3EF442")
     private StringBuilder wrapParentheses(StringBuilder result) {
-        StringBuilder varB4EAC82CA7396A68D541C85D26508E83_469149634 = null; //Variable for return #1
+        StringBuilder varB4EAC82CA7396A68D541C85D26508E83_533845643 = null; //Variable for return #1
         result.setCharAt(0, '(');
         {
             formatToken.setWidth(formatToken.getWidth() - 1);
@@ -1047,10 +1047,10 @@ public final class Formatter implements Closeable, Flushable {
             result.append(')');
             result = (StringBuilder) padding(result, 0);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_469149634 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_533845643 = result;
         addTaint(result.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_469149634.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_469149634;
+        varB4EAC82CA7396A68D541C85D26508E83_533845643.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_533845643;
         // ---------- Original Method ----------
         //result.setCharAt(0, '(');
         //if (formatToken.flagZero) {
@@ -1065,10 +1065,10 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.553 -0400", hash_original_method = "FADDE3D8C4FA639F028B03B661D10023", hash_generated_method = "EAF45A9327650F22121C05851A6BD726")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.361 -0400", hash_original_method = "FADDE3D8C4FA639F028B03B661D10023", hash_generated_method = "AE15258427E003922DF7B2B95354CCB7")
     private CharSequence transformFromInteger() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_159843200 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1125073100 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1889261 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_879789797 = null; //Variable for return #2
         int startIndex;
         startIndex = 0;
         StringBuilder result;
@@ -1113,7 +1113,7 @@ public final class Formatter implements Closeable, Flushable {
             result.append(digits);
             {
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_159843200 = wrapParentheses(result);
+                    varB4EAC82CA7396A68D541C85D26508E83_1889261 = wrapParentheses(result);
                 } //End block
             } //End block
             {
@@ -1144,41 +1144,41 @@ public final class Formatter implements Closeable, Flushable {
                 result.append(Long.toHexString(value));
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1125073100 = padding(result, startIndex);
-        CharSequence varA7E53CE21691AB073D9660D615818899_615895993; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_879789797 = padding(result, startIndex);
+        CharSequence varA7E53CE21691AB073D9660D615818899_1034925211; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_615895993 = varB4EAC82CA7396A68D541C85D26508E83_159843200;
+                varA7E53CE21691AB073D9660D615818899_1034925211 = varB4EAC82CA7396A68D541C85D26508E83_1889261;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_615895993 = varB4EAC82CA7396A68D541C85D26508E83_1125073100;
+                varA7E53CE21691AB073D9660D615818899_1034925211 = varB4EAC82CA7396A68D541C85D26508E83_879789797;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_615895993.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_615895993;
+        varA7E53CE21691AB073D9660D615818899_1034925211.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1034925211;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.554 -0400", hash_original_method = "15D0DEB8422EE33E04C98AFC872D1D51", hash_generated_method = "63B695F744D44205BBC2D363A81158E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.362 -0400", hash_original_method = "15D0DEB8422EE33E04C98AFC872D1D51", hash_generated_method = "FA379B423A306D6DD801FDC2AC23DFC2")
     private CharSequence transformFromNull() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1753141995 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1519764292 = null; //Variable for return #1
         formatToken.flagZero = false;
-        varB4EAC82CA7396A68D541C85D26508E83_1753141995 = padding("null", 0);
-        varB4EAC82CA7396A68D541C85D26508E83_1753141995.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1753141995;
+        varB4EAC82CA7396A68D541C85D26508E83_1519764292 = padding("null", 0);
+        varB4EAC82CA7396A68D541C85D26508E83_1519764292.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1519764292;
         // ---------- Original Method ----------
         //formatToken.flagZero = false;
         //return padding("null", 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.555 -0400", hash_original_method = "28740AE89E2FC451EFE3093F54121A6C", hash_generated_method = "A953A6B271CACF1AFD972134A096BCC7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.382 -0400", hash_original_method = "28740AE89E2FC451EFE3093F54121A6C", hash_generated_method = "C19FDAA67F1C1EE2D77F12943B3AA9E3")
     private CharSequence transformFromBigInteger() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1162214115 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1346777627 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1260783683 = null; //Variable for return #3
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1114101913 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_624787625 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1504883310 = null; //Variable for return #3
         int startIndex;
         startIndex = 0;
         StringBuilder result;
@@ -1188,7 +1188,7 @@ public final class Formatter implements Closeable, Flushable {
         char currentConversionType;
         currentConversionType = formatToken.getConversionType();
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1162214115 = transformFromNull();
+            varB4EAC82CA7396A68D541C85D26508E83_1114101913 = transformFromNull();
         } //End block
         boolean isNegative;
         isNegative = (bigInt.compareTo(BigInteger.ZERO) < 0);
@@ -1228,34 +1228,34 @@ public final class Formatter implements Closeable, Flushable {
             } //End block
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1346777627 = wrapParentheses(result);
+            varB4EAC82CA7396A68D541C85D26508E83_624787625 = wrapParentheses(result);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1260783683 = padding(result, startIndex);
-        CharSequence varA7E53CE21691AB073D9660D615818899_905946815; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1504883310 = padding(result, startIndex);
+        CharSequence varA7E53CE21691AB073D9660D615818899_1899396296; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_905946815 = varB4EAC82CA7396A68D541C85D26508E83_1162214115;
+                varA7E53CE21691AB073D9660D615818899_1899396296 = varB4EAC82CA7396A68D541C85D26508E83_1114101913;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_905946815 = varB4EAC82CA7396A68D541C85D26508E83_1346777627;
+                varA7E53CE21691AB073D9660D615818899_1899396296 = varB4EAC82CA7396A68D541C85D26508E83_624787625;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_905946815 = varB4EAC82CA7396A68D541C85D26508E83_1260783683;
+                varA7E53CE21691AB073D9660D615818899_1899396296 = varB4EAC82CA7396A68D541C85D26508E83_1504883310;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_905946815.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_905946815;
+        varA7E53CE21691AB073D9660D615818899_1899396296.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1899396296;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.562 -0400", hash_original_method = "3FA485DEFE055FA59E9A89B7029B3055", hash_generated_method = "D062503C2CE2E349AA988A0885BE3FDA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.394 -0400", hash_original_method = "3FA485DEFE055FA59E9A89B7029B3055", hash_generated_method = "511E563442006353B284D957ED4FE113")
     private CharSequence transformFromDateTime() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_523525489 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1861635493 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_402692599 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_892046889 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_523525489 = transformFromNull();
+            varB4EAC82CA7396A68D541C85D26508E83_402692599 = transformFromNull();
         } //End block
         Calendar calendar;
         {
@@ -1279,23 +1279,23 @@ public final class Formatter implements Closeable, Flushable {
         StringBuilder result;
         result = new StringBuilder();
         {
-            boolean varCAB943A58957944F491BEB3F9C12AAC8_601402216 = (!appendT(result, formatToken.getDateSuffix(), calendar));
+            boolean varCAB943A58957944F491BEB3F9C12AAC8_1352805561 = (!appendT(result, formatToken.getDateSuffix(), calendar));
             {
                 if (DroidSafeAndroidRuntime.control) throw formatToken.unknownFormatConversionException();
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1861635493 = padding(result, 0);
-        CharSequence varA7E53CE21691AB073D9660D615818899_1805846654; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_892046889 = padding(result, 0);
+        CharSequence varA7E53CE21691AB073D9660D615818899_1145730221; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1805846654 = varB4EAC82CA7396A68D541C85D26508E83_523525489;
+                varA7E53CE21691AB073D9660D615818899_1145730221 = varB4EAC82CA7396A68D541C85D26508E83_402692599;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1805846654 = varB4EAC82CA7396A68D541C85D26508E83_1861635493;
+                varA7E53CE21691AB073D9660D615818899_1145730221 = varB4EAC82CA7396A68D541C85D26508E83_892046889;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1805846654.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1805846654;
+        varA7E53CE21691AB073D9660D615818899_1145730221.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1145730221;
         // ---------- Original Method ----------
         //if (arg == null) {
             //return transformFromNull();
@@ -1323,7 +1323,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.584 -0400", hash_original_method = "6A85D50A5F6F83B5DE3D767D1CCF3B76", hash_generated_method = "E523E589E4D51BC76BACB1D2143C4DFC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.400 -0400", hash_original_method = "6A85D50A5F6F83B5DE3D767D1CCF3B76", hash_generated_method = "161647A5391FD2CF2D58AEC448BB75EF")
     private boolean appendT(StringBuilder result, char conversion, Calendar calendar) {
         //Begin case 'A' 
         result.append(localeData.longWeekdayNames[calendar.get(Calendar.DAY_OF_WEEK)]);
@@ -1533,24 +1533,24 @@ public final class Formatter implements Closeable, Flushable {
         addTaint(result.getTaint());
         addTaint(conversion);
         addTaint(calendar.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_890188354 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_890188354;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_124076993 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_124076993;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.585 -0400", hash_original_method = "07C369462F22245026E1280008B34AEC", hash_generated_method = "33340D1BBB8DA3FD36313FC90414624A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.401 -0400", hash_original_method = "07C369462F22245026E1280008B34AEC", hash_generated_method = "DBB283FB0D3C776EF33B97D855A6289E")
     private int to12Hour(int hour) {
         addTaint(hour);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_549341545 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_549341545;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1399494362 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1399494362;
         // ---------- Original Method ----------
         //return hour == 0 ? 12 : hour;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.586 -0400", hash_original_method = "60B30B4DC0B127EF94D361BC9EB2AF90", hash_generated_method = "B21775F826EB3A831071CAF4CEC6C17C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.523 -0400", hash_original_method = "60B30B4DC0B127EF94D361BC9EB2AF90", hash_generated_method = "B21775F826EB3A831071CAF4CEC6C17C")
     private void appendLocalized(StringBuilder result, long value, int width) {
         int paddingIndex;
         paddingIndex = result.length();
@@ -1601,14 +1601,14 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.594 -0400", hash_original_method = "977B62B975352D4F075C1101DB18FB73", hash_generated_method = "8C118ED76978A89583FBDFE95D94D958")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.525 -0400", hash_original_method = "977B62B975352D4F075C1101DB18FB73", hash_generated_method = "3A6D1178F3EEA5FEE0074E79C9C2E2AD")
     private CharSequence transformFromSpecialNumber(double d) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_315150119 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_251405390 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_912252484 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1633589589 = null; //Variable for return #2
         String source;
         source = null;
         {
-            boolean varF573A637641E1AB21D698815AEB110FB_1173359031 = (Double.isNaN(d));
+            boolean varF573A637641E1AB21D698815AEB110FB_1387685967 = (Double.isNaN(d));
             {
                 source = "NaN";
             } //End block
@@ -1632,24 +1632,24 @@ public final class Formatter implements Closeable, Flushable {
                 } //End block
             } //End block
             {
-                varB4EAC82CA7396A68D541C85D26508E83_315150119 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_912252484 = null;
             } //End block
         } //End collapsed parenthetic
         formatToken.setPrecision(FormatToken.UNSET);
         formatToken.flagZero = false;
-        varB4EAC82CA7396A68D541C85D26508E83_251405390 = padding(source, 0);
+        varB4EAC82CA7396A68D541C85D26508E83_1633589589 = padding(source, 0);
         addTaint(d);
-        CharSequence varA7E53CE21691AB073D9660D615818899_859332753; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1996429677; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_859332753 = varB4EAC82CA7396A68D541C85D26508E83_315150119;
+                varA7E53CE21691AB073D9660D615818899_1996429677 = varB4EAC82CA7396A68D541C85D26508E83_912252484;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_859332753 = varB4EAC82CA7396A68D541C85D26508E83_251405390;
+                varA7E53CE21691AB073D9660D615818899_1996429677 = varB4EAC82CA7396A68D541C85D26508E83_1633589589;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_859332753.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_859332753;
+        varA7E53CE21691AB073D9660D615818899_1996429677.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1996429677;
         // ---------- Original Method ----------
         //String source = null;
         //if (Double.isNaN(d)) {
@@ -1677,14 +1677,14 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.610 -0400", hash_original_method = "DECF7ECF8109F764E81E2CF8101BCB0C", hash_generated_method = "CEBE8335F11D3BDB7E6F82A263DB60CD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.527 -0400", hash_original_method = "DECF7ECF8109F764E81E2CF8101BCB0C", hash_generated_method = "D97911A087572361D6E9C69EE27307F1")
     private CharSequence transformFromFloat() {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_653909125 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1543163775 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_468977092 = null; //Variable for return #3
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1135529643 = null; //Variable for return #4
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_701687647 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_951173437 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_863990172 = null; //Variable for return #3
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1089336274 = null; //Variable for return #4
         {
-            varB4EAC82CA7396A68D541C85D26508E83_653909125 = transformFromNull();
+            varB4EAC82CA7396A68D541C85D26508E83_701687647 = transformFromNull();
         } //End block
         {
             Number number;
@@ -1692,7 +1692,7 @@ public final class Formatter implements Closeable, Flushable {
             double d;
             d = number.doubleValue();
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1543163775 = transformFromSpecialNumber(d);
+                varB4EAC82CA7396A68D541C85D26508E83_951173437 = transformFromSpecialNumber(d);
             } //End block
         } //End block
         {
@@ -1701,7 +1701,7 @@ public final class Formatter implements Closeable, Flushable {
         char conversionType;
         conversionType = formatToken.getConversionType();
         {
-            boolean var4D48FD270E3C43B43C7CAFA231E3C2A7_750863049 = (conversionType != 'a' && conversionType != 'A' && !formatToken.isPrecisionSet());
+            boolean var4D48FD270E3C43B43C7CAFA231E3C2A7_826071105 = (conversionType != 'a' && conversionType != 'A' && !formatToken.isPrecisionSet());
             {
                 formatToken.setPrecision(FormatToken.DEFAULT_PRECISION);
             } //End block
@@ -1727,10 +1727,10 @@ public final class Formatter implements Closeable, Flushable {
         int startIndex;
         startIndex = 0;
         {
-            boolean varC4FD83BCDCE254D147FDF9D7B3AC13AA_214937160 = (result.charAt(0) == localeData.minusSign);
+            boolean varC4FD83BCDCE254D147FDF9D7B3AC13AA_1185602984 = (result.charAt(0) == localeData.minusSign);
             {
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_468977092 = wrapParentheses(result);
+                    varB4EAC82CA7396A68D541C85D26508E83_863990172 = wrapParentheses(result);
                 } //End block
             } //End block
             {
@@ -1750,30 +1750,30 @@ public final class Formatter implements Closeable, Flushable {
         {
             startIndex += 2;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1135529643 = padding(result, startIndex);
-        CharSequence varA7E53CE21691AB073D9660D615818899_473670705; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1089336274 = padding(result, startIndex);
+        CharSequence varA7E53CE21691AB073D9660D615818899_1824329279; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_473670705 = varB4EAC82CA7396A68D541C85D26508E83_653909125;
+                varA7E53CE21691AB073D9660D615818899_1824329279 = varB4EAC82CA7396A68D541C85D26508E83_701687647;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_473670705 = varB4EAC82CA7396A68D541C85D26508E83_1543163775;
+                varA7E53CE21691AB073D9660D615818899_1824329279 = varB4EAC82CA7396A68D541C85D26508E83_951173437;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_473670705 = varB4EAC82CA7396A68D541C85D26508E83_468977092;
+                varA7E53CE21691AB073D9660D615818899_1824329279 = varB4EAC82CA7396A68D541C85D26508E83_863990172;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_473670705 = varB4EAC82CA7396A68D541C85D26508E83_1135529643;
+                varA7E53CE21691AB073D9660D615818899_1824329279 = varB4EAC82CA7396A68D541C85D26508E83_1089336274;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_473670705.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_473670705;
+        varA7E53CE21691AB073D9660D615818899_1824329279.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1824329279;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.616 -0400", hash_original_method = "43DA2A76094CCA7D42287B4466035D61", hash_generated_method = "949F9C42786386F6F8D50D31E9DB8F14")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.528 -0400", hash_original_method = "43DA2A76094CCA7D42287B4466035D61", hash_generated_method = "949F9C42786386F6F8D50D31E9DB8F14")
     private void transformE(StringBuilder result) {
         int precision;
         precision = formatToken.getPrecision();
@@ -1819,7 +1819,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.625 -0400", hash_original_method = "1973123C0DFAE44325340FD650EA833E", hash_generated_method = "3841D631059D0EA3D295F6F17B737E5D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.564 -0400", hash_original_method = "1973123C0DFAE44325340FD650EA833E", hash_generated_method = "DEE14E33E9EDF441A9823594AA79557C")
     private void transformG(StringBuilder result) {
         int precision;
         precision = formatToken.getPrecision();
@@ -1837,7 +1837,7 @@ public final class Formatter implements Closeable, Flushable {
         requireScientificRepresentation = true;
         d = Math.abs(d);
         {
-            boolean var3ECD0EAFA593A6ADC1E4F46524942B82_71090655 = (Double.isInfinite(d));
+            boolean var3ECD0EAFA593A6ADC1E4F46524942B82_202261271 = (Double.isInfinite(d));
             {
                 precision = formatToken.getPrecision();
                 formatToken.setPrecision(precision);
@@ -1850,17 +1850,17 @@ public final class Formatter implements Closeable, Flushable {
         long l;
         l = b.longValue();
         {
-            boolean var7952BAED570DF8211C40DB97D6C9494B_65884843 = (d >= 1 && d < Math.pow(10, precision));
+            boolean var7952BAED570DF8211C40DB97D6C9494B_549929838 = (d >= 1 && d < Math.pow(10, precision));
             {
                 {
-                    boolean var6DA2CA6307083AFD29BF7C8CBC3D16A4_1534652117 = (l < Math.pow(10, precision));
+                    boolean var6DA2CA6307083AFD29BF7C8CBC3D16A4_320637568 = (l < Math.pow(10, precision));
                     {
                         requireScientificRepresentation = false;
                         precision -= String.valueOf(l).length();
                         precision = precision < 0 ? 0 : precision;
                         l = Math.round(d * Math.pow(10, precision + 1));
                         {
-                            boolean varC0398DDD0FEAEEB1CB8B19A12469A8A5_167345971 = (String.valueOf(l).length() <= formatToken.getPrecision());
+                            boolean varC0398DDD0FEAEEB1CB8B19A12469A8A5_996436456 = (String.valueOf(l).length() <= formatToken.getPrecision());
                         } //End collapsed parenthetic
                         formatToken.setPrecision(precision);
                     } //End block
@@ -1869,17 +1869,17 @@ public final class Formatter implements Closeable, Flushable {
             {
                 l = b.movePointRight(4).longValue();
                 {
-                    boolean varFC5D9BA1CE39DA4CE1D6C7B756E730FB_631421101 = (d >= Math.pow(10, -4) && d < 1);
+                    boolean varFC5D9BA1CE39DA4CE1D6C7B756E730FB_971432201 = (d >= Math.pow(10, -4) && d < 1);
                     {
                         requireScientificRepresentation = false;
                         precision += 4 - String.valueOf(l).length();
                         l = b.movePointRight(precision + 1).longValue();
                         {
-                            boolean varC0398DDD0FEAEEB1CB8B19A12469A8A5_1065682050 = (String.valueOf(l).length() <= formatToken.getPrecision());
+                            boolean varC0398DDD0FEAEEB1CB8B19A12469A8A5_1539017322 = (String.valueOf(l).length() <= formatToken.getPrecision());
                         } //End collapsed parenthetic
                         l = b.movePointRight(precision).longValue();
                         {
-                            boolean var48F2D010DC481B7F6EDFA70502BAD5C5_1494106104 = (l >= Math.pow(10, precision - 4));
+                            boolean var48F2D010DC481B7F6EDFA70502BAD5C5_1745412752 = (l >= Math.pow(10, precision - 4));
                             {
                                 formatToken.setPrecision(precision);
                             } //End block
@@ -1902,7 +1902,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.644 -0400", hash_original_method = "DF70A96812FA1EE536149F6B5D8F4C45", hash_generated_method = "78C4D6B4769C83AB925F5AAFCD169C70")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.565 -0400", hash_original_method = "DF70A96812FA1EE536149F6B5D8F4C45", hash_generated_method = "78C4D6B4769C83AB925F5AAFCD169C70")
     private void transformF(StringBuilder result) {
         String pattern;
         pattern = "0.000000";
@@ -1950,7 +1950,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.645 -0400", hash_original_method = "DCC3844221755C0C14FA659BF8647E6B", hash_generated_method = "3D3E891BFE3538851AABE98229235085")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.566 -0400", hash_original_method = "DCC3844221755C0C14FA659BF8647E6B", hash_generated_method = "52A70E9F9E74D2DC4BC191A2158E78B6")
     private void transformA(StringBuilder result) {
         {
             result.append(Float.toHexString(((Float) arg).floatValue()));
@@ -1962,7 +1962,7 @@ public final class Formatter implements Closeable, Flushable {
             if (DroidSafeAndroidRuntime.control) throw badArgumentType();
         } //End block
         {
-            boolean var0BA49339344F3E46004E2C66FA171DC0_322200379 = (!formatToken.isPrecisionSet());
+            boolean var0BA49339344F3E46004E2C66FA171DC0_174807558 = (!formatToken.isPrecisionSet());
         } //End collapsed parenthetic
         int precision;
         precision = formatToken.getPrecision();
@@ -1995,32 +1995,32 @@ public final class Formatter implements Closeable, Flushable {
 
     
     private static class CachedDecimalFormat {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.645 -0400", hash_original_field = "DBECB303151001B254CD458C962BFA06", hash_generated_field = "57B03D121D93C35DC4CD446F8684FFFD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.566 -0400", hash_original_field = "DBECB303151001B254CD458C962BFA06", hash_generated_field = "57B03D121D93C35DC4CD446F8684FFFD")
 
         public NativeDecimalFormat decimalFormat;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.645 -0400", hash_original_field = "0DC9450ED9A8CE4C2B3A1D132A9E7261", hash_generated_field = "F1A921FEF7693E6D4DF1F57B4D8F992B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.566 -0400", hash_original_field = "0DC9450ED9A8CE4C2B3A1D132A9E7261", hash_generated_field = "F1A921FEF7693E6D4DF1F57B4D8F992B")
 
         public LocaleData currentLocaleData;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.645 -0400", hash_original_field = "0B0F76B47F491349A26FCE54BEF066C1", hash_generated_field = "79B878750A67D50688DF69A25D47682C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.582 -0400", hash_original_field = "0B0F76B47F491349A26FCE54BEF066C1", hash_generated_field = "79B878750A67D50688DF69A25D47682C")
 
         public String currentPattern;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.646 -0400", hash_original_method = "3AB4302EBBD3C6ECF16B79A91E887CC6", hash_generated_method = "C4149067CD2AF28823E946F111841C62")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.582 -0400", hash_original_method = "3AB4302EBBD3C6ECF16B79A91E887CC6", hash_generated_method = "C4149067CD2AF28823E946F111841C62")
         public  CachedDecimalFormat() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.647 -0400", hash_original_method = "784B3214258603820EA00D340F6FA563", hash_generated_method = "7E05D120438E0B138394E37023F6BC4E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.584 -0400", hash_original_method = "784B3214258603820EA00D340F6FA563", hash_generated_method = "612879D09B1F53DB014CEBB37CB45FA5")
         public NativeDecimalFormat update(LocaleData localeData, String pattern) {
-            NativeDecimalFormat varB4EAC82CA7396A68D541C85D26508E83_521980571 = null; //Variable for return #1
+            NativeDecimalFormat varB4EAC82CA7396A68D541C85D26508E83_371796258 = null; //Variable for return #1
             {
                 currentPattern = pattern;
                 currentLocaleData = localeData;
                 decimalFormat = new NativeDecimalFormat(currentPattern, currentLocaleData);
             } //End block
             {
-                boolean varC04205845392AD76FE20C5C34EA780FF_958488861 = (!pattern.equals(currentPattern));
+                boolean varC04205845392AD76FE20C5C34EA780FF_1035961879 = (!pattern.equals(currentPattern));
                 {
                     decimalFormat.applyPattern(pattern);
                     currentPattern = pattern;
@@ -2030,9 +2030,9 @@ public final class Formatter implements Closeable, Flushable {
                 decimalFormat.setDecimalFormatSymbols(localeData);
                 currentLocaleData = localeData;
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_521980571 = decimalFormat;
-            varB4EAC82CA7396A68D541C85D26508E83_521980571.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_521980571;
+            varB4EAC82CA7396A68D541C85D26508E83_371796258 = decimalFormat;
+            varB4EAC82CA7396A68D541C85D26508E83_371796258.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_371796258;
             // ---------- Original Method ----------
             //if (decimalFormat == null) {
                 //currentPattern = pattern;
@@ -2056,82 +2056,82 @@ public final class Formatter implements Closeable, Flushable {
 
     
     private static class FormatToken {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.648 -0400", hash_original_field = "CABEE536F594A7425CADCE9FE8AB1016", hash_generated_field = "772417271F7F0BDFEA0E64414172A084")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.585 -0400", hash_original_field = "CABEE536F594A7425CADCE9FE8AB1016", hash_generated_field = "772417271F7F0BDFEA0E64414172A084")
 
         private int argIndex = UNSET;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.662 -0400", hash_original_field = "AF7A833327A8AE088613AF6547808B22", hash_generated_field = "98479ABC53D035AE015748B6501BED19")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.590 -0400", hash_original_field = "AF7A833327A8AE088613AF6547808B22", hash_generated_field = "98479ABC53D035AE015748B6501BED19")
 
         boolean flagComma;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.662 -0400", hash_original_field = "77D00CCF13983863513393B04DE90A5E", hash_generated_field = "84E0FE8767B1823F9BD483DE94C8D5B6")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.590 -0400", hash_original_field = "77D00CCF13983863513393B04DE90A5E", hash_generated_field = "84E0FE8767B1823F9BD483DE94C8D5B6")
 
         boolean flagMinus;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.662 -0400", hash_original_field = "58EB12214972261349BEFF4AFEEBADE7", hash_generated_field = "6268F94D7EC6432771FAC9A81C06B277")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.590 -0400", hash_original_field = "58EB12214972261349BEFF4AFEEBADE7", hash_generated_field = "6268F94D7EC6432771FAC9A81C06B277")
 
         boolean flagParenthesis;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.662 -0400", hash_original_field = "2FC88FB85E37FA3049E7C4FB6131D130", hash_generated_field = "B18F735AA5B0F0DABBD7E427068CC4C3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.590 -0400", hash_original_field = "2FC88FB85E37FA3049E7C4FB6131D130", hash_generated_field = "B18F735AA5B0F0DABBD7E427068CC4C3")
 
         boolean flagPlus;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.662 -0400", hash_original_field = "CA9A273EC976964302B347E1A888F814", hash_generated_field = "C720CA7CDB619DB58116FBA407D9470B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.590 -0400", hash_original_field = "CA9A273EC976964302B347E1A888F814", hash_generated_field = "C720CA7CDB619DB58116FBA407D9470B")
 
         boolean flagSharp;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.662 -0400", hash_original_field = "0A9A68E8CA9C930B3BD25AC0267A50F6", hash_generated_field = "A2EE573CAED7292D13BAD741251059A4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.590 -0400", hash_original_field = "0A9A68E8CA9C930B3BD25AC0267A50F6", hash_generated_field = "A2EE573CAED7292D13BAD741251059A4")
 
         boolean flagSpace;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.662 -0400", hash_original_field = "23AC23B8E4A938ABDC183973ABADFBB2", hash_generated_field = "79C0F430E2F3E53D9DF49552E4733685")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.590 -0400", hash_original_field = "23AC23B8E4A938ABDC183973ABADFBB2", hash_generated_field = "79C0F430E2F3E53D9DF49552E4733685")
 
         boolean flagZero;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.662 -0400", hash_original_field = "06BB72258511A33C8D897372F71D9BEB", hash_generated_field = "E9F667FE63992DF0A85E5D7A0685E01F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.590 -0400", hash_original_field = "06BB72258511A33C8D897372F71D9BEB", hash_generated_field = "E9F667FE63992DF0A85E5D7A0685E01F")
 
         private char conversionType = (char) UNSET;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.662 -0400", hash_original_field = "CBA7C70F75D3196A71CEB9803FA45256", hash_generated_field = "6AC9B9E35F29643906A8717247B50CCB")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.590 -0400", hash_original_field = "CBA7C70F75D3196A71CEB9803FA45256", hash_generated_field = "6AC9B9E35F29643906A8717247B50CCB")
 
         private char dateSuffix;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.662 -0400", hash_original_field = "448C0902A81C3D78DB12BA0C73991461", hash_generated_field = "1A5EEC185E39D6E54480D34E352CE283")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.590 -0400", hash_original_field = "448C0902A81C3D78DB12BA0C73991461", hash_generated_field = "1A5EEC185E39D6E54480D34E352CE283")
 
         private int precision = UNSET;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.662 -0400", hash_original_field = "E3737662F9BF753CD6F77C63AE3B771F", hash_generated_field = "7F084C83D0F1982A47DE9354FC0CF9F1")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.590 -0400", hash_original_field = "E3737662F9BF753CD6F77C63AE3B771F", hash_generated_field = "7F084C83D0F1982A47DE9354FC0CF9F1")
 
         private int width = UNSET;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.662 -0400", hash_original_field = "8A84BD7A36073EE32C37C1B79462B501", hash_generated_field = "0527ECB4D15D76D63A180FF8CBB184B2")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.590 -0400", hash_original_field = "8A84BD7A36073EE32C37C1B79462B501", hash_generated_field = "0527ECB4D15D76D63A180FF8CBB184B2")
 
         private StringBuilder strFlags;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.662 -0400", hash_original_method = "98998A93ECCA1CEE378BE6F5FF82B45F", hash_generated_method = "98998A93ECCA1CEE378BE6F5FF82B45F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.591 -0400", hash_original_method = "98998A93ECCA1CEE378BE6F5FF82B45F", hash_generated_method = "98998A93ECCA1CEE378BE6F5FF82B45F")
         public FormatToken ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.663 -0400", hash_original_method = "A7B957B3122A1E0264F586D374F2E6B7", hash_generated_method = "5B89D1EF5586778339FBD96961E136DF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.591 -0400", hash_original_method = "A7B957B3122A1E0264F586D374F2E6B7", hash_generated_method = "9FD21A5A77DBB73248BED31F09CA10C3")
          boolean isDefault() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1825704736 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1825704736;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1610464376 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1610464376;
             // ---------- Original Method ----------
             //return !flagComma && !flagMinus && !flagParenthesis && !flagPlus && !flagSharp &&
                     //!flagSpace && !flagZero && width == UNSET && precision == UNSET;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.664 -0400", hash_original_method = "A13969ECEC9F8D1C94EA6A52CDFB6E17", hash_generated_method = "6A9E8CA004067386CFFA6E4AF03F78FE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.591 -0400", hash_original_method = "A13969ECEC9F8D1C94EA6A52CDFB6E17", hash_generated_method = "7572BEF8E1BD3D4F61ED32AABD3A2E01")
          boolean isPrecisionSet() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_425824505 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_425824505;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_948985745 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_948985745;
             // ---------- Original Method ----------
             //return precision != UNSET;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.664 -0400", hash_original_method = "3A74106121887CCA509F985D60DB5637", hash_generated_method = "56EBB59BCA1BE47A16177CA30724B432")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.592 -0400", hash_original_method = "3A74106121887CCA509F985D60DB5637", hash_generated_method = "59B7480D5EAA018E51C462D7F5F39C09")
          int getArgIndex() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1583711293 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1583711293;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1158124674 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1158124674;
             // ---------- Original Method ----------
             //return argIndex;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.664 -0400", hash_original_method = "27CE41687BF54420F4C00D2CFB6A73FA", hash_generated_method = "F3E94D0F268DD41F463EE67139BE9385")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.592 -0400", hash_original_method = "27CE41687BF54420F4C00D2CFB6A73FA", hash_generated_method = "F3E94D0F268DD41F463EE67139BE9385")
          void setArgIndex(int index) {
             argIndex = index;
             // ---------- Original Method ----------
@@ -2139,16 +2139,16 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.673 -0400", hash_original_method = "40140C97EC91863535630C305615FEC1", hash_generated_method = "A210DE95F0563FBB4398DDF3C96392B4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.592 -0400", hash_original_method = "40140C97EC91863535630C305615FEC1", hash_generated_method = "1840BE7F9B19C847D065A7EA8E6CF818")
          int getWidth() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1762264939 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1762264939;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_413145974 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_413145974;
             // ---------- Original Method ----------
             //return width;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.674 -0400", hash_original_method = "5C954D9C93DF99E2E990960A3CC1749D", hash_generated_method = "D40BD430ACB0EA3E0D63770A2976B08D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.622 -0400", hash_original_method = "5C954D9C93DF99E2E990960A3CC1749D", hash_generated_method = "D40BD430ACB0EA3E0D63770A2976B08D")
          void setWidth(int width) {
             this.width = width;
             // ---------- Original Method ----------
@@ -2156,16 +2156,16 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.674 -0400", hash_original_method = "71BCDCF9E73C85D95AB18BEF6635FA18", hash_generated_method = "1CCE98064CAEE6C2DE7A06065F138706")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.622 -0400", hash_original_method = "71BCDCF9E73C85D95AB18BEF6635FA18", hash_generated_method = "3DD11CF9C80022CB6BF06B910E35C3AD")
          int getPrecision() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1430109599 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1430109599;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464924209 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464924209;
             // ---------- Original Method ----------
             //return precision;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.675 -0400", hash_original_method = "7515FB19ACE3C47DEBBD3E8357F6915C", hash_generated_method = "5866B10F1157266750859E3B0502D979")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.623 -0400", hash_original_method = "7515FB19ACE3C47DEBBD3E8357F6915C", hash_generated_method = "5866B10F1157266750859E3B0502D979")
          void setPrecision(int precise) {
             this.precision = precise;
             // ---------- Original Method ----------
@@ -2173,18 +2173,18 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.675 -0400", hash_original_method = "837A02C50E03265F058B23775F6F6197", hash_generated_method = "966BDE1A490DEBE1E26D9B9A5FA9712C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.624 -0400", hash_original_method = "837A02C50E03265F058B23775F6F6197", hash_generated_method = "391399241DDA2FB9B7EBC7A3BD631354")
          String getStrFlags() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1724872643 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1724872643 = (strFlags != null) ? strFlags.toString() : "";
-            varB4EAC82CA7396A68D541C85D26508E83_1724872643.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1724872643;
+            String varB4EAC82CA7396A68D541C85D26508E83_410645240 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_410645240 = (strFlags != null) ? strFlags.toString() : "";
+            varB4EAC82CA7396A68D541C85D26508E83_410645240.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_410645240;
             // ---------- Original Method ----------
             //return (strFlags != null) ? strFlags.toString() : "";
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.692 -0400", hash_original_method = "E6ACD7E32E6ABC5AE16C357DB8116DB3", hash_generated_method = "C09D9C2144F75F82E9D4BDF9555FEA69")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.639 -0400", hash_original_method = "E6ACD7E32E6ABC5AE16C357DB8116DB3", hash_generated_method = "266C9E2FF92ECFE71454EEAECAD63E34")
          boolean setFlag(int ch) {
             boolean dupe;
             dupe = false;
@@ -2238,23 +2238,23 @@ public final class Formatter implements Closeable, Flushable {
             } //End block
             strFlags.append((char) ch);
             addTaint(ch);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_187394206 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_187394206;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1315237846 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1315237846;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.693 -0400", hash_original_method = "563B5213711441DEFA9BB3355CD61032", hash_generated_method = "76ECB65A432F4219CD841DDA5346B978")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.639 -0400", hash_original_method = "563B5213711441DEFA9BB3355CD61032", hash_generated_method = "5A87F1ED9B2BBFF8F73CE1FB8E0D9B95")
          char getConversionType() {
-            char varA87DEB01C5F539E6BDA34829C8EF2368_1352863284 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_1352863284;
+            char varA87DEB01C5F539E6BDA34829C8EF2368_447681633 = getTaintChar();
+            return varA87DEB01C5F539E6BDA34829C8EF2368_447681633;
             // ---------- Original Method ----------
             //return conversionType;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.693 -0400", hash_original_method = "6C3279116A999B7A879305F448E4C7E6", hash_generated_method = "37AF4C580148FD1E99691D99021A9434")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.639 -0400", hash_original_method = "6C3279116A999B7A879305F448E4C7E6", hash_generated_method = "37AF4C580148FD1E99691D99021A9434")
          void setConversionType(char c) {
             conversionType = c;
             // ---------- Original Method ----------
@@ -2262,16 +2262,16 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.693 -0400", hash_original_method = "EE45DA1AFAF958B13872135C146745E9", hash_generated_method = "768A132D9D1687F923E7A99692606D0D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.640 -0400", hash_original_method = "EE45DA1AFAF958B13872135C146745E9", hash_generated_method = "7AE174F40D2C8C8EA4668C28DBE00288")
          char getDateSuffix() {
-            char varA87DEB01C5F539E6BDA34829C8EF2368_145853294 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_145853294;
+            char varA87DEB01C5F539E6BDA34829C8EF2368_1107812795 = getTaintChar();
+            return varA87DEB01C5F539E6BDA34829C8EF2368_1107812795;
             // ---------- Original Method ----------
             //return dateSuffix;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.693 -0400", hash_original_method = "6F4F20E9A23952874C5B1A6A80E321B4", hash_generated_method = "B3184FE9D51C912BE0F6FB157BD6AF85")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.640 -0400", hash_original_method = "6F4F20E9A23952874C5B1A6A80E321B4", hash_generated_method = "B3184FE9D51C912BE0F6FB157BD6AF85")
          void setDateSuffix(char c) {
             dateSuffix = c;
             // ---------- Original Method ----------
@@ -2279,16 +2279,16 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.694 -0400", hash_original_method = "67F4DE623207C5AE23B919ACAD45AA0B", hash_generated_method = "F73B182D3C55A6E8F60C425FCD54460F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.640 -0400", hash_original_method = "67F4DE623207C5AE23B919ACAD45AA0B", hash_generated_method = "EA57481F92F75B08ED3C04F0EE3B8718")
          boolean requireArgument() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_571586980 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_571586980;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_977458773 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_977458773;
             // ---------- Original Method ----------
             //return conversionType != '%' && conversionType != 'n';
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.706 -0400", hash_original_method = "34D9D8688BA6BF211700F1E1A866C731", hash_generated_method = "56FE71540218C91494B42CA3F736F857")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.670 -0400", hash_original_method = "34D9D8688BA6BF211700F1E1A866C731", hash_generated_method = "56FE71540218C91494B42CA3F736F857")
          void checkFlags(Object arg) {
             boolean allowComma;
             allowComma = false;
@@ -2418,7 +2418,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.718 -0400", hash_original_method = "ECFEC3AA46FEEC6BDD34290E5303C5C1", hash_generated_method = "1F40DF5C85005D492273A294DD80B82F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.671 -0400", hash_original_method = "ECFEC3AA46FEEC6BDD34290E5303C5C1", hash_generated_method = "1F40DF5C85005D492273A294DD80B82F")
         public UnknownFormatConversionException unknownFormatConversionException() {
             {
                 if (DroidSafeAndroidRuntime.control) throw new UnknownFormatConversionException(String.format("%c%c",
@@ -2434,19 +2434,19 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.718 -0400", hash_original_field = "0D32D75D80197F9844932D7929DB5015", hash_generated_field = "4838A237F0CA625FBEF0C47D75A467F3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.671 -0400", hash_original_field = "0D32D75D80197F9844932D7929DB5015", hash_generated_field = "4838A237F0CA625FBEF0C47D75A467F3")
 
         static int LAST_ARGUMENT_INDEX = -2;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.718 -0400", hash_original_field = "682DBD04772A37CB99D92EB22481F8C6", hash_generated_field = "CF0957A0598B24AFC845C2D7EA89AC9D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.671 -0400", hash_original_field = "682DBD04772A37CB99D92EB22481F8C6", hash_generated_field = "CF0957A0598B24AFC845C2D7EA89AC9D")
 
         static int UNSET = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.718 -0400", hash_original_field = "8FE6A229232BC2E57ECCA9364408A298", hash_generated_field = "822D4D5D37D288CD3F0EE0538BD215B6")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.671 -0400", hash_original_field = "8FE6A229232BC2E57ECCA9364408A298", hash_generated_field = "822D4D5D37D288CD3F0EE0538BD215B6")
 
         static int FLAGS_UNSET = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.718 -0400", hash_original_field = "AEFDD97FD64534132DA681FF73D9FC6D", hash_generated_field = "8568B544001A5D706A13E03FC312BB1B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.671 -0400", hash_original_field = "AEFDD97FD64534132DA681FF73D9FC6D", hash_generated_field = "8568B544001A5D706A13E03FC312BB1B")
 
         static int DEFAULT_PRECISION = 6;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.718 -0400", hash_original_field = "60A2F91F5F69F60923439B86F77F3E9E", hash_generated_field = "B609C087757A73DA0A261F76F6BF2C2A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.672 -0400", hash_original_field = "60A2F91F5F69F60923439B86F77F3E9E", hash_generated_field = "B609C087757A73DA0A261F76F6BF2C2A")
 
         static int FLAG_ZERO = 1 << 4;
     }
@@ -2454,20 +2454,20 @@ public final class Formatter implements Closeable, Flushable {
 
     
     private static class FormatSpecifierParser {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.719 -0400", hash_original_field = "1DDCB92ADE31C8FBD370001F9B29A7D9", hash_generated_field = "3AFBEC2146BDEA5BFCBD2772D27C43DD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.672 -0400", hash_original_field = "1DDCB92ADE31C8FBD370001F9B29A7D9", hash_generated_field = "3AFBEC2146BDEA5BFCBD2772D27C43DD")
 
         private String format;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.719 -0400", hash_original_field = "2FA47F7C65FEC19CC163B195725E3844", hash_generated_field = "C7D2E1B1F4403418CA216FC250689056")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.672 -0400", hash_original_field = "2FA47F7C65FEC19CC163B195725E3844", hash_generated_field = "C7D2E1B1F4403418CA216FC250689056")
 
         private int length;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.719 -0400", hash_original_field = "04D77DDD9C9389CC56939726D3DA8089", hash_generated_field = "4DF8ED554EC7B2C7483518163DCC894C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.672 -0400", hash_original_field = "04D77DDD9C9389CC56939726D3DA8089", hash_generated_field = "4DF8ED554EC7B2C7483518163DCC894C")
 
         private int startIndex;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.719 -0400", hash_original_field = "865C0C0B4AB0E063E5CAA3387C1A8741", hash_generated_field = "DDFC4038967415E2F22993ABFD9A3B3F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.672 -0400", hash_original_field = "865C0C0B4AB0E063E5CAA3387C1A8741", hash_generated_field = "DDFC4038967415E2F22993ABFD9A3B3F")
 
         private int i;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.725 -0400", hash_original_method = "2EAAE714EE0AE41BF39DBCA3F91B9104", hash_generated_method = "99616AB8C1E30FEFAAC91AD743EEE46F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.672 -0400", hash_original_method = "2EAAE714EE0AE41BF39DBCA3F91B9104", hash_generated_method = "99616AB8C1E30FEFAAC91AD743EEE46F")
           FormatSpecifierParser(String format) {
             this.format = format;
             this.length = format.length();
@@ -2477,14 +2477,14 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.726 -0400", hash_original_method = "F77740880648C3886F14C74FD023BD3A", hash_generated_method = "6D3E81A08C44A4B5FF11A30507E13AAA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.686 -0400", hash_original_method = "F77740880648C3886F14C74FD023BD3A", hash_generated_method = "693F116143425E99016BEBC633F98D07")
          FormatToken parseFormatToken(int offset) {
-            FormatToken varB4EAC82CA7396A68D541C85D26508E83_44432879 = null; //Variable for return #1
+            FormatToken varB4EAC82CA7396A68D541C85D26508E83_351552592 = null; //Variable for return #1
             this.startIndex = offset;
             this.i = offset;
-            varB4EAC82CA7396A68D541C85D26508E83_44432879 = parseArgumentIndexAndFlags(new FormatToken());
-            varB4EAC82CA7396A68D541C85D26508E83_44432879.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_44432879;
+            varB4EAC82CA7396A68D541C85D26508E83_351552592 = parseArgumentIndexAndFlags(new FormatToken());
+            varB4EAC82CA7396A68D541C85D26508E83_351552592.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_351552592;
             // ---------- Original Method ----------
             //this.startIndex = offset;
             //this.i = offset;
@@ -2492,37 +2492,37 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.727 -0400", hash_original_method = "7C388C74117CDF3E7844B526DC734D8C", hash_generated_method = "CC67D8E0BCACE329DA7CB7CF07DB09F7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.687 -0400", hash_original_method = "7C388C74117CDF3E7844B526DC734D8C", hash_generated_method = "CC079BD0C7E33CD798B931F1E2383EAA")
          String getFormatSpecifierText() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1234455448 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1234455448 = format.substring(startIndex, i);
-            varB4EAC82CA7396A68D541C85D26508E83_1234455448.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1234455448;
+            String varB4EAC82CA7396A68D541C85D26508E83_1540003471 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1540003471 = format.substring(startIndex, i);
+            varB4EAC82CA7396A68D541C85D26508E83_1540003471.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1540003471;
             // ---------- Original Method ----------
             //return format.substring(startIndex, i);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.737 -0400", hash_original_method = "6521B9C02DA744FF180556D39A74ED44", hash_generated_method = "B8A75DD226047F76E160439741E6DAAF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.687 -0400", hash_original_method = "6521B9C02DA744FF180556D39A74ED44", hash_generated_method = "497086B916AF445955078DF068260054")
         private int peek() {
             {
-                Object var765273F0E3B5EB95414F86EBEA317E40_1827731872 = (format.charAt(i));
+                Object var765273F0E3B5EB95414F86EBEA317E40_849986338 = (format.charAt(i));
             } //End flattened ternary
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_314028408 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_314028408;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1280572037 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1280572037;
             // ---------- Original Method ----------
             //return (i < length) ? format.charAt(i) : -1;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.737 -0400", hash_original_method = "F520742ED92EBACDB47FBF0D0B1F08F4", hash_generated_method = "7D3CB7E8EC37ED03D898EF71ED85D7EC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.687 -0400", hash_original_method = "F520742ED92EBACDB47FBF0D0B1F08F4", hash_generated_method = "A299749288C2E72FE85C02A751B623BF")
         private char advance() {
             {
                 if (DroidSafeAndroidRuntime.control) throw unknownFormatConversionException();
             } //End block
-            char var7701A7CCE85ED6AA9880F4BA6BB09ECE_656572231 = (format.charAt(i++));
-            char varA87DEB01C5F539E6BDA34829C8EF2368_951383074 = getTaintChar();
-            return varA87DEB01C5F539E6BDA34829C8EF2368_951383074;
+            char var7701A7CCE85ED6AA9880F4BA6BB09ECE_1137715258 = (format.charAt(i++));
+            char varA87DEB01C5F539E6BDA34829C8EF2368_1282467617 = getTaintChar();
+            return varA87DEB01C5F539E6BDA34829C8EF2368_1282467617;
             // ---------- Original Method ----------
             //if (i >= length) {
                 //throw unknownFormatConversionException();
@@ -2531,7 +2531,7 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.739 -0400", hash_original_method = "DFAEBB829CC6A7AFE465DA1B9A0C1D5A", hash_generated_method = "30FA7929508460104EF53B75E4099319")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.688 -0400", hash_original_method = "DFAEBB829CC6A7AFE465DA1B9A0C1D5A", hash_generated_method = "30FA7929508460104EF53B75E4099319")
         private UnknownFormatConversionException unknownFormatConversionException() {
             if (DroidSafeAndroidRuntime.control) throw new UnknownFormatConversionException(getFormatSpecifierText());
             // ---------- Original Method ----------
@@ -2539,23 +2539,23 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.744 -0400", hash_original_method = "AD27190704DEC79DF3778A7C88589CDF", hash_generated_method = "F0B45CB8CFBD97FB53EDC7ACCEB7CC41")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.709 -0400", hash_original_method = "AD27190704DEC79DF3778A7C88589CDF", hash_generated_method = "26E9293E584CFB7C474F20E5866A8E1A")
         private FormatToken parseArgumentIndexAndFlags(FormatToken token) {
-            FormatToken varB4EAC82CA7396A68D541C85D26508E83_1145529519 = null; //Variable for return #1
-            FormatToken varB4EAC82CA7396A68D541C85D26508E83_1406333728 = null; //Variable for return #2
-            FormatToken varB4EAC82CA7396A68D541C85D26508E83_1059631450 = null; //Variable for return #3
-            FormatToken varB4EAC82CA7396A68D541C85D26508E83_1581222865 = null; //Variable for return #4
+            FormatToken varB4EAC82CA7396A68D541C85D26508E83_1971972733 = null; //Variable for return #1
+            FormatToken varB4EAC82CA7396A68D541C85D26508E83_229711706 = null; //Variable for return #2
+            FormatToken varB4EAC82CA7396A68D541C85D26508E83_2051387731 = null; //Variable for return #3
+            FormatToken varB4EAC82CA7396A68D541C85D26508E83_1240968954 = null; //Variable for return #4
             int position;
             position = i;
             int ch;
             ch = peek();
             {
-                boolean varDFC3E7B8AB55A9B54C0F9DEC46B1A118_726141392 = (Character.isDigit(ch));
+                boolean varDFC3E7B8AB55A9B54C0F9DEC46B1A118_784368501 = (Character.isDigit(ch));
                 {
                     int number;
                     number = nextInt();
                     {
-                        boolean varAF443300A994E05CBD4A93B1F0A6046B_1031519391 = (peek() == '$');
+                        boolean varAF443300A994E05CBD4A93B1F0A6046B_1257321927 = (peek() == '$');
                         {
                             advance();
                             {
@@ -2568,7 +2568,7 @@ public final class Formatter implements Closeable, Flushable {
                                 i = position;
                             } //End block
                             {
-                                varB4EAC82CA7396A68D541C85D26508E83_1145529519 = parseWidth(token, number);
+                                varB4EAC82CA7396A68D541C85D26508E83_1971972733 = parseWidth(token, number);
                             } //End block
                         } //End block
                     } //End collapsed parenthetic
@@ -2579,73 +2579,73 @@ public final class Formatter implements Closeable, Flushable {
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean varD959591D21FA1B51681982FB61D589FE_553471985 = (token.setFlag(peek()));
+                boolean varD959591D21FA1B51681982FB61D589FE_1763853073 = (token.setFlag(peek()));
                 {
                     advance();
                 } //End block
             } //End collapsed parenthetic
             ch = peek();
             {
-                boolean varDFC3E7B8AB55A9B54C0F9DEC46B1A118_1788361085 = (Character.isDigit(ch));
+                boolean varDFC3E7B8AB55A9B54C0F9DEC46B1A118_289384124 = (Character.isDigit(ch));
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_1406333728 = parseWidth(token, nextInt());
+                    varB4EAC82CA7396A68D541C85D26508E83_229711706 = parseWidth(token, nextInt());
                 } //End block
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_1059631450 = parsePrecision(token);
+                    varB4EAC82CA7396A68D541C85D26508E83_2051387731 = parsePrecision(token);
                 } //End block
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_1581222865 = parseConversionType(token);
+                    varB4EAC82CA7396A68D541C85D26508E83_1240968954 = parseConversionType(token);
                 } //End block
             } //End collapsed parenthetic
             addTaint(token.getTaint());
-            FormatToken varA7E53CE21691AB073D9660D615818899_1098922172; //Final return value
+            FormatToken varA7E53CE21691AB073D9660D615818899_489069412; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1098922172 = varB4EAC82CA7396A68D541C85D26508E83_1145529519;
+                    varA7E53CE21691AB073D9660D615818899_489069412 = varB4EAC82CA7396A68D541C85D26508E83_1971972733;
                     break;
                 case 2: //Assign result for return ordinal #2
-                    varA7E53CE21691AB073D9660D615818899_1098922172 = varB4EAC82CA7396A68D541C85D26508E83_1406333728;
+                    varA7E53CE21691AB073D9660D615818899_489069412 = varB4EAC82CA7396A68D541C85D26508E83_229711706;
                     break;
                 case 3: //Assign result for return ordinal #3
-                    varA7E53CE21691AB073D9660D615818899_1098922172 = varB4EAC82CA7396A68D541C85D26508E83_1059631450;
+                    varA7E53CE21691AB073D9660D615818899_489069412 = varB4EAC82CA7396A68D541C85D26508E83_2051387731;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1098922172 = varB4EAC82CA7396A68D541C85D26508E83_1581222865;
+                    varA7E53CE21691AB073D9660D615818899_489069412 = varB4EAC82CA7396A68D541C85D26508E83_1240968954;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1098922172.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1098922172;
+            varA7E53CE21691AB073D9660D615818899_489069412.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_489069412;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.772 -0400", hash_original_method = "F4C6E47C7F58A93445972E2EDFDFCD5C", hash_generated_method = "22E45259420097EE481FC14E649D0245")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.710 -0400", hash_original_method = "F4C6E47C7F58A93445972E2EDFDFCD5C", hash_generated_method = "7021D4A31D5149F97DA3D8B23BA77653")
         private FormatToken parseWidth(FormatToken token, int width) {
-            FormatToken varB4EAC82CA7396A68D541C85D26508E83_1036506516 = null; //Variable for return #1
-            FormatToken varB4EAC82CA7396A68D541C85D26508E83_79604110 = null; //Variable for return #2
+            FormatToken varB4EAC82CA7396A68D541C85D26508E83_1169111944 = null; //Variable for return #1
+            FormatToken varB4EAC82CA7396A68D541C85D26508E83_1678143010 = null; //Variable for return #2
             token.setWidth(width);
             int ch;
             ch = peek();
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1036506516 = parsePrecision(token);
+                varB4EAC82CA7396A68D541C85D26508E83_1169111944 = parsePrecision(token);
             } //End block
             {
-                varB4EAC82CA7396A68D541C85D26508E83_79604110 = parseConversionType(token);
+                varB4EAC82CA7396A68D541C85D26508E83_1678143010 = parseConversionType(token);
             } //End block
             addTaint(token.getTaint());
             addTaint(width);
-            FormatToken varA7E53CE21691AB073D9660D615818899_1056712300; //Final return value
+            FormatToken varA7E53CE21691AB073D9660D615818899_642981611; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1056712300 = varB4EAC82CA7396A68D541C85D26508E83_1036506516;
+                    varA7E53CE21691AB073D9660D615818899_642981611 = varB4EAC82CA7396A68D541C85D26508E83_1169111944;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1056712300 = varB4EAC82CA7396A68D541C85D26508E83_79604110;
+                    varA7E53CE21691AB073D9660D615818899_642981611 = varB4EAC82CA7396A68D541C85D26508E83_1678143010;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1056712300.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1056712300;
+            varA7E53CE21691AB073D9660D615818899_642981611.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_642981611;
             // ---------- Original Method ----------
             //token.setWidth(width);
             //int ch = peek();
@@ -2657,25 +2657,25 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.772 -0400", hash_original_method = "06DE93E908B11B43F41251F270A468F2", hash_generated_method = "BDB9F05BB60DE72C168B0BCC9891284D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.715 -0400", hash_original_method = "06DE93E908B11B43F41251F270A468F2", hash_generated_method = "08F3C926789452F259A842A56F46F3D8")
         private FormatToken parsePrecision(FormatToken token) {
-            FormatToken varB4EAC82CA7396A68D541C85D26508E83_152507430 = null; //Variable for return #1
+            FormatToken varB4EAC82CA7396A68D541C85D26508E83_134138821 = null; //Variable for return #1
             advance();
             int ch;
             ch = peek();
             {
-                boolean varDFC3E7B8AB55A9B54C0F9DEC46B1A118_2038522493 = (Character.isDigit(ch));
+                boolean varDFC3E7B8AB55A9B54C0F9DEC46B1A118_1992682545 = (Character.isDigit(ch));
                 {
                     token.setPrecision(nextInt());
-                    varB4EAC82CA7396A68D541C85D26508E83_152507430 = parseConversionType(token);
+                    varB4EAC82CA7396A68D541C85D26508E83_134138821 = parseConversionType(token);
                 } //End block
                 {
                     if (DroidSafeAndroidRuntime.control) throw unknownFormatConversionException();
                 } //End block
             } //End collapsed parenthetic
             addTaint(token.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_152507430.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_152507430;
+            varB4EAC82CA7396A68D541C85D26508E83_134138821.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_134138821;
             // ---------- Original Method ----------
             //advance();
             //int ch = peek();
@@ -2688,9 +2688,9 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.773 -0400", hash_original_method = "779E7C7A9E24C2B8C7A984530163E241", hash_generated_method = "D7F897238EB1BA92D210DBFA239FC373")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.741 -0400", hash_original_method = "779E7C7A9E24C2B8C7A984530163E241", hash_generated_method = "E7C3CE4C8BF0E9E9E22782433499E328")
         private FormatToken parseConversionType(FormatToken token) {
-            FormatToken varB4EAC82CA7396A68D541C85D26508E83_652326873 = null; //Variable for return #1
+            FormatToken varB4EAC82CA7396A68D541C85D26508E83_203319331 = null; //Variable for return #1
             char conversionType;
             conversionType = advance();
             token.setConversionType(conversionType);
@@ -2699,10 +2699,10 @@ public final class Formatter implements Closeable, Flushable {
                 dateSuffix = advance();
                 token.setDateSuffix(dateSuffix);
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_652326873 = token;
+            varB4EAC82CA7396A68D541C85D26508E83_203319331 = token;
             addTaint(token.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_652326873.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_652326873;
+            varB4EAC82CA7396A68D541C85D26508E83_203319331.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_203319331;
             // ---------- Original Method ----------
             //char conversionType = advance();
             //token.setConversionType(conversionType);
@@ -2714,21 +2714,21 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.773 -0400", hash_original_method = "ADF8322FF676CF5038257F50E4E4E6DC", hash_generated_method = "D82CB0CDDCC7FF3388F056EFBC17B8E1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.742 -0400", hash_original_method = "ADF8322FF676CF5038257F50E4E4E6DC", hash_generated_method = "42D00989F6CDA5F844A3BD4DD3C1B08D")
         private int nextInt() {
             long value;
             value = 0;
             {
-                boolean var89C0C9F591E86A0985096DE42B7326D1_751185597 = (i < length && Character.isDigit(format.charAt(i)));
+                boolean var89C0C9F591E86A0985096DE42B7326D1_1830326268 = (i < length && Character.isDigit(format.charAt(i)));
                 {
                     value = 10 * value + (format.charAt(i++) - '0');
                     {
-                        int varBF2312BB009815DC54B749D4D210B6C9_1646489689 = (failNextInt());
+                        int varBF2312BB009815DC54B749D4D210B6C9_1033577079 = (failNextInt());
                     } //End block
                 } //End block
             } //End collapsed parenthetic
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_132485061 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_132485061;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_65303653 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_65303653;
             // ---------- Original Method ----------
             //long value = 0;
             //while (i < length && Character.isDigit(format.charAt(i))) {
@@ -2741,16 +2741,16 @@ public final class Formatter implements Closeable, Flushable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.774 -0400", hash_original_method = "F2814F47D4EB7F1D4CA24D9FE1C3918D", hash_generated_method = "02BF43D814267D4CA027FCD47720DC8B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.742 -0400", hash_original_method = "F2814F47D4EB7F1D4CA24D9FE1C3918D", hash_generated_method = "BD26CB5A1AE5BB2CFDC4444BBB3A4771")
         private int failNextInt() {
             {
-                boolean varDB282127B78D2B872AE9DB5E44D7F6B7_975776809 = (Character.isDigit(peek()));
+                boolean varDB282127B78D2B872AE9DB5E44D7F6B7_1992755277 = (Character.isDigit(peek()));
                 {
                     advance();
                 } //End block
             } //End collapsed parenthetic
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2027219939 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2027219939;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1345275945 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1345275945;
             // ---------- Original Method ----------
             //while (Character.isDigit(peek())) {
                 //advance();
@@ -2763,19 +2763,19 @@ public final class Formatter implements Closeable, Flushable {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.774 -0400", hash_original_field = "A2B3A99FDB3C7974C9307D50BA09396A", hash_generated_field = "83C24A683F165D37EA212CE26252E31E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.742 -0400", hash_original_field = "A2B3A99FDB3C7974C9307D50BA09396A", hash_generated_field = "83C24A683F165D37EA212CE26252E31E")
 
     private static char[] ZEROS = new char[] { '0', '0', '0', '0', '0', '0', '0', '0', '0' };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.774 -0400", hash_original_field = "2E22D2BB824CAE76137397D7BB1A476C", hash_generated_field = "91CAAB2155118F946DF70B4E57A5439D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.743 -0400", hash_original_field = "2E22D2BB824CAE76137397D7BB1A476C", hash_generated_field = "1048904B2ED8452BAFA6FF5C2969AC81")
 
     private static ThreadLocal<CachedDecimalFormat> cachedDecimalFormat = new ThreadLocal<CachedDecimalFormat>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:51.774 -0400", hash_original_method = "3BF85501572F336E7CB9026A6524A649", hash_generated_method = "B2205A88F8B94479AC480920CAE36D03")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:51.743 -0400", hash_original_method = "3BF85501572F336E7CB9026A6524A649", hash_generated_method = "8EF259F81B34C69FE9693535F36825AC")
         @Override
         protected CachedDecimalFormat initialValue() {
-            CachedDecimalFormat varB4EAC82CA7396A68D541C85D26508E83_1636441013 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1636441013 = new CachedDecimalFormat();
-            varB4EAC82CA7396A68D541C85D26508E83_1636441013.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1636441013;
+            CachedDecimalFormat varB4EAC82CA7396A68D541C85D26508E83_83452667 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_83452667 = new CachedDecimalFormat();
+            varB4EAC82CA7396A68D541C85D26508E83_83452667.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_83452667;
             // ---------- Original Method ----------
             //return new CachedDecimalFormat();
         }

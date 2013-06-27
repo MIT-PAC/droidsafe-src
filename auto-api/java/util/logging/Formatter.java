@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
 
 public abstract class Formatter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.959 -0400", hash_original_method = "3D350E85A089AFD791F4A318777DFCA3", hash_generated_method = "6FBB4F35E1975CE926BE7C768BE8709E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.970 -0400", hash_original_method = "3D350E85A089AFD791F4A318777DFCA3", hash_generated_method = "6FBB4F35E1975CE926BE7C768BE8709E")
     protected  Formatter() {
         // ---------- Original Method ----------
     }
@@ -21,15 +21,15 @@ public abstract class Formatter {
     public abstract String format(LogRecord r);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.962 -0400", hash_original_method = "C04F7375B92ACCB2488DC0EF0253C5B2", hash_generated_method = "30624D31D3C5F2AB1645C787E4A32E0E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.977 -0400", hash_original_method = "C04F7375B92ACCB2488DC0EF0253C5B2", hash_generated_method = "82CBB439960425D0526468CD6CD8797D")
     public String formatMessage(LogRecord r) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1377583965 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1313269634 = null; //Variable for return #1
         String pattern;
         pattern = r.getMessage();
         ResourceBundle rb;
         rb = null;
         {
-            boolean varBA984FB857383D5A65C9C6498F2E0AF7_1176719711 = ((rb = r.getResourceBundle()) != null);
+            boolean varBA984FB857383D5A65C9C6498F2E0AF7_686071069 = ((rb = r.getResourceBundle()) != null);
             {
                 try 
                 {
@@ -45,7 +45,7 @@ public abstract class Formatter {
             Object[] params;
             params = r.getParameters();
             {
-                boolean var8FAB585DC6784EA9512177C65E227803_1087952401 = (pattern.indexOf("{0") >= 0 && params != null && params.length > 0);
+                boolean var8FAB585DC6784EA9512177C65E227803_255141013 = (pattern.indexOf("{0") >= 0 && params != null && params.length > 0);
                 {
                     try 
                     {
@@ -58,10 +58,10 @@ public abstract class Formatter {
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1377583965 = pattern;
+        varB4EAC82CA7396A68D541C85D26508E83_1313269634 = pattern;
         addTaint(r.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1377583965.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1377583965;
+        varB4EAC82CA7396A68D541C85D26508E83_1313269634.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1313269634;
         // ---------- Original Method ----------
         //String pattern = r.getMessage();
         //ResourceBundle rb = null;
@@ -86,25 +86,25 @@ public abstract class Formatter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.975 -0400", hash_original_method = "07107B089EAE5612AD155B7D9F923109", hash_generated_method = "098E227BAADC962D8D90BFA40A485BDF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.992 -0400", hash_original_method = "07107B089EAE5612AD155B7D9F923109", hash_generated_method = "483695207E70E115BF253C93B9B79C98")
     public String getHead(Handler h) {
-        String varB4EAC82CA7396A68D541C85D26508E83_7929915 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_7929915 = "";
+        String varB4EAC82CA7396A68D541C85D26508E83_1837647404 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1837647404 = "";
         addTaint(h.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_7929915.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_7929915;
+        varB4EAC82CA7396A68D541C85D26508E83_1837647404.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1837647404;
         // ---------- Original Method ----------
         //return "";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.978 -0400", hash_original_method = "C189C1A511189A9AF799AA8C081148A1", hash_generated_method = "FF1C831D04DE3B517775727D0E996830")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.002 -0400", hash_original_method = "C189C1A511189A9AF799AA8C081148A1", hash_generated_method = "3FB3F9161A8C2FD2F42709CB34DF324D")
     public String getTail(Handler h) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1673866772 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1673866772 = "";
+        String varB4EAC82CA7396A68D541C85D26508E83_931634364 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_931634364 = "";
         addTaint(h.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1673866772.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1673866772;
+        varB4EAC82CA7396A68D541C85D26508E83_931634364.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_931634364;
         // ---------- Original Method ----------
         //return "";
     }

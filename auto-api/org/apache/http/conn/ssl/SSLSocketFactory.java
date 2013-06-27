@@ -31,20 +31,20 @@ import java.security.SecureRandom;
 import java.security.UnrecoverableKeyException;
 
 public class SSLSocketFactory implements LayeredSocketFactory {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.661 -0400", hash_original_field = "BC9F9BFF8F0C1C44BE0441660A338FEA", hash_generated_field = "99E7FAE9E3E14DF80520CEFA14EB241F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.626 -0400", hash_original_field = "BC9F9BFF8F0C1C44BE0441660A338FEA", hash_generated_field = "99E7FAE9E3E14DF80520CEFA14EB241F")
 
     private SSLContext sslcontext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.661 -0400", hash_original_field = "627E46BFF62038116B5653AA7BBEDD42", hash_generated_field = "E52538B4D22258905E6F27080C928A86")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.626 -0400", hash_original_field = "627E46BFF62038116B5653AA7BBEDD42", hash_generated_field = "E52538B4D22258905E6F27080C928A86")
 
     private javax.net.ssl.SSLSocketFactory socketfactory;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.661 -0400", hash_original_field = "FAF84B85401CDF826F3FA5277B6286C9", hash_generated_field = "81E302E459F079F5FBE4C1ED4F82BD8C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.626 -0400", hash_original_field = "FAF84B85401CDF826F3FA5277B6286C9", hash_generated_field = "81E302E459F079F5FBE4C1ED4F82BD8C")
 
     private HostNameResolver nameResolver;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.661 -0400", hash_original_field = "2E7616EC74E5928B45A89742D9811A6C", hash_generated_field = "90112E8EDB7E7A821B80118DB10FBEFF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.626 -0400", hash_original_field = "2E7616EC74E5928B45A89742D9811A6C", hash_generated_field = "90112E8EDB7E7A821B80118DB10FBEFF")
 
     private X509HostnameVerifier hostnameVerifier = BROWSER_COMPATIBLE_HOSTNAME_VERIFIER;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.662 -0400", hash_original_method = "F80FA0F4889B4450DC2D852F3A3A58DF", hash_generated_method = "4180280A7D207F01E32B28446A76E193")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.627 -0400", hash_original_method = "F80FA0F4889B4450DC2D852F3A3A58DF", hash_generated_method = "4180280A7D207F01E32B28446A76E193")
     public  SSLSocketFactory(
         String algorithm, 
         final KeyStore keystore, 
@@ -93,7 +93,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.667 -0400", hash_original_method = "56E365183E16E975E9BA33998913B83F", hash_generated_method = "232F2167973EFC457320A5EF71F7564C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.628 -0400", hash_original_method = "56E365183E16E975E9BA33998913B83F", hash_generated_method = "232F2167973EFC457320A5EF71F7564C")
     public  SSLSocketFactory(
             final KeyStore keystore, 
             final String keystorePassword, 
@@ -106,7 +106,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.670 -0400", hash_original_method = "A67823A5DC6C5FF7C43D604E05CE11CB", hash_generated_method = "3FEE79F3510304CB880EDD8457171FE6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.628 -0400", hash_original_method = "A67823A5DC6C5FF7C43D604E05CE11CB", hash_generated_method = "3FEE79F3510304CB880EDD8457171FE6")
     public  SSLSocketFactory(final KeyStore keystore, final String keystorePassword) throws NoSuchAlgorithmException, KeyManagementException, KeyStoreException, UnrecoverableKeyException {
         this(TLS, keystore, keystorePassword, null, null, null);
         addTaint(keystore.getTaint());
@@ -115,7 +115,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.678 -0400", hash_original_method = "28D877B99CD24F9AB6618A77DF1E85C8", hash_generated_method = "14D04C1C6B1AD68EA417EEFF4713352E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.628 -0400", hash_original_method = "28D877B99CD24F9AB6618A77DF1E85C8", hash_generated_method = "14D04C1C6B1AD68EA417EEFF4713352E")
     public  SSLSocketFactory(final KeyStore truststore) throws NoSuchAlgorithmException, KeyManagementException, KeyStoreException, UnrecoverableKeyException {
         this(TLS, null, null, truststore, null, null);
         addTaint(truststore.getTaint());
@@ -123,7 +123,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.679 -0400", hash_original_method = "607044CE64B6D03D5A8C48CB0A47A2B4", hash_generated_method = "7E576B5E7A19F0C89D90887890438A63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.628 -0400", hash_original_method = "607044CE64B6D03D5A8C48CB0A47A2B4", hash_generated_method = "7E576B5E7A19F0C89D90887890438A63")
     public  SSLSocketFactory(javax.net.ssl.SSLSocketFactory socketfactory) {
         super();
         this.sslcontext = null;
@@ -136,7 +136,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.679 -0400", hash_original_method = "B5B8605C888DE528BB32DDEA2B05EF81", hash_generated_method = "ECDC694BC4F29B8EB127473FB8B8106E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.647 -0400", hash_original_method = "B5B8605C888DE528BB32DDEA2B05EF81", hash_generated_method = "ECDC694BC4F29B8EB127473FB8B8106E")
     private  SSLSocketFactory() {
         super();
         this.sslcontext = null;
@@ -176,18 +176,18 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.691 -0400", hash_original_method = "63050927494CC5AD1D14809EA278FFBF", hash_generated_method = "7F4886C0FEC607D344B6E8BA5C80A4F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.648 -0400", hash_original_method = "63050927494CC5AD1D14809EA278FFBF", hash_generated_method = "BE638A67886A966DFD42987320121530")
     public Socket createSocket() throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_852592233 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_852592233 = (SSLSocket) this.socketfactory.createSocket();
-        varB4EAC82CA7396A68D541C85D26508E83_852592233.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_852592233;
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1806268674 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1806268674 = (SSLSocket) this.socketfactory.createSocket();
+        varB4EAC82CA7396A68D541C85D26508E83_1806268674.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1806268674;
         // ---------- Original Method ----------
         //return (SSLSocket) this.socketfactory.createSocket();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.693 -0400", hash_original_method = "1B91A377551E45AA28D03654EA268EA3", hash_generated_method = "C8C16FD23510668D96B31E674C48906C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.663 -0400", hash_original_method = "1B91A377551E45AA28D03654EA268EA3", hash_generated_method = "FF1D0DD74B338EA63435AFAB288422A9")
     public Socket connectSocket(
         final Socket sock,
         final String host,
@@ -196,7 +196,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
         int localPort,
         final HttpParams params
     ) throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1563010158 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1607699260 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Target host may not be null.");
         } //End block
@@ -239,21 +239,21 @@ public class SSLSocketFactory implements LayeredSocketFactory {
             { }
             if (DroidSafeAndroidRuntime.control) throw iox;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1563010158 = sslsock;
+        varB4EAC82CA7396A68D541C85D26508E83_1607699260 = sslsock;
         addTaint(sock.getTaint());
         addTaint(host.getTaint());
         addTaint(port);
         addTaint(localAddress.getTaint());
         addTaint(localPort);
         addTaint(params.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1563010158.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1563010158;
+        varB4EAC82CA7396A68D541C85D26508E83_1607699260.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1607699260;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.699 -0400", hash_original_method = "66B541002324CA4265A637C3F35D74A1", hash_generated_method = "4801409479561CDB4E716781D26565BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.663 -0400", hash_original_method = "66B541002324CA4265A637C3F35D74A1", hash_generated_method = "1380D0412AD6014BB2434A50FB28FD02")
     public boolean isSecure(Socket sock) throws IllegalArgumentException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Socket may not be null.");
@@ -263,14 +263,14 @@ public class SSLSocketFactory implements LayeredSocketFactory {
                 ("Socket not created by this factory.");
         } //End block
         {
-            boolean varEFCDCF8D21AE7A43F6220E08DD901C1F_160571113 = (sock.isClosed());
+            boolean varEFCDCF8D21AE7A43F6220E08DD901C1F_1021928256 = (sock.isClosed());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Socket is closed.");
             } //End block
         } //End collapsed parenthetic
         addTaint(sock.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_890236537 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_890236537;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1923498736 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1923498736;
         // ---------- Original Method ----------
         //if (sock == null) {
             //throw new IllegalArgumentException("Socket may not be null.");
@@ -286,14 +286,14 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.709 -0400", hash_original_method = "76BFB202D82A5741071D030FB94DC57A", hash_generated_method = "F7F7FF85260A887CB4E00F7FB923E9E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.664 -0400", hash_original_method = "76BFB202D82A5741071D030FB94DC57A", hash_generated_method = "36FA89BB2EE241101E1E875C1C32DC48")
     public Socket createSocket(
         final Socket socket,
         final String host,
         final int port,
         final boolean autoClose
     ) throws IOException, UnknownHostException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1640598405 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_214085751 = null; //Variable for return #1
         SSLSocket sslSocket;
         sslSocket = (SSLSocket) this.socketfactory.createSocket(
               socket,
@@ -302,13 +302,13 @@ public class SSLSocketFactory implements LayeredSocketFactory {
               autoClose
         );
         hostnameVerifier.verify(host, sslSocket);
-        varB4EAC82CA7396A68D541C85D26508E83_1640598405 = sslSocket;
+        varB4EAC82CA7396A68D541C85D26508E83_214085751 = sslSocket;
         addTaint(socket.getTaint());
         addTaint(host.getTaint());
         addTaint(port);
         addTaint(autoClose);
-        varB4EAC82CA7396A68D541C85D26508E83_1640598405.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1640598405;
+        varB4EAC82CA7396A68D541C85D26508E83_214085751.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_214085751;
         // ---------- Original Method ----------
         //SSLSocket sslSocket = (SSLSocket) this.socketfactory.createSocket(
               //socket,
@@ -321,7 +321,7 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.709 -0400", hash_original_method = "CE9A92F10A15AE99F29896C9A2E4D993", hash_generated_method = "F7A04765D809E3C1C76E14DCD7B9E80C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.665 -0400", hash_original_method = "CE9A92F10A15AE99F29896C9A2E4D993", hash_generated_method = "F7A04765D809E3C1C76E14DCD7B9E80C")
     public void setHostnameVerifier(X509HostnameVerifier hostnameVerifier) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Hostname verifier may not be null");
@@ -335,39 +335,39 @@ public class SSLSocketFactory implements LayeredSocketFactory {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.710 -0400", hash_original_method = "E4B056341E706F6A6ED43C64885CAEDA", hash_generated_method = "E0A3F08601C783363CA3DBCC633D0F6A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.666 -0400", hash_original_method = "E4B056341E706F6A6ED43C64885CAEDA", hash_generated_method = "BA28A23C56BC07CF2A014922145A2E16")
     public X509HostnameVerifier getHostnameVerifier() {
-        X509HostnameVerifier varB4EAC82CA7396A68D541C85D26508E83_1821211034 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1821211034 = hostnameVerifier;
-        varB4EAC82CA7396A68D541C85D26508E83_1821211034.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1821211034;
+        X509HostnameVerifier varB4EAC82CA7396A68D541C85D26508E83_13996693 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_13996693 = hostnameVerifier;
+        varB4EAC82CA7396A68D541C85D26508E83_13996693.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_13996693;
         // ---------- Original Method ----------
         //return hostnameVerifier;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.711 -0400", hash_original_field = "D455F7DD8C31BC30A448532551F08694", hash_generated_field = "CA5E4F0BFCB251BDC73BBB5281DA6EC7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.668 -0400", hash_original_field = "D455F7DD8C31BC30A448532551F08694", hash_generated_field = "CA5E4F0BFCB251BDC73BBB5281DA6EC7")
 
     public static final String TLS   = "TLS";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.711 -0400", hash_original_field = "FBC8FA9DD0CC2B894909A6C11C9863C6", hash_generated_field = "86941BAF175786CD2D0CA4E940EC1D46")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.668 -0400", hash_original_field = "FBC8FA9DD0CC2B894909A6C11C9863C6", hash_generated_field = "86941BAF175786CD2D0CA4E940EC1D46")
 
     public static final String SSL   = "SSL";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.712 -0400", hash_original_field = "FDABF3E98F2B6D6617841A99D7F146FC", hash_generated_field = "1EF78CC576401D233FE0AF77A8567CD4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.668 -0400", hash_original_field = "FDABF3E98F2B6D6617841A99D7F146FC", hash_generated_field = "1EF78CC576401D233FE0AF77A8567CD4")
 
     public static final String SSLV2 = "SSLv2";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.712 -0400", hash_original_field = "3D49AE0F6F7A80B2D96CB5488BF1AD5C", hash_generated_field = "D5F90D56F3DB6E488CA3C5CC0704B598")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.668 -0400", hash_original_field = "3D49AE0F6F7A80B2D96CB5488BF1AD5C", hash_generated_field = "D5F90D56F3DB6E488CA3C5CC0704B598")
 
     public static final X509HostnameVerifier ALLOW_ALL_HOSTNAME_VERIFIER 
         = new AllowAllHostnameVerifier();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.712 -0400", hash_original_field = "B1E04F5BB6CCDD51A26880255E383C5B", hash_generated_field = "5F3BDD7FFC06D2A92E3E1417CC23EFC0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.668 -0400", hash_original_field = "B1E04F5BB6CCDD51A26880255E383C5B", hash_generated_field = "5F3BDD7FFC06D2A92E3E1417CC23EFC0")
 
     public static final X509HostnameVerifier BROWSER_COMPATIBLE_HOSTNAME_VERIFIER 
         = new BrowserCompatHostnameVerifier();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.712 -0400", hash_original_field = "ED961636C162BB2A1D53FA17FFC18030", hash_generated_field = "11D7C2BC55F08EBD00B773626A86597A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.668 -0400", hash_original_field = "ED961636C162BB2A1D53FA17FFC18030", hash_generated_field = "11D7C2BC55F08EBD00B773626A86597A")
 
     public static final X509HostnameVerifier STRICT_HOSTNAME_VERIFIER 
         = new StrictHostnameVerifier();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.713 -0400", hash_original_field = "DC1431E2F5884544956BAA27766439A5", hash_generated_field = "E68BFBA0C4750E0369E7DFB37B1D4EE7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.700 -0400", hash_original_field = "DC1431E2F5884544956BAA27766439A5", hash_generated_field = "E68BFBA0C4750E0369E7DFB37B1D4EE7")
 
     private static SSLSocketFactory DEFAULT_FACTORY = new SSLSocketFactory();
 }

@@ -34,21 +34,21 @@ import javax.sip.header.ToHeader;
 import javax.sip.header.ViaHeader;
 
 public abstract class MessageChannel {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.188 -0400", hash_original_field = "A771D64D63DE5E52A6605CCC6FAC3F7C", hash_generated_field = "8B62D61316200E61EA0A60A5551D82D6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.114 -0400", hash_original_field = "A771D64D63DE5E52A6605CCC6FAC3F7C", hash_generated_field = "8B62D61316200E61EA0A60A5551D82D6")
 
     protected int useCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.188 -0400", hash_original_field = "6B75413988C7E355B374E1A5B2309AE8", hash_generated_field = "F67739B8CB8B1CB4F97395041389F37A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.114 -0400", hash_original_field = "6B75413988C7E355B374E1A5B2309AE8", hash_generated_field = "F67739B8CB8B1CB4F97395041389F37A")
 
     protected transient MessageProcessor messageProcessor;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.188 -0400", hash_original_method = "1B1EF2D32056DF45EB39273AF108BD8B", hash_generated_method = "1B1EF2D32056DF45EB39273AF108BD8B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.114 -0400", hash_original_method = "1B1EF2D32056DF45EB39273AF108BD8B", hash_generated_method = "1B1EF2D32056DF45EB39273AF108BD8B")
     public MessageChannel ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.188 -0400", hash_original_method = "B5543AC884E160C74E00608F95C390A3", hash_generated_method = "547268D6CF76DECC0066A4DC26EFC855")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.114 -0400", hash_original_method = "B5543AC884E160C74E00608F95C390A3", hash_generated_method = "547268D6CF76DECC0066A4DC26EFC855")
     protected void uncache() {
         // ---------- Original Method ----------
     }
@@ -103,22 +103,22 @@ public abstract class MessageChannel {
             int receiverPort, boolean reconnectFlag) throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.206 -0400", hash_original_method = "CA1BACEAFC0549F0AA4E82303BA5F480", hash_generated_method = "D33A457F6FD6924E1B6C45352249597D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.132 -0400", hash_original_method = "CA1BACEAFC0549F0AA4E82303BA5F480", hash_generated_method = "4474708F342D395FB1CA5CC88DEB0F3C")
     public String getHost() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1528502125 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1528502125 = this.getMessageProcessor().getIpAddress().getHostAddress();
-        varB4EAC82CA7396A68D541C85D26508E83_1528502125.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1528502125;
+        String varB4EAC82CA7396A68D541C85D26508E83_72199733 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_72199733 = this.getMessageProcessor().getIpAddress().getHostAddress();
+        varB4EAC82CA7396A68D541C85D26508E83_72199733.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_72199733;
         // ---------- Original Method ----------
         //return this.getMessageProcessor().getIpAddress().getHostAddress();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.206 -0400", hash_original_method = "D12E0B39D0A0A3DBD8096F94437302A2", hash_generated_method = "65C3B4870C1EABE6DC90BDF97A22D15E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.132 -0400", hash_original_method = "D12E0B39D0A0A3DBD8096F94437302A2", hash_generated_method = "385DA6B6A6127AD1462DB80AF8E05C34")
     public int getPort() {
-        int varA100E41244C68A9F97324F08F822F83F_1551153455 = (messageProcessor.getPort());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1788276165 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1788276165;
+        int varA100E41244C68A9F97324F08F822F83F_755565087 = (messageProcessor.getPort());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2018560794 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2018560794;
         // ---------- Original Method ----------
         //if (this.messageProcessor != null)
             //return messageProcessor.getPort();
@@ -127,7 +127,7 @@ public abstract class MessageChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.432 -0400", hash_original_method = "6965EB337B784D47DD1B6D5165D2FBD3", hash_generated_method = "625E95004FC1B943439BA2D145071EC8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.332 -0400", hash_original_method = "6965EB337B784D47DD1B6D5165D2FBD3", hash_generated_method = "668E5859192300E126B6A5FFAB8BE3C2")
     public void sendMessage(SIPMessage sipMessage, Hop hop) throws IOException {
         long time;
         time = System.currentTimeMillis();
@@ -139,7 +139,7 @@ public abstract class MessageChannel {
                 MessageProcessor messageProcessor = getSIPStack().getMessageProcessors()[0];
                 {
                     {
-                        boolean var7765B2DC295364D1C19B74A079B8042D_2023011815 = (messageProcessor.getIpAddress().equals(hopAddr)
+                        boolean var7765B2DC295364D1C19B74A079B8042D_1460061455 = (messageProcessor.getIpAddress().equals(hopAddr)
                         && messageProcessor.getPort() == hop.getPort()
                         && messageProcessor.getTransport().equals(hop.getTransport()));
                         {
@@ -149,7 +149,7 @@ public abstract class MessageChannel {
                             {
                                 ((RawMessageChannel) messageChannel).processMessage(sipMessage);
                                 {
-                                    boolean varB302AC6B07F52C4E2326C0A8080C6396_158480343 = (getSIPStack().isLoggingEnabled());
+                                    boolean varB302AC6B07F52C4E2326C0A8080C6396_136023605 = (getSIPStack().isLoggingEnabled());
                                     getSIPStack().getStackLogger().logDebug("Self routing message");
                                 } //End collapsed parenthetic
                             } //End block
@@ -168,7 +168,7 @@ public abstract class MessageChannel {
         catch (Exception ex)
         {
             {
-                boolean varF431BBF7DDBE8461EF02D058C832AD01_1387985719 = (this.getSIPStack().getStackLogger().isLoggingEnabled(ServerLogger.TRACE_ERROR));
+                boolean varF431BBF7DDBE8461EF02D058C832AD01_282578100 = (this.getSIPStack().getStackLogger().isLoggingEnabled(ServerLogger.TRACE_ERROR));
                 {
                     this.getSIPStack().getStackLogger().logError("Error self routing message cause by: ", ex);
                 } //End block
@@ -178,7 +178,7 @@ public abstract class MessageChannel {
         finally 
         {
             {
-                boolean var7A4E9416A69CB8A92770D24F8DF72D74_50042850 = (this.getSIPStack().getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES));
+                boolean var7A4E9416A69CB8A92770D24F8DF72D74_1614296117 = (this.getSIPStack().getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES));
                 logMessage(sipMessage, hopAddr, hop.getPort(), time);
             } //End collapsed parenthetic
         } //End block
@@ -189,7 +189,7 @@ public abstract class MessageChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.433 -0400", hash_original_method = "4AF33D1C82235ED60B6E3DD0D1967C25", hash_generated_method = "3DF1494EA4DC7F746E96FF4AF4C5AC59")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.343 -0400", hash_original_method = "4AF33D1C82235ED60B6E3DD0D1967C25", hash_generated_method = "3DF1494EA4DC7F746E96FF4AF4C5AC59")
     public void sendMessage(SIPMessage sipMessage, InetAddress receiverAddress, int receiverPort) throws IOException {
         long time;
         time = System.currentTimeMillis();
@@ -208,9 +208,9 @@ public abstract class MessageChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.449 -0400", hash_original_method = "BC100C85F7EEF6C9116B6E540185BCE8", hash_generated_method = "3D0B847A1200631344321EB62ADC7F53")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.345 -0400", hash_original_method = "BC100C85F7EEF6C9116B6E540185BCE8", hash_generated_method = "C577D2D167694F46CC8CDAFEC69B9745")
     public String getRawIpSourceAddress() {
-        String varB4EAC82CA7396A68D541C85D26508E83_664859172 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_360435008 = null; //Variable for return #1
         String sourceAddress;
         sourceAddress = getPeerAddress();
         String rawIpSourceAddress;
@@ -225,9 +225,9 @@ public abstract class MessageChannel {
         {
             InternalErrorHandler.handleException(ex);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_664859172 = rawIpSourceAddress;
-        varB4EAC82CA7396A68D541C85D26508E83_664859172.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_664859172;
+        varB4EAC82CA7396A68D541C85D26508E83_360435008 = rawIpSourceAddress;
+        varB4EAC82CA7396A68D541C85D26508E83_360435008.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_360435008;
         // ---------- Original Method ----------
         //String sourceAddress = getPeerAddress();
         //String rawIpSourceAddress = null;
@@ -252,16 +252,16 @@ public abstract class MessageChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.450 -0400", hash_original_method = "A44FE176AC0185A0737BBEE3031992DB", hash_generated_method = "93F14F9A6EAF3C2767FE3911FB0BAA2D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.364 -0400", hash_original_method = "A44FE176AC0185A0737BBEE3031992DB", hash_generated_method = "CC855EB2CDB26505B5D3B47C1C98EEE2")
     public HostPort getHostPort() {
-        HostPort varB4EAC82CA7396A68D541C85D26508E83_1487299497 = null; //Variable for return #1
+        HostPort varB4EAC82CA7396A68D541C85D26508E83_1673357641 = null; //Variable for return #1
         HostPort retval;
         retval = new HostPort();
         retval.setHost(new Host(this.getHost()));
         retval.setPort(this.getPort());
-        varB4EAC82CA7396A68D541C85D26508E83_1487299497 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_1487299497.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1487299497;
+        varB4EAC82CA7396A68D541C85D26508E83_1673357641 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_1673357641.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1673357641;
         // ---------- Original Method ----------
         //HostPort retval = new HostPort();
         //retval.setHost(new Host(this.getHost()));
@@ -270,16 +270,16 @@ public abstract class MessageChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.450 -0400", hash_original_method = "B86C07836DB50334479A6BD4BF7381CC", hash_generated_method = "D236C6871660B9B8B6E9199508BF1B42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.364 -0400", hash_original_method = "B86C07836DB50334479A6BD4BF7381CC", hash_generated_method = "C675DF347C7DFCD09A0E77FA0B33B513")
     public HostPort getPeerHostPort() {
-        HostPort varB4EAC82CA7396A68D541C85D26508E83_1183748510 = null; //Variable for return #1
+        HostPort varB4EAC82CA7396A68D541C85D26508E83_807506691 = null; //Variable for return #1
         HostPort retval;
         retval = new HostPort();
         retval.setHost(new Host(this.getPeerAddress()));
         retval.setPort(this.getPeerPort());
-        varB4EAC82CA7396A68D541C85D26508E83_1183748510 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_1183748510.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1183748510;
+        varB4EAC82CA7396A68D541C85D26508E83_807506691 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_807506691.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_807506691;
         // ---------- Original Method ----------
         //HostPort retval = new HostPort();
         //retval.setHost(new Host(this.getPeerAddress()));
@@ -288,9 +288,9 @@ public abstract class MessageChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.451 -0400", hash_original_method = "31F63348466D8C31B05195508CA771AE", hash_generated_method = "C10F414649B7F2F1203A09745F8995CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.365 -0400", hash_original_method = "31F63348466D8C31B05195508CA771AE", hash_generated_method = "11396FE67426CD92585E487B5770431A")
     public Via getViaHeader() {
-        Via varB4EAC82CA7396A68D541C85D26508E83_382422938 = null; //Variable for return #1
+        Via varB4EAC82CA7396A68D541C85D26508E83_541615954 = null; //Variable for return #1
         Via channelViaHeader;
         channelViaHeader = new Via();
         try 
@@ -300,9 +300,9 @@ public abstract class MessageChannel {
         catch (ParseException ex)
         { }
         channelViaHeader.setSentBy(getHostPort());
-        varB4EAC82CA7396A68D541C85D26508E83_382422938 = channelViaHeader;
-        varB4EAC82CA7396A68D541C85D26508E83_382422938.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_382422938;
+        varB4EAC82CA7396A68D541C85D26508E83_541615954 = channelViaHeader;
+        varB4EAC82CA7396A68D541C85D26508E83_541615954.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_541615954;
         // ---------- Original Method ----------
         //Via channelViaHeader;
         //channelViaHeader = new Via();
@@ -315,16 +315,16 @@ public abstract class MessageChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.452 -0400", hash_original_method = "8AF1560686CCA72CFE111D9FA9C1ECDE", hash_generated_method = "E8CF35B979E8A3079818AEE3C237CEA7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.366 -0400", hash_original_method = "8AF1560686CCA72CFE111D9FA9C1ECDE", hash_generated_method = "09F8F1EFBD33FC7249B43150FD923D5E")
     public HostPort getViaHostPort() {
-        HostPort varB4EAC82CA7396A68D541C85D26508E83_950439345 = null; //Variable for return #1
+        HostPort varB4EAC82CA7396A68D541C85D26508E83_616484763 = null; //Variable for return #1
         HostPort retval;
         retval = new HostPort();
         retval.setHost(new Host(this.getViaHost()));
         retval.setPort(this.getViaPort());
-        varB4EAC82CA7396A68D541C85D26508E83_950439345 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_950439345.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_950439345;
+        varB4EAC82CA7396A68D541C85D26508E83_616484763 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_616484763.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_616484763;
         // ---------- Original Method ----------
         //HostPort retval = new HostPort();
         //retval.setHost(new Host(this.getViaHost()));
@@ -333,10 +333,10 @@ public abstract class MessageChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.463 -0400", hash_original_method = "C068429579A247F633492130419A4C88", hash_generated_method = "D8C9D42A69D48951BB03D0DE75F356EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.367 -0400", hash_original_method = "C068429579A247F633492130419A4C88", hash_generated_method = "CFFBC9C7C9499A05D59FBD013AD2BF45")
     protected void logMessage(SIPMessage sipMessage, InetAddress address, int port, long time) {
         {
-            boolean var2516254AC94744EE5F2042143C2C2CA0_99287194 = (!getSIPStack().getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES));
+            boolean var2516254AC94744EE5F2042143C2C2CA0_130761853 = (!getSIPStack().getStackLogger().isLoggingEnabled(ServerLogger.TRACE_MESSAGES));
         } //End collapsed parenthetic
         port = 5060;
         getSIPStack().serverLogger.logMessage(sipMessage, this.getHost() + ":" + this.getPort(),
@@ -355,12 +355,12 @@ public abstract class MessageChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.464 -0400", hash_original_method = "F3D4D9112F2E8581D299D1D033206DF5", hash_generated_method = "186ED562C18950102D23ACDE660F6021")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.367 -0400", hash_original_method = "F3D4D9112F2E8581D299D1D033206DF5", hash_generated_method = "47D7CE0A0BCFCB0142951708FECF4BEF")
     public void logResponse(SIPResponse sipResponse, long receptionTime, String status) {
         int peerport;
         peerport = getPeerPort();
         {
-            boolean var321536B5BBF9E022C6F05C23921B41FC_112451074 = (peerport == 0 && sipResponse.getContactHeaders() != null);
+            boolean var321536B5BBF9E022C6F05C23921B41FC_603144720 = (peerport == 0 && sipResponse.getContactHeaders() != null);
             {
                 ContactHeader contact;
                 contact = (ContactHeader) sipResponse.getContactHeaders().getFirst();
@@ -389,41 +389,41 @@ public abstract class MessageChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.468 -0400", hash_original_method = "FECBC10325F07301270E33C64C8E0AD0", hash_generated_method = "A9CBC73F1952C302ED954B402A4018B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.391 -0400", hash_original_method = "FECBC10325F07301270E33C64C8E0AD0", hash_generated_method = "9DE274720A74C9BD53D2BCE6FA90A700")
     protected final String createBadReqRes(String badReq, ParseException pe) {
-        String varB4EAC82CA7396A68D541C85D26508E83_953801004 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_173335468 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1325548551 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_488185777 = null; //Variable for return #4
-        String varB4EAC82CA7396A68D541C85D26508E83_1261417964 = null; //Variable for return #5
-        String varB4EAC82CA7396A68D541C85D26508E83_1211282283 = null; //Variable for return #6
+        String varB4EAC82CA7396A68D541C85D26508E83_393515097 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_792234778 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_816625909 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1821712759 = null; //Variable for return #4
+        String varB4EAC82CA7396A68D541C85D26508E83_1643673391 = null; //Variable for return #5
+        String varB4EAC82CA7396A68D541C85D26508E83_1162514939 = null; //Variable for return #6
         StringBuffer buf;
         buf = new StringBuffer(512);
         buf.append("SIP/2.0 400 Bad Request (" + pe.getLocalizedMessage() + ')');
         {
-            boolean varA74195C993F839258344C44C50F82D7F_735985320 = (!copyViaHeaders(badReq, buf));
-            varB4EAC82CA7396A68D541C85D26508E83_953801004 = null;
+            boolean varA74195C993F839258344C44C50F82D7F_1123331698 = (!copyViaHeaders(badReq, buf));
+            varB4EAC82CA7396A68D541C85D26508E83_393515097 = null;
         } //End collapsed parenthetic
         {
-            boolean varD40A5204557B10CAAE28B7110057F82E_130756753 = (!copyHeader(CSeqHeader.NAME, badReq, buf));
-            varB4EAC82CA7396A68D541C85D26508E83_173335468 = null;
+            boolean varD40A5204557B10CAAE28B7110057F82E_1180171841 = (!copyHeader(CSeqHeader.NAME, badReq, buf));
+            varB4EAC82CA7396A68D541C85D26508E83_792234778 = null;
         } //End collapsed parenthetic
         {
-            boolean varD056133D7B990F0705C31740796D4B57_808847064 = (!copyHeader(CallIdHeader.NAME, badReq, buf));
-            varB4EAC82CA7396A68D541C85D26508E83_1325548551 = null;
+            boolean varD056133D7B990F0705C31740796D4B57_1965577693 = (!copyHeader(CallIdHeader.NAME, badReq, buf));
+            varB4EAC82CA7396A68D541C85D26508E83_816625909 = null;
         } //End collapsed parenthetic
         {
-            boolean var87D1B258DFFADD71B890074FBABDB43C_519857734 = (!copyHeader(FromHeader.NAME, badReq, buf));
-            varB4EAC82CA7396A68D541C85D26508E83_488185777 = null;
+            boolean var87D1B258DFFADD71B890074FBABDB43C_1264035881 = (!copyHeader(FromHeader.NAME, badReq, buf));
+            varB4EAC82CA7396A68D541C85D26508E83_1821712759 = null;
         } //End collapsed parenthetic
         {
-            boolean var1899C470E280CFBEB977387671427330_1440271325 = (!copyHeader(ToHeader.NAME, badReq, buf));
-            varB4EAC82CA7396A68D541C85D26508E83_1261417964 = null;
+            boolean var1899C470E280CFBEB977387671427330_1528071962 = (!copyHeader(ToHeader.NAME, badReq, buf));
+            varB4EAC82CA7396A68D541C85D26508E83_1643673391 = null;
         } //End collapsed parenthetic
         int toStart;
         toStart = buf.indexOf(ToHeader.NAME);
         {
-            boolean var7F4FDFDBDF87B9BF468383C929F3552C_68633089 = (toStart != -1 && buf.indexOf("tag", toStart) == -1);
+            boolean var7F4FDFDBDF87B9BF468383C929F3552C_287117250 = (toStart != -1 && buf.indexOf("tag", toStart) == -1);
             {
                 buf.append(";tag=badreq");
             } //End block
@@ -436,7 +436,7 @@ public abstract class MessageChannel {
         int clength;
         clength = badReq.length();
         {
-            boolean varA313D1F6D6586964A488AEC11B13E622_1822972090 = (! (this instanceof UDPMessageChannel) ||
+            boolean varA313D1F6D6586964A488AEC11B13E622_287877863 = (! (this instanceof UDPMessageChannel) ||
                 clength + buf.length() + ContentTypeHeader.NAME.length()
                 + ": message/sipfrag\r\n".length() +
                 ContentLengthHeader.NAME.length()  < 1300);
@@ -455,32 +455,32 @@ public abstract class MessageChannel {
                 buf.append("\r\n" + clengthHeader.toString());
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1211282283 = buf.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1162514939 = buf.toString();
         addTaint(badReq.getTaint());
         addTaint(pe.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_830692196; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_2130580063; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_830692196 = varB4EAC82CA7396A68D541C85D26508E83_953801004;
+                varA7E53CE21691AB073D9660D615818899_2130580063 = varB4EAC82CA7396A68D541C85D26508E83_393515097;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_830692196 = varB4EAC82CA7396A68D541C85D26508E83_173335468;
+                varA7E53CE21691AB073D9660D615818899_2130580063 = varB4EAC82CA7396A68D541C85D26508E83_792234778;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_830692196 = varB4EAC82CA7396A68D541C85D26508E83_1325548551;
+                varA7E53CE21691AB073D9660D615818899_2130580063 = varB4EAC82CA7396A68D541C85D26508E83_816625909;
                 break;
             case 4: //Assign result for return ordinal #4
-                varA7E53CE21691AB073D9660D615818899_830692196 = varB4EAC82CA7396A68D541C85D26508E83_488185777;
+                varA7E53CE21691AB073D9660D615818899_2130580063 = varB4EAC82CA7396A68D541C85D26508E83_1821712759;
                 break;
             case 5: //Assign result for return ordinal #5
-                varA7E53CE21691AB073D9660D615818899_830692196 = varB4EAC82CA7396A68D541C85D26508E83_1261417964;
+                varA7E53CE21691AB073D9660D615818899_2130580063 = varB4EAC82CA7396A68D541C85D26508E83_1643673391;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_830692196 = varB4EAC82CA7396A68D541C85D26508E83_1211282283;
+                varA7E53CE21691AB073D9660D615818899_2130580063 = varB4EAC82CA7396A68D541C85D26508E83_1162514939;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_830692196.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_830692196;
+        varA7E53CE21691AB073D9660D615818899_2130580063.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2130580063;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -516,12 +516,12 @@ public abstract class MessageChannel {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.469 -0400", hash_original_method = "B369445AF3BB32430CE637694E76219B", hash_generated_method = "9C450A36A1572296D6869A040D688271")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.393 -0400", hash_original_method = "B369445AF3BB32430CE637694E76219B", hash_generated_method = "F9F4F27C6E4D7C4B7FA8FC0A30E24927")
     public MessageProcessor getMessageProcessor() {
-        MessageProcessor varB4EAC82CA7396A68D541C85D26508E83_189214454 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_189214454 = this.messageProcessor;
-        varB4EAC82CA7396A68D541C85D26508E83_189214454.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_189214454;
+        MessageProcessor varB4EAC82CA7396A68D541C85D26508E83_1469366651 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1469366651 = this.messageProcessor;
+        varB4EAC82CA7396A68D541C85D26508E83_1469366651.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1469366651;
         // ---------- Original Method ----------
         //return this.messageProcessor;
     }

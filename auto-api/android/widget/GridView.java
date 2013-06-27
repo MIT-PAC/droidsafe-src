@@ -22,44 +22,44 @@ import android.view.animation.GridLayoutAnimationController;
 import android.widget.RemoteViews.RemoteView;
 
 public class GridView extends AbsListView {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.125 -0400", hash_original_field = "47E234C72F8463B7C6770D658A5E41C2", hash_generated_field = "CAA46A02DF073835D5C8346AD9A9CB63")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.524 -0400", hash_original_field = "47E234C72F8463B7C6770D658A5E41C2", hash_generated_field = "CAA46A02DF073835D5C8346AD9A9CB63")
 
     private int mNumColumns = AUTO_FIT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.125 -0400", hash_original_field = "984A75716F93CAE1C49F1090E6A0CB2C", hash_generated_field = "E9FAC14F36FB56A0DCAB954B62C2DF2B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.524 -0400", hash_original_field = "984A75716F93CAE1C49F1090E6A0CB2C", hash_generated_field = "E9FAC14F36FB56A0DCAB954B62C2DF2B")
 
     private int mHorizontalSpacing = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.125 -0400", hash_original_field = "FE80057B725E738FDE5E09E6B3B7F8F2", hash_generated_field = "A39AD23AD5FCB84AB23C237FC706C8F3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.524 -0400", hash_original_field = "FE80057B725E738FDE5E09E6B3B7F8F2", hash_generated_field = "A39AD23AD5FCB84AB23C237FC706C8F3")
 
     private int mRequestedHorizontalSpacing;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.125 -0400", hash_original_field = "04A0AE56E019E90823DFCF538F9EB200", hash_generated_field = "84EB60F5A5BD3F778480F01C86BB8AA9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.524 -0400", hash_original_field = "04A0AE56E019E90823DFCF538F9EB200", hash_generated_field = "84EB60F5A5BD3F778480F01C86BB8AA9")
 
     private int mVerticalSpacing = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.125 -0400", hash_original_field = "D2D9B35C5FA16AAC3C153C6F6D51079F", hash_generated_field = "AEA63239A963A24EEC1FCFD67B3B96A7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.524 -0400", hash_original_field = "D2D9B35C5FA16AAC3C153C6F6D51079F", hash_generated_field = "AEA63239A963A24EEC1FCFD67B3B96A7")
 
     private int mStretchMode = STRETCH_COLUMN_WIDTH;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.125 -0400", hash_original_field = "E1663A40DA302B5F0D865267D61B180B", hash_generated_field = "20F46DBB58574C7E2F33333D8FE15571")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.524 -0400", hash_original_field = "E1663A40DA302B5F0D865267D61B180B", hash_generated_field = "20F46DBB58574C7E2F33333D8FE15571")
 
     private int mColumnWidth;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.125 -0400", hash_original_field = "145243760978B68BCAB5FA8129C172AE", hash_generated_field = "7063064B546DF13BA7FDA901DDEC5780")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.524 -0400", hash_original_field = "145243760978B68BCAB5FA8129C172AE", hash_generated_field = "7063064B546DF13BA7FDA901DDEC5780")
 
     private int mRequestedColumnWidth;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.125 -0400", hash_original_field = "53E8A93614B65E7EB80706CE2B65D07B", hash_generated_field = "583D48FC72E3B18BBAD06B1F4E148F28")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.524 -0400", hash_original_field = "53E8A93614B65E7EB80706CE2B65D07B", hash_generated_field = "583D48FC72E3B18BBAD06B1F4E148F28")
 
     private int mRequestedNumColumns;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.125 -0400", hash_original_field = "94710AAABC607EA664B744BE97844000", hash_generated_field = "7823B4B6322E0EBEB34297B0E440B23B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.524 -0400", hash_original_field = "94710AAABC607EA664B744BE97844000", hash_generated_field = "7823B4B6322E0EBEB34297B0E440B23B")
 
     private View mReferenceView = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.125 -0400", hash_original_field = "5238F9CB997751442CCEC167A710A933", hash_generated_field = "E909A7C80DCAC01F178BEF4C30386FF5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.524 -0400", hash_original_field = "5238F9CB997751442CCEC167A710A933", hash_generated_field = "E909A7C80DCAC01F178BEF4C30386FF5")
 
     private View mReferenceViewInSelectedRow = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.125 -0400", hash_original_field = "32B080F2E8D2B31FD5606656CD48D0F9", hash_generated_field = "B1F879D1C3141C34182BB7A64318C608")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.524 -0400", hash_original_field = "32B080F2E8D2B31FD5606656CD48D0F9", hash_generated_field = "B1F879D1C3141C34182BB7A64318C608")
 
     private int mGravity = Gravity.LEFT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.125 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "AFFA54D19F07A10EE8847CF76FC95323")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.524 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "AFFA54D19F07A10EE8847CF76FC95323")
 
     private Rect mTempRect = new Rect();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.126 -0400", hash_original_method = "6B9AD93D67DF35D03ADA1536C0A58FBF", hash_generated_method = "983C8391566F7BB71FF28D509435B241")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.524 -0400", hash_original_method = "6B9AD93D67DF35D03ADA1536C0A58FBF", hash_generated_method = "983C8391566F7BB71FF28D509435B241")
     public  GridView(Context context) {
         super(context);
         addTaint(context.getTaint());
@@ -67,7 +67,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.126 -0400", hash_original_method = "2A531A248703ACB5E0E1C6A31088A2B2", hash_generated_method = "E11680A0214921982AE47985C34842A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.525 -0400", hash_original_method = "2A531A248703ACB5E0E1C6A31088A2B2", hash_generated_method = "E11680A0214921982AE47985C34842A5")
     public  GridView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.gridViewStyle);
         addTaint(context.getTaint());
@@ -76,7 +76,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.127 -0400", hash_original_method = "49F6501DFACF5B2EADDBFC02F7376929", hash_generated_method = "6196F5D5CB9ACA776DDDBE63EB320CFD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.526 -0400", hash_original_method = "49F6501DFACF5B2EADDBFC02F7376929", hash_generated_method = "6196F5D5CB9ACA776DDDBE63EB320CFD")
     public  GridView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         TypedArray a;
@@ -116,19 +116,19 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.138 -0400", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "5C34D454A51AE3C5DC17CA067E121E50")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.538 -0400", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "6E1FB90572A8F126846099822D620A45")
     @Override
     public ListAdapter getAdapter() {
-        ListAdapter varB4EAC82CA7396A68D541C85D26508E83_1192082791 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1192082791 = mAdapter;
-        varB4EAC82CA7396A68D541C85D26508E83_1192082791.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1192082791;
+        ListAdapter varB4EAC82CA7396A68D541C85D26508E83_719739074 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_719739074 = mAdapter;
+        varB4EAC82CA7396A68D541C85D26508E83_719739074.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_719739074;
         // ---------- Original Method ----------
         //return mAdapter;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.138 -0400", hash_original_method = "8AB2C6958FD7CEC3A8A71FE59763D6A4", hash_generated_method = "D18E7401555F2345B6B780E77B86E39C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.538 -0400", hash_original_method = "8AB2C6958FD7CEC3A8A71FE59763D6A4", hash_generated_method = "D18E7401555F2345B6B780E77B86E39C")
     @android.view.RemotableViewMethod
     public void setRemoteViewsAdapter(Intent intent) {
         super.setRemoteViewsAdapter(intent);
@@ -138,7 +138,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.140 -0400", hash_original_method = "3B0F7EFF2AD6466D19A6F404E2E1BAAD", hash_generated_method = "014B452474A7529F55549F247915612A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.539 -0400", hash_original_method = "3B0F7EFF2AD6466D19A6F404E2E1BAAD", hash_generated_method = "014B452474A7529F55549F247915612A")
     @Override
     public void setAdapter(ListAdapter adapter) {
         {
@@ -180,18 +180,18 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.141 -0400", hash_original_method = "D52FAC74E641441314EFBB7F4E58B879", hash_generated_method = "F8DC8EE48E963153338A2B6B379F37AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.539 -0400", hash_original_method = "D52FAC74E641441314EFBB7F4E58B879", hash_generated_method = "D1B2362863C265689A3D1DA4B10BFFE8")
     @Override
      int lookForSelectablePosition(int position, boolean lookDown) {
         ListAdapter adapter;
         adapter = mAdapter;
         {
-            boolean var35A1F64E67CC6E0C06A8BA9582F2435F_295247451 = (adapter == null || isInTouchMode());
+            boolean var35A1F64E67CC6E0C06A8BA9582F2435F_544409003 = (adapter == null || isInTouchMode());
         } //End collapsed parenthetic
         addTaint(position);
         addTaint(lookDown);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_555179389 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_555179389;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_75164671 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_75164671;
         // ---------- Original Method ----------
         //final ListAdapter adapter = mAdapter;
         //if (adapter == null || isInTouchMode()) {
@@ -204,7 +204,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.162 -0400", hash_original_method = "A62E9A831AF61A8CD347891B2F9D44DF", hash_generated_method = "C4B56A17ECFC3D8798D9C6AD5ACAC0EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.540 -0400", hash_original_method = "A62E9A831AF61A8CD347891B2F9D44DF", hash_generated_method = "C4B56A17ECFC3D8798D9C6AD5ACAC0EF")
     @Override
      void fillGap(boolean down) {
         int numColumns;
@@ -253,9 +253,9 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.163 -0400", hash_original_method = "6F9360E73E1EB4E0BD6CC48A029E26CB", hash_generated_method = "27DE58C39A3EE9DC1801B75C300729D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.541 -0400", hash_original_method = "6F9360E73E1EB4E0BD6CC48A029E26CB", hash_generated_method = "31F6823728408C0877C903A80CD5030B")
     private View fillDown(int pos, int nextTop) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1553461778 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1118958194 = null; //Variable for return #1
         View selectedView;
         selectedView = null;
         int end;
@@ -272,11 +272,11 @@ public class GridView extends AbsListView {
             nextTop = mReferenceView.getBottom() + mVerticalSpacing;
             pos += mNumColumns;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1553461778 = selectedView;
+        varB4EAC82CA7396A68D541C85D26508E83_1118958194 = selectedView;
         addTaint(pos);
         addTaint(nextTop);
-        varB4EAC82CA7396A68D541C85D26508E83_1553461778.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1553461778;
+        varB4EAC82CA7396A68D541C85D26508E83_1118958194.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1118958194;
         // ---------- Original Method ----------
         //View selectedView = null;
         //int end = (mBottom - mTop);
@@ -295,9 +295,9 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.177 -0400", hash_original_method = "DFB797BE7486A81865BE6BA7ABEE8F5A", hash_generated_method = "D06212760E66018BBF4EF41B2BA55DE4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.562 -0400", hash_original_method = "DFB797BE7486A81865BE6BA7ABEE8F5A", hash_generated_method = "D77E93F44C40DC2071BD93B582497FBF")
     private View makeRow(int startPos, int y, boolean flow) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1003771068 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_898811913 = null; //Variable for return #1
         int columnWidth;
         columnWidth = mColumnWidth;
         int horizontalSpacing;
@@ -349,20 +349,20 @@ public class GridView extends AbsListView {
         {
             mReferenceViewInSelectedRow = mReferenceView;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1003771068 = selectedView;
+        varB4EAC82CA7396A68D541C85D26508E83_898811913 = selectedView;
         addTaint(startPos);
         addTaint(y);
         addTaint(flow);
-        varB4EAC82CA7396A68D541C85D26508E83_1003771068.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1003771068;
+        varB4EAC82CA7396A68D541C85D26508E83_898811913.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_898811913;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.193 -0400", hash_original_method = "0AADB00D4F358179B46AC864F825D76F", hash_generated_method = "3EAA18587E8450282C80D28558B8FF6C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.563 -0400", hash_original_method = "0AADB00D4F358179B46AC864F825D76F", hash_generated_method = "D40A8786BD12FC340E5C75EDAB9A7F1A")
     private View fillUp(int pos, int nextBottom) {
-        View varB4EAC82CA7396A68D541C85D26508E83_684302612 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_2056396927 = null; //Variable for return #1
         View selectedView;
         selectedView = null;
         int end;
@@ -383,11 +383,11 @@ public class GridView extends AbsListView {
         {
             mFirstPosition = Math.max(0, pos + 1);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_684302612 = selectedView;
+        varB4EAC82CA7396A68D541C85D26508E83_2056396927 = selectedView;
         addTaint(pos);
         addTaint(nextBottom);
-        varB4EAC82CA7396A68D541C85D26508E83_684302612.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_684302612;
+        varB4EAC82CA7396A68D541C85D26508E83_2056396927.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2056396927;
         // ---------- Original Method ----------
         //View selectedView = null;
         //int end = 0;
@@ -410,19 +410,19 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.194 -0400", hash_original_method = "ECD7EEB642891ACE11FADF160200B8D1", hash_generated_method = "70D19CD6C3F06449C6278C32E45682C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.571 -0400", hash_original_method = "ECD7EEB642891ACE11FADF160200B8D1", hash_generated_method = "987EF50D87CA4D8D28A83897E72A366C")
     private View fillFromTop(int nextTop) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1921565467 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1735407678 = null; //Variable for return #1
         mFirstPosition = Math.min(mFirstPosition, mSelectedPosition);
         mFirstPosition = Math.min(mFirstPosition, mItemCount - 1);
         {
             mFirstPosition = 0;
         } //End block
         mFirstPosition -= mFirstPosition % mNumColumns;
-        varB4EAC82CA7396A68D541C85D26508E83_1921565467 = fillDown(mFirstPosition, nextTop);
+        varB4EAC82CA7396A68D541C85D26508E83_1735407678 = fillDown(mFirstPosition, nextTop);
         addTaint(nextTop);
-        varB4EAC82CA7396A68D541C85D26508E83_1921565467.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1921565467;
+        varB4EAC82CA7396A68D541C85D26508E83_1735407678.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1735407678;
         // ---------- Original Method ----------
         //mFirstPosition = Math.min(mFirstPosition, mSelectedPosition);
         //mFirstPosition = Math.min(mFirstPosition, mItemCount - 1);
@@ -434,19 +434,19 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.202 -0400", hash_original_method = "0818B9EEFC7CF79A0018AB61F39070C0", hash_generated_method = "ABF359C5776D9EF612868DDFFDBB9DE3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.572 -0400", hash_original_method = "0818B9EEFC7CF79A0018AB61F39070C0", hash_generated_method = "9A844246E153731A3D1B96483FA4F0D4")
     private View fillFromBottom(int lastPosition, int nextBottom) {
-        View varB4EAC82CA7396A68D541C85D26508E83_689263055 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_663440360 = null; //Variable for return #1
         lastPosition = Math.max(lastPosition, mSelectedPosition);
         lastPosition = Math.min(lastPosition, mItemCount - 1);
         int invertedPosition;
         invertedPosition = mItemCount - 1 - lastPosition;
         lastPosition = mItemCount - 1 - (invertedPosition - (invertedPosition % mNumColumns));
-        varB4EAC82CA7396A68D541C85D26508E83_689263055 = fillUp(lastPosition, nextBottom);
+        varB4EAC82CA7396A68D541C85D26508E83_663440360 = fillUp(lastPosition, nextBottom);
         addTaint(lastPosition);
         addTaint(nextBottom);
-        varB4EAC82CA7396A68D541C85D26508E83_689263055.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_689263055;
+        varB4EAC82CA7396A68D541C85D26508E83_663440360.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_663440360;
         // ---------- Original Method ----------
         //lastPosition = Math.max(lastPosition, mSelectedPosition);
         //lastPosition = Math.min(lastPosition, mItemCount - 1);
@@ -456,9 +456,9 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.204 -0400", hash_original_method = "B869E7B5DD0E41AF8A9344426795B32C", hash_generated_method = "F8985A58CE5773644AF71CF4D701BC4A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.587 -0400", hash_original_method = "B869E7B5DD0E41AF8A9344426795B32C", hash_generated_method = "4836E6A60316E5AAADC111654352C901")
     private View fillSelection(int childrenTop, int childrenBottom) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1145867990 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1173197598 = null; //Variable for return #1
         int selectedPosition;
         selectedPosition = reconcileSelectedPosition();
         int numColumns;
@@ -504,17 +504,17 @@ public class GridView extends AbsListView {
             fillDown(rowEnd + numColumns, referenceView.getBottom() + verticalSpacing);
             adjustViewsUpOrDown();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1145867990 = sel;
+        varB4EAC82CA7396A68D541C85D26508E83_1173197598 = sel;
         addTaint(childrenTop);
         addTaint(childrenBottom);
-        varB4EAC82CA7396A68D541C85D26508E83_1145867990.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1145867990;
+        varB4EAC82CA7396A68D541C85D26508E83_1173197598.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1173197598;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.204 -0400", hash_original_method = "535BA4E594C209A488B214DB13AE774F", hash_generated_method = "0B43BAF4A9D9AA7EAE57F1AF59884719")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.588 -0400", hash_original_method = "535BA4E594C209A488B214DB13AE774F", hash_generated_method = "0B43BAF4A9D9AA7EAE57F1AF59884719")
     private void pinToTop(int childrenTop) {
         {
             int top;
@@ -537,7 +537,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.212 -0400", hash_original_method = "554B5C3A9DEE69BDD0B0F70052D29046", hash_generated_method = "8B45EA1590854BC0D812192E1992F0E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.588 -0400", hash_original_method = "554B5C3A9DEE69BDD0B0F70052D29046", hash_generated_method = "8B45EA1590854BC0D812192E1992F0E7")
     private void pinToBottom(int childrenBottom) {
         int count;
         count = getChildCount();
@@ -563,7 +563,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.215 -0400", hash_original_method = "584D06EE6653E11D28AE97D7ADF4C3E4", hash_generated_method = "AE13545E973415C333F0C261DA6A4E43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.589 -0400", hash_original_method = "584D06EE6653E11D28AE97D7ADF4C3E4", hash_generated_method = "C5B0C0A3490A9FFE90B27C7B3BED0942")
     @Override
      int findMotionRow(int y) {
         int childCount;
@@ -578,7 +578,7 @@ public class GridView extends AbsListView {
                     i += numColumns;
                     {
                         {
-                            boolean varC0173D202327EB6C7A35540C10A8AA25_639356355 = (y <= getChildAt(i).getBottom());
+                            boolean varC0173D202327EB6C7A35540C10A8AA25_692072613 = (y <= getChildAt(i).getBottom());
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
@@ -590,15 +590,15 @@ public class GridView extends AbsListView {
                     i -= numColumns;
                     {
                         {
-                            boolean var0C308B788546DD5F7421232B1F43CEB9_1337062374 = (y >= getChildAt(i).getTop());
+                            boolean var0C308B788546DD5F7421232B1F43CEB9_1241050397 = (y >= getChildAt(i).getTop());
                         } //End collapsed parenthetic
                     } //End block
                 } //End collapsed parenthetic
             } //End block
         } //End block
         addTaint(y);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_563439650 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_563439650;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1510409659 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1510409659;
         // ---------- Original Method ----------
         //final int childCount = getChildCount();
         //if (childCount > 0) {
@@ -621,12 +621,12 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.228 -0400", hash_original_method = "2BE5C63CD6BB6072D8C1046433555060", hash_generated_method = "99B1875B9165E1A7038A1796B1284364")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.605 -0400", hash_original_method = "2BE5C63CD6BB6072D8C1046433555060", hash_generated_method = "F1B469DE9916C2816D6748D9A96B3C3B")
     private View fillSpecific(int position, int top) {
-        View varB4EAC82CA7396A68D541C85D26508E83_536539834 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_261556616 = null; //Variable for return #2
-        View varB4EAC82CA7396A68D541C85D26508E83_699867183 = null; //Variable for return #3
-        View varB4EAC82CA7396A68D541C85D26508E83_1668245764 = null; //Variable for return #4
+        View varB4EAC82CA7396A68D541C85D26508E83_561131256 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_89121229 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_818159711 = null; //Variable for return #3
+        View varB4EAC82CA7396A68D541C85D26508E83_1648407214 = null; //Variable for return #4
         int numColumns;
         numColumns = mNumColumns;
         int motionRowStart;
@@ -647,7 +647,7 @@ public class GridView extends AbsListView {
         View referenceView;
         referenceView = mReferenceView;
         {
-            varB4EAC82CA7396A68D541C85D26508E83_536539834 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_561131256 = null;
         } //End block
         int verticalSpacing;
         verticalSpacing = mVerticalSpacing;
@@ -674,39 +674,39 @@ public class GridView extends AbsListView {
             } //End block
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_261556616 = temp;
+            varB4EAC82CA7396A68D541C85D26508E83_89121229 = temp;
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_699867183 = above;
+            varB4EAC82CA7396A68D541C85D26508E83_818159711 = above;
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1668245764 = below;
+            varB4EAC82CA7396A68D541C85D26508E83_1648407214 = below;
         } //End block
         addTaint(position);
         addTaint(top);
-        View varA7E53CE21691AB073D9660D615818899_1795255983; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_968602430; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1795255983 = varB4EAC82CA7396A68D541C85D26508E83_536539834;
+                varA7E53CE21691AB073D9660D615818899_968602430 = varB4EAC82CA7396A68D541C85D26508E83_561131256;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1795255983 = varB4EAC82CA7396A68D541C85D26508E83_261556616;
+                varA7E53CE21691AB073D9660D615818899_968602430 = varB4EAC82CA7396A68D541C85D26508E83_89121229;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_1795255983 = varB4EAC82CA7396A68D541C85D26508E83_699867183;
+                varA7E53CE21691AB073D9660D615818899_968602430 = varB4EAC82CA7396A68D541C85D26508E83_818159711;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1795255983 = varB4EAC82CA7396A68D541C85D26508E83_1668245764;
+                varA7E53CE21691AB073D9660D615818899_968602430 = varB4EAC82CA7396A68D541C85D26508E83_1648407214;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1795255983.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1795255983;
+        varA7E53CE21691AB073D9660D615818899_968602430.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_968602430;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.229 -0400", hash_original_method = "61C0C7B3D4F01380F7804BB62430F50F", hash_generated_method = "57E56A62D5184DB34EE9CC8ACCE6CD32")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.606 -0400", hash_original_method = "61C0C7B3D4F01380F7804BB62430F50F", hash_generated_method = "57E56A62D5184DB34EE9CC8ACCE6CD32")
     private void correctTooHigh(int numColumns, int verticalSpacing, int childCount) {
         int lastPosition;
         lastPosition = mFirstPosition + childCount - 1;
@@ -743,7 +743,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.230 -0400", hash_original_method = "C582B4D472853F3118C6A87E3BA2D3CE", hash_generated_method = "9C030B6C22F93FF41267740367EEA1CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.607 -0400", hash_original_method = "C582B4D472853F3118C6A87E3BA2D3CE", hash_generated_method = "9C030B6C22F93FF41267740367EEA1CE")
     private void correctTooLow(int numColumns, int verticalSpacing, int childCount) {
         {
             View firstChild;
@@ -782,9 +782,9 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.231 -0400", hash_original_method = "AC707126EF44BD77373D761D306CE415", hash_generated_method = "302B2140064493F8F45A549002B5ED1B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.608 -0400", hash_original_method = "AC707126EF44BD77373D761D306CE415", hash_generated_method = "DA67E9CFB7FC185B1BCCF0A0307B1596")
     private View fillFromSelection(int selectedTop, int childrenTop, int childrenBottom) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1976076231 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_940860848 = null; //Variable for return #1
         int fadingEdgeLength;
         fadingEdgeLength = getVerticalFadingEdgeLength();
         int selectedPosition;
@@ -827,18 +827,18 @@ public class GridView extends AbsListView {
             adjustViewsUpOrDown();
             fillUp(rowStart - 1, referenceView.getTop() - verticalSpacing);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1976076231 = sel;
+        varB4EAC82CA7396A68D541C85D26508E83_940860848 = sel;
         addTaint(selectedTop);
         addTaint(childrenTop);
         addTaint(childrenBottom);
-        varB4EAC82CA7396A68D541C85D26508E83_1976076231.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1976076231;
+        varB4EAC82CA7396A68D541C85D26508E83_940860848.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_940860848;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.258 -0400", hash_original_method = "3B93521E4F8B514C6E0E966E64E45808", hash_generated_method = "A9ED9485AF6F407C5A8EFA66A444A3AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.617 -0400", hash_original_method = "3B93521E4F8B514C6E0E966E64E45808", hash_generated_method = "FFA197CF3C66C8B53280DF25BF32D10E")
     private int getBottomSelectionPixel(int childrenBottom, int fadingEdgeLength,
             int numColumns, int rowStart) {
         int bottomSelectionPixel;
@@ -850,8 +850,8 @@ public class GridView extends AbsListView {
         addTaint(fadingEdgeLength);
         addTaint(numColumns);
         addTaint(rowStart);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2020725668 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2020725668;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1835275634 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1835275634;
         // ---------- Original Method ----------
         //int bottomSelectionPixel = childrenBottom;
         //if (rowStart + numColumns - 1 < mItemCount - 1) {
@@ -861,7 +861,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.259 -0400", hash_original_method = "D0A32123B024D3BD3B829FD608C467F8", hash_generated_method = "72854DEC059D7424F6190EA7D4B11773")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.617 -0400", hash_original_method = "D0A32123B024D3BD3B829FD608C467F8", hash_generated_method = "3638F5D4A1E2A3B4ECF5F4D76CB60B6F")
     private int getTopSelectionPixel(int childrenTop, int fadingEdgeLength, int rowStart) {
         int topSelectionPixel;
         topSelectionPixel = childrenTop;
@@ -871,8 +871,8 @@ public class GridView extends AbsListView {
         addTaint(childrenTop);
         addTaint(fadingEdgeLength);
         addTaint(rowStart);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2115856919 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2115856919;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2090925896 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2090925896;
         // ---------- Original Method ----------
         //int topSelectionPixel = childrenTop;
         //if (rowStart > 0) {
@@ -882,11 +882,11 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.260 -0400", hash_original_method = "683433A1D2226A93C6C052E4367B337E", hash_generated_method = "6F7DF808E1DC3164FC89722BB5BB7B9C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.618 -0400", hash_original_method = "683433A1D2226A93C6C052E4367B337E", hash_generated_method = "52190773BA58AEA3E730C05DE2281C60")
     private void adjustForBottomFadingEdge(View childInSelectedRow,
             int topSelectionPixel, int bottomSelectionPixel) {
         {
-            boolean var2726325E9F58F141269CF4C5709BEFD8_1660214723 = (childInSelectedRow.getBottom() > bottomSelectionPixel);
+            boolean var2726325E9F58F141269CF4C5709BEFD8_1391011797 = (childInSelectedRow.getBottom() > bottomSelectionPixel);
             {
                 int spaceAbove;
                 spaceAbove = childInSelectedRow.getTop() - topSelectionPixel;
@@ -910,11 +910,11 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.261 -0400", hash_original_method = "E9E54F71CD8326C8AF2C780315CD689D", hash_generated_method = "9AFC12D31F07C90B03FA07B6C5E9B9B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.619 -0400", hash_original_method = "E9E54F71CD8326C8AF2C780315CD689D", hash_generated_method = "AA230D3A29F1B03F133B30C368264305")
     private void adjustForTopFadingEdge(View childInSelectedRow,
             int topSelectionPixel, int bottomSelectionPixel) {
         {
-            boolean varA6AD2992672F69243A86BE094F867981_2068425279 = (childInSelectedRow.getTop() < topSelectionPixel);
+            boolean varA6AD2992672F69243A86BE094F867981_1224879137 = (childInSelectedRow.getTop() < topSelectionPixel);
             {
                 int spaceAbove;
                 spaceAbove = topSelectionPixel - childInSelectedRow.getTop();
@@ -938,7 +938,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.261 -0400", hash_original_method = "19B54E9E42F50C19B80602093C26BC32", hash_generated_method = "7A5836635E40602F9283C444E4C38BE2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.619 -0400", hash_original_method = "19B54E9E42F50C19B80602093C26BC32", hash_generated_method = "7A5836635E40602F9283C444E4C38BE2")
     @android.view.RemotableViewMethod
     public void smoothScrollToPosition(int position) {
         super.smoothScrollToPosition(position);
@@ -948,7 +948,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.261 -0400", hash_original_method = "9A2E566018459C8A4F9FE2F49DBB98B8", hash_generated_method = "DF8A45AA7313754A97BDE7860400CCDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.619 -0400", hash_original_method = "9A2E566018459C8A4F9FE2F49DBB98B8", hash_generated_method = "DF8A45AA7313754A97BDE7860400CCDD")
     @android.view.RemotableViewMethod
     public void smoothScrollByOffset(int offset) {
         super.smoothScrollByOffset(offset);
@@ -958,9 +958,9 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.281 -0400", hash_original_method = "55F676D436FF1EC67ECC1C028E81ED27", hash_generated_method = "8A568EC7A9D76EA0766EA04EA9308B78")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.635 -0400", hash_original_method = "55F676D436FF1EC67ECC1C028E81ED27", hash_generated_method = "A812C354005B0BE7EB20E09FB643C64E")
     private View moveSelection(int delta, int childrenTop, int childrenBottom) {
-        View varB4EAC82CA7396A68D541C85D26508E83_139492921 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_845763593 = null; //Variable for return #1
         int fadingEdgeLength;
         fadingEdgeLength = getVerticalFadingEdgeLength();
         int selectedPosition;
@@ -1029,18 +1029,18 @@ public class GridView extends AbsListView {
             adjustViewsUpOrDown();
             fillUp(rowStart - 1, referenceView.getTop() - verticalSpacing);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_139492921 = sel;
+        varB4EAC82CA7396A68D541C85D26508E83_845763593 = sel;
         addTaint(delta);
         addTaint(childrenTop);
         addTaint(childrenBottom);
-        varB4EAC82CA7396A68D541C85D26508E83_139492921.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_139492921;
+        varB4EAC82CA7396A68D541C85D26508E83_845763593.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_845763593;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.299 -0400", hash_original_method = "971C7C8872B1F8EEBA5FB107FC6F8364", hash_generated_method = "93F6205E9F94EC8FB21533B17049E324")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.643 -0400", hash_original_method = "971C7C8872B1F8EEBA5FB107FC6F8364", hash_generated_method = "7CB1C1077AD1C7E18A44CA25C7599D33")
     private boolean determineColumns(int availableSpace) {
         int requestedHorizontalSpacing;
         requestedHorizontalSpacing = mRequestedHorizontalSpacing;
@@ -1113,14 +1113,14 @@ public class GridView extends AbsListView {
         } //End block
         //End case STRETCH_SPACING_UNIFORM 
         //End case default 
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_163396372 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_163396372;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_648681868 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_648681868;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.308 -0400", hash_original_method = "DE2B2122B3B8477B4CE53B0961FAB462", hash_generated_method = "86FA6F5BEB4E7641C992C4A3D585F4A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.649 -0400", hash_original_method = "DE2B2122B3B8477B4CE53B0961FAB462", hash_generated_method = "2DE0D5D648A4B4D468D0D017C3FFD5B1")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1175,7 +1175,7 @@ public class GridView extends AbsListView {
             childHeight = child.getMeasuredHeight();
             childState = combineMeasuredStates(childState, child.getMeasuredState());
             {
-                boolean varE2DAD11F47B1E984D553A4A012EB052E_155949673 = (mRecycler.shouldRecycleViewType(p.viewType));
+                boolean varE2DAD11F47B1E984D553A4A012EB052E_2070141695 = (mRecycler.shouldRecycleViewType(p.viewType));
                 {
                     mRecycler.addScrapView(child, -1);
                 } //End block
@@ -1224,7 +1224,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.310 -0400", hash_original_method = "B083102DF451B0F743637B4C2ECFBD00", hash_generated_method = "FC78F3EF52E66C36A50C1B26364656F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.661 -0400", hash_original_method = "B083102DF451B0F743637B4C2ECFBD00", hash_generated_method = "FC78F3EF52E66C36A50C1B26364656F3")
     @Override
     protected void attachLayoutAnimationParameters(View child,
             ViewGroup.LayoutParams params, int index, int count) {
@@ -1257,7 +1257,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.342 -0400", hash_original_method = "22970971C8FD1FE9524617A911939C41", hash_generated_method = "4D763A2F7F05DEDD50AF13E353065290")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.666 -0400", hash_original_method = "22970971C8FD1FE9524617A911939C41", hash_generated_method = "4D763A2F7F05DEDD50AF13E353065290")
     @Override
     protected void layoutChildren() {
         boolean blockLayoutRequests;
@@ -1436,39 +1436,39 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.349 -0400", hash_original_method = "D1571833DCBC36BAA4E4DA8F2A5DB363", hash_generated_method = "84E984C6A618D2A08619E8B73930F053")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.682 -0400", hash_original_method = "D1571833DCBC36BAA4E4DA8F2A5DB363", hash_generated_method = "8E26EE3B173F7A3C5C24322BD7BBFAFC")
     private View makeAndAddView(int position, int y, boolean flow, int childrenLeft,
             boolean selected, int where) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1199651565 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_2098758802 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_1878790042 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1393774893 = null; //Variable for return #2
         View child;
         {
             child = mRecycler.getActiveView(position);
             {
                 setupChild(child, position, y, flow, childrenLeft, selected, true, where);
-                varB4EAC82CA7396A68D541C85D26508E83_1199651565 = child;
+                varB4EAC82CA7396A68D541C85D26508E83_1878790042 = child;
             } //End block
         } //End block
         child = obtainView(position, mIsScrap);
         setupChild(child, position, y, flow, childrenLeft, selected, mIsScrap[0], where);
-        varB4EAC82CA7396A68D541C85D26508E83_2098758802 = child;
+        varB4EAC82CA7396A68D541C85D26508E83_1393774893 = child;
         addTaint(position);
         addTaint(y);
         addTaint(flow);
         addTaint(childrenLeft);
         addTaint(selected);
         addTaint(where);
-        View varA7E53CE21691AB073D9660D615818899_1549287456; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_834986482; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1549287456 = varB4EAC82CA7396A68D541C85D26508E83_1199651565;
+                varA7E53CE21691AB073D9660D615818899_834986482 = varB4EAC82CA7396A68D541C85D26508E83_1878790042;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1549287456 = varB4EAC82CA7396A68D541C85D26508E83_2098758802;
+                varA7E53CE21691AB073D9660D615818899_834986482 = varB4EAC82CA7396A68D541C85D26508E83_1393774893;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1549287456.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1549287456;
+        varA7E53CE21691AB073D9660D615818899_834986482.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_834986482;
         // ---------- Original Method ----------
         //View child;
         //if (!mDataChanged) {
@@ -1484,7 +1484,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.364 -0400", hash_original_method = "F1D84EEF4E6902A923E61B402C707D18", hash_generated_method = "9901AF2C1112B10553ED84ACB45B2D8D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.749 -0400", hash_original_method = "F1D84EEF4E6902A923E61B402C707D18", hash_generated_method = "C51B968C057F1A6B931690ABA8B02B68")
     private void setupChild(View child, int position, int y, boolean flow, int childrenLeft,
             boolean selected, boolean recycled, int where) {
         boolean isSelected;
@@ -1528,7 +1528,7 @@ public class GridView extends AbsListView {
                 ((Checkable) child).setChecked(mCheckStates.get(position));
             } //End block
             {
-                boolean var6B8ECFCCB35D70022AE775423EF95EFF_1920371388 = (getContext().getApplicationInfo().targetSdkVersion
+                boolean var6B8ECFCCB35D70022AE775423EF95EFF_1069440111 = (getContext().getApplicationInfo().targetSdkVersion
                     >= android.os.Build.VERSION_CODES.HONEYCOMB);
                 {
                     child.setActivated(mCheckStates.get(position));
@@ -1586,7 +1586,7 @@ public class GridView extends AbsListView {
             child.setDrawingCacheEnabled(true);
         } //End block
         {
-            boolean varCA9C9DB394586E5C1281E2A995FFCD63_173571472 = (recycled && (((AbsListView.LayoutParams)child.getLayoutParams()).scrappedFromPosition)
+            boolean varCA9C9DB394586E5C1281E2A995FFCD63_564833853 = (recycled && (((AbsListView.LayoutParams)child.getLayoutParams()).scrappedFromPosition)
                 != position);
             {
                 child.jumpDrawablesToCurrentState();
@@ -1605,11 +1605,11 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.370 -0400", hash_original_method = "F036989DC17B53D064E56E9048AF8088", hash_generated_method = "49947206499E0CDDD43E8D4169B5E5BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.750 -0400", hash_original_method = "F036989DC17B53D064E56E9048AF8088", hash_generated_method = "64CD52A0E4B9CB1FE79688944ACDE705")
     @Override
     public void setSelection(int position) {
         {
-            boolean var3DA6B9D2A4DFFBF2A8164819B7AFE9DF_707741472 = (!isInTouchMode());
+            boolean var3DA6B9D2A4DFFBF2A8164819B7AFE9DF_1012289650 = (!isInTouchMode());
             {
                 setNextSelectedPositionInt(position);
             } //End block
@@ -1631,7 +1631,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.370 -0400", hash_original_method = "BFD03D39F54176AB600127B7C1132704", hash_generated_method = "4682C06F24ACE6A825E4503FB72D8D6B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.751 -0400", hash_original_method = "BFD03D39F54176AB600127B7C1132704", hash_generated_method = "4682C06F24ACE6A825E4503FB72D8D6B")
     @Override
      void setSelectionInt(int position) {
         int previousSelectedPosition;
@@ -1669,50 +1669,50 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.372 -0400", hash_original_method = "82498D99AFEB0700B1F959E9E9927B59", hash_generated_method = "258AEB950AB5A12CB86634F534C59C47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.751 -0400", hash_original_method = "82498D99AFEB0700B1F959E9E9927B59", hash_generated_method = "D6B9C5E0053DFC86D11238A644AAFF2C")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        boolean var7B6BE27715D36B6032CB7DA2718D4FF1_2034482062 = (commonKey(keyCode, 1, event));
+        boolean var7B6BE27715D36B6032CB7DA2718D4FF1_201578970 = (commonKey(keyCode, 1, event));
         addTaint(keyCode);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_847780463 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_847780463;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1788314743 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1788314743;
         // ---------- Original Method ----------
         //return commonKey(keyCode, 1, event);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.372 -0400", hash_original_method = "C105EC1B6481173F2A66D1C47882507B", hash_generated_method = "981FDFCEE6E611884A7C7CA6678EEF3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.752 -0400", hash_original_method = "C105EC1B6481173F2A66D1C47882507B", hash_generated_method = "2EB861335A26344A5938DA38BCADCC7B")
     @Override
     public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        boolean varACEC8A58158104BC4BBB2FE543212B03_181476928 = (commonKey(keyCode, repeatCount, event));
+        boolean varACEC8A58158104BC4BBB2FE543212B03_609195962 = (commonKey(keyCode, repeatCount, event));
         addTaint(keyCode);
         addTaint(repeatCount);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_679663807 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_679663807;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2123373231 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2123373231;
         // ---------- Original Method ----------
         //return commonKey(keyCode, repeatCount, event);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.376 -0400", hash_original_method = "FFB4A1626C41573790F9B17FF23F8A09", hash_generated_method = "1D8883EB7CDF799B7F1F2A58F0AAF1AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.752 -0400", hash_original_method = "FFB4A1626C41573790F9B17FF23F8A09", hash_generated_method = "BD1192D89B4925EAD4496DAE00F2B783")
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        boolean var7B6BE27715D36B6032CB7DA2718D4FF1_779318849 = (commonKey(keyCode, 1, event));
+        boolean var7B6BE27715D36B6032CB7DA2718D4FF1_1094572422 = (commonKey(keyCode, 1, event));
         addTaint(keyCode);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_410063050 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_410063050;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1474349942 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1474349942;
         // ---------- Original Method ----------
         //return commonKey(keyCode, 1, event);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.389 -0400", hash_original_method = "91535B300D60431313446AA401FFCFE7", hash_generated_method = "F2FA52D44E9401B5D550218BC1D7320D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.767 -0400", hash_original_method = "91535B300D60431313446AA401FFCFE7", hash_generated_method = "711DFE44171ED1B15AE26504A1B9FF56")
     private boolean commonKey(int keyCode, int count, KeyEvent event) {
         {
             layoutChildren();
@@ -1724,7 +1724,7 @@ public class GridView extends AbsListView {
         {
             //Begin case KeyEvent.KEYCODE_DPAD_LEFT 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_1370042051 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_1223875193 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded() || arrowScroll(FOCUS_LEFT);
                 } //End block
@@ -1732,7 +1732,7 @@ public class GridView extends AbsListView {
             //End case KeyEvent.KEYCODE_DPAD_LEFT 
             //Begin case KeyEvent.KEYCODE_DPAD_RIGHT 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_452362420 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_233337889 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded() || arrowScroll(FOCUS_RIGHT);
                 } //End block
@@ -1740,12 +1740,12 @@ public class GridView extends AbsListView {
             //End case KeyEvent.KEYCODE_DPAD_RIGHT 
             //Begin case KeyEvent.KEYCODE_DPAD_UP 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_652666349 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_316455712 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded() || arrowScroll(FOCUS_UP);
                 } //End block
                 {
-                    boolean varAB36CD08CFCE6244F546B808D5F456D4_648250949 = (event.hasModifiers(KeyEvent.META_ALT_ON));
+                    boolean varAB36CD08CFCE6244F546B808D5F456D4_1491315794 = (event.hasModifiers(KeyEvent.META_ALT_ON));
                     {
                         handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_UP);
                     } //End block
@@ -1754,12 +1754,12 @@ public class GridView extends AbsListView {
             //End case KeyEvent.KEYCODE_DPAD_UP 
             //Begin case KeyEvent.KEYCODE_DPAD_DOWN 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_1324823453 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_1839753915 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded() || arrowScroll(FOCUS_DOWN);
                 } //End block
                 {
-                    boolean varAB36CD08CFCE6244F546B808D5F456D4_553362413 = (event.hasModifiers(KeyEvent.META_ALT_ON));
+                    boolean varAB36CD08CFCE6244F546B808D5F456D4_1923617716 = (event.hasModifiers(KeyEvent.META_ALT_ON));
                     {
                         handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_DOWN);
                     } //End block
@@ -1768,11 +1768,11 @@ public class GridView extends AbsListView {
             //End case KeyEvent.KEYCODE_DPAD_DOWN 
             //Begin case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_2027986196 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_2003635717 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded();
                     {
-                        boolean var8C90301B2F58C5750CCB877C7F321644_316041759 = (!handled
+                        boolean var8C90301B2F58C5750CCB877C7F321644_44905452 = (!handled
                                 && event.getRepeatCount() == 0 && getChildCount() > 0);
                         {
                             keyPressed();
@@ -1784,15 +1784,15 @@ public class GridView extends AbsListView {
             //End case KeyEvent.KEYCODE_DPAD_CENTER KeyEvent.KEYCODE_ENTER 
             //Begin case KeyEvent.KEYCODE_SPACE 
             {
-                boolean varC5267D5BFE7A3E261BDE80A07A8ECCFA_1310566453 = (mPopup == null || !mPopup.isShowing());
+                boolean varC5267D5BFE7A3E261BDE80A07A8ECCFA_1517258751 = (mPopup == null || !mPopup.isShowing());
                 {
                     {
-                        boolean var3A3095F7575E47050F710FB26AF5006E_32029935 = (event.hasNoModifiers());
+                        boolean var3A3095F7575E47050F710FB26AF5006E_771710236 = (event.hasNoModifiers());
                         {
                             handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_DOWN);
                         } //End block
                         {
-                            boolean varC6F58190DE4A31A0CF9704EF99A62451_645774565 = (event.hasModifiers(KeyEvent.META_SHIFT_ON));
+                            boolean varC6F58190DE4A31A0CF9704EF99A62451_954372790 = (event.hasModifiers(KeyEvent.META_SHIFT_ON));
                             {
                                 handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_UP);
                             } //End block
@@ -1803,12 +1803,12 @@ public class GridView extends AbsListView {
             //End case KeyEvent.KEYCODE_SPACE 
             //Begin case KeyEvent.KEYCODE_PAGE_UP 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_961979392 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_1115802637 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_UP);
                 } //End block
                 {
-                    boolean varAB36CD08CFCE6244F546B808D5F456D4_1172117334 = (event.hasModifiers(KeyEvent.META_ALT_ON));
+                    boolean varAB36CD08CFCE6244F546B808D5F456D4_916620190 = (event.hasModifiers(KeyEvent.META_ALT_ON));
                     {
                         handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_UP);
                     } //End block
@@ -1817,12 +1817,12 @@ public class GridView extends AbsListView {
             //End case KeyEvent.KEYCODE_PAGE_UP 
             //Begin case KeyEvent.KEYCODE_PAGE_DOWN 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_1661034673 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_1079483058 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded() || pageScroll(FOCUS_DOWN);
                 } //End block
                 {
-                    boolean varAB36CD08CFCE6244F546B808D5F456D4_521921366 = (event.hasModifiers(KeyEvent.META_ALT_ON));
+                    boolean varAB36CD08CFCE6244F546B808D5F456D4_1534675527 = (event.hasModifiers(KeyEvent.META_ALT_ON));
                     {
                         handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_DOWN);
                     } //End block
@@ -1831,7 +1831,7 @@ public class GridView extends AbsListView {
             //End case KeyEvent.KEYCODE_PAGE_DOWN 
             //Begin case KeyEvent.KEYCODE_MOVE_HOME 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_1353944237 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_781165116 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_UP);
                 } //End block
@@ -1839,7 +1839,7 @@ public class GridView extends AbsListView {
             //End case KeyEvent.KEYCODE_MOVE_HOME 
             //Begin case KeyEvent.KEYCODE_MOVE_END 
             {
-                boolean var01265F35364458CD2A88FFB15C2C1B92_1176260093 = (event.hasNoModifiers());
+                boolean var01265F35364458CD2A88FFB15C2C1B92_1358371095 = (event.hasNoModifiers());
                 {
                     handled = resurrectSelectionIfNeeded() || fullScroll(FOCUS_DOWN);
                 } //End block
@@ -1848,13 +1848,13 @@ public class GridView extends AbsListView {
             //Begin case KeyEvent.KEYCODE_TAB 
             {
                 {
-                    boolean varC77C0C11194BD87DFEE086A32DCE5C18_1752775864 = (event.hasNoModifiers());
+                    boolean varC77C0C11194BD87DFEE086A32DCE5C18_244866737 = (event.hasNoModifiers());
                     {
                         handled = resurrectSelectionIfNeeded()
                                     || sequenceScroll(FOCUS_FORWARD);
                     } //End block
                     {
-                        boolean var7B1040B2192949CFC257B6EE7F25C319_735967456 = (event.hasModifiers(KeyEvent.META_SHIFT_ON));
+                        boolean var7B1040B2192949CFC257B6EE7F25C319_482541558 = (event.hasModifiers(KeyEvent.META_SHIFT_ON));
                         {
                             handled = resurrectSelectionIfNeeded()
                                     || sequenceScroll(FOCUS_BACKWARD);
@@ -1865,28 +1865,28 @@ public class GridView extends AbsListView {
             //End case KeyEvent.KEYCODE_TAB 
         } //End block
         {
-            boolean varF6449376E291BB335EF050093EE80110_1575692698 = (sendToTextFilter(keyCode, count, event));
+            boolean varF6449376E291BB335EF050093EE80110_582872475 = (sendToTextFilter(keyCode, count, event));
         } //End collapsed parenthetic
         //Begin case KeyEvent.ACTION_DOWN 
-        boolean var8C6E6C19273FC56B5C56CC7DEF63ED7B_310191630 = (super.onKeyDown(keyCode, event));
+        boolean var8C6E6C19273FC56B5C56CC7DEF63ED7B_858959810 = (super.onKeyDown(keyCode, event));
         //End case KeyEvent.ACTION_DOWN 
         //Begin case KeyEvent.ACTION_UP 
-        boolean varEDD771EBF66425AD21882AB08CD0EE48_762503174 = (super.onKeyUp(keyCode, event));
+        boolean varEDD771EBF66425AD21882AB08CD0EE48_1959833509 = (super.onKeyUp(keyCode, event));
         //End case KeyEvent.ACTION_UP 
         //Begin case KeyEvent.ACTION_MULTIPLE 
-        boolean varC0357E39557DD275ECAF43C782C78502_1854373546 = (super.onKeyMultiple(keyCode, count, event));
+        boolean varC0357E39557DD275ECAF43C782C78502_1289639136 = (super.onKeyMultiple(keyCode, count, event));
         //End case KeyEvent.ACTION_MULTIPLE 
         addTaint(keyCode);
         addTaint(count);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2078152404 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2078152404;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_373534775 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_373534775;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.390 -0400", hash_original_method = "7F69D44B4A5B870A2ADF67B34BC1B3FD", hash_generated_method = "2FC6872EE3C7D4B287FD1E1CAE406064")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.784 -0400", hash_original_method = "7F69D44B4A5B870A2ADF67B34BC1B3FD", hash_generated_method = "A6397B51CB1118FA46DF817CAF4862B4")
      boolean pageScroll(int direction) {
         int nextPage;
         nextPage = -1;
@@ -1902,8 +1902,8 @@ public class GridView extends AbsListView {
             awakenScrollBars();
         } //End block
         addTaint(direction);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_448153464 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_448153464;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_284638078 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_284638078;
         // ---------- Original Method ----------
         //int nextPage = -1;
         //if (direction == FOCUS_UP) {
@@ -1921,7 +1921,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.393 -0400", hash_original_method = "8921946161DEF2C387CE09B16F70206C", hash_generated_method = "73515F89B913940BDB46D6E4D87A7606")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.785 -0400", hash_original_method = "8921946161DEF2C387CE09B16F70206C", hash_generated_method = "22620DDE5E6E7C325ED1C81BC70E10D7")
      boolean fullScroll(int direction) {
         boolean moved;
         moved = false;
@@ -1941,8 +1941,8 @@ public class GridView extends AbsListView {
             awakenScrollBars();
         } //End block
         addTaint(direction);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2119421648 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2119421648;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_447798170 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_447798170;
         // ---------- Original Method ----------
         //boolean moved = false;
         //if (direction == FOCUS_UP) {
@@ -1963,7 +1963,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.395 -0400", hash_original_method = "8CD79681F48962D4344E68AA337F0770", hash_generated_method = "00AADD2992BF03EC55290B200A2200DC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.787 -0400", hash_original_method = "8CD79681F48962D4344E68AA337F0770", hash_generated_method = "5A20110DA4129F8A7D367E42AD3B74BE")
      boolean arrowScroll(int direction) {
         int selectedPosition;
         selectedPosition = mSelectedPosition;
@@ -2019,14 +2019,14 @@ public class GridView extends AbsListView {
             awakenScrollBars();
         } //End block
         addTaint(direction);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2130372773 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2130372773;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1593908773 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1593908773;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.515 -0400", hash_original_method = "3D7E63CDF154AB38FFF5F8515CF699BF", hash_generated_method = "48BB7FF918E859D36F342D41D5C4FB4D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.806 -0400", hash_original_method = "3D7E63CDF154AB38FFF5F8515CF699BF", hash_generated_method = "9569E7B03AD9A3DCBA12528524096BCC")
      boolean sequenceScroll(int direction) {
         int selectedPosition;
         selectedPosition = mSelectedPosition;
@@ -2074,14 +2074,14 @@ public class GridView extends AbsListView {
             awakenScrollBars();
         } //End block
         addTaint(direction);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1536781672 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1536781672;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_433616929 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_433616929;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.521 -0400", hash_original_method = "0FD361D132773200063DCB66E88E964C", hash_generated_method = "F5A440FB07E64F4566788BDCD6C3F605")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.812 -0400", hash_original_method = "0FD361D132773200063DCB66E88E964C", hash_generated_method = "02C6DC910321DAA15B3F346BB6E21180")
     @Override
     protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -2101,7 +2101,7 @@ public class GridView extends AbsListView {
                 i = 0;
                 {
                     {
-                        boolean var4F49F74F736BC8C7CC9FE76A9F30A707_2135495413 = (!isCandidateSelection(i, direction));
+                        boolean var4F49F74F736BC8C7CC9FE76A9F30A707_1704129719 = (!isCandidateSelection(i, direction));
                     } //End collapsed parenthetic
                     View other;
                     other = getChildAt(i);
@@ -2130,7 +2130,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.526 -0400", hash_original_method = "84D213429BEB1496C8F56DF85FD23E87", hash_generated_method = "4C3903B823DCAF96015CA0840D9F3FAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.827 -0400", hash_original_method = "84D213429BEB1496C8F56DF85FD23E87", hash_generated_method = "0B32348B2CF210C3ACF5799A91CF4C8A")
     private boolean isCandidateSelection(int childIndex, int direction) {
         int count;
         count = getChildCount();
@@ -2153,14 +2153,14 @@ public class GridView extends AbsListView {
         //End case default 
         addTaint(childIndex);
         addTaint(direction);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_996597633 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_996597633;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1548366582 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1548366582;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.527 -0400", hash_original_method = "FC2053B842AF8EFA285EBFCDE9A6D098", hash_generated_method = "BAD7C3D6E170462E620A3F127FF1B253")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.828 -0400", hash_original_method = "FC2053B842AF8EFA285EBFCDE9A6D098", hash_generated_method = "BAD7C3D6E170462E620A3F127FF1B253")
     public void setGravity(int gravity) {
         {
             mGravity = gravity;
@@ -2174,7 +2174,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.527 -0400", hash_original_method = "F4AD294FF1286508B5C248EDCA212E5B", hash_generated_method = "0974E6853BAE84E8A34EC949A0ED119B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.828 -0400", hash_original_method = "F4AD294FF1286508B5C248EDCA212E5B", hash_generated_method = "0974E6853BAE84E8A34EC949A0ED119B")
     public void setHorizontalSpacing(int horizontalSpacing) {
         {
             mRequestedHorizontalSpacing = horizontalSpacing;
@@ -2188,7 +2188,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.543 -0400", hash_original_method = "18D0FB9D8A0D215DBABAAD70588CEE39", hash_generated_method = "D293B570439C006E3649F59931BF24AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.829 -0400", hash_original_method = "18D0FB9D8A0D215DBABAAD70588CEE39", hash_generated_method = "D293B570439C006E3649F59931BF24AA")
     public void setVerticalSpacing(int verticalSpacing) {
         {
             mVerticalSpacing = verticalSpacing;
@@ -2202,7 +2202,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.543 -0400", hash_original_method = "C49A7586B9CFE9BA77F47A780C0C8544", hash_generated_method = "D39AC0879D99FD55925DCABCD912FF43")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.829 -0400", hash_original_method = "C49A7586B9CFE9BA77F47A780C0C8544", hash_generated_method = "D39AC0879D99FD55925DCABCD912FF43")
     public void setStretchMode(int stretchMode) {
         {
             mStretchMode = stretchMode;
@@ -2216,16 +2216,16 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.545 -0400", hash_original_method = "B323AFE5AE5939BBDA58166A4DF4B096", hash_generated_method = "6967AFA6DCABE8B900E8BFED1EDD47EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.830 -0400", hash_original_method = "B323AFE5AE5939BBDA58166A4DF4B096", hash_generated_method = "21331EDBEB503291054572412E6BD8ED")
     public int getStretchMode() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1869319111 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1869319111;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1138411492 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1138411492;
         // ---------- Original Method ----------
         //return mStretchMode;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.552 -0400", hash_original_method = "2D3707A47407D7324964709BC50279C2", hash_generated_method = "BB62D2A99825B7D1702BE76188A98365")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.830 -0400", hash_original_method = "2D3707A47407D7324964709BC50279C2", hash_generated_method = "BB62D2A99825B7D1702BE76188A98365")
     public void setColumnWidth(int columnWidth) {
         {
             mRequestedColumnWidth = columnWidth;
@@ -2239,7 +2239,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.552 -0400", hash_original_method = "EB843153C85390AE48F1C91EE0B42CDB", hash_generated_method = "FA6F80A9406D7B9F5F4E2A6711A09668")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.830 -0400", hash_original_method = "EB843153C85390AE48F1C91EE0B42CDB", hash_generated_method = "FA6F80A9406D7B9F5F4E2A6711A09668")
     public void setNumColumns(int numColumns) {
         {
             mRequestedNumColumns = numColumns;
@@ -2253,17 +2253,17 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.553 -0400", hash_original_method = "B011FDCEBE38F0939F62249D6B5BC711", hash_generated_method = "C778FAC7E732DE3C58E30A3AF5CF9445")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.841 -0400", hash_original_method = "B011FDCEBE38F0939F62249D6B5BC711", hash_generated_method = "1C57BE89A9CF6ABC7AF237A133613F30")
     @ViewDebug.ExportedProperty
     public int getNumColumns() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_27742519 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_27742519;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1432376895 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1432376895;
         // ---------- Original Method ----------
         //return mNumColumns;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.565 -0400", hash_original_method = "614329ACA245384517EF28FF3609B04B", hash_generated_method = "9FA2292934F9A98536289BB9C57477FA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.842 -0400", hash_original_method = "614329ACA245384517EF28FF3609B04B", hash_generated_method = "9FA2292934F9A98536289BB9C57477FA")
     private void adjustViewsUpOrDown() {
         int childCount;
         childCount = getChildCount();
@@ -2299,7 +2299,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.567 -0400", hash_original_method = "0FB16985DD2A598E66D7882D349B86AF", hash_generated_method = "E3D82BE538554CC666B287BBCF0AD27F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.854 -0400", hash_original_method = "0FB16985DD2A598E66D7882D349B86AF", hash_generated_method = "5809A1C8FEF5A9C01D5121CB58358D33")
     @Override
     protected int computeVerticalScrollExtent() {
         int count;
@@ -2328,8 +2328,8 @@ public class GridView extends AbsListView {
                 extent -= ((bottom - getHeight()) * 100) / height;
             } //End block
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_767165070 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_767165070;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_779153771 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_779153771;
         // ---------- Original Method ----------
         //final int count = getChildCount();
         //if (count > 0) {
@@ -2354,11 +2354,11 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.575 -0400", hash_original_method = "77C851014C1118924C7173C75459421E", hash_generated_method = "20D05BC3C25AAE6CD739343628B9316D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.855 -0400", hash_original_method = "77C851014C1118924C7173C75459421E", hash_generated_method = "C5E70CF0C4A1EF3E346DEA36F5206FA3")
     @Override
     protected int computeVerticalScrollOffset() {
         {
-            boolean var55F650244283761A6D0270E03F2533A0_307396546 = (mFirstPosition >= 0 && getChildCount() > 0);
+            boolean var55F650244283761A6D0270E03F2533A0_2112971842 = (mFirstPosition >= 0 && getChildCount() > 0);
             {
                 View view;
                 view = getChildAt(0);
@@ -2373,13 +2373,13 @@ public class GridView extends AbsListView {
                     whichRow = mFirstPosition / numColumns;
                     int rowCount;
                     rowCount = (mItemCount + numColumns - 1) / numColumns;
-                    int varBBCDFA4A3F60B9FD9A50F6BC86F61153_167366083 = (Math.max(whichRow * 100 - (top * 100) / height +
+                    int varBBCDFA4A3F60B9FD9A50F6BC86F61153_1445329609 = (Math.max(whichRow * 100 - (top * 100) / height +
                         (int) ((float) mScrollY / getHeight() * rowCount * 100), 0));
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_533008361 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_533008361;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_176629352 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_176629352;
         // ---------- Original Method ----------
         //if (mFirstPosition >= 0 && getChildCount() > 0) {
             //final View view = getChildAt(0);
@@ -2397,7 +2397,7 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.576 -0400", hash_original_method = "2E67C9F09804D125789DA130D24F2E03", hash_generated_method = "FF8EC01FBDC547168EF91B1B1335D987")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.864 -0400", hash_original_method = "2E67C9F09804D125789DA130D24F2E03", hash_generated_method = "8E5B7D61864D09948A28C670561AF498")
     @Override
     protected int computeVerticalScrollRange() {
         int numColumns;
@@ -2409,8 +2409,8 @@ public class GridView extends AbsListView {
         {
             result += Math.abs((int) ((float) mScrollY / getHeight() * rowCount * 100));
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1255049131 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1255049131;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_52390549 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_52390549;
         // ---------- Original Method ----------
         //final int numColumns = mNumColumns;
         //final int rowCount = (mItemCount + numColumns - 1) / numColumns;
@@ -2422,19 +2422,19 @@ public class GridView extends AbsListView {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.582 -0400", hash_original_field = "3C6C842350FA9DF4AF7C1577C5481D7F", hash_generated_field = "9591D43DFDB00D3CA815C6412336BEEB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.864 -0400", hash_original_field = "3C6C842350FA9DF4AF7C1577C5481D7F", hash_generated_field = "9591D43DFDB00D3CA815C6412336BEEB")
 
     public static final int NO_STRETCH = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.582 -0400", hash_original_field = "C781279666F1CFCA96E5F3E8F379648C", hash_generated_field = "9E8C93D13663D982A634A608E98FDD9B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.864 -0400", hash_original_field = "C781279666F1CFCA96E5F3E8F379648C", hash_generated_field = "9E8C93D13663D982A634A608E98FDD9B")
 
     public static final int STRETCH_SPACING = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.582 -0400", hash_original_field = "93F50EC30CD0856C8A19939E9B64DED3", hash_generated_field = "289B7802E2F88C85889BF1B0A565B14F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.864 -0400", hash_original_field = "93F50EC30CD0856C8A19939E9B64DED3", hash_generated_field = "289B7802E2F88C85889BF1B0A565B14F")
 
     public static final int STRETCH_COLUMN_WIDTH = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.582 -0400", hash_original_field = "321EC49DA83893E4048EDCC856EFEFB3", hash_generated_field = "6D329753C82DAECBEDD98AD073821537")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.864 -0400", hash_original_field = "321EC49DA83893E4048EDCC856EFEFB3", hash_generated_field = "6D329753C82DAECBEDD98AD073821537")
 
     public static final int STRETCH_SPACING_UNIFORM = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:07.582 -0400", hash_original_field = "57174C1594A18EA6304DDA366FEF8B68", hash_generated_field = "4306712C3BDDA946F401316F516F19DA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:08.864 -0400", hash_original_field = "57174C1594A18EA6304DDA366FEF8B68", hash_generated_field = "4306712C3BDDA946F401316F516F19DA")
 
     public static final int AUTO_FIT = -1;
 }

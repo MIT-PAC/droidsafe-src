@@ -16,11 +16,11 @@ import org.bouncycastle.util.io.pem.PemObjectGenerator;
 import org.bouncycastle.util.io.pem.PemWriter;
 
 public class PEMWriter extends PemWriter {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.607 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.709 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
 
     private String provider;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.607 -0400", hash_original_method = "B56F352F75A7EE5ED66D1919C9935D1C", hash_generated_method = "7F8B2D7502CA930D9AF4063081EE6961")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.709 -0400", hash_original_method = "B56F352F75A7EE5ED66D1919C9935D1C", hash_generated_method = "7F8B2D7502CA930D9AF4063081EE6961")
     public  PEMWriter(Writer out) {
         this(out, "BC");
         addTaint(out.getTaint());
@@ -28,7 +28,7 @@ public class PEMWriter extends PemWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.607 -0400", hash_original_method = "99674EEDDF74A689A2172353FAA6EC72", hash_generated_method = "6F0E1193C16EDE49175BF67432E9996C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.710 -0400", hash_original_method = "99674EEDDF74A689A2172353FAA6EC72", hash_generated_method = "6F0E1193C16EDE49175BF67432E9996C")
     public  PEMWriter(
         Writer  out,
         String  provider) {
@@ -40,7 +40,7 @@ public class PEMWriter extends PemWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.608 -0400", hash_original_method = "996091F5D25AD49D59450216DEC51F49", hash_generated_method = "B1BA9B2D64ACB307B95E2E4F3BE9C8E2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.710 -0400", hash_original_method = "996091F5D25AD49D59450216DEC51F49", hash_generated_method = "EC7902369D3FDD081D01808B17EC6704")
     public void writeObject(
         Object  obj) throws IOException {
         try 
@@ -50,7 +50,7 @@ public class PEMWriter extends PemWriter {
         catch (PemGenerationException e)
         {
             {
-                boolean var67625E0ED8D01D5826DCC347A874C9DD_185797338 = (e.getCause() instanceof IOException);
+                boolean var67625E0ED8D01D5826DCC347A874C9DD_910246919 = (e.getCause() instanceof IOException);
                 {
                     if (DroidSafeAndroidRuntime.control) throw (IOException)e.getCause();
                 } //End block
@@ -74,7 +74,7 @@ public class PEMWriter extends PemWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.610 -0400", hash_original_method = "E0AF395E658580FE02EB9102C3B67CCE", hash_generated_method = "3CF20F1A50257069DADE483912B3E916")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.711 -0400", hash_original_method = "E0AF395E658580FE02EB9102C3B67CCE", hash_generated_method = "3CF20F1A50257069DADE483912B3E916")
     public void writeObject(
         PemObjectGenerator obj) throws IOException {
         super.writeObject(obj);
@@ -84,7 +84,7 @@ public class PEMWriter extends PemWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.610 -0400", hash_original_method = "FE40F27E2DA82EBBE9E1DFDF41871C25", hash_generated_method = "E84B40AF16F75CA7D91749ACDF549FF3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.711 -0400", hash_original_method = "FE40F27E2DA82EBBE9E1DFDF41871C25", hash_generated_method = "E84B40AF16F75CA7D91749ACDF549FF3")
     public void writeObject(
         Object       obj,
         String       algorithm,

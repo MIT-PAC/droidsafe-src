@@ -16,17 +16,17 @@ import java.nio.charset.CodingErrorAction;
 import java.util.Arrays;
 
 public class OutputStreamWriter extends Writer {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.325 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "FAC7CE5410064D378AF9E7B2309C5BE9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.437 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "FAC7CE5410064D378AF9E7B2309C5BE9")
 
     private OutputStream out;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.326 -0400", hash_original_field = "724A00E315992B82D662231EA0DCBE50", hash_generated_field = "A07B3C678B690A0A298B0184B628874A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.437 -0400", hash_original_field = "724A00E315992B82D662231EA0DCBE50", hash_generated_field = "A07B3C678B690A0A298B0184B628874A")
 
     private CharsetEncoder encoder;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.326 -0400", hash_original_field = "50E41AB3FDB67E2442AFB04B480B97A2", hash_generated_field = "A3FC74598F816F44A8E790B9843EEF7E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.437 -0400", hash_original_field = "50E41AB3FDB67E2442AFB04B480B97A2", hash_generated_field = "A3FC74598F816F44A8E790B9843EEF7E")
 
     private ByteBuffer bytes = ByteBuffer.allocate(8192);
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.326 -0400", hash_original_method = "8C206CCA706FC5574C37E56D894D8687", hash_generated_method = "A65923CB537A3E6CFE8AB882E44ABF1A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.437 -0400", hash_original_method = "8C206CCA706FC5574C37E56D894D8687", hash_generated_method = "A65923CB537A3E6CFE8AB882E44ABF1A")
     public  OutputStreamWriter(OutputStream out) {
         this(out, Charset.defaultCharset());
         addTaint(out.getTaint());
@@ -34,7 +34,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.326 -0400", hash_original_method = "FE2D64915F756E150E2359224C906A4F", hash_generated_method = "E6B40133128F40D312C008BFFF8AE10E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.454 -0400", hash_original_method = "FE2D64915F756E150E2359224C906A4F", hash_generated_method = "E6B40133128F40D312C008BFFF8AE10E")
     public  OutputStreamWriter(OutputStream out, final String enc) throws UnsupportedEncodingException {
         super(out);
         {
@@ -66,7 +66,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.327 -0400", hash_original_method = "8F31DE887FC24410EE09434FBA44CA21", hash_generated_method = "B1E3E8C23C37F25FE6C0A3EDCFDF5EE6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.454 -0400", hash_original_method = "8F31DE887FC24410EE09434FBA44CA21", hash_generated_method = "B1E3E8C23C37F25FE6C0A3EDCFDF5EE6")
     public  OutputStreamWriter(OutputStream out, Charset cs) {
         super(out);
         this.out = out;
@@ -81,7 +81,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.327 -0400", hash_original_method = "C5AFC76AE8F04EED9C657E07A65429EA", hash_generated_method = "626EF98BAB75BECB16EB0021472230A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.455 -0400", hash_original_method = "C5AFC76AE8F04EED9C657E07A65429EA", hash_generated_method = "626EF98BAB75BECB16EB0021472230A0")
     public  OutputStreamWriter(OutputStream out, CharsetEncoder enc) {
         super(out);
         enc.charset();
@@ -94,7 +94,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.327 -0400", hash_original_method = "348EDF61477AE4A3DCAC4870D899F874", hash_generated_method = "0F9AAA4D045280E27D752D538A167E2B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.455 -0400", hash_original_method = "348EDF61477AE4A3DCAC4870D899F874", hash_generated_method = "0F9AAA4D045280E27D752D538A167E2B")
     @Override
     public void close() throws IOException {
         {
@@ -119,7 +119,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.328 -0400", hash_original_method = "E89503CD667F6DF7A02E3D218DF666E8", hash_generated_method = "27D5E48695D4DA71C3C79EED49114041")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.459 -0400", hash_original_method = "E89503CD667F6DF7A02E3D218DF666E8", hash_generated_method = "27D5E48695D4DA71C3C79EED49114041")
     @Override
     public void flush() throws IOException {
         flushBytes(true);
@@ -128,7 +128,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.328 -0400", hash_original_method = "0B376EED04C0EE48C2109F7445B1F9FC", hash_generated_method = "CB23A323A1C340B164DA1BE2E8B54B3C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.460 -0400", hash_original_method = "0B376EED04C0EE48C2109F7445B1F9FC", hash_generated_method = "CB23A323A1C340B164DA1BE2E8B54B3C")
     private void flushBytes(boolean flushUnderlyingStream) throws IOException {
         {
             checkStatus();
@@ -160,18 +160,18 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.328 -0400", hash_original_method = "5FDBBBBEF70B98878F7238A71245F3A5", hash_generated_method = "D4039FAF001267CF597B424EF56BEBCC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.460 -0400", hash_original_method = "5FDBBBBEF70B98878F7238A71245F3A5", hash_generated_method = "6D3B0B69E7B4F48E7DCFABD051530863")
     private void convert(CharBuffer chars) throws IOException {
         {
             CoderResult result;
             result = encoder.encode(chars, bytes, false);
             {
-                boolean var2AAE7F5A955BA87C5F37AFB5998173CD_116639060 = (result.isOverflow());
+                boolean var2AAE7F5A955BA87C5F37AFB5998173CD_1553850575 = (result.isOverflow());
                 {
                     flushBytes(false);
                 } //End block
                 {
-                    boolean varF7BD3CBEDDA7528374E2BADAF0C2CE69_1984186168 = (result.isError());
+                    boolean varF7BD3CBEDDA7528374E2BADAF0C2CE69_1897510522 = (result.isError());
                     {
                         result.throwException();
                     } //End block
@@ -193,7 +193,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.330 -0400", hash_original_method = "17AF81F5CD218F57FFE1053C07491E0D", hash_generated_method = "22AA7CEF307547C3D7217E7D85FD91DB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.473 -0400", hash_original_method = "17AF81F5CD218F57FFE1053C07491E0D", hash_generated_method = "CE7318F9E101E330566960D547875B94")
     private void drainEncoder() throws IOException {
         CharBuffer chars;
         chars = CharBuffer.allocate(0);
@@ -201,12 +201,12 @@ public class OutputStreamWriter extends Writer {
             CoderResult result;
             result = encoder.encode(chars, bytes, true);
             {
-                boolean varFA1F9C74A878DA56E1CBBC06101478FE_1955395290 = (result.isError());
+                boolean varFA1F9C74A878DA56E1CBBC06101478FE_1606075058 = (result.isError());
                 {
                     result.throwException();
                 } //End block
                 {
-                    boolean varD20C9318A05139203F7B82FC87F4D343_41638194 = (result.isOverflow());
+                    boolean varD20C9318A05139203F7B82FC87F4D343_387947631 = (result.isOverflow());
                     {
                         flushBytes(false);
                     } //End block
@@ -216,10 +216,10 @@ public class OutputStreamWriter extends Writer {
         CoderResult result;
         result = encoder.flush(bytes);
         {
-            boolean var6269F73C38E0F4CC7433B3E45BCBBD1A_1133128199 = (!result.isUnderflow());
+            boolean var6269F73C38E0F4CC7433B3E45BCBBD1A_1194212324 = (!result.isUnderflow());
             {
                 {
-                    boolean varD20C9318A05139203F7B82FC87F4D343_68674597 = (result.isOverflow());
+                    boolean varD20C9318A05139203F7B82FC87F4D343_390031467 = (result.isOverflow());
                     {
                         flushBytes(false);
                         result = encoder.flush(bytes);
@@ -254,7 +254,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.330 -0400", hash_original_method = "75BDF3BC8D58179DECD9AB14C1C7F3EE", hash_generated_method = "0CCFD47D8052AACFCCB82C51FB64AB87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.473 -0400", hash_original_method = "75BDF3BC8D58179DECD9AB14C1C7F3EE", hash_generated_method = "0CCFD47D8052AACFCCB82C51FB64AB87")
     private void checkStatus() throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IOException("OutputStreamWriter is closed");
@@ -266,25 +266,25 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.344 -0400", hash_original_method = "A69A1F1EB2BFDD0474AAD9460630967D", hash_generated_method = "9B84F7EE829127D95D625DB739D564E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.474 -0400", hash_original_method = "A69A1F1EB2BFDD0474AAD9460630967D", hash_generated_method = "E12BBFD2ADEB93A3453918F17B678AFA")
     public String getEncoding() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1710293430 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_372373534 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_2096283310 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1020766829 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1710293430 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_2096283310 = null;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_372373534 = HistoricalCharsetNames.get(encoder.charset());
-        String varA7E53CE21691AB073D9660D615818899_1346710630; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1020766829 = HistoricalCharsetNames.get(encoder.charset());
+        String varA7E53CE21691AB073D9660D615818899_925045487; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1346710630 = varB4EAC82CA7396A68D541C85D26508E83_1710293430;
+                varA7E53CE21691AB073D9660D615818899_925045487 = varB4EAC82CA7396A68D541C85D26508E83_2096283310;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1346710630 = varB4EAC82CA7396A68D541C85D26508E83_372373534;
+                varA7E53CE21691AB073D9660D615818899_925045487 = varB4EAC82CA7396A68D541C85D26508E83_1020766829;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1346710630.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1346710630;
+        varA7E53CE21691AB073D9660D615818899_925045487.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_925045487;
         // ---------- Original Method ----------
         //if (encoder == null) {
             //return null;
@@ -293,7 +293,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.345 -0400", hash_original_method = "A1014AE81A36DB02C830992F3B254644", hash_generated_method = "85C21ED15D3CE069C74C929A6579352E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.474 -0400", hash_original_method = "A1014AE81A36DB02C830992F3B254644", hash_generated_method = "85C21ED15D3CE069C74C929A6579352E")
     @Override
     public void write(char[] buffer, int offset, int count) throws IOException {
         {
@@ -316,7 +316,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.345 -0400", hash_original_method = "9F78C67C90A8F7A084F2E3084DB157FE", hash_generated_method = "D032140F2460F18E650922614EE1FB50")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.474 -0400", hash_original_method = "9F78C67C90A8F7A084F2E3084DB157FE", hash_generated_method = "D032140F2460F18E650922614EE1FB50")
     @Override
     public void write(int oneChar) throws IOException {
         {
@@ -335,7 +335,7 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.346 -0400", hash_original_method = "720362548945B36884470AD2C6B99C23", hash_generated_method = "E897375CEF8328AB0395C130F5FE8D56")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.475 -0400", hash_original_method = "720362548945B36884470AD2C6B99C23", hash_generated_method = "B0A97A77771343D5635B84AF3F42969E")
     @Override
     public void write(String str, int offset, int count) throws IOException {
         {
@@ -346,7 +346,7 @@ public class OutputStreamWriter extends Writer {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("str == null");
             } //End block
             {
-                boolean varE39C66E187123901EC1A51437E6D0861_1289881086 = ((offset | count) < 0 || offset > str.length() - count);
+                boolean varE39C66E187123901EC1A51437E6D0861_1838135264 = ((offset | count) < 0 || offset > str.length() - count);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new StringIndexOutOfBoundsException(str, offset, count);
                 } //End block
@@ -377,12 +377,12 @@ public class OutputStreamWriter extends Writer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.346 -0400", hash_original_method = "E279B5931B3E4ADEA2A691FE75B2536D", hash_generated_method = "4E6D4CAFF28A8047D96CBEC0662E4DD5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:38.475 -0400", hash_original_method = "E279B5931B3E4ADEA2A691FE75B2536D", hash_generated_method = "ADAAE4E445B3886AD65803ADD33FB919")
     @Override
      boolean checkError() {
-        boolean varE897CEE6D3B84AA9639D67587BC457A0_1429563971 = (out.checkError());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_7506027 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_7506027;
+        boolean varE897CEE6D3B84AA9639D67587BC457A0_94558688 = (out.checkError());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2062822400 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2062822400;
         // ---------- Original Method ----------
         //return out.checkError();
     }

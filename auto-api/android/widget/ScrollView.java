@@ -30,68 +30,68 @@ import android.view.animation.AnimationUtils;
 import java.util.List;
 
 public class ScrollView extends FrameLayout {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "380EFAD062415C5D611446C1B15B307D", hash_generated_field = "507FF60BF6AED501221786F4F9B1C4CE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.951 -0400", hash_original_field = "380EFAD062415C5D611446C1B15B307D", hash_generated_field = "507FF60BF6AED501221786F4F9B1C4CE")
 
     private long mLastScroll;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "AFFA54D19F07A10EE8847CF76FC95323")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.960 -0400", hash_original_field = "DF43B278CEE8933271AB3D9F9E312F86", hash_generated_field = "AFFA54D19F07A10EE8847CF76FC95323")
 
     private Rect mTempRect = new Rect();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "360DD66618E954525BEA0D65B05DC7EC", hash_generated_field = "7106C69F4E49AB9D7F59F38965DF6036")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.960 -0400", hash_original_field = "360DD66618E954525BEA0D65B05DC7EC", hash_generated_field = "7106C69F4E49AB9D7F59F38965DF6036")
 
     private OverScroller mScroller;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "89E135B7087DB76810F3F37EE0DAB560", hash_generated_field = "E572968A85247BF2ECB5635FFF539C2E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.960 -0400", hash_original_field = "89E135B7087DB76810F3F37EE0DAB560", hash_generated_field = "E572968A85247BF2ECB5635FFF539C2E")
 
     private EdgeEffect mEdgeGlowTop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "289036755C83C8893D6004D3220BA45B", hash_generated_field = "D2A4A7BE91BF29EB90E114C9648825A6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.960 -0400", hash_original_field = "289036755C83C8893D6004D3220BA45B", hash_generated_field = "D2A4A7BE91BF29EB90E114C9648825A6")
 
     private EdgeEffect mEdgeGlowBottom;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "4925C8499D6FECBA832A37F55AA6C69B", hash_generated_field = "2D88D85D441545A6227529A03C0B4E71")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.960 -0400", hash_original_field = "4925C8499D6FECBA832A37F55AA6C69B", hash_generated_field = "2D88D85D441545A6227529A03C0B4E71")
 
     private float mLastMotionY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "A43EC71B2E74CACC223B47379717A080", hash_generated_field = "9C16E67A6EDB3E799E01AFB02BCF7815")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.960 -0400", hash_original_field = "A43EC71B2E74CACC223B47379717A080", hash_generated_field = "9C16E67A6EDB3E799E01AFB02BCF7815")
 
     private boolean mIsLayoutDirty = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "8949A253727FAE7FB577F98D2A9463C2", hash_generated_field = "7E1EAB0DC4AB4B81BAB22B01D588949E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.960 -0400", hash_original_field = "8949A253727FAE7FB577F98D2A9463C2", hash_generated_field = "7E1EAB0DC4AB4B81BAB22B01D588949E")
 
     private View mChildToScrollTo = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "A8AB6008485C6E787B3DBB97D2050FF4", hash_generated_field = "40AA109CDE3739730D8C499D23D26FF1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.960 -0400", hash_original_field = "A8AB6008485C6E787B3DBB97D2050FF4", hash_generated_field = "40AA109CDE3739730D8C499D23D26FF1")
 
     private boolean mIsBeingDragged = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "217FE873D59646EE0AC51688724FF274", hash_generated_field = "5BEE30D4541C1ECA385873E799FC4104")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.961 -0400", hash_original_field = "217FE873D59646EE0AC51688724FF274", hash_generated_field = "5BEE30D4541C1ECA385873E799FC4104")
 
     private VelocityTracker mVelocityTracker;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "B3E3E62AA85A925921DCB2869A4E7017", hash_generated_field = "16DDF79C39D64DD0F8B72040D2242A75")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.965 -0400", hash_original_field = "B3E3E62AA85A925921DCB2869A4E7017", hash_generated_field = "16DDF79C39D64DD0F8B72040D2242A75")
 
     @ViewDebug.ExportedProperty(category = "layout") private boolean mFillViewport;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "581BD96ACB5FC0F4F529183E58EA63B2", hash_generated_field = "EA3AE5CC17F6060C1DBAA2AAAFFFC35C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.965 -0400", hash_original_field = "581BD96ACB5FC0F4F529183E58EA63B2", hash_generated_field = "EA3AE5CC17F6060C1DBAA2AAAFFFC35C")
 
     private boolean mSmoothScrollingEnabled = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "3DFFFAD10926598D18EEC50D61DE79CA", hash_generated_field = "3B323323DD6A6BF972666D993592C670")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.965 -0400", hash_original_field = "3DFFFAD10926598D18EEC50D61DE79CA", hash_generated_field = "3B323323DD6A6BF972666D993592C670")
 
     private int mTouchSlop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "30B0DF23DBDF2426D66E4D98494C369B", hash_generated_field = "7DBE1A18599B8760DC9B67AAFE3499E3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.965 -0400", hash_original_field = "30B0DF23DBDF2426D66E4D98494C369B", hash_generated_field = "7DBE1A18599B8760DC9B67AAFE3499E3")
 
     private int mMinimumVelocity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "1C66D9179508D091F8E90C9FEBAD15CA", hash_generated_field = "6F997413D0B227487940C402EB78A8FD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.965 -0400", hash_original_field = "1C66D9179508D091F8E90C9FEBAD15CA", hash_generated_field = "6F997413D0B227487940C402EB78A8FD")
 
     private int mMaximumVelocity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "7A5B6F76BA72A8D6AFCFCEA14B8C2556", hash_generated_field = "7B0107E1CAE9FFC281D766335539D7C4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.965 -0400", hash_original_field = "7A5B6F76BA72A8D6AFCFCEA14B8C2556", hash_generated_field = "7B0107E1CAE9FFC281D766335539D7C4")
 
     private int mOverscrollDistance;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_field = "755491871A4FCE3E01181030F8FEB178", hash_generated_field = "06022A8A798B4C892D35D0FFB16D2FDF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.965 -0400", hash_original_field = "755491871A4FCE3E01181030F8FEB178", hash_generated_field = "06022A8A798B4C892D35D0FFB16D2FDF")
 
     private int mOverflingDistance;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.305 -0400", hash_original_field = "D0F34CC6DB83FC46AEC38F19CA5CE138", hash_generated_field = "1B464B20D80463EC30779F63AB0559BD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.965 -0400", hash_original_field = "D0F34CC6DB83FC46AEC38F19CA5CE138", hash_generated_field = "1B464B20D80463EC30779F63AB0559BD")
 
     private int mActivePointerId = INVALID_POINTER;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.305 -0400", hash_original_field = "D2BBDD4FC0A41CFC280764A4FBDC4D52", hash_generated_field = "BA5EBFF9CCBAD624E5B38890A6227093")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.965 -0400", hash_original_field = "D2BBDD4FC0A41CFC280764A4FBDC4D52", hash_generated_field = "BA5EBFF9CCBAD624E5B38890A6227093")
 
     private StrictMode.Span mScrollStrictSpan = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.305 -0400", hash_original_field = "A914CE4AFB85B902CB007BE88097BB3F", hash_generated_field = "1B2DFB133C9B4AE33C58293244DDF261")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.965 -0400", hash_original_field = "A914CE4AFB85B902CB007BE88097BB3F", hash_generated_field = "1B2DFB133C9B4AE33C58293244DDF261")
 
     private StrictMode.Span mFlingStrictSpan = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.305 -0400", hash_original_method = "4713E1355E9C805E185DB05E4B4B9810", hash_generated_method = "D94FF7D50EC38B3687BB3B0C7B5552B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.965 -0400", hash_original_method = "4713E1355E9C805E185DB05E4B4B9810", hash_generated_method = "D94FF7D50EC38B3687BB3B0C7B5552B0")
     public  ScrollView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
@@ -99,7 +99,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.305 -0400", hash_original_method = "D709104905B863FC98F9383546426518", hash_generated_method = "18D71EA425ED840CDB485C506CBAC309")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.966 -0400", hash_original_method = "D709104905B863FC98F9383546426518", hash_generated_method = "18D71EA425ED840CDB485C506CBAC309")
     public  ScrollView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.scrollViewStyle);
         addTaint(context.getTaint());
@@ -108,7 +108,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.309 -0400", hash_original_method = "A71F55C63B3167922F139A658C272800", hash_generated_method = "EB0C8CA81B970D9794FCDBDF1B03CD37")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.966 -0400", hash_original_method = "A71F55C63B3167922F139A658C272800", hash_generated_method = "EB0C8CA81B970D9794FCDBDF1B03CD37")
     public  ScrollView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initScrollView();
@@ -128,26 +128,26 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.309 -0400", hash_original_method = "C2F251AFC67F9C484131CB8CA191D5D9", hash_generated_method = "EBABFF8FAEA8C90AC39E45387B1BC171")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.966 -0400", hash_original_method = "C2F251AFC67F9C484131CB8CA191D5D9", hash_generated_method = "AB5D4D394983A53942A03EE360A942C3")
     @Override
     public boolean shouldDelayChildPressedState() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2114507121 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2114507121;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1223543913 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1223543913;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.311 -0400", hash_original_method = "2B5BCBF9645A95C024C3D4122E8D2438", hash_generated_method = "0A769C376CCF3C67B3AE0AFBCCEB5FB0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.969 -0400", hash_original_method = "2B5BCBF9645A95C024C3D4122E8D2438", hash_generated_method = "9A1C83A277747C775116A379C35A96BD")
     @Override
     protected float getTopFadingEdgeStrength() {
         {
-            boolean varF370735710C80808B6618BA2D491D045_449661086 = (getChildCount() == 0);
+            boolean varF370735710C80808B6618BA2D491D045_631176371 = (getChildCount() == 0);
         } //End collapsed parenthetic
         int length;
         length = getVerticalFadingEdgeLength();
-        float var546ADE640B6EDFBC8A086EF31347E768_1290795408 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1290795408;
+        float var546ADE640B6EDFBC8A086EF31347E768_1316506639 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1316506639;
         // ---------- Original Method ----------
         //if (getChildCount() == 0) {
             //return 0.0f;
@@ -160,11 +160,11 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.311 -0400", hash_original_method = "F0E4C184CA27C21FD42267E77DCA1374", hash_generated_method = "F12AA12266CA1F47DE6B18885ED9740A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.969 -0400", hash_original_method = "F0E4C184CA27C21FD42267E77DCA1374", hash_generated_method = "7F1132C188268681E3D925760531DB01")
     @Override
     protected float getBottomFadingEdgeStrength() {
         {
-            boolean varF370735710C80808B6618BA2D491D045_1412364392 = (getChildCount() == 0);
+            boolean varF370735710C80808B6618BA2D491D045_211593138 = (getChildCount() == 0);
         } //End collapsed parenthetic
         int length;
         length = getVerticalFadingEdgeLength();
@@ -172,8 +172,8 @@ public class ScrollView extends FrameLayout {
         bottomEdge = getHeight() - mPaddingBottom;
         int span;
         span = getChildAt(0).getBottom() - mScrollY - bottomEdge;
-        float var546ADE640B6EDFBC8A086EF31347E768_749068138 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_749068138;
+        float var546ADE640B6EDFBC8A086EF31347E768_1655728155 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1655728155;
         // ---------- Original Method ----------
         //if (getChildCount() == 0) {
             //return 0.0f;
@@ -188,16 +188,16 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.312 -0400", hash_original_method = "13CC3D3BB67006B8B223FEAA5CEB8AD3", hash_generated_method = "12C16AC5ECA170C6BFC1FA9D5B934632")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.971 -0400", hash_original_method = "13CC3D3BB67006B8B223FEAA5CEB8AD3", hash_generated_method = "6FF8EEE73642BF6CF38782F14C7407D8")
     public int getMaxScrollAmount() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1004822666 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1004822666;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_176212211 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_176212211;
         // ---------- Original Method ----------
         //return (int) (MAX_SCROLL_FACTOR * (mBottom - mTop));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.324 -0400", hash_original_method = "02BBAF53D85E267FB240E2D4309C877F", hash_generated_method = "8A03164972DE1A24C8B4AD83E152C23B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.971 -0400", hash_original_method = "02BBAF53D85E267FB240E2D4309C877F", hash_generated_method = "8A03164972DE1A24C8B4AD83E152C23B")
     private void initScrollView() {
         mScroller = new OverScroller(getContext());
         setFocusable(true);
@@ -224,11 +224,11 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.324 -0400", hash_original_method = "C2B46C856A31C41C5B4609404338EFA0", hash_generated_method = "4EE95EE82692DAAB9096BBC03CCB64F5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.973 -0400", hash_original_method = "C2B46C856A31C41C5B4609404338EFA0", hash_generated_method = "9B0C68D61348AC4F925D825167E92D17")
     @Override
     public void addView(View child) {
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_725514928 = (getChildCount() > 0);
+            boolean varBF62E6C23FE36C17A3594E034FF46D2E_537414107 = (getChildCount() > 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("ScrollView can host only one direct child");
             } //End block
@@ -243,11 +243,11 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.324 -0400", hash_original_method = "E948CE4EC40C516B64A70B82C4D41ABE", hash_generated_method = "A2D262EBF2A865AA89B31392BD21CFC0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.980 -0400", hash_original_method = "E948CE4EC40C516B64A70B82C4D41ABE", hash_generated_method = "3B28D25D1E46545CD862170C86A8E1A9")
     @Override
     public void addView(View child, int index) {
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1324637456 = (getChildCount() > 0);
+            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1306779157 = (getChildCount() > 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("ScrollView can host only one direct child");
             } //End block
@@ -263,11 +263,11 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.325 -0400", hash_original_method = "34A1DE7AC13648E903519BA7AEB15B21", hash_generated_method = "131696054AC58D7FC4B040409B236E2E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.980 -0400", hash_original_method = "34A1DE7AC13648E903519BA7AEB15B21", hash_generated_method = "5AFBF0FD70E9A02B107F1718ECCFF209")
     @Override
     public void addView(View child, ViewGroup.LayoutParams params) {
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_769887347 = (getChildCount() > 0);
+            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1802601326 = (getChildCount() > 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("ScrollView can host only one direct child");
             } //End block
@@ -283,11 +283,11 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.325 -0400", hash_original_method = "363983D07DF3EAAC15B8A0529305BE77", hash_generated_method = "B5DFFA2DE4F1517E8DF4E1B8E3C9A84C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.981 -0400", hash_original_method = "363983D07DF3EAAC15B8A0529305BE77", hash_generated_method = "70BC3059F9CCA593FC3B30106DFC77C5")
     @Override
     public void addView(View child, int index, ViewGroup.LayoutParams params) {
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1853253115 = (getChildCount() > 0);
+            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1660753892 = (getChildCount() > 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("ScrollView can host only one direct child");
             } //End block
@@ -304,17 +304,17 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.325 -0400", hash_original_method = "F1DEDB4D65582CE354A1D843D55A4B55", hash_generated_method = "69C730D8DBF0C11F99D1632E5AD4668E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.981 -0400", hash_original_method = "F1DEDB4D65582CE354A1D843D55A4B55", hash_generated_method = "940C9D9CDBC259322182AB5FC8556C10")
     private boolean canScroll() {
         View child;
         child = getChildAt(0);
         {
             int childHeight;
             childHeight = child.getHeight();
-            boolean var3A415DE46D6A024E28376F2A13A712DB_471536008 = (getHeight() < childHeight + mPaddingTop + mPaddingBottom);
+            boolean var3A415DE46D6A024E28376F2A13A712DB_1055711806 = (getHeight() < childHeight + mPaddingTop + mPaddingBottom);
         } //End block
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1743535146 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1743535146;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2040460666 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2040460666;
         // ---------- Original Method ----------
         //View child = getChildAt(0);
         //if (child != null) {
@@ -325,16 +325,16 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.326 -0400", hash_original_method = "801E6F065AC6A60CFB0DADB1E074F98E", hash_generated_method = "6E7ACF2731FB31B8FB5F4A7CB6E594AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.981 -0400", hash_original_method = "801E6F065AC6A60CFB0DADB1E074F98E", hash_generated_method = "66BFAF3FF7DFCD0545D81971442BBDF8")
     public boolean isFillViewport() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1236806385 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1236806385;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1291362608 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1291362608;
         // ---------- Original Method ----------
         //return mFillViewport;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.326 -0400", hash_original_method = "D2588C7F74D0E18DF5DFA629FE7BF270", hash_generated_method = "2659D9B4D00861C682890CC931AD720B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.982 -0400", hash_original_method = "D2588C7F74D0E18DF5DFA629FE7BF270", hash_generated_method = "2659D9B4D00861C682890CC931AD720B")
     public void setFillViewport(boolean fillViewport) {
         {
             mFillViewport = fillViewport;
@@ -348,16 +348,16 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.326 -0400", hash_original_method = "D26C58327C0CB18AC1F62B7629FD16B1", hash_generated_method = "B9BB5D1C0FD8F909DC18C1A199F18D20")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.982 -0400", hash_original_method = "D26C58327C0CB18AC1F62B7629FD16B1", hash_generated_method = "9D825E448E7982B22481676AE271FC4D")
     public boolean isSmoothScrollingEnabled() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_596410671 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_596410671;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1323772131 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1323772131;
         // ---------- Original Method ----------
         //return mSmoothScrollingEnabled;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.326 -0400", hash_original_method = "63C96CE84D9CD60CA1FF4EF87D7FF4F5", hash_generated_method = "5C7F23BB3E765786BEE5D256B048D32A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.982 -0400", hash_original_method = "63C96CE84D9CD60CA1FF4EF87D7FF4F5", hash_generated_method = "5C7F23BB3E765786BEE5D256B048D32A")
     public void setSmoothScrollingEnabled(boolean smoothScrollingEnabled) {
         mSmoothScrollingEnabled = smoothScrollingEnabled;
         // ---------- Original Method ----------
@@ -365,7 +365,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.335 -0400", hash_original_method = "1504CEEE6604563B648201D50795D68C", hash_generated_method = "79B6CAFA1414D34CF63BD31A86508F24")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.997 -0400", hash_original_method = "1504CEEE6604563B648201D50795D68C", hash_generated_method = "23A8A6F0CE7FC0B2D5251A90CE903137")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -373,14 +373,14 @@ public class ScrollView extends FrameLayout {
         int heightMode;
         heightMode = MeasureSpec.getMode(heightMeasureSpec);
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_934824638 = (getChildCount() > 0);
+            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1992090353 = (getChildCount() > 0);
             {
                 View child;
                 child = getChildAt(0);
                 int height;
                 height = getMeasuredHeight();
                 {
-                    boolean varEEEC94D0CC5FB640673872B86A985E2B_1107874962 = (child.getMeasuredHeight() < height);
+                    boolean varEEEC94D0CC5FB640673872B86A985E2B_1506558201 = (child.getMeasuredHeight() < height);
                     {
                         FrameLayout.LayoutParams lp;
                         lp = (LayoutParams) child.getLayoutParams();
@@ -403,37 +403,37 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.335 -0400", hash_original_method = "40D3C8E04EF2AEB04EFDF302E05EC516", hash_generated_method = "5A8B947FE1D096D53190C557843FFFC1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.997 -0400", hash_original_method = "40D3C8E04EF2AEB04EFDF302E05EC516", hash_generated_method = "6E016E66F223C73B066E20295A339A4E")
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
-        boolean var160A6DCE359009EE36E492A233BEB313_1156851102 = (super.dispatchKeyEvent(event) || executeKeyEvent(event));
+        boolean var160A6DCE359009EE36E492A233BEB313_2074386899 = (super.dispatchKeyEvent(event) || executeKeyEvent(event));
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1874900289 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1874900289;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_961898788 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_961898788;
         // ---------- Original Method ----------
         //return super.dispatchKeyEvent(event) || executeKeyEvent(event);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.348 -0400", hash_original_method = "1E6EE1FACBE8E24D9D58E940A1542C55", hash_generated_method = "7BA7BEB1DA403AB00346291E87FAADE7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.998 -0400", hash_original_method = "1E6EE1FACBE8E24D9D58E940A1542C55", hash_generated_method = "7FFCB8EDD2A40258A946DE44CF850CF5")
     public boolean executeKeyEvent(KeyEvent event) {
         mTempRect.setEmpty();
         {
-            boolean varF142AAB9B9E2812C95D81D43568D13C8_491389328 = (!canScroll());
+            boolean varF142AAB9B9E2812C95D81D43568D13C8_1329431015 = (!canScroll());
             {
                 {
-                    boolean var2897164B636FEEE3DA92631EEF7087B0_2141713635 = (isFocused() && event.getKeyCode() != KeyEvent.KEYCODE_BACK);
+                    boolean var2897164B636FEEE3DA92631EEF7087B0_526770464 = (isFocused() && event.getKeyCode() != KeyEvent.KEYCODE_BACK);
                     {
                         View currentFocused;
                         currentFocused = findFocus();
                         {
-                            boolean varCCA9B61B8A448B09DE583C4C7BFDEFBB_217031727 = (currentFocused == this);
+                            boolean varCCA9B61B8A448B09DE583C4C7BFDEFBB_2135038742 = (currentFocused == this);
                             currentFocused = null;
                         } //End collapsed parenthetic
                         View nextFocused;
                         nextFocused = FocusFinder.getInstance().findNextFocus(this,
                         currentFocused, View.FOCUS_DOWN);
-                        boolean varD482CC356741D5879BD547A170E814F4_887544561 = (nextFocused != null
+                        boolean varD482CC356741D5879BD547A170E814F4_755400615 = (nextFocused != null
                         && nextFocused != this
                         && nextFocused.requestFocus(View.FOCUS_DOWN));
                     } //End block
@@ -443,13 +443,13 @@ public class ScrollView extends FrameLayout {
         boolean handled;
         handled = false;
         {
-            boolean varE78E9647F4429F5955AD42D05C6FEF7A_687042656 = (event.getAction() == KeyEvent.ACTION_DOWN);
+            boolean varE78E9647F4429F5955AD42D05C6FEF7A_1176810978 = (event.getAction() == KeyEvent.ACTION_DOWN);
             {
                 {
-                    Object varA0761DC6508339A4AD5D875712ADE561_48274489 = (event.getKeyCode());
+                    Object varA0761DC6508339A4AD5D875712ADE561_541380479 = (event.getKeyCode());
                     //Begin case KeyEvent.KEYCODE_DPAD_UP 
                     {
-                        boolean var6263B7F37C2CF1348DCC37C937DB4EA5_1906559239 = (!event.isAltPressed());
+                        boolean var6263B7F37C2CF1348DCC37C937DB4EA5_1289604805 = (!event.isAltPressed());
                         {
                             handled = arrowScroll(View.FOCUS_UP);
                         } //End block
@@ -460,7 +460,7 @@ public class ScrollView extends FrameLayout {
                     //End case KeyEvent.KEYCODE_DPAD_UP 
                     //Begin case KeyEvent.KEYCODE_DPAD_DOWN 
                     {
-                        boolean var6263B7F37C2CF1348DCC37C937DB4EA5_1603867446 = (!event.isAltPressed());
+                        boolean var6263B7F37C2CF1348DCC37C937DB4EA5_1048992629 = (!event.isAltPressed());
                         {
                             handled = arrowScroll(View.FOCUS_DOWN);
                         } //End block
@@ -476,23 +476,23 @@ public class ScrollView extends FrameLayout {
             } //End block
         } //End collapsed parenthetic
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1279076232 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1279076232;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_643168266 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_643168266;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.349 -0400", hash_original_method = "21B5B152D5EE02017A0CB65ECB9B3403", hash_generated_method = "B0AB6332225A45F1B6F2286D554C04B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.999 -0400", hash_original_method = "21B5B152D5EE02017A0CB65ECB9B3403", hash_generated_method = "7A2E029CEA1F5663329B868D4F081E60")
     private boolean inChild(int x, int y) {
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_273684306 = (getChildCount() > 0);
+            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1630030842 = (getChildCount() > 0);
             {
                 int scrollY;
                 scrollY = mScrollY;
                 View child;
                 child = getChildAt(0);
-                boolean varB6F197A68897B2FF8EC1E9EDD5403361_1506976583 = (!(y < child.getTop() - scrollY
+                boolean varB6F197A68897B2FF8EC1E9EDD5403361_215676449 = (!(y < child.getTop() - scrollY
                     || y >= child.getBottom() - scrollY
                     || x < child.getLeft()
                     || x >= child.getRight()));
@@ -500,8 +500,8 @@ public class ScrollView extends FrameLayout {
         } //End collapsed parenthetic
         addTaint(x);
         addTaint(y);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1170377887 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1170377887;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_385438720 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_385438720;
         // ---------- Original Method ----------
         //if (getChildCount() > 0) {
             //final int scrollY = mScrollY;
@@ -515,7 +515,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.349 -0400", hash_original_method = "2F2E3E2ED97C397B1954EFE1C35FD1EF", hash_generated_method = "D2F7B701FF4A7C7D5D9BBE60A4204A34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.999 -0400", hash_original_method = "2F2E3E2ED97C397B1954EFE1C35FD1EF", hash_generated_method = "D2F7B701FF4A7C7D5D9BBE60A4204A34")
     private void initOrResetVelocityTracker() {
         {
             mVelocityTracker = VelocityTracker.obtain();
@@ -532,7 +532,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.350 -0400", hash_original_method = "2C2F1E0A6C232182F8110D9EE75ED47E", hash_generated_method = "A47C5AEFF80C521B346EFD43CCEC463A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.000 -0400", hash_original_method = "2C2F1E0A6C232182F8110D9EE75ED47E", hash_generated_method = "A47C5AEFF80C521B346EFD43CCEC463A")
     private void initVelocityTrackerIfNotExists() {
         {
             mVelocityTracker = VelocityTracker.obtain();
@@ -544,7 +544,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.350 -0400", hash_original_method = "FC3B581D4963BCED4340031BA20C5421", hash_generated_method = "4A5B29B306AF5EDD25C8547D1436EB51")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.000 -0400", hash_original_method = "FC3B581D4963BCED4340031BA20C5421", hash_generated_method = "4A5B29B306AF5EDD25C8547D1436EB51")
     private void recycleVelocityTracker() {
         {
             mVelocityTracker.recycle();
@@ -558,7 +558,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.350 -0400", hash_original_method = "C74400E8950C106883E854683AF24673", hash_generated_method = "9EE44C43E2819EE39A2C95C618F793B6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.000 -0400", hash_original_method = "C74400E8950C106883E854683AF24673", hash_generated_method = "9EE44C43E2819EE39A2C95C618F793B6")
     @Override
     public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
         {
@@ -574,7 +574,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.362 -0400", hash_original_method = "A618CDF234D118EA8A225B0CD965AEA3", hash_generated_method = "47E0EA290917856DC5ED7FAE32BAADAC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.089 -0400", hash_original_method = "A618CDF234D118EA8A225B0CD965AEA3", hash_generated_method = "E47FA98DBB0291C70824719D26D5D6A4")
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -606,7 +606,7 @@ public class ScrollView extends FrameLayout {
             float y;
             y = ev.getY();
             {
-                boolean varFF34B1086FC4594476FFD6F360BBB78C_1805173497 = (!inChild((int) ev.getX(), (int) y));
+                boolean varFF34B1086FC4594476FFD6F360BBB78C_1111530337 = (!inChild((int) ev.getX(), (int) y));
                 {
                     mIsBeingDragged = false;
                     recycleVelocityTracker();
@@ -633,7 +633,7 @@ public class ScrollView extends FrameLayout {
         //End case MotionEvent.ACTION_CANCEL MotionEvent.ACTION_UP 
         //Begin case MotionEvent.ACTION_CANCEL MotionEvent.ACTION_UP 
         {
-            boolean var5A644DDFA364D0381E7012BF55F348DC_1697409724 = (mScroller.springBack(mScrollX, mScrollY, 0, 0, 0, getScrollRange()));
+            boolean var5A644DDFA364D0381E7012BF55F348DC_1746885243 = (mScroller.springBack(mScrollX, mScrollY, 0, 0, 0, getScrollRange()));
             {
                 invalidate();
             } //End block
@@ -642,14 +642,14 @@ public class ScrollView extends FrameLayout {
         //Begin case MotionEvent.ACTION_POINTER_UP 
         onSecondaryPointerUp(ev);
         //End case MotionEvent.ACTION_POINTER_UP 
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1928053560 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1928053560;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1056106412 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1056106412;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.364 -0400", hash_original_method = "83F23D23BD0BAB2CB063E24A3B111651", hash_generated_method = "B6C1001B1A42FC3FC6BB36A530A10CDF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.094 -0400", hash_original_method = "83F23D23BD0BAB2CB063E24A3B111651", hash_generated_method = "FC6258795A52BE60A8AACF0832C85A01")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -661,7 +661,7 @@ public class ScrollView extends FrameLayout {
         {
             mIsBeingDragged = getChildCount() != 0;
             {
-                boolean var11F6C92CC339B9B3B7C0C85A8DBD1165_62957410 = (!mScroller.isFinished());
+                boolean var11F6C92CC339B9B3B7C0C85A8DBD1165_859762713 = (!mScroller.isFinished());
                 {
                     mScroller.abortAnimation();
                     {
@@ -695,7 +695,7 @@ public class ScrollView extends FrameLayout {
             canOverscroll = overscrollMode == OVER_SCROLL_ALWAYS ||
                             (overscrollMode == OVER_SCROLL_IF_CONTENT_SCROLLS && range > 0);
             {
-                boolean var670E8200B9D4E089C7377D895DE2F86E_572626060 = (overScrollBy(0, deltaY, 0, mScrollY,
+                boolean var670E8200B9D4E089C7377D895DE2F86E_1623418530 = (overScrollBy(0, deltaY, 0, mScrollY,
                             0, range, 0, mOverscrollDistance, true));
                 {
                     mVelocityTracker.clear();
@@ -708,7 +708,7 @@ public class ScrollView extends FrameLayout {
                 {
                     mEdgeGlowTop.onPull((float) deltaY / getHeight());
                     {
-                        boolean varE6213428B20479BD32BF17B140F5ED52_508223789 = (!mEdgeGlowBottom.isFinished());
+                        boolean varE6213428B20479BD32BF17B140F5ED52_116635904 = (!mEdgeGlowBottom.isFinished());
                         {
                             mEdgeGlowBottom.onRelease();
                         } //End block
@@ -717,14 +717,14 @@ public class ScrollView extends FrameLayout {
                 {
                     mEdgeGlowBottom.onPull((float) deltaY / getHeight());
                     {
-                        boolean var5D6A56784A8F83A042E55ED0998DBE18_721885398 = (!mEdgeGlowTop.isFinished());
+                        boolean var5D6A56784A8F83A042E55ED0998DBE18_249719768 = (!mEdgeGlowTop.isFinished());
                         {
                             mEdgeGlowTop.onRelease();
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
                 {
-                    boolean var4BAAB9D93C535A28BF0C04887423354C_85062906 = (mEdgeGlowTop != null
+                    boolean var4BAAB9D93C535A28BF0C04887423354C_2111632159 = (mEdgeGlowTop != null
                                 && (!mEdgeGlowTop.isFinished() || !mEdgeGlowBottom.isFinished()));
                     {
                         invalidate();
@@ -741,16 +741,16 @@ public class ScrollView extends FrameLayout {
             int initialVelocity;
             initialVelocity = (int) velocityTracker.getYVelocity(mActivePointerId);
             {
-                boolean var9C190A50DA656473F4A85C2EF380F022_960811684 = (getChildCount() > 0);
+                boolean var9C190A50DA656473F4A85C2EF380F022_1358470004 = (getChildCount() > 0);
                 {
                     {
-                        boolean varCB55D3BE2E93A2FD55EF78A581740AFC_1188932876 = ((Math.abs(initialVelocity) > mMinimumVelocity));
+                        boolean varCB55D3BE2E93A2FD55EF78A581740AFC_577213654 = ((Math.abs(initialVelocity) > mMinimumVelocity));
                         {
                             fling(-initialVelocity);
                         } //End block
                         {
                             {
-                                boolean varC93C7034440DD4C8753F4F2114A84A37_750756544 = (mScroller.springBack(mScrollX, mScrollY, 0, 0, 0,
+                                boolean varC93C7034440DD4C8753F4F2114A84A37_1516777264 = (mScroller.springBack(mScrollX, mScrollY, 0, 0, 0,
                                     getScrollRange()));
                                 {
                                     invalidate();
@@ -766,10 +766,10 @@ public class ScrollView extends FrameLayout {
         //End case MotionEvent.ACTION_UP 
         //Begin case MotionEvent.ACTION_CANCEL 
         {
-            boolean var9286919EB531712C93F03BFB604683F8_1656276396 = (mIsBeingDragged && getChildCount() > 0);
+            boolean var9286919EB531712C93F03BFB604683F8_605791440 = (mIsBeingDragged && getChildCount() > 0);
             {
                 {
-                    boolean var0B94B4CD263DE1DB92077C5CA547FAC2_439214808 = (mScroller.springBack(mScrollX, mScrollY, 0, 0, 0, getScrollRange()));
+                    boolean var0B94B4CD263DE1DB92077C5CA547FAC2_1598080228 = (mScroller.springBack(mScrollX, mScrollY, 0, 0, 0, getScrollRange()));
                     {
                         invalidate();
                     } //End block
@@ -795,14 +795,14 @@ public class ScrollView extends FrameLayout {
         //Begin case MotionEvent.ACTION_POINTER_UP 
         mLastMotionY = ev.getY(ev.findPointerIndex(mActivePointerId));
         //End case MotionEvent.ACTION_POINTER_UP 
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2001917272 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2001917272;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1654655533 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1654655533;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.376 -0400", hash_original_method = "1724FA32F4E11B8EDA6825E1236F6DA2", hash_generated_method = "C11C6C36453DB2D2A4F3F98915CC42BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.101 -0400", hash_original_method = "1724FA32F4E11B8EDA6825E1236F6DA2", hash_generated_method = "C11C6C36453DB2D2A4F3F98915CC42BB")
     private void onSecondaryPointerUp(MotionEvent ev) {
         int pointerIndex;
         pointerIndex = (ev.getAction() & MotionEvent.ACTION_POINTER_INDEX_MASK) >>
@@ -834,15 +834,15 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.381 -0400", hash_original_method = "ABBC11F59DDEDBBBBFE897034F702501", hash_generated_method = "C3D1B44D5C3F25A5090056EBDFADFC68")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.105 -0400", hash_original_method = "ABBC11F59DDEDBBBBFE897034F702501", hash_generated_method = "29415549025E35D4373D58C1546F1084")
     @Override
     public boolean onGenericMotionEvent(MotionEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean varB5CEEFE1A0B0FE6CF2A2378211A03C4D_764079613 = ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0);
+            boolean varB5CEEFE1A0B0FE6CF2A2378211A03C4D_1310637522 = ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0);
             {
                 {
-                    Object varC2BF00F96F1D1B1ABEF4B0E3FC4FE9EC_1017434597 = (event.getAction());
+                    Object varC2BF00F96F1D1B1ABEF4B0E3FC4FE9EC_1260866567 = (event.getAction());
                     //Begin case MotionEvent.ACTION_SCROLL 
                     {
                         {
@@ -873,22 +873,22 @@ public class ScrollView extends FrameLayout {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        boolean var32C1E3DF40BCC120C79428C7AEB27DD1_368033524 = (super.onGenericMotionEvent(event));
+        boolean var32C1E3DF40BCC120C79428C7AEB27DD1_1546063846 = (super.onGenericMotionEvent(event));
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1134466187 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1134466187;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1658360165 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1658360165;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.382 -0400", hash_original_method = "CC5D228BD55E3E42D5A6CE954C441DF3", hash_generated_method = "035ADD6861E08EDD7874AC417B16303B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.106 -0400", hash_original_method = "CC5D228BD55E3E42D5A6CE954C441DF3", hash_generated_method = "6223908F3963BACE851809D786E94F05")
     @Override
     protected void onOverScrolled(int scrollX, int scrollY,
             boolean clampedX, boolean clampedY) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean var2844BA5E42FD344CC642021B350DFDAC_1521235242 = (!mScroller.isFinished());
+            boolean var2844BA5E42FD344CC642021B350DFDAC_331780798 = (!mScroller.isFinished());
             {
                 mScrollX = scrollX;
                 mScrollY = scrollY;
@@ -921,7 +921,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.393 -0400", hash_original_method = "AF8EC74B0AD4D69DC5ACACFC8749064F", hash_generated_method = "61EE9670444DDDD9440F00D0D1F34A0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.114 -0400", hash_original_method = "AF8EC74B0AD4D69DC5ACACFC8749064F", hash_generated_method = "61EE9670444DDDD9440F00D0D1F34A0C")
     @Override
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -934,7 +934,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.394 -0400", hash_original_method = "F1695E9318A6A21B761B35BD458E866B", hash_generated_method = "7D5318F1535F679E406E64E8A05CBE61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.115 -0400", hash_original_method = "F1695E9318A6A21B761B35BD458E866B", hash_generated_method = "7D5318F1535F679E406E64E8A05CBE61")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -958,12 +958,12 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.395 -0400", hash_original_method = "54B8D0E6795D053FB63A6E55BD2EA0C5", hash_generated_method = "D1972EDF6FEB40A5478D353B9C0D049E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.117 -0400", hash_original_method = "54B8D0E6795D053FB63A6E55BD2EA0C5", hash_generated_method = "05C90F5A26206D5E15028BE61DEF962F")
     private int getScrollRange() {
         int scrollRange;
         scrollRange = 0;
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1242088473 = (getChildCount() > 0);
+            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1770123581 = (getChildCount() > 0);
             {
                 View child;
                 child = getChildAt(0);
@@ -971,8 +971,8 @@ public class ScrollView extends FrameLayout {
                     child.getHeight() - (getHeight() - mPaddingBottom - mPaddingTop));
             } //End block
         } //End collapsed parenthetic
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2078398422 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2078398422;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1654532759 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1654532759;
         // ---------- Original Method ----------
         //int scrollRange = 0;
         //if (getChildCount() > 0) {
@@ -984,11 +984,11 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.396 -0400", hash_original_method = "CCA8F1BE638FE2EC5E8781CBB11ADD24", hash_generated_method = "713D95BD2E80109F8355C6B8F1CEA20A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.122 -0400", hash_original_method = "CCA8F1BE638FE2EC5E8781CBB11ADD24", hash_generated_method = "D5BBB40297C1AD5FD35FFEDAB3A138BD")
     private View findFocusableViewInMyBounds(final boolean topFocus,
             final int top, View preferredFocusable) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1872642245 = null; //Variable for return #1
-        View varB4EAC82CA7396A68D541C85D26508E83_1345939350 = null; //Variable for return #2
+        View varB4EAC82CA7396A68D541C85D26508E83_787849120 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_507202835 = null; //Variable for return #2
         int fadingEdgeLength;
         fadingEdgeLength = getVerticalFadingEdgeLength() / 2;
         int topWithoutFadingEdge;
@@ -996,29 +996,29 @@ public class ScrollView extends FrameLayout {
         int bottomWithoutFadingEdge;
         bottomWithoutFadingEdge = top + getHeight() - fadingEdgeLength;
         {
-            boolean var779C321780A81D8A63D26CAE3AB982D5_1181233268 = ((preferredFocusable != null)
+            boolean var779C321780A81D8A63D26CAE3AB982D5_715552442 = ((preferredFocusable != null)
                 && (preferredFocusable.getTop() < bottomWithoutFadingEdge)
                 && (preferredFocusable.getBottom() > topWithoutFadingEdge));
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1872642245 = preferredFocusable;
+                varB4EAC82CA7396A68D541C85D26508E83_787849120 = preferredFocusable;
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1345939350 = findFocusableViewInBounds(topFocus, topWithoutFadingEdge,
+        varB4EAC82CA7396A68D541C85D26508E83_507202835 = findFocusableViewInBounds(topFocus, topWithoutFadingEdge,
                 bottomWithoutFadingEdge);
         addTaint(topFocus);
         addTaint(top);
         addTaint(preferredFocusable.getTaint());
-        View varA7E53CE21691AB073D9660D615818899_519322628; //Final return value
+        View varA7E53CE21691AB073D9660D615818899_1792755237; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_519322628 = varB4EAC82CA7396A68D541C85D26508E83_1872642245;
+                varA7E53CE21691AB073D9660D615818899_1792755237 = varB4EAC82CA7396A68D541C85D26508E83_787849120;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_519322628 = varB4EAC82CA7396A68D541C85D26508E83_1345939350;
+                varA7E53CE21691AB073D9660D615818899_1792755237 = varB4EAC82CA7396A68D541C85D26508E83_507202835;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_519322628.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_519322628;
+        varA7E53CE21691AB073D9660D615818899_1792755237.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1792755237;
         // ---------- Original Method ----------
         //final int fadingEdgeLength = getVerticalFadingEdgeLength() / 2;
         //final int topWithoutFadingEdge = top + fadingEdgeLength;
@@ -1033,9 +1033,9 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.400 -0400", hash_original_method = "78998B2E5B42D469D0E131861596BD99", hash_generated_method = "CF4B8929146B8378ADFE83D21C3640A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.124 -0400", hash_original_method = "78998B2E5B42D469D0E131861596BD99", hash_generated_method = "B5122549706341B8564C8CEB4F3F31CA")
     private View findFocusableViewInBounds(boolean topFocus, int top, int bottom) {
-        View varB4EAC82CA7396A68D541C85D26508E83_1784319904 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_1035528469 = null; //Variable for return #1
         List<View> focusables;
         focusables = getFocusables(View.FOCUS_FORWARD);
         View focusCandidate;
@@ -1085,18 +1085,18 @@ public class ScrollView extends FrameLayout {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1784319904 = focusCandidate;
+        varB4EAC82CA7396A68D541C85D26508E83_1035528469 = focusCandidate;
         addTaint(topFocus);
         addTaint(top);
         addTaint(bottom);
-        varB4EAC82CA7396A68D541C85D26508E83_1784319904.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1784319904;
+        varB4EAC82CA7396A68D541C85D26508E83_1035528469.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1035528469;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.412 -0400", hash_original_method = "8096444783AE8C9AF2A604C00C6FDBC2", hash_generated_method = "B9CD2D7B7E4A26D42974B56A77DBE2B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.127 -0400", hash_original_method = "8096444783AE8C9AF2A604C00C6FDBC2", hash_generated_method = "28BC1389F3B2CB9C269F46548BE42D92")
     public boolean pageScroll(int direction) {
         boolean down;
         down = direction == View.FOCUS_DOWN;
@@ -1110,7 +1110,7 @@ public class ScrollView extends FrameLayout {
                 View view;
                 view = getChildAt(count - 1);
                 {
-                    boolean varED85C349B0DA33BB45D7B420A69B2E3A_745445126 = (mTempRect.top + height > view.getBottom());
+                    boolean varED85C349B0DA33BB45D7B420A69B2E3A_1280879133 = (mTempRect.top + height > view.getBottom());
                     {
                         mTempRect.top = view.getBottom() - height;
                     } //End block
@@ -1124,10 +1124,10 @@ public class ScrollView extends FrameLayout {
             } //End block
         } //End block
         mTempRect.bottom = mTempRect.top + height;
-        boolean var39A84547F8736C141B73A0089E5E641A_1529917677 = (scrollAndFocus(direction, mTempRect.top, mTempRect.bottom));
+        boolean var39A84547F8736C141B73A0089E5E641A_355264247 = (scrollAndFocus(direction, mTempRect.top, mTempRect.bottom));
         addTaint(direction);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1368772653 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1368772653;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1836871539 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1836871539;
         // ---------- Original Method ----------
         //boolean down = direction == View.FOCUS_DOWN;
         //int height = getHeight();
@@ -1151,7 +1151,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.413 -0400", hash_original_method = "E10B42C26E723F278A5695B0C5DAB2DB", hash_generated_method = "A339978F14B652300CB5AD60ECC96989")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.136 -0400", hash_original_method = "E10B42C26E723F278A5695B0C5DAB2DB", hash_generated_method = "70B92C2ABD83F71F227A1BBEDE7E902C")
     public boolean fullScroll(int direction) {
         boolean down;
         down = direction == View.FOCUS_DOWN;
@@ -1169,10 +1169,10 @@ public class ScrollView extends FrameLayout {
                 mTempRect.top = mTempRect.bottom - height;
             } //End block
         } //End block
-        boolean var39A84547F8736C141B73A0089E5E641A_1208852676 = (scrollAndFocus(direction, mTempRect.top, mTempRect.bottom));
+        boolean var39A84547F8736C141B73A0089E5E641A_1536604561 = (scrollAndFocus(direction, mTempRect.top, mTempRect.bottom));
         addTaint(direction);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_378624705 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_378624705;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1518039625 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1518039625;
         // ---------- Original Method ----------
         //boolean down = direction == View.FOCUS_DOWN;
         //int height = getHeight();
@@ -1190,7 +1190,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.413 -0400", hash_original_method = "AEE85E195E488E817C7C5FD2FB4EC0FB", hash_generated_method = "B66B259AC054B87B1D841B677DFC1098")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.136 -0400", hash_original_method = "AEE85E195E488E817C7C5FD2FB4EC0FB", hash_generated_method = "672289F6520DD12C7F553B89C4D1F47A")
     private boolean scrollAndFocus(int direction, int top, int bottom) {
         boolean handled;
         handled = true;
@@ -1217,14 +1217,14 @@ public class ScrollView extends FrameLayout {
             doScrollY(delta);
         } //End block
         {
-            boolean var2DF5574E3AD9AB6AAA9DDD6415AB9F2D_264329367 = (newFocused != findFocus());
+            boolean var2DF5574E3AD9AB6AAA9DDD6415AB9F2D_437410617 = (newFocused != findFocus());
             newFocused.requestFocus(direction);
         } //End collapsed parenthetic
         addTaint(direction);
         addTaint(top);
         addTaint(bottom);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1205749220 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1205749220;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_480126169 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_480126169;
         // ---------- Original Method ----------
         //boolean handled = true;
         //int height = getHeight();
@@ -1246,12 +1246,12 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.416 -0400", hash_original_method = "99A4FFBBF0B3182EC320D3CC49E9281B", hash_generated_method = "CAABC87CC99E898A201AE77A687B8C2E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.141 -0400", hash_original_method = "99A4FFBBF0B3182EC320D3CC49E9281B", hash_generated_method = "E911C01EF31B2962B1EBC82B514CEE6D")
     public boolean arrowScroll(int direction) {
         View currentFocused;
         currentFocused = findFocus();
         {
-            boolean varF85CA3EE0100E1E3C5B0606F6BE9D9A9_477751091 = (currentFocused == this);
+            boolean varF85CA3EE0100E1E3C5B0606F6BE9D9A9_411122612 = (currentFocused == this);
             currentFocused = null;
         } //End collapsed parenthetic
         View nextFocused;
@@ -1259,7 +1259,7 @@ public class ScrollView extends FrameLayout {
         int maxJump;
         maxJump = getMaxScrollAmount();
         {
-            boolean var9D8E7BEB7B2A9A39F141F9B559F28F2E_407872238 = (nextFocused != null && isWithinDeltaOfScreen(nextFocused, maxJump, getHeight()));
+            boolean var9D8E7BEB7B2A9A39F141F9B559F28F2E_1201008144 = (nextFocused != null && isWithinDeltaOfScreen(nextFocused, maxJump, getHeight()));
             {
                 nextFocused.getDrawingRect(mTempRect);
                 offsetDescendantRectToMyCoords(nextFocused, mTempRect);
@@ -1272,13 +1272,13 @@ public class ScrollView extends FrameLayout {
                 int scrollDelta;
                 scrollDelta = maxJump;
                 {
-                    boolean var63FC15BACC5B673A5F772C0D7C31E719_762209400 = (direction == View.FOCUS_UP && getScrollY() < scrollDelta);
+                    boolean var63FC15BACC5B673A5F772C0D7C31E719_382853616 = (direction == View.FOCUS_UP && getScrollY() < scrollDelta);
                     {
                         scrollDelta = getScrollY();
                     } //End block
                     {
                         {
-                            boolean varB8CB178E8413E8F52B580007177C5576_585398882 = (getChildCount() > 0);
+                            boolean varB8CB178E8413E8F52B580007177C5576_1648522625 = (getChildCount() > 0);
                             {
                                 int daBottom;
                                 daBottom = getChildAt(0).getBottom();
@@ -1295,7 +1295,7 @@ public class ScrollView extends FrameLayout {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var42D708BBCBC43DF6E5AC106D419B282D_1720219969 = (currentFocused != null && currentFocused.isFocused()
+            boolean var42D708BBCBC43DF6E5AC106D419B282D_66704840 = (currentFocused != null && currentFocused.isFocused()
                 && isOffScreen(currentFocused));
             {
                 int descendantFocusability;
@@ -1306,35 +1306,35 @@ public class ScrollView extends FrameLayout {
             } //End block
         } //End collapsed parenthetic
         addTaint(direction);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1965972838 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1965972838;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1780372642 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1780372642;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.417 -0400", hash_original_method = "98AD346ACFBFFAEC79BE4B86F94546B3", hash_generated_method = "8A7C180B2FA66CBAAA65E54F3311F6F8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.142 -0400", hash_original_method = "98AD346ACFBFFAEC79BE4B86F94546B3", hash_generated_method = "51C6AF5A0C04B630D2A2B8F4B2CE422D")
     private boolean isOffScreen(View descendant) {
-        boolean varE152D8C04578A7B6775C0B5DD4F62EE3_204400263 = (!isWithinDeltaOfScreen(descendant, 0, getHeight()));
+        boolean varE152D8C04578A7B6775C0B5DD4F62EE3_1599902778 = (!isWithinDeltaOfScreen(descendant, 0, getHeight()));
         addTaint(descendant.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1054041874 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1054041874;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_212255608 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_212255608;
         // ---------- Original Method ----------
         //return !isWithinDeltaOfScreen(descendant, 0, getHeight());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.417 -0400", hash_original_method = "472E587EAA6D318183AF3AB1B7CEF83F", hash_generated_method = "D19132BF097739572F5B9306413678C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.151 -0400", hash_original_method = "472E587EAA6D318183AF3AB1B7CEF83F", hash_generated_method = "6B120D53A1C9429E702C9F642BABA297")
     private boolean isWithinDeltaOfScreen(View descendant, int delta, int height) {
         descendant.getDrawingRect(mTempRect);
         offsetDescendantRectToMyCoords(descendant, mTempRect);
-        boolean varF9194AE0C6867682D5312FCB54F0ABEF_2103421739 = ((mTempRect.bottom + delta) >= getScrollY()
+        boolean varF9194AE0C6867682D5312FCB54F0ABEF_491255995 = ((mTempRect.bottom + delta) >= getScrollY()
                 && (mTempRect.top - delta) <= (getScrollY() + height));
         addTaint(descendant.getTaint());
         addTaint(delta);
         addTaint(height);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_46024776 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_46024776;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_567409128 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_567409128;
         // ---------- Original Method ----------
         //descendant.getDrawingRect(mTempRect);
         //offsetDescendantRectToMyCoords(descendant, mTempRect);
@@ -1343,7 +1343,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.418 -0400", hash_original_method = "8E606864EB91DBB174E2D5FEBC80C80F", hash_generated_method = "C9EFDA9264F7B5DABCE5928AE922DAF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.152 -0400", hash_original_method = "8E606864EB91DBB174E2D5FEBC80C80F", hash_generated_method = "C9EFDA9264F7B5DABCE5928AE922DAF5")
     private void doScrollY(int delta) {
         {
             {
@@ -1365,10 +1365,10 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.429 -0400", hash_original_method = "2EB75EC7C5D47510D212013AE17ECAD9", hash_generated_method = "FF43A5DB1F13FE43C10F2557FA102BD8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.152 -0400", hash_original_method = "2EB75EC7C5D47510D212013AE17ECAD9", hash_generated_method = "3B9FCF7F6628298511FFDB0B88B7A304")
     public final void smoothScrollBy(int dx, int dy) {
         {
-            boolean varF370735710C80808B6618BA2D491D045_316155523 = (getChildCount() == 0);
+            boolean varF370735710C80808B6618BA2D491D045_844858672 = (getChildCount() == 0);
         } //End collapsed parenthetic
         long duration;
         duration = AnimationUtils.currentAnimationTimeMillis() - mLastScroll;
@@ -1387,7 +1387,7 @@ public class ScrollView extends FrameLayout {
         } //End block
         {
             {
-                boolean var11F6C92CC339B9B3B7C0C85A8DBD1165_654892475 = (!mScroller.isFinished());
+                boolean var11F6C92CC339B9B3B7C0C85A8DBD1165_919473624 = (!mScroller.isFinished());
                 {
                     mScroller.abortAnimation();
                     {
@@ -1406,7 +1406,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.429 -0400", hash_original_method = "EED648F6788EFF0F67B65ABAA0DE4CF2", hash_generated_method = "DA73281470CE7C276C318CD6CA129252")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.153 -0400", hash_original_method = "EED648F6788EFF0F67B65ABAA0DE4CF2", hash_generated_method = "DA73281470CE7C276C318CD6CA129252")
     public final void smoothScrollTo(int x, int y) {
         smoothScrollBy(x - mScrollX, y - mScrollY);
         addTaint(x);
@@ -1416,7 +1416,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.430 -0400", hash_original_method = "91313F7EB1086727A920BA0C858900A2", hash_generated_method = "63AF09A4F1FCD02DB0B1EB63D63CF91F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.153 -0400", hash_original_method = "91313F7EB1086727A920BA0C858900A2", hash_generated_method = "9B50BB29B88734403F46549CAC6D1B17")
     @Override
     protected int computeVerticalScrollRange() {
         int count;
@@ -1435,8 +1435,8 @@ public class ScrollView extends FrameLayout {
         {
             scrollRange += scrollY - overscrollBottom;
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197141858 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197141858;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1392841504 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1392841504;
         // ---------- Original Method ----------
         //final int count = getChildCount();
         //final int contentHeight = getHeight() - mPaddingBottom - mPaddingTop;
@@ -1455,18 +1455,18 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.430 -0400", hash_original_method = "3295CF5A20E98E4F1F0B32253FD00545", hash_generated_method = "04DA71A83DD1ACCD612CA3377E90166C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.153 -0400", hash_original_method = "3295CF5A20E98E4F1F0B32253FD00545", hash_generated_method = "FB737F2D423D36D88A69CC35AF1B1BC7")
     @Override
     protected int computeVerticalScrollOffset() {
-        int varEB30566907E969E358CA3C9E47523092_1280697777 = (Math.max(0, super.computeVerticalScrollOffset()));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1728513129 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1728513129;
+        int varEB30566907E969E358CA3C9E47523092_82376315 = (Math.max(0, super.computeVerticalScrollOffset()));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1078033543 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1078033543;
         // ---------- Original Method ----------
         //return Math.max(0, super.computeVerticalScrollOffset());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.431 -0400", hash_original_method = "A9DFCA2E7D027D85128F33708BC045A3", hash_generated_method = "B462C9219CC911AF0C6EBBAF8B6AC5F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.155 -0400", hash_original_method = "A9DFCA2E7D027D85128F33708BC045A3", hash_generated_method = "B462C9219CC911AF0C6EBBAF8B6AC5F3")
     @Override
     protected void measureChild(View child, int parentWidthMeasureSpec, int parentHeightMeasureSpec) {
         ViewGroup.LayoutParams lp;
@@ -1491,7 +1491,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.493 -0400", hash_original_method = "39312C7B222B807E39D76A29FDE3363F", hash_generated_method = "F64125A211917F19C0D14D9E76A7D24E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.155 -0400", hash_original_method = "39312C7B222B807E39D76A29FDE3363F", hash_generated_method = "F64125A211917F19C0D14D9E76A7D24E")
     @Override
     protected void measureChildWithMargins(View child, int parentWidthMeasureSpec, int widthUsed,
             int parentHeightMeasureSpec, int heightUsed) {
@@ -1521,11 +1521,11 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.495 -0400", hash_original_method = "71999091E2F6915A9DB2336BBDDFAF94", hash_generated_method = "D2A6499915E3AAC8F31D656605A39152")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.156 -0400", hash_original_method = "71999091E2F6915A9DB2336BBDDFAF94", hash_generated_method = "754762382FA2F67A33DBB2B5655E3D94")
     @Override
     public void computeScroll() {
         {
-            boolean varE7DE5EF6873640B86AA94D9EE969CCF1_1463020719 = (mScroller.computeScrollOffset());
+            boolean varE7DE5EF6873640B86AA94D9EE969CCF1_1873092402 = (mScroller.computeScrollOffset());
             {
                 int oldX;
                 oldX = mScrollX;
@@ -1570,7 +1570,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.495 -0400", hash_original_method = "356AAB4A47E20FEC6EFC92C05FCA16CC", hash_generated_method = "A31B5CD8BB12240C14EFAAB9E55A8838")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.164 -0400", hash_original_method = "356AAB4A47E20FEC6EFC92C05FCA16CC", hash_generated_method = "A31B5CD8BB12240C14EFAAB9E55A8838")
     private void scrollToChild(View child) {
         child.getDrawingRect(mTempRect);
         offsetDescendantRectToMyCoords(child, mTempRect);
@@ -1590,7 +1590,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.499 -0400", hash_original_method = "D69703D23BD1E07705411D82E1BC609A", hash_generated_method = "BCB8317F25485611E3D06AD02FC4D1A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.168 -0400", hash_original_method = "D69703D23BD1E07705411D82E1BC609A", hash_generated_method = "517704A6E6DA9A20043BFD6518DB1BED")
     private boolean scrollToChildRect(Rect rect, boolean immediate) {
         int delta;
         delta = computeScrollDeltaToGetChildRectOnScreen(rect);
@@ -1606,8 +1606,8 @@ public class ScrollView extends FrameLayout {
         } //End block
         addTaint(rect.getTaint());
         addTaint(immediate);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1422513081 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1422513081;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1410630359 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1410630359;
         // ---------- Original Method ----------
         //final int delta = computeScrollDeltaToGetChildRectOnScreen(rect);
         //final boolean scroll = delta != 0;
@@ -1622,10 +1622,10 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.518 -0400", hash_original_method = "8A5FFBB9A861965CD3F605D3125E7C0B", hash_generated_method = "222416E2AE34130CAEFF924817ABBA58")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.169 -0400", hash_original_method = "8A5FFBB9A861965CD3F605D3125E7C0B", hash_generated_method = "7DFFB1715EFED6ADDF2661938397F027")
     protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
         {
-            boolean varF370735710C80808B6618BA2D491D045_1877130690 = (getChildCount() == 0);
+            boolean varF370735710C80808B6618BA2D491D045_1417094095 = (getChildCount() == 0);
         } //End collapsed parenthetic
         int height;
         height = getHeight();
@@ -1639,7 +1639,7 @@ public class ScrollView extends FrameLayout {
             screenTop += fadingEdge;
         } //End block
         {
-            boolean var21EF5215D3173B9EEA5879484954AC40_1731794051 = (rect.bottom < getChildAt(0).getHeight());
+            boolean var21EF5215D3173B9EEA5879484954AC40_398111897 = (rect.bottom < getChildAt(0).getHeight());
             {
                 screenBottom -= fadingEdge;
             } //End block
@@ -1648,7 +1648,7 @@ public class ScrollView extends FrameLayout {
         scrollYDelta = 0;
         {
             {
-                boolean var1852437954D6FC93B41EE304F855C339_11244616 = (rect.height() > height);
+                boolean var1852437954D6FC93B41EE304F855C339_1920825826 = (rect.height() > height);
                 {
                     scrollYDelta += (rect.top - screenTop);
                 } //End block
@@ -1664,7 +1664,7 @@ public class ScrollView extends FrameLayout {
         } //End block
         {
             {
-                boolean var1852437954D6FC93B41EE304F855C339_86277179 = (rect.height() > height);
+                boolean var1852437954D6FC93B41EE304F855C339_899042877 = (rect.height() > height);
                 {
                     scrollYDelta -= (screenBottom - rect.bottom);
                 } //End block
@@ -1675,14 +1675,14 @@ public class ScrollView extends FrameLayout {
             scrollYDelta = Math.max(scrollYDelta, -getScrollY());
         } //End block
         addTaint(rect.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_936534655 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_936534655;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1447852525 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1447852525;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.518 -0400", hash_original_method = "C2C4A47D49BA76A3A98712461E581564", hash_generated_method = "A6F96566FD9F1BE3771DA2878DF4DC46")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.173 -0400", hash_original_method = "C2C4A47D49BA76A3A98712461E581564", hash_generated_method = "A6F96566FD9F1BE3771DA2878DF4DC46")
     @Override
     public void requestChildFocus(View child, View focused) {
         {
@@ -1703,7 +1703,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.519 -0400", hash_original_method = "BC1790D54EF67B6E1EFAB03FC42BAB96", hash_generated_method = "4FBD9B79930F94FECCD12956AF21216A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.174 -0400", hash_original_method = "BC1790D54EF67B6E1EFAB03FC42BAB96", hash_generated_method = "69D046E49C66C8A105C6F64826E30F58")
     @Override
     protected boolean onRequestFocusInDescendants(int direction,
             Rect previouslyFocusedRect) {
@@ -1719,13 +1719,13 @@ public class ScrollView extends FrameLayout {
         nextFocus = FocusFinder.getInstance().findNextFocusFromRect(this,
                         previouslyFocusedRect, direction);
         {
-            boolean var2421F6D33436D75DDCB765DA8D416CB8_1338523771 = (isOffScreen(nextFocus));
+            boolean var2421F6D33436D75DDCB765DA8D416CB8_1606308673 = (isOffScreen(nextFocus));
         } //End collapsed parenthetic
-        boolean varBB06A889CCA25ED822B35181716FFE90_352134997 = (nextFocus.requestFocus(direction, previouslyFocusedRect));
+        boolean varBB06A889CCA25ED822B35181716FFE90_1371182708 = (nextFocus.requestFocus(direction, previouslyFocusedRect));
         addTaint(direction);
         addTaint(previouslyFocusedRect.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1425185919 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1425185919;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1749038086 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1749038086;
         // ---------- Original Method ----------
         //if (direction == View.FOCUS_FORWARD) {
             //direction = View.FOCUS_DOWN;
@@ -1746,18 +1746,18 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.520 -0400", hash_original_method = "50E2DA7CF8E403536932E3B77491E964", hash_generated_method = "A1E11843CE315CCAE961365C24FBC392")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.174 -0400", hash_original_method = "50E2DA7CF8E403536932E3B77491E964", hash_generated_method = "3C6535496D7B70D287D53277BE876F12")
     @Override
     public boolean requestChildRectangleOnScreen(View child, Rect rectangle,
             boolean immediate) {
         rectangle.offset(child.getLeft() - child.getScrollX(),
                 child.getTop() - child.getScrollY());
-        boolean var9EED5F05118BACEED05952D173A9E219_141031929 = (scrollToChildRect(rectangle, immediate));
+        boolean var9EED5F05118BACEED05952D173A9E219_1911715057 = (scrollToChildRect(rectangle, immediate));
         addTaint(child.getTaint());
         addTaint(rectangle.getTaint());
         addTaint(immediate);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_847825708 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_847825708;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1013927727 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1013927727;
         // ---------- Original Method ----------
         //rectangle.offset(child.getLeft() - child.getScrollX(),
                 //child.getTop() - child.getScrollY());
@@ -1765,7 +1765,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.520 -0400", hash_original_method = "31751D7E496E2D7BD9B4D4E94AD28515", hash_generated_method = "11A20A1DA3E3F0E4689DA3F629925C7D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.179 -0400", hash_original_method = "31751D7E496E2D7BD9B4D4E94AD28515", hash_generated_method = "11A20A1DA3E3F0E4689DA3F629925C7D")
     @Override
     public void requestLayout() {
         mIsLayoutDirty = true;
@@ -1776,7 +1776,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.533 -0400", hash_original_method = "E0B1FFFA746AE76ECF17449388BCEBCA", hash_generated_method = "0769E662DBD4D44EBB6685D0653E05DC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.180 -0400", hash_original_method = "E0B1FFFA746AE76ECF17449388BCEBCA", hash_generated_method = "0769E662DBD4D44EBB6685D0653E05DC")
     @Override
     protected void onDetachedFromWindow() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1802,14 +1802,14 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.534 -0400", hash_original_method = "51521A672083F0AD2F639BD854AB8D0F", hash_generated_method = "FC49227486CD2B1EE87DC5D0DABE05ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.186 -0400", hash_original_method = "51521A672083F0AD2F639BD854AB8D0F", hash_generated_method = "BB82C4E4AE96BF7C96AF4D7BC45987C2")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         super.onLayout(changed, l, t, r, b);
         mIsLayoutDirty = false;
         {
-            boolean varFEFF39315B1161E387E3A3BC8A5B6333_1787939403 = (mChildToScrollTo != null && isViewDescendantOf(mChildToScrollTo, this));
+            boolean varFEFF39315B1161E387E3A3BC8A5B6333_87898377 = (mChildToScrollTo != null && isViewDescendantOf(mChildToScrollTo, this));
             {
                 scrollToChild(mChildToScrollTo);
             } //End block
@@ -1832,7 +1832,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.534 -0400", hash_original_method = "35BE22C8E7AB63B977E9EAA0D1A8EAA6", hash_generated_method = "68E9302733CE7E8272010729FAACC4FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.186 -0400", hash_original_method = "35BE22C8E7AB63B977E9EAA0D1A8EAA6", hash_generated_method = "BB428894E33EDC7DDC40CF8B8B8F7E1B")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -1840,7 +1840,7 @@ public class ScrollView extends FrameLayout {
         View currentFocused;
         currentFocused = findFocus();
         {
-            boolean varCE6D2EB5D4D2223694B6B3F92A2E212D_1918842155 = (isWithinDeltaOfScreen(currentFocused, 0, oldh));
+            boolean varCE6D2EB5D4D2223694B6B3F92A2E212D_1697083630 = (isWithinDeltaOfScreen(currentFocused, 0, oldh));
             {
                 currentFocused.getDrawingRect(mTempRect);
                 offsetDescendantRectToMyCoords(currentFocused, mTempRect);
@@ -1867,15 +1867,15 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.535 -0400", hash_original_method = "25276A1ACE97D138BB17C9052B223D37", hash_generated_method = "136D119175710D8D56F4FF3686513857")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.187 -0400", hash_original_method = "25276A1ACE97D138BB17C9052B223D37", hash_generated_method = "EDC1034AB686AB269FAA91074E2E3BC2")
     private boolean isViewDescendantOf(View child, View parent) {
         ViewParent theParent;
         theParent = child.getParent();
-        boolean var948A486C9D980B3FCF5DD6DC234D8E28_1477942587 = ((theParent instanceof ViewGroup) && isViewDescendantOf((View) theParent, parent));
+        boolean var948A486C9D980B3FCF5DD6DC234D8E28_1619172605 = ((theParent instanceof ViewGroup) && isViewDescendantOf((View) theParent, parent));
         addTaint(child.getTaint());
         addTaint(parent.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_387019025 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_387019025;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_919390249 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_919390249;
         // ---------- Original Method ----------
         //if (child == parent) {
             //return true;
@@ -1885,10 +1885,10 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.536 -0400", hash_original_method = "C7B4AEF12870EFF4E9873FB61486C527", hash_generated_method = "9C825048AB162FB99BA6AF7E182C1288")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.187 -0400", hash_original_method = "C7B4AEF12870EFF4E9873FB61486C527", hash_generated_method = "956033023162923FD5D107052D5F9177")
     public void fling(int velocityY) {
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1618953352 = (getChildCount() > 0);
+            boolean varBF62E6C23FE36C17A3594E034FF46D2E_1102468200 = (getChildCount() > 0);
             {
                 int height;
                 height = getHeight() - mPaddingBottom - mPaddingTop;
@@ -1920,7 +1920,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.545 -0400", hash_original_method = "526DB7CB9D9E6BCF2CDE3F8A7F1D2890", hash_generated_method = "0DFF22FC23EC0A9A95D0F21098A32742")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.188 -0400", hash_original_method = "526DB7CB9D9E6BCF2CDE3F8A7F1D2890", hash_generated_method = "0DFF22FC23EC0A9A95D0F21098A32742")
     private void endDrag() {
         mIsBeingDragged = false;
         recycleVelocityTracker();
@@ -1946,11 +1946,11 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.554 -0400", hash_original_method = "748C5914370A5F8CDD8109B6F4611B5B", hash_generated_method = "4424D0A505E5C12C1EDD8FCCDCFC79E6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.209 -0400", hash_original_method = "748C5914370A5F8CDD8109B6F4611B5B", hash_generated_method = "A5DD6AA92A00D491D15AD7C3034DA3BF")
     @Override
     public void scrollTo(int x, int y) {
         {
-            boolean varBF62E6C23FE36C17A3594E034FF46D2E_2035283492 = (getChildCount() > 0);
+            boolean varBF62E6C23FE36C17A3594E034FF46D2E_515725468 = (getChildCount() > 0);
             {
                 View child;
                 child = getChildAt(0);
@@ -1975,7 +1975,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.555 -0400", hash_original_method = "3BD104A12D7CF3E01CAF1DA422C489F3", hash_generated_method = "4CBA9234CB0696D0322C8E3B63FAF9C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.210 -0400", hash_original_method = "3BD104A12D7CF3E01CAF1DA422C489F3", hash_generated_method = "4CBA9234CB0696D0322C8E3B63FAF9C9")
     @Override
     public void setOverScrollMode(int mode) {
         {
@@ -2007,7 +2007,7 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.556 -0400", hash_original_method = "50FAD524FA6B782881C70ABEF15C4DDF", hash_generated_method = "A6A6456DFD2BFCED0795F3CFFEA8B84B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.210 -0400", hash_original_method = "50FAD524FA6B782881C70ABEF15C4DDF", hash_generated_method = "42A587E28EE387B58431773C49BC2845")
     @Override
     public void draw(Canvas canvas) {
         super.draw(canvas);
@@ -2015,7 +2015,7 @@ public class ScrollView extends FrameLayout {
             int scrollY;
             scrollY = mScrollY;
             {
-                boolean varD7662701013542BC2CCE8B2B50437EBA_1685104332 = (!mEdgeGlowTop.isFinished());
+                boolean varD7662701013542BC2CCE8B2B50437EBA_1908532160 = (!mEdgeGlowTop.isFinished());
                 {
                     int restoreCount;
                     restoreCount = canvas.save();
@@ -2024,7 +2024,7 @@ public class ScrollView extends FrameLayout {
                     canvas.translate(mPaddingLeft, Math.min(0, scrollY));
                     mEdgeGlowTop.setSize(width, getHeight());
                     {
-                        boolean varAE9426D05B3D52BFC4B9E7AA44588485_1378045090 = (mEdgeGlowTop.draw(canvas));
+                        boolean varAE9426D05B3D52BFC4B9E7AA44588485_615034741 = (mEdgeGlowTop.draw(canvas));
                         {
                             invalidate();
                         } //End block
@@ -2033,7 +2033,7 @@ public class ScrollView extends FrameLayout {
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var71AB611E918A4C599E2F06D4154D257E_518777836 = (!mEdgeGlowBottom.isFinished());
+                boolean var71AB611E918A4C599E2F06D4154D257E_1450675977 = (!mEdgeGlowBottom.isFinished());
                 {
                     int restoreCount;
                     restoreCount = canvas.save();
@@ -2046,7 +2046,7 @@ public class ScrollView extends FrameLayout {
                     canvas.rotate(180, width, 0);
                     mEdgeGlowBottom.setSize(width, height);
                     {
-                        boolean var61CCF9557D478E1494862B3636E22888_1533500030 = (mEdgeGlowBottom.draw(canvas));
+                        boolean var61CCF9557D478E1494862B3636E22888_1211761887 = (mEdgeGlowBottom.draw(canvas));
                         {
                             invalidate();
                         } //End block
@@ -2061,13 +2061,13 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.556 -0400", hash_original_method = "10E81B579101690AB90AC933866D5438", hash_generated_method = "7BE2245C5CC5F02B8237ECBF15A35B38")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.211 -0400", hash_original_method = "10E81B579101690AB90AC933866D5438", hash_generated_method = "30F449904D9A1E09DDF555DD323C92DC")
     private int clamp(int n, int my, int child) {
         addTaint(n);
         addTaint(my);
         addTaint(child);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2084320160 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2084320160;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2089229275 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2089229275;
         // ---------- Original Method ----------
         //if (my >= child || n < 0) {
             //return 0;
@@ -2079,13 +2079,13 @@ public class ScrollView extends FrameLayout {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.564 -0400", hash_original_field = "D4B6C25D0A03D262C947BCD869108225", hash_generated_field = "776A3B5C879D294B7A4E3A9080A92207")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.211 -0400", hash_original_field = "D4B6C25D0A03D262C947BCD869108225", hash_generated_field = "776A3B5C879D294B7A4E3A9080A92207")
 
     static int ANIMATED_SCROLL_GAP = 250;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.564 -0400", hash_original_field = "9BFFC1AB0B9FE2B016F88B3E293FEE4F", hash_generated_field = "4FF6A0CD88A94A91E5CD9C968A41AD23")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.211 -0400", hash_original_field = "9BFFC1AB0B9FE2B016F88B3E293FEE4F", hash_generated_field = "4FF6A0CD88A94A91E5CD9C968A41AD23")
 
     static float MAX_SCROLL_FACTOR = 0.5f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.564 -0400", hash_original_field = "7EF8B2C57AC3A1D5EC1190F4098C6121", hash_generated_field = "EC0CE8121C7A62BAD74595655C619E28")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:11.211 -0400", hash_original_field = "7EF8B2C57AC3A1D5EC1190F4098C6121", hash_generated_field = "EC0CE8121C7A62BAD74595655C619E28")
 
     private static int INVALID_POINTER = -1;
 }

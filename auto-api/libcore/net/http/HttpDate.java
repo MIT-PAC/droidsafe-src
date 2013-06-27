@@ -16,7 +16,7 @@ import java.util.TimeZone;
 
 public final class HttpDate {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.614 -0400", hash_original_method = "0136B205498F115685D55FF9321B6B42", hash_generated_method = "0136B205498F115685D55FF9321B6B42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.964 -0400", hash_original_method = "0136B205498F115685D55FF9321B6B42", hash_generated_method = "0136B205498F115685D55FF9321B6B42")
     public HttpDate ()
     {
         //Synthesized constructor
@@ -43,19 +43,19 @@ public final class HttpDate {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.616 -0400", hash_original_field = "7070321CEDCE8DDA350092605D887EA6", hash_generated_field = "A7F77DBAECC8742512632430E413960C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.975 -0400", hash_original_field = "7070321CEDCE8DDA350092605D887EA6", hash_generated_field = "39D91B51F6DD7EFBEE233BC10CBA0AAF")
 
     private static ThreadLocal<DateFormat> STANDARD_DATE_FORMAT = new ThreadLocal<DateFormat>() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.615 -0400", hash_original_method = "884CECE43D2C8988F9978CEA7BD2135F", hash_generated_method = "0881DBE361133F22CAE8B34B643FF9F8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.975 -0400", hash_original_method = "884CECE43D2C8988F9978CEA7BD2135F", hash_generated_method = "52E22DE675DCE14B9C20667C1A31DA76")
         @Override
         protected DateFormat initialValue() {
-            DateFormat varB4EAC82CA7396A68D541C85D26508E83_654669458 = null; //Variable for return #1
+            DateFormat varB4EAC82CA7396A68D541C85D26508E83_171501484 = null; //Variable for return #1
             DateFormat rfc1123;
             rfc1123 = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.US);
             rfc1123.setTimeZone(TimeZone.getTimeZone("UTC"));
-            varB4EAC82CA7396A68D541C85D26508E83_654669458 = rfc1123;
-            varB4EAC82CA7396A68D541C85D26508E83_654669458.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_654669458;
+            varB4EAC82CA7396A68D541C85D26508E83_171501484 = rfc1123;
+            varB4EAC82CA7396A68D541C85D26508E83_171501484.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_171501484;
             // ---------- Original Method ----------
             //DateFormat rfc1123 = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.US);
             //rfc1123.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -64,7 +64,7 @@ public final class HttpDate {
 
         
 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.616 -0400", hash_original_field = "1A5262111CAC9B43E8DD975F2EB0643F", hash_generated_field = "7A81702EDEE426418BF1FFE0450C95BD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.975 -0400", hash_original_field = "1A5262111CAC9B43E8DD975F2EB0643F", hash_generated_field = "7A81702EDEE426418BF1FFE0450C95BD")
 
     private static String[] BROWSER_COMPATIBLE_DATE_FORMATS = new String[] {
             

@@ -23,20 +23,20 @@ import libcore.io.Libcore;
 import static libcore.io.OsConstants._SC_NPROCESSORS_ONLN;
 
 public class Runtime {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.065 -0400", hash_original_field = "6B000CDB16A1C13D718033E4DCCD85DA", hash_generated_field = "873422259A0094C2F3A569B7BBF35F19")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.180 -0400", hash_original_field = "6B000CDB16A1C13D718033E4DCCD85DA", hash_generated_field = "873422259A0094C2F3A569B7BBF35F19")
 
     private String[] mLibPaths;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.065 -0400", hash_original_field = "79B302E8A5A117E80D56060C347988CB", hash_generated_field = "8FF982D34AB52E579D2BCD2486CCEB28")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.180 -0400", hash_original_field = "79B302E8A5A117E80D56060C347988CB", hash_generated_field = "8FF982D34AB52E579D2BCD2486CCEB28")
 
     private List<Thread> shutdownHooks = new ArrayList<Thread>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.065 -0400", hash_original_field = "BE3D0AB12E871A97C27100D4A3183EC2", hash_generated_field = "7D744FBAE3A0077A4F980F9B4BD97716")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.180 -0400", hash_original_field = "BE3D0AB12E871A97C27100D4A3183EC2", hash_generated_field = "7D744FBAE3A0077A4F980F9B4BD97716")
 
     private boolean shuttingDown;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.065 -0400", hash_original_field = "F19F90B8C4E6B181500D2F74A31F0D15", hash_generated_field = "C37DB832480F2E52014FFDC3AABF7287")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.180 -0400", hash_original_field = "F19F90B8C4E6B181500D2F74A31F0D15", hash_generated_field = "C37DB832480F2E52014FFDC3AABF7287")
 
     private boolean tracingMethods;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.086 -0400", hash_original_method = "F82AC05B2B9BDA560435929D86D5DD16", hash_generated_method = "02F1FB5AFAC13964332D801BD85F389A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.181 -0400", hash_original_method = "F82AC05B2B9BDA560435929D86D5DD16", hash_generated_method = "94FFCC4594EE0EFC3401A89BB7AFD604")
     private  Runtime() {
         String pathList;
         pathList = System.getProperty("java.library.path", ".");
@@ -50,7 +50,7 @@ public class Runtime {
             i = 0;
             {
                 {
-                    boolean var1BFF5A0C86E86C64CD92FD978F3DE564_1333133288 = (!mLibPaths[i].endsWith(fileSep));
+                    boolean var1BFF5A0C86E86C64CD92FD978F3DE564_750616205 = (!mLibPaths[i].endsWith(fileSep));
                     {
                         mLibPaths[i] += fileSep;
                     } //End block
@@ -70,78 +70,78 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.086 -0400", hash_original_method = "CFCE84E7C9BE3630A08A3A7BB73629F7", hash_generated_method = "B904DFA848CA1549B6B528BA975031CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.192 -0400", hash_original_method = "CFCE84E7C9BE3630A08A3A7BB73629F7", hash_generated_method = "7D6316554142D5A132475232A0A8AFEA")
     public Process exec(String[] progArray) throws java.io.IOException {
-        Process varB4EAC82CA7396A68D541C85D26508E83_1288153899 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1288153899 = exec(progArray, null, null);
+        Process varB4EAC82CA7396A68D541C85D26508E83_1295521370 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1295521370 = exec(progArray, null, null);
         addTaint(progArray[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1288153899.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1288153899;
+        varB4EAC82CA7396A68D541C85D26508E83_1295521370.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1295521370;
         // ---------- Original Method ----------
         //return exec(progArray, null, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.087 -0400", hash_original_method = "DBDF96D0DD01BF3A81297C1A77D3788B", hash_generated_method = "D7CA4D7F1C9F2FBD793AFC707F71220D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.194 -0400", hash_original_method = "DBDF96D0DD01BF3A81297C1A77D3788B", hash_generated_method = "0E20ECBA2B6A2DFA066B1ACADAAD1FFA")
     public Process exec(String[] progArray, String[] envp) throws java.io.IOException {
-        Process varB4EAC82CA7396A68D541C85D26508E83_1464892557 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1464892557 = exec(progArray, envp, null);
+        Process varB4EAC82CA7396A68D541C85D26508E83_1947170160 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1947170160 = exec(progArray, envp, null);
         addTaint(progArray[0].getTaint());
         addTaint(envp[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1464892557.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1464892557;
+        varB4EAC82CA7396A68D541C85D26508E83_1947170160.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1947170160;
         // ---------- Original Method ----------
         //return exec(progArray, envp, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.093 -0400", hash_original_method = "CA3870F83BC3F7A92215C18375ED76A3", hash_generated_method = "7E5EF783CA383EEF442D6F7FBFB58487")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.195 -0400", hash_original_method = "CA3870F83BC3F7A92215C18375ED76A3", hash_generated_method = "85917CA7C187E5901BA6B24F41348C58")
     public Process exec(String[] progArray, String[] envp, File directory) throws IOException {
-        Process varB4EAC82CA7396A68D541C85D26508E83_442385456 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_442385456 = ProcessManager.getInstance().exec(progArray, envp, directory, false);
+        Process varB4EAC82CA7396A68D541C85D26508E83_1925728759 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1925728759 = ProcessManager.getInstance().exec(progArray, envp, directory, false);
         addTaint(progArray[0].getTaint());
         addTaint(envp[0].getTaint());
         addTaint(directory.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_442385456.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_442385456;
+        varB4EAC82CA7396A68D541C85D26508E83_1925728759.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1925728759;
         // ---------- Original Method ----------
         //return ProcessManager.getInstance().exec(progArray, envp, directory, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.094 -0400", hash_original_method = "06266E096A96F3360CE9E0923017372F", hash_generated_method = "5ED5DAAA48EC0FC4CB7280CB6A123887")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.195 -0400", hash_original_method = "06266E096A96F3360CE9E0923017372F", hash_generated_method = "6A40E9DE38700D1FEE4CD96372C16EF2")
     public Process exec(String prog) throws java.io.IOException {
-        Process varB4EAC82CA7396A68D541C85D26508E83_80409706 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_80409706 = exec(prog, null, null);
+        Process varB4EAC82CA7396A68D541C85D26508E83_2073064353 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2073064353 = exec(prog, null, null);
         addTaint(prog.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_80409706.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_80409706;
+        varB4EAC82CA7396A68D541C85D26508E83_2073064353.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2073064353;
         // ---------- Original Method ----------
         //return exec(prog, null, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.094 -0400", hash_original_method = "7285BF96BB6399D281A4BE01B5D250F8", hash_generated_method = "8A60BC9CEA4F56D62DCB3455F42F7F01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.196 -0400", hash_original_method = "7285BF96BB6399D281A4BE01B5D250F8", hash_generated_method = "359387F4EAA302667130B4CA04DB63D9")
     public Process exec(String prog, String[] envp) throws java.io.IOException {
-        Process varB4EAC82CA7396A68D541C85D26508E83_1033457328 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1033457328 = exec(prog, envp, null);
+        Process varB4EAC82CA7396A68D541C85D26508E83_2140187291 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2140187291 = exec(prog, envp, null);
         addTaint(prog.getTaint());
         addTaint(envp[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1033457328.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1033457328;
+        varB4EAC82CA7396A68D541C85D26508E83_2140187291.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2140187291;
         // ---------- Original Method ----------
         //return exec(prog, envp, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.100 -0400", hash_original_method = "D63330F96D8E34D6A893E8125BEC80CB", hash_generated_method = "0B3E4C3F58E654EE23DDCDEFAF9882B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.204 -0400", hash_original_method = "D63330F96D8E34D6A893E8125BEC80CB", hash_generated_method = "9B8BCBEB86B2B1292770984F878FB224")
     public Process exec(String prog, String[] envp, File directory) throws java.io.IOException {
-        Process varB4EAC82CA7396A68D541C85D26508E83_1294214785 = null; //Variable for return #1
+        Process varB4EAC82CA7396A68D541C85D26508E83_521452232 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         } //End block
         {
-            boolean var76D3DE3C27BAB87F3C1BE357F241404A_603159769 = (prog.length() == 0);
+            boolean var76D3DE3C27BAB87F3C1BE357F241404A_310386471 = (prog.length() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
             } //End block
@@ -159,12 +159,12 @@ public class Runtime {
                 progArray[i] = tokenizer.nextToken();
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1294214785 = exec(progArray, envp, directory);
+        varB4EAC82CA7396A68D541C85D26508E83_521452232 = exec(progArray, envp, directory);
         addTaint(prog.getTaint());
         addTaint(envp[0].getTaint());
         addTaint(directory.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1294214785.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1294214785;
+        varB4EAC82CA7396A68D541C85D26508E83_521452232.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_521452232;
         // ---------- Original Method ----------
         //if (prog == null) {
             //throw new NullPointerException();
@@ -181,7 +181,7 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.170 -0400", hash_original_method = "06E9B7958C64599C6A29BDE55862BAAD", hash_generated_method = "6AFB2DC9ABA17A2F4803FB3D2020ECDE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.258 -0400", hash_original_method = "06E9B7958C64599C6A29BDE55862BAAD", hash_generated_method = "EA7F04DFC2A7450BAF84EA396EA59698")
     public void exit(int code) {
         {
             {
@@ -192,17 +192,17 @@ public class Runtime {
                     shutdownHooks.toArray(hooks);
                 } //End block
                 {
-                    Iterator<Thread> varC5FB4F41E753A393942957BD44C2EF60_722948653 = (hooks).iterator();
-                    varC5FB4F41E753A393942957BD44C2EF60_722948653.hasNext();
-                    Thread hook = varC5FB4F41E753A393942957BD44C2EF60_722948653.next();
+                    Iterator<Thread> varC5FB4F41E753A393942957BD44C2EF60_1245733121 = (hooks).iterator();
+                    varC5FB4F41E753A393942957BD44C2EF60_1245733121.hasNext();
+                    Thread hook = varC5FB4F41E753A393942957BD44C2EF60_1245733121.next();
                     {
                         hook.start();
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    Iterator<Thread> varC5FB4F41E753A393942957BD44C2EF60_1289406353 = (hooks).iterator();
-                    varC5FB4F41E753A393942957BD44C2EF60_1289406353.hasNext();
-                    Thread hook = varC5FB4F41E753A393942957BD44C2EF60_1289406353.next();
+                    Iterator<Thread> varC5FB4F41E753A393942957BD44C2EF60_1061006296 = (hooks).iterator();
+                    varC5FB4F41E753A393942957BD44C2EF60_1061006296.hasNext();
+                    Thread hook = varC5FB4F41E753A393942957BD44C2EF60_1061006296.next();
                     {
                         try 
                         {
@@ -224,14 +224,14 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.170 -0400", hash_original_method = "67196F5597F9CC48251D355499CA1423", hash_generated_method = "FF63301EFD8E1A38DB7FECC24956A61D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.263 -0400", hash_original_method = "67196F5597F9CC48251D355499CA1423", hash_generated_method = "4DD58B342B29DAF1A170D1CF52098E7B")
     public long freeMemory() {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_503836864 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_503836864;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_669707644 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_669707644;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.172 -0400", hash_original_method = "D5E9C32F4CCF731A5E6B245C708DE511", hash_generated_method = "F2BA90326A844E033E7882399F00530F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.264 -0400", hash_original_method = "D5E9C32F4CCF731A5E6B245C708DE511", hash_generated_method = "F2BA90326A844E033E7882399F00530F")
     public void gc() {
     }
 
@@ -241,7 +241,7 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.173 -0400", hash_original_method = "D4CBB36D8902BC048F224692FC6F0770", hash_generated_method = "DC29CE609922968E32C2C6D814E5FC1B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.270 -0400", hash_original_method = "D4CBB36D8902BC048F224692FC6F0770", hash_generated_method = "DC29CE609922968E32C2C6D814E5FC1B")
     public void load(String pathName) {
         load(pathName, VMStack.getCallingClassLoader());
         addTaint(pathName.getTaint());
@@ -250,7 +250,7 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.174 -0400", hash_original_method = "93CD7EAF10A1B837C6D2761A80025550", hash_generated_method = "942482764565D39F622FB3858A360546")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.271 -0400", hash_original_method = "93CD7EAF10A1B837C6D2761A80025550", hash_generated_method = "942482764565D39F622FB3858A360546")
      void load(String filename, ClassLoader loader) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("library path was null.");
@@ -273,7 +273,7 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.177 -0400", hash_original_method = "552217161A043147D154E437EB4B14C4", hash_generated_method = "5719CC14A6F1CB750EA9A16604ADBA49")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.271 -0400", hash_original_method = "552217161A043147D154E437EB4B14C4", hash_generated_method = "5719CC14A6F1CB750EA9A16604ADBA49")
     public void loadLibrary(String libName) {
         loadLibrary(libName, VMStack.getCallingClassLoader());
         addTaint(libName.getTaint());
@@ -282,7 +282,7 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.239 -0400", hash_original_method = "5EE816C9B41613E4D79FD41D836C9458", hash_generated_method = "CE7F0E2CE82434EC92E200E1276EBB93")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.314 -0400", hash_original_method = "5EE816C9B41613E4D79FD41D836C9458", hash_generated_method = "DDC8D52B7C2D8C1A7B3295F2572BE7FD")
      void loadLibrary(String libraryName, ClassLoader loader) {
         {
             String filename;
@@ -310,7 +310,7 @@ public class Runtime {
                 candidate = directory + filename;
                 candidates.add(candidate);
                 {
-                    boolean var83E84C412CAF9691B50D589C1BC72418_735684835 = (new File(candidate).exists());
+                    boolean var83E84C412CAF9691B50D589C1BC72418_1558567531 = (new File(candidate).exists());
                     {
                         String error;
                         error = nativeLoad(candidate, loader);
@@ -339,7 +339,7 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.258 -0400", hash_original_method = "D97B4D8E5C3471916B8248342E55C9E3", hash_generated_method = "B8DF1E762B1639FEAD14C63E4F21ADD5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.323 -0400", hash_original_method = "D97B4D8E5C3471916B8248342E55C9E3", hash_generated_method = "B8DF1E762B1639FEAD14C63E4F21ADD5")
     public void runFinalization() {
         try 
         {
@@ -364,21 +364,21 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.259 -0400", hash_original_method = "4EB2522F808EA94D0A66B66F863EF421", hash_generated_method = "5DD5373B91E527E4FD47F9B2475F72AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.328 -0400", hash_original_method = "4EB2522F808EA94D0A66B66F863EF421", hash_generated_method = "89F4B5DC7BE4C0E2380276D76BAB2E9F")
     public long totalMemory() {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_246217571 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_246217571;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_687484153 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_687484153;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.259 -0400", hash_original_method = "53798D26DA92803B5299289F1912C9D0", hash_generated_method = "D48C5D50EAB5ED262BC047C38DB9B711")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.331 -0400", hash_original_method = "53798D26DA92803B5299289F1912C9D0", hash_generated_method = "D48C5D50EAB5ED262BC047C38DB9B711")
     public void traceInstructions(boolean enable) {
         addTaint(enable);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.259 -0400", hash_original_method = "047BFF8451D039E49AAF4D452A82FBF3", hash_generated_method = "ED4C7F340C5E2463306E7F5086AE156E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.332 -0400", hash_original_method = "047BFF8451D039E49AAF4D452A82FBF3", hash_generated_method = "ED4C7F340C5E2463306E7F5086AE156E")
     public void traceMethodCalls(boolean enable) {
         {
             {
@@ -401,22 +401,22 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.260 -0400", hash_original_method = "4DD488C3A0CAA7F2473CD0DE597FBF5E", hash_generated_method = "7594A2C2B3353E3843982544DA96C777")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.332 -0400", hash_original_method = "4DD488C3A0CAA7F2473CD0DE597FBF5E", hash_generated_method = "6D29A9EE22C74F9A155C91A6ACDFC176")
     @Deprecated
     public InputStream getLocalizedInputStream(InputStream stream) {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_665867367 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_15004621 = null; //Variable for return #1
         String encoding;
         encoding = System.getProperty("file.encoding", "UTF-8");
         {
-            boolean var56FB0B863E6966178EDCAEC9F77CCF78_761185950 = (!encoding.equals("UTF-8"));
+            boolean var56FB0B863E6966178EDCAEC9F77CCF78_625196721 = (!encoding.equals("UTF-8"));
             {
                 if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Cannot localize " + encoding);
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_665867367 = stream;
+        varB4EAC82CA7396A68D541C85D26508E83_15004621 = stream;
         addTaint(stream.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_665867367.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_665867367;
+        varB4EAC82CA7396A68D541C85D26508E83_15004621.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_15004621;
         // ---------- Original Method ----------
         //String encoding = System.getProperty("file.encoding", "UTF-8");
         //if (!encoding.equals("UTF-8")) {
@@ -426,22 +426,22 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.260 -0400", hash_original_method = "E706425DACD57D6DD3EDF96DBA8FB92E", hash_generated_method = "632C9CF5795CD9E2624BCDFBB11121F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.341 -0400", hash_original_method = "E706425DACD57D6DD3EDF96DBA8FB92E", hash_generated_method = "EC48C8C80AEC0906EE90B2C246BB1F05")
     @Deprecated
     public OutputStream getLocalizedOutputStream(OutputStream stream) {
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_1608976175 = null; //Variable for return #1
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_1856480387 = null; //Variable for return #1
         String encoding;
         encoding = System.getProperty("file.encoding", "UTF-8");
         {
-            boolean var56FB0B863E6966178EDCAEC9F77CCF78_190035578 = (!encoding.equals("UTF-8"));
+            boolean var56FB0B863E6966178EDCAEC9F77CCF78_1453324022 = (!encoding.equals("UTF-8"));
             {
                 if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Cannot localize " + encoding);
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1608976175 = stream;
+        varB4EAC82CA7396A68D541C85D26508E83_1856480387 = stream;
         addTaint(stream.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1608976175.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1608976175;
+        varB4EAC82CA7396A68D541C85D26508E83_1856480387.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1856480387;
         // ---------- Original Method ----------
         //String encoding = System.getProperty("file.encoding", "UTF-8");
         //if (!encoding.equals("UTF-8")) {
@@ -451,7 +451,7 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.261 -0400", hash_original_method = "4A60C315F45CCAAE039020003BF5AFDA", hash_generated_method = "D9F3799D5A6BC251F130C7E826496637")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.341 -0400", hash_original_method = "4A60C315F45CCAAE039020003BF5AFDA", hash_generated_method = "7807AE08C77BED5AEBB7AFBFD8610F86")
     public void addShutdownHook(Thread hook) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Hook may not be null.");
@@ -464,7 +464,7 @@ public class Runtime {
         } //End block
         {
             {
-                boolean varB375300D425302ED7695B13548FF6B77_622081127 = (shutdownHooks.contains(hook));
+                boolean varB375300D425302ED7695B13548FF6B77_1528007203 = (shutdownHooks.contains(hook));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Hook already registered.");
                 } //End block
@@ -491,7 +491,7 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.261 -0400", hash_original_method = "402CE948C1020CDD411F4962B0A96E04", hash_generated_method = "3D17B371A033EFA4555CDBC791CCC5A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.342 -0400", hash_original_method = "402CE948C1020CDD411F4962B0A96E04", hash_generated_method = "D237D3740CFDFB408BA9B802F0E1055D")
     public boolean removeShutdownHook(Thread hook) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException("Hook may not be null.");
@@ -500,11 +500,11 @@ public class Runtime {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("VM already shutting down");
         } //End block
         {
-            boolean var9FCE62545780AFCB81D1769B08241B09_1738036150 = (shutdownHooks.remove(hook));
+            boolean var9FCE62545780AFCB81D1769B08241B09_93968740 = (shutdownHooks.remove(hook));
         } //End block
         addTaint(hook.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2013304026 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2013304026;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_89639966 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_89639966;
         // ---------- Original Method ----------
         //if (hook == null) {
             //throw new NullPointerException("Hook may not be null.");
@@ -518,7 +518,7 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.265 -0400", hash_original_method = "9A4EA06F4CB88B6269FED18A769E865A", hash_generated_method = "7AEE91E4190510ED75A5A144A8539F6C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.342 -0400", hash_original_method = "9A4EA06F4CB88B6269FED18A769E865A", hash_generated_method = "7AEE91E4190510ED75A5A144A8539F6C")
     public void halt(int code) {
         nativeExit(code, false);
         addTaint(code);
@@ -527,27 +527,27 @@ public class Runtime {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.265 -0400", hash_original_method = "1DA5795546617F35E1E74BDB5F5DDD58", hash_generated_method = "C36C7F232BCB5B4F092E764509F0FB0D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.343 -0400", hash_original_method = "1DA5795546617F35E1E74BDB5F5DDD58", hash_generated_method = "DE168D1F07E3AB2D8E6084087C700542")
     public int availableProcessors() {
-        int varE4943BFEE5B34DD0F2833905316968EE_767220513 = ((int) Libcore.os.sysconf(_SC_NPROCESSORS_ONLN));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1430441051 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1430441051;
+        int varE4943BFEE5B34DD0F2833905316968EE_260641018 = ((int) Libcore.os.sysconf(_SC_NPROCESSORS_ONLN));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1258572669 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1258572669;
         // ---------- Original Method ----------
         //return (int) Libcore.os.sysconf(_SC_NPROCESSORS_ONLN);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.266 -0400", hash_original_method = "2D7CF54D0F59DA12C2E5D19C64B23A09", hash_generated_method = "1DD7E5D53EDE155D4E9271EA5DC8DCA2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.343 -0400", hash_original_method = "2D7CF54D0F59DA12C2E5D19C64B23A09", hash_generated_method = "55E9D5CDB2A4EE4DC2B764ED6DA91FA9")
     public long maxMemory() {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_160101782 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_160101782;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1203595460 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1203595460;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.266 -0400", hash_original_field = "64A54F6AA478FD75410DF278F8FCFDFB", hash_generated_field = "B4C08860E5CD7CD9C6324D581AD10E5C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.343 -0400", hash_original_field = "64A54F6AA478FD75410DF278F8FCFDFB", hash_generated_field = "B4C08860E5CD7CD9C6324D581AD10E5C")
 
     private static Runtime mRuntime = new Runtime();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.266 -0400", hash_original_field = "91D2F657B5D6047F292755B5CAE6D9EA", hash_generated_field = "1AEBD11A773D78919BD6052F0FCA4C19")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.343 -0400", hash_original_field = "91D2F657B5D6047F292755B5CAE6D9EA", hash_generated_field = "1AEBD11A773D78919BD6052F0FCA4C19")
 
     private static boolean finalizeOnExit;
 }

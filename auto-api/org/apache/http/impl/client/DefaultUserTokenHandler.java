@@ -20,16 +20,16 @@ import org.apache.http.protocol.HttpContext;
 
 public class DefaultUserTokenHandler implements UserTokenHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.451 -0400", hash_original_method = "55806A67FE4596FA71F9FF04E560BE1C", hash_generated_method = "55806A67FE4596FA71F9FF04E560BE1C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.461 -0400", hash_original_method = "55806A67FE4596FA71F9FF04E560BE1C", hash_generated_method = "55806A67FE4596FA71F9FF04E560BE1C")
     public DefaultUserTokenHandler ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.466 -0400", hash_original_method = "C085E1B104B611601D851A47FC5A6C7D", hash_generated_method = "6B0E58158E00FDF9FEAD600EB77C7859")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.462 -0400", hash_original_method = "C085E1B104B611601D851A47FC5A6C7D", hash_generated_method = "B40C1435189E1E20D93C0CE73260C8B1")
     public Object getUserToken(final HttpContext context) {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1162165884 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_551272053 = null; //Variable for return #1
         Principal userPrincipal;
         userPrincipal = null;
         AuthState targetAuthState;
@@ -49,7 +49,7 @@ public class DefaultUserTokenHandler implements UserTokenHandler {
             conn = (ManagedClientConnection) context.getAttribute(
                     ExecutionContext.HTTP_CONNECTION);
             {
-                boolean var00AF467373E67E3980C8A55D3501BD16_280403285 = (conn.isOpen());
+                boolean var00AF467373E67E3980C8A55D3501BD16_1032425944 = (conn.isOpen());
                 {
                     SSLSession sslsession;
                     sslsession = conn.getSSLSession();
@@ -59,10 +59,10 @@ public class DefaultUserTokenHandler implements UserTokenHandler {
                 } //End block
             } //End collapsed parenthetic
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1162165884 = userPrincipal;
+        varB4EAC82CA7396A68D541C85D26508E83_551272053 = userPrincipal;
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1162165884.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1162165884;
+        varB4EAC82CA7396A68D541C85D26508E83_551272053.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_551272053;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

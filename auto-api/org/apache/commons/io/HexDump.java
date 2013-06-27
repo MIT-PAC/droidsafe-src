@@ -12,7 +12,7 @@ import java.io.OutputStream;
 
 public class HexDump {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.734 -0400", hash_original_method = "DD2FEACFBC451CD61B40E6EB3CDE5668", hash_generated_method = "2D5FB889EB2962854AC6D6EEEAC5CD2F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.907 -0400", hash_original_method = "DD2FEACFBC451CD61B40E6EB3CDE5668", hash_generated_method = "2D5FB889EB2962854AC6D6EEEAC5CD2F")
     public  HexDump() {
         super();
         // ---------- Original Method ----------
@@ -79,15 +79,20 @@ public class HexDump {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.744 -0400", hash_original_field = "619A4408A01F7F66FF2E685DB5C06BCC", hash_generated_field = "A7F0DD505858F5926B10790A390B4BA5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.908 -0400", hash_original_field = "619A4408A01F7F66FF2E685DB5C06BCC", hash_generated_field = "A7F0DD505858F5926B10790A390B4BA5")
 
     public static final String EOL =
             System.getProperty("line.separator");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.744 -0400", hash_original_field = "3F7F231B8DA48C853BB81FF3F4CE12F5", hash_generated_field = "84105A8314BB9B7A769FD233AB965CA3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.908 -0400", hash_original_field = "3F7F231B8DA48C853BB81FF3F4CE12F5", hash_generated_field = "EC0E9E4D219288135373E127990BB991")
 
-    private static char[] _hexcodes = ;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.744 -0400", hash_original_field = "27A3C131835C3B6CA802321ED3F58CCF", hash_generated_field = "56ED9621A60D25C81D401A3BA4A5E5D7")
+    private static char[] _hexcodes = {
+                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                'A', 'B', 'C', 'D', 'E', 'F'
+            };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.908 -0400", hash_original_field = "27A3C131835C3B6CA802321ED3F58CCF", hash_generated_field = "BC151A71CEC62E4296DA37DBB90E052B")
 
-    private static int[] _shifts = ;
+    private static int[] _shifts = {
+                28, 24, 20, 16, 12, 8, 4, 0
+            };
 }
 

@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public final class LangUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.461 -0400", hash_original_method = "BC85A4AC258097A2ABE3F2013DFA665D", hash_generated_method = "0E018D83B4375A17854C491F261E03A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.587 -0400", hash_original_method = "BC85A4AC258097A2ABE3F2013DFA665D", hash_generated_method = "0E018D83B4375A17854C491F261E03A8")
     private  LangUtils() {
         // ---------- Original Method ----------
     }
@@ -58,10 +58,10 @@ public final class LangUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.480 -0400", hash_original_field = "3BA42A17CF3E87F4D3AF7868A72A2240", hash_generated_field = "25B02BFACC7EA9B56C306C172298DCD8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.594 -0400", hash_original_field = "3BA42A17CF3E87F4D3AF7868A72A2240", hash_generated_field = "25B02BFACC7EA9B56C306C172298DCD8")
 
     public static final int HASH_SEED = 17;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.480 -0400", hash_original_field = "F4D62A4DEF335A94D9905EA2BBF28FC9", hash_generated_field = "E21D1BF64F0022132172445B51E097C8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.594 -0400", hash_original_field = "F4D62A4DEF335A94D9905EA2BBF28FC9", hash_generated_field = "E21D1BF64F0022132172445B51E097C8")
 
     public static final int HASH_OFFSET = 37;
 }

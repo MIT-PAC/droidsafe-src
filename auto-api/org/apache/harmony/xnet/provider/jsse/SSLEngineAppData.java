@@ -11,17 +11,17 @@ import java.nio.ByteBuffer;
 import javax.net.ssl.SSLException;
 
 public class SSLEngineAppData implements org.apache.harmony.xnet.provider.jsse.Appendable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.553 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "3923F3F9F9ECABE8D28493E863FC2CD8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.322 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "3923F3F9F9ECABE8D28493E863FC2CD8")
 
     byte[] buffer;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.553 -0400", hash_original_method = "06EACE6E653645104AEC16265D727782", hash_generated_method = "A265DEAC1EBA95E175EB1A0A29A2449C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.322 -0400", hash_original_method = "06EACE6E653645104AEC16265D727782", hash_generated_method = "A265DEAC1EBA95E175EB1A0A29A2449C")
     protected  SSLEngineAppData() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.553 -0400", hash_original_method = "452DC75F155E1CC98FB8D0CBD4BB0B6D", hash_generated_method = "9679A51BFFC84A3E1928B18708C94EEE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.323 -0400", hash_original_method = "452DC75F155E1CC98FB8D0CBD4BB0B6D", hash_generated_method = "9679A51BFFC84A3E1928B18708C94EEE")
     public void append(byte[] src) {
         {
             if (DroidSafeAndroidRuntime.control) throw new AlertException(
@@ -39,7 +39,7 @@ public class SSLEngineAppData implements org.apache.harmony.xnet.provider.jsse.A
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.555 -0400", hash_original_method = "26A62B68A47AD8599D541EA0EB845FD0", hash_generated_method = "6F840C4E2982397DC707DB461FF5F8A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.336 -0400", hash_original_method = "26A62B68A47AD8599D541EA0EB845FD0", hash_generated_method = "8F172FBC156BFC5EFFBA9C0628EAE190")
     protected int placeTo(ByteBuffer[] dsts, int offset, int length) {
         int pos;
         pos = 0;
@@ -70,8 +70,8 @@ public class SSLEngineAppData implements org.apache.harmony.xnet.provider.jsse.A
         addTaint(dsts[0].getTaint());
         addTaint(offset);
         addTaint(length);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_907191726 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_907191726;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_44759280 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_44759280;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

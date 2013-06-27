@@ -12,7 +12,7 @@ import java.util.Collection;
 
 public class ArrayUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.031 -0400", hash_original_method = "43AFEF6A809467B8D7C7F671BE94BA32", hash_generated_method = "C31BA8013CD1B4E5DD8E143F798814CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.353 -0400", hash_original_method = "43AFEF6A809467B8D7C7F671BE94BA32", hash_generated_method = "C31BA8013CD1B4E5DD8E143F798814CA")
     private  ArrayUtils() {
         // ---------- Original Method ----------
     }
@@ -113,13 +113,13 @@ public class ArrayUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.040 -0400", hash_original_field = "29B703ACBB9AD25AEF5009A0607792DF", hash_generated_field = "CBCBEA4E00AB156D53E8DE38652C837E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.355 -0400", hash_original_field = "29B703ACBB9AD25AEF5009A0607792DF", hash_generated_field = "CBCBEA4E00AB156D53E8DE38652C837E")
 
     private static Object[] EMPTY = new Object[0];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.040 -0400", hash_original_field = "4A01C4C4ED3CD14A1D7897F8E92E5430", hash_generated_field = "968B8140D2ED8657942A9A640B15BBFA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.374 -0400", hash_original_field = "4A01C4C4ED3CD14A1D7897F8E92E5430", hash_generated_field = "968B8140D2ED8657942A9A640B15BBFA")
 
     private static int CACHE_SIZE = 73;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.044 -0400", hash_original_field = "3C6439824DAF4ABE939B8A6B4B36D0E7", hash_generated_field = "6DA94EC2F9AC0A3F496BD3D98ACB6E01")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.374 -0400", hash_original_field = "3C6439824DAF4ABE939B8A6B4B36D0E7", hash_generated_field = "6DA94EC2F9AC0A3F496BD3D98ACB6E01")
 
     private static Object[] sCache = new Object[CACHE_SIZE];
 }

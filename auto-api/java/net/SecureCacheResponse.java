@@ -14,7 +14,7 @@ import javax.net.ssl.SSLPeerUnverifiedException;
 
 public abstract class SecureCacheResponse extends CacheResponse {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.754 -0400", hash_original_method = "2B60842F322CE42A5832F1BBB0BB3BBC", hash_generated_method = "14E16CBBA191C94EBFE2CC1A18224220")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.869 -0400", hash_original_method = "2B60842F322CE42A5832F1BBB0BB3BBC", hash_generated_method = "14E16CBBA191C94EBFE2CC1A18224220")
     public  SecureCacheResponse() {
         // ---------- Original Method ----------
     }

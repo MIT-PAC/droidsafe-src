@@ -11,7 +11,7 @@ import java.util.Random;
 
 public final class Math {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.046 -0400", hash_original_method = "0273784C246265D2ED8DEE21631953AB", hash_generated_method = "78B9D931D5E71470A5832EAA02F41698")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.111 -0400", hash_original_method = "0273784C246265D2ED8DEE21631953AB", hash_generated_method = "78B9D931D5E71470A5832EAA02F41698")
     private  Math() {
         // ---------- Original Method ----------
     }
@@ -580,13 +580,13 @@ public final class Math {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.111 -0400", hash_original_field = "81D72EDD8724627525B16222A6EE30E9", hash_generated_field = "76C0B861A937FF04B12C48BD79B20BDE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.183 -0400", hash_original_field = "81D72EDD8724627525B16222A6EE30E9", hash_generated_field = "76C0B861A937FF04B12C48BD79B20BDE")
 
     public static final double E = 2.718281828459045;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.111 -0400", hash_original_field = "AAC9BFF077D3AB0FC824AF3464B50C74", hash_generated_field = "FDBC076D774B74F039A18556D6342FEC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.184 -0400", hash_original_field = "AAC9BFF077D3AB0FC824AF3464B50C74", hash_generated_field = "FDBC076D774B74F039A18556D6342FEC")
 
     public static final double PI = 3.141592653589793;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.112 -0400", hash_original_field = "7DDF32E17A6AC5CE04A8ECBF782CA509", hash_generated_field = "4574226C6A992CD5F43E1273AEA83087")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.184 -0400", hash_original_field = "7DDF32E17A6AC5CE04A8ECBF782CA509", hash_generated_field = "4574226C6A992CD5F43E1273AEA83087")
 
     private static Random random;
 }

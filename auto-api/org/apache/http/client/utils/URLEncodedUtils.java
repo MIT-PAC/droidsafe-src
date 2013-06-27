@@ -25,7 +25,7 @@ import org.apache.http.util.EntityUtils;
 
 public class URLEncodedUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.210 -0400", hash_original_method = "81DBDF8E46C8CBBC080FA6A7719DA672", hash_generated_method = "81DBDF8E46C8CBBC080FA6A7719DA672")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.094 -0400", hash_original_method = "81DBDF8E46C8CBBC080FA6A7719DA672", hash_generated_method = "81DBDF8E46C8CBBC080FA6A7719DA672")
     public URLEncodedUtils ()
     {
         //Synthesized constructor
@@ -121,13 +121,13 @@ public class URLEncodedUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.243 -0400", hash_original_field = "E5475157C74498E74A568469421CA731", hash_generated_field = "CA39D07C989D4F189D6186A6BE8AC2A2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.112 -0400", hash_original_field = "E5475157C74498E74A568469421CA731", hash_generated_field = "CA39D07C989D4F189D6186A6BE8AC2A2")
 
     public static final String CONTENT_TYPE = "application/x-www-form-urlencoded";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.247 -0400", hash_original_field = "F835064E8AD0EB0A2D73B235E96ADEAA", hash_generated_field = "3DD3590CE7A2AA7D6399B8BDE25A3AF9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.112 -0400", hash_original_field = "F835064E8AD0EB0A2D73B235E96ADEAA", hash_generated_field = "3DD3590CE7A2AA7D6399B8BDE25A3AF9")
 
     private static String PARAMETER_SEPARATOR = "&";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.247 -0400", hash_original_field = "536C8846926768148DFB5EDE60D2D360", hash_generated_field = "F9CE5D83C4FD4DE7687D1A6031184B60")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.112 -0400", hash_original_field = "536C8846926768148DFB5EDE60D2D360", hash_generated_field = "F9CE5D83C4FD4DE7687D1A6031184B60")
 
     private static String NAME_VALUE_SEPARATOR = "=";
 }

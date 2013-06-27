@@ -17,7 +17,7 @@ import android.widget.SearchView.OnQueryTextListener;
 
 class SearchViewCompatHoneycomb {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:34.424 -0400", hash_original_method = "A2C9697EF9D9271A85E01FB1EA533B3D", hash_generated_method = "A2C9697EF9D9271A85E01FB1EA533B3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:36.019 -0400", hash_original_method = "A2C9697EF9D9271A85E01FB1EA533B3D", hash_generated_method = "A2C9697EF9D9271A85E01FB1EA533B3D")
     public SearchViewCompatHoneycomb ()
     {
         //Synthesized constructor

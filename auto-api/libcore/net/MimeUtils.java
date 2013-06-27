@@ -17,7 +17,7 @@ import java.util.Properties;
 
 public final class MimeUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.374 -0400", hash_original_method = "4573469ED61E6670894E512E558CEEE0", hash_generated_method = "A4660306B18E6B2B3A8E8D9DE7F28302")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.763 -0400", hash_original_method = "4573469ED61E6670894E512E558CEEE0", hash_generated_method = "A4660306B18E6B2B3A8E8D9DE7F28302")
     private  MimeUtils() {
         // ---------- Original Method ----------
     }
@@ -107,10 +107,10 @@ public final class MimeUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.376 -0400", hash_original_field = "07933D583F1502FF2767DB6CF9A5812D", hash_generated_field = "FAFAB7F3F98B37195BF68F350FF788B5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.790 -0400", hash_original_field = "07933D583F1502FF2767DB6CF9A5812D", hash_generated_field = "FAFAB7F3F98B37195BF68F350FF788B5")
 
     private static Map<String, String> mimeTypeToExtensionMap = new HashMap<String, String>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:03.376 -0400", hash_original_field = "C471A4169EC6FD28B2B962C7E38FFCEE", hash_generated_field = "7A14E0FD9D4B918FED760FA5D8E2A805")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:04.790 -0400", hash_original_field = "C471A4169EC6FD28B2B962C7E38FFCEE", hash_generated_field = "7A14E0FD9D4B918FED760FA5D8E2A805")
 
     private static Map<String, String> extensionToMimeTypeMap = new HashMap<String, String>();
     static {

@@ -23,17 +23,17 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.util.CharArrayBuffer;
 
 public class DefaultResponseParser extends AbstractMessageParser {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.684 -0400", hash_original_field = "231DD88D1D24FBAC95F5FF27F7E132D5", hash_generated_field = "617CD99CE3703350A89163AF27F85CC2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.769 -0400", hash_original_field = "231DD88D1D24FBAC95F5FF27F7E132D5", hash_generated_field = "617CD99CE3703350A89163AF27F85CC2")
 
     private HttpResponseFactory responseFactory;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.684 -0400", hash_original_field = "DD77BBE950DCBAAE75A78BE6835B370C", hash_generated_field = "138A98BD7AF16A46911F2E280FBA40A5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.769 -0400", hash_original_field = "DD77BBE950DCBAAE75A78BE6835B370C", hash_generated_field = "138A98BD7AF16A46911F2E280FBA40A5")
 
     private CharArrayBuffer lineBuf;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.684 -0400", hash_original_field = "ADCD3DA3E4B07BDF3BF1597A7B6425F0", hash_generated_field = "A0439754C86F54D18933BCE41E68B66E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.769 -0400", hash_original_field = "ADCD3DA3E4B07BDF3BF1597A7B6425F0", hash_generated_field = "A0439754C86F54D18933BCE41E68B66E")
 
     private int maxGarbageLines;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.695 -0400", hash_original_method = "9FE3A37335F8238651919EE9ABE222C5", hash_generated_method = "2FA0AD3A51B333254F7217C889EC508B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.769 -0400", hash_original_method = "9FE3A37335F8238651919EE9ABE222C5", hash_generated_method = "2FA0AD3A51B333254F7217C889EC508B")
     public  DefaultResponseParser(
             final SessionInputBuffer buffer,
             final LineParser parser,
@@ -62,11 +62,11 @@ public class DefaultResponseParser extends AbstractMessageParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.696 -0400", hash_original_method = "C18012C1F40BC670B50816FED9E30E72", hash_generated_method = "608AA35ECA0F8C2E48078B6C9929B4CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.776 -0400", hash_original_method = "C18012C1F40BC670B50816FED9E30E72", hash_generated_method = "9E03052D8019121C4B1093A6B6E85EAB")
     @Override
     protected HttpMessage parseHead(
             final SessionInputBuffer sessionBuffer) throws IOException, HttpException {
-        HttpMessage varB4EAC82CA7396A68D541C85D26508E83_1362700993 = null; //Variable for return #1
+        HttpMessage varB4EAC82CA7396A68D541C85D26508E83_2067599301 = null; //Variable for return #1
         this.lineBuf.clear();
         int count;
         count = 0;
@@ -80,7 +80,7 @@ public class DefaultResponseParser extends AbstractMessageParser {
             } //End block
             cursor = new ParserCursor(0, this.lineBuf.length());
             {
-                boolean var5AC484C239E6FF2F638CBF0BDF14EAC2_1128729720 = (lineParser.hasProtocolVersion(this.lineBuf, cursor));
+                boolean var5AC484C239E6FF2F638CBF0BDF14EAC2_1553854595 = (lineParser.hasProtocolVersion(this.lineBuf, cursor));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ProtocolException("The server failed to respond with a " +
                         "valid HTTP response");
@@ -89,10 +89,10 @@ public class DefaultResponseParser extends AbstractMessageParser {
         } //End block
         StatusLine statusline;
         statusline = lineParser.parseStatusLine(this.lineBuf, cursor);
-        varB4EAC82CA7396A68D541C85D26508E83_1362700993 = this.responseFactory.newHttpResponse(statusline, null);
+        varB4EAC82CA7396A68D541C85D26508E83_2067599301 = this.responseFactory.newHttpResponse(statusline, null);
         addTaint(sessionBuffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1362700993.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1362700993;
+        varB4EAC82CA7396A68D541C85D26508E83_2067599301.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2067599301;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

@@ -10,26 +10,26 @@ import java.util.Iterator;
 import com.android.internal.util.ArrayUtils;
 
 class PackedIntVector {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.833 -0400", hash_original_field = "11C985F30142FD30ACDDFE7CD3BD4A9B", hash_generated_field = "75F4039C98FB52077D38E34F530EB3FF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.365 -0400", hash_original_field = "11C985F30142FD30ACDDFE7CD3BD4A9B", hash_generated_field = "75F4039C98FB52077D38E34F530EB3FF")
 
     private int mColumns;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.834 -0400", hash_original_field = "839FCD25B196D1E9D74989EB7586909A", hash_generated_field = "18B06BC67D1393EDA8ED9BB923EF7CD3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.365 -0400", hash_original_field = "839FCD25B196D1E9D74989EB7586909A", hash_generated_field = "18B06BC67D1393EDA8ED9BB923EF7CD3")
 
     private int mRows;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.835 -0400", hash_original_field = "717D446B0EDDE3F55A9FB9E6279E6014", hash_generated_field = "EA98696F1B775619308B0863F513F9F1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.365 -0400", hash_original_field = "717D446B0EDDE3F55A9FB9E6279E6014", hash_generated_field = "EA98696F1B775619308B0863F513F9F1")
 
     private int mRowGapStart;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.835 -0400", hash_original_field = "2765BE84E84BC9CBE3B823946D881A10", hash_generated_field = "EB5D193EB3BD0BD6791276EC10232CBE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.366 -0400", hash_original_field = "2765BE84E84BC9CBE3B823946D881A10", hash_generated_field = "EB5D193EB3BD0BD6791276EC10232CBE")
 
     private int mRowGapLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.835 -0400", hash_original_field = "90BFF6F4E8E62CBC2DC12A9ACE468001", hash_generated_field = "99CDF6DB2A492E619A6F25FAC593741C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.366 -0400", hash_original_field = "90BFF6F4E8E62CBC2DC12A9ACE468001", hash_generated_field = "99CDF6DB2A492E619A6F25FAC593741C")
 
     private int[] mValues;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.835 -0400", hash_original_field = "49FB44D57F23EE2C95BAA3838BB33FA5", hash_generated_field = "8A8172715F1B9899286D01C54C2B982A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.366 -0400", hash_original_field = "49FB44D57F23EE2C95BAA3838BB33FA5", hash_generated_field = "8A8172715F1B9899286D01C54C2B982A")
 
     private int[] mValueGap;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.838 -0400", hash_original_method = "49572B82831972D93E19442EBCB45603", hash_generated_method = "6DCB4BA64977301CCE79D34F3045D8C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.366 -0400", hash_original_method = "49572B82831972D93E19442EBCB45603", hash_generated_method = "6DCB4BA64977301CCE79D34F3045D8C8")
     public  PackedIntVector(int columns) {
         mColumns = columns;
         mRows = 0;
@@ -47,12 +47,12 @@ class PackedIntVector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.854 -0400", hash_original_method = "127603F69B46B56B0057C44974C5D0F5", hash_generated_method = "72263483BEE3EB1A7927F51092430472")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.383 -0400", hash_original_method = "127603F69B46B56B0057C44974C5D0F5", hash_generated_method = "8FD9A0882C1155892291BE0F6ED61106")
     public int getValue(int row, int column) {
         int columns;
         columns = mColumns;
         {
-            boolean var2A4A8D030010DB622499908914125EFE_230718421 = (((row | column) < 0) || (row >= size()) || (column >= columns));
+            boolean var2A4A8D030010DB622499908914125EFE_664027883 = (((row | column) < 0) || (row >= size()) || (column >= columns));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(row + ", " + column);
             } //End block
@@ -69,8 +69,8 @@ class PackedIntVector {
         } //End block
         addTaint(row);
         addTaint(column);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1684988638 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1684988638;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_463213893 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_463213893;
         // ---------- Original Method ----------
         //final int columns = mColumns;
         //if (((row | column) < 0) || (row >= size()) || (column >= columns)) {
@@ -88,10 +88,10 @@ class PackedIntVector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.855 -0400", hash_original_method = "DF9491EC74B5A8AD3F1F814A7288BD27", hash_generated_method = "F199ABF8CBF64B2513F92271E1A70D40")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.384 -0400", hash_original_method = "DF9491EC74B5A8AD3F1F814A7288BD27", hash_generated_method = "6B30A8DA3048B8D49E90D79C80E8DFE1")
     public void setValue(int row, int column, int value) {
         {
-            boolean varC707DA84CAF21DF47BA9EF5117D73FA2_1298954311 = (((row | column) < 0) || (row >= size()) || (column >= mColumns));
+            boolean varC707DA84CAF21DF47BA9EF5117D73FA2_1116638316 = (((row | column) < 0) || (row >= size()) || (column >= mColumns));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(row + ", " + column);
             } //End block
@@ -120,7 +120,7 @@ class PackedIntVector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.856 -0400", hash_original_method = "339196B1319A98FF890A6A44D9B8F936", hash_generated_method = "E6C728429BBFB5A65280D34A67C9BA31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.387 -0400", hash_original_method = "339196B1319A98FF890A6A44D9B8F936", hash_generated_method = "E6C728429BBFB5A65280D34A67C9BA31")
     private void setValueInternal(int row, int column, int value) {
         {
             row += mRowGapLength;
@@ -143,10 +143,10 @@ class PackedIntVector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.856 -0400", hash_original_method = "717B6A8B8BE261E23908EA9C8BC6E7EA", hash_generated_method = "AB0EBF983298455D64FA8BEDAD30AD45")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.392 -0400", hash_original_method = "717B6A8B8BE261E23908EA9C8BC6E7EA", hash_generated_method = "50494031DFDF2CCF0600A214B935F2C5")
     public void adjustValuesBelow(int startRow, int column, int delta) {
         {
-            boolean var9F9858628E569DC62C736458BF03F43D_1143896163 = (((startRow | column) < 0) || (startRow > size()) ||
+            boolean var9F9858628E569DC62C736458BF03F43D_1746351571 = (((startRow | column) < 0) || (startRow > size()) ||
                 (column >= width()));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(startRow + ", " + column);
@@ -171,16 +171,16 @@ class PackedIntVector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.870 -0400", hash_original_method = "6AE5D8E6865DDCD084B3272F01FD2E51", hash_generated_method = "C814B1B76B04D988DF55CA81C0CB7D34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.397 -0400", hash_original_method = "6AE5D8E6865DDCD084B3272F01FD2E51", hash_generated_method = "E7601D15CB03A2A60862737B1ACD89A7")
     public void insertAt(int row, int[] values) {
         {
-            boolean var1B727FC6E9C960A0A368AF6437037F86_1788960888 = ((row < 0) || (row > size()));
+            boolean var1B727FC6E9C960A0A368AF6437037F86_1351815003 = ((row < 0) || (row > size()));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("row " + row);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var211F855C0462B858E40BD8187D92C309_1076340166 = ((values != null) && (values.length < width()));
+            boolean var211F855C0462B858E40BD8187D92C309_1183012732 = ((values != null) && (values.length < width()));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException("value count " + values.length);
             } //End block
@@ -234,10 +234,10 @@ class PackedIntVector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.875 -0400", hash_original_method = "29D77D40DB4AFADA133299814B25205C", hash_generated_method = "8EE96F4C15A27B1C1E63323292C037B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.409 -0400", hash_original_method = "29D77D40DB4AFADA133299814B25205C", hash_generated_method = "11F46C892027F6152ABCCB61CAC82F2D")
     public void deleteAt(int row, int count) {
         {
-            boolean var0B06188E919776FA771A4738B64DB932_620020927 = (((row | count) < 0) || (row + count > size()));
+            boolean var0B06188E919776FA771A4738B64DB932_391641869 = (((row | count) < 0) || (row + count > size()));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException(row + ", " + count);
             } //End block
@@ -256,25 +256,25 @@ class PackedIntVector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.876 -0400", hash_original_method = "A7F055B05F3BF0E7B9EF67A5904EF45B", hash_generated_method = "180CF4A5A5DAAAEE67A12E04056280C0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.410 -0400", hash_original_method = "A7F055B05F3BF0E7B9EF67A5904EF45B", hash_generated_method = "894C72A56F8A55F9CC01423F709D9A8C")
     public int size() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_429427022 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_429427022;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_844773398 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_844773398;
         // ---------- Original Method ----------
         //return mRows - mRowGapLength;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.876 -0400", hash_original_method = "00C81AD9ACCD847707085D62472884FD", hash_generated_method = "EB49D7F01DA1DE207CC33CA69B1BA12C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.411 -0400", hash_original_method = "00C81AD9ACCD847707085D62472884FD", hash_generated_method = "AEC2F71520E40B5B2D08EF5277E81177")
     public int width() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1914156862 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1914156862;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1361444396 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1361444396;
         // ---------- Original Method ----------
         //return mColumns;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.891 -0400", hash_original_method = "B5C941269BF1E9CDD155EBF5B7D0DBA9", hash_generated_method = "98E7AEB4CED8CF667F2640C1FC104678")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.417 -0400", hash_original_method = "B5C941269BF1E9CDD155EBF5B7D0DBA9", hash_generated_method = "98E7AEB4CED8CF667F2640C1FC104678")
     private final void growBuffer() {
         int columns;
         columns = mColumns;
@@ -315,7 +315,7 @@ class PackedIntVector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.892 -0400", hash_original_method = "6D74A2161397D319519D26FF483664C7", hash_generated_method = "043DDBED7368B9772919D3C981CAB2EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.421 -0400", hash_original_method = "6D74A2161397D319519D26FF483664C7", hash_generated_method = "043DDBED7368B9772919D3C981CAB2EB")
     private final void moveValueGapTo(int column, int where) {
         int[] valuegap;
         valuegap = mValueGap;
@@ -363,7 +363,7 @@ class PackedIntVector {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.900 -0400", hash_original_method = "6D396DEEC3DAD541F2D5DA5D46CC7D37", hash_generated_method = "FB89000DF4B6199190E3A7158F186F7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.444 -0400", hash_original_method = "6D396DEEC3DAD541F2D5DA5D46CC7D37", hash_generated_method = "FB89000DF4B6199190E3A7158F186F7A")
     private final void moveRowGapTo(int where) {
         {
             int moving;

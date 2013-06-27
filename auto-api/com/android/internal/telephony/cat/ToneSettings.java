@@ -11,17 +11,17 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ToneSettings implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.065 -0400", hash_original_field = "B85EC314BF443B797EF8A66B3B03F8A4", hash_generated_field = "F627176E1C35421D662BC9D4AD138316")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.602 -0400", hash_original_field = "B85EC314BF443B797EF8A66B3B03F8A4", hash_generated_field = "F627176E1C35421D662BC9D4AD138316")
 
     public Duration duration;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.065 -0400", hash_original_field = "F303F9A15CDDBE8EE0296511A8B04B30", hash_generated_field = "EB3E719105B196E3B2D9B760B5FAACD1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.602 -0400", hash_original_field = "F303F9A15CDDBE8EE0296511A8B04B30", hash_generated_field = "EB3E719105B196E3B2D9B760B5FAACD1")
 
     public Tone tone;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.065 -0400", hash_original_field = "FEE5781595FD04E19BD18B17AAFAAE5A", hash_generated_field = "DDF27BF2683D75AD38AE982C8B9BF193")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.602 -0400", hash_original_field = "FEE5781595FD04E19BD18B17AAFAAE5A", hash_generated_field = "DDF27BF2683D75AD38AE982C8B9BF193")
 
     public boolean vibrate;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.066 -0400", hash_original_method = "1758CDE2435E3198DD1711D15D7C0A67", hash_generated_method = "F70DF0CEC8CCBFBB2C4D6F73B3AD40B8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.603 -0400", hash_original_method = "1758CDE2435E3198DD1711D15D7C0A67", hash_generated_method = "F70DF0CEC8CCBFBB2C4D6F73B3AD40B8")
     public  ToneSettings(Duration duration, Tone tone, boolean vibrate) {
         this.duration = duration;
         this.tone = tone;
@@ -33,7 +33,7 @@ public class ToneSettings implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.071 -0400", hash_original_method = "BF14929F27F95EDB5212CB812386B849", hash_generated_method = "8EFB16314C3E7CA96E51A335C785F39B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.603 -0400", hash_original_method = "BF14929F27F95EDB5212CB812386B849", hash_generated_method = "8EFB16314C3E7CA96E51A335C785F39B")
     private  ToneSettings(Parcel in) {
         duration = in.readParcelable(null);
         tone = in.readParcelable(null);
@@ -45,16 +45,16 @@ public class ToneSettings implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.071 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3C0AA77B763135B3BC1AE0425FD727DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.603 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FB1E66C80C3EB15AFF825116DEDE2054")
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1329823978 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1329823978;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1733852667 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1733852667;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.076 -0400", hash_original_method = "A5E63ABB35658FAF6D2AA5EF55230C8C", hash_generated_method = "F3769C03D28FAA24CB2275B8E5CE5AE1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.604 -0400", hash_original_method = "A5E63ABB35658FAF6D2AA5EF55230C8C", hash_generated_method = "F3769C03D28FAA24CB2275B8E5CE5AE1")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeParcelable(duration, 0);
         dest.writeParcelable(tone, 0);
@@ -68,7 +68,7 @@ public class ToneSettings implements Parcelable {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.076 -0400", hash_original_field = "006B52A6764FB6E11133906A413EC74A", hash_generated_field = "FABADDC48937C3190B4F868CEBE56675")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.604 -0400", hash_original_field = "006B52A6764FB6E11133906A413EC74A", hash_generated_field = "FABADDC48937C3190B4F868CEBE56675")
 
     public static final Parcelable.Creator<ToneSettings> CREATOR = new Parcelable.Creator<ToneSettings>() {
         public ToneSettings createFromParcel(Parcel in) {

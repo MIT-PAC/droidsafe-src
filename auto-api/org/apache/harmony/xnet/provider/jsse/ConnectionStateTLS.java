@@ -17,17 +17,17 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.net.ssl.SSLProtocolException;
 
 public class ConnectionStateTLS extends ConnectionState {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.915 -0400", hash_original_field = "E0BC9005FCA6DD6D01FDAF621E6B05BF", hash_generated_field = "8EFC7A4F1C288592B3AB26CC617B3592")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.772 -0400", hash_original_field = "E0BC9005FCA6DD6D01FDAF621E6B05BF", hash_generated_field = "8EFC7A4F1C288592B3AB26CC617B3592")
 
     private Mac encMac;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.916 -0400", hash_original_field = "84C3A68C014535ADCE9C7C0179A1EB44", hash_generated_field = "51E887829C16E119E6B76A07E982A6A6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.772 -0400", hash_original_field = "84C3A68C014535ADCE9C7C0179A1EB44", hash_generated_field = "51E887829C16E119E6B76A07E982A6A6")
 
     private Mac decMac;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.916 -0400", hash_original_field = "F119236CA59ECCBFFA641A3A68808615", hash_generated_field = "E364DDD13A180721EE5CD83B799348E0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.772 -0400", hash_original_field = "F119236CA59ECCBFFA641A3A68808615", hash_generated_field = "E364DDD13A180721EE5CD83B799348E0")
 
     private byte[] mac_material_header = new byte[] {0, 3, 1, 0, 0};
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.932 -0400", hash_original_method = "983E273AE559F45D4EDE298176308BF7", hash_generated_method = "A0FB42CF46462D6B7669136CC835C807")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.795 -0400", hash_original_method = "983E273AE559F45D4EDE298176308BF7", hash_generated_method = "A0FB42CF46462D6B7669136CC835C807")
     protected  ConnectionStateTLS(SSLSessionImpl session) {
         try 
         {
@@ -189,7 +189,7 @@ public class ConnectionStateTLS extends ConnectionState {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.944 -0400", hash_original_method = "B9B8901A6530A5AA902AF1AE1DCFF588", hash_generated_method = "DA86B6861ED085194CB7064F7989950F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.811 -0400", hash_original_method = "B9B8901A6530A5AA902AF1AE1DCFF588", hash_generated_method = "46F0DD81DDCC714D8422E7EC67AFB125")
     @Override
     protected byte[] encrypt(byte type, byte[] fragment, int offset, int len) {
         try 
@@ -233,14 +233,14 @@ public class ConnectionStateTLS extends ConnectionState {
         } //End block
         addTaint(fragment[0]);
         addTaint(offset);
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_198139101 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_198139101;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_753650325 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_753650325;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.953 -0400", hash_original_method = "A0319C4335A825139157822F68CBECCE", hash_generated_method = "AAA66C35B9AB775E79B1E8BB79163EB7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.813 -0400", hash_original_method = "A0319C4335A825139157822F68CBECCE", hash_generated_method = "16334C51578B9302D4AC144BCBD9341A")
     @Override
     protected byte[] decrypt(byte type, byte[] fragment,
             int offset, int len) {
@@ -296,24 +296,37 @@ public class ConnectionStateTLS extends ConnectionState {
         addTaint(fragment[0]);
         addTaint(offset);
         addTaint(len);
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1652741249 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1652741249;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_469447398 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_469447398;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.953 -0400", hash_original_field = "0E2A504262552D9749CD1373F8A09D99", hash_generated_field = "66981A4FF9F53755909FBD1327C4F999")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.817 -0400", hash_original_field = "0E2A504262552D9749CD1373F8A09D99", hash_generated_field = "19434D3E92AD7E414CBA841F27ED54E4")
 
-    private static byte[] KEY_EXPANSION_LABEL = ;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.953 -0400", hash_original_field = "12289A14F46830DC4B2848515395FF0A", hash_generated_field = "7E1AEDF1E0558D47B4BDE505E854D909")
+    private static byte[] KEY_EXPANSION_LABEL = {
+        (byte) 0x6B, (byte) 0x65, (byte) 0x79, (byte) 0x20, (byte) 0x65,
+        (byte) 0x78, (byte) 0x70, (byte) 0x61, (byte) 0x6E, (byte) 0x73,
+        (byte) 0x69, (byte) 0x6F, (byte) 0x6E };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.817 -0400", hash_original_field = "12289A14F46830DC4B2848515395FF0A", hash_generated_field = "03141D4442DE03CB1D96006A96ECABC7")
 
-    private static byte[] CLIENT_WRITE_KEY_LABEL = ;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.953 -0400", hash_original_field = "DC0BC54E0907B08B214623058A3F6592", hash_generated_field = "B8AB876E73DE219F32A846B6DD0128B9")
+    private static byte[] CLIENT_WRITE_KEY_LABEL = {
+        (byte) 0x63, (byte) 0x6C, (byte) 0x69, (byte) 0x65, (byte) 0x6E,
+        (byte) 0x74, (byte) 0x20, (byte) 0x77, (byte) 0x72, (byte) 0x69,
+        (byte) 0x74, (byte) 0x65, (byte) 0x20, (byte) 0x6B, (byte) 0x65,
+        (byte) 0x79 };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.817 -0400", hash_original_field = "DC0BC54E0907B08B214623058A3F6592", hash_generated_field = "2187DB19BDC5CED9C76C076C88F0005A")
 
-    private static byte[] SERVER_WRITE_KEY_LABEL = ;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:11.953 -0400", hash_original_field = "E696196A19942D342CC87A22753A2C19", hash_generated_field = "5602F48B82836D195D5349D628731015")
+    private static byte[] SERVER_WRITE_KEY_LABEL = {
+        (byte) 0x73, (byte) 0x65, (byte) 0x72, (byte) 0x76, (byte) 0x65,
+        (byte) 0x72, (byte) 0x20, (byte) 0x77, (byte) 0x72, (byte) 0x69,
+        (byte) 0x74, (byte) 0x65, (byte) 0x20, (byte) 0x6B, (byte) 0x65,
+        (byte) 0x79 };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.817 -0400", hash_original_field = "E696196A19942D342CC87A22753A2C19", hash_generated_field = "BDE6D8351AF1668167AEDB127CBA6E19")
 
-    private static byte[] IV_BLOCK_LABEL = ;
+    private static byte[] IV_BLOCK_LABEL = {
+        (byte) 0x49, (byte) 0x56, (byte) 0x20, (byte) 0x62, (byte) 0x6C,
+        (byte) 0x6F, (byte) 0x63, (byte) 0x6B };
 }
 

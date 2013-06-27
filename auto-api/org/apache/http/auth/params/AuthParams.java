@@ -12,7 +12,7 @@ import org.apache.http.protocol.HTTP;
 
 public final class AuthParams {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.823 -0400", hash_original_method = "EB9D982BD9B9623A4B896B6B8960ED16", hash_generated_method = "E97EEB74B9E097B6DD9930287DD2A388")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.791 -0400", hash_original_method = "EB9D982BD9B9623A4B896B6B8960ED16", hash_generated_method = "E97EEB74B9E097B6DD9930287DD2A388")
     private  AuthParams() {
         super();
         // ---------- Original Method ----------

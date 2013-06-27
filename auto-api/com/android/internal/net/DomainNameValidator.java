@@ -21,7 +21,7 @@ import javax.security.auth.x500.X500Principal;
 
 public class DomainNameValidator {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.303 -0400", hash_original_method = "C5190347A8092226EE089C86AEE611D1", hash_generated_method = "C5190347A8092226EE089C86AEE611D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.693 -0400", hash_original_method = "C5190347A8092226EE089C86AEE611D1", hash_generated_method = "C5190347A8092226EE089C86AEE611D1")
     public DomainNameValidator ()
     {
         //Synthesized constructor
@@ -194,19 +194,19 @@ public class DomainNameValidator {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.325 -0400", hash_original_field = "16845E8E4DE531A87BF4CC1D2DC4F08E", hash_generated_field = "CE08A99DC01957DF0CEF867DFE95F1E2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.716 -0400", hash_original_field = "16845E8E4DE531A87BF4CC1D2DC4F08E", hash_generated_field = "CE08A99DC01957DF0CEF867DFE95F1E2")
 
     private static String TAG = "DomainNameValidator";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.325 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.716 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
 
     private static boolean DEBUG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.325 -0400", hash_original_field = "2600CAE892D7C6A21DB7F1CB3CE2784F", hash_generated_field = "2D9F1E0898B218699C20506F308160C2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.716 -0400", hash_original_field = "2600CAE892D7C6A21DB7F1CB3CE2784F", hash_generated_field = "2D9F1E0898B218699C20506F308160C2")
 
     private static boolean LOG_ENABLED = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.325 -0400", hash_original_field = "F32255F4F06275F74CB61F3DA51A229B", hash_generated_field = "26691EE1765D24E4C58C493499393F7C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.716 -0400", hash_original_field = "F32255F4F06275F74CB61F3DA51A229B", hash_generated_field = "26691EE1765D24E4C58C493499393F7C")
 
     private static int ALT_DNS_NAME = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.325 -0400", hash_original_field = "F2EC570492E32F916A66D41EEF6D0EE0", hash_generated_field = "9DCB40E1AC6D804EEE8A550CD822C3C7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.717 -0400", hash_original_field = "F2EC570492E32F916A66D41EEF6D0EE0", hash_generated_field = "9DCB40E1AC6D804EEE8A550CD822C3C7")
 
     private static int ALT_IPA_NAME = 7;
 }

@@ -17,11 +17,11 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.CharArrayBuffer;
 
 public class BasicLineParser implements LineParser {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.100 -0400", hash_original_field = "81788BA0D7D02D81C063DBCA621BA11B", hash_generated_field = "A4856836C99EFEC9056A47B6A2A817BC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.232 -0400", hash_original_field = "81788BA0D7D02D81C063DBCA621BA11B", hash_generated_field = "A4856836C99EFEC9056A47B6A2A817BC")
 
     protected ProtocolVersion protocol;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.105 -0400", hash_original_method = "7165DC7A4A8D5E7DFBA683C58AA682D9", hash_generated_method = "2BCF8BDBD178CA0CDF629ED274A9249E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.232 -0400", hash_original_method = "7165DC7A4A8D5E7DFBA683C58AA682D9", hash_generated_method = "2BCF8BDBD178CA0CDF629ED274A9249E")
     public  BasicLineParser(ProtocolVersion proto) {
         {
             proto = HttpVersion.HTTP_1_1;
@@ -35,7 +35,7 @@ public class BasicLineParser implements LineParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.106 -0400", hash_original_method = "214300EBA90AB0F87C7DC4ACF56AF3C7", hash_generated_method = "E1AC9D5EDA5F536927594BFCD2962534")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.245 -0400", hash_original_method = "214300EBA90AB0F87C7DC4ACF56AF3C7", hash_generated_method = "E1AC9D5EDA5F536927594BFCD2962534")
     public  BasicLineParser() {
         this(null);
         // ---------- Original Method ----------
@@ -57,10 +57,10 @@ public class BasicLineParser implements LineParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.119 -0400", hash_original_method = "9BF4BF2A71D6F582F34C94EF6EF05C09", hash_generated_method = "4E2AB375743D06AAEB2A812009C53F62")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.250 -0400", hash_original_method = "9BF4BF2A71D6F582F34C94EF6EF05C09", hash_generated_method = "E4E7DC254D27B360D1EB77B6909858B8")
     public ProtocolVersion parseProtocolVersion(final CharArrayBuffer buffer,
                                                 final ParserCursor cursor) throws ParseException {
-        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_1892700570 = null; //Variable for return #1
+        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_1733818410 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Char array buffer may not be null");
         } //End block
@@ -137,30 +137,30 @@ public class BasicLineParser implements LineParser {
                 buffer.substring(indexFrom, indexTo));
         } //End block
         cursor.updatePos(blank);
-        varB4EAC82CA7396A68D541C85D26508E83_1892700570 = createProtocolVersion(major, minor);
+        varB4EAC82CA7396A68D541C85D26508E83_1733818410 = createProtocolVersion(major, minor);
         addTaint(buffer.getTaint());
         addTaint(cursor.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1892700570.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1892700570;
+        varB4EAC82CA7396A68D541C85D26508E83_1733818410.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1733818410;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.120 -0400", hash_original_method = "F06FC4538680E4058C900A508AFBEA3D", hash_generated_method = "D43784303AA52367862658BAB4BAA0BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.251 -0400", hash_original_method = "F06FC4538680E4058C900A508AFBEA3D", hash_generated_method = "6EF4726313AAABC4D63DDF793F6A6533")
     protected ProtocolVersion createProtocolVersion(int major, int minor) {
-        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_1919844634 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1919844634 = protocol.forVersion(major, minor);
+        ProtocolVersion varB4EAC82CA7396A68D541C85D26508E83_1452960157 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1452960157 = protocol.forVersion(major, minor);
         addTaint(major);
         addTaint(minor);
-        varB4EAC82CA7396A68D541C85D26508E83_1919844634.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1919844634;
+        varB4EAC82CA7396A68D541C85D26508E83_1452960157.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1452960157;
         // ---------- Original Method ----------
         //return protocol.forVersion(major, minor);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.128 -0400", hash_original_method = "131811FCACED18FCD6DF993D05551A72", hash_generated_method = "5F3641BDA900E18A941A4AB8027BBC68")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.259 -0400", hash_original_method = "131811FCACED18FCD6DF993D05551A72", hash_generated_method = "B44207CF4B735C3FDD34D9E710986BDD")
     public boolean hasProtocolVersion(final CharArrayBuffer buffer,
                                       final ParserCursor cursor) {
         {
@@ -176,19 +176,19 @@ public class BasicLineParser implements LineParser {
         int protolength;
         protolength = protoname.length();
         {
-            boolean var81DEE7C103A4DA6D73DC127E872AC078_2105834666 = (buffer.length() < protolength+4);
+            boolean var81DEE7C103A4DA6D73DC127E872AC078_668146643 = (buffer.length() < protolength+4);
         } //End collapsed parenthetic
         {
             index = buffer.length() -4 -protolength;
         } //End block
         {
             {
-                boolean var69188F7437059161AD091DC917ADC2AF_1470224946 = ((index < buffer.length()) &&
+                boolean var69188F7437059161AD091DC917ADC2AF_114235892 = ((index < buffer.length()) &&
                     HTTP.isWhitespace(buffer.charAt(index)));
             } //End collapsed parenthetic
         } //End block
         {
-            boolean var11DB40AFEC729D9B262674B7B7F2C5A8_83405397 = (index + protolength + 4 > buffer.length());
+            boolean var11DB40AFEC729D9B262674B7B7F2C5A8_1044832219 = (index + protolength + 4 > buffer.length());
         } //End collapsed parenthetic
         boolean ok;
         ok = true;
@@ -204,8 +204,8 @@ public class BasicLineParser implements LineParser {
         } //End block
         addTaint(buffer.getTaint());
         addTaint(cursor.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_673252059 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_673252059;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_653972788 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_653972788;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -226,10 +226,10 @@ public class BasicLineParser implements LineParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.130 -0400", hash_original_method = "A423B7B4A530981615672A2507B78318", hash_generated_method = "85ADE5C8DBFA4C5C1373DCDAE9FBF8FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.288 -0400", hash_original_method = "A423B7B4A530981615672A2507B78318", hash_generated_method = "AE830ED2D577F6C950AD96E82390590E")
     public RequestLine parseRequestLine(final CharArrayBuffer buffer,
                                         final ParserCursor cursor) throws ParseException {
-        RequestLine varB4EAC82CA7396A68D541C85D26508E83_1910999492 = null; //Variable for return #1
+        RequestLine varB4EAC82CA7396A68D541C85D26508E83_288786910 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Char array buffer may not be null");
         } //End block
@@ -268,13 +268,13 @@ public class BasicLineParser implements LineParser {
             ver = parseProtocolVersion(buffer, cursor);
             skipWhitespace(buffer, cursor);
             {
-                boolean var1DFFED53F2DB420D2C7AF6460C3832FC_736705367 = (!cursor.atEnd());
+                boolean var1DFFED53F2DB420D2C7AF6460C3832FC_467415731 = (!cursor.atEnd());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ParseException("Invalid request line: " + 
                         buffer.substring(indexFrom, indexTo));
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_1910999492 = createRequestLine(method, uri, ver);
+            varB4EAC82CA7396A68D541C85D26508E83_288786910 = createRequestLine(method, uri, ver);
         } //End block
         catch (IndexOutOfBoundsException e)
         {
@@ -283,24 +283,24 @@ public class BasicLineParser implements LineParser {
         } //End block
         addTaint(buffer.getTaint());
         addTaint(cursor.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1910999492.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1910999492;
+        varB4EAC82CA7396A68D541C85D26508E83_288786910.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_288786910;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.145 -0400", hash_original_method = "4FEC66C772DF65B86E47F131D643F059", hash_generated_method = "BE8925C334B645417CE0785EF0B193FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.288 -0400", hash_original_method = "4FEC66C772DF65B86E47F131D643F059", hash_generated_method = "9E9DA1614E87084B89A3D72B7631B452")
     protected RequestLine createRequestLine(final String method,
                                             final String uri,
                                             final ProtocolVersion ver) {
-        RequestLine varB4EAC82CA7396A68D541C85D26508E83_1618561776 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1618561776 = new BasicRequestLine(method, uri, ver);
+        RequestLine varB4EAC82CA7396A68D541C85D26508E83_1972101201 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1972101201 = new BasicRequestLine(method, uri, ver);
         addTaint(method.getTaint());
         addTaint(uri.getTaint());
         addTaint(ver.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1618561776.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1618561776;
+        varB4EAC82CA7396A68D541C85D26508E83_1972101201.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1972101201;
         // ---------- Original Method ----------
         //return new BasicRequestLine(method, uri, ver);
     }
@@ -321,10 +321,10 @@ public class BasicLineParser implements LineParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.146 -0400", hash_original_method = "25C42EFA872F90FCC52B9EB0DE702858", hash_generated_method = "352BDA3060B2B181DA5C5D826F621D7A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.294 -0400", hash_original_method = "25C42EFA872F90FCC52B9EB0DE702858", hash_generated_method = "151EDD8A3FD2A1CEFA82357962C43CDA")
     public StatusLine parseStatusLine(final CharArrayBuffer buffer,
                                       final ParserCursor cursor) throws ParseException {
-        StatusLine varB4EAC82CA7396A68D541C85D26508E83_451623709 = null; //Variable for return #1
+        StatusLine varB4EAC82CA7396A68D541C85D26508E83_1303396851 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Char array buffer may not be null");
         } //End block
@@ -369,7 +369,7 @@ public class BasicLineParser implements LineParser {
             {
                 reasonPhrase = "";
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_451623709 = createStatusLine(ver, statusCode, reasonPhrase);
+            varB4EAC82CA7396A68D541C85D26508E83_1303396851 = createStatusLine(ver, statusCode, reasonPhrase);
         } //End block
         catch (IndexOutOfBoundsException e)
         {
@@ -378,24 +378,24 @@ public class BasicLineParser implements LineParser {
         } //End block
         addTaint(buffer.getTaint());
         addTaint(cursor.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_451623709.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_451623709;
+        varB4EAC82CA7396A68D541C85D26508E83_1303396851.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1303396851;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.147 -0400", hash_original_method = "6514ACEBF21FB82A84D20506623D0A23", hash_generated_method = "76FB7724013FA89B6695209240BB5DAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.296 -0400", hash_original_method = "6514ACEBF21FB82A84D20506623D0A23", hash_generated_method = "3530D2FA17DC1976C4244A14EA4D3143")
     protected StatusLine createStatusLine(final ProtocolVersion ver,
                                           final int status, 
                                           final String reason) {
-        StatusLine varB4EAC82CA7396A68D541C85D26508E83_819854059 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_819854059 = new BasicStatusLine(ver, status, reason);
+        StatusLine varB4EAC82CA7396A68D541C85D26508E83_1772894885 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1772894885 = new BasicStatusLine(ver, status, reason);
         addTaint(ver.getTaint());
         addTaint(status);
         addTaint(reason.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_819854059.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_819854059;
+        varB4EAC82CA7396A68D541C85D26508E83_1772894885.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1772894885;
         // ---------- Original Method ----------
         //return new BasicStatusLine(ver, status, reason);
     }
@@ -415,26 +415,26 @@ public class BasicLineParser implements LineParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.147 -0400", hash_original_method = "96877585E3C205FD7438BA36DB87A742", hash_generated_method = "9D845EBDE896B5A1EB31C774BC641857")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.319 -0400", hash_original_method = "96877585E3C205FD7438BA36DB87A742", hash_generated_method = "AD55EF3F5DE4F0557A3831FF1A643C94")
     public Header parseHeader(CharArrayBuffer buffer) throws ParseException {
-        Header varB4EAC82CA7396A68D541C85D26508E83_1459325839 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1459325839 = new BufferedHeader(buffer);
+        Header varB4EAC82CA7396A68D541C85D26508E83_528599889 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_528599889 = new BufferedHeader(buffer);
         addTaint(buffer.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1459325839.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1459325839;
+        varB4EAC82CA7396A68D541C85D26508E83_528599889.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_528599889;
         // ---------- Original Method ----------
         //return new BufferedHeader(buffer);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.148 -0400", hash_original_method = "3365DB1911434298DB39102FDA0B0A6B", hash_generated_method = "5297000A993EA3F44F2355F159336D89")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.320 -0400", hash_original_method = "3365DB1911434298DB39102FDA0B0A6B", hash_generated_method = "7500EE1975DF41635706D8C688FE04E7")
     protected void skipWhitespace(final CharArrayBuffer buffer, final ParserCursor cursor) {
         int pos;
         pos = cursor.getPos();
         int indexTo;
         indexTo = cursor.getUpperBound();
         {
-            boolean var74A9BE1A863EE5315411475CF0B0407C_1987775001 = ((pos < indexTo) &&
+            boolean var74A9BE1A863EE5315411475CF0B0407C_1570731902 = ((pos < indexTo) &&
                HTTP.isWhitespace(buffer.charAt(pos)));
         } //End collapsed parenthetic
         cursor.updatePos(pos);
@@ -451,7 +451,7 @@ public class BasicLineParser implements LineParser {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.148 -0400", hash_original_field = "4CABF341CC2653CD37864343CA741E33", hash_generated_field = "67CEFB7766AD0E32B0A93ADD488598F1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.320 -0400", hash_original_field = "4CABF341CC2653CD37864343CA741E33", hash_generated_field = "67CEFB7766AD0E32B0A93ADD488598F1")
 
     public final static BasicLineParser DEFAULT = new BasicLineParser();
 }

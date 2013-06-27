@@ -12,7 +12,7 @@ import java.text.ParseException;
 
 public class ProxyAuthenticateParser extends ChallengeParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.032 -0400", hash_original_method = "581BDEBBD299AB0E5135A7CDD0C8C9B1", hash_generated_method = "CF83D4E1378EBF47C4D5202332A2C120")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.976 -0400", hash_original_method = "581BDEBBD299AB0E5135A7CDD0C8C9B1", hash_generated_method = "CF83D4E1378EBF47C4D5202332A2C120")
     public  ProxyAuthenticateParser(String proxyAuthenticate) {
         super(proxyAuthenticate);
         addTaint(proxyAuthenticate.getTaint());
@@ -20,7 +20,7 @@ public class ProxyAuthenticateParser extends ChallengeParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.032 -0400", hash_original_method = "31FFFD362F12BC1F7E1E79481AA610B2", hash_generated_method = "4EB66B1C980DD68F479690AB3A750989")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.986 -0400", hash_original_method = "31FFFD362F12BC1F7E1E79481AA610B2", hash_generated_method = "4EB66B1C980DD68F479690AB3A750989")
     protected  ProxyAuthenticateParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -28,16 +28,16 @@ public class ProxyAuthenticateParser extends ChallengeParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.043 -0400", hash_original_method = "EBFDF03354240070ED50C53BEBC6AA29", hash_generated_method = "13EB5CFBEB3F5A1DF9A7A0BB5C46A2EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.986 -0400", hash_original_method = "EBFDF03354240070ED50C53BEBC6AA29", hash_generated_method = "96B6108F648912E9836C421F96754C4B")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_682151375 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1661486308 = null; //Variable for return #1
         headerName(TokenTypes.PROXY_AUTHENTICATE);
         ProxyAuthenticate proxyAuthenticate;
         proxyAuthenticate = new ProxyAuthenticate();
         super.parse(proxyAuthenticate);
-        varB4EAC82CA7396A68D541C85D26508E83_682151375 = proxyAuthenticate;
-        varB4EAC82CA7396A68D541C85D26508E83_682151375.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_682151375;
+        varB4EAC82CA7396A68D541C85D26508E83_1661486308 = proxyAuthenticate;
+        varB4EAC82CA7396A68D541C85D26508E83_1661486308.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1661486308;
         // ---------- Original Method ----------
         //headerName(TokenTypes.PROXY_AUTHENTICATE);
         //ProxyAuthenticate proxyAuthenticate = new ProxyAuthenticate();

@@ -27,11 +27,11 @@ import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.scheme.SocketFactory;
 
 public class DefaultClientConnectionOperator implements ClientConnectionOperator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.690 -0400", hash_original_field = "1D823F19EC944D016B48B105C3632412", hash_generated_field = "262A27B6B6B1CBF25439CFECC3909997")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.745 -0400", hash_original_field = "1D823F19EC944D016B48B105C3632412", hash_generated_field = "262A27B6B6B1CBF25439CFECC3909997")
 
     protected SchemeRegistry schemeRegistry;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.690 -0400", hash_original_method = "564A7128C5B00F982644F6E1BD9B5118", hash_generated_method = "A9580C4EB874A290BB0BFB80A838049D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.745 -0400", hash_original_method = "564A7128C5B00F982644F6E1BD9B5118", hash_generated_method = "A9580C4EB874A290BB0BFB80A838049D")
     public  DefaultClientConnectionOperator(SchemeRegistry schemes) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
@@ -47,18 +47,18 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.691 -0400", hash_original_method = "A7AF136A36340299371F158C25AED0D2", hash_generated_method = "725BA086CC77FEBC6256C50411DC7A0B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.746 -0400", hash_original_method = "A7AF136A36340299371F158C25AED0D2", hash_generated_method = "3A1457180226B1712F8CD86D36191401")
     public OperatedClientConnection createConnection() {
-        OperatedClientConnection varB4EAC82CA7396A68D541C85D26508E83_1346844171 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1346844171 = new DefaultClientConnection();
-        varB4EAC82CA7396A68D541C85D26508E83_1346844171.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1346844171;
+        OperatedClientConnection varB4EAC82CA7396A68D541C85D26508E83_1231578915 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1231578915 = new DefaultClientConnection();
+        varB4EAC82CA7396A68D541C85D26508E83_1231578915.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1231578915;
         // ---------- Original Method ----------
         //return new DefaultClientConnection();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.698 -0400", hash_original_method = "3035FF1473A97381B4AFABBF5B73F76A", hash_generated_method = "118AB788C25CDB4BB2D2463E69EF69F0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.747 -0400", hash_original_method = "3035FF1473A97381B4AFABBF5B73F76A", hash_generated_method = "0ECCCD46D2DA304E3579428A23BFBBA5")
     public void openConnection(OperatedClientConnection conn,
                                HttpHost target,
                                InetAddress local,
@@ -77,7 +77,7 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
                 ("Parameters must not be null.");
         } //End block
         {
-            boolean var451F9CCFC44B4276E736FF79EDEE8975_180989863 = (conn.isOpen());
+            boolean var451F9CCFC44B4276E736FF79EDEE8975_1456782066 = (conn.isOpen());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Connection must not be open.");
@@ -160,7 +160,7 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.700 -0400", hash_original_method = "B263843ECB367B56A8B3543219BABBA8", hash_generated_method = "D24E16E1BE07E50024E3C353B89CD1A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.751 -0400", hash_original_method = "B263843ECB367B56A8B3543219BABBA8", hash_generated_method = "1D45D3F121A9B8F3DF86A92DB02C405D")
     public void updateSecureConnection(OperatedClientConnection conn,
                                        HttpHost target,
                                        HttpContext context,
@@ -178,7 +178,7 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
                 ("Parameters must not be null.");
         } //End block
         {
-            boolean varEE62DAC45DF15B922FA2904B06CCD4A8_384765192 = (!conn.isOpen());
+            boolean varEE62DAC45DF15B922FA2904B06CCD4A8_1109381111 = (!conn.isOpen());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Connection must be open.");
@@ -187,7 +187,7 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
         Scheme schm;
         schm = schemeRegistry.getScheme(target.getSchemeName());
         {
-            boolean varE5B8F3A69B1B6580727686D70B4E6436_1725296006 = (!(schm.getSocketFactory() instanceof LayeredSocketFactory));
+            boolean varE5B8F3A69B1B6580727686D70B4E6436_712789512 = (!(schm.getSocketFactory() instanceof LayeredSocketFactory));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException
                 ("Target scheme (" + schm.getName() +
@@ -217,7 +217,7 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.700 -0400", hash_original_method = "EEE63DC836F5AA81B1ECC566DDEA88C5", hash_generated_method = "B3A39BDDF1B0719874C5E7D29874C00F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.755 -0400", hash_original_method = "EEE63DC836F5AA81B1ECC566DDEA88C5", hash_generated_method = "B3A39BDDF1B0719874C5E7D29874C00F")
     protected void prepareSocket(Socket sock, HttpContext context,
                                  HttpParams params) throws IOException {
         sock.setTcpNoDelay(HttpConnectionParams.getTcpNoDelay(params));
@@ -240,7 +240,7 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.700 -0400", hash_original_field = "BB491613B2AC25774C0C6E92214BF9B8", hash_generated_field = "82724B468EB2450D80C27C5F53A1931A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.755 -0400", hash_original_field = "BB491613B2AC25774C0C6E92214BF9B8", hash_generated_field = "82724B468EB2450D80C27C5F53A1931A")
 
     private static PlainSocketFactory staticPlainSocketFactory = new PlainSocketFactory();
 }

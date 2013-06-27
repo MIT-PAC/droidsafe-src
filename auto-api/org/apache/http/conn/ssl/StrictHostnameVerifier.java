@@ -11,14 +11,14 @@ import javax.net.ssl.SSLException;
 
 public class StrictHostnameVerifier extends AbstractVerifier {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.656 -0400", hash_original_method = "09E0CCDA5973A156C5A0868BB4EDD28E", hash_generated_method = "09E0CCDA5973A156C5A0868BB4EDD28E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.653 -0400", hash_original_method = "09E0CCDA5973A156C5A0868BB4EDD28E", hash_generated_method = "09E0CCDA5973A156C5A0868BB4EDD28E")
     public StrictHostnameVerifier ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.657 -0400", hash_original_method = "5100218414983B1148FF61DBB333F54C", hash_generated_method = "5A5067265B9F334F11805F2B6ECFACD0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.654 -0400", hash_original_method = "5100218414983B1148FF61DBB333F54C", hash_generated_method = "5A5067265B9F334F11805F2B6ECFACD0")
     public final void verify(
             final String host, 
             final String[] cns,
@@ -32,13 +32,13 @@ public class StrictHostnameVerifier extends AbstractVerifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:14.657 -0400", hash_original_method = "569003A1441E28D84E8D7679B3A1155F", hash_generated_method = "4890C1EF0777574327A601E06AB6A4A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:15.654 -0400", hash_original_method = "569003A1441E28D84E8D7679B3A1155F", hash_generated_method = "13FCF224D7ED1DC0333624B095C5ED12")
     @Override
     public final String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1943069859 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1943069859 = "STRICT";
-        varB4EAC82CA7396A68D541C85D26508E83_1943069859.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1943069859;
+        String varB4EAC82CA7396A68D541C85D26508E83_53569246 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_53569246 = "STRICT";
+        varB4EAC82CA7396A68D541C85D26508E83_53569246.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_53569246;
         // ---------- Original Method ----------
         //return "STRICT";
     }

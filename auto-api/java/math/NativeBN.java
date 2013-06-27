@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 final class NativeBN {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.745 -0400", hash_original_method = "E90C9F7618B8847FE731998C9CEE159F", hash_generated_method = "E90C9F7618B8847FE731998C9CEE159F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.905 -0400", hash_original_method = "E90C9F7618B8847FE731998C9CEE159F", hash_generated_method = "E90C9F7618B8847FE731998C9CEE159F")
     public NativeBN ()
     {
         //Synthesized constructor

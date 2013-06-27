@@ -14,38 +14,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Menu implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.842 -0400", hash_original_field = "691D502CFD0E0626CD3B058E5682AD1C", hash_generated_field = "476ABB1F52C3A12124EEACDB58E8E189")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.303 -0400", hash_original_field = "691D502CFD0E0626CD3B058E5682AD1C", hash_generated_field = "476ABB1F52C3A12124EEACDB58E8E189")
 
     public List<Item> items;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "195FA8DF6FC9B5CFB062F802C5E71427", hash_generated_field = "5A5E763DDA809E466D258B0BEF7B3CF1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.303 -0400", hash_original_field = "195FA8DF6FC9B5CFB062F802C5E71427", hash_generated_field = "5A5E763DDA809E466D258B0BEF7B3CF1")
 
     public List<TextAttribute> titleAttrs;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "A44325CD80CA8B3708910F324AD665E0", hash_generated_field = "CB58C9A657B05B968317B537DCD37634")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.303 -0400", hash_original_field = "A44325CD80CA8B3708910F324AD665E0", hash_generated_field = "CB58C9A657B05B968317B537DCD37634")
 
     public PresentationType presentationType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "D5D3DB1765287EEF77D7927CC956F50A", hash_generated_field = "8A90568C6E332919F11E323BA0057155")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.303 -0400", hash_original_field = "D5D3DB1765287EEF77D7927CC956F50A", hash_generated_field = "8A90568C6E332919F11E323BA0057155")
 
     public String title;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "D794263776054546DBA5B1ED2CC754D6", hash_generated_field = "098A35A0443838BE0B42D9CC5F647B03")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.303 -0400", hash_original_field = "D794263776054546DBA5B1ED2CC754D6", hash_generated_field = "098A35A0443838BE0B42D9CC5F647B03")
 
     public Bitmap titleIcon;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "8FE94B374176FBB177C44C8192C32021", hash_generated_field = "3A0377EDF9C782CB4D4BFE39FE615D31")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.303 -0400", hash_original_field = "8FE94B374176FBB177C44C8192C32021", hash_generated_field = "3A0377EDF9C782CB4D4BFE39FE615D31")
 
     public int defaultItem;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "96A3428F0F548A8F00D3CEC1EBAE0C1E", hash_generated_field = "C7573512761AE15B4F2E1EC9799C356F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.303 -0400", hash_original_field = "96A3428F0F548A8F00D3CEC1EBAE0C1E", hash_generated_field = "C7573512761AE15B4F2E1EC9799C356F")
 
     public boolean softKeyPreferred;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "95C3E9257A5998B6C3758B36FBDB8DD8", hash_generated_field = "B089F8BA7DD3EF733FF9A54CE2F03291")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.303 -0400", hash_original_field = "95C3E9257A5998B6C3758B36FBDB8DD8", hash_generated_field = "B089F8BA7DD3EF733FF9A54CE2F03291")
 
     public boolean helpAvailable;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "2C96220247CE6637DCD0E5D1096649B1", hash_generated_field = "0FAF24D8129D04267CF76644994A3196")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.303 -0400", hash_original_field = "2C96220247CE6637DCD0E5D1096649B1", hash_generated_field = "0FAF24D8129D04267CF76644994A3196")
 
     public boolean titleIconSelfExplanatory;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.844 -0400", hash_original_field = "2F1407D5232300DC3271B60FBC5FDA47", hash_generated_field = "6B371AD473F156CDACB463C287BE9F73")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.303 -0400", hash_original_field = "2F1407D5232300DC3271B60FBC5FDA47", hash_generated_field = "6B371AD473F156CDACB463C287BE9F73")
 
     public boolean itemsIconSelfExplanatory;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.858 -0400", hash_original_method = "2E99B961E06FFBDF1C6EFBD0F84C03B4", hash_generated_method = "A863469DD6195991058FA32E29A64698")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.304 -0400", hash_original_method = "2E99B961E06FFBDF1C6EFBD0F84C03B4", hash_generated_method = "A863469DD6195991058FA32E29A64698")
     public  Menu() {
         items = new ArrayList<Item>();
         title = null;
@@ -71,7 +71,7 @@ public class Menu implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.859 -0400", hash_original_method = "170B02CF9C000CCCFFA0390811062CB3", hash_generated_method = "50313345F584A8E864EA9EBE382D46C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.305 -0400", hash_original_method = "170B02CF9C000CCCFFA0390811062CB3", hash_generated_method = "50313345F584A8E864EA9EBE382D46C8")
     private  Menu(Parcel in) {
         title = in.readString();
         titleIcon = in.readParcelable(null);
@@ -111,16 +111,16 @@ public class Menu implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.859 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2F1C24ECE524FEECA88DD8D0584AD4E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.305 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3A0EA074C3EBEC901457EB0DBEFF2AC6")
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1723103193 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1723103193;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1584647706 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1584647706;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.860 -0400", hash_original_method = "B96ACF1C9395307298AAD1BDB077B52A", hash_generated_method = "E16B872D374B2475F9F46792C5123DEF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.306 -0400", hash_original_method = "B96ACF1C9395307298AAD1BDB077B52A", hash_generated_method = "E16B872D374B2475F9F46792C5123DEF")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(title);
         dest.writeParcelable(titleIcon, flags);
@@ -159,7 +159,7 @@ public class Menu implements Parcelable {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.860 -0400", hash_original_field = "F280FAF502E3EC830C212739EA877C0E", hash_generated_field = "55BC0B4641874E81A5D070AF9C451A82")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.306 -0400", hash_original_field = "F280FAF502E3EC830C212739EA877C0E", hash_generated_field = "55BC0B4641874E81A5D070AF9C451A82")
 
     public static final Parcelable.Creator<Menu> CREATOR = new Parcelable.Creator<Menu>() {
         public Menu createFromParcel(Parcel in) {

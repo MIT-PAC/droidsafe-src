@@ -14,14 +14,14 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOCase;
 
 public class WildcardFileFilter extends AbstractFileFilter implements Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.810 -0400", hash_original_field = "F3D504DE7AA56D35C26D94923C10A3E5", hash_generated_field = "6C7DD8A76D73FE93C97BF4100E50ABE2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.818 -0400", hash_original_field = "F3D504DE7AA56D35C26D94923C10A3E5", hash_generated_field = "6C7DD8A76D73FE93C97BF4100E50ABE2")
 
     private String[] wildcards;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.810 -0400", hash_original_field = "9AE1535F968174A45A688181FD26E8A9", hash_generated_field = "21450A3017D0D6122C0877D57300E67A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.818 -0400", hash_original_field = "9AE1535F968174A45A688181FD26E8A9", hash_generated_field = "21450A3017D0D6122C0877D57300E67A")
 
     private IOCase caseSensitivity;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.810 -0400", hash_original_method = "0DC8B11301EF3C498C2ABB05D6DC182D", hash_generated_method = "319629C00ACC43C9F16F898B3E80F8FF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.819 -0400", hash_original_method = "0DC8B11301EF3C498C2ABB05D6DC182D", hash_generated_method = "319629C00ACC43C9F16F898B3E80F8FF")
     public  WildcardFileFilter(String wildcard) {
         this(wildcard, null);
         addTaint(wildcard.getTaint());
@@ -29,7 +29,7 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.810 -0400", hash_original_method = "48E5C7007F85482990B2FBCD68749192", hash_generated_method = "4C1A707BD701775106DD30DE95965715")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.819 -0400", hash_original_method = "48E5C7007F85482990B2FBCD68749192", hash_generated_method = "4C1A707BD701775106DD30DE95965715")
     public  WildcardFileFilter(String wildcard, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The wildcard must not be null");
@@ -46,7 +46,7 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.811 -0400", hash_original_method = "B6C58B18880B584ACFA73AD5A7B51AB0", hash_generated_method = "96731BD9C5F350839972030E234CB118")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.820 -0400", hash_original_method = "B6C58B18880B584ACFA73AD5A7B51AB0", hash_generated_method = "96731BD9C5F350839972030E234CB118")
     public  WildcardFileFilter(String[] wildcards) {
         this(wildcards, null);
         addTaint(wildcards[0].getTaint());
@@ -54,7 +54,7 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.811 -0400", hash_original_method = "B52C3DB451FF68ED0A74295B989A7EE9", hash_generated_method = "0D99B40B5BC67C4BBA538D50D2BEF35D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.820 -0400", hash_original_method = "B52C3DB451FF68ED0A74295B989A7EE9", hash_generated_method = "0D99B40B5BC67C4BBA538D50D2BEF35D")
     public  WildcardFileFilter(String[] wildcards, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The wildcard array must not be null");
@@ -72,7 +72,7 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.815 -0400", hash_original_method = "074E489B2A417933ABDEFACED52DF48F", hash_generated_method = "3CD5A5A8A5B7B4DB4DC5E6D4493E922E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.824 -0400", hash_original_method = "074E489B2A417933ABDEFACED52DF48F", hash_generated_method = "3CD5A5A8A5B7B4DB4DC5E6D4493E922E")
     public  WildcardFileFilter(List<String> wildcards) {
         this(wildcards, null);
         addTaint(wildcards.getTaint());
@@ -80,7 +80,7 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.819 -0400", hash_original_method = "20DEFBD5799CE860E02C4A46D8229CF6", hash_generated_method = "E724E90C41E562A8294F36B6FDBD727D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.827 -0400", hash_original_method = "20DEFBD5799CE860E02C4A46D8229CF6", hash_generated_method = "E724E90C41E562A8294F36B6FDBD727D")
     public  WildcardFileFilter(List<String> wildcards, IOCase caseSensitivity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("The wildcard list must not be null");
@@ -96,21 +96,21 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.836 -0400", hash_original_method = "0D7E6F981525F2AA16F60F5ED0631F0E", hash_generated_method = "3947FCF46FD9604CD9042237744329AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.861 -0400", hash_original_method = "0D7E6F981525F2AA16F60F5ED0631F0E", hash_generated_method = "8635C1D547DF9BF8E50824550DF48E0C")
     @Override
     public boolean accept(File dir, String name) {
         {
             String wildcard = wildcards[0];
             {
                 {
-                    boolean var0572AA10CB9D5F2CACE237F100D1C60A_48341475 = (FilenameUtils.wildcardMatch(name, wildcard, caseSensitivity));
+                    boolean var0572AA10CB9D5F2CACE237F100D1C60A_966813257 = (FilenameUtils.wildcardMatch(name, wildcard, caseSensitivity));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         addTaint(dir.getTaint());
         addTaint(name.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1191548228 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1191548228;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1937250278 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1937250278;
         // ---------- Original Method ----------
         //for (String wildcard : wildcards) {
             //if (FilenameUtils.wildcardMatch(name, wildcard, caseSensitivity)) {
@@ -121,7 +121,7 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.870 -0400", hash_original_method = "C244C034F5D60E2DBFF912D07EE9EFE9", hash_generated_method = "DA69AF3146C365748E248FB61B60B04E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.882 -0400", hash_original_method = "C244C034F5D60E2DBFF912D07EE9EFE9", hash_generated_method = "079163859F5D63A83D21305C4AEE4F0D")
     @Override
     public boolean accept(File file) {
         String name;
@@ -130,13 +130,13 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
             String wildcard = wildcards[0];
             {
                 {
-                    boolean var0572AA10CB9D5F2CACE237F100D1C60A_1052014902 = (FilenameUtils.wildcardMatch(name, wildcard, caseSensitivity));
+                    boolean var0572AA10CB9D5F2CACE237F100D1C60A_1380042406 = (FilenameUtils.wildcardMatch(name, wildcard, caseSensitivity));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
         addTaint(file.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_985512704 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_985512704;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2049172565 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2049172565;
         // ---------- Original Method ----------
         //String name = file.getName();
         //for (String wildcard : wildcards) {
@@ -148,10 +148,10 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.882 -0400", hash_original_method = "54924678DCA60F174F0C38EC41ACEED7", hash_generated_method = "D34487B276AA7C34A9CB19C210185452")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.886 -0400", hash_original_method = "54924678DCA60F174F0C38EC41ACEED7", hash_generated_method = "AE9CBDDEE83FB730D16062D472FF6F02")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_480363517 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2070751880 = null; //Variable for return #1
         StringBuilder buffer;
         buffer = new StringBuilder();
         buffer.append(super.toString());
@@ -169,9 +169,9 @@ public class WildcardFileFilter extends AbstractFileFilter implements Serializab
             } //End collapsed parenthetic
         } //End block
         buffer.append(")");
-        varB4EAC82CA7396A68D541C85D26508E83_480363517 = buffer.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_480363517.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_480363517;
+        varB4EAC82CA7396A68D541C85D26508E83_2070751880 = buffer.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_2070751880.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2070751880;
         // ---------- Original Method ----------
         //StringBuilder buffer = new StringBuilder();
         //buffer.append(super.toString());

@@ -15,7 +15,7 @@ import java.security.UnrecoverableKeyException;
 
 public abstract class KeyManagerFactorySpi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.537 -0400", hash_original_method = "6A7E81CC9CE1799ACFD008A7DC048460", hash_generated_method = "93A65C456CF3A0D713ED787ED5389AFC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:00.224 -0400", hash_original_method = "6A7E81CC9CE1799ACFD008A7DC048460", hash_generated_method = "93A65C456CF3A0D713ED787ED5389AFC")
     public  KeyManagerFactorySpi() {
         // ---------- Original Method ----------
     }

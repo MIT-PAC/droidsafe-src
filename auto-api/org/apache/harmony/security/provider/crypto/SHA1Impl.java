@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public class SHA1Impl implements SHA1_Data {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.108 -0400", hash_original_method = "B6630204F62CDE245E871046BDD8B7F9", hash_generated_method = "B6630204F62CDE245E871046BDD8B7F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.086 -0400", hash_original_method = "B6630204F62CDE245E871046BDD8B7F9", hash_generated_method = "B6630204F62CDE245E871046BDD8B7F9")
     public SHA1Impl ()
     {
         //Synthesized constructor

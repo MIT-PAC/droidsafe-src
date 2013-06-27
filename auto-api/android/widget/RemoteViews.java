@@ -38,23 +38,23 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class RemoteViews implements Parcelable, Filter {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.171 -0400", hash_original_field = "089616237F5DED8B7A7F9A618C4FC032", hash_generated_field = "D6E102019562022F9DE7C9915C7FD917")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.526 -0400", hash_original_field = "089616237F5DED8B7A7F9A618C4FC032", hash_generated_field = "D6E102019562022F9DE7C9915C7FD917")
 
     private String mPackage;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.172 -0400", hash_original_field = "143EA7733FD06F80DE8D3B366855A342", hash_generated_field = "62824B28582365160D4F4E663AF78109")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.526 -0400", hash_original_field = "143EA7733FD06F80DE8D3B366855A342", hash_generated_field = "62824B28582365160D4F4E663AF78109")
 
     private int mLayoutId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.172 -0400", hash_original_field = "C268D719F2F67098628D1A8EEBB72B48", hash_generated_field = "BDB8276C1ABE28FC56F7F2EFF4E83F5A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.526 -0400", hash_original_field = "C268D719F2F67098628D1A8EEBB72B48", hash_generated_field = "BDB8276C1ABE28FC56F7F2EFF4E83F5A")
 
     private ArrayList<Action> mActions;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.172 -0400", hash_original_field = "302EDB52DCA958E10D9F1FB586627A2C", hash_generated_field = "428BAA212C6DEB5FEF7CB6370C9BEBDF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.526 -0400", hash_original_field = "302EDB52DCA958E10D9F1FB586627A2C", hash_generated_field = "428BAA212C6DEB5FEF7CB6370C9BEBDF")
 
     private MemoryUsageCounter mMemoryUsageCounter;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.172 -0400", hash_original_field = "DF25E6BAFF11DD73CFFFA27BAA8B8CFC", hash_generated_field = "5F2713F2C4461A89B34556F5FA319D47")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.526 -0400", hash_original_field = "DF25E6BAFF11DD73CFFFA27BAA8B8CFC", hash_generated_field = "5F2713F2C4461A89B34556F5FA319D47")
 
     private boolean mIsWidgetCollectionChild = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.172 -0400", hash_original_method = "7ADC44A8B9BDF8C00FB4776840C5552D", hash_generated_method = "154333C84C3CBD1C406C406999A1627C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.526 -0400", hash_original_method = "7ADC44A8B9BDF8C00FB4776840C5552D", hash_generated_method = "154333C84C3CBD1C406C406999A1627C")
     public  RemoteViews(String packageName, int layoutId) {
         mPackage = packageName;
         mLayoutId = layoutId;
@@ -68,7 +68,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.177 -0400", hash_original_method = "B81662C8B479B3D3C957D533866FE808", hash_generated_method = "546D8B182DE7C2B4691CE32DCA40E0E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.533 -0400", hash_original_method = "B81662C8B479B3D3C957D533866FE808", hash_generated_method = "546D8B182DE7C2B4691CE32DCA40E0E8")
     public  RemoteViews(Parcel parcel) {
         mPackage = parcel.readString();
         mLayoutId = parcel.readInt();
@@ -123,19 +123,19 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.178 -0400", hash_original_method = "67D19BE5CA3BC69F21B2B2516A1FA2D6", hash_generated_method = "45C5E1D433A964C5AEFE8333A137AE7B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.534 -0400", hash_original_method = "67D19BE5CA3BC69F21B2B2516A1FA2D6", hash_generated_method = "C4CBC5DCA5DB716F888A0333853A392A")
     @Override
     public RemoteViews clone() {
-        RemoteViews varB4EAC82CA7396A68D541C85D26508E83_1235496498 = null; //Variable for return #1
+        RemoteViews varB4EAC82CA7396A68D541C85D26508E83_2137073039 = null; //Variable for return #1
         RemoteViews that;
         that = new RemoteViews(mPackage, mLayoutId);
         {
             that.mActions = (ArrayList<Action>)mActions.clone();
         } //End block
         that.recalculateMemoryUsage();
-        varB4EAC82CA7396A68D541C85D26508E83_1235496498 = that;
-        varB4EAC82CA7396A68D541C85D26508E83_1235496498.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1235496498;
+        varB4EAC82CA7396A68D541C85D26508E83_2137073039 = that;
+        varB4EAC82CA7396A68D541C85D26508E83_2137073039.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2137073039;
         // ---------- Original Method ----------
         //final RemoteViews that = new RemoteViews(mPackage, mLayoutId);
         //if (mActions != null) {
@@ -146,27 +146,27 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.186 -0400", hash_original_method = "D6B19F05A1BF219922EA06A43EF822A3", hash_generated_method = "758B8C70428006148AED5C01945B5E9C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.543 -0400", hash_original_method = "D6B19F05A1BF219922EA06A43EF822A3", hash_generated_method = "FCFB5A0EDBBD10C3933D14D87B5B76E1")
     public String getPackage() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1592838078 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1592838078 = mPackage;
-        varB4EAC82CA7396A68D541C85D26508E83_1592838078.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1592838078;
+        String varB4EAC82CA7396A68D541C85D26508E83_266686735 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_266686735 = mPackage;
+        varB4EAC82CA7396A68D541C85D26508E83_266686735.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_266686735;
         // ---------- Original Method ----------
         //return mPackage;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.186 -0400", hash_original_method = "613C00C60CA896BC5001BD5561015459", hash_generated_method = "EAE0C550FFA3D298ABB634ACF03A4966")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.545 -0400", hash_original_method = "613C00C60CA896BC5001BD5561015459", hash_generated_method = "8FA4D814950D77444E827DED130269D9")
     public int getLayoutId() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1092674427 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1092674427;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_347599104 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_347599104;
         // ---------- Original Method ----------
         //return mLayoutId;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.198 -0400", hash_original_method = "B2E01CE5E210E0306AAEDD7A25572B15", hash_generated_method = "C504A5E5F8CCD8C6A31C201D44889892")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.545 -0400", hash_original_method = "B2E01CE5E210E0306AAEDD7A25572B15", hash_generated_method = "C504A5E5F8CCD8C6A31C201D44889892")
      void setIsWidgetCollectionChild(boolean isWidgetCollectionChild) {
         mIsWidgetCollectionChild = isWidgetCollectionChild;
         // ---------- Original Method ----------
@@ -174,7 +174,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.198 -0400", hash_original_method = "F73414915FBB974B28CE5BE7CD6B07B1", hash_generated_method = "9CB06F81C920E676592DB3B687829004")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.545 -0400", hash_original_method = "F73414915FBB974B28CE5BE7CD6B07B1", hash_generated_method = "9CB06F81C920E676592DB3B687829004")
     private void recalculateMemoryUsage() {
         mMemoryUsageCounter.clear();
         {
@@ -199,17 +199,17 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.198 -0400", hash_original_method = "4E1C2F916A403E6D1D4B708360B7D61A", hash_generated_method = "E82DC8E8DBEC2F33D5A3D04199B8BC60")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.547 -0400", hash_original_method = "4E1C2F916A403E6D1D4B708360B7D61A", hash_generated_method = "63F02B9A4B1635C62B88F86246B5EDA8")
      int estimateBitmapMemoryUsage() {
-        int var86B2D4DC43E82BB120116366B3BFF3DD_1343742780 = (mMemoryUsageCounter.getBitmapHeapMemoryUsage());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1924689888 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1924689888;
+        int var86B2D4DC43E82BB120116366B3BFF3DD_900744228 = (mMemoryUsageCounter.getBitmapHeapMemoryUsage());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1912525126 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1912525126;
         // ---------- Original Method ----------
         //return mMemoryUsageCounter.getBitmapHeapMemoryUsage();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.199 -0400", hash_original_method = "17103049C6B2546A05BB76759DAB3B89", hash_generated_method = "14D85083847E9B9992C73BE5A5A1C108")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.547 -0400", hash_original_method = "17103049C6B2546A05BB76759DAB3B89", hash_generated_method = "14D85083847E9B9992C73BE5A5A1C108")
     private void addAction(Action a) {
         {
             mActions = new ArrayList<Action>();
@@ -226,7 +226,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.199 -0400", hash_original_method = "4A1BA0269DB90E506DB0959643DF475B", hash_generated_method = "BE51826B6DFABF603D3CC9C5EB042AB8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.547 -0400", hash_original_method = "4A1BA0269DB90E506DB0959643DF475B", hash_generated_method = "BE51826B6DFABF603D3CC9C5EB042AB8")
     public void addView(int viewId, RemoteViews nestedView) {
         addAction(new ViewGroupAction(viewId, nestedView));
         addTaint(viewId);
@@ -236,7 +236,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.199 -0400", hash_original_method = "E70CF2F379D754A9B2BAC52704294677", hash_generated_method = "7DAFE72427A04B46D6AE7A6C690B16CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.549 -0400", hash_original_method = "E70CF2F379D754A9B2BAC52704294677", hash_generated_method = "7DAFE72427A04B46D6AE7A6C690B16CF")
     public void removeAllViews(int viewId) {
         addAction(new ViewGroupAction(viewId, null));
         addTaint(viewId);
@@ -245,7 +245,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.200 -0400", hash_original_method = "715372503FFB1BBD9EE3BEF4F54CECDE", hash_generated_method = "E5E7094C78B0342C8FBE818E967BED88")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.550 -0400", hash_original_method = "715372503FFB1BBD9EE3BEF4F54CECDE", hash_generated_method = "E5E7094C78B0342C8FBE818E967BED88")
     public void showNext(int viewId) {
         addAction(new ReflectionActionWithoutParams(viewId, "showNext"));
         addTaint(viewId);
@@ -254,7 +254,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.200 -0400", hash_original_method = "92870339C0CC6AF77A420F74F896E688", hash_generated_method = "7058F26D9AECA826E789F6C83BE8A1AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.550 -0400", hash_original_method = "92870339C0CC6AF77A420F74F896E688", hash_generated_method = "7058F26D9AECA826E789F6C83BE8A1AC")
     public void showPrevious(int viewId) {
         addAction(new ReflectionActionWithoutParams(viewId, "showPrevious"));
         addTaint(viewId);
@@ -263,7 +263,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.200 -0400", hash_original_method = "D726270A4D4DC2D53B195715D168181D", hash_generated_method = "51948C5BA528D0BF0C16FC0DB8B9C456")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.550 -0400", hash_original_method = "D726270A4D4DC2D53B195715D168181D", hash_generated_method = "51948C5BA528D0BF0C16FC0DB8B9C456")
     public void setDisplayedChild(int viewId, int childIndex) {
         setInt(viewId, "setDisplayedChild", childIndex);
         addTaint(viewId);
@@ -273,7 +273,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.200 -0400", hash_original_method = "DEE52A50DF8AF905161D8440F9C7FD6B", hash_generated_method = "5042AB34DE0B094F8693F57AAD5EBDBE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.552 -0400", hash_original_method = "DEE52A50DF8AF905161D8440F9C7FD6B", hash_generated_method = "5042AB34DE0B094F8693F57AAD5EBDBE")
     public void setViewVisibility(int viewId, int visibility) {
         setInt(viewId, "setVisibility", visibility);
         addTaint(viewId);
@@ -283,7 +283,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.201 -0400", hash_original_method = "5F8A789C1791A65B082D971694A97107", hash_generated_method = "C1686747B60B04994A641AC32DF00106")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.552 -0400", hash_original_method = "5F8A789C1791A65B082D971694A97107", hash_generated_method = "C1686747B60B04994A641AC32DF00106")
     public void setTextViewText(int viewId, CharSequence text) {
         setCharSequence(viewId, "setText", text);
         addTaint(viewId);
@@ -293,7 +293,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.201 -0400", hash_original_method = "BA7406E13895A91025A0507F41BF6313", hash_generated_method = "9EC64FFF95AE3A7F8A73FA6F77C9F492")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.552 -0400", hash_original_method = "BA7406E13895A91025A0507F41BF6313", hash_generated_method = "9EC64FFF95AE3A7F8A73FA6F77C9F492")
     public void setImageViewResource(int viewId, int srcId) {
         setInt(viewId, "setImageResource", srcId);
         addTaint(viewId);
@@ -303,7 +303,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.201 -0400", hash_original_method = "433DFD276FBB02E0D7A2B8DA3B0F08D8", hash_generated_method = "4886F826B42973C5B36780910CDD3442")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.554 -0400", hash_original_method = "433DFD276FBB02E0D7A2B8DA3B0F08D8", hash_generated_method = "4886F826B42973C5B36780910CDD3442")
     public void setImageViewUri(int viewId, Uri uri) {
         setUri(viewId, "setImageURI", uri);
         addTaint(viewId);
@@ -313,7 +313,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.202 -0400", hash_original_method = "957E8B822330AC731DF30A1543908B02", hash_generated_method = "254ADF3EE07F981DCF1CB0DDFC394ADA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.554 -0400", hash_original_method = "957E8B822330AC731DF30A1543908B02", hash_generated_method = "254ADF3EE07F981DCF1CB0DDFC394ADA")
     public void setImageViewBitmap(int viewId, Bitmap bitmap) {
         setBitmap(viewId, "setImageBitmap", bitmap);
         addTaint(viewId);
@@ -323,7 +323,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.202 -0400", hash_original_method = "4F3E7FFD56A31D2F2A8813C161A91D32", hash_generated_method = "46FFB0E9FA7C74856D21886F6686577C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.556 -0400", hash_original_method = "4F3E7FFD56A31D2F2A8813C161A91D32", hash_generated_method = "46FFB0E9FA7C74856D21886F6686577C")
     public void setEmptyView(int viewId, int emptyViewId) {
         addAction(new SetEmptyView(viewId, emptyViewId));
         addTaint(viewId);
@@ -333,7 +333,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.203 -0400", hash_original_method = "47E59AC623A4BD9BB48A3F2CB501DFB4", hash_generated_method = "190450189383961E1AE7EA8D7C6C9468")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.557 -0400", hash_original_method = "47E59AC623A4BD9BB48A3F2CB501DFB4", hash_generated_method = "190450189383961E1AE7EA8D7C6C9468")
     public void setChronometer(int viewId, long base, String format, boolean started) {
         setLong(viewId, "setBase", base);
         setString(viewId, "setFormat", format);
@@ -349,7 +349,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.216 -0400", hash_original_method = "A929EFC8DD62C6A3F9A2F8FB0663D928", hash_generated_method = "E780DF68AF578C84D517E94BB1814E96")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.563 -0400", hash_original_method = "A929EFC8DD62C6A3F9A2F8FB0663D928", hash_generated_method = "E780DF68AF578C84D517E94BB1814E96")
     public void setProgressBar(int viewId, int max, int progress, 
             boolean indeterminate) {
         setBoolean(viewId, "setIndeterminate", indeterminate);
@@ -370,7 +370,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.216 -0400", hash_original_method = "84C6A4280B6852D03015FA2AE8D65E64", hash_generated_method = "10205052AA7B567FB33A85370542456A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.564 -0400", hash_original_method = "84C6A4280B6852D03015FA2AE8D65E64", hash_generated_method = "10205052AA7B567FB33A85370542456A")
     public void setOnClickPendingIntent(int viewId, PendingIntent pendingIntent) {
         addAction(new SetOnClickPendingIntent(viewId, pendingIntent));
         addTaint(viewId);
@@ -380,7 +380,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.217 -0400", hash_original_method = "A434A09AC636025A142B2CC781D07FF1", hash_generated_method = "E5A0C10ED8F0807662E89DC6DC1B2D0E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.564 -0400", hash_original_method = "A434A09AC636025A142B2CC781D07FF1", hash_generated_method = "E5A0C10ED8F0807662E89DC6DC1B2D0E")
     public void setPendingIntentTemplate(int viewId, PendingIntent pendingIntentTemplate) {
         addAction(new SetPendingIntentTemplate(viewId, pendingIntentTemplate));
         addTaint(viewId);
@@ -390,7 +390,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.217 -0400", hash_original_method = "899E714C9944265097024FA544BB7AC2", hash_generated_method = "FC803D3084FEE4BFE925B42BC2E4AD8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.565 -0400", hash_original_method = "899E714C9944265097024FA544BB7AC2", hash_generated_method = "FC803D3084FEE4BFE925B42BC2E4AD8E")
     public void setOnClickFillInIntent(int viewId, Intent fillInIntent) {
         addAction(new SetOnClickFillInIntent(viewId, fillInIntent));
         addTaint(viewId);
@@ -400,7 +400,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.217 -0400", hash_original_method = "09A5B1AD4F222B569CE2E6BD5BF01B12", hash_generated_method = "6FE53FFB3BEC3305193E1F43FE4188C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.566 -0400", hash_original_method = "09A5B1AD4F222B569CE2E6BD5BF01B12", hash_generated_method = "6FE53FFB3BEC3305193E1F43FE4188C5")
     public void setDrawableParameters(int viewId, boolean targetBackground, int alpha,
             int colorFilter, PorterDuff.Mode mode, int level) {
         addAction(new SetDrawableParameters(viewId, targetBackground, alpha,
@@ -417,7 +417,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.218 -0400", hash_original_method = "F51B3B3FB58685A967056786739D5D5A", hash_generated_method = "D4C5BBDF3D4007BC29A57A35CC4C2DBE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.573 -0400", hash_original_method = "F51B3B3FB58685A967056786739D5D5A", hash_generated_method = "D4C5BBDF3D4007BC29A57A35CC4C2DBE")
     public void setTextColor(int viewId, int color) {
         setInt(viewId, "setTextColor", color);
         addTaint(viewId);
@@ -427,7 +427,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.218 -0400", hash_original_method = "F3196C5DB537F18A0B70CAAF74A09A0A", hash_generated_method = "1ED880BC8B6C456181055C17BF0482BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.573 -0400", hash_original_method = "F3196C5DB537F18A0B70CAAF74A09A0A", hash_generated_method = "1ED880BC8B6C456181055C17BF0482BF")
     @Deprecated
     public void setRemoteAdapter(int appWidgetId, int viewId, Intent intent) {
         setRemoteAdapter(viewId, intent);
@@ -439,7 +439,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.218 -0400", hash_original_method = "9F000F17F0336123DB5D1DD3E4F67BE6", hash_generated_method = "209EBF5096E4DFFB4FF13A86D14D2276")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.573 -0400", hash_original_method = "9F000F17F0336123DB5D1DD3E4F67BE6", hash_generated_method = "209EBF5096E4DFFB4FF13A86D14D2276")
     public void setRemoteAdapter(int viewId, Intent intent) {
         addAction(new SetRemoteViewsAdapterIntent(viewId, intent));
         addTaint(viewId);
@@ -449,7 +449,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.218 -0400", hash_original_method = "15753F5F29C6091CCB595496C38B1963", hash_generated_method = "F2669B0CFFF5FCDD28D213E02584C3EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.580 -0400", hash_original_method = "15753F5F29C6091CCB595496C38B1963", hash_generated_method = "F2669B0CFFF5FCDD28D213E02584C3EE")
     public void setScrollPosition(int viewId, int position) {
         setInt(viewId, "smoothScrollToPosition", position);
         addTaint(viewId);
@@ -459,7 +459,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.226 -0400", hash_original_method = "62C951046FF905CA4D61721F847C4DC5", hash_generated_method = "FF4FFBDC32144F1C0691C17995ADC9EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.580 -0400", hash_original_method = "62C951046FF905CA4D61721F847C4DC5", hash_generated_method = "FF4FFBDC32144F1C0691C17995ADC9EC")
     public void setRelativeScrollPosition(int viewId, int offset) {
         setInt(viewId, "smoothScrollByOffset", offset);
         addTaint(viewId);
@@ -469,7 +469,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.227 -0400", hash_original_method = "ACF50C9E2E7A3E77B399A3E9AD77138B", hash_generated_method = "0AFE7CCC20496291CDC8599C5C3EA0B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.580 -0400", hash_original_method = "ACF50C9E2E7A3E77B399A3E9AD77138B", hash_generated_method = "0AFE7CCC20496291CDC8599C5C3EA0B7")
     public void setBoolean(int viewId, String methodName, boolean value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BOOLEAN, value));
         addTaint(viewId);
@@ -480,7 +480,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.227 -0400", hash_original_method = "6577642D84CE42EC3FAE93CD4A676A48", hash_generated_method = "7E26476BD99A864F4C92D35888DC678E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.583 -0400", hash_original_method = "6577642D84CE42EC3FAE93CD4A676A48", hash_generated_method = "7E26476BD99A864F4C92D35888DC678E")
     public void setByte(int viewId, String methodName, byte value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BYTE, value));
         addTaint(viewId);
@@ -491,7 +491,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.231 -0400", hash_original_method = "1EF837BE87322E5A782B07EBE8F017ED", hash_generated_method = "12E51C0AF74AA8C03D8BC102B801C7D3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.584 -0400", hash_original_method = "1EF837BE87322E5A782B07EBE8F017ED", hash_generated_method = "12E51C0AF74AA8C03D8BC102B801C7D3")
     public void setShort(int viewId, String methodName, short value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.SHORT, value));
         addTaint(viewId);
@@ -502,7 +502,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.231 -0400", hash_original_method = "2BA2097F7597ED476DFE96444FF2B47B", hash_generated_method = "C629D01D0D3E96687E0080FB6FB1AAFB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.584 -0400", hash_original_method = "2BA2097F7597ED476DFE96444FF2B47B", hash_generated_method = "C629D01D0D3E96687E0080FB6FB1AAFB")
     public void setInt(int viewId, String methodName, int value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.INT, value));
         addTaint(viewId);
@@ -513,7 +513,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.235 -0400", hash_original_method = "7BBB498795ABAEC2FC5C9E80D1FF1F8F", hash_generated_method = "7C9D858AD1C83D5BB6E0436A433BE27A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.584 -0400", hash_original_method = "7BBB498795ABAEC2FC5C9E80D1FF1F8F", hash_generated_method = "7C9D858AD1C83D5BB6E0436A433BE27A")
     public void setLong(int viewId, String methodName, long value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.LONG, value));
         addTaint(viewId);
@@ -524,7 +524,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.235 -0400", hash_original_method = "877DFBEE5EFFB4333EA4E3E01D628209", hash_generated_method = "6750497552EE6EB3729A84ADF4EEF057")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.585 -0400", hash_original_method = "877DFBEE5EFFB4333EA4E3E01D628209", hash_generated_method = "6750497552EE6EB3729A84ADF4EEF057")
     public void setFloat(int viewId, String methodName, float value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.FLOAT, value));
         addTaint(viewId);
@@ -535,7 +535,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.236 -0400", hash_original_method = "36511416C0ED3D737A57750DB7E0C821", hash_generated_method = "B8A6727A0CF67717F2DE5CAF6A58BC37")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.585 -0400", hash_original_method = "36511416C0ED3D737A57750DB7E0C821", hash_generated_method = "B8A6727A0CF67717F2DE5CAF6A58BC37")
     public void setDouble(int viewId, String methodName, double value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.DOUBLE, value));
         addTaint(viewId);
@@ -546,7 +546,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.236 -0400", hash_original_method = "E7DFE8EB27DC5DF6C76291F003DE876E", hash_generated_method = "B472EFE0AD720EB489982CE2CEAE8034")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.585 -0400", hash_original_method = "E7DFE8EB27DC5DF6C76291F003DE876E", hash_generated_method = "B472EFE0AD720EB489982CE2CEAE8034")
     public void setChar(int viewId, String methodName, char value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.CHAR, value));
         addTaint(viewId);
@@ -557,7 +557,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.236 -0400", hash_original_method = "12B33E0B58F238F52279DFEB1871046D", hash_generated_method = "8E1CB0C5EB1F17AC4E89D030D09AA625")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.585 -0400", hash_original_method = "12B33E0B58F238F52279DFEB1871046D", hash_generated_method = "8E1CB0C5EB1F17AC4E89D030D09AA625")
     public void setString(int viewId, String methodName, String value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.STRING, value));
         addTaint(viewId);
@@ -568,7 +568,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.237 -0400", hash_original_method = "93A93353A27881B93F029E1CB8E38561", hash_generated_method = "E36A98006B1B4913E74FBA5EB0D8EF9C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.590 -0400", hash_original_method = "93A93353A27881B93F029E1CB8E38561", hash_generated_method = "E36A98006B1B4913E74FBA5EB0D8EF9C")
     public void setCharSequence(int viewId, String methodName, CharSequence value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.CHAR_SEQUENCE, value));
         addTaint(viewId);
@@ -579,7 +579,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.237 -0400", hash_original_method = "33EE202B45F16FA5012E7C802B1E1162", hash_generated_method = "B4BED6EF95554EFA166211946117B443")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.590 -0400", hash_original_method = "33EE202B45F16FA5012E7C802B1E1162", hash_generated_method = "B4BED6EF95554EFA166211946117B443")
     public void setUri(int viewId, String methodName, Uri value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.URI, value));
         addTaint(viewId);
@@ -590,7 +590,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.253 -0400", hash_original_method = "BE18885A2548A0B5EB1C1E6420A7D63A", hash_generated_method = "5CB35D7C885AEB01DBD476D41B93F218")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.660 -0400", hash_original_method = "BE18885A2548A0B5EB1C1E6420A7D63A", hash_generated_method = "5CB35D7C885AEB01DBD476D41B93F218")
     public void setBitmap(int viewId, String methodName, Bitmap value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BITMAP, value));
         addTaint(viewId);
@@ -601,7 +601,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.254 -0400", hash_original_method = "0BCEFBE1ECC6F937E30E64CCDC160671", hash_generated_method = "96318BAF418FC1F368282EF2A9AC9B79")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.661 -0400", hash_original_method = "0BCEFBE1ECC6F937E30E64CCDC160671", hash_generated_method = "96318BAF418FC1F368282EF2A9AC9B79")
     public void setBundle(int viewId, String methodName, Bundle value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BUNDLE, value));
         addTaint(viewId);
@@ -612,7 +612,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.254 -0400", hash_original_method = "1536FDACAD3B90F5944D61240D2247D6", hash_generated_method = "46565EF22497645D3884804BB0A6D419")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.661 -0400", hash_original_method = "1536FDACAD3B90F5944D61240D2247D6", hash_generated_method = "46565EF22497645D3884804BB0A6D419")
     public void setIntent(int viewId, String methodName, Intent value) {
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.INTENT, value));
         addTaint(viewId);
@@ -623,7 +623,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.255 -0400", hash_original_method = "DAF30AB9823DD59C17B2FD226E498806", hash_generated_method = "DE3CA1090F90BFFEA2A4EE8FDBC30AAA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.661 -0400", hash_original_method = "DAF30AB9823DD59C17B2FD226E498806", hash_generated_method = "DE3CA1090F90BFFEA2A4EE8FDBC30AAA")
     public void setContentDescription(int viewId, CharSequence contentDescription) {
         setCharSequence(viewId, "setContentDescription", contentDescription);
         addTaint(viewId);
@@ -633,9 +633,9 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.256 -0400", hash_original_method = "389CE470D5FBF8918932B7CDEB2F38A1", hash_generated_method = "5DFCF27AE16CBA3367D8B7821EBCD748")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.662 -0400", hash_original_method = "389CE470D5FBF8918932B7CDEB2F38A1", hash_generated_method = "C83F87C63F522CCDF0A28FDF73268C5E")
     public View apply(Context context, ViewGroup parent) {
-        View varB4EAC82CA7396A68D541C85D26508E83_2138144637 = null; //Variable for return #1
+        View varB4EAC82CA7396A68D541C85D26508E83_999877688 = null; //Variable for return #1
         View result;
         Context c;
         c = prepareContext(context);
@@ -646,11 +646,11 @@ public class RemoteViews implements Parcelable, Filter {
         inflater.setFilter(this);
         result = inflater.inflate(mLayoutId, parent, false);
         performApply(result, parent);
-        varB4EAC82CA7396A68D541C85D26508E83_2138144637 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_999877688 = result;
         addTaint(context.getTaint());
         addTaint(parent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2138144637.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2138144637;
+        varB4EAC82CA7396A68D541C85D26508E83_999877688.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_999877688;
         // ---------- Original Method ----------
         //View result;
         //Context c = prepareContext(context);
@@ -664,7 +664,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.256 -0400", hash_original_method = "721D0331C9411BF86340BE2E97293121", hash_generated_method = "4E7B42AA9410C09239E197B17AC0EA6D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.662 -0400", hash_original_method = "721D0331C9411BF86340BE2E97293121", hash_generated_method = "4E7B42AA9410C09239E197B17AC0EA6D")
     public void reapply(Context context, View v) {
         prepareContext(context);
         performApply(v, (ViewGroup) v.getParent());
@@ -676,7 +676,7 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.257 -0400", hash_original_method = "8E5E3E88ABCC69E3321D1346316340C9", hash_generated_method = "119E533815F91DE9E3D23444709F5D0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.662 -0400", hash_original_method = "8E5E3E88ABCC69E3321D1346316340C9", hash_generated_method = "119E533815F91DE9E3D23444709F5D0C")
     private void performApply(View v, ViewGroup parent) {
         {
             int count;
@@ -704,9 +704,9 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.267 -0400", hash_original_method = "22DA97EA1494F0F193EF18C8ED8C5634", hash_generated_method = "F48414102688D5CF862955398DD382A1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.663 -0400", hash_original_method = "22DA97EA1494F0F193EF18C8ED8C5634", hash_generated_method = "2C1D418DC3BA16EF84E5716888A63420")
     private Context prepareContext(Context context) {
-        Context varB4EAC82CA7396A68D541C85D26508E83_1297285282 = null; //Variable for return #1
+        Context varB4EAC82CA7396A68D541C85D26508E83_959246754 = null; //Variable for return #1
         Context c;
         String packageName;
         packageName = mPackage;
@@ -723,10 +723,10 @@ public class RemoteViews implements Parcelable, Filter {
         {
             c = context;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1297285282 = c;
+        varB4EAC82CA7396A68D541C85D26508E83_959246754 = c;
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1297285282.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1297285282;
+        varB4EAC82CA7396A68D541C85D26508E83_959246754.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_959246754;
         // ---------- Original Method ----------
         //Context c;
         //String packageName = mPackage;
@@ -744,28 +744,28 @@ public class RemoteViews implements Parcelable, Filter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.271 -0400", hash_original_method = "02A046D25F4E9D374E474E21F6366163", hash_generated_method = "6A0001687706234E146E5097867BFE12")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.664 -0400", hash_original_method = "02A046D25F4E9D374E474E21F6366163", hash_generated_method = "123F00E03209CE8333F8462EF6E6FA79")
     public boolean onLoadClass(Class clazz) {
         //DSFIXME:  CODE0009: Possible callback target function detected
-        boolean var240EFB7114C55D0ABD9923D7086CE184_457255002 = (clazz.isAnnotationPresent(RemoteView.class));
+        boolean var240EFB7114C55D0ABD9923D7086CE184_1654402925 = (clazz.isAnnotationPresent(RemoteView.class));
         addTaint(clazz.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1809936809 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1809936809;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_786082641 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_786082641;
         // ---------- Original Method ----------
         //return clazz.isAnnotationPresent(RemoteView.class);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.272 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "166FF6A85074FF3237ED6AD10DD0B9F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.664 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7D1A8A97D405A715161B2B4E0B00A34B")
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_588513386 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_588513386;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1338660760 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1338660760;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.272 -0400", hash_original_method = "E42048CF3CAA5A680CE684B09E27CD46", hash_generated_method = "9B501F5896133830799CF4C052C66A2B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.677 -0400", hash_original_method = "E42048CF3CAA5A680CE684B09E27CD46", hash_generated_method = "9B501F5896133830799CF4C052C66A2B")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mPackage);
         dest.writeInt(mLayoutId);
@@ -809,7 +809,7 @@ public class RemoteViews implements Parcelable, Filter {
     
     public static class ActionException extends RuntimeException {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.276 -0400", hash_original_method = "4338C0B6ED05990B68F77B56C502C8BC", hash_generated_method = "6A9B199E4B70296D28CD039E0E15FE3D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.678 -0400", hash_original_method = "4338C0B6ED05990B68F77B56C502C8BC", hash_generated_method = "6A9B199E4B70296D28CD039E0E15FE3D")
         public  ActionException(Exception ex) {
             super(ex);
             addTaint(ex.getTaint());
@@ -817,7 +817,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.276 -0400", hash_original_method = "E5DD8B85C6FF17BD695A219FDD405D42", hash_generated_method = "947B27CB5701852C6B41A566481318D7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.679 -0400", hash_original_method = "E5DD8B85C6FF17BD695A219FDD405D42", hash_generated_method = "947B27CB5701852C6B41A566481318D7")
         public  ActionException(String message) {
             super(message);
             addTaint(message.getTaint());
@@ -831,7 +831,7 @@ public class RemoteViews implements Parcelable, Filter {
     
     private abstract static class Action implements Parcelable {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.276 -0400", hash_original_method = "6EEA56B449227AEBD2AEF88874F9C864", hash_generated_method = "6EEA56B449227AEBD2AEF88874F9C864")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.681 -0400", hash_original_method = "6EEA56B449227AEBD2AEF88874F9C864", hash_generated_method = "6EEA56B449227AEBD2AEF88874F9C864")
         public Action ()
         {
             //Synthesized constructor
@@ -841,16 +841,16 @@ public class RemoteViews implements Parcelable, Filter {
         public abstract void apply(View root, ViewGroup rootParent) throws ActionException;
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.280 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90E51EE7A0D6C3FB1FDBEC4CDCB650D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.681 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0C5498B9A1B38E43F8B570430C515E46")
         public int describeContents() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1466843739 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1466843739;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_283303320 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_283303320;
             // ---------- Original Method ----------
             //return 0;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.281 -0400", hash_original_method = "F71AEDBFF608C755FB28C9D45BA8F347", hash_generated_method = "E6544460AD15DE17E386E7E557B83699")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.681 -0400", hash_original_method = "F71AEDBFF608C755FB28C9D45BA8F347", hash_generated_method = "E6544460AD15DE17E386E7E557B83699")
         public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
             addTaint(counter.getTaint());
             // ---------- Original Method ----------
@@ -858,7 +858,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.281 -0400", hash_original_method = "18203BE61B7EF9CD6501BEC6EAEF8812", hash_generated_method = "F801E36D2604A70EBC20B2AADDCBE633")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.682 -0400", hash_original_method = "18203BE61B7EF9CD6501BEC6EAEF8812", hash_generated_method = "730F0D7F72E20495DECC65290A0005BE")
         protected boolean startIntentSafely(Context context, PendingIntent pendingIntent,
                 Intent fillInIntent) {
             try 
@@ -880,8 +880,8 @@ public class RemoteViews implements Parcelable, Filter {
             addTaint(context.getTaint());
             addTaint(pendingIntent.getTaint());
             addTaint(fillInIntent.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2056830765 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2056830765;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1154152662 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1154152662;
             // ---------- Original Method ----------
             //try {
                 //context.startIntentSender(
@@ -905,14 +905,14 @@ public class RemoteViews implements Parcelable, Filter {
 
     
     private class SetEmptyView extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.281 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.682 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.281 -0400", hash_original_field = "23D13A84EF4F7189027D73EC6744F6E8", hash_generated_field = "8D3D66B4863E42DCDD06D3EE8F80E8F7")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.682 -0400", hash_original_field = "23D13A84EF4F7189027D73EC6744F6E8", hash_generated_field = "8D3D66B4863E42DCDD06D3EE8F80E8F7")
 
         int emptyViewId;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_method = "16159C50F4CD599B644ED014E4EA0822", hash_generated_method = "C1C4A274A58AFAF2063BE98C3846BAE4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.683 -0400", hash_original_method = "16159C50F4CD599B644ED014E4EA0822", hash_generated_method = "C1C4A274A58AFAF2063BE98C3846BAE4")
           SetEmptyView(int viewId, int emptyViewId) {
             this.viewId = viewId;
             this.emptyViewId = emptyViewId;
@@ -922,7 +922,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.304 -0400", hash_original_method = "F10F16648F57CF9FE4F3D806E803B1DC", hash_generated_method = "0CB8CADFFD90BE29657F9D6DCA52C11C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.683 -0400", hash_original_method = "F10F16648F57CF9FE4F3D806E803B1DC", hash_generated_method = "0CB8CADFFD90BE29657F9D6DCA52C11C")
           SetEmptyView(Parcel in) {
             this.viewId = in.readInt();
             this.emptyViewId = in.readInt();
@@ -932,7 +932,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.311 -0400", hash_original_method = "1EA9A4CD3E90F19D62658919976BDCDF", hash_generated_method = "6C1336B94F8BEF7389F402943DB3AB66")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.693 -0400", hash_original_method = "1EA9A4CD3E90F19D62658919976BDCDF", hash_generated_method = "6C1336B94F8BEF7389F402943DB3AB66")
         public void writeToParcel(Parcel out, int flags) {
             out.writeInt(TAG);
             out.writeInt(this.viewId);
@@ -946,7 +946,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.315 -0400", hash_original_method = "BC00C709904F6A7A06083DBEA360E136", hash_generated_method = "60E4E2FA4DDBCEB930C4A0FED22CFDD2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.693 -0400", hash_original_method = "BC00C709904F6A7A06083DBEA360E136", hash_generated_method = "60E4E2FA4DDBCEB930C4A0FED22CFDD2")
         @Override
         public void apply(View root, ViewGroup rootParent) {
             View view;
@@ -968,7 +968,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.321 -0400", hash_original_field = "9C473E90A5431830598CA413D5D4F376", hash_generated_field = "832C8F64E214207268768E39D7FCB9F3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.693 -0400", hash_original_field = "9C473E90A5431830598CA413D5D4F376", hash_generated_field = "832C8F64E214207268768E39D7FCB9F3")
 
         public final static int TAG = 6;
     }
@@ -976,14 +976,14 @@ public class RemoteViews implements Parcelable, Filter {
 
     
     private class SetOnClickFillInIntent extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.321 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.693 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.321 -0400", hash_original_field = "3BCE79238D517725ED23615F7B7237D8", hash_generated_field = "9D3AB3AC0219EE64EF3FF80AB068BB5E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.693 -0400", hash_original_field = "3BCE79238D517725ED23615F7B7237D8", hash_generated_field = "9D3AB3AC0219EE64EF3FF80AB068BB5E")
 
         Intent fillInIntent;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.324 -0400", hash_original_method = "FE3667D87A305D86E9A8A6AD36F5EEAF", hash_generated_method = "18AF1F9FD9414C6BCF3DBFD2F1D4F53B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.694 -0400", hash_original_method = "FE3667D87A305D86E9A8A6AD36F5EEAF", hash_generated_method = "18AF1F9FD9414C6BCF3DBFD2F1D4F53B")
         public  SetOnClickFillInIntent(int id, Intent fillInIntent) {
             this.viewId = id;
             this.fillInIntent = fillInIntent;
@@ -993,7 +993,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.332 -0400", hash_original_method = "8F893000547B59EAD09450FBC024CAC1", hash_generated_method = "D68C613EB9756E36CE15A86322799F88")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.694 -0400", hash_original_method = "8F893000547B59EAD09450FBC024CAC1", hash_generated_method = "D68C613EB9756E36CE15A86322799F88")
         public  SetOnClickFillInIntent(Parcel parcel) {
             viewId = parcel.readInt();
             fillInIntent = Intent.CREATOR.createFromParcel(parcel);
@@ -1003,7 +1003,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.332 -0400", hash_original_method = "4A68D926F0B47E5C592025763C57CD49", hash_generated_method = "BEBF0BA2F3A59CB1F53D2303004AD609")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.694 -0400", hash_original_method = "4A68D926F0B47E5C592025763C57CD49", hash_generated_method = "BEBF0BA2F3A59CB1F53D2303004AD609")
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(TAG);
             dest.writeInt(viewId);
@@ -1017,7 +1017,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.333 -0400", hash_original_method = "3474C680008284CA3FCD2C734DB61ED8", hash_generated_method = "80E47B83AA749F4DF5EB274E21DDE555")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.696 -0400", hash_original_method = "3474C680008284CA3FCD2C734DB61ED8", hash_generated_method = "80E47B83AA749F4DF5EB274E21DDE555")
         @Override
         public void apply(View root, ViewGroup rootParent) {
             View target;
@@ -1066,7 +1066,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.333 -0400", hash_original_field = "D91A2B10EDD4F80880F9239AF8DAACE6", hash_generated_field = "257D5F310A82D1AE988E43617C7394F4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.698 -0400", hash_original_field = "D91A2B10EDD4F80880F9239AF8DAACE6", hash_generated_field = "257D5F310A82D1AE988E43617C7394F4")
 
         public final static int TAG = 9;
     }
@@ -1074,14 +1074,14 @@ public class RemoteViews implements Parcelable, Filter {
 
     
     private class SetPendingIntentTemplate extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.339 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.699 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.339 -0400", hash_original_field = "176E2FA2A8B62FAC39A0DD8CC7A328C0", hash_generated_field = "D0EA5F86DAC5B859FF411BE20B81D705")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.699 -0400", hash_original_field = "176E2FA2A8B62FAC39A0DD8CC7A328C0", hash_generated_field = "D0EA5F86DAC5B859FF411BE20B81D705")
 
         PendingIntent pendingIntentTemplate;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.340 -0400", hash_original_method = "319DBBF9EE021BC2BD14552E08C5F806", hash_generated_method = "D7A3DCE3AD9BD409E6F2A6466125223B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.699 -0400", hash_original_method = "319DBBF9EE021BC2BD14552E08C5F806", hash_generated_method = "D7A3DCE3AD9BD409E6F2A6466125223B")
         public  SetPendingIntentTemplate(int id, PendingIntent pendingIntentTemplate) {
             this.viewId = id;
             this.pendingIntentTemplate = pendingIntentTemplate;
@@ -1091,7 +1091,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.340 -0400", hash_original_method = "F35BA9665B1C6E88223062D1328FA579", hash_generated_method = "DD0B2CD3748A8B20A1DE310050B42710")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.699 -0400", hash_original_method = "F35BA9665B1C6E88223062D1328FA579", hash_generated_method = "DD0B2CD3748A8B20A1DE310050B42710")
         public  SetPendingIntentTemplate(Parcel parcel) {
             viewId = parcel.readInt();
             pendingIntentTemplate = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
@@ -1101,7 +1101,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.340 -0400", hash_original_method = "2DE56D1052D41AEA85684029786EA581", hash_generated_method = "DD2BD96A2726CB5130E4611112CF9B53")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.701 -0400", hash_original_method = "2DE56D1052D41AEA85684029786EA581", hash_generated_method = "DD2BD96A2726CB5130E4611112CF9B53")
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(TAG);
             dest.writeInt(viewId);
@@ -1115,7 +1115,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.341 -0400", hash_original_method = "BC6383FD3782B4E4299FBBF52DF5CBB4", hash_generated_method = "D66FA9C45708BA9AD186CCD41FDD92FC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.702 -0400", hash_original_method = "BC6383FD3782B4E4299FBBF52DF5CBB4", hash_generated_method = "D66FA9C45708BA9AD186CCD41FDD92FC")
         @Override
         public void apply(View root, ViewGroup rootParent) {
             View target;
@@ -1168,7 +1168,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.341 -0400", hash_original_field = "6065CCBD64FD6BA819686C609CBF3FA3", hash_generated_field = "999B6A111CF47CD01BFB86C10E0DFDAF")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.702 -0400", hash_original_field = "6065CCBD64FD6BA819686C609CBF3FA3", hash_generated_field = "999B6A111CF47CD01BFB86C10E0DFDAF")
 
         public final static int TAG = 8;
     }
@@ -1176,14 +1176,14 @@ public class RemoteViews implements Parcelable, Filter {
 
     
     private class SetRemoteViewsAdapterIntent extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.342 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.702 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.342 -0400", hash_original_field = "FA48C7D544739BA0E46430E4BA366662", hash_generated_field = "170FCA7A98A65D8003A3D20D5B3C245D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.702 -0400", hash_original_field = "FA48C7D544739BA0E46430E4BA366662", hash_generated_field = "170FCA7A98A65D8003A3D20D5B3C245D")
 
         Intent intent;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.342 -0400", hash_original_method = "2562242EF5AD42CD0339F4CFA0A5651B", hash_generated_method = "4D41B794CEB49FBFDACF661D08DF1C0D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.702 -0400", hash_original_method = "2562242EF5AD42CD0339F4CFA0A5651B", hash_generated_method = "4D41B794CEB49FBFDACF661D08DF1C0D")
         public  SetRemoteViewsAdapterIntent(int id, Intent intent) {
             this.viewId = id;
             this.intent = intent;
@@ -1193,7 +1193,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.343 -0400", hash_original_method = "3062D841F9A527FF82C19CE8ED4DF47C", hash_generated_method = "79C217E5E76E9F79C11955E3F453D87B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.708 -0400", hash_original_method = "3062D841F9A527FF82C19CE8ED4DF47C", hash_generated_method = "79C217E5E76E9F79C11955E3F453D87B")
         public  SetRemoteViewsAdapterIntent(Parcel parcel) {
             viewId = parcel.readInt();
             intent = Intent.CREATOR.createFromParcel(parcel);
@@ -1203,7 +1203,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.343 -0400", hash_original_method = "F580FE61025C5DC81DFB7BB9EA905954", hash_generated_method = "9953A53F8C5F283E7B0EDDCBA5358E5F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.708 -0400", hash_original_method = "F580FE61025C5DC81DFB7BB9EA905954", hash_generated_method = "9953A53F8C5F283E7B0EDDCBA5358E5F")
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(TAG);
             dest.writeInt(viewId);
@@ -1217,7 +1217,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.345 -0400", hash_original_method = "EDE9247E350EBAB87917A7616D3465DB", hash_generated_method = "8EA77A1764BF5A7ACE7B60F09133BBA9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.709 -0400", hash_original_method = "EDE9247E350EBAB87917A7616D3465DB", hash_generated_method = "8EA77A1764BF5A7ACE7B60F09133BBA9")
         @Override
         public void apply(View root, ViewGroup rootParent) {
             View target;
@@ -1242,7 +1242,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.345 -0400", hash_original_field = "454319544DE430D1FE4AE42999579103", hash_generated_field = "8FE5A8285A40B3CDB587BD72B1510F3F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.712 -0400", hash_original_field = "454319544DE430D1FE4AE42999579103", hash_generated_field = "8FE5A8285A40B3CDB587BD72B1510F3F")
 
         public final static int TAG = 10;
     }
@@ -1250,14 +1250,14 @@ public class RemoteViews implements Parcelable, Filter {
 
     
     private class SetOnClickPendingIntent extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.350 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.713 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.351 -0400", hash_original_field = "2FACCE917278B302FB28C98EBAEC216A", hash_generated_field = "7026E183996B4AEE13A8653E0B37928C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.713 -0400", hash_original_field = "2FACCE917278B302FB28C98EBAEC216A", hash_generated_field = "7026E183996B4AEE13A8653E0B37928C")
 
         PendingIntent pendingIntent;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.351 -0400", hash_original_method = "66EA2688C4B0F29524FFED0B8D1C4557", hash_generated_method = "DE4E1C8802A6B5161427D208A788FF49")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.713 -0400", hash_original_method = "66EA2688C4B0F29524FFED0B8D1C4557", hash_generated_method = "DE4E1C8802A6B5161427D208A788FF49")
         public  SetOnClickPendingIntent(int id, PendingIntent pendingIntent) {
             this.viewId = id;
             this.pendingIntent = pendingIntent;
@@ -1267,7 +1267,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.352 -0400", hash_original_method = "2D335FA6E397EB90FCE69134FAC6C0E6", hash_generated_method = "7AF4DFE20455952984B5C6A7CBCA2E14")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.713 -0400", hash_original_method = "2D335FA6E397EB90FCE69134FAC6C0E6", hash_generated_method = "7AF4DFE20455952984B5C6A7CBCA2E14")
         public  SetOnClickPendingIntent(Parcel parcel) {
             viewId = parcel.readInt();
             pendingIntent = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
@@ -1277,7 +1277,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.352 -0400", hash_original_method = "7CEF806B95F0881A888E5DFCE712AF4A", hash_generated_method = "67B42A26D79B9D01866E55703FDC2114")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.714 -0400", hash_original_method = "7CEF806B95F0881A888E5DFCE712AF4A", hash_generated_method = "67B42A26D79B9D01866E55703FDC2114")
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(TAG);
             dest.writeInt(viewId);
@@ -1291,7 +1291,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.354 -0400", hash_original_method = "7AB558D2EB1905941BBC96768E4F0260", hash_generated_method = "3512F38DFACE2C405686D8F5EBBCCB2F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.714 -0400", hash_original_method = "7AB558D2EB1905941BBC96768E4F0260", hash_generated_method = "3512F38DFACE2C405686D8F5EBBCCB2F")
         @Override
         public void apply(View root, ViewGroup rootParent) {
             View target;
@@ -1323,7 +1323,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.354 -0400", hash_original_field = "300A66DF77BAB65489ADB988403DB41B", hash_generated_field = "993712AACA5BFFF68C7775B3C6B7EE8B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.714 -0400", hash_original_field = "300A66DF77BAB65489ADB988403DB41B", hash_generated_field = "993712AACA5BFFF68C7775B3C6B7EE8B")
 
         public final static int TAG = 1;
     }
@@ -1331,26 +1331,26 @@ public class RemoteViews implements Parcelable, Filter {
 
     
     private class SetDrawableParameters extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.354 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.714 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.354 -0400", hash_original_field = "A2AB643A05537436635D1E7D1C7AE662", hash_generated_field = "348353981961A3507DF6BC6E23EBAF56")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.715 -0400", hash_original_field = "A2AB643A05537436635D1E7D1C7AE662", hash_generated_field = "348353981961A3507DF6BC6E23EBAF56")
 
         boolean targetBackground;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.354 -0400", hash_original_field = "2C1743A391305FBF367DF8E4F069F9F9", hash_generated_field = "1B559E55B8F17D21F08DC11CC377988E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.715 -0400", hash_original_field = "2C1743A391305FBF367DF8E4F069F9F9", hash_generated_field = "1B559E55B8F17D21F08DC11CC377988E")
 
         int alpha;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.354 -0400", hash_original_field = "430580F08459C4E5E775DF0C2447C4DA", hash_generated_field = "1B107E6823167B68C4A8FA578E72F2B9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.715 -0400", hash_original_field = "430580F08459C4E5E775DF0C2447C4DA", hash_generated_field = "1B107E6823167B68C4A8FA578E72F2B9")
 
         int colorFilter;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.354 -0400", hash_original_field = "93065ABDC7B96A0A146EC1937D38C277", hash_generated_field = "1E0353AC2D4FEC5D3F86FBF63BA71A1F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.715 -0400", hash_original_field = "93065ABDC7B96A0A146EC1937D38C277", hash_generated_field = "1E0353AC2D4FEC5D3F86FBF63BA71A1F")
 
         PorterDuff.Mode filterMode;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.354 -0400", hash_original_field = "C9E9A848920877E76685B2E4E76DE38D", hash_generated_field = "6C23DC7E65CEAB9FBA953CF49B6B6875")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.715 -0400", hash_original_field = "C9E9A848920877E76685B2E4E76DE38D", hash_generated_field = "6C23DC7E65CEAB9FBA953CF49B6B6875")
 
         int level;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.355 -0400", hash_original_method = "18564016E13252E4F53F65794EE2D4BB", hash_generated_method = "5A814AA3D1EB7D235731941FAE0DA595")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.715 -0400", hash_original_method = "18564016E13252E4F53F65794EE2D4BB", hash_generated_method = "5A814AA3D1EB7D235731941FAE0DA595")
         public  SetDrawableParameters(int id, boolean targetBackground, int alpha,
                 int colorFilter, PorterDuff.Mode mode, int level) {
             this.viewId = id;
@@ -1369,7 +1369,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.377 -0400", hash_original_method = "72E671F08A71584E9232C176B97BC1C8", hash_generated_method = "44BCD06014207E7C57F49D441594B8FC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.723 -0400", hash_original_method = "72E671F08A71584E9232C176B97BC1C8", hash_generated_method = "44BCD06014207E7C57F49D441594B8FC")
         public  SetDrawableParameters(Parcel parcel) {
             viewId = parcel.readInt();
             targetBackground = parcel.readInt() != 0;
@@ -1399,7 +1399,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.378 -0400", hash_original_method = "DC629CA06C171381152FF8641B977C9F", hash_generated_method = "1CC6D6840A8D7C00D6B303396177796B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.724 -0400", hash_original_method = "DC629CA06C171381152FF8641B977C9F", hash_generated_method = "1CC6D6840A8D7C00D6B303396177796B")
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(TAG);
             dest.writeInt(viewId);
@@ -1432,7 +1432,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.379 -0400", hash_original_method = "2B7DD23B0EB7FE8C6A2446FEC1367E7F", hash_generated_method = "EFCDAFF9D6FD8E77F4248D8A7BA04350")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.730 -0400", hash_original_method = "2B7DD23B0EB7FE8C6A2446FEC1367E7F", hash_generated_method = "EFCDAFF9D6FD8E77F4248D8A7BA04350")
         @Override
         public void apply(View root, ViewGroup rootParent) {
             View target;
@@ -1465,7 +1465,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.379 -0400", hash_original_field = "6F4A6F730922DE22412A2E7EBF673639", hash_generated_field = "22845C1BD5EB1EFAC44EDEF6B7BDA751")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.730 -0400", hash_original_field = "6F4A6F730922DE22412A2E7EBF673639", hash_generated_field = "22845C1BD5EB1EFAC44EDEF6B7BDA751")
 
         public final static int TAG = 3;
     }
@@ -1473,14 +1473,14 @@ public class RemoteViews implements Parcelable, Filter {
 
     
     private class ReflectionActionWithoutParams extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.379 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.730 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.379 -0400", hash_original_field = "DDAA6E8C8C412299272E183087B8F7B6", hash_generated_field = "1E5D18395D934B5D254686548A645BA9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.730 -0400", hash_original_field = "DDAA6E8C8C412299272E183087B8F7B6", hash_generated_field = "1E5D18395D934B5D254686548A645BA9")
 
         String methodName;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.380 -0400", hash_original_method = "9825933434EF5EC003AA8FF50203783A", hash_generated_method = "306E4CE94A121FCAD55ED69BD6877BBC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.731 -0400", hash_original_method = "9825933434EF5EC003AA8FF50203783A", hash_generated_method = "306E4CE94A121FCAD55ED69BD6877BBC")
           ReflectionActionWithoutParams(int viewId, String methodName) {
             this.viewId = viewId;
             this.methodName = methodName;
@@ -1490,7 +1490,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.380 -0400", hash_original_method = "07A57AEC1ECBD4F4EF962F6964A9C9CB", hash_generated_method = "F389E821077AA3BB95015DCE93F78B32")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.733 -0400", hash_original_method = "07A57AEC1ECBD4F4EF962F6964A9C9CB", hash_generated_method = "F389E821077AA3BB95015DCE93F78B32")
           ReflectionActionWithoutParams(Parcel in) {
             this.viewId = in.readInt();
             this.methodName = in.readString();
@@ -1500,7 +1500,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.380 -0400", hash_original_method = "E92934B0244E59AB6D933016F95632D8", hash_generated_method = "D01B7EF0A9D62897026A6B1F8773DE02")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.753 -0400", hash_original_method = "E92934B0244E59AB6D933016F95632D8", hash_generated_method = "D01B7EF0A9D62897026A6B1F8773DE02")
         public void writeToParcel(Parcel out, int flags) {
             out.writeInt(TAG);
             out.writeInt(this.viewId);
@@ -1514,7 +1514,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.384 -0400", hash_original_method = "B2755AE6CC74346ED57BF443914C2243", hash_generated_method = "9BEDC44C17F35CDDC2DAED48F576FB19")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.753 -0400", hash_original_method = "B2755AE6CC74346ED57BF443914C2243", hash_generated_method = "3EFDFCC3C0239F3F3FC08C0E0418962E")
         @Override
         public void apply(View root, ViewGroup rootParent) {
             View view;
@@ -1532,7 +1532,7 @@ public class RemoteViews implements Parcelable, Filter {
                         + this.methodName + "()");
             } //End block
             {
-                boolean varDF1EFAF7A9352F1C3347271AD170B8BD_815668554 = (!method.isAnnotationPresent(RemotableViewMethod.class));
+                boolean varDF1EFAF7A9352F1C3347271AD170B8BD_1952421094 = (!method.isAnnotationPresent(RemotableViewMethod.class));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ActionException("view: " + klass.getName()
                         + " can't use method with RemoteViews: "
@@ -1558,7 +1558,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.392 -0400", hash_original_field = "DE143BAD1003A83F29229B3A04BAF7B0", hash_generated_field = "03362AF19131C1207E62059104EDE4C5")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.754 -0400", hash_original_field = "DE143BAD1003A83F29229B3A04BAF7B0", hash_generated_field = "03362AF19131C1207E62059104EDE4C5")
 
         public final static int TAG = 5;
     }
@@ -1566,20 +1566,20 @@ public class RemoteViews implements Parcelable, Filter {
 
     
     private class ReflectionAction extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.392 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.754 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.392 -0400", hash_original_field = "DDAA6E8C8C412299272E183087B8F7B6", hash_generated_field = "1E5D18395D934B5D254686548A645BA9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.754 -0400", hash_original_field = "DDAA6E8C8C412299272E183087B8F7B6", hash_generated_field = "1E5D18395D934B5D254686548A645BA9")
 
         String methodName;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.392 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "961B4204667A4AE2FF8DD374E6728ADE")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.754 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "961B4204667A4AE2FF8DD374E6728ADE")
 
         int type;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.392 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.754 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
 
         Object value;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.393 -0400", hash_original_method = "C4E3EC196FB78FDD2AFD41CF23C84256", hash_generated_method = "66FBD19134023AF224E81CB8AE41B251")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.754 -0400", hash_original_method = "C4E3EC196FB78FDD2AFD41CF23C84256", hash_generated_method = "66FBD19134023AF224E81CB8AE41B251")
           ReflectionAction(int viewId, String methodName, int type, Object value) {
             this.viewId = viewId;
             this.methodName = methodName;
@@ -1593,7 +1593,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.398 -0400", hash_original_method = "A86C68C4FD8B9D479580CAEA2D14C9BF", hash_generated_method = "2AC433509ED1882775BC6520D8FAA882")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.756 -0400", hash_original_method = "A86C68C4FD8B9D479580CAEA2D14C9BF", hash_generated_method = "2AC433509ED1882775BC6520D8FAA882")
           ReflectionAction(Parcel in) {
             this.viewId = in.readInt();
             this.methodName = in.readString();
@@ -1649,7 +1649,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.412 -0400", hash_original_method = "F759DD8CB1A89B34D073177D219BFFB9", hash_generated_method = "50168D34BE208CDD5825918B7C447ADA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.769 -0400", hash_original_method = "F759DD8CB1A89B34D073177D219BFFB9", hash_generated_method = "50168D34BE208CDD5825918B7C447ADA")
         public void writeToParcel(Parcel out, int flags) {
             out.writeInt(TAG);
             out.writeInt(this.viewId);
@@ -1708,124 +1708,124 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.420 -0400", hash_original_method = "E66E0BF97844CCF37DCED039A425AFDA", hash_generated_method = "E3034B9E58FA3ADF3B2267D1C2324B31")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.775 -0400", hash_original_method = "E66E0BF97844CCF37DCED039A425AFDA", hash_generated_method = "8F5F73272D26C2E021D0B4B4C095D0D3")
         private Class getParameterType() {
-            Class varB4EAC82CA7396A68D541C85D26508E83_218344015 = null; //Variable for return #1
-            Class varB4EAC82CA7396A68D541C85D26508E83_1898153437 = null; //Variable for return #2
-            Class varB4EAC82CA7396A68D541C85D26508E83_386882797 = null; //Variable for return #3
-            Class varB4EAC82CA7396A68D541C85D26508E83_1021599709 = null; //Variable for return #4
-            Class varB4EAC82CA7396A68D541C85D26508E83_1280787500 = null; //Variable for return #5
-            Class varB4EAC82CA7396A68D541C85D26508E83_107409678 = null; //Variable for return #6
-            Class varB4EAC82CA7396A68D541C85D26508E83_886322782 = null; //Variable for return #7
-            Class varB4EAC82CA7396A68D541C85D26508E83_408655744 = null; //Variable for return #8
-            Class varB4EAC82CA7396A68D541C85D26508E83_1084498778 = null; //Variable for return #9
-            Class varB4EAC82CA7396A68D541C85D26508E83_1799716203 = null; //Variable for return #10
-            Class varB4EAC82CA7396A68D541C85D26508E83_1743984401 = null; //Variable for return #11
-            Class varB4EAC82CA7396A68D541C85D26508E83_443657559 = null; //Variable for return #12
-            Class varB4EAC82CA7396A68D541C85D26508E83_698275052 = null; //Variable for return #13
-            Class varB4EAC82CA7396A68D541C85D26508E83_1893889004 = null; //Variable for return #14
-            Class varB4EAC82CA7396A68D541C85D26508E83_1582262796 = null; //Variable for return #15
+            Class varB4EAC82CA7396A68D541C85D26508E83_1247534031 = null; //Variable for return #1
+            Class varB4EAC82CA7396A68D541C85D26508E83_2025630412 = null; //Variable for return #2
+            Class varB4EAC82CA7396A68D541C85D26508E83_314162325 = null; //Variable for return #3
+            Class varB4EAC82CA7396A68D541C85D26508E83_1028030290 = null; //Variable for return #4
+            Class varB4EAC82CA7396A68D541C85D26508E83_189215685 = null; //Variable for return #5
+            Class varB4EAC82CA7396A68D541C85D26508E83_1555725166 = null; //Variable for return #6
+            Class varB4EAC82CA7396A68D541C85D26508E83_1596801299 = null; //Variable for return #7
+            Class varB4EAC82CA7396A68D541C85D26508E83_729407722 = null; //Variable for return #8
+            Class varB4EAC82CA7396A68D541C85D26508E83_710000734 = null; //Variable for return #9
+            Class varB4EAC82CA7396A68D541C85D26508E83_366533667 = null; //Variable for return #10
+            Class varB4EAC82CA7396A68D541C85D26508E83_958115362 = null; //Variable for return #11
+            Class varB4EAC82CA7396A68D541C85D26508E83_865007351 = null; //Variable for return #12
+            Class varB4EAC82CA7396A68D541C85D26508E83_472209343 = null; //Variable for return #13
+            Class varB4EAC82CA7396A68D541C85D26508E83_447779316 = null; //Variable for return #14
+            Class varB4EAC82CA7396A68D541C85D26508E83_1862185381 = null; //Variable for return #15
             //Begin case BOOLEAN 
-            varB4EAC82CA7396A68D541C85D26508E83_218344015 = boolean.class;
+            varB4EAC82CA7396A68D541C85D26508E83_1247534031 = boolean.class;
             //End case BOOLEAN 
             //Begin case BYTE 
-            varB4EAC82CA7396A68D541C85D26508E83_1898153437 = byte.class;
+            varB4EAC82CA7396A68D541C85D26508E83_2025630412 = byte.class;
             //End case BYTE 
             //Begin case SHORT 
-            varB4EAC82CA7396A68D541C85D26508E83_386882797 = short.class;
+            varB4EAC82CA7396A68D541C85D26508E83_314162325 = short.class;
             //End case SHORT 
             //Begin case INT 
-            varB4EAC82CA7396A68D541C85D26508E83_1021599709 = int.class;
+            varB4EAC82CA7396A68D541C85D26508E83_1028030290 = int.class;
             //End case INT 
             //Begin case LONG 
-            varB4EAC82CA7396A68D541C85D26508E83_1280787500 = long.class;
+            varB4EAC82CA7396A68D541C85D26508E83_189215685 = long.class;
             //End case LONG 
             //Begin case FLOAT 
-            varB4EAC82CA7396A68D541C85D26508E83_107409678 = float.class;
+            varB4EAC82CA7396A68D541C85D26508E83_1555725166 = float.class;
             //End case FLOAT 
             //Begin case DOUBLE 
-            varB4EAC82CA7396A68D541C85D26508E83_886322782 = double.class;
+            varB4EAC82CA7396A68D541C85D26508E83_1596801299 = double.class;
             //End case DOUBLE 
             //Begin case CHAR 
-            varB4EAC82CA7396A68D541C85D26508E83_408655744 = char.class;
+            varB4EAC82CA7396A68D541C85D26508E83_729407722 = char.class;
             //End case CHAR 
             //Begin case STRING 
-            varB4EAC82CA7396A68D541C85D26508E83_1084498778 = String.class;
+            varB4EAC82CA7396A68D541C85D26508E83_710000734 = String.class;
             //End case STRING 
             //Begin case CHAR_SEQUENCE 
-            varB4EAC82CA7396A68D541C85D26508E83_1799716203 = CharSequence.class;
+            varB4EAC82CA7396A68D541C85D26508E83_366533667 = CharSequence.class;
             //End case CHAR_SEQUENCE 
             //Begin case URI 
-            varB4EAC82CA7396A68D541C85D26508E83_1743984401 = Uri.class;
+            varB4EAC82CA7396A68D541C85D26508E83_958115362 = Uri.class;
             //End case URI 
             //Begin case BITMAP 
-            varB4EAC82CA7396A68D541C85D26508E83_443657559 = Bitmap.class;
+            varB4EAC82CA7396A68D541C85D26508E83_865007351 = Bitmap.class;
             //End case BITMAP 
             //Begin case BUNDLE 
-            varB4EAC82CA7396A68D541C85D26508E83_698275052 = Bundle.class;
+            varB4EAC82CA7396A68D541C85D26508E83_472209343 = Bundle.class;
             //End case BUNDLE 
             //Begin case INTENT 
-            varB4EAC82CA7396A68D541C85D26508E83_1893889004 = Intent.class;
+            varB4EAC82CA7396A68D541C85D26508E83_447779316 = Intent.class;
             //End case INTENT 
             //Begin case default 
-            varB4EAC82CA7396A68D541C85D26508E83_1582262796 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1862185381 = null;
             //End case default 
-            Class varA7E53CE21691AB073D9660D615818899_1310762242; //Final return value
+            Class varA7E53CE21691AB073D9660D615818899_756219295; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_218344015;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_1247534031;
                     break;
                 case 2: //Assign result for return ordinal #2
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_1898153437;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_2025630412;
                     break;
                 case 3: //Assign result for return ordinal #3
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_386882797;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_314162325;
                     break;
                 case 4: //Assign result for return ordinal #4
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_1021599709;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_1028030290;
                     break;
                 case 5: //Assign result for return ordinal #5
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_1280787500;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_189215685;
                     break;
                 case 6: //Assign result for return ordinal #6
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_107409678;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_1555725166;
                     break;
                 case 7: //Assign result for return ordinal #7
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_886322782;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_1596801299;
                     break;
                 case 8: //Assign result for return ordinal #8
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_408655744;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_729407722;
                     break;
                 case 9: //Assign result for return ordinal #9
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_1084498778;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_710000734;
                     break;
                 case 10: //Assign result for return ordinal #10
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_1799716203;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_366533667;
                     break;
                 case 11: //Assign result for return ordinal #11
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_1743984401;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_958115362;
                     break;
                 case 12: //Assign result for return ordinal #12
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_443657559;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_865007351;
                     break;
                 case 13: //Assign result for return ordinal #13
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_698275052;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_472209343;
                     break;
                 case 14: //Assign result for return ordinal #14
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_1893889004;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_447779316;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1310762242 = varB4EAC82CA7396A68D541C85D26508E83_1582262796;
+                    varA7E53CE21691AB073D9660D615818899_756219295 = varB4EAC82CA7396A68D541C85D26508E83_1862185381;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1310762242.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1310762242;
+            varA7E53CE21691AB073D9660D615818899_756219295.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_756219295;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.425 -0400", hash_original_method = "008B98D7581EEC47326A699C8B3D8035", hash_generated_method = "1587A670F4400069C7DD2C949A1D8268")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.780 -0400", hash_original_method = "008B98D7581EEC47326A699C8B3D8035", hash_generated_method = "E606920A552E641DA5ADB6D8803473ED")
         @Override
         public void apply(View root, ViewGroup rootParent) {
             View view;
@@ -1848,7 +1848,7 @@ public class RemoteViews implements Parcelable, Filter {
                         + this.methodName + "(" + param.getName() + ")");
             } //End block
             {
-                boolean varDF1EFAF7A9352F1C3347271AD170B8BD_86872216 = (!method.isAnnotationPresent(RemotableViewMethod.class));
+                boolean varDF1EFAF7A9352F1C3347271AD170B8BD_651070685 = (!method.isAnnotationPresent(RemotableViewMethod.class));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new ActionException("view: " + klass.getName()
                         + " can't use method with RemoteViews: "
@@ -1875,7 +1875,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_method = "1F301B790026760CE401FF57484A4A78", hash_generated_method = "F88881D90CB7EC4B28B36DF79BCE4167")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.783 -0400", hash_original_method = "1F301B790026760CE401FF57484A4A78", hash_generated_method = "F88881D90CB7EC4B28B36DF79BCE4167")
         @Override
         public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
             //Begin case BITMAP 
@@ -1906,49 +1906,49 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "7F69F6778CDCB6154D611A443CDC52B5", hash_generated_field = "D5B9A8949D9E8B71183C6B59CFC0EBAD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.783 -0400", hash_original_field = "7F69F6778CDCB6154D611A443CDC52B5", hash_generated_field = "D5B9A8949D9E8B71183C6B59CFC0EBAD")
 
         static int TAG = 2;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "2F374CAF065C6170DB0655822E60E222", hash_generated_field = "EAB0A40DF9D769F4CE1E81BEC2C23956")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.783 -0400", hash_original_field = "2F374CAF065C6170DB0655822E60E222", hash_generated_field = "EAB0A40DF9D769F4CE1E81BEC2C23956")
 
         static int BOOLEAN = 1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "B4F8B987EF9A0C82A8C8267A98C738F6", hash_generated_field = "D0955F45BE6C50A0C6C9461D533A9B59")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.783 -0400", hash_original_field = "B4F8B987EF9A0C82A8C8267A98C738F6", hash_generated_field = "D0955F45BE6C50A0C6C9461D533A9B59")
 
         static int BYTE = 2;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "175308D2FBF3B761DF0108367B225AD1", hash_generated_field = "D8A9A1D5C9680773545DAEBECC33AFE4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.783 -0400", hash_original_field = "175308D2FBF3B761DF0108367B225AD1", hash_generated_field = "D8A9A1D5C9680773545DAEBECC33AFE4")
 
         static int SHORT = 3;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "A0CB96DABFDCF4947E640C27B00A7309", hash_generated_field = "3A96E62B0099EE6000CAB6741B7E8975")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.783 -0400", hash_original_field = "A0CB96DABFDCF4947E640C27B00A7309", hash_generated_field = "3A96E62B0099EE6000CAB6741B7E8975")
 
         static int INT = 4;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "8BDB65EA307B4E2D6C3AD9BE937C6B35", hash_generated_field = "CF60806D2F53A98196F7A8D0BD4ED78B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.784 -0400", hash_original_field = "8BDB65EA307B4E2D6C3AD9BE937C6B35", hash_generated_field = "CF60806D2F53A98196F7A8D0BD4ED78B")
 
         static int LONG = 5;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "200338FA85BEDB28DAC8352AA5AE44A4", hash_generated_field = "291C9D7BEBC43B47EB0B5C38FD6CF20F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.784 -0400", hash_original_field = "200338FA85BEDB28DAC8352AA5AE44A4", hash_generated_field = "291C9D7BEBC43B47EB0B5C38FD6CF20F")
 
         static int FLOAT = 6;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "E4100D4E6A32B99A6ED6E650D26B96F2", hash_generated_field = "ED3F98F210A7B86B382118DE8C81D5BA")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.784 -0400", hash_original_field = "E4100D4E6A32B99A6ED6E650D26B96F2", hash_generated_field = "ED3F98F210A7B86B382118DE8C81D5BA")
 
         static int DOUBLE = 7;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "96FA09B152FC2C89E35AFA1C6505581E", hash_generated_field = "4F485492E1CDE89834DC1E51EB59B19C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.784 -0400", hash_original_field = "96FA09B152FC2C89E35AFA1C6505581E", hash_generated_field = "4F485492E1CDE89834DC1E51EB59B19C")
 
         static int CHAR = 8;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "DCF91BC1D8F95A60EADB6F7461F79F2F", hash_generated_field = "17C8035CF7F5F0BEE219A31B9AA74079")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.784 -0400", hash_original_field = "DCF91BC1D8F95A60EADB6F7461F79F2F", hash_generated_field = "17C8035CF7F5F0BEE219A31B9AA74079")
 
         static int STRING = 9;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "05F84E42B3F9A0FC5577C866771D1B45", hash_generated_field = "EF43296EACD5272C6738050A0C4A8E2C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.784 -0400", hash_original_field = "05F84E42B3F9A0FC5577C866771D1B45", hash_generated_field = "EF43296EACD5272C6738050A0C4A8E2C")
 
         static int CHAR_SEQUENCE = 10;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "5E83DCA62102A3D88F57C136FE6ACEB4", hash_generated_field = "FE38078B1633F9B8D8B6BFA9A77ECE94")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.784 -0400", hash_original_field = "5E83DCA62102A3D88F57C136FE6ACEB4", hash_generated_field = "FE38078B1633F9B8D8B6BFA9A77ECE94")
 
         static int URI = 11;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "FC84E30432EF9DDE7E9FCCE78BB199A8", hash_generated_field = "2F04391EBAC5A56F2E63D0158148AD3C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.784 -0400", hash_original_field = "FC84E30432EF9DDE7E9FCCE78BB199A8", hash_generated_field = "2F04391EBAC5A56F2E63D0158148AD3C")
 
         static int BITMAP = 12;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "F0E8DF40A7799BB61150AD69A1A9F5A0", hash_generated_field = "D08210CA996FA3BD7BCB8A6302E13BE5")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.784 -0400", hash_original_field = "F0E8DF40A7799BB61150AD69A1A9F5A0", hash_generated_field = "D08210CA996FA3BD7BCB8A6302E13BE5")
 
         static int BUNDLE = 13;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.427 -0400", hash_original_field = "16DB5856FD50B8563BDD95884F5D1670", hash_generated_field = "39105985C2C0C21A3BB731E0EE463AD1")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.784 -0400", hash_original_field = "16DB5856FD50B8563BDD95884F5D1670", hash_generated_field = "39105985C2C0C21A3BB731E0EE463AD1")
 
         static int INTENT = 14;
     }
@@ -1956,14 +1956,14 @@ public class RemoteViews implements Parcelable, Filter {
 
     
     private class ViewGroupAction extends Action {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.489 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.784 -0400", hash_original_field = "4471D27E06AC724B5DD676BEE05854BE", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
 
         int viewId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.490 -0400", hash_original_field = "27197E3E0B6B9B7BF6E9F835C5A0621D", hash_generated_field = "94DAE06500F0010791F8161444D05A58")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.784 -0400", hash_original_field = "27197E3E0B6B9B7BF6E9F835C5A0621D", hash_generated_field = "94DAE06500F0010791F8161444D05A58")
 
         RemoteViews nestedViews;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.500 -0400", hash_original_method = "ED007F9070164016B2129A58A247A132", hash_generated_method = "D73E8FB5CE189E15CC0ED4BFC4DE2A01")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.784 -0400", hash_original_method = "ED007F9070164016B2129A58A247A132", hash_generated_method = "D73E8FB5CE189E15CC0ED4BFC4DE2A01")
         public  ViewGroupAction(int viewId, RemoteViews nestedViews) {
             this.viewId = viewId;
             this.nestedViews = nestedViews;
@@ -1973,7 +1973,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.503 -0400", hash_original_method = "3800854E305111A2B59A893F31CDD286", hash_generated_method = "B30611565EF1A179397305FFFC39C3E2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.785 -0400", hash_original_method = "3800854E305111A2B59A893F31CDD286", hash_generated_method = "B30611565EF1A179397305FFFC39C3E2")
         public  ViewGroupAction(Parcel parcel) {
             viewId = parcel.readInt();
             nestedViews = parcel.readParcelable(null);
@@ -1983,7 +1983,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.504 -0400", hash_original_method = "BEE1FD608BE154882376BC772CDB35A0", hash_generated_method = "2C36F78EC0229561FD9888C386632C72")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.785 -0400", hash_original_method = "BEE1FD608BE154882376BC772CDB35A0", hash_generated_method = "2C36F78EC0229561FD9888C386632C72")
         public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(TAG);
             dest.writeInt(viewId);
@@ -1997,7 +1997,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.504 -0400", hash_original_method = "3F6E8B427E9FBCBDEBB4E654B5696B90", hash_generated_method = "7AF7BB27E429775702F60EB372326BAD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.793 -0400", hash_original_method = "3F6E8B427E9FBCBDEBB4E654B5696B90", hash_generated_method = "7AF7BB27E429775702F60EB372326BAD")
         @Override
         public void apply(View root, ViewGroup rootParent) {
             Context context;
@@ -2024,7 +2024,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.505 -0400", hash_original_method = "9A98BF9B0C4ADB9C4C041E3C0533F17D", hash_generated_method = "F6F275E3B989A13BBFC079B6191E960A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.793 -0400", hash_original_method = "9A98BF9B0C4ADB9C4C041E3C0533F17D", hash_generated_method = "F6F275E3B989A13BBFC079B6191E960A")
         @Override
         public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
             {
@@ -2038,7 +2038,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.505 -0400", hash_original_field = "1C67B632B385F0EED4F9EDC3A5442AB0", hash_generated_field = "BFAD764BA58FF98FFB009C9036CFE299")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.793 -0400", hash_original_field = "1C67B632B385F0EED4F9EDC3A5442AB0", hash_generated_field = "BFAD764BA58FF98FFB009C9036CFE299")
 
         public final static int TAG = 4;
     }
@@ -2046,18 +2046,18 @@ public class RemoteViews implements Parcelable, Filter {
 
     
     private class MemoryUsageCounter {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.505 -0400", hash_original_field = "C36FDDE1E5252D085B64B1B7ADEDAD8C", hash_generated_field = "B0DA7A32C463859C81C00F4CE0F0F3CC")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.793 -0400", hash_original_field = "C36FDDE1E5252D085B64B1B7ADEDAD8C", hash_generated_field = "B0DA7A32C463859C81C00F4CE0F0F3CC")
 
         int mBitmapHeapMemoryUsage;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.505 -0400", hash_original_method = "35D450C627251B011B80F5473DD04513", hash_generated_method = "35D450C627251B011B80F5473DD04513")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.793 -0400", hash_original_method = "35D450C627251B011B80F5473DD04513", hash_generated_method = "35D450C627251B011B80F5473DD04513")
         public MemoryUsageCounter ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.505 -0400", hash_original_method = "F68FB7282799CC52F4314E5E47499FED", hash_generated_method = "980B3E80527B474B5039262E61BD9D48")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.796 -0400", hash_original_method = "F68FB7282799CC52F4314E5E47499FED", hash_generated_method = "980B3E80527B474B5039262E61BD9D48")
         public void clear() {
             mBitmapHeapMemoryUsage = 0;
             // ---------- Original Method ----------
@@ -2065,7 +2065,7 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.506 -0400", hash_original_method = "9C864F7ABFEE7832A18F21C728CCE23F", hash_generated_method = "583FD2D740DF0E423E81CC172F08A31C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.796 -0400", hash_original_method = "9C864F7ABFEE7832A18F21C728CCE23F", hash_generated_method = "583FD2D740DF0E423E81CC172F08A31C")
         public void bitmapIncrement(int numBytes) {
             mBitmapHeapMemoryUsage += numBytes;
             // ---------- Original Method ----------
@@ -2073,10 +2073,10 @@ public class RemoteViews implements Parcelable, Filter {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.506 -0400", hash_original_method = "F4B214FD82765971EA3822C02AABA16F", hash_generated_method = "FB2AD50F541FC53C2EF9A7E15F88F9B2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.796 -0400", hash_original_method = "F4B214FD82765971EA3822C02AABA16F", hash_generated_method = "748860FD50476AEC9982861176703C1C")
         public int getBitmapHeapMemoryUsage() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2063190444 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2063190444;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_937125737 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_937125737;
             // ---------- Original Method ----------
             //return mBitmapHeapMemoryUsage;
         }
@@ -2089,13 +2089,13 @@ public class RemoteViews implements Parcelable, Filter {
     @Target({ ElementType.TYPE }) @Retention(RetentionPolicy.RUNTIME) public @interface RemoteView {
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.506 -0400", hash_original_field = "4C31F39A08DE2EFB8DEBBB394A3254D5", hash_generated_field = "BEF8EA00FD59C0C91B7F995150BFBFB0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.796 -0400", hash_original_field = "4C31F39A08DE2EFB8DEBBB394A3254D5", hash_generated_field = "BEF8EA00FD59C0C91B7F995150BFBFB0")
 
     private static String LOG_TAG = "RemoteViews";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.506 -0400", hash_original_field = "800952FE10AA9D0D47085F390E4ECC86", hash_generated_field = "637D01C776FC5FCAEB470D5083834FF4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.796 -0400", hash_original_field = "800952FE10AA9D0D47085F390E4ECC86", hash_generated_field = "637D01C776FC5FCAEB470D5083834FF4")
 
     static String EXTRA_REMOTEADAPTER_APPWIDGET_ID = "remoteAdapterAppWidgetId";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:09.506 -0400", hash_original_field = "3C81D1A6471DBF098FBC5010948AFD3D", hash_generated_field = "BD08AD711A0271B27E85FFB2A2737195")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:10.796 -0400", hash_original_field = "3C81D1A6471DBF098FBC5010948AFD3D", hash_generated_field = "BD08AD711A0271B27E85FFB2A2737195")
 
     public static final Parcelable.Creator<RemoteViews> CREATOR = new Parcelable.Creator<RemoteViews>() {
         public RemoteViews createFromParcel(Parcel parcel) {

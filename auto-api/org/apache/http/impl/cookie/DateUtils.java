@@ -19,7 +19,7 @@ import java.util.TimeZone;
 
 public final class DateUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.350 -0400", hash_original_method = "48D34D966FD8EAADA4B9042FB2D410CB", hash_generated_method = "F2D2192E1AB0D80DE38C401BF608C353")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.560 -0400", hash_original_method = "48D34D966FD8EAADA4B9042FB2D410CB", hash_generated_method = "F2D2192E1AB0D80DE38C401BF608C353")
     private  DateUtils() {
         // ---------- Original Method ----------
     }
@@ -82,7 +82,7 @@ public final class DateUtils {
     
     final static class DateFormatHolder {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.357 -0400", hash_original_method = "6FB3E28AC91977E78E839268C5DC660F", hash_generated_method = "6FB3E28AC91977E78E839268C5DC660F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.561 -0400", hash_original_method = "6FB3E28AC91977E78E839268C5DC660F", hash_generated_method = "6FB3E28AC91977E78E839268C5DC660F")
         public DateFormatHolder ()
         {
             //Synthesized constructor
@@ -107,17 +107,17 @@ public final class DateUtils {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.358 -0400", hash_original_field = "F739AADE8F0088A4E58211C56C35F437", hash_generated_field = "CD017F381D1FDA32601A6930F7551274")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.579 -0400", hash_original_field = "F739AADE8F0088A4E58211C56C35F437", hash_generated_field = "B5D14E89584E5685D9378F46959292A6")
 
         private static ThreadLocal<SoftReference<Map<String, SimpleDateFormat>>> THREADLOCAL_FORMATS = new ThreadLocal<SoftReference<Map<String, SimpleDateFormat>>>() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.358 -0400", hash_original_method = "344E20B97AD97B49F3F39541DF8E3F01", hash_generated_method = "6062B1CCA8C4D9259E2027AC802FAADA")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.579 -0400", hash_original_method = "344E20B97AD97B49F3F39541DF8E3F01", hash_generated_method = "17B0B2835744D8CF144F1C7BA88D5F42")
             @Override
             protected SoftReference<Map<String, SimpleDateFormat>> initialValue() {
-                SoftReference<Map<String, SimpleDateFormat>> varB4EAC82CA7396A68D541C85D26508E83_1035404964 = null; //Variable for return #1
-                varB4EAC82CA7396A68D541C85D26508E83_1035404964 = new SoftReference<Map<String, SimpleDateFormat>>(
+                SoftReference<Map<String, SimpleDateFormat>> varB4EAC82CA7396A68D541C85D26508E83_2019133897 = null; //Variable for return #1
+                varB4EAC82CA7396A68D541C85D26508E83_2019133897 = new SoftReference<Map<String, SimpleDateFormat>>(
                         new HashMap<String, SimpleDateFormat>());
-                varB4EAC82CA7396A68D541C85D26508E83_1035404964.addTaint(getTaint()); //Add taint from parent
-                return varB4EAC82CA7396A68D541C85D26508E83_1035404964;
+                varB4EAC82CA7396A68D541C85D26508E83_2019133897.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_2019133897;
                 // ---------- Original Method ----------
                 //return new SoftReference<Map<String, SimpleDateFormat>>(
                         //new HashMap<String, SimpleDateFormat>());
@@ -129,26 +129,26 @@ public final class DateUtils {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.358 -0400", hash_original_field = "8385826B3234ECEB289CAA862FF1A4B2", hash_generated_field = "4C394D5CADCD628D7373F95DB7006036")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.579 -0400", hash_original_field = "8385826B3234ECEB289CAA862FF1A4B2", hash_generated_field = "4C394D5CADCD628D7373F95DB7006036")
 
     public static final String PATTERN_RFC1123 = "EEE, dd MMM yyyy HH:mm:ss zzz";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.358 -0400", hash_original_field = "738C731AEFD7A71F84D06C5D256C466E", hash_generated_field = "B80A298901B78AFE77638CA599BCD6A0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.579 -0400", hash_original_field = "738C731AEFD7A71F84D06C5D256C466E", hash_generated_field = "B80A298901B78AFE77638CA599BCD6A0")
 
     public static final String PATTERN_RFC1036 = "EEEE, dd-MMM-yy HH:mm:ss zzz";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.359 -0400", hash_original_field = "B9B9F39F84AC1CC81FFD7BC2D3D1DE39", hash_generated_field = "2FAAFA8A33A639A51D421B0A22227474")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.579 -0400", hash_original_field = "B9B9F39F84AC1CC81FFD7BC2D3D1DE39", hash_generated_field = "2FAAFA8A33A639A51D421B0A22227474")
 
     public static final String PATTERN_ASCTIME = "EEE MMM d HH:mm:ss yyyy";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.359 -0400", hash_original_field = "444C2DA544FF1A5C0659716DCB5ECF34", hash_generated_field = "E725376B41D026B2DED375FE7CC55797")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.579 -0400", hash_original_field = "444C2DA544FF1A5C0659716DCB5ECF34", hash_generated_field = "E725376B41D026B2DED375FE7CC55797")
 
     private static String[] DEFAULT_PATTERNS = new String[] {
     	PATTERN_RFC1036,
     	PATTERN_RFC1123,
         PATTERN_ASCTIME
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.359 -0400", hash_original_field = "CE304DC78F351ECFD06CD7D303B3C51B", hash_generated_field = "5E940A040DBE4448C9671F88AC75ED62")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.579 -0400", hash_original_field = "CE304DC78F351ECFD06CD7D303B3C51B", hash_generated_field = "5E940A040DBE4448C9671F88AC75ED62")
 
     private static Date DEFAULT_TWO_DIGIT_YEAR_START;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.359 -0400", hash_original_field = "E12B34FD92B4631CB840A76131270F12", hash_generated_field = "3A278BEAEB75318EBD87EA7DAAF24AD0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.579 -0400", hash_original_field = "E12B34FD92B4631CB840A76131270F12", hash_generated_field = "3A278BEAEB75318EBD87EA7DAAF24AD0")
 
     public static final TimeZone GMT = TimeZone.getTimeZone("GMT");
     static {

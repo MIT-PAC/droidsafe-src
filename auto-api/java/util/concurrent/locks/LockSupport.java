@@ -12,7 +12,7 @@ import sun.misc.Unsafe;
 
 public class LockSupport {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.123 -0400", hash_original_method = "1CF344A2CC5D467FE100F1B8497D1A42", hash_generated_method = "97F54F0429C724F0C1E459A848015358")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.108 -0400", hash_original_method = "1CF344A2CC5D467FE100F1B8497D1A42", hash_generated_method = "97F54F0429C724F0C1E459A848015358")
     private  LockSupport() {
         // ---------- Original Method ----------
     }
@@ -76,10 +76,10 @@ public class LockSupport {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.157 -0400", hash_original_field = "4B38931B7448D73BB4E1EC1A0BEC037D", hash_generated_field = "D0DEE857BA5B5272DFC5F12F486A2516")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.110 -0400", hash_original_field = "4B38931B7448D73BB4E1EC1A0BEC037D", hash_generated_field = "D0DEE857BA5B5272DFC5F12F486A2516")
 
     private static Unsafe unsafe = UnsafeAccess.THE_ONE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.157 -0400", hash_original_field = "A8A4344C6808D78974FFD554CCEA0F0B", hash_generated_field = "A3FC8849D30CDF7DB6C0BEA0BD7A4D99")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.110 -0400", hash_original_field = "A8A4344C6808D78974FFD554CCEA0F0B", hash_generated_field = "A3FC8849D30CDF7DB6C0BEA0BD7A4D99")
 
     private static long parkBlockerOffset;
     static {

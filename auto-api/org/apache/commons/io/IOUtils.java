@@ -40,7 +40,7 @@ import org.apache.commons.io.output.StringBuilderWriter;
 
 public class IOUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.997 -0400", hash_original_method = "2D9CDAF56900A3E223824D5F717EC43A", hash_generated_method = "1ED3DED33D92DE472039E87E14903543")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.133 -0400", hash_original_method = "2D9CDAF56900A3E223824D5F717EC43A", hash_generated_method = "1ED3DED33D92DE472039E87E14903543")
     public  IOUtils() {
         super();
         // ---------- Original Method ----------
@@ -858,25 +858,25 @@ public class IOUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.164 -0400", hash_original_field = "9F606CADE96D46C81B2141470BFBF5FD", hash_generated_field = "37556B7407B9664FB1DC24F87969199E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.225 -0400", hash_original_field = "9F606CADE96D46C81B2141470BFBF5FD", hash_generated_field = "37556B7407B9664FB1DC24F87969199E")
 
     private static int EOF = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.164 -0400", hash_original_field = "61E7FF6A301FDAFA70A775A054AA30B6", hash_generated_field = "4C6D53014D5B5D928079B892973B1BE3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.225 -0400", hash_original_field = "61E7FF6A301FDAFA70A775A054AA30B6", hash_generated_field = "4C6D53014D5B5D928079B892973B1BE3")
 
     public static final char DIR_SEPARATOR_UNIX = '/';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.164 -0400", hash_original_field = "70BD067A82805EBC43967A8E4E6D95B2", hash_generated_field = "5638232372674D1728E49061E66AF4F8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.225 -0400", hash_original_field = "70BD067A82805EBC43967A8E4E6D95B2", hash_generated_field = "5638232372674D1728E49061E66AF4F8")
 
     public static final char DIR_SEPARATOR_WINDOWS = '\\';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.164 -0400", hash_original_field = "E1ED5CF9E0D87126BE4BE1528307EFF8", hash_generated_field = "3BE984237C85AFE19BA0BE095A8F5889")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.225 -0400", hash_original_field = "E1ED5CF9E0D87126BE4BE1528307EFF8", hash_generated_field = "3BE984237C85AFE19BA0BE095A8F5889")
 
     public static final char DIR_SEPARATOR = File.separatorChar;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.164 -0400", hash_original_field = "850DC3AE5C1134AD50198A26F4009CCD", hash_generated_field = "C5248301022B92042E1CDA2E0B89855F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.225 -0400", hash_original_field = "850DC3AE5C1134AD50198A26F4009CCD", hash_generated_field = "C5248301022B92042E1CDA2E0B89855F")
 
     public static final String LINE_SEPARATOR_UNIX = "\n";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.164 -0400", hash_original_field = "53A596F248201B195B8FBE0A7233495B", hash_generated_field = "C6E40CB3FD6CD47EA5D9B4A64E274042")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.225 -0400", hash_original_field = "53A596F248201B195B8FBE0A7233495B", hash_generated_field = "C6E40CB3FD6CD47EA5D9B4A64E274042")
 
     public static final String LINE_SEPARATOR_WINDOWS = "\r\n";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.164 -0400", hash_original_field = "836BB27FFDC2CBFDAB570D5211B30BEA", hash_generated_field = "4A7BBDBDC26B886CF0FAD06278BF8A1C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.225 -0400", hash_original_field = "836BB27FFDC2CBFDAB570D5211B30BEA", hash_generated_field = "4A7BBDBDC26B886CF0FAD06278BF8A1C")
 
     public static final String LINE_SEPARATOR;
     static {
@@ -887,16 +887,16 @@ public class IOUtils {
         out.close();
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.164 -0400", hash_original_field = "0756DBB6429486B34418EA788076E36E", hash_generated_field = "19283AD58CF3BCD369226CF2BDDD521B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.225 -0400", hash_original_field = "0756DBB6429486B34418EA788076E36E", hash_generated_field = "19283AD58CF3BCD369226CF2BDDD521B")
 
     private static int DEFAULT_BUFFER_SIZE = 1024 * 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.165 -0400", hash_original_field = "3E174E9934FFE71968AB1CE42558C486", hash_generated_field = "68574335919F5FA9E7C85FB8E96B0F5C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.225 -0400", hash_original_field = "3E174E9934FFE71968AB1CE42558C486", hash_generated_field = "68574335919F5FA9E7C85FB8E96B0F5C")
 
     private static int SKIP_BUFFER_SIZE = 2048;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.165 -0400", hash_original_field = "8B08D81921358E5F910964DCC32A5147", hash_generated_field = "984A12F8FA491E9A5042A52F7EC7F046")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.225 -0400", hash_original_field = "8B08D81921358E5F910964DCC32A5147", hash_generated_field = "984A12F8FA491E9A5042A52F7EC7F046")
 
     private static char[] SKIP_CHAR_BUFFER;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.165 -0400", hash_original_field = "B1135D8B91B706BF765AB31E899A381A", hash_generated_field = "7C3AE595B3E415BFA9FD21B979C3FC65")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.225 -0400", hash_original_field = "B1135D8B91B706BF765AB31E899A381A", hash_generated_field = "7C3AE595B3E415BFA9FD21B979C3FC65")
 
     private static byte[] SKIP_BYTE_BUFFER;
 }

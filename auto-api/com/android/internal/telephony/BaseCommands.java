@@ -20,191 +20,191 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class BaseCommands implements CommandsInterface {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.850 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
 
     protected Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "2BF934F4DD24E65E50AF1752F2D5A583", hash_generated_field = "E29C242D0504728E6C3C54A6DDC02A46")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.850 -0400", hash_original_field = "2BF934F4DD24E65E50AF1752F2D5A583", hash_generated_field = "E29C242D0504728E6C3C54A6DDC02A46")
 
     protected RadioState mState = RadioState.RADIO_UNAVAILABLE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "B2B5F311C90603C2144044CBC44E4FBF", hash_generated_field = "732A4411E8B6CD4E0897192B6F27A157")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.850 -0400", hash_original_field = "B2B5F311C90603C2144044CBC44E4FBF", hash_generated_field = "732A4411E8B6CD4E0897192B6F27A157")
 
     protected RadioState mSimState = RadioState.RADIO_UNAVAILABLE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "80FF96B7912BEBCF49D2C318DC1F37A1", hash_generated_field = "34AD4D4D50B88A82487D87EDB290DD65")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.850 -0400", hash_original_field = "80FF96B7912BEBCF49D2C318DC1F37A1", hash_generated_field = "34AD4D4D50B88A82487D87EDB290DD65")
 
     protected RadioState mRuimState = RadioState.RADIO_UNAVAILABLE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "C92F32158206673F4825547EDD2DF45E", hash_generated_field = "AACFF7E48EB5D3C80BE4456A9FEE9F81")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.850 -0400", hash_original_field = "C92F32158206673F4825547EDD2DF45E", hash_generated_field = "AACFF7E48EB5D3C80BE4456A9FEE9F81")
 
     protected RadioState mNvState = RadioState.RADIO_UNAVAILABLE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "7CB20A433ED2F43C6F880910B3015C96", hash_generated_field = "E5ADD6D93A64C85609CB12342A7B9EC5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.850 -0400", hash_original_field = "7CB20A433ED2F43C6F880910B3015C96", hash_generated_field = "E5ADD6D93A64C85609CB12342A7B9EC5")
 
     protected Object mStateMonitor = new Object();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "D526FD4EC7FD2BAB90539F40603BF331", hash_generated_field = "CDE5DEB085980735E31C1C0C83621370")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.850 -0400", hash_original_field = "D526FD4EC7FD2BAB90539F40603BF331", hash_generated_field = "CDE5DEB085980735E31C1C0C83621370")
 
     protected RegistrantList mRadioStateChangedRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "66CFB0591A43ED1046B62577FA89A3FA", hash_generated_field = "BBE48E2A62763F1E6595E3B9C75D6A71")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "66CFB0591A43ED1046B62577FA89A3FA", hash_generated_field = "BBE48E2A62763F1E6595E3B9C75D6A71")
 
     protected RegistrantList mOnRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "FBE03152FE4A31AE66CC0C955A1FB239", hash_generated_field = "D1905CA58B49E7F78DD846CFA64D5316")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "FBE03152FE4A31AE66CC0C955A1FB239", hash_generated_field = "D1905CA58B49E7F78DD846CFA64D5316")
 
     protected RegistrantList mAvailRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "13FDC9D5C077A5D4CB4CFA2A0B23AF71", hash_generated_field = "D638CD091BFAF9674759E1FC93BC7B15")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "13FDC9D5C077A5D4CB4CFA2A0B23AF71", hash_generated_field = "D638CD091BFAF9674759E1FC93BC7B15")
 
     protected RegistrantList mOffOrNotAvailRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "1C90B7B9FC0BB72BB7B369441F008FB6", hash_generated_field = "084460E11ACEB5369FB6E423AAFFE543")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "1C90B7B9FC0BB72BB7B369441F008FB6", hash_generated_field = "084460E11ACEB5369FB6E423AAFFE543")
 
     protected RegistrantList mNotAvailRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "6DE69D2157F0D9CA83423EB73835207A", hash_generated_field = "05475482546969953FA0A0F9DAC30933")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "6DE69D2157F0D9CA83423EB73835207A", hash_generated_field = "05475482546969953FA0A0F9DAC30933")
 
     protected RegistrantList mSIMReadyRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "B8B512E7187543F3A15BF36C25D7A350", hash_generated_field = "A623E3A61C00CC0E81DAD080139B13CD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "B8B512E7187543F3A15BF36C25D7A350", hash_generated_field = "A623E3A61C00CC0E81DAD080139B13CD")
 
     protected RegistrantList mSIMLockedRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "F8D843ECE8B1CE1FD39A64E5564DB5AA", hash_generated_field = "A70A1736E6B6D7BA9282C26FE5DD4832")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "F8D843ECE8B1CE1FD39A64E5564DB5AA", hash_generated_field = "A70A1736E6B6D7BA9282C26FE5DD4832")
 
     protected RegistrantList mRUIMReadyRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "A44814E3043024C928175EA73AE05DDB", hash_generated_field = "6BA51D54C350F4A0CEA81951FA73B8D5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "A44814E3043024C928175EA73AE05DDB", hash_generated_field = "6BA51D54C350F4A0CEA81951FA73B8D5")
 
     protected RegistrantList mRUIMLockedRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "DF7961017AE394706AF1E967D73424A4", hash_generated_field = "091BBB21F5D16A03789C0F6AA4D344DD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "DF7961017AE394706AF1E967D73424A4", hash_generated_field = "091BBB21F5D16A03789C0F6AA4D344DD")
 
     protected RegistrantList mNVReadyRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "EA60A75E187A8F698634CF83CB27A424", hash_generated_field = "D6147A9CA58DBB501CCF0902B7C9ED16")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "EA60A75E187A8F698634CF83CB27A424", hash_generated_field = "D6147A9CA58DBB501CCF0902B7C9ED16")
 
     protected RegistrantList mCallStateRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "1D0EDA6B45F788B295CAAF8E7FEA6744", hash_generated_field = "8DA8D929D640D50FA30AE860C09088B8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "1D0EDA6B45F788B295CAAF8E7FEA6744", hash_generated_field = "8DA8D929D640D50FA30AE860C09088B8")
 
     protected RegistrantList mVoiceNetworkStateRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "746D40BFB26C05DC213C733AB7271496", hash_generated_field = "5E95E0F1E3C09D6368259B9646413BE4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "746D40BFB26C05DC213C733AB7271496", hash_generated_field = "5E95E0F1E3C09D6368259B9646413BE4")
 
     protected RegistrantList mDataNetworkStateRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "F33842FF34ECFEF351711D1FC5446488", hash_generated_field = "2608CFBA55F33EAD5E5D1DA0C4C6F657")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "F33842FF34ECFEF351711D1FC5446488", hash_generated_field = "2608CFBA55F33EAD5E5D1DA0C4C6F657")
 
     protected RegistrantList mRadioTechnologyChangedRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.432 -0400", hash_original_field = "5664D6D3169AB7E439100320CC9EFC6A", hash_generated_field = "F83A0D6273A29CF318E6C8129181889B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "5664D6D3169AB7E439100320CC9EFC6A", hash_generated_field = "F83A0D6273A29CF318E6C8129181889B")
 
     protected RegistrantList mIccStatusChangedRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "507DA9B30217F66A0F60A57CFD5E863E", hash_generated_field = "42B6C1CA7D49825160E9EA711BCB41AA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "507DA9B30217F66A0F60A57CFD5E863E", hash_generated_field = "42B6C1CA7D49825160E9EA711BCB41AA")
 
     protected RegistrantList mVoicePrivacyOnRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "E95C0D832DDBA596D46C957A8AF9CA2D", hash_generated_field = "1C168249758DFA87D2497586E517A8E9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "E95C0D832DDBA596D46C957A8AF9CA2D", hash_generated_field = "1C168249758DFA87D2497586E517A8E9")
 
     protected RegistrantList mVoicePrivacyOffRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "48869D1C8E6664F747BE0B177F8F277B", hash_generated_field = "C784674CD5101D15CEF6EE1260D16EE0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "48869D1C8E6664F747BE0B177F8F277B", hash_generated_field = "C784674CD5101D15CEF6EE1260D16EE0")
 
     protected Registrant mUnsolOemHookRawRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "34A8494C24A6077203F2F49F2DF7C639", hash_generated_field = "BA5574D2FF0265742740D4181685E95C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.851 -0400", hash_original_field = "34A8494C24A6077203F2F49F2DF7C639", hash_generated_field = "BA5574D2FF0265742740D4181685E95C")
 
     protected RegistrantList mOtaProvisionRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "821AD54275FA235F072AC1E29614F195", hash_generated_field = "D42946C72CBF62F18062DFF6D61C2464")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "821AD54275FA235F072AC1E29614F195", hash_generated_field = "D42946C72CBF62F18062DFF6D61C2464")
 
     protected RegistrantList mCallWaitingInfoRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "FF5BC7452774D64B461FB8EA0AF7D269", hash_generated_field = "0D68472D193D8D7EEB22077B614B9226")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "FF5BC7452774D64B461FB8EA0AF7D269", hash_generated_field = "0D68472D193D8D7EEB22077B614B9226")
 
     protected RegistrantList mDisplayInfoRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "2E9BBDE0062377CB99BF33C36CBE08C6", hash_generated_field = "6204214CCC43D2779C8E0010DB8CC0B9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "2E9BBDE0062377CB99BF33C36CBE08C6", hash_generated_field = "6204214CCC43D2779C8E0010DB8CC0B9")
 
     protected RegistrantList mSignalInfoRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "9E5885E78F4B7C2BF7262B36EF91B736", hash_generated_field = "CE0ACCBD53FC2723405AD8E23F0142F2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "9E5885E78F4B7C2BF7262B36EF91B736", hash_generated_field = "CE0ACCBD53FC2723405AD8E23F0142F2")
 
     protected RegistrantList mNumberInfoRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "0857666F462FE4CF3D08E74BE0732D81", hash_generated_field = "61844679F83E8813F0E57C729B60CDFF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "0857666F462FE4CF3D08E74BE0732D81", hash_generated_field = "61844679F83E8813F0E57C729B60CDFF")
 
     protected RegistrantList mRedirNumInfoRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "3994B85A7FB3277566475CEA28C1C8C6", hash_generated_field = "8AC1E7C5F78F9248211B76622C386A07")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "3994B85A7FB3277566475CEA28C1C8C6", hash_generated_field = "8AC1E7C5F78F9248211B76622C386A07")
 
     protected RegistrantList mLineControlInfoRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "B8F9BF6E4165A88E97FABC7BE71271C2", hash_generated_field = "F40B8CC6F582B8E5175CC7D1A77E6085")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "B8F9BF6E4165A88E97FABC7BE71271C2", hash_generated_field = "F40B8CC6F582B8E5175CC7D1A77E6085")
 
     protected RegistrantList mT53ClirInfoRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "8D48F6E1E89A649D28F53847B6CAF34C", hash_generated_field = "7C160FE4F8A1F605E24D09BC9B140BAD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "8D48F6E1E89A649D28F53847B6CAF34C", hash_generated_field = "7C160FE4F8A1F605E24D09BC9B140BAD")
 
     protected RegistrantList mT53AudCntrlInfoRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "6734B6C6A53D1CEEE7CE51CB2E98869A", hash_generated_field = "9C00D0FD9392C44075239940EFDF7A15")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "6734B6C6A53D1CEEE7CE51CB2E98869A", hash_generated_field = "9C00D0FD9392C44075239940EFDF7A15")
 
     protected RegistrantList mRingbackToneRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "251A8C261F0A6B5A6EF340C11F86AED3", hash_generated_field = "37A17EE00B51514019C95BC8D2DDCD7F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "251A8C261F0A6B5A6EF340C11F86AED3", hash_generated_field = "37A17EE00B51514019C95BC8D2DDCD7F")
 
     protected RegistrantList mResendIncallMuteRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "1F26750C0D1C62D4FA5DC396C0BC99AC", hash_generated_field = "950524B6CFECD91E264DC30F2CA5AC4C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "1F26750C0D1C62D4FA5DC396C0BC99AC", hash_generated_field = "950524B6CFECD91E264DC30F2CA5AC4C")
 
     protected RegistrantList mCdmaSubscriptionChangedRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "A443A43D626AE1F08330B798B226FCF5", hash_generated_field = "031CB0765102321A36876E564078BD43")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "A443A43D626AE1F08330B798B226FCF5", hash_generated_field = "031CB0765102321A36876E564078BD43")
 
     protected RegistrantList mCdmaPrlChangedRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "6B06F77C2225BB93956582694B044176", hash_generated_field = "0F64A15E5224B623ED0359EA1AFACD3E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "6B06F77C2225BB93956582694B044176", hash_generated_field = "0F64A15E5224B623ED0359EA1AFACD3E")
 
     protected RegistrantList mExitEmergencyCallbackModeRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "359A8F385A0BC2C0C9693D7F3C770E3B", hash_generated_field = "783EBC1E3434B7B9A4B526A569D3C8BB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "359A8F385A0BC2C0C9693D7F3C770E3B", hash_generated_field = "783EBC1E3434B7B9A4B526A569D3C8BB")
 
     protected RegistrantList mRilConnectedRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "CC7DF180825E26075C285A298011BA6E", hash_generated_field = "D0D69EEA44C0EFCE9F6687FCB10E7138")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "CC7DF180825E26075C285A298011BA6E", hash_generated_field = "D0D69EEA44C0EFCE9F6687FCB10E7138")
 
     protected RegistrantList mIccRefreshRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "93068B3DFCA92ABEB6A973BEDD81CA36", hash_generated_field = "AE6AD1CCCCF6C8652D606AE52E3DF80E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "93068B3DFCA92ABEB6A973BEDD81CA36", hash_generated_field = "AE6AD1CCCCF6C8652D606AE52E3DF80E")
 
     protected Registrant mGsmSmsRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "E9128F4517A76124C10B76E1AD207E87", hash_generated_field = "7EF8A8757C74933479C641605220142B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "E9128F4517A76124C10B76E1AD207E87", hash_generated_field = "7EF8A8757C74933479C641605220142B")
 
     protected Registrant mCdmaSmsRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "797D32C2AB6071943A7BF33F95E2AA87", hash_generated_field = "09C768F38430A45C44F4EC1B33311DC5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "797D32C2AB6071943A7BF33F95E2AA87", hash_generated_field = "09C768F38430A45C44F4EC1B33311DC5")
 
     protected Registrant mNITZTimeRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "39A511522F6DAE685ADF58B71F21A4B8", hash_generated_field = "4AFA4CD65E7E12F4BEAB77E5A8A114EF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "39A511522F6DAE685ADF58B71F21A4B8", hash_generated_field = "4AFA4CD65E7E12F4BEAB77E5A8A114EF")
 
     protected Registrant mSignalStrengthRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "65BF7B29E63435B20DF73C57D9F54E4B", hash_generated_field = "7F634DCABCF2D0B8F220E57AE4E96590")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "65BF7B29E63435B20DF73C57D9F54E4B", hash_generated_field = "7F634DCABCF2D0B8F220E57AE4E96590")
 
     protected Registrant mUSSDRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "0124EDB065170193461E13F8D03E250F", hash_generated_field = "B019300CE4E11592C3B33D347D7C4A76")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.852 -0400", hash_original_field = "0124EDB065170193461E13F8D03E250F", hash_generated_field = "B019300CE4E11592C3B33D347D7C4A76")
 
     protected Registrant mSmsOnSimRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "F2C3739904B57032DC0211B1C9945367", hash_generated_field = "37F7FBC66940F342032C40B465BB356D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "F2C3739904B57032DC0211B1C9945367", hash_generated_field = "37F7FBC66940F342032C40B465BB356D")
 
     protected Registrant mSmsStatusRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "88BADC43999AC7AC0B7BA77BA2173F18", hash_generated_field = "689F8C2F3A4DCAE6D5A5B4896991685A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "88BADC43999AC7AC0B7BA77BA2173F18", hash_generated_field = "689F8C2F3A4DCAE6D5A5B4896991685A")
 
     protected Registrant mSsnRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "C2904B0E5C44162B38647670CAED146A", hash_generated_field = "C778CA70B3096B1243F533C7A926C465")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "C2904B0E5C44162B38647670CAED146A", hash_generated_field = "C778CA70B3096B1243F533C7A926C465")
 
     protected Registrant mCatSessionEndRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "DB3ADE55CC0A4A25897682DAA2F959DF", hash_generated_field = "93E739C036C1A0B86A700CD298905F79")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "DB3ADE55CC0A4A25897682DAA2F959DF", hash_generated_field = "93E739C036C1A0B86A700CD298905F79")
 
     protected Registrant mCatProCmdRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "20CAB5E5B9DA3FC4209B5A585EEA6620", hash_generated_field = "91902976B405BE9CE9480386077C2D01")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "20CAB5E5B9DA3FC4209B5A585EEA6620", hash_generated_field = "91902976B405BE9CE9480386077C2D01")
 
     protected Registrant mCatEventRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "C8C3EAEC9054FE1E7F4D40AE9B30385F", hash_generated_field = "2FFB84B2CC080F88E562A0579189849B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "C8C3EAEC9054FE1E7F4D40AE9B30385F", hash_generated_field = "2FFB84B2CC080F88E562A0579189849B")
 
     protected Registrant mCatCallSetUpRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.433 -0400", hash_original_field = "1ABD4B5BDE64D16AC273F11E75E4CCD2", hash_generated_field = "D096C2B238E423A909F827C0F12E3196")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "1ABD4B5BDE64D16AC273F11E75E4CCD2", hash_generated_field = "D096C2B238E423A909F827C0F12E3196")
 
     protected Registrant mIccSmsFullRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.434 -0400", hash_original_field = "55A11E68DAB4ED2ABEA253DDA27F9036", hash_generated_field = "37124344C68F94A9931D1454F42E4330")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "55A11E68DAB4ED2ABEA253DDA27F9036", hash_generated_field = "37124344C68F94A9931D1454F42E4330")
 
     protected Registrant mEmergencyCallbackModeRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.434 -0400", hash_original_field = "35F2B175BDFF05E754154997AA28BF30", hash_generated_field = "C761F445E12876DE0409CFB83DAB2F08")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "35F2B175BDFF05E754154997AA28BF30", hash_generated_field = "C761F445E12876DE0409CFB83DAB2F08")
 
     protected Registrant mRingRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.434 -0400", hash_original_field = "327F5B007E0D9B70653AB92935E6CE1F", hash_generated_field = "80081B8B3844FBB01B0E57137B1A6224")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "327F5B007E0D9B70653AB92935E6CE1F", hash_generated_field = "80081B8B3844FBB01B0E57137B1A6224")
 
     protected Registrant mRestrictedStateRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.434 -0400", hash_original_field = "1329ACEFEF592C884F9EC20DD70DF339", hash_generated_field = "CD191F79A4233E2F2A818FF2D70F9A22")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "1329ACEFEF592C884F9EC20DD70DF339", hash_generated_field = "CD191F79A4233E2F2A818FF2D70F9A22")
 
     protected Registrant mGsmBroadcastSmsRegistrant;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.434 -0400", hash_original_field = "5E797CD98A6F48EA74102A194ABE8414", hash_generated_field = "68A41D2FF9AA4AE66DAE7932D0E1DF46")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "5E797CD98A6F48EA74102A194ABE8414", hash_generated_field = "68A41D2FF9AA4AE66DAE7932D0E1DF46")
 
     protected int mPreferredNetworkType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.434 -0400", hash_original_field = "1C51E17BC9825EE74606128C3012A8C8", hash_generated_field = "37D13576834061AD4F22AAB21A88FECE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "1C51E17BC9825EE74606128C3012A8C8", hash_generated_field = "37D13576834061AD4F22AAB21A88FECE")
 
     protected int mCdmaSubscription;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.434 -0400", hash_original_field = "096AB6E359ED6FF0EE592ECA75245EED", hash_generated_field = "ADD2566E3A8EA5E90C108782BDB8F38B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "096AB6E359ED6FF0EE592ECA75245EED", hash_generated_field = "ADD2566E3A8EA5E90C108782BDB8F38B")
 
     protected int mPhoneType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.434 -0400", hash_original_field = "C377C6F97C92F8D0FBD252C9A0BEFE61", hash_generated_field = "580E7C4318D3476CC0659BF42E5F3A02")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.853 -0400", hash_original_field = "C377C6F97C92F8D0FBD252C9A0BEFE61", hash_generated_field = "580E7C4318D3476CC0659BF42E5F3A02")
 
     protected int mRilVersion = -1;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.434 -0400", hash_original_method = "01B446908FD885F92167357142764DD4", hash_generated_method = "4647031EB039E2A3D118E070276D6752")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.870 -0400", hash_original_method = "01B446908FD885F92167357142764DD4", hash_generated_method = "4647031EB039E2A3D118E070276D6752")
     public  BaseCommands(Context context) {
         mContext = context;
         // ---------- Original Method ----------
@@ -212,51 +212,51 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.450 -0400", hash_original_method = "9B72FF4B03FA7DBB789195860BAD353E", hash_generated_method = "41EA25E9D06C37E2468A3E4128394AE8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.870 -0400", hash_original_method = "9B72FF4B03FA7DBB789195860BAD353E", hash_generated_method = "4CD019EC7E88A26101F15314FF49D145")
     public RadioState getRadioState() {
-        RadioState varB4EAC82CA7396A68D541C85D26508E83_1024352531 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1024352531 = mState;
-        varB4EAC82CA7396A68D541C85D26508E83_1024352531.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1024352531;
+        RadioState varB4EAC82CA7396A68D541C85D26508E83_741308637 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_741308637 = mState;
+        varB4EAC82CA7396A68D541C85D26508E83_741308637.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_741308637;
         // ---------- Original Method ----------
         //return mState;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.451 -0400", hash_original_method = "683B910DC6B22521B92A68335EE5839B", hash_generated_method = "2CEDC7D2B92465D5DE35AABCD0DD84D5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.871 -0400", hash_original_method = "683B910DC6B22521B92A68335EE5839B", hash_generated_method = "51DF9B0C78925C328656899C7ED46198")
     public RadioState getSimState() {
-        RadioState varB4EAC82CA7396A68D541C85D26508E83_914034930 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_914034930 = mSimState;
-        varB4EAC82CA7396A68D541C85D26508E83_914034930.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_914034930;
+        RadioState varB4EAC82CA7396A68D541C85D26508E83_1544637415 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1544637415 = mSimState;
+        varB4EAC82CA7396A68D541C85D26508E83_1544637415.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1544637415;
         // ---------- Original Method ----------
         //return mSimState;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.451 -0400", hash_original_method = "109C4CEB2CE04AD161352D599FB1B09F", hash_generated_method = "D68FA911496D421CCD7F223284B3956B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.871 -0400", hash_original_method = "109C4CEB2CE04AD161352D599FB1B09F", hash_generated_method = "C2665605D3D3E76C317FAC1B1C409491")
     public RadioState getRuimState() {
-        RadioState varB4EAC82CA7396A68D541C85D26508E83_530588784 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_530588784 = mRuimState;
-        varB4EAC82CA7396A68D541C85D26508E83_530588784.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_530588784;
+        RadioState varB4EAC82CA7396A68D541C85D26508E83_599059785 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_599059785 = mRuimState;
+        varB4EAC82CA7396A68D541C85D26508E83_599059785.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_599059785;
         // ---------- Original Method ----------
         //return mRuimState;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.452 -0400", hash_original_method = "903DF1C2B5F50A021347F02D35C70B16", hash_generated_method = "6512946EE364915C9AB8AE0F1AAE57B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.872 -0400", hash_original_method = "903DF1C2B5F50A021347F02D35C70B16", hash_generated_method = "59A1A91A8E4376A9EF961863DDED8DBA")
     public RadioState getNvState() {
-        RadioState varB4EAC82CA7396A68D541C85D26508E83_348396539 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_348396539 = mNvState;
-        varB4EAC82CA7396A68D541C85D26508E83_348396539.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_348396539;
+        RadioState varB4EAC82CA7396A68D541C85D26508E83_1581291378 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1581291378 = mNvState;
+        varB4EAC82CA7396A68D541C85D26508E83_1581291378.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1581291378;
         // ---------- Original Method ----------
         //return mNvState;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.452 -0400", hash_original_method = "BA48B5E0F5DAB3A06803759CD1341873", hash_generated_method = "E0D322A72135C4350F462B67288FB68B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.872 -0400", hash_original_method = "BA48B5E0F5DAB3A06803759CD1341873", hash_generated_method = "E0D322A72135C4350F462B67288FB68B")
     public void registerForRadioStateChanged(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -277,7 +277,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.452 -0400", hash_original_method = "5BE66114299D36CCAFF9DF2B86730E54", hash_generated_method = "AF39AD25069081EBCA754DAC40C54375")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.872 -0400", hash_original_method = "5BE66114299D36CCAFF9DF2B86730E54", hash_generated_method = "AF39AD25069081EBCA754DAC40C54375")
     public void unregisterForRadioStateChanged(Handler h) {
         {
             mRadioStateChangedRegistrants.remove(h);
@@ -290,7 +290,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.464 -0400", hash_original_method = "08D5A7DF41ADD1C0423FEF7DAFFF25BD", hash_generated_method = "D5A57A544784A18B289E8F7FEEB008DA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.873 -0400", hash_original_method = "08D5A7DF41ADD1C0423FEF7DAFFF25BD", hash_generated_method = "E5DEEF57A2D4A02D7CC4AED974BFF2EF")
     public void registerForOn(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -298,7 +298,7 @@ public abstract class BaseCommands implements CommandsInterface {
         {
             mOnRegistrants.add(r);
             {
-                boolean varC432C946EB5D571635B857CCF1AC273D_1443094494 = (mState.isOn());
+                boolean varC432C946EB5D571635B857CCF1AC273D_279743437 = (mState.isOn());
                 {
                     r.notifyRegistrant(new AsyncResult(null, null, null));
                 } //End block
@@ -318,7 +318,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.465 -0400", hash_original_method = "DAE1468F1869D31101D72670C27E98BE", hash_generated_method = "5701F283EF75AFBE931E07D529B1EAAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.873 -0400", hash_original_method = "DAE1468F1869D31101D72670C27E98BE", hash_generated_method = "5701F283EF75AFBE931E07D529B1EAAE")
     public void unregisterForOn(Handler h) {
         {
             mOnRegistrants.remove(h);
@@ -331,7 +331,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.465 -0400", hash_original_method = "B002A9DBB8C7C11A31C2582BB5EE1874", hash_generated_method = "BC64C11004B2480BE586EC125D03D582")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.880 -0400", hash_original_method = "B002A9DBB8C7C11A31C2582BB5EE1874", hash_generated_method = "59785B5C9969F876DFB54AA2323BA262")
     public void registerForAvailable(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -339,7 +339,7 @@ public abstract class BaseCommands implements CommandsInterface {
         {
             mAvailRegistrants.add(r);
             {
-                boolean var125377391E8A2F9B6DF662CC52B1DC3C_1807347477 = (mState.isAvailable());
+                boolean var125377391E8A2F9B6DF662CC52B1DC3C_769402412 = (mState.isAvailable());
                 {
                     r.notifyRegistrant(new AsyncResult(null, null, null));
                 } //End block
@@ -359,7 +359,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.466 -0400", hash_original_method = "1CA2372C2986DE46A59E6A0B2684AC78", hash_generated_method = "A0B2CAC85E87E4171C1DC92D773ADC2F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.882 -0400", hash_original_method = "1CA2372C2986DE46A59E6A0B2684AC78", hash_generated_method = "A0B2CAC85E87E4171C1DC92D773ADC2F")
     public void unregisterForAvailable(Handler h) {
         {
             mAvailRegistrants.remove(h);
@@ -372,7 +372,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.469 -0400", hash_original_method = "29C83058E2196992ACCCDF2436EB895F", hash_generated_method = "FDACAEA2E60C86D95C912099D4D3CBAF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.889 -0400", hash_original_method = "29C83058E2196992ACCCDF2436EB895F", hash_generated_method = "6DA5B100E70018EF9EE44B8420FF6876")
     public void registerForNotAvailable(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -380,7 +380,7 @@ public abstract class BaseCommands implements CommandsInterface {
         {
             mNotAvailRegistrants.add(r);
             {
-                boolean varD36E632F0E0B6691B3B97AF15E031B66_1333437819 = (!mState.isAvailable());
+                boolean varD36E632F0E0B6691B3B97AF15E031B66_1844134217 = (!mState.isAvailable());
                 {
                     r.notifyRegistrant(new AsyncResult(null, null, null));
                 } //End block
@@ -400,7 +400,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.469 -0400", hash_original_method = "CBA6674D64F15D2FCB61961545603AC0", hash_generated_method = "519BDC433B210FB9C4958A34BD85798B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.889 -0400", hash_original_method = "CBA6674D64F15D2FCB61961545603AC0", hash_generated_method = "519BDC433B210FB9C4958A34BD85798B")
     public void unregisterForNotAvailable(Handler h) {
         {
             mNotAvailRegistrants.remove(h);
@@ -413,7 +413,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.470 -0400", hash_original_method = "7D79215F701EB0E62714361F42A7E5B1", hash_generated_method = "D90795BCD86CC8EE9BAA77F4EB7CCD82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.890 -0400", hash_original_method = "7D79215F701EB0E62714361F42A7E5B1", hash_generated_method = "4D935642E749342F0D3EDEF834EB4FCF")
     public void registerForOffOrNotAvailable(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -421,7 +421,7 @@ public abstract class BaseCommands implements CommandsInterface {
         {
             mOffOrNotAvailRegistrants.add(r);
             {
-                boolean var31C4C6E13480922D49199FF94A7DDE48_1799002041 = (mState == RadioState.RADIO_OFF || !mState.isAvailable());
+                boolean var31C4C6E13480922D49199FF94A7DDE48_275555265 = (mState == RadioState.RADIO_OFF || !mState.isAvailable());
                 {
                     r.notifyRegistrant(new AsyncResult(null, null, null));
                 } //End block
@@ -441,7 +441,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.470 -0400", hash_original_method = "46989C4094561DAD50220FCBDDA75AA6", hash_generated_method = "97CC52E1E52E7A7BC807C66B983812B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.890 -0400", hash_original_method = "46989C4094561DAD50220FCBDDA75AA6", hash_generated_method = "97CC52E1E52E7A7BC807C66B983812B9")
     public void unregisterForOffOrNotAvailable(Handler h) {
         {
             mOffOrNotAvailRegistrants.remove(h);
@@ -454,7 +454,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.471 -0400", hash_original_method = "CC4432751ADD65730712EA705F22C3CD", hash_generated_method = "06EA853E4CC38ED3FADBF8747D23E000")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.890 -0400", hash_original_method = "CC4432751ADD65730712EA705F22C3CD", hash_generated_method = "80D1621CCEF3DBA9840F7758CE2F1812")
     public void registerForSIMReady(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -462,7 +462,7 @@ public abstract class BaseCommands implements CommandsInterface {
         {
             mSIMReadyRegistrants.add(r);
             {
-                boolean varB1F49383AD10BFFD2293060B5333102C_2129354902 = (mSimState.isSIMReady());
+                boolean varB1F49383AD10BFFD2293060B5333102C_1182883749 = (mSimState.isSIMReady());
                 {
                     r.notifyRegistrant(new AsyncResult(null, null, null));
                 } //End block
@@ -482,7 +482,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.492 -0400", hash_original_method = "AB19D2A11305E45A98335C636B50C33B", hash_generated_method = "729A52517E5D007040901B46B7613139")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.891 -0400", hash_original_method = "AB19D2A11305E45A98335C636B50C33B", hash_generated_method = "729A52517E5D007040901B46B7613139")
     public void unregisterForSIMReady(Handler h) {
         {
             mSIMReadyRegistrants.remove(h);
@@ -495,7 +495,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.493 -0400", hash_original_method = "2C12645510D08A28B5398079ECA6EB3E", hash_generated_method = "EEDED4D6152B863C35C94873C194C7B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.891 -0400", hash_original_method = "2C12645510D08A28B5398079ECA6EB3E", hash_generated_method = "A96BACA4E2456A12A28E42B420EF2DC7")
     public void registerForRUIMReady(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -503,7 +503,7 @@ public abstract class BaseCommands implements CommandsInterface {
         {
             mRUIMReadyRegistrants.add(r);
             {
-                boolean varDA1934D636D9BE382DB58F17EF4E0175_227795029 = (mRuimState.isRUIMReady());
+                boolean varDA1934D636D9BE382DB58F17EF4E0175_2046239950 = (mRuimState.isRUIMReady());
                 {
                     r.notifyRegistrant(new AsyncResult(null, null, null));
                 } //End block
@@ -523,7 +523,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.493 -0400", hash_original_method = "5D1587722234669A56B255A4AE24EE40", hash_generated_method = "0C552B1F89D56BBD79F839D650D7A6D7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.898 -0400", hash_original_method = "5D1587722234669A56B255A4AE24EE40", hash_generated_method = "0C552B1F89D56BBD79F839D650D7A6D7")
     public void unregisterForRUIMReady(Handler h) {
         {
             mRUIMReadyRegistrants.remove(h);
@@ -536,7 +536,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.493 -0400", hash_original_method = "AC5C11E970C3FC3CF3AF902D98D61BFC", hash_generated_method = "FAD595638434DD57678C9589D1A37F6A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.899 -0400", hash_original_method = "AC5C11E970C3FC3CF3AF902D98D61BFC", hash_generated_method = "BD76A308ABB6571F3EF253FAC3BEBFBA")
     public void registerForNVReady(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -544,7 +544,7 @@ public abstract class BaseCommands implements CommandsInterface {
         {
             mNVReadyRegistrants.add(r);
             {
-                boolean var695FD0EFB66918705B8196B52B61E089_1589268339 = (mNvState.isNVReady());
+                boolean var695FD0EFB66918705B8196B52B61E089_292734001 = (mNvState.isNVReady());
                 {
                     r.notifyRegistrant(new AsyncResult(null, null, null));
                 } //End block
@@ -564,7 +564,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.494 -0400", hash_original_method = "0163F455801DEEBEEE15E264968FFDFB", hash_generated_method = "64C8060B14C70090AC197259E7040D3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.899 -0400", hash_original_method = "0163F455801DEEBEEE15E264968FFDFB", hash_generated_method = "64C8060B14C70090AC197259E7040D3D")
     public void unregisterForNVReady(Handler h) {
         {
             mNVReadyRegistrants.remove(h);
@@ -577,7 +577,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.501 -0400", hash_original_method = "B685FFCB0EF7DE87E1299EB2C0D91FF5", hash_generated_method = "8AB13D102AA55F7C4B201E33766CD581")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.905 -0400", hash_original_method = "B685FFCB0EF7DE87E1299EB2C0D91FF5", hash_generated_method = "8AB13D102AA55F7C4B201E33766CD581")
     public void registerForSIMLockedOrAbsent(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -602,7 +602,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.501 -0400", hash_original_method = "9E4C5688CACB9B43620D9767F5ED2831", hash_generated_method = "88A4BEEF2A8DC537C0BF371A85AC6287")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.905 -0400", hash_original_method = "9E4C5688CACB9B43620D9767F5ED2831", hash_generated_method = "88A4BEEF2A8DC537C0BF371A85AC6287")
     public void unregisterForSIMLockedOrAbsent(Handler h) {
         {
             mSIMLockedRegistrants.remove(h);
@@ -615,7 +615,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.502 -0400", hash_original_method = "B883F560C1A8BD25AD0100160D6BFB3E", hash_generated_method = "ACADDC1E0CEAFC224A17D7A524B186C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.951 -0400", hash_original_method = "B883F560C1A8BD25AD0100160D6BFB3E", hash_generated_method = "ACADDC1E0CEAFC224A17D7A524B186C1")
     public void registerForRUIMLockedOrAbsent(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -640,7 +640,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.502 -0400", hash_original_method = "F7619224FDBBC62B94132C1DE98F9FAE", hash_generated_method = "BF8F47E1C100249D5404E4212CAF75A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.952 -0400", hash_original_method = "F7619224FDBBC62B94132C1DE98F9FAE", hash_generated_method = "BF8F47E1C100249D5404E4212CAF75A4")
     public void unregisterForRUIMLockedOrAbsent(Handler h) {
         {
             mRUIMLockedRegistrants.remove(h);
@@ -653,7 +653,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.505 -0400", hash_original_method = "F8B2EAE479ED91D774CA562E26158F6A", hash_generated_method = "114A10DF716FFE0B8E76395C3CD561A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.952 -0400", hash_original_method = "F8B2EAE479ED91D774CA562E26158F6A", hash_generated_method = "114A10DF716FFE0B8E76395C3CD561A0")
     public void registerForCallStateChanged(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -668,7 +668,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.505 -0400", hash_original_method = "E52D1B8D1DC6759546B1451A8AF3B3CF", hash_generated_method = "FFCE4AFD62056E8D6627A5453ED14508")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.953 -0400", hash_original_method = "E52D1B8D1DC6759546B1451A8AF3B3CF", hash_generated_method = "FFCE4AFD62056E8D6627A5453ED14508")
     public void unregisterForCallStateChanged(Handler h) {
         mCallStateRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -677,7 +677,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.506 -0400", hash_original_method = "98A3778C7EF08FDD67D8F92B137CAB51", hash_generated_method = "44344CA46C5EA15B1F5A6E78EE91FD91")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.953 -0400", hash_original_method = "98A3778C7EF08FDD67D8F92B137CAB51", hash_generated_method = "44344CA46C5EA15B1F5A6E78EE91FD91")
     public void registerForVoiceNetworkStateChanged(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -692,7 +692,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.506 -0400", hash_original_method = "234E1E4E00B04837A43F108E250B7BAF", hash_generated_method = "F1D38E695ED34A925FF65950F75713A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.953 -0400", hash_original_method = "234E1E4E00B04837A43F108E250B7BAF", hash_generated_method = "F1D38E695ED34A925FF65950F75713A5")
     public void unregisterForVoiceNetworkStateChanged(Handler h) {
         mVoiceNetworkStateRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -701,7 +701,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.506 -0400", hash_original_method = "4B5CEB601891F006C0B3F4D5219F87E4", hash_generated_method = "56D3A1CACA6CDAA1A5B6BCD90B9737C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.953 -0400", hash_original_method = "4B5CEB601891F006C0B3F4D5219F87E4", hash_generated_method = "56D3A1CACA6CDAA1A5B6BCD90B9737C5")
     public void registerForDataNetworkStateChanged(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -716,7 +716,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.506 -0400", hash_original_method = "B36E31BF0B8FB61A85A55463809AD286", hash_generated_method = "BBBFFA85813600B56B2284DA26BA03FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.954 -0400", hash_original_method = "B36E31BF0B8FB61A85A55463809AD286", hash_generated_method = "BBBFFA85813600B56B2284DA26BA03FD")
     public void unregisterForDataNetworkStateChanged(Handler h) {
         mDataNetworkStateRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -725,7 +725,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.517 -0400", hash_original_method = "BDED847FB928F6304C85EAE7BEEAA6C9", hash_generated_method = "9B10C18C28A3DCA3B1042C97641E180B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.954 -0400", hash_original_method = "BDED847FB928F6304C85EAE7BEEAA6C9", hash_generated_method = "9B10C18C28A3DCA3B1042C97641E180B")
     public void registerForRadioTechnologyChanged(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -740,7 +740,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.518 -0400", hash_original_method = "836C826B4F0456A82E6FAC645FFBE7BB", hash_generated_method = "65C5F717D92A76BC2F8082318C3E5FD8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.954 -0400", hash_original_method = "836C826B4F0456A82E6FAC645FFBE7BB", hash_generated_method = "65C5F717D92A76BC2F8082318C3E5FD8")
     public void unregisterForRadioTechnologyChanged(Handler h) {
         mRadioTechnologyChangedRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -749,7 +749,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.518 -0400", hash_original_method = "95A4334EE1F2766E4CCE86BA1BBC52D8", hash_generated_method = "8C331CB7463939FFECB1FAA50FFA42C0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.955 -0400", hash_original_method = "95A4334EE1F2766E4CCE86BA1BBC52D8", hash_generated_method = "8C331CB7463939FFECB1FAA50FFA42C0")
     public void registerForIccStatusChanged(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -764,7 +764,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.518 -0400", hash_original_method = "9A6E8063793F2864B53A6581C25E75A7", hash_generated_method = "00D245DF65AAB2E63FB8B6820DC48574")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.955 -0400", hash_original_method = "9A6E8063793F2864B53A6581C25E75A7", hash_generated_method = "00D245DF65AAB2E63FB8B6820DC48574")
     public void unregisterForIccStatusChanged(Handler h) {
         mIccStatusChangedRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -773,7 +773,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.533 -0400", hash_original_method = "7CF6E9042288CF5BCC8A41B33E0FC1FA", hash_generated_method = "7D67F8A9E73CC31243F7D2D1116AD7EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.974 -0400", hash_original_method = "7CF6E9042288CF5BCC8A41B33E0FC1FA", hash_generated_method = "7D67F8A9E73CC31243F7D2D1116AD7EF")
     public void setOnNewGsmSms(Handler h, int what, Object obj) {
         mGsmSmsRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -781,7 +781,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.533 -0400", hash_original_method = "72321487D3788873BF3F462EC89D1700", hash_generated_method = "C4BE9028B97EE180F2612BD224A82712")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.974 -0400", hash_original_method = "72321487D3788873BF3F462EC89D1700", hash_generated_method = "C4BE9028B97EE180F2612BD224A82712")
     public void unSetOnNewGsmSms(Handler h) {
         mGsmSmsRegistrant.clear();
         addTaint(h.getTaint());
@@ -790,7 +790,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.533 -0400", hash_original_method = "9A78052D6944BA613BED064A1FCE96FC", hash_generated_method = "B037FBFD0EC202C599820C526877D98E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.987 -0400", hash_original_method = "9A78052D6944BA613BED064A1FCE96FC", hash_generated_method = "B037FBFD0EC202C599820C526877D98E")
     public void setOnNewCdmaSms(Handler h, int what, Object obj) {
         mCdmaSmsRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -798,7 +798,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.534 -0400", hash_original_method = "DD82A350612B8F1A5930420947333FBB", hash_generated_method = "9E921DD9A5492CA9F6F4274941F3FF12")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.987 -0400", hash_original_method = "DD82A350612B8F1A5930420947333FBB", hash_generated_method = "9E921DD9A5492CA9F6F4274941F3FF12")
     public void unSetOnNewCdmaSms(Handler h) {
         mCdmaSmsRegistrant.clear();
         addTaint(h.getTaint());
@@ -807,7 +807,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.534 -0400", hash_original_method = "33C97215793324BA09B0AC1C1CB62DDA", hash_generated_method = "695C2CE0D24706197FF6D3425DB7158C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.987 -0400", hash_original_method = "33C97215793324BA09B0AC1C1CB62DDA", hash_generated_method = "695C2CE0D24706197FF6D3425DB7158C")
     public void setOnNewGsmBroadcastSms(Handler h, int what, Object obj) {
         mGsmBroadcastSmsRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -815,7 +815,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.535 -0400", hash_original_method = "E9BA47BA240C655456D09F99640997E5", hash_generated_method = "3D89A33E859CD48CBF5B8786F717CA5B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.988 -0400", hash_original_method = "E9BA47BA240C655456D09F99640997E5", hash_generated_method = "3D89A33E859CD48CBF5B8786F717CA5B")
     public void unSetOnNewGsmBroadcastSms(Handler h) {
         mGsmBroadcastSmsRegistrant.clear();
         addTaint(h.getTaint());
@@ -824,7 +824,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.535 -0400", hash_original_method = "0C74AFDE10017540B93B7C27C178AD12", hash_generated_method = "F01D2F2AAD554400F7F805F97220DBBD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.988 -0400", hash_original_method = "0C74AFDE10017540B93B7C27C178AD12", hash_generated_method = "F01D2F2AAD554400F7F805F97220DBBD")
     public void setOnSmsOnSim(Handler h, int what, Object obj) {
         mSmsOnSimRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -832,7 +832,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.535 -0400", hash_original_method = "4BFC1B363FF8A6E9FA34FFCCC3CD985B", hash_generated_method = "24869AA523C2A0042D7B76B27363509B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.988 -0400", hash_original_method = "4BFC1B363FF8A6E9FA34FFCCC3CD985B", hash_generated_method = "24869AA523C2A0042D7B76B27363509B")
     public void unSetOnSmsOnSim(Handler h) {
         mSmsOnSimRegistrant.clear();
         addTaint(h.getTaint());
@@ -841,7 +841,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.535 -0400", hash_original_method = "11EEFE2847E162D5587C8E576D844178", hash_generated_method = "C023336B87B4FB7229398B4D2AAC0D61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.988 -0400", hash_original_method = "11EEFE2847E162D5587C8E576D844178", hash_generated_method = "C023336B87B4FB7229398B4D2AAC0D61")
     public void setOnSmsStatus(Handler h, int what, Object obj) {
         mSmsStatusRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -849,7 +849,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.536 -0400", hash_original_method = "04CADE4525B4CE9C767EB33D42E2733D", hash_generated_method = "2D61C9D4836D2EF408F83CB29A0B4427")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.989 -0400", hash_original_method = "04CADE4525B4CE9C767EB33D42E2733D", hash_generated_method = "2D61C9D4836D2EF408F83CB29A0B4427")
     public void unSetOnSmsStatus(Handler h) {
         mSmsStatusRegistrant.clear();
         addTaint(h.getTaint());
@@ -858,7 +858,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.536 -0400", hash_original_method = "BC3FAB2490D1A217545C1F22508EF51F", hash_generated_method = "842F4D77544312766E28F3F47E12ABFB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.989 -0400", hash_original_method = "BC3FAB2490D1A217545C1F22508EF51F", hash_generated_method = "842F4D77544312766E28F3F47E12ABFB")
     public void setOnSignalStrengthUpdate(Handler h, int what, Object obj) {
         mSignalStrengthRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -866,7 +866,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.536 -0400", hash_original_method = "1D4E93C65FCE9EA625F7FEE880958248", hash_generated_method = "1FD61DBA66209735265E154D522E0E4E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.989 -0400", hash_original_method = "1D4E93C65FCE9EA625F7FEE880958248", hash_generated_method = "1FD61DBA66209735265E154D522E0E4E")
     public void unSetOnSignalStrengthUpdate(Handler h) {
         mSignalStrengthRegistrant.clear();
         addTaint(h.getTaint());
@@ -875,7 +875,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.543 -0400", hash_original_method = "B93626E61216BE05ADCBA600BD7F638F", hash_generated_method = "34C7C5FD81579CD8736C8D1E69A09444")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.992 -0400", hash_original_method = "B93626E61216BE05ADCBA600BD7F638F", hash_generated_method = "34C7C5FD81579CD8736C8D1E69A09444")
     public void setOnNITZTime(Handler h, int what, Object obj) {
         mNITZTimeRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -883,7 +883,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.543 -0400", hash_original_method = "71E2E923C47A5EE8EAC4F6876E00C1CF", hash_generated_method = "4893F8C52AAECB5FAD18F95D2CEF2044")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.994 -0400", hash_original_method = "71E2E923C47A5EE8EAC4F6876E00C1CF", hash_generated_method = "4893F8C52AAECB5FAD18F95D2CEF2044")
     public void unSetOnNITZTime(Handler h) {
         mNITZTimeRegistrant.clear();
         addTaint(h.getTaint());
@@ -892,7 +892,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.543 -0400", hash_original_method = "B95EC97639ED908B13D752A2F13F6C7D", hash_generated_method = "965063192BA32BA8BB4F78D6116BC04C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.001 -0400", hash_original_method = "B95EC97639ED908B13D752A2F13F6C7D", hash_generated_method = "965063192BA32BA8BB4F78D6116BC04C")
     public void setOnUSSD(Handler h, int what, Object obj) {
         mUSSDRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -900,7 +900,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.544 -0400", hash_original_method = "466A12DF4A4A0EB8A1AA727D5C05C698", hash_generated_method = "4C5C0EEF27179877C9EFDE9C305C445F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.001 -0400", hash_original_method = "466A12DF4A4A0EB8A1AA727D5C05C698", hash_generated_method = "4C5C0EEF27179877C9EFDE9C305C445F")
     public void unSetOnUSSD(Handler h) {
         mUSSDRegistrant.clear();
         addTaint(h.getTaint());
@@ -909,7 +909,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.544 -0400", hash_original_method = "8D0E51584543A1B70BDE99B5C9D8170F", hash_generated_method = "3E9B0CA153F889522D46C5CA5D5D9D1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.001 -0400", hash_original_method = "8D0E51584543A1B70BDE99B5C9D8170F", hash_generated_method = "3E9B0CA153F889522D46C5CA5D5D9D1E")
     public void setOnSuppServiceNotification(Handler h, int what, Object obj) {
         mSsnRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -917,7 +917,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.544 -0400", hash_original_method = "04E80546CB98E014EC8E47E6045C2AF5", hash_generated_method = "6F902DDCA91364038503A8DB78A4F50A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.002 -0400", hash_original_method = "04E80546CB98E014EC8E47E6045C2AF5", hash_generated_method = "6F902DDCA91364038503A8DB78A4F50A")
     public void unSetOnSuppServiceNotification(Handler h) {
         mSsnRegistrant.clear();
         addTaint(h.getTaint());
@@ -926,7 +926,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.560 -0400", hash_original_method = "6C58C9A1E016A05F52E2E9DA6EEAE5BF", hash_generated_method = "66F144C7BEB8D3C63B568E259A7B0EE0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.002 -0400", hash_original_method = "6C58C9A1E016A05F52E2E9DA6EEAE5BF", hash_generated_method = "66F144C7BEB8D3C63B568E259A7B0EE0")
     public void setOnCatSessionEnd(Handler h, int what, Object obj) {
         mCatSessionEndRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -934,7 +934,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.560 -0400", hash_original_method = "17A9937977241978E29E1F3DF9376CD7", hash_generated_method = "239854D8E6234838788F24520B58FD67")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.002 -0400", hash_original_method = "17A9937977241978E29E1F3DF9376CD7", hash_generated_method = "239854D8E6234838788F24520B58FD67")
     public void unSetOnCatSessionEnd(Handler h) {
         mCatSessionEndRegistrant.clear();
         addTaint(h.getTaint());
@@ -943,7 +943,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.560 -0400", hash_original_method = "D06ACD9FCA890DD319CAD0E6F7424AE6", hash_generated_method = "57DD1FEEC78E9DC2542934C7571DE8EE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.003 -0400", hash_original_method = "D06ACD9FCA890DD319CAD0E6F7424AE6", hash_generated_method = "57DD1FEEC78E9DC2542934C7571DE8EE")
     public void setOnCatProactiveCmd(Handler h, int what, Object obj) {
         mCatProCmdRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -951,7 +951,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.561 -0400", hash_original_method = "39B4BC08A3AA39DBF2A794BF5A29A6E7", hash_generated_method = "5DF934C1B5DC145C3FD6B374AC38C20B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.003 -0400", hash_original_method = "39B4BC08A3AA39DBF2A794BF5A29A6E7", hash_generated_method = "5DF934C1B5DC145C3FD6B374AC38C20B")
     public void unSetOnCatProactiveCmd(Handler h) {
         mCatProCmdRegistrant.clear();
         addTaint(h.getTaint());
@@ -960,7 +960,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.561 -0400", hash_original_method = "C195D512833847BDA6BB456AF1EEA3B4", hash_generated_method = "A995C302C5CC50F2ACB61368386ABBA2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.003 -0400", hash_original_method = "C195D512833847BDA6BB456AF1EEA3B4", hash_generated_method = "A995C302C5CC50F2ACB61368386ABBA2")
     public void setOnCatEvent(Handler h, int what, Object obj) {
         mCatEventRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -968,7 +968,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.561 -0400", hash_original_method = "86C985017D9E368A998E97DBE619C9A6", hash_generated_method = "E5908206FDA6D8C00DF68F0427FBBD68")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.004 -0400", hash_original_method = "86C985017D9E368A998E97DBE619C9A6", hash_generated_method = "E5908206FDA6D8C00DF68F0427FBBD68")
     public void unSetOnCatEvent(Handler h) {
         mCatEventRegistrant.clear();
         addTaint(h.getTaint());
@@ -977,7 +977,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.571 -0400", hash_original_method = "F9248546B0B94A00BBD09A54A068232C", hash_generated_method = "866AABE5F83941F6E6ADACA72CB9CB3B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.004 -0400", hash_original_method = "F9248546B0B94A00BBD09A54A068232C", hash_generated_method = "866AABE5F83941F6E6ADACA72CB9CB3B")
     public void setOnCatCallSetUp(Handler h, int what, Object obj) {
         mCatCallSetUpRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -985,7 +985,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.571 -0400", hash_original_method = "F6D53B8DEDF633EF9F4DE137121098A9", hash_generated_method = "D4F4716CE21F8CA628125A1CF601B7CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.004 -0400", hash_original_method = "F6D53B8DEDF633EF9F4DE137121098A9", hash_generated_method = "D4F4716CE21F8CA628125A1CF601B7CB")
     public void unSetOnCatCallSetUp(Handler h) {
         mCatCallSetUpRegistrant.clear();
         addTaint(h.getTaint());
@@ -994,7 +994,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.572 -0400", hash_original_method = "CEFBB5FD27FBF0DBAFAF8D4D6CE13FCD", hash_generated_method = "0AE5D0FC8715D154CD25BAC61D8ACFEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.004 -0400", hash_original_method = "CEFBB5FD27FBF0DBAFAF8D4D6CE13FCD", hash_generated_method = "0AE5D0FC8715D154CD25BAC61D8ACFEC")
     public void setOnIccSmsFull(Handler h, int what, Object obj) {
         mIccSmsFullRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -1002,7 +1002,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.572 -0400", hash_original_method = "D81168F17A138BA5FBA6935B53E34C2B", hash_generated_method = "30952C9A2A209B0EF72B723171B43F8B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.005 -0400", hash_original_method = "D81168F17A138BA5FBA6935B53E34C2B", hash_generated_method = "30952C9A2A209B0EF72B723171B43F8B")
     public void unSetOnIccSmsFull(Handler h) {
         mIccSmsFullRegistrant.clear();
         addTaint(h.getTaint());
@@ -1011,7 +1011,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.572 -0400", hash_original_method = "A200936B8F975752C35A9946FF5C3971", hash_generated_method = "8387DFB7E739FB316DC914A142C87742")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.005 -0400", hash_original_method = "A200936B8F975752C35A9946FF5C3971", hash_generated_method = "8387DFB7E739FB316DC914A142C87742")
     public void registerForIccRefresh(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -1026,7 +1026,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.573 -0400", hash_original_method = "EBD003897DB6B5AFBE1C90F6779BE273", hash_generated_method = "C407301D7D269035E51AA9E2617FCBEF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.005 -0400", hash_original_method = "EBD003897DB6B5AFBE1C90F6779BE273", hash_generated_method = "C407301D7D269035E51AA9E2617FCBEF")
     public void setOnIccRefresh(Handler h, int what, Object obj) {
         registerForIccRefresh(h, what, obj);
         addTaint(h.getTaint());
@@ -1037,7 +1037,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.574 -0400", hash_original_method = "B609D137446E0B07BA45D584DFD22E03", hash_generated_method = "DB9CF349072D11A86739F8678B83388D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.024 -0400", hash_original_method = "B609D137446E0B07BA45D584DFD22E03", hash_generated_method = "DB9CF349072D11A86739F8678B83388D")
     public void setEmergencyCallbackMode(Handler h, int what, Object obj) {
         mEmergencyCallbackModeRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -1045,7 +1045,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.591 -0400", hash_original_method = "ABCF42C92E2736F7BB23B78C79C740F8", hash_generated_method = "1396AA5F9017E0874A4DCADB0E5BEC0D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.024 -0400", hash_original_method = "ABCF42C92E2736F7BB23B78C79C740F8", hash_generated_method = "1396AA5F9017E0874A4DCADB0E5BEC0D")
     public void unregisterForIccRefresh(Handler h) {
         mIccRefreshRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -1054,7 +1054,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.592 -0400", hash_original_method = "59DD40F71F856C45DA56522E074542F9", hash_generated_method = "F91358236A7DBCC20CE06ECCBEAA7AF6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.025 -0400", hash_original_method = "59DD40F71F856C45DA56522E074542F9", hash_generated_method = "F91358236A7DBCC20CE06ECCBEAA7AF6")
     public void unsetOnIccRefresh(Handler h) {
         unregisterForIccRefresh(h);
         addTaint(h.getTaint());
@@ -1063,7 +1063,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.592 -0400", hash_original_method = "8CCA793687CAB6E48BC4AA126090CB63", hash_generated_method = "7D7866775B01E9A84A9965E15AC2EDAD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.025 -0400", hash_original_method = "8CCA793687CAB6E48BC4AA126090CB63", hash_generated_method = "7D7866775B01E9A84A9965E15AC2EDAD")
     public void setOnCallRing(Handler h, int what, Object obj) {
         mRingRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -1071,7 +1071,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.593 -0400", hash_original_method = "0FA0F9BD0056AE1CB836D67BF674653F", hash_generated_method = "BD91D4D9E1EC25EF756464B024A28F63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.026 -0400", hash_original_method = "0FA0F9BD0056AE1CB836D67BF674653F", hash_generated_method = "BD91D4D9E1EC25EF756464B024A28F63")
     public void unSetOnCallRing(Handler h) {
         mRingRegistrant.clear();
         addTaint(h.getTaint());
@@ -1080,7 +1080,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.593 -0400", hash_original_method = "66886B702ABE8C8A8A8DA809F8864E28", hash_generated_method = "4AFF9EAE36EA09EB5CF4A8993DB7DA7C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.026 -0400", hash_original_method = "66886B702ABE8C8A8A8DA809F8864E28", hash_generated_method = "4AFF9EAE36EA09EB5CF4A8993DB7DA7C")
     public void registerForInCallVoicePrivacyOn(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -1095,7 +1095,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.593 -0400", hash_original_method = "88FA771B173FBD911A63B00DE113B65C", hash_generated_method = "B81C32B64EEAC2157F5E0D4C42BBCDA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.026 -0400", hash_original_method = "88FA771B173FBD911A63B00DE113B65C", hash_generated_method = "B81C32B64EEAC2157F5E0D4C42BBCDA0")
     public void unregisterForInCallVoicePrivacyOn(Handler h) {
         mVoicePrivacyOnRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -1104,7 +1104,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.594 -0400", hash_original_method = "0B5424223CA275A3C5522DC295A616C4", hash_generated_method = "6E2830B201A20028EC70A52686F9F16D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.027 -0400", hash_original_method = "0B5424223CA275A3C5522DC295A616C4", hash_generated_method = "6E2830B201A20028EC70A52686F9F16D")
     public void registerForInCallVoicePrivacyOff(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -1119,7 +1119,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.594 -0400", hash_original_method = "B6E776E83D138F03FEB9EA861FA40286", hash_generated_method = "9ED8B687AA2184B21C331FBEF8B3417E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.027 -0400", hash_original_method = "B6E776E83D138F03FEB9EA861FA40286", hash_generated_method = "9ED8B687AA2184B21C331FBEF8B3417E")
     public void unregisterForInCallVoicePrivacyOff(Handler h) {
         mVoicePrivacyOffRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -1128,7 +1128,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.600 -0400", hash_original_method = "5582113CD84EF18DC77145673CEF3805", hash_generated_method = "6063AF1D543D5FE7F9B3E4575CF35F60")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.027 -0400", hash_original_method = "5582113CD84EF18DC77145673CEF3805", hash_generated_method = "6063AF1D543D5FE7F9B3E4575CF35F60")
     public void setOnRestrictedStateChanged(Handler h, int what, Object obj) {
         mRestrictedStateRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -1136,7 +1136,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.600 -0400", hash_original_method = "5B907CCB9E561B2BE570362A93E2C20B", hash_generated_method = "3C4E66772E362812742A1DB79F30D48D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.028 -0400", hash_original_method = "5B907CCB9E561B2BE570362A93E2C20B", hash_generated_method = "3C4E66772E362812742A1DB79F30D48D")
     public void unSetOnRestrictedStateChanged(Handler h) {
         mRestrictedStateRegistrant.clear();
         addTaint(h.getTaint());
@@ -1145,7 +1145,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.600 -0400", hash_original_method = "79DF5BB64C5088A6DDB6F272CE7B24F1", hash_generated_method = "4CB5E4D3E645C28C0486EFBB6DE62B01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.028 -0400", hash_original_method = "79DF5BB64C5088A6DDB6F272CE7B24F1", hash_generated_method = "4CB5E4D3E645C28C0486EFBB6DE62B01")
     public void registerForDisplayInfo(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -1160,7 +1160,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.601 -0400", hash_original_method = "E2A72B7F5933EC1681F428F18D2E3B34", hash_generated_method = "F6B442606FE05934A9F11A2BE5DD9B29")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.028 -0400", hash_original_method = "E2A72B7F5933EC1681F428F18D2E3B34", hash_generated_method = "F6B442606FE05934A9F11A2BE5DD9B29")
     public void unregisterForDisplayInfo(Handler h) {
         mDisplayInfoRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -1169,7 +1169,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.601 -0400", hash_original_method = "9BA2D7AA1768E0B6D41C51CBB7D2703D", hash_generated_method = "D734F6971F9CF74A6233AF74F74AE745")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.029 -0400", hash_original_method = "9BA2D7AA1768E0B6D41C51CBB7D2703D", hash_generated_method = "D734F6971F9CF74A6233AF74F74AE745")
     public void registerForCallWaitingInfo(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -1184,7 +1184,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.601 -0400", hash_original_method = "FB5DFAB4742CFF0D938DB8F68F07D307", hash_generated_method = "78D6AE923344FD2DB9B24227115EE4E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.029 -0400", hash_original_method = "FB5DFAB4742CFF0D938DB8F68F07D307", hash_generated_method = "78D6AE923344FD2DB9B24227115EE4E1")
     public void unregisterForCallWaitingInfo(Handler h) {
         mCallWaitingInfoRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -1193,7 +1193,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.617 -0400", hash_original_method = "8157808DA0C2AB05798E28DF7F48B26A", hash_generated_method = "8D1197F485BAE1DD4D71DB9AA7B3F0DD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.029 -0400", hash_original_method = "8157808DA0C2AB05798E28DF7F48B26A", hash_generated_method = "8D1197F485BAE1DD4D71DB9AA7B3F0DD")
     public void registerForSignalInfo(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -1208,7 +1208,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.618 -0400", hash_original_method = "023EEE600D5AEC21A0C3A38A31A02F7B", hash_generated_method = "46558A559ECBB305C1A769C63C03C48E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.044 -0400", hash_original_method = "023EEE600D5AEC21A0C3A38A31A02F7B", hash_generated_method = "46558A559ECBB305C1A769C63C03C48E")
     public void setOnUnsolOemHookRaw(Handler h, int what, Object obj) {
         mUnsolOemHookRawRegistrant = new Registrant (h, what, obj);
         // ---------- Original Method ----------
@@ -1216,7 +1216,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.618 -0400", hash_original_method = "B838AB3AB572CDA21BA8AB62D1043E1A", hash_generated_method = "95483240B07F38DCB4CAE2AE9BD3B7E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.055 -0400", hash_original_method = "B838AB3AB572CDA21BA8AB62D1043E1A", hash_generated_method = "95483240B07F38DCB4CAE2AE9BD3B7E8")
     public void unSetOnUnsolOemHookRaw(Handler h) {
         mUnsolOemHookRawRegistrant.clear();
         addTaint(h.getTaint());
@@ -1225,7 +1225,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.618 -0400", hash_original_method = "FBD3C31CDF21A461B92CD6532FEB56B0", hash_generated_method = "E80029B9113C803B7F10BDEECCBF1E7B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.055 -0400", hash_original_method = "FBD3C31CDF21A461B92CD6532FEB56B0", hash_generated_method = "E80029B9113C803B7F10BDEECCBF1E7B")
     public void unregisterForSignalInfo(Handler h) {
         mSignalInfoRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -1234,7 +1234,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.618 -0400", hash_original_method = "FE7848C889A71C1D52EEFBC3A5A5348D", hash_generated_method = "8DA015EE7529B4D1F11EE057E597CAC8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.056 -0400", hash_original_method = "FE7848C889A71C1D52EEFBC3A5A5348D", hash_generated_method = "8DA015EE7529B4D1F11EE057E597CAC8")
     public void registerForCdmaOtaProvision(Handler h,int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -1249,7 +1249,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.619 -0400", hash_original_method = "AB18EE6BF73A37B52EA253A91CB20B0C", hash_generated_method = "6BFD4D00356EDD811F427AD758EB203E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.056 -0400", hash_original_method = "AB18EE6BF73A37B52EA253A91CB20B0C", hash_generated_method = "6BFD4D00356EDD811F427AD758EB203E")
     public void unregisterForCdmaOtaProvision(Handler h) {
         mOtaProvisionRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -1258,7 +1258,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.619 -0400", hash_original_method = "30DBB41A5641384CBA2903733EB0CBD5", hash_generated_method = "B720F35FE77281176234A66526E69D98")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.056 -0400", hash_original_method = "30DBB41A5641384CBA2903733EB0CBD5", hash_generated_method = "B720F35FE77281176234A66526E69D98")
     public void registerForNumberInfo(Handler h,int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -1273,7 +1273,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.619 -0400", hash_original_method = "D4F64543EBE672B1B0DCB72B7F1C49BF", hash_generated_method = "E5B6F36DE883ECF8BF788B6A597971B2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.057 -0400", hash_original_method = "D4F64543EBE672B1B0DCB72B7F1C49BF", hash_generated_method = "E5B6F36DE883ECF8BF788B6A597971B2")
     public void unregisterForNumberInfo(Handler h) {
         mNumberInfoRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -1282,7 +1282,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.619 -0400", hash_original_method = "CC4E070A6851C62B1452697B8CB637B7", hash_generated_method = "746E6EBCB9BB2DABBD2E388068B38291")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.057 -0400", hash_original_method = "CC4E070A6851C62B1452697B8CB637B7", hash_generated_method = "746E6EBCB9BB2DABBD2E388068B38291")
     public void registerForRedirectedNumberInfo(Handler h,int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -1297,7 +1297,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.631 -0400", hash_original_method = "74D412781A2F86280EE77A31B77394EF", hash_generated_method = "B0A4ADAD1679C5E45D8BA597EE2E9C1B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.062 -0400", hash_original_method = "74D412781A2F86280EE77A31B77394EF", hash_generated_method = "B0A4ADAD1679C5E45D8BA597EE2E9C1B")
     public void unregisterForRedirectedNumberInfo(Handler h) {
         mRedirNumInfoRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -1306,7 +1306,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.631 -0400", hash_original_method = "DD58771B0A7A96A346281B999DA3057A", hash_generated_method = "E760A3B1F4AE10CE3EFD6D42C47F8EBF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.066 -0400", hash_original_method = "DD58771B0A7A96A346281B999DA3057A", hash_generated_method = "E760A3B1F4AE10CE3EFD6D42C47F8EBF")
     public void registerForLineControlInfo(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -1321,7 +1321,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.631 -0400", hash_original_method = "068928B7A17337EC34F57926DDEBA1C3", hash_generated_method = "5FEE67C469EA96D71B9F54F244980760")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.066 -0400", hash_original_method = "068928B7A17337EC34F57926DDEBA1C3", hash_generated_method = "5FEE67C469EA96D71B9F54F244980760")
     public void unregisterForLineControlInfo(Handler h) {
         mLineControlInfoRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -1330,7 +1330,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.631 -0400", hash_original_method = "9F4D1AFFEF8F9FA5D4778DB89C674FB3", hash_generated_method = "F4B32B92B483DC3E17CEC22415AD3D38")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.067 -0400", hash_original_method = "9F4D1AFFEF8F9FA5D4778DB89C674FB3", hash_generated_method = "F4B32B92B483DC3E17CEC22415AD3D38")
     public void registerFoT53ClirlInfo(Handler h,int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -1345,7 +1345,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.632 -0400", hash_original_method = "814EFF5BC3C88040487B5EAFB470F77D", hash_generated_method = "F2F4E4FCAF1F803717789F1D7DF80A98")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.078 -0400", hash_original_method = "814EFF5BC3C88040487B5EAFB470F77D", hash_generated_method = "F2F4E4FCAF1F803717789F1D7DF80A98")
     public void unregisterForT53ClirInfo(Handler h) {
         mT53ClirInfoRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -1354,7 +1354,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.632 -0400", hash_original_method = "8DE8707DBC07257BD950DE59918A2503", hash_generated_method = "8D70E5225BE6CFA2F7F5D7129A14C172")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.079 -0400", hash_original_method = "8DE8707DBC07257BD950DE59918A2503", hash_generated_method = "8D70E5225BE6CFA2F7F5D7129A14C172")
     public void registerForT53AudioControlInfo(Handler h,int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -1369,7 +1369,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.632 -0400", hash_original_method = "1211535609DA01F7ECA596E2B136A338", hash_generated_method = "DEEFF035CA52875F83C6AA325E82C5AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.079 -0400", hash_original_method = "1211535609DA01F7ECA596E2B136A338", hash_generated_method = "DEEFF035CA52875F83C6AA325E82C5AB")
     public void unregisterForT53AudioControlInfo(Handler h) {
         mT53AudCntrlInfoRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -1378,7 +1378,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.633 -0400", hash_original_method = "2D9C6817A422E1F1364DE24FB7D91AF7", hash_generated_method = "8F90A8367C7D6D32AD6D3BBEA55438DA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.080 -0400", hash_original_method = "2D9C6817A422E1F1364DE24FB7D91AF7", hash_generated_method = "8F90A8367C7D6D32AD6D3BBEA55438DA")
     public void registerForRingbackTone(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -1393,7 +1393,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.633 -0400", hash_original_method = "F4C16CBC87D51F6E30E1C3D8F75EE8C0", hash_generated_method = "B07148A67BB90734DD24B02806A5587D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.080 -0400", hash_original_method = "F4C16CBC87D51F6E30E1C3D8F75EE8C0", hash_generated_method = "B07148A67BB90734DD24B02806A5587D")
     public void unregisterForRingbackTone(Handler h) {
         mRingbackToneRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -1402,7 +1402,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.633 -0400", hash_original_method = "DB3523E7FBDC2E46BB6C1DB462AA57D5", hash_generated_method = "B59341C87877986FAAE11F26BED31A6B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.081 -0400", hash_original_method = "DB3523E7FBDC2E46BB6C1DB462AA57D5", hash_generated_method = "B59341C87877986FAAE11F26BED31A6B")
     public void registerForResendIncallMute(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
         Registrant r;
@@ -1417,7 +1417,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.636 -0400", hash_original_method = "2A2F187C5BCDF7811DB17C690EF5A1E4", hash_generated_method = "356E9BFF5E0A527270E3D3616EAEE781")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.082 -0400", hash_original_method = "2A2F187C5BCDF7811DB17C690EF5A1E4", hash_generated_method = "356E9BFF5E0A527270E3D3616EAEE781")
     public void unregisterForResendIncallMute(Handler h) {
         mResendIncallMuteRegistrants.remove(h);
         addTaint(h.getTaint());
@@ -1426,7 +1426,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.637 -0400", hash_original_method = "1CB550350E2118EA5DDBC3DA5F8BB474", hash_generated_method = "251A54CFD9748D847A873929E7FCE595")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.089 -0400", hash_original_method = "1CB550350E2118EA5DDBC3DA5F8BB474", hash_generated_method = "251A54CFD9748D847A873929E7FCE595")
     @Override
     public void registerForCdmaSubscriptionChanged(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -1442,7 +1442,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.637 -0400", hash_original_method = "7C70EFDA99D4F1952D617116BAD22B13", hash_generated_method = "DDF68113DF823C12F5BF13E7B6D2010B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.089 -0400", hash_original_method = "7C70EFDA99D4F1952D617116BAD22B13", hash_generated_method = "DDF68113DF823C12F5BF13E7B6D2010B")
     @Override
     public void unregisterForCdmaSubscriptionChanged(Handler h) {
         mCdmaSubscriptionChangedRegistrants.remove(h);
@@ -1452,7 +1452,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.638 -0400", hash_original_method = "F2C3D1E241ED9A5D51FF055B13B3E9E2", hash_generated_method = "52A458416896A6F6E70009572F57F0D9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.090 -0400", hash_original_method = "F2C3D1E241ED9A5D51FF055B13B3E9E2", hash_generated_method = "52A458416896A6F6E70009572F57F0D9")
     @Override
     public void registerForCdmaPrlChanged(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -1468,7 +1468,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.638 -0400", hash_original_method = "BF3AB10D2A3E0AB38BFCD9D12CDB5334", hash_generated_method = "31D20188D5FA46DB05AA45C68480210A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.090 -0400", hash_original_method = "BF3AB10D2A3E0AB38BFCD9D12CDB5334", hash_generated_method = "31D20188D5FA46DB05AA45C68480210A")
     @Override
     public void unregisterForCdmaPrlChanged(Handler h) {
         mCdmaPrlChangedRegistrants.remove(h);
@@ -1478,7 +1478,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.657 -0400", hash_original_method = "0716736C7FBF358A30A0A4F7C12EEF60", hash_generated_method = "551CF114445FF4B081F8663BD3607375")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.090 -0400", hash_original_method = "0716736C7FBF358A30A0A4F7C12EEF60", hash_generated_method = "551CF114445FF4B081F8663BD3607375")
     @Override
     public void registerForExitEmergencyCallbackMode(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -1494,7 +1494,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.661 -0400", hash_original_method = "C2E40B70802C2BB799E08EA528BF2439", hash_generated_method = "4B4D95E512D55C31DE580824D13C50B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.094 -0400", hash_original_method = "C2E40B70802C2BB799E08EA528BF2439", hash_generated_method = "4B4D95E512D55C31DE580824D13C50B9")
     @Override
     public void unregisterForExitEmergencyCallbackMode(Handler h) {
         mExitEmergencyCallbackModeRegistrants.remove(h);
@@ -1504,7 +1504,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.661 -0400", hash_original_method = "A1D8B314CFB1D3E12BFA58A9A280A374", hash_generated_method = "C8AE6D0809F906319297BA9446E847BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.095 -0400", hash_original_method = "A1D8B314CFB1D3E12BFA58A9A280A374", hash_generated_method = "C8AE6D0809F906319297BA9446E847BA")
     @Override
     public void registerForRilConnected(Handler h, int what, Object obj) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -1530,7 +1530,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.662 -0400", hash_original_method = "676479F86CF5300F7E3A79F357120869", hash_generated_method = "2F4EE8CB69FEDF5145D1D0608A15024E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.095 -0400", hash_original_method = "676479F86CF5300F7E3A79F357120869", hash_generated_method = "2F4EE8CB69FEDF5145D1D0608A15024E")
     @Override
     public void unregisterForRilConnected(Handler h) {
         mRilConnectedRegistrants.remove(h);
@@ -1540,38 +1540,38 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.662 -0400", hash_original_method = "9E4D177DE2C4D1C0BCFAAE47CCC59231", hash_generated_method = "4213F91204D502CD576FBCFFBFDC54D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.096 -0400", hash_original_method = "9E4D177DE2C4D1C0BCFAAE47CCC59231", hash_generated_method = "4213F91204D502CD576FBCFFBFDC54D6")
     @Override
     public void setCurrentPreferredNetworkType() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.670 -0400", hash_original_method = "DCDD085282B6C088E7A0852C995BCBF3", hash_generated_method = "AC763EAEC100B996DD85A592C45434F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.117 -0400", hash_original_method = "DCDD085282B6C088E7A0852C995BCBF3", hash_generated_method = "9118116C4323FA6889194041E2B8D400")
     protected void setRadioState(RadioState newState) {
         RadioState oldState;
         {
             oldState = mState;
             mState = newState;
             {
-                boolean varA57A6B192324CD4F622370C1B7316512_1538471221 = (mState.getType() == 0);
+                boolean varA57A6B192324CD4F622370C1B7316512_688006616 = (mState.getType() == 0);
                 {
                     mSimState = mState;
                     mRuimState = mState;
                     mNvState = mState;
                 } //End block
                 {
-                    boolean varCAB862CEBBE694F190D9E62B19124DBF_566752039 = (mState.getType() == 1);
+                    boolean varCAB862CEBBE694F190D9E62B19124DBF_467876376 = (mState.getType() == 1);
                     {
                         mSimState = mState;
                     } //End block
                     {
-                        boolean var59416DBBACB1B592D2F68B808359CB11_144814078 = (mState.getType() == 2);
+                        boolean var59416DBBACB1B592D2F68B808359CB11_1199873492 = (mState.getType() == 2);
                         {
                             mRuimState = mState;
                         } //End block
                         {
-                            boolean var2A783CC55430BA7655D0F25D3D461C7C_246308532 = (mState.getType() == 3);
+                            boolean var2A783CC55430BA7655D0F25D3D461C7C_1425492172 = (mState.getType() == 3);
                             {
                                 mNvState = mState;
                             } //End block
@@ -1581,7 +1581,7 @@ public abstract class BaseCommands implements CommandsInterface {
             } //End collapsed parenthetic
             mRadioStateChangedRegistrants.notifyRegistrants();
             {
-                boolean varA7C84CF67F878FDAE5D11A9DF79D83E4_1610822580 = (mState.isAvailable() && !oldState.isAvailable());
+                boolean varA7C84CF67F878FDAE5D11A9DF79D83E4_148621267 = (mState.isAvailable() && !oldState.isAvailable());
                 {
                     Log.d(LOG_TAG,"Notifying: radio available");
                     mAvailRegistrants.notifyRegistrants();
@@ -1589,14 +1589,14 @@ public abstract class BaseCommands implements CommandsInterface {
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var2FDB5B444B83DEA6EEDE92CD58322DD3_2133111716 = (!mState.isAvailable() && oldState.isAvailable());
+                boolean var2FDB5B444B83DEA6EEDE92CD58322DD3_1119910561 = (!mState.isAvailable() && oldState.isAvailable());
                 {
                     Log.d(LOG_TAG,"Notifying: radio not available");
                     mNotAvailRegistrants.notifyRegistrants();
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean varBED0583E86066F1EE3861BEB93E78641_2014901954 = (mState.isSIMReady() && !oldState.isSIMReady());
+                boolean varBED0583E86066F1EE3861BEB93E78641_1337703788 = (mState.isSIMReady() && !oldState.isSIMReady());
                 {
                     Log.d(LOG_TAG,"Notifying: SIM ready");
                     mSIMReadyRegistrants.notifyRegistrants();
@@ -1607,7 +1607,7 @@ public abstract class BaseCommands implements CommandsInterface {
                 mSIMLockedRegistrants.notifyRegistrants();
             } //End block
             {
-                boolean var39C5C9CEC8C4BE8D25675984775135FC_1212980354 = (mState.isRUIMReady() && !oldState.isRUIMReady());
+                boolean var39C5C9CEC8C4BE8D25675984775135FC_1971856667 = (mState.isRUIMReady() && !oldState.isRUIMReady());
                 {
                     Log.d(LOG_TAG,"Notifying: RUIM ready");
                     mRUIMReadyRegistrants.notifyRegistrants();
@@ -1618,21 +1618,21 @@ public abstract class BaseCommands implements CommandsInterface {
                 mRUIMLockedRegistrants.notifyRegistrants();
             } //End block
             {
-                boolean var85390FFEEBD9C40A5358749E0561D5D5_146983591 = (mState.isNVReady() && !oldState.isNVReady());
+                boolean var85390FFEEBD9C40A5358749E0561D5D5_1766973974 = (mState.isNVReady() && !oldState.isNVReady());
                 {
                     Log.d(LOG_TAG,"Notifying: NV ready");
                     mNVReadyRegistrants.notifyRegistrants();
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var4CF30BAD139D8BB63CF4DF108535EC21_92348192 = (mState.isOn() && !oldState.isOn());
+                boolean var4CF30BAD139D8BB63CF4DF108535EC21_1131951229 = (mState.isOn() && !oldState.isOn());
                 {
                     Log.d(LOG_TAG,"Notifying: Radio On");
                     mOnRegistrants.notifyRegistrants();
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var5338AF0F053F3978DA8435D4833C9E0E_154149929 = ((!mState.isOn() || !mState.isAvailable())
+                boolean var5338AF0F053F3978DA8435D4833C9E0E_635392823 = ((!mState.isOn() || !mState.isAvailable())
                 && !((!oldState.isOn() || !oldState.isAvailable())));
                 {
                     Log.d(LOG_TAG,"Notifying: radio off or not available");
@@ -1640,28 +1640,28 @@ public abstract class BaseCommands implements CommandsInterface {
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean varCADB0698B59858BBBF6DEB48B866760C_1006495262 = (mState.isGsm() && oldState.isCdma());
+                boolean varCADB0698B59858BBBF6DEB48B866760C_680076671 = (mState.isGsm() && oldState.isCdma());
                 {
                     Log.d(LOG_TAG,"Notifying: radio technology change CDMA to GSM");
                     mRadioTechnologyChangedRegistrants.notifyRegistrants();
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var2B349370EAB2BB60D253C16B0E5DDDF4_264977680 = (mState.isGsm() && !oldState.isOn() && (mPhoneType == Phone.PHONE_TYPE_CDMA));
+                boolean var2B349370EAB2BB60D253C16B0E5DDDF4_346270473 = (mState.isGsm() && !oldState.isOn() && (mPhoneType == Phone.PHONE_TYPE_CDMA));
                 {
                     Log.d(LOG_TAG,"Notifying: radio technology change CDMA OFF to GSM");
                     mRadioTechnologyChangedRegistrants.notifyRegistrants();
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var779580E04A970D1A62D66948CB7F983C_1915961613 = (mState.isCdma() && oldState.isGsm());
+                boolean var779580E04A970D1A62D66948CB7F983C_190152109 = (mState.isCdma() && oldState.isGsm());
                 {
                     Log.d(LOG_TAG,"Notifying: radio technology change GSM to CDMA");
                     mRadioTechnologyChangedRegistrants.notifyRegistrants();
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var907406491902A72484AB8EDF8CEBEE8C_365743587 = (mState.isCdma() && !oldState.isOn() && (mPhoneType == Phone.PHONE_TYPE_GSM));
+                boolean var907406491902A72484AB8EDF8CEBEE8C_1678764857 = (mState.isCdma() && !oldState.isOn() && (mPhoneType == Phone.PHONE_TYPE_GSM));
                 {
                     Log.d(LOG_TAG,"Notifying: radio technology change GSM OFF to CDMA");
                     mRadioTechnologyChangedRegistrants.notifyRegistrants();
@@ -1673,7 +1673,7 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.671 -0400", hash_original_method = "1193518C5021D5365FC51C472C5050CB", hash_generated_method = "69A42F2EFF74FEEABD1AC7F929142872")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.133 -0400", hash_original_method = "1193518C5021D5365FC51C472C5050CB", hash_generated_method = "69A42F2EFF74FEEABD1AC7F929142872")
     protected void onRadioAvailable() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
@@ -1705,12 +1705,12 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.672 -0400", hash_original_method = "5CCABDB2C29BD5F7AE98CB3F70B855A8", hash_generated_method = "FA0F8FD02C44EEF270DBFE1C5BD193B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.134 -0400", hash_original_method = "5CCABDB2C29BD5F7AE98CB3F70B855A8", hash_generated_method = "38D4B6A8DA3065FFADD3FA03FECE86B3")
     @Override
     public int getLteOnCdmaMode() {
-        int var338D796EC42E4804395F013DC2CD8CD5_1777208835 = (getLteOnCdmaModeStatic());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200489456 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200489456;
+        int var338D796EC42E4804395F013DC2CD8CD5_1916558712 = (getLteOnCdmaModeStatic());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2008699570 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2008699570;
         // ---------- Original Method ----------
         //return getLteOnCdmaModeStatic();
     }
@@ -1743,16 +1743,16 @@ public abstract class BaseCommands implements CommandsInterface {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.672 -0400", hash_original_field = "4DBD40250117FD6239DF36E7EBA17FD5", hash_generated_field = "82EF3DD814DA2FE6ED0C8DDDA03ED37B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.134 -0400", hash_original_field = "4DBD40250117FD6239DF36E7EBA17FD5", hash_generated_field = "82EF3DD814DA2FE6ED0C8DDDA03ED37B")
 
     static String LOG_TAG = "RILB";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.672 -0400", hash_original_field = "C252224AF16219214FD2A770CF7C8963", hash_generated_field = "801F20E123BD5F70371C065699004525")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.134 -0400", hash_original_field = "C252224AF16219214FD2A770CF7C8963", hash_generated_field = "801F20E123BD5F70371C065699004525")
 
     private static String sKernelCmdLine = getProcCmdLine();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.672 -0400", hash_original_field = "5D3FE46921C6149BD3767F3B447B2584", hash_generated_field = "C335AF7952C52656E082676F231800A7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.135 -0400", hash_original_field = "5D3FE46921C6149BD3767F3B447B2584", hash_generated_field = "C335AF7952C52656E082676F231800A7")
 
     private static Pattern sProductTypePattern = Pattern.compile("\\sproduct_type\\s*=\\s*(\\w+)");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:13.672 -0400", hash_original_field = "50E9340576463BE81A482BEA71F864E9", hash_generated_field = "EF3031EA9333BD4007F901E0227D4282")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:15.135 -0400", hash_original_field = "50E9340576463BE81A482BEA71F864E9", hash_generated_field = "EF3031EA9333BD4007F901E0227D4282")
 
     private static String sLteOnCdmaProductType = SystemProperties.get(TelephonyProperties.PROPERTY_LTE_ON_CDMA_PRODUCT_TYPE, "");
 }

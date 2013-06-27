@@ -15,7 +15,7 @@ import javax.sip.*;
 
 public class MinSEParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.562 -0400", hash_original_method = "4E326F54C0BC2C416F3292ADC3B64C39", hash_generated_method = "2A074247CD48DBE45FB5E6C0EEF6E56E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.503 -0400", hash_original_method = "4E326F54C0BC2C416F3292ADC3B64C39", hash_generated_method = "2A074247CD48DBE45FB5E6C0EEF6E56E")
     public  MinSEParser(String text) {
         super(text);
         addTaint(text.getTaint());
@@ -23,7 +23,7 @@ public class MinSEParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.566 -0400", hash_original_method = "B8B8CA8DFA565E816EE248A435214726", hash_generated_method = "C6A16FD6432DA865B85A7B65721542F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.507 -0400", hash_original_method = "B8B8CA8DFA565E816EE248A435214726", hash_generated_method = "C6A16FD6432DA865B85A7B65721542F7")
     protected  MinSEParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -31,9 +31,9 @@ public class MinSEParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.567 -0400", hash_original_method = "528678E8CA90A52E25DB45830845A36C", hash_generated_method = "5FF2CAF63E2A5F6B10B337BCA1C5E10B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.530 -0400", hash_original_method = "528678E8CA90A52E25DB45830845A36C", hash_generated_method = "8F3552DE5C0D04AEF7577DCECCBB3F8E")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_504381664 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1828478339 = null; //Variable for return #1
         MinSE minse;
         minse = new MinSE();
         dbg_enter("parse");
@@ -58,14 +58,14 @@ public class MinSEParser extends ParametersParser {
             } //End block
             this.lexer.SPorHT();
             super.parse(minse);
-            varB4EAC82CA7396A68D541C85D26508E83_504381664 = minse;
+            varB4EAC82CA7396A68D541C85D26508E83_1828478339 = minse;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_504381664.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_504381664;
+        varB4EAC82CA7396A68D541C85D26508E83_1828478339.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1828478339;
         // ---------- Original Method ----------
         //MinSE minse = new MinSE();
         //if (debug)

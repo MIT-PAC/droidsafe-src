@@ -14,14 +14,14 @@ import org.apache.http.cookie.SetCookie;
 
 public class RFC2109VersionHandler extends AbstractCookieAttributeHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.415 -0400", hash_original_method = "A02637D5820C2A953A6FE290A5D120D8", hash_generated_method = "78C075841E7848E13CAEA65D188AF82D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.631 -0400", hash_original_method = "A02637D5820C2A953A6FE290A5D120D8", hash_generated_method = "78C075841E7848E13CAEA65D188AF82D")
     public  RFC2109VersionHandler() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.416 -0400", hash_original_method = "5A56CF450872EBA5B862F4919DADFF98", hash_generated_method = "B35359CEBA747AA75272A3D6CF0031F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.631 -0400", hash_original_method = "5A56CF450872EBA5B862F4919DADFF98", hash_generated_method = "59EC8B46571F614799B30A848F1BF5F0")
     public void parse(final SetCookie cookie, final String value) throws MalformedCookieException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
@@ -30,7 +30,7 @@ public class RFC2109VersionHandler extends AbstractCookieAttributeHandler {
             if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Missing value for version attribute");
         } //End block
         {
-            boolean var9FBE5B3A34BFAF0B0EC7E39F0CD9C0B6_2070143472 = (value.trim().length() == 0);
+            boolean var9FBE5B3A34BFAF0B0EC7E39F0CD9C0B6_509310987 = (value.trim().length() == 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Blank value for version attribute");
             } //End block
@@ -65,14 +65,14 @@ public class RFC2109VersionHandler extends AbstractCookieAttributeHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.416 -0400", hash_original_method = "6D2DDC2021E2B84F83821AD58F1A72CF", hash_generated_method = "228C55E913981D462D0DC91F8C2CE48A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.632 -0400", hash_original_method = "6D2DDC2021E2B84F83821AD58F1A72CF", hash_generated_method = "3883D0991BE46F5043A44C29273683FF")
     @Override
     public void validate(final Cookie cookie, final CookieOrigin origin) throws MalformedCookieException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Cookie may not be null");
         } //End block
         {
-            boolean var6408CC71C4BEE66767A32FE945897E63_1557213851 = (cookie.getVersion() < 0);
+            boolean var6408CC71C4BEE66767A32FE945897E63_282790978 = (cookie.getVersion() < 0);
             {
                 if (DroidSafeAndroidRuntime.control) throw new MalformedCookieException("Cookie version may not be negative");
             } //End block

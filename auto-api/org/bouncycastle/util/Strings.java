@@ -12,7 +12,7 @@ import java.util.Vector;
 
 public final class Strings {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.794 -0400", hash_original_method = "C84AA02E5DB471302FEEBC62E754E49D", hash_generated_method = "C84AA02E5DB471302FEEBC62E754E49D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.819 -0400", hash_original_method = "C84AA02E5DB471302FEEBC62E754E49D", hash_generated_method = "C84AA02E5DB471302FEEBC62E754E49D")
     public Strings ()
     {
         //Synthesized constructor

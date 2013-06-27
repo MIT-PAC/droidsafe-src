@@ -22,53 +22,53 @@ import com.android.internal.util.ArrayUtils;
 import java.lang.reflect.Array;
 
 class TextLine {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.826 -0400", hash_original_field = "78E27F80AC0100441F897783EFA42851", hash_generated_field = "B5BC396C7010734D6B4B6ED34A2846AE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.103 -0400", hash_original_field = "78E27F80AC0100441F897783EFA42851", hash_generated_field = "B5BC396C7010734D6B4B6ED34A2846AE")
 
     private TextPaint mPaint;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.826 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "E579ED9F2DADADEB46C981CAFDEE5BA5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.103 -0400", hash_original_field = "39624508B9E3028D8A5DDA741D3E3DDE", hash_generated_field = "E579ED9F2DADADEB46C981CAFDEE5BA5")
 
     private CharSequence mText;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "59B50EB80ABF1071654EE6DE5094E070", hash_generated_field = "D233E3389CE5D79EE6040D6A855ED4FF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.103 -0400", hash_original_field = "59B50EB80ABF1071654EE6DE5094E070", hash_generated_field = "D233E3389CE5D79EE6040D6A855ED4FF")
 
     private int mStart;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "B74CDC798B150A72FBFBFAE7161611A0", hash_generated_field = "8D921BC08EBCA74A32B1247B1F91B368")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.103 -0400", hash_original_field = "B74CDC798B150A72FBFBFAE7161611A0", hash_generated_field = "8D921BC08EBCA74A32B1247B1F91B368")
 
     private int mLen;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "90B0D92F580EFEB979A78726B5A06046", hash_generated_field = "9463565EC19B0C28E47B4A05A883AACE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.103 -0400", hash_original_field = "90B0D92F580EFEB979A78726B5A06046", hash_generated_field = "9463565EC19B0C28E47B4A05A883AACE")
 
     private int mDir;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "C5BE317E362FA3A0C2C3E5FEF24D93D8", hash_generated_field = "0120B57883F4A0FE4FFD7BC1C988B792")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.103 -0400", hash_original_field = "C5BE317E362FA3A0C2C3E5FEF24D93D8", hash_generated_field = "0120B57883F4A0FE4FFD7BC1C988B792")
 
     private Directions mDirections;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "E7A53C004C81753F95BE5F68EF660B93", hash_generated_field = "D9EB8682A57605E85FDF7A8921E6278B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.103 -0400", hash_original_field = "E7A53C004C81753F95BE5F68EF660B93", hash_generated_field = "D9EB8682A57605E85FDF7A8921E6278B")
 
     private boolean mHasTabs;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "EED8301AA8AD4216C74243E84473677E", hash_generated_field = "D70B7E9717C627B10CB1103D367577AF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.103 -0400", hash_original_field = "EED8301AA8AD4216C74243E84473677E", hash_generated_field = "D70B7E9717C627B10CB1103D367577AF")
 
     private TabStops mTabs;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "7C3722E3CD3CCC07C587A93513F1BB79", hash_generated_field = "20B8558AB5FD0F0B5A30B95221D68246")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.103 -0400", hash_original_field = "7C3722E3CD3CCC07C587A93513F1BB79", hash_generated_field = "20B8558AB5FD0F0B5A30B95221D68246")
 
     private char[] mChars;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "4F9D254B1CD5044B69FC994E7FDA4BC0", hash_generated_field = "24C6EE5653AF991EF0187B60742148D2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.103 -0400", hash_original_field = "4F9D254B1CD5044B69FC994E7FDA4BC0", hash_generated_field = "24C6EE5653AF991EF0187B60742148D2")
 
     private boolean mCharsValid;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "2A174ADD3219E7DC0B72155FF67EC4B5", hash_generated_field = "69C78554F8ABB9B2C492FD314F3ED2EE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.103 -0400", hash_original_field = "2A174ADD3219E7DC0B72155FF67EC4B5", hash_generated_field = "69C78554F8ABB9B2C492FD314F3ED2EE")
 
     private Spanned mSpanned;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "5ECEFF774471811D388DC8B2E7A3678F", hash_generated_field = "4B5596A3EF77CDA86765E17E911585F5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.103 -0400", hash_original_field = "5ECEFF774471811D388DC8B2E7A3678F", hash_generated_field = "4B5596A3EF77CDA86765E17E911585F5")
 
     private TextPaint mWorkPaint = new TextPaint();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "BA01C06D7D2C16D8DA15CBC211855B17", hash_generated_field = "BBB2B37BC9E6289A31F99A0503F2307C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.104 -0400", hash_original_field = "BA01C06D7D2C16D8DA15CBC211855B17", hash_generated_field = "BBB2B37BC9E6289A31F99A0503F2307C")
 
     private SpanSet<MetricAffectingSpan> mMetricAffectingSpanSpanSet = new SpanSet<MetricAffectingSpan>(MetricAffectingSpan.class);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "AA4FF336748C12C296D546DCB9F5F762", hash_generated_field = "B824A8ABA253383A1245B9FA673A18BA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.104 -0400", hash_original_field = "AA4FF336748C12C296D546DCB9F5F762", hash_generated_field = "B824A8ABA253383A1245B9FA673A18BA")
 
     private SpanSet<CharacterStyle> mCharacterStyleSpanSet = new SpanSet<CharacterStyle>(CharacterStyle.class);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_field = "3DD162648ABDCE69032EE3F02E2B56F1", hash_generated_field = "38B746E7D301B51A499147E84BB205A8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.104 -0400", hash_original_field = "3DD162648ABDCE69032EE3F02E2B56F1", hash_generated_field = "38B746E7D301B51A499147E84BB205A8")
 
     private SpanSet<ReplacementSpan> mReplacementSpanSpanSet = new SpanSet<ReplacementSpan>(ReplacementSpan.class);
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.827 -0400", hash_original_method = "2FAB193CBF90842ECB23B93C34526440", hash_generated_method = "2FAB193CBF90842ECB23B93C34526440")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.104 -0400", hash_original_method = "2FAB193CBF90842ECB23B93C34526440", hash_generated_method = "2FAB193CBF90842ECB23B93C34526440")
     public TextLine ()
     {
         //Synthesized constructor
@@ -113,7 +113,7 @@ class TextLine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.851 -0400", hash_original_method = "38DB7B0D381033DA01F9181167C14361", hash_generated_method = "DB2D646F76B4B932F56A864EA2DABCB6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.123 -0400", hash_original_method = "38DB7B0D381033DA01F9181167C14361", hash_generated_method = "9B2FFA272DC758AA9D66A313D7188389")
      void set(TextPaint paint, CharSequence text, int start, int limit, int dir,
             Directions directions, boolean hasTabs, TabStops tabStops) {
         mPaint = paint;
@@ -150,7 +150,7 @@ class TextLine {
                     {
                         inext = mReplacementSpanSpanSet.getNextTransition(i, limit);
                         {
-                            boolean var9A0647084190D1C8B24B12E654D855A5_1114237185 = (mReplacementSpanSpanSet.hasSpansIntersecting(i, inext));
+                            boolean var9A0647084190D1C8B24B12E654D855A5_1840794551 = (mReplacementSpanSpanSet.hasSpansIntersecting(i, inext));
                             {
                                 chars[i - start] = '\ufffc';
                                 {
@@ -173,7 +173,7 @@ class TextLine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.857 -0400", hash_original_method = "20A60861C26C58A53A0282FABD9ED153", hash_generated_method = "8D6991A0B624BB5961E93B3F5BB89976")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.134 -0400", hash_original_method = "20A60861C26C58A53A0282FABD9ED153", hash_generated_method = "8D6991A0B624BB5961E93B3F5BB89976")
      void draw(Canvas c, float x, int top, int y, int bottom) {
         {
             {
@@ -264,18 +264,18 @@ class TextLine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.858 -0400", hash_original_method = "7F5367E991A6BC7E9EDD55CA9BF0FBE6", hash_generated_method = "318230623E02956C1F64C3C7C5521BAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.142 -0400", hash_original_method = "7F5367E991A6BC7E9EDD55CA9BF0FBE6", hash_generated_method = "12A25E17E453F1D65F3229B617890584")
      float metrics(FontMetricsInt fmi) {
-        float var819434D16349BB2DC69F34C4834A5D61_885099511 = (measure(mLen, false, fmi));
+        float var819434D16349BB2DC69F34C4834A5D61_631463456 = (measure(mLen, false, fmi));
         addTaint(fmi.getTaint());
-        float var546ADE640B6EDFBC8A086EF31347E768_296492187 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_296492187;
+        float var546ADE640B6EDFBC8A086EF31347E768_974986159 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_974986159;
         // ---------- Original Method ----------
         //return measure(mLen, false, fmi);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.880 -0400", hash_original_method = "5986320AFF9EF780E7B17B08599A90A9", hash_generated_method = "23F76FD1524FB6772B9A25124847101E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.147 -0400", hash_original_method = "5986320AFF9EF780E7B17B08599A90A9", hash_generated_method = "B5DF791C01D97F890B500C79325383E5")
      float measure(int offset, boolean trailing, FontMetricsInt fmi) {
         int target;
         target = offset - 1;
@@ -284,10 +284,10 @@ class TextLine {
         h = 0;
         {
             {
-                float var6DBB5A12B291F41A1B8183C9E3967A7F_857447957 = (measureRun(0, offset, mLen, false, fmi));
+                float var6DBB5A12B291F41A1B8183C9E3967A7F_1046370921 = (measureRun(0, offset, mLen, false, fmi));
             } //End block
             {
-                float varAF7F0B660DD98ED2707F73909AA41E03_679136 = (measureRun(0, offset, mLen, true, fmi));
+                float varAF7F0B660DD98ED2707F73909AA41E03_1345584013 = (measureRun(0, offset, mLen, true, fmi));
             } //End block
         } //End block
         char[] chars;
@@ -334,13 +334,13 @@ class TextLine {
                             boolean advance;
                             advance = (mDir == Layout.DIR_RIGHT_TO_LEFT) == runIsRtl;
                             {
-                                float varEAD76BB4ECB5BC510C30780AC9415C1A_1789046202 = (h += measureRun(segstart, offset, j, runIsRtl, fmi));
+                                float varEAD76BB4ECB5BC510C30780AC9415C1A_1994521832 = (h += measureRun(segstart, offset, j, runIsRtl, fmi));
                             } //End block
                             float w;
                             w = measureRun(segstart, j, j, runIsRtl, fmi);
                             h += advance ? w : -w;
                             {
-                                float var156DB9BDC3E26545D8938CCB69603D57_1589376191 = (h += measureRun(segstart, offset, j, runIsRtl, null));
+                                float var156DB9BDC3E26545D8938CCB69603D57_88415356 = (h += measureRun(segstart, offset, j, runIsRtl, null));
                             } //End block
                             {
                                 h = mDir * nextTab(h * mDir);
@@ -361,14 +361,14 @@ class TextLine {
         addTaint(offset);
         addTaint(trailing);
         addTaint(fmi.getTaint());
-        float var546ADE640B6EDFBC8A086EF31347E768_1539172622 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1539172622;
+        float var546ADE640B6EDFBC8A086EF31347E768_60628712 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_60628712;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.891 -0400", hash_original_method = "1E01EF0F20C48DC869D8591ACBCB40DD", hash_generated_method = "B7522D035CBAF296C4CBDA7718F3F1E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.148 -0400", hash_original_method = "1E01EF0F20C48DC869D8591ACBCB40DD", hash_generated_method = "0955EA5BFE793A3593478C7EBC41EF70")
     private float drawRun(Canvas c, int start,
             int limit, boolean runIsRtl, float x, int top, int y, int bottom,
             boolean needWidth) {
@@ -378,7 +378,7 @@ class TextLine {
             handleRun(start, limit, limit, runIsRtl, c, x + w, top,
                     y, bottom, null, false);
         } //End block
-        float var2B269E7D5B38EDA34EF7FCBB54724505_1497418525 = (handleRun(start, limit, limit, runIsRtl, c, x, top,
+        float var2B269E7D5B38EDA34EF7FCBB54724505_2034062124 = (handleRun(start, limit, limit, runIsRtl, c, x, top,
                 y, bottom, null, needWidth));
         addTaint(c.getTaint());
         addTaint(start);
@@ -389,8 +389,8 @@ class TextLine {
         addTaint(y);
         addTaint(bottom);
         addTaint(needWidth);
-        float var546ADE640B6EDFBC8A086EF31347E768_1446635834 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1446635834;
+        float var546ADE640B6EDFBC8A086EF31347E768_2102933021 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_2102933021;
         // ---------- Original Method ----------
         //if ((mDir == Layout.DIR_LEFT_TO_RIGHT) == runIsRtl) {
             //float w = -measureRun(start, limit, limit, runIsRtl, null);
@@ -403,23 +403,23 @@ class TextLine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.892 -0400", hash_original_method = "92FB3641FED625E21CE916EA375B8557", hash_generated_method = "66BC33B03B345D42450A9497E9557F42")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.170 -0400", hash_original_method = "92FB3641FED625E21CE916EA375B8557", hash_generated_method = "E0EB44C87DB2C500E70F30BE8CDE6AE9")
     private float measureRun(int start, int offset, int limit, boolean runIsRtl,
             FontMetricsInt fmi) {
-        float var97D1A4BD409768E6336775867B4BED96_265657674 = (handleRun(start, offset, limit, runIsRtl, null, 0, 0, 0, 0, fmi, true));
+        float var97D1A4BD409768E6336775867B4BED96_1777692118 = (handleRun(start, offset, limit, runIsRtl, null, 0, 0, 0, 0, fmi, true));
         addTaint(start);
         addTaint(offset);
         addTaint(limit);
         addTaint(runIsRtl);
         addTaint(fmi.getTaint());
-        float var546ADE640B6EDFBC8A086EF31347E768_1659497794 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1659497794;
+        float var546ADE640B6EDFBC8A086EF31347E768_358989648 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_358989648;
         // ---------- Original Method ----------
         //return handleRun(start, offset, limit, runIsRtl, null, 0, 0, 0, 0, fmi, true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.895 -0400", hash_original_method = "4BDB20A2184F91CDB9542314BD3E47CD", hash_generated_method = "AEDF8A896A5B2E957FDCBD0EEC58B101")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.173 -0400", hash_original_method = "4BDB20A2184F91CDB9542314BD3E47CD", hash_generated_method = "6442FC0928B9A5BC1EB92BEA8C2D487E")
      int getOffsetToLeftRightOf(int cursor, boolean toLeft) {
         int lineStart;
         lineStart = 0;
@@ -543,21 +543,21 @@ class TextLine {
         } //End block
         addTaint(cursor);
         addTaint(toLeft);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_268324639 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_268324639;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1376263720 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1376263720;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.927 -0400", hash_original_method = "31252F4808C2C77A1E467D2963FB3AD5", hash_generated_method = "782DA44EFC2F3DFEF5970177427FC88A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.188 -0400", hash_original_method = "31252F4808C2C77A1E467D2963FB3AD5", hash_generated_method = "46E03E1A319AD9823BBCAD87C4D8D855")
     private int getOffsetBeforeAfter(int runIndex, int runStart, int runLimit,
             boolean runIsRtl, int offset, boolean after) {
         {
             {
-                int var23A42F19460B2B1B4F7650C079142539_2048441635 = (TextUtils.getOffsetAfter(mText, offset + mStart) - mStart);
+                int var23A42F19460B2B1B4F7650C079142539_108186153 = (TextUtils.getOffsetAfter(mText, offset + mStart) - mStart);
             } //End block
-            int var878CE411BC90821D83BAFC7D86E8759C_657738186 = (TextUtils.getOffsetBefore(mText, offset + mStart) - mStart);
+            int var878CE411BC90821D83BAFC7D86E8759C_1365769182 = (TextUtils.getOffsetBefore(mText, offset + mStart) - mStart);
         } //End block
         TextPaint wp;
         wp = mWorkPaint;
@@ -609,11 +609,11 @@ class TextLine {
         cursorOpt = Paint.CURSOR_AFTER;
         cursorOpt = Paint.CURSOR_BEFORE;
         {
-            int var8A46B054A3BF4BE20F28D574CADE0515_1472696854 = (wp.getTextRunCursor(mChars, spanStart, spanLimit - spanStart,
+            int var8A46B054A3BF4BE20F28D574CADE0515_556663416 = (wp.getTextRunCursor(mChars, spanStart, spanLimit - spanStart,
                     flags, offset, cursorOpt));
         } //End block
         {
-            int var2C1A4A7C8DBA63FC4B3CC76C9F155C03_1829165088 = (wp.getTextRunCursor(mText, mStart + spanStart,
+            int var2C1A4A7C8DBA63FC4B3CC76C9F155C03_131259541 = (wp.getTextRunCursor(mText, mStart + spanStart,
                     mStart + spanLimit, flags, mStart + offset, cursorOpt) - mStart);
         } //End block
         addTaint(runIndex);
@@ -622,8 +622,8 @@ class TextLine {
         addTaint(runIsRtl);
         addTaint(offset);
         addTaint(after);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_719605784 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_719605784;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819041126 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1819041126;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -651,7 +651,7 @@ class TextLine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.939 -0400", hash_original_method = "F8AC228F4E44CF9CD673B1404700AC77", hash_generated_method = "A696DACE09236C07E0A4249419980EA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.203 -0400", hash_original_method = "F8AC228F4E44CF9CD673B1404700AC77", hash_generated_method = "4F72555C485E0581E2FB653E8752E93C")
     private float handleText(TextPaint wp, int start, int end,
             int contextStart, int contextEnd, boolean runIsRtl,
             Canvas c, float x, int top, int y, int bottom,
@@ -729,14 +729,14 @@ class TextLine {
         addTaint(bottom);
         addTaint(fmi.getTaint());
         addTaint(needWidth);
-        float var546ADE640B6EDFBC8A086EF31347E768_250617274 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_250617274;
+        float var546ADE640B6EDFBC8A086EF31347E768_730746212 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_730746212;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.944 -0400", hash_original_method = "5BB6CBCB4177EDC48B270A42A6989FB0", hash_generated_method = "6181072A4BF158D9D8718AFB35160D0B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.211 -0400", hash_original_method = "5BB6CBCB4177EDC48B270A42A6989FB0", hash_generated_method = "C2B87D83799777BE39F3FEA539F0068A")
     private float handleReplacement(ReplacementSpan replacement, TextPaint wp,
             int start, int limit, boolean runIsRtl, Canvas c,
             float x, int top, int y, int bottom, FontMetricsInt fmi,
@@ -792,14 +792,14 @@ class TextLine {
         addTaint(bottom);
         addTaint(fmi.getTaint());
         addTaint(needWidth);
-        float var546ADE640B6EDFBC8A086EF31347E768_1910059535 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1910059535;
+        float var546ADE640B6EDFBC8A086EF31347E768_835782184 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_835782184;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.982 -0400", hash_original_method = "5FABB9B94E4E730AC35956B01320E35B", hash_generated_method = "C9E52623B1257A033DBA5864539FEEAD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.227 -0400", hash_original_method = "5FABB9B94E4E730AC35956B01320E35B", hash_generated_method = "5B8DD03D48E35B6A00142443316B80C6")
     private float handleRun(int start, int measureLimit,
             int limit, boolean runIsRtl, Canvas c, float x, int top, int y,
             int bottom, FontMetricsInt fmi, boolean needWidth) {
@@ -817,7 +817,7 @@ class TextLine {
             wp.set(mPaint);
             int mlimit;
             mlimit = measureLimit;
-            float var34AF167EDF1314E69A7451FFECC8AC0B_644804492 = (handleText(wp, start, mlimit, start, limit, runIsRtl, c, x, top,
+            float var34AF167EDF1314E69A7451FFECC8AC0B_2069269057 = (handleText(wp, start, mlimit, start, limit, runIsRtl, c, x, top,
                     y, bottom, fmi, needWidth || mlimit < measureLimit));
         } //End block
         mMetricAffectingSpanSpanSet.init(mSpanned, mStart + start, mStart + limit);
@@ -896,14 +896,14 @@ class TextLine {
         addTaint(bottom);
         addTaint(fmi.getTaint());
         addTaint(needWidth);
-        float var546ADE640B6EDFBC8A086EF31347E768_1023370728 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1023370728;
+        float var546ADE640B6EDFBC8A086EF31347E768_2043169637 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_2043169637;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.983 -0400", hash_original_method = "C8ABF2DC6B89611B840AEC4DBAADD344", hash_generated_method = "86478A549C8A74AA9738F73284BD27C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.243 -0400", hash_original_method = "C8ABF2DC6B89611B840AEC4DBAADD344", hash_generated_method = "86478A549C8A74AA9738F73284BD27C8")
     private void drawTextRun(Canvas c, TextPaint wp, int start, int end,
             int contextStart, int contextEnd, boolean runIsRtl, float x, int y) {
         int flags;
@@ -947,16 +947,16 @@ class TextLine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.110 -0400", hash_original_method = "AC74D3C7A92A1C0DA8A76C86F50D3219", hash_generated_method = "E6A518C19368D3100ABCA510FC2F928E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.375 -0400", hash_original_method = "AC74D3C7A92A1C0DA8A76C86F50D3219", hash_generated_method = "832BA933BC2C342DD648912ED30D82CB")
      float ascent(int pos) {
         {
-            float var3BDF3A2D03302BACAD807FFE6B0D6A91_128846775 = (mPaint.ascent());
+            float var3BDF3A2D03302BACAD807FFE6B0D6A91_695950593 = (mPaint.ascent());
         } //End block
         pos += mStart;
         MetricAffectingSpan[] spans;
         spans = mSpanned.getSpans(pos, pos + 1, MetricAffectingSpan.class);
         {
-            float var3BDF3A2D03302BACAD807FFE6B0D6A91_771737821 = (mPaint.ascent());
+            float var3BDF3A2D03302BACAD807FFE6B0D6A91_1025279718 = (mPaint.ascent());
         } //End block
         TextPaint wp;
         wp = mWorkPaint;
@@ -967,10 +967,10 @@ class TextLine {
                 span.updateMeasureState(wp);
             } //End block
         } //End collapsed parenthetic
-        float var5DC50654BD2E08B78A3F0BF6159A6A3E_479482317 = (wp.ascent());
+        float var5DC50654BD2E08B78A3F0BF6159A6A3E_1619354170 = (wp.ascent());
         addTaint(pos);
-        float var546ADE640B6EDFBC8A086EF31347E768_472387973 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_472387973;
+        float var546ADE640B6EDFBC8A086EF31347E768_423890233 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_423890233;
         // ---------- Original Method ----------
         //if (mSpanned == null) {
             //return mPaint.ascent();
@@ -989,15 +989,15 @@ class TextLine {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.124 -0400", hash_original_method = "73134044CD530D6AE99976E01BA5E625", hash_generated_method = "B6AC324490BDB4893D4A20E57919EF62")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.376 -0400", hash_original_method = "73134044CD530D6AE99976E01BA5E625", hash_generated_method = "0A55A699A1AE3BC741E96ACA6A0FD395")
      float nextTab(float h) {
         {
-            float varBC64F150694F74B7C25309A0AEC4E154_242467704 = (mTabs.nextTab(h));
+            float varBC64F150694F74B7C25309A0AEC4E154_909692959 = (mTabs.nextTab(h));
         } //End block
-        float varC96F42CCA3E3E5F25C19ACBABD69AED1_734937020 = (TabStops.nextDefaultStop(h, TAB_INCREMENT));
+        float varC96F42CCA3E3E5F25C19ACBABD69AED1_1149353361 = (TabStops.nextDefaultStop(h, TAB_INCREMENT));
         addTaint(h);
-        float var546ADE640B6EDFBC8A086EF31347E768_866614788 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_866614788;
+        float var546ADE640B6EDFBC8A086EF31347E768_981983632 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_981983632;
         // ---------- Original Method ----------
         //if (mTabs != null) {
             //return mTabs.nextTab(h);
@@ -1007,26 +1007,26 @@ class TextLine {
 
     
     private static class SpanSet<E> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.124 -0400", hash_original_field = "D6B5FCDB35353F6A4017F11EBD647D09", hash_generated_field = "4D016F914E51DC9C3732F557E45EB452")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.376 -0400", hash_original_field = "D6B5FCDB35353F6A4017F11EBD647D09", hash_generated_field = "4D016F914E51DC9C3732F557E45EB452")
 
         int numberOfSpans;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.124 -0400", hash_original_field = "A46EFC2A2782C9238263F63F5CEA5D42", hash_generated_field = "32FCADE2328772A5D81411E0AA303B75")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_field = "A46EFC2A2782C9238263F63F5CEA5D42", hash_generated_field = "32FCADE2328772A5D81411E0AA303B75")
 
         E[] spans;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.124 -0400", hash_original_field = "C24BD1BD2949B9599EEDD7F0387EE723", hash_generated_field = "1D3712C585C8808C22172D42F4D7BB90")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_field = "C24BD1BD2949B9599EEDD7F0387EE723", hash_generated_field = "1D3712C585C8808C22172D42F4D7BB90")
 
         int[] spanStarts;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.124 -0400", hash_original_field = "0502422B326B747A365D76C9CCE8E955", hash_generated_field = "8ED878CF75FF4569DFB3C4F0CC5B72F1")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_field = "0502422B326B747A365D76C9CCE8E955", hash_generated_field = "8ED878CF75FF4569DFB3C4F0CC5B72F1")
 
         int[] spanEnds;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.124 -0400", hash_original_field = "6612E29FBDE8178CC4AD5176D3C8A9E6", hash_generated_field = "2E2862EF6D4B111BA84644CB0E9CD297")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_field = "6612E29FBDE8178CC4AD5176D3C8A9E6", hash_generated_field = "2E2862EF6D4B111BA84644CB0E9CD297")
 
         int[] spanFlags;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.124 -0400", hash_original_field = "A69F0373B093A535ADB7C9273781CD43", hash_generated_field = "7DE61887E85E1CD432AAA8825CCFB81E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_field = "A69F0373B093A535ADB7C9273781CD43", hash_generated_field = "7DE61887E85E1CD432AAA8825CCFB81E")
 
         Class<? extends E> classType;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.125 -0400", hash_original_method = "08793871E7FAA5C02A5C5115CBB016E1", hash_generated_method = "7A2C4BAA57A8D03BA9484E8C2D4BDD35")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.389 -0400", hash_original_method = "08793871E7FAA5C02A5C5115CBB016E1", hash_generated_method = "7A2C4BAA57A8D03BA9484E8C2D4BDD35")
           SpanSet(Class<? extends E> type) {
             classType = type;
             numberOfSpans = 0;
@@ -1036,7 +1036,7 @@ class TextLine {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.131 -0400", hash_original_method = "DCBC67B7023E3760B724E28392339389", hash_generated_method = "DCD7EEA6BDB7B36B921C6B961A48FBB9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.391 -0400", hash_original_method = "DCBC67B7023E3760B724E28392339389", hash_generated_method = "DCD7EEA6BDB7B36B921C6B961A48FBB9")
         @SuppressWarnings("unchecked")
         public void init(Spanned spanned, int start, int limit) {
             E[] allSpans;
@@ -1076,7 +1076,7 @@ class TextLine {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.132 -0400", hash_original_method = "14C2C64E52F272A1D061AF5FA0B61C4E", hash_generated_method = "60C1840AAE78668FA8995E437C4738C9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.392 -0400", hash_original_method = "14C2C64E52F272A1D061AF5FA0B61C4E", hash_generated_method = "DEF28136AEC3475BD93D421BFB909A2F")
         public boolean hasSpansIntersecting(int start, int end) {
             {
                 int i;
@@ -1084,8 +1084,8 @@ class TextLine {
             } //End collapsed parenthetic
             addTaint(start);
             addTaint(end);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1381254359 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1381254359;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1315945513 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1315945513;
             // ---------- Original Method ----------
             //for (int i = 0; i < numberOfSpans; i++) {
                 //if (spanStarts[i] >= end || spanEnds[i] <= start) continue;
@@ -1095,7 +1095,7 @@ class TextLine {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.147 -0400", hash_original_method = "70A36A49F9CEFC761501124E36FC2A8C", hash_generated_method = "219329826C0829FA897402D3F6238B1A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.392 -0400", hash_original_method = "70A36A49F9CEFC761501124E36FC2A8C", hash_generated_method = "82EB325A093FDE085E6352D52EB12756")
          int getNextTransition(int start, int limit) {
             {
                 int i;
@@ -1111,8 +1111,8 @@ class TextLine {
             } //End collapsed parenthetic
             addTaint(start);
             addTaint(limit);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1956533597 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1956533597;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1435107703 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1435107703;
             // ---------- Original Method ----------
             //for (int i = 0; i < numberOfSpans; i++) {
                 //final int spanStart = spanStarts[i];
@@ -1124,7 +1124,7 @@ class TextLine {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.148 -0400", hash_original_method = "5E840A260140B15B0CFAF6F2BC649D6A", hash_generated_method = "82ECDD7493004F7E502A43C80ABA9546")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.404 -0400", hash_original_method = "5E840A260140B15B0CFAF6F2BC649D6A", hash_generated_method = "82ECDD7493004F7E502A43C80ABA9546")
         public void recycle() {
             {
                 int i;
@@ -1144,13 +1144,13 @@ class TextLine {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.148 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.404 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
 
     private static boolean DEBUG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.148 -0400", hash_original_field = "E871AFED5937EF2A18CE095CADBDB246", hash_generated_field = "75121A76AE83D1347D4F6B7622872157")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.404 -0400", hash_original_field = "E871AFED5937EF2A18CE095CADBDB246", hash_generated_field = "75121A76AE83D1347D4F6B7622872157")
 
     private static TextLine[] sCached = new TextLine[3];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.148 -0400", hash_original_field = "5857BDFF3BF33113730586AF5B28164F", hash_generated_field = "BD4519227226DE6CF8B5B95534D34642")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.404 -0400", hash_original_field = "5857BDFF3BF33113730586AF5B28164F", hash_generated_field = "BD4519227226DE6CF8B5B95534D34642")
 
     private static int TAB_INCREMENT = 20;
 }

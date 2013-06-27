@@ -11,7 +11,7 @@ import java.math.BigInteger;
 
 class Tnaf {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.868 -0400", hash_original_method = "6AFB421B9578CA1EB17678ABFF5836A8", hash_generated_method = "6AFB421B9578CA1EB17678ABFF5836A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.723 -0400", hash_original_method = "6AFB421B9578CA1EB17678ABFF5836A8", hash_generated_method = "6AFB421B9578CA1EB17678ABFF5836A8")
     public Tnaf ()
     {
         //Synthesized constructor
@@ -505,22 +505,22 @@ class Tnaf {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.906 -0400", hash_original_field = "46940386C5E4B7F858F2360BD51B3E0B", hash_generated_field = "1BA3E5D826B9068D25D7A667E7C69204")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.770 -0400", hash_original_field = "46940386C5E4B7F858F2360BD51B3E0B", hash_generated_field = "1BA3E5D826B9068D25D7A667E7C69204")
 
     private static BigInteger MINUS_ONE = ECConstants.ONE.negate();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.906 -0400", hash_original_field = "E028E87A2D4B7B8682848C5038475291", hash_generated_field = "61FB5C0CF710CA5BA4D96388BA5DAAF4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.770 -0400", hash_original_field = "E028E87A2D4B7B8682848C5038475291", hash_generated_field = "61FB5C0CF710CA5BA4D96388BA5DAAF4")
 
     private static BigInteger MINUS_TWO = ECConstants.TWO.negate();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.906 -0400", hash_original_field = "A0A4249CE7D103C1D2E1CA663ED74910", hash_generated_field = "C18CD016DD03C55EA80E4C9ADE71CC0A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.770 -0400", hash_original_field = "A0A4249CE7D103C1D2E1CA663ED74910", hash_generated_field = "C18CD016DD03C55EA80E4C9ADE71CC0A")
 
     private static BigInteger MINUS_THREE = ECConstants.THREE.negate();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.907 -0400", hash_original_field = "672E91342A9CD68768AB135997317B75", hash_generated_field = "215F7EF58A81C276BCD0EDD9879D52DC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.771 -0400", hash_original_field = "672E91342A9CD68768AB135997317B75", hash_generated_field = "215F7EF58A81C276BCD0EDD9879D52DC")
 
     public static final byte WIDTH = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.907 -0400", hash_original_field = "DC21CE98F8126B37FACA40EE6BFEA402", hash_generated_field = "21265DFA1B96D48276E77642FD82A450")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.771 -0400", hash_original_field = "DC21CE98F8126B37FACA40EE6BFEA402", hash_generated_field = "21265DFA1B96D48276E77642FD82A450")
 
     public static final byte POW_2_WIDTH = 16;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.907 -0400", hash_original_field = "8F9C346BAE23F193BC224F479E430F3E", hash_generated_field = "6CD45D97DE0751113A36B5C417B90B59")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.771 -0400", hash_original_field = "8F9C346BAE23F193BC224F479E430F3E", hash_generated_field = "6CD45D97DE0751113A36B5C417B90B59")
 
     public static final ZTauElement[] alpha0 = {
         null,
@@ -529,12 +529,12 @@ class Tnaf {
         new ZTauElement(MINUS_ONE, MINUS_ONE), null,
         new ZTauElement(ECConstants.ONE, MINUS_ONE), null
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.907 -0400", hash_original_field = "EA28EFCACE8665B00CEDB38808A55DDB", hash_generated_field = "2610932BBC232F1B35161A474C555605")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.771 -0400", hash_original_field = "EA28EFCACE8665B00CEDB38808A55DDB", hash_generated_field = "2610932BBC232F1B35161A474C555605")
 
     public static final byte[][] alpha0Tnaf = {
         null, {1}, null, {-1, 0, 1}, null, {1, 0, 1}, null, {-1, 0, 0, 1}
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.910 -0400", hash_original_field = "D40189B030BA142DBB62F29BB65B3753", hash_generated_field = "B27BD535E864081052B48483622B9F55")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.771 -0400", hash_original_field = "D40189B030BA142DBB62F29BB65B3753", hash_generated_field = "B27BD535E864081052B48483622B9F55")
 
     public static final ZTauElement[] alpha1 = {null,
         new ZTauElement(ECConstants.ONE, ECConstants.ZERO), null,
@@ -542,7 +542,7 @@ class Tnaf {
         new ZTauElement(MINUS_ONE, ECConstants.ONE), null,
         new ZTauElement(ECConstants.ONE, ECConstants.ONE), null
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.910 -0400", hash_original_field = "B265920709CACADAC6D749B57869C9BF", hash_generated_field = "429E234FB060570ACC226375F178F480")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.771 -0400", hash_original_field = "B265920709CACADAC6D749B57869C9BF", hash_generated_field = "429E234FB060570ACC226375F178F480")
 
     public static final byte[][] alpha1Tnaf = {
         null, {1}, null, {-1, 0, 1}, null, {1, 0, 1}, null, {-1, 0, 0, -1}

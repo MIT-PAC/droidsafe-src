@@ -14,7 +14,7 @@ import gov.nist.javax.sip.header.ims.PathHeader;
 
 public class Path extends gov.nist.javax.sip.header.AddressParametersHeader implements PathHeader, SIPHeaderNamesIms, ExtensionHeader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.410 -0400", hash_original_method = "1A5DC98D9C587097429AD2D82BB7A094", hash_generated_method = "5F59B98D299AC7BFD7ACF0C1CB5028E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.572 -0400", hash_original_method = "1A5DC98D9C587097429AD2D82BB7A094", hash_generated_method = "5F59B98D299AC7BFD7ACF0C1CB5028E9")
     public  Path(AddressImpl address) {
         super(NAME);
         this.address = address;
@@ -24,38 +24,38 @@ public class Path extends gov.nist.javax.sip.header.AddressParametersHeader impl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.410 -0400", hash_original_method = "1037FC87002CAE3F016A3DA3F4CF1390", hash_generated_method = "6BA54447352AEF48A71AC6B629E6A91B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.572 -0400", hash_original_method = "1037FC87002CAE3F016A3DA3F4CF1390", hash_generated_method = "6BA54447352AEF48A71AC6B629E6A91B")
     public  Path() {
         super(NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.411 -0400", hash_original_method = "DD9AA0788424353442B0CFE218D97412", hash_generated_method = "5E537AB32FECDE209F449B6811E02BEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.573 -0400", hash_original_method = "DD9AA0788424353442B0CFE218D97412", hash_generated_method = "B17F7BD45BC2D73DD7AC92793181701C")
     public String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1558613538 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1785137956 = null; //Variable for return #1
         StringBuffer retval;
         retval = new StringBuffer();
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_1829979692 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
+            boolean varA8A94084CEDB8AE131E76CDFE26F1997_1060161924 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
             {
                 retval.append(LESS_THAN);
             } //End block
         } //End collapsed parenthetic
         retval.append(address.encode());
         {
-            boolean varA8A94084CEDB8AE131E76CDFE26F1997_949219824 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
+            boolean varA8A94084CEDB8AE131E76CDFE26F1997_1443355845 = (address.getAddressType() == AddressImpl.ADDRESS_SPEC);
             {
                 retval.append(GREATER_THAN);
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_1291450870 = (!parameters.isEmpty());
+            boolean varB381AD842454BDB2397F4C2DAD0B3FA1_192329064 = (!parameters.isEmpty());
             retval.append(SEMICOLON + this.parameters.encode());
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1558613538 = retval.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_1558613538.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1558613538;
+        varB4EAC82CA7396A68D541C85D26508E83_1785137956 = retval.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1785137956.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1785137956;
         // ---------- Original Method ----------
         //StringBuffer retval = new StringBuffer();
         //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
@@ -71,7 +71,7 @@ public class Path extends gov.nist.javax.sip.header.AddressParametersHeader impl
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.411 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.575 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
     public void setValue(String value) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new ParseException(value,0);
         addTaint(value.getTaint());

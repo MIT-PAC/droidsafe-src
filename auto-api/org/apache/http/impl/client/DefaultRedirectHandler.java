@@ -26,18 +26,18 @@ import org.apache.http.protocol.HttpContext;
 import org.apache.http.protocol.ExecutionContext;
 
 public class DefaultRedirectHandler implements RedirectHandler {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.425 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "4E4E630304492253CB8147CAE1C7D2A5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.416 -0400", hash_original_field = "0B7469F2850D918A96D1C36E99B23F5C", hash_generated_field = "4E4E630304492253CB8147CAE1C7D2A5")
 
     private Log log = LogFactory.getLog(getClass());
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.425 -0400", hash_original_method = "2DD669B5624C7C7440898F877B0DEDA7", hash_generated_method = "AF7D1DF7149AE5425855C691382FBA51")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.417 -0400", hash_original_method = "2DD669B5624C7C7440898F877B0DEDA7", hash_generated_method = "AF7D1DF7149AE5425855C691382FBA51")
     public  DefaultRedirectHandler() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.426 -0400", hash_original_method = "03F3AE903C1DF30A5B96C5B08682C8BA", hash_generated_method = "91FFBF270AF6DE40605DCE153B2F276B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.417 -0400", hash_original_method = "03F3AE903C1DF30A5B96C5B08682C8BA", hash_generated_method = "88AC0DB08D316BC3C782FE18C393C5F6")
     public boolean isRedirectRequested(
             final HttpResponse response,
             final HttpContext context) {
@@ -48,8 +48,8 @@ public class DefaultRedirectHandler implements RedirectHandler {
         statusCode = response.getStatusLine().getStatusCode();
         addTaint(response.getTaint());
         addTaint(context.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_161884381 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_161884381;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2080081162 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2080081162;
         // ---------- Original Method ----------
         //if (response == null) {
             //throw new IllegalArgumentException("HTTP response may not be null");
@@ -67,11 +67,11 @@ public class DefaultRedirectHandler implements RedirectHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.435 -0400", hash_original_method = "21747B99F20BEEB46FB81199FFB99B8C", hash_generated_method = "53B89E435286DB448CA3BF8A0C6788E2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.434 -0400", hash_original_method = "21747B99F20BEEB46FB81199FFB99B8C", hash_generated_method = "E7DA0C7EC9D4609240EDC3848B738A59")
     public URI getLocationURI(
             final HttpResponse response, 
             final HttpContext context) throws ProtocolException {
-        URI varB4EAC82CA7396A68D541C85D26508E83_632953590 = null; //Variable for return #1
+        URI varB4EAC82CA7396A68D541C85D26508E83_408021576 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP response may not be null");
         } //End block
@@ -85,7 +85,7 @@ public class DefaultRedirectHandler implements RedirectHandler {
         String location;
         location = locationHeader.getValue();
         {
-            boolean var2083B5DFA3893791124BEF94A917A00D_30698266 = (this.log.isDebugEnabled());
+            boolean var2083B5DFA3893791124BEF94A917A00D_803479243 = (this.log.isDebugEnabled());
             {
                 this.log.debug("Redirect requested to location '" + location + "'");
             } //End block
@@ -102,10 +102,10 @@ public class DefaultRedirectHandler implements RedirectHandler {
         HttpParams params;
         params = response.getParams();
         {
-            boolean varF9B59B784A8C73BDFDBDA505CB685702_773259344 = (!uri.isAbsolute());
+            boolean varF9B59B784A8C73BDFDBDA505CB685702_608817789 = (!uri.isAbsolute());
             {
                 {
-                    boolean varEEC38DC1A78FB4E25DF1CD4E6C8597FC_639795614 = (params.isParameterTrue(ClientPNames.REJECT_RELATIVE_REDIRECT));
+                    boolean varEEC38DC1A78FB4E25DF1CD4E6C8597FC_913734875 = (params.isParameterTrue(ClientPNames.REJECT_RELATIVE_REDIRECT));
                     {
                         if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Relative redirect location '" 
                         + uri + "' not allowed");
@@ -136,7 +136,7 @@ public class DefaultRedirectHandler implements RedirectHandler {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var7E39C79F6B08443892071262DECEA45B_344278001 = (params.isParameterFalse(ClientPNames.ALLOW_CIRCULAR_REDIRECTS));
+            boolean var7E39C79F6B08443892071262DECEA45B_1790477275 = (params.isParameterFalse(ClientPNames.ALLOW_CIRCULAR_REDIRECTS));
             {
                 RedirectLocations redirectLocations;
                 redirectLocations = (RedirectLocations) context.getAttribute(
@@ -147,7 +147,7 @@ public class DefaultRedirectHandler implements RedirectHandler {
                 } //End block
                 URI redirectURI;
                 {
-                    boolean varE4CF964BD57C865082A67C6AC59B32FF_950471659 = (uri.getFragment() != null);
+                    boolean varE4CF964BD57C865082A67C6AC59B32FF_2052370074 = (uri.getFragment() != null);
                     {
                         try 
                         {
@@ -168,7 +168,7 @@ public class DefaultRedirectHandler implements RedirectHandler {
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean varD81B7BBC1C840166BCF4D092AFDCE75A_509848962 = (redirectLocations.contains(redirectURI));
+                    boolean varD81B7BBC1C840166BCF4D092AFDCE75A_478656881 = (redirectLocations.contains(redirectURI));
                     {
                         if (DroidSafeAndroidRuntime.control) throw new CircularRedirectException("Circular redirect to '" +
                         redirectURI + "'");
@@ -179,17 +179,17 @@ public class DefaultRedirectHandler implements RedirectHandler {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_632953590 = uri;
+        varB4EAC82CA7396A68D541C85D26508E83_408021576 = uri;
         addTaint(response.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_632953590.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_632953590;
+        varB4EAC82CA7396A68D541C85D26508E83_408021576.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_408021576;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.439 -0400", hash_original_field = "CACA42EF18E239159E672E61845CAAD5", hash_generated_field = "5930D861EFE85476A27381761F74E160")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.434 -0400", hash_original_field = "CACA42EF18E239159E672E61845CAAD5", hash_generated_field = "5930D861EFE85476A27381761F74E160")
 
     private static String REDIRECT_LOCATIONS = "http.protocol.redirect-locations";
 }

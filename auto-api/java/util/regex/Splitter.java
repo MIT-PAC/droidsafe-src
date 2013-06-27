@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Splitter {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.593 -0400", hash_original_method = "B7F2802825C1EAFD928ACADA9E8D9911", hash_generated_method = "4F7ABE410345F930060448FAB205D46B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.374 -0400", hash_original_method = "B7F2802825C1EAFD928ACADA9E8D9911", hash_generated_method = "4F7ABE410345F930060448FAB205D46B")
     private  Splitter() {
         // ---------- Original Method ----------
     }
@@ -85,7 +85,7 @@ public class Splitter {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:59.607 -0400", hash_original_field = "0BA7AB9BF46151E8C8BBE62F232D038C", hash_generated_field = "9475A72A0595271F6064605FEA14BE0E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.396 -0400", hash_original_field = "0BA7AB9BF46151E8C8BBE62F232D038C", hash_generated_field = "9475A72A0595271F6064605FEA14BE0E")
 
     private static String METACHARACTERS = "\\?*+[](){}^$.|";
 }

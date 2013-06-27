@@ -25,7 +25,7 @@ import org.apache.harmony.luni.internal.util.TimezoneGetter;
 
 public final class ZoneInfoDB {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.397 -0400", hash_original_method = "6AD30DC678AA79198B9A535BC6352D82", hash_generated_method = "F186C26C76B663EC1F34BF428D4B8EAF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.541 -0400", hash_original_method = "6AD30DC678AA79198B9A535BC6352D82", hash_generated_method = "F186C26C76B663EC1F34BF428D4B8EAF")
     private  ZoneInfoDB() {
         // ---------- Original Method ----------
     }
@@ -176,31 +176,31 @@ public final class ZoneInfoDB {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.408 -0400", hash_original_field = "495280464DE95B6FD090B57B9860D1B3", hash_generated_field = "BF306E6E56A4DF552EC3813C9F5B33E2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.562 -0400", hash_original_field = "495280464DE95B6FD090B57B9860D1B3", hash_generated_field = "BF306E6E56A4DF552EC3813C9F5B33E2")
 
     private static String ZONE_DIRECTORY_NAME = System.getenv("ANDROID_ROOT") + "/usr/share/zoneinfo/";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.409 -0400", hash_original_field = "D224DE24E4599FFCC9CC6AC941AF9ECB", hash_generated_field = "1381DA4687E6B3FD0994EF168A86F395")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.562 -0400", hash_original_field = "D224DE24E4599FFCC9CC6AC941AF9ECB", hash_generated_field = "1381DA4687E6B3FD0994EF168A86F395")
 
     private static String ZONE_FILE_NAME = ZONE_DIRECTORY_NAME + "zoneinfo.dat";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.409 -0400", hash_original_field = "C180D7A84402C7C9DDB79A2F8AD72779", hash_generated_field = "86B9A581D6D402F7B039A6A6A9324444")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.562 -0400", hash_original_field = "C180D7A84402C7C9DDB79A2F8AD72779", hash_generated_field = "86B9A581D6D402F7B039A6A6A9324444")
 
     private static String INDEX_FILE_NAME = ZONE_DIRECTORY_NAME + "zoneinfo.idx";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.409 -0400", hash_original_field = "6DCE3A5BA4E0A2B19B31D4590131918D", hash_generated_field = "ECA14646661E177FED6D6DD07E1BB396")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.562 -0400", hash_original_field = "6DCE3A5BA4E0A2B19B31D4590131918D", hash_generated_field = "ECA14646661E177FED6D6DD07E1BB396")
 
     private static Object LOCK = new Object();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.413 -0400", hash_original_field = "992AE5CB06690900DF9C6CA45B709E13", hash_generated_field = "BF4E9BC881D3C8A202E5C34EACF66834")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.562 -0400", hash_original_field = "992AE5CB06690900DF9C6CA45B709E13", hash_generated_field = "BF4E9BC881D3C8A202E5C34EACF66834")
 
     private static String VERSION = readVersion();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.413 -0400", hash_original_field = "92D1D1CAF5C4DCC1C9B0D9AF21FAA3AF", hash_generated_field = "D708A681B84B8AE4444BB8D3D57F7492")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.562 -0400", hash_original_field = "92D1D1CAF5C4DCC1C9B0D9AF21FAA3AF", hash_generated_field = "D708A681B84B8AE4444BB8D3D57F7492")
 
     private static MemoryMappedFile ALL_ZONE_DATA = mapData();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.414 -0400", hash_original_field = "BF516925BB37A8544C8EE19A24E15C05", hash_generated_field = "32AE8609238F038B3D4A7AF42E97A34A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.562 -0400", hash_original_field = "BF516925BB37A8544C8EE19A24E15C05", hash_generated_field = "32AE8609238F038B3D4A7AF42E97A34A")
 
     private static String[] ids;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.415 -0400", hash_original_field = "F8BB994A20520FB0F32A470ADC90A8C2", hash_generated_field = "BBB14D36BADD097A53587E02DEE74F4B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.562 -0400", hash_original_field = "F8BB994A20520FB0F32A470ADC90A8C2", hash_generated_field = "BBB14D36BADD097A53587E02DEE74F4B")
 
     private static int[] byteOffsets;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.416 -0400", hash_original_field = "A7127A22FF559E8CC7C8FA34C2639B63", hash_generated_field = "11E6859EA7C3A97FDEE418858A2BF997")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.563 -0400", hash_original_field = "A7127A22FF559E8CC7C8FA34C2639B63", hash_generated_field = "11E6859EA7C3A97FDEE418858A2BF997")
 
     private static int[] rawUtcOffsets;
     static {

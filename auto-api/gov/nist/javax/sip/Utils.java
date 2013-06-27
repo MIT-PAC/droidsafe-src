@@ -14,7 +14,7 @@ import java.util.HashSet;
 
 public class Utils implements UtilsExt {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.268 -0400", hash_original_method = "4A92704CBFAAEA8B3C41F62FC777198C", hash_generated_method = "4A92704CBFAAEA8B3C41F62FC777198C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.925 -0400", hash_original_method = "4A92704CBFAAEA8B3C41F62FC777198C", hash_generated_method = "4A92704CBFAAEA8B3C41F62FC777198C")
     public Utils ()
     {
         //Synthesized constructor
@@ -56,9 +56,9 @@ public class Utils implements UtilsExt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.270 -0400", hash_original_method = "8B9CD4355F65A61EBC08146A51CEAFC7", hash_generated_method = "989C586C252C1934408BE8FDEE0C3483")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.942 -0400", hash_original_method = "8B9CD4355F65A61EBC08146A51CEAFC7", hash_generated_method = "5FA33A823D4BDACD2D96724F99FD3832")
     public synchronized String generateCallIdentifier(String address) {
-        String varB4EAC82CA7396A68D541C85D26508E83_391948152 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2119668502 = null; //Variable for return #1
         String date;
         date = Long.toString(System.currentTimeMillis() + callIDCounter++
                     + rand.nextLong());
@@ -66,10 +66,10 @@ public class Utils implements UtilsExt {
         cid = digester.digest(date.getBytes());
         String cidString;
         cidString = Utils.toHexString(cid);
-        varB4EAC82CA7396A68D541C85D26508E83_391948152 = cidString + "@" + address;
+        varB4EAC82CA7396A68D541C85D26508E83_2119668502 = cidString + "@" + address;
         addTaint(address.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_391948152.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_391948152;
+        varB4EAC82CA7396A68D541C85D26508E83_2119668502.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2119668502;
         // ---------- Original Method ----------
         //String date = Long.toString(System.currentTimeMillis() + callIDCounter++
                     //+ rand.nextLong());
@@ -79,27 +79,27 @@ public class Utils implements UtilsExt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.270 -0400", hash_original_method = "9AA82EE1A1BEF7CB34AB2EE7CC0970FC", hash_generated_method = "6D6B3C52D1F87C74E54BD5F5441B9293")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.947 -0400", hash_original_method = "9AA82EE1A1BEF7CB34AB2EE7CC0970FC", hash_generated_method = "0717C477630A62EC4EE226D6FFF98FF3")
     public synchronized String generateTag() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1853384136 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1853384136 = Integer.toHexString(rand.nextInt());
-        varB4EAC82CA7396A68D541C85D26508E83_1853384136.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1853384136;
+        String varB4EAC82CA7396A68D541C85D26508E83_1944241710 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1944241710 = Integer.toHexString(rand.nextInt());
+        varB4EAC82CA7396A68D541C85D26508E83_1944241710.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1944241710;
         // ---------- Original Method ----------
         //return Integer.toHexString(rand.nextInt());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.271 -0400", hash_original_method = "7AE3A829A02A70B14E30FF17666004A8", hash_generated_method = "131FEBA545C76EDE394D698BABB07762")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.948 -0400", hash_original_method = "7AE3A829A02A70B14E30FF17666004A8", hash_generated_method = "CEBA9691334BF0C5C2914D74AB8B2036")
     public synchronized String generateBranchId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1108854403 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1103598396 = null; //Variable for return #1
         long num;
         num = rand.nextLong() + Utils.counter++  + System.currentTimeMillis();
         byte bid[];
         bid = digester.digest(Long.toString(num).getBytes());
-        varB4EAC82CA7396A68D541C85D26508E83_1108854403 = SIPConstants.BRANCH_MAGIC_COOKIE + Utils.toHexString(bid) + this.signature;
-        varB4EAC82CA7396A68D541C85D26508E83_1108854403.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1108854403;
+        varB4EAC82CA7396A68D541C85D26508E83_1103598396 = SIPConstants.BRANCH_MAGIC_COOKIE + Utils.toHexString(bid) + this.signature;
+        varB4EAC82CA7396A68D541C85D26508E83_1103598396.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1103598396;
         // ---------- Original Method ----------
         //long num = rand.nextLong() + Utils.counter++  + System.currentTimeMillis();
         //byte bid[] = digester.digest(Long.toString(num).getBytes());
@@ -107,16 +107,16 @@ public class Utils implements UtilsExt {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.271 -0400", hash_original_method = "C81ECDD34C7D54B91D88A9F561BC20EF", hash_generated_method = "858A89ED9456026A756C10EA08E9E763")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.949 -0400", hash_original_method = "C81ECDD34C7D54B91D88A9F561BC20EF", hash_generated_method = "6F262CAFB6403971AC208168088145FF")
     public boolean responseBelongsToUs(SIPResponse response) {
         Via topmostVia;
         topmostVia = response.getTopmostVia();
         String branch;
         branch = topmostVia.getBranch();
-        boolean varCEB2BE90E0E559CE062D36543E0ECFB4_983826527 = (branch != null && branch.endsWith(this.signature));
+        boolean varCEB2BE90E0E559CE062D36543E0ECFB4_771939682 = (branch != null && branch.endsWith(this.signature));
         addTaint(response.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_259201794 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_259201794;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_806237208 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_806237208;
         // ---------- Original Method ----------
         //Via topmostVia = response.getTopmostVia();
         //String branch = topmostVia.getBranch();
@@ -143,27 +143,28 @@ public class Utils implements UtilsExt {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.276 -0400", hash_original_field = "0E286381F5EE9C742D836883DC1DB90C", hash_generated_field = "75DF3FBD64D6EA0108E137FADE714C1F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.963 -0400", hash_original_field = "0E286381F5EE9C742D836883DC1DB90C", hash_generated_field = "75DF3FBD64D6EA0108E137FADE714C1F")
 
     private static MessageDigest digester;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.276 -0400", hash_original_field = "34D1C35063280164066ECC517050DA0B", hash_generated_field = "7E238EAE548E2EE44C039EC6AC75AC3D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.963 -0400", hash_original_field = "34D1C35063280164066ECC517050DA0B", hash_generated_field = "7E238EAE548E2EE44C039EC6AC75AC3D")
 
     private static java.util.Random rand;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.276 -0400", hash_original_field = "CDC8BEE919EF2CD97F33CAFC1AD12080", hash_generated_field = "AE51E4CF92FF648669819D7B0481713C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.963 -0400", hash_original_field = "CDC8BEE919EF2CD97F33CAFC1AD12080", hash_generated_field = "AE51E4CF92FF648669819D7B0481713C")
 
     private static long counter = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.276 -0400", hash_original_field = "14BBD058D9B067ADFEE3A864FC3182FD", hash_generated_field = "6CF948D0E8697F6CBD93101CC8EE4EA8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.963 -0400", hash_original_field = "14BBD058D9B067ADFEE3A864FC3182FD", hash_generated_field = "6CF948D0E8697F6CBD93101CC8EE4EA8")
 
     private static int callIDCounter;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.276 -0400", hash_original_field = "AC201FD270C3B96BEAB24F2829780AB2", hash_generated_field = "512F210EC728FA3837ABDE0579788961")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.963 -0400", hash_original_field = "AC201FD270C3B96BEAB24F2829780AB2", hash_generated_field = "512F210EC728FA3837ABDE0579788961")
 
     private static String signature;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.276 -0400", hash_original_field = "0E6E923839CD164B73A56473EDEA9972", hash_generated_field = "B26221B75DD3069F1E7CEE68F1C1307C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.963 -0400", hash_original_field = "0E6E923839CD164B73A56473EDEA9972", hash_generated_field = "B26221B75DD3069F1E7CEE68F1C1307C")
 
     private static Utils instance = new Utils();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.276 -0400", hash_original_field = "AE6F89DC8E13D1AB97EC10B40F16B520", hash_generated_field = "0195398F6698E767841FEB88F279EAF5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.963 -0400", hash_original_field = "AE6F89DC8E13D1AB97EC10B40F16B520", hash_generated_field = "67C5C1E83455E082BF44ED8638A4380D")
 
-    private static char[] toHex = ;
+    private static char[] toHex = { '0', '1', '2', '3', '4', '5', '6',
+            '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
     static {
         try {
             digester = MessageDigest.getInstance("MD5");

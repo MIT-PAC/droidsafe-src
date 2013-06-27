@@ -12,7 +12,7 @@ import java.util.List;
 
 public abstract class ProxySelector {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.709 -0400", hash_original_method = "58B949A565A2A9912CEB4CE07BFCA43A", hash_generated_method = "58B949A565A2A9912CEB4CE07BFCA43A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.775 -0400", hash_original_method = "58B949A565A2A9912CEB4CE07BFCA43A", hash_generated_method = "58B949A565A2A9912CEB4CE07BFCA43A")
     public ProxySelector ()
     {
         //Synthesized constructor
@@ -35,7 +35,7 @@ public abstract class ProxySelector {
     public abstract void connectFailed(URI uri, SocketAddress address, IOException failure);
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:43.710 -0400", hash_original_field = "F5B52DAA0891C49BF2BCE7F900ABD0A2", hash_generated_field = "866168BC4273598BE9EC3863505911FF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:42.776 -0400", hash_original_field = "F5B52DAA0891C49BF2BCE7F900ABD0A2", hash_generated_field = "866168BC4273598BE9EC3863505911FF")
 
     private static ProxySelector defaultSelector = new ProxySelectorImpl();
 }

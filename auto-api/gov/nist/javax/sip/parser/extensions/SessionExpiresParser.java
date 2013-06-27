@@ -15,7 +15,7 @@ import javax.sip.*;
 
 public class SessionExpiresParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.629 -0400", hash_original_method = "7C2BC7AE1B8B283C846DFC926BD1514D", hash_generated_method = "545C555B9486493C4D866EE22D7C9C8B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.576 -0400", hash_original_method = "7C2BC7AE1B8B283C846DFC926BD1514D", hash_generated_method = "545C555B9486493C4D866EE22D7C9C8B")
     public  SessionExpiresParser(String text) {
         super(text);
         addTaint(text.getTaint());
@@ -23,7 +23,7 @@ public class SessionExpiresParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.629 -0400", hash_original_method = "821EB3B546274960D96C2E7F96AD190B", hash_generated_method = "44A1638EF63BA8B620473329084C8EBC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.578 -0400", hash_original_method = "821EB3B546274960D96C2E7F96AD190B", hash_generated_method = "44A1638EF63BA8B620473329084C8EBC")
     protected  SessionExpiresParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -31,9 +31,9 @@ public class SessionExpiresParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.630 -0400", hash_original_method = "3CD97DF13D6C3B595D5C8777AA80A144", hash_generated_method = "79C8B6BE5FC581D8461A89E96153B77D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.582 -0400", hash_original_method = "3CD97DF13D6C3B595D5C8777AA80A144", hash_generated_method = "85B5AA311342DA00414BE049AF43306B")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1195337381 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_27245354 = null; //Variable for return #1
         SessionExpires se;
         se = new SessionExpires();
         dbg_enter("parse");
@@ -58,14 +58,14 @@ public class SessionExpiresParser extends ParametersParser {
             } //End block
             this.lexer.SPorHT();
             super.parse(se);
-            varB4EAC82CA7396A68D541C85D26508E83_1195337381 = se;
+            varB4EAC82CA7396A68D541C85D26508E83_27245354 = se;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1195337381.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1195337381;
+        varB4EAC82CA7396A68D541C85D26508E83_27245354.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_27245354;
         // ---------- Original Method ----------
         //SessionExpires se = new SessionExpires();
         //if (debug)

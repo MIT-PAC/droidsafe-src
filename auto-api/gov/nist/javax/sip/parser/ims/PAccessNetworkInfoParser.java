@@ -20,7 +20,7 @@ import gov.nist.javax.sip.parser.TokenTypes;
 
 public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.647 -0400", hash_original_method = "6DB4AD794C60B8862A83AFB0C9C82A92", hash_generated_method = "0626EAFE4B05112392B453E5EB07C05A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.588 -0400", hash_original_method = "6DB4AD794C60B8862A83AFB0C9C82A92", hash_generated_method = "0626EAFE4B05112392B453E5EB07C05A")
     public  PAccessNetworkInfoParser(String accessNetwork) {
         super(accessNetwork);
         addTaint(accessNetwork.getTaint());
@@ -28,7 +28,7 @@ public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.647 -0400", hash_original_method = "3B0D9C588403AF5495F889BAEC6E0FEE", hash_generated_method = "68D1D3CFA3C0BDE696C93371CF1A8F52")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.588 -0400", hash_original_method = "3B0D9C588403AF5495F889BAEC6E0FEE", hash_generated_method = "68D1D3CFA3C0BDE696C93371CF1A8F52")
     protected  PAccessNetworkInfoParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -36,9 +36,9 @@ public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.662 -0400", hash_original_method = "0BB1DE6FBD7AB2CBAE3BF43510D39D52", hash_generated_method = "613DF079AA1ABF3A6668981DD612E1E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.595 -0400", hash_original_method = "0BB1DE6FBD7AB2CBAE3BF43510D39D52", hash_generated_method = "003585C682C32B44207587FA9ACC02BA")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_422815815 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1994411065 = null; //Variable for return #1
         dbg_enter("AccessNetworkInfoParser.parse");
         try 
         {
@@ -53,7 +53,7 @@ public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes
             accessNetworkInfo.setAccessType(token.getTokenValue());
             this.lexer.SPorHT();
             {
-                boolean var23D2B54EEDE70417D1C6C30933AF4A72_1979894234 = (lexer.lookAhead(0) == ';');
+                boolean var23D2B54EEDE70417D1C6C30933AF4A72_922019781 = (lexer.lookAhead(0) == ';');
                 {
                     this.lexer.match(';');
                     this.lexer.SPorHT();
@@ -65,14 +65,14 @@ public class PAccessNetworkInfoParser extends HeaderParser implements TokenTypes
             } //End collapsed parenthetic
             this.lexer.SPorHT();
             this.lexer.match('\n');
-            varB4EAC82CA7396A68D541C85D26508E83_422815815 = accessNetworkInfo;
+            varB4EAC82CA7396A68D541C85D26508E83_1994411065 = accessNetworkInfo;
         } //End block
         finally 
         {
             dbg_leave("AccessNetworkInfoParser.parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_422815815.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_422815815;
+        varB4EAC82CA7396A68D541C85D26508E83_1994411065.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1994411065;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

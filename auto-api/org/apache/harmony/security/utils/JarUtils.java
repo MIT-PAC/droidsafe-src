@@ -33,7 +33,7 @@ import org.apache.harmony.xnet.provider.jsse.OpenSSLSignature;
 
 public class JarUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.152 -0400", hash_original_method = "C4E6A9DD3A1CC4544C825D59A384053A", hash_generated_method = "C4E6A9DD3A1CC4544C825D59A384053A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.089 -0400", hash_original_method = "C4E6A9DD3A1CC4544C825D59A384053A", hash_generated_method = "C4E6A9DD3A1CC4544C825D59A384053A")
     public JarUtils ()
     {
         //Synthesized constructor
@@ -165,7 +165,7 @@ public class JarUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.154 -0400", hash_original_field = "FA70A93BA7FB82881F779F0105AF644D", hash_generated_field = "2E5FB1510C415F311A9FEE31C4DB6013")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.091 -0400", hash_original_field = "FA70A93BA7FB82881F779F0105AF644D", hash_generated_field = "2E5FB1510C415F311A9FEE31C4DB6013")
 
     private static int[] MESSAGE_DIGEST_OID = new int[] {1, 2, 840, 113549, 1, 9, 4};
 }

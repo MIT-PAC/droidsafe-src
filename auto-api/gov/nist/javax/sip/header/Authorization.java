@@ -12,14 +12,14 @@ import javax.sip.header.*;
 
 public class Authorization extends gov.nist.javax.sip.header.AuthenticationHeader implements javax.sip.header.AuthorizationHeader, AuthorizationHeaderIms {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.505 -0400", hash_original_method = "390B0B8BBF60F6FD3586C13C265D073D", hash_generated_method = "AD8D70E330952B9379E225330ADC6836")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.373 -0400", hash_original_method = "390B0B8BBF60F6FD3586C13C265D073D", hash_generated_method = "AD8D70E330952B9379E225330ADC6836")
     public  Authorization() {
         super(AuthorizationHeader.NAME);
         // ---------- Original Method ----------
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.505 -0400", hash_original_field = "4C9A4D291CA45295D5BEF72361F9212A", hash_generated_field = "6AF98BC003656A13085389FBD81A0369")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.374 -0400", hash_original_field = "4C9A4D291CA45295D5BEF72361F9212A", hash_generated_field = "6AF98BC003656A13085389FBD81A0369")
 
     private static long serialVersionUID = -8897770321892281348L;
 }

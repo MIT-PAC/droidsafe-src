@@ -27,7 +27,7 @@ import org.apache.harmony.luni.internal.util.TimezoneGetter;
 
 public class RuntimeInit {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.555 -0400", hash_original_method = "82505B17DF4892252BD2E987919E8FA9", hash_generated_method = "82505B17DF4892252BD2E987919E8FA9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.991 -0400", hash_original_method = "82505B17DF4892252BD2E987919E8FA9", hash_generated_method = "82505B17DF4892252BD2E987919E8FA9")
     public RuntimeInit ()
     {
         //Synthesized constructor
@@ -212,14 +212,14 @@ public class RuntimeInit {
     
     private static class UncaughtHandler implements Thread.UncaughtExceptionHandler {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.590 -0400", hash_original_method = "DEBC568C3CCF1424A96EDBFCCD0328BF", hash_generated_method = "DEBC568C3CCF1424A96EDBFCCD0328BF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.995 -0400", hash_original_method = "DEBC568C3CCF1424A96EDBFCCD0328BF", hash_generated_method = "DEBC568C3CCF1424A96EDBFCCD0328BF")
         public UncaughtHandler ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.596 -0400", hash_original_method = "498D7614C18F40B02B7387DE4641DDCF", hash_generated_method = "A98996ADEDBCAA208467608BF438E4F2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.012 -0400", hash_original_method = "498D7614C18F40B02B7387DE4641DDCF", hash_generated_method = "A98996ADEDBCAA208467608BF438E4F2")
         public void uncaughtException(Thread t, Throwable e) {
             try 
             {
@@ -246,14 +246,14 @@ public class RuntimeInit {
 
     
     static class Arguments {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.596 -0400", hash_original_field = "5FB52C4DFFDBD9F9BAD0FDF89CA414E2", hash_generated_field = "54F1E4F701E6BC5080DD319C8D10B220")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.077 -0400", hash_original_field = "5FB52C4DFFDBD9F9BAD0FDF89CA414E2", hash_generated_field = "54F1E4F701E6BC5080DD319C8D10B220")
 
         String startClass;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.596 -0400", hash_original_field = "CC8D290819A005A96D012B30D48D8B94", hash_generated_field = "711B2441164D898E55743AC3E8A55306")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.077 -0400", hash_original_field = "CC8D290819A005A96D012B30D48D8B94", hash_generated_field = "711B2441164D898E55743AC3E8A55306")
 
         String[] startArgs;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.596 -0400", hash_original_method = "35BDC5101A4DE38616FDCE6EF4D8CA10", hash_generated_method = "93727DD36372CF1A291DAD9D71E1FF73")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.077 -0400", hash_original_method = "35BDC5101A4DE38616FDCE6EF4D8CA10", hash_generated_method = "93727DD36372CF1A291DAD9D71E1FF73")
           Arguments(String args[]) throws IllegalArgumentException {
             parseArgs(args);
             addTaint(args.getTaint());
@@ -262,7 +262,7 @@ public class RuntimeInit {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.604 -0400", hash_original_method = "8231389587D8A1396F36A075174F3D3F", hash_generated_method = "1D5C631DA7D8A4907D79BED78CA7ACAF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.078 -0400", hash_original_method = "8231389587D8A1396F36A075174F3D3F", hash_generated_method = "E68AFD5EE8FCCA20F69AABFD0E7C164B")
         private void parseArgs(String args[]) throws IllegalArgumentException {
             int curArg;
             curArg = 0;
@@ -270,9 +270,9 @@ public class RuntimeInit {
                 String arg;
                 arg = args[curArg];
                 {
-                    boolean var566DD555814D764ED9A29C42F8874316_2051967681 = (arg.equals("--"));
+                    boolean var566DD555814D764ED9A29C42F8874316_1633845367 = (arg.equals("--"));
                     {
-                        boolean var8DF5AAC12FA4329A4CC6BF5AA3E9BEE4_1350557050 = (!arg.startsWith("--"));
+                        boolean var8DF5AAC12FA4329A4CC6BF5AA3E9BEE4_920587246 = (!arg.startsWith("--"));
                     } //End collapsed parenthetic
                 } //End collapsed parenthetic
             } //End block
@@ -306,19 +306,19 @@ public class RuntimeInit {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.604 -0400", hash_original_field = "F88265C21754A18C5BC383814994D78A", hash_generated_field = "5EE5B1AF8151F27122B430818DCB5757")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.078 -0400", hash_original_field = "F88265C21754A18C5BC383814994D78A", hash_generated_field = "5EE5B1AF8151F27122B430818DCB5757")
 
     private static String TAG = "AndroidRuntime";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.604 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.078 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
 
     private static boolean DEBUG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.604 -0400", hash_original_field = "84D10A1ED612E61DBF6880F6E3EE533A", hash_generated_field = "9FD51B35B9E2224AA107F59D57389A34")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.078 -0400", hash_original_field = "84D10A1ED612E61DBF6880F6E3EE533A", hash_generated_field = "9FD51B35B9E2224AA107F59D57389A34")
 
     private static boolean initialized;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.604 -0400", hash_original_field = "777B24D90C777256AC6D770CED6B0E76", hash_generated_field = "254F062FB27979B6C2E631565CC9502B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.078 -0400", hash_original_field = "777B24D90C777256AC6D770CED6B0E76", hash_generated_field = "254F062FB27979B6C2E631565CC9502B")
 
     private static IBinder mApplicationObject;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.604 -0400", hash_original_field = "2C716F2860097FF2151CEBE01C614E86", hash_generated_field = "7061173743FAA271B75796C94B51B8DD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.078 -0400", hash_original_field = "2C716F2860097FF2151CEBE01C614E86", hash_generated_field = "7061173743FAA271B75796C94B51B8DD")
 
     private static volatile boolean mCrashing = false;
     static {

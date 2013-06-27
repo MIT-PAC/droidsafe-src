@@ -10,14 +10,14 @@ import java.util.Iterator;
 import java.util.Arrays;
 
 public final class ObjectIdentifier {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.709 -0400", hash_original_field = "130F43112BB8A7A7790EBFC08EE9D6AF", hash_generated_field = "282BA3ECCB824558DBD68D7EB102F89D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.683 -0400", hash_original_field = "130F43112BB8A7A7790EBFC08EE9D6AF", hash_generated_field = "282BA3ECCB824558DBD68D7EB102F89D")
 
     private int[] oid;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.710 -0400", hash_original_field = "DE27C66C20C38B882DA535901EBF09FA", hash_generated_field = "B67A2A548CCCA3ABBCDCF1E77441B37F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.683 -0400", hash_original_field = "DE27C66C20C38B882DA535901EBF09FA", hash_generated_field = "B67A2A548CCCA3ABBCDCF1E77441B37F")
 
     private String soid;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.715 -0400", hash_original_method = "20230C77538103726EF6427B9F75CADF", hash_generated_method = "695B95975CC186A99EED9C9A4C949FFD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.683 -0400", hash_original_method = "20230C77538103726EF6427B9F75CADF", hash_generated_method = "695B95975CC186A99EED9C9A4C949FFD")
     public  ObjectIdentifier(int[] oid) {
         validate(oid);
         this.oid = oid;
@@ -27,7 +27,7 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.730 -0400", hash_original_method = "33C298706B9DEBE0D1CFE9C3A9D89C98", hash_generated_method = "29DFD93289F4CBDE2E7B748208083263")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.683 -0400", hash_original_method = "33C298706B9DEBE0D1CFE9C3A9D89C98", hash_generated_method = "29DFD93289F4CBDE2E7B748208083263")
     public  ObjectIdentifier(String strOid) {
         this.oid = toIntArray(strOid);
         this.soid = strOid;
@@ -37,16 +37,16 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.730 -0400", hash_original_method = "7A1590EC642F64148081547F7DE77EEF", hash_generated_method = "F428C2292F718F9D328BFA5D42D93B76")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.684 -0400", hash_original_method = "7A1590EC642F64148081547F7DE77EEF", hash_generated_method = "8D9C7A989DCC7F6762216A3DAC74CAE8")
     @Override
     public boolean equals(Object o) {
         {
-            boolean var9B27E520BBC2DDC5CC18F0AC09DC0048_2105875446 = (o == null || this.getClass() != o.getClass());
+            boolean var9B27E520BBC2DDC5CC18F0AC09DC0048_833062012 = (o == null || this.getClass() != o.getClass());
         } //End collapsed parenthetic
-        boolean var85CA6B7259588F8D393C14CCCE2DBEB8_880246271 = (Arrays.equals(oid, ((ObjectIdentifier) o).oid));
+        boolean var85CA6B7259588F8D393C14CCCE2DBEB8_1370483300 = (Arrays.equals(oid, ((ObjectIdentifier) o).oid));
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1235760325 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1235760325;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_450182357 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_450182357;
         // ---------- Original Method ----------
         //if (this == o) {
             //return true;
@@ -58,16 +58,16 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.731 -0400", hash_original_method = "CBAF5DCAABB7CFC3E05C923E938DB148", hash_generated_method = "39F8CF1D2772E37A7943DBA8F261DEFF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.685 -0400", hash_original_method = "CBAF5DCAABB7CFC3E05C923E938DB148", hash_generated_method = "B295DA0C04F67E244EED5A2FDBF6C63C")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1951258595 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1796714792 = null; //Variable for return #1
         {
             soid = toString(oid);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1951258595 = soid;
-        varB4EAC82CA7396A68D541C85D26508E83_1951258595.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1951258595;
+        varB4EAC82CA7396A68D541C85D26508E83_1796714792 = soid;
+        varB4EAC82CA7396A68D541C85D26508E83_1796714792.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1796714792;
         // ---------- Original Method ----------
         //if (soid == null) {
             //soid = toString(oid);
@@ -76,7 +76,7 @@ public final class ObjectIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.731 -0400", hash_original_method = "8929009F517116C951EAF49377701B44", hash_generated_method = "4FCB5212AF26EBA67DACECCDD1413B9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.685 -0400", hash_original_method = "8929009F517116C951EAF49377701B44", hash_generated_method = "37C6D8F88C22BD8455FC5562A8FC1428")
     @Override
     public int hashCode() {
         int intHash;
@@ -88,8 +88,8 @@ public final class ObjectIdentifier {
                 intHash += oid[i] << (8 * i);
             } //End block
         } //End collapsed parenthetic
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1054270027 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1054270027;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_785622755 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_785622755;
         // ---------- Original Method ----------
         //int intHash = 0;
         //for (int i = 0; i < oid.length && i < 4; i++) {

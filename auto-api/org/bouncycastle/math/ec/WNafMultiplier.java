@@ -11,14 +11,14 @@ import java.math.BigInteger;
 
 class WNafMultiplier implements ECMultiplier {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.554 -0400", hash_original_method = "C00227C22ED402D319A853243DDBC230", hash_generated_method = "C00227C22ED402D319A853243DDBC230")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.476 -0400", hash_original_method = "C00227C22ED402D319A853243DDBC230", hash_generated_method = "C00227C22ED402D319A853243DDBC230")
     public WNafMultiplier ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.557 -0400", hash_original_method = "1459872133D83D08012D8F1A13CEC4DA", hash_generated_method = "7A810B5BDD7DA79C5AEC536E150EA4F4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.483 -0400", hash_original_method = "1459872133D83D08012D8F1A13CEC4DA", hash_generated_method = "D599387B9729858C582DDB255A4FDD2D")
     public byte[] windowNaf(byte width, BigInteger k) {
         byte[] wnaf;
         wnaf = new byte[k.bitLength() + 1];
@@ -31,15 +31,15 @@ class WNafMultiplier implements ECMultiplier {
         int length;
         length = 0;
         {
-            boolean var90BEB270CA27021819A075365AD08434_728137491 = (k.signum() > 0);
+            boolean var90BEB270CA27021819A075365AD08434_259846388 = (k.signum() > 0);
             {
                 {
-                    boolean var383F976E410154A745E3FC06B83A2214_972138355 = (k.testBit(0));
+                    boolean var383F976E410154A745E3FC06B83A2214_615269018 = (k.testBit(0));
                     {
                         BigInteger remainder;
                         remainder = k.mod(pow2wBI);
                         {
-                            boolean var1DBB8A5A29EBE1DCC5BC003EFB8FD3E2_324237739 = (remainder.testBit(width - 1));
+                            boolean var1DBB8A5A29EBE1DCC5BC003EFB8FD3E2_2080268756 = (remainder.testBit(width - 1));
                             {
                                 wnaf[i] = (byte)(remainder.intValue() - pow2wB);
                             } //End block
@@ -62,16 +62,16 @@ class WNafMultiplier implements ECMultiplier {
         System.arraycopy(wnaf, 0, wnafShort, 0, length);
         addTaint(width);
         addTaint(k.getTaint());
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_110334485 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_110334485;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1840528470 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1840528470;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.562 -0400", hash_original_method = "6B924519E3A0D968D1CF685546CDD2FF", hash_generated_method = "4F042847224625AEBB3082E66F959FD3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.486 -0400", hash_original_method = "6B924519E3A0D968D1CF685546CDD2FF", hash_generated_method = "38B82264B7777D382634911C35A119CB")
     public ECPoint multiply(ECPoint p, BigInteger k, PreCompInfo preCompInfo) {
-        ECPoint varB4EAC82CA7396A68D541C85D26508E83_326395741 = null; //Variable for return #1
+        ECPoint varB4EAC82CA7396A68D541C85D26508E83_865188229 = null; //Variable for return #1
         WNafPreCompInfo wnafPreCompInfo;
         {
             wnafPreCompInfo = (WNafPreCompInfo)preCompInfo;
@@ -173,12 +173,12 @@ class WNafMultiplier implements ECMultiplier {
         wnafPreCompInfo.setPreComp(preComp);
         wnafPreCompInfo.setTwiceP(twiceP);
         p.setPreCompInfo(wnafPreCompInfo);
-        varB4EAC82CA7396A68D541C85D26508E83_326395741 = q;
+        varB4EAC82CA7396A68D541C85D26508E83_865188229 = q;
         addTaint(p.getTaint());
         addTaint(k.getTaint());
         addTaint(preCompInfo.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_326395741.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_326395741;
+        varB4EAC82CA7396A68D541C85D26508E83_865188229.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_865188229;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

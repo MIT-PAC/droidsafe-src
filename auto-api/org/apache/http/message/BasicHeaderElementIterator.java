@@ -16,23 +16,23 @@ import org.apache.http.HeaderIterator;
 import org.apache.http.util.CharArrayBuffer;
 
 public class BasicHeaderElementIterator implements HeaderElementIterator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.891 -0400", hash_original_field = "17843B798641DCC33A90FE8CA70EEC07", hash_generated_field = "681B665373B1CBEA8829DF2690903333")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.098 -0400", hash_original_field = "17843B798641DCC33A90FE8CA70EEC07", hash_generated_field = "681B665373B1CBEA8829DF2690903333")
 
     private HeaderIterator headerIt;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.891 -0400", hash_original_field = "3643B86326B2FFCC0A085B4DD3A4309B", hash_generated_field = "FD033C82BEBC8E8A0B95CC65BD0BF608")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.098 -0400", hash_original_field = "3643B86326B2FFCC0A085B4DD3A4309B", hash_generated_field = "FD033C82BEBC8E8A0B95CC65BD0BF608")
 
     private HeaderValueParser parser;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.891 -0400", hash_original_field = "C78122D2807BC4DCAF6855B3CE30A527", hash_generated_field = "231DE4F2E10C59C340873284ECC7C9AF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.098 -0400", hash_original_field = "C78122D2807BC4DCAF6855B3CE30A527", hash_generated_field = "231DE4F2E10C59C340873284ECC7C9AF")
 
     private HeaderElement currentElement = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.891 -0400", hash_original_field = "0ED511E8C84BB7FDA5F61798CB01880D", hash_generated_field = "53E15FD8A31F799570449598E4AA1AA4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.098 -0400", hash_original_field = "0ED511E8C84BB7FDA5F61798CB01880D", hash_generated_field = "53E15FD8A31F799570449598E4AA1AA4")
 
     private CharArrayBuffer buffer = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.891 -0400", hash_original_field = "C32D2FC93A126CB666E8822C654D1555", hash_generated_field = "9D605F3FE696EE28F8BA84A7E0920C68")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.098 -0400", hash_original_field = "C32D2FC93A126CB666E8822C654D1555", hash_generated_field = "9D605F3FE696EE28F8BA84A7E0920C68")
 
     private ParserCursor cursor = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.902 -0400", hash_original_method = "65CFF0B218928C469B4491A10DEABC8E", hash_generated_method = "83BEB2B4EA36ECE19C68BF1B820AE59B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.099 -0400", hash_original_method = "65CFF0B218928C469B4491A10DEABC8E", hash_generated_method = "83BEB2B4EA36ECE19C68BF1B820AE59B")
     public  BasicHeaderElementIterator(
             final HeaderIterator headerIterator,
             final HeaderValueParser parser) {
@@ -56,7 +56,7 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.903 -0400", hash_original_method = "301A478E2A86B8C402F0249D1AC3F9AF", hash_generated_method = "0BA798262BA1C6E9267FA954868A3FCA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.099 -0400", hash_original_method = "301A478E2A86B8C402F0249D1AC3F9AF", hash_generated_method = "0BA798262BA1C6E9267FA954868A3FCA")
     public  BasicHeaderElementIterator(final HeaderIterator headerIterator) {
         this(headerIterator, BasicHeaderValueParser.DEFAULT);
         addTaint(headerIterator.getTaint());
@@ -64,12 +64,12 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.904 -0400", hash_original_method = "C8E28B138A9C5D591B033922ABD8E30E", hash_generated_method = "B608F06EB4CE6405F0FD0AA508022F92")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.102 -0400", hash_original_method = "C8E28B138A9C5D591B033922ABD8E30E", hash_generated_method = "8B638DEAAE8252CDA2B6DD5BC59C2184")
     private void bufferHeaderValue() {
         this.cursor = null;
         this.buffer = null;
         {
-            boolean var4B49ECDFBB9AA35B6CED36FF20359A7D_1479009712 = (this.headerIt.hasNext());
+            boolean var4B49ECDFBB9AA35B6CED36FF20359A7D_1317892063 = (this.headerIt.hasNext());
             {
                 Header h;
                 h = this.headerIt.nextHeader();
@@ -112,25 +112,25 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.905 -0400", hash_original_method = "AD9B9B018316D22B2D55EF0E8A1D3706", hash_generated_method = "79AE21B56B3BC4C4322279E578D96654")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.105 -0400", hash_original_method = "AD9B9B018316D22B2D55EF0E8A1D3706", hash_generated_method = "BAA60E3F7FCED1E047E64C0B7CC921BE")
     private void parseNextElement() {
         {
-            boolean var09C563F417B20DBC09C799813B5B57F2_1295495182 = (this.headerIt.hasNext() || this.cursor != null);
+            boolean var09C563F417B20DBC09C799813B5B57F2_1089848052 = (this.headerIt.hasNext() || this.cursor != null);
             {
                 {
-                    boolean varA17C9442C72AD9D744B6A2CE535A4E5D_86830030 = (this.cursor == null || this.cursor.atEnd());
+                    boolean varA17C9442C72AD9D744B6A2CE535A4E5D_1986210268 = (this.cursor == null || this.cursor.atEnd());
                     {
                         bufferHeaderValue();
                     } //End block
                 } //End collapsed parenthetic
                 {
                     {
-                        boolean var37DDCB866335BA4CFFDA3E754AEC46CB_1550143535 = (!this.cursor.atEnd());
+                        boolean var37DDCB866335BA4CFFDA3E754AEC46CB_1140940327 = (!this.cursor.atEnd());
                         {
                             HeaderElement e;
                             e = this.parser.parseHeaderElement(this.buffer, this.cursor);
                             {
-                                boolean varF638E443B5A1ABDA5428F9E7711C8D01_1378560035 = (!(e.getName().length() == 0 && e.getValue() == null));
+                                boolean varF638E443B5A1ABDA5428F9E7711C8D01_639642777 = (!(e.getName().length() == 0 && e.getValue() == null));
                                 {
                                     this.currentElement = e;
                                 } //End block
@@ -138,7 +138,7 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
                         } //End block
                     } //End collapsed parenthetic
                     {
-                        boolean var175B52DC687943A501540A48B3FA9D67_721627745 = (this.cursor.atEnd());
+                        boolean var175B52DC687943A501540A48B3FA9D67_1369954161 = (this.cursor.atEnd());
                         {
                             this.cursor = null;
                             this.buffer = null;
@@ -152,13 +152,13 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.906 -0400", hash_original_method = "7B092A345DC93A80FE3D1D4087DB2A38", hash_generated_method = "AB23A9350F28AFE3899C0295C6D1A296")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.105 -0400", hash_original_method = "7B092A345DC93A80FE3D1D4087DB2A38", hash_generated_method = "C2855EFA711E0AB6A0BBC426FA03DDA6")
     public boolean hasNext() {
         {
             parseNextElement();
         } //End block
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1317654757 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1317654757;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_544005731 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_544005731;
         // ---------- Original Method ----------
         //if (this.currentElement == null) {
             //parseNextElement();
@@ -167,9 +167,9 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.906 -0400", hash_original_method = "242DF42D4654E6C59596DAD87DF1998D", hash_generated_method = "7AC13997B41B1239108532D092ECD392")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.106 -0400", hash_original_method = "242DF42D4654E6C59596DAD87DF1998D", hash_generated_method = "32E7A4A85299C7A281CDC90E6D1DD79C")
     public HeaderElement nextElement() throws NoSuchElementException {
-        HeaderElement varB4EAC82CA7396A68D541C85D26508E83_515297229 = null; //Variable for return #1
+        HeaderElement varB4EAC82CA7396A68D541C85D26508E83_578406043 = null; //Variable for return #1
         {
             parseNextElement();
         } //End block
@@ -179,9 +179,9 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
         HeaderElement element;
         element = this.currentElement;
         this.currentElement = null;
-        varB4EAC82CA7396A68D541C85D26508E83_515297229 = element;
-        varB4EAC82CA7396A68D541C85D26508E83_515297229.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_515297229;
+        varB4EAC82CA7396A68D541C85D26508E83_578406043 = element;
+        varB4EAC82CA7396A68D541C85D26508E83_578406043.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_578406043;
         // ---------- Original Method ----------
         //if (this.currentElement == null) {
             //parseNextElement();
@@ -195,18 +195,18 @@ public class BasicHeaderElementIterator implements HeaderElementIterator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.915 -0400", hash_original_method = "4D3D2FFF1A269DAEEFECD9D2B54EE606", hash_generated_method = "A76CD0B4AE4659FA5DADF47A41023726")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.106 -0400", hash_original_method = "4D3D2FFF1A269DAEEFECD9D2B54EE606", hash_generated_method = "E1481F2004D627EA294E6D9F24B501D9")
     public final Object next() throws NoSuchElementException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1572003195 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1572003195 = nextElement();
-        varB4EAC82CA7396A68D541C85D26508E83_1572003195.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1572003195;
+        Object varB4EAC82CA7396A68D541C85D26508E83_76148072 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_76148072 = nextElement();
+        varB4EAC82CA7396A68D541C85D26508E83_76148072.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_76148072;
         // ---------- Original Method ----------
         //return nextElement();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.915 -0400", hash_original_method = "4B70E222D9C00405F539E6D61C7F2493", hash_generated_method = "11E3365630BCDCA4B3D11BB4FF46A1B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.107 -0400", hash_original_method = "4B70E222D9C00405F539E6D61C7F2493", hash_generated_method = "11E3365630BCDCA4B3D11BB4FF46A1B1")
     public void remove() throws UnsupportedOperationException {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException("Remove not supported");
         // ---------- Original Method ----------

@@ -11,7 +11,7 @@ import org.apache.http.params.HttpParams;
 
 public class HttpClientParams {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.988 -0400", hash_original_method = "C1A6271AA6801B961C8CB360166C77E0", hash_generated_method = "3ABEB5187B9BC90F9E9381CD590B61B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:14.958 -0400", hash_original_method = "C1A6271AA6801B961C8CB360166C77E0", hash_generated_method = "3ABEB5187B9BC90F9E9381CD590B61B4")
     private  HttpClientParams() {
         super();
         // ---------- Original Method ----------

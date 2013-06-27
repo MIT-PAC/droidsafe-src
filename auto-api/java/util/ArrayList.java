@@ -16,14 +16,14 @@ import java.lang.reflect.Array;
 import libcore.util.EmptyArray;
 
 public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializable, RandomAccess {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.448 -0400", hash_original_field = "F7BD60B75B29D79B660A2859395C1A24", hash_generated_field = "673BDAEBF4FBC900963E210E042549D6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.433 -0400", hash_original_field = "F7BD60B75B29D79B660A2859395C1A24", hash_generated_field = "673BDAEBF4FBC900963E210E042549D6")
 
     int size;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.448 -0400", hash_original_field = "F1F713C9E000F5D3F280ADBD124DF4F5", hash_generated_field = "7675584818BEF48C593B15A4C030F967")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.433 -0400", hash_original_field = "F1F713C9E000F5D3F280ADBD124DF4F5", hash_generated_field = "7675584818BEF48C593B15A4C030F967")
 
     transient Object[] array;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.457 -0400", hash_original_method = "3E3801877D646C78E965A019C35437FB", hash_generated_method = "787A8AE4754B859BD998B72D9CEADBE9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.434 -0400", hash_original_method = "3E3801877D646C78E965A019C35437FB", hash_generated_method = "787A8AE4754B859BD998B72D9CEADBE9")
     public  ArrayList(int capacity) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
@@ -37,7 +37,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.457 -0400", hash_original_method = "A7503C07B95C656689F43518416554F0", hash_generated_method = "A3AEAA024802F16BF2F719D937C47F2E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.437 -0400", hash_original_method = "A7503C07B95C656689F43518416554F0", hash_generated_method = "A3AEAA024802F16BF2F719D937C47F2E")
     public  ArrayList() {
         array = EmptyArray.OBJECT;
         // ---------- Original Method ----------
@@ -45,12 +45,12 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.457 -0400", hash_original_method = "AE7C60C91D4192AC5637CB5677158233", hash_generated_method = "F00F7D20693EDF48C83AADF7F90557FF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.438 -0400", hash_original_method = "AE7C60C91D4192AC5637CB5677158233", hash_generated_method = "DBF03F106F4197FFF717DF3099A6B0A5")
     public  ArrayList(Collection<? extends E> collection) {
         Object[] a;
         a = collection.toArray();
         {
-            boolean var16F77EF61B9474A82FE398A385F0E9B1_1861681853 = (a.getClass() != Object[].class);
+            boolean var16F77EF61B9474A82FE398A385F0E9B1_1752580381 = (a.getClass() != Object[].class);
             {
                 Object[] newArray;
                 newArray = new Object[a.length];
@@ -73,7 +73,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.462 -0400", hash_original_method = "2E95EC775538EB90DD9A0EBE35FC856F", hash_generated_method = "07C75FE1C9A2B2AF7FA6D4580FE2DBC6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.438 -0400", hash_original_method = "2E95EC775538EB90DD9A0EBE35FC856F", hash_generated_method = "FB9E463AF48B7CBDFD24BC96007EAF14")
     @Override
     public boolean add(E object) {
         Object[] a;
@@ -91,8 +91,8 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         a[s] = object;
         size = s + 1;
         addTaint(object.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_853844497 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_853844497;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1583903451 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1583903451;
         // ---------- Original Method ----------
         //Object[] a = array;
         //int s = size;
@@ -110,7 +110,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.464 -0400", hash_original_method = "C5A93B072C15A6072F87F254E0F87786", hash_generated_method = "8A21790609C3C3350A9A2CEDE25D259F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.439 -0400", hash_original_method = "C5A93B072C15A6072F87F254E0F87786", hash_generated_method = "8A21790609C3C3350A9A2CEDE25D259F")
     @Override
     public void add(int index, E object) {
         Object[] a;
@@ -161,7 +161,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.469 -0400", hash_original_method = "C337453C40DBE6A93E9B9333DA2BDDBD", hash_generated_method = "0FB56033B1CB9FAAFD49A82C4420E800")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.449 -0400", hash_original_method = "C337453C40DBE6A93E9B9333DA2BDDBD", hash_generated_method = "8F8AC7182469B291A293AD7B29F9858D")
     @Override
     public boolean addAll(Collection<? extends E> collection) {
         Object[] newPart;
@@ -185,8 +185,8 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         System.arraycopy(newPart, 0, a, s, newPartSize);
         size = newSize;
         addTaint(collection.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1618818284 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1618818284;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1835655507 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1835655507;
         // ---------- Original Method ----------
         //Object[] newPart = collection.toArray();
         //int newPartSize = newPart.length;
@@ -209,7 +209,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.470 -0400", hash_original_method = "878D1F0A34AD7389A9EB37A1AF5C813D", hash_generated_method = "4F1A3782EAF2416EFAA9BF14DC51F151")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.450 -0400", hash_original_method = "878D1F0A34AD7389A9EB37A1AF5C813D", hash_generated_method = "77E341CAAFC58A918F965C6C69D3B94E")
     @Override
     public boolean addAll(int index, Collection<? extends E> collection) {
         int s;
@@ -241,8 +241,8 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         size = newSize;
         addTaint(index);
         addTaint(collection.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1861452215 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1861452215;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_516383284 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_516383284;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -253,7 +253,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.473 -0400", hash_original_method = "C8A90352D37E56C32915D97A4B0A7D28", hash_generated_method = "32F9F0A50B6063DF0522FFBEB7BCE20A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.454 -0400", hash_original_method = "C8A90352D37E56C32915D97A4B0A7D28", hash_generated_method = "32F9F0A50B6063DF0522FFBEB7BCE20A")
     @Override
     public void clear() {
         {
@@ -269,23 +269,23 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.473 -0400", hash_original_method = "B3DA051C4891B8092C007B9652169D27", hash_generated_method = "5207D2E878AED5ABCC57E06A15BA85BE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.455 -0400", hash_original_method = "B3DA051C4891B8092C007B9652169D27", hash_generated_method = "A7C0B94A7824872588E036FE7F12CB67")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1860208681 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_1792772543 = null; //Variable for return #1
         try 
         {
             ArrayList<?> result;
             result = (ArrayList<?>) super.clone();
             result.array = array.clone();
-            varB4EAC82CA7396A68D541C85D26508E83_1860208681 = result;
+            varB4EAC82CA7396A68D541C85D26508E83_1792772543 = result;
         } //End block
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1860208681.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1860208681;
+        varB4EAC82CA7396A68D541C85D26508E83_1792772543.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1792772543;
         // ---------- Original Method ----------
         //try {
             //ArrayList<?> result = (ArrayList<?>) super.clone();
@@ -297,7 +297,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.475 -0400", hash_original_method = "0AF2E3B013DB3C28C26CEAAD130BA61A", hash_generated_method = "1D3CC7BEF64E34603D17B3D00CF1799A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.455 -0400", hash_original_method = "0AF2E3B013DB3C28C26CEAAD130BA61A", hash_generated_method = "1D3CC7BEF64E34603D17B3D00CF1799A")
     public void ensureCapacity(int minimumCapacity) {
         Object[] a;
         a = array;
@@ -319,18 +319,18 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.475 -0400", hash_original_method = "BE11B967A1A0587EBAE1CDD4CD567558", hash_generated_method = "B8BD41DD5DF6EFA5813DC5928D8960B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.487 -0400", hash_original_method = "BE11B967A1A0587EBAE1CDD4CD567558", hash_generated_method = "BA7220E0F41C99A3A171D2F7B8050913")
     @SuppressWarnings("unchecked")
     @Override
     public E get(int index) {
-        E varB4EAC82CA7396A68D541C85D26508E83_596995713 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_1205183208 = null; //Variable for return #1
         {
             throwIndexOutOfBoundsException(index, size);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_596995713 = (E) array[index];
+        varB4EAC82CA7396A68D541C85D26508E83_1205183208 = (E) array[index];
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_596995713.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_596995713;
+        varB4EAC82CA7396A68D541C85D26508E83_1205183208.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1205183208;
         // ---------- Original Method ----------
         //if (index >= size) {
             //throwIndexOutOfBoundsException(index, size);
@@ -339,27 +339,27 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.481 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "5DAF3D62247C395FA362388CBA0BA5C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.488 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "717E54C406B9893D658E5C34D313F781")
     @Override
     public int size() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785363515 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785363515;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1483483642 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1483483642;
         // ---------- Original Method ----------
         //return size;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.489 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "3194F4FFE5F90206A3BC6AFCB66F592F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.488 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "29F61B5D4AB189B9EBB62B4EAFD2E69C")
     @Override
     public boolean isEmpty() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_278130944 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_278130944;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_590129434 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_590129434;
         // ---------- Original Method ----------
         //return size == 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.489 -0400", hash_original_method = "64966ED2F2DBD125FF02B9B2F4262D7F", hash_generated_method = "9EEA382B36D6E4C553D8E77103FE69D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.489 -0400", hash_original_method = "64966ED2F2DBD125FF02B9B2F4262D7F", hash_generated_method = "A17F3285C02C7DF59C51D00A64FC4A6F")
     @Override
     public boolean contains(Object object) {
         Object[] a;
@@ -372,7 +372,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
                 i = 0;
                 {
                     {
-                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_1298152610 = (object.equals(a[i]));
+                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_1044454780 = (object.equals(a[i]));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
@@ -384,8 +384,8 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
             } //End collapsed parenthetic
         } //End block
         addTaint(object.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1751195996 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1751195996;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_39112195 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_39112195;
         // ---------- Original Method ----------
         //Object[] a = array;
         //int s = size;
@@ -406,7 +406,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.490 -0400", hash_original_method = "0D1C6275419222204CF4CD7DEABF4627", hash_generated_method = "5AE356FF7C51FCF05B4F396C52E5FAB8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.489 -0400", hash_original_method = "0D1C6275419222204CF4CD7DEABF4627", hash_generated_method = "84F5E291F320D7F00FE4C3C18BE313EB")
     @Override
     public int indexOf(Object object) {
         Object[] a;
@@ -419,7 +419,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
                 i = 0;
                 {
                     {
-                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_801102592 = (object.equals(a[i]));
+                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_69061878 = (object.equals(a[i]));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
@@ -431,8 +431,8 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
             } //End collapsed parenthetic
         } //End block
         addTaint(object.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_162829646 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_162829646;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_818754724 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_818754724;
         // ---------- Original Method ----------
         //Object[] a = array;
         //int s = size;
@@ -453,7 +453,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.490 -0400", hash_original_method = "A33DDE97246530740ADA37CC6A9CC384", hash_generated_method = "8F1D812126883ECB0CFA3E92C47B519E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.490 -0400", hash_original_method = "A33DDE97246530740ADA37CC6A9CC384", hash_generated_method = "87A434270614FCEFC0356CF2FA62880A")
     @Override
     public int lastIndexOf(Object object) {
         Object[] a;
@@ -464,7 +464,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
                 i = size - 1;
                 {
                     {
-                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_320095905 = (object.equals(a[i]));
+                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_1133155433 = (object.equals(a[i]));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
@@ -476,8 +476,8 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
             } //End collapsed parenthetic
         } //End block
         addTaint(object.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1021384089 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1021384089;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_424548641 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_424548641;
         // ---------- Original Method ----------
         //Object[] a = array;
         //if (object != null) {
@@ -497,10 +497,10 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.491 -0400", hash_original_method = "A1787B19405DA1FA0654C3278265A2A8", hash_generated_method = "7F31BC1794031FD774592D13437A78E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.491 -0400", hash_original_method = "A1787B19405DA1FA0654C3278265A2A8", hash_generated_method = "FA088F8C71D7F4EA48105A33E828F3A3")
     @Override
     public E remove(int index) {
-        E varB4EAC82CA7396A68D541C85D26508E83_1633445041 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_613613644 = null; //Variable for return #1
         Object[] a;
         a = array;
         int s;
@@ -513,10 +513,10 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         System.arraycopy(a, index + 1, a, index, --s - index);
         a[s] = null;
         size = s;
-        varB4EAC82CA7396A68D541C85D26508E83_1633445041 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_613613644 = result;
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_1633445041.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1633445041;
+        varB4EAC82CA7396A68D541C85D26508E83_613613644.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_613613644;
         // ---------- Original Method ----------
         //Object[] a = array;
         //int s = size;
@@ -532,7 +532,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.492 -0400", hash_original_method = "C2B3C3C4D1766953FF0E432D86502585", hash_generated_method = "559A7A17FC0AD1DAF7D6B17D6F5C71F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.521 -0400", hash_original_method = "C2B3C3C4D1766953FF0E432D86502585", hash_generated_method = "D5DA3239F91DAF995471FA1B982F6C7D")
     @Override
     public boolean remove(Object object) {
         Object[] a;
@@ -545,7 +545,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
                 i = 0;
                 {
                     {
-                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_1869816250 = (object.equals(a[i]));
+                        boolean varA6976E8F17BE504D77EDD08C90B63DC8_1052574969 = (object.equals(a[i]));
                         {
                             System.arraycopy(a, i + 1, a, i, --s - i);
                             a[s] = null;
@@ -569,8 +569,8 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
             } //End collapsed parenthetic
         } //End block
         addTaint(object.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1612669961 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1612669961;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_748032256 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_748032256;
         // ---------- Original Method ----------
         //Object[] a = array;
         //int s = size;
@@ -599,7 +599,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.493 -0400", hash_original_method = "D866DECE8E8344A6C98BF327EDBE1AFF", hash_generated_method = "02423E199BBD4B83D220499BC243FA0F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.527 -0400", hash_original_method = "D866DECE8E8344A6C98BF327EDBE1AFF", hash_generated_method = "02423E199BBD4B83D220499BC243FA0F")
     @Override
     protected void removeRange(int fromIndex, int toIndex) {
         Object[] a;
@@ -651,10 +651,10 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.493 -0400", hash_original_method = "F03306481ED210492B573188BD80D78C", hash_generated_method = "72CD92CB9AA49A68015118475BFDDC4A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.528 -0400", hash_original_method = "F03306481ED210492B573188BD80D78C", hash_generated_method = "0EADB2FCBD674A2D29AF403633A9DA9A")
     @Override
     public E set(int index, E object) {
-        E varB4EAC82CA7396A68D541C85D26508E83_840318851 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_969164656 = null; //Variable for return #1
         Object[] a;
         a = array;
         {
@@ -663,11 +663,11 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         @SuppressWarnings("unchecked") E result;
         result = (E) a[index];
         a[index] = object;
-        varB4EAC82CA7396A68D541C85D26508E83_840318851 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_969164656 = result;
         addTaint(index);
         addTaint(object.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_840318851.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_840318851;
+        varB4EAC82CA7396A68D541C85D26508E83_969164656.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_969164656;
         // ---------- Original Method ----------
         //Object[] a = array;
         //if (index >= size) {
@@ -679,18 +679,18 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.506 -0400", hash_original_method = "52977A01663ACB51F489F59A603BA7D4", hash_generated_method = "F2DEF49C0AE525949C0B0959DFD0662C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.528 -0400", hash_original_method = "52977A01663ACB51F489F59A603BA7D4", hash_generated_method = "3D3067924CB72198E068D801BD4B2BB8")
     @Override
     public Object[] toArray() {
-        Object[] varB4EAC82CA7396A68D541C85D26508E83_1767469496 = null; //Variable for return #1
+        Object[] varB4EAC82CA7396A68D541C85D26508E83_148842183 = null; //Variable for return #1
         int s;
         s = size;
         Object[] result;
         result = new Object[s];
         System.arraycopy(array, 0, result, 0, s);
-        varB4EAC82CA7396A68D541C85D26508E83_1767469496 = result;
-        varB4EAC82CA7396A68D541C85D26508E83_1767469496.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1767469496;
+        varB4EAC82CA7396A68D541C85D26508E83_148842183 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_148842183.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_148842183;
         // ---------- Original Method ----------
         //int s = size;
         //Object[] result = new Object[s];
@@ -699,10 +699,10 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.507 -0400", hash_original_method = "C3B471E5DAFB04B40866B17E5BAEF530", hash_generated_method = "E85EC3557F5D8CBF980AFEA5F1936BB7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.529 -0400", hash_original_method = "C3B471E5DAFB04B40866B17E5BAEF530", hash_generated_method = "0C151794F19D24776A10357466CEECB3")
     @Override
     public <T> T[] toArray(T[] contents) {
-        T[] varB4EAC82CA7396A68D541C85D26508E83_1485083222 = null; //Variable for return #1
+        T[] varB4EAC82CA7396A68D541C85D26508E83_724688150 = null; //Variable for return #1
         int s;
         s = size;
         {
@@ -714,10 +714,10 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         {
             contents[s] = null;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1485083222 = contents;
+        varB4EAC82CA7396A68D541C85D26508E83_724688150 = contents;
         addTaint(contents[0].getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1485083222.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1485083222;
+        varB4EAC82CA7396A68D541C85D26508E83_724688150.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_724688150;
         // ---------- Original Method ----------
         //int s = size;
         //if (contents.length < s) {
@@ -733,7 +733,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.507 -0400", hash_original_method = "7330C01325C25FBEA000A4F3E32D26DF", hash_generated_method = "647A3F4DBD2005BD55EDFEAA28693BFF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.539 -0400", hash_original_method = "7330C01325C25FBEA000A4F3E32D26DF", hash_generated_method = "647A3F4DBD2005BD55EDFEAA28693BFF")
     public void trimToSize() {
         int s;
         s = size;
@@ -762,19 +762,19 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.508 -0400", hash_original_method = "CE193891A7B397E3A9A2EF577B10DC50", hash_generated_method = "13DC6E4CAB70C26DFE860981486C8DB5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.540 -0400", hash_original_method = "CE193891A7B397E3A9A2EF577B10DC50", hash_generated_method = "B4BC30175DF036F1C976B7D61F18841F")
     @Override
     public Iterator<E> iterator() {
-        Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_1405081152 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1405081152 = new ArrayListIterator();
-        varB4EAC82CA7396A68D541C85D26508E83_1405081152.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1405081152;
+        Iterator<E> varB4EAC82CA7396A68D541C85D26508E83_899906346 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_899906346 = new ArrayListIterator();
+        varB4EAC82CA7396A68D541C85D26508E83_899906346.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_899906346;
         // ---------- Original Method ----------
         //return new ArrayListIterator();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.508 -0400", hash_original_method = "5DBD6A40EED7E4F643FF32288E994D2A", hash_generated_method = "F05ADF761D1409CE1AB7C9CB08D02DF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.540 -0400", hash_original_method = "5DBD6A40EED7E4F643FF32288E994D2A", hash_generated_method = "204EC7EE350CD0F870DF128930B95AEB")
     @Override
     public int hashCode() {
         Object[] a;
@@ -791,8 +791,8 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
                 hashCode = 31 * hashCode + (e == null ? 0 : e.hashCode());
             } //End block
         } //End collapsed parenthetic
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2123552439 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2123552439;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_60696437 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_60696437;
         // ---------- Original Method ----------
         //Object[] a = array;
         //int hashCode = 1;
@@ -804,18 +804,18 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.525 -0400", hash_original_method = "B6BBD42460E139DEDE8E165726366EA3", hash_generated_method = "363FA92A8251343C16C1A0FB1DB324A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.541 -0400", hash_original_method = "B6BBD42460E139DEDE8E165726366EA3", hash_generated_method = "3325E456CD2932BD09BA008A35AD78A6")
     @Override
     public boolean equals(Object o) {
         {
-            boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_178260525 = (o == this);
+            boolean var6D2CFEECAA6CC7108820D0CDDD5631C7_959744639 = (o == this);
         } //End collapsed parenthetic
         List<?> that;
         that = (List<?>) o;
         int s;
         s = size;
         {
-            boolean var6DDD04FB5A8F18C16A04CEB45843304E_2066632720 = (that.size() != s);
+            boolean var6DDD04FB5A8F18C16A04CEB45843304E_2008045544 = (that.size() != s);
         } //End collapsed parenthetic
         Object[] a;
         a = array;
@@ -830,7 +830,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
                     ethat = that.get(i);
                     {
                         {
-                            boolean varEBC000A495141DDD1C176F0EB6DDFA1C_1692493482 = (!eThis.equals(ethat));
+                            boolean varEBC000A495141DDD1C176F0EB6DDFA1C_730458680 = (!eThis.equals(ethat));
                         } //End flattened ternary
                     } //End collapsed parenthetic
                 } //End block
@@ -849,21 +849,21 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
                     eThat = it.next();
                     {
                         {
-                            boolean var76B138E21032A28626298252682756E4_1185272416 = (!eThis.equals(eThat));
+                            boolean var76B138E21032A28626298252682756E4_246837798 = (!eThis.equals(eThat));
                         } //End flattened ternary
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2084250603 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2084250603;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_226158611 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_226158611;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.525 -0400", hash_original_method = "291F806CA114E9A8DDD079DF7CDB05EA", hash_generated_method = "A4A594F8B96820C282005B8F26D12EA6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.544 -0400", hash_original_method = "291F806CA114E9A8DDD079DF7CDB05EA", hash_generated_method = "A4A594F8B96820C282005B8F26D12EA6")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         stream.defaultWriteObject();
         stream.writeInt(array.length);
@@ -884,7 +884,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.526 -0400", hash_original_method = "07E10AF7F234C75E84F0879D60F4FA74", hash_generated_method = "52E7A3A70A6FF17A2C8877FF80973555")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.562 -0400", hash_original_method = "07E10AF7F234C75E84F0879D60F4FA74", hash_generated_method = "52E7A3A70A6FF17A2C8877FF80973555")
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         stream.defaultReadObject();
         int cap;
@@ -916,36 +916,36 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
 
     
     private class ArrayListIterator implements Iterator<E> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.526 -0400", hash_original_field = "D76D0FBFB93E4AF78A9BBB774A17F61B", hash_generated_field = "4C1C48D586843493C1E6DDDE251ECE70")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.563 -0400", hash_original_field = "D76D0FBFB93E4AF78A9BBB774A17F61B", hash_generated_field = "4C1C48D586843493C1E6DDDE251ECE70")
 
         private int remaining = size;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.526 -0400", hash_original_field = "9E2D0354A755F31DF2B86013A1F84ABE", hash_generated_field = "87A3426B077DEFAAD6A51D7DCC7B66F7")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.563 -0400", hash_original_field = "9E2D0354A755F31DF2B86013A1F84ABE", hash_generated_field = "87A3426B077DEFAAD6A51D7DCC7B66F7")
 
         private int removalIndex = -1;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.526 -0400", hash_original_field = "587E194BCD330DA9D6CB9DB53EA8709A", hash_generated_field = "70917CA63DF275E00A8791CE0E39E48E")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.563 -0400", hash_original_field = "587E194BCD330DA9D6CB9DB53EA8709A", hash_generated_field = "70917CA63DF275E00A8791CE0E39E48E")
 
         private int expectedModCount = modCount;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.526 -0400", hash_original_method = "A2AE73C6B653383A81528A6CCE4C5FCB", hash_generated_method = "A2AE73C6B653383A81528A6CCE4C5FCB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.563 -0400", hash_original_method = "A2AE73C6B653383A81528A6CCE4C5FCB", hash_generated_method = "A2AE73C6B653383A81528A6CCE4C5FCB")
         public ArrayListIterator ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.526 -0400", hash_original_method = "44DFBDD5F60969C85FF7C62CEFF63BE1", hash_generated_method = "91C4D8F0662B512B976EFD0B815FB79E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.564 -0400", hash_original_method = "44DFBDD5F60969C85FF7C62CEFF63BE1", hash_generated_method = "48F7746273F25A4FB3601F0C5B10A734")
         public boolean hasNext() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_995772525 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_995772525;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_758558180 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_758558180;
             // ---------- Original Method ----------
             //return remaining != 0;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.527 -0400", hash_original_method = "4E01EE32653D357535C28CF692990943", hash_generated_method = "0C496C20DB2B05A09DBF6061CE6F5D85")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.564 -0400", hash_original_method = "4E01EE32653D357535C28CF692990943", hash_generated_method = "FAED47A4A3CD9E20EDD774B3883109F6")
         @SuppressWarnings("unchecked")
         public E next() {
-            E varB4EAC82CA7396A68D541C85D26508E83_330236709 = null; //Variable for return #1
+            E varB4EAC82CA7396A68D541C85D26508E83_1232718356 = null; //Variable for return #1
             ArrayList<E> ourList;
             ourList = ArrayList.this;
             int rem;
@@ -957,9 +957,9 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
             } //End block
             remaining = rem - 1;
-            varB4EAC82CA7396A68D541C85D26508E83_330236709 = (E) ourList.array[removalIndex = ourList.size - rem];
-            varB4EAC82CA7396A68D541C85D26508E83_330236709.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_330236709;
+            varB4EAC82CA7396A68D541C85D26508E83_1232718356 = (E) ourList.array[removalIndex = ourList.size - rem];
+            varB4EAC82CA7396A68D541C85D26508E83_1232718356.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1232718356;
             // ---------- Original Method ----------
             //ArrayList<E> ourList = ArrayList.this;
             //int rem = remaining;
@@ -974,7 +974,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.528 -0400", hash_original_method = "2CA6472AB4D5ED4AA6A79E4E390FB476", hash_generated_method = "5640C775C14A8753D9585C1BE4ADE039")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.565 -0400", hash_original_method = "2CA6472AB4D5ED4AA6A79E4E390FB476", hash_generated_method = "5640C775C14A8753D9585C1BE4ADE039")
         public void remove() {
             Object[] a;
             a = array;
@@ -1010,10 +1010,10 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.537 -0400", hash_original_field = "F9F98993EEA9BE3997005456026F76D9", hash_generated_field = "0ADB9921F542B3480B7A783BB054702A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.566 -0400", hash_original_field = "F9F98993EEA9BE3997005456026F76D9", hash_generated_field = "0ADB9921F542B3480B7A783BB054702A")
 
     private static int MIN_CAPACITY_INCREMENT = 12;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:49.537 -0400", hash_original_field = "C1AC5D7497D25261150408B53250333D", hash_generated_field = "0E898385336822BE83EA11CBDBB69FA2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:49.566 -0400", hash_original_field = "C1AC5D7497D25261150408B53250333D", hash_generated_field = "0E898385336822BE83EA11CBDBB69FA2")
 
     private static long serialVersionUID = 8683452581122892189L;
 }

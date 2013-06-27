@@ -15,7 +15,7 @@ import java.security.spec.AlgorithmParameterSpec;
 
 public abstract class MacSpi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.179 -0400", hash_original_method = "EEBADA04ED7B15342A993162A4F56017", hash_generated_method = "8D6409E06ABF820FA39D434786DC17A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.853 -0400", hash_original_method = "EEBADA04ED7B15342A993162A4F56017", hash_generated_method = "8D6409E06ABF820FA39D434786DC17A2")
     public  MacSpi() {
         // ---------- Original Method ----------
     }
@@ -34,14 +34,14 @@ public abstract class MacSpi {
     protected abstract void engineUpdate(byte[] input, int offset, int len);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.212 -0400", hash_original_method = "7BFE449B7BFB03ADBCFF5433860FD67B", hash_generated_method = "DA9F02009ACE31E685F65B0E23B8B410")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.873 -0400", hash_original_method = "7BFE449B7BFB03ADBCFF5433860FD67B", hash_generated_method = "8D4902E0632B86C76FE9DA2C37129A91")
     protected void engineUpdate(ByteBuffer input) {
         {
-            boolean varE54245A319FB90E6E4BB7E9A96B716C3_452875569 = (!input.hasRemaining());
+            boolean varE54245A319FB90E6E4BB7E9A96B716C3_2036556533 = (!input.hasRemaining());
         } //End collapsed parenthetic
         byte[] bInput;
         {
-            boolean var011961AA1A198646CB962085FB0562D5_166671796 = (input.hasArray());
+            boolean var011961AA1A198646CB962085FB0562D5_777710029 = (input.hasArray());
             {
                 bInput = input.array();
                 int offset;
@@ -86,13 +86,13 @@ public abstract class MacSpi {
     protected abstract void engineReset();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:00.213 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "E54444BA7C7EEB06F24F82981695D69E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:59.875 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "563660186F0651A1E339564966E1A117")
     @Override
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_124642875 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_124642875 = super.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_124642875.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_124642875;
+        Object varB4EAC82CA7396A68D541C85D26508E83_1789659196 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1789659196 = super.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_1789659196.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1789659196;
         // ---------- Original Method ----------
         //return super.clone();
     }

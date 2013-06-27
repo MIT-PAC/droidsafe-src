@@ -16,7 +16,7 @@ import java.util.List;
 
 abstract class ValueParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:18.184 -0400", hash_original_method = "536C7A90AC0042B9CC31730ED4B5756F", hash_generated_method = "536C7A90AC0042B9CC31730ED4B5756F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.683 -0400", hash_original_method = "536C7A90AC0042B9CC31730ED4B5756F", hash_generated_method = "536C7A90AC0042B9CC31730ED4B5756F")
     public ValueParser ()
     {
         //Synthesized constructor

@@ -14,7 +14,7 @@ import libcore.net.UriCodec;
 
 public class URLEncoder {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.684 -0400", hash_original_method = "B41CBCC9C76AA809E0DC45FDBBA0D268", hash_generated_method = "A6F2D9E84EF75199314CB290B61AC175")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.321 -0400", hash_original_method = "B41CBCC9C76AA809E0DC45FDBBA0D268", hash_generated_method = "A6F2D9E84EF75199314CB290B61AC175")
     private  URLEncoder() {
         // ---------- Original Method ----------
     }
@@ -31,16 +31,16 @@ public class URLEncoder {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.685 -0400", hash_original_field = "BF744055ED759113AEBE28A0C00A3E54", hash_generated_field = "7A5034E39590025ABCFAD48C86D75361")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.322 -0400", hash_original_field = "BF744055ED759113AEBE28A0C00A3E54", hash_generated_field = "26F8B39D7D5A3CB2683126BCE2F6983A")
 
     static UriCodec ENCODER = new UriCodec() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.685 -0400", hash_original_method = "70778A5E4342F08CE32F374D86265937", hash_generated_method = "7CC90750ED4E3572D2E315A9AD42341B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.322 -0400", hash_original_method = "70778A5E4342F08CE32F374D86265937", hash_generated_method = "24CFDFD0036E73CC7ECA5D7D89C6F56B")
         @Override
         protected boolean isRetained(char c) {
-            boolean varD34241CD5AA4B42C02ED3ACD4E671100_1211500897 = (" .-*_".indexOf(c) != -1);
+            boolean varD34241CD5AA4B42C02ED3ACD4E671100_873034408 = (" .-*_".indexOf(c) != -1);
             addTaint(c);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_699844960 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_699844960;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1562817373 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1562817373;
             // ---------- Original Method ----------
             //return " .-*_".indexOf(c) != -1;
         }

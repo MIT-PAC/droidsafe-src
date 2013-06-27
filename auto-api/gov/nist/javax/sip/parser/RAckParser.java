@@ -14,7 +14,7 @@ import javax.sip.*;
 
 public class RAckParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.069 -0400", hash_original_method = "35CA8C822A17FE233ECB2E3810B4D5A5", hash_generated_method = "204EAA0FF73FCB80B592091AB94B2072")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.036 -0400", hash_original_method = "35CA8C822A17FE233ECB2E3810B4D5A5", hash_generated_method = "204EAA0FF73FCB80B592091AB94B2072")
     public  RAckParser(String rack) {
         super(rack);
         addTaint(rack.getTaint());
@@ -22,7 +22,7 @@ public class RAckParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.069 -0400", hash_original_method = "8178ADDB9459B460DE70CCF5467A1FD6", hash_generated_method = "68F94D595AD7B884EA33EDFE3B3CF328")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.036 -0400", hash_original_method = "8178ADDB9459B460DE70CCF5467A1FD6", hash_generated_method = "68F94D595AD7B884EA33EDFE3B3CF328")
     protected  RAckParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -30,9 +30,9 @@ public class RAckParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.126 -0400", hash_original_method = "D7A41CF31988627D95B578BB3BBF9822", hash_generated_method = "C8AE6FD1A19192CB8890FB4845A8A27C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.038 -0400", hash_original_method = "D7A41CF31988627D95B578BB3BBF9822", hash_generated_method = "7D35FF53C648D9188CF4AFE48548B3F4")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_628155733 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_2005858382 = null; //Variable for return #1
         dbg_enter("RAckParser.parse");
         RAck rack;
         rack = new RAck();
@@ -60,14 +60,14 @@ public class RAckParser extends HeaderParser {
             } //End block
             this.lexer.SPorHT();
             this.lexer.match('\n');
-            varB4EAC82CA7396A68D541C85D26508E83_628155733 = rack;
+            varB4EAC82CA7396A68D541C85D26508E83_2005858382 = rack;
         } //End block
         finally 
         {
             dbg_leave("RAckParser.parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_628155733.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_628155733;
+        varB4EAC82CA7396A68D541C85D26508E83_2005858382.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2005858382;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

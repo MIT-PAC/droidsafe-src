@@ -10,14 +10,14 @@ import java.util.Iterator;
 import java.io.IOException;
 
 public final class AlternativeName extends ExtensionValue {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.350 -0400", hash_original_field = "8B7AF514F25F1F9456DCD10D2337F753", hash_generated_field = "146204F60619F6B5AD05FE88D008D17D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.338 -0400", hash_original_field = "8B7AF514F25F1F9456DCD10D2337F753", hash_generated_field = "146204F60619F6B5AD05FE88D008D17D")
 
     private boolean which;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.350 -0400", hash_original_field = "C624E704B24EB318F9C13835671F0EA2", hash_generated_field = "2EF7A1335D6CE946FADF8342BE852EA9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.338 -0400", hash_original_field = "C624E704B24EB318F9C13835671F0EA2", hash_generated_field = "2EF7A1335D6CE946FADF8342BE852EA9")
 
     private GeneralNames alternativeNames;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.350 -0400", hash_original_method = "1E01F580CB089394F15961B5A9E514F5", hash_generated_method = "32210F953BEB66A9F259D9B8FC9AD15D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.340 -0400", hash_original_method = "1E01F580CB089394F15961B5A9E514F5", hash_generated_method = "32210F953BEB66A9F259D9B8FC9AD15D")
     public  AlternativeName(boolean which, byte[] encoding) throws IOException {
         super(encoding);
         this.which = which;
@@ -28,14 +28,14 @@ public final class AlternativeName extends ExtensionValue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.351 -0400", hash_original_method = "A70D2DB25ABF0E0F1A8BC79C0C161D91", hash_generated_method = "E17782CBD8D350F7BAB43DC3927D6085")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.340 -0400", hash_original_method = "A70D2DB25ABF0E0F1A8BC79C0C161D91", hash_generated_method = "55B8745D388241C1272B221AB1282F5F")
     @Override
     public byte[] getEncoded() {
         {
             encoding = GeneralNames.ASN1.encode(alternativeNames);
         } //End block
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1864109958 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1864109958;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_876784492 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_876784492;
         // ---------- Original Method ----------
         //if (encoding == null) {
             //encoding = GeneralNames.ASN1.encode(alternativeNames);
@@ -44,7 +44,7 @@ public final class AlternativeName extends ExtensionValue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.351 -0400", hash_original_method = "62E9965B6B09CF0D2F916BAB455CC9AA", hash_generated_method = "63AFA54F4682857AE4A9CAFA66F1F855")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.341 -0400", hash_original_method = "62E9965B6B09CF0D2F916BAB455CC9AA", hash_generated_method = "63AFA54F4682857AE4A9CAFA66F1F855")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix).append((which) ? "Subject" : "Issuer").append(" Alternative Names [\n");
@@ -59,10 +59,10 @@ public final class AlternativeName extends ExtensionValue {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.351 -0400", hash_original_field = "2E739D027BF1A99E55E7EB8D5A278D39", hash_generated_field = "239492A34C7B952C5A00DBFA1A39F33F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.341 -0400", hash_original_field = "2E739D027BF1A99E55E7EB8D5A278D39", hash_generated_field = "239492A34C7B952C5A00DBFA1A39F33F")
 
     public static final boolean ISSUER = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.351 -0400", hash_original_field = "65B5F086A740391A32E21DFC2EEE9DBD", hash_generated_field = "936E14E3BE58C80A27331B11D5D14123")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.341 -0400", hash_original_field = "65B5F086A740391A32E21DFC2EEE9DBD", hash_generated_field = "936E14E3BE58C80A27331B11D5D14123")
 
     public static final boolean SUBJECT = true;
 }

@@ -21,27 +21,27 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class SyncActivityTooManyDeletes extends Activity implements AdapterView.OnItemClickListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.953 -0400", hash_original_field = "9396EDC1B0203C3E8377092DF4A9DD0F", hash_generated_field = "86D230D989C0289FA38126BD15162121")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:00.544 -0400", hash_original_field = "9396EDC1B0203C3E8377092DF4A9DD0F", hash_generated_field = "86D230D989C0289FA38126BD15162121")
 
     private long mNumDeletes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.953 -0400", hash_original_field = "591F77A70FEF1AA3112C01B360A63E9C", hash_generated_field = "3B055C3859C53A8ACDFC59C6C8440DF8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:00.545 -0400", hash_original_field = "591F77A70FEF1AA3112C01B360A63E9C", hash_generated_field = "3B055C3859C53A8ACDFC59C6C8440DF8")
 
     private Account mAccount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.954 -0400", hash_original_field = "2325EF4ABFCA50C092A123BB59FD3F59", hash_generated_field = "5E9A5C7D075BBF710B4D594B2F64B868")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:00.545 -0400", hash_original_field = "2325EF4ABFCA50C092A123BB59FD3F59", hash_generated_field = "5E9A5C7D075BBF710B4D594B2F64B868")
 
     private String mAuthority;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.954 -0400", hash_original_field = "BD1D19BC6BC3803BE152A977D479AC49", hash_generated_field = "644895AD43D171E05003EF08DEE63C8C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:00.545 -0400", hash_original_field = "BD1D19BC6BC3803BE152A977D479AC49", hash_generated_field = "644895AD43D171E05003EF08DEE63C8C")
 
     private String mProvider;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.954 -0400", hash_original_method = "F88E45C8A992B3EE5445BCFA92AD005E", hash_generated_method = "F88E45C8A992B3EE5445BCFA92AD005E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:00.545 -0400", hash_original_method = "F88E45C8A992B3EE5445BCFA92AD005E", hash_generated_method = "F88E45C8A992B3EE5445BCFA92AD005E")
     public SyncActivityTooManyDeletes ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.956 -0400", hash_original_method = "4083F5BA5A170FDE3F4AF132A8D59C6A", hash_generated_method = "F85806CF38622ADD114ADF34C43BE593")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:00.564 -0400", hash_original_method = "4083F5BA5A170FDE3F4AF132A8D59C6A", hash_generated_method = "F85806CF38622ADD114ADF34C43BE593")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -92,7 +92,7 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.956 -0400", hash_original_method = "87A49239DD26172CC00A29DE94A05FAE", hash_generated_method = "CA5E3F964E690D64B4127A3602E2FAC1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:00.565 -0400", hash_original_method = "87A49239DD26172CC00A29DE94A05FAE", hash_generated_method = "CA5E3F964E690D64B4127A3602E2FAC1")
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         startSyncReallyDelete();
@@ -109,7 +109,7 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.974 -0400", hash_original_method = "8359BAD844441D7FEC2F631DA63D9ED3", hash_generated_method = "CFCEA0941212F1D667322D5DB853916E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:00.585 -0400", hash_original_method = "8359BAD844441D7FEC2F631DA63D9ED3", hash_generated_method = "CFCEA0941212F1D667322D5DB853916E")
     private void startSyncReallyDelete() {
         Bundle extras;
         extras = new Bundle();
@@ -128,7 +128,7 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:58.975 -0400", hash_original_method = "CE7FC2B344B122C88B585FB58EADCEB6", hash_generated_method = "5FA7505F4A7BDD6A293DA88B629F450F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:00.587 -0400", hash_original_method = "CE7FC2B344B122C88B585FB58EADCEB6", hash_generated_method = "5FA7505F4A7BDD6A293DA88B629F450F")
     private void startSyncUndoDeletes() {
         Bundle extras;
         extras = new Bundle();

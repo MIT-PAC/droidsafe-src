@@ -19,41 +19,41 @@ import android.util.Log;
 import java.util.HashMap;
 
 class IconLoader extends Handler {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.664 -0400", hash_original_field = "990880030B80BFF3BC8D3AE0AC35462D", hash_generated_field = "34FA58117F875C1478775AF3E2E8B77F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.112 -0400", hash_original_field = "990880030B80BFF3BC8D3AE0AC35462D", hash_generated_field = "34FA58117F875C1478775AF3E2E8B77F")
 
     private int mState = STATE_SINGLE_ICON;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.665 -0400", hash_original_field = "CAF2113C3C2D7C5D808A041F7615F3CD", hash_generated_field = "BBF32FCC0D1BDC907D743204AEBDE31E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.112 -0400", hash_original_field = "CAF2113C3C2D7C5D808A041F7615F3CD", hash_generated_field = "BBF32FCC0D1BDC907D743204AEBDE31E")
 
     private ImageDescriptor mId = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.665 -0400", hash_original_field = "F9053C5A4D5CF365CE2BFAC1ABA72434", hash_generated_field = "C437DBCD739D99106D16871E5C170598")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.112 -0400", hash_original_field = "F9053C5A4D5CF365CE2BFAC1ABA72434", hash_generated_field = "C437DBCD739D99106D16871E5C170598")
 
     private Bitmap mCurrentIcon = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.665 -0400", hash_original_field = "389D3C466495594C3C81192D48E837ED", hash_generated_field = "915D91392A6FD2996994AAECEF49523C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.112 -0400", hash_original_field = "389D3C466495594C3C81192D48E837ED", hash_generated_field = "915D91392A6FD2996994AAECEF49523C")
 
     private int mRecordNumber;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.665 -0400", hash_original_field = "41ACF4E2A2B6659AEE5803BD31F55E0E", hash_generated_field = "466ECA2EC8599DB18BA618AF3BB38E4A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.112 -0400", hash_original_field = "41ACF4E2A2B6659AEE5803BD31F55E0E", hash_generated_field = "466ECA2EC8599DB18BA618AF3BB38E4A")
 
     private IccFileHandler mSimFH = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.665 -0400", hash_original_field = "DE64C3B05DBF00C6E37DAFD2C19243BF", hash_generated_field = "B30996872B8060E9F9D87F9AD668CBDD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.112 -0400", hash_original_field = "DE64C3B05DBF00C6E37DAFD2C19243BF", hash_generated_field = "B30996872B8060E9F9D87F9AD668CBDD")
 
     private Message mEndMsg = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.665 -0400", hash_original_field = "049E0D153A085667CD0A0C021F52B06C", hash_generated_field = "154C16D413ECF747A4DDA2BE115A565B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.112 -0400", hash_original_field = "049E0D153A085667CD0A0C021F52B06C", hash_generated_field = "154C16D413ECF747A4DDA2BE115A565B")
 
     private byte[] mIconData = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.665 -0400", hash_original_field = "08E2F89D3FDD039D2B362CDAA719D53F", hash_generated_field = "992E68CF65D2B9E251C815E9737B213A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.112 -0400", hash_original_field = "08E2F89D3FDD039D2B362CDAA719D53F", hash_generated_field = "992E68CF65D2B9E251C815E9737B213A")
 
     private int[] mRecordNumbers = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.665 -0400", hash_original_field = "66DE059789171600749A4FCE27D22427", hash_generated_field = "27D98BF0C1B289316F3B85701A09EBD0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.113 -0400", hash_original_field = "66DE059789171600749A4FCE27D22427", hash_generated_field = "27D98BF0C1B289316F3B85701A09EBD0")
 
     private int mCurrentRecordIndex = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.665 -0400", hash_original_field = "ABA435DA55C8C9C6F5EE674A478FF79A", hash_generated_field = "7BFCC2EA81A743318762373A8002B1FC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.113 -0400", hash_original_field = "ABA435DA55C8C9C6F5EE674A478FF79A", hash_generated_field = "7BFCC2EA81A743318762373A8002B1FC")
 
     private Bitmap[] mIcons = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.665 -0400", hash_original_field = "330AF4349101FDC32C6AF684F9B992B1", hash_generated_field = "8961889328AF5E677CB9B441A72BB954")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.113 -0400", hash_original_field = "330AF4349101FDC32C6AF684F9B992B1", hash_generated_field = "8961889328AF5E677CB9B441A72BB954")
 
     private HashMap<Integer, Bitmap> mIconsCache = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.673 -0400", hash_original_method = "FC71F40EA342EA47A36AF8D952C946AD", hash_generated_method = "0F65BF68C15C8D96248718D76E5118C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.113 -0400", hash_original_method = "FC71F40EA342EA47A36AF8D952C946AD", hash_generated_method = "0F65BF68C15C8D96248718D76E5118C9")
     private  IconLoader(Looper looper , IccFileHandler fh) {
         super(looper);
         mSimFH = fh;
@@ -78,7 +78,7 @@ class IconLoader extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.679 -0400", hash_original_method = "E56E284105F777D8A6CAB7DB3EDAC84F", hash_generated_method = "B6ACC3FC0029FE1701705E3A5139F568")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.129 -0400", hash_original_method = "E56E284105F777D8A6CAB7DB3EDAC84F", hash_generated_method = "B6ACC3FC0029FE1701705E3A5139F568")
      void loadIcons(int[] recordNumbers, Message msg) {
         mEndMsg = msg;
         mIcons = new Bitmap[recordNumbers.length];
@@ -99,7 +99,7 @@ class IconLoader extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.682 -0400", hash_original_method = "328A1F48C7F5C3C618F7E134C6DE5C8B", hash_generated_method = "699168182308EFE2FB0864C4782A74DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.130 -0400", hash_original_method = "328A1F48C7F5C3C618F7E134C6DE5C8B", hash_generated_method = "699168182308EFE2FB0864C4782A74DF")
      void loadIcon(int recordNumber, Message msg) {
         mEndMsg = msg;
         mState = STATE_SINGLE_ICON;
@@ -115,14 +115,14 @@ class IconLoader extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.683 -0400", hash_original_method = "CF2A7740DA96FFBF2B7742A73D5B85D3", hash_generated_method = "142ADDED8CA6E8E57BD88C3273C17482")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.134 -0400", hash_original_method = "CF2A7740DA96FFBF2B7742A73D5B85D3", hash_generated_method = "4A20CE37A7331C2562BAC6C13ABE9355")
     private void startLoadingIcon(int recordNumber) {
         mId = null;
         mIconData = null;
         mCurrentIcon = null;
         mRecordNumber = recordNumber;
         {
-            boolean varDE81173A3DD1F6D6B038C86AB5DCBBC3_1594229107 = (mIconsCache.containsKey(recordNumber));
+            boolean varDE81173A3DD1F6D6B038C86AB5DCBBC3_359671106 = (mIconsCache.containsKey(recordNumber));
             {
                 mCurrentIcon = mIconsCache.get(recordNumber);
                 postIcon();
@@ -143,7 +143,7 @@ class IconLoader extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.685 -0400", hash_original_method = "E1BF715B9C953843C5BFB563C24D3B0D", hash_generated_method = "F1A7422FC57FEB54D8B10A2CEED6629E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.137 -0400", hash_original_method = "E1BF715B9C953843C5BFB563C24D3B0D", hash_generated_method = "056820B6B93EBABC69E20FB7A067D33D")
     @Override
     public void handleMessage(Message msg) {
         AsyncResult ar;
@@ -154,7 +154,7 @@ class IconLoader extends Handler {
             //End case EVENT_READ_EF_IMG_RECOED_DONE 
             //Begin case EVENT_READ_EF_IMG_RECOED_DONE 
             {
-                boolean var166F9F3229813452CC65C23DFD03D3DF_700943439 = (handleImageDescriptor((byte[]) ar.result));
+                boolean var166F9F3229813452CC65C23DFD03D3DF_1925695943 = (handleImageDescriptor((byte[]) ar.result));
                 {
                     readIconData();
                 } //End block
@@ -210,11 +210,11 @@ class IconLoader extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.686 -0400", hash_original_method = "57AAD79E24539ED69C4A9588C1A4DBA1", hash_generated_method = "802B652DEACFFDA5AB4DD5DBDF95CE9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.137 -0400", hash_original_method = "57AAD79E24539ED69C4A9588C1A4DBA1", hash_generated_method = "E878308BDE821413D7D8E6DF84FFFDCC")
     private boolean handleImageDescriptor(byte[] rawData) {
         mId = ImageDescriptor.parse(rawData, 1);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1470997656 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1470997656;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1172100593 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1172100593;
         // ---------- Original Method ----------
         //mId = ImageDescriptor.parse(rawData, 1);
         //if (mId == null) {
@@ -224,7 +224,7 @@ class IconLoader extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.686 -0400", hash_original_method = "78AA98F6413EBAF06D9D3065D89FA10B", hash_generated_method = "559A1BAEC902DF0B531A9A5E333133CD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.141 -0400", hash_original_method = "78AA98F6413EBAF06D9D3065D89FA10B", hash_generated_method = "559A1BAEC902DF0B531A9A5E333133CD")
     private void readClut() {
         int length;
         length = mIconData[3] * CLUT_ENTRY_SIZE;
@@ -242,7 +242,7 @@ class IconLoader extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.704 -0400", hash_original_method = "9B2E1F9D86B0BE7AA9984F6F6998AD1A", hash_generated_method = "89FBD5E175EEA499B0ADA47DCE6327AE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.141 -0400", hash_original_method = "9B2E1F9D86B0BE7AA9984F6F6998AD1A", hash_generated_method = "89FBD5E175EEA499B0ADA47DCE6327AE")
     private void readId() {
         {
             mCurrentIcon = null;
@@ -262,7 +262,7 @@ class IconLoader extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.704 -0400", hash_original_method = "E5FF0727F4A23FBA52C74807E31F642C", hash_generated_method = "CAAD17297C2BAD97EC97352A8F8278EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.141 -0400", hash_original_method = "E5FF0727F4A23FBA52C74807E31F642C", hash_generated_method = "CAAD17297C2BAD97EC97352A8F8278EF")
     private void readIconData() {
         Message msg;
         msg = this.obtainMessage(EVENT_READ_ICON_DONE);
@@ -273,7 +273,7 @@ class IconLoader extends Handler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.706 -0400", hash_original_method = "2C2351D604337717A113511ACF501262", hash_generated_method = "3BBCA77ECF8B0A8BF92BF330C4F98D46")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.142 -0400", hash_original_method = "2C2351D604337717A113511ACF501262", hash_generated_method = "3BBCA77ECF8B0A8BF92BF330C4F98D46")
     private void postIcon() {
         {
             mEndMsg.obj = mCurrentIcon;
@@ -404,28 +404,28 @@ class IconLoader extends Handler {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.707 -0400", hash_original_field = "2383C5F129032F33DA642165345E6FE5", hash_generated_field = "81EC33A739284D15A326AED6A69F224E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.143 -0400", hash_original_field = "2383C5F129032F33DA642165345E6FE5", hash_generated_field = "81EC33A739284D15A326AED6A69F224E")
 
     private static IconLoader sLoader = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.707 -0400", hash_original_field = "57D20619D1ADC0F3C1464FACFD33041B", hash_generated_field = "50935759AA0FE30176EAB212E2E3C51C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.143 -0400", hash_original_field = "57D20619D1ADC0F3C1464FACFD33041B", hash_generated_field = "50935759AA0FE30176EAB212E2E3C51C")
 
     private static int STATE_SINGLE_ICON = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.707 -0400", hash_original_field = "2E0B894CF6909D6B66C53C0F327DBB02", hash_generated_field = "ACDA2D80C0990C3ADE27A6B39B8A4956")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.143 -0400", hash_original_field = "2E0B894CF6909D6B66C53C0F327DBB02", hash_generated_field = "ACDA2D80C0990C3ADE27A6B39B8A4956")
 
     private static int STATE_MULTI_ICONS = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.707 -0400", hash_original_field = "839AA6DBABEFE553CE7C961842CB9FE6", hash_generated_field = "8ACE81457B11172535BC2A71D29EB28D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.143 -0400", hash_original_field = "839AA6DBABEFE553CE7C961842CB9FE6", hash_generated_field = "8ACE81457B11172535BC2A71D29EB28D")
 
     private static int EVENT_READ_EF_IMG_RECOED_DONE = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.707 -0400", hash_original_field = "94A2120BD767086BCE682B84A3650BD9", hash_generated_field = "D228A43D1BF30E220E76F03411BE6549")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.143 -0400", hash_original_field = "94A2120BD767086BCE682B84A3650BD9", hash_generated_field = "D228A43D1BF30E220E76F03411BE6549")
 
     private static int EVENT_READ_ICON_DONE = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.707 -0400", hash_original_field = "FD98309EDAC8A47631964D55E3BB8187", hash_generated_field = "A32F1BE829F32E46BC92D371D2936749")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.143 -0400", hash_original_field = "FD98309EDAC8A47631964D55E3BB8187", hash_generated_field = "A32F1BE829F32E46BC92D371D2936749")
 
     private static int EVENT_READ_CLUT_DONE = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.707 -0400", hash_original_field = "09897846512E90C7E0926A557CDF84D3", hash_generated_field = "2970FF0917420732A53842F3EF16D630")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.143 -0400", hash_original_field = "09897846512E90C7E0926A557CDF84D3", hash_generated_field = "2970FF0917420732A53842F3EF16D630")
 
     private static int CLUT_LOCATION_OFFSET = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:17.707 -0400", hash_original_field = "73D750EA6EC631EF7B2D42C7D9E50B90", hash_generated_field = "7C8A61708839F62B94B9576FADE0F426")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:19.143 -0400", hash_original_field = "73D750EA6EC631EF7B2D42C7D9E50B90", hash_generated_field = "7C8A61708839F62B94B9576FADE0F426")
 
     private static int CLUT_ENTRY_SIZE = 3;
 }

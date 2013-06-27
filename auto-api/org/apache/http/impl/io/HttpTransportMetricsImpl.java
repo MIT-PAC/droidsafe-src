@@ -10,27 +10,27 @@ import java.util.Iterator;
 import org.apache.http.io.HttpTransportMetrics;
 
 public class HttpTransportMetricsImpl implements HttpTransportMetrics {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.807 -0400", hash_original_field = "C80D0D5AF96F865383EEA49D602AB4B0", hash_generated_field = "758177ECF64D712D2723B646394F959F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.014 -0400", hash_original_field = "C80D0D5AF96F865383EEA49D602AB4B0", hash_generated_field = "758177ECF64D712D2723B646394F959F")
 
     private long bytesTransferred = 0;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.807 -0400", hash_original_method = "7D2D78BCCD20A0F0768C108C18222508", hash_generated_method = "9D344AA50CEBAD051F5FDD8939154F67")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.015 -0400", hash_original_method = "7D2D78BCCD20A0F0768C108C18222508", hash_generated_method = "9D344AA50CEBAD051F5FDD8939154F67")
     public  HttpTransportMetricsImpl() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.808 -0400", hash_original_method = "7E49696C17D36DF48010DE39377AB681", hash_generated_method = "73483324783BD2ADAC99AB139273F7AB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.015 -0400", hash_original_method = "7E49696C17D36DF48010DE39377AB681", hash_generated_method = "79A1D053CDFA1FFA0B2343FE22A593A8")
     public long getBytesTransferred() {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_822928170 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_822928170;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_738241250 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_738241250;
         // ---------- Original Method ----------
         //return this.bytesTransferred;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.810 -0400", hash_original_method = "7CF98125B8F87A2FD19C70088B288B78", hash_generated_method = "B5449F175BF9820DC474D49437D8D9CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.015 -0400", hash_original_method = "7CF98125B8F87A2FD19C70088B288B78", hash_generated_method = "B5449F175BF9820DC474D49437D8D9CA")
     public void setBytesTransferred(long count) {
         this.bytesTransferred = count;
         // ---------- Original Method ----------
@@ -38,7 +38,7 @@ public class HttpTransportMetricsImpl implements HttpTransportMetrics {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.815 -0400", hash_original_method = "5BC15BEBDBF96C2B4749F7E80B21C1AA", hash_generated_method = "E273073A4939F9C970DA3A9120498FFC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.016 -0400", hash_original_method = "5BC15BEBDBF96C2B4749F7E80B21C1AA", hash_generated_method = "E273073A4939F9C970DA3A9120498FFC")
     public void incrementBytesTransferred(long count) {
         this.bytesTransferred += count;
         // ---------- Original Method ----------
@@ -46,7 +46,7 @@ public class HttpTransportMetricsImpl implements HttpTransportMetrics {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.816 -0400", hash_original_method = "57609043FFD34118E5E2ADA78EDAAD37", hash_generated_method = "09659E599DDF8A9241FB68801CC9E8DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.020 -0400", hash_original_method = "57609043FFD34118E5E2ADA78EDAAD37", hash_generated_method = "09659E599DDF8A9241FB68801CC9E8DF")
     public void reset() {
         this.bytesTransferred = 0;
         // ---------- Original Method ----------

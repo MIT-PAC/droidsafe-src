@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public abstract class Pack {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:19.804 -0400", hash_original_method = "7D61F0FDEC5E1A91AB83D504A09E89B5", hash_generated_method = "7D61F0FDEC5E1A91AB83D504A09E89B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:20.713 -0400", hash_original_method = "7D61F0FDEC5E1A91AB83D504A09E89B5", hash_generated_method = "7D61F0FDEC5E1A91AB83D504A09E89B5")
     public Pack ()
     {
         //Synthesized constructor

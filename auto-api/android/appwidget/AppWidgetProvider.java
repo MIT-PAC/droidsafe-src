@@ -14,19 +14,19 @@ import android.os.Bundle;
 
 public class AppWidgetProvider extends BroadcastReceiver {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.301 -0400", hash_original_method = "9EAF442CC86F0B5BA1B1B46FB2948CE7", hash_generated_method = "3C7FFC20A8A1FC0D5303AF1AED86D932")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.839 -0400", hash_original_method = "9EAF442CC86F0B5BA1B1B46FB2948CE7", hash_generated_method = "3C7FFC20A8A1FC0D5303AF1AED86D932")
     public  AppWidgetProvider() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.310 -0400", hash_original_method = "8B20EBF206EE708E791CD471F78F9BAE", hash_generated_method = "DC26982AE16C2F48291354D853B89471")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.854 -0400", hash_original_method = "8B20EBF206EE708E791CD471F78F9BAE", hash_generated_method = "09AB31D874D016D6D925F0FCDE837DD6")
     public void onReceive(Context context, Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         String action;
         action = intent.getAction();
         {
-            boolean var307CDE1D015D0C1F1D9991106E69910C_680605962 = (AppWidgetManager.ACTION_APPWIDGET_UPDATE.equals(action));
+            boolean var307CDE1D015D0C1F1D9991106E69910C_978843710 = (AppWidgetManager.ACTION_APPWIDGET_UPDATE.equals(action));
             {
                 Bundle extras;
                 extras = intent.getExtras();
@@ -39,12 +39,12 @@ public class AppWidgetProvider extends BroadcastReceiver {
                 } //End block
             } //End block
             {
-                boolean var923A63CF191840A6FD3FC0F3787C7A75_1498615560 = (AppWidgetManager.ACTION_APPWIDGET_DELETED.equals(action));
+                boolean var923A63CF191840A6FD3FC0F3787C7A75_1050220743 = (AppWidgetManager.ACTION_APPWIDGET_DELETED.equals(action));
                 {
                     Bundle extras;
                     extras = intent.getExtras();
                     {
-                        boolean var0BD3CCC63013F99F24FE0E1FCCAAE11B_408737010 = (extras != null && extras.containsKey(AppWidgetManager.EXTRA_APPWIDGET_ID));
+                        boolean var0BD3CCC63013F99F24FE0E1FCCAAE11B_894014999 = (extras != null && extras.containsKey(AppWidgetManager.EXTRA_APPWIDGET_ID));
                         {
                             int appWidgetId;
                             appWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID);
@@ -53,12 +53,12 @@ public class AppWidgetProvider extends BroadcastReceiver {
                     } //End collapsed parenthetic
                 } //End block
                 {
-                    boolean var67002C0B6308476D027F017D118DCB37_2046475404 = (AppWidgetManager.ACTION_APPWIDGET_ENABLED.equals(action));
+                    boolean var67002C0B6308476D027F017D118DCB37_240722783 = (AppWidgetManager.ACTION_APPWIDGET_ENABLED.equals(action));
                     {
                         this.onEnabled(context);
                     } //End block
                     {
-                        boolean var5CF4CBB4CCBBADF34A3E6121AE7CA60B_1171148264 = (AppWidgetManager.ACTION_APPWIDGET_DISABLED.equals(action));
+                        boolean var5CF4CBB4CCBBADF34A3E6121AE7CA60B_662925844 = (AppWidgetManager.ACTION_APPWIDGET_DISABLED.equals(action));
                         {
                             this.onDisabled(context);
                         } //End block
@@ -73,7 +73,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.311 -0400", hash_original_method = "A2E84788BA84189ABE3F219EBDAC629C", hash_generated_method = "CC9D7FBF747BA60370E681863405F31C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.856 -0400", hash_original_method = "A2E84788BA84189ABE3F219EBDAC629C", hash_generated_method = "CC9D7FBF747BA60370E681863405F31C")
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(context.getTaint());
@@ -83,7 +83,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.325 -0400", hash_original_method = "0AB37BC4D28009D0D79CD2D0DC9B7953", hash_generated_method = "74FB7EC64DEB1852B45907EF66A2EA22")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.875 -0400", hash_original_method = "0AB37BC4D28009D0D79CD2D0DC9B7953", hash_generated_method = "74FB7EC64DEB1852B45907EF66A2EA22")
     public void onDeleted(Context context, int[] appWidgetIds) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(context.getTaint());
@@ -92,7 +92,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.326 -0400", hash_original_method = "A066DA52DDA31A9511487AE3845ED018", hash_generated_method = "0B915167097F155742FBB7F56749B7EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.877 -0400", hash_original_method = "A066DA52DDA31A9511487AE3845ED018", hash_generated_method = "0B915167097F155742FBB7F56749B7EC")
     public void onEnabled(Context context) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(context.getTaint());
@@ -100,7 +100,7 @@ public class AppWidgetProvider extends BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.333 -0400", hash_original_method = "D927F2373817E24DFC9B3FEAB7D30B31", hash_generated_method = "BBBA003B1A0C8AA6F2BE99EB08B19D4C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.882 -0400", hash_original_method = "D927F2373817E24DFC9B3FEAB7D30B31", hash_generated_method = "BBBA003B1A0C8AA6F2BE99EB08B19D4C")
     public void onDisabled(Context context) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(context.getTaint());

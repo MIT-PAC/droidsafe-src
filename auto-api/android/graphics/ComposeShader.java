@@ -9,14 +9,14 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public class ComposeShader extends Shader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.344 -0400", hash_original_field = "327874507E1B565E8B7C84B73A259C64", hash_generated_field = "9D1A193A171A566C28715B3DF9829B6D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.856 -0400", hash_original_field = "327874507E1B565E8B7C84B73A259C64", hash_generated_field = "9D1A193A171A566C28715B3DF9829B6D")
 
     @SuppressWarnings({"UnusedDeclaration"}) private Shader mShaderA;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.344 -0400", hash_original_field = "57F941674B2C8089D85DBE5F4EA26FA9", hash_generated_field = "0BC17BE1D67AE4FB7B6930A577FEA85A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.857 -0400", hash_original_field = "57F941674B2C8089D85DBE5F4EA26FA9", hash_generated_field = "0BC17BE1D67AE4FB7B6930A577FEA85A")
 
     @SuppressWarnings({"UnusedDeclaration"}) private Shader mShaderB;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.368 -0400", hash_original_method = "54479FEAF5918A2D0015420E3AF1868D", hash_generated_method = "8986E61208CECF3478A629F2B6D0453F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.868 -0400", hash_original_method = "54479FEAF5918A2D0015420E3AF1868D", hash_generated_method = "8986E61208CECF3478A629F2B6D0453F")
     public  ComposeShader(Shader shaderA, Shader shaderB, Xfermode mode) {
         mShaderA = shaderA;
         mShaderB = shaderB;
@@ -49,7 +49,7 @@ public class ComposeShader extends Shader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.479 -0400", hash_original_method = "6DA3793B1F4C3B72942152784A23C545", hash_generated_method = "F1C66A31CF79DBC5B492AED06B2BD5B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.907 -0400", hash_original_method = "6DA3793B1F4C3B72942152784A23C545", hash_generated_method = "F1C66A31CF79DBC5B492AED06B2BD5B3")
     public  ComposeShader(Shader shaderA, Shader shaderB, PorterDuff.Mode mode) {
         mShaderA = shaderA;
         mShaderB = shaderB;

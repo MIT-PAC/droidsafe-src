@@ -21,7 +21,7 @@ import android.net.NetworkInfo;
 
 class ConnectivityManagerCompatHoneycombMR2 {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:33.091 -0400", hash_original_method = "DBB1DDA1EFD9E85310CFFB51074803BD", hash_generated_method = "DBB1DDA1EFD9E85310CFFB51074803BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:34.488 -0400", hash_original_method = "DBB1DDA1EFD9E85310CFFB51074803BD", hash_generated_method = "DBB1DDA1EFD9E85310CFFB51074803BD")
     public ConnectivityManagerCompatHoneycombMR2 ()
     {
         //Synthesized constructor

@@ -24,7 +24,7 @@ import android.util.Xml;
 
 public class XmlUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:26.060 -0400", hash_original_method = "76C216707CDD38D546F63E977F5F31C4", hash_generated_method = "76C216707CDD38D546F63E977F5F31C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:25.143 -0400", hash_original_method = "76C216707CDD38D546F63E977F5F31C4", hash_generated_method = "76C216707CDD38D546F63E977F5F31C4")
     public XmlUtils ()
     {
         //Synthesized constructor

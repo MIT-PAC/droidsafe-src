@@ -21,25 +21,25 @@ import org.apache.http.params.CoreProtocolPNames;
 
 public class HttpRequestExecutor {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.341 -0400", hash_original_method = "1B3D6EB0D2C9672C0490DD487A44B10E", hash_generated_method = "5C823C110E4C37030580A4ECF9EB10B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.519 -0400", hash_original_method = "1B3D6EB0D2C9672C0490DD487A44B10E", hash_generated_method = "5C823C110E4C37030580A4ECF9EB10B9")
     public  HttpRequestExecutor() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.366 -0400", hash_original_method = "0630A8D079D2F2EA09859A2EAC923D24", hash_generated_method = "E5762ED0087222DDF568D0FF4F5177EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.520 -0400", hash_original_method = "0630A8D079D2F2EA09859A2EAC923D24", hash_generated_method = "8DDCC363E17E5822CABEAC6393D9955B")
     protected boolean canResponseHaveBody(final HttpRequest request,
                                           final HttpResponse response) {
         {
-            boolean varD156E42C6563538534C094BC9F8B30CC_133403471 = ("HEAD".equalsIgnoreCase(request.getRequestLine().getMethod()));
+            boolean varD156E42C6563538534C094BC9F8B30CC_669599064 = ("HEAD".equalsIgnoreCase(request.getRequestLine().getMethod()));
         } //End collapsed parenthetic
         int status;
         status = response.getStatusLine().getStatusCode();
         addTaint(request.getTaint());
         addTaint(response.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_528728513 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_528728513;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1766027422 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1766027422;
         // ---------- Original Method ----------
         //if ("HEAD".equalsIgnoreCase(request.getRequestLine().getMethod())) {
             //return false;
@@ -52,12 +52,12 @@ public class HttpRequestExecutor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.367 -0400", hash_original_method = "119B944BAA4C5EE6E8AB8C1C74A61B19", hash_generated_method = "D8CD7EB8ECE7AEC48ECD393DAF476E3F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.531 -0400", hash_original_method = "119B944BAA4C5EE6E8AB8C1C74A61B19", hash_generated_method = "D8E6AE494C3A537B852FE1AC645C01B5")
     public HttpResponse execute(
             final HttpRequest request,
             final HttpClientConnection conn,
             final HttpContext context) throws IOException, HttpException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_692394289 = null; //Variable for return #1
+        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_335727753 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
         } //End block
@@ -74,7 +74,7 @@ public class HttpRequestExecutor {
             {
                 response = doReceiveResponse(request, conn, context);
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_692394289 = response;
+            varB4EAC82CA7396A68D541C85D26508E83_335727753 = response;
         } //End block
         catch (IOException ex)
         {
@@ -94,14 +94,14 @@ public class HttpRequestExecutor {
         addTaint(request.getTaint());
         addTaint(conn.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_692394289.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_692394289;
+        varB4EAC82CA7396A68D541C85D26508E83_335727753.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_335727753;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.367 -0400", hash_original_method = "83559981E73A0A11E2E39D8FF1D4E53C", hash_generated_method = "5D77BBC4B3586E99238F5EFD1D9471B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.531 -0400", hash_original_method = "83559981E73A0A11E2E39D8FF1D4E53C", hash_generated_method = "5D77BBC4B3586E99238F5EFD1D9471B1")
     public void preProcess(
             final HttpRequest request,
             final HttpProcessor processor,
@@ -133,12 +133,12 @@ public class HttpRequestExecutor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.369 -0400", hash_original_method = "3A0BDE86F44AAAE489AB1403F9B488D7", hash_generated_method = "B8E03F1EEF7BC3F8EF9E4AC95956F64F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.541 -0400", hash_original_method = "3A0BDE86F44AAAE489AB1403F9B488D7", hash_generated_method = "C7BE3B14C23CC416C207DA251BD6219E")
     protected HttpResponse doSendRequest(
             final HttpRequest request,
             final HttpClientConnection conn,
             final HttpContext context) throws IOException, HttpException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_376502294 = null; //Variable for return #1
+        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1694133455 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
         } //End block
@@ -158,7 +158,7 @@ public class HttpRequestExecutor {
             ProtocolVersion ver;
             ver = request.getRequestLine().getProtocolVersion();
             {
-                boolean var43491DB99A4160B9C640073F657E942C_1869271931 = (((HttpEntityEnclosingRequest) request).expectContinue() &&
+                boolean var43491DB99A4160B9C640073F657E942C_829304273 = (((HttpEntityEnclosingRequest) request).expectContinue() &&
                 !ver.lessEquals(HttpVersion.HTTP_1_0));
                 {
                     conn.flush();
@@ -166,11 +166,11 @@ public class HttpRequestExecutor {
                     tms = request.getParams().getIntParameter(
                         CoreProtocolPNames.WAIT_FOR_CONTINUE, 2000);
                     {
-                        boolean var37F76CBB3128C83B9D1F17320CBEB427_697849577 = (conn.isResponseAvailable(tms));
+                        boolean var37F76CBB3128C83B9D1F17320CBEB427_1248494175 = (conn.isResponseAvailable(tms));
                         {
                             response = conn.receiveResponseHeader();
                             {
-                                boolean var1658CC8B4194AE69AA37E3D73F449498_7256658 = (canResponseHaveBody(request, response));
+                                boolean var1658CC8B4194AE69AA37E3D73F449498_2141163200 = (canResponseHaveBody(request, response));
                                 {
                                     conn.receiveResponseEntity(response);
                                 } //End block
@@ -197,23 +197,23 @@ public class HttpRequestExecutor {
         } //End block
         conn.flush();
         context.setAttribute(ExecutionContext.HTTP_REQ_SENT, Boolean.TRUE);
-        varB4EAC82CA7396A68D541C85D26508E83_376502294 = response;
+        varB4EAC82CA7396A68D541C85D26508E83_1694133455 = response;
         addTaint(request.getTaint());
         addTaint(conn.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_376502294.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_376502294;
+        varB4EAC82CA7396A68D541C85D26508E83_1694133455.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1694133455;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.379 -0400", hash_original_method = "ACD44B1A55AB2BB7AB7058E66F36FB4A", hash_generated_method = "124B9B27B22B2CF70273318B1C5DEC8C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.546 -0400", hash_original_method = "ACD44B1A55AB2BB7AB7058E66F36FB4A", hash_generated_method = "0689818BFF61A84F265FF83CCEF9AABC")
     protected HttpResponse doReceiveResponse(
             final HttpRequest          request,
             final HttpClientConnection conn,
             final HttpContext          context) throws HttpException, IOException {
-        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_1595395195 = null; //Variable for return #1
+        HttpResponse varB4EAC82CA7396A68D541C85D26508E83_693456193 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
         } //End block
@@ -230,19 +230,19 @@ public class HttpRequestExecutor {
         {
             response = conn.receiveResponseHeader();
             {
-                boolean var6B88B4CB1811D7DE18E3DA4B1231F057_120282624 = (canResponseHaveBody(request, response));
+                boolean var6B88B4CB1811D7DE18E3DA4B1231F057_1610071287 = (canResponseHaveBody(request, response));
                 {
                     conn.receiveResponseEntity(response);
                 } //End block
             } //End collapsed parenthetic
             statuscode = response.getStatusLine().getStatusCode();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1595395195 = response;
+        varB4EAC82CA7396A68D541C85D26508E83_693456193 = response;
         addTaint(request.getTaint());
         addTaint(conn.getTaint());
         addTaint(context.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1595395195.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1595395195;
+        varB4EAC82CA7396A68D541C85D26508E83_693456193.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_693456193;
         // ---------- Original Method ----------
         //if (request == null) {
             //throw new IllegalArgumentException("HTTP request may not be null");
@@ -266,7 +266,7 @@ public class HttpRequestExecutor {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.379 -0400", hash_original_method = "64184DC5B382438058CC5473730574C6", hash_generated_method = "AC92B84600BA81C31D407C3EFAD4A58E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.546 -0400", hash_original_method = "64184DC5B382438058CC5473730574C6", hash_generated_method = "AC92B84600BA81C31D407C3EFAD4A58E")
     public void postProcess(
             final HttpResponse response,
             final HttpProcessor processor,

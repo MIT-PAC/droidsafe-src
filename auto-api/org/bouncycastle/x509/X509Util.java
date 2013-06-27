@@ -43,7 +43,7 @@ import org.bouncycastle.util.Strings;
 
 class X509Util {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:21.158 -0400", hash_original_method = "19DD25388D9EA3D8C5EFD26CD223A84A", hash_generated_method = "19DD25388D9EA3D8C5EFD26CD223A84A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.075 -0400", hash_original_method = "19DD25388D9EA3D8C5EFD26CD223A84A", hash_generated_method = "19DD25388D9EA3D8C5EFD26CD223A84A")
     public X509Util ()
     {
         //Synthesized constructor
@@ -260,14 +260,14 @@ class X509Util {
 
     
     static class Implementation {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:21.172 -0400", hash_original_field = "AD1943A9FD6D3D7EE1E6AF41A5B0D3E7", hash_generated_field = "8CEDBCDCD092B544D79CF4DDA5859D9C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.088 -0400", hash_original_field = "AD1943A9FD6D3D7EE1E6AF41A5B0D3E7", hash_generated_field = "8CEDBCDCD092B544D79CF4DDA5859D9C")
 
         Object engine;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:21.172 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "70389BF55D92237F4948951640719A18")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.088 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "70389BF55D92237F4948951640719A18")
 
         Provider provider;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:21.172 -0400", hash_original_method = "9E32F4D9CC9EFE32B8319A8018F19FA9", hash_generated_method = "9949B2A2DF1D43714393D23ACBD49241")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.089 -0400", hash_original_method = "9E32F4D9CC9EFE32B8319A8018F19FA9", hash_generated_method = "9949B2A2DF1D43714393D23ACBD49241")
           Implementation(
             Object      engine,
             Provider    provider) {
@@ -279,23 +279,23 @@ class X509Util {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:21.180 -0400", hash_original_method = "BE45F36A26940534B07006714A378835", hash_generated_method = "29B461B0E135DC10DC3E727045D345BB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.089 -0400", hash_original_method = "BE45F36A26940534B07006714A378835", hash_generated_method = "E75A6F134666C62510D61334BED0A879")
          Object getEngine() {
-            Object varB4EAC82CA7396A68D541C85D26508E83_773586394 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_773586394 = engine;
-            varB4EAC82CA7396A68D541C85D26508E83_773586394.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_773586394;
+            Object varB4EAC82CA7396A68D541C85D26508E83_392217903 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_392217903 = engine;
+            varB4EAC82CA7396A68D541C85D26508E83_392217903.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_392217903;
             // ---------- Original Method ----------
             //return engine;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:21.180 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "4A6CC0A3A318B68F92684BCD1B71B75B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.090 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "137B1259E680F3B36C5554F6FDA681D8")
          Provider getProvider() {
-            Provider varB4EAC82CA7396A68D541C85D26508E83_1022421365 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1022421365 = provider;
-            varB4EAC82CA7396A68D541C85D26508E83_1022421365.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1022421365;
+            Provider varB4EAC82CA7396A68D541C85D26508E83_926332542 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_926332542 = provider;
+            varB4EAC82CA7396A68D541C85D26508E83_926332542.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_926332542;
             // ---------- Original Method ----------
             //return provider;
         }
@@ -305,13 +305,13 @@ class X509Util {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:21.180 -0400", hash_original_field = "B39C3BE7546FA73A752B6C68B346E2B1", hash_generated_field = "2A7E0957EAD856B3315504481686A7DE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.090 -0400", hash_original_field = "B39C3BE7546FA73A752B6C68B346E2B1", hash_generated_field = "2A7E0957EAD856B3315504481686A7DE")
 
     private static Hashtable algorithms = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:21.180 -0400", hash_original_field = "0D433ED6AA05239AA7FFA603AE52EAF9", hash_generated_field = "3580C2237188FBF88703AFC814D06B98")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.090 -0400", hash_original_field = "0D433ED6AA05239AA7FFA603AE52EAF9", hash_generated_field = "3580C2237188FBF88703AFC814D06B98")
 
     private static Hashtable params = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:21.180 -0400", hash_original_field = "9599D5E70EEA113DAC00F7EA2B8AD147", hash_generated_field = "E222E546E7C245483C60E7B45F19B3A8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:22.090 -0400", hash_original_field = "9599D5E70EEA113DAC00F7EA2B8AD147", hash_generated_field = "E222E546E7C245483C60E7B45F19B3A8")
 
     private static Set noParams = new HashSet();
     static {   

@@ -19,42 +19,42 @@ import org.apache.http.util.ByteArrayBuffer;
 import org.apache.http.util.CharArrayBuffer;
 
 public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.719 -0400", hash_original_field = "02CC731E1E3C3F77A09E03A9FC603C18", hash_generated_field = "9B0F52B8C31A449A2E624B8847C753E5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.918 -0400", hash_original_field = "02CC731E1E3C3F77A09E03A9FC603C18", hash_generated_field = "9B0F52B8C31A449A2E624B8847C753E5")
 
     private InputStream instream;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.719 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "67DBC7965A32AEE1CAB7B25294021930")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.918 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "67DBC7965A32AEE1CAB7B25294021930")
 
     private byte[] buffer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.719 -0400", hash_original_field = "5D7FCA0A7C90E911DFFF5A1B20AD46DF", hash_generated_field = "C38A316D53C22723B1202376C6917B3F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.918 -0400", hash_original_field = "5D7FCA0A7C90E911DFFF5A1B20AD46DF", hash_generated_field = "C38A316D53C22723B1202376C6917B3F")
 
     private int bufferpos;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.719 -0400", hash_original_field = "83B3BB8A1D8CBB47A5D96A13240DA9D8", hash_generated_field = "296206540354C2045FC39BBE1B298B67")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.918 -0400", hash_original_field = "83B3BB8A1D8CBB47A5D96A13240DA9D8", hash_generated_field = "296206540354C2045FC39BBE1B298B67")
 
     private int bufferlen;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.719 -0400", hash_original_field = "B2C5177846F78CF14F2FAE7CA0C86EEB", hash_generated_field = "0CC6340E9144F7E622BCBFBE8F5F5CB5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.918 -0400", hash_original_field = "B2C5177846F78CF14F2FAE7CA0C86EEB", hash_generated_field = "0CC6340E9144F7E622BCBFBE8F5F5CB5")
 
     private ByteArrayBuffer linebuffer = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.720 -0400", hash_original_field = "6AF027F2A1AB832A1E028F7C18CA5687", hash_generated_field = "76BAEB11C3552BFB23E0B4B99A533DB1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.918 -0400", hash_original_field = "6AF027F2A1AB832A1E028F7C18CA5687", hash_generated_field = "76BAEB11C3552BFB23E0B4B99A533DB1")
 
     private String charset = HTTP.US_ASCII;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.720 -0400", hash_original_field = "EF253EBC8AB611F3735C35E53DC2547D", hash_generated_field = "9303ABFC1EF5CEEB446DE036D38A5721")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.918 -0400", hash_original_field = "EF253EBC8AB611F3735C35E53DC2547D", hash_generated_field = "9303ABFC1EF5CEEB446DE036D38A5721")
 
     private boolean ascii = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.720 -0400", hash_original_field = "E5CE8744D71F278EA7C2031220AD2484", hash_generated_field = "5CA0E4EE0481DA70634C383CF4BE2DA3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.918 -0400", hash_original_field = "E5CE8744D71F278EA7C2031220AD2484", hash_generated_field = "5CA0E4EE0481DA70634C383CF4BE2DA3")
 
     private int maxLineLen = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.720 -0400", hash_original_field = "AA59D67C2123F094D0D6798FFE651C4D", hash_generated_field = "D608E8E883C0ADFB9BB241D869189B8C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.918 -0400", hash_original_field = "AA59D67C2123F094D0D6798FFE651C4D", hash_generated_field = "D608E8E883C0ADFB9BB241D869189B8C")
 
     private HttpTransportMetricsImpl metrics;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.720 -0400", hash_original_method = "C27F370149363385AD6F9F81753F4445", hash_generated_method = "C27F370149363385AD6F9F81753F4445")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.918 -0400", hash_original_method = "C27F370149363385AD6F9F81753F4445", hash_generated_method = "C27F370149363385AD6F9F81753F4445")
     public AbstractSessionInputBuffer ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.729 -0400", hash_original_method = "9ACC7C380ECF9A2AF3368BF4FBEC1DC4", hash_generated_method = "D39B636707B50749483D162D68D5B637")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.962 -0400", hash_original_method = "9ACC7C380ECF9A2AF3368BF4FBEC1DC4", hash_generated_method = "D39B636707B50749483D162D68D5B637")
     protected void init(final InputStream instream, int buffersize, final HttpParams params) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Input stream may not be null");
@@ -80,7 +80,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.735 -0400", hash_original_method = "AED6430DDF1A78B7022960A54C9608D3", hash_generated_method = "06FEEF3FCB62B075FA6213C0105E7817")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.969 -0400", hash_original_method = "AED6430DDF1A78B7022960A54C9608D3", hash_generated_method = "036AC0A3A7FCC4E84EF3E045D9D5431D")
     protected int fillBuffer() throws IOException {
         {
             int len;
@@ -101,8 +101,8 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
             this.bufferlen = off + l;
             this.metrics.incrementBytesTransferred(l);
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_431631577 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_431631577;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1503822809 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1503822809;
         // ---------- Original Method ----------
         //if (this.bufferpos > 0) {
             //int len = this.bufferlen - this.bufferpos;
@@ -126,27 +126,27 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.736 -0400", hash_original_method = "BAC6DE94AA32B94037307F5D6F9840B7", hash_generated_method = "1BE1EAD71E1DC83DB6CB9F463B07C06E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.970 -0400", hash_original_method = "BAC6DE94AA32B94037307F5D6F9840B7", hash_generated_method = "7A7D4271C4873CCE13FBF4B31760A764")
     protected boolean hasBufferedData() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_436186061 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_436186061;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_895448798 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_895448798;
         // ---------- Original Method ----------
         //return this.bufferpos < this.bufferlen;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.736 -0400", hash_original_method = "E463AA34023422AC03B9513A2E94EA6B", hash_generated_method = "7DE5FA744B7248BCF37CE56A76BF33CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.970 -0400", hash_original_method = "E463AA34023422AC03B9513A2E94EA6B", hash_generated_method = "7B73FD3A1C807F1DAB999840B7C12C83")
     public int read() throws IOException {
         int noRead;
         noRead = 0;
         {
-            boolean varD210C1373B6FBB590F5BF990F9119C91_1977522678 = (!hasBufferedData());
+            boolean varD210C1373B6FBB590F5BF990F9119C91_816005458 = (!hasBufferedData());
             {
                 noRead = fillBuffer();
             } //End block
         } //End collapsed parenthetic
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1122611360 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1122611360;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_647650579 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_647650579;
         // ---------- Original Method ----------
         //int noRead = 0;
         //while (!hasBufferedData()) {
@@ -159,12 +159,12 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.737 -0400", hash_original_method = "5A83C8A4FAF4774EC1C7C0472F5C75E8", hash_generated_method = "3FC4117AC2AD591E748D75F40658259B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.971 -0400", hash_original_method = "5A83C8A4FAF4774EC1C7C0472F5C75E8", hash_generated_method = "62C1FD231C1B9C4D12408DDA53305F8A")
     public int read(final byte[] b, int off, int len) throws IOException {
         int noRead;
         noRead = 0;
         {
-            boolean varD210C1373B6FBB590F5BF990F9119C91_323219374 = (!hasBufferedData());
+            boolean varD210C1373B6FBB590F5BF990F9119C91_1490304121 = (!hasBufferedData());
             {
                 noRead = fillBuffer();
             } //End block
@@ -179,8 +179,8 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
         addTaint(b[0]);
         addTaint(off);
         addTaint(len);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1944947647 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1944947647;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_795898169 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_795898169;
         // ---------- Original Method ----------
         //if (b == null) {
             //return 0;
@@ -202,12 +202,12 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.737 -0400", hash_original_method = "EA19DAA67F217B43FC33D4721E7544D2", hash_generated_method = "73BA5F8298D90F9D24D3F3BDDC9B69BC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.971 -0400", hash_original_method = "EA19DAA67F217B43FC33D4721E7544D2", hash_generated_method = "2CA3011506D039C298F5D52C5CC2ABBC")
     public int read(final byte[] b) throws IOException {
-        int var38A74F3EE8B05A9B738F2B8C0F60B1F0_382381210 = (read(b, 0, b.length));
+        int var38A74F3EE8B05A9B738F2B8C0F60B1F0_467767108 = (read(b, 0, b.length));
         addTaint(b[0]);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1246755379 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1246755379;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_29469121 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_29469121;
         // ---------- Original Method ----------
         //if (b == null) {
             //return 0;
@@ -216,14 +216,14 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.738 -0400", hash_original_method = "25E4831B40662E7C69D1371A042407AC", hash_generated_method = "0311A697FE02A7D9806B1929E1F82B21")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.972 -0400", hash_original_method = "25E4831B40662E7C69D1371A042407AC", hash_generated_method = "63B61F3C50F2B50E704EE292131FC1C6")
     private int locateLF() {
         {
             int i;
             i = this.bufferpos;
         } //End collapsed parenthetic
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_57980931 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_57980931;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1378867400 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1378867400;
         // ---------- Original Method ----------
         //for (int i = this.bufferpos; i < this.bufferlen; i++) {
             //if (this.buffer[i] == HTTP.LF) {
@@ -234,7 +234,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.762 -0400", hash_original_method = "473C0DD8FF067FE4EC2BE597B4124765", hash_generated_method = "A20C675716A2C3E8E03AB5178A4C2AAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.982 -0400", hash_original_method = "473C0DD8FF067FE4EC2BE597B4124765", hash_generated_method = "CC4D4761808EBA8491D19E825492A0CE")
     public int readLine(final CharArrayBuffer charbuffer) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Char array buffer may not be null");
@@ -249,9 +249,9 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
             i = locateLF();
             {
                 {
-                    boolean varEBE8EA489B47F8DB0AE71744DD2E6C95_1451772179 = (this.linebuffer.isEmpty());
+                    boolean varEBE8EA489B47F8DB0AE71744DD2E6C95_248144545 = (this.linebuffer.isEmpty());
                     {
-                        int var297CA58D99A61AD49D3A628841BFAD8C_522329655 = (lineFromReadBuffer(charbuffer, i));
+                        int var297CA58D99A61AD49D3A628841BFAD8C_521076783 = (lineFromReadBuffer(charbuffer, i));
                     } //End block
                 } //End collapsed parenthetic
                 retry = false;
@@ -262,7 +262,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
             } //End block
             {
                 {
-                    boolean varAEA5FA52AEDB2545ECF9D26B26ACDD70_1743457704 = (hasBufferedData());
+                    boolean varAEA5FA52AEDB2545ECF9D26B26ACDD70_793397532 = (hasBufferedData());
                     {
                         int len;
                         len = this.bufferlen - this.bufferpos;
@@ -276,38 +276,38 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
                 } //End block
             } //End block
             {
-                boolean var7235849E2B0B7AC365A0707BE1ACD937_615361092 = (this.maxLineLen > 0 && this.linebuffer.length() >= this.maxLineLen);
+                boolean var7235849E2B0B7AC365A0707BE1ACD937_564987619 = (this.maxLineLen > 0 && this.linebuffer.length() >= this.maxLineLen);
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException("Maximum line length limit exceeded");
                 } //End block
             } //End collapsed parenthetic
         } //End block
         {
-            boolean var7DF2E4704BE4B8408E4250829EA440A6_27809291 = (noRead == -1 && this.linebuffer.isEmpty());
+            boolean var7DF2E4704BE4B8408E4250829EA440A6_970097642 = (noRead == -1 && this.linebuffer.isEmpty());
         } //End collapsed parenthetic
-        int varCEC600CF2A719499A0A9466F62AF2872_852541018 = (lineFromLineBuffer(charbuffer));
+        int varCEC600CF2A719499A0A9466F62AF2872_409560393 = (lineFromLineBuffer(charbuffer));
         addTaint(charbuffer.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2047813681 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2047813681;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1728962071 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1728962071;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.767 -0400", hash_original_method = "729842E116E7795B9747338D0779180E", hash_generated_method = "3A21F61E47DBC3CC3637352AE6003B37")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.983 -0400", hash_original_method = "729842E116E7795B9747338D0779180E", hash_generated_method = "774F1FE01F57ABC732996489C0B2DD1F")
     private int lineFromLineBuffer(final CharArrayBuffer charbuffer) throws IOException {
         int l;
         l = this.linebuffer.length();
         {
             {
-                boolean varC90433BDC295BDA0712C663BFE02ABD2_939938074 = (this.linebuffer.byteAt(l - 1) == HTTP.LF);
+                boolean varC90433BDC295BDA0712C663BFE02ABD2_748798531 = (this.linebuffer.byteAt(l - 1) == HTTP.LF);
                 {
                     this.linebuffer.setLength(l);
                 } //End block
             } //End collapsed parenthetic
             {
                 {
-                    boolean var4AD0E6932E39BC4F55122F4276BA041B_1111194846 = (this.linebuffer.byteAt(l - 1) == HTTP.CR);
+                    boolean var4AD0E6932E39BC4F55122F4276BA041B_244613239 = (this.linebuffer.byteAt(l - 1) == HTTP.CR);
                     {
                         this.linebuffer.setLength(l);
                     } //End block
@@ -324,8 +324,8 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
             charbuffer.append(s);
         } //End block
         addTaint(charbuffer.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1585558954 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1585558954;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_46902614 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_46902614;
         // ---------- Original Method ----------
         //int l = this.linebuffer.length();
         //if (l > 0) {
@@ -351,7 +351,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.768 -0400", hash_original_method = "E6FBFD5C83985C7D6E27D18B8C3822A9", hash_generated_method = "2603E6BC56514D5B8646849D13AC4F34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.985 -0400", hash_original_method = "E6FBFD5C83985C7D6E27D18B8C3822A9", hash_generated_method = "CE0FEAC1BB53645487DD6894F0C6C87A")
     private int lineFromReadBuffer(final CharArrayBuffer charbuffer, int pos) throws IOException {
         int off;
         off = this.bufferpos;
@@ -367,8 +367,8 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
             charbuffer.append(s);
         } //End block
         addTaint(charbuffer.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11327122 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11327122;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_389469121 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_389469121;
         // ---------- Original Method ----------
         //int off = this.bufferpos;
         //int len;
@@ -387,31 +387,31 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.775 -0400", hash_original_method = "40CE76C5D842CFEF27650CABF8F97946", hash_generated_method = "4BAF40237E0CEC990C3509BE7609A4EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.987 -0400", hash_original_method = "40CE76C5D842CFEF27650CABF8F97946", hash_generated_method = "E4B037C2C9FAAE3DA7D280A48A333211")
     public String readLine() throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_1468797820 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_372381877 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_452728121 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_297762057 = null; //Variable for return #2
         CharArrayBuffer charbuffer;
         charbuffer = new CharArrayBuffer(64);
         int l;
         l = readLine(charbuffer);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1468797820 = charbuffer.toString();
+            varB4EAC82CA7396A68D541C85D26508E83_452728121 = charbuffer.toString();
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_372381877 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_297762057 = null;
         } //End block
-        String varA7E53CE21691AB073D9660D615818899_1220625218; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_1270513681; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1220625218 = varB4EAC82CA7396A68D541C85D26508E83_1468797820;
+                varA7E53CE21691AB073D9660D615818899_1270513681 = varB4EAC82CA7396A68D541C85D26508E83_452728121;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1220625218 = varB4EAC82CA7396A68D541C85D26508E83_372381877;
+                varA7E53CE21691AB073D9660D615818899_1270513681 = varB4EAC82CA7396A68D541C85D26508E83_297762057;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1220625218.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1220625218;
+        varA7E53CE21691AB073D9660D615818899_1270513681.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1270513681;
         // ---------- Original Method ----------
         //CharArrayBuffer charbuffer = new CharArrayBuffer(64);
         //int l = readLine(charbuffer);
@@ -423,12 +423,12 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.783 -0400", hash_original_method = "E82E77AA369AC2B118042C614F644F5C", hash_generated_method = "689030E562AE66167D055CD711F8DEFD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.991 -0400", hash_original_method = "E82E77AA369AC2B118042C614F644F5C", hash_generated_method = "FC6476EEDAF55CFBEA6644001978F3A4")
     public HttpTransportMetrics getMetrics() {
-        HttpTransportMetrics varB4EAC82CA7396A68D541C85D26508E83_150083225 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_150083225 = this.metrics;
-        varB4EAC82CA7396A68D541C85D26508E83_150083225.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_150083225;
+        HttpTransportMetrics varB4EAC82CA7396A68D541C85D26508E83_618536221 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_618536221 = this.metrics;
+        varB4EAC82CA7396A68D541C85D26508E83_618536221.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_618536221;
         // ---------- Original Method ----------
         //return this.metrics;
     }

@@ -28,7 +28,7 @@ import javax.net.ssl.X509TrustManager;
 
 class CertificateChainValidator {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.816 -0400", hash_original_method = "2F959D748394792DE55923600092C8E9", hash_generated_method = "249781E5FCB4B7182831503E258AE636")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:22.557 -0400", hash_original_method = "2F959D748394792DE55923600092C8E9", hash_generated_method = "249781E5FCB4B7182831503E258AE636")
     private  CertificateChainValidator() {
         // ---------- Original Method ----------
     }
@@ -39,14 +39,14 @@ class CertificateChainValidator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.838 -0400", hash_original_method = "5B87AA85F76367E84F6A87186CEADEE5", hash_generated_method = "4B01A721AB43D2437C87A7E8D09104BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:22.563 -0400", hash_original_method = "5B87AA85F76367E84F6A87186CEADEE5", hash_generated_method = "31426C68B2F12A42D0E9A5076F4F462B")
     public SslError doHandshakeAndValidateServerCertificates(
             HttpsConnection connection, SSLSocket sslSocket, String domain) throws IOException {
-        SslError varB4EAC82CA7396A68D541C85D26508E83_487650217 = null; //Variable for return #1
+        SslError varB4EAC82CA7396A68D541C85D26508E83_24619259 = null; //Variable for return #1
         SSLSession sslSession;
         sslSession = sslSocket.getSession();
         {
-            boolean var93330143B7CECBEE557BABA2F99073AF_11637667 = (!sslSession.isValid());
+            boolean var93330143B7CECBEE557BABA2F99073AF_1225548773 = (!sslSession.isValid());
             {
                 closeSocketThrowException(sslSocket, "failed to perform SSL handshake");
             } //End block
@@ -65,12 +65,12 @@ class CertificateChainValidator {
                 } //End block
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_487650217 = verifyServerDomainAndCertificates((X509Certificate[]) peerCertificates, domain, "RSA");
+        varB4EAC82CA7396A68D541C85D26508E83_24619259 = verifyServerDomainAndCertificates((X509Certificate[]) peerCertificates, domain, "RSA");
         addTaint(connection.getTaint());
         addTaint(sslSocket.getTaint());
         addTaint(domain.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_487650217.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_487650217;
+        varB4EAC82CA7396A68D541C85D26508E83_24619259.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_24619259;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -114,7 +114,7 @@ class CertificateChainValidator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.839 -0400", hash_original_method = "768C411890F29309D1F137AF28998331", hash_generated_method = "6DEC096A30D6F80CF1BE104116298E50")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:22.575 -0400", hash_original_method = "768C411890F29309D1F137AF28998331", hash_generated_method = "6DEC096A30D6F80CF1BE104116298E50")
     private void closeSocketThrowException(
             SSLSocket socket, String errorMessage, String defaultErrorMessage) throws IOException {
         closeSocketThrowException(
@@ -128,7 +128,7 @@ class CertificateChainValidator {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.840 -0400", hash_original_method = "8DFE74A9ABEF1F34DE8E6B965DB51B9B", hash_generated_method = "05AE6781C64EA0D84CD08CC9849BF78C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:22.576 -0400", hash_original_method = "8DFE74A9ABEF1F34DE8E6B965DB51B9B", hash_generated_method = "05AE6781C64EA0D84CD08CC9849BF78C")
     private void closeSocketThrowException(SSLSocket socket,
             String errorMessage) throws IOException {
         {
@@ -160,7 +160,7 @@ class CertificateChainValidator {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:20.841 -0400", hash_original_field = "75E9E3354073877B40EBA5B806297F19", hash_generated_field = "4B8BDD7DAB8BC39946C710FF23835B77")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:22.577 -0400", hash_original_field = "75E9E3354073877B40EBA5B806297F19", hash_generated_field = "4B8BDD7DAB8BC39946C710FF23835B77")
 
     private static CertificateChainValidator sInstance = new CertificateChainValidator();
 }

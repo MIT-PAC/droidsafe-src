@@ -16,7 +16,7 @@ import android.util.Log;
 
 public class NetworkUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.864 -0400", hash_original_method = "F1C492907C316113D8B010C69392B76F", hash_generated_method = "F1C492907C316113D8B010C69392B76F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.548 -0400", hash_original_method = "F1C492907C316113D8B010C69392B76F", hash_generated_method = "F1C492907C316113D8B010C69392B76F")
     public NetworkUtils ()
     {
         //Synthesized constructor
@@ -181,16 +181,16 @@ public class NetworkUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.899 -0400", hash_original_field = "EFD2DD51969EAC667D6C714A3D10B805", hash_generated_field = "A54E2C5A3DF486072264FCC4278FF8ED")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.572 -0400", hash_original_field = "EFD2DD51969EAC667D6C714A3D10B805", hash_generated_field = "A54E2C5A3DF486072264FCC4278FF8ED")
 
     private static String TAG = "NetworkUtils";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.899 -0400", hash_original_field = "18B1CA92461CE22E7B205EC8EE808BF5", hash_generated_field = "8527B95E11967191DF76627972EC8F1C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.572 -0400", hash_original_field = "18B1CA92461CE22E7B205EC8EE808BF5", hash_generated_field = "8527B95E11967191DF76627972EC8F1C")
 
     public static final int RESET_IPV4_ADDRESSES = 0x01;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.899 -0400", hash_original_field = "AAE4005003B639A4069F3999D66E8066", hash_generated_field = "EEC5561B124BB21A0A9EE1CFD725F6EF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.572 -0400", hash_original_field = "AAE4005003B639A4069F3999D66E8066", hash_generated_field = "EEC5561B124BB21A0A9EE1CFD725F6EF")
 
     public static final int RESET_IPV6_ADDRESSES = 0x02;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.899 -0400", hash_original_field = "04DACDA903C1AF2936B97BED81ED3BA0", hash_generated_field = "658E35BA939EA603B8ACD3CD0142AFF1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.572 -0400", hash_original_field = "04DACDA903C1AF2936B97BED81ED3BA0", hash_generated_field = "658E35BA939EA603B8ACD3CD0142AFF1")
 
     public static final int RESET_ALL_ADDRESSES = RESET_IPV4_ADDRESSES | RESET_IPV6_ADDRESSES;
 }

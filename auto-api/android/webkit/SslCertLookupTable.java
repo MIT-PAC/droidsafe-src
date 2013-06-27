@@ -13,11 +13,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 final class SslCertLookupTable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.360 -0400", hash_original_field = "AAB9E1DE16F38176F86D7A92BA337A8D", hash_generated_field = "E7D6180A9A0AC63D2200ADF169A7E529")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:01.277 -0400", hash_original_field = "AAB9E1DE16F38176F86D7A92BA337A8D", hash_generated_field = "E7D6180A9A0AC63D2200ADF169A7E529")
 
     private Bundle table;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.479 -0400", hash_original_method = "81BA7CE42C429B1D2F4A8FA68B131FF3", hash_generated_method = "EE496E3F3072DFAFBDE3B99BD9B2BC37")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:01.278 -0400", hash_original_method = "81BA7CE42C429B1D2F4A8FA68B131FF3", hash_generated_method = "EE496E3F3072DFAFBDE3B99BD9B2BC37")
     private  SslCertLookupTable() {
         table = new Bundle();
         // ---------- Original Method ----------
@@ -33,7 +33,7 @@ final class SslCertLookupTable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.480 -0400", hash_original_method = "D1D349299054A2A05843F53D2271E3F3", hash_generated_method = "BAC5EFFD31CE56F1BB3F1D5EAF36E851")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:01.287 -0400", hash_original_method = "D1D349299054A2A05843F53D2271E3F3", hash_generated_method = "BAC5EFFD31CE56F1BB3F1D5EAF36E851")
     public void setIsAllowed(SslError sslError) {
         String host;
         try 
@@ -55,7 +55,7 @@ final class SslCertLookupTable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.481 -0400", hash_original_method = "BE69D625DE69B336FE62B540E51D9D21", hash_generated_method = "DD52316C242F3C257BFC9F03054BB81C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:01.289 -0400", hash_original_method = "BE69D625DE69B336FE62B540E51D9D21", hash_generated_method = "E1DA71A13FC853F85ED5459F712F8596")
     public boolean isAllowed(SslError sslError) {
         String host;
         try 
@@ -64,10 +64,10 @@ final class SslCertLookupTable {
         } //End block
         catch (MalformedURLException e)
         { }
-        boolean var15B3CC325E4DD7AAC65B476211A99A1B_1136277688 = (table.containsKey(host) && sslError.getPrimaryError() <= table.getInt(host));
+        boolean var15B3CC325E4DD7AAC65B476211A99A1B_1323879267 = (table.containsKey(host) && sslError.getPrimaryError() <= table.getInt(host));
         addTaint(sslError.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_396249780 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_396249780;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1657656729 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1657656729;
         // ---------- Original Method ----------
         //String host;
         //try {
@@ -79,7 +79,7 @@ final class SslCertLookupTable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.481 -0400", hash_original_method = "ACAE13D192212363EBD03A770903E836", hash_generated_method = "50263D7EA683F7C86C6DCDB42989A20A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:01.289 -0400", hash_original_method = "ACAE13D192212363EBD03A770903E836", hash_generated_method = "50263D7EA683F7C86C6DCDB42989A20A")
     public void clear() {
         table.clear();
         // ---------- Original Method ----------
@@ -87,7 +87,7 @@ final class SslCertLookupTable {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.481 -0400", hash_original_field = "C9695FF7FB5E10741CB2F64B059A67B7", hash_generated_field = "2A9D3A10505DE76D3665C10F8539BC83")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:01.289 -0400", hash_original_field = "C9695FF7FB5E10741CB2F64B059A67B7", hash_generated_field = "2A9D3A10505DE76D3665C10F8539BC83")
 
     private static SslCertLookupTable sTable;
 }

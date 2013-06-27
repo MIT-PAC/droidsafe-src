@@ -16,36 +16,36 @@ import gov.nist.javax.sip.stack.MessageProcessor;
 
 public class DefaultAddressResolver implements AddressResolver {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.007 -0400", hash_original_method = "DF566229E3B5A08AB8CBD467E13866C4", hash_generated_method = "B6233FFF3B7153457116BC5E853882E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.517 -0400", hash_original_method = "DF566229E3B5A08AB8CBD467E13866C4", hash_generated_method = "B6233FFF3B7153457116BC5E853882E0")
     public  DefaultAddressResolver() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.008 -0400", hash_original_method = "A95D8B22A59B30AE2193C9FD49249FF0", hash_generated_method = "D7DC8FD25BCED5ABCCE2C0AFA39F8301")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.518 -0400", hash_original_method = "A95D8B22A59B30AE2193C9FD49249FF0", hash_generated_method = "9FF117D6992C25B6B940647818BB91B3")
     public Hop resolveAddress(Hop inputAddress) {
-        Hop varB4EAC82CA7396A68D541C85D26508E83_612305935 = null; //Variable for return #1
-        Hop varB4EAC82CA7396A68D541C85D26508E83_1435938026 = null; //Variable for return #2
+        Hop varB4EAC82CA7396A68D541C85D26508E83_954633953 = null; //Variable for return #1
+        Hop varB4EAC82CA7396A68D541C85D26508E83_262281652 = null; //Variable for return #2
         {
-            boolean varACA6E6AF06869376955350ABA88D8C22_1041354177 = (inputAddress.getPort()  != -1);
-            varB4EAC82CA7396A68D541C85D26508E83_612305935 = inputAddress;
+            boolean varACA6E6AF06869376955350ABA88D8C22_1347023345 = (inputAddress.getPort()  != -1);
+            varB4EAC82CA7396A68D541C85D26508E83_954633953 = inputAddress;
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1435938026 = new HopImpl(inputAddress.getHost(),
+                varB4EAC82CA7396A68D541C85D26508E83_262281652 = new HopImpl(inputAddress.getHost(),
                     MessageProcessor.getDefaultPort(inputAddress.getTransport()),inputAddress.getTransport());
             } //End block
         } //End collapsed parenthetic
         addTaint(inputAddress.getTaint());
-        Hop varA7E53CE21691AB073D9660D615818899_849007517; //Final return value
+        Hop varA7E53CE21691AB073D9660D615818899_906017031; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_849007517 = varB4EAC82CA7396A68D541C85D26508E83_612305935;
+                varA7E53CE21691AB073D9660D615818899_906017031 = varB4EAC82CA7396A68D541C85D26508E83_954633953;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_849007517 = varB4EAC82CA7396A68D541C85D26508E83_1435938026;
+                varA7E53CE21691AB073D9660D615818899_906017031 = varB4EAC82CA7396A68D541C85D26508E83_262281652;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_849007517.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_849007517;
+        varA7E53CE21691AB073D9660D615818899_906017031.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_906017031;
         // ---------- Original Method ----------
         //if  (inputAddress.getPort()  != -1)
             //return inputAddress;

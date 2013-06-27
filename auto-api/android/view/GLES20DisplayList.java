@@ -11,33 +11,33 @@ import android.graphics.Bitmap;
 import java.util.ArrayList;
 
 class GLES20DisplayList extends DisplayList {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:46.064 -0400", hash_original_field = "D40867AE35FD7434138AD06437D816AD", hash_generated_field = "17A77D319EA2543AEE6DEDC1CDEFB4EA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.772 -0400", hash_original_field = "D40867AE35FD7434138AD06437D816AD", hash_generated_field = "17A77D319EA2543AEE6DEDC1CDEFB4EA")
 
     ArrayList<Bitmap> mBitmaps = new ArrayList<Bitmap>(5);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:46.064 -0400", hash_original_field = "B27B52DEE91FF1260919C0152F8A3F5A", hash_generated_field = "B2F7DA6F3E4A8F7E7A9EA569E557EA23")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.772 -0400", hash_original_field = "B27B52DEE91FF1260919C0152F8A3F5A", hash_generated_field = "B2F7DA6F3E4A8F7E7A9EA569E557EA23")
 
     private GLES20RecordingCanvas mCanvas;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:46.065 -0400", hash_original_field = "AB06C0B5FE02AF09E4F911D76AAEE4B2", hash_generated_field = "EA21572F663EFE15B9390D06509A48DD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.772 -0400", hash_original_field = "AB06C0B5FE02AF09E4F911D76AAEE4B2", hash_generated_field = "EA21572F663EFE15B9390D06509A48DD")
 
     private boolean mValid;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:46.065 -0400", hash_original_field = "2D0BC5276619D20C917420C774FF5089", hash_generated_field = "CE668A6A9F47BC4EB8C56E4B4F351717")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.773 -0400", hash_original_field = "2D0BC5276619D20C917420C774FF5089", hash_generated_field = "CE668A6A9F47BC4EB8C56E4B4F351717")
 
     private DisplayListFinalizer mFinalizer;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:46.065 -0400", hash_original_method = "AE604D63277D457D456549CB93FF76C1", hash_generated_method = "AE604D63277D457D456549CB93FF76C1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.773 -0400", hash_original_method = "AE604D63277D457D456549CB93FF76C1", hash_generated_method = "AE604D63277D457D456549CB93FF76C1")
     public GLES20DisplayList ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:46.065 -0400", hash_original_method = "95D7EAA4B043B28D3D04F5E259ED8AAD", hash_generated_method = "8651C55D048622323162EE9F8B112112")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.773 -0400", hash_original_method = "95D7EAA4B043B28D3D04F5E259ED8AAD", hash_generated_method = "B4CD08FB316884ED55E1996C0A7A572C")
      int getNativeDisplayList() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("The display list is not valid.");
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2131455176 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2131455176;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1528452050 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1528452050;
         // ---------- Original Method ----------
         //if (!mValid || mFinalizer == null) {
             //throw new IllegalStateException("The display list is not valid.");
@@ -46,19 +46,19 @@ class GLES20DisplayList extends DisplayList {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:46.066 -0400", hash_original_method = "E5C596CBDCD8BE3EF1855673907A59B8", hash_generated_method = "E4C3E6081F4328902B15FD468F6620FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.786 -0400", hash_original_method = "E5C596CBDCD8BE3EF1855673907A59B8", hash_generated_method = "4101EE1720C508B95CCCC143D3A11B33")
     @Override
      HardwareCanvas start() {
-        HardwareCanvas varB4EAC82CA7396A68D541C85D26508E83_80843022 = null; //Variable for return #1
+        HardwareCanvas varB4EAC82CA7396A68D541C85D26508E83_519496850 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Recording has already started");
         } //End block
         mValid = false;
         mCanvas = GLES20RecordingCanvas.obtain(this);
         mCanvas.start();
-        varB4EAC82CA7396A68D541C85D26508E83_80843022 = mCanvas;
-        varB4EAC82CA7396A68D541C85D26508E83_80843022.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_80843022;
+        varB4EAC82CA7396A68D541C85D26508E83_519496850 = mCanvas;
+        varB4EAC82CA7396A68D541C85D26508E83_519496850.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_519496850;
         // ---------- Original Method ----------
         //if (mCanvas != null) {
             //throw new IllegalStateException("Recording has already started");
@@ -70,7 +70,7 @@ class GLES20DisplayList extends DisplayList {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:46.069 -0400", hash_original_method = "247D3D8A3D31E91BE5C013DB24963870", hash_generated_method = "EA0C6AC66F1D1B0276B44C5AF04F5131")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.786 -0400", hash_original_method = "247D3D8A3D31E91BE5C013DB24963870", hash_generated_method = "EA0C6AC66F1D1B0276B44C5AF04F5131")
     @Override
      void invalidate() {
         {
@@ -87,17 +87,17 @@ class GLES20DisplayList extends DisplayList {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:46.070 -0400", hash_original_method = "3D6474677C8929AA6741081CA86616E2", hash_generated_method = "E2085B3A40C67FAD03D7567EB0140BF8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.792 -0400", hash_original_method = "3D6474677C8929AA6741081CA86616E2", hash_generated_method = "F2D1F5D053633797EB0CAC215F951CA0")
     @Override
      boolean isValid() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1758482289 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1758482289;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_916388144 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_916388144;
         // ---------- Original Method ----------
         //return mValid;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:46.087 -0400", hash_original_method = "96CA5C3852449FF9B74309A832926627", hash_generated_method = "42A3030B4F1EA00DB634A100334DEBA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.792 -0400", hash_original_method = "96CA5C3852449FF9B74309A832926627", hash_generated_method = "42A3030B4F1EA00DB634A100334DEBA0")
     @Override
      void end() {
         {
@@ -125,12 +125,12 @@ class GLES20DisplayList extends DisplayList {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:46.087 -0400", hash_original_method = "3E7FC40C3EA5DE4EA51EEDE8E80652F9", hash_generated_method = "F937695E6F2AFFBE5EAFDAED7E8BBE99")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.793 -0400", hash_original_method = "3E7FC40C3EA5DE4EA51EEDE8E80652F9", hash_generated_method = "CA8BB071F6572C6A4A2CB4B9BA74B0B4")
     @Override
      int getSize() {
-        int varB2890EA812AE28FA4D154D7F2D962AEF_503036284 = (GLES20Canvas.getDisplayListSize(mFinalizer.mNativeDisplayList));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_639132217 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_639132217;
+        int varB2890EA812AE28FA4D154D7F2D962AEF_206937319 = (GLES20Canvas.getDisplayListSize(mFinalizer.mNativeDisplayList));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2132644408 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2132644408;
         // ---------- Original Method ----------
         //if (mFinalizer == null) return 0;
         //return GLES20Canvas.getDisplayListSize(mFinalizer.mNativeDisplayList);
@@ -138,11 +138,11 @@ class GLES20DisplayList extends DisplayList {
 
     
     private static class DisplayListFinalizer {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:46.087 -0400", hash_original_field = "18F4097D685B19CE7DD654C13CA0EBEA", hash_generated_field = "79CD38F4DEF89D187CA539E02ADB2412")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.793 -0400", hash_original_field = "18F4097D685B19CE7DD654C13CA0EBEA", hash_generated_field = "79CD38F4DEF89D187CA539E02ADB2412")
 
         int mNativeDisplayList;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:46.088 -0400", hash_original_method = "0B1B093880262044EED2D5421EB7C8E9", hash_generated_method = "DAAE4ADD86F9B0F97F318309228FD8AA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.794 -0400", hash_original_method = "0B1B093880262044EED2D5421EB7C8E9", hash_generated_method = "DAAE4ADD86F9B0F97F318309228FD8AA")
         public  DisplayListFinalizer(int nativeDisplayList) {
             mNativeDisplayList = nativeDisplayList;
             // ---------- Original Method ----------
@@ -150,7 +150,7 @@ class GLES20DisplayList extends DisplayList {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:46.088 -0400", hash_original_method = "FB7FF5339A61C1A66F37CCF40E62B9AC", hash_generated_method = "E7681B50DE99CA561B64705CC62CB068")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.794 -0400", hash_original_method = "FB7FF5339A61C1A66F37CCF40E62B9AC", hash_generated_method = "E7681B50DE99CA561B64705CC62CB068")
         @Override
         protected void finalize() throws Throwable {
             try 

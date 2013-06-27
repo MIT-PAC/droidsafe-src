@@ -14,7 +14,7 @@ import android.os.Message;
 
 public final class CdmaLteUiccFileHandler extends IccFileHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.055 -0400", hash_original_method = "F91AC2EC8400C94DFA50E0DE5830B6E7", hash_generated_method = "CE2FF0BDB64F66AEEF51F473190BEDAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:20.703 -0400", hash_original_method = "F91AC2EC8400C94DFA50E0DE5830B6E7", hash_generated_method = "CE2FF0BDB64F66AEEF51F473190BEDAB")
       CdmaLteUiccFileHandler(CDMALTEPhone phone) {
         super(phone);
         addTaint(phone.getTaint());
@@ -22,40 +22,40 @@ public final class CdmaLteUiccFileHandler extends IccFileHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.056 -0400", hash_original_method = "B50B51C72253EA7CE2666FA23DED632D", hash_generated_method = "8B9FF339FE909739059C60AFD4B2848F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:20.704 -0400", hash_original_method = "B50B51C72253EA7CE2666FA23DED632D", hash_generated_method = "E8D82F115C367E1F5F6176FBD6494137")
     protected String getEFPath(int efid) {
-        String varB4EAC82CA7396A68D541C85D26508E83_2062788348 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1465561982 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_272925152 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_456480312 = null; //Variable for return #4
+        String varB4EAC82CA7396A68D541C85D26508E83_1826145337 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_548483842 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_971607906 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1918842801 = null; //Variable for return #4
         //Begin case EF_CSIM_SPN EF_CSIM_LI EF_CSIM_MDN EF_CSIM_IMSIM EF_CSIM_CDMAHOME EF_CSIM_EPRL 
-        varB4EAC82CA7396A68D541C85D26508E83_2062788348 = MF_SIM + DF_CDMA;
+        varB4EAC82CA7396A68D541C85D26508E83_1826145337 = MF_SIM + DF_CDMA;
         //End case EF_CSIM_SPN EF_CSIM_LI EF_CSIM_MDN EF_CSIM_IMSIM EF_CSIM_CDMAHOME EF_CSIM_EPRL 
         //Begin case EF_AD 
-        varB4EAC82CA7396A68D541C85D26508E83_1465561982 = MF_SIM + DF_GSM;
+        varB4EAC82CA7396A68D541C85D26508E83_548483842 = MF_SIM + DF_GSM;
         //End case EF_AD 
         //Begin case EF_IMPI EF_DOMAIN EF_IMPU 
-        varB4EAC82CA7396A68D541C85D26508E83_272925152 = MF_SIM + DF_ADFISIM;
+        varB4EAC82CA7396A68D541C85D26508E83_971607906 = MF_SIM + DF_ADFISIM;
         //End case EF_IMPI EF_DOMAIN EF_IMPU 
-        varB4EAC82CA7396A68D541C85D26508E83_456480312 = getCommonIccEFPath(efid);
+        varB4EAC82CA7396A68D541C85D26508E83_1918842801 = getCommonIccEFPath(efid);
         addTaint(efid);
-        String varA7E53CE21691AB073D9660D615818899_175237683; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_235930298; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_175237683 = varB4EAC82CA7396A68D541C85D26508E83_2062788348;
+                varA7E53CE21691AB073D9660D615818899_235930298 = varB4EAC82CA7396A68D541C85D26508E83_1826145337;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_175237683 = varB4EAC82CA7396A68D541C85D26508E83_1465561982;
+                varA7E53CE21691AB073D9660D615818899_235930298 = varB4EAC82CA7396A68D541C85D26508E83_548483842;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_175237683 = varB4EAC82CA7396A68D541C85D26508E83_272925152;
+                varA7E53CE21691AB073D9660D615818899_235930298 = varB4EAC82CA7396A68D541C85D26508E83_971607906;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_175237683 = varB4EAC82CA7396A68D541C85D26508E83_456480312;
+                varA7E53CE21691AB073D9660D615818899_235930298 = varB4EAC82CA7396A68D541C85D26508E83_1918842801;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_175237683.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_175237683;
+        varA7E53CE21691AB073D9660D615818899_235930298.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_235930298;
         // ---------- Original Method ----------
         //switch(efid) {
         //case EF_CSIM_SPN:
@@ -76,7 +76,7 @@ public final class CdmaLteUiccFileHandler extends IccFileHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.056 -0400", hash_original_method = "6E38A6F3073A316D7DC84B086C57AB0E", hash_generated_method = "4C04F00BCB703E4EFAE5F363E603B98C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:20.704 -0400", hash_original_method = "6E38A6F3073A316D7DC84B086C57AB0E", hash_generated_method = "4C04F00BCB703E4EFAE5F363E603B98C")
     @Override
     public void loadEFTransparent(int fileid, Message onLoaded) {
         {
@@ -102,7 +102,7 @@ public final class CdmaLteUiccFileHandler extends IccFileHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.056 -0400", hash_original_method = "9E18A7664E95C7EB6352A9A22332F4AA", hash_generated_method = "80CD08E6ED0BE069C01C8E7F6AED97E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:20.705 -0400", hash_original_method = "9E18A7664E95C7EB6352A9A22332F4AA", hash_generated_method = "80CD08E6ED0BE069C01C8E7F6AED97E9")
     protected void logd(String msg) {
         Log.d(LOG_TAG, "[CdmaLteUiccFileHandler] " + msg);
         addTaint(msg.getTaint());
@@ -111,7 +111,7 @@ public final class CdmaLteUiccFileHandler extends IccFileHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.057 -0400", hash_original_method = "420CE2D43D58036FFB967B46A860B403", hash_generated_method = "716A6202FD80821EFA4FCD5E3A01AB59")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:20.705 -0400", hash_original_method = "420CE2D43D58036FFB967B46A860B403", hash_generated_method = "716A6202FD80821EFA4FCD5E3A01AB59")
     protected void loge(String msg) {
         addTaint(msg.getTaint());
         // ---------- Original Method ----------
@@ -119,7 +119,7 @@ public final class CdmaLteUiccFileHandler extends IccFileHandler {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:19.057 -0400", hash_original_field = "951C150E6D062E6AED2C45BB9B756185", hash_generated_field = "3985FC5365F0E17AC0BA70F3DC93B852")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:20.705 -0400", hash_original_field = "951C150E6D062E6AED2C45BB9B756185", hash_generated_field = "3985FC5365F0E17AC0BA70F3DC93B852")
 
     static String LOG_TAG = "CDMA";
 }

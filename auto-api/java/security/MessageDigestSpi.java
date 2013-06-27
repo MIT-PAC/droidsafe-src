@@ -11,17 +11,17 @@ import java.nio.ByteBuffer;
 
 public abstract class MessageDigestSpi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.035 -0400", hash_original_method = "1CC69EEF55221D742AA45996503C6E66", hash_generated_method = "1CC69EEF55221D742AA45996503C6E66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.301 -0400", hash_original_method = "1CC69EEF55221D742AA45996503C6E66", hash_generated_method = "1CC69EEF55221D742AA45996503C6E66")
     public MessageDigestSpi ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.036 -0400", hash_original_method = "3B6B0B894EAF70FF02C9B2DD93EC82F9", hash_generated_method = "54FA4FABD4862E395F6ADAEAD06535BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.302 -0400", hash_original_method = "3B6B0B894EAF70FF02C9B2DD93EC82F9", hash_generated_method = "05DA40A5BFD5ACC1F4E6E58FA5FD622A")
     protected int engineGetDigestLength() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_174074647 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_174074647;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1561650805 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1561650805;
         // ---------- Original Method ----------
         //return 0;
     }
@@ -33,14 +33,14 @@ public abstract class MessageDigestSpi {
     protected abstract void engineUpdate(byte[] input, int offset, int len);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.037 -0400", hash_original_method = "63E93F26D259525D134C674633CD9D02", hash_generated_method = "CEBF0DD5A3B299BFEFB0986C75435932")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.303 -0400", hash_original_method = "63E93F26D259525D134C674633CD9D02", hash_generated_method = "4FD35A6AA0FBE22A9FAF7F919D0AF105")
     protected void engineUpdate(ByteBuffer input) {
         {
-            boolean varE54245A319FB90E6E4BB7E9A96B716C3_846577035 = (!input.hasRemaining());
+            boolean varE54245A319FB90E6E4BB7E9A96B716C3_9218114 = (!input.hasRemaining());
         } //End collapsed parenthetic
         byte[] tmp;
         {
-            boolean var011961AA1A198646CB962085FB0562D5_1366737327 = (input.hasArray());
+            boolean var011961AA1A198646CB962085FB0562D5_111060048 = (input.hasArray());
             {
                 tmp = input.array();
                 int offset;
@@ -82,10 +82,10 @@ public abstract class MessageDigestSpi {
     protected abstract byte[] engineDigest();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.048 -0400", hash_original_method = "D264912F1C73FF5788F885ED0FD28756", hash_generated_method = "29694D5AFCDB35C45F9E90EB74390ABF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.307 -0400", hash_original_method = "D264912F1C73FF5788F885ED0FD28756", hash_generated_method = "D5350619DAFBB97C6FA40CA4D872C75F")
     protected int engineDigest(byte[] buf, int offset, int len) throws DigestException {
         {
-            boolean var0728C0E705DD9A0A8E1467295A1F681F_1766095332 = (len < engineGetDigestLength());
+            boolean var0728C0E705DD9A0A8E1467295A1F681F_1310234779 = (len < engineGetDigestLength());
             {
                 engineReset();
                 if (DroidSafeAndroidRuntime.control) throw new DigestException("The value of len parameter is less than the actual digest length");
@@ -108,8 +108,8 @@ public abstract class MessageDigestSpi {
         addTaint(buf[0]);
         addTaint(offset);
         addTaint(len);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_940431133 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_940431133;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_114040244 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_114040244;
         // ---------- Original Method ----------
         //if (len < engineGetDigestLength()) {
             //engineReset();
@@ -135,13 +135,13 @@ public abstract class MessageDigestSpi {
     protected abstract void engineReset();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.057 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "933CE804FEB5CE3D45C0CB2FC815B285")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.319 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "E95312CDD7D6485F51274CD15F31DA2A")
     @Override
     public Object clone() throws CloneNotSupportedException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_90397239 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_90397239 = super.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_90397239.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_90397239;
+        Object varB4EAC82CA7396A68D541C85D26508E83_1326631917 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1326631917 = super.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_1326631917.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1326631917;
         // ---------- Original Method ----------
         //return super.clone();
     }

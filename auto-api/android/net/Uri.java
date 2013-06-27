@@ -25,7 +25,7 @@ import java.util.Set;
 
 public abstract class Uri implements Parcelable, Comparable<Uri> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.267 -0400", hash_original_method = "81E08B95735493D923725112C83DA27A", hash_generated_method = "AE17603DE8C4908F75692349E5C02303")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.059 -0400", hash_original_method = "81E08B95735493D923725112C83DA27A", hash_generated_method = "AE17603DE8C4908F75692349E5C02303")
     private  Uri() {
         // ---------- Original Method ----------
     }
@@ -34,11 +34,11 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     public abstract boolean isHierarchical();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.269 -0400", hash_original_method = "A0C9F8427F648091A08345C72525BACA", hash_generated_method = "35976118052E3DBACCEC00FEFC1D83AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.061 -0400", hash_original_method = "A0C9F8427F648091A08345C72525BACA", hash_generated_method = "877674D757D818753AB6509C23AE4805")
     public boolean isOpaque() {
-        boolean var64B4064469A97508D22605F14516AC44_482867608 = (!isHierarchical());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1306746636 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1306746636;
+        boolean var64B4064469A97508D22605F14516AC44_1121066399 = (!isHierarchical());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_430442005 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_430442005;
         // ---------- Original Method ----------
         //return !isHierarchical();
     }
@@ -47,11 +47,11 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     public abstract boolean isRelative();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.270 -0400", hash_original_method = "E92F08B9247EAC707F6805C228339DFA", hash_generated_method = "13CB5038E918E02F81939CDC14829CB8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.061 -0400", hash_original_method = "E92F08B9247EAC707F6805C228339DFA", hash_generated_method = "3FD99FB1F9DE1886DCC045E2263B4F70")
     public boolean isAbsolute() {
-        boolean varFAE8C8CB7DF16B40F7BD3C8C56459E57_1540296044 = (!isRelative());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_813353568 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_813353568;
+        boolean varFAE8C8CB7DF16B40F7BD3C8C56459E57_228338924 = (!isRelative());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_306111484 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_306111484;
         // ---------- Original Method ----------
         //return !isRelative();
     }
@@ -108,14 +108,14 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     public abstract String getLastPathSegment();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.307 -0400", hash_original_method = "FA9A408EEB8F8DAB44A912D276C5C2CC", hash_generated_method = "346D48C163BB34182FA59F2C2AED54EA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.090 -0400", hash_original_method = "FA9A408EEB8F8DAB44A912D276C5C2CC", hash_generated_method = "7B31DDC9D5D845D0CA0F6D3AE79FD725")
     public boolean equals(Object o) {
         Uri other;
         other = (Uri) o;
-        boolean varA0CF98E3EDF30C400FE114E3C4614876_604052802 = (toString().equals(other.toString()));
+        boolean varA0CF98E3EDF30C400FE114E3C4614876_628878231 = (toString().equals(other.toString()));
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_964384534 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_964384534;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2041174872 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2041174872;
         // ---------- Original Method ----------
         //if (!(o instanceof Uri)) {
             //return false;
@@ -125,22 +125,22 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.307 -0400", hash_original_method = "5AAF793CD4316640D385D37282629FDE", hash_generated_method = "2135806DD6F3455B68121FB0E9475760")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.091 -0400", hash_original_method = "5AAF793CD4316640D385D37282629FDE", hash_generated_method = "9C8B17267E210C9B8B72FB9031E5E362")
     public int hashCode() {
-        int varFE9735C4A625FF797CCF16B0C7E4889C_943485337 = (toString().hashCode());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1521521770 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1521521770;
+        int varFE9735C4A625FF797CCF16B0C7E4889C_639497130 = (toString().hashCode());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_190795320 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_190795320;
         // ---------- Original Method ----------
         //return toString().hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.323 -0400", hash_original_method = "45EC734684FFFB3EE70A4C12F2A2F839", hash_generated_method = "80D63483B816ED47B0D2EC7657C23DEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.091 -0400", hash_original_method = "45EC734684FFFB3EE70A4C12F2A2F839", hash_generated_method = "E4830C2DF571E46FFC5659189021A80E")
     public int compareTo(Uri other) {
-        int var9FDCE1533C4137A95AA1B9336AC2C904_921373246 = (toString().compareTo(other.toString()));
+        int var9FDCE1533C4137A95AA1B9336AC2C904_1323891480 = (toString().compareTo(other.toString()));
         addTaint(other.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_519953187 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_519953187;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1195264182 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1195264182;
         // ---------- Original Method ----------
         //return toString().compareTo(other.toString());
     }
@@ -149,17 +149,17 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     public abstract String toString();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.354 -0400", hash_original_method = "C2346F0C89241A0BA21735401E86BD49", hash_generated_method = "2B20461A45B788E5DF4E4A2F165184A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.121 -0400", hash_original_method = "C2346F0C89241A0BA21735401E86BD49", hash_generated_method = "BA84CFF2FD115132B0817B4479B7B65E")
     public String toSafeString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1400539121 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_2128309997 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_703516209 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_110989081 = null; //Variable for return #2
         String scheme;
         scheme = getScheme();
         String ssp;
         ssp = getSchemeSpecificPart();
         {
             {
-                boolean varECEC7553D0A8A9AA1C3551F50990F265_658658165 = (scheme.equalsIgnoreCase("tel") || scheme.equalsIgnoreCase("sip")
+                boolean varECEC7553D0A8A9AA1C3551F50990F265_1311092785 = (scheme.equalsIgnoreCase("tel") || scheme.equalsIgnoreCase("sip")
                     || scheme.equalsIgnoreCase("sms") || scheme.equalsIgnoreCase("smsto")
                     || scheme.equalsIgnoreCase("mailto"));
                 {
@@ -171,7 +171,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
                         {
                             int i;
                             i = 0;
-                            boolean var3701C9303431F43DBFBC3723803F56F1_2012124752 = (i<ssp.length());
+                            boolean var3701C9303431F43DBFBC3723803F56F1_498433038 = (i<ssp.length());
                             {
                                 char c;
                                 c = ssp.charAt(i);
@@ -184,7 +184,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
                             } //End block
                         } //End collapsed parenthetic
                     } //End block
-                    varB4EAC82CA7396A68D541C85D26508E83_1400539121 = builder.toString();
+                    varB4EAC82CA7396A68D541C85D26508E83_703516209 = builder.toString();
                 } //End block
             } //End collapsed parenthetic
         } //End block
@@ -197,18 +197,18 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         {
             builder.append(ssp);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2128309997 = builder.toString();
-        String varA7E53CE21691AB073D9660D615818899_514283826; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_110989081 = builder.toString();
+        String varA7E53CE21691AB073D9660D615818899_909621199; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_514283826 = varB4EAC82CA7396A68D541C85D26508E83_1400539121;
+                varA7E53CE21691AB073D9660D615818899_909621199 = varB4EAC82CA7396A68D541C85D26508E83_703516209;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_514283826 = varB4EAC82CA7396A68D541C85D26508E83_2128309997;
+                varA7E53CE21691AB073D9660D615818899_909621199 = varB4EAC82CA7396A68D541C85D26508E83_110989081;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_514283826.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_514283826;
+        varA7E53CE21691AB073D9660D615818899_909621199.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_909621199;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
@@ -245,12 +245,12 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.360 -0400", hash_original_method = "966FC11B97976C170B352F408FA2783F", hash_generated_method = "E97A0E64A53D70A7530FB22A08D3E197")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.125 -0400", hash_original_method = "966FC11B97976C170B352F408FA2783F", hash_generated_method = "E26BEAA2A8E49F4A39EB7150D15A6264")
     public Set<String> getQueryParameterNames() {
-        Set<String> varB4EAC82CA7396A68D541C85D26508E83_1239157224 = null; //Variable for return #1
-        Set<String> varB4EAC82CA7396A68D541C85D26508E83_1465420658 = null; //Variable for return #2
+        Set<String> varB4EAC82CA7396A68D541C85D26508E83_1728873105 = null; //Variable for return #1
+        Set<String> varB4EAC82CA7396A68D541C85D26508E83_265221118 = null; //Variable for return #2
         {
-            boolean var6FB98654367C4545BFB1C7222C5CD904_1208515032 = (isOpaque());
+            boolean var6FB98654367C4545BFB1C7222C5CD904_1176397993 = (isOpaque());
             {
                 if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(NOT_HIERARCHICAL);
             } //End block
@@ -258,7 +258,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         String query;
         query = getEncodedQuery();
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1239157224 = Collections.emptySet();
+            varB4EAC82CA7396A68D541C85D26508E83_1728873105 = Collections.emptySet();
         } //End block
         Set<String> names;
         names = new LinkedHashSet<String>();
@@ -281,31 +281,31 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             start = end + 1;
         } //End block
         {
-            boolean var9694734975A6FBE04042BED474B6D869_51915728 = (start < query.length());
+            boolean var9694734975A6FBE04042BED474B6D869_1136741480 = (start < query.length());
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1465420658 = Collections.unmodifiableSet(names);
-        Set<String> varA7E53CE21691AB073D9660D615818899_84128683; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_265221118 = Collections.unmodifiableSet(names);
+        Set<String> varA7E53CE21691AB073D9660D615818899_1981436586; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_84128683 = varB4EAC82CA7396A68D541C85D26508E83_1239157224;
+                varA7E53CE21691AB073D9660D615818899_1981436586 = varB4EAC82CA7396A68D541C85D26508E83_1728873105;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_84128683 = varB4EAC82CA7396A68D541C85D26508E83_1465420658;
+                varA7E53CE21691AB073D9660D615818899_1981436586 = varB4EAC82CA7396A68D541C85D26508E83_265221118;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_84128683.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_84128683;
+        varA7E53CE21691AB073D9660D615818899_1981436586.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1981436586;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.391 -0400", hash_original_method = "9E05603A6F44EBCC73536B2584976016", hash_generated_method = "B6DC9BBF2B8FEBEF3578278A5B575520")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.160 -0400", hash_original_method = "9E05603A6F44EBCC73536B2584976016", hash_generated_method = "49527C9D994B65A13C19DD8FD0024E1B")
     public List<String> getQueryParameters(String key) {
-        List<String> varB4EAC82CA7396A68D541C85D26508E83_2057842025 = null; //Variable for return #1
-        List<String> varB4EAC82CA7396A68D541C85D26508E83_1279961245 = null; //Variable for return #2
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_1933472912 = null; //Variable for return #1
+        List<String> varB4EAC82CA7396A68D541C85D26508E83_1891438751 = null; //Variable for return #2
         {
-            boolean var6FB98654367C4545BFB1C7222C5CD904_1234113255 = (isOpaque());
+            boolean var6FB98654367C4545BFB1C7222C5CD904_1517656906 = (isOpaque());
             {
                 if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(NOT_HIERARCHICAL);
             } //End block
@@ -316,7 +316,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         String query;
         query = getEncodedQuery();
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2057842025 = Collections.emptyList();
+            varB4EAC82CA7396A68D541C85D26508E83_1933472912 = Collections.emptyList();
         } //End block
         String encodedKey;
         try 
@@ -343,7 +343,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
                 separator = end;
             } //End block
             {
-                boolean var178076B3E468B8639CBF96A33155F9A9_622032102 = (separator - start == encodedKey.length()
+                boolean var178076B3E468B8639CBF96A33155F9A9_13896219 = (separator - start == encodedKey.length()
                     && query.regionMatches(start, encodedKey, 0, encodedKey.length()));
                 {
                     {
@@ -358,32 +358,32 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
                 start = nextAmpersand + 1;
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1279961245 = Collections.unmodifiableList(values);
+        varB4EAC82CA7396A68D541C85D26508E83_1891438751 = Collections.unmodifiableList(values);
         addTaint(key.getTaint());
-        List<String> varA7E53CE21691AB073D9660D615818899_1369043710; //Final return value
+        List<String> varA7E53CE21691AB073D9660D615818899_1203112723; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1369043710 = varB4EAC82CA7396A68D541C85D26508E83_2057842025;
+                varA7E53CE21691AB073D9660D615818899_1203112723 = varB4EAC82CA7396A68D541C85D26508E83_1933472912;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1369043710 = varB4EAC82CA7396A68D541C85D26508E83_1279961245;
+                varA7E53CE21691AB073D9660D615818899_1203112723 = varB4EAC82CA7396A68D541C85D26508E83_1891438751;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1369043710.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1369043710;
+        varA7E53CE21691AB073D9660D615818899_1203112723.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1203112723;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.463 -0400", hash_original_method = "72F6B0777F298E12957F6498D8B3E8F1", hash_generated_method = "4A90BEC3526049D33A1F8E05DB98902C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.173 -0400", hash_original_method = "72F6B0777F298E12957F6498D8B3E8F1", hash_generated_method = "E3F91E9425CDE48F9922719161551F9E")
     public String getQueryParameter(String key) {
-        String varB4EAC82CA7396A68D541C85D26508E83_515382015 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_157235478 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_1489480495 = null; //Variable for return #3
-        String varB4EAC82CA7396A68D541C85D26508E83_1824418344 = null; //Variable for return #4
+        String varB4EAC82CA7396A68D541C85D26508E83_696632553 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_579548423 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_2008851236 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_1788404838 = null; //Variable for return #4
         {
-            boolean var6FB98654367C4545BFB1C7222C5CD904_1555422084 = (isOpaque());
+            boolean var6FB98654367C4545BFB1C7222C5CD904_1514814012 = (isOpaque());
             {
                 if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(NOT_HIERARCHICAL);
             } //End block
@@ -394,7 +394,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         String query;
         query = getEncodedQuery();
         {
-            varB4EAC82CA7396A68D541C85D26508E83_515382015 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_696632553 = null;
         } //End block
         String encodedKey;
         encodedKey = encode(key, null);
@@ -414,14 +414,14 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
                 separator = end;
             } //End block
             {
-                boolean var178076B3E468B8639CBF96A33155F9A9_1953412793 = (separator - start == encodedKey.length()
+                boolean var178076B3E468B8639CBF96A33155F9A9_1316641774 = (separator - start == encodedKey.length()
                     && query.regionMatches(start, encodedKey, 0, encodedKey.length()));
                 {
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_157235478 = "";
+                        varB4EAC82CA7396A68D541C85D26508E83_579548423 = "";
                     } //End block
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_1489480495 = decode(query.substring(separator + 1, end));
+                        varB4EAC82CA7396A68D541C85D26508E83_2008851236 = decode(query.substring(separator + 1, end));
                     } //End block
                 } //End block
             } //End collapsed parenthetic
@@ -429,40 +429,40 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
                 start = nextAmpersand + 1;
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1824418344 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1788404838 = null;
         addTaint(key.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1662780197; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_626828583; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1662780197 = varB4EAC82CA7396A68D541C85D26508E83_515382015;
+                varA7E53CE21691AB073D9660D615818899_626828583 = varB4EAC82CA7396A68D541C85D26508E83_696632553;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1662780197 = varB4EAC82CA7396A68D541C85D26508E83_157235478;
+                varA7E53CE21691AB073D9660D615818899_626828583 = varB4EAC82CA7396A68D541C85D26508E83_579548423;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_1662780197 = varB4EAC82CA7396A68D541C85D26508E83_1489480495;
+                varA7E53CE21691AB073D9660D615818899_626828583 = varB4EAC82CA7396A68D541C85D26508E83_2008851236;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1662780197 = varB4EAC82CA7396A68D541C85D26508E83_1824418344;
+                varA7E53CE21691AB073D9660D615818899_626828583 = varB4EAC82CA7396A68D541C85D26508E83_1788404838;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1662780197.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1662780197;
+        varA7E53CE21691AB073D9660D615818899_626828583.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_626828583;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.464 -0400", hash_original_method = "67BE774C17CDAC836698DE4D6D994F1B", hash_generated_method = "9475B7C7AEB071CFBC74B2AD03C9A1DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.184 -0400", hash_original_method = "67BE774C17CDAC836698DE4D6D994F1B", hash_generated_method = "3C8939E63B40FD215F0A5666FB3224E7")
     public boolean getBooleanQueryParameter(String key, boolean defaultValue) {
         String flag;
         flag = getQueryParameter(key);
         flag = flag.toLowerCase();
-        boolean var1524D06912FA9A8910A3FA6431D6523F_1103986012 = ((!"false".equals(flag) && !"0".equals(flag)));
+        boolean var1524D06912FA9A8910A3FA6431D6523F_1849633631 = ((!"false".equals(flag) && !"0".equals(flag)));
         addTaint(key.getTaint());
         addTaint(defaultValue);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_190315052 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_190315052;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_203354990 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_203354990;
         // ---------- Original Method ----------
         //String flag = getQueryParameter(key);
         //if (flag == null) {
@@ -611,35 +611,35 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
 
     
     private static class StringUri extends AbstractHierarchicalUri {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.499 -0400", hash_original_field = "ACD4CFB867E9014EB5553B665A7654E7", hash_generated_field = "E4175460B78B44891D601990509D1265")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.194 -0400", hash_original_field = "ACD4CFB867E9014EB5553B665A7654E7", hash_generated_field = "E4175460B78B44891D601990509D1265")
 
         private String uriString;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.499 -0400", hash_original_field = "CAB1D5F863DB3FE1F854F1737D3BF567", hash_generated_field = "6ECAEC93E2396D17CA9FF61298DA11AE")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.194 -0400", hash_original_field = "CAB1D5F863DB3FE1F854F1737D3BF567", hash_generated_field = "6ECAEC93E2396D17CA9FF61298DA11AE")
 
         private volatile int cachedSsi = NOT_CALCULATED;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.499 -0400", hash_original_field = "0D27A2D8516BF4DCE688D48A00F04BF9", hash_generated_field = "6673040FAE4D4C35641720F36B224DA4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.194 -0400", hash_original_field = "0D27A2D8516BF4DCE688D48A00F04BF9", hash_generated_field = "6673040FAE4D4C35641720F36B224DA4")
 
         private volatile int cachedFsi = NOT_CALCULATED;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.499 -0400", hash_original_field = "8FE13FA728B09DACBFC57E5751B51F48", hash_generated_field = "0E9D0B05543D9BBCEB78240FF4AE88F4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.199 -0400", hash_original_field = "8FE13FA728B09DACBFC57E5751B51F48", hash_generated_field = "0E9D0B05543D9BBCEB78240FF4AE88F4")
 
         private volatile String scheme = NOT_CACHED;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.499 -0400", hash_original_field = "97C9C694D99F729E1A48940D0B386A9B", hash_generated_field = "7012AD665E5A3250E37E3BF51B044446")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.199 -0400", hash_original_field = "97C9C694D99F729E1A48940D0B386A9B", hash_generated_field = "7012AD665E5A3250E37E3BF51B044446")
 
         private Part ssp;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.499 -0400", hash_original_field = "873E9C0B50183B613336EEA1020F4369", hash_generated_field = "204632F970E6983D2007A7D2C7B93357")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.199 -0400", hash_original_field = "873E9C0B50183B613336EEA1020F4369", hash_generated_field = "204632F970E6983D2007A7D2C7B93357")
 
         private Part authority;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.500 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "EEFCA663E12A09EA3C7131B68BE78289")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.199 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "EEFCA663E12A09EA3C7131B68BE78289")
 
         private PathPart path;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.500 -0400", hash_original_field = "1B1CC7F086B3F074DA452BC3129981EB", hash_generated_field = "D9C517AF157475966407B5CDC5940032")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.199 -0400", hash_original_field = "1B1CC7F086B3F074DA452BC3129981EB", hash_generated_field = "D9C517AF157475966407B5CDC5940032")
 
         private Part query;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.500 -0400", hash_original_field = "02E918FC72837D7C2689BE88684DCEB1", hash_generated_field = "8AF52B12247A3EBE638DDC3C88EEE123")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.199 -0400", hash_original_field = "02E918FC72837D7C2689BE88684DCEB1", hash_generated_field = "8AF52B12247A3EBE638DDC3C88EEE123")
 
         private Part fragment;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.504 -0400", hash_original_method = "6762E8F4F232397EC67D86B91A630B95", hash_generated_method = "A6C1825457AE7AF13DBEF010EABC8877")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.203 -0400", hash_original_method = "6762E8F4F232397EC67D86B91A630B95", hash_generated_method = "A6C1825457AE7AF13DBEF010EABC8877")
         private  StringUri(String uriString) {
             {
                 if (DroidSafeAndroidRuntime.control) throw new NullPointerException("uriString");
@@ -658,16 +658,16 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.505 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "595DFF0CA1E0EF28B0C3F6733D0DE165")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.213 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D2DA8AC402A976E41C46045645179C42")
         public int describeContents() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_796762035 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_796762035;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_217734847 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_217734847;
             // ---------- Original Method ----------
             //return 0;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.506 -0400", hash_original_method = "C73A8428F9DA44091DF96EEDC1E3D3EF", hash_generated_method = "E60C4D7AA36A8DF226DE2DDB0065BC6D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.214 -0400", hash_original_method = "C73A8428F9DA44091DF96EEDC1E3D3EF", hash_generated_method = "E60C4D7AA36A8DF226DE2DDB0065BC6D")
         public void writeToParcel(Parcel parcel, int flags) {
             parcel.writeInt(TYPE_ID);
             parcel.writeString(uriString);
@@ -679,13 +679,13 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.511 -0400", hash_original_method = "F197955D6E3BAB1920F769AA2F97BBD7", hash_generated_method = "42BE3A2855C09CA132D1D5DD61895341")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.229 -0400", hash_original_method = "F197955D6E3BAB1920F769AA2F97BBD7", hash_generated_method = "5466BF903BB72D292237F22AF2A5C3FC")
         private int findSchemeSeparator() {
             {
-                Object varE78ED6E23D41D918630374A89968E910_1858373268 = (cachedSsi = uriString.indexOf(':'));
+                Object varE78ED6E23D41D918630374A89968E910_1753632545 = (cachedSsi = uriString.indexOf(':'));
             } //End flattened ternary
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273350214 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273350214;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1722072135 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1722072135;
             // ---------- Original Method ----------
             //return cachedSsi == NOT_CALCULATED
                     //? cachedSsi = uriString.indexOf(':')
@@ -693,13 +693,13 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.523 -0400", hash_original_method = "B0E1A879F11D02C30EC9FBB06F8801FE", hash_generated_method = "E0BD21440E84315C8E75B2CACE5F2A3C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.239 -0400", hash_original_method = "B0E1A879F11D02C30EC9FBB06F8801FE", hash_generated_method = "9EA99E9A8F0C867F9F9A5CBD142D24C5")
         private int findFragmentSeparator() {
             {
-                Object var084C492FFBD239136C6656DB9FC43D6A_2017331336 = (cachedFsi = uriString.indexOf('#', findSchemeSeparator()));
+                Object var084C492FFBD239136C6656DB9FC43D6A_1972419563 = (cachedFsi = uriString.indexOf('#', findSchemeSeparator()));
             } //End flattened ternary
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_427787221 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_427787221;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1614540702 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1614540702;
             // ---------- Original Method ----------
             //return cachedFsi == NOT_CALCULATED
                     //? cachedFsi = uriString.indexOf('#', findSchemeSeparator())
@@ -707,16 +707,16 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.524 -0400", hash_original_method = "11C2E375F5E033161AB2E06056D673CF", hash_generated_method = "3C59F99935E8708522449FEF702F8CE9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.240 -0400", hash_original_method = "11C2E375F5E033161AB2E06056D673CF", hash_generated_method = "7E7B92A5DB9DBD595FADCAE030FCD237")
         public boolean isHierarchical() {
             int ssi;
             ssi = findSchemeSeparator();
             {
-                boolean var57F8854C12EA0628EE85E2310495F80A_1613625271 = (uriString.length() == ssi + 1);
+                boolean var57F8854C12EA0628EE85E2310495F80A_1253351688 = (uriString.length() == ssi + 1);
             } //End collapsed parenthetic
-            boolean var27890038C7ED583D3363BEF736C880EE_398822657 = (uriString.charAt(ssi + 1) == '/');
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_202026386 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_202026386;
+            boolean var27890038C7ED583D3363BEF736C880EE_558496431 = (uriString.charAt(ssi + 1) == '/');
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_863806162 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_863806162;
             // ---------- Original Method ----------
             //int ssi = findSchemeSeparator();
             //if (ssi == NOT_FOUND) {
@@ -729,24 +729,24 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.529 -0400", hash_original_method = "DC1D040929AB7A4CF9A0DFBB95EA4283", hash_generated_method = "7E7BE089C84BBE9C41D117713D2E9D38")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.247 -0400", hash_original_method = "DC1D040929AB7A4CF9A0DFBB95EA4283", hash_generated_method = "B797AC241B82E330067BCCB25390C883")
         public boolean isRelative() {
-            boolean var3202A358296F4617942997BACCC7AFC0_1343573918 = (findSchemeSeparator() == NOT_FOUND);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_531712545 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_531712545;
+            boolean var3202A358296F4617942997BACCC7AFC0_972157253 = (findSchemeSeparator() == NOT_FOUND);
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1582390510 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1582390510;
             // ---------- Original Method ----------
             //return findSchemeSeparator() == NOT_FOUND;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.540 -0400", hash_original_method = "96667B7E38635C26F17AC80DC91F9ADB", hash_generated_method = "C17AF68C320E405ED8D7C9515058580C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.248 -0400", hash_original_method = "96667B7E38635C26F17AC80DC91F9ADB", hash_generated_method = "AAC1E6E849656991C7A72A41BFE617DC")
         public String getScheme() {
-            String varB4EAC82CA7396A68D541C85D26508E83_470027903 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_355704077 = null; //Variable for return #1
             @SuppressWarnings("StringEquality") boolean cached;
             cached = (scheme != NOT_CACHED);
-            varB4EAC82CA7396A68D541C85D26508E83_470027903 = cached ? scheme : (scheme = parseScheme());
-            varB4EAC82CA7396A68D541C85D26508E83_470027903.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_470027903;
+            varB4EAC82CA7396A68D541C85D26508E83_355704077 = cached ? scheme : (scheme = parseScheme());
+            varB4EAC82CA7396A68D541C85D26508E83_355704077.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_355704077;
             // ---------- Original Method ----------
             //@SuppressWarnings("StringEquality")
             //boolean cached = (scheme != NOT_CACHED);
@@ -754,65 +754,65 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.541 -0400", hash_original_method = "B03A2C85823E1DE38C77FC40695B0CC7", hash_generated_method = "6EC42BE4F9F7E79B3D28141AAB199823")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.252 -0400", hash_original_method = "B03A2C85823E1DE38C77FC40695B0CC7", hash_generated_method = "5567951F7C142725B68D47CDB3DDE62D")
         private String parseScheme() {
-            String varB4EAC82CA7396A68D541C85D26508E83_523094076 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1118781042 = null; //Variable for return #1
             int ssi;
             ssi = findSchemeSeparator();
-            varB4EAC82CA7396A68D541C85D26508E83_523094076 = ssi == NOT_FOUND ? null : uriString.substring(0, ssi);
-            varB4EAC82CA7396A68D541C85D26508E83_523094076.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_523094076;
+            varB4EAC82CA7396A68D541C85D26508E83_1118781042 = ssi == NOT_FOUND ? null : uriString.substring(0, ssi);
+            varB4EAC82CA7396A68D541C85D26508E83_1118781042.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1118781042;
             // ---------- Original Method ----------
             //int ssi = findSchemeSeparator();
             //return ssi == NOT_FOUND ? null : uriString.substring(0, ssi);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.543 -0400", hash_original_method = "DE43C7F499D5F1739936552A95AA2492", hash_generated_method = "808132BABC4EACAAA4FB7C3B4EBAEE59")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.265 -0400", hash_original_method = "DE43C7F499D5F1739936552A95AA2492", hash_generated_method = "9C8A753F3C51652F382915E2A52DA273")
         private Part getSsp() {
-            Part varB4EAC82CA7396A68D541C85D26508E83_1822973583 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1822973583 = ssp == null ? ssp = Part.fromEncoded(parseSsp()) : ssp;
-            varB4EAC82CA7396A68D541C85D26508E83_1822973583.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1822973583;
+            Part varB4EAC82CA7396A68D541C85D26508E83_1886112617 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1886112617 = ssp == null ? ssp = Part.fromEncoded(parseSsp()) : ssp;
+            varB4EAC82CA7396A68D541C85D26508E83_1886112617.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1886112617;
             // ---------- Original Method ----------
             //return ssp == null ? ssp = Part.fromEncoded(parseSsp()) : ssp;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.556 -0400", hash_original_method = "55E7C64ABF6A3CC92844508D23C19AB9", hash_generated_method = "41DB6DE15D69302E49A5C81CCC66AD48")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.267 -0400", hash_original_method = "55E7C64ABF6A3CC92844508D23C19AB9", hash_generated_method = "0759C14552753AA8F0F23E67C3D5B16A")
         public String getEncodedSchemeSpecificPart() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1708204106 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1708204106 = getSsp().getEncoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1708204106.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1708204106;
+            String varB4EAC82CA7396A68D541C85D26508E83_265223182 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_265223182 = getSsp().getEncoded();
+            varB4EAC82CA7396A68D541C85D26508E83_265223182.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_265223182;
             // ---------- Original Method ----------
             //return getSsp().getEncoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.558 -0400", hash_original_method = "AC19873BD337CA7E5ADD95E4E1A5F455", hash_generated_method = "60C0D8E769218668D4740825B8F199F8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.279 -0400", hash_original_method = "AC19873BD337CA7E5ADD95E4E1A5F455", hash_generated_method = "DFD16FB6876B2671D7377607639C5140")
         public String getSchemeSpecificPart() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1439809291 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1439809291 = getSsp().getDecoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1439809291.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1439809291;
+            String varB4EAC82CA7396A68D541C85D26508E83_1258792993 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1258792993 = getSsp().getDecoded();
+            varB4EAC82CA7396A68D541C85D26508E83_1258792993.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1258792993;
             // ---------- Original Method ----------
             //return getSsp().getDecoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.573 -0400", hash_original_method = "6082AC88F53E9B67D59D9A72041A5D6F", hash_generated_method = "4DECF03445CB8323C943701AF9EFCDF9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.284 -0400", hash_original_method = "6082AC88F53E9B67D59D9A72041A5D6F", hash_generated_method = "D755B46BDE70D7D38FFF4C09BC2EA352")
         private String parseSsp() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1057023453 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_300968791 = null; //Variable for return #1
             int ssi;
             ssi = findSchemeSeparator();
             int fsi;
             fsi = findFragmentSeparator();
-            varB4EAC82CA7396A68D541C85D26508E83_1057023453 = fsi == NOT_FOUND
+            varB4EAC82CA7396A68D541C85D26508E83_300968791 = fsi == NOT_FOUND
                     ? uriString.substring(ssi + 1)
                     : uriString.substring(ssi + 1, fsi);
-            varB4EAC82CA7396A68D541C85D26508E83_1057023453.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1057023453;
+            varB4EAC82CA7396A68D541C85D26508E83_300968791.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_300968791;
             // ---------- Original Method ----------
             //int ssi = findSchemeSeparator();
             //int fsi = findFragmentSeparator();
@@ -822,27 +822,27 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.574 -0400", hash_original_method = "C2AABBF6273BD8549508A0ABF072F220", hash_generated_method = "78A57D20AB62BFA4CE748F296AE97772")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.286 -0400", hash_original_method = "C2AABBF6273BD8549508A0ABF072F220", hash_generated_method = "BF7AA89362660AB2F12B36C75CA9F752")
         private Part getAuthorityPart() {
-            Part varB4EAC82CA7396A68D541C85D26508E83_1313036251 = null; //Variable for return #1
-            Part varB4EAC82CA7396A68D541C85D26508E83_1194771009 = null; //Variable for return #2
+            Part varB4EAC82CA7396A68D541C85D26508E83_1978492214 = null; //Variable for return #1
+            Part varB4EAC82CA7396A68D541C85D26508E83_1307279832 = null; //Variable for return #2
             {
                 String encodedAuthority;
                 encodedAuthority = parseAuthority(this.uriString, findSchemeSeparator());
-                varB4EAC82CA7396A68D541C85D26508E83_1313036251 = authority = Part.fromEncoded(encodedAuthority);
+                varB4EAC82CA7396A68D541C85D26508E83_1978492214 = authority = Part.fromEncoded(encodedAuthority);
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1194771009 = authority;
-            Part varA7E53CE21691AB073D9660D615818899_1608105529; //Final return value
+            varB4EAC82CA7396A68D541C85D26508E83_1307279832 = authority;
+            Part varA7E53CE21691AB073D9660D615818899_410156516; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1608105529 = varB4EAC82CA7396A68D541C85D26508E83_1313036251;
+                    varA7E53CE21691AB073D9660D615818899_410156516 = varB4EAC82CA7396A68D541C85D26508E83_1978492214;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1608105529 = varB4EAC82CA7396A68D541C85D26508E83_1194771009;
+                    varA7E53CE21691AB073D9660D615818899_410156516 = varB4EAC82CA7396A68D541C85D26508E83_1307279832;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1608105529.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1608105529;
+            varA7E53CE21691AB073D9660D615818899_410156516.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_410156516;
             // ---------- Original Method ----------
             //if (authority == null) {
                 //String encodedAuthority
@@ -853,36 +853,36 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.575 -0400", hash_original_method = "B783FB869F9CE6B897E37C2A9B9B4259", hash_generated_method = "5142AB8BA0705859D568AAE8FF9E2857")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.302 -0400", hash_original_method = "B783FB869F9CE6B897E37C2A9B9B4259", hash_generated_method = "E911B55E1CE258F428D39B80330AFC0B")
         public String getEncodedAuthority() {
-            String varB4EAC82CA7396A68D541C85D26508E83_271035908 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_271035908 = getAuthorityPart().getEncoded();
-            varB4EAC82CA7396A68D541C85D26508E83_271035908.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_271035908;
+            String varB4EAC82CA7396A68D541C85D26508E83_1235800802 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1235800802 = getAuthorityPart().getEncoded();
+            varB4EAC82CA7396A68D541C85D26508E83_1235800802.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1235800802;
             // ---------- Original Method ----------
             //return getAuthorityPart().getEncoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.577 -0400", hash_original_method = "F4404025FB90C68980598D2895AF9578", hash_generated_method = "E16D5C68158B69BBC0B2B5778FEFB808")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.303 -0400", hash_original_method = "F4404025FB90C68980598D2895AF9578", hash_generated_method = "522526C776F6B6341CD48D8D571AC68D")
         public String getAuthority() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1286427897 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1286427897 = getAuthorityPart().getDecoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1286427897.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1286427897;
+            String varB4EAC82CA7396A68D541C85D26508E83_1206318453 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1206318453 = getAuthorityPart().getDecoded();
+            varB4EAC82CA7396A68D541C85D26508E83_1206318453.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1206318453;
             // ---------- Original Method ----------
             //return getAuthorityPart().getDecoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.577 -0400", hash_original_method = "483C19AAE407B7D6148F370745A1893E", hash_generated_method = "7B87CC556FB0644E0A3CFE1995C3B8A7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.317 -0400", hash_original_method = "483C19AAE407B7D6148F370745A1893E", hash_generated_method = "1A312371B406CE462C3BA050FF6DCAFC")
         private PathPart getPathPart() {
-            PathPart varB4EAC82CA7396A68D541C85D26508E83_1303855291 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1303855291 = path == null
+            PathPart varB4EAC82CA7396A68D541C85D26508E83_1787077544 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1787077544 = path == null
                     ? path = PathPart.fromEncoded(parsePath())
                     : path;
-            varB4EAC82CA7396A68D541C85D26508E83_1303855291.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1303855291;
+            varB4EAC82CA7396A68D541C85D26508E83_1787077544.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1787077544;
             // ---------- Original Method ----------
             //return path == null
                     //? path = PathPart.fromEncoded(parsePath())
@@ -890,44 +890,44 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.578 -0400", hash_original_method = "E8759FDECF433DBBFF0BA03CF3576CC0", hash_generated_method = "1B876F2CEBD5BD3D2AA02E47E0D4F9BA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.317 -0400", hash_original_method = "E8759FDECF433DBBFF0BA03CF3576CC0", hash_generated_method = "3EC05221D41858A7E19805EA92E9679D")
         public String getPath() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1013482117 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1013482117 = getPathPart().getDecoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1013482117.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1013482117;
+            String varB4EAC82CA7396A68D541C85D26508E83_559775309 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_559775309 = getPathPart().getDecoded();
+            varB4EAC82CA7396A68D541C85D26508E83_559775309.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_559775309;
             // ---------- Original Method ----------
             //return getPathPart().getDecoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.592 -0400", hash_original_method = "D26AFC1B9D9DFA82513D9A4C50DD2F0F", hash_generated_method = "0E05D357376B1416EF0CCF2949F9B111")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.319 -0400", hash_original_method = "D26AFC1B9D9DFA82513D9A4C50DD2F0F", hash_generated_method = "43E46ACF0BBBC6297F939BF92239465C")
         public String getEncodedPath() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1494944500 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1494944500 = getPathPart().getEncoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1494944500.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1494944500;
+            String varB4EAC82CA7396A68D541C85D26508E83_408621164 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_408621164 = getPathPart().getEncoded();
+            varB4EAC82CA7396A68D541C85D26508E83_408621164.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_408621164;
             // ---------- Original Method ----------
             //return getPathPart().getEncoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.593 -0400", hash_original_method = "A1BA2B8DCFFB301EABC725C63F487DC2", hash_generated_method = "D118F9BF044DEBBEBA10DDB103B32040")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.320 -0400", hash_original_method = "A1BA2B8DCFFB301EABC725C63F487DC2", hash_generated_method = "3E726ACDE3A051FA57F344BC5981D334")
         public List<String> getPathSegments() {
-            List<String> varB4EAC82CA7396A68D541C85D26508E83_464102664 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_464102664 = getPathPart().getPathSegments();
-            varB4EAC82CA7396A68D541C85D26508E83_464102664.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_464102664;
+            List<String> varB4EAC82CA7396A68D541C85D26508E83_1576968165 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1576968165 = getPathPart().getPathSegments();
+            varB4EAC82CA7396A68D541C85D26508E83_1576968165.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1576968165;
             // ---------- Original Method ----------
             //return getPathPart().getPathSegments();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.607 -0400", hash_original_method = "EF0989C68625FC2F46DE0EA4CB35660B", hash_generated_method = "60BC61F5462D1E4F3548EAEA1351392E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.331 -0400", hash_original_method = "EF0989C68625FC2F46DE0EA4CB35660B", hash_generated_method = "E875C0DDDB22077A99C94D4D0D0E76E5")
         private String parsePath() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1251363028 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_2132215264 = null; //Variable for return #2
-            String varB4EAC82CA7396A68D541C85D26508E83_1630272913 = null; //Variable for return #3
+            String varB4EAC82CA7396A68D541C85D26508E83_1178347014 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_28909085 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_1709405353 = null; //Variable for return #3
             String uriString;
             uriString = this.uriString;
             int ssi;
@@ -936,30 +936,30 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
                 boolean schemeOnly;
                 schemeOnly = ssi + 1 == uriString.length();
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_1251363028 = null;
+                    varB4EAC82CA7396A68D541C85D26508E83_1178347014 = null;
                 } //End block
                 {
-                    boolean varD917EE6A3AF74F85327A628F817BD281_1809757323 = (uriString.charAt(ssi + 1) != '/');
+                    boolean varD917EE6A3AF74F85327A628F817BD281_394256216 = (uriString.charAt(ssi + 1) != '/');
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_2132215264 = null;
+                        varB4EAC82CA7396A68D541C85D26508E83_28909085 = null;
                     } //End block
                 } //End collapsed parenthetic
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1630272913 = parsePath(uriString, ssi);
-            String varA7E53CE21691AB073D9660D615818899_1807289216; //Final return value
+            varB4EAC82CA7396A68D541C85D26508E83_1709405353 = parsePath(uriString, ssi);
+            String varA7E53CE21691AB073D9660D615818899_414150032; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1807289216 = varB4EAC82CA7396A68D541C85D26508E83_1251363028;
+                    varA7E53CE21691AB073D9660D615818899_414150032 = varB4EAC82CA7396A68D541C85D26508E83_1178347014;
                     break;
                 case 2: //Assign result for return ordinal #2
-                    varA7E53CE21691AB073D9660D615818899_1807289216 = varB4EAC82CA7396A68D541C85D26508E83_2132215264;
+                    varA7E53CE21691AB073D9660D615818899_414150032 = varB4EAC82CA7396A68D541C85D26508E83_28909085;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1807289216 = varB4EAC82CA7396A68D541C85D26508E83_1630272913;
+                    varA7E53CE21691AB073D9660D615818899_414150032 = varB4EAC82CA7396A68D541C85D26508E83_1709405353;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1807289216.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1807289216;
+            varA7E53CE21691AB073D9660D615818899_414150032.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_414150032;
             // ---------- Original Method ----------
             //String uriString = this.uriString;
             //int ssi = findSchemeSeparator();
@@ -977,67 +977,67 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.607 -0400", hash_original_method = "5338F6D0AC99191764C2394A710C873F", hash_generated_method = "66EAD5ECBC1A0675C4F95200C4467FD3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.348 -0400", hash_original_method = "5338F6D0AC99191764C2394A710C873F", hash_generated_method = "E4D953D60ACB39FCF6B3337144F76DBF")
         private Part getQueryPart() {
-            Part varB4EAC82CA7396A68D541C85D26508E83_1604842708 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1604842708 = query == null
+            Part varB4EAC82CA7396A68D541C85D26508E83_1067723156 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1067723156 = query == null
                     ? query = Part.fromEncoded(parseQuery()) : query;
-            varB4EAC82CA7396A68D541C85D26508E83_1604842708.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1604842708;
+            varB4EAC82CA7396A68D541C85D26508E83_1067723156.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1067723156;
             // ---------- Original Method ----------
             //return query == null
                     //? query = Part.fromEncoded(parseQuery()) : query;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.626 -0400", hash_original_method = "61892B739321CB796D242E9E13C1F033", hash_generated_method = "6348542905875CCB2BEC8324D5C8604F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.351 -0400", hash_original_method = "61892B739321CB796D242E9E13C1F033", hash_generated_method = "7E620EE6E29DCDCD721FA787D33CD916")
         public String getEncodedQuery() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1105280309 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1105280309 = getQueryPart().getEncoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1105280309.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1105280309;
+            String varB4EAC82CA7396A68D541C85D26508E83_1538647322 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1538647322 = getQueryPart().getEncoded();
+            varB4EAC82CA7396A68D541C85D26508E83_1538647322.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1538647322;
             // ---------- Original Method ----------
             //return getQueryPart().getEncoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.629 -0400", hash_original_method = "93492ABD4F9B88C963E84B9F545E5D11", hash_generated_method = "A345517A97B14C9B8584538EC03C846B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.361 -0400", hash_original_method = "93492ABD4F9B88C963E84B9F545E5D11", hash_generated_method = "B308B63AF6404CC55352E3635CAB730A")
         private String parseQuery() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1357073978 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_208140844 = null; //Variable for return #2
-            String varB4EAC82CA7396A68D541C85D26508E83_764620132 = null; //Variable for return #3
-            String varB4EAC82CA7396A68D541C85D26508E83_383323309 = null; //Variable for return #4
+            String varB4EAC82CA7396A68D541C85D26508E83_1934086592 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_693086887 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_212125755 = null; //Variable for return #3
+            String varB4EAC82CA7396A68D541C85D26508E83_414544239 = null; //Variable for return #4
             int qsi;
             qsi = uriString.indexOf('?', findSchemeSeparator());
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1357073978 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_1934086592 = null;
             } //End block
             int fsi;
             fsi = findFragmentSeparator();
             {
-                varB4EAC82CA7396A68D541C85D26508E83_208140844 = uriString.substring(qsi + 1);
+                varB4EAC82CA7396A68D541C85D26508E83_693086887 = uriString.substring(qsi + 1);
             } //End block
             {
-                varB4EAC82CA7396A68D541C85D26508E83_764620132 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_212125755 = null;
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_383323309 = uriString.substring(qsi + 1, fsi);
-            String varA7E53CE21691AB073D9660D615818899_1190047827; //Final return value
+            varB4EAC82CA7396A68D541C85D26508E83_414544239 = uriString.substring(qsi + 1, fsi);
+            String varA7E53CE21691AB073D9660D615818899_622862675; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1190047827 = varB4EAC82CA7396A68D541C85D26508E83_1357073978;
+                    varA7E53CE21691AB073D9660D615818899_622862675 = varB4EAC82CA7396A68D541C85D26508E83_1934086592;
                     break;
                 case 2: //Assign result for return ordinal #2
-                    varA7E53CE21691AB073D9660D615818899_1190047827 = varB4EAC82CA7396A68D541C85D26508E83_208140844;
+                    varA7E53CE21691AB073D9660D615818899_622862675 = varB4EAC82CA7396A68D541C85D26508E83_693086887;
                     break;
                 case 3: //Assign result for return ordinal #3
-                    varA7E53CE21691AB073D9660D615818899_1190047827 = varB4EAC82CA7396A68D541C85D26508E83_764620132;
+                    varA7E53CE21691AB073D9660D615818899_622862675 = varB4EAC82CA7396A68D541C85D26508E83_212125755;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1190047827 = varB4EAC82CA7396A68D541C85D26508E83_383323309;
+                    varA7E53CE21691AB073D9660D615818899_622862675 = varB4EAC82CA7396A68D541C85D26508E83_414544239;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1190047827.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1190047827;
+            varA7E53CE21691AB073D9660D615818899_622862675.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_622862675;
             // ---------- Original Method ----------
             //int qsi = uriString.indexOf('?', findSchemeSeparator());
             //if (qsi == NOT_FOUND) {
@@ -1054,72 +1054,72 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.629 -0400", hash_original_method = "31EC40ABD8B86D0064329950E060BFBD", hash_generated_method = "2772091D3696F05929B1D459A6960BE0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.362 -0400", hash_original_method = "31EC40ABD8B86D0064329950E060BFBD", hash_generated_method = "BE81D83308D3A3A853E91F7CB6951FF1")
         public String getQuery() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1511368695 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1511368695 = getQueryPart().getDecoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1511368695.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1511368695;
+            String varB4EAC82CA7396A68D541C85D26508E83_170299354 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_170299354 = getQueryPart().getDecoded();
+            varB4EAC82CA7396A68D541C85D26508E83_170299354.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_170299354;
             // ---------- Original Method ----------
             //return getQueryPart().getDecoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.641 -0400", hash_original_method = "EAD370CB1FE781DF1864471D9F5F3E36", hash_generated_method = "2A72A6C6590A6ED603CDD5B2E13914AF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.382 -0400", hash_original_method = "EAD370CB1FE781DF1864471D9F5F3E36", hash_generated_method = "B99776BD27AB9B424F8EF5863D1220A1")
         private Part getFragmentPart() {
-            Part varB4EAC82CA7396A68D541C85D26508E83_1208805570 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1208805570 = fragment == null
+            Part varB4EAC82CA7396A68D541C85D26508E83_227239594 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_227239594 = fragment == null
                     ? fragment = Part.fromEncoded(parseFragment()) : fragment;
-            varB4EAC82CA7396A68D541C85D26508E83_1208805570.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1208805570;
+            varB4EAC82CA7396A68D541C85D26508E83_227239594.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_227239594;
             // ---------- Original Method ----------
             //return fragment == null
                     //? fragment = Part.fromEncoded(parseFragment()) : fragment;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.642 -0400", hash_original_method = "C2884F3C25114B1CD652E8CCEF7D7F10", hash_generated_method = "FB4609C84414E5EE2E5BC61CD90E65B3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.382 -0400", hash_original_method = "C2884F3C25114B1CD652E8CCEF7D7F10", hash_generated_method = "D862D2AFEEFA86C5178B8A24855637B6")
         public String getEncodedFragment() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1187829311 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1187829311 = getFragmentPart().getEncoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1187829311.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1187829311;
+            String varB4EAC82CA7396A68D541C85D26508E83_1720597250 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1720597250 = getFragmentPart().getEncoded();
+            varB4EAC82CA7396A68D541C85D26508E83_1720597250.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1720597250;
             // ---------- Original Method ----------
             //return getFragmentPart().getEncoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.643 -0400", hash_original_method = "13965C7143AC0E622773DBA6AE062E67", hash_generated_method = "A6580CDF01F5268CE80EB53A5FC46FBA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.384 -0400", hash_original_method = "13965C7143AC0E622773DBA6AE062E67", hash_generated_method = "135F9355C70192272C181DD50B8B0340")
         private String parseFragment() {
-            String varB4EAC82CA7396A68D541C85D26508E83_267380257 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1986624053 = null; //Variable for return #1
             int fsi;
             fsi = findFragmentSeparator();
-            varB4EAC82CA7396A68D541C85D26508E83_267380257 = fsi == NOT_FOUND ? null : uriString.substring(fsi + 1);
-            varB4EAC82CA7396A68D541C85D26508E83_267380257.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_267380257;
+            varB4EAC82CA7396A68D541C85D26508E83_1986624053 = fsi == NOT_FOUND ? null : uriString.substring(fsi + 1);
+            varB4EAC82CA7396A68D541C85D26508E83_1986624053.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1986624053;
             // ---------- Original Method ----------
             //int fsi = findFragmentSeparator();
             //return fsi == NOT_FOUND ? null : uriString.substring(fsi + 1);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.647 -0400", hash_original_method = "4E8163B4F7FDF9829581A99F6274656D", hash_generated_method = "642C4A030AA4891D3138C51530D9AE7C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.388 -0400", hash_original_method = "4E8163B4F7FDF9829581A99F6274656D", hash_generated_method = "E02DFCE9F6088B303E41800C37ADA634")
         public String getFragment() {
-            String varB4EAC82CA7396A68D541C85D26508E83_771621027 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_771621027 = getFragmentPart().getDecoded();
-            varB4EAC82CA7396A68D541C85D26508E83_771621027.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_771621027;
+            String varB4EAC82CA7396A68D541C85D26508E83_858602888 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_858602888 = getFragmentPart().getDecoded();
+            varB4EAC82CA7396A68D541C85D26508E83_858602888.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_858602888;
             // ---------- Original Method ----------
             //return getFragmentPart().getDecoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.648 -0400", hash_original_method = "ECB4588CBE3D957B88D2558A4C044374", hash_generated_method = "B49DF6A2506FFC5A5904A41A9A05FA3F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.412 -0400", hash_original_method = "ECB4588CBE3D957B88D2558A4C044374", hash_generated_method = "E62D94DDB50EAC5EE1BADD076DC2CB29")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1661809876 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1661809876 = uriString;
-            varB4EAC82CA7396A68D541C85D26508E83_1661809876.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1661809876;
+            String varB4EAC82CA7396A68D541C85D26508E83_543084586 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_543084586 = uriString;
+            varB4EAC82CA7396A68D541C85D26508E83_543084586.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_543084586;
             // ---------- Original Method ----------
             //return uriString;
         }
@@ -1180,14 +1180,14 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.664 -0400", hash_original_method = "54B78C0DD1C850213ABB66143A4F5DE7", hash_generated_method = "DD63CE9C2C2BC264D05008E507E446B8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.420 -0400", hash_original_method = "54B78C0DD1C850213ABB66143A4F5DE7", hash_generated_method = "053C99EB09EC12660A1DEEB42495E519")
         public Builder buildUpon() {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_662235842 = null; //Variable for return #1
-            Builder varB4EAC82CA7396A68D541C85D26508E83_314594612 = null; //Variable for return #2
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1401196696 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1298570080 = null; //Variable for return #2
             {
-                boolean varDDDEF883E55C0067D538DC62E8B8900F_767854981 = (isHierarchical());
+                boolean varDDDEF883E55C0067D538DC62E8B8900F_786132438 = (isHierarchical());
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_662235842 = new Builder()
+                    varB4EAC82CA7396A68D541C85D26508E83_1401196696 = new Builder()
                         .scheme(getScheme())
                         .authority(getAuthorityPart())
                         .path(getPathPart())
@@ -1195,23 +1195,23 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
                         .fragment(getFragmentPart());
                 } //End block
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_314594612 = new Builder()
+                    varB4EAC82CA7396A68D541C85D26508E83_1298570080 = new Builder()
                         .scheme(getScheme())
                         .opaquePart(getSsp())
                         .fragment(getFragmentPart());
                 } //End block
             } //End collapsed parenthetic
-            Builder varA7E53CE21691AB073D9660D615818899_615693776; //Final return value
+            Builder varA7E53CE21691AB073D9660D615818899_448513771; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_615693776 = varB4EAC82CA7396A68D541C85D26508E83_662235842;
+                    varA7E53CE21691AB073D9660D615818899_448513771 = varB4EAC82CA7396A68D541C85D26508E83_1401196696;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_615693776 = varB4EAC82CA7396A68D541C85D26508E83_314594612;
+                    varA7E53CE21691AB073D9660D615818899_448513771 = varB4EAC82CA7396A68D541C85D26508E83_1298570080;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_615693776.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_615693776;
+            varA7E53CE21691AB073D9660D615818899_448513771.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_448513771;
             // ---------- Original Method ----------
             //if (isHierarchical()) {
                 //return new Builder()
@@ -1229,7 +1229,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.668 -0400", hash_original_field = "B0493B2AFC6F39450B0E6998DDC76696", hash_generated_field = "B20ED70ADEB548567D793C434972614A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.424 -0400", hash_original_field = "B0493B2AFC6F39450B0E6998DDC76696", hash_generated_field = "B20ED70ADEB548567D793C434972614A")
 
         static int TYPE_ID = 1;
     }
@@ -1237,20 +1237,20 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
 
     
     private static class OpaqueUri extends Uri {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.669 -0400", hash_original_field = "41323917EF8089432959A3C33269DEBF", hash_generated_field = "CBE7A470226A0B2957A605279AD0FD59")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.425 -0400", hash_original_field = "41323917EF8089432959A3C33269DEBF", hash_generated_field = "CBE7A470226A0B2957A605279AD0FD59")
 
         private String scheme;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.669 -0400", hash_original_field = "97C9C694D99F729E1A48940D0B386A9B", hash_generated_field = "7012AD665E5A3250E37E3BF51B044446")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.425 -0400", hash_original_field = "97C9C694D99F729E1A48940D0B386A9B", hash_generated_field = "7012AD665E5A3250E37E3BF51B044446")
 
         private Part ssp;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.669 -0400", hash_original_field = "02E918FC72837D7C2689BE88684DCEB1", hash_generated_field = "8AF52B12247A3EBE638DDC3C88EEE123")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.425 -0400", hash_original_field = "02E918FC72837D7C2689BE88684DCEB1", hash_generated_field = "8AF52B12247A3EBE638DDC3C88EEE123")
 
         private Part fragment;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.669 -0400", hash_original_field = "E4D7B1085B3F20D4D3076206156621A1", hash_generated_field = "FCCD4A0FFBA55911A49FB2AEB7548D00")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.428 -0400", hash_original_field = "E4D7B1085B3F20D4D3076206156621A1", hash_generated_field = "FCCD4A0FFBA55911A49FB2AEB7548D00")
 
         private volatile String cachedString = NOT_CACHED;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.674 -0400", hash_original_method = "A3EB90F61BB5DAD9A21709AA9F976DF8", hash_generated_method = "06AECF8220C181EEDE6CDB73AC6F3E82")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.438 -0400", hash_original_method = "A3EB90F61BB5DAD9A21709AA9F976DF8", hash_generated_method = "06AECF8220C181EEDE6CDB73AC6F3E82")
         private  OpaqueUri(String scheme, Part ssp, Part fragment) {
             this.scheme = scheme;
             this.ssp = ssp;
@@ -1271,16 +1271,16 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.675 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "51E2B64D743566A2A8BC94DAB8EE859C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.439 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1291327438B21E87E12E7F2EBBA2664C")
         public int describeContents() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_37798922 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_37798922;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1705240885 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1705240885;
             // ---------- Original Method ----------
             //return 0;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.690 -0400", hash_original_method = "8F996E53ADCFC30BFF794C5CEED4DA61", hash_generated_method = "5EFDF35B09A0841810BA9C760D12E8B5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.443 -0400", hash_original_method = "8F996E53ADCFC30BFF794C5CEED4DA61", hash_generated_method = "5EFDF35B09A0841810BA9C760D12E8B5")
         public void writeToParcel(Parcel parcel, int flags) {
             parcel.writeInt(TYPE_ID);
             parcel.writeString(scheme);
@@ -1296,240 +1296,240 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.691 -0400", hash_original_method = "414EEC63B62C24CE4C288B4F88575946", hash_generated_method = "BE5EAD67F0FE9DA13D782931D64FD240")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.444 -0400", hash_original_method = "414EEC63B62C24CE4C288B4F88575946", hash_generated_method = "69D2AD7CE280A8153CDE2223B9E11B39")
         public boolean isHierarchical() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2123131850 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2123131850;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1297333596 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1297333596;
             // ---------- Original Method ----------
             //return false;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.696 -0400", hash_original_method = "9639BAD4AF2BECE413ED6DDD1E0FB03A", hash_generated_method = "E1E51B5882AE1538B1F64F92EB7CB49D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.444 -0400", hash_original_method = "9639BAD4AF2BECE413ED6DDD1E0FB03A", hash_generated_method = "9596D370586E4CBF9EAE2F41EE446A23")
         public boolean isRelative() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_410011331 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_410011331;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_207850481 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_207850481;
             // ---------- Original Method ----------
             //return scheme == null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.701 -0400", hash_original_method = "76031D31C1CA528B8F038117D6808811", hash_generated_method = "1029E945DA75232981287A14A76D29F7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.456 -0400", hash_original_method = "76031D31C1CA528B8F038117D6808811", hash_generated_method = "8C079527A2492620BFA57365C1C4B9A0")
         public String getScheme() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1463754352 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1463754352 = this.scheme;
-            varB4EAC82CA7396A68D541C85D26508E83_1463754352.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1463754352;
+            String varB4EAC82CA7396A68D541C85D26508E83_2002311801 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_2002311801 = this.scheme;
+            varB4EAC82CA7396A68D541C85D26508E83_2002311801.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2002311801;
             // ---------- Original Method ----------
             //return this.scheme;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.701 -0400", hash_original_method = "3C55B6D4F736410AF7A2ACAB5CCC51ED", hash_generated_method = "4A02433EE7CA2D32D9FF857CDD119515")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.457 -0400", hash_original_method = "3C55B6D4F736410AF7A2ACAB5CCC51ED", hash_generated_method = "8F19918D4A39594F6CBB9F78A8625CA0")
         public String getEncodedSchemeSpecificPart() {
-            String varB4EAC82CA7396A68D541C85D26508E83_273446994 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_273446994 = ssp.getEncoded();
-            varB4EAC82CA7396A68D541C85D26508E83_273446994.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_273446994;
+            String varB4EAC82CA7396A68D541C85D26508E83_432781699 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_432781699 = ssp.getEncoded();
+            varB4EAC82CA7396A68D541C85D26508E83_432781699.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_432781699;
             // ---------- Original Method ----------
             //return ssp.getEncoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.706 -0400", hash_original_method = "ED3540C8D06E41CD645C58A620F36381", hash_generated_method = "C1E9A708C0BE3D69B40B695E25E6D8E2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.458 -0400", hash_original_method = "ED3540C8D06E41CD645C58A620F36381", hash_generated_method = "A850B7F6609039CC9B8C181572116398")
         public String getSchemeSpecificPart() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1292224677 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1292224677 = ssp.getDecoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1292224677.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1292224677;
+            String varB4EAC82CA7396A68D541C85D26508E83_923634980 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_923634980 = ssp.getDecoded();
+            varB4EAC82CA7396A68D541C85D26508E83_923634980.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_923634980;
             // ---------- Original Method ----------
             //return ssp.getDecoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.707 -0400", hash_original_method = "31E41E1CB0338F9BAA50A0AC05D7D02D", hash_generated_method = "620D92C4A312794B2DE99F3B071209C3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.475 -0400", hash_original_method = "31E41E1CB0338F9BAA50A0AC05D7D02D", hash_generated_method = "4516CC2EED5EEB651EF40F78FB4CC32D")
         public String getAuthority() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1484803101 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1484803101 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_1484803101.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1484803101;
+            String varB4EAC82CA7396A68D541C85D26508E83_1376220156 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1376220156 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1376220156.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1376220156;
             // ---------- Original Method ----------
             //return null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.729 -0400", hash_original_method = "C6F3CA63C6BE518EBD2AA32E2786DD3A", hash_generated_method = "6E2599B960519B838F8CFA18BEBBB44C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.476 -0400", hash_original_method = "C6F3CA63C6BE518EBD2AA32E2786DD3A", hash_generated_method = "E6FC0DD9C72A6202268C791F9578D14B")
         public String getEncodedAuthority() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1234990030 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1234990030 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_1234990030.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1234990030;
+            String varB4EAC82CA7396A68D541C85D26508E83_1756663374 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1756663374 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1756663374.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1756663374;
             // ---------- Original Method ----------
             //return null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.730 -0400", hash_original_method = "F489014FCD27D67260CBEC8AC84559A2", hash_generated_method = "02364F029597FFB28535933DE269A4FB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.477 -0400", hash_original_method = "F489014FCD27D67260CBEC8AC84559A2", hash_generated_method = "7D13426E38EDBF9FB9D366C32855DFA5")
         public String getPath() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1949127243 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1949127243 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_1949127243.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1949127243;
+            String varB4EAC82CA7396A68D541C85D26508E83_283264716 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_283264716 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_283264716.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_283264716;
             // ---------- Original Method ----------
             //return null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.731 -0400", hash_original_method = "F167E35F53D1A5A8B17A8A72FE8359AE", hash_generated_method = "071ECDFE45C51E4A19B74AA80B677477")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.483 -0400", hash_original_method = "F167E35F53D1A5A8B17A8A72FE8359AE", hash_generated_method = "B95B81C768522F0CA86BE0E2F6B9AE63")
         public String getEncodedPath() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1399879122 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1399879122 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_1399879122.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1399879122;
+            String varB4EAC82CA7396A68D541C85D26508E83_1672922594 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1672922594 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1672922594.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1672922594;
             // ---------- Original Method ----------
             //return null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.731 -0400", hash_original_method = "2E34959E1DD3631C67E93F1AE6B31056", hash_generated_method = "FFE707E928AB30791A615214E2991F9F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.493 -0400", hash_original_method = "2E34959E1DD3631C67E93F1AE6B31056", hash_generated_method = "1736F185AF442E3A88A139277D773E9A")
         public String getQuery() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1413095322 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1413095322 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_1413095322.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1413095322;
+            String varB4EAC82CA7396A68D541C85D26508E83_1334222844 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1334222844 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1334222844.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1334222844;
             // ---------- Original Method ----------
             //return null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.732 -0400", hash_original_method = "53661DD2D38C9C2E00E8B8D2FF316BB7", hash_generated_method = "C5504FF4D408C91277DBD62888FEFF3D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.494 -0400", hash_original_method = "53661DD2D38C9C2E00E8B8D2FF316BB7", hash_generated_method = "672C0DA9FC46D3EE2B279E36EC0BCEB0")
         public String getEncodedQuery() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1452075356 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1452075356 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_1452075356.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1452075356;
+            String varB4EAC82CA7396A68D541C85D26508E83_1049815389 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1049815389 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1049815389.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1049815389;
             // ---------- Original Method ----------
             //return null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.737 -0400", hash_original_method = "9F53DDCB73E71AFF4CF207B49D0689B3", hash_generated_method = "ECA79887A94F9A100B695A0D4B018E75")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.507 -0400", hash_original_method = "9F53DDCB73E71AFF4CF207B49D0689B3", hash_generated_method = "B43F908A33C2F5D27BF41B4558DD13A1")
         public String getFragment() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1655574915 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1655574915 = fragment.getDecoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1655574915.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1655574915;
+            String varB4EAC82CA7396A68D541C85D26508E83_905326631 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_905326631 = fragment.getDecoded();
+            varB4EAC82CA7396A68D541C85D26508E83_905326631.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_905326631;
             // ---------- Original Method ----------
             //return fragment.getDecoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.754 -0400", hash_original_method = "2FF982E252638134744EE32C0D7F6950", hash_generated_method = "ABC1259F562AE64650A29A85DF929D2E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.510 -0400", hash_original_method = "2FF982E252638134744EE32C0D7F6950", hash_generated_method = "6B895AA2B571D0A7888B6DC96D367B20")
         public String getEncodedFragment() {
-            String varB4EAC82CA7396A68D541C85D26508E83_2007905324 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_2007905324 = fragment.getEncoded();
-            varB4EAC82CA7396A68D541C85D26508E83_2007905324.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_2007905324;
+            String varB4EAC82CA7396A68D541C85D26508E83_1143843068 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1143843068 = fragment.getEncoded();
+            varB4EAC82CA7396A68D541C85D26508E83_1143843068.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1143843068;
             // ---------- Original Method ----------
             //return fragment.getEncoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.755 -0400", hash_original_method = "08B329AF4FAA2768183F76EC45288C10", hash_generated_method = "772614407829B3A3ADC9CCB098DAD240")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.511 -0400", hash_original_method = "08B329AF4FAA2768183F76EC45288C10", hash_generated_method = "40C2FDD2259F27BC1245C3B5621F5BBC")
         public List<String> getPathSegments() {
-            List<String> varB4EAC82CA7396A68D541C85D26508E83_1222053122 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1222053122 = Collections.emptyList();
-            varB4EAC82CA7396A68D541C85D26508E83_1222053122.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1222053122;
+            List<String> varB4EAC82CA7396A68D541C85D26508E83_1339117533 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1339117533 = Collections.emptyList();
+            varB4EAC82CA7396A68D541C85D26508E83_1339117533.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1339117533;
             // ---------- Original Method ----------
             //return Collections.emptyList();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.756 -0400", hash_original_method = "AE7FF2A9DFCB643CF70873B2C08CD5A8", hash_generated_method = "CEDEC85596EBE5E016670368D2C191C1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.516 -0400", hash_original_method = "AE7FF2A9DFCB643CF70873B2C08CD5A8", hash_generated_method = "3B683CD947BF867C4F72A58610CD50CA")
         public String getLastPathSegment() {
-            String varB4EAC82CA7396A68D541C85D26508E83_2070499793 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_2070499793 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_2070499793.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_2070499793;
+            String varB4EAC82CA7396A68D541C85D26508E83_562988337 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_562988337 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_562988337.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_562988337;
             // ---------- Original Method ----------
             //return null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.756 -0400", hash_original_method = "520FB960E4127ABC7143DD06EFB52356", hash_generated_method = "F7D261682E35E5A9F7E4B89E3B4A0F8D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.517 -0400", hash_original_method = "520FB960E4127ABC7143DD06EFB52356", hash_generated_method = "4AA23EDC9909A788BCE1D62C5DC91A15")
         public String getUserInfo() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1110215679 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1110215679 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_1110215679.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1110215679;
+            String varB4EAC82CA7396A68D541C85D26508E83_247780941 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_247780941 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_247780941.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_247780941;
             // ---------- Original Method ----------
             //return null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.761 -0400", hash_original_method = "88ECB0B5D6F4AA907FC3666F8C1418EB", hash_generated_method = "6FDE7ED6C833471BD71B5600220D545C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.531 -0400", hash_original_method = "88ECB0B5D6F4AA907FC3666F8C1418EB", hash_generated_method = "B18CA847882994D46DDDB5A95D866D74")
         public String getEncodedUserInfo() {
-            String varB4EAC82CA7396A68D541C85D26508E83_790256155 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_790256155 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_790256155.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_790256155;
+            String varB4EAC82CA7396A68D541C85D26508E83_886619191 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_886619191 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_886619191.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_886619191;
             // ---------- Original Method ----------
             //return null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.777 -0400", hash_original_method = "00C71B0865F91AE7EF71B7BE21B14B9F", hash_generated_method = "E6B64411753C344925F204C5FFFEDA7C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.533 -0400", hash_original_method = "00C71B0865F91AE7EF71B7BE21B14B9F", hash_generated_method = "F50AF221E8B03EB08148BF067DB945AE")
         public String getHost() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1713096263 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1713096263 = null;
-            varB4EAC82CA7396A68D541C85D26508E83_1713096263.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1713096263;
+            String varB4EAC82CA7396A68D541C85D26508E83_134596590 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_134596590 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_134596590.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_134596590;
             // ---------- Original Method ----------
             //return null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.777 -0400", hash_original_method = "B159430668427C6760C3FB4B772D9F59", hash_generated_method = "AE2F00BD1BA214D09338F8BA961D99E8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.544 -0400", hash_original_method = "B159430668427C6760C3FB4B772D9F59", hash_generated_method = "B1B936E477C78E3CF492901C6379E8A2")
         public int getPort() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_114273361 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_114273361;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1249857629 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1249857629;
             // ---------- Original Method ----------
             //return -1;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.779 -0400", hash_original_method = "ACF28BE5516AF44175C2E6962FB03404", hash_generated_method = "C0D48CE3400C579960C846326C524A05")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.546 -0400", hash_original_method = "ACF28BE5516AF44175C2E6962FB03404", hash_generated_method = "972DCD1B06B29740223404BADF1759E7")
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_226809472 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_186524148 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_1792257474 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_809320117 = null; //Variable for return #2
             @SuppressWarnings("StringEquality") boolean cached;
             cached = cachedString != NOT_CACHED;
             {
-                varB4EAC82CA7396A68D541C85D26508E83_226809472 = cachedString;
+                varB4EAC82CA7396A68D541C85D26508E83_1792257474 = cachedString;
             } //End block
             StringBuilder sb;
             sb = new StringBuilder();
             sb.append(scheme).append(':');
             sb.append(getEncodedSchemeSpecificPart());
             {
-                boolean varC8C86438344E58844BC399B4194DB415_289594841 = (!fragment.isEmpty());
+                boolean varC8C86438344E58844BC399B4194DB415_252174083 = (!fragment.isEmpty());
                 {
                     sb.append('#').append(fragment.getEncoded());
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_186524148 = cachedString = sb.toString();
-            String varA7E53CE21691AB073D9660D615818899_671141404; //Final return value
+            varB4EAC82CA7396A68D541C85D26508E83_809320117 = cachedString = sb.toString();
+            String varA7E53CE21691AB073D9660D615818899_1394298220; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_671141404 = varB4EAC82CA7396A68D541C85D26508E83_226809472;
+                    varA7E53CE21691AB073D9660D615818899_1394298220 = varB4EAC82CA7396A68D541C85D26508E83_1792257474;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_671141404 = varB4EAC82CA7396A68D541C85D26508E83_186524148;
+                    varA7E53CE21691AB073D9660D615818899_1394298220 = varB4EAC82CA7396A68D541C85D26508E83_809320117;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_671141404.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_671141404;
+            varA7E53CE21691AB073D9660D615818899_1394298220.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1394298220;
             // ---------- Original Method ----------
             //@SuppressWarnings("StringEquality")
             //boolean cached = cachedString != NOT_CACHED;
@@ -1546,15 +1546,15 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.781 -0400", hash_original_method = "9B1777E9DAB1C1ED3319A4EEC33BCB54", hash_generated_method = "B77510C77EF72702D7C71F6340B0CD70")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.550 -0400", hash_original_method = "9B1777E9DAB1C1ED3319A4EEC33BCB54", hash_generated_method = "E9EE990BEC78BDA07DBFC6CB4F3A4E4C")
         public Builder buildUpon() {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_104284630 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_104284630 = new Builder()
+            Builder varB4EAC82CA7396A68D541C85D26508E83_2119815680 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_2119815680 = new Builder()
                     .scheme(this.scheme)
                     .opaquePart(this.ssp)
                     .fragment(this.fragment);
-            varB4EAC82CA7396A68D541C85D26508E83_104284630.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_104284630;
+            varB4EAC82CA7396A68D541C85D26508E83_2119815680.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2119815680;
             // ---------- Original Method ----------
             //return new Builder()
                     //.scheme(this.scheme)
@@ -1563,7 +1563,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.784 -0400", hash_original_field = "404FF43CFEE8747368BFDA1DC5DB3B28", hash_generated_field = "F3FBA7B249D24D5355C3AA38935068D2")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.550 -0400", hash_original_field = "404FF43CFEE8747368BFDA1DC5DB3B28", hash_generated_field = "F3FBA7B249D24D5355C3AA38935068D2")
 
         static int TYPE_ID = 2;
     }
@@ -1571,14 +1571,14 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
 
     
     static class PathSegments extends AbstractList<String> implements RandomAccess {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.785 -0400", hash_original_field = "1F982D988D45344BF00CD08220780A1E", hash_generated_field = "D8C8A9DBE80A96D9E735DAA1D195D137")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.550 -0400", hash_original_field = "1F982D988D45344BF00CD08220780A1E", hash_generated_field = "D8C8A9DBE80A96D9E735DAA1D195D137")
 
         String[] segments;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.785 -0400", hash_original_field = "F7BD60B75B29D79B660A2859395C1A24", hash_generated_field = "673BDAEBF4FBC900963E210E042549D6")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.551 -0400", hash_original_field = "F7BD60B75B29D79B660A2859395C1A24", hash_generated_field = "673BDAEBF4FBC900963E210E042549D6")
 
         int size;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.794 -0400", hash_original_method = "816AFE27D6484B7E80593A248F7DEC12", hash_generated_method = "F2AFBC317E49E2BF0F98B0C5AE8378FC")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.569 -0400", hash_original_method = "816AFE27D6484B7E80593A248F7DEC12", hash_generated_method = "F2AFBC317E49E2BF0F98B0C5AE8378FC")
           PathSegments(String[] segments, int size) {
             this.segments = segments;
             this.size = size;
@@ -1588,16 +1588,16 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.799 -0400", hash_original_method = "043CF25E38E9D3A71BE4CC7B6371568E", hash_generated_method = "71D4D434E42F294CE236BB8C18353C61")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.572 -0400", hash_original_method = "043CF25E38E9D3A71BE4CC7B6371568E", hash_generated_method = "39C22A95D6BA1433895F9564AC7C46B9")
         public String get(int index) {
-            String varB4EAC82CA7396A68D541C85D26508E83_2636340 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1714319285 = null; //Variable for return #1
             {
                 if (DroidSafeAndroidRuntime.control) throw new IndexOutOfBoundsException();
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_2636340 = segments[index];
+            varB4EAC82CA7396A68D541C85D26508E83_1714319285 = segments[index];
             addTaint(index);
-            varB4EAC82CA7396A68D541C85D26508E83_2636340.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_2636340;
+            varB4EAC82CA7396A68D541C85D26508E83_1714319285.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1714319285;
             // ---------- Original Method ----------
             //if (index >= size) {
                 //throw new IndexOutOfBoundsException();
@@ -1606,16 +1606,16 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.800 -0400", hash_original_method = "BAF1AF8B1284BE94C387C840AF9FA265", hash_generated_method = "9C98C2E0FC2EC98C1593F70CE9C22936")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.572 -0400", hash_original_method = "BAF1AF8B1284BE94C387C840AF9FA265", hash_generated_method = "D830553A6FCA5CB3BEA8CC8B2F90707D")
         public int size() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_965303000 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_965303000;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_222072645 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_222072645;
             // ---------- Original Method ----------
             //return this.size;
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.803 -0400", hash_original_field = "F2217D1D8C4EF2C438C5D90B83E3AD42", hash_generated_field = "69F60209E828DA9026969A916E1F8FA0")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.573 -0400", hash_original_field = "F2217D1D8C4EF2C438C5D90B83E3AD42", hash_generated_field = "69F60209E828DA9026969A916E1F8FA0")
 
         static PathSegments EMPTY = new PathSegments(null, 0);
     }
@@ -1623,21 +1623,21 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
 
     
     static class PathSegmentsBuilder {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.803 -0400", hash_original_field = "1F982D988D45344BF00CD08220780A1E", hash_generated_field = "D8C8A9DBE80A96D9E735DAA1D195D137")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.583 -0400", hash_original_field = "1F982D988D45344BF00CD08220780A1E", hash_generated_field = "D8C8A9DBE80A96D9E735DAA1D195D137")
 
         String[] segments;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.803 -0400", hash_original_field = "4C519DE3531208469B40CCB51004CD2D", hash_generated_field = "689FC3CB9A887B5817C15E9CFDD066DB")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.583 -0400", hash_original_field = "4C519DE3531208469B40CCB51004CD2D", hash_generated_field = "689FC3CB9A887B5817C15E9CFDD066DB")
 
         int size = 0;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.803 -0400", hash_original_method = "CD5B4727D6775EBFE00461F5F237812D", hash_generated_method = "CD5B4727D6775EBFE00461F5F237812D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.583 -0400", hash_original_method = "CD5B4727D6775EBFE00461F5F237812D", hash_generated_method = "CD5B4727D6775EBFE00461F5F237812D")
         public PathSegmentsBuilder ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.812 -0400", hash_original_method = "F05B9B5ECB44DE7CFF27782486F28CF3", hash_generated_method = "74F7C03E29417F2B866971828F2CC6A6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.587 -0400", hash_original_method = "F05B9B5ECB44DE7CFF27782486F28CF3", hash_generated_method = "74F7C03E29417F2B866971828F2CC6A6")
          void add(String segment) {
             {
                 segments = new String[4];
@@ -1661,32 +1661,32 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.831 -0400", hash_original_method = "497F2229989230601A3120EEAF21B251", hash_generated_method = "C60DD34CD4D4D49316E02AF2A8A0A9CF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.600 -0400", hash_original_method = "497F2229989230601A3120EEAF21B251", hash_generated_method = "C6042A066CEF3DF5D54E474ABD743855")
          PathSegments build() {
-            PathSegments varB4EAC82CA7396A68D541C85D26508E83_90116188 = null; //Variable for return #1
-            PathSegments varB4EAC82CA7396A68D541C85D26508E83_1084919501 = null; //Variable for return #2
+            PathSegments varB4EAC82CA7396A68D541C85D26508E83_2085090935 = null; //Variable for return #1
+            PathSegments varB4EAC82CA7396A68D541C85D26508E83_1456133133 = null; //Variable for return #2
             {
-                varB4EAC82CA7396A68D541C85D26508E83_90116188 = PathSegments.EMPTY;
+                varB4EAC82CA7396A68D541C85D26508E83_2085090935 = PathSegments.EMPTY;
             } //End block
             try 
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1084919501 = new PathSegments(segments, size);
+                varB4EAC82CA7396A68D541C85D26508E83_1456133133 = new PathSegments(segments, size);
             } //End block
             finally 
             {
                 segments = null;
             } //End block
-            PathSegments varA7E53CE21691AB073D9660D615818899_1498461977; //Final return value
+            PathSegments varA7E53CE21691AB073D9660D615818899_1339088223; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1498461977 = varB4EAC82CA7396A68D541C85D26508E83_90116188;
+                    varA7E53CE21691AB073D9660D615818899_1339088223 = varB4EAC82CA7396A68D541C85D26508E83_2085090935;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1498461977 = varB4EAC82CA7396A68D541C85D26508E83_1084919501;
+                    varA7E53CE21691AB073D9660D615818899_1339088223 = varB4EAC82CA7396A68D541C85D26508E83_1456133133;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1498461977.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1498461977;
+            varA7E53CE21691AB073D9660D615818899_1339088223.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1339088223;
             // ---------- Original Method ----------
             //if (segments == null) {
                 //return PathSegments.EMPTY;
@@ -1704,46 +1704,46 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
 
     
     private abstract static class AbstractHierarchicalUri extends Uri {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.831 -0400", hash_original_field = "49F290D6E8459C53F31F97DE37921086", hash_generated_field = "87B54E118334D4593A462325E6A65F84")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.600 -0400", hash_original_field = "49F290D6E8459C53F31F97DE37921086", hash_generated_field = "87B54E118334D4593A462325E6A65F84")
 
         private Part userInfo;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.831 -0400", hash_original_field = "38B3753700D5B450CB30995B4DB5AF95", hash_generated_field = "539F6E6D25356608852D958A8481FDA5")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.600 -0400", hash_original_field = "38B3753700D5B450CB30995B4DB5AF95", hash_generated_field = "539F6E6D25356608852D958A8481FDA5")
 
         private volatile String host = NOT_CACHED;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.831 -0400", hash_original_field = "38113C68733F87156C438BEBC2FCB827", hash_generated_field = "3DEE2B327E62FC31F0BA9783EFE62CA9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.600 -0400", hash_original_field = "38113C68733F87156C438BEBC2FCB827", hash_generated_field = "3DEE2B327E62FC31F0BA9783EFE62CA9")
 
         private volatile int port = NOT_CALCULATED;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.832 -0400", hash_original_method = "469DE423ED30903E9EDD58224AA80D56", hash_generated_method = "469DE423ED30903E9EDD58224AA80D56")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.690 -0400", hash_original_method = "469DE423ED30903E9EDD58224AA80D56", hash_generated_method = "469DE423ED30903E9EDD58224AA80D56")
         public AbstractHierarchicalUri ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.836 -0400", hash_original_method = "D5E71CFA6EED35AEB9B5F4AEC5287C3B", hash_generated_method = "75AF49DFFCC454DF4040589C6F6B2F1B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.691 -0400", hash_original_method = "D5E71CFA6EED35AEB9B5F4AEC5287C3B", hash_generated_method = "6241896A27CE5553668F5BAAC397AAE0")
         public String getLastPathSegment() {
-            String varB4EAC82CA7396A68D541C85D26508E83_768017764 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_1811352715 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_774515443 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1835916882 = null; //Variable for return #2
             List<String> segments;
             segments = getPathSegments();
             int size;
             size = segments.size();
             {
-                varB4EAC82CA7396A68D541C85D26508E83_768017764 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_774515443 = null;
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1811352715 = segments.get(size - 1);
-            String varA7E53CE21691AB073D9660D615818899_1497312446; //Final return value
+            varB4EAC82CA7396A68D541C85D26508E83_1835916882 = segments.get(size - 1);
+            String varA7E53CE21691AB073D9660D615818899_1329815035; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1497312446 = varB4EAC82CA7396A68D541C85D26508E83_768017764;
+                    varA7E53CE21691AB073D9660D615818899_1329815035 = varB4EAC82CA7396A68D541C85D26508E83_774515443;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1497312446 = varB4EAC82CA7396A68D541C85D26508E83_1811352715;
+                    varA7E53CE21691AB073D9660D615818899_1329815035 = varB4EAC82CA7396A68D541C85D26508E83_1835916882;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1497312446.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1497312446;
+            varA7E53CE21691AB073D9660D615818899_1329815035.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1329815035;
             // ---------- Original Method ----------
             //List<String> segments = getPathSegments();
             //int size = segments.size();
@@ -1754,53 +1754,53 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.837 -0400", hash_original_method = "739BBE935CAE826F3703E2BBB77B819C", hash_generated_method = "3DA56DFCEE42448565333C26A7BCDF34")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.696 -0400", hash_original_method = "739BBE935CAE826F3703E2BBB77B819C", hash_generated_method = "C86FB83286A689C07D59392F5C0FD06A")
         private Part getUserInfoPart() {
-            Part varB4EAC82CA7396A68D541C85D26508E83_2117173898 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_2117173898 = userInfo == null
+            Part varB4EAC82CA7396A68D541C85D26508E83_1307231012 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1307231012 = userInfo == null
                     ? userInfo = Part.fromEncoded(parseUserInfo()) : userInfo;
-            varB4EAC82CA7396A68D541C85D26508E83_2117173898.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_2117173898;
+            varB4EAC82CA7396A68D541C85D26508E83_1307231012.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1307231012;
             // ---------- Original Method ----------
             //return userInfo == null
                     //? userInfo = Part.fromEncoded(parseUserInfo()) : userInfo;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.856 -0400", hash_original_method = "EADAAD26DC8689BCA10DCA33883B9323", hash_generated_method = "C58B0EB0AC92BC132D37F5163A868FA5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.697 -0400", hash_original_method = "EADAAD26DC8689BCA10DCA33883B9323", hash_generated_method = "75E29565E7CA57223251229B6C88693A")
         public final String getEncodedUserInfo() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1988787882 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1988787882 = getUserInfoPart().getEncoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1988787882.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1988787882;
+            String varB4EAC82CA7396A68D541C85D26508E83_319987268 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_319987268 = getUserInfoPart().getEncoded();
+            varB4EAC82CA7396A68D541C85D26508E83_319987268.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_319987268;
             // ---------- Original Method ----------
             //return getUserInfoPart().getEncoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.857 -0400", hash_original_method = "10E379B7D06266EDAAC672E10EB0F58B", hash_generated_method = "CEA37CA667C47FB882DCDCFE460DAC79")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.698 -0400", hash_original_method = "10E379B7D06266EDAAC672E10EB0F58B", hash_generated_method = "CCD5A3E5A696D43C43CCBF88C15B88A3")
         private String parseUserInfo() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1987580290 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_181767816 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_220107005 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_2013132388 = null; //Variable for return #2
             String authority;
             authority = getEncodedAuthority();
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1987580290 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_220107005 = null;
             } //End block
             int end;
             end = authority.indexOf('@');
-            varB4EAC82CA7396A68D541C85D26508E83_181767816 = end == NOT_FOUND ? null : authority.substring(0, end);
-            String varA7E53CE21691AB073D9660D615818899_1820485313; //Final return value
+            varB4EAC82CA7396A68D541C85D26508E83_2013132388 = end == NOT_FOUND ? null : authority.substring(0, end);
+            String varA7E53CE21691AB073D9660D615818899_1075763346; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1820485313 = varB4EAC82CA7396A68D541C85D26508E83_1987580290;
+                    varA7E53CE21691AB073D9660D615818899_1075763346 = varB4EAC82CA7396A68D541C85D26508E83_220107005;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1820485313 = varB4EAC82CA7396A68D541C85D26508E83_181767816;
+                    varA7E53CE21691AB073D9660D615818899_1075763346 = varB4EAC82CA7396A68D541C85D26508E83_2013132388;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1820485313.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1820485313;
+            varA7E53CE21691AB073D9660D615818899_1075763346.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1075763346;
             // ---------- Original Method ----------
             //String authority = getEncodedAuthority();
             //if (authority == null) {
@@ -1811,26 +1811,26 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.858 -0400", hash_original_method = "575ECF6860F7EEFE5055BF56F2601A0E", hash_generated_method = "C54AFD0D770FAA590E580C270CFA0D72")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.707 -0400", hash_original_method = "575ECF6860F7EEFE5055BF56F2601A0E", hash_generated_method = "60EDD0ECB2594789B5138FECBDCF1425")
         public String getUserInfo() {
-            String varB4EAC82CA7396A68D541C85D26508E83_967600170 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_967600170 = getUserInfoPart().getDecoded();
-            varB4EAC82CA7396A68D541C85D26508E83_967600170.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_967600170;
+            String varB4EAC82CA7396A68D541C85D26508E83_1739967483 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1739967483 = getUserInfoPart().getDecoded();
+            varB4EAC82CA7396A68D541C85D26508E83_1739967483.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1739967483;
             // ---------- Original Method ----------
             //return getUserInfoPart().getDecoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.876 -0400", hash_original_method = "2FC22A6CCA0A3F4C0B9E4C09F79A556D", hash_generated_method = "AD97229BB51800A52AB4A794AA9CA197")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.708 -0400", hash_original_method = "2FC22A6CCA0A3F4C0B9E4C09F79A556D", hash_generated_method = "8C4B6FD5D5E90557DD9DFFBB9238DF24")
         public String getHost() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1258709173 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_386877793 = null; //Variable for return #1
             @SuppressWarnings("StringEquality") boolean cached;
             cached = (host != NOT_CACHED);
-            varB4EAC82CA7396A68D541C85D26508E83_1258709173 = cached ? host
+            varB4EAC82CA7396A68D541C85D26508E83_386877793 = cached ? host
                     : (host = parseHost());
-            varB4EAC82CA7396A68D541C85D26508E83_1258709173.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1258709173;
+            varB4EAC82CA7396A68D541C85D26508E83_386877793.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_386877793;
             // ---------- Original Method ----------
             //@SuppressWarnings("StringEquality")
             //boolean cached = (host != NOT_CACHED);
@@ -1839,14 +1839,14 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.879 -0400", hash_original_method = "F3410DE0DFF96D0677FF54552E852FC4", hash_generated_method = "C0A1003C481F87398D23D3BFBB3EE35B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.732 -0400", hash_original_method = "F3410DE0DFF96D0677FF54552E852FC4", hash_generated_method = "575E0BC112DD5B0850F90DB970B68871")
         private String parseHost() {
-            String varB4EAC82CA7396A68D541C85D26508E83_2038012571 = null; //Variable for return #1
-            String varB4EAC82CA7396A68D541C85D26508E83_135539708 = null; //Variable for return #2
+            String varB4EAC82CA7396A68D541C85D26508E83_1882815215 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1257893972 = null; //Variable for return #2
             String authority;
             authority = getEncodedAuthority();
             {
-                varB4EAC82CA7396A68D541C85D26508E83_2038012571 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_1882815215 = null;
             } //End block
             int userInfoSeparator;
             userInfoSeparator = authority.indexOf('@');
@@ -1855,18 +1855,18 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             String encodedHost;
             encodedHost = authority.substring(userInfoSeparator + 1);
             encodedHost = authority.substring(userInfoSeparator + 1, portSeparator);
-            varB4EAC82CA7396A68D541C85D26508E83_135539708 = decode(encodedHost);
-            String varA7E53CE21691AB073D9660D615818899_927033818; //Final return value
+            varB4EAC82CA7396A68D541C85D26508E83_1257893972 = decode(encodedHost);
+            String varA7E53CE21691AB073D9660D615818899_585613843; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_927033818 = varB4EAC82CA7396A68D541C85D26508E83_2038012571;
+                    varA7E53CE21691AB073D9660D615818899_585613843 = varB4EAC82CA7396A68D541C85D26508E83_1882815215;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_927033818 = varB4EAC82CA7396A68D541C85D26508E83_135539708;
+                    varA7E53CE21691AB073D9660D615818899_585613843 = varB4EAC82CA7396A68D541C85D26508E83_1257893972;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_927033818.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_927033818;
+            varA7E53CE21691AB073D9660D615818899_585613843.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_585613843;
             // ---------- Original Method ----------
             //String authority = getEncodedAuthority();
             //if (authority == null) {
@@ -1881,13 +1881,13 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.880 -0400", hash_original_method = "A497EF38F72042FD9397DCB617BC4BBC", hash_generated_method = "A5871551F7D4067FB4A5759FC70A331E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.734 -0400", hash_original_method = "A497EF38F72042FD9397DCB617BC4BBC", hash_generated_method = "56B87591EEED8637F75AD8CA6CA68F9D")
         public int getPort() {
             {
-                Object varD4A5E1084DDC786A109466698FB6E902_1041193862 = (port = parsePort());
+                Object varD4A5E1084DDC786A109466698FB6E902_1513241240 = (port = parsePort());
             } //End flattened ternary
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_522660591 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_522660591;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_506147612 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_506147612;
             // ---------- Original Method ----------
             //return port == NOT_CALCULATED
                     //? port = parsePort()
@@ -1895,7 +1895,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.881 -0400", hash_original_method = "5469820A1C15A09B87242C85BC223022", hash_generated_method = "7700D188F0299DAC8C4C22E83A847A3D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.735 -0400", hash_original_method = "5469820A1C15A09B87242C85BC223022", hash_generated_method = "9C4E57B96DE26B2230037841414F3A6C")
         private int parsePort() {
             String authority;
             authority = getEncodedAuthority();
@@ -1907,12 +1907,12 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             portString = decode(authority.substring(portSeparator + 1));
             try 
             {
-                int var9090A94059B9013CFD764DB303CCFFD1_1086510585 = (Integer.parseInt(portString));
+                int var9090A94059B9013CFD764DB303CCFFD1_1763717713 = (Integer.parseInt(portString));
             } //End block
             catch (NumberFormatException e)
             { }
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_807642479 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_807642479;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_947710808 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_947710808;
             // ---------- Original Method ----------
             //String authority = getEncodedAuthority();
             //if (authority == null) {
@@ -1938,29 +1938,29 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
 
     
     private static class HierarchicalUri extends AbstractHierarchicalUri {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.881 -0400", hash_original_field = "41323917EF8089432959A3C33269DEBF", hash_generated_field = "CBE7A470226A0B2957A605279AD0FD59")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.736 -0400", hash_original_field = "41323917EF8089432959A3C33269DEBF", hash_generated_field = "CBE7A470226A0B2957A605279AD0FD59")
 
         private String scheme;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.881 -0400", hash_original_field = "873E9C0B50183B613336EEA1020F4369", hash_generated_field = "204632F970E6983D2007A7D2C7B93357")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.736 -0400", hash_original_field = "873E9C0B50183B613336EEA1020F4369", hash_generated_field = "204632F970E6983D2007A7D2C7B93357")
 
         private Part authority;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.881 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "EEFCA663E12A09EA3C7131B68BE78289")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.736 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "EEFCA663E12A09EA3C7131B68BE78289")
 
         private PathPart path;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.881 -0400", hash_original_field = "1B1CC7F086B3F074DA452BC3129981EB", hash_generated_field = "D9C517AF157475966407B5CDC5940032")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.736 -0400", hash_original_field = "1B1CC7F086B3F074DA452BC3129981EB", hash_generated_field = "D9C517AF157475966407B5CDC5940032")
 
         private Part query;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.881 -0400", hash_original_field = "02E918FC72837D7C2689BE88684DCEB1", hash_generated_field = "8AF52B12247A3EBE638DDC3C88EEE123")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.736 -0400", hash_original_field = "02E918FC72837D7C2689BE88684DCEB1", hash_generated_field = "8AF52B12247A3EBE638DDC3C88EEE123")
 
         private Part fragment;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.881 -0400", hash_original_field = "97C9C694D99F729E1A48940D0B386A9B", hash_generated_field = "7012AD665E5A3250E37E3BF51B044446")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.736 -0400", hash_original_field = "97C9C694D99F729E1A48940D0B386A9B", hash_generated_field = "7012AD665E5A3250E37E3BF51B044446")
 
         private Part ssp;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.882 -0400", hash_original_field = "2BBB7D14660BA196C018E7EF1E07014A", hash_generated_field = "9968E15A97464199002C3D2A70E60BF1")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.755 -0400", hash_original_field = "2BBB7D14660BA196C018E7EF1E07014A", hash_generated_field = "9968E15A97464199002C3D2A70E60BF1")
 
         private volatile String uriString = NOT_CACHED;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.899 -0400", hash_original_method = "4B8A4922E90F4F5C5F11CB942A244C7D", hash_generated_method = "68A9127EDB06137E28202F2E575DFD47")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.757 -0400", hash_original_method = "4B8A4922E90F4F5C5F11CB942A244C7D", hash_generated_method = "68A9127EDB06137E28202F2E575DFD47")
         private  HierarchicalUri(String scheme, Part authority, PathPart path,
                 Part query, Part fragment) {
             this.scheme = scheme;
@@ -1988,16 +1988,16 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.917 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "AC0EFFA932AAB953CD3CC5A81F2D5C61")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.758 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "F89F55EC191B5CF230C10ADCA2325DC0")
         public int describeContents() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_907012137 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_907012137;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1382357404 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1382357404;
             // ---------- Original Method ----------
             //return 0;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.918 -0400", hash_original_method = "601AB6BE7C1B16F2DB83E078DF9B61DC", hash_generated_method = "416E2535268A9AE550DD9A5E30CAFE39")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.781 -0400", hash_original_method = "601AB6BE7C1B16F2DB83E078DF9B61DC", hash_generated_method = "416E2535268A9AE550DD9A5E30CAFE39")
         public void writeToParcel(Parcel parcel, int flags) {
             parcel.writeInt(TYPE_ID);
             parcel.writeString(scheme);
@@ -2017,79 +2017,79 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.918 -0400", hash_original_method = "3471DB7575AAB7FBFD2140BF4AB89F77", hash_generated_method = "8E9AC9488FE57F687668D9453F8199D3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.787 -0400", hash_original_method = "3471DB7575AAB7FBFD2140BF4AB89F77", hash_generated_method = "76C73E6A0F2C693AE5F21D979A82F2B0")
         public boolean isHierarchical() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_805730681 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_805730681;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1899702944 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1899702944;
             // ---------- Original Method ----------
             //return true;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.919 -0400", hash_original_method = "9639BAD4AF2BECE413ED6DDD1E0FB03A", hash_generated_method = "14681FE74C9F9DF2A8A6A29A4A1088F6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.788 -0400", hash_original_method = "9639BAD4AF2BECE413ED6DDD1E0FB03A", hash_generated_method = "F19CB3FF59EC79A011C918E7A1B5325C")
         public boolean isRelative() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1880484646 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1880484646;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1575834391 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1575834391;
             // ---------- Original Method ----------
             //return scheme == null;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.920 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "E0B9C5468AEF88D9B9EBA13C151B1DF7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.795 -0400", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "C87ACB1D08D5482A70F831198FEB7300")
         public String getScheme() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1721752814 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1721752814 = scheme;
-            varB4EAC82CA7396A68D541C85D26508E83_1721752814.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1721752814;
+            String varB4EAC82CA7396A68D541C85D26508E83_692640337 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_692640337 = scheme;
+            varB4EAC82CA7396A68D541C85D26508E83_692640337.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_692640337;
             // ---------- Original Method ----------
             //return scheme;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.936 -0400", hash_original_method = "6F57A7CA1E43F50667C0921A8F0F4C1E", hash_generated_method = "C5F4CECC3DDC66A6AB91BF8B6FC9003F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.821 -0400", hash_original_method = "6F57A7CA1E43F50667C0921A8F0F4C1E", hash_generated_method = "74787E866874206948B4B2C4430E74FE")
         private Part getSsp() {
-            Part varB4EAC82CA7396A68D541C85D26508E83_1081406402 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1081406402 = ssp == null
+            Part varB4EAC82CA7396A68D541C85D26508E83_1779335321 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1779335321 = ssp == null
                     ? ssp = Part.fromEncoded(makeSchemeSpecificPart()) : ssp;
-            varB4EAC82CA7396A68D541C85D26508E83_1081406402.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1081406402;
+            varB4EAC82CA7396A68D541C85D26508E83_1779335321.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1779335321;
             // ---------- Original Method ----------
             //return ssp == null
                     //? ssp = Part.fromEncoded(makeSchemeSpecificPart()) : ssp;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.937 -0400", hash_original_method = "55E7C64ABF6A3CC92844508D23C19AB9", hash_generated_method = "ED79DD1874FBCFC6428D1C92C44BA044")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.821 -0400", hash_original_method = "55E7C64ABF6A3CC92844508D23C19AB9", hash_generated_method = "06ACE9526EAA8329ADAD8FAD5348E5EC")
         public String getEncodedSchemeSpecificPart() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1920041480 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1920041480 = getSsp().getEncoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1920041480.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1920041480;
+            String varB4EAC82CA7396A68D541C85D26508E83_1319120490 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1319120490 = getSsp().getEncoded();
+            varB4EAC82CA7396A68D541C85D26508E83_1319120490.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1319120490;
             // ---------- Original Method ----------
             //return getSsp().getEncoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.937 -0400", hash_original_method = "AC19873BD337CA7E5ADD95E4E1A5F455", hash_generated_method = "84A3AED50FECCE794A3382880F6E3F56")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.822 -0400", hash_original_method = "AC19873BD337CA7E5ADD95E4E1A5F455", hash_generated_method = "60B6E12D7F15DD0F9C92DAE18012C29E")
         public String getSchemeSpecificPart() {
-            String varB4EAC82CA7396A68D541C85D26508E83_194664473 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_194664473 = getSsp().getDecoded();
-            varB4EAC82CA7396A68D541C85D26508E83_194664473.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_194664473;
+            String varB4EAC82CA7396A68D541C85D26508E83_1042709427 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1042709427 = getSsp().getDecoded();
+            varB4EAC82CA7396A68D541C85D26508E83_1042709427.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1042709427;
             // ---------- Original Method ----------
             //return getSsp().getDecoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.938 -0400", hash_original_method = "EA75444742B675900BB1383BC22E224C", hash_generated_method = "813600C778B206667D4762C21C633761")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.840 -0400", hash_original_method = "EA75444742B675900BB1383BC22E224C", hash_generated_method = "CE8271770DB42483DCCB4BC94E36F00E")
         private String makeSchemeSpecificPart() {
-            String varB4EAC82CA7396A68D541C85D26508E83_193815797 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_122793914 = null; //Variable for return #1
             StringBuilder builder;
             builder = new StringBuilder();
             appendSspTo(builder);
-            varB4EAC82CA7396A68D541C85D26508E83_193815797 = builder.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_193815797.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_193815797;
+            varB4EAC82CA7396A68D541C85D26508E83_122793914 = builder.toString();
+            varB4EAC82CA7396A68D541C85D26508E83_122793914.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_122793914;
             // ---------- Original Method ----------
             //StringBuilder builder = new StringBuilder();
             //appendSspTo(builder);
@@ -2097,7 +2097,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.949 -0400", hash_original_method = "55EA79AD41E607B8DD0B042A78040234", hash_generated_method = "042A00B46BDAF14693CE00840D31EF61")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.843 -0400", hash_original_method = "55EA79AD41E607B8DD0B042A78040234", hash_generated_method = "F20A096CA86941980D0C496AC9B9603A")
         private void appendSspTo(StringBuilder builder) {
             String encodedAuthority;
             encodedAuthority = authority.getEncoded();
@@ -2110,7 +2110,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
                 builder.append(encodedPath);
             } //End block
             {
-                boolean var2C0BEF9EBF85F28B1D174D326A545DCD_651709627 = (!query.isEmpty());
+                boolean var2C0BEF9EBF85F28B1D174D326A545DCD_677143184 = (!query.isEmpty());
                 {
                     builder.append('?').append(query.getEncoded());
                 } //End block
@@ -2131,115 +2131,115 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.950 -0400", hash_original_method = "4FC7F3346B5C0FC1519928E52B2843FB", hash_generated_method = "9C70D8E4F501F64AEA7645B5D8D694B4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.860 -0400", hash_original_method = "4FC7F3346B5C0FC1519928E52B2843FB", hash_generated_method = "81643826593CF0A19DD04CCE661B72EF")
         public String getAuthority() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1584957383 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1584957383 = this.authority.getDecoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1584957383.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1584957383;
+            String varB4EAC82CA7396A68D541C85D26508E83_428306405 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_428306405 = this.authority.getDecoded();
+            varB4EAC82CA7396A68D541C85D26508E83_428306405.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_428306405;
             // ---------- Original Method ----------
             //return this.authority.getDecoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.982 -0400", hash_original_method = "02F0907154122B499105718EFAFFB12D", hash_generated_method = "E7914B9B83EE82D3CA0F7AC6373DDB11")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.861 -0400", hash_original_method = "02F0907154122B499105718EFAFFB12D", hash_generated_method = "8ED5CC402808A6814FDF5B4CE7B7EDB7")
         public String getEncodedAuthority() {
-            String varB4EAC82CA7396A68D541C85D26508E83_360136340 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_360136340 = this.authority.getEncoded();
-            varB4EAC82CA7396A68D541C85D26508E83_360136340.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_360136340;
+            String varB4EAC82CA7396A68D541C85D26508E83_1531562152 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1531562152 = this.authority.getEncoded();
+            varB4EAC82CA7396A68D541C85D26508E83_1531562152.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1531562152;
             // ---------- Original Method ----------
             //return this.authority.getEncoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.983 -0400", hash_original_method = "C2F72FED192DF0C1254C49B5EAFF6B37", hash_generated_method = "759D5984D8CFD7D4D591B56B1F24B201")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.862 -0400", hash_original_method = "C2F72FED192DF0C1254C49B5EAFF6B37", hash_generated_method = "9E482F196C54C4CBC8B3AE0033325BBF")
         public String getEncodedPath() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1347036431 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1347036431 = this.path.getEncoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1347036431.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1347036431;
+            String varB4EAC82CA7396A68D541C85D26508E83_598104040 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_598104040 = this.path.getEncoded();
+            varB4EAC82CA7396A68D541C85D26508E83_598104040.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_598104040;
             // ---------- Original Method ----------
             //return this.path.getEncoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.987 -0400", hash_original_method = "6081DF09BF7A0319CE8B8794EF03DD3D", hash_generated_method = "4016DD744917AC6C34B880BE0A62F0A9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.863 -0400", hash_original_method = "6081DF09BF7A0319CE8B8794EF03DD3D", hash_generated_method = "7837B1519E51C83B3C4B94509A87CC8E")
         public String getPath() {
-            String varB4EAC82CA7396A68D541C85D26508E83_625421584 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_625421584 = this.path.getDecoded();
-            varB4EAC82CA7396A68D541C85D26508E83_625421584.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_625421584;
+            String varB4EAC82CA7396A68D541C85D26508E83_1935778987 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1935778987 = this.path.getDecoded();
+            varB4EAC82CA7396A68D541C85D26508E83_1935778987.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1935778987;
             // ---------- Original Method ----------
             //return this.path.getDecoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:21.988 -0400", hash_original_method = "BB14E9B85B4B70FE8537ADEAEA0F30F8", hash_generated_method = "526F89B5E89475EC9926CAA40EB372BE")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.881 -0400", hash_original_method = "BB14E9B85B4B70FE8537ADEAEA0F30F8", hash_generated_method = "8F97F965CEEFFB945624188952CA82EF")
         public String getQuery() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1313478744 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1313478744 = this.query.getDecoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1313478744.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1313478744;
+            String varB4EAC82CA7396A68D541C85D26508E83_1656875714 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1656875714 = this.query.getDecoded();
+            varB4EAC82CA7396A68D541C85D26508E83_1656875714.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1656875714;
             // ---------- Original Method ----------
             //return this.query.getDecoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.017 -0400", hash_original_method = "4E4841C1D3AAC7E9E3EC5666E1D3BDC7", hash_generated_method = "E8EF92660A70EAAD494EC5AF2812C3D7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.882 -0400", hash_original_method = "4E4841C1D3AAC7E9E3EC5666E1D3BDC7", hash_generated_method = "890E090CD35DC9D6A3B7BFDEFDE3EE35")
         public String getEncodedQuery() {
-            String varB4EAC82CA7396A68D541C85D26508E83_2039795638 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_2039795638 = this.query.getEncoded();
-            varB4EAC82CA7396A68D541C85D26508E83_2039795638.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_2039795638;
+            String varB4EAC82CA7396A68D541C85D26508E83_1507948027 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1507948027 = this.query.getEncoded();
+            varB4EAC82CA7396A68D541C85D26508E83_1507948027.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1507948027;
             // ---------- Original Method ----------
             //return this.query.getEncoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.018 -0400", hash_original_method = "BC71EA5136922A2C431D19FA4D7E797E", hash_generated_method = "A5DFBFF8AB33318A8329B4CA5356146C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.883 -0400", hash_original_method = "BC71EA5136922A2C431D19FA4D7E797E", hash_generated_method = "E6B7B949C256CEBCF0B0880EFF600466")
         public String getFragment() {
-            String varB4EAC82CA7396A68D541C85D26508E83_964774382 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_964774382 = this.fragment.getDecoded();
-            varB4EAC82CA7396A68D541C85D26508E83_964774382.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_964774382;
+            String varB4EAC82CA7396A68D541C85D26508E83_1577089795 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1577089795 = this.fragment.getDecoded();
+            varB4EAC82CA7396A68D541C85D26508E83_1577089795.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1577089795;
             // ---------- Original Method ----------
             //return this.fragment.getDecoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.019 -0400", hash_original_method = "D0BDA4E24821D7C40932E823B160DCAD", hash_generated_method = "5B529D5C9D11B6A14CE0FF6EDCBC3048")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.903 -0400", hash_original_method = "D0BDA4E24821D7C40932E823B160DCAD", hash_generated_method = "10159BB11AB71B3995E2BEF765BA9898")
         public String getEncodedFragment() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1998274678 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1998274678 = this.fragment.getEncoded();
-            varB4EAC82CA7396A68D541C85D26508E83_1998274678.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1998274678;
+            String varB4EAC82CA7396A68D541C85D26508E83_183893611 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_183893611 = this.fragment.getEncoded();
+            varB4EAC82CA7396A68D541C85D26508E83_183893611.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_183893611;
             // ---------- Original Method ----------
             //return this.fragment.getEncoded();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.020 -0400", hash_original_method = "6A1F2A59685BCA2552F3B76D88CB5845", hash_generated_method = "528ACA90D0729A7E73C35C05CA90411A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.904 -0400", hash_original_method = "6A1F2A59685BCA2552F3B76D88CB5845", hash_generated_method = "0AFB87C46303748BC2DBE3585915CDFD")
         public List<String> getPathSegments() {
-            List<String> varB4EAC82CA7396A68D541C85D26508E83_1268590537 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1268590537 = this.path.getPathSegments();
-            varB4EAC82CA7396A68D541C85D26508E83_1268590537.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1268590537;
+            List<String> varB4EAC82CA7396A68D541C85D26508E83_850034590 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_850034590 = this.path.getPathSegments();
+            varB4EAC82CA7396A68D541C85D26508E83_850034590.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_850034590;
             // ---------- Original Method ----------
             //return this.path.getPathSegments();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.020 -0400", hash_original_method = "2FFEEC7D33EBEEF04178DF9D921CBC02", hash_generated_method = "FD6E124F10AAFEF04CC37469ED387A3A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.905 -0400", hash_original_method = "2FFEEC7D33EBEEF04178DF9D921CBC02", hash_generated_method = "5C36360CCD11C145ECB986FDAD16B78D")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_949059855 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_584650597 = null; //Variable for return #1
             @SuppressWarnings("StringEquality") boolean cached;
             cached = (uriString != NOT_CACHED);
-            varB4EAC82CA7396A68D541C85D26508E83_949059855 = cached ? uriString
+            varB4EAC82CA7396A68D541C85D26508E83_584650597 = cached ? uriString
                     : (uriString = makeUriString());
-            varB4EAC82CA7396A68D541C85D26508E83_949059855.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_949059855;
+            varB4EAC82CA7396A68D541C85D26508E83_584650597.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_584650597;
             // ---------- Original Method ----------
             //@SuppressWarnings("StringEquality")
             //boolean cached = (uriString != NOT_CACHED);
@@ -2248,9 +2248,9 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.022 -0400", hash_original_method = "5AECD242275C33F74DCA414A6C8DF5D7", hash_generated_method = "BA10E84F7F326B46DDC1DF823B557D26")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.924 -0400", hash_original_method = "5AECD242275C33F74DCA414A6C8DF5D7", hash_generated_method = "FCA7B891EFAB4D6A1D80FDFC1B549887")
         private String makeUriString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1627067278 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_1617056857 = null; //Variable for return #1
             StringBuilder builder;
             builder = new StringBuilder();
             {
@@ -2258,14 +2258,14 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             } //End block
             appendSspTo(builder);
             {
-                boolean varC8C86438344E58844BC399B4194DB415_1632549558 = (!fragment.isEmpty());
+                boolean varC8C86438344E58844BC399B4194DB415_587329495 = (!fragment.isEmpty());
                 {
                     builder.append('#').append(fragment.getEncoded());
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_1627067278 = builder.toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1627067278.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1627067278;
+            varB4EAC82CA7396A68D541C85D26508E83_1617056857 = builder.toString();
+            varB4EAC82CA7396A68D541C85D26508E83_1617056857.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1617056857;
             // ---------- Original Method ----------
             //StringBuilder builder = new StringBuilder();
             //if (scheme != null) {
@@ -2279,17 +2279,17 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.040 -0400", hash_original_method = "6635CD2DD122D7EE5F14A5F21B272B08", hash_generated_method = "8A495C8AA43C475F293A53A673764B3A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.935 -0400", hash_original_method = "6635CD2DD122D7EE5F14A5F21B272B08", hash_generated_method = "C8DE5EA352D0EE71F573C46B24B0CE63")
         public Builder buildUpon() {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1393339375 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1393339375 = new Builder()
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1313983859 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1313983859 = new Builder()
                     .scheme(scheme)
                     .authority(authority)
                     .path(path)
                     .query(query)
                     .fragment(fragment);
-            varB4EAC82CA7396A68D541C85D26508E83_1393339375.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1393339375;
+            varB4EAC82CA7396A68D541C85D26508E83_1313983859.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1313983859;
             // ---------- Original Method ----------
             //return new Builder()
                     //.scheme(scheme)
@@ -2300,7 +2300,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.040 -0400", hash_original_field = "1A6BAB54CA68848B2D28EFB422CF1725", hash_generated_field = "29A0B9A1B9D1EACFD9F76BE10E74F93C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.935 -0400", hash_original_field = "1A6BAB54CA68848B2D28EFB422CF1725", hash_generated_field = "29A0B9A1B9D1EACFD9F76BE10E74F93C")
 
         static int TYPE_ID = 3;
     }
@@ -2308,89 +2308,89 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
 
     
     public static final class Builder {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.041 -0400", hash_original_field = "41323917EF8089432959A3C33269DEBF", hash_generated_field = "CBE7A470226A0B2957A605279AD0FD59")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.936 -0400", hash_original_field = "41323917EF8089432959A3C33269DEBF", hash_generated_field = "CBE7A470226A0B2957A605279AD0FD59")
 
         private String scheme;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.041 -0400", hash_original_field = "E17823015F179701BCEC9CD4356C4A38", hash_generated_field = "F30F644E178A706F0279AC78D6913562")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.937 -0400", hash_original_field = "E17823015F179701BCEC9CD4356C4A38", hash_generated_field = "F30F644E178A706F0279AC78D6913562")
 
         private Part opaquePart;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.041 -0400", hash_original_field = "873E9C0B50183B613336EEA1020F4369", hash_generated_field = "204632F970E6983D2007A7D2C7B93357")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.937 -0400", hash_original_field = "873E9C0B50183B613336EEA1020F4369", hash_generated_field = "204632F970E6983D2007A7D2C7B93357")
 
         private Part authority;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.041 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "EEFCA663E12A09EA3C7131B68BE78289")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.937 -0400", hash_original_field = "D6FE1D0BE6347B8EF2427FA629C04485", hash_generated_field = "EEFCA663E12A09EA3C7131B68BE78289")
 
         private PathPart path;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.041 -0400", hash_original_field = "1B1CC7F086B3F074DA452BC3129981EB", hash_generated_field = "D9C517AF157475966407B5CDC5940032")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.937 -0400", hash_original_field = "1B1CC7F086B3F074DA452BC3129981EB", hash_generated_field = "D9C517AF157475966407B5CDC5940032")
 
         private Part query;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.041 -0400", hash_original_field = "02E918FC72837D7C2689BE88684DCEB1", hash_generated_field = "8AF52B12247A3EBE638DDC3C88EEE123")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.937 -0400", hash_original_field = "02E918FC72837D7C2689BE88684DCEB1", hash_generated_field = "8AF52B12247A3EBE638DDC3C88EEE123")
 
         private Part fragment;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.042 -0400", hash_original_method = "7023F746232F077A36DCA003B1A512D2", hash_generated_method = "7F0D829FE2A4B9F217489244A9FD2E61")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.937 -0400", hash_original_method = "7023F746232F077A36DCA003B1A512D2", hash_generated_method = "7F0D829FE2A4B9F217489244A9FD2E61")
         public  Builder() {
             // ---------- Original Method ----------
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.067 -0400", hash_original_method = "1FAF048543AEDF54BF8218C15362FDC3", hash_generated_method = "11CB26100701F1E78D1A318E085D2B14")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.943 -0400", hash_original_method = "1FAF048543AEDF54BF8218C15362FDC3", hash_generated_method = "7F7B5047001485712BC504CD4D34F1FA")
         public Builder scheme(String scheme) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1274150906 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_243386195 = null; //Variable for return #1
             this.scheme = scheme;
-            varB4EAC82CA7396A68D541C85D26508E83_1274150906 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1274150906.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1274150906;
+            varB4EAC82CA7396A68D541C85D26508E83_243386195 = this;
+            varB4EAC82CA7396A68D541C85D26508E83_243386195.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_243386195;
             // ---------- Original Method ----------
             //this.scheme = scheme;
             //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.068 -0400", hash_original_method = "8D4C2B402A916DF01BF39AF004B22B4B", hash_generated_method = "CD0FB7797DB9966F931B4244F23C3D5C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.968 -0400", hash_original_method = "8D4C2B402A916DF01BF39AF004B22B4B", hash_generated_method = "875FC7065E0B3CFBA45723366C480C3B")
          Builder opaquePart(Part opaquePart) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1983172603 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_921211401 = null; //Variable for return #1
             this.opaquePart = opaquePart;
-            varB4EAC82CA7396A68D541C85D26508E83_1983172603 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1983172603.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1983172603;
+            varB4EAC82CA7396A68D541C85D26508E83_921211401 = this;
+            varB4EAC82CA7396A68D541C85D26508E83_921211401.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_921211401;
             // ---------- Original Method ----------
             //this.opaquePart = opaquePart;
             //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.075 -0400", hash_original_method = "B04C2A20C29308DA58A03AAA34E4602D", hash_generated_method = "D237E1757D9E4DDFC173020A349D2628")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.970 -0400", hash_original_method = "B04C2A20C29308DA58A03AAA34E4602D", hash_generated_method = "A75091FD170D3275861DD4716CA305D3")
         public Builder opaquePart(String opaquePart) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1861646510 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1861646510 = opaquePart(Part.fromDecoded(opaquePart));
+            Builder varB4EAC82CA7396A68D541C85D26508E83_227510198 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_227510198 = opaquePart(Part.fromDecoded(opaquePart));
             addTaint(opaquePart.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1861646510.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1861646510;
+            varB4EAC82CA7396A68D541C85D26508E83_227510198.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_227510198;
             // ---------- Original Method ----------
             //return opaquePart(Part.fromDecoded(opaquePart));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.076 -0400", hash_original_method = "E3AC90668DB82124786DAC21400DF68F", hash_generated_method = "E9CB3C2FE6BB8AE16473301CBFD203A9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.971 -0400", hash_original_method = "E3AC90668DB82124786DAC21400DF68F", hash_generated_method = "4759F7F4313D4FC52D4CF2FE0BA7F151")
         public Builder encodedOpaquePart(String opaquePart) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1521534110 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1521534110 = opaquePart(Part.fromEncoded(opaquePart));
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1824145251 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1824145251 = opaquePart(Part.fromEncoded(opaquePart));
             addTaint(opaquePart.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1521534110.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1521534110;
+            varB4EAC82CA7396A68D541C85D26508E83_1824145251.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1824145251;
             // ---------- Original Method ----------
             //return opaquePart(Part.fromEncoded(opaquePart));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.101 -0400", hash_original_method = "CE12FA6D2315F74B1A3B79C027FFFA6D", hash_generated_method = "7C39E85072E4E73E8A39896F28F55D84")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.980 -0400", hash_original_method = "CE12FA6D2315F74B1A3B79C027FFFA6D", hash_generated_method = "69FFC613421AC83CF3154E525A7E1945")
          Builder authority(Part authority) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1751861409 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_2039436723 = null; //Variable for return #1
             this.opaquePart = null;
             this.authority = authority;
-            varB4EAC82CA7396A68D541C85D26508E83_1751861409 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_1751861409.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1751861409;
+            varB4EAC82CA7396A68D541C85D26508E83_2039436723 = this;
+            varB4EAC82CA7396A68D541C85D26508E83_2039436723.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_2039436723;
             // ---------- Original Method ----------
             //this.opaquePart = null;
             //this.authority = authority;
@@ -2398,38 +2398,38 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.101 -0400", hash_original_method = "8B987B114EF487282F33A481DCB273CB", hash_generated_method = "F65E20553D074E9BBE165FCAE0FD5E1D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.981 -0400", hash_original_method = "8B987B114EF487282F33A481DCB273CB", hash_generated_method = "BF61ED1AC5BE3238C08EC826FEB8ED3C")
         public Builder authority(String authority) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_718434777 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_718434777 = authority(Part.fromDecoded(authority));
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1898381460 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1898381460 = authority(Part.fromDecoded(authority));
             addTaint(authority.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_718434777.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_718434777;
+            varB4EAC82CA7396A68D541C85D26508E83_1898381460.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1898381460;
             // ---------- Original Method ----------
             //return authority(Part.fromDecoded(authority));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.102 -0400", hash_original_method = "2AF9D1463857894BBB2A3B7E377A77BB", hash_generated_method = "DBFFB5A6BC1A9339188ACFE10B2CD8A7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.983 -0400", hash_original_method = "2AF9D1463857894BBB2A3B7E377A77BB", hash_generated_method = "0CCDDF492FBB6CE6D2972407AF134A65")
         public Builder encodedAuthority(String authority) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_758690967 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_758690967 = authority(Part.fromEncoded(authority));
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1584049601 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1584049601 = authority(Part.fromEncoded(authority));
             addTaint(authority.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_758690967.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_758690967;
+            varB4EAC82CA7396A68D541C85D26508E83_1584049601.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1584049601;
             // ---------- Original Method ----------
             //return authority(Part.fromEncoded(authority));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.118 -0400", hash_original_method = "0552AFD7FA04CD9C4E588C7FB644B387", hash_generated_method = "C46A628BE704099D2EEFC63335C88A4B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.987 -0400", hash_original_method = "0552AFD7FA04CD9C4E588C7FB644B387", hash_generated_method = "1F7C467A3C366E6AF4CBBB55468F8159")
          Builder path(PathPart path) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_624122129 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1108883555 = null; //Variable for return #1
             this.opaquePart = null;
             this.path = path;
-            varB4EAC82CA7396A68D541C85D26508E83_624122129 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_624122129.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_624122129;
+            varB4EAC82CA7396A68D541C85D26508E83_1108883555 = this;
+            varB4EAC82CA7396A68D541C85D26508E83_1108883555.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1108883555;
             // ---------- Original Method ----------
             //this.opaquePart = null;
             //this.path = path;
@@ -2437,62 +2437,62 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.133 -0400", hash_original_method = "311D5047B3596F1C34DEC3DA1D1264C5", hash_generated_method = "1ACE80B3D2A09C944629FBC552A6A7E2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.987 -0400", hash_original_method = "311D5047B3596F1C34DEC3DA1D1264C5", hash_generated_method = "679B3E096C00E34013291D6E15CB7F71")
         public Builder path(String path) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_630404028 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_630404028 = path(PathPart.fromDecoded(path));
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1026663662 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1026663662 = path(PathPart.fromDecoded(path));
             addTaint(path.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_630404028.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_630404028;
+            varB4EAC82CA7396A68D541C85D26508E83_1026663662.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1026663662;
             // ---------- Original Method ----------
             //return path(PathPart.fromDecoded(path));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.134 -0400", hash_original_method = "B2733F0C4852B782EB87F01613E6C574", hash_generated_method = "57823EAF610A70FB7F05915726A08E09")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.992 -0400", hash_original_method = "B2733F0C4852B782EB87F01613E6C574", hash_generated_method = "9C98DDBCE462E6C959D9887DF4E04F20")
         public Builder encodedPath(String path) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1762703746 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1762703746 = path(PathPart.fromEncoded(path));
+            Builder varB4EAC82CA7396A68D541C85D26508E83_316513397 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_316513397 = path(PathPart.fromEncoded(path));
             addTaint(path.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1762703746.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1762703746;
+            varB4EAC82CA7396A68D541C85D26508E83_316513397.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_316513397;
             // ---------- Original Method ----------
             //return path(PathPart.fromEncoded(path));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.149 -0400", hash_original_method = "818DCEC2192004BCFE40E4E49FDA7A4C", hash_generated_method = "082679412DAA999302F69C565B919930")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:23.999 -0400", hash_original_method = "818DCEC2192004BCFE40E4E49FDA7A4C", hash_generated_method = "4AB6B094B21CCE065A3FEE9CFB67F830")
         public Builder appendPath(String newSegment) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_335181250 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_335181250 = path(PathPart.appendDecodedSegment(path, newSegment));
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1278821994 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1278821994 = path(PathPart.appendDecodedSegment(path, newSegment));
             addTaint(newSegment.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_335181250.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_335181250;
+            varB4EAC82CA7396A68D541C85D26508E83_1278821994.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1278821994;
             // ---------- Original Method ----------
             //return path(PathPart.appendDecodedSegment(path, newSegment));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.150 -0400", hash_original_method = "04B6E07373B5BCB6E5F5541B11BC55A7", hash_generated_method = "084757F23B9AF972102C3672FC00E516")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.006 -0400", hash_original_method = "04B6E07373B5BCB6E5F5541B11BC55A7", hash_generated_method = "0EB33B000EA4468016B4E5C602C17535")
         public Builder appendEncodedPath(String newSegment) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_504272292 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_504272292 = path(PathPart.appendEncodedSegment(path, newSegment));
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1935580224 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1935580224 = path(PathPart.appendEncodedSegment(path, newSegment));
             addTaint(newSegment.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_504272292.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_504272292;
+            varB4EAC82CA7396A68D541C85D26508E83_1935580224.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1935580224;
             // ---------- Original Method ----------
             //return path(PathPart.appendEncodedSegment(path, newSegment));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.151 -0400", hash_original_method = "526B00AFFC674BC410AFF0DB5058AD68", hash_generated_method = "AB8E810339A188E0AD518A62791C4DB6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.022 -0400", hash_original_method = "526B00AFFC674BC410AFF0DB5058AD68", hash_generated_method = "C0F9C6EC5B36AED96C4FC92BB5DAB13A")
          Builder query(Part query) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_339699918 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_927274528 = null; //Variable for return #1
             this.opaquePart = null;
             this.query = query;
-            varB4EAC82CA7396A68D541C85D26508E83_339699918 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_339699918.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_339699918;
+            varB4EAC82CA7396A68D541C85D26508E83_927274528 = this;
+            varB4EAC82CA7396A68D541C85D26508E83_927274528.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_927274528;
             // ---------- Original Method ----------
             //this.opaquePart = null;
             //this.query = query;
@@ -2500,83 +2500,83 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.152 -0400", hash_original_method = "915051404F16544BAB27A534573CC34D", hash_generated_method = "45018FF035E1109A7FEBA62FBE005512")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.022 -0400", hash_original_method = "915051404F16544BAB27A534573CC34D", hash_generated_method = "F3447E21B0A095CD4B7262F0F1299B0F")
         public Builder query(String query) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_58425691 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_58425691 = query(Part.fromDecoded(query));
+            Builder varB4EAC82CA7396A68D541C85D26508E83_164874486 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_164874486 = query(Part.fromDecoded(query));
             addTaint(query.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_58425691.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_58425691;
+            varB4EAC82CA7396A68D541C85D26508E83_164874486.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_164874486;
             // ---------- Original Method ----------
             //return query(Part.fromDecoded(query));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.152 -0400", hash_original_method = "2B1CFFF6E8520529FC529F01B5DBCD04", hash_generated_method = "78508DF2AEF7CF21FE8589EACE989326")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.023 -0400", hash_original_method = "2B1CFFF6E8520529FC529F01B5DBCD04", hash_generated_method = "C7ED9A14A1C568B65831125F345F7441")
         public Builder encodedQuery(String query) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1756456842 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1756456842 = query(Part.fromEncoded(query));
+            Builder varB4EAC82CA7396A68D541C85D26508E83_933839623 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_933839623 = query(Part.fromEncoded(query));
             addTaint(query.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1756456842.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1756456842;
+            varB4EAC82CA7396A68D541C85D26508E83_933839623.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_933839623;
             // ---------- Original Method ----------
             //return query(Part.fromEncoded(query));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.174 -0400", hash_original_method = "AAD8E80453C4B46D11B41869FDCBA00D", hash_generated_method = "DB9AD73E4943396869800B8BCA6D6A42")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.039 -0400", hash_original_method = "AAD8E80453C4B46D11B41869FDCBA00D", hash_generated_method = "20FE1550DCFC8C1A62C06F78376BCD9A")
          Builder fragment(Part fragment) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_2031738910 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1210343070 = null; //Variable for return #1
             this.fragment = fragment;
-            varB4EAC82CA7396A68D541C85D26508E83_2031738910 = this;
-            varB4EAC82CA7396A68D541C85D26508E83_2031738910.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_2031738910;
+            varB4EAC82CA7396A68D541C85D26508E83_1210343070 = this;
+            varB4EAC82CA7396A68D541C85D26508E83_1210343070.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1210343070;
             // ---------- Original Method ----------
             //this.fragment = fragment;
             //return this;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.174 -0400", hash_original_method = "016C309F39EF5D90CF32B95F6FDB27F8", hash_generated_method = "448EF96350A4A1D200B0B2F3EF3DF0E8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.040 -0400", hash_original_method = "016C309F39EF5D90CF32B95F6FDB27F8", hash_generated_method = "D7041C4C1B997EB3E0122EF648795D6D")
         public Builder fragment(String fragment) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_985218154 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_985218154 = fragment(Part.fromDecoded(fragment));
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1690981486 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1690981486 = fragment(Part.fromDecoded(fragment));
             addTaint(fragment.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_985218154.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_985218154;
+            varB4EAC82CA7396A68D541C85D26508E83_1690981486.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1690981486;
             // ---------- Original Method ----------
             //return fragment(Part.fromDecoded(fragment));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.189 -0400", hash_original_method = "C5F51A11F0BEF63CCF4FD5F6AF742648", hash_generated_method = "A465654B9B366EED7671025CBC0D2325")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.065 -0400", hash_original_method = "C5F51A11F0BEF63CCF4FD5F6AF742648", hash_generated_method = "BF3588F349204E56256945FAB7AEC883")
         public Builder encodedFragment(String fragment) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_1587850022 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1587850022 = fragment(Part.fromEncoded(fragment));
+            Builder varB4EAC82CA7396A68D541C85D26508E83_361698264 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_361698264 = fragment(Part.fromEncoded(fragment));
             addTaint(fragment.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1587850022.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1587850022;
+            varB4EAC82CA7396A68D541C85D26508E83_361698264.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_361698264;
             // ---------- Original Method ----------
             //return fragment(Part.fromEncoded(fragment));
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.192 -0400", hash_original_method = "F83D70A0FC90543F01AB6385367098CC", hash_generated_method = "E149AFAD3F5AF4D00349E5892F3B525A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.069 -0400", hash_original_method = "F83D70A0FC90543F01AB6385367098CC", hash_generated_method = "665ADEA85F0F02F3314A77EDF5EEAEAC")
         public Builder appendQueryParameter(String key, String value) {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_648422810 = null; //Variable for return #1
-            Builder varB4EAC82CA7396A68D541C85D26508E83_2091508189 = null; //Variable for return #2
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1318707703 = null; //Variable for return #1
+            Builder varB4EAC82CA7396A68D541C85D26508E83_1425378225 = null; //Variable for return #2
             this.opaquePart = null;
             String encodedParameter;
             encodedParameter = encode(key, null) + "="
                     + encode(value, null);
             {
                 query = Part.fromEncoded(encodedParameter);
-                varB4EAC82CA7396A68D541C85D26508E83_648422810 = this;
+                varB4EAC82CA7396A68D541C85D26508E83_1318707703 = this;
             } //End block
             String oldQuery;
             oldQuery = query.getEncoded();
             {
-                boolean varD871C9980587FFA401304C0008BE3177_1852873079 = (oldQuery == null || oldQuery.length() == 0);
+                boolean varD871C9980587FFA401304C0008BE3177_264255897 = (oldQuery == null || oldQuery.length() == 0);
                 {
                     query = Part.fromEncoded(encodedParameter);
                 } //End block
@@ -2584,20 +2584,20 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
                     query = Part.fromEncoded(oldQuery + "&" + encodedParameter);
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_2091508189 = this;
+            varB4EAC82CA7396A68D541C85D26508E83_1425378225 = this;
             addTaint(key.getTaint());
             addTaint(value.getTaint());
-            Builder varA7E53CE21691AB073D9660D615818899_2062076961; //Final return value
+            Builder varA7E53CE21691AB073D9660D615818899_2114796776; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_2062076961 = varB4EAC82CA7396A68D541C85D26508E83_648422810;
+                    varA7E53CE21691AB073D9660D615818899_2114796776 = varB4EAC82CA7396A68D541C85D26508E83_1318707703;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_2062076961 = varB4EAC82CA7396A68D541C85D26508E83_2091508189;
+                    varA7E53CE21691AB073D9660D615818899_2114796776 = varB4EAC82CA7396A68D541C85D26508E83_1425378225;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_2062076961.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_2062076961;
+            varA7E53CE21691AB073D9660D615818899_2114796776.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_2114796776;
             // ---------- Original Method ----------
             //this.opaquePart = null;
             //String encodedParameter = encode(key, null) + "="
@@ -2616,27 +2616,27 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.207 -0400", hash_original_method = "581A1CF068B5634C1F252DE7C2737E06", hash_generated_method = "AF4F1BE44EA77D279D0E520073870264")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.071 -0400", hash_original_method = "581A1CF068B5634C1F252DE7C2737E06", hash_generated_method = "E1DC6FCFDA2DEA3424BA846375EC9312")
         public Builder clearQuery() {
-            Builder varB4EAC82CA7396A68D541C85D26508E83_435328600 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_435328600 = query((Part) null);
-            varB4EAC82CA7396A68D541C85D26508E83_435328600.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_435328600;
+            Builder varB4EAC82CA7396A68D541C85D26508E83_8723514 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_8723514 = query((Part) null);
+            varB4EAC82CA7396A68D541C85D26508E83_8723514.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_8723514;
             // ---------- Original Method ----------
             //return query((Part) null);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.209 -0400", hash_original_method = "C36CE5067F02DA1F1C7276BF67665A1B", hash_generated_method = "9402DFA1CA49191FC3D377C4908C64B9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.093 -0400", hash_original_method = "C36CE5067F02DA1F1C7276BF67665A1B", hash_generated_method = "B870DD55478DD231051B88D3122270FD")
         public Uri build() {
-            Uri varB4EAC82CA7396A68D541C85D26508E83_168076833 = null; //Variable for return #1
-            Uri varB4EAC82CA7396A68D541C85D26508E83_1120519599 = null; //Variable for return #2
+            Uri varB4EAC82CA7396A68D541C85D26508E83_976177080 = null; //Variable for return #1
+            Uri varB4EAC82CA7396A68D541C85D26508E83_1428795339 = null; //Variable for return #2
             {
                 {
                     if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException(
                             "An opaque URI must have a scheme.");
                 } //End block
-                varB4EAC82CA7396A68D541C85D26508E83_168076833 = new OpaqueUri(scheme, opaquePart, fragment);
+                varB4EAC82CA7396A68D541C85D26508E83_976177080 = new OpaqueUri(scheme, opaquePart, fragment);
             } //End block
             {
                 PathPart path;
@@ -2646,48 +2646,48 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
                 } //End block
                 {
                     {
-                        boolean var2CA83CB1D078EAA23C6D98CE29904B75_559777555 = (hasSchemeOrAuthority());
+                        boolean var2CA83CB1D078EAA23C6D98CE29904B75_634961111 = (hasSchemeOrAuthority());
                         {
                             path = PathPart.makeAbsolute(path);
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
-                varB4EAC82CA7396A68D541C85D26508E83_1120519599 = new HierarchicalUri(
+                varB4EAC82CA7396A68D541C85D26508E83_1428795339 = new HierarchicalUri(
                         scheme, authority, path, query, fragment);
             } //End block
-            Uri varA7E53CE21691AB073D9660D615818899_479758950; //Final return value
+            Uri varA7E53CE21691AB073D9660D615818899_785698154; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_479758950 = varB4EAC82CA7396A68D541C85D26508E83_168076833;
+                    varA7E53CE21691AB073D9660D615818899_785698154 = varB4EAC82CA7396A68D541C85D26508E83_976177080;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_479758950 = varB4EAC82CA7396A68D541C85D26508E83_1120519599;
+                    varA7E53CE21691AB073D9660D615818899_785698154 = varB4EAC82CA7396A68D541C85D26508E83_1428795339;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_479758950.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_479758950;
+            varA7E53CE21691AB073D9660D615818899_785698154.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_785698154;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.209 -0400", hash_original_method = "7917AD3B49169A1AC8EEA7DD014B7E45", hash_generated_method = "D021AD4CBACEDEF6C5DFE63910E793B9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.094 -0400", hash_original_method = "7917AD3B49169A1AC8EEA7DD014B7E45", hash_generated_method = "AE544C32828CC6CA17A602F1BED90F86")
         private boolean hasSchemeOrAuthority() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_203316185 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_203316185;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1498785703 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1498785703;
             // ---------- Original Method ----------
             //return scheme != null
                     //|| (authority != null && authority != Part.NULL);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.230 -0400", hash_original_method = "50FC77E3DFFDDD2DB7D0B749912434F7", hash_generated_method = "6107DA3307254BA1DAF54FD654290F31")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.102 -0400", hash_original_method = "50FC77E3DFFDDD2DB7D0B749912434F7", hash_generated_method = "D4FD05F89E15D98713A210946BF1705E")
         @Override
         public String toString() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1555814961 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1555814961 = build().toString();
-            varB4EAC82CA7396A68D541C85D26508E83_1555814961.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1555814961;
+            String varB4EAC82CA7396A68D541C85D26508E83_547880587 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_547880587 = build().toString();
+            varB4EAC82CA7396A68D541C85D26508E83_547880587.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_547880587;
             // ---------- Original Method ----------
             //return build().toString();
         }
@@ -2698,14 +2698,14 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
 
     
     static abstract class AbstractPart {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.230 -0400", hash_original_field = "4B719ACEE4A1D5E30577F59E80D06205", hash_generated_field = "08274B7EEBA921030ECC3D76D1E6ECCB")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.102 -0400", hash_original_field = "4B719ACEE4A1D5E30577F59E80D06205", hash_generated_field = "08274B7EEBA921030ECC3D76D1E6ECCB")
 
         volatile String encoded;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.230 -0400", hash_original_field = "AD05458423E19C1FF1F3C0237F8CFBED", hash_generated_field = "B682B941676F7CF6A565D2078C9BC0A9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.103 -0400", hash_original_field = "AD05458423E19C1FF1F3C0237F8CFBED", hash_generated_field = "B682B941676F7CF6A565D2078C9BC0A9")
 
         volatile String decoded;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.231 -0400", hash_original_method = "21E01F693530948BFE81E2C9AE8C6D31", hash_generated_method = "00DF56A1D35C3F914A2155477BDE237F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.118 -0400", hash_original_method = "21E01F693530948BFE81E2C9AE8C6D31", hash_generated_method = "00DF56A1D35C3F914A2155477BDE237F")
           AbstractPart(String encoded, String decoded) {
             this.encoded = encoded;
             this.decoded = decoded;
@@ -2718,14 +2718,14 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         abstract String getEncoded();
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.232 -0400", hash_original_method = "06323BBC323E7F59CEDDE1FAA04ED1F6", hash_generated_method = "A78909AB3526F0C58503FBA04569228A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.119 -0400", hash_original_method = "06323BBC323E7F59CEDDE1FAA04ED1F6", hash_generated_method = "1D1ED6B9F28AEA2AFD0DCFE0AF2CDC03")
         final String getDecoded() {
-            String varB4EAC82CA7396A68D541C85D26508E83_1484704116 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_371831179 = null; //Variable for return #1
             @SuppressWarnings("StringEquality") boolean hasDecoded;
             hasDecoded = decoded != NOT_CACHED;
-            varB4EAC82CA7396A68D541C85D26508E83_1484704116 = hasDecoded ? decoded : (decoded = decode(encoded));
-            varB4EAC82CA7396A68D541C85D26508E83_1484704116.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1484704116;
+            varB4EAC82CA7396A68D541C85D26508E83_371831179 = hasDecoded ? decoded : (decoded = decode(encoded));
+            varB4EAC82CA7396A68D541C85D26508E83_371831179.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_371831179;
             // ---------- Original Method ----------
             //@SuppressWarnings("StringEquality")
             //boolean hasDecoded = decoded != NOT_CACHED;
@@ -2733,7 +2733,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.254 -0400", hash_original_method = "BB7E54AFB81798C035BF3B3717F470E7", hash_generated_method = "A111340E1DA718CF57BDC6A3E00B43C1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.132 -0400", hash_original_method = "BB7E54AFB81798C035BF3B3717F470E7", hash_generated_method = "A111340E1DA718CF57BDC6A3E00B43C1")
         final void writeTo(Parcel parcel) {
             @SuppressWarnings("StringEquality") boolean hasEncoded;
             hasEncoded = encoded != NOT_CACHED;
@@ -2779,20 +2779,20 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         
         static class Representation {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.255 -0400", hash_original_method = "49186660D0AEF0721F749C758CF0FE34", hash_generated_method = "49186660D0AEF0721F749C758CF0FE34")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.133 -0400", hash_original_method = "49186660D0AEF0721F749C758CF0FE34", hash_generated_method = "49186660D0AEF0721F749C758CF0FE34")
             public Representation ()
             {
                 //Synthesized constructor
             }
 
 
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.255 -0400", hash_original_field = "659BA2B3286FF6C4923CFE851F3CD42E", hash_generated_field = "0ECB613EF123E018235FE7E4B9D17C2E")
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.133 -0400", hash_original_field = "659BA2B3286FF6C4923CFE851F3CD42E", hash_generated_field = "0ECB613EF123E018235FE7E4B9D17C2E")
 
             static int BOTH = 0;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.255 -0400", hash_original_field = "D22FD9F8AEEC62F2AEF921B20283C7C9", hash_generated_field = "8536DF05FD4192CE4BA43F650DAD013C")
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.133 -0400", hash_original_field = "D22FD9F8AEEC62F2AEF921B20283C7C9", hash_generated_field = "8536DF05FD4192CE4BA43F650DAD013C")
 
             static int ENCODED = 1;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.255 -0400", hash_original_field = "7CA715B76440B29FFB05D39B0C592B7F", hash_generated_field = "73C6F197EBE1645DC7DE0D3B20946FCF")
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.133 -0400", hash_original_field = "7CA715B76440B29FFB05D39B0C592B7F", hash_generated_field = "73C6F197EBE1645DC7DE0D3B20946FCF")
 
             static int DECODED = 2;
         }
@@ -2805,7 +2805,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
     
     static class Part extends AbstractPart {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.267 -0400", hash_original_method = "68B275EBA6010E5404727E121615E229", hash_generated_method = "A2A4141E5360E67DD2B728987EC31D1B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.134 -0400", hash_original_method = "68B275EBA6010E5404727E121615E229", hash_generated_method = "A2A4141E5360E67DD2B728987EC31D1B")
         private  Part(String encoded, String decoded) {
             super(encoded, decoded);
             addTaint(encoded.getTaint());
@@ -2814,23 +2814,23 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.268 -0400", hash_original_method = "BD94DCCF5B44419F4498543CA74892E2", hash_generated_method = "0BC0529117487F5388B1110E7EE8F43B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.135 -0400", hash_original_method = "BD94DCCF5B44419F4498543CA74892E2", hash_generated_method = "C44CB2D3928509890CA5067151F8571F")
          boolean isEmpty() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_923053724 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_923053724;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_289360012 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_289360012;
             // ---------- Original Method ----------
             //return false;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.270 -0400", hash_original_method = "74B8C999E422A266FD890BA259F6B43C", hash_generated_method = "7F3064793666D0F242A7F8DA010AF9F8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.150 -0400", hash_original_method = "74B8C999E422A266FD890BA259F6B43C", hash_generated_method = "8D7A2854D4867B3C59556F2D4DE04AF9")
          String getEncoded() {
-            String varB4EAC82CA7396A68D541C85D26508E83_782590402 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_852179887 = null; //Variable for return #1
             @SuppressWarnings("StringEquality") boolean hasEncoded;
             hasEncoded = encoded != NOT_CACHED;
-            varB4EAC82CA7396A68D541C85D26508E83_782590402 = hasEncoded ? encoded : (encoded = encode(decoded));
-            varB4EAC82CA7396A68D541C85D26508E83_782590402.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_782590402;
+            varB4EAC82CA7396A68D541C85D26508E83_852179887 = hasEncoded ? encoded : (encoded = encode(decoded));
+            varB4EAC82CA7396A68D541C85D26508E83_852179887.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_852179887;
             // ---------- Original Method ----------
             //@SuppressWarnings("StringEquality")
             //boolean hasEncoded = encoded != NOT_CACHED;
@@ -2888,7 +2888,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         
         private static class EmptyPart extends Part {
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.320 -0400", hash_original_method = "D79C0256E86C850253FAE782AD9920ED", hash_generated_method = "D6E891CD56E98A9A6565F34666DC1B4A")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.163 -0400", hash_original_method = "D79C0256E86C850253FAE782AD9920ED", hash_generated_method = "D6E891CD56E98A9A6565F34666DC1B4A")
             public  EmptyPart(String value) {
                 super(value, value);
                 addTaint(value.getTaint());
@@ -2896,11 +2896,11 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.321 -0400", hash_original_method = "9A172AFBEDC6074FE36DA0C4940853DE", hash_generated_method = "CE90F7BE4B4EF3F3E4E03462C4B0B833")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.163 -0400", hash_original_method = "9A172AFBEDC6074FE36DA0C4940853DE", hash_generated_method = "1FACB8CF52CDF358DBC75CA50CDF1438")
             @Override
              boolean isEmpty() {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_404457469 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_404457469;
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1134862995 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1134862995;
                 // ---------- Original Method ----------
                 //return true;
             }
@@ -2910,10 +2910,10 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
 
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.322 -0400", hash_original_field = "22902092D13F95EF047EC38F67C7A689", hash_generated_field = "BFE6123A9E3D0EFE1A63D83B81B8255B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.164 -0400", hash_original_field = "22902092D13F95EF047EC38F67C7A689", hash_generated_field = "BFE6123A9E3D0EFE1A63D83B81B8255B")
 
         static Part NULL = new EmptyPart(null);
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.322 -0400", hash_original_field = "7F2DFD92B4F00B07EC2711F9AFB4D4CD", hash_generated_field = "B098B99E5AB556F47486DA9A903855D3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.164 -0400", hash_original_field = "7F2DFD92B4F00B07EC2711F9AFB4D4CD", hash_generated_field = "B098B99E5AB556F47486DA9A903855D3")
 
         static Part EMPTY = new EmptyPart("");
     }
@@ -2921,11 +2921,11 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
 
     
     static class PathPart extends AbstractPart {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.322 -0400", hash_original_field = "5C8A59F77C438336819DD4F6B0C372B5", hash_generated_field = "BB8884736C4C2C995D440C597E10BBE6")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.164 -0400", hash_original_field = "5C8A59F77C438336819DD4F6B0C372B5", hash_generated_field = "BB8884736C4C2C995D440C597E10BBE6")
 
         private PathSegments pathSegments;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.323 -0400", hash_original_method = "E8CA21F7072E8C7642F3BFF9454329AE", hash_generated_method = "425902F356A88F24F0B82B0C0A427610")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.164 -0400", hash_original_method = "E8CA21F7072E8C7642F3BFF9454329AE", hash_generated_method = "425902F356A88F24F0B82B0C0A427610")
         private  PathPart(String encoded, String decoded) {
             super(encoded, decoded);
             addTaint(encoded.getTaint());
@@ -2934,14 +2934,14 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.324 -0400", hash_original_method = "EEE1C5D1C73794B2424FF9B6A794D8BE", hash_generated_method = "6EA5AF39E3C552D45880106930100CB8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.165 -0400", hash_original_method = "EEE1C5D1C73794B2424FF9B6A794D8BE", hash_generated_method = "ADCE70DBE5F585707C904B2D7AD3613B")
          String getEncoded() {
-            String varB4EAC82CA7396A68D541C85D26508E83_807527743 = null; //Variable for return #1
+            String varB4EAC82CA7396A68D541C85D26508E83_985467735 = null; //Variable for return #1
             @SuppressWarnings("StringEquality") boolean hasEncoded;
             hasEncoded = encoded != NOT_CACHED;
-            varB4EAC82CA7396A68D541C85D26508E83_807527743 = hasEncoded ? encoded : (encoded = encode(decoded, "/"));
-            varB4EAC82CA7396A68D541C85D26508E83_807527743.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_807527743;
+            varB4EAC82CA7396A68D541C85D26508E83_985467735 = hasEncoded ? encoded : (encoded = encode(decoded, "/"));
+            varB4EAC82CA7396A68D541C85D26508E83_985467735.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_985467735;
             // ---------- Original Method ----------
             //@SuppressWarnings("StringEquality")
             //boolean hasEncoded = encoded != NOT_CACHED;
@@ -2949,18 +2949,18 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.343 -0400", hash_original_method = "BB12DAE5001652F9E9419E41FB496BCF", hash_generated_method = "3B02BEA324B5754BFD329013CED6DB2A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.179 -0400", hash_original_method = "BB12DAE5001652F9E9419E41FB496BCF", hash_generated_method = "1B1BA925FE3B0ADC8F039964CC64181D")
          PathSegments getPathSegments() {
-            PathSegments varB4EAC82CA7396A68D541C85D26508E83_995386937 = null; //Variable for return #1
-            PathSegments varB4EAC82CA7396A68D541C85D26508E83_755607800 = null; //Variable for return #2
-            PathSegments varB4EAC82CA7396A68D541C85D26508E83_828606867 = null; //Variable for return #3
+            PathSegments varB4EAC82CA7396A68D541C85D26508E83_1433523552 = null; //Variable for return #1
+            PathSegments varB4EAC82CA7396A68D541C85D26508E83_744725487 = null; //Variable for return #2
+            PathSegments varB4EAC82CA7396A68D541C85D26508E83_331620306 = null; //Variable for return #3
             {
-                varB4EAC82CA7396A68D541C85D26508E83_995386937 = pathSegments;
+                varB4EAC82CA7396A68D541C85D26508E83_1433523552 = pathSegments;
             } //End block
             String path;
             path = getEncoded();
             {
-                varB4EAC82CA7396A68D541C85D26508E83_755607800 = pathSegments = PathSegments.EMPTY;
+                varB4EAC82CA7396A68D541C85D26508E83_744725487 = pathSegments = PathSegments.EMPTY;
             } //End block
             PathSegmentsBuilder segmentBuilder;
             segmentBuilder = new PathSegmentsBuilder();
@@ -2968,7 +2968,7 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             previous = 0;
             int current;
             {
-                boolean varF3473A5176F979210C8BDFC961564284_1250820675 = ((current = path.indexOf('/', previous)) > -1);
+                boolean varF3473A5176F979210C8BDFC961564284_172065075 = ((current = path.indexOf('/', previous)) > -1);
                 {
                     {
                         String decodedSegment;
@@ -2979,26 +2979,26 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
                 } //End block
             } //End collapsed parenthetic
             {
-                boolean var80E2BDF18328ED6FA29B39AB13CE0D97_610372991 = (previous < path.length());
+                boolean var80E2BDF18328ED6FA29B39AB13CE0D97_505407399 = (previous < path.length());
                 {
                     segmentBuilder.add(decode(path.substring(previous)));
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_828606867 = pathSegments = segmentBuilder.build();
-            PathSegments varA7E53CE21691AB073D9660D615818899_1808224027; //Final return value
+            varB4EAC82CA7396A68D541C85D26508E83_331620306 = pathSegments = segmentBuilder.build();
+            PathSegments varA7E53CE21691AB073D9660D615818899_703545952; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1808224027 = varB4EAC82CA7396A68D541C85D26508E83_995386937;
+                    varA7E53CE21691AB073D9660D615818899_703545952 = varB4EAC82CA7396A68D541C85D26508E83_1433523552;
                     break;
                 case 2: //Assign result for return ordinal #2
-                    varA7E53CE21691AB073D9660D615818899_1808224027 = varB4EAC82CA7396A68D541C85D26508E83_755607800;
+                    varA7E53CE21691AB073D9660D615818899_703545952 = varB4EAC82CA7396A68D541C85D26508E83_744725487;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1808224027 = varB4EAC82CA7396A68D541C85D26508E83_828606867;
+                    varA7E53CE21691AB073D9660D615818899_703545952 = varB4EAC82CA7396A68D541C85D26508E83_331620306;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1808224027.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1808224027;
+            varA7E53CE21691AB073D9660D615818899_703545952.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_703545952;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
@@ -3087,42 +3087,42 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.362 -0400", hash_original_field = "12FCD4CDDE0159C0A83B0F6923FAC7D8", hash_generated_field = "8ECB44FE06630CB5E3D8EF52BB3969F1")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.198 -0400", hash_original_field = "12FCD4CDDE0159C0A83B0F6923FAC7D8", hash_generated_field = "8ECB44FE06630CB5E3D8EF52BB3969F1")
 
         static PathPart NULL = new PathPart(null, null);
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.362 -0400", hash_original_field = "2511CF6735334EEEFE4C66E3501EA765", hash_generated_field = "B260C1DBE46C249545F47BF3BD4DE1AF")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.198 -0400", hash_original_field = "2511CF6735334EEEFE4C66E3501EA765", hash_generated_field = "B260C1DBE46C249545F47BF3BD4DE1AF")
 
         static PathPart EMPTY = new PathPart("", "");
     }
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.362 -0400", hash_original_field = "15E64A01463468950481CAE21CF06FCB", hash_generated_field = "47C0CAE24718EC174B9B6B0B137E5E99")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.198 -0400", hash_original_field = "15E64A01463468950481CAE21CF06FCB", hash_generated_field = "47C0CAE24718EC174B9B6B0B137E5E99")
 
     private static String LOG = Uri.class.getSimpleName();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.362 -0400", hash_original_field = "A90280C308D46EDE51003B54A6774638", hash_generated_field = "6F222F6C47CA38C0A7F81959C13B5970")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.198 -0400", hash_original_field = "A90280C308D46EDE51003B54A6774638", hash_generated_field = "6F222F6C47CA38C0A7F81959C13B5970")
 
     @SuppressWarnings("RedundantStringConstructorCall") private static String NOT_CACHED = new String("NOT CACHED");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.362 -0400", hash_original_field = "A81A920AEF8690239BB9D44F7E78D4F4", hash_generated_field = "5038C252470848AFDD24667CC5D97705")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.198 -0400", hash_original_field = "A81A920AEF8690239BB9D44F7E78D4F4", hash_generated_field = "5038C252470848AFDD24667CC5D97705")
 
     public static final Uri EMPTY = new HierarchicalUri(null, Part.NULL,
             PathPart.EMPTY, Part.NULL, Part.NULL);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.362 -0400", hash_original_field = "096628D07602808452D76140024603D6", hash_generated_field = "4E02F57571CF8579FA415EEF37F04E36")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.198 -0400", hash_original_field = "096628D07602808452D76140024603D6", hash_generated_field = "4E02F57571CF8579FA415EEF37F04E36")
 
     private static int NOT_FOUND = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.362 -0400", hash_original_field = "4FDDDF7A3C684DEFD4771F4F71A53864", hash_generated_field = "2076DA02B966BB00E944179668DF4482")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.198 -0400", hash_original_field = "4FDDDF7A3C684DEFD4771F4F71A53864", hash_generated_field = "2076DA02B966BB00E944179668DF4482")
 
     private static int NOT_CALCULATED = -2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.362 -0400", hash_original_field = "6DE16BB1834113B41F3DB9E09DDB15A3", hash_generated_field = "6791AB0FB70363D3232DCD776BD95EA7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.198 -0400", hash_original_field = "6DE16BB1834113B41F3DB9E09DDB15A3", hash_generated_field = "6791AB0FB70363D3232DCD776BD95EA7")
 
     private static String NOT_HIERARCHICAL = "This isn't a hierarchical URI.";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.362 -0400", hash_original_field = "2D7FBEFE0E1B69A4322A3C2F72D1B945", hash_generated_field = "E5701ADC5E89D5E641FA37F5A19EB33A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.198 -0400", hash_original_field = "2D7FBEFE0E1B69A4322A3C2F72D1B945", hash_generated_field = "E5701ADC5E89D5E641FA37F5A19EB33A")
 
     private static String DEFAULT_ENCODING = "UTF-8";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.362 -0400", hash_original_field = "FEE7EF6013925E53DB51A6700DEA6FED", hash_generated_field = "2FA0E199B268A36317F4693FEDB86E9C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.199 -0400", hash_original_field = "FEE7EF6013925E53DB51A6700DEA6FED", hash_generated_field = "2FA0E199B268A36317F4693FEDB86E9C")
 
     private static int NULL_TYPE_ID = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.362 -0400", hash_original_field = "FA031E527800FCED59C59BB3277BEE96", hash_generated_field = "A8963E713BB231EFDC73C3C4317D711B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.199 -0400", hash_original_field = "FA031E527800FCED59C59BB3277BEE96", hash_generated_field = "A8963E713BB231EFDC73C3C4317D711B")
 
     public static final Parcelable.Creator<Uri> CREATOR
             = new Parcelable.Creator<Uri>() {
@@ -3143,11 +3143,11 @@ public abstract class Uri implements Parcelable, Comparable<Uri> {
             return new Uri[size];
         }
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.363 -0400", hash_original_field = "7590EBC339FE731817F9724DB1BDFD6C", hash_generated_field = "EFDBD6587C0091DE9CCAF154EBCFD8A1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.199 -0400", hash_original_field = "7590EBC339FE731817F9724DB1BDFD6C", hash_generated_field = "EFDBD6587C0091DE9CCAF154EBCFD8A1")
 
     private static char[] HEX_DIGITS = "0123456789ABCDEF".toCharArray();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:22.363 -0400", hash_original_field = "B895F573C0891DA82989F42094373576", hash_generated_field = "0AFDB67E39A1E6959A389C62AE853D85")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:24.199 -0400", hash_original_field = "B895F573C0891DA82989F42094373576", hash_generated_field = "547CBD27F74D3169413F28CAC9D61581")
 
-    private static byte[] REPLACEMENT = ;
+    private static byte[] REPLACEMENT = { (byte) 0xFF, (byte) 0xFD };
 }
 

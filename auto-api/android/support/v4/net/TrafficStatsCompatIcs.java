@@ -13,7 +13,7 @@ import java.net.SocketException;
 
 public class TrafficStatsCompatIcs {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:33.137 -0400", hash_original_method = "5795689F79031FF3296BAAA30A9E46A5", hash_generated_method = "5795689F79031FF3296BAAA30A9E46A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:34.538 -0400", hash_original_method = "5795689F79031FF3296BAAA30A9E46A5", hash_generated_method = "5795689F79031FF3296BAAA30A9E46A5")
     public TrafficStatsCompatIcs ()
     {
         //Synthesized constructor

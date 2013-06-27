@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 class Conversion {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.683 -0400", hash_original_method = "A600C72BC77DD5DD4F1CBED3B2E3D2F0", hash_generated_method = "80546BF6DE416F93FA5C3272886F6955")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.806 -0400", hash_original_method = "A600C72BC77DD5DD4F1CBED3B2E3D2F0", hash_generated_method = "80546BF6DE416F93FA5C3272886F6955")
     private  Conversion() {
         // ---------- Original Method ----------
     }
@@ -377,11 +377,19 @@ class Conversion {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.696 -0400", hash_original_field = "79CEEB0B96E31706DC35916021293954", hash_generated_field = "516796474C1A79F72521DDD805709E5C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.847 -0400", hash_original_field = "79CEEB0B96E31706DC35916021293954", hash_generated_field = "35C22DFD83F1DDC9DAFB6F2BDE3959A9")
 
-    static int[] digitFitInInt = ;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.696 -0400", hash_original_field = "FC1884A674814367F99D68DA056FBF33", hash_generated_field = "0DDA5D3A383CD4373D74999B738F014D")
+    static int[] digitFitInInt = { -1, -1, 31, 19, 15, 13, 11,
+            11, 10, 9, 9, 8, 8, 8, 8, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6,
+            6, 6, 6, 6, 6, 6, 6, 5 };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.848 -0400", hash_original_field = "FC1884A674814367F99D68DA056FBF33", hash_generated_field = "C7543A50EECE51E0A278C984F23AD687")
 
-    static int[] bigRadices = ;
+    static int[] bigRadices = { -2147483648, 1162261467,
+            1073741824, 1220703125, 362797056, 1977326743, 1073741824,
+            387420489, 1000000000, 214358881, 429981696, 815730721, 1475789056,
+            170859375, 268435456, 410338673, 612220032, 893871739, 1280000000,
+            1801088541, 113379904, 148035889, 191102976, 244140625, 308915776,
+            387420489, 481890304, 594823321, 729000000, 887503681, 1073741824,
+            1291467969, 1544804416, 1838265625, 60466176 };
 }
 

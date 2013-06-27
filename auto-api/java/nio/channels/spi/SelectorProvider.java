@@ -18,7 +18,7 @@ import java.util.ServiceLoader;
 
 public abstract class SelectorProvider {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.614 -0400", hash_original_method = "DDE564F0B2C96394E14746CA546F5611", hash_generated_method = "6B40AAE650197172BEF43AA1CD6DE226")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.791 -0400", hash_original_method = "DDE564F0B2C96394E14746CA546F5611", hash_generated_method = "6B40AAE650197172BEF43AA1CD6DE226")
     protected  SelectorProvider() {
         // ---------- Original Method ----------
     }
@@ -62,18 +62,18 @@ public abstract class SelectorProvider {
     public abstract SocketChannel openSocketChannel() throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.618 -0400", hash_original_method = "1567929400994F6BBA42155A37789D93", hash_generated_method = "B6B1B7C0E54BCBF070519F60D64054D7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.793 -0400", hash_original_method = "1567929400994F6BBA42155A37789D93", hash_generated_method = "00D13A3C73A218764F32611EC95B34E2")
     public Channel inheritedChannel() throws IOException {
-        Channel varB4EAC82CA7396A68D541C85D26508E83_1168931482 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1168931482 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1168931482.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1168931482;
+        Channel varB4EAC82CA7396A68D541C85D26508E83_884937654 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_884937654 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_884937654.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_884937654;
         // ---------- Original Method ----------
         //return null;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.622 -0400", hash_original_field = "A84D4D80E229BA36EE3D0C6D573ECAAF", hash_generated_field = "D035C1A1A75D6145DD94D05B3D58FE60")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.812 -0400", hash_original_field = "A84D4D80E229BA36EE3D0C6D573ECAAF", hash_generated_field = "D035C1A1A75D6145DD94D05B3D58FE60")
 
     private static SelectorProvider provider = null;
 }

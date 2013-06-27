@@ -14,7 +14,7 @@ import libcore.io.Base64;
 
 class DataLoader extends StreamLoader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:57.982 -0400", hash_original_method = "973C5174F409BF73FE3F5C468E90899A", hash_generated_method = "1D3D1CC97145799CA699945E6E0DFAD4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.187 -0400", hash_original_method = "973C5174F409BF73FE3F5C468E90899A", hash_generated_method = "C1BD9BF064E5E28221F24EEB3D169B2A")
       DataLoader(String dataUrl, LoadListener loadListener) {
         super(loadListener);
         String url;
@@ -29,7 +29,7 @@ class DataLoader extends StreamLoader {
             data = url.substring(commaIndex + 1).getBytes();
             loadListener.parseContentTypeHeader(contentType);
             {
-                boolean varDB8BCB478219F9C23321F67F114D2478_606376052 = ("base64".equals(loadListener.transferEncoding()));
+                boolean varDB8BCB478219F9C23321F67F114D2478_2049928107 = ("base64".equals(loadListener.transferEncoding()));
                 {
                     data = Base64.decode(data);
                 } //End block
@@ -65,7 +65,7 @@ class DataLoader extends StreamLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:57.983 -0400", hash_original_method = "741CD292254249FEBDFDE203F8AC2D5E", hash_generated_method = "3441E52319162EED242988C4DF79070C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.188 -0400", hash_original_method = "741CD292254249FEBDFDE203F8AC2D5E", hash_generated_method = "853D4FAE35877C3FED88569858266114")
     @Override
     protected boolean setupStreamAndSendStatus() {
         {
@@ -75,8 +75,8 @@ class DataLoader extends StreamLoader {
             mLoadListener.error(EventHandler.ERROR,
                     mContext.getString(R.string.httpError));
         } //End block
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_501944011 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_501944011;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_180779198 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_180779198;
         // ---------- Original Method ----------
         //if (mDataStream != null) {
             //mLoadListener.status(1, 1, 200, "OK");
@@ -89,7 +89,7 @@ class DataLoader extends StreamLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:57.983 -0400", hash_original_method = "2B11D339C271386CE83AD39A9189005C", hash_generated_method = "DD3C4AC742A0B9EC492618A2D675A09F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.188 -0400", hash_original_method = "2B11D339C271386CE83AD39A9189005C", hash_generated_method = "DD3C4AC742A0B9EC492618A2D675A09F")
     @Override
     protected void buildHeaders(android.net.http.Headers h) {
         addTaint(h.getTaint());

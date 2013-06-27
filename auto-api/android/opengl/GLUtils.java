@@ -13,7 +13,7 @@ import javax.microedition.khronos.egl.EGL11;
 
 public final class GLUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.280 -0400", hash_original_method = "A98AAD2DCE964D3E8867B0B125C8757B", hash_generated_method = "602B8AFAFBDBCCEF4BCB5E24B6A14FC8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:26.775 -0400", hash_original_method = "A98AAD2DCE964D3E8867B0B125C8757B", hash_generated_method = "602B8AFAFBDBCCEF4BCB5E24B6A14FC8")
     private  GLUtils() {
         // ---------- Original Method ----------
     }

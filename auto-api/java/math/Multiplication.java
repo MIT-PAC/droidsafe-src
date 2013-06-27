@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 class Multiplication {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.774 -0400", hash_original_method = "CE81298360999BF52006386DE7E36DBD", hash_generated_method = "C1903448A4FC57F0699C8C4004F3EB1D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.935 -0400", hash_original_method = "CE81298360999BF52006386DE7E36DBD", hash_generated_method = "C1903448A4FC57F0699C8C4004F3EB1D")
     private  Multiplication() {
         // ---------- Original Method ----------
     }
@@ -77,16 +77,21 @@ class Multiplication {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.775 -0400", hash_original_field = "B98DB2BF3614006C22F66232D6398EE3", hash_generated_field = "511FDFE58980982763F56081E9362B9D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.944 -0400", hash_original_field = "B98DB2BF3614006C22F66232D6398EE3", hash_generated_field = "DAF3E8673FD658B10FEE21A374DA1F3C")
 
-    static int[] tenPows = ;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.775 -0400", hash_original_field = "A4A904E171E9239352F78F4CA7F97437", hash_generated_field = "84735A4DBCDF26D6F3E4FB9FA0F5BA53")
+    static int[] tenPows = {
+        1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000
+    };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.944 -0400", hash_original_field = "A4A904E171E9239352F78F4CA7F97437", hash_generated_field = "EF1F48877849EAF408DC146FA25D1974")
 
-    static int[] fivePows = ;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.775 -0400", hash_original_field = "701603190B30106C8AA18E189E383DD8", hash_generated_field = "2278328A213DC5DB3C443DD0AD42F8F1")
+    static int[] fivePows = {
+        1, 5, 25, 125, 625, 3125, 15625, 78125, 390625,
+        1953125, 9765625, 48828125, 244140625, 1220703125
+    };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.944 -0400", hash_original_field = "701603190B30106C8AA18E189E383DD8", hash_generated_field = "2278328A213DC5DB3C443DD0AD42F8F1")
 
     static BigInteger[] bigTenPows = new BigInteger[32];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:42.775 -0400", hash_original_field = "4C10D7D31530124EAA3032366D456B3A", hash_generated_field = "1069DB74C36A8230677A62B787DBE83A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:41.944 -0400", hash_original_field = "4C10D7D31530124EAA3032366D456B3A", hash_generated_field = "1069DB74C36A8230677A62B787DBE83A")
 
     static BigInteger bigFivePows[] = new BigInteger[32];
     static {

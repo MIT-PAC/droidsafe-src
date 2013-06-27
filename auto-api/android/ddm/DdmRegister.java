@@ -12,7 +12,7 @@ import android.util.Log;
 
 public class DdmRegister {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.844 -0400", hash_original_method = "7B8C628EED4FBAEB3F2321039DB7D59A", hash_generated_method = "DF606A387D5DE4F2C61C8EFBABDB78F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.444 -0400", hash_original_method = "7B8C628EED4FBAEB3F2321039DB7D59A", hash_generated_method = "DF606A387D5DE4F2C61C8EFBABDB78F2")
     private  DdmRegister() {
         // ---------- Original Method ----------
     }

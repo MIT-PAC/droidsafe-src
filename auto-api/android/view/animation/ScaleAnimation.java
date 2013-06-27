@@ -14,65 +14,65 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 
 public class ScaleAnimation extends Animation {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.672 -0400", hash_original_field = "0D8AC9B29D5FDF7FAC18EB1269D7F6D0", hash_generated_field = "8872E9F5EB468B447DB47434F2C2FEC9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.883 -0400", hash_original_field = "0D8AC9B29D5FDF7FAC18EB1269D7F6D0", hash_generated_field = "8872E9F5EB468B447DB47434F2C2FEC9")
 
     private Resources mResources;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.672 -0400", hash_original_field = "B7091BC0690A369B631C4AF140D8B159", hash_generated_field = "BB287F46785769B83860D56D8BE9EFD8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.883 -0400", hash_original_field = "B7091BC0690A369B631C4AF140D8B159", hash_generated_field = "BB287F46785769B83860D56D8BE9EFD8")
 
     private float mFromX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.672 -0400", hash_original_field = "D864FCC57CCC50BB6242B14CE133C3B7", hash_generated_field = "04285F5086DF3EAF7703BA446BC7BACF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "D864FCC57CCC50BB6242B14CE133C3B7", hash_generated_field = "04285F5086DF3EAF7703BA446BC7BACF")
 
     private float mToX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.672 -0400", hash_original_field = "1939E8650C0971B4FE5AE882E21D3729", hash_generated_field = "23FE8E016CC493D9EFEDB8A1C9A430E7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "1939E8650C0971B4FE5AE882E21D3729", hash_generated_field = "23FE8E016CC493D9EFEDB8A1C9A430E7")
 
     private float mFromY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.672 -0400", hash_original_field = "FAD1FB9CEA94C154D23406F00650BF27", hash_generated_field = "B32ECB78B8E715C7460739B27CA842E7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "FAD1FB9CEA94C154D23406F00650BF27", hash_generated_field = "B32ECB78B8E715C7460739B27CA842E7")
 
     private float mToY;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.672 -0400", hash_original_field = "B7B73D12CE3B9412F1A00109937D53DA", hash_generated_field = "EF5CCFA809ED96BE62A4E7398FA3E7EF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "B7B73D12CE3B9412F1A00109937D53DA", hash_generated_field = "EF5CCFA809ED96BE62A4E7398FA3E7EF")
 
     private int mFromXType = TypedValue.TYPE_NULL;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.672 -0400", hash_original_field = "60CC0D53535479E0C7A9D501F5E4A0FC", hash_generated_field = "0DAB7BC0DD34C12139A64FA80B053006")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "60CC0D53535479E0C7A9D501F5E4A0FC", hash_generated_field = "0DAB7BC0DD34C12139A64FA80B053006")
 
     private int mToXType = TypedValue.TYPE_NULL;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.672 -0400", hash_original_field = "2F80A3ADA12E7A54C5C204588EF593F0", hash_generated_field = "D8BF40E0AE12F53A1AE0BE3E1CFAD3A4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "2F80A3ADA12E7A54C5C204588EF593F0", hash_generated_field = "D8BF40E0AE12F53A1AE0BE3E1CFAD3A4")
 
     private int mFromYType = TypedValue.TYPE_NULL;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.672 -0400", hash_original_field = "1E7561A3A9EC0001918DDC90167EF387", hash_generated_field = "96D1562EC34C4AC02419D0A55158EC4D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "1E7561A3A9EC0001918DDC90167EF387", hash_generated_field = "96D1562EC34C4AC02419D0A55158EC4D")
 
     private int mToYType = TypedValue.TYPE_NULL;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.672 -0400", hash_original_field = "4139ECFEEFACC0D8A88195A455CF45AB", hash_generated_field = "78C236BBF3AA3B138CA8A37DA32CAA60")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "4139ECFEEFACC0D8A88195A455CF45AB", hash_generated_field = "78C236BBF3AA3B138CA8A37DA32CAA60")
 
     private int mFromXData = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.672 -0400", hash_original_field = "242C328B6333C998429DE06D353EBE5C", hash_generated_field = "BFDE8B8EEB4894371DCD5E8AA633C493")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "242C328B6333C998429DE06D353EBE5C", hash_generated_field = "BFDE8B8EEB4894371DCD5E8AA633C493")
 
     private int mToXData = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.672 -0400", hash_original_field = "BBD337555245B463E61F4438DA8A92A9", hash_generated_field = "339253AB01E09DEEC240855896A6E360")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "BBD337555245B463E61F4438DA8A92A9", hash_generated_field = "339253AB01E09DEEC240855896A6E360")
 
     private int mFromYData = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.672 -0400", hash_original_field = "E7864FD3E8DB8F12A4C5837E49C9B4AC", hash_generated_field = "D5DE9D4159C58D4EFB94DA518A494266")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "E7864FD3E8DB8F12A4C5837E49C9B4AC", hash_generated_field = "D5DE9D4159C58D4EFB94DA518A494266")
 
     private int mToYData = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.673 -0400", hash_original_field = "4B9436C45F4B7D7C4C9D04B918C8A0DD", hash_generated_field = "EC74AC06B5691B47A1AD5BBF6B15ECE3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "4B9436C45F4B7D7C4C9D04B918C8A0DD", hash_generated_field = "EC74AC06B5691B47A1AD5BBF6B15ECE3")
 
     private int mPivotXType = ABSOLUTE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.673 -0400", hash_original_field = "3F1C9FB4BA67D4E05339F28A943BFC6E", hash_generated_field = "C9A99ED0A354C0C74E5E29006BD9ED31")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "3F1C9FB4BA67D4E05339F28A943BFC6E", hash_generated_field = "C9A99ED0A354C0C74E5E29006BD9ED31")
 
     private int mPivotYType = ABSOLUTE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.673 -0400", hash_original_field = "8D8BFEB1DA7B8A0B2979A96EE34F4D2C", hash_generated_field = "AF755B8408C979E36D20FBC0A81E876D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "8D8BFEB1DA7B8A0B2979A96EE34F4D2C", hash_generated_field = "AF755B8408C979E36D20FBC0A81E876D")
 
     private float mPivotXValue = 0.0f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.673 -0400", hash_original_field = "A1F855333DF1E4EF5B69460F3BFFF0D1", hash_generated_field = "E9B533B02C8C2E2321EBFE6D7C3F6C50")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "A1F855333DF1E4EF5B69460F3BFFF0D1", hash_generated_field = "E9B533B02C8C2E2321EBFE6D7C3F6C50")
 
     private float mPivotYValue = 0.0f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.673 -0400", hash_original_field = "D66A9F2EFD98D68E75A6EA9E5E5D83DE", hash_generated_field = "D5598B4EF8A215EC3A51B2F400B272F3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "D66A9F2EFD98D68E75A6EA9E5E5D83DE", hash_generated_field = "D5598B4EF8A215EC3A51B2F400B272F3")
 
     private float mPivotX;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.673 -0400", hash_original_field = "0AD24014D3E582A643E83C27A45B1B51", hash_generated_field = "0971400EDE5A41D2136C532E521A2E57")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.884 -0400", hash_original_field = "0AD24014D3E582A643E83C27A45B1B51", hash_generated_field = "0971400EDE5A41D2136C532E521A2E57")
 
     private float mPivotY;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.678 -0400", hash_original_method = "E7EC7911EB152736ED90DFA69DF1393A", hash_generated_method = "FA8F84B2E165BDAC59A11C3AE9322668")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.902 -0400", hash_original_method = "E7EC7911EB152736ED90DFA69DF1393A", hash_generated_method = "FA8F84B2E165BDAC59A11C3AE9322668")
     public  ScaleAnimation(Context context, AttributeSet attrs) {
         super(context, attrs);
         mResources = context.getResources();
@@ -144,7 +144,7 @@ public class ScaleAnimation extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.679 -0400", hash_original_method = "512F0A59662E426B1B9BCA8ED3066806", hash_generated_method = "F4B1B691291C2CB057305BB1755A27CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.903 -0400", hash_original_method = "512F0A59662E426B1B9BCA8ED3066806", hash_generated_method = "F4B1B691291C2CB057305BB1755A27CE")
     public  ScaleAnimation(float fromX, float toX, float fromY, float toY) {
         mResources = null;
         mFromX = fromX;
@@ -164,7 +164,7 @@ public class ScaleAnimation extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.688 -0400", hash_original_method = "E87B1195FC877E2731C7B2475118F4DC", hash_generated_method = "7CADD6E5F23E503EA9E92E265142D072")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.903 -0400", hash_original_method = "E87B1195FC877E2731C7B2475118F4DC", hash_generated_method = "7CADD6E5F23E503EA9E92E265142D072")
     public  ScaleAnimation(float fromX, float toX, float fromY, float toY,
             float pivotX, float pivotY) {
         mResources = null;
@@ -189,7 +189,7 @@ public class ScaleAnimation extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.693 -0400", hash_original_method = "D69E90D5037F2660E180F2C8AD5003B6", hash_generated_method = "402FCFE0BA9E51B59997343ECF9C9D17")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.914 -0400", hash_original_method = "D69E90D5037F2660E180F2C8AD5003B6", hash_generated_method = "402FCFE0BA9E51B59997343ECF9C9D17")
     public  ScaleAnimation(float fromX, float toX, float fromY, float toY,
             int pivotXType, float pivotXValue, int pivotYType, float pivotYValue) {
         mResources = null;
@@ -214,7 +214,7 @@ public class ScaleAnimation extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.694 -0400", hash_original_method = "ACAB92B82483DFC255430C098BD55E9F", hash_generated_method = "96BF9FD8658A89ADCEBAB0D57293C049")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.916 -0400", hash_original_method = "ACAB92B82483DFC255430C098BD55E9F", hash_generated_method = "96BF9FD8658A89ADCEBAB0D57293C049")
     @Override
     protected void applyTransformation(float interpolatedTime, Transformation t) {
         float sx;
@@ -255,7 +255,7 @@ public class ScaleAnimation extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.694 -0400", hash_original_method = "676CA3558C31BAAF0E94504390B45F7E", hash_generated_method = "C0DD67E5945E8F09B4C6670DA3706EEB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.917 -0400", hash_original_method = "676CA3558C31BAAF0E94504390B45F7E", hash_generated_method = "47791758C51B056FCD711DEDECCFA743")
      float resolveScale(float scale, int type, int data, int size, int psize) {
         float targetSize;
         {
@@ -269,8 +269,8 @@ public class ScaleAnimation extends Animation {
         addTaint(data);
         addTaint(size);
         addTaint(psize);
-        float var546ADE640B6EDFBC8A086EF31347E768_996516433 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_996516433;
+        float var546ADE640B6EDFBC8A086EF31347E768_151954721 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_151954721;
         // ---------- Original Method ----------
         //float targetSize;
         //if (type == TypedValue.TYPE_FRACTION) {
@@ -287,7 +287,7 @@ public class ScaleAnimation extends Animation {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:55.695 -0400", hash_original_method = "E8174A29F113646F3F03DE9F1A1AE2A8", hash_generated_method = "C41E37D0FCE9CC7DF1C6CA527D948C88")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:57.928 -0400", hash_original_method = "E8174A29F113646F3F03DE9F1A1AE2A8", hash_generated_method = "C41E37D0FCE9CC7DF1C6CA527D948C88")
     @Override
     public void initialize(int width, int height, int parentWidth, int parentHeight) {
         super.initialize(width, height, parentWidth, parentHeight);

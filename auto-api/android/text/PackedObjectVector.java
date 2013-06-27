@@ -10,23 +10,23 @@ import java.util.Iterator;
 import com.android.internal.util.ArrayUtils;
 
 class PackedObjectVector<E> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.950 -0400", hash_original_field = "11C985F30142FD30ACDDFE7CD3BD4A9B", hash_generated_field = "75F4039C98FB52077D38E34F530EB3FF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.546 -0400", hash_original_field = "11C985F30142FD30ACDDFE7CD3BD4A9B", hash_generated_field = "75F4039C98FB52077D38E34F530EB3FF")
 
     private int mColumns;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.950 -0400", hash_original_field = "839FCD25B196D1E9D74989EB7586909A", hash_generated_field = "18B06BC67D1393EDA8ED9BB923EF7CD3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.547 -0400", hash_original_field = "839FCD25B196D1E9D74989EB7586909A", hash_generated_field = "18B06BC67D1393EDA8ED9BB923EF7CD3")
 
     private int mRows;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.950 -0400", hash_original_field = "717D446B0EDDE3F55A9FB9E6279E6014", hash_generated_field = "EA98696F1B775619308B0863F513F9F1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.547 -0400", hash_original_field = "717D446B0EDDE3F55A9FB9E6279E6014", hash_generated_field = "EA98696F1B775619308B0863F513F9F1")
 
     private int mRowGapStart;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.950 -0400", hash_original_field = "2765BE84E84BC9CBE3B823946D881A10", hash_generated_field = "EB5D193EB3BD0BD6791276EC10232CBE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.547 -0400", hash_original_field = "2765BE84E84BC9CBE3B823946D881A10", hash_generated_field = "EB5D193EB3BD0BD6791276EC10232CBE")
 
     private int mRowGapLength;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.950 -0400", hash_original_field = "90BFF6F4E8E62CBC2DC12A9ACE468001", hash_generated_field = "8F96A7DD3A8AA044003D4A42FBE80825")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.547 -0400", hash_original_field = "90BFF6F4E8E62CBC2DC12A9ACE468001", hash_generated_field = "8F96A7DD3A8AA044003D4A42FBE80825")
 
     private Object[] mValues;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.955 -0400", hash_original_method = "7647E7B16FB2C073A83B6C5C46BD0BB0", hash_generated_method = "9A70858516039202D340CEF6E58AC618")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.548 -0400", hash_original_method = "7647E7B16FB2C073A83B6C5C46BD0BB0", hash_generated_method = "9A70858516039202D340CEF6E58AC618")
     public  PackedObjectVector(int columns) {
         mColumns = columns;
         mRows = ArrayUtils.idealIntArraySize(0) / mColumns;
@@ -42,17 +42,17 @@ class PackedObjectVector<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.968 -0400", hash_original_method = "1C46B70362A26F7DECFFAE89D2DE52CF", hash_generated_method = "D22A9FEE7C2DAC6A984BD72E8B41F577")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.560 -0400", hash_original_method = "1C46B70362A26F7DECFFAE89D2DE52CF", hash_generated_method = "22A7FB80AFDA22FD7335DE807A5FB202")
     public E getValue(int row, int column) {
-        E varB4EAC82CA7396A68D541C85D26508E83_1719240365 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_1087561347 = null; //Variable for return #1
         row += mRowGapLength;
         Object value;
         value = mValues[row * mColumns + column];
-        varB4EAC82CA7396A68D541C85D26508E83_1719240365 = (E) value;
+        varB4EAC82CA7396A68D541C85D26508E83_1087561347 = (E) value;
         addTaint(row);
         addTaint(column);
-        varB4EAC82CA7396A68D541C85D26508E83_1719240365.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1719240365;
+        varB4EAC82CA7396A68D541C85D26508E83_1087561347.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1087561347;
         // ---------- Original Method ----------
         //if (row >= mRowGapStart)
             //row += mRowGapLength;
@@ -61,7 +61,7 @@ class PackedObjectVector<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.969 -0400", hash_original_method = "C9FAD217A876C18081065D61EE309BF7", hash_generated_method = "95ED1069A1C7501E9F5428700785CE03")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.561 -0400", hash_original_method = "C9FAD217A876C18081065D61EE309BF7", hash_generated_method = "95ED1069A1C7501E9F5428700785CE03")
     public void setValue(int row, int column, E value) {
         row += mRowGapLength;
         mValues[row * mColumns + column] = value;
@@ -72,7 +72,7 @@ class PackedObjectVector<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.969 -0400", hash_original_method = "4D54718FEF2171E694149D7895F4552C", hash_generated_method = "A7E048A26DA7AADD51D66181CDD314C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.563 -0400", hash_original_method = "4D54718FEF2171E694149D7895F4552C", hash_generated_method = "A7E048A26DA7AADD51D66181CDD314C9")
     public void insertAt(int row, E[] values) {
         moveRowGapTo(row);
         growBuffer();
@@ -103,13 +103,13 @@ class PackedObjectVector<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.970 -0400", hash_original_method = "E80F8248AEB29BC6824FCA0E99840E40", hash_generated_method = "19C87AA89B6542E7D3A7DD7183003EF0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.564 -0400", hash_original_method = "E80F8248AEB29BC6824FCA0E99840E40", hash_generated_method = "3DC9E3B1D817B8A2BB9963D8CFC95943")
     public void deleteAt(int row, int count) {
         moveRowGapTo(row + count);
         mRowGapStart -= count;
         mRowGapLength += count;
         {
-            boolean var26E99CD6B85A7FA237C6BDC9DA9F5FC7_1879256241 = (mRowGapLength > size() * 2);
+            boolean var26E99CD6B85A7FA237C6BDC9DA9F5FC7_957879185 = (mRowGapLength > size() * 2);
         } //End collapsed parenthetic
         addTaint(row);
         // ---------- Original Method ----------
@@ -122,25 +122,25 @@ class PackedObjectVector<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.989 -0400", hash_original_method = "A7F055B05F3BF0E7B9EF67A5904EF45B", hash_generated_method = "2851CA2B74CC6A60357130C92EE6C394")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.580 -0400", hash_original_method = "A7F055B05F3BF0E7B9EF67A5904EF45B", hash_generated_method = "5A99A6C0B9C6B313C08F5190F0528B3F")
     public int size() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681538404 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681538404;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1242684505 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1242684505;
         // ---------- Original Method ----------
         //return mRows - mRowGapLength;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.990 -0400", hash_original_method = "00C81AD9ACCD847707085D62472884FD", hash_generated_method = "A694600F2AEDEFC19B2ECD2EAAD0423C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.581 -0400", hash_original_method = "00C81AD9ACCD847707085D62472884FD", hash_generated_method = "31798C608343145B8A2F762A0F611E6C")
     public int width() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1880924880 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1880924880;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_195380678 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_195380678;
         // ---------- Original Method ----------
         //return mColumns;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.996 -0400", hash_original_method = "6242267CE6FD4DA11CE3B8DDDCD83B59", hash_generated_method = "4453CF50CA41B9A5E86983D2F13C64C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.582 -0400", hash_original_method = "6242267CE6FD4DA11CE3B8DDDCD83B59", hash_generated_method = "4453CF50CA41B9A5E86983D2F13C64C4")
     private void growBuffer() {
         int newsize;
         newsize = size() + 1;
@@ -167,7 +167,7 @@ class PackedObjectVector<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:38.002 -0400", hash_original_method = "31F6FBDDD7D0FB1F20A58E1CEB067332", hash_generated_method = "20D719410B90A42B4D2EF884F67F9E5C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.596 -0400", hash_original_method = "31F6FBDDD7D0FB1F20A58E1CEB067332", hash_generated_method = "20D719410B90A42B4D2EF884F67F9E5C")
     private void moveRowGapTo(int where) {
         {
             int moving;
@@ -217,7 +217,7 @@ class PackedObjectVector<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:38.003 -0400", hash_original_method = "D4D4661D97DE10B055DBC1529423C904", hash_generated_method = "5D101C2925463666319288E50873E35B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.597 -0400", hash_original_method = "D4D4661D97DE10B055DBC1529423C904", hash_generated_method = "5D101C2925463666319288E50873E35B")
     public void dump() {
         {
             int i;

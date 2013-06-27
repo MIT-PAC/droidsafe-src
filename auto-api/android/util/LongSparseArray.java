@@ -10,27 +10,27 @@ import java.util.Iterator;
 import com.android.internal.util.ArrayUtils;
 
 public class LongSparseArray<E> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.070 -0400", hash_original_field = "09A7D01F9A4EF2933D39C68D27937238", hash_generated_field = "3E9E77485A77FB735B3D2728BEADA3A6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.763 -0400", hash_original_field = "09A7D01F9A4EF2933D39C68D27937238", hash_generated_field = "3E9E77485A77FB735B3D2728BEADA3A6")
 
     private boolean mGarbage = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.071 -0400", hash_original_field = "1FF7333D8075E8242307366B57B0CC5B", hash_generated_field = "10A03D33DDA7196CABEC9D15EF00ADBE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.763 -0400", hash_original_field = "1FF7333D8075E8242307366B57B0CC5B", hash_generated_field = "10A03D33DDA7196CABEC9D15EF00ADBE")
 
     private long[] mKeys;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.071 -0400", hash_original_field = "90BFF6F4E8E62CBC2DC12A9ACE468001", hash_generated_field = "8F96A7DD3A8AA044003D4A42FBE80825")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.763 -0400", hash_original_field = "90BFF6F4E8E62CBC2DC12A9ACE468001", hash_generated_field = "8F96A7DD3A8AA044003D4A42FBE80825")
 
     private Object[] mValues;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.071 -0400", hash_original_field = "27DFA0EFE73BCB065533443A05E9DEE4", hash_generated_field = "1ADF00AF1A5D84662F00519BAA6EB9C0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.763 -0400", hash_original_field = "27DFA0EFE73BCB065533443A05E9DEE4", hash_generated_field = "1ADF00AF1A5D84662F00519BAA6EB9C0")
 
     private int mSize;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.071 -0400", hash_original_method = "F893922E2C2E4CF6AF95C190516DB394", hash_generated_method = "6A1F4B6B8C0C50DC092B16F38EE20B61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.764 -0400", hash_original_method = "F893922E2C2E4CF6AF95C190516DB394", hash_generated_method = "6A1F4B6B8C0C50DC092B16F38EE20B61")
     public  LongSparseArray() {
         this(10);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.072 -0400", hash_original_method = "69FE78AD0B4200050B3EDA46329CEBED", hash_generated_method = "2F8B33E1FC222BCBE8DE8718FECEA2E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.764 -0400", hash_original_method = "69FE78AD0B4200050B3EDA46329CEBED", hash_generated_method = "2F8B33E1FC222BCBE8DE8718FECEA2E8")
     public  LongSparseArray(int initialCapacity) {
         initialCapacity = ArrayUtils.idealIntArraySize(initialCapacity);
         mKeys = new long[initialCapacity];
@@ -44,15 +44,15 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.073 -0400", hash_original_method = "9447795B515DAD767A419A6C51E84D78", hash_generated_method = "8A49FB2C891E14F6199E381597CDF073")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.766 -0400", hash_original_method = "9447795B515DAD767A419A6C51E84D78", hash_generated_method = "725EF67FE88719A836BB6BC306128794")
     public long[] getKeys() {
         int length;
         length = mKeys.length;
         long[] result;
         result = new long[length];
         System.arraycopy(mKeys, 0, result, 0, length);
-        long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_199831518 = {getTaintLong()};
-        return var3908C7C3AF5171CEE1F112DAE77A5C4D_199831518;
+        long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_168518401 = {getTaintLong()};
+        return var3908C7C3AF5171CEE1F112DAE77A5C4D_168518401;
         // ---------- Original Method ----------
         //int length = mKeys.length;
         //long[] result = new long[length];
@@ -61,7 +61,7 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.073 -0400", hash_original_method = "F8E34621620A1E3C4828967422EF7D07", hash_generated_method = "1DA234BDF0D09D3243BF71833C2401C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.766 -0400", hash_original_method = "F8E34621620A1E3C4828967422EF7D07", hash_generated_method = "1DA234BDF0D09D3243BF71833C2401C4")
     public void setValues(long[] keys, E uniqueValue) {
         int length;
         length = keys.length;
@@ -82,43 +82,43 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.077 -0400", hash_original_method = "4371A69A3700205284573EEAA3E6B17F", hash_generated_method = "D1AC5BFDEA581D6B248D81F0CF928E34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.784 -0400", hash_original_method = "4371A69A3700205284573EEAA3E6B17F", hash_generated_method = "9222F9AD67B8AA5F8D5C550AEEE966FB")
     public E get(long key) {
-        E varB4EAC82CA7396A68D541C85D26508E83_1418027735 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1418027735 = get(key, null);
+        E varB4EAC82CA7396A68D541C85D26508E83_938174332 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_938174332 = get(key, null);
         addTaint(key);
-        varB4EAC82CA7396A68D541C85D26508E83_1418027735.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1418027735;
+        varB4EAC82CA7396A68D541C85D26508E83_938174332.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_938174332;
         // ---------- Original Method ----------
         //return get(key, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.092 -0400", hash_original_method = "E2D85B672251F3A6432F3D64B14D09C9", hash_generated_method = "78A71438685C0E5C2B8AD213BD7F87B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.785 -0400", hash_original_method = "E2D85B672251F3A6432F3D64B14D09C9", hash_generated_method = "2AE74C5D34841D5F5B345B2AC7106ED3")
     public E get(long key, E valueIfKeyNotFound) {
-        E varB4EAC82CA7396A68D541C85D26508E83_1314889590 = null; //Variable for return #1
-        E varB4EAC82CA7396A68D541C85D26508E83_361216423 = null; //Variable for return #2
+        E varB4EAC82CA7396A68D541C85D26508E83_1463946235 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_1741294447 = null; //Variable for return #2
         int i;
         i = binarySearch(mKeys, 0, mSize, key);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1314889590 = valueIfKeyNotFound;
+            varB4EAC82CA7396A68D541C85D26508E83_1463946235 = valueIfKeyNotFound;
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_361216423 = (E) mValues[i];
+            varB4EAC82CA7396A68D541C85D26508E83_1741294447 = (E) mValues[i];
         } //End block
         addTaint(key);
         addTaint(valueIfKeyNotFound.getTaint());
-        E varA7E53CE21691AB073D9660D615818899_189655215; //Final return value
+        E varA7E53CE21691AB073D9660D615818899_1530341649; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_189655215 = varB4EAC82CA7396A68D541C85D26508E83_1314889590;
+                varA7E53CE21691AB073D9660D615818899_1530341649 = varB4EAC82CA7396A68D541C85D26508E83_1463946235;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_189655215 = varB4EAC82CA7396A68D541C85D26508E83_361216423;
+                varA7E53CE21691AB073D9660D615818899_1530341649 = varB4EAC82CA7396A68D541C85D26508E83_1741294447;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_189655215.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_189655215;
+        varA7E53CE21691AB073D9660D615818899_1530341649.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1530341649;
         // ---------- Original Method ----------
         //int i = binarySearch(mKeys, 0, mSize, key);
         //if (i < 0 || mValues[i] == DELETED) {
@@ -129,7 +129,7 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.093 -0400", hash_original_method = "D6F064C21D8F72C9BE34FD8563F8D233", hash_generated_method = "682D116CF160FBCD73C883DC575088D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.786 -0400", hash_original_method = "D6F064C21D8F72C9BE34FD8563F8D233", hash_generated_method = "682D116CF160FBCD73C883DC575088D4")
     public void delete(long key) {
         int i;
         i = binarySearch(mKeys, 0, mSize, key);
@@ -151,7 +151,7 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.101 -0400", hash_original_method = "A104FD86A71D431024F36E7E390CA038", hash_generated_method = "155FAE649ACD3D549736C8ABC1158492")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.786 -0400", hash_original_method = "A104FD86A71D431024F36E7E390CA038", hash_generated_method = "155FAE649ACD3D549736C8ABC1158492")
     public void remove(long key) {
         delete(key);
         addTaint(key);
@@ -160,7 +160,7 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.102 -0400", hash_original_method = "A9D8FA819E144A31281F443F869190B4", hash_generated_method = "C58ACD70F029E84CD8D05A3172FBDDEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.798 -0400", hash_original_method = "A9D8FA819E144A31281F443F869190B4", hash_generated_method = "C58ACD70F029E84CD8D05A3172FBDDEC")
     private void gc() {
         int n;
         n = mSize;
@@ -206,7 +206,7 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.118 -0400", hash_original_method = "A67B583D0E7AD982D1504BFCE2629D2E", hash_generated_method = "2A05A679264CD57795EEC1C289350E9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.800 -0400", hash_original_method = "A67B583D0E7AD982D1504BFCE2629D2E", hash_generated_method = "2A05A679264CD57795EEC1C289350E9F")
     public void put(long key, E value) {
         int i;
         i = binarySearch(mKeys, 0, mSize, key);
@@ -247,13 +247,13 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.119 -0400", hash_original_method = "F891E9E45688B24DB77EAA9DE670091B", hash_generated_method = "E72A68AB8FC3EF96CECDAF5DCFD3F903")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.818 -0400", hash_original_method = "F891E9E45688B24DB77EAA9DE670091B", hash_generated_method = "D89A67B95641EA6E2C73033715DA1D6D")
     public int size() {
         {
             gc();
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_703872964 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_703872964;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1106006898 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1106006898;
         // ---------- Original Method ----------
         //if (mGarbage) {
             //gc();
@@ -262,14 +262,14 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.119 -0400", hash_original_method = "B1F6BB5033A022FAFBEA87494F8412EB", hash_generated_method = "BE5A0EE9C07F16653E762B57CAD1F47B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.818 -0400", hash_original_method = "B1F6BB5033A022FAFBEA87494F8412EB", hash_generated_method = "780123BBF52A222CFE5E4B96AEE6E773")
     public long keyAt(int index) {
         {
             gc();
         } //End block
         addTaint(index);
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_620174347 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_620174347;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_475494232 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_475494232;
         // ---------- Original Method ----------
         //if (mGarbage) {
             //gc();
@@ -278,16 +278,16 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.131 -0400", hash_original_method = "23592451CB50AFA841274AC3732C91A0", hash_generated_method = "84201EDB773112368079546D5EAC988F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.822 -0400", hash_original_method = "23592451CB50AFA841274AC3732C91A0", hash_generated_method = "124451F76FA130395B04D3B8E2A567C4")
     public E valueAt(int index) {
-        E varB4EAC82CA7396A68D541C85D26508E83_1141468990 = null; //Variable for return #1
+        E varB4EAC82CA7396A68D541C85D26508E83_1107196232 = null; //Variable for return #1
         {
             gc();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1141468990 = (E) mValues[index];
+        varB4EAC82CA7396A68D541C85D26508E83_1107196232 = (E) mValues[index];
         addTaint(index);
-        varB4EAC82CA7396A68D541C85D26508E83_1141468990.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1141468990;
+        varB4EAC82CA7396A68D541C85D26508E83_1107196232.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1107196232;
         // ---------- Original Method ----------
         //if (mGarbage) {
             //gc();
@@ -296,7 +296,7 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.132 -0400", hash_original_method = "7F2F6916ED61673EAF8E91642A81797D", hash_generated_method = "DC84236D6C02A331D1F56F5E93625B9F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.823 -0400", hash_original_method = "7F2F6916ED61673EAF8E91642A81797D", hash_generated_method = "DC84236D6C02A331D1F56F5E93625B9F")
     public void setValueAt(int index, E value) {
         {
             gc();
@@ -310,15 +310,15 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.136 -0400", hash_original_method = "09C66188F9324AB9196B3AD659514994", hash_generated_method = "E93DF7962506E9C4DE4CDECFA7ECB931")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.842 -0400", hash_original_method = "09C66188F9324AB9196B3AD659514994", hash_generated_method = "8264366FB76A1CC1E2113CEB9E563381")
     public int indexOfKey(long key) {
         {
             gc();
         } //End block
-        int varEF803A1EE726CA2553B95F3E48B65AD1_1355093560 = (binarySearch(mKeys, 0, mSize, key));
+        int varEF803A1EE726CA2553B95F3E48B65AD1_475888089 = (binarySearch(mKeys, 0, mSize, key));
         addTaint(key);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_848070954 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_848070954;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1812645971 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1812645971;
         // ---------- Original Method ----------
         //if (mGarbage) {
             //gc();
@@ -327,7 +327,7 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.152 -0400", hash_original_method = "726CF5EE08645CFDA1A6766EA2A8BAE2", hash_generated_method = "B7C46C9002A29F58DB16C5C5E7D06B7C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.843 -0400", hash_original_method = "726CF5EE08645CFDA1A6766EA2A8BAE2", hash_generated_method = "05B27F41ADBC5E0E9686B24977523AAD")
     public int indexOfValue(E value) {
         {
             gc();
@@ -337,8 +337,8 @@ public class LongSparseArray<E> {
             i = 0;
         } //End collapsed parenthetic
         addTaint(value.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1556844153 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1556844153;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_758083822 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_758083822;
         // ---------- Original Method ----------
         //if (mGarbage) {
             //gc();
@@ -350,7 +350,7 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.153 -0400", hash_original_method = "43C05B8A0FF5CBFFF8E027DF94B104CB", hash_generated_method = "0C4828A3CB0B54289774B69C4B300C28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.843 -0400", hash_original_method = "43C05B8A0FF5CBFFF8E027DF94B104CB", hash_generated_method = "0C4828A3CB0B54289774B69C4B300C28")
     public void clear() {
         int n;
         n = mSize;
@@ -376,7 +376,7 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.154 -0400", hash_original_method = "0B04A70E2C13FA00A3C14F0564BE387C", hash_generated_method = "2FBB30DF187420B1F9975538354D2263")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.845 -0400", hash_original_method = "0B04A70E2C13FA00A3C14F0564BE387C", hash_generated_method = "2FBB30DF187420B1F9975538354D2263")
     public void append(long key, E value) {
         {
             put(key, value);
@@ -443,7 +443,7 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.161 -0400", hash_original_method = "B88BEB15E15C0A7F30A2606914985D6D", hash_generated_method = "2B738B199FBF97C6691F88C379516160")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.846 -0400", hash_original_method = "B88BEB15E15C0A7F30A2606914985D6D", hash_generated_method = "2B738B199FBF97C6691F88C379516160")
     private void checkIntegrity() {
         {
             int i;
@@ -470,7 +470,7 @@ public class LongSparseArray<E> {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.161 -0400", hash_original_field = "92065CB108C8800DF5E4F0483558AC68", hash_generated_field = "6456E1D1AD9DCB9B6C6C03727663B20A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.846 -0400", hash_original_field = "92065CB108C8800DF5E4F0483558AC68", hash_generated_field = "6456E1D1AD9DCB9B6C6C03727663B20A")
 
     private static Object DELETED = new Object();
 }

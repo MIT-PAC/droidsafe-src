@@ -15,7 +15,7 @@ import gov.nist.core.*;
 
 public class CSeqParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.513 -0400", hash_original_method = "315D7450D70C30EDB72AC7255664118E", hash_generated_method = "A8FDE793BDDBAFC103CC08AC2EE3CE0D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.528 -0400", hash_original_method = "315D7450D70C30EDB72AC7255664118E", hash_generated_method = "A8FDE793BDDBAFC103CC08AC2EE3CE0D")
     public  CSeqParser(String cseq) {
         super(cseq);
         addTaint(cseq.getTaint());
@@ -23,7 +23,7 @@ public class CSeqParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.524 -0400", hash_original_method = "8A2748B0467C573864DACC8328A787A7", hash_generated_method = "206A239BD298BB64B23E3F5F5597EE51")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.528 -0400", hash_original_method = "8A2748B0467C573864DACC8328A787A7", hash_generated_method = "206A239BD298BB64B23E3F5F5597EE51")
     protected  CSeqParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -31,9 +31,9 @@ public class CSeqParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.526 -0400", hash_original_method = "25983B4EEF6E8D8834C12C4F0FEB872C", hash_generated_method = "6F8ED3BD7B11675B8C8C7A32DCB625BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.530 -0400", hash_original_method = "25983B4EEF6E8D8834C12C4F0FEB872C", hash_generated_method = "AB5CC5BCC6E74149DB031709E811C072")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1567736314 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1153723146 = null; //Variable for return #1
         try 
         {
             CSeq c;
@@ -51,7 +51,7 @@ public class CSeqParser extends HeaderParser {
             c.setMethod(m);
             this.lexer.SPorHT();
             this.lexer.match('\n');
-            varB4EAC82CA7396A68D541C85D26508E83_1567736314 = c;
+            varB4EAC82CA7396A68D541C85D26508E83_1153723146 = c;
         } //End block
         catch (NumberFormatException ex)
         {
@@ -63,8 +63,8 @@ public class CSeqParser extends HeaderParser {
             Debug.printStackTrace(ex);
             if (DroidSafeAndroidRuntime.control) throw createParseException(ex.getMessage());
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1567736314.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1567736314;
+        varB4EAC82CA7396A68D541C85D26508E83_1153723146.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1153723146;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

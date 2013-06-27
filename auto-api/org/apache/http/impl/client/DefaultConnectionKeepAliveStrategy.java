@@ -17,14 +17,14 @@ import org.apache.http.protocol.HttpContext;
 
 public class DefaultConnectionKeepAliveStrategy implements ConnectionKeepAliveStrategy {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.248 -0400", hash_original_method = "9F91BCEACEC5544FA32C5606F5B738A8", hash_generated_method = "9F91BCEACEC5544FA32C5606F5B738A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.282 -0400", hash_original_method = "9F91BCEACEC5544FA32C5606F5B738A8", hash_generated_method = "9F91BCEACEC5544FA32C5606F5B738A8")
     public DefaultConnectionKeepAliveStrategy ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.250 -0400", hash_original_method = "A7D37BD826557BEBF753D4A8DC681C72", hash_generated_method = "CFFBA620E05D12D83DB58E8FD32D9565")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.283 -0400", hash_original_method = "A7D37BD826557BEBF753D4A8DC681C72", hash_generated_method = "FB8343977302D1A92B4826A190D07081")
     public long getKeepAliveDuration(HttpResponse response, HttpContext context) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP response may not be null");
@@ -33,7 +33,7 @@ public class DefaultConnectionKeepAliveStrategy implements ConnectionKeepAliveSt
         it = new BasicHeaderElementIterator(
                 response.headerIterator(HTTP.CONN_KEEP_ALIVE));
         {
-            boolean var03729FD53960D8DCA3A41A13A0229637_1425368896 = (it.hasNext());
+            boolean var03729FD53960D8DCA3A41A13A0229637_1824389216 = (it.hasNext());
             {
                 HeaderElement he;
                 he = it.nextElement();
@@ -42,11 +42,11 @@ public class DefaultConnectionKeepAliveStrategy implements ConnectionKeepAliveSt
                 String value;
                 value = he.getValue();
                 {
-                    boolean var1EF3E3E54A567F7414EE77F38BA1CCC1_1103450631 = (value != null && param.equalsIgnoreCase("timeout"));
+                    boolean var1EF3E3E54A567F7414EE77F38BA1CCC1_1975846610 = (value != null && param.equalsIgnoreCase("timeout"));
                     {
                         try 
                         {
-                            long var827513AE700971AB86A3F1108926C8C5_1546324582 = (Long.parseLong(value) * 1000);
+                            long var827513AE700971AB86A3F1108926C8C5_739260670 = (Long.parseLong(value) * 1000);
                         } //End block
                         catch (NumberFormatException ignore)
                         { }
@@ -56,8 +56,8 @@ public class DefaultConnectionKeepAliveStrategy implements ConnectionKeepAliveSt
         } //End collapsed parenthetic
         addTaint(response.getTaint());
         addTaint(context.getTaint());
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1864666810 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1864666810;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1184897456 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1184897456;
         // ---------- Original Method ----------
         //if (response == null) {
             //throw new IllegalArgumentException("HTTP response may not be null");

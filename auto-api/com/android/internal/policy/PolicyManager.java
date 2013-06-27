@@ -16,7 +16,7 @@ import com.android.internal.policy.IPolicy;
 
 public final class PolicyManager {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.698 -0400", hash_original_method = "8280FBDEA727C0869187AB3F61DD27B1", hash_generated_method = "84C464024E5F34F099B0A60B3B8B9AAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.165 -0400", hash_original_method = "8280FBDEA727C0869187AB3F61DD27B1", hash_generated_method = "84C464024E5F34F099B0A60B3B8B9AAB")
     private  PolicyManager() {
         // ---------- Original Method ----------
     }
@@ -42,10 +42,10 @@ public final class PolicyManager {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.699 -0400", hash_original_field = "CC1EE3A6531AE6E81333C3C9BE207A23", hash_generated_field = "75FDBB2FF14EF7ED5A4443F549717B4A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.165 -0400", hash_original_field = "CC1EE3A6531AE6E81333C3C9BE207A23", hash_generated_field = "75FDBB2FF14EF7ED5A4443F549717B4A")
 
     private static String POLICY_IMPL_CLASS_NAME = "com.android.internal.policy.impl.Policy";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.699 -0400", hash_original_field = "C0FFFDB7650DF02B56107C0B1FCBC1F0", hash_generated_field = "100BB36640E39269E598568BB8ACACA8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.165 -0400", hash_original_field = "C0FFFDB7650DF02B56107C0B1FCBC1F0", hash_generated_field = "100BB36640E39269E598568BB8ACACA8")
 
     private static IPolicy sPolicy;
     static {

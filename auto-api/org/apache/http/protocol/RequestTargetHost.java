@@ -21,14 +21,14 @@ import org.apache.http.ProtocolException;
 
 public class RequestTargetHost implements HttpRequestInterceptor {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.326 -0400", hash_original_method = "8E392018972A7DBBBF7C8FCDEC2420D5", hash_generated_method = "6517A03037392B0D34A56F3318F3EB95")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.510 -0400", hash_original_method = "8E392018972A7DBBBF7C8FCDEC2420D5", hash_generated_method = "6517A03037392B0D34A56F3318F3EB95")
     public  RequestTargetHost() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.327 -0400", hash_original_method = "EFFA06EA6DD5102576B15EFE0500FD3E", hash_generated_method = "00DAF200C9E5C2F49D5F97016A882FEB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.510 -0400", hash_original_method = "EFFA06EA6DD5102576B15EFE0500FD3E", hash_generated_method = "80BDF570F970559F9D80FE038A20CBAA")
     public void process(final HttpRequest request, final HttpContext context) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
@@ -37,7 +37,7 @@ public class RequestTargetHost implements HttpRequestInterceptor {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP context may not be null");
         } //End block
         {
-            boolean var42F48AC317DCD4FCC14CFA497F63A10F_2066854353 = (!request.containsHeader(HTTP.TARGET_HOST));
+            boolean var42F48AC317DCD4FCC14CFA497F63A10F_435212680 = (!request.containsHeader(HTTP.TARGET_HOST));
             {
                 HttpHost targethost;
                 targethost = (HttpHost) context
@@ -59,7 +59,7 @@ public class RequestTargetHost implements HttpRequestInterceptor {
                         ProtocolVersion ver;
                         ver = request.getRequestLine().getProtocolVersion();
                         {
-                            boolean var6975353BB6195CBDBBE6503768DE7665_1638762670 = (ver.lessEquals(HttpVersion.HTTP_1_0));
+                            boolean var6975353BB6195CBDBBE6503768DE7665_1857099237 = (ver.lessEquals(HttpVersion.HTTP_1_0));
                             {
                                 if (DroidSafeAndroidRuntime.control) throw new ProtocolException("Target host missing");
                             } //End block

@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class DERTaggedObject extends ASN1TaggedObject {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.185 -0400", hash_original_method = "B8C39F3F8493AE66929508E836F6CEF7", hash_generated_method = "230426B03BBA046B547576F29EBAA2AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.314 -0400", hash_original_method = "B8C39F3F8493AE66929508E836F6CEF7", hash_generated_method = "230426B03BBA046B547576F29EBAA2AC")
     public  DERTaggedObject(
         int             tagNo,
         DEREncodable    obj) {
@@ -22,7 +22,7 @@ public class DERTaggedObject extends ASN1TaggedObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.185 -0400", hash_original_method = "D15475FEA6616F6A5D6AAE500D0E135A", hash_generated_method = "FDF0AF027625038EEC5DE043C7EA45A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.326 -0400", hash_original_method = "D15475FEA6616F6A5D6AAE500D0E135A", hash_generated_method = "FDF0AF027625038EEC5DE043C7EA45A4")
     public  DERTaggedObject(
         boolean         explicit,
         int             tagNo,
@@ -35,7 +35,7 @@ public class DERTaggedObject extends ASN1TaggedObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.186 -0400", hash_original_method = "14B57626E7341DE57616D6DE76633AEC", hash_generated_method = "047746C21F73F9D85EBAAF772E64E012")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.327 -0400", hash_original_method = "14B57626E7341DE57616D6DE76633AEC", hash_generated_method = "047746C21F73F9D85EBAAF772E64E012")
     public  DERTaggedObject(
         int             tagNo) {
         super(false, tagNo, new DERSequence());
@@ -44,7 +44,7 @@ public class DERTaggedObject extends ASN1TaggedObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.186 -0400", hash_original_method = "B5277AF27C85DE4A4669302802507303", hash_generated_method = "5D98E1E0CC5EA3D2CFBF6DB7565AE9DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.336 -0400", hash_original_method = "B5277AF27C85DE4A4669302802507303", hash_generated_method = "5D98E1E0CC5EA3D2CFBF6DB7565AE9DE")
      void encode(
         DEROutputStream  out) throws IOException {
         {
@@ -99,7 +99,7 @@ public class DERTaggedObject extends ASN1TaggedObject {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.186 -0400", hash_original_field = "D91077190958F29EB6E06E2F51FAE62D", hash_generated_field = "1205579FB72FDCEBF761B02588B5601B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.337 -0400", hash_original_field = "D91077190958F29EB6E06E2F51FAE62D", hash_generated_field = "1205579FB72FDCEBF761B02588B5601B")
 
     private static byte[] ZERO_BYTES = new byte[0];
 }

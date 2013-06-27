@@ -25,17 +25,17 @@ import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.EncodingUtils;
 
 public class DigestScheme extends RFC2617Scheme {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.244 -0400", hash_original_field = "D9A22D7A8178D5B42A8750123CBFE5B1", hash_generated_field = "F226924E4DACD94115C3FB4783C05FA4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.262 -0400", hash_original_field = "D9A22D7A8178D5B42A8750123CBFE5B1", hash_generated_field = "F226924E4DACD94115C3FB4783C05FA4")
 
     private boolean complete;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.244 -0400", hash_original_field = "5A3BD9AE5985674B6AD54F2E435C5DAA", hash_generated_field = "3842BF6B6403917837D5616C0B4C3C6A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.272 -0400", hash_original_field = "5A3BD9AE5985674B6AD54F2E435C5DAA", hash_generated_field = "3842BF6B6403917837D5616C0B4C3C6A")
 
     private int qopVariant = QOP_MISSING;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.245 -0400", hash_original_field = "9DBA9637E8635A4D912075CD6EA55530", hash_generated_field = "A436BD0723F1A8DF0FBA775815BA03FC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.272 -0400", hash_original_field = "9DBA9637E8635A4D912075CD6EA55530", hash_generated_field = "A436BD0723F1A8DF0FBA775815BA03FC")
 
     private String cnonce;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.252 -0400", hash_original_method = "7496779349A4F9577FBBD3B727B27A4A", hash_generated_method = "6FBC30D8DE91AA1878BE3E5080514294")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.272 -0400", hash_original_method = "7496779349A4F9577FBBD3B727B27A4A", hash_generated_method = "6FBC30D8DE91AA1878BE3E5080514294")
     public  DigestScheme() {
         super();
         this.complete = false;
@@ -44,19 +44,19 @@ public class DigestScheme extends RFC2617Scheme {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.253 -0400", hash_original_method = "F883A5EB3B1E4D14BCFB97B586287C83", hash_generated_method = "3556C06C7D6D6F1275386C1F6F1F45ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.286 -0400", hash_original_method = "F883A5EB3B1E4D14BCFB97B586287C83", hash_generated_method = "03D8A1D15DAB1347265708D18FD36805")
     @Override
     public void processChallenge(
             final Header header) throws MalformedChallengeException {
         super.processChallenge(header);
         {
-            boolean varB518C50C24DA45919BC97DD2331266CA_941996768 = (getParameter("realm") == null);
+            boolean varB518C50C24DA45919BC97DD2331266CA_1312720256 = (getParameter("realm") == null);
             {
                 if (DroidSafeAndroidRuntime.control) throw new MalformedChallengeException("missing realm in challange");
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var00FABE96FECB9100DDCB41444DF53139_1543543871 = (getParameter("nonce") == null);
+            boolean var00FABE96FECB9100DDCB41444DF53139_1828211070 = (getParameter("nonce") == null);
             {
                 if (DroidSafeAndroidRuntime.control) throw new MalformedChallengeException("missing nonce in challange");
             } //End block
@@ -69,17 +69,17 @@ public class DigestScheme extends RFC2617Scheme {
             StringTokenizer tok;
             tok = new StringTokenizer(qop,",");
             {
-                boolean var5A30417AAEC95B980B8C63A0D4458269_212152019 = (tok.hasMoreTokens());
+                boolean var5A30417AAEC95B980B8C63A0D4458269_1332419181 = (tok.hasMoreTokens());
                 {
                     String variant;
                     variant = tok.nextToken().trim();
                     {
-                        boolean var1C7F26E4E08EA2C75E4C8C422886B96D_1507478221 = (variant.equals("auth"));
+                        boolean var1C7F26E4E08EA2C75E4C8C422886B96D_1666697536 = (variant.equals("auth"));
                         {
                             qopVariant = QOP_AUTH;
                         } //End block
                         {
-                            boolean varC2465AE7835FF3137D782DCD667573FC_1141901269 = (variant.equals("auth-int"));
+                            boolean varC2465AE7835FF3137D782DCD667573FC_1419511654 = (variant.equals("auth-int"));
                             {
                                 qopVariant = QOP_AUTH_INT;
                             } //End block
@@ -102,15 +102,15 @@ public class DigestScheme extends RFC2617Scheme {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.260 -0400", hash_original_method = "F17D438485F30D6AF41BADA0EDB398DD", hash_generated_method = "35DEC113B205B8BED6C3B296875AB2E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.287 -0400", hash_original_method = "F17D438485F30D6AF41BADA0EDB398DD", hash_generated_method = "FD94B492A1C1B3B3FE0FF9D5993A9A89")
     public boolean isComplete() {
         String s;
         s = getParameter("stale");
         {
-            boolean varB983BC005A6E66731B2A7EAFC25F1B76_1502082214 = ("true".equalsIgnoreCase(s));
+            boolean varB983BC005A6E66731B2A7EAFC25F1B76_1627812240 = ("true".equalsIgnoreCase(s));
         } //End collapsed parenthetic
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1316333483 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1316333483;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2115390273 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2115390273;
         // ---------- Original Method ----------
         //String s = getParameter("stale");
         //if ("true".equalsIgnoreCase(s)) {
@@ -121,27 +121,27 @@ public class DigestScheme extends RFC2617Scheme {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.261 -0400", hash_original_method = "590EDC4C396D176AA70267B4181524CE", hash_generated_method = "965B780F0A1F2C8A927CAF1ACBBEBB06")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.287 -0400", hash_original_method = "590EDC4C396D176AA70267B4181524CE", hash_generated_method = "5463853241A369306170534DC0F9458C")
     public String getSchemeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1506018724 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1506018724 = "digest";
-        varB4EAC82CA7396A68D541C85D26508E83_1506018724.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1506018724;
+        String varB4EAC82CA7396A68D541C85D26508E83_1595216893 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1595216893 = "digest";
+        varB4EAC82CA7396A68D541C85D26508E83_1595216893.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1595216893;
         // ---------- Original Method ----------
         //return "digest";
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.261 -0400", hash_original_method = "52FB523EE33548A5337713590AB1DF72", hash_generated_method = "6C57AF40680031382A8D1860F0A29204")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.287 -0400", hash_original_method = "52FB523EE33548A5337713590AB1DF72", hash_generated_method = "B52E08C9A1B0ADB7ECC9471B74703472")
     public boolean isConnectionBased() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1751953498 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1751953498;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1616112074 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1616112074;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.261 -0400", hash_original_method = "53EAC8543BC193A49B7CF7E715181435", hash_generated_method = "EB309994B9A291AEB8E3F9FECBF79D95")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.288 -0400", hash_original_method = "53EAC8543BC193A49B7CF7E715181435", hash_generated_method = "EB309994B9A291AEB8E3F9FECBF79D95")
     public void overrideParamter(final String name, final String value) {
         getParameters().put(name, value);
         addTaint(name.getTaint());
@@ -151,15 +151,15 @@ public class DigestScheme extends RFC2617Scheme {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.270 -0400", hash_original_method = "9DF20B77158B98071C5FA39937248DA7", hash_generated_method = "A7F0DA9D5CFB47832D82FE44388931BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.288 -0400", hash_original_method = "9DF20B77158B98071C5FA39937248DA7", hash_generated_method = "BA0607B4D6545551296135B41C5C7C7B")
     private String getCnonce() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1136218081 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_230945877 = null; //Variable for return #1
         {
             this.cnonce = createCnonce();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1136218081 = this.cnonce;
-        varB4EAC82CA7396A68D541C85D26508E83_1136218081.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1136218081;
+        varB4EAC82CA7396A68D541C85D26508E83_230945877 = this.cnonce;
+        varB4EAC82CA7396A68D541C85D26508E83_230945877.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_230945877;
         // ---------- Original Method ----------
         //if (this.cnonce == null) {
             //this.cnonce = createCnonce();
@@ -168,11 +168,11 @@ public class DigestScheme extends RFC2617Scheme {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.272 -0400", hash_original_method = "DE78FD59B9BB87751F59177A2F51AB0F", hash_generated_method = "9FED3060834B12AE7E8093AF9BD0050C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.289 -0400", hash_original_method = "DE78FD59B9BB87751F59177A2F51AB0F", hash_generated_method = "D6B563CD97E4502763F8C29C648C7C1F")
     public Header authenticate(
             final Credentials credentials, 
             final HttpRequest request) throws AuthenticationException {
-        Header varB4EAC82CA7396A68D541C85D26508E83_161831295 = null; //Variable for return #1
+        Header varB4EAC82CA7396A68D541C85D26508E83_249245609 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Credentials may not be null");
         } //End block
@@ -189,11 +189,11 @@ public class DigestScheme extends RFC2617Scheme {
         } //End block
         String digest;
         digest = createDigest(credentials);
-        varB4EAC82CA7396A68D541C85D26508E83_161831295 = createDigestHeader(credentials, digest);
+        varB4EAC82CA7396A68D541C85D26508E83_249245609 = createDigestHeader(credentials, digest);
         addTaint(credentials.getTaint());
         addTaint(request.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_161831295.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_161831295;
+        varB4EAC82CA7396A68D541C85D26508E83_249245609.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_249245609;
         // ---------- Original Method ----------
         //if (credentials == null) {
             //throw new IllegalArgumentException("Credentials may not be null");
@@ -225,9 +225,9 @@ public class DigestScheme extends RFC2617Scheme {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.321 -0400", hash_original_method = "EC5C003DA4A6F1C86FB6170174AAC10C", hash_generated_method = "BA2BD9755AC899A20C515D977B9A89E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.309 -0400", hash_original_method = "EC5C003DA4A6F1C86FB6170174AAC10C", hash_generated_method = "9DAC22603BC8764290FE91A7FA87CC23")
     private String createDigest(final Credentials credentials) throws AuthenticationException {
-        String varB4EAC82CA7396A68D541C85D26508E83_275892727 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2016754958 = null; //Variable for return #1
         String uri;
         uri = getParameter("uri");
         String realm;
@@ -275,7 +275,7 @@ public class DigestScheme extends RFC2617Scheme {
         String a1;
         a1 = tmp.toString();
         {
-            boolean var9A323FE2D4093DE847DBC2C61427986A_370921911 = (algorithm.equalsIgnoreCase("MD5-sess"));
+            boolean var9A323FE2D4093DE847DBC2C61427986A_1297891362 = (algorithm.equalsIgnoreCase("MD5-sess"));
             {
                 String cnonce;
                 cnonce = getCnonce();
@@ -291,7 +291,7 @@ public class DigestScheme extends RFC2617Scheme {
                 a1 = tmp3.toString();
             } //End block
             {
-                boolean var93593B6D05D8F0C556A656FE5696494F_1467646923 = (!algorithm.equalsIgnoreCase("MD5"));
+                boolean var93593B6D05D8F0C556A656FE5696494F_1893773500 = (!algorithm.equalsIgnoreCase("MD5"));
                 {
                     if (DroidSafeAndroidRuntime.control) throw new AuthenticationException("Unhandled algorithm " + algorithm + " requested");
                 } //End block
@@ -340,24 +340,24 @@ public class DigestScheme extends RFC2617Scheme {
         } //End block
         String serverDigest;
         serverDigest = encode(md5Helper.digest(EncodingUtils.getAsciiBytes(serverDigestValue)));
-        varB4EAC82CA7396A68D541C85D26508E83_275892727 = serverDigest;
+        varB4EAC82CA7396A68D541C85D26508E83_2016754958 = serverDigest;
         addTaint(credentials.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_275892727.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_275892727;
+        varB4EAC82CA7396A68D541C85D26508E83_2016754958.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2016754958;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.338 -0400", hash_original_method = "C034852EE12EEF6A2A977B845769FACB", hash_generated_method = "1763734AF216E62FF4402DD7380B18B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.323 -0400", hash_original_method = "C034852EE12EEF6A2A977B845769FACB", hash_generated_method = "86A4E9EAB611DE48AA74C921B90D05FE")
     private Header createDigestHeader(
             final Credentials credentials, 
             final String digest) throws AuthenticationException {
-        Header varB4EAC82CA7396A68D541C85D26508E83_1602790266 = null; //Variable for return #1
+        Header varB4EAC82CA7396A68D541C85D26508E83_1100870636 = null; //Variable for return #1
         CharArrayBuffer buffer;
         buffer = new CharArrayBuffer(128);
         {
-            boolean var0D47185A0D32DD28D63E82CE34A14458_931416196 = (isProxy());
+            boolean var0D47185A0D32DD28D63E82CE34A14458_1893725561 = (isProxy());
             {
                 buffer.append(AUTH.PROXY_AUTH_RESP);
             } //End block
@@ -401,7 +401,7 @@ public class DigestScheme extends RFC2617Scheme {
         {
             int i;
             i = 0;
-            boolean var41B38B8299B0C96B0545ADBE0A9274EC_1524305687 = (i < params.size());
+            boolean var41B38B8299B0C96B0545ADBE0A9274EC_274422872 = (i < params.size());
             {
                 BasicNameValuePair param;
                 param = params.get(i);
@@ -415,19 +415,19 @@ public class DigestScheme extends RFC2617Scheme {
                 .formatNameValuePair(buffer, param, !noQuotes);
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1602790266 = new BufferedHeader(buffer);
+        varB4EAC82CA7396A68D541C85D26508E83_1100870636 = new BufferedHeader(buffer);
         addTaint(credentials.getTaint());
         addTaint(digest.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1602790266.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1602790266;
+        varB4EAC82CA7396A68D541C85D26508E83_1100870636.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1100870636;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.340 -0400", hash_original_method = "4B7F5D1CEF78CAAD9B937EECFEA67886", hash_generated_method = "17FF5EB41C28C632D461C3199E43E15A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.324 -0400", hash_original_method = "4B7F5D1CEF78CAAD9B937EECFEA67886", hash_generated_method = "D79602FCC752A8E192DC068F5F7D6535")
     private String getQopVariantString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_294742038 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1802508693 = null; //Variable for return #1
         String qopOption;
         {
             qopOption = "auth-int";
@@ -435,9 +435,9 @@ public class DigestScheme extends RFC2617Scheme {
         {
             qopOption = "auth";
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_294742038 = qopOption;
-        varB4EAC82CA7396A68D541C85D26508E83_294742038.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_294742038;
+        varB4EAC82CA7396A68D541C85D26508E83_1802508693 = qopOption;
+        varB4EAC82CA7396A68D541C85D26508E83_1802508693.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1802508693;
         // ---------- Original Method ----------
         //String qopOption;
         //if (qopVariant == QOP_AUTH_INT) {
@@ -473,19 +473,22 @@ public class DigestScheme extends RFC2617Scheme {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.342 -0400", hash_original_field = "F7D8830866BD67517862140230F751E2", hash_generated_field = "1D1C13D8614C47C3292CA7EB2178DEEF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.325 -0400", hash_original_field = "F7D8830866BD67517862140230F751E2", hash_generated_field = "0E7EAD0EC9D2D7DC5686BAF9F7144B6E")
 
-    private static char[] HEXADECIMAL = ;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.342 -0400", hash_original_field = "ADA7972328A77782718F3684A00C1F3B", hash_generated_field = "B5B223D455EE12850C2F1374AB5DE1F9")
+    private static char[] HEXADECIMAL = {
+        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 
+        'e', 'f'
+    };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.325 -0400", hash_original_field = "ADA7972328A77782718F3684A00C1F3B", hash_generated_field = "B5B223D455EE12850C2F1374AB5DE1F9")
 
     private static String NC = "00000001";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.342 -0400", hash_original_field = "DF808FC1E99F7D3929CA338656EC3B51", hash_generated_field = "9E766AA0744B349E1FD1CB2ACFC2B1A8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.325 -0400", hash_original_field = "DF808FC1E99F7D3929CA338656EC3B51", hash_generated_field = "9E766AA0744B349E1FD1CB2ACFC2B1A8")
 
     private static int QOP_MISSING = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.342 -0400", hash_original_field = "501256FDC0D3D79D30693D098788AA70", hash_generated_field = "FC2A708812DA060ED0124C934BEDA1EB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.325 -0400", hash_original_field = "501256FDC0D3D79D30693D098788AA70", hash_generated_field = "FC2A708812DA060ED0124C934BEDA1EB")
 
     private static int QOP_AUTH_INT = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.342 -0400", hash_original_field = "C4759F1A948E06530AA939B8020E3333", hash_generated_field = "89105F532E8F55C53CD42B5F9770FF4A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.325 -0400", hash_original_field = "C4759F1A948E06530AA939B8020E3333", hash_generated_field = "89105F532E8F55C53CD42B5F9770FF4A")
 
     private static int QOP_AUTH = 2;
 }

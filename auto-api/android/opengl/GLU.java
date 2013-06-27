@@ -11,7 +11,7 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class GLU {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.392 -0400", hash_original_method = "81777980E1C12E67D555E59C0A8957E0", hash_generated_method = "81777980E1C12E67D555E59C0A8957E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:26.833 -0400", hash_original_method = "81777980E1C12E67D555E59C0A8957E0", hash_generated_method = "81777980E1C12E67D555E59C0A8957E0")
     public GLU ()
     {
         //Synthesized constructor
@@ -130,7 +130,7 @@ public class GLU {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:25.415 -0400", hash_original_field = "FBF4F52F41040A0A65CDDBF5F9BB5D07", hash_generated_field = "C9AEA543B965CB6255638AF0115492F7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:26.855 -0400", hash_original_field = "FBF4F52F41040A0A65CDDBF5F9BB5D07", hash_generated_field = "C9AEA543B965CB6255638AF0115492F7")
 
     private static float[] sScratch = new float[32];
 }

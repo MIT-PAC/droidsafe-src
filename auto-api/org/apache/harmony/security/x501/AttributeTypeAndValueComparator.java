@@ -13,14 +13,14 @@ import org.apache.harmony.security.utils.ObjectIdentifier;
 
 public class AttributeTypeAndValueComparator implements Comparator, Serializable {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.194 -0400", hash_original_method = "A875CA77DCF86273FF83ADF73F0AA798", hash_generated_method = "A875CA77DCF86273FF83ADF73F0AA798")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.186 -0400", hash_original_method = "A875CA77DCF86273FF83ADF73F0AA798", hash_generated_method = "A875CA77DCF86273FF83ADF73F0AA798")
     public AttributeTypeAndValueComparator ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.195 -0400", hash_original_method = "3F7D901C5D2A92F81B8BE7A716DA67AE", hash_generated_method = "2F9669D3A2F51A63F35613EDDCCFA9A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.186 -0400", hash_original_method = "3F7D901C5D2A92F81B8BE7A716DA67AE", hash_generated_method = "9F7D7B90EBE5690EDA80AFA2D172F26E")
     public int compare(Object obj1, Object obj2) {
         AttributeTypeAndValue atav1;
         atav1 = (AttributeTypeAndValue) obj1;
@@ -31,13 +31,13 @@ public class AttributeTypeAndValueComparator implements Comparator, Serializable
         String kw2;
         kw2 = atav2.getType().getName();
         {
-            int varDF053E728FF3446E2A4ACCAE2F970CAB_1880681650 = (kw1.compareTo(kw2));
+            int varDF053E728FF3446E2A4ACCAE2F970CAB_262973993 = (kw1.compareTo(kw2));
         } //End block
-        int varFFBF5540CE921DEEB7A5A162F4171799_975517108 = (compateOids(atav1.getType(), atav2.getType()));
+        int varFFBF5540CE921DEEB7A5A162F4171799_1503677050 = (compateOids(atav1.getType(), atav2.getType()));
         addTaint(obj1.getTaint());
         addTaint(obj2.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_364214091 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_364214091;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1987758356 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1987758356;
         // ---------- Original Method ----------
         //if (obj1 == obj2) {
             //return 0;
@@ -84,7 +84,7 @@ public class AttributeTypeAndValueComparator implements Comparator, Serializable
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.204 -0400", hash_original_field = "552BD64E17BE452CB24FFE6F7520D2C3", hash_generated_field = "5A2E254478FA88079AB984D89920B3E9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.193 -0400", hash_original_field = "552BD64E17BE452CB24FFE6F7520D2C3", hash_generated_field = "5A2E254478FA88079AB984D89920B3E9")
 
     private static long serialVersionUID = -1286471842007103132L;
 }

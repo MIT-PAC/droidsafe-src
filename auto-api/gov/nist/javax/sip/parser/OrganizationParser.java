@@ -12,7 +12,7 @@ import java.text.ParseException;
 
 public class OrganizationParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.866 -0400", hash_original_method = "549F69CADB3AF439FF99C26DCF97EF61", hash_generated_method = "6170B9428B77266BA6E655AF7ACBDA03")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.851 -0400", hash_original_method = "549F69CADB3AF439FF99C26DCF97EF61", hash_generated_method = "6170B9428B77266BA6E655AF7ACBDA03")
     public  OrganizationParser(String organization) {
         super(organization);
         addTaint(organization.getTaint());
@@ -20,7 +20,7 @@ public class OrganizationParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.871 -0400", hash_original_method = "5407EA6CAC142FB29C8ECABB6BAE3B2C", hash_generated_method = "30C64867BC39878E46F7846B11CA9D04")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.851 -0400", hash_original_method = "5407EA6CAC142FB29C8ECABB6BAE3B2C", hash_generated_method = "30C64867BC39878E46F7846B11CA9D04")
     protected  OrganizationParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -28,9 +28,9 @@ public class OrganizationParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.872 -0400", hash_original_method = "FCDFEF7484AB928FBE1CF6D95D3DCFBA", hash_generated_method = "03CE923369224661B15E43CAE1C840BA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.858 -0400", hash_original_method = "FCDFEF7484AB928FBE1CF6D95D3DCFBA", hash_generated_method = "CD51AC4D5750866A4A71D79534DE5DE3")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_371345391 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1316697813 = null; //Variable for return #1
         dbg_enter("OrganizationParser.parse");
         Organization organization;
         organization = new Organization();
@@ -42,14 +42,14 @@ public class OrganizationParser extends HeaderParser {
             String value;
             value = this.lexer.getRest();
             organization.setOrganization(value.trim());
-            varB4EAC82CA7396A68D541C85D26508E83_371345391 = organization;
+            varB4EAC82CA7396A68D541C85D26508E83_1316697813 = organization;
         } //End block
         finally 
         {
             dbg_leave("OrganizationParser.parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_371345391.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_371345391;
+        varB4EAC82CA7396A68D541C85D26508E83_1316697813.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1316697813;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("OrganizationParser.parse");

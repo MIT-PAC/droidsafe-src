@@ -10,13 +10,13 @@ import java.util.Iterator;
 
 public class AssertionFailedError extends Error {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.985 -0400", hash_original_method = "71F257E86E7BC4683CC6DEDD211B2B80", hash_generated_method = "CA362C55EDDF9D2AF60C14AF4873ACCA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.580 -0400", hash_original_method = "71F257E86E7BC4683CC6DEDD211B2B80", hash_generated_method = "CA362C55EDDF9D2AF60C14AF4873ACCA")
     public  AssertionFailedError() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.985 -0400", hash_original_method = "B8BE23DBCDF9422A0C250D37CF195D42", hash_generated_method = "A461FAA9C54EAE2F63E70B22E161CFD8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.581 -0400", hash_original_method = "B8BE23DBCDF9422A0C250D37CF195D42", hash_generated_method = "A461FAA9C54EAE2F63E70B22E161CFD8")
     public  AssertionFailedError(String message) {
         super (message);
         addTaint(message.getTaint());

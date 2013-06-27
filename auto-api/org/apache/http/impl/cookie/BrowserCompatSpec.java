@@ -23,11 +23,11 @@ import org.apache.http.message.ParserCursor;
 import org.apache.http.util.CharArrayBuffer;
 
 public class BrowserCompatSpec extends CookieSpecBase {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.366 -0400", hash_original_field = "60E59FA1D4034653FC981EEB8C0CE3F3", hash_generated_field = "41DF6CEE83D74A6FDB1FAB0DD1A4D526")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.585 -0400", hash_original_field = "60E59FA1D4034653FC981EEB8C0CE3F3", hash_generated_field = "41DF6CEE83D74A6FDB1FAB0DD1A4D526")
 
     private String[] datepatterns;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.372 -0400", hash_original_method = "6F0554959345610814E9AA8C15D0E733", hash_generated_method = "FB01414D4358F515FB9F201F8E643B3E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.586 -0400", hash_original_method = "6F0554959345610814E9AA8C15D0E733", hash_generated_method = "FB01414D4358F515FB9F201F8E643B3E")
     public  BrowserCompatSpec(final String[] datepatterns) {
         super();
         {
@@ -59,16 +59,16 @@ public class BrowserCompatSpec extends CookieSpecBase {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.373 -0400", hash_original_method = "C508CCBAE435AF6EA5073D1CDD101081", hash_generated_method = "E42222EFF27A1027FCCB81D80EC19544")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.586 -0400", hash_original_method = "C508CCBAE435AF6EA5073D1CDD101081", hash_generated_method = "E42222EFF27A1027FCCB81D80EC19544")
     public  BrowserCompatSpec() {
         this(null);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.375 -0400", hash_original_method = "D6912D1F98189529AD0F723836603277", hash_generated_method = "EB7769CF39892F05C867232C489C4ED7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.591 -0400", hash_original_method = "D6912D1F98189529AD0F723836603277", hash_generated_method = "7EFEB247FC44C5F973D36C477BDE5A65")
     public List<Cookie> parse(final Header header, final CookieOrigin origin) throws MalformedCookieException {
-        List<Cookie> varB4EAC82CA7396A68D541C85D26508E83_1274028229 = null; //Variable for return #1
+        List<Cookie> varB4EAC82CA7396A68D541C85D26508E83_646855237 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Header may not be null");
         } //End block
@@ -124,24 +124,24 @@ public class BrowserCompatSpec extends CookieSpecBase {
         {
             elems = header.getElements();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1274028229 = parse(elems, origin);
+        varB4EAC82CA7396A68D541C85D26508E83_646855237 = parse(elems, origin);
         addTaint(header.getTaint());
         addTaint(origin.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1274028229.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1274028229;
+        varB4EAC82CA7396A68D541C85D26508E83_646855237.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_646855237;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.386 -0400", hash_original_method = "A80B57E4EF4EED165A6AA62FBF374996", hash_generated_method = "BC742D0EDB0E5CDEE802C7AD1ED7801A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.607 -0400", hash_original_method = "A80B57E4EF4EED165A6AA62FBF374996", hash_generated_method = "95D3FC1CF5FC94BAE3CBB1E5D8BF55FA")
     public List<Header> formatCookies(final List<Cookie> cookies) {
-        List<Header> varB4EAC82CA7396A68D541C85D26508E83_326646399 = null; //Variable for return #1
+        List<Header> varB4EAC82CA7396A68D541C85D26508E83_1694041841 = null; //Variable for return #1
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("List of cookies may not be null");
         } //End block
         {
-            boolean var054F663771300FA8A13A91F733F5D6CB_1963398981 = (cookies.isEmpty());
+            boolean var054F663771300FA8A13A91F733F5D6CB_537696945 = (cookies.isEmpty());
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("List of cookies may not be empty");
             } //End block
@@ -153,7 +153,7 @@ public class BrowserCompatSpec extends CookieSpecBase {
         {
             int i;
             i = 0;
-            boolean varE9AF3BEAEA8CF5406F5AC5D6F9EE8F57_1623110805 = (i < cookies.size());
+            boolean varE9AF3BEAEA8CF5406F5AC5D6F9EE8F57_1710967153 = (i < cookies.size());
             {
                 Cookie cookie;
                 cookie = cookies.get(i);
@@ -172,36 +172,36 @@ public class BrowserCompatSpec extends CookieSpecBase {
         List<Header> headers;
         headers = new ArrayList<Header>(1);
         headers.add(new BufferedHeader(buffer));
-        varB4EAC82CA7396A68D541C85D26508E83_326646399 = headers;
+        varB4EAC82CA7396A68D541C85D26508E83_1694041841 = headers;
         addTaint(cookies.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_326646399.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_326646399;
+        varB4EAC82CA7396A68D541C85D26508E83_1694041841.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1694041841;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.392 -0400", hash_original_method = "F5A7F7B6DBF07E93DFA757749FB9F06B", hash_generated_method = "63F002BAACAF5A36C7EE7EAECBEC4C58")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.607 -0400", hash_original_method = "F5A7F7B6DBF07E93DFA757749FB9F06B", hash_generated_method = "C81F1A691812E4A6CD01878B20DA77F3")
     public int getVersion() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_876714300 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_876714300;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1975480891 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1975480891;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.393 -0400", hash_original_method = "C1FA79C2C3115B4C8F8CB20B10CB9417", hash_generated_method = "2AAE7FDE69927615DB90D0C8ACFAE67B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.610 -0400", hash_original_method = "C1FA79C2C3115B4C8F8CB20B10CB9417", hash_generated_method = "FC3E5A060723F130C978365C59B99940")
     public Header getVersionHeader() {
-        Header varB4EAC82CA7396A68D541C85D26508E83_1024273773 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1024273773 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1024273773.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1024273773;
+        Header varB4EAC82CA7396A68D541C85D26508E83_768015412 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_768015412 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_768015412.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_768015412;
         // ---------- Original Method ----------
         //return null;
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:16.397 -0400", hash_original_field = "6EB8F596E5B4290D58EA6D0E959CFB4C", hash_generated_field = "07580E77A4298C6BBE845E0F387F7210")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:17.611 -0400", hash_original_field = "6EB8F596E5B4290D58EA6D0E959CFB4C", hash_generated_field = "07580E77A4298C6BBE845E0F387F7210")
 
     protected static String[] DATE_PATTERNS = new String[] {
             DateUtils.PATTERN_RFC1123,

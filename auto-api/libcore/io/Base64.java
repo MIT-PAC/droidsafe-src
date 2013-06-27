@@ -12,7 +12,7 @@ import libcore.util.EmptyArray;
 
 public final class Base64 {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.307 -0400", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "96F9E0BDD170E9FC5C3951236F2EB54E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.838 -0400", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "96F9E0BDD170E9FC5C3951236F2EB54E")
     private  Base64() {
         // ---------- Original Method ----------
     }
@@ -115,7 +115,7 @@ public final class Base64 {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.308 -0400", hash_original_field = "A5BA4FA48DF3D1EE63BD76EA10F554A0", hash_generated_field = "3425AD2054C2C06D2B6D40E1BD980D44")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.854 -0400", hash_original_field = "A5BA4FA48DF3D1EE63BD76EA10F554A0", hash_generated_field = "3425AD2054C2C06D2B6D40E1BD980D44")
 
     private static byte[] map = new byte[]
         {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',

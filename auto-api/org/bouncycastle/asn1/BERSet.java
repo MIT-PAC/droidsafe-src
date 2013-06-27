@@ -12,13 +12,13 @@ import java.util.Enumeration;
 
 public class BERSet extends DERSet {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.832 -0400", hash_original_method = "3B0CACFC7D97D5B3260958CA327C2CC2", hash_generated_method = "F2D7951BF96B2D911C0F933229D9518A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.908 -0400", hash_original_method = "3B0CACFC7D97D5B3260958CA327C2CC2", hash_generated_method = "F2D7951BF96B2D911C0F933229D9518A")
     public  BERSet() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.832 -0400", hash_original_method = "58A8309A1516CB825A1DBAF515FA0A22", hash_generated_method = "1CCB56D2DD10F9EC3289A5C5F3AAB4A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.917 -0400", hash_original_method = "58A8309A1516CB825A1DBAF515FA0A22", hash_generated_method = "1CCB56D2DD10F9EC3289A5C5F3AAB4A4")
     public  BERSet(
         DEREncodable    obj) {
         super(obj);
@@ -27,7 +27,7 @@ public class BERSet extends DERSet {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.833 -0400", hash_original_method = "863ECA664105F25F4F85CEE28355E9A1", hash_generated_method = "8B5CBD105D93B7CFE9D6196BB30EF466")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.918 -0400", hash_original_method = "863ECA664105F25F4F85CEE28355E9A1", hash_generated_method = "8B5CBD105D93B7CFE9D6196BB30EF466")
     public  BERSet(
         ASN1EncodableVector   v) {
         super(v, false);
@@ -36,7 +36,7 @@ public class BERSet extends DERSet {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.839 -0400", hash_original_method = "EA203440C88579BB4F9E161A0FFE3946", hash_generated_method = "F2E6BCA4D6706B4F0CCC1717683CE026")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.918 -0400", hash_original_method = "EA203440C88579BB4F9E161A0FFE3946", hash_generated_method = "F2E6BCA4D6706B4F0CCC1717683CE026")
       BERSet(
         ASN1EncodableVector  v,
         boolean              needsSorting) {
@@ -47,7 +47,7 @@ public class BERSet extends DERSet {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.840 -0400", hash_original_method = "F901566FF0371DE323597B13C49C1024", hash_generated_method = "119D49929EDBAC8985C90023E38030B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.918 -0400", hash_original_method = "F901566FF0371DE323597B13C49C1024", hash_generated_method = "E3CE0BBC18BB7D3E3169C5A5A9229916")
      void encode(
         DEROutputStream out) throws IOException {
         {
@@ -56,7 +56,7 @@ public class BERSet extends DERSet {
             Enumeration e;
             e = getObjects();
             {
-                boolean varE6301E07393E7C92A45A62612E875EEF_583327301 = (e.hasMoreElements());
+                boolean varE6301E07393E7C92A45A62612E875EEF_942667947 = (e.hasMoreElements());
                 {
                     out.writeObject(e.nextElement());
                 } //End block

@@ -12,29 +12,29 @@ import android.database.Cursor;
 import java.util.HashMap;
 
 public abstract class SQLiteProgram extends SQLiteClosable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.320 -0400", hash_original_field = "8C0B67E1F99496AB4CD09433C231BEB3", hash_generated_field = "45ED686A7022C4BC2786DB04CE6EE8DB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.894 -0400", hash_original_field = "8C0B67E1F99496AB4CD09433C231BEB3", hash_generated_field = "45ED686A7022C4BC2786DB04CE6EE8DB")
 
     @Deprecated protected SQLiteDatabase mDatabase;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.332 -0400", hash_original_field = "ABF275D728AAD5B5017275F72010DE2D", hash_generated_field = "4999D4179E22F9283AE45DB93648A65D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.894 -0400", hash_original_field = "ABF275D728AAD5B5017275F72010DE2D", hash_generated_field = "4999D4179E22F9283AE45DB93648A65D")
 
     String mSql;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.333 -0400", hash_original_field = "83BEE6D182A8A0F703AE0355A9CE0E10", hash_generated_field = "85232168C2FFA32DBC86841F8D803FC7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.894 -0400", hash_original_field = "83BEE6D182A8A0F703AE0355A9CE0E10", hash_generated_field = "85232168C2FFA32DBC86841F8D803FC7")
 
     @Deprecated protected int nHandle;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.333 -0400", hash_original_field = "4898CE77BC963F16329C91A665085757", hash_generated_field = "1913885E9133C6D2471365A2BE7C68CC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.894 -0400", hash_original_field = "4898CE77BC963F16329C91A665085757", hash_generated_field = "1913885E9133C6D2471365A2BE7C68CC")
 
     SQLiteCompiledSql mCompiledSql;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.333 -0400", hash_original_field = "89022B4A7B6E760B21FA35C0F1DCD003", hash_generated_field = "AC169818D70E77676A3C030A1C1550F3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.894 -0400", hash_original_field = "89022B4A7B6E760B21FA35C0F1DCD003", hash_generated_field = "AC169818D70E77676A3C030A1C1550F3")
 
     @Deprecated protected int nStatement;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.333 -0400", hash_original_field = "F17FD8F8DF407F1B4DA85EE2CFCED461", hash_generated_field = "C5DBBCFF0D5F9E2F9756598D8BC58ACC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.894 -0400", hash_original_field = "F17FD8F8DF407F1B4DA85EE2CFCED461", hash_generated_field = "C5DBBCFF0D5F9E2F9756598D8BC58ACC")
 
     HashMap<Integer, Object> mBindArgs = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.333 -0400", hash_original_field = "80AC909AAEC71746A068105F25E3B9AE", hash_generated_field = "424B264B2B85E8A83136F411485ACD38")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.895 -0400", hash_original_field = "80AC909AAEC71746A068105F25E3B9AE", hash_generated_field = "424B264B2B85E8A83136F411485ACD38")
 
     int mStatementType;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.333 -0400", hash_original_method = "7775AC6B878F6A87A2372052B1B0D459", hash_generated_method = "4477DCAF544BA636792EBDD195E0ACAF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.911 -0400", hash_original_method = "7775AC6B878F6A87A2372052B1B0D459", hash_generated_method = "4477DCAF544BA636792EBDD195E0ACAF")
       SQLiteProgram(SQLiteDatabase db, String sql) {
         this(db, sql, null, true);
         addTaint(db.getTaint());
@@ -43,7 +43,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.346 -0400", hash_original_method = "DADBFC98E2D0F265D4B5A43330A492E4", hash_generated_method = "93DD668CFFFEBD7EAD2D45FBB4452815")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.914 -0400", hash_original_method = "DADBFC98E2D0F265D4B5A43330A492E4", hash_generated_method = "93DD668CFFFEBD7EAD2D45FBB4452815")
       SQLiteProgram(SQLiteDatabase db, String sql, Object[] bindArgs,
             boolean compileFlag) {
         mSql = sql.trim();
@@ -86,7 +86,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.357 -0400", hash_original_method = "EE8899F672BCD12A22959F518D1125AF", hash_generated_method = "E9621F4A2DE96416F374FB0339FC1B36")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.926 -0400", hash_original_method = "EE8899F672BCD12A22959F518D1125AF", hash_generated_method = "BECB16D85F4C986E01F0B3277F5F2616")
     private void compileSql() {
         {
             mCompiledSql = new SQLiteCompiledSql(mDatabase, mSql);
@@ -100,7 +100,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
         } //End block
         {
             {
-                boolean var67BB5573694D5AAA2A946CFD3319B64C_920554045 = (!mCompiledSql.acquire());
+                boolean var67BB5573694D5AAA2A946CFD3319B64C_1926045496 = (!mCompiledSql.acquire());
                 {
                     int last;
                     last = mCompiledSql.nStatement;
@@ -114,7 +114,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.359 -0400", hash_original_method = "300DFE9F6A4C69242F1C212512462325", hash_generated_method = "1CD0B8729AFD456C5EE63418C49A729F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.942 -0400", hash_original_method = "300DFE9F6A4C69242F1C212512462325", hash_generated_method = "1CD0B8729AFD456C5EE63418C49A729F")
     @Override
     protected void onAllReferencesReleased() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -128,7 +128,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.359 -0400", hash_original_method = "A968FD9C775F09F9345F28805B1169A5", hash_generated_method = "431B9CF113097FF3B598F21FC4A441C4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.944 -0400", hash_original_method = "A968FD9C775F09F9345F28805B1169A5", hash_generated_method = "431B9CF113097FF3B598F21FC4A441C4")
     @Override
     protected void onAllReferencesReleasedFromContainer() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -140,7 +140,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.382 -0400", hash_original_method = "A1FA2CE0BFABB0D7A31C7494B049120F", hash_generated_method = "AEF4847162FF006ACE039D37EC0210A6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.944 -0400", hash_original_method = "A1FA2CE0BFABB0D7A31C7494B049120F", hash_generated_method = "AEF4847162FF006ACE039D37EC0210A6")
      void release() {
         mDatabase.releaseCompiledSqlObj(mSql, mCompiledSql);
         mCompiledSql = null;
@@ -155,20 +155,20 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.382 -0400", hash_original_method = "E07CAA4B1BF262B61B70604363CAC3E9", hash_generated_method = "A5BDF87D6089FAB2FFAD87EBF2760629")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.945 -0400", hash_original_method = "E07CAA4B1BF262B61B70604363CAC3E9", hash_generated_method = "9488250E7B28E96C5FD78E4B9CB308CA")
     @Deprecated
     public final int getUniqueId() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1676815634 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1676815634;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1954816438 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1954816438;
         // ---------- Original Method ----------
         //return -1;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.383 -0400", hash_original_method = "76820A9DAA0EF4EAA60C4E690E9DF41D", hash_generated_method = "A94CB2F2A09C8020BB5E34ABD3C90925")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.945 -0400", hash_original_method = "76820A9DAA0EF4EAA60C4E690E9DF41D", hash_generated_method = "034073CD500BC2B043565B5C60E6039D")
      int getSqlStatementId() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_965031181 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_965031181;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1332528637 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1332528637;
         // ---------- Original Method ----------
         //synchronized(this) {
         //return (mCompiledSql == null) ? 0 : nStatement;
@@ -176,18 +176,18 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.390 -0400", hash_original_method = "D92A66541C65863AB0B524498A872E5D", hash_generated_method = "907C055045ECF3FAD2134E738EBF3C52")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.958 -0400", hash_original_method = "D92A66541C65863AB0B524498A872E5D", hash_generated_method = "129D0F92A530907F328FD384E61BE854")
      String getSqlString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1543633137 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1543633137 = mSql;
-        varB4EAC82CA7396A68D541C85D26508E83_1543633137.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1543633137;
+        String varB4EAC82CA7396A68D541C85D26508E83_1151174826 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1151174826 = mSql;
+        varB4EAC82CA7396A68D541C85D26508E83_1151174826.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1151174826;
         // ---------- Original Method ----------
         //return mSql;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.390 -0400", hash_original_method = "B49B29A59D94DA04C289B1136BB98967", hash_generated_method = "AFFB24A97E7B835AB0D12D6BB202A60F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.958 -0400", hash_original_method = "B49B29A59D94DA04C289B1136BB98967", hash_generated_method = "AFFB24A97E7B835AB0D12D6BB202A60F")
     @Deprecated
     protected void compile(String sql, boolean forceCompilation) {
         addTaint(sql.getTaint());
@@ -196,7 +196,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.392 -0400", hash_original_method = "7AFA2099A2DCB432F4822D315BB6A2D0", hash_generated_method = "4705C44EF2239B94640BC373A03372A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.960 -0400", hash_original_method = "7AFA2099A2DCB432F4822D315BB6A2D0", hash_generated_method = "4705C44EF2239B94640BC373A03372A0")
     private void bind(int type, int index, Object value) {
         mDatabase.verifyDbIsOpen();
         addToBindArgs(index, (type == Cursor.FIELD_TYPE_NULL) ? null : value);
@@ -233,7 +233,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.393 -0400", hash_original_method = "3480FC3F53F060D0AF87F13A57EE020E", hash_generated_method = "6EE54E03CEE99F89ECAD4C4F085F5E3F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.977 -0400", hash_original_method = "3480FC3F53F060D0AF87F13A57EE020E", hash_generated_method = "6EE54E03CEE99F89ECAD4C4F085F5E3F")
     public void bindNull(int index) {
         bind(Cursor.FIELD_TYPE_NULL, index, null);
         addTaint(index);
@@ -242,7 +242,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.404 -0400", hash_original_method = "DDFF1311EF84C79E9F0283B8959C214A", hash_generated_method = "A9C11960F0E2E7F363017F1AA9F76FDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.977 -0400", hash_original_method = "DDFF1311EF84C79E9F0283B8959C214A", hash_generated_method = "A9C11960F0E2E7F363017F1AA9F76FDD")
     public void bindLong(int index, long value) {
         bind(Cursor.FIELD_TYPE_INTEGER, index, value);
         addTaint(index);
@@ -252,7 +252,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.405 -0400", hash_original_method = "D271F20EDF0F2BB1E84FEE6A8DFAF59F", hash_generated_method = "A143E61D8D48B234493AD21D8711DA61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.979 -0400", hash_original_method = "D271F20EDF0F2BB1E84FEE6A8DFAF59F", hash_generated_method = "A143E61D8D48B234493AD21D8711DA61")
     public void bindDouble(int index, double value) {
         bind(Cursor.FIELD_TYPE_FLOAT, index, value);
         addTaint(index);
@@ -262,7 +262,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.408 -0400", hash_original_method = "963A4C4D7269247053E24419DAA13FC1", hash_generated_method = "3D63D34B10B8BBEC22BCA729C5A9871E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.993 -0400", hash_original_method = "963A4C4D7269247053E24419DAA13FC1", hash_generated_method = "3D63D34B10B8BBEC22BCA729C5A9871E")
     public void bindString(int index, String value) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("the bind value at index " + index + " is null");
@@ -278,7 +278,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.409 -0400", hash_original_method = "C702C9CEB9955A1F1B2C6A119BC67F74", hash_generated_method = "6812B9BCCF37279EB0DE423DFBC794E3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.994 -0400", hash_original_method = "C702C9CEB9955A1F1B2C6A119BC67F74", hash_generated_method = "6812B9BCCF37279EB0DE423DFBC794E3")
     public void bindBlob(int index, byte[] value) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("the bind value at index " + index + " is null");
@@ -294,7 +294,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.410 -0400", hash_original_method = "A82C4E1E74B388EF1F68336E0B7074B9", hash_generated_method = "1EDABEB034297A5A67630BA6C35FE99D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.995 -0400", hash_original_method = "A82C4E1E74B388EF1F68336E0B7074B9", hash_generated_method = "1EDABEB034297A5A67630BA6C35FE99D")
     public void clearBindings() {
         mBindArgs = null;
         mDatabase.verifyDbIsOpen();
@@ -322,11 +322,11 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.490 -0400", hash_original_method = "D3AE998E3454F9C657DFB347B01A5D33", hash_generated_method = "F954D699893A923BDFAF4D15263D4B4F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:11.996 -0400", hash_original_method = "D3AE998E3454F9C657DFB347B01A5D33", hash_generated_method = "8C6E9CEE6B8E2FC5804CFC13BF4736D2")
     public void close() {
         mBindArgs = null;
         {
-            boolean varDE68D5CB54419BE6A192FC7E85769926_1854584174 = (nHandle == 0 || !mDatabase.isOpen());
+            boolean varDE68D5CB54419BE6A192FC7E85769926_997685258 = (nHandle == 0 || !mDatabase.isOpen());
         } //End collapsed parenthetic
         releaseReference();
         // ---------- Original Method ----------
@@ -338,7 +338,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.493 -0400", hash_original_method = "8DD7248015BFD919A162C74D92E1DB42", hash_generated_method = "56D98F965A2928CD06D27411ECA151D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.007 -0400", hash_original_method = "8DD7248015BFD919A162C74D92E1DB42", hash_generated_method = "56D98F965A2928CD06D27411ECA151D8")
     private void addToBindArgs(int index, Object value) {
         {
             mBindArgs = new HashMap<Integer, Object>();
@@ -354,7 +354,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.717 -0400", hash_original_method = "3FC7B6EE26A3C940A3FAD2B270073635", hash_generated_method = "D14142319C4A8CF4359ABD4EA11B81D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.173 -0400", hash_original_method = "3FC7B6EE26A3C940A3FAD2B270073635", hash_generated_method = "C4BD1E9E5A005D874E3CF806220558B3")
      void compileAndbindAllArgs() {
         {
             {
@@ -365,9 +365,9 @@ public abstract class SQLiteProgram extends SQLiteClosable {
             compileSql();
         } //End block
         {
-            Iterator<Integer> varE5BB6A287738C0B897F34B057ED4A5D1_1045398348 = (mBindArgs.keySet()).iterator();
-            varE5BB6A287738C0B897F34B057ED4A5D1_1045398348.hasNext();
-            int index = varE5BB6A287738C0B897F34B057ED4A5D1_1045398348.next();
+            Iterator<Integer> varE5BB6A287738C0B897F34B057ED4A5D1_744904740 = (mBindArgs.keySet()).iterator();
+            varE5BB6A287738C0B897F34B057ED4A5D1_744904740.hasNext();
+            int index = varE5BB6A287738C0B897F34B057ED4A5D1_744904740.next();
             {
                 Object value;
                 value = mBindArgs.get(index);
@@ -404,7 +404,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.733 -0400", hash_original_method = "7568906165FD370FD5C4296CB4D5FD76", hash_generated_method = "129E24CB4A939D8910C4E16CA97FD3F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.190 -0400", hash_original_method = "7568906165FD370FD5C4296CB4D5FD76", hash_generated_method = "129E24CB4A939D8910C4E16CA97FD3F6")
     public void bindAllArgsAsStrings(String[] bindArgs) {
         int size;
         size = bindArgs.length;
@@ -427,7 +427,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.734 -0400", hash_original_method = "B3D61FB7C94FF71F95332257D7EBBE92", hash_generated_method = "8CD7EC8DFFC384BDEDA0FF75DA7E64C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.191 -0400", hash_original_method = "B3D61FB7C94FF71F95332257D7EBBE92", hash_generated_method = "8CD7EC8DFFC384BDEDA0FF75DA7E64C6")
     synchronized final void setNativeHandle(int nHandle) {
         this.nHandle = nHandle;
         // ---------- Original Method ----------
@@ -435,61 +435,61 @@ public abstract class SQLiteProgram extends SQLiteClosable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.734 -0400", hash_original_method = "957AE60D3A9CE570CB89C0AA6C75F6C8", hash_generated_method = "05A7614624EE5DC85A8CB7259F9CAADD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.192 -0400", hash_original_method = "957AE60D3A9CE570CB89C0AA6C75F6C8", hash_generated_method = "05A7614624EE5DC85A8CB7259F9CAADD")
     @Deprecated
     protected final void native_compile(String sql) {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.735 -0400", hash_original_method = "B81676966F6941B90240D7A24C9E2FD3", hash_generated_method = "29F79943539902B2992FABA5DEE5CC41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.192 -0400", hash_original_method = "B81676966F6941B90240D7A24C9E2FD3", hash_generated_method = "29F79943539902B2992FABA5DEE5CC41")
     @Deprecated
     protected final void native_finalize() {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.735 -0400", hash_original_method = "AB3FC56412EB6E1517BB8960DA14A39F", hash_generated_method = "02063E5C169A9266082F35EAE3C7C520")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.192 -0400", hash_original_method = "AB3FC56412EB6E1517BB8960DA14A39F", hash_generated_method = "02063E5C169A9266082F35EAE3C7C520")
     protected final void native_bind_null(int index) {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.736 -0400", hash_original_method = "788CE16CEC77E5835CEB80FC75E60641", hash_generated_method = "F543D954A1583266C1CF2C596DC6D8F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.203 -0400", hash_original_method = "788CE16CEC77E5835CEB80FC75E60641", hash_generated_method = "F543D954A1583266C1CF2C596DC6D8F7")
     protected final void native_bind_long(int index, long value) {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.736 -0400", hash_original_method = "DDD8FE0B3144B1C9C0B95003A2ADAE8F", hash_generated_method = "BF020D591B59EC88D6E6DE4D00A42DE7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.203 -0400", hash_original_method = "DDD8FE0B3144B1C9C0B95003A2ADAE8F", hash_generated_method = "BF020D591B59EC88D6E6DE4D00A42DE7")
     protected final void native_bind_double(int index, double value) {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.748 -0400", hash_original_method = "6D9E58383F5E5E78735F2725B3EB1959", hash_generated_method = "7E1F6811E07620367DA6F46B72C1EC49")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.204 -0400", hash_original_method = "6D9E58383F5E5E78735F2725B3EB1959", hash_generated_method = "7E1F6811E07620367DA6F46B72C1EC49")
     protected final void native_bind_string(int index, String value) {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.749 -0400", hash_original_method = "283C3F08E27A848CC26557756DCA3292", hash_generated_method = "40CB1A935F835CA4557C2B3A78725579")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.204 -0400", hash_original_method = "283C3F08E27A848CC26557756DCA3292", hash_generated_method = "40CB1A935F835CA4557C2B3A78725579")
     protected final void native_bind_blob(int index, byte[] value) {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.749 -0400", hash_original_method = "A7443022DB1A1E9003E4973C3792843C", hash_generated_method = "7E29C74A6A130560C9B26D8118CD2BAA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.205 -0400", hash_original_method = "A7443022DB1A1E9003E4973C3792843C", hash_generated_method = "7E29C74A6A130560C9B26D8118CD2BAA")
     private final void native_clear_bindings() {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.750 -0400", hash_original_field = "CA2842CAC53650043FCFF2C4FF30671E", hash_generated_field = "10963F4F23E080790A1A600CE4E20AEF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.206 -0400", hash_original_field = "CA2842CAC53650043FCFF2C4FF30671E", hash_generated_field = "10963F4F23E080790A1A600CE4E20AEF")
 
     private static String TAG = "SQLiteProgram";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.750 -0400", hash_original_field = "A32CD36BCAA299B40589381C0FC28A6E", hash_generated_field = "C5E8B8333BE9314A20056E940ABD15DA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.206 -0400", hash_original_field = "A32CD36BCAA299B40589381C0FC28A6E", hash_generated_field = "C5E8B8333BE9314A20056E940ABD15DA")
 
     static int STATEMENT_CACHEABLE = 16;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.750 -0400", hash_original_field = "FB47074F23821C2976A54DF0B807DE5B", hash_generated_field = "7F475946EEE7439D8D90D35547631B2F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.206 -0400", hash_original_field = "FB47074F23821C2976A54DF0B807DE5B", hash_generated_field = "7F475946EEE7439D8D90D35547631B2F")
 
     static int STATEMENT_DONT_PREPARE = 32;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.750 -0400", hash_original_field = "5EA607C38E360BB2E02CFA22D08E10AD", hash_generated_field = "07F01D21D01191EBB7EA0C501DE464E9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.206 -0400", hash_original_field = "5EA607C38E360BB2E02CFA22D08E10AD", hash_generated_field = "07F01D21D01191EBB7EA0C501DE464E9")
 
     static int STATEMENT_USE_POOLED_CONN = 64;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.750 -0400", hash_original_field = "E371F27A1CAF1FE8D47600BF5310C83B", hash_generated_field = "6DD4966325A7EBBE7BAF3AF1A4D8230D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.206 -0400", hash_original_field = "E371F27A1CAF1FE8D47600BF5310C83B", hash_generated_field = "6DD4966325A7EBBE7BAF3AF1A4D8230D")
 
     static int STATEMENT_TYPE_MASK = 0x0f;
 }

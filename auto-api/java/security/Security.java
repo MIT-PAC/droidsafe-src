@@ -24,7 +24,7 @@ import org.apache.harmony.security.fortress.Services;
 
 public final class Security {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.561 -0400", hash_original_method = "8A23448EE3E63F2FDD1EDADC770A872E", hash_generated_method = "F38A362CCE128359797141D3F83E6272")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.962 -0400", hash_original_method = "8A23448EE3E63F2FDD1EDADC770A872E", hash_generated_method = "F38A362CCE128359797141D3F83E6272")
     private  Security() {
         // ---------- Original Method ----------
     }
@@ -221,14 +221,14 @@ public final class Security {
     
     private static class SecurityDoor implements SecurityAccess {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.581 -0400", hash_original_method = "65CA8440349C4BCE4680F5FB73F99876", hash_generated_method = "65CA8440349C4BCE4680F5FB73F99876")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.985 -0400", hash_original_method = "65CA8440349C4BCE4680F5FB73F99876", hash_generated_method = "65CA8440349C4BCE4680F5FB73F99876")
         public SecurityDoor ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.584 -0400", hash_original_method = "CC38396CF5E2C0D8624B241063796894", hash_generated_method = "CB29F99BA7A9E1FCCA38171345383D55")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.985 -0400", hash_original_method = "CC38396CF5E2C0D8624B241063796894", hash_generated_method = "CB29F99BA7A9E1FCCA38171345383D55")
         public void renumProviders() {
             Security.renumProviders();
             // ---------- Original Method ----------
@@ -236,26 +236,26 @@ public final class Security {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.588 -0400", hash_original_method = "F916F94BFF4DBDA09034B4A04EAFBC9D", hash_generated_method = "C0B9FA2317D09D48F5AF91D51A3E9941")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.986 -0400", hash_original_method = "F916F94BFF4DBDA09034B4A04EAFBC9D", hash_generated_method = "19ACED581618365F8D4B0642E90E8253")
         public List<String> getAliases(Provider.Service s) {
-            List<String> varB4EAC82CA7396A68D541C85D26508E83_320950032 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_320950032 = s.getAliases();
+            List<String> varB4EAC82CA7396A68D541C85D26508E83_460987933 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_460987933 = s.getAliases();
             addTaint(s.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_320950032.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_320950032;
+            varB4EAC82CA7396A68D541C85D26508E83_460987933.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_460987933;
             // ---------- Original Method ----------
             //return s.getAliases();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.588 -0400", hash_original_method = "413349B417A4FA3254048F8CD1980744", hash_generated_method = "791FCA4A25A2689D73900A562CDA87C2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.986 -0400", hash_original_method = "413349B417A4FA3254048F8CD1980744", hash_generated_method = "1F232F78D0E38F66AF8C393FBF03B564")
         public Provider.Service getService(Provider p, String type) {
-            Provider.Service varB4EAC82CA7396A68D541C85D26508E83_1449961238 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1449961238 = p.getService(type);
+            Provider.Service varB4EAC82CA7396A68D541C85D26508E83_1875218954 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1875218954 = p.getService(type);
             addTaint(p.getTaint());
             addTaint(type.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1449961238.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1449961238;
+            varB4EAC82CA7396A68D541C85D26508E83_1875218954.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1875218954;
             // ---------- Original Method ----------
             //return p.getService(type);
         }
@@ -265,7 +265,7 @@ public final class Security {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.588 -0400", hash_original_field = "1F34466A8CFB3BC13EDE42CA83574114", hash_generated_field = "557431B20DC1A8473C041CDEFA40101D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.986 -0400", hash_original_field = "1F34466A8CFB3BC13EDE42CA83574114", hash_generated_field = "557431B20DC1A8473C041CDEFA40101D")
 
     private static Properties secprops = new Properties();
     static {

@@ -13,7 +13,7 @@ import java.io.OutputStream;
 
 public class Base64 {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.748 -0400", hash_original_method = "2DB9D16143059D09A54A3BB31C55E28D", hash_generated_method = "2DB9D16143059D09A54A3BB31C55E28D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.796 -0400", hash_original_method = "2DB9D16143059D09A54A3BB31C55E28D", hash_generated_method = "2DB9D16143059D09A54A3BB31C55E28D")
     public Base64 ()
     {
         //Synthesized constructor
@@ -91,7 +91,7 @@ public class Base64 {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.751 -0400", hash_original_field = "A3380BA0564E5EBC4C03422982B036A8", hash_generated_field = "929CC3BE74710D0A7AFA03FDF4714516")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.803 -0400", hash_original_field = "A3380BA0564E5EBC4C03422982B036A8", hash_generated_field = "929CC3BE74710D0A7AFA03FDF4714516")
 
     private static Encoder encoder = new Base64Encoder();
 }

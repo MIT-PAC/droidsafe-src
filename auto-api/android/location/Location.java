@@ -15,68 +15,68 @@ import java.text.DecimalFormat;
 import java.util.StringTokenizer;
 
 public class Location implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.326 -0400", hash_original_field = "BD1D19BC6BC3803BE152A977D479AC49", hash_generated_field = "644895AD43D171E05003EF08DEE63C8C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.060 -0400", hash_original_field = "BD1D19BC6BC3803BE152A977D479AC49", hash_generated_field = "644895AD43D171E05003EF08DEE63C8C")
 
     private String mProvider;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.326 -0400", hash_original_field = "0FF4023E293539BB0CBB2281B1FBFE9D", hash_generated_field = "39CDFD59B94279CE728BDCF20E03E08D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.060 -0400", hash_original_field = "0FF4023E293539BB0CBB2281B1FBFE9D", hash_generated_field = "39CDFD59B94279CE728BDCF20E03E08D")
 
     private long mTime = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.327 -0400", hash_original_field = "1857A1FB07A896723EA711F0AFB93340", hash_generated_field = "269B3D2493D0F96EF61A46FF198ABE0D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.060 -0400", hash_original_field = "1857A1FB07A896723EA711F0AFB93340", hash_generated_field = "269B3D2493D0F96EF61A46FF198ABE0D")
 
     private double mLatitude = 0.0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.327 -0400", hash_original_field = "E6CF59E79C700CD79A21BF27BBC13455", hash_generated_field = "2C9B2A9CE4E7FB2DE0150E4CBE0B8843")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.060 -0400", hash_original_field = "E6CF59E79C700CD79A21BF27BBC13455", hash_generated_field = "2C9B2A9CE4E7FB2DE0150E4CBE0B8843")
 
     private double mLongitude = 0.0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.327 -0400", hash_original_field = "C162B2370B6E9C9396E90B6C83C206DB", hash_generated_field = "AB014DDDC67804474525003E8CCA6813")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.060 -0400", hash_original_field = "C162B2370B6E9C9396E90B6C83C206DB", hash_generated_field = "AB014DDDC67804474525003E8CCA6813")
 
     private boolean mHasAltitude = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.327 -0400", hash_original_field = "55C374BD8AF5348A1621EBEF8CD68357", hash_generated_field = "65AF56B9C1C08B51B31BCAF89C7F3B4F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.080 -0400", hash_original_field = "55C374BD8AF5348A1621EBEF8CD68357", hash_generated_field = "65AF56B9C1C08B51B31BCAF89C7F3B4F")
 
     private double mAltitude = 0.0f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.327 -0400", hash_original_field = "4CB9D0B6D768A54407CB02FA19A6EC4C", hash_generated_field = "8CE70E9CD9C32590583FE0B532925C61")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.080 -0400", hash_original_field = "4CB9D0B6D768A54407CB02FA19A6EC4C", hash_generated_field = "8CE70E9CD9C32590583FE0B532925C61")
 
     private boolean mHasSpeed = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.327 -0400", hash_original_field = "650660EA0420A29D90ED9A00E6FC34B9", hash_generated_field = "ABFC05BB8A240BFECCDF9D843EC57200")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.080 -0400", hash_original_field = "650660EA0420A29D90ED9A00E6FC34B9", hash_generated_field = "ABFC05BB8A240BFECCDF9D843EC57200")
 
     private float mSpeed = 0.0f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.327 -0400", hash_original_field = "48CEC0520CC8FD41CF12A50DC73750BA", hash_generated_field = "F1AC4D74AE98BF26D0BA40D4270DBA80")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.080 -0400", hash_original_field = "48CEC0520CC8FD41CF12A50DC73750BA", hash_generated_field = "F1AC4D74AE98BF26D0BA40D4270DBA80")
 
     private boolean mHasBearing = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.328 -0400", hash_original_field = "338EE98C0A32E90D986E30FC9798FA5B", hash_generated_field = "6BB038E41DD655D9B95C50E3DA08A87F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.080 -0400", hash_original_field = "338EE98C0A32E90D986E30FC9798FA5B", hash_generated_field = "6BB038E41DD655D9B95C50E3DA08A87F")
 
     private float mBearing = 0.0f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.328 -0400", hash_original_field = "B486DB6648372F35D8207306E1A41C9B", hash_generated_field = "40E3E568925ACF4851792D33B86F0123")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.080 -0400", hash_original_field = "B486DB6648372F35D8207306E1A41C9B", hash_generated_field = "40E3E568925ACF4851792D33B86F0123")
 
     private boolean mHasAccuracy = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.328 -0400", hash_original_field = "7815EA36A3E24DCFF7B1F55452C671F8", hash_generated_field = "ED55BE9EA8B3BEA284F24131E9FD0A9A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.080 -0400", hash_original_field = "7815EA36A3E24DCFF7B1F55452C671F8", hash_generated_field = "ED55BE9EA8B3BEA284F24131E9FD0A9A")
 
     private float mAccuracy = 0.0f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.328 -0400", hash_original_field = "7AC7A3C81EDFAF4AE16351926EDACBA4", hash_generated_field = "F67EBBE51D94FDD3154517E86441117D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.080 -0400", hash_original_field = "7AC7A3C81EDFAF4AE16351926EDACBA4", hash_generated_field = "F67EBBE51D94FDD3154517E86441117D")
 
     private Bundle mExtras = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.342 -0400", hash_original_field = "90E9D640B14E41D6C4E69C84771B8965", hash_generated_field = "97C53B5EAC108D3EC1F84D706895F9BD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.080 -0400", hash_original_field = "90E9D640B14E41D6C4E69C84771B8965", hash_generated_field = "97C53B5EAC108D3EC1F84D706895F9BD")
 
     private double mLat1 = 0.0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.342 -0400", hash_original_field = "9EDC69B2AC3C9DF7E35BC8A81CAB4C27", hash_generated_field = "052169D4CDC5007A7869324FC8CEAEFD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.080 -0400", hash_original_field = "9EDC69B2AC3C9DF7E35BC8A81CAB4C27", hash_generated_field = "052169D4CDC5007A7869324FC8CEAEFD")
 
     private double mLon1 = 0.0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.343 -0400", hash_original_field = "3DBBDA00AA2D5C2900663409DEC23314", hash_generated_field = "AA6D86402CD4A25FF1E0F4C41D36A40D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.081 -0400", hash_original_field = "3DBBDA00AA2D5C2900663409DEC23314", hash_generated_field = "AA6D86402CD4A25FF1E0F4C41D36A40D")
 
     private double mLat2 = 0.0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.343 -0400", hash_original_field = "F772A55B9A8C8B28B1412D22DFE80457", hash_generated_field = "8A9E97E6541A3C771F68B1C68C60D06D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.081 -0400", hash_original_field = "F772A55B9A8C8B28B1412D22DFE80457", hash_generated_field = "8A9E97E6541A3C771F68B1C68C60D06D")
 
     private double mLon2 = 0.0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.343 -0400", hash_original_field = "24190082D29C9BABD667CAFF7D867E33", hash_generated_field = "CA9178B97D08F71ACD73BBBB766149DA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.081 -0400", hash_original_field = "24190082D29C9BABD667CAFF7D867E33", hash_generated_field = "CA9178B97D08F71ACD73BBBB766149DA")
 
     private float mDistance = 0.0f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.343 -0400", hash_original_field = "167BE1A5B6472CB0839D4A309BB792F6", hash_generated_field = "95983693C31B9D94B7F8DF00068BDD2A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.081 -0400", hash_original_field = "167BE1A5B6472CB0839D4A309BB792F6", hash_generated_field = "95983693C31B9D94B7F8DF00068BDD2A")
 
     private float mInitialBearing = 0.0f;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.343 -0400", hash_original_field = "77314E0C583ED59B7DE814672B1053A1", hash_generated_field = "FC7CDADAD690A1BE9FE4854D8EF42339")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.081 -0400", hash_original_field = "77314E0C583ED59B7DE814672B1053A1", hash_generated_field = "FC7CDADAD690A1BE9FE4854D8EF42339")
 
     private float[] mResults = new float[2];
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.387 -0400", hash_original_method = "70E7035C56BDBF9C3F6572F798B0D4BF", hash_generated_method = "8AB106958B355CB4AC17F4AC5B22BFE5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.093 -0400", hash_original_method = "70E7035C56BDBF9C3F6572F798B0D4BF", hash_generated_method = "8AB106958B355CB4AC17F4AC5B22BFE5")
     public  Location(String provider) {
         mProvider = provider;
         // ---------- Original Method ----------
@@ -84,7 +84,7 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.388 -0400", hash_original_method = "4853EB704C822ED076EB467B9C8220F5", hash_generated_method = "E26A39BE88ADAA866D663F579E762EBA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.094 -0400", hash_original_method = "4853EB704C822ED076EB467B9C8220F5", hash_generated_method = "E26A39BE88ADAA866D663F579E762EBA")
     public  Location(Location l) {
         set(l);
         addTaint(l.getTaint());
@@ -93,7 +93,7 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.397 -0400", hash_original_method = "E894B78E8DAE7217EB8A906829737D1E", hash_generated_method = "FAFBDDC332112BA47224C6379902852A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.114 -0400", hash_original_method = "E894B78E8DAE7217EB8A906829737D1E", hash_generated_method = "FAFBDDC332112BA47224C6379902852A")
     public void dump(Printer pw, String prefix) {
         pw.println(prefix + "mProvider=" + mProvider + " mTime=" + mTime);
         pw.println(prefix + "mLatitude=" + mLatitude + " mLongitude=" + mLongitude);
@@ -115,7 +115,7 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.404 -0400", hash_original_method = "8A60F1EB9D48909B7AC1F2F058E6CA7B", hash_generated_method = "A5FD920F0D9C1B46242725755E8D0203")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.117 -0400", hash_original_method = "8A60F1EB9D48909B7AC1F2F058E6CA7B", hash_generated_method = "A5FD920F0D9C1B46242725755E8D0203")
     public void set(Location l) {
         mProvider = l.mProvider;
         mTime = l.mTime;
@@ -147,7 +147,7 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.424 -0400", hash_original_method = "616C057876C322A61AA799FA470B1CEA", hash_generated_method = "9802993BD0F72AB4AC58EEAAA252C63C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.140 -0400", hash_original_method = "616C057876C322A61AA799FA470B1CEA", hash_generated_method = "9802993BD0F72AB4AC58EEAAA252C63C")
     public void reset() {
         mProvider = null;
         mTime = 0;
@@ -367,7 +367,7 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.453 -0400", hash_original_method = "F7D4263990E83377B0F1337DC2A9789F", hash_generated_method = "93ABCEA127E8AAC799F19C63DE6478BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.171 -0400", hash_original_method = "F7D4263990E83377B0F1337DC2A9789F", hash_generated_method = "F6BFDD12B30DAB121500210581784052")
     public float distanceTo(Location dest) {
         {
             {
@@ -381,8 +381,8 @@ public class Location implements Parcelable {
                 mInitialBearing = mResults[1];
             } //End block
         } //End block
-        float var546ADE640B6EDFBC8A086EF31347E768_1561996912 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1561996912;
+        float var546ADE640B6EDFBC8A086EF31347E768_15422905 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_15422905;
         // ---------- Original Method ----------
         //synchronized (mResults) {
             //if (mLatitude != mLat1 || mLongitude != mLon1 ||
@@ -401,7 +401,7 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.471 -0400", hash_original_method = "EC026D992E5F4947C061D86521AAB3B6", hash_generated_method = "1739C148F372331646B26B25A6DCBA7B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.180 -0400", hash_original_method = "EC026D992E5F4947C061D86521AAB3B6", hash_generated_method = "4041D5661A8212052A39331E8B12C25A")
     public float bearingTo(Location dest) {
         {
             {
@@ -415,8 +415,8 @@ public class Location implements Parcelable {
                 mInitialBearing = mResults[1];
             } //End block
         } //End block
-        float var546ADE640B6EDFBC8A086EF31347E768_415220557 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_415220557;
+        float var546ADE640B6EDFBC8A086EF31347E768_18000091 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_18000091;
         // ---------- Original Method ----------
         //synchronized (mResults) {
             //if (mLatitude != mLat1 || mLongitude != mLon1 ||
@@ -435,18 +435,18 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.473 -0400", hash_original_method = "BFECE3BB8B622B00AFB7A331FE5F6AF2", hash_generated_method = "41F8B302FC46628BA5D404540B7AE3FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.181 -0400", hash_original_method = "BFECE3BB8B622B00AFB7A331FE5F6AF2", hash_generated_method = "14436B8B45BB25CCD89D907ECC2FE7CC")
     public String getProvider() {
-        String varB4EAC82CA7396A68D541C85D26508E83_252625359 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_252625359 = mProvider;
-        varB4EAC82CA7396A68D541C85D26508E83_252625359.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_252625359;
+        String varB4EAC82CA7396A68D541C85D26508E83_1626458305 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1626458305 = mProvider;
+        varB4EAC82CA7396A68D541C85D26508E83_1626458305.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1626458305;
         // ---------- Original Method ----------
         //return mProvider;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.489 -0400", hash_original_method = "25D5387E6BE9F4E7F6250416A2346065", hash_generated_method = "D4DDA5FD376A8D7A0AB64AD1E0FBF0B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.193 -0400", hash_original_method = "25D5387E6BE9F4E7F6250416A2346065", hash_generated_method = "D4DDA5FD376A8D7A0AB64AD1E0FBF0B0")
     public void setProvider(String provider) {
         mProvider = provider;
         // ---------- Original Method ----------
@@ -454,16 +454,16 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.490 -0400", hash_original_method = "997C67A326545139029C9D8F308B45E1", hash_generated_method = "D0804B5273E80852EA5F82C61D0569CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.202 -0400", hash_original_method = "997C67A326545139029C9D8F308B45E1", hash_generated_method = "6DD44362BD5FA2B42F864CCF7668023B")
     public long getTime() {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1094641280 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1094641280;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1722815537 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1722815537;
         // ---------- Original Method ----------
         //return mTime;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.496 -0400", hash_original_method = "1825242101B57AC7053134E109B277AF", hash_generated_method = "58DABEC95C53E00275149175E1A0B6A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.203 -0400", hash_original_method = "1825242101B57AC7053134E109B277AF", hash_generated_method = "58DABEC95C53E00275149175E1A0B6A4")
     public void setTime(long time) {
         mTime = time;
         // ---------- Original Method ----------
@@ -471,16 +471,16 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.497 -0400", hash_original_method = "F25A3F38BD2475F276CF0768419142B9", hash_generated_method = "43B34DD54B98980069002AB2E7EF8DE3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.214 -0400", hash_original_method = "F25A3F38BD2475F276CF0768419142B9", hash_generated_method = "3018BAC00CBA62338405015E2052BFE6")
     public double getLatitude() {
-        double varE8CD7DA078A86726031AD64F35F5A6C0_343570927 = getTaintDouble();
-        return varE8CD7DA078A86726031AD64F35F5A6C0_343570927;
+        double varE8CD7DA078A86726031AD64F35F5A6C0_1208540910 = getTaintDouble();
+        return varE8CD7DA078A86726031AD64F35F5A6C0_1208540910;
         // ---------- Original Method ----------
         //return mLatitude;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.497 -0400", hash_original_method = "1F7F9B57342DE3FD3D5D55490B64EE27", hash_generated_method = "FC6A7DC458B61FEDE4D25D69F95BD772")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.215 -0400", hash_original_method = "1F7F9B57342DE3FD3D5D55490B64EE27", hash_generated_method = "FC6A7DC458B61FEDE4D25D69F95BD772")
     public void setLatitude(double latitude) {
         mLatitude = latitude;
         // ---------- Original Method ----------
@@ -488,16 +488,16 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.507 -0400", hash_original_method = "7E07C4F8B2560C863B560B81405E4EA8", hash_generated_method = "05480193BAB23B57F4D99D8B2E9DEA66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.216 -0400", hash_original_method = "7E07C4F8B2560C863B560B81405E4EA8", hash_generated_method = "9762DBC9DDB7FDE4B27CF140C0E651E3")
     public double getLongitude() {
-        double varE8CD7DA078A86726031AD64F35F5A6C0_160247621 = getTaintDouble();
-        return varE8CD7DA078A86726031AD64F35F5A6C0_160247621;
+        double varE8CD7DA078A86726031AD64F35F5A6C0_631808205 = getTaintDouble();
+        return varE8CD7DA078A86726031AD64F35F5A6C0_631808205;
         // ---------- Original Method ----------
         //return mLongitude;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.507 -0400", hash_original_method = "D382B7FFFC1832B1199A432F05F295AF", hash_generated_method = "950F51F7A7B87639F3E5F8D3B8F6A89B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.216 -0400", hash_original_method = "D382B7FFFC1832B1199A432F05F295AF", hash_generated_method = "950F51F7A7B87639F3E5F8D3B8F6A89B")
     public void setLongitude(double longitude) {
         mLongitude = longitude;
         // ---------- Original Method ----------
@@ -505,25 +505,25 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.508 -0400", hash_original_method = "8588CDCF553966E03782186D08715F65", hash_generated_method = "608C8118B66832F6800FCD993AD82C1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.222 -0400", hash_original_method = "8588CDCF553966E03782186D08715F65", hash_generated_method = "D77B9149A68B52EBDB0CF7F2EAB46616")
     public boolean hasAltitude() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_110640596 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_110640596;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1967775237 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1967775237;
         // ---------- Original Method ----------
         //return mHasAltitude;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.517 -0400", hash_original_method = "38598EF38BAA57E5BBA23C5814512D64", hash_generated_method = "BC7207ED7187E77D9D55290716C86C9C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.241 -0400", hash_original_method = "38598EF38BAA57E5BBA23C5814512D64", hash_generated_method = "D9164099D669904948AAB4271C8EFE19")
     public double getAltitude() {
-        double varE8CD7DA078A86726031AD64F35F5A6C0_415635399 = getTaintDouble();
-        return varE8CD7DA078A86726031AD64F35F5A6C0_415635399;
+        double varE8CD7DA078A86726031AD64F35F5A6C0_2005011613 = getTaintDouble();
+        return varE8CD7DA078A86726031AD64F35F5A6C0_2005011613;
         // ---------- Original Method ----------
         //return mAltitude;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.518 -0400", hash_original_method = "8207B2258C8D7E964A376C6D8FB9BDB2", hash_generated_method = "96E91323AADC3BDBE674936065F8BD0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.242 -0400", hash_original_method = "8207B2258C8D7E964A376C6D8FB9BDB2", hash_generated_method = "96E91323AADC3BDBE674936065F8BD0C")
     public void setAltitude(double altitude) {
         mAltitude = altitude;
         mHasAltitude = true;
@@ -533,7 +533,7 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.610 -0400", hash_original_method = "5A565618B4FD768311EE533344239248", hash_generated_method = "3C6C4C32C0A06792221D8F9CA2011B2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.244 -0400", hash_original_method = "5A565618B4FD768311EE533344239248", hash_generated_method = "3C6C4C32C0A06792221D8F9CA2011B2A")
     public void removeAltitude() {
         mAltitude = 0.0f;
         mHasAltitude = false;
@@ -543,25 +543,25 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.610 -0400", hash_original_method = "053704FA5AD46F36CEE00CE492DC93E4", hash_generated_method = "A4D38F9811D5617F76DEA47B7EECCF53")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.248 -0400", hash_original_method = "053704FA5AD46F36CEE00CE492DC93E4", hash_generated_method = "2C60CA3AC9012B61771FCD3C87C1735A")
     public boolean hasSpeed() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1387456310 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1387456310;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1540368837 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1540368837;
         // ---------- Original Method ----------
         //return mHasSpeed;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.611 -0400", hash_original_method = "CA7E551E55E608E59EEFDA2D55C22485", hash_generated_method = "B54C91E2E1F27480EBD218248FFFA816")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.262 -0400", hash_original_method = "CA7E551E55E608E59EEFDA2D55C22485", hash_generated_method = "324C296DA8A857C72010D15C0B51436F")
     public float getSpeed() {
-        float var546ADE640B6EDFBC8A086EF31347E768_1745634829 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1745634829;
+        float var546ADE640B6EDFBC8A086EF31347E768_1012986129 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1012986129;
         // ---------- Original Method ----------
         //return mSpeed;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.611 -0400", hash_original_method = "34F00EE21F4532CBE8BBCA1E84CB5B7E", hash_generated_method = "FB8501B9FE99D7121D1B6E86551C9B62")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.264 -0400", hash_original_method = "34F00EE21F4532CBE8BBCA1E84CB5B7E", hash_generated_method = "FB8501B9FE99D7121D1B6E86551C9B62")
     public void setSpeed(float speed) {
         mSpeed = speed;
         mHasSpeed = true;
@@ -571,7 +571,7 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.623 -0400", hash_original_method = "B58ABDA4F4570A6C6402F324866C9A78", hash_generated_method = "092A296900E41495B6AA50E91B45595A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.279 -0400", hash_original_method = "B58ABDA4F4570A6C6402F324866C9A78", hash_generated_method = "092A296900E41495B6AA50E91B45595A")
     public void removeSpeed() {
         mSpeed = 0.0f;
         mHasSpeed = false;
@@ -581,25 +581,25 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.624 -0400", hash_original_method = "D55FF6AB44947F083C797EDEE83A6188", hash_generated_method = "8FC10FF8DA139A3D068040BEB2CC6E27")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.280 -0400", hash_original_method = "D55FF6AB44947F083C797EDEE83A6188", hash_generated_method = "95085569833B0F96956C36732FB0DC62")
     public boolean hasBearing() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_35492041 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_35492041;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_416814360 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_416814360;
         // ---------- Original Method ----------
         //return mHasBearing;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.624 -0400", hash_original_method = "AC6CB3B684BB76DAFC78CFB4B9F35C9A", hash_generated_method = "A2E7FBB4893F6634FF00614B669CEE40")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.281 -0400", hash_original_method = "AC6CB3B684BB76DAFC78CFB4B9F35C9A", hash_generated_method = "2F627CC542CB009B08AB26429D7770CD")
     public float getBearing() {
-        float var546ADE640B6EDFBC8A086EF31347E768_454809818 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_454809818;
+        float var546ADE640B6EDFBC8A086EF31347E768_1449003076 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1449003076;
         // ---------- Original Method ----------
         //return mBearing;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.628 -0400", hash_original_method = "8FBA12B19B970F6442007D37D9E216CC", hash_generated_method = "DCDF4E323327DE982E5ACE8E9E576EA2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.300 -0400", hash_original_method = "8FBA12B19B970F6442007D37D9E216CC", hash_generated_method = "DCDF4E323327DE982E5ACE8E9E576EA2")
     public void setBearing(float bearing) {
         {
             bearing += 360.0f;
@@ -621,7 +621,7 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.629 -0400", hash_original_method = "57889AAEA0A214C7174BC35DF28DBD1D", hash_generated_method = "8FAAFFDC9B89944657C7FF0FDF0A1A8A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.301 -0400", hash_original_method = "57889AAEA0A214C7174BC35DF28DBD1D", hash_generated_method = "8FAAFFDC9B89944657C7FF0FDF0A1A8A")
     public void removeBearing() {
         mBearing = 0.0f;
         mHasBearing = false;
@@ -631,25 +631,25 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.645 -0400", hash_original_method = "25E2CFAA647DEEE085853277B0217FAA", hash_generated_method = "A91CB90F81D2C46F3374BCA07226DB13")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.302 -0400", hash_original_method = "25E2CFAA647DEEE085853277B0217FAA", hash_generated_method = "4BC081FBA5E643DB4EC48EB8DB72313E")
     public boolean hasAccuracy() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2027239760 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2027239760;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1727134690 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1727134690;
         // ---------- Original Method ----------
         //return mHasAccuracy;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.645 -0400", hash_original_method = "080C41F346C9D7277489423C5A91C89D", hash_generated_method = "FC4624E11F48DA46B7B1A55FCF7596F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.302 -0400", hash_original_method = "080C41F346C9D7277489423C5A91C89D", hash_generated_method = "36C0D0C11DE7560E9034D6548E8B30A5")
     public float getAccuracy() {
-        float var546ADE640B6EDFBC8A086EF31347E768_1990488757 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1990488757;
+        float var546ADE640B6EDFBC8A086EF31347E768_244150417 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_244150417;
         // ---------- Original Method ----------
         //return mAccuracy;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.646 -0400", hash_original_method = "BF61AAF1E1B3170C7527B801249DD59B", hash_generated_method = "B32716322755EBBD575AAEACFC01BE90")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.329 -0400", hash_original_method = "BF61AAF1E1B3170C7527B801249DD59B", hash_generated_method = "B32716322755EBBD575AAEACFC01BE90")
     public void setAccuracy(float accuracy) {
         mAccuracy = accuracy;
         mHasAccuracy = true;
@@ -659,7 +659,7 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.655 -0400", hash_original_method = "10BF9B2FD08E11C5C21016EDE854825A", hash_generated_method = "53264F9A65193E66F9C1D1CBFC1FBF3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.330 -0400", hash_original_method = "10BF9B2FD08E11C5C21016EDE854825A", hash_generated_method = "53264F9A65193E66F9C1D1CBFC1FBF3D")
     public void removeAccuracy() {
         mAccuracy = 0.0f;
         mHasAccuracy = false;
@@ -669,18 +669,18 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.657 -0400", hash_original_method = "CF33C86C13BFD55DE499066ECC955562", hash_generated_method = "84946EDE0BE8B090BEF8C919BAEF62F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.334 -0400", hash_original_method = "CF33C86C13BFD55DE499066ECC955562", hash_generated_method = "C776C4291E922EC0ADC3A4427245830C")
     public Bundle getExtras() {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_349668306 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_349668306 = mExtras;
-        varB4EAC82CA7396A68D541C85D26508E83_349668306.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_349668306;
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_814912374 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_814912374 = mExtras;
+        varB4EAC82CA7396A68D541C85D26508E83_814912374.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_814912374;
         // ---------- Original Method ----------
         //return mExtras;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.657 -0400", hash_original_method = "0A734FEAEEC80691783BCF1D3384CC6B", hash_generated_method = "9B56A595B86963DFD04070AE7AE28FC1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.335 -0400", hash_original_method = "0A734FEAEEC80691783BCF1D3384CC6B", hash_generated_method = "9B56A595B86963DFD04070AE7AE28FC1")
     public void setExtras(Bundle extras) {
         mExtras = (extras == null) ? null : new Bundle(extras);
         // ---------- Original Method ----------
@@ -688,11 +688,11 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.680 -0400", hash_original_method = "5688E2364E565225F14DAE87FCAB3981", hash_generated_method = "BB9EBE4F38E0A5481BEEBEA8686AD99A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.357 -0400", hash_original_method = "5688E2364E565225F14DAE87FCAB3981", hash_generated_method = "F9B918D3597A1194B3F77FF54087D08B")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1682677004 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1682677004 = "Location[mProvider=" + mProvider +
+        String varB4EAC82CA7396A68D541C85D26508E83_1727433871 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1727433871 = "Location[mProvider=" + mProvider +
             ",mTime=" + mTime +
             ",mLatitude=" + mLatitude +
             ",mLongitude=" + mLongitude +
@@ -705,8 +705,8 @@ public class Location implements Parcelable {
             ",mHasAccuracy=" + mHasAccuracy +
             ",mAccuracy=" + mAccuracy +
             ",mExtras=" + mExtras + "]";
-        varB4EAC82CA7396A68D541C85D26508E83_1682677004.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1682677004;
+        varB4EAC82CA7396A68D541C85D26508E83_1727433871.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1727433871;
         // ---------- Original Method ----------
         //return "Location[mProvider=" + mProvider +
             //",mTime=" + mTime +
@@ -724,16 +724,16 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.681 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0BCB660E2B3A808C146A3451DFDC53CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.358 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1941A111A2D2E011563EA1F1C15A30B0")
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_513031145 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_513031145;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1565363572 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1565363572;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.683 -0400", hash_original_method = "32F156010F6C4E7296DBF5DD142C1BEC", hash_generated_method = "671E128E64E1A0715380C418C63FF6B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.390 -0400", hash_original_method = "32F156010F6C4E7296DBF5DD142C1BEC", hash_generated_method = "671E128E64E1A0715380C418C63FF6B4")
     public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeString(mProvider);
         parcel.writeLong(mTime);
@@ -767,16 +767,16 @@ public class Location implements Parcelable {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.683 -0400", hash_original_field = "9342CE59CBCD94918CC8867D1BDAAA24", hash_generated_field = "6F646E70B7136B5A7655BF0A1BCA8DFE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.390 -0400", hash_original_field = "9342CE59CBCD94918CC8867D1BDAAA24", hash_generated_field = "6F646E70B7136B5A7655BF0A1BCA8DFE")
 
     public static final int FORMAT_DEGREES = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.683 -0400", hash_original_field = "83AF0CDFF6E0503FC0DCE2C7FE8C16DD", hash_generated_field = "F9E0592649D425449C79A3A33FE4EFA8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.390 -0400", hash_original_field = "83AF0CDFF6E0503FC0DCE2C7FE8C16DD", hash_generated_field = "F9E0592649D425449C79A3A33FE4EFA8")
 
     public static final int FORMAT_MINUTES = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.684 -0400", hash_original_field = "8D3587D32CB2F6E70FADE19090856F83", hash_generated_field = "E12DE7371ECF9EEF209A4502097EB80C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.390 -0400", hash_original_field = "8D3587D32CB2F6E70FADE19090856F83", hash_generated_field = "E12DE7371ECF9EEF209A4502097EB80C")
 
     public static final int FORMAT_SECONDS = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.684 -0400", hash_original_field = "7B9F8EB241F1C6244667BCC135160F6F", hash_generated_field = "30FFB99E1ED15C4F1A795AA214D4874A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.390 -0400", hash_original_field = "7B9F8EB241F1C6244667BCC135160F6F", hash_generated_field = "30FFB99E1ED15C4F1A795AA214D4874A")
 
     public static final Parcelable.Creator<Location> CREATOR =
         new Parcelable.Creator<Location>() {

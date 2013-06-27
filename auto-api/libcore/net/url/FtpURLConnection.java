@@ -32,50 +32,50 @@ import java.util.Iterator;
 import java.util.List;
 
 public class FtpURLConnection extends URLConnection {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.170 -0400", hash_original_field = "62CE5FD8E6BD8C916853B8B84063B5BC", hash_generated_field = "29D7DAD04AED0A3F698C92F271D7CD33")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.266 -0400", hash_original_field = "62CE5FD8E6BD8C916853B8B84063B5BC", hash_generated_field = "29D7DAD04AED0A3F698C92F271D7CD33")
 
     private Socket controlSocket;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.170 -0400", hash_original_field = "ABED72C2327EB6296CEDFEAF2006DEB3", hash_generated_field = "7B1D54FCA191D26513E267657B979CEB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.267 -0400", hash_original_field = "ABED72C2327EB6296CEDFEAF2006DEB3", hash_generated_field = "7B1D54FCA191D26513E267657B979CEB")
 
     private Socket dataSocket;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.170 -0400", hash_original_field = "E8F8DAC6DABE3040DE150C6CE8506CD3", hash_generated_field = "7BE7DB96B1694A7C39FC6FE75B87910A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.267 -0400", hash_original_field = "E8F8DAC6DABE3040DE150C6CE8506CD3", hash_generated_field = "7BE7DB96B1694A7C39FC6FE75B87910A")
 
     private ServerSocket acceptSocket;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.170 -0400", hash_original_field = "45A2FD2F2740E6E3CE4775827D47DD44", hash_generated_field = "51832BA3E12265F350C7C5709B55A742")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.270 -0400", hash_original_field = "45A2FD2F2740E6E3CE4775827D47DD44", hash_generated_field = "51832BA3E12265F350C7C5709B55A742")
 
     private InputStream ctrlInput;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.171 -0400", hash_original_field = "267171E6BFB2A04E5670F3CE06C59060", hash_generated_field = "92444C781A1F5D159CDAA9528EFB69D8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.270 -0400", hash_original_field = "267171E6BFB2A04E5670F3CE06C59060", hash_generated_field = "92444C781A1F5D159CDAA9528EFB69D8")
 
     private InputStream inputStream;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.171 -0400", hash_original_field = "55A6B3FAFD62DE046073381A8736EFFF", hash_generated_field = "12096641C7216452413CF3D401307879")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.270 -0400", hash_original_field = "55A6B3FAFD62DE046073381A8736EFFF", hash_generated_field = "12096641C7216452413CF3D401307879")
 
     private OutputStream ctrlOutput;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.171 -0400", hash_original_field = "90E5A01CC93A2C344A089383AC078569", hash_generated_field = "C87C583997CC752459B2C205B1AD9852")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.271 -0400", hash_original_field = "90E5A01CC93A2C344A089383AC078569", hash_generated_field = "C87C583997CC752459B2C205B1AD9852")
 
     private int dataPort;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.171 -0400", hash_original_field = "56E0FF4EB85672FDFA0C369E23026FCF", hash_generated_field = "38135D7350723E148C32F7DB8A1F88C7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.271 -0400", hash_original_field = "56E0FF4EB85672FDFA0C369E23026FCF", hash_generated_field = "38135D7350723E148C32F7DB8A1F88C7")
 
     private String username = "anonymous";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.171 -0400", hash_original_field = "E4ACDEB0FB5D57AEE860D82AE404EBCA", hash_generated_field = "A05E2C20CC130ACAA51D860E3D5DDA10")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.271 -0400", hash_original_field = "E4ACDEB0FB5D57AEE860D82AE404EBCA", hash_generated_field = "A05E2C20CC130ACAA51D860E3D5DDA10")
 
     private String password = "";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.171 -0400", hash_original_field = "58F579EDF9F22B152776B24B7564DD9B", hash_generated_field = "FE3B08AEFFC7B5D68A43118A08CD21CC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.271 -0400", hash_original_field = "58F579EDF9F22B152776B24B7564DD9B", hash_generated_field = "FE3B08AEFFC7B5D68A43118A08CD21CC")
 
     private String replyCode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.171 -0400", hash_original_field = "018531A6FE3834353217DBF6A6634DCF", hash_generated_field = "6E65B96A9C64AF2C3CF4B7358A16F214")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.271 -0400", hash_original_field = "018531A6FE3834353217DBF6A6634DCF", hash_generated_field = "6E65B96A9C64AF2C3CF4B7358A16F214")
 
     private String hostName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.171 -0400", hash_original_field = "431387EB7262E1CFC79B125EB8A67C60", hash_generated_field = "EE0BB8F1739D62A5A5C8EDF7D478A66B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.271 -0400", hash_original_field = "431387EB7262E1CFC79B125EB8A67C60", hash_generated_field = "EE0BB8F1739D62A5A5C8EDF7D478A66B")
 
     private Proxy proxy;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.171 -0400", hash_original_field = "D7764253E2BBE1A4CF807EA78A298AE2", hash_generated_field = "3CCF1C6267C7354D73650ACC80DF3F0D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.271 -0400", hash_original_field = "D7764253E2BBE1A4CF807EA78A298AE2", hash_generated_field = "3CCF1C6267C7354D73650ACC80DF3F0D")
 
     private Proxy currentProxy;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.171 -0400", hash_original_field = "9305B73D359BD06734FEE0B3638079E1", hash_generated_field = "DDFAECCF21F90F28142F5C866534A5C3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.271 -0400", hash_original_field = "9305B73D359BD06734FEE0B3638079E1", hash_generated_field = "DDFAECCF21F90F28142F5C866534A5C3")
 
     private URI uri;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.183 -0400", hash_original_method = "9C0763DE42B4885FC37474533A9FD11D", hash_generated_method = "7278D6C348A144179DDEAD26EC5673CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.273 -0400", hash_original_method = "9C0763DE42B4885FC37474533A9FD11D", hash_generated_method = "7278D6C348A144179DDEAD26EC5673CB")
     protected  FtpURLConnection(URL url) {
         super(url);
         hostName = url.getHost();
@@ -119,7 +119,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.183 -0400", hash_original_method = "705675501234B79BED4D0186BAC535B7", hash_generated_method = "7143207E04E6488C1D4291E74A15777F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.274 -0400", hash_original_method = "705675501234B79BED4D0186BAC535B7", hash_generated_method = "7143207E04E6488C1D4291E74A15777F")
     protected  FtpURLConnection(URL url, Proxy proxy) {
         this(url);
         this.proxy = proxy;
@@ -129,7 +129,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.184 -0400", hash_original_method = "2BDEB44F3F77270286A692320830ED18", hash_generated_method = "A977705E0D9FEFE1A9525192F5C6718D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.283 -0400", hash_original_method = "2BDEB44F3F77270286A692320830ED18", hash_generated_method = "428915D2606DEB5ABF969A1E85E8DAD8")
     private void cd() throws IOException {
         int idx;
         idx = url.getFile().lastIndexOf('/');
@@ -140,7 +140,7 @@ public class FtpURLConnection extends URLConnection {
             int reply;
             reply = getReply();
             {
-                boolean varBE81789B15668C14F8FBF1F7C83F40EF_1286274996 = (reply != FTP_FILEOK && dir.length() > 0 && dir.charAt(0) == '/');
+                boolean varBE81789B15668C14F8FBF1F7C83F40EF_29704397 = (reply != FTP_FILEOK && dir.length() > 0 && dir.charAt(0) == '/');
                 {
                     write("CWD " + dir.substring(1) + "\r\n");
                     reply = getReply();
@@ -167,7 +167,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.185 -0400", hash_original_method = "1FC662ADE026A6EC6E72DFD849EB4C0C", hash_generated_method = "3F96076155FB01FC862E702B85FB8B15")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.284 -0400", hash_original_method = "1FC662ADE026A6EC6E72DFD849EB4C0C", hash_generated_method = "B0AD703E77EE4524AFF22575D43527EB")
     @Override
     public void connect() throws IOException {
         List<Proxy> proxyList;
@@ -197,7 +197,7 @@ public class FtpURLConnection extends URLConnection {
             String failureReason;
             failureReason = "";
             {
-                boolean varCFD72D53DBA52886AC473D9BA8446371_1544988451 = (iter.hasNext() && !connectOK);
+                boolean varCFD72D53DBA52886AC473D9BA8446371_2115063731 = (iter.hasNext() && !connectOK);
                 {
                     currentProxy = iter.next();
                     try 
@@ -223,7 +223,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.198 -0400", hash_original_method = "C4AF18B7DC35179EB8C42F6F6880E61F", hash_generated_method = "C88A9BC643DF613C1971B9C7FBE79183")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.297 -0400", hash_original_method = "C4AF18B7DC35179EB8C42F6F6880E61F", hash_generated_method = "CC5540DE8AE36AA6478C36ABA1A06B2A")
     private void connectInternal() throws IOException {
         int port;
         port = url.getPort();
@@ -233,7 +233,7 @@ public class FtpURLConnection extends URLConnection {
             port = FTP_PORT;
         } //End block
         {
-            boolean varF4CD2CCF74132A11A5914708A82DC9EC_1530515420 = (currentProxy == null || Proxy.Type.HTTP == currentProxy.type());
+            boolean varF4CD2CCF74132A11A5914708A82DC9EC_167536215 = (currentProxy == null || Proxy.Type.HTTP == currentProxy.type());
             {
                 controlSocket = new Socket();
             } //End block
@@ -250,7 +250,7 @@ public class FtpURLConnection extends URLConnection {
         login();
         setType();
         {
-            boolean var829DE01A17FC0244427FEC6DEC92507E_30765689 = (!getDoInput());
+            boolean var829DE01A17FC0244427FEC6DEC92507E_615726462 = (!getDoInput());
             {
                 cd();
             } //End block
@@ -265,7 +265,7 @@ public class FtpURLConnection extends URLConnection {
             } //End block
             acceptSocket.setSoTimeout(getConnectTimeout());
             {
-                boolean var68D57BFB543CF9672AB661363C16EEBA_1663058076 = (getDoInput());
+                boolean var68D57BFB543CF9672AB661363C16EEBA_83462567 = (getDoInput());
                 {
                     getFile();
                 } //End block
@@ -282,7 +282,7 @@ public class FtpURLConnection extends URLConnection {
             if (DroidSafeAndroidRuntime.control) throw new IOException("Could not establish data connection");
         } //End block
         {
-            boolean var94914FE1E1D82177FF47112D9CCAA253_906724956 = (getDoInput());
+            boolean var94914FE1E1D82177FF47112D9CCAA253_1777457201 = (getDoInput());
             {
                 inputStream = new FtpURLInputStream(
                     new BufferedInputStream(dataSocket.getInputStream()), controlSocket);
@@ -293,28 +293,28 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.198 -0400", hash_original_method = "EC8528293B0BAB1F2E4332771D0B26FB", hash_generated_method = "B0CCAED67FE4CE77B89B909CE801AE05")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.298 -0400", hash_original_method = "EC8528293B0BAB1F2E4332771D0B26FB", hash_generated_method = "AF4ACF53AC0089E062E80556C8992EFA")
     @Override
     public String getContentType() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1020467333 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1006875848 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1792914804 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_610703028 = null; //Variable for return #2
         String result;
         result = guessContentTypeFromName(url.getFile());
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1020467333 = "content/unknown";
+            varB4EAC82CA7396A68D541C85D26508E83_1792914804 = "content/unknown";
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1006875848 = result;
-        String varA7E53CE21691AB073D9660D615818899_1613506295; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_610703028 = result;
+        String varA7E53CE21691AB073D9660D615818899_1600979749; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1613506295 = varB4EAC82CA7396A68D541C85D26508E83_1020467333;
+                varA7E53CE21691AB073D9660D615818899_1600979749 = varB4EAC82CA7396A68D541C85D26508E83_1792914804;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1613506295 = varB4EAC82CA7396A68D541C85D26508E83_1006875848;
+                varA7E53CE21691AB073D9660D615818899_1600979749 = varB4EAC82CA7396A68D541C85D26508E83_610703028;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1613506295.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1613506295;
+        varA7E53CE21691AB073D9660D615818899_1600979749.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1600979749;
         // ---------- Original Method ----------
         //String result = guessContentTypeFromName(url.getFile());
         //if (result == null) {
@@ -324,7 +324,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.199 -0400", hash_original_method = "4A774F3C4B70A99D65FCF85E87C829A2", hash_generated_method = "90DAF7D1CC80401366764E35DFD7193C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.308 -0400", hash_original_method = "4A774F3C4B70A99D65FCF85E87C829A2", hash_generated_method = "0A40218DE4D79643584401C98C7BDFA4")
     private void getFile() throws IOException {
         int reply;
         String file;
@@ -332,7 +332,7 @@ public class FtpURLConnection extends URLConnection {
         write("RETR " + file + "\r\n");
         reply = getReply();
         {
-            boolean var35CF175F816EA3EA6C255308B8C21654_236111990 = (reply == FTP_NOTFOUND && file.length() > 0 && file.charAt(0) == '/');
+            boolean var35CF175F816EA3EA6C255308B8C21654_1382703838 = (reply == FTP_NOTFOUND && file.length() > 0 && file.charAt(0) == '/');
             {
                 write("RETR " + file.substring(1) + "\r\n");
                 reply = getReply();
@@ -356,16 +356,16 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.199 -0400", hash_original_method = "71DB7CA360B0ED6E855C6F8E83FB7FD7", hash_generated_method = "AA1F0F9E52E440A5D331A3FF62841C52")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.362 -0400", hash_original_method = "71DB7CA360B0ED6E855C6F8E83FB7FD7", hash_generated_method = "E52967AB3EBD4E45307DD241ABDF339C")
     @Override
     public InputStream getInputStream() throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1811299183 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_737539922 = null; //Variable for return #1
         {
             connect();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1811299183 = inputStream;
-        varB4EAC82CA7396A68D541C85D26508E83_1811299183.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1811299183;
+        varB4EAC82CA7396A68D541C85D26508E83_737539922 = inputStream;
+        varB4EAC82CA7396A68D541C85D26508E83_737539922.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_737539922;
         // ---------- Original Method ----------
         //if (!connected) {
             //connect();
@@ -374,18 +374,18 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.212 -0400", hash_original_method = "97C79AEDFD54E69CFEDF030BFEEB0808", hash_generated_method = "CD02A4093F491E144731DA3E62316C14")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.363 -0400", hash_original_method = "97C79AEDFD54E69CFEDF030BFEEB0808", hash_generated_method = "C4B46E4F980E6B9CA0D56B77B92FE2DB")
     @Override
     public Permission getPermission() throws IOException {
-        Permission varB4EAC82CA7396A68D541C85D26508E83_2065883279 = null; //Variable for return #1
+        Permission varB4EAC82CA7396A68D541C85D26508E83_2117313729 = null; //Variable for return #1
         int port;
         port = url.getPort();
         {
             port = FTP_PORT;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2065883279 = new SocketPermission(hostName + ":" + port, "connect, resolve");
-        varB4EAC82CA7396A68D541C85D26508E83_2065883279.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2065883279;
+        varB4EAC82CA7396A68D541C85D26508E83_2117313729 = new SocketPermission(hostName + ":" + port, "connect, resolve");
+        varB4EAC82CA7396A68D541C85D26508E83_2117313729.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2117313729;
         // ---------- Original Method ----------
         //int port = url.getPort();
         //if (port <= 0) {
@@ -395,16 +395,16 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.212 -0400", hash_original_method = "C24DD353CC035BBFCE8CBDD0A367D441", hash_generated_method = "A49429419CA141DFB37CE5B4F43A81F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.363 -0400", hash_original_method = "C24DD353CC035BBFCE8CBDD0A367D441", hash_generated_method = "23544BC534767CCCE143A591EEF57E37")
     @Override
     public OutputStream getOutputStream() throws IOException {
-        OutputStream varB4EAC82CA7396A68D541C85D26508E83_1863667793 = null; //Variable for return #1
+        OutputStream varB4EAC82CA7396A68D541C85D26508E83_1648595381 = null; //Variable for return #1
         {
             connect();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1863667793 = dataSocket.getOutputStream();
-        varB4EAC82CA7396A68D541C85D26508E83_1863667793.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1863667793;
+        varB4EAC82CA7396A68D541C85D26508E83_1648595381 = dataSocket.getOutputStream();
+        varB4EAC82CA7396A68D541C85D26508E83_1648595381.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1648595381;
         // ---------- Original Method ----------
         //if (!connected) {
             //connect();
@@ -413,7 +413,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.213 -0400", hash_original_method = "754446702A2F2C82AEEC6CF269039EFC", hash_generated_method = "B3188F2C8D8F92C09EB34F64E3889E87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.368 -0400", hash_original_method = "754446702A2F2C82AEEC6CF269039EFC", hash_generated_method = "8E6CA3D14501563CF0CE6501FBF806DE")
     private int getReply() throws IOException {
         byte[] code;
         code = new byte[3];
@@ -433,7 +433,7 @@ public class FtpURLConnection extends URLConnection {
         boolean multiline;
         multiline = false;
         {
-            boolean varBA5772E8936B0A50E1A123DBE745E06F_1275427508 = (ctrlInput.read() == '-');
+            boolean varBA5772E8936B0A50E1A123DBE745E06F_1729430722 = (ctrlInput.read() == '-');
             {
                 multiline = true;
             } //End block
@@ -441,19 +441,19 @@ public class FtpURLConnection extends URLConnection {
         readLine();
         {
             {
-                boolean var9C00639D5751585AF0FD1C756377B44F_1293915622 = (readMultiLine());
+                boolean var9C00639D5751585AF0FD1C756377B44F_1896335684 = (readMultiLine());
             } //End collapsed parenthetic
         } //End block
         try 
         {
-            int varBB571124520D3C3346414E12694FE6DA_894851074 = (Integer.parseInt(replyCode));
+            int varBB571124520D3C3346414E12694FE6DA_1739596489 = (Integer.parseInt(replyCode));
         } //End block
         catch (NumberFormatException e)
         {
             if (DroidSafeAndroidRuntime.control) throw (IOException)(new IOException("reply code is invalid").initCause(e));
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1665042056 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1665042056;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_361538168 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_361538168;
         // ---------- Original Method ----------
         //byte[] code = new byte[3];
         //for (int i = 0; i < code.length; i++) {
@@ -481,7 +481,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.214 -0400", hash_original_method = "0C049C745906095629F65911A54698F4", hash_generated_method = "BA8006199C9CE5DEAC5A2DA8CDD9DD59")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.369 -0400", hash_original_method = "0C049C745906095629F65911A54698F4", hash_generated_method = "BA8006199C9CE5DEAC5A2DA8CDD9DD59")
     private void login() throws IOException {
         int reply;
         reply = getReply();
@@ -523,7 +523,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.214 -0400", hash_original_method = "7AD2E3313E6C9CA8D7D83CEDA11B3440", hash_generated_method = "34637F227D00718FEA586CBF104EA2FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.370 -0400", hash_original_method = "7AD2E3313E6C9CA8D7D83CEDA11B3440", hash_generated_method = "24E48425769C96A99F3FF19E158ABA9E")
     private void port() throws IOException {
         write("PORT "
                 + controlSocket.getLocalAddress().getHostAddress().replace('.',
@@ -531,7 +531,7 @@ public class FtpURLConnection extends URLConnection {
                 + (dataPort & 255)
                 + "\r\n");
         {
-            boolean var89ABBF2CBDBE2FAE4CD06E939EEADC92_1903445084 = (getReply() != FTP_OK);
+            boolean var89ABBF2CBDBE2FAE4CD06E939EEADC92_1466297715 = (getReply() != FTP_OK);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("Unable to configure data port");
             } //End block
@@ -548,21 +548,21 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.215 -0400", hash_original_method = "2E63066111AD195377A7E087D5F90A5E", hash_generated_method = "EFABB9C054E16BD1293521C03E10D635")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.370 -0400", hash_original_method = "2E63066111AD195377A7E087D5F90A5E", hash_generated_method = "5C5F8DAADA75070CA32FDDDDAD1D33A8")
     private String readLine() throws IOException {
-        String varB4EAC82CA7396A68D541C85D26508E83_739844116 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1952448530 = null; //Variable for return #1
         StringBuilder sb;
         sb = new StringBuilder();
         int c;
         {
-            boolean var0A1A84B711CE9EFCE167E7000C6A6CAC_42031988 = ((c = ctrlInput.read()) != '\n');
+            boolean var0A1A84B711CE9EFCE167E7000C6A6CAC_1676874570 = ((c = ctrlInput.read()) != '\n');
             {
                 sb.append((char) c);
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_739844116 = sb.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_739844116.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_739844116;
+        varB4EAC82CA7396A68D541C85D26508E83_1952448530 = sb.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1952448530.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1952448530;
         // ---------- Original Method ----------
         //StringBuilder sb = new StringBuilder();
         //int c;
@@ -573,19 +573,19 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.215 -0400", hash_original_method = "D4D3BFF8CA61872FC19064B66C8564AF", hash_generated_method = "341AB84467DF295B0D6C2487F305516E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.371 -0400", hash_original_method = "D4D3BFF8CA61872FC19064B66C8564AF", hash_generated_method = "64D6650221CB0F9BC4AD38A8319FB19C")
     private boolean readMultiLine() throws IOException {
         String line;
         line = readLine();
         {
-            boolean var3A066064DA765AB7D5D26E22DA8460AD_97290925 = (line.length() < 4);
+            boolean var3A066064DA765AB7D5D26E22DA8460AD_1267314117 = (line.length() < 4);
         } //End collapsed parenthetic
         {
-            boolean var0953186FCF36BD1F0150CCCE3D967FBF_1168581577 = (line.substring(0, 3).equals(replyCode)
+            boolean var0953186FCF36BD1F0150CCCE3D967FBF_930277855 = (line.substring(0, 3).equals(replyCode)
                 && (line.charAt(3) == (char) 32));
         } //End collapsed parenthetic
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_901218532 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_901218532;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_504174499 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_504174499;
         // ---------- Original Method ----------
         //String line = readLine();
         //if (line.length() < 4) {
@@ -599,7 +599,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.216 -0400", hash_original_method = "2BA78033DAE740186A6855D293FFDC43", hash_generated_method = "3C6D1095F4A84A640ACDD09D1F6B2860")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.374 -0400", hash_original_method = "2BA78033DAE740186A6855D293FFDC43", hash_generated_method = "3C6D1095F4A84A640ACDD09D1F6B2860")
     private void sendFile() throws IOException {
         int reply;
         write("STOR "
@@ -621,7 +621,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.216 -0400", hash_original_method = "D85289DF0962B48F2ED540BF99BE1F4B", hash_generated_method = "8627FE5E61E8C187C0DA384FCC1D26CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.374 -0400", hash_original_method = "D85289DF0962B48F2ED540BF99BE1F4B", hash_generated_method = "8627FE5E61E8C187C0DA384FCC1D26CE")
     @Override
     public void setDoInput(boolean newValue) {
         {
@@ -639,7 +639,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.216 -0400", hash_original_method = "E097E58C1D164A4A6A5279DFEE80DF6A", hash_generated_method = "885E6F743885F1DFEDDAFE8B00D1E004")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.375 -0400", hash_original_method = "E097E58C1D164A4A6A5279DFEE80DF6A", hash_generated_method = "885E6F743885F1DFEDDAFE8B00D1E004")
     @Override
     public void setDoOutput(boolean newValue) {
         {
@@ -657,11 +657,11 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.229 -0400", hash_original_method = "507EB2691A7ADEA1CDA7F73F8F57152E", hash_generated_method = "6BA94C2FF3DD0A85D31A49E7C44E85C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.375 -0400", hash_original_method = "507EB2691A7ADEA1CDA7F73F8F57152E", hash_generated_method = "F91CCE94921CE564A5179799DA107B19")
     private void setType() throws IOException {
         write("TYPE I\r\n");
         {
-            boolean var89ABBF2CBDBE2FAE4CD06E939EEADC92_1146180158 = (getReply() != FTP_OK);
+            boolean var89ABBF2CBDBE2FAE4CD06E939EEADC92_965194736 = (getReply() != FTP_OK);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IOException("Unable to set transfer type");
             } //End block
@@ -674,7 +674,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.229 -0400", hash_original_method = "3CB2D955BA1082FED6AC9AF45688DFA7", hash_generated_method = "852C423B65CCA7735CA77354568247DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.375 -0400", hash_original_method = "3CB2D955BA1082FED6AC9AF45688DFA7", hash_generated_method = "852C423B65CCA7735CA77354568247DF")
     private void write(String command) throws IOException {
         ctrlOutput.write(command.getBytes(Charsets.ISO_8859_1));
         addTaint(command.getTaint());
@@ -683,34 +683,34 @@ public class FtpURLConnection extends URLConnection {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.229 -0400", hash_original_field = "40907AD68D2326CC5B43306FB100F610", hash_generated_field = "02C45DC159C98DD9FA078997D6F66804")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.375 -0400", hash_original_field = "40907AD68D2326CC5B43306FB100F610", hash_generated_field = "02C45DC159C98DD9FA078997D6F66804")
 
     private static int FTP_PORT = 21;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.229 -0400", hash_original_field = "23B41E27160246E1E9727D4CA0C73B88", hash_generated_field = "83003C6154691E98F2CC63EFD745DC5F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.375 -0400", hash_original_field = "23B41E27160246E1E9727D4CA0C73B88", hash_generated_field = "83003C6154691E98F2CC63EFD745DC5F")
 
     private static int FTP_DATAOPEN = 125;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.229 -0400", hash_original_field = "190869485A3022695759F8349A66BEAE", hash_generated_field = "B150C22E75B3FDA29A8ABBD027715C4B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.376 -0400", hash_original_field = "190869485A3022695759F8349A66BEAE", hash_generated_field = "B150C22E75B3FDA29A8ABBD027715C4B")
 
     private static int FTP_OPENDATA = 150;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.229 -0400", hash_original_field = "36C04BA3231BAA35A2B37E4587F340A1", hash_generated_field = "63241EED239D909933C82FA0FA776B6A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.376 -0400", hash_original_field = "36C04BA3231BAA35A2B37E4587F340A1", hash_generated_field = "63241EED239D909933C82FA0FA776B6A")
 
     private static int FTP_OK = 200;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.229 -0400", hash_original_field = "4894B10ABCD2BDE1F843362BE3972401", hash_generated_field = "4AE3754B9BFE4902F8AEFB7924712609")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.376 -0400", hash_original_field = "4894B10ABCD2BDE1F843362BE3972401", hash_generated_field = "4AE3754B9BFE4902F8AEFB7924712609")
 
     private static int FTP_USERREADY = 220;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.229 -0400", hash_original_field = "80226B533A52439A8B67E8F2DFF297A6", hash_generated_field = "5DEDC5676E9E67ED4371FD5B5C43507E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.382 -0400", hash_original_field = "80226B533A52439A8B67E8F2DFF297A6", hash_generated_field = "5DEDC5676E9E67ED4371FD5B5C43507E")
 
     private static int FTP_TRANSFEROK = 226;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.229 -0400", hash_original_field = "777E76EBEBF483304080CCFBDF3B85ED", hash_generated_field = "354EB252DCECEE382D33CBB23CF9C4B3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.382 -0400", hash_original_field = "777E76EBEBF483304080CCFBDF3B85ED", hash_generated_field = "354EB252DCECEE382D33CBB23CF9C4B3")
 
     private static int FTP_LOGGEDIN = 230;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.229 -0400", hash_original_field = "545A1E6BE4254F4B9F1C304543691B8D", hash_generated_field = "2B94200B12B3DD1BADA2C711B1714784")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.382 -0400", hash_original_field = "545A1E6BE4254F4B9F1C304543691B8D", hash_generated_field = "2B94200B12B3DD1BADA2C711B1714784")
 
     private static int FTP_FILEOK = 250;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.229 -0400", hash_original_field = "44D032478A43739ABF9EDD61592A1F43", hash_generated_field = "418DF2D73E74D4957E92DD7A94306195")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.382 -0400", hash_original_field = "44D032478A43739ABF9EDD61592A1F43", hash_generated_field = "418DF2D73E74D4957E92DD7A94306195")
 
     private static int FTP_PASWD = 331;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.229 -0400", hash_original_field = "14A4ED5ECC64E1A63CE6CF76DAE98B2C", hash_generated_field = "32B7184D6A0122806F8AECA28D97501F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.382 -0400", hash_original_field = "14A4ED5ECC64E1A63CE6CF76DAE98B2C", hash_generated_field = "32B7184D6A0122806F8AECA28D97501F")
 
     private static int FTP_NOTFOUND = 550;
 }

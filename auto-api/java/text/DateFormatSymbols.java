@@ -18,57 +18,57 @@ import libcore.icu.LocaleData;
 import libcore.icu.TimeZones;
 
 public class DateFormatSymbols implements Serializable, Cloneable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "F93C182ABF27C94E3A5B7A9F01CA9F60", hash_generated_field = "B3AAF3207AD6EC4015B2989CC1E896AA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.267 -0400", hash_original_field = "F93C182ABF27C94E3A5B7A9F01CA9F60", hash_generated_field = "B3AAF3207AD6EC4015B2989CC1E896AA")
 
     private String localPatternChars;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "EE109C8604E524BC6D9E0C2587FEE2D8", hash_generated_field = "E9E36152E2B2CCE2D2DF7029FCA0E0AA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.267 -0400", hash_original_field = "EE109C8604E524BC6D9E0C2587FEE2D8", hash_generated_field = "E9E36152E2B2CCE2D2DF7029FCA0E0AA")
 
     String[] ampms;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "D026F0E07E8726FB52E3CC3E3D0D1375", hash_generated_field = "E0691941E69B86E10AC79FC9DFFC272D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.267 -0400", hash_original_field = "D026F0E07E8726FB52E3CC3E3D0D1375", hash_generated_field = "E0691941E69B86E10AC79FC9DFFC272D")
 
     String[] eras;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "DA36CFAF48B9E19896E23E1207040D1E", hash_generated_field = "86F5593447744AB0D2426E4B6C92C689")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.267 -0400", hash_original_field = "DA36CFAF48B9E19896E23E1207040D1E", hash_generated_field = "86F5593447744AB0D2426E4B6C92C689")
 
     String[] months;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "7CFA6EB2E9F41003AC5C121106DC32C1", hash_generated_field = "0DF3792D47225D65FC03CC1EE597502D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.267 -0400", hash_original_field = "7CFA6EB2E9F41003AC5C121106DC32C1", hash_generated_field = "0DF3792D47225D65FC03CC1EE597502D")
 
     String[] shortMonths;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "F232077D652EDEE073A547D6F8C9DBAA", hash_generated_field = "9FF057C20818DAD49F561EBB25C5D177")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.267 -0400", hash_original_field = "F232077D652EDEE073A547D6F8C9DBAA", hash_generated_field = "9FF057C20818DAD49F561EBB25C5D177")
 
     String[] shortWeekdays;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "92B9604FFB8FE10577DE981BE625A6D1", hash_generated_field = "F5A81D14F7FC350336EA1CDD45134728")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.267 -0400", hash_original_field = "92B9604FFB8FE10577DE981BE625A6D1", hash_generated_field = "F5A81D14F7FC350336EA1CDD45134728")
 
     String[] weekdays;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "B121095E75CAC704B42EE21332C700E8", hash_generated_field = "402565001AFCC4D0F913CB823E99BBB5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.267 -0400", hash_original_field = "B121095E75CAC704B42EE21332C700E8", hash_generated_field = "402565001AFCC4D0F913CB823E99BBB5")
 
     transient String[] longStandAloneMonths;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "B8789910F74B7F8F96F476446A140202", hash_generated_field = "D3C2FF472DF92A6DB563114884CB2A55")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.267 -0400", hash_original_field = "B8789910F74B7F8F96F476446A140202", hash_generated_field = "D3C2FF472DF92A6DB563114884CB2A55")
 
     transient String[] shortStandAloneMonths;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "1FFCA875E027B7EFD687FE2C578690E6", hash_generated_field = "A8C4ABDEC24C4081D6DC2DD240794CBF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.267 -0400", hash_original_field = "1FFCA875E027B7EFD687FE2C578690E6", hash_generated_field = "A8C4ABDEC24C4081D6DC2DD240794CBF")
 
     transient String[] longStandAloneWeekdays;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "EDEEAFC9758166996DB88A34369B7E82", hash_generated_field = "5A1974ABC298872CE58EE882C634EEA7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.267 -0400", hash_original_field = "EDEEAFC9758166996DB88A34369B7E82", hash_generated_field = "5A1974ABC298872CE58EE882C634EEA7")
 
     transient String[] shortStandAloneWeekdays;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "D0872812CDF2B7417CF77B378EBAABF1", hash_generated_field = "7D22C959C8C5C0204FC82BE4EE6AC154")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.267 -0400", hash_original_field = "D0872812CDF2B7417CF77B378EBAABF1", hash_generated_field = "7D22C959C8C5C0204FC82BE4EE6AC154")
 
     String[][] zoneStrings;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "7B7649AEDE091E38288525663FD40113", hash_generated_field = "95929A023295B932C341AB00B66AEC36")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.267 -0400", hash_original_field = "7B7649AEDE091E38288525663FD40113", hash_generated_field = "95929A023295B932C341AB00B66AEC36")
 
     transient boolean customZoneStrings;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.567 -0400", hash_original_field = "FB216D9E8791E63C8D12BDC420956839", hash_generated_field = "B588E29C12BDB46B326FE934DDE5D1D8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.267 -0400", hash_original_field = "FB216D9E8791E63C8D12BDC420956839", hash_generated_field = "B588E29C12BDB46B326FE934DDE5D1D8")
 
     transient Locale locale;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.574 -0400", hash_original_method = "5D59D1DAC1D60D67A4A902493CF704FB", hash_generated_method = "C859C77BBE7800A29A0C963324C5BAF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.268 -0400", hash_original_method = "5D59D1DAC1D60D67A4A902493CF704FB", hash_generated_method = "C859C77BBE7800A29A0C963324C5BAF5")
     public  DateFormatSymbols() {
         this(Locale.getDefault());
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.575 -0400", hash_original_method = "10456A2571D0B6BA1CAC9BF624A7CB6F", hash_generated_method = "76154EF638B09EF895E47F2F699EA256")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.269 -0400", hash_original_method = "10456A2571D0B6BA1CAC9BF624A7CB6F", hash_generated_method = "76154EF638B09EF895E47F2F699EA256")
     public  DateFormatSymbols(Locale locale) {
         this.locale = locale;
         this.localPatternChars = SimpleDateFormat.PATTERN_CHARS;
@@ -101,15 +101,15 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.577 -0400", hash_original_method = "D4F915DF738351C94CAE2742EF7502E4", hash_generated_method = "00CA99C321BCB2628A28BD4EBFFA1315")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.277 -0400", hash_original_method = "D4F915DF738351C94CAE2742EF7502E4", hash_generated_method = "4AB64CB1ABB93B8293F968571320D11B")
     synchronized String[][] internalZoneStrings() {
-        String[][] varB4EAC82CA7396A68D541C85D26508E83_43057646 = null; //Variable for return #1
+        String[][] varB4EAC82CA7396A68D541C85D26508E83_1291472983 = null; //Variable for return #1
         {
             zoneStrings = TimeZones.getZoneStrings(locale);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_43057646 = zoneStrings;
-        varB4EAC82CA7396A68D541C85D26508E83_43057646.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_43057646;
+        varB4EAC82CA7396A68D541C85D26508E83_1291472983 = zoneStrings;
+        varB4EAC82CA7396A68D541C85D26508E83_1291472983.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1291472983;
         // ---------- Original Method ----------
         //if (zoneStrings == null) {
             //zoneStrings = TimeZones.getZoneStrings(locale);
@@ -136,7 +136,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.577 -0400", hash_original_method = "E120B4C8193E856C74E13A18ACCA4F59", hash_generated_method = "BD7C4E57C037C4434DB7EA8243AC64AF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.377 -0400", hash_original_method = "E120B4C8193E856C74E13A18ACCA4F59", hash_generated_method = "BD7C4E57C037C4434DB7EA8243AC64AF")
     private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
         ois.defaultReadObject();
         longStandAloneMonths = months;
@@ -153,7 +153,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.578 -0400", hash_original_method = "5B6B2CBEB972D19E7440DD4CD3FE992C", hash_generated_method = "B537106420CC00C4A69A93EF5AA315BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.378 -0400", hash_original_method = "5B6B2CBEB972D19E7440DD4CD3FE992C", hash_generated_method = "B537106420CC00C4A69A93EF5AA315BF")
     private void writeObject(ObjectOutputStream oos) throws IOException {
         internalZoneStrings();
         oos.defaultWriteObject();
@@ -164,20 +164,20 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.578 -0400", hash_original_method = "8CF95CA28B578C998335BB5077A2FD41", hash_generated_method = "A28DE5B8A841FBA2D158CDF1346089BC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.378 -0400", hash_original_method = "8CF95CA28B578C998335BB5077A2FD41", hash_generated_method = "ADA08A0097515663DE09811B33D7268A")
     @Override
     public Object clone() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1425813476 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_2139504928 = null; //Variable for return #1
         try 
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1425813476 = super.clone();
+            varB4EAC82CA7396A68D541C85D26508E83_2139504928 = super.clone();
         } //End block
         catch (CloneNotSupportedException e)
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1425813476.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1425813476;
+        varB4EAC82CA7396A68D541C85D26508E83_2139504928.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2139504928;
         // ---------- Original Method ----------
         //try {
             //return super.clone();
@@ -187,12 +187,12 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.583 -0400", hash_original_method = "94EAA904B302ADC25F17C85B071CCB2E", hash_generated_method = "BEB4972F913059A7BCEAB91D2D9885E8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.379 -0400", hash_original_method = "94EAA904B302ADC25F17C85B071CCB2E", hash_generated_method = "85C949503E25275D967B0781CD852F0C")
     @Override
     public boolean equals(Object object) {
         DateFormatSymbols rhs;
         rhs = (DateFormatSymbols) object;
-        boolean var43A3CC75E8E7CD6A467AD89DFA8053C6_139761240 = (localPatternChars.equals(rhs.localPatternChars) &&
+        boolean var43A3CC75E8E7CD6A467AD89DFA8053C6_1060510896 = (localPatternChars.equals(rhs.localPatternChars) &&
                 Arrays.equals(ampms, rhs.ampms) &&
                 Arrays.equals(eras, rhs.eras) &&
                 Arrays.equals(months, rhs.months) &&
@@ -201,8 +201,8 @@ public class DateFormatSymbols implements Serializable, Cloneable {
                 Arrays.equals(weekdays, rhs.weekdays) &&
                 timeZoneStringsEqual(this, rhs));
         addTaint(object.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1667037376 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1667037376;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_362006403 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_362006403;
         // ---------- Original Method ----------
         //if (this == object) {
             //return true;
@@ -230,11 +230,11 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.585 -0400", hash_original_method = "315ADE63F84D6DC8A24FA118617E3BBD", hash_generated_method = "D50F0AFC057484C9B57042FD71F5F4E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.380 -0400", hash_original_method = "315ADE63F84D6DC8A24FA118617E3BBD", hash_generated_method = "AD4522DD19849DAC6DA6F8C853FA7052")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1979365739 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1979365739 = getClass().getName() +
+        String varB4EAC82CA7396A68D541C85D26508E83_336581462 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_336581462 = getClass().getName() +
                 "[amPmStrings=" + Arrays.toString(ampms) +
                 ",customZoneStrings=" + customZoneStrings +
                 ",eras=" + Arrays.toString(eras) +
@@ -245,8 +245,8 @@ public class DateFormatSymbols implements Serializable, Cloneable {
                 ",weekdays=" + Arrays.toString(weekdays) +
                 ",zoneStrings=[" + Arrays.toString(internalZoneStrings()[0]) + "...]" +
                 "]";
-        varB4EAC82CA7396A68D541C85D26508E83_1979365739.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1979365739;
+        varB4EAC82CA7396A68D541C85D26508E83_336581462.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_336581462;
         // ---------- Original Method ----------
         //return getClass().getName() +
                 //"[amPmStrings=" + Arrays.toString(ampms) +
@@ -262,89 +262,89 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.585 -0400", hash_original_method = "72991BA97E8B1C753B319ABB9AE6A911", hash_generated_method = "27D3B7EBA379CB8945DD9C88CF7382DD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.380 -0400", hash_original_method = "72991BA97E8B1C753B319ABB9AE6A911", hash_generated_method = "B65E4FF470489B8ADF651B4E2831CBE4")
     public String[] getAmPmStrings() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1875016767 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1875016767 = ampms.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_1875016767.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1875016767;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_787246843 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_787246843 = ampms.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_787246843.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_787246843;
         // ---------- Original Method ----------
         //return ampms.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.586 -0400", hash_original_method = "BB9FAB8B89491AAFEBAE987DB8D7ADC9", hash_generated_method = "32F02A0506C4FF906619BD92BC0CB057")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.380 -0400", hash_original_method = "BB9FAB8B89491AAFEBAE987DB8D7ADC9", hash_generated_method = "7074D12D528EFD306C2D0ADA29FA88EA")
     public String[] getEras() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_890333095 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_890333095 = eras.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_890333095.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_890333095;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1519400323 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1519400323 = eras.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_1519400323.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1519400323;
         // ---------- Original Method ----------
         //return eras.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.586 -0400", hash_original_method = "EEE83582BA421C729308A747699C1F8B", hash_generated_method = "32F8A9471D89596C400AF4C317D65A47")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.381 -0400", hash_original_method = "EEE83582BA421C729308A747699C1F8B", hash_generated_method = "8359F0C83D7436F3B7694CF364F9B11A")
     public String getLocalPatternChars() {
-        String varB4EAC82CA7396A68D541C85D26508E83_33060150 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_33060150 = localPatternChars;
-        varB4EAC82CA7396A68D541C85D26508E83_33060150.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_33060150;
+        String varB4EAC82CA7396A68D541C85D26508E83_637590872 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_637590872 = localPatternChars;
+        varB4EAC82CA7396A68D541C85D26508E83_637590872.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_637590872;
         // ---------- Original Method ----------
         //return localPatternChars;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.600 -0400", hash_original_method = "7E7D6ABDEA9D17B1FB9A10690E51D2C0", hash_generated_method = "4B58553D05724E06BD39701EA1AC5BA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.381 -0400", hash_original_method = "7E7D6ABDEA9D17B1FB9A10690E51D2C0", hash_generated_method = "717CBE1B985FB37EBF42A32D9EDA2395")
     public String[] getMonths() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1261890951 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1261890951 = months.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_1261890951.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1261890951;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1901926738 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1901926738 = months.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_1901926738.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1901926738;
         // ---------- Original Method ----------
         //return months.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.600 -0400", hash_original_method = "B159D6A758F880417EB3F558245AB4C8", hash_generated_method = "6C916F5E5CED16B01012A4C1864699C3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.399 -0400", hash_original_method = "B159D6A758F880417EB3F558245AB4C8", hash_generated_method = "A81B9738F9FAD8056C44580169317802")
     public String[] getShortMonths() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1197326851 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1197326851 = shortMonths.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_1197326851.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1197326851;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_131998805 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_131998805 = shortMonths.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_131998805.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_131998805;
         // ---------- Original Method ----------
         //return shortMonths.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.602 -0400", hash_original_method = "22143FF136703407DD6E3A76253CFCD4", hash_generated_method = "52E1267E57C885B049EC775E108BCAC3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.399 -0400", hash_original_method = "22143FF136703407DD6E3A76253CFCD4", hash_generated_method = "67AAC0A268395D57A4A84EE8E7CF0448")
     public String[] getShortWeekdays() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_488963167 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_488963167 = shortWeekdays.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_488963167.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_488963167;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_2061779683 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2061779683 = shortWeekdays.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_2061779683.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2061779683;
         // ---------- Original Method ----------
         //return shortWeekdays.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.607 -0400", hash_original_method = "9B40AAE5B3ACDD77762A9FF02C898A9B", hash_generated_method = "0AE4EBBDC6CD5F292DD46B93BDEBAC41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.400 -0400", hash_original_method = "9B40AAE5B3ACDD77762A9FF02C898A9B", hash_generated_method = "6489551051BD8A5A5B61BCBC1EC7CB61")
     public String[] getWeekdays() {
-        String[] varB4EAC82CA7396A68D541C85D26508E83_1463294248 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1463294248 = weekdays.clone();
-        varB4EAC82CA7396A68D541C85D26508E83_1463294248.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1463294248;
+        String[] varB4EAC82CA7396A68D541C85D26508E83_1536504007 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1536504007 = weekdays.clone();
+        varB4EAC82CA7396A68D541C85D26508E83_1536504007.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1536504007;
         // ---------- Original Method ----------
         //return weekdays.clone();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.609 -0400", hash_original_method = "BCD39B9ED22174061A8487583A862B84", hash_generated_method = "0285150AFF2582A5C658C0A38E0A78A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.400 -0400", hash_original_method = "BCD39B9ED22174061A8487583A862B84", hash_generated_method = "44B05EA75E43AE1A8E02B66EEB26C296")
     public String[][] getZoneStrings() {
-        String[][] varB4EAC82CA7396A68D541C85D26508E83_132283638 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_132283638 = clone2dStringArray(internalZoneStrings());
-        varB4EAC82CA7396A68D541C85D26508E83_132283638.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_132283638;
+        String[][] varB4EAC82CA7396A68D541C85D26508E83_406734270 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_406734270 = clone2dStringArray(internalZoneStrings());
+        varB4EAC82CA7396A68D541C85D26508E83_406734270.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_406734270;
         // ---------- Original Method ----------
         //return clone2dStringArray(internalZoneStrings());
     }
@@ -359,7 +359,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.743 -0400", hash_original_method = "092997CB42FACC03E21BAFCA0C446C08", hash_generated_method = "44AE03057DC98C2FE15CF12DC748F939")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.546 -0400", hash_original_method = "092997CB42FACC03E21BAFCA0C446C08", hash_generated_method = "12B2ACA512A2F8042EAAC2B91AA4C4DE")
     @Override
     public int hashCode() {
         String[][] zoneStrings;
@@ -416,14 +416,14 @@ public class DateFormatSymbols implements Serializable, Cloneable {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_951760168 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_951760168;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_309463132 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_309463132;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.744 -0400", hash_original_method = "C567EF18556F46918292A2FE23B946BD", hash_generated_method = "DE73325A9EFE1C7D0ECD66FCF4A02234")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.547 -0400", hash_original_method = "C567EF18556F46918292A2FE23B946BD", hash_generated_method = "DE73325A9EFE1C7D0ECD66FCF4A02234")
     public void setAmPmStrings(String[] data) {
         ampms = data.clone();
         // ---------- Original Method ----------
@@ -431,7 +431,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.744 -0400", hash_original_method = "144479B04BA5F93BAF1BE491BC6DCE8F", hash_generated_method = "CD7C7E57D9DD7095EEB50004EB8BC83B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.547 -0400", hash_original_method = "144479B04BA5F93BAF1BE491BC6DCE8F", hash_generated_method = "CD7C7E57D9DD7095EEB50004EB8BC83B")
     public void setEras(String[] data) {
         eras = data.clone();
         // ---------- Original Method ----------
@@ -439,7 +439,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.744 -0400", hash_original_method = "8CEB0632F689D252D9B5C4F3D13B9389", hash_generated_method = "649DE06FC38CF0E23444049A52DF75E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.547 -0400", hash_original_method = "8CEB0632F689D252D9B5C4F3D13B9389", hash_generated_method = "649DE06FC38CF0E23444049A52DF75E1")
     public void setLocalPatternChars(String data) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -453,7 +453,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.754 -0400", hash_original_method = "FF561E75C563B528E8ADE2D7DEADB24B", hash_generated_method = "B78349A0B99F735427CA1D403EEE1075")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.547 -0400", hash_original_method = "FF561E75C563B528E8ADE2D7DEADB24B", hash_generated_method = "B78349A0B99F735427CA1D403EEE1075")
     public void setMonths(String[] data) {
         months = data.clone();
         // ---------- Original Method ----------
@@ -461,7 +461,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.757 -0400", hash_original_method = "6978BA653DCBEF5E7386E930F96F0A7F", hash_generated_method = "E3952CDA692F3B23A229F9D600872234")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.557 -0400", hash_original_method = "6978BA653DCBEF5E7386E930F96F0A7F", hash_generated_method = "E3952CDA692F3B23A229F9D600872234")
     public void setShortMonths(String[] data) {
         shortMonths = data.clone();
         // ---------- Original Method ----------
@@ -469,7 +469,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.762 -0400", hash_original_method = "D0F3596C1C1C0E88C3194208B883F56E", hash_generated_method = "6D95734F7E1EFF70EDF04DB57B96047A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.558 -0400", hash_original_method = "D0F3596C1C1C0E88C3194208B883F56E", hash_generated_method = "6D95734F7E1EFF70EDF04DB57B96047A")
     public void setShortWeekdays(String[] data) {
         shortWeekdays = data.clone();
         // ---------- Original Method ----------
@@ -477,7 +477,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.763 -0400", hash_original_method = "8E95286ADE938FE6BC77C4018461282B", hash_generated_method = "5347FE4595A98E521296DAD0F934B3AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.558 -0400", hash_original_method = "8E95286ADE938FE6BC77C4018461282B", hash_generated_method = "5347FE4595A98E521296DAD0F934B3AD")
     public void setWeekdays(String[] data) {
         weekdays = data.clone();
         // ---------- Original Method ----------
@@ -485,7 +485,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.809 -0400", hash_original_method = "97B75279909DC0B04FB710B3778B8E55", hash_generated_method = "1A0E814DB648838A7E638C7F5720FCE2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.608 -0400", hash_original_method = "97B75279909DC0B04FB710B3778B8E55", hash_generated_method = "1A0E814DB648838A7E638C7F5720FCE2")
     public void setZoneStrings(String[][] zoneStrings) {
         {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
@@ -514,7 +514,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:48.815 -0400", hash_original_field = "7856CC4F9AD25C25527045AAE8078678", hash_generated_field = "D6B09DC14559887DE9E1172F540C0E95")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:48.608 -0400", hash_original_field = "7856CC4F9AD25C25527045AAE8078678", hash_generated_field = "D6B09DC14559887DE9E1172F540C0E95")
 
     private static long serialVersionUID = -5987973545549424702L;
 }

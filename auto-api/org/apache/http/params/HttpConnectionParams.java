@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public final class HttpConnectionParams implements CoreConnectionPNames {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.169 -0400", hash_original_method = "E377E6E9E726367BB194BBBFED21463F", hash_generated_method = "C92261D75273D144D335B520B6DC917E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.356 -0400", hash_original_method = "E377E6E9E726367BB194BBBFED21463F", hash_generated_method = "C92261D75273D144D335B520B6DC917E")
     private  HttpConnectionParams() {
         super();
         // ---------- Original Method ----------

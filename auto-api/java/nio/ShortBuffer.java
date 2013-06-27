@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuffer> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.232 -0400", hash_original_method = "EAB92A092C9FEE1EEAB86C6A6FABA79C", hash_generated_method = "6318691CE755B9046B333B497AB15184")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.317 -0400", hash_original_method = "EAB92A092C9FEE1EEAB86C6A6FABA79C", hash_generated_method = "6318691CE755B9046B333B497AB15184")
       ShortBuffer(int capacity) {
         super(1, capacity, null);
         addTaint(capacity);
@@ -41,21 +41,21 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.237 -0400", hash_original_method = "0A1B03C776C1004F61482923BC618EF6", hash_generated_method = "CD10F05627B22ABFA2D2E2BFB825A98A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.318 -0400", hash_original_method = "0A1B03C776C1004F61482923BC618EF6", hash_generated_method = "7251164BD783BED3193A9E0D4E52FB56")
     public final short[] array() {
-        short[] varEA57FBC16B997AC0E679F048893AC79C_1064961875 = (protectedArray());
-        short[] var48EE7E2DDF8A83602BC526873BD0F875_1592019560 = {getTaintShort()};
-        return var48EE7E2DDF8A83602BC526873BD0F875_1592019560;
+        short[] varEA57FBC16B997AC0E679F048893AC79C_213215183 = (protectedArray());
+        short[] var48EE7E2DDF8A83602BC526873BD0F875_119291203 = {getTaintShort()};
+        return var48EE7E2DDF8A83602BC526873BD0F875_119291203;
         // ---------- Original Method ----------
         //return protectedArray();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.238 -0400", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "59B219DF9564616FE1C49727D015E54A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.324 -0400", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "08620A697F3277AA638C843FD213DF51")
     public final int arrayOffset() {
-        int var457EDFAA982472962568D68CBF588B38_120257179 = (protectedArrayOffset());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_805211995 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_805211995;
+        int var457EDFAA982472962568D68CBF588B38_1401869284 = (protectedArrayOffset());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1251262936 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1251262936;
         // ---------- Original Method ----------
         //return protectedArrayOffset();
     }
@@ -67,10 +67,10 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     public abstract ShortBuffer compact();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.239 -0400", hash_original_method = "F5228E310614FF7F70EC616A5A8F6CEB", hash_generated_method = "463399F49B31F65C9214DE9657CB4040")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.325 -0400", hash_original_method = "F5228E310614FF7F70EC616A5A8F6CEB", hash_generated_method = "58F2A7BF942BE27AEEA50FB46E666444")
     public int compareTo(ShortBuffer otherBuffer) {
         int compareRemaining;
-        boolean var4BCBF0874E5D33E29652A3CCB2245276_2038024461 = ((remaining() < otherBuffer.remaining()));
+        boolean var4BCBF0874E5D33E29652A3CCB2245276_1272907090 = ((remaining() < otherBuffer.remaining()));
         compareRemaining = remaining();
         compareRemaining = otherBuffer.remaining();
         int thisPos;
@@ -82,10 +82,10 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
             thisByte = get(thisPos);
             otherByte = otherBuffer.get(otherPos);
         } //End block
-        int var51CE6C8A0A6AF44D4BCA06BE06554AF8_1309444363 = (remaining() - otherBuffer.remaining());
+        int var51CE6C8A0A6AF44D4BCA06BE06554AF8_981087530 = (remaining() - otherBuffer.remaining());
         addTaint(otherBuffer.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_661860347 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_661860347;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_438272308 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_438272308;
         // ---------- Original Method ----------
         //int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
                 //: otherBuffer.remaining();
@@ -109,13 +109,13 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     public abstract ShortBuffer duplicate();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.262 -0400", hash_original_method = "5B31F4285E964D7BDABED3BB847D41AA", hash_generated_method = "C91E36E11692CEE7941F48022970DC05")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.326 -0400", hash_original_method = "5B31F4285E964D7BDABED3BB847D41AA", hash_generated_method = "C0D19BE36F33556EFC3B41291C13ECC1")
     @Override
     public boolean equals(Object other) {
         ShortBuffer otherBuffer;
         otherBuffer = (ShortBuffer) other;
         {
-            boolean var0A43D7921CE313B818348D8F01F0C8D5_620352210 = (remaining() != otherBuffer.remaining());
+            boolean var0A43D7921CE313B818348D8F01F0C8D5_274482427 = (remaining() != otherBuffer.remaining());
         } //End collapsed parenthetic
         int myPosition;
         myPosition = position;
@@ -127,8 +127,8 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
             equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
         } //End block
         addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_553115245 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_553115245;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_267705599 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_267705599;
         // ---------- Original Method ----------
         //if (!(other instanceof ShortBuffer)) {
             //return false;
@@ -150,24 +150,24 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     public abstract short get();
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.263 -0400", hash_original_method = "68406DA953A1F3530F74FC6FE1C452A7", hash_generated_method = "47F1FA8A20039C6BCAB0E6EE68060334")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.334 -0400", hash_original_method = "68406DA953A1F3530F74FC6FE1C452A7", hash_generated_method = "8330D477C537F81562F738D7759BBDF6")
     public ShortBuffer get(short[] dst) {
-        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_156929825 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_156929825 = get(dst, 0, dst.length);
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_81286637 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_81286637 = get(dst, 0, dst.length);
         addTaint(dst[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_156929825.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_156929825;
+        varB4EAC82CA7396A68D541C85D26508E83_81286637.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_81286637;
         // ---------- Original Method ----------
         //return get(dst, 0, dst.length);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.264 -0400", hash_original_method = "DE4C5284FF189AE8B07194EE8C193F03", hash_generated_method = "6630AE37432327F41D563368B080D028")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.348 -0400", hash_original_method = "DE4C5284FF189AE8B07194EE8C193F03", hash_generated_method = "F6FBBD20C5CB368080B478F2F5A9FB7B")
     public ShortBuffer get(short[] dst, int dstOffset, int shortCount) {
-        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_873485823 = null; //Variable for return #1
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_334537732 = null; //Variable for return #1
         Arrays.checkOffsetAndCount(dst.length, dstOffset, shortCount);
         {
-            boolean varD727A1D2181C264BA4333582F807AE27_984517292 = (shortCount > remaining());
+            boolean varD727A1D2181C264BA4333582F807AE27_733228284 = (shortCount > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferUnderflowException();
             } //End block
@@ -179,12 +179,12 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
                 dst[i] = get();
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_873485823 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_334537732 = this;
         addTaint(dst[0]);
         addTaint(dstOffset);
         addTaint(shortCount);
-        varB4EAC82CA7396A68D541C85D26508E83_873485823.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_873485823;
+        varB4EAC82CA7396A68D541C85D26508E83_334537732.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_334537732;
         // ---------- Original Method ----------
         //Arrays.checkOffsetAndCount(dst.length, dstOffset, shortCount);
         //if (shortCount > remaining()) {
@@ -200,17 +200,17 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     public abstract short get(int index);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.264 -0400", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "E2CF048F35D48E948B5456CB91AC81F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.350 -0400", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "3450150E2A3E3BAB71D1E982E3477063")
     public final boolean hasArray() {
-        boolean varADF219B8DAB0ACF2FCC593A6A216A7F8_1318769498 = (protectedHasArray());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1437851167 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1437851167;
+        boolean varADF219B8DAB0ACF2FCC593A6A216A7F8_1830789214 = (protectedHasArray());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_262531431 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_262531431;
         // ---------- Original Method ----------
         //return protectedHasArray();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.278 -0400", hash_original_method = "371FAD0CF0C9AC8E78075F4EA52336BD", hash_generated_method = "A456E49F9B96F3FD7CE96C2722B9ACE0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.365 -0400", hash_original_method = "371FAD0CF0C9AC8E78075F4EA52336BD", hash_generated_method = "F5F36AEACD64187E046EE1073DC6D9E5")
     @Override
     public int hashCode() {
         int myPosition;
@@ -220,8 +220,8 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
         {
             hash = hash + get(myPosition++);
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_666793133 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_666793133;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1707343608 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1707343608;
         // ---------- Original Method ----------
         //int myPosition = position;
         //int hash = 0;
@@ -250,24 +250,24 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     public abstract ShortBuffer put(short s);
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.279 -0400", hash_original_method = "47A309F7D8F6DC58E14B9D901E5CA4EB", hash_generated_method = "0D171B2BCAE3D953756C4E7015AC6BD8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.368 -0400", hash_original_method = "47A309F7D8F6DC58E14B9D901E5CA4EB", hash_generated_method = "52BBD86E847BB7416126EE119335DC3C")
     public final ShortBuffer put(short[] src) {
-        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_346294153 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_346294153 = put(src, 0, src.length);
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_1907577078 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1907577078 = put(src, 0, src.length);
         addTaint(src[0]);
-        varB4EAC82CA7396A68D541C85D26508E83_346294153.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_346294153;
+        varB4EAC82CA7396A68D541C85D26508E83_1907577078.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1907577078;
         // ---------- Original Method ----------
         //return put(src, 0, src.length);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.280 -0400", hash_original_method = "F4EA1FDC39DA95E004DECB204CC15A47", hash_generated_method = "EC2E04F63EFC941ACC8F773BFA0ABC29")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.377 -0400", hash_original_method = "F4EA1FDC39DA95E004DECB204CC15A47", hash_generated_method = "F6490EE80A3F466E8E90BF71C50243CE")
     public ShortBuffer put(short[] src, int srcOffset, int shortCount) {
-        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_769879820 = null; //Variable for return #1
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_468722814 = null; //Variable for return #1
         Arrays.checkOffsetAndCount(src.length, srcOffset, shortCount);
         {
-            boolean varD727A1D2181C264BA4333582F807AE27_1835809345 = (shortCount > remaining());
+            boolean varD727A1D2181C264BA4333582F807AE27_348759570 = (shortCount > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferOverflowException();
             } //End block
@@ -279,12 +279,12 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
                 put(src[i]);
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_769879820 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_468722814 = this;
         addTaint(src[0]);
         addTaint(srcOffset);
         addTaint(shortCount);
-        varB4EAC82CA7396A68D541C85D26508E83_769879820.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_769879820;
+        varB4EAC82CA7396A68D541C85D26508E83_468722814.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_468722814;
         // ---------- Original Method ----------
         //Arrays.checkOffsetAndCount(src.length, srcOffset, shortCount);
         //if (shortCount > remaining()) {
@@ -297,17 +297,17 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:46.287 -0400", hash_original_method = "1D8FC7647B57D46D94B3AA0BA31269DF", hash_generated_method = "C99983DCFACF5AAB67866B96334C8818")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:45.394 -0400", hash_original_method = "1D8FC7647B57D46D94B3AA0BA31269DF", hash_generated_method = "4AD8680F71634D3874262DA48F46FC87")
     public ShortBuffer put(ShortBuffer src) {
-        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_195628866 = null; //Variable for return #1
+        ShortBuffer varB4EAC82CA7396A68D541C85D26508E83_859035090 = null; //Variable for return #1
         {
-            boolean var9C07FD71E9483B067CE073F58225A0C4_365080592 = (src == this);
+            boolean var9C07FD71E9483B067CE073F58225A0C4_360417754 = (src == this);
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var6E2E81EBCD4D9A6ACDDC12CE61513AA8_821578906 = (src.remaining() > remaining());
+            boolean var6E2E81EBCD4D9A6ACDDC12CE61513AA8_456905646 = (src.remaining() > remaining());
             {
                 if (DroidSafeAndroidRuntime.control) throw new BufferOverflowException();
             } //End block
@@ -316,10 +316,10 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
         contents = new short[src.remaining()];
         src.get(contents);
         put(contents);
-        varB4EAC82CA7396A68D541C85D26508E83_195628866 = this;
+        varB4EAC82CA7396A68D541C85D26508E83_859035090 = this;
         addTaint(src.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_195628866.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_195628866;
+        varB4EAC82CA7396A68D541C85D26508E83_859035090.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_859035090;
         // ---------- Original Method ----------
         //if (src == this) {
             //throw new IllegalArgumentException();

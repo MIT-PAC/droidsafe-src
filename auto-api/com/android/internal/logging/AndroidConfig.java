@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 public class AndroidConfig {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.087 -0400", hash_original_method = "C1A94E93768B2642CCBAA40A11700DD6", hash_generated_method = "1ED6184285E7A3920FB84DD06EF57D85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.438 -0400", hash_original_method = "C1A94E93768B2642CCBAA40A11700DD6", hash_generated_method = "1ED6184285E7A3920FB84DD06EF57D85")
     public  AndroidConfig() {
         super();
         try 

@@ -13,7 +13,7 @@ import java.text.ParseException;
 
 public class ContentDispositionParser extends ParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.620 -0400", hash_original_method = "04008A13B0A5E88C87B63AAF08ED822A", hash_generated_method = "690DFA335DDBFB3F5251BBC4962C114D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.611 -0400", hash_original_method = "04008A13B0A5E88C87B63AAF08ED822A", hash_generated_method = "690DFA335DDBFB3F5251BBC4962C114D")
     public  ContentDispositionParser(String contentDisposition) {
         super(contentDisposition);
         addTaint(contentDisposition.getTaint());
@@ -21,7 +21,7 @@ public class ContentDispositionParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.624 -0400", hash_original_method = "7D9894E3DD1592FE62F944EB2803724D", hash_generated_method = "523EE1F84C89EE7708D60186E2EC3461")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.611 -0400", hash_original_method = "7D9894E3DD1592FE62F944EB2803724D", hash_generated_method = "523EE1F84C89EE7708D60186E2EC3461")
     protected  ContentDispositionParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -29,9 +29,9 @@ public class ContentDispositionParser extends ParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.634 -0400", hash_original_method = "C25B69CBC1412EAEFB170FBF9B530EF5", hash_generated_method = "198931A814AFE391770DAF3702E7E0A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.637 -0400", hash_original_method = "C25B69CBC1412EAEFB170FBF9B530EF5", hash_generated_method = "EF7C7E2ECF8756F4068BF5EC7BAB5BAF")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_551168316 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_146826747 = null; //Variable for return #1
         dbg_enter("ContentDispositionParser.parse");
         try 
         {
@@ -48,7 +48,7 @@ public class ContentDispositionParser extends ParametersParser {
             super.parse(cd);
             this.lexer.SPorHT();
             this.lexer.match('\n');
-            varB4EAC82CA7396A68D541C85D26508E83_551168316 = cd;
+            varB4EAC82CA7396A68D541C85D26508E83_146826747 = cd;
         } //End block
         catch (ParseException ex)
         {
@@ -58,8 +58,8 @@ public class ContentDispositionParser extends ParametersParser {
         {
             dbg_leave("ContentDispositionParser.parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_551168316.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_551168316;
+        varB4EAC82CA7396A68D541C85D26508E83_146826747.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_146826747;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

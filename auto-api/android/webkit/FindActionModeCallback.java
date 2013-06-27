@@ -25,41 +25,41 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.OnLongClickListener, View.OnClickListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.437 -0400", hash_original_field = "0F85706FF7ACEA880EA803CB0E63A48D", hash_generated_field = "58BF9FCCDFB47B7346A31DF060279244")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.349 -0400", hash_original_field = "0F85706FF7ACEA880EA803CB0E63A48D", hash_generated_field = "58BF9FCCDFB47B7346A31DF060279244")
 
     private View mCustomView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.437 -0400", hash_original_field = "2AB1BE4B6823B3E4EBFA67B16F6DBB6D", hash_generated_field = "586B4299BBF875661CEB2131396A9E01")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.349 -0400", hash_original_field = "2AB1BE4B6823B3E4EBFA67B16F6DBB6D", hash_generated_field = "586B4299BBF875661CEB2131396A9E01")
 
     private EditText mEditText;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.437 -0400", hash_original_field = "353AD1DE9A5D502D3C9A38D9848FA6CD", hash_generated_field = "3CA347429489873C0681EBD304FF196C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.349 -0400", hash_original_field = "353AD1DE9A5D502D3C9A38D9848FA6CD", hash_generated_field = "3CA347429489873C0681EBD304FF196C")
 
     private TextView mMatches;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.437 -0400", hash_original_field = "72439B8F99EB438C3DA5D9CD798C6786", hash_generated_field = "99346B50377E115231263981E00655CA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.349 -0400", hash_original_field = "72439B8F99EB438C3DA5D9CD798C6786", hash_generated_field = "99346B50377E115231263981E00655CA")
 
     private WebView mWebView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.437 -0400", hash_original_field = "BF2A01F10E67DAFA01668D8D4043BDC6", hash_generated_field = "F361F819B88ED86D16FB0FFD42B19716")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.349 -0400", hash_original_field = "BF2A01F10E67DAFA01668D8D4043BDC6", hash_generated_field = "F361F819B88ED86D16FB0FFD42B19716")
 
     private InputMethodManager mInput;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.438 -0400", hash_original_field = "0D8AC9B29D5FDF7FAC18EB1269D7F6D0", hash_generated_field = "8872E9F5EB468B447DB47434F2C2FEC9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.349 -0400", hash_original_field = "0D8AC9B29D5FDF7FAC18EB1269D7F6D0", hash_generated_field = "8872E9F5EB468B447DB47434F2C2FEC9")
 
     private Resources mResources;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.438 -0400", hash_original_field = "41FAC5B025B543B3C8CC1A6686C13F34", hash_generated_field = "BFF89ED6114A41C587042AF90B1A6652")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.349 -0400", hash_original_field = "41FAC5B025B543B3C8CC1A6686C13F34", hash_generated_field = "BFF89ED6114A41C587042AF90B1A6652")
 
     private boolean mMatchesFound;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.438 -0400", hash_original_field = "113FD5785A9BBA71ADC0F265CDF7C1ED", hash_generated_field = "52C43CDF0CC2B40EC1B6DAC0A4A1D836")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.349 -0400", hash_original_field = "113FD5785A9BBA71ADC0F265CDF7C1ED", hash_generated_field = "52C43CDF0CC2B40EC1B6DAC0A4A1D836")
 
     private int mNumberOfMatches;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.438 -0400", hash_original_field = "3B382D379664B509F22D0EB5D96F2BA8", hash_generated_field = "941205D807AC4DF9704A65BDAF4756EC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.349 -0400", hash_original_field = "3B382D379664B509F22D0EB5D96F2BA8", hash_generated_field = "941205D807AC4DF9704A65BDAF4756EC")
 
     private ActionMode mActionMode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.438 -0400", hash_original_field = "67FC07F6472A7CF0FC43C91CA1D4DE06", hash_generated_field = "78FDC6EA268F3080B428BCC4885254FD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.349 -0400", hash_original_field = "67FC07F6472A7CF0FC43C91CA1D4DE06", hash_generated_field = "78FDC6EA268F3080B428BCC4885254FD")
 
     private Rect mGlobalVisibleRect = new Rect();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.438 -0400", hash_original_field = "182F4E4C854FDC192EE5021ED6D73891", hash_generated_field = "B98693B51D24477EB14AD942E0AB2A10")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.349 -0400", hash_original_field = "182F4E4C854FDC192EE5021ED6D73891", hash_generated_field = "B98693B51D24477EB14AD942E0AB2A10")
 
     private Point mGlobalVisibleOffset = new Point();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.447 -0400", hash_original_method = "5CA1E327210858D6ED3D49BC86FCA935", hash_generated_method = "F61130A40DB08F4A6E303A559B1F3744")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.350 -0400", hash_original_method = "5CA1E327210858D6ED3D49BC86FCA935", hash_generated_method = "F61130A40DB08F4A6E303A559B1F3744")
       FindActionModeCallback(Context context) {
         mCustomView = LayoutInflater.from(context).inflate(
                 com.android.internal.R.layout.webview_find, null);
@@ -89,7 +89,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.448 -0400", hash_original_method = "9621A971A6C9D9BC000280709C19BFE5", hash_generated_method = "56DFA8D664739E61C2F6F1F2786312A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.351 -0400", hash_original_method = "9621A971A6C9D9BC000280709C19BFE5", hash_generated_method = "56DFA8D664739E61C2F6F1F2786312A0")
      void finish() {
         mActionMode.finish();
         // ---------- Original Method ----------
@@ -97,7 +97,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.448 -0400", hash_original_method = "CA5CD09DA796000F712B45157C41B130", hash_generated_method = "F9BE0D85CA1880A01AC52D7CCA0A05CF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.351 -0400", hash_original_method = "CA5CD09DA796000F712B45157C41B130", hash_generated_method = "F9BE0D85CA1880A01AC52D7CCA0A05CF")
      void setText(String text) {
         mEditText.setText(text);
         Spannable span;
@@ -118,7 +118,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.449 -0400", hash_original_method = "767FD2233AC1DA09E02B0F553ABE32CD", hash_generated_method = "2602BFC01A2CF8CAB06C8D5C65A7E21B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.361 -0400", hash_original_method = "767FD2233AC1DA09E02B0F553ABE32CD", hash_generated_method = "2602BFC01A2CF8CAB06C8D5C65A7E21B")
      void setWebView(WebView webView) {
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError("WebView supplied to "
@@ -134,7 +134,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.449 -0400", hash_original_method = "517F2A554CEE09599D2CC8534059CD71", hash_generated_method = "8D74751BEA3B5EB16FF1656C4323A626")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.361 -0400", hash_original_method = "517F2A554CEE09599D2CC8534059CD71", hash_generated_method = "8D74751BEA3B5EB16FF1656C4323A626")
     private void findNext(boolean next) {
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(
@@ -163,7 +163,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.460 -0400", hash_original_method = "BDE9946C9B792224811CE0EAAEBAA6D6", hash_generated_method = "B80C523DC6E88A2F5D5A418CC128450E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.362 -0400", hash_original_method = "BDE9946C9B792224811CE0EAAEBAA6D6", hash_generated_method = "3B70F9A52ECFEFD981BFFAF030A4F36F")
      void findAll() {
         {
             if (DroidSafeAndroidRuntime.control) throw new AssertionError(
@@ -172,7 +172,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
         CharSequence find;
         find = mEditText.getText();
         {
-            boolean var5BFB9DBB0BDAA240D4B93834B31881CD_1586555211 = (0 == find.length());
+            boolean var5BFB9DBB0BDAA240D4B93834B31881CD_6328054 = (0 == find.length());
             {
                 mWebView.clearMatches();
                 mMatches.setVisibility(View.GONE);
@@ -215,7 +215,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.461 -0400", hash_original_method = "B14DB7FB68096A0CF2748CFEA9518F79", hash_generated_method = "65A7F4013D689C1D187A7CDFB99DE6BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.373 -0400", hash_original_method = "B14DB7FB68096A0CF2748CFEA9518F79", hash_generated_method = "65A7F4013D689C1D187A7CDFB99DE6BD")
     public void showSoftInput() {
         mInput.startGettingWindowFocus(mEditText.getRootView());
         mInput.focusIn(mEditText);
@@ -227,7 +227,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.461 -0400", hash_original_method = "9E7B5524BD9C2F1CDB061DB60C13ABB6", hash_generated_method = "961FA361BB7D259B5711B4B3BFD8551C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.373 -0400", hash_original_method = "9E7B5524BD9C2F1CDB061DB60C13ABB6", hash_generated_method = "961FA361BB7D259B5711B4B3BFD8551C")
     private void updateMatchesString() {
         String template;
         template = mResources.getQuantityString(
@@ -242,19 +242,19 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.461 -0400", hash_original_method = "AFE6187BDD69B153F64B909F5043D2E4", hash_generated_method = "60E2730EDADA03DDD00A49B5D6E0ADCD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.373 -0400", hash_original_method = "AFE6187BDD69B153F64B909F5043D2E4", hash_generated_method = "B4E907741F458244AA03D0D54D43E2C7")
     @Override
     public boolean onLongClick(View v) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(v.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_946978464 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_946978464;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1821968525 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1821968525;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.462 -0400", hash_original_method = "BC3DE2C393D342A1AF9020DC35D5D78A", hash_generated_method = "E20611D366204E7ACD098EF7B08BC47D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.374 -0400", hash_original_method = "BC3DE2C393D342A1AF9020DC35D5D78A", hash_generated_method = "E20611D366204E7ACD098EF7B08BC47D")
     @Override
     public void onClick(View v) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -265,12 +265,12 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.466 -0400", hash_original_method = "1F388F0F12B5A9063A03CB19D68FC9E8", hash_generated_method = "5759765A67DC6691DF2739B54E8DE5EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.375 -0400", hash_original_method = "1F388F0F12B5A9063A03CB19D68FC9E8", hash_generated_method = "9527644D6D7729C101C840A8E8C55F18")
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean varDC330101E9FCC7E5F1AB6C44D489AA26_1393145382 = (!mode.isUiFocusable());
+            boolean varDC330101E9FCC7E5F1AB6C44D489AA26_1278823237 = (!mode.isUiFocusable());
         } //End collapsed parenthetic
         mode.setCustomView(mCustomView);
         mode.getMenuInflater().inflate(com.android.internal.R.menu.webview_find,
@@ -284,8 +284,8 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
         mMatches.setText("0");
         mEditText.requestFocus();
         addTaint(menu.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_17896861 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_17896861;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_813317155 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_813317155;
         // ---------- Original Method ----------
         //if (!mode.isUiFocusable()) {
             //return false;
@@ -304,7 +304,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.470 -0400", hash_original_method = "9709E7A513557072D77260776E1367DF", hash_generated_method = "4A7F9E2BBC690464AD983425DF357D1E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.376 -0400", hash_original_method = "9709E7A513557072D77260776E1367DF", hash_generated_method = "4A7F9E2BBC690464AD983425DF357D1E")
     @Override
     public void onDestroyActionMode(ActionMode mode) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -319,20 +319,20 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.471 -0400", hash_original_method = "6F9DAEA6D666DAEBDC5BF41A6DC31573", hash_generated_method = "4071326321BB09EB703658B229228522")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.376 -0400", hash_original_method = "6F9DAEA6D666DAEBDC5BF41A6DC31573", hash_generated_method = "C69F74E7AD61FF1AF403E9C304EE4485")
     @Override
     public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(mode.getTaint());
         addTaint(menu.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_584476211 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_584476211;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1840874014 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1840874014;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.472 -0400", hash_original_method = "B3FE74B35E145494B17BBBE1B965B753", hash_generated_method = "B4B5794C88AD3610FE44EC1BB4F6F742")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.383 -0400", hash_original_method = "B3FE74B35E145494B17BBBE1B965B753", hash_generated_method = "5229F73A4A5BA2E3D998D7EF358EA1A9")
     @Override
     public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -342,7 +342,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
         } //End block
         mInput.hideSoftInputFromWindow(mWebView.getWindowToken(), 0);
         {
-            Object var2B22EE13B3F8EF78698CBA34390A5432_583067206 = (item.getItemId());
+            Object var2B22EE13B3F8EF78698CBA34390A5432_1112048495 = (item.getItemId());
             //Begin case com.android.internal.R.id.find_prev 
             findNext(false);
             //End case com.android.internal.R.id.find_prev 
@@ -352,8 +352,8 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
         } //End collapsed parenthetic
         addTaint(mode.getTaint());
         addTaint(item.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1040767025 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1040767025;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1439399168 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1439399168;
         // ---------- Original Method ----------
         //if (mWebView == null) {
             //throw new AssertionError(
@@ -374,7 +374,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.472 -0400", hash_original_method = "46932DA0618614AAF15434EFCC9FAF04", hash_generated_method = "CE696FAE02394D0C52F9F992D2DE20A0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.383 -0400", hash_original_method = "46932DA0618614AAF15434EFCC9FAF04", hash_generated_method = "CE696FAE02394D0C52F9F992D2DE20A0")
     @Override
     public void beforeTextChanged(CharSequence s,
                                   int start,
@@ -388,7 +388,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.479 -0400", hash_original_method = "D02F824F0ADEF2C4CBD52950D34DEBE7", hash_generated_method = "23F217B3EC0D77EF8529213570FC0B87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.384 -0400", hash_original_method = "D02F824F0ADEF2C4CBD52950D34DEBE7", hash_generated_method = "23F217B3EC0D77EF8529213570FC0B87")
     @Override
     public void onTextChanged(CharSequence s,
                               int start,
@@ -405,7 +405,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.480 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "4E9426C0C70F36D91AD564261B4FF2B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.384 -0400", hash_original_method = "2B62725FCE5BAC340D42F3403AAE31A5", hash_generated_method = "4E9426C0C70F36D91AD564261B4FF2B0")
     @Override
     public void afterTextChanged(Editable s) {
         addTaint(s.getTaint());
@@ -413,7 +413,7 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:58.482 -0400", hash_original_method = "B54267537E703324F4E153FA58838A53", hash_generated_method = "455E2253D5B7061FDA84BFFBF105CE3D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.392 -0400", hash_original_method = "B54267537E703324F4E153FA58838A53", hash_generated_method = "FA7CA59C121D4533A864AFDAC1F9E107")
     public int getActionModeGlobalBottom() {
         View view;
         view = (View) mCustomView.getParent();
@@ -421,8 +421,8 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
             view = mCustomView;
         } //End block
         view.getGlobalVisibleRect(mGlobalVisibleRect, mGlobalVisibleOffset);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1959862181 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1959862181;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1072762390 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1072762390;
         // ---------- Original Method ----------
         //if (mActionMode == null) {
             //return 0;

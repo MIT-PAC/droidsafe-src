@@ -16,17 +16,17 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 
 public final class OtherName {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.123 -0400", hash_original_field = "C96CCC77A9681286BF7C11884DC97343", hash_generated_field = "5C62373BB1CE6BB099AFB641D23AB828")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.987 -0400", hash_original_field = "C96CCC77A9681286BF7C11884DC97343", hash_generated_field = "5C62373BB1CE6BB099AFB641D23AB828")
 
     private String typeID;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.123 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "4A3D1B288C868029766DBCBE1C784E4E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.987 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "4A3D1B288C868029766DBCBE1C784E4E")
 
     private byte[] value;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.123 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.988 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
 
     private byte[] encoding;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.132 -0400", hash_original_method = "8C037AC601E342BA78689B6228900DCB", hash_generated_method = "F68201F497BBA0AF5D040B3D70032C8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.988 -0400", hash_original_method = "8C037AC601E342BA78689B6228900DCB", hash_generated_method = "F68201F497BBA0AF5D040B3D70032C8E")
     public  OtherName(String typeID, byte[] value) {
         this(typeID, value, null);
         addTaint(typeID.getTaint());
@@ -35,7 +35,7 @@ public final class OtherName {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.132 -0400", hash_original_method = "595A6767FA47B61357D3EB21D3BC18A1", hash_generated_method = "BFC1570F9ED10661ABF3396DF662D49E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.001 -0400", hash_original_method = "595A6767FA47B61357D3EB21D3BC18A1", hash_generated_method = "BFC1570F9ED10661ABF3396DF662D49E")
     private  OtherName(String typeID, byte[] value, byte[] encoding) {
         this.typeID = typeID;
         this.value = value;
@@ -47,22 +47,22 @@ public final class OtherName {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.135 -0400", hash_original_method = "7B542DE43DC21978E6F04336AAB05EBD", hash_generated_method = "7860524173DCC96013B2B3D441BC7B6E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.002 -0400", hash_original_method = "7B542DE43DC21978E6F04336AAB05EBD", hash_generated_method = "A68E93117B1F508F20E4CE1274706D4E")
     public byte[] getValue() {
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_716903946 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_716903946;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_908560090 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_908560090;
         // ---------- Original Method ----------
         //return value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.136 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "1B666408B72175E5CBC46DA93FF46D61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.003 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "66F21587965193B02AAE6043B37E137B")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
         } //End block
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1550381685 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1550381685;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1020687588 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1020687588;
         // ---------- Original Method ----------
         //if (encoding == null) {
             //encoding = ASN1.encode(this);
@@ -71,7 +71,7 @@ public final class OtherName {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:10.136 -0400", hash_original_field = "1D500C6DBA2251A558BBCB0545FF091B", hash_generated_field = "DB5EBDABA98F44EB3E15AA9BA7B3778D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:11.003 -0400", hash_original_field = "1D500C6DBA2251A558BBCB0545FF091B", hash_generated_field = "DB5EBDABA98F44EB3E15AA9BA7B3778D")
 
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
             ASN1Oid.getInstance(),

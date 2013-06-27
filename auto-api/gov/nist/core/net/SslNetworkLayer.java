@@ -28,14 +28,14 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManagerFactory;
 
 public class SslNetworkLayer implements NetworkLayer {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.974 -0400", hash_original_field = "6B7BCFA2A69C0983F4EE1C29CDD1407B", hash_generated_field = "87C1504631DE52B6388145B4A5898443")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.523 -0400", hash_original_field = "6B7BCFA2A69C0983F4EE1C29CDD1407B", hash_generated_field = "87C1504631DE52B6388145B4A5898443")
 
     private SSLSocketFactory sslSocketFactory;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.974 -0400", hash_original_field = "6CC693A32FE44C27FC3FF8CA3F98D72A", hash_generated_field = "C44352573933B1EA5CAC2388C9289B1C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.523 -0400", hash_original_field = "6CC693A32FE44C27FC3FF8CA3F98D72A", hash_generated_field = "C44352573933B1EA5CAC2388C9289B1C")
 
     private SSLServerSocketFactory sslServerSocketFactory;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.975 -0400", hash_original_method = "E0E59DE264556EE5E620A1F868DD9E92", hash_generated_method = "5C3EB5049AD513D5B6389035B88F6AB9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.524 -0400", hash_original_method = "E0E59DE264556EE5E620A1F868DD9E92", hash_generated_method = "5C3EB5049AD513D5B6389035B88F6AB9")
     public  SslNetworkLayer(
             String trustStoreFile,
             String keyStoreFile,
@@ -72,126 +72,126 @@ public class SslNetworkLayer implements NetworkLayer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.978 -0400", hash_original_method = "39DE8B0183FF9C9623367868EEA6CEAD", hash_generated_method = "4A179F0624F499659C4764D3F97338A9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.525 -0400", hash_original_method = "39DE8B0183FF9C9623367868EEA6CEAD", hash_generated_method = "E2DC8C90C36961761E0A1455579806F6")
     public ServerSocket createServerSocket(int port, int backlog,
             InetAddress bindAddress) throws IOException {
-        ServerSocket varB4EAC82CA7396A68D541C85D26508E83_193845498 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_193845498 = new ServerSocket(port, backlog, bindAddress);
+        ServerSocket varB4EAC82CA7396A68D541C85D26508E83_936683988 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_936683988 = new ServerSocket(port, backlog, bindAddress);
         addTaint(port);
         addTaint(backlog);
         addTaint(bindAddress.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_193845498.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_193845498;
+        varB4EAC82CA7396A68D541C85D26508E83_936683988.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_936683988;
         // ---------- Original Method ----------
         //return new ServerSocket(port, backlog, bindAddress);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.982 -0400", hash_original_method = "06342840B51BA72C757680F9FE102AFC", hash_generated_method = "6C924D3FA64A71C1E75FF3A3ED5DD72C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.532 -0400", hash_original_method = "06342840B51BA72C757680F9FE102AFC", hash_generated_method = "542E0B6FD5C45FA3710C45B720C9C2A5")
     public Socket createSocket(InetAddress address, int port) throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_558341058 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_558341058 = new Socket(address, port);
+        Socket varB4EAC82CA7396A68D541C85D26508E83_403335958 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_403335958 = new Socket(address, port);
         addTaint(address.getTaint());
         addTaint(port);
-        varB4EAC82CA7396A68D541C85D26508E83_558341058.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_558341058;
+        varB4EAC82CA7396A68D541C85D26508E83_403335958.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_403335958;
         // ---------- Original Method ----------
         //return new Socket(address, port);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.983 -0400", hash_original_method = "58256EB8A7EF88EDEB5E4AD1ABF0E125", hash_generated_method = "49052F518ECD679D8542B17787D27511")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.540 -0400", hash_original_method = "58256EB8A7EF88EDEB5E4AD1ABF0E125", hash_generated_method = "E910BA0064EA0CB16C0719CE74B6664A")
     public DatagramSocket createDatagramSocket() throws SocketException {
-        DatagramSocket varB4EAC82CA7396A68D541C85D26508E83_1668906346 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1668906346 = new DatagramSocket();
-        varB4EAC82CA7396A68D541C85D26508E83_1668906346.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1668906346;
+        DatagramSocket varB4EAC82CA7396A68D541C85D26508E83_1047219271 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1047219271 = new DatagramSocket();
+        varB4EAC82CA7396A68D541C85D26508E83_1047219271.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1047219271;
         // ---------- Original Method ----------
         //return new DatagramSocket();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.992 -0400", hash_original_method = "E7765B1F5071215565A877BF624E5F15", hash_generated_method = "EB9B622E572B60E8949CD9826563B725")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.540 -0400", hash_original_method = "E7765B1F5071215565A877BF624E5F15", hash_generated_method = "12CA59DF2A9F7C956F8C9E764BFA76B3")
     public DatagramSocket createDatagramSocket(int port, InetAddress laddr) throws SocketException {
-        DatagramSocket varB4EAC82CA7396A68D541C85D26508E83_2069552966 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2069552966 = new DatagramSocket(port, laddr);
+        DatagramSocket varB4EAC82CA7396A68D541C85D26508E83_173900512 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_173900512 = new DatagramSocket(port, laddr);
         addTaint(port);
         addTaint(laddr.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_2069552966.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2069552966;
+        varB4EAC82CA7396A68D541C85D26508E83_173900512.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_173900512;
         // ---------- Original Method ----------
         //return new DatagramSocket(port, laddr);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.992 -0400", hash_original_method = "C136B26924FEF16657D19F16D9E45E07", hash_generated_method = "C3832C872666E2DAE953F0E555FB6C83")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.540 -0400", hash_original_method = "C136B26924FEF16657D19F16D9E45E07", hash_generated_method = "BDFC20C84B768178CD9ED3834908D202")
     public SSLServerSocket createSSLServerSocket(int port, int backlog,
             InetAddress bindAddress) throws IOException {
-        SSLServerSocket varB4EAC82CA7396A68D541C85D26508E83_220601466 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_220601466 = (SSLServerSocket) sslServerSocketFactory.createServerSocket(
+        SSLServerSocket varB4EAC82CA7396A68D541C85D26508E83_1656975126 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1656975126 = (SSLServerSocket) sslServerSocketFactory.createServerSocket(
                 port, backlog, bindAddress);
         addTaint(port);
         addTaint(backlog);
         addTaint(bindAddress.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_220601466.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_220601466;
+        varB4EAC82CA7396A68D541C85D26508E83_1656975126.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1656975126;
         // ---------- Original Method ----------
         //return (SSLServerSocket) sslServerSocketFactory.createServerSocket(
                 //port, backlog, bindAddress);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.993 -0400", hash_original_method = "A69DB4651ABD80BB673808D27D01239A", hash_generated_method = "C594A029E3EFF5BD03A00EE1AE056DEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.541 -0400", hash_original_method = "A69DB4651ABD80BB673808D27D01239A", hash_generated_method = "491694202B67C6E34348EA5CF2BCB924")
     public SSLSocket createSSLSocket(InetAddress address, int port) throws IOException {
-        SSLSocket varB4EAC82CA7396A68D541C85D26508E83_1944345285 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1944345285 = (SSLSocket) sslSocketFactory.createSocket(address, port);
+        SSLSocket varB4EAC82CA7396A68D541C85D26508E83_379674187 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_379674187 = (SSLSocket) sslSocketFactory.createSocket(address, port);
         addTaint(address.getTaint());
         addTaint(port);
-        varB4EAC82CA7396A68D541C85D26508E83_1944345285.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1944345285;
+        varB4EAC82CA7396A68D541C85D26508E83_379674187.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_379674187;
         // ---------- Original Method ----------
         //return (SSLSocket) sslSocketFactory.createSocket(address, port);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.003 -0400", hash_original_method = "42E28448C903215260E4CCA841EF7FB7", hash_generated_method = "9638E8C6CC633299520494CFCF7D7297")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.541 -0400", hash_original_method = "42E28448C903215260E4CCA841EF7FB7", hash_generated_method = "79795C705CCC559DDCC68357F046D797")
     public SSLSocket createSSLSocket(InetAddress address, int port,
             InetAddress myAddress) throws IOException {
-        SSLSocket varB4EAC82CA7396A68D541C85D26508E83_425224261 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_425224261 = (SSLSocket) sslSocketFactory.createSocket(address, port,
+        SSLSocket varB4EAC82CA7396A68D541C85D26508E83_1610732093 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1610732093 = (SSLSocket) sslSocketFactory.createSocket(address, port,
                 myAddress, 0);
         addTaint(address.getTaint());
         addTaint(port);
         addTaint(myAddress.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_425224261.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_425224261;
+        varB4EAC82CA7396A68D541C85D26508E83_1610732093.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1610732093;
         // ---------- Original Method ----------
         //return (SSLSocket) sslSocketFactory.createSocket(address, port,
                 //myAddress, 0);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.006 -0400", hash_original_method = "65BD7B891ADF1B016345452655A0F82B", hash_generated_method = "4001E57F2797AF772035F81E2B3C00E3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.545 -0400", hash_original_method = "65BD7B891ADF1B016345452655A0F82B", hash_generated_method = "89F2CCFB51468C628D718CB8AC831623")
     public Socket createSocket(InetAddress address, int port,
             InetAddress myAddress) throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1253090309 = null; //Variable for return #1
-        Socket varB4EAC82CA7396A68D541C85D26508E83_2025885165 = null; //Variable for return #2
-        varB4EAC82CA7396A68D541C85D26508E83_1253090309 = new Socket(address, port, myAddress, 0);
-        varB4EAC82CA7396A68D541C85D26508E83_2025885165 = new Socket(address, port);
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1189734274 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_2068684744 = null; //Variable for return #2
+        varB4EAC82CA7396A68D541C85D26508E83_1189734274 = new Socket(address, port, myAddress, 0);
+        varB4EAC82CA7396A68D541C85D26508E83_2068684744 = new Socket(address, port);
         addTaint(address.getTaint());
         addTaint(port);
         addTaint(myAddress.getTaint());
-        Socket varA7E53CE21691AB073D9660D615818899_1248508791; //Final return value
+        Socket varA7E53CE21691AB073D9660D615818899_562323299; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1248508791 = varB4EAC82CA7396A68D541C85D26508E83_1253090309;
+                varA7E53CE21691AB073D9660D615818899_562323299 = varB4EAC82CA7396A68D541C85D26508E83_1189734274;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1248508791 = varB4EAC82CA7396A68D541C85D26508E83_2025885165;
+                varA7E53CE21691AB073D9660D615818899_562323299 = varB4EAC82CA7396A68D541C85D26508E83_2068684744;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1248508791.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1248508791;
+        varA7E53CE21691AB073D9660D615818899_562323299.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_562323299;
         // ---------- Original Method ----------
         //if (myAddress != null)
             //return new Socket(address, port, myAddress, 0);
@@ -200,39 +200,39 @@ public class SslNetworkLayer implements NetworkLayer {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:30.016 -0400", hash_original_method = "79DF1B5079137D62C29C5EAC0F3F40E2", hash_generated_method = "C6DBC7DBD0E5490A866A036D9A065FA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:28.557 -0400", hash_original_method = "79DF1B5079137D62C29C5EAC0F3F40E2", hash_generated_method = "4BA00F5BC17358E6298DEF9D008F8BD8")
     public Socket createSocket(InetAddress address, int port,
                     InetAddress myAddress, int myPort) throws IOException {
-        Socket varB4EAC82CA7396A68D541C85D26508E83_1508794068 = null; //Variable for return #1
-        Socket varB4EAC82CA7396A68D541C85D26508E83_199832431 = null; //Variable for return #2
-        Socket varB4EAC82CA7396A68D541C85D26508E83_898015256 = null; //Variable for return #3
-        varB4EAC82CA7396A68D541C85D26508E83_1508794068 = new Socket(address, port, myAddress, myPort);
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1213794550 = null; //Variable for return #1
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1073652053 = null; //Variable for return #2
+        Socket varB4EAC82CA7396A68D541C85D26508E83_1027131470 = null; //Variable for return #3
+        varB4EAC82CA7396A68D541C85D26508E83_1213794550 = new Socket(address, port, myAddress, myPort);
         {
             Socket sock;
             sock = new Socket();
             sock.bind(new InetSocketAddress(port));
             sock.connect(new InetSocketAddress(address, port));
-            varB4EAC82CA7396A68D541C85D26508E83_199832431 = sock;
+            varB4EAC82CA7396A68D541C85D26508E83_1073652053 = sock;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_898015256 = new Socket(address, port);
+        varB4EAC82CA7396A68D541C85D26508E83_1027131470 = new Socket(address, port);
         addTaint(address.getTaint());
         addTaint(port);
         addTaint(myAddress.getTaint());
         addTaint(myPort);
-        Socket varA7E53CE21691AB073D9660D615818899_836668511; //Final return value
+        Socket varA7E53CE21691AB073D9660D615818899_1323674176; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_836668511 = varB4EAC82CA7396A68D541C85D26508E83_1508794068;
+                varA7E53CE21691AB073D9660D615818899_1323674176 = varB4EAC82CA7396A68D541C85D26508E83_1213794550;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_836668511 = varB4EAC82CA7396A68D541C85D26508E83_199832431;
+                varA7E53CE21691AB073D9660D615818899_1323674176 = varB4EAC82CA7396A68D541C85D26508E83_1073652053;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_836668511 = varB4EAC82CA7396A68D541C85D26508E83_898015256;
+                varA7E53CE21691AB073D9660D615818899_1323674176 = varB4EAC82CA7396A68D541C85D26508E83_1027131470;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_836668511.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_836668511;
+        varA7E53CE21691AB073D9660D615818899_1323674176.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1323674176;
         // ---------- Original Method ----------
         //if (myAddress != null)
             //return new Socket(address, port, myAddress, myPort);

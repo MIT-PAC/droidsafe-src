@@ -15,56 +15,56 @@ import android.widget.TextView;
 
 public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyListener {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.452 -0400", hash_original_method = "457D2BEC00B20336593EA76F83128980", hash_generated_method = "457D2BEC00B20336593EA76F83128980")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.916 -0400", hash_original_method = "457D2BEC00B20336593EA76F83128980", hash_generated_method = "457D2BEC00B20336593EA76F83128980")
     public BaseKeyListener ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.464 -0400", hash_original_method = "C743EFD1D596571F6949DCD9BEFE98FE", hash_generated_method = "D2FB37B545CD64D106BB2AC267B5C897")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.916 -0400", hash_original_method = "C743EFD1D596571F6949DCD9BEFE98FE", hash_generated_method = "08C8AD57641F0B154D9209A4EB7D24D8")
     public boolean backspace(View view, Editable content, int keyCode, KeyEvent event) {
-        boolean var06D71D209D37463B723529ABB247AA4F_831981594 = (backspaceOrForwardDelete(view, content, keyCode, event, false));
+        boolean var06D71D209D37463B723529ABB247AA4F_63487860 = (backspaceOrForwardDelete(view, content, keyCode, event, false));
         addTaint(view.getTaint());
         addTaint(content.getTaint());
         addTaint(keyCode);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_606173675 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_606173675;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_633064175 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_633064175;
         // ---------- Original Method ----------
         //return backspaceOrForwardDelete(view, content, keyCode, event, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.465 -0400", hash_original_method = "44D414C093A103E2D46C2C9EBFB633B7", hash_generated_method = "6620EEEAB5AE3F2A3B2779C2BF5045DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.923 -0400", hash_original_method = "44D414C093A103E2D46C2C9EBFB633B7", hash_generated_method = "1449ABE7EB63CC52179674717006D9BF")
     public boolean forwardDelete(View view, Editable content, int keyCode, KeyEvent event) {
-        boolean var7BB3CCE6C4C7A22712598A498C7EF201_1562516303 = (backspaceOrForwardDelete(view, content, keyCode, event, true));
+        boolean var7BB3CCE6C4C7A22712598A498C7EF201_956789841 = (backspaceOrForwardDelete(view, content, keyCode, event, true));
         addTaint(view.getTaint());
         addTaint(content.getTaint());
         addTaint(keyCode);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1936442971 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1936442971;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_243906609 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_243906609;
         // ---------- Original Method ----------
         //return backspaceOrForwardDelete(view, content, keyCode, event, true);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.466 -0400", hash_original_method = "070DF95C0353A773EEB24BBDC2D8297C", hash_generated_method = "64818E541435EE7FE19B9304DD8C7F56")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.937 -0400", hash_original_method = "070DF95C0353A773EEB24BBDC2D8297C", hash_generated_method = "18A23EE12F0B5520444DB2EC3BD04B69")
     private boolean backspaceOrForwardDelete(View view, Editable content, int keyCode,
             KeyEvent event, boolean isForwardDelete) {
         {
-            boolean varCA6B3D1AF11CE1BEC9D7DC5F2C261879_2110501161 = (!KeyEvent.metaStateHasNoModifiers(event.getMetaState()
+            boolean varCA6B3D1AF11CE1BEC9D7DC5F2C261879_556880127 = (!KeyEvent.metaStateHasNoModifiers(event.getMetaState()
                 & ~(KeyEvent.META_SHIFT_MASK | KeyEvent.META_ALT_MASK)));
         } //End collapsed parenthetic
         {
-            boolean var3D908796E6EA03E235F38A1EF7D65D8D_819890412 = (deleteSelection(view, content));
+            boolean var3D908796E6EA03E235F38A1EF7D65D8D_743413484 = (deleteSelection(view, content));
         } //End collapsed parenthetic
         {
-            boolean varF6771C8194EBDCF344A000571F865701_630380709 = (event.isAltPressed() || getMetaState(content, META_ALT_ON) == 1);
+            boolean varF6771C8194EBDCF344A000571F865701_1526763022 = (event.isAltPressed() || getMetaState(content, META_ALT_ON) == 1);
             {
                 {
-                    boolean var2F2270AB3C28CCE369E4A20C44F4E64E_2068772952 = (deleteLine(view, content));
+                    boolean var2F2270AB3C28CCE369E4A20C44F4E64E_471280271 = (deleteLine(view, content));
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
@@ -72,7 +72,7 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
         start = Selection.getSelectionEnd(content);
         int end;
         {
-            boolean varA1638696581CB665742F614EE86553B6_63836447 = (isForwardDelete || event.isShiftPressed()
+            boolean varA1638696581CB665742F614EE86553B6_1805577949 = (isForwardDelete || event.isShiftPressed()
                 || getMetaState(content, META_SHIFT_ON) == 1);
             {
                 end = TextUtils.getOffsetAfter(content, start);
@@ -89,14 +89,14 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
         addTaint(keyCode);
         addTaint(event.getTaint());
         addTaint(isForwardDelete);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_859791599 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_859791599;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1612664399 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1612664399;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.492 -0400", hash_original_method = "2C36007D0B232577504AED53A81D7DC4", hash_generated_method = "BFFB716AB97F17A14C32E1AF15D9AEAB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.938 -0400", hash_original_method = "2C36007D0B232577504AED53A81D7DC4", hash_generated_method = "8E83BFEA582CADF04E576662E313B9FD")
     private boolean deleteSelection(View view, Editable content) {
         int selectionStart;
         selectionStart = Selection.getSelectionStart(content);
@@ -113,8 +113,8 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
         } //End block
         addTaint(view.getTaint());
         addTaint(content.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_877540927 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_877540927;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_529103870 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_529103870;
         // ---------- Original Method ----------
         //int selectionStart = Selection.getSelectionStart(content);
         //int selectionEnd = Selection.getSelectionEnd(content);
@@ -131,7 +131,7 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.493 -0400", hash_original_method = "AAA6731DEEEC720845223B285BF37660", hash_generated_method = "771B6E9168A3DDAEC3EA3634CDD4711F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.952 -0400", hash_original_method = "AAA6731DEEEC720845223B285BF37660", hash_generated_method = "9A8B8473CACBDD4DE6F28F1696076CE3")
     private boolean deleteLine(View view, Editable content) {
         {
             Layout layout;
@@ -150,8 +150,8 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
         } //End block
         addTaint(view.getTaint());
         addTaint(content.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_109746513 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_109746513;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_725850283 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_725850283;
         // ---------- Original Method ----------
         //if (view instanceof TextView) {
             //final Layout layout = ((TextView) view).getLayout();
@@ -189,7 +189,7 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.494 -0400", hash_original_method = "60BF1BEA0D6A99B2655081BEC42DA13C", hash_generated_method = "56F324C309F06C34664600A92C23F61D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.970 -0400", hash_original_method = "60BF1BEA0D6A99B2655081BEC42DA13C", hash_generated_method = "235A87A4F23ACD56E68CB0B7BEEBB3B0")
     public boolean onKeyDown(View view, Editable content,
                              int keyCode, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -206,13 +206,13 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
         {
             adjustMetaAfterKeypress(content);
         } //End block
-        boolean var250B4652E205BB567180858BBC354846_86436927 = (super.onKeyDown(view, content, keyCode, event));
+        boolean var250B4652E205BB567180858BBC354846_930666072 = (super.onKeyDown(view, content, keyCode, event));
         addTaint(view.getTaint());
         addTaint(content.getTaint());
         addTaint(keyCode);
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1342211203 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1342211203;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_752254401 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_752254401;
         // ---------- Original Method ----------
         //boolean handled;
         //switch (keyCode) {
@@ -233,11 +233,11 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.495 -0400", hash_original_method = "D291AC92E2A4746C8F1BADA03A5CE619", hash_generated_method = "4927D13E427F8E912AB8BEC594F91F13")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.971 -0400", hash_original_method = "D291AC92E2A4746C8F1BADA03A5CE619", hash_generated_method = "AEE0CA3EC32010EE6B15E88C902D4508")
     public boolean onKeyOther(View view, Editable content, KeyEvent event) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            boolean var1A1FC70529DDD3D4CE5DC99BF8C3BD59_518064212 = (event.getAction() != KeyEvent.ACTION_MULTIPLE
+            boolean var1A1FC70529DDD3D4CE5DC99BF8C3BD59_1382135651 = (event.getAction() != KeyEvent.ACTION_MULTIPLE
                 || event.getKeyCode() != KeyEvent.KEYCODE_UNKNOWN);
         } //End collapsed parenthetic
         int selectionStart;
@@ -256,8 +256,8 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
         addTaint(view.getTaint());
         addTaint(content.getTaint());
         addTaint(event.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1083221566 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1083221566;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_87368147 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_87368147;
         // ---------- Original Method ----------
         //if (event.getAction() != KeyEvent.ACTION_MULTIPLE
                 //|| event.getKeyCode() != KeyEvent.KEYCODE_UNKNOWN) {
@@ -279,7 +279,7 @@ public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyL
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:41.495 -0400", hash_original_field = "57D022DD9BDED0985347A59F06980BAE", hash_generated_field = "A9B035AFB5CF4F24C2C4254B79171DBC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.971 -0400", hash_original_field = "57D022DD9BDED0985347A59F06980BAE", hash_generated_field = "A9B035AFB5CF4F24C2C4254B79171DBC")
 
     static Object OLD_SEL_START = new NoCopySpan.Concrete();
 }

@@ -10,35 +10,35 @@ import java.util.Iterator;
 import gov.nist.javax.sip.LogRecord;
 
 class MessageLog implements LogRecord {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.378 -0400", hash_original_field = "78E731027D8FD50ED642340B7C9A63B3", hash_generated_field = "B2821CE5540C52B19670BB2C4012F012")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.118 -0400", hash_original_field = "78E731027D8FD50ED642340B7C9A63B3", hash_generated_field = "B2821CE5540C52B19670BB2C4012F012")
 
     private String message;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "36CD38F49B9AFA08222C0DC9EBFE35EB", hash_generated_field = "2D2DC69F3BF28B00B15BD37DFC141996")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.118 -0400", hash_original_field = "36CD38F49B9AFA08222C0DC9EBFE35EB", hash_generated_field = "2D2DC69F3BF28B00B15BD37DFC141996")
 
     private String source;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "6990A54322D9232390A784C5C9247DD6", hash_generated_field = "8BC6EA56B5330B53673CB5DD16E8AC4E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.118 -0400", hash_original_field = "6990A54322D9232390A784C5C9247DD6", hash_generated_field = "8BC6EA56B5330B53673CB5DD16E8AC4E")
 
     private String destination;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "87A3CB5C3554B2D9D8A1A773AD0936BE", hash_generated_field = "8839F6F627CF1085C871938312AAE918")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.118 -0400", hash_original_field = "87A3CB5C3554B2D9D8A1A773AD0936BE", hash_generated_field = "8839F6F627CF1085C871938312AAE918")
 
     private long timeStamp;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "19473E77C4CC50B29F8FF43127858000", hash_generated_field = "BF031D181B175207CB4FAF9A21666838")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.118 -0400", hash_original_field = "19473E77C4CC50B29F8FF43127858000", hash_generated_field = "BF031D181B175207CB4FAF9A21666838")
 
     private boolean isSender;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "71F67F8E91222F095406DD3AD8FD65B2", hash_generated_field = "2D552DD3A1F19C65B36565EE0106C9DB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.118 -0400", hash_original_field = "71F67F8E91222F095406DD3AD8FD65B2", hash_generated_field = "2D552DD3A1F19C65B36565EE0106C9DB")
 
     private String firstLine;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "97BEAA21D4819A1131833B897504CE31", hash_generated_field = "6E3A8FD900779FBB9A4728967FE109EF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.118 -0400", hash_original_field = "97BEAA21D4819A1131833B897504CE31", hash_generated_field = "6E3A8FD900779FBB9A4728967FE109EF")
 
     private String tid;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "0CD10A72F684313DCE7B6EF5F7F41411", hash_generated_field = "14745A902962E272FDA1DE862859D03C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.118 -0400", hash_original_field = "0CD10A72F684313DCE7B6EF5F7F41411", hash_generated_field = "14745A902962E272FDA1DE862859D03C")
 
     private String callId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.379 -0400", hash_original_field = "61668CF17C5ADD0EF8C0484BCFFC50C7", hash_generated_field = "D3FCB03CE5B4F679C534C994BCE675D9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.118 -0400", hash_original_field = "61668CF17C5ADD0EF8C0484BCFFC50C7", hash_generated_field = "D3FCB03CE5B4F679C534C994BCE675D9")
 
     private long timeStampHeaderValue;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.387 -0400", hash_original_method = "4DF5C3B1D01E7222DCCDFE20C1B5824A", hash_generated_method = "933CA128B056115314031573E5C39E84")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.124 -0400", hash_original_method = "4DF5C3B1D01E7222DCCDFE20C1B5824A", hash_generated_method = "936CFFE9111E0EE814165E14FBE7C42B")
     public  MessageLog(
         String message,
         String source,
@@ -50,7 +50,7 @@ class MessageLog implements LogRecord {
         String callId,
         long timeStampHeaderValue) {
         {
-            boolean var87EE51FB0574C275E93ACB88F58D7718_283037442 = (message == null || message.equals(""));
+            boolean var87EE51FB0574C275E93ACB88F58D7718_847335436 = (message == null || message.equals(""));
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("null msg");
         } //End collapsed parenthetic
         this.message = message;
@@ -96,7 +96,7 @@ class MessageLog implements LogRecord {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.389 -0400", hash_original_method = "C29CF89B26E4E43BB7B19BB7E4FDCA0D", hash_generated_method = "E9A9CECB531978B9440350C023CD1DBF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.129 -0400", hash_original_method = "C29CF89B26E4E43BB7B19BB7E4FDCA0D", hash_generated_method = "161BE22C1808C5ABCC183F4C839D5134")
     public  MessageLog(
         String message,
         String source,
@@ -108,7 +108,7 @@ class MessageLog implements LogRecord {
         String callId,
         long timestampVal) {
         {
-            boolean var87EE51FB0574C275E93ACB88F58D7718_1715838614 = (message == null || message.equals(""));
+            boolean var87EE51FB0574C275E93ACB88F58D7718_388808474 = (message == null || message.equals(""));
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("null msg");
         } //End collapsed parenthetic
         this.message = message;
@@ -138,17 +138,17 @@ class MessageLog implements LogRecord {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.389 -0400", hash_original_method = "818407DE55CFD10CF1C5E889367D1C2C", hash_generated_method = "E2051610E6EF69FB58EE4A3111506BDC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.130 -0400", hash_original_method = "818407DE55CFD10CF1C5E889367D1C2C", hash_generated_method = "56CBD92A4BFFC09C0A935F1D3D99D38C")
     public boolean equals(Object other) {
         {
             MessageLog otherLog;
             otherLog = (MessageLog) other;
-            boolean var5BA4675877B9A55A06DCDAB0A337D10C_926967279 = (otherLog.message.equals(message)
+            boolean var5BA4675877B9A55A06DCDAB0A337D10C_340847127 = (otherLog.message.equals(message)
                 && otherLog.timeStamp == timeStamp);
         } //End block
         addTaint(other.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1468691346 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1468691346;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1924278805 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1924278805;
         // ---------- Original Method ----------
         //if (!(other instanceof MessageLog)) {
             //return false;
@@ -160,9 +160,9 @@ class MessageLog implements LogRecord {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:36.399 -0400", hash_original_method = "41C5D33A303365643BC91460F622FA81", hash_generated_method = "764A1E2D3642E83475CB68E1264E8B2F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:35.138 -0400", hash_original_method = "41C5D33A303365643BC91460F622FA81", hash_generated_method = "56213056B11A8BC57403AEB754C1830A")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_319566960 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1355431479 = null; //Variable for return #1
         String log;
         log =
                 "<message\nfrom=\""
@@ -186,9 +186,9 @@ class MessageLog implements LogRecord {
         log += message;
         log += "]]>\n";
         log += "</message>\n";
-        varB4EAC82CA7396A68D541C85D26508E83_319566960 = log;
-        varB4EAC82CA7396A68D541C85D26508E83_319566960.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_319566960;
+        varB4EAC82CA7396A68D541C85D26508E83_1355431479 = log;
+        varB4EAC82CA7396A68D541C85D26508E83_1355431479.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1355431479;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

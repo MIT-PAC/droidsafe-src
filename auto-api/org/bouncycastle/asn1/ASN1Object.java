@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public abstract class ASN1Object extends DERObject {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.564 -0400", hash_original_method = "79A6503CF02D2BF6CA7C22C7ECE56A0E", hash_generated_method = "79A6503CF02D2BF6CA7C22C7ECE56A0E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.701 -0400", hash_original_method = "79A6503CF02D2BF6CA7C22C7ECE56A0E", hash_generated_method = "79A6503CF02D2BF6CA7C22C7ECE56A0E")
     public ASN1Object ()
     {
         //Synthesized constructor
@@ -31,12 +31,12 @@ public abstract class ASN1Object extends DERObject {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.580 -0400", hash_original_method = "DA81A9CF27CE7E2A8EA2EF36D7C19ED4", hash_generated_method = "8EB7321278E54C278ADCB5C507A81CAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.703 -0400", hash_original_method = "DA81A9CF27CE7E2A8EA2EF36D7C19ED4", hash_generated_method = "72858C9EB26F3B66DEBF6272A067B1B8")
     public final boolean equals(Object o) {
-        boolean varC64BD2CC2CF0DD7A929C1BCE70981A7D_887682314 = ((o instanceof DEREncodable) && asn1Equals(((DEREncodable)o).getDERObject()));
+        boolean varC64BD2CC2CF0DD7A929C1BCE70981A7D_2056766671 = ((o instanceof DEREncodable) && asn1Equals(((DEREncodable)o).getDERObject()));
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2057692968 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2057692968;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1260446340 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1260446340;
         // ---------- Original Method ----------
         //if (this == o)
         //{

@@ -23,14 +23,14 @@ import javax.crypto.ShortBufferException;
 
 public class NullCipherSpi extends CipherSpi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.674 -0400", hash_original_method = "FDE7F108401C679AA53E658D57386CA0", hash_generated_method = "FDE7F108401C679AA53E658D57386CA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.753 -0400", hash_original_method = "FDE7F108401C679AA53E658D57386CA0", hash_generated_method = "FDE7F108401C679AA53E658D57386CA0")
     public NullCipherSpi ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.680 -0400", hash_original_method = "706F671562845F3E8688B6825B7BB7B5", hash_generated_method = "FD68E1F39F1A9AABEDDC863ED78C32FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.755 -0400", hash_original_method = "706F671562845F3E8688B6825B7BB7B5", hash_generated_method = "FD68E1F39F1A9AABEDDC863ED78C32FC")
     @Override
     public void engineSetMode(String arg0) throws NoSuchAlgorithmException {
         addTaint(arg0.getTaint());
@@ -38,7 +38,7 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.680 -0400", hash_original_method = "F467B7E30ACE18A6916FD5129C6E9D6D", hash_generated_method = "052707AC6A6E1EE316864DCEE29A17AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.756 -0400", hash_original_method = "F467B7E30ACE18A6916FD5129C6E9D6D", hash_generated_method = "052707AC6A6E1EE316864DCEE29A17AA")
     @Override
     public void engineSetPadding(String arg0) throws NoSuchPaddingException {
         addTaint(arg0.getTaint());
@@ -46,51 +46,51 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.681 -0400", hash_original_method = "AA3F68511E1542DF3672139FD15FAFBD", hash_generated_method = "458E530B552E7B2C7F7A4D418872B541")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.757 -0400", hash_original_method = "AA3F68511E1542DF3672139FD15FAFBD", hash_generated_method = "47784093EBFDB1A12107CEF17D5969BE")
     @Override
     public int engineGetBlockSize() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1981640541 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1981640541;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_549966454 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_549966454;
         // ---------- Original Method ----------
         //return 1;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.681 -0400", hash_original_method = "F5B40F368FE57EF79892E9499088FA98", hash_generated_method = "BD229136443770E77A62DD491A1A07AA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.772 -0400", hash_original_method = "F5B40F368FE57EF79892E9499088FA98", hash_generated_method = "EDF1CAD2AA5D984527957E407BBB1EA3")
     @Override
     public int engineGetOutputSize(int inputLen) {
         addTaint(inputLen);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_411177436 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_411177436;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_509318918 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_509318918;
         // ---------- Original Method ----------
         //return inputLen;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.681 -0400", hash_original_method = "D58BACA19EEF36A04C3196887019A068", hash_generated_method = "A99E369BC9F44FEFA7E5DBA562C1910C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.773 -0400", hash_original_method = "D58BACA19EEF36A04C3196887019A068", hash_generated_method = "8022AA249D78990F8A01E74680C6539A")
     @Override
     public byte[] engineGetIV() {
-        byte[] varB9E113C96366097BE0A8A860277D6E97_967669930 = (new byte[8]);
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1922817594 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1922817594;
+        byte[] varB9E113C96366097BE0A8A860277D6E97_1870388130 = (new byte[8]);
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1686547258 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1686547258;
         // ---------- Original Method ----------
         //return new byte[8];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.682 -0400", hash_original_method = "5ACBCE845ECFAD3699BFF222B46DB669", hash_generated_method = "1C20F425A0C7F7F7E0679DE32B0966E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.775 -0400", hash_original_method = "5ACBCE845ECFAD3699BFF222B46DB669", hash_generated_method = "B7DB34677B9B0D15BE0A05971E1704AC")
     @Override
     public AlgorithmParameters engineGetParameters() {
-        AlgorithmParameters varB4EAC82CA7396A68D541C85D26508E83_1045259167 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1045259167 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1045259167.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1045259167;
+        AlgorithmParameters varB4EAC82CA7396A68D541C85D26508E83_1023594833 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1023594833 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1023594833.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1023594833;
         // ---------- Original Method ----------
         //return null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.683 -0400", hash_original_method = "B46A0FD4E768F51B64954CE33560D103", hash_generated_method = "E8851E4BAA7182F4A2F402D371FAB35C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.776 -0400", hash_original_method = "B46A0FD4E768F51B64954CE33560D103", hash_generated_method = "E8851E4BAA7182F4A2F402D371FAB35C")
     @Override
     public void engineInit(int opmode, Key key, SecureRandom random) throws InvalidKeyException {
         addTaint(opmode);
@@ -100,7 +100,7 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.692 -0400", hash_original_method = "17F5EBD605D037DD2AE1BC60DE6A1892", hash_generated_method = "1CCFF2551B6546A4CF66CB18D5670EA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.777 -0400", hash_original_method = "17F5EBD605D037DD2AE1BC60DE6A1892", hash_generated_method = "1CCFF2551B6546A4CF66CB18D5670EA4")
     @Override
     public void engineInit(int opmode, Key key, AlgorithmParameterSpec params,
             SecureRandom random) throws InvalidKeyException,
@@ -113,7 +113,7 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.692 -0400", hash_original_method = "34E3729604DBD7C3DE21E55F909979C4", hash_generated_method = "0C627444DB7D098C6FB2D0CD8F63C37A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.777 -0400", hash_original_method = "34E3729604DBD7C3DE21E55F909979C4", hash_generated_method = "0C627444DB7D098C6FB2D0CD8F63C37A")
     @Override
     public void engineInit(int opmode, Key key, AlgorithmParameters params,
             SecureRandom random) throws InvalidKeyException,
@@ -126,7 +126,7 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.693 -0400", hash_original_method = "09310CB0118160B29BD7A01C1B70DD45", hash_generated_method = "DE1C00578E74C3E508CA733A103A95AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.777 -0400", hash_original_method = "09310CB0118160B29BD7A01C1B70DD45", hash_generated_method = "164384A00A03C1204C6AB1DA1050545B")
     @Override
     public byte[] engineUpdate(byte[] input, int inputOffset, int inputLen) {
         byte[] result;
@@ -135,8 +135,8 @@ public class NullCipherSpi extends CipherSpi {
         addTaint(input[0]);
         addTaint(inputOffset);
         addTaint(inputLen);
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1206517413 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1206517413;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1668692551 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1668692551;
         // ---------- Original Method ----------
         //if (input == null) {
             //return null;
@@ -147,7 +147,7 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.693 -0400", hash_original_method = "60A1BA3728F191B40038A2CE01896EE6", hash_generated_method = "CE0C46C9F175E0A5C893A10D5B19971E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.778 -0400", hash_original_method = "60A1BA3728F191B40038A2CE01896EE6", hash_generated_method = "57516004BFBD95988B64C4ED7885DA5E")
     @Override
     public int engineUpdate(byte[] input, int inputOffset, int inputLen,
             byte[] output, int outputOffset) throws ShortBufferException {
@@ -157,8 +157,8 @@ public class NullCipherSpi extends CipherSpi {
         addTaint(inputLen);
         addTaint(output[0]);
         addTaint(outputOffset);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1501102854 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1501102854;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_408318229 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_408318229;
         // ---------- Original Method ----------
         //if (input == null) {
             //return 0;
@@ -168,7 +168,7 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.694 -0400", hash_original_method = "52F18BDADF6C5DE31B16AD29ECF185DD", hash_generated_method = "9DFF7D839E0215A361BE8BEF54A24BB3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.779 -0400", hash_original_method = "52F18BDADF6C5DE31B16AD29ECF185DD", hash_generated_method = "5594FE50CE620E5F8A8DA16E3A4EAC0E")
     @Override
     public int engineUpdate(ByteBuffer input, ByteBuffer output) throws ShortBufferException {
         {
@@ -186,8 +186,8 @@ public class NullCipherSpi extends CipherSpi {
         } //End block
         addTaint(input.getTaint());
         addTaint(output.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1347479461 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1347479461;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_850122055 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_850122055;
         // ---------- Original Method ----------
         //if (input == null || output == null) {
             //throw new NullPointerException();
@@ -202,15 +202,15 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.694 -0400", hash_original_method = "BACBD39F75A04196004D2E06D99366CD", hash_generated_method = "3E4FA393B01CFFA46388949921587B0D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.780 -0400", hash_original_method = "BACBD39F75A04196004D2E06D99366CD", hash_generated_method = "6672701D462EED413C5145FB71A1CCF1")
     @Override
     public byte[] engineDoFinal(byte[] input, int inputOffset, int inputLen) throws IllegalBlockSizeException, BadPaddingException {
-        byte[] var74E9904579F3D1676B0230EF88A25000_810723457 = (engineUpdate(input, inputOffset, inputLen));
+        byte[] var74E9904579F3D1676B0230EF88A25000_473931713 = (engineUpdate(input, inputOffset, inputLen));
         addTaint(input[0]);
         addTaint(inputOffset);
         addTaint(inputLen);
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1058315368 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1058315368;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_832569686 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_832569686;
         // ---------- Original Method ----------
         //if (input == null) {
             //return null;
@@ -219,7 +219,7 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.694 -0400", hash_original_method = "C78AB3EC778278E6CB8FDDB4DDEF61A0", hash_generated_method = "DD317F216C8F8735DAC3001572127839")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.785 -0400", hash_original_method = "C78AB3EC778278E6CB8FDDB4DDEF61A0", hash_generated_method = "FFD8A1FF051A6966F49C7940F4E565B6")
     @Override
     public int engineDoFinal(byte[] input, int inputOffset, int inputLen,
             byte[] output, int outputOffset) throws ShortBufferException,
@@ -232,8 +232,8 @@ public class NullCipherSpi extends CipherSpi {
         addTaint(inputLen);
         addTaint(output[0]);
         addTaint(outputOffset);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2040531614 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2040531614;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_686906016 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_686906016;
         // ---------- Original Method ----------
         //int result = engineUpdate(input, inputOffset, inputLen, output,
                 //outputOffset);
@@ -241,33 +241,33 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.698 -0400", hash_original_method = "245FFB9EDA02A1B2DEFFE10111DCBE72", hash_generated_method = "529632D751AF40083E4CAB47DBEF4E18")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.785 -0400", hash_original_method = "245FFB9EDA02A1B2DEFFE10111DCBE72", hash_generated_method = "3D19EAF3EB40B085FA21ED09008366D4")
     @Override
     public int engineDoFinal(ByteBuffer input, ByteBuffer output) throws ShortBufferException, IllegalBlockSizeException,
             BadPaddingException {
-        int var8B566363162AEDBA40DAE89A1004DADE_1032746948 = (engineUpdate(input, output));
+        int var8B566363162AEDBA40DAE89A1004DADE_738903421 = (engineUpdate(input, output));
         addTaint(input.getTaint());
         addTaint(output.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372158415 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372158415;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_102037655 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_102037655;
         // ---------- Original Method ----------
         //return engineUpdate(input, output);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.698 -0400", hash_original_method = "39FE6C15BFF89C7EBC497DBB2542410E", hash_generated_method = "22CA0BA65338FFDD6E68B56418A7297F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.791 -0400", hash_original_method = "39FE6C15BFF89C7EBC497DBB2542410E", hash_generated_method = "D21C0F70ADF04BD5BCBB72EF21EFABB8")
     @Override
     public byte[] engineWrap(Key key) throws IllegalBlockSizeException, InvalidKeyException {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(key.getTaint());
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1312873337 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1312873337;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1110477874 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1110477874;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.699 -0400", hash_original_method = "6B4157CFE5E357119D9C5A035C31A1F5", hash_generated_method = "B8B6316E4D9E6171378BB468661BC164")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.801 -0400", hash_original_method = "6B4157CFE5E357119D9C5A035C31A1F5", hash_generated_method = "B8B6316E4D9E6171378BB468661BC164")
     @Override
     public Key engineUnwrap(byte[] wrappedKey, String wrappedKeyAlgorithm,
             int wrappedKeyType) throws InvalidKeyException,
@@ -281,13 +281,13 @@ public class NullCipherSpi extends CipherSpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.699 -0400", hash_original_method = "3103A3DFE966B970FCF19F267AD5457A", hash_generated_method = "BE1FE348D62FDFAEF693A28375BAEB87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.801 -0400", hash_original_method = "3103A3DFE966B970FCF19F267AD5457A", hash_generated_method = "2DC35DB6CFFCE7C9C41355F5B6C82932")
     @Override
     public int engineGetKeySize(Key key) throws InvalidKeyException {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(key.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_912319892 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_912319892;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_993152158 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_993152158;
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }

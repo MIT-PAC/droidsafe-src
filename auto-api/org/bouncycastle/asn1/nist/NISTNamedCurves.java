@@ -17,7 +17,7 @@ import java.util.Hashtable;
 
 public class NISTNamedCurves {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.425 -0400", hash_original_method = "63679769172F8C8B10620B74D01768FE", hash_generated_method = "63679769172F8C8B10620B74D01768FE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.522 -0400", hash_original_method = "63679769172F8C8B10620B74D01768FE", hash_generated_method = "63679769172F8C8B10620B74D01768FE")
     public NISTNamedCurves ()
     {
         //Synthesized constructor
@@ -64,10 +64,10 @@ public class NISTNamedCurves {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.431 -0400", hash_original_field = "09196982C4917B07F992CCE003F1710F", hash_generated_field = "1169508D6249D74AF50B49E4347C0169")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.523 -0400", hash_original_field = "09196982C4917B07F992CCE003F1710F", hash_generated_field = "1169508D6249D74AF50B49E4347C0169")
 
     static Hashtable objIds = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.431 -0400", hash_original_field = "E70BACFD70C0C66E2A0FC643AF5696C0", hash_generated_field = "BBC73B5D5E92CE9D193A9A8C606FBC8E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.523 -0400", hash_original_field = "E70BACFD70C0C66E2A0FC643AF5696C0", hash_generated_field = "BBC73B5D5E92CE9D193A9A8C606FBC8E")
 
     static Hashtable names = new Hashtable();
     static {

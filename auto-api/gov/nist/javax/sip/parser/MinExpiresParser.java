@@ -13,7 +13,7 @@ import javax.sip.*;
 
 public class MinExpiresParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.854 -0400", hash_original_method = "958EB85119CB55ADB0187595D23A4161", hash_generated_method = "18AE5AC1AECFE735B4B780AF40AFA3F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.838 -0400", hash_original_method = "958EB85119CB55ADB0187595D23A4161", hash_generated_method = "18AE5AC1AECFE735B4B780AF40AFA3F3")
     public  MinExpiresParser(String minExpires) {
         super(minExpires);
         addTaint(minExpires.getTaint());
@@ -21,7 +21,7 @@ public class MinExpiresParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.855 -0400", hash_original_method = "C5E703E21CCA5CEB1F1840058DFBE664", hash_generated_method = "882AED7A38440106939A78D2EDA46308")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.839 -0400", hash_original_method = "C5E703E21CCA5CEB1F1840058DFBE664", hash_generated_method = "882AED7A38440106939A78D2EDA46308")
     protected  MinExpiresParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -29,9 +29,9 @@ public class MinExpiresParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.856 -0400", hash_original_method = "67C1C5FB3D4E718484F296CD0580B923", hash_generated_method = "B861A5D6319313EB323537D69EB4036F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.840 -0400", hash_original_method = "67C1C5FB3D4E718484F296CD0580B923", hash_generated_method = "E1249634C0F9C06D254B0ADBB2DB7F1A")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_413693677 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1692314662 = null; //Variable for return #1
         dbg_enter("MinExpiresParser.parse");
         MinExpires minExpires;
         minExpires = new MinExpires();
@@ -51,14 +51,14 @@ public class MinExpiresParser extends HeaderParser {
             } //End block
             this.lexer.SPorHT();
             this.lexer.match('\n');
-            varB4EAC82CA7396A68D541C85D26508E83_413693677 = minExpires;
+            varB4EAC82CA7396A68D541C85D26508E83_1692314662 = minExpires;
         } //End block
         finally 
         {
             dbg_leave("MinExpiresParser.parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_413693677.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_413693677;
+        varB4EAC82CA7396A68D541C85D26508E83_1692314662.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1692314662;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("MinExpiresParser.parse");

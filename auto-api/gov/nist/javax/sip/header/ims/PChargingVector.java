@@ -14,57 +14,57 @@ import gov.nist.javax.sip.header.ims.ParameterNamesIms;
 
 public class PChargingVector extends gov.nist.javax.sip.header.ParametersHeader implements PChargingVectorHeader, SIPHeaderNamesIms, ExtensionHeader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.280 -0400", hash_original_method = "F24963EF187BB1F8C634FCD3043DEC7F", hash_generated_method = "6095E38714E723CF4021E2B80F418044")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.395 -0400", hash_original_method = "F24963EF187BB1F8C634FCD3043DEC7F", hash_generated_method = "6095E38714E723CF4021E2B80F418044")
     public  PChargingVector() {
         super(P_CHARGING_VECTOR);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.282 -0400", hash_original_method = "28145672492296ED345E3C0B325C1523", hash_generated_method = "37C1C134465400E314338CA7DFC35D3A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.404 -0400", hash_original_method = "28145672492296ED345E3C0B325C1523", hash_generated_method = "9C82924A1BB4F5C4BE2E4437185B13C2")
     protected String encodeBody() {
-        String varB4EAC82CA7396A68D541C85D26508E83_330178258 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_727249381 = null; //Variable for return #1
         StringBuffer encoding;
         encoding = new StringBuffer();
         gov.nist.core.NameValue nv;
         nv = getNameValue( ParameterNamesIms.ICID_VALUE );
         nv.encode( encoding );
         {
-            boolean var365EECA05BB94B1D3EE2B7A27CE75BC5_1204419879 = (parameters.containsKey(ParameterNamesIms.ICID_GENERATED_AT));
+            boolean var365EECA05BB94B1D3EE2B7A27CE75BC5_239905712 = (parameters.containsKey(ParameterNamesIms.ICID_GENERATED_AT));
             encoding.append(SEMICOLON).append(
                     ParameterNamesIms.ICID_GENERATED_AT).append(EQUALS).append(
                     getICIDGeneratedAt());
         } //End collapsed parenthetic
         {
-            boolean var3CC7D78860486207BDF218E5BB0FBFF9_2043200293 = (parameters.containsKey(ParameterNamesIms.TERM_IOI));
+            boolean var3CC7D78860486207BDF218E5BB0FBFF9_1416366762 = (parameters.containsKey(ParameterNamesIms.TERM_IOI));
             encoding.append(SEMICOLON).append(ParameterNamesIms.TERM_IOI)
                     .append(EQUALS).append(getTerminatingIOI());
         } //End collapsed parenthetic
         {
-            boolean varD04222CB942016251A12306783266E31_237308545 = (parameters.containsKey(ParameterNamesIms.ORIG_IOI));
+            boolean varD04222CB942016251A12306783266E31_1074932295 = (parameters.containsKey(ParameterNamesIms.ORIG_IOI));
             encoding.append(SEMICOLON).append(ParameterNamesIms.ORIG_IOI)
                     .append(EQUALS).append(getOriginatingIOI());
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_330178258 = encoding.toString();
-        varB4EAC82CA7396A68D541C85D26508E83_330178258.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_330178258;
+        varB4EAC82CA7396A68D541C85D26508E83_727249381 = encoding.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_727249381.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_727249381;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.292 -0400", hash_original_method = "B80431D54E690B860FD3339F406AB025", hash_generated_method = "6BF9120EEC569EC7DECF8A80DC6C821C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.417 -0400", hash_original_method = "B80431D54E690B860FD3339F406AB025", hash_generated_method = "C8C9F13910BD8AF931AA95AE8D6779B8")
     public String getICID() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2115176695 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2115176695 = getParameter(ParameterNamesIms.ICID_VALUE);
-        varB4EAC82CA7396A68D541C85D26508E83_2115176695.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2115176695;
+        String varB4EAC82CA7396A68D541C85D26508E83_852978170 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_852978170 = getParameter(ParameterNamesIms.ICID_VALUE);
+        varB4EAC82CA7396A68D541C85D26508E83_852978170.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_852978170;
         // ---------- Original Method ----------
         //return getParameter(ParameterNamesIms.ICID_VALUE);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.292 -0400", hash_original_method = "EBEB68B63CE22995F9427EDD0E4E07CA", hash_generated_method = "BF114006E67821E439D5BCDA19FCEDE2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.417 -0400", hash_original_method = "EBEB68B63CE22995F9427EDD0E4E07CA", hash_generated_method = "BF114006E67821E439D5BCDA19FCEDE2")
     public void setICID(String icid) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                     "JAIN-SIP Exception, "
@@ -80,18 +80,18 @@ public class PChargingVector extends gov.nist.javax.sip.header.ParametersHeader 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.293 -0400", hash_original_method = "E03F1FEEE570AA8D71D705B8C23619DF", hash_generated_method = "CA9E44ECE5642AC77A48441401684DB1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.418 -0400", hash_original_method = "E03F1FEEE570AA8D71D705B8C23619DF", hash_generated_method = "A9E388FFC0A87C060B21874F064318C4")
     public String getICIDGeneratedAt() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1659260471 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1659260471 = getParameter(ParameterNamesIms.ICID_GENERATED_AT);
-        varB4EAC82CA7396A68D541C85D26508E83_1659260471.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1659260471;
+        String varB4EAC82CA7396A68D541C85D26508E83_583266686 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_583266686 = getParameter(ParameterNamesIms.ICID_GENERATED_AT);
+        varB4EAC82CA7396A68D541C85D26508E83_583266686.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_583266686;
         // ---------- Original Method ----------
         //return getParameter(ParameterNamesIms.ICID_GENERATED_AT);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.294 -0400", hash_original_method = "F4508B4C04B9B92ED2D0B6FD3FCDD70F", hash_generated_method = "02E8850E20792337D964848D34BC0404")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.420 -0400", hash_original_method = "F4508B4C04B9B92ED2D0B6FD3FCDD70F", hash_generated_method = "02E8850E20792337D964848D34BC0404")
     public void setICIDGeneratedAt(String host) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException(
                     "JAIN-SIP Exception, "
@@ -107,21 +107,21 @@ public class PChargingVector extends gov.nist.javax.sip.header.ParametersHeader 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.304 -0400", hash_original_method = "9C58F34D8EC32A5F098899E01B3677E3", hash_generated_method = "4A11C8AADF5CE5C47138CE75AFBD09EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.437 -0400", hash_original_method = "9C58F34D8EC32A5F098899E01B3677E3", hash_generated_method = "F21664224EB3909B711F30692273320B")
     public String getOriginatingIOI() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1340716333 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1340716333 = getParameter(ParameterNamesIms.ORIG_IOI);
-        varB4EAC82CA7396A68D541C85D26508E83_1340716333.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1340716333;
+        String varB4EAC82CA7396A68D541C85D26508E83_1904521782 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1904521782 = getParameter(ParameterNamesIms.ORIG_IOI);
+        varB4EAC82CA7396A68D541C85D26508E83_1904521782.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1904521782;
         // ---------- Original Method ----------
         //return getParameter(ParameterNamesIms.ORIG_IOI);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.305 -0400", hash_original_method = "4D1174A0C4FD1D4621AAA8C5BA456558", hash_generated_method = "CA46C1E82011EE516E2D3299D37C8B92")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.438 -0400", hash_original_method = "4D1174A0C4FD1D4621AAA8C5BA456558", hash_generated_method = "60F65F07D9773C0B686205AD75C87536")
     public void setOriginatingIOI(String origIOI) throws ParseException {
         {
-            boolean var92D070AC95721983DC0013EE99F4F26F_1530830469 = (origIOI == null || origIOI.length() == 0);
+            boolean var92D070AC95721983DC0013EE99F4F26F_1741029810 = (origIOI == null || origIOI.length() == 0);
             {
                 removeParameter(ParameterNamesIms.ORIG_IOI);
             } //End block
@@ -136,21 +136,21 @@ public class PChargingVector extends gov.nist.javax.sip.header.ParametersHeader 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.305 -0400", hash_original_method = "D0795F3899C65FBD8AF4B39D420CBFCA", hash_generated_method = "948BF45B2648C5FE42E8E6CA0A6165E0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.438 -0400", hash_original_method = "D0795F3899C65FBD8AF4B39D420CBFCA", hash_generated_method = "7760E8691359BCE8B9E61C3C99C62E2E")
     public String getTerminatingIOI() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1321281965 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1321281965 = getParameter(ParameterNamesIms.TERM_IOI);
-        varB4EAC82CA7396A68D541C85D26508E83_1321281965.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1321281965;
+        String varB4EAC82CA7396A68D541C85D26508E83_140182650 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_140182650 = getParameter(ParameterNamesIms.TERM_IOI);
+        varB4EAC82CA7396A68D541C85D26508E83_140182650.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_140182650;
         // ---------- Original Method ----------
         //return getParameter(ParameterNamesIms.TERM_IOI);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.305 -0400", hash_original_method = "9F4DF1C8B170A0213F28AE6F8C15C36E", hash_generated_method = "82F413381EA242A3D809F3CA51550FED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.438 -0400", hash_original_method = "9F4DF1C8B170A0213F28AE6F8C15C36E", hash_generated_method = "B8B0E876B71EBBB80B278E311DB056F9")
     public void setTerminatingIOI(String termIOI) throws ParseException {
         {
-            boolean var37A47FB02DC54A02839143740CF28C52_2126458432 = (termIOI == null || termIOI.length() == 0);
+            boolean var37A47FB02DC54A02839143740CF28C52_554828668 = (termIOI == null || termIOI.length() == 0);
             {
                 removeParameter(ParameterNamesIms.TERM_IOI);
             } //End block
@@ -165,7 +165,7 @@ public class PChargingVector extends gov.nist.javax.sip.header.ParametersHeader 
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:33.306 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:32.439 -0400", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "263BB18DC54AB83D62E13F134B9FEB9D")
     public void setValue(String value) throws ParseException {
         if (DroidSafeAndroidRuntime.control) throw new ParseException(value, 0);
         addTaint(value.getTaint());

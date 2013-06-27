@@ -14,7 +14,7 @@ import org.bouncycastle.asn1.x509.AlgorithmIdentifier;
 
 public class KeyDerivationFunc extends AlgorithmIdentifier {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.473 -0400", hash_original_method = "AD6BDDE959CE01BE7444FB2D02D03B3C", hash_generated_method = "0A265C1C624C15A4DCB5E7E95069D561")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.580 -0400", hash_original_method = "AD6BDDE959CE01BE7444FB2D02D03B3C", hash_generated_method = "0A265C1C624C15A4DCB5E7E95069D561")
       KeyDerivationFunc(
         ASN1Sequence  seq) {
         super(seq);
@@ -23,7 +23,7 @@ public class KeyDerivationFunc extends AlgorithmIdentifier {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:18.477 -0400", hash_original_method = "88796F5C07F15C92E2EFA3D6482AE187", hash_generated_method = "59A4A7756BF4D4F9857C701B739F26E5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:19.592 -0400", hash_original_method = "88796F5C07F15C92E2EFA3D6482AE187", hash_generated_method = "59A4A7756BF4D4F9857C701B739F26E5")
     public  KeyDerivationFunc(
         DERObjectIdentifier id,
         ASN1Encodable       params) {

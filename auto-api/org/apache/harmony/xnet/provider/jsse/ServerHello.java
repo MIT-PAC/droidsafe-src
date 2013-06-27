@@ -12,23 +12,23 @@ import java.security.SecureRandom;
 import libcore.io.Streams;
 
 public class ServerHello extends Message {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.079 -0400", hash_original_field = "0E1AF9DC094ABB94D4A3E3D06C82935F", hash_generated_field = "459F4848AA92E1CD0637FF4F2809E745")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.972 -0400", hash_original_field = "0E1AF9DC094ABB94D4A3E3D06C82935F", hash_generated_field = "459F4848AA92E1CD0637FF4F2809E745")
 
     byte[] server_version = new byte[2];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.080 -0400", hash_original_field = "207D91A53A99C0890FBC2F7C6872CC3D", hash_generated_field = "99091ADCC73FE81C2F7FCEF8EA8CC707")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.972 -0400", hash_original_field = "207D91A53A99C0890FBC2F7C6872CC3D", hash_generated_field = "99091ADCC73FE81C2F7FCEF8EA8CC707")
 
     byte[] random = new byte[32];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.080 -0400", hash_original_field = "7FC8EF54A8154C28341BF9A47443A5CE", hash_generated_field = "464E487327E8A3D68CAEEB2871FE01AA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.973 -0400", hash_original_field = "7FC8EF54A8154C28341BF9A47443A5CE", hash_generated_field = "464E487327E8A3D68CAEEB2871FE01AA")
 
     byte[] session_id;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.080 -0400", hash_original_field = "9A6393DA00519A757BFDC959428BEB1D", hash_generated_field = "A81D6CEDC86413368148153BE0D55442")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.973 -0400", hash_original_field = "9A6393DA00519A757BFDC959428BEB1D", hash_generated_field = "A81D6CEDC86413368148153BE0D55442")
 
     CipherSuite cipher_suite;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.080 -0400", hash_original_field = "DB3AEE50C351C4180615C1A2BD01FF0A", hash_generated_field = "0D42E45E4884DABCFCE12BD7447CC09E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.973 -0400", hash_original_field = "DB3AEE50C351C4180615C1A2BD01FF0A", hash_generated_field = "0D42E45E4884DABCFCE12BD7447CC09E")
 
     byte compression_method;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.090 -0400", hash_original_method = "9AA41B9BF38033172F833E5120B7F6E3", hash_generated_method = "0D159F400D6E8DE09611445FF6D85894")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.977 -0400", hash_original_method = "9AA41B9BF38033172F833E5120B7F6E3", hash_generated_method = "0D159F400D6E8DE09611445FF6D85894")
     public  ServerHello(SecureRandom sr, byte[] server_version,
             byte[] session_id, CipherSuite cipher_suite, byte compression_method) {
         long gmt_unix_time;
@@ -59,7 +59,7 @@ public class ServerHello extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.091 -0400", hash_original_method = "23655B86BFA253F8DFEBCBADE0DA1F73", hash_generated_method = "DD255D0C2B53ED2AF46FBAC6BA10602C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.978 -0400", hash_original_method = "23655B86BFA253F8DFEBCBADE0DA1F73", hash_generated_method = "DD255D0C2B53ED2AF46FBAC6BA10602C")
     public  ServerHello(HandshakeIODataStream in, int length) throws IOException {
         server_version[0] = (byte) in.read();
         server_version[1] = (byte) in.read();
@@ -97,7 +97,7 @@ public class ServerHello extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.094 -0400", hash_original_method = "58B711F614C57C81491E703600BC8F27", hash_generated_method = "F9C83BCB1D601E4FD82B8356902C7E65")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.978 -0400", hash_original_method = "58B711F614C57C81491E703600BC8F27", hash_generated_method = "F9C83BCB1D601E4FD82B8356902C7E65")
     @Override
     public void send(HandshakeIODataStream out) {
         out.write(server_version);
@@ -119,20 +119,20 @@ public class ServerHello extends Message {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.094 -0400", hash_original_method = "EDD7E5211887C4E217154E276BC2B61E", hash_generated_method = "9B1BEE93A2D3124ECEB7DB2B5B939494")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.990 -0400", hash_original_method = "EDD7E5211887C4E217154E276BC2B61E", hash_generated_method = "FA3534399677DA5B76B00DD70AAABCF8")
     public byte[] getRandom() {
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1374720079 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1374720079;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1661257139 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_1661257139;
         // ---------- Original Method ----------
         //return random;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:13.094 -0400", hash_original_method = "51302607A7CDE0350AA8DCA604C2ADD7", hash_generated_method = "51E19A83235D1EF68E204DF27F30CFD8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.990 -0400", hash_original_method = "51302607A7CDE0350AA8DCA604C2ADD7", hash_generated_method = "64EBF5014F35F8F1D56E876AD82DA277")
     @Override
     public int getType() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1410856718 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1410856718;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1452296145 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1452296145;
         // ---------- Original Method ----------
         //return Handshake.SERVER_HELLO;
     }

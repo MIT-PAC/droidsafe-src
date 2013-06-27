@@ -12,11 +12,11 @@ import libcore.icu.ICU;
 import libcore.icu.LocaleData;
 
 public final class Currency implements Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.117 -0400", hash_original_field = "3F4D9AC950DFB473BC6A0BB61B5D51EC", hash_generated_field = "09A83EE2F8EE9A2398F93CB4F525F4D2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.175 -0400", hash_original_field = "3F4D9AC950DFB473BC6A0BB61B5D51EC", hash_generated_field = "09A83EE2F8EE9A2398F93CB4F525F4D2")
 
     private String currencyCode;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.117 -0400", hash_original_method = "B8C067C2D581EC195B8ADF9C49328ECD", hash_generated_method = "120711EF868F2ED0222E6A4270293C70")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.176 -0400", hash_original_method = "B8C067C2D581EC195B8ADF9C49328ECD", hash_generated_method = "120711EF868F2ED0222E6A4270293C70")
     private  Currency(String currencyCode) {
         this.currencyCode = currencyCode;
         String symbol;
@@ -82,88 +82,88 @@ public final class Currency implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.118 -0400", hash_original_method = "2AC1FCCB5B1A729D4AAC7C21169200F6", hash_generated_method = "8BF60F77AE0127E5AE9A85E55AA1F664")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.177 -0400", hash_original_method = "2AC1FCCB5B1A729D4AAC7C21169200F6", hash_generated_method = "5BC24B63674E77755BABB92D1AF1D5B0")
     public String getCurrencyCode() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1510166503 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1510166503 = currencyCode;
-        varB4EAC82CA7396A68D541C85D26508E83_1510166503.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1510166503;
+        String varB4EAC82CA7396A68D541C85D26508E83_526033998 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_526033998 = currencyCode;
+        varB4EAC82CA7396A68D541C85D26508E83_526033998.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_526033998;
         // ---------- Original Method ----------
         //return currencyCode;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.119 -0400", hash_original_method = "024B35E959A93D0BB9AFB5000392D858", hash_generated_method = "686BB74193A6E58BEF98DE5575813FFC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.191 -0400", hash_original_method = "024B35E959A93D0BB9AFB5000392D858", hash_generated_method = "5F030C58D523FC2FA37EC2FC44FAA6D4")
     public String getDisplayName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_368614813 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_368614813 = getDisplayName(Locale.getDefault());
-        varB4EAC82CA7396A68D541C85D26508E83_368614813.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_368614813;
+        String varB4EAC82CA7396A68D541C85D26508E83_1118697821 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1118697821 = getDisplayName(Locale.getDefault());
+        varB4EAC82CA7396A68D541C85D26508E83_1118697821.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1118697821;
         // ---------- Original Method ----------
         //return getDisplayName(Locale.getDefault());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.119 -0400", hash_original_method = "B412E21D17743E44672A03725048BDDA", hash_generated_method = "481DBBA2E32D29842D6927C9050C2F26")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.192 -0400", hash_original_method = "B412E21D17743E44672A03725048BDDA", hash_generated_method = "1207184F5152F64ECE367A2FF28D08B5")
     public String getDisplayName(Locale locale) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1302842281 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1302842281 = ICU.getCurrencyDisplayName(locale.toString(), currencyCode);
+        String varB4EAC82CA7396A68D541C85D26508E83_1940918643 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1940918643 = ICU.getCurrencyDisplayName(locale.toString(), currencyCode);
         addTaint(locale.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1302842281.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1302842281;
+        varB4EAC82CA7396A68D541C85D26508E83_1940918643.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1940918643;
         // ---------- Original Method ----------
         //return ICU.getCurrencyDisplayName(locale.toString(), currencyCode);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.120 -0400", hash_original_method = "E9E6FD91308CE554CCA18D78EBA5451D", hash_generated_method = "DBC4F04C4D070F322DECDF8A264162B3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.192 -0400", hash_original_method = "E9E6FD91308CE554CCA18D78EBA5451D", hash_generated_method = "B36F0C4AA6684E69DC0A257A1C42B98D")
     public String getSymbol() {
-        String varB4EAC82CA7396A68D541C85D26508E83_218122916 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_218122916 = getSymbol(Locale.getDefault());
-        varB4EAC82CA7396A68D541C85D26508E83_218122916.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_218122916;
+        String varB4EAC82CA7396A68D541C85D26508E83_1390116943 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1390116943 = getSymbol(Locale.getDefault());
+        varB4EAC82CA7396A68D541C85D26508E83_1390116943.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1390116943;
         // ---------- Original Method ----------
         //return getSymbol(Locale.getDefault());
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.132 -0400", hash_original_method = "798553E01F97CE042B0C960025EC8B4C", hash_generated_method = "E9D3D4106B01908EB86313C102D9F8F9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.193 -0400", hash_original_method = "798553E01F97CE042B0C960025EC8B4C", hash_generated_method = "E4E829E9E67500FB259738831149A28B")
     public String getSymbol(Locale locale) {
-        String varB4EAC82CA7396A68D541C85D26508E83_2038342344 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_2039476241 = null; //Variable for return #2
-        String varB4EAC82CA7396A68D541C85D26508E83_855218727 = null; //Variable for return #3
+        String varB4EAC82CA7396A68D541C85D26508E83_676899945 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1306682253 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_284361288 = null; //Variable for return #3
         {
-            boolean var46A8F51C48B1EC7316C856485A0E0C49_136178884 = (locale.getCountry().length() == 0);
+            boolean var46A8F51C48B1EC7316C856485A0E0C49_2073622319 = (locale.getCountry().length() == 0);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_2038342344 = currencyCode;
+                varB4EAC82CA7396A68D541C85D26508E83_676899945 = currencyCode;
             } //End block
         } //End collapsed parenthetic
         LocaleData localeData;
         localeData = LocaleData.get(locale);
         {
-            boolean var595D8F43DD7F02F67BE19AC37628DD20_798788199 = (localeData.internationalCurrencySymbol.equals(currencyCode));
+            boolean var595D8F43DD7F02F67BE19AC37628DD20_635713340 = (localeData.internationalCurrencySymbol.equals(currencyCode));
             {
-                varB4EAC82CA7396A68D541C85D26508E83_2039476241 = localeData.currencySymbol;
+                varB4EAC82CA7396A68D541C85D26508E83_1306682253 = localeData.currencySymbol;
             } //End block
         } //End collapsed parenthetic
         String symbol;
         symbol = ICU.getCurrencySymbol(locale.toString(), currencyCode);
-        varB4EAC82CA7396A68D541C85D26508E83_855218727 = symbol != null ? symbol : currencyCode;
+        varB4EAC82CA7396A68D541C85D26508E83_284361288 = symbol != null ? symbol : currencyCode;
         addTaint(locale.getTaint());
-        String varA7E53CE21691AB073D9660D615818899_1113920610; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_2050170766; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1113920610 = varB4EAC82CA7396A68D541C85D26508E83_2038342344;
+                varA7E53CE21691AB073D9660D615818899_2050170766 = varB4EAC82CA7396A68D541C85D26508E83_676899945;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1113920610 = varB4EAC82CA7396A68D541C85D26508E83_2039476241;
+                varA7E53CE21691AB073D9660D615818899_2050170766 = varB4EAC82CA7396A68D541C85D26508E83_1306682253;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1113920610 = varB4EAC82CA7396A68D541C85D26508E83_855218727;
+                varA7E53CE21691AB073D9660D615818899_2050170766 = varB4EAC82CA7396A68D541C85D26508E83_284361288;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1113920610.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1113920610;
+        varA7E53CE21691AB073D9660D615818899_2050170766.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2050170766;
         // ---------- Original Method ----------
         //if (locale.getCountry().length() == 0) {
             //return currencyCode;
@@ -177,14 +177,14 @@ public final class Currency implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.133 -0400", hash_original_method = "65B2259A2CB290C21BDBA11C63377846", hash_generated_method = "883B48CCC1D6E4A95AE0370A3DD00813")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.193 -0400", hash_original_method = "65B2259A2CB290C21BDBA11C63377846", hash_generated_method = "FE2209BEF166277A948B6A9027B93DE0")
     public int getDefaultFractionDigits() {
         {
-            boolean var365784966A899A27D6D404098D0B02F3_2005763406 = (currencyCode.equals("XXX"));
+            boolean var365784966A899A27D6D404098D0B02F3_1583957057 = (currencyCode.equals("XXX"));
         } //End collapsed parenthetic
-        int var33FDAAE94FD1F5BFA848E456F837BDB6_480080498 = (ICU.getCurrencyFractionDigits(currencyCode));
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1476492150 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1476492150;
+        int var33FDAAE94FD1F5BFA848E456F837BDB6_882895849 = (ICU.getCurrencyFractionDigits(currencyCode));
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1996356839 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1996356839;
         // ---------- Original Method ----------
         //if (currencyCode.equals("XXX")) {
             //return -1;
@@ -193,36 +193,36 @@ public final class Currency implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.134 -0400", hash_original_method = "61F489343549C45D5079119B52911181", hash_generated_method = "AD8471D9EE1A0680EB00A64F286BA5BD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.194 -0400", hash_original_method = "61F489343549C45D5079119B52911181", hash_generated_method = "0A8E0075B157D85EE93981E2259875B7")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2112294672 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2112294672 = currencyCode;
-        varB4EAC82CA7396A68D541C85D26508E83_2112294672.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2112294672;
+        String varB4EAC82CA7396A68D541C85D26508E83_1932929879 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1932929879 = currencyCode;
+        varB4EAC82CA7396A68D541C85D26508E83_1932929879.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1932929879;
         // ---------- Original Method ----------
         //return currencyCode;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.137 -0400", hash_original_method = "BB7ABE2F39426123A0B73E0A126344FC", hash_generated_method = "06688274BDF61A4120B81BB5359C7D28")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.194 -0400", hash_original_method = "BB7ABE2F39426123A0B73E0A126344FC", hash_generated_method = "4531DA6696EFBD52078A7411FA1C0939")
     private Object readResolve() {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1025240868 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1025240868 = getInstance(currencyCode);
-        varB4EAC82CA7396A68D541C85D26508E83_1025240868.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1025240868;
+        Object varB4EAC82CA7396A68D541C85D26508E83_555247916 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_555247916 = getInstance(currencyCode);
+        varB4EAC82CA7396A68D541C85D26508E83_555247916.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_555247916;
         // ---------- Original Method ----------
         //return getInstance(currencyCode);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.137 -0400", hash_original_field = "12D780CD12AB6643ECC64F5BF288431B", hash_generated_field = "DDDD372229242F6A0BC133DE3F8C9EEF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.194 -0400", hash_original_field = "12D780CD12AB6643ECC64F5BF288431B", hash_generated_field = "DDDD372229242F6A0BC133DE3F8C9EEF")
 
     private static long serialVersionUID = -158308464356906721L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.137 -0400", hash_original_field = "AE769B985C27CF2DEBF8E931C827B573", hash_generated_field = "25CC71919B9981C54B95EFCA24210883")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.194 -0400", hash_original_field = "AE769B985C27CF2DEBF8E931C827B573", hash_generated_field = "25CC71919B9981C54B95EFCA24210883")
 
     private static HashMap<String, Currency> codesToCurrencies = new HashMap<String, Currency>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:50.137 -0400", hash_original_field = "0E1034E42DD53FC6792DC22B36BCA0A3", hash_generated_field = "980B5F33F57E120A86692A2A449C0635")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:50.194 -0400", hash_original_field = "0E1034E42DD53FC6792DC22B36BCA0A3", hash_generated_field = "980B5F33F57E120A86692A2A449C0635")
 
     private static HashMap<Locale, Currency> localesToCurrencies = new HashMap<Locale, Currency>();
 }

@@ -10,13 +10,13 @@ import java.util.Iterator;
 
 public class ArrayIndexOutOfBoundsException extends IndexOutOfBoundsException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.950 -0400", hash_original_method = "2927C5AB3FFF56BF1DCC2EADE5C9261A", hash_generated_method = "0A09B158E5799C73FE56AC7696514B31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.042 -0400", hash_original_method = "2927C5AB3FFF56BF1DCC2EADE5C9261A", hash_generated_method = "0A09B158E5799C73FE56AC7696514B31")
     public  ArrayIndexOutOfBoundsException() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.959 -0400", hash_original_method = "A2D257A78FEA506C4C8D36FA0F1793DA", hash_generated_method = "B641B941FB6A61CB2317662000CBC027")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.043 -0400", hash_original_method = "A2D257A78FEA506C4C8D36FA0F1793DA", hash_generated_method = "B641B941FB6A61CB2317662000CBC027")
     public  ArrayIndexOutOfBoundsException(int index) {
         super("index=" + index);
         addTaint(index);
@@ -24,7 +24,7 @@ public class ArrayIndexOutOfBoundsException extends IndexOutOfBoundsException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.960 -0400", hash_original_method = "1D48A4D94F5DE13F2F12604B33D446C2", hash_generated_method = "B5591AC4DA48478CF15C54188680F441")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.046 -0400", hash_original_method = "1D48A4D94F5DE13F2F12604B33D446C2", hash_generated_method = "B5591AC4DA48478CF15C54188680F441")
     public  ArrayIndexOutOfBoundsException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
@@ -32,7 +32,7 @@ public class ArrayIndexOutOfBoundsException extends IndexOutOfBoundsException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.960 -0400", hash_original_method = "FD6957908D778700DE2EEE696A8B754C", hash_generated_method = "75B66231F9183AC2EDD6E67DB90A733F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.046 -0400", hash_original_method = "FD6957908D778700DE2EEE696A8B754C", hash_generated_method = "75B66231F9183AC2EDD6E67DB90A733F")
     public  ArrayIndexOutOfBoundsException(int sourceLength, int index) {
         super("length=" + sourceLength + "; index=" + index);
         addTaint(sourceLength);
@@ -41,7 +41,7 @@ public class ArrayIndexOutOfBoundsException extends IndexOutOfBoundsException {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.960 -0400", hash_original_method = "5D0675654F8D9644AC21F8916F1DF9DD", hash_generated_method = "2199EF962F861819C5B1D962B8BB1BA4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.048 -0400", hash_original_method = "5D0675654F8D9644AC21F8916F1DF9DD", hash_generated_method = "2199EF962F861819C5B1D962B8BB1BA4")
     public  ArrayIndexOutOfBoundsException(int sourceLength, int offset,
             int count) {
         super("length=" + sourceLength + "; regionStart=" + offset
@@ -53,7 +53,7 @@ public class ArrayIndexOutOfBoundsException extends IndexOutOfBoundsException {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:39.960 -0400", hash_original_field = "2CBA047385EDDA03EA4011F726013120", hash_generated_field = "669EA8BDF07DA060B70CAFAF7919D6F9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.048 -0400", hash_original_field = "2CBA047385EDDA03EA4011F726013120", hash_generated_field = "669EA8BDF07DA060B70CAFAF7919D6F9")
 
     private static long serialVersionUID = -5116101128118950844L;
 }

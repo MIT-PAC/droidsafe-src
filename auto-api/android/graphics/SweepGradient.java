@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public class SweepGradient extends Shader {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.145 -0400", hash_original_method = "64A53BB5A652BD9568EA8C5A648F5375", hash_generated_method = "463537946803D69503004BC054F19C41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:14.554 -0400", hash_original_method = "64A53BB5A652BD9568EA8C5A648F5375", hash_generated_method = "463537946803D69503004BC054F19C41")
     public  SweepGradient(float cx, float cy,
                          int colors[], float positions[]) {
         {
@@ -39,7 +39,7 @@ public class SweepGradient extends Shader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:13.156 -0400", hash_original_method = "1126924377A1AF5E908D05CFB28B37FF", hash_generated_method = "373ADA740D8DE786DBE7403B2FAAFD84")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:14.555 -0400", hash_original_method = "1126924377A1AF5E908D05CFB28B37FF", hash_generated_method = "373ADA740D8DE786DBE7403B2FAAFD84")
     public  SweepGradient(float cx, float cy, int color0, int color1) {
         native_instance = nativeCreate2(cx, cy, color0, color1);
         native_shader = nativePostCreate2(native_instance, cx, cy, color0, color1);

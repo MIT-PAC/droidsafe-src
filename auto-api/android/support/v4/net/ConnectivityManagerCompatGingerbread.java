@@ -19,7 +19,7 @@ import android.net.NetworkInfo;
 
 class ConnectivityManagerCompatGingerbread {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:33.001 -0400", hash_original_method = "9C14F5D95F9DFDEBDA3B27317317DD8D", hash_generated_method = "9C14F5D95F9DFDEBDA3B27317317DD8D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:34.377 -0400", hash_original_method = "9C14F5D95F9DFDEBDA3B27317317DD8D", hash_generated_method = "9C14F5D95F9DFDEBDA3B27317317DD8D")
     public ConnectivityManagerCompatGingerbread ()
     {
         //Synthesized constructor

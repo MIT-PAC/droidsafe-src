@@ -20,7 +20,7 @@ import java.util.TimeZone;
 
 public class DateUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.407 -0400", hash_original_method = "15B73761459E939452D7F92AFEA42834", hash_generated_method = "15B73761459E939452D7F92AFEA42834")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.495 -0400", hash_original_method = "15B73761459E939452D7F92AFEA42834", hash_generated_method = "15B73761459E939452D7F92AFEA42834")
     public DateUtils ()
     {
         //Synthesized constructor
@@ -814,10 +814,10 @@ public class DateUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.457 -0400", hash_original_field = "6FBEC3E7BB69D1E09ECABF075E18871F", hash_generated_field = "E209496F9F2C9103A6260BCF69D3191B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.552 -0400", hash_original_field = "6FBEC3E7BB69D1E09ECABF075E18871F", hash_generated_field = "E209496F9F2C9103A6260BCF69D3191B")
 
     private static Object sLock = new Object();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.458 -0400", hash_original_field = "7280B9ED005F9C4315F513C11B3049C7", hash_generated_field = "B39E782A388B3FC74361E4CBE905A976")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.552 -0400", hash_original_field = "7280B9ED005F9C4315F513C11B3049C7", hash_generated_field = "B39E782A388B3FC74361E4CBE905A976")
 
     private static int[] sDaysLong = new int[] {
             com.android.internal.R.string.day_of_week_long_sunday,
@@ -828,7 +828,7 @@ public class DateUtils {
             com.android.internal.R.string.day_of_week_long_friday,
             com.android.internal.R.string.day_of_week_long_saturday,
         };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.458 -0400", hash_original_field = "C29A4D747340C3DFB03A81EC329C3E38", hash_generated_field = "09EA75BDBA5EA1A8F03C1F066C9A4FC4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.552 -0400", hash_original_field = "C29A4D747340C3DFB03A81EC329C3E38", hash_generated_field = "09EA75BDBA5EA1A8F03C1F066C9A4FC4")
 
     private static int[] sDaysMedium = new int[] {
             com.android.internal.R.string.day_of_week_medium_sunday,
@@ -839,7 +839,7 @@ public class DateUtils {
             com.android.internal.R.string.day_of_week_medium_friday,
             com.android.internal.R.string.day_of_week_medium_saturday,
         };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.458 -0400", hash_original_field = "859FF96FAE028E25DB503F63A91B4FBE", hash_generated_field = "21832626BFB1A99D564E9C5A253C769F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.552 -0400", hash_original_field = "859FF96FAE028E25DB503F63A91B4FBE", hash_generated_field = "21832626BFB1A99D564E9C5A253C769F")
 
     private static int[] sDaysShort = new int[] {
             com.android.internal.R.string.day_of_week_short_sunday,
@@ -850,7 +850,7 @@ public class DateUtils {
             com.android.internal.R.string.day_of_week_short_friday,
             com.android.internal.R.string.day_of_week_short_saturday,
         };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.458 -0400", hash_original_field = "582E2D9C502FD28D846DDD8B9A0107C8", hash_generated_field = "DC991486AB48F2E55980D0D4356F57D2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.552 -0400", hash_original_field = "582E2D9C502FD28D846DDD8B9A0107C8", hash_generated_field = "DC991486AB48F2E55980D0D4356F57D2")
 
     private static int[] sDaysShortest = new int[] {
             com.android.internal.R.string.day_of_week_shortest_sunday,
@@ -861,7 +861,7 @@ public class DateUtils {
             com.android.internal.R.string.day_of_week_shortest_friday,
             com.android.internal.R.string.day_of_week_shortest_saturday,
         };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.458 -0400", hash_original_field = "3D59FFAA9B6BE88426D1D9122015C365", hash_generated_field = "02A647B1D48F91B026ABAA21A0DE25F2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.552 -0400", hash_original_field = "3D59FFAA9B6BE88426D1D9122015C365", hash_generated_field = "02A647B1D48F91B026ABAA21A0DE25F2")
 
     private static int[] sMonthsStandaloneLong = new int [] {
             com.android.internal.R.string.month_long_standalone_january,
@@ -877,7 +877,7 @@ public class DateUtils {
             com.android.internal.R.string.month_long_standalone_november,
             com.android.internal.R.string.month_long_standalone_december,
         };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.458 -0400", hash_original_field = "AA5C8D7253A30F29E1253D9645E27423", hash_generated_field = "0CDDB912286F35D9B3FE094A7B8BA6D0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.552 -0400", hash_original_field = "AA5C8D7253A30F29E1253D9645E27423", hash_generated_field = "0CDDB912286F35D9B3FE094A7B8BA6D0")
 
     private static int[] sMonthsLong = new int [] {
             com.android.internal.R.string.month_long_january,
@@ -893,7 +893,7 @@ public class DateUtils {
             com.android.internal.R.string.month_long_november,
             com.android.internal.R.string.month_long_december,
         };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.458 -0400", hash_original_field = "DD9C363FF013606DEDEB50DD6E74BCEA", hash_generated_field = "648F7DB7B02243110F31D02012281DB6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.552 -0400", hash_original_field = "DD9C363FF013606DEDEB50DD6E74BCEA", hash_generated_field = "648F7DB7B02243110F31D02012281DB6")
 
     private static int[] sMonthsMedium = new int [] {
             com.android.internal.R.string.month_medium_january,
@@ -909,7 +909,7 @@ public class DateUtils {
             com.android.internal.R.string.month_medium_november,
             com.android.internal.R.string.month_medium_december,
         };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.458 -0400", hash_original_field = "18736E841D5B02556CA67BBF81896A76", hash_generated_field = "E940AD1511E17ADFF6A86300F5C2E805")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.568 -0400", hash_original_field = "18736E841D5B02556CA67BBF81896A76", hash_generated_field = "E940AD1511E17ADFF6A86300F5C2E805")
 
     private static int[] sMonthsShortest = new int [] {
             com.android.internal.R.string.month_shortest_january,
@@ -925,149 +925,149 @@ public class DateUtils {
             com.android.internal.R.string.month_shortest_november,
             com.android.internal.R.string.month_shortest_december,
         };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.459 -0400", hash_original_field = "E38189295EE5655BAF95345B7620D2DC", hash_generated_field = "CB65F8807BC849FF0EAA59BE84ED5BAC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.568 -0400", hash_original_field = "E38189295EE5655BAF95345B7620D2DC", hash_generated_field = "CB65F8807BC849FF0EAA59BE84ED5BAC")
 
     private static int[] sAmPm = new int[] {
             com.android.internal.R.string.am,
             com.android.internal.R.string.pm,
         };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.459 -0400", hash_original_field = "6A1A0CD6F12B27F79B1B6890254E089E", hash_generated_field = "737B30803857B1AC340BE52098FE6E79")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.568 -0400", hash_original_field = "6A1A0CD6F12B27F79B1B6890254E089E", hash_generated_field = "737B30803857B1AC340BE52098FE6E79")
 
     private static Configuration sLastConfig;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.459 -0400", hash_original_field = "9034373F8D39AB1D4E61F0FA28BE8172", hash_generated_field = "6AC70FBC663CA3A5FB4CAD1078B01011")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.568 -0400", hash_original_field = "9034373F8D39AB1D4E61F0FA28BE8172", hash_generated_field = "6AC70FBC663CA3A5FB4CAD1078B01011")
 
     private static java.text.DateFormat sStatusTimeFormat;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.459 -0400", hash_original_field = "B304B17EDFF43720A826155F142D66E8", hash_generated_field = "D8DEBE98A79FC3F9DE2D01F24B5E42EF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.568 -0400", hash_original_field = "B304B17EDFF43720A826155F142D66E8", hash_generated_field = "D8DEBE98A79FC3F9DE2D01F24B5E42EF")
 
     private static String sElapsedFormatMMSS;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.459 -0400", hash_original_field = "57108094C9D70FB0F5DC1315E1A0AF88", hash_generated_field = "42AD2C2E59CC524CB9A70C4F177F1F8D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.568 -0400", hash_original_field = "57108094C9D70FB0F5DC1315E1A0AF88", hash_generated_field = "42AD2C2E59CC524CB9A70C4F177F1F8D")
 
     private static String sElapsedFormatHMMSS;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.459 -0400", hash_original_field = "E9E83F0EEBF5B40D2951CB0A41B6A1FF", hash_generated_field = "62E69AC829F3992A9AA88D56DC8025EA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.569 -0400", hash_original_field = "E9E83F0EEBF5B40D2951CB0A41B6A1FF", hash_generated_field = "62E69AC829F3992A9AA88D56DC8025EA")
 
     private static String FAST_FORMAT_HMMSS = "%1$d:%2$02d:%3$02d";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.459 -0400", hash_original_field = "70292A3AFE3D508FA183724291D3049C", hash_generated_field = "A18B29F0A9EEC1097210EA21A665EB26")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.569 -0400", hash_original_field = "70292A3AFE3D508FA183724291D3049C", hash_generated_field = "A18B29F0A9EEC1097210EA21A665EB26")
 
     private static String FAST_FORMAT_MMSS = "%1$02d:%2$02d";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.459 -0400", hash_original_field = "C92131E48518F97151BA55C2D5CB3AB1", hash_generated_field = "E4A1A6A08C7B510C246F4B64228122D4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.569 -0400", hash_original_field = "C92131E48518F97151BA55C2D5CB3AB1", hash_generated_field = "E4A1A6A08C7B510C246F4B64228122D4")
 
     private static char TIME_PADDING = '0';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.459 -0400", hash_original_field = "7D37BFF23BB1DEAFCEC8AC89FBF0DBA1", hash_generated_field = "C10FE36F391189CDC674B66A0A14C21F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.569 -0400", hash_original_field = "7D37BFF23BB1DEAFCEC8AC89FBF0DBA1", hash_generated_field = "C10FE36F391189CDC674B66A0A14C21F")
 
     private static char TIME_SEPARATOR = ':';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.459 -0400", hash_original_field = "7B964E5C20CF4834FFEC459AD3ACF544", hash_generated_field = "79393C5109653A6A95A2D0A9A64DDFB7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.569 -0400", hash_original_field = "7B964E5C20CF4834FFEC459AD3ACF544", hash_generated_field = "79393C5109653A6A95A2D0A9A64DDFB7")
 
     public static final long SECOND_IN_MILLIS = 1000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.459 -0400", hash_original_field = "F61789E093D4C8E67DCB88DC6ECB3679", hash_generated_field = "BBDDAEF6073B4DDF1ACD1C13CB027102")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.569 -0400", hash_original_field = "F61789E093D4C8E67DCB88DC6ECB3679", hash_generated_field = "BBDDAEF6073B4DDF1ACD1C13CB027102")
 
     public static final long MINUTE_IN_MILLIS = SECOND_IN_MILLIS * 60;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "92A369E4BEA67225BB626FED008765D2", hash_generated_field = "018572DA120DAD97E3D68174934A7622")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.569 -0400", hash_original_field = "92A369E4BEA67225BB626FED008765D2", hash_generated_field = "018572DA120DAD97E3D68174934A7622")
 
     public static final long HOUR_IN_MILLIS = MINUTE_IN_MILLIS * 60;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "B1C646DA22F7AADC51BE1EF81436FC53", hash_generated_field = "E6C45A6B8B8D3C2E6F23ED475AE9E497")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.569 -0400", hash_original_field = "B1C646DA22F7AADC51BE1EF81436FC53", hash_generated_field = "E6C45A6B8B8D3C2E6F23ED475AE9E497")
 
     public static final long DAY_IN_MILLIS = HOUR_IN_MILLIS * 24;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "9DA8AA5CC48DAF8EE1A559A23C1C6906", hash_generated_field = "8FE2D3EB53A7E5BA12FA7431CEC3F1BA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.569 -0400", hash_original_field = "9DA8AA5CC48DAF8EE1A559A23C1C6906", hash_generated_field = "8FE2D3EB53A7E5BA12FA7431CEC3F1BA")
 
     public static final long WEEK_IN_MILLIS = DAY_IN_MILLIS * 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "2102005B8628D33F041518307EB66E45", hash_generated_field = "1BEFCE660A45888FD4B6980D40B5BF94")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.569 -0400", hash_original_field = "2102005B8628D33F041518307EB66E45", hash_generated_field = "1BEFCE660A45888FD4B6980D40B5BF94")
 
     public static final long YEAR_IN_MILLIS = WEEK_IN_MILLIS * 52;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "FBA5CDA94F50AF55796856F7A2CED4E6", hash_generated_field = "057E17D042B6F4582B16C42C3EB68693")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "FBA5CDA94F50AF55796856F7A2CED4E6", hash_generated_field = "057E17D042B6F4582B16C42C3EB68693")
 
     public static final int FORMAT_SHOW_TIME = 0x00001;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "FAF69A6105E484526AFAD532CDB44C1B", hash_generated_field = "2E22F820F5C7AE635D4B26BBC68A384A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "FAF69A6105E484526AFAD532CDB44C1B", hash_generated_field = "2E22F820F5C7AE635D4B26BBC68A384A")
 
     public static final int FORMAT_SHOW_WEEKDAY = 0x00002;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "28201F02503FFD561658E9F2D8ADC9FD", hash_generated_field = "F75AD8500F536F5D64A3ACAB8D7874B5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "28201F02503FFD561658E9F2D8ADC9FD", hash_generated_field = "F75AD8500F536F5D64A3ACAB8D7874B5")
 
     public static final int FORMAT_SHOW_YEAR = 0x00004;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "20A2DD8F68FF9621D252E64BA41AA694", hash_generated_field = "8333D106B0DC926FBABB190C682E8B4A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "20A2DD8F68FF9621D252E64BA41AA694", hash_generated_field = "8333D106B0DC926FBABB190C682E8B4A")
 
     public static final int FORMAT_NO_YEAR = 0x00008;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "B9102079621429945E0EFFB82EAEC18C", hash_generated_field = "FBEE04ADFEB0D3428DCC32844A2D53CB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "B9102079621429945E0EFFB82EAEC18C", hash_generated_field = "FBEE04ADFEB0D3428DCC32844A2D53CB")
 
     public static final int FORMAT_SHOW_DATE = 0x00010;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "B7F9D744C3DB72BC1782697725979377", hash_generated_field = "1020C1B8CDD83BFC4F639D572EFC383D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "B7F9D744C3DB72BC1782697725979377", hash_generated_field = "1020C1B8CDD83BFC4F639D572EFC383D")
 
     public static final int FORMAT_NO_MONTH_DAY = 0x00020;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "7FF4CB4A2CD899720D1EE7B9492787E4", hash_generated_field = "3EE8E32FE9322277BE9C4F7EF706D5D7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "7FF4CB4A2CD899720D1EE7B9492787E4", hash_generated_field = "3EE8E32FE9322277BE9C4F7EF706D5D7")
 
     public static final int FORMAT_12HOUR = 0x00040;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "8E88DA6832E2EB7B7040971007647D59", hash_generated_field = "E0821032FB403F62EA92120DC8A74519")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "8E88DA6832E2EB7B7040971007647D59", hash_generated_field = "E0821032FB403F62EA92120DC8A74519")
 
     public static final int FORMAT_24HOUR = 0x00080;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "80C31BEC8856F17866DF085EA6EF36F0", hash_generated_field = "0A7AE2EF261B06F90815654F11ACFCEC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "80C31BEC8856F17866DF085EA6EF36F0", hash_generated_field = "0A7AE2EF261B06F90815654F11ACFCEC")
 
     public static final int FORMAT_CAP_AMPM = 0x00100;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "F3F2492CF2F43083632AA2474C44C3A6", hash_generated_field = "533274CA521ADACA885345CF79F85BAE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "F3F2492CF2F43083632AA2474C44C3A6", hash_generated_field = "533274CA521ADACA885345CF79F85BAE")
 
     public static final int FORMAT_NO_NOON = 0x00200;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "546F494447F2C7A329A901FB377E135B", hash_generated_field = "E92705C2913CEF065DB8E82CB22966CF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "546F494447F2C7A329A901FB377E135B", hash_generated_field = "E92705C2913CEF065DB8E82CB22966CF")
 
     public static final int FORMAT_CAP_NOON = 0x00400;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "FCFE965999DF1E96885A688E627C84D9", hash_generated_field = "6DDBCCC3EF5AD8AA3EACD5E8D4D41979")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "FCFE965999DF1E96885A688E627C84D9", hash_generated_field = "6DDBCCC3EF5AD8AA3EACD5E8D4D41979")
 
     public static final int FORMAT_NO_MIDNIGHT = 0x00800;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.460 -0400", hash_original_field = "E9A838FE2219E3D2A7A45F3DCC875F7B", hash_generated_field = "285BC0AA1D33A734B61DA6252141ABD6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "E9A838FE2219E3D2A7A45F3DCC875F7B", hash_generated_field = "285BC0AA1D33A734B61DA6252141ABD6")
 
     public static final int FORMAT_CAP_MIDNIGHT = 0x01000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.472 -0400", hash_original_field = "0FD23A0531A50FB8999268F50142B5AA", hash_generated_field = "B5C8BD6C50C0FA131549BA298805FDD5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "0FD23A0531A50FB8999268F50142B5AA", hash_generated_field = "B5C8BD6C50C0FA131549BA298805FDD5")
 
     @Deprecated
     public static final int FORMAT_UTC = 0x02000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.473 -0400", hash_original_field = "F0EF17AB7F2583FA094B63ECB7BD6F8B", hash_generated_field = "223A27F0A09AD5C7B11F4C22EC53FAB3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "F0EF17AB7F2583FA094B63ECB7BD6F8B", hash_generated_field = "223A27F0A09AD5C7B11F4C22EC53FAB3")
 
     public static final int FORMAT_ABBREV_TIME = 0x04000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.473 -0400", hash_original_field = "4857EF2681AD30736173D0D296697F61", hash_generated_field = "2E2C29F520661754D3DC8AFACE29C971")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.570 -0400", hash_original_field = "4857EF2681AD30736173D0D296697F61", hash_generated_field = "2E2C29F520661754D3DC8AFACE29C971")
 
     public static final int FORMAT_ABBREV_WEEKDAY = 0x08000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.485 -0400", hash_original_field = "35BFF54C6A1A9CCC725383B20F7AE3C9", hash_generated_field = "5FED42F5CAC032995F50232DA95899E6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "35BFF54C6A1A9CCC725383B20F7AE3C9", hash_generated_field = "5FED42F5CAC032995F50232DA95899E6")
 
     public static final int FORMAT_ABBREV_MONTH = 0x10000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.485 -0400", hash_original_field = "01838959A8D09E3253CF9357E4CC2DFC", hash_generated_field = "2C8F29926729437E3965E15FACA21A42")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "01838959A8D09E3253CF9357E4CC2DFC", hash_generated_field = "2C8F29926729437E3965E15FACA21A42")
 
     public static final int FORMAT_NUMERIC_DATE = 0x20000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.485 -0400", hash_original_field = "497BC7447D431095FA226D360E40B1D0", hash_generated_field = "B1BBE918D9FBA6D13EBD99F2BEFAD2CD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "497BC7447D431095FA226D360E40B1D0", hash_generated_field = "B1BBE918D9FBA6D13EBD99F2BEFAD2CD")
 
     public static final int FORMAT_ABBREV_RELATIVE = 0x40000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.485 -0400", hash_original_field = "E1A9568ED9EE8C5353F2D7D1A2A319E8", hash_generated_field = "088AC6C6C6FA89924A4328CD58584ECE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "E1A9568ED9EE8C5353F2D7D1A2A319E8", hash_generated_field = "088AC6C6C6FA89924A4328CD58584ECE")
 
     public static final int FORMAT_ABBREV_ALL = 0x80000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "4F93DB090A2A7820D6F19D5B905F3B74", hash_generated_field = "A952B3C3C2FF7C7D8CB476E150A7257B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "4F93DB090A2A7820D6F19D5B905F3B74", hash_generated_field = "A952B3C3C2FF7C7D8CB476E150A7257B")
 
     public static final int FORMAT_CAP_NOON_MIDNIGHT = (FORMAT_CAP_NOON | FORMAT_CAP_MIDNIGHT);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "5025AF36607366E9D419FC5755B9DD7D", hash_generated_field = "7BFBC27E61C2940B6BF6D5E8E93D8E81")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "5025AF36607366E9D419FC5755B9DD7D", hash_generated_field = "7BFBC27E61C2940B6BF6D5E8E93D8E81")
 
     public static final int FORMAT_NO_NOON_MIDNIGHT = (FORMAT_NO_NOON | FORMAT_NO_MIDNIGHT);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "7409A77EB8B20458B596ECC5D6B916B0", hash_generated_field = "72EC29AD42021B91F056AA9FE41C13C6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "7409A77EB8B20458B596ECC5D6B916B0", hash_generated_field = "72EC29AD42021B91F056AA9FE41C13C6")
 
     public static final String HOUR_MINUTE_24 = "%H:%M";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "AEB62BD64552943A79F59F0AFE537C43", hash_generated_field = "B6240F652676C39F4BFCE98B4AA9DE53")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "AEB62BD64552943A79F59F0AFE537C43", hash_generated_field = "B6240F652676C39F4BFCE98B4AA9DE53")
 
     public static final String MONTH_FORMAT = "%B";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "05B0B2555034CFC66B0713C04A5E5AA7", hash_generated_field = "EF1BE0079541CDBA2E520EBFB85B09F2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "05B0B2555034CFC66B0713C04A5E5AA7", hash_generated_field = "EF1BE0079541CDBA2E520EBFB85B09F2")
 
     public static final String ABBREV_MONTH_FORMAT = "%b";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "C1C29312FA9402A9B390BA99FD4A7EED", hash_generated_field = "A2B7255A7EEF395A6AC547961A01921C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "C1C29312FA9402A9B390BA99FD4A7EED", hash_generated_field = "A2B7255A7EEF395A6AC547961A01921C")
 
     public static final String NUMERIC_MONTH_FORMAT = "%m";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "B85941DAB95D5AF394DC061F7BC6DDDE", hash_generated_field = "DD178978999E124B4C49C343AF7BD4F0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "B85941DAB95D5AF394DC061F7BC6DDDE", hash_generated_field = "DD178978999E124B4C49C343AF7BD4F0")
 
     public static final String MONTH_DAY_FORMAT = "%-d";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "4A530FC6280E2FDDC65133AC964F88A2", hash_generated_field = "6562E92BF38BDDF46B45DDFC9A26848A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "4A530FC6280E2FDDC65133AC964F88A2", hash_generated_field = "6562E92BF38BDDF46B45DDFC9A26848A")
 
     public static final String YEAR_FORMAT = "%Y";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "B8125CC54E9840E47A2CED3938637C89", hash_generated_field = "00BEA3F65CA07642F15C025D41A3639A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "B8125CC54E9840E47A2CED3938637C89", hash_generated_field = "00BEA3F65CA07642F15C025D41A3639A")
 
     public static final String YEAR_FORMAT_TWO_DIGITS = "%g";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "10D210C604036FFA09FF1C5ECB402B1A", hash_generated_field = "A65D6D6099BE774F67A73287D784026A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "10D210C604036FFA09FF1C5ECB402B1A", hash_generated_field = "A65D6D6099BE774F67A73287D784026A")
 
     public static final String WEEKDAY_FORMAT = "%A";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "D7DD9446C3A9D87E12818397EB6DC41A", hash_generated_field = "C862608C358C499EBB5EE9E15A523C9D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "D7DD9446C3A9D87E12818397EB6DC41A", hash_generated_field = "C862608C358C499EBB5EE9E15A523C9D")
 
     public static final String ABBREV_WEEKDAY_FORMAT = "%a";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "0B3672291FD896FAD80E083CA9E915B1", hash_generated_field = "64A11B7D3FDAD88C03BB90022D5755A1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.571 -0400", hash_original_field = "0B3672291FD896FAD80E083CA9E915B1", hash_generated_field = "64A11B7D3FDAD88C03BB90022D5755A1")
 
     public static final int sameYearTable[] = {
         com.android.internal.R.string.same_year_md1_md2,
@@ -1089,7 +1089,7 @@ public class DateUtils {
         com.android.internal.R.string.numeric_mdy1_time1_mdy2_time2,
         com.android.internal.R.string.numeric_wday1_mdy1_time1_wday2_mdy2_time2,
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "EC2D80079B673DC4AD8B823B99DEB67A", hash_generated_field = "F5BF6878F0A5DE159309E522328DEF59")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.572 -0400", hash_original_field = "EC2D80079B673DC4AD8B823B99DEB67A", hash_generated_field = "F5BF6878F0A5DE159309E522328DEF59")
 
     public static final int sameMonthTable[] = {
         com.android.internal.R.string.same_month_md1_md2,
@@ -1110,25 +1110,25 @@ public class DateUtils {
         com.android.internal.R.string.numeric_mdy1_time1_mdy2_time2,
         com.android.internal.R.string.numeric_wday1_mdy1_time1_wday2_mdy2_time2,
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "C6EB7828F5B50D46358669B3E3074FC1", hash_generated_field = "37F92F3C1E0DA48CE7BCF3D224131FD2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.572 -0400", hash_original_field = "C6EB7828F5B50D46358669B3E3074FC1", hash_generated_field = "37F92F3C1E0DA48CE7BCF3D224131FD2")
 
     public static final int LENGTH_LONG = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "6D9410EDAF66BD045BF42BFEEA1104C6", hash_generated_field = "FC3AA02DFCF8D074DDE080453B145EE5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.572 -0400", hash_original_field = "6D9410EDAF66BD045BF42BFEEA1104C6", hash_generated_field = "FC3AA02DFCF8D074DDE080453B145EE5")
 
     public static final int LENGTH_MEDIUM = 20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "275E058ED28C7ECFE7EED75934796DD0", hash_generated_field = "1C38D436BC8341CD44AB627FE69641E1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.572 -0400", hash_original_field = "275E058ED28C7ECFE7EED75934796DD0", hash_generated_field = "1C38D436BC8341CD44AB627FE69641E1")
 
     public static final int LENGTH_SHORT = 30;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "2C4B4ECD60365CE25F753682CBFEA619", hash_generated_field = "193553017D8A7C3E8062B466F200FA02")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.572 -0400", hash_original_field = "2C4B4ECD60365CE25F753682CBFEA619", hash_generated_field = "193553017D8A7C3E8062B466F200FA02")
 
     public static final int LENGTH_SHORTER = 40;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "FC97AE1E858113DBFD13F86AB330E185", hash_generated_field = "8C75FD0674414579FCA46D8846153EF2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.572 -0400", hash_original_field = "FC97AE1E858113DBFD13F86AB330E185", hash_generated_field = "8C75FD0674414579FCA46D8846153EF2")
 
     public static final int LENGTH_SHORTEST = 50;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "CBC3F1B106A518C3401D150AEA906CA5", hash_generated_field = "C8423BFDB99E2148E6FA387DE029FB84")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.572 -0400", hash_original_field = "CBC3F1B106A518C3401D150AEA906CA5", hash_generated_field = "C8423BFDB99E2148E6FA387DE029FB84")
 
     private static Time sNowTime;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:43.486 -0400", hash_original_field = "B615816BF61460D2074795F0DC4905FE", hash_generated_field = "210393CA853056B78316AD7FC7D5F3A4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:45.572 -0400", hash_original_field = "B615816BF61460D2074795F0DC4905FE", hash_generated_field = "210393CA853056B78316AD7FC7D5F3A4")
 
     private static Time sThenTime;
 }

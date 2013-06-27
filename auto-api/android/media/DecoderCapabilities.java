@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class DecoderCapabilities {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:17.651 -0400", hash_original_method = "599AF8A39C7326727CA1A71C57B2EC2D", hash_generated_method = "CD6D75BD19893A81BF93FAF6BD81BA03")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:19.196 -0400", hash_original_method = "599AF8A39C7326727CA1A71C57B2EC2D", hash_generated_method = "CD6D75BD19893A81BF93FAF6BD81BA03")
     private  DecoderCapabilities() {
         // ---------- Original Method ----------
     }

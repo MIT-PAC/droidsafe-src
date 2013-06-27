@@ -12,7 +12,7 @@ import java.nio.channels.FileChannel;
 
 public final class NioUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.783 -0400", hash_original_method = "8E7A8D6DFD82A6BAC9AB3CD54CF31BDC", hash_generated_method = "0EA9CC78AA483B22B86873E261FF908D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.840 -0400", hash_original_method = "8E7A8D6DFD82A6BAC9AB3CD54CF31BDC", hash_generated_method = "0EA9CC78AA483B22B86873E261FF908D")
     private  NioUtils() {
         // ---------- Original Method ----------
     }

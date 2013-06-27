@@ -18,7 +18,7 @@ import java.text.ParseException;
 
 public class PVisitedNetworkIDParser extends ParametersParser implements TokenTypes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.794 -0400", hash_original_method = "AAF2C926011534DC0A79DC60EEACAEEC", hash_generated_method = "DD49613DCF41DC1C22E1DA8263CFB424")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.710 -0400", hash_original_method = "AAF2C926011534DC0A79DC60EEACAEEC", hash_generated_method = "DD49613DCF41DC1C22E1DA8263CFB424")
     public  PVisitedNetworkIDParser(String networkID) {
         super(networkID);
         addTaint(networkID.getTaint());
@@ -26,7 +26,7 @@ public class PVisitedNetworkIDParser extends ParametersParser implements TokenTy
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.794 -0400", hash_original_method = "356F93257D315AF255B12EF26A2A8CA1", hash_generated_method = "0D06CF469DC6F521E5DF659757FCDE0F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.710 -0400", hash_original_method = "356F93257D315AF255B12EF26A2A8CA1", hash_generated_method = "0D06CF469DC6F521E5DF659757FCDE0F")
     protected  PVisitedNetworkIDParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -34,9 +34,9 @@ public class PVisitedNetworkIDParser extends ParametersParser implements TokenTy
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.807 -0400", hash_original_method = "622891E063D73C9F0042092134963E28", hash_generated_method = "A5E1FF3BD0FA24A014A072DFCCF20C86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.711 -0400", hash_original_method = "622891E063D73C9F0042092134963E28", hash_generated_method = "9E77232B6FDB48F65D50AC0481A10DFB")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_971492959 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_292080699 = null; //Variable for return #1
         PVisitedNetworkIDList visitedNetworkIDList;
         visitedNetworkIDList = new PVisitedNetworkIDList();
         dbg_enter("VisitedNetworkIDParser.parse");
@@ -50,7 +50,7 @@ public class PVisitedNetworkIDParser extends ParametersParser implements TokenTy
                 PVisitedNetworkID visitedNetworkID;
                 visitedNetworkID = new PVisitedNetworkID();
                 {
-                    boolean varD54B093B7D58DF0D2D4B6DA11127FB02_1753655985 = (this.lexer.lookAhead(0) == '\"');
+                    boolean varD54B093B7D58DF0D2D4B6DA11127FB02_196143688 = (this.lexer.lookAhead(0) == '\"');
                     parseQuotedString(visitedNetworkID);
                     parseToken(visitedNetworkID);
                 } //End collapsed parenthetic
@@ -64,20 +64,20 @@ public class PVisitedNetworkIDParser extends ParametersParser implements TokenTy
                 } //End block
                 if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected char = " + la);
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_971492959 = visitedNetworkIDList;
+            varB4EAC82CA7396A68D541C85D26508E83_292080699 = visitedNetworkIDList;
         } //End block
         finally 
         {
             dbg_leave("VisitedNetworkIDParser.parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_971492959.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_971492959;
+        varB4EAC82CA7396A68D541C85D26508E83_292080699.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_292080699;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.808 -0400", hash_original_method = "F9BC064602A2F479DAA3AB501121BB36", hash_generated_method = "83A5C000D25C53847333B2B47F01EEC9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.712 -0400", hash_original_method = "F9BC064602A2F479DAA3AB501121BB36", hash_generated_method = "7D315FD5A672A82486B49CDB63BAD8E6")
     protected void parseQuotedString(PVisitedNetworkID visitedNetworkID) throws ParseException {
         dbg_enter("parseQuotedString");
         try 
@@ -85,7 +85,7 @@ public class PVisitedNetworkIDParser extends ParametersParser implements TokenTy
             StringBuffer retval;
             retval = new StringBuffer();
             {
-                boolean varA5BE0E2858CEEB1FE00BA9417CB3D42B_2044659106 = (this.lexer.lookAhead(0) != '\"');
+                boolean varA5BE0E2858CEEB1FE00BA9417CB3D42B_144688601 = (this.lexer.lookAhead(0) != '\"');
                 if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected char");
             } //End collapsed parenthetic
             this.lexer.consume(1);
@@ -117,7 +117,7 @@ public class PVisitedNetworkIDParser extends ParametersParser implements TokenTy
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.808 -0400", hash_original_method = "DF631989BD446AE0B628512FDA7DF0A8", hash_generated_method = "689E3BA7AAEE1B6700FE5E06D601AC75")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.713 -0400", hash_original_method = "DF631989BD446AE0B628512FDA7DF0A8", hash_generated_method = "689E3BA7AAEE1B6700FE5E06D601AC75")
     protected void parseToken(PVisitedNetworkID visitedNetworkID) throws ParseException {
         lexer.match(TokenTypes.ID);
         Token token;

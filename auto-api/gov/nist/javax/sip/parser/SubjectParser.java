@@ -12,7 +12,7 @@ import java.text.ParseException;
 
 public class SubjectParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.263 -0400", hash_original_method = "9E40B472DD9B461ACD98BE83100C34CB", hash_generated_method = "4E9A24155B9135611E61A72B0B1EB295")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.185 -0400", hash_original_method = "9E40B472DD9B461ACD98BE83100C34CB", hash_generated_method = "4E9A24155B9135611E61A72B0B1EB295")
     public  SubjectParser(String subject) {
         super(subject);
         addTaint(subject.getTaint());
@@ -20,7 +20,7 @@ public class SubjectParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.263 -0400", hash_original_method = "105C510EC26F8BC32BFFFC46FA511F27", hash_generated_method = "0138B19C0795435818402790F3EC5E41")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.185 -0400", hash_original_method = "105C510EC26F8BC32BFFFC46FA511F27", hash_generated_method = "0138B19C0795435818402790F3EC5E41")
     protected  SubjectParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -28,9 +28,9 @@ public class SubjectParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.264 -0400", hash_original_method = "F2D8E65DBCC7717EF7411B874638ABFB", hash_generated_method = "C74B60FC62E328771843C66A08F51A00")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.186 -0400", hash_original_method = "F2D8E65DBCC7717EF7411B874638ABFB", hash_generated_method = "A49E1DC85987E8363F0806153D8FCD40")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1497016361 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1535648811 = null; //Variable for return #1
         Subject subject;
         subject = new Subject();
         dbg_enter("SubjectParser.parse");
@@ -46,9 +46,9 @@ public class SubjectParser extends HeaderParser {
         {
             dbg_leave("SubjectParser.parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1497016361 = subject;
-        varB4EAC82CA7396A68D541C85D26508E83_1497016361.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1497016361;
+        varB4EAC82CA7396A68D541C85D26508E83_1535648811 = subject;
+        varB4EAC82CA7396A68D541C85D26508E83_1535648811.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1535648811;
         // ---------- Original Method ----------
         //Subject subject = new Subject();
         //if (debug)

@@ -13,7 +13,7 @@ import javax.sip.*;
 
 public class ExpiresParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.747 -0400", hash_original_method = "A7328899640752C7683A3AAB5686C434", hash_generated_method = "91AD4A144E3219744EF95FFB87DA18A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.760 -0400", hash_original_method = "A7328899640752C7683A3AAB5686C434", hash_generated_method = "91AD4A144E3219744EF95FFB87DA18A5")
     public  ExpiresParser(String text) {
         super(text);
         addTaint(text.getTaint());
@@ -21,7 +21,7 @@ public class ExpiresParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.748 -0400", hash_original_method = "8C0F40C2F214AF533DDC04CFAC4ADA24", hash_generated_method = "01CE2D3D2FDBF84082EF3A8A9C12D81D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.760 -0400", hash_original_method = "8C0F40C2F214AF533DDC04CFAC4ADA24", hash_generated_method = "01CE2D3D2FDBF84082EF3A8A9C12D81D")
     protected  ExpiresParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -29,9 +29,9 @@ public class ExpiresParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.757 -0400", hash_original_method = "BF637AC6A5CBD4DC0512611361485C35", hash_generated_method = "8B7A2D40A220D0ED0F13E4C1AE0FCE93")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.761 -0400", hash_original_method = "BF637AC6A5CBD4DC0512611361485C35", hash_generated_method = "ECA9293D9F1C0001AB4083EB0A9DE5A9")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_946653072 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_669201412 = null; //Variable for return #1
         Expires expires;
         expires = new Expires();
         dbg_enter("parse");
@@ -49,7 +49,7 @@ public class ExpiresParser extends HeaderParser {
                 int delta;
                 delta = Integer.parseInt(nextId);
                 expires.setExpires(delta);
-                varB4EAC82CA7396A68D541C85D26508E83_946653072 = expires;
+                varB4EAC82CA7396A68D541C85D26508E83_669201412 = expires;
             } //End block
             catch (NumberFormatException ex)
             {
@@ -64,8 +64,8 @@ public class ExpiresParser extends HeaderParser {
         {
             dbg_leave("parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_946653072.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_946653072;
+        varB4EAC82CA7396A68D541C85D26508E83_669201412.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_669201412;
         // ---------- Original Method ----------
         //Expires expires = new Expires();
         //if (debug)

@@ -11,7 +11,7 @@ import org.xml.sax.Parser;
 
 public class ParserFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.267 -0400", hash_original_method = "DF02A0380B383E5EEB62CFDB1AB4D130", hash_generated_method = "7139D7C2B3C45021296C696C28AB53E7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:23.172 -0400", hash_original_method = "DF02A0380B383E5EEB62CFDB1AB4D130", hash_generated_method = "7139D7C2B3C45021296C696C28AB53E7")
     private  ParserFactory() {
         // ---------- Original Method ----------
     }

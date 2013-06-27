@@ -13,7 +13,7 @@ import java.text.ParseException;
 
 public class MaxForwardsParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.827 -0400", hash_original_method = "005E89A999CEFE80041E010521110160", hash_generated_method = "48AAFDDDE42774E4C5643D05760B0D86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.810 -0400", hash_original_method = "005E89A999CEFE80041E010521110160", hash_generated_method = "48AAFDDDE42774E4C5643D05760B0D86")
     public  MaxForwardsParser(String contentLength) {
         super(contentLength);
         addTaint(contentLength.getTaint());
@@ -21,7 +21,7 @@ public class MaxForwardsParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.827 -0400", hash_original_method = "387C44575196A6CA2DFD9A3719D601C5", hash_generated_method = "5B26658256F06654B3E660E86989DD56")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.815 -0400", hash_original_method = "387C44575196A6CA2DFD9A3719D601C5", hash_generated_method = "5B26658256F06654B3E660E86989DD56")
     protected  MaxForwardsParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -29,9 +29,9 @@ public class MaxForwardsParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.828 -0400", hash_original_method = "1EF61729E616CF3DAFF49967F4EF386E", hash_generated_method = "17B3BB89AF53E3E05FB4669D19DBD7AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.816 -0400", hash_original_method = "1EF61729E616CF3DAFF49967F4EF386E", hash_generated_method = "1516AEC50B642B16F8520C48D4372CE3")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_2790275 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1670409872 = null; //Variable for return #1
         dbg_enter("MaxForwardsParser.enter");
         try 
         {
@@ -43,7 +43,7 @@ public class MaxForwardsParser extends HeaderParser {
             contentLength.setMaxForwards(Integer.parseInt(number));
             this.lexer.SPorHT();
             this.lexer.match('\n');
-            varB4EAC82CA7396A68D541C85D26508E83_2790275 = contentLength;
+            varB4EAC82CA7396A68D541C85D26508E83_1670409872 = contentLength;
         } //End block
         catch (InvalidArgumentException ex)
         {
@@ -57,8 +57,8 @@ public class MaxForwardsParser extends HeaderParser {
         {
             dbg_leave("MaxForwardsParser.leave");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_2790275.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2790275;
+        varB4EAC82CA7396A68D541C85D26508E83_1670409872.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1670409872;
         // ---------- Original Method ----------
         //if (debug)
             //dbg_enter("MaxForwardsParser.enter");

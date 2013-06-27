@@ -14,7 +14,7 @@ import java.util.TimeZone;
 
 public abstract class ASN1Time extends ASN1StringType {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.382 -0400", hash_original_method = "82E49EA5DBBF8DF43E60D041D8EADCBA", hash_generated_method = "5910C74D0DA9D50869787EA00524B4A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.447 -0400", hash_original_method = "82E49EA5DBBF8DF43E60D041D8EADCBA", hash_generated_method = "5910C74D0DA9D50869787EA00524B4A2")
     public  ASN1Time(int tagNumber) {
         super(tagNumber);
         addTaint(tagNumber);
@@ -22,10 +22,10 @@ public abstract class ASN1Time extends ASN1StringType {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.383 -0400", hash_original_method = "A8543817917479A67ACF72269E42F301", hash_generated_method = "BDD678D00638FBED9F067A6D1EE4DB34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.451 -0400", hash_original_method = "A8543817917479A67ACF72269E42F301", hash_generated_method = "0EC1A8FDCC5E483CDCA107F622B2EA3A")
     @Override
     public Object getDecodedObject(BerInputStream in) throws IOException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_749700925 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_2029870168 = null; //Variable for return #1
         GregorianCalendar c;
         c = new GregorianCalendar(TimeZone.getTimeZone("GMT"));
         c.set(Calendar.YEAR, in.times[0]);
@@ -35,10 +35,10 @@ public abstract class ASN1Time extends ASN1StringType {
         c.set(Calendar.MINUTE, in.times[4]);
         c.set(Calendar.SECOND, in.times[5]);
         c.set(Calendar.MILLISECOND, in.times[6]);
-        varB4EAC82CA7396A68D541C85D26508E83_749700925 = c.getTime();
+        varB4EAC82CA7396A68D541C85D26508E83_2029870168 = c.getTime();
         addTaint(in.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_749700925.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_749700925;
+        varB4EAC82CA7396A68D541C85D26508E83_2029870168.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2029870168;
         // ---------- Original Method ----------
         //GregorianCalendar c = new GregorianCalendar(TimeZone.getTimeZone("GMT"));
         //c.set(Calendar.YEAR, in.times[0]);

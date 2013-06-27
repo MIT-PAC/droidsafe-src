@@ -15,50 +15,50 @@ import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 
 public class GenericSignatureParser {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.938 -0400", hash_original_field = "2CD56E5B83C33F80B2D25820C51596A0", hash_generated_field = "3A123DBAC2896D22118ACC4A0DBF2815")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.960 -0400", hash_original_field = "2CD56E5B83C33F80B2D25820C51596A0", hash_generated_field = "3A123DBAC2896D22118ACC4A0DBF2815")
 
     public ListOfTypes exceptionTypes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.938 -0400", hash_original_field = "11427856321C6E9F5321CA879704C8FE", hash_generated_field = "755AC25C18AC88DD7B505952EB00E2FC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.960 -0400", hash_original_field = "11427856321C6E9F5321CA879704C8FE", hash_generated_field = "755AC25C18AC88DD7B505952EB00E2FC")
 
     public ListOfTypes parameterTypes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.938 -0400", hash_original_field = "898BB6A86E0DA433332CBC4F55D3E967", hash_generated_field = "96CAE8588B8CB92AE83279FEB36F4121")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.960 -0400", hash_original_field = "898BB6A86E0DA433332CBC4F55D3E967", hash_generated_field = "96CAE8588B8CB92AE83279FEB36F4121")
 
     public TypeVariable[] formalTypeParameters;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.938 -0400", hash_original_field = "9CD6843F4536590CD86F933708C7371E", hash_generated_field = "8FCAB3423DB3533C393A75EA17B6B1D8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.960 -0400", hash_original_field = "9CD6843F4536590CD86F933708C7371E", hash_generated_field = "8FCAB3423DB3533C393A75EA17B6B1D8")
 
     public Type returnType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.939 -0400", hash_original_field = "833750AC635FCC57DC33ECAFE365F9A7", hash_generated_field = "7BF0B57018D92E424F704D1E59B55203")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.960 -0400", hash_original_field = "833750AC635FCC57DC33ECAFE365F9A7", hash_generated_field = "7BF0B57018D92E424F704D1E59B55203")
 
     public Type fieldType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.939 -0400", hash_original_field = "2E8612447B369F7E0D27C66E9273CB06", hash_generated_field = "0A3DD769080BC24A9D258283D7D7DC30")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.960 -0400", hash_original_field = "2E8612447B369F7E0D27C66E9273CB06", hash_generated_field = "0A3DD769080BC24A9D258283D7D7DC30")
 
     public ListOfTypes interfaceTypes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.939 -0400", hash_original_field = "2DC4A623293420174B22464D58B6A831", hash_generated_field = "2B6C083B05F286DFD7F93749F54AF5DA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.960 -0400", hash_original_field = "2DC4A623293420174B22464D58B6A831", hash_generated_field = "2B6C083B05F286DFD7F93749F54AF5DA")
 
     public Type superclassType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.939 -0400", hash_original_field = "4A527F83A3A4CA7E1D70ADB26A35B72E", hash_generated_field = "34AC02C91B7B47224132768354947AB0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.960 -0400", hash_original_field = "4A527F83A3A4CA7E1D70ADB26A35B72E", hash_generated_field = "34AC02C91B7B47224132768354947AB0")
 
     public ClassLoader loader;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.940 -0400", hash_original_field = "AA84DC6545C7C550F5338E00F04FD372", hash_generated_field = "4BEC95563D8D0B015ABDE90FC2F1C6AF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.960 -0400", hash_original_field = "AA84DC6545C7C550F5338E00F04FD372", hash_generated_field = "4BEC95563D8D0B015ABDE90FC2F1C6AF")
 
     GenericDeclaration genericDecl;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.940 -0400", hash_original_field = "97BFF26855A8BFA63E05D5477E794B24", hash_generated_field = "4D622F1F51FE2777B0E8D81C997E113C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.960 -0400", hash_original_field = "97BFF26855A8BFA63E05D5477E794B24", hash_generated_field = "4D622F1F51FE2777B0E8D81C997E113C")
 
     char symbol;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.940 -0400", hash_original_field = "F393F3F5E496869A15BC72CBFD56F541", hash_generated_field = "67D18ED1400CD458B308847E018D0637")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.960 -0400", hash_original_field = "F393F3F5E496869A15BC72CBFD56F541", hash_generated_field = "67D18ED1400CD458B308847E018D0637")
 
     String identifier;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.940 -0400", hash_original_field = "2E51B1AB42E8A4A67F3445174BE5191B", hash_generated_field = "5CB70878869318B356B4B3C25335C11E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.960 -0400", hash_original_field = "2E51B1AB42E8A4A67F3445174BE5191B", hash_generated_field = "5CB70878869318B356B4B3C25335C11E")
 
     private boolean eof;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.940 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "AF37951EAE101F357ACAF48FB7E85D88")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.960 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "AF37951EAE101F357ACAF48FB7E85D88")
 
     char[] buffer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.940 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "5780BC7BCF265A6425A5A90F1AD9B24E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.960 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "5780BC7BCF265A6425A5A90F1AD9B24E")
 
     int pos;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.949 -0400", hash_original_method = "B4AF29B80F8E14619B64C65F02963718", hash_generated_method = "C049BAD034A575B3E9230CA1104DE603")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.961 -0400", hash_original_method = "B4AF29B80F8E14619B64C65F02963718", hash_generated_method = "C049BAD034A575B3E9230CA1104DE603")
     public  GenericSignatureParser(ClassLoader loader) {
         this.loader = loader;
         // ---------- Original Method ----------
@@ -66,7 +66,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.952 -0400", hash_original_method = "6F9101760876DEB9422AEF7944CF1BF2", hash_generated_method = "7B98AFA204D8E0471A99B93A78803DD0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.961 -0400", hash_original_method = "6F9101760876DEB9422AEF7944CF1BF2", hash_generated_method = "7B98AFA204D8E0471A99B93A78803DD0")
      void setInput(GenericDeclaration genericDecl, String input) {
         {
             this.genericDecl = genericDecl;
@@ -90,7 +90,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.957 -0400", hash_original_method = "408B9941E0DDFF19B1C3AECDF838B6FF", hash_generated_method = "4D664429977D8A6CA4313FB72A5EE2C0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.969 -0400", hash_original_method = "408B9941E0DDFF19B1C3AECDF838B6FF", hash_generated_method = "4D664429977D8A6CA4313FB72A5EE2C0")
     public void parseForClass(GenericDeclaration genericDecl,
             String signature) {
         setInput(genericDecl, signature);
@@ -132,7 +132,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.967 -0400", hash_original_method = "15DFE7F1F24F7739B7BEC1E53A5655D9", hash_generated_method = "4B3DF99849521C382E97C9315C5A6857")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.974 -0400", hash_original_method = "15DFE7F1F24F7739B7BEC1E53A5655D9", hash_generated_method = "4B3DF99849521C382E97C9315C5A6857")
     public void parseForMethod(GenericDeclaration genericDecl,
             String signature, Class<?>[] rawExceptionTypes) {
         setInput(genericDecl, signature);
@@ -179,7 +179,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.972 -0400", hash_original_method = "0C9CA8BB038974E4A40BF19F7EB72426", hash_generated_method = "4B406DE06323DE28A856CE573F9C15A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.975 -0400", hash_original_method = "0C9CA8BB038974E4A40BF19F7EB72426", hash_generated_method = "4B406DE06323DE28A856CE573F9C15A7")
     public void parseForConstructor(GenericDeclaration genericDecl,
             String signature, Class<?>[] rawExceptionTypes) {
         setInput(genericDecl, signature);
@@ -222,7 +222,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.973 -0400", hash_original_method = "F697D7E02D0C8DEEF4B0854E9491CC15", hash_generated_method = "68F3BE0EC37F1E3A9FAF7D7E3911B166")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.993 -0400", hash_original_method = "F697D7E02D0C8DEEF4B0854E9491CC15", hash_generated_method = "68F3BE0EC37F1E3A9FAF7D7E3911B166")
     public void parseForField(GenericDeclaration genericDecl,
             String signature) {
         setInput(genericDecl, signature);
@@ -239,7 +239,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.974 -0400", hash_original_method = "2A6822DB636AAE3DC282A54EED7D514D", hash_generated_method = "6AD39E41A42F3007E3245DCC8D631ADD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.994 -0400", hash_original_method = "2A6822DB636AAE3DC282A54EED7D514D", hash_generated_method = "6AD39E41A42F3007E3245DCC8D631ADD")
      void parseClassSignature() {
         parseOptFormalTypeParameters();
         this.superclassType = parseClassTypeSignature();
@@ -257,7 +257,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.974 -0400", hash_original_method = "F25135739D6C61926B7C7AB20920C0C3", hash_generated_method = "FC8572DC0B7CE0E4159E608A5A30484D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.995 -0400", hash_original_method = "F25135739D6C61926B7C7AB20920C0C3", hash_generated_method = "FC8572DC0B7CE0E4159E608A5A30484D")
      void parseOptFormalTypeParameters() {
         ListOfVariables typeParams;
         typeParams = new ListOfVariables();
@@ -284,9 +284,9 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.981 -0400", hash_original_method = "8E4B54F231B830B261D22AAC458F74D2", hash_generated_method = "18772702BAD7E5177BEC46E64F5C7BC3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:08.996 -0400", hash_original_method = "8E4B54F231B830B261D22AAC458F74D2", hash_generated_method = "305AF5A20F316A0677083B5FEFF01009")
      ImplForVariable<GenericDeclaration> parseFormalTypeParameter() {
-        ImplForVariable<GenericDeclaration> varB4EAC82CA7396A68D541C85D26508E83_1889432112 = null; //Variable for return #1
+        ImplForVariable<GenericDeclaration> varB4EAC82CA7396A68D541C85D26508E83_1526550222 = null; //Variable for return #1
         scanIdentifier();
         String name;
         name = identifier.intern();
@@ -300,9 +300,9 @@ public class GenericSignatureParser {
             scanSymbol();
             bounds.add(parseFieldTypeSignature());
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1889432112 = new ImplForVariable<GenericDeclaration>(genericDecl, name, bounds);
-        varB4EAC82CA7396A68D541C85D26508E83_1889432112.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1889432112;
+        varB4EAC82CA7396A68D541C85D26508E83_1526550222 = new ImplForVariable<GenericDeclaration>(genericDecl, name, bounds);
+        varB4EAC82CA7396A68D541C85D26508E83_1526550222.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1526550222;
         // ---------- Original Method ----------
         //scanIdentifier();
         //String name = identifier.intern();
@@ -319,40 +319,40 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.988 -0400", hash_original_method = "39858CB077F5F270CB13BCD8F5E588C4", hash_generated_method = "C1CEEBC8493A43812B62D009371D2A46")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.000 -0400", hash_original_method = "39858CB077F5F270CB13BCD8F5E588C4", hash_generated_method = "6613C669B3123EAE9476571D74D2D748")
      Type parseFieldTypeSignature() {
-        Type varB4EAC82CA7396A68D541C85D26508E83_1902491994 = null; //Variable for return #1
-        Type varB4EAC82CA7396A68D541C85D26508E83_353134127 = null; //Variable for return #2
-        Type varB4EAC82CA7396A68D541C85D26508E83_513737469 = null; //Variable for return #3
+        Type varB4EAC82CA7396A68D541C85D26508E83_265115966 = null; //Variable for return #1
+        Type varB4EAC82CA7396A68D541C85D26508E83_1937245211 = null; //Variable for return #2
+        Type varB4EAC82CA7396A68D541C85D26508E83_302270087 = null; //Variable for return #3
         //Begin case 'L' 
-        varB4EAC82CA7396A68D541C85D26508E83_1902491994 = parseClassTypeSignature();
+        varB4EAC82CA7396A68D541C85D26508E83_265115966 = parseClassTypeSignature();
         //End case 'L' 
         //Begin case '[' 
         scanSymbol();
         //End case '[' 
         //Begin case '[' 
-        varB4EAC82CA7396A68D541C85D26508E83_353134127 = new ImplForArray(parseTypeSignature());
+        varB4EAC82CA7396A68D541C85D26508E83_1937245211 = new ImplForArray(parseTypeSignature());
         //End case '[' 
         //Begin case 'T' 
-        varB4EAC82CA7396A68D541C85D26508E83_513737469 = parseTypeVariableSignature();
+        varB4EAC82CA7396A68D541C85D26508E83_302270087 = parseTypeVariableSignature();
         //End case 'T' 
         //Begin case default 
         if (DroidSafeAndroidRuntime.control) throw new GenericSignatureFormatError();
         //End case default 
-        Type varA7E53CE21691AB073D9660D615818899_255791043; //Final return value
+        Type varA7E53CE21691AB073D9660D615818899_618137738; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_255791043 = varB4EAC82CA7396A68D541C85D26508E83_1902491994;
+                varA7E53CE21691AB073D9660D615818899_618137738 = varB4EAC82CA7396A68D541C85D26508E83_265115966;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_255791043 = varB4EAC82CA7396A68D541C85D26508E83_353134127;
+                varA7E53CE21691AB073D9660D615818899_618137738 = varB4EAC82CA7396A68D541C85D26508E83_1937245211;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_255791043 = varB4EAC82CA7396A68D541C85D26508E83_513737469;
+                varA7E53CE21691AB073D9660D615818899_618137738 = varB4EAC82CA7396A68D541C85D26508E83_302270087;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_255791043.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_255791043;
+        varA7E53CE21691AB073D9660D615818899_618137738.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_618137738;
         // ---------- Original Method ----------
         //switch (symbol) {
         //case 'L':
@@ -368,9 +368,9 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:07.996 -0400", hash_original_method = "0940B5693D1CE1CEA33652B7603676B3", hash_generated_method = "9A184780D4F71D58754B469DE99BC172")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.001 -0400", hash_original_method = "0940B5693D1CE1CEA33652B7603676B3", hash_generated_method = "534EB26DD54999FF077AA398E37D92F8")
      Type parseClassTypeSignature() {
-        Type varB4EAC82CA7396A68D541C85D26508E83_483552147 = null; //Variable for return #1
+        Type varB4EAC82CA7396A68D541C85D26508E83_410592071 = null; //Variable for return #1
         expect('L');
         StringBuilder qualIdent;
         qualIdent = new StringBuilder();
@@ -396,17 +396,17 @@ public class GenericSignatureParser {
                     loader);
         } //End block
         expect(';');
-        varB4EAC82CA7396A68D541C85D26508E83_483552147 = type;
-        varB4EAC82CA7396A68D541C85D26508E83_483552147.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_483552147;
+        varB4EAC82CA7396A68D541C85D26508E83_410592071 = type;
+        varB4EAC82CA7396A68D541C85D26508E83_410592071.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_410592071;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.005 -0400", hash_original_method = "FCA6C6C42F8D0470CBF5F70C4C8E2247", hash_generated_method = "FCFC6E0765B205D3C303D8AEC3F8BC77")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.012 -0400", hash_original_method = "FCA6C6C42F8D0470CBF5F70C4C8E2247", hash_generated_method = "BDBA276FB93F4A65FF9297C966611DF7")
      ListOfTypes parseOptTypeArguments() {
-        ListOfTypes varB4EAC82CA7396A68D541C85D26508E83_1793787153 = null; //Variable for return #1
+        ListOfTypes varB4EAC82CA7396A68D541C85D26508E83_1992593278 = null; //Variable for return #1
         ListOfTypes typeArgs;
         typeArgs = new ListOfTypes(8);
         {
@@ -417,9 +417,9 @@ public class GenericSignatureParser {
             } //End block
             expect('>');
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1793787153 = typeArgs;
-        varB4EAC82CA7396A68D541C85D26508E83_1793787153.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1793787153;
+        varB4EAC82CA7396A68D541C85D26508E83_1992593278 = typeArgs;
+        varB4EAC82CA7396A68D541C85D26508E83_1992593278.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1992593278;
         // ---------- Original Method ----------
         //ListOfTypes typeArgs = new ListOfTypes(8);
         //if (symbol == '<') {
@@ -434,12 +434,12 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.006 -0400", hash_original_method = "C611A5720E520CD6B6248914D1F9FF4D", hash_generated_method = "17C1D346BA4A5A2E383D85F3FE5EC030")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.013 -0400", hash_original_method = "C611A5720E520CD6B6248914D1F9FF4D", hash_generated_method = "DCD4428680D529485BF3B236F31B6234")
      Type parseTypeArgument() {
-        Type varB4EAC82CA7396A68D541C85D26508E83_692164653 = null; //Variable for return #1
-        Type varB4EAC82CA7396A68D541C85D26508E83_651423742 = null; //Variable for return #2
-        Type varB4EAC82CA7396A68D541C85D26508E83_882471716 = null; //Variable for return #3
-        Type varB4EAC82CA7396A68D541C85D26508E83_1559202423 = null; //Variable for return #4
+        Type varB4EAC82CA7396A68D541C85D26508E83_2102121922 = null; //Variable for return #1
+        Type varB4EAC82CA7396A68D541C85D26508E83_928121189 = null; //Variable for return #2
+        Type varB4EAC82CA7396A68D541C85D26508E83_1669003658 = null; //Variable for return #3
+        Type varB4EAC82CA7396A68D541C85D26508E83_700891293 = null; //Variable for return #4
         ListOfTypes extendsBound;
         extendsBound = new ListOfTypes(1);
         ListOfTypes superBound;
@@ -447,39 +447,39 @@ public class GenericSignatureParser {
         {
             scanSymbol();
             extendsBound.add(Object.class);
-            varB4EAC82CA7396A68D541C85D26508E83_692164653 = new ImplForWildcard(extendsBound, superBound);
+            varB4EAC82CA7396A68D541C85D26508E83_2102121922 = new ImplForWildcard(extendsBound, superBound);
         } //End block
         {
             scanSymbol();
             extendsBound.add(parseFieldTypeSignature());
-            varB4EAC82CA7396A68D541C85D26508E83_651423742 = new ImplForWildcard(extendsBound, superBound);
+            varB4EAC82CA7396A68D541C85D26508E83_928121189 = new ImplForWildcard(extendsBound, superBound);
         } //End block
         {
             scanSymbol();
             superBound.add(parseFieldTypeSignature());
             extendsBound.add(Object.class);
-            varB4EAC82CA7396A68D541C85D26508E83_882471716 = new ImplForWildcard(extendsBound, superBound);
+            varB4EAC82CA7396A68D541C85D26508E83_1669003658 = new ImplForWildcard(extendsBound, superBound);
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1559202423 = parseFieldTypeSignature();
+            varB4EAC82CA7396A68D541C85D26508E83_700891293 = parseFieldTypeSignature();
         } //End block
-        Type varA7E53CE21691AB073D9660D615818899_1403126883; //Final return value
+        Type varA7E53CE21691AB073D9660D615818899_1631322784; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1403126883 = varB4EAC82CA7396A68D541C85D26508E83_692164653;
+                varA7E53CE21691AB073D9660D615818899_1631322784 = varB4EAC82CA7396A68D541C85D26508E83_2102121922;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1403126883 = varB4EAC82CA7396A68D541C85D26508E83_651423742;
+                varA7E53CE21691AB073D9660D615818899_1631322784 = varB4EAC82CA7396A68D541C85D26508E83_928121189;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_1403126883 = varB4EAC82CA7396A68D541C85D26508E83_882471716;
+                varA7E53CE21691AB073D9660D615818899_1631322784 = varB4EAC82CA7396A68D541C85D26508E83_1669003658;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1403126883 = varB4EAC82CA7396A68D541C85D26508E83_1559202423;
+                varA7E53CE21691AB073D9660D615818899_1631322784 = varB4EAC82CA7396A68D541C85D26508E83_700891293;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1403126883.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1403126883;
+        varA7E53CE21691AB073D9660D615818899_1631322784.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1631322784;
         // ---------- Original Method ----------
         //ListOfTypes extendsBound = new ListOfTypes(1);
         //ListOfTypes superBound = new ListOfTypes(1);
@@ -505,15 +505,15 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.010 -0400", hash_original_method = "FF6DECA5851C272F523D7639C2D071BC", hash_generated_method = "2F9B09C0665690EB40582F4C5C65798B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.018 -0400", hash_original_method = "FF6DECA5851C272F523D7639C2D071BC", hash_generated_method = "E5BA1728813E7A626C607B8B2ECB70E8")
      ImplForVariable<GenericDeclaration> parseTypeVariableSignature() {
-        ImplForVariable<GenericDeclaration> varB4EAC82CA7396A68D541C85D26508E83_1481079153 = null; //Variable for return #1
+        ImplForVariable<GenericDeclaration> varB4EAC82CA7396A68D541C85D26508E83_1779509569 = null; //Variable for return #1
         expect('T');
         scanIdentifier();
         expect(';');
-        varB4EAC82CA7396A68D541C85D26508E83_1481079153 = new ImplForVariable<GenericDeclaration>(genericDecl, identifier);
-        varB4EAC82CA7396A68D541C85D26508E83_1481079153.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1481079153;
+        varB4EAC82CA7396A68D541C85D26508E83_1779509569 = new ImplForVariable<GenericDeclaration>(genericDecl, identifier);
+        varB4EAC82CA7396A68D541C85D26508E83_1779509569.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1779509569;
         // ---------- Original Method ----------
         //expect('T');
         //scanIdentifier();
@@ -522,100 +522,100 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.012 -0400", hash_original_method = "ABCBB21DD03AAC76512AB0248A5CE39A", hash_generated_method = "509CF9417EC8181490B0F8725685157F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.034 -0400", hash_original_method = "ABCBB21DD03AAC76512AB0248A5CE39A", hash_generated_method = "76BE48F1C893E50B99262BE770D4E451")
      Type parseTypeSignature() {
-        Type varB4EAC82CA7396A68D541C85D26508E83_151410952 = null; //Variable for return #1
-        Type varB4EAC82CA7396A68D541C85D26508E83_1615805214 = null; //Variable for return #2
-        Type varB4EAC82CA7396A68D541C85D26508E83_587960182 = null; //Variable for return #3
-        Type varB4EAC82CA7396A68D541C85D26508E83_672350183 = null; //Variable for return #4
-        Type varB4EAC82CA7396A68D541C85D26508E83_376072154 = null; //Variable for return #5
-        Type varB4EAC82CA7396A68D541C85D26508E83_1953079427 = null; //Variable for return #6
-        Type varB4EAC82CA7396A68D541C85D26508E83_1530296649 = null; //Variable for return #7
-        Type varB4EAC82CA7396A68D541C85D26508E83_1559452551 = null; //Variable for return #8
-        Type varB4EAC82CA7396A68D541C85D26508E83_1375432639 = null; //Variable for return #9
+        Type varB4EAC82CA7396A68D541C85D26508E83_1025657926 = null; //Variable for return #1
+        Type varB4EAC82CA7396A68D541C85D26508E83_46936813 = null; //Variable for return #2
+        Type varB4EAC82CA7396A68D541C85D26508E83_1173209379 = null; //Variable for return #3
+        Type varB4EAC82CA7396A68D541C85D26508E83_102434548 = null; //Variable for return #4
+        Type varB4EAC82CA7396A68D541C85D26508E83_1033415987 = null; //Variable for return #5
+        Type varB4EAC82CA7396A68D541C85D26508E83_1147050553 = null; //Variable for return #6
+        Type varB4EAC82CA7396A68D541C85D26508E83_1190959507 = null; //Variable for return #7
+        Type varB4EAC82CA7396A68D541C85D26508E83_1869774479 = null; //Variable for return #8
+        Type varB4EAC82CA7396A68D541C85D26508E83_2061592235 = null; //Variable for return #9
         //Begin case 'B' 
         scanSymbol();
         //End case 'B' 
         //Begin case 'B' 
-        varB4EAC82CA7396A68D541C85D26508E83_151410952 = byte.class;
+        varB4EAC82CA7396A68D541C85D26508E83_1025657926 = byte.class;
         //End case 'B' 
         //Begin case 'C' 
         scanSymbol();
         //End case 'C' 
         //Begin case 'C' 
-        varB4EAC82CA7396A68D541C85D26508E83_1615805214 = char.class;
+        varB4EAC82CA7396A68D541C85D26508E83_46936813 = char.class;
         //End case 'C' 
         //Begin case 'D' 
         scanSymbol();
         //End case 'D' 
         //Begin case 'D' 
-        varB4EAC82CA7396A68D541C85D26508E83_587960182 = double.class;
+        varB4EAC82CA7396A68D541C85D26508E83_1173209379 = double.class;
         //End case 'D' 
         //Begin case 'F' 
         scanSymbol();
         //End case 'F' 
         //Begin case 'F' 
-        varB4EAC82CA7396A68D541C85D26508E83_672350183 = float.class;
+        varB4EAC82CA7396A68D541C85D26508E83_102434548 = float.class;
         //End case 'F' 
         //Begin case 'I' 
         scanSymbol();
         //End case 'I' 
         //Begin case 'I' 
-        varB4EAC82CA7396A68D541C85D26508E83_376072154 = int.class;
+        varB4EAC82CA7396A68D541C85D26508E83_1033415987 = int.class;
         //End case 'I' 
         //Begin case 'J' 
         scanSymbol();
         //End case 'J' 
         //Begin case 'J' 
-        varB4EAC82CA7396A68D541C85D26508E83_1953079427 = long.class;
+        varB4EAC82CA7396A68D541C85D26508E83_1147050553 = long.class;
         //End case 'J' 
         //Begin case 'S' 
         scanSymbol();
         //End case 'S' 
         //Begin case 'S' 
-        varB4EAC82CA7396A68D541C85D26508E83_1530296649 = short.class;
+        varB4EAC82CA7396A68D541C85D26508E83_1190959507 = short.class;
         //End case 'S' 
         //Begin case 'Z' 
         scanSymbol();
         //End case 'Z' 
         //Begin case 'Z' 
-        varB4EAC82CA7396A68D541C85D26508E83_1559452551 = boolean.class;
+        varB4EAC82CA7396A68D541C85D26508E83_1869774479 = boolean.class;
         //End case 'Z' 
         //Begin case default 
-        varB4EAC82CA7396A68D541C85D26508E83_1375432639 = parseFieldTypeSignature();
+        varB4EAC82CA7396A68D541C85D26508E83_2061592235 = parseFieldTypeSignature();
         //End case default 
-        Type varA7E53CE21691AB073D9660D615818899_2136738066; //Final return value
+        Type varA7E53CE21691AB073D9660D615818899_1388154881; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_151410952;
+                varA7E53CE21691AB073D9660D615818899_1388154881 = varB4EAC82CA7396A68D541C85D26508E83_1025657926;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_1615805214;
+                varA7E53CE21691AB073D9660D615818899_1388154881 = varB4EAC82CA7396A68D541C85D26508E83_46936813;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_587960182;
+                varA7E53CE21691AB073D9660D615818899_1388154881 = varB4EAC82CA7396A68D541C85D26508E83_1173209379;
                 break;
             case 4: //Assign result for return ordinal #4
-                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_672350183;
+                varA7E53CE21691AB073D9660D615818899_1388154881 = varB4EAC82CA7396A68D541C85D26508E83_102434548;
                 break;
             case 5: //Assign result for return ordinal #5
-                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_376072154;
+                varA7E53CE21691AB073D9660D615818899_1388154881 = varB4EAC82CA7396A68D541C85D26508E83_1033415987;
                 break;
             case 6: //Assign result for return ordinal #6
-                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_1953079427;
+                varA7E53CE21691AB073D9660D615818899_1388154881 = varB4EAC82CA7396A68D541C85D26508E83_1147050553;
                 break;
             case 7: //Assign result for return ordinal #7
-                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_1530296649;
+                varA7E53CE21691AB073D9660D615818899_1388154881 = varB4EAC82CA7396A68D541C85D26508E83_1190959507;
                 break;
             case 8: //Assign result for return ordinal #8
-                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_1559452551;
+                varA7E53CE21691AB073D9660D615818899_1388154881 = varB4EAC82CA7396A68D541C85D26508E83_1869774479;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_2136738066 = varB4EAC82CA7396A68D541C85D26508E83_1375432639;
+                varA7E53CE21691AB073D9660D615818899_1388154881 = varB4EAC82CA7396A68D541C85D26508E83_2061592235;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2136738066.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_2136738066;
+        varA7E53CE21691AB073D9660D615818899_1388154881.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1388154881;
         // ---------- Original Method ----------
         //switch (symbol) {
         //case 'B': scanSymbol(); return byte.class;
@@ -632,7 +632,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.014 -0400", hash_original_method = "BD4178EAA9E41C4057CACEBF28047848", hash_generated_method = "D2940C586D8ECAB409C65CAD07A93EAE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.039 -0400", hash_original_method = "BD4178EAA9E41C4057CACEBF28047848", hash_generated_method = "D2940C586D8ECAB409C65CAD07A93EAE")
      void parseMethodTypeSignature(Class<?>[] rawExceptionTypes) {
         parseOptFormalTypeParameters();
         parameterTypes = new ListOfTypes(16);
@@ -665,35 +665,35 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.014 -0400", hash_original_method = "6FEAF434B1E5FC2FC9EAA724A7A39FCB", hash_generated_method = "CB696D48BC9F229EAD795CE718E7E5D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.039 -0400", hash_original_method = "6FEAF434B1E5FC2FC9EAA724A7A39FCB", hash_generated_method = "199CB03F72A7EB4B89F0B48423CB96F4")
      Type parseReturnType() {
-        Type varB4EAC82CA7396A68D541C85D26508E83_1170118375 = null; //Variable for return #1
-        Type varB4EAC82CA7396A68D541C85D26508E83_437351726 = null; //Variable for return #2
+        Type varB4EAC82CA7396A68D541C85D26508E83_1580740717 = null; //Variable for return #1
+        Type varB4EAC82CA7396A68D541C85D26508E83_429669265 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1170118375 = parseTypeSignature();
+            varB4EAC82CA7396A68D541C85D26508E83_1580740717 = parseTypeSignature();
         } //End block
         {
             scanSymbol();
-            varB4EAC82CA7396A68D541C85D26508E83_437351726 = void.class;
+            varB4EAC82CA7396A68D541C85D26508E83_429669265 = void.class;
         } //End block
-        Type varA7E53CE21691AB073D9660D615818899_410355648; //Final return value
+        Type varA7E53CE21691AB073D9660D615818899_2047182079; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_410355648 = varB4EAC82CA7396A68D541C85D26508E83_1170118375;
+                varA7E53CE21691AB073D9660D615818899_2047182079 = varB4EAC82CA7396A68D541C85D26508E83_1580740717;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_410355648 = varB4EAC82CA7396A68D541C85D26508E83_437351726;
+                varA7E53CE21691AB073D9660D615818899_2047182079 = varB4EAC82CA7396A68D541C85D26508E83_429669265;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_410355648.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_410355648;
+        varA7E53CE21691AB073D9660D615818899_2047182079.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_2047182079;
         // ---------- Original Method ----------
         //if (symbol != 'V') { return parseTypeSignature(); }
         //else { scanSymbol(); return void.class; }
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.019 -0400", hash_original_method = "CAE4999AD72CF442B6BBF401B7699A36", hash_generated_method = "2AEB0226C7D192BA1030997411AB9788")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.040 -0400", hash_original_method = "CAE4999AD72CF442B6BBF401B7699A36", hash_generated_method = "2AEB0226C7D192BA1030997411AB9788")
      void scanSymbol() {
         {
             {
@@ -722,7 +722,7 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.020 -0400", hash_original_method = "D25C52D6AA7AD670E052B9729E548EBD", hash_generated_method = "6B1C782BE814EC3F9F505678FA0E48FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.040 -0400", hash_original_method = "D25C52D6AA7AD670E052B9729E548EBD", hash_generated_method = "6B1C782BE814EC3F9F505678FA0E48FD")
      void expect(char c) {
         {
             scanSymbol();
@@ -740,11 +740,11 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.020 -0400", hash_original_method = "1CE8B25C92A2D6D9FB5D5E3D923D48F0", hash_generated_method = "69693E0C61CF69E3F4852D44B27266C5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.050 -0400", hash_original_method = "1CE8B25C92A2D6D9FB5D5E3D923D48F0", hash_generated_method = "52A1186227F31ECB4C54E409AAA5A3D5")
      boolean isStopSymbol(char ch) {
         addTaint(ch);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_591981921 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_591981921;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_605009871 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_605009871;
         // ---------- Original Method ----------
         //switch (ch) {
         //case ':':
@@ -758,20 +758,20 @@ public class GenericSignatureParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.021 -0400", hash_original_method = "A47433FA08CE7DFA194FC642B799E216", hash_generated_method = "5BD5731933E48E6E26DBC4C16B2C9821")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.051 -0400", hash_original_method = "A47433FA08CE7DFA194FC642B799E216", hash_generated_method = "4344B336213F43C2E2A25348101E41BD")
      void scanIdentifier() {
         {
             StringBuilder identBuf;
             identBuf = new StringBuilder(32);
             {
-                boolean varBA8951A438FB95E4147857CD77D7FDCF_1214940649 = (!isStopSymbol(symbol));
+                boolean varBA8951A438FB95E4147857CD77D7FDCF_618447710 = (!isStopSymbol(symbol));
                 {
                     identBuf.append(symbol);
                     {
                         char ch;
                         ch = buffer[pos];
                         {
-                            boolean varC7ECC067547E5D886884C9CD83B3361C_361762293 = ((ch >= 'a') && (ch <= 'z') || (ch >= 'A') && (ch <= 'Z')
+                            boolean varC7ECC067547E5D886884C9CD83B3361C_1803486903 = ((ch >= 'a') && (ch <= 'z') || (ch >= 'A') && (ch <= 'Z')
                             || !isStopSymbol(ch));
                             {
                                 identBuf.append(buffer[pos]);

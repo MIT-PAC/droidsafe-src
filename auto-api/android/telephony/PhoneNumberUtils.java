@@ -33,7 +33,7 @@ import java.util.regex.Pattern;
 
 public class PhoneNumberUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.060 -0400", hash_original_method = "0471222FC8B1AE7B60D0D4D370DECD9E", hash_generated_method = "0471222FC8B1AE7B60D0D4D370DECD9E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.641 -0400", hash_original_method = "0471222FC8B1AE7B60D0D4D370DECD9E", hash_generated_method = "0471222FC8B1AE7B60D0D4D370DECD9E")
     public PhoneNumberUtils ()
     {
         //Synthesized constructor
@@ -1455,14 +1455,14 @@ public class PhoneNumberUtils {
 
     
     private static class CountryCallingCodeAndNewIndex {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.236 -0400", hash_original_field = "43BF1148832D608DC0C7BD7DF33B664F", hash_generated_field = "3AFE52867FA7D6A4E2F06FCBB6E2D3AB")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.828 -0400", hash_original_field = "43BF1148832D608DC0C7BD7DF33B664F", hash_generated_field = "3AFE52867FA7D6A4E2F06FCBB6E2D3AB")
 
         public int countryCallingCode;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.236 -0400", hash_original_field = "9E166AF7CD3E938FA57C7E5B5A2B953C", hash_generated_field = "E475F8F2EFBA505C94E4C7ABFF34FE12")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.828 -0400", hash_original_field = "9E166AF7CD3E938FA57C7E5B5A2B953C", hash_generated_field = "E475F8F2EFBA505C94E4C7ABFF34FE12")
 
         public int newIndex;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.253 -0400", hash_original_method = "5DCA5F364592872E4B4A5AF571961FBD", hash_generated_method = "C5121B987002F477CF37F9AE2853890C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.835 -0400", hash_original_method = "5DCA5F364592872E4B4A5AF571961FBD", hash_generated_method = "C5121B987002F477CF37F9AE2853890C")
         public  CountryCallingCodeAndNewIndex(int countryCode, int newIndex) {
             this.countryCallingCode = countryCode;
             this.newIndex = newIndex;
@@ -1476,46 +1476,46 @@ public class PhoneNumberUtils {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.253 -0400", hash_original_field = "7DB04456DC558F9D1EF26AF27C35B491", hash_generated_field = "9592BDC3C222BAB87D6921536B386F02")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.835 -0400", hash_original_field = "7DB04456DC558F9D1EF26AF27C35B491", hash_generated_field = "9592BDC3C222BAB87D6921536B386F02")
 
     public static final char PAUSE = ',';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.253 -0400", hash_original_field = "474D126EA486D1CDCC622B4A024282C1", hash_generated_field = "B5DAD0C77E5093BF168B416C17DBD0D4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.835 -0400", hash_original_field = "474D126EA486D1CDCC622B4A024282C1", hash_generated_field = "B5DAD0C77E5093BF168B416C17DBD0D4")
 
     public static final char WAIT = ';';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.253 -0400", hash_original_field = "3D735435566ADA3C409E75A7C68785E5", hash_generated_field = "4508CC8F7BCD4D71006CDE5EE7139083")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.835 -0400", hash_original_field = "3D735435566ADA3C409E75A7C68785E5", hash_generated_field = "4508CC8F7BCD4D71006CDE5EE7139083")
 
     public static final char WILD = 'N';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.253 -0400", hash_original_field = "33205071EE604584A2440E73634762B3", hash_generated_field = "ECEB28BD95B98A50C589B3074C326EB7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.835 -0400", hash_original_field = "33205071EE604584A2440E73634762B3", hash_generated_field = "ECEB28BD95B98A50C589B3074C326EB7")
 
     private static String CLIR_ON = "*31#+";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.253 -0400", hash_original_field = "B4BFA33F98162A39EF401B11708A7C72", hash_generated_field = "2F05D6D04F52B52501EDC88FF2755D0F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "B4BFA33F98162A39EF401B11708A7C72", hash_generated_field = "2F05D6D04F52B52501EDC88FF2755D0F")
 
     private static String CLIR_OFF = "#31#+";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.253 -0400", hash_original_field = "4DAE6EF8C00F94A69F7EE702C1885707", hash_generated_field = "06787C0184484B4BFBBF1E2A65382041")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "4DAE6EF8C00F94A69F7EE702C1885707", hash_generated_field = "06787C0184484B4BFBBF1E2A65382041")
 
     public static final int TOA_International = 0x91;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.254 -0400", hash_original_field = "644D33B27ECB0CAD646025B8F066D355", hash_generated_field = "243A93021F2325560EC4F5DCB5A791CB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "644D33B27ECB0CAD646025B8F066D355", hash_generated_field = "243A93021F2325560EC4F5DCB5A791CB")
 
     public static final int TOA_Unknown = 0x81;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.254 -0400", hash_original_field = "25F1F31F6A2594641E65DD4C14C3663D", hash_generated_field = "D253E44721AD118F28735E9D49B351A2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "25F1F31F6A2594641E65DD4C14C3663D", hash_generated_field = "D253E44721AD118F28735E9D49B351A2")
 
     static String LOG_TAG = "PhoneNumberUtils";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.254 -0400", hash_original_field = "0F6F0EB642B3F46DE2B2DF48DA4427EF", hash_generated_field = "B7C4E93D97D072890A37A56076D870F8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "0F6F0EB642B3F46DE2B2DF48DA4427EF", hash_generated_field = "B7C4E93D97D072890A37A56076D870F8")
 
     private static boolean DBG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.254 -0400", hash_original_field = "91DC196511083EE55D6965976F8665FC", hash_generated_field = "D7BA433DEF6DCA65EFDC918E7DD806C7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "91DC196511083EE55D6965976F8665FC", hash_generated_field = "D7BA433DEF6DCA65EFDC918E7DD806C7")
 
     private static Pattern GLOBAL_PHONE_NUMBER_PATTERN = Pattern.compile("[\\+]?[0-9.-]+");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.254 -0400", hash_original_field = "309F4FB1064720338CC6175ECF536E60", hash_generated_field = "71D5121A36746180AA00D4A7523E1441")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "309F4FB1064720338CC6175ECF536E60", hash_generated_field = "71D5121A36746180AA00D4A7523E1441")
 
     public static final int FORMAT_UNKNOWN = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.254 -0400", hash_original_field = "B180D7EA177E8179235BE30812C15164", hash_generated_field = "46986CCD2F846A62FECAEC81C1FCD118")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "B180D7EA177E8179235BE30812C15164", hash_generated_field = "46986CCD2F846A62FECAEC81C1FCD118")
 
     public static final int FORMAT_NANP = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.254 -0400", hash_original_field = "F23B34460FE8168120B15898C914CD0A", hash_generated_field = "4BC9003279A4C6063E53C49E257506ED")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "F23B34460FE8168120B15898C914CD0A", hash_generated_field = "4BC9003279A4C6063E53C49E257506ED")
 
     public static final int FORMAT_JAPAN = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.254 -0400", hash_original_field = "8D1053844F92EDCE48195FE9CFD3B6F3", hash_generated_field = "B2B470C2BF76F3A42C175E0B81233960")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "8D1053844F92EDCE48195FE9CFD3B6F3", hash_generated_field = "B2B470C2BF76F3A42C175E0B81233960")
 
     private static String[] NANP_COUNTRIES = new String[] {
         "US", 
@@ -1543,22 +1543,22 @@ public class PhoneNumberUtils {
         "TC", 
         "VI", 
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.254 -0400", hash_original_field = "C8DF256B4C3DF9810E7E26112D5E7888", hash_generated_field = "9B70FBEF23302F77B0B69187CD822808")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "C8DF256B4C3DF9810E7E26112D5E7888", hash_generated_field = "9B70FBEF23302F77B0B69187CD822808")
 
     private static int NANP_STATE_DIGIT = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.254 -0400", hash_original_field = "CC51AF088685A8E9465989895376E3DC", hash_generated_field = "7401B540D777D7025E5209456DD92A91")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "CC51AF088685A8E9465989895376E3DC", hash_generated_field = "7401B540D777D7025E5209456DD92A91")
 
     private static int NANP_STATE_PLUS = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.254 -0400", hash_original_field = "433514C9F70F4AA19F44CA3C3F364C6B", hash_generated_field = "153548CF225A891B990F5DCB915F76D3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.836 -0400", hash_original_field = "433514C9F70F4AA19F44CA3C3F364C6B", hash_generated_field = "153548CF225A891B990F5DCB915F76D3")
 
     private static int NANP_STATE_ONE = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.255 -0400", hash_original_field = "6908950F77459CF993C327A7090CEA4B", hash_generated_field = "EA6A36D7FFBB9E68993797396B22CDAE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.837 -0400", hash_original_field = "6908950F77459CF993C327A7090CEA4B", hash_generated_field = "EA6A36D7FFBB9E68993797396B22CDAE")
 
     private static int NANP_STATE_DASH = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.255 -0400", hash_original_field = "7C7B822C34A911315387BDE23FD9279C", hash_generated_field = "4D79FA8B3EE3F90D677D0403EB29EF66")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.837 -0400", hash_original_field = "7C7B822C34A911315387BDE23FD9279C", hash_generated_field = "4D79FA8B3EE3F90D677D0403EB29EF66")
 
     static int MIN_MATCH = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.255 -0400", hash_original_field = "39467E7841771D874C62D8784BE12395", hash_generated_field = "AC41E132A0E52CD45C78512DB1F3E43D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.837 -0400", hash_original_field = "39467E7841771D874C62D8784BE12395", hash_generated_field = "AC41E132A0E52CD45C78512DB1F3E43D")
 
     private static SparseIntArray KEYPAD_MAP = new SparseIntArray();
     static {
@@ -1580,22 +1580,33 @@ public class PhoneNumberUtils {
         KEYPAD_MAP.put('W', '9'); KEYPAD_MAP.put('X', '9'); KEYPAD_MAP.put('Y', '9'); KEYPAD_MAP.put('Z', '9');
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.255 -0400", hash_original_field = "A13276936F3EBAF96DAFC2AC50AE71A1", hash_generated_field = "22D7ACAF2443EE67B43926AC3E99BBA6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.838 -0400", hash_original_field = "A13276936F3EBAF96DAFC2AC50AE71A1", hash_generated_field = "22D7ACAF2443EE67B43926AC3E99BBA6")
 
     private static char PLUS_SIGN_CHAR = '+';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.255 -0400", hash_original_field = "BA460873C37F1DD423A5EBFF99CB4FEB", hash_generated_field = "812FBDE287D33B84E8FEA607351D99E6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.838 -0400", hash_original_field = "BA460873C37F1DD423A5EBFF99CB4FEB", hash_generated_field = "812FBDE287D33B84E8FEA607351D99E6")
 
     private static String PLUS_SIGN_STRING = "+";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.256 -0400", hash_original_field = "07DADDFD7E268EDFC76BEAFDF194E91D", hash_generated_field = "B5FE8B403B83432747E0DBD4F760E98A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.838 -0400", hash_original_field = "07DADDFD7E268EDFC76BEAFDF194E91D", hash_generated_field = "B5FE8B403B83432747E0DBD4F760E98A")
 
     private static String NANP_IDP_STRING = "011";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.269 -0400", hash_original_field = "881D4246E29131E276ABAF25E9FAC22F", hash_generated_field = "ED6B7BDF339C1F26E00F50ACA0D34F84")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.838 -0400", hash_original_field = "881D4246E29131E276ABAF25E9FAC22F", hash_generated_field = "ED6B7BDF339C1F26E00F50ACA0D34F84")
 
     private static int NANP_LENGTH = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.269 -0400", hash_original_field = "EF892F5AB80D121C72BE2859973A6879", hash_generated_field = "560495B332B954A4F4DCA9251BB4833A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.838 -0400", hash_original_field = "EF892F5AB80D121C72BE2859973A6879", hash_generated_field = "F2A49BCB2F9CC18C307C32507ED8C31D")
 
-    private static boolean COUNTRY_CALLING_CALL[] = ;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:37.269 -0400", hash_original_field = "BC5611BD9394B68933031A07412F7C21", hash_generated_field = "B7BE5758F9D9BB6C5ED6D1B2C7C81965")
+    private static boolean COUNTRY_CALLING_CALL[] = {
+        true, true, false, false, false, false, false, true, false, false,
+        false, false, false, false, false, false, false, false, false, false,
+        true, false, false, false, false, false, false, true, true, false,
+        true, true, true, true, true, false, true, false, false, true,
+        true, false, false, true, true, true, true, true, true, true,
+        false, true, true, true, true, true, true, true, true, false,
+        true, true, true, true, true, true, true, false, false, false,
+        false, false, false, false, false, false, false, false, false, false,
+        false, true, true, true, true, false, true, false, false, true,
+        true, true, true, true, true, true, false, false, true, false,
+    };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:38.838 -0400", hash_original_field = "BC5611BD9394B68933031A07412F7C21", hash_generated_field = "B7BE5758F9D9BB6C5ED6D1B2C7C81965")
 
     private static int CCC_LENGTH = COUNTRY_CALLING_CALL.length;
 }

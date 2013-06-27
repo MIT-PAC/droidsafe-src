@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 
 class NoSaveStateFrameLayout extends FrameLayout {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:32.131 -0400", hash_original_method = "3889CE5B7CA4679ACCB4D7B5EA6FB087", hash_generated_method = "D83F9BEABB74D6FEF2671DFB68B81652")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:33.457 -0400", hash_original_method = "3889CE5B7CA4679ACCB4D7B5EA6FB087", hash_generated_method = "D83F9BEABB74D6FEF2671DFB68B81652")
     public  NoSaveStateFrameLayout(Context context) {
         super(context);
         addTaint(context.getTaint());
@@ -38,7 +38,7 @@ class NoSaveStateFrameLayout extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:32.148 -0400", hash_original_method = "0F3E63187E008FDE1692E75AF7E8484F", hash_generated_method = "54957434D3FBF941E99B0E4D72721821")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:33.458 -0400", hash_original_method = "0F3E63187E008FDE1692E75AF7E8484F", hash_generated_method = "54957434D3FBF941E99B0E4D72721821")
     @Override
     protected void dispatchSaveInstanceState(SparseArray<Parcelable> container) {
         dispatchFreezeSelfOnly(container);
@@ -48,7 +48,7 @@ class NoSaveStateFrameLayout extends FrameLayout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:32.149 -0400", hash_original_method = "3B9D7DC916535DA1F64238687579C1A4", hash_generated_method = "E362119FE0F4B2603664E90AC9E36821")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:33.459 -0400", hash_original_method = "3B9D7DC916535DA1F64238687579C1A4", hash_generated_method = "E362119FE0F4B2603664E90AC9E36821")
     @Override
     protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container) {
         dispatchThawSelfOnly(container);

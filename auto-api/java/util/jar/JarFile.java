@@ -19,20 +19,20 @@ import java.util.zip.ZipFile;
 import libcore.io.Streams;
 
 public class JarFile extends ZipFile {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.616 -0400", hash_original_field = "7F5CB74AF5D7F4B82200738FDBDC5A45", hash_generated_field = "261709621967406C2758961F4730EA20")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.707 -0400", hash_original_field = "7F5CB74AF5D7F4B82200738FDBDC5A45", hash_generated_field = "261709621967406C2758961F4730EA20")
 
     private Manifest manifest;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.616 -0400", hash_original_field = "E7B53329F4E7143315B5B9E1E35716BA", hash_generated_field = "A4D7622C7D5230CEA74D7E274931C68D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.707 -0400", hash_original_field = "E7B53329F4E7143315B5B9E1E35716BA", hash_generated_field = "A4D7622C7D5230CEA74D7E274931C68D")
 
     private ZipEntry manifestEntry;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.616 -0400", hash_original_field = "0B5F8F06BAFB3828F619F6F96FC6ADB2", hash_generated_field = "15838C298A89AE0514754B108BF02A73")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.707 -0400", hash_original_field = "0B5F8F06BAFB3828F619F6F96FC6ADB2", hash_generated_field = "15838C298A89AE0514754B108BF02A73")
 
     JarVerifier verifier;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.616 -0400", hash_original_field = "1E79543A888DE7BB0ADBB289A8F4251D", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.707 -0400", hash_original_field = "1E79543A888DE7BB0ADBB289A8F4251D", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
 
     private boolean closed = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.623 -0400", hash_original_method = "B9B0355AAF6860849CDAA93CC073B40D", hash_generated_method = "578AF9C3F617699204D04C3678122D01")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.724 -0400", hash_original_method = "B9B0355AAF6860849CDAA93CC073B40D", hash_generated_method = "578AF9C3F617699204D04C3678122D01")
     public  JarFile(File file) throws IOException {
         this(file, true);
         addTaint(file.getTaint());
@@ -40,7 +40,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.624 -0400", hash_original_method = "5EB6670431246E3B0105DDAC48B26AC0", hash_generated_method = "EA75DEB84CC4E5DC2CC3254DC8530324")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.727 -0400", hash_original_method = "5EB6670431246E3B0105DDAC48B26AC0", hash_generated_method = "EA75DEB84CC4E5DC2CC3254DC8530324")
     public  JarFile(File file, boolean verify) throws IOException {
         super(file);
         {
@@ -56,7 +56,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.625 -0400", hash_original_method = "793A8CDEEB3B1480C6CD4A5DE140B86D", hash_generated_method = "82604CA112368B43D6711AC6C7FCA5A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.728 -0400", hash_original_method = "793A8CDEEB3B1480C6CD4A5DE140B86D", hash_generated_method = "82604CA112368B43D6711AC6C7FCA5A3")
     public  JarFile(File file, boolean verify, int mode) throws IOException {
         super(file, mode);
         {
@@ -73,7 +73,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.625 -0400", hash_original_method = "7A554CED3F155E72368E52962D72B4D7", hash_generated_method = "E206C57A5C98E6791FFDF685273E8DFA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.728 -0400", hash_original_method = "7A554CED3F155E72368E52962D72B4D7", hash_generated_method = "E206C57A5C98E6791FFDF685273E8DFA")
     public  JarFile(String filename) throws IOException {
         this(filename, true);
         addTaint(filename.getTaint());
@@ -81,7 +81,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.641 -0400", hash_original_method = "54E668354AB021AFE09898CE1915F8B2", hash_generated_method = "5F4C2BF87C522AD86F73EA49DE4BFAE9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.728 -0400", hash_original_method = "54E668354AB021AFE09898CE1915F8B2", hash_generated_method = "5F4C2BF87C522AD86F73EA49DE4BFAE9")
     public  JarFile(String filename, boolean verify) throws IOException {
         super(filename);
         {
@@ -97,16 +97,16 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.665 -0400", hash_original_method = "DDF115034FADFE53A1FD9BC36D36CE25", hash_generated_method = "0FE44427A6333A755530CC07F9E31B75")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.748 -0400", hash_original_method = "DDF115034FADFE53A1FD9BC36D36CE25", hash_generated_method = "27C8E80C05C55F61F4FD92B33790D987")
     @Override
     public Enumeration<JarEntry> entries() {
-        Enumeration<JarEntry> varB4EAC82CA7396A68D541C85D26508E83_1651608792 = null; //Variable for return #1
+        Enumeration<JarEntry> varB4EAC82CA7396A68D541C85D26508E83_1517719237 = null; //Variable for return #1
         class JarFileEnumerator implements Enumeration<JarEntry> {
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.642 -0400", hash_original_field = "98B456A0723FA616284A632D9D31821B", hash_generated_field = "BD6898769B3BC196CD1C8BCB2FCBB517")
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.732 -0400", hash_original_field = "98B456A0723FA616284A632D9D31821B", hash_generated_field = "BD6898769B3BC196CD1C8BCB2FCBB517")
             Enumeration<? extends ZipEntry> ze;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.642 -0400", hash_original_field = "FE0EC43CC4200E777AA2190ACE58E7B4", hash_generated_field = "9E17897CFE5F4CA6FBFFFAEE1DB51A62")
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.732 -0400", hash_original_field = "FE0EC43CC4200E777AA2190ACE58E7B4", hash_generated_field = "9E17897CFE5F4CA6FBFFFAEE1DB51A62")
             JarFile jf;
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.663 -0400", hash_original_method = "C7F3ED49203A5BDA1D49193B6084B2BE", hash_generated_method = "BC00F704C0A9EFA63CDD07B4B4E22805")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.738 -0400", hash_original_method = "C7F3ED49203A5BDA1D49193B6084B2BE", hash_generated_method = "BC00F704C0A9EFA63CDD07B4B4E22805")
               JarFileEnumerator(Enumeration<? extends ZipEntry> zenum, JarFile jf) {
                 ze = zenum;
                 this.jf = jf;
@@ -114,32 +114,32 @@ public class JarFile extends ZipFile {
                 //ze = zenum;
                 //this.jf = jf;
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.663 -0400", hash_original_method = "9E60B2163115C0F4A5143AACEF20F301", hash_generated_method = "DA4653EE41FB13394FDF389485950387")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.747 -0400", hash_original_method = "9E60B2163115C0F4A5143AACEF20F301", hash_generated_method = "FBF11E7B37A1A51649D4EBC6147BBAE1")
             public boolean hasMoreElements() {
-                boolean varFF0952AD3583A4D6021B234385B302D9_1920287157 = (ze.hasMoreElements());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_829896933 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_829896933;
+                boolean varFF0952AD3583A4D6021B234385B302D9_127001928 = (ze.hasMoreElements());
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_271454719 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_271454719;
                 // ---------- Original Method ----------
                 //return ze.hasMoreElements();
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.664 -0400", hash_original_method = "5675597FFA2F5C3F421325DE8580ECC3", hash_generated_method = "731200EBB9F7AFCE43FD2147DBAE65B6")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.748 -0400", hash_original_method = "5675597FFA2F5C3F421325DE8580ECC3", hash_generated_method = "F0769A96119C06E75A87751DC76E6B4D")
             public JarEntry nextElement() {
-                JarEntry varB4EAC82CA7396A68D541C85D26508E83_1540847374 = null; //Variable for return #1
+                JarEntry varB4EAC82CA7396A68D541C85D26508E83_930509145 = null; //Variable for return #1
                 JarEntry je;
                 je = new JarEntry(ze.nextElement());
                 je.parentJar = jf;
-                varB4EAC82CA7396A68D541C85D26508E83_1540847374 = je;
-                varB4EAC82CA7396A68D541C85D26508E83_1540847374.addTaint(getTaint()); //Add taint from parent
-                return varB4EAC82CA7396A68D541C85D26508E83_1540847374;
+                varB4EAC82CA7396A68D541C85D26508E83_930509145 = je;
+                varB4EAC82CA7396A68D541C85D26508E83_930509145.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_930509145;
                 // ---------- Original Method ----------
                 //JarEntry je = new JarEntry(ze.nextElement());
                 //je.parentJar = jf;
                 //return je;
             }
         }
-        varB4EAC82CA7396A68D541C85D26508E83_1651608792 = new JarFileEnumerator(super.entries(), this);
-        varB4EAC82CA7396A68D541C85D26508E83_1651608792.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1651608792;
+        varB4EAC82CA7396A68D541C85D26508E83_1517719237 = new JarFileEnumerator(super.entries(), this);
+        varB4EAC82CA7396A68D541C85D26508E83_1517719237.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1517719237;
         // ---------- Original Method ----------
         //class JarFileEnumerator implements Enumeration<JarEntry> {
             //Enumeration<? extends ZipEntry> ze;
@@ -161,27 +161,27 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.666 -0400", hash_original_method = "C114B7C700B8AEF8B2BF9DB9E2302906", hash_generated_method = "49DD6253855222F6A9257BB03932D7DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.755 -0400", hash_original_method = "C114B7C700B8AEF8B2BF9DB9E2302906", hash_generated_method = "919C6C05A84AF3CEBD9290F17A913B0D")
     public JarEntry getJarEntry(String name) {
-        JarEntry varB4EAC82CA7396A68D541C85D26508E83_308164125 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_308164125 = (JarEntry) getEntry(name);
+        JarEntry varB4EAC82CA7396A68D541C85D26508E83_1274254519 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1274254519 = (JarEntry) getEntry(name);
         addTaint(name.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_308164125.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_308164125;
+        varB4EAC82CA7396A68D541C85D26508E83_1274254519.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1274254519;
         // ---------- Original Method ----------
         //return (JarEntry) getEntry(name);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.677 -0400", hash_original_method = "E67D102DBF269AEACB3865BB39A89C99", hash_generated_method = "FEC40FC9A4B004DEB29684DD443BED34")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.775 -0400", hash_original_method = "E67D102DBF269AEACB3865BB39A89C99", hash_generated_method = "15DE03B9C78F5DC394AD6D613C041BF0")
     public Manifest getManifest() throws IOException {
-        Manifest varB4EAC82CA7396A68D541C85D26508E83_1574669537 = null; //Variable for return #1
-        Manifest varB4EAC82CA7396A68D541C85D26508E83_1120006333 = null; //Variable for return #2
+        Manifest varB4EAC82CA7396A68D541C85D26508E83_692081775 = null; //Variable for return #1
+        Manifest varB4EAC82CA7396A68D541C85D26508E83_1232240156 = null; //Variable for return #2
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("JarFile has been closed");
         } //End block
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1574669537 = manifest;
+            varB4EAC82CA7396A68D541C85D26508E83_692081775 = manifest;
         } //End block
         try 
         {
@@ -205,18 +205,18 @@ public class JarFile extends ZipFile {
         {
             manifestEntry = null;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1120006333 = manifest;
-        Manifest varA7E53CE21691AB073D9660D615818899_943201455; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1232240156 = manifest;
+        Manifest varA7E53CE21691AB073D9660D615818899_1231029490; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_943201455 = varB4EAC82CA7396A68D541C85D26508E83_1574669537;
+                varA7E53CE21691AB073D9660D615818899_1231029490 = varB4EAC82CA7396A68D541C85D26508E83_692081775;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_943201455 = varB4EAC82CA7396A68D541C85D26508E83_1120006333;
+                varA7E53CE21691AB073D9660D615818899_1231029490 = varB4EAC82CA7396A68D541C85D26508E83_1232240156;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_943201455.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_943201455;
+        varA7E53CE21691AB073D9660D615818899_1231029490.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1231029490;
         // ---------- Original Method ----------
         //if (closed) {
             //throw new IllegalStateException("JarFile has been closed");
@@ -243,7 +243,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.771 -0400", hash_original_method = "388F847516FC198A1371FF54043E7729", hash_generated_method = "CBE1F8630C9677795F6599087DB94256")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.813 -0400", hash_original_method = "388F847516FC198A1371FF54043E7729", hash_generated_method = "0A1CF5A445BDA833C1165F0DCB322A27")
     private void readMetaEntries() throws IOException {
         ZipEntry[] metaEntries;
         metaEntries = getMetaEntriesImpl();
@@ -253,20 +253,20 @@ public class JarFile extends ZipFile {
         boolean signed;
         signed = false;
         {
-            Iterator<ZipEntry> var6D0A34D60B8C79C46D77A3FAE8BFE594_964573705 = (metaEntries).iterator();
-            var6D0A34D60B8C79C46D77A3FAE8BFE594_964573705.hasNext();
-            ZipEntry entry = var6D0A34D60B8C79C46D77A3FAE8BFE594_964573705.next();
+            Iterator<ZipEntry> var6D0A34D60B8C79C46D77A3FAE8BFE594_1888493980 = (metaEntries).iterator();
+            var6D0A34D60B8C79C46D77A3FAE8BFE594_1888493980.hasNext();
+            ZipEntry entry = var6D0A34D60B8C79C46D77A3FAE8BFE594_1888493980.next();
             {
                 String entryName;
                 entryName = entry.getName();
                 {
-                    boolean var225934D646BDE3C078A758A5F36FB6DA_1549150366 = (manifestEntry == null && entryName.equalsIgnoreCase(MANIFEST_NAME));
+                    boolean var225934D646BDE3C078A758A5F36FB6DA_915785750 = (manifestEntry == null && entryName.equalsIgnoreCase(MANIFEST_NAME));
                     {
                         manifestEntry = entry;
                     } //End block
                     {
                         {
-                            boolean var389DD4FDD6BA5DDB0A85AEEA57B7C2C6_1738011479 = (verifier != null
+                            boolean var389DD4FDD6BA5DDB0A85AEEA57B7C2C6_214833329 = (verifier != null
                         && (endsWithIgnoreCase(entryName, ".SF")
                                 || endsWithIgnoreCase(entryName, ".DSA")
                                 || endsWithIgnoreCase(entryName, ".RSA")));
@@ -294,13 +294,13 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.789 -0400", hash_original_method = "53CBE19CD54AC9FA27355C4D3916E5DE", hash_generated_method = "40454C9565372D474B2E89A5187F2009")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.845 -0400", hash_original_method = "53CBE19CD54AC9FA27355C4D3916E5DE", hash_generated_method = "CD91D3BDCDE4DB8327541369EB6855E4")
     @Override
     public InputStream getInputStream(ZipEntry ze) throws IOException {
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_518614361 = null; //Variable for return #1
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_297564517 = null; //Variable for return #2
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_502738166 = null; //Variable for return #3
-        InputStream varB4EAC82CA7396A68D541C85D26508E83_1152721036 = null; //Variable for return #4
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1427274202 = null; //Variable for return #1
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_1283803037 = null; //Variable for return #2
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_616457970 = null; //Variable for return #3
+        InputStream varB4EAC82CA7396A68D541C85D26508E83_167009850 = null; //Variable for return #4
         {
             getManifest();
         } //End block
@@ -310,14 +310,14 @@ public class JarFile extends ZipFile {
                 verifier.mainAttributesEnd = manifest.getMainAttributesEnd();
             } //End block
             {
-                boolean varC8A59060D93D59BF577276953C85D279_854610564 = (verifier.readCertificates());
+                boolean varC8A59060D93D59BF577276953C85D279_729629358 = (verifier.readCertificates());
                 {
                     verifier.removeMetaEntries();
                     {
                         manifest.removeChunks();
                     } //End block
                     {
-                        boolean var8293A0C85FDB7E6035589279E774449B_2091583030 = (!verifier.isSignedJar());
+                        boolean var8293A0C85FDB7E6035589279E774449B_319891994 = (!verifier.isSignedJar());
                         {
                             verifier = null;
                         } //End block
@@ -328,69 +328,69 @@ public class JarFile extends ZipFile {
         InputStream in;
         in = super.getInputStream(ze);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_518614361 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1427274202 = null;
         } //End block
         {
-            boolean var2F684FA4AC00559BDF766C694C20B2C5_1834267538 = (verifier == null || ze.getSize() == -1);
+            boolean var2F684FA4AC00559BDF766C694C20B2C5_1030045623 = (verifier == null || ze.getSize() == -1);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_297564517 = in;
+                varB4EAC82CA7396A68D541C85D26508E83_1283803037 = in;
             } //End block
         } //End collapsed parenthetic
         JarVerifier.VerifierEntry entry;
         entry = verifier.initEntry(ze.getName());
         {
-            varB4EAC82CA7396A68D541C85D26508E83_502738166 = in;
+            varB4EAC82CA7396A68D541C85D26508E83_616457970 = in;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1152721036 = new JarFileInputStream(in, ze, entry);
+        varB4EAC82CA7396A68D541C85D26508E83_167009850 = new JarFileInputStream(in, ze, entry);
         addTaint(ze.getTaint());
-        InputStream varA7E53CE21691AB073D9660D615818899_1240080896; //Final return value
+        InputStream varA7E53CE21691AB073D9660D615818899_1866026994; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1240080896 = varB4EAC82CA7396A68D541C85D26508E83_518614361;
+                varA7E53CE21691AB073D9660D615818899_1866026994 = varB4EAC82CA7396A68D541C85D26508E83_1427274202;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1240080896 = varB4EAC82CA7396A68D541C85D26508E83_297564517;
+                varA7E53CE21691AB073D9660D615818899_1866026994 = varB4EAC82CA7396A68D541C85D26508E83_1283803037;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_1240080896 = varB4EAC82CA7396A68D541C85D26508E83_502738166;
+                varA7E53CE21691AB073D9660D615818899_1866026994 = varB4EAC82CA7396A68D541C85D26508E83_616457970;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1240080896 = varB4EAC82CA7396A68D541C85D26508E83_1152721036;
+                varA7E53CE21691AB073D9660D615818899_1866026994 = varB4EAC82CA7396A68D541C85D26508E83_167009850;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1240080896.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1240080896;
+        varA7E53CE21691AB073D9660D615818899_1866026994.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1866026994;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.801 -0400", hash_original_method = "B825DECF198E8D2309850EFFE99C9789", hash_generated_method = "940CE42039F82B8B90CC807F64A110F1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.847 -0400", hash_original_method = "B825DECF198E8D2309850EFFE99C9789", hash_generated_method = "7AB357BB3300691D2CCC9EA2BAD566E3")
     @Override
     public ZipEntry getEntry(String name) {
-        ZipEntry varB4EAC82CA7396A68D541C85D26508E83_2016996344 = null; //Variable for return #1
-        ZipEntry varB4EAC82CA7396A68D541C85D26508E83_1526167838 = null; //Variable for return #2
+        ZipEntry varB4EAC82CA7396A68D541C85D26508E83_531411416 = null; //Variable for return #1
+        ZipEntry varB4EAC82CA7396A68D541C85D26508E83_486745596 = null; //Variable for return #2
         ZipEntry ze;
         ze = super.getEntry(name);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2016996344 = ze;
+            varB4EAC82CA7396A68D541C85D26508E83_531411416 = ze;
         } //End block
         JarEntry je;
         je = new JarEntry(ze);
         je.parentJar = this;
-        varB4EAC82CA7396A68D541C85D26508E83_1526167838 = je;
+        varB4EAC82CA7396A68D541C85D26508E83_486745596 = je;
         addTaint(name.getTaint());
-        ZipEntry varA7E53CE21691AB073D9660D615818899_796127714; //Final return value
+        ZipEntry varA7E53CE21691AB073D9660D615818899_529137076; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_796127714 = varB4EAC82CA7396A68D541C85D26508E83_2016996344;
+                varA7E53CE21691AB073D9660D615818899_529137076 = varB4EAC82CA7396A68D541C85D26508E83_531411416;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_796127714 = varB4EAC82CA7396A68D541C85D26508E83_1526167838;
+                varA7E53CE21691AB073D9660D615818899_529137076 = varB4EAC82CA7396A68D541C85D26508E83_486745596;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_796127714.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_796127714;
+        varA7E53CE21691AB073D9660D615818899_529137076.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_529137076;
         // ---------- Original Method ----------
         //ZipEntry ze = super.getEntry(name);
         //if (ze == null) {
@@ -402,21 +402,21 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.803 -0400", hash_original_method = "4B8F98994A94A2FEBED0E4C85A619A5C", hash_generated_method = "F31E4E78F65721AEB24FAF412346AB03")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.855 -0400", hash_original_method = "4B8F98994A94A2FEBED0E4C85A619A5C", hash_generated_method = "7C4EC0B51808EDC6ADFA4101A0F8F44B")
     private ZipEntry[] getMetaEntriesImpl() {
-        ZipEntry[] varB4EAC82CA7396A68D541C85D26508E83_501948382 = null; //Variable for return #1
-        ZipEntry[] varB4EAC82CA7396A68D541C85D26508E83_210043092 = null; //Variable for return #2
+        ZipEntry[] varB4EAC82CA7396A68D541C85D26508E83_228553952 = null; //Variable for return #1
+        ZipEntry[] varB4EAC82CA7396A68D541C85D26508E83_1190007476 = null; //Variable for return #2
         List<ZipEntry> list;
         list = new ArrayList<ZipEntry>(8);
         Enumeration<? extends ZipEntry> allEntries;
         allEntries = entries();
         {
-            boolean varC33966517FE272D25A9689F102B7D7DF_331723319 = (allEntries.hasMoreElements());
+            boolean varC33966517FE272D25A9689F102B7D7DF_723168171 = (allEntries.hasMoreElements());
             {
                 ZipEntry ze;
                 ze = allEntries.nextElement();
                 {
-                    boolean var9BACBC07C960934D5A5FCBB74870F6A9_1972831624 = (ze.getName().startsWith(META_DIR)
+                    boolean var9BACBC07C960934D5A5FCBB74870F6A9_702413031 = (ze.getName().startsWith(META_DIR)
                     && ze.getName().length() > META_DIR.length());
                     {
                         list.add(ze);
@@ -425,26 +425,26 @@ public class JarFile extends ZipFile {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var8D5789A37F50667ED0EB03D7F7D9B0AE_1987585156 = (list.size() == 0);
+            boolean var8D5789A37F50667ED0EB03D7F7D9B0AE_1205618797 = (list.size() == 0);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_501948382 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_228553952 = null;
             } //End block
         } //End collapsed parenthetic
         ZipEntry[] result;
         result = new ZipEntry[list.size()];
         list.toArray(result);
-        varB4EAC82CA7396A68D541C85D26508E83_210043092 = result;
-        ZipEntry[] varA7E53CE21691AB073D9660D615818899_1685294105; //Final return value
+        varB4EAC82CA7396A68D541C85D26508E83_1190007476 = result;
+        ZipEntry[] varA7E53CE21691AB073D9660D615818899_1722710059; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1685294105 = varB4EAC82CA7396A68D541C85D26508E83_501948382;
+                varA7E53CE21691AB073D9660D615818899_1722710059 = varB4EAC82CA7396A68D541C85D26508E83_228553952;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1685294105 = varB4EAC82CA7396A68D541C85D26508E83_210043092;
+                varA7E53CE21691AB073D9660D615818899_1722710059 = varB4EAC82CA7396A68D541C85D26508E83_1190007476;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1685294105.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1685294105;
+        varA7E53CE21691AB073D9660D615818899_1722710059.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1722710059;
         // ---------- Original Method ----------
         //List<ZipEntry> list = new ArrayList<ZipEntry>(8);
         //Enumeration<? extends ZipEntry> allEntries = entries();
@@ -464,7 +464,7 @@ public class JarFile extends ZipFile {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.816 -0400", hash_original_method = "C7FCBD344022D72FF18766A4DFEA8EE1", hash_generated_method = "DCC0D06E7F79ED3EAE0E8D99DD76C5B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.856 -0400", hash_original_method = "C7FCBD344022D72FF18766A4DFEA8EE1", hash_generated_method = "DCC0D06E7F79ED3EAE0E8D99DD76C5B5")
     @Override
     public void close() throws IOException {
         super.close();
@@ -476,20 +476,20 @@ public class JarFile extends ZipFile {
 
     
     static final class JarFileInputStream extends FilterInputStream {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.816 -0400", hash_original_field = "E2942A04780E223B215EB8B663CF5353", hash_generated_field = "96817EEF83FA1C93DC2A9F8452312BE5")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.856 -0400", hash_original_field = "E2942A04780E223B215EB8B663CF5353", hash_generated_field = "96817EEF83FA1C93DC2A9F8452312BE5")
 
         private long count;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.816 -0400", hash_original_field = "A984E853B1E1D85D70B1FBA492B2E542", hash_generated_field = "97423CF71E793626D5B9FCF841E2156D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.856 -0400", hash_original_field = "A984E853B1E1D85D70B1FBA492B2E542", hash_generated_field = "97423CF71E793626D5B9FCF841E2156D")
 
         private ZipEntry zipEntry;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.816 -0400", hash_original_field = "1043BFC77FEBE75FAFEC0C4309FACCF1", hash_generated_field = "D893B68F418C2812B051677DEAD7BC47")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.856 -0400", hash_original_field = "1043BFC77FEBE75FAFEC0C4309FACCF1", hash_generated_field = "D893B68F418C2812B051677DEAD7BC47")
 
         private JarVerifier.VerifierEntry entry;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.817 -0400", hash_original_field = "FDA23B4A7B8EA42DC9AD75FF5257DE8D", hash_generated_field = "9C759896300CD7D902BE34CCDA83590B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.856 -0400", hash_original_field = "FDA23B4A7B8EA42DC9AD75FF5257DE8D", hash_generated_field = "9C759896300CD7D902BE34CCDA83590B")
 
         private boolean done = false;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.818 -0400", hash_original_method = "C5D82B21AC1025C83393044900E9B5C1", hash_generated_method = "35926C0AE1BC8134DE905FEF9C6484F6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.869 -0400", hash_original_method = "C5D82B21AC1025C83393044900E9B5C1", hash_generated_method = "35926C0AE1BC8134DE905FEF9C6484F6")
           JarFileInputStream(InputStream is, ZipEntry ze,
                 JarVerifier.VerifierEntry e) {
             super(is);
@@ -504,7 +504,7 @@ public class JarFile extends ZipFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.827 -0400", hash_original_method = "89CF4CB391CD9E8B348E579506073CE6", hash_generated_method = "E9AE584BB82D9C7DCA2D4A574DA03B59")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.872 -0400", hash_original_method = "89CF4CB391CD9E8B348E579506073CE6", hash_generated_method = "F6E5069957FA18FD05AD98A3EC1F2F2B")
         @Override
         public int read() throws IOException {
             {
@@ -525,8 +525,8 @@ public class JarFile extends ZipFile {
                 done = true;
                 entry.verify();
             } //End block
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_284041192 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_284041192;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1672186607 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1672186607;
             // ---------- Original Method ----------
             //if (done) {
                 //return -1;
@@ -552,7 +552,7 @@ public class JarFile extends ZipFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.836 -0400", hash_original_method = "A2A36F60816A3448608DD8EC3FE6DD7B", hash_generated_method = "63DF84BD93FA9780B49F7C82F26C2CF0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.902 -0400", hash_original_method = "A2A36F60816A3448608DD8EC3FE6DD7B", hash_generated_method = "E95A9B2047EAEE79B6B645530B810C01")
         @Override
         public int read(byte[] buf, int off, int nbytes) throws IOException {
             {
@@ -582,8 +582,8 @@ public class JarFile extends ZipFile {
             addTaint(buf[0]);
             addTaint(off);
             addTaint(nbytes);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1636192573 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1636192573;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1761943364 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1761943364;
             // ---------- Original Method ----------
             //if (done) {
                 //return -1;
@@ -613,12 +613,12 @@ public class JarFile extends ZipFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.837 -0400", hash_original_method = "F5DF26793DC8C27B5E93038A2CA57A87", hash_generated_method = "5F3763CC6E58FA370287955E9143CB85")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.903 -0400", hash_original_method = "F5DF26793DC8C27B5E93038A2CA57A87", hash_generated_method = "8E0FAFAE003A70E56CDE38416894F804")
         @Override
         public int available() throws IOException {
-            int varBA26BD6C2684B5A5EC942BA7C9C20D72_1200899397 = (super.available());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_733855081 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_733855081;
+            int varBA26BD6C2684B5A5EC942BA7C9C20D72_865180124 = (super.available());
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1541340654 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1541340654;
             // ---------- Original Method ----------
             //if (done) {
                 //return 0;
@@ -627,13 +627,13 @@ public class JarFile extends ZipFile {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.838 -0400", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "B4069CD61BEF7B8D3FC8FC40F0F49C77")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.906 -0400", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "91826020CAE447587B3F2819D77E03A2")
         @Override
         public long skip(long byteCount) throws IOException {
-            long var302C584A2DF1E0FB3C344FD3955C3746_2051660754 = (Streams.skipByReading(this, byteCount));
+            long var302C584A2DF1E0FB3C344FD3955C3746_142661287 = (Streams.skipByReading(this, byteCount));
             addTaint(byteCount);
-            long var0F5264038205EDFB1AC05FBB0E8C5E94_1809105071 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1809105071;
+            long var0F5264038205EDFB1AC05FBB0E8C5E94_1514143570 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_1514143570;
             // ---------- Original Method ----------
             //return Streams.skipByReading(this, byteCount);
         }
@@ -643,10 +643,10 @@ public class JarFile extends ZipFile {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.853 -0400", hash_original_field = "1C9A50699E6FAC136026CC053D74C06D", hash_generated_field = "1B54FEE38023C23CFBDF6F59EE98F3A8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.906 -0400", hash_original_field = "1C9A50699E6FAC136026CC053D74C06D", hash_generated_field = "1B54FEE38023C23CFBDF6F59EE98F3A8")
 
     public static final String MANIFEST_NAME = "META-INF/MANIFEST.MF";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.853 -0400", hash_original_field = "0D653D1212A0A8510D5C0DF1F47F7B17", hash_generated_field = "84D20D16894E554382451901C2E12165")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.906 -0400", hash_original_field = "0D653D1212A0A8510D5C0DF1F47F7B17", hash_generated_field = "84D20D16894E554382451901C2E12165")
 
     static String META_DIR = "META-INF/";
 }

@@ -44,7 +44,7 @@ import org.apache.commons.io.output.NullOutputStream;
 
 public class FileUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.212 -0400", hash_original_method = "0A55185A25FF095B6278724D9B8AC890", hash_generated_method = "5A201C4BEE4FA7D1A070653DE7AF18C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.325 -0400", hash_original_method = "0A55185A25FF095B6278724D9B8AC890", hash_generated_method = "5A201C4BEE4FA7D1A070653DE7AF18C7")
     public  FileUtils() {
         super();
         // ---------- Original Method ----------
@@ -1352,55 +1352,55 @@ public class FileUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "341CAF801D1581520F6031438EC67724", hash_generated_field = "AC98EB3C79BA6E8E0D3CA5A91E4C5D8E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.460 -0400", hash_original_field = "341CAF801D1581520F6031438EC67724", hash_generated_field = "AC98EB3C79BA6E8E0D3CA5A91E4C5D8E")
 
     public static final long ONE_KB = 1024;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "39245CBB93EEEA1B7550D6F8D77FF48F", hash_generated_field = "F405DE3E8E5425D1CA46A7DC43E96F37")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "39245CBB93EEEA1B7550D6F8D77FF48F", hash_generated_field = "F405DE3E8E5425D1CA46A7DC43E96F37")
 
     public static final BigInteger ONE_KB_BI = BigInteger.valueOf(ONE_KB);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "0E310369E83FBD080B3BB47B8CC0B2BF", hash_generated_field = "354FDE278DA5035BB13C55F0321932D9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "0E310369E83FBD080B3BB47B8CC0B2BF", hash_generated_field = "354FDE278DA5035BB13C55F0321932D9")
 
     public static final long ONE_MB = ONE_KB * ONE_KB;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "4A3034D3DD04EB7392AA67A4E14F7872", hash_generated_field = "FCFA787511A89BE53D711A0DF34EA6D2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "4A3034D3DD04EB7392AA67A4E14F7872", hash_generated_field = "FCFA787511A89BE53D711A0DF34EA6D2")
 
     public static final BigInteger ONE_MB_BI = ONE_KB_BI.multiply(ONE_KB_BI);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "4DB23945C17C7AD00CCC1041A1039156", hash_generated_field = "383ED46A35FDBB6A80F81CC7C04D4D01")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "4DB23945C17C7AD00CCC1041A1039156", hash_generated_field = "383ED46A35FDBB6A80F81CC7C04D4D01")
 
     private static long FILE_COPY_BUFFER_SIZE = ONE_MB * 30;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "0F436A8AC322C90D8240EB021102A2F5", hash_generated_field = "B3CA6D3671975E3889F13EF4731133E6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "0F436A8AC322C90D8240EB021102A2F5", hash_generated_field = "B3CA6D3671975E3889F13EF4731133E6")
 
     public static final long ONE_GB = ONE_KB * ONE_MB;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "6586069461690F99E21918779CA8D95E", hash_generated_field = "83DA70F1C8B66565689A7C62D7396A8F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "6586069461690F99E21918779CA8D95E", hash_generated_field = "83DA70F1C8B66565689A7C62D7396A8F")
 
     public static final BigInteger ONE_GB_BI = ONE_KB_BI.multiply(ONE_MB_BI);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "790BEE8417BAAACB44BAFFEE47C1CBED", hash_generated_field = "0C88175C5B53C0F5D9849F9C631CFED0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "790BEE8417BAAACB44BAFFEE47C1CBED", hash_generated_field = "0C88175C5B53C0F5D9849F9C631CFED0")
 
     public static final long ONE_TB = ONE_KB * ONE_GB;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "DF540A7F0C9D99F019B42BE8AEEA433E", hash_generated_field = "3823522D0F72DAF1B710461BC24CBB28")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "DF540A7F0C9D99F019B42BE8AEEA433E", hash_generated_field = "3823522D0F72DAF1B710461BC24CBB28")
 
     public static final BigInteger ONE_TB_BI = ONE_KB_BI.multiply(ONE_GB_BI);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "2FF30E56CDB368D1D753E026FA9E62FD", hash_generated_field = "0DFE5EE583D7DC5809F3AA95B22C4E4D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "2FF30E56CDB368D1D753E026FA9E62FD", hash_generated_field = "0DFE5EE583D7DC5809F3AA95B22C4E4D")
 
     public static final long ONE_PB = ONE_KB * ONE_TB;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "24CF32A74B575C5BAFFD5253EB4B1F9F", hash_generated_field = "B03C4998BEFF2DBDDC5AA5902C004125")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "24CF32A74B575C5BAFFD5253EB4B1F9F", hash_generated_field = "B03C4998BEFF2DBDDC5AA5902C004125")
 
     public static final BigInteger ONE_PB_BI = ONE_KB_BI.multiply(ONE_TB_BI);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "1E5246C3B5079502D7970C96A35E7C69", hash_generated_field = "77EDE40E2B944855EA12659068EC689A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "1E5246C3B5079502D7970C96A35E7C69", hash_generated_field = "77EDE40E2B944855EA12659068EC689A")
 
     public static final long ONE_EB = ONE_KB * ONE_PB;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "F7AD453AC2F96EB9BFA75988422F4E3F", hash_generated_field = "51FFF440C7C9DD913A9380310FCF85AB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "F7AD453AC2F96EB9BFA75988422F4E3F", hash_generated_field = "51FFF440C7C9DD913A9380310FCF85AB")
 
     public static final BigInteger ONE_EB_BI = ONE_KB_BI.multiply(ONE_PB_BI);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "69DAA07EEC33D9997965F02D70E427B8", hash_generated_field = "AD7B0E72CB5A54615E4D9293576A33A5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "69DAA07EEC33D9997965F02D70E427B8", hash_generated_field = "AD7B0E72CB5A54615E4D9293576A33A5")
 
     public static final BigInteger ONE_ZB = BigInteger.valueOf(ONE_KB).multiply(BigInteger.valueOf(ONE_EB));
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "2F2ACA45DD135D9E8899DDB66281A1A3", hash_generated_field = "AF6BA7A2C5CEBB9C927DC3FB96A744EF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "2F2ACA45DD135D9E8899DDB66281A1A3", hash_generated_field = "AF6BA7A2C5CEBB9C927DC3FB96A744EF")
 
     public static final BigInteger ONE_YB = ONE_KB_BI.multiply(ONE_ZB);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "4007859B3A1A055189F2EBDF2029B071", hash_generated_field = "B16C7A32CC8CA40E9426F58928BA7D97")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "4007859B3A1A055189F2EBDF2029B071", hash_generated_field = "B16C7A32CC8CA40E9426F58928BA7D97")
 
     public static final File[] EMPTY_FILE_ARRAY = new File[0];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:06.357 -0400", hash_original_field = "D0F4A9EBDD3457AF419B3A8D18010F1D", hash_generated_field = "0CE886DDB1202B23C9B7E65276EA2A26")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:07.461 -0400", hash_original_field = "D0F4A9EBDD3457AF419B3A8D18010F1D", hash_generated_field = "0CE886DDB1202B23C9B7E65276EA2A26")
 
     private static Charset UTF8 = Charset.forName("UTF-8");
 }

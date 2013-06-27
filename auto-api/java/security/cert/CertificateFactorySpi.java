@@ -14,7 +14,7 @@ import java.util.List;
 
 public abstract class CertificateFactorySpi {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.482 -0400", hash_original_method = "5D6CCD92AEFDD2109C84465ED1C78995", hash_generated_method = "C286B4EE0E22EDBF9018054D79D5D19E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.900 -0400", hash_original_method = "5D6CCD92AEFDD2109C84465ED1C78995", hash_generated_method = "C286B4EE0E22EDBF9018054D79D5D19E")
     public  CertificateFactorySpi() {
         // ---------- Original Method ----------
     }
@@ -36,7 +36,7 @@ public abstract class CertificateFactorySpi {
         engineGenerateCRLs(InputStream inStream) throws CRLException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.485 -0400", hash_original_method = "2C4FAAEF9B20A7D507A4295CE3E76AED", hash_generated_method = "7AECBF6EF09BC078E2A1AA9766A90B87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.901 -0400", hash_original_method = "2C4FAAEF9B20A7D507A4295CE3E76AED", hash_generated_method = "7AECBF6EF09BC078E2A1AA9766A90B87")
     public CertPath engineGenerateCertPath(InputStream inStream) throws CertificateException {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(inStream.getTaint());
@@ -45,7 +45,7 @@ public abstract class CertificateFactorySpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.486 -0400", hash_original_method = "CCA28EB94758BBDA1626E2C95F3A6CB6", hash_generated_method = "E14D0EEB041EB363C65634785477D93B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.903 -0400", hash_original_method = "CCA28EB94758BBDA1626E2C95F3A6CB6", hash_generated_method = "E14D0EEB041EB363C65634785477D93B")
     public CertPath engineGenerateCertPath(InputStream inStream, String encoding) throws CertificateException {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(inStream.getTaint());
@@ -55,7 +55,7 @@ public abstract class CertificateFactorySpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.492 -0400", hash_original_method = "3277FA5FC53B837612594B707D8CC5BB", hash_generated_method = "EB4E3374A2FCEFEF7ED4954656743A00")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.919 -0400", hash_original_method = "3277FA5FC53B837612594B707D8CC5BB", hash_generated_method = "EB4E3374A2FCEFEF7ED4954656743A00")
     public CertPath engineGenerateCertPath(List<? extends Certificate>  certificates) throws CertificateException {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(certificates.getTaint());
@@ -64,7 +64,7 @@ public abstract class CertificateFactorySpi {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:47.496 -0400", hash_original_method = "D60EF50967AE5C5FE3CD2559F27951D5", hash_generated_method = "45694A1DEDEDCA206E8BB3F35D96CADE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:46.919 -0400", hash_original_method = "D60EF50967AE5C5FE3CD2559F27951D5", hash_generated_method = "45694A1DEDEDCA206E8BB3F35D96CADE")
     public Iterator<String> engineGetCertPathEncodings() {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         // ---------- Original Method ----------

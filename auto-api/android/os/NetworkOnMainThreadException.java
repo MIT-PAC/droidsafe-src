@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public class NetworkOnMainThreadException extends RuntimeException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:26.592 -0400", hash_original_method = "4FE46DFA14D5AE988BAD6D344644EDBA", hash_generated_method = "4FE46DFA14D5AE988BAD6D344644EDBA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.016 -0400", hash_original_method = "4FE46DFA14D5AE988BAD6D344644EDBA", hash_generated_method = "4FE46DFA14D5AE988BAD6D344644EDBA")
     public NetworkOnMainThreadException ()
     {
         //Synthesized constructor

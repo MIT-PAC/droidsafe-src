@@ -19,7 +19,7 @@ import gov.nist.javax.sip.header.ims.SIPHeaderNamesIms;
 
 public class PrivacyParser extends HeaderParser implements TokenTypes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.803 -0400", hash_original_method = "1B46B2A155C790BA09FFD6B4EE4B1531", hash_generated_method = "C52570F1CB1987207E05DDE691DF8A74")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.720 -0400", hash_original_method = "1B46B2A155C790BA09FFD6B4EE4B1531", hash_generated_method = "C52570F1CB1987207E05DDE691DF8A74")
     public  PrivacyParser(String privacyType) {
         super(privacyType);
         addTaint(privacyType.getTaint());
@@ -27,7 +27,7 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.803 -0400", hash_original_method = "4EC8E3CAF2B7BCDD5010285F1AA3D090", hash_generated_method = "B6191BCF2DD7124A6A14CC9328DDB2C9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.720 -0400", hash_original_method = "4EC8E3CAF2B7BCDD5010285F1AA3D090", hash_generated_method = "B6191BCF2DD7124A6A14CC9328DDB2C9")
     protected  PrivacyParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -35,9 +35,9 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.809 -0400", hash_original_method = "8BE7913EB9359A0AA04D67D7439E50B1", hash_generated_method = "861CB42B9B0B17453AC8DFC72159270C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.722 -0400", hash_original_method = "8BE7913EB9359A0AA04D67D7439E50B1", hash_generated_method = "45E24519D05EDB9D3E8ADB36D05CD75D")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_782435367 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1140967596 = null; //Variable for return #1
         dbg_enter("PrivacyParser.parse");
         PrivacyList privacyList;
         privacyList = new PrivacyList();
@@ -45,7 +45,7 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
         {
             this.headerName(TokenTypes.PRIVACY);
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_1799872528 = (lexer.lookAhead(0) != '\n');
+                boolean varA38820C66B6BCE71087D920E2767FF09_1075620948 = (lexer.lookAhead(0) != '\n');
                 {
                     this.lexer.SPorHT();
                     Privacy privacy;
@@ -58,7 +58,7 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
                     this.lexer.SPorHT();
                     privacyList.add(privacy);
                     {
-                        boolean varE30E2126F5FFE39A0C5A94E8EAEAED66_725754581 = (lexer.lookAhead(0) == ';');
+                        boolean varE30E2126F5FFE39A0C5A94E8EAEAED66_722222453 = (lexer.lookAhead(0) == ';');
                         {
                             this.lexer.match(';');
                             this.lexer.SPorHT();
@@ -72,14 +72,14 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_782435367 = privacyList;
+            varB4EAC82CA7396A68D541C85D26508E83_1140967596 = privacyList;
         } //End block
         finally 
         {
             dbg_leave("PrivacyParser.parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_782435367.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_782435367;
+        varB4EAC82CA7396A68D541C85D26508E83_1140967596.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1140967596;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

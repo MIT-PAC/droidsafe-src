@@ -12,20 +12,20 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 
 public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.305 -0400", hash_original_field = "392A6E47A749448B7E51283719BBB183", hash_generated_field = "7C42762252277BD13653A4A0CE44470E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:04.993 -0400", hash_original_field = "392A6E47A749448B7E51283719BBB183", hash_generated_field = "7C42762252277BD13653A4A0CE44470E")
 
     public int descriptionRes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.305 -0400", hash_original_field = "F132344C9D3F23D988965BDF2FE9E96E", hash_generated_field = "DC8641D3F3115BD1A7EE01A008EB7DE8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:04.993 -0400", hash_original_field = "F132344C9D3F23D988965BDF2FE9E96E", hash_generated_field = "DC8641D3F3115BD1A7EE01A008EB7DE8")
 
     public CharSequence nonLocalizedDescription;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.326 -0400", hash_original_method = "82344B3D2D2745586AE3E2C39F67E56D", hash_generated_method = "C344FD7EBA0ACA0405579BE9BC8FB4E5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:04.993 -0400", hash_original_method = "82344B3D2D2745586AE3E2C39F67E56D", hash_generated_method = "C344FD7EBA0ACA0405579BE9BC8FB4E5")
     public  PermissionGroupInfo() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.327 -0400", hash_original_method = "86BDB0F775205D222755746395606069", hash_generated_method = "9E42539179CB72B7DF3C7D104B792B22")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:05.004 -0400", hash_original_method = "86BDB0F775205D222755746395606069", hash_generated_method = "9E42539179CB72B7DF3C7D104B792B22")
     public  PermissionGroupInfo(PermissionGroupInfo orig) {
         super(orig);
         descriptionRes = orig.descriptionRes;
@@ -36,7 +36,7 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.329 -0400", hash_original_method = "251C6C67446670431867B6BD14427B23", hash_generated_method = "C80CEF62BF9EA33C58DF216289241944")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:05.006 -0400", hash_original_method = "251C6C67446670431867B6BD14427B23", hash_generated_method = "C80CEF62BF9EA33C58DF216289241944")
     private  PermissionGroupInfo(Parcel source) {
         super(source);
         descriptionRes = source.readInt();
@@ -47,37 +47,37 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.348 -0400", hash_original_method = "EA6AC5CC522A2884BAFD1D1CC4525D81", hash_generated_method = "7CD0599ECBB68169510BCE984BF489D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:05.032 -0400", hash_original_method = "EA6AC5CC522A2884BAFD1D1CC4525D81", hash_generated_method = "B86209A5A69B2C573444D5F6E6178081")
     public CharSequence loadDescription(PackageManager pm) {
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1311300321 = null; //Variable for return #1
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_456022474 = null; //Variable for return #2
-        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1332337820 = null; //Variable for return #3
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_945319006 = null; //Variable for return #1
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1032911444 = null; //Variable for return #2
+        CharSequence varB4EAC82CA7396A68D541C85D26508E83_1820198164 = null; //Variable for return #3
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1311300321 = nonLocalizedDescription;
+            varB4EAC82CA7396A68D541C85D26508E83_945319006 = nonLocalizedDescription;
         } //End block
         {
             CharSequence label;
             label = pm.getText(packageName, descriptionRes, null);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_456022474 = label;
+                varB4EAC82CA7396A68D541C85D26508E83_1032911444 = label;
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1332337820 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1820198164 = null;
         addTaint(pm.getTaint());
-        CharSequence varA7E53CE21691AB073D9660D615818899_2020857314; //Final return value
+        CharSequence varA7E53CE21691AB073D9660D615818899_1236756842; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_2020857314 = varB4EAC82CA7396A68D541C85D26508E83_1311300321;
+                varA7E53CE21691AB073D9660D615818899_1236756842 = varB4EAC82CA7396A68D541C85D26508E83_945319006;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_2020857314 = varB4EAC82CA7396A68D541C85D26508E83_456022474;
+                varA7E53CE21691AB073D9660D615818899_1236756842 = varB4EAC82CA7396A68D541C85D26508E83_1032911444;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_2020857314 = varB4EAC82CA7396A68D541C85D26508E83_1332337820;
+                varA7E53CE21691AB073D9660D615818899_1236756842 = varB4EAC82CA7396A68D541C85D26508E83_1820198164;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2020857314.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_2020857314;
+        varA7E53CE21691AB073D9660D615818899_1236756842.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1236756842;
         // ---------- Original Method ----------
         //if (nonLocalizedDescription != null) {
             //return nonLocalizedDescription;
@@ -92,14 +92,14 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.350 -0400", hash_original_method = "712313A7FB39E8068296CCC509012BB3", hash_generated_method = "B82AC0B30D954FBB04C1AE8591BBB483")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:05.033 -0400", hash_original_method = "712313A7FB39E8068296CCC509012BB3", hash_generated_method = "A8306B29A40217482692437DEA805F02")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_2067693488 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_2067693488 = "PermissionGroupInfo{"
+        String varB4EAC82CA7396A68D541C85D26508E83_967926864 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_967926864 = "PermissionGroupInfo{"
             + Integer.toHexString(System.identityHashCode(this))
             + " " + name + "}";
-        varB4EAC82CA7396A68D541C85D26508E83_2067693488.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2067693488;
+        varB4EAC82CA7396A68D541C85D26508E83_967926864.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_967926864;
         // ---------- Original Method ----------
         //return "PermissionGroupInfo{"
             //+ Integer.toHexString(System.identityHashCode(this))
@@ -107,16 +107,16 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.351 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D48D0F1605FFA3AE7CADE76CFDE4474E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:05.047 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "9181051C24CC895CBBF693C8356F262D")
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_713294552 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_713294552;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1070379228 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1070379228;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.356 -0400", hash_original_method = "48DC2E300D4B0399A780C6669617C26B", hash_generated_method = "78475FB280E9FDF2A4BBFEC200A2A74F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:05.049 -0400", hash_original_method = "48DC2E300D4B0399A780C6669617C26B", hash_generated_method = "78475FB280E9FDF2A4BBFEC200A2A74F")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         super.writeToParcel(dest, parcelableFlags);
         dest.writeInt(descriptionRes);
@@ -130,7 +130,7 @@ public class PermissionGroupInfo extends PackageItemInfo implements Parcelable {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:03.372 -0400", hash_original_field = "C5F42F5EC446394F1B5E3897D28E68B6", hash_generated_field = "157E7C3FA4773BF05F9A4ED13A8D2703")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:05.049 -0400", hash_original_field = "C5F42F5EC446394F1B5E3897D28E68B6", hash_generated_field = "157E7C3FA4773BF05F9A4ED13A8D2703")
 
     public static final Creator<PermissionGroupInfo> CREATOR =
             new Creator<PermissionGroupInfo>() {

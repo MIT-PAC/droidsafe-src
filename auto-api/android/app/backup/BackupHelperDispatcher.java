@@ -15,17 +15,17 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class BackupHelperDispatcher {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:55.633 -0400", hash_original_field = "4D8BD795E1A7491500B2A5C4EA157702", hash_generated_field = "087B9083817AA3054FE76BD13CD55CBF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.984 -0400", hash_original_field = "4D8BD795E1A7491500B2A5C4EA157702", hash_generated_field = "087B9083817AA3054FE76BD13CD55CBF")
 
     TreeMap<String,BackupHelper> mHelpers = new TreeMap<String,BackupHelper>();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:55.634 -0400", hash_original_method = "85B87DA3FD92CDAA8B7FFA5F20C0A756", hash_generated_method = "AF1A5159B4C616692A2600B7B383730D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.985 -0400", hash_original_method = "85B87DA3FD92CDAA8B7FFA5F20C0A756", hash_generated_method = "AF1A5159B4C616692A2600B7B383730D")
     public  BackupHelperDispatcher() {
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:55.635 -0400", hash_original_method = "A8E840254EBF3392B798809BE9F9086F", hash_generated_method = "7B83DF092E62F8C626E9B0E2446ED0B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:56.996 -0400", hash_original_method = "A8E840254EBF3392B798809BE9F9086F", hash_generated_method = "7B83DF092E62F8C626E9B0E2446ED0B9")
     public void addHelper(String keyPrefix, BackupHelper helper) {
         mHelpers.put(keyPrefix, helper);
         addTaint(keyPrefix.getTaint());
@@ -35,7 +35,7 @@ public class BackupHelperDispatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:55.904 -0400", hash_original_method = "B596D5B1B749A849E47ABD34415972F7", hash_generated_method = "0801BA4DBAB4F3E7EF0DEAC084298591")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.223 -0400", hash_original_method = "B596D5B1B749A849E47ABD34415972F7", hash_generated_method = "64259D81CE55CAACF18FDC4E796A5093")
     public void performBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
              ParcelFileDescriptor newState) throws IOException {
         int err;
@@ -50,7 +50,7 @@ public class BackupHelperDispatcher {
         {
             oldStateFD = oldState.getFileDescriptor();
             {
-                boolean var6A636B5AEF3C8A8E30DD984F443C1E5D_1723093336 = ((err = readHeader_native(header, oldStateFD)) >= 0);
+                boolean var6A636B5AEF3C8A8E30DD984F443C1E5D_1765147764 = ((err = readHeader_native(header, oldStateFD)) >= 0);
                 {
                     {
                         BackupHelper helper;
@@ -68,9 +68,9 @@ public class BackupHelperDispatcher {
             } //End collapsed parenthetic
         } //End block
         {
-            Iterator<Map.Entry<String,BackupHelper>> var0B59813E1691BC5DECEA622019E15EDD_1744276189 = (helpers.entrySet()).iterator();
-            var0B59813E1691BC5DECEA622019E15EDD_1744276189.hasNext();
-            Map.Entry<String,BackupHelper> entry = var0B59813E1691BC5DECEA622019E15EDD_1744276189.next();
+            Iterator<Map.Entry<String,BackupHelper>> var0B59813E1691BC5DECEA622019E15EDD_455564480 = (helpers.entrySet()).iterator();
+            var0B59813E1691BC5DECEA622019E15EDD_455564480.hasNext();
+            Map.Entry<String,BackupHelper> entry = var0B59813E1691BC5DECEA622019E15EDD_455564480.next();
             {
                 header.keyPrefix = entry.getKey();
                 Log.d(TAG, "handling new helper '" + header.keyPrefix + "'");
@@ -87,7 +87,7 @@ public class BackupHelperDispatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:55.924 -0400", hash_original_method = "B20B211F99695DC29EC53BF566272BED", hash_generated_method = "9B2DD09D1F46E3F27A7434431C02BDEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.245 -0400", hash_original_method = "B20B211F99695DC29EC53BF566272BED", hash_generated_method = "9B2DD09D1F46E3F27A7434431C02BDEC")
     private void doOneBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
             ParcelFileDescriptor newState, Header header, BackupHelper helper) throws IOException {
         int err;
@@ -125,7 +125,7 @@ public class BackupHelperDispatcher {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.362 -0400", hash_original_method = "5D2E23956580E2A3306D4050F8218E29", hash_generated_method = "703BD160DE2F50BDD1C3B8C1060EA007")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.475 -0400", hash_original_method = "5D2E23956580E2A3306D4050F8218E29", hash_generated_method = "B02AFC5FA2FF78FE07D8357D61BBF8CF")
     public void performRestore(BackupDataInput input, int appVersionCode,
             ParcelFileDescriptor newState) throws IOException {
         boolean alreadyComplained;
@@ -133,7 +133,7 @@ public class BackupHelperDispatcher {
         BackupDataInputStream stream;
         stream = new BackupDataInputStream(input);
         {
-            boolean varB2EEE1D51C4B54A685FC1C06A688C48D_1582078527 = (input.readNextHeader());
+            boolean varB2EEE1D51C4B54A685FC1C06A688C48D_595233954 = (input.readNextHeader());
             {
                 String rawKey;
                 rawKey = input.getKey();
@@ -164,9 +164,9 @@ public class BackupHelperDispatcher {
             } //End block
         } //End collapsed parenthetic
         {
-            Iterator<BackupHelper> varD91491A680A3BCA4793E5DC911971BC9_1015811083 = (mHelpers.values()).iterator();
-            varD91491A680A3BCA4793E5DC911971BC9_1015811083.hasNext();
-            BackupHelper helper = varD91491A680A3BCA4793E5DC911971BC9_1015811083.next();
+            Iterator<BackupHelper> varD91491A680A3BCA4793E5DC911971BC9_1355209593 = (mHelpers.values()).iterator();
+            varD91491A680A3BCA4793E5DC911971BC9_1355209593.hasNext();
+            BackupHelper helper = varD91491A680A3BCA4793E5DC911971BC9_1355209593.next();
             {
                 helper.writeNewStateDescription(newState);
             } //End block
@@ -200,14 +200,14 @@ public class BackupHelperDispatcher {
 
     
     private static class Header {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.375 -0400", hash_original_field = "00255DCB7E7FE62F3DD8ED38644CC3EE", hash_generated_field = "8D4654446C9DD3E766BE07B4267F3234")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.483 -0400", hash_original_field = "00255DCB7E7FE62F3DD8ED38644CC3EE", hash_generated_field = "8D4654446C9DD3E766BE07B4267F3234")
 
         int chunkSize;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.379 -0400", hash_original_field = "061552BCB5DC79075A2C9D6092A18D63", hash_generated_field = "A9486E3C3418813783566D03E4768EE1")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.498 -0400", hash_original_field = "061552BCB5DC79075A2C9D6092A18D63", hash_generated_field = "A9486E3C3418813783566D03E4768EE1")
 
         String keyPrefix;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.383 -0400", hash_original_method = "7DC9F4B0B6F0B6B866C998FD2825EB34", hash_generated_method = "7DC9F4B0B6F0B6B866C998FD2825EB34")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.499 -0400", hash_original_method = "7DC9F4B0B6F0B6B866C998FD2825EB34", hash_generated_method = "7DC9F4B0B6F0B6B866C998FD2825EB34")
         public Header ()
         {
             //Synthesized constructor
@@ -218,7 +218,7 @@ public class BackupHelperDispatcher {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:56.383 -0400", hash_original_field = "D8CE60F5D7395BB05B4D07D8557ECD02", hash_generated_field = "9D13CAD8E1A058D086F5FED151264AA4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.499 -0400", hash_original_field = "D8CE60F5D7395BB05B4D07D8557ECD02", hash_generated_field = "9D13CAD8E1A058D086F5FED151264AA4")
 
     private static String TAG = "BackupHelperDispatcher";
 }

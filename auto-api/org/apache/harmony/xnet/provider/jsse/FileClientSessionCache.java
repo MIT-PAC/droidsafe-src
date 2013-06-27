@@ -25,7 +25,7 @@ import libcore.io.IoUtils;
 
 public class FileClientSessionCache {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.040 -0400", hash_original_method = "EB2573B5E8F417FAB0EF293234CCCD0D", hash_generated_method = "828492362A3CD17C2E63D720E59E71D4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.938 -0400", hash_original_method = "EB2573B5E8F417FAB0EF293234CCCD0D", hash_generated_method = "828492362A3CD17C2E63D720E59E71D4")
     private  FileClientSessionCache() {
         // ---------- Original Method ----------
     }
@@ -48,25 +48,25 @@ public class FileClientSessionCache {
 
     
     static class Impl implements SSLClientSessionCache {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.047 -0400", hash_original_field = "5F8F22B8CDBAEEE8CF857673A9B6BA20", hash_generated_field = "FAF68CC60E35257A66D284E0CBAD8965")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.967 -0400", hash_original_field = "5F8F22B8CDBAEEE8CF857673A9B6BA20", hash_generated_field = "FAF68CC60E35257A66D284E0CBAD8965")
 
         File directory;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.047 -0400", hash_original_field = "E15323109448CCC034C48D49F5C88039", hash_generated_field = "70BE4BEA17B6A634AB67825F984FA451")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.967 -0400", hash_original_field = "E15323109448CCC034C48D49F5C88039", hash_generated_field = "70BE4BEA17B6A634AB67825F984FA451")
 
         Map<String, File> accessOrder = newAccessOrder();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.047 -0400", hash_original_field = "F7BD60B75B29D79B660A2859395C1A24", hash_generated_field = "673BDAEBF4FBC900963E210E042549D6")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.967 -0400", hash_original_field = "F7BD60B75B29D79B660A2859395C1A24", hash_generated_field = "673BDAEBF4FBC900963E210E042549D6")
 
         int size;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.047 -0400", hash_original_field = "51CCA2A324929C6DF681D0AB86E41ED8", hash_generated_field = "0D96909FBFD5140BBB4470806FA63A38")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.967 -0400", hash_original_field = "51CCA2A324929C6DF681D0AB86E41ED8", hash_generated_field = "0D96909FBFD5140BBB4470806FA63A38")
 
         String[] initialFiles;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.047 -0400", hash_original_method = "666C086AB9DBFD99FFC100F4BBE01D6D", hash_generated_method = "08E84F557F7D8911106D5BBE5161DB37")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.967 -0400", hash_original_method = "666C086AB9DBFD99FFC100F4BBE01D6D", hash_generated_method = "DC91ECA5D3DEC3E866AE30728DE6ABCF")
           Impl(File directory) throws IOException {
             boolean exists;
             exists = directory.exists();
             {
-                boolean var73C4E23BD2650D97D73D42200156D21F_133291232 = (exists && !directory.isDirectory());
+                boolean var73C4E23BD2650D97D73D42200156D21F_855919274 = (exists && !directory.isDirectory());
                 {
                     if (DroidSafeAndroidRuntime.control) throw new IOException(directory + " exists but is not a directory.");
                 } //End block
@@ -81,7 +81,7 @@ public class FileClientSessionCache {
             } //End block
             {
                 {
-                    boolean var2324C192F1E4F75429015A88EB6318D9_1830988083 = (!directory.mkdirs());
+                    boolean var2324C192F1E4F75429015A88EB6318D9_1304770043 = (!directory.mkdirs());
                     {
                         if (DroidSafeAndroidRuntime.control) throw new IOException("Creation of " + directory + " directory failed.");
                     } //End block
@@ -108,7 +108,7 @@ public class FileClientSessionCache {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.060 -0400", hash_original_method = "6735B81487DB1A41BA0188585FC9CDB0", hash_generated_method = "B52C47B718B0E2FE715D55401962E2AD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.973 -0400", hash_original_method = "6735B81487DB1A41BA0188585FC9CDB0", hash_generated_method = "478F6E834E180DABCB129284325119ED")
         public synchronized byte[] getSessionData(String host, int port) {
             String name;
             name = fileName(host, port);
@@ -116,7 +116,7 @@ public class FileClientSessionCache {
             file = accessOrder.get(name);
             {
                 {
-                    boolean var2DF810EE573D64C563CF5A897E317302_196653041 = (Arrays.binarySearch(initialFiles, name) < 0);
+                    boolean var2DF810EE573D64C563CF5A897E317302_1789321980 = (Arrays.binarySearch(initialFiles, name) < 0);
                 } //End collapsed parenthetic
                 file = new File(directory, name);
                 accessOrder.put(name, file);
@@ -148,8 +148,8 @@ public class FileClientSessionCache {
             } //End block
             addTaint(host.getTaint());
             addTaint(port);
-            byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_473600167 = {getTaintByte()};
-            return var2F9C81BC6E497382285CD6B7A7E33DE1_473600167;
+            byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1304717741 = {getTaintByte()};
+            return var2F9C81BC6E497382285CD6B7A7E33DE1_1304717741;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
@@ -160,7 +160,7 @@ public class FileClientSessionCache {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.061 -0400", hash_original_method = "5132AE8CDA034691D0864F8896105224", hash_generated_method = "93F76DEDF6620849F00396E2DE82FDDA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.984 -0400", hash_original_method = "5132AE8CDA034691D0864F8896105224", hash_generated_method = "93F76DEDF6620849F00396E2DE82FDDA")
         public synchronized void putSessionData(SSLSession session,
                 byte[] sessionData) {
             String host;
@@ -227,7 +227,7 @@ public class FileClientSessionCache {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.061 -0400", hash_original_method = "FF4C7212103FFBD9D2780D404E5A05FB", hash_generated_method = "4DBEB23312EF2D9255139F3043D1DE06")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:12.999 -0400", hash_original_method = "FF4C7212103FFBD9D2780D404E5A05FB", hash_generated_method = "4DBEB23312EF2D9255139F3043D1DE06")
         private void makeRoom() {
             indexFiles();
             int removals;
@@ -252,7 +252,7 @@ public class FileClientSessionCache {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.104 -0400", hash_original_method = "F581C713CF99D0BA42CA770E334518CE", hash_generated_method = "41F67CF12379DF3A5B88D675856F32CF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.021 -0400", hash_original_method = "F581C713CF99D0BA42CA770E334518CE", hash_generated_method = "98864C7C27E159B3F61CD5E69804E19A")
         private void indexFiles() {
             String[] initialFiles;
             initialFiles = this.initialFiles;
@@ -264,7 +264,7 @@ public class FileClientSessionCache {
                     String name = initialFiles[0];
                     {
                         {
-                            boolean var5E8117B16347BFDDCD9CD10B568DF592_1008784058 = (!accessOrder.containsKey(name));
+                            boolean var5E8117B16347BFDDCD9CD10B568DF592_90094546 = (!accessOrder.containsKey(name));
                             {
                                 diskOnly.add(new CacheFile(directory, name));
                             } //End block
@@ -272,14 +272,14 @@ public class FileClientSessionCache {
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean varEA32EBD94358505B87B79D39083CDBCC_1270001982 = (!diskOnly.isEmpty());
+                    boolean varEA32EBD94358505B87B79D39083CDBCC_1919009314 = (!diskOnly.isEmpty());
                     {
                         Map<String, File> newOrder;
                         newOrder = newAccessOrder();
                         {
-                            Iterator<CacheFile> varE81EBE9AA5DA88EBDD7EA73A78CB2D37_1555772477 = (diskOnly).iterator();
-                            varE81EBE9AA5DA88EBDD7EA73A78CB2D37_1555772477.hasNext();
-                            CacheFile cacheFile = varE81EBE9AA5DA88EBDD7EA73A78CB2D37_1555772477.next();
+                            Iterator<CacheFile> varE81EBE9AA5DA88EBDD7EA73A78CB2D37_1802494305 = (diskOnly).iterator();
+                            varE81EBE9AA5DA88EBDD7EA73A78CB2D37_1802494305.hasNext();
+                            CacheFile cacheFile = varE81EBE9AA5DA88EBDD7EA73A78CB2D37_1802494305.next();
                             {
                                 newOrder.put(cacheFile.name, cacheFile);
                             } //End block
@@ -294,11 +294,11 @@ public class FileClientSessionCache {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.105 -0400", hash_original_method = "DB4D1632DEDA59F34618884D114D9227", hash_generated_method = "D71CB08684FD96C6C767D57E4F3605A3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.023 -0400", hash_original_method = "DB4D1632DEDA59F34618884D114D9227", hash_generated_method = "D5D48A4F56512A04CA320ECBD5C3A362")
         @SuppressWarnings("ThrowableInstanceNeverThrown")
         private void delete(File file) {
             {
-                boolean var8E645B401E2BCD688DAA316F70EFD21B_2081360569 = (!file.delete());
+                boolean var8E645B401E2BCD688DAA316F70EFD21B_973430476 = (!file.delete());
                 {
                     System.logW("Failed to delete " + file + ".", new IOException());
                 } //End block
@@ -322,14 +322,14 @@ public class FileClientSessionCache {
 
     
     static class CacheFile extends File {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.105 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "BF45F7481B8091DE3CBF80E94F7F940B")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.027 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "BF45F7481B8091DE3CBF80E94F7F940B")
 
         String name;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.105 -0400", hash_original_field = "1E65905B55C5FDFCEDE87E2147EF83D4", hash_generated_field = "C57F295716CFF89C00CC3061FA79AC83")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.027 -0400", hash_original_field = "1E65905B55C5FDFCEDE87E2147EF83D4", hash_generated_field = "C57F295716CFF89C00CC3061FA79AC83")
 
         long lastModified = -1;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.106 -0400", hash_original_method = "2568A503B31BE5D3BE6A0CE416CE2454", hash_generated_method = "ED6CF5E11786ED0C87045B1E7DFDB32E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.030 -0400", hash_original_method = "2568A503B31BE5D3BE6A0CE416CE2454", hash_generated_method = "ED6CF5E11786ED0C87045B1E7DFDB32E")
           CacheFile(File dir, String name) {
             super(dir, name);
             this.name = name;
@@ -339,7 +339,7 @@ public class FileClientSessionCache {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.106 -0400", hash_original_method = "3C0BB5E42CA61BE7C548B702B5AC04C2", hash_generated_method = "F22391E3772B79EC6587CD4F30D22117")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.031 -0400", hash_original_method = "3C0BB5E42CA61BE7C548B702B5AC04C2", hash_generated_method = "A7A05419D28FACC6EBE3D227E3178BD5")
         @Override
         public long lastModified() {
             long lastModified;
@@ -347,8 +347,8 @@ public class FileClientSessionCache {
             {
                 lastModified = this.lastModified = super.lastModified();
             } //End block
-            long var0F5264038205EDFB1AC05FBB0E8C5E94_475613208 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_475613208;
+            long var0F5264038205EDFB1AC05FBB0E8C5E94_1990651652 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_1990651652;
             // ---------- Original Method ----------
             //long lastModified = this.lastModified;
             //if (lastModified == -1) {
@@ -358,17 +358,17 @@ public class FileClientSessionCache {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.106 -0400", hash_original_method = "D50DE30B99FDC8E45DF3D781BD6CEC46", hash_generated_method = "1B10F4DFB4D3EA73A9FFC22015AA87F6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.032 -0400", hash_original_method = "D50DE30B99FDC8E45DF3D781BD6CEC46", hash_generated_method = "1238A9BFBD7A5534B3E5778E219ACA8D")
         @Override
         public int compareTo(File another) {
             long result;
             result = lastModified() - another.lastModified();
             {
-                int varC3D5FFF0272B837F0C4D18E324DDD548_363676019 = (super.compareTo(another));
+                int varC3D5FFF0272B837F0C4D18E324DDD548_837167110 = (super.compareTo(another));
             } //End block
             addTaint(another.getTaint());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_322223425 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_322223425;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216007646 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216007646;
             // ---------- Original Method ----------
             //long result = lastModified() - another.lastModified();
             //if (result == 0) {
@@ -382,10 +382,10 @@ public class FileClientSessionCache {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.106 -0400", hash_original_field = "8BFAA797717AD5B2AFB838BCEE45D4AC", hash_generated_field = "7AE276D1B1BAA9C4B56D319F3FED4FD0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.032 -0400", hash_original_field = "8BFAA797717AD5B2AFB838BCEE45D4AC", hash_generated_field = "7AE276D1B1BAA9C4B56D319F3FED4FD0")
 
     public static final int MAX_SIZE = 12;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:12.106 -0400", hash_original_field = "31316EB4685E561416C6D827CB9AE60C", hash_generated_field = "F915975B29834E0D95D457416C281D85")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:13.036 -0400", hash_original_field = "31316EB4685E561416C6D827CB9AE60C", hash_generated_field = "F915975B29834E0D95D457416C281D85")
 
     static Map<File, FileClientSessionCache.Impl> caches = new HashMap<File, FileClientSessionCache.Impl>();
 }

@@ -14,7 +14,7 @@ import java.util.Map;
 
 public final class ServiceManager {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.219 -0400", hash_original_method = "C0ECF0E19363472551754760850E1958", hash_generated_method = "C0ECF0E19363472551754760850E1958")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.485 -0400", hash_original_method = "C0ECF0E19363472551754760850E1958", hash_generated_method = "C0ECF0E19363472551754760850E1958")
     public ServiceManager ()
     {
         //Synthesized constructor
@@ -87,13 +87,13 @@ public final class ServiceManager {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.239 -0400", hash_original_field = "21B1BB14D1BF9F027E0FD038B5D9606A", hash_generated_field = "A3DFF26F3A3E2F52B0F8EA516A6F6DD9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.498 -0400", hash_original_field = "21B1BB14D1BF9F027E0FD038B5D9606A", hash_generated_field = "A3DFF26F3A3E2F52B0F8EA516A6F6DD9")
 
     private static String TAG = "ServiceManager";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.239 -0400", hash_original_field = "692B2024B43FC26291FC4A38CE60DC6E", hash_generated_field = "3BB7F9DC69203897D3C71ABD26F66EDE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.498 -0400", hash_original_field = "692B2024B43FC26291FC4A38CE60DC6E", hash_generated_field = "3BB7F9DC69203897D3C71ABD26F66EDE")
 
     private static IServiceManager sServiceManager;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:27.239 -0400", hash_original_field = "E77ABE56B1746B96F7CDEB0B4280718F", hash_generated_field = "6C748830FB2F6F43238FB57437EDD7E8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:28.498 -0400", hash_original_field = "E77ABE56B1746B96F7CDEB0B4280718F", hash_generated_field = "6C748830FB2F6F43238FB57437EDD7E8")
 
     private static HashMap<String, IBinder> sCache = new HashMap<String, IBinder>();
 }

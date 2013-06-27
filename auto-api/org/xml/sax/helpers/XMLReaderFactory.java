@@ -16,7 +16,7 @@ import org.xml.sax.XMLReader;
 
 final public class XMLReaderFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.402 -0400", hash_original_method = "8D0EAA86B78920589D202D1252E83CCD", hash_generated_method = "B01B84B33B0F242545E564D5500CACD5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:23.284 -0400", hash_original_method = "8D0EAA86B78920589D202D1252E83CCD", hash_generated_method = "B01B84B33B0F242545E564D5500CACD5")
     private  XMLReaderFactory() {
         // ---------- Original Method ----------
     }
@@ -82,7 +82,7 @@ final public class XMLReaderFactory {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:22.403 -0400", hash_original_field = "A9E1BFE5D4796BA4F422ABAD85F1E5EE", hash_generated_field = "B307478EE1B1A000CBEEAC21A6451C8C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:23.285 -0400", hash_original_field = "A9E1BFE5D4796BA4F422ABAD85F1E5EE", hash_generated_field = "B307478EE1B1A000CBEEAC21A6451C8C")
 
     private static String property = "org.xml.sax.driver";
 }

@@ -17,7 +17,7 @@ import java.io.InputStream;
 
 class JniUtil {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.013 -0400", hash_original_method = "7797423382E6C41F3BC6877796CBF278", hash_generated_method = "7AE97D3B4E9D45C2A019FC4E29ED6E30")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.841 -0400", hash_original_method = "7797423382E6C41F3BC6877796CBF278", hash_generated_method = "7AE97D3B4E9D45C2A019FC4E29ED6E30")
     private  JniUtil() {
         // ---------- Original Method ----------
     }
@@ -151,22 +151,22 @@ class JniUtil {
         System.loadLibrary("chromium_net");
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.033 -0400", hash_original_field = "9722F24E24D81405093C0E61AAF58518", hash_generated_field = "E56CE2F3E60B73E43C117C0293F7827E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.857 -0400", hash_original_field = "9722F24E24D81405093C0E61AAF58518", hash_generated_field = "E56CE2F3E60B73E43C117C0293F7827E")
 
     private static String LOGTAG = "webkit";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.033 -0400", hash_original_field = "9F41E2A2111E17B86E8301697492E815", hash_generated_field = "A4A53CA8C28F62D26FE2409BADC0B526")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.857 -0400", hash_original_field = "9F41E2A2111E17B86E8301697492E815", hash_generated_field = "A4A53CA8C28F62D26FE2409BADC0B526")
 
     private static String sDatabaseDirectory;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.033 -0400", hash_original_field = "11D1C8A26F33DBA2AEB52B140094ED4A", hash_generated_field = "AF7392F9E0B86779E1955C31E6B8D8D2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.857 -0400", hash_original_field = "11D1C8A26F33DBA2AEB52B140094ED4A", hash_generated_field = "AF7392F9E0B86779E1955C31E6B8D8D2")
 
     private static String sCacheDirectory;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.033 -0400", hash_original_field = "7AAC7F2579E0B191B09759E6D211DECB", hash_generated_field = "075B7A0020C230CE0B114CFAF022DB3C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.857 -0400", hash_original_field = "7AAC7F2579E0B191B09759E6D211DECB", hash_generated_field = "075B7A0020C230CE0B114CFAF022DB3C")
 
     private static Boolean sUseChromiumHttpStack;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.034 -0400", hash_original_field = "85E80EF1450B10017E4C79B6BDDE7990", hash_generated_field = "BB35128711B5DD286691A47454B04C39")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.857 -0400", hash_original_field = "85E80EF1450B10017E4C79B6BDDE7990", hash_generated_field = "BB35128711B5DD286691A47454B04C39")
 
     private static Context sContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:59.034 -0400", hash_original_field = "B950BCE07884C5BEABDBDD558FFA0C5E", hash_generated_field = "AAFC02DCCB9EF7E5F2B9389406988F2B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:00.857 -0400", hash_original_field = "B950BCE07884C5BEABDBDD558FFA0C5E", hash_generated_field = "AAFC02DCCB9EF7E5F2B9389406988F2B")
 
     private static String ANDROID_CONTENT = "content:";
 }

@@ -11,11 +11,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public abstract class AbsSavedState implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.728 -0400", hash_original_field = "E79BC38E7D1FDBAAEC758443D630638F", hash_generated_field = "EEFC201B63925E4659FF4A1C55B1892F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.483 -0400", hash_original_field = "E79BC38E7D1FDBAAEC758443D630638F", hash_generated_field = "EEFC201B63925E4659FF4A1C55B1892F")
 
     private Parcelable mSuperState;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.729 -0400", hash_original_method = "98DB61DECD5C8032FFDEFFDBC7A07300", hash_generated_method = "DDE4E11A79D0DBE3ACE7A957674D3B72")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.493 -0400", hash_original_method = "98DB61DECD5C8032FFDEFFDBC7A07300", hash_generated_method = "DDE4E11A79D0DBE3ACE7A957674D3B72")
     private  AbsSavedState() {
         mSuperState = null;
         // ---------- Original Method ----------
@@ -23,7 +23,7 @@ public abstract class AbsSavedState implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.730 -0400", hash_original_method = "D4C1FB84674D7B9566A2C16E0F6CE527", hash_generated_method = "BADC7F5D8A2E07C5A8D8049522509A87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.493 -0400", hash_original_method = "D4C1FB84674D7B9566A2C16E0F6CE527", hash_generated_method = "BADC7F5D8A2E07C5A8D8049522509A87")
     protected  AbsSavedState(Parcelable superState) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("superState must not be null");
@@ -37,7 +37,7 @@ public abstract class AbsSavedState implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.730 -0400", hash_original_method = "36C68CF6BE081F45C28577588985103D", hash_generated_method = "08C93FEF2DCA027BCC51D3E65E94E7C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.494 -0400", hash_original_method = "36C68CF6BE081F45C28577588985103D", hash_generated_method = "08C93FEF2DCA027BCC51D3E65E94E7C7")
     protected  AbsSavedState(Parcel source) {
         Parcelable superState;
         superState = source.readParcelable(null);
@@ -49,27 +49,27 @@ public abstract class AbsSavedState implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.736 -0400", hash_original_method = "D1776F094204A2E68E2669C5D33A32E2", hash_generated_method = "C64827184318EF81A17E8C8EC9FB8AF3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.494 -0400", hash_original_method = "D1776F094204A2E68E2669C5D33A32E2", hash_generated_method = "E56CE7CEF1D4F54E72D4D49493175416")
     final public Parcelable getSuperState() {
-        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1100451698 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1100451698 = mSuperState;
-        varB4EAC82CA7396A68D541C85D26508E83_1100451698.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1100451698;
+        Parcelable varB4EAC82CA7396A68D541C85D26508E83_1234108270 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1234108270 = mSuperState;
+        varB4EAC82CA7396A68D541C85D26508E83_1234108270.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1234108270;
         // ---------- Original Method ----------
         //return mSuperState;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.738 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A26C34C8C78C26CF87D76299C7340901")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.495 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E73918C266C1E02AD36217E2458DB04C")
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1082915445 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1082915445;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_643508694 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_643508694;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.742 -0400", hash_original_method = "49F04AE9062C121AE76FFD8C13AF6818", hash_generated_method = "C38593A2809611A9A3F197A8BF2F840F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.506 -0400", hash_original_method = "49F04AE9062C121AE76FFD8C13AF6818", hash_generated_method = "C38593A2809611A9A3F197A8BF2F840F")
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeParcelable(mSuperState, flags);
         addTaint(dest.getTaint());
@@ -79,10 +79,10 @@ public abstract class AbsSavedState implements Parcelable {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.750 -0400", hash_original_field = "FDCEAE119BFC77E27CAD4C13F477CCAC", hash_generated_field = "23C63B06C45486E5E57AC4257D5F33FA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.506 -0400", hash_original_field = "FDCEAE119BFC77E27CAD4C13F477CCAC", hash_generated_field = "23C63B06C45486E5E57AC4257D5F33FA")
 
     public static final AbsSavedState EMPTY_STATE = new AbsSavedState() {};
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.750 -0400", hash_original_field = "D1A0D03493186A39A161E69FA2FF0334", hash_generated_field = "0833D3C2081B6D0D13E6946E8CE853EE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.506 -0400", hash_original_field = "D1A0D03493186A39A161E69FA2FF0334", hash_generated_field = "0833D3C2081B6D0D13E6946E8CE853EE")
 
     public static final Parcelable.Creator<AbsSavedState> CREATOR 
         = new Parcelable.Creator<AbsSavedState>() {

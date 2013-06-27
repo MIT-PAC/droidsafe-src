@@ -19,7 +19,7 @@ import dalvik.system.Zygote;
 
 public class WrapperInit {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.594 -0400", hash_original_method = "14AE6538EB86DCD6EBFC0019A87B65D0", hash_generated_method = "F137D9F0016E8D63FEB9D79F37359A64")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.102 -0400", hash_original_method = "14AE6538EB86DCD6EBFC0019A87B65D0", hash_generated_method = "F137D9F0016E8D63FEB9D79F37359A64")
     private  WrapperInit() {
         // ---------- Original Method ----------
     }
@@ -76,7 +76,7 @@ public class WrapperInit {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:12.595 -0400", hash_original_field = "F88265C21754A18C5BC383814994D78A", hash_generated_field = "5EE5B1AF8151F27122B430818DCB5757")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:14.103 -0400", hash_original_field = "F88265C21754A18C5BC383814994D78A", hash_generated_field = "5EE5B1AF8151F27122B430818DCB5757")
 
     private static String TAG = "AndroidRuntime";
 }

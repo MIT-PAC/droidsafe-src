@@ -9,11 +9,11 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public final class StringPool {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.171 -0400", hash_original_field = "AABD10263E22750AD811AC54BA397F4A", hash_generated_field = "9E238A2B2FB43A4C99839A417CC4C2E3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.765 -0400", hash_original_field = "AABD10263E22750AD811AC54BA397F4A", hash_generated_field = "9E238A2B2FB43A4C99839A417CC4C2E3")
 
     private String[] pool = new String[512];
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.171 -0400", hash_original_method = "47E61A2F931E9ECD5F1435DEB562B68F", hash_generated_method = "47E61A2F931E9ECD5F1435DEB562B68F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.765 -0400", hash_original_method = "47E61A2F931E9ECD5F1435DEB562B68F", hash_generated_method = "47E61A2F931E9ECD5F1435DEB562B68F")
     public StringPool ()
     {
         //Synthesized constructor
@@ -33,10 +33,10 @@ public final class StringPool {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:02.192 -0400", hash_original_method = "84455256120C340B9F8A0E1FDB3B796B", hash_generated_method = "D7FFE95177F9E12A35600DC08FB34728")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.767 -0400", hash_original_method = "84455256120C340B9F8A0E1FDB3B796B", hash_generated_method = "2A232C25C079C515BED12CD5475214CD")
     public String get(char[] array, int start, int length) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1235643770 = null; //Variable for return #1
-        String varB4EAC82CA7396A68D541C85D26508E83_1106798414 = null; //Variable for return #2
+        String varB4EAC82CA7396A68D541C85D26508E83_1971452479 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1420014474 = null; //Variable for return #2
         int hashCode;
         hashCode = 0;
         {
@@ -53,29 +53,29 @@ public final class StringPool {
         String pooled;
         pooled = pool[index];
         {
-            boolean var0E29A3BBD67CCC228CA6E68E863F0F24_947133529 = (pooled != null && contentEquals(pooled, array, start, length));
+            boolean var0E29A3BBD67CCC228CA6E68E863F0F24_2008685405 = (pooled != null && contentEquals(pooled, array, start, length));
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1235643770 = pooled;
+                varB4EAC82CA7396A68D541C85D26508E83_1971452479 = pooled;
             } //End block
         } //End collapsed parenthetic
         String result;
         result = new String(array, start, length);
         pool[index] = result;
-        varB4EAC82CA7396A68D541C85D26508E83_1106798414 = result;
+        varB4EAC82CA7396A68D541C85D26508E83_1420014474 = result;
         addTaint(array[0]);
         addTaint(start);
         addTaint(length);
-        String varA7E53CE21691AB073D9660D615818899_1062847037; //Final return value
+        String varA7E53CE21691AB073D9660D615818899_392523942; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1062847037 = varB4EAC82CA7396A68D541C85D26508E83_1235643770;
+                varA7E53CE21691AB073D9660D615818899_392523942 = varB4EAC82CA7396A68D541C85D26508E83_1971452479;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1062847037 = varB4EAC82CA7396A68D541C85D26508E83_1106798414;
+                varA7E53CE21691AB073D9660D615818899_392523942 = varB4EAC82CA7396A68D541C85D26508E83_1420014474;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1062847037.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1062847037;
+        varA7E53CE21691AB073D9660D615818899_392523942.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_392523942;
         // ---------- Original Method ----------
         //int hashCode = 0;
         //for (int i = start; i < start + length; i++) {

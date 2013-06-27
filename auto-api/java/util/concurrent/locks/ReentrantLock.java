@@ -12,11 +12,11 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 
 public class ReentrantLock implements Lock, java.io.Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.217 -0400", hash_original_field = "63AD9D34F3503826E5F649AE6B7AC92C", hash_generated_field = "A4B34EF3CE38520839B34A2F06599243")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.187 -0400", hash_original_field = "63AD9D34F3503826E5F649AE6B7AC92C", hash_generated_field = "A4B34EF3CE38520839B34A2F06599243")
 
     private Sync sync;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.218 -0400", hash_original_method = "CAF4BD8277F97E8E8A833F3DA738B0B2", hash_generated_method = "D575B8316542FC333CB3BC5C812414AD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.188 -0400", hash_original_method = "CAF4BD8277F97E8E8A833F3DA738B0B2", hash_generated_method = "D575B8316542FC333CB3BC5C812414AD")
     public  ReentrantLock() {
         sync = new NonfairSync();
         // ---------- Original Method ----------
@@ -24,7 +24,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.218 -0400", hash_original_method = "D5E979A18BF9FB96236498521D2048B7", hash_generated_method = "A41781E53E248156CFB216376FFDC140")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.188 -0400", hash_original_method = "D5E979A18BF9FB96236498521D2048B7", hash_generated_method = "A41781E53E248156CFB216376FFDC140")
     public  ReentrantLock(boolean fair) {
         sync = fair ? new FairSync() : new NonfairSync();
         // ---------- Original Method ----------
@@ -32,7 +32,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.219 -0400", hash_original_method = "97675D396F33E00D31856AF34DD1ED6B", hash_generated_method = "F69D427B4A2E72BA43563F8DEC741F82")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.189 -0400", hash_original_method = "97675D396F33E00D31856AF34DD1ED6B", hash_generated_method = "F69D427B4A2E72BA43563F8DEC741F82")
     public void lock() {
         sync.lock();
         // ---------- Original Method ----------
@@ -40,7 +40,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.219 -0400", hash_original_method = "5966BE77DAE264B5F21646B0E7A08FC1", hash_generated_method = "CFF689BB53A067D7B9EB5F12CA3F00CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.189 -0400", hash_original_method = "5966BE77DAE264B5F21646B0E7A08FC1", hash_generated_method = "CFF689BB53A067D7B9EB5F12CA3F00CC")
     public void lockInterruptibly() throws InterruptedException {
         sync.acquireInterruptibly(1);
         // ---------- Original Method ----------
@@ -48,29 +48,29 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.219 -0400", hash_original_method = "9B7882D242270D7813AEE17389132741", hash_generated_method = "D7E1F24967A1451F214EA7239531A447")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.189 -0400", hash_original_method = "9B7882D242270D7813AEE17389132741", hash_generated_method = "B0C219A30835AD5E21A72A07C0F14F52")
     public boolean tryLock() {
-        boolean var01D158C305499B950DC2B450CF0A13DF_708861574 = (sync.nonfairTryAcquire(1));
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1932804374 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1932804374;
+        boolean var01D158C305499B950DC2B450CF0A13DF_1507757235 = (sync.nonfairTryAcquire(1));
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_912159587 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_912159587;
         // ---------- Original Method ----------
         //return sync.nonfairTryAcquire(1);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.220 -0400", hash_original_method = "6EF7D2E282F143C52CC20B0DBAA61A21", hash_generated_method = "8EC356CD68265B02DBE9340CD5C510ED")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.190 -0400", hash_original_method = "6EF7D2E282F143C52CC20B0DBAA61A21", hash_generated_method = "E453BFD97CA9AC6BB767F066EC7767CA")
     public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
-        boolean var032A6E2E0DFEA3BC6D0CEF4809A04918_1359239020 = (sync.tryAcquireNanos(1, unit.toNanos(timeout)));
+        boolean var032A6E2E0DFEA3BC6D0CEF4809A04918_1401941390 = (sync.tryAcquireNanos(1, unit.toNanos(timeout)));
         addTaint(timeout);
         addTaint(unit.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1847576888 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1847576888;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_236843729 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_236843729;
         // ---------- Original Method ----------
         //return sync.tryAcquireNanos(1, unit.toNanos(timeout));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.220 -0400", hash_original_method = "7AD42B9E2BC6DD4A4DE0EB9EBA3A2515", hash_generated_method = "87142E80D82254348B0CA43367BBC9B7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.205 -0400", hash_original_method = "7AD42B9E2BC6DD4A4DE0EB9EBA3A2515", hash_generated_method = "87142E80D82254348B0CA43367BBC9B7")
     public void unlock() {
         sync.release(1);
         // ---------- Original Method ----------
@@ -78,117 +78,117 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.221 -0400", hash_original_method = "6BB095C6835043568D960ACB9C15058D", hash_generated_method = "2458BE81C00F3BCA5C80196F624AD873")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.206 -0400", hash_original_method = "6BB095C6835043568D960ACB9C15058D", hash_generated_method = "77CCAC26B3520C7096A2A1E00E39B72F")
     public Condition newCondition() {
-        Condition varB4EAC82CA7396A68D541C85D26508E83_1576310577 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1576310577 = sync.newCondition();
-        varB4EAC82CA7396A68D541C85D26508E83_1576310577.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1576310577;
+        Condition varB4EAC82CA7396A68D541C85D26508E83_949217345 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_949217345 = sync.newCondition();
+        varB4EAC82CA7396A68D541C85D26508E83_949217345.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_949217345;
         // ---------- Original Method ----------
         //return sync.newCondition();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.221 -0400", hash_original_method = "7FC57D6521874F49E1ACFD5770F280CF", hash_generated_method = "17E4BA6E86888DEE42618D0CFEAD0686")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.206 -0400", hash_original_method = "7FC57D6521874F49E1ACFD5770F280CF", hash_generated_method = "EFB2FDEDC61D00F253BE79FC89AB3B31")
     public int getHoldCount() {
-        int var0CF7228364AC2BBEEE65804FC32AE455_95633136 = (sync.getHoldCount());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_895228280 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_895228280;
+        int var0CF7228364AC2BBEEE65804FC32AE455_645076431 = (sync.getHoldCount());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1836765523 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1836765523;
         // ---------- Original Method ----------
         //return sync.getHoldCount();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.234 -0400", hash_original_method = "53A74F7432D74C33316852C3E739832B", hash_generated_method = "557202F7D3F731F629E30328C00CC6C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.206 -0400", hash_original_method = "53A74F7432D74C33316852C3E739832B", hash_generated_method = "B4460EA6C3F08986542FE1EFFA6BF753")
     public boolean isHeldByCurrentThread() {
-        boolean var12281D4A72DEB9F8816A0A46604F1374_1723492835 = (sync.isHeldExclusively());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_967803127 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_967803127;
+        boolean var12281D4A72DEB9F8816A0A46604F1374_1801071849 = (sync.isHeldExclusively());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_978663465 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_978663465;
         // ---------- Original Method ----------
         //return sync.isHeldExclusively();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.234 -0400", hash_original_method = "B8A2470400F707CBBF058BF4DA6F8D15", hash_generated_method = "C034E4A0E8013407B57B509EAC8B59BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.206 -0400", hash_original_method = "B8A2470400F707CBBF058BF4DA6F8D15", hash_generated_method = "8DB7A89FAAF6B0ED1DD57569FBA9EC9A")
     public boolean isLocked() {
-        boolean var720015946EB5BA7A9510B4F7065A84D7_1344690966 = (sync.isLocked());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1608798101 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1608798101;
+        boolean var720015946EB5BA7A9510B4F7065A84D7_116890949 = (sync.isLocked());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1508308671 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1508308671;
         // ---------- Original Method ----------
         //return sync.isLocked();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.234 -0400", hash_original_method = "6835E283E5F9E7FBD3FF7844476992AD", hash_generated_method = "608BAA1F666AF5D13DC5D9A2777C6F85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.207 -0400", hash_original_method = "6835E283E5F9E7FBD3FF7844476992AD", hash_generated_method = "EFD15E28EDA014625D4DA298AD74233D")
     public final boolean isFair() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1299395845 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1299395845;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_967558496 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_967558496;
         // ---------- Original Method ----------
         //return sync instanceof FairSync;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.235 -0400", hash_original_method = "DB009A0944F572B5167ED6D51E109787", hash_generated_method = "6A0D7BDEFCC488116E04D01215F5E307")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.207 -0400", hash_original_method = "DB009A0944F572B5167ED6D51E109787", hash_generated_method = "9D704E8556853C9DE2BD7E18EE1F8F19")
     protected Thread getOwner() {
-        Thread varB4EAC82CA7396A68D541C85D26508E83_971443816 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_971443816 = sync.getOwner();
-        varB4EAC82CA7396A68D541C85D26508E83_971443816.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_971443816;
+        Thread varB4EAC82CA7396A68D541C85D26508E83_402770492 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_402770492 = sync.getOwner();
+        varB4EAC82CA7396A68D541C85D26508E83_402770492.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_402770492;
         // ---------- Original Method ----------
         //return sync.getOwner();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.235 -0400", hash_original_method = "33B7DCC82A105082FC4D268ED56F9DE5", hash_generated_method = "CFD96E1E00A40AB40BDDFFEF48E54B8E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.207 -0400", hash_original_method = "33B7DCC82A105082FC4D268ED56F9DE5", hash_generated_method = "0CD2FBE0B5E95E357B6212F56E00AE84")
     public final boolean hasQueuedThreads() {
-        boolean var4C0A0AB508905DA8D619627A5EEFD574_1275905128 = (sync.hasQueuedThreads());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1433446473 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1433446473;
+        boolean var4C0A0AB508905DA8D619627A5EEFD574_272040463 = (sync.hasQueuedThreads());
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_753788436 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_753788436;
         // ---------- Original Method ----------
         //return sync.hasQueuedThreads();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.235 -0400", hash_original_method = "7B179E46CDF5B520CCEEF15512EC2C63", hash_generated_method = "1198BA904AB5894453A49268A66B430E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.208 -0400", hash_original_method = "7B179E46CDF5B520CCEEF15512EC2C63", hash_generated_method = "23FA2CD257DAF5CABCEE65D69D57624A")
     public final boolean hasQueuedThread(Thread thread) {
-        boolean var0681201A478D613CAAB4B4D5196C3EF3_1034674917 = (sync.isQueued(thread));
+        boolean var0681201A478D613CAAB4B4D5196C3EF3_3906961 = (sync.isQueued(thread));
         addTaint(thread.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1120634329 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1120634329;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1476096672 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1476096672;
         // ---------- Original Method ----------
         //return sync.isQueued(thread);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.249 -0400", hash_original_method = "DFFF2C05339152644F00EC2FFC57EFB9", hash_generated_method = "9A0589CBBBF6F4848B61E68A0B67C583")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.208 -0400", hash_original_method = "DFFF2C05339152644F00EC2FFC57EFB9", hash_generated_method = "471EE6CAA7A98E686510AA79417F037F")
     public final int getQueueLength() {
-        int var2545CC142A0CD1008911850681315651_5047424 = (sync.getQueueLength());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1408876658 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1408876658;
+        int var2545CC142A0CD1008911850681315651_1835549795 = (sync.getQueueLength());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1472258952 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1472258952;
         // ---------- Original Method ----------
         //return sync.getQueueLength();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.250 -0400", hash_original_method = "4BC73C35668DA24636BE58FB68209032", hash_generated_method = "52F1C4F49F2FFFA2D8682264C6E44A2A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.208 -0400", hash_original_method = "4BC73C35668DA24636BE58FB68209032", hash_generated_method = "75CB828D4094E93358AB1F8247E8319E")
     protected Collection<Thread> getQueuedThreads() {
-        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_178527748 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_178527748 = sync.getQueuedThreads();
-        varB4EAC82CA7396A68D541C85D26508E83_178527748.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_178527748;
+        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_2003523057 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2003523057 = sync.getQueuedThreads();
+        varB4EAC82CA7396A68D541C85D26508E83_2003523057.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2003523057;
         // ---------- Original Method ----------
         //return sync.getQueuedThreads();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.251 -0400", hash_original_method = "BF91F0F13FB6E88A38744502E21F1F2D", hash_generated_method = "1FA69657E2CF07C6C4DE24D889317F86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.209 -0400", hash_original_method = "BF91F0F13FB6E88A38744502E21F1F2D", hash_generated_method = "22A2FA04213A74C4F4E1A11EF47D5F96")
     public boolean hasWaiters(Condition condition) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("not owner");
-        boolean varD78146513D32810B85075F5879934833_1128022631 = (sync.hasWaiters((AbstractQueuedSynchronizer.ConditionObject)condition));
+        boolean varD78146513D32810B85075F5879934833_853883548 = (sync.hasWaiters((AbstractQueuedSynchronizer.ConditionObject)condition));
         addTaint(condition.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2100916200 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2100916200;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1620830467 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1620830467;
         // ---------- Original Method ----------
         //if (condition == null)
             //throw new NullPointerException();
@@ -198,14 +198,14 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.252 -0400", hash_original_method = "D4277B3B6ED39F705D915D3806A5548A", hash_generated_method = "0873DD0E883B92D8FBAA19DBF11F7BC7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.235 -0400", hash_original_method = "D4277B3B6ED39F705D915D3806A5548A", hash_generated_method = "B305645ACECF4856C76A0A0672E65C0C")
     public int getWaitQueueLength(Condition condition) {
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("not owner");
-        int var60A2F707F5BC43BB059D2028F4E4733B_1573141037 = (sync.getWaitQueueLength((AbstractQueuedSynchronizer.ConditionObject)condition));
+        int var60A2F707F5BC43BB059D2028F4E4733B_38587876 = (sync.getWaitQueueLength((AbstractQueuedSynchronizer.ConditionObject)condition));
         addTaint(condition.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_677777702 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_677777702;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_769492610 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_769492610;
         // ---------- Original Method ----------
         //if (condition == null)
             //throw new NullPointerException();
@@ -215,15 +215,15 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.346 -0400", hash_original_method = "29738EA386BFBB41E36C961DB4B1CBE5", hash_generated_method = "7EFEC58F8CD239247511F7A144E1F925")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.236 -0400", hash_original_method = "29738EA386BFBB41E36C961DB4B1CBE5", hash_generated_method = "50C4C9C797BB8A358E8E9594C5CC0D6F")
     protected Collection<Thread> getWaitingThreads(Condition condition) {
-        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_707791323 = null; //Variable for return #1
+        Collection<Thread> varB4EAC82CA7396A68D541C85D26508E83_1183818654 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("not owner");
-        varB4EAC82CA7396A68D541C85D26508E83_707791323 = sync.getWaitingThreads((AbstractQueuedSynchronizer.ConditionObject)condition);
+        varB4EAC82CA7396A68D541C85D26508E83_1183818654 = sync.getWaitingThreads((AbstractQueuedSynchronizer.ConditionObject)condition);
         addTaint(condition.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_707791323.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_707791323;
+        varB4EAC82CA7396A68D541C85D26508E83_1183818654.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1183818654;
         // ---------- Original Method ----------
         //if (condition == null)
             //throw new NullPointerException();
@@ -233,16 +233,16 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.350 -0400", hash_original_method = "E0C199518E39715763AFB28F76F97305", hash_generated_method = "5BC8847C9C5367310C2E860D4CB52027")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.237 -0400", hash_original_method = "E0C199518E39715763AFB28F76F97305", hash_generated_method = "351D117349ED0C3B5B8CE3E36E2AB79C")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_20823102 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1111674365 = null; //Variable for return #1
         Thread o;
         o = sync.getOwner();
-        varB4EAC82CA7396A68D541C85D26508E83_20823102 = super.toString() + ((o == null) ?
+        varB4EAC82CA7396A68D541C85D26508E83_1111674365 = super.toString() + ((o == null) ?
                                    "[Unlocked]" :
                                    "[Locked by thread " + o.getName() + "]");
-        varB4EAC82CA7396A68D541C85D26508E83_20823102.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_20823102;
+        varB4EAC82CA7396A68D541C85D26508E83_1111674365.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1111674365;
         // ---------- Original Method ----------
         //Thread o = sync.getOwner();
         //return super.toString() + ((o == null) ?
@@ -253,7 +253,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     
     abstract static class Sync extends AbstractQueuedSynchronizer {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.350 -0400", hash_original_method = "88F1B6F2E189B36E0DD98AFBD02FE2C7", hash_generated_method = "88F1B6F2E189B36E0DD98AFBD02FE2C7")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.237 -0400", hash_original_method = "88F1B6F2E189B36E0DD98AFBD02FE2C7", hash_generated_method = "88F1B6F2E189B36E0DD98AFBD02FE2C7")
         public Sync ()
         {
             //Synthesized constructor
@@ -263,7 +263,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         abstract void lock();
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.352 -0400", hash_original_method = "D19DB0AA686FDE0FA905238F42C3F88E", hash_generated_method = "DE1CDC5505671DDA18C04AD44CA63708")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.238 -0400", hash_original_method = "D19DB0AA686FDE0FA905238F42C3F88E", hash_generated_method = "B83E8E4FEB3160517AB52B3CA48D1276")
         final boolean nonfairTryAcquire(int acquires) {
             Thread current;
             current = Thread.currentThread();
@@ -271,14 +271,14 @@ public class ReentrantLock implements Lock, java.io.Serializable {
             c = getState();
             {
                 {
-                    boolean varF66BF2DB7461880C09D8FA1630E5A95E_1721849293 = (compareAndSetState(0, acquires));
+                    boolean varF66BF2DB7461880C09D8FA1630E5A95E_28236839 = (compareAndSetState(0, acquires));
                     {
                         setExclusiveOwnerThread(current);
                     } //End block
                 } //End collapsed parenthetic
             } //End block
             {
-                boolean varE75766FA74E04E655F03A151D4B25AC7_2030442585 = (current == getExclusiveOwnerThread());
+                boolean varE75766FA74E04E655F03A151D4B25AC7_70908180 = (current == getExclusiveOwnerThread());
                 {
                     int nextc;
                     nextc = c + acquires;
@@ -287,8 +287,8 @@ public class ReentrantLock implements Lock, java.io.Serializable {
                 } //End block
             } //End collapsed parenthetic
             addTaint(acquires);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1448900883 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1448900883;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1032925713 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1032925713;
             // ---------- Original Method ----------
             //final Thread current = Thread.currentThread();
             //int c = getState();
@@ -309,12 +309,12 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.353 -0400", hash_original_method = "F58D783FAFD21E630011410A68B89B8B", hash_generated_method = "C614C8C595B1A7EE355D14F83BEDA686")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.251 -0400", hash_original_method = "F58D783FAFD21E630011410A68B89B8B", hash_generated_method = "7A0AA56EFA081D37F9028465B3A96C61")
         protected final boolean tryRelease(int releases) {
             int c;
             c = getState() - releases;
             {
-                boolean var171DA8AF5FD35C68B337E23A0EB8AC61_744943498 = (Thread.currentThread() != getExclusiveOwnerThread());
+                boolean var171DA8AF5FD35C68B337E23A0EB8AC61_466665079 = (Thread.currentThread() != getExclusiveOwnerThread());
                 if (DroidSafeAndroidRuntime.control) throw new IllegalMonitorStateException();
             } //End collapsed parenthetic
             boolean free;
@@ -325,8 +325,8 @@ public class ReentrantLock implements Lock, java.io.Serializable {
             } //End block
             setState(c);
             addTaint(releases);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1410161989 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1410161989;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_541224025 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_541224025;
             // ---------- Original Method ----------
             //int c = getState() - releases;
             //if (Thread.currentThread() != getExclusiveOwnerThread())
@@ -341,62 +341,62 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.353 -0400", hash_original_method = "A843CC28FFAE9A089B89A0058BA2B9D5", hash_generated_method = "5B4393524EF75967F410B1C14F9D8E1F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.251 -0400", hash_original_method = "A843CC28FFAE9A089B89A0058BA2B9D5", hash_generated_method = "EE306E87A7EC49C801FA93A6FF547AC1")
         protected final boolean isHeldExclusively() {
-            boolean var3CE6B8DE56D5A33803435E843AACF76A_1865904854 = (getExclusiveOwnerThread() == Thread.currentThread());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1592938974 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1592938974;
+            boolean var3CE6B8DE56D5A33803435E843AACF76A_2114793160 = (getExclusiveOwnerThread() == Thread.currentThread());
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1905945148 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1905945148;
             // ---------- Original Method ----------
             //return getExclusiveOwnerThread() == Thread.currentThread();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.355 -0400", hash_original_method = "093F0D0E6A279CA43864791B6FD65040", hash_generated_method = "39CEA33ACFCC6E112018C96291708430")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.251 -0400", hash_original_method = "093F0D0E6A279CA43864791B6FD65040", hash_generated_method = "3512C8A1800F6594BB981185C565EB6F")
         final ConditionObject newCondition() {
-            ConditionObject varB4EAC82CA7396A68D541C85D26508E83_162038237 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_162038237 = new ConditionObject();
-            varB4EAC82CA7396A68D541C85D26508E83_162038237.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_162038237;
+            ConditionObject varB4EAC82CA7396A68D541C85D26508E83_1556258093 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1556258093 = new ConditionObject();
+            varB4EAC82CA7396A68D541C85D26508E83_1556258093.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1556258093;
             // ---------- Original Method ----------
             //return new ConditionObject();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.365 -0400", hash_original_method = "24CA7AAFB844A1400E08D949A036E749", hash_generated_method = "B998BDAF827497DBAF2B4BE022024F38")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.252 -0400", hash_original_method = "24CA7AAFB844A1400E08D949A036E749", hash_generated_method = "C1CD4514DE5321F4EF3FCBE32B8130DD")
         final Thread getOwner() {
-            Thread varB4EAC82CA7396A68D541C85D26508E83_1837145749 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1837145749 = getState() == 0 ? null : getExclusiveOwnerThread();
-            varB4EAC82CA7396A68D541C85D26508E83_1837145749.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1837145749;
+            Thread varB4EAC82CA7396A68D541C85D26508E83_1432760990 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1432760990 = getState() == 0 ? null : getExclusiveOwnerThread();
+            varB4EAC82CA7396A68D541C85D26508E83_1432760990.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1432760990;
             // ---------- Original Method ----------
             //return getState() == 0 ? null : getExclusiveOwnerThread();
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.366 -0400", hash_original_method = "9566A514E32EED07D696F4866CA45F30", hash_generated_method = "796FB3480B80A2F51B4C0BD578088490")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.253 -0400", hash_original_method = "9566A514E32EED07D696F4866CA45F30", hash_generated_method = "9EFCE69054ED79817DD4FD9B0FCA15A1")
         final int getHoldCount() {
             {
-                boolean var34E827331B4BC7F16DFC99E8B4EE154E_1709065833 = (isHeldExclusively());
-                Object var2B84CA06A8A0E280C92148E0A83A6657_2101830794 = (getState());
+                boolean var34E827331B4BC7F16DFC99E8B4EE154E_1261305671 = (isHeldExclusively());
+                Object var2B84CA06A8A0E280C92148E0A83A6657_1547041724 = (getState());
             } //End flattened ternary
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_87019061 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_87019061;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1258804644 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1258804644;
             // ---------- Original Method ----------
             //return isHeldExclusively() ? getState() : 0;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.368 -0400", hash_original_method = "89AB065792F4703E484ABCB3E61E822C", hash_generated_method = "E6A134AC90D31452E32F6D213DDC4A66")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.253 -0400", hash_original_method = "89AB065792F4703E484ABCB3E61E822C", hash_generated_method = "B4C64EC4A3AC82D73FF27986CEB9C014")
         final boolean isLocked() {
-            boolean var3842E9A7CB6B96374140FC54D5D4BB54_366726639 = (getState() != 0);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1676495568 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1676495568;
+            boolean var3842E9A7CB6B96374140FC54D5D4BB54_1923813977 = (getState() != 0);
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1759723816 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1759723816;
             // ---------- Original Method ----------
             //return getState() != 0;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.369 -0400", hash_original_method = "05D5902ED2395493955B66F039D49364", hash_generated_method = "2FAA30C568B27BEB3C23701DD7180F2D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.253 -0400", hash_original_method = "05D5902ED2395493955B66F039D49364", hash_generated_method = "2FAA30C568B27BEB3C23701DD7180F2D")
         private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
             s.defaultReadObject();
             setState(0);
@@ -407,7 +407,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.369 -0400", hash_original_field = "664BADC4FCE0F56881AF4EC0C44FC7CE", hash_generated_field = "BC8A392F0A11CF51E852A043746E76B6")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.253 -0400", hash_original_field = "664BADC4FCE0F56881AF4EC0C44FC7CE", hash_generated_field = "BC8A392F0A11CF51E852A043746E76B6")
 
         private static long serialVersionUID = -5179523762034025860L;
     }
@@ -416,17 +416,17 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     
     static final class NonfairSync extends Sync {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.369 -0400", hash_original_method = "92700F1FF079627760B83F1F338B8E6E", hash_generated_method = "92700F1FF079627760B83F1F338B8E6E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.253 -0400", hash_original_method = "92700F1FF079627760B83F1F338B8E6E", hash_generated_method = "92700F1FF079627760B83F1F338B8E6E")
         public NonfairSync ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.369 -0400", hash_original_method = "250EC96D0AD0D747189CAF2CF367FDFE", hash_generated_method = "33A339B4EC3F31EF64E379CA35D80F59")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.254 -0400", hash_original_method = "250EC96D0AD0D747189CAF2CF367FDFE", hash_generated_method = "CBD3A990B4207DEDF13DF1D2F21485E7")
         final void lock() {
             {
-                boolean varF425053993EA879E03DA150C877D7F5C_774449925 = (compareAndSetState(0, 1));
+                boolean varF425053993EA879E03DA150C877D7F5C_1020594743 = (compareAndSetState(0, 1));
                 setExclusiveOwnerThread(Thread.currentThread());
                 acquire(1);
             } //End collapsed parenthetic
@@ -438,18 +438,18 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.370 -0400", hash_original_method = "4FB92A369E0871387D4F8186DCD16A26", hash_generated_method = "E83EB483A19D192FA0AD002E5E2FFD34")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.255 -0400", hash_original_method = "4FB92A369E0871387D4F8186DCD16A26", hash_generated_method = "51D9C1EF329AD2B214822D04468133AA")
         protected final boolean tryAcquire(int acquires) {
-            boolean var0265CA842894C6CCF4077B7A67F336BF_1990554418 = (nonfairTryAcquire(acquires));
+            boolean var0265CA842894C6CCF4077B7A67F336BF_1757519243 = (nonfairTryAcquire(acquires));
             addTaint(acquires);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_421622502 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_421622502;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_6545747 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_6545747;
             // ---------- Original Method ----------
             //return nonfairTryAcquire(acquires);
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.370 -0400", hash_original_field = "BD27C19ACD1B65DD9363F71DE1851218", hash_generated_field = "09914D3AC1C59E878233D232B4CA9327")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.255 -0400", hash_original_field = "BD27C19ACD1B65DD9363F71DE1851218", hash_generated_field = "09914D3AC1C59E878233D232B4CA9327")
 
         private static long serialVersionUID = 7316153563782823691L;
     }
@@ -458,14 +458,14 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     
     static final class FairSync extends Sync {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.370 -0400", hash_original_method = "76BFFA90730B34917875BAE48AE8B396", hash_generated_method = "76BFFA90730B34917875BAE48AE8B396")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.255 -0400", hash_original_method = "76BFFA90730B34917875BAE48AE8B396", hash_generated_method = "76BFFA90730B34917875BAE48AE8B396")
         public FairSync ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.370 -0400", hash_original_method = "E6AC2D5893CA21F5681F81CF00C94AEB", hash_generated_method = "EA04A5A8DEC9D6FD4587640A48DF018E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.255 -0400", hash_original_method = "E6AC2D5893CA21F5681F81CF00C94AEB", hash_generated_method = "EA04A5A8DEC9D6FD4587640A48DF018E")
         final void lock() {
             acquire(1);
             // ---------- Original Method ----------
@@ -473,7 +473,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.391 -0400", hash_original_method = "81B34FC5A1F152836CFB423B4391D12C", hash_generated_method = "0A9D418EAD291BEFC03D7CB88B122815")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.258 -0400", hash_original_method = "81B34FC5A1F152836CFB423B4391D12C", hash_generated_method = "60C095D7165110FE27C32CDBA3842D66")
         protected final boolean tryAcquire(int acquires) {
             Thread current;
             current = Thread.currentThread();
@@ -481,7 +481,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
             c = getState();
             {
                 {
-                    boolean var5AC1E5DC83FB6F44EFD60F65BD367A21_1528976900 = (!hasQueuedPredecessors() &&
+                    boolean var5AC1E5DC83FB6F44EFD60F65BD367A21_426601134 = (!hasQueuedPredecessors() &&
                     compareAndSetState(0, acquires));
                     {
                         setExclusiveOwnerThread(current);
@@ -489,7 +489,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
                 } //End collapsed parenthetic
             } //End block
             {
-                boolean varE75766FA74E04E655F03A151D4B25AC7_1833628598 = (current == getExclusiveOwnerThread());
+                boolean varE75766FA74E04E655F03A151D4B25AC7_1693256145 = (current == getExclusiveOwnerThread());
                 {
                     int nextc;
                     nextc = c + acquires;
@@ -498,8 +498,8 @@ public class ReentrantLock implements Lock, java.io.Serializable {
                 } //End block
             } //End collapsed parenthetic
             addTaint(acquires);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_493997867 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_493997867;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_995785889 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_995785889;
             // ---------- Original Method ----------
             //final Thread current = Thread.currentThread();
             //int c = getState();
@@ -521,14 +521,14 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.391 -0400", hash_original_field = "D17C09047856F96A00E27AA866549B69", hash_generated_field = "F8BD080773104CAB4599BDFA39DF4E19")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.258 -0400", hash_original_field = "D17C09047856F96A00E27AA866549B69", hash_generated_field = "F8BD080773104CAB4599BDFA39DF4E19")
 
         private static long serialVersionUID = -3000897897090466540L;
     }
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.391 -0400", hash_original_field = "16EBB3E5C40DD288F8E94BD3EE8B7D56", hash_generated_field = "EC4D5760ECB3D2B2249C3504EDE19584")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:58.258 -0400", hash_original_field = "16EBB3E5C40DD288F8E94BD3EE8B7D56", hash_generated_field = "EC4D5760ECB3D2B2249C3504EDE19584")
 
     private static long serialVersionUID = 7373984872572414699L;
 }

@@ -13,7 +13,7 @@ import android.os.Build;
 
 public class ActivityCompat {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:30.113 -0400", hash_original_method = "414402D33DBDAB1C5354F42B198D5939", hash_generated_method = "414402D33DBDAB1C5354F42B198D5939")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:31.669 -0400", hash_original_method = "414402D33DBDAB1C5354F42B198D5939", hash_generated_method = "414402D33DBDAB1C5354F42B198D5939")
     public ActivityCompat ()
     {
         //Synthesized constructor

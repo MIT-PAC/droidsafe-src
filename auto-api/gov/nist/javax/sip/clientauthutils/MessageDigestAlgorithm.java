@@ -13,7 +13,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class MessageDigestAlgorithm {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.320 -0400", hash_original_method = "867FE15D3C49C82AA29712975204D9D1", hash_generated_method = "867FE15D3C49C82AA29712975204D9D1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.262 -0400", hash_original_method = "867FE15D3C49C82AA29712975204D9D1", hash_generated_method = "867FE15D3C49C82AA29712975204D9D1")
     public MessageDigestAlgorithm ()
     {
         //Synthesized constructor
@@ -133,8 +133,10 @@ public class MessageDigestAlgorithm {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:31.321 -0400", hash_original_field = "AE6F89DC8E13D1AB97EC10B40F16B520", hash_generated_field = "0195398F6698E767841FEB88F279EAF5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:30.273 -0400", hash_original_field = "AE6F89DC8E13D1AB97EC10B40F16B520", hash_generated_field = "67C5C1E83455E082BF44ED8638A4380D")
 
-    private static char[] toHex = ;
+    private static char[] toHex = {
+        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
+    };
 }
 

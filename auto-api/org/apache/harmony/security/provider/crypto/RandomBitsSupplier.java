@@ -15,7 +15,7 @@ import java.security.ProviderException;
 
 public class RandomBitsSupplier implements SHA1_Data {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.885 -0400", hash_original_method = "C2EAC1E8FB299AA5C7A70ED055C01714", hash_generated_method = "C2EAC1E8FB299AA5C7A70ED055C01714")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.863 -0400", hash_original_method = "C2EAC1E8FB299AA5C7A70ED055C01714", hash_generated_method = "C2EAC1E8FB299AA5C7A70ED055C01714")
     public RandomBitsSupplier ()
     {
         //Synthesized constructor
@@ -62,18 +62,18 @@ public class RandomBitsSupplier implements SHA1_Data {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.887 -0400", hash_original_field = "C9EF4CE3B74843B383E0FEF956CB7C02", hash_generated_field = "5953C13EEC4748E72DBEEA524CB92C42")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.878 -0400", hash_original_field = "C9EF4CE3B74843B383E0FEF956CB7C02", hash_generated_field = "5953C13EEC4748E72DBEEA524CB92C42")
 
     private static FileInputStream fis = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.887 -0400", hash_original_field = "C5EFB803831AE17B96DDC5FF8C9F1521", hash_generated_field = "8AB48E545C9A9079E8984894A324FFDB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.878 -0400", hash_original_field = "C5EFB803831AE17B96DDC5FF8C9F1521", hash_generated_field = "8AB48E545C9A9079E8984894A324FFDB")
 
     private static File randomFile = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.887 -0400", hash_original_field = "A0A7B8CAC73E02478C8F4E4920BB836F", hash_generated_field = "311846FC929AEDC17ACEFCD58751F46E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.878 -0400", hash_original_field = "A0A7B8CAC73E02478C8F4E4920BB836F", hash_generated_field = "311846FC929AEDC17ACEFCD58751F46E")
 
     private static boolean serviceAvailable = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.887 -0400", hash_original_field = "0A4B917F226B12841AB5214AED425CB8", hash_generated_field = "CFEF4A6E70A198B12EDD931CB7B2B4FA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.878 -0400", hash_original_field = "0A4B917F226B12841AB5214AED425CB8", hash_generated_field = "F914BFCC624369227D3843AC28D585CC")
 
-    private static String DEVICE_NAMES[] = ;
+    private static String DEVICE_NAMES[] = { "/dev/urandom"  };
     static {
         for (String deviceName : DEVICE_NAMES) {
             try {

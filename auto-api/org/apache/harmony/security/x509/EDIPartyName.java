@@ -14,17 +14,17 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.x501.DirectoryString;
 
 public final class EDIPartyName {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.636 -0400", hash_original_field = "C7DB6307E9B57AC480C9F2D089C20B85", hash_generated_field = "E531E1267091A670A42BD3F34A2AF2BA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.525 -0400", hash_original_field = "C7DB6307E9B57AC480C9F2D089C20B85", hash_generated_field = "E531E1267091A670A42BD3F34A2AF2BA")
 
     private String nameAssigner;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.636 -0400", hash_original_field = "88E24B731AD934BC609FBCD89231B75F", hash_generated_field = "41E7F03877DA6734D1332D3C70A19F95")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.525 -0400", hash_original_field = "88E24B731AD934BC609FBCD89231B75F", hash_generated_field = "41E7F03877DA6734D1332D3C70A19F95")
 
     private String partyName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.636 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.525 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
 
     private byte[] encoding;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.637 -0400", hash_original_method = "2E4835ED3F1B68ED273C9B2B326EFCFA", hash_generated_method = "F696079F2CA56838285735C3A64B1A92")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.526 -0400", hash_original_method = "2E4835ED3F1B68ED273C9B2B326EFCFA", hash_generated_method = "F696079F2CA56838285735C3A64B1A92")
     private  EDIPartyName(String nameAssigner, String partyName, byte[] encoding) {
         this.nameAssigner = nameAssigner;
         this.partyName = partyName;
@@ -36,13 +36,13 @@ public final class EDIPartyName {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.638 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "22FD681037746E08B37B5402D3642FA1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.526 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "6BA33910E307BBD8742BF29036871CBF")
     public byte[] getEncoded() {
         {
             encoding = ASN1.encode(this);
         } //End block
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_619185315 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_619185315;
+        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_308052535 = {getTaintByte()};
+        return var2F9C81BC6E497382285CD6B7A7E33DE1_308052535;
         // ---------- Original Method ----------
         //if (encoding == null) {
             //encoding = ASN1.encode(this);
@@ -51,7 +51,7 @@ public final class EDIPartyName {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:09.638 -0400", hash_original_field = "F09E30973AEF91130C504D57F6F7184E", hash_generated_field = "69033EAAAFF984476D66802FF78AA0DF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:10.526 -0400", hash_original_field = "F09E30973AEF91130C504D57F6F7184E", hash_generated_field = "69033EAAAFF984476D66802FF78AA0DF")
 
     public static final ASN1Sequence ASN1 = new ASN1Sequence(
             new ASN1Type[] {

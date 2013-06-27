@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public class NoSuchPropertyException extends RuntimeException {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.108 -0400", hash_original_method = "9FBF5439C2FECDDB526E862ED7B30ADC", hash_generated_method = "643DDAD1E106B7CDBBC128A1AFE2753C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:46.825 -0400", hash_original_method = "9FBF5439C2FECDDB526E862ED7B30ADC", hash_generated_method = "643DDAD1E106B7CDBBC128A1AFE2753C")
     public  NoSuchPropertyException(String s) {
         super(s);
         addTaint(s.getTaint());

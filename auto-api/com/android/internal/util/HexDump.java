@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public class HexDump {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.285 -0400", hash_original_method = "41D5EB93F66EEE1C2A5191C2288E5263", hash_generated_method = "41D5EB93F66EEE1C2A5191C2288E5263")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.646 -0400", hash_original_method = "41D5EB93F66EEE1C2A5191C2288E5263", hash_generated_method = "41D5EB93F66EEE1C2A5191C2288E5263")
     public HexDump ()
     {
         //Synthesized constructor
@@ -142,8 +142,8 @@ public class HexDump {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:25.295 -0400", hash_original_field = "D78F278747594EC807E5754C9D20F198", hash_generated_field = "5A638C137C3CE539F7D04A20A56507C2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:24.656 -0400", hash_original_field = "D78F278747594EC807E5754C9D20F198", hash_generated_field = "698E444EECC0C01FEE238C777CB14B4D")
 
-    private static char[] HEX_DIGITS = ;
+    private static char[] HEX_DIGITS = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
 }
 

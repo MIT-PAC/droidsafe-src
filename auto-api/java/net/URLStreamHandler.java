@@ -13,7 +13,7 @@ import libcore.util.Objects;
 
 public abstract class URLStreamHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.920 -0400", hash_original_method = "2DD01D30EAA2A038CBAA0D570E27B35E", hash_generated_method = "2DD01D30EAA2A038CBAA0D570E27B35E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.644 -0400", hash_original_method = "2DD01D30EAA2A038CBAA0D570E27B35E", hash_generated_method = "2DD01D30EAA2A038CBAA0D570E27B35E")
     public URLStreamHandler ()
     {
         //Synthesized constructor
@@ -23,7 +23,7 @@ public abstract class URLStreamHandler {
     protected abstract URLConnection openConnection(URL u) throws IOException;
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.935 -0400", hash_original_method = "E25BD4FE17DCB1FC5CA1FF6A9FF13CCB", hash_generated_method = "235086DD597D7F1149FEF0E40FBBBF03")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.645 -0400", hash_original_method = "E25BD4FE17DCB1FC5CA1FF6A9FF13CCB", hash_generated_method = "235086DD597D7F1149FEF0E40FBBBF03")
     protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
         addTaint(u.getTaint());
@@ -33,7 +33,7 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.940 -0400", hash_original_method = "5B20F12B631910788308FABDC13B25A0", hash_generated_method = "7F136672F74C68BAFE88AC929872E69B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.647 -0400", hash_original_method = "5B20F12B631910788308FABDC13B25A0", hash_generated_method = "1CD2AF395492C72D33A3A32B67558270")
     protected void parseURL(URL url, String spec, int start, int end) {
         {
             if (DroidSafeAndroidRuntime.control) throw new SecurityException("Only a URL's stream handler is permitted to mutate it");
@@ -51,7 +51,7 @@ public abstract class URLStreamHandler {
         String query;
         String ref;
         {
-            boolean varC28F71AE0377A5B89EE543B4A9138ADF_348094381 = (spec.regionMatches(start, "//", 0, 2));
+            boolean varC28F71AE0377A5B89EE543B4A9138ADF_1454339620 = (spec.regionMatches(start, "//", 0, 2));
             {
                 int authorityStart;
                 authorityStart = start + 2;
@@ -74,7 +74,7 @@ public abstract class URLStreamHandler {
                 ipv6End = UrlUtils.findFirstOf(spec, "]", hostStart, fileStart);
                 {
                     {
-                        boolean var94751DC0C0DBFE32ADF3E9F980ED4A0D_1834824402 = (UrlUtils.findFirstOf(spec, ":", hostStart, ipv6End) == ipv6End);
+                        boolean var94751DC0C0DBFE32ADF3E9F980ED4A0D_1974122953 = (UrlUtils.findFirstOf(spec, ":", hostStart, ipv6End) == ipv6End);
                         {
                             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Expected an IPv6 address: "
                             + spec.substring(hostStart, ipv6End + 1));
@@ -116,7 +116,7 @@ public abstract class URLStreamHandler {
         {
             int nextPos;
             {
-                Object var37FBD7EC15D4DF88223F1C260149F042_2041043528 = (spec.charAt(pos));
+                Object var37FBD7EC15D4DF88223F1C260149F042_1371049131 = (spec.charAt(pos));
                 //Begin case '#' 
                 nextPos = end;
                 //End case '#' 
@@ -173,7 +173,7 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.964 -0400", hash_original_method = "9ADA0257B485782D9CE22060B8B1EC7F", hash_generated_method = "A49F6FA388F40A960402A4D32793391F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.648 -0400", hash_original_method = "9ADA0257B485782D9CE22060B8B1EC7F", hash_generated_method = "A49F6FA388F40A960402A4D32793391F")
     @Deprecated
     protected void setURL(URL u, String protocol, String host, int port,
             String file, String ref) {
@@ -195,7 +195,7 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.965 -0400", hash_original_method = "CB2D373AEC994000865666F394E860FE", hash_generated_method = "7F9780E78C86DA90CCEF66488000D14C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.709 -0400", hash_original_method = "CB2D373AEC994000865666F394E860FE", hash_generated_method = "7F9780E78C86DA90CCEF66488000D14C")
     protected void setURL(URL u, String protocol, String host, int port,
             String authority, String userInfo, String path, String query,
             String ref) {
@@ -220,21 +220,21 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.965 -0400", hash_original_method = "D96D9FB5C1BC6194BEC4A07D1C2B48A4", hash_generated_method = "2D788A93500F8440212C23420097C9F6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.711 -0400", hash_original_method = "D96D9FB5C1BC6194BEC4A07D1C2B48A4", hash_generated_method = "AC24701CAAC33960E6E60EE50E131C28")
     protected String toExternalForm(URL url) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1330218921 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1330218921 = toExternalForm(url, false);
+        String varB4EAC82CA7396A68D541C85D26508E83_30766985 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_30766985 = toExternalForm(url, false);
         addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1330218921.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1330218921;
+        varB4EAC82CA7396A68D541C85D26508E83_30766985.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_30766985;
         // ---------- Original Method ----------
         //return toExternalForm(url, false);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.966 -0400", hash_original_method = "629852CED0E76D3D83A14B3CB57F0652", hash_generated_method = "4D6F8A45BC511496BB2F5C03EB151980")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.711 -0400", hash_original_method = "629852CED0E76D3D83A14B3CB57F0652", hash_generated_method = "177CBDE9295AD7F8F48E20DA1B4B6094")
      String toExternalForm(URL url, boolean escapeIllegalCharacters) {
-        String varB4EAC82CA7396A68D541C85D26508E83_1045327733 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1177466903 = null; //Variable for return #1
         StringBuilder result;
         result = new StringBuilder();
         result.append(url.getProtocol());
@@ -271,25 +271,25 @@ public abstract class URLStreamHandler {
                 result.append(ref);
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1045327733 = result.toString();
+        varB4EAC82CA7396A68D541C85D26508E83_1177466903 = result.toString();
         addTaint(url.getTaint());
         addTaint(escapeIllegalCharacters);
-        varB4EAC82CA7396A68D541C85D26508E83_1045327733.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1045327733;
+        varB4EAC82CA7396A68D541C85D26508E83_1177466903.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1177466903;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.970 -0400", hash_original_method = "5273434A62CED7D2FFF6F02112157609", hash_generated_method = "31D5025C514A6D03BF0AB336105CA791")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.725 -0400", hash_original_method = "5273434A62CED7D2FFF6F02112157609", hash_generated_method = "D52150D9F8934568328581E88F029F0F")
     protected boolean equals(URL a, URL b) {
-        boolean var2605B69A8297093AF445A28C99C6DA19_235006333 = (sameFile(a, b)
+        boolean var2605B69A8297093AF445A28C99C6DA19_566482471 = (sameFile(a, b)
                 && Objects.equal(a.getRef(), b.getRef())
                 && Objects.equal(a.getQuery(), b.getQuery()));
         addTaint(a.getTaint());
         addTaint(b.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2068009892 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2068009892;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2135587283 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2135587283;
         // ---------- Original Method ----------
         //return sameFile(a, b)
                 //&& Objects.equal(a.getRef(), b.getRef())
@@ -297,51 +297,51 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.974 -0400", hash_original_method = "8D2F4C3352F1FCC45C0A9BA0F2D59609", hash_generated_method = "AAD1B24F043CC43AE3114DB2328C5308")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.726 -0400", hash_original_method = "8D2F4C3352F1FCC45C0A9BA0F2D59609", hash_generated_method = "DE98D0A53EBED71D65916DD028D29F5C")
     protected int getDefaultPort() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1096734847 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1096734847;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_915261765 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_915261765;
         // ---------- Original Method ----------
         //return -1;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.975 -0400", hash_original_method = "788D5B882334646F933829D465387DFF", hash_generated_method = "F264F145BD2E172F71F7668A808BA0B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.726 -0400", hash_original_method = "788D5B882334646F933829D465387DFF", hash_generated_method = "F50F50AE8D597245EB581A9C786A4326")
     protected InetAddress getHostAddress(URL url) {
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_931237501 = null; //Variable for return #1
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1957548960 = null; //Variable for return #2
-        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1558865643 = null; //Variable for return #3
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_1918036484 = null; //Variable for return #1
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_928412778 = null; //Variable for return #2
+        InetAddress varB4EAC82CA7396A68D541C85D26508E83_697514028 = null; //Variable for return #3
         try 
         {
             String host;
             host = url.getHost();
             {
-                boolean varE80B7F8F5DF3C0E96BEA9E404FDFEC5D_169605497 = (host == null || host.length() == 0);
+                boolean varE80B7F8F5DF3C0E96BEA9E404FDFEC5D_1748398507 = (host == null || host.length() == 0);
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_931237501 = null;
+                    varB4EAC82CA7396A68D541C85D26508E83_1918036484 = null;
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_1957548960 = InetAddress.getByName(host);
+            varB4EAC82CA7396A68D541C85D26508E83_928412778 = InetAddress.getByName(host);
         } //End block
         catch (UnknownHostException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1558865643 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_697514028 = null;
         } //End block
         addTaint(url.getTaint());
-        InetAddress varA7E53CE21691AB073D9660D615818899_1995838574; //Final return value
+        InetAddress varA7E53CE21691AB073D9660D615818899_1081996913; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1995838574 = varB4EAC82CA7396A68D541C85D26508E83_931237501;
+                varA7E53CE21691AB073D9660D615818899_1081996913 = varB4EAC82CA7396A68D541C85D26508E83_1918036484;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1995838574 = varB4EAC82CA7396A68D541C85D26508E83_1957548960;
+                varA7E53CE21691AB073D9660D615818899_1081996913 = varB4EAC82CA7396A68D541C85D26508E83_928412778;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1995838574 = varB4EAC82CA7396A68D541C85D26508E83_1558865643;
+                varA7E53CE21691AB073D9660D615818899_1081996913 = varB4EAC82CA7396A68D541C85D26508E83_697514028;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1995838574.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1995838574;
+        varA7E53CE21691AB073D9660D615818899_1081996913.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1081996913;
         // ---------- Original Method ----------
         //try {
             //String host = url.getHost();
@@ -355,28 +355,28 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.975 -0400", hash_original_method = "1FF09FFC26156931BD17C23B3B706502", hash_generated_method = "976E486FDC1AC288888B96CE05F2AE23")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.727 -0400", hash_original_method = "1FF09FFC26156931BD17C23B3B706502", hash_generated_method = "E5072C8472A90BDFE967E2FDD18E0E26")
     protected int hashCode(URL url) {
-        int var48425AB4600D15902F703B9031278502_1619626828 = (toExternalForm(url).hashCode());
+        int var48425AB4600D15902F703B9031278502_813286031 = (toExternalForm(url).hashCode());
         addTaint(url.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_105644177 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_105644177;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2065481042 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2065481042;
         // ---------- Original Method ----------
         //return toExternalForm(url).hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.976 -0400", hash_original_method = "41623183DD090D045D5E8C150A9F330D", hash_generated_method = "D5EDB2ECB57220359A0D52D5CA4D0A36")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.727 -0400", hash_original_method = "41623183DD090D045D5E8C150A9F330D", hash_generated_method = "C5425A18325CCE1DA99DACAB8AAA3E70")
     protected boolean hostsEqual(URL a, URL b) {
         String aHost;
         aHost = a.getHost();
         String bHost;
         bHost = b.getHost();
-        boolean var146AC139A61EB6606DF27A5A6CF8C6E7_138340586 = ((aHost == bHost) || aHost != null && aHost.equalsIgnoreCase(bHost));
+        boolean var146AC139A61EB6606DF27A5A6CF8C6E7_1567102868 = ((aHost == bHost) || aHost != null && aHost.equalsIgnoreCase(bHost));
         addTaint(a.getTaint());
         addTaint(b.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_519131515 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_519131515;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_381648134 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_381648134;
         // ---------- Original Method ----------
         //String aHost = a.getHost();
         //String bHost = b.getHost();
@@ -384,16 +384,16 @@ public abstract class URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.998 -0400", hash_original_method = "995D235EB42F12C8FDC3FCC0E24D4349", hash_generated_method = "7EE285355410BE101EEE30D28D497C57")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.744 -0400", hash_original_method = "995D235EB42F12C8FDC3FCC0E24D4349", hash_generated_method = "E67159FA5B703DAAB7AC3B32C5CF27C8")
     protected boolean sameFile(URL a, URL b) {
-        boolean var58D8CC8800DB2F4FEEA36EE340F18B83_1517957845 = (Objects.equal(a.getProtocol(), b.getProtocol())
+        boolean var58D8CC8800DB2F4FEEA36EE340F18B83_37241233 = (Objects.equal(a.getProtocol(), b.getProtocol())
                 && hostsEqual(a, b)
                 && a.getEffectivePort() == b.getEffectivePort()
                 && Objects.equal(a.getFile(), b.getFile()));
         addTaint(a.getTaint());
         addTaint(b.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1167148202 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1167148202;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_66702110 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_66702110;
         // ---------- Original Method ----------
         //return Objects.equal(a.getProtocol(), b.getProtocol())
                 //&& hostsEqual(a, b)

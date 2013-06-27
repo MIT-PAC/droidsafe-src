@@ -13,7 +13,7 @@ import android.app.FragmentManager;
 
 public final class NfcFragment extends Fragment {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.624 -0400", hash_original_method = "F4666E8353F6FA3AAFC2948046892751", hash_generated_method = "F4666E8353F6FA3AAFC2948046892751")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:26.198 -0400", hash_original_method = "F4666E8353F6FA3AAFC2948046892751", hash_generated_method = "F4666E8353F6FA3AAFC2948046892751")
     public NfcFragment ()
     {
         //Synthesized constructor
@@ -37,7 +37,7 @@ public final class NfcFragment extends Fragment {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.626 -0400", hash_original_method = "9E8EF57626D62E2B7C3743DD3C3689D3", hash_generated_method = "A3751672CF0C6F852826295FFFAA80D0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:26.207 -0400", hash_original_method = "9E8EF57626D62E2B7C3743DD3C3689D3", hash_generated_method = "A3751672CF0C6F852826295FFFAA80D0")
     @Override
     public void onAttach(Activity activity) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -65,7 +65,7 @@ public final class NfcFragment extends Fragment {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.627 -0400", hash_original_method = "94292D3BC9674D261A6EF4BCCF7C8037", hash_generated_method = "68B5D5F3B18DB6952F55B8B21397896C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:26.208 -0400", hash_original_method = "94292D3BC9674D261A6EF4BCCF7C8037", hash_generated_method = "68B5D5F3B18DB6952F55B8B21397896C")
     @Override
     public void onResume() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -81,7 +81,7 @@ public final class NfcFragment extends Fragment {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.649 -0400", hash_original_method = "3DB00EC587E995AABF9F1C949970BD43", hash_generated_method = "37A9EF1185C26C2CFB6FCDB1B9416AE3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:26.209 -0400", hash_original_method = "3DB00EC587E995AABF9F1C949970BD43", hash_generated_method = "37A9EF1185C26C2CFB6FCDB1B9416AE3")
     @Override
     public void onPause() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -97,7 +97,7 @@ public final class NfcFragment extends Fragment {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.650 -0400", hash_original_method = "CC535C4F2465D6A6983D04B0B890F971", hash_generated_method = "E43DF23E0003B4EF6862A5BEC5E75CCD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:26.209 -0400", hash_original_method = "CC535C4F2465D6A6983D04B0B890F971", hash_generated_method = "E43DF23E0003B4EF6862A5BEC5E75CCD")
     @Override
     public void onDestroy() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -113,13 +113,13 @@ public final class NfcFragment extends Fragment {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.650 -0400", hash_original_field = "5EDA91289D8A17A87A48FD7662558518", hash_generated_field = "BB0F314ED093FE2219ADF59B878064BE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:26.209 -0400", hash_original_field = "5EDA91289D8A17A87A48FD7662558518", hash_generated_field = "BB0F314ED093FE2219ADF59B878064BE")
 
     static String FRAGMENT_TAG = "android.nfc.NfcFragment";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.650 -0400", hash_original_field = "2D97EC3B76910B149F69BDEF7C5EC755", hash_generated_field = "F9BB84E3D4C91D00C4A915F1D24BE4F8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:26.225 -0400", hash_original_field = "2D97EC3B76910B149F69BDEF7C5EC755", hash_generated_field = "F9BB84E3D4C91D00C4A915F1D24BE4F8")
 
     static boolean sIsInitialized = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:24.650 -0400", hash_original_field = "1BEA66CE88E1EAEFB746DB8E48819D9C", hash_generated_field = "90C87A13104818C85EE1C6CB0A407D60")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:26.225 -0400", hash_original_field = "1BEA66CE88E1EAEFB746DB8E48819D9C", hash_generated_field = "90C87A13104818C85EE1C6CB0A407D60")
 
     static NfcActivityManager sNfcActivityManager;
 }

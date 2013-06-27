@@ -36,23 +36,23 @@ import libcore.io.IoUtils;
 import libcore.io.Streams;
 
 public class URLClassLoader extends SecureClassLoader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.756 -0400", hash_original_field = "B29D73214A4D23ADA5B59B6F71D732DF", hash_generated_field = "8493272A5AB4A77AB209F22490E9A299")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.868 -0400", hash_original_field = "B29D73214A4D23ADA5B59B6F71D732DF", hash_generated_field = "8493272A5AB4A77AB209F22490E9A299")
 
     ArrayList<URL> originalUrls;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.756 -0400", hash_original_field = "583BE25E7B8F5E9B4CF06A08F494F4E5", hash_generated_field = "6EEE0C60179788AF966E079989CB5CB3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.868 -0400", hash_original_field = "583BE25E7B8F5E9B4CF06A08F494F4E5", hash_generated_field = "6EEE0C60179788AF966E079989CB5CB3")
 
     List<URL> searchList;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.756 -0400", hash_original_field = "A12AB4D5BFE9F5C0714A5AC8F9CC246A", hash_generated_field = "018DFABF07E4A0807227E840C28DF558")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.868 -0400", hash_original_field = "A12AB4D5BFE9F5C0714A5AC8F9CC246A", hash_generated_field = "018DFABF07E4A0807227E840C28DF558")
 
     ArrayList<URLHandler> handlerList;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.756 -0400", hash_original_field = "C7A9E9C96BAE4B4D941CA4F6492C31FF", hash_generated_field = "83210D660C03E6C9492E92BD982991A6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.868 -0400", hash_original_field = "C7A9E9C96BAE4B4D941CA4F6492C31FF", hash_generated_field = "83210D660C03E6C9492E92BD982991A6")
 
     Map<URL, URLHandler> handlerMap = new HashMap<URL, URLHandler>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.756 -0400", hash_original_field = "9549DD6065D019211460C59A86DD6536", hash_generated_field = "E43CA7AA04ACD2FE8928E03B47B06D76")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.869 -0400", hash_original_field = "9549DD6065D019211460C59A86DD6536", hash_generated_field = "E43CA7AA04ACD2FE8928E03B47B06D76")
 
     private URLStreamHandlerFactory factory;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.760 -0400", hash_original_method = "223BBDDFA8D7BCBDBB892F093839C31A", hash_generated_method = "7574BADAD0DECFD730EB097F2190D40F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.869 -0400", hash_original_method = "223BBDDFA8D7BCBDBB892F093839C31A", hash_generated_method = "7574BADAD0DECFD730EB097F2190D40F")
     public  URLClassLoader(URL[] urls) {
         this(urls, ClassLoader.getSystemClassLoader(), null);
         addTaint(urls[0].getTaint());
@@ -60,7 +60,7 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.761 -0400", hash_original_method = "2C1F233833FFEC69CE12E7A0069A8B49", hash_generated_method = "36B94FD949236AA62E1679990C9E0F97")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.893 -0400", hash_original_method = "2C1F233833FFEC69CE12E7A0069A8B49", hash_generated_method = "36B94FD949236AA62E1679990C9E0F97")
     public  URLClassLoader(URL[] urls, ClassLoader parent) {
         this(urls, parent, null);
         addTaint(urls[0].getTaint());
@@ -69,7 +69,7 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.771 -0400", hash_original_method = "9F92FD383D821F82B2A5EE941293558A", hash_generated_method = "51AF40EE4F6C33761D4AD204AC0153B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.895 -0400", hash_original_method = "9F92FD383D821F82B2A5EE941293558A", hash_generated_method = "51AF40EE4F6C33761D4AD204AC0153B1")
     public  URLClassLoader(URL[] searchUrls, ClassLoader parent, URLStreamHandlerFactory factory) {
         super(parent);
         this.factory = factory;
@@ -109,7 +109,7 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.771 -0400", hash_original_method = "8767B0DB3A608CD14EAA847CE6E9F597", hash_generated_method = "3834D3634E44E0F2A447C4EBFBE4F5C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.896 -0400", hash_original_method = "8767B0DB3A608CD14EAA847CE6E9F597", hash_generated_method = "3834D3634E44E0F2A447C4EBFBE4F5C8")
     protected void addURL(URL url) {
         try 
         {
@@ -128,13 +128,13 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.773 -0400", hash_original_method = "E35E96FBBA5328024F5002F5E092C0FA", hash_generated_method = "BF1F4B7188E0B5B350FF12FBAC240B5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.916 -0400", hash_original_method = "E35E96FBBA5328024F5002F5E092C0FA", hash_generated_method = "A346EB616F1A4BBE33A1FC327029B57D")
     @Override
     public Enumeration<URL> findResources(final String name) throws IOException {
-        Enumeration<URL> varB4EAC82CA7396A68D541C85D26508E83_1774964319 = null; //Variable for return #1
-        Enumeration<URL> varB4EAC82CA7396A68D541C85D26508E83_298452530 = null; //Variable for return #2
+        Enumeration<URL> varB4EAC82CA7396A68D541C85D26508E83_621004010 = null; //Variable for return #1
+        Enumeration<URL> varB4EAC82CA7396A68D541C85D26508E83_1522026705 = null; //Variable for return #2
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1774964319 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_621004010 = null;
         } //End block
         ArrayList<URL> result;
         result = new ArrayList<URL>();
@@ -145,19 +145,19 @@ public class URLClassLoader extends SecureClassLoader {
             handler = getHandler(n++);
             handler.findResources(name, result);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_298452530 = Collections.enumeration(result);
+        varB4EAC82CA7396A68D541C85D26508E83_1522026705 = Collections.enumeration(result);
         addTaint(name.getTaint());
-        Enumeration<URL> varA7E53CE21691AB073D9660D615818899_112494131; //Final return value
+        Enumeration<URL> varA7E53CE21691AB073D9660D615818899_900819010; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_112494131 = varB4EAC82CA7396A68D541C85D26508E83_1774964319;
+                varA7E53CE21691AB073D9660D615818899_900819010 = varB4EAC82CA7396A68D541C85D26508E83_621004010;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_112494131 = varB4EAC82CA7396A68D541C85D26508E83_298452530;
+                varA7E53CE21691AB073D9660D615818899_900819010 = varB4EAC82CA7396A68D541C85D26508E83_1522026705;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_112494131.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_112494131;
+        varA7E53CE21691AB073D9660D615818899_900819010.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_900819010;
         // ---------- Original Method ----------
         //if (name == null) {
             //return null;
@@ -175,16 +175,16 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.788 -0400", hash_original_method = "B4723E664A18325BA87109668B89BB4C", hash_generated_method = "100CA53DFE624AFC466E5F8604CAFE38")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.917 -0400", hash_original_method = "B4723E664A18325BA87109668B89BB4C", hash_generated_method = "C624BE5F56AB8DEFE9678D5E9A56122F")
     @Override
     protected PermissionCollection getPermissions(final CodeSource codesource) {
-        PermissionCollection varB4EAC82CA7396A68D541C85D26508E83_1236152318 = null; //Variable for return #1
+        PermissionCollection varB4EAC82CA7396A68D541C85D26508E83_648309921 = null; //Variable for return #1
         PermissionCollection pc;
         pc = super.getPermissions(codesource);
         URL u;
         u = codesource.getLocation();
         {
-            boolean var0D3DCE32DE3636DD78A2BE6460215DDE_1144955829 = (u.getProtocol().equals("jar"));
+            boolean var0D3DCE32DE3636DD78A2BE6460215DDE_1334061124 = (u.getProtocol().equals("jar"));
             {
                 try 
                 {
@@ -195,14 +195,14 @@ public class URLClassLoader extends SecureClassLoader {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var4D320D496AF3A7A0362D9991BB7F9187_2086251019 = (u.getProtocol().equals("file"));
+            boolean var4D320D496AF3A7A0362D9991BB7F9187_2039973709 = (u.getProtocol().equals("file"));
             {
                 String path;
                 path = u.getFile();
                 String host;
                 host = u.getHost();
                 {
-                    boolean var2D544DB6C0FDD148F3E57369E992EC16_739963909 = (host != null && host.length() > 0);
+                    boolean var2D544DB6C0FDD148F3E57369E992EC16_1814401094 = (host != null && host.length() > 0);
                     {
                         path = "//" + host + path;
                     } //End block
@@ -211,7 +211,7 @@ public class URLClassLoader extends SecureClassLoader {
                     path = path.replace('/', File.separatorChar);
                 } //End block
                 {
-                    boolean varC84208C3E0250C4294B433F1E7B244E4_992761606 = (isDirectory(u));
+                    boolean varC84208C3E0250C4294B433F1E7B244E4_966597966 = (isDirectory(u));
                     {
                         pc.add(new FilePermission(path + "-", "read"));
                     } //End block
@@ -224,7 +224,7 @@ public class URLClassLoader extends SecureClassLoader {
                 String host;
                 host = u.getHost();
                 {
-                    boolean varC53ECC4BC21F90A0F577E60A03E6C413_1565106305 = (host.length() == 0);
+                    boolean varC53ECC4BC21F90A0F577E60A03E6C413_2066066866 = (host.length() == 0);
                     {
                         host = "localhost";
                     } //End block
@@ -232,21 +232,21 @@ public class URLClassLoader extends SecureClassLoader {
                 pc.add(new SocketPermission(host, "connect, accept"));
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1236152318 = pc;
+        varB4EAC82CA7396A68D541C85D26508E83_648309921 = pc;
         addTaint(codesource.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1236152318.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1236152318;
+        varB4EAC82CA7396A68D541C85D26508E83_648309921.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_648309921;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.789 -0400", hash_original_method = "E74D6D295FD8DF7C4B8AB85761E02982", hash_generated_method = "C732134B6719A48396F7B18FC3D46E4C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.918 -0400", hash_original_method = "E74D6D295FD8DF7C4B8AB85761E02982", hash_generated_method = "C4354A54884D72248E6C3B83BA894014")
     public URL[] getURLs() {
-        URL[] varB4EAC82CA7396A68D541C85D26508E83_1007756216 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1007756216 = originalUrls.toArray(new URL[originalUrls.size()]);
-        varB4EAC82CA7396A68D541C85D26508E83_1007756216.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1007756216;
+        URL[] varB4EAC82CA7396A68D541C85D26508E83_1687721810 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1687721810 = originalUrls.toArray(new URL[originalUrls.size()]);
+        varB4EAC82CA7396A68D541C85D26508E83_1687721810.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1687721810;
         // ---------- Original Method ----------
         //return originalUrls.toArray(new URL[originalUrls.size()]);
     }
@@ -268,10 +268,10 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.807 -0400", hash_original_method = "BAA63B0BE9A75DDAC07B90D04DE61F0B", hash_generated_method = "FF24FB20323030A5F98D3D8BC12F96B8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.925 -0400", hash_original_method = "BAA63B0BE9A75DDAC07B90D04DE61F0B", hash_generated_method = "B228F5809D2753CDDC6B2CAD0440478B")
     @Override
     protected Class<?> findClass(final String className) throws ClassNotFoundException {
-        Class<?> varB4EAC82CA7396A68D541C85D26508E83_370948662 = null; //Variable for return #1
+        Class<?> varB4EAC82CA7396A68D541C85D26508E83_106478032 = null; //Variable for return #1
         String partialName;
         partialName = className.replace('.', '/');
         String classFileName;
@@ -281,7 +281,7 @@ public class URLClassLoader extends SecureClassLoader {
         int position;
         position = partialName.lastIndexOf('/');
         {
-            boolean var3E1D041C4A1A150031AEB32E198BD1A9_1149403629 = ((position = partialName.lastIndexOf('/')) != -1);
+            boolean var3E1D041C4A1A150031AEB32E198BD1A9_128753434 = ((position = partialName.lastIndexOf('/')) != -1);
             {
                 packageName = partialName.substring(0, position);
             } //End block
@@ -294,13 +294,13 @@ public class URLClassLoader extends SecureClassLoader {
             Class<?> res;
             res = handler.findClass(packageName, classFileName, className);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_370948662 = res;
+                varB4EAC82CA7396A68D541C85D26508E83_106478032 = res;
             } //End block
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new ClassNotFoundException(className);
         addTaint(className.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_370948662.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_370948662;
+        varB4EAC82CA7396A68D541C85D26508E83_106478032.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_106478032;
         // ---------- Original Method ----------
         //String partialName = className.replace('.', '/');
         //final String classFileName = new StringBuilder(partialName).append(".class").toString();
@@ -324,48 +324,48 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.809 -0400", hash_original_method = "75025FE733C588323FB29CA64B72756D", hash_generated_method = "03FDCC1B110390C091E0A15A5A1B3604")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.952 -0400", hash_original_method = "75025FE733C588323FB29CA64B72756D", hash_generated_method = "A3512291321142490478830664F1F937")
     private URL createSearchURL(URL url) throws MalformedURLException {
-        URL varB4EAC82CA7396A68D541C85D26508E83_1991800731 = null; //Variable for return #1
-        URL varB4EAC82CA7396A68D541C85D26508E83_1194875842 = null; //Variable for return #2
-        URL varB4EAC82CA7396A68D541C85D26508E83_698503948 = null; //Variable for return #3
-        URL varB4EAC82CA7396A68D541C85D26508E83_1827245966 = null; //Variable for return #4
+        URL varB4EAC82CA7396A68D541C85D26508E83_316181743 = null; //Variable for return #1
+        URL varB4EAC82CA7396A68D541C85D26508E83_2075175673 = null; //Variable for return #2
+        URL varB4EAC82CA7396A68D541C85D26508E83_20892759 = null; //Variable for return #3
+        URL varB4EAC82CA7396A68D541C85D26508E83_325240476 = null; //Variable for return #4
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1991800731 = url;
+            varB4EAC82CA7396A68D541C85D26508E83_316181743 = url;
         } //End block
         String protocol;
         protocol = url.getProtocol();
         {
-            boolean var6B09AA880739B965279245545031D717_1297624079 = (isDirectory(url) || protocol.equals("jar"));
+            boolean var6B09AA880739B965279245545031D717_1698996410 = (isDirectory(url) || protocol.equals("jar"));
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1194875842 = url;
+                varB4EAC82CA7396A68D541C85D26508E83_2075175673 = url;
             } //End block
         } //End collapsed parenthetic
         {
-            varB4EAC82CA7396A68D541C85D26508E83_698503948 = new URL("jar", "",
+            varB4EAC82CA7396A68D541C85D26508E83_20892759 = new URL("jar", "",
                     -1, url.toString() + "!/");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1827245966 = new URL("jar", "",
+        varB4EAC82CA7396A68D541C85D26508E83_325240476 = new URL("jar", "",
                 -1, url.toString() + "!/",
                 factory.createURLStreamHandler("jar"));
         addTaint(url.getTaint());
-        URL varA7E53CE21691AB073D9660D615818899_2078809570; //Final return value
+        URL varA7E53CE21691AB073D9660D615818899_653165172; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_2078809570 = varB4EAC82CA7396A68D541C85D26508E83_1991800731;
+                varA7E53CE21691AB073D9660D615818899_653165172 = varB4EAC82CA7396A68D541C85D26508E83_316181743;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_2078809570 = varB4EAC82CA7396A68D541C85D26508E83_1194875842;
+                varA7E53CE21691AB073D9660D615818899_653165172 = varB4EAC82CA7396A68D541C85D26508E83_2075175673;
                 break;
             case 3: //Assign result for return ordinal #3
-                varA7E53CE21691AB073D9660D615818899_2078809570 = varB4EAC82CA7396A68D541C85D26508E83_698503948;
+                varA7E53CE21691AB073D9660D615818899_653165172 = varB4EAC82CA7396A68D541C85D26508E83_20892759;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_2078809570 = varB4EAC82CA7396A68D541C85D26508E83_1827245966;
+                varA7E53CE21691AB073D9660D615818899_653165172 = varB4EAC82CA7396A68D541C85D26508E83_325240476;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_2078809570.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_2078809570;
+        varA7E53CE21691AB073D9660D615818899_653165172.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_653165172;
         // ---------- Original Method ----------
         //if (url == null) {
             //return url;
@@ -384,14 +384,14 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.810 -0400", hash_original_method = "36DCCA8214496CA792D9D415CCE3C1EC", hash_generated_method = "1CCED3B188C4334AD7306E070855FFEA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.953 -0400", hash_original_method = "36DCCA8214496CA792D9D415CCE3C1EC", hash_generated_method = "20518CB652ED4F1E8A245FC457FEF281")
     @Override
     public URL findResource(final String name) {
-        URL varB4EAC82CA7396A68D541C85D26508E83_1888293660 = null; //Variable for return #1
-        URL varB4EAC82CA7396A68D541C85D26508E83_1187385292 = null; //Variable for return #2
-        URL varB4EAC82CA7396A68D541C85D26508E83_791606257 = null; //Variable for return #3
+        URL varB4EAC82CA7396A68D541C85D26508E83_782668490 = null; //Variable for return #1
+        URL varB4EAC82CA7396A68D541C85D26508E83_1721303566 = null; //Variable for return #2
+        URL varB4EAC82CA7396A68D541C85D26508E83_1799224840 = null; //Variable for return #3
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1888293660 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_782668490 = null;
         } //End block
         int n;
         n = 0;
@@ -401,25 +401,25 @@ public class URLClassLoader extends SecureClassLoader {
             URL res;
             res = handler.findResource(name);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1187385292 = res;
+                varB4EAC82CA7396A68D541C85D26508E83_1721303566 = res;
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_791606257 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1799224840 = null;
         addTaint(name.getTaint());
-        URL varA7E53CE21691AB073D9660D615818899_23988428; //Final return value
+        URL varA7E53CE21691AB073D9660D615818899_584027197; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_23988428 = varB4EAC82CA7396A68D541C85D26508E83_1888293660;
+                varA7E53CE21691AB073D9660D615818899_584027197 = varB4EAC82CA7396A68D541C85D26508E83_782668490;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_23988428 = varB4EAC82CA7396A68D541C85D26508E83_1187385292;
+                varA7E53CE21691AB073D9660D615818899_584027197 = varB4EAC82CA7396A68D541C85D26508E83_1721303566;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_23988428 = varB4EAC82CA7396A68D541C85D26508E83_791606257;
+                varA7E53CE21691AB073D9660D615818899_584027197 = varB4EAC82CA7396A68D541C85D26508E83_1799224840;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_23988428.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_23988428;
+        varA7E53CE21691AB073D9660D615818899_584027197.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_584027197;
         // ---------- Original Method ----------
         //if (name == null) {
             //return null;
@@ -439,40 +439,40 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.811 -0400", hash_original_method = "CFA5B2A5119E9C6C6C6B8BDB54F0FFE4", hash_generated_method = "7FDE3532DF436697707BA0AA8B719FE2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.957 -0400", hash_original_method = "CFA5B2A5119E9C6C6C6B8BDB54F0FFE4", hash_generated_method = "6BC536D321A940CA6D77F4F784F890B5")
     private URLHandler getHandler(int num) {
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_923421621 = null; //Variable for return #1
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_95916652 = null; //Variable for return #2
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_133082041 = null; //Variable for return #3
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_669908930 = null; //Variable for return #1
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_1993637362 = null; //Variable for return #2
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_1682258440 = null; //Variable for return #3
         {
-            boolean varC6CBE7D489CE95B916048C828E20629B_1262119966 = (num < handlerList.size());
+            boolean varC6CBE7D489CE95B916048C828E20629B_976792025 = (num < handlerList.size());
             {
-                varB4EAC82CA7396A68D541C85D26508E83_923421621 = handlerList.get(num);
+                varB4EAC82CA7396A68D541C85D26508E83_669908930 = handlerList.get(num);
             } //End block
         } //End collapsed parenthetic
         makeNewHandler();
         {
-            boolean varC6CBE7D489CE95B916048C828E20629B_1842694319 = (num < handlerList.size());
+            boolean varC6CBE7D489CE95B916048C828E20629B_95011831 = (num < handlerList.size());
             {
-                varB4EAC82CA7396A68D541C85D26508E83_95916652 = handlerList.get(num);
+                varB4EAC82CA7396A68D541C85D26508E83_1993637362 = handlerList.get(num);
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_133082041 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1682258440 = null;
         addTaint(num);
-        URLHandler varA7E53CE21691AB073D9660D615818899_1473568219; //Final return value
+        URLHandler varA7E53CE21691AB073D9660D615818899_1032910499; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1473568219 = varB4EAC82CA7396A68D541C85D26508E83_923421621;
+                varA7E53CE21691AB073D9660D615818899_1032910499 = varB4EAC82CA7396A68D541C85D26508E83_669908930;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1473568219 = varB4EAC82CA7396A68D541C85D26508E83_95916652;
+                varA7E53CE21691AB073D9660D615818899_1032910499 = varB4EAC82CA7396A68D541C85D26508E83_1993637362;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1473568219 = varB4EAC82CA7396A68D541C85D26508E83_133082041;
+                varA7E53CE21691AB073D9660D615818899_1032910499 = varB4EAC82CA7396A68D541C85D26508E83_1682258440;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1473568219.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1473568219;
+        varA7E53CE21691AB073D9660D615818899_1032910499.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1032910499;
         // ---------- Original Method ----------
         //if (num < handlerList.size()) {
             //return handlerList.get(num);
@@ -485,10 +485,10 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.811 -0400", hash_original_method = "A878B5121D5BF1232029A8CDBC76BE45", hash_generated_method = "DF9D142B9268D24683372BD1BD0FE21F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.958 -0400", hash_original_method = "A878B5121D5BF1232029A8CDBC76BE45", hash_generated_method = "46B149359E7F393DB6E4599B1BF73CAD")
     private synchronized void makeNewHandler() {
         {
-            boolean var056FE5D37761D5D3DC4B0CF57BDA52B0_1134374984 = (!searchList.isEmpty());
+            boolean var056FE5D37761D5D3DC4B0CF57BDA52B0_1437270083 = (!searchList.isEmpty());
             {
                 URL nextCandidate;
                 nextCandidate = searchList.remove(0);
@@ -496,18 +496,18 @@ public class URLClassLoader extends SecureClassLoader {
                     if (DroidSafeAndroidRuntime.control) throw new NullPointerException("A URL is null");
                 } //End block
                 {
-                    boolean var087B3C4559B5C5125F9C3E5F757C0545_868061749 = (!handlerMap.containsKey(nextCandidate));
+                    boolean var087B3C4559B5C5125F9C3E5F757C0545_348920553 = (!handlerMap.containsKey(nextCandidate));
                     {
                         URLHandler result;
                         String protocol;
                         protocol = nextCandidate.getProtocol();
                         {
-                            boolean varB604F1DF8F50013B1F7F0E3AFFD2694D_1835550961 = (protocol.equals("jar"));
+                            boolean varB604F1DF8F50013B1F7F0E3AFFD2694D_913432364 = (protocol.equals("jar"));
                             {
                                 result = createURLJarHandler(nextCandidate);
                             } //End block
                             {
-                                boolean varC08545D58A986C9447AB113046FC989F_590145489 = (protocol.equals("file"));
+                                boolean varC08545D58A986C9447AB113046FC989F_788264838 = (protocol.equals("file"));
                                 {
                                     result = createURLFileHandler(nextCandidate);
                                 } //End block
@@ -529,40 +529,40 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.812 -0400", hash_original_method = "15D2A778081BB97B4F5082C5EA9323F2", hash_generated_method = "C4E26A12666124FD9056B1386DE6BB8F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.959 -0400", hash_original_method = "15D2A778081BB97B4F5082C5EA9323F2", hash_generated_method = "158A6A51102199FA118C32FFA60452E4")
     private URLHandler createURLHandler(URL url) {
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_538819763 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_538819763 = new URLHandler(url);
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_900589004 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_900589004 = new URLHandler(url);
         addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_538819763.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_538819763;
+        varB4EAC82CA7396A68D541C85D26508E83_900589004.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_900589004;
         // ---------- Original Method ----------
         //return new URLHandler(url);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.812 -0400", hash_original_method = "959FE775BCBFF6223F7FD94A4010D369", hash_generated_method = "7BCA246F3D65CE544CCAAA42AEFDB214")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.968 -0400", hash_original_method = "959FE775BCBFF6223F7FD94A4010D369", hash_generated_method = "5F4CA06577895BEB85841330A709E8D4")
     private URLHandler createURLFileHandler(URL url) {
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_728857703 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_728857703 = new URLFileHandler(url);
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_2069687863 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2069687863 = new URLFileHandler(url);
         addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_728857703.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_728857703;
+        varB4EAC82CA7396A68D541C85D26508E83_2069687863.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2069687863;
         // ---------- Original Method ----------
         //return new URLFileHandler(url);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.830 -0400", hash_original_method = "93DBA576D247FBB46E5BCA4D9E3C8DFF", hash_generated_method = "B5F39330D8AB1ED7AE55175CAFA27412")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.970 -0400", hash_original_method = "93DBA576D247FBB46E5BCA4D9E3C8DFF", hash_generated_method = "EDA3EE8D154982B764FFB320E693D9E2")
     private URLHandler createURLJarHandler(URL url) {
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_233799180 = null; //Variable for return #1
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_73260348 = null; //Variable for return #2
-        URLHandler varB4EAC82CA7396A68D541C85D26508E83_1891709522 = null; //Variable for return #3
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_154359852 = null; //Variable for return #1
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_726731263 = null; //Variable for return #2
+        URLHandler varB4EAC82CA7396A68D541C85D26508E83_1128418457 = null; //Variable for return #3
         String prefixName;
         String file;
         file = url.getFile();
         {
-            boolean var5A4D7A486C11D5F49AB1CA63C5A4886E_1633436181 = (url.getFile().endsWith("!/"));
+            boolean var5A4D7A486C11D5F49AB1CA63C5A4886E_559076593 = (url.getFile().endsWith("!/"));
             {
                 prefixName = "";
             } //End block
@@ -570,7 +570,7 @@ public class URLClassLoader extends SecureClassLoader {
                 int sepIdx;
                 sepIdx = file.lastIndexOf("!/");
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_233799180 = null;
+                    varB4EAC82CA7396A68D541C85D26508E83_154359852 = null;
                 } //End block
                 sepIdx += 2;
                 prefixName = file.substring(sepIdx);
@@ -590,7 +590,7 @@ public class URLClassLoader extends SecureClassLoader {
             URLJarHandler jarH;
             jarH = new URLJarHandler(url, jarURL, jf, prefixName);
             {
-                boolean varD44BF004E9F3CB1AD9A1AE5B28A8F27A_482407693 = (jarH.getIndex() == null);
+                boolean varD44BF004E9F3CB1AD9A1AE5B28A8F27A_155513151 = (jarH.getIndex() == null);
                 {
                     try 
                     {
@@ -609,35 +609,35 @@ public class URLClassLoader extends SecureClassLoader {
                     { }
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_73260348 = jarH;
+            varB4EAC82CA7396A68D541C85D26508E83_726731263 = jarH;
         } //End block
         catch (IOException e)
         { }
-        varB4EAC82CA7396A68D541C85D26508E83_1891709522 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1128418457 = null;
         addTaint(url.getTaint());
-        URLHandler varA7E53CE21691AB073D9660D615818899_651666658; //Final return value
+        URLHandler varA7E53CE21691AB073D9660D615818899_1128469056; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_651666658 = varB4EAC82CA7396A68D541C85D26508E83_233799180;
+                varA7E53CE21691AB073D9660D615818899_1128469056 = varB4EAC82CA7396A68D541C85D26508E83_154359852;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_651666658 = varB4EAC82CA7396A68D541C85D26508E83_73260348;
+                varA7E53CE21691AB073D9660D615818899_1128469056 = varB4EAC82CA7396A68D541C85D26508E83_726731263;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_651666658 = varB4EAC82CA7396A68D541C85D26508E83_1891709522;
+                varA7E53CE21691AB073D9660D615818899_1128469056 = varB4EAC82CA7396A68D541C85D26508E83_1128418457;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_651666658.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_651666658;
+        varA7E53CE21691AB073D9660D615818899_1128469056.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1128469056;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.832 -0400", hash_original_method = "1F20C74E5FA90998EED1F262145E5A78", hash_generated_method = "66EA5CEE33A17722C45FC3E66CB4EBFD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.994 -0400", hash_original_method = "1F20C74E5FA90998EED1F262145E5A78", hash_generated_method = "B126217B5694B51634A285CFB80BAA01")
     protected Package definePackage(String packageName, Manifest manifest,
                                     URL url) throws IllegalArgumentException {
-        Package varB4EAC82CA7396A68D541C85D26508E83_34177010 = null; //Variable for return #1
+        Package varB4EAC82CA7396A68D541C85D26508E83_1255913680 = null; //Variable for return #1
         Attributes mainAttributes;
         mainAttributes = manifest.getMainAttributes();
         String dirName;
@@ -692,21 +692,21 @@ public class URLClassLoader extends SecureClassLoader {
             implementationVendor = mainAttributes
                     .getValue(Attributes.Name.IMPLEMENTATION_VENDOR);
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_34177010 = definePackage(packageName, specificationTitle,
+        varB4EAC82CA7396A68D541C85D26508E83_1255913680 = definePackage(packageName, specificationTitle,
                 specificationVersion, specificationVendor, implementationTitle,
                 implementationVersion, implementationVendor, isSealed(manifest,
                 dirName) ? url : null);
         addTaint(packageName.getTaint());
         addTaint(manifest.getTaint());
         addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_34177010.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_34177010;
+        varB4EAC82CA7396A68D541C85D26508E83_1255913680.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1255913680;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.833 -0400", hash_original_method = "F65716DA89135DC89A539D54ADB64D73", hash_generated_method = "8062078B549D8BCB6DD3EE0133DE9F89")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.994 -0400", hash_original_method = "F65716DA89135DC89A539D54ADB64D73", hash_generated_method = "D8F2A38ED878F412244C5A48ED27396F")
     private boolean isSealed(Manifest manifest, String dirName) {
         Attributes attributes;
         attributes = manifest.getAttributes(dirName);
@@ -714,18 +714,18 @@ public class URLClassLoader extends SecureClassLoader {
             String value;
             value = attributes.getValue(Attributes.Name.SEALED);
             {
-                boolean varF9F03D746A978112631EA8BA624DD149_915531240 = (value.equalsIgnoreCase("true"));
+                boolean varF9F03D746A978112631EA8BA624DD149_964474189 = (value.equalsIgnoreCase("true"));
             } //End block
         } //End block
         Attributes mainAttributes;
         mainAttributes = manifest.getMainAttributes();
         String value;
         value = mainAttributes.getValue(Attributes.Name.SEALED);
-        boolean varE5C35E1E8162E6D042C52DDD4CF2D6AA_822118534 = ((value != null && value.equalsIgnoreCase("true")));
+        boolean varE5C35E1E8162E6D042C52DDD4CF2D6AA_1825310502 = ((value != null && value.equalsIgnoreCase("true")));
         addTaint(manifest.getTaint());
         addTaint(dirName.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_953901913 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_953901913;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2034066232 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2034066232;
         // ---------- Original Method ----------
         //Attributes attributes = manifest.getAttributes(dirName);
         //if (attributes != null) {
@@ -740,9 +740,9 @@ public class URLClassLoader extends SecureClassLoader {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.834 -0400", hash_original_method = "8DCFE07B381999C3DEF19ABA31EFB008", hash_generated_method = "6FA5DA6F14EB2798B7A077B6C8C0222D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.996 -0400", hash_original_method = "8DCFE07B381999C3DEF19ABA31EFB008", hash_generated_method = "14133B10CF8C58C587C356195EE38C5C")
     private ArrayList<URL> getInternalURLs(URL root, String classpath) {
-        ArrayList<URL> varB4EAC82CA7396A68D541C85D26508E83_1850707188 = null; //Variable for return #1
+        ArrayList<URL> varB4EAC82CA7396A68D541C85D26508E83_1059381464 = null; //Variable for return #1
         StringTokenizer tokenizer;
         tokenizer = new StringTokenizer(classpath);
         ArrayList<URL> addedURLs;
@@ -759,12 +759,12 @@ public class URLClassLoader extends SecureClassLoader {
         } //End block
         file = file.substring(0, index);
         {
-            boolean var2B5824909BF971CED0BAC391F81BF905_905706747 = (tokenizer.hasMoreElements());
+            boolean var2B5824909BF971CED0BAC391F81BF905_1687043488 = (tokenizer.hasMoreElements());
             {
                 String element;
                 element = tokenizer.nextToken();
                 {
-                    boolean varE66FC8B2A65C7CA819992997D34C4051_464919599 = (!element.isEmpty());
+                    boolean varE66FC8B2A65C7CA819992997D34C4051_434726325 = (!element.isEmpty());
                     {
                         try 
                         {
@@ -778,22 +778,22 @@ public class URLClassLoader extends SecureClassLoader {
                 } //End collapsed parenthetic
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1850707188 = addedURLs;
+        varB4EAC82CA7396A68D541C85D26508E83_1059381464 = addedURLs;
         addTaint(root.getTaint());
         addTaint(classpath.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1850707188.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1850707188;
+        varB4EAC82CA7396A68D541C85D26508E83_1059381464.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1059381464;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
     static class IndexFile {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.835 -0400", hash_original_field = "1D78DC8ED51214E518B5114FE24490AE", hash_generated_field = "8CA0A10A56B7E322DF59FAF09C201F44")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.996 -0400", hash_original_field = "1D78DC8ED51214E518B5114FE24490AE", hash_generated_field = "8CA0A10A56B7E322DF59FAF09C201F44")
 
         private HashMap<String, ArrayList<URL>> map;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.835 -0400", hash_original_method = "379F12D2048DD620EF06C57D0B8DE6F0", hash_generated_method = "59D8AC312A7688B15BB683D206A79DB0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.996 -0400", hash_original_method = "379F12D2048DD620EF06C57D0B8DE6F0", hash_generated_method = "59D8AC312A7688B15BB683D206A79DB0")
         public  IndexFile(HashMap<String, ArrayList<URL>> map) {
             this.map = map;
             // ---------- Original Method ----------
@@ -864,13 +864,13 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.869 -0400", hash_original_method = "8FF86E61D1723FF11EF08355D8ACABBC", hash_generated_method = "8D5E445EF21E23288864C4DD7E49AF51")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.998 -0400", hash_original_method = "8FF86E61D1723FF11EF08355D8ACABBC", hash_generated_method = "CC78AE36C0E20D3DC846528B5F08D0F1")
          ArrayList<URL> get(String name) {
-            ArrayList<URL> varB4EAC82CA7396A68D541C85D26508E83_504528941 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_504528941 = map.get(name);
+            ArrayList<URL> varB4EAC82CA7396A68D541C85D26508E83_1852269534 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1852269534 = map.get(name);
             addTaint(name.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_504528941.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_504528941;
+            varB4EAC82CA7396A68D541C85D26508E83_1852269534.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1852269534;
             // ---------- Original Method ----------
             //return map.get(name);
         }
@@ -881,14 +881,14 @@ public class URLClassLoader extends SecureClassLoader {
 
     
     class URLHandler {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.869 -0400", hash_original_field = "572D4E421E5E6B9BC11D815E8A027112", hash_generated_field = "D0C59163767519DDC23EEDD08636971F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.998 -0400", hash_original_field = "572D4E421E5E6B9BC11D815E8A027112", hash_generated_field = "D0C59163767519DDC23EEDD08636971F")
 
         URL url;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.869 -0400", hash_original_field = "6B41B640483CE6C30687EB43271D5F95", hash_generated_field = "CA61315DDA6019C64E03F42F9050F544")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:43.998 -0400", hash_original_field = "6B41B640483CE6C30687EB43271D5F95", hash_generated_field = "CA61315DDA6019C64E03F42F9050F544")
 
         URL codeSourceUrl;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.870 -0400", hash_original_method = "D5B6F191489E39FDFBD95ACBEEF6948D", hash_generated_method = "D13F0BDC7438F2204A7900E8E8D32315")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.009 -0400", hash_original_method = "D5B6F191489E39FDFBD95ACBEEF6948D", hash_generated_method = "D13F0BDC7438F2204A7900E8E8D32315")
         public  URLHandler(URL url) {
             this.url = url;
             this.codeSourceUrl = url;
@@ -898,12 +898,12 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.870 -0400", hash_original_method = "A27A46A41A88BA0FAAC7830FBD366ED6", hash_generated_method = "C25839AA201311F203128DF53994AE6A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.009 -0400", hash_original_method = "A27A46A41A88BA0FAAC7830FBD366ED6", hash_generated_method = "E5970EF9704A065E4DF1EAB8F6682C51")
          void findResources(String name, ArrayList<URL> resources) {
             URL res;
             res = findResource(name);
             {
-                boolean varFC751D1AB3C4048454C180D236DA6858_552063633 = (res != null && !resources.contains(res));
+                boolean varFC751D1AB3C4048454C180D236DA6858_489539477 = (res != null && !resources.contains(res));
                 {
                     resources.add(res);
                 } //End block
@@ -918,10 +918,10 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.871 -0400", hash_original_method = "DE45CDB737E4642285D570F5610849E6", hash_generated_method = "ED37D24DA31A60B48F8FC4164FCD5801")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.010 -0400", hash_original_method = "DE45CDB737E4642285D570F5610849E6", hash_generated_method = "E314AB9D66B2BD21E83128280F6FC63A")
          Class<?> findClass(String packageName, String name, String origName) {
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_134490760 = null; //Variable for return #1
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_220016656 = null; //Variable for return #2
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1229237000 = null; //Variable for return #1
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1690663819 = null; //Variable for return #2
             URL resURL;
             resURL = targetURL(url, name);
             {
@@ -929,26 +929,26 @@ public class URLClassLoader extends SecureClassLoader {
                 {
                     InputStream is;
                     is = resURL.openStream();
-                    varB4EAC82CA7396A68D541C85D26508E83_134490760 = createClass(is, packageName, origName);
+                    varB4EAC82CA7396A68D541C85D26508E83_1229237000 = createClass(is, packageName, origName);
                 } //End block
                 catch (IOException e)
                 { }
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_220016656 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1690663819 = null;
             addTaint(packageName.getTaint());
             addTaint(name.getTaint());
             addTaint(origName.getTaint());
-            Class<?> varA7E53CE21691AB073D9660D615818899_1394766195; //Final return value
+            Class<?> varA7E53CE21691AB073D9660D615818899_1949044793; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1394766195 = varB4EAC82CA7396A68D541C85D26508E83_134490760;
+                    varA7E53CE21691AB073D9660D615818899_1949044793 = varB4EAC82CA7396A68D541C85D26508E83_1229237000;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1394766195 = varB4EAC82CA7396A68D541C85D26508E83_220016656;
+                    varA7E53CE21691AB073D9660D615818899_1949044793 = varB4EAC82CA7396A68D541C85D26508E83_1690663819;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1394766195.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1394766195;
+            varA7E53CE21691AB073D9660D615818899_1949044793.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1949044793;
             // ---------- Original Method ----------
             //URL resURL = targetURL(url, name);
             //if (resURL != null) {
@@ -962,13 +962,13 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.879 -0400", hash_original_method = "73460255618B48EEC6C92DAEEADA9765", hash_generated_method = "A868B250449FA2C6D09CE3BCDDCA60CD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.011 -0400", hash_original_method = "73460255618B48EEC6C92DAEEADA9765", hash_generated_method = "F350B1BBB99E2D21BAA9459D73A40C1C")
          Class<?> createClass(InputStream is, String packageName, String origName) {
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1293307310 = null; //Variable for return #1
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_33836850 = null; //Variable for return #2
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1354492137 = null; //Variable for return #3
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1422101309 = null; //Variable for return #1
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_450379669 = null; //Variable for return #2
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1551232211 = null; //Variable for return #3
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1293307310 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_1422101309 = null;
             } //End block
             byte[] clBuf;
             try 
@@ -977,7 +977,7 @@ public class URLClassLoader extends SecureClassLoader {
             } //End block
             catch (IOException e)
             {
-                varB4EAC82CA7396A68D541C85D26508E83_33836850 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_450379669 = null;
             } //End block
             {
                 String packageDotName;
@@ -990,43 +990,43 @@ public class URLClassLoader extends SecureClassLoader {
                 } //End block
                 {
                     {
-                        boolean var46ECFB0AA0749BB31F7AC12ACED7FFF6_529939024 = (packageObj.isSealed());
+                        boolean var46ECFB0AA0749BB31F7AC12ACED7FFF6_869418986 = (packageObj.isSealed());
                         {
                             if (DroidSafeAndroidRuntime.control) throw new SecurityException("Package is sealed");
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1354492137 = defineClass(origName, clBuf, 0, clBuf.length, new CodeSource(codeSourceUrl, (Certificate[]) null));
+            varB4EAC82CA7396A68D541C85D26508E83_1551232211 = defineClass(origName, clBuf, 0, clBuf.length, new CodeSource(codeSourceUrl, (Certificate[]) null));
             addTaint(is.getTaint());
             addTaint(packageName.getTaint());
             addTaint(origName.getTaint());
-            Class<?> varA7E53CE21691AB073D9660D615818899_525224639; //Final return value
+            Class<?> varA7E53CE21691AB073D9660D615818899_58530871; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_525224639 = varB4EAC82CA7396A68D541C85D26508E83_1293307310;
+                    varA7E53CE21691AB073D9660D615818899_58530871 = varB4EAC82CA7396A68D541C85D26508E83_1422101309;
                     break;
                 case 2: //Assign result for return ordinal #2
-                    varA7E53CE21691AB073D9660D615818899_525224639 = varB4EAC82CA7396A68D541C85D26508E83_33836850;
+                    varA7E53CE21691AB073D9660D615818899_58530871 = varB4EAC82CA7396A68D541C85D26508E83_450379669;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_525224639 = varB4EAC82CA7396A68D541C85D26508E83_1354492137;
+                    varA7E53CE21691AB073D9660D615818899_58530871 = varB4EAC82CA7396A68D541C85D26508E83_1551232211;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_525224639.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_525224639;
+            varA7E53CE21691AB073D9660D615818899_58530871.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_58530871;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.881 -0400", hash_original_method = "127A00E2878A258FF82AAAD1F4FC3101", hash_generated_method = "60B67B4B61FC23E429F185CFCAFE8818")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.012 -0400", hash_original_method = "127A00E2878A258FF82AAAD1F4FC3101", hash_generated_method = "FFCD34359A11BFCB78ECF3AAD3297DF8")
          URL findResource(String name) {
-            URL varB4EAC82CA7396A68D541C85D26508E83_2057226023 = null; //Variable for return #1
-            URL varB4EAC82CA7396A68D541C85D26508E83_996373587 = null; //Variable for return #2
-            URL varB4EAC82CA7396A68D541C85D26508E83_1303842878 = null; //Variable for return #3
-            URL varB4EAC82CA7396A68D541C85D26508E83_2112208919 = null; //Variable for return #4
-            URL varB4EAC82CA7396A68D541C85D26508E83_1191946458 = null; //Variable for return #5
+            URL varB4EAC82CA7396A68D541C85D26508E83_1111222073 = null; //Variable for return #1
+            URL varB4EAC82CA7396A68D541C85D26508E83_301831107 = null; //Variable for return #2
+            URL varB4EAC82CA7396A68D541C85D26508E83_1554902642 = null; //Variable for return #3
+            URL varB4EAC82CA7396A68D541C85D26508E83_1911950478 = null; //Variable for return #4
+            URL varB4EAC82CA7396A68D541C85D26508E83_1031111438 = null; //Variable for return #5
             URL resURL;
             resURL = targetURL(url, name);
             {
@@ -1036,51 +1036,51 @@ public class URLClassLoader extends SecureClassLoader {
                     uc = resURL.openConnection();
                     uc.getInputStream().close();
                     {
-                        boolean varE071FEB2BBC390EE5432466A982988A9_1878566970 = (!resURL.getProtocol().equals("http"));
+                        boolean varE071FEB2BBC390EE5432466A982988A9_1035636385 = (!resURL.getProtocol().equals("http"));
                         {
-                            varB4EAC82CA7396A68D541C85D26508E83_2057226023 = resURL;
+                            varB4EAC82CA7396A68D541C85D26508E83_1111222073 = resURL;
                         } //End block
                     } //End collapsed parenthetic
                     int code;
                     {
-                        boolean var691373D752CAE39EA2108E7727B5AEC9_446041030 = ((code = ((HttpURLConnection) uc).getResponseCode()) >= 200
+                        boolean var691373D752CAE39EA2108E7727B5AEC9_478707899 = ((code = ((HttpURLConnection) uc).getResponseCode()) >= 200
                             && code < 300);
                         {
-                            varB4EAC82CA7396A68D541C85D26508E83_996373587 = resURL;
+                            varB4EAC82CA7396A68D541C85D26508E83_301831107 = resURL;
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
                 catch (SecurityException e)
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_1303842878 = null;
+                    varB4EAC82CA7396A68D541C85D26508E83_1554902642 = null;
                 } //End block
                 catch (IOException e)
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_2112208919 = null;
+                    varB4EAC82CA7396A68D541C85D26508E83_1911950478 = null;
                 } //End block
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1191946458 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1031111438 = null;
             addTaint(name.getTaint());
-            URL varA7E53CE21691AB073D9660D615818899_1402841756; //Final return value
+            URL varA7E53CE21691AB073D9660D615818899_1584763191; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1402841756 = varB4EAC82CA7396A68D541C85D26508E83_2057226023;
+                    varA7E53CE21691AB073D9660D615818899_1584763191 = varB4EAC82CA7396A68D541C85D26508E83_1111222073;
                     break;
                 case 2: //Assign result for return ordinal #2
-                    varA7E53CE21691AB073D9660D615818899_1402841756 = varB4EAC82CA7396A68D541C85D26508E83_996373587;
+                    varA7E53CE21691AB073D9660D615818899_1584763191 = varB4EAC82CA7396A68D541C85D26508E83_301831107;
                     break;
                 case 3: //Assign result for return ordinal #3
-                    varA7E53CE21691AB073D9660D615818899_1402841756 = varB4EAC82CA7396A68D541C85D26508E83_1303842878;
+                    varA7E53CE21691AB073D9660D615818899_1584763191 = varB4EAC82CA7396A68D541C85D26508E83_1554902642;
                     break;
                 case 4: //Assign result for return ordinal #4
-                    varA7E53CE21691AB073D9660D615818899_1402841756 = varB4EAC82CA7396A68D541C85D26508E83_2112208919;
+                    varA7E53CE21691AB073D9660D615818899_1584763191 = varB4EAC82CA7396A68D541C85D26508E83_1911950478;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1402841756 = varB4EAC82CA7396A68D541C85D26508E83_1191946458;
+                    varA7E53CE21691AB073D9660D615818899_1584763191 = varB4EAC82CA7396A68D541C85D26508E83_1031111438;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1402841756.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1402841756;
+            varA7E53CE21691AB073D9660D615818899_1584763191.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1584763191;
             // ---------- Original Method ----------
             //URL resURL = targetURL(url, name);
             //if (resURL != null) {
@@ -1105,10 +1105,10 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.890 -0400", hash_original_method = "0524D4A234DDE6E7BD7D4DF76408464F", hash_generated_method = "729C37C415AA82BFBFD5DB5DDD2CF085")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.013 -0400", hash_original_method = "0524D4A234DDE6E7BD7D4DF76408464F", hash_generated_method = "2F764533BBF3C63F1D5B87E10949B5E9")
          URL targetURL(URL base, String name) {
-            URL varB4EAC82CA7396A68D541C85D26508E83_1339842158 = null; //Variable for return #1
-            URL varB4EAC82CA7396A68D541C85D26508E83_2037881398 = null; //Variable for return #2
+            URL varB4EAC82CA7396A68D541C85D26508E83_1425676144 = null; //Variable for return #1
+            URL varB4EAC82CA7396A68D541C85D26508E83_804226466 = null; //Variable for return #2
             try 
             {
                 StringBuilder fileBuilder;
@@ -1117,25 +1117,25 @@ public class URLClassLoader extends SecureClassLoader {
                 URI.PATH_ENCODER.appendEncoded(fileBuilder, name);
                 String file;
                 file = fileBuilder.toString();
-                varB4EAC82CA7396A68D541C85D26508E83_1339842158 = new URL(base.getProtocol(), base.getHost(), base.getPort(), file, null);
+                varB4EAC82CA7396A68D541C85D26508E83_1425676144 = new URL(base.getProtocol(), base.getHost(), base.getPort(), file, null);
             } //End block
             catch (MalformedURLException e)
             {
-                varB4EAC82CA7396A68D541C85D26508E83_2037881398 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_804226466 = null;
             } //End block
             addTaint(base.getTaint());
             addTaint(name.getTaint());
-            URL varA7E53CE21691AB073D9660D615818899_2088179425; //Final return value
+            URL varA7E53CE21691AB073D9660D615818899_864244892; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_2088179425 = varB4EAC82CA7396A68D541C85D26508E83_1339842158;
+                    varA7E53CE21691AB073D9660D615818899_864244892 = varB4EAC82CA7396A68D541C85D26508E83_1425676144;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_2088179425 = varB4EAC82CA7396A68D541C85D26508E83_2037881398;
+                    varA7E53CE21691AB073D9660D615818899_864244892 = varB4EAC82CA7396A68D541C85D26508E83_804226466;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_2088179425.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_2088179425;
+            varA7E53CE21691AB073D9660D615818899_864244892.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_864244892;
             // ---------- Original Method ----------
             //try {
                 //StringBuilder fileBuilder = new StringBuilder();
@@ -1154,20 +1154,20 @@ public class URLClassLoader extends SecureClassLoader {
 
     
     class URLJarHandler extends URLHandler {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.890 -0400", hash_original_field = "FE0EC43CC4200E777AA2190ACE58E7B4", hash_generated_field = "9E17897CFE5F4CA6FBFFFAEE1DB51A62")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.019 -0400", hash_original_field = "FE0EC43CC4200E777AA2190ACE58E7B4", hash_generated_field = "9E17897CFE5F4CA6FBFFFAEE1DB51A62")
 
         JarFile jf;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.890 -0400", hash_original_field = "CFE0C7543E7741B6DE4C8FEFFE50B892", hash_generated_field = "C2C4984C490CB9B238D5B3903BFC80CB")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.020 -0400", hash_original_field = "CFE0C7543E7741B6DE4C8FEFFE50B892", hash_generated_field = "C2C4984C490CB9B238D5B3903BFC80CB")
 
         String prefixName;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.890 -0400", hash_original_field = "6A992D5529F459A44FEE58C733255E86", hash_generated_field = "1CD0A34CFD9CFF5C38175C01E8A02107")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.020 -0400", hash_original_field = "6A992D5529F459A44FEE58C733255E86", hash_generated_field = "1CD0A34CFD9CFF5C38175C01E8A02107")
 
         IndexFile index;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.890 -0400", hash_original_field = "C6ADFED245A732099CF017E901933E62", hash_generated_field = "7C44F8438E081330364F46A075FCABB3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.020 -0400", hash_original_field = "C6ADFED245A732099CF017E901933E62", hash_generated_field = "7C44F8438E081330364F46A075FCABB3")
 
         Map<URL, URLHandler> subHandlers = new HashMap<URL, URLHandler>();
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.900 -0400", hash_original_method = "5C0004D321A5570AF49FDFAA941E414F", hash_generated_method = "28CFB32950DBB539E67CA5F974F3C4CB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.025 -0400", hash_original_method = "5C0004D321A5570AF49FDFAA941E414F", hash_generated_method = "28CFB32950DBB539E67CA5F974F3C4CB")
         public  URLJarHandler(URL url, URL jarURL, JarFile jf, String prefixName) {
             super(url);
             this.jf = jf;
@@ -1186,7 +1186,7 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.902 -0400", hash_original_method = "D582F40800649C185B2BDB76509EA85E", hash_generated_method = "406F0538DFEF93034D3A205963D40DD5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.032 -0400", hash_original_method = "D582F40800649C185B2BDB76509EA85E", hash_generated_method = "406F0538DFEF93034D3A205963D40DD5")
         public  URLJarHandler(URL url, URL jarURL, JarFile jf, String prefixName, IndexFile index) {
             super(url);
             this.jf = jf;
@@ -1203,24 +1203,24 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.903 -0400", hash_original_method = "2D62A5E011065AD5CA1BC3D6BB78BB91", hash_generated_method = "9032D4D1DB4FA4FD5372FA09C9EEE914")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.033 -0400", hash_original_method = "2D62A5E011065AD5CA1BC3D6BB78BB91", hash_generated_method = "BE961F98FD17DE5E6D9F02A21C45A7E3")
          IndexFile getIndex() {
-            IndexFile varB4EAC82CA7396A68D541C85D26508E83_1777795015 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_1777795015 = index;
-            varB4EAC82CA7396A68D541C85D26508E83_1777795015.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1777795015;
+            IndexFile varB4EAC82CA7396A68D541C85D26508E83_1506283317 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_1506283317 = index;
+            varB4EAC82CA7396A68D541C85D26508E83_1506283317.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1506283317;
             // ---------- Original Method ----------
             //return index;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.964 -0400", hash_original_method = "3BC222ED8E766AE357F97E5ED2C16BF7", hash_generated_method = "2A913F31B52EFF8D3462398902738AE2")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.073 -0400", hash_original_method = "3BC222ED8E766AE357F97E5ED2C16BF7", hash_generated_method = "A9F1557A4F741BF1B68AF93B7035048E")
         @Override
          void findResources(String name, ArrayList<URL> resources) {
             URL res;
             res = findResourceInOwn(name);
             {
-                boolean varFC751D1AB3C4048454C180D236DA6858_1219881693 = (res != null && !resources.contains(res));
+                boolean varFC751D1AB3C4048454C180D236DA6858_965674537 = (res != null && !resources.contains(res));
                 {
                     resources.add(res);
                 } //End block
@@ -1236,9 +1236,9 @@ public class URLClassLoader extends SecureClassLoader {
                 {
                     urls.remove(url);
                     {
-                        Iterator<URL> varA1868600C8D23C84BF90B90E66B7DED1_1624818430 = (urls).iterator();
-                        varA1868600C8D23C84BF90B90E66B7DED1_1624818430.hasNext();
-                        URL url = varA1868600C8D23C84BF90B90E66B7DED1_1624818430.next();
+                        Iterator<URL> varA1868600C8D23C84BF90B90E66B7DED1_74283737 = (urls).iterator();
+                        varA1868600C8D23C84BF90B90E66B7DED1_74283737.hasNext();
+                        URL url = varA1868600C8D23C84BF90B90E66B7DED1_74283737.next();
                         {
                             URLHandler h;
                             h = getSubHandler(url);
@@ -1273,12 +1273,12 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.973 -0400", hash_original_method = "A33B0C1225B85366B8FACC1A747264F5", hash_generated_method = "6A6EF2266C9AC1080D802DE063B5EAD6")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.091 -0400", hash_original_method = "A33B0C1225B85366B8FACC1A747264F5", hash_generated_method = "584569AF1FA094B975318E1A075A282B")
         @Override
          Class<?> findClass(String packageName, String name, String origName) {
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_45731445 = null; //Variable for return #1
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_306331257 = null; //Variable for return #2
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_344818800 = null; //Variable for return #3
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_649740530 = null; //Variable for return #1
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1693870288 = null; //Variable for return #2
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1132571755 = null; //Variable for return #3
             String entryName;
             entryName = prefixName + name;
             JarEntry entry;
@@ -1288,7 +1288,7 @@ public class URLClassLoader extends SecureClassLoader {
                 {
                     Manifest manifest;
                     manifest = jf.getManifest();
-                    varB4EAC82CA7396A68D541C85D26508E83_45731445 = createClass(entry, manifest, packageName, origName);
+                    varB4EAC82CA7396A68D541C85D26508E83_649740530 = createClass(entry, manifest, packageName, origName);
                 } //End block
                 catch (IOException e)
                 { }
@@ -1304,9 +1304,9 @@ public class URLClassLoader extends SecureClassLoader {
                 {
                     urls.remove(url);
                     {
-                        Iterator<URL> varA1868600C8D23C84BF90B90E66B7DED1_1642594151 = (urls).iterator();
-                        varA1868600C8D23C84BF90B90E66B7DED1_1642594151.hasNext();
-                        URL url = varA1868600C8D23C84BF90B90E66B7DED1_1642594151.next();
+                        Iterator<URL> varA1868600C8D23C84BF90B90E66B7DED1_1272113191 = (urls).iterator();
+                        varA1868600C8D23C84BF90B90E66B7DED1_1272113191.hasNext();
+                        URL url = varA1868600C8D23C84BF90B90E66B7DED1_1272113191.next();
                         {
                             URLHandler h;
                             h = getSubHandler(url);
@@ -1314,40 +1314,40 @@ public class URLClassLoader extends SecureClassLoader {
                                 Class<?> res;
                                 res = h.findClass(packageName, name, origName);
                                 {
-                                    varB4EAC82CA7396A68D541C85D26508E83_306331257 = res;
+                                    varB4EAC82CA7396A68D541C85D26508E83_1693870288 = res;
                                 } //End block
                             } //End block
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_344818800 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1132571755 = null;
             addTaint(packageName.getTaint());
             addTaint(name.getTaint());
             addTaint(origName.getTaint());
-            Class<?> varA7E53CE21691AB073D9660D615818899_798126416; //Final return value
+            Class<?> varA7E53CE21691AB073D9660D615818899_209333669; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_798126416 = varB4EAC82CA7396A68D541C85D26508E83_45731445;
+                    varA7E53CE21691AB073D9660D615818899_209333669 = varB4EAC82CA7396A68D541C85D26508E83_649740530;
                     break;
                 case 2: //Assign result for return ordinal #2
-                    varA7E53CE21691AB073D9660D615818899_798126416 = varB4EAC82CA7396A68D541C85D26508E83_306331257;
+                    varA7E53CE21691AB073D9660D615818899_209333669 = varB4EAC82CA7396A68D541C85D26508E83_1693870288;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_798126416 = varB4EAC82CA7396A68D541C85D26508E83_344818800;
+                    varA7E53CE21691AB073D9660D615818899_209333669 = varB4EAC82CA7396A68D541C85D26508E83_1132571755;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_798126416.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_798126416;
+            varA7E53CE21691AB073D9660D615818899_209333669.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_209333669;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.992 -0400", hash_original_method = "0997311DA5151313F3B17639635BC461", hash_generated_method = "E07861BBEEE50199A837C70C1138496D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.106 -0400", hash_original_method = "0997311DA5151313F3B17639635BC461", hash_generated_method = "98598C90CD3EC128F9ED6C2448ABD384")
         private Class<?> createClass(JarEntry entry, Manifest manifest, String packageName, String origName) {
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_325914640 = null; //Variable for return #1
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_2123128882 = null; //Variable for return #2
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1600664693 = null; //Variable for return #1
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_440270982 = null; //Variable for return #2
             byte[] clBuf;
             try 
             {
@@ -1357,7 +1357,7 @@ public class URLClassLoader extends SecureClassLoader {
             } //End block
             catch (IOException e)
             {
-                varB4EAC82CA7396A68D541C85D26508E83_325914640 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_1600664693 = null;
             } //End block
             {
                 String packageDotName;
@@ -1379,7 +1379,7 @@ public class URLClassLoader extends SecureClassLoader {
                     exception = packageObj.isSealed();
                     {
                         {
-                            boolean var430A4EB459A125FCCE6A1B2B0A7A99BF_301950930 = (isSealed(manifest, packageName + "/"));
+                            boolean var430A4EB459A125FCCE6A1B2B0A7A99BF_1684002715 = (isSealed(manifest, packageName + "/"));
                             {
                                 exception = !packageObj
                                     .isSealed(codeSourceUrl);
@@ -1394,52 +1394,52 @@ public class URLClassLoader extends SecureClassLoader {
             } //End block
             CodeSource codeS;
             codeS = new CodeSource(codeSourceUrl, entry.getCertificates());
-            varB4EAC82CA7396A68D541C85D26508E83_2123128882 = defineClass(origName, clBuf, 0, clBuf.length, codeS);
+            varB4EAC82CA7396A68D541C85D26508E83_440270982 = defineClass(origName, clBuf, 0, clBuf.length, codeS);
             addTaint(entry.getTaint());
             addTaint(manifest.getTaint());
             addTaint(packageName.getTaint());
             addTaint(origName.getTaint());
-            Class<?> varA7E53CE21691AB073D9660D615818899_1616586591; //Final return value
+            Class<?> varA7E53CE21691AB073D9660D615818899_749426429; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1616586591 = varB4EAC82CA7396A68D541C85D26508E83_325914640;
+                    varA7E53CE21691AB073D9660D615818899_749426429 = varB4EAC82CA7396A68D541C85D26508E83_1600664693;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1616586591 = varB4EAC82CA7396A68D541C85D26508E83_2123128882;
+                    varA7E53CE21691AB073D9660D615818899_749426429 = varB4EAC82CA7396A68D541C85D26508E83_440270982;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1616586591.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1616586591;
+            varA7E53CE21691AB073D9660D615818899_749426429.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_749426429;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:44.993 -0400", hash_original_method = "BEAE23CC7138835BB0FEF01D26145FD9", hash_generated_method = "D1ED96E4F3F36596872845BBD531EE3C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.110 -0400", hash_original_method = "BEAE23CC7138835BB0FEF01D26145FD9", hash_generated_method = "9DA508D6792A8CEF5CB3ADE484CCDC9C")
          URL findResourceInOwn(String name) {
-            URL varB4EAC82CA7396A68D541C85D26508E83_1849402697 = null; //Variable for return #1
-            URL varB4EAC82CA7396A68D541C85D26508E83_1137820342 = null; //Variable for return #2
+            URL varB4EAC82CA7396A68D541C85D26508E83_1809941793 = null; //Variable for return #1
+            URL varB4EAC82CA7396A68D541C85D26508E83_641038126 = null; //Variable for return #2
             String entryName;
             entryName = prefixName + name;
             {
-                boolean var970A0F969D5FE2206AF80ED83FDD2671_930559221 = (jf.getEntry(entryName) != null);
+                boolean var970A0F969D5FE2206AF80ED83FDD2671_313711720 = (jf.getEntry(entryName) != null);
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_1849402697 = targetURL(url, name);
+                    varB4EAC82CA7396A68D541C85D26508E83_1809941793 = targetURL(url, name);
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_1137820342 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_641038126 = null;
             addTaint(name.getTaint());
-            URL varA7E53CE21691AB073D9660D615818899_1040335535; //Final return value
+            URL varA7E53CE21691AB073D9660D615818899_714828171; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1040335535 = varB4EAC82CA7396A68D541C85D26508E83_1849402697;
+                    varA7E53CE21691AB073D9660D615818899_714828171 = varB4EAC82CA7396A68D541C85D26508E83_1809941793;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1040335535 = varB4EAC82CA7396A68D541C85D26508E83_1137820342;
+                    varA7E53CE21691AB073D9660D615818899_714828171 = varB4EAC82CA7396A68D541C85D26508E83_641038126;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1040335535.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1040335535;
+            varA7E53CE21691AB073D9660D615818899_714828171.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_714828171;
             // ---------- Original Method ----------
             //String entryName = prefixName + name;
             //if (jf.getEntry(entryName) != null) {
@@ -1449,16 +1449,16 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.025 -0400", hash_original_method = "7546D3992FBBAF86B12F0B740620B74B", hash_generated_method = "E68D8A2AC51FB7CFA1075614857C3A17")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.150 -0400", hash_original_method = "7546D3992FBBAF86B12F0B740620B74B", hash_generated_method = "B52A622E3B0C4CCED6AE62EC2CF00353")
         @Override
          URL findResource(String name) {
-            URL varB4EAC82CA7396A68D541C85D26508E83_273475091 = null; //Variable for return #1
-            URL varB4EAC82CA7396A68D541C85D26508E83_1098236419 = null; //Variable for return #2
-            URL varB4EAC82CA7396A68D541C85D26508E83_980036717 = null; //Variable for return #3
+            URL varB4EAC82CA7396A68D541C85D26508E83_130182224 = null; //Variable for return #1
+            URL varB4EAC82CA7396A68D541C85D26508E83_130615545 = null; //Variable for return #2
+            URL varB4EAC82CA7396A68D541C85D26508E83_1395768309 = null; //Variable for return #3
             URL res;
             res = findResourceInOwn(name);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_273475091 = res;
+                varB4EAC82CA7396A68D541C85D26508E83_130182224 = res;
             } //End block
             {
                 int pos;
@@ -1471,61 +1471,61 @@ public class URLClassLoader extends SecureClassLoader {
                 {
                     urls.remove(url);
                     {
-                        Iterator<URL> varA1868600C8D23C84BF90B90E66B7DED1_432342846 = (urls).iterator();
-                        varA1868600C8D23C84BF90B90E66B7DED1_432342846.hasNext();
-                        URL url = varA1868600C8D23C84BF90B90E66B7DED1_432342846.next();
+                        Iterator<URL> varA1868600C8D23C84BF90B90E66B7DED1_1225306007 = (urls).iterator();
+                        varA1868600C8D23C84BF90B90E66B7DED1_1225306007.hasNext();
+                        URL url = varA1868600C8D23C84BF90B90E66B7DED1_1225306007.next();
                         {
                             URLHandler h;
                             h = getSubHandler(url);
                             {
                                 res = h.findResource(name);
                                 {
-                                    varB4EAC82CA7396A68D541C85D26508E83_1098236419 = res;
+                                    varB4EAC82CA7396A68D541C85D26508E83_130615545 = res;
                                 } //End block
                             } //End block
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_980036717 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_1395768309 = null;
             addTaint(name.getTaint());
-            URL varA7E53CE21691AB073D9660D615818899_633425373; //Final return value
+            URL varA7E53CE21691AB073D9660D615818899_262507514; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_633425373 = varB4EAC82CA7396A68D541C85D26508E83_273475091;
+                    varA7E53CE21691AB073D9660D615818899_262507514 = varB4EAC82CA7396A68D541C85D26508E83_130182224;
                     break;
                 case 2: //Assign result for return ordinal #2
-                    varA7E53CE21691AB073D9660D615818899_633425373 = varB4EAC82CA7396A68D541C85D26508E83_1098236419;
+                    varA7E53CE21691AB073D9660D615818899_262507514 = varB4EAC82CA7396A68D541C85D26508E83_130615545;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_633425373 = varB4EAC82CA7396A68D541C85D26508E83_980036717;
+                    varA7E53CE21691AB073D9660D615818899_262507514 = varB4EAC82CA7396A68D541C85D26508E83_1395768309;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_633425373.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_633425373;
+            varA7E53CE21691AB073D9660D615818899_262507514.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_262507514;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.036 -0400", hash_original_method = "47CD540256D0F2B23AE4D5BB7E445858", hash_generated_method = "3B53817F3B0518FDF6E38C70EDBAB17A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.160 -0400", hash_original_method = "47CD540256D0F2B23AE4D5BB7E445858", hash_generated_method = "F56B574213FA33096F4D946A56A4AF30")
         private synchronized URLHandler getSubHandler(URL url) {
-            URLHandler varB4EAC82CA7396A68D541C85D26508E83_206449440 = null; //Variable for return #1
-            URLHandler varB4EAC82CA7396A68D541C85D26508E83_55255910 = null; //Variable for return #2
+            URLHandler varB4EAC82CA7396A68D541C85D26508E83_250999436 = null; //Variable for return #1
+            URLHandler varB4EAC82CA7396A68D541C85D26508E83_170050579 = null; //Variable for return #2
             URLHandler sub;
             sub = subHandlers.get(url);
             {
-                varB4EAC82CA7396A68D541C85D26508E83_206449440 = sub;
+                varB4EAC82CA7396A68D541C85D26508E83_250999436 = sub;
             } //End block
             String protocol;
             protocol = url.getProtocol();
             {
-                boolean varFE0A78E78A02221C3A8F7118E438EAB7_1456540598 = (protocol.equals("jar"));
+                boolean varFE0A78E78A02221C3A8F7118E438EAB7_869993802 = (protocol.equals("jar"));
                 {
                     sub = createURLJarHandler(url);
                 } //End block
                 {
-                    boolean var07199D08C001E96CE71D5573EC1F815A_759756823 = (protocol.equals("file"));
+                    boolean var07199D08C001E96CE71D5573EC1F815A_2011047529 = (protocol.equals("file"));
                     {
                         sub = createURLSubJarHandler(url);
                     } //End block
@@ -1537,19 +1537,19 @@ public class URLClassLoader extends SecureClassLoader {
             {
                 subHandlers.put(url, sub);
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_55255910 = sub;
+            varB4EAC82CA7396A68D541C85D26508E83_170050579 = sub;
             addTaint(url.getTaint());
-            URLHandler varA7E53CE21691AB073D9660D615818899_1944784880; //Final return value
+            URLHandler varA7E53CE21691AB073D9660D615818899_478365002; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1944784880 = varB4EAC82CA7396A68D541C85D26508E83_206449440;
+                    varA7E53CE21691AB073D9660D615818899_478365002 = varB4EAC82CA7396A68D541C85D26508E83_250999436;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1944784880 = varB4EAC82CA7396A68D541C85D26508E83_55255910;
+                    varA7E53CE21691AB073D9660D615818899_478365002 = varB4EAC82CA7396A68D541C85D26508E83_170050579;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1944784880.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1944784880;
+            varA7E53CE21691AB073D9660D615818899_478365002.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_478365002;
             // ---------- Original Method ----------
             //URLHandler sub = subHandlers.get(url);
             //if (sub != null) {
@@ -1570,16 +1570,16 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.037 -0400", hash_original_method = "CC5C093E882DD207DA9222EBC985A361", hash_generated_method = "DD29D73CEF66EBD20398492BB64A640A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.162 -0400", hash_original_method = "CC5C093E882DD207DA9222EBC985A361", hash_generated_method = "845DB1E6504C2C280420B5DA44A7B358")
         private URLHandler createURLSubJarHandler(URL url) {
-            URLHandler varB4EAC82CA7396A68D541C85D26508E83_2140124435 = null; //Variable for return #1
-            URLHandler varB4EAC82CA7396A68D541C85D26508E83_808232791 = null; //Variable for return #2
-            URLHandler varB4EAC82CA7396A68D541C85D26508E83_625248298 = null; //Variable for return #3
+            URLHandler varB4EAC82CA7396A68D541C85D26508E83_1576046312 = null; //Variable for return #1
+            URLHandler varB4EAC82CA7396A68D541C85D26508E83_438509906 = null; //Variable for return #2
+            URLHandler varB4EAC82CA7396A68D541C85D26508E83_73891370 = null; //Variable for return #3
             String prefixName;
             String file;
             file = url.getFile();
             {
-                boolean var7356D1B77839B718E750922987458DE7_1126285731 = (url.getFile().endsWith("!/"));
+                boolean var7356D1B77839B718E750922987458DE7_157503708 = (url.getFile().endsWith("!/"));
                 {
                     prefixName = "";
                 } //End block
@@ -1587,7 +1587,7 @@ public class URLClassLoader extends SecureClassLoader {
                     int sepIdx;
                     sepIdx = file.lastIndexOf("!/");
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_2140124435 = null;
+                        varB4EAC82CA7396A68D541C85D26508E83_1576046312 = null;
                     } //End block
                     sepIdx += 2;
                     prefixName = file.substring(sepIdx);
@@ -1606,26 +1606,26 @@ public class URLClassLoader extends SecureClassLoader {
                 jf = juc.getJarFile();
                 URLJarHandler jarH;
                 jarH = new URLJarHandler(url, jarURL, jf, prefixName, null);
-                varB4EAC82CA7396A68D541C85D26508E83_808232791 = jarH;
+                varB4EAC82CA7396A68D541C85D26508E83_438509906 = jarH;
             } //End block
             catch (IOException e)
             { }
-            varB4EAC82CA7396A68D541C85D26508E83_625248298 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_73891370 = null;
             addTaint(url.getTaint());
-            URLHandler varA7E53CE21691AB073D9660D615818899_999539798; //Final return value
+            URLHandler varA7E53CE21691AB073D9660D615818899_1427208808; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_999539798 = varB4EAC82CA7396A68D541C85D26508E83_2140124435;
+                    varA7E53CE21691AB073D9660D615818899_1427208808 = varB4EAC82CA7396A68D541C85D26508E83_1576046312;
                     break;
                 case 2: //Assign result for return ordinal #2
-                    varA7E53CE21691AB073D9660D615818899_999539798 = varB4EAC82CA7396A68D541C85D26508E83_808232791;
+                    varA7E53CE21691AB073D9660D615818899_1427208808 = varB4EAC82CA7396A68D541C85D26508E83_438509906;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_999539798 = varB4EAC82CA7396A68D541C85D26508E83_625248298;
+                    varA7E53CE21691AB073D9660D615818899_1427208808 = varB4EAC82CA7396A68D541C85D26508E83_73891370;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_999539798.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_999539798;
+            varA7E53CE21691AB073D9660D615818899_1427208808.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1427208808;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
@@ -1636,11 +1636,11 @@ public class URLClassLoader extends SecureClassLoader {
 
     
     class URLFileHandler extends URLHandler {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.037 -0400", hash_original_field = "851F5AC9941D720844D143ED9CFCF60A", hash_generated_field = "F717D382565968ED95842821FAEC62F9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.162 -0400", hash_original_field = "851F5AC9941D720844D143ED9CFCF60A", hash_generated_field = "F717D382565968ED95842821FAEC62F9")
 
         private String prefix;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.038 -0400", hash_original_method = "748B8F1639705FB8AE66EE4520D13BFB", hash_generated_method = "C86A945C7936AF00DAF2DA8309FD034F")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.163 -0400", hash_original_method = "748B8F1639705FB8AE66EE4520D13BFB", hash_generated_method = "C86A945C7936AF00DAF2DA8309FD034F")
         public  URLFileHandler(URL url) {
             super(url);
             String baseFile;
@@ -1678,13 +1678,13 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.046 -0400", hash_original_method = "459A43E8A29596EEF0DEE6D3A05FE74A", hash_generated_method = "DE9A295157587D1484650852278D800A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.174 -0400", hash_original_method = "459A43E8A29596EEF0DEE6D3A05FE74A", hash_generated_method = "6F8BD48510FF77106E695B59AF15999A")
         @Override
          Class<?> findClass(String packageName, String name, String origName) {
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1774325837 = null; //Variable for return #1
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1215588147 = null; //Variable for return #2
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1142706426 = null; //Variable for return #3
-            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1742287210 = null; //Variable for return #4
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1851168902 = null; //Variable for return #1
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1111652498 = null; //Variable for return #2
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_1630696066 = null; //Variable for return #3
+            Class<?> varB4EAC82CA7396A68D541C85D26508E83_246413953 = null; //Variable for return #4
             String filename;
             filename = prefix + name;
             try 
@@ -1693,48 +1693,48 @@ public class URLClassLoader extends SecureClassLoader {
             } //End block
             catch (IllegalArgumentException e)
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1774325837 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_1851168902 = null;
             } //End block
             catch (UnsupportedEncodingException e)
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1215588147 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_1111652498 = null;
             } //End block
             File file;
             file = new File(filename);
             {
-                boolean var59AA0F7651ECC78FBF1607A856F762E1_208701044 = (file.exists());
+                boolean var59AA0F7651ECC78FBF1607A856F762E1_1924910993 = (file.exists());
                 {
                     try 
                     {
                         InputStream is;
                         is = new FileInputStream(file);
-                        varB4EAC82CA7396A68D541C85D26508E83_1142706426 = createClass(is, packageName, origName);
+                        varB4EAC82CA7396A68D541C85D26508E83_1630696066 = createClass(is, packageName, origName);
                     } //End block
                     catch (FileNotFoundException e)
                     { }
                 } //End block
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_1742287210 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_246413953 = null;
             addTaint(packageName.getTaint());
             addTaint(name.getTaint());
             addTaint(origName.getTaint());
-            Class<?> varA7E53CE21691AB073D9660D615818899_1610044123; //Final return value
+            Class<?> varA7E53CE21691AB073D9660D615818899_1101178568; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1610044123 = varB4EAC82CA7396A68D541C85D26508E83_1774325837;
+                    varA7E53CE21691AB073D9660D615818899_1101178568 = varB4EAC82CA7396A68D541C85D26508E83_1851168902;
                     break;
                 case 2: //Assign result for return ordinal #2
-                    varA7E53CE21691AB073D9660D615818899_1610044123 = varB4EAC82CA7396A68D541C85D26508E83_1215588147;
+                    varA7E53CE21691AB073D9660D615818899_1101178568 = varB4EAC82CA7396A68D541C85D26508E83_1111652498;
                     break;
                 case 3: //Assign result for return ordinal #3
-                    varA7E53CE21691AB073D9660D615818899_1610044123 = varB4EAC82CA7396A68D541C85D26508E83_1142706426;
+                    varA7E53CE21691AB073D9660D615818899_1101178568 = varB4EAC82CA7396A68D541C85D26508E83_1630696066;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1610044123 = varB4EAC82CA7396A68D541C85D26508E83_1742287210;
+                    varA7E53CE21691AB073D9660D615818899_1101178568 = varB4EAC82CA7396A68D541C85D26508E83_246413953;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1610044123.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1610044123;
+            varA7E53CE21691AB073D9660D615818899_1101178568.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1101178568;
             // ---------- Original Method ----------
             //String filename = prefix + name;
             //try {
@@ -1756,17 +1756,17 @@ public class URLClassLoader extends SecureClassLoader {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:45.047 -0400", hash_original_method = "5954C39BABA19C5921C727F17BF4740B", hash_generated_method = "C02CF8393CDF4944E1562DDB46552F28")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:44.181 -0400", hash_original_method = "5954C39BABA19C5921C727F17BF4740B", hash_generated_method = "F1A649C327F7B7E6906F556B66750663")
         @Override
          URL findResource(String name) {
-            URL varB4EAC82CA7396A68D541C85D26508E83_1676178483 = null; //Variable for return #1
-            URL varB4EAC82CA7396A68D541C85D26508E83_1433683951 = null; //Variable for return #2
-            URL varB4EAC82CA7396A68D541C85D26508E83_174513289 = null; //Variable for return #3
+            URL varB4EAC82CA7396A68D541C85D26508E83_486075442 = null; //Variable for return #1
+            URL varB4EAC82CA7396A68D541C85D26508E83_578596713 = null; //Variable for return #2
+            URL varB4EAC82CA7396A68D541C85D26508E83_697848560 = null; //Variable for return #3
             int idx;
             idx = 0;
             String filename;
             {
-                boolean var23EFF342BB8E7FE0217A53D321A1C78E_1105899033 = (idx < name.length() &&
+                boolean var23EFF342BB8E7FE0217A53D321A1C78E_1447671112 = (idx < name.length() &&
                    ((name.charAt(idx) == '/') || (name.charAt(idx) == '\\')));
             } //End collapsed parenthetic
             {
@@ -1776,36 +1776,36 @@ public class URLClassLoader extends SecureClassLoader {
             {
                 filename = URLDecoder.decode(prefix, "UTF-8") + name;
                 {
-                    boolean varBF735348FCCFEB4D8EC418F0236B8831_518332336 = (new File(filename).exists());
+                    boolean varBF735348FCCFEB4D8EC418F0236B8831_754640556 = (new File(filename).exists());
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_1676178483 = targetURL(url, name);
+                        varB4EAC82CA7396A68D541C85D26508E83_486075442 = targetURL(url, name);
                     } //End block
                 } //End collapsed parenthetic
-                varB4EAC82CA7396A68D541C85D26508E83_1433683951 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_578596713 = null;
             } //End block
             catch (IllegalArgumentException e)
             {
-                varB4EAC82CA7396A68D541C85D26508E83_174513289 = null;
+                varB4EAC82CA7396A68D541C85D26508E83_697848560 = null;
             } //End block
             catch (UnsupportedEncodingException e)
             {
                 if (DroidSafeAndroidRuntime.control) throw new AssertionError(e);
             } //End block
             addTaint(name.getTaint());
-            URL varA7E53CE21691AB073D9660D615818899_1419737737; //Final return value
+            URL varA7E53CE21691AB073D9660D615818899_1387351193; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1419737737 = varB4EAC82CA7396A68D541C85D26508E83_1676178483;
+                    varA7E53CE21691AB073D9660D615818899_1387351193 = varB4EAC82CA7396A68D541C85D26508E83_486075442;
                     break;
                 case 2: //Assign result for return ordinal #2
-                    varA7E53CE21691AB073D9660D615818899_1419737737 = varB4EAC82CA7396A68D541C85D26508E83_1433683951;
+                    varA7E53CE21691AB073D9660D615818899_1387351193 = varB4EAC82CA7396A68D541C85D26508E83_578596713;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1419737737 = varB4EAC82CA7396A68D541C85D26508E83_174513289;
+                    varA7E53CE21691AB073D9660D615818899_1387351193 = varB4EAC82CA7396A68D541C85D26508E83_697848560;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1419737737.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1419737737;
+            varA7E53CE21691AB073D9660D615818899_1387351193.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1387351193;
             // ---------- Original Method ----------
             //int idx = 0;
             //String filename;

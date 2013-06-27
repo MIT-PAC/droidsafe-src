@@ -17,7 +17,7 @@ import java.text.ParseException;
 
 public class PathParser extends AddressParametersParser implements TokenTypes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.790 -0400", hash_original_method = "7A079BF63C48031C1D75ACF959BDA24D", hash_generated_method = "8C9FF8410B31649835F48ABA0CD38AC9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.727 -0400", hash_original_method = "7A079BF63C48031C1D75ACF959BDA24D", hash_generated_method = "8C9FF8410B31649835F48ABA0CD38AC9")
     public  PathParser(String path) {
         super(path);
         addTaint(path.getTaint());
@@ -25,7 +25,7 @@ public class PathParser extends AddressParametersParser implements TokenTypes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.800 -0400", hash_original_method = "91CE1B5A663F1BD7DA26A8D59664C334", hash_generated_method = "F9264225D532990B0A316E96E402C1BB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.727 -0400", hash_original_method = "91CE1B5A663F1BD7DA26A8D59664C334", hash_generated_method = "F9264225D532990B0A316E96E402C1BB")
     protected  PathParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -33,9 +33,9 @@ public class PathParser extends AddressParametersParser implements TokenTypes {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.802 -0400", hash_original_method = "F1314A453C93E830C24484946DC25942", hash_generated_method = "58C94EC569DDA84A46E83167FA6E8F61")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.731 -0400", hash_original_method = "F1314A453C93E830C24484946DC25942", hash_generated_method = "46DCDEB77B939A2B22941C8814ABE1BA")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_541090952 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_745055609 = null; //Variable for return #1
         PathList pathList;
         pathList = new PathList();
         dbg_enter("PathParser.parse");
@@ -59,14 +59,14 @@ public class PathParser extends AddressParametersParser implements TokenTypes {
                 } //End block
                 if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected char");
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_541090952 = pathList;
+            varB4EAC82CA7396A68D541C85D26508E83_745055609 = pathList;
         } //End block
         finally 
         {
             dbg_leave("PathParser.parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_541090952.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_541090952;
+        varB4EAC82CA7396A68D541C85D26508E83_745055609.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_745055609;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 public final class SqliteWrapper {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.525 -0400", hash_original_method = "6012CC1B0BDCD376222B54176A59A0F5", hash_generated_method = "4029D590C043C28C47B92BA3BA0590EB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.089 -0400", hash_original_method = "6012CC1B0BDCD376222B54176A59A0F5", hash_generated_method = "4029D590C043C28C47B92BA3BA0590EB")
     private  SqliteWrapper() {
         // ---------- Original Method ----------
     }
@@ -98,10 +98,10 @@ public final class SqliteWrapper {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.540 -0400", hash_original_field = "47AC6CB6E6C4A29C7002300C2F3B787C", hash_generated_field = "CB85E51920B5C748CD06BD92C3D67A56")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.118 -0400", hash_original_field = "47AC6CB6E6C4A29C7002300C2F3B787C", hash_generated_field = "CB85E51920B5C748CD06BD92C3D67A56")
 
     private static String TAG = "SqliteWrapper";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:10.540 -0400", hash_original_field = "0D25A3B6C1D453049B793E6B5CF5ECC9", hash_generated_field = "25D5B0E64B1E144489150673249F19B0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.118 -0400", hash_original_field = "0D25A3B6C1D453049B793E6B5CF5ECC9", hash_generated_field = "25D5B0E64B1E144489150673249F19B0")
 
     private static String SQLITE_EXCEPTION_DETAIL_MESSAGE = "unable to open database file";
 }

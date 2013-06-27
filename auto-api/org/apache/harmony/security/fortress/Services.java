@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class Services {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.790 -0400", hash_original_method = "719D73AD00F3F6FC30282996B569C5B0", hash_generated_method = "719D73AD00F3F6FC30282996B569C5B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.808 -0400", hash_original_method = "719D73AD00F3F6FC30282996B569C5B0", hash_generated_method = "719D73AD00F3F6FC30282996B569C5B0")
     public Services ()
     {
         //Synthesized constructor
@@ -142,22 +142,22 @@ public class Services {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.793 -0400", hash_original_field = "D8D0A2D1EC47DC8C7B79D750C2B9003F", hash_generated_field = "DAD4B33634B1E56CA324C20814E8951D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.811 -0400", hash_original_field = "D8D0A2D1EC47DC8C7B79D750C2B9003F", hash_generated_field = "DAD4B33634B1E56CA324C20814E8951D")
 
     private static Map<String, Provider.Service> services = new HashMap<String, Provider.Service>(600);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.793 -0400", hash_original_field = "7A369DC18E63D8C3EA510B9B660A072D", hash_generated_field = "26B31BC298C6961DC97AEDA887767040")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.811 -0400", hash_original_field = "7A369DC18E63D8C3EA510B9B660A072D", hash_generated_field = "26B31BC298C6961DC97AEDA887767040")
 
     private static Provider.Service secureRandom;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.793 -0400", hash_original_field = "BF6A04D9D455D227547E0462114A9DDA", hash_generated_field = "C6172C74BF02D5F0ECE4932F6F8B1A6B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.811 -0400", hash_original_field = "BF6A04D9D455D227547E0462114A9DDA", hash_generated_field = "C6172C74BF02D5F0ECE4932F6F8B1A6B")
 
     private static boolean needRefresh;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.793 -0400", hash_original_field = "BFABA1F9DDCCD1015B660402467D46E3", hash_generated_field = "3C3CAE17DC7A09A348AAAF9335F2BAEB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.811 -0400", hash_original_field = "BFABA1F9DDCCD1015B660402467D46E3", hash_generated_field = "3C3CAE17DC7A09A348AAAF9335F2BAEB")
 
     static int refreshNumber = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.793 -0400", hash_original_field = "8FD27C6FD4C1AB33EB50B652D92371E9", hash_generated_field = "76B7954D486A636F03D68A7F04984DB0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.811 -0400", hash_original_field = "8FD27C6FD4C1AB33EB50B652D92371E9", hash_generated_field = "76B7954D486A636F03D68A7F04984DB0")
 
     private static List<Provider> providers = new ArrayList<Provider>(20);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.805 -0400", hash_original_field = "F2254891D7AEE8429397AAC3863B565A", hash_generated_field = "2358ACAC4A17A7DEE17CA2F886A9A827")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.811 -0400", hash_original_field = "F2254891D7AEE8429397AAC3863B565A", hash_generated_field = "2358ACAC4A17A7DEE17CA2F886A9A827")
 
     private static Map<String, Provider> providersNames = new HashMap<String, Provider>(20);
     static {

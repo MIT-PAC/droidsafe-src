@@ -12,51 +12,51 @@ import android.os.Parcel;
 import java.util.EnumMap;
 
 public class NetworkInfo implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.551 -0400", hash_original_field = "9761905E68D80D41E55047BFA13A52C2", hash_generated_field = "60BE94F590B2B55E7F16606AE64523A2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.251 -0400", hash_original_field = "9761905E68D80D41E55047BFA13A52C2", hash_generated_field = "60BE94F590B2B55E7F16606AE64523A2")
 
     private int mNetworkType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.552 -0400", hash_original_field = "3E33CBB2BE8C82106CDB44B0EFDD93E0", hash_generated_field = "298DC32990AD7D1E2E5F1AB561C62F4A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.251 -0400", hash_original_field = "3E33CBB2BE8C82106CDB44B0EFDD93E0", hash_generated_field = "298DC32990AD7D1E2E5F1AB561C62F4A")
 
     private int mSubtype;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.552 -0400", hash_original_field = "CE4901BF2E25E3548E50E5819FEF91BA", hash_generated_field = "FB6356289394679804A962555AC4BF63")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.251 -0400", hash_original_field = "CE4901BF2E25E3548E50E5819FEF91BA", hash_generated_field = "FB6356289394679804A962555AC4BF63")
 
     private String mTypeName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.552 -0400", hash_original_field = "BE463DB514BCF1747F76DECDC515D7A7", hash_generated_field = "C7263A00155379E7E78A982D8C2EFEF0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.251 -0400", hash_original_field = "BE463DB514BCF1747F76DECDC515D7A7", hash_generated_field = "C7263A00155379E7E78A982D8C2EFEF0")
 
     private String mSubtypeName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.552 -0400", hash_original_field = "48A902C1D749B47EBC75C77370D5A1F0", hash_generated_field = "169FB36AA020AE19D2F764883C54F88A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.251 -0400", hash_original_field = "48A902C1D749B47EBC75C77370D5A1F0", hash_generated_field = "169FB36AA020AE19D2F764883C54F88A")
 
     private State mState;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.552 -0400", hash_original_field = "7AA188D94D7AB9DFB39067D3C50A37F7", hash_generated_field = "5D3769B046F00AA6EC620B80C5E89776")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.251 -0400", hash_original_field = "7AA188D94D7AB9DFB39067D3C50A37F7", hash_generated_field = "5D3769B046F00AA6EC620B80C5E89776")
 
     private DetailedState mDetailedState;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.552 -0400", hash_original_field = "D37183730F43F82EAD5FD0BEC18C215E", hash_generated_field = "39AA00EB7CB7F96F2E1FD2E750C189C0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.251 -0400", hash_original_field = "D37183730F43F82EAD5FD0BEC18C215E", hash_generated_field = "39AA00EB7CB7F96F2E1FD2E750C189C0")
 
     private String mReason;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.552 -0400", hash_original_field = "AB5938C15B75B0ACE1172055173084EA", hash_generated_field = "C6E1689A4C75399B973F7EB992CC83CB")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.252 -0400", hash_original_field = "AB5938C15B75B0ACE1172055173084EA", hash_generated_field = "C6E1689A4C75399B973F7EB992CC83CB")
 
     private String mExtraInfo;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.552 -0400", hash_original_field = "67C0330E7720D27F15F181055D5B6CE3", hash_generated_field = "96403C157B820CF4FD7B8E52CFA57C58")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.252 -0400", hash_original_field = "67C0330E7720D27F15F181055D5B6CE3", hash_generated_field = "96403C157B820CF4FD7B8E52CFA57C58")
 
     private boolean mIsFailover;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.552 -0400", hash_original_field = "3DD278D5834239FCC85223B1B62442BF", hash_generated_field = "415253C847AEA7AA130149990C917780")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.252 -0400", hash_original_field = "3DD278D5834239FCC85223B1B62442BF", hash_generated_field = "415253C847AEA7AA130149990C917780")
 
     private boolean mIsRoaming;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.558 -0400", hash_original_field = "6887DF0A12AC03D170DEA4FF85865F1A", hash_generated_field = "1E1A6AFD166B7DDFDBDBE32EDA8635C7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.252 -0400", hash_original_field = "6887DF0A12AC03D170DEA4FF85865F1A", hash_generated_field = "1E1A6AFD166B7DDFDBDBE32EDA8635C7")
 
     private boolean mIsAvailable;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.558 -0400", hash_original_method = "E0E0B5DCE71AAA01C628F35001B06F62", hash_generated_method = "EFE69ABEC541A13B58B9BCC4C8E2BBA7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.258 -0400", hash_original_method = "E0E0B5DCE71AAA01C628F35001B06F62", hash_generated_method = "EFE69ABEC541A13B58B9BCC4C8E2BBA7")
     public  NetworkInfo(int type) {
         addTaint(type);
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.560 -0400", hash_original_method = "D80B4D4DAAC5235D04ECA009868EE265", hash_generated_method = "A90766CB4F08B63FDD41854BB12462DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.260 -0400", hash_original_method = "D80B4D4DAAC5235D04ECA009868EE265", hash_generated_method = "6BB3B3975D1ED54CCFA4BC03392F46AB")
     public  NetworkInfo(int type, int subtype, String typeName, String subtypeName) {
         {
-            boolean var0BB46F15A21E680BDCAF3097C1FB24EA_1273321944 = (!ConnectivityManager.isNetworkTypeValid(type));
+            boolean var0BB46F15A21E680BDCAF3097C1FB24EA_1009226359 = (!ConnectivityManager.isNetworkTypeValid(type));
             {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("Invalid network type: " + type);
             } //End block
@@ -84,7 +84,7 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.598 -0400", hash_original_method = "5A3F7321AA4C57E32E1DFB9D40F8D226", hash_generated_method = "FEDEE894BB4870AB0B84DE6890191D9C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.275 -0400", hash_original_method = "5A3F7321AA4C57E32E1DFB9D40F8D226", hash_generated_method = "FEDEE894BB4870AB0B84DE6890191D9C")
     public  NetworkInfo(NetworkInfo source) {
         {
             mNetworkType = source.mNetworkType;
@@ -116,10 +116,10 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.598 -0400", hash_original_method = "96E8498F657AF6E41693B86C8B8439F4", hash_generated_method = "2158B5E4898828F0E38CF41F7767E70A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.277 -0400", hash_original_method = "96E8498F657AF6E41693B86C8B8439F4", hash_generated_method = "8E33784B8E312895CCC6D9050DFF6FC1")
     public int getType() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1331962861 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1331962861;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200242791 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200242791;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mNetworkType;
@@ -127,10 +127,10 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.599 -0400", hash_original_method = "9F9664F87EC47D562C2DFD7EF2768060", hash_generated_method = "6ED7587FBAC5C740FF58663ADE9A594E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.277 -0400", hash_original_method = "9F9664F87EC47D562C2DFD7EF2768060", hash_generated_method = "70BC9AFDEA565E33EE37BB6667B10209")
     public int getSubtype() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1897122944 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1897122944;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1311871345 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1311871345;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mSubtype;
@@ -138,7 +138,7 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.599 -0400", hash_original_method = "0924F80CBAE8411743081929219BD54E", hash_generated_method = "5203D71A0D99A82039A74CFC0CF88141")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.278 -0400", hash_original_method = "0924F80CBAE8411743081929219BD54E", hash_generated_method = "5203D71A0D99A82039A74CFC0CF88141")
      void setSubtype(int subtype, String subtypeName) {
         {
             mSubtype = subtype;
@@ -152,14 +152,14 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.600 -0400", hash_original_method = "55AF35A663CF7527013DF4B2AE75FC8F", hash_generated_method = "F9F62BF6F4BCDC2A49673EFD55EEB5A8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.281 -0400", hash_original_method = "55AF35A663CF7527013DF4B2AE75FC8F", hash_generated_method = "FE1F7D39A348588D45F34E2B56716970")
     public String getTypeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1422375862 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_2078099855 = null; //Variable for return #1
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1422375862 = mTypeName;
+            varB4EAC82CA7396A68D541C85D26508E83_2078099855 = mTypeName;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1422375862.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1422375862;
+        varB4EAC82CA7396A68D541C85D26508E83_2078099855.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2078099855;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mTypeName;
@@ -167,14 +167,14 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.607 -0400", hash_original_method = "0043E0CF1F933E5EC5CD97392CA0E5B0", hash_generated_method = "C52715DE40BB98906EED81C680629CB0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.285 -0400", hash_original_method = "0043E0CF1F933E5EC5CD97392CA0E5B0", hash_generated_method = "2EB08FBCC60786E15C524C0C3EBD1422")
     public String getSubtypeName() {
-        String varB4EAC82CA7396A68D541C85D26508E83_346090829 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1817684430 = null; //Variable for return #1
         {
-            varB4EAC82CA7396A68D541C85D26508E83_346090829 = mSubtypeName;
+            varB4EAC82CA7396A68D541C85D26508E83_1817684430 = mSubtypeName;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_346090829.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_346090829;
+        varB4EAC82CA7396A68D541C85D26508E83_1817684430.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1817684430;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mSubtypeName;
@@ -182,10 +182,10 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.614 -0400", hash_original_method = "4340B79C926146F86A68CF1464A26E93", hash_generated_method = "B36F5D062D3B3FD105566304467E5E7F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.304 -0400", hash_original_method = "4340B79C926146F86A68CF1464A26E93", hash_generated_method = "2B8587AA52A7A0D9715089748827CE88")
     public boolean isConnectedOrConnecting() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1586172957 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1586172957;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1141399245 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1141399245;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mState == State.CONNECTED || mState == State.CONNECTING;
@@ -193,10 +193,10 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.614 -0400", hash_original_method = "E81AE1BB2B0829AC31FE0D849F294E67", hash_generated_method = "8D6DBAE1F625E6CA7C4D7C5700BAE20A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.306 -0400", hash_original_method = "E81AE1BB2B0829AC31FE0D849F294E67", hash_generated_method = "8B100C9C919E0C32D25191608A7D9C68")
     public boolean isConnected() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1092737332 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1092737332;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_459564860 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_459564860;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mState == State.CONNECTED;
@@ -204,10 +204,10 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.615 -0400", hash_original_method = "4897D1CF0EA563D6DA8C578331010914", hash_generated_method = "F1C7DDD6D0B4675EF3574DAC8D088782")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.306 -0400", hash_original_method = "4897D1CF0EA563D6DA8C578331010914", hash_generated_method = "E6788855C323B83EF68D3A8AD478ABAE")
     public boolean isAvailable() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_575210400 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_575210400;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2099766181 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2099766181;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mIsAvailable;
@@ -215,7 +215,7 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.615 -0400", hash_original_method = "939E32860F0B0F06BDBD0E17663153C9", hash_generated_method = "494943E9448F6678D72678AF576E9179")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.322 -0400", hash_original_method = "939E32860F0B0F06BDBD0E17663153C9", hash_generated_method = "494943E9448F6678D72678AF576E9179")
     public void setIsAvailable(boolean isAvailable) {
         {
             mIsAvailable = isAvailable;
@@ -227,10 +227,10 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.616 -0400", hash_original_method = "9C5319745C341BE120FE9E801220DA42", hash_generated_method = "7C0774FFF984A355C33CEEBD94CAC977")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.322 -0400", hash_original_method = "9C5319745C341BE120FE9E801220DA42", hash_generated_method = "88CAB255FE9D07D50703B4A65CD88575")
     public boolean isFailover() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1217781235 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1217781235;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_739086474 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_739086474;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mIsFailover;
@@ -238,7 +238,7 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.616 -0400", hash_original_method = "F833C30ECD57DCF99CA2522188FA2C07", hash_generated_method = "3FB3BFCF0243C5AE1A93B4F46BBEFDC5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.323 -0400", hash_original_method = "F833C30ECD57DCF99CA2522188FA2C07", hash_generated_method = "3FB3BFCF0243C5AE1A93B4F46BBEFDC5")
     public void setFailover(boolean isFailover) {
         {
             mIsFailover = isFailover;
@@ -250,10 +250,10 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.631 -0400", hash_original_method = "AB8A93C3EDB3BBC79E3580DBDAC7F9AC", hash_generated_method = "67765C44061DBF68157C3EB8320254B0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.323 -0400", hash_original_method = "AB8A93C3EDB3BBC79E3580DBDAC7F9AC", hash_generated_method = "FE7D16D356DA8738B05B1D8FCC8817AB")
     public boolean isRoaming() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1451667196 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1451667196;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1841569869 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1841569869;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mIsRoaming;
@@ -261,7 +261,7 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.632 -0400", hash_original_method = "B7D7748403F63EB4650DEC0BB363124A", hash_generated_method = "5CDC213386E9363800D608AEB0FB16F2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.324 -0400", hash_original_method = "B7D7748403F63EB4650DEC0BB363124A", hash_generated_method = "5CDC213386E9363800D608AEB0FB16F2")
      void setRoaming(boolean isRoaming) {
         {
             mIsRoaming = isRoaming;
@@ -273,14 +273,14 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.633 -0400", hash_original_method = "7B78C01516FA6C80A9332B33D7F2C1E4", hash_generated_method = "8A323670430653031D0C9487BBBC1C4E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.339 -0400", hash_original_method = "7B78C01516FA6C80A9332B33D7F2C1E4", hash_generated_method = "07E16BDE5E47C6657525F35C04EE3610")
     public State getState() {
-        State varB4EAC82CA7396A68D541C85D26508E83_1878128915 = null; //Variable for return #1
+        State varB4EAC82CA7396A68D541C85D26508E83_780497048 = null; //Variable for return #1
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1878128915 = mState;
+            varB4EAC82CA7396A68D541C85D26508E83_780497048 = mState;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1878128915.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1878128915;
+        varB4EAC82CA7396A68D541C85D26508E83_780497048.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_780497048;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mState;
@@ -288,14 +288,14 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.633 -0400", hash_original_method = "EF299E7A8E902EE5662452C8EC565B0C", hash_generated_method = "DDDA7AC730EDCB61B99BC75BDC5B6BCF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.350 -0400", hash_original_method = "EF299E7A8E902EE5662452C8EC565B0C", hash_generated_method = "115733BC6CE0BB9FC7814DF0A6978C8A")
     public DetailedState getDetailedState() {
-        DetailedState varB4EAC82CA7396A68D541C85D26508E83_1083610002 = null; //Variable for return #1
+        DetailedState varB4EAC82CA7396A68D541C85D26508E83_1462163843 = null; //Variable for return #1
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1083610002 = mDetailedState;
+            varB4EAC82CA7396A68D541C85D26508E83_1462163843 = mDetailedState;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1083610002.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1083610002;
+        varB4EAC82CA7396A68D541C85D26508E83_1462163843.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1462163843;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mDetailedState;
@@ -303,7 +303,7 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.651 -0400", hash_original_method = "F9B4E8192C3BAB2B942149B3B4357918", hash_generated_method = "E71EAA3D48085C0A311AA5180CC511DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.351 -0400", hash_original_method = "F9B4E8192C3BAB2B942149B3B4357918", hash_generated_method = "E71EAA3D48085C0A311AA5180CC511DE")
     public void setDetailedState(DetailedState detailedState, String reason, String extraInfo) {
         {
             this.mDetailedState = detailedState;
@@ -321,14 +321,14 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.655 -0400", hash_original_method = "788F68C9DAC18237AEDF0C4BED188B0D", hash_generated_method = "CE2E2E14FCFFBC827852E2CB6AE50454")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.353 -0400", hash_original_method = "788F68C9DAC18237AEDF0C4BED188B0D", hash_generated_method = "55ADF3379F59E7E38361B37E3C23F839")
     public String getReason() {
-        String varB4EAC82CA7396A68D541C85D26508E83_327375734 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_750906887 = null; //Variable for return #1
         {
-            varB4EAC82CA7396A68D541C85D26508E83_327375734 = mReason;
+            varB4EAC82CA7396A68D541C85D26508E83_750906887 = mReason;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_327375734.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_327375734;
+        varB4EAC82CA7396A68D541C85D26508E83_750906887.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_750906887;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mReason;
@@ -336,14 +336,14 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.656 -0400", hash_original_method = "74D0311B373A7BB37462D7229B3CD3F9", hash_generated_method = "A0FB67836CF4FB1BD0F43074CE5DA607")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.354 -0400", hash_original_method = "74D0311B373A7BB37462D7229B3CD3F9", hash_generated_method = "9437A990D849CFB29F00A73E2A30E25D")
     public String getExtraInfo() {
-        String varB4EAC82CA7396A68D541C85D26508E83_434336311 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1415260482 = null; //Variable for return #1
         {
-            varB4EAC82CA7396A68D541C85D26508E83_434336311 = mExtraInfo;
+            varB4EAC82CA7396A68D541C85D26508E83_1415260482 = mExtraInfo;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_434336311.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_434336311;
+        varB4EAC82CA7396A68D541C85D26508E83_1415260482.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1415260482;
         // ---------- Original Method ----------
         //synchronized (this) {
             //return mExtraInfo;
@@ -351,10 +351,10 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.667 -0400", hash_original_method = "AD77F99801D246295506D70C39DE289C", hash_generated_method = "1F09F7D06938958917FF0356E4DDFDA0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.363 -0400", hash_original_method = "AD77F99801D246295506D70C39DE289C", hash_generated_method = "D88567FA687FFA2D30D00AF20D712D44")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1346227373 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1895620536 = null; //Variable for return #1
         {
             StringBuilder builder;
             builder = new StringBuilder("NetworkInfo: ");
@@ -365,10 +365,10 @@ public class NetworkInfo implements Parcelable {
             append(", roaming: ").append(mIsRoaming).
             append(", failover: ").append(mIsFailover).
             append(", isAvailable: ").append(mIsAvailable);
-            varB4EAC82CA7396A68D541C85D26508E83_1346227373 = builder.toString();
+            varB4EAC82CA7396A68D541C85D26508E83_1895620536 = builder.toString();
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1346227373.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1346227373;
+        varB4EAC82CA7396A68D541C85D26508E83_1895620536.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1895620536;
         // ---------- Original Method ----------
         //synchronized (this) {
             //StringBuilder builder = new StringBuilder("NetworkInfo: ");
@@ -384,16 +384,16 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.697 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E8AA94BB7DB0EA9CAA9C884EA8EB20EF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.382 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "7288A16EE1130543875E4360E203C1BF")
     public int describeContents() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1546167129 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1546167129;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1656097954 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1656097954;
         // ---------- Original Method ----------
         //return 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.700 -0400", hash_original_method = "EF9852F5CC5A1C9C509E333ACBA9ED14", hash_generated_method = "A4D8A7352ED2C7B64B074447678BE1FC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.385 -0400", hash_original_method = "EF9852F5CC5A1C9C509E333ACBA9ED14", hash_generated_method = "A4D8A7352ED2C7B64B074447678BE1FC")
     public void writeToParcel(Parcel dest, int flags) {
         {
             dest.writeInt(mNetworkType);
@@ -447,7 +447,7 @@ public class NetworkInfo implements Parcelable {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.700 -0400", hash_original_field = "BC9C17C6DAFAAB8182342F0EAA1A83D8", hash_generated_field = "102F3F0F4E5688512B3F5BD380D11090")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.386 -0400", hash_original_field = "BC9C17C6DAFAAB8182342F0EAA1A83D8", hash_generated_field = "102F3F0F4E5688512B3F5BD380D11090")
 
     private static EnumMap<DetailedState, State> stateMap = new EnumMap<DetailedState, State>(DetailedState.class);
     static {
@@ -464,7 +464,7 @@ public class NetworkInfo implements Parcelable {
         stateMap.put(DetailedState.BLOCKED, State.DISCONNECTED);
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:19.700 -0400", hash_original_field = "4CAF625EAE81111F5604B0284353A2B1", hash_generated_field = "9C8FE6125F397F95C40575756C429932")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:21.386 -0400", hash_original_field = "4CAF625EAE81111F5604B0284353A2B1", hash_generated_field = "9C8FE6125F397F95C40575756C429932")
 
     public static final Creator<NetworkInfo> CREATOR =
         new Creator<NetworkInfo>() {

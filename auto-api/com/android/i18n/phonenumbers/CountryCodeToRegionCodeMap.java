@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class CountryCodeToRegionCodeMap {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:10.648 -0400", hash_original_method = "63FC822C4B5F1AC648A20B30DF86BC44", hash_generated_method = "63FC822C4B5F1AC648A20B30DF86BC44")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:12.086 -0400", hash_original_method = "63FC822C4B5F1AC648A20B30DF86BC44", hash_generated_method = "63FC822C4B5F1AC648A20B30DF86BC44")
     public CountryCodeToRegionCodeMap ()
     {
         //Synthesized constructor

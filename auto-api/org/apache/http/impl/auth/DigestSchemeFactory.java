@@ -13,20 +13,20 @@ import org.apache.http.params.HttpParams;
 
 public class DigestSchemeFactory implements AuthSchemeFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.058 -0400", hash_original_method = "96D34D07BF3F94332DDA120DA0B662A4", hash_generated_method = "96D34D07BF3F94332DDA120DA0B662A4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.093 -0400", hash_original_method = "96D34D07BF3F94332DDA120DA0B662A4", hash_generated_method = "96D34D07BF3F94332DDA120DA0B662A4")
     public DigestSchemeFactory ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:15.059 -0400", hash_original_method = "C297ADB7309AAFCCA05FBFAFBC517584", hash_generated_method = "FC40479384C19F5C8F00E296A1E5DD8C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:16.094 -0400", hash_original_method = "C297ADB7309AAFCCA05FBFAFBC517584", hash_generated_method = "E576CBBEE40D32D0B784705852C97A6E")
     public AuthScheme newInstance(final HttpParams params) {
-        AuthScheme varB4EAC82CA7396A68D541C85D26508E83_310838781 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_310838781 = new DigestScheme();
+        AuthScheme varB4EAC82CA7396A68D541C85D26508E83_1202989891 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1202989891 = new DigestScheme();
         addTaint(params.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_310838781.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_310838781;
+        varB4EAC82CA7396A68D541C85D26508E83_1202989891.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1202989891;
         // ---------- Original Method ----------
         //return new DigestScheme();
     }

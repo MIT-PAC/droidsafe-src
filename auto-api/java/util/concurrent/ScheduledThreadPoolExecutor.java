@@ -12,17 +12,17 @@ import java.util.concurrent.locks.*;
 import java.util.*;
 
 public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements ScheduledExecutorService {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.653 -0400", hash_original_field = "16F5A356C77125C2C156C9F6B6F49691", hash_generated_field = "AA2F9CF8A8BDA098B7353794A7890F68")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.484 -0400", hash_original_field = "16F5A356C77125C2C156C9F6B6F49691", hash_generated_field = "AA2F9CF8A8BDA098B7353794A7890F68")
 
     private volatile boolean continueExistingPeriodicTasksAfterShutdown;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.653 -0400", hash_original_field = "0694CB6B95D24930C98752845302446B", hash_generated_field = "D4D52A1567899065AB02C507D671256E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.484 -0400", hash_original_field = "0694CB6B95D24930C98752845302446B", hash_generated_field = "D4D52A1567899065AB02C507D671256E")
 
     private volatile boolean executeExistingDelayedTasksAfterShutdown = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.653 -0400", hash_original_field = "B9C1236F0DDAF6571DA9803B91DCBA27", hash_generated_field = "396CDA7B171456B549FE026890B28734")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.485 -0400", hash_original_field = "B9C1236F0DDAF6571DA9803B91DCBA27", hash_generated_field = "396CDA7B171456B549FE026890B28734")
 
     private volatile boolean removeOnCancel = false;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.661 -0400", hash_original_method = "D36047D4322FE6F8EBCA30AB15266BC6", hash_generated_method = "69663AB27BD1BC39635232462251E927")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.485 -0400", hash_original_method = "D36047D4322FE6F8EBCA30AB15266BC6", hash_generated_method = "69663AB27BD1BC39635232462251E927")
     public  ScheduledThreadPoolExecutor(int corePoolSize) {
         super(corePoolSize, Integer.MAX_VALUE, 0, TimeUnit.NANOSECONDS,
               new DelayedWorkQueue());
@@ -31,7 +31,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.661 -0400", hash_original_method = "ABDCD4F10C893856EFE26F2C021D677A", hash_generated_method = "130B77FC63BAE145C0277FBFACBEB80B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.485 -0400", hash_original_method = "ABDCD4F10C893856EFE26F2C021D677A", hash_generated_method = "130B77FC63BAE145C0277FBFACBEB80B")
     public  ScheduledThreadPoolExecutor(int corePoolSize,
                                        ThreadFactory threadFactory) {
         super(corePoolSize, Integer.MAX_VALUE, 0, TimeUnit.NANOSECONDS,
@@ -42,7 +42,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.662 -0400", hash_original_method = "15AFC792EAFAB8847ABF7F7AA1CDCAAC", hash_generated_method = "2DDF212A4CEAC62D600B23E1CFFD4ECF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.486 -0400", hash_original_method = "15AFC792EAFAB8847ABF7F7AA1CDCAAC", hash_generated_method = "2DDF212A4CEAC62D600B23E1CFFD4ECF")
     public  ScheduledThreadPoolExecutor(int corePoolSize,
                                        RejectedExecutionHandler handler) {
         super(corePoolSize, Integer.MAX_VALUE, 0, TimeUnit.NANOSECONDS,
@@ -53,7 +53,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.662 -0400", hash_original_method = "FA0219710575675561B4DC7EAFAB1D1D", hash_generated_method = "D0B8F2830AB960BB236CBA69820D1D95")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.487 -0400", hash_original_method = "FA0219710575675561B4DC7EAFAB1D1D", hash_generated_method = "D0B8F2830AB960BB236CBA69820D1D95")
     public  ScheduledThreadPoolExecutor(int corePoolSize,
                                        ThreadFactory threadFactory,
                                        RejectedExecutionHandler handler) {
@@ -66,24 +66,24 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.662 -0400", hash_original_method = "5D4518F727B3B1C5CE98EBC039D9AF6B", hash_generated_method = "588EAAF4575668496A8AACF2E8480DDF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.503 -0400", hash_original_method = "5D4518F727B3B1C5CE98EBC039D9AF6B", hash_generated_method = "90824EB17834244AD651E52FE697B3C6")
     final long now() {
-        long var38C9A41D4C7B496258927F1AFD7464A5_309734544 = (System.nanoTime());
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1192610428 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1192610428;
+        long var38C9A41D4C7B496258927F1AFD7464A5_1366722664 = (System.nanoTime());
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1006188770 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1006188770;
         // ---------- Original Method ----------
         //return System.nanoTime();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.663 -0400", hash_original_method = "43122228A318CAFA2BE5FD8EB8B7119A", hash_generated_method = "CA80107B38B76B5E6E777A14A37BF7DF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.503 -0400", hash_original_method = "43122228A318CAFA2BE5FD8EB8B7119A", hash_generated_method = "157238C874E69718E5842398C88D6CCB")
      boolean canRunInCurrentRunState(boolean periodic) {
-        boolean var636123F330B288C0794F274F6243222D_1962736960 = (isRunningOrShutdown(periodic ?
+        boolean var636123F330B288C0794F274F6243222D_2074264739 = (isRunningOrShutdown(periodic ?
                                    continueExistingPeriodicTasksAfterShutdown :
                                    executeExistingDelayedTasksAfterShutdown)); //DSFIXME:  CODE0008: Nested ternary operator in expression
         addTaint(periodic);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_925262501 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_925262501;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1535292195 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1535292195;
         // ---------- Original Method ----------
         //return isRunningOrShutdown(periodic ?
                                    //continueExistingPeriodicTasksAfterShutdown :
@@ -91,15 +91,15 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.664 -0400", hash_original_method = "74BC2A8347918586B07692C369988E7C", hash_generated_method = "074AC039E03337FB4E253860D3B01831")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.504 -0400", hash_original_method = "74BC2A8347918586B07692C369988E7C", hash_generated_method = "F52CFE289564E2DFB52069D3012FB217")
     private void delayedExecute(RunnableScheduledFuture<?> task) {
         {
-            boolean varD7D6F17835B9DE02DC18908B63864E97_913302756 = (isShutdown());
+            boolean varD7D6F17835B9DE02DC18908B63864E97_114728053 = (isShutdown());
             reject(task);
             {
                 super.getQueue().add(task);
                 {
-                    boolean var9F93D657B4AB08D4C240833C5152DDD5_900386914 = (isShutdown() &&
+                    boolean var9F93D657B4AB08D4C240833C5152DDD5_371146561 = (isShutdown() &&
                 !canRunInCurrentRunState(task.isPeriodic()) &&
                 remove(task));
                     task.cancel(false);
@@ -123,14 +123,14 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.664 -0400", hash_original_method = "0C685B50A598B045820F5EF901D2AED6", hash_generated_method = "261480351D1E5100F139B5247569065C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.504 -0400", hash_original_method = "0C685B50A598B045820F5EF901D2AED6", hash_generated_method = "761651661C9F68FE55CD5799519878BA")
      void reExecutePeriodic(RunnableScheduledFuture<?> task) {
         {
-            boolean var2689F2A799548532A8E160831E5A33A8_1143518216 = (canRunInCurrentRunState(true));
+            boolean var2689F2A799548532A8E160831E5A33A8_846835728 = (canRunInCurrentRunState(true));
             {
                 super.getQueue().add(task);
                 {
-                    boolean var471B5F2C64914A5472B62C3F29896BF1_470070970 = (!canRunInCurrentRunState(true) && remove(task));
+                    boolean var471B5F2C64914A5472B62C3F29896BF1_102627154 = (!canRunInCurrentRunState(true) && remove(task));
                     task.cancel(false);
                     prestartCoreThread();
                 } //End collapsed parenthetic
@@ -148,7 +148,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.788 -0400", hash_original_method = "64FA3598D4BDF802451AB41ACA7E6BE8", hash_generated_method = "85421CE78B22049D695AE42C8BD61505")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.603 -0400", hash_original_method = "64FA3598D4BDF802451AB41ACA7E6BE8", hash_generated_method = "ACA02556633FACB65BD78614B3566716")
     @Override
      void onShutdown() {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -173,11 +173,11 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                         RunnableScheduledFuture<?> t;
                         t = (RunnableScheduledFuture<?>)e;
                         {
-                            boolean varF7F2675F0606E27C21A93E064C27288B_1644680207 = ((t.isPeriodic() ? !keepPeriodic : !keepDelayed) ||
+                            boolean varF7F2675F0606E27C21A93E064C27288B_848658629 = ((t.isPeriodic() ? !keepPeriodic : !keepDelayed) ||
                         t.isCancelled()); //DSFIXME:  CODE0008: Nested ternary operator in expression
                             {
                                 {
-                                    boolean varBEBF9C2A16974119BECC96CE9B7D06C1_695086123 = (q.remove(t));
+                                    boolean varBEBF9C2A16974119BECC96CE9B7D06C1_1772663578 = (q.remove(t));
                                     t.cancel(false);
                                 } //End collapsed parenthetic
                             } //End block
@@ -192,60 +192,60 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.788 -0400", hash_original_method = "2D7E8C9964120FA3F638C1BFE2958CB1", hash_generated_method = "3341FED6C61B00B7D4C31C583B8F23E1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.604 -0400", hash_original_method = "2D7E8C9964120FA3F638C1BFE2958CB1", hash_generated_method = "62BF3DA585A99953F75BF5B17C1EB8D3")
     protected <V> RunnableScheduledFuture<V> decorateTask(
         Runnable runnable, RunnableScheduledFuture<V> task) {
-        RunnableScheduledFuture<V> varB4EAC82CA7396A68D541C85D26508E83_1012962786 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1012962786 = task;
+        RunnableScheduledFuture<V> varB4EAC82CA7396A68D541C85D26508E83_816804272 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_816804272 = task;
         addTaint(runnable.getTaint());
         addTaint(task.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1012962786.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1012962786;
+        varB4EAC82CA7396A68D541C85D26508E83_816804272.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_816804272;
         // ---------- Original Method ----------
         //return task;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.789 -0400", hash_original_method = "5DBE5BBA8D9EF484681F4C8336F1600B", hash_generated_method = "FB33CEE19432E40B226145A05C3FBF37")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.723 -0400", hash_original_method = "5DBE5BBA8D9EF484681F4C8336F1600B", hash_generated_method = "22C7A93CFDA65FB32766CB8D1D9CE4E5")
     protected <V> RunnableScheduledFuture<V> decorateTask(
         Callable<V> callable, RunnableScheduledFuture<V> task) {
-        RunnableScheduledFuture<V> varB4EAC82CA7396A68D541C85D26508E83_529075691 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_529075691 = task;
+        RunnableScheduledFuture<V> varB4EAC82CA7396A68D541C85D26508E83_529961094 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_529961094 = task;
         addTaint(callable.getTaint());
         addTaint(task.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_529075691.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_529075691;
+        varB4EAC82CA7396A68D541C85D26508E83_529961094.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_529961094;
         // ---------- Original Method ----------
         //return task;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.789 -0400", hash_original_method = "14F5A42293D1200CF8E952E9DCB67B90", hash_generated_method = "50129C21B04BF5464369DEA8915F79CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.724 -0400", hash_original_method = "14F5A42293D1200CF8E952E9DCB67B90", hash_generated_method = "E6ECB3E9CDE0A51A27F6B65550CA84A9")
     private long triggerTime(long delay, TimeUnit unit) {
-        long var921EC63E99B1B0D90270C7CCF06C4834_969871580 = (triggerTime(unit.toNanos((delay < 0) ? 0 : delay))); //DSFIXME:  CODE0008: Nested ternary operator in expression
+        long var921EC63E99B1B0D90270C7CCF06C4834_1508940695 = (triggerTime(unit.toNanos((delay < 0) ? 0 : delay))); //DSFIXME:  CODE0008: Nested ternary operator in expression
         addTaint(delay);
         addTaint(unit.getTaint());
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1169120136 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1169120136;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_986448936 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_986448936;
         // ---------- Original Method ----------
         //return triggerTime(unit.toNanos((delay < 0) ? 0 : delay));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.789 -0400", hash_original_method = "43548DFC0EE197F487A673EC89A4A123", hash_generated_method = "D21257E17C4FB6FE58F63DBE70A0F4CB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.725 -0400", hash_original_method = "43548DFC0EE197F487A673EC89A4A123", hash_generated_method = "36A36D90571D56641FE9B5D913D9BDD0")
      long triggerTime(long delay) {
-        long var9E9C1F7E6FCC2FB90620873C1CB2CFB4_2088325401 = (now() +
+        long var9E9C1F7E6FCC2FB90620873C1CB2CFB4_569886698 = (now() +
             ((delay < (Long.MAX_VALUE >> 1)) ? delay : overflowFree(delay))); //DSFIXME:  CODE0008: Nested ternary operator in expression
         addTaint(delay);
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1394825930 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1394825930;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_986237361 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_986237361;
         // ---------- Original Method ----------
         //return now() +
             //((delay < (Long.MAX_VALUE >> 1)) ? delay : overflowFree(delay));
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.805 -0400", hash_original_method = "7169306CF31D42FCC72896372081E078", hash_generated_method = "4D21805BEEA454454B6CCDDBBC6589C8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.725 -0400", hash_original_method = "7169306CF31D42FCC72896372081E078", hash_generated_method = "18C9240D5D2B43B63C0E535D6CB35FBC")
     private long overflowFree(long delay) {
         Delayed head;
         head = (Delayed) super.getQueue().peek();
@@ -255,8 +255,8 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             delay = Long.MAX_VALUE + headDelay;
         } //End block
         addTaint(delay);
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1639857320 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1639857320;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1110119214 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1110119214;
         // ---------- Original Method ----------
         //Delayed head = (Delayed) super.getQueue().peek();
         //if (head != null) {
@@ -268,23 +268,23 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.805 -0400", hash_original_method = "E8C91BC5CFBE81CC8958800A4E70C4DA", hash_generated_method = "88C47B90BDE7FFCF1F6CA5B43122C7A2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.733 -0400", hash_original_method = "E8C91BC5CFBE81CC8958800A4E70C4DA", hash_generated_method = "B1C5DDE9148F56BA34ACEAAC4B168476")
     public ScheduledFuture<?> schedule(Runnable command,
                                        long delay,
                                        TimeUnit unit) {
-        ScheduledFuture<?> varB4EAC82CA7396A68D541C85D26508E83_398391281 = null; //Variable for return #1
+        ScheduledFuture<?> varB4EAC82CA7396A68D541C85D26508E83_1190791653 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         RunnableScheduledFuture<?> t;
         t = decorateTask(command,
             new ScheduledFutureTask<Void>(command, null,
                                           triggerTime(delay, unit)));
         delayedExecute(t);
-        varB4EAC82CA7396A68D541C85D26508E83_398391281 = t;
+        varB4EAC82CA7396A68D541C85D26508E83_1190791653 = t;
         addTaint(command.getTaint());
         addTaint(delay);
         addTaint(unit.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_398391281.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_398391281;
+        varB4EAC82CA7396A68D541C85D26508E83_1190791653.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1190791653;
         // ---------- Original Method ----------
         //if (command == null || unit == null)
             //throw new NullPointerException();
@@ -296,23 +296,23 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.806 -0400", hash_original_method = "3CA816B6292CC3DABD4A8E9E190B6332", hash_generated_method = "69F639D5F32B352415445A29B9F0432A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.733 -0400", hash_original_method = "3CA816B6292CC3DABD4A8E9E190B6332", hash_generated_method = "F416B983E48A888105E06A341B9886EE")
     public <V> ScheduledFuture<V> schedule(Callable<V> callable,
                                            long delay,
                                            TimeUnit unit) {
-        ScheduledFuture<V> varB4EAC82CA7396A68D541C85D26508E83_1762892500 = null; //Variable for return #1
+        ScheduledFuture<V> varB4EAC82CA7396A68D541C85D26508E83_1963670819 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         RunnableScheduledFuture<V> t;
         t = decorateTask(callable,
             new ScheduledFutureTask<V>(callable,
                                        triggerTime(delay, unit)));
         delayedExecute(t);
-        varB4EAC82CA7396A68D541C85D26508E83_1762892500 = t;
+        varB4EAC82CA7396A68D541C85D26508E83_1963670819 = t;
         addTaint(callable.getTaint());
         addTaint(delay);
         addTaint(unit.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1762892500.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1762892500;
+        varB4EAC82CA7396A68D541C85D26508E83_1963670819.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1963670819;
         // ---------- Original Method ----------
         //if (callable == null || unit == null)
             //throw new NullPointerException();
@@ -324,12 +324,12 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.817 -0400", hash_original_method = "8D8E5BFEEBAD4838EB16FA502AD719D4", hash_generated_method = "0115FE1AAA85BCD036525250F77D029B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.740 -0400", hash_original_method = "8D8E5BFEEBAD4838EB16FA502AD719D4", hash_generated_method = "AC48BB2579258196BE8878A084424563")
     public ScheduledFuture<?> scheduleAtFixedRate(Runnable command,
                                                   long initialDelay,
                                                   long period,
                                                   TimeUnit unit) {
-        ScheduledFuture<?> varB4EAC82CA7396A68D541C85D26508E83_223806344 = null; //Variable for return #1
+        ScheduledFuture<?> varB4EAC82CA7396A68D541C85D26508E83_458442591 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         ScheduledFutureTask<Void> sft;
@@ -341,13 +341,13 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         t = decorateTask(command, sft);
         sft.outerTask = t;
         delayedExecute(t);
-        varB4EAC82CA7396A68D541C85D26508E83_223806344 = t;
+        varB4EAC82CA7396A68D541C85D26508E83_458442591 = t;
         addTaint(command.getTaint());
         addTaint(initialDelay);
         addTaint(period);
         addTaint(unit.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_223806344.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_223806344;
+        varB4EAC82CA7396A68D541C85D26508E83_458442591.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_458442591;
         // ---------- Original Method ----------
         //if (command == null || unit == null)
             //throw new NullPointerException();
@@ -365,12 +365,12 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.818 -0400", hash_original_method = "F8BFEFA210F26533C5765CF5137E2FD3", hash_generated_method = "50474520BAC44AEC6360143DCAC87A3A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.741 -0400", hash_original_method = "F8BFEFA210F26533C5765CF5137E2FD3", hash_generated_method = "4266F300C3A14A0FE9F7CBCFA00ECECA")
     public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command,
                                                      long initialDelay,
                                                      long delay,
                                                      TimeUnit unit) {
-        ScheduledFuture<?> varB4EAC82CA7396A68D541C85D26508E83_1010782030 = null; //Variable for return #1
+        ScheduledFuture<?> varB4EAC82CA7396A68D541C85D26508E83_165453218 = null; //Variable for return #1
         if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
         if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
         ScheduledFutureTask<Void> sft;
@@ -382,13 +382,13 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         t = decorateTask(command, sft);
         sft.outerTask = t;
         delayedExecute(t);
-        varB4EAC82CA7396A68D541C85D26508E83_1010782030 = t;
+        varB4EAC82CA7396A68D541C85D26508E83_165453218 = t;
         addTaint(command.getTaint());
         addTaint(initialDelay);
         addTaint(delay);
         addTaint(unit.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1010782030.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1010782030;
+        varB4EAC82CA7396A68D541C85D26508E83_165453218.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_165453218;
         // ---------- Original Method ----------
         //if (command == null || unit == null)
             //throw new NullPointerException();
@@ -406,7 +406,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.819 -0400", hash_original_method = "106B54169234F208DA4A1738F707D69C", hash_generated_method = "D765A7303691684BA3630E616406D49C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.741 -0400", hash_original_method = "106B54169234F208DA4A1738F707D69C", hash_generated_method = "D765A7303691684BA3630E616406D49C")
     public void execute(Runnable command) {
         schedule(command, 0, TimeUnit.NANOSECONDS);
         addTaint(command.getTaint());
@@ -415,50 +415,50 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.819 -0400", hash_original_method = "71AB87E2E6647A80EF75456B59FD870B", hash_generated_method = "639F71BE11DBA938DF8D2CFCDF169581")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.741 -0400", hash_original_method = "71AB87E2E6647A80EF75456B59FD870B", hash_generated_method = "C1A404F7F78F249C42A626C3047F071B")
     public Future<?> submit(Runnable task) {
-        Future<?> varB4EAC82CA7396A68D541C85D26508E83_492248575 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_492248575 = schedule(task, 0, TimeUnit.NANOSECONDS);
+        Future<?> varB4EAC82CA7396A68D541C85D26508E83_1631576609 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1631576609 = schedule(task, 0, TimeUnit.NANOSECONDS);
         addTaint(task.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_492248575.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_492248575;
+        varB4EAC82CA7396A68D541C85D26508E83_1631576609.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1631576609;
         // ---------- Original Method ----------
         //return schedule(task, 0, TimeUnit.NANOSECONDS);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.820 -0400", hash_original_method = "A2BAF492547813A1B4B6DC556E74F888", hash_generated_method = "438ED80811439227FE9A8A1C9B2B0E83")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.742 -0400", hash_original_method = "A2BAF492547813A1B4B6DC556E74F888", hash_generated_method = "66A41A04D99ACC474CAB9A26CD3685E7")
     public <T> Future<T> submit(Runnable task, T result) {
-        Future<T> varB4EAC82CA7396A68D541C85D26508E83_1622160209 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1622160209 = schedule(Executors.callable(task, result),
+        Future<T> varB4EAC82CA7396A68D541C85D26508E83_1929381102 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1929381102 = schedule(Executors.callable(task, result),
                         0, TimeUnit.NANOSECONDS);
         addTaint(task.getTaint());
         addTaint(result.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1622160209.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1622160209;
+        varB4EAC82CA7396A68D541C85D26508E83_1929381102.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1929381102;
         // ---------- Original Method ----------
         //return schedule(Executors.callable(task, result),
                         //0, TimeUnit.NANOSECONDS);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.820 -0400", hash_original_method = "7532879CEC1557BEB821686E164CE854", hash_generated_method = "E9E0BF2FE5E75048805150EBF0B17F1C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.742 -0400", hash_original_method = "7532879CEC1557BEB821686E164CE854", hash_generated_method = "2AC7B309D857483DA035CA80D073C021")
     public <T> Future<T> submit(Callable<T> task) {
-        Future<T> varB4EAC82CA7396A68D541C85D26508E83_98896546 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_98896546 = schedule(task, 0, TimeUnit.NANOSECONDS);
+        Future<T> varB4EAC82CA7396A68D541C85D26508E83_409520801 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_409520801 = schedule(task, 0, TimeUnit.NANOSECONDS);
         addTaint(task.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_98896546.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_98896546;
+        varB4EAC82CA7396A68D541C85D26508E83_409520801.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_409520801;
         // ---------- Original Method ----------
         //return schedule(task, 0, TimeUnit.NANOSECONDS);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.820 -0400", hash_original_method = "4AFC27553B47AB13DBA25E0474D83429", hash_generated_method = "CB2A7B8FF21D27C8CE11E1B04F8AF961")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.743 -0400", hash_original_method = "4AFC27553B47AB13DBA25E0474D83429", hash_generated_method = "2AE8E0C0B9AC07A95C2C847190B6DE18")
     public void setContinueExistingPeriodicTasksAfterShutdownPolicy(boolean value) {
         continueExistingPeriodicTasksAfterShutdown = value;
         {
-            boolean varD7CCA429FE7709242F7FBD82DD2F415D_2088965108 = (!value && isShutdown());
+            boolean varD7CCA429FE7709242F7FBD82DD2F415D_1672040595 = (!value && isShutdown());
             onShutdown();
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -468,20 +468,20 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.821 -0400", hash_original_method = "23365684DD383694198E6F21D088C23A", hash_generated_method = "9B9205F782A1F234CFDABD241DD59AE2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.743 -0400", hash_original_method = "23365684DD383694198E6F21D088C23A", hash_generated_method = "9DCD2161A4035D48DD34AC4E2E4A633B")
     public boolean getContinueExistingPeriodicTasksAfterShutdownPolicy() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_657073692 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_657073692;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1043893823 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1043893823;
         // ---------- Original Method ----------
         //return continueExistingPeriodicTasksAfterShutdown;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.827 -0400", hash_original_method = "DDF8C3EFAF4531B367BDE4CC570E21D4", hash_generated_method = "167624BBFE574DE54ED1AF2C740E1EC9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.743 -0400", hash_original_method = "DDF8C3EFAF4531B367BDE4CC570E21D4", hash_generated_method = "AD3ACDD6C91DEF4B98C58A73B935273F")
     public void setExecuteExistingDelayedTasksAfterShutdownPolicy(boolean value) {
         executeExistingDelayedTasksAfterShutdown = value;
         {
-            boolean varD7CCA429FE7709242F7FBD82DD2F415D_2064860033 = (!value && isShutdown());
+            boolean varD7CCA429FE7709242F7FBD82DD2F415D_764520471 = (!value && isShutdown());
             onShutdown();
         } //End collapsed parenthetic
         // ---------- Original Method ----------
@@ -491,16 +491,16 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.829 -0400", hash_original_method = "691F6AED1700735267010AB69287CBB5", hash_generated_method = "BBD529BFFD0D2BC9463FA28F2B0AD704")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.744 -0400", hash_original_method = "691F6AED1700735267010AB69287CBB5", hash_generated_method = "7D71FFC7268746011357099012A26257")
     public boolean getExecuteExistingDelayedTasksAfterShutdownPolicy() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1250270955 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1250270955;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_133320058 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_133320058;
         // ---------- Original Method ----------
         //return executeExistingDelayedTasksAfterShutdown;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.834 -0400", hash_original_method = "C989154112CE4F835859D145255931FC", hash_generated_method = "8187F71188C5442EF4B01CC9510CDCEB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.771 -0400", hash_original_method = "C989154112CE4F835859D145255931FC", hash_generated_method = "8187F71188C5442EF4B01CC9510CDCEB")
      void setRemoveOnCancelPolicy(boolean value) {
         removeOnCancel = value;
         // ---------- Original Method ----------
@@ -508,16 +508,16 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.834 -0400", hash_original_method = "3215CF4E7E81ACD4FCE62CEA9B692D35", hash_generated_method = "11B6452BBCB4A7CEC1D15767DB1B3AE1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.773 -0400", hash_original_method = "3215CF4E7E81ACD4FCE62CEA9B692D35", hash_generated_method = "F785A8B0243D1B20BCBF7EAE20246EE4")
      boolean getRemoveOnCancelPolicy() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_849781769 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_849781769;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1832845139 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1832845139;
         // ---------- Original Method ----------
         //return removeOnCancel;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.834 -0400", hash_original_method = "06AE3A71ACDF5D94BFF2BA3486ECC61C", hash_generated_method = "F4BC997EF9BFFD2417FE8194C56E3FA6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.773 -0400", hash_original_method = "06AE3A71ACDF5D94BFF2BA3486ECC61C", hash_generated_method = "F4BC997EF9BFFD2417FE8194C56E3FA6")
     public void shutdown() {
         super.shutdown();
         // ---------- Original Method ----------
@@ -525,46 +525,46 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.835 -0400", hash_original_method = "58CAE4CD18062B6710EA14E24E67D3BE", hash_generated_method = "F4CA4E42976392A300965D23D8AB8538")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.774 -0400", hash_original_method = "58CAE4CD18062B6710EA14E24E67D3BE", hash_generated_method = "C77553EADF69947C31680E2E40DE47F3")
     public List<Runnable> shutdownNow() {
-        List<Runnable> varB4EAC82CA7396A68D541C85D26508E83_995976178 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_995976178 = super.shutdownNow();
-        varB4EAC82CA7396A68D541C85D26508E83_995976178.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_995976178;
+        List<Runnable> varB4EAC82CA7396A68D541C85D26508E83_463279877 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_463279877 = super.shutdownNow();
+        varB4EAC82CA7396A68D541C85D26508E83_463279877.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_463279877;
         // ---------- Original Method ----------
         //return super.shutdownNow();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.845 -0400", hash_original_method = "161D6A52B7D27778B4A9C4AAA82FE7A8", hash_generated_method = "896D1DB888D6BDE29AE8840A89D5A6B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.774 -0400", hash_original_method = "161D6A52B7D27778B4A9C4AAA82FE7A8", hash_generated_method = "DACFCACCDF335081895C4679DB85698A")
     public BlockingQueue<Runnable> getQueue() {
-        BlockingQueue<Runnable> varB4EAC82CA7396A68D541C85D26508E83_265563446 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_265563446 = super.getQueue();
-        varB4EAC82CA7396A68D541C85D26508E83_265563446.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_265563446;
+        BlockingQueue<Runnable> varB4EAC82CA7396A68D541C85D26508E83_2123644063 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2123644063 = super.getQueue();
+        varB4EAC82CA7396A68D541C85D26508E83_2123644063.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2123644063;
         // ---------- Original Method ----------
         //return super.getQueue();
     }
 
     
     private class ScheduledFutureTask<V> extends FutureTask<V> implements RunnableScheduledFuture<V> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.846 -0400", hash_original_field = "1C021ADF174562C07D271E889F46BABF", hash_generated_field = "BC5948EFF55F237F777F173C3B803F01")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.774 -0400", hash_original_field = "1C021ADF174562C07D271E889F46BABF", hash_generated_field = "BC5948EFF55F237F777F173C3B803F01")
 
         private long sequenceNumber;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.846 -0400", hash_original_field = "07CC694B9B3FC636710FA08B6922C42B", hash_generated_field = "2D21F2B1A6174F407FDE900F8B752B4F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.774 -0400", hash_original_field = "07CC694B9B3FC636710FA08B6922C42B", hash_generated_field = "2D21F2B1A6174F407FDE900F8B752B4F")
 
         private long time;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.846 -0400", hash_original_field = "A0ACFA46D86F7610B2C73DBB28F64701", hash_generated_field = "9B4C1F15D97D513A97EBCE4E8EF81345")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.774 -0400", hash_original_field = "A0ACFA46D86F7610B2C73DBB28F64701", hash_generated_field = "9B4C1F15D97D513A97EBCE4E8EF81345")
 
         private long period;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.846 -0400", hash_original_field = "AC10162ABA5F230BD320E9A8DE1FBB74", hash_generated_field = "98CF25F8111133A7EC779F1A91CDBA76")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.774 -0400", hash_original_field = "AC10162ABA5F230BD320E9A8DE1FBB74", hash_generated_field = "98CF25F8111133A7EC779F1A91CDBA76")
 
         RunnableScheduledFuture<V> outerTask = this;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.846 -0400", hash_original_field = "14097C6719ADB60131A527E0555F6127", hash_generated_field = "B9E65256978F8C0BE4352922F453397A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.774 -0400", hash_original_field = "14097C6719ADB60131A527E0555F6127", hash_generated_field = "B9E65256978F8C0BE4352922F453397A")
 
         int heapIndex;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.847 -0400", hash_original_method = "6D6FE21BC02E4EEDE50A66A758AADBC3", hash_generated_method = "E377B4CDC4BEE9CDBBC22572EE6CBF6B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.775 -0400", hash_original_method = "6D6FE21BC02E4EEDE50A66A758AADBC3", hash_generated_method = "E377B4CDC4BEE9CDBBC22572EE6CBF6B")
           ScheduledFutureTask(Runnable r, V result, long ns) {
             super(r, result);
             this.time = ns;
@@ -579,7 +579,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.847 -0400", hash_original_method = "E04B804C1814B5C9E0689952B28AE769", hash_generated_method = "3CCDDBE08AA0D2890B228FE1DE9315BB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.775 -0400", hash_original_method = "E04B804C1814B5C9E0689952B28AE769", hash_generated_method = "3CCDDBE08AA0D2890B228FE1DE9315BB")
           ScheduledFutureTask(Runnable r, V result, long ns, long period) {
             super(r, result);
             this.time = ns;
@@ -594,7 +594,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.858 -0400", hash_original_method = "E88D028A2F4D25267A398506CBA854E6", hash_generated_method = "882075443D1E153313D37D432B1429D1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.776 -0400", hash_original_method = "E88D028A2F4D25267A398506CBA854E6", hash_generated_method = "882075443D1E153313D37D432B1429D1")
           ScheduledFutureTask(Callable<V> callable, long ns) {
             super(callable);
             this.time = ns;
@@ -608,21 +608,21 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.858 -0400", hash_original_method = "EA844DF3AD76AAE2032057524EEDD497", hash_generated_method = "5FF518F3C2038F3BC7E8E6280C74040C")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.776 -0400", hash_original_method = "EA844DF3AD76AAE2032057524EEDD497", hash_generated_method = "BFBDEE9F842717D3ADCA9289614D98A5")
         public long getDelay(TimeUnit unit) {
-            long varC4B119B969BAB4F86949605FEAAFF2DA_15739135 = (unit.convert(time - now(), TimeUnit.NANOSECONDS));
+            long varC4B119B969BAB4F86949605FEAAFF2DA_687707175 = (unit.convert(time - now(), TimeUnit.NANOSECONDS));
             addTaint(unit.getTaint());
-            long var0F5264038205EDFB1AC05FBB0E8C5E94_396254194 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_396254194;
+            long var0F5264038205EDFB1AC05FBB0E8C5E94_301233236 = getTaintLong();
+            return var0F5264038205EDFB1AC05FBB0E8C5E94_301233236;
             // ---------- Original Method ----------
             //return unit.convert(time - now(), TimeUnit.NANOSECONDS);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.859 -0400", hash_original_method = "3DDFB5C452DB9F58801DAD45AC132180", hash_generated_method = "F93846E97B64031ABD5866BA66B67E69")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.776 -0400", hash_original_method = "3DDFB5C452DB9F58801DAD45AC132180", hash_generated_method = "C54686E644ED1866F5D6609ED868D982")
         public int compareTo(Delayed other) {
             {
-                boolean varEBAA9C88926E0374801C3AD978616673_2095234633 = (other == this);
+                boolean varEBAA9C88926E0374801C3AD978616673_1676922445 = (other == this);
             } //End collapsed parenthetic
             {
                 ScheduledFutureTask<?> x;
@@ -634,8 +634,8 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             d = (getDelay(TimeUnit.NANOSECONDS) -
                       other.getDelay(TimeUnit.NANOSECONDS));
             addTaint(other.getTaint());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1283087692 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1283087692;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_514263081 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_514263081;
             // ---------- Original Method ----------
             //if (other == this) 
                 //return 0;
@@ -657,16 +657,16 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.859 -0400", hash_original_method = "28936E7BC66C2ACF8A84332D0E4F56D6", hash_generated_method = "4D2C0A5E351062D854707F4646168507")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.778 -0400", hash_original_method = "28936E7BC66C2ACF8A84332D0E4F56D6", hash_generated_method = "CB44AB21F2C5C4EF4F8EFF5EC604C29A")
         public boolean isPeriodic() {
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1410275710 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1410275710;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_224799800 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_224799800;
             // ---------- Original Method ----------
             //return period != 0;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.859 -0400", hash_original_method = "AD0F8B1CE8B17F01519D37E93CCE792B", hash_generated_method = "DBD718E3271DFDABF126A92DF3EE9F6A")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.778 -0400", hash_original_method = "AD0F8B1CE8B17F01519D37E93CCE792B", hash_generated_method = "DBD718E3271DFDABF126A92DF3EE9F6A")
         private void setNextRunTime() {
             long p;
             p = period;
@@ -681,14 +681,14 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.860 -0400", hash_original_method = "A46BB14AFBF2EAB15C2BA654B07B241E", hash_generated_method = "1D750B15247C10CE60E7F1A525904ED5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.779 -0400", hash_original_method = "A46BB14AFBF2EAB15C2BA654B07B241E", hash_generated_method = "521950EA328574F50490DBEFA5D66810")
         public boolean cancel(boolean mayInterruptIfRunning) {
             boolean cancelled;
             cancelled = super.cancel(mayInterruptIfRunning);
             remove(this);
             addTaint(mayInterruptIfRunning);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1061969704 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1061969704;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_476301638 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_476301638;
             // ---------- Original Method ----------
             //boolean cancelled = super.cancel(mayInterruptIfRunning);
             //if (cancelled && removeOnCancel && heapIndex >= 0)
@@ -697,16 +697,16 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.860 -0400", hash_original_method = "A673F57B6994AD18C8F1F59AB6BC8846", hash_generated_method = "8B614C2EB81CD4752B7838EDD656BE69")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.786 -0400", hash_original_method = "A673F57B6994AD18C8F1F59AB6BC8846", hash_generated_method = "DB88E9C263462C746630016C863A8310")
         public void run() {
             boolean periodic;
             periodic = isPeriodic();
             {
-                boolean var37C260D1D1CB5998B8FB395425A46855_464981577 = (!canRunInCurrentRunState(periodic));
+                boolean var37C260D1D1CB5998B8FB395425A46855_1373685138 = (!canRunInCurrentRunState(periodic));
                 cancel(false);
                 ScheduledFutureTask.super.run();
                 {
-                    boolean varFE418E2F5A0C160FF79CF8CDC517BDAA_155545319 = (ScheduledFutureTask.super.runAndReset());
+                    boolean varFE418E2F5A0C160FF79CF8CDC517BDAA_1192892096 = (ScheduledFutureTask.super.runAndReset());
                     {
                         setNextRunTime();
                         reExecutePeriodic(outerTask);
@@ -731,30 +731,30 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
 
     
     static class DelayedWorkQueue extends AbstractQueue<Runnable> implements BlockingQueue<Runnable> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.861 -0400", hash_original_field = "61F48537D5CDD107448F51065089B906", hash_generated_field = "7E3ECE26F4AF2143E2D648A19C272D90")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.786 -0400", hash_original_field = "61F48537D5CDD107448F51065089B906", hash_generated_field = "7E3ECE26F4AF2143E2D648A19C272D90")
 
         private RunnableScheduledFuture[] queue = new RunnableScheduledFuture[INITIAL_CAPACITY];
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.867 -0400", hash_original_field = "CD2F0EC2CC3E15FC9F14D13EF4CCDCBB", hash_generated_field = "A6FDCB7B6B78544DFD11CBA5E98BB649")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.786 -0400", hash_original_field = "CD2F0EC2CC3E15FC9F14D13EF4CCDCBB", hash_generated_field = "A6FDCB7B6B78544DFD11CBA5E98BB649")
 
         private ReentrantLock lock = new ReentrantLock();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.867 -0400", hash_original_field = "4C519DE3531208469B40CCB51004CD2D", hash_generated_field = "C5D9FEC4EFB462C8A221F2C08D178643")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.786 -0400", hash_original_field = "4C519DE3531208469B40CCB51004CD2D", hash_generated_field = "C5D9FEC4EFB462C8A221F2C08D178643")
 
         private int size = 0;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.867 -0400", hash_original_field = "82A63DA99F8F58D581BB3EF9928D99E4", hash_generated_field = "F986E3D55ACB2544F93BB697B2C53FDD")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.787 -0400", hash_original_field = "82A63DA99F8F58D581BB3EF9928D99E4", hash_generated_field = "F986E3D55ACB2544F93BB697B2C53FDD")
 
         private Thread leader = null;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.867 -0400", hash_original_field = "F12F9049DC39DE18B81748F5CE552E9E", hash_generated_field = "C79074F36C98DFB2E5B637BB02408509")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.787 -0400", hash_original_field = "F12F9049DC39DE18B81748F5CE552E9E", hash_generated_field = "C79074F36C98DFB2E5B637BB02408509")
 
         private Condition available = lock.newCondition();
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.867 -0400", hash_original_method = "5917AE9375A9F0D7E6AA869E9A88CC5E", hash_generated_method = "5917AE9375A9F0D7E6AA869E9A88CC5E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.787 -0400", hash_original_method = "5917AE9375A9F0D7E6AA869E9A88CC5E", hash_generated_method = "5917AE9375A9F0D7E6AA869E9A88CC5E")
         public DelayedWorkQueue ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.870 -0400", hash_original_method = "871562DD277C0AC8BA441D82903E861A", hash_generated_method = "E5400757E0ABDA0692DD3FDCC4FF0F6E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.787 -0400", hash_original_method = "871562DD277C0AC8BA441D82903E861A", hash_generated_method = "E5400757E0ABDA0692DD3FDCC4FF0F6E")
         private void setIndex(RunnableScheduledFuture f, int idx) {
             ((ScheduledFutureTask)f).heapIndex = idx;
             addTaint(f.getTaint());
@@ -765,7 +765,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.871 -0400", hash_original_method = "82039C4DF7CA25BEE85708617CA17C0A", hash_generated_method = "1AC95511056148FDDB6C54734293B8AB")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.809 -0400", hash_original_method = "82039C4DF7CA25BEE85708617CA17C0A", hash_generated_method = "124223C7681568693790D1C1ED0A151A")
         private void siftUp(int k, RunnableScheduledFuture key) {
             {
                 int parent;
@@ -773,7 +773,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                 RunnableScheduledFuture e;
                 e = queue[parent];
                 {
-                    boolean varC4C5D1172CD54B7DA5B4B3D658159E80_1364902078 = (key.compareTo(e) >= 0);
+                    boolean varC4C5D1172CD54B7DA5B4B3D658159E80_285630955 = (key.compareTo(e) >= 0);
                 } //End collapsed parenthetic
                 queue[k] = e;
                 setIndex(e, k);
@@ -796,7 +796,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.871 -0400", hash_original_method = "2B1F11A0F086CDEBFE52E8E81BF54F43", hash_generated_method = "D629D04FE251642C0FD2B6F0A859AEF5")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.810 -0400", hash_original_method = "2B1F11A0F086CDEBFE52E8E81BF54F43", hash_generated_method = "B968713D78734606307B33FAB881AC17")
         private void siftDown(int k, RunnableScheduledFuture key) {
             int half;
             half = size >>> 1;
@@ -808,11 +808,11 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                 int right;
                 right = child + 1;
                 {
-                    boolean var7E86A53F0AFEB1BC3F88CC41D31B2A33_2080539952 = (right < size && c.compareTo(queue[right]) > 0);
+                    boolean var7E86A53F0AFEB1BC3F88CC41D31B2A33_926061753 = (right < size && c.compareTo(queue[right]) > 0);
                     c = queue[child = right];
                 } //End collapsed parenthetic
                 {
-                    boolean var7F16288BED19CE15B51BB4F575E3252F_1460641277 = (key.compareTo(c) <= 0);
+                    boolean var7F16288BED19CE15B51BB4F575E3252F_201342071 = (key.compareTo(c) <= 0);
                 } //End collapsed parenthetic
                 queue[k] = c;
                 setIndex(c, k);
@@ -839,7 +839,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.872 -0400", hash_original_method = "A3FC13DF1E683960EBCF25B1C68B6117", hash_generated_method = "ED72AC44B6E1AAC3A52FA92705947288")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.810 -0400", hash_original_method = "A3FC13DF1E683960EBCF25B1C68B6117", hash_generated_method = "ED72AC44B6E1AAC3A52FA92705947288")
         private void grow() {
             int oldCapacity;
             oldCapacity = queue.length;
@@ -856,7 +856,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.879 -0400", hash_original_method = "C580641A4A2388B58215BACCB42FFCE3", hash_generated_method = "5C9877D9BA99A4AC353BCC23D0EAC998")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.811 -0400", hash_original_method = "C580641A4A2388B58215BACCB42FFCE3", hash_generated_method = "A280937960BE2C9E7C9928411B888F18")
         private int indexOf(Object x) {
             {
                 {
@@ -868,14 +868,14 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                         int i;
                         i = 0;
                         {
-                            boolean varB28D373523DC4FB5420385081303E702_1160695482 = (x.equals(queue[i]));
+                            boolean varB28D373523DC4FB5420385081303E702_1105927874 = (x.equals(queue[i]));
                         } //End collapsed parenthetic
                     } //End collapsed parenthetic
                 } //End block
             } //End block
             addTaint(x.getTaint());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1881743384 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1881743384;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_343652174 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_343652174;
             // ---------- Original Method ----------
             //if (x != null) {
                 //if (x instanceof ScheduledFutureTask) {
@@ -892,22 +892,22 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.880 -0400", hash_original_method = "5E09E7103DB0A49A13B2DDAFBB485D60", hash_generated_method = "B6912E2BF5C2CC7012A264B7EFEAE2FA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.812 -0400", hash_original_method = "5E09E7103DB0A49A13B2DDAFBB485D60", hash_generated_method = "C4A0275174216E4E4C788D2C4817C0F5")
         public boolean contains(Object x) {
             ReentrantLock lock;
             lock = this.lock;
             lock.lock();
             try 
             {
-                boolean var50987CC635D4EF59A4064B2DDB6782AF_774673429 = (indexOf(x) != -1);
+                boolean var50987CC635D4EF59A4064B2DDB6782AF_1810409282 = (indexOf(x) != -1);
             } //End block
             finally 
             {
                 lock.unlock();
             } //End block
             addTaint(x.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2001901147 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2001901147;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_530203548 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_530203548;
             // ---------- Original Method ----------
             //final ReentrantLock lock = this.lock;
             //lock.lock();
@@ -919,7 +919,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.880 -0400", hash_original_method = "BE80A65233BEEC20C44EE13577B8F6B3", hash_generated_method = "01CE3C86F8FF47A5AF17BCC9A9C1BA2E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.826 -0400", hash_original_method = "BE80A65233BEEC20C44EE13577B8F6B3", hash_generated_method = "0CD979B0F2E0B47A4BDF5AFE49D1DD3D")
         public boolean remove(Object x) {
             ReentrantLock lock;
             lock = this.lock;
@@ -944,8 +944,8 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                 lock.unlock();
             } //End block
             addTaint(x.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1008422039 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1008422039;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_877022779 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_877022779;
             // ---------- Original Method ----------
             //final ReentrantLock lock = this.lock;
             //lock.lock();
@@ -969,13 +969,13 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.884 -0400", hash_original_method = "FB53A461CD3B1BACC3DB27D415F5CC64", hash_generated_method = "F66EEBCFFE6D6CB9415CECA462B368A9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.827 -0400", hash_original_method = "FB53A461CD3B1BACC3DB27D415F5CC64", hash_generated_method = "7490BB2506BFA1FAC798F80077688A71")
         public int size() {
             ReentrantLock lock;
             lock = this.lock;
             lock.lock();
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_427138188 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_427138188;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1806836225 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1806836225;
             // ---------- Original Method ----------
             //final ReentrantLock lock = this.lock;
             //lock.lock();
@@ -987,41 +987,41 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.895 -0400", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "55B195B4379CD7CBA17C3D554568CE05")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.827 -0400", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "ED2EBA4EB3F46FEDB60350CA80957853")
         public boolean isEmpty() {
-            boolean var5A234584F0C312DA2BE9DBC07A5ED4AF_1130667217 = (size() == 0);
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_956364999 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_956364999;
+            boolean var5A234584F0C312DA2BE9DBC07A5ED4AF_1331685685 = (size() == 0);
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_174676355 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_174676355;
             // ---------- Original Method ----------
             //return size() == 0;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.896 -0400", hash_original_method = "E7CDD1D543D1F61B1D969765A4629893", hash_generated_method = "E43FB1319FBC9ACCBB5F84120B89BB64")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.828 -0400", hash_original_method = "E7CDD1D543D1F61B1D969765A4629893", hash_generated_method = "52C059BEEA9E98A0844A5AAE13A1D6E1")
         public int remainingCapacity() {
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_945237680 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_945237680;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1148142369 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1148142369;
             // ---------- Original Method ----------
             //return Integer.MAX_VALUE;
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.897 -0400", hash_original_method = "71D771244E4BD1C0173C42068DB81D51", hash_generated_method = "83CE0763AE1F063F8949E498C889D9B0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.832 -0400", hash_original_method = "71D771244E4BD1C0173C42068DB81D51", hash_generated_method = "0FC0BE64FEC5F03A7E51016227DB0AA6")
         public RunnableScheduledFuture peek() {
-            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_778897044 = null; //Variable for return #1
+            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_1410602845 = null; //Variable for return #1
             ReentrantLock lock;
             lock = this.lock;
             lock.lock();
             try 
             {
-                varB4EAC82CA7396A68D541C85D26508E83_778897044 = queue[0];
+                varB4EAC82CA7396A68D541C85D26508E83_1410602845 = queue[0];
             } //End block
             finally 
             {
                 lock.unlock();
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_778897044.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_778897044;
+            varB4EAC82CA7396A68D541C85D26508E83_1410602845.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1410602845;
             // ---------- Original Method ----------
             //final ReentrantLock lock = this.lock;
             //lock.lock();
@@ -1033,7 +1033,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.916 -0400", hash_original_method = "A5863DDF2D55F0A792F5570CB9552D10", hash_generated_method = "D53054FD86446E7153DED765D843E2DF")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.838 -0400", hash_original_method = "A5863DDF2D55F0A792F5570CB9552D10", hash_generated_method = "EAA504D4E24B45CF90E2CEAB18BCA5CF")
         public boolean offer(Runnable x) {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             RunnableScheduledFuture e;
@@ -1064,8 +1064,8 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                 lock.unlock();
             } //End block
             addTaint(x.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1733153121 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1733153121;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_309641778 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_309641778;
             // ---------- Original Method ----------
             //if (x == null)
                 //throw new NullPointerException();
@@ -1094,7 +1094,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.917 -0400", hash_original_method = "4080BF206CA14D39406126FB9F6C27D2", hash_generated_method = "1A86819A352109BB19D0E5A02A33C8D1")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.838 -0400", hash_original_method = "4080BF206CA14D39406126FB9F6C27D2", hash_generated_method = "1A86819A352109BB19D0E5A02A33C8D1")
         public void put(Runnable e) {
             offer(e);
             addTaint(e.getTaint());
@@ -1103,33 +1103,33 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.917 -0400", hash_original_method = "AD0F5DE8A091A43B7107BCF4BE0853B5", hash_generated_method = "3C66815739F44CFB0968BF176053091B")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.851 -0400", hash_original_method = "AD0F5DE8A091A43B7107BCF4BE0853B5", hash_generated_method = "DBE5690B8CAEEE2543C29C5FDAAEBC17")
         public boolean add(Runnable e) {
-            boolean varE46C21D833DB059BB8F6E49CAFEACF2D_803982298 = (offer(e));
+            boolean varE46C21D833DB059BB8F6E49CAFEACF2D_1522275850 = (offer(e));
             addTaint(e.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1657831610 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1657831610;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_24084121 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_24084121;
             // ---------- Original Method ----------
             //return offer(e);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.947 -0400", hash_original_method = "C6567B4A0AA1C7B283CF9843CADA74F7", hash_generated_method = "CC1AC41C30F6876626BE6AA7898E0F41")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.858 -0400", hash_original_method = "C6567B4A0AA1C7B283CF9843CADA74F7", hash_generated_method = "F73A8CD98125A4DCF7D8E981614F884B")
         public boolean offer(Runnable e, long timeout, TimeUnit unit) {
-            boolean varE46C21D833DB059BB8F6E49CAFEACF2D_1061555603 = (offer(e));
+            boolean varE46C21D833DB059BB8F6E49CAFEACF2D_766247160 = (offer(e));
             addTaint(e.getTaint());
             addTaint(timeout);
             addTaint(unit.getTaint());
-            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_777281315 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_777281315;
+            boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1967376852 = getTaintBoolean();
+            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1967376852;
             // ---------- Original Method ----------
             //return offer(e);
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.949 -0400", hash_original_method = "95AFA75D0998C104C226840186514FC9", hash_generated_method = "7C3FCEF791FCEC90447ACB568E4F0017")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.858 -0400", hash_original_method = "95AFA75D0998C104C226840186514FC9", hash_generated_method = "8A1DDAA98106B5A51C3A5C1E36EAF444")
         private RunnableScheduledFuture finishPoll(RunnableScheduledFuture f) {
-            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_1917101235 = null; //Variable for return #1
+            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_28736856 = null; //Variable for return #1
             int s;
             s = --size;
             RunnableScheduledFuture x;
@@ -1137,10 +1137,10 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             queue[s] = null;
             siftDown(0, x);
             setIndex(f, -1);
-            varB4EAC82CA7396A68D541C85D26508E83_1917101235 = f;
+            varB4EAC82CA7396A68D541C85D26508E83_28736856 = f;
             addTaint(f.getTaint());
-            varB4EAC82CA7396A68D541C85D26508E83_1917101235.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1917101235;
+            varB4EAC82CA7396A68D541C85D26508E83_28736856.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_28736856;
             // ---------- Original Method ----------
             //int s = --size;
             //RunnableScheduledFuture x = queue[s];
@@ -1152,10 +1152,10 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.950 -0400", hash_original_method = "8EBCD245EA652A524E679A63C787A99C", hash_generated_method = "CE51B9F1AA2FCA0913BC5991182AA0D3")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.859 -0400", hash_original_method = "8EBCD245EA652A524E679A63C787A99C", hash_generated_method = "4CB941DC20185111ABF9415AE5BB2CF8")
         public RunnableScheduledFuture poll() {
-            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_1236401582 = null; //Variable for return #1
-            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_1729260853 = null; //Variable for return #2
+            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_1093788214 = null; //Variable for return #1
+            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_661749088 = null; //Variable for return #2
             ReentrantLock lock;
             lock = this.lock;
             lock.lock();
@@ -1164,26 +1164,26 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                 RunnableScheduledFuture first;
                 first = queue[0];
                 {
-                    boolean var5A3EA0F41303197B859A517B5ABCDA38_575408874 = (first == null || first.getDelay(TimeUnit.NANOSECONDS) > 0);
-                    varB4EAC82CA7396A68D541C85D26508E83_1236401582 = null;
-                    varB4EAC82CA7396A68D541C85D26508E83_1729260853 = finishPoll(first);
+                    boolean var5A3EA0F41303197B859A517B5ABCDA38_764915693 = (first == null || first.getDelay(TimeUnit.NANOSECONDS) > 0);
+                    varB4EAC82CA7396A68D541C85D26508E83_1093788214 = null;
+                    varB4EAC82CA7396A68D541C85D26508E83_661749088 = finishPoll(first);
                 } //End collapsed parenthetic
             } //End block
             finally 
             {
                 lock.unlock();
             } //End block
-            RunnableScheduledFuture varA7E53CE21691AB073D9660D615818899_192015464; //Final return value
+            RunnableScheduledFuture varA7E53CE21691AB073D9660D615818899_1646122829; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_192015464 = varB4EAC82CA7396A68D541C85D26508E83_1236401582;
+                    varA7E53CE21691AB073D9660D615818899_1646122829 = varB4EAC82CA7396A68D541C85D26508E83_1093788214;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_192015464 = varB4EAC82CA7396A68D541C85D26508E83_1729260853;
+                    varA7E53CE21691AB073D9660D615818899_1646122829 = varB4EAC82CA7396A68D541C85D26508E83_661749088;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_192015464.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_192015464;
+            varA7E53CE21691AB073D9660D615818899_1646122829.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_1646122829;
             // ---------- Original Method ----------
             //final ReentrantLock lock = this.lock;
             //lock.lock();
@@ -1199,9 +1199,9 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.971 -0400", hash_original_method = "C35B04B198E2C5886DA81FEFBA3F2D77", hash_generated_method = "B050AB4AA202DB573286207FC4A986AA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.860 -0400", hash_original_method = "C35B04B198E2C5886DA81FEFBA3F2D77", hash_generated_method = "092A55F3AC0C987736A9CA27CF6DDB15")
         public RunnableScheduledFuture take() throws InterruptedException {
-            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_183392088 = null; //Variable for return #1
+            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_1974379175 = null; //Variable for return #1
             ReentrantLock lock;
             lock = this.lock;
             lock.lockInterruptibly();
@@ -1214,7 +1214,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                     {
                         long delay;
                         delay = first.getDelay(TimeUnit.NANOSECONDS);
-                        varB4EAC82CA7396A68D541C85D26508E83_183392088 = finishPoll(first);
+                        varB4EAC82CA7396A68D541C85D26508E83_1974379175 = finishPoll(first);
                         available.await();
                         {
                             Thread thisThread;
@@ -1237,18 +1237,18 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                 available.signal();
                 lock.unlock();
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_183392088.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_183392088;
+            varB4EAC82CA7396A68D541C85D26508E83_1974379175.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_1974379175;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.973 -0400", hash_original_method = "72DE523456D313A78DBDBA042B83CE23", hash_generated_method = "B7E9D2E2BB5CC42DFAE0C64409B08EC0")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.882 -0400", hash_original_method = "72DE523456D313A78DBDBA042B83CE23", hash_generated_method = "81C0701F2523268F93FD9ABDF119B567")
         public RunnableScheduledFuture poll(long timeout, TimeUnit unit) throws InterruptedException {
-            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_1167392630 = null; //Variable for return #1
-            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_195983845 = null; //Variable for return #2
-            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_1289624950 = null; //Variable for return #3
+            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_1285715315 = null; //Variable for return #1
+            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_279269814 = null; //Variable for return #2
+            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_267715870 = null; //Variable for return #3
             long nanos;
             nanos = unit.toNanos(timeout);
             ReentrantLock lock;
@@ -1260,14 +1260,14 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                     RunnableScheduledFuture first;
                     first = queue[0];
                     {
-                        varB4EAC82CA7396A68D541C85D26508E83_1167392630 = null;
+                        varB4EAC82CA7396A68D541C85D26508E83_1285715315 = null;
                         nanos = available.awaitNanos(nanos);
                     } //End block
                     {
                         long delay;
                         delay = first.getDelay(TimeUnit.NANOSECONDS);
-                        varB4EAC82CA7396A68D541C85D26508E83_195983845 = finishPoll(first);
-                        varB4EAC82CA7396A68D541C85D26508E83_1289624950 = null;
+                        varB4EAC82CA7396A68D541C85D26508E83_279269814 = finishPoll(first);
+                        varB4EAC82CA7396A68D541C85D26508E83_267715870 = null;
                         nanos = available.awaitNanos(nanos);
                         {
                             Thread thisThread;
@@ -1294,26 +1294,26 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             } //End block
             addTaint(timeout);
             addTaint(unit.getTaint());
-            RunnableScheduledFuture varA7E53CE21691AB073D9660D615818899_1308848988; //Final return value
+            RunnableScheduledFuture varA7E53CE21691AB073D9660D615818899_173147858; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1308848988 = varB4EAC82CA7396A68D541C85D26508E83_1167392630;
+                    varA7E53CE21691AB073D9660D615818899_173147858 = varB4EAC82CA7396A68D541C85D26508E83_1285715315;
                     break;
                 case 2: //Assign result for return ordinal #2
-                    varA7E53CE21691AB073D9660D615818899_1308848988 = varB4EAC82CA7396A68D541C85D26508E83_195983845;
+                    varA7E53CE21691AB073D9660D615818899_173147858 = varB4EAC82CA7396A68D541C85D26508E83_279269814;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1308848988 = varB4EAC82CA7396A68D541C85D26508E83_1289624950;
+                    varA7E53CE21691AB073D9660D615818899_173147858 = varB4EAC82CA7396A68D541C85D26508E83_267715870;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1308848988.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1308848988;
+            varA7E53CE21691AB073D9660D615818899_173147858.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_173147858;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.981 -0400", hash_original_method = "B7A92D7F07FC88CC462E2031E3EC4D97", hash_generated_method = "AC678A42861AD374BE53722278D25AEA")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.890 -0400", hash_original_method = "B7A92D7F07FC88CC462E2031E3EC4D97", hash_generated_method = "AC678A42861AD374BE53722278D25AEA")
         public void clear() {
             ReentrantLock lock;
             lock = this.lock;
@@ -1356,28 +1356,28 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.982 -0400", hash_original_method = "2FE630D35A7B40B0A6753A3386B27535", hash_generated_method = "4E9A65A7D7C906E26DDAF1BA8706892D")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.891 -0400", hash_original_method = "2FE630D35A7B40B0A6753A3386B27535", hash_generated_method = "13C763EAD9A034575694ED072F0B69EE")
         private RunnableScheduledFuture pollExpired() {
-            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_486077427 = null; //Variable for return #1
-            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_423786578 = null; //Variable for return #2
+            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_1059574534 = null; //Variable for return #1
+            RunnableScheduledFuture varB4EAC82CA7396A68D541C85D26508E83_241236933 = null; //Variable for return #2
             RunnableScheduledFuture first;
             first = queue[0];
             {
-                boolean varDBDDC81EE2A47102CBC7EDC3FD3B2190_469063215 = (first == null || first.getDelay(TimeUnit.NANOSECONDS) > 0);
-                varB4EAC82CA7396A68D541C85D26508E83_486077427 = null;
+                boolean varDBDDC81EE2A47102CBC7EDC3FD3B2190_1595208247 = (first == null || first.getDelay(TimeUnit.NANOSECONDS) > 0);
+                varB4EAC82CA7396A68D541C85D26508E83_1059574534 = null;
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_423786578 = finishPoll(first);
-            RunnableScheduledFuture varA7E53CE21691AB073D9660D615818899_1814849019; //Final return value
+            varB4EAC82CA7396A68D541C85D26508E83_241236933 = finishPoll(first);
+            RunnableScheduledFuture varA7E53CE21691AB073D9660D615818899_936913218; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1814849019 = varB4EAC82CA7396A68D541C85D26508E83_486077427;
+                    varA7E53CE21691AB073D9660D615818899_936913218 = varB4EAC82CA7396A68D541C85D26508E83_1059574534;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1814849019 = varB4EAC82CA7396A68D541C85D26508E83_423786578;
+                    varA7E53CE21691AB073D9660D615818899_936913218 = varB4EAC82CA7396A68D541C85D26508E83_241236933;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1814849019.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1814849019;
+            varA7E53CE21691AB073D9660D615818899_936913218.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_936913218;
             // ---------- Original Method ----------
             //RunnableScheduledFuture first = queue[0];
             //if (first == null || first.getDelay(TimeUnit.NANOSECONDS) > 0)
@@ -1386,11 +1386,11 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.983 -0400", hash_original_method = "A0CF55F6497A110CDDFF356DE0AE8664", hash_generated_method = "709B15B5AFD50AB10DD27FB6DB0DA362")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.893 -0400", hash_original_method = "A0CF55F6497A110CDDFF356DE0AE8664", hash_generated_method = "8772A58AAC4C7674CE54E64778D1C47D")
         public int drainTo(Collection<? super Runnable> c) {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             {
-                boolean varBA1311186045D728773ECE86BC5E0754_621988740 = (c == this);
+                boolean varBA1311186045D728773ECE86BC5E0754_351786369 = (c == this);
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
             } //End collapsed parenthetic
             ReentrantLock lock;
@@ -1402,7 +1402,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                 int n;
                 n = 0;
                 {
-                    boolean varE67564F86D6C2E56821D82C2AB67713B_981069660 = ((first = pollExpired()) != null);
+                    boolean varE67564F86D6C2E56821D82C2AB67713B_1128189145 = ((first = pollExpired()) != null);
                     {
                         c.add(first);
                     } //End block
@@ -1413,8 +1413,8 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                 lock.unlock();
             } //End block
             addTaint(c.getTaint());
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1544563126 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1544563126;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1781091871 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1781091871;
             // ---------- Original Method ----------
             //if (c == null)
                 //throw new NullPointerException();
@@ -1436,11 +1436,11 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.983 -0400", hash_original_method = "0279366BCBF84614051CBA5B08204A0A", hash_generated_method = "986A431B340FE583E300F022CF7ADB67")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.900 -0400", hash_original_method = "0279366BCBF84614051CBA5B08204A0A", hash_generated_method = "CD7AD025C70C09AD19D66F8C7510D223")
         public int drainTo(Collection<? super Runnable> c, int maxElements) {
             if (DroidSafeAndroidRuntime.control) throw new NullPointerException();
             {
-                boolean varBA1311186045D728773ECE86BC5E0754_1402104926 = (c == this);
+                boolean varBA1311186045D728773ECE86BC5E0754_481746434 = (c == this);
                 if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException();
             } //End collapsed parenthetic
             ReentrantLock lock;
@@ -1452,7 +1452,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                 int n;
                 n = 0;
                 {
-                    boolean var907F87A983490314E2E468AEABFC930D_1267087567 = (n < maxElements && (first = pollExpired()) != null);
+                    boolean var907F87A983490314E2E468AEABFC930D_611570263 = (n < maxElements && (first = pollExpired()) != null);
                     {
                         c.add(first);
                     } //End block
@@ -1464,8 +1464,8 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             } //End block
             addTaint(c.getTaint());
             addTaint(maxElements);
-            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1120493158 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1120493158;
+            int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_504674983 = getTaintInt();
+            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_504674983;
             // ---------- Original Method ----------
             //if (c == null)
                 //throw new NullPointerException();
@@ -1489,22 +1489,22 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.984 -0400", hash_original_method = "7408B58852530A87736A5AD8CAD9599F", hash_generated_method = "DFCC4EDED10A28444243B35193332DF4")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.904 -0400", hash_original_method = "7408B58852530A87736A5AD8CAD9599F", hash_generated_method = "8AB526D784BB82CE251807C8274F5F4D")
         public Object[] toArray() {
-            Object[] varB4EAC82CA7396A68D541C85D26508E83_1793089718 = null; //Variable for return #1
+            Object[] varB4EAC82CA7396A68D541C85D26508E83_609304171 = null; //Variable for return #1
             ReentrantLock lock;
             lock = this.lock;
             lock.lock();
             try 
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1793089718 = Arrays.copyOf(queue, size, Object[].class);
+                varB4EAC82CA7396A68D541C85D26508E83_609304171 = Arrays.copyOf(queue, size, Object[].class);
             } //End block
             finally 
             {
                 lock.unlock();
             } //End block
-            varB4EAC82CA7396A68D541C85D26508E83_1793089718.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_1793089718;
+            varB4EAC82CA7396A68D541C85D26508E83_609304171.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_609304171;
             // ---------- Original Method ----------
             //final ReentrantLock lock = this.lock;
             //lock.lock();
@@ -1516,36 +1516,36 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:57.994 -0400", hash_original_method = "C537847CD06DB8C82AFD734BEA1D62C4", hash_generated_method = "83EA4D06B911988FBE96B4050A9280B8")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.925 -0400", hash_original_method = "C537847CD06DB8C82AFD734BEA1D62C4", hash_generated_method = "E15C9B3C6582CF6CCA2BF33FC45056F0")
         @SuppressWarnings("unchecked")
         public <T> T[] toArray(T[] a) {
-            T[] varB4EAC82CA7396A68D541C85D26508E83_731297189 = null; //Variable for return #1
-            T[] varB4EAC82CA7396A68D541C85D26508E83_1357336394 = null; //Variable for return #2
+            T[] varB4EAC82CA7396A68D541C85D26508E83_517347850 = null; //Variable for return #1
+            T[] varB4EAC82CA7396A68D541C85D26508E83_1850823372 = null; //Variable for return #2
             ReentrantLock lock;
             lock = this.lock;
             lock.lock();
             try 
             {
-                varB4EAC82CA7396A68D541C85D26508E83_731297189 = (T[]) Arrays.copyOf(queue, size, a.getClass());
+                varB4EAC82CA7396A68D541C85D26508E83_517347850 = (T[]) Arrays.copyOf(queue, size, a.getClass());
                 System.arraycopy(queue, 0, a, 0, size);
                 a[size] = null;
-                varB4EAC82CA7396A68D541C85D26508E83_1357336394 = a;
+                varB4EAC82CA7396A68D541C85D26508E83_1850823372 = a;
             } //End block
             finally 
             {
                 lock.unlock();
             } //End block
-            T[] varA7E53CE21691AB073D9660D615818899_1076146829; //Final return value
+            T[] varA7E53CE21691AB073D9660D615818899_760338912; //Final return value
             switch (DroidSafeAndroidRuntime.switchControl) {
                 case 1: //Assign result for return ordinal #1
-                    varA7E53CE21691AB073D9660D615818899_1076146829 = varB4EAC82CA7396A68D541C85D26508E83_731297189;
+                    varA7E53CE21691AB073D9660D615818899_760338912 = varB4EAC82CA7396A68D541C85D26508E83_517347850;
                     break;
                 default:
-                    varA7E53CE21691AB073D9660D615818899_1076146829 = varB4EAC82CA7396A68D541C85D26508E83_1357336394;
+                    varA7E53CE21691AB073D9660D615818899_760338912 = varB4EAC82CA7396A68D541C85D26508E83_1850823372;
                     break;
             }
-            varA7E53CE21691AB073D9660D615818899_1076146829.addTaint(getTaint()); //Add taint from parent
-            return varA7E53CE21691AB073D9660D615818899_1076146829;
+            varA7E53CE21691AB073D9660D615818899_760338912.addTaint(getTaint()); //Add taint from parent
+            return varA7E53CE21691AB073D9660D615818899_760338912;
             // ---------- Original Method ----------
             //final ReentrantLock lock = this.lock;
             //lock.lock();
@@ -1562,29 +1562,29 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.009 -0400", hash_original_method = "46B1FB64DFD489BA9D84B29257E9B6C6", hash_generated_method = "0782443B182713FE115C212971026A21")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.926 -0400", hash_original_method = "46B1FB64DFD489BA9D84B29257E9B6C6", hash_generated_method = "A4B4E2ECB4C3EF595493D3765B7F6973")
         public Iterator<Runnable> iterator() {
-            Iterator<Runnable> varB4EAC82CA7396A68D541C85D26508E83_972723914 = null; //Variable for return #1
-            varB4EAC82CA7396A68D541C85D26508E83_972723914 = new Itr(Arrays.copyOf(queue, size));
-            varB4EAC82CA7396A68D541C85D26508E83_972723914.addTaint(getTaint()); //Add taint from parent
-            return varB4EAC82CA7396A68D541C85D26508E83_972723914;
+            Iterator<Runnable> varB4EAC82CA7396A68D541C85D26508E83_172602633 = null; //Variable for return #1
+            varB4EAC82CA7396A68D541C85D26508E83_172602633 = new Itr(Arrays.copyOf(queue, size));
+            varB4EAC82CA7396A68D541C85D26508E83_172602633.addTaint(getTaint()); //Add taint from parent
+            return varB4EAC82CA7396A68D541C85D26508E83_172602633;
             // ---------- Original Method ----------
             //return new Itr(Arrays.copyOf(queue, size));
         }
 
         
         private class Itr implements Iterator<Runnable> {
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.009 -0400", hash_original_field = "F1F713C9E000F5D3F280ADBD124DF4F5", hash_generated_field = "81254B9FC545B41C37906F59020B61EA")
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.927 -0400", hash_original_field = "F1F713C9E000F5D3F280ADBD124DF4F5", hash_generated_field = "81254B9FC545B41C37906F59020B61EA")
 
             RunnableScheduledFuture[] array;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.009 -0400", hash_original_field = "450022C54ECA00D933A53196B279FDDD", hash_generated_field = "EF6EF07B89CC96321B7CFBEF54BCF418")
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.927 -0400", hash_original_field = "450022C54ECA00D933A53196B279FDDD", hash_generated_field = "EF6EF07B89CC96321B7CFBEF54BCF418")
 
             int cursor = 0;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.010 -0400", hash_original_field = "05BB3FB56C1D06F12491BD981603A511", hash_generated_field = "9128B9A3EF0151CBF070702BF3C62C66")
+            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.927 -0400", hash_original_field = "05BB3FB56C1D06F12491BD981603A511", hash_generated_field = "9128B9A3EF0151CBF070702BF3C62C66")
 
             int lastRet = -1;
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.010 -0400", hash_original_method = "78BE11BC04A59F667BA3E745B91EA864", hash_generated_method = "ABE1A6D5F6CC1003308B5A0719A48D00")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.927 -0400", hash_original_method = "78BE11BC04A59F667BA3E745B91EA864", hash_generated_method = "ABE1A6D5F6CC1003308B5A0719A48D00")
               Itr(RunnableScheduledFuture[] array) {
                 this.array = array;
                 // ---------- Original Method ----------
@@ -1592,23 +1592,23 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.010 -0400", hash_original_method = "C1264B905CC60CA39EE5BE51F177AC9A", hash_generated_method = "DC373D3811A9BE3D31A80ED7267CCF6D")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.928 -0400", hash_original_method = "C1264B905CC60CA39EE5BE51F177AC9A", hash_generated_method = "431E45DEF4DB450367013E4FF8EE52E8")
             public boolean hasNext() {
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_637349497 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_637349497;
+                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_174074565 = getTaintBoolean();
+                return var84E2C64F38F78BA3EA5C905AB5A2DA27_174074565;
                 // ---------- Original Method ----------
                 //return cursor < array.length;
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.019 -0400", hash_original_method = "3D0866C62F631AE1F3281A9951BE6C06", hash_generated_method = "DB6D87A4C27FD4FFA70A9FB2902D3BB4")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.946 -0400", hash_original_method = "3D0866C62F631AE1F3281A9951BE6C06", hash_generated_method = "272B7AE76EB553B06318D1A102D32F96")
             public Runnable next() {
-                Runnable varB4EAC82CA7396A68D541C85D26508E83_1956548755 = null; //Variable for return #1
+                Runnable varB4EAC82CA7396A68D541C85D26508E83_1897512820 = null; //Variable for return #1
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchElementException();
                 lastRet = cursor;
-                varB4EAC82CA7396A68D541C85D26508E83_1956548755 = array[cursor++];
-                varB4EAC82CA7396A68D541C85D26508E83_1956548755.addTaint(getTaint()); //Add taint from parent
-                return varB4EAC82CA7396A68D541C85D26508E83_1956548755;
+                varB4EAC82CA7396A68D541C85D26508E83_1897512820 = array[cursor++];
+                varB4EAC82CA7396A68D541C85D26508E83_1897512820.addTaint(getTaint()); //Add taint from parent
+                return varB4EAC82CA7396A68D541C85D26508E83_1897512820;
                 // ---------- Original Method ----------
                 //if (cursor >= array.length)
                     //throw new NoSuchElementException();
@@ -1617,7 +1617,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             }
 
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.020 -0400", hash_original_method = "560EEAA350DF5EAA4CBD4C138A91D642", hash_generated_method = "CE7DA7858017CF4323B5084C501777C6")
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.947 -0400", hash_original_method = "560EEAA350DF5EAA4CBD4C138A91D642", hash_generated_method = "CE7DA7858017CF4323B5084C501777C6")
             public void remove() {
                 if (DroidSafeAndroidRuntime.control) throw new IllegalStateException();
                 DelayedWorkQueue.this.remove(array[lastRet]);
@@ -1634,14 +1634,14 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
 
 
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.020 -0400", hash_original_field = "60E8041D14101DDB569AC77FCB6B5097", hash_generated_field = "05F257EA7A187AB466D9076A9A3F0E5F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.947 -0400", hash_original_field = "60E8041D14101DDB569AC77FCB6B5097", hash_generated_field = "05F257EA7A187AB466D9076A9A3F0E5F")
 
         private static int INITIAL_CAPACITY = 16;
     }
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:58.020 -0400", hash_original_field = "D8FDF1FE130A58926F6239A3C9466239", hash_generated_field = "1594483929F5FC58560CDCB162389DFF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:57.947 -0400", hash_original_field = "D8FDF1FE130A58926F6239A3C9466239", hash_generated_field = "1594483929F5FC58560CDCB162389DFF")
 
     private static AtomicLong sequencer = new AtomicLong(0);
 }

@@ -12,17 +12,17 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 class ReflectiveProperty<T, V> extends Property<T, V> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.534 -0400", hash_original_field = "16EEDAABC5C1FB42003AA47180ED612B", hash_generated_field = "EEA8654E15111D59944789CA5B543C76")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.229 -0400", hash_original_field = "16EEDAABC5C1FB42003AA47180ED612B", hash_generated_field = "EEA8654E15111D59944789CA5B543C76")
 
     private Method mSetter;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.534 -0400", hash_original_field = "7107F73C17BAE03EC85BA17E62A26036", hash_generated_field = "6E8EC7297CA45290DB21D59C8AA7D832")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.229 -0400", hash_original_field = "7107F73C17BAE03EC85BA17E62A26036", hash_generated_field = "6E8EC7297CA45290DB21D59C8AA7D832")
 
     private Method mGetter;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.534 -0400", hash_original_field = "0CAB8BA8DDC27902A8770C3001E7D4DF", hash_generated_field = "0E3FF9C9FB2909B4EEFAB3A86E1A80E5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.229 -0400", hash_original_field = "0CAB8BA8DDC27902A8770C3001E7D4DF", hash_generated_field = "0E3FF9C9FB2909B4EEFAB3A86E1A80E5")
 
     private Field mField;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.536 -0400", hash_original_method = "4D5217EDB6A50C089202283FEC2465A8", hash_generated_method = "26EF7CC32660E026178686553DC909A7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.233 -0400", hash_original_method = "4D5217EDB6A50C089202283FEC2465A8", hash_generated_method = "4A574A84F89B7286F1085C4C483C23DA")
     public  ReflectiveProperty(Class<T> propertyHolder, Class<V> valueType, String name) {
         super(valueType, name);
         char firstLetter;
@@ -52,7 +52,7 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
                     Class fieldType;
                     fieldType = mField.getType();
                     {
-                        boolean var9268CA5610FB5210C54887757616A17A_611987213 = (!typesMatch(valueType, fieldType));
+                        boolean var9268CA5610FB5210C54887757616A17A_219450950 = (!typesMatch(valueType, fieldType));
                         {
                             if (DroidSafeAndroidRuntime.control) throw new NoSuchPropertyException("Underlying type (" + fieldType + ") " +
                                 "does not match Property type (" + valueType + ")");
@@ -69,7 +69,7 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
         Class getterType;
         getterType = mGetter.getReturnType();
         {
-            boolean varE0F8B9103254BA81ACC9A19D1436928E_2009923460 = (!typesMatch(valueType, getterType));
+            boolean varE0F8B9103254BA81ACC9A19D1436928E_153904243 = (!typesMatch(valueType, getterType));
             {
                 if (DroidSafeAndroidRuntime.control) throw new NoSuchPropertyException("Underlying type (" + getterType + ") " +
                     "does not match Property type (" + valueType + ")");
@@ -89,23 +89,23 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.537 -0400", hash_original_method = "ED015CEE91613D6F524378162B530528", hash_generated_method = "2E092B2938484EF290912004EECCCDB7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.234 -0400", hash_original_method = "ED015CEE91613D6F524378162B530528", hash_generated_method = "DF41D06B86745CAD2C2E06F8CDDCDBD7")
     private boolean typesMatch(Class<V> valueType, Class getterType) {
         {
             {
-                boolean var15116A97817E37F8F785F1AE4B1D8378_752699957 = (getterType.isPrimitive());
+                boolean var15116A97817E37F8F785F1AE4B1D8378_853597093 = (getterType.isPrimitive());
             } //End collapsed parenthetic
         } //End block
         addTaint(valueType.getTaint());
         addTaint(getterType.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_79338384 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_79338384;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_844392290 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_844392290;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.550 -0400", hash_original_method = "9BC237A59BE2F86E825267381E38AEC8", hash_generated_method = "4D0CC7DEB5DFC49E01B15312CF58C810")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.243 -0400", hash_original_method = "9BC237A59BE2F86E825267381E38AEC8", hash_generated_method = "4D0CC7DEB5DFC49E01B15312CF58C810")
     @Override
     public void set(T object, V value) {
         {
@@ -158,15 +158,15 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.551 -0400", hash_original_method = "4070872B48CA952F40E8D9AD673A26AA", hash_generated_method = "7FD570B74BC07B0F82923DB212E4404D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.244 -0400", hash_original_method = "4070872B48CA952F40E8D9AD673A26AA", hash_generated_method = "1551FB1E96194D13D35D55FC401C01D5")
     @Override
     public V get(T object) {
-        V varB4EAC82CA7396A68D541C85D26508E83_742910111 = null; //Variable for return #1
-        V varB4EAC82CA7396A68D541C85D26508E83_1326146542 = null; //Variable for return #2
+        V varB4EAC82CA7396A68D541C85D26508E83_603020039 = null; //Variable for return #1
+        V varB4EAC82CA7396A68D541C85D26508E83_348043547 = null; //Variable for return #2
         {
             try 
             {
-                varB4EAC82CA7396A68D541C85D26508E83_742910111 = (V) mGetter.invoke(object, (Object[])null);
+                varB4EAC82CA7396A68D541C85D26508E83_603020039 = (V) mGetter.invoke(object, (Object[])null);
             } //End block
             catch (IllegalAccessException e)
             {
@@ -180,7 +180,7 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
         {
             try 
             {
-                varB4EAC82CA7396A68D541C85D26508E83_1326146542 = (V) mField.get(object);
+                varB4EAC82CA7396A68D541C85D26508E83_348043547 = (V) mField.get(object);
             } //End block
             catch (IllegalAccessException e)
             {
@@ -189,17 +189,17 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
         } //End block
         if (DroidSafeAndroidRuntime.control) throw new AssertionError();
         addTaint(object.getTaint());
-        V varA7E53CE21691AB073D9660D615818899_1386241213; //Final return value
+        V varA7E53CE21691AB073D9660D615818899_1173043494; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1386241213 = varB4EAC82CA7396A68D541C85D26508E83_742910111;
+                varA7E53CE21691AB073D9660D615818899_1173043494 = varB4EAC82CA7396A68D541C85D26508E83_603020039;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1386241213 = varB4EAC82CA7396A68D541C85D26508E83_1326146542;
+                varA7E53CE21691AB073D9660D615818899_1173043494 = varB4EAC82CA7396A68D541C85D26508E83_348043547;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1386241213.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1386241213;
+        varA7E53CE21691AB073D9660D615818899_1173043494.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1173043494;
         // ---------- Original Method ----------
         //if (mGetter != null) {
             //try {
@@ -220,23 +220,23 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.553 -0400", hash_original_method = "176D77E232A76459A0F514B7F2AA65DB", hash_generated_method = "1C54CDCEC63135E28ED1878189E0AAEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.244 -0400", hash_original_method = "176D77E232A76459A0F514B7F2AA65DB", hash_generated_method = "A5EE9D86A57646333D1A4D6366F93CFF")
     @Override
     public boolean isReadOnly() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_517971596 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_517971596;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_518418091 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_518418091;
         // ---------- Original Method ----------
         //return (mSetter == null && mField == null);
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.553 -0400", hash_original_field = "25304E0CA662AE83D08DBF98C8D49512", hash_generated_field = "2A5C594F2BEF0BF666F0F88A20D8D536")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.244 -0400", hash_original_field = "25304E0CA662AE83D08DBF98C8D49512", hash_generated_field = "2A5C594F2BEF0BF666F0F88A20D8D536")
 
     private static String PREFIX_GET = "get";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.553 -0400", hash_original_field = "833FCA24685BACBAAEB467CFFA681776", hash_generated_field = "32F999CAFF347D8E14B6988B23AB1CF0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.244 -0400", hash_original_field = "833FCA24685BACBAAEB467CFFA681776", hash_generated_field = "32F999CAFF347D8E14B6988B23AB1CF0")
 
     private static String PREFIX_IS = "is";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:45.553 -0400", hash_original_field = "A5A69007E412F74A05D61934014BBC10", hash_generated_field = "6033275DC6CCCED1E7B80816287C3AAE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:47.244 -0400", hash_original_field = "A5A69007E412F74A05D61934014BBC10", hash_generated_field = "6033275DC6CCCED1E7B80816287C3AAE")
 
     private static String PREFIX_SET = "set";
 }

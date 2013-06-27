@@ -19,7 +19,7 @@ import java.io.InputStream;
 
 public class BitmapFactory {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.106 -0400", hash_original_method = "9FB0451BE5E4A0EC96B2F8C3A0CC38F7", hash_generated_method = "9FB0451BE5E4A0EC96B2F8C3A0CC38F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.593 -0400", hash_original_method = "9FB0451BE5E4A0EC96B2F8C3A0CC38F7", hash_generated_method = "9FB0451BE5E4A0EC96B2F8C3A0CC38F7")
     public BitmapFactory ()
     {
         //Synthesized constructor
@@ -245,62 +245,62 @@ public class BitmapFactory {
 
     
     public static class Options {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.140 -0400", hash_original_field = "17F00150E8B2A9E4FBAD8D43CEDC7965", hash_generated_field = "E14A34C185341AE7F8D4DB91886BE7E5")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.641 -0400", hash_original_field = "17F00150E8B2A9E4FBAD8D43CEDC7965", hash_generated_field = "E14A34C185341AE7F8D4DB91886BE7E5")
 
         public Bitmap inBitmap;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.149 -0400", hash_original_field = "6258A3C62DA63C37576AABD0D4F67975", hash_generated_field = "C7573D4E32EC16E0C2CD149EBE3AB0B9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.641 -0400", hash_original_field = "6258A3C62DA63C37576AABD0D4F67975", hash_generated_field = "C7573D4E32EC16E0C2CD149EBE3AB0B9")
 
         @SuppressWarnings({"UnusedDeclaration"}) public boolean inMutable;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.149 -0400", hash_original_field = "70130F0A4CF61B0939FABD71E9296B98", hash_generated_field = "1063F6F5AF93C8D68EC45BDD348E5071")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.641 -0400", hash_original_field = "70130F0A4CF61B0939FABD71E9296B98", hash_generated_field = "1063F6F5AF93C8D68EC45BDD348E5071")
 
         public boolean inJustDecodeBounds;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.149 -0400", hash_original_field = "63CE80485616583FFF99A9BF00E2DFE8", hash_generated_field = "20BC8D58A8E25C9FB32FDEFC6A90E12A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.641 -0400", hash_original_field = "63CE80485616583FFF99A9BF00E2DFE8", hash_generated_field = "20BC8D58A8E25C9FB32FDEFC6A90E12A")
 
         public int inSampleSize;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.149 -0400", hash_original_field = "A2119881135B5B4D30F6D308B5B54941", hash_generated_field = "B3F186A0A19CB81CFAB1CFA519948F42")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.641 -0400", hash_original_field = "A2119881135B5B4D30F6D308B5B54941", hash_generated_field = "B3F186A0A19CB81CFAB1CFA519948F42")
 
         public Bitmap.Config inPreferredConfig = Bitmap.Config.ARGB_8888;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.149 -0400", hash_original_field = "79B4E8E023E3363D4A76E84B1E30EEA9", hash_generated_field = "E8FA7CEB38B2930060BA05ADEE3346BB")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.641 -0400", hash_original_field = "79B4E8E023E3363D4A76E84B1E30EEA9", hash_generated_field = "E8FA7CEB38B2930060BA05ADEE3346BB")
 
         public boolean inDither;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.149 -0400", hash_original_field = "168C736223E9CA8E075112E9C406FA8B", hash_generated_field = "3610CEE85095008F6597BC9C5FE629D8")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.644 -0400", hash_original_field = "168C736223E9CA8E075112E9C406FA8B", hash_generated_field = "3610CEE85095008F6597BC9C5FE629D8")
 
         public int inDensity;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.150 -0400", hash_original_field = "68DD54E04325E60003AED0E381DB42D0", hash_generated_field = "43BDEAA718150EA7C4FAA6F90E278648")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.645 -0400", hash_original_field = "68DD54E04325E60003AED0E381DB42D0", hash_generated_field = "43BDEAA718150EA7C4FAA6F90E278648")
 
         public int inTargetDensity;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.150 -0400", hash_original_field = "D79D102597FF817C9E5D933CEA990C9B", hash_generated_field = "FA42D7A36E035A3F23389257C5820335")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.645 -0400", hash_original_field = "D79D102597FF817C9E5D933CEA990C9B", hash_generated_field = "FA42D7A36E035A3F23389257C5820335")
 
         public int inScreenDensity;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.150 -0400", hash_original_field = "A2DB623A5F61CE37213712B64F1671AE", hash_generated_field = "A3F3E3CD0B1AC9D4E52712B447050B21")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.645 -0400", hash_original_field = "A2DB623A5F61CE37213712B64F1671AE", hash_generated_field = "A3F3E3CD0B1AC9D4E52712B447050B21")
 
         public boolean inScaled;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.150 -0400", hash_original_field = "14C34EB699B7DAC06CEC7FA0AC6090DA", hash_generated_field = "2A4AF0565171D3E469778BF856D92818")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.645 -0400", hash_original_field = "14C34EB699B7DAC06CEC7FA0AC6090DA", hash_generated_field = "2A4AF0565171D3E469778BF856D92818")
 
         public boolean inPurgeable;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.150 -0400", hash_original_field = "F3A5A50C1671B673F4A4F15A256A35E8", hash_generated_field = "2CBEF9B554D136FB7359A990F5EA7F23")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.645 -0400", hash_original_field = "F3A5A50C1671B673F4A4F15A256A35E8", hash_generated_field = "2CBEF9B554D136FB7359A990F5EA7F23")
 
         public boolean inInputShareable;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.150 -0400", hash_original_field = "252B7794F08FA684F5D0370F9849DD44", hash_generated_field = "0074B39C2082290F2C5AD33FADB0EB13")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.645 -0400", hash_original_field = "252B7794F08FA684F5D0370F9849DD44", hash_generated_field = "0074B39C2082290F2C5AD33FADB0EB13")
 
         public boolean inPreferQualityOverSpeed;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.150 -0400", hash_original_field = "FDF52608CC3F6F44D6B8DC6CCEEFC3D6", hash_generated_field = "1711C922F444BA74A1E98CA86D96DCCE")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.645 -0400", hash_original_field = "FDF52608CC3F6F44D6B8DC6CCEEFC3D6", hash_generated_field = "1711C922F444BA74A1E98CA86D96DCCE")
 
         public int outWidth;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.150 -0400", hash_original_field = "EC008EE6ECDAF8CD4CAD776F37012600", hash_generated_field = "A872264BA87A83F67078713ABC67D7C1")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.645 -0400", hash_original_field = "EC008EE6ECDAF8CD4CAD776F37012600", hash_generated_field = "A872264BA87A83F67078713ABC67D7C1")
 
         public int outHeight;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.151 -0400", hash_original_field = "4E4C2369DC65E86D2FBB49DAD06181D1", hash_generated_field = "E4866098B19434EF1531DCD449765740")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.645 -0400", hash_original_field = "4E4C2369DC65E86D2FBB49DAD06181D1", hash_generated_field = "E4866098B19434EF1531DCD449765740")
 
         public String outMimeType;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.151 -0400", hash_original_field = "48013C146BD92328BBEB8833B800FE29", hash_generated_field = "594E0FA6AD863865589C962FDBA85D13")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.646 -0400", hash_original_field = "48013C146BD92328BBEB8833B800FE29", hash_generated_field = "594E0FA6AD863865589C962FDBA85D13")
 
         public byte[] inTempStorage;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.151 -0400", hash_original_field = "67026972FD93F1D5C235393B45074484", hash_generated_field = "847D8059733379B59E06CF32218000D4")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.646 -0400", hash_original_field = "67026972FD93F1D5C235393B45074484", hash_generated_field = "847D8059733379B59E06CF32218000D4")
 
         public boolean mCancel;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.159 -0400", hash_original_method = "1E2502131AFAFEE705D62EA28BD1E532", hash_generated_method = "0635C869FB7A2CFDEE0A972AAD74F8C9")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.650 -0400", hash_original_method = "1E2502131AFAFEE705D62EA28BD1E532", hash_generated_method = "0635C869FB7A2CFDEE0A972AAD74F8C9")
         public  Options() {
             inDither = false;
             inScaled = true;
@@ -310,12 +310,12 @@ public class BitmapFactory {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.161 -0400", hash_original_method = "D7A23FF2AF4CBD01F551E962769DA287", hash_generated_method = "0A55D796763E8D9E6E50E72FD3E99166")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.651 -0400", hash_original_method = "D7A23FF2AF4CBD01F551E962769DA287", hash_generated_method = "0A55D796763E8D9E6E50E72FD3E99166")
         private void requestCancel() {
         }
 
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.177 -0400", hash_original_method = "1FC603D50B1CC5C62A2F5DE57FF4610A", hash_generated_method = "4C9F07CF8433D9C32575769E3132C089")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.652 -0400", hash_original_method = "1FC603D50B1CC5C62A2F5DE57FF4610A", hash_generated_method = "4C9F07CF8433D9C32575769E3132C089")
         public void requestCancelDecode() {
             mCancel = true;
             requestCancel();

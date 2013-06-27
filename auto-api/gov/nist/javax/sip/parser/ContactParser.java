@@ -19,7 +19,7 @@ import java.util.Iterator;
 
 public class ContactParser extends AddressParametersParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.605 -0400", hash_original_method = "259D82B4FB0F930288D81B3FF39234D9", hash_generated_method = "62E82C69DA52DF4188E2B413B56E0050")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.617 -0400", hash_original_method = "259D82B4FB0F930288D81B3FF39234D9", hash_generated_method = "62E82C69DA52DF4188E2B413B56E0050")
     public  ContactParser(String contact) {
         super(contact);
         addTaint(contact.getTaint());
@@ -27,7 +27,7 @@ public class ContactParser extends AddressParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.605 -0400", hash_original_method = "9392FB11C199E27843D6B36D0194676C", hash_generated_method = "DAE8656B4427799C90FDB80B47901409")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.617 -0400", hash_original_method = "9392FB11C199E27843D6B36D0194676C", hash_generated_method = "DAE8656B4427799C90FDB80B47901409")
     protected  ContactParser(Lexer lexer) {
         super(lexer);
         this.lexer = lexer;
@@ -37,9 +37,9 @@ public class ContactParser extends AddressParametersParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.607 -0400", hash_original_method = "BF729EDB4B0BCD2BE7D180520FE998E8", hash_generated_method = "66B283FAC3D3C07F86CB7B3F3F1B3014")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.632 -0400", hash_original_method = "BF729EDB4B0BCD2BE7D180520FE998E8", hash_generated_method = "0ACFA7550F1F5B6A68ADE41F1BF94847")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1710269115 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_491928360 = null; //Variable for return #1
         headerName(TokenTypes.CONTACT);
         ContactList retval;
         retval = new ContactList();
@@ -47,7 +47,7 @@ public class ContactParser extends AddressParametersParser {
             Contact contact;
             contact = new Contact();
             {
-                boolean varEE2545CD66997E09574EFE5DCBF7CEB1_1559967885 = (lexer.lookAhead(0) == '*');
+                boolean varEE2545CD66997E09574EFE5DCBF7CEB1_2048070413 = (lexer.lookAhead(0) == '*');
                 {
                     char next;
                     next = lexer.lookAhead(1);
@@ -73,9 +73,9 @@ public class ContactParser extends AddressParametersParser {
             } //End block
             if (DroidSafeAndroidRuntime.control) throw createParseException("unexpected char");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1710269115 = retval;
-        varB4EAC82CA7396A68D541C85D26508E83_1710269115.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1710269115;
+        varB4EAC82CA7396A68D541C85D26508E83_491928360 = retval;
+        varB4EAC82CA7396A68D541C85D26508E83_491928360.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_491928360;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

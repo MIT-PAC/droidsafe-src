@@ -9,11 +9,11 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public final class Integer extends Number implements Comparable<Integer> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.758 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "810C3DA5CE7DA1BA423D6BE76816E5C9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.927 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "810C3DA5CE7DA1BA423D6BE76816E5C9")
 
     private int value;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.759 -0400", hash_original_method = "22146E0D9B2FD3EEBD460016C940A35F", hash_generated_method = "F4A1CCEE47CB188DE4B924DA0BBDC75E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.931 -0400", hash_original_method = "22146E0D9B2FD3EEBD460016C940A35F", hash_generated_method = "F4A1CCEE47CB188DE4B924DA0BBDC75E")
     public  Integer(int value) {
         this.value = value;
         // ---------- Original Method ----------
@@ -21,7 +21,7 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.759 -0400", hash_original_method = "E0CD1D1A7D46CCFF15C90A26B138404A", hash_generated_method = "C7D8A3D0A970F4CCFAE7CF1E10D54B3A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.931 -0400", hash_original_method = "E0CD1D1A7D46CCFF15C90A26B138404A", hash_generated_method = "C7D8A3D0A970F4CCFAE7CF1E10D54B3A")
     public  Integer(String string) throws NumberFormatException {
         this(parseInt(string));
         addTaint(string.getTaint());
@@ -29,22 +29,22 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.759 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "A3C1868DA4A4D8123FE6C3BCD2D2EFD0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.931 -0400", hash_original_method = "6B61312FC318A12A6B19178CA8B54E86", hash_generated_method = "039D5DD1975C665AB36D01B8720BF1CC")
     @Override
     public byte byteValue() {
-        byte var40EA57D3EE3C07BF1C102B466E1C3091_313997330 = getTaintByte();
-        return var40EA57D3EE3C07BF1C102B466E1C3091_313997330;
+        byte var40EA57D3EE3C07BF1C102B466E1C3091_1618072098 = getTaintByte();
+        return var40EA57D3EE3C07BF1C102B466E1C3091_1618072098;
         // ---------- Original Method ----------
         //return (byte) value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.769 -0400", hash_original_method = "735EC7AEC4F3C97B9E273B68A8C134FA", hash_generated_method = "386EB2CA67FB7DFE499128F7986CCA14")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.932 -0400", hash_original_method = "735EC7AEC4F3C97B9E273B68A8C134FA", hash_generated_method = "617A1A078FEB302DE0D1B85FF85B0862")
     public int compareTo(Integer object) {
-        int varEB17148B4676BC6C35C2467C947D57DF_96071002 = (compare(value, object.value));
+        int varEB17148B4676BC6C35C2467C947D57DF_190828273 = (compare(value, object.value));
         addTaint(object.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1551049000 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1551049000;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_289347514 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_289347514;
         // ---------- Original Method ----------
         //return compare(value, object.value);
     }
@@ -97,32 +97,32 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.777 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "1C7FBF9D041CAD369D4E7C57180D03A5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.940 -0400", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "6A05A77A0AA56183924027A68183AF7A")
     @Override
     public double doubleValue() {
-        double varE8CD7DA078A86726031AD64F35F5A6C0_966669428 = getTaintDouble();
-        return varE8CD7DA078A86726031AD64F35F5A6C0_966669428;
+        double varE8CD7DA078A86726031AD64F35F5A6C0_1226043287 = getTaintDouble();
+        return varE8CD7DA078A86726031AD64F35F5A6C0_1226043287;
         // ---------- Original Method ----------
         //return value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.778 -0400", hash_original_method = "F74FD59F9B798AB03C90305DF48139A2", hash_generated_method = "716E40F8EB49A8A920A6DA14EF314CC0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.940 -0400", hash_original_method = "F74FD59F9B798AB03C90305DF48139A2", hash_generated_method = "7252F2D258B70EEFDFDA7A458EA17386")
     @Override
     public boolean equals(Object o) {
         addTaint(o.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1845785905 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1845785905;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1659631878 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1659631878;
         // ---------- Original Method ----------
         //return (o instanceof Integer) && (((Integer) o).value == value);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.778 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "D90195D91B4786010F60A70B55135B4D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.941 -0400", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "54CD8EE7604F4ACC57D1BF8E0A2529E9")
     @Override
     public float floatValue() {
-        float var546ADE640B6EDFBC8A086EF31347E768_16866291 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_16866291;
+        float var546ADE640B6EDFBC8A086EF31347E768_1543696302 = getTaintFloat();
+        return var546ADE640B6EDFBC8A086EF31347E768_1543696302;
         // ---------- Original Method ----------
         //return value;
     }
@@ -176,31 +176,31 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.783 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "BCDAE3D971B72CF17A722E5A19593955")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.942 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "1BA5D59A6A0F8D9879C6C90E1B950409")
     @Override
     public int hashCode() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1975754979 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1975754979;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_366648370 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_366648370;
         // ---------- Original Method ----------
         //return value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.784 -0400", hash_original_method = "4668226786F0223B69B1E8157F3C469B", hash_generated_method = "02A4994F3AFCA2CE90859E21CA612613")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.942 -0400", hash_original_method = "4668226786F0223B69B1E8157F3C469B", hash_generated_method = "40D554A359D625B5014DE16D3A810EC0")
     @Override
     public int intValue() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2145889823 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2145889823;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_397996576 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_397996576;
         // ---------- Original Method ----------
         //return value;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.788 -0400", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "25E67F32F1CE9564ACC6D1242419442B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.943 -0400", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "3862F4C0D762B83FFB5ECBAA71FA8493")
     @Override
     public long longValue() {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_249357569 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_249357569;
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_1806302148 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_1806302148;
         // ---------- Original Method ----------
         //return value;
     }
@@ -257,11 +257,11 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.789 -0400", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "7427E77A8F06A8595195189AB398CBE0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.948 -0400", hash_original_method = "8E8C16CBE89F9837B346C9544C9B6BCC", hash_generated_method = "F6037F7E739E8C7F3B5F659E30D55DF5")
     @Override
     public short shortValue() {
-        short var4F09DAA9D95BCB166A302407A0E0BABE_130766052 = getTaintShort();
-        return var4F09DAA9D95BCB166A302407A0E0BABE_130766052;
+        short var4F09DAA9D95BCB166A302407A0E0BABE_1238059528 = getTaintShort();
+        return var4F09DAA9D95BCB166A302407A0E0BABE_1238059528;
         // ---------- Original Method ----------
         //return (short) value;
     }
@@ -282,13 +282,13 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.801 -0400", hash_original_method = "6B315C20A4D45816791A47779D79F014", hash_generated_method = "7BDE31A5E8A095BF4D4D50D999D1A12B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.959 -0400", hash_original_method = "6B315C20A4D45816791A47779D79F014", hash_generated_method = "A6738938EBE0038B008AECB35A85F423")
     @Override
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_141618699 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_141618699 = Integer.toString(value);
-        varB4EAC82CA7396A68D541C85D26508E83_141618699.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_141618699;
+        String varB4EAC82CA7396A68D541C85D26508E83_1253002631 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1253002631 = Integer.toString(value);
+        varB4EAC82CA7396A68D541C85D26508E83_1253002631.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1253002631;
         // ---------- Original Method ----------
         //return Integer.toString(value);
     }
@@ -404,27 +404,32 @@ public final class Integer extends Number implements Comparable<Integer> {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.816 -0400", hash_original_field = "58F18909B0F81D2156ED8B75F6324259", hash_generated_field = "F0FDC079DE53D7993A8B31A69D72767F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.969 -0400", hash_original_field = "58F18909B0F81D2156ED8B75F6324259", hash_generated_field = "F0FDC079DE53D7993A8B31A69D72767F")
 
     private static long serialVersionUID = 1360826667806852920L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.816 -0400", hash_original_field = "57413E9209A87703B8BA6098E2B6DB80", hash_generated_field = "3BDA0DF3C86CD680ACE62390D2B524ED")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.971 -0400", hash_original_field = "57413E9209A87703B8BA6098E2B6DB80", hash_generated_field = "3BDA0DF3C86CD680ACE62390D2B524ED")
 
     public static final int MAX_VALUE = 0x7FFFFFFF;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.816 -0400", hash_original_field = "ACB61A70235AF892570EB8C34E753962", hash_generated_field = "36D06DCD804B103124720EBA9F7340A9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.971 -0400", hash_original_field = "ACB61A70235AF892570EB8C34E753962", hash_generated_field = "36D06DCD804B103124720EBA9F7340A9")
 
     public static final int MIN_VALUE = 0x80000000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.816 -0400", hash_original_field = "2ADF4761385B682BC0DA2831DB6315E2", hash_generated_field = "63FA0385596F5F13183B5684F35B159F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.972 -0400", hash_original_field = "2ADF4761385B682BC0DA2831DB6315E2", hash_generated_field = "63FA0385596F5F13183B5684F35B159F")
 
     public static final int SIZE = 32;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.816 -0400", hash_original_field = "AEDC44522CC4C4CC67CC1460BA1F5412", hash_generated_field = "741F038AC1D40919737C9F6E0FEE8376")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.972 -0400", hash_original_field = "AEDC44522CC4C4CC67CC1460BA1F5412", hash_generated_field = "E0762F1BB91C06D8D8F814166CB251CF")
 
-    private static byte[] NTZ_TABLE = ;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.816 -0400", hash_original_field = "2CE02B937AE0B3F8680FE97AECD4FC0E", hash_generated_field = "073FFFEFB41314D95534816366682FCC")
+    private static byte[] NTZ_TABLE = {
+        32,  0,  1, 12,  2,  6, -1, 13,   3, -1,  7, -1, -1, -1, -1, 14,
+        10,  4, -1, -1,  8, -1, -1, 25,  -1, -1, -1, -1, -1, 21, 27, 15,
+        31, 11,  5, -1, -1, -1, -1, -1,   9, -1, -1, 24, -1, -1, 20, 26,
+        30, -1, -1, -1, -1, 23, -1, 19,  29, -1, 22, 18, 28, 17, 16, -1
+    };
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.972 -0400", hash_original_field = "2CE02B937AE0B3F8680FE97AECD4FC0E", hash_generated_field = "073FFFEFB41314D95534816366682FCC")
 
     @SuppressWarnings("unchecked")
     public static final Class<Integer> TYPE
             = (Class<Integer>) int[].class.getComponentType();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:40.816 -0400", hash_original_field = "477FBCA35ED0655CBD69BEC398733B9B", hash_generated_field = "40AF1DFB1EEC5A50481641DB5AE35103")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:39.972 -0400", hash_original_field = "477FBCA35ED0655CBD69BEC398733B9B", hash_generated_field = "40AF1DFB1EEC5A50481641DB5AE35103")
 
     private static Integer[] SMALL_VALUES = new Integer[256];
     static {

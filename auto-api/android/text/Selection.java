@@ -11,7 +11,7 @@ import java.text.BreakIterator;
 
 public class Selection {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:38.293 -0400", hash_original_method = "B8D298D1C681D859448C141B901530AF", hash_generated_method = "43EBC81447082EA8B9876FF117E2ADA5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.934 -0400", hash_original_method = "B8D298D1C681D859448C141B901530AF", hash_generated_method = "43EBC81447082EA8B9876FF117E2ADA5")
     private  Selection() {
         // ---------- Original Method ----------
     }
@@ -330,7 +330,7 @@ public class Selection {
     
     private static final class START implements NoCopySpan {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:38.334 -0400", hash_original_method = "BDCC342EB9C4EC0E36898772F96B3376", hash_generated_method = "BDCC342EB9C4EC0E36898772F96B3376")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.972 -0400", hash_original_method = "BDCC342EB9C4EC0E36898772F96B3376", hash_generated_method = "BDCC342EB9C4EC0E36898772F96B3376")
         public START ()
         {
             //Synthesized constructor
@@ -343,7 +343,7 @@ public class Selection {
     
     private static final class END implements NoCopySpan {
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:38.347 -0400", hash_original_method = "6839406E8175B705075FBD95CC87C416", hash_generated_method = "6839406E8175B705075FBD95CC87C416")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.972 -0400", hash_original_method = "6839406E8175B705075FBD95CC87C416", hash_generated_method = "6839406E8175B705075FBD95CC87C416")
         public END ()
         {
             //Synthesized constructor
@@ -361,10 +361,10 @@ public class Selection {
         public int following(int position);
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:38.348 -0400", hash_original_field = "774417FE7444B450B49E50090115A9F8", hash_generated_field = "04FE8A24144505FFA1AFEFD56C38D3B7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.972 -0400", hash_original_field = "774417FE7444B450B49E50090115A9F8", hash_generated_field = "04FE8A24144505FFA1AFEFD56C38D3B7")
 
     public static final Object SELECTION_START = new START();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:38.348 -0400", hash_original_field = "4C94D592759CA3F5D554F033E438F59A", hash_generated_field = "158301B7D925B39059B5DF4E88882416")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:39.972 -0400", hash_original_field = "4C94D592759CA3F5D554F033E438F59A", hash_generated_field = "158301B7D925B39059B5DF4E88882416")
 
     public static final Object SELECTION_END = new END();
 }

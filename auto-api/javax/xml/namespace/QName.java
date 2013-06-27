@@ -15,20 +15,20 @@ import java.security.PrivilegedAction;
 import javax.xml.XMLConstants;
 
 public class QName implements Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.539 -0400", hash_original_field = "5295F3E9C46315AF1C2132265086FA24", hash_generated_field = "CCE51D9450F9AA53957D024DB76AA394")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.019 -0400", hash_original_field = "5295F3E9C46315AF1C2132265086FA24", hash_generated_field = "CCE51D9450F9AA53957D024DB76AA394")
 
     private String namespaceURI;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.539 -0400", hash_original_field = "D0C143FE297B0E7007B1500CA456F91A", hash_generated_field = "BD4655D30926984A9436717671561554")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.019 -0400", hash_original_field = "D0C143FE297B0E7007B1500CA456F91A", hash_generated_field = "BD4655D30926984A9436717671561554")
 
     private String localPart;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.539 -0400", hash_original_field = "851F5AC9941D720844D143ED9CFCF60A", hash_generated_field = "F717D382565968ED95842821FAEC62F9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.019 -0400", hash_original_field = "851F5AC9941D720844D143ED9CFCF60A", hash_generated_field = "F717D382565968ED95842821FAEC62F9")
 
     private String prefix;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.539 -0400", hash_original_field = "9533F77F9BE25E0990AF8FC3CA64C259", hash_generated_field = "B78D2FE89B5FD5EFEBEAC57063EE018D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.019 -0400", hash_original_field = "9533F77F9BE25E0990AF8FC3CA64C259", hash_generated_field = "B78D2FE89B5FD5EFEBEAC57063EE018D")
 
     private transient String qNameAsString;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.540 -0400", hash_original_method = "60C18FFA0999928F4EF4CE38330EEA9C", hash_generated_method = "51B8E8BDEB0E271022481A9B0EF5D037")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.020 -0400", hash_original_method = "60C18FFA0999928F4EF4CE38330EEA9C", hash_generated_method = "51B8E8BDEB0E271022481A9B0EF5D037")
     public  QName(final String namespaceURI, final String localPart) {
         this(namespaceURI, localPart, XMLConstants.DEFAULT_NS_PREFIX);
         addTaint(namespaceURI.getTaint());
@@ -37,7 +37,7 @@ public class QName implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.540 -0400", hash_original_method = "87290A11E663766C5D730268BE60DA33", hash_generated_method = "2B6D61295B60BA177D4C50EA42A16290")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.020 -0400", hash_original_method = "87290A11E663766C5D730268BE60DA33", hash_generated_method = "2B6D61295B60BA177D4C50EA42A16290")
     public  QName(String namespaceURI, String localPart, String prefix) {
         {
             this.namespaceURI = XMLConstants.NULL_NS_URI;
@@ -70,7 +70,7 @@ public class QName implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.541 -0400", hash_original_method = "FB37276CA76194E00C121CCB514173FF", hash_generated_method = "D50DCD112C81B0CA312988143BD26BE7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.033 -0400", hash_original_method = "FB37276CA76194E00C121CCB514173FF", hash_generated_method = "D50DCD112C81B0CA312988143BD26BE7")
     public  QName(String localPart) {
         this(
             XMLConstants.NULL_NS_URI,
@@ -81,52 +81,52 @@ public class QName implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.554 -0400", hash_original_method = "1455FE8FE34AF373D39E8278191439A8", hash_generated_method = "44CE8C5C11BE09A5CE90B14F1BAC8780")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.034 -0400", hash_original_method = "1455FE8FE34AF373D39E8278191439A8", hash_generated_method = "15BBDD11A5E1ACC653A6FD68D0B86AC7")
     public String getNamespaceURI() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1885559347 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1885559347 = namespaceURI;
-        varB4EAC82CA7396A68D541C85D26508E83_1885559347.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1885559347;
+        String varB4EAC82CA7396A68D541C85D26508E83_51213767 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_51213767 = namespaceURI;
+        varB4EAC82CA7396A68D541C85D26508E83_51213767.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_51213767;
         // ---------- Original Method ----------
         //return namespaceURI;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.554 -0400", hash_original_method = "859D888619C719D6166AE581FCA9B720", hash_generated_method = "B2175CC09EE2F77084E6CCDCC044143F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.034 -0400", hash_original_method = "859D888619C719D6166AE581FCA9B720", hash_generated_method = "62FDBF117C5B99A1A0CE1346B6BEA172")
     public String getLocalPart() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1629368244 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1629368244 = localPart;
-        varB4EAC82CA7396A68D541C85D26508E83_1629368244.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1629368244;
+        String varB4EAC82CA7396A68D541C85D26508E83_1638417031 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1638417031 = localPart;
+        varB4EAC82CA7396A68D541C85D26508E83_1638417031.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1638417031;
         // ---------- Original Method ----------
         //return localPart;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.562 -0400", hash_original_method = "FA5CE5A0FCC0C736D9446FFEBD0CAB9D", hash_generated_method = "C65F891EFA49507676547939D134FE40")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.043 -0400", hash_original_method = "FA5CE5A0FCC0C736D9446FFEBD0CAB9D", hash_generated_method = "3C8328BFE24DB50D26439A32D2F12321")
     public String getPrefix() {
-        String varB4EAC82CA7396A68D541C85D26508E83_500582780 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_500582780 = prefix;
-        varB4EAC82CA7396A68D541C85D26508E83_500582780.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_500582780;
+        String varB4EAC82CA7396A68D541C85D26508E83_1152231549 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1152231549 = prefix;
+        varB4EAC82CA7396A68D541C85D26508E83_1152231549.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1152231549;
         // ---------- Original Method ----------
         //return prefix;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.562 -0400", hash_original_method = "BFBDC6DCA93063BC73A64B69D67A34C1", hash_generated_method = "E3582FEEB174FA1AC49B4A8515C05C8D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.043 -0400", hash_original_method = "BFBDC6DCA93063BC73A64B69D67A34C1", hash_generated_method = "A29939C96EF437421D63B9CE38588206")
     public final boolean equals(Object objectToTest) {
         {
-            boolean var1738C43110B80B68809A374A2DE0B400_1957868688 = (objectToTest == this);
+            boolean var1738C43110B80B68809A374A2DE0B400_1047454911 = (objectToTest == this);
         } //End collapsed parenthetic
         {
             QName qName;
             qName = (QName) objectToTest;
-            boolean var0F7F156F09F7E96CBB489EE5EBBF4A09_1632456908 = (localPart.equals(qName.localPart) && namespaceURI.equals(qName.namespaceURI));
+            boolean var0F7F156F09F7E96CBB489EE5EBBF4A09_982207376 = (localPart.equals(qName.localPart) && namespaceURI.equals(qName.namespaceURI));
         } //End block
         addTaint(objectToTest.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_966008089 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_966008089;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_570284786 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_570284786;
         // ---------- Original Method ----------
         //if (objectToTest == this) {
             //return true;
@@ -139,19 +139,19 @@ public class QName implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.571 -0400", hash_original_method = "DDE43EBD2CC957CB57AF503B05996F38", hash_generated_method = "0E8AF0FF82A1496ADBD6237876492118")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.049 -0400", hash_original_method = "DDE43EBD2CC957CB57AF503B05996F38", hash_generated_method = "8AA7C7FAB1709979D01D553F462EB9A3")
     public final int hashCode() {
-        int varAE3A2D4E13A297882A9F0F7DFEDC82B1_1615770622 = (namespaceURI.hashCode() ^ localPart.hashCode());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2146650483 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2146650483;
+        int varAE3A2D4E13A297882A9F0F7DFEDC82B1_178737436 = (namespaceURI.hashCode() ^ localPart.hashCode());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2043935168 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2043935168;
         // ---------- Original Method ----------
         //return namespaceURI.hashCode() ^ localPart.hashCode();
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.571 -0400", hash_original_method = "140023602587BA12FA2AD0493531CEF5", hash_generated_method = "EB70A3CE0CB32F3159EAF0BCF32BA97D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.051 -0400", hash_original_method = "140023602587BA12FA2AD0493531CEF5", hash_generated_method = "1577FFFF115D45E93AC8535BAF233C55")
     public String toString() {
-        String varB4EAC82CA7396A68D541C85D26508E83_1101509606 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_981386283 = null; //Variable for return #1
         String _qNameAsString;
         _qNameAsString = qNameAsString;
         {
@@ -171,9 +171,9 @@ public class QName implements Serializable {
             } //End block
             qNameAsString = _qNameAsString;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1101509606 = _qNameAsString;
-        varB4EAC82CA7396A68D541C85D26508E83_1101509606.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1101509606;
+        varB4EAC82CA7396A68D541C85D26508E83_981386283 = _qNameAsString;
+        varB4EAC82CA7396A68D541C85D26508E83_981386283.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_981386283;
         // ---------- Original Method ----------
         //String _qNameAsString = qNameAsString;
         //if (_qNameAsString == null) {
@@ -233,7 +233,7 @@ public class QName implements Serializable {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.572 -0400", hash_original_method = "3A49E665D16E7BB62A75B8A236B62D06", hash_generated_method = "5165934C033A089A52E4D2327AA18185")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.054 -0400", hash_original_method = "3A49E665D16E7BB62A75B8A236B62D06", hash_generated_method = "5165934C033A089A52E4D2327AA18185")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
         {
@@ -248,13 +248,13 @@ public class QName implements Serializable {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.572 -0400", hash_original_field = "C6E1E520055C2B7E9948B6F1429B8974", hash_generated_field = "4D3F16E7238D756057D868633B8EE915")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.054 -0400", hash_original_field = "C6E1E520055C2B7E9948B6F1429B8974", hash_generated_field = "4D3F16E7238D756057D868633B8EE915")
 
     private static long serialVersionUID;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.572 -0400", hash_original_field = "EDD176DF6676514CA32D772644C30474", hash_generated_field = "01B25CB10B15A58EABA2E6DD2B4FD97B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.054 -0400", hash_original_field = "EDD176DF6676514CA32D772644C30474", hash_generated_field = "01B25CB10B15A58EABA2E6DD2B4FD97B")
 
     private static long defaultSerialVersionUID = -9120448754896609940L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.572 -0400", hash_original_field = "8717FC749EB098E6911ED18242327B60", hash_generated_field = "95E142EDF7E82FD4A5C2C6071A423DDA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:01.054 -0400", hash_original_field = "8717FC749EB098E6911ED18242327B60", hash_generated_field = "95E142EDF7E82FD4A5C2C6071A423DDA")
 
     private static long compatibilitySerialVersionUID = 4418622981026545151L;
     static {

@@ -19,7 +19,7 @@ import java.io.Writer;
 
 public class CopyUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.535 -0400", hash_original_method = "1212272BD01F83C868E797A5AC3981E4", hash_generated_method = "84A2CF188DB904FA9BBABD4289B541CA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.673 -0400", hash_original_method = "1212272BD01F83C868E797A5AC3981E4", hash_generated_method = "84A2CF188DB904FA9BBABD4289B541CA")
     public  CopyUtils() {
         // ---------- Original Method ----------
     }
@@ -114,7 +114,7 @@ public class CopyUtils {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:05.546 -0400", hash_original_field = "0756DBB6429486B34418EA788076E36E", hash_generated_field = "19283AD58CF3BCD369226CF2BDDD521B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.675 -0400", hash_original_field = "0756DBB6429486B34418EA788076E36E", hash_generated_field = "19283AD58CF3BCD369226CF2BDDD521B")
 
     private static int DEFAULT_BUFFER_SIZE = 1024 * 4;
 }

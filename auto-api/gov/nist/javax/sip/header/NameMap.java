@@ -13,7 +13,7 @@ import java.util.Hashtable;
 
 public class NameMap implements SIPHeaderNames, PackageNames {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.141 -0400", hash_original_method = "4E6FA555129DB964A8E35D51AC605671", hash_generated_method = "4E6FA555129DB964A8E35D51AC605671")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.191 -0400", hash_original_method = "4E6FA555129DB964A8E35D51AC605671", hash_generated_method = "4E6FA555129DB964A8E35D51AC605671")
     public NameMap ()
     {
         //Synthesized constructor
@@ -116,7 +116,7 @@ public class NameMap implements SIPHeaderNames, PackageNames {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.151 -0400", hash_original_field = "C45F42D8E26367D12A9961EAC2595CDF", hash_generated_field = "531CBEFD115E0D8DD45BF7A253D5B3F3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.192 -0400", hash_original_field = "C45F42D8E26367D12A9961EAC2595CDF", hash_generated_field = "531CBEFD115E0D8DD45BF7A253D5B3F3")
 
     static Hashtable nameMap;
     static {

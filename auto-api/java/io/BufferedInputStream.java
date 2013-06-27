@@ -10,23 +10,23 @@ import java.util.Iterator;
 import java.util.Arrays;
 
 public class BufferedInputStream extends FilterInputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.322 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "C53666C61D704ACE793D3D98401D06E0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.179 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "C53666C61D704ACE793D3D98401D06E0")
 
     protected volatile byte[] buf;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.322 -0400", hash_original_field = "E2942A04780E223B215EB8B663CF5353", hash_generated_field = "CADFF8C1F208C99E14B28CFC1A04442F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.179 -0400", hash_original_field = "E2942A04780E223B215EB8B663CF5353", hash_generated_field = "CADFF8C1F208C99E14B28CFC1A04442F")
 
     protected int count;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.322 -0400", hash_original_field = "7E1D45D2D0791CB14CAE674BF346C80C", hash_generated_field = "187237640B843AF018F2A924787F8CE1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.179 -0400", hash_original_field = "7E1D45D2D0791CB14CAE674BF346C80C", hash_generated_field = "187237640B843AF018F2A924787F8CE1")
 
     protected int marklimit;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.323 -0400", hash_original_field = "492E5D488B8C3F3A5B37BE9C27216BA1", hash_generated_field = "584BEF84693439016482B6900153EC57")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.180 -0400", hash_original_field = "492E5D488B8C3F3A5B37BE9C27216BA1", hash_generated_field = "584BEF84693439016482B6900153EC57")
 
     protected int markpos = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.323 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "3039C52FCC40405280C80DE756778CBF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.180 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "3039C52FCC40405280C80DE756778CBF")
 
     protected int pos;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.323 -0400", hash_original_method = "21B504722C790213175AE0F5E25EEBB8", hash_generated_method = "082827D8E12E6C89AE7674A5DA40B439")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.192 -0400", hash_original_method = "21B504722C790213175AE0F5E25EEBB8", hash_generated_method = "082827D8E12E6C89AE7674A5DA40B439")
     public  BufferedInputStream(InputStream in) {
         this(in, 8192);
         addTaint(in.getTaint());
@@ -34,7 +34,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.324 -0400", hash_original_method = "4F467422085302825BDB985C2FDC72F9", hash_generated_method = "C6898A6B1690835FE1ED3553873875D6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.193 -0400", hash_original_method = "4F467422085302825BDB985C2FDC72F9", hash_generated_method = "C6898A6B1690835FE1ED3553873875D6")
     public  BufferedInputStream(InputStream in, int size) {
         super(in);
         {
@@ -50,7 +50,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.324 -0400", hash_original_method = "07FFB00D7B3DCD194F29893BBF5B52EB", hash_generated_method = "C160387EA69C3AEBD00ACB343512A0BF")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.194 -0400", hash_original_method = "07FFB00D7B3DCD194F29893BBF5B52EB", hash_generated_method = "171E1264ED5A80559316597417069994")
     @Override
     public synchronized int available() throws IOException {
         InputStream localIn;
@@ -58,9 +58,9 @@ public class BufferedInputStream extends FilterInputStream {
         {
             if (DroidSafeAndroidRuntime.control) throw streamClosed();
         } //End block
-        int var2B924E8BBC5F3CE3B1F1E3EF2F7F10B5_1018343662 = (count - pos + localIn.available());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_875183019 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_875183019;
+        int var2B924E8BBC5F3CE3B1F1E3EF2F7F10B5_90349576 = (count - pos + localIn.available());
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1305388738 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1305388738;
         // ---------- Original Method ----------
         //InputStream localIn = in;
         //if (buf == null || localIn == null) {
@@ -70,7 +70,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.329 -0400", hash_original_method = "4D8013C45FC6B1A765F1F6C3AB84963B", hash_generated_method = "41453DD9F47E59238E8E8C396C3D3ECC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.194 -0400", hash_original_method = "4D8013C45FC6B1A765F1F6C3AB84963B", hash_generated_method = "41453DD9F47E59238E8E8C396C3D3ECC")
     private IOException streamClosed() throws IOException {
         if (DroidSafeAndroidRuntime.control) throw new IOException("BufferedInputStream is closed");
         // ---------- Original Method ----------
@@ -78,7 +78,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.329 -0400", hash_original_method = "9458B5514F81355F9A651152E456CAE7", hash_generated_method = "73DDD97D2DBC2C5446BEF3E26DAF144E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.195 -0400", hash_original_method = "9458B5514F81355F9A651152E456CAE7", hash_generated_method = "73DDD97D2DBC2C5446BEF3E26DAF144E")
     @Override
     public void close() throws IOException {
         buf = null;
@@ -98,7 +98,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.330 -0400", hash_original_method = "763578223906D5382275DB1FE1B265CB", hash_generated_method = "F76E948EC4DB904B5988EC664654E9C7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.200 -0400", hash_original_method = "763578223906D5382275DB1FE1B265CB", hash_generated_method = "4DAD51F3E552B318468BDBC4400C5A2E")
     private int fillbuf(InputStream localIn, byte[] localBuf) throws IOException {
         {
             int result;
@@ -131,14 +131,14 @@ public class BufferedInputStream extends FilterInputStream {
         count = bytesread <= 0 ? pos : pos + bytesread;
         addTaint(localIn.getTaint());
         addTaint(localBuf[0]);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_425441530 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_425441530;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1214089782 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1214089782;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.331 -0400", hash_original_method = "DF417F804FB76ED4D7DE805338DD287E", hash_generated_method = "E33C32E52CFE857EB9ED3111281AA940")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.200 -0400", hash_original_method = "DF417F804FB76ED4D7DE805338DD287E", hash_generated_method = "E33C32E52CFE857EB9ED3111281AA940")
     @Override
     public synchronized void mark(int readlimit) {
         marklimit = readlimit;
@@ -149,17 +149,17 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.331 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "97F235975225F6264BDCD051F0391469")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.205 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "35BC5C288BE27127D27078A2F239A8FE")
     @Override
     public boolean markSupported() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2038083234 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2038083234;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_729014567 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_729014567;
         // ---------- Original Method ----------
         //return true;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.331 -0400", hash_original_method = "44D2E1EC0EF3B53AC5594D464D2C83B9", hash_generated_method = "55E4236C273BE0FBECDD2D020A059483")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.220 -0400", hash_original_method = "44D2E1EC0EF3B53AC5594D464D2C83B9", hash_generated_method = "7F32AD209D40BA7BDB540946043A0AF0")
     @Override
     public synchronized int read() throws IOException {
         byte[] localBuf;
@@ -170,7 +170,7 @@ public class BufferedInputStream extends FilterInputStream {
             if (DroidSafeAndroidRuntime.control) throw streamClosed();
         } //End block
         {
-            boolean varF86809B8FFE08F3AD3A1687782FBCF09_675021350 = (pos >= count && fillbuf(localIn, localBuf) == -1);
+            boolean varF86809B8FFE08F3AD3A1687782FBCF09_1204806558 = (pos >= count && fillbuf(localIn, localBuf) == -1);
         } //End collapsed parenthetic
         {
             localBuf = buf;
@@ -178,8 +178,8 @@ public class BufferedInputStream extends FilterInputStream {
                 if (DroidSafeAndroidRuntime.control) throw streamClosed();
             } //End block
         } //End block
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_836678746 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_836678746;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_341133351 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_341133351;
         // ---------- Original Method ----------
         //byte[] localBuf = buf;
         //InputStream localIn = in;
@@ -202,7 +202,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.348 -0400", hash_original_method = "61DEF23C4EC5BF0BA1725AB1A56B4C17", hash_generated_method = "CCF1F94DF79476537A4EAB741AAD1272")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.221 -0400", hash_original_method = "61DEF23C4EC5BF0BA1725AB1A56B4C17", hash_generated_method = "41CC231494E66554F4E5CF3F26992E86")
     @Override
     public synchronized int read(byte[] buffer, int offset, int byteCount) throws IOException {
         byte[] localBuf;
@@ -224,7 +224,7 @@ public class BufferedInputStream extends FilterInputStream {
             System.arraycopy(localBuf, pos, buffer, offset, copylength);
             pos += copylength;
             {
-                boolean varEFE87A34F8169BCA8D8DC98CCC9095FD_161356716 = (copylength == byteCount || localIn.available() == 0);
+                boolean varEFE87A34F8169BCA8D8DC98CCC9095FD_779824605 = (copylength == byteCount || localIn.available() == 0);
             } //End collapsed parenthetic
             offset += copylength;
             required = byteCount - copylength;
@@ -239,7 +239,7 @@ public class BufferedInputStream extends FilterInputStream {
             } //End block
             {
                 {
-                    boolean varF25EF1B23AB1732E312B5DFAAD3BFA2F_707622097 = (fillbuf(localIn, localBuf) == -1);
+                    boolean varF25EF1B23AB1732E312B5DFAAD3BFA2F_315784314 = (fillbuf(localIn, localBuf) == -1);
                 } //End collapsed parenthetic
                 {
                     localBuf = buf;
@@ -253,21 +253,21 @@ public class BufferedInputStream extends FilterInputStream {
             } //End block
             required -= read;
             {
-                boolean var31130D1C27C6C1FAA5AC8921793A9099_1915386627 = (localIn.available() == 0);
+                boolean var31130D1C27C6C1FAA5AC8921793A9099_702053295 = (localIn.available() == 0);
             } //End collapsed parenthetic
             offset += read;
         } //End block
         addTaint(buffer[0]);
         addTaint(offset);
         addTaint(byteCount);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_833491797 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_833491797;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2030348823 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2030348823;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.348 -0400", hash_original_method = "0EB3739ECCD523AAEBB3A3F64D0A35BC", hash_generated_method = "33CCC16E38D43BA69C021996A176D548")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.222 -0400", hash_original_method = "0EB3739ECCD523AAEBB3A3F64D0A35BC", hash_generated_method = "33CCC16E38D43BA69C021996A176D548")
     @Override
     public synchronized void reset() throws IOException {
         {
@@ -288,7 +288,7 @@ public class BufferedInputStream extends FilterInputStream {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:38.349 -0400", hash_original_method = "61D210443DD8F238003AAFD35E7B7777", hash_generated_method = "E214E6E0831819506F06AAA0178C7B40")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:37.234 -0400", hash_original_method = "61D210443DD8F238003AAFD35E7B7777", hash_generated_method = "991BEB1E7ACC95D4310BE7FF04027329")
     @Override
     public synchronized long skip(long byteCount) throws IOException {
         byte[] localBuf;
@@ -310,7 +310,7 @@ public class BufferedInputStream extends FilterInputStream {
         {
             {
                 {
-                    boolean varF25EF1B23AB1732E312B5DFAAD3BFA2F_894477333 = (fillbuf(localIn, localBuf) == -1);
+                    boolean varF25EF1B23AB1732E312B5DFAAD3BFA2F_106299878 = (fillbuf(localIn, localBuf) == -1);
                 } //End collapsed parenthetic
                 {
                     pos += byteCount - read;
@@ -319,9 +319,9 @@ public class BufferedInputStream extends FilterInputStream {
                 pos = count;
             } //End block
         } //End block
-        long var8633DA1A1892299DE222DC19D4AC5EB0_289056468 = (read + localIn.skip(byteCount - read));
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_1407633788 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1407633788;
+        long var8633DA1A1892299DE222DC19D4AC5EB0_1379132331 = (read + localIn.skip(byteCount - read));
+        long var0F5264038205EDFB1AC05FBB0E8C5E94_322540314 = getTaintLong();
+        return var0F5264038205EDFB1AC05FBB0E8C5E94_322540314;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

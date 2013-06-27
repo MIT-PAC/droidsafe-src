@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public class PhantomReference<T> extends Reference<T> {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.761 -0400", hash_original_method = "269EAD0EE18A562FFF5DDE7409E1AEEE", hash_generated_method = "A20FA90DB9B209F8A1341ABC20FBD0A3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.849 -0400", hash_original_method = "269EAD0EE18A562FFF5DDE7409E1AEEE", hash_generated_method = "A20FA90DB9B209F8A1341ABC20FBD0A3")
     public  PhantomReference(T r, ReferenceQueue<? super T> q) {
         super(r, q);
         addTaint(r.getTaint());
@@ -19,13 +19,13 @@ public class PhantomReference<T> extends Reference<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.761 -0400", hash_original_method = "11AC17D1A4195077BEA3CC915127101C", hash_generated_method = "D4FAD5A68F5E43F685728A104EA6D8CC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.850 -0400", hash_original_method = "11AC17D1A4195077BEA3CC915127101C", hash_generated_method = "4BB90D1E8BCF95AB90AEC38E36BADF37")
     @Override
     public T get() {
-        T varB4EAC82CA7396A68D541C85D26508E83_1793874634 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1793874634 = null;
-        varB4EAC82CA7396A68D541C85D26508E83_1793874634.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1793874634;
+        T varB4EAC82CA7396A68D541C85D26508E83_1263652004 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1263652004 = null;
+        varB4EAC82CA7396A68D541C85D26508E83_1263652004.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1263652004;
         // ---------- Original Method ----------
         //return null;
     }

@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 final class StringToReal {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.421 -0400", hash_original_method = "50763D5996F4E117B646112682AF8739", hash_generated_method = "50763D5996F4E117B646112682AF8739")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.530 -0400", hash_original_method = "50763D5996F4E117B646112682AF8739", hash_generated_method = "50763D5996F4E117B646112682AF8739")
     public StringToReal ()
     {
         //Synthesized constructor
@@ -215,33 +215,33 @@ final class StringToReal {
 
     
     private static final class StringExponentPair {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.436 -0400", hash_original_field = "03C7C0ACE395D80182DB07AE2C30F034", hash_generated_field = "6F3CB884E38CB76988A52AA9FBE92CE9")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.537 -0400", hash_original_field = "03C7C0ACE395D80182DB07AE2C30F034", hash_generated_field = "6F3CB884E38CB76988A52AA9FBE92CE9")
 
         String s;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.436 -0400", hash_original_field = "E1671797C52E15F763380B45E841EC32", hash_generated_field = "F35FFAA6A75D4ED13D3E1F7155A8CADC")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.537 -0400", hash_original_field = "E1671797C52E15F763380B45E841EC32", hash_generated_field = "F35FFAA6A75D4ED13D3E1F7155A8CADC")
 
         long e;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.436 -0400", hash_original_field = "228D6A97A9838DC800E58B3C74BA7B11", hash_generated_field = "D7F3A989FF2D2C369DC8DD3FAFC81E5F")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.537 -0400", hash_original_field = "228D6A97A9838DC800E58B3C74BA7B11", hash_generated_field = "D7F3A989FF2D2C369DC8DD3FAFC81E5F")
 
         boolean negative;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.437 -0400", hash_original_field = "F2FDEE93271556E428DD9507B3DA7235", hash_generated_field = "0A5EBC5B0FCD11704FA7F7D3B79A6F6A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.537 -0400", hash_original_field = "F2FDEE93271556E428DD9507B3DA7235", hash_generated_field = "0A5EBC5B0FCD11704FA7F7D3B79A6F6A")
 
         boolean infinity;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.437 -0400", hash_original_field = "D02C4C4CDE7AE76252540D116A40F23A", hash_generated_field = "8B6B687B2003A0D3B71E98348C954562")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.537 -0400", hash_original_field = "D02C4C4CDE7AE76252540D116A40F23A", hash_generated_field = "8B6B687B2003A0D3B71E98348C954562")
 
         boolean zero;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.441 -0400", hash_original_method = "08340FE99073C3A1F05DC2CE36487C0E", hash_generated_method = "08340FE99073C3A1F05DC2CE36487C0E")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.537 -0400", hash_original_method = "08340FE99073C3A1F05DC2CE36487C0E", hash_generated_method = "08340FE99073C3A1F05DC2CE36487C0E")
         public StringExponentPair ()
         {
             //Synthesized constructor
         }
 
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:41.445 -0400", hash_original_method = "910639D1FB7C57E8188938A4D56F4369", hash_generated_method = "0FBDF0477A88FEA6B8893443756D66BD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:40.537 -0400", hash_original_method = "910639D1FB7C57E8188938A4D56F4369", hash_generated_method = "D8EAD3582B889D795B8F46BCFFAEBBC9")
         public float specialValue() {
-            float var546ADE640B6EDFBC8A086EF31347E768_1918300822 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_1918300822;
+            float var546ADE640B6EDFBC8A086EF31347E768_2025193667 = getTaintFloat();
+            return var546ADE640B6EDFBC8A086EF31347E768_2025193667;
             // ---------- Original Method ----------
             //if (infinity) {
                 //return negative ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;

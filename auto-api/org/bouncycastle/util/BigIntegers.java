@@ -12,7 +12,7 @@ import java.security.SecureRandom;
 
 public final class BigIntegers {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.712 -0400", hash_original_method = "25F257C0960313729C88DA7CF764C995", hash_generated_method = "25F257C0960313729C88DA7CF764C995")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.761 -0400", hash_original_method = "25F257C0960313729C88DA7CF764C995", hash_generated_method = "25F257C0960313729C88DA7CF764C995")
     public BigIntegers ()
     {
         //Synthesized constructor
@@ -61,10 +61,10 @@ public final class BigIntegers {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.713 -0400", hash_original_field = "AEE001A4600AEC87175F78D964478592", hash_generated_field = "B37656F8214FF2F91927D0ABFDD7EC0F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.762 -0400", hash_original_field = "AEE001A4600AEC87175F78D964478592", hash_generated_field = "B37656F8214FF2F91927D0ABFDD7EC0F")
 
     private static int MAX_ITERATIONS = 1000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.713 -0400", hash_original_field = "A91935AA575A89027DDF671EC93CB686", hash_generated_field = "3D5B51C5FD7F9AEE6A55D63936A8551D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.762 -0400", hash_original_field = "A91935AA575A89027DDF671EC93CB686", hash_generated_field = "3D5B51C5FD7F9AEE6A55D63936A8551D")
 
     private static BigInteger ZERO = BigInteger.valueOf(0);
 }

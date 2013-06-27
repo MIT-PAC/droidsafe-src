@@ -12,7 +12,7 @@ import java.nio.charset.Charsets;
 
 public abstract class ASN1StringType extends ASN1Type {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.376 -0400", hash_original_method = "7B031F7F0A5A04AD815BCBD7B272BFA2", hash_generated_method = "EED0B08A3072E00A1C057D9E3E25354D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.433 -0400", hash_original_method = "7B031F7F0A5A04AD815BCBD7B272BFA2", hash_generated_method = "EED0B08A3072E00A1C057D9E3E25354D")
     public  ASN1StringType(int tagNumber) {
         super(tagNumber);
         addTaint(tagNumber);
@@ -20,37 +20,37 @@ public abstract class ASN1StringType extends ASN1Type {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.376 -0400", hash_original_method = "C1B77E79BF2CF152F3FF34DFE43DC50B", hash_generated_method = "CC2F9EBCC299ADE142F0304DE1DE7796")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.433 -0400", hash_original_method = "C1B77E79BF2CF152F3FF34DFE43DC50B", hash_generated_method = "7F98250736814A260C13DB47BC880B1F")
     public final boolean checkTag(int identifier) {
         addTaint(identifier);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_124360286 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_124360286;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1571434316 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1571434316;
         // ---------- Original Method ----------
         //return this.id == identifier || this.constrId == identifier;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.378 -0400", hash_original_method = "3BFD309C154715F9457C75DB61750061", hash_generated_method = "F57952EFA98620B3AA3195591DDE97D8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.433 -0400", hash_original_method = "3BFD309C154715F9457C75DB61750061", hash_generated_method = "D70D93C355CB882F37A85BFD9CCEE661")
     public Object decode(BerInputStream in) throws IOException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_2081311132 = null; //Variable for return #1
-        Object varB4EAC82CA7396A68D541C85D26508E83_630089873 = null; //Variable for return #2
+        Object varB4EAC82CA7396A68D541C85D26508E83_566824346 = null; //Variable for return #1
+        Object varB4EAC82CA7396A68D541C85D26508E83_36255006 = null; //Variable for return #2
         in.readString(this);
         {
-            varB4EAC82CA7396A68D541C85D26508E83_2081311132 = null;
+            varB4EAC82CA7396A68D541C85D26508E83_566824346 = null;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_630089873 = getDecodedObject(in);
+        varB4EAC82CA7396A68D541C85D26508E83_36255006 = getDecodedObject(in);
         addTaint(in.getTaint());
-        Object varA7E53CE21691AB073D9660D615818899_813195910; //Final return value
+        Object varA7E53CE21691AB073D9660D615818899_1779857694; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_813195910 = varB4EAC82CA7396A68D541C85D26508E83_2081311132;
+                varA7E53CE21691AB073D9660D615818899_1779857694 = varB4EAC82CA7396A68D541C85D26508E83_566824346;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_813195910 = varB4EAC82CA7396A68D541C85D26508E83_630089873;
+                varA7E53CE21691AB073D9660D615818899_1779857694 = varB4EAC82CA7396A68D541C85D26508E83_36255006;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_813195910.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_813195910;
+        varA7E53CE21691AB073D9660D615818899_1779857694.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1779857694;
         // ---------- Original Method ----------
         //in.readString(this);
         //if (in.isVerify) {
@@ -60,19 +60,19 @@ public abstract class ASN1StringType extends ASN1Type {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.396 -0400", hash_original_method = "2F8FDB092DEF849FEC2EBC30268CC3AE", hash_generated_method = "4491B1E70CACDD074D26D5241B425B0A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.434 -0400", hash_original_method = "2F8FDB092DEF849FEC2EBC30268CC3AE", hash_generated_method = "A86807C75EF98A0A3B128796F19B99E6")
     public Object getDecodedObject(BerInputStream in) throws IOException {
-        Object varB4EAC82CA7396A68D541C85D26508E83_1021464896 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1021464896 = new String(in.buffer, in.contentOffset, in.length, Charsets.ISO_8859_1);
+        Object varB4EAC82CA7396A68D541C85D26508E83_1311084721 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1311084721 = new String(in.buffer, in.contentOffset, in.length, Charsets.ISO_8859_1);
         addTaint(in.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1021464896.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1021464896;
+        varB4EAC82CA7396A68D541C85D26508E83_1311084721.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1311084721;
         // ---------- Original Method ----------
         //return new String(in.buffer, in.contentOffset, in.length, Charsets.ISO_8859_1);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.397 -0400", hash_original_method = "56680739FC748952853149E66560E94E", hash_generated_method = "25D1D9CE9976FB742A46C9A1FF96788B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.434 -0400", hash_original_method = "56680739FC748952853149E66560E94E", hash_generated_method = "25D1D9CE9976FB742A46C9A1FF96788B")
     public void encodeASN(BerOutputStream out) {
         out.encodeTag(id);
         encodeContent(out);
@@ -83,7 +83,7 @@ public abstract class ASN1StringType extends ASN1Type {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.398 -0400", hash_original_method = "10029CCA141FCEE9BD14EC9FEEE7A0BB", hash_generated_method = "BF1523BCD7C591CB8E3B26A4047B3327")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.434 -0400", hash_original_method = "10029CCA141FCEE9BD14EC9FEEE7A0BB", hash_generated_method = "BF1523BCD7C591CB8E3B26A4047B3327")
     public void encodeContent(BerOutputStream out) {
         out.encodeString();
         addTaint(out.getTaint());
@@ -92,7 +92,7 @@ public abstract class ASN1StringType extends ASN1Type {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.399 -0400", hash_original_method = "138CA2E3F6E6A00430513A77732291AD", hash_generated_method = "1A87C39D68117DC5A637EE8E4B8B5A74")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.435 -0400", hash_original_method = "138CA2E3F6E6A00430513A77732291AD", hash_generated_method = "1A87C39D68117DC5A637EE8E4B8B5A74")
     public void setEncodingContent(BerOutputStream out) {
         byte[] bytes;
         bytes = ((String) out.content).getBytes(Charsets.UTF_8);
@@ -106,37 +106,37 @@ public abstract class ASN1StringType extends ASN1Type {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.399 -0400", hash_original_field = "5123EB3DCB4203BDB64AB4DA28CAA061", hash_generated_field = "817C8B855F78C4F2BF6AE15E81C57C0A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.435 -0400", hash_original_field = "5123EB3DCB4203BDB64AB4DA28CAA061", hash_generated_field = "817C8B855F78C4F2BF6AE15E81C57C0A")
 
     public static final ASN1StringType BMPSTRING = new ASN1StringType(
             TAG_BMPSTRING) {
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.399 -0400", hash_original_field = "B0394A593BEAFA22BB69BD3737C9E0F9", hash_generated_field = "46FCF84077C5B6BDE8192C5E63FCFA67")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.435 -0400", hash_original_field = "B0394A593BEAFA22BB69BD3737C9E0F9", hash_generated_field = "46FCF84077C5B6BDE8192C5E63FCFA67")
 
     public static final ASN1StringType IA5STRING = new ASN1StringType(
             TAG_IA5STRING) {
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.399 -0400", hash_original_field = "332C5D5A7718ED13E94CEF3F29D60C9F", hash_generated_field = "66D25C1EA76D6D409D30D03BF74F1CFE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.435 -0400", hash_original_field = "332C5D5A7718ED13E94CEF3F29D60C9F", hash_generated_field = "66D25C1EA76D6D409D30D03BF74F1CFE")
 
     public static final ASN1StringType GENERALSTRING = new ASN1StringType(
             TAG_GENERALSTRING) {
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.399 -0400", hash_original_field = "038D3B37F97780B1F5E4200605C84B71", hash_generated_field = "B89ED27D3783F77EA167D653EB03C9B5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.435 -0400", hash_original_field = "038D3B37F97780B1F5E4200605C84B71", hash_generated_field = "B89ED27D3783F77EA167D653EB03C9B5")
 
     public static final ASN1StringType PRINTABLESTRING = new ASN1StringType(
             TAG_PRINTABLESTRING) {
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.399 -0400", hash_original_field = "908B5097AF93F3FD9FF5E7C96811B058", hash_generated_field = "B293D72E13A2C763BCC69EF45A60C3AE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.435 -0400", hash_original_field = "908B5097AF93F3FD9FF5E7C96811B058", hash_generated_field = "B293D72E13A2C763BCC69EF45A60C3AE")
 
     public static final ASN1StringType TELETEXSTRING = new ASN1StringType(
             TAG_TELETEXSTRING) {
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.399 -0400", hash_original_field = "F48B3E5329D1CE25AE1227491F4BFD57", hash_generated_field = "B02FC64488CFAC76F7DB04EA74E308B7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.435 -0400", hash_original_field = "F48B3E5329D1CE25AE1227491F4BFD57", hash_generated_field = "B02FC64488CFAC76F7DB04EA74E308B7")
 
     public static final ASN1StringType UNIVERSALSTRING = new ASN1StringType(
             TAG_UNIVERSALSTRING) {
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:08.399 -0400", hash_original_field = "4C261A036B603BB0A966CDA0E25AA46C", hash_generated_field = "8325E7625E0332A172357D8E029897AE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:09.435 -0400", hash_original_field = "4C261A036B603BB0A966CDA0E25AA46C", hash_generated_field = "8325E7625E0332A172357D8E029897AE")
 
     public static final ASN1StringType UTF8STRING = new ASN1StringType(TAG_UTF8STRING) {
         @Override public Object getDecodedObject(BerInputStream in) throws IOException {

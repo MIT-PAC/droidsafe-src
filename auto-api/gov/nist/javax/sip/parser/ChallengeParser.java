@@ -13,7 +13,7 @@ import java.text.ParseException;
 
 public abstract class ChallengeParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.568 -0400", hash_original_method = "0297ABBADD5BD655B8C4CB1A6717CB49", hash_generated_method = "719892B1E8D278F5962FC3FCB6618200")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.567 -0400", hash_original_method = "0297ABBADD5BD655B8C4CB1A6717CB49", hash_generated_method = "719892B1E8D278F5962FC3FCB6618200")
     protected  ChallengeParser(String challenge) {
         super(challenge);
         addTaint(challenge.getTaint());
@@ -21,7 +21,7 @@ public abstract class ChallengeParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.577 -0400", hash_original_method = "FE6E9A1011CEBAC8DED6715FCD76DE94", hash_generated_method = "36BC49D420A570C5A7102D5D60C3B1AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.568 -0400", hash_original_method = "FE6E9A1011CEBAC8DED6715FCD76DE94", hash_generated_method = "36BC49D420A570C5A7102D5D60C3B1AC")
     protected  ChallengeParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -29,7 +29,7 @@ public abstract class ChallengeParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.582 -0400", hash_original_method = "9DA7C681662806B106F4C258133C7994", hash_generated_method = "1EC17ABFCB2201F107B9C45EC2754CBD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.568 -0400", hash_original_method = "9DA7C681662806B106F4C258133C7994", hash_generated_method = "1EC17ABFCB2201F107B9C45EC2754CBD")
     protected void parseParameter(AuthenticationHeader header) throws ParseException {
         dbg_enter("parseParameter");
         try 
@@ -56,7 +56,7 @@ public abstract class ChallengeParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:34.594 -0400", hash_original_method = "B311542306ECD32A0F10ABE0BAAE80D2", hash_generated_method = "0B99A2A0527989F0982F696573767EA6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:33.584 -0400", hash_original_method = "B311542306ECD32A0F10ABE0BAAE80D2", hash_generated_method = "554F7102FF85021D311A1FD85A9AEEFC")
     public void parse(AuthenticationHeader header) throws ParseException {
         this.lexer.SPorHT();
         lexer.match(TokenTypes.ID);
@@ -67,7 +67,7 @@ public abstract class ChallengeParser extends HeaderParser {
         try 
         {
             {
-                boolean varA38820C66B6BCE71087D920E2767FF09_2126778890 = (lexer.lookAhead(0) != '\n');
+                boolean varA38820C66B6BCE71087D920E2767FF09_27976593 = (lexer.lookAhead(0) != '\n');
                 {
                     this.parseParameter(header);
                     this.lexer.SPorHT();

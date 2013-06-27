@@ -9,11 +9,11 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 public class BitmapShader extends Shader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.141 -0400", hash_original_field = "C4C105852193F50EEB9E84F09C746611", hash_generated_field = "ABC07C2755FD81F115C0C28144D66BB3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.685 -0400", hash_original_field = "C4C105852193F50EEB9E84F09C746611", hash_generated_field = "ABC07C2755FD81F115C0C28144D66BB3")
 
     @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"}) public Bitmap mBitmap;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:11.144 -0400", hash_original_method = "4EB08FDCAC2586A4FA6B09EB3F8E173D", hash_generated_method = "D077CD51B74310AE68AD38B12FB3D77F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:12.686 -0400", hash_original_method = "4EB08FDCAC2586A4FA6B09EB3F8E173D", hash_generated_method = "D077CD51B74310AE68AD38B12FB3D77F")
     public  BitmapShader(Bitmap bitmap, TileMode tileX, TileMode tileY) {
         mBitmap = bitmap;
         int b;

@@ -18,38 +18,38 @@ import android.util.Log;
 import com.android.internal.util.ArrayUtils;
 
 public class StaticLayout extends Layout {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.562 -0400", hash_original_field = "6CD75FA86B8D1E573AF761513C2464BF", hash_generated_field = "45537663750337309A584754E1437CDD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.174 -0400", hash_original_field = "6CD75FA86B8D1E573AF761513C2464BF", hash_generated_field = "45537663750337309A584754E1437CDD")
 
     private int mLineCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.562 -0400", hash_original_field = "A6796D45932911E4DA1D9D40D1BD23B8", hash_generated_field = "74C5EEEB9113B0F29D66E0A4983A6BC3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.174 -0400", hash_original_field = "A6796D45932911E4DA1D9D40D1BD23B8", hash_generated_field = "74C5EEEB9113B0F29D66E0A4983A6BC3")
 
     private int mTopPadding;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.562 -0400", hash_original_field = "097A31AA17188409E251DABE4869FAFE", hash_generated_field = "8A7C981A0C6837E513C477AD1250B374")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.174 -0400", hash_original_field = "097A31AA17188409E251DABE4869FAFE", hash_generated_field = "8A7C981A0C6837E513C477AD1250B374")
 
     private int mBottomPadding;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.562 -0400", hash_original_field = "11C985F30142FD30ACDDFE7CD3BD4A9B", hash_generated_field = "75F4039C98FB52077D38E34F530EB3FF")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.174 -0400", hash_original_field = "11C985F30142FD30ACDDFE7CD3BD4A9B", hash_generated_field = "75F4039C98FB52077D38E34F530EB3FF")
 
     private int mColumns;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.562 -0400", hash_original_field = "5713AC9F49879DE1055FA780DFEFDF1C", hash_generated_field = "C354DF48C5764CCC7B8B820C49BF2BBD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.175 -0400", hash_original_field = "5713AC9F49879DE1055FA780DFEFDF1C", hash_generated_field = "C354DF48C5764CCC7B8B820C49BF2BBD")
 
     private int mEllipsizedWidth;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.562 -0400", hash_original_field = "1BB5D78D3AAC39AEAEB752C0B85D10E9", hash_generated_field = "26F954E05EF8E6C19C537B63E9266033")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.175 -0400", hash_original_field = "1BB5D78D3AAC39AEAEB752C0B85D10E9", hash_generated_field = "26F954E05EF8E6C19C537B63E9266033")
 
     private int[] mLines;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.562 -0400", hash_original_field = "2801B37F60217970AB463F0E5596FCCD", hash_generated_field = "7D53F177386EEFF604DBA9C007C99633")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.175 -0400", hash_original_field = "2801B37F60217970AB463F0E5596FCCD", hash_generated_field = "7D53F177386EEFF604DBA9C007C99633")
 
     private Directions[] mLineDirections;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.562 -0400", hash_original_field = "1DE64451AE73776A90C4D2C1EEF5D2F6", hash_generated_field = "15DFAE1051C19AC15963DEF70B1F9BF5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.175 -0400", hash_original_field = "1DE64451AE73776A90C4D2C1EEF5D2F6", hash_generated_field = "15DFAE1051C19AC15963DEF70B1F9BF5")
 
     private int mMaximumVisibleLineCount = Integer.MAX_VALUE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.562 -0400", hash_original_field = "6D906AC98A7DED22536ECD22D9912986", hash_generated_field = "67359422AB8F87EBC819B683687CEFC5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.175 -0400", hash_original_field = "6D906AC98A7DED22536ECD22D9912986", hash_generated_field = "67359422AB8F87EBC819B683687CEFC5")
 
     private MeasuredText mMeasured;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.563 -0400", hash_original_field = "FAD3F9B7F49B89883B041D2654B13B33", hash_generated_field = "9F4F72572DE50EBE55E7D6F43A8C24E4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.175 -0400", hash_original_field = "FAD3F9B7F49B89883B041D2654B13B33", hash_generated_field = "9F4F72572DE50EBE55E7D6F43A8C24E4")
 
     private Paint.FontMetricsInt mFontMetricsInt = new Paint.FontMetricsInt();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.563 -0400", hash_original_method = "C77149727B404FEFD5CB3129B7BB45BF", hash_generated_method = "7368E6ED45BB500C1FF8138150A7D8F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.190 -0400", hash_original_method = "C77149727B404FEFD5CB3129B7BB45BF", hash_generated_method = "7368E6ED45BB500C1FF8138150A7D8F3")
     public  StaticLayout(CharSequence source, TextPaint paint,
                         int width,
                         Alignment align, float spacingmult, float spacingadd,
@@ -67,7 +67,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.563 -0400", hash_original_method = "81565FB766EC1D266415894033F3BC38", hash_generated_method = "4D9B96BC6B24AB802A50FB1CD9E72E38")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.191 -0400", hash_original_method = "81565FB766EC1D266415894033F3BC38", hash_generated_method = "4D9B96BC6B24AB802A50FB1CD9E72E38")
     public  StaticLayout(CharSequence source, TextPaint paint,
             int width, Alignment align, TextDirectionHeuristic textDir,
             float spacingmult, float spacingadd,
@@ -86,7 +86,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.571 -0400", hash_original_method = "BF066121E6D6D3B30CB2E4FB82D6E631", hash_generated_method = "FF7F8DC917D679F88213B8F004AF8CF5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.191 -0400", hash_original_method = "BF066121E6D6D3B30CB2E4FB82D6E631", hash_generated_method = "FF7F8DC917D679F88213B8F004AF8CF5")
     public  StaticLayout(CharSequence source, int bufstart, int bufend,
                         TextPaint paint, int outerwidth,
                         Alignment align,
@@ -107,7 +107,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.572 -0400", hash_original_method = "683465774808809C7366667F354731A1", hash_generated_method = "19B4B471754B627437A4C81963BB3F79")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.192 -0400", hash_original_method = "683465774808809C7366667F354731A1", hash_generated_method = "19B4B471754B627437A4C81963BB3F79")
     public  StaticLayout(CharSequence source, int bufstart, int bufend,
             TextPaint paint, int outerwidth,
             Alignment align, TextDirectionHeuristic textDir,
@@ -129,7 +129,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.572 -0400", hash_original_method = "D92F1C5E6D18A86EA341983F1D2D5889", hash_generated_method = "F01BB85D687C6991BC631AEDF5931A97")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.193 -0400", hash_original_method = "D92F1C5E6D18A86EA341983F1D2D5889", hash_generated_method = "F01BB85D687C6991BC631AEDF5931A97")
     public  StaticLayout(CharSequence source, int bufstart, int bufend,
             TextPaint paint, int outerwidth,
             Alignment align,
@@ -154,7 +154,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.577 -0400", hash_original_method = "67715870CA89D1E43E3638ABED5B90D0", hash_generated_method = "C26C37D8EF9ABA46D8F78DA1E4C90577")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.194 -0400", hash_original_method = "67715870CA89D1E43E3638ABED5B90D0", hash_generated_method = "C26C37D8EF9ABA46D8F78DA1E4C90577")
     public  StaticLayout(CharSequence source, int bufstart, int bufend,
                         TextPaint paint, int outerwidth,
                         Alignment align, TextDirectionHeuristic textDir,
@@ -205,7 +205,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.586 -0400", hash_original_method = "F6D0B9C991ED85508405BA894E3CF311", hash_generated_method = "16EB017909B4433064E0DE9E65642147")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.195 -0400", hash_original_method = "F6D0B9C991ED85508405BA894E3CF311", hash_generated_method = "16EB017909B4433064E0DE9E65642147")
       StaticLayout(CharSequence text) {
         super(text, null, 0, null, 0, 0);
         mColumns = COLUMNS_ELLIPSIZE;
@@ -223,7 +223,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.620 -0400", hash_original_method = "36200F938D6B110E70DA8FCD0A142EF7", hash_generated_method = "01A7452FC7791B7288C3ABE72DF36ADA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.276 -0400", hash_original_method = "36200F938D6B110E70DA8FCD0A142EF7", hash_generated_method = "9BFFFA27D75AA911A1178D1A1F1610C1")
      void generate(CharSequence source, int bufStart, int bufEnd,
                         TextPaint paint, int outerWidth,
                         TextDirectionHeuristic textDir, float spacingmult,
@@ -442,7 +442,7 @@ public class StaticLayout extends Layout {
                                     fitDescent = fmDescent;
                                     fitBottom = fmBottom;
                                     {
-                                        boolean varB520B0E4FB3D6569062BDD8343CF19D9_2079691864 = (c == CHAR_SPACE || c == CHAR_TAB ||
+                                        boolean varB520B0E4FB3D6569062BDD8343CF19D9_298597177 = (c == CHAR_SPACE || c == CHAR_TAB ||
                             ((c == CHAR_DOT || c == CHAR_COMMA ||
                                     c == CHAR_COLON || c == CHAR_SEMICOLON) &&
                              (j - 1 < here || !Character.isDigit(chs[j - 1 - paraStart])) &&
@@ -540,7 +540,7 @@ public class StaticLayout extends Layout {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean varD6A6A425370B61445227FF156BD0D4E6_972043928 = ((bufEnd == bufStart || source.charAt(bufEnd - 1) == CHAR_NEW_LINE) &&
+            boolean varD6A6A425370B61445227FF156BD0D4E6_2112959858 = ((bufEnd == bufStart || source.charAt(bufEnd - 1) == CHAR_NEW_LINE) &&
                 mLineCount < mMaximumVisibleLineCount);
             {
                 paint.getFontMetricsInt(fm);
@@ -654,7 +654,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.630 -0400", hash_original_method = "478F3FA593939ABCBF542030DE605E96", hash_generated_method = "FED00B528C50CB9A0DAA9B54702675B1")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.306 -0400", hash_original_method = "478F3FA593939ABCBF542030DE605E96", hash_generated_method = "4A3DEDAEC2D03684FB9C8ABC02BD123F")
     private int out(CharSequence text, int start, int end,
                       int above, int below, int top, int bottom, int v,
                       float spacingmult, float spacingadd,
@@ -794,14 +794,14 @@ public class StaticLayout extends Layout {
         addTaint(textWidth);
         addTaint(paint.getTaint());
         addTaint(moreChars);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1299553175 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1299553175;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2142945335 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2142945335;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.644 -0400", hash_original_method = "12884526F2C70C1C98137C0940B4D04E", hash_generated_method = "FB3B1601F4FD5AB64169639C53D221B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.310 -0400", hash_original_method = "12884526F2C70C1C98137C0940B4D04E", hash_generated_method = "05178F0BF0AD29B1DB0E7B200D2D731B")
     private void calculateEllipsis(int lineStart, int lineEnd,
                                    float[] widths, int widthStart,
                                    float avail, TextUtils.TruncateAt where,
@@ -838,7 +838,7 @@ public class StaticLayout extends Layout {
             } //End block
             {
                 {
-                    boolean varDB9C000D9EED0EBC5F67F0C4656298B5_1408794257 = (Log.isLoggable(TAG, Log.WARN));
+                    boolean varDB9C000D9EED0EBC5F67F0C4656298B5_1758019235 = (Log.isLoggable(TAG, Log.WARN));
                 } //End collapsed parenthetic
             } //End block
         } //End block
@@ -894,7 +894,7 @@ public class StaticLayout extends Layout {
             } //End block
             {
                 {
-                    boolean varDB9C000D9EED0EBC5F67F0C4656298B5_1685516640 = (Log.isLoggable(TAG, Log.WARN));
+                    boolean varDB9C000D9EED0EBC5F67F0C4656298B5_254673390 = (Log.isLoggable(TAG, Log.WARN));
                 } //End collapsed parenthetic
             } //End block
         } //End block
@@ -914,7 +914,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.646 -0400", hash_original_method = "98509D881029C8DC6B023EB0DACF92F5", hash_generated_method = "7C054043D3E0757739E8DD0A77CB3A31")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.333 -0400", hash_original_method = "98509D881029C8DC6B023EB0DACF92F5", hash_generated_method = "CEE83906E48C85A962DA636E65FE39F9")
     @Override
     public int getLineForVertical(int vertical) {
         int high;
@@ -934,8 +934,8 @@ public class StaticLayout extends Layout {
             } //End block
         } //End block
         addTaint(vertical);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1580056518 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1580056518;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2107478034 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2107478034;
         // ---------- Original Method ----------
         //int high = mLineCount;
         //int low = -1;
@@ -957,17 +957,17 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.668 -0400", hash_original_method = "DCA25DE9CB635243C23A0D258AEAA6C9", hash_generated_method = "26D6A817F45D11FDA1FE56AFBEB2577F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.334 -0400", hash_original_method = "DCA25DE9CB635243C23A0D258AEAA6C9", hash_generated_method = "FAE9A0921FBD156DB43AD86E28A504E3")
     @Override
     public int getLineCount() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1990267489 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1990267489;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2092682976 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2092682976;
         // ---------- Original Method ----------
         //return mLineCount;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.668 -0400", hash_original_method = "79A8E86A0E5ABFEF4F09B2D188FA97FB", hash_generated_method = "47CD0A6B3C6E1F3AD5FFB0715EC4AB12")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.335 -0400", hash_original_method = "79A8E86A0E5ABFEF4F09B2D188FA97FB", hash_generated_method = "684E0A3555455E072CF38BEEDA5BCB0D")
     @Override
     public int getLineTop(int line) {
         int top;
@@ -976,8 +976,8 @@ public class StaticLayout extends Layout {
             top += getBottomPadding();
         } //End block
         addTaint(line);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1865310559 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1865310559;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_94631356 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_94631356;
         // ---------- Original Method ----------
         //int top = mLines[mColumns * line + TOP];
         //if (mMaximumVisibleLineCount > 0 && line >= mMaximumVisibleLineCount &&
@@ -988,7 +988,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.669 -0400", hash_original_method = "24456204DB122ABBCF95E31F6A475D1C", hash_generated_method = "FCC634A6D721EA6EF9E85E841A5EA5F3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.346 -0400", hash_original_method = "24456204DB122ABBCF95E31F6A475D1C", hash_generated_method = "D13DBAD99C276385FC267D159092613E")
     @Override
     public int getLineDescent(int line) {
         int descent;
@@ -997,8 +997,8 @@ public class StaticLayout extends Layout {
             descent += getBottomPadding();
         } //End block
         addTaint(line);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1456318406 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1456318406;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_742435263 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_742435263;
         // ---------- Original Method ----------
         //int descent = mLines[mColumns * line + DESCENT];
         //if (mMaximumVisibleLineCount > 0 && line >= mMaximumVisibleLineCount - 1 && 
@@ -1009,78 +1009,78 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.669 -0400", hash_original_method = "839417F6B69B5423927C3B8DBF7A6F42", hash_generated_method = "F606182BA82ED09EF6AB538D96361439")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.347 -0400", hash_original_method = "839417F6B69B5423927C3B8DBF7A6F42", hash_generated_method = "FD4DC341E7A39EE91063991B90A82D6B")
     @Override
     public int getLineStart(int line) {
         addTaint(line);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103605411 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103605411;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415196161 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415196161;
         // ---------- Original Method ----------
         //return mLines[mColumns * line + START] & START_MASK;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.670 -0400", hash_original_method = "4D44D66A6DA9E0A8739F807A61ABAF65", hash_generated_method = "A7DC083AC21CE01793BCC0C637F03E98")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.348 -0400", hash_original_method = "4D44D66A6DA9E0A8739F807A61ABAF65", hash_generated_method = "82819B22CBCC173DA1F55B25977808CB")
     @Override
     public int getParagraphDirection(int line) {
         addTaint(line);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1306196463 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1306196463;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_495565123 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_495565123;
         // ---------- Original Method ----------
         //return mLines[mColumns * line + DIR] >> DIR_SHIFT;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.671 -0400", hash_original_method = "F549BE615B108927B3399A138AFD2460", hash_generated_method = "3EB5FD0D6751982A3C811C6290040D72")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.351 -0400", hash_original_method = "F549BE615B108927B3399A138AFD2460", hash_generated_method = "0EB0522842CA6FD672F291B7D24AFA5A")
     @Override
     public boolean getLineContainsTab(int line) {
         addTaint(line);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_963148601 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_963148601;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1973374384 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1973374384;
         // ---------- Original Method ----------
         //return (mLines[mColumns * line + TAB] & TAB_MASK) != 0;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.671 -0400", hash_original_method = "E4C2D852DF30293005E76B99E82745CD", hash_generated_method = "97B6720E97DF732A5BCC5AC798D1DB04")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.353 -0400", hash_original_method = "E4C2D852DF30293005E76B99E82745CD", hash_generated_method = "59733AD5937C88E8CF2B855CF32D8A52")
     @Override
     public final Directions getLineDirections(int line) {
-        Directions varB4EAC82CA7396A68D541C85D26508E83_88212422 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_88212422 = mLineDirections[line];
+        Directions varB4EAC82CA7396A68D541C85D26508E83_1234717315 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1234717315 = mLineDirections[line];
         addTaint(line);
-        varB4EAC82CA7396A68D541C85D26508E83_88212422.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_88212422;
+        varB4EAC82CA7396A68D541C85D26508E83_1234717315.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1234717315;
         // ---------- Original Method ----------
         //return mLineDirections[line];
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.672 -0400", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "174D5F5AF12BE769DC83D0C34E3E5FC6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.363 -0400", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "2973B84EADC2AAF12A6E430E446469C1")
     @Override
     public int getTopPadding() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716175184 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716175184;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_836681184 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_836681184;
         // ---------- Original Method ----------
         //return mTopPadding;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.676 -0400", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "2269C166D1CCEE0AE1EAC1AEB3D11A0C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.364 -0400", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "F23ED50FC581636F841D5C111A548F15")
     @Override
     public int getBottomPadding() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166933205 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166933205;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_321541926 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_321541926;
         // ---------- Original Method ----------
         //return mBottomPadding;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.676 -0400", hash_original_method = "7EEFC0E209C4C423B00930C7C3F48104", hash_generated_method = "D7C7A3DF14493FD6457A65D18ECD8858")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.364 -0400", hash_original_method = "7EEFC0E209C4C423B00930C7C3F48104", hash_generated_method = "7EA5531AF1B6699C64F4BA22D4E4DF1D")
     @Override
     public int getEllipsisCount(int line) {
         addTaint(line);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_563175878 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_563175878;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_7222307 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_7222307;
         // ---------- Original Method ----------
         //if (mColumns < COLUMNS_ELLIPSIZE) {
             //return 0;
@@ -1089,12 +1089,12 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.690 -0400", hash_original_method = "3E84E442932041329DEDBD7573FAD5F7", hash_generated_method = "1EBDF888FA9BC9235A007B658F3D47F4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.365 -0400", hash_original_method = "3E84E442932041329DEDBD7573FAD5F7", hash_generated_method = "7CB6D753712DE1B5BAB8CBAF7D0C68B3")
     @Override
     public int getEllipsisStart(int line) {
         addTaint(line);
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_240778111 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_240778111;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1040476528 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1040476528;
         // ---------- Original Method ----------
         //if (mColumns < COLUMNS_ELLIPSIZE) {
             //return 0;
@@ -1103,17 +1103,17 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.690 -0400", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "A8356AE6B6D12190D29A013045F7306E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.365 -0400", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "71642D9DBBDB4599C827E3C2F69CB513")
     @Override
     public int getEllipsizedWidth() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2004201475 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2004201475;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_807716178 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_807716178;
         // ---------- Original Method ----------
         //return mEllipsizedWidth;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.695 -0400", hash_original_method = "B52C8C631677053C363ACE90856C8484", hash_generated_method = "95EDBE59F598FE401B87F39CB299AF78")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.366 -0400", hash_original_method = "B52C8C631677053C363ACE90856C8484", hash_generated_method = "95EDBE59F598FE401B87F39CB299AF78")
      void prepare() {
         mMeasured = MeasuredText.obtain();
         // ---------- Original Method ----------
@@ -1121,7 +1121,7 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.695 -0400", hash_original_method = "C0F6C3CAFEEBD4E75E81773515CBCC0B", hash_generated_method = "25F76FF05D99A4E8F3EC719ABEED0A6E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_method = "C0F6C3CAFEEBD4E75E81773515CBCC0B", hash_generated_method = "25F76FF05D99A4E8F3EC719ABEED0A6E")
      void finish() {
         mMeasured = MeasuredText.recycle(mMeasured);
         // ---------- Original Method ----------
@@ -1129,91 +1129,91 @@ public class StaticLayout extends Layout {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.696 -0400", hash_original_field = "95872B125F7B7861D9E38E9C7DDA5DE8", hash_generated_field = "F48F8FBE2510F4B9C03F8FA200CC70CD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_field = "95872B125F7B7861D9E38E9C7DDA5DE8", hash_generated_field = "F48F8FBE2510F4B9C03F8FA200CC70CD")
 
     static String TAG = "StaticLayout";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.699 -0400", hash_original_field = "3AE51DFCA721DA74B9FE7AE826399C5B", hash_generated_field = "82B151F86E6336E7EBABD8B0D2554020")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_field = "3AE51DFCA721DA74B9FE7AE826399C5B", hash_generated_field = "82B151F86E6336E7EBABD8B0D2554020")
 
     private static int COLUMNS_NORMAL = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.699 -0400", hash_original_field = "55DF56DF384DF5793030D40F84610E92", hash_generated_field = "A3A118F5E931345ED3AA870AD0322498")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_field = "55DF56DF384DF5793030D40F84610E92", hash_generated_field = "A3A118F5E931345ED3AA870AD0322498")
 
     private static int COLUMNS_ELLIPSIZE = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "28651E175A74BF99AEB0613FFD9E4311", hash_generated_field = "AE5FE26EA7B9C33A397985D690BEF58C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_field = "28651E175A74BF99AEB0613FFD9E4311", hash_generated_field = "AE5FE26EA7B9C33A397985D690BEF58C")
 
     private static int START = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "96C94187E98129DC7ED52B022D56B56E", hash_generated_field = "6D6C23CE3BFB22BC047670327434A860")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_field = "96C94187E98129DC7ED52B022D56B56E", hash_generated_field = "6D6C23CE3BFB22BC047670327434A860")
 
     private static int DIR = START;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "03E7882B92ED9688C792A4DF3CCA212F", hash_generated_field = "05A11F5EBF953A33392F393CCDD725E2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_field = "03E7882B92ED9688C792A4DF3CCA212F", hash_generated_field = "05A11F5EBF953A33392F393CCDD725E2")
 
     private static int TAB = START;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "571D16AE4FA766DA4380F84D324027BE", hash_generated_field = "84E5B0980A9DB65D83B460DD28EC105D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_field = "571D16AE4FA766DA4380F84D324027BE", hash_generated_field = "84E5B0980A9DB65D83B460DD28EC105D")
 
     private static int TOP = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "4DF1087155B53EE865ED8DEFEF0D2F7E", hash_generated_field = "BCA811FF720210FC7C8CADA392DE1774")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_field = "4DF1087155B53EE865ED8DEFEF0D2F7E", hash_generated_field = "BCA811FF720210FC7C8CADA392DE1774")
 
     private static int DESCENT = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "11658650D3EBC5004F1DE2593A19D91C", hash_generated_field = "EB2805516F22F0D795546FE4326DA5A9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.377 -0400", hash_original_field = "11658650D3EBC5004F1DE2593A19D91C", hash_generated_field = "EB2805516F22F0D795546FE4326DA5A9")
 
     private static int ELLIPSIS_START = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "9DEA8A3EF4097355E23BEB471268468C", hash_generated_field = "542C907F634133B97C93B9DB7D8B9BDC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.378 -0400", hash_original_field = "9DEA8A3EF4097355E23BEB471268468C", hash_generated_field = "542C907F634133B97C93B9DB7D8B9BDC")
 
     private static int ELLIPSIS_COUNT = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "479F76462347F1E81B6EC92F50573413", hash_generated_field = "F4AF13B0F41E7915D7A01D78326744F8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.378 -0400", hash_original_field = "479F76462347F1E81B6EC92F50573413", hash_generated_field = "F4AF13B0F41E7915D7A01D78326744F8")
 
     private static int START_MASK = 0x1FFFFFFF;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "3CE9D0897644F1685651D602FF457A11", hash_generated_field = "26F6116498B4B99F247AFFED1D2ADAC3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.378 -0400", hash_original_field = "3CE9D0897644F1685651D602FF457A11", hash_generated_field = "26F6116498B4B99F247AFFED1D2ADAC3")
 
     private static int DIR_SHIFT = 30;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "C52FA1DB43D0A9E4AB2D27DC3ED50BD6", hash_generated_field = "CE6C698FB46054E82230E9F62AB1B199")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.378 -0400", hash_original_field = "C52FA1DB43D0A9E4AB2D27DC3ED50BD6", hash_generated_field = "CE6C698FB46054E82230E9F62AB1B199")
 
     private static int TAB_MASK = 0x20000000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "5857BDFF3BF33113730586AF5B28164F", hash_generated_field = "BD4519227226DE6CF8B5B95534D34642")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.378 -0400", hash_original_field = "5857BDFF3BF33113730586AF5B28164F", hash_generated_field = "BD4519227226DE6CF8B5B95534D34642")
 
     private static int TAB_INCREMENT = 20;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "D12D3634E072793BACFCFCC6DF78CE4B", hash_generated_field = "4E18843AD894A4267568DC256C011F91")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.378 -0400", hash_original_field = "D12D3634E072793BACFCFCC6DF78CE4B", hash_generated_field = "4E18843AD894A4267568DC256C011F91")
 
     private static char CHAR_FIRST_CJK = '\u2E80';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "00A52FFD05B158140F163AE416840413", hash_generated_field = "0B77DBA4E0C6B36781C3B7DE2C6FB535")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.378 -0400", hash_original_field = "00A52FFD05B158140F163AE416840413", hash_generated_field = "0B77DBA4E0C6B36781C3B7DE2C6FB535")
 
     private static char CHAR_NEW_LINE = '\n';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "7CEA2D58CE9FE60FCE1405E11A2F16B5", hash_generated_field = "15EB73CED57EFD17B8C1A6248C79E57B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.378 -0400", hash_original_field = "7CEA2D58CE9FE60FCE1405E11A2F16B5", hash_generated_field = "15EB73CED57EFD17B8C1A6248C79E57B")
 
     private static char CHAR_TAB = '\t';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "AB5806A9D7897E1EED82CC37BF968FE0", hash_generated_field = "823544151C490B192913ACAD2113E34B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.378 -0400", hash_original_field = "AB5806A9D7897E1EED82CC37BF968FE0", hash_generated_field = "823544151C490B192913ACAD2113E34B")
 
     private static char CHAR_SPACE = ' ';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "6C7F27ADADD73E9D7E1011C0EFF91FA1", hash_generated_field = "909E911C213A98DD0E9D573EDBE52F93")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.378 -0400", hash_original_field = "6C7F27ADADD73E9D7E1011C0EFF91FA1", hash_generated_field = "909E911C213A98DD0E9D573EDBE52F93")
 
     private static char CHAR_DOT = '.';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "22BFFF2E9C98A18E97B84C2EEB94338F", hash_generated_field = "4A3E1C0BB8AFA7D2368D19A96D21E73E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.379 -0400", hash_original_field = "22BFFF2E9C98A18E97B84C2EEB94338F", hash_generated_field = "4A3E1C0BB8AFA7D2368D19A96D21E73E")
 
     private static char CHAR_COMMA = ',';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "FE1A9DABDFCB157F2908BF6CD35FCE5B", hash_generated_field = "6DAA962E0902E40132B49B521E96C740")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.379 -0400", hash_original_field = "FE1A9DABDFCB157F2908BF6CD35FCE5B", hash_generated_field = "6DAA962E0902E40132B49B521E96C740")
 
     private static char CHAR_COLON = ':';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "C92AA43D6022E95DCA4F5B63ED80FF2C", hash_generated_field = "7D5F3D193137D0073543933A065A3007")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.379 -0400", hash_original_field = "C92AA43D6022E95DCA4F5B63ED80FF2C", hash_generated_field = "7D5F3D193137D0073543933A065A3007")
 
     private static char CHAR_SEMICOLON = ';';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "F45EF65010D62FA697204F2D5213C54D", hash_generated_field = "1FE4765CE14944D95D22C65E46B93B2A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.379 -0400", hash_original_field = "F45EF65010D62FA697204F2D5213C54D", hash_generated_field = "1FE4765CE14944D95D22C65E46B93B2A")
 
     private static char CHAR_SLASH = '/';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "72DEAD401756357C1B8CD8F98362FA8C", hash_generated_field = "D62ECB061E281319A2EFF9859FC7C315")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.379 -0400", hash_original_field = "72DEAD401756357C1B8CD8F98362FA8C", hash_generated_field = "D62ECB061E281319A2EFF9859FC7C315")
 
     private static char CHAR_HYPHEN = '-';
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "5C6729C339E50626FF445F7364D13172", hash_generated_field = "CEA3C82A2220956F0B6154B391C006DC")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.379 -0400", hash_original_field = "5C6729C339E50626FF445F7364D13172", hash_generated_field = "CEA3C82A2220956F0B6154B391C006DC")
 
     private static double EXTRA_ROUNDING = 0.5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.700 -0400", hash_original_field = "1DBD92DD1658F4ADDF0F957D8B97982A", hash_generated_field = "EDB2B32174F77409D911A1005BDFB5F2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.379 -0400", hash_original_field = "1DBD92DD1658F4ADDF0F957D8B97982A", hash_generated_field = "EDB2B32174F77409D911A1005BDFB5F2")
 
     private static String ELLIPSIS_NORMAL = "\u2026";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.701 -0400", hash_original_field = "B63101E3F6BAA0CA142477AA62972904", hash_generated_field = "2788DC557F23C2DF62458573830335F0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.379 -0400", hash_original_field = "B63101E3F6BAA0CA142477AA62972904", hash_generated_field = "2788DC557F23C2DF62458573830335F0")
 
     private static String ELLIPSIS_TWO_DOTS = "\u2025";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.701 -0400", hash_original_field = "41CF096C0A9F72FA9AE4C83AF587A230", hash_generated_field = "6E56BFF8029B531FC63BB3EC570502D1")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.379 -0400", hash_original_field = "41CF096C0A9F72FA9AE4C83AF587A230", hash_generated_field = "6E56BFF8029B531FC63BB3EC570502D1")
 
     private static int CHAR_FIRST_HIGH_SURROGATE = 0xD800;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:12:40.701 -0400", hash_original_field = "485B1B5DF5DC77A82D51FABFA3C0D8D8", hash_generated_field = "BFE70AC4C1ED3124F6991BAC601B5ED2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:42.379 -0400", hash_original_field = "485B1B5DF5DC77A82D51FABFA3C0D8D8", hash_generated_field = "BFE70AC4C1ED3124F6991BAC601B5ED2")
 
     private static int CHAR_LAST_LOW_SURROGATE = 0xDFFF;
 }

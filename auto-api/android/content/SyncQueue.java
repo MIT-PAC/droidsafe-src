@@ -20,14 +20,14 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class SyncQueue {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.474 -0400", hash_original_field = "45147E3AEB1E4ADCE06A13083E577526", hash_generated_field = "C4D1F4553F2DAB654514F44F7C643ACD")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.035 -0400", hash_original_field = "45147E3AEB1E4ADCE06A13083E577526", hash_generated_field = "C4D1F4553F2DAB654514F44F7C643ACD")
 
     private SyncStorageEngine mSyncStorageEngine;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.474 -0400", hash_original_field = "33E73F7C0E48552B1038F6EFECEC7CF1", hash_generated_field = "B834195A5D324E25C247F1018772491C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.035 -0400", hash_original_field = "33E73F7C0E48552B1038F6EFECEC7CF1", hash_generated_field = "B834195A5D324E25C247F1018772491C")
 
     public HashMap<String, SyncOperation> mOperationsMap = Maps.newHashMap();
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.489 -0400", hash_original_method = "4B46EA3F8AD8CFC1D0053E5D8D79C64A", hash_generated_method = "0439CAD8A1CFAC01065A0E5ADD0CE543")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.050 -0400", hash_original_method = "4B46EA3F8AD8CFC1D0053E5D8D79C64A", hash_generated_method = "0439CAD8A1CFAC01065A0E5ADD0CE543")
     public  SyncQueue(SyncStorageEngine syncStorageEngine, final SyncAdaptersCache syncAdapters) {
         mSyncStorageEngine = syncStorageEngine;
         ArrayList<SyncStorageEngine.PendingOperation> ops;
@@ -62,18 +62,18 @@ public class SyncQueue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.490 -0400", hash_original_method = "D3ED8DB5FFE6F89C719EB4A464B29556", hash_generated_method = "E9173C02310D21197B112C1CEE69174B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.051 -0400", hash_original_method = "D3ED8DB5FFE6F89C719EB4A464B29556", hash_generated_method = "268844E359D690F3865ACF2B96BDA613")
     public boolean add(SyncOperation operation) {
-        boolean varD2EE4195B2D87223E270EB3EB0A6E3F5_69750590 = (add(operation, null ));
+        boolean varD2EE4195B2D87223E270EB3EB0A6E3F5_255081637 = (add(operation, null ));
         addTaint(operation.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_867015388 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_867015388;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_190546917 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_190546917;
         // ---------- Original Method ----------
         //return add(operation, null );
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.506 -0400", hash_original_method = "DE2F99F3641547A1BC9E364A4B2B8E2B", hash_generated_method = "CB6B2DD5EF9DEC729D8706F3BD802160")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.056 -0400", hash_original_method = "DE2F99F3641547A1BC9E364A4B2B8E2B", hash_generated_method = "04FEA94BE838DABBE8063EFFD6339326")
     private boolean add(SyncOperation operation,
             SyncStorageEngine.PendingOperation pop) {
         String operationKey;
@@ -113,19 +113,19 @@ public class SyncQueue {
         mOperationsMap.put(operationKey, operation);
         addTaint(operation.getTaint());
         addTaint(pop.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_642363939 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_642363939;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1735861755 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1735861755;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.507 -0400", hash_original_method = "6EA1C69DAD85A65D52720F29F3DAA89B", hash_generated_method = "8683DC5C44A73F83AC4F247B12176554")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.073 -0400", hash_original_method = "6EA1C69DAD85A65D52720F29F3DAA89B", hash_generated_method = "E0EC658709C024B9BC129365C7E4AC88")
     public void remove(SyncOperation operation) {
         SyncOperation operationToRemove;
         operationToRemove = mOperationsMap.remove(operation.key);
         {
-            boolean var540EE0083C66CFF9188CAA00F2AD132F_1964769247 = (!mSyncStorageEngine.deleteFromPending(operationToRemove.pendingOperation));
+            boolean var540EE0083C66CFF9188CAA00F2AD132F_104296841 = (!mSyncStorageEngine.deleteFromPending(operationToRemove.pendingOperation));
             {
                 String errorMessage;
                 errorMessage = "unable to find pending row for " + operationToRemove;
@@ -144,16 +144,16 @@ public class SyncQueue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.593 -0400", hash_original_method = "B31E7F9449B862015CEE60B6F703FDEF", hash_generated_method = "01CCBF0EFF56C62BBBD39C06F25DDD87")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.187 -0400", hash_original_method = "B31E7F9449B862015CEE60B6F703FDEF", hash_generated_method = "539CA20B448891008B2B2E71659D386F")
     public void onBackoffChanged(Account account, String providerName, long backoff) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            Iterator<SyncOperation> varA6A62C13A555831201947A0BCBA5252D_1968115581 = (mOperationsMap.values()).iterator();
-            varA6A62C13A555831201947A0BCBA5252D_1968115581.hasNext();
-            SyncOperation op = varA6A62C13A555831201947A0BCBA5252D_1968115581.next();
+            Iterator<SyncOperation> varA6A62C13A555831201947A0BCBA5252D_671775421 = (mOperationsMap.values()).iterator();
+            varA6A62C13A555831201947A0BCBA5252D_671775421.hasNext();
+            SyncOperation op = varA6A62C13A555831201947A0BCBA5252D_671775421.next();
             {
                 {
-                    boolean var2EC9E5AA01CD20C09DEE410F9D14A917_754265009 = (op.account.equals(account) && op.authority.equals(providerName));
+                    boolean var2EC9E5AA01CD20C09DEE410F9D14A917_766814139 = (op.account.equals(account) && op.authority.equals(providerName));
                     {
                         op.backoff = backoff;
                         op.updateEffectiveRunTime();
@@ -174,16 +174,16 @@ public class SyncQueue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.698 -0400", hash_original_method = "B5F16B587E82C75B14DBD47F35BFF547", hash_generated_method = "E40300D7890F4E866490F673EDFE6630")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.302 -0400", hash_original_method = "B5F16B587E82C75B14DBD47F35BFF547", hash_generated_method = "A22120639AB06721B2FF0FF3F587849C")
     public void onDelayUntilTimeChanged(Account account, String providerName, long delayUntil) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         {
-            Iterator<SyncOperation> varA6A62C13A555831201947A0BCBA5252D_1529689990 = (mOperationsMap.values()).iterator();
-            varA6A62C13A555831201947A0BCBA5252D_1529689990.hasNext();
-            SyncOperation op = varA6A62C13A555831201947A0BCBA5252D_1529689990.next();
+            Iterator<SyncOperation> varA6A62C13A555831201947A0BCBA5252D_721224828 = (mOperationsMap.values()).iterator();
+            varA6A62C13A555831201947A0BCBA5252D_721224828.hasNext();
+            SyncOperation op = varA6A62C13A555831201947A0BCBA5252D_721224828.next();
             {
                 {
-                    boolean var2EC9E5AA01CD20C09DEE410F9D14A917_1463973816 = (op.account.equals(account) && op.authority.equals(providerName));
+                    boolean var2EC9E5AA01CD20C09DEE410F9D14A917_1955410487 = (op.account.equals(account) && op.authority.equals(providerName));
                     {
                         op.delayUntil = delayUntil;
                         op.updateEffectiveRunTime();
@@ -204,26 +204,26 @@ public class SyncQueue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.707 -0400", hash_original_method = "3BDDACB884C02271E516EA5014748603", hash_generated_method = "56BD87FF31A39A048A13206A6F03B819")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.306 -0400", hash_original_method = "3BDDACB884C02271E516EA5014748603", hash_generated_method = "37A6546E8D3DAA2E9F9705EAEE2C964B")
     public void remove(Account account, String authority) {
         Iterator<Map.Entry<String, SyncOperation>> entries;
         entries = mOperationsMap.entrySet().iterator();
         {
-            boolean var09A288798F3AA3CC86DC1D8BA5087B32_1631666740 = (entries.hasNext());
+            boolean var09A288798F3AA3CC86DC1D8BA5087B32_628644005 = (entries.hasNext());
             {
                 Map.Entry<String, SyncOperation> entry;
                 entry = entries.next();
                 SyncOperation syncOperation;
                 syncOperation = entry.getValue();
                 {
-                    boolean varA133932521E0D15B2D2CEE7F49E0763A_1273641044 = (account != null && !syncOperation.account.equals(account));
+                    boolean varA133932521E0D15B2D2CEE7F49E0763A_1229891257 = (account != null && !syncOperation.account.equals(account));
                 } //End collapsed parenthetic
                 {
-                    boolean varD5CA21567F2713BC95D1F8BB6C616C44_1907621188 = (authority != null && !syncOperation.authority.equals(authority));
+                    boolean varD5CA21567F2713BC95D1F8BB6C616C44_190029851 = (authority != null && !syncOperation.authority.equals(authority));
                 } //End collapsed parenthetic
                 entries.remove();
                 {
-                    boolean varCA42267505FA64ABBFD771EF48B24F63_235243964 = (!mSyncStorageEngine.deleteFromPending(syncOperation.pendingOperation));
+                    boolean varCA42267505FA64ABBFD771EF48B24F63_236744404 = (!mSyncStorageEngine.deleteFromPending(syncOperation.pendingOperation));
                     {
                         String errorMessage;
                         errorMessage = "unable to find pending row for " + syncOperation;
@@ -238,15 +238,15 @@ public class SyncQueue {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.869 -0400", hash_original_method = "DE0C3912E55B433E68B0CDCDD70A3B83", hash_generated_method = "B626BF68E99B9805516880793390B191")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.558 -0400", hash_original_method = "DE0C3912E55B433E68B0CDCDD70A3B83", hash_generated_method = "21A6A3EB077F03D040737B00E3ADE2E0")
     public void dump(StringBuilder sb) {
         long now;
         now = SystemClock.elapsedRealtime();
         sb.append("SyncQueue: ").append(mOperationsMap.size()).append(" operation(s)\n");
         {
-            Iterator<SyncOperation> varBD7A91BE9015B18580A8E9F432406095_1634119167 = (mOperationsMap.values()).iterator();
-            varBD7A91BE9015B18580A8E9F432406095_1634119167.hasNext();
-            SyncOperation operation = varBD7A91BE9015B18580A8E9F432406095_1634119167.next();
+            Iterator<SyncOperation> varBD7A91BE9015B18580A8E9F432406095_1331840863 = (mOperationsMap.values()).iterator();
+            varBD7A91BE9015B18580A8E9F432406095_1331840863.hasNext();
+            SyncOperation operation = varBD7A91BE9015B18580A8E9F432406095_1331840863.next();
             {
                 sb.append("  ");
                 {
@@ -276,7 +276,7 @@ public class SyncQueue {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:59.869 -0400", hash_original_field = "0439F4DA6A334C5ECD9FAAB83A40EC1E", hash_generated_field = "CAAD11AC43D5339C465E3446FFFD23C9")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:01.558 -0400", hash_original_field = "0439F4DA6A334C5ECD9FAAB83A40EC1E", hash_generated_field = "CAAD11AC43D5339C465E3446FFFD23C9")
 
     private static String TAG = "SyncManager";
 }

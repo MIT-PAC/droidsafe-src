@@ -18,7 +18,7 @@ import java.text.ParseException;
 
 public class PChargingVectorParser extends ParametersParser implements TokenTypes {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.744 -0400", hash_original_method = "A4A88DE0006B5603CC0F71572978ABEB", hash_generated_method = "35D48DD81632D2F8F7FF660448B29BDD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.682 -0400", hash_original_method = "A4A88DE0006B5603CC0F71572978ABEB", hash_generated_method = "35D48DD81632D2F8F7FF660448B29BDD")
     public  PChargingVectorParser(String chargingVector) {
         super(chargingVector);
         addTaint(chargingVector.getTaint());
@@ -26,7 +26,7 @@ public class PChargingVectorParser extends ParametersParser implements TokenType
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.744 -0400", hash_original_method = "73E61A8E6B9D3F4F5811815C202485DB", hash_generated_method = "1FA51B4BA9AC220C5AAD3CD1EE4930E6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.682 -0400", hash_original_method = "73E61A8E6B9D3F4F5811815C202485DB", hash_generated_method = "1FA51B4BA9AC220C5AAD3CD1EE4930E6")
     protected  PChargingVectorParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -34,9 +34,9 @@ public class PChargingVectorParser extends ParametersParser implements TokenType
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.746 -0400", hash_original_method = "4152406B40F94995C7A2549F5DE1C3E9", hash_generated_method = "D77AD1DC9FA86B9732BCF0B92CC0C406")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.683 -0400", hash_original_method = "4152406B40F94995C7A2549F5DE1C3E9", hash_generated_method = "48DAABC43340A1A95818B1903318347B")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1899291002 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1004711730 = null; //Variable for return #1
         dbg_enter("parse");
         try 
         {
@@ -46,7 +46,7 @@ public class PChargingVectorParser extends ParametersParser implements TokenType
             try 
             {
                 {
-                    boolean var053C2AA6A70B74FC601942C3CC901981_281577726 = (lexer.lookAhead(0) != '\n');
+                    boolean var053C2AA6A70B74FC601942C3CC901981_223046212 = (lexer.lookAhead(0) != '\n');
                     {
                         this.parseParameter(chargingVector);
                         this.lexer.SPorHT();
@@ -63,23 +63,23 @@ public class PChargingVectorParser extends ParametersParser implements TokenType
             } //End block
             super.parse(chargingVector);
             {
-                boolean var2C81E977376561A87E1895644F71162B_1092937418 = (chargingVector.getParameter(ParameterNamesIms.ICID_VALUE) == null);
+                boolean var2C81E977376561A87E1895644F71162B_266372564 = (chargingVector.getParameter(ParameterNamesIms.ICID_VALUE) == null);
                 if (DroidSafeAndroidRuntime.control) throw new ParseException("Missing a required Parameter : " + ParameterNamesIms.ICID_VALUE, 0);
             } //End collapsed parenthetic
-            varB4EAC82CA7396A68D541C85D26508E83_1899291002 = chargingVector;
+            varB4EAC82CA7396A68D541C85D26508E83_1004711730 = chargingVector;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1899291002.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1899291002;
+        varB4EAC82CA7396A68D541C85D26508E83_1004711730.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1004711730;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.756 -0400", hash_original_method = "E5BADA3ECE6E53AAFFF871A13AE56E77", hash_generated_method = "1E585B86CEA5565FB7AA60F10991868E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.684 -0400", hash_original_method = "E5BADA3ECE6E53AAFFF871A13AE56E77", hash_generated_method = "1E585B86CEA5565FB7AA60F10991868E")
     protected void parseParameter(PChargingVector chargingVector) throws ParseException {
         dbg_enter("parseParameter");
         try 

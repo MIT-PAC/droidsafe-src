@@ -12,7 +12,7 @@ import org.apache.http.protocol.HTTP;
 
 public final class EncodingUtils {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.364 -0400", hash_original_method = "9056910A11B8F7E2130B8014667A5810", hash_generated_method = "82860B6827C330C84D8DCE75D0CA6840")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.536 -0400", hash_original_method = "9056910A11B8F7E2130B8014667A5810", hash_generated_method = "82860B6827C330C84D8DCE75D0CA6840")
     private  EncodingUtils() {
         // ---------- Original Method ----------
     }

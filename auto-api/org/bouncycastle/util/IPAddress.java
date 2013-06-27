@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 public class IPAddress {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.806 -0400", hash_original_method = "5836548C92C6B5CB4E6ABB2C3D2D08AC", hash_generated_method = "5836548C92C6B5CB4E6ABB2C3D2D08AC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.827 -0400", hash_original_method = "5836548C92C6B5CB4E6ABB2C3D2D08AC", hash_generated_method = "5836548C92C6B5CB4E6ABB2C3D2D08AC")
     public IPAddress ()
     {
         //Synthesized constructor

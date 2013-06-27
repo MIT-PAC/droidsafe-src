@@ -13,7 +13,7 @@ import org.apache.http.protocol.HTTP;
 
 public final class HttpProtocolParams implements CoreProtocolPNames {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.196 -0400", hash_original_method = "97EF9A6B4AA92C207CBAC39297404AF3", hash_generated_method = "53C81835998E739AEDA911E2BEA74CAD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.412 -0400", hash_original_method = "97EF9A6B4AA92C207CBAC39297404AF3", hash_generated_method = "53C81835998E739AEDA911E2BEA74CAD")
     private  HttpProtocolParams() {
         super();
         // ---------- Original Method ----------

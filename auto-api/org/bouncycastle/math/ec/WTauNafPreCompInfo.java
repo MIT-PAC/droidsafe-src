@@ -9,11 +9,11 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 class WTauNafPreCompInfo implements PreCompInfo {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.504 -0400", hash_original_field = "D6A1A1B6C8FBFB169D1DB96C4390357A", hash_generated_field = "0B1D7C097FC49C575EEE3BE315994E63")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.477 -0400", hash_original_field = "D6A1A1B6C8FBFB169D1DB96C4390357A", hash_generated_field = "0B1D7C097FC49C575EEE3BE315994E63")
 
     private ECPoint.F2m[] preComp = null;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.505 -0400", hash_original_method = "8D247B0F1F1EEAB774C9DD19688CF835", hash_generated_method = "B1359D434B9010FCCDA6440C95D74DBB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.478 -0400", hash_original_method = "8D247B0F1F1EEAB774C9DD19688CF835", hash_generated_method = "B1359D434B9010FCCDA6440C95D74DBB")
       WTauNafPreCompInfo(ECPoint.F2m[] preComp) {
         this.preComp = preComp;
         // ---------- Original Method ----------
@@ -21,12 +21,12 @@ class WTauNafPreCompInfo implements PreCompInfo {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:20.507 -0400", hash_original_method = "F3FA619DF98A2689238B8A15B3158B11", hash_generated_method = "ABFAA56221556F7E7AEB41C586DCCB99")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:21.478 -0400", hash_original_method = "F3FA619DF98A2689238B8A15B3158B11", hash_generated_method = "33662821ACC3125913DE46AF69F9846F")
     protected ECPoint.F2m[] getPreComp() {
-        ECPoint.F2m[] varB4EAC82CA7396A68D541C85D26508E83_1360265081 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1360265081 = preComp;
-        varB4EAC82CA7396A68D541C85D26508E83_1360265081.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1360265081;
+        ECPoint.F2m[] varB4EAC82CA7396A68D541C85D26508E83_1394466458 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1394466458 = preComp;
+        varB4EAC82CA7396A68D541C85D26508E83_1394466458.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1394466458;
         // ---------- Original Method ----------
         //return preComp;
     }

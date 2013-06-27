@@ -9,29 +9,29 @@ import droidsafe.runtime.*;
 import java.util.Iterator;
 
 class TimSort<T> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.958 -0400", hash_original_field = "0CC175B9C0F1B6A831C399E269772661", hash_generated_field = "CF7F5D48E7F71C306147BBEE1EA5A17F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.010 -0400", hash_original_field = "0CC175B9C0F1B6A831C399E269772661", hash_generated_field = "CF7F5D48E7F71C306147BBEE1EA5A17F")
 
     private T[] a;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.958 -0400", hash_original_field = "4A8A08F09D37B73795649038408B5F33", hash_generated_field = "A025EB897824D14A001F926C10174850")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.011 -0400", hash_original_field = "4A8A08F09D37B73795649038408B5F33", hash_generated_field = "A025EB897824D14A001F926C10174850")
 
     private Comparator<? super T> c;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.958 -0400", hash_original_field = "1723F00AEB55EB29D345BB8FC560DDDD", hash_generated_field = "4AEA7058F4222AE4711A0802F956E706")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.011 -0400", hash_original_field = "1723F00AEB55EB29D345BB8FC560DDDD", hash_generated_field = "4AEA7058F4222AE4711A0802F956E706")
 
     private int minGallop = MIN_GALLOP;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.958 -0400", hash_original_field = "FA816EDB83E95BF0C8DA580BDFD491EF", hash_generated_field = "C6E45FF9610B4696CAF8B5553FA688C6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.011 -0400", hash_original_field = "FA816EDB83E95BF0C8DA580BDFD491EF", hash_generated_field = "C6E45FF9610B4696CAF8B5553FA688C6")
 
     private T[] tmp;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.958 -0400", hash_original_field = "D756571CC98275F49C20580A59B44F17", hash_generated_field = "D6178E85D65285FC9BE783DCA3A89A35")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.011 -0400", hash_original_field = "D756571CC98275F49C20580A59B44F17", hash_generated_field = "D6178E85D65285FC9BE783DCA3A89A35")
 
     private int stackSize = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.958 -0400", hash_original_field = "BCD0032E9C5292693B10DFF6E98018C6", hash_generated_field = "A46172EB2BFB60FE7750E3A2D782A167")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.011 -0400", hash_original_field = "BCD0032E9C5292693B10DFF6E98018C6", hash_generated_field = "A46172EB2BFB60FE7750E3A2D782A167")
 
     private int[] runBase;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.958 -0400", hash_original_field = "00BAF48D4AB09F7E1E16965DEC3C2EED", hash_generated_field = "C560C98366AB8D77B05FAE57238ADA8D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.011 -0400", hash_original_field = "00BAF48D4AB09F7E1E16965DEC3C2EED", hash_generated_field = "C560C98366AB8D77B05FAE57238ADA8D")
 
     private int[] runLen;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.959 -0400", hash_original_method = "8363F88EAB5D9C5F21C7C4CB08C10AC9", hash_generated_method = "4FC00A317C9D9D5F22DD64B767E483FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.012 -0400", hash_original_method = "8363F88EAB5D9C5F21C7C4CB08C10AC9", hash_generated_method = "4FC00A317C9D9D5F22DD64B767E483FD")
     private  TimSort(T[] a, Comparator<? super T> c) {
         this.a = a;
         this.c = c;
@@ -172,7 +172,7 @@ class TimSort<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.991 -0400", hash_original_method = "4FF06135DA529EA5945D38DB9DEC9B0E", hash_generated_method = "FEFC76C70CAF77D41BBF6E81160EBCA3")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.024 -0400", hash_original_method = "4FF06135DA529EA5945D38DB9DEC9B0E", hash_generated_method = "FEFC76C70CAF77D41BBF6E81160EBCA3")
     private void pushRun(int runBase, int runLen) {
         this.runBase[stackSize] = runBase;
         this.runLen[stackSize] = runLen;
@@ -183,7 +183,7 @@ class TimSort<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.992 -0400", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "FF5A728369FAAAA218A73E83F69512EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.029 -0400", hash_original_method = "3156E5829AEB14A787F26082DFE50344", hash_generated_method = "FF5A728369FAAAA218A73E83F69512EC")
     private void mergeCollapse() {
         {
             int n;
@@ -211,7 +211,7 @@ class TimSort<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.992 -0400", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "BD499F03B86E4CD678033407C5F9DBAA")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.030 -0400", hash_original_method = "97921B5E4166F5AC1B7B582C04340D66", hash_generated_method = "BD499F03B86E4CD678033407C5F9DBAA")
     private void mergeForceCollapse() {
         {
             int n;
@@ -228,7 +228,7 @@ class TimSort<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.994 -0400", hash_original_method = "8940A54787C662CE81882AD52921A328", hash_generated_method = "C4FCC91E9E830F007657C68E8264CF45")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.032 -0400", hash_original_method = "8940A54787C662CE81882AD52921A328", hash_generated_method = "C4FCC91E9E830F007657C68E8264CF45")
     private void mergeAt(int i) {
         int base1;
         base1 = runBase[i];
@@ -345,7 +345,7 @@ class TimSort<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:53.996 -0400", hash_original_method = "28B33299F4BA824C1BCFC057E41834D8", hash_generated_method = "D96CECB30277E0419CB2C7E7C916CA48")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.045 -0400", hash_original_method = "28B33299F4BA824C1BCFC057E41834D8", hash_generated_method = "D52BCA53693A91DB3A80E56BD6E6CD68")
     private void mergeLo(int base1, int len1, int base2, int len2) {
         T[] a;
         a = this.a;
@@ -377,7 +377,7 @@ class TimSort<T> {
             count2 = 0;
             {
                 {
-                    boolean var30284DAA9B8FC2CE6CD6D011B163D57B_676091569 = (c.compare(a[cursor2], tmp[cursor1]) < 0);
+                    boolean var30284DAA9B8FC2CE6CD6D011B163D57B_619247240 = (c.compare(a[cursor2], tmp[cursor1]) < 0);
                     {
                         a[dest++] = a[cursor2++];
                         count1 = 0;
@@ -429,7 +429,7 @@ class TimSort<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.031 -0400", hash_original_method = "D6C962299FDFC629DCB3EC52DDA4C6D9", hash_generated_method = "924D318F9C08F42942144923CF9C97C6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.056 -0400", hash_original_method = "D6C962299FDFC629DCB3EC52DDA4C6D9", hash_generated_method = "4D8752BCF3C8C1765DCC79CF7B95F21E")
     private void mergeHi(int base1, int len1, int base2, int len2) {
         T[] a;
         a = this.a;
@@ -463,7 +463,7 @@ class TimSort<T> {
             count2 = 0;
             {
                 {
-                    boolean var29F75CD80C04BF9A1231FA9DE5EAB1E7_1825214747 = (c.compare(tmp[cursor2], a[cursor1]) < 0);
+                    boolean var29F75CD80C04BF9A1231FA9DE5EAB1E7_1581514920 = (c.compare(tmp[cursor2], a[cursor1]) < 0);
                     {
                         a[dest--] = a[cursor1--];
                         count2 = 0;
@@ -518,9 +518,9 @@ class TimSort<T> {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.032 -0400", hash_original_method = "DEB75D9E243CF808689902CC0AE95AB4", hash_generated_method = "A9DEB0AEE9880C470B74D8983536EAEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.057 -0400", hash_original_method = "DEB75D9E243CF808689902CC0AE95AB4", hash_generated_method = "70EB2B12CADD9038B931ECD50744DB4A")
     private T[] ensureCapacity(int minCapacity) {
-        T[] varB4EAC82CA7396A68D541C85D26508E83_1009073950 = null; //Variable for return #1
+        T[] varB4EAC82CA7396A68D541C85D26508E83_7302999 = null; //Variable for return #1
         {
             int newSize;
             newSize = minCapacity;
@@ -535,10 +535,10 @@ class TimSort<T> {
             newArray = (T[]) new Object[newSize];
             tmp = newArray;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1009073950 = tmp;
+        varB4EAC82CA7396A68D541C85D26508E83_7302999 = tmp;
         addTaint(minCapacity);
-        varB4EAC82CA7396A68D541C85D26508E83_1009073950.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1009073950;
+        varB4EAC82CA7396A68D541C85D26508E83_7302999.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_7302999;
         // ---------- Original Method ----------
         //if (tmp.length < minCapacity) {
             //int newSize = minCapacity;
@@ -560,16 +560,16 @@ class TimSort<T> {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.032 -0400", hash_original_field = "4A490259FC4AAE2038058967988E5B8B", hash_generated_field = "3931B083EBCAB8BFF212B05D7382794B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.058 -0400", hash_original_field = "4A490259FC4AAE2038058967988E5B8B", hash_generated_field = "3931B083EBCAB8BFF212B05D7382794B")
 
     private static int MIN_MERGE = 32;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.032 -0400", hash_original_field = "A6ABC415A6B00555997959B418653BE3", hash_generated_field = "4A5421B440C2BA29D0228B2FD860C79B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.058 -0400", hash_original_field = "A6ABC415A6B00555997959B418653BE3", hash_generated_field = "4A5421B440C2BA29D0228B2FD860C79B")
 
     private static int MIN_GALLOP = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.032 -0400", hash_original_field = "BA59E61BD2B58B5E9EC1C9B9EE84017A", hash_generated_field = "7A5CF663CEF691DAACC94837A499F835")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.065 -0400", hash_original_field = "BA59E61BD2B58B5E9EC1C9B9EE84017A", hash_generated_field = "7A5CF663CEF691DAACC94837A499F835")
 
     private static int INITIAL_TMP_STORAGE_LENGTH = 256;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:54.032 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:54.065 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "E83DF1E2E661A92B1AFDA8C473D190B2")
 
     private static boolean DEBUG = false;
 }

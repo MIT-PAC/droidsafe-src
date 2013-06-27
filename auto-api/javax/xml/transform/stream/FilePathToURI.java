@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 class FilePathToURI {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.996 -0400", hash_original_method = "B4CB27912F49612C4343E9F9CCDC4431", hash_generated_method = "B4CB27912F49612C4343E9F9CCDC4431")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.579 -0400", hash_original_method = "B4CB27912F49612C4343E9F9CCDC4431", hash_generated_method = "B4CB27912F49612C4343E9F9CCDC4431")
     public FilePathToURI ()
     {
         //Synthesized constructor
@@ -76,18 +76,19 @@ class FilePathToURI {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.997 -0400", hash_original_field = "EC27C865565761B258910863AEBE6454", hash_generated_field = "C3055AA40E79A60B3F36012420DA13AE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.582 -0400", hash_original_field = "EC27C865565761B258910863AEBE6454", hash_generated_field = "C3055AA40E79A60B3F36012420DA13AE")
 
     private static boolean gNeedEscaping[] = new boolean[128];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.997 -0400", hash_original_field = "801A04480E7C8A9F6D66781A50FAA4D8", hash_generated_field = "7379EBF750E11CD2741D418B75C71A4E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.582 -0400", hash_original_field = "801A04480E7C8A9F6D66781A50FAA4D8", hash_generated_field = "7379EBF750E11CD2741D418B75C71A4E")
 
     private static char[] gAfterEscaping1 = new char[128];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.997 -0400", hash_original_field = "2786D9DD9846BD1FEA660D58D7C7F7DD", hash_generated_field = "51C8C6ABABDB970B5C1CDF7641D930E8")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.582 -0400", hash_original_field = "2786D9DD9846BD1FEA660D58D7C7F7DD", hash_generated_field = "51C8C6ABABDB970B5C1CDF7641D930E8")
 
     private static char[] gAfterEscaping2 = new char[128];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:01.997 -0400", hash_original_field = "2A1B0B5BE6EA5931E26A3F1B94F7C043", hash_generated_field = "240D5A7B868C478BE4105A5F97E89D9A")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:03.582 -0400", hash_original_field = "2A1B0B5BE6EA5931E26A3F1B94F7C043", hash_generated_field = "561EB9873723994E4756634B4B25A3E8")
 
-    private static char[] gHexChs = ;
+    private static char[] gHexChs = {'0', '1', '2', '3', '4', '5', '6', '7',
+                                     '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
     static {
         for (int i = 0; i <= 0x1f; i++) {
             gNeedEscaping[i] = true;

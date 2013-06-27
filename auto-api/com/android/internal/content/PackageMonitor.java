@@ -15,39 +15,39 @@ import android.net.Uri;
 import java.util.HashSet;
 
 public abstract class PackageMonitor extends android.content.BroadcastReceiver {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.810 -0400", hash_original_field = "B09C448CB58F076C1DFDB1CB05D17B0F", hash_generated_field = "327872E9D71A4FBB076B68AEC4DC350D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.194 -0400", hash_original_field = "B09C448CB58F076C1DFDB1CB05D17B0F", hash_generated_field = "327872E9D71A4FBB076B68AEC4DC350D")
 
     HashSet<String> mUpdatingPackages = new HashSet<String>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.811 -0400", hash_original_field = "96F776CB2425CF2151700EBD6F59DD96", hash_generated_field = "B1FD6A03CA5DD472B118BDCF0E45CD8B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.194 -0400", hash_original_field = "96F776CB2425CF2151700EBD6F59DD96", hash_generated_field = "B1FD6A03CA5DD472B118BDCF0E45CD8B")
 
     Context mRegisteredContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.811 -0400", hash_original_field = "7CF62E51F014B8ED2623551D7B093816", hash_generated_field = "B67CEBC1AF1D5EACC126D5234F158FB7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.194 -0400", hash_original_field = "7CF62E51F014B8ED2623551D7B093816", hash_generated_field = "B67CEBC1AF1D5EACC126D5234F158FB7")
 
     String[] mDisappearingPackages;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.811 -0400", hash_original_field = "13B241196AAA8A067420A0EF5E59E8C0", hash_generated_field = "21E477742D97A7915E72E243DDD41277")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.194 -0400", hash_original_field = "13B241196AAA8A067420A0EF5E59E8C0", hash_generated_field = "21E477742D97A7915E72E243DDD41277")
 
     String[] mAppearingPackages;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.811 -0400", hash_original_field = "C93E85DD1086A81F6514D0A92B726D6A", hash_generated_field = "88C89D953D7E71C399160532B6A13FB5")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.194 -0400", hash_original_field = "C93E85DD1086A81F6514D0A92B726D6A", hash_generated_field = "88C89D953D7E71C399160532B6A13FB5")
 
     String[] mModifiedPackages;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.811 -0400", hash_original_field = "D88B5B0B76618E5C3152D4A18CBED4B2", hash_generated_field = "C19D1DDBEE9BCF07700D01399B1C0E55")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.198 -0400", hash_original_field = "D88B5B0B76618E5C3152D4A18CBED4B2", hash_generated_field = "C19D1DDBEE9BCF07700D01399B1C0E55")
 
     int mChangeType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.811 -0400", hash_original_field = "E80D2081992A1973A838D39262ECFFF4", hash_generated_field = "4D5ED9C037D8228AD58ABE76C369C35D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.198 -0400", hash_original_field = "E80D2081992A1973A838D39262ECFFF4", hash_generated_field = "4D5ED9C037D8228AD58ABE76C369C35D")
 
     boolean mSomePackagesChanged;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.811 -0400", hash_original_field = "C7A99A8EA0DA3E6AC71B259324B1C8CD", hash_generated_field = "2062FD0DE539271A0379A79E22B23E21")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.198 -0400", hash_original_field = "C7A99A8EA0DA3E6AC71B259324B1C8CD", hash_generated_field = "2062FD0DE539271A0379A79E22B23E21")
 
     String[] mTempArray = new String[1];
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.811 -0400", hash_original_method = "F34C1916D9BDCE721C31545D6BFA0910", hash_generated_method = "F34C1916D9BDCE721C31545D6BFA0910")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.198 -0400", hash_original_method = "F34C1916D9BDCE721C31545D6BFA0910", hash_generated_method = "F34C1916D9BDCE721C31545D6BFA0910")
     public PackageMonitor ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.819 -0400", hash_original_method = "683B22F5B66473FA3FFAF05FD8D82D9B", hash_generated_method = "0EEF2B74AAED9962A089B8BB342FE11F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.199 -0400", hash_original_method = "683B22F5B66473FA3FFAF05FD8D82D9B", hash_generated_method = "0EEF2B74AAED9962A089B8BB342FE11F")
     public void register(Context context, boolean externalStorage) {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Already registered");
@@ -72,7 +72,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.820 -0400", hash_original_method = "9518C25377E9F8A7716E17A7EA7A7E2F", hash_generated_method = "5F39F2AEC27195A60D9FF97380CA83FB")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.199 -0400", hash_original_method = "9518C25377E9F8A7716E17A7EA7A7E2F", hash_generated_method = "5F39F2AEC27195A60D9FF97380CA83FB")
     public void unregister() {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException("Not registered");
@@ -88,14 +88,14 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.820 -0400", hash_original_method = "3A1B53F551F3FC9600BD1567B19D5B62", hash_generated_method = "20511128A2C3CDFA02EE93E904170E8F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.199 -0400", hash_original_method = "3A1B53F551F3FC9600BD1567B19D5B62", hash_generated_method = "8AA7C6318F9ED3D4D13E370CD896BEDA")
      boolean isPackageUpdating(String packageName) {
         {
-            boolean var1C6EEE82839E4B40DD9D3814D4CD898D_505525747 = (mUpdatingPackages.contains(packageName));
+            boolean var1C6EEE82839E4B40DD9D3814D4CD898D_1925544206 = (mUpdatingPackages.contains(packageName));
         } //End block
         addTaint(packageName.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1729533881 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1729533881;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_471801446 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_471801446;
         // ---------- Original Method ----------
         //synchronized (mUpdatingPackages) {
             //return mUpdatingPackages.contains(packageName);
@@ -103,14 +103,14 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.821 -0400", hash_original_method = "C94BFF970D5BE6329B9B5E73EF9CE16C", hash_generated_method = "7D32BBC899657F96CB528A1D4FA46DA2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.200 -0400", hash_original_method = "C94BFF970D5BE6329B9B5E73EF9CE16C", hash_generated_method = "7D32BBC899657F96CB528A1D4FA46DA2")
     public void onBeginPackageChanges() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.822 -0400", hash_original_method = "39FE58D26F24B4456BFC90B3786DCD61", hash_generated_method = "89E81C6729E29ED21D65892232C174F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.200 -0400", hash_original_method = "39FE58D26F24B4456BFC90B3786DCD61", hash_generated_method = "89E81C6729E29ED21D65892232C174F7")
     public void onPackageAdded(String packageName, int uid) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(packageName.getTaint());
@@ -119,7 +119,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.822 -0400", hash_original_method = "0F3AB92CAC2DECB3AF2CEF56E76BE513", hash_generated_method = "EC7EEAB856BF7E5B806B904A9D198D4E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.200 -0400", hash_original_method = "0F3AB92CAC2DECB3AF2CEF56E76BE513", hash_generated_method = "EC7EEAB856BF7E5B806B904A9D198D4E")
     public void onPackageRemoved(String packageName, int uid) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(packageName.getTaint());
@@ -128,7 +128,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.822 -0400", hash_original_method = "70B1555D02BCE21F5F249AB3232813C5", hash_generated_method = "3081F49472F6EB4752CE9AFBF0867DC6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.200 -0400", hash_original_method = "70B1555D02BCE21F5F249AB3232813C5", hash_generated_method = "3081F49472F6EB4752CE9AFBF0867DC6")
     public void onPackageUpdateStarted(String packageName, int uid) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(packageName.getTaint());
@@ -137,7 +137,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.822 -0400", hash_original_method = "C1124FA7C0A54DF3B3E313F6E0508E79", hash_generated_method = "0D6786336F49DB1118663729EBEEED06")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.201 -0400", hash_original_method = "C1124FA7C0A54DF3B3E313F6E0508E79", hash_generated_method = "0D6786336F49DB1118663729EBEEED06")
     public void onPackageUpdateFinished(String packageName, int uid) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(packageName.getTaint());
@@ -146,7 +146,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.823 -0400", hash_original_method = "030682B94A5C17B98C68812D78EDA104", hash_generated_method = "859CCC8705BA7356F09B56CF06ED17F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.201 -0400", hash_original_method = "030682B94A5C17B98C68812D78EDA104", hash_generated_method = "859CCC8705BA7356F09B56CF06ED17F7")
     public void onPackageChanged(String packageName, int uid, String[] components) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(packageName.getTaint());
@@ -156,21 +156,21 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.823 -0400", hash_original_method = "EBFD761C242ABE2AA3537B2F7610A65A", hash_generated_method = "40DA90E14D3A8B4678275F119B5C99B9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.201 -0400", hash_original_method = "EBFD761C242ABE2AA3537B2F7610A65A", hash_generated_method = "0223A8A6A2730AA5DC189DF113FDB6F2")
     public boolean onHandleForceStop(Intent intent, String[] packages, int uid, boolean doit) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(intent.getTaint());
         addTaint(packages[0].getTaint());
         addTaint(uid);
         addTaint(doit);
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1468762601 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1468762601;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_916623581 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_916623581;
         // ---------- Original Method ----------
         //return false;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.823 -0400", hash_original_method = "D388436436DCC67D6B4275E67E6BEBD2", hash_generated_method = "84A0A7F7B06BF4C473C3A66F3411B8F7")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.217 -0400", hash_original_method = "D388436436DCC67D6B4275E67E6BEBD2", hash_generated_method = "84A0A7F7B06BF4C473C3A66F3411B8F7")
     public void onUidRemoved(int uid) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(uid);
@@ -178,7 +178,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.824 -0400", hash_original_method = "D0F5545F1CBA52AD5FDF8554424C6F7F", hash_generated_method = "89A934AA220D3884C367BD1A28FA7388")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.217 -0400", hash_original_method = "D0F5545F1CBA52AD5FDF8554424C6F7F", hash_generated_method = "89A934AA220D3884C367BD1A28FA7388")
     public void onPackagesAvailable(String[] packages) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(packages[0].getTaint());
@@ -186,7 +186,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.824 -0400", hash_original_method = "95C573D28E0FE5F1DA6F2C482B3FAE76", hash_generated_method = "F9811E999DE5495E50FB1FFF6D83955E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.218 -0400", hash_original_method = "95C573D28E0FE5F1DA6F2C482B3FAE76", hash_generated_method = "F9811E999DE5495E50FB1FFF6D83955E")
     public void onPackagesUnavailable(String[] packages) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(packages[0].getTaint());
@@ -194,7 +194,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.824 -0400", hash_original_method = "981D6CDBB84DA6444001057EF6BAA725", hash_generated_method = "08DDE20E43C9004875543CD37A539552")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.219 -0400", hash_original_method = "981D6CDBB84DA6444001057EF6BAA725", hash_generated_method = "08DDE20E43C9004875543CD37A539552")
     public void onPackageDisappeared(String packageName, int reason) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(packageName.getTaint());
@@ -203,7 +203,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.838 -0400", hash_original_method = "12BAED38AA9047ADF8438C1D2386A99B", hash_generated_method = "315FBFFF58D513B709DEB43F973A7AEC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.219 -0400", hash_original_method = "12BAED38AA9047ADF8438C1D2386A99B", hash_generated_method = "315FBFFF58D513B709DEB43F973A7AEC")
     public void onPackageAppeared(String packageName, int reason) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(packageName.getTaint());
@@ -212,7 +212,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.839 -0400", hash_original_method = "6245D80E856A5A5ACA0034EE7540D8FF", hash_generated_method = "3D568DB3448DF91ECDF0CACCD1B88248")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.219 -0400", hash_original_method = "6245D80E856A5A5ACA0034EE7540D8FF", hash_generated_method = "3D568DB3448DF91ECDF0CACCD1B88248")
     public void onPackageModified(String packageName) {
         //DSFIXME:  CODE0009: Possible callback target function detected
         addTaint(packageName.getTaint());
@@ -220,16 +220,16 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.839 -0400", hash_original_method = "17B0E80ECA0F203595AB08C03E582A6E", hash_generated_method = "AAEFB55985FEC39451BB179AA7661164")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.220 -0400", hash_original_method = "17B0E80ECA0F203595AB08C03E582A6E", hash_generated_method = "F7B957C65EA52867D510FCDC5E8DBD64")
     public boolean didSomePackagesChange() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1001142271 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1001142271;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1175009593 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1175009593;
         // ---------- Original Method ----------
         //return mSomePackagesChanged;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.843 -0400", hash_original_method = "67A9BEE4E526E413ED94D619C7BC0AAE", hash_generated_method = "87D38A71176370423ECD3359C2E1C96A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.220 -0400", hash_original_method = "67A9BEE4E526E413ED94D619C7BC0AAE", hash_generated_method = "617AE1A4AF23D3738A0B71B75435B4BC")
     public int isPackageAppearing(String packageName) {
         {
             {
@@ -237,14 +237,14 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
                 i = mAppearingPackages.length-1;
                 {
                     {
-                        boolean var73CECB124A21C13384E11AE38774A9C2_1649957758 = (packageName.equals(mAppearingPackages[i]));
+                        boolean var73CECB124A21C13384E11AE38774A9C2_1151613484 = (packageName.equals(mAppearingPackages[i]));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
         addTaint(packageName.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1676268365 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1676268365;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_586170703 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_586170703;
         // ---------- Original Method ----------
         //if (mAppearingPackages != null) {
             //for (int i=mAppearingPackages.length-1; i>=0; i--) {
@@ -257,16 +257,16 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.843 -0400", hash_original_method = "C232E85354F8FADEB8DAF25E13A8A2B6", hash_generated_method = "62B9655D0B407EA5C30F8C98F2F5FC8B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.227 -0400", hash_original_method = "C232E85354F8FADEB8DAF25E13A8A2B6", hash_generated_method = "852F9F244E3994D6739F6C65A56E7E42")
     public boolean anyPackagesAppearing() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1765313404 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1765313404;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_848695298 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_848695298;
         // ---------- Original Method ----------
         //return mAppearingPackages != null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.846 -0400", hash_original_method = "FFC1DE947346082A84A8C685D6562A3C", hash_generated_method = "14BFBCEB16B374CF4EC9590A9E2629CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.227 -0400", hash_original_method = "FFC1DE947346082A84A8C685D6562A3C", hash_generated_method = "3720FAF536E06F5A2255CE8399CB1FB2")
     public int isPackageDisappearing(String packageName) {
         {
             {
@@ -274,14 +274,14 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
                 i = mDisappearingPackages.length-1;
                 {
                     {
-                        boolean var98C28E4581365DDDA64CCA70AD94D1CF_853523112 = (packageName.equals(mDisappearingPackages[i]));
+                        boolean var98C28E4581365DDDA64CCA70AD94D1CF_1503875593 = (packageName.equals(mDisappearingPackages[i]));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
         addTaint(packageName.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1041359702 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1041359702;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1557979619 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1557979619;
         // ---------- Original Method ----------
         //if (mDisappearingPackages != null) {
             //for (int i=mDisappearingPackages.length-1; i>=0; i--) {
@@ -294,16 +294,16 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.847 -0400", hash_original_method = "732AD1F656A41076D7320338ABFAAB0C", hash_generated_method = "3764F0F72B2F0D5ED7F0DC48997A6B66")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.228 -0400", hash_original_method = "732AD1F656A41076D7320338ABFAAB0C", hash_generated_method = "323E67F037A9255C45BEBFFAA44A40EB")
     public boolean anyPackagesDisappearing() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1726835036 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1726835036;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1598730227 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1598730227;
         // ---------- Original Method ----------
         //return mDisappearingPackages != null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.847 -0400", hash_original_method = "1770EA26CD96789C8DEBC22C8B3E1D5A", hash_generated_method = "BD0D65C14F5B777400FA5A749EE2C832")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.228 -0400", hash_original_method = "1770EA26CD96789C8DEBC22C8B3E1D5A", hash_generated_method = "B7505BEF113CB354EAB119073C91368A")
     public boolean isPackageModified(String packageName) {
         {
             {
@@ -311,14 +311,14 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
                 i = mModifiedPackages.length-1;
                 {
                     {
-                        boolean varD7563A7BA33AD647E680AB77A2BB353A_308583579 = (packageName.equals(mModifiedPackages[i]));
+                        boolean varD7563A7BA33AD647E680AB77A2BB353A_605653887 = (packageName.equals(mModifiedPackages[i]));
                     } //End collapsed parenthetic
                 } //End block
             } //End collapsed parenthetic
         } //End block
         addTaint(packageName.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_108536399 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_108536399;
+        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1702505186 = getTaintBoolean();
+        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1702505186;
         // ---------- Original Method ----------
         //if (mModifiedPackages != null) {
             //for (int i=mModifiedPackages.length-1; i>=0; i--) {
@@ -331,32 +331,32 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.848 -0400", hash_original_method = "D5490034D4EF09CAB3BC7334BE26E552", hash_generated_method = "81CC0669B4A9021B8C9A7811BCBA1FD5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.231 -0400", hash_original_method = "D5490034D4EF09CAB3BC7334BE26E552", hash_generated_method = "81CC0669B4A9021B8C9A7811BCBA1FD5")
     public void onSomePackagesChanged() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.848 -0400", hash_original_method = "D8E0B204F7DD735407D0D5971428B1D2", hash_generated_method = "A04E6D7AE177AD771BA1E65021AB70B5")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.232 -0400", hash_original_method = "D8E0B204F7DD735407D0D5971428B1D2", hash_generated_method = "A04E6D7AE177AD771BA1E65021AB70B5")
     public void onFinishPackageChanges() {
         //DSFIXME:  CODE0009: Possible callback target function detected
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.851 -0400", hash_original_method = "19E02459BAFEB1E910E6AB68B93B5860", hash_generated_method = "6D1DE1395A7F69A32062141C36216E8C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.232 -0400", hash_original_method = "19E02459BAFEB1E910E6AB68B93B5860", hash_generated_method = "F5395C9DA11B060C9982B74C36644A06")
      String getPackageName(Intent intent) {
-        String varB4EAC82CA7396A68D541C85D26508E83_725420366 = null; //Variable for return #1
+        String varB4EAC82CA7396A68D541C85D26508E83_1643728009 = null; //Variable for return #1
         Uri uri;
         uri = intent.getData();
         String pkg;
         pkg = uri.getSchemeSpecificPart();
         pkg = null;
-        varB4EAC82CA7396A68D541C85D26508E83_725420366 = pkg;
+        varB4EAC82CA7396A68D541C85D26508E83_1643728009 = pkg;
         addTaint(intent.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_725420366.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_725420366;
+        varB4EAC82CA7396A68D541C85D26508E83_1643728009.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1643728009;
         // ---------- Original Method ----------
         //Uri uri = intent.getData();
         //String pkg = uri != null ? uri.getSchemeSpecificPart() : null;
@@ -364,7 +364,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.859 -0400", hash_original_method = "B895BCFF247B459848C20BC8F667143B", hash_generated_method = "269FF889B949615D3AD5D3B1C0B59D05")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.245 -0400", hash_original_method = "B895BCFF247B459848C20BC8F667143B", hash_generated_method = "9BD734270E30B565A037C85F37EDF9D2")
     @Override
     public void onReceive(Context context, Intent intent) {
         //DSFIXME:  CODE0009: Possible callback target function detected
@@ -374,7 +374,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
         String action;
         action = intent.getAction();
         {
-            boolean varC758E0B42D3DD3050E20E05A51E62C88_659062825 = (Intent.ACTION_PACKAGE_ADDED.equals(action));
+            boolean varC758E0B42D3DD3050E20E05A51E62C88_1659610775 = (Intent.ACTION_PACKAGE_ADDED.equals(action));
             {
                 String pkg;
                 pkg = getPackageName(intent);
@@ -385,7 +385,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
                     mAppearingPackages = mTempArray;
                     mTempArray[0] = pkg;
                     {
-                        boolean var7BE332234F92C72D5D8E83A7069C054D_169065780 = (intent.getBooleanExtra(Intent.EXTRA_REPLACING, false));
+                        boolean var7BE332234F92C72D5D8E83A7069C054D_1513001972 = (intent.getBooleanExtra(Intent.EXTRA_REPLACING, false));
                         {
                             mModifiedPackages = mTempArray;
                             mChangeType = PACKAGE_UPDATING;
@@ -406,7 +406,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
                 } //End block
             } //End block
             {
-                boolean var7FE8F03ED5A57A646466A782EE8A7678_954249567 = (Intent.ACTION_PACKAGE_REMOVED.equals(action));
+                boolean var7FE8F03ED5A57A646466A782EE8A7678_1890961054 = (Intent.ACTION_PACKAGE_REMOVED.equals(action));
                 {
                     String pkg;
                     pkg = getPackageName(intent);
@@ -416,7 +416,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
                         mDisappearingPackages = mTempArray;
                         mTempArray[0] = pkg;
                         {
-                            boolean varD96614F08400F12676EB97B123F098C8_853818151 = (intent.getBooleanExtra(Intent.EXTRA_REPLACING, false));
+                            boolean varD96614F08400F12676EB97B123F098C8_241467075 = (intent.getBooleanExtra(Intent.EXTRA_REPLACING, false));
                             {
                                 mChangeType = PACKAGE_UPDATING;
                                 onPackageUpdateStarted(pkg, uid);
@@ -431,7 +431,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
                     } //End block
                 } //End block
                 {
-                    boolean var4B374F8DCC748CA652C704B98E2EAC26_1503990196 = (Intent.ACTION_PACKAGE_CHANGED.equals(action));
+                    boolean var4B374F8DCC748CA652C704B98E2EAC26_823941301 = (Intent.ACTION_PACKAGE_CHANGED.equals(action));
                     {
                         String pkg;
                         pkg = getPackageName(intent);
@@ -448,7 +448,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
                         } //End block
                     } //End block
                     {
-                        boolean var01CB92245BEA95F00B8BFAF2FC70D5E9_332095392 = (Intent.ACTION_QUERY_PACKAGE_RESTART.equals(action));
+                        boolean var01CB92245BEA95F00B8BFAF2FC70D5E9_1862291168 = (Intent.ACTION_QUERY_PACKAGE_RESTART.equals(action));
                         {
                             mDisappearingPackages = intent.getStringArrayExtra(Intent.EXTRA_PACKAGES);
                             mChangeType = PACKAGE_TEMPORARY_CHANGE;
@@ -459,7 +459,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
                             setResultCode(Activity.RESULT_OK);
                         } //End block
                         {
-                            boolean varA511A63D55554313B83F88FDB7E57B20_2012189533 = (Intent.ACTION_PACKAGE_RESTARTED.equals(action));
+                            boolean varA511A63D55554313B83F88FDB7E57B20_1455629431 = (Intent.ACTION_PACKAGE_RESTARTED.equals(action));
                             {
                                 mDisappearingPackages = new String[] {getPackageName(intent)};
                                 mChangeType = PACKAGE_TEMPORARY_CHANGE;
@@ -467,12 +467,12 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
                     intent.getIntExtra(Intent.EXTRA_UID, 0), true);
                             } //End block
                             {
-                                boolean var2DADC886119177CD822FB435CFFE1B9C_5333415 = (Intent.ACTION_UID_REMOVED.equals(action));
+                                boolean var2DADC886119177CD822FB435CFFE1B9C_1240691563 = (Intent.ACTION_UID_REMOVED.equals(action));
                                 {
                                     onUidRemoved(intent.getIntExtra(Intent.EXTRA_UID, 0));
                                 } //End block
                                 {
-                                    boolean var08DAE7171E67029B9F1AA8F3C515A39B_1592263418 = (Intent.ACTION_EXTERNAL_APPLICATIONS_AVAILABLE.equals(action));
+                                    boolean var08DAE7171E67029B9F1AA8F3C515A39B_760569674 = (Intent.ACTION_EXTERNAL_APPLICATIONS_AVAILABLE.equals(action));
                                     {
                                         String[] pkgList;
                                         pkgList = intent.getStringArrayExtra(Intent.EXTRA_CHANGED_PACKAGE_LIST);
@@ -491,7 +491,7 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
                                         } //End block
                                     } //End block
                                     {
-                                        boolean var6B70FE5E5601D0C934CE3B9D6EE08A32_1564714519 = (Intent.ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE.equals(action));
+                                        boolean var6B70FE5E5601D0C934CE3B9D6EE08A32_329424509 = (Intent.ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE.equals(action));
                                         {
                                             String[] pkgList;
                                             pkgList = intent.getStringArrayExtra(Intent.EXTRA_CHANGED_PACKAGE_LIST);
@@ -527,13 +527,13 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.859 -0400", hash_original_field = "ADD687010810F378AC1172262214F72B", hash_generated_field = "155D728CB80F4F3E1301C57A675B8FAA")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.245 -0400", hash_original_field = "ADD687010810F378AC1172262214F72B", hash_generated_field = "155D728CB80F4F3E1301C57A675B8FAA")
 
     static IntentFilter sPackageFilt = new IntentFilter();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.859 -0400", hash_original_field = "7BFEDAAA7769D5E2B9820798BC4671A6", hash_generated_field = "F5D2889FDA48A2E0C11FDFF0920B197B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.246 -0400", hash_original_field = "7BFEDAAA7769D5E2B9820798BC4671A6", hash_generated_field = "F5D2889FDA48A2E0C11FDFF0920B197B")
 
     static IntentFilter sNonDataFilt = new IntentFilter();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.859 -0400", hash_original_field = "79CC67D7B228B7485B505FF576042DB6", hash_generated_field = "3D1DF2E10807A52B3926AC4FEB63E65F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.246 -0400", hash_original_field = "79CC67D7B228B7485B505FF576042DB6", hash_generated_field = "3D1DF2E10807A52B3926AC4FEB63E65F")
 
     static IntentFilter sExternalFilt = new IntentFilter();
     static {
@@ -549,16 +549,16 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
         sExternalFilt.addAction(Intent.ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE);
     }
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.859 -0400", hash_original_field = "0A2A1D7AE35F2478E185C5CBAE3E74E3", hash_generated_field = "8232CD067D5F85E52993832A4B17BC33")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.246 -0400", hash_original_field = "0A2A1D7AE35F2478E185C5CBAE3E74E3", hash_generated_field = "8232CD067D5F85E52993832A4B17BC33")
 
     public static final int PACKAGE_UNCHANGED = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.859 -0400", hash_original_field = "AD80D82CE1FF27E6FA135FB972B8D1D8", hash_generated_field = "88CE097186BDA0F0E034E77CD2A1A59F")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.246 -0400", hash_original_field = "AD80D82CE1FF27E6FA135FB972B8D1D8", hash_generated_field = "88CE097186BDA0F0E034E77CD2A1A59F")
 
     public static final int PACKAGE_UPDATING = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.859 -0400", hash_original_field = "4FB4EF0F3E3BB49087BD6AC6CFA97028", hash_generated_field = "FCC47572D8C8CADDCCAAF03ABBD81FDE")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.246 -0400", hash_original_field = "4FB4EF0F3E3BB49087BD6AC6CFA97028", hash_generated_field = "FCC47572D8C8CADDCCAAF03ABBD81FDE")
 
     public static final int PACKAGE_TEMPORARY_CHANGE = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:11.859 -0400", hash_original_field = "812D3F2E689D83894895868AFE56BA85", hash_generated_field = "B0ACEEAA3E4BD42CD194F3CE24202F4E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:13.246 -0400", hash_original_field = "812D3F2E689D83894895868AFE56BA85", hash_generated_field = "B0ACEEAA3E4BD42CD194F3CE24202F4E")
 
     public static final int PACKAGE_PERMANENT_CHANGE = 3;
 }

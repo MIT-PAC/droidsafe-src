@@ -15,20 +15,20 @@ import org.apache.http.params.HttpProtocolParams;
 
 public class RequestUserAgent implements HttpRequestInterceptor {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.318 -0400", hash_original_method = "C4ABF37EB88E79840E3C3C778B3D3723", hash_generated_method = "6AC3C7B8C84D6604FDB3259D42FE25C2")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.514 -0400", hash_original_method = "C4ABF37EB88E79840E3C3C778B3D3723", hash_generated_method = "6AC3C7B8C84D6604FDB3259D42FE25C2")
     public  RequestUserAgent() {
         super();
         // ---------- Original Method ----------
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:17.319 -0400", hash_original_method = "97A5868326343AB54CF8EB07ADAC3DCF", hash_generated_method = "2FC16676068876D99C5FEEB007F85FCE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:18.514 -0400", hash_original_method = "97A5868326343AB54CF8EB07ADAC3DCF", hash_generated_method = "93948506159F7CEBBDE84CDBB23C7414")
     public void process(final HttpRequest request, final HttpContext context) throws HttpException, IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("HTTP request may not be null");
         } //End block
         {
-            boolean var49D75A39221CB5928F53FD09F81E4344_612590757 = (!request.containsHeader(HTTP.USER_AGENT));
+            boolean var49D75A39221CB5928F53FD09F81E4344_1114768619 = (!request.containsHeader(HTTP.USER_AGENT));
             {
                 String useragent;
                 useragent = HttpProtocolParams.getUserAgent(request.getParams());

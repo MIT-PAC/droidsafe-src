@@ -15,58 +15,58 @@ import java.net.URLStreamHandler;
 
 public class FileHandler extends URLStreamHandler {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.796 -0400", hash_original_method = "6784E94C0D30F3330B20FF566B070BF0", hash_generated_method = "6784E94C0D30F3330B20FF566B070BF0")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.995 -0400", hash_original_method = "6784E94C0D30F3330B20FF566B070BF0", hash_generated_method = "6784E94C0D30F3330B20FF566B070BF0")
     public FileHandler ()
     {
         //Synthesized constructor
     }
 
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.797 -0400", hash_original_method = "9E19C679A0152E7A481321FB9FD94041", hash_generated_method = "4246E8A6B97A3245119F17076A03D13D")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:05.995 -0400", hash_original_method = "9E19C679A0152E7A481321FB9FD94041", hash_generated_method = "6590546E24BC053F4F52DF5DEEBF99F8")
     @Override
     public URLConnection openConnection(URL url) throws IOException {
-        URLConnection varB4EAC82CA7396A68D541C85D26508E83_1654686831 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_1654686831 = openConnection(url, null);
+        URLConnection varB4EAC82CA7396A68D541C85D26508E83_1564313307 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_1564313307 = openConnection(url, null);
         addTaint(url.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1654686831.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1654686831;
+        varB4EAC82CA7396A68D541C85D26508E83_1564313307.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1564313307;
         // ---------- Original Method ----------
         //return openConnection(url, null);
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.814 -0400", hash_original_method = "3680F869AEF91A8B3F794811BFCF54E6", hash_generated_method = "8A24540A1EF1C1C2F7F99644650241EC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.007 -0400", hash_original_method = "3680F869AEF91A8B3F794811BFCF54E6", hash_generated_method = "821503EE6CB1F423788592E8413BE278")
     @Override
     public URLConnection openConnection(URL url, Proxy proxy) throws IOException {
-        URLConnection varB4EAC82CA7396A68D541C85D26508E83_680293067 = null; //Variable for return #1
-        URLConnection varB4EAC82CA7396A68D541C85D26508E83_919830932 = null; //Variable for return #2
+        URLConnection varB4EAC82CA7396A68D541C85D26508E83_634964946 = null; //Variable for return #1
+        URLConnection varB4EAC82CA7396A68D541C85D26508E83_1428951163 = null; //Variable for return #2
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("url == null");
         } //End block
         String host;
         host = url.getHost();
         {
-            boolean var58FB74E7C7902299B2BF0C1488A5F499_781269481 = (host == null || host.isEmpty() || host.equalsIgnoreCase("localhost"));
+            boolean var58FB74E7C7902299B2BF0C1488A5F499_211304242 = (host == null || host.isEmpty() || host.equalsIgnoreCase("localhost"));
             {
-                varB4EAC82CA7396A68D541C85D26508E83_680293067 = new FileURLConnection(url);
+                varB4EAC82CA7396A68D541C85D26508E83_634964946 = new FileURLConnection(url);
             } //End block
         } //End collapsed parenthetic
         URL ftpURL;
         ftpURL = new URL("ftp", host, url.getFile());
-        varB4EAC82CA7396A68D541C85D26508E83_919830932 = (proxy == null) ? ftpURL.openConnection() : ftpURL.openConnection(proxy);
+        varB4EAC82CA7396A68D541C85D26508E83_1428951163 = (proxy == null) ? ftpURL.openConnection() : ftpURL.openConnection(proxy);
         addTaint(url.getTaint());
         addTaint(proxy.getTaint());
-        URLConnection varA7E53CE21691AB073D9660D615818899_1142360350; //Final return value
+        URLConnection varA7E53CE21691AB073D9660D615818899_499331720; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1142360350 = varB4EAC82CA7396A68D541C85D26508E83_680293067;
+                varA7E53CE21691AB073D9660D615818899_499331720 = varB4EAC82CA7396A68D541C85D26508E83_634964946;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1142360350 = varB4EAC82CA7396A68D541C85D26508E83_919830932;
+                varA7E53CE21691AB073D9660D615818899_499331720 = varB4EAC82CA7396A68D541C85D26508E83_1428951163;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1142360350.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1142360350;
+        varA7E53CE21691AB073D9660D615818899_499331720.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_499331720;
         // ---------- Original Method ----------
         //if (url == null) {
             //throw new IllegalArgumentException("url == null");
@@ -80,7 +80,7 @@ public class FileHandler extends URLStreamHandler {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:14:04.815 -0400", hash_original_method = "F97A1055288731314CAAC8F3AEEE2191", hash_generated_method = "9D6D115B93D16B055EB06DC793260A86")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:39:06.015 -0400", hash_original_method = "F97A1055288731314CAAC8F3AEEE2191", hash_generated_method = "9D6D115B93D16B055EB06DC793260A86")
     @Override
     protected void parseURL(URL url, String spec, int start, int end) {
         String parseString;

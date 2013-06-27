@@ -18,32 +18,32 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LocalActivityManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:50.768 -0400", hash_original_field = "7EF90D5DA2994166B5492D71C1F03D41", hash_generated_field = "421BA2E15FA30D31BA5B63CB3A7B5B13")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.135 -0400", hash_original_field = "7EF90D5DA2994166B5492D71C1F03D41", hash_generated_field = "421BA2E15FA30D31BA5B63CB3A7B5B13")
 
     private ActivityThread mActivityThread;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:50.768 -0400", hash_original_field = "08DEDF480C56042390504EEB5F2B5C59", hash_generated_field = "130E2721A67D8BF1BBFAC45B04E5FF8B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.136 -0400", hash_original_field = "08DEDF480C56042390504EEB5F2B5C59", hash_generated_field = "130E2721A67D8BF1BBFAC45B04E5FF8B")
 
     private Activity mParent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:50.769 -0400", hash_original_field = "9933B84C738DC45A33F44AE2EFCBD30F", hash_generated_field = "86C367C360550C8AC8371A7EA31B7C59")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.136 -0400", hash_original_field = "9933B84C738DC45A33F44AE2EFCBD30F", hash_generated_field = "86C367C360550C8AC8371A7EA31B7C59")
 
     private LocalActivityRecord mResumed;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:50.769 -0400", hash_original_field = "0833C3A14A2DB5DB7AA9AE27BC43FC3B", hash_generated_field = "8F1EE3677EBFE40762A4CAE819EF8E03")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.144 -0400", hash_original_field = "0833C3A14A2DB5DB7AA9AE27BC43FC3B", hash_generated_field = "8F1EE3677EBFE40762A4CAE819EF8E03")
 
     private Map<String, LocalActivityRecord> mActivities = new HashMap<String, LocalActivityRecord>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:50.787 -0400", hash_original_field = "6C1CEA265626AF5F032912F771B8DDD8", hash_generated_field = "1DC63AB1B203FC241AAF8567DAD24A66")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.144 -0400", hash_original_field = "6C1CEA265626AF5F032912F771B8DDD8", hash_generated_field = "1DC63AB1B203FC241AAF8567DAD24A66")
 
     private ArrayList<LocalActivityRecord> mActivityArray = new ArrayList<LocalActivityRecord>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:50.787 -0400", hash_original_field = "393A5CB6F38C86B61249037D93E02019", hash_generated_field = "0DD5EF490635B2544D1F4425BC363B4D")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.145 -0400", hash_original_field = "393A5CB6F38C86B61249037D93E02019", hash_generated_field = "0DD5EF490635B2544D1F4425BC363B4D")
 
     private boolean mSingleMode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:50.788 -0400", hash_original_field = "D787ED250F201D4304D525D94F66E645", hash_generated_field = "72BBBF947B4E9BBAA7A265FAF6F263E0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.145 -0400", hash_original_field = "D787ED250F201D4304D525D94F66E645", hash_generated_field = "72BBBF947B4E9BBAA7A265FAF6F263E0")
 
     private boolean mFinishing;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:50.788 -0400", hash_original_field = "4B17DBAB1845CF65BB0CCBF2EDC3AC05", hash_generated_field = "56550F8D73862FCFD4D73681A0E5EBC0")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.145 -0400", hash_original_field = "4B17DBAB1845CF65BB0CCBF2EDC3AC05", hash_generated_field = "56550F8D73862FCFD4D73681A0E5EBC0")
 
     private int mCurState = INITIALIZING;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:50.809 -0400", hash_original_method = "91223A19E58DDEF4278C27D9FB9EBEA3", hash_generated_method = "CA93C571C8C72C995063FD6E892CFE63")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.163 -0400", hash_original_method = "91223A19E58DDEF4278C27D9FB9EBEA3", hash_generated_method = "CA93C571C8C72C995063FD6E892CFE63")
     public  LocalActivityManager(Activity parent, boolean singleMode) {
         mActivityThread = ActivityThread.currentActivityThread();
         mParent = parent;
@@ -55,7 +55,7 @@ public class LocalActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:50.900 -0400", hash_original_method = "B12896933A50085371F00492E36D4EA5", hash_generated_method = "B86DDCC3A7FEE6D6A00F1FF4774707F4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.195 -0400", hash_original_method = "B12896933A50085371F00492E36D4EA5", hash_generated_method = "B86DDCC3A7FEE6D6A00F1FF4774707F4")
     private void moveToState(LocalActivityRecord r, int desiredState) {
         {
             HashMap<String, Object> lastNonConfigurationInstances;
@@ -130,7 +130,7 @@ public class LocalActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:50.915 -0400", hash_original_method = "D6EC4953476E7D98493712A14D0E2C8F", hash_generated_method = "75A550FD9109123928FFDB200692C0DE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.209 -0400", hash_original_method = "D6EC4953476E7D98493712A14D0E2C8F", hash_generated_method = "75A550FD9109123928FFDB200692C0DE")
     private void performPause(LocalActivityRecord r, boolean finishing) {
         boolean needState;
         needState = r.instanceState == null;
@@ -152,11 +152,11 @@ public class LocalActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.019 -0400", hash_original_method = "0A59627F0C289533278C9C6F1CF55EF3", hash_generated_method = "3F18EE57FD985E098252ACD07AD96BA8")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.246 -0400", hash_original_method = "0A59627F0C289533278C9C6F1CF55EF3", hash_generated_method = "CCE9505053BB4E860FCFDB5C2DD7AA23")
     public Window startActivity(String id, Intent intent) {
-        Window varB4EAC82CA7396A68D541C85D26508E83_193775336 = null; //Variable for return #1
-        Window varB4EAC82CA7396A68D541C85D26508E83_1888225902 = null; //Variable for return #2
-        Window varB4EAC82CA7396A68D541C85D26508E83_803838630 = null; //Variable for return #3
+        Window varB4EAC82CA7396A68D541C85D26508E83_525070240 = null; //Variable for return #1
+        Window varB4EAC82CA7396A68D541C85D26508E83_284877445 = null; //Variable for return #2
+        Window varB4EAC82CA7396A68D541C85D26508E83_298021365 = null; //Variable for return #3
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalStateException(
                     "Activities can't be added until the containing group has been created.");
@@ -195,12 +195,12 @@ public class LocalActivityManager {
         } //End block
         {
             {
-                boolean var3AF418AE03930BF4B5AC7F4EFFD6C8F8_1802321956 = (aInfo == r.activityInfo ||
+                boolean var3AF418AE03930BF4B5AC7F4EFFD6C8F8_790553686 = (aInfo == r.activityInfo ||
                     (aInfo.name.equals(r.activityInfo.name) &&
                             aInfo.packageName.equals(r.activityInfo.packageName)));
                 {
                     {
-                        boolean varE7665EB95381187563B763CB79320605_1496276214 = (aInfo.launchMode != ActivityInfo.LAUNCH_MULTIPLE ||
+                        boolean varE7665EB95381187563B763CB79320605_910556455 = (aInfo.launchMode != ActivityInfo.LAUNCH_MULTIPLE ||
                         (intent.getFlags()&Intent.FLAG_ACTIVITY_SINGLE_TOP) != 0);
                         {
                             ArrayList<Intent> intents;
@@ -212,11 +212,11 @@ public class LocalActivityManager {
                             {
                                 mResumed = r;
                             } //End block
-                            varB4EAC82CA7396A68D541C85D26508E83_193775336 = r.window;
+                            varB4EAC82CA7396A68D541C85D26508E83_525070240 = r.window;
                         } //End block
                     } //End collapsed parenthetic
                     {
-                        boolean var2867490B298E0AA2AA6B22C988E5A180_1465229759 = (sameIntent &&
+                        boolean var2867490B298E0AA2AA6B22C988E5A180_2138634159 = (sameIntent &&
                         (intent.getFlags()&Intent.FLAG_ACTIVITY_CLEAR_TOP) == 0);
                         {
                             r.intent = intent;
@@ -224,7 +224,7 @@ public class LocalActivityManager {
                             {
                                 mResumed = r;
                             } //End block
-                            varB4EAC82CA7396A68D541C85D26508E83_1888225902 = r.window;
+                            varB4EAC82CA7396A68D541C85D26508E83_284877445 = r.window;
                         } //End block
                     } //End collapsed parenthetic
                 } //End block
@@ -238,31 +238,31 @@ public class LocalActivityManager {
         {
             mResumed = r;
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_803838630 = r.window;
+        varB4EAC82CA7396A68D541C85D26508E83_298021365 = r.window;
         addTaint(id.getTaint());
         addTaint(intent.getTaint());
-        Window varA7E53CE21691AB073D9660D615818899_806548996; //Final return value
+        Window varA7E53CE21691AB073D9660D615818899_1454433317; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_806548996 = varB4EAC82CA7396A68D541C85D26508E83_193775336;
+                varA7E53CE21691AB073D9660D615818899_1454433317 = varB4EAC82CA7396A68D541C85D26508E83_525070240;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_806548996 = varB4EAC82CA7396A68D541C85D26508E83_1888225902;
+                varA7E53CE21691AB073D9660D615818899_1454433317 = varB4EAC82CA7396A68D541C85D26508E83_284877445;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_806548996 = varB4EAC82CA7396A68D541C85D26508E83_803838630;
+                varA7E53CE21691AB073D9660D615818899_1454433317 = varB4EAC82CA7396A68D541C85D26508E83_298021365;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_806548996.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_806548996;
+        varA7E53CE21691AB073D9660D615818899_1454433317.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_1454433317;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.023 -0400", hash_original_method = "9068A3C43CAB8D5C5EE5DD7E1741D6DA", hash_generated_method = "411CA44A621331CDE9434B8CAE58FE5F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.273 -0400", hash_original_method = "9068A3C43CAB8D5C5EE5DD7E1741D6DA", hash_generated_method = "E5B9E77DB649C568EA89521332A6F872")
     private Window performDestroy(LocalActivityRecord r, boolean finish) {
-        Window varB4EAC82CA7396A68D541C85D26508E83_2021051873 = null; //Variable for return #1
+        Window varB4EAC82CA7396A68D541C85D26508E83_732951322 = null; //Variable for return #1
         Window win;
         win = r.window;
         {
@@ -275,11 +275,11 @@ public class LocalActivityManager {
             r.instanceState = null;
         } //End block
         r.curState = DESTROYED;
-        varB4EAC82CA7396A68D541C85D26508E83_2021051873 = win;
+        varB4EAC82CA7396A68D541C85D26508E83_732951322 = win;
         addTaint(r.getTaint());
         addTaint(finish);
-        varB4EAC82CA7396A68D541C85D26508E83_2021051873.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_2021051873;
+        varB4EAC82CA7396A68D541C85D26508E83_732951322.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_732951322;
         // ---------- Original Method ----------
         //Window win;
         //win = r.window;
@@ -298,9 +298,9 @@ public class LocalActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.044 -0400", hash_original_method = "BE481800D6C8FAA522EB6457C475667B", hash_generated_method = "4373603EA99280C2B57C3991F5894259")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.283 -0400", hash_original_method = "BE481800D6C8FAA522EB6457C475667B", hash_generated_method = "10DCC6CDA831890661000D31EBCC89EB")
     public Window destroyActivity(String id, boolean finish) {
-        Window varB4EAC82CA7396A68D541C85D26508E83_402455125 = null; //Variable for return #1
+        Window varB4EAC82CA7396A68D541C85D26508E83_1282261359 = null; //Variable for return #1
         LocalActivityRecord r;
         r = mActivities.get(id);
         Window win;
@@ -312,11 +312,11 @@ public class LocalActivityManager {
                 mActivityArray.remove(r);
             } //End block
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_402455125 = win;
+        varB4EAC82CA7396A68D541C85D26508E83_1282261359 = win;
         addTaint(id.getTaint());
         addTaint(finish);
-        varB4EAC82CA7396A68D541C85D26508E83_402455125.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_402455125;
+        varB4EAC82CA7396A68D541C85D26508E83_1282261359.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1282261359;
         // ---------- Original Method ----------
         //LocalActivityRecord r = mActivities.get(id);
         //Window win = null;
@@ -331,50 +331,50 @@ public class LocalActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.052 -0400", hash_original_method = "DDB5384220B4A60C69552CE8336AA299", hash_generated_method = "5EE281A6BF13F92B2F4B5115E3C28D0A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.304 -0400", hash_original_method = "DDB5384220B4A60C69552CE8336AA299", hash_generated_method = "1C32FF69768D7A431D37F93E12803006")
     public Activity getCurrentActivity() {
-        Activity varB4EAC82CA7396A68D541C85D26508E83_247034212 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_247034212 = mResumed != null ? mResumed.activity : null;
-        varB4EAC82CA7396A68D541C85D26508E83_247034212.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_247034212;
+        Activity varB4EAC82CA7396A68D541C85D26508E83_737110125 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_737110125 = mResumed != null ? mResumed.activity : null;
+        varB4EAC82CA7396A68D541C85D26508E83_737110125.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_737110125;
         // ---------- Original Method ----------
         //return mResumed != null ? mResumed.activity : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.080 -0400", hash_original_method = "4729520AC64C6CA5B20AE92550B34CDA", hash_generated_method = "2A18DF46D768ABE0AAE1140779CDBAE4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.318 -0400", hash_original_method = "4729520AC64C6CA5B20AE92550B34CDA", hash_generated_method = "7DDFB57E707BE588674A45AAEEA629F3")
     public String getCurrentId() {
-        String varB4EAC82CA7396A68D541C85D26508E83_93039385 = null; //Variable for return #1
-        varB4EAC82CA7396A68D541C85D26508E83_93039385 = mResumed != null ? mResumed.id : null;
-        varB4EAC82CA7396A68D541C85D26508E83_93039385.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_93039385;
+        String varB4EAC82CA7396A68D541C85D26508E83_2005747319 = null; //Variable for return #1
+        varB4EAC82CA7396A68D541C85D26508E83_2005747319 = mResumed != null ? mResumed.id : null;
+        varB4EAC82CA7396A68D541C85D26508E83_2005747319.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_2005747319;
         // ---------- Original Method ----------
         //return mResumed != null ? mResumed.id : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.092 -0400", hash_original_method = "AAFBFF7BB86A9D1FFB973CDC0860D37E", hash_generated_method = "D6540924DF7A131069FFC0D94689556B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.333 -0400", hash_original_method = "AAFBFF7BB86A9D1FFB973CDC0860D37E", hash_generated_method = "BD87421195B83667D34027A838EE3617")
     public Activity getActivity(String id) {
-        Activity varB4EAC82CA7396A68D541C85D26508E83_1801316850 = null; //Variable for return #1
+        Activity varB4EAC82CA7396A68D541C85D26508E83_208727817 = null; //Variable for return #1
         LocalActivityRecord r;
         r = mActivities.get(id);
-        varB4EAC82CA7396A68D541C85D26508E83_1801316850 = r != null ? r.activity : null;
+        varB4EAC82CA7396A68D541C85D26508E83_208727817 = r != null ? r.activity : null;
         addTaint(id.getTaint());
-        varB4EAC82CA7396A68D541C85D26508E83_1801316850.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1801316850;
+        varB4EAC82CA7396A68D541C85D26508E83_208727817.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_208727817;
         // ---------- Original Method ----------
         //LocalActivityRecord r = mActivities.get(id);
         //return r != null ? r.activity : null;
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.520 -0400", hash_original_method = "012D05327CF4F67BB20181F9A8D8EBE2", hash_generated_method = "1D03ABDCE43BB1C93FF1D9ECB1C8B486")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.766 -0400", hash_original_method = "012D05327CF4F67BB20181F9A8D8EBE2", hash_generated_method = "E67D6C62EBA5A8B055B3587DA98760BD")
     public void dispatchCreate(Bundle state) {
         {
             {
-                Iterator<String> var7D8942AD40EC7B984421A58B76077F0C_1245192463 = (state.keySet()).iterator();
-                var7D8942AD40EC7B984421A58B76077F0C_1245192463.hasNext();
-                String id = var7D8942AD40EC7B984421A58B76077F0C_1245192463.next();
+                Iterator<String> var7D8942AD40EC7B984421A58B76077F0C_384209409 = (state.keySet()).iterator();
+                var7D8942AD40EC7B984421A58B76077F0C_384209409.hasNext();
+                String id = var7D8942AD40EC7B984421A58B76077F0C_384209409.next();
                 {
                     try 
                     {
@@ -422,9 +422,9 @@ public class LocalActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.547 -0400", hash_original_method = "5298101F1EDBDE2B5A84C3EFF961D34B", hash_generated_method = "4676D434DCD94F78193F53DB07BF197A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.779 -0400", hash_original_method = "5298101F1EDBDE2B5A84C3EFF961D34B", hash_generated_method = "4A3A9D31D0EB78F0B0B24E7FDB76A120")
     public Bundle saveInstanceState() {
-        Bundle varB4EAC82CA7396A68D541C85D26508E83_1374836857 = null; //Variable for return #1
+        Bundle varB4EAC82CA7396A68D541C85D26508E83_198291858 = null; //Variable for return #1
         Bundle state;
         state = null;
         int N;
@@ -449,9 +449,9 @@ public class LocalActivityManager {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1374836857 = state;
-        varB4EAC82CA7396A68D541C85D26508E83_1374836857.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1374836857;
+        varB4EAC82CA7396A68D541C85D26508E83_198291858 = state;
+        varB4EAC82CA7396A68D541C85D26508E83_198291858.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_198291858;
         // ---------- Original Method ----------
         //Bundle state = null;
         //final int N = mActivityArray.size();
@@ -474,7 +474,7 @@ public class LocalActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.562 -0400", hash_original_method = "7718D5666C8415D1D9EF0CF84FCCE3FD", hash_generated_method = "C87DF94DC89D287F30E004EB74F1012A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.781 -0400", hash_original_method = "7718D5666C8415D1D9EF0CF84FCCE3FD", hash_generated_method = "C87DF94DC89D287F30E004EB74F1012A")
     public void dispatchResume() {
         mCurState = RESUMED;
         {
@@ -508,7 +508,7 @@ public class LocalActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.574 -0400", hash_original_method = "85A6F8844A81DEE3E47CADEC5BC4757D", hash_generated_method = "E1A5EF7DD41ED32D954EE963DBE2A69A")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.804 -0400", hash_original_method = "85A6F8844A81DEE3E47CADEC5BC4757D", hash_generated_method = "E1A5EF7DD41ED32D954EE963DBE2A69A")
     public void dispatchPause(boolean finishing) {
         {
             mFinishing = true;
@@ -556,7 +556,7 @@ public class LocalActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.599 -0400", hash_original_method = "E93631F1674DB507A27EE53DB47C2CFE", hash_generated_method = "5C4D7FA035DD60D10EB8BEE00486AEA6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.806 -0400", hash_original_method = "E93631F1674DB507A27EE53DB47C2CFE", hash_generated_method = "5C4D7FA035DD60D10EB8BEE00486AEA6")
     public void dispatchStop() {
         mCurState = CREATED;
         int N;
@@ -580,9 +580,9 @@ public class LocalActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.617 -0400", hash_original_method = "070B049D0EB630832F296616C02C666D", hash_generated_method = "2F030069F4CEF7BC567A1D769FF835F4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.839 -0400", hash_original_method = "070B049D0EB630832F296616C02C666D", hash_generated_method = "5D19EE494E85BE18DA7524A1D0EE56BE")
     public HashMap<String,Object> dispatchRetainNonConfigurationInstance() {
-        HashMap<String,Object> varB4EAC82CA7396A68D541C85D26508E83_1750392160 = null; //Variable for return #1
+        HashMap<String,Object> varB4EAC82CA7396A68D541C85D26508E83_1862929954 = null; //Variable for return #1
         HashMap<String,Object> instanceMap;
         instanceMap = null;
         int N;
@@ -605,9 +605,9 @@ public class LocalActivityManager {
                 } //End block
             } //End block
         } //End collapsed parenthetic
-        varB4EAC82CA7396A68D541C85D26508E83_1750392160 = instanceMap;
-        varB4EAC82CA7396A68D541C85D26508E83_1750392160.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1750392160;
+        varB4EAC82CA7396A68D541C85D26508E83_1862929954 = instanceMap;
+        varB4EAC82CA7396A68D541C85D26508E83_1862929954.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1862929954;
         // ---------- Original Method ----------
         //HashMap<String,Object> instanceMap = null;
         //final int N = mActivityArray.size();
@@ -627,7 +627,7 @@ public class LocalActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.619 -0400", hash_original_method = "430AC76EEFA93CEEF93A908E5EA7F34D", hash_generated_method = "3A4DA8DA5947061AF99B48F41BC8F89F")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.840 -0400", hash_original_method = "430AC76EEFA93CEEF93A908E5EA7F34D", hash_generated_method = "3A4DA8DA5947061AF99B48F41BC8F89F")
     public void removeAllActivities() {
         dispatchDestroy(true);
         // ---------- Original Method ----------
@@ -635,7 +635,7 @@ public class LocalActivityManager {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.649 -0400", hash_original_method = "B2B8D2770115DF4D7579D9F1CB00CAA2", hash_generated_method = "10B153D5121B302BC550AD4FD5A2CB17")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.860 -0400", hash_original_method = "B2B8D2770115DF4D7579D9F1CB00CAA2", hash_generated_method = "10B153D5121B302BC550AD4FD5A2CB17")
     public void dispatchDestroy(boolean finishing) {
         int N;
         N = mActivityArray.size();
@@ -664,29 +664,29 @@ public class LocalActivityManager {
 
     
     private static class LocalActivityRecord extends Binder {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.650 -0400", hash_original_field = "B80BB7740288FDA1F201890375A60C8F", hash_generated_field = "960D0AAB4FA1CF92AEC1F360608BDEE3")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.861 -0400", hash_original_field = "B80BB7740288FDA1F201890375A60C8F", hash_generated_field = "960D0AAB4FA1CF92AEC1F360608BDEE3")
 
         String id;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.663 -0400", hash_original_field = "FA48C7D544739BA0E46430E4BA366662", hash_generated_field = "170FCA7A98A65D8003A3D20D5B3C245D")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.862 -0400", hash_original_field = "FA48C7D544739BA0E46430E4BA366662", hash_generated_field = "170FCA7A98A65D8003A3D20D5B3C245D")
 
         Intent intent;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.663 -0400", hash_original_field = "D189E59358BD9D02DDCA24FC5ED15564", hash_generated_field = "9CFCA1B7F8752ABB79A9EED9367C413A")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.862 -0400", hash_original_field = "D189E59358BD9D02DDCA24FC5ED15564", hash_generated_field = "9CFCA1B7F8752ABB79A9EED9367C413A")
 
         ActivityInfo activityInfo;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.667 -0400", hash_original_field = "69A256025F66E4CE5D15C9DD7225D357", hash_generated_field = "A63B0916BD4AC2611D1AF746A2DF045C")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.863 -0400", hash_original_field = "69A256025F66E4CE5D15C9DD7225D357", hash_generated_field = "A63B0916BD4AC2611D1AF746A2DF045C")
 
         Activity activity;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.667 -0400", hash_original_field = "05B8C74CBD96FBF2DE4C1A352702FBF4", hash_generated_field = "C8345ED8E0FB49346B128B9846AFDDB2")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.863 -0400", hash_original_field = "05B8C74CBD96FBF2DE4C1A352702FBF4", hash_generated_field = "C8345ED8E0FB49346B128B9846AFDDB2")
 
         Window window;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.668 -0400", hash_original_field = "06C66EE96790DDD78972EC0CDAFFD64B", hash_generated_field = "F4B69932E4B52B5DB7DD5C9BD2D7B407")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.881 -0400", hash_original_field = "06C66EE96790DDD78972EC0CDAFFD64B", hash_generated_field = "F4B69932E4B52B5DB7DD5C9BD2D7B407")
 
         Bundle instanceState;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.668 -0400", hash_original_field = "44E6D71A116525FC588F63D6E8C41B70", hash_generated_field = "6D133C9482705F97D3CEA539075FF242")
+        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.882 -0400", hash_original_field = "44E6D71A116525FC588F63D6E8C41B70", hash_generated_field = "6D133C9482705F97D3CEA539075FF242")
 
         int curState = RESTORED;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.691 -0400", hash_original_method = "E1D83503B31583A6BAE5696926B0F492", hash_generated_method = "102BDDA6481BC598610972B4C2EC5CBD")
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.890 -0400", hash_original_method = "E1D83503B31583A6BAE5696926B0F492", hash_generated_method = "102BDDA6481BC598610972B4C2EC5CBD")
           LocalActivityRecord(String _id, Intent _intent) {
             id = _id;
             intent = _intent;
@@ -700,28 +700,28 @@ public class LocalActivityManager {
 
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.692 -0400", hash_original_field = "83EA09192E0C282E2EE25C2995B328BB", hash_generated_field = "561B8A558D3A42C3B33C04580A3E9F98")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.904 -0400", hash_original_field = "83EA09192E0C282E2EE25C2995B328BB", hash_generated_field = "561B8A558D3A42C3B33C04580A3E9F98")
 
     private static String TAG = "LocalActivityManager";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.692 -0400", hash_original_field = "6225589B7095A2A8B4D13D7070C07695", hash_generated_field = "318E208AAF5321A27E7D01AA2760853C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.905 -0400", hash_original_field = "6225589B7095A2A8B4D13D7070C07695", hash_generated_field = "318E208AAF5321A27E7D01AA2760853C")
 
     private static boolean localLOGV = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.702 -0400", hash_original_field = "DE23D3AA8471CD4DDA012207F0D50709", hash_generated_field = "0B2DA7319143ACD26A29A21C9AC527B7")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.905 -0400", hash_original_field = "DE23D3AA8471CD4DDA012207F0D50709", hash_generated_field = "0B2DA7319143ACD26A29A21C9AC527B7")
 
     static int RESTORED = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.703 -0400", hash_original_field = "4F895127A3A22BBA182ACBEB79FC5CFC", hash_generated_field = "A15A7CA86386F089167CF88F0D9B4111")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.906 -0400", hash_original_field = "4F895127A3A22BBA182ACBEB79FC5CFC", hash_generated_field = "A15A7CA86386F089167CF88F0D9B4111")
 
     static int INITIALIZING = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.703 -0400", hash_original_field = "D2E10AAAA5735CF15EBCA4B42956602D", hash_generated_field = "A25AD14CA9FE52D634195F0634EFB329")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.907 -0400", hash_original_field = "D2E10AAAA5735CF15EBCA4B42956602D", hash_generated_field = "A25AD14CA9FE52D634195F0634EFB329")
 
     static int CREATED = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.704 -0400", hash_original_field = "F63885AC73DC066964A0D8FBBF99F4F2", hash_generated_field = "4B730B9DC872DBA84529B08F41A05759")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.916 -0400", hash_original_field = "F63885AC73DC066964A0D8FBBF99F4F2", hash_generated_field = "4B730B9DC872DBA84529B08F41A05759")
 
     static int STARTED = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.722 -0400", hash_original_field = "6FD312330E9A73FE8BF601E49D23FE90", hash_generated_field = "2830E66123A7879F3EA7767096C7EDF4")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.917 -0400", hash_original_field = "6FD312330E9A73FE8BF601E49D23FE90", hash_generated_field = "2830E66123A7879F3EA7767096C7EDF4")
 
     static int RESUMED = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:11:51.723 -0400", hash_original_field = "ADEAA8410EE7B6B6683433F7946A3920", hash_generated_field = "B0109FAF45ACCA3A97490CED2617F281")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:53.918 -0400", hash_original_field = "ADEAA8410EE7B6B6683433F7946A3920", hash_generated_field = "B0109FAF45ACCA3A97490CED2617F281")
 
     static int DESTROYED = 5;
 }

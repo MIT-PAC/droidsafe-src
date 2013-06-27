@@ -13,7 +13,7 @@ import java.text.ParseException;
 
 public class ViaParser extends HeaderParser {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.452 -0400", hash_original_method = "0CA9F50F0D44148E6CD64450736B4031", hash_generated_method = "A595FA4AF354454E04B84C7828F56E64")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.411 -0400", hash_original_method = "0CA9F50F0D44148E6CD64450736B4031", hash_generated_method = "A595FA4AF354454E04B84C7828F56E64")
     public  ViaParser(String via) {
         super(via);
         addTaint(via.getTaint());
@@ -21,7 +21,7 @@ public class ViaParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.455 -0400", hash_original_method = "16747522FA7D80CA65EEE675350A9BF1", hash_generated_method = "AB2626686D9A6EC63ED495A950EFFDAC")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.423 -0400", hash_original_method = "16747522FA7D80CA65EEE675350A9BF1", hash_generated_method = "AB2626686D9A6EC63ED495A950EFFDAC")
     public  ViaParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
@@ -29,7 +29,7 @@ public class ViaParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.461 -0400", hash_original_method = "2208496A4921623C92FF093043E5D238", hash_generated_method = "6BB6FC53890676A6652A7D2A35D994CE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.427 -0400", hash_original_method = "2208496A4921623C92FF093043E5D238", hash_generated_method = "6A7B2958887FF9A9D07091BBFA0D6B7B")
     private void parseVia(Via v) throws ParseException {
         lexer.match(TokenTypes.ID);
         Token protocolName;
@@ -62,7 +62,7 @@ public class ViaParser extends HeaderParser {
         v.setSentBy(hostPort);
         this.lexer.SPorHT();
         {
-            boolean var96A32AC0A30F05473A254B92D685A530_1847690109 = (lexer.lookAhead(0) == ';');
+            boolean var96A32AC0A30F05473A254B92D685A530_381154346 = (lexer.lookAhead(0) == ';');
             {
                 this.lexer.consume(1);
                 this.lexer.SPorHT();
@@ -71,7 +71,7 @@ public class ViaParser extends HeaderParser {
                 String name;
                 name = nameValue.getName();
                 {
-                    boolean var5AC1D29C9E01A98D010A256EE655A472_1082738388 = (name.equals(Via.BRANCH));
+                    boolean var5AC1D29C9E01A98D010A256EE655A472_1085763668 = (name.equals(Via.BRANCH));
                     {
                         String branchId;
                         branchId = (String) nameValue.getValueAsObject();
@@ -83,7 +83,7 @@ public class ViaParser extends HeaderParser {
             } //End block
         } //End collapsed parenthetic
         {
-            boolean var95FD7756D0F4D66FE88CED204A89FE7A_613307954 = (lexer.lookAhead(0) == '(');
+            boolean var95FD7756D0F4D66FE88CED204A89FE7A_1791236200 = (lexer.lookAhead(0) == '(');
             {
                 this.lexer.selectLexer("charLexer");
                 lexer.consume(1);
@@ -118,11 +118,11 @@ public class ViaParser extends HeaderParser {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.490 -0400", hash_original_method = "5AA78E39B6EC64AD2F4CBC59769995CB", hash_generated_method = "3494C78F1587CB7B4F23736BA713C9E9")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.429 -0400", hash_original_method = "5AA78E39B6EC64AD2F4CBC59769995CB", hash_generated_method = "EB72F3DF6D36C9317916ACBB2F8FA81A")
     protected NameValue nameValue() throws ParseException {
-        NameValue varB4EAC82CA7396A68D541C85D26508E83_386845510 = null; //Variable for return #1
-        NameValue varB4EAC82CA7396A68D541C85D26508E83_74004153 = null; //Variable for return #2
-        NameValue varB4EAC82CA7396A68D541C85D26508E83_2117548660 = null; //Variable for return #3
+        NameValue varB4EAC82CA7396A68D541C85D26508E83_1693594191 = null; //Variable for return #1
+        NameValue varB4EAC82CA7396A68D541C85D26508E83_566546548 = null; //Variable for return #2
+        NameValue varB4EAC82CA7396A68D541C85D26508E83_1868554569 = null; //Variable for return #3
         dbg_enter("nameValue");
         try 
         {
@@ -142,13 +142,13 @@ public class ViaParser extends HeaderParser {
                     String str;
                     str = null;
                     {
-                        boolean varC5C0FF43AD91B5B0075AF6BA19AF8C36_748065185 = (name.getTokenValue().compareToIgnoreCase(Via.RECEIVED) == 0);
+                        boolean varC5C0FF43AD91B5B0075AF6BA19AF8C36_925484196 = (name.getTokenValue().compareToIgnoreCase(Via.RECEIVED) == 0);
                         {
                             str = lexer.byteStringNoSemicolon();
                         } //End block
                         {
                             {
-                                boolean var57818337835E12BAD166BBE7198517E8_1254044496 = (lexer.lookAhead(0) == '\"');
+                                boolean var57818337835E12BAD166BBE7198517E8_131475513 = (lexer.lookAhead(0) == '\"');
                                 {
                                     str = lexer.quotedString();
                                     quoted = true;
@@ -166,44 +166,44 @@ public class ViaParser extends HeaderParser {
                     nv = new NameValue(name.getTokenValue()
                             .toLowerCase(), str);
                     nv.setQuotedValue();
-                    varB4EAC82CA7396A68D541C85D26508E83_386845510 = nv;
+                    varB4EAC82CA7396A68D541C85D26508E83_1693594191 = nv;
                 } //End block
                 {
-                    varB4EAC82CA7396A68D541C85D26508E83_74004153 = new NameValue(name.getTokenValue().toLowerCase(),
+                    varB4EAC82CA7396A68D541C85D26508E83_566546548 = new NameValue(name.getTokenValue().toLowerCase(),
                             null);
                 } //End block
             } //End block
             catch (ParseException ex)
             {
-                varB4EAC82CA7396A68D541C85D26508E83_2117548660 = new NameValue(name.getTokenValue(), null);
+                varB4EAC82CA7396A68D541C85D26508E83_1868554569 = new NameValue(name.getTokenValue(), null);
             } //End block
         } //End block
         finally 
         {
             dbg_leave("nameValue");
         } //End block
-        NameValue varA7E53CE21691AB073D9660D615818899_1871255434; //Final return value
+        NameValue varA7E53CE21691AB073D9660D615818899_785976887; //Final return value
         switch (DroidSafeAndroidRuntime.switchControl) {
             case 1: //Assign result for return ordinal #1
-                varA7E53CE21691AB073D9660D615818899_1871255434 = varB4EAC82CA7396A68D541C85D26508E83_386845510;
+                varA7E53CE21691AB073D9660D615818899_785976887 = varB4EAC82CA7396A68D541C85D26508E83_1693594191;
                 break;
             case 2: //Assign result for return ordinal #2
-                varA7E53CE21691AB073D9660D615818899_1871255434 = varB4EAC82CA7396A68D541C85D26508E83_74004153;
+                varA7E53CE21691AB073D9660D615818899_785976887 = varB4EAC82CA7396A68D541C85D26508E83_566546548;
                 break;
             default:
-                varA7E53CE21691AB073D9660D615818899_1871255434 = varB4EAC82CA7396A68D541C85D26508E83_2117548660;
+                varA7E53CE21691AB073D9660D615818899_785976887 = varB4EAC82CA7396A68D541C85D26508E83_1868554569;
                 break;
         }
-        varA7E53CE21691AB073D9660D615818899_1871255434.addTaint(getTaint()); //Add taint from parent
-        return varA7E53CE21691AB073D9660D615818899_1871255434;
+        varA7E53CE21691AB073D9660D615818899_785976887.addTaint(getTaint()); //Add taint from parent
+        return varA7E53CE21691AB073D9660D615818899_785976887;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:35.491 -0400", hash_original_method = "2B03679359A52BF0E5FCCEF061A24457", hash_generated_method = "EED906B6B5CF086A071ED6041B89D2B4")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:34.439 -0400", hash_original_method = "2B03679359A52BF0E5FCCEF061A24457", hash_generated_method = "3C26F0616AF9C6E817631BFF5B9B5B98")
     public SIPHeader parse() throws ParseException {
-        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1696221663 = null; //Variable for return #1
+        SIPHeader varB4EAC82CA7396A68D541C85D26508E83_1000316630 = null; //Variable for return #1
         dbg_enter("parse");
         try 
         {
@@ -220,25 +220,25 @@ public class ViaParser extends HeaderParser {
                 viaList.add(v);
                 this.lexer.SPorHT();
                 {
-                    boolean varBB6C606F08DEB32F536FD814D9250A9A_315981916 = (this.lexer.lookAhead(0) == ',');
+                    boolean varBB6C606F08DEB32F536FD814D9250A9A_2141912610 = (this.lexer.lookAhead(0) == ',');
                     {
                         this.lexer.consume(1);
                         this.lexer.SPorHT();
                     } //End block
                 } //End collapsed parenthetic
                 {
-                    boolean var292F6FF60BF4A0F7195BDD598E5CCBD3_1413546644 = (this.lexer.lookAhead(0) == '\n');
+                    boolean var292F6FF60BF4A0F7195BDD598E5CCBD3_86413922 = (this.lexer.lookAhead(0) == '\n');
                 } //End collapsed parenthetic
             } //End block
             this.lexer.match('\n');
-            varB4EAC82CA7396A68D541C85D26508E83_1696221663 = viaList;
+            varB4EAC82CA7396A68D541C85D26508E83_1000316630 = viaList;
         } //End block
         finally 
         {
             dbg_leave("parse");
         } //End block
-        varB4EAC82CA7396A68D541C85D26508E83_1696221663.addTaint(getTaint()); //Add taint from parent
-        return varB4EAC82CA7396A68D541C85D26508E83_1696221663;
+        varB4EAC82CA7396A68D541C85D26508E83_1000316630.addTaint(getTaint()); //Add taint from parent
+        return varB4EAC82CA7396A68D541C85D26508E83_1000316630;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }

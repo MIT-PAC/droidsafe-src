@@ -15,32 +15,32 @@ import java.util.Map;
 import java.util.Set;
 
 public final class BinaryHprofWriter {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "7E68DA75B9A11053C85FBA5DDEFD4449", hash_generated_field = "F6789153277D04B710C8FC8F6CD54F9E")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.575 -0400", hash_original_field = "7E68DA75B9A11053C85FBA5DDEFD4449", hash_generated_field = "F6789153277D04B710C8FC8F6CD54F9E")
 
     private int nextStringId = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "C84BDAB09B513196433B1BAEBF02636F", hash_generated_field = "7A760F4F16EAFCB07FE0A0FC4C3F75E3")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.586 -0400", hash_original_field = "C84BDAB09B513196433B1BAEBF02636F", hash_generated_field = "7A760F4F16EAFCB07FE0A0FC4C3F75E3")
 
     private int nextClassId = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "E8225D3D919F19BF647928E1C35BAC9C", hash_generated_field = "E479771D08904C609A002C4DAE48E586")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.586 -0400", hash_original_field = "E8225D3D919F19BF647928E1C35BAC9C", hash_generated_field = "E479771D08904C609A002C4DAE48E586")
 
     private int nextStackFrameId = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "C6F94A0430429BC5B5CBDD661134864F", hash_generated_field = "130E1C8239A1EF37871DA358B76C8FC6")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.586 -0400", hash_original_field = "C6F94A0430429BC5B5CBDD661134864F", hash_generated_field = "130E1C8239A1EF37871DA358B76C8FC6")
 
     private Map<String, Integer> stringToId = new HashMap<String, Integer>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "5AF1F4E411FFF4CB8F713A02E8256963", hash_generated_field = "2CDC1154225A35F08445DD38968FE14B")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.586 -0400", hash_original_field = "5AF1F4E411FFF4CB8F713A02E8256963", hash_generated_field = "2CDC1154225A35F08445DD38968FE14B")
 
     private Map<String, Integer> classNameToId = new HashMap<String, Integer>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "48E7FAE6A0D04CC3B01B707722B6D2C1", hash_generated_field = "D42AE6CBA5C52160FA35A05676E6290C")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.586 -0400", hash_original_field = "48E7FAE6A0D04CC3B01B707722B6D2C1", hash_generated_field = "D42AE6CBA5C52160FA35A05676E6290C")
 
     private Map<StackTraceElement, Integer> stackFrameToId = new HashMap<StackTraceElement, Integer>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "8D777F385D3DFEC8815D20F7496026DC", hash_generated_field = "BD98D42EB76BD47A6FDE7B8FA850AB03")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.586 -0400", hash_original_field = "8D777F385D3DFEC8815D20F7496026DC", hash_generated_field = "BD98D42EB76BD47A6FDE7B8FA850AB03")
 
     private HprofData data;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.147 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "58B7027288BADB051D787F0275726007")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.586 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "58B7027288BADB051D787F0275726007")
 
     private DataOutputStream out;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.148 -0400", hash_original_method = "732DAB84FABC53991CAEE3EC9AA68C95", hash_generated_method = "C306B4BCFF5195975397838E8E1DDCB6")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.587 -0400", hash_original_method = "732DAB84FABC53991CAEE3EC9AA68C95", hash_generated_method = "C306B4BCFF5195975397838E8E1DDCB6")
     private  BinaryHprofWriter(HprofData data, OutputStream outputStream) {
         this.data = data;
         this.out = new DataOutputStream(outputStream);
@@ -55,16 +55,16 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.256 -0400", hash_original_method = "6C7AC0DF0B31CD08E559C12305128F3F", hash_generated_method = "8E97FFAD9087A74214EFB167B447620B")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.681 -0400", hash_original_method = "6C7AC0DF0B31CD08E559C12305128F3F", hash_generated_method = "5F49E2E52AB9AFA67F094C8768E4BD19")
     private void write() throws IOException {
         try 
         {
             writeHeader(data.getStartMillis());
             writeControlSettings(data.getFlags(), data.getDepth());
             {
-                Iterator<HprofData.ThreadEvent> var070E69574E1A624F954887941AC708CA_52522392 = (data.getThreadHistory()).iterator();
-                var070E69574E1A624F954887941AC708CA_52522392.hasNext();
-                HprofData.ThreadEvent event = var070E69574E1A624F954887941AC708CA_52522392.next();
+                Iterator<HprofData.ThreadEvent> var070E69574E1A624F954887941AC708CA_1110887226 = (data.getThreadHistory()).iterator();
+                var070E69574E1A624F954887941AC708CA_1110887226.hasNext();
+                HprofData.ThreadEvent event = var070E69574E1A624F954887941AC708CA_1110887226.next();
                 {
                     writeThreadEvent(event);
                 } //End block
@@ -74,9 +74,9 @@ public final class BinaryHprofWriter {
             int total;
             total = 0;
             {
-                Iterator<HprofData.Sample> varA18F9CCB2314E9522801AE336380C59F_1983390669 = (samples).iterator();
-                varA18F9CCB2314E9522801AE336380C59F_1983390669.hasNext();
-                HprofData.Sample sample = varA18F9CCB2314E9522801AE336380C59F_1983390669.next();
+                Iterator<HprofData.Sample> varA18F9CCB2314E9522801AE336380C59F_10440985 = (samples).iterator();
+                varA18F9CCB2314E9522801AE336380C59F_10440985.hasNext();
+                HprofData.Sample sample = varA18F9CCB2314E9522801AE336380C59F_10440985.next();
                 {
                     total += sample.count;
                     writeStackTrace(sample.stackTrace);
@@ -108,7 +108,7 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.257 -0400", hash_original_method = "C85B61C59E3F834AB2B5E220076F97DE", hash_generated_method = "309CBD5602C849BC5E57B886A266C33C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.682 -0400", hash_original_method = "C85B61C59E3F834AB2B5E220076F97DE", hash_generated_method = "309CBD5602C849BC5E57B886A266C33C")
     private void writeHeader(long dumpTimeInMilliseconds) throws IOException {
         out.writeBytes(BinaryHprof.MAGIC + "1.0.2");
         out.writeByte(0);
@@ -123,7 +123,7 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.257 -0400", hash_original_method = "FDE35A19003ED22B657F91A2F0E06CCE", hash_generated_method = "DF4BAF35069C74F3F635C5AF381B8F69")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.683 -0400", hash_original_method = "FDE35A19003ED22B657F91A2F0E06CCE", hash_generated_method = "DF4BAF35069C74F3F635C5AF381B8F69")
     private void writeControlSettings(int flags, int depth) throws IOException {
         {
             if (DroidSafeAndroidRuntime.control) throw new IllegalArgumentException("depth too large for binary hprof: "
@@ -149,7 +149,7 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.270 -0400", hash_original_method = "1F5D47BDA1DF5C3350AF092C7A31D89B", hash_generated_method = "0F2DE3230EC283F197093DE4A687E2FD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.686 -0400", hash_original_method = "1F5D47BDA1DF5C3350AF092C7A31D89B", hash_generated_method = "0F2DE3230EC283F197093DE4A687E2FD")
     private void writeThreadEvent(HprofData.ThreadEvent e) throws IOException {
         //Begin case START 
         writeStartThread(e);
@@ -172,7 +172,7 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.271 -0400", hash_original_method = "8E01CAF6795D5E83C54B68F6912FFEBF", hash_generated_method = "C96A5BC4B9C6E8C783868B281C72CC85")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.687 -0400", hash_original_method = "8E01CAF6795D5E83C54B68F6912FFEBF", hash_generated_method = "C96A5BC4B9C6E8C783868B281C72CC85")
     private void writeStartThread(HprofData.ThreadEvent e) throws IOException {
         int threadNameId;
         threadNameId = writeString(e.threadName);
@@ -206,7 +206,7 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.271 -0400", hash_original_method = "22EC0A4C26BDEF90544F91DCC7CD0649", hash_generated_method = "42F889CD6216B33A9528B3493A8EF14C")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.687 -0400", hash_original_method = "22EC0A4C26BDEF90544F91DCC7CD0649", hash_generated_method = "42F889CD6216B33A9528B3493A8EF14C")
     private void writeStopThread(HprofData.ThreadEvent e) throws IOException {
         writeRecordHeader(BinaryHprof.Tag.END_THREAD,
                           0,
@@ -221,7 +221,7 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.272 -0400", hash_original_method = "676873B3FD0126014DC640E27218ACDD", hash_generated_method = "429DB836B976CD9E29C8E8C78981F5FE")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.687 -0400", hash_original_method = "676873B3FD0126014DC640E27218ACDD", hash_generated_method = "429DB836B976CD9E29C8E8C78981F5FE")
     private void writeRecordHeader(BinaryHprof.Tag hprofTag,
                                    int timeDeltaInMicroseconds,
                                    int recordLength) throws IOException {
@@ -247,7 +247,7 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.282 -0400", hash_original_method = "444AE2A435FAF86B0F2CBA448766AD4E", hash_generated_method = "C4A51450BBCA14F0C5623683FB3F2463")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.688 -0400", hash_original_method = "444AE2A435FAF86B0F2CBA448766AD4E", hash_generated_method = "C4A51450BBCA14F0C5623683FB3F2463")
     private void writeId(int id) throws IOException {
         out.writeInt(id);
         addTaint(id);
@@ -256,7 +256,7 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.282 -0400", hash_original_method = "F126C5267DAD0F96A8C03752944B8779", hash_generated_method = "59A87E24B7F99229671863CAFAE09707")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.688 -0400", hash_original_method = "F126C5267DAD0F96A8C03752944B8779", hash_generated_method = "A0CD5EA0F0A2CD32633A4FA87628F326")
     private int writeString(String string) throws IOException {
         Integer identifier;
         identifier = stringToId.get(string);
@@ -271,8 +271,8 @@ public final class BinaryHprofWriter {
         out.writeInt(id);
         out.write(bytes, 0, bytes.length);
         addTaint(string.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749478074 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749478074;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_194163045 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_194163045;
         // ---------- Original Method ----------
         //if (string == null) {
             //return 0;
@@ -293,7 +293,7 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.325 -0400", hash_original_method = "759EEA3A3B19BFF3937058AF4EFC13EB", hash_generated_method = "F172998EF61A57782840C58C0F92E944")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.740 -0400", hash_original_method = "759EEA3A3B19BFF3937058AF4EFC13EB", hash_generated_method = "F95DEE033C1761371777A527042BFA73")
     private void writeCpuSamples(int totalSamples, Set<HprofData.Sample> samples) throws IOException {
         int samplesCount;
         samplesCount = samples.size();
@@ -301,9 +301,9 @@ public final class BinaryHprofWriter {
         out.writeInt(totalSamples);
         out.writeInt(samplesCount);
         {
-            Iterator<HprofData.Sample> varA18F9CCB2314E9522801AE336380C59F_1049600965 = (samples).iterator();
-            varA18F9CCB2314E9522801AE336380C59F_1049600965.hasNext();
-            HprofData.Sample sample = varA18F9CCB2314E9522801AE336380C59F_1049600965.next();
+            Iterator<HprofData.Sample> varA18F9CCB2314E9522801AE336380C59F_1209828472 = (samples).iterator();
+            varA18F9CCB2314E9522801AE336380C59F_1209828472.hasNext();
+            HprofData.Sample sample = varA18F9CCB2314E9522801AE336380C59F_1209828472.next();
             {
                 out.writeInt(sample.count);
                 out.writeInt(sample.stackTrace.stackTraceId);
@@ -326,7 +326,7 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.348 -0400", hash_original_method = "AA7BB7F509E670C633C84E0D44DE5DDB", hash_generated_method = "9BB8E029536B2D44F750E1EEEADB8554")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.757 -0400", hash_original_method = "AA7BB7F509E670C633C84E0D44DE5DDB", hash_generated_method = "9BB8E029536B2D44F750E1EEEADB8554")
     private void writeStackTrace(HprofData.StackTrace stackTrace) throws IOException {
         int frames;
         frames = stackTrace.stackFrames.length;
@@ -370,7 +370,7 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.348 -0400", hash_original_method = "564218335BC7BDEEE42DF1829D6316AF", hash_generated_method = "FD5F81E9570F82DF5B350D6668985756")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.758 -0400", hash_original_method = "564218335BC7BDEEE42DF1829D6316AF", hash_generated_method = "ED02FAA9763C32D8C0A563C78997AB40")
     private int writeLoadClass(String className) throws IOException {
         Integer identifier;
         identifier = classNameToId.get(className);
@@ -387,8 +387,8 @@ public final class BinaryHprofWriter {
         out.writeInt(0);
         writeId(classNameId);
         addTaint(className.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_22244096 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_22244096;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_831359984 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_831359984;
         // ---------- Original Method ----------
         //Integer identifier = classNameToId.get(className);
         //if (identifier != null) {
@@ -408,7 +408,7 @@ public final class BinaryHprofWriter {
     }
 
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:29.349 -0400", hash_original_method = "0C83F2A39C21D86EF68CFCB925D16EF6", hash_generated_method = "04279863176494CF27F6C7BCD8DF19CD")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:27.772 -0400", hash_original_method = "0C83F2A39C21D86EF68CFCB925D16EF6", hash_generated_method = "2A7D0E34C05019BAE07BBB89F9431760")
     private int writeStackFrame(StackTraceElement stackFrame) throws IOException {
         Integer identifier;
         identifier = stackFrameToId.get(stackFrame);
@@ -431,8 +431,8 @@ public final class BinaryHprofWriter {
         out.writeInt(classId);
         out.writeInt(stackFrame.getLineNumber());
         addTaint(stackFrame.getTaint());
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_705481587 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_705481587;
+        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1280512805 = getTaintInt();
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1280512805;
         // ---------- Original Method ----------
         //Integer identifier = stackFrameToId.get(stackFrame);
         //if (identifier != null) {

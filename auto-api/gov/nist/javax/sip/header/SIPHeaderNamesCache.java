@@ -13,7 +13,7 @@ import java.lang.reflect.Modifier;
 
 public abstract class SIPHeaderNamesCache {
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.490 -0400", hash_original_method = "8D520759A4CF14512CFF6A3164E1C68E", hash_generated_method = "8D520759A4CF14512CFF6A3164E1C68E")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.562 -0400", hash_original_method = "8D520759A4CF14512CFF6A3164E1C68E", hash_generated_method = "8D520759A4CF14512CFF6A3164E1C68E")
     public SIPHeaderNamesCache ()
     {
         //Synthesized constructor
@@ -31,7 +31,7 @@ public abstract class SIPHeaderNamesCache {
     }
 
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:13:32.491 -0400", hash_original_field = "7EA7D47C7AEAA930B2D0AB7396FF38A8", hash_generated_field = "D81593484E2E32F5AC9C98D10C141029")
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:38:31.562 -0400", hash_original_field = "7EA7D47C7AEAA930B2D0AB7396FF38A8", hash_generated_field = "D81593484E2E32F5AC9C98D10C141029")
 
     private static HashMap lowercaseMap = new HashMap();
     static {
