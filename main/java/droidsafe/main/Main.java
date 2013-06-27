@@ -165,7 +165,7 @@ public class Main {
 
         if (Config.v().target.equals("specdump")) {
             logger.info("Converting RCFG to SSL and dumping...");
-            RCFGToSSL.run();
+            RCFGToSSL.run(false);
             SecuritySpecification spec = RCFGToSSL.v().getSpec();
 /*
             if (spec != null) {
@@ -176,6 +176,8 @@ public class Main {
 
 
         } else if (Config.v().target.equals("confcheck")) {
+            logger.info("Converting RCFG to SSL ...");
+            RCFGToSSL.run(true);
             logger.error("Not implemented yet!");
         }
 

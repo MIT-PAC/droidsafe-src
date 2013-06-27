@@ -78,8 +78,14 @@ public class RCFGToSSL {
 		return v;
 	}
 	
-	public static void run() {
-		v = new RCFGToSSL();
+	/**
+	 * Convert the rCFT to an SSL.
+	 * 
+	 * If conformance is true, then we are going to use the SSL for conformance checking, so group the same 
+	 * method of a Input event
+	 */
+	public static void run(boolean conformance) {
+		v = new RCFGToSSL(conformance);
 		
 		v.createSSL(RCFG.v());
 		
@@ -97,8 +103,8 @@ public class RCFGToSSL {
         */
 	}
 	
-	protected RCFGToSSL() {
-		spec = new SecuritySpecification();	
+	protected RCFGToSSL(boolean conformance) {
+		spec = new SecuritySpecification(conformance);	
 	}
 	
 	public SecuritySpecification getSpec() {
@@ -110,7 +116,7 @@ public class RCFGToSSL {
 		    logger.info("Converting rCFG Node: " + node);
 		    Method ie = makeInputEventMethod(node);
 			for (OutputEvent oe : node.getOutputEvents())
-				spec.addToInputEventCombine(ie, methodsFromOutputEvent(oe));
+				spec.addOutputEventToInputEvent(ie, methodsFromOutputEvent(oe));
 		}
 	}
 	
