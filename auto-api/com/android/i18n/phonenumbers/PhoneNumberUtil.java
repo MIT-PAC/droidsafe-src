@@ -3355,11 +3355,5 @@ public class PhoneNumberUtil {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.320 -0400", hash_original_field = "A81ED48CF13BC1CB56AE4320709DE841", hash_generated_field = "90932A776869C6233A72E88783493EDF")
 
     private static PhoneNumberUtil instance = null;
-    // orphaned legacy method
-    public Iterator<PhoneNumberMatch> iterator() {
-        return new PhoneNumberMatcher(
-            PhoneNumberUtil.this, text, defaultRegion, leniency, maxTries);
-      }
-    
 }
 

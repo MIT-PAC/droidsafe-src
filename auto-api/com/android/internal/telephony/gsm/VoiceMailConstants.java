@@ -89,7 +89,7 @@ class VoiceMailConstants {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.967 -0400", hash_original_method = "F2B6258CF868D3537F2007BF45D05D11", hash_generated_method = "2077AC4D9D6134AD9F7FBD4352E6F364")
     private void loadVoiceMail() {
-        FileReader vmReader;
+        FileReader vmReader = null;
         final File vmFile = new File(Environment.getRootDirectory(),
                 PARTNER_VOICEMAIL_PATH);
         try 

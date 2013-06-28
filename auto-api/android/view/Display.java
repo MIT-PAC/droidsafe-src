@@ -105,7 +105,7 @@ public class Display {
                 wm.getDisplaySize(outSize);
                 CompatibilityInfo ci;
                 {
-                    boolean var6BC58437C431C9232DA2904BF16DEF2E_1906501820 = (doCompat && (ci=mCompatibilityInfo.getIfNeeded()) != null);
+                    if(doCompat && (ci=mCompatibilityInfo.getIfNeeded()) != null)
                     {
                         {
                             mTmpMetrics.noncompatWidthPixels = outSize.x;

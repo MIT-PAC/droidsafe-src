@@ -286,7 +286,7 @@ public class WebChromeClient {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.761 -0400", hash_original_method = "15B2ED72F970B566935619473880B5EF", hash_generated_method = "3844D390DEF5E107112D8354E2C24CFC")
     public void getVisitedHistory(ValueCallback<String[]> callback) {
-        addTaint(callback[0].getTaint());
+        addTaint(callback.getTaint());
         // ---------- Original Method ----------
     }
 

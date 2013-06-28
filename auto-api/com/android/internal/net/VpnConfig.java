@@ -141,28 +141,5 @@ public class VpnConfig implements Parcelable {
             return new VpnConfig[size];
         }
     };
-    // orphaned legacy method
-    @Override
-        public VpnConfig createFromParcel(Parcel in) {
-            VpnConfig config = new VpnConfig();
-            config.user = in.readString();
-            config.interfaze = in.readString();
-            config.session = in.readString();
-            config.mtu = in.readInt();
-            config.addresses = in.readString();
-            config.routes = in.readString();
-            config.dnsServers = in.createStringArrayList();
-            config.searchDomains = in.createStringArrayList();
-            config.configureIntent = in.readParcelable(null);
-            config.startTime = in.readLong();
-            return config;
-        }
-    
-    // orphaned legacy method
-    @Override
-        public VpnConfig[] newArray(int size) {
-            return new VpnConfig[size];
-        }
-    
 }
 

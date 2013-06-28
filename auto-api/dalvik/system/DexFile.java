@@ -129,7 +129,9 @@ public final class DexFile {
 
     
     private static String[] getClassNameList(int cookie) {
-                //DSFIXME:  This shouldn't happen!
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
     }
 
     

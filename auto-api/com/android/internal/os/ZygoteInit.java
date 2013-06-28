@@ -498,7 +498,7 @@ public class ZygoteInit {
 
     
     static FileDescriptor createFileDescriptor(int fd) throws IOException {
-                //DSFIXME:  This shouldn't happen!
+    	return new FileDescriptor();
     }
 
     

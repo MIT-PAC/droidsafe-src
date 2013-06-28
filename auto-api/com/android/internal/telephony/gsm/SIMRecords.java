@@ -744,9 +744,7 @@ public class SIMRecords extends IccRecords {
                     {
                         String mccmncCode = imsi.substring(0, 6);
                         {
-                            Iterator<String> varC240E69CE119782E8F47CC07C68C68DD_1300712988 = (MCCMNC_CODES_HAVING_3DIGITS_MNC).iterator();
-                            varC240E69CE119782E8F47CC07C68C68DD_1300712988.hasNext();
-                            String mccmnc = varC240E69CE119782E8F47CC07C68C68DD_1300712988.next();
+                            String mccmnc = MCCMNC_CODES_HAVING_3DIGITS_MNC[0];
                             {
                                 {
                                     boolean var84BDA82F133A3C6DFBD3E95E8608ED9C_1658156434 = (mccmnc.equals(mccmncCode));

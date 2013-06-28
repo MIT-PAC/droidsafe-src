@@ -9236,7 +9236,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.294 -0400", hash_original_method = "C7D338FF64B881B2FAA82154B2896288", hash_generated_method = "C211C5C405AAE9953CCBBEEF22D45B31")
     private Rect nativeCacheHitNodeBounds() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	return new Rect();
     }
 
     
@@ -9266,7 +9266,7 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.295 -0400", hash_original_method = "843882909A38B2FC0D8F4867EE2AC0A0", hash_generated_method = "E271E918D4C574FDDE4719E4B98A8B2B")
     private Rect nativeCursorNodeBounds() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	return new Rect();
     }
 
     
@@ -9300,13 +9300,14 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.296 -0400", hash_original_method = "CB263EC43145C659054742CE0640D198", hash_generated_method = "2045A184BB97A2996B1887CC917B0804")
     private Point nativeCursorPosition() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	// DSFIXME: information source
+    	return new Point();
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.296 -0400", hash_original_method = "05985317D344F6F01EE48FCED9442B85", hash_generated_method = "3E24BE9E7EBDB8C5312CC587887CD85C")
     private String nativeCursorText() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	return new String();
     }
 
     
@@ -9437,19 +9438,25 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "86B0A32819E6798AA0F2F34418D25901", hash_generated_method = "482EB255509BA82D443BAA9D71623788")
      String nativeFocusCandidateName() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "784E4422EBCAC3915206737F2EF978E9", hash_generated_method = "E9FE505188BFAFC647C681A775DCAAFD")
     private Rect nativeFocusCandidateNodeBounds() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Rect r = new Rect();
+    	r.addTaint(taint);
+    	return r;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "D493BA74B0D04E6E35C47B87F2973345", hash_generated_method = "8CA80E2A60FEEA9061A61B09DA68625A")
     private Rect nativeFocusCandidatePaddingRect() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Rect r = new Rect();
+    	r.addTaint(taint);
+    	return r;
     }
 
     
@@ -9462,7 +9469,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "AA9102676E28CA1EE920093EBAB8030A", hash_generated_method = "B8D2D3434495629B87849A0DDE9761CA")
     private String nativeFocusCandidateText() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
     }
 
     
@@ -9503,7 +9512,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.301 -0400", hash_original_method = "899095159EA7E211C628ECE871CC9E5E", hash_generated_method = "65244A088D15DCA1F0C3C7F2D973DFD4")
     private Rect nativeFocusNodeBounds() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Rect r = new Rect();
+    	r.addTaint(taint);
+    	return r;
     }
 
     
@@ -9516,13 +9527,17 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.302 -0400", hash_original_method = "6FF91C20F7461FC76B80187F5F0D17F4", hash_generated_method = "68114054688AC2ACF3B41A1E50F28F3A")
     private Rect nativeGetCursorRingBounds() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Rect r = new Rect();
+    	r.addTaint(taint);
+    	return r;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.302 -0400", hash_original_method = "B8443DF7AEBDC7EB5C8A06305D57CB4B", hash_generated_method = "CAEC1387621E6EAAC0BBE851878D90E6")
     private String nativeGetSelection() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
     }
 
     
@@ -9554,7 +9569,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.302 -0400", hash_original_method = "D8C9CADCD399CD2B0D790CF6CE41AE1A", hash_generated_method = "68E20D0E121FE807EF3A683540460D64")
     private String nativeImageURI(int x, int y) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
     }
 
     
@@ -9565,7 +9582,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.303 -0400", hash_original_method = "BE6268DADB8C47F15DBBDF42ECD48F77", hash_generated_method = "0EF9BAF6479325B7AFB630E9F288D638")
     private Rect nativeLayerBounds(int layer) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Rect r = new Rect();
+    	r.addTaint(taint);
+    	return r;
     }
 
     
@@ -9624,7 +9643,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.304 -0400", hash_original_method = "F89A02659B72CC4FB73CF3CB2176116A", hash_generated_method = "4FCCB0475B387C1F5318EC92944C45EC")
     private Point nativeSelectableText() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Point p = new Point();
+    	p.addTaint(taint);
+    	return p;
     }
 
     
@@ -9740,7 +9761,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.308 -0400", hash_original_method = "BB5930F93E7BD301B785F374DEB45F7F", hash_generated_method = "59C253F3D708B1AEFB61B74588B1BC4B")
     private Rect nativeSubtractLayers(Rect content) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	Rect r = new Rect();
+    	r.addTaint(taint);
+    	return r;
     }
 
     
@@ -9862,7 +9885,9 @@ public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobal
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.311 -0400", hash_original_method = "11B431686EC785B8746B288CFEF25EFA", hash_generated_method = "2CDC971A436EF25C108C6D2B163E982B")
      String nativeGetProperty(String key) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
     }
 
     

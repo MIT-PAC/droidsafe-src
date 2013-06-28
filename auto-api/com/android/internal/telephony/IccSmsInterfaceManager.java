@@ -181,7 +181,7 @@ public abstract class IccSmsInterfaceManager extends ISms.Stub {
             } //End block
         } //End collapsed parenthetic
         varB4EAC82CA7396A68D541C85D26508E83_667137003 = ret;
-        addTaint(messages[0].getTaint());
+        addTaint(messages.getTaint());
         varB4EAC82CA7396A68D541C85D26508E83_667137003.addTaint(getTaint()); //Add taint from parent
         return varB4EAC82CA7396A68D541C85D26508E83_667137003;
         // ---------- Original Method ----------

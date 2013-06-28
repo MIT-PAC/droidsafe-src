@@ -467,8 +467,7 @@ public class ActionMenuItem implements MenuItem {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.787 -0400", hash_original_method = "493F4A0F304908668D2BEC1F7D0E334B", hash_generated_method = "BA08ADEE346BC051C6218CEDE04E3807")
     public MenuItem setActionView(View actionView) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(actionView.getTaint());
+    	throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
@@ -488,8 +487,7 @@ public class ActionMenuItem implements MenuItem {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.788 -0400", hash_original_method = "38A20BA0D11F10392D85500804B1A43F", hash_generated_method = "448A9257775AF5F62A7776AE4EE1E431")
     @Override
     public MenuItem setActionView(int resId) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(resId);
+    	throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
@@ -510,8 +508,7 @@ public class ActionMenuItem implements MenuItem {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:33.789 -0400", hash_original_method = "4ABFFD9ECFCE20F6052063E7AA9E942A", hash_generated_method = "49BE8A6BA2F3F3547E77B8CDDDCF7D34")
     @Override
     public MenuItem setActionProvider(ActionProvider actionProvider) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(actionProvider.getTaint());
+    	throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }

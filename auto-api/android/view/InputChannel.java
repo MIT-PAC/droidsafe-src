@@ -23,7 +23,10 @@ public final class InputChannel implements Parcelable {
 
     
     private static InputChannel[] nativeOpenInputChannelPair(String name) {
-                //DSFIXME:  This shouldn't happen!
+    	InputChannel i = new InputChannel();
+    	i.addTaint(name.getTaint());
+    	InputChannel[] iarr = {i};
+    	return iarr;
     }
 
     
@@ -49,9 +52,10 @@ public final class InputChannel implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.950 -0400", hash_original_method = "CA39384861C04125EB204839D7970E78", hash_generated_method = "55C683646032EAF5E4A7B598D440C2F0")
     private String nativeGetName() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.950 -0400", hash_original_method = "AAF6A8EEDB66DCFEB1E035B63F14BAD7", hash_generated_method = "7B07B9CB0BB6168167263DFA5C36C7E7")
     @Override

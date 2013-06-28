@@ -143,7 +143,7 @@ class TextLine {
                 char[] chars = mChars;
                 {
                     int i = start;
-                    int inext;
+                    int inext = i+1;
                     i = inext;
                     {
                         inext = mReplacementSpanSpanSet.getNextTransition(i, limit);
@@ -751,7 +751,7 @@ class TextLine {
         final float originalX = x;
         {
             int i = start;
-            int inext;
+            int inext = i;
             i = inext;
             {
                 TextPaint wp = mWorkPaint;
@@ -783,7 +783,7 @@ class TextLine {
                 {
                     {
                         int j = i;
-                        int jnext;
+                        int jnext = j;
                         j = jnext;
                         {
                             jnext = mCharacterStyleSpanSet.getNextTransition(mStart + j, mStart + mlimit) -

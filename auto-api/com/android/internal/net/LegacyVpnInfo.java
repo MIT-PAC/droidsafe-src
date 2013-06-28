@@ -90,21 +90,5 @@ public class LegacyVpnInfo implements Parcelable {
             return new LegacyVpnInfo[size];
         }
     };
-    // orphaned legacy method
-    @Override
-        public LegacyVpnInfo createFromParcel(Parcel in) {
-            LegacyVpnInfo info = new LegacyVpnInfo();
-            info.key = in.readString();
-            info.state = in.readInt();
-            info.intent = in.readParcelable(null);
-            return info;
-        }
-    
-    // orphaned legacy method
-    @Override
-        public LegacyVpnInfo[] newArray(int size) {
-            return new LegacyVpnInfo[size];
-        }
-    
 }
 

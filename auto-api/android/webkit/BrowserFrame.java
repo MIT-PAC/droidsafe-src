@@ -555,7 +555,9 @@ class BrowserFrame extends Handler {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.717 -0400", hash_original_method = "818D4287AF55B155FD9BEC63FC9BB14D", hash_generated_method = "2CE36722D89C9AAE233D32794227C266")
     private String externalRepresentation() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
     }
 
     
@@ -586,13 +588,19 @@ class BrowserFrame extends Handler {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.718 -0400", hash_original_method = "79942AAFA346C254C5198053B4C683D6", hash_generated_method = "07D5EDE5120089FA81790CBAAE4B851E")
     private String documentAsText() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
+    	// DSFIXME: source?
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.718 -0400", hash_original_method = "BAA59F57B83FBAF7CC9F5BD462BDF4D7", hash_generated_method = "81DE64B9D9AB653AFA9FD34037C2102D")
     private String childFramesAsText() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
+    	// DSFIXME: source?
     }
 
     
@@ -1312,7 +1320,7 @@ class BrowserFrame extends Handler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.735 -0400", hash_original_method = "BF59E951CBFF79EB5A7A07D0C7840C24", hash_generated_method = "E28CEE2E5CC467902FEEF7816EBAF807")
     private void reportSslCertError(final int handle, final int certError, byte certDER[],
             String url) {
-        SslError sslError;
+        final SslError sslError;
         try 
         {
             X509Certificate cert = new X509CertImpl(certDER);
@@ -1322,6 +1330,7 @@ class BrowserFrame extends Handler {
         catch (IOException e)
         {
             nativeSslCertErrorCancel(handle, certError);
+            return;
         } //End block
         {
             boolean var9E891972169349B7CCF07279CD1AABBF_846744547 = (SslCertLookupTable.getInstance().isAllowed(sslError));
@@ -1537,8 +1546,11 @@ class BrowserFrame extends Handler {
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.739 -0400", hash_original_method = "F143225F39CB01C1D802EC565271C419", hash_generated_method = "29BBC25C86CDC16E4793C63D3F6022F4")
+    @DSModeled(DSC.SPEC)
     public String stringByEvaluatingJavaScriptFromString(String script) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
     }
 
     
@@ -1616,7 +1628,10 @@ class BrowserFrame extends Handler {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.743 -0400", hash_original_method = "865B533AFC1748A162575C4402C4E1D7", hash_generated_method = "649B5EB499FF582D6D8E126787969B7F")
     private String[] getUsernamePassword() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	// DSFIXME: source
+    	String[] s = new String[1];
+    	s.addTaint(taint);
+    	return s;
     }
 
     
@@ -1627,11 +1642,15 @@ class BrowserFrame extends Handler {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.743 -0400", hash_original_method = "74581984BB5BC192860C6547F8D5036F", hash_generated_method = "1313694DA1B47EE7DE9BC757D7889251")
     private String nativeSaveWebArchive(String basename, boolean autoname) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	addTaint(autoname);
+    	addTaint(basename.taint);
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
     }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.743 -0400", hash_original_method = "08E54613B59D770C860286634891B8BB", hash_generated_method = "850BDCB5411EE09BBA08F1498E765617")
+
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.743 -0400", hash_original_method = "08E54613B59D770C860286634891B8BB", hash_generated_method = "850BDCB5411EE09BBA08F1498E765617")
     private void nativeOrientationChanged(int orientation) {
     }
 
@@ -1845,36 +1864,6 @@ class BrowserFrame extends Handler {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.758 -0400", hash_original_field = "910631508F84D90DCD807E27D1002B78", hash_generated_field = "AD5F5EC77DEB8EB516DC019450BAA732")
 
     private static final int FILE_UPLOAD_NO_FILE_CHOSEN = 7;
-    // orphaned legacy method
-    @Override
-            public void proceed() {
-                SslCertLookupTable.getInstance().setIsAllowed(sslError);
-                nativeSslCertErrorProceed(handle);
-            }
-    
-    // orphaned legacy method
-    @Override
-            public boolean useHttpAuthUsernamePassword() {
-                return useCachedCredentials;
-            }
-    
-    // orphaned legacy method
-    @Override
-            public void cancel() {
-                nativeSslCertErrorCancel(handle, certError);
-            }
-    
-    // orphaned legacy method
-    @Override
-            public boolean suppressDialog() {
-                return suppressDialog;
-            }
-    
-    // orphaned legacy method
-    @Override
-            public void proceed(String username, String password) {
-                nativeAuthenticationProceed(handle, username, password);
-            }
     
 }
 

@@ -265,7 +265,8 @@ public final class GeolocationPermissions {
 
     
         private static Set nativeGetOrigins() {
-                //DSFIXME:  This shouldn't happen!
+        	Set s = new HashSet<>();
+        	return s;
     }
 
     

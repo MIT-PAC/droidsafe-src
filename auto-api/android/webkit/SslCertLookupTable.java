@@ -41,7 +41,7 @@ final class SslCertLookupTable {
             host = new URL(sslError.getUrl()).getHost();
         } //End block
         catch (MalformedURLException e)
-        { }
+        { return; }
         table.putInt(host, sslError.getPrimaryError());
         addTaint(sslError.getTaint());
         // ---------- Original Method ----------
@@ -63,7 +63,7 @@ final class SslCertLookupTable {
             host = new URL(sslError.getUrl()).getHost();
         } //End block
         catch (MalformedURLException e)
-        { }
+        { return getTaintBoolean(); }
         boolean var15B3CC325E4DD7AAC65B476211A99A1B_359884790 = (table.containsKey(host) && sslError.getPrimaryError() <= table.getInt(host));
         addTaint(sslError.getTaint());
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1503072555 = getTaintBoolean();

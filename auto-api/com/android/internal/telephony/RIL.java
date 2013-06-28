@@ -3119,7 +3119,7 @@ public final class RIL extends BaseCommands implements CommandsInterface {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.436 -0400", hash_original_method = "0DD0C2CAC9DFFC256536DE8141109DEC", hash_generated_method = "1E8DD430F54FD8DF1DC2B3393AA17D88")
     private void processUnsolicited(Parcel p) {
         int response;
-        Object ret;
+        Object ret = null;
         response = p.readInt();
         try 
         {
@@ -3496,7 +3496,7 @@ public final class RIL extends BaseCommands implements CommandsInterface {
         } //End block
         //End case RIL_UNSOL_CDMA_OTA_PROVISION_STATUS 
         //Begin case RIL_UNSOL_CDMA_INFO_REC 
-        ArrayList<CdmaInformationRecords> listInfoRecs;
+        ArrayList<CdmaInformationRecords> listInfoRecs = null;
         //End case RIL_UNSOL_CDMA_INFO_REC 
         //Begin case RIL_UNSOL_CDMA_INFO_REC 
         try 

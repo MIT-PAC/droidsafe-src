@@ -8,6 +8,8 @@ import droidsafe.runtime.*;
 // needed for enhanced for control translations
 import java.util.Iterator;
 import android.content.res.Resources;
+import android.graphics.BitmapFactory;
+
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -267,14 +269,19 @@ public class Time {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.831 -0400", hash_original_method = "751765C8BBD19CCE2EF370E3AB9D4D19", hash_generated_method = "CC9E7C3FAB0B3C60FBFB40FF6979F754")
     private String format1(String format) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String();
+    	s.addTaint(taint);
+    	s.addTaint(format.getTaint());
+    	return s;
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.831 -0400", hash_original_method = "D4E4943029EE450E10D723A13B21ADBA", hash_generated_method = "93A7BDD7A073B21936AAAC2D97F258FB")
     @Override
     public String toString() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
     }
 
     
@@ -356,7 +363,9 @@ public class Time {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.834 -0400", hash_original_method = "41A869EF339B8E1FD69184435BC2AFF4", hash_generated_method = "80016ED483EF4736E85C065EFF5B1D3A")
     public String format2445() {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
     }
 
     

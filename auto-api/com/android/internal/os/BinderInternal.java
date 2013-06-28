@@ -38,7 +38,7 @@ public class BinderInternal {
 
     
     public static final IBinder getContextObject() {
-                //DSFIXME:  This shouldn't happen!
+    	return new Binder();
     }
 
     

@@ -568,7 +568,10 @@ public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
     public String _glGetString(
         int name
     ) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	addTaint(name);
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
     }
 
     

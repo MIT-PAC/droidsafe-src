@@ -883,7 +883,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             } //End block
             catch (ClassNotFoundException ex)
             {
-                if (DroidSafeAndroidRuntime.control) throw new RuntimeException(ex);
+            	throw new RuntimeException(ex);
             } //End block
             try 
             {
@@ -12481,9 +12481,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             SuggestionSpan[] suggestionSpans = spannable.getSpans(pos, pos, SuggestionSpan.class);
             mSpansLengths.clear();
             {
-                Iterator<SuggestionSpan> var5F86DCD5EC41897CAA9202DC612207E4_522159835 = (suggestionSpans).iterator();
-                var5F86DCD5EC41897CAA9202DC612207E4_522159835.hasNext();
-                SuggestionSpan suggestionSpan = var5F86DCD5EC41897CAA9202DC612207E4_522159835.next();
+                SuggestionSpan suggestionSpan = suggestionSpans[0];
                 {
                     int start = spannable.getSpanStart(suggestionSpan);
                     int end = spannable.getSpanEnd(suggestionSpan);

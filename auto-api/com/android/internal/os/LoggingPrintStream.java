@@ -65,8 +65,8 @@ abstract class LoggingPrintStream extends PrintStream {
         int start = 0;
         int nextBreak;
         {
-            boolean varCECC465DB0C1A2DC9772F41A0AEFAF78_1117055929 = (start < length
-                && (nextBreak = builder.indexOf("\n", start)) != -1);
+            if (start < length
+                && (nextBreak = builder.indexOf("\n", start)) != -1)
             {
                 log(builder.substring(start, nextBreak));
                 start = nextBreak + 1;
@@ -101,9 +101,9 @@ abstract class LoggingPrintStream extends PrintStream {
         //}
     }
 
-    
-    public void write(int oneByte) throws IOException {
-                throw new AssertionError();
+    @DSOverride
+    public void write(int oneByte) {
+        write(new byte[] { (byte) oneByte }, 0, 1);
             }
 
     
@@ -452,8 +452,8 @@ abstract class LoggingPrintStream extends PrintStream {
                 int start = 0;
                 int nextBreak;
                 {
-                    boolean var3E9DE48AFC111E2F733EDFF180729139_182968085 = (start < length
-                    && (nextBreak = s.indexOf('\n', start)) != -1);
+                    if(start < length
+                    && (nextBreak = s.indexOf('\n', start)) != -1)
                     {
                         log(s.substring(start, nextBreak));
                         start = nextBreak + 1;

@@ -75,7 +75,7 @@ public final class TextServicesManager {
         } //End block
         catch (RemoteException e)
         {
-            varB4EAC82CA7396A68D541C85D26508E83_1097731435 = null;
+        	return null;
         } //End block
         {
             varB4EAC82CA7396A68D541C85D26508E83_345426112 = null;

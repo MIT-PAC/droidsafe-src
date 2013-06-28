@@ -2068,9 +2068,7 @@ public class NumberPicker extends LinearLayout {
                         + dest.subSequence(dend, dest.length());
                 String str = String.valueOf(result).toLowerCase();
                 {
-                    Iterator<String> varC624F3ACFB2498CD7B0F64CC5E920658_484227032 = (mDisplayedValues).iterator();
-                    varC624F3ACFB2498CD7B0F64CC5E920658_484227032.hasNext();
-                    String val = varC624F3ACFB2498CD7B0F64CC5E920658_484227032.next();
+                    String val = mDisplayedValues[0];
                     {
                         String valLowerCase = val.toLowerCase();
                         {

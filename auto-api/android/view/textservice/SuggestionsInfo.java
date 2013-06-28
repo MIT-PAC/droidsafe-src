@@ -215,17 +215,6 @@ public final class SuggestionsInfo implements Parcelable {
             return new SuggestionsInfo[size];
         }
     };
-    // orphaned legacy method
-    @Override
-        public SuggestionsInfo createFromParcel(Parcel source) {
-            return new SuggestionsInfo(source);
-        }
-    
-    // orphaned legacy method
-    @Override
-        public SuggestionsInfo[] newArray(int size) {
-            return new SuggestionsInfo[size];
-        }
     
 }
 

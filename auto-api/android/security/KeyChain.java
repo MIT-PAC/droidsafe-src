@@ -299,22 +299,6 @@ public final class KeyChain {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.108 -0400", hash_original_field = "1CAC3E5996CF7E718CA4AB1CB04C3532", hash_generated_field = "DF406DBF531C82AFF9840E033879AB08")
 
     public static final String EXTRA_PKCS12 = "PKCS12";
-    // orphaned legacy method
-    @Override public void onServiceDisconnected(ComponentName name) {}
-    
-    // orphaned legacy method
-    @Override public void onServiceConnected(ComponentName name, IBinder service) {
-                if (!mConnectedAtLeastOnce) {
-                    mConnectedAtLeastOnce = true;
-                    try {
-                        q.put(IKeyChainService.Stub.asInterface(service));
-                    } catch (InterruptedException e) {
-                    }
-                }
-            }
-    
-    // orphaned legacy field
-    volatile boolean mConnectedAtLeastOnce = false;
     
 }
 

@@ -845,8 +845,8 @@ public class GsmConnection extends Connection {
         postDialHandler = owner.phone.mPostDialHandler;
         Message notifyMessage;
         {
-            boolean varB7D67D389C6A58715F3756EDB58E607E_1021440324 = (postDialHandler != null
-                && (notifyMessage = postDialHandler.messageForRegistrant()) != null);
+            if (postDialHandler != null
+                && (notifyMessage = postDialHandler.messageForRegistrant()) != null)
             {
                 PostDialState state = postDialState;
                 AsyncResult ar = AsyncResult.forMessage(notifyMessage);

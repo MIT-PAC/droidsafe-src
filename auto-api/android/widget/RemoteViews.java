@@ -1574,7 +1574,7 @@ public class RemoteViews implements Parcelable, Filter {
             } //End block
             catch (NoSuchMethodException ex)
             {
-                if (DroidSafeAndroidRuntime.control) throw new ActionException("view: " + klass.getName() + " doesn't have method: "
+            	throw new ActionException("view: " + klass.getName() + " doesn't have method: "
                         + this.methodName + "()");
             } //End block
             {
@@ -1887,7 +1887,7 @@ public class RemoteViews implements Parcelable, Filter {
             } //End block
             catch (NoSuchMethodException ex)
             {
-                if (DroidSafeAndroidRuntime.control) throw new ActionException("view: " + klass.getName() + " doesn't have method: "
+            	throw new ActionException("view: " + klass.getName() + " doesn't have method: "
                         + this.methodName + "(" + param.getName() + ")");
             } //End block
             {

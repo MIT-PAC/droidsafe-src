@@ -1055,7 +1055,7 @@ public class CdmaConnection extends Connection {
             } //End block
         } //End collapsed parenthetic
         postDialHandler = owner.phone.mPostDialHandler;
-        Message notifyMessage;
+        Message notifyMessage = null;
         {
             boolean var12510AAE23ED58E74D3CE982EB9B37AD_1165719600 = (postDialHandler != null &&
                 (notifyMessage = postDialHandler.messageForRegistrant()) != null);

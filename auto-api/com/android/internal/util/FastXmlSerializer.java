@@ -414,9 +414,7 @@ public class FastXmlSerializer implements XmlSerializer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.680 -0400", hash_original_method = "06A4B22AA2E8AAA8ED4F22B001D0D1FC", hash_generated_method = "76BA736BD74CB0655230B649DF0737E4")
     public int getDepth() {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1188840632 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1188840632;
+    	throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
@@ -424,10 +422,7 @@ public class FastXmlSerializer implements XmlSerializer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.681 -0400", hash_original_method = "A938A921621E94044F2CFA3DC31C9E8C", hash_generated_method = "5BE244DC4C6120899CEDB7173EEE1702")
     public boolean getFeature(String name) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(name.getTaint());
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_964712714 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_964712714;
+    	throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
@@ -435,7 +430,7 @@ public class FastXmlSerializer implements XmlSerializer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.681 -0400", hash_original_method = "6A642C9EEC23AC32ED606658DA110E38", hash_generated_method = "9F6BA6B6F80DB39C1FBA96C0289B4A59")
     public String getName() {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
+    	throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
@@ -443,7 +438,7 @@ public class FastXmlSerializer implements XmlSerializer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.681 -0400", hash_original_method = "8F74E2B7FCD796BC320C8C37775EA11E", hash_generated_method = "70604486E0CC1301AEA1D29B2BE6FA92")
     public String getNamespace() {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
+    	throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
@@ -451,9 +446,7 @@ public class FastXmlSerializer implements XmlSerializer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.682 -0400", hash_original_method = "1ADA26C4B32C10D168CE4DC5A8DC35EC", hash_generated_method = "4B631B1407B13363356B402AA22C28F2")
     public String getPrefix(String namespace, boolean generatePrefix) throws IllegalArgumentException {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(namespace.getTaint());
-        addTaint(generatePrefix);
+        throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }
@@ -461,8 +454,7 @@ public class FastXmlSerializer implements XmlSerializer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.682 -0400", hash_original_method = "DA8A49250701B8FD4E3C9A3CEF97A891", hash_generated_method = "2C46EC45D861F1CE98B9BA0DED8B783D")
     public Object getProperty(String name) {
-        if (DroidSafeAndroidRuntime.control) throw new UnsupportedOperationException();
-        addTaint(name.getTaint());
+    	throw new UnsupportedOperationException();
         // ---------- Original Method ----------
         //throw new UnsupportedOperationException();
     }

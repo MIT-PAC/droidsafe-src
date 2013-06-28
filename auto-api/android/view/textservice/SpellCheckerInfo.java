@@ -302,17 +302,5 @@ public final class SpellCheckerInfo implements Parcelable {
             return new SpellCheckerInfo[size];
         }
     };
-    // orphaned legacy method
-    @Override
-        public SpellCheckerInfo createFromParcel(Parcel source) {
-            return new SpellCheckerInfo(source);
-        }
-    
-    // orphaned legacy method
-    @Override
-        public SpellCheckerInfo[] newArray(int size) {
-            return new SpellCheckerInfo[size];
-        }
-    
 }
 

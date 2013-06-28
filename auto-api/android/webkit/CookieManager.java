@@ -42,7 +42,7 @@ public final class CookieManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:04.327 -0400", hash_original_method = "192983167FE22E48CC26A3CAFDDD8D6B", hash_generated_method = "485516C5E5A309F67F3624B095CDFF25")
     protected Object clone() throws CloneNotSupportedException {
-        if (DroidSafeAndroidRuntime.control) throw new CloneNotSupportedException("doesn't implement Cloneable");
+    	throw new CloneNotSupportedException("doesn't implement Cloneable");
         // ---------- Original Method ----------
         //throw new CloneNotSupportedException("doesn't implement Cloneable");
     }
@@ -100,7 +100,7 @@ public final class CookieManager {
                 setCookie(url, value, false);
             } //End block
         } //End collapsed parenthetic
-        WebAddress uri;
+        WebAddress uri = null;
         try 
         {
             uri = new WebAddress(url);
@@ -140,7 +140,7 @@ public final class CookieManager {
             uri = new WebAddress(url);
         } //End block
         catch (ParseException ex)
-        { }
+        { return; }
         nativeSetCookie(uri.toString(), value, privateBrowsing);
         addTaint(url.getTaint());
         addTaint(value.getTaint());
@@ -279,7 +279,7 @@ public final class CookieManager {
                 varB4EAC82CA7396A68D541C85D26508E83_1489391904 = getCookie(url, false);
             } //End block
         } //End collapsed parenthetic
-        WebAddress uri;
+        WebAddress uri = null;
         try 
         {
             uri = new WebAddress(url);
@@ -330,7 +330,7 @@ public final class CookieManager {
                 varB4EAC82CA7396A68D541C85D26508E83_410582073 = getCookie(url);
             } //End block
         } //End collapsed parenthetic
-        WebAddress uri;
+        WebAddress uri = null;
         try 
         {
             uri = new WebAddress(url);
@@ -1181,7 +1181,9 @@ public final class CookieManager {
 
     
         private static String nativeGetCookie(String url, boolean privateBrowsing) {
-                //DSFIXME:  This shouldn't happen!
+        	String s = new String();
+        	s.addTaint(url.getTaint());
+        	return s;
     }
 
     

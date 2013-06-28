@@ -1800,7 +1800,9 @@ class LoadListener extends Handler implements EventHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.190 -0400", hash_original_method = "33F440D9D1697DCCED15CDDD044058A8", hash_generated_method = "29EA735C0797FDF2B21BDCB4EDCF36A9")
     private String nativeRedirectedToUrl(String baseUrl,
             String redirectTo, int nativeResponse) {
-        //DSFIXME: CODE0013:  Native method returns a complex type and requires manual reviews
+    	String s = new String();
+    	s.addTaint(taint);
+    	return s;
     }
 
     

@@ -67,7 +67,7 @@ public class SpnOverride {
             spnReader = new FileReader(spnFile);
         } //End block
         catch (FileNotFoundException e)
-        { }
+        { return;}
         try 
         {
             XmlPullParser parser = Xml.newPullParser();
